@@ -1,0 +1,16 @@
+{
+  "name": "web.dev",
+  "version": "0.0.1",
+  "description": "web.dev content and build tools",
+  "repository": "https://github.com/GoogleChrome/web.dev.git",
+  "author": "The Chromium Authors",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "build": "./build.js",
+    "stage": "./build.js --stage"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.0"
+  }
+}
