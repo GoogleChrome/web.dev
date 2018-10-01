@@ -16,7 +16,8 @@
 
  'use strict';
 
- const markdownIncludeRe = new RegExp(/\{%\s+include\s+"(.*?)"\s+%\}/g);
+// matches: {% include "path/foo.md" %}
+const markdownIncludeRe = new RegExp(/\{%\s+include\s+"(.*?)"\s+%\}/g);
 
  /**
   * Parses DevSite markdown for interesting conditions, such as template includes that occur at
