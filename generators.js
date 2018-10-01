@@ -17,15 +17,18 @@
 'use strict';
 
 async function AuditGuidePaths(loader, cf) {
+  // TODO(samthor): Glob format in directories not actually supported yet.
+  // const pathConfig = await loader.contents(`${cf.dir}/path/*/guides.yaml`);
+
   // TODO(samthor): Generate Markdown/HTML for all guides that will surface from the profile/audits
   // page. These are the guides that are surfaced based on poor Lighthouse scores and are filtered
   // by the TODO element.
-  return '';
+  return '<!-- TODO: audit paths -->';
 }
 
 async function PathIndex(loader, cf) {
   const guidesYaml = await loader.get(`${cf.dir}/guides.yaml`);
-  const config = await guidesYaml.cf.config;
+  const config = await guidesYaml.config;
 
   // TODO(samthor): This is just a demo which should be replaced by a Handlebars renderer.
   let out = '';

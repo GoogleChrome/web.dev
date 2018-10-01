@@ -11,10 +11,6 @@ mdn_features:
 wf_blink_components: Blink>Accessibility
 ---
 
-# Reduce JavaScript payloads with code-splitting
-
-<hr>
-
 Nobody likes waiting.
 
 <video autoplay loop muted playsinline>

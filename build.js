@@ -31,12 +31,12 @@ const opts = {
 };
 const argv = require('minimist')(process.argv.slice(2), opts);
 const config = require('./deps/config.js')(argv._, sourceDir);
-const closest = require('./deps/closest.js');
-const path = require('path');
-const gen = require('./generators.js');
-const devsiteMarkdown = require('./deps/devsite-markdown.js');
 const content = require('./deps/content.js');
+const devsiteMarkdown = require('./deps/devsite-markdown.js');
 const fsp = require('./deps/fsp.js');
+const gen = require('./generators.js');
+const markdown = require('./markdown.js');
+const path = require('path');
 
 
 if (!config.root) {
@@ -52,14 +52,14 @@ loader.register(`${lang}/path/*`, '_guidelist.md', gen.PathIndex);
 
 
 async function run() {
-  const all = new Map();
+  const all = new Set();
 
   for (const req of config.target) {
     const recurse = (argv.r !== undefined ? argv.r : req === '.');
     const out = await loader.contents(req, recurse);
 
     for (const config of out) {
-      all.set(config.path, config);
+      all.add(config);
     }
   }
   if (!all.size) {
@@ -69,55 +69,47 @@ async function run() {
 
   const writes = [];
 
-  for (const config of all.values()) {
-    const destDir = path.join(outputDir, config.cf.dir);
-    const destFile = path.join(outputDir, config.path);
+  for (const cf of all) {
+    const destDir = path.join(outputDir, cf.dir);
+    const destFile = path.join(outputDir, cf.path);
     await fsp.mkdirp(destDir);
 
-    const generated = config.gen ? config.gen(loader, config.cf) : null;
-
-    if (config.cf.ext === '.md') {
-      const source = await (generated !== null ? generated : config.cf.read());
+    if (cf.ext === '.md') {
+      // generate final Markdown based on YAML prefix config
+      const content = await cf.content;
+      const out = markdown(cf.path, await cf.config, content);
 
       // Find DevSite includes and ensure they are also built. Includes in DevSite are relative to
       // the top-level language directory:
       //   e.g., 'en/path/to/foo.md' must include 'path/to/_include.md'
       const devsiteRoot = `${lang}`;
-      const devsiteConfig = devsiteMarkdown(source);
+      const devsiteConfig = devsiteMarkdown(out);
 
       for (const include of devsiteConfig.includes) {
         const depPath = path.join(devsiteRoot, include);
         const dep = await loader.get(depPath);
-        if (!dep) {
+        if (dep) {
+          all.add(dep);
+        } else {
           console.warn('couldn\'t match DevSite include', depPath);
-        } else if (!all.has(dep.path)) {
-          all.set(dep.path, dep);
         }
       }
 
-      // TODO(samthor): Render Markdown files based on their YAML prefix config, rather than just
-      // blitting to the output path.
-
-      // insert standard DevSite Markdown preamble
-      const projectPath = closest(config.path, '_project.yaml');
-      const bookPath = closest(config.path, '_book.yaml');
-      const out = `project_path: ${projectPath}\nbook_path: ${bookPath}\n\n${source}`;
-
       // write Markdown generated file
       writes.push(fsp.writeFile(destFile, out));
-    } else if (generated !== null) {
+    } else if (cf.generated) {
       // write general generated file (non-Markdown)
       writes.push(fsp.writeFile(destFile, out));
     } else if (argv.l) {
       // symlink unchanged files with -l
       // TODO(samthor): Why does the first component need to be chopped?
-      const relativePath = path.relative(destFile, config.path).substr(3);
+      const relativePath = path.relative(destFile, cf.path).substr(3);
       const safeUnlink = fsp.unlink(destFile).catch(() => null);
       const link = safeUnlink.then(() => fsp.symlink(relativePath, destFile));
       writes.push(link);
     } else {
       // ... finally, fall back to copying into place
-      writes.push(fsp.copyFile(config.path, destFile));
+      writes.push(fsp.copyFile(cf.path, destFile));
     }
   }
 
@@ -125,12 +117,11 @@ async function run() {
 
   const keys = [...all.keys()];
   keys.sort();
-
-  for (const fullPath of keys) {
-    console.info(fullPath);
+  for (const dep of keys) {
+    console.debug(dep.path);
   }
 
-  console.log('success, written', all.size, 'files to', outputDir);
+  console.info('success, written', all.size, 'files to', outputDir);
 }
 
 run().catch((err) => {

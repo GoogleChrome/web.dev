@@ -16,28 +16,24 @@
 
 'use strict';
 
-const path = require('path');
+const fsp = require('./fsp.js');
 const isDir = require('./is-dir.js');
 const isGlob = require('is-glob');
 const micromatch = require('micromatch');
-const yamlPrefix = require('./yaml-prefix.js');
+const path = require('path');
 const YAML = require('yaml').default;
-const fsp = require('./fsp.js');
-
-const alwaysReadSource = ['.md', '.yaml', '.html'];
+const yamlPrefix = require('./yaml-prefix.js');
 
 
 class ContentFile {
 
   /**
    * @param {string} fullPath
-   * @param {?Object<string, *>} config
-   * @param {(?string|undefined)=} content
+   * @param {!ContentLoader} loader
    */
-  constructor(fullPath, config=null, content=null) {
-    this.config = config;
-    this.content = content;
-
+  constructor(fullPath, loader) {
+    this.path = fullPath;
+    this._loader = loader;
     const parsed = path.parse(fullPath);
 
     /** @public {string} */
@@ -48,50 +44,91 @@ class ContentFile {
 
     /** @public {string} */
     this.base = parsed.base;
+
+    /** @private {?Promise<string>} */
+    this._content = null;
+
+    /** @private {?Promise<?Object<string, *>>} */
+    this._config = null;
+  }
+
+  get generated() {
+    return this instanceof VirtualContentFile;
   }
 
   /**
-   * @return {?string}
+   * @return {string}
+   * @private
    */
   async read() {
-    if (this.content === undefined) {
-      if (isDir(this.path) === false) {
-        this.content = fsp.readFile(this.path, 'utf8');
-      } else {
-        // not a real file, don't try to read it
-        this.content = null;
+    return await fsp.readFile(this.path, 'utf-8');
+  }
+
+  _prepareRead() {
+    if (this._content !== null) {
+      return;  // done
+    }
+    const read = this.read();
+
+    switch (this.ext) {
+      case '.md': {
+        // read markdown content and remove YAML prefix
+        const p = read.then(yamlPrefix);
+        this._content = p.then((out) => out.rest);
+        this._config = p.then((out) => out.config);
+        break;
+      }
+      case '.yaml': {
+        // parse YAML but leave source intact
+        this._config = read.then(YAML.parse);
+        break;
       }
     }
-    return this.content;
+
+    this._content = this._content || read;
+    this._config = this._config || Promise.resolve(null);
   }
 
   /**
-   * @param {string} fullPath path to a real on-disk source file
-   * @return {!ContentFile}
+   * @return {!Promise<string>}
    */
-  static async _buildFromSource(fullPath) {
-    let content = undefined;
-    let config = null;
+  get content() {
+    this._prepareRead();
+    return this._content;
+  }
 
-    const ext = path.extname(fullPath);
-    if (alwaysReadSource.includes(ext)) {
-      content = await fsp.readFile(fullPath, 'utf8');
+  /**
+   * @return {?Promise<?Object<string, *>>}
+   */
+  get config() {
+    this._prepareRead();
+    return this._config;
+  }
+}
 
-      switch (ext) {
-        case '.md':
-          // read markdown content and remove YAML prefix
-          const out = yamlPrefix(content);
-          content = out.rest;
-          config = out.config;
-          break;
-        case '.yaml':
-          // parse YAML but leave source intact
-          config = YAML.parse(content);
-          break;
-      }
+
+class VirtualContentFile extends ContentFile {
+  constructor(fullPath, loader, gen) {
+    super(fullPath, loader);
+    this._gen = gen;
+    this._reading = false;
+  }
+
+  /**
+   * @param {!ContentLoader} loader
+   * @return {string}
+   * @override
+   */
+  async read() {
+    if (this._reading) {
+      throw new Error(`recursive read of path: ${this.path}`);
     }
-
-    return new ContentFile(fullPath, config, content);
+    this._reading = true;
+    try {
+      return await this._gen(this._loader, this);
+    } finally {
+      this._reading = false;
+    }
   }
 }
 
@@ -175,15 +212,13 @@ class ContentLoader {
     } else if (out.length === 0) {
       return null;
     }
-
-    // TODO(samthor): probably allows horrible recursive loops
     return out[0];
   }
 
   /**
    * @param {string} req glob-style path request
    * @param {boolean=} recurse search further dirs
-   * @return {!Array<{path: string, gen: *, cf: !ContentFile}>}
+   * @return {!Array<!ContentFile>}
    */
   async contents(req, recurse=false) {
     req = path.normalize(req);
@@ -196,9 +231,7 @@ class ContentLoader {
     if (isGlob(dir)) {
       throw new Error('glob parts unsupported in directory, use shell');
     }
-    const name = path.basename(req);
-
-    return this._contents(dir, name, recurse);
+    return this._contents(dir, path.basename(req), recurse);
   }
 
   async _contents(rootDir, globName, recurse) {
@@ -238,20 +271,19 @@ class ContentLoader {
   }
 
   async _outputFor(fullPath, gen=undefined) {
-    let v = this._cache[fullPath];
-    if (v === undefined) {
-      v = {path: fullPath, gen, cf: null};
+    let cf = this._cache[fullPath];
+    if (cf === undefined) {
       if (gen !== undefined) {
         // generated files can't be read
-        v.cf = new ContentFile(fullPath);
+        cf = new VirtualContentFile(fullPath, this, gen);
       } else {
         // read real file
-        v.cf = await ContentFile._buildFromSource(fullPath);
+        cf = new ContentFile(fullPath, this);
       }
 
-      this._cache[fullPath] = v;
+      this._cache[fullPath] = cf;
     }
-    return v;
+    return cf;
   }
 }
 
