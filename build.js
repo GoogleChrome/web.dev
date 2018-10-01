@@ -19,17 +19,53 @@
  * @fileoverview Entry point for the web.dev build tool.
  */
 
-const argv = require('minimist')(process.argv.slice(2), {boolean: true});
+'use strict';
+
+const opts = {
+  boolean: [true, 'r'],
+  default: {lang: 'en', r: undefined},
+};
+const argv = require('minimist')(process.argv.slice(2), opts);
 const config = require('./deps/config.js')(argv._, `${__dirname}/content`);
 const fs = require('fs');
+const path = require('path');
+const isDir = require('./deps/is-dir.js');
+const gen = require('./generators.js');
+const content = require('./deps/content.js');
 
 if (!config.root) {
   return process.exit(1);
 }
 process.chdir(config.root);
 
+
+const loader = new content.ContentLoader();
+loader.register('en', '_auditpaths.md', gen.AuditGuidePaths);
+loader.register('en/path', '_path-*.md', null);
+loader.register('en/path/*', '_guidelist.md', gen.PathIndex);
+
+
 async function run() {
-  console.info(config);
+  const all = new Map();
+
+  for (const req of config.target) {
+    const recurse = (argv.r !== undefined ? argv.r : req === '.');
+    const out = await loader.contents(req, recurse);
+
+    for (const {path, gen} of out) {
+      all.set(path, gen);
+    }
+  }
+  if (!all.size) {
+    console.warn('no files matched');
+    return process.exit(1);
+  }
+  console.debug('building', all.size, 'files');
+
+  for (const [target, gen] of all) {
+    const ext = path.extname(target);
+    console.info(target, ext);
+  }
 }
 
 run().catch((err) => {

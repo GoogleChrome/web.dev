@@ -16,8 +16,15 @@
 
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
+
+/**
+ * @param {string} p relative path to check
+ * @return {boolean} does this point to a parent dir
+ */
+function isParent(p) {
+  return p === '..' || p.startsWith('../');
+}
 
 /**
  * @param {!Array<string>} paths to search for
@@ -28,7 +35,12 @@ module.exports = function(paths, root) {
   const cwd = process.env.INIT_CWD || process.cwd();
 
   if (!paths.length) {
-    return {root, target: ['.']};
+    const rel = path.relative(root, cwd);
+    if (isParent(rel)) {
+      // cwd is outside content root, so use root
+      return {root, target: ['.']};
+    }
+    paths = ['.'];
   }
 
   paths = paths.map((p) => path.resolve(cwd, p));
@@ -36,9 +48,9 @@ module.exports = function(paths, root) {
   const seen = {};
   const target = [];
   for (const p of paths) {
-    const rel = path.relative(root, p);
-    if (rel.startsWith('../') || rel === '..') {
-      continue;  // path outside root
+    const rel = path.relative(root, p) || '.';
+    if (isParent(rel)) {
+      continue;  // invalid path, outside root
     }
     if (!seen[rel]) {
       seen[rel] = true;
