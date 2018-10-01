@@ -16,21 +16,103 @@
 
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
 const isDir = require('./is-dir.js');
 const isGlob = require('is-glob');
-const util = require('util');
 const micromatch = require('micromatch');
+const yamlPrefix = require('./yaml-prefix.js');
+const YAML = require('yaml').default;
+const fsp = require('./fsp.js');
 
-const fsp = {
-  readdir: util.promisify(fs.readdir),
-  readFile: util.promisify(fs.readFile),
-};
+const alwaysReadSource = ['.md', '.yaml', '.html'];
+
+
+class ContentFile {
+
+  /**
+   * @param {string} fullPath
+   * @param {?Object<string, *>} config
+   * @param {(?string|undefined)=} content
+   */
+  constructor(fullPath, config=null, content=null) {
+    this.config = config;
+    this.content = content;
+
+    const parsed = path.parse(fullPath);
+
+    /** @public {string} */
+    this.ext = parsed.ext;
+
+    /** @public {string} */
+    this.dir = parsed.dir;
+
+    /** @public {string} */
+    this.base = parsed.base;
+  }
+
+  /**
+   * @return {?string}
+   */
+  async read() {
+    if (this.content === undefined) {
+      if (isDir(this.path) === false) {
+        this.content = fsp.readFile(this.path, 'utf8');
+      } else {
+        // not a real file, don't try to read it
+        this.content = null;
+      }
+    }
+    return this.content;
+  }
+
+  /**
+   * @param {string} fullPath path to a real on-disk source file
+   * @return {!ContentFile}
+   */
+  static async _buildFromSource(fullPath) {
+    let content = undefined;
+    let config = null;
+
+    const ext = path.extname(fullPath);
+    if (alwaysReadSource.includes(ext)) {
+      content = await fsp.readFile(fullPath, 'utf8');
+
+      switch (ext) {
+        case '.md':
+          // read markdown content and remove YAML prefix
+          const out = yamlPrefix(content);
+          content = out.rest;
+          config = out.config;
+          break;
+        case '.yaml':
+          // parse YAML but leave source intact
+          config = YAML.parse(content);
+          break;
+      }
+    }
+
+    return new ContentFile(fullPath, config, content);
+  }
+}
+
 
 class ContentLoader {
-  constructor() {
+
+  /**
+   * @param {string} dir root dir to process from, used for lang
+   */
+  constructor(dir) {
+    this._dir = dir;
+
+    /**
+     * @private {!Array<{dir: string, name: string, gen: *}>}
+     */
     this._gen = [];
+
+    /**
+     * @private {!Object<string, !ContentFile>}
+     */
+    this._cache = {};
   }
 
   /**
@@ -79,11 +161,33 @@ class ContentLoader {
   }
 
   /**
+   * @param {string} req specific non-gen path request
+   * @return {?ContentFile}
+   */
+  async get(req) {
+    if (isGlob(req)) {
+      throw new Error('can\'t glob read()');
+    }
+
+    const out = await this.contents(req);
+    if (out.length > 1) {
+      throw new Error('somehow matched more than one file');
+    } else if (out.length === 0) {
+      return null;
+    }
+
+    // TODO(samthor): probably allows horrible recursive loops
+    return out[0];
+  }
+
+  /**
    * @param {string} req glob-style path request
    * @param {boolean=} recurse search further dirs
-   * @return {!Array<{path: string, gen: *}>}
+   * @return {!Array<{path: string, gen: *, cf: !ContentFile}>}
    */
   async contents(req, recurse=false) {
+    req = path.normalize(req);
+
     if (isDir(req)) {
       return this._contents(req, '*', recurse);
     }
@@ -109,26 +213,46 @@ class ContentLoader {
       const currentDir = pendingDir.shift();
       const dirContent = await fsp.readdir(currentDir);
 
-      const matchedFiles = micromatch.match(dirContent, globName);
+      const matchedFiles =
+          globName === '*' ? dirContent : micromatch.match(dirContent, globName);
       for (const raw of matchedFiles) {
         const fullPath = path.join(currentDir, raw);
         if (isDir(fullPath)) {
           recurse && pendingDir.push(fullPath);
         } else {
-          out.push({path: fullPath, gen: null});
+          out.push(await this._outputFor(fullPath));
         }
       };
 
       const virtualFiles = this._virtual(currentDir, globName);
       for (const {name: raw, gen} of virtualFiles) {
         const fullPath = path.join(currentDir, raw);
-        out.push({path: fullPath, gen});
+        out.push(await this._outputFor(fullPath, gen));
       }
+
+      // if this recurses into subdirs, reset glob
+      globName = '*';
     }
 
     return out.filter((x) => x !== null);
   }
 
+  async _outputFor(fullPath, gen=undefined) {
+    let v = this._cache[fullPath];
+    if (v === undefined) {
+      v = {path: fullPath, gen, cf: null};
+      if (gen !== undefined) {
+        // generated files can't be read
+        v.cf = new ContentFile(fullPath);
+      } else {
+        // read real file
+        v.cf = await ContentFile._buildFromSource(fullPath);
+      }
+
+      this._cache[fullPath] = v;
+    }
+    return v;
+  }
 }
 
 module.exports = {ContentLoader};

@@ -16,12 +16,28 @@
 
 'use strict';
 
-function AuditGuidePaths({args}) {
-  
+async function AuditGuidePaths(loader, cf) {
+  // TODO(samthor): Generate Markdown/HTML for all guides that will surface from the profile/audits
+  // page. These are the guides that are surfaced based on poor Lighthouse scores and are filtered
+  // by the TODO element.
+  return '';
 }
 
-function PathIndex({args}) {
-  
+async function PathIndex(loader, cf) {
+  const guidesYaml = await loader.get(`${cf.dir}/guides.yaml`);
+  const config = await guidesYaml.cf.config;
+
+  // TODO(samthor): This is just a demo which should be replaced by a Handlebars renderer.
+  let out = '';
+  config.topics.forEach(({title, guides}) => {
+    out += `<h1>${title}</h1>\n<ul>`;
+    for (const guide of guides) {
+      out += `<li><a href="${guide}">${guide}</a></li>`;
+    }
+    out += `</ul>\n\n`;
+  });
+
+  return out;
 }
 
 module.exports = {
