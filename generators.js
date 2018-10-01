@@ -32,13 +32,19 @@ async function PathIndex(loader, cf) {
 
   // TODO(samthor): This is just a demo which should be replaced by a Handlebars renderer.
   let out = '';
-  config.topics.forEach(({title, guides}) => {
+  for (const {title, guides} of config.topics) {
     out += `<h1>${title}</h1>\n<ul>`;
     for (const guide of guides) {
-      out += `<li><a href="${guide}">${guide}</a></li>`;
+
+      const guideYaml = await loader.get(`${cf.dir}/${guide}/index.md`);
+      let title = guide;
+      if (guideYaml !== null) {
+        title = (await guideYaml.config).title;
+      }
+      out += `<li><a href="./${guide}">${title}</a></li>\n`;
     }
     out += `</ul>\n\n`;
-  });
+  };
 
   return out;
 }
