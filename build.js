@@ -27,7 +27,7 @@ const outputDir = `${__dirname}/build`;
 
 const opts = {
   boolean: [true, 'r', 'stage', 'l'],
-  default: {r: undefined, stage: false},
+  default: {r: false, stage: false},
 };
 const argv = require('minimist')(process.argv.slice(2), opts);
 const config = require('./deps/config.js')(argv._, sourceDir);
@@ -55,7 +55,7 @@ async function run() {
   const all = new Set();
 
   for (const req of config.target) {
-    const recurse = (argv.r !== undefined ? argv.r : req === '.');
+    const recurse = (argv.r || req === '.');
     const out = await loader.contents(req, recurse);
 
     for (const config of out) {
