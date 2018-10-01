@@ -28,27 +28,24 @@ module.exports = function(paths, root) {
   const cwd = process.env.INIT_CWD || process.cwd();
 
   if (!paths.length) {
-    return {root, target: [{path: '.', dir: true, ext: ''}]};
+    return {root, target: ['.']};
   }
 
   paths = paths.map((p) => path.resolve(cwd, p));
 
+  const seen = {};
   const target = [];
   for (const p of paths) {
     const rel = path.relative(root, p);
-    if (rel.startsWith('../')) {
-      return {root: null, target: []};
+    if (rel.startsWith('../') || rel === '..') {
+      continue;  // path outside root
     }
-
-    let dir = undefined;
-    try {
-      const stat = fs.statSync(p);
-      dir = stat.isDirectory();
-    } catch (e) {
-      // ignore
+    if (!seen[rel]) {
+      seen[rel] = true;
+      target.push(rel);
     }
-    target.push({path: rel, dir, ext: path.extname(rel)});
   }
 
+  target.sort((a, b) => a.length - b.length);
   return {root, target};
 };
