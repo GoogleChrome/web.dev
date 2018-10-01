@@ -21,6 +21,8 @@ const START_DIVIDER = `---\n`;
 const TAIL_DIVIDER = `\n---\n`;
 
 /**
+ * Parses files that have a YAML prefix delineated by ---'s on whole lines.
+ *
  * @param {string} raw source
  * @return {{config: *, rest: string}} parsed prefix YAML separated by ---'s, and remaining source
  */

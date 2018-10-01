@@ -20,6 +20,9 @@ const fs = require('fs');
 const util = require('util');
 const mkdirp = require('mkdirp');
 
+/**
+ * Promisifed versions of Node's filesystem methods.
+ */
 module.exports = {
   copyFile: util.promisify(fs.copyFile),
   readFile: util.promisify(fs.readFile),
@@ -27,5 +30,5 @@ module.exports = {
   symlink: util.promisify(fs.symlink),
   writeFile: util.promisify(fs.writeFile),
   unlink: util.promisify(fs.unlink),
-  mkdirp: util.promisify(mkdirp),
+  mkdirp: util.promisify(mkdirp),  // and mkdirp
 };

@@ -19,8 +19,10 @@
 const fs = require('fs');
 
 /**
- * @param {string} p
- * @return {boolean|undefined}
+ * Returns whether the path is a directory.
+ *
+ * @param {string} p path to check
+ * @return {boolean|undefined} whether the path is a directory (true), file (false) or undefined
  */
 module.exports = function(p) {
   try {
