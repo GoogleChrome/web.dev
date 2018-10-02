@@ -249,6 +249,9 @@ class ContentLoader {
       const matchedFiles =
           globName === '*' ? dirContent : micromatch.match(dirContent, globName);
       for (const raw of matchedFiles) {
+        if (raw.startsWith('.')) {
+          continue;  // never match .-files
+        }
         const fullPath = path.join(currentDir, raw);
         if (isDir(fullPath)) {
           recurse && pendingDir.push(fullPath);
