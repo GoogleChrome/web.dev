@@ -12,9 +12,7 @@
   },
   "dependencies": {
     "is-glob": "^4.0.0",
-    "marked": "^0.5.0",
     "micromatch": "^3.1.10",
-    "minimatch": "^3.0.4",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "yaml": "^1.0.0-rc.8"
