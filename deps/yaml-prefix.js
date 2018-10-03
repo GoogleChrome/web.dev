@@ -16,28 +16,28 @@
 
 'use strict';
 
-const YAML = require('yaml').default;
 const START_DIVIDER = `---\n`;
 const TAIL_DIVIDER = `\n---\n`;
 
 /**
- * Parses files that have a YAML prefix delineated by ---'s on whole lines.
+ * Splits files that have a YAML prefix delineated by ---'s on whole lines. Does not parse YAML,
+ * instead just returns its raw string.
  *
  * @param {string} raw source
- * @return {{config: *, rest: string}} parsed prefix YAML separated by ---'s, and remaining source
+ * @return {{config: string, rest: string}} prefix YAML without dividers, and remaining source
  */
 module.exports = function(s) {
   if (!s.startsWith(START_DIVIDER)) {
-    return {config: {}, rest: s};
+    return {config: null, rest: s};
   }
 
   const index = s.indexOf(TAIL_DIVIDER, START_DIVIDER.length);
   if (index === -1) {
-    return {config: {}, rest: s};
+    return {config: null, rest: s};
   }
 
   return {
-    config: YAML.parse(s.slice(START_DIVIDER.length, index)),
+    config: s.slice(START_DIVIDER.length, index),
     rest: s.slice(index + TAIL_DIVIDER.length),
   };
 };

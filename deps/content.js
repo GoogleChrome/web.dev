@@ -79,8 +79,8 @@ class ContentFile {
         break;
       }
       case '.yaml': {
-        // parse YAML but leave source intact
-        this._config = read.then(YAML.parse);
+        // also leave source intact
+        this._config = read;
         break;
       }
     }
@@ -102,7 +102,8 @@ class ContentFile {
    */
   get config() {
     this._prepareRead();
-    return this._config;
+    // re-parse YAML every call
+    return this._config.then((x) => x !== null ? YAML.parse(x) : {});
   }
 }
 
