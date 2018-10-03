@@ -11,6 +11,7 @@
     "stage": "./build.js --stage"
   },
   "dependencies": {
+    "handlebars": "^4.0.12",
     "is-glob": "^4.0.0",
     "micromatch": "^3.1.10",
     "minimist": "^1.2.0",

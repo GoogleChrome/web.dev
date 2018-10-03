@@ -16,6 +16,8 @@
 
 'use strict';
 
+const templates = require('./templates.js');
+
 async function AuditGuidePaths(loader, cf) {
   // TODO(samthor): Glob format in directories not actually supported yet.
   // const pathConfig = await loader.contents(`${cf.dir}/path/*/guides.yaml`);
@@ -23,6 +25,7 @@ async function AuditGuidePaths(loader, cf) {
   // TODO(samthor): Generate Markdown/HTML for all guides that will surface from the profile/audits
   // page. These are the guides that are surfaced based on poor Lighthouse scores and are filtered
   // by the TODO element.
+
   return '<!-- TODO: audit paths -->';
 }
 
@@ -30,23 +33,27 @@ async function PathIndex(loader, cf) {
   const guidesYaml = await loader.get(`${cf.dir}/guides.yaml`);
   const config = await guidesYaml.config;
 
-  // TODO(samthor): This is just a demo which should be replaced by a Handlebars renderer.
-  let out = '';
-  for (const {title, guides} of config.topics) {
-    out += `<h1>${title}</h1>\n<ul>`;
-    for (const guide of guides) {
-
+  // nb. This somewhat recreates the contents of guides.yaml for the specified path, so that the
+  // title of each guide can be loaded from its associated index.md, if it exists.
+  const payload = {topics: []};
+  for (const topic of config.topics) {
+    const guides = [];
+    for (const guide of topic.guides) {
+      // load title from guide index page, if available
       const guideYaml = await loader.get(`${cf.dir}/${guide}/index.md`);
       let title = guide;
       if (guideYaml !== null) {
         title = (await guideYaml.config).title;
+      } else {
+        // TODO(samthor): Elicit a warning.
       }
-      out += `<li><a href="./${guide}">${title}</a></li>\n`;
+      guides.push({id: guide, title})
     }
-    out += `</ul>\n\n`;
-  };
 
-  return out;
+    payload.topics.push({title: topic.title, guides});
+  }
+
+  return templates('path-guidelist.md', payload);
 }
 
 module.exports = {
