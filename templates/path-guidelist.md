@@ -1,10 +1,13 @@
-{{#each topics}}
+{{#each categories}}
 
-<h1>{{title}}</h1>
-<ul>
+<hr />
+
+<div class="path--counter">{{this.num}}</div>
+
+## {{title}}
+
 {{#each guides}}
-  <li><a href="./{{this.id}}">{{this.title}}</li>
+* <a href="./{{this.id}}">{{this.title}}</li>
 {{/each}}
-</ul>
 
 {{/each}}
