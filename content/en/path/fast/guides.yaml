@@ -1,12 +1,7 @@
 topics:
 
-# Add things here
+# Topic containing several guides
 - title: Optimizing your JavaScript
   guides:
     - split-with-webpack
-    - blah-foo
 
-# Blah
-- title: Optimize something else
-  guides:
-    - foo-bar

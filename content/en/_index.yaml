@@ -1,0 +1,62 @@
+project_path: /_project.yaml
+book_path: /_book.yaml
+
+landing_page:
+  custom_css_path: /site-assets/styles/landing.css
+
+  rows:
+  - classname: webdev-landing-title
+    items:
+    - heading: We believe the web should be...
+
+  - classname: webdev-landing-list
+    items:
+    - description: >
+        <h2><a href="./path/fast">Fast</a></h2>
+        <p>Users abandon pages that load slowly or are difficult to navigate.
+        Get users into your experience quickly and smoothly.</p>
+
+        <h2><a href="#">Reliable</a></h2>
+        <p>Users don’t expect the web to work without a network. Let’s change
+        that perception. Get users to stay engaged regardless of connectivity.
+        </p>
+
+        <h2><a href="./path/discover/">Discoverable</a></h2>
+        <p>Search engine optimization (SEO) helps search engines understand and
+        present your content. Help users find your experience through better
+        SEO.</p>
+    - description: >
+        <h2><a href="#">Capable</a></h2>
+        <p>Users expect apps to integrate with their data and devices. Meet
+        user needs through new computing experiences on the web.</p>
+
+        <h2><a href="#">Delightful</a></h2>
+        <p>An engaging app goes beyond functional. Once users are in, ensure
+        their experience is responsive and interactive with little or no
+        interruptions.</p>
+
+        <h2><a href="#">Accessible</a></h2>
+        <p>Accessible experiences can be pleasant and easier for all users.
+        Give users access regardless of their device, physical, financial or
+        any other need.</p>
+
+  - classname:
+      webdev-cta
+      devsite-landing-row-cta
+    items:
+    - buttons:
+      - label: Let's Make It Happen
+        classname: button gc-analytics-event
+        path: /make-it-fast
+        attributes:
+        - name: data-category
+          value: sign_in
+        - name: data-action
+          value: button_click
+        - name: data-label
+          value: sign_up_cta
+
+  - classname: webdev-row-header
+    heading: Developer Stories
+    description: >
+      <p>See how developers approach finding success on the web.</p>

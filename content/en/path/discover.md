@@ -1,14 +1,14 @@
 ---
-title: Fast Load Times
+title: Easily Discoverable
 ---
 
 <div class="web_masthead">
 
-# Fast Load Times
+# Easily Discoverable
 
-Learn how to guarantee your site loads quickly.
+Learn how to have your site found.
 
-<div><web-path-resume path="fast"></web-path-resume></div>
+<div><web-path-resume path="discover"></web-path-resume></div>
 
 </div>
 
@@ -24,7 +24,7 @@ Slow loading sites also negatively impact publishers. In our new study, “The N
 * Optimize Images
 * Optimize Web Fonts
 
-{% include "path/fast/_guidelist.md" %}
+{% include "path/discover/_guidelist.md" %}
 
 ## Recommended next steps
 
