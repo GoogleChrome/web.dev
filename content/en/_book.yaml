@@ -1,8 +1,0 @@
-upper_tabs:
-
-- name: Home
-  lower_tabs:
-    guides:
-    - title: Home
-      path: /
-
