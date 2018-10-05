@@ -4,9 +4,8 @@ title: Fast Load Times
 
 <div class="web_masthead">
 
-# Fast Load Times
-
-Learn how to guarantee your site loads quickly.
+<h1>Fast Load Times</h1>
+<p>Learn how to guarantee your site loads quickly.</p>
 
 <div><web-path-resume path="fast"></web-path-resume></div>
 
@@ -14,7 +13,7 @@ Learn how to guarantee your site loads quickly.
 
 ## About this path
 
-Slow loading sites also negatively impact publishers. In our new study, “The Need for Mobile Speed”, we found that **53% of mobile site visits are abandoned if pages take longer than 3 seconds to load**.
+Slow loading sites also negatively impact publishers. In our new study, "The Need for Mobile Speed", we found that **53% of mobile site visits are abandoned if pages take longer than 3 seconds to load**.
 
 ## What you'll learn
 
@@ -24,7 +23,7 @@ Slow loading sites also negatively impact publishers. In our new study, “The N
 * Optimize Images
 * Optimize Web Fonts
 
-{% include "path/fast/_guidelist.md" %}
+<<fast/_guidelist.md>>
 
 ## Recommended next steps
 

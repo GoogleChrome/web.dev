@@ -4,17 +4,16 @@ title: Easily Discoverable
 
 <div class="web_masthead">
 
-# Easily Discoverable
+<h1>Easily Discoverable</h1>
+<p>Learn how to have your site found.</p>
 
-Learn how to have your site found.
-
-<div><web-path-resume path="discover"></web-path-resume></div>
+<div><web-path-resume path="fast"></web-path-resume></div>
 
 </div>
 
 ## About this path
 
-Slow loading sites also negatively impact publishers. In our new study, “The Need for Mobile Speed”, we found that **53% of mobile site visits are abandoned if pages take longer than 3 seconds to load**.
+Slow loading sites also negatively impact publishers. In our new study, "The Need for Mobile Speed", we found that **53% of mobile site visits are abandoned if pages take longer than 3 seconds to load**.
 
 ## What you'll learn
 
@@ -24,7 +23,7 @@ Slow loading sites also negatively impact publishers. In our new study, “The N
 * Optimize Images
 * Optimize Web Fonts
 
-{% include "path/discover/_guidelist.md" %}
+<<discover/_guidelist.md>>
 
 ## Recommended next steps
 
