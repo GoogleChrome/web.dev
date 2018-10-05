@@ -7,10 +7,11 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "build": "./lib/build.js",
-    "stage": "./lib/build.js --stage"
+    "build": "./lib/index.js",
+    "stage": "./lib/index.js --stage"
   },
   "dependencies": {
+    "ansi-colors": "^3.1.0",
     "handlebars": "^4.0.12",
     "is-glob": "^4.0.0",
     "micromatch": "^3.1.10",
