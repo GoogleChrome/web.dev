@@ -9,7 +9,7 @@
 ## {{title}}
 
 {{#each guides}}
-* [{{this.title}}]({{this.id}})
+* [{{this.title}}]({{../../path}}/{{this.id}})
 {{/each}}
 
 {{/each}}
