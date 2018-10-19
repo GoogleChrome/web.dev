@@ -4,9 +4,18 @@ title: Lighthouse
 
 Review your Lighthouse audit below and see detailed guidance on how to improve it.
 
-<web-lighthouse-profile>
+Demo instructions:
+
+1. Be sure to **Sign In** above.
+
+1. If you don't see scores below, use 'Inspect Element' to find the `web-profile` element.
+   Type `$0.addInterestUrl('https://nu.nl')`.
+   After a few seconds, the scores should display for the site you've added.
+   Right now, you can only add scores for sites [from here](https://webdev-dot-lighthouse-ci.appspot.com/).
+
 <div>
-  <!-- TODO: This is probably better hydrated by the profile element, but here's a demo -->
+<web-profile>
+  <!-- TODO: This is just fake data for now -->
   <div class="profile__site">
     <div class="profile__site-details">
       <h3>robdodson.me</h3>
@@ -18,8 +27,8 @@ Review your Lighthouse audit below and see detailed guidance on how to improve i
     </div>
   </div>
   <web-lighthouse-scores></web-lighthouse-scores>
+</web-profile>
 </div>
-</web-lighthouse-profile>
 
 <div><web-todo-list>
 {% include "_auditpaths.md" %}
