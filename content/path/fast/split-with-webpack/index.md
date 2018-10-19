@@ -49,6 +49,11 @@ _Wowza_. 71.2kB worth of JavaScript just to sort a few numbers. What gives?
 
 If you dive into the code in `src/index.js`, you'll notice that we're importing the `lodash` library and using one of its methods to sort our numbers. Lodash is an excellent library that provides many useful utility functions, but we're making a common mistake here. We don't have to import the entire library if we're not using most of it!
 
-Now, do the code [if you're using Polymer](codelabs/webpack-with-polymer).
+1. Now, do the code [if you're using Polymer](codelabs/webpack-with-polymer).
 
- 
+2. Now, do the code [if you're using Polymer](./codelabs/webpack-with-polymer).
+
+3. Now, do the code [if you're using Polymer](split-with-webpack/codelabs/webpack-with-polymer).
+
+4. Now, do the code [if you're using Polymer](/codelabs/webpack-with-polymer).
+
