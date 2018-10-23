@@ -1,5 +1,6 @@
 ---
 title: Fast Load Times
+page_type: path
 ---
 
 <div class="web_masthead">

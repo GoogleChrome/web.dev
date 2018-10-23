@@ -1,5 +1,6 @@
 ---
 title: Easily Discoverable
+page_type: path
 ---
 
 <div class="web_masthead">

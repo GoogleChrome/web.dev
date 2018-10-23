@@ -1,7 +1,7 @@
 ---
 title: Webpack with Polymer
 author: houssein
-layout: glitch
+page_type: glitch
 glitch: foo
 ---
 
