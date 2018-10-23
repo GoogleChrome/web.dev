@@ -31,5 +31,5 @@ Demo instructions:
 </div>
 
 <div><web-todo-list>
-{% include "_auditpaths.md" %}
+{% include "./allguides.json" %}
 </web-todo-list></div>
