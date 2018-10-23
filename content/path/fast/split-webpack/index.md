@@ -35,6 +35,31 @@ function foo() {
 }
 ```
 
+### In this lesson:
+
+1. First step is here
+1. Then the second step
+1. Following the third and final step which is incredibly long. Like, why would you even have a step that's this long? You'd think by this point you'd have broken it into two steps, but nope! It's still going!
+
+### In this lesson:
+
+* First step is here
+* Then the second step
+* Following the third and final step which is incredibly long. Like, why would you even have a step that's this long? You'd think by this point you'd have broken it into two steps, but nope! It's still going!
+
+### Using Imagemin
+
+| Tag      | Role |
+|----------|------|
+| Pictures | The `<picture>` tag provides a wrapper for zero or more `<source>` tags and one `<image>` tag. |
+| Sources  | The `<source>` tag specifies a media resource. |
+
+### About WebP
+
+> WebP is an excellent replacement for JPEG, PNG, and GIF images. In addition, WebP offers both lossless and lossy compression. In lossless compression no data is lost. Lossy compression can reduce file size, but at the expense of possibly reducing image quality.
+
+You can use <abbr title="Cascading Stlye Sheets">CSS</abbr> to style your <abbr title="HyperText Markup Language">HTML.</abbr>
+
 ## Measure
 
 Like always, it's important to first measure how our website performs before trying to add any optimizations. Let's take a look at the current JavaScript bundle that loads when we boot up our application.
