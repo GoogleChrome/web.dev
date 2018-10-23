@@ -1,8 +1,14 @@
 upper_tabs:
 
-- name: Home
+- name: Learn
   lower_tabs:
     guides:
-    - title: Home
-      path: /
+    - title: Learn
+      path: /learn
+
+- name: Measure
+  lower_tabs:
+    guides:
+    - title: Measure
+      path: /profile
 
