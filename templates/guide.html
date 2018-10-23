@@ -1,0 +1,112 @@
+<main>
+  <div class="container">
+
+    <!-- BREADRUMBS AND PROGRESS -->
+    <div class="row">
+      <div class="breadcrumbs-and-progress">
+        <div class="breadcrumbs">
+          <ul>
+            <li><a href="#">Path Name</a></li>
+            <li><a href="#">Topic Name</a></li>
+          </ul>
+        </div>
+        <div class="progress">
+          <div>Progress</div>
+          <div class="progress__markers">
+            <div>
+              <span class="progress__marker--complete progress__marker--active"></span>
+              <span class="progress__marker--complete progress__marker--active"></span>
+              <span class="progress__marker--incomplete progress__marker--active"></span>
+              <span class="progress__marker--incomplete"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUIDE AND SIDEBAR -->
+    <div class="row">
+      <article class="guide">
+{{{main}}}
+
+  <!-- CODELAB CTAs -->
+  <div class="caps-heading">Codelabs</div>
+  <h2>See it in action</h2>
+  <p>
+    Learn more and put this guide into action:
+  </p>
+  {{#each codelabs}}
+  <div class="codelab-cta">
+    <span class="codelab-cta__title">{{title}}</span>
+    <a href="codelabs/{{name}}" class="button button-flat">
+      Start
+    </a>
+  </div>
+  {{/each}}
+</article>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar__container">
+    <div class="sidebar__panel">
+      <h2 class="sidebar__title" slot="trigger">Average Impact</h2>
+      <div class="sidebar__content" slot="panel">
+        <span class="chip-set">
+          <div class="chip">
+            <span class="chip__text">{{impact}}</span>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="sidebar__panel">
+      <h2 class="sidebar__title" slot="trigger">Compatibility</h2>
+      <div class="sidebar__content" slot="panel">
+        <web-browser-compat id="compat"></web-browser-compat>
+      </div>
+    </div>
+    <div class="sidebar__panel">
+      <h2 class="sidebar__title" slot="trigger">Codelabs</h2>
+      <div class="sidebar__content" slot="panel">
+        {{#each codelabs}}
+          <div class="codelab-cta codelab-cta--sidebar">
+            <a class="codelab-cta__title codelab-cta--sidebar__title" href="codelabs/{{name}}">
+              {{title}}
+            </a>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</aside>
+
+    </div>
+  </div>
+</main>
+
+<!-- CALL TO ACTION: MARK COMPLETE -->
+<div class="cta-mark-complete">
+  <h2 class="cta-mark-complete__heading">
+    Ready to move on?<br>
+    Keep track of your progress.
+  </h2>
+  <button class="button button-primary">
+    Mark as complete
+  </button>
+</div>
+
+<hr>
+
+<!-- CALL TO ACTION: NEXT GUIDE -->
+<div class="cta-next-guide">
+  <div class="cta-next-guide__wrapper">
+    <div class="cta-next-guide__heading">
+      Next Guide
+    </div>
+    <a class="cta-next-guide__link" href="#">
+      Guide Name Here
+    </a>
+  </div>
+  <a href="#" class="go-back cta-next-guide__go-back">
+    Return to all guides
+  </a>
+</div>

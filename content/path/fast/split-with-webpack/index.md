@@ -1,4 +1,5 @@
 ---
+page_type: guide
 title: Reduce JavaScript payloads with code-splitting
 author: houssein
 web_lighthouse:
@@ -25,6 +26,15 @@ Well, yes - we ultimately want our users to receive all the code that we spent s
 
 Most webpages and applications are made up of many different parts. Instead of sending all the JavaScript that makes up the application as soon as the first page is loaded, we can **code-split** our bundle into multiple "pieces" (or chunks) and only send what's necessary at the very beginning.
 
+## JavaScript
+
+```js
+function foo() {
+  var x = 1;
+  console.info(`There's just some code here for a demo.`);
+}
+```
+
 ## Measure
 
 Like always, it's important to first measure how our website performs before trying to add any optimizations. Let's take a look at the current JavaScript bundle that loads when we boot up our application.
@@ -48,12 +58,3 @@ You should see an extremely useful (some say life-changing) app that helps you s
 _Wowza_. 71.2kB worth of JavaScript just to sort a few numbers. What gives?
 
 If you dive into the code in `src/index.js`, you'll notice that we're importing the `lodash` library and using one of its methods to sort our numbers. Lodash is an excellent library that provides many useful utility functions, but we're making a common mistake here. We don't have to import the entire library if we're not using most of it!
-
-1. Now, do the code [if you're using Polymer](codelabs/webpack-with-polymer).
-
-2. Now, do the code [if you're using Polymer](./codelabs/webpack-with-polymer).
-
-3. Now, do the code [if you're using Polymer](split-with-webpack/codelabs/webpack-with-polymer).
-
-4. Now, do the code [if you're using Polymer](/codelabs/webpack-with-polymer).
-
