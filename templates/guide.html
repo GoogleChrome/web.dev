@@ -31,6 +31,8 @@
       <article class="guide">
 {{{main}}}
 
+  <hr />
+
   <!-- CODELAB CTAs -->
   <div class="caps-heading">Codelabs</div>
   <h2>See it in action</h2>
@@ -40,7 +42,7 @@
   {{#each codelabs}}
   <div class="codelab-cta">
     <span class="codelab-cta__title">{{title}}</span>
-    <a href="{{../name}}/{{name}}" class="button button-flat">
+    <a href="{{href}}" class="button button-flat">
       Start
     </a>
   </div>
@@ -71,7 +73,7 @@
       <div class="sidebar__content" slot="panel">
         {{#each codelabs}}
           <div class="codelab-cta codelab-cta--sidebar">
-            <a class="codelab-cta__title codelab-cta--sidebar__title" href="{{../name}}/{{name}}">
+            <a class="codelab-cta__title codelab-cta--sidebar__title" href="{{href}}">
               {{title}}
             </a>
           </div>
