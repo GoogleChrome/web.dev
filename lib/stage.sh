@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# This file helps Googlers deploy web.dev to the staging server. If you don't
+# work at Google, this file won't help you. Sorry!
+
 set -eu
 CLIENT="devsite--web--stage"
 
