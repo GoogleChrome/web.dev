@@ -1,11 +1,8 @@
 ---
-page_type: codelab
-glitch_id: code-splitting-starter
 title: Code-splitting
 author: houssein
-web_lighthouse:
-- bootup-time
-wf_blink_components: N/A
+page_type: glitch
+glitch: code-splitting-starter
 ---
 
 # Code-splitting
