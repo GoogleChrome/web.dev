@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: Reduce JavaScript payloads with code-splitting
+title: Testing How-To Write a Guide
 author: houssein
 web_lighthouse:
 - aria-allowed-attr
