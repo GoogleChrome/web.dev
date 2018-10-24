@@ -25,15 +25,15 @@ improve page load times.
 Lighthouse displays a failed audit if it detects any CSS or JS resources on your
 page that can be minified.
 
-![image](reduce-network-payloads-using-text-compression-1.png)
+![image](./reduce-network-payloads-using-text-compression-1.png)
 
-![image](reduce-network-payloads-using-text-compression-2.png)
+![image](./reduce-network-payloads-using-text-compression-2.png)
 
 Lighthouse: Minify CSS and JavaScript audits
 
 It also audits for any uncompressed assets.
 
-![image](reduce-network-payloads-using-text-compression-3.png)
+![image](./reduce-network-payloads-using-text-compression-3.png)
 
 Lighthouse: Enable text compression
 
