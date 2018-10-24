@@ -7,5 +7,6 @@ topics:
     - discover-performance-opportunities-with-lighthouse
 - title: Optimizing your JavaScript
   guides:
-    - code-splitting
+    - reduce-javascript-payloads-with-code-splitting
+    - reduce-network-payloads-using-text-compression
     - test-guide
