@@ -4,6 +4,7 @@ topics:
 - title: Measure your site’s performance
   guides:
     - understand-key-performance-metrics
+    - discover-performance-opportunities-with-lighthouse
 - title: Optimizing your JavaScript
   guides:
     - code-splitting
