@@ -9,4 +9,5 @@ topics:
   guides:
     - reduce-javascript-payloads-with-code-splitting
     - reduce-network-payloads-using-text-compression
+    - serve-modern-code-to-modern-browsers
     - test-guide
