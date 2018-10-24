@@ -31,5 +31,5 @@ Demo instructions:
 </div>
 
 <div><web-todo-list>
-{% include "./_allguides.html" %}
+
 </web-todo-list></div>
