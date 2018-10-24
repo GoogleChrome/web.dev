@@ -1,6 +1,9 @@
 topics:
 
 # Topic containing several guides
+- title: Measure your site’s performance
+  guides:
+    - understand-key-performance-metrics
 - title: Optimizing your JavaScript
   guides:
     - code-splitting
