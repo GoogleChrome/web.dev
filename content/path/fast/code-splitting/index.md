@@ -10,7 +10,7 @@ wf_blink_components: N/A
 # Reduce JavaScript payloads with code-splitting
 
 Nobody likes waiting.
-**[Over 50% of users will abandon a website if it takes longer than 3 seconds to load**](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/).
+**[Over 50% of users will abandon a website if it takes longer than 3 seconds to load](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/)**.
 
 ![Cookie monster, tapping his fingers on a desk. Waiting for something.](./cookie-monster.gif)
 
@@ -32,7 +32,7 @@ parsed and compiled, which will in faster page load times.
 
 [webpack](https://webpack.js.org/), the most widely used module bundler, allows
 you to split your bundles using
-[dynamic import_s_](https://developers.google.com/web/updates/2017/11/dynamic-import).
+[dynamic imports](https://developers.google.com/web/updates/2017/11/dynamic-import).
 For example, consider the following code snippet that shows an example of a
 `someFunction `method that gets fired when a form is submitted.
 
@@ -79,7 +79,7 @@ Although the previous code snippet is a simple example, lazy loading third party
 dependencies is not a common pattern in larger applications. Usually, third
 party dependencies are split into a separate vendor bundle that can be cached
 since they don't update as often. You can read more about how the
-**[SplitChunksPlugin**](https://webpack.js.org/plugins/split-chunks-plugin/) can
+**[SplitChunksPlugin](https://webpack.js.org/plugins/split-chunks-plugin/)** can
 help you do this.
 
 Splitting on the route or component level when using a client-side framework is
