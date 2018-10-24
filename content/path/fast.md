@@ -24,7 +24,7 @@ Slow loading sites also negatively impact publishers. In our new study, "The Nee
 * Optimize Images
 * Optimize Web Fonts
 
-<<fast/_guidelist.md>>
+{% include "./fast/_guidelist.html" }
 
 ## Recommended next steps
 

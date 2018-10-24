@@ -6,10 +6,12 @@
 
 <div class="path--counter">{{this.num}}</div>
 
-## {{title}}
+<h2>{{title}}</h2>
 
+<ul>
 {{#each guides}}
-* [{{this.title}}]({{../../path}}/{{this.id}})
+<li><a href="{{href}}">{{title}}</a></li>
 {{/each}}
+</ul>
 
 {{/each}}
