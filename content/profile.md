@@ -31,5 +31,5 @@ Demo instructions:
 </div>
 
 <div><web-todo-list>
-{% include "./allguides.json" %}
+<script type="application/json">{% include "./allguides.json" %}</script>
 </web-todo-list></div>
