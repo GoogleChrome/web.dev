@@ -3,5 +3,5 @@ topics:
 # Topic containing several guides
 - title: Optimizing your JavaScript
   guides:
-    - split-with-webpack
+    - split-webpack
 
