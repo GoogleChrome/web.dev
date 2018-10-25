@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: Reduce JavaScript Payloads with code-splitting
+title: Reduce JavaScript payloads with code-splitting
 author: houssein
 web_lighthouse:
 - bootup-time
