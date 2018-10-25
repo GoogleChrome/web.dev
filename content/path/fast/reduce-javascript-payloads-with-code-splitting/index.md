@@ -12,7 +12,7 @@ wf_blink_components: N/A
 Nobody likes waiting.
 **[Over 50% of users will abandon a website if it takes longer than 3 seconds to load](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/)**.
 
-![Cookie monster, tapping his fingers on a desk. Waiting for something.](./cookie-monster.gif)
+![Cookie monster, tapping his fingers on a desk. Waiting for something.](./reduce-javascript-payloads-with-code-splitting-1.gif)
 
 Sending large JavaScript payloads will impact the speed of your site
 significantly. Instead of shipping all the JavaScript to your user as soon as
@@ -24,7 +24,7 @@ multiple "pieces" and only send what's necessary at the very beginning.
 Lighthouse displays a failed audit when a significant amount of time is taken to
 execute all the JavaScript on a page. 
 
-![A failing Lighthouse audit showing scripts taking too long to execute.](./lh-audit.png)
+![A failing Lighthouse audit showing scripts taking too long to execute.](./reduce-javascript-payloads-with-code-splitting-2.png)
 
 Split the JS bundle to only send the code needed for the initial route when the
 user loads an application. This minimizes the amount of script that needs to be
