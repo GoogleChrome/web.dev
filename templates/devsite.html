@@ -1,10 +1,7 @@
 <html devsite>
   <head>
-{{#if title}}
-<title>{{title}}</title>
-{{/if}}
 {{#each meta}}
-<meta name="{{name}}" value="{{value}}" />
+<meta name="{{@key}}" value="{{this}}" />
 {{/each}}
   </head>
   <body>
