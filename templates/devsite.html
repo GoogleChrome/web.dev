@@ -1,5 +1,10 @@
 <html devsite>
   <head>
+{{#if title}}
+<title>{{title}}</title>
+{{else}}
+<meta name="no_page_title" value="true" />
+{{/if}}
 {{#each meta}}
 <meta name="{{@key}}" value="{{this}}" />
 {{/each}}
