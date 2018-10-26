@@ -1,0 +1,86 @@
+<header class="feature">
+  <div class="container">
+    <div class="row">
+
+<div class="feature-right">
+  <!-- nb. feature image appears before text for mobile view -->
+</div>
+<div class="feature-left">
+  <div>
+    <h1>{{title}}</h1>
+    <p>{{blurb}}</p>
+    <button class="button button-primary">Resume</button>
+  </div>
+</div>
+
+    </div>
+  </div>
+</header>
+
+<div class="path-landing-page">
+  <section>
+    <div class="container">
+      <div class="row">
+  <article class="path-intro">
+    <h2>Overview</h2>
+    {{{overview}}}
+  </article>
+  <article class="path-learn">
+    <h2>What you'll learn</h2>
+    <ul>
+  {{#each topics}}
+  <li>
+    <div class="tick" aria-hidden="true">done</div>
+    <div>{{title}}</div>
+  </li>
+  {{/each}}
+    </ul>
+  </article>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="row">
+  {{#each topics}}
+  <!-- TOPIC -->
+  <div class="topic">
+    <div class="title">
+      <h2>{{title}}</h2>
+      <a href="#" class="button button-flat button-justify-right">
+        Start
+      </a>
+    </div>
+
+    <!-- GUIDES FOR TOPIC  -->
+    <ul class="guides">
+  {{#each guides}}
+  <li>
+    <div class="marker" aria-hidden="true"></div>
+    <a href="{{href}}">
+      {{title}}
+    </a>
+    {{#if codelabs}}
+    <input type="radio" name="artifacts-open" id="guides__{{id}}" class="artifacts-control" value="{{id}}" />
+    <label for="guides__{{id}}">Toggle</label>
+
+    <!-- ARTIFACTS FOR TOPIC -->
+    <div class="artifacts">
+      <h3>Codelabs</h3>
+      <ul>
+  {{#each codelabs}}
+  <li>{{title}}</li>
+  {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+  </li>
+  {{/each}}
+    </ul>
+  </div>
+  {{/each}}
+      </div>
+    </div>
+  </main>
+</div>
