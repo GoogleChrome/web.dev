@@ -2,12 +2,7 @@
 page_type: guide
 title: Apply instant loading with the PRPL pattern
 author: houssein
-web_lighthouse:
-- uses-rel-preload
-- render-blocking-resources
-- total-byte-weight
-- bootup-time
-- offscreen-images
+web_lighthouse: N/A
 wf_blink_components: N/A
 ---
 
