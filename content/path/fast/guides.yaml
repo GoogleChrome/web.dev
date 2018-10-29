@@ -18,3 +18,4 @@ topics:
     - reduce-network-payloads-using-text-compression
     - serve-modern-code-to-modern-browsers
     - apply-instant-loading-with-prpl
+    - preload-critical-assets
