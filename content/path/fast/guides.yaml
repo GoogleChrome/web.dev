@@ -8,4 +8,5 @@ topics:
 - title: Optimizing your JavaScript
   guides:
     - code-splitting
+    - apply-instant-loading-with-prpl
     - test-guide
