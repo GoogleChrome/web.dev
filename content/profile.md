@@ -1,5 +1,6 @@
 ---
 title: Lighthouse
+full_width: true
 ---
 
 Review your Lighthouse audit below and see detailed guidance on how to improve it.

@@ -1,5 +1,12 @@
-topics:
+title: Fast Load Times
+blurb: Learn how to guarantee your site loads quickly.
+overview: |
+    Slow loading sites frustrate users. Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
 
+    _"53% of mobile site visits are abandoned if pages take longer than 3 seconds to load."_
+    - The Need for Mobile Speed.
+
+topics:
 # Topic containing several guides
 - title: Measure your site’s performance
   guides:
@@ -7,6 +14,7 @@ topics:
     - discover-performance-opportunities-with-lighthouse
 - title: Optimizing your JavaScript
   guides:
-    - code-splitting
+    - reduce-javascript-payloads-with-code-splitting
+    - reduce-network-payloads-using-text-compression
+    - serve-modern-code-to-modern-browsers
     - apply-instant-loading-with-prpl
-    - test-guide

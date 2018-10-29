@@ -28,8 +28,8 @@ performance metric marks a different stage in page load and user interaction:
 
 ![A timeline of key performance metrics in order: FCP, FMP, First CPU Idle, Time to Interactive.](./understand-metrics.jpg)
 
-				Image greatly ‘inspired' by Philip Walton's
-[First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay).  
+_Image greatly ‘inspired' by Philip Walton's
+[First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay)_.  
 As you learn about each metric individually, remember they share one common
 goal: users can see your content and interact with it as fast as possible.
 
