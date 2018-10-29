@@ -1,3 +1,6 @@
 topics:
 
-# currently empty
+# Topic containing several guides
+- title: Optimize content for search engines
+  guides:
+    - how-search-works
