@@ -4,3 +4,4 @@ topics:
 - title: Optimize content for search engines
   guides:
     - how-search-works
+    - pass-lighthouse-seo-audit
