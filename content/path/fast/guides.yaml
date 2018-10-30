@@ -16,6 +16,7 @@ topics:
   guides:
     - reduce-javascript-payloads-with-code-splitting
     - reduce-network-payloads-using-text-compression
+    - remove-unused-code
     - serve-modern-code-to-modern-browsers
     - apply-instant-loading-with-prpl
     - preload-critical-assets
