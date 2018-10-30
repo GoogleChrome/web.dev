@@ -22,3 +22,4 @@ topics:
 - title: Optimize your images
   guides:
     - use-imagemin-to-compress-images
+    - replace-gifs-with-videos
