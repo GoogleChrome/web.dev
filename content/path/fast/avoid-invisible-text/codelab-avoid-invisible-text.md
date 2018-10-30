@@ -7,8 +7,7 @@ glitch: font-observer
 
 # Avoid flash of invisible text
 
-This code lab shows you how to display text immediately using [Font Face
-Observer](https://github.com/bramstein/fontfaceobserver).
+This code lab shows you how to display text immediately using [Font Face Observer](https://github.com/bramstein/fontfaceobserver).
 
 1. Add Font Face Observer
 
@@ -19,8 +18,11 @@ file has been added to this project for you, so you don't need to add it
 separately. But you do need to add a link to that file in your main page.
 
 1. Add a script tag for `fontfaceobserver.js` to the body of your `index.html`:
+ 
+```html
+<script src="fontfaceobserver.js" type="text/javascript"></script>
+```
 
-    <script src="fontfaceobserver.js" type="text/javascript"></script>
 ## 2. Use Font Face Observer
 
 ### Create Observers
@@ -30,14 +32,16 @@ separately. But you do need to add a link to that file in your main page.
 1. Add the following script after the `fontfaceobserver.js` script. This creates
 observers for the "Pacifico" and "Roboto" font families:
 
-    <script type="text/javascript">
-    var pacificoObserver = new FontFaceObserver('Pacifico');
-    var robotoObserver = new FontFaceObserver('Roboto');
-    </script>
+```html
+<script type="text/javascript">
+var pacificoObserver = new FontFaceObserver('Pacifico');
+var robotoObserver = new FontFaceObserver('Roboto');
+</script>
+```
 
 If you're ever unsure what font face observers you need to create, just look for
 the "`font-family`" declarations in your CSS. Pass the font-family name to
-FontFaceObserver(). There is no need to create a font observer for
+`FontFaceObserver()`. There is no need to create a font observer for
 [fallback fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#%3Cgeneric-name%3E).
 
 <table>
@@ -93,17 +97,19 @@ just declared:
 
 Your script should now look like this:
 
-    <script type="text/javascript">
-    var pacificoObserver = new FontFaceObserver('Pacifico');
-    var robotoObserver = new FontFaceObserver('Roboto');
+```html
+<script type="text/javascript">
+var pacificoObserver = new FontFaceObserver('Pacifico');
+var robotoObserver = new FontFaceObserver('Roboto');
 
-    Promise.all([
-    pacificoObserver.load(),
-    robotoObserver.load()
-    ]).then(function(){
-    /* Do things */
-    });
-    </script>
+Promise.all([
+pacificoObserver.load(),
+robotoObserver.load()
+]).then(function(){
+/* Do things */
+});
+</script>
+```
 
 ### Apply ‘fonts-loaded' class
 
@@ -120,17 +126,19 @@ could end up with a class like "your-existing-classfonts-loaded".)
 
 Your completed script should look like this:
 
-    <script type="text/javascript">
-    var pacificoObserver = new FontFaceObserver('Pacifico');
-    var robotoObserver = new FontFaceObserver('Roboto');
+```html
+<script type="text/javascript">
+var pacificoObserver = new FontFaceObserver('Pacifico');
+var robotoObserver = new FontFaceObserver('Roboto');
 
-    Promise.all([
-    pacificoObserver.load(),
-    robotoObserver.load()
-    ]).then(function(){
-    document.documentElement.className += " fonts-loaded";
-    });
-    </script>
+Promise.all([
+pacificoObserver.load(),
+robotoObserver.load()
+]).then(function(){
+document.documentElement.className += " fonts-loaded";
+});
+</script>
+```
 
 ## Update CSS
 
