@@ -19,9 +19,9 @@ separately. But you do need to add a link to that file in your main page.
 
 1. Add a script tag for `fontfaceobserver.js` to the body of your `index.html`:
  
-    ```html
-    <script src="fontfaceobserver.js" type="text/javascript"></script>
-    ```
+```html
+<script src="fontfaceobserver.js" type="text/javascript"></script>
+```
 
 ## 2. Use Font Face Observer
 
@@ -32,12 +32,12 @@ separately. But you do need to add a link to that file in your main page.
 1. Add the following script after the `fontfaceobserver.js` script. This creates
 observers for the "Pacifico" and "Roboto" font families:
 
-    ```html
-    <script type="text/javascript">
-    var pacificoObserver = new FontFaceObserver('Pacifico');
-    var robotoObserver = new FontFaceObserver('Roboto');
-    </script>
-    ```
+```html
+<script type="text/javascript">
+var pacificoObserver = new FontFaceObserver('Pacifico');
+var robotoObserver = new FontFaceObserver('Roboto');
+</script>
+```
 
 If you're ever unsure what font face observers you need to create, just look for
 the "`font-family`" declarations in your CSS. Pass the font-family name to
@@ -97,19 +97,19 @@ just declared:
 
 Your script should now look like this:
 
-    ```html
-    <script type="text/javascript">
-    var pacificoObserver = new FontFaceObserver('Pacifico');
-    var robotoObserver = new FontFaceObserver('Roboto');
+```html
+<script type="text/javascript">
+var pacificoObserver = new FontFaceObserver('Pacifico');
+var robotoObserver = new FontFaceObserver('Roboto');
 
-    Promise.all([
-    pacificoObserver.load(),
-    robotoObserver.load()
-    ]).then(function(){
-    /* Do things */
-    });
-    </script>
-    ```
+Promise.all([
+pacificoObserver.load(),
+robotoObserver.load()
+]).then(function(){
+/* Do things */
+});
+</script>
+```
 
 ### Apply ‘fonts-loaded' class
 
@@ -126,19 +126,19 @@ could end up with a class like "your-existing-classfonts-loaded".)
 
 Your completed script should look like this:
 
-    ```html
-    <script type="text/javascript">
-    var pacificoObserver = new FontFaceObserver('Pacifico');
-    var robotoObserver = new FontFaceObserver('Roboto');
+```html
+<script type="text/javascript">
+var pacificoObserver = new FontFaceObserver('Pacifico');
+var robotoObserver = new FontFaceObserver('Roboto');
 
-    Promise.all([
-    pacificoObserver.load(),
-    robotoObserver.load()
-    ]).then(function(){
-    document.documentElement.className += " fonts-loaded";
-    });
-    </script>
-    ```
+Promise.all([
+pacificoObserver.load(),
+robotoObserver.load()
+]).then(function(){
+document.documentElement.className += " fonts-loaded";
+});
+</script>
+```
 
 ## Update CSS
 
