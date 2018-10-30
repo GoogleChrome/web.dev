@@ -27,6 +27,8 @@ topics:
     - use-imagemin-to-compress-images
     - replace-gifs-with-videos
     - use-lazysizes-to-lazyload-images
+    - serve-responsive-images
+    - serve-images-with-correct-dimensions
 - title: Optimize Web Fonts
   guides:
     - avoid-invisible-text
