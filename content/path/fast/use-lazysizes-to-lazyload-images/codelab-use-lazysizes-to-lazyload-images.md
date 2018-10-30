@@ -15,7 +15,7 @@ Images that are offscreen during the initial pageload are ideal candidates for t
 
 ## 1. Add the LazySizes script to the page
 
-☞  Add the following `<script>` tag to `index.html`:
+1.  Add the following `<script>` tag to `index.html`:
 
 ```html
 <script src="lazysizes.min.js" async></script>
@@ -27,7 +27,7 @@ This is the LazySizes script which does most of the work for us :) It will intel
 
 ## 2. Indicate the images you want to lazy load
 
-☞  Add the class "`lazyload`" to images you want to lazy load & change their `src` attribute to `data-src`.
+1.  Add the class "`lazyload`" to images you want to lazy load & change their `src` attribute to `data-src`.
 
 For example, the `<image>` tag for flower3.png would now look like this:
 
@@ -43,15 +43,15 @@ Note: You may be wondering why you need to change the `src` attribute to `data-s
 
 That's it! If you want to see the changes you just made in action, you can follow these steps:
 
-☞  Click on the "Show Live" button to view the live version of the your Glitch.
+1. Click on the "Show Live" button to view the live version of the your Glitch.
 
 <img src="./show-live.png" width="140" alt="The show live button">
 
-☞  Open the console and find the images that you just added. You should find that their classes change from "lazyload" to "lazyloaded" as you scroll down the page.
+1.  Open the console and find the images that you just added. You should find that their classes change from "lazyload" to "lazyloaded" as you scroll down the page.
 
 <img src="./lazyload-console.png" style="display: block" alt="Images being lazy loaded">
 
-☞  You can also watch the network panel to see the image files load individually as you scroll down the page.
+1.  You can also watch the network panel to see the image files load individually as you scroll down the page.
 
 <img src="./lazysizes-waterfall.png" alt="Images being lazy loaded">
 
@@ -59,10 +59,10 @@ That's it! If you want to see the changes you just made in action, you can follo
 
 Lastly, it's a good idea to use Lighthouse to verify the changes that you just made. Lighthouse's "Defer offscreen images" performance audit will let you know whether you've forgotten to add lazy loading to any offscreen images.
 
-☞  Click on the "Show Live" button to view the live version of the your Glitch.
+1.  Click on the "Show Live" button to view the live version of the your Glitch.
  <img src="./show-live.png" width="140" style="display: block" alt="The show live button">
 
-☞  Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Defer offscreen images" audit was passed.
+1.  Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Defer offscreen images" audit was passed.
 
 <img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 
