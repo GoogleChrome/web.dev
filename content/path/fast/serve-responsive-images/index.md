@@ -76,30 +76,11 @@ images.
 Specify multiple image versions and the browser will choose the best one to
 use:
 
-<table>
-<thead>
-<tr>
-<th><strong>Before</strong></th>
-<th><strong>After</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p><pre>
-<img src="flower-large.jpg">
-</pre></p>
-
-</td>
-<td><p><pre>
-<img src="flower-large.jpg"
+| Before  | After |
+|---------|----------------|
+| `<img src="flower-large.jpg">` | `<img src="flower-large.jpg"
      srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw">
-</pre></p>
-
-</td>
-</tr>
-</tbody>
-</table>
+     sizes="50vw">` |
 
 The `<img>` tag's
 `[src](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-src)`,
@@ -109,22 +90,10 @@ and
 attributes all interact to achieve this end result.
 
 ### The "src" attribute
-
-<table>
-<thead>
-<tr>
-<th><p><pre>
-<img src="flower-large.jpg"
+ .       
+`<img src="flower-large.jpg"
      srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw">
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+     sizes="50vw">`
 
 The src attribute makes this code work for browsers that don't
 [support](https://caniuse.com/#search=srcset) the "`srcset`" and "`sizes`"
@@ -137,21 +106,9 @@ well on all device sizes.
 
 ### The "srcset" attribute
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
-<img src="flower-large.jpg"
+`<img src="flower-large.jpg"
      srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw">
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+     sizes="50vw">`
 
 The "`srcset`" attribute is a comma-separated list of image filenames and their
 width or density descriptors.
@@ -179,21 +136,9 @@ density_](https://en.wikipedia.org/wiki/Pixel_density).
 
 ### The "sizes" attribute
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
-<img src="flower-large.jpg"
+`<img src="flower-large.jpg"
      srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw">
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+     sizes="50vw">`
 
 The sizes attribute tells the browser how wide the image will be when it is
 displayed. However, the sizes attribute has no effect on display size - you
