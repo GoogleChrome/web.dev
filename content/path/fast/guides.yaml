@@ -6,6 +6,8 @@ overview: |
     _"53% of mobile site visits are abandoned if pages take longer than 3 seconds to load."_
     - The Need for Mobile Speed.
 
+order: 1
+
 topics:
 # Topic containing several guides
 - title: Measure your site’s performance

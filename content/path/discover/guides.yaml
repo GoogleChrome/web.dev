@@ -2,9 +2,9 @@ title: Discover
 blurb: Learn how to make your site awesomely discoverable.
 overview: |
 
+order: 2
 
 topics:
-
 # Topic containing several guides
 - title: Optimize content for search engines
   guides:
