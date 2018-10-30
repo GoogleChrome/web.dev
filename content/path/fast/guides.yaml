@@ -12,10 +12,13 @@ topics:
   guides:
     - understand-key-performance-metrics
     - discover-performance-opportunities-with-lighthouse
-- title: Optimizing your JavaScript
+- title: Optimize your JavaScript
   guides:
     - reduce-javascript-payloads-with-code-splitting
     - reduce-network-payloads-using-text-compression
     - serve-modern-code-to-modern-browsers
     - apply-instant-loading-with-prpl
     - preload-critical-assets
+- title: Optimize your images
+  guides:
+    - use-imagemin-to-compress-images
