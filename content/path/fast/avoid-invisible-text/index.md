@@ -5,6 +5,7 @@ author: khempenius
 web_lighthouse:
 - font-display
 wf_blink_components: N/A
+---
 
 # Avoid invisible text during font loading
 

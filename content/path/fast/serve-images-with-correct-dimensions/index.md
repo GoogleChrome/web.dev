@@ -4,6 +4,7 @@ title: Serve images with correct dimensions
 author: khempenius
 web_lighthouse: N/A
 wf_blink_components: N/A
+---
 
 # Serve images with correct dimensions
 

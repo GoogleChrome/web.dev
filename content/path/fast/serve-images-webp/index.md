@@ -5,6 +5,7 @@ author: khempenius
 web_lighthouse:
 - uses-webp-images
 wf_blink_components: N/A
+---
 
 # Use WebP Images
 

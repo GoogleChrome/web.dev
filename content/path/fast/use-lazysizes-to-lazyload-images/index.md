@@ -5,6 +5,7 @@ author: khempenius
 web_lighthouse:
 - offscreen-images
 wf_blink_components: N/A
+---
 
 # Use lazysizes to lazyload images
 

@@ -5,6 +5,7 @@ author: khempenius
 web_lighthouse:
 - uses-responsive-images
 wf_blink_components: N/A
+---
 
 # Serve Responsive Images
 
