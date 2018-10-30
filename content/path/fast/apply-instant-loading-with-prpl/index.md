@@ -8,7 +8,7 @@ wf_blink_components: N/A
 
 # Apply instant loading with the PRPL pattern
 
-![image](./prpl-pug.png)
+![image](./prpl-pug.gif)
 
 GIF Source: [Frank Macchia](https://frankmacchia.blogspot.com/)
 
