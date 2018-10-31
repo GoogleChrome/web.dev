@@ -1,0 +1,13 @@
+title: Install
+blurb: Learn how to make your site installable on users' devices.
+overview: |
+
+order: 6
+
+topics:
+# Topic containing several guides
+- title: Make it installable
+  guides:
+    - discover-installable
+    - add-manifest
+
