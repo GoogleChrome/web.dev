@@ -10,7 +10,7 @@ wf_blink_components: N/A
 
 A Progressive Web App can run in a browser tab or it can be installed on the users device and run like other installed apps. Once installed, it's launched from the Start menu or app launcher, and run in an app window, without an address bar or tabs. App windows make it really easy to switch between apps using an app switcher or a keyboard shortcut such as alt-tab.
 
-![image](insert_image_url_here)
+![image](./hero.png)
 
 ## The criteria
 
@@ -51,7 +51,7 @@ Lighthouse is the easiest way to test to see if your Progressive Web App meets C
 
 Run Lighthouse by opening the PWA you want to test in Chrome. Next, open DevTools and switch to the Audits panel. Check to ensure the "Progressive Web App" audit is checked, then run the audit.
 
-![image](insert_image_url_here)
+![image](./lighthouse.png)
 
 In the results panel, scroll down to the Progressive Web App section, and review the audits. The key audits to check are:
 
