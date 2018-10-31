@@ -106,15 +106,17 @@
 
 <!-- CALL TO ACTION: NEXT GUIDE -->
 <div class="cta-next-guide">
+  {{#if next}}
   <div class="cta-next-guide__wrapper">
     <div class="cta-next-guide__heading">
       Next Guide
     </div>
-    <a class="cta-next-guide__link" href="#">
-      Guide Name Here
+    <a class="cta-next-guide__link" href="{{next.href}}">
+      {{next.title}}
     </a>
   </div>
-  <a href="#" class="go-back cta-next-guide__go-back">
+  {{/if}}
+  <a href="{{pathHref}}" class="go-back cta-next-guide__go-back">
     Return to all guides
   </a>
 </div>
