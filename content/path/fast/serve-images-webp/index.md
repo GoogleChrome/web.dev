@@ -100,46 +100,56 @@ The
 and `<img>` tags, including how they are ordered relative to each other, all
 interact to achieve this end result.
 
-Tag         | Role                
-------------|---------------------
-`<picture>` |
-: The `<picture>` tag provides a wrapper for zero or more `<source>` tags and
-: one `<img>` tag.
-`<source>`  |
-: The `<source>` tag specifies a media resource. The browser uses the first
-: listed source that's in a format it supports. If the browser does not support
-: any of the formats listed in the `<source>` tags, it falls back to loading
-: the image specified by the `<img>` tag.
-:
-: **Gotchas\:**
-:
-: * The <source> tag for the "preferred" image format (in this case that is
-:   WebP) should be listed first, before other `<source>` tags.
-: * The value of the ‘type' attribute should be the MIME type corresponding to
-:   the image format. An image's [MIME type](https\://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types)
-:   and its file extension are often similar, but they aren't necessarily the
-:   same thing (e.g. ".jpg" vs. "image/jpeg").
-`<img>`     |
-
-<!--
-<tr>
-<td><img></td>
-<td>The <img> tag is what makes this code work on browsers that don't support
-the <picture> tag.<br>
-<br>
-If a browser does not support the <picture> tag, it will ignore the tags it
-doesn't support. Thus, it only "sees" the <img src="flower.jpg"> tag and
-loads that image.<br>
-  <br>
-<strong>Gotchas:</strong><br>
-✔️The <img> tag should always be included, and it should always be
-listed last, after all <source> tags.<br>
-✔️The resource specified by the <img> tag should be in a universally
-supported format (e.g. JPEG), so it can be used as a fallback.</td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Tag</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><pre>&lt;picture&gt;</pre></th>
+      <td>
+<p>The <pre>&lt;picture&gt;</pre> tag provides a wrapper for zero or more
+<pre>&lt;source&gt;</pre> tags and one <pre>&lt;img&gt;</pre> tag.</p>
+<p>The <pre>&lt;source&gt;</pre> tag specifies a media resource. The browser
+uses the first listed source that's in a format it supports. If the browser
+does not support any of the formats listed in the <pre>&lt;source&gt;</pre>
+tags, it falls back to loading the image specified by the <pre>&lt;img&gt;</pre>
+tag.</p>
+<h5>Gotchas</h5>
+<ul>
+  <li>The <pre>&lt;source&gt;</pre> tag for the "preferred" image format (in
+      this case that is WebP) should be listed first, before other
+      <pre>&lt;source&gt;</pre> tags.</li>
+  <li>The value of the 'type' attribute should be the MIME type corresponding to
+      the image format. An image's
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types">
+      MIME type</a> and its file extension are often similar, but they aren't
+      necessarily the same thing (e.g. ".jpg" vs. "image/jpeg").</li>
+</ul>
+      </td>
+    </tr>
+    <tr>
+      <th><pre>&lt;img&gt;</pre></th>
+      <td>
+<p>The <pre>&lt;img&gt;</pre> tag is what makes this code work on browsers that
+don't support the <pre>&lt;picture&gt;</pre> tag.</p>
+<p>If a browser does not support the <pre>&lt;picture&gt;</pre> tag, it will
+ignore the tags it doesn't support. Thus, it only "sees" the
+<pre>&lt;img src="flower.jpg"&gt;</pre> tag and loads that image.</p>
+<h5>Gotchas</h5>
+<ul>
+  <li>The <pre>&lt;img&gt;</pre> tag should always be included, and it should
+      always be listed last, after all <pre>&lt;source&gt;</pre> tags.</li>
+  <li>️The resource specified by the <pre>&lt;img&gt;</pre> tag should be in a
+      universally supported format (e.g. JPEG), so it can be used as a
+      fallback.</li>
+      </td>
+    </tr>
+  </tbody>
 </table>
--->
 
 ### Verify WebP Usage
 
