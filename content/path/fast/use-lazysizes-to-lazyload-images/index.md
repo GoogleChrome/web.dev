@@ -47,24 +47,9 @@ your pages:
     <script src="lazysizes.min.js" async></script>
 ### Update image tags
 
-<table>
-<thead>
-<tr>
-<th>Before
-</pre></p>
-
-</th>
-<th>After</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="flower.jpg"></td>
-<td><img <strong>data-src</strong>="flower.jpg"
-<strong>class="lazyload"</strong>></td>
-</tr>
-</tbody>
-</table>
+| Before  | After |
+|---------|----------------|
+| `<img src="flower.jpg">` | `<img <strong>data-src</strong>="flower.jpg" <strong>class="lazyload"</strong>>` |
 
 When you update the image tags you make two changes:
 
