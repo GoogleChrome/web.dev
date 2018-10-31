@@ -91,10 +91,7 @@ ignore the hreflang links or interpret them incorrectly.
 
 Here's a simple example of hreflang tags in HTML:
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
+```
 <!doctype html>
 <html lang="en">
   <head>
@@ -117,23 +114,9 @@ href="https://donut-be-crazy.com/recipes/maple-bar-recipe" /></code><br>
   </head>
   <body>
     <h1>Hi there!</h1>   
-    <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
-    </p>
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
   </body>
 </html>
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
 
 ## Specify language codes in the ISO 639-1 format
 

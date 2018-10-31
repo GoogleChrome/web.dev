@@ -84,10 +84,7 @@ Link: https://copycat.com/; rel=canonical
 
 Here's a full example of what the <head> should include. 
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
+```
 <!doctype html>
 <html lang="en">
   <head>
@@ -113,14 +110,7 @@ Here's a full example of what the <head> should include.
     <script src="https://button.glitch.me/button.js"></script>
   </body>
 </html>
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
 
 ## Verify
 
