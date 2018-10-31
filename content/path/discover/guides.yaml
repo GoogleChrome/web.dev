@@ -10,3 +10,12 @@ topics:
   guides:
     - how-search-works
     - pass-lighthouse-seo-audit
+    - write-descriptive-text
+    - tell-search-translated-pages-equal
+    - tell-search-engine-canonical-url
+    - remove-code-blocking-indexing
+    - fix-http-status-codes
+    - remove-browser-plugins
+    - fix-small-fonts
+    - fix-viewport-tag
+    - fix-robot-errors
