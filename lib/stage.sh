@@ -28,6 +28,12 @@ BUILD_EN=$(pwd)
 clientdir="$(p4 g4d -f "$CLIENT")"
 cd "${clientdir}/third_party/devsite/web"
 
+if [ "$#" -eq 0 ]; then
+  # TODO: We're staging the entire path. We should rsync to _delete_ content that is now gone,
+  # and g4 sync etc.
+  exit 1
+fi
+
 # Rsync all built output. Don't clobber old data, in case we haven't built
 # everything.
 rsync -rv $BUILD_EN .
