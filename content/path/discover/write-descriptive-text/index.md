@@ -52,42 +52,30 @@ page</a></td>
 Add a meta description and title for every page on your site. Here's a full
 example of what the <head> of each page should include:
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <h1>Hi there!</h1>   
-    <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
-    </p>
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-  </body>
-</html>
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <title>Mary's Maple Bar Fast-Baking Recipe</title>
+        <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- import the webpage's stylesheet -->
+        <link rel="stylesheet" href="/style.css">
+        <!-- import the webpage's javascript file -->
+        <script src="/script.js" defer></script>
+    </head>
+    <body>
+        <h1>Hi there!</h1>   
+        <p>
+        I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
+        </p>
+        <!-- include the Glitch button to show what the webpage is about and
+            to make it easier for folks to view source and remix -->
+        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+        <script src="https://button.glitch.me/button.js"></script>
+    </body>
+    </html>
 
 Here are some examples of good vs bad titles and descriptions:
 

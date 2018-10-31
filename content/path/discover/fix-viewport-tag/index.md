@@ -27,10 +27,7 @@ initial-scale".
 
 Add a viewport `<meta>` tag in the `<head>` of your page.
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
+```
 <!doctype html>
 <html lang="en">
   <head>
@@ -47,23 +44,9 @@ Add a viewport `<meta>` tag in the `<head>` of your page.
 </head>
   <body>
     <h1>Hi there!</h1>   
-    <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
-    </p>
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
   </body>
 </html>
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
 
 Here's what each key value pair does:
 
