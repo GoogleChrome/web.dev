@@ -33,6 +33,7 @@
 
   <hr />
 
+  {{#if codelabs.length}}
   <!-- CODELAB CTAs -->
   <div class="caps-heading">Codelabs</div>
   <h2>See it in action</h2>
@@ -47,6 +48,7 @@
     </a>
   </div>
   {{/each}}
+  {{/if}}
 </article>
 
 <!-- SIDEBAR -->
@@ -68,6 +70,7 @@
         <web-browser-compat id="compat"></web-browser-compat>
       </div>
     </div>
+    {{#if codelabs.length}}
     <div class="sidebar__panel">
       <h2 class="sidebar__title" slot="trigger">Codelabs</h2>
       <div class="sidebar__content" slot="panel">
@@ -80,6 +83,7 @@
         {{/each}}
       </div>
     </div>
+    {{/if}}
   </div>
 </div>
 
