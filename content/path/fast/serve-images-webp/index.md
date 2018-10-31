@@ -30,7 +30,10 @@ reducing image quality.
 ## Convert images to WebP
 
 People generally use one of the following approaches for converting their images
-to WebP: the [cwebp command-line tool](https://developers.google.com/speed/webp/docs/using) or the [Imagemin WebP plugin](https://github.com/imagemin/imagemin-webp) (npm package).
+to WebP: the
+[cwebp command-line tool](https://developers.google.com/speed/webp/docs/using)
+or the [Imagemin WebP plugin](https://github.com/imagemin/imagemin-webp) (NPM
+package).
 The Imagemin WebP plugin is generally the best choice if your project uses build
 scripts or build tools (e.g. Webpack or Gulp), whereas the CLI is a good choice
 for simple projects or if you'll only need to convert images once.
@@ -109,20 +112,20 @@ interact to achieve this end result.
   </thead>
   <tbody>
     <tr>
-      <th><pre>&lt;picture&gt;</pre></th>
+      <th><code>&lt;picture&gt;</code></th>
       <td>
-<p>The <pre>&lt;picture&gt;</pre> tag provides a wrapper for zero or more
-<pre>&lt;source&gt;</pre> tags and one <pre>&lt;img&gt;</pre> tag.</p>
-<p>The <pre>&lt;source&gt;</pre> tag specifies a media resource. The browser
+<p>The <code>&lt;picture&gt;</code> tag provides a wrapper for zero or more
+<code>&lt;source&gt;</code> tags and one <code>&lt;img&gt;</code> tag.</p>
+<p>The <code>&lt;source&gt;</code> tag specifies a media resource. The browser
 uses the first listed source that's in a format it supports. If the browser
-does not support any of the formats listed in the <pre>&lt;source&gt;</pre>
-tags, it falls back to loading the image specified by the <pre>&lt;img&gt;</pre>
-tag.</p>
+does not support any of the formats listed in the <code>&lt;source&gt;</code>
+tags, it falls back to loading the image specified by the
+<code>&lt;img&gt;</code> tag.</p>
 <h5>Gotchas</h5>
 <ul>
-  <li>The <pre>&lt;source&gt;</pre> tag for the "preferred" image format (in
+  <li>The <code>&lt;source&gt;</code> tag for the "preferred" image format (in
       this case that is WebP) should be listed first, before other
-      <pre>&lt;source&gt;</pre> tags.</li>
+      <code>&lt;source&gt;</code> tags.</li>
   <li>The value of the 'type' attribute should be the MIME type corresponding to
       the image format. An image's
       <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types">
@@ -132,18 +135,18 @@ tag.</p>
       </td>
     </tr>
     <tr>
-      <th><pre>&lt;img&gt;</pre></th>
+      <th><code>&lt;img&gt;</code></th>
       <td>
-<p>The <pre>&lt;img&gt;</pre> tag is what makes this code work on browsers that
-don't support the <pre>&lt;picture&gt;</pre> tag.</p>
-<p>If a browser does not support the <pre>&lt;picture&gt;</pre> tag, it will
+<p>The <code>&lt;img&gt;</code> tag is what makes this code work on browsers
+that don't support the <code>&lt;picture&gt;</code> tag.</p>
+<p>If a browser does not support the <code>&lt;picture&gt;</code> tag, it will
 ignore the tags it doesn't support. Thus, it only "sees" the
-<pre>&lt;img src="flower.jpg"&gt;</pre> tag and loads that image.</p>
+<code>&lt;img src="flower.jpg"&gt;</code> tag and loads that image.</p>
 <h5>Gotchas</h5>
 <ul>
-  <li>The <pre>&lt;img&gt;</pre> tag should always be included, and it should
-      always be listed last, after all <pre>&lt;source&gt;</pre> tags.</li>
-  <li>️The resource specified by the <pre>&lt;img&gt;</pre> tag should be in a
+  <li>The <code>&lt;img&gt;</code> tag should always be included, and it should
+      always be listed last, after all <code>&lt;source&gt;</code> tags.</li>
+  <li>The resource specified by the <code>&lt;img&gt;</code> tag should be in a
       universally supported format (e.g. JPEG), so it can be used as a
       fallback.</li>
       </td>
