@@ -9,7 +9,6 @@
   <div>
     <h1>{{title}}</h1>
     <p>{{blurb}}</p>
-    <button class="button button-primary">Resume</button>
   </div>
 </div>
 
@@ -49,9 +48,6 @@
   <div class="topic">
     <div class="title">
       <h2 id="topic-{{id}}">{{title}}</h2>
-      <a href="#" class="button button-flat button-justify-right">
-        Start
-      </a>
     </div>
 
     <!-- GUIDES FOR TOPIC  -->
@@ -62,20 +58,6 @@
     <a href="{{href}}">
       {{title}}
     </a>
-    {{#if codelabs.length}}
-    <input type="radio" name="artifacts-open" id="guides__{{id}}" class="artifacts-control" value="{{id}}" />
-    <label for="guides__{{id}}">Toggle</label>
-
-    <!-- ARTIFACTS FOR TOPIC -->
-    <div class="artifacts">
-      <h3>Codelabs</h3>
-      <ul>
-  {{#each codelabs}}
-  <li><a href="{{href}}">{{title}}</a></li>
-  {{/each}}
-      </ul>
-    </div>
-    {{/if}}
   </li>
   {{/each}}
     </ul>
