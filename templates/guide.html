@@ -4,25 +4,29 @@
     <!-- BREADRUMBS AND PROGRESS -->
     <div class="row">
       <div class="breadcrumbs-and-progress">
-<!--         
         <div class="breadcrumbs">
           <ul>
-            <li><a href="#">Path Name</a></li>
-            <li><a href="#">Topic Name</a></li>
+            <li><a href="{{path.href}}">{{path.title}}</a></li>
+            {{#if topic}}
+            <li><a href="{{path.href}}#topic-{{topic.id}}">{{topic.title}}</a></li>
+            {{/if}}
           </ul>
         </div>
- -->
+        {{#if topic}}
         <div class="progress">
           <div>Progress</div>
           <div class="progress__markers">
             <div>
+              <!-- <span class="progress__marker--complete progress__marker--active"></span>
               <span class="progress__marker--complete progress__marker--active"></span>
-              <span class="progress__marker--complete progress__marker--active"></span>
-              <span class="progress__marker--incomplete progress__marker--active"></span>
-              <span class="progress__marker--incomplete"></span>
+              <span class="progress__marker--incomplete progress__marker--active"></span> -->
+              {{#each topic.guides}}
+              <span class="progress__marker--incomplete" id="topic-progress__{{id}}"></span>
+              {{/each}}
             </div>
           </div>
         </div>
+        {{/if}}
       </div>
     </div>
 
