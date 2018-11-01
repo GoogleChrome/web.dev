@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "build": "./lib/index.js",
-    "stage": "./lib/index.js --stage"
+    "deploy": "./lib/index.js --deploy"
   },
   "dependencies": {
     "ansi-colors": "^3.1.0",
@@ -20,6 +20,7 @@
     "micromatch": "^3.1.10",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
+    "node-fetch": "^2.2.0",
     "slug": "^0.9.2",
     "yaml": "^1.0.0-rc.8"
   }
