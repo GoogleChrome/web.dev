@@ -23,6 +23,8 @@ can add and modify elements on the page but might be restricted from accessing
 an external JSON file. This is because of a sandbox feature called same-origin
 policy. 
 
+[image sandbox]
+
 ## Why is a sandbox necessary?
 
 Every day, users of the web download arbitrary code and execute it on their

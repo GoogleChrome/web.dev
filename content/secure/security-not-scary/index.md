@@ -19,6 +19,8 @@ or "an attacker stole credit card information from a shopping site".
 But security is something to be taken as a positive and necessary part of web
 development just like "user experience" or "accessibility".
 
+[image]
+
 In the next few guides, you'll learn what you need to know in order to keep your
 business and your users' content secure.
 
@@ -54,7 +56,7 @@ data is a common attack).
 
 When an application is not secure, many different people could be affected. 
 
-<table>
+<table class="responsive">
 <thead>
 <tr>
 <th>Impact on users</th>

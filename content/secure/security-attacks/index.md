@@ -26,10 +26,13 @@ identity to access sensitive data (masquerade attack) to flooding your server
 with massive amounts of traffic to make your application unresponsive (denial of
 service attack). 
 
+[img]
+
 Active attacks can also be done to data in transit. An attacker could modify
 your application data before it gets to a user's browser, showing modified
 information on the site or direct the user to an unintended destination. This is
 sometimes called **modification of messages**.
+[img]
 
 <div class="note">Have you ever logged into free public wifi and seen ads
 wrapped around web pages you are accessing? That's exactly what **modification
@@ -49,6 +52,7 @@ collecting information about your personal life, who your friends are, and where
 you hang out. The same thing could be done on your web traffic. An attacker
 could capture data between the browser and the server collecting usernames &
 passwords, users' browsing history, and data exchanged.  
+[image]
 
 ## Defense against attacks
 

@@ -34,6 +34,8 @@ A browser and a server can exchange data over the network using the
 communication rules between the requester and the responder, including what
 information is needed to get a resource.
 
+[image]
+
 The HTTP header is used to negotiate the type of message exchange between the
 client and the server and is used to determine access.  Both the browser's
 request and the server's response message are divided into two parts: header and
