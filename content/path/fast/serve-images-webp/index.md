@@ -7,7 +7,7 @@ web_lighthouse:
 wf_blink_components: N/A
 ---
 
-# Use WebP Images
+# Use WebP images
 
 ## Why should you care?
 
@@ -15,9 +15,9 @@ WebP images are smaller than their JPEG and PNG counterparts - usually on the
 magnitude of a 25-35% reduction in filesize. This decreases page sizes and
 improves performance.
 
-+  YouTube found that switching to WebP thumbnails resulted in [10%
+-  YouTube found that switching to WebP thumbnails resulted in [10%
     faster page loads](https://www.youtube.com/watch?v=rqXMwLbYEE4).
-+  Facebook
+-  Facebook
     [experienced](https://code.fb.com/android/improving-facebook-on-android/) a
     25-35% filesize savings for JPEGs and an 80% filesize savings for PNGs when
     they switched to using WebP.
@@ -41,7 +41,7 @@ for simple projects or if you'll only need to convert images once.
 When you convert images to WebP, you have the option to set a wide variety of
 compression settings - but for most people the only thing you'll ever need to
 care about is the quality setting. You can specify a quality level from 0
-(really bad) to 100 (really good). It's worth playing around with this find
+(worst) to 100 (best). It's worth playing around with this find
 which level is the right tradeoff between image quality and filesize for your
 needs.
 
@@ -49,15 +49,21 @@ needs.
 
 Convert a single file, using cwebp's default compression settings:
 
-    `cwebp images/flower.jpg -o images/flower.webp`
+<pre class="devsite-terminal devsite-click-to-copy">
+cwebp images/flower.jpg -o images/flower.webp
+</pre>
 
-Convert a single file, using a quality level of 50:
+Convert a single file, using a quality level of `50`:
 
-    `cwebp -q 50 images/flower.jpg -o images/flower.webp`
+<pre class="devsite-terminal devsite-click-to-copy">
+cwebp -q 50 images/flower.jpg -o images/flower.webp
+</pre>
 
 Convert all files in a directory:
 
-   `$ for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done`
+<pre class="devsite-terminal devsite-click-to-copy">
+for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done
+</pre>
 
 ### Use Imagemin
 
@@ -70,8 +76,8 @@ Here are examples of how to do that for
 [Grunt](https://glitch.com/~webp-grunt).
 
 If you are not using one of those build tools, you can use Imagemin by itself as
-a Node script. This script will convert the files in the "images" directory and
-save them in the "compressed_images" directory.
+a Node script. This script will convert the files in the `images` directory and
+save them in the `compressed_images` directory.
 
 ```js
 const imagemin = require('imagemin');
@@ -92,9 +98,18 @@ If your site only supports WebP compatible
 Otherwise, serve WebP to newer browsers and a fallback image to older
 browsers:
 
-| Before | After |
-|--------|-------|
-| <img src="flower.jpg"/> | <picture><source type="image/webp" srcset="flower.webp"><source type="image/jpeg" srcset="flower.jpg"><img src="flower.jpg"></picture> |
+**Before:**
+```
+<img src="flower.jpg"/>
+```
+**After:**
+```
+<picture>
+  <source type="image/webp" srcset="flower.webp">
+  <source type="image/jpeg" srcset="flower.jpg">
+  <img src="flower.jpg">
+</picture>
+```
 
 The
 [`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture),
@@ -102,58 +117,31 @@ The
 and `<img>` tags, including how they are ordered relative to each other, all
 interact to achieve this end result.
 
-<table>
-  <thead>
-    <tr>
-      <th>Tag</th>
-      <th>Role</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th><code>&lt;picture&gt;</code></th>
-      <td>
-<p>The <code>&lt;picture&gt;</code> tag provides a wrapper for zero or more
-<code>&lt;source&gt;</code> tags and one <code>&lt;img&gt;</code> tag.</p>
-<p>The <code>&lt;source&gt;</code> tag specifies a media resource. The browser
-uses the first listed source that's in a format it supports. If the browser
-does not support any of the formats listed in the <code>&lt;source&gt;</code>
-tags, it falls back to loading the image specified by the
-<code>&lt;img&gt;</code> tag.</p>
-<h5>Gotchas</h5>
-<ul>
-  <li>The <code>&lt;source&gt;</code> tag for the "preferred" image format (in
-      this case that is WebP) should be listed first, before other
-      <code>&lt;source&gt;</code> tags.</li>
-  <li>The value of the 'type' attribute should be the MIME type corresponding to
-      the image format. An image's
-      <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types">
-      MIME type</a> and its file extension are often similar, but they aren't
-      necessarily the same thing (e.g. ".jpg" vs. "image/jpeg").</li>
-</ul>
-      </td>
-    </tr>
-    <tr>
-      <th><code>&lt;img&gt;</code></th>
-      <td>
-<p>The <code>&lt;img&gt;</code> tag is what makes this code work on browsers
-that don't support the <code>&lt;picture&gt;</code> tag.</p>
-<p>If a browser does not support the <code>&lt;picture&gt;</code> tag, it will
-ignore the tags it doesn't support. Thus, it only "sees" the
-<code>&lt;img src="flower.jpg"&gt;</code> tag and loads that image.</p>
-<h5>Gotchas</h5>
-<ul>
-  <li>The <code>&lt;img&gt;</code> tag should always be included, and it should
-      always be listed last, after all <code>&lt;source&gt;</code> tags.</li>
-  <li>The resource specified by the <code>&lt;img&gt;</code> tag should be in a
-      universally supported format (e.g. JPEG), so it can be used as a
-      fallback.</li>
-      </td>
-    </tr>
-  </tbody>
-</table>
+### `<picture>`
 
-### Verify WebP Usage
+**Role:**
+
+The `<picture>` tag provides a wrapper for zero or more `<source>` tags and one `<img>` tag.
+
+**Gotchas:** 
+- The `<source>` tag for the "preferred" image format (in this case that is WebP) should be listed first, before other `<source>` tags.
+- The value of the `type` attribute should be the MIME type corresponding to the image format. An image's [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types) and its file extension are often similar, but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
+
+### `<img>`
+
+**Role:**
+
+The `<img>` tag is what makes this code work on browsers
+that don't support the `<picture>` tag.
+If a browser does not support the `<picture>` tag, it will
+ignore the tags it doesn't support. Thus, it only "sees" the
+`<img src="flower.jpg">` tag and loads that image.
+
+**Gotchas:**
+- The `<img>` tag should always be included, and it should always be listed last, after all `<source>` tags.
+- The resource specified by the `<img>` tag should be in a universally supported format (e.g. JPEG), so it can be used as a fallback.
+
+## Verify WebP usage
 
 Lighthouse can be used to verify that all images on your site are being served
 using WebP. Run the Lighthouse Performance Audit (Lighthouse > Options >
