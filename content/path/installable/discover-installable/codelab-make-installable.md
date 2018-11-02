@@ -14,7 +14,7 @@ and a
 [web app manifest](https://glitch.com/edit/#!/make-it-installable?path=manifest.json).
 It also has an install button that is hidden by default.
 
-Note: If you're using a Mac, you'll need to enable the `#enable-desktop-pwas`
+**Note:** If you're using a Mac, you'll need to enable the `#enable-desktop-pwas`
 flag in `chrome://flags` and restart your browser. Support for Desktop PWAs on
 Mac is planned for Chrome 72.
 
@@ -32,10 +32,7 @@ criteria for installability.
 
 Code:
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
+```
 window.addEventListener('beforeinstallprompt', (event) => {
   console.log('👍', 'beforeinstallprompt', event);
   // Stash the event so it can be triggered later.
@@ -43,14 +40,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
   // Remove the 'hidden' class from the install button container
   divInstall.classList.toggle('hidden', false);
 });
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
 
 ## Handle the install button click
 
@@ -66,10 +56,7 @@ event. Calling `prompt()` is done in the install button click handler because
 
 Code:
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
+```
 butInstall.addEventListener('click', () => {
   console.log('👍', 'butInstall-clicked');
   const promptEvent = window.deferredPrompt
@@ -89,14 +76,7 @@ butInstall.addEventListener('click', () => {
     divInstall.classList.toggle('hidden', true);
   });
 });
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
 
 ## Track the install event
 
@@ -111,21 +91,11 @@ ways of installation by listening for the `appinstalled` event.
 
 Code:
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
+```
 window.addEventListener('appinstalled', (event) => {
   console.log('👍', 'appinstalled', event);
 });
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+```
 
 ## Further reading
 
