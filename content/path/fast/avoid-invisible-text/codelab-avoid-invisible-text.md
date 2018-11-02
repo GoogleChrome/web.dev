@@ -17,7 +17,7 @@ that detects when a font loads. The
 file has been added to this project for you, so you don't need to add it
 separately. But you do need to add a link to that file in your main page.
 
-☞  Add a script tag for `fontfaceobserver.js` to the body of your `index.html`:
+- Add a script tag for `fontfaceobserver.js` to the body of your `index.html`:
  
 ```html
 <script src="fontfaceobserver.js" type="text/javascript"></script>
@@ -29,7 +29,7 @@ separately. But you do need to add a link to that file in your main page.
 
 Create an observer for each font family that it is used on the page.
 
-☞  Add the following script after the `fontfaceobserver.js` script. This creates
+- Add the following script after the `fontfaceobserver.js` script. This creates
 observers for the "Pacifico" and "Roboto" font families:
 
 ```html
@@ -81,7 +81,7 @@ The code for detecting a font load looks like this:
 The demo site uses two different fonts, so you need to use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" target="_blank">Promise.all()</a>
 to wait until both fonts have loaded.
 
-☞  Add this promise to your script, right below the FontFaceObservers that you
+- Add this promise to your script, right below the FontFaceObservers that you
 just declared:
 
     Promise.all([
@@ -111,7 +111,7 @@ Your script should now look like this:
 
 ### Apply ‘fonts-loaded' class
 
-☞  Replace the `/* Do things */` comment in the script with this line:
+- Replace the `/* Do things */` comment in the script with this line:
 
     document.documentElement.className += " fonts-loaded";
 
@@ -144,7 +144,7 @@ Your completed script should look like this:
 Your page should be styled to use a system font initially and custom fonts once
 the "fonts-loaded" class has been applied.
 
-☞  Update the CSS:
+- Update the CSS:
 
 <table>
 <thead>
