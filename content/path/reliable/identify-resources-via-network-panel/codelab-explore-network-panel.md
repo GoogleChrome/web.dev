@@ -33,7 +33,7 @@ navigation:
 
 ![image](./initial-navigation.png)
 
-_Note: The actual columns you see in the Network panel may be different; the
+**Note:** The actual columns you see in the Network panel may be different; the
 screenshot shows a simplified view with everything but the Name, Type, and
 Waterfall columns hidden._
 
@@ -69,8 +69,8 @@ Trigger these additional requests by clicking the **Find Me** button, and then
 
 ![image](./allow-location.png)
 
-_Note: You could also deny Geolocation permission, in which case the web app
-will fall back to a default location._
+**Note:** You could also deny Geolocation permission, in which case the web app
+will fall back to a default location.
 
 Once the web app has a location to work with, clicking on the **Find Nearby
 Wikipedia Entries** button results in several additional Network requests. You

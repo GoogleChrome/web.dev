@@ -37,14 +37,14 @@ This is good news—it means that you can continue including tags like `<img
 src="my-image.png">` in your HTML, and the browser  automatically takes care of
 HTTP caching for you, without extra effort.
 
-_Note: Developers who do need more control over the HTTP cache in their web
+**Note:** Developers who do need more control over the HTTP cache in their web
 application have an alternative—you can "drop down" a level, and manually use
 the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API),
 passing it 
 `[Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)` objects
 with specific
 `[cache](https://developer.mozilla.org/en-US/docs/Web/API/Request/cache)`
-overrides set. That's beyond the scope of this guide, though!_
+overrides set. That's beyond the scope of this guide, though!
 
 ## Response headers: configure your web server
 
@@ -153,11 +153,3 @@ the best guide out there is Jake Archibald's
 
 Fore most developers, though, just choosing between `Cache-Control: no-cache` or
 `Cache-Control: max-age=31536000` should be fine.
-
-## See it in action
-
-This codelab walks you through the steps of configuring a Node.js server running
-Express to respond to incoming HTTP requests with responses that use appropriate
-`Cache-Control` headers:
-
-+  [Respond to incoming HTTP requests codelab](./codelab-http-cache)

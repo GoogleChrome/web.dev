@@ -26,27 +26,27 @@ if you had to manage the versioning and updating of these files on your own.
 
 Precaching is driven by a list of URLs and associated versioning information for
 each URL. Taken together, this information is known as a
-**[precache manifest**](https://developers.google.com/web/tools/workbox/modules/workbox-precaching#explanation_of_the_precache_list).
+[**precache manifest**](https://developers.google.com/web/tools/workbox/modules/workbox-precaching#explanation_of_the_precache_list).
 The manifest is the "source of truth" for the state of everything meant to be in
 the precache for a given version of a web app. A precache manifest, in the
 format used by [Workbox](https://developers.google.com/web/tools/workbox/),
 looks something like:
 
-    [{
-      url: 'app.abcd1234.js'
-    }, {
-      url: 'offline.svg',
-      revision: '7836745f'
-    }, {
-      url: 'index.html',
-      revision: '518747aa'
-    }]
-
+```
+[{
+  url: 'app.abcd1234.js'
+}, {
+  url: 'offline.svg',
+  revision: '7836745f'
+}, {
+  url: 'index.html',
+  revision: '518747aa'
+}]
+```
 When the service worker is installed, three cache entries are created in the
 Cache Storage, for each of the three listed URLs. The first asset has versioning
 information already included in its URL (`app.abcd**1234**.js)`. Workbox's build
-tools can detect this and exclude a revision field. 
-
+tools can detect this and exclude a revision field.
 The other two assets do not include any versioning info in their URLs, so
 Workbox's build tools create a separate `revision` field, containing a hash of
 the local file's contents. 
@@ -59,7 +59,7 @@ assets are cached, they need to respond to outgoing requests. That requires a
 been precached, and return those cached responses reliably, bypassing the
 network in the process. Since the service worker checks the cache for responses
 (and uses those before the network), this is called a
-**[cache-first strategy**](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network).
+[**cache-first strategy**](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network).
 
 ## Efficient updates
 
@@ -89,15 +89,17 @@ event handlers. For instance, if you've made some changes to your site and
 rebuilt, your latest precache manifest might have undergone the following
 changes:
 
-    [{
-      url: 'app.abcd1234.js'
-    }, {
-      url: 'offline.svg',
-      revision: '7836745f'
-    }, {
-      url: 'index.html',
-      revision: '518747aa'
-    }]
+```
+[{
+  url: 'app.abcd1234.js'
+}, {
+  url: 'offline.svg',
+  revision: '7836745f'
+}, {
+  url: 'index.html',
+  revision: '518747aa'
+}]
+```
 
 Each of these changes tells your service worker that new requests need to be
 made to update previously cached entries (`'offline.svg'` and `'index.html'`)
@@ -139,16 +141,3 @@ manifest as well as the total size of the precache payload.
 Repeat visitors to your web app benefit in the long run from the upfront cost of
 precaching, since the ability it offers to avoid the network quickly pays for
 itself in saved bandwidth over time.
-
-## See it in action
-
-Workbox's tools integrate with most existing build processes to generate a
-precache manifest. This codelab walks you through the process of setting up and
-precaching a build using `npm` scripts:
-
-+  [Precaching with Workbox codelab](./codelab-precaching-workbox.md).
-
-> The right Workbox tool to use for precaching depends on what type of build
-process you're using.  Developers using the webpack build tool can learn more
-from reading through the
-[Workbox documentation](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin).

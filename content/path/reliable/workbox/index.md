@@ -31,9 +31,9 @@ Workbox has a
 [dozen or so library modules in total](https://developers.google.com/web/tools/workbox/modules/),
 that each handle a variety of specialized use cases. The most important modules
 determine _whether_ the service worker will respond (known as
-_[routing_](https://developers.google.com/web/tools/workbox/modules/workbox-routing)),
+[routing](https://developers.google.com/web/tools/workbox/modules/workbox-routing)),
 and _how_ it will respond (known as the
-_[caching strategy_](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)).
+[caching strategy](https://developers.google.com/web/tools/workbox/modules/workbox-strategies)).
 
 ### Build integration
 
@@ -130,17 +130,18 @@ running, featuring a `wizard` mode that will check your local development
 environment and suggest a reasonable default configuration that you could use
 moving forward:
 
-    $ workbox wizard
-    ? What is the root of your web app (i.e. which directory do you deploy)? src/
-    ? Which file types would you like to precache? css, js, html
-    ? Where would you like your service worker file to be saved? build/sw.js
-    ? Where would you like to save these configuration options? workbox-config.js
-    To build your service worker, run
+```
+$ workbox wizard
+? What is the root of your web app (i.e. which directory do you deploy)? src/
+? Which file types would you like to precache? css, js, html
+? Where would you like your service worker file to be saved? build/sw.js
+? Where would you like to save these configuration options? workbox-config.js
+```
 
-      workbox generateSW workbox-config.js
+To build your service worker, run `workbox generateSW workbox-config.js`
+as part of a build process. See https://goo.gl/fdTQBf for details.
+You can further customize your service worker by making changes to workbox-config.js. See https://goo.gl/gVo87N for details.
 
-    as part of a build process. See https://goo.gl/fdTQBf for details.
-    You can further customize your service worker by making changes to workbox-config.js. See https://goo.gl/gVo87N for details.
 
 ### Use Workbox at runtime in an existing service worker
 
@@ -152,12 +153,14 @@ case means that you won't be able to take advantage of precaching (which
 requires build-time integration), but it's great for prototyping and trying out
 different caching strategies on the fly.
 
-    // Replace 3.6.3 with the current version number of Workbox.
-    importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
+```
+// Replace 3.6.3 with the current version number of Workbox.
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 
-    workbox.routing.registerRoute(
-      new RegExp('\.png$'),
-      workbox.strategies.cacheFirst({
-        cacheName: 'images-cache',
-      })
-    );
+workbox.routing.registerRoute(
+    new RegExp('\.png$'),
+    workbox.strategies.cacheFirst({
+    cacheName: 'images-cache',
+    })
+);
+```

@@ -12,9 +12,9 @@ Node.js-based web server, running the [Express](https://expressjs.com/) serving
 framework. It will also show how to confirm that the caching behavior you expect
 is actually being applied, using the Network panel in Chrome's DevTools.
 
-_Note: While the specific instructions are tailored towards Express, the general
+**Note:** While the specific instructions are tailored towards Express, the general
 principles about choosing the correct caching headers apply to any web server
-environment._
+environment.
 
 ## Get familiar with the sample project on Glitch
 
@@ -33,12 +33,12 @@ These are the key files you will be working with in the sample project:
     corresponding to their contents. The index.html is responsible for keeping
     track of which specific versioned URL to load.
 
-_Note: In the "real world," the process of assigning hashes and updating HTML
+**Note:** In the "real world," the process of assigning hashes and updating HTML
 files to include references to the latest versioned URL would be handled by a
 build tool, like
 [webpack](https://webpack.js.org/guides/caching/#output-filenames). For the
 purposes of this codelab, assume that the hashes were generated as part of a
-build process that already took place._
+build process that already took place.
 
 ## Configure caching headers for our HTML
 
@@ -75,14 +75,14 @@ looks like:
 
 ```
 app.use(express.static('public', {
-    etag: true, // Just being explicit about the default.
-    lastModified: true,  // Just being explicit about the default.
-    setHeaders: (res, path) => {
-      if (path.endsWith('.html')) {
-        // All of the project's HTML files end in .html
-        res.setHeader('Cache-Control', 'no-cache');
-      }
-    },
+  etag: true, // Just being explicit about the default.
+  lastModified: true,  // Just being explicit about the default.
+  setHeaders: (res, path) => {
+    if (path.endsWith('.html')) {
+      // All of the project's HTML files end in .html
+      res.setHeader('Cache-Control', 'no-cache');
+    }
+  },
 }));
 
 ```
@@ -113,37 +113,37 @@ A regular expression that
 [matches those general rules](https://jex.im/regulex/#!flags=&re=%5C.%5B0-9a-f%5D%7B8%7D%5C.)
 can be expressed as `new RegExp('\\.[0-9a-f]{8}\\.')`.
 
-_Note: It helps to be as specific as possible when coming up with these rules,
+**Note:** It helps to be as specific as possible when coming up with these rules,
 to protect against future problems. A more general match, like just checking for
 the `.js` or `.css` file extension, could end up being a problem down the road
 if you end up adding in additional, unversioned JavaScript or CSS assets to your
-project._
+project.
 
 Putting this together, you can modify your setHeaders function to come up with
 something like the following:
 
 ```
 app.use(express.static('public', {
-    etag: true, // Just being explicit about the default.
-    lastModified: true,  // Just being explicit about the default.
-    setHeaders: (res, path) => {
-      const hashRegExp = new RegExp('\\.[0-9a-f]{8}\\.');
+  etag: true, // Just being explicit about the default.
+  lastModified: true,  // Just being explicit about the default.
+  setHeaders: (res, path) => {
+    const hashRegExp = new RegExp('\\.[0-9a-f]{8}\\.');
 
-      if (path.endsWith('.html')) {
-        // All of the project's HTML files end in .html
-        res.setHeader('Cache-Control', 'no-cache');
-      } else if (hashRegExp.test(path)) {
-        // If the RegExp matched, then we have a versioned URL.
-        res.setHeader('Cache-Control', 'max-age=31536000');
-      }
-    },
+    if (path.endsWith('.html')) {
+      // All of the project's HTML files end in .html
+      res.setHeader('Cache-Control', 'no-cache');
+    } else if (hashRegExp.test(path)) {
+      // If the RegExp matched, then we have a versioned URL.
+      res.setHeader('Cache-Control', 'max-age=31536000');
+    }
+  },
 }));
 ```
 
 ## Confirm the new behavior using DevTools
 
-_Note: You can get familiar with the Network panel in Chrome's DevTools by
-working through this codelab._
+**Note:** You can get familiar with the Network panel in Chrome's DevTools by
+working through this codelab.
 
 With the modifications to the static file server in place, you can check to make
 sure that the right headers are being set by visiting your web app in Glitch
@@ -169,9 +169,9 @@ made an HTTP request to the web server, using the `Last-Modified` and `ETag`
 information to see if there was any update to the HTML that it already had in
 its cache. The HTTP 304 response indicates that there is not updated HTML.
 
-_Note: `Cache-Control: no-cache` doesn't mean "never used the cached copy". It
+**Note:** `Cache-Control: no-cache` doesn't mean "never used the cached copy". It
 means "always check with the server first, and use the cached copy if there's a
-HTTP 304 response."_
+HTTP 304 response."
 
 The next two rows are for the versioned JavaScript and CSS assets. You should
 see them served with `Cache-Control: max-age=31536000`, and the HTTP status for

@@ -14,9 +14,9 @@ specific URL that your web app has loaded.
 
 ![image](./network-panel.png)
 
-_Note: This guide uses screenshots and descriptions based on Chrome's DevTools
+**Note:** This guide uses screenshots and descriptions based on Chrome's DevTools
 interface. Other browsers support similar functionality, but the overall
-interface will be different if you're not using Chrome._
+interface will be different if you're not using Chrome.
 
 ## Know what you load
 
@@ -55,10 +55,10 @@ across multiple visits to the same page. A less aggressive caching strategy is
 often appropriate for content that you've identified as being outside the
 critical loading path.
 
-_Note: Advanced techniques outside the scope of this guide, like the
+**Note:** Advanced techniques outside the scope of this guide, like the
 `[<link rel="preload">](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)`,
 add a twist to this story by giving a head start to what would otherwise be a
-late-loaded request._
+late-loaded request.
 
 ### The Name and Type columns help with the what
 
@@ -98,10 +98,3 @@ represented by the overlapping bars in the Waterfall column for `main.css` and
 `logo.svg`. Finally, you can see from the screenshot that `main.js` starts
 loading last, and it finishes loading after the other three URLs have completed
 as well. 
-
-## See it in action
-
-Screenshots and text only go so far—if you're just learning about DevTools'
-Network panel for the first time, the best way to get familiar is to try it:
-
-+  [Explore DevTools Network Panel](./codelab-explore-network-panel.md)

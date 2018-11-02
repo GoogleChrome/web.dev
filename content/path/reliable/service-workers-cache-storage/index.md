@@ -113,14 +113,6 @@ and the related
 `[async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)`/`[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)`
 syntax, before diving in.
 
-## See it in action
-
-This codelab walks through a basic, "vanilla" approach to using a service worker
-and the Cache Storage API together to enable a variety of caching techniques
-that avoid network delays as much as possible:
-
-+  [Service worker and Cache Storage API codelab](./codelab-works.md)
-
 ## Don't deploy that code... yet
 
 While they provide an important foundation, and can be used as-is, both service

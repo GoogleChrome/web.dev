@@ -66,8 +66,8 @@ specific test that is of particular interest when building a reliable web app:
 
 ![image](./responds-200-offline.png)
 
-_Note: The actual interface may differ depending on which version of Lighthouse
-you're running._
+**Note:** The actual interface may differ depending on which version of Lighthouse
+you're running.
 
 What's actually being tested here? It boils down to simulating a loss of network
 connectivity within your browser, followed by an attempt to load whichever URL

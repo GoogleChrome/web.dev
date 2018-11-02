@@ -130,14 +130,3 @@ reason, make sure that you only use it with assets that you know are unlikely to
 change. In particular, it works best for URLs that contain versioning
 information—the same sort of URLs that should also be served with a
 `Cache-Control: max-age=31536000` response header.
-
-## See it in action
-
-This codelab walks through the process of adding in runtime caching to
-complement precaching that's already in place in a sample web application. 
-
-+  [Runtime cachine with Workbox codelab](./codelab-runtime-caching.png).
-
-You'll also get a chance to learn about implementing a cache expiration strategy
-using Workbox to ensure that your runtime caches do not grow beyond a size
-you're comfortable with.
