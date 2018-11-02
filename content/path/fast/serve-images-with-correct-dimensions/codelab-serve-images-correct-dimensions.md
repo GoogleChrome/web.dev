@@ -7,14 +7,12 @@ glitch: correct-dimensions
 
 ## 1. Run Lighthouse
 
-This page is small enough that we could inspect the images by hand. However for
+This Glitch is small enough that its images could be inspected by hand. However for
 most websites, using a tool like Lighthouse to automate this is essential.
 
-1. Click on the "Show Live" button to view the live version of this Glitch.
+- Click on the "Show Live" button to view the live version of this Glitch.
 
-![image](./show-live.png)
-
-1. Run the Lighthouse performance audit (Lighthouse > Options > Performance) and
+- Run the Lighthouse performance audit (Lighthouse > Options > Performance) and
 look for the results of the "Properly Size Images" audit.
 
 ![image](./notfixed-properly-size-images.png)
@@ -25,7 +23,7 @@ The Lighthouse audit shows that both of this page's images need to be resized.
 
 Let's start at the top of the page and fix the logo image.
 
-1. Inspect `flower_logo.png` in the DevTools Elements panel.
+- Inspect `flower_logo.png` in the DevTools Elements panel.
 
 ![image](./elements-panel-logo.png)
 
@@ -36,13 +34,13 @@ This is the CSS for `flower_logo.png`:
         height: 50px;
     }
 
-The CSS width of this image is 50 pixels, so we should resize `flower_logo.png`
+The CSS width of this image is 50 pixels, so `flower_logo.png` should be resized
 to match.
 
-1. Use [ImageMagick](https://www.imagemagick.org) to resize the image to 50x50.
+- Use [ImageMagick](https://www.imagemagick.org) to resize the image to 50x50.
 (ImageMagick is a CLI tool for image editing.)
 
-$ `convert flower_logo.png -resize **50x50** flower_logo.png`
+$ `convert flower_logo.png -resize 50x50 flower_logo.png`
 
 ## 3. Fix flower_photo.jpg
 
@@ -60,9 +58,9 @@ This is the CSS for `flower_photo.jpg`:
         border: 1px solid black;
     }
 
-"50vw" tells us that the CSS width of `flower_photo.jpg` is "half the width of
+`50vw` sets the CSS width of `flower_photo.jpg` to "half the width of
 the browser."  
-(1[vw](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
+([1vw](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
 is equal to 1% the width of the browser).
 
 The ideal size for this image would depend on the device it is being viewed on,
@@ -72,7 +70,7 @@ amongst your users:
 
 ![image](./screen-resolution.png)
 
-This data shows us that 95%+ of the visitors to this site use screen resolutions
+This data indicates that 95%+ of the visitors to this site use screen resolutions
 1920 pixels wide or less.
 
 Using this information we can calculate how wide the image should be:  
@@ -85,9 +83,9 @@ should not be very noticeable.
 1. Use [ImageMagick](https://www.imagemagick.org) to resize the image to 960
 pixels wide.
 
-$ `convert flower_photo.jpg -resize **960x** flower_photo.jpg`
+$ `convert flower_photo.jpg -resize 960x flower_photo.jpg`
 
-(Note: "960x" is not a typo - it specifies a width, but not a height. The image
+(Note: `960x` is not a typo - it specifies a width, but not a height. The image
 height will be scaled in proportion to the width. This is a handy trick for when
 you only care about an image's dimensions in one direction.)
 
@@ -96,9 +94,9 @@ you only care about an image's dimensions in one direction.)
 1. Re-run the Lighthouse Performance audit to verify that you have successfully
 re-sized the images.
 
-![image](./fixed-properly-sized-images.png)
+![image](./fixed-properly-size-images.png)
 
-… And it fails! :( Why is that?
+… And it fails! Why is that?
 
 Lighthouse runs its tests on a Nexus 5x. The Nexus 5x has a 1080 x 1920 screen.
 For the Nexus 5x, the optimal size of `flower_photo.jpg` would be 460 pixels
@@ -114,4 +112,4 @@ certainly use cases where image quality is more important.
 
 The good news is that you can bypass this tradeoff altogether by using
 responsive images to serve multiple images sizes. You can learn more about this
-in this guide.
+in the [Responsive Images guide](/path/fast/serve-responsive-image).

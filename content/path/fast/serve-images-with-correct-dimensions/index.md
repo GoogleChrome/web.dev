@@ -42,84 +42,46 @@ including images:
 
 ### The "Good" Approach
 
-<table>
-<thead>
-<tr>
-<th>Image sizing uses...</th>
-<th>Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Absolute units</td>
-<td>✔ Resize the image to match the size that it is displayed at.<br>
-<br>
-The DevTools Elements panel can be used to determine what size an image is
-displayed at.<br>
-<br>
-<p><img src=./elements-panel.png></p>
+For images with sizing based on...
 
-</td>
-</tr>
-<tr>
-<td>Relative units</td>
-<td>✔ Resize the image to a size that will work across all devices.<br>
-<br>
-You may find it helpful to check your analytics data (e.g. Google
+- **Relative units**: Resize the image to a size that will work across all devices.
+
+  You may find it helpful to check your analytics data (e.g. Google
 Analytics) to see which display sizes are commonly used by your users.
-Alternatively, <a href="http://screensiz.es/">screensiz.es</a>
-provides information about the displays of many common devices.</td>
-</tr>
-</tbody>
-</table>
+Alternatively, [screensiz.es](http://screensiz.es/)
+provides information about the displays of many common devices.
+- **Absolute units**: Resize the image to match the size that it is displayed at.
+
+  The DevTools Elements panel can be used to determine what size an image is
+displayed at.
+
+![image](./elements-panel.png)
 
 ### The "Better" approach
 
-<table>
-<thead>
-<tr>
-<th>Image sizing uses...</th>
-<th>Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Absolute units</td>
-<td>✔ Use <a
-href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset">srcset</a>
-and <a
-href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes">sizes</a>
-attributes to serve different images to different display densities. (Read
-the guide <u>here</u>.)<br>
-<br>
-"Display density" refers to the fact that different displays have different
+For images with sizing based on...
+- **Absolute units:** Use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset) and [sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes) attributes to serve different images to different display densities. (Read the guide on Responsive Images [here](/path/fast/serve-responsive-images).)
+
+  "Display density" refers to the fact that different displays have different
 densities of pixels. All other things being equal, a high pixel density
-display will look sharper than a low pixel density display.<br>
-<br>
-As a result, multiple image versions are necessary if you want users to
+display will look sharper than a low pixel density display.
+
+  As a result, multiple image versions are necessary if you want users to
 experience the crispest possible images, regardless of the pixel density of
 their device. (Note: Some sites find that this difference in image quality
-matters, some find that it does not.)<br>
-<br>
-Responsive image techniques make this possible by allowing you to list
+matters, some find that it does not.)
+
+  Responsive image techniques make this possible by allowing you to list
 multiple image versions and for the device to choose the image that works
-best for it.</td>
-</tr>
-<tr>
-<td>Relative units</td>
-<td>✔ Use responsive images to serve different images to display sizes. (Read
-the guide <u>here.</u>)<br>
-<br>
-An image that works across all devices will be unnecessarily large for
-smaller devices. Responsive image techniques, specifically <a
-href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset">srcset</a>
-and <a
-href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes">sizes</a>,
-allow you to specify multiple image versions and for the device to choose
-the size that works best for it.</td>
-</tr>
-</tbody>
-</table>
+best for it.
+
+- **Relative units:** Use responsive images to serve different images to display sizes. (Read
+the guide [here](/path/fast/serve-responsive-images).)
+
+  An image that works across all devices will be unnecessarily large for
+smaller devices. Responsive image techniques, specifically [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset")
+and [sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes), allow you to specify multiple image versions and for the device to choose
+the size that works best for it.
 
 ## Resize images
 
