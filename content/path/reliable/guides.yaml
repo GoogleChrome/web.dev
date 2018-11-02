@@ -8,14 +8,14 @@ topics:
 # Topic containing several guides
 - title: How to measure network resilience
   guides:
-    - What is network reliabiity &amp; how to measure it
-    - Identify resources loaded from the network
+    - network-connections-unreliable
+    - identify-resources-via-network-panel
 - title: Learn about the options in your caching toolbox
   guides:
-    - The HTTP Cache&#58; your first line of offense
-    - Service workers &amp; the Cache Storage API
-    - Workbox&#58; your high-level service worker toolkit
+    - http-cache
+    - service-workers-cache-storage
+    - workbox
 - title: Learn how caching strategies work
   guides:
-    - Precaching with Workbox
-    - Runtime caching with Workbox
+    - precache-with-workbox
+    - runtime-caching-with-workbox
