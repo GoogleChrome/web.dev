@@ -1,12 +1,12 @@
 ---
 page_type: guide
-title: Pass the Lighthouse SEO audit
+title: How to measure Search Engine Optimization with Lighthouse
 author: ekharvey
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
 
-# Pass the Lighthouse SEO audit
+# How to measure Search Engine Optimization with Lighthouse
 
 ## Why does this matter?
 

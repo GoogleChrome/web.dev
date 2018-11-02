@@ -1,21 +1,28 @@
-title: Discoverable Content
-blurb: Learn how to make your site better discoverable in search results.
+title: Content Easy to Discover
+blurb: Learn how to make your content discoverable.
 overview: |
 
 order: 2
 
 topics:
 # Topic containing several guides
-- title: Optimize content for search engines
+- title: How search works and how to measure it
   guides:
     - how-search-works
     - pass-lighthouse-seo-audit
+
+- title: Makes sure search engines can understand your content
+  guides:    
     - write-descriptive-text
     - tell-search-translated-pages-equal
     - tell-search-engine-canonical-url
+- title: Make sure search engines can crawl and index your page
+  guides:
     - remove-code-blocking-indexing
     - fix-http-status-codes
     - remove-browser-plugins
+    - fix-robot-errors
+- title: Make sure your page is mobile-friendly
+  guides:
     - fix-small-fonts
     - fix-viewport-tag
-    - fix-robot-errors

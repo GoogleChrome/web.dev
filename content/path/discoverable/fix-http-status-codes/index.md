@@ -41,9 +41,3 @@ an express.js application.
 
 Run the Lighthouse SEO Audit (Lighthouse > Options > SEO) and look for the
 results of the audit "Page has unsuccessful HTTP status code".
-
-## See it in action
-
-Walk through a step-by-step guide for fixing unsuccessful HTTP status codes:
-
-+  [Fix unsuccessful HTTP status codes](www.example.com)

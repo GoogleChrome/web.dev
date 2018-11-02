@@ -46,16 +46,16 @@ needlessly confused. Also, large robots.txt files are a hassle to maintain.
 One way to make a robots.txt file smaller is to focus less on individually
 excluded pages, and more on broader patterns. For example, if you need to block
 crawling of PDF files, don't list these files with individual disallow
-directives. Instead, use a broader match like "disallow: /*.pdf" to disallow
-crawling of all URLs containing ".pdf".
+directives. Instead, use a broader match like `disallow: /*.pdf` to disallow
+crawling of all URLs containing `.pdf`.
 
 ## Review the format
 
 Review the format of the robots.txt file. Only empty lines, comments, and
 directives matching the "name: value" format are allowed.   
-Make sure 'allow' and 'disallow' values are either empty or start with "/" or
-"*". Make sure they don't use '$' in the middle of a value (for example, "allow:
-/file$html"). Here's an example:
+Make sure 'allow' and 'disallow' values are either empty or start with `/` or
+`*`. Make sure they don't use '$' in the middle of a value (for example, `allow:
+/file$html`). Here's an example:
 
 <table>
 <thead>
@@ -84,7 +84,7 @@ disallow: /OffersFor$5</td>
 
 Use comments in the robots.txt file to explain what you're trying to allow or
 disallow. While robots.txt directives look simple, in combination they can be
-surprisingly complex.  Here's an example of how to use comments in a robots.txt
+surprisingly complex. Here's an example of how to use comments in a robots.txt
 file:
 
 <table>
@@ -130,14 +130,14 @@ All allow and disallow directives must apply to specific user-agents (also known
 as crawlers), so they are only valid if they're in a section for a given
 user-agent. For user-agents, crawlers only use the section with the most
 specific user-agent to determine which URLs are disallowed from crawling. For
-example, if you have "user-agent: *" and "user-agent: magicsearchbot" sections,
-MagicSearchBot won't follow any of the directives in the generic ("user-agent:
-*") section and will only follow the directive in its own section.  
+example, if you have "user-agent: `*` and `user-agent: magicsearchbot` sections,
+MagicSearchBot won't follow any of the directives in the generic (`user-agent:
+*`) section and will only follow the directive in its own section.  
 
 ## Make sure there's a value for 'user-agent'
 
 In order for a search engine crawler to find the appropriate user-agent section
-to follow, you must provide a user-agent name, or use "*" to match all otherwise
+to follow, you must provide a user-agent name, or use `*` to match all otherwise
 unmatched crawlers. Search engines will generally publish the user-agent names
 that they use; for example, here's
 [Google's list of user-agents used for crawling](https://support.google.com/webmasters/answer/1061943).
