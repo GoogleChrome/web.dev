@@ -21,7 +21,8 @@ For more information on the build system (such as how to write build steps), [se
 
 ### Internal Users
 
-While on your desktop, a Googler may run the `stage` command (rather than `build`) to deploy changed files to the internal staging environment.
+Googlers may use the `deploy` command to deploy changed files to the internal staging environment.
+Contact the web.dev team for more information.
 
 ## Staging
 
