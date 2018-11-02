@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: What is network reliability & how to measure it
+title: What is network reliability and how to measure it
 author: jeffy
 web_lighthouse: 
 - works-offline

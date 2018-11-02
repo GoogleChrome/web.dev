@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: The HTTP cache: your first line of offense
+title: The HTTP cache your first line of offense
 author: jeffy
 web_lighthouse: N/A
 wf_blink_components: N/A

@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: Workbox: your high-level service worker toolkit
+title: Workbox your high-level service worker toolkit
 author: jeffy
 web_lighthouse: N/A
 wf_blink_components: N/A
