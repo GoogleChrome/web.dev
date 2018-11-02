@@ -5,8 +5,6 @@ page_type: glitch
 glitch: cors-demo
 ---
 
-# Cross Origin Resource Sharing
-
 This demo is a simple server with two endpoints that you can experiment with to
 understand how cross origin resource sharing works.
 

@@ -5,8 +5,6 @@ page_type: glitch
 glitch: webp-cli
 ---
 
-# Creating WebP Images with the Command Line
-
 The webp <a href="https://developers.google.com/speed/webp/docs/precompiled" target="_blank">command line tool</a> has already been installed for you, so you're all set to get started. This tool converts JPG, PNG, and TIFF images to WebP.
 
 ## 1. Convert images to WebP

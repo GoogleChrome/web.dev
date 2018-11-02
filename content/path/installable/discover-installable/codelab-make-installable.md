@@ -5,8 +5,6 @@ page_type: glitch
 glitch: make-it-installable
 ---
 
-# Make it installable
-
 This glitch already contains the critical components required to make a
 Progressive Web App installable, including a
 [very simple service worker](https://glitch.com/edit/#!/make-it-installable?path=service-worker.js)

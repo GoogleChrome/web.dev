@@ -1,11 +1,9 @@
 ---
-title: Art direction
+title: Art Direction
 author: khempenius
 page_type: glitch
 glitch: responsive-images-art-direction
 ---
-
-# Art Direction
 
 ## Try out this demo
 

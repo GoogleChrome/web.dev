@@ -1,11 +1,9 @@
 ---
-title: Code-splitting
+title: Reduce JavaScript payloads with code-splitting
 author: houssein
 page_type: glitch
 glitch: code-splitting-starter
 ---
-
-# Reduce JavaScript payloads with code-splitting
 
 Most web pages and applications are made up of many different parts. Instead of
 sending all the JavaScript that makes up the application as soon as the first

@@ -1,11 +1,9 @@
 ---
-title: Serve images with correct dimensions
+title: Serve Images with Correct dimensions
 author: khempenius
 page_type: glitch
 glitch: correct-dimensions
 ---
-
-# Serve Images with Correct Dimensions
 
 ## 1. Run Lighthouse
 

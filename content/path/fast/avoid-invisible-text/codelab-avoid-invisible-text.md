@@ -5,8 +5,6 @@ page_type: glitch
 glitch: font-observer
 ---
 
-# Avoid flash of invisible text
-
 This code lab shows you how to display text immediately using [Font Face Observer](https://github.com/bramstein/fontfaceobserver).
 
 ## 1. Add Font Face Observer

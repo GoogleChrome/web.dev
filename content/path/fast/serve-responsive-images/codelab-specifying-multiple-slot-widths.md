@@ -1,11 +1,9 @@
 ---
-title: Specifying multiple slot widths
+title: Specifying Multiple Slot Widths
 author: khempenius
 page_type: glitch
 glitch: responsive-images-multiple-sizes
 ---
-
-# Specifying Multiple Slot Widths
 
 ## Try out this demo
 

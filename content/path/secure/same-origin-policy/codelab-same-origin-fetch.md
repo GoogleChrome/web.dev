@@ -5,8 +5,6 @@ page_type: glitch
 glitch: same-origin-policy-fetch
 ---
 
-# Same Origin Policy & Fetch request
-
 In this codelab, see how the Same Origin Policy works when fetching requests.
 
 ## Fetch page from same origin

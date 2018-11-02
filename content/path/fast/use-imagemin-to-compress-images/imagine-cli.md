@@ -5,8 +5,6 @@ page_type: glitch
 glitch: imagemin-cli
 ---
 
-# Using Imagemin with the Command Line
-
 The Imagemin <a href="https://github.com/imagemin/imagemin-cli" target="_blank">CLI</a> allows you to use Imagemin from the command line to compress your images.
 
 (Don't like the command line? There's also a desktop <a href="https://github.com/imagemin/imagemin-app" target="_blank">app</a> for OS X, Linux, and Mac.)

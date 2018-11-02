@@ -5,8 +5,6 @@ page_type: glitch
 glitch: lazysizes
 ---
 
-# Lazy Load Offscreen Images with LazySizes
-
 Lazy loading is the approach of waiting to load resources until they are needed, rather than loading them in advance. This can improve performance by reducing the amount of resources that need to be loaded and parsed on initial page load.
 
 Images that are offscreen during the initial pageload are ideal candidates for this technique. Best of all, <a href="https://github.com/aFarkas/lazysizes" target="_blank">LazySizes</a> makes this a very simple strategy to implement.

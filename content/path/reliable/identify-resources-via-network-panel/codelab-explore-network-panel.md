@@ -5,8 +5,6 @@ page_type: glitch
 glitch: sleet-expansion
 ---
 
-# Explore DevTools Network panel
-
 This codelab walks you through the process of interpreting all of the network
 traffic for a more involved sample application. At the end of the exercise,
 you'lll have the skills you need to figure out _what_ your own web application's

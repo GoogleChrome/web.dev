@@ -1,11 +1,9 @@
 ---
-title: Use density descriptors
+title: Use Density Descriptors
 author: khempenius
 page_type: glitch
 glitch: responsive-images-density-descriptors
 ---
-
-# Use Density Descriptors
 
 **Demo & Guide**
 
