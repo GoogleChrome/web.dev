@@ -11,7 +11,7 @@ This code lab shows you how to display text immediately using [Font Face Observe
 
 ## 1. Add Font Face Observer
 
-[Font Face Observer](https://github.com/bramstein/fontfaceobserver) is a script is a script
+[Font Face Observer](https://github.com/bramstein/fontfaceobserver) is a script
 that detects when a font loads. The
 [fontfaceobserver.js](https://github.com/bramstein/fontfaceobserver/blob/master/fontfaceobserver.js)
 file has been added to this project for you, so you don't need to add it
@@ -41,7 +41,7 @@ observers for the "Pacifico" and "Roboto" font families:
 
 If you're ever unsure what font face observers you need to create, just look for
 the `font-family` declarations in your CSS. Pass the font-family name to
-`FontFaceObserver()`. There is no need to create a font observer for 
+`FontFaceObserver()`. There is no need to create a font observer for
 [fallback fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#%3Cgeneric-name%3E).
 
 <table>
