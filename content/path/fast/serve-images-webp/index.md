@@ -15,9 +15,10 @@ WebP images are smaller than their JPEG and PNG counterparts - usually on the
 magnitude of a 25-35% reduction in filesize. This decreases page sizes and
 improves performance.
 
-+  YouTube found that switching to WebP thumbnails resulted in <a href="https://www.youtube.com/watch?v=rqXMwLbYEE4" target="_blank">10%
-    faster page loads</a>.
-+  Facebook <a href="https://code.fb.com/android/improving-facebook-on-android/" target="_blank">experienced</a> a
++  YouTube found that switching to WebP thumbnails resulted in [10%
+    faster page loads](https://www.youtube.com/watch?v=rqXMwLbYEE4).
+-  Facebook
+    [experienced](https://code.fb.com/android/improving-facebook-on-android/) a
     25-35% filesize savings for JPEGs and an 80% filesize savings for PNGs when
     they switched to using WebP.
 
@@ -29,8 +30,9 @@ reducing image quality.
 ## Convert images to WebP
 
 People generally use one of the following approaches for converting their images
-to WebP: the <a href="https://developers.google.com/speed/webp/docs/using" target="_blank">cwebp command-line tool</a>
-or the <a href="https://github.com/imagemin/imagemin-webp target="_blank">Imagemin WebP Plugin</a> (NPM
+to WebP: the
+[cwebp command-line tool](https://developers.google.com/speed/webp/docs/using)
+or the [Imagemin WebP plugin](https://github.com/imagemin/imagemin-webp) (NPM
 package).
 The Imagemin WebP plugin is generally the best choice if your project uses build
 scripts or build tools (e.g. Webpack or Gulp), whereas the CLI is a good choice
@@ -64,13 +66,13 @@ The Imagemin WebP plugin can be used by itself or with your favorite build tool
 build script or the configuration file for your build tool. 
 
 Here are examples of how to do that for
-<a href="https://glitch.com/~webp-webpack" target="_blank">Webpack<a/>,
-<a href="https://glitch.com/~webp-gulp" target="_blank">Gulp</a>, and
-<a href="https://glitch.com/~webp-grunt" target="_blank">Grunt</a>.
+[Webpack](https://glitch.com/~webp-webpack),
+[Gulp](https://glitch.com/~webp-gulp), and
+[Grunt](https://glitch.com/~webp-grunt).
 
 If you are not using one of those build tools, you can use Imagemin by itself as
-a Node script. This script will convert the files in the "images" directory and
-save them in the "compressed_images" directory.
+a Node script. This script will convert the files in the `images` directory and
+save them in the `compressed_images` directory.
 
 ```js
 const imagemin = require('imagemin');
@@ -85,7 +87,8 @@ imagemin(['images/*'], 'compressed_images', {
 
 ## Serve WebP images
 
-If your site only supports WebP compatible <a href="https://caniuse.com/#search=webp" target="_blank">browsers</a>, you can stop reading.
+If your site only supports WebP compatible
+[browsers](https://caniuse.com/#search=webp), you can stop reading.
 
 Otherwise, serve WebP to newer browsers and a fallback image to older
 browsers:
@@ -104,7 +107,8 @@ browsers:
 ```
 
 The
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture" target="_blank">`<picture>`<a/>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source" target="_blank">`<source>`</a>,
+[`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture),
+[`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source),
 and `<img>` tags, including how they are ordered relative to each other, all
 interact to achieve this end result.
 
@@ -115,22 +119,22 @@ interact to achieve this end result.
 The `<picture>` tag provides a wrapper for zero or more `<source>` tags and one `<img>` tag.
 
 **Gotchas:** 
-- The <code>&lt;source&gt;</code> tag for the "preferred" image format (in this case that is WebP) should be listed first, before other `<source>` tags.
-- The value of the `type` attribute should be the MIME type corresponding to the image format. An image's <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types" target="_blank">MIME type</a> and its file extension are often similar, but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
+- The `<source>` tag for the "preferred" image format (in this case that is WebP) should be listed first, before other `<source>` tags.
+- The value of the `type` attribute should be the MIME type corresponding to the image format. An image's [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types) and its file extension are often similar, but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
 
 ### `<img>`
 
 **Role:**
 
-The <code>&lt;img&gt;</code> tag is what makes this code work on browsers
-that don't support the <code>&lt;picture&gt;</code> tag.</p>
-<p>If a browser does not support the <code>&lt;picture&gt;</code> tag, it will
+The `<img>` tag is what makes this code work on browsers
+that don't support the `<picture>` tag.
+If a browser does not support the `<picture>` tag, it will
 ignore the tags it doesn't support. Thus, it only "sees" the
-<code>&lt;img src="flower.jpg"&gt;</code> tag and loads that image.
+`<img src="flower.jpg">` tag and loads that image.
 
 **Gotchas:**
-- The <code>&lt;img&gt;</code> tag should always be included, and it should always be listed last, after all <code>&lt;source&gt;</code> tags.
-- The resource specified by the <code>&lt;img&gt;</code> tag should be in a universally supported format (e.g. JPEG), so it can be used as a fallback.
+- The `<img>` tag should always be included, and it should always be listed last, after all `<source>` tags.
+- The resource specified by the `<img>` tag should be in a universally supported format (e.g. JPEG), so it can be used as a fallback.
 
 ## Verify WebP Usage
 

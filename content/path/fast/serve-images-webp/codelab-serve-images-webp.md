@@ -13,13 +13,16 @@ The webp <a href="https://developers.google.com/speed/webp/docs/precompiled" tar
 
 ---
 1. Click the "Edit" button.
-<img src="edit_button.png" alt="The 'Edit' button in Glitch">
+
+![image](./edit_button.png)
 
 2.  Click the "Status" button.
-<img src="status_button.png" alt="The 'Status' button in Glitch">
+
+![image](./status_button.png)
 
 3.  Then click the "Console" button.
-<img src="console_button.png" alt="The 'Console' button in Glitch">
+
+![image](./console_button.png)
 
 4. Type the following command:
 
@@ -27,11 +30,11 @@ The webp <a href="https://developers.google.com/speed/webp/docs/precompiled" tar
 cwebp -q 50 images/flower1.jpg -o images/flower1.webp
 ```
 
-This command converts, at a quality of '50' ('0' is the worst; '100' is the best), the `images/flower1.jpg` file and saves it as `images/flower1.webp`.
+This command converts, at a quality of `50` (`0` is the worst; `100` is the best), the `images/flower1.jpg` file and saves it as `images/flower1.webp`.
 
----------------------
-> Are you wondering why you type "`cwebp`" instead of "`webp`"? WebP has two separate commands for encoding and decoding WebP images. "`cwebp`" encodes images to WebP, while "`dwebp`" decodes images from WebP.*
---------------------
+<div class="aside note">
+Are you wondering why you type `cwebp` instead of `webp`? WebP has two separate commands for encoding and decoding WebP images. `cwebp` encodes images to WebP, while `dwebp` decodes images from WebP.
+</div>
 
 After doing this, you should see something like this in the console:
 
@@ -128,6 +131,6 @@ Lighthouse's "Serve images in next-gen formats" performance audit can let you kn
 
 - Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Serve images in next-gen formats" audit was passed.
 
-<img src="lighthouse_passing.png" width="100%" alt="Passing 'Serve images in next-gen formats' audit in Lighthouse">
+![image](./lighthouse_passing.png)
 
 Success! You are now serving WebP images on your site.
