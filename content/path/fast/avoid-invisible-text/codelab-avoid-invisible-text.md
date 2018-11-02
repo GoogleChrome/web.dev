@@ -40,34 +40,11 @@ observers for the "Pacifico" and "Roboto" font families:
 ```
 
 If you're ever unsure what font face observers you need to create, just look for
-the `font-family` declarations in your CSS. Pass the font-family name to
+the `font-family` declarations in your CSS. Pass the `font-family` name to
 `FontFaceObserver()`. There is no need to create a font observer for
 [fallback fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#%3Cgeneric-name%3E).
 
-<table>
-<thead>
-<tr>
-<th>CSS</th>
-<th>Corresponding Font Face Observer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p><pre>
-font-family: "Times New Roman", Times, serif;
-</pre></p>
-
-</td>
-<td><p><pre>
-FontFaceObserver(‘Times New Roman')
-<br>
-// Times and serif are fallback fonts.
-</pre></p>
-
-</td>
-</tr>
-</tbody>
-</table>
+For example, if your CSS was `font-family: "Times New Roman", Times, serif;` you would add `FontFaceObserver(‘Times New Roman')`. Times and serif are fallback fonts, so you would not need to declare FontFaceObservers for them.
 
 ### Detect font load
 
