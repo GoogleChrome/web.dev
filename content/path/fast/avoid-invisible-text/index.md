@@ -55,7 +55,7 @@ you'll actually implement and maintain.
 </tbody>
 </table>
 
-``[font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)``
+[`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
 is an API for specifying font display strategy. ``swap`` tells the browser that
 text using this font should be displayed immediately using a system font. Once
 the custom font is ready, the system font is swapped out.
@@ -70,9 +70,7 @@ These are the default font-loading behaviors for common browsers:
 <thead>
 <tr>
 <th><strong>Browser</strong></th>
-<th><strong>Default behavior</strong><br>
-<br>
-<strong>If font is not ready…</strong></th>
+<th><strong>Default behavior if font is not ready…</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -108,8 +106,7 @@ There are three parts to this approach:
 +  Don't use a custom font on initial page load. This ensures that the
     browser displays text immediately using a system font.
 +  Detect when your custom font is loaded. This can be accomplished with a
-    couple lines of JavaScript code, thanks to the
-    [FontFaceObserver](https://github.com/bramstein/fontfaceobserver) library.
+    couple lines of JavaScript code, thanks to the [FontFaceObserver](https://github.com/bramstein/fontfaceobserver) library.
 +  Update page styling to use the custom font.
 
 Here are the changes you can expect to make in order to implement this:
