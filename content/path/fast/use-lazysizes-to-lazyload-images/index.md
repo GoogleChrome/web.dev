@@ -25,7 +25,7 @@ _Lazy loading in action_
 [lazysizes](https://github.com/aFarkas/lazysizes) is the most popular library
 for lazy loading images. It is a script that intelligently loads images as the
 user moves through the page and prioritizes images that the user will encounter
-soon. `lazysizes` is a good choice because it uses the highly performant
+soon. lazysizes is a good choice because it uses the highly performant
 [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 (where available) to detect the visibility of page elements. This makes it more
 performant than older solutions that use approaches like event handlers.
@@ -49,21 +49,19 @@ your pages:
 
 | Before  | After |
 |---------|----------------|
-| `<img src="flower.jpg">` | `<img <strong>data-src</strong>="flower.jpg" <strong>class="lazyload"</strong>>` |
+| `<img src="flower.jpg">` | `<img data-src="flower.jpg" class="lazyload">` |
 
 When you update the image tags you make two changes:
 
-+  **Add the "lazyload" class**: This indicates to lazysizes that the
++  **Add the `lazyload` class**: This indicates to lazysizes that the
     image should be lazy loaded.
-+  **Change the "src" attribute to "data-src"**: When it is time to load the
-    image, the lazysizes code sets the image "`src`" attribute using the value
-    from the "`data-src`" attribute.
++  **Change the `src` attribute to `data-src`**: When it is time to load the
+    image, the lazysizes code sets the image `src` attribute using the value
+    from the `data-src` attribute.
 
 ## Verify
 
-Once you've added lazysizes to a page, you can see it in action by opening
-DevTools and scrolling down the page. As you scroll, you should see new network
-requests occur and  <img> tag classes change from "lazyload" to "lazyloaded."
+Open DevTools and scroll down the page to see these changes in action. As you scroll, you should see new network requests occur and `<img>` tag classes change from `lazyload` to `lazyloaded`.
 
 Additionally, you can use Lighthouse to verify that you haven't forgotten to
 lazy load any offscreen images. Run the Lighthouse performance audit (Lighthouse
