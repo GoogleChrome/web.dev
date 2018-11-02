@@ -40,13 +40,13 @@ to match.
 - Use [ImageMagick](https://www.imagemagick.org) to resize the image to 50x50.
 (ImageMagick is a CLI tool for image editing.)
 
-$ `convert flower_logo.png -resize 50x50 flower_logo.png`
+  `$ convert flower_logo.png -resize 50x50 flower_logo.png`
 
 ## 3. Fix flower_photo.jpg
 
 Next, let's fix the photo on this page.
 
-1. Inspect `flower_photo.jpg` in the DevTools elements panel.
+- Inspect `flower_photo.jpg` in the DevTools elements panel.
 
 ![image](./elements-panel-photo.png)
 
@@ -80,10 +80,10 @@ On resolutions greater than 1920 pixels wide, the image will be stretched to
 cover the area. The resized image is still fairly large, so the effects of this
 should not be very noticeable.
 
-1. Use [ImageMagick](https://www.imagemagick.org) to resize the image to 960
+- Use [ImageMagick](https://www.imagemagick.org) to resize the image to 960
 pixels wide.
 
-$ `convert flower_photo.jpg -resize 960x flower_photo.jpg`
+  `$ convert flower_photo.jpg -resize 960x flower_photo.jpg`
 
 (Note: `960x` is not a typo - it specifies a width, but not a height. The image
 height will be scaled in proportion to the width. This is a handy trick for when
@@ -91,7 +91,7 @@ you only care about an image's dimensions in one direction.)
 
 ## 4. Re-Run Lighthouse
 
-1. Re-run the Lighthouse Performance audit to verify that you have successfully
+- Re-run the Lighthouse Performance audit to verify that you have successfully
 re-sized the images.
 
 ![image](./fixed-properly-size-images.png)
