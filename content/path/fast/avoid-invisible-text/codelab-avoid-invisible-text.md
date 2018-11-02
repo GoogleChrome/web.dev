@@ -175,9 +175,7 @@ html.fonts-loaded .text {<br>
 
 ## Verify
 
-☞  Click on the "Show Live" button to view the live version of the your Glitch.
-
-![image](./show-live.png)
+- Click on the "Show Live" button to view the live version of the your Glitch.
 
 If the page looks like this, then you've successfully implemented Font Face
 Observer and gotten rid of the "Flash of Invisible Text."
