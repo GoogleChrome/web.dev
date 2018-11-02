@@ -7,13 +7,13 @@ glitch: font-observer
 
 # Avoid flash of invisible text
 
-This code lab shows you how to display text immediately using <a href="https://github.com/bramstein/fontfaceobserver" target="_blank">Font Face Observer</a>.
+This code lab shows you how to display text immediately using [Font Face Observer](https://github.com/bramstein/fontfaceobserver).
 
 ## 1. Add Font Face Observer
 
-<a href="https://github.com/bramstein/fontfaceobserver" target="_blank">Font Face Observer</a> is a script
+[Font Face Observer](https://github.com/bramstein/fontfaceobserver) is a script is a script
 that detects when a font loads. The
-<a href="https://github.com/bramstein/fontfaceobserver/blob/master/fontfaceobserver.js" target="_blank">fontfaceobserver.js</a>
+[fontfaceobserver.js](https://github.com/bramstein/fontfaceobserver/blob/master/fontfaceobserver.js)
 file has been added to this project for you, so you don't need to add it
 separately. But you do need to add a link to that file in your main page.
 
@@ -41,7 +41,8 @@ observers for the "Pacifico" and "Roboto" font families:
 
 If you're ever unsure what font face observers you need to create, just look for
 the `font-family` declarations in your CSS. Pass the font-family name to
-`FontFaceObserver()`. There is no need to create a font observer for <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#%3Cgeneric-name%3E" target="_blank">fallback fonts</a>.
+`FontFaceObserver()`. There is no need to create a font observer for 
+[fallback fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#%3Cgeneric-name%3E).
 
 <table>
 <thead>
@@ -78,18 +79,20 @@ The code for detecting a font load looks like this:
 
 `robotoObserver.load()` is a promise that resolves when the font loads.
 
-The demo site uses two different fonts, so you need to use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all" target="_blank">Promise.all()</a>
+The demo site uses two different fonts, so you need to use [`Promise.all()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
 to wait until both fonts have loaded.
 
 - Add this promise to your script, right below the FontFaceObservers that you
 just declared:
 
+```
     Promise.all([
       pacificoObserver.load(),
       robotoObserver.load()
     ]).then(function(){
       /* Do things */
     });
+```
 
 #### ✔️Checkin
 
@@ -113,12 +116,14 @@ Your script should now look like this:
 
 - Replace the `/* Do things */` comment in the script with this line:
 
+```
     document.documentElement.className += " fonts-loaded";
+```
 
 This adds the `fonts-loaded` class to the document's root element (i.e. the <html> tag) once both fonts have loaded.
 
-(Note: The trailing space before ‘fonts-loaded' isn't a typo. It prevents
-‘fonts-loaded' from being appended to another class. If it wasn't there you
+(Note: The trailing space before `fonts-loaded` isn't a typo. It prevents
+`fonts-loaded` from being appended to another class. If it wasn't there you
 could end up with a class like `your-existing-classfonts-loaded`.)
 
 #### ✔️Checkin
@@ -142,7 +147,7 @@ Your completed script should look like this:
 ## Update CSS
 
 Your page should be styled to use a system font initially and custom fonts once
-the "fonts-loaded" class has been applied.
+the `fonts-loaded` class has been applied.
 
 - Update the CSS:
 

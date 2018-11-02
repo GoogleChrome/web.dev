@@ -21,7 +21,7 @@ unstyled text").
 
 This guide outlines two ways to achieve this: the first approach is very simple
 but does not have universal browser
-<a href="https://caniuse.com/#search=font-display" target="_blank">support</a>; the second approach is more
+[support](https://caniuse.com/#search=font-display); the second approach is more
 work but has full browser support. The best choice for you is the one that
 you'll actually implement and maintain.
 
@@ -55,14 +55,14 @@ you'll actually implement and maintain.
 </tbody>
 </table>
 
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display" target="_blank">font-display</a>
+[`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
 is an API for specifying font display strategy. ``swap`` tells the browser that
 text using this font should be displayed immediately using a system font. Once
 the custom font is ready, the system font is swapped out.
 
 If a browser does not support `font-display`, the browser continues to follow
 it's default behavior for loading fonts. Check which browsers support
-`font-display` <a href="https://caniuse.com/#search=font-display" target="_blank">here</a>.
+`font-display` [here](https://caniuse.com/#search=font-display).
 
 These are the default font-loading behaviors for common browsers:
 
@@ -106,7 +106,7 @@ There are three parts to this approach:
 +  Don't use a custom font on initial page load. This ensures that the
     browser displays text immediately using a system font.
 +  Detect when your custom font is loaded. This can be accomplished with a
-    couple lines of JavaScript code, thanks to the <a href="https://github.com/bramstein/fontfaceobserver" target="_blank">FontFaceObserver</a> library.
+    couple lines of JavaScript code, thanks to the [FontFaceObserver](https://github.com/bramstein/fontfaceobserver) library.
 +  Update page styling to use the custom font.
 
 Here are the changes you can expect to make in order to implement this:
