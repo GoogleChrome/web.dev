@@ -87,7 +87,7 @@ Next, update this Glitch to serve WebP images to browsers that support it.
 The `<picture>` tag allows you to serve WebP to newer browsers while maintaining support for older browsers.
 
 ---
-1.  In `index.html` replace `<img src="images/flower1.jpg"/>` with the following HTML:
+- In `index.html` replace `<img src="images/flower1.jpg"/>` with the following HTML:
 
 ```html
 <picture>
@@ -97,7 +97,7 @@ The `<picture>` tag allows you to serve WebP to newer browsers while maintaining
 </picture>
 ```
 
-2. Next, replace the `<img>` tags for `flower2.jpg` and `flower3.png` with `<picture>` tags:
+- Next, replace the `<img>` tags for `flower2.jpg` and `flower3.png` with `<picture>` itags.
 
 ### ✔︎ Check-in
 
