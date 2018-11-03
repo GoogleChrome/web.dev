@@ -1,11 +1,11 @@
 ---
-title: Lazy Load Offscreen Images with lazysizes
+title: Lazy load offscreen images with lazysizes
 author: khempenius
 page_type: glitch
 glitch: lazysizes
 ---
 
-# Lazy Load Offscreen Images with lazysizes
+# Lazy load offscreen images with lazysizes
 
 Lazy loading is the strategy of waiting to load resources until they are needed, rather than loading them in advance. This can improve performance by reducing the amount of resources that need to be loaded and parsed on initial page load.
 
