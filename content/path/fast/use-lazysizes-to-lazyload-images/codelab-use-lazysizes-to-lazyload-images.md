@@ -44,9 +44,9 @@ For example, the changes for `flower3.png` would look like this:
 For this example, we recommend lazy loading `flower3.png`, `flower4.jpg`, and `flower5.jpg`.
 
 <div class="aside note">
-You may be wondering why it is necessary to change the `src` attribute to `data-src`.
+You may be wondering why it is necessary to change the <code>src</code> attribute to <code>data-src</code>.
 
-If this attribute is not changed, all the images will load immediately instead of being lazy-loaded. `data-src` is not an attribute that the browser recognizes, so when it encounters an image tag with this attribute, it doesn't load the image. In this case, that is a good thing, because it then allows the lazysizes script to decide when the image should be loaded, rather than the browser.
+If this attribute is not changed, all the images will load immediately instead of being lazy-loaded. <code>data-src</code> is not an attribute that the browser recognizes, so when it encounters an image tag with this attribute, it doesn't load the image. In this case, that is a good thing, because it then allows the lazysizes script to decide when the image should be loaded, rather than the browser.
 </div>
 
 ## 3. See it in action
