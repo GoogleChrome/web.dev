@@ -1,5 +1,5 @@
 ---
-title: Resize Images with Gulp
+title: Resize images with Gulp
 author: khempenius
 page_type: glitch
 glitch: responsive-images-resize-with-gulp

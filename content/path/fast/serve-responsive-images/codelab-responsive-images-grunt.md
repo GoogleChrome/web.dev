@@ -1,5 +1,5 @@
 ---
-title: Resize Images with Grunt
+title: Resize images with Grunt
 author: khempenius
 page_type: glitch
 glitch: responsive-images-resize-with-grunt

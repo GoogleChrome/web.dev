@@ -1,5 +1,5 @@
 ---
-title: Art Direction
+title: Art direction
 author: khempenius
 page_type: glitch
 glitch: responsive-images-art-direction

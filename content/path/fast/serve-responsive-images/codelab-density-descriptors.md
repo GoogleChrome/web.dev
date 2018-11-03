@@ -1,5 +1,5 @@
 ---
-title: Use Density Descriptors
+title: Use density descriptors
 author: khempenius
 page_type: glitch
 glitch: responsive-images-density-descriptors

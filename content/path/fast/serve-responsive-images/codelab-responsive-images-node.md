@@ -1,5 +1,5 @@
 ---
-title: Resize Images with Node
+title: Resize images with Node
 author: khempenius
 page_type: glitch
 glitch: responsive-images-resize-with-node

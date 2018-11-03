@@ -1,5 +1,5 @@
 ---
-title: Serve Images with Correct dimensions
+title: Serve images with correct dimensions
 author: khempenius
 page_type: glitch
 glitch: correct-dimensions
