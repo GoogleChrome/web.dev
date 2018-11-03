@@ -115,6 +115,8 @@ Here are the changes you can expect to make in order to implement this:
 +  Add a script to your page. This script detects when the custom font is
     loaded and then will update the page styling.
 
+Check out [this demo that shows how to create and server responsive images](https://glitch.com/~font-observer-demo).
+
 ## Verify
 
 Run Lighthouse to verify the site is using "font-display: swap" to display
@@ -126,15 +128,3 @@ text:
 
 Confirm this audit is passing: "Ensure text remains visible during webfont
 load". 
-
-## See it in action
-
-Walk through a step-by-step guide for displaying fonts immediately with this
-code:
-
-+  [Display text immediately codelab](./codelab-avoid-invisible-text.md)
-
-See examples of projects that create and serve responsive images in these
-repos:
-
-+  [Display text immediately demo](https://glitch.com/~font-observer-demo)

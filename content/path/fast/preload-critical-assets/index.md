@@ -89,10 +89,3 @@ Similarly, webpack allows you prefetch script chunks if you are using version
 Refer to the
 [Link prefetching FAQ](https://www.google.com/url?q=https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ&sa=D&ust=1536630604621000&usg=AFQjCNHm8zqhdHujGtsAxHsWXKZcCbR2XQ)
 for more details about link prefetching.
-
-## See it in action
-
-Walk through a step-by-step guide for preloading and prefetching in this
-codelab:
-
-+  [Preload critical assets to improve loading speed](https://docs.google.com/document/d/1b5INY0NwKtsVVZZ-Wn2HjS7RokSrkegTjndN7eOJCxk/edit#heading=h.2cqtyd8xbpgf)

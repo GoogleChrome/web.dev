@@ -46,8 +46,9 @@ This tells ffmpeg to take `my-animation.gif` as the **input**, signified by the
 While MP4 has been around since 1999, WebM is a relatively new file format
 initially released in 2010. WebM videos are much smaller than MP4 videos, but
 not all browsers support WebM so it makes sense to generate both.  
-To use ffmpeg to convert my-animation.gif` to a WebM video, run the following
+To use ffmpeg to convert `my-animation.gif` to a WebM video, run the following
 command in your console:  
+
 ```  
 ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm  
 ```
@@ -96,10 +97,3 @@ it first!
 
 +  [ffmpeg.org](https://www.ffmpeg.org/)
 +  [ffmpeg installation instructions](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/#converting_animated_gifs_to_video)
-
-## See it in action
-
-Walkthrough a step-by-step guide on replacing animated GIFs with video in this
-codelab:
-
-+  [Replace animated GIFs with video](http://www.example.com)

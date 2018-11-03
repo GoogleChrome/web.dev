@@ -90,9 +90,3 @@ the current origin (scheme, host, and port). When a server sees this header, and
 wants to allow access, it adds an ``Access-Control-Allow-Origin:``  header to
 the response naming the requesting origin (or `*` to allow any origin.) The
 browser sees this response, and allows the response data to come through.
-
-## See it in action
-
-## Walk through a step-by-step guides demonstrating CORs:
-
-+  [Cross Origin Sharing demo](./codelab-cors.md)

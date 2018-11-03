@@ -62,9 +62,3 @@ In the results panel, scroll down to the Progressive Web App section, and review
 ## Further reading
 
 To learn what other browsers require for a PWA to be considered installable, check out the [Add to Homescreen](https://developers.google.com/web/fundamentals/app-install-banners/) section on WebFundamentals.
-
-## See it in action
-
-Walk through a step-by-step guide for making your app installable:
-
-+  [Make it installable](./codelab-make-installable.md)

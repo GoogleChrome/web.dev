@@ -67,19 +67,19 @@ dynamic import to fetch it only when the form is submitted by the user.
     }
 
 The code that makes up the module does not get included into the initial bundle
-and is now _lazy loaded**, **_or provided to the user only when it is needed
+and is now **lazy loaded**, or provided to the user only when it is needed
 after the form submission. Other module bundlers, such as
 [Parcel](https://parceljs.org/code_splitting.html) and
 [Rollup](https://rollupjs.org/guide/en#dynamic-import), also provide dynamic
 import support. To further improve page performance, preload critical chunks to
-prioritize and fetch them sooner. We cover this in more detail in the "[Preload
-critical assets to improve loading speed](https://example.com)" guide.
+prioritize and fetch them sooner. We cover this in more detail in [Preload
+critical assets to improve loading speed](https://example.com).
 
 Although the previous code snippet is a simple example, lazy loading third party
 dependencies is not a common pattern in larger applications. Usually, third
 party dependencies are split into a separate vendor bundle that can be cached
 since they don't update as often. You can read more about how the
-**[SplitChunksPlugin](https://webpack.js.org/plugins/split-chunks-plugin/)** can
+[**SplitChunksPlugin**](https://webpack.js.org/plugins/split-chunks-plugin/) can
 help you do this.
 
 Splitting on the route or component level when using a client-side framework is

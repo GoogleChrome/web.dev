@@ -66,8 +66,8 @@ defaults. If you can get your page fast with these options, then your page will
 be fast for everyone. The important thing is to stay consistent with the options
 across audits. 
 
-For example, if you run some audits with **Simulated Fast 3G, 4x CPU Slowdown
-**throttling enabled and then other times you run audits with throttling
+For example, if you run some audits with **Simulated Fast 3G**, **4x CPU Slowdown
+throttling enabled** and then other times you run audits with throttling
 disabled, your metrics scores will be significantly lower when you have
 throttling enabled. You might spend a lot of time trying to figure out why your
 page is so much slower now, when in reality the only thing that changed was your
@@ -84,7 +84,7 @@ explains how each metric score contributes to the overall score.
 
 ![image](./discover-performance-opportunities-with-lighthouse-4.png)
 
-Hover over a metric to learn more about it. Click **Learn more **to read
+Hover over a metric to learn more about it. Click **Learn more** to read
 documentation about it.
 
 ![image](./discover-performance-opportunities-with-lighthouse-5.png)

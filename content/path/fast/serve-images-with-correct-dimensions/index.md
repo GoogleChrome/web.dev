@@ -144,9 +144,3 @@ Responsive Images guide.
 
 Once you've resized all your images, re-run Lighthouse to verify that you didn't
 miss anything.
-
-## See it in action
-
-Walkthrough a step-by-step guide to serving images with correction dimensions:
-
-+  [Serve images with correct dimensions](./codelab-serve-images-correct-dimensions.md)

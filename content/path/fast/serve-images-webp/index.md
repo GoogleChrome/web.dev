@@ -49,22 +49,21 @@ needs.
 
 Convert a single file, using cwebp's default compression settings:
 
-    cwebp images/flower.jpg -o images/flower.webp
+    `cwebp images/flower.jpg -o images/flower.webp`
 
 Convert a single file, using a quality level of 50:
 
-    cwebp -q 50 images/flower.jpg -o images/flower.webp
+    `cwebp -q 50 images/flower.jpg -o images/flower.webp`
 
 Convert all files in a directory:
 
-    $ `for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done`
+   `$ for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done`
 
 ### Use Imagemin
 
 The Imagemin WebP plugin can be used by itself or with your favorite build tool
 (Webpack/Gulp/Grunt/etc.). This usually involves adding ~10 lines of code to a
-build script or the configuration file for your build tool. 
-
+build script or the configuration file for your build tool.
 Here are examples of how to do that for
 [Webpack](https://glitch.com/~webp-webpack),
 [Gulp](https://glitch.com/~webp-gulp), and
