@@ -5,8 +5,6 @@ page_type: glitch
 glitch: replace-gif
 ---
 
-# Replace animated GIFs with video
-
 In this codelab, improve performance by replacing this animated GIF with a
 video:
 

@@ -5,8 +5,6 @@ page_type: glitch
 glitch: correct-dimensions
 ---
 
-# Serve Images with Correct Dimensions
-
 ## 1. Run Lighthouse
 
 This page is small enough that we could inspect the images by hand. However for

@@ -5,8 +5,6 @@ page_type: glitch
 glitch: responsive-images-multiple-sizes
 ---
 
-# Specifying Multiple Slot Widths
-
 ## Try out this demo
 
 1. Reload this demo in different sized browser windows to see the browser load

@@ -5,8 +5,6 @@ page_type: glitch
 glitch: responsive-images-density-descriptors
 ---
 
-# Use Density Descriptors
-
 **Demo & Guide**
 
 Note: Most people are unfamiliar with the concepts that underpin the use of

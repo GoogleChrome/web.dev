@@ -5,8 +5,6 @@ page_type: glitch
 glitch: responsive-images-art-direction
 ---
 
-# Art Direction
-
 ## Try out this demo
 
 1. Reload this demo using different browser sizes. Notice how different the

@@ -5,8 +5,6 @@ page_type: glitch
 glitch: imagemin-webpack
 ---
 
-# Use Imagemin with Webpack
-
 This workbook will show you how to add Imagemin to an existing Webpack project.
 
 ## 1. Install the Imagemin Webpack plugin:

@@ -1,11 +1,9 @@
 ---
-title: Resize images with Webpack
+title: Resize images with webpack & responsive-loader
 author: khempenius
 page_type: glitch
 glitch: responsive-images-with-webpack
 ---
-
-# Resize Images with webpack & responsive-loader
 
 **Note:** The
 [responsive-loader](https://github.com/herrstucki/responsive-loader) plugin is a

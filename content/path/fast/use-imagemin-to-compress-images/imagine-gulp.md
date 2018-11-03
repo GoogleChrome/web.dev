@@ -5,8 +5,6 @@ page_type: glitch
 glitch: imagemin-grunt
 ---
 
-# Use Imagemin with Gulp
-
 This workbook will show you how to add Imagemin to an existing Gulp project.
 
 ## 1. Install the Imagemin Gulp plugin

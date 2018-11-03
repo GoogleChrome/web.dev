@@ -5,8 +5,6 @@ page_type: glitch
 glitch: preload-critical-assets
 ---
 
-# Preload critical assets to improve loading speed
-
 In this codelab, improve the performance of the following web page by preloading
 and prefetching a few resources:
 

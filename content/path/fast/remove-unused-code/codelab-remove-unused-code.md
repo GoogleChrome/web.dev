@@ -5,8 +5,6 @@ page_type: glitch
 glitch: fav-kitties-starter
 ---
 
-# Remove unused code
-
 In this codelab, improve the performance of the following application by
 removing any unused and unneeded dependencies.
 

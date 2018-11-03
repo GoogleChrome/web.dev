@@ -5,8 +5,6 @@ page_type: glitch
 glitch: equinox-tower 
 ---
 
-# Configuring HTTP caching behavior
-
 This codelab will show you how to change the HTTP caching headers returned by a
 Node.js-based web server, running the [Express](https://expressjs.com/) serving
 framework. It will also show how to confirm that the caching behavior you expect
