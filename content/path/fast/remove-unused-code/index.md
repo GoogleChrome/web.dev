@@ -117,9 +117,3 @@ When using third-party dependencies, building a custom solution or leveraging a
 lighter alternative are options worth considering.  Always weigh the complexity
 and effort required for either of these before removing a library entirely from
 an application.
-
-## See it in action
-
-Walk through a step-by-step guide for removing unused code:
-
-+  Remove unused code

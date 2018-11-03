@@ -83,10 +83,3 @@ to resources, sometimes you want to access cross-origin resources in your
 applications. In the next guide, learn about Cross Origin Resource Sharing
 (CORS) and how to tell the browser that loading of cross-origin resources is
 allowed from trusted sources.
-
-## See it in action
-
-## Walk through a step-by-step guides demonstrating Same Origin Policy: 
-
-+  [Fetch request demo](./codelab-same-origin-fetch.md).
-+  [Same Origin Policy and iframe demo](./codelab-same-origin-iframe.md).

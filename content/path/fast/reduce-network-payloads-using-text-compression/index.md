@@ -149,8 +149,3 @@ example of how this can be done with Node and Express for gzipped assets.
     });
 
 app.use(express.static('public'));
-
-## Next Steps
-
-For more details and to see how compression works with a real-life application,
-refer to the associated [codelab](https://example.com) for this guide.

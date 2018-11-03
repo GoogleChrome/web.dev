@@ -242,13 +242,3 @@ that you didn't miss any images. Run the Lighthouse Performance Audit
 (Lighthouse > Options > Performance) and look for the results of the "Properly
 size images" audit. These results will list the images that need to be
 resized.
-
-## See it in action
-
-See examples of projects that create and serve responsive images in these
-repos:
-
-+  [Responsive images & Webpack](./codelab-responsive-images-webpack.md)
-+  [Responsive images & Grunt](./codelab-responsive-images-webpack.md)
-+  [Responsive images & Gulp](./codelab-responsive-images-gulp.md)
-+  [Responsive images & Node](./codelab-responsive-images-node.md)

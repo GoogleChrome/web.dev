@@ -15,10 +15,10 @@ GIF Source: [Frank Macchia](https://frankmacchia.blogspot.com/)
 PRPL is an acronym that describes a pattern used to make web pages load and
 become interactive, faster:
 
-+  **Push** (or **preload) **the most important resources.
++  **Push** (or **preload**) the most important resources.
 +  **Render** the initial route as soon as possible.
-+  **Pre-cache **remaining assets.
-+  **Lazy load **other routes and non-critical assets.
++  **Pre-cache** remaining assets.
++  **Lazy load** other routes and non-critical assets.
 
 In this guide, learn how each of these techniques fit together but still can be
 used independently to achieve performance results.
@@ -42,12 +42,12 @@ fetched late:
 ![image](./preload-requests.png)
 
 Lighthouse: Preload key requests audit  
-**[Preload**](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+[**Preload**](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
 is a declarative fetch request that tells the browser to request a resource as
 soon as possible. Preload critical resources by adding a`<link>` tag with
 `rel="preload"` to the head of your HTML document:
 
-<link rel="preload" as="style" href="css/style.css">
+`<link rel="preload" as="style" href="css/style.css">`
 
 The browser sets a more appropriate priority level for the resource in order to
 try to download it sooner while not delaying the `window.onload` event. 

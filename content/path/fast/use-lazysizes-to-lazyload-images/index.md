@@ -69,11 +69,3 @@ Additionally, you can use Lighthouse to verify that you haven't forgotten to
 lazy load any offscreen images. Run the Lighthouse performance audit (Lighthouse
 > Options > Performance) and look for the results of the "Defer offscreen
 images" audit.
-
-## See it in action
-
-Walk through a step-by-step guide that uses lazysizes to lazyload images:
-
-+  [Lazyload offscreen images with lazysizes](http://www.example.com)
-
-## 

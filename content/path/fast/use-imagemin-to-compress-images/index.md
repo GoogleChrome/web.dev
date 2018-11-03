@@ -147,12 +147,3 @@ for JPEGs only.)
 Run the Lighthouse Performance Audit (Lighthouse > Options > Performance) and
 look for the results of the "Efficiently encode images" audit. Lighthouse will
 list any images that are under compressed.
-
-## See it in action
-
-Walkthrough step-by-step guides to using Imagemin with these tutorials:
-
-+  Compress images with the Imagemin CLI
-+  Compress images with Imagemin & Grunt
-+  Compress images with Imagemin & Gulp
-+  Compress images with Imagemin & Webpack
