@@ -38,9 +38,9 @@ The CSS width of this image is 50 pixels, so `flower_logo.png` should be resized
 to match.
 
 - Use [ImageMagick](https://www.imagemagick.org) to resize the image to 50x50.
-(ImageMagick is a CLI tool for image editing.)
+(ImageMagick is a CLI tool for image editing.) In the terminal type:
 
-  `$ convert flower_logo.png -resize 50x50 flower_logo.png`
+  `convert flower_logo.png -resize 50x50 flower_logo.png`
 
 ## 3. Fix flower_photo.jpg
 
@@ -80,9 +80,9 @@ cover the area. The resized image is still fairly large, so the effects of this
 should not be very noticeable.
 
 - Use [ImageMagick](https://www.imagemagick.org) to resize the image to 960
-pixels wide.
+pixels wide. In the terminal type:
 
-  `$ convert flower_photo.jpg -resize 960x flower_photo.jpg`
+  `convert flower_photo.jpg -resize 960x flower_photo.jpg`
 
 (Note: `960x` is not a typo - it specifies a width, but not a height. The image
 height will be scaled in proportion to the width. This is a handy trick for when
