@@ -90,6 +90,6 @@ recommended by your framework/library instead. Refer to any of the following
 sample code projects to learn more about how following frameworks allow you to
 split on the route or component level:
 
-+  [Angular](https://example.com)
-+  [React](https://example.com/)
-+  [Vue](https://example.com/)
++  [Angular](https://angular.io/guide/lazy-loading-ngmodules)
++  [React](https://reacttraining.com/react-router/web/guides/code-splitting)
++  [Vue](https://router.vuejs.org/guide/advanced/lazy-loading.html)
