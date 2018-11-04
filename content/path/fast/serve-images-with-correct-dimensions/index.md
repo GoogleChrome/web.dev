@@ -32,10 +32,10 @@ you is the one that you feel comfortable implementing.
 There are two types of CSS units for specifying the size of HTML elements,
 including images:
 
-+  Absolute units: Elements styled using absolute units will always be
+-  Absolute units: Elements styled using absolute units will always be
     displayed at the same size, regardless of device. Examples of valid,
     absolute CSS units: px, cm, mm, in.
-+  Relative units: Elements styled using relative units will be displayed at
+-  Relative units: Elements styled using relative units will be displayed at
     varying sizes, depending on the relative length specified. Examples of
     valid, relative CSS units: %, vw (1vw = 1% of the width of the viewport),
     em (1.5 em = 1.5 times font size).
@@ -46,13 +46,13 @@ For images with sizing based on...
 
 - **Relative units**: Resize the image to a size that will work across all devices.
 
-  You may find it helpful to check your analytics data (e.g. Google
+You may find it helpful to check your analytics data (e.g. Google
 Analytics) to see which display sizes are commonly used by your users.
 Alternatively, [screensiz.es](http://screensiz.es/)
 provides information about the displays of many common devices.
 - **Absolute units**: Resize the image to match the size that it is displayed at.
 
-  The DevTools Elements panel can be used to determine what size an image is
+The DevTools Elements panel can be used to determine what size an image is
 displayed at.
 
 ![image](./elements-panel.png)
@@ -62,23 +62,23 @@ displayed at.
 For images with sizing based on...
 - **Absolute units:** Use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset) and [sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes) attributes to serve different images to different display densities. (Read the guide on Responsive Images [here](/path/fast/serve-responsive-images).)
 
-  "Display density" refers to the fact that different displays have different
+"Display density" refers to the fact that different displays have different
 densities of pixels. All other things being equal, a high pixel density
 display will look sharper than a low pixel density display.
 
-  As a result, multiple image versions are necessary if you want users to
+As a result, multiple image versions are necessary if you want users to
 experience the crispest possible images, regardless of the pixel density of
 their device. (Note: Some sites find that this difference in image quality
 matters, some find that it does not.)
 
-  Responsive image techniques make this possible by allowing you to list
+Responsive image techniques make this possible by allowing you to list
 multiple image versions and for the device to choose the image that works
 best for it.
 
 - **Relative units:** Use responsive images to serve different images to display sizes. (Read
 the guide [here](/path/fast/serve-responsive-images).)
 
-  An image that works across all devices will be unnecessarily large for
+An image that works across all devices will be unnecessarily large for
 smaller devices. Responsive image techniques, specifically [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset")
 and [sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes), allow you to specify multiple image versions and for the device to choose
 the size that works best for it.
@@ -92,11 +92,14 @@ command line tool for creating and editing images. Most people can resize images
 far more quickly when using the CLI than a GUI-based image editor.
 
 Resize image to 25% the size of the original:
+<pre class="devsite-terminal devsite-click-to-copy">
+convert flower.jpg -resize 25% flower_small.jpg
+</pre>
 
-    $ convert flower.jpg -resize 25% flower_small.jpg
-
-    Scale image to fit within "200px wide by 100px tall":
-    $ convert flower.jpg -resize 200x100 flower_small.jpg
+Scale image to fit within "200px wide by 100px tall":
+<pre class="devsite-terminal devsite-click-to-copy">
+convert flower.jpg -resize 200x100 flower_small.jpg
+</pre>
 
 If you'll be resizing many images, you may find it more convenient to use a
 script or service to automate the process. You can learn more about this in the

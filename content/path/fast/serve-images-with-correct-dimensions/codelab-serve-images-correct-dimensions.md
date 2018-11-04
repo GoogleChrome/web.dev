@@ -40,7 +40,9 @@ to match.
 - Use [ImageMagick](https://www.imagemagick.org) to resize the image to 50x50.
 (ImageMagick is a CLI tool for image editing.) In the terminal type:
 
-  `convert flower_logo.png -resize 50x50 flower_logo.png`
+<pre class="devsite-terminal devsite-click-to-copy">
+convert flower_logo.png -resize 50x50 flower_logo.png
+</pre>
 
 ## 3. Fix flower_photo.jpg
 
@@ -82,7 +84,9 @@ should not be very noticeable.
 - Use [ImageMagick](https://www.imagemagick.org) to resize the image to 960
 pixels wide. In the terminal type:
 
-  `convert flower_photo.jpg -resize 960x flower_photo.jpg`
+<pre class="devsite-terminal devsite-click-to-copy">
+`convert flower_photo.jpg -resize 960x flower_photo.jpg`
+</pre>
 
 (Note: `960x` is not a typo - it specifies a width, but not a height. The image
 height will be scaled in proportion to the width. This is a handy trick for when
