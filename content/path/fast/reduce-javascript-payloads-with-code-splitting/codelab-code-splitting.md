@@ -15,23 +15,20 @@ numbers will be optimized through code-splitting.
 
 ![image](./codelab-code-splitting-1.png)
 
-## 
-
 ## Measure
 
 Like always, it's important to first measure how well a website performs before
 attempting to add any optimizations.
 
-+  Click on the `Show Live` button.
+-  Click on the `Show Live` button.
 
-![image](./codelab-code-splitting-2.png)
+<img class="screenshot" src="./codelab-code-splitting-2.png" alt="Glitch show live button">
 
 +  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 +  Click on the **Network** panel.
 +  Make sure `Disable Cache` is checked and reload the app.
 
-> 
-![image](./codelab-code-splitting-3.png)
+<img class="screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2kb JavaScript bundle.">
 
 71.2kB worth of JavaScript just to sort a few numbers in a simple application.
 What gives?
@@ -55,6 +52,11 @@ Options 1 and 2 are perfectly appropriate methods to reduce the bundle size (and
 would probably make the most sense for a real application). However, those will
 not be used in this tutorial for the sake of teaching 😈.
 
+<div class="aside note">
+The concept of removing unused code is explored in further detail in a
+<a href="/path/fast/remove-unused-code">separate guide</a>.
+</div>
+
 Both options 3 and 4 will help improve the performance of this application. The
 next few sections of this codelab will cover these steps. Like any coding
 tutorial, always try to write the code yourself instead of copy and pasting.
@@ -65,55 +67,51 @@ A few files need to be modified to only import the single method from `lodash`.
 To begin with, replace this dependency in `package.json`:
 
 ```
-
-    "lodash": "^4.7.0",
-    ```
+"lodash": "^4.7.0",
+```
 
 with this:
 
 ```
-
-    "lodash.sortby": "^4.7.0",
-    ```
+"lodash.sortby": "^4.7.0",
+```
 
 Now in `src/index.js`, import this specific module:
 
-     import "./style.css";
-     import _ from "lodash";
-     import sortBy from "lodash.sortby";
+<pre class="prettyprint">
+import "./style.css";
+<s>import _ from "lodash";</s>
+<strong>import sortBy from "lodash.sortby";</strong>
+</pre>
 
 And update how the values are sorted::
 
-    form.addEventListener("submit", e => {
-     e.preventDefault()
-     const values = [
-       input1.valueAsNumber,
-       input2.valueAsNumber,
-       input3.valueAsNumber
-     ];
-     const sortedValues = _.sortBy(values);
-     const sortedValues = sortBy(values);
+<pre class="prettyprint">
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const values = [input1.valueAsNumber, input2.valueAsNumber, input3.valueAsNumber];
+  <s>const sortedValues = _.sortBy(values);</s>
+  <strong>const sortedValues = sortBy(values);</strong>
 
-     results.innerHTML = `
-       <h2>
-         ${sortedValues}
-       </h2>
-     `
-    });
+  results.innerHTML = `
+    &lt;h2&gt;
+      ${sortedValues}
+    &lt;/h2&gt;
+  `
+});
+</pre>
 
 Reload the application, open DevTools, and take a look at the **Network** panel
 once again.
 
-![image](./codelab-code-splitting-4.png)
+<img class="screenshot" src="./codelab-code-splitting-4.png" alt="Network panel showing 15.2kb JavaScript bundle.">
 
-The concept of removing unused code is explored in further detail in a
-[separate guide](). // !!! TODO: Add URL!!!
 For thie application, the bundle size was reduced by over 4X with very little
 work, but there's still more room for improvement.
 
 ### Code splitting
 
-**[webpack**](https://webpack.js.org/) is one of the most popular open-source
+[**webpack**](https://webpack.js.org/) is one of the most popular open-source
 module bundlers used today. In short, it _bundles_ all JavaScript modules (as
 well as other assets) that make up a web application into static files that can
 be read by the browser.
@@ -130,64 +128,82 @@ loaded only when the user presses the button.
 
 Begin by removing the top-level import for the sort method in `src/index.js`:
 
-    import sortBy from "lodash.sortby";
+<pre class="prettyprint">
+<s>import sortBy from "lodash.sortby";</s>
+</pre>
 
-    And import it within the event listener that fires when the button is pressed:
+And import it within the event listener that fires when the button is pressed:
 
-    form.addEventListener("submit", e => {
-     e.preventDefault()
-     import('lodash.sortby')
-       .then(module => module.default)
-       .then(sortInput())
-       .catch(err => { alert(err) });
-    });
+<pre class="prettyprint">
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  <strong>import('lodash.sortby')</strong>
+    <strong>.then(module => module.default)</strong>
+    <strong>.then(sortInput())</strong>
+    <strong>.catch(err => { alert(err) });</strong>
+});
+</pre>
 
 The `import()` feature is part of a
 [proposal](https://github.com/tc39/proposal-dynamic-import) (currently at stage
 3 of the TC39 process) to include the capability to dynamically import a module.
 webpack has already included support for this and follows the same syntax laid
-out by the proposal. A promise is returned and when it resolves, the selected
-module is provided which is split out into a separate chunk. Read more about how
+out by the proposal.
+
+<div class="aside note">
+Read more about how
 dynamic imports work in this
 [Web Updates article](https://developers.google.com/web/updates/2017/11/dynamic-import).
+</div>
 
-After the module is returned, `module.default` is used to reference the default
+
+`import()` returns a promise and when it resolves, the selected
+module is provided which is split out into a separate chunk. After the module is
+returned, `module.default` is used to reference the default
 export provided by lodash. The promise is chained with another `.then` that
 calls a `sortInput` method to sort the three input values. At the end of the
 promise chain, .`catch()` is used to handle cases where the promise is rejected
-due to an error. In a production application, always handle dynamic import
+due to an error.
+
+<div class="aside caution">
+In a production application, always handle dynamic import
 errors appropriately. A simple alert message similar to what is used here may
 not provide the best user experience to let the user know something has
 failed.
+</div>
 
-_Note: You may see a linting error that says `Parsing error: 'import' and
+<div class="aside note">
+You may see a linting error that says `Parsing error: 'import' and
 'export' may only appear at the top level.` This is due to the fact that the
 dynamic import syntax is still in the proposal stage and has not been finalized.
 Although webpack already supports it, the settings for
 [ESLint](https://eslint.org/) (a JavaScript linting utility) used by Glitch has
-not been updated to include this syntax yet, but it will still work!_
+not been updated to include this syntax yet, but it will still work!
+</div>
 
 The last thing that needs to be done is to write the `sortInput` method at the
 end of the file. This will need to be a function that _returns_ a function that
 takes in the imported method from `lodash.sortBy`. The nested function can then
 sort the three input values and update the DOM.
 
-    const sortInput = () => {
-     return (sortBy) => {
-       const values = [
-         input1.valueAsNumber,
-         input2.valueAsNumber,
-         input3.valueAsNumber
-       ];
-       const sortedValues = sortBy(values);
+```
+const sortInput = () => {
+  return (sortBy) => {
+    const values = [
+      input1.valueAsNumber,
+      input2.valueAsNumber,
+      input3.valueAsNumber
+    ];
+    const sortedValues = sortBy(values);
 
-       results.innerHTML = `
-         <h2>
-           ${sortedValues}
-         </h2>
-       `
-     };
-    }
+    results.innerHTML = `
+      <h2>
+        ${sortedValues}
+      </h2>
+    `
+  };
+}
+```
 
 ## Monitor
 
@@ -195,12 +211,12 @@ Reload the application one last time and keep a close eye on the **Network**
 panel again. Only a small initial bundle is downloaded as soon as the app
 loads.
 
-![image](./codelab-code-splitting-5.png)
+<img class="screenshot" src="./codelab-code-splitting-5.png" alt="Network panel showing 2.7kb JavaScript bundle.">
 
 After the button is pressed to sort the input numbers, the chunk that contains
 the sorting code will get fetched and executed.
 
-![image](./codelab-code-splitting-6.png)
+<img class="screenshot" src="./codelab-code-splitting-6.png" alt="Network panel showing 2.7kb JavaScript bundle followed by a 13.9kb JavaScript bundle.">
 
 Notice how the numbers still get sorted!
 
@@ -225,7 +241,7 @@ It is not always the best approach to lazy load third-party dependencies in your
 application and it depends on where you use them. Usually, third party
 dependencies are split into a separate `vendor` bundle that can be cached since
 they don't update as often. Read more about how the
-`[SplitChunksPlugin](https://webpack.js.org/plugins/split-chunks-plugin/)` can
+[SplitChunksPlugin](https://webpack.js.org/plugins/split-chunks-plugin/) can
 help you do this.
 
 ### Lazy loading with a JavaScript framework
@@ -246,12 +262,12 @@ method recommended by your framework/library to lazy load specific modules.
 Where possible, take advantage of browser hints such as `<link rel="preload">`
 or `<link rel="prefetch">` in order to try and load critical modules even
 sooner. webpack supports both hints through the use of magic comments in import
-statements. This is explained ini more detail in the
-["Preload critical chunks"]() // TODO: ADD URL!!! guide.
+statements. This is explained in more detail in the
+["Preload critical chunks"](/path/fast/preload-critical-assets) guide.
 
 ### Lazy loading more than code
 
 Images can make up a significant part of an application. Lazy loading those that
 are below the fold, or outside the device viewport, can speed up a website. Read
 more about this in the
-["Lazysizes"]() // TODO: ADD URL!!! guide.
+["Lazysizes"](/path/fast/use-lazysizes-to-lazyload-images) guide.
