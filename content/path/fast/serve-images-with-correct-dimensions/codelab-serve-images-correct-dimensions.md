@@ -85,7 +85,7 @@ should not be very noticeable.
 pixels wide. In the terminal type:
 
 <pre class="devsite-terminal devsite-click-to-copy">
-`convert flower_photo.jpg -resize 960x flower_photo.jpg`
+convert flower_photo.jpg -resize 960x flower_photo.jpg
 </pre>
 
 (Note: `960x` is not a typo - it specifies a width, but not a height. The image
