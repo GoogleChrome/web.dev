@@ -153,7 +153,7 @@ out by the proposal.
 <div class="aside note">
 Read more about how
 dynamic imports work in this
-[Web Updates article](https://developers.google.com/web/updates/2017/11/dynamic-import).
+<a href="https://developers.google.com/web/updates/2017/11/dynamic-import">Web Updates article</a>.
 </div>
 
 
@@ -173,12 +173,12 @@ failed.
 </div>
 
 <div class="aside note">
-You may see a linting error that says `Parsing error: 'import' and
-'export' may only appear at the top level.` This is due to the fact that the
-dynamic import syntax is still in the proposal stage and has not been finalized.
-Although webpack already supports it, the settings for
-[ESLint](https://eslint.org/) (a JavaScript linting utility) used by Glitch has
-not been updated to include this syntax yet, but it will still work!
+You may see a linting error that says <code>Parsing error: 'import' and
+'export' may only appear at the top level.</code> This is due to the fact that
+the dynamic import syntax is still in the proposal stage and has not been
+finalized. Although webpack already supports it, the settings for
+<a href="https://eslint.org/">ESLint</a> (a JavaScript linting utility) used by
+Glitch has not been updated to include this syntax yet, but it will still work!
 </div>
 
 The last thing that needs to be done is to write the `sortInput` method at the
@@ -263,11 +263,11 @@ Where possible, take advantage of browser hints such as `<link rel="preload">`
 or `<link rel="prefetch">` in order to try and load critical modules even
 sooner. webpack supports both hints through the use of magic comments in import
 statements. This is explained in more detail in the
-["Preload critical chunks"](/path/fast/preload-critical-assets) guide.
+[Preload critical chunks](/path/fast/preload-critical-assets) guide.
 
 ### Lazy loading more than code
 
 Images can make up a significant part of an application. Lazy loading those that
 are below the fold, or outside the device viewport, can speed up a website. Read
 more about this in the
-["Lazysizes"](/path/fast/use-lazysizes-to-lazyload-images) guide.
+[Lazysizes](/path/fast/use-lazysizes-to-lazyload-images) guide.
