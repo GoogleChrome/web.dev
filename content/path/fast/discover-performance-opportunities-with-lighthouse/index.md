@@ -30,12 +30,12 @@ the Google Chrome browser. You don't have to download anything to get DevTools.
 If you have Chrome, then you have DevTools.
 
 1. In Chrome, go to the page that you want to audit.
-1. Press Control+Shift+J or Command+Shift+J (Mac) to open DevTools.
+1. Press Control+Shift+J or Command+Option+J (Mac) to open DevTools.
 
 ![image](./discover-performance-opportunities-with-lighthouse-1.png)
 
-1. Click the **Audits** tab. If you don't see this tab, click **More
-    Panels  **and then select **Audits** from the list. Lighthouse is the
+1. Click the **Audits** tab. If you don't see this tab, click the &raquo; symbol
+    and then select **Audits** from the list. Lighthouse is the
     engine that powers the **Audits** panel. That's why you see an image of a
     lighthouse.
 
@@ -53,18 +53,20 @@ If you have Chrome, then you have DevTools.
     loads the page. Instead, it looks at how long the page took to load under
     normal conditions, and then it estimates how long it would have taken on a
     fast 3G network with a CPU that is 4 times less powerful than your machine's.
-1. Make sure that the **Clear Storage **checkbox is enabled. This option
+1. Make sure that the **Clear Storage** checkbox is enabled. This option
     forces Lighthouse to go to the network for every page resource, which is
     how first-time visitors experience the page.
 1. Click **Run Audits**. After 5 to 10 seconds, Lighthouse shows you a report.
 
 ![image](./discover-performance-opportunities-with-lighthouse-3.png)
 
-Note: You can set the configuration options to whatever makes the most sense for
+<div class="aside note">
+You can set the configuration options to whatever makes the most sense for
 your needs. If you don't understand them, the ones mentioned here are good
 defaults. If you can get your page fast with these options, then your page will
 be fast for everyone. The important thing is to stay consistent with the options
-across audits. 
+across audits.
+</div>
 
 For example, if you run some audits with **Simulated Fast 3G**, **4x CPU Slowdown
 throttling enabled** and then other times you run audits with throttling
@@ -77,8 +79,6 @@ configuration.
 
 The top-right of your report lists your overall performance score. 100 is a
 perfect score. Below the overall score are the metrics scores.
-[Understand Key Performance Metrics](https://docs.google.com/document/d/168J_5OlTyiveCoDWCNPIGPqcQuCvhNrlnt6eDGFP_Ds/edit#heading=h.85tp1mxx7wjj)
-explains how each metric fits into the overall performance picture.
 [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 explains how each metric score contributes to the overall score.
 
