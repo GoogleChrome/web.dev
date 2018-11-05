@@ -27,20 +27,20 @@ business and your users' content secure.
 ## What is a security vulnerability?
 
 In software development, when an application does not work the way it is
-intended to work, it's calledl it "a bug". Sometimes a bug displays wrong
-information or crashes or freezes on a certain action. A **vulnerability**
+intended to work, it's called "a bug". Sometimes a bug displays wrong
+information or crashes on a certain action. A **vulnerability**
 (sometimes called a **security bug**) is a type of bug that could be used for
 abuse. 
 
 Bugs are common in the day to day activities as a developer. Which means,
 vulnerabilities are also frequently introduced into applications. What's
-important is that you are aware of the types of common vulnerabilities in order
+important is that you are aware of common vulnerabilities in order
 to mitigate them as much as you can. It is just like minimizing other bugs by
 following common patterns and techniques.
 
 Most security techniques are just good programming, for example:   
 - Check values entered by a user (not null, not an empty string, checking the
-amount of data to move into a buffer).  
+amount of data).  
 - Ensure a single user can't take up too much time.  
 - Build unit tests so security bugs can't slip in by accident.
 
@@ -54,29 +54,30 @@ data is a common attack).
 
 ## What's the impact?
 
-When an application is not secure, many different people could be affected. 
+When an application is not secure, different people could be affected. 
 
 <table class="responsive">
-<thead>
-<tr>
-<th>Impact on users</th>
-<th>- Sensitive information (such as personal data) could be leaked or stolen.<br>
-- Content could be tampered with. A tampered site could direct users
-to a malicious site. </th>
-</tr>
-</thead>
 <tbody>
-<tr>
-<td>Impact on the application</td>
-<td>- User trust may be lost.<br>
-- Business could be lost due to downtime or loss of confidence as a
-result of tampering or system shortage.</td>
-</tr>
-<tr>
-<td>Impact on other systems</td>
-<td>- A hijacked application could be used to attack other systems, such as
-with a denial-of-service attack using a botnet.</td>
-</tr>
+    <tr>
+        <td>Impact on users</td>
+        <td>
+            - Sensitive information (such as personal data) could be leaked or stolen.<br>
+            - Content could be tampered with. A tampered site could direct users to a malicious site.
+        </td>
+    </tr>
+    <tr>
+        <td>Impact on the application</td>
+        <td>
+            - User trust may be lost.<br>
+            - Business could be lost due to downtime or loss of confidence as a result of tampering or system shortage.
+        </td>
+    </tr>
+    <tr>
+        <td>Impact on other systems</td>
+        <td>
+            - A hijacked application could be used to attack other systems, such as with a denial-of-service attack using a botnet.
+        </td>
+    </tr>
 </tbody>
 </table>
 
@@ -86,7 +87,7 @@ attacks launched from your site.
 
 ## Wrap up
 
-Congratulations, you are halfway through this topic! Now you know the difference
+Congratulations, you are halfway through this introduction! Now you know the difference
 between security vulnerabilities and features, and you are aware that not only
 you but everyone else gets affected when your application is not secure. The
 next guide covers the types of attacks in depth to make security even less
