@@ -59,17 +59,17 @@ _/usr/bin/ffmpeg_
 
 ## Change GIF to video
 
-_In the console, run `cd images` to enter the imagesdirectory. Then run `ls` to
+_In the console, run `cd images` to enter the images directory. Then run `ls` to
 see the contents._  
 _You should see something like this:_
 
 _$ ls_  
 _cat-herd.gif_  
 _Run `ffmpeg -i cat-herd.gif cat-herd.mp4`._  
-_This tells ffmpeg to take the **input**, signified by the -i flag, of our
+_This tells ffmpeg to take the **input**, signified by the `-i` flag, of our
 cat-herd.gif and convert it to a video called cat-herd.mp4. This should take a
 second to run. Lots of text and numbers will fly by the screen. When the command
-finishes, you should be able to type lsagain and see two files:_
+finishes, you should be able to type `ls` again and see two files:_
 
 _$ ls_  
 _cat-herd.gif  cat-herd.mp4_
@@ -78,7 +78,7 @@ _cat-herd.gif  cat-herd.mp4_
 
 _While MP4 has been around since 1999, WebM is a relative newcomer having been
 initially released in 2010. WebM videos can be much smaller than MP4 videos, so
-it makes sense to generate both. Thankfully the <video>element will let you add
+it makes sense to generate both. Thankfully the <video> element will let you add
 multiple sources, so if a browser doesn't support WebM, it can fallback to
 MP4._
 
@@ -105,7 +105,7 @@ Animated GIFs have three key traits that our video needs to replicate:
 +  They loop continuously (usually, but it is possible to prevent looping).
 +  They're silent.
 
-Luckly, you can recreate these behaviors using the <video>element.
+Luckily, you can recreate these behaviors using the <video> element.
 
 +  Switch from the console back to your source files.
 +  In the index.html file, delete the line with the <img>
@@ -117,7 +117,7 @@ behaviors expected of animated GIFs! 🎉
 
 ## Specify your <source>s
 
-All that's left to do is specify your video sources. The <video>element requires
+All that's left to do is specify your video sources. The <video> element requires
 one or more <source> child elements pointing to different video files the
 browser can choose from, depending on format support.  
 Update the <video> with <source> elements that link to your cat-herd videos:  
