@@ -18,7 +18,7 @@ links.
 
 [Workbox](https://developers.google.com/web/tools/workbox/) is high-level
 service worker toolkit built on top of the service worker and Cache Storage
-APIs. It provides a production-read set of library for adding ofline support to
+APIs. It provides a production-read set of library for adding offline support to
 web apps. The toolkit is structured into two collections: tools that help manage
 code that runs inside of your service worker, and tools that integrate with your
 build process.
