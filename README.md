@@ -2,7 +2,22 @@ Thie repo contains content and build scripts for [web.dev](https://web.dev).
 
 ## Authoring Guide
 
-TODO.
+### Codelabs
+
+Use [the ImageMin CLI codelab as an example](https://github.com/GoogleChrome/web.dev/blob/master/content/path/fast/use-imagemin-to-compress-images/codelab-imagine-cli.md).
+
+- When you first mention a Glitch panel or button, put its name in bold, followed by a screenshot. You can use `<web-screenshot>` ([preview](https://glitch.com/edit/#!/web-screenshot)) to add the screenshot.
+
+Example:
+```
+- Click the **Status** button.
+
+<web-screenshot type="status"></web-screenshot>
+
+- Click the **Console** button. This will open a new window.
+
+<web-screenshot type="console"></web-screenshot>
+```
 
 ## Usage
 
