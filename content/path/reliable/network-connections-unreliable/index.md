@@ -1,13 +1,13 @@
 ---
 page_type: guide
-title: What is network reliability and how to measure it
+title: What is network reliability and how do you measure it?
 author: jeffy
 web_lighthouse: 
 - works-offline
 wf_blink_components: N/A
 ---
 
-# What is network reliability and how to measure it
+# What is network reliability and how do you measure it?
 
 The modern web is enjoyed by a wide swath of people, using a range of different
 devices and types of network connections. Your creations can reach users all
