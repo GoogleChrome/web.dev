@@ -12,21 +12,6 @@
             {{/if}}
           </ul>
         </div>
-        {{#if topic}}
-        <div class="progress">
-          <div>Progress</div>
-          <div class="progress__markers">
-            <div>
-              <!-- <span class="progress__marker--complete progress__marker--active"></span>
-              <span class="progress__marker--complete progress__marker--active"></span>
-              <span class="progress__marker--incomplete progress__marker--active"></span> -->
-              {{#each topic.guides}}
-              <span class="progress__marker--incomplete" id="topic-progress__{{id}}"></span>
-              {{/each}}
-            </div>
-          </div>
-        </div>
-        {{/if}}
       </div>
     </div>
 
@@ -78,19 +63,6 @@
     </div>
   </div>
 </main>
-
-<!-- CALL TO ACTION: MARK COMPLETE -->
-<div class="cta-mark-complete">
-  <h2 class="cta-mark-complete__heading">
-    Ready to move on?<br>
-    Keep track of your progress.
-  </h2>
-  <button class="button button-primary">
-    Mark as complete
-  </button>
-</div>
-
-<hr>
 
 <!-- CALL TO ACTION: NEXT GUIDE -->
 <div class="cta-next-guide">
