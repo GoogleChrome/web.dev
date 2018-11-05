@@ -31,7 +31,7 @@ $ npm install --save-dev imagemin-webpack-plugin
 
 We don't need to create a `webpack.config.js` file because this project already has one. The existing `webpack.config.js` for this project has been copying images from the `"images/"` directory to the `"dist/"` directory but it hasn't been compressing them. Let's change that.
 
-(Why would you copy images to a new "`dist/`" folder? `"dist/"` is short for "distribution" and it's fairly common practice to keep original code, images, etc. separate from their distrubted versions because they may be slightly different.)
+(Why would you copy images to a new "`dist/`" folder? `"dist/"` is short for "distribution" and it's fairly common practice to keep original code, images, etc. separate from their distributed versions because they may be slightly different.)
 
 ☞ First, declare the Imagemin plugin by adding this code at the top of `webpack.config.js`:
 
