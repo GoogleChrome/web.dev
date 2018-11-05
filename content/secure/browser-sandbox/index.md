@@ -22,9 +22,6 @@ want within the boundary without making a mess elsewhere, application code has
 the freedom to execute within a restricted environment. For example, JavaScript
 can add and modify elements on the page but might be restricted from accessing
 an external JSON file. This is because of a sandbox feature called same-origin
-policy. 
-
-[image sandbox]
 
 ## Why is a sandbox necessary?
 
@@ -56,6 +53,7 @@ Resource Sharing (CORS for short), but if it is not done carefully you can
 expose a resource to everyone else on the web, essentially undoing the
 sandbox.
 
+## Wrap up
 A secure web experience can only be achieved if security is baked into the
 design of your application, and strong design starts with understanding existing
 features. Next two guides dives into CORS and same-origin policy in depth.
