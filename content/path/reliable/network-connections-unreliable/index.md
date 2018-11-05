@@ -41,7 +41,7 @@ It's not enough to  be fast under the best circumstances. Your users will view
 your web app's performance through the lens of how it behaves in all network
 conditions.
 
-## Reliabile is achievable
+## Reliable is achievable
 
 The good news is that the modern web platform provides technologies—like
 [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API),
@@ -85,6 +85,6 @@ techniques you need to identify what your web app is loading, and teach you how
 to use the tools to make that loading experience reliable.
 
 Throughout that process, you're encouraged to keep re-running the Lighthouse
-audits. They serve as a guiding light throughout your journey towardsfrom
+audits. They serve as a guiding light throughout your journey from
 starting with a new web application, and ending with a reliable progressive web
 app.
