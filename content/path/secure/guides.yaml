@@ -10,7 +10,7 @@ topics:
   guides:
     - security-not-scary
     - security-attacks
-- title: How browser mitigates against attacks
+- title: How browsers mitigate against attacks
   guides:
     - browser-sandbox
     - same-origin-policy
