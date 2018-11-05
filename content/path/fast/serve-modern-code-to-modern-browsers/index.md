@@ -14,13 +14,11 @@ want to use new JavaScript language features, you will need to transpile these
 features to backwards-compatible formats for browsers that do not yet support
 them.
 
-![Boromir spreading wisdom meme](./serve-modern-code-to-modern-browsers-1.png)
-
 [Babel](https://babeljs.io/docs/en) is the most widely used tool to compile code
 that contains newer syntax into code that different browsers and environments
 (such as Node) can understand. This guide assumes you are using Babel, so you
 will need to follow the [setup instructions](https://babeljs.io/setup) to
-include it into your application if you haven't already. Select `Webpack` 
+include it into your application if you haven't already. Select `webpack` 
 in `Build Systems` if you are using webpack as the module bundler in your app.
 
 <div class="aside note">
@@ -28,7 +26,7 @@ Fun fact: Lebab is a separate library that does the opposite of what Babel does.
 It converts older code into newer syntax.
 </div>
 
-To use Babel to only transpile what is required by needed for your users, you
+To use Babel to only transpile what is needed for your users, you
 will need to:
 
 1. Identify which browsers you want to target.
@@ -81,7 +79,7 @@ tools for targeting browsers. A full list of compatible queries is in the
 Another option is to use a [`.browserslistrc`](https://babeljs.io/docs/en/babel-preset-env#browserslist-integration) file to list the environments 
 you wish to target.
 
-The `">0.25%"` value tells Babel to include all necessary transforms 
+The `">0.25%"` value tells Babel to only include the transforms 
 needed to support browsers that make up more than 0.25% of global
 usage. This ensures your bundle does not contain unnecessary transpiled 
 code for browsers that are used by a very small percentage of users.
@@ -102,7 +100,7 @@ browsers to be used to access your application.
 Ultimately, you should select the appropriate combination of queries to only
 target browsers that fit your needs.
 
-## Use ES Modules
+## Use ES modules
 
 JavaScript modules, or ES modules, are a relatively new feature supported in
 [all major browsers](https://caniuse.com/#feat=es6-module). You can use modules
@@ -111,8 +109,7 @@ also use them with `@babel/preset-env`to only target browsers that support
 them.
 
 Instead of querying for specific browser versions or market share, consider 
-using the different approach of specifying `“esmodules” : true` inside 
-your `.babelrc` file’s `targets` field.
+specifying `“esmodules” : true` inside your `.babelrc` file’s `targets` field.
 
 ```json
 {
@@ -131,14 +128,14 @@ your `.babelrc` file’s `targets` field.
 
 Many newer ECMAScript features compiled with Babel are already supported 
 in environments that support JavaScript modules. So by doing this, you 
-simplify the process of making sure that only transpiled code is only used 
+simplify the process of making sure that only transpiled code is used 
 for browsers that actually need it.
 
 Browsers that support modules ignore scripts with a `nomodule` attribute. 
 Conversely, browsers that do not support modules ignore script elements with 
 `type="module"`. This means you can include a module as well as a compiled fallback.
 
-Ideally, the two version scripts of an application would be included like this:
+Ideally, the two version scripts of an application will be included like this:
 
 ```html
   <script type="module" src="main.mjs"></script>
