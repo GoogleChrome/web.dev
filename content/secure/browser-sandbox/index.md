@@ -13,7 +13,8 @@ security features to an application. Luckily, on the web, the browser provides
 many security features. Some are available for developers to opt-in, and some
 are turned on by default to protect users. 
 
-The idea of a "sandbox"  
+## The idea of a "sandbox"  
+
 Modern web browsers are built on the idea of a "sandbox". A sandbox is a
 security mechanism used to run an application in a restricted environment. Just
 like the physical sandbox at a playground where kids can create anything they
@@ -31,7 +32,7 @@ Every day, users of the web download arbitrary code and execute it on their
 computer or phone multiple times. If someone told you "Hey! Download and run
 this application!", you might pause to think if that application comes from a
 trusted source, read up on the application vendor, or check reviews carefully.
-How about when someone sends you a URL saying "check out this blog post" ? You
+How about when someone sends you a URL saying "check out this blog post"? You
 would probably click on it without asking questions like "What kind of
 JavaScript will this site download?".
 
@@ -46,7 +47,7 @@ security? Absolutely yes!
 First of all, sandbox features are not the perfect shield. Even though browser
 engineers work hard, browsers could have vulnerabilities and attackers are
 always trying to bypass the sandbox (such as with
-[Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)).
+[Spectre Attack](https://developers.google.com/web/updates/2018/02/meltdown-spectre)).
 
 The sandbox could sometimes get in a way of creating a great web experience. For
 example, a browser may block a fetch request to an image hosted on a different
@@ -57,4 +58,4 @@ sandbox.
 
 A secure web experience can only be achieved if security is baked into the
 design of your application, and strong design starts with understanding existing
-features. 
+features. Next two guides dives into CORS and same-origin policy in depth.
