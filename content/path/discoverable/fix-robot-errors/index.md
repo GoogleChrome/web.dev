@@ -37,7 +37,7 @@ stop all crawling of the website, which would prevent new content from being
 indexed. To check the HTTP status code, open the robots.txt file in Chrome and
 [check the request in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#analyze).
 
-## Make sure the robots.txt file is smaller than 500kb
+## Make sure the robots.txt file is smaller than 500KB
 
 Search engines may stop processing robots.txt files when they get too large. If
 a search engine stops processing in the middle of a directive, it's impossible
