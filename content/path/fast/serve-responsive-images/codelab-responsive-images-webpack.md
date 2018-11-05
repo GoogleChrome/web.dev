@@ -13,14 +13,14 @@ is probably more convenient.
 
 ## 1. Configure webpack.config.js
 
-1. View `webpack.config.js` for an example of how to configure
+- View `webpack.config.js` for an example of how to configure
 responsive-loader.
 
 In this demo, the [sharp](http://sharp.dimens.io/en/stable/) image processing
 library resizes JPEG and PNG images to five default sizes: 480, 720, 1080, 1440,
 and 1920 pixels wide. (Note: Specifying default sizes is optional.)
 
-1. View the "`dist`" directory to see the multiple image versions created by
+- View the `dist` directory to see the multiple image versions created by
 responsive-loader.
 
 ## 2. Update image Tags
@@ -32,14 +32,16 @@ responsive-loader sets the `src` and `srcset` properties on image imports (see
     // flowerImage.src ==> "63f6dd53b67be54696fabc5192aa1520-480.jpg"
     // flowerImage.srcSet ==> "63f6...8a135486-1920.jpg 1920w"
 
-1. Use images created by responsive-loader by updating the `src` and "`srcset`
+- Use images created by responsive-loader by updating the `src` and "`srcset`
 attributes on image tags to the values set by responsive-loader:
 
+```javascript
     const flowerImage = require('./flower.jpg');
     ReactDOM.render(<img src={flowerImage.src} srcset={flowerImage.srcSet} sizes="50vw">, ...);
+```
 
 Note: Don't forget to include the
-[sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes)
+[`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes)
 attribute in the HTML of any responsive image. responsive-loader will not set
 this attribute for you.
 
@@ -47,30 +49,24 @@ this attribute for you.
 
 ### Code
 
-![image](./show-live.pnd)
+- Inspect the code in the live version of this Glitch. (Hint: Click  <web-screenshot type="show-live"> to view the live version)
 
 Notice that responsive-loader has done the heavy lifting for you and generated
 the contents of the `src` and `srcset` attributes. This is particularly handy
 when supporting many images sizes.
 
 <table>
-<thead>
-<tr>
-<th>Initial Code</th>
-<th><p><pre>
-<img src={flowerImage.src} srcset={flowerImage.srcSet} sizes="50vw"/>
-</pre></p>
-
-</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td>Final Code</td>
-<td><p><pre>
-<img src="63f6dd53b67be54696fabc5192aa1520-480.jpg" srcset="63f6dd53b67be54696fabc5192aa1520-480.jpg 480w,0e6cca2660ff3c6df90db07b68cb97aa-720.jpg 720w,b0b8f6c340a98d96a2a414a70d2c73fe-1080.jpg 1080w,5596f85fbfb994ccf46eab8ee9a12779-1440.jpg 1440w,17bb43ce70871ce91e64c6908a135486-1920.jpg 1920w" sizes="50vw">
-</pre></p>
-
+<td><strong>Initial Code</strong></td>
+<td>
+&lt;img src={flowerImage.src} srcset={flowerImage.srcSet} sizes="50vw"/&gt;
+</td>
+</tr>
+<tr>
+<td><strong>Final Code</strong></td>
+<td>
+&lt;img src="63f6dd53b67be54696fabc5192aa1520-480.jpg" srcset="63f6dd53b67be54696fabc5192aa1520-480.jpg 480w,0e6cca2660ff3c6df90db07b68cb97aa-720.jpg 720w,b0b8f6c340a98d96a2a414a70d2c73fe-1080.jpg 1080w,5596f85fbfb994ccf46eab8ee9a12779-1440.jpg 1440w,17bb43ce70871ce91e64c6908a135486-1920.jpg 1920w" sizes="50vw"&gt;
 </td>
 </tr>
 </tbody>
@@ -91,9 +87,9 @@ Note:
 ![image](./empty-cache.png)
 
 +  The
-    [window.devicePixelRatio](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio)
+    [`window.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio)
     of the device that you're using (or emulating) affects which image sizes
-    are loaded. To learn how `devicePixelRatio` works, read [Responsive Images: Density Descriptors]().
+    are loaded. To learn how `devicePixelRatio` works, read [Responsive Images: Density Descriptors](/path/fast/serve-responsive-images/codelab-density-descriptors).
 
 # Extra Credit
 
