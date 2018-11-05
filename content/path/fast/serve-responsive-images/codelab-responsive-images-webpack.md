@@ -76,7 +76,7 @@ when supporting many images sizes.
 
 ### Responsive images
 
-1. Reload this demo using different browser sizes. Notice how different image
+- Reload this demo using different browser sizes. Notice how different image
 sizes are loaded depending on the width of the browser.
 
 Note:
