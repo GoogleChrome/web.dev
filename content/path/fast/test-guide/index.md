@@ -58,7 +58,7 @@ function foo() {
 
 > WebP is an excellent replacement for JPEG, PNG, and GIF images. In addition, WebP offers both lossless and lossy compression. In lossless compression no data is lost. Lossy compression can reduce file size, but at the expense of possibly reducing image quality.
 
-You can use <abbr title="Cascading Stlye Sheets">CSS</abbr> to style your <abbr title="HyperText Markup Language">HTML.</abbr>
+You can use <abbr title="Cascading Style Sheets">CSS</abbr> to style your <abbr title="HyperText Markup Language">HTML.</abbr>
 
 ## Measure
 
