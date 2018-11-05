@@ -13,7 +13,7 @@ general workflow for how you use Lighthouse:
 
 1. You tell Lighthouse what page to audit.
 1. Lighthouse loads that page and records how long the page takes to hit
-    various performance milestones. These milestones are called **metrics**.  
+    various performance milestones. These milestones are called **metrics**.
 1. Lighthouse gives you a report on how the page did. The report provides a
     score for each metric and a list of **opportunities** which, if you implement
     them, should make the page load faster.
@@ -25,7 +25,7 @@ opportunities tends to improve your metrics scores.
 
 ## Run Lighthouse from your profile page
 
-Run Lighthouse from your [web.dev profile](/profile) page:
+Run Lighthouse from your [web.dev profile](/measure) page:
 
 1. Provide any URL, and Lighthouse runs a series of audits generating a report of how well the page did.
 
@@ -121,4 +121,4 @@ your report. Your metrics scores should ideally be a little better, and
 Lighthouse should no longer be flagging that opportunity as something to work
 on.
 
-Running Lighthouse yourself is great for spot-checking issues, but ultimately you'll want to setup continuous monitoring to make sure your site stays healthy. To get a daily Lighthouse report that highlights performance opportunities, add your site to the your [profile](/profile).
+Running Lighthouse yourself is great for spot-checking issues, but ultimately you'll want to setup continuous monitoring to make sure your site stays healthy. To get a daily Lighthouse report that highlights performance opportunities, add your site to the your [profile](/measure).
