@@ -125,7 +125,7 @@ either
 `[Last-Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified)`
 or `[ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)`.
 ETags are identifiers for specified resources. They allow caches to be more
-efficient and are useful to help prevent simultaneious updates from overwriting
+efficient and are useful to help prevent simultaneous updates from overwriting
 each other.  By setting one or the other of those headers, you'll end up making
 the revalidation request much more efficient. They end up triggering the
 `[If-Modified-Since](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Modified-Since)`
