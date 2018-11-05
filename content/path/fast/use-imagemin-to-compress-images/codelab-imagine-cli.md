@@ -13,29 +13,32 @@ The Imagemin <a href="https://github.com/imagemin/imagemin-cli" target="_blank">
 
 - Edit the project to remix it.
 
-- Click the "Status" button.
+- Click the **Status** button.
 
 <web-screenshot type="status"></web-screenshot>
 
-- Click the "Console" button. This will open a new window.
+- Click the **Console** button. This will open a new window.
 
 <web-screenshot type="console"></web-screenshot>
 
-- Lastly, type these commands:
+- Lastly, type this commands into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 npm install --save-dev imagemin-cli
 </pre>
 
-You've now installed the Imagemin CLI.
+You've now installed the Imagemin CLI!
 
 ## Compress images
+
+- Type the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 imagemin images/* --out-dir=images
 </pre>
 
-This command compresses the images in the `/images` directory and saves them to same directory (i.e. it overwrites the original files).
+This command compresses the images in the `/images` directory and saves them to
+same directory (i.e. it overwrites the original files).
 
 ## Verify results with Lighthouse
 
