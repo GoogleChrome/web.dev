@@ -95,7 +95,7 @@ The `<picture>` tag allows you to serve WebP to newer browsers while maintaining
 </picture>
 ```
 
-- Next, replace the `<img>` tags for `flower2.jpg` and `flower3.png` with `<picture>` itags.
+- Next, replace the `<img>` tags for `flower2.jpg` and `flower3.png` with `<picture>` tags.
 
 ### ✔︎ Check-in
 
