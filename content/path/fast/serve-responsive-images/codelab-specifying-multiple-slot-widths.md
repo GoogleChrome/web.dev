@@ -3,6 +3,7 @@ title: Specifying multiple slot widths
 author: khempenius
 page_type: glitch
 glitch: responsive-images-multiple-sizes
+order: 1
 ---
 
 ## Try out this demo
