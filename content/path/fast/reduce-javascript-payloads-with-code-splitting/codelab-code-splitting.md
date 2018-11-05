@@ -106,7 +106,7 @@ once again.
 
 <img class="screenshot" src="./codelab-code-splitting-4.png" alt="Network panel showing 15.2kb JavaScript bundle.">
 
-For thie application, the bundle size was reduced by over 4X with very little
+For this application, the bundle size was reduced by over 4X with very little
 work, but there's still more room for improvement.
 
 ### Code splitting
