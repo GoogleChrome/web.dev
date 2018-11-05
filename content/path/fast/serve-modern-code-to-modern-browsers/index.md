@@ -43,7 +43,7 @@ informed decision.
 ## Use @babel/preset-env
 
 Transpiling code will usually result in a file that is larger than the
-originallarger file sizes than their original forms. By minimizing the amount of
+original larger file sizes than their original forms. By minimizing the amount of
 compilation that you do you can reduce the size of your bundles to improve the
 performance of a web page.
 
@@ -69,13 +69,13 @@ configurations file, `.babelrc`:
 }
 ```
 
-Use the `targets` field to specify which browser versions you want to include, by adding an appropriate value (or query) to the `browsers` field. `@babel/preset-env` integrates with browserslist, an open-source configuration shared between different tools for targeting browsers. A full list of compatible queries is in the browserlist documentation. Another option is to use a `.browserslistrc` file to list the environments you wish to target.
+Use the `targets` field to specify which browser versions you want to include, by adding an appropriate value (or query) to the `browsers` field. `@babel/preset-env` integrates with browserslist, an open-source configuration shared between different tools for targeting browsers. A full list of compatible queries is in the browserslist documentation. Another option is to use a `.browserslistrc` file to list the environments you wish to target.
 
 Use the `targets` field to specify which browser versions you want to include 
 by adding an appropriate query to the `browsers` field. `@babel/preset-env`
 integrates with browserslist, an open-source configuration shared between different 
 tools for targeting browsers. A full list of compatible queries is in the 
-[browserlist documentation](https://github.com/browserslist/browserslist#full-list). 
+[browserslist documentation](https://github.com/browserslist/browserslist#full-list). 
 Another option is to use a [`.browserslistrc`](https://babeljs.io/docs/en/babel-preset-env#browserslist-integration) file to list the environments 
 you wish to target.
 
