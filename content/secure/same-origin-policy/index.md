@@ -79,7 +79,7 @@ cross-origin resource is blocked.
 
 An attack called "clickjacking" embeds a site in an iframe and overlays transparent buttons which link to a different destination. Users are tricked into thinking they are accessing your application while sending data to attackers. 
 
-[image]
+![clickjacking](./clickjacking.png)
 
 To block other sites from embedding your site in an iframe, add content securioty policy with [`frame-ancestors` directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) to the HTTP headers.
 
