@@ -23,6 +23,7 @@ We've already installed `webpack` and `webpack-cli` for you, but you'll need to 
 ```shell
 $ enable-npm
 $ npm install --save-dev imagemin-webpack-plugin
+```
 
 ## 2. Setup imagemin-webpack-plugin:
 
