@@ -26,17 +26,20 @@ identity to access sensitive data (masquerade attack) to flooding your server
 with massive amounts of traffic to make your application unresponsive (denial of
 service attack). 
 
+
 [img]
 
 Active attacks can also be done to data in transit. An attacker could modify
 your application data before it gets to a user's browser, showing modified
 information on the site or direct the user to an unintended destination. This is
 sometimes called **modification of messages**.
+
+
 [img]
 
 <div class="note">Have you ever logged into free public wifi and seen ads
-wrapped around web pages you are accessing? That's exactly what **modification
-of message** is! The wifi access point injected their advertising into a website
+wrapped around web pages you are accessing? That's exactly what <b>modification
+of message</b> is! The wifi access point injected their advertising into a website
 before it gets to your browser. In many cases, you might dismiss it as "just ads
 for free wifi", but imagine if the same technique is used to replace some of the
 javascript or link to a phishing site. Your site may be used by an attacker to
@@ -69,5 +72,4 @@ in transit.
 
 Since many attacks can happen without ever hitting your server, it is sometimes
 hard to detect if attacks are happening or not. The good news is that web
-browsers have powerful security features already built in. Much more to come on
-browser security and defense against attacks.
+browsers have powerful security features already built in. Follow the next topic "How browser mitigates against attacks" to learn more.
