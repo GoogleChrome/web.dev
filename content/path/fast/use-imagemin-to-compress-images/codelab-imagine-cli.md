@@ -14,9 +14,11 @@ The Imagemin <a href="https://github.com/imagemin/imagemin-cli" target="_blank">
 - Edit the project to remix it.
 
 - Click the "Status" button.
+
 <web-screenshot type="status"></web-screenshot>
 
 - Click the "Console" button. This will open a new window.
+
 <web-screenshot type="console"></web-screenshot>
 
 - Lastly, type these commands:
@@ -40,6 +42,7 @@ This command compresses the images in the `/images` directory and saves them to 
 Lighthouse's "Efficiently encode images" performance audit can let you know if the JPG images on your page are optimally compressed.
 
 - Click on the "Show Live" button to view the live version of the your Glitch.
+
 <web-screenshot type="show-live"></web-screenshot>
 
 Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
