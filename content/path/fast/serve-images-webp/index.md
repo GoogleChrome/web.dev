@@ -68,7 +68,7 @@ for file in images/*; do cwebp "$file" -o "${file%.*}.webp"; done
 ### Use Imagemin
 
 The Imagemin WebP plugin can be used by itself or with your favorite build tool
-(Webpack/Gulp/Grunt/etc.). This usually involves adding ~10 lines of code to a
+(Webpack/Gulp/Grunt/etc.). This usually involves adding \~10 lines of code to a
 build script or the configuration file for your build tool.
 Here are examples of how to do that for
 [Webpack](https://glitch.com/~webp-webpack),
@@ -119,17 +119,21 @@ interact to achieve this end result.
 
 ### `<picture>`
 
-**Role:**
-
 The `<picture>` tag provides a wrapper for zero or more `<source>` tags and one `<img>` tag.
 
+### `<source>`
+
+The `<source>` tag specifies a media resource.
+
+The browser uses the first listed source that’s in a format it supports. If the browser does not support any of the formats listed in the `<source>` tags, it falls back to loading the image specified by the `<img>` tag.
+
 **Gotchas:** 
+
 - The `<source>` tag for the "preferred" image format (in this case that is WebP) should be listed first, before other `<source>` tags.
+
 - The value of the `type` attribute should be the MIME type corresponding to the image format. An image's [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types) and its file extension are often similar, but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
 
 ### `<img>`
-
-**Role:**
 
 The `<img>` tag is what makes this code work on browsers
 that don't support the `<picture>` tag.
