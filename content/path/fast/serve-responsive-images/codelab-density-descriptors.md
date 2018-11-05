@@ -19,7 +19,7 @@ simple, but "pixel" can actually have many meanings:
 <table>
 <thead>
 <th>Type</th>
-<th>Defintion</th>
+<th>Definition</th>
 </thead>
 <tbody>
 <tr>
@@ -151,7 +151,7 @@ This example put into words:
 How to use this:  
 ✔️ Use a devicePixelRatio and the `x` unit to write density descriptors. For
 example, the density descriptor for many Retina screens
-(`window.deviceDisplayRatio = 2`) would be written as `2x`.
+(`window.devicePixelRatio = 2`) would be written as `2x`.
 
 ✔️ If a density descriptor isn't provided, it is assumed to be `1x`.
 
