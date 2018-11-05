@@ -20,7 +20,7 @@ simple, but "pixel" can actually have many meanings:
 <thead>
 <th>Type</th>
 <th>Defintion</th>
-</head>
+</thead>
 <tbody>
 <tr>
 <td>Device pixel <br>
