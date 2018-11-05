@@ -3,7 +3,7 @@ page_type: guide
 title: Use Imagemin to compress images
 author: khempenius
 web_lighthouse:
-- uses-optimized-images
+    - uses-optimized-images
 wf_blink_components: N/A
 ---
 
