@@ -25,7 +25,7 @@ opportunities tends to improve your metrics scores.
 
 ## Run Lighthouse from your profile page
 
-Run Lighthouse from your [web.dev profile](./profile.md) page:
+Run Lighthouse from your [web.dev profile](../profile.html) page:
 
 1. Provide any URL, and Lighthouse runs a series of audits generating a report of how well the page did.
 
