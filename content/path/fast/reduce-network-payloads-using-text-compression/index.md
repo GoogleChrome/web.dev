@@ -62,7 +62,7 @@ results than Gzip.
 
 <div class="aside note">
 Compressing files can significantly improve the performance of a
-webpage, but you may very rarely need to do this yourself. Many hosting
+webpage, but you rarely need to do this yourself. Many hosting
 platforms, CDNs and reverse proxy servers either encode assets with compression
 by default or allow you to easily configure them. Read the documentation for the
 tool that you are using to see if compression is already supported before
@@ -140,13 +140,11 @@ example of how this can be done with Node and Express for gzipped assets.
 var express = require('express');
 var app = express();
 
-<strong>
-app.get('*.js', (req, res, next) => {
+<strong>app.get('*.js', (req, res, next) => {
 	req.url = req.url + '.gz';
 	res.set('Content-Encoding', 'gzip');
 	next();
-});
-</strong>
+});</strong>
 
 app.use(express.static('public'));
 </pre>
