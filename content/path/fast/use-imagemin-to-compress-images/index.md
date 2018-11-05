@@ -18,10 +18,10 @@ to the average user.
 <table>
 <thead>
 <tr>
-<th><p><img src=./20kb.jpg></p>
+<th><p><img src=./20kb.jpg width="100%"></p>
 
 20KB</th>
-<th><p><img src=./12kb.jpg></p>
+<th><p><img src=./12kb.jpg width="100%"></p>
 
 12KB</th>
 </tr>
@@ -29,6 +29,28 @@ to the average user.
 <tbody>
 </tbody>
 </table>
+
+
+## Identify under compressed images
+
+Identify under compressed images using the Lighthouse Performance audit:
+
+1. Click on the Show Live buton to boot up the app:
+
+<web-screenshot type="show-live">
+
+2. Open Chrome DevTools.
+
+3. Click on the Audits panel.
+
+4. Select the Performance checkbox.
+
+5. Click Run Audits to generate a report.
+
+Look for the results of the "Efficiently encode images" audit.
+This audit lists any images that are under compressed.
+
+![image](./efficient-encoding.png)
 
 ## Imagemin
 
@@ -47,7 +69,7 @@ particular image format (e.g. "mozjpeg" compresses JPEGs). Popular image formats
 may have multiple plugins to pick from.
 
 The most important thing to consider when choosing a plugin is whether it is
-"lossy" or "lossless." In lossless compression no data is lost. Lossy
+"lossy" or "lossless." In lossless compression, no data is lost. Lossy
 compression reduces file size, but at the expense of possibly reducing image
 quality. If a plugin doesn't mention whether it is "lossy" or "lossless," you
 can tell by its API: if you can specify the image quality of the output, then it
@@ -55,9 +77,7 @@ is "lossy."
 
 For most people, lossy plugins are the best choice. They offer significantly
 greater filesize savings, and you can customize the compression levels to meet
-your needs.
-
-The table below lists popular Imagemin plugins. These aren't the only plugins
+your needs. The table below lists popular Imagemin plugins. These aren't the only plugins
 available, but they'd all be good choices for your project.
 
 <table>
@@ -109,41 +129,38 @@ href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
 
 The Imagemin CLI works with 5 different plugins: imagemin-gifsicle,
 imagemin-jpegtran, imagemin-optipng, imagemin-pngquant, and imagemin-svgo.
-Imagemin will use the appropriate plugin based on the image format of the
+Imagemin uses the appropriate plugin based on the image format of the
 input.
 
 To compress the images in the "images/" directory and save them to the same
 directory, run the following command (overwrites the original files):  
+
+```
 $ imagemin images/* --out-dir=images
+```
 
 ### Imagemin npm module
 
-Here are examples of how to use Imagemin with Webpack, Gulp, and Grunt.
+If you use one of these build tools,
+checkout out the codelabs for Imaginemin with
+[Webpack](./codelab-imagine-webpack.md), [Gulp](./codelab-imagine-gulp.md), and
+[Grunt](./codelab-imagine-grunt.md).
 
-If you do not use one of those build tools, you can use Imagemin by itself as a
-Node script.
-
+You can also use Imagemin by itself as a Node script.
 This code uses the "imagemin-mozjpeg" plugin to compress JPEG files to a quality
-of 50 (‘0' being the word; ‘100' being the best).
+of 50 (‘0' being the word; ‘100' being the best):
 
-    const imagemin = require('imagemin');
-    const imageminMozjpeg = require('imagemin-mozjpeg');
+```
+const imagemin = require('imagemin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
-    (async() => {
-      const files = await imagemin(
-          ['source_dir/*.jpg', 'another_dir/*.jpg'],
-          'destination_dir',
-          {plugins: [imageminMozjpeg({quality: 50})]}
-      );
-      console.log(files);
-    })();
+(async() => {
+  const files = await imagemin(
+      ['source_dir/*.jpg', 'another_dir/*.jpg'],
+      'destination_dir',
+      {plugins: [imageminMozjpeg({quality: 50})]}
+  );
+  console.log(files);
+})();
+```
 
-## Verify
-
-It's very difficult for the human eye to detect whether something is adequately
-compressed. Luckily, Lighthouse can audit this for us. (Note: this feature works
-for JPEGs only.)
-
-Run the Lighthouse Performance Audit (Lighthouse > Options > Performance) and
-look for the results of the "Efficiently encode images" audit. Lighthouse will
-list any images that are under compressed.
