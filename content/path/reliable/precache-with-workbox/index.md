@@ -16,7 +16,7 @@ when offline: main page, styles, fallback image, essential scripts.
 
 ## Why should you use Workbox?
 
-Using workbox for precaching is optional. You can write your own code to
+Using Workbox for precaching is optional. You can write your own code to
 [precache critical assets when the service worker is installing](https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker).
 The primary benefit of using Workbox is its out-of-the-box version control.
 You'll run into a lot less trouble updating precached assets using Workbox than
@@ -115,7 +115,7 @@ you can potentially precache _all_ of the URLs needed to display _any_ of your
 web app's views ahead of time, without having to wait until they visit each
 individual view.
 
-When a user installs a native app, they expect every part tol display quickly,
+When a user installs a native app, they expect every part to display quickly,
 not just the views that they've gone to in the past. Precaching brings that same
 experience to web apps.
 
