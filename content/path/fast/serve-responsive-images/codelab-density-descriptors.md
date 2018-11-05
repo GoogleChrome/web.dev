@@ -18,13 +18,15 @@ simple, but "pixel" can actually have many meanings:
 
 <table>
 <thead>
-<tr>
-<th>Device pixel <br>
-(physical pixel)</th>
-<th>The smallest dot of color that can be displayed on a device.</th>
-</tr>
+<th>Type</th>
+<th>Defintion</th>
 </thead>
 <tbody>
+<tr>
+<td>Device pixel <br>
+(aka "physical pixel")</td>
+<td>The smallest dot of color that can be displayed on a device.</td>
+</tr>
 <tr>
 <td>Logical pixel</td>
 <td>Information that specifies the color at a particular location on a grid.
@@ -60,21 +62,21 @@ With the introduction of newer display technology, "device pixels" began to vary
 in physical size and [shape](https://en.wikipedia.org/wiki/Pixel_aspect_ratio)
 and were no longer the same size as "CSS pixels". The need to define the
 relationship between the size of "device pixels" and "CSS pixels" is what led to
-the introduction of the devicePixelRatio (sometimes called the "CSS Pixel
+the introduction of the `devicePixelRatio` (sometimes called the "CSS Pixel
 Ratio").
 
-devicePixelRatio defines the relationship between device pixels and CSS pixels
-for a particular device. A 192 ppi device has a devicePixelRatio of 2 (192
+`devicePixelRatio` defines the relationship between device pixels and CSS pixels
+for a particular device. A 192 ppi device has a `devicePixelRatio` of 2 (192
 ppi/96 ppi = 2) because "2 of its display pixels are the size of 1 CSS pixel".
 
 These days most devices have a device-pixel-ratio between 1.0 and 4.0. (Note:
-This ratio doesn't have to be a whole number. "1.5", "2.4", and "2.5" are all
+This ratio doesn't have to be a whole number. `1.5`, `2.4`, and `2.5` are all
 device-pixel-ratios of common devices.)
 
-1.  Determine the pixel density of a device by typing "window.devicePixelRatio"
+- Determine the pixel density of a device by typing `window.devicePixelRatio`
 in the console.
 
-1. View [this table](https://www.mydevice.io/#tab1) to see the pixel ratios of
+- View [this table](https://www.mydevice.io/#tab1) to see the pixel ratios of
 common devices. Most are between 1.0 and 4.0.
 
 So how do you actually apply this information?
@@ -82,15 +84,15 @@ So how do you actually apply this information?
 ## Size images based on device-pixel-ratios
 
 In order for images to look their very best on high resolution screens, it's
-necessary to provide different image versions for different devicePixelRatios.
+necessary to provide different image versions for different `devicePixelRatios`.
 
 <table>
 <thead>
 <tr>
 <th>Device Pixel Ratio</th>
 <th>Indicates that:</th>
-<th>On this device, an <img> tag with a CSS width of 250 pixels, will look best
-when the source image is...</th>
+<th>On this device, an &lt;img&gt; tag with a CSS width of 250 pixels,
+will look best when the source image is...</th>
 </tr>
 </thead>
 <tbody>
@@ -131,63 +133,47 @@ serve different images to different devicePixelRatios.
 
 Example:
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
-<img src="flower.jpg"
-     srcset="flower-1x.jpg 1x, flower-2x.jpg 2x, flower-3x.jpg 3x">
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+`<img src="flower.jpg"
+     srcset="flower-1x.jpg 1x, flower-2x.jpg 2x, flower-3x.jpg 3x">`
 
 This example put into words:
 
-+  "1x", "2x", and "3x" are all density descriptors that tell the browser
+-  `1x`, `2x`, and `3x` are all density descriptors that tell the browser
     the pixel density that an image is intended for. This saves the browser
     from needing to download an image to determine this information.
-+  The browser can choose between three images: "`flower-1x.jpg`" (intended
-    for browsers with a 1.0 pixel density), "`flower-2x.jpg`" (intended for
-    browsers with a 2.0 pixel density), and "`flower-3x.jpg`" (intended for
-    browsers with a 3.0 pixel density).
-+  "`flower.jpg`" is the fallback image for browsers that do not support
+-  The browser can choose between three images: `flower-1x.jpg` (intended
+    for browsers with a `1.0` pixel density), `flower-2x.jpg` (intended for
+    browsers with a `2.0` pixel density), and `flower-3x.jpg` (intended for
+    browsers with a `3.0` pixel density).
+-  `flower.jpg` is the fallback image for browsers that do not support
     `srcset`.
 
 How to use this:  
-✔️Use a devicePixelRatio and the "`x`" unit to write density descriptors. For
+✔️ Use a devicePixelRatio and the `x` unit to write density descriptors. For
 example, the density descriptor for many Retina screens
-(window.deviceDisplayRatio = 2) would be written as "2x".
+(`window.deviceDisplayRatio = 2`) would be written as `2x`.
 
-✔️If a density descriptor isn't provided, it is assumed to be "1x".
+✔️ If a density descriptor isn't provided, it is assumed to be `1x`.
 
-✔️Including density descriptors in filenames is a common convention (and will
+✔️ Including density descriptors in filenames is a common convention (and will
 help you keep track of files) but is not necessary. Images can have any
 filename.
 
-✔️There is no need to include a `sizes` attribute. The `sizes` attribute is only
+✔️ There is no need to include a `sizes` attribute. The `sizes` attribute is only
 used with width descriptors.
 
 ## Explore This Demo
 
-1. Reload the page using different devices to see the browser load different
-images.
+- Reload the page using different devices to see the browser load different images.
 
-You can use the device emulator for this. If you're looking for specific display
-densities, here are some devices to try:
+You can use the device emulator for this. If you're looking for specific display densities, here are some devices to try:
 
 <table>
-<thead>
-<tr>
-<th>1x density</th>
-<th>Blackberry Playbook, many external monitors</th>
-</tr>
-</thead>
 <tbody>
+<tr>
+<td>1x density</td>
+<td>Blackberry Playbook, many external monitors</td>
+</tr>
 <tr>
 <td>2x density</td>
 <td> iPad or IPhone 5/6</td>
@@ -199,4 +185,4 @@ densities, here are some devices to try:
 </tbody>
 </table>
 
-1. Checkout `index.html` for the code that makes this work.
+- Checkout `index.html` for the code that makes this work.
