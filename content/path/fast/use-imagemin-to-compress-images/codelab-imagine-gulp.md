@@ -3,7 +3,6 @@ title: Using Imagemin with Gulp
 author: khempenius
 page_type: glitch
 glitch: imagemin-grunt
-order: 1
 ---
 
 This workbook will show you how to add Imagemin to an existing Gulp project.
