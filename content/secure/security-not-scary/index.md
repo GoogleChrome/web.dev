@@ -19,7 +19,7 @@ or "an attacker stole credit card information from a shopping site".
 But security is something to be taken as a positive and necessary part of web
 development just like "user experience" or "accessibility".
 
-[image]
+![security image, hacker in hoodie or positive part of the web development?](./securityimage.png)
 
 In the next few guides, you'll learn what you need to know in order to keep your
 business and your users' content secure.
