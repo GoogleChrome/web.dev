@@ -7,7 +7,7 @@ glitch: sleet-expansion
 
 This codelab walks you through the process of interpreting all of the network
 traffic for a more involved sample application. At the end of the exercise,
-you'lll have the skills you need to figure out _what_ your own web application's
+you'll have the skills you need to figure out _what_ your own web application's
 loading, and _when_ each of the requests are being made.
 
 Note: The screenshots and instructions in this codelab assume that you're
@@ -95,7 +95,7 @@ long you've had the page open before you click on **Find Nearby Wikipedia
 Entries**. Most important here is that the _when_ is disconnected from the
 initial navigation request. You can tell this from the large gap that exists in
 the waterfall display, representing a period of time that passed in between the
-intial loading and when the Wikipedia API request is made.
+initial loading and when the Wikipedia API request is made.
 
 Requests made after a gap of time following a navigation fall into the category
 of "runtime requests," as opposed to the initial set of requests used to display
