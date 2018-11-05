@@ -22,11 +22,11 @@ attempting to add any optimizations.
 
 -  Click on the `Show Live` button.
 
-<img class="screenshot" src="./codelab-code-splitting-2.png" alt="Glitch show live button">
+<web-screenshot type="show-live"></web-screenshot>
 
-+  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-+  Click on the **Network** panel.
-+  Make sure `Disable Cache` is checked and reload the app.
+-  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
+-  Click on the **Network** panel.
+-  Make sure `Disable Cache` is checked and reload the app.
 
 <img class="screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2kb JavaScript bundle.">
 
