@@ -40,42 +40,37 @@ request and the server's response message are divided into two parts: header and
 body:
 
 <table>
-<thead>
-<tr>
-<th>header</th>
-<th>Information about the message such as type of the message or encoding of
-the message. A header can include a <a
-href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">variety of
-information</a> expressed as key-value pairs. The request header and
-response header contain different information.<br>
-<br>
-(Note that headers can't actually have comments)<br>
-<br>
-<strong>Sample Request header</strong><br>
-<p><pre>
-Accept: text/html  // "I want to receive HTML in response"
-Cookie: Version=1 // "Here is cookie I have"
-</pre></p>
-
-<br>
-<strong>Sample Response header<br>
-<code></strong>Content-Encoding: gzip //
-"It is encoded with gzip"</code><br>
-<p><pre>
-Cache-Control: no-cache // "Do not cache this please"
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>body</td>
-<td>The message itself. This could be plain text, an image binary, JSON, HTML,
-etc.</td>
-</tr>
+  <tbody>
+    <tr>
+      <th>header</th>
+      <td>
+        <p>Information about the message such as type of the message or encoding 
+of the message. A header can include a 
+<a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">variety of information</a> 
+expressed as key-value pairs. The request header and response header contain 
+different information.</p>
+        <p>(Note that headers can't actually have comments)</p>
+        <p><strong>Sample Request header</strong><br>
+          <code>
+          Accept: text/html  // "I want to receive HTML in response"
+          Cookie: Version=1 // "Here is cookie I have"
+          </code>
+        </p>
+        <strong>Sample Response header</strong><br>
+        <code>
+        Content-Encoding: gzip // "It is encoded with gzip"
+        Cache-Control: no-cache // "Do not cache this please"
+        </code>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <th>body</th>
+    <td>The message itself. This could be plain text, an image binary, JSON, HTML, etc.</td>
+  </tr>
 </tbody>
 </table>
+
 
 # How does CORS work?
 
