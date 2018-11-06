@@ -21,19 +21,19 @@ engines can bring any search results, they need to have as much information from
 the web as possible. To do this, search engines use a crawler - a program that
 travels from site to site and acts like a browser. 
 
-If a book is missing or damaged, the crawler can't read it. Crawlers try to
+If a book - or document - is missing or damaged, the crawler can't read it. Crawlers try to
 fetch each URL to determine the state of the document. If a document returns an
 error status code, crawlers cannot use any of its content, and might retry the
 URL at a later time. This ensures only publicly accessible documents get into
 the index.
 
-If crawlers discover a redirection status code, they follow the redirection to a
+If crawlers discover a redirection status code (like 301 or 302), they follow the redirection to a
 new URL and continue there. Once they get a successful response, meaning they've
 found a document accessible to users, they check if it's allowed to be crawled
 and then download the content. 
 
-This includes the HTML and all content mentioned in the HTML, such as images,
-videos, or JavaScript. They also extract the links from HTML documents so that
+This check includes the HTML and all content mentioned in the HTML, such as images,
+videos, or JavaScript. Crawlers also extract the links from HTML documents so that
 the crawler can visit the linked URLs as well. Following links is how crawlers
 find new pages on the web.
 
@@ -76,10 +76,10 @@ available.
 
 ## Next steps: how to optimize for search engines
 
-Now that you understand how search engines work, you may see the value in
-optimizing for search engines. This is called SEO, or search engine
-optimization. By making sure search engines can find and automatically
+Now that you understand the basics of how search engines work, you may see the value in
+optimizing for search engines. This is called SEO, or 'Search Engine
+Optimization.' By making sure search engines can find and automatically
 understand your content, you are improving the visibility of your site for
 relevant searches. This can result in more interested users coming to your site.
- Audit your site and check the SEO results to see how well search engines can
+ Audit your site with Lighthouse and check the SEO results to see how well search engines can
 surface your content.
