@@ -81,14 +81,3 @@ Splitting on the route or component level when using a client-side framework is
 a simpler approach to lazy loading different parts of your application. Many
 popular frameworks that use webpack provide abstractions to make lazy loading
 easier than diving into the configurations yourself.
-
-## Next Steps
-
-Although it's useful to understand how dynamic imports work, use the method
-recommended by your framework/library instead. Refer to any of the following
-sample code projects to learn more about how following frameworks allow you to
-split on the route or component level:
-
-+  [Angular](https://angular.io/guide/lazy-loading-ngmodules)
-+  [React](https://reacttraining.com/react-router/web/guides/code-splitting)
-+  [Vue](https://router.vuejs.org/guide/advanced/lazy-loading.html)
