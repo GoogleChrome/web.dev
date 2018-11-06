@@ -7,7 +7,7 @@ web_lighthouse:
 wf_blink_components: N/A
 ---
 
-# Replace animated GIFs with <video> for faster page loads
+# Replace animated GIFs with video for faster page loads
 
 Have you ever seen an animated GIF on a service like Imgur or Gfycat, inspected
 it in your dev tools, only to find out that GIF was really a video? There's a
@@ -32,21 +32,22 @@ video formats for animated content":
 ## Create MPEG videos
 
 There are a number of ways to convert GIFs to video,
-**[ffmpeg**](https://www.ffmpeg.org/) is the tool used in this guide.   
-To use ffmpeg to convert the GIF, `my-animation.gif` to an MP4 video, run the
+**[FFmpeg](https://www.ffmpeg.org/)** is the tool used in this guide.   
+To use FFmpeg to convert the GIF, `my-animation.gif` to an MP4 video, run the
 following command in your console:  
 ```  
 ffmpeg -i my-animation.gif my-animation.mp4  
 ```  
-This tells ffmpeg to take `my-animation.gif` as the **input**, signified by the
+This tells FFmpeg to take `my-animation.gif` as the **input**, signified by the
 `-i` flag, and to convert it to a video called `my-animation.mp4`.
 
 ## Create WebM videos
 
 While MP4 has been around since 1999, WebM is a relatively new file format
 initially released in 2010. WebM videos are much smaller than MP4 videos, but
-not all browsers support WebM so it makes sense to generate both.  
-To use ffmpeg to convert `my-animation.gif` to a WebM video, run the following
+not all browsers support WebM so it makes sense to generate both. 
+
+To use FFmpeg to convert `my-animation.gif` to a WebM video, run the following
 command in your console:  
 
 ```  
@@ -77,6 +78,7 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 A `<video>` element with these attributes plays automatically, loops endlessly,
 plays no audio, and plays inline (i.e., not full screen), all the hallmark
 behaviors expected of animated GIFs! 🎉  
+
 Finally, the `<video>` element requires one or more `<source>` child elements
 pointing to different video files that the browser can choose from, depending on
 the browser's format support. Provide both WebM and MP4, so that if a browser
