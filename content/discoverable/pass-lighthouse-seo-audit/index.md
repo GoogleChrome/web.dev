@@ -37,7 +37,7 @@ individual search engines, because they may have different requirements (for
 example,
 [Bing](https://www.bing.com/webmaster/help/webmaster-guidelines-30fba23a),
 [Google Search](https://support.google.com/webmasters/answer/35769),
-[Yandex](https://webmaster.yandex.com/)). 
+[Yandex](https://webmaster.yandex.com/). 
 
 There are also non-technical aspects that can improve visibility of your content
 in search engines, such as writing in the style of your target audience. Bottom
