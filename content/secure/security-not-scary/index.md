@@ -52,37 +52,29 @@ data is a common attack).
 
 ## What's the impact?
 
-When an application is not secure, many different people could be affected. 
-
-<table>
-<thead>
-<tr>
-<th>Impact on users</th>
-<th>- Sensitive information (such as personal data) could be leaked or stolen.<br>
-- Content could be tampered with. A tampered site could direct users
-to a malicious site. </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Impact on the application</td>
-<td>- User trust may be lost.<br>
-- Business could be lost due to downtime or loss of confidence as a
-result of tampering or system shortage.</td>
-</tr>
-<tr>
-<td>Impact on other systems</td>
-<td>- A hijacked application could be used to attack other systems, such as
-with a denial-of-service attack using a botnet.</td>
-</tr>
-</tbody>
-</table>
-
+When an application is not secure, many different people could be affected.
 Taking active steps to secure your application is not only crucial for you and
 your business but also for your users, protecting them and other systems from
 attacks launched from your site.
 
-## Wrap up
+### Impact on users
+
+- Sensitive information (such as personal data) could be leaked or stolen.
+- Content could be tampered with. A tampered site could direct users to a malicious
+  site.
+
+### Impact on the application
+
+- User trust may be lost.
+- Business could be lost due to downtime or loss of confidence as a result of tampering
+  or system shortage.
+
+### Impact on other systems
+
+- A hijacked application could be used to attack other systems, such as with a
+  denial-of-service attack using a botnet.
+
+## Wrap-up
 
 Congratulations, you are halfway through this topic! Now you know the difference
 between security vulnerabilities and features, and you are aware that not only
