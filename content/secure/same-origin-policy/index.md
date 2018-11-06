@@ -38,43 +38,41 @@ Generally, embedding a cross-origin resource is permitted, while reading a
 cross-origin resource is blocked.
 
 <table>
-<thead>
-<tr>
-<th>iframe </th>
-<th>Cross-origin embed is permitted (if `X-Frame-Options` permits) but
-cross-origin read, such as using JavaScript to access a document in an
-iframe, is not permitted.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>css</td>
-<td>Cross-origin CSS can be embedded using a `<link>` tag, or @import in a CSS
-file. The correct `Content-Type` header may be required.</td>
-</tr>
-<tr>
-<td>form</td>
-<td>Cross-origin URL can be used as the `action` attribute value of a form
-element. A web application can write form data  to a cross-origin
-destination. </td>
-</tr>
-<tr>
-<td>img</td>
-<td>Embedding cross-origin images is permitted. However, reading cross-origin
-image is blocked (such as loading a cross-origin image into a <canvas>
-element using JavaScript).  </td>
-</tr>
-<tr>
-<td>media</td>
-<td>Cross-origin video and audio can be embedded using <video> and <audio>
-elements.</td>
-</tr>
-<tr>
-<td>script</td>
-<td>Cross-origin script can be embedded; however, access to certain APIs might
-be blocked, such as cross-origin fetch requests.</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr>
+      <th>iframe </th>
+      <td>Cross-origin embed is permitted (if <code>X-Frame-Options</code> permits) but
+        cross-origin read, such as using JavaScript to access a document in an
+      iframe, is not permitted.</td>
+    </tr>
+    <tr>
+      <th>css</th>
+      <td>Cross-origin CSS can be embedded using a <code>&lt;link&gt;</code> tag, or @import in a CSS
+      file. The correct <code>Content-Type</code> header may be required.</td>
+    </tr>
+    <tr>
+      <th>form</th>
+      <td>Cross-origin URL can be used as the <code>action</code> attribute value of a form
+        element. A web application can write form data  to a cross-origin
+      destination. </td>
+    </tr>
+    <tr>
+      <th>img</th>
+      <td>Embedding cross-origin images is permitted. However, reading cross-origin
+        image is blocked (such as loading a cross-origin image into a <code>&lt;canvas&gt;</code>
+      element using JavaScript).</td>
+    </tr>
+    <tr>
+      <th>media</th>
+      <td>Cross-origin video and audio can be embedded using <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code>
+      elements.</td>
+    </tr>
+    <tr>
+      <th>script</th>
+      <td>Cross-origin script can be embedded; however, access to certain APIs might
+      be blocked, such as cross-origin fetch requests.</td>
+    </tr>
+  </tbody>
 </table>
 
 Hopefully you feel a little relieved that browsers work hard to be a gatekeeper
