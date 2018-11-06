@@ -115,4 +115,4 @@ certainly use cases where image quality is more important.
 
 The good news is that you can bypass this tradeoff altogether by using
 responsive images to serve multiple images sizes. You can learn more about this
-in the [Responsive Images guide](/path/fast/serve-responsive-image).
+in the [Responsive Images guide](/fast/serve-responsive-image).

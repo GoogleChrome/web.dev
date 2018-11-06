@@ -91,7 +91,7 @@ Note:
 +  The
     [`window.devicePixelRatio`](https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio)
     of the device that you're using (or emulating) affects which image sizes
-    are loaded. To learn how `devicePixelRatio` works, read [Responsive Images: Density Descriptors](/path/fast/serve-responsive-images/codelab-density-descriptors).
+    are loaded. To learn how `devicePixelRatio` works, read [Responsive Images: Density Descriptors](/fast/serve-responsive-images/codelab-density-descriptors).
 
 # Extra Credit
 

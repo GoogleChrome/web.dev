@@ -68,8 +68,7 @@ const someFunction = () => {
 
 The code that makes up the module does not get included into the initial bundle
 and is now **lazy loaded**, or provided to the user only when it is needed after
-the form submission. To further improve page performance, [preload critical
-chunks to prioritize and fetch them sooner](/path/fast/preload-critical-assets).
+the form submission. To further improve page performance, [preload critical chunks to prioritize and fetch them sooner](/fast/preload-critical-assets).
 
 Although the previous code snippet is a simple example, lazy loading third party
 dependencies is not a common pattern in larger applications. Usually, third

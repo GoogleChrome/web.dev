@@ -82,7 +82,7 @@ For the mysterious looking package that you're quite sure is not being used
 anywhere, take a step back and see which of your top-level dependencies are
 using it. Try to find a way to only import the components that you need from it.
 If you aren't using a library, remove it.  If the library isn't required for the
-initial page load, consider if it can be [lazy loaded](/path/fast/reduce-javascript-payloads-with-code-splitting).
+initial page load, consider if it can be [lazy loaded](/fast/reduce-javascript-payloads-with-code-splitting).
 
 ## Remove unneeded libraries
 
