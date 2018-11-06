@@ -26,16 +26,17 @@ identity to access sensitive data (masquerade attack) to flooding your server
 with massive amounts of traffic to make your application unresponsive (denial of
 service attack). 
 
-
-[img]
-
 Active attacks can also be done to data in transit. An attacker could modify
 your application data before it gets to a user's browser, showing modified
 information on the site or direct the user to an unintended destination. This is
 sometimes called **modification of messages**.
 
-
-[img]
+<figure>
+  <img src="./modification.png" alt="modification of message">
+  <figcaption>
+    A web site being tampered by attacker to guide user to a phishing site.
+  </figcaption>
+</figure>
 
 <div class="note">Have you ever logged into free public wifi and seen ads
 wrapped around web pages you are accessing? That's exactly what <b>modification
@@ -43,19 +44,27 @@ of message</b> is! The wifi access point injected their advertising into a websi
 before it gets to your browser. In many cases, you might dismiss it as "just ads
 for free wifi", but imagine if the same technique is used to replace some of the
 javascript or link to a phishing site. Your site may be used by an attacker to
-misguide users without you noticing.</div>
+misguide users without you noticing.
+</div>
 
 ### Passive attack
 
 With a **passive attack,** the attacker tries to collect or learn information
 from the application but does not affect the application itself.
+<figure class="attempt-right">
+  <img src="./passiveattack.png" alt="passive attack">
+  <figcaption>
+    Attacher eavesdropping communication between a user and a server.
+  </figcaption>
+</figure>
 
 Imagine someone is eavesdropping on your conversation with friends and family,
 collecting information about your personal life, who your friends are, and where
 you hang out. The same thing could be done on your web traffic. An attacker
 could capture data between the browser and the server collecting usernames &
-passwords, users' browsing history, and data exchanged.  
-[image]
+passwords, users' browsing history, and data exchanged. 
+
+<div class="clearfix"></div>
 
 ## Defense against attacks
 
@@ -70,6 +79,7 @@ application contains a form, you might check inputs in the browser, then on the
 server, and finally at the database; you would also use HTTPS to secure the data
 in transit.
 
+## Wrap up
 Since many attacks can happen without ever hitting your server, it is sometimes
 hard to detect if attacks are happening or not. The good news is that web
 browsers have powerful security features already built in. Follow the next topic "How browser mitigates against attacks" to learn more.

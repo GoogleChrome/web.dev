@@ -77,9 +77,16 @@ cross-origin resource is blocked.
 
 ### How to prevent Clickjacking {: #clickjacking }
 
+<figure class="attempt-right">
+  <img src="./clickjacking.png" alt="clickjacking">
+  <figcaption>
+    Clickjacking mechanism illustrated in 3 separate layers (base site, iframed site, transparent button).
+  </figcaption>
+</figure>
+
 An attack called "clickjacking" embeds a site in an iframe and overlays transparent buttons which link to a different destination. Users are tricked into thinking they are accessing your application while sending data to attackers. 
 
-![clickjacking](./clickjacking.png)
+<div class="clearfix"></div>
 
 To block other sites from embedding your site in an iframe, add content securioty policy with [`frame-ancestors` directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) to the HTTP headers.
 
