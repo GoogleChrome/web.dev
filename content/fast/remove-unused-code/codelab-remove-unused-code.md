@@ -225,7 +225,7 @@ in our database:
 
     favoritesRef.on("value", (snapshot) => { ... })
 
-    Add a small function that calculates the number of weeks from a given date:
+Add a small function that calculates the number of weeks from a given date:
 
     const ageInWeeks = birthDate => {
      const WEEK_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
