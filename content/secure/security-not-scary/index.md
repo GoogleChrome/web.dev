@@ -44,7 +44,7 @@ amount of data to move into a buffer).
 
 ## What are security features?
 
-Your first lines of defence are security features such as HTTPS and CORS.
+Your first lines of defense are security features such as HTTPS and CORS.
 (You'll learn about these acronyms later so don't worry about them for now.) 
 For example, encrypting data using HTTPS might not be fixing a bug, but it
 protects the data you're exchanging with users to other parties (intercepting
