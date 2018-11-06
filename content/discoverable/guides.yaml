@@ -6,7 +6,7 @@ order: 2
 
 topics:
 # Topic containing several guides
-- title: How search works and how to measure it
+- title: How search works and how to measure discoverability
   guides:
     - how-search-works
     - pass-lighthouse-seo-audit
