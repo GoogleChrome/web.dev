@@ -45,7 +45,8 @@ This tells ffmpeg to take `my-animation.gif` as the **input**, signified by the
 
 While MP4 has been around since 1999, WebM is a relatively new file format
 initially released in 2010. WebM videos are much smaller than MP4 videos, but
-not all browsers support WebM so it makes sense to generate both.  
+not all browsers support WebM so it makes sense to generate both. 
+
 To use ffmpeg to convert `my-animation.gif` to a WebM video, run the following
 command in your console:  
 
