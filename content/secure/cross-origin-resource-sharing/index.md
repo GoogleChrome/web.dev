@@ -56,7 +56,7 @@ Above is equivalent to saying "I want to receive HTML in response. Here is cooki
 <strong>Sample Response header</strong>
 <pre>Content-Encoding: gzip
 Cache-Control: no-cache </pre>
-Above is same as saying "It is encoded with gzip. Do not cache this please"
+Above is same as saying "Data is encoded with gzip. Do not cache this please"
 
 <tr>
     <td>Body</td>
@@ -70,21 +70,26 @@ Above is same as saying "It is encoded with gzip. Do not cache this please"
 
 ## How does CORS work?
 
-Remember that the same-origin policy tells the browser to block cross-origin
+Remember, the same-origin policy tells the browser to block cross-origin
 requests. When you want to get a public resource or other server on different origin, the resource providing server needs to tell the browser "This origin where request is coming from can access my resource". The browser remembers that and allow cross-origin resource shearing.
 
-### Step 1: client request
+### Step 1: client (browser) request
 When the browser is making cross-origin request, the browser adds an `Origin` header with
 the current origin (scheme, host, and port). 
 
 ### Step 2: server response
 On the server side, 
 When a server sees this header, and
-wants to allow access, it adds an `Access-Control-Allow-Origin`  header to
+wants to allow access, it needs to add an `Access-Control-Allow-Origin`  header to
 the response specifying the requesting origin (or `*` to allow any origin.) 
 
-The
-browser sees this response, and allows the response data to come through.
+
+### Step 3: browser receives response  
+
+
+
+The browser sees this response, and allows the response data to come through.
+
 
 ## Share credentials with CORS
 
