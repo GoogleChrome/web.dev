@@ -122,7 +122,7 @@ and titles:
 +  Make them **descriptive and concise.** Avoid vague titles like "Home" and
     link text like "click here".
 +  Avoid [**keyword
-    stuffing]**(https://support.google.com/webmasters/answer/66358). Cramming
+    stuffing**](https://support.google.com/webmasters/answer/66358). Cramming
     your content with keywords isn't helpful to users, and search engines may
     mark the page as spam.
 +  **Avoid repeated or boilerplate titles and descriptions** for each page. If you
