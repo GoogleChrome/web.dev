@@ -4,11 +4,6 @@
 <meta name="project_path" value="/_project.yaml" />
 <meta name="book_path" value="/_book.yaml" />
 <meta name="full_width" value="true" />
-<style>
-  body.lh-signedin [data-lh-signin="hide"] {
-    display: none !important;
-  }
-</style>
 </head>
 <body>
 
@@ -16,8 +11,7 @@
   <div class="container">
     <div class="hero-area" data-lh-signin="hide">
       <h1 class="hero-title">Measure</h1>
-      <p>Review your Lighthouse results below and see detailed guidance on how to
-      improve them. Make a profile to save your progress.</p>
+      <p>Review performance and get detailed guidance on how to improve it. Make a profile to save your progress.</p>
       <!--<web-signin class="button">
         Sign in with Google
       </web-signin>-->
@@ -77,6 +71,62 @@
               For each audit you’ll find guidance and immediate steps you can take to improve your scores.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lh-categories-section">
+    <div class="container">
+      <h2>What Lighthouse looks for:</h2>
+      <div class="row">
+        <div class="lh-categories-row col-sm-12 col-md-12 col-xl-10">
+
+          <!-- PERFORMANCE -->
+          <div class="lh-category">
+            <img class="lh-category__icon" src="/_static/web/images/icons/performance.svg" alt="">
+            <div class="lh-category__title">Performance</div>
+            <p class="lh-category__body">
+              Audits for metrics like first paint and time to interactive to determine lag.
+            </p>
+          </div>
+
+          <!-- PWA -->
+          <div class="lh-category">
+            <img class="lh-category__icon" src="/_static/web/images/icons/pwa.svg" alt="">
+            <div class="lh-category__title">PWA</div>
+            <p class="lh-category__body">
+              Assesses your page against the baseline Progressive Web App Checklist.
+            </p>
+          </div>
+
+          <!-- BEST PRACTICES -->
+          <div class="lh-category">
+            <img class="lh-category__icon" src="/_static/web/images/icons/best_practices.svg" alt="">
+            <div class="lh-category__title">Best Practices</div>
+            <p class="lh-category__body">
+              Looks for everything from HTTPS usage to correct image aspect ratios.
+            </p>
+          </div>
+
+          <!-- SEO -->
+          <div class="lh-category">
+            <img class="lh-category__icon" src="/_static/web/images/icons/seo.svg" alt="">
+            <div class="lh-category__title">SEO</div>
+            <p class="lh-category__body">
+              Checks for best practices to ensure your site is discoverable.
+            </p>
+          </div>
+
+          <!-- ACCESSIBILITY -->
+          <div class="lh-category">
+            <img class="lh-category__icon" src="/_static/web/images/icons/a11y.svg" alt="">
+            <div class="lh-category__title">Accessibility</div>
+            <p class="lh-category__body">
+              Checks for common issues that may prevent users from accessing your content.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>

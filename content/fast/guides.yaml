@@ -1,0 +1,43 @@
+title: Fast load times
+blurb: Learn how to guarantee your site loads quickly.
+overview: |
+
+    When you're building a modern web experience,
+    it's important to measure, optimize, and monitor
+    if you're to get fast and stay fast.
+    Performance plays a significant role in the success of any online venture,
+    as high performing sites engage and retain users better than poorly performing ones.
+    
+    Sites should focus on optimizing for user-centric happiness metrics.
+    Tools like Lighthouse (baked into web.dev!) highlight these metrics and
+    help you take the right steps toward improving your performance.
+    To "stay fast", set and enforce performance budgets
+    to help your team work within the constraints needed to continue loading fast
+    and keeping users happy after your site has launched.
+
+order: 1
+
+topics:
+# Topic containing several guides
+- title: Measure your site’s performance
+  guides:
+    - discover-performance-opportunities-with-lighthouse
+- title: Optimize your images
+  guides:
+    - use-imagemin-to-compress-images
+    - replace-gifs-with-videos
+    - use-lazysizes-to-lazyload-images
+    - serve-responsive-images
+    - serve-images-with-correct-dimensions
+    - serve-images-webp    
+- title: Optimize your JavaScript
+  guides:
+    - reduce-javascript-payloads-with-code-splitting
+    - reduce-network-payloads-using-text-compression
+    - remove-unused-code
+    - serve-modern-code-to-modern-browsers
+    - apply-instant-loading-with-prpl
+    - preload-critical-assets
+- title: Optimize Web Fonts
+  guides:
+    - avoid-invisible-text
