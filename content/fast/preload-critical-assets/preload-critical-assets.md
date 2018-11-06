@@ -65,10 +65,10 @@ it sooner by adding a Link element to the head of the document.
 Add a preload tag for this application:
 
 <pre class="prettyprint">
-<head>
-<!-- ... -->
-<strong>  <link rel="preload" href="main.css" as="style"></strong>
-</head>
+&lt;head&gt;
+  &lt;!-- ... --&gt;
+  <strong>&lt;link rel=&quot;preload&quot; href=&quot;main.css&quot; as=&quot;style&quot;&gt;</strong>
+&lt;/head&gt;
 </pre>
 
 The `as` attribute is used to identify which type of resource is being
@@ -85,9 +85,9 @@ critical for the web page.
 
 <div class="aside note">
 If this was a real production app, it would make more sense to just place
-a <code><link></code> element in <code>index.html</code> to fetch the CSS file 
+a <code>&lt;link&gt;</code> element in <code>index.html</code> to fetch the CSS file 
 instead of using JavaScript to append it. Browsers already know to fetch a CSS file
-defined at the head of an HTML document with a high priority and as soon as possible. 
+defined at the head of an HTML document with a high priority as soon as possible. 
 However, preload is used in this codelab to demonstrate the best course of action for files that
 are fetched late in the request chain. For a large application, this can happen
 quite often.
@@ -100,11 +100,11 @@ another CSS file located at the root of the project but is used for a separate
 preload hint for this resource as well.
 
 <pre class="prettyprint">
-<head>
-  <!-- ... -->
-  <link rel="preload" href="main.css" as="style">
-  <strong><link rel="preload" href="details.css" as="style"></strong>
-</head>
+&lt;head&gt;
+  &lt;!-- ... --&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;main.css&quot; as=&quot;style&quot;&gt;
+  <strong>&lt;link rel=&quot;preload&quot; href=&quot;details.css&quot; as=&quot;style&quot;&gt;</strong>
+&lt;/head&gt;
 </pre>
 
 Reload the application and take a look at the **Network** panel. 
@@ -122,11 +122,11 @@ that are not being used immediately by your web page. You can now remove the
 unnecessary preload link for this page.
 
 <pre class="prettyprint">
-<head>
-  <!-- ... -->
-  <link rel="preload" href="main.css" as="style">
-  <s><link rel="preload" href="details.css" as="style"></s>
-</head>
+&lt;head&gt;
+  &lt;!-- ... --&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;main.css&quot; as=&quot;style&quot;&gt;
+  <s>&lt;link rel=&quot;preload&quot; href=&quot;details.css&quot; as=&quot;style&quot;&gt;</s>
+&lt;/head&gt;
 </pre>
 
 Stylesheet files aren't the only type of asset that can be preloaded. In this
@@ -137,11 +137,11 @@ font file is used for the page header, add a preload tag to fetch it even
 sooner.
 
 <pre class="prettyprint">
-<head>
-  <!-- ... -->
-  <link rel="preload" href="main.css" as="style">
-  <strong><link rel="preload" href="fonts/K2D.woff2" as="font" crossorigin></strong>
-</head>
+&lt;head&gt;
+  &lt;!-- ... --&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;main.css&quot; as=&quot;style&quot;&gt;
+  <strong>&lt;link rel=&quot;preload&quot; href=&quot;fonts/K2D.woff2&quot; as=&quot;font&quot; crossorigin&gt;</strong>
+&lt;/head&gt;
 </pre>
 
 For this resource, `font` is used as a value for the `as` attribute instead.
@@ -168,10 +168,10 @@ A separate CSS file, `details.css`, contains all the styles needed for this
 simple page. Add a link element to `index.html` to prefetch this resource.
 
 <pre class="prettyprint">
-<head>
-  <!-- ... -->
-  <strong><link rel="prefetch" href="details.css"></strong>
-</head>
+&lt;head&gt;
+  &lt;!-- ... --&gt;
+  <strong>&lt;link rel=&quot;prefetch&quot; href=&quot;details.css&quot;&gt;</strong>
+&lt;/head&gt;
 </pre>
 
 To understand how this triggers a request for the file, open the **Network** panel in DevTools
@@ -208,9 +208,9 @@ explored the use of dynamic imports to split a bundle into multiple chunks. To
 refresh your memory, this was demonstrated with a simple application that 
 dynamically imports a module from [Lodash](https://lodash.com/) when a form is submitted.
 
-![Magic Sorter app that demonstrates ](./magic.gif)
+![Magic Sorter app that demonstrates code splitting](./magic.gif)
 
-You can access the Glitch for this application [here](https://glitch.com/edit/#!/code-splitting).
+You can access [the Glitch for this application here](https://glitch.com/edit/#!/code-splitting).
 
 The following block of code, which lives in `src/index.js,` is responsible for
 dynamically importing the method when the button is clicked.
@@ -232,7 +232,7 @@ example, the `lodash` method can be prefetched at browser idle time; when a user
 presses the button, there is no delay for the resource to be fetched.
 
 Use the specific `webpackPrefetch` comment parameter within a dynamic import to prefetch a particular chunk.
-Here is how it would look like with this particular application.
+Here is how it would look with this particular application.
 
 <pre class="prettyprint">
 form.addEventListener("submit", e => {
@@ -281,4 +281,4 @@ If you would like more information about specific aspects of how preloading and
 prefetching can affect your web page, refer to these articles:
 
 + [Preload, Prefetch and Priorities in Chrome](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
-+ [<link rel="prefetch/preload"> in webpack](https://medium.com/webpack/link-rel-prefetch-preload-in-webpack-51a52358f84c)
++ [&lt;link rel=&quot;prefetch/preload&quot;&gt; in webpack](https://medium.com/webpack/link-rel-prefetch-preload-in-webpack-51a52358f84c)
