@@ -13,7 +13,8 @@ security features to an application. Luckily, on the web, the browser provides
 many security features. Some are available for developers to opt-in, and some
 are turned on by default to protect users. 
 
-The idea of a "sandbox"  
+## The idea of a "sandbox"
+
 Modern web browsers are built on the idea of a "sandbox". A sandbox is a
 security mechanism used to run an application in a restricted environment. Just
 like the physical sandbox at a playground where kids can create anything they
