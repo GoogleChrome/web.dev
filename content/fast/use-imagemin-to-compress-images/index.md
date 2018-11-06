@@ -30,28 +30,6 @@ to the average user.
 </tbody>
 </table>
 
-
-## Identify under compressed images
-
-Identify under compressed images using the Lighthouse Performance audit:
-
-1. Click on the Show Live buton to boot up the app:
-
-<web-screenshot type="show-live">
-
-2. Open Chrome DevTools.
-
-3. Click on the Audits panel.
-
-4. Select the Performance checkbox.
-
-5. Click Run Audits to generate a report.
-
-Look for the results of the "Efficiently encode images" audit.
-This audit lists any images that are under compressed.
-
-![image](./efficient-encoding.png)
-
 ## Imagemin
 
 Imagemin is an excellent choice for image compression because it supports a wide
