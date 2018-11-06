@@ -1,5 +1,15 @@
 Thie repo contains content and build scripts for [web.dev](https://web.dev).
 
+## Want to help?
+
+Pitch in on one of the docs fixups!
+
+- [Fast Docs Fixup](https://github.com/GoogleChrome/web.dev/milestone/1)
+- [Discoverable Docs Fixup](https://github.com/GoogleChrome/web.dev/milestone/10)
+- [Reliable Docs Fixup](https://github.com/GoogleChrome/web.dev/milestone/12)
+
+In general we need folks to read through all of the docs in a learning path, and fix any markdown issues or style issues they come across. See style notes below in [the Authoring Guide section](https://github.com/GoogleChrome/web.dev#authoring-guide).
+
 ## Authoring Guide
 
 ### Guides
