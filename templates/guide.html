@@ -84,25 +84,43 @@
 
 <!-- CALL TO ACTION: NEXT GUIDE -->
 <div class="cta-next-guide">
-  {{#if next}}
   <div class="cta-next-guide__wrapper">
+  {{#if next}}
     <div class="cta-next-guide__heading">
       Next Guide
     </div>
-    <a class="cta-next-guide__link gc-analytics-event"
-        data-category="web.dev"
-        data-label="guide, next guide"
-        data-action="click"
-        href="{{next.href}}">
-      {{next.title}}
-    </a>
-  </div>
+    <web-guide-complete guide="{{id}}">
+      <a class="cta-next-guide__link gc-analytics-event"
+          data-category="web.dev"
+          data-label="guide, next guide"
+          data-action="click"
+          href="{{next.href}}">
+        {{next.title}}
+      </a>
+    </web-guide-complete>
+    <p>
+      <small>Opening the next guide will mark this guide as complete</small>
+    </p>
+  {{else}}
+    <div class="cta-next-guide__heading">
+      {{path.title}}
+    </div>
+    <web-guide-complete guide="{{id}}">
+      <a class="cta-next-guide__link gc-analytics-event"
+          data-category="web.dev"
+          data-label="guide, back to path"
+          data-action="click"
+          href="{{path.href}}">
+        {{path.title}}
+      </a>
+    </web-guide-complete>
+    <p>
+      <small>Returning to the path will mark this guide as complete</small>
+    </p>
   {{/if}}
-  <a class="go-back cta-next-guide__go-back gc-analytics-event"
-      data-category="web.dev"
-      data-label="guide, go back"
-      data-action="click"
-      href="{{path.href}}">
+  </div>
+
+  <a href="{{path.href}}" class="go-back cta-next-guide__go-back">
     Return to all guides
   </a>
 </div>
