@@ -144,7 +144,7 @@ sooner.
 &lt;/head&gt;
 </pre>
 
-For this resource, `font` is used as a value for the `as` attribute instead.
+For this resource, `font` is used as a value for the `as` attribute instead. 
 Reloading the application will show that the font is now fetched earlier.
 
 ![Network panel after preloading font](./network-panel-four.png)
@@ -152,6 +152,13 @@ Reloading the application will show that the font is now fetched earlier.
 For a list of all the types of resources that can be fetched along with the
 correct values that should be used for the `as` attribute, refer to the
 [MDN article on Preloading](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded).
+
+<div class="aside note">
+Cross-origin resources can also be preloaded using the <code>crossorigin</code> attribute. Moreover, same-origin font resources 
+must be fetched using anonymous mode CORS which is why the <code>crossorigin</code> attribute is also used in this preload tag.
+
+The <a href="/secure/cross-origin-resource-sharing">Cross Origin Resource Sharing</a> guide explains the topic of same-origin and cross-origin requests in more detail.
+</div>
 
 ## Prefetch future resources
 
