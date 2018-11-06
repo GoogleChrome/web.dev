@@ -2,6 +2,23 @@ Thie repo contains content and build scripts for [web.dev](https://web.dev).
 
 ## Authoring Guide
 
+### Guides
+
+Tips:
+
+- Use sentence case throughout, i.e. "Measure web performance", instead of "Measure Web Performance".
+- Use `<pre class="prettyprint">` and escape HTML to make fancy code blocks:
+
+```html
+<pre class="prettyprint">
+<s>&lt;div&gt;I am old busted&lt;/div&gt;</s>
+<strong>&lt;div&gt;I am new hotness&lt;/div&gt;</strong>
+</pre>
+```
+
+- Use `<pre class="devsite-terminal devsite-click-to-copy">` to wrap terminal commands. This'll insert a `$`.
+- Put notes in `<div class="aside note">`. We also support `.caution`, `.warning`, `.success`.
+
 ### Codelabs
 
 Use the ImageMin CLI codelab as an example—[source](https://github.com/GoogleChrome/web.dev/blob/master/content/fast/use-imagemin-to-compress-images/codelab-imagine-cli.md), [preview](https://web.devsite.corp.google.com/fast/use-imagemin-to-compress-images/codelab-imagine-cli).
