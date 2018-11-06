@@ -9,29 +9,17 @@ wf_blink_components: N/A
 
 # Preload critical assets to improve loading speed
 
-Nobody likes waiting for a long time in order to interact with an application. 
-Learn how to improve page performance by preloading and prefetching important
-assets. 
-
-![image](./monkey.gif)
-
-## Preload
-
 As soon as you open any web page, the browser requests an HTML document from a
 server, parses the contents of the HTML file, and submits separate requests for
 any other external references. 
 
-![image](./request-chain.png)
-
-Requests/responses with client and server
+![HTML and CSS request chain diagram](./request-chain.png)
 
 The **critical request chain** represents the order of resources that are
 prioritized and fetched by the browser. Lighthouse identifies assets that are on
 the third level of this chain as _late-discovered_: 
 
-![image](./preload-requests.png)
-
-Lighthouse: Preload key requests audit
+![Lighthouse: Preload key requests audit](./preload-requests.png)
 
 **Preload** is a declarative fetch request that tells the browser to request an
 important resource as soon as possible. The browser assigns a higher priority
@@ -46,7 +34,9 @@ like to fetch it sooner since it is important for the current page. Preload
 resources by adding a`<link>` tag with `rel="preload"` to the head of your HTML
 document:
 
+```html
 <link rel="preload" as="script" href="critical.js">
+```
 
 For more information about all the attributes that can be used as well as the
 types of content that can be preloaded, refer to
@@ -61,12 +51,14 @@ file has downloaded.
 
 If you are using a module bundler that creates build files of your application,
 you will need to check if it supports the injection of preload tags. With
-[webpack](https://webpack.js.org/) version 4.6.0 or later, use a specific inline
-directive to preload scripts:
+[webpack](https://webpack.js.org/) version 4.6.0 or later, preloading is supported
+through the use of a special comment parameter:
 
-**import**(_/* webpackPreload: true */_ "CriticalChunk")
+```
+import(_/* webpackPreload: true */_ "CriticalChunk")
+```
 
-This works best if you [code-split](https://example.com) your bundle and only
+This works best if you [code-split](/fast/reduce-javascript-payloads-with-code-splitting) your bundle and only
 preload critical chunks. If you are using an older version of webpack, use a
 third-party plugin such as
 [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin).
@@ -79,13 +71,14 @@ has finished requesting all the needed assets for the current page. To speed up
 future navigations, use prefetch to request assets that would be needed for a
 different route. 
 
+```html
 <link rel="prefetch" as="script" href="important-for-next-page.js">
+```
 
-Similarly, webpack allows you prefetch script chunks if you are using version
+Similarly, webpack allows you prefetch scripts if you are using version
 4.6.0 or later.
 
-**import**(_/* webpackPrefetch: true */_ "ImportantForNextPageChunk")
+```
+import(_/* webpackPrefetch: true */_ "ImportantForNextPageChunk")
+```
 
-Refer to the
-[Link prefetching FAQ](https://www.google.com/url?q=https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ&sa=D&ust=1536630604621000&usg=AFQjCNHm8zqhdHujGtsAxHsWXKZcCbR2XQ)
-for more details about link prefetching.
