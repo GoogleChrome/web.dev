@@ -39,7 +39,9 @@ Tips:
 
 ### Codelabs
 
-Use the ImageMin CLI codelab as an example—[source](https://github.com/GoogleChrome/web.dev/blob/master/content/fast/use-imagemin-to-compress-images/codelab-imagine-cli.md), [preview](https://web.devsite.corp.google.com/fast/use-imagemin-to-compress-images/codelab-imagine-cli).
+When we started this project we were using a different version of the Glitch iframe embed. As a result, **a lot of our codelabs need to have their instructions and screenshots updated**.
+
+Use the ImageMin CLI codelab as an example to emulate—[source](https://github.com/GoogleChrome/web.dev/blob/master/content/fast/use-imagemin-to-compress-images/codelab-imagine-cli.md), [preview](https://web.devsite.corp.google.com/fast/use-imagemin-to-compress-images/codelab-imagine-cli).
 
 - When you first mention a Glitch panel or button, put its name in bold, followed by a screenshot. You can use `<web-screenshot>` ([preview](https://glitch.com/edit/#!/web-screenshot)) to add the screenshot.
 
@@ -54,7 +56,13 @@ Example:
 <web-screenshot type="console"></web-screenshot>
 ```
 
-## Usage
+## Staging
+
+https://web.devsite.corp.google.com
+
+## Build it yourself!
+
+Note—this requires access to google3.
 
 To get started, clone this repo and run `yarn` (or `npm`).
 
@@ -73,7 +81,3 @@ For more information on the build system (such as how to write build steps), [se
 
 Googlers may use the `deploy` command to deploy changed files to the internal staging environment.
 Contact the web.dev team for more information.
-
-## Staging
-
-web.dev currently has no public staging environment.
