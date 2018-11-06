@@ -45,9 +45,9 @@ to implement or maintain for your website:
 <tr>
 <td>Add link elements to the head of your page</td>
 <td><p><pre>
-<link rel="alternate" hreflang="en" href="https://donut-be-crazy.com/recipes/maple-bar-recipe" />
-<link rel="alternate" hreflang="es" href="https://es.donut-be-crazy.com/recipes/maple-bar-recipe" />
-<link rel="alternate" hreflang="de" href="https://de.donut-be-crazy.com/recipes/maple-bar-recipe" />
+<link rel="alternate" hreflang="en" href="https://donut-be-hangry.com/recipes/maple-bar-recipe" />
+<link rel="alternate" hreflang="es" href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
+<link rel="alternate" hreflang="de" href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
 </pre></p>
 
 </td>
@@ -55,8 +55,8 @@ to implement or maintain for your website:
 <tr>
 <td>Add Link headers to your HTTP response</td>
 <td><p><pre>
-Link: <https://donut-be-crazy.com/recipes/maple-bar-recipe>; rel="alternate"; hreflang="en", <https://es.donut-be-crazy.com/recipes/maple-bar-recipe>;
-rel="alternate"; hreflang="es", <https://de.donut-be-crazy.com/recipes/maple-bar-recipe>; rel="alternate"; hreflang="de"
+Link: <https://donut-be-hangry.com/recipes/maple-bar-recipe>; rel="alternate"; hreflang="en", <https://es.donut-be-hangry.com/recipes/maple-bar-recipe>;
+rel="alternate"; hreflang="es", <https://de.donut-be-hangry.com/recipes/maple-bar-recipe>; rel="alternate"; hreflang="de"
 </pre></p>
 
 </td>
@@ -68,13 +68,13 @@ href="https://support.google.com/webmasters/answer/189077?hl=en">
 documentation for localized pages</a>.</td>
 <td><url><br>
  
-<loc><code>https://donut-be-crazy.com/recipes/maple-bar-recipe</code></loc><br>
+<loc><code>https://donut-be-hangry.com/recipes/maple-bar-recipe</code></loc><br>
 
  <code><xhtml:link rel="alternate" hreflang="<em>de</em>"
-href="https://de.donut-be-crazy.com/recipes/maple-bar-recipe"
+href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe"
 /></code><br>
  <code><xhtml:link rel="alternate" hreflang="<em>es</em>"
-href="https://es.donut-be-crazy.com/recipes/maple-bar-recipe"
+href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe"
 /></code><br>
 <br>
 </url></td>
@@ -101,10 +101,10 @@ Here's a simple example of hreflang tags in HTML:
 
 <br>
         <code><link rel="alternate" hreflang="en"
-href="https://donut-be-crazy.com/recipes/maple-bar-recipe" /></code><br>
+href="https://donut-be-hangry.com/recipes/maple-bar-recipe" /></code><br>
 <p><pre>
-    <link rel="alternate" hreflang="es" href="https://es.donut-be-crazy.com/recipes/maple-bar-recipe" />
-    <link rel="alternate" hreflang="de" href="https://de.donut-be-crazy.com/recipes/maple-bar-recipe" />
+    <link rel="alternate" hreflang="es" href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
+    <link rel="alternate" hreflang="de" href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
