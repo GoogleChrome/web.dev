@@ -104,7 +104,7 @@ form.addEventListener("submit", e => {
 Reload the application, open DevTools, and take a look at the **Network** panel
 once again.
 
-<img class="screenshot" src="./codelab-code-splitting-4.png" alt="Network panel showing 15.2kb JavaScript bundle.">
+<img class="screenshot" src="./codelab-code-splitting-4.png" alt="Network panel showing 15.2 KB JavaScript bundle.">
 
 For this application, the bundle size was reduced by over 4X with very little
 work, but there's still more room for improvement.
@@ -211,12 +211,12 @@ Reload the application one last time and keep a close eye on the **Network**
 panel again. Only a small initial bundle is downloaded as soon as the app
 loads.
 
-<img class="screenshot" src="./codelab-code-splitting-5.png" alt="Network panel showing 2.7kb JavaScript bundle.">
+<img class="screenshot" src="./codelab-code-splitting-5.png" alt="Network panel showing 2.7 KB JavaScript bundle.">
 
 After the button is pressed to sort the input numbers, the chunk that contains
 the sorting code will get fetched and executed.
 
-<img class="screenshot" src="./codelab-code-splitting-6.png" alt="Network panel showing 2.7kb JavaScript bundle followed by a 13.9kb JavaScript bundle.">
+<img class="screenshot" src="./codelab-code-splitting-6.png" alt="Network panel showing 2.7 KB JavaScript bundle followed by a 13.9 KB JavaScript bundle.">
 
 Notice how the numbers still get sorted!
 
