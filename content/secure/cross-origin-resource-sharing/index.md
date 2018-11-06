@@ -80,24 +80,57 @@ the current origin (scheme, host, and port).
 ### Step 2: server response
 On the server side, 
 When a server sees this header, and
-wants to allow access, it needs to add an `Access-Control-Allow-Origin`  header to
+wants to allow access, it needs to add an `Access-Control-Allow-Origin` header to
 the response specifying the requesting origin (or `*` to allow any origin.) 
 
+### Step 3: browser receives response
+When the browser sees this response with appropriate `Access-Control-Allow-Origin` header, browser allows the response data to be shared with the client site.
 
-### Step 3: browser receives response  
+
+## See CORS in action
+Here is a tiny web server using Express. It is hosted at `https://cors-demo.glitch.me/`
+
+```
+const express = require('express');
+const app = express();
+
+// No CORS Headder set
+app.get('/', function(request, response) {
+  response.sendFile(__dirname + '/message.json');
+});
+
+// CORS header `Access-Control-Allow-Origin` set to accept all
+app.get('/allow-cors', function(request, response) {
+  response.set('Access-Control-Allow-Origin', '*');
+  response.sendFile(__dirname + '/message.json');
+});
+
+// listen for requests :)
+const listener = app.listen(process.env.PORT, function() {
+  console.log('Your app is listening on port ' + listener.address().port);
+});
+```
+([see the sever code in action on glitch](https://glitch.com/edit/#!/cors-demo?path=server.js))
 
 
+The first endpoint (line 5) does not have any response header set, it just sends a file in response. 
 
-The browser sees this response, and allows the response data to come through.
+Open the devtools javascript console and try
+`fetch('https://cors-demo.glitch.me/', {mode:'cors'})`.  
+
+You should see an error saying _"request has been blocked by CORS policy: No
+'Access-Control-Allow-Origin' header is present on the requested resource."_
+
+The second endpoint (line 10) sends the  same file in response but adds
+`Access-Control-Allow-Origin: *`  in the header. From the console, try
+`fetch('https://cors-demo.glitch.me/allow-cors', {mode:'cors'})`.
+This time, your request should not be blocked.
 
 
 ## Share credentials with CORS
 
-CORS is normally used for "anonymous requests" — ones where the request doesn't
-identify the requestor. This is for privacy reasons. If you want to send
-cookies when using CORS (which could identify the sender), you need to add
-additional headers to the request and the server will do the same for the
-response header.
+For privacy reasons, CORS is normally used for "anonymous requests" — ones where the request doesn't identify the requestor. If you want to send
+cookies when using CORS (which could identify the sender), you need to add additional headers to the request and response. 
 
 ### Request
 
@@ -107,7 +140,7 @@ the cookie with the request.
 ```  
 fetch('http://example.com', {  
   mode: 'cors',  
-  **credentials: 'include'**  
+  credentials: 'include'  
 })  
 ```
 
@@ -115,14 +148,10 @@ fetch('http://example.com', {
 
 ``Access-Control-Allow-Origin`` must be set to a specific origin (no wildcard
 using `*`) and must set ``Access-Control-Allow-Credentials`` to ``true``.
-
-```  
-app.get('/allow-cors', function(request, response) {  
-**  response.set('Access-Control-Allow-Origin', 'http://example.com');**  
-**  response.set(Access-Control-Allow-Credentials', true);**  
-  response.sendFile(__dirname + '/message.json');  
-});  
-`  
+``` 
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://example.com
+Access-Control-Allow-Credentials: true
 ```
 
 ## Preflight request for complex HTTP call
@@ -140,18 +169,19 @@ The CORS specification defines a **complex request** as
 
 Browsers create a preflight request if it is needed. It's an OPTIONS request 
 like below and is  sent before the actual request message.
-
-    OPTIONS /data HTTP/1.1
-    Origin: http://example.com
-    Access-Control-Request-Method: DELETE
+```
+OPTIONS /data HTTP/1.1
+Origin: http://example.com
+Access-Control-Request-Method: DELETE
+```
 
 On the server side, an application needs to respond to the preflight request
 with information about the methods the application accepts from this origin.   
-   
-`HTTP/1.1 200 OK`
-
-    Access-Control-Allow-Origin: http://example.com
-    Access-Control-Allow-Methods: GET,DELETE,HEAD,OPTIONS
+``` 
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: http://example.com
+Access-Control-Allow-Methods: GET,DELETE,HEAD,OPTIONS
+```
 
 The server response can also include an `Access-Control-Max-Age` header to
 specify the duration to cache preflight results so the client does not need to
