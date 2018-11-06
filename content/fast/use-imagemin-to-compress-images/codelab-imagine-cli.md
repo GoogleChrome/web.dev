@@ -1,5 +1,5 @@
 ---
-title: Using Imagemin with the Command Line
+title: Using Imagemin with the command line
 author: khempenius
 page_type: glitch
 glitch: imagemin-cli
@@ -42,7 +42,7 @@ same directory (i.e. it overwrites the original files).
 
 ## Verify results with Lighthouse
 
-Lighthouse's "Efficiently encode images" performance audit can let you know if the JPG images on your page are optimally compressed.
+Lighthouse's "Efficiently encode images" performance audit can let you know if the JPEG images on your page are optimally compressed.
 
 - Click on the "Show Live" button to view the live version of the your Glitch.
 
@@ -58,7 +58,7 @@ Success! You have used the Imagemin CLI to compress the images on the page.
 
 ---
 
-## Extra Credit
+## Extra credit
 
 Want to learn more about using the Imagemin CLI? You can run
 
