@@ -30,7 +30,7 @@ additional origin.
 # How does a resource request work on the web?
 
 A browser and a server can exchange data over the network using the
-**H**yper**t**ext** T**ransfer** P**rotocol (HTTP). HTTP defines the
+**Hypertext Transfer Protocol** (HTTP). HTTP defines the
 communication rules between the requester and the responder, including what
 information is needed to get a resource.
 
@@ -70,7 +70,7 @@ Cache-Control: no-cache // "Do not cache this please"
 </thead>
 <tbody>
 <tr>
-<td>Body</td>
+<td>body</td>
 <td>The message itself. This could be plain text, an image binary, JSON, HTML,
 etc.</td>
 </tr>
