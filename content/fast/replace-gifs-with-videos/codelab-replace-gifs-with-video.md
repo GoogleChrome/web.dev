@@ -29,7 +29,7 @@ issue.
 ## Get FFmpeg
 
 There are a number of ways you can convert GIFs to video; this guide uses
-**[FFmpeg](https://www.FFmpeg.org/)**. It's already setup on our Glitch VM, and,
+**[FFmpeg](https://www.ffmpeg.org/)**. It's already setup on our Glitch VM, and,
 if you want, you can follow
 **[these instructions to install it on your local machine](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/#converting_animated_gifs_to_video)**
 as well
