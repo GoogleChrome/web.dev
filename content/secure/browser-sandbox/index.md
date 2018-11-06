@@ -56,4 +56,4 @@ sandbox.
 ## Wrap up
 A secure web experience can only be achieved if security is baked into the
 design of your application, and strong design starts with understanding existing
-features. Next two guides dives into CORS and same-origin policy in depth.
+features. The next two guides dive into CORS and same-origin policy in depth.

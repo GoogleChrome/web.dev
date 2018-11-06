@@ -19,7 +19,7 @@ expose everything on a user's browser.
 
 The same-origin policy prevents this from happening by blocking read access to
 resources loaded from a different origin. "But wait", you say. "I load images
-and scripts from other origins _all the time_." Browsers allow a few tags to embed resources from different origin. This is mostly historical artifacts and could expose your site to vulnability such as [clickjacking using iframe](#clickjacking). You can restrict the origins for these
+and scripts from other origins _all the time_." Browsers allow a few tags to embed resources from different origin. This is mostly historical artifacts and could expose your site to vulnerabilities such as [clickjacking using iframe](#clickjacking). You can restrict the origins for these
 tags using a [Content Security Policy](https://developers.google.com/web/fundamentals/security/csp/).
 
 ## What is considered "same-origin"?  
@@ -57,7 +57,7 @@ cross-origin resource is blocked.
     <tr>
         <td>img</td>
         <td>
-            Embedding cross-origin images is permitted. However, reading cross-origin image is blocked (such as loading a cross-origin image into a <code>canvas</code> element using JavaScript).
+            Embedding cross-origin images is permitted. However, reading cross-origin images is blocked (such as loading a cross-origin image into a <code>canvas</code> element using JavaScript).
         </td>
     </tr>
     <tr>
@@ -84,20 +84,17 @@ cross-origin resource is blocked.
   </figcaption>
 </figure>
 
-An attack called "clickjacking" embeds a site in an iframe and overlays transparent buttons which link to a different destination. Users are tricked into thinking they are accessing your application while sending data to attackers. 
+An attack called "clickjacking" embeds a site in an `iframe` and overlays transparent buttons which link to a different destination. Users are tricked into thinking they are accessing your application while sending data to attackers. 
 
 <div class="clearfix"></div>
 
-To block other sites from embedding your site in an iframe, add content securioty policy with [`frame-ancestors` directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) to the HTTP headers.
-
+To block other sites from embedding your site in an iframe, add a content security policy with [`frame-ancestors` directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors) to the HTTP headers.
 
 Alternatively, you can add `X-Frame-Options` to the HTTP headers see [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) for list of options.
-
 
 ## Wrap up
 Hopefully you feel a little relieved that browsers work hard to be a gatekeeper
 of security on the web. Even though browsers try to be safe by blocking access
-to resources, sometimes you want to access cross-origin resources in your
-applications. In the next guide, learn about Cross Origin Resource Sharing
+to resources, sometimes you want to access cross-origin resources in your applications. In the next guide, learn about Cross-Origin Resource Sharing
 (CORS) and how to tell the browser that loading of cross-origin resources is
 allowed from trusted sources.

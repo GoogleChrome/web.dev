@@ -20,9 +20,9 @@ But security is something to be taken as a positive and necessary part of web
 development just like "user experience" or "accessibility".
 
 <figure>
-  <img src="./securityimage.png" alt="image if security">
+  <img src="./securityimage.png" alt="negative and positive images of security">
   <figcaption>
-    A hacker in hoodie is a negative security image. Team working on a project together is a positive security image.
+    A hacker in hoodie is a negative security image. A team working on a project together is a positive security image.
   </figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ information or crashes on a certain action. A **vulnerability**
 (sometimes called a **security bug**) is a type of bug that could be used for
 abuse. 
 
-Bugs are common in the day to day activities as a developer. Which means,
+Bugs are common in the day to day activities of a developer. Which means,
 vulnerabilities are also frequently introduced into applications. What's
 important is that you are aware of common vulnerabilities in order
 to mitigate them as much as you can. It is just like minimizing other bugs by

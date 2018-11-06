@@ -23,7 +23,7 @@ work-arounds such as
 [JSONP](https://stackoverflow.com/questions/2067472/what-is-jsonp-all-about),
 but **Cross-Origin Resource Sharing (CORS)** fixes this in a standard way.
 
-Enabling **CORS** lets the server tells the browser it's permitted to use an additional origin.
+Enabling **CORS** lets the server tell the browser it's permitted to use an additional origin.
 
 # How does a resource request work on the web?
 
@@ -79,7 +79,7 @@ Remember, the same-origin policy tells the browser to block cross-origin
 requests. When you want to get a public resource or other server on different origin, the resource providing server needs to tell the browser "This origin where request is coming from can access my resource". The browser remembers that and allow cross-origin resource shearing.
 
 ### Step 1: client (browser) request
-When the browser is making cross-origin request, the browser adds an `Origin` header with
+When the browser is making a cross-origin request, the browser adds an `Origin` header with
 the current origin (scheme, host, and port). 
 
 ### Step 2: server response
@@ -89,8 +89,7 @@ wants to allow access, it needs to add an `Access-Control-Allow-Origin` header t
 the response specifying the requesting origin (or `*` to allow any origin.) 
 
 ### Step 3: browser receives response
-When the browser sees this response with appropriate `Access-Control-Allow-Origin` header, browser allows the response data to be shared with the client site.
-
+When the browser sees this response with appropriate `Access-Control-Allow-Origin` header, the browser allows the response data to be shared with the client site.
 
 ## See CORS in action
 Here is a tiny web server using Express. It is hosted at `https://cors-demo.glitch.me/`
@@ -99,7 +98,7 @@ Here is a tiny web server using Express. It is hosted at `https://cors-demo.glit
 const express = require('express');
 const app = express();
 
-// No CORS Headder set
+// No CORS Header set
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/message.json');
 });
@@ -115,20 +114,24 @@ const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
 ```
-([see the sever code in action on glitch](https://glitch.com/edit/#!/cors-demo?path=server.js))
+([see the sever code in action on Glitch](https://glitch.com/edit/#!/cors-demo?path=server.js))
 
 
 The first endpoint (line 5) does not have any response header set, it just sends a file in response. 
 
 Open the devtools javascript console and try
-`fetch('https://cors-demo.glitch.me/', {mode:'cors'})`.  
+```
+fetch('https://cors-demo.glitch.me/', {mode:'cors'})
+```
 
-You should see an error saying _"request has been blocked by CORS policy: No
-'Access-Control-Allow-Origin' header is present on the requested resource."_
+You should see an error saying `request has been blocked by CORS policy: No
+'Access-Control-Allow-Origin' header is present on the requested resource.`
 
 The second endpoint (line 10) sends the  same file in response but adds
 `Access-Control-Allow-Origin: *`  in the header. From the console, try
-`fetch('https://cors-demo.glitch.me/allow-cors', {mode:'cors'})`.
+```
+fetch('https://cors-demo.glitch.me/allow-cors', {mode:'cors'})
+```
 This time, your request should not be blocked.
 
 
@@ -143,7 +146,7 @@ Add  `credentials: 'include'` to the fetch options like below. This will include
 the cookie with the request.
 
 ```  
-fetch('http://example.com', {  
+fetch('https://example.com', {  
   mode: 'cors',  
   credentials: 'include'  
 })  
@@ -151,32 +154,31 @@ fetch('http://example.com', {
 
 ### Response 
 
-``Access-Control-Allow-Origin`` must be set to a specific origin (no wildcard
-using `*`) and must set ``Access-Control-Allow-Credentials`` to ``true``.
+`Access-Control-Allow-Origin` must be set to a specific origin (no wildcard
+using `*`) and must set `Access-Control-Allow-Credentials` to `true`.
 ``` 
 HTTP/1.1 200 OK
-Access-Control-Allow-Origin: http://example.com
+Access-Control-Allow-Origin: https://example.com
 Access-Control-Allow-Credentials: true
 ```
 
-## Preflight request for complex HTTP call
+## Preflight requests for complex HTTP calls
 
 If a web app needs a complex HTTP request, the browser adds a  **preflight
 request** to the front of the request chain.
 
 The CORS specification defines a **complex request** as 
 
-+  A request that use methods other than GET, POST, or HEAD
-+  A request that includes headers other than `Accept`, `Accept-Language` or
-     `Content-Language`
-+  A request that has a Content-Type header other than
++  A request that uses methods other than GET, POST, or HEAD
++  A request that includes headers other than `Accept`, `Accept-Language` or `Content-Language`
++  A request that has a `Content-Type` header other than
     `application/x-www-form-urlencoded`, `multipart/form-data`, or `text/plain`
 
-Browsers create a preflight request if it is needed. It's an OPTIONS request 
-like below and is  sent before the actual request message.
+Browsers create a preflight request if it is needed. It's an `OPTIONS` request 
+like below and is sent before the actual request message.
 ```
 OPTIONS /data HTTP/1.1
-Origin: http://example.com
+Origin: https://example.com
 Access-Control-Request-Method: DELETE
 ```
 
@@ -184,10 +186,10 @@ On the server side, an application needs to respond to the preflight request
 with information about the methods the application accepts from this origin.   
 ``` 
 HTTP/1.1 200 OK
-Access-Control-Allow-Origin: http://example.com
+Access-Control-Allow-Origin: https://example.com
 Access-Control-Allow-Methods: GET,DELETE,HEAD,OPTIONS
 ```
 
 The server response can also include an `Access-Control-Max-Age` header to
 specify the duration to cache preflight results so the client does not need to
-make a preflight request every it they sends a complex request.
+make a preflight request every time it they sends a complex request.

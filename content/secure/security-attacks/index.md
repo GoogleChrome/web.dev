@@ -38,13 +38,7 @@ sometimes called **modification of messages**.
   </figcaption>
 </figure>
 
-<div class="note">Have you ever logged into free public wifi and seen ads
-wrapped around web pages you are accessing? That's exactly what <b>modification
-of message</b> is! The wifi access point injected their advertising into a website
-before it gets to your browser. In many cases, you might dismiss it as "just ads
-for free wifi", but imagine if the same technique is used to replace some of the
-javascript or link to a phishing site. Your site may be used by an attacker to
-misguide users without you noticing.
+<div class="aside note">Have you ever logged into free public wifi and seen ads wrapped around web pages you are accessing? That's exactly what <b>modification of message</b> is! The wifi access point injected their advertising into a website before it got to your browser. In many cases, you might dismiss it as "just ads for free wifi", but imagine if the same technique is used to replace some of the javascript or link to a phishing site. Your site may be used by an attacker to misguide users without you noticing.
 </div>
 
 ### Passive attack
