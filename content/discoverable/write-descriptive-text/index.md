@@ -20,7 +20,7 @@ in turn can increase your search traffic.
 
 ## Measure
 
-Lighthouse displays the following failed audits if your content is difficult for
+Lighthouse displays failed audits, like the ones below, if your content is difficult for
 search engines to understand:
 
 <table>
@@ -50,7 +50,7 @@ page</a></td>
 ## Add tags to the head of the page
 
 Add a meta description and title for every page on your site. Here's a full
-example of what the <head> of each page should include:
+example of what the < head > of each page should include:
 
 ```
 <!doctype html>
@@ -119,14 +119,13 @@ Here are some examples of good vs bad titles and descriptions:
 Here are some best practices to keep in mind when you're writing descriptions
 and titles:
 
-+  Make them descriptive and concise. Avoid vague titles like "Home" and
-    descriptive link text like "click here".
-+  Avoid [keyword
-    stuffing](https://support.google.com/webmasters/answer/66358). Cramming
++  Make them **descriptive and concise.** Avoid vague titles like "Home" and
+    link text like "click here".
++  Avoid [**keyword
+    stuffing**](https://support.google.com/webmasters/answer/66358). Cramming
     your content with keywords isn't helpful to users, and search engines may
     mark the page as spam.
-+  Avoid repeated or boilerplate titles and descriptions.
-+  Make sure you use different titles and descriptions for each page. If you
++  **Avoid repeated or boilerplate titles and descriptions** for each page. If you
     have a big site, use the
     [HTML Improvements Report](https://support.google.com/webmasters/answer/80407)
     to crawl the site and discover any page that's missing a title.
