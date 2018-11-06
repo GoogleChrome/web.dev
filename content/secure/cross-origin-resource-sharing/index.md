@@ -28,7 +28,9 @@ Enabling **CORS** lets the server tell the browser it's permitted to use an addi
 # How does a resource request work on the web?
 
 A browser and a server can exchange data over the network using the
-**H**yper**t**ext **T**ransfer **P**rotocol (HTTP). HTTP defines the
+
+**Hypertext Transfer Protocol** (HTTP). HTTP defines the
+
 communication rules between the requester and the responder, including what
 information is needed to get a resource.
 
