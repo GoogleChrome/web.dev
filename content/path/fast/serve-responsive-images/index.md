@@ -36,15 +36,15 @@ Save this code as a separate script in your project, and then run it to convert
 your images:
 
 ```javascript
-    const sharp = require('sharp');
-    const fs = require('fs');
-    const directory = './images';
+const sharp = require('sharp');
+const fs = require('fs');
+const directory = './images';
 
-    fs.readdirSync(directory).forEach(file => {
-      sharp(`${directory}/${file}`)
-        .resize(200, 100) // width, height
-        .toFile(`${directory}/${file}-small.jpg`);
-    });
+fs.readdirSync(directory).forEach(file => {
+  sharp(`${directory}/${file}`)
+    .resize(200, 100) // width, height
+    .toFile(`${directory}/${file}-small.jpg`);
+  });
 ```
 
 ### ImageMagick
@@ -52,11 +52,16 @@ your images:
 To resize an image to 33% of its original size, run the following command in
 your terminal:
 
-`convert -resize 33% flower.jpg flower-small.jpg`
+
+<pre class="devsite-terminal devsite-click-to-copy">
+  `convert -resize 33% flower.jpg flower-small.jpg`
+</pre>
 
 To resize an image to fit within 300px wide by 200px high, run the following command:
 
-`convert flower.jpg -resize 300x200 flower-small.jpg`
+<pre class="devsite-terminal devsite-click-to-copy">
+  `convert flower.jpg -resize 300x200 flower-small.jpg`
+</pre>
 
 ### How many image versions should you create?
 
@@ -110,12 +115,12 @@ attributes all interact to achieve this end result.
 ### The "src" attribute
 
 The src attribute makes this code work for browsers that don't
-[support](https://caniuse.com/#search=srcset) the "`srcset`" and "`sizes`"
+[support](https://caniuse.com/#search=srcset) the `srcset` and `sizes`
 attributes. If a browser does not support these attributes, it will fall back to
-loading the resource specified by the "`src`" attribute.
+loading the resource specified by the `src` attribute.
 
 **Gotchas:**  
-✔️ The resource specified by the "`src`" attribute should be large enough to work
+✔️ The resource specified by the `src` attribute should be large enough to work
 well on all device sizes.
 
 ### The "srcset" attribute
