@@ -32,7 +32,12 @@ A browser and a server can exchange data over the network using the
 communication rules between the requester and the responder, including what
 information is needed to get a resource.
 
-![request and response](./request_response.png)
+<figure>
+  <img src="./request_response.png" alt="request and response">
+  <figcaption>
+    Illustrated client request and server response
+  </figcaption>
+</figure>
 
 The HTTP header is used to negotiate the type of message exchange between the
 client and the server and is used to determine access.  Both the browser's
