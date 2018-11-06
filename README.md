@@ -18,6 +18,14 @@ Tips:
 
 - Use `<pre class="devsite-terminal devsite-click-to-copy">` to wrap terminal commands. This'll insert a `$`.
 - Put notes in `<div class="aside note">`. We also support `.caution`, `.warning`, `.success`.
+- Many images just use markdown but you can also use the Web Fundamentals approach of figure/figcaption:
+```
+<figure>
+  <img src="/apps-script/images/alert.png"
+       alt="Alert dialog" class="screenshot">
+  <figcaption><b>Figure 1</b>: Alert dialog</figcaption>
+</figure>
+```
 
 ### Codelabs
 
