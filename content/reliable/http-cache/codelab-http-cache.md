@@ -92,7 +92,7 @@ versioning information, and whose contents are never meant to change, add
 `style.391484cf.css` fall into this category.
 
 Building off the
-[`setHeadersfunction`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders)
+[`setHeaders function`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders)
 used in the last step, you can add in additional logic to check whether a given
 request is for a versioned URL, and if so, add the `Cache-Control:
 max-age=31536000` header.
