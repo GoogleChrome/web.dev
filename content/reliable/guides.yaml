@@ -10,12 +10,12 @@ topics:
   guides:
     - network-connections-unreliable
     - identify-resources-via-network-panel
-- title: Learn about the options in your caching toolbox
+- title: The options in your caching toolbox
   guides:
     - http-cache
     - service-workers-cache-storage
     - workbox
-- title: Learn how caching strategies work
+- title: How caching strategies work
   guides:
     - precache-with-workbox
     - runtime-caching-with-workbox
