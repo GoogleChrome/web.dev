@@ -54,7 +54,7 @@ your terminal:
 
 
 <pre class="devsite-terminal devsite-click-to-copy">
-  `convert -resize 33% flower.jpg flower-small.jpg`
+convert -resize 33% flower.jpg flower-small.jpg
 </pre>
 
 To resize an image to fit within 300px wide by 200px high, run the following command:
