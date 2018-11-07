@@ -263,6 +263,6 @@ know if the JPEG images on your page are optimally compressed.
   the live version of your Glitch and verify that the "Efficiently encode
   images" audit was passed.
 
-<img src="./assets/lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+<img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 
 Success! You have used Imagemin to optimally compress the images on your page.
