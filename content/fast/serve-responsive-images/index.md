@@ -35,25 +35,33 @@ Node script.
 Save this code as a separate script in your project, and then run it to convert
 your images:
 
-    const sharp = require('sharp');
-    const fs = require('fs');
-    const directory = './images';
+```javascript
+const sharp = require('sharp');
+const fs = require('fs');
+const directory = './images';
 
-    fs.readdirSync(directory).forEach(file => {
-      sharp(`${directory}/${file}`)
-        .resize(200, 100) // width, height
-        .toFile(`${directory}/${file}-small.jpg`);
-    });
+fs.readdirSync(directory).forEach(file => {
+  sharp(`${directory}/${file}`)
+    .resize(200, 100) // width, height
+    .toFile(`${directory}/${file}-small.jpg`);
+  });
+```
 
 ### ImageMagick
 
 To resize an image to 33% of its original size, run the following command in
 your terminal:
 
-    $ convert -resize 33% flower.jpg flower-small.jpg
 
-    To resize an image to fit within 300px wide by 200px high, run the following command:
-    $ convert flower.jpg -resize 300x200 flower-small.jpg
+<pre class="devsite-terminal devsite-click-to-copy">
+convert -resize 33% flower.jpg flower-small.jpg
+</pre>
+
+To resize an image to fit within 300px wide by 200px high, run the following command:
+
+<pre class="devsite-terminal devsite-click-to-copy">
+convert flower.jpg -resize 300x200 flower-small.jpg
+</pre>
 
 ### How many image versions should you create?
 
@@ -85,115 +93,63 @@ use:
 </thead>
 <tbody>
 <tr>
-<td><p><pre>
-<img src="flower-large.jpg">
-</pre></p>
-
+<td>
+&lt;img src="flower-large.jpg"&gt;
 </td>
-<td><p><pre>
-<img src="flower-large.jpg"
+<td>
+&lt;img src="flower-large.jpg"
      srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw">
-</pre></p>
-
+     sizes="50vw"&gt;
 </td>
 </tr>
 </tbody>
 </table>
 
 The `<img>` tag's
-`[src](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-src)`,
-`[srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)`,
+[`src`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-src),
+[`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset),
 and
-`[sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes)`
+[`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes)
 attributes all interact to achieve this end result.
 
 ### The "src" attribute
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
-<img src="flower-large.jpg"
-     srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw">
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
 The src attribute makes this code work for browsers that don't
-[support](https://caniuse.com/#search=srcset) the "`srcset`" and "`sizes`"
+[support](https://caniuse.com/#search=srcset) the `srcset` and `sizes`
 attributes. If a browser does not support these attributes, it will fall back to
-loading the resource specified by the "`src`" attribute.
+loading the resource specified by the `src` attribute.
 
 **Gotchas:**  
-✔️The resource specified by the "`src`" attribute should be large enough to work
+✔️ The resource specified by the `src` attribute should be large enough to work
 well on all device sizes.
 
 ### The "srcset" attribute
 
-<table>
-<thead>
-<tr>
-<th><p><pre>
-<img src="flower-large.jpg"
-     srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw">
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
-The "`srcset`" attribute is a comma-separated list of image filenames and their
+The `srcset` attribute is a comma-separated list of image filenames and their
 width or density descriptors.
 
 This example uses
 [width descriptors](https://www.w3.org/TR/html5/semantics-embedded-content.html#width-descriptor).
-"`480w`" is a width descriptor tells the browser that "`flower-small.jpg`" is
-480px wide; "`1080w`" is a width descriptor tells the browser that
-"`flower-large.jpg`" is 1080px wide.
+`480w` is a width descriptor tells the browser that `flower-small.jpg` is
+480px wide; `1080w` is a width descriptor tells the browser that
+`flower-large.jpg` is 1080px wide.
 
 "Width descriptor" sounds fancy but is just a way to tell the browser the width
 of an image. This saves the browser from needing to download the image to
 determine its size.
 
 **Gotchas:**  
-✔️Use the "`w`" unit (instead of "px") to write width descriptors. For example,
-a 1024px wide image would be written as "`1024w`".
+✔️ Use the `w` unit (instead of `px`) to write width descriptors. For example,
+a 1024px wide image would be written as `1024w`.
 
 **Extra Credit:**  
 You don't need to know about density descriptors to serve different image sizes.
 However, if you're curious about how density descriptors work, check out the
 [Resolution Switching code lab](./codelab-density-descriptors.md). Density descriptors are used to serve different
 images based on the_ device's [pixel
-density_](https://en.wikipedia.org/wiki/Pixel_density).
+density](https://en.wikipedia.org/wiki/Pixel_density).
 
 ### The "sizes" attribute
-
-<table>
-<thead>
-<tr>
-<th><p><pre>
-<img src="flower-large.jpg"
-     srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw">
-</pre></p>
-
-</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
 
 The sizes attribute tells the browser how wide the image will be when it is
 displayed. However, the sizes attribute has no effect on display size - you
@@ -209,13 +165,13 @@ for the "`sizes`" and "`srcset`" attributes at the same time, so a browser will
 either support both attributes or neither.)
 
 **Gotchas:**  
-✔️Slot width can be specified using a variety of units. The following are all
+✔️ Slot width can be specified using a variety of units. The following are all
 valid sizes:
 
-+  `100px
-`+  `33vw`
-+  `20em
-`+  `calc(50vw-10px)`
+- `100px`
+- `33vw`
+- `20em`
+- `calc(50vw-10px)`
 
 The following is not a valid size:
 
