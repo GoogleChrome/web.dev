@@ -136,7 +136,7 @@ into the webpack build process. The [documentation](https://webpack.js.org/plugi
 explains this in detail.
 + Other minification plugins also exist and can be used instead, 
 such as [BabelMinifyWebpackPlugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin) 
-and [ClosureCompilerPlugin](https://github.com/roman01la/webpack-closure-compiler)`
+and [ClosureCompilerPlugin](https://github.com/roman01la/webpack-closure-compiler)
 + If a module bundler is not being used at all, use [UglifyJS](https://github.com/mishoo/UglifyJS2) 
 as a CLI tool or include it directly as a dependency.
 
