@@ -12,7 +12,7 @@ wf_blink_components: N/A
 The modern web is enjoyed by a wide swath of people, using a range of different
 devices and types of network connections. Your creations can reach users all
 across the world, but delivering a _reliable_ experience on the web for all of
-your users can be challenging. It can be a challenge just understand what
+your users can be challenging. It can be a challenge just to understand what
 reliability means.
 
 ## Reliable while offline
@@ -43,12 +43,11 @@ conditions.
 
 ## Reliable is achievable
 
-The good news is that the modern web platform provides technologies—like
-[service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API),
-and the
+The good news is that the modern web platform provides technologies—such as 
+[service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) and the
 [Cache Storage API](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage)—that
 can serve as the building blocks for creating reliable web applications. They
-allow you to write code which sits in between your web app and the network. In
+allow you to write code which sits between your web app and the network. In
 many cases, you can bypass the network entirely, and instead use previously
 cached content to fulfill your web app's requests. 
 
@@ -82,9 +81,8 @@ back a negative result for the "Responds with a 200 while offline" check. That's
 okay!  Unless you're using a customized starter project, web applications don't
 have that type of reliability by default. The next few guides will introduce the
 techniques you need to identify what your web app is loading, and teach you how
-to use the tools to make that loading experience reliable.
+to use Lighthouse to make that loading experience reliable.
 
-Throughout that process, you're encouraged to keep re-running the Lighthouse
-audits. They serve as a guiding light throughout your journey from
-starting with a new web application, and ending with a reliable progressive web
-app.
+Throughout this process, you're encouraged to keep re-running the Lighthouse
+audits. They serve as a guiding light throughout your journey, starting with a new 
+web application and ending with a reliable progressive web app.
