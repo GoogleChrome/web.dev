@@ -40,9 +40,7 @@ Search engines will not index your views in this case, because a user would clic
 on a search result and find the error message, but not the content they were looking for,
 such as the dog pictures.
 
-## Fixing the HTTP status code
-
-## Fixing the sneaky 404s
+## Fixing the server
 
 In this project, we have an express.js server written in JavaScript.
 Let's fix our server, so it responds with index.html and our single page app will take care of the rest.
