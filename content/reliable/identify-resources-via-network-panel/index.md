@@ -56,7 +56,7 @@ often appropriate for content that you've identified as being outside the
 critical loading path.
 
 **Note:** Advanced techniques outside the scope of this guide, like the
-`[<link rel="preload">](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)`,
+[`<link rel="preload">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content),
 add a twist to this story by giving a head start to what would otherwise be a
 late-loaded request.
 
