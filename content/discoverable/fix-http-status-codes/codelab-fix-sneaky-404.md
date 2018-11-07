@@ -2,7 +2,7 @@
 title: Fix sneaky 404s
 author: martinsplitt
 page_type: glitch
-glitch: sneaky-404s
+glitch: sneaky-404
 ---
 
 Single Page Apps can show different content without loading a new page.
