@@ -6,13 +6,13 @@ glitch: sleet-expansion
 ---
 
 This codelab walks you through the process of interpreting all of the network
-traffic for a more involved sample application. At the end of the exercise,
+traffic for a more complex sample application. At the end of the exercise,
 you'll have the skills you need to figure out _what_ your own web application's
 loading, and _when_ each of the requests are being made.
 
-Note: The screenshots and instructions in this codelab assume that you're
-currently using Chrome. Each browser has their own DevTools experience, and the
-experience of using them might not match what you see in this codelab.
+Note: The screenshots and instructions in this codelab assume that you're using 
+Chrome. Each browser has its own DevTools experience, which might 
+not match what you see in this codelab.
 
 ## Navigate to the Network Panel
 
@@ -21,10 +21,10 @@ application. First run the server by clicking on the Show Live button:
 
 ![image](./show-live.png)
 
-Open the DevTools and and select the Network tab:
+Open the DevTools and and select the Network tab.
 
 You should see the DevTools interface open up, in either a new window or as a
-sidebar in your existing window. In the DevTools interface, select the "Network"
+sidebar in your existing window. In the DevTools, select the Network
 tab to open the Network panel.  
 The Network panel shows all the assets loaded as a result of your initial
 navigation:
@@ -33,15 +33,15 @@ navigation:
 
 **Note:** The actual columns you see in the Network panel may be different; the
 screenshot shows a simplified view with everything but the Name, Type, and
-Waterfall columns hidden._
+Waterfall columns hidden.
 
-## How to Interpret the entries
+## How to interpret the entries
 
 Each row of recorded network traffic represents a single request and response
 pair.
 
-The first row, with type `document`, is the initial navigation request for our
-web app's HTML. It is the "source" for the waterfall; each of the subsequent
+The first row, with type `document`, is the initial navigation request for the
+web app's HTML. This is the "source" for the waterfall; each of the subsequent
 requests for additional assets (known as subresources of the main document) flow
 from this original source.
 
@@ -72,13 +72,13 @@ will fall back to a default location.
 
 Once the web app has a location to work with, clicking on the **Find Nearby
 Wikipedia Entries** button results in several additional Network requests. You
-should see something like:
+should see something like this:
 
 ![image](./network-requests.png)
 
 ## Interpret the new entries
 
-Like before, each row of recorded network traffic represents a single request
+As before, each row of recorded network traffic represents a single request
 and response pair.
 
 The first row of the new entries represents a request with a type of `fetch`,
@@ -88,13 +88,13 @@ from the Wikipedia API.
 
 The following rows all are images (`png` or `jpeg`) associated with the
 Wikipedia entries. Although it's a little hard to see from the screenshot, their
-entries in the waterfall column directly flow from the API response.
+entries in the Waterfall column directly flow from the API response.
 
 For all of these additional requests, the _when_ is going to vary based on how
 long you've had the page open before you click on **Find Nearby Wikipedia
 Entries**. Most important here is that the _when_ is disconnected from the
 initial navigation request. You can tell this from the large gap that exists in
-the waterfall display, representing a period of time that passed in between the
+the Waterfall display, representing a period of time that passed in between the
 initial loading and when the Wikipedia API request is made.
 
 Requests made after a gap of time following a navigation fall into the category
@@ -114,7 +114,7 @@ You've also seen that requests made by a web page can (usually) be grouped into
 one of two categories:
 
 1. Initial requests, made right after navigating to a new page, for the
-    HTML, JavaScript, CSS (and potentially other) assets.
+    HTML, JavaScript, CSS (and potentially other assets).
 1. Runtime requests made as a result of user interaction with the page. This
-    can often start with a request to an APIs, and then flow into several
+    can often start with a request to an API, and then flow into several
     follow-up requests based on the API data retrieved.
