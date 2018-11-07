@@ -30,6 +30,17 @@ to the average user.
 </tbody>
 </table>
 
+## Measure
+
+Run Lighthouse to check for opportunities to improve page load by compressing images.
+These opportunities are listed under "Efficiently encode images":
+
+![image](./efficient-encoding.png)
+
+<div class="aside note">
+Lighthouse currently reports on opportunities to compress images in JPEG format only.
+</div>
+
 ## Imagemin
 
 Imagemin is an excellent choice for image compression because it supports a wide
