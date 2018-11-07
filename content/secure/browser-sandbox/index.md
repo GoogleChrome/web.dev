@@ -15,6 +15,13 @@ are turned on by default to protect users.
 
 ## The idea of a "sandbox"  
 
+<figure class="attempt-right">
+  <img src="./sandbox.png" alt="browser as a sandbox">
+  <figcaption>
+    Figure: Browser as a sandbox
+  </figcaption>
+</figure>
+
 Modern web browsers are built on the idea of a "sandbox". A sandbox is a
 security mechanism used to run an application in a restricted environment. Just
 like the physical sandbox at a playground where kids can create anything they
@@ -22,6 +29,8 @@ want within the boundary without making a mess elsewhere, application code has
 the freedom to execute within a restricted environment. For example, JavaScript
 can add and modify elements on the page but might be restricted from accessing
 an external JSON file. This is because of a sandbox feature called same-origin
+
+<div class="clearfix"></div>
 
 ## Why is a sandbox necessary?
 

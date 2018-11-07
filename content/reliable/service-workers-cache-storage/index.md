@@ -20,7 +20,7 @@ and the
 Since they're so often used together, it's worth learning about them both at the
 same time.
 
-## Service workers!
+## Service workers
 
 A service worker is built into the browser and controlled by a bit of extra
 JavaScript code that you are responsible for creating. You deploy this alongside
@@ -40,30 +40,31 @@ than the browser's HTTP cache, and return a reliably fast response without
 having to worry about the network. That entails using the other piece of the
 puzzle: the Cache Storage API.
 
-## The Cache Storage API!
+## The Cache Storage API
 
 The Cache Storage  API opens up a whole new range of possibilities, by giving
 developers complete control over the contents of the cache. Instead of relying
-on a combination of HTTP headers and the browser's built-in rules, the Cache
+on a combination of HTTP headers and the browser's built-in [heuristics](https://httpwg.org/specs/rfc7234.html#heuristic.freshness),
+the Cache
 Storage API exposes a code-driven approach to caching. The Cache Storage API
 proves very useful when called from your service worker's JavaScript code.
 
-### Wait... there's another cache to think about now?
+### Wait… there's another cache to think about now?
 
 You're probably asking yourself questions like "Do I still need to configure my
 HTTP headers?" and "What can I do with this new cache that wasn't possible with
 the HTTP cache?" Don't worry—those are natural reactions.
 
-It's still recommended that you configure the Cache-Control headers on your web
+It's still recommended that you configure the `Cache-Control` headers on your web
 server, even when you know that you're using the Cache Storage API. You can
 usually get away with setting `Cache-Control: no-cache` for unversioned URLs,
 and/or `Cache-Control: max-age=31536000` for URLs that contain versioning
 information, like hashes. 
 
-When populating the Cache Storage API, the browser
+When populating the Cache Storage API cache, the browser
 [defaults to checking for existing entries](https://jakearchibald.com/2016/caching-best-practices/#the-service-worker-the-http-cache-play-well-together-dont-make-them-fight)
 in the HTTP cache, and uses those if found. If you're adding versioned URLs to
-the Cache Storage API, the browser avoids an additional network request. The
+the Cache Storage API cache, the browser avoids an additional network request. The
 flip side of this is that if you're using misconfigured `Cache-Control` headers,
 like specifying a long-lived cache lifetime for an unversioned URL, you can end
 up
@@ -86,12 +87,12 @@ uses that would be difficult or impossible with just the HTTP cache include:
 
 There are some things to keep in mind about the API's design:
 
-+  `[Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)`
++  [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request)
     objects are used as the unique keys when reading and writing to these
     caches. As a convenience, you can pass in a URL string like
     `'https://example.com/index.html'` as the key instead of an actual
     `Request` object, and the API will automatically handle that for you.
-+  `[Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)`
++  [`Response`](https://developer.mozilla.org/en-US/docs/Web/API/Response)
     objects are used as the values in these caches.
 +  The `Cache-Control` header on a given `Response` is effectively ignored
     when caching data. There are no automatic, built-in expiration or freshness
@@ -99,7 +100,7 @@ There are some things to keep in mind about the API's design:
     code explicitly removes it. (There are libraries to simplify cache
     maintenance on your behalf—they'll be covered later on in this series.)
 +  Unlike with older, synchronous APIs such as
-    `[LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage)`,
+    [`LocalStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage),
     all Cache Storage API operations are asynchronous.
 
 ## A quick detour: promises and async/await
@@ -110,10 +111,10 @@ In particular, they rely heavily on promises to represent the future result of
 async operations. You should familiarize yourself with
 [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise),
 and the related
-`[async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)`/`[await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)`
+[`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 syntax, before diving in.
 
-## Don't deploy that code... yet
+## Don't deploy that code… yet
 
 While they provide an important foundation, and can be used as-is, both service
 workers and the Cache Storage API are effectively lower-level building blocks,

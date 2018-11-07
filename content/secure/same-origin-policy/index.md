@@ -80,7 +80,7 @@ cross-origin resource is blocked.
 <figure class="attempt-right">
   <img src="./clickjacking.png" alt="clickjacking">
   <figcaption>
-    Clickjacking mechanism illustrated in 3 separate layers (base site, iframed site, transparent button).
+    Figure: Clickjacking mechanism illustrated in 3 separate layers (base site, iframed site, transparent button).
   </figcaption>
 </figure>
 
