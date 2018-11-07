@@ -236,7 +236,7 @@ the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
 
 Reload the application. You can now see all the specific polyfills included:
 
-<img class="screenshot" src="./entry-polyfills.png" alt="List of polyfills imported by Babel">
+<img class="screenshot" src="./entry-polyfills.png" alt="List of polyfills imported">
 
 Although only needed polyfills for `"last 2 versions"` is now included, it is still a super long list! This is because
 polyfills needed for the target browsers for _every_ newer feature is still included. Change the value of the attribute to `usage` 
@@ -268,11 +268,11 @@ import "./style.css";
 
 Now only the required polyfills needed for the application are included.
 
-<img class="screenshot" src="./usage-polyfills.png" alt="Specific polyfills automatically included for features used">
+<img class="screenshot" src="./usage-polyfills.png" alt="List of polyfills automatically included">
 
 The application bundle size is reduced significantly.
 
-<img class="screenshot" src="./usage-polyfills-bundle-size.png" alt="Reduced bundle size using usage value">
+<img class="screenshot" src="./usage-polyfills-bundle-size.png" alt="Bundle size reduced to 30.1 KB">
 
 ## Narrowing the list of supported browsers
 
@@ -298,7 +298,7 @@ to the following:
 
 Take a look at the details for the fetched bundle.
 
-<img class="screenshot" src="./usage-polyfills-bundle-size.png" alt="Reduced bundle size using usage value">
+<img class="screenshot" src="./network-use-browser-share.png" alt="Bundle size of 30.0 KB">
 
 Since the application is so small, there really isn't much of a difference with
 these changes. However, using a browser market share percentage (such as
@@ -526,7 +526,7 @@ Add the following to `src/index.js` at the end of the file:
 Now load the application in a browser that supports modules, such as the latest
 version of Chrome.
 
-<img class="screenshot" src="./module-network-request.png" alt="Module fetched over network">
+<img class="screenshot" src="./module-network-request.png" alt="5.2 KB module fetched over network for newer browsers">
 
 Only the module is fetched, with a much smaller bundle size due to it being
 largely untranspiled! The other script element is completely ignored by the
@@ -537,7 +537,7 @@ script with all the needed polyfills and transforms are be fetched. Here is a
 screenshot for all the requests made on an older version of Chrome (version
 38).
 
-<img class="screenshot" src="./legacy-script.png" alt="Legacy script fetched for older browsers">
+<img class="screenshot" src="./legacy-script.png" alt="30 KB script fetched for older browsers">
 
 ## Conclusion
 
