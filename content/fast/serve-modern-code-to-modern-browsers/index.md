@@ -100,7 +100,7 @@ browsers to be used to access your application.
 Ultimately, you should select the appropriate combination of queries to only
 target browsers that fit your needs.
 
-## Use ES modules
+## Use &lt;script type=&quot;module&quot;&gt;
 
 JavaScript modules, or ES modules, are a relatively new feature supported in
 [all major browsers](https://caniuse.com/#feat=es6-module). You can use modules
