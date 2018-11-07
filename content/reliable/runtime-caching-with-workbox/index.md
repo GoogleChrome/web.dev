@@ -35,7 +35,7 @@ your web app, and a copy of the response is stored using the Cache Storage
 API—either creating a new entry, or updating a previous entry for the same
 URL.
 
-![image](./cache-first.png)
+![image](network-first.png)
 
 If the network request fails entirely, or
 [takes too long](https://developers.google.com/web/tools/workbox/guides/common-recipes#force_a_timeout_on_network_requests)
@@ -55,7 +55,7 @@ successful, it's returned to your web app and a copy is saved in a cache. This
 cached copy will be used to bypass the network the next time a request for the
 same URLs is made.
 
-![image](network-first.png)
+![image](./cache-first.png)
 
 ### Stale-while-revalidate
 
