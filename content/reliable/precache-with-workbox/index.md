@@ -12,7 +12,7 @@ One feature of service workers is the ability to save files to the cache when
 the service worker is installing. This is referred to as "precaching".
 Precaching makes it possible to serve cached files to the browser without going
 to the network. Use precaching for critical assets that your site needs even
-when offline: main page, styles, fallback image, essential scripts.
+when offline: main page, styles, fallback image, essential scripts…
 
 ## Why should you use Workbox?
 
@@ -45,7 +45,9 @@ looks something like:
 ```
 When the service worker is installed, three cache entries are created in the
 Cache Storage, for each of the three listed URLs. The first asset has versioning
-information already included in its URL (`app.abcd**1234**.js)`. Workbox's build
+information already included in its URL
+(`app` is the actual file name, and `.abcd1234` contains the versioning information,
+right before the file extension `.js`). Workbox's build
 tools can detect this and exclude a revision field.
 The other two assets do not include any versioning info in their URLs, so
 Workbox's build tools create a separate `revision` field, containing a hash of
@@ -82,16 +84,16 @@ precache state at any point in time.
 If there's an existing URL with a new revision field, or if any URLs have been
 added or dropped from the manifest, that's a sign to your service worker that
 updates need to be performed, as part of the
-`[install](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install_1)`
+[`install`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install_1)
 and
-`[activate](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate_1)`
+[`activate`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate_1)
 event handlers. For instance, if you've made some changes to your site and
 rebuilt, your latest precache manifest might have undergone the following
 changes:
 
 ```
 [{
-  url: 'app.abcd1234.js'
+  url: 'app.ffaa4455.js'
 }, {
   url: 'offline.svg',
   revision: '7836745f'
@@ -127,7 +129,7 @@ any HTML, JavaScript, or CSS that's loaded early on and is crucial to displaying
 the basic structure of a given page.
 
 It's preferable to avoid precaching media or other assets that are loaded later
-(unless crucial for your web app's functionality) . Instead, use a [runtime
+(unless crucial for your web app's functionality). Instead, use a [runtime
 caching strategy]() to ensure these assets are  cached-as-you-go.
 
 Always keep in mind that precaching involves using network bandwidth and storage
