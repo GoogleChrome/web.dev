@@ -16,9 +16,9 @@ cases—can be a challenge. For example, errors in your service worker code can
 cause caching problems; users might be shown out-of-date content or broken
 links. 
 
-[Workbox](https://developers.google.com/web/tools/workbox/) is high-level
+[Workbox](https://developers.google.com/web/tools/workbox/) is a high-level
 service worker toolkit built on top of the service worker and Cache Storage
-APIs. It provides a production-read set of library for adding offline support to
+APIs. It provides a production-ready set of libraries for adding offline support to
 web apps. The toolkit is structured into two collections: tools that help manage
 code that runs inside of your service worker, and tools that integrate with your
 build process.
@@ -39,7 +39,7 @@ and _how_ it will respond (known as the
 
 Workbox offers
 [command line](https://developers.google.com/web/tools/workbox/modules/workbox-cli),
-[NodeJS module](https://developers.google.com/web/tools/workbox/modules/workbox-build),
+[Node.js module](https://developers.google.com/web/tools/workbox/modules/workbox-build),
 and
 [webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
 tools that provide alternative ways to accomplish two things:
@@ -58,7 +58,7 @@ Using Workbox when building your service worker is optional—there are a number
 of guides out there that walk through
 [common caching strategies](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/)
 from a "vanilla" service worker perspective. If you do decide to use Workbox,
-here are some of it's benefits.
+here are some of its benefits.
 
 ### Cache management
 
@@ -88,11 +88,11 @@ automatically falls back to alternative implementations of features that are
 missing from certain browsers. 
 
 +  The
-    `[workbox-broadcast-cache-update module](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)`
+    [`workbox-broadcast-cache-update module`](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)
     uses the
     [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
     when available, and falls back to a
-    `[postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)`-based
+    [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)-based
     implementation on browsers that lack support.
 +  The
     [workbox-background-sync module](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync)
@@ -120,7 +120,7 @@ Workbox integration found in many popular starter kits and add-on plugins:
 If you already have a build process for your site in place, dropping in the
 appropriate
 [command line](https://developers.google.com/web/tools/workbox/modules/workbox-cli),
-[NodeJS module](https://developers.google.com/web/tools/workbox/modules/workbox-build),
+[Node.js module](https://developers.google.com/web/tools/workbox/modules/workbox-build),
 or
 [webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin)
 tool may be all you need to start using Workbox.
@@ -139,8 +139,9 @@ $ workbox wizard
 ```
 
 To build your service worker, run `workbox generateSW workbox-config.js`
-as part of a build process. See https://goo.gl/fdTQBf for details.
-You can further customize your service worker by making changes to workbox-config.js. See https://goo.gl/gVo87N for details.
+as part of a build process. See the [`generateSW` documentation](https://goo.gl/fdTQBf) for details.
+You can further customize your service worker by making changes to `workbox-config.js`.
+See the [documentation of the options](https://goo.gl/gVo87N) for details.
 
 
 ### Use Workbox at runtime in an existing service worker
