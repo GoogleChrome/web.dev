@@ -14,10 +14,10 @@ This workbook will show you how to add Imagemin to an existing Gulp project.
 We've already installed `gulp` and `gulp-cli` for you, but you'll need to install `gulp-imagemin`.
 
 ☞ Click the "Logs" button.
-<img src="./assets/logs_button.png" alt="The 'Logs' button in Glitch">
+<img src="./logs_button.png" alt="The 'Logs' button in Glitch">
 
 ☞ Then click the "Console" button.
-<img src="./assets/console_button.png" alt="The 'Console' button in Glitch">
+<img src="./console_button.png" alt="The 'Console' button in Glitch">
 
 ☞ Type these commands:
 
@@ -54,7 +54,7 @@ Your complete `gulpfile.js` file should now look like this:
 ```javascript
 	const imagemin = require('gulp-imagemin');
 	const gulp = require('gulp');
-	 
+
 	gulp.task('default', () => {
 	    gulp.src('images/*')
 	        .pipe(imagemin())
@@ -199,10 +199,10 @@ Lastly, it's a good idea to use Lighthouse to verify the changes that you just m
 
 ☞ Click on the "Show Live" button to view the live version of the your Glitch.
 
-<img src="./assets/show-live.png" width="140" alt="The show live button">
+<img src="./show-live.png" width="140" alt="The show live button">
 
 ☞ Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Efficiently encode images" audit was passed.
 
-<img src="./assets/lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+<img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 
 Success! You have used Imagemin to optimally compress the images on your page.
