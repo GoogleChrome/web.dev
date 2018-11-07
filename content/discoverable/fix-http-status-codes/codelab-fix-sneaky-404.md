@@ -20,11 +20,11 @@ Take a look at the Single Page App in this codelab.
 
 Unfortunately there is a subtle bug in the app. Let's take a look!
 
-- Click on the "Show Live" button.
+- Click on the **Show Live** button.
 
 <web-screenshot type="show-live"></web-screenshot>
 
-- Click on the link that says "Doggos". Notice how the URL changed.
+- Click on the link that says **Doggos**. Notice how the URL changed.
 - Refresh the page.
 
 You get a page with "`Cannot GET /doggos`" on it - a sneaky 404.
@@ -45,11 +45,11 @@ such as the dog pictures.
 In this project, we have an express.js server written in JavaScript.
 Let's fix our server, so it responds with index.html and our single page app will take care of the rest.
 
-- Click on "Edit on Glitch".
+- Click on **Edit on Glitch**.
 
 <web-screenshot type="edit-on-glitch"></web-screenshot>
 
-- Select the "server.js" file
+- Select the **server.js** file
 
 This file contains the server code. It sets up an express.js server and sends the content of index.html.
 The route setup in line 15 only serves the web app when requests go to the URL `/`.
