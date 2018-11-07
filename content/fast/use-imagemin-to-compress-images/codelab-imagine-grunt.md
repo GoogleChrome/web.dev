@@ -15,7 +15,7 @@ install `grunt-contrib-imagemin`.
 
 <web-screenshot type="status"></web-codelab>
 
-- Then click the **Console** button. This will open a new window.
+- Then click the **Console** button.
 
 <web-screenshot type="console"></web-codelab>
 

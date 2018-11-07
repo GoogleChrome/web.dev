@@ -340,7 +340,7 @@ Git, and Glitch also hides these files from the editor tree.
 
 <web-screenshot type="status"></web-screenshot>
 
-+ Click the **Console** button. This will open a new window.
++ Click the **Console** button.
 
 <web-screenshot type="console"></web-screenshot>
 
