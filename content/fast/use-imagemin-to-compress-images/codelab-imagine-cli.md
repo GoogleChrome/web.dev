@@ -17,7 +17,7 @@ The Imagemin <a href="https://github.com/imagemin/imagemin-cli" target="_blank">
 
 <web-screenshot type="status"></web-screenshot>
 
-- Click the **Console** button. This will open a new window.
+- Click the **Console** button.
 
 <web-screenshot type="console"></web-screenshot>
 
