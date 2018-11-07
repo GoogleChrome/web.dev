@@ -9,8 +9,6 @@ This workbook will show you how to add Imagemin to an existing Gulp project.
 
 ## 1. Install the Imagemin Gulp plugin
 
----
-
 `gulp` and `gulp-cli` have already been installed for you, but you'll need to install the `gulp-imagemin` plugin.
 
 - Click the "Edit" button.
@@ -33,8 +31,6 @@ npm install --save-dev gulp-imagemin
 
 ## 2. Setup `gulpfile.js`
 
----
-
 You don't need to create a `gulpfile.js` file because this project already has one.
 
 - First, initialize the `gulp-imagemin` plugin that was just installed by adding this code at the top of `gulpfile.js`:
@@ -53,9 +49,9 @@ gulp.src('images/*')
 
 This code adds a Gulp task that uses Imagemin to compress the images in the `images/` directory. The original images are overwritten and saved in the same `images/` directory.
 
-## ✔︎ Check-in
+### ✔︎ Check-in
 
-`gulpfile.js` file should now look like this:
+Your `gulpfile.js` file should now look like this:
 
 ```javascript
 const imagemin = require('gulp-imagemin');
@@ -72,8 +68,6 @@ This `gulpfile.js` can now be used to compress images.
 
 ## 3. Run Gulp
 
----
-
 - Run Gulp to compress the images:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -89,8 +83,6 @@ gulp-imagemin: Minified 6 images (saved 64 kB - 6.4%)
 A 6% improvement in file size is a good start - however, this can be significantly improved by using different compression settings. Next you'll customize Imagemin's configuration to yield bigger file size savings.
 
 ## 4. Customize Imagemin's configuration
-
----
 
 In this example, Imagemin's configuration will be customized to use the `imagemin-pngquant` plugin to compress PNGs. This plugin allows you to specify a compression quality level.
 
@@ -114,7 +106,7 @@ const pngquant = require('imagemin-pngquant');
 
 This code tells Imagemin to compress PNGs to a quality of `50` (`0` is the worst; `100` is the best) using the Pngquant plugin.
 
-## ✔︎ Check-in
+### ✔︎ Check-in
 
 Your `gulpfile.js` should now look like this:
 
@@ -135,8 +127,6 @@ gulp.task('default', () => {
 But what about JPEGs? This project also has JPEG images, so we should specify how they are compressed as well.
 
 ## 5. Customize Imagemin configuration (continued)
-
----
 
 This example will use the `imagemin-mozjpeg` plugin to compress JPEG images.
 
@@ -160,7 +150,7 @@ const mozjpeg = require('imagemin-mozjpeg');
 ]
 ```
 
-## ✔︎ Check-in
+### ✔︎ Check-in
 
 Your `gulpfile.js` file should now look like this:
 
@@ -181,8 +171,6 @@ gulp.task('default', () => {
 ```
 
 ## 6. Re-run Gulp
-
----
 
 - Re-run Gulp:
 
