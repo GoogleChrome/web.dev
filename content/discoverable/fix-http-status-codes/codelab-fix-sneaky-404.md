@@ -16,7 +16,7 @@ Take a look at the Single Page App in this codelab.
  It shows either cat or dog images and provides links to toggle
  between the two animals. It seems to work fine!
 
-## Hunting the sneaky 404
+## Uncovering the sneaky 404
 
 Unfortunately there is a subtle bug in the app. Let's take a look!
 
