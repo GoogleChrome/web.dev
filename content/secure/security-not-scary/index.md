@@ -22,7 +22,7 @@ development just like "user experience" or "accessibility".
 <figure>
   <img src="./securityimage.png" alt="negative and positive images of security">
   <figcaption>
-    A hacker in hoodie is a negative security image. A team working on a project together is a positive security image.
+    Figure: A hacker in hoodie is a negative security image. A team working on a project together is a positive security image.
   </figcaption>
 </figure>
 
