@@ -29,8 +29,8 @@ app.
 You might think that you already have a pretty good idea as to what your web
 application loads. If you're just using a small scattering of static HTML,
 JavaScript, CSS, and image files, that might be true. But as soon as you start
-mixing in third-party resources hosted on content delivery networks, dynamic API
-requests, and server-generated responses, the picture quickly becomes murkier.
+mixing in third-party resources hosted on content delivery networks, using dynamic API
+requests and server-generated responses, the picture quickly becomes murkier.
 
 A caching strategy that makes sense for a few small CSS files probably won't
 make sense for hundreds of large images, for instance.
@@ -39,24 +39,24 @@ make sense for hundreds of large images, for instance.
 
 Another part of the overall loading picture is _when_ everything gets loaded.
 
-Some network traffic, like the
+Some requests to the network, such as the
 [navigation request](https://developer.mozilla.org/en-US/docs/Web/API/Request/mode#Value)
-for your initial HTML, is made unconditionally as soon as a user visits a given
+for your initial HTML, are made unconditionally as soon as a user visits a given
 URL. That HTML might contain hardcoded references to critical CSS or JavaScript
 files that must also load in order to display your interactive page. These
 requests all sit in your critical loading path. You will need to aggressively
 cache these to be reliably fast. 
 
-Other network traffic, like API requests or lazy-loaded assets, might not be
+Other resources, such as API requests or lazy-loaded assets, might not be
 starting to load until well after all of the initial loading is complete. If
 those requests only happen following a specific sequence of user interactions,
-then a completely different set of network traffic might end up being requested
+then a completely different set of resources might end up being requested
 across multiple visits to the same page. A less aggressive caching strategy is
 often appropriate for content that you've identified as being outside the
 critical loading path.
 
-**Note:** Advanced techniques outside the scope of this guide, like the
-`[<link rel="preload">](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)`,
+**Note:** Advanced techniques outside the scope of this guide, like 
+[`<link rel="preload">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content),
 add a twist to this story by giving a head start to what would otherwise be a
 late-loaded request.
 
@@ -72,13 +72,13 @@ the last portion of the URL's path listed. For example, if
 listed under Name. The last few characters of the URL's path, following the
 period (e.g. "css"), are known as the URL's extension.
 
-The URL extension generally tell you what type of resource is being requested,
-and map directly to the information shown in the Type column. For example,
+The URL extension generally tells you what type of resource is being requested,
+and maps directly to the information shown in the Type column. For example,
 `v2.html` is a document; `main.`css is a stylesheet.
 
 ### The Waterfall column helps with the when
 
-Examine the waterfall column, starting at the top and working your way down. The
+Examine the Waterfall column, starting at the top and working your way down. The
 length of each bar represents the total amount of time that was spent loading
 each resource. How can you tell the difference between a request that's made as
 part of the critical loading path and a request that's fired off dynamically,
