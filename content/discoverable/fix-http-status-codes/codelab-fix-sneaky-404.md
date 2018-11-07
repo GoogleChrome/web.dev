@@ -47,7 +47,7 @@ Let's fix the server, so it responds with index.html and the single page app wil
 
 - Click on **Remix This**.
 
-<web-screenshot type="edit-on-glitch"></web-screenshot>
+<web-screenshot type="remix"></web-screenshot>
 
 - Select the **server.js** file
 
