@@ -2,10 +2,10 @@
 title: Configuring HTTP caching behavior
 author: jeffy
 page_type: glitch
-glitch: equinox-tower 
+glitch: equinox-tower
 ---
 
-This codelab will show you how to change the HTTP caching headers returned by a
+This codelab shows you how to change the HTTP caching headers returned by a
 Node.js-based web server, running the [Express](https://expressjs.com/) serving
 framework. It will also show how to confirm that the caching behavior you expect
 is actually being applied, using the Network panel in Chrome's DevTools.
@@ -21,8 +21,8 @@ These are the key files you will be working with in the sample project:
 +  `server.js` contains the Node.js code that serves the web app's
     content. It uses [Express](https://expressjs.com/) to handle HTTP requests
     and responses. In particular, `express.static()` is used to serve all of
-    the local files in the public directory, so the
-    `[serve-static` documentation](https://expressjs.com/en/resources/middleware/serve-static.html)
+    the local files in the public directory, so the `serve-static`
+    [documentation](https://expressjs.com/en/resources/middleware/serve-static.html)
     will come in handy.
 +  `index.html` is the web app's HTML. Like most HTML files, it does not
     contain any versioning information as part of its URL.
@@ -31,7 +31,7 @@ These are the key files you will be working with in the sample project:
     corresponding to their contents. The index.html is responsible for keeping
     track of which specific versioned URL to load.
 
-**Note:** In the "real world," the process of assigning hashes and updating HTML
+**Note:** In the "real world", the process of assigning hashes and updating HTML
 files to include references to the latest versioned URL would be handled by a
 build tool, like
 [webpack](https://webpack.js.org/guides/caching/#output-filenames). For the
@@ -43,14 +43,14 @@ build process that already took place.
 When responding to requests for URLs that don't contain versioning info, make
 sure you add `Cache-Control: no-cache` to your response messages. Along with
 that, setting one of two additional response headers is recommended: either
-`[Last-Modified](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified)`
-or `[ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)`. The
+[`Last-Modified`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified)
+or [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag). The
 `index.html` falls into this category. You can break this down into two steps.
 
 First, the `Last-Modified` and `ETag` headers are controlled by the
-`[etag](https://expressjs.com/en/resources/middleware/serve-static.html#etag)`
+[`etag`](https://expressjs.com/en/resources/middleware/serve-static.html#etag)
 and
-`[lastModified](https://expressjs.com/en/resources/middleware/serve-static.html#lastmodified)`
+[`lastModified`](https://expressjs.com/en/resources/middleware/serve-static.html#lastmodified)
 configuration options. Both of these options actually default to `true` for all
 HTTP responses, so in this current setup, you don't _have_ to opt-in to get that
 behavior. But you can be explicit in your configuration anyway.
@@ -58,14 +58,13 @@ behavior. But you can be explicit in your configuration anyway.
 Second, you need to be able to add in the `Cache-Control: no-cache` header, but
 only for your HTML documents (`index.html`, in this case). The easiest way to
 conditionally set this header is to write a custom
-`[setHeaders` function](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
+[`setHeaders function`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
 and within that, check to see if the incoming request is for an HTML document.
 
-The static serving configuration started out as 
+The static serving configuration starts out as this:
 
-```  
-app.use(express.static('public'));  
-
+```
+app.use(express.static('public'));
 ```
 
 Now, make the changes described above, and you should end up with something that
@@ -82,7 +81,6 @@ app.use(express.static('public', {
     }
   },
 }));
-
 ```
 
 ## Configure caching headers for the versioned URLs
@@ -94,16 +92,16 @@ versioning information, and whose contents are never meant to change, add
 `style.391484cf.css` fall into this category.
 
 Building off the
-`[setHeaders` function](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders)
+[`setHeadersfunction`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders)
 used in the last step, you can add in additional logic to check whether a given
 request is for a versioned URL, and if so, add the `Cache-Control:
 max-age=31536000` header.
 
 The most robust way of doing this is to use a
 [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-to see whether the asset being requested matching a specific pattern that we
-know the hashes fall into. In the case of this sample project, it's always 8
-characters from the set of digits 0-9 and the lowercase letters a-f (i.e.
+to see whether the asset being requested matches a specific pattern that you
+know the hashes fall into. In the case of this sample project, it's always eight
+characters from the set of digits 0–9 and the lowercase letters a–f (i.e.
 [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) characters). The hash
 is always separated by a `.` character on either side.
 
@@ -112,12 +110,12 @@ A regular expression that
 can be expressed as `new RegExp('\\.[0-9a-f]{8}\\.')`.
 
 **Note:** It helps to be as specific as possible when coming up with these rules,
-to protect against future problems. A more general match, like just checking for
+to protect against future problems. A more general match, such as checking for
 the `.js` or `.css` file extension, could end up being a problem down the road
 if you end up adding in additional, unversioned JavaScript or CSS assets to your
 project.
 
-Putting this together, you can modify your setHeaders function to come up with
+Putting this together, you can modify your `setHeaders` function to come up with
 something like the following:
 
 ```
@@ -145,7 +143,7 @@ working through this codelab.
 
 With the modifications to the static file server in place, you can check to make
 sure that the right headers are being set by visiting your web app in Glitch
-with the Network DevTool open. You'll want to customize the columns that are
+with the DevTools Network panel open. You'll want to customize the columns that are
 displayed to include the information that is most relevant, by right-clicking in
 the column header:
 
@@ -161,8 +159,8 @@ like the following:
 
 The first row is for the HTML document that you navigated to. This is properly
 served with `Cache-Control: no-cache`. The HTTP response status for that request
-is a `[304](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304)`. This
-means that the browser new not to use the cached HTML immediately, but instead
+is a [`304`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304). This
+means that the browser knew not to use the cached HTML immediately, but instead
 made an HTTP request to the web server, using the `Last-Modified` and `ETag`
 information to see if there was any update to the HTML that it already had in
 its cache. The HTTP 304 response indicates that there is not updated HTML.
@@ -173,7 +171,7 @@ HTTP 304 response."
 
 The next two rows are for the versioned JavaScript and CSS assets. You should
 see them served with `Cache-Control: max-age=31536000`, and the HTTP status for
-each is `[200](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)`.
+each is [`200`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200).
 Because of the configuration used, there is no actual request being made to the
 Node.js server, and clicking on the entry will show you additional detail,
 including that the response came "(from disk cache)".
@@ -186,7 +184,7 @@ important thing is to confirm that they're being set.
 ## Summing things up
 
 Having gone through the steps in this codelab, you're now familiar with how to
-configure the HTTP response headers in a Node.js-based web server using Express
+configure the HTTP response headers in a Node.js-based web server using Express,
 for optimal use of the HTTP cache. You also have the steps you need to confirm
 that the expected caching behavior is being used, via the Network panel in
 Chrome's DevTools.
