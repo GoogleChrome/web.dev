@@ -45,7 +45,7 @@ such as the dog pictures.
 This project uses an [express.js](https://expressjs.com/) server written in JavaScript.
 Let's fix the server, so it responds with index.html and the single page app will take care of the rest.
 
-- Click on **Edit on Glitch**.
+- Click on **Remix This**.
 
 <web-screenshot type="edit-on-glitch"></web-screenshot>
 
