@@ -16,7 +16,7 @@ its request size.
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
-+  Click on the `Show Live` button.
++  Click on the **Show Live** button.
 
 <web-screenshot type="show-live"></web-screenshot>
 
@@ -93,7 +93,7 @@ Version 4 already minifies the bundle by default during production mode. It uses
 `UglifyjsWebpackPlugin,` a plugin for [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony). 
 UglifyJS is a popular tool used to minify (or uglify) JavaScript code.
 
-To get an idea of how the minified code looks like, go ahead and click
+To get an idea of what the minified code looks like, go ahead and click
 `main.bundle.js` while still in the DevTools **Network** panel. Now click the
 **Response** tab.
 
@@ -113,7 +113,7 @@ module.exports = {
 Reload the application and take a look at the bundle size again through the
 DevTools **Network** panel
 
-<img class="screenshot" src="./network-no-minify.png" alt="Bundle size of unminified code">
+<img class="screenshot" src="./network-no-minify.png" alt="Bundle size of 767 KB">
 
 That's a pretty big difference! 😅 
 
@@ -218,7 +218,7 @@ var app = express();
 app.use(express.static('public'));
 
 var listener = app.listen(process.env.PORT, function() {
-console.log('Your app is listening on port ' + listener.address().port);
+  console.log('Your app is listening on port ' + listener.address().port);
 });
 ```
 
