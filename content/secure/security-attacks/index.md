@@ -34,7 +34,7 @@ sometimes called **modification of messages**.
 <figure>
   <img src="./modification.png" alt="modification of message">
   <figcaption>
-    A web site being tampered by attacker to guide user to a phishing site.
+    Figure 1: A web site being tampered by attacker to guide user to a phishing site.
   </figcaption>
 </figure>
 
@@ -43,12 +43,12 @@ sometimes called **modification of messages**.
 
 ### Passive attack
 
-With a **passive attack,** the attacker tries to collect or learn information
+With a **passive attack**, the attacker tries to collect or learn information
 from the application but does not affect the application itself.
 <figure class="attempt-right">
   <img src="./passiveattack.png" alt="passive attack">
   <figcaption>
-    Attacher eavesdropping communication between a user and a server.
+    Figure 2: Attacker eavesdropping communication between a user and a server.
   </figcaption>
 </figure>
 
