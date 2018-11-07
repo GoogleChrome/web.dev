@@ -60,7 +60,7 @@ convert -resize 33% flower.jpg flower-small.jpg
 To resize an image to fit within 300px wide by 200px high, run the following command:
 
 <pre class="devsite-terminal devsite-click-to-copy">
-  `convert flower.jpg -resize 300x200 flower-small.jpg`
+convert flower.jpg -resize 300x200 flower-small.jpg
 </pre>
 
 ### How many image versions should you create?
