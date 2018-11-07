@@ -13,10 +13,10 @@ This workbook will show you how to add Imagemin to an existing Webpack project.
 We've already installed `webpack` and `webpack-cli` for you, but you'll need to install `imagemin-webpack-plugin`.
 
 ☞ Click the "Logs" button.
-<img src="./assets/logs_button.png" alt="The 'Logs' button in Glitch">
+<img src="./logs_button.png" alt="The 'Logs' button in Glitch">
 
 ☞ Then click the "Console" button.
-<img src="./assets/console_button.png" alt="The 'Console' button in Glitch">
+<img src="./console_button.png" alt="The 'Console' button in Glitch">
 
 ☞ Type these commands:
 
@@ -216,10 +216,10 @@ Lighthouse's "Efficiently encode images" performance audit can let you know if t
 
 ☞ Click on the "Show Live" button to view the live version of the your Glitch.
 
-<img src="./assets/show-live.png" width="140" alt="The show live button">
+<img src="./show-live.png" width="140" alt="The show live button">
 
 Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Efficiently encode images" audit was passed.
 
-<img src="./assets/lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+<img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 
 Success! You have used Imagemin to optimally compress the images on your page.
