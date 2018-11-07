@@ -44,10 +44,11 @@ to implement or maintain for your website:
 <tbody>
 <tr>
 <td>Add link elements to the head of your page</td>
-<td><p><pre>
-<link rel="alternate" hreflang="en" href="https://donut-be-hangry.com/recipes/maple-bar-recipe" />
-<link rel="alternate" hreflang="es" href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
-<link rel="alternate" hreflang="de" href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
+<td><p>
+<pre>
+&lt;link rel="alternate" hreflang="en" href="https://donut-be-hangry.com/recipes/maple-bar-recipe" />
+&lt;link rel="alternate" hreflang="es" href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
+&lt;link rel="alternate" hreflang="de" href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
 </pre></p>
 
 </td>
