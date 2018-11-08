@@ -36,20 +36,20 @@ you'll actually implement and maintain.
 </thead>
 <tbody>
 <tr>
-<td><p><pre>
+<td>
+<code>
 @font-face {
-	font-family: Helvetica;
+  font-family: Helvetica;
 }
-</pre></p>
-
+</code>
 </td>
-<td><p><pre>
+<td>
+<code>
 @font-face {
-	font-family: Helvetica;
-	font-display: swap;
+  font-family: Helvetica;
+  font-display: swap;
 }
-</pre></p>
-
+</code>
 </td>
 </tr>
 </tbody>
@@ -98,7 +98,7 @@ system font until font is ready. Swaps out font. </td>
 ## Option #2: Wait to use custom fonts until they are loaded
 
 With a bit more work, the same behavior can be implemented to work across all
-browsers. Check out the step-by-step guide or the demo for a more detailed
+browsers. Check out the step-by-step [guide](./codelab-avoid-invisible-text.md) or the [demo](https://glitch.com/~font-observer-demo) for a more detailed
 explanation of the code changes.
 
 There are three parts to this approach:
@@ -119,7 +119,7 @@ Check out [this demo that shows how to create and server responsive images](http
 
 ## Verify
 
-Run Lighthouse to verify the site is using "font-display: swap" to display
+Run Lighthouse to verify the site is using `font-display: swap` to display
 text:
 
 1. Navigate to the **Audits** panel in DevTools.
