@@ -18,10 +18,10 @@ runtime caching that goes beyond what the HTTP cache alone can offer.
 
 ## Getting strategic
 
-As opposed to [precaching](../precache-with-workbox/) (which always tries to serve a set of predefined
-files from a cache), runtime caching can combine network and cache access
-in multiple ways. Each combination is generally referred to as a caching
-strategy. Key caching strategies include:
+As opposed to [precaching](/reliable/precache-with-workbox/) (which always tries to serve a set of
+predefined files from a cache), runtime caching can combine network and cache access in multiple
+ways. Each combination is generally referred to as a caching strategy. Key caching strategies
+include:
 
 +  Network-first
 +  Cache-first
