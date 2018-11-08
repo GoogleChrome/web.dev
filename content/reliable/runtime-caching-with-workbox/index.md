@@ -18,7 +18,7 @@ runtime caching that goes beyond what the HTTP cache alone can offer.
 
 ## Getting strategic
 
-As opposed to [precaching](../precache-with-workbox/index.md) (which always tries to serve a set of predefined
+As opposed to [precaching](../precache-with-workbox/) (which always tries to serve a set of predefined
 files from a cache), runtime caching can combine network and cache access
 in multiple ways. Each combination is generally referred to as a caching
 strategy. Key caching strategies include:
@@ -90,7 +90,7 @@ to a previously cached entry occur.
 Runtime caching can be viewed as a complement to precaching. If all of your
 assets are already being precached, then you're done—there's nothing that needs
 to be cached at runtime. Chances are, for any relatively complex web app, you're
-not going to be precaching _everything_ though. 
+not going to be precaching _everything_ though.
 
 Larger media files, assets that are served from a third-party host like a CDN,
 or API responses are just a few examples of the types of assets that can't be

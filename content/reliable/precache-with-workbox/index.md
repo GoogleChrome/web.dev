@@ -123,19 +123,19 @@ experience to web apps.
 
 ## Which of your assets should be precached?
 
-Refer back to the [Identify what's being loaded]() guide to get a good picture
-of which URLs make the most sense to precache. The general rule is to precache 
-any HTML, JavaScript, or CSS that's loaded early on and is crucial to displaying
-the basic structure of a given page.
+Refer back to the [Identify what's being loaded](../identify-resources-via-network-panel/) guide to
+get a good picture of which URLs make the most sense to precache. The general rule is to precache
+any HTML, JavaScript, or CSS that's loaded early on and is crucial to displaying the basic structure
+of a given page.
 
-It's preferable to avoid precaching media or other assets that are loaded later
-(unless crucial for your web app's functionality). Instead, use a [runtime
-caching strategy]() to ensure these assets are  cached-as-you-go.
+It's preferable to avoid precaching media or other assets that are loaded later (unless crucial for
+your web app's functionality). Instead, use a [runtime caching
+strategy](../runtime-caching-with-workbox/) to ensure these assets are cached-as-you-go.
 
 Always keep in mind that precaching involves using network bandwidth and storage
 on a user's device (just like installing a native app from an app store does).
 It's up to you as the developer to precache judiciously, and avoid a bloated
-precache manifest. 
+precache manifest.
 
 Workbox's build tools help by telling you the number of items in the precache
 manifest as well as the total size of the precache payload.
