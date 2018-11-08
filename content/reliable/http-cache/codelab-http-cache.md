@@ -14,6 +14,7 @@ is actually being applied, using the Network panel in Chrome's DevTools.
 While the specific instructions are tailored towards Express, the general
 principles about choosing the correct caching headers apply to any web server
 environment.
+</div>
 
 ## Get familiar with the sample project on Glitch
 
@@ -112,11 +113,13 @@ A regular expression that
 [matches those general rules](https://jex.im/regulex/#!flags=&re=%5C.%5B0-9a-f%5D%7B8%7D%5C.)
 can be expressed as `new RegExp('\\.[0-9a-f]{8}\\.')`.
 
-**Note:** It helps to be as specific as possible when coming up with these rules,
+<div class="aside note">
+It helps to be as specific as possible when coming up with these rules,
 to protect against future problems. A more general match, such as checking for
-the `.js` or `.css` file extension, could end up being a problem down the road
+the <code>.js</code> or <code>.css</code> file extension, could end up being a problem down the road
 if you end up adding in additional, unversioned JavaScript or CSS assets to your
 project.
+</div>
 
 Putting this together, you can modify your `setHeaders` function to come up with
 something like the following:
@@ -141,8 +144,10 @@ app.use(express.static('public', {
 
 ## Confirm the new behavior using DevTools
 
-**Note:** You can get familiar with the Network panel in Chrome's DevTools by
+<div class="aside note">
+You can get familiar with the Network panel in Chrome's DevTools by
 working through this codelab.
+</div>
 
 With the modifications to the static file server in place, you can check to make
 sure that the right headers are being set by visiting your web app in Glitch
@@ -168,9 +173,11 @@ made an HTTP request to the web server, using the `Last-Modified` and `ETag`
 information to see if there was any update to the HTML that it already had in
 its cache. The HTTP 304 response indicates that there is not updated HTML.
 
-**Note:** `Cache-Control: no-cache` doesn't mean "never used the cached copy". It
+<div class="aside note">
+<code>Cache-Control: no-cache</code> doesn't mean "never used the cached copy". It
 means "always check with the server first, and use the cached copy if there's a
 HTTP 304 response."
+</div>
 
 The next two rows are for the versioned JavaScript and CSS assets. You should
 see them served with `Cache-Control: max-age=31536000`, and the HTTP status for
