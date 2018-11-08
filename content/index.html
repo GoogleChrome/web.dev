@@ -23,8 +23,16 @@
           learn and apply the web’s modern capabilities to your own sites and apps.
         </p>
         <div class="masthead-left__button-row">
-          <a class="button button-primary" href="/measure">Test my site</a>
-          <a class="button button-secondary" href="/learn">Start learning</a>
+          <a class="button button-primary gc-analytics-event"
+              data-category="web.dev"
+              data-label="home, test site"
+              data-action="click"
+              href="/measure">Test my site</a>
+          <a class="button button-secondary gc-analytics-event"
+              data-category="web.dev"
+              data-label="home, start learning"
+              data-action="click"
+              href="/learn">Start learning</a>
         </div>
       </div>
     </div>
@@ -61,7 +69,10 @@
               Learn how to guarantee your site loads quickly.
             </p>
             <div class="card__actions">
-              <a class="button button-flat button-justify-left"
+              <a class="button button-flat button-justify-left gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="home, fast path"
+                  data-action="click"
                   href="/fast">Explore</a>
             </div>
           </div>
@@ -77,7 +88,10 @@
               Learn how to make your content discoverable.
             </p>
             <div class="card__actions">
-              <a class="button button-flat button-justify-left"
+              <a class="button button-flat button-justify-left gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="home, discoverable path"
+                  data-action="click"
                   href="/discoverable">Explore</a>
             </div>
           </div>
@@ -93,14 +107,21 @@
               Learn how to deliver consistent performance regardless of the network.
             </p>
             <div class="card__actions">
-              <a class="button button-flat button-justify-left"
+              <a class="button button-flat button-justify-left gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="home, reliable path"
+                  data-action="click"
                   href="/secure">Explore</a>
             </div>
           </div>
         </div>
       </div>
       <div class="learning__all-paths col-sm-12 col-xl-10">
-        <a class="button button-flat" href="/learn">All learning paths</a>
+        <a class="button button-flat gc-analytics-event"
+            data-category="web.dev"
+            data-label="home, all paths"
+            data-action="click"
+            href="/learn">All learning paths</a>
       </div>
     </div>
   </div>
@@ -113,9 +134,11 @@
       <h3 class="join-us__header-title">
         Sign in to manage real-time audits and track your learning progress.
       </h3>
-      <a class="button button-primary" href="/measure">
-        Create Your Profile
-      </a>
+      <a class="button button-primary gc-analytics-event"
+        data-category="web.dev"
+        data-label="home, create profile"
+        data-action="click"
+        href="/measure">Create Your Profile</a>
     </div>
   </div>
 

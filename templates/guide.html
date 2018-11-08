@@ -6,9 +6,21 @@
       <div class="breadcrumbs-and-progress">
         <div class="breadcrumbs">
           <ul>
-            <li><a href="{{path.href}}">{{path.title}}</a></li>
+            <li>
+              <a href="{{path.href}}"
+                  class="gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="guide, path breadcrumb"
+                  data-action="click">{{path.title}}</a>
+            </li>
             {{#if topic}}
-            <li><a href="{{path.href}}#topic-{{topic.id}}">{{topic.title}}</a></li>
+            <li>
+              <a href="{{path.href}}#topic-{{topic.id}}"
+                  class="gc-analytics-event"
+                  data-category="web.dev"
+                  data-label="guide, topic breadcrumb"
+                  data-action="click">{{topic.title}}</a>
+            </li>
             {{/if}}
           </ul>
         </div>
@@ -32,9 +44,11 @@
   {{#each codelabs}}
   <div class="codelab-cta">
     <span class="codelab-cta__title">{{title}}</span>
-    <a href="{{href}}" class="button button-flat">
-      Start
-    </a>
+    <a href="{{href}}"
+        class="button button-flat gc-analytics-event"
+        data-category="web.dev"
+        data-label="guide, codelab cta"
+        data-action="click">Start</a>
   </div>
   {{/each}}
   {{/if}}
@@ -49,7 +63,11 @@
       <div class="sidebar__content" slot="panel">
         {{#each codelabs}}
           <div class="codelab-cta codelab-cta--sidebar">
-            <a class="codelab-cta__title codelab-cta--sidebar__title" href="{{href}}">
+            <a class="codelab-cta__title codelab-cta--sidebar__title gc-analytics-event"
+                data-category="web.dev"
+                data-label="guide, codelab sidebar cta"
+                data-action="click"
+                href="{{href}}">
               {{title}}
             </a>
           </div>
@@ -71,12 +89,20 @@
     <div class="cta-next-guide__heading">
       Next Guide
     </div>
-    <a class="cta-next-guide__link" href="{{next.href}}">
+    <a class="cta-next-guide__link gc-analytics-event"
+        data-category="web.dev"
+        data-label="guide, next guide"
+        data-action="click"
+        href="{{next.href}}">
       {{next.title}}
     </a>
   </div>
   {{/if}}
-  <a href="{{path.href}}" class="go-back cta-next-guide__go-back">
+  <a class="go-back cta-next-guide__go-back gc-analytics-event"
+      data-category="web.dev"
+      data-label="guide, go back"
+      data-action="click"
+      href="{{path.href}}">
     Return to all guides
   </a>
 </div>
