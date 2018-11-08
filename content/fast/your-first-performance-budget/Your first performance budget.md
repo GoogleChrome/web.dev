@@ -1,4 +1,12 @@
-# Your first performance budget
+---
+page_type: guide
+title: Incorporate performance budgets into your build process
+author: mihajlija
+web_lighthouse: N/A
+wf_blink_components: N/A
+---
+
+# Incorporate performance budgets into your build process
 
 When you set a personal, business or family budget, you are setting a limit to your spending and making sure you stay within it. [Performance budgets](./fast/performance-budgets-101) work in the same way, but for metrics that affect website performance. 
 

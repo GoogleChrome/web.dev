@@ -1,3 +1,11 @@
+---
+page_type: guide
+title: Incorporate performance budgets into your build process
+author: mihajlija
+web_lighthouse: N/A
+wf_blink_components: N/A
+---
+
 # Incorporate performance budgets into your build process
 
 Once you’ve defined a performance budget, it’s time to set up the build process to keep track of it. There are a number of tools that let you define thresholds for chosen performance metrics and will warn you if you go over budget. Find out how to choose one that best fits your needs and current setup. 🕵️‍♀️
