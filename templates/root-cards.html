@@ -1,10 +1,17 @@
 {{#each paths}}
-<div class="card">
+<div class="card card--{{id}}">
+  {{#if config.disabled}}
+  <div class="card__header card__header--colored">
+    <span class="card__progress">Coming Soon</span>
+  </div>
+  {{/if}}
   <div class="card__header card__header--colored card__header--{{id}}">
   </div>
   <div class="card__content">
     <p class="card__title">{{config.title}}</p>
     <p class="card__desc">{{config.blurb}}</p>
+    {{#if config.disabled}}
+    {{else}}
     <div class="card__actions">
       <a href="{{href}}"
           data-category="web.dev"
@@ -12,6 +19,7 @@
           data-action="click"
           class="button button-flat button-justify-left">Explore</a>
     </div>
+    {{/if}}
   </div>
 </div>
 {{/each}}
