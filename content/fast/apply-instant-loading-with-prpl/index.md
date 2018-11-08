@@ -8,10 +8,6 @@ wf_blink_components: N/A
 
 # Apply instant loading with the PRPL pattern
 
-![image](./prpl-pug.gif)
-
-GIF Source: [Frank Macchia](https://frankmacchia.blogspot.com/)
-
 PRPL is an acronym that describes a pattern used to make web pages load and
 become interactive, faster:
 
@@ -29,45 +25,43 @@ Run Lighthouse to identify opportunities for improvement aligned with the PRPL
 techniques:
 
 1. Navigate to the **Audits** panel in DevTools.
-1. Select the **Performance** and **Progressive Web App **checkboxes.
-1. Click **Run Audits** to generate a report.
+2. Select the **Performance** and **Progressive Web App** checkboxes.
+3. Click **Run Audits** to generate a report.
 
-For more information, see [Discover performance opportunities with Lighthouse](../discover-performance-opportunities-with-lighthouse).
+For more information, see [Discover performance opportunities with Lighthouse](/fast/discover-performance-opportunities-with-lighthouse).
 
 ## Preload critical resources
 
 Lighthouse shows the following failed audit if a certain resource is parsed and
 fetched late:
 
-![image](./preload-requests.png)
-
-Lighthouse: Preload key requests audit  
+<img class="screenshot" src="./preload-requests.png" alt="Lighthouse: Preload key requests audit">
+ 
 [**Preload**](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
 is a declarative fetch request that tells the browser to request a resource as
 soon as possible. Preload critical resources by adding a`<link>` tag with
 `rel="preload"` to the head of your HTML document:
 
-`<link rel="preload" as="style" href="css/style.css">`
+```
+<link rel="preload" as="style" href="css/style.css">
+```
 
 The browser sets a more appropriate priority level for the resource in order to
 try to download it sooner while not delaying the `window.onload` event. 
 
-For more information about preloading critical resources, as well as using other
-techniques such as prefetching and server push, refer to the [Preload critical
-assets to improve loading speed](https://example.com) guide.
+For more information about preloading critical resources, refer to the 
+[Preload critical assets](/fast/preload-critical-assets) guide.
 
-## Render initial route as soon as possible
+## Render the initial route as soon as possible
 
-Lighthouse provides a warning if there are resources that delay **First Paint**,
+Lighthouse provides a warning if there are resources that delay [**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint),
 the moment when your site renders pixels to the screen:
 
-![image](./eliminate-render-blocking.png)
-
-Lighthouse: Eliminate render-blocking resources audit
+<img class="screenshot" src="./eliminate-render-blocking.png" alt="Lighthouse: Eliminate render-blocking resources audit">
 
 To improve First Paint, Lighthouse recommends inlining critical JavaScript and
 deferring the rest using
-`[async](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)`,
+[`async`](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript),
 as well as inlining critical CSS used above-the-fold. This improves performance
 by eliminating round-trips to the server to fetch render-blocking assets.
 However, inline code is harder to maintain from a development perspective and
@@ -76,7 +70,7 @@ cannot be cached separately by the browser.
 Another approach to improve First Paint is to **server-side render** the initial
 HTML of your page. This displays content immediately to the user while scripts
 are still being fetched, parsed, and executed. However, this can increase the
-payload of the HTML file significantly, which can harm **Time to Interactive**,
+payload of the HTML file significantly, which can harm [**Time to Interactive**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#time_to_interactive),
 or the time it takes for your application to become interactive and can respond
 to user input.
 
@@ -93,69 +87,60 @@ learn more about both of these concepts with the following resources.
 Lighthouse shows the following failed audits if your web page does not work when
 offline.
 
-![image](./offline-audits.png)
+<img class="screenshot" src="./offline-audits.png" alt="Lighthouse: Service worker and offline audit">
 
-Lighthouse: Service worker and offline audit
-
-By acting as a proxy, service workers can fetch assets directly from the cache
+By acting as a proxy, **service workers** can fetch assets directly from the cache
 rather than the server on repeat visits. This not only allows users to use your
 application when they are offline, but also results in faster page load times on
 repeat visits.
 
-![image](./service-workers.png)
-
-Requests/responses with service worker
+<img class="screenshot" src="./service-workers.png" alt="Requests/responses with service worker">
 
 Use a third-party library to simplify the process of generating a service worker
 unless you have more complex caching requirements than what a library can
 provide. For example,
-[Workbox](https://developers.google.com/web/tools/workbox/) provides a
+[Workbox](/reliable/workbox) provides a
 collection of tools that allow you to create and maintain a service worker to
 cache assets. For more information on service workers and offline reliability,
-refer to this
-[introduction article](https://developers.google.com/web/fundamentals/primers/service-workers/).
+refer to the [service worker guide](/reliable/service-workers-cache-storage) in the reliability learning path.
 
 ## Lazy load
 
 Lighthouse displays a failed audit if you send too much data over the network.
 
-![image](./enormous-payloads.png)
-
-Lighthouse: Has enormous network payloads audit
+<img class="screenshot" src="./enormous-payloads.png" alt="Lighthouse: Has enormous network payloads audit">
 
 This includes all asset types, but large JavaScript payloads are especially
 costly due to the time it takes the browser to parse and compile them.
 Lighthouse also provides a warning for this when appropriate.
 
-![image](./js-bootup-high.png)
-
-Lighthouse: JavaScript boot-up time audit
+<img class="screenshot" src="./js-bootup-high.png" alt="Lighthouse: JavaScript boot-up time audit">
 
 To send a smaller JavaScript payload that contains only the code needed when a
-user initially loads your application, split the entire bundle and **[lazy
-load**](https://example.com) chunks on demand.
+user initially loads your application, split the entire bundle and [lazy load](/fast/reduce-javascript-payloads-with-code-splitting) chunks on demand.
 
 Once you've managed to split your bundle, preload the chunks that are more
-important (see Preload critical assets to improve speed). Preloading what gets
-split ensures more important resources are fetched and downloaded sooner by the
+important (see the [Preload critical assets](/fast/preload-critical-assets) guide). Preloading 
+ensures more important resources are fetched and downloaded sooner by the
 browser.
 
 Aside from splitting and loading different JavaScript chunks on demand,
-Lighthouse also provides an audit for lazy-loading non-critical images.![image](./defer-offscreen-images.png)
+Lighthouse also provides an audit for lazy-loading non-critical images.
+
+<img class="screenshot" src="./defer-offscreen-images.png" alt="Lighthouse: Defer offscreen images audit">
 
 If you load many images on your web page, defer all that are below the fold, or
-outside the device viewport, when a page is loaded (see [Lazy-load offscreen
-images](https://example.com)).
+outside the device viewport, when a page is loaded (see [Use lazysizes to lazyload images](/fast/use-lazysizes-to-lazyload-images)).
 
 ## Next Steps
 
-Now that you understand some of the basic concepts behind the PRPL pattern, go
-ahead and read any of the previously linked guides that explain the concepts
-further! It's important to remember that not all of the techniques need to be
+Now that you understand some of the basic concepts behind the PRPL pattern, 
+continue to the next guide in this section to learn more. 
+It's important to remember that not all of the techniques need to be
 applied together. Any efforts made with any of the following will provide
 noticeable performance improvements.
 
-+  **Push** (or **preload) **critical resources.
++  **Push** (or **preload**) critical resources.
 +  **Render** the initial route as soon as possible.
-+  **Pre-cache **remaining assets.
-+  **Lazy load **other routes and non-critical assets.
++  **Pre-cache** remaining assets.
++  **Lazy load** other routes and non-critical assets.
