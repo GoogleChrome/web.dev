@@ -7,21 +7,22 @@ glitch: imagemin-grunt
 
 This workbook will show you how to add Imagemin to an existing Gulp project.
 
-## 1. Install the Imagemin Gulp plugin
+## Install the Imagemin Gulp plugin
 
 `gulp` and `gulp-cli` have already been installed for you, but you'll need to install the `gulp-imagemin` plugin.
 
-- Click the "Edit" button.
+- Click the **Remix This** button.
+/edit_button.png
 
-![The 'Edit' button in Glitch](./edit_button.png)
+<web-screenshot type="remix"></web-screenshot>
 
-- Click the "Status" button.
+- Click the **Status** button.
 
-![The 'Status' button in Glitch](./status_button.png)
+<web-screenshot type="status"></web-screenshot>
 
 - Then click the "Console" button.
 
-![The 'Console' button in Glitch](./console_button.png)
+![The **Console** button in Glitch](./console_button.png)
 
 - Type the following command:
 
@@ -29,7 +30,7 @@ This workbook will show you how to add Imagemin to an existing Gulp project.
 npm install --save-dev gulp-imagemin
 </pre>
 
-## 2. Setup `gulpfile.js`
+## Setup `gulpfile.js`
 
 You don't need to create a `gulpfile.js` file because this project already has one.
 
@@ -66,7 +67,7 @@ gulp.task('default', () => {
 
 This `gulpfile.js` can now be used to compress images.
 
-## 3. Run Gulp
+## Run Gulp
 
 - Run Gulp to compress the images:
 
@@ -82,7 +83,7 @@ gulp-imagemin: Minified 6 images (saved 64 kB - 6.4%)
 
 A 6% improvement in file size is a good start - however, this can be significantly improved by using different compression settings. Next you'll customize Imagemin's configuration to yield bigger file size savings.
 
-## 4. Customize Imagemin's configuration
+## Customize Imagemin's configuration
 
 In this example, Imagemin's configuration will be customized to use the `imagemin-pngquant` plugin to compress PNGs. This plugin allows you to specify a compression quality level.
 
@@ -126,7 +127,7 @@ gulp.task('default', () => {
 
 But what about JPEGs? This project also has JPEG images, so we should specify how they are compressed as well.
 
-## 5. Customize Imagemin configuration (continued)
+## Customize Imagemin configuration (continued)
 
 This example will use the `imagemin-mozjpeg` plugin to compress JPEG images.
 
@@ -170,7 +171,7 @@ gulp.task('default', () => {
 });
 ```
 
-## 6. Re-run Gulp
+## Re-run Gulp
 
 - Re-run Gulp:
 
@@ -186,9 +187,13 @@ gulp-imagemin: Minified 6 images (saved 651 kB - 69.2%)
 
 Hooray! These results are much better.
 
-## 7. Verify results using Lighthouse
+## Verify results using Lighthouse
 
 Lastly, it's a good idea to use Lighthouse to verify the changes that you just made. Lighthouse's "Efficiently encode images" performance audit will let you know if the JPEG images on your page are optimally compressed.
+
+- Click the **Show Live** button
+
+<web-screenshot type="show-live"></web-screenshot>
 
 - Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Efficiently encode images" audit was passed.
 
