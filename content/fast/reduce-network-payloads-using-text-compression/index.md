@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: Reduce network payloads using text compression
+title: Minify and compress network payloads
 author: houssein
 web_lighthouse:
 - uses-text-compression
@@ -9,7 +9,7 @@ web_lighthouse:
 wf_blink_components: N/A
 ---
 
-# Reduce network payloads using text compression
+# Minify and compress network payloads
 
 There are two useful techniques that can be used to improve the performance of
 your web page:

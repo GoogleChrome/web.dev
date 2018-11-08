@@ -16,6 +16,7 @@ In general we need folks to read through all of the docs in a learning path, and
 
 Tips:
 
+- If you want your image to be 100% width, just make sure it's >735px. Then Devsite will handle compressing it, and creating variations for `srcset`.
 - Use sentence case throughout, i.e. "Measure web performance", instead of "Measure Web Performance".
 - Key commands should look like 👉 "Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`."
 - Use `<pre class="prettyprint">` and escape HTML to make fancy code blocks:

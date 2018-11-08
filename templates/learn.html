@@ -17,7 +17,11 @@
     <p class="card__title">{{config.title}}</p>
     <p class="card__desc">{{config.blurb}}</p>
     <div class="card__actions">
-      <a href="{{href}}" class="button button-flat button-justify-left">Explore</a>
+      <a href="{{href}}"
+          data-category="web.dev"
+          data-label="learn, {{href}} explore"
+          data-action="click"
+          class="button button-flat button-justify-left">Explore</a>
     </div>
   </div>
 </div>

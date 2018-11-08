@@ -32,12 +32,12 @@ topics:
     - serve-images-webp    
 - title: Optimize your JavaScript
   guides:
+    - apply-instant-loading-with-prpl
+    - preload-critical-assets
     - reduce-javascript-payloads-with-code-splitting
     - reduce-network-payloads-using-text-compression
     - remove-unused-code
     - serve-modern-code-to-modern-browsers
-    - apply-instant-loading-with-prpl
-    - preload-critical-assets
 - title: Optimize Web Fonts
   guides:
     - avoid-invisible-text
