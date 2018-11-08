@@ -88,7 +88,7 @@ script:
 </pre>
 
 
-We’ve already prepared the YAML file that tells Travis to install all the dependencies and build your app. Now it’s your turn to** push the example app to your own Github repository**.
+We’ve already prepared the YAML file that tells Travis to install all the dependencies and build your app. Now it’s your turn to **push the example app to your own Github repository**.
 
 Go to Travis dashboard and if everything is cool you’ll see your build go from yellow to green in a couple of minutes. 🎉
 
