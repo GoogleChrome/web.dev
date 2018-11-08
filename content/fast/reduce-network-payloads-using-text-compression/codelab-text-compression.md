@@ -1,5 +1,5 @@
 ---
-title: Reduce network payloads using text compression
+title: Minify and compress network payloads
 author: houssein
 page_type: glitch
 glitch: fav-kitties-compress-starter
