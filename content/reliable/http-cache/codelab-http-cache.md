@@ -10,7 +10,8 @@ Node.js-based web server, running the [Express](https://expressjs.com/) serving
 framework. It will also show how to confirm that the caching behavior you expect
 is actually being applied, using the Network panel in Chrome's DevTools.
 
-**Note:** While the specific instructions are tailored towards Express, the general
+<div class="aside note">
+While the specific instructions are tailored towards Express, the general
 principles about choosing the correct caching headers apply to any web server
 environment.
 
@@ -31,12 +32,14 @@ These are the key files you will be working with in the sample project:
     corresponding to their contents. The index.html is responsible for keeping
     track of which specific versioned URL to load.
 
-**Note:** In the "real world", the process of assigning hashes and updating HTML
+<div class="aside note">
+In the "real world", the process of assigning hashes and updating HTML
 files to include references to the latest versioned URL would be handled by a
-build tool, like
-[webpack](https://webpack.js.org/guides/caching/#output-filenames). For the
-purposes of this codelab, assume that the hashes were generated as part of a
+build tool, like 
+<a href="https://webpack.js.org/guides/caching/#output-filenames">webpack</a>. 
+For the purposes of this codelab, assume that the hashes were generated as part of a
 build process that already took place.
+</div>
 
 ## Configure caching headers for our HTML
 
@@ -58,7 +61,7 @@ behavior. But you can be explicit in your configuration anyway.
 Second, you need to be able to add in the `Cache-Control: no-cache` header, but
 only for your HTML documents (`index.html`, in this case). The easiest way to
 conditionally set this header is to write a custom
-[`setHeaders` function](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
+[`setHeaders function`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
 and within that, check to see if the incoming request is for an HTML document.
 
 The static serving configuration starts out as this:
@@ -92,7 +95,7 @@ versioning information, and whose contents are never meant to change, add
 `style.391484cf.css` fall into this category.
 
 Building off the
-[`setHeaders` function](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders)
+[`setHeaders function`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders)
 used in the last step, you can add in additional logic to check whether a given
 request is for a versioned URL, and if so, add the `Cache-Control:
 max-age=31536000` header.
