@@ -137,7 +137,7 @@ checkout out the codelabs for Imaginemin with
 
 You can also use Imagemin by itself as a Node script.
 This code uses the "imagemin-mozjpeg" plugin to compress JPEG files to a quality
-of 50 (‘0' being the word; ‘100' being the best):
+of 50 (‘0' being the worst; ‘100' being the best):
 
 ```
 const imagemin = require('imagemin');
