@@ -25,7 +25,7 @@ After build step, Webpack outputs a color-coded list of assets and their sizes. 
   </figcaption>
 </figure>
 
-The default limit for both assets and entry-points is 250 KB (or 244[ KiB](https://en.wikipedia.org/wiki/Kibibyte)).
+The default limit for both assets and entry-points is 250 KB (or 244 [KiB](https://en.wikipedia.org/wiki/Kibibyte)).
 
 <figure>
   <img src="./webpack-warning.jpg" alt="Webpack warning you about bulky JS bundle">
@@ -93,7 +93,7 @@ Bundlesize will output color-coded test results in one line.
 
 ### Bundlesize for CI 
 
-You’ll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request will not be merged.** It currently works with[ Travis CI](https://travis-ci.org/),[ CircleCI](https://circleci.com/),[ Wercker](http://www.wercker.com/), and[ Drone](http://readme.drone.io/).
+You’ll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request will not be merged.** It currently works with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
 
 <figure>
   <img src="./bundlesize-check.jpg" alt="bundlesize check status on Github">
