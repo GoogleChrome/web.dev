@@ -13,9 +13,10 @@ wf_blink_components: N/A
 
 When multiple pages have the same or significantly similar content, search
 engines consider them duplicate versions of the same page. For example, desktop
-and mobile versions of a product page are often considered duplicates.   
-Search engines select one of the pages as the primary, canonical, version and
-crawl that one more, while crawling the other ones less frequently. Crawling is
+and mobile versions of a product page are often considered duplicates.  
+
+Search engines select one of the pages as the primary, or 'canonical,' version and
+crawl that one more frequently, while crawling the other ones less frequently. Crawling is
 how search engines update their index of content on the web. You can give search
 engines information about your preferred canonical URL.  
 
@@ -82,7 +83,7 @@ Link: https://copycat.com/; rel=canonical
 </tbody>
 </table>
 
-Here's a full example of what the <head> should include. 
+Here's a full example of what the < head > should include. 
 
 ```
 <!doctype html>
