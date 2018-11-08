@@ -21,7 +21,7 @@ engines can bring any search results, they need to have as much information from
 the web as possible. To do this, search engines use a crawler - a program that
 travels from site to site and acts like a browser. 
 
-If a book - or document - is missing or damaged, the crawler can't read it. Crawlers try to
+If a book or document is missing or damaged, the crawler can't read it. Crawlers try to
 fetch each URL to determine the state of the document. If a document returns an
 error status code, crawlers cannot use any of its content, and might retry the
 URL at a later time. This ensures only publicly accessible documents get into
