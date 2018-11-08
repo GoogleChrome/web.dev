@@ -58,7 +58,7 @@ behavior. But you can be explicit in your configuration anyway.
 Second, you need to be able to add in the `Cache-Control: no-cache` header, but
 only for your HTML documents (`index.html`, in this case). The easiest way to
 conditionally set this header is to write a custom
-[`setHeaders function`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
+[`setHeaders` function](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
 and within that, check to see if the incoming request is for an HTML document.
 
 The static serving configuration starts out as this:
