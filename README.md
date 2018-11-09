@@ -16,12 +16,16 @@ The site has two main content types: **guides** and **codelabs**.
 
 
 A guide is any written post or tutorial. For example:
+
 ![image](https://user-images.githubusercontent.com/1066253/48244806-5aa58380-e39c-11e8-9e84-9ced3d1e97c5.png)
+
 ---
 
 
 A codelab is a step-by-step coding exercise, paired with an embedded Glitch editor. For example:
+
 ![image](https://user-images.githubusercontent.com/1066253/48244753-16b27e80-e39c-11e8-92b9-016e17867ba4.png)
+
 ---
 
 ### Guides
@@ -85,7 +89,7 @@ https://web.devsite.corp.google.com
 
 ## Build it yourself!
 
-Note—this requires access to google3.
+Note—**this requires access to google3**.
 
 To get started, clone this repo and run `yarn` (or `npm`).
 
