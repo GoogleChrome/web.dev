@@ -33,7 +33,7 @@ Make sure `Disable Cache` is checked and reload the app.
 
 ![image](./main-bundle.png)
 
-Almost 1MB worth of JavaScript is being shipped to load this simple application.
+Almost 1 MB worth of JavaScript is being shipped to load this simple application.
 Take a look at the project warnings in DevTools.
 
 +  Click on the **Console** tab.
@@ -47,13 +47,13 @@ Take a look at the project warnings in DevTools.
 ![image](./displayed-warning.png)
 
 Firebase, which is one of the libraries used in this application, is being a
-good samaritan by providing a warning to let developers know to not import its
+good Samaritan by providing a warning to let developers know to not import its
 entire package but only the components that are used. In other words, there are
 unused libraries that can be removed in this application to make it load
 faster.
 
-There are also instances where we a particular library is used but there may be
-a simpler alternative. The concept of removing unneeded libraries** **will also
+There are also instances when a particular library is used, but where there may be
+a simpler alternative. The concept of removing **unneeded libraries** will also
 be explored later in this tutorial.
 
 ## Analyzing the bundle
@@ -61,14 +61,14 @@ be explored later in this tutorial.
 There are two main dependencies in the application:
 
 * [Firebase](https://firebase.google.com/): a platform that provides a number of
-useful services for iOS, Android or web applications. In here, its[ Realtime
+useful services for iOS, Android or web applications. Here its [Realtime
 Database](https://firebase.google.com/products/realtime-database/) is used to
 store and sync the information for each kitten in real time.
 * [Moment.js](https://momentjs.com/): a utility library that makes it easier to
-handle dates in JavaScript. The birth dates of each kitten is stored in the
-Firebase database, and `moment` is used to calculate their ages in weeks.
+handle dates in JavaScript. The birth date of each kitten is stored in the
+Firebase database, and `moment` is used to calculate its age in weeks.
 
-How can just two dependencies contribute to a bundle size of almost 1MB? Well,
+How can just two dependencies contribute to a bundle size of almost 1 MB? Well,
 one of the reasons is that any dependency can in turn have their own
 dependencies, so there are a lot more than just two if every depth/branch of the
 dependency "tree" is considered. It's easy for an application to become large
@@ -87,7 +87,7 @@ The package for this tool is already included in the app as a `devDependency`.
       "webpack-bundle-analyzer": "^2.13.1"
     },
 
-This means that it can be imported directly in the webpack configurations file,
+This means that it can be imported directly in the webpack configuration file,
 `webpack.config.js`:
 
     const path = require("path");
@@ -137,18 +137,18 @@ is covered in a separate guide.</td>
 </tbody>
 </table>
 
-With this tool, it is easier to identify packages that make up a large
-percentage of the bundle that are unused or unneeded.
+With the webpack-bundle-analyzer tool, it is easier to identify unused or
+unneeded packages that make up a large percentage of the bundle.
 
 ## Removing unused packages
 
 The visualization shows that the `firebase` package consists of a _lot_ more
 than just a database. It includes additional packages such as:
 
-+  `firestore
-`+  `auth`
-+  `storage
-`+  `messaging`
++  `firestore`
++  `auth`
++  `storage`
++  `messaging`
 +  `functions`
 
 These are all amazing services provided by Firebase (and refer to the
@@ -158,14 +158,14 @@ no reason to have them all imported.
 
 Revert the changes in `webpack.config.js` to see the application again:
 
-+  Remove `BundleAnalyzerPlugin` in the list of plugins:
++ Remove `BundleAnalyzerPlugin` in the list of plugins:
 
     plugins: [
      //...
      new BundleAnalyzerPlugin()
     ]
 
-+  And now remove the unused import from the top of the file:
++ And now remove the unused import from the top of the file:
 
     const path = require("path");
 
@@ -203,7 +203,7 @@ work to do! 😈
 Unlike Firebase, importing parts of the `moment` library cannot be done as
 easily, but maybe it can be removed entirely?
 
-The birthdays of each cute kitten is stored in **Unix** format (milliseconds) in
+The birthday of each cute kitten is stored in **Unix** format (milliseconds) in
 the Firebase database.
 
 ![image](./kitty-birthdays.png)
@@ -216,26 +216,26 @@ age of each kitten in weeks can probably be constructed.
 Like always, try not to copy and paste as you follow along here. Begin by
 removing `moment` from the imports in `src/index.js`.
 
-import firebase from 'firebase/app';
-import 'firebase/database';
-import * as moment from 'moment';
+    import firebase from 'firebase/app';
+    import 'firebase/database';
+    import * as moment from 'moment';
 
-Now right above the Firebase event listener that listens to changes in any value
-in our database:
+There is a Firebase event listener that handles value changes in our database:
 
     favoritesRef.on("value", (snapshot) => { ... })
 
-Add a small function that calculates the number of weeks from a given date:
+Above this, add a small function to calculates the number of weeks from a
+given date:
 
     const ageInWeeks = birthDate => {
-     const WEEK_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
-     const diff = Math.abs((new Date).getTime() - birthDate);
-     return Math.floor(diff / WEEK_IN_MILLISECONDS);
+      const WEEK_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
+      const diff = Math.abs((new Date).getTime() - birthDate);
+      return Math.floor(diff / WEEK_IN_MILLISECONDS);
     }
 
-In here, the difference between the current date and time in milliseconds, `(new
-Date).getTime()`, and the birth date (`birthDate` argument which is already in
-milliseconds) is calculated and divided by the number of milliseconds in a
+In this function, the difference in milliseconds between the current date and
+time `(new Date).getTime()` and the birth date (the `birthDate` argument, already
+in milliseconds) is calculated and divided by the number of milliseconds in a
 single week.
 
 Finally, all instances of `moment` can be removed in the event listener by
@@ -263,8 +263,7 @@ leveraging this function instead:
        `})
     });
 
-Now reload the application and take a look at the ****Network**** tab once
-more.
+Now reload the application and take a look at the **Network** tab once more.
 
 ![image](./smallest-bundle.png)
 
@@ -279,9 +278,9 @@ important to know that this can be significantly more complex in larger
 applications**.
 
 With regards to **removing unused libraries**, try to find out which parts of a
-bundle are being used and which parts are not. For the mysterious looking
-package that looks like is not being used anywhere, take a step back and see
-which top-level dependencies are using it. Try to find a way to possibly
+bundle are being used and which parts are not. For a mysterious looking
+package that looks like it is not being used anywhere, take a step back and check
+which top-level dependencies might need it. Try to find a way to possibly
 decouple them from each other.
 
 When it comes to **removing unneeded libraries**, things can be a little more
