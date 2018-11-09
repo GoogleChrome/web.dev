@@ -92,7 +92,9 @@ Here are some examples of good vs bad titles and descriptions:
 &lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;
 &lt;meta
   name="description"
-  content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for."&gt;
+  content="Mary's maple bar recipe is simple and sweet,
+           with just a touch of serendipity. Topped with
+           bacon, this sticky donut is to die for."&gt;
 </pre>
 
 Here are some best practices to keep in mind when you're writing descriptions
@@ -126,7 +128,9 @@ of good vs bad link descriptions:
 <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;p&gt;
   Get cooking and learn how to make a maple bar
-  &lt;a href=&quot;https://donut-be-crazy.com/recipes/maple-bar-recipe&quot;&gt;here&lt;/a&gt;.
+  &lt;a href=&quot;https://donut-be-crazy.com/recipes/maple-bar-recipe&quot;&gt;
+    here
+  &lt;/a&gt;.
 &lt;/p&gt;
 </pre>
 
@@ -134,7 +138,9 @@ of good vs bad link descriptions:
 <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;p&gt;
   Get cooking and learn how to
-  &lt;a href=&quot;https://donut-be-crazy.com/recipes/maple-bar-recipe&quot;&gt;make a delicious maple bar with Mary&lt;/a&gt;!
+  &lt;a href=&quot;https://donut-be-crazy.com/recipes/maple-bar-recipe&quot;&gt;
+    make a delicious maple bar with Mary
+  &lt;/a&gt;!
 &lt;/p&gt;
 </pre>
 
