@@ -61,19 +61,11 @@ Here's what each key value pair does:
 </thead>
 <tbody>
 <tr>
-<td>
-  
-    width=device-width
-  
-</td>
+<td><code>width=device-width</code></td>
 <td>Sets the width of the viewport to the width of the device.</td>
 </tr>
 <tr>
-<td>
-
-    initial-scale=1
-
-</td>
+<td><code>initial-scale=1</code></td>
 <td>Sets the initial zoom level when visiting the page.</td>
 </tr>
 </tbody>
