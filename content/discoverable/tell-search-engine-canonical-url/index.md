@@ -62,22 +62,22 @@ For a list of pros and cons, see
 <tr>
 <td>Add a canonical link element to the head of the HTML</td>
 <td>   
-    
+<pre class="prettyprint devsite-disable-click-to-copy">
     <!doctype html>
     <html lang="en">
      <head>
      ...
      <link rel="canonical" href="https://copycat.com/"/>
      ...    
-     
+</pre>   
 </td>
 </tr>
 <tr>
 <td>Add Link header to the HTTP response</td>
 <td>
-    
+<pre class="prettyprint devsite-disable-click-to-copy">
     Link: https://copycat.com/; rel=canonical
-
+</pre>
 </td>
 </tr>
 </tbody>
