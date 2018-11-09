@@ -41,7 +41,7 @@ There are two parts to this query:
 the table. Roughly speaking, two URLs are part of the same origin if they have 
 the same scheme, host, and port.
 
-- `FROM \`chrome-ux-report.all.201809\`` specifies the address of the source 
+- `FROM `` `chrome-ux-report.all.201809` `` specifies the address of the source 
 table, which has three parts:
   - The Cloud project name `chrome-ux-report` within which all CrUX data is organized
   - The dataset `all`, representing data across all countries
@@ -104,7 +104,7 @@ WHERE
   fcp.start = 0
 ```
 
-![Querying CrUX FCP on BigQuery](./bigquery_fcp.png)
+<img class="screenshot" src="./bigquery_fcp.png" alt="Querying CrUX FCP on BigQuery">
 
 The result is `0.0013`, meaning that 0.13% of user experiences on this origin 
 are between 0 and 100ms on 4G and on a phone. If we want to generalize our 
@@ -123,7 +123,7 @@ WHERE
   fcp.start = 0
 ```
 
-![Summing CrUX FCP on BigQuery](./bigquery_fcp_sum.png)
+<img class="screenshot" src="./bigquery_fcp_sum.png" alt="Summing CrUX FCP on BigQuery">
 
 The result is `0.0399`, or 3.99% across all devices and connection types. 
 Let's modify the query slightly and add up the densities for all bins that are 
@@ -140,7 +140,7 @@ WHERE
   fcp.start < 1000
 ```
 
-![Querying fast FCP on BigQuery](./bigquery_fast_fcp.png)
+<img class="screenshot" src="./bigquery_fast_fcp.png" alt="Querying fast FCP on BigQuery">
 
 This gives us `0.3913`. In other words, 39.13% of the FCP user experiences on 
 developers.google.com are considered "fast" according to the FCP range 
@@ -169,7 +169,7 @@ ORDER BY
   yyyymm
 ```
 
-![Querying a timeseries of CrUX FCP on BigQuery](./bigquery_timeseries.png)
+<img class="screenshot" src="./bigquery_timeseries.png" alt="Querying a timeseries of CrUX FCP on BigQuery">
 
 Here, we see that the percent of fast FCP experiences varies by a few percentage 
 points each month.

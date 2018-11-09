@@ -38,10 +38,10 @@ topics:
     - reduce-network-payloads-using-text-compression
     - remove-unused-code
     - serve-modern-code-to-modern-browsers
-- title: Optimize Web Fonts
+- title: Optimize web fonts
   guides:
     - avoid-invisible-text
-- title: Chrome UX Report
+- title: Measure performance in the field
   guides:
     - chrome-ux-report
     - chrome-ux-report-bigquery

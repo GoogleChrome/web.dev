@@ -17,11 +17,11 @@ to show how real users experience performance on the page and the origin in
 aggregate. In this guide, learn how to use PSI to extract insights from CrUX 
 and better understand the user experience.
 
-![Field data from CrUX in PageSpeed Insights](psi.png)
+<img class="screenshot" src="./psi.png" alt="Field data from CrUX in PageSpeed Insights">
 
 ## Reading the data
 
-![Enter a URL to get started on PageSpeed Insights](./psi_url.png)
+<img class="screenshot" src="./psi_url.png" alt="Enter a URL to get started on PageSpeed Insights">
 
 To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/) 
 and enter the URL of the page you want to test. After a few seconds, Lighthouse 
@@ -29,7 +29,7 @@ audits will be performed and you will see sections for Field and Lab data. CrUX
 is a collection of real user experiences from the field, while Lighthouse is a 
 controlled test in the lab.
 
-![Field data from CrUX in PageSpeed Insights](./psi_page.png)
+<img class="screenshot" src="./psi_page.png" alt="Field data from CrUX in PageSpeed Insights">
 
 In the Field Data section, you'll see two metrics: First Contentful Paint (FCP) 
 and First Input Delay (FID). These metrics are representative of the user 
@@ -73,7 +73,7 @@ second) 74% of the time. FID is "slow" (at least 250 milliseconds) 2% of the
 time. These distributions represent the totality of the user experience and 
 their shapes indicate the tendency to be either fast or slow.
 
-![Origin CrUX performance in PageSpeed Insights](./psi_origin.png)
+<img class="screenshot" src="./psi_origin.png" alt="Origin CrUX performance in PageSpeed Insights">
 
 PSI also includes a summary of origin performance. This is an aggregation of 
 user experiences across all pages on an origin. You can get the same FCP and FID 
