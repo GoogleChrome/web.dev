@@ -33,7 +33,7 @@ However, these numbers don’t tell you much about the user experience. Two page
 
 ![Image of progressive page rendering based on the critical-path](./progressive-page-rendering.png)
 
-This is why it’s important to keep track of another type of metrics.
+This is why it’s important to keep track of another type of metric.
 
 ### Milestone timings ⏱️
 
