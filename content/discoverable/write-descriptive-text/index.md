@@ -82,22 +82,14 @@ example of what the ```<head>``` of each page should include:
 Here are some examples of good vs bad titles and descriptions:
 
 <p><span class="compare-worse">Not recommended</span> — too vague</p>
-<pre class="prettyprint">
+<pre class="prettyprint devsite-disable-click-to-copy">
 &lt;title&gt;Donut recipe&lt;/title&gt;
+&lt;meta name="Description" content="A donut recipe."&gt;
 </pre>
 
 <p><span class="compare-better">Recommended</span> — precise!</p>
-<pre class="prettyprint">
+<pre class="prettyprint devsite-disable-click-to-copy">
 &lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;
-</pre>
-
-<p><span class="compare-worse">Not recommended</span> — too vague</p>
-<pre class="prettyprint">
-&lt;meta name="Description" content="Maple bar recipe."&gt;
-</pre>
-
-<p><span class="compare-better">Recommended</span> — precise!</p>
-<pre class="prettyprint">
 &lt;meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for."&gt;
 </pre>
 
@@ -128,24 +120,15 @@ specific descriptions. You'll need to read the context of the page and write
 relevant text that makes sense with the rest of the content. Here's an example
 of good vs bad link descriptions:
 
-<table>
-  <thead>
-    <tr>
-      <th><strong>Good</strong></th>
-      <th><strong>Bad</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        &lt;p&gt;Get cooking and learn how to &lt;a href="https://donut-be-crazy.com/recipes/maple-bar-recipe"&gt;make a delicious maple bar with Mary&lt;/a&gt;!&lt;/p&gt;
-      </td>
-      <td>
-        &lt;p&gt;Get cooking and learn how to make a maple bar &lt;a href="https://donut-be-crazy.com/recipes/maple-bar-recipe"&gt;here&lt;/a&gt;.&lt;/p&gt;
-      </td>
-    </tr>
-  </tbody>
-</table>
+<p><span class="compare-worse">Not recommended</span> — too vague</p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+&lt;p&gt;Get cooking and learn how to make a maple bar &lt;a href="https://donut-be-crazy.com/recipes/maple-bar-recipe"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</pre>
+
+<p><span class="compare-better">Recommended</span> — precise!</p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+&lt;p&gt;Get cooking and learn how to &lt;a href="https://donut-be-crazy.com/recipes/maple-bar-recipe"&gt;make a delicious maple bar with Mary&lt;/a&gt;!&lt;/p&gt;
+</pre>
 
 Here are some best practices to keep in mind when you're writing descriptive
 link text:
