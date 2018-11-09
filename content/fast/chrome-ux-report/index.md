@@ -27,7 +27,7 @@ Using this data, developers are able to understand the wide distribution of real
 
 ## How to use it
 
-There are three primary ways to extract insights from the Chrome UX Report, ranging in complexity. For quick and easy analysis of website performance, the CrUX Dashboard and PSI are the recommended tools. BigQuery trades some of the simplicity of the analysis for the power of customization and more granular insights.
+There are three primary ways to extract insights from the Chrome UX Report, ranging in complexity. For quick and easy analysis of website performance, the CrUX Dashboard and [PageSpeed Insights (PSI)](https://developers.google.com/speed/pagespeed/insights/) are the recommended tools. BigQuery trades some of the simplicity of the analysis for the power of customization and more granular insights.
 
 1. The CrUX database on [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report), 
 part of the Google Cloud Platform (GCP) with a web and command line interface, 
