@@ -63,7 +63,7 @@ There are two main dependencies in the application:
 * [Firebase](https://firebase.google.com/): a platform that provides a number of
 useful services for iOS, Android or web applications. In here, its[ Realtime
 Database](https://firebase.google.com/products/realtime-database/) is used to
-store and sync the information for each kitten in real time.  
+store and sync the information for each kitten in real time.
 * [Moment.js](https://momentjs.com/): a utility library that makes it easier to
 handle dates in JavaScript. The birth dates of each kitten is stored in the
 Firebase database, and `moment` is used to calculate their ages in weeks.
@@ -78,7 +78,7 @@ relatively quickly if many dependencies are included.
 
 Analyze the bundler to get a better idea of what is going. There are a number of
 different community-built tools that can help do this, such as
-`[webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)`.
+[`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer).
 
 The package for this tool is already included in the app as a `devDependency`.
 
@@ -216,8 +216,8 @@ age of each kitten in weeks can probably be constructed.
 Like always, try not to copy and paste as you follow along here. Begin by
 removing `moment` from the imports in `src/index.js`.
 
-import firebase from 'firebase/app';  
-import 'firebase/database';  
+import firebase from 'firebase/app';
+import 'firebase/database';
 import * as moment from 'moment';
 
 Now right above the Firebase event listener that listens to changes in any value
@@ -291,7 +291,7 @@ application may look like it would be the right thing to do every time, but what
 if there were time zones and different locales that needed to be handled? Or
 what if there were more complicated date manipulations? Things can get very
 tricky when manipulating and parsing dates/times, and libraries like `moment`
-and `[date-fns](https://date-fns.org/)` simplify this significantly.
+and [`date-fns`](https://date-fns.org/) simplify this significantly.
 
 **Everything is a tradeoff, and it's important to gauge whether it's even worth
 the complexity and effort to roll out a custom solution instead of relying on a

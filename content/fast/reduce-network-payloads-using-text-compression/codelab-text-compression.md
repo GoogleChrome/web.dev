@@ -5,9 +5,9 @@ page_type: glitch
 glitch: fav-kitties-compress-starter
 ---
 
-This codelab will explore how both minifying and compressing the JavaScript
-bundle for the following application will improve page performance by reducing
-its request size.
+This codelab explores how both minifying and compressing the JavaScript
+bundle for the following application improves page performance by reducing
+the app's request size.
 
 ![App screenshot](./app-screenshot.png)
 
@@ -35,7 +35,7 @@ Now take a look at how large this application is:
 
 <img class="screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 
-Although a lot of progress was made in the ["Remove unused code"](/fast/remove-unused-code) 
+Although a lot of progress was made in the ["Remove unused code"](/fast/remove-unused-code)
 codelab to trim this bundle size down, 225 KB is still quite large.
 
 ## Minification
@@ -44,38 +44,38 @@ Consider the following block of code.
 
 ```
 function soNice() {
-  var counter = 0;
+  let counter = 0;
 
-  while(i < 100) {
+  while (counter < 100) {
     console.log('nice');
     counter++;
   }
 }
 ```
 
-If this function is saved in a file of its own, the file size would be around
-**104 B (bytes).**
+If this function is saved in a file of its own, the file size is around
+**112 B (bytes).**
 
 If all whitespace is removed, the resulting code looks like this:
 
 ```
-function soNice(){var i=0;while(i<100){console.log("nice");i++}}
+function soNice(){let counter=0;while(counter<100){console.log("nice");counter++;}}
 ```
 
-The file size would now be around 76 B. If it gets further mangled by reducing 
-the length of variable names and modifying some expressions, the final code may 
+The file size would now be around 83 B. If it gets further mangled by reducing
+the length of variable name and modifying some expressions, the final code may
 end up looking like this:
 
 ```
-function soNice(){for(var o=0;o<100;)console.log("nice"),o++}
+function soNice(){for(let i=0;i<100;)console.log("nice"),i++}
 ```
 
-The file size now reaches **52 B**.
+The file size now reaches **62 B**.
 
 With each step, the code is becoming harder to read. However, the browser's
 JavaScript engine will interpret each of these in the exact same way. The
 benefit of obfuscating code in this manner can help achieve smaller file
-sizes. 104 B really was not much to begin with, but there was still a 50%
+sizes. 112 B really was not much to begin with, but there was still a 50%
 reduction in size!
 
 In this application, [webpack](https://webpack.js.org/) version 4 is used as a
@@ -89,9 +89,9 @@ module bundler. The specific version can be seen in `package.json`.
 }
 </pre>
 
-Version 4 already minifies the bundle by default during production mode. It uses 
-`UglifyjsWebpackPlugin,` a plugin for [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony). 
-UglifyJS is a popular tool used to minify (or uglify) JavaScript code.
+Version 4 already minifies the bundle by default during production mode. It uses
+`UglifyjsWebpackPlugin,` a plugin for [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony).
+UglifyJS is a popular tool used to minify (or 'uglify') JavaScript code.
 
 To get an idea of what the minified code looks like, go ahead and click
 `main.bundle.js` while still in the DevTools **Network** panel. Now click the
@@ -115,7 +115,7 @@ DevTools **Network** panel
 
 <img class="screenshot" src="./network-no-minify.png" alt="Bundle size of 767 KB">
 
-That's a pretty big difference! 😅 
+That's a pretty big difference! 😅
 
 Make sure to revert the changes here before continuing.
 
@@ -129,15 +129,15 @@ module.exports = {
 Including a process to minify code in your application will depend on the tools
 that you use:
 
-+ If webpack v4 or greater is used, no additional work needs to be done 
++ If webpack v4 or greater is used, no additional work needs to be done
 since code is minified by default in production mode. 👍
-+ If an older version of webpack is used, install and include the `UglifyjsWebpackPlugin` 
++ If an older version of webpack is used, install and include the `UglifyjsWebpackPlugin`
 into the webpack build process. The [documentation](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/)
 explains this in detail.
-+ Other minification plugins also exist and can be used instead, 
-such as [BabelMinifyWebpackPlugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin) 
++ Other minification plugins also exist and can be used instead,
+such as [BabelMinifyWebpackPlugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin)
 and [ClosureCompilerPlugin](https://github.com/roman01la/webpack-closure-compiler)
-+ If a module bundler is not being used at all, use [UglifyJS](https://github.com/mishoo/UglifyJS2) 
++ If a module bundler is not being used at all, use [UglifyJS](https://github.com/mishoo/UglifyJS2)
 as a CLI tool or include it directly as a dependency.
 
 ## Compression
@@ -147,7 +147,7 @@ Many hosting platforms, CDNs and reverse proxy servers either encode
 assets with compression by default or allow you to easily configure them. This
 means that you may rarely ever need to set up your server similar to how it is
 done in the compression section of this tutorial, but you can continue to read
-it if you are interested in learning about how it works.
+if you are interested in learning how compression works.
 </div>
 
 Although the term "compression" is sometimes loosely used to explain how code is
@@ -156,7 +156,7 @@ literal sense.
 
 **Compression** usually refers to code that has been modified using a data
 compression algorithm. Unlike minification which ends up providing perfectly
-valid code, compressed code will need to be _decompressed_ before being used. 
+valid code, compressed code will need to be _decompressed_ before being used.
 
 With every HTTP request and response, browsers and web servers can add
 [headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) to include
@@ -179,15 +179,16 @@ supported here for the compression (and decompression) of HTTP network requests:
 
 * [Gzip](https://www.gzip.org/) (`gzip`): The most widely used compression
 format for server and client interactions. It builds on top of the Deflate
-algorithm and is supported in all current browsers.  
-* Deflate (`deflate`): Not commonly used.  
+algorithm and is supported in all current browsers.
+* Deflate (`deflate`): Not commonly used.
 * [Brotli](https://github.com/google/brotli) (`br`): A newer compression
-algorithm that aims to further improve compression ratios that can result in
-even faster page loads. It is supported in the [latest versions of most browsers](https://caniuse.com/#feat=brotli).
+algorithm that aims to further improve compression ratios, which can result in
+even faster page loads. It is supported in the
+[latest versions of most browsers](https://caniuse.com/#feat=brotli).
 
 The sample application in this tutorial is identical to the app completed in the
-["Remove unused code"](/fast/remove-unused-code) codelab except for the fact that 
-[Express](https://expressjs.com/) is now used as a server framework. In the next 
+["Remove unused code"](/fast/remove-unused-code) codelab except for the fact that
+[Express](https://expressjs.com/) is now used as a server framework. In the next
 few sections, both static and dynamic compression will be explored.
 
 ## Dynamic compression
@@ -197,13 +198,16 @@ requested by the browser.
 
 ### Pros:
 
-+ Creating and updating saved compressed versions of assets does not need to be done.
-+ Compressing on-the-fly works especially well for web pages that are dynamically generated.
++ Creating and updating saved compressed versions of assets does not need to be
+done.
++ Compressing on-the-fly works especially well for web pages that are
+dynamically generated.
 
 ### Cons:
 
-+ Compressing files at higher levels to achieve better compression ratios will take longer. 
-This can cause a performance hit as the user waits for assets to compress before being sent by the server.
++ Compressing files at higher levels to achieve better compression ratios will
+take longer. This can cause a performance hit as the user waits for assets to
+compress before they are sent by the server.
 
 ### Dynamic compression with Node/Express
 
@@ -222,8 +226,8 @@ var listener = app.listen(process.env.PORT, function() {
 });
 ```
 
-All it currently does is import `express` and use the 
-`express.static` middleware to load all the static HTML, JS and CSS files in the 
+All this currently does is import `express` and use the `express.static`
+middleware to load all the static HTML, JS and CSS files in the
 `public/` directory (and those files are created by webpack with every build).
 
 To make sure all of the assets are compressed every time they're requested, the
@@ -274,19 +278,19 @@ ahead of time.
 
 ### Pros:
 
-+ Latency due to high compression levels is not a concern anymore. 
++ Latency due to high compression levels is not a concern anymore.
 Nothing needs to happen on-the-fly to compress files as they can now be fetched directly.
 
 ### Cons:
 
-+ Assets need to compressed with every build. Build times can increase 
++ Assets need to compressed with every build. Build times can increase
 significantly if high compression levels are used.
 
 ### Static compression with Node/Express and webpack
 
 Since static compression involves compressing files ahead of time, webpack
 settings can be modified to compress assets as part of the build step.
-`[CompressionPlugin](https://github.com/webpack-contrib/compression-webpack-plugin)`
+[`CompressionPlugin`](https://github.com/webpack-contrib/compression-webpack-plugin)
 can be used for this.
 
 Begin by adding it as a `devDependency` in `package.json`:
@@ -331,9 +335,9 @@ now be created. Open the Glitch Console to take a look at what's inside the
 final `public/` directory that's served by the Node server.
 
 <div class="aside note">
-The <code>public/</code> directory is included in the <code>.gitignore</code> file. Directories
-that contain build files are usually included here in order to be ignored by
-Git, and Glitch also hides these files from the editor tree.
+The <code>public/</code> directory is included in the <code>.gitignore</code>
+file. Directories that contain build files are usually included here in order
+to be ignored by Git, and Glitch also hides these files from the editor tree.
 </div>
 
 + Click the **Status** button.
@@ -344,7 +348,7 @@ Git, and Glitch also hides these files from the editor tree.
 
 <web-screenshot type="console"></web-screenshot>
 
-+ In the console, run the following commands to change into the `public` directory 
++ In the console, run the following commands to change into the `public` directory
 and see all of its files:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -355,11 +359,11 @@ ls
 <img class="screenshot" src="./console-commands.png" alt="Final outputted files in public directory">
 
 The gzipped version of the bundle, `main.bundle.js.gz`, is now saved here as
-well, `CompressionPlugin` also compresses `index.html` by default.
+well. `CompressionPlugin` also compresses `index.html` by default.
 
 The next thing that needs to be done is tell the server to send these gzipped
 files whenever their original JS versions are being requested. This can be done
-by defining a new route in `server.js `before the files are served with
+by defining a new route in `server.js` before the files are served with
 `express.static`.
 
 <pre class="prettyprint">
@@ -381,14 +385,14 @@ app.use(express.static('public'));
 specific endpoint. A callback function is then used to define how to handle this
 request. The route works like this:
 
-+ By specifying `'*.js'` as the first argument, this means that this 
-will work for every endpoint that is fired to fetch a JS file.
-+ Within the callback, `.gz` is attached to the URL of the request and the 
++ Specifying `'*.js'` as the first argument means that this will work for every
+endpoint that is fired to fetch a JS file.
++ Within the callback, `.gz` is attached to the URL of the request and the
 `Content-Encoding` response header is set to `gzip`.
-+ Finally, `next()` ensures that the sequence continues to any callback 
++ Finally, `next()` ensures that the sequence continues to any callback
 that may be next.
 
-Once the app reloads, take a look at the `Network `panel once more.
+Once the app reloads, take a look at the `Network` panel once more.
 
 <img class="screenshot" src="./network-static-compress.png" alt="Bundle size reduction with static compression">
 
@@ -396,7 +400,7 @@ Just like before, a significant reduction in bundle size!
 
 ## Conclusion
 
-In this codelab, the process of minifying and compressing source code was
-covered. Both these techniques are becoming a default in many of the tools
+This codelab covered the process of minifying and compressing source code.
+Both these techniques are becoming a default in many of the tools
 available today, so it's important to find out whether your toolchain already
-supports them or if you should begin applying both processes yourself. 
+supports them or if you should begin applying both processes yourself.

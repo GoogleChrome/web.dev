@@ -33,20 +33,20 @@ optimizations.
 
 <img class="screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
 
-Over 80 KB is used for this application! Time to find out if parts of the bundle 
+Over 80 KB is used for this application! Time to find out if parts of the bundle
 aren't being used.
 
-+ With DevTools open, press `CMD + SHIFT + p` / `CTRL + SHIFT + p` to open 
++ With DevTools open, press `CMD + SHIFT + p` / `CTRL + SHIFT + p` to open
 the Command Menu. Search for "coverage".
 
 <img class="screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
 
-+ Click "Show Coverage" and click the "Reload" button to reload the 
++ Click "Show Coverage" and click the "Reload" button to reload the
 application while capturing coverage.
 
 <img class="screenshot" src="./record-with-code-coverage.png" alt="Reload app with code coverage">
 
-+ Take a look at how much code was used versus how much was loaded for 
++ Take a look at how much code was used versus how much was loaded for
 the main bundle.
 
 <img class="screenshot" src="./code-coverage.png" alt="Code coverage of bundle">
@@ -78,16 +78,16 @@ Feel free to dive into the source code in `src/index.js` to see how all of this
 is used.
 
 All of these features are supported in the latest version of Chrome, but what
-about other browsers that don't support them? [Babel](https://babeljs.io/docs/en), 
-which is included in the application, is the most popular library used to compile 
-code that contains newer syntax into code that older browsers and environments can 
+about other browsers that don't support them? [Babel](https://babeljs.io/docs/en),
+which is included in the application, is the most popular library used to compile
+code that contains newer syntax into code that older browsers and environments can
 understand. It does this in two ways:
 
-+ **Polyfills** are included to emulate newer ES2015+ functions so that their APIs 
-can be used even if it is not supported by the browser. Here is an example of a 
-[polyfill](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Polyfill) 
++ **Polyfills** are included to emulate newer ES2015+ functions so that their APIs
+can be used even if it is not supported by the browser. Here is an example of a
+[polyfill](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Polyfill)
 of the `Array.includes` method.
-+ **Plugins** are used to transform ES2015 code (or later) into older ES5 syntax. 
++ **Plugins** are used to transform ES2015 code (or later) into older ES5 syntax.
 Since these are syntax related changes (such as arrow functions), they cannot be emulated with polyfills.
 
 Look at `package.json` to see which Babel libraries are included:
@@ -108,7 +108,7 @@ Look at `package.json` to see which Babel libraries are included:
 + `@babel/core` is the core Babel compiler. With this, all the Babel configurations are defined in a `.babelrc` at the root of the project.
 + `babel-loader` includes Babel in the webpack build process.
 
-Now look at `webpack.config.js `to see how `babel-loader` is included as a
+Now look at `webpack.config.js` to see how `babel-loader` is included as a
 rule:
 
 <pre class="prettyprint">
@@ -124,7 +124,7 @@ module: {
 },
 </pre>
 
-+ `@babel/polyfill` provides all the necessary polyfills for any newer ECMAScript features so that they can 
++ `@babel/polyfill` provides all the necessary polyfills for any newer ECMAScript features so that they can
 work in environments that do not support them. It is already imported at the very top of `src/index.js.`
 
 <pre class="prettyprint">
@@ -149,7 +149,7 @@ Take a look at the Babel configurations file, `.babelrc`, to see how it's includ
 }
 ```
 
-This is a Babel and webpack setup. [Learn how to include Babel in your application](https://babeljs.io/en/setup) 
+This is a Babel and webpack setup. [Learn how to include Babel in your application](https://babeljs.io/en/setup)
 if you happen to use a different module bundler than webpack.
 
 The `targets` attribute
@@ -159,7 +159,7 @@ queries that can be used in this field in the
 [browserlist documentation](https://github.com/browserslist/browserslist#full-list).
 
 The `"last 2 versions"` value transpiles the code in the application for the
-[last two versions](http://browserl.ist/?q=last+2+versions) of every browser. 
+[last two versions](http://browserl.ist/?q=last+2+versions) of every browser.
 
 ### Debugging
 
@@ -205,7 +205,7 @@ Babel also logs a list of transform plugins used:
 <img class="screenshot" src="./plugins-list.png" alt="List of plugins used">
 
 That's a pretty long list! These are all the plugins that Babel needs to use to
-transform any ES2015+ syntax to older syntax for all the targeted browsers. 
+transform any ES2015+ syntax to older syntax for all the targeted browsers.
 
 However, Babel doesn't show any specific polyfills that are used:
 
@@ -215,8 +215,8 @@ This is because the entire `@babel/polyfill` is being imported directly.
 
 ### Load polyfills individually
 
-By default, Babel includes every polyfill needed for a complete ES2015+ environment when 
-`@babel/polyfill` is imported into a file. To import specific polyfills needed for 
+By default, Babel includes every polyfill needed for a complete ES2015+ environment when
+`@babel/polyfill` is imported into a file. To import specific polyfills needed for
 the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
 
 <pre class="prettyprint">
@@ -239,7 +239,7 @@ Reload the application. You can now see all the specific polyfills included:
 <img class="screenshot" src="./entry-polyfills.png" alt="List of polyfills imported">
 
 Although only needed polyfills for `"last 2 versions"` is now included, it is still a super long list! This is because
-polyfills needed for the target browsers for _every_ newer feature is still included. Change the value of the attribute to `usage` 
+polyfills needed for the target browsers for _every_ newer feature is still included. Change the value of the attribute to `usage`
 to only include those needed for features that are being used in the code.
 
 <pre class="prettyprint">
@@ -258,7 +258,7 @@ to only include those needed for features that are being used in the code.
 }
 </pre>
 
-With this, polyfills will be automatically included where needed. 
+With this, polyfills will be automatically included where needed.
 This means you can remove the `@babel/polyfill` import in `src/index.js.`
 
 <pre class="prettyprint">
@@ -303,7 +303,7 @@ Take a look at the details for the fetched bundle.
 Since the application is so small, there really isn't much of a difference with
 these changes. However, using a browser market share percentage (such as
 `">0.25%"`) along with excluding specific browsers that you are confident your
-users are not using is the recommended approach. Take a look at the 
+users are not using is the recommended approach. Take a look at the
 ["Last 2 versions" considered harmful](https://jamie.build/last-2-versions)
 article by James Kyle to learn more about this.
 
@@ -312,9 +312,9 @@ article by James Kyle to learn more about this.
 There is still more room for improvement. Although a number of unused polyfills
 have been removed, there are many that are being shipped that are not needed for
 some browsers. By using modules, newer syntax can be written and shipped to
-browsers directly without the use of any unnecessary polyfills. 
+browsers directly without the use of any unnecessary polyfills.
 
-**JavaScript modules** are a relatively new feature supported in [all major browsers](https://caniuse.com/#feat=es6-module). 
+**JavaScript modules** are a relatively new feature supported in [all major browsers](https://caniuse.com/#feat=es6-module).
 Modules can be created using a `type="module"` attribute to define scripts that import and export from other
 modules. For example:
 
@@ -343,7 +343,7 @@ browser:
 In order to have separate `@babel/preset-env` settings for the two versions of
 the application, remove the `.babelrc` file. Babel settings can be added to the
 webpack configuration by specifying two different compilation formats for each
-version of the application. 
+version of the application.
 
 Begin by adding a configuration for the legacy script to `webpack.config.js`:
 
@@ -379,11 +379,11 @@ const legacyConfig = {
 ```
 
 Notice that instead of using the `targets` value for `"@babel/preset-env"`,
-`esmodules` with a value of `false` is used instead. This means that Babel will 
+`esmodules` with a value of `false` is used instead. This means that Babel will
 include all the necessary transforms and polyfills to target every browser that does
 not yet support ES modules.
 
-Add `entry,` `cssRule,` and `corePlugins` objects to the beginning of the
+Add `entry`, `cssRule`, and `corePlugins` objects to the beginning of the
 `webpack.config.js` file. These are all shared between both the module and
 legacy scripts served to the browser.
 
@@ -440,7 +440,7 @@ const moduleConfig = {
 ```
 
 The main difference here is that a `.mjs` file extension is used for the output
-filename. The `esmodules `value is set to true here which means that the code
+filename. The `esmodules` value is set to true here which means that the code
 that is outputted into this module is a smaller, less compiled script that does
 not go through any transformation in this example since all the features used
 are already supported in browsers that support modules.
@@ -449,12 +449,12 @@ At the very end of the file, export both configurations in a single array.
 
 ```
 module.exports = [
-  legacyConfig, moduleConfig      
+  legacyConfig, moduleConfig
 ];
 ```
 
 Now this builds both a smaller module for browsers that support it and a larger
-transpiled script for older browsers. 
+transpiled script for older browsers.
 
 Browsers that support modules ignore scripts with a `nomodule` attribute.
 Conversely, browsers that do not support modules ignore script elements with
@@ -471,7 +471,7 @@ Browsers that support modules fetch and execute `main.mjs` and ignore
 `compiled.js.` The browsers that do not support modules do the opposite.
 
 The last thing that needs to be done here is to add the `module` and `nomodule`
-attributes to the module and legacy script respectively, Import the 
+attributes to the module and legacy script respectively, Import the
 [ScriptExtHtmlWebpackPlugin](https://github.com/numical/script-ext-html-webpack-plugin)
 at the very top of `webpack.config.js`:
 
@@ -541,7 +541,7 @@ screenshot for all the requests made on an older version of Chrome (version
 
 ## Conclusion
 
-You now understand how to use `@babel/preset-env `to provide only the necessary
+You now understand how to use `@babel/preset-env` to provide only the necessary
 polyfills required for targeted browsers. You also know how JavaScript modules
 can improve performance further by shipping two different transpiled versions of an
 application. With a decent understanding of how both these techniques can cut
