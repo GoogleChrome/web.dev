@@ -53,14 +53,14 @@
     <!-- GUIDES FOR TOPIC  -->
     <ul class="guides">
   {{#each guides}}
-  <li>
-    <web-progress-mark guide="{{id}}">
+  <web-progress-mark guide="{{id}}" target="li">
+    <li>
       <div class="marker" aria-hidden="true"></div>
-    </web-progress-mark>
-    <a href="{{href}}">
-      {{title}}
-    </a>
-  </li>
+      <a href="{{href}}">
+        {{title}}
+      </a>
+    </li>
+  </web-progress-mark>
   {{/each}}
     </ul>
   </div>
