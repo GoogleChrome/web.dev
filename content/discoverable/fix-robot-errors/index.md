@@ -58,42 +58,30 @@ Make sure 'allow' and 'disallow' values are either empty or start with `/` or
 `*`. Make sure they don't use `$` in the middle of a value (for example, `allow:
 /file$html`). Here's an example:
 
-<table>
-<thead>
-<tr>
-<th><strong>Do this</strong></th>
-<th><strong>Not this</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-    
-    user-agent: *
-    disallow: /downloads/
-</td>
-<td>
-    
-    user-agent: *
-    
-    # missing "/"
-    disallow: downloads
-    
-    # incorrect directive name
-    dis-allow downloads
-    
-    # invalid character in the value provided
-    disallow: /OffersFor$5
-</td>
-</tr>
-</tbody>
-</table>
+<p><span class="compare-better">Do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+user-agent: *
+disallow: /downloads/
+</pre>
+
+<p><span class="compare-worse">Don't do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+user-agent: *   
+# missing "/"
+disallow: downloads
+
+# incorrect directive name
+dis-allow downloads
+
+# invalid character in the value provided
+disallow: /OffersFor$5
+</pre>
 
 Use comments in the robots.txt file to explain what you're trying to allow or
 disallow. While robots.txt directives look simple, in combination they can be
 surprisingly complex. Here's an example of how to use comments in a robots.txt
 file:
-
+```
     user-agent: *
 
     # block crawling of all download URLs
@@ -101,37 +89,24 @@ file:
 
     # allow crawling of our whitepaper as per marketing team's request
     allow: /downloads/whitepaper.pdf
-    
+```    
 ## Make sure there are no 'allow' or 'disallow' directives before 'user-agent'
 
-<table>
-<thead>
-<tr>
-<th><strong>Do this</strong></th>
-<th><strong>Not this</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-    
-    # start of file
-    user-agent: *
-    disallow: /downloads/
-    
-</td>
-<td>
-    
-    # start of file
-    disallow: /downloads/
+<p><span class="compare-better">Do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+# start of file
+user-agent: *
+disallow: /downloads/
+</pre>  
 
-    user-agent: magicsearchbot
-    allow: /
+<p><span class="compare-worse">Don't do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+# start of file
+disallow: /downloads/
 
-</td>
-</tr>
-</tbody>
-</table>
+user-agent: magicsearchbot
+allow: /
+</pre>
 
 All allow and disallow directives must apply to specific user-agents (also known
 as crawlers), so they are only valid if they're in a section for a given
@@ -149,33 +124,20 @@ unmatched crawlers. Search engines will generally publish the user-agent names
 that they use; for example, here's
 [Google's list of user-agents used for crawling](https://support.google.com/webmasters/answer/1061943).
 
-<table>
-<thead>
-<tr>
-<th><strong>Do this</strong></th>
-<th><strong>Not this</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-    
-    user-agent: *
-    disallow: /downloads/
+<p><span class="compare-better">Do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+user-agent: *
+disallow: /downloads/
 
-    user-agent: magicsearchbot
-    disallow: /uploads/
-    
-</td>
-<td>
-    
-    user-agent:
-    disallow: /downloads/
+user-agent: magicsearchbot
+disallow: /uploads/
+</pre>  
 
-</td>
-</tr>
-</tbody>
-</table>
+<p><span class="compare-worse">Don't do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+user-agent:
+disallow: /downloads/
+</pre>
 
 ## Provide an absolute URL for 'sitemap' with http/https/ftp scheme
 
@@ -186,28 +148,11 @@ changed. If you choose to refer to submit a sitemap file through the robots.txt
 file, make sure to use a [fully-qualified / absolute
 URL](https://tools.ietf.org/html/rfc3986#page-27). 
 
-<table>
-<thead>
-<tr>
-<th><strong>Do this</strong></th>
-<th><strong>Not this</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-    
-    sitemap: https://example.com/sitemap-file.xml
+<p><span class="compare-better">Do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">sitemap: https://example.com/sitemap-file.xml</pre>  
 
-</td>
-<td>
-    
-    sitemap: /sitemap-file.xml
-
-</td>
-</tr>
-</tbody>
-</table>
+<p><span class="compare-worse">Don't do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">sitemap: /sitemap-file.xml</pre>
 
 ## Add additional control (optional step)
 
