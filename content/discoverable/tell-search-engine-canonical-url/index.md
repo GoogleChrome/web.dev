@@ -16,12 +16,13 @@ engines consider them duplicate versions of the same page. For example, desktop
 and mobile versions of a product page are often considered duplicates.   
 Search engines select one of the pages as the primary, canonical, version and
 crawl that one more, while crawling the other ones less frequently. Crawling is
-how search engines update their index of content on the web. You can give search
-engines information about your preferred canonical URL.  
+how search engines update their index of content on the web, and by providing
+search engines information about your preferred canonical URL you're helping
+search engines display the correct URL to users.  
 
 ## Measure
 
-Lighthouse displays the following failed audit if your content is difficult for
+Lighthouse displays the following failed audit if your duplicate URLs are difficult for
 search engines to understand: "Document doesn't have a valid rel=canonical".
 
 ## Decide which URL is the canonical version
@@ -44,7 +45,7 @@ Also, watch out for the following problems:
 
 There are two ways you can specify a canonical link: 
 
-+  `link rel=canonical` element in the <head> of a page
++  `link rel=canonical` element in the `<head>` of a page
 +  Link header in the HTTP response
 
 For a list of pros and cons, see
@@ -60,22 +61,22 @@ For a list of pros and cons, see
 <tbody>
 <tr>
 <td>Add a canonical link element to the head of the HTML</td>
-<td><p><pre>
-<!doctype html>
-<html lang="en">
-  <head>
-    ...
-    <link rel="canonical" href="https://copycat.com/"/>
-    …
-</pre></p>
-
+<td>   
+    
+    <!doctype html>
+    <html lang="en">
+     <head>
+     ...
+     <link rel="canonical" href="https://copycat.com/"/>
+     ...    
+     
 </td>
 </tr>
 <tr>
 <td>Add Link header to the HTTP response</td>
-<td><p><pre>
-Link: https://copycat.com/; rel=canonical
-</pre></p>
+<td>
+    
+    Link: https://copycat.com/; rel=canonical
 
 </td>
 </tr>
@@ -89,7 +90,10 @@ Here's a full example of what the <head> should include.
 <html lang="en">
   <head>
     <title>Mary's Maple Bar Fast-Baking recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
+    <meta name="Description" content="Mary's maple bar
+    recipe is simple and sweet, with just a touch of
+    serendipity. Topped with bacon, this sticky donut
+    is to die for.">
     <link rel="canonical" href="https://donut-be-crazy.com/recipes/maple-bar-recipe"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,11 +106,14 @@ Here's a full example of what the <head> should include.
   <body>
     <h1>Hi there!</h1>   
     <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
+      I'm your cool new webpage. Made with
+      <a href="https://glitch.com">Glitch</a>!
     </p>
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <!-- include the Glitch button to show what the webpage
+    is about and to make it easier for folks to view source
+    and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;">
+    </div>
     <script src="https://button.glitch.me/button.js"></script>
   </body>
 </html>
