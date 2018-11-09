@@ -15,15 +15,23 @@ In general we need folks to read through all of the docs in a learning path, and
 The site has two main content types: **guides** and **codelabs**.
 
 
-A guide is any written post or tutorial.
+A guide is any written post or tutorial. For example:
 ![image](https://user-images.githubusercontent.com/1066253/48244806-5aa58380-e39c-11e8-9e84-9ced3d1e97c5.png)
+---
 
 
-A codelab is a step-by-step coding exercise, paired with an embedded Glitch editor.
-
+A codelab is a step-by-step coding exercise, paired with an embedded Glitch editor. For example:
 ![image](https://user-images.githubusercontent.com/1066253/48244753-16b27e80-e39c-11e8-92b9-016e17867ba4.png)
+---
 
 ### Guides
+
+Every subfolder of a learning path should contain a single `index.md`. That markdown file is where your guide lives, and the sub-directory gives it its URL. For example:
+
+```
+# Produces the URL: https://web.dev/fast/avoid-invisible-text
+/fast/avoid-invisible-text/index.md
+```
 
 Tips:
 
@@ -52,7 +60,7 @@ Tips:
 
 ### Codelabs
 
-When we started this project we were using a different version of the Glitch iframe embed. As a result, **a lot of our codelabs need to have their instructions and screenshots updated**.
+To create a codelab, add a markdown file to a content subdirectory and name it anything other than `index.md`.
 
 Use the ImageMin CLI codelab as an example to emulate—[source](https://github.com/GoogleChrome/web.dev/blob/master/content/fast/use-imagemin-to-compress-images/codelab-imagine-cli.md), [preview](https://web.devsite.corp.google.com/fast/use-imagemin-to-compress-images/codelab-imagine-cli).
 
@@ -68,6 +76,8 @@ Example:
 
 <web-screenshot type="console"></web-screenshot>
 ```
+
+- Most codelabs should start with an instruction for the user to Click the **Remix This** button, followed by `<web-screenshot type="remix"></web-screenshot>`
 
 ## Staging
 
