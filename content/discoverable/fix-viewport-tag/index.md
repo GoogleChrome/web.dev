@@ -32,7 +32,9 @@ Add a viewport `<meta>` tag in the `<head>` of your page.
 <html lang="en">
   <head>
     <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
+    <meta name="Description" content="Mary's maple bar recipe
+    is simple and sweet, with just a touch of serendipity. Topped
+    with bacon, this sticky donut is to die for.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,19 +61,11 @@ Here's what each key value pair does:
 </thead>
 <tbody>
 <tr>
-<td><p><pre>
-width=device-width
-</pre></p>
-
-</td>
+<td><code>width=device-width</code></td>
 <td>Sets the width of the viewport to the width of the device.</td>
 </tr>
 <tr>
-<td><p><pre>
-initial-scale=1
-</pre></p>
-
-</td>
+<td><code>initial-scale=1</code></td>
 <td>Sets the initial zoom level when visiting the page.</td>
 </tr>
 </tbody>
