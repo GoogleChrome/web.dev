@@ -16,7 +16,7 @@ Lighthouse CI integrates with Travis, and its performance budget feature ensures
 
 ![Lighthouse CI](./lighthouse-ci.png)
 
-Testing performance on localhost is okay, but it’s different from how sites perform on live servers. To get a realistic picture, it’s best to deploy to a staging server. You can use any hosting service, we’ll be taking [Firebase](https://firebase.google.com/) hosting for a spin.
+Although you can test performance on localhost, your site will often perform differently on live servers. To get a more realistic picture, it’s best to deploy your site to a staging server. You can use any hosting service, and in this guide, we’ll be taking [Firebase](https://firebase.google.com/) hosting for a spin.
 
 ## 1. Setup
 
