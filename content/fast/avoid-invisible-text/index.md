@@ -98,7 +98,7 @@ system font until font is ready. Swaps out font. </td>
 ## Option #2: Wait to use custom fonts until they are loaded
 
 With a bit more work, the same behavior can be implemented to work across all
-browsers. Check out the step-by-step [guide](./codelab-avoid-invisible-text.md) or the [demo](https://glitch.com/~font-observer-demo) for a more detailed
+browsers. Check out the step-by-step [guide](/fast/avoid-invisible-text/codelab-avoid-invisible-text.md) or the [demo](https://glitch.com/~font-observer-demo) for a more detailed
 explanation of the code changes.
 
 There are three parts to this approach:
