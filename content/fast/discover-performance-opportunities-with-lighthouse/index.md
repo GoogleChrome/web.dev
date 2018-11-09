@@ -31,7 +31,7 @@ Run Lighthouse from your [web.dev profile](/measure) page:
 
 1. Review the audits report to identify areas in which your page can be improved.
 
-1. For each audit, you’ll find guidance and immediate steps you can take to improve your scores.
+1. For each audit, you'll find guidance and immediate steps you can take to improve your scores.
 
 ## Run Lighthouse from Chrome DevTools
 
