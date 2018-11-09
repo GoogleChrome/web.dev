@@ -80,6 +80,6 @@ You should see an extremely useful (some say life-changing) app that helps you s
 
 <img src="./assets/network.png" width="400" alt="The network tab in devtools">
 
-_Wowza_. 71.2kB worth of JavaScript just to sort a few numbers. What gives?
+_Wowza_. 71.2 KB worth of JavaScript just to sort a few numbers. What gives?
 
 If you dive into the code in `src/index.js`, you'll notice that we're importing the `lodash` library and using one of its methods to sort our numbers. Lodash is an excellent library that provides many useful utility functions, but we're making a common mistake here. We don't have to import the entire library if we're not using most of it!

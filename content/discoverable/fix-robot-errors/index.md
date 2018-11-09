@@ -23,8 +23,8 @@ robots.txt file can cause two general types of problems:
 ## Measure
 
 Lighthouse displays the following failed audit if there's an issue with your
-robots.txt file:  
-"robots.txt is not valid"  
+robots.txt file:
+"robots.txt is not valid"
 Most Lighthouse audits only apply to the page that you're currently on. However,
 since robots.txt is defined at the host-name level, this audit applies to your
 entire domain or subdomain.
@@ -37,12 +37,12 @@ stop all crawling of the website, which would prevent new content from being
 indexed. To check the HTTP status code, open the robots.txt file in Chrome and
 [check the request in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#analyze).
 
-## Make sure the robots.txt file is smaller than 500KB
+## Make sure the robots.txt file is smaller than 500 KB
 
 Search engines may stop processing robots.txt files when they get too large. If
 a search engine stops processing in the middle of a directive, it's impossible
 to follow that directive properly, and could result in the search engine getting
-needlessly confused. Also, large robots.txt files are a hassle to maintain.  
+needlessly confused. Also, large robots.txt files are a hassle to maintain.
 One way to make a robots.txt file smaller is to focus less on individually
 excluded pages, and more on broader patterns. For example, if you need to block
 crawling of PDF files, don't list these files with individual disallow
@@ -52,7 +52,7 @@ crawling of all URLs containing `.pdf`.
 ## Review the format
 
 Review the format of the robots.txt file. Only empty lines, comments, and
-directives matching the "name: value" format are allowed.   
+directives matching the "name: value" format are allowed.
 Make sure 'allow' and 'disallow' values are either empty or start with `/` or
 `*`. Make sure they don't use '$' in the middle of a value (for example, `allow:
 /file$html`). Here's an example:
@@ -132,7 +132,7 @@ user-agent. For user-agents, crawlers only use the section with the most
 specific user-agent to determine which URLs are disallowed from crawling. For
 example, if you have "user-agent: `*` and `user-agent: magicsearchbot` sections,
 MagicSearchBot won't follow any of the directives in the generic (`user-agent:
-*`) section and will only follow the directive in its own section.  
+*`) section and will only follow the directive in its own section.
 
 ## Make sure there's a value for 'user-agent'
 
@@ -169,7 +169,7 @@ know about the pages on a website. A sitemap file generally includes a list of
 the URLs on your website, together with information about when they were last
 changed. If you choose to refer to submit a sitemap file through the robots.txt
 file, make sure to use a [fully-qualified / absolute
-URL](https://tools.ietf.org/html/rfc3986#page-27). 
+URL](https://tools.ietf.org/html/rfc3986#page-27).
 
 <table>
 <thead>
@@ -194,13 +194,13 @@ See
 for details about exactly how you can configure your meta tags and HTTP headers
 to get more control over how search engines crawl your page. As mentioned in the
 beginning, don't use robots.txt as a way of limiting access to your private
-content.   
+content.
 Keep in mind that robots.txt prevents crawling, and with that, the indexing of
 the content, but URLs can be indexed without any known content. If you need to
 keep URLs from appearing in search (rather than just preventing crawling, or
 preventing indexing of the content on the pages), use the
 ["noindex" robots meta tag](https://developers.google.com/search/reference/robots_meta_tag)
-instead. 
+instead.
 
 ## Remember to keep it simple
 
@@ -209,7 +209,7 @@ humans. Keep things as simple as possible to avoid search engines having to
 guess at the outcome. Take advantage of the various robots.txt testing tools
 available. Put as much of the page-level logic into the pages themselves (using
 authentication or robots meta tags as needed) to help with keeping the
-robots.txt file in an easily understandable size. 
+robots.txt file in an easily understandable size.
 
 ## Verify
 
