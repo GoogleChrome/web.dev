@@ -46,7 +46,7 @@ search engines to understand:
     <tr>
       <td>Links don't have descriptive text</td>
       <td>
-        <a href="add-descriptive-link-text">Add descriptive link text</a>
+        <a href="#add-descriptive-link-text">Add descriptive link text</a>
       </td>
     </tr>
   </tbody>
@@ -81,32 +81,25 @@ example of what the ```<head>``` of each page should include:
 
 Here are some examples of good vs bad titles and descriptions:
 
-<table>
-  <thead>
-    <tr>
-      <th><strong>Good</strong></th>
-      <th><strong>Bad</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        &lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;
-      </td>
-      <td>
-        &lt;title&gt;Donut recipe&lt;/title&gt;
-      </td>
-    </tr>
-    <tr>
-      <td>
-        &lt;meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for."&gt;
-      </td>
-      <td>
-        &lt;meta name="Description" content="Maple bar recipe."&gt;
-      </td>
-    </tr>
-  </tbody>
-</table>
+<p><span class="compare-worse">Not recommended</span> — too vague</p>
+<pre class="prettyprint">
+&lt;title&gt;Donut recipe&lt;/title&gt;
+</pre>
+
+<p><span class="compare-better">Recommended</span> — precise!</p>
+<pre class="prettyprint">
+&lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;
+</pre>
+
+<p><span class="compare-worse">Not recommended</span> — too vague</p>
+<pre class="prettyprint">
+&lt;meta name="Description" content="Maple bar recipe."&gt;
+</pre>
+
+<p><span class="compare-better">Recommended</span> — precise!</p>
+<pre class="prettyprint">
+&lt;meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for."&gt;
+</pre>
 
 Here are some best practices to keep in mind when you're writing descriptions
 and titles:
