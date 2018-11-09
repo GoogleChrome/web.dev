@@ -1,5 +1,5 @@
 ---
-page_type: path
+page_type: guide
 title: Using the CrUX Dashboard on Data Studio
 author: rviscomi
 web_lighthouse: N/A
@@ -12,13 +12,14 @@ wf_blink_components: N/A
 powerful data visualization tool that enables you to build dashboards on top of 
 big data sources, like the Chrome UX Report 
 ([CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/)). 
-In this codelab, learn how to create your own custom CrUX Dashboard to track an 
+In this guide, learn how to create your own custom CrUX Dashboard to track an 
 origin's user experience.
 
 ![CrUX Dashboard](./dash_fcp.png)
 
-The CrUX Dashboard is built with a Data Studio feature called community 
-connector. This connector is a pre-established link between the raw CrUX data on 
+The CrUX Dashboard is built with a Data Studio feature called [Community 
+Connectors](https://developers.google.com/datastudio/connector/). 
+This connector is a pre-established link between the raw CrUX data on 
 [BigQuery](./bigquery.html) and the visualizations of Data Studio. It eliminates 
 the need for users of the dashboard to write any queries or generate any charts. 
 Everything is built for you -- all you need is to provide an origin to look up. 

@@ -27,7 +27,12 @@ Using this data, developers are able to understand the wide distribution of real
 
 ## How to use it
 
-There are three primary ways to extract insights from the Chrome UX Report, ranging in complexity. For quick and easy analysis of website performance, the CrUX Dashboard and PSI are the recommended tools. BigQuery trades some of the simplicity of the analysis for the power of customization and more granular insights.
+There are three primary ways to extract insights from the Chrome UX Report, 
+ranging in complexity. For quick and easy analysis of website performance, the [CrUX Dashboard](http://g.co/chromeuxdash) and 
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) 
+are the recommended tools. [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) 
+trades some of the simplicity of the analysis for the power of customization 
+and more granular insights.
 
 1. The CrUX database on [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report), 
 part of the Google Cloud Platform (GCP) with a web and command line interface, 
@@ -38,7 +43,7 @@ for specific insights. BigQuery requires knowledge of SQL and a GCP project with
 billing enabled to run the queries. This is an especially useful tool for power 
 users who require low-level access to the data to create custom reports, 
 benchmarks, and reports about the state of the web. Try the 
-[BigQuery codelab](./bigquery.html).
+[BigQuery guide](/fast/chrome-ux-report-bigquery).
 
 2. The [CrUX Dashboard](http://g.co/chromeuxdash) is a customizable data 
 visualization tool of websites' historical performance built on 
@@ -48,7 +53,7 @@ handled for you under the hood. The dashboard shows the distribution of user
 experiences, as captured by key performance metrics, and how it changes over 
 time. It also shows how the distributions of qualitative metrics like device 
 type and effective connection type change over time. Try the 
-[Data Studio Dashboard codelab](data_studio_dashboard).
+[Data Studio Dashboard guide](/fast/chrome-ux-report-data-studio-dashboard).
 
 3. [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) 
 (PSI) shows the most recent performance distributions broken down by desktop and 
@@ -59,7 +64,7 @@ as easy as entering a URL or origin in the search box on the web interface, and
 the field performance data is displayed alongside prescriptive suggestions to 
 optimize the page. There is also an API available to programmatically get the 
 performance data. Try the 
-[PageSpeed Insights codelab](pagespeed_insights).
+[PageSpeed Insights guide](/fast/chrome-ux-report-pagespeed-insights).
 
 ## How to get help
 
@@ -77,6 +82,6 @@ can follow to ask questions and listen for product announcements.
 
 In order to get more acquainted with the available data, walk through step-by-step guides for using BigQuery, Data Studio Dashboard, and PageSpeed Insights:
 
-- [CrUX: BigQuery](./bigquery.html)
-- [CrUX: Data Studio Dashboard](./data_studio_dashboard.html)
-- [CrUX: PageSpeed Insights](./pagespeed_insights.html)
+- [CrUX: BigQuery](/fast/chrome-ux-report-bigquery)
+- [CrUX: Data Studio Dashboard](/fast/chrome-ux-report-data-studio-dashboard)
+- [CrUX: PageSpeed Insights](/fast/chrome-ux-report-pagespeed-insights)

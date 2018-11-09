@@ -7,7 +7,7 @@ overview: |
     if you're to get fast and stay fast.
     Performance plays a significant role in the success of any online venture,
     as high performing sites engage and retain users better than poorly performing ones.
-    
+
     Sites should focus on optimizing for user-centric happiness metrics.
     Tools like Lighthouse (baked into web.dev!) highlight these metrics and
     help you take the right steps toward improving your performance.
@@ -29,7 +29,7 @@ topics:
     - use-lazysizes-to-lazyload-images
     - serve-responsive-images
     - serve-images-with-correct-dimensions
-    - serve-images-webp    
+    - serve-images-webp
 - title: Optimize your JavaScript
   guides:
     - reduce-javascript-payloads-with-code-splitting
@@ -41,3 +41,9 @@ topics:
 - title: Optimize Web Fonts
   guides:
     - avoid-invisible-text
+- title: Chrome UX Report
+  guides:
+    - chrome-ux-report
+    - chrome-ux-report-bigquery
+    - chrome-ux-report-data-studio-dashboard
+    - chrome-ux-report-pagespeed-insights

@@ -1,5 +1,5 @@
 ---
-page_type: path
+page_type: guide
 title: Using the Chrome UX Report on PageSpeed Insights
 author: rviscomi
 web_lighthouse: N/A
@@ -14,7 +14,7 @@ and how to improve it. It uses [Lighthouse](https://developers.google.com/web/to
 to audit a given page and identify opportunities to improve performance. It also 
 integrates with the Chrome UX Report ([CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/)) 
 to show how real users experience performance on the page and the origin in 
-aggregate. In this codelab, learn how to use PSI to extract insights from CrUX 
+aggregate. In this guide, learn how to use PSI to extract insights from CrUX 
 and better understand the user experience.
 
 ![Field data from CrUX in PageSpeed Insights](psi.png)

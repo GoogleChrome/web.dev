@@ -1,5 +1,5 @@
 ---
-page_type: path
+page_type: guide
 title: Using the Chrome UX Report on BigQuery
 author: rviscomi
 web_lighthouse: N/A
@@ -16,7 +16,7 @@ database on the Google Cloud Platform (GCP). Using BigQuery requires a
 [GCP project](https://developers.google.com/web/tools/chrome-user-experience-report/getting-started#getting-started) 
 and basic knowledge of SQL.
 
-In this codelab, learn how to use BigQuery to write queries against the CrUX 
+In this guide, learn how to use BigQuery to write queries against the CrUX 
 dataset to extract insightful results about the state of user experiences on 
 the web:
 
