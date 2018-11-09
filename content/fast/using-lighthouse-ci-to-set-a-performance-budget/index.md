@@ -10,7 +10,7 @@ wf_blink_components: N/A
 
 You’ve done hard work to get fast so let’s make sure you stay fast! Let’s automate performance testing with [Lighthouse CI](https://github.com/ebidel/lighthouse-ci). 
 
-Lighthouse grades your app in 5 categories and one of those is performance. You could try to remember to do this with [DevTools](https://developers.google.com/web/tools/lighthouse/#devtools) or [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) every time you make some code changes, but you don’t have to do that. You can shift that mental load to tools which do the tedious stuff for you. [Travis CI](https://travis-ci.com/) is a great service for that, it automatically runs tests for your app up in the cloud every time you push new code. 
+Lighthouse grades your app in 5 categories, and one of those is performance. While you could try to remember to monitor performance changes with [DevTools](https://developers.google.com/web/tools/lighthouse/#devtools) or [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) every time you edit your code, you don’t have to do that. Tools can do the tedious stuff for you. [Travis CI](https://travis-ci.com/) is a great service that automatically runs tests for your app in the cloud every time you push new code. 
 
 Lighthouse CI integrates with Travis and by enabling its performance budget feature, you’ll be safe knowing that you won’t accidentally downgrade performance without noticing. If the scores for a pull request fall below the threshold you’ve set (e.g. < 80/100), **Lighthouse CI will prevent that pull request from being merged**.
 
