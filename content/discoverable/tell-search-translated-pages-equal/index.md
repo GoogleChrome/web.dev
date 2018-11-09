@@ -43,42 +43,54 @@ to implement or maintain for your website:
 </thead>
 <tbody>
 <tr>
-<td>Add link elements to the head of your page</td>
-<td><p>
-<pre>
-&lt;link rel="alternate" hreflang="en" href="https://donut-be-hangry.com/recipes/maple-bar-recipe" />
-&lt;link rel="alternate" hreflang="es" href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
-&lt;link rel="alternate" hreflang="de" href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
-</pre></p>
+<td>Add the hreflang element for each language</td>
+<td>
+    
+    &lt;link rel="alternate" hreflang="en" 
+    href="https://donut-be-hangry.com/recipes/maple-bar-recipe" />
+    
+    &lt;link rel="alternate" hreflang="es" 
+    href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
+    
+    &lt;link rel="alternate" hreflang="de" 
+    href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
 
 </td>
 </tr>
 <tr>
 <td>Add Link headers to your HTTP response</td>
-<td><p><pre>
-Link: <https://donut-be-hangry.com/recipes/maple-bar-recipe>; rel="alternate"; hreflang="en", <https://es.donut-be-hangry.com/recipes/maple-bar-recipe>;
-rel="alternate"; hreflang="es", <https://de.donut-be-hangry.com/recipes/maple-bar-recipe>; rel="alternate"; hreflang="de"
-</pre></p>
-
+<td>
+<pre class="prettyprint devsite-disable-click-to-copy">    
+    Link: 
+    <https://donut-be-hangry.com/recipes/maple-bar-recipe>; 
+    rel="alternate"; hreflang="en", 
+    
+    <https://es.donut-be-hangry.com/recipes/maple-bar-recipe>;
+    rel="alternate"; hreflang="es", 
+    
+    <https://de.donut-be-hangry.com/recipes/maple-bar-recipe>; 
+    rel="alternate"; hreflang="de"
+</pre>
 </td>
 </tr>
 <tr>
 <td>Add language version information to your sitemap. For more information, see
-Google's<a
-href="https://support.google.com/webmasters/answer/189077?hl=en">
+Google's <a href="https://support.google.com/webmasters/answer/189077">
 documentation for localized pages</a>.</td>
-<td><url><br>
- 
-<loc><code>https://donut-be-hangry.com/recipes/maple-bar-recipe</code></loc><br>
-
- <code><xhtml:link rel="alternate" hreflang="<em>de</em>"
-href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe"
-/></code><br>
- <code><xhtml:link rel="alternate" hreflang="<em>es</em>"
-href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe"
-/></code><br>
-<br>
-</url></td>
+<td>
+ <pre class="prettyprint devsite-disable-click-to-copy">   
+    <url>
+    <loc>https://donut-be-hangry.com/recipes/maple-bar-recipe</loc>
+    
+    <xhtml:link rel="alternate" hreflang="de"
+    href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe"/>
+    
+    <xhtml:link rel="alternate" hreflang="es"
+    href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe"/>
+    
+    </url>
+</pre>
+</td>
 </tr>
 </tbody>
 </table>
@@ -97,15 +109,16 @@ Here's a simple example of hreflang tags in HTML:
 <html lang="en">
   <head>
     <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
-</pre></p>
-
-<br>
-        <code><link rel="alternate" hreflang="en"
-href="https://donut-be-hangry.com/recipes/maple-bar-recipe" /></code><br>
-<p><pre>
-    <link rel="alternate" hreflang="es" href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
-    <link rel="alternate" hreflang="de" href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
+    <meta name="Description" content="Mary's maple bar
+    recipe is simple and sweet, with just a touch of
+    serendipity. Topped with bacon, this sticky donut
+    is to die for.">
+    <link rel="alternate" hreflang="en" 
+    href="https://donut-be-hangry.com/recipes/maple-bar-recipe"/>
+    <link rel="alternate" hreflang="es" 
+    href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
+    <link rel="alternate" hreflang="de" 
+    href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
