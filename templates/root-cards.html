@@ -1,11 +1,9 @@
 {{#each paths}}
 <div class="card card--{{id}}">
-  {{#if config.disabled}}
   <div class="card__header card__header--colored">
-    <span class="card__progress">Coming Soon</span>
   </div>
-  {{/if}}
   <div class="card__header card__header--colored card__header--{{id}}">
+    {{#if config.disabled}}<span class="card__progress">Coming Soon</span>{{/if}}
   </div>
   <div class="card__content">
     <p class="card__title">{{config.title}}</p>
