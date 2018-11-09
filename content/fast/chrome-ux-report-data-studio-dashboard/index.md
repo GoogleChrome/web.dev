@@ -15,7 +15,7 @@ big data sources, like the Chrome UX Report
 In this guide, learn how to create your own custom CrUX Dashboard to track an 
 origin's user experience.
 
-![CrUX Dashboard](./dash_fcp.png)
+<img class="screenshot" src="./dash_fcp.png" alt="CrUX Dashboard">
 
 The CrUX Dashboard is built with a Data Studio feature called [Community 
 Connectors](https://developers.google.com/datastudio/connector/). 
@@ -61,7 +61,7 @@ performance for each supported metric (e.g., first contentful paint), and of
 course the name of the origin. There's nothing you need to do or change on this 
 page, just click "Create Report" to continue.
 
-![CrUX Data Studio schema](./dash_schema.png)
+<img class="screenshot" src="./dash_schema.png" alt="CrUX Data Studio schema">
 
 ## Using the dashboard
 
