@@ -84,14 +84,14 @@ Here are some examples of good vs bad titles and descriptions:
 <p><span class="compare-worse">Not recommended</span> — too vague</p>
 <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;title&gt;Donut recipe&lt;/title&gt;
-&lt;meta name="Description" content="A donut recipe."&gt;
+&lt;meta name="description" content="A donut recipe."&gt;
 </pre>
 
 <p><span class="compare-better">Recommended</span> — precise!</p>
 <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;
 &lt;meta
-  name="Description"
+  name="description"
   content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for."&gt;
 </pre>
 
