@@ -24,31 +24,35 @@ Lighthouse displays failed audits, like the ones below, if your content is diffi
 search engines to understand:
 
 <table>
-<thead>
-<tr>
-<th><strong>Failed audit</strong></th>
-<th><strong>How to fix it</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Document does not have a meta description</td>
-<td><a href="#add-tags">Add tags to the head of the
-page</a></td>
-</tr>
-<tr>
-<td>Document does not have a title element</td>
-<td><a href="#add-tags">Add tags to the head of the
-page</a></td>
-</tr>
-<tr>
-<td>Links don't have descriptive text</td>
-<td><a href="#add-links">Add descriptive link text</a></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th><strong>Failed audit</strong></th>
+      <th><strong>How to fix it</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Document does not have a meta description</td>
+      <td>
+        <a href="#add-tags-to-the-head-of-the-page">Add tags to the head of the page</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Document does not have a title element</td>
+      <td>
+        <a href="#add-tags-to-the-head-of-the-page">Add tags to the head of the page</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Links don't have descriptive text</td>
+      <td>
+        <a href="add-descriptive-link-text">Add descriptive link text</a>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-## <a name="add-tags"></a>Add tags to the head of the page
+## Add tags to the head of the page
 
 Add a meta description and title for every page on your site. Here's a full
 example of what the ```<head>``` of each page should include:
@@ -70,16 +74,7 @@ example of what the ```<head>``` of each page should include:
     <script src="/script.js" defer></script>
 </head>
 <body>
-    <h1>Hi there!</h1>   
-     <p>
-        I'm your cool new webpage. Made with
-        <a href="https://glitch.com">Glitch</a>!
-    </p>
-    <!-- include the Glitch button to show what the webpage is about
-    and to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;">
-    </div>
-    <script src="https://button.glitch.me/button.js"></script>
+  ...
 </body>
 </html>
 ```
@@ -87,43 +82,30 @@ example of what the ```<head>``` of each page should include:
 Here are some examples of good vs bad titles and descriptions:
 
 <table>
-<thead>
-<tr>
-<th><strong>Good</strong></th>
-<th><strong>Bad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-    
-    <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    
-</td>
-<td>
-    
-    <title>Donut recipe</title>
-
-</td>
-</tr>
-<tr>
-<td>
-    
-    <meta name="Description" 
-    content="Mary's maple bar recipe is simple
-    and sweet, with just a touch of serendipity.
-    Topped with bacon, this sticky donut is to
-    die for.">
-
-</td>
-<td>
-    
-    <meta name="Description" 
-    content="Maple bar recipe.">
-
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th><strong>Good</strong></th>
+      <th><strong>Bad</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        &lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;
+      </td>
+      <td>
+        &lt;title&gt;Donut recipe&lt;/title&gt;
+      </td>
+    </tr>
+    <tr>
+      <td>
+        &lt;meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for."&gt;
+      </td>
+      <td>
+        &lt;meta name="Description" content="Maple bar recipe."&gt;
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 Here are some best practices to keep in mind when you're writing descriptions
@@ -146,7 +128,7 @@ and
 [Create good meta descriptions](https://support.google.com/webmasters/answer/35624#1)
 for more tips.
 
-## <a name="add-links"></a>Add descriptive link text
+## Add descriptive link text
 
 Replace generic descriptions, such as "click here" and "learn more" with
 specific descriptions. You'll need to read the context of the page and write
@@ -154,33 +136,22 @@ relevant text that makes sense with the rest of the content. Here's an example
 of good vs bad link descriptions:
 
 <table>
-<thead>
-<tr>
-<th><strong>Good</strong></th>
-<th><strong>Bad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-    <p>
-    Get cooking and learn how to
-    <a href="https://donut-be-crazy.com/recipes/maple-bar-recipe">make
-    a delicious maple bar with Mary</a>!
-    </p>
-
-</td>
-<td>
-    
-    <p>
-    Get cooking and learn how to make a maple bar
-    <a href="https://donut-be-crazy.com/recipes/maple-bar-recipe">here</a>.
-    </p>
-    
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th><strong>Good</strong></th>
+      <th><strong>Bad</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        &lt;p&gt;Get cooking and learn how to &lt;a href="https://donut-be-crazy.com/recipes/maple-bar-recipe"&gt;make a delicious maple bar with Mary&lt;/a&gt;!&lt;/p&gt;
+      </td>
+      <td>
+        &lt;p&gt;Get cooking and learn how to make a maple bar &lt;a href="https://donut-be-crazy.com/recipes/maple-bar-recipe"&gt;here&lt;/a&gt;.&lt;/p&gt;
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 Here are some best practices to keep in mind when you're writing descriptive
