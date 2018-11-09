@@ -90,7 +90,9 @@ Here are some examples of good vs bad titles and descriptions:
 <p><span class="compare-better">Recommended</span> — precise!</p>
 <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;
-&lt;meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for."&gt;
+&lt;meta
+  name="Description"
+  content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for."&gt;
 </pre>
 
 Here are some best practices to keep in mind when you're writing descriptions
@@ -122,12 +124,18 @@ of good vs bad link descriptions:
 
 <p><span class="compare-worse">Not recommended</span> — too vague</p>
 <pre class="prettyprint devsite-disable-click-to-copy">
-&lt;p&gt;Get cooking and learn how to make a maple bar &lt;a href="https://donut-be-crazy.com/recipes/maple-bar-recipe"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+  Get cooking and learn how to make a maple bar
+  &lt;a href=&quot;https://donut-be-crazy.com/recipes/maple-bar-recipe&quot;&gt;here&lt;/a&gt;.
+&lt;/p&gt;
 </pre>
 
 <p><span class="compare-better">Recommended</span> — precise!</p>
 <pre class="prettyprint devsite-disable-click-to-copy">
-&lt;p&gt;Get cooking and learn how to &lt;a href="https://donut-be-crazy.com/recipes/maple-bar-recipe"&gt;make a delicious maple bar with Mary&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;
+  Get cooking and learn how to
+  &lt;a href=&quot;https://donut-be-crazy.com/recipes/maple-bar-recipe&quot;&gt;make a delicious maple bar with Mary&lt;/a&gt;!
+&lt;/p&gt;
 </pre>
 
 Here are some best practices to keep in mind when you're writing descriptive
