@@ -54,7 +54,9 @@
     <ul class="guides">
   {{#each guides}}
   <li>
-    <div class="marker" aria-hidden="true"></div>
+    <web-progress-mark guide="{{id}}">
+      <div class="marker" aria-hidden="true"></div>
+    </web-progress-mark>
     <a href="{{href}}">
       {{title}}
     </a>
