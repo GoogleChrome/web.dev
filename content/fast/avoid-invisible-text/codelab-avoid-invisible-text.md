@@ -11,11 +11,11 @@ This code lab shows you how to display text immediately using [Font Face Observe
 
 [Font Face Observer](https://github.com/bramstein/fontfaceobserver) is a script
 that detects when a font loads. The
-[fontfaceobserver.js](https://github.com/bramstein/fontfaceobserver/blob/master/fontfaceobserver.js)
-file has been added to this project for you, so you don't need to add it
-separately. But you do need to add a link to that file in your main page.
+[`fontfaceobserver.js`](https://github.com/bramstein/fontfaceobserver/blob/master/fontfaceobserver.js)
+file has already been saved to the project directory, so you don't need to add it
+separately. However, you do need to add a script tag for it.
 
-- Add a script tag for `fontfaceobserver.js` to the body of your `index.html`:
+- Add a script tag for `fontfaceobserver.js` to `index.html`:
  
 ```html
 <script src="fontfaceobserver.js" type="text/javascript"></script>
@@ -38,7 +38,7 @@ observers for the "Pacifico" and "Roboto" font families:
 ```
 
 If you're ever unsure what font face observers you need to create, just look for
-the `font-family` declarations in your CSS. Pass the `font-family` name to
+the `font-family` declarations in your CSS. Pass the `font-family` name of these declarations to
 `FontFaceObserver()`. There is no need to create a font observer for
 [fallback fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#%3Cgeneric-name%3E).
 
@@ -69,7 +69,7 @@ just declared:
     });
 ```
 
-#### ✔️Checkin
+#### ✔️Check-in
 
 Your script should now look like this:
 
@@ -87,12 +87,12 @@ Your script should now look like this:
 </script>
 ```
 
-### Apply ‘fonts-loaded' class
+### Apply `fonts-loaded` class
 
 - Replace the `/* Do things */` comment in the script with this line:
 
 ```
-    document.documentElement.className += " fonts-loaded";
+document.documentElement.className += " fonts-loaded";
 ```
 
 This adds the `fonts-loaded` class to the document's root element (i.e. the <html> tag) once both fonts have loaded.
@@ -101,7 +101,7 @@ This adds the `fonts-loaded` class to the document's root element (i.e. the <htm
 `fonts-loaded` from being appended to another class. If it wasn't there you
 could end up with a class like `your-existing-classfonts-loaded`.)
 
-#### ✔️Checkin
+#### ✔️Check-in
 
 Your completed script should look like this:
 
