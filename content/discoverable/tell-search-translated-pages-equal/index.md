@@ -60,7 +60,7 @@ to implement or maintain for your website:
 <tr>
 <td>Add Link headers to your HTTP response</td>
 <td>
-    
+<pre class="prettyprint devsite-disable-click-to-copy">    
     Link: 
     <https://donut-be-hangry.com/recipes/maple-bar-recipe>; 
     rel="alternate"; hreflang="en", 
@@ -70,7 +70,7 @@ to implement or maintain for your website:
     
     <https://de.donut-be-hangry.com/recipes/maple-bar-recipe>; 
     rel="alternate"; hreflang="de"
-
+</pre>
 </td>
 </tr>
 <tr>
@@ -78,7 +78,7 @@ to implement or maintain for your website:
 Google's <a href="https://support.google.com/webmasters/answer/189077">
 documentation for localized pages</a>.</td>
 <td>
-    
+ <pre class="prettyprint devsite-disable-click-to-copy">   
     <url>
     <loc>https://donut-be-hangry.com/recipes/maple-bar-recipe</loc>
     
@@ -89,6 +89,7 @@ documentation for localized pages</a>.</td>
     href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe"/>
     
     </url>
+</pre>
 </td>
 </tr>
 </tbody>
