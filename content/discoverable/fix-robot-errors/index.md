@@ -23,8 +23,8 @@ robots.txt file can cause two general types of problems:
 ## Measure
 
 Lighthouse displays the following failed audit if there's an issue with your
-robots.txt file:  
-"robots.txt is not valid"  
+robots.txt file: "robots.txt is not valid"
+
 Most Lighthouse audits only apply to the page that you're currently on. However,
 since robots.txt is defined at the host-name level, this audit applies to your
 entire domain or subdomain.
@@ -52,79 +52,61 @@ crawling of all URLs containing `.pdf`.
 ## Review the format
 
 Review the format of the robots.txt file. Only empty lines, comments, and
-directives matching the "name: value" format are allowed.   
+directives matching the "name: value" format are allowed.
+
 Make sure 'allow' and 'disallow' values are either empty or start with `/` or
-`*`. Make sure they don't use '$' in the middle of a value (for example, `allow:
+`*`. Make sure they don't use `$` in the middle of a value (for example, `allow:
 /file$html`). Here's an example:
 
-<table>
-<thead>
-<tr>
-<th><strong>Do this</strong></th>
-<th><strong>Not this</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user-agent: *<br>
-disallow: /downloads/</td>
-<td>user-agent: *<br>
-<br>
-# missing "/"<br>
-disallow: downloads<br>
-<br>
-# incorrect directive name<br>
-dis-allow downloads<br>
-<br>
-# invalid character in the value provided<br>
-disallow: /OffersFor$5</td>
-</tr>
-</tbody>
-</table>
+<p><span class="compare-better">Do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+user-agent: *
+disallow: /downloads/
+</pre>
+
+<p><span class="compare-worse">Don't do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+user-agent: *   
+# missing "/"
+disallow: downloads
+
+# incorrect directive name
+dis-allow downloads
+
+# invalid character in the value provided
+disallow: /OffersFor$5
+</pre>
 
 Use comments in the robots.txt file to explain what you're trying to allow or
 disallow. While robots.txt directives look simple, in combination they can be
 surprisingly complex. Here's an example of how to use comments in a robots.txt
 file:
+```
+    user-agent: *
 
-<table>
-<thead>
-<tr>
-<th>user-agent: *<br>
-<br>
-# block crawling of all download URLs<br>
-disallow: /downloads/<br>
-<br>
-# allow crawling of our whitepaper as per marketing team's request<br>
-allow: /downloads/whitepaper.pdf</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+    # block crawling of all download URLs
+    disallow: /downloads/
 
+    # allow crawling of our whitepaper as per marketing team's request
+    allow: /downloads/whitepaper.pdf
+```    
 ## Make sure there are no 'allow' or 'disallow' directives before 'user-agent'
 
-<table>
-<thead>
-<tr>
-<th><strong>Do this</strong></th>
-<th><strong>Not this</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td># start of file<br>
-user-agent: *<br>
-disallow: /downloads/</td>
-<td># start of file<br>
-disallow: /downloads/<br>
-<br>
-user-agent: magicsearchbot<br>
-allow: /</td>
-</tr>
-</tbody>
-</table>
+<p><span class="compare-better">Do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+# start of file
+user-agent: *
+disallow: /downloads/
+</pre>  
+
+<p><span class="compare-worse">Don't do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+# start of file
+disallow: /downloads/
+
+user-agent: magicsearchbot
+allow: /
+</pre>
 
 All allow and disallow directives must apply to specific user-agents (also known
 as crawlers), so they are only valid if they're in a section for a given
@@ -142,25 +124,20 @@ unmatched crawlers. Search engines will generally publish the user-agent names
 that they use; for example, here's
 [Google's list of user-agents used for crawling](https://support.google.com/webmasters/answer/1061943).
 
-<table>
-<thead>
-<tr>
-<th><strong>Do this</strong></th>
-<th><strong>Not this</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user-agent: *<br>
-disallow: /downloads/<br>
-<br>
-user-agent: magicsearchbot<br>
-disallow: /uploads/</td>
-<td>user-agent:<br>
-disallow: /downloads/</td>
-</tr>
-</tbody>
-</table>
+<p><span class="compare-better">Do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+user-agent: *
+disallow: /downloads/
+
+user-agent: magicsearchbot
+disallow: /uploads/
+</pre>  
+
+<p><span class="compare-worse">Don't do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">
+user-agent:
+disallow: /downloads/
+</pre>
 
 ## Provide an absolute URL for 'sitemap' with http/https/ftp scheme
 
@@ -171,21 +148,11 @@ changed. If you choose to refer to submit a sitemap file through the robots.txt
 file, make sure to use a [fully-qualified / absolute
 URL](https://tools.ietf.org/html/rfc3986#page-27). 
 
-<table>
-<thead>
-<tr>
-<th><strong>Do this</strong></th>
-<th><strong>Not this</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>sitemap: <a
-href="https://example.com/sitemap-file.xml">https://example.com/sitemap-file.xml</a></td>
-<td>sitemap: /sitemap-file.xml</td>
-</tr>
-</tbody>
-</table>
+<p><span class="compare-better">Do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">sitemap: https://example.com/sitemap-file.xml</pre>  
+
+<p><span class="compare-worse">Don't do this</span></p>
+<pre class="prettyprint devsite-disable-click-to-copy">sitemap: /sitemap-file.xml</pre>
 
 ## Add additional control (optional step)
 
@@ -195,6 +162,7 @@ for details about exactly how you can configure your meta tags and HTTP headers
 to get more control over how search engines crawl your page. As mentioned in the
 beginning, don't use robots.txt as a way of limiting access to your private
 content.   
+
 Keep in mind that robots.txt prevents crawling, and with that, the indexing of
 the content, but URLs can be indexed without any known content. If you need to
 keep URLs from appearing in search (rather than just preventing crawling, or
