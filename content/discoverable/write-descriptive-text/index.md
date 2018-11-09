@@ -33,31 +33,34 @@ search engines to understand:
 <tbody>
 <tr>
 <td>Document does not have a meta description</td>
-<td><a href="#heading=h.bibhbabq2c0g">Add tags to the head of the
+<td><a href="#add-tags">Add tags to the head of the
 page</a></td>
 </tr>
 <tr>
 <td>Document does not have a title element</td>
-<td></td>
+<td><a href="#add-tags">Add tags to the head of the
+page</a></td>
 </tr>
 <tr>
 <td>Links don't have descriptive text</td>
-<td><a href="#heading=h.ttumb1mttv00">Add descriptive link text</a></td>
+<td><a href="#add-links">Add descriptive link text</a></td>
 </tr>
 </tbody>
 </table>
 
-## Add tags to the head of the page
+## <a name="add-tags"></a>Add tags to the head of the page
 
 Add a meta description and title for every page on your site. Here's a full
-example of what the < head > of each page should include:
+example of what the ```<head>``` of each page should include:
 
 ```
 <!doctype html>
 <html lang="en">
 <head>
     <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
+    <meta name="Description" content="Mary's maple bar recipe is simple
+    and sweet, with just a touch of serendipity. Topped with bacon,
+    this sticky donut is to die for.">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,11 +72,13 @@ example of what the < head > of each page should include:
 <body>
     <h1>Hi there!</h1>   
      <p>
-        I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
+        I'm your cool new webpage. Made with
+        <a href="https://glitch.com">Glitch</a>!
     </p>
-    <!-- include the Glitch button to show what the webpage is about and
-    to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <!-- include the Glitch button to show what the webpage is about
+    and to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;">
+    </div>
     <script src="https://button.glitch.me/button.js"></script>
 </body>
 </html>
@@ -90,26 +95,31 @@ Here are some examples of good vs bad titles and descriptions:
 </thead>
 <tbody>
 <tr>
-<td><p><pre>
-<title>Mary's Maple Bar Fast-Baking Recipe</title>
-</pre></p>
-
+<td>
+    
+    <title>Mary's Maple Bar Fast-Baking Recipe</title>
+    
 </td>
-<td><p><pre>
-<title>Donut recipe</title>
-</pre></p>
+<td>
+    
+    <title>Donut recipe</title>
 
 </td>
 </tr>
 <tr>
-<td><p><pre>
-<meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
-</pre></p>
+<td>
+    
+    <meta name="Description" 
+    content="Mary's maple bar recipe is simple
+    and sweet, with just a touch of serendipity.
+    Topped with bacon, this sticky donut is to
+    die for.">
 
 </td>
-<td><p><pre>
-<meta name="Description" content="Maple bar recipe.">
-</pre></p>
+<td>
+    
+    <meta name="Description" 
+    content="Maple bar recipe.">
 
 </td>
 </tr>
@@ -119,13 +129,13 @@ Here are some examples of good vs bad titles and descriptions:
 Here are some best practices to keep in mind when you're writing descriptions
 and titles:
 
-+  Make them **descriptive and concise.** Avoid vague titles like "Home" and
++  Make them descriptive and concise. Avoid vague titles like "Home" and
     link text like "click here".
-+  Avoid [**keyword
-    stuffing**](https://support.google.com/webmasters/answer/66358). Cramming
++  Avoid [keyword
+    stuffing](https://support.google.com/webmasters/answer/66358). Cramming
     your content with keywords isn't helpful to users, and search engines may
     mark the page as spam.
-+  **Avoid repeated or boilerplate titles and descriptions** for each page. If you
++  Avoid repeated or boilerplate titles and descriptions for each page. If you
     have a big site, use the
     [HTML Improvements Report](https://support.google.com/webmasters/answer/80407)
     to crawl the site and discover any page that's missing a title.
@@ -136,7 +146,7 @@ and
 [Create good meta descriptions](https://support.google.com/webmasters/answer/35624#1)
 for more tips.
 
-## Add descriptive link text
+## <a name="add-links"></a>Add descriptive link text
 
 Replace generic descriptions, such as "click here" and "learn more" with
 specific descriptions. You'll need to read the context of the page and write
@@ -152,15 +162,22 @@ of good vs bad link descriptions:
 </thead>
 <tbody>
 <tr>
-<td><p><pre>
-<p>Get cooking and learn how to <a href="https://donut-be-crazy.com/recipes/maple-bar-recipe">make a delicious maple bar with Mary</a>!</p>
-</pre></p>
+<td>
+
+    <p>
+    Get cooking and learn how to
+    <a href="https://donut-be-crazy.com/recipes/maple-bar-recipe">make
+    a delicious maple bar with Mary</a>!
+    </p>
 
 </td>
-<td><p><pre>
-<p>Get cooking and learn how to make a maple bar <a href="https://donut-be-crazy.com/recipes/maple-bar-recipe">here</a></p>.
-</pre></p>
-
+<td>
+    
+    <p>
+    Get cooking and learn how to make a maple bar
+    <a href="https://donut-be-crazy.com/recipes/maple-bar-recipe">here</a>.
+    </p>
+    
 </td>
 </tr>
 </tbody>
@@ -173,12 +190,12 @@ link text:
 +  Don't use the page's URL as the link description, unless you have a good
     reason to do so, such as referencing a site's new address.
 +  Keep descriptions concise. Aim for a few words or a short phrase.
-+  Format links so that they're easy to spot.
++  Format links so that users can easily spot them.
 +  Pay attention to your internal links, too. Improving the quality of
     internal links can help users and search engines navigate your site.
 
 See
-[Use links wisely](https://support.google.com/webmasters/answer/7451184#optimize)
+[Use links wisely](https://support.google.com/webmasters/answer/7451184#uselinkswisely)
 for more tips.
 
 ## Verify
@@ -189,3 +206,4 @@ results of the following audits:
 +  Document does not have a meta description
 +  Document does not have a title element
 +  Links don't have descriptive text
+If you fixed the issue(s), the audits display in the "passed audits" section of the report.
