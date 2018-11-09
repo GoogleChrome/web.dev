@@ -120,7 +120,11 @@
   {{/if}}
   </div>
 
-  <a href="{{path.href}}" class="go-back cta-next-guide__go-back">
+  <a class="go-back cta-next-guide__go-back gc-analytics-event"
+      data-category="web.dev"
+      data-label="guide, go back"
+      data-action="click"
+      href="{{path.href}}">
     Return to all guides
   </a>
 </div>
