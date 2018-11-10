@@ -96,7 +96,7 @@ Click on your repo under Settings in Travis to see your project's Travis dashboa
 
 ## 4. Automate Firebase deployment with Travis 
 
-In Step 2 we’ve logged in our Firebase account and deployed the app from CLI with firebase deploy. In order for Travis to deploy our app to Firebase, we have to authorize it somehow. How do we do that? With a Firebase token 🗝️🔥
+In Step 2, we logged into our Firebase account and deployed our app from the command line with `firebase deploy`. In order for Travis to deploy our app to Firebase, we have to authorize it. How do we do that? With a Firebase token. 🗝️🔥
 
 ### Authorize Firebase
 
