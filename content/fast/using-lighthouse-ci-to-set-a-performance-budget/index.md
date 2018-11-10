@@ -135,7 +135,7 @@ On GitHub, go to your project’s settings and **add lighthousebot as your colla
 
 ![Lighthouse bot collaborator status](./lighthouse-bot-collaborator.png)
 
-In the meantime, you also need to add another key to your projects environment variables on Travis. [Leave your email here](https://docs.google.com/forms/d/e/1FAIpQLSdIc3QNIMn7bBMgl2cfxmmo6wGBlUpdLGxjB_ml464t9eCg_A/viewform) and the Lighthouse CI key will be delivered to your inbox. 📬
+Approving these requests is a manual process so they don't always happen instantly.  Before you start testing, make sure lighthousebot has approved its collaborator status. In the meantime, you also need to add another key to your project's environment variables on Travis. [Leave your email here](https://docs.google.com/forms/d/e/1FAIpQLSdIc3QNIMn7bBMgl2cfxmmo6wGBlUpdLGxjB_ml464t9eCg_A/viewform), and the Lighthouse CI key will be delivered to your inbox. 📬
 
 On Travis, add this key as an environment variable and name it LIGHTHOUSE_KEY.
 
