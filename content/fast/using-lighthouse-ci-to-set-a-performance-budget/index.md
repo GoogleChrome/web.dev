@@ -111,7 +111,7 @@ In your project's Travis dashboard, go to More options > Settings > Environment 
 Paste the token in the value field, name the variable FIREBASE_TOKEN and add it.
 
 ![Travis environment variables](./travis-environment-variables.png)
-
+Paste the token in the value field, name the variable FIREBASE_TOKEN, and add it.
 ### Add deployment to your Travis setup
 
 We just need this one line to tell Travis to deploy our app after every successful build. Add it to the end of your .travis.yml. 🔚
