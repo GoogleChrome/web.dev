@@ -1,5 +1,5 @@
 ---
-title: Replace animated GIFs with video
+title: Replace GIFs with video
 author: robdodson
 page_type: glitch
 glitch: gif-to-video
@@ -80,17 +80,17 @@ cat-herd.gif and convert it to a video called cat-herd.mp4. This should take a
 second to run. When the command finishes, you should be able to type `ls` again
 and see two files:
 
-```shell
+<pre class="prettyprint devsite-disable-click-to-copy">
 $ ls  
 cat-herd.gif  cat-herd.mp4
-```
+</pre>
 
 ## Create WebM videos
 
 While MP4 has been around since 1999, WebM is a relative newcomer having been
 initially released in 2010. WebM videos can be much smaller than MP4 videos, so
-it makes sense to generate both. Thankfully the <video> element will let you add
-multiple sources, so if a browser doesn't support WebM, it can fallback to
+it makes sense to generate both. Thankfully the `<video>` element will let you
+add multiple sources, so if a browser doesn't support WebM, it can fallback to
 MP4.
 
 - In the console, run:
@@ -107,13 +107,13 @@ ls -lh
 
 You should have one GIF, and two videos:
 
-```shell
+<pre class="prettyprint devsite-disable-click-to-copy">
 $ ls -lh
 total 4.5M
 -rw-r--r-- 1 app app 3.7M May 26 00:02 cat-herd.gif  
 -rw-r--r-- 1 app app 551K May 31 17:45 cat-herd.mp4  
 -rw-r--r-- 1 app app 341K May 31 17:44 cat-herd.webm
-```
+</pre>
 
 Notice that the original GIF is 3.7M, whereas the MP4 version is 551K, and the
 WebM version is only 341K. That's a huge savings!
@@ -130,9 +130,9 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 
 - In the `index.html` file, replace the line with the `<img>` with:
 
-<pre class="prettyprint">
-&lt;img src=&quot;/images/cat-herd.gif&quot; alt=&quot;Cowboys herding cats.&quot;&gt;
-&lt;video autoplay loop muted playsinline&gt;&lt;/video&gt;
+<pre class="prettyprint devsite-disable-click-to-copy">
+<s>&lt;img src=&quot;/images/cat-herd.gif&quot; alt=&quot;Cowboys herding cats.&quot;&gt;</s>
+<strong>&lt;video autoplay loop muted playsinline&gt;&lt;/video&gt;</strong>
 </pre>
 
 A `<video>` element using these attributes will play automatically, loop
@@ -149,8 +149,8 @@ Update the `<video>` with `<source>` elements that link to your cat-herd videos:
 <pre class="prettyprint">
 &lt;video autoplay loop muted playsinline&gt;
   <strong>&lt;source src=&quot;/images/cat-herd.webm&quot; type=&quot;video/webm&quot;&gt;</strong>
-  <strong>&lt;source src=&quot;/images/cat-herd.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</strong>
+  <strong>&lt;source src=&quot;/images/cat-herd.mp4&quot; type=&quot;video/mp4&quot;&gt;</strong>
+&lt;/video&gt;
 </pre>
 
 <div class="aside note">
