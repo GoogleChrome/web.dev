@@ -108,7 +108,6 @@ It will open a new tab in a browser window so that Firebase can verify you. Afte
 
 In your project's Travis dashboard, go to More options > Settings > Environment variables. 
 
-Paste the token in the value field, name the variable FIREBASE_TOKEN and add it.
 
 ![Travis environment variables](./travis-environment-variables.png)
 Paste the token in the value field, name the variable FIREBASE_TOKEN, and add it.
