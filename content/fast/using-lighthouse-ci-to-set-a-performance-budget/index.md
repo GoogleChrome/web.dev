@@ -173,7 +173,7 @@ after_success:
 
 It will run a Lighthouse audit on the given URL, so replace https://staging.example.com with the URL of your app (that’s your-app-123.firebaseapp.com).
 
-We’ve set our standards high and won’t accept any changes to the app that bring the performance score lower than 95. Let’s tweak our setup to include that.
+We’ve set our standards high and won’t accept any changes to the app that bring the performance score lower than 95. Let’s tweak our setup to include that:
 
 <pre class="prettyprint">
 - npm run lh -- --perf=95 https://staging.example.com 
