@@ -131,7 +131,7 @@ Now whenever you make new changes to your app, they will be automatically deploy
 
 Lighthouse CI has its very own friendly bot that updates you on your app’s Lighthouse scores. It just needs an invitation to your repo. 
 
-On GitHub, go to your project’s settings and **add lighthousebot as your collaborator** (Settings>Collaborators). Approving these requests is a manual process, it doesn’t always happen instantly so make sure lighthousebot has the collaborator status before you start testing.
+On GitHub, go to your project’s settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
 
 ![Lighthouse bot collaborator status](./lighthouse-bot-collaborator.png)
 
