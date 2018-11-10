@@ -106,7 +106,7 @@ To generate the token run this command:
 
 It will open a new tab in a browser window so that Firebase can verify you. After that, look back at the console, and you’ll see your freshly minted token. Copy it and go back to Travis.
 
-In your project on Travis go to More options > Settings > Environment variables. 
+In your project's Travis dashboard, go to More options > Settings > Environment variables. 
 
 Paste the token in the value field, name the variable FIREBASE_TOKEN and add it.
 
