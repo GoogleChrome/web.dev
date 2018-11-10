@@ -141,7 +141,7 @@ On Travis, add this key as an environment variable and name it LIGHTHOUSE_KEY:
 
 ![Add Lighthouse API key on Travis](./lighthouse-api-key.jpg)
 
-<div class="aside note">Note: You can reuse this same key for other projects</div>
+<div class="aside note">Note: You can reuse this same key for other projects.</div>
 
 ### Add Lighthouse CI to your project
 
