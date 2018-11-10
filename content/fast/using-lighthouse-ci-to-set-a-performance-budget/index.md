@@ -74,7 +74,7 @@ To kick-off continuous integration, we need two things:
 1. To have a `.travis.yml` file in the root directory
 
 2. To trigger a build by doing a regular old git push
-
+We've already prepared the following `.travis.yml` YAML file in the `lighthouse-ci-starter` repo.
 <pre class="prettyprint">
 language: node_js
 node_js:
