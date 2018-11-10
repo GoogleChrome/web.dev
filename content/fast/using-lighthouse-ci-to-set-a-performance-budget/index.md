@@ -35,7 +35,7 @@ To get started, you’ll need a Firebase account. Once you’ve taken care of th
 
 ### Deploying to Firebase
 
-You need [Firebase CLI](https://firebase.google.com/docs/cli/) to deploy the app. Even if you already have it installed, it's a good practice to frequently update the CLI to the latest version by running:
+You'll need [Firebase CLI](https://firebase.google.com/docs/cli/) to deploy the app. Even if you already have it installed, it's good practice to frequently update the CLI to the latest version by running:
 
 <pre class="devsite-terminal devsite-click-to-copy">npm install -g firebase-tools </pre>
 
