@@ -186,7 +186,7 @@ Lighthouse CI will only test pull requests, so if you push to the master branch 
 
 To trigger our Lighthouse CI test, let’s make a pull request.
 
-Checkout a new branch, push it to Github and make a pull request. Hang tight on that pull request page and wait for Lighthouse bot to sing! 🎤
+Checkout a new branch, push it to Github, and make a pull request. Hang tight on that pull request page and wait for the Lighthouse bot to sing! 🎤
 
 ![Lighthouse scores](lighthouse-scores.png)
 
