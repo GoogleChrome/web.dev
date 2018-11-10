@@ -104,7 +104,7 @@ To generate the token run this command:
 
 <pre class="devsite-terminal devsite-click-to-copy">firebase login:ci</pre>
 
-It will open a new tab so Firebase can verify you. After that, look back at the console and you’ll see your freshly minted token. Copy it and go back to Travis.
+It will open a new tab in a browser window so that Firebase can verify you. After that, look back at the console, and you’ll see your freshly minted token. Copy it and go back to Travis.
 
 In your project on Travis go to More options > Settings > Environment variables. 
 
