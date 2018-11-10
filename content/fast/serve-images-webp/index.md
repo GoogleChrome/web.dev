@@ -125,7 +125,7 @@ The `<picture>` tag provides a wrapper for zero or more `<source>` tags and one 
 
 The `<source>` tag specifies a media resource.
 
-The browser uses the first listed source that’s in a format it supports. If the browser does not support any of the formats listed in the `<source>` tags, it falls back to loading the image specified by the `<img>` tag.
+The browser uses the first listed source that's in a format it supports. If the browser does not support any of the formats listed in the `<source>` tags, it falls back to loading the image specified by the `<img>` tag.
 
 **Gotchas:** 
 

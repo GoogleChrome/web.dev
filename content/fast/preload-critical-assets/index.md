@@ -11,13 +11,13 @@ wf_blink_components: N/A
 
 As soon as you open any web page, the browser requests an HTML document from a
 server, parses the contents of the HTML file, and submits separate requests for
-any other external references. 
+any other external references.
 
 ![HTML and CSS request chain diagram](./request-chain.png)
 
 The **critical request chain** represents the order of resources that are
 prioritized and fetched by the browser. Lighthouse identifies assets that are on
-the third level of this chain as _late-discovered_: 
+the third level of this chain as _late-discovered_:
 
 ![Lighthouse: Preload key requests audit](./preload-requests.png)
 
@@ -27,11 +27,11 @@ level to the resource and tries to download it sooner while not delaying the
 `window.onload` event. Take a look at the
 [Chrome Resource Priorities and Scheduling](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit)
 document to learn more about how the browser prioritizes different types of
-resources. 
+resources.
 
 By preloading a certain resource, you are telling the browser that you would
 like to fetch it sooner since it is important for the current page. Preload
-resources by adding a`<link>` tag with `rel="preload"` to the head of your HTML
+resources by adding a `<link>` tag with `rel="preload"` to the head of your HTML
 document:
 
 ```html
@@ -69,7 +69,7 @@ third-party plugin such as
 important. A prefetched resource is requested at a low priority once the browser
 has finished requesting all the needed assets for the current page. To speed up
 future navigations, use prefetch to request assets that would be needed for a
-different route. 
+different route.
 
 ```html
 <link rel="prefetch" as="script" href="important-for-next-page.js">

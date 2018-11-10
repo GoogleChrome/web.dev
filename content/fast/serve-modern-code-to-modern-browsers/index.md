@@ -18,11 +18,11 @@ them.
 that contains newer syntax into code that different browsers and environments
 (such as Node) can understand. This guide assumes you are using Babel, so you
 will need to follow the [setup instructions](https://babeljs.io/setup) to
-include it into your application if you haven't already. Select `webpack` 
+include it into your application if you haven't already. Select `webpack`
 in `Build Systems` if you are using webpack as the module bundler in your app.
 
 <div class="aside note">
-Fun fact: Lebab is a separate library that does the opposite of what Babel does. 
+Fun fact: Lebab is a separate library that does the opposite of what Babel does.
 It converts older code into newer syntax.
 </div>
 
@@ -35,9 +35,9 @@ will need to:
 
 ## Identify which browsers you want to target
 
-Before you begin to modify how the code in your application is transpiled, you 
-need to identify which browsers will access your application. Analyze which browsers 
-your users are currently using as well as those that you plan to target to make an 
+Before you begin to modify how the code in your application is transpiled, you
+need to identify which browsers will access your application. Analyze which browsers
+your users are currently using as well as those that you plan to target to make an
 informed decision.
 
 ## Use @babel/preset-env
@@ -71,17 +71,17 @@ configurations file, `.babelrc`:
 
 Use the `targets` field to specify which browser versions you want to include, by adding an appropriate value (or query) to the `browsers` field. `@babel/preset-env` integrates with browserslist, an open-source configuration shared between different tools for targeting browsers. A full list of compatible queries is in the browserslist documentation. Another option is to use a `.browserslistrc` file to list the environments you wish to target.
 
-Use the `targets` field to specify which browser versions you want to include 
+Use the `targets` field to specify which browser versions you want to include
 by adding an appropriate query to the `browsers` field. `@babel/preset-env`
-integrates with browserslist, an open-source configuration shared between different 
-tools for targeting browsers. A full list of compatible queries is in the 
-[browserslist documentation](https://github.com/browserslist/browserslist#full-list). 
-Another option is to use a [`.browserslistrc`](https://babeljs.io/docs/en/babel-preset-env#browserslist-integration) file to list the environments 
+integrates with browserslist, an open-source configuration shared between different
+tools for targeting browsers. A full list of compatible queries is in the
+[browserslist documentation](https://github.com/browserslist/browserslist#full-list).
+Another option is to use a [`.browserslistrc`](https://babeljs.io/docs/en/babel-preset-env#browserslist-integration) file to list the environments
 you wish to target.
 
-The `">0.25%"` value tells Babel to only include the transforms 
+The `">0.25%"` value tells Babel to only include the transforms
 needed to support browsers that make up more than 0.25% of global
-usage. This ensures your bundle does not contain unnecessary transpiled 
+usage. This ensures your bundle does not contain unnecessary transpiled
 code for browsers that are used by a very small percentage of users.
 
 In most cases, this is a better approach than using the following
@@ -91,10 +91,10 @@ configuration:
   "targets": "last 2 versions"
 ```
 
-The `"last 2 versions"` value will transpile your code for the 
-[last two versions](http://browserl.ist/?q=last+2+versions) of every browser, 
+The `"last 2 versions"` value will transpile your code for the
+[last two versions](http://browserl.ist/?q=last+2+versions) of every browser,
 which means support is provided for discontinued browsers such as Internet Explorer.
-This can unnecessarily increase the size of your bundle if you do not expect these 
+This can unnecessarily increase the size of your bundle if you do not expect these
 browsers to be used to access your application.
 
 Ultimately, you should select the appropriate combination of queries to only
@@ -105,11 +105,12 @@ target browsers that fit your needs.
 JavaScript modules, or ES modules, are a relatively new feature supported in
 [all major browsers](https://caniuse.com/#feat=es6-module). You can use modules
 to create scripts that can import and export from other modules, but you can
-also use them with `@babel/preset-env`to only target browsers that support
+also use them with `@babel/preset-env` to only target browsers that support
 them.
 
+
 Instead of querying for specific browser versions or market share, consider 
-specifying `“esmodules” : true` inside your `.babelrc` file’s `targets` field.
+specifying `“esmodules” : true` inside your `.babelrc` file's `targets` field.
 
 ```json
 {
@@ -126,13 +127,13 @@ specifying `“esmodules” : true` inside your `.babelrc` file’s `targets` fi
 }
 ```
 
-Many newer ECMAScript features compiled with Babel are already supported 
-in environments that support JavaScript modules. So by doing this, you 
-simplify the process of making sure that only transpiled code is used 
+Many newer ECMAScript features compiled with Babel are already supported
+in environments that support JavaScript modules. So by doing this, you
+simplify the process of making sure that only transpiled code is used
 for browsers that actually need it.
 
-Browsers that support modules ignore scripts with a `nomodule` attribute. 
-Conversely, browsers that do not support modules ignore script elements with 
+Browsers that support modules ignore scripts with a `nomodule` attribute.
+Conversely, browsers that do not support modules ignore script elements with
 `type="module"`. This means you can include a module as well as a compiled fallback.
 
 Ideally, the two version scripts of an application will be included like this:
@@ -142,10 +143,10 @@ Ideally, the two version scripts of an application will be included like this:
   <script nomodule src="compiled.js"></script>
 ```
 
-Browsers that support modules fetch and execute `main.mjs` and ignore `compiled.js`. 
+Browsers that support modules fetch and execute `main.mjs` and ignore `compiled.js`.
 The browsers that do not support modules do the opposite.
 
-If you use webpack, you can set different targets in your configurations for two 
+If you use webpack, you can set different targets in your configurations for two
 separate versions of your application:
 
 * A version only for browsers that support modules.

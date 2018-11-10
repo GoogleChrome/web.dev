@@ -14,10 +14,10 @@ and [Cache Storage](https://developer.mozilla.org/en-US/docs/Web/API/Cache). But
 using them effectively—without introducing subtle bugs or bumping into edge
 cases—can be a challenge. For example, errors in your service worker code can
 cause caching problems; users might be shown out-of-date content or broken
-links. 
+links.
 
 [Workbox](https://developers.google.com/web/tools/workbox/) is a high-level
-service worker toolkit built on top of the service worker and Cache Storage
+service worker toolkit built on top of the Service Worker and Cache Storage
 APIs. It provides a production-ready set of libraries for adding offline support to
 web apps. The toolkit is structured into two collections: tools that help manage
 code that runs inside of your service worker, and tools that integrate with your
@@ -49,8 +49,8 @@ tools that provide alternative ways to accomplish two things:
     "under the hood" to put into action the caching strategies you configure.
 +  Generate a list of URLs that should be
     "[precached](https://developers.google.com/web/tools/workbox/modules/workbox-precaching)",
-    based on configurable patterns  to include and exclude files generated
-    during your build process. 
+    based on configurable patterns to include and exclude files generated
+    during your build process.
 
 ## Why should you use Workbox?
 
@@ -85,7 +85,7 @@ it alone.
 
 Workbox is developed against a cross-browser test suite, and when possible,
 automatically falls back to alternative implementations of features that are
-missing from certain browsers. 
+missing from certain browsers.
 
 +  The
     [`workbox-broadcast-cache-update module`](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update)

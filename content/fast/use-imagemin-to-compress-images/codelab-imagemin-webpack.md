@@ -5,47 +5,63 @@ page_type: glitch
 glitch: imagemin-webpack
 ---
 
-This workbook will show you how to add Imagemin to an existing Webpack project.
+This codelab shows you how to add Imagemin to an existing Webpack project.
 
-## 1. Install the Imagemin Webpack plugin:
----
+## Install the Imagemin Webpack plugin
 
-We've already installed `webpack` and `webpack-cli` for you, but you'll need to install `imagemin-webpack-plugin`.
+This Glitch already contains `webpack` and `webpack-cli`, but you'll need to
+install `imagemin-webpack-plugin`.
 
-☞ Click the "Logs" button.
-<img src="./logs_button.png" alt="The 'Logs' button in Glitch">
+- Click the **Remix This** button to make the project editable.
 
-☞ Then click the "Console" button.
-<img src="./console_button.png" alt="The 'Console' button in Glitch">
+<web-screenshot type="remix"></web-screenshot>
 
-☞ Type these commands:
+- Click the **Status** button.
 
-```shell
-$ enable-npm
-$ npm install --save-dev imagemin-webpack-plugin
-```
+<web-screenshot type="status"></web-codelab>
 
-## 2. Setup imagemin-webpack-plugin:
+- Then click the **Console** button. This will open a new window.
 
----
+<web-screenshot type="console"></web-codelab>
 
-We don't need to create a `webpack.config.js` file because this project already has one. The existing `webpack.config.js` for this project has been copying images from the `"images/"` directory to the `"dist/"` directory but it hasn't been compressing them. Let's change that.
+- Lastly, type this command into the console:
 
-(Why would you copy images to a new "`dist/`" folder? `"dist/"` is short for "distribution" and it's fairly common practice to keep original code, images, etc. separate from their distributed versions because they may be slightly different.)
+<pre class="devsite-terminal devsite-click-to-copy">
+npm install --save-dev imagemin-webpack-plugin
+</pre>
 
-☞ First, declare the Imagemin plugin by adding this code at the top of `webpack.config.js`:
+
+## Setup imagemin-webpack-plugin:
+
+The existing `webpack.config.js` for this project has been copying images from
+the `images/` directory to the `dist/` directory but it hasn't been
+compressing them.
+
+<div class="aside note">
+Why would you copy images to a new `dist/` folder? `dist/` is short for
+"distribution" and it's fairly common practice to keep original code, images,
+etc. separate from their distributed versions because they may be slightly
+different.
+</div>
+
+First, declare the Imagemin plugin by adding this code at the top of
+`webpack.config.js`:
 
 ```javascript
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 ```
 
-☞ Next, add the following code as the last item in the `plugins[]` array. This adds Imagemin to the list of plugins that Webpack uses:
+Next, add the following code as the last item in the `plugins[]` array. This
+adds Imagemin to the list of plugins that Webpack uses:
 
 ```javascript
 new ImageminPlugin()
 ```
 
-(Why add it at the end of the array? Adding it there ensures that Imagemin runs last, after all the other plugins.)
+<div class="aside note">
+Why add it at the end of the array? Adding it there ensures that Imagemin runs
+last, after all the other plugins.
+</div>
 
 ## ✔︎ Check-in
 
@@ -72,41 +88,41 @@ module.exports = {
 }
 ```
 
-We now have a Webpack config that compresses images using Imagemin.
+You now have a Webpack config that compresses images using Imagemin.
 
-## 3. Run Webpack:
+## Run Webpack
 
----
+- In the console, run Webpack to compress your images:
 
-☞ Run Webpack to compress your images:
+<pre class="devsite-terminal devsite-click-to-copy">
+webpack --config webpack.config.js --mode development
+</pre>
 
-```shell
-$ webpack --config webpack.config.js --mode development
-```
+But what happens if you run Webpack in production mode?
 
-But what happens if we run Webpack in production mode?
+- Re-run Webpack, but this time in production mode:
 
-☞ Re-run Webpack, but this time in production mode:
+<pre class="devsite-terminal devsite-click-to-copy">
+webpack --config webpack.config.js --mode production
+</pre>
 
-```shell
-$ webpack --config webpack.config.js --mode production
-```
+This time around, Webpack displays a warning letting you know that your PNG
+files, in spite of some compression, still exceed the recommended size limit.
+(Webpack's `development` & `production` modes prioritize different things, which
+is why you only see this warning while running Webpack in production mode.)
 
-This time around, Webpack displays a warning letting you know that your PNG files, in spite of some compression, still exceed the recommended size limit. (Webpack's `development` & `production` modes prioritize different things, which is why you only see this warning while running Webpack in production mode.)
+Customize our Imagemin configuration to fix this warning.
 
-Let's customize our Imagemin configuration to fix this warning.
+## Customize your Imagemin Configuration
 
-## 4. Customize your Imagemin Configuration:
-
----
-
-☞ Add settings for compressing PNG images by passing the following object to `ImageminPlugin()`:
+Add settings for compressing PNG images by passing the following object to `ImageminPlugin()`:
 
 ```javascript
 {pngquant: ({quality: '50'})}
 ```
 
-This code tells Webpack to compress PNGs to a quality of '50' ('0' is the worst; '100' is the best) using the Pngquant plugin.
+This code tells Webpack to compress PNGs to a quality of '50' ('0' is the worst;
+'100' is the best) using the Pngquant plugin.
 
 ## ✔︎ Check-in
 
@@ -129,45 +145,53 @@ module.exports = {
     	to: path.resolve(__dirname, 'dist')
     }]),
     new ImageminPlugin({
-       pngquant: ({quality: '50'}),
-	})
+      pngquant: ({quality: '50'}),
+	  })
   ]
 }
-
 ```
 
-But what about JPGs? Our project also has JPG images, so we should specify how they are compressed as well.
+But what about JPEGs? The project also has JPEG images, so you should specify
+how they are compressed as well.
 
-## 5. Customize your Imagemin Configuration (continued):
+## Customize your Imagemin Configuration (continued)
 
----
+Instead of using `imagemin-webpack-plugin`'s default plugin for JPG compression
+(`imagemin-jpegtran`), use the `imagemin-mozjpeg` plugin. Unlike Jpegtran,
+Mozjpeg let's you specify a compression quality for your JPG compression.
 
-<!-- TODO(khempenius): imagemin-mozjpeg currently does not work on Glitch. I believe this can probably be fixed by installing libpng16-dev via apt-get. Ideally, I'd like to use mozjpeg instead of jpegtran, but if this isn't possible this section will need to be changed to use a different plugin. -->
-
-Instead of using `imagemin-webpack-plugin`'s default plugin for JPG compression (`imagemin-jpegtran`), let's use the `imagemin-mozjpeg` plugin. Unlike Jpegtran, Mozjpeg let's you specify a compression quality for your JPG compression.
-
-☞ Initialize the `imagemin-mozjpeg` plugin by adding the following line at the top of your `webpack.config.js` file:
+- Initialize the `imagemin-mozjpeg` plugin by adding the following line at the
+  top of your `webpack.config.js` file:
 
 ```javascript
 const imageminMozjpeg = require('imagemin-mozjpeg');
 ```
 
-☞ Add a `plugins` property to the object passed to `ImageminPlugin()`, such that the object now looks like this:
+- Add a `plugins` property to the object passed to `ImageminPlugin()`, such that
+  the object now looks like this:
 
 ```javascript
-     new ImageminPlugin({
-       pngquant: ({quality: '50'}),
-       plugins: [imageminMozjpeg({quality: '50'})]
-    })
+new ImageminPlugin({
+  pngquant: ({quality: '50'}),
+  plugins: [imageminMozjpeg({quality: '50'})]
+})
 ```
 
-This code tells Webpack to compress JPGs to a quality of '50' ('0' is the worst; '100' is the best) using the Mozjpeg plugin.
+This code tells Webpack to compress JPGs to a quality of '50' ('0' is the worst;
+'100' is the best) using the Mozjpeg plugin.
 
-Note: Are you wondering why Mozjpeg is added to the plugins array, but Pngquant isn't? Good question.
+<div class="aside note">
+Are you wondering why Mozjpeg is added to the plugins array, but Pngquant isn't? Good question.
+</div>
 
-If you're adding settings for a plugin that is a default plugin of `imagemin-webpack-plugin`, they can be added as a key-object pair on the object passed to `ImageminPlugin()`. The settings for Pnquant are a good example of this.
+If you're adding settings for a plugin that is a default plugin of
+`imagemin-webpack-plugin`, they can be added as a key-object pair on the object
+passed to `ImageminPlugin()`. The settings for Pnquant are a good example of
+this.
 
-However, if you're adding settings for non-default plugins (for example, Mozjpeg), they should be added by including them in the array corresponding to the `plugins` property.
+However, if you're adding settings for non-default plugins (for example,
+Mozjpeg), they should be added by including them in the array corresponding to
+the `plugins` property.
 
 ## ✔︎ Check-in
 
@@ -186,39 +210,42 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
-     new CopyWebpackPlugin([{
-       from: 'img/**/**',
-       to: path.resolve(__dirname, 'dist')
-     }]),
-     new ImageminPlugin({
-       pngquant: ({quality: '50'}),
-       plugins: [imageminMozjpeg({quality: '50'})]
+    new CopyWebpackPlugin([{
+      from: 'img/**/**',
+      to: path.resolve(__dirname, 'dist')
+    }]),
+    new ImageminPlugin({
+      pngquant: ({quality: '50'}),
+      plugins: [imageminMozjpeg({quality: '50'})]
     })
   ]
 }
 ```
 
-## 6. Re-run Webpack & verify results with Lighthouse:
+## Re-run Webpack & verify results with Lighthouse
 
----
+- In the console, re-run Webpack:
 
-☞ Re-run Webpack:
-
-```shell
-$ webpack --config webpack.config.js --mode production
-```
+<pre class="devsite-terminal devsite-click-to-copy">
+webpack --config webpack.config.js --mode production
+</pre>
 
 Hooray! Your changes should have fixed the Webpack warnings.
 
-Webpack will warn you about large images, but it can't tell you if images are uncompressed or undercompressed. This is why it's always a good idea to use Lighthouse to verify your changes.
+Webpack warns you about large images, but it can't tell you if images are
+uncompressed or undercompressed. This is why it's always a good idea to use
+Lighthouse to verify your changes.
 
-Lighthouse's "Efficiently encode images" performance audit can let you know if the JPG images on your page are optimally compressed.
+Lighthouse's "Efficiently encode images" performance audit can let you know if
+the JPEG images on your page are optimally compressed.
 
-☞ Click on the "Show Live" button to view the live version of the your Glitch.
+- Click on the **Show Live** button to view the live version of the your Glitch.
 
-<img src="./show-live.png" width="140" alt="The show live button">
+<web-screenshot type="show-live"></web-screenshot>
 
-Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Efficiently encode images" audit was passed.
+Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
+live version of your Glitch and verify that the "Efficiently encode images"
+audit was passed.
 
 <img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 

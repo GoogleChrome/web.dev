@@ -25,7 +25,7 @@ include:
 
 +  Network-first
 +  Cache-first
-+  Stale-while-revalidate.
++  Stale-while-revalidate
 
 ### Network-first
 
@@ -77,7 +77,7 @@ These caching strategies amount to recipes that you would normally have to
 rewrite in your own service worker, again and again. Instead of resorting to
 that, Workbox offers them packaged up as part of its
 [strategies library](https://developers.google.com/web/tools/workbox/modules/workbox-strategies),
-ready for you to drop in to your service worker. 
+ready for you to drop in to your service worker.
 
 Workbox also provides versioning support, allowing you to automatically
 [expire](https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration)
@@ -93,7 +93,7 @@ to be cached at runtime. Chances are, for any relatively complex web app, you're
 not going to be precaching _everything_ though.
 
 Larger media files, assets that are served from a third-party host like a CDN,
-or API responses are just a few examples of the types of assets that can't be
+or API responses, are just a few examples of the types of assets that can't be
 effectively precached. Use the Network panel in DevTools to identify requests
 that fall into this category, and for each of them, think about what tradeoff of
 freshness vs. reliability is appropriate.
