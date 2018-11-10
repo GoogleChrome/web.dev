@@ -14,7 +14,11 @@ Lighthouse grades your app in 5 categories, and one of those is performance. Whi
 
 Lighthouse CI integrates with Travis, and its performance budget feature ensures that you won’t accidentally downgrade performance without noticing. If the Lighthouse scores for a pull request fall below the threshold you’ve set (e.g. < 80/100), **Lighthouse CI will prevent that pull request from being merged**:
 
-![Lighthouse CI](./lighthouse-ci.png)
+<figure>
+  <img src="./lighthouse-ci.png"
+       alt="Lighthouse CI" class="screenshot">
+  <figcaption><b>Figure 1</b>: Lighthouse CI</figcaption>
+</figure>
 
 Although you can test performance on localhost, your site will often perform differently on live servers. To get a more realistic picture, it’s best to deploy your site to a staging server. You can use any hosting service, and in this guide, we’ll be taking [Firebase](https://firebase.google.com/) hosting for a spin.
 
