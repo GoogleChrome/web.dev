@@ -3,7 +3,7 @@ page_type: guide
 title: Fix robots.txt errors
 author: ekharvey
 web_lighthouse:
-- robots-txt
+  - robots-txt
 wf_blink_components: N/A
 ---
 
@@ -31,18 +31,21 @@ entire domain or subdomain.
 
 ## Make sure the robots.txt doesn't return HTTP 50X
 
-If the server returns a server error (HTTP 50X result code) for the robots.txt,
-search engines won't know which URLs are allowed to be crawled or not. They may
-stop all crawling of the website, which would prevent new content from being
-indexed. To check the HTTP status code, open the robots.txt file in Chrome and
-[check the request in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#analyze).
+If the server returns a server error (HTTP `50X` result code) for the
+robots.txt, search engines won't know which URLs are allowed to be crawled or
+not. They may stop all crawling of the website, which would prevent new content
+from being indexed. To check the HTTP status code, open the robots.txt file in
+Chrome and [check the request in Chrome
+DevTools](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#analyze).
 
 ## Make sure the robots.txt file is smaller than 500KB
 
-Search engines may stop processing robots.txt files when they get too large. If
-a search engine stops processing in the middle of a directive, it's impossible
-to follow that directive properly, and could result in the search engine getting
-needlessly confused. Also, large robots.txt files are a hassle to maintain.  
+Search engines may stop processing robots.txt files when they get too large.
+If a search engine stops processing in the middle of a directive, it's
+impossible to follow that directive properly, and could result in the search
+engine getting needlessly confused. Also, large robots.txt files are a hassle
+to maintain.  
+
 One way to make a robots.txt file smaller is to focus less on individually
 excluded pages, and more on broader patterns. For example, if you need to block
 crawling of PDF files, don't list these files with individual disallow
@@ -54,7 +57,7 @@ crawling of all URLs containing `.pdf`.
 Review the format of the robots.txt file. Only empty lines, comments, and
 directives matching the "name: value" format are allowed.
 
-Make sure 'allow' and 'disallow' values are either empty or start with `/` or
+Make sure `allow` and `disallow` values are either empty or start with `/` or
 `*`. Make sure they don't use `$` in the middle of a value (for example, `allow:
 /file$html`). Here's an example:
 
@@ -69,10 +72,8 @@ disallow: /downloads/
 user-agent: *   
 # missing "/"
 disallow: downloads
-
 # incorrect directive name
 dis-allow downloads
-
 # invalid character in the value provided
 disallow: /OffersFor$5
 </pre>
@@ -81,16 +82,17 @@ Use comments in the robots.txt file to explain what you're trying to allow or
 disallow. While robots.txt directives look simple, in combination they can be
 surprisingly complex. Here's an example of how to use comments in a robots.txt
 file:
+
 ```
-    user-agent: *
+user-agent: *
 
-    # block crawling of all download URLs
-    disallow: /downloads/
+# block crawling of all download URLs
+disallow: /downloads/
 
-    # allow crawling of our whitepaper as per marketing team's request
-    allow: /downloads/whitepaper.pdf
+# allow crawling of our whitepaper as per marketing team's request
+allow: /downloads/whitepaper.pdf
 ```    
-## Make sure there are no 'allow' or 'disallow' directives before 'user-agent'
+## Make sure there are no `allow` or `disallow` directives before `user-agent`
 
 <p><span class="compare-better">Do this</span></p>
 <pre class="prettyprint devsite-disable-click-to-copy">
@@ -108,15 +110,16 @@ user-agent: magicsearchbot
 allow: /
 </pre>
 
-All allow and disallow directives must apply to specific user-agents (also known
+All `allow` and `disallow` directives must apply to specific user-agents (also known
 as crawlers), so they are only valid if they're in a section for a given
 user-agent. For user-agents, crawlers only use the section with the most
-specific user-agent to determine which URLs are disallowed from crawling. For
-example, if you have "user-agent: `*` and `user-agent: magicsearchbot` sections,
-MagicSearchBot won't follow any of the directives in the generic (`user-agent:
-*`) section and will only follow the directive in its own section.  
+specific user-agent to determine which URLs are disallowed from crawling.
 
-## Make sure there's a value for 'user-agent'
+For example, if you have `user-agent: *` and `user-agent: magicsearchbot`
+sections, MagicSearchBot won't follow any of the directives in the generic
+(`user-agent: *`) section and will only follow the directive in its own section.
+
+## Make sure there's a value for `user-agent`
 
 In order for a search engine crawler to find the appropriate user-agent section
 to follow, you must provide a user-agent name, or use `*` to match all otherwise
@@ -139,7 +142,7 @@ user-agent:
 disallow: /downloads/
 </pre>
 
-## Provide an absolute URL for 'sitemap' with http/https/ftp scheme
+## Provide an absolute URL for `sitemap` with http/https/ftp scheme
 
 [Sitemap](https://sitemaps.org/) files are a great way to let search engines
 know about the pages on a website. A sitemap file generally includes a list of
@@ -167,7 +170,7 @@ Keep in mind that robots.txt prevents crawling, and with that, the indexing of
 the content, but URLs can be indexed without any known content. If you need to
 keep URLs from appearing in search (rather than just preventing crawling, or
 preventing indexing of the content on the pages), use the
-["noindex" robots meta tag](https://developers.google.com/search/reference/robots_meta_tag)
+[`noindex` robots meta tag](https://developers.google.com/search/reference/robots_meta_tag)
 instead. 
 
 ## Remember to keep it simple

@@ -3,9 +3,9 @@ page_type: guide
 title: Write descriptive titles, descriptions, and link text
 author: ekharvey
 web_lighthouse:
-- document-title
-- meta-description
-- link-text
+  - document-title
+  - meta-description
+  - link-text
 wf_blink_components: N/A
 ---
 

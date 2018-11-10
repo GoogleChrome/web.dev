@@ -3,7 +3,7 @@ page_type: guide
 title: Avoid making pages that rely on browser plugins
 author: ekharvey
 web_lighthouse:
-- plugins
+  - plugins
 wf_blink_components: N/A
 ---
 
