@@ -15,25 +15,25 @@ Nobody likes waiting.
 Sending large JavaScript payloads will impact the speed of your site
 significantly. Instead of shipping all the JavaScript to your user as soon as
 the first page of your application is loaded, **code-split** your bundle into
-multiple "pieces" and only send what's necessary at the very beginning. 
+multiple "pieces" and only send what's necessary at the very beginning.
 
 ## Measure
 
 Lighthouse displays a failed audit when a significant amount of time is taken to
-execute all the JavaScript on a page. 
+execute all the JavaScript on a page.
 
 <img class="screenshot" src="./reduce-javascript-payloads-with-code-splitting-2.png" alt="A failing Lighthouse audit showing scripts taking too long to execute.">
 
 Split the JS bundle to only send the code needed for the initial route when the
 user loads an application. This minimizes the amount of script that needs to be
-parsed and compiled, which will result in faster page load times. 
+parsed and compiled, which will result in faster page load times.
 
 Popular module bundlers like [webpack]((https://webpack.js.org/)),
 [Parcel](https://parceljs.org/code_splitting.html), and
 [Rollup](https://rollupjs.org/guide/en#dynamic-import) allow you to split your
 bundles using [dynamic imports](https://developers.google.com/web/updates/2017/11/dynamic-import).
 For example, consider the following code snippet that shows an example of a
-`someFunction `method that gets fired when a form is submitted.
+`someFunction` method that gets fired when a form is submitted.
 
 <pre class="prettyprint">
 import moduleA from "library";
@@ -50,7 +50,7 @@ const someFunction = () => {
 
 In here, `someFunction` uses a module imported from a particular library. If
 this module is not being used elsewhere, the code block can be modified to use a
-dynamic import to fetch it only when the form is submitted by the user. 
+dynamic import to fetch it only when the form is submitted by the user.
 
 <pre class="prettyprint">
 form.addEventListener("submit", e => {
