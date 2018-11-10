@@ -192,7 +192,7 @@ Checkout a new branch, push it to Github, and make a pull request. Hang tight on
 
 ![Github checks](github-checks.png)
 
-Our performance score is great, we are under budget and the check has passed! 
+Our performance score is great, we are under budget, and the check has passed! 
 
 ### More Lighthouse options
 
