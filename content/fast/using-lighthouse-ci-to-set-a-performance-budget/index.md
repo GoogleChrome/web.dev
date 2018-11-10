@@ -67,7 +67,7 @@ You’ll need to [register an account](https://travis-ci.com) on Travis and acti
 
 ### If you already have an account 
 
-Go to Settings, hit the Sync account button and make sure your project repo is listed on Travis. 
+Go to Settings under your profile, hit the Sync account button, and make sure your project repo is listed on Travis. 
 
 To kick-off continuous integration we need two things:
 
