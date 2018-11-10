@@ -56,7 +56,7 @@ you'll actually implement and maintain.
 </table>
 
 [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
-is an API for specifying font display strategy. ``swap`` tells the browser that
+is an API for specifying font display strategy. `swap` tells the browser that
 text using this font should be displayed immediately using a system font. Once
 the custom font is ready, the system font is swapped out.
 
@@ -124,7 +124,7 @@ text:
 
 1. Navigate to the **Audits** panel in DevTools.
 1. Select the **Performance** checkbox.
-1. Click **Run Audits** to generate a report. 
+1. Click **Run Audits** to generate a report.
 
 Confirm this audit is passing: "Ensure text remains visible during webfont
-load". 
+load".
