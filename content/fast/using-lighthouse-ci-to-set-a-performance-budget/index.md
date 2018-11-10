@@ -67,7 +67,7 @@ In a split second, you’ll have a live app.
 
 ### Travis newbie
 
-You’ll need to [register an account](https://travis-ci.com) on Travis and activate Github Apps integration. 
+You’ll need to [register an account](https://travis-ci.com) on Travis and then activate GitHub Apps integration under the Settings section of your profile.
 
 ### Once you have an account 
 
