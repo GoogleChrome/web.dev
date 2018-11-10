@@ -88,7 +88,9 @@ script:
 </pre>
 
 
-We’ve already prepared the YAML file that tells Travis to install all the dependencies and build your app. Now it’s your turn to **push the example app to your own Github repository**.
+The YAML file tells Travis to install all the dependencies and build your app. Now it’s your turn to **push the example app to your own GitHub repository**.  If you haven't already, run the following command:
+
+<pre class="devsite-terminal devsite-click-to-copy">git push origin master</pre>
 
 Go to Travis dashboard and if everything is cool you’ll see your build go from yellow to green in a couple of minutes. 🎉
 
