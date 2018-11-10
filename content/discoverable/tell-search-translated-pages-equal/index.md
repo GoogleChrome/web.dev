@@ -97,13 +97,8 @@ Here's a simple example of hreflang tags in HTML:
 <html lang="en">
   <head>
     <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
-</pre></p>
-
-<br>
-        <code><link rel="alternate" hreflang="en"
-href="https://donut-be-hangry.com/recipes/maple-bar-recipe" /></code><br>
-<p><pre>
+    <meta name="description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
+    <link rel="alternate" hreflang="en" href="https://donut-be-hangry.com/recipes/maple-bar-recipe" /></code><br>
     <link rel="alternate" hreflang="es" href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
     <link rel="alternate" hreflang="de" href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
     <meta charset="utf-8">

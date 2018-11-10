@@ -25,7 +25,7 @@ built-in for free. If you're building custom interactive components, use
 A tool like Lighthouse is great at detecting certain accessibility issues, but
 some things can only be tested by a human. Run the Accessibility Audit
 (Lighthouse > Options > Accessibility) and look in the Manual audits section for
-an item titled “Interactive controls are keyboard focusable".
+an item titled “Interactive controls are keyboard focusable”.
 
 Try pressing the `Tab` key to navigate through your site. Are you able to reach
 all of the interactive controls on the page? If not, you may need to use

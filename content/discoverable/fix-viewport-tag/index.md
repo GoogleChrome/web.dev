@@ -32,16 +32,15 @@ Add a viewport `<meta>` tag in the `<head>` of your page.
 <html lang="en">
   <head>
     <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
-    <!-- import the webpage's javascript file →
+    <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
-</head>
+  </head>
   <body>
     <h1>Hi there!</h1>   
   </body>

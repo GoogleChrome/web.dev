@@ -13,7 +13,7 @@ wf_blink_components: N/A
 
 HTTP status codes indicate the response given by a server for a request to a
 URL. 4XX status codes signal to search engines that a page does not provide any
-content. For example, 404 indicates the page not found; 403 indicates the
+content. For example, 404 indicates the page isn't found; 403 indicates the
 content is restricted. In both cases, search engines assume there's nothing to
 show in search results, and may not index the page.
 
@@ -34,8 +34,8 @@ your website.
 To fix the error, refer to the documentation for your specific server or hosting
 provider to make sure that your server returns a 2XX HTTP status code for all
 valid URLs, or a 3XX status code if the page has moved to another URL.   
-You can also try out our [interactive example](www.example.com) and learn how to fix the error in
-an express.js application.
+You can also try out our [interactive example](www.example.com) and learn
+how to fix the error in an express.js application.
 
 ## Verify
 

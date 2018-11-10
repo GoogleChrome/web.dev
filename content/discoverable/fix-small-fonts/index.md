@@ -18,7 +18,7 @@ because users should be able to navigate your site on their mobile devices.
 
 ## Measure
 
-Lighthouse displays the following failed audit if your content is too small #for
+Lighthouse displays the following failed audit if your content is too small for
 mobile devices:
 
 "Document doesn't use legible font sizes"

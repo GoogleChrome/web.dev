@@ -50,14 +50,14 @@ page</a></td>
 ## Add tags to the head of the page
 
 Add a meta description and title for every page on your site. Here's a full
-example of what the < head > of each page should include:
+example of what the &lt;head&gt; of each page should include:
 
 ```
 <!doctype html>
 <html lang="en">
 <head>
     <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
+    <meta name="description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,7 +79,7 @@ example of what the < head > of each page should include:
 </html>
 ```
 
-Here are some examples of good vs bad titles and descriptions:
+Here are some examples of good vs. bad titles and descriptions:
 
 <table>
 <thead>
@@ -103,12 +103,12 @@ Here are some examples of good vs bad titles and descriptions:
 </tr>
 <tr>
 <td><p><pre>
-<meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
+<meta name="description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
 </pre></p>
 
 </td>
 <td><p><pre>
-<meta name="Description" content="Maple bar recipe.">
+<meta name="description" content="Maple bar recipe.">
 </pre></p>
 
 </td>
@@ -120,7 +120,7 @@ Here are some best practices to keep in mind when you're writing descriptions
 and titles:
 
 +  Make them **descriptive and concise.** Avoid vague titles like "Home" and
-    link text like "click here".
+    link texts like "click here".
 +  Avoid [**keyword
     stuffing**](https://support.google.com/webmasters/answer/66358). Cramming
     your content with keywords isn't helpful to users, and search engines may
@@ -141,7 +141,7 @@ for more tips.
 Replace generic descriptions, such as "click here" and "learn more" with
 specific descriptions. You'll need to read the context of the page and write
 relevant text that makes sense with the rest of the content. Here's an example
-of good vs bad link descriptions:
+of good vs. bad link descriptions:
 
 <table>
 <thead>

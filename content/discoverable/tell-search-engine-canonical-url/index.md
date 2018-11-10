@@ -28,7 +28,7 @@ search engines to understand: "Document doesn't have a valid rel=canonical".
 
 First, decide which URL should be the canonical version of your content. Make
 sure that the canonical URL is not blocked from crawling with a robots.txt file,
-not blocked from indexing with a robots meta element, and publicly accessible.
+not blocked from indexing with a robots meta tag, and publicly accessible.
 Ideally, use HTTPS URLs instead of HTTP URLs if you have a choice. If you use
 [hreflang links](https://support.google.com/webmasters/answer/189077), make sure
 that the canonical URL points to the proper page for that respective language or
@@ -44,7 +44,7 @@ Also, watch out for the following problems:
 
 There are two ways you can specify a canonical link: 
 
-+  `link rel=canonical` element in the <head> of a page
++  `link rel=canonical` element in the &lt;head&gt; of a page
 +  Link header in the HTTP response
 
 For a list of pros and cons, see
@@ -64,7 +64,7 @@ For a list of pros and cons, see
 <!doctype html>
 <html lang="en">
   <head>
-    ...
+    …
     <link rel="canonical" href="https://copycat.com/"/>
     …
 </pre></p>
@@ -89,7 +89,7 @@ Here's a full example of what the <head> should include.
 <html lang="en">
   <head>
     <title>Mary's Maple Bar Fast-Baking recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
+    <meta name="description" content="Mary's maple bar recipe is simple and sweet, with just a touch of serendipity. Topped with bacon, this sticky donut is to die for.">
     <link rel="canonical" href="https://donut-be-crazy.com/recipes/maple-bar-recipe"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
