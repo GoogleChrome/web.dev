@@ -19,7 +19,7 @@ order: 1
 
 topics:
 # Topic containing several guides
-- title: Measure your site’s performance
+- title: Measure your site's performance
   guides:
     - discover-performance-opportunities-with-lighthouse
 - title: Optimize your images

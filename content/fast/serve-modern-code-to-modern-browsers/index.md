@@ -108,8 +108,9 @@ to create scripts that can import and export from other modules, but you can
 also use them with `@babel/preset-env` to only target browsers that support
 them.
 
-Instead of querying for specific browser versions or market share, consider
-specifying `“esmodules” : true` inside your `.babelrc` file’s `targets` field.
+
+Instead of querying for specific browser versions or market share, consider 
+specifying `“esmodules” : true` inside your `.babelrc` file's `targets` field.
 
 ```json
 {
