@@ -13,7 +13,8 @@ Have you ever seen an animated GIF on a service like Imgur or Gfycat, inspected
 it in your dev tools, only to find out that GIF was really a video? There's a
 good reason for that. Animated GIFs can be downright _huge_.
 
-![image](./animated-gif.png)
+<img width="80%" src="./animated-gif.png" alt="DevTools network panel showing a
+13.7 MB gif.">
 
 Thankfully, this is one of those areas of loading performance where you can do
 relatively little work to realize huge gains! **By converting large GIFs to
@@ -27,7 +28,8 @@ Lighthouse and check the report.
 If you have any GIFs that can be converted, you should see a suggestion to "Use
 video formats for animated content":
 
-![image](./use-video-format.png)
+<img class="screenshot" src="./use-video-format.png" alt="A failing Lighthouse
+audit, use video formats for animated content.">
 
 ## Create MPEG videos
 
@@ -58,7 +60,8 @@ ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm
 
 The cost savings between a GIF and a video can be pretty significant.
 
-![image](./cost-savings.png)
+<img class="screenshot" src="./cost-savings.png" alt="File size comparison
+showing 3.7 MB for the gif, 551 KB for the mp4 and 341 KB for the webm.">
 
 In this example, the initial GIF is 3.7 MB, compared to the MP4 version, which
 is 551 KB, and the WebM version, which is only 341 KB!
@@ -89,13 +92,11 @@ doesn't support WebM, it can fall back to MP4.
   <source src="my-animation.mp4" type="video/mp4">  
 </video>  
 ```  
-**⚠ Note**: Browsers don't speculate about which `<source>` is optimal, so the
-order of `<source>`s matters. For example, if you specify an MP4 video first and
-the browser supports MP4 as well as WebM, browsers will skip the WebM `<source>`
-and use the MP4 instead. If you prefer a WebM `<source>` be the default, specify
-it first!
 
-## 📚 References and materials
-
-+  [ffmpeg.org](https://www.ffmpeg.org/)
-+  [ffmpeg installation instructions](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/#converting_animated_gifs_to_video)
+<div class="aside note">
+Browsers don't speculate about which <code>&lt;source&gt;</code> is optimal, so
+the order of <code>&lt;source&gt;</code>s matters. For example, if you specify
+an MP4 video first and the browser supports WebM, browsers will skip the WebM
+<code>&lt;source&gt;</code> and use the MPEG-4 instead. If you prefer a WebM
+<code>&lt;source&gt;</code> be used first, specify it first!
+</div>
