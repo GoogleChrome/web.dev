@@ -72,9 +72,13 @@ Use the ImageMin CLI codelab as an example to emulate—[source](https://github.
 
 Example:
 ```
-- Click the **Status** button. # Always put a newline between the list and the element.
+- Click the **Remix This** button to make the project editable.
 
-<web-screenshot type="status"></web-screenshot> # Remember to close the element!
+<web-screenshot type="remix"></web-screenshot> # Remember to close the element!
+
+- Click the **Status** button.
+
+<web-screenshot type="status"></web-screenshot>
 
 - Click the **Console** button.
 

@@ -28,9 +28,9 @@ attempting to add any optimizations.
 -  Click on the **Network** panel.
 -  Make sure `Disable Cache` is checked and reload the app.
 
-<img class="screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2kb JavaScript bundle.">
+<img class="screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2 KB JavaScript bundle.">
 
-71.2kB worth of JavaScript just to sort a few numbers in a simple application.
+71.2 KB worth of JavaScript just to sort a few numbers in a simple application.
 What gives?
 
 In the source code (`src/index.js`), the `lodash` library is imported and used
@@ -43,9 +43,9 @@ portion of it is being utilized is a common mistake.
 
 There are a few ways the bundle size can be trimmed:
 
-1.  Write a custom sorting method instead of importing a third-party library  
-2.  Use the built in `Array.prototype.sort()` method to sort numerically  
-3.  Only import the `sortBy` method from `lodash` and not the entire library  
+1.  Write a custom sorting method instead of importing a third-party library
+2.  Use the built in `Array.prototype.sort()` method to sort numerically
+3.  Only import the `sortBy` method from `lodash` and not the entire library
 4.  Download the code for sorting only when the user clicks the button
 
 Options 1 and 2 are perfectly appropriate methods to reduce the bundle size (and
@@ -119,7 +119,7 @@ be read by the browser.
 The single bundle used in this application can be split into two separate
 chunks:
 
-- One responsible for the code that makes up our initial route  
+- One responsible for the code that makes up our initial route
 - A secondary chunk that contains our sorting code
 
 With the use of **dynamic imports**, a secondary chunk can be _lazy loaded,_ or

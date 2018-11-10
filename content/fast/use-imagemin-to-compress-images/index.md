@@ -13,17 +13,17 @@ wf_blink_components: N/A
 
 Uncompressed images bloat your pages with unnecessary bytes. The photo on the
 right is 40% smaller than the one on the left, yet would probably look identical
-to the average user. 
+to the average user.
 
 <table>
 <thead>
 <tr>
 <th><p><img src=./20kb.jpg width="100%"></p>
 
-20KB</th>
+20K B</th>
 <th><p><img src=./12kb.jpg width="100%"></p>
 
-12KB</th>
+12 KB</th>
 </tr>
 </thead>
 <tbody>
@@ -122,7 +122,7 @@ Imagemin uses the appropriate plugin based on the image format of the
 input.
 
 To compress the images in the "images/" directory and save them to the same
-directory, run the following command (overwrites the original files):  
+directory, run the following command (overwrites the original files):
 
 ```
 $ imagemin images/* --out-dir=images

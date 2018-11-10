@@ -3,7 +3,7 @@ page_type: guide
 title: Remove code that blocks search engine indexing
 author: ekharvey
 web_lighthouse:
-- is-crawlable
+  - is-crawlable
 wf_blink_components: N/A
 ---
 
@@ -18,8 +18,7 @@ to show up in search results.
 ## Measure
 
 Lighthouse displays the following failed audit if search engines can't index
-your page:  
-"Page is blocked from indexing".
+your page: "Page is blocked from indexing".
 
 ## Determine if you actually want search engines to index this page
 
@@ -37,14 +36,25 @@ private or confidential content on your website.
 Depending on how you set up your site, you might not need to do all of the steps
 below:
 
-1. Remove the X-Robots-Tag HTTP response header if you set up a HTTP
-    response header:  
+- Remove the X-Robots-Tag HTTP response header if you set up a HTTP
+    response header:
+
+```
 `X-Robots-Tag: noindex`
-1. Remove the following meta tag if it's present in the head of the page:  
-    `<meta name="robots" content="noindex">`
-1. Remove meta tags that block specific crawlers if these tags are present
-    in the head of the page, such as:  
-`<meta name="Googlebot" content="noindex">`
+```
+
+- Remove the following meta tag if it's present in the head of the page:
+
+```
+<meta name="robots" content="noindex">
+```
+
+- Remove meta tags that block specific crawlers if these tags are present in the
+  head of the page, such as:
+
+```
+<meta name="Googlebot" content="noindex">
+```
 
 ## Add additional control (optional step)
 
