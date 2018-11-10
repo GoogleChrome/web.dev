@@ -182,7 +182,7 @@ We’ve set our standards high and won’t accept any changes to the app that br
 
 ### Make a pull request to trigger Lighthouse CI on Travis
 
-Lighthouse CI will only test pull requests, so if you push to master branch now you’ll just get "This script can only be run on Travis PR requests" in your Travis log.
+Lighthouse CI will only test pull requests, so if you push to the master branch now, you’ll just get "This script can only be run on Travis PR requests" in your Travis log.
 
 To trigger our Lighthouse CI test, let’s make a pull request.
 
