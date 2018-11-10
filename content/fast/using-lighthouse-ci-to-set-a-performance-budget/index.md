@@ -121,7 +121,7 @@ after_success:
 </pre>
 
 
-Let’s push this change to Github and wait for our first automated deployment. If you take a look at your Travis log, it should soon say ✔️ Deploy complete!
+Let’s push this change to GitHub and wait for our first automated deployment. If you take a look at your Travis log, it should soon say ✔️ Deploy complete!
 
 Now whenever you make new changes to your app, they will be automatically deployed to Firebase.
 
