@@ -3,7 +3,7 @@ page_type: guide
 title: Use lazysizes to lazyload images
 author: khempenius
 web_lighthouse:
-- offscreen-images
+  - offscreen-images
 wf_blink_components: N/A
 ---
 
@@ -17,8 +17,6 @@ If you've ever used sites like Spotify or Medium, you've probably experienced
 this firsthand. Dining in a restaurant is a good example of lazy loading: the
 restaurant brings out your courses as you are ready for them, rather than
 dumping them on you all at once.
-
-![image](./lazy-load-image.gif)
 
 _Lazy loading in action_
 
