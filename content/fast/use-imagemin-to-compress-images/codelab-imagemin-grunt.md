@@ -11,6 +11,10 @@ glitch: imagemin-grunt
 This Glitch already contains `grunt` and `grunt-cli` for you, but you'll need to
 install `grunt-contrib-imagemin`.
 
+- Click the **Remix This** button to make the project editable.
+
+<web-screenshot type="remix"></web-screenshot>
+
 - Click the **Status** button.
 
 <web-screenshot type="status"></web-codelab>
