@@ -92,7 +92,7 @@ The YAML file tells Travis to install all the dependencies and build your app. N
 
 <pre class="devsite-terminal devsite-click-to-copy">git push origin master</pre>
 
-Go to Travis dashboard and if everything is cool you’ll see your build go from yellow to green in a couple of minutes. 🎉
+Click on your repo under Settings in Travis to see your project's Travis dashboard. If everything is cool, you’ll see your build go from yellow to green in a couple of minutes. 🎉
 
 ## 4. Automate Firebase deployment with Travis 
 
