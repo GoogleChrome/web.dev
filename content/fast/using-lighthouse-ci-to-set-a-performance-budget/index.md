@@ -29,7 +29,7 @@ We are working with a simple app that helps you sort three numbers.
 
 ### Firebase newbie
 
-To get started you’ll need an account. Once you’ve taken care of that [create a new project in Firebase console](https://console.firebase.google.com/).
+To get started, you’ll need a Firebase account. Once you’ve taken care of that, [create a new project in the Firebase console](https://console.firebase.google.com/) by clicking "Add project":
 
 ![Firebase console](./firebase-console.png)
 
