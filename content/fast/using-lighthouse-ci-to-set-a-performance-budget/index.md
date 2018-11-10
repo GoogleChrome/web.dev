@@ -22,7 +22,7 @@ Although you can test performance on localhost, your site will often perform dif
 
 We are working with a simple app that helps you sort three numbers. 
 
-[Clone the example from GitHub](https://github.com/mihajlija/lighthouse-ci-starter/).
+[Clone the example from GitHub](https://github.com/mihajlija/lighthouse-ci-starter/), and make sure to add it as a repository on your GitHub account.
 
 
 ## 2. Deploy to Firebase
