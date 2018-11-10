@@ -10,7 +10,7 @@ This codelab shows you how to add Imagemin to an existing Gulp project.
 ## Install the Imagemin Gulp plugin
 
 This Glitch already contains `gulp` and `gulp-cli`, but you'll need to
-install `gulp-imagemin`.
+install the `gulp-imagemin` plugin.
 
 - Click the **Remix This** button to make the project editable.
 
@@ -24,7 +24,7 @@ install `gulp-imagemin`.
 
 <web-screenshot type="console"></web-codelab>
 
-- Lastly, type this command into the console:
+- Type the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 npm install --save-dev gulp-imagemin
@@ -32,14 +32,14 @@ npm install --save-dev gulp-imagemin
 
 ## Setup your gulpfile.js
 
-First, initialize the `gulp-imagemin` plugin that you just installed by adding
+- First, initialize the `gulp-imagemin` plugin that you just installed by adding
 this code at the top of `gulpfile.js`:
 
 ```javascript
 const imagemin = require('gulp-imagemin');
 ```
 
-Next, replace the `//Add tasks here` comment in `gulpfile.js` with this code
+- Next, replace the `//Add tasks here` comment in `gulpfile.js` with this code
 block:
 
 ```javascript
@@ -54,7 +54,7 @@ This code adds a Gulp task that uses Imagemin to compress the images in the
 
 ## ✔︎ Check-in
 
-Your complete `gulpfile.js` file should now look like this:
+Your `gulpfile.js` file should now look like this:
 
 ```javascript
 const imagemin = require('gulp-imagemin');
@@ -137,8 +137,6 @@ compressed too.
 
 ## Customize your Imagemin Configuration (continued)
 
----
-
 Use the `imagemin-mozjpeg` plugin to compress JPG images.
 
 - In the console, install the plugin using npm:
@@ -147,13 +145,14 @@ Use the `imagemin-mozjpeg` plugin to compress JPG images.
 npm install --save-dev imagemin-mozjpeg
 </pre>
 
-Declare the `imagemin-mozjpeg` plugin by putting this line at the top your `gulpfile.js`.
+- Declare the `imagemin-mozjpeg` plugin by putting this line at the top your `gulpfile.js`.
 
 ```javascript
 const mozjpeg = require('imagemin-mozjpeg');
 ```
 
-Next, add `mozjpeg({quality: '50'})` to the array that's passed to `ImageminPlugin()`:
+- Next, add `mozjpeg({quality: '50'})` to the array that's passed to
+  `ImageminPlugin()`:
 
 ```javascript
 [
