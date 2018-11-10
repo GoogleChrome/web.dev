@@ -3,7 +3,7 @@ page_type: guide
 title: Fix the viewport meta tag
 author: ekharvey
 web_lighthouse:
-- viewport
+  - viewport
 wf_blink_components: N/A
 ---
 
@@ -35,17 +35,10 @@ Add a viewport `<meta>` tag in the `<head>` of your page.
     <meta name="Description" content="Mary's maple bar recipe
     is simple and sweet, with just a touch of serendipity. Topped
     with bacon, this sticky donut is to die for.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    <!-- import the webpage's javascript file →
-    <script src="/script.js" defer></script>
 </head>
   <body>
-    <h1>Hi there!</h1>   
+    ...
   </body>
 </html>
 ```
