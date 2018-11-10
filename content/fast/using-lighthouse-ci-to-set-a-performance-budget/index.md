@@ -69,7 +69,7 @@ You’ll need to [register an account](https://travis-ci.com) on Travis and acti
 
 Go to Settings under your profile, hit the Sync account button, and make sure your project repo is listed on Travis. 
 
-To kick-off continuous integration we need two things:
+To kick-off continuous integration, we need two things:
 
 1. To have a `.travis.yml` file in the root directory
 
