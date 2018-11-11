@@ -54,7 +54,14 @@ Now initialize the project:
 <pre class="devsite-terminal devsite-click-to-copy">firebase init</pre>
 
 
-Select hosting feature, the project that you’ve created in the Firebase console and type in "public" as the default directory. Say no to single page application prompt and no to overwriting index.html. This creates a `firebase.json` configuration file in the root of your project directory.
+The console will ask you a series of questions during setup:
+
+- When prompted to select features, choose "Hosting."
+- For the default Firebase project, select the project that you’ve created in the Firebase console.
+- Type in "public" as your public directory.
+- Type "N" (no) to configuring as a single-page app.
+
+This process creates a `firebase.json` configuration file in the root of your project directory.
 
 Congrats, you’re ready to deploy! Run:
 
