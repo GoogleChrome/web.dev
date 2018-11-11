@@ -130,7 +130,7 @@ running, featuring a `wizard` mode that will check your local development
 environment and suggest a reasonable default configuration that you could use
 moving forward:
 
-<div class="devsite-terminal">
+<pre class="devsite-terminal">
 workbox wizard
 <span class="no-select">
 ? What is the root of your web app (i.e. which directory do you deploy)? src/
@@ -138,7 +138,7 @@ workbox wizard
 ? Where would you like your service worker file to be saved? build/sw.js
 ? Where would you like to save these configuration options? workbox-config.js
 </span>
-</div>
+</pre>
 
 To build your service worker, run `workbox generateSW workbox-config.js`
 as part of a build process. See the [`generateSW` documentation](https://goo.gl/fdTQBf) for details.
