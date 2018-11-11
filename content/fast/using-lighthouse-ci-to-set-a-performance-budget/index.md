@@ -247,11 +247,11 @@ Remember how Lighthouse tests 5 different categories? You can enforce scores for
 any of those with Lighthouse CI flags:
 
 ```shell
-`--perf` # performance
-`--pwa`  # progressive web app score
-`--a11y` # accessibility score
-`--bp`   # best practices score
-`--seo`  # SEO score
+--perf  # performance
+--pwa   # progressive web app score
+--a11y  # accessibility score
+--bp    # best practices score
+--seo   # SEO score
 ```
 
 Example: 
