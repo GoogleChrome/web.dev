@@ -3,6 +3,7 @@ title: Use density descriptors
 author: khempenius
 page_type: glitch
 glitch: responsive-images-density-descriptors
+order: 3
 ---
 
 ## Explore This Demo
@@ -163,7 +164,7 @@ to create multiple sizes of an image. This is covered in more detail here.
 Density descriptors, in conjunction with the "srcset " attribute, can be used to
 serve different images to different devicePixelRatios.
 
-Example:
+- Take a look at the `index.html` file and note the `<img>` element.
 
 ```
 <img src="flower.jpg"

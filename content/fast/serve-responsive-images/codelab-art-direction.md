@@ -3,6 +3,7 @@ title: Art direction
 author: khempenius
 page_type: glitch
 glitch: responsive-images-art-direction
+order: 2
 ---
 
 ## Try out this demo
