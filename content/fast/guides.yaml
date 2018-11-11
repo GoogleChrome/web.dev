@@ -47,3 +47,9 @@ topics:
     - chrome-ux-report-bigquery
     - chrome-ux-report-data-studio-dashboard
     - chrome-ux-report-pagespeed-insights
+- title: Enforce performance budgets
+  guides:
+    - performance-budgets-101
+    - your-first-performance-budget
+    - incorporate-performance-budgets-into-your-build-tools
+    - using-lighthouse-ci-to-set-a-performance-budget
