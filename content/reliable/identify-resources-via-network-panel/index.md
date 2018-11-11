@@ -95,7 +95,7 @@ for example, `v2.html`. All of the subsequent requests will flow (like a
 waterfall!) from this initial navigation request, based on what images, scripts,
 and styles the HTML document references.
 
-![Chrome DevTools' waterfall view.](./waterfall.png)
+<img class="screenshot" src="./waterfall.png" alt="Chrome DevTools' waterfall view.">
 
 The waterfall shows that as soon as `v2.html` has finished loading, the requests
 for the assets it references (also referred to as _subresources_) start. The
