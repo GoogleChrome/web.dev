@@ -1,0 +1,40 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "serve-modern-code",
+  "version": "1.0.0",
+  "description": "An example of how serving modern code can trim bundle sizes",
+  "main": "server.js",
+  "scripts": {
+    "start": "TMP=/app/.tmp webpack && http-server -c-1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "style-loader": "^0.16.1",
+    "css-loader": "^0.27.3",
+    "babel-loader": "^8.0.2",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.5",
+    "html-webpack-plugin": "^3.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "script-ext-html-webpack-plugin": "^2.0.1"
+  },
+  "engines": {
+    "node": "8.11.2"
+  },
+  "repository": {
+    "url": "https://glitch.com/#!/project/serve-modern-code"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch"
+  ]
+}
