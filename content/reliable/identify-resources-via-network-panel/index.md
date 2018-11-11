@@ -12,11 +12,13 @@ The Network panel in your browser's DevTools helps identify what resources are
 loaded and when they are loaded. Each row in the Network panel corresponds to a
 specific URL that your web app has loaded.
 
-![image](./network-panel.png)
+![Chrome DevTools' network panel.](./network-panel.png)
 
-**Note:** This guide uses screenshots and descriptions based on Chrome's DevTools
+<div class="aside note">
+This guide uses screenshots and descriptions based on Chrome's DevTools
 interface. Other browsers support similar functionality, but the overall
 interface will be different if you're not using Chrome.
+</div>
 
 ## Know what you load
 
@@ -55,16 +57,20 @@ across multiple visits to the same page. A less aggressive caching strategy is
 often appropriate for content that you've identified as being outside the
 critical loading path.
 
-**Note:** Advanced techniques outside the scope of this guide, like 
-[`<link rel="preload">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content),
+<div class="aside note">
+Advanced techniques outside the scope of this guide, like 
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content"><code>&lt;link rel="preload"&gt;</code></a>,
 add a twist to this story by giving a head start to what would otherwise be a
 late-loaded request.
+</div>
 
 ### The Name and Type columns help with the what
 
 The Name and Type columns help provide a meaningful picture of _what_'s being
 loaded. The answer to "_what_'s loading?" is a total of four URLs, each
 representing a unique type of content.
+
+![Chrome DevTools' network panel showing four files loading.](./network-panel-urls.png)
 
 The Name represents the URL that your browser requested—though you'll only see
 the last portion of the URL's path listed. For example, if
@@ -89,7 +95,7 @@ for example, `v2.html`. All of the subsequent requests will flow (like a
 waterfall!) from this initial navigation request, based on what images, scripts,
 and styles the HTML document references.
 
-![image](./waterfall.png)
+![Chrome DevTools' waterfall view.](./waterfall.png)
 
 The waterfall shows that as soon as `v2.html` has finished loading, the requests
 for the assets it references (also referred to as _subresources_) start. The
