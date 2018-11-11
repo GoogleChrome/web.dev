@@ -147,10 +147,7 @@ changes to the currently registered service worker for debugging purposes.
 Service workers tend to stick around, unless they're explicitly
 unregistered. If you find yourself wanting to "start fresh" during local
 development, a great way of doing so is to use a <a href="https://support.google.com/chrome/answer/95464">Chrome Incognito
-window</a> to load pages that are
-under service worker control.
-
-The service worker will persist only as long as
+window</a> to load pages that are under service worker control. The service worker will persist only as long as
 the window is open, and you could always start over by closing all Incognito
 windows and opening a new one.
 </div> 
