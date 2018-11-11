@@ -68,6 +68,8 @@ That's it! To see these changes in action, follow these steps:
 
 - Click on the **Show Live** button to view the live version of the the Glitch.
 
+<web-screenshot type="show-live"></web-screenshot>
+
 - Open the console and find the images that were just added. Their classes
   should change from `lazyload` to `lazyloaded` as you scroll down the page.
 
@@ -84,6 +86,8 @@ Lastly, it's a good idea to use Lighthouse to verify these changes. Lighthouse's
 add lazy loading to any offscreen images.
 
 - Click on the **Show Live** button to view the live version of the your Glitch.
+
+<web-screenshot type="show-live"></web-screenshot>
 
 - Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Defer offscreen images" audit was passed.
 
