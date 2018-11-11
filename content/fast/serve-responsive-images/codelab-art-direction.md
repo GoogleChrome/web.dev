@@ -7,9 +7,13 @@ glitch: responsive-images-art-direction
 
 ## Try out this demo
 
-- Reload this demo using different browser sizes. Notice how different the
-images are - they are not just different sizes but also different croppings and
-aspect ratios.
+- Click the **Show Live** button to preview the app.
+
+<web-screenshot type="show-live"></web-screenshot>
+
+- Reload the app using different browser sizes. Notice how different the images
+  are - they are not just different sizes but also different croppings and
+  aspect ratios.
 
 ## What's going on here?
 

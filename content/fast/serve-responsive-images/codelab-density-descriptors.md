@@ -5,40 +5,70 @@ page_type: glitch
 glitch: responsive-images-density-descriptors
 ---
 
-**Demo & Guide**
+## Explore This Demo
 
-Note: Most people are unfamiliar with the concepts that underpin the use of
-density descriptors. Thus, this code guide starts off with some important
-concepts before diving into the code.
+- Click the **Show Live** button to preview the app.
+
+<web-screenshot type="show-live"></web-screenshot>
+
+- Reload the page using different devices to see the browser load different
+  images.
+
+You can use the device emulator for this. If you're looking for specific display
+densities, here are some devices to try:
+
+<table>
+<tbody>
+<tr>
+<td>1x density</td>
+<td>Blackberry Playbook, many external monitors</td>
+</tr>
+<tr>
+<td>2x density</td>
+<td> iPad or IPhone 5/6</td>
+</tr>
+<tr>
+<td>3x density</td>
+<td>Galaxy S5 or iPhone X</td>
+</tr>
+</tbody>
+</table>
+
+- Checkout `index.html` for the code that makes this work.
+
+## How does it work?
+
+The concept of density descriptors may be unfamiliar to most folks. To better
+understand them, it helps to have a bit of background on how the browser works
+with pixels.
 
 ## What are pixels
 
 Let's start at the very beginning by defining what a pixel is. This sounds
 simple, but "pixel" can actually have many meanings:
 
-<table>
-<thead>
-<th>Type</th>
-<th>Definition</th>
-</thead>
-<tbody>
-<tr>
-<td>Device pixel <br>
-(aka "physical pixel")</td>
-<td>The smallest dot of color that can be displayed on a device.</td>
-</tr>
-<tr>
-<td>Logical pixel</td>
-<td>Information that specifies the color at a particular location on a grid.
-This type of pixel has no inherent physical size.</td>
-</tr>
-<tr>
-<td>CSS pixel</td>
-<td>The CSS spec defines a pixel as a unit of physical measurement. 1 pixel =
-1/96th of an inch.</td>
-</tr>
-</tbody>
-</table>
+<dl>
+  <dt>
+    Device pixel (a.k.a. "physical pixel")
+  </dt>
+  <dd>
+    The smallest dot of color that can be displayed on a device.
+  </dd>
+  <dt>
+    Logical pixel
+  </dt>
+  <dd>
+    Information that specifies the color at a particular location on a grid.
+    This type of pixel has no inherent physical size.
+  </dd>
+  <dt>
+    CSS pixel
+  </dt>
+  <dd>
+    The CSS spec defines a pixel as a unit of physical measurement. 1 pixel =
+1/96th of an inch.
+  </dd>
+</dl>
 
 ## Pixel Density
 
@@ -123,8 +153,10 @@ Things to note:
     serving multiple image versions. The browser would have done this anyway if
     a high resolution image was not provided.
 
-(Note: Tools like [sharp](https://www.npmjs.com/package/sharp) make it easy to
-create multiple sizes of an image. This is covered in more detail here.)
+<div class="aside note">
+Tools like <a href="https://www.npmjs.com/package/sharp">sharp</a> make it easy
+to create multiple sizes of an image. This is covered in more detail here.
+</div>
 
 ## Use Density Descriptors to serve multiple images
 
@@ -133,8 +165,12 @@ serve different images to different devicePixelRatios.
 
 Example:
 
-`<img src="flower.jpg"
-     srcset="flower-1x.jpg 1x, flower-2x.jpg 2x, flower-3x.jpg 3x">`
+```
+<img src="flower.jpg"
+  srcset="flower-1x.jpg 1x,
+          flower-2x.jpg 2x,
+          flower-3x.jpg 3x">
+```
 
 This example put into words:
 
@@ -161,28 +197,3 @@ filename.
 
 ✔️ There is no need to include a `sizes` attribute. The `sizes` attribute is only
 used with width descriptors.
-
-## Explore This Demo
-
-- Reload the page using different devices to see the browser load different images.
-
-You can use the device emulator for this. If you're looking for specific display densities, here are some devices to try:
-
-<table>
-<tbody>
-<tr>
-<td>1x density</td>
-<td>Blackberry Playbook, many external monitors</td>
-</tr>
-<tr>
-<td>2x density</td>
-<td> iPad or IPhone 5/6</td>
-</tr>
-<tr>
-<td>3x density</td>
-<td>Galaxy S5 or iPhone X</td>
-</tr>
-</tbody>
-</table>
-
-- Checkout `index.html` for the code that makes this work.

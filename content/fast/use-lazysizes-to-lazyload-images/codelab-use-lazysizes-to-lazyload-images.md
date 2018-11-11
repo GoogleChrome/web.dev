@@ -24,6 +24,7 @@ makes this a very simple strategy to implement.
 `lazysizes.min.js` has already been downloaded and added to this Glitch. To
 include it in the page:
 
+<<<<<<< HEAD
 - Add the following `<script>` tag to `index.html`:
 
 <pre class="prettyprint devsite-disable-click-to-copy">
@@ -31,11 +32,25 @@ include it in the page:
   &lt;!-- Images End --&gt;
 &lt;/body&gt;
 </pre>
+=======
+(Note: The
+[lazysizes.min.js](https://raw.githubusercontent.com/aFarkas/lazysizes/gh-pages/lazysizes.min.js)
+file has already been added to this project, so there is no need to add it
+separately.)
+
+lazysizes will intelligently load images as the user scrolls through the page
+and prioritize the images that the user is going to encounter soon.
+>>>>>>> wip
 
 lazysizes will intelligently load images as the user scrolls through the page
 and prioritize the images that the user is going to encounter soon.
 
+<<<<<<< HEAD
 ## Indicate the images to lazy load
+=======
+- Add the class `lazyload` to images that should be lazy loaded. In addition,
+  change the `src` attribute to `data-src`.
+>>>>>>> wip
 
 - Add the class `lazyload` to images that should be lazy loaded. In addition,
   change the `src` attribute to `data-src`.
@@ -47,7 +62,11 @@ For example, the changes for `flower3.png` would look like this:
 <strong>&lt;img data-src=&quot;images/flower3.png&quot; class=&quot;lazyload&quot;&gt;</strong>
 </pre>
 
+<<<<<<< HEAD
 For this example, try lazy loading `flower3.png`, `flower4.jpg`, and
+=======
+For this example, we recommend lazy loading `flower3.png`, `flower4.jpg`, and
+>>>>>>> wip
 `flower5.jpg`.
 
 <div class="aside note">
@@ -68,14 +87,18 @@ That's it! To see these changes in action, follow these steps:
 
 - Click on the **Show Live** button to view the live version of the the Glitch.
 
+<<<<<<< HEAD
 <web-screenshot type="show-live"></web-screenshot>
 
+=======
+>>>>>>> wip
 - Open the console and find the images that were just added. Their classes
   should change from `lazyload` to `lazyloaded` as you scroll down the page.
 
 ![Images being lazy loaded](./lazyload-console.png)
 
-- Watch the network panel to see the image files load individually as you scroll down the page.
+- Watch the network panel to see the image files load individually as you scroll
+  down the page.
 
 ![Images being lazy loaded](./lazysizes-waterfall.png)
 
@@ -85,11 +108,19 @@ Lastly, it's a good idea to use Lighthouse to verify these changes. Lighthouse's
 "Defer offscreen images" performance audit will indicate if you've forgotten to
 add lazy loading to any offscreen images.
 
+<<<<<<< HEAD
 - Click on the **Show Live** button to view the live version of the your Glitch.
+=======
+Lastly, it's a good idea to use Lighthouse to verify these changes. Lighthouse's
+"Defer offscreen images" performance audit will indicate if you've forgotten to
+add lazy loading to any offscreen images.
+>>>>>>> wip
 
 <web-screenshot type="show-live"></web-screenshot>
 
-- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Defer offscreen images" audit was passed.
+- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
+  the live version of your Glitch and verify that the "Defer offscreen images"
+  audit was passed.
 
 ![Passing 'Efficiently encode images' audit in Lighthouse](./lighthouse_passing.png)
 
