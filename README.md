@@ -112,3 +112,11 @@ For more information on the build system (such as how to write build steps), [se
 
 Googlers may use the `deploy` command to deploy changed files to the internal staging environment.
 Contact the web.dev team for more information.
+
+To preview changes to templates, it's easiest to edit the file in g3, and then stage the cl:
+
+```
+devsite2 stage --cl=<CL_NUM>
+```
+
+Once things look good, upstream your template changes here in Github.
