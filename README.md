@@ -87,6 +87,12 @@ Example:
 
 - Most codelabs should start with an instruction for the user to Click the **Remix This** button, followed by `<web-screenshot type="remix"></web-screenshot>`
 
+- Not everyone knows how to open the DevTools, so it can be helpful to give an instruction:
+
+```
+Open DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
+```
+
 ## Staging
 
 https://web.devsite.corp.google.com
