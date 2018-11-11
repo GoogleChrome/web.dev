@@ -33,7 +33,9 @@ SELECT COUNT(DISTINCT origin) FROM `chrome-ux-report.all.201809`
 ```
 
 To run the query, enter it into the query editor and press the 
-"Run query" button.
+"Run query" button:
+
+<img class="screenshot" src="./bigquery_first_query.png" alt="Enter a simple query into editor and press Run.">
 
 There are two parts to this query:
 
@@ -41,7 +43,7 @@ There are two parts to this query:
 the table. Roughly speaking, two URLs are part of the same origin if they have 
 the same scheme, host, and port.
 
-- `FROM `` `chrome-ux-report.all.201809` `` specifies the address of the source 
+- `FROM `chrome-ux-report.all.201809`` specifies the address of the source 
 table, which has three parts:
   - The Cloud project name `chrome-ux-report` within which all CrUX data is organized
   - The dataset `all`, representing data across all countries
