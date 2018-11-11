@@ -5,33 +5,39 @@ page_type: glitch
 glitch: webp-cli
 ---
 
-The webp <a href="https://developers.google.com/speed/webp/docs/precompiled" target="_blank">command line tool</a> has already been installed for you, so you're all set to get started. This tool converts JPG, PNG, and TIFF images to WebP.
+The webp
+<a href="https://developers.google.com/speed/webp/docs/precompiled">command line tool</a>
+has already been installed for you, so you're all set to get started. This tool
+converts JPG, PNG, and TIFF images to WebP.
 
-## 1. Convert images to WebP
+## Convert images to WebP
 
----
-1. Click the "Edit" button.
+- Click the **Remix This** button to make the project editable.
 
-![The 'Edit' button in Glitch](./edit_button.png)
+<web-screenshot type="remix"></web-screenshot>
 
-2.  Click the "Status" button.
+- Click the **Status** button.
 
-![The 'Status' button in Glitch](./status_button.png)
+<web-screenshot type="status"></web-screenshot>
 
-3.  Then click the "Console" button.
+- Click the **Console** button.
 
-![The 'Console' button in Glitch](./console_button.png)
+<web-screenshot type="console"></web-screenshot>
 
-4. Type the following command:
+- Type the following command:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 cwebp -q 50 images/flower1.jpg -o images/flower1.webp
 </pre>
 
-This command converts, at a quality of `50` (`0` is the worst; `100` is the best), the `images/flower1.jpg` file and saves it as `images/flower1.webp`.
+This command converts, at a quality of `50` (`0` is the worst; `100` is the
+best), the `images/flower1.jpg` file and saves it as `images/flower1.webp`.
 
 <div class="aside note">
-Are you wondering why you type <code>cwebp</code> instead of <code>webp</code>? WebP has two separate commands for encoding and decoding WebP images. <code>cwebp</code> encodes images to WebP, while <code>dwebp</code> decodes images from WebP.
+Are you wondering why you type <code>cwebp</code> instead of <code>webp</code>?
+WebP has two separate commands for encoding and decoding WebP images.
+<code>cwebp</code> encodes images to WebP, while <code>dwebp</code> decodes
+images from WebP.
 </div>
 
 After doing this, you should see something like this in the console:
@@ -55,15 +61,19 @@ bytes used:  header:            116  (0.4%)
 
 You've just successfully converted the image to WebP.
 
-However, running the `cwebp` command one image at a time like this would take a long time to convert many images. If you need to do this, you can use a script instead.
+However, running the `cwebp` command one image at a time like this would take a
+long time to convert many images. If you need to do this, you can use a script
+instead.
 
 - Run this script in the console (don't forget the backticks):
 
 <pre class="devsite-terminal devsite-click-to-copy">
-for file in images/*; do cwebp -q 50 "$file" -o "${file%.*}.webp"; done
+`for file in images/*; do cwebp -q 50 "$file" -o "${file%.*}.webp"; done`
 </pre>
 
-This script converts, at a quality of `50`, all the files in the `images/` directory, and saves them as a new file (same filename, but with a `.webp` file extension) in the same directory.
+This script converts, at a quality of `50`, all the files in the `images/`
+directory, and saves them as a new file (same filename, but with a `.webp` file
+extension) in the same directory.
 
 ### ✔︎ Check-in
 
@@ -80,12 +90,13 @@ flower3.webp
 
 Next, update this Glitch to serve WebP images to browsers that support it.
 
-## 2. Add WebP images using the `<picture>` tag
+## Add WebP images using the `<picture>` tag
 
-The `<picture>` tag allows you to serve WebP to newer browsers while maintaining support for older browsers.
+The `<picture>` tag allows you to serve WebP to newer browsers while maintaining
+support for older browsers.
 
----
-- In `index.html` replace `<img src="images/flower1.jpg"/>` with the following HTML:
+- In `index.html` replace `<img src="images/flower1.jpg"/>` with the following
+HTML:
 
 ```html
 <picture>
@@ -95,7 +106,8 @@ The `<picture>` tag allows you to serve WebP to newer browsers while maintaining
 </picture>
 ```
 
-- Next, replace the `<img>` tags for `flower2.jpg` and `flower3.png` with `<picture>` tags.
+- Next, replace the `<img>` tags for `flower2.jpg` and `flower3.png` with
+`<picture>` tags.
 
 ### ✔︎ Check-in
 
@@ -119,16 +131,23 @@ Once completed, the `<picture>` tags in `index.html` should look like this:
 </picture>
 ```
 
-Next, use Lighthouse to verify you've correctly implemented WebP images on the site.
+Next, use Lighthouse to verify you've correctly implemented WebP images on the
+site.
 
-## 3. Verify WebP usage with Lighthouse
+## Verify WebP usage with Lighthouse
 
-Lighthouse's "Serve images in next-gen formats" performance audit can let you know if all the images on your site are using next-gen formats like WebP.
+Lighthouse's "Serve images in next-gen formats" performance audit can let you
+know if all the images on your site are using next-gen formats like WebP.
 
-- Click on the "Show Live" button to view the live version of the your Glitch.
+- Click the **Show Live** button to preview the app.
 
-- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the live version of your Glitch and verify that the "Serve images in next-gen formats" audit was passed.
+<web-screenshot type="show-live"></web-screenshot>
 
-![Passing 'Serve images in next-gen formats' audit in Lighthouse](./lighthouse_passing.png)
+- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
+the live version of your app and verify that the "Serve images in next-gen
+formats" audit is passed.
+
+<img class="screenshot" src="./lighthouse_passing.png" alt="Passing 'Serve
+images in next-gen formats' audit in Lighthouse">
 
 Success! You are now serving WebP images on your site.

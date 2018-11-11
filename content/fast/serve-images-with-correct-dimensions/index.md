@@ -55,7 +55,7 @@ provides information about the displays of many common devices.
 The DevTools Elements panel can be used to determine what size an image is
 displayed at.
 
-![image](./elements-panel.png)
+![DevTools element's panel](./elements-panel.png)
 
 ### The "Better" approach
 
