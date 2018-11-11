@@ -73,7 +73,7 @@ browser.
 
 That's it! To see these changes in action, follow these steps:
 
-- Click on the **Show Live** button to view the live version of the the Glitch.
+- Click on the **Show Live** button to view the live version of the Glitch.
 
 <web-screenshot type="show-live"></web-screenshot>
 

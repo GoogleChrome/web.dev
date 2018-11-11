@@ -10,14 +10,14 @@ wf_blink_components: N/A
 Building websites that work well on all major browsers is a core tenet of an
 open web ecosystem. However, this means additional work of ensuring that all of
 the code you write is supported in each browser that you plan to target. If you
-want to use new JavaScript language features, you will need to transpile these
+want to use new JavaScript language features, you need to transpile these
 features to backwards-compatible formats for browsers that do not yet support
 them.
 
 [Babel](https://babeljs.io/docs/en) is the most widely used tool to compile code
 that contains newer syntax into code that different browsers and environments
 (such as Node) can understand. This guide assumes you are using Babel, so you
-will need to follow the [setup instructions](https://babeljs.io/setup) to
+need to follow the [setup instructions](https://babeljs.io/setup) to
 include it into your application if you haven't already. Select `webpack`
 in `Build Systems` if you are using webpack as the module bundler in your app.
 
@@ -27,7 +27,7 @@ It converts older code into newer syntax.
 </div>
 
 To use Babel to only transpile what is needed for your users, you
-will need to:
+need to:
 
 1. Identify which browsers you want to target.
 2. Use @babel/preset-env with appropriate browser targets.
@@ -36,13 +36,13 @@ will need to:
 ## Identify which browsers you want to target
 
 Before you begin to modify how the code in your application is transpiled, you
-need to identify which browsers will access your application. Analyze which browsers
+need to identify which browsers access your application. Analyze which browsers
 your users are currently using as well as those that you plan to target to make an
 informed decision.
 
 ## Use @babel/preset-env
 
-Transpiling code will usually result in a file that is larger than the
+Transpiling code usually results in a file that is larger than the
 original larger file sizes than their original forms. By minimizing the amount of
 compilation that you do you can reduce the size of your bundles to improve the
 performance of a web page.
@@ -69,7 +69,7 @@ configurations file, `.babelrc`:
 }
 ```
 
-Use the `targets` field to specify which browser versions you want to include, by adding an appropriate value (or query) to the `browsers` field. `@babel/preset-env` integrates with browserslist, an open-source configuration shared between different tools for targeting browsers. A full list of compatible queries is in the browserslist documentation. Another option is to use a `.browserslistrc` file to list the environments you wish to target.
+Use the `targets` field to specify which browser versions you want to include, by adding an appropriate value (or query) to the `browsers` field. `@babel/preset-env` integrates with browserslist, an open-source configuration shared between different tools for targeting browsers. A full list of compatible queries is in the [browserslist documentation](https://github.com/browserslist/browserslist#full-list). Another option is to use a `.browserslistrc` file to list the environments you wish to target.
 
 Use the `targets` field to specify which browser versions you want to include
 by adding an appropriate query to the `browsers` field. `@babel/preset-env`
@@ -91,7 +91,7 @@ configuration:
   "targets": "last 2 versions"
 ```
 
-The `"last 2 versions"` value will transpile your code for the
+The `"last 2 versions"` value transpiles your code for the
 [last two versions](http://browserl.ist/?q=last+2+versions) of every browser,
 which means support is provided for discontinued browsers such as Internet Explorer.
 This can unnecessarily increase the size of your bundle if you do not expect these
@@ -136,7 +136,7 @@ Browsers that support modules ignore scripts with a `nomodule` attribute.
 Conversely, browsers that do not support modules ignore script elements with
 `type="module"`. This means you can include a module as well as a compiled fallback.
 
-Ideally, the two version scripts of an application will be included like this:
+Ideally, the two version scripts of an application are included like this:
 
 ```html
   <script type="module" src="main.mjs"></script>

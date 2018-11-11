@@ -115,8 +115,6 @@ Here are the changes you can expect to make in order to implement this:
 +  Add a script to your page. This script detects when the custom font is
     loaded and then will update the page styling.
 
-Check out [this demo that shows how to create and server responsive images](https://glitch.com/~font-observer-demo).
-
 ## Verify
 
 Run Lighthouse to verify the site is using `font-display: swap` to display

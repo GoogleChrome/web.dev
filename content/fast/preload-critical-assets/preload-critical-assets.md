@@ -5,24 +5,22 @@ page_type: glitch
 glitch: preload-critical-assets
 ---
 
-In this codelab, the performance of the following web page will be improved
+In this codelab, the performance of the following web page is  improved
 by preloading and prefetching a few resources:
 
 ![App Screenshot](./san-francisco.png)
 
 ## Measure
 
-First measure how the website performs before adding any optimizations (see also
-Discover performance opportunities with Lighthouse):
+First measure how the website performs before adding any optimizations.
 
-1. Click on the Show Live button to boot up the app.
+- Click on the **Show Live** button to view the live version of the your Glitch.
 
-![Show live button](./show-live.png)
+<web-screenshot type="show-live"></web-screenshot>
 
-1. Open DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-2. Click on the **Audits** panel.
-3. Select the **Performance** checkbox.
-4. Click **Run Audits** to generate a report.
+Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
+the live version of your Glitch (see also
+[Discover performance opportunities with Lighthouse](/fast/discover-performance-opportunities-with-lighthouse)).
 
 Lighthouse shows the following failed audit for a resource that is fetched
 late:
@@ -145,7 +143,7 @@ sooner.
 </pre>
 
 For this resource, `font` is used as a value for the `as` attribute instead. 
-Reloading the application will show that the font is now fetched earlier.
+Reloading the application shows that the font is now fetched earlier.
 
 ![Network panel after preloading font](./network-panel-four.png)
 
@@ -154,10 +152,11 @@ correct values that should be used for the `as` attribute, refer to the
 [MDN article on Preloading](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded).
 
 <div class="aside note">
-Cross-origin resources can also be preloaded using the <code>crossorigin</code> attribute. Moreover, same-origin font resources 
-must be fetched using anonymous mode CORS which is why the <code>crossorigin</code> attribute is also used in this preload tag.
-
-The <a href="/secure/cross-origin-resource-sharing">Cross Origin Resource Sharing</a> guide explains the topic of same-origin and cross-origin requests in more detail.
+Cross-origin resources can also be preloaded using the <code>crossorigin</code> attribute.
+Moreover, same-origin font resources must be fetched using anonymous mode CORS
+which is why the <code>crossorigin</code> attribute is also used in this preload tag.
+The <a href="/secure/cross-origin-resource-sharing">Cross Origin Resource Sharing</a>
+guide explains the topic of same-origin and cross-origin requests in more detail.
 </div>
 
 ## Prefetch future resources
@@ -166,7 +165,7 @@ The <a href="/secure/cross-origin-resource-sharing">Cross Origin Resource Sharin
 a request for an asset used for a different navigation route but at 
 a lower priority than other important assets needed for the current page.
 
-In this website, clicking the image will take you to a separate `details/`
+In this website, clicking the image takes you to a separate `details/`
 route.
 
 ![Details route](./details.png)
@@ -211,8 +210,8 @@ when needed.
 
 The
 [code splitting guide](/fast/reduce-javascript-payloads-with-code-splitting)
-explored the use of dynamic imports to split a bundle into multiple chunks. To
-refresh your memory, this was demonstrated with a simple application that 
+explores the use of dynamic imports to split a bundle into multiple chunks.
+This is demonstrated with a simple application that
 dynamically imports a module from [Lodash](https://lodash.com/) when a form is submitted.
 
 ![Magic Sorter app that demonstrates code splitting](./magic.gif)
@@ -232,7 +231,7 @@ form.addEventListener("submit", e => {
 });
 ```
 
-Splitting a bundle will improve page loading times by
+Splitting a bundle improves page loading times by
 reducing its initial size. Version 4.6.0 of webpack provides support to preload or
 prefetch chunks that are imported dynamically. Using this application as an
 example, the `lodash` method can be prefetched at browser idle time; when a user
@@ -251,13 +250,13 @@ form.addEventListener("submit", e => {
 });
 </pre>
 
-Once the application is reloaded, webpack will inject a prefetch tag for the
+Once the application is reloaded, webpack injects a prefetch tag for the
 resource into the head of the document. This can be seen in the **Elements**
 panel in DevTools.
 
 ![Elements panel with prefetch tag](./devtools-elements.png)
 
-Observing the requests in the **Network** panel will also show that this chunk is
+Observing the requests in the **Network** panel also shows that this chunk is
 fetched with a low priority after all other resources have been requested.
 
 ![Network panel with prefetched request](./another-network-panel.png)
@@ -271,12 +270,12 @@ import(/* webpackPreload: true */ 'module')
 
 ## Conclusion
 
-With this codelab, you should have a solid understanding of how preloading or prefetching certain assets can improve the user experience of your site. It is important to mention that these techniques should not be used for every resource and using them incorrectly can harm performance. The best results will be noticed by only preloading or prefetching selectively. 
+With this codelab, you should have a solid understanding of how preloading or prefetching certain assets can improve the user experience of your site. It is important to mention that these techniques should not be used for every resource and using them incorrectly can harm performance. The best results are noticed by only preloading or prefetching selectively.
 
 To summarize:
 
 + Use **preload** for resources that are discovered late but are critical to the current page.
-+ Use **prefetch** for resources that will be needed for a future navigation route or user action.
++ Use **prefetch** for resources that are needed for a future navigation route or user action.
 
 Not all browsers currently support both preload and prefetch. This means that
 not all users of your application may notice performance improvements.

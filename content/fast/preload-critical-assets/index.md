@@ -44,7 +44,7 @@ types of content that can be preloaded, refer to
 
 Preloading is best suited for resources typically discovered later by the
 browser. For example, an external
-[`@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)`
+[`@font-face`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)
 rule in a CSS file isn't discovered until the browser finishes requesting and
 parsing the CSS file. Preload this font to ensure it's fetched before the CSS
 file has downloaded.
