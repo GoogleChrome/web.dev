@@ -32,8 +32,8 @@ observers for the "Pacifico" and "Roboto" font families:
 
 ```html
 <script type="text/javascript">
-  var pacificoObserver = new FontFaceObserver('Pacifico');
-  var robotoObserver = new FontFaceObserver('Roboto');
+  const pacificoObserver = new FontFaceObserver('Pacifico');
+  const robotoObserver = new FontFaceObserver('Roboto');
 </script>
 ```
 
@@ -75,8 +75,8 @@ Your script should now look like this:
 
 ```html
 <script type="text/javascript">
-  var pacificoObserver = new FontFaceObserver('Pacifico');
-  var robotoObserver = new FontFaceObserver('Roboto');
+  const pacificoObserver = new FontFaceObserver('Pacifico');
+  const robotoObserver = new FontFaceObserver('Roboto');
 
   Promise.all([
     pacificoObserver.load(),
@@ -107,8 +107,8 @@ Your completed script should look like this:
 
 ```html
 <script type="text/javascript">
-  var pacificoObserver = new FontFaceObserver('Pacifico');
-  var robotoObserver = new FontFaceObserver('Roboto');
+  const pacificoObserver = new FontFaceObserver('Pacifico');
+  const robotoObserver = new FontFaceObserver('Roboto');
 
   Promise.all([
      pacificoObserver.load(),
