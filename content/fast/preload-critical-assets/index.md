@@ -11,13 +11,7 @@ wf_blink_components: N/A
 
 As soon as you open any web page, the browser requests an HTML document from a
 server, parses the contents of the HTML file, and submits separate requests for
-any other external references.
-
-![HTML and CSS request chain diagram](./request-chain.png)
-
-The **critical request chain** represents the order of resources that are
-prioritized and fetched by the browser. Lighthouse identifies assets that are on
-the third level of this chain as _late-discovered_:
+any other external references. The **critical request chain** represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as _late-discovered_.
 
 ![Lighthouse: Preload key requests audit](./preload-requests.png)
 

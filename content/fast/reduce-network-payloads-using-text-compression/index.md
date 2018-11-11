@@ -27,11 +27,13 @@ page that can be minified.
 
 ![Lighthouse: Minify CSS Audit](./reduce-network-payloads-using-text-compression-1.png)
 
-![Lighthouse: Minify JS Audit](./reduce-network-payloads-using-text-compression-2.png)
+<img class="screenshot" src="./reduce-network-payloads-using-text-compression-1.png" alt="Lighthouse Minify CSS Audit">
+
+<img class="screenshot" src="./reduce-network-payloads-using-text-compression-2.png" alt="Lighthouse Minify JS Audit">
 
 It also audits for any uncompressed assets.
 
-![Lighthouse: Enable text compression](./reduce-network-payloads-using-text-compression-3.png)
+<img class="screenshot" src="./reduce-network-payloads-using-text-compression-3.png" alt="Lighthouse: Enable text compression">
 
 ## Minification
 

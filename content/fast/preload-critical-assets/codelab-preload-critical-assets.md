@@ -25,12 +25,12 @@ the live version of your Glitch (see also
 Lighthouse shows the following failed audit for a resource that is fetched
 late:
 
-![image](./preload-requests-codelab.png)
+<img class="screenshot" src="./preload-requests-codelab.png" alt="Lighthouse: Preload key requests audit">
 
 Open the **Network** panel in DevTools and take a look at all the resources that
 are fetched.
 
-![Network panel without any preloading](network-panel-one.png)
+<img class="screenshot" src="./network-panel-one.png" alt="Network panel with late-discovered resource">
 
 The `main.css` file is not fetched by a Link element (`<link>`) placed in the HTML
 document, but a separate JavaScript file, `fetch-css.js`, attaches
@@ -74,7 +74,7 @@ fetched, and `as="style"` is used to preload stylesheet files.
 
 Reload the application and take a look at the **Network** panel in DevTools.
 
-![Network panel after preloading](./network-panel-two.png)
+<img class="screenshot" src="./network-panel-two.png" alt="Network panel with preloaded resource">
 
 Notice how the browser fetches the CSS file before the JavaScript
 responsible for fetching it has even been finished parsing. With preload, the browser
@@ -106,14 +106,14 @@ preload hint for this resource as well.
 </pre>
 
 Reload the application and take a look at the **Network** panel. 
-A request is made to retrieve `details.css` even though it is not being used by the web page. 
+A request is made to retrieve `details.css` even though it is not being used by the web page.
 
-![Network panel with unecessary preload](./network-panel-three.png)
+<img class="screenshot" src="./network-panel-three.png" alt="Network panel with unecessary preload">
 
 Chrome displays a warning in the **Console** panel when a preloaded resource is
 not used by the page within a few seconds after it has loaded.
 
-![Preload warning in console](./console.png)
+<img class="screenshot" src="./console.png" alt="Preload warning in console">
 
 Use this warning as an indicator to identify if you have any preloaded resources
 that are not being used immediately by your web page. You can now remove the
@@ -145,7 +145,7 @@ sooner.
 For this resource, `font` is used as a value for the `as` attribute instead. 
 Reloading the application shows that the font is now fetched earlier.
 
-![Network panel after preloading font](./network-panel-four.png)
+<img class="screenshot" src="./network-panel-four.png" alt="Network panel with preloaded font">
 
 For a list of all the types of resources that can be fetched along with the
 correct values that should be used for the `as` attribute, refer to the
@@ -183,23 +183,23 @@ simple page. Add a link element to `index.html` to prefetch this resource.
 To understand how this triggers a request for the file, open the **Network** panel in DevTools
 and uncheck the **Disable cache** option.
 
-![Disable cache in Chrome DevTools](./disable-cache.png)
+<img class="screenshot" src="./disable-cache.png" alt="Disable cache in Chrome DevTools">
 
 Reload the application and notice how a very low priority request is made for
 `details.css` after all the other files have been fetched.
 
-![Network panel with prefetched resource](./network-panel-five.png)
+<img class="screenshot" src="./network-panel-five.png" alt="Network panel with prefetched resource">
 
 With DevTools open, click the image on the website to navigate to the `details` page. 
 Since a link element is used in `details.html` to fetch `details.css`, a request is made for the
 resource as expected.
 
-![Details page network requests](./network-panel-six.png)
+<img class="screenshot" src="./network-panel-six.png" alt="Details page network requests">
 
 Click the `details.css` network request in DevTools to view its details. You'll notice
 that the file is retrieved from the browsers's disk cache.
 
-![Details request fetched from disk cache](./details-css.png)
+<img class="screenshot" src="./details-css.png" alt="Details request fetched from disk cache">
 
 By taking advantage of browser idle time, prefetch makes an early request for a
 resource needed for a different page. This speeds up future navigation requests
@@ -214,7 +214,7 @@ explores the use of dynamic imports to split a bundle into multiple chunks.
 This is demonstrated with a simple application that
 dynamically imports a module from [Lodash](https://lodash.com/) when a form is submitted.
 
-![Magic Sorter app that demonstrates code splitting](./magic.gif)
+<img class="screenshot" src="./magic.gif" alt="Magic Sorter app that demonstrates code splitting">
 
 You can access [the Glitch for this application here](https://glitch.com/edit/#!/code-splitting).
 
@@ -259,7 +259,7 @@ panel in DevTools.
 Observing the requests in the **Network** panel also shows that this chunk is
 fetched with a low priority after all other resources have been requested.
 
-![Network panel with prefetched request](./another-network-panel.png)
+<img class="screenshot" src="./another-network-panel.png" alt="Network panel with prefetched request">
 
 Although prefetch makes more sense for this use case, webpack also provides support for preloading
 chunks that are dynamically imported.
