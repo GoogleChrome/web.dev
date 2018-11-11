@@ -215,13 +215,13 @@ The `server.js` file is responsible for setting up the Node server that hosts
 the application.
 
 ```
-var express = require('express');
+const express = require('express');
 
-var app = express();
+const app = express();
 
 app.use(express.static('public'));
 
-var listener = app.listen(process.env.PORT, function() {
+const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
 ```
@@ -244,8 +244,8 @@ be used. Begin by adding it as a `devDependency` in `package.json`:
 And import it into the server file, `server.js`:
 
 <pre class="prettyprint">
-var express = require('express');
-<strong>var compression = require('compression');</strong>
+const express = require('express');
+<strong>const compression = require('compression');</strong>
 </pre>
 
 And add it as a middleware **before** `express.static` is mounted:
@@ -253,7 +253,7 @@ And add it as a middleware **before** `express.static` is mounted:
 <pre class="prettyprint">
 //...
 
-var app = express();
+const app = express();
 
 <strong>app.use(compression());</strong>
 
@@ -367,8 +367,8 @@ by defining a new route in `server.js` before the files are served with
 `express.static`.
 
 <pre class="prettyprint">
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 <strong>app.get('*.js', (req, res, next) => {
   req.url = req.url + '.gz';

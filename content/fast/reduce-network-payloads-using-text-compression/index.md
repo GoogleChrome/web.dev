@@ -89,16 +89,16 @@ library. Use it to compress any asset as it gets requested. Here is an example
 of an entire server file that uses it correctly:
 
 <pre class="prettyprint">
-var express = require('express');
-var compression = require('compression');
+const express = require('express');
+const compression = require('compression');
 
-var app = express();
+const app = express();
 
 <strong>app.use(compression());</strong>
 
 app.use(express.static('public'));
 
-var listener = app.listen(process.env.PORT, function() {
+const listener = app.listen(process.env.PORT, function() {
 	console.log('Your app is listening on port ' + listener.address().port);
 });
 </pre>
@@ -137,8 +137,8 @@ server to handle all JS endpoints to serve the compressed files. Here is an
 example of how this can be done with Node and Express for gzipped assets.
 
 <pre class="prettyprint">
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 <strong>app.get('*.js', (req, res, next) => {
 	req.url = req.url + '.gz';
