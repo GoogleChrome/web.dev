@@ -5,7 +5,6 @@ page_type: glitch
 glitch: imagemin-grunt
 ---
 
-
 ## Install the Imagemin Grunt plugin
 
 This Glitch already contains `grunt` and `grunt-cli` for you, but you'll need to

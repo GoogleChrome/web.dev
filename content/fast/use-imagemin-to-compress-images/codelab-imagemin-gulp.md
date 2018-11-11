@@ -5,8 +5,6 @@ page_type: glitch
 glitch: imagemin-grunt
 ---
 
-This codelab shows you how to add Imagemin to an existing Gulp project.
-
 ## Install the Imagemin Gulp plugin
 
 This Glitch already contains `gulp` and `gulp-cli`, but you'll need to

@@ -5,8 +5,6 @@ page_type: glitch
 glitch: imagemin-webpack
 ---
 
-This codelab shows you how to add Imagemin to an existing Webpack project.
-
 ## Install the Imagemin Webpack plugin
 
 This Glitch already contains `webpack` and `webpack-cli`, but you'll need to
