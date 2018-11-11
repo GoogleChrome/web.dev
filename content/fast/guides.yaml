@@ -44,9 +44,9 @@ topics:
 - title: Measure performance in the field
   guides:
     - chrome-ux-report
-    - chrome-ux-report-bigquery
     - chrome-ux-report-data-studio-dashboard
     - chrome-ux-report-pagespeed-insights
+    - chrome-ux-report-bigquery
 - title: Enforce performance budgets
   guides:
     - performance-budgets-101

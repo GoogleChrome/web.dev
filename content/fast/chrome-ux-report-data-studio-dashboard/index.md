@@ -75,14 +75,16 @@ Each page includes a chart showing distributions over time for each available
 monthly release. As new datasets are released, you can simply refresh the 
 dashboard to get the latest data.
 
-![CrUX Data Studio FCP dashboard](./dash_fcp.png)
+### FCP Performance
 
-The first page shows you the distribution of FCP performance for each monthly 
-release. The raw histograms on BigQuery are in 100ms intervals. Here, those 
-intervals are simplified into three buckets: fast, average, and slow 
-performance. Fast FCP experiences occur in less than 1 second, average 
-experiences are between 1 and 2.5 seconds, and slow experiences are 2.5 seconds 
+The first page shows you the distribution of FCP performance for each monthly
+release. The raw histograms on BigQuery are in 100ms intervals. Here, those
+intervals are simplified into three buckets: fast, average, and slow
+performance. Fast FCP experiences occur in less than 1 second, average
+experiences are between 1 and 2.5 seconds, and slow experiences are 2.5 seconds
 or more.
+
+![CrUX Data Studio FCP dashboard](./dash_fcp.png)
 
 The percent of fast and slow FCP experiences for the most recent release are 
 highlighted on top, along with the percent change from the previous release. 
@@ -92,18 +94,22 @@ Data Studio, you may sometimes see "No Data" here. This is normal and due to the
 previous month's release not being available yet. Datasets are released on the 
 second Tuesday of each month._
 
-![CrUX Data Studio device dashboard](./dash_device.png)
+### Device distribution
 
 The device distribution chart shows you the breakdown of phone, desktop, and 
 tablet users over time. Many origins tend to have little to no tablet data so 
 you'll see "0%" hanging off the edge of the chart.
 
-![CrUX Data Studio effective connection type dashboard](./dash_ect.png)
+![CrUX Data Studio device dashboard](./dash_device.png)
+
+### Connection distribution
 
 The third and final page shows you the breakdown of effective connection types 
 per month. There are five possible connection types (4G, 3G, 2G, Slow 2G, and 
 Offline), but you will typically only see two or three in the chart. In the 
 example above, 2G, Slow 2G, and offline are all 0%.
+
+![CrUX Data Studio effective connection type dashboard](./dash_ect.png)
 
 ## Sharing the dashboard
 

@@ -21,10 +21,12 @@ and better understand the user experience.
 
 ## Reading the data
 
+To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/)
+and enter the URL of the page you want to test.
+
 <img class="screenshot" src="./psi_url.png" alt="Enter a URL to get started on PageSpeed Insights">
 
-To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/) 
-and enter the URL of the page you want to test. After a few seconds, Lighthouse 
+After a few seconds, Lighthouse 
 audits will be performed and you will see sections for Field and Lab data. CrUX 
 is a collection of real user experiences from the field, while Lighthouse is a 
 controlled test in the lab.
@@ -73,13 +75,15 @@ second) 74% of the time. FID is "slow" (at least 250 milliseconds) 2% of the
 time. These distributions represent the totality of the user experience and 
 their shapes indicate the tendency to be either fast or slow.
 
-<img class="screenshot" src="./psi_origin.png" alt="Origin CrUX performance in PageSpeed Insights">
+## Summary of origin performance
 
 PSI also includes a summary of origin performance. This is an aggregation of 
 user experiences across all pages on an origin. You can get the same FCP and FID 
 stats for an entire origin that are available for individual pages. This data is 
 closely aligned with what is available on BigQuery, while the page-level 
 performance is not made available to query.
+
+<img class="screenshot" src="./psi_origin.png" alt="Origin CrUX performance in PageSpeed Insights">
 
 There is one major difference between the origin-level performance on PSI versus 
 BigQuery. The datasets on BigQuery are released once a month and encompass all 
@@ -90,12 +94,14 @@ the results you see today may be different tomorrow and they would not
 necessarily be the same as what you'd see in the monthly aggregations on 
 BigQuery.
 
-![No CrUX data on PageSpeed Insights](./psi_no_data.png)
+## Null response when URL not available
 
 If the URL you entered is not available in CrUX, you will see a null response 
-like the one above, indicating that there is not enough data. Lab data from 
+like the one below, indicating that there is not enough data. Lab data from 
 Lighthouse is still available to give you an approximation of the page's 
 performance.
+
+![No CrUX data on PageSpeed Insights](./psi_no_data.png)
 
 ## FAQ
 
