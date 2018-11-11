@@ -1,0 +1,83 @@
+/* Copyright 2018 Google LLC.
+SPDX-License-Identifier: Apache-2.0 */
+
+@font-face {
+  font-family: 'K2D';
+  font-style: normal;
+  font-weight: 400;
+  src: local('K2D'),
+       url('./fonts/K2D.woff2') format('woff2'),
+       url('./fonts/K2D.woff') format('woff'),
+       url('./fonts/K2D.ttf') format('truetype'),
+       url('./fonts/K2D.eot') format('embedded-opentype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'K2D', sans-serif;
+  text-align: center;
+  background-color: #000d12;
+  height: 100%;
+  margin: 0;
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+h1 {
+  font-size: 80px;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px green, 0 0 30px green, 0 0 40px green, 0 0 55px green, 0 0 75px green;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+
+img {
+  cursor: pointer;
+  border: 3px #afffaf solid;
+  border-radius: 5px;
+  box-shadow: 0 0 100px #6ff36f;
+  -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  max-height: 600px;
+}
+
+img:hover {
+  box-shadow: 0 0 100px pink;
+  border: 3px lightpink solid;
+  -webkit-transform: scale( 1.08 ); 
+  transform: scale( 1.08 );
+}
+
+img:active {
+  -webkit-transform: scale( 1.0 ); 
+  transform: scale( 1.0 );
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+      font-size: 40px;
+    }
+  
+    img {
+      max-height: 300px;
+    }
+    
+    #wrapper {
+      flex-direction: column;
+    }
+}

@@ -1,0 +1,120 @@
+/* Copyright 2018 Google LLC.
+SPDX-License-Identifier: Apache-2.0 */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #0F2027;
+  height: 100%;
+}
+
+form {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: pink;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 700px;
+  width: 100%;
+}
+
+input {
+  display: block;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  width: 60px;
+  font-size: 16px;
+}
+
+button {
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 7px 5px;
+  margin-bottom: 20px;
+  min-width: 80px;
+  background-color: pink;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: -webkit-transform .25s ease-out;
+  transition: transform .25s ease-out;
+  transition: transform .25s ease-out,-webkit-transform .25s ease-out;
+}
+
+button:hover {
+  -webkit-transform: scale( 1.05 ); 
+  transform: scale( 1.05 );
+}
+
+button:active {
+  -webkit-transform: scale( .90 ); 
+  transform: scale( .90 );
+}
+
+img {
+  cursor: pointer;
+  border: 4px pink solid;
+  border-radius: 5px;
+  -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+  max-height: 250px;
+}
+
+img:hover {
+  -webkit-transform: scale( 1.08 ); 
+  transform: scale( 1.08 );
+}
+
+img:active {
+  -webkit-transform: scale( 1.0 ); 
+  transform: scale( 1.0 );
+}
+
+#content {
+  height: 40px;
+}
+
+#content p {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 0;
+}

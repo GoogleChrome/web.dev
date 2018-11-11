@@ -1,0 +1,39 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "fav-kitties",
+  "version": "0.0.1",
+  "description": "An example app demonstrating how to remove unused libraries",
+  "main": "server.js",
+  "scripts": {
+    "start": "TMP=/app/.tmp webpack && http-server -c-1"
+  },
+  "dependencies": {
+    "firebase": "^5.3.1",
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "style-loader": "^0.16.1",
+    "css-loader": "^0.27.3",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.5",
+    "html-webpack-plugin": "^3.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "webpack-bundle-analyzer": "^2.13.1"
+  },
+  "engines": {
+    "node": "8.11.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/#!/project/welcome-project"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
