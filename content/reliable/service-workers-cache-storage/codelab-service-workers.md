@@ -5,8 +5,6 @@ page_type: glitch
 glitch: working-with-sw
 ---
 
-# Working with Service Workers
-
 This codelab shows you how to register a service worker from within your web
 application, and use the Chrome DevTools to observe its behavior. It also
 covers some debugging techniques that you might find useful when dealing with
