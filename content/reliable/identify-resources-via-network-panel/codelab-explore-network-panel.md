@@ -2,7 +2,7 @@
 title: Explore DevTools Network panel
 author: jeffy
 page_type: glitch
-glitch: sleet-expansion
+glitch: explore-devtools
 ---
 
 This codelab walks you through the process of interpreting all of the network

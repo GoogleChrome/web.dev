@@ -1,16 +1,16 @@
 ---
 page_type: guide
-title: 'The HTTP cache: your first line of offense'
+title: 'The HTTP cache: your first line of defense'
 author: jeffy
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
 
-# The HTTP cache: your first line of offense
+# The HTTP cache: your first line of defense
 
 How can you avoid unnecessary network requests?
 
-The browser's HTTP cache is your first line of offense. It's not necessarily the
+The browser's HTTP cache is your first line of defense. It's not necessarily the
 most powerful or flexible approach, and you have limited control over the
 lifetime of cached responses. But there are several rules of thumb that give you
 a sensible caching implementation without much work, so you should always try to
@@ -39,14 +39,14 @@ This is good news—it means that you can continue including tags like `<img
 src="my-image.png">` in your HTML, and the browser  automatically takes care of
 HTTP caching for you, without extra effort.
 
-**Note:** Developers who do need more control over the HTTP cache in their web
+<div class="aside note">
+Developers who do need more control over the HTTP cache in their web
 application have an alternative—you can "drop down" a level, and manually use
-the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API),
-passing it 
-[`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request) objects
-with specific
-[`cache`](https://developer.mozilla.org/en-US/docs/Web/API/Request/cache)
+the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a>, passing it 
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Request"><code>Request</code></a> objects with specific
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/cache"><code>cache</code></a>
 overrides set. That's beyond the scope of this guide, though!
+</div>
 
 ## Response headers: configure your web server
 
