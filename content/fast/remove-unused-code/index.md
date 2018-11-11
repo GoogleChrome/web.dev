@@ -19,7 +19,7 @@ to detect unused code. Then remove **unused** and **unneeded** libraries.
 The simplest way to see the size of all network requests is to open the
 **Network** panel in DevTools, check `Disable Cache`, and reload the page.
 
-![Network panel](./bundle.png)
+<img class="screenshot" src="./bundle.png" alt="Network panel with bundle request">
 
 The [Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
 tab in DevTools will also tell you how much CSS and JS code in your application
@@ -31,7 +31,7 @@ By specifying a full Lighthouse configuration through its Node CLI, an "Unused
 JavaScript" audit can also be used to trace how much unused code is being
 shipped with your application.
 
-![Lighthouse: Unused JS Audit](./unused-js.png)
+<img class="screenshot" src="./unused-js.png" alt="Lighthouse Unused JS Audit">
 
 If you happen to be using [webpack](https://webpack.js.org/) as your bundler,
 [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
@@ -87,31 +87,4 @@ initial page load, consider if it can be [lazy loaded](/fast/reduce-javascript-p
 ## Remove unneeded libraries
 
 Not all libraries can be easily broken down into parts and selectively imported.
-In these scenarios, consider if the library should be removed entirely for a
-simpler alternative. 
-
-For example, instead of importing an entire date utility library like
-[moment](https://momentjs.com/) to parse and format a single date, you can
-consider writing your own function that calculates an age in weeks given a Unix
-timestamp:
-
-```
-const ageInWeeks = birthDate => {
-  const WEEK_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
-  const diff = Math.abs((new Date).getTime() - birthDate);
-
-  return Math.floor(diff / WEEK_IN_MILLISECONDS);
-}
-```
-
-Although this approach reduces unnecessary code from the `moment` library,
-larger applications can be significantly more complicated. What if other parts
-of the application involve time zones and different locales? Or what if there
-are more complicated date manipulations? Manipulating and parsing dates and
-times can quickly become confusing, and `moment` simplifies this
-significantly.
-
-When using third-party dependencies, building a custom solution or leveraging a
-lighter alternative are options worth considering.  Always weigh the complexity
-and effort required for either of these before removing a library entirely from
-an application.
+In these scenarios, consider if the library could be removed entirely. Building a custom solution or leveraging a lighter alternative should always be options worth considering. However, it is important to weigh the complexity and effort required for either of these efforts before removing a library entirely from an application.

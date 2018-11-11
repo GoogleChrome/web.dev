@@ -82,19 +82,14 @@ learn more about both of these concepts with the following resources.
 +  [Optimize CSS Delivery](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery)
 +  [What is Server-Side Rendering?](https://www.youtube.com/watch?v=GQzn7XRdzxY)
 
+<img width="300" class="attempt-right" src="./service-workers.png" alt="Requests/responses with service worker">
+
 ## Pre-cache assets
-
-Lighthouse shows the following failed audits if your web page does not work when
-offline.
-
-<img class="screenshot" src="./offline-audits.png" alt="Lighthouse: Service worker and offline audit">
 
 By acting as a proxy, **service workers** can fetch assets directly from the cache
 rather than the server on repeat visits. This not only allows users to use your
 application when they are offline, but also results in faster page load times on
 repeat visits.
-
-<img class="screenshot" src="./service-workers.png" alt="Requests/responses with service worker">
 
 Use a third-party library to simplify the process of generating a service worker
 unless you have more complex caching requirements than what a library can

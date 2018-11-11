@@ -8,7 +8,7 @@ glitch: fav-kitties-starter
 In this codelab, improve the performance of the following application by
 removing any unused and unneeded dependencies.
 
-![image](./kitties.png)
+![App screenshot](./kitties.png)
 
 ## Measure
 
@@ -19,35 +19,35 @@ adding optimizations.
 
 <web-screenshot type="show-live"></web-screenshot>
 
-Go ahead and click on your favorite kitten! Firebase's [Realtime
-Database](https://firebase.google.com/products/realtime-database/) is used in
+Go ahead and click on your favorite kitten! Firebase's [Realtime Database](https://firebase.google.com/products/realtime-database/) is used in
 this application which is why the score updates in real-time and is synchronized
 with every other person using the application. 🐈
 
 +  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 +  Click on the **Network** tab.
 
-![image](./network.png)
+<img class="screenshot" src="./network.png" alt="Network tab">
 
 Make sure `Disable Cache` is checked and reload the app.
 
-![image](./main-bundle.png)
+<img class="screenshot" src="./main-bundle.png" alt="Original bundle size of 992 KB">
 
-Almost 1 MB worth of JavaScript is being shipped to load this simple application.
+Almost 1 MB worth of JavaScript is being shipped to load this simple application!
+
 Take a look at the project warnings in DevTools.
 
 +  Click on the **Console** tab.
 +  Make sure that `Warnings` is enabled in the levels dropdown next to the
     `Filter` input.
 
-![image](./warnings.png)
+<img class="screenshot" src="./warnings.png" alt="Warnings filter">
 
 +  Take a look at the displayed warning.
 
-![image](./displayed-warning.png)
+<img class="screenshot" src="./displayed-warning.png" alt="Console warning">
 
 Firebase, which is one of the libraries used in this application, is being a
-good Samaritan by providing a warning to let developers know to not import its
+good samaritan by providing a warning to let developers know to not import its
 entire package but only the components that are used. In other words, there are
 unused libraries that can be removed in this application to make it load
 faster.
@@ -80,33 +80,38 @@ different community-built tools that can help do this, such as
 
 The package for this tool is already included in the app as a `devDependency`.
 
-    "devDependencies": {
-      //...
-      "webpack-bundle-analyzer": "^2.13.1"
-    },
+```
+"devDependencies": {
+  //...
+  "webpack-bundle-analyzer": "^2.13.1"
+},
+```
 
-This means that it can be imported directly in the webpack configuration file,
-`webpack.config.js`:
+This means that it can be used directly in the webpack configuration file. Import it at the very beginning of `webpack.config.js`:
 
-    const path = require("path");
+<pre class="prettyprint">
+const path = require("path");
 
-    //...
-    const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//...
+<strong>const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;</strong>
+</pre>
 
 Now add it as a plugin at the very end of the file within the `plugins` array:
 
-    module.exports = {
-     //...
-     plugins: [
-       //...
-       new BundleAnalyzerPlugin()
-     ]
-    }
+<pre class="prettyprint">
+module.exports = {
+  //...
+  plugins: [
+    //...
+    <strong>new BundleAnalyzerPlugin()</strong>
+  ]
+}
+</pre>
 
 When the application reloads, you should see a visualization of the entire
 bundle instead of the app itself.
 
-![image](./bundle-visualization.png)
+![Webpack Bundle Analyzer](./bundle-visualization.png)
 
 Not as cute as seeing some kittens 🐱, but incredibly helpful nonetheless.
 Hovering over any of the packages shows its size represented in three
@@ -158,33 +163,35 @@ Revert the changes in `webpack.config.js` to see the application again:
 
 + Remove `BundleAnalyzerPlugin` in the list of plugins:
 
-```javascript
+<pre class="prettyprint">
 plugins: [
   //...
-  new BundleAnalyzerPlugin()
+  <s>new BundleAnalyzerPlugin()</s>
 ]
-```
+</pre>
 
 + And now remove the unused import from the top of the file:
 
-```javascript
+<pre class="prettyprint">
 const path = require("path");
 
 //...
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-```
+<s>const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;</s>
+</pre>
 
 The application should load normally now. Modify `src/index.js` to update the
 Firebase imports.
 
-    import firebase from "firebase";
-    import firebase from 'firebase/app';
-    import 'firebase/database';
+<pre class="prettyprint">
+<s>import firebase from "firebase";</s>
+<strong>import firebase from 'firebase/app';</strong>
+<strong>import 'firebase/database';</strong>
+</pre>
 
 Now when the app reloads, the DevTools warning does not show. Opening the
 DevTools **Network** panel also shows a _nice_ reduction in bundle size:
 
-![image](reduced-main-bundle.png)
+<img class="screenshot" src="./reduced-main-bundle.png" alt="Bundle size reduced to 480 KB">
 
 More than half the bundle size was removed. Firebase provides many different
 services and gives developers the option to only include those that are actually
@@ -208,7 +215,7 @@ easily, but maybe it can be removed entirely?
 The birthday of each cute kitten is stored in **Unix** format (milliseconds) in
 the Firebase database.
 
-![image](./kitty-birthdays.png)
+<img class="screenshot" src="./kitty-birthdays.png" alt="Birthdates stored in Unix format">
 
 This is a timestamp of a particular date and time represented by the number of
 milliseconds that have elapsed since January 1, 1970 00:00 UTC. If the current
@@ -218,22 +225,28 @@ age of each kitten in weeks can probably be constructed.
 Like always, try not to copy and paste as you follow along here. Begin by
 removing `moment` from the imports in `src/index.js`.
 
-    import firebase from 'firebase/app';
-    import 'firebase/database';
-    import * as moment from 'moment';
+<pre class="prettyprint">
+import firebase from 'firebase/app';
+import 'firebase/database';
+<s>import * as moment from 'moment';</s>
+</pre>
 
 There is a Firebase event listener that handles value changes in our database:
 
-    favoritesRef.on("value", (snapshot) => { ... })
+```
+favoritesRef.on("value", (snapshot) => { ... })
+```
 
 Above this, add a small function to calculate the number of weeks from a
 given date:
 
-    const ageInWeeks = birthDate => {
-      const WEEK_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
-      const diff = Math.abs((new Date).getTime() - birthDate);
-      return Math.floor(diff / WEEK_IN_MILLISECONDS);
-    }
+```
+const ageInWeeks = birthDate => {
+  const WEEK_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
+  const diff = Math.abs((new Date).getTime() - birthDate);
+  return Math.floor(diff / WEEK_IN_MILLISECONDS);
+}
+```
 
 In this function, the difference in milliseconds between the current date and
 time `(new Date).getTime()` and the birth date (the `birthDate` argument, already
@@ -243,31 +256,33 @@ single week.
 Finally, all instances of `moment` can be removed in the event listener by
 leveraging this function instead:
 
-    favoritesRef.on("value", (snapshot) => {
-     const { kitties, favorites, names, birthDates } = snapshot.val();
-     favoritesScores = favorites;
+<pre class="prettyprint">
+favoritesRef.on("value", (snapshot) => {
+  const { kitties, favorites, names, birthDates } = snapshot.val();
+  favoritesScores = favorites;
 
-     kittiesList.innerHTML = kitties.map((kittiePic, index) => {
-       const birthday = moment(birthDates[index])
+  kittiesList.innerHTML = kitties.map((kittiePic, index) => {
+    <s>const birthday = moment(birthDates[index]);</s>
 
-       return `
-         <li>
-           <img src=${kittiePic} onclick="favKittie(${index})">
-           <div class="extra">
-             <div class="details">
-               <p class="name">${names[index]}</p>
-               <p class="age">${moment().diff(birthday, 'weeks')} weeks old</p>
-               <p class="age">${ageInWeeks(birthDates[index])} weeks old</p>
-             </div>
-             <p class="score">${favorites[index]} ❤</p>
-           </div>
-         </li>
-       `})
-    });
+    return `
+      &lt;li&gt;
+        &lt;img src=${kittiePic} onclick=&quot;favKittie(${index})&quot;&gt;
+        &lt;div class=&quot;extra&quot;&gt;
+          &lt;div class=&quot;details&quot;&gt;
+            &lt;p class=&quot;name&quot;&gt;${names[index]}&lt;/p&gt;
+            <s>&lt;p class=&quot;age&quot;&gt;${moment().diff(birthday, 'weeks')} weeks old&lt;/p&gt;</s>
+            <strong>&lt;p class=&quot;age&quot;&gt;${ageInWeeks(birthDates[index])} weeks old&lt;/p&gt;</strong>
+          &lt;/div&gt;
+          &lt;p class=&quot;score&quot;&gt;${favorites[index]} ❤&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    `})
+});
+</pre>
 
-Now reload the application and take a look at the **Network** tab once more.
+Now reload the application and take a look at the **Network** panel once more.
 
-![image](./smallest-bundle.png)
+<img class="screenshot" src="./smallest-bundle.png" alt="Bundle size reduced to 225 KB">
 
 The size of our bundle was reduced by more than half again!
 

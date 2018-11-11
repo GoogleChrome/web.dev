@@ -20,7 +20,7 @@ numbers is optimized through code-splitting.
 Like always, it's important to first measure how well a website performs before
 attempting to add any optimizations.
 
--  Click on the `Show Live` button.
+-  Click on the **Show Live** button.
 
 <web-screenshot type="show-live"></web-screenshot>
 
