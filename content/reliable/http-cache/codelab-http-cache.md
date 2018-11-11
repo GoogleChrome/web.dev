@@ -2,7 +2,7 @@
 title: Configuring HTTP caching behavior
 author: jeffy
 page_type: glitch
-glitch: equinox-tower
+glitch: configure-cache-control
 ---
 
 This codelab shows you how to change the HTTP caching headers returned by a
@@ -16,7 +16,7 @@ principles about choosing the correct caching headers apply to any web server
 environment.
 </div>
 
-## Get familiar with the sample project on Glitch
+## Get familiar with the sample project
 
 These are the key files you will be working with in the sample project:
 
@@ -26,11 +26,11 @@ These are the key files you will be working with in the sample project:
     the local files in the public directory, so the `serve-static`
     [documentation](https://expressjs.com/en/resources/middleware/serve-static.html)
     will come in handy.
-+  `index.html` is the web app's HTML. Like most HTML files, it does not
++  `public/index.html` is the web app's HTML. Like most HTML files, it does not
     contain any versioning information as part of its URL.
-+  `app.15261a07.js` and `style.391484cf.css` are the web app's JavaScript
++  `public/app.15261a07.js` and `public/style.391484cf.css` are the web app's JavaScript
     and CSS assets. These files each contain a hash in their URLs,
-    corresponding to their contents. The index.html is responsible for keeping
+    corresponding to their contents. The `index.html` is responsible for keeping
     track of which specific versioned URL to load.
 
 <div class="aside note">
@@ -65,13 +65,17 @@ conditionally set this header is to write a custom
 [`setHeaders function`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
 and within that, check to see if the incoming request is for an HTML document.
 
-The static serving configuration starts out as this:
+- Click the **Remix This** button to make the project editable.
+
+<web-screenshot type="remix"></web-screenshot>
+
+The static serving configuration in `server.js` starts out as this:
 
 ```
 app.use(express.static('public'));
 ```
 
-Now, make the changes described above, and you should end up with something that
+- Make the changes described above, and you should end up with something that
 looks like:
 
 ```
@@ -121,8 +125,7 @@ if you end up adding in additional, unversioned JavaScript or CSS assets to your
 project.
 </div>
 
-Putting this together, you can modify your `setHeaders` function to come up with
-something like the following:
+- Modify the `setHeaders` function so it looks like this:
 
 ```
 app.use(express.static('public', {
@@ -146,24 +149,31 @@ app.use(express.static('public', {
 
 <div class="aside note">
 You can get familiar with the Network panel in Chrome's DevTools by
-working through this codelab.
+working through <a href="/reliable/identify-resources-via-network-panel/codelab-explore-network-panel">this codelab</a>.
 </div>
 
 With the modifications to the static file server in place, you can check to make
-sure that the right headers are being set by visiting your web app in Glitch
-with the DevTools Network panel open. You'll want to customize the columns that are
-displayed to include the information that is most relevant, by right-clicking in
+sure that the right headers are being set by previewing the live app with the DevTools Network panel open.
+
+- Click the **Show Live** button to preview the app.
+
+<web-screenshot type="show-live"></web-screenshot>
+
+- Customize the columns that are
+displayed in the Network panel to include the information that is most relevant, by right-clicking in
 the column header:
 
-![image](./configure-response-headers.png)
+<img class="screenshot" src="./configure-response-headers.png" alt="Configuring DevTools' Network panel.">
 
 Here, the columns to pay attention to are `Name`, `Status`, `Cache-Control`,
 `ETag`, and `Last-Modified`.
 
+- With the DevTools open to the Network panel, refresh the page.
+
 After the page has loaded, you should see entries in the Network panel that look
 like the following:
 
-![image](./network-panel.png)
+<img class="screenshot" src="https://web.devsite.corp.google.com/reliable/http-cache/network-panel.png" alt="Network panel columns.">
 
 The first row is for the HTML document that you navigated to. This is properly
 served with `Cache-Control: no-cache`. The HTTP response status for that request
@@ -186,7 +196,7 @@ Because of the configuration used, there is no actual request being made to the
 Node.js server, and clicking on the entry will show you additional detail,
 including that the response came "(from disk cache)".
 
-![image](./status-code.png)
+<img class="screenshot" src="https://web.devsite.corp.google.com/reliable/http-cache/status-code.png" alt="A network response status of 200.">
 
 The actual values for the ETag and Last-Modified columns don't matter much. The
 important thing is to confirm that they're being set.

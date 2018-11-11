@@ -9,7 +9,7 @@ wf_blink_components: N/A
 # Service workers & the Cache Storage API
 
 You're locked in a struggle for network reliability. The browser's HTTP cache is
-your first line of offense, but as you've learned, it's only really effective
+your first line of defense, but as you've learned, it's only really effective
 when loading versioned URLs that you've previously visited. On its own, the HTTP
 cache is not enough.
 

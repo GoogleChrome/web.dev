@@ -75,7 +75,7 @@ Workbox automatically detects when you're running a development version of your
 website on `localhost`, and turns on debug logging in your browser's JavaScript
 console.
 
-![image](./workbox-logging.png)
+<img class="screenshot" src="https://web.devsite.corp.google.com/reliable/workbox/workbox-logging.png?dcb_=0.8837450276540446" alt="Workbox logging to the DevTools console">
 
 By following along with the log messages, you can get to the root of any
 configuration or invalidation problems much more quickly than if you were going
@@ -159,9 +159,9 @@ different caching strategies on the fly.
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 
 workbox.routing.registerRoute(
-    new RegExp('\.png$'),
-    workbox.strategies.cacheFirst({
+  new RegExp('\.png$'),
+  workbox.strategies.cacheFirst({
     cacheName: 'images-cache',
-    })
+  })
 );
 ```
