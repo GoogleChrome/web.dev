@@ -17,23 +17,29 @@ not match what you see in this codelab.
 ## Navigate to the Network Panel
 
 Navigate to the Network panel to see the network traffic for the demo
-application. First run the server by clicking on the Show Live button: 
+application.
 
-![image](./show-live.png)
+- Click the **Show Live** button to preview the app.
 
-Open the DevTools and and select the Network tab.
+<web-screenshot type="show-live"></web-screenshot>
+
+1. Open DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
+1. Select the **Network** tab.
+1. Reload the page to see the network traffic.
 
 You should see the DevTools interface open up, in either a new window or as a
 sidebar in your existing window. In the DevTools, select the Network
-tab to open the Network panel.  
+tab to open the Network panel.
 The Network panel shows all the assets loaded as a result of your initial
 navigation:
 
-![image](./initial-navigation.png)
+<img class="screenshot" src="./initial-navigation.png" alt="Chrome DevTools' network panel.">
 
-**Note:** The actual columns you see in the Network panel may be different; the
+<div class="aside note">
+The actual columns you see in the Network panel may be different; the
 screenshot shows a simplified view with everything but the Name, Type, and
 Waterfall columns hidden.
+</div>
 
 ## How to interpret the entries
 
@@ -65,10 +71,12 @@ the page after the initial navigation is complete.
 Trigger these additional requests by clicking the **Find Me** button, and then
 **Allow**ing the site to access your current location:
 
-![image](./allow-location.png)
+<img src="./allow-location.png" alt="The allow location permission prompt.">
 
-**Note:** You could also deny Geolocation permission, in which case the web app
+<div class="aside note">
+You could also deny Geolocation permission, in which case the web app
 will fall back to a default location.
+</div>
 
 Once the web app has a location to work with, clicking on the **Find Nearby
 Wikipedia Entries** button results in several additional Network requests. You
