@@ -3,15 +3,18 @@ title: Resize images with webpack & responsive-loader
 author: khempenius
 page_type: glitch
 glitch: responsive-images-with-webpack
+order: 4
 ---
 
-**Note:** The
-[`responsive-loader`](https://github.com/herrstucki/responsive-loader) plugin is a
+<div class="aside note">
+The
+<a href="https://github.com/herrstucki/responsive-loader">responsive-loader</a> plugin is a
 good choice for projects that import images using JavaScript. For projects that
 do not import images into JavaScript files, using a Node script to resize images
 is probably more convenient.
+</div>
 
-## 1. Configure webpack.config.js
+## Configure webpack.config.js
 
 - View `webpack.config.js` for an example of how to configure
 `responsive-loader`.
@@ -23,7 +26,7 @@ and 1920 pixels wide. (Note: Specifying default sizes is optional.)
 - View the `dist` directory to see the multiple image versions created by
 `responsive-loader`.
 
-## 2. Update image tags
+## Update image tags
 
 `responsive-loader` sets the `src` and `srcset` properties on image imports (see
 `app.js`):
@@ -42,16 +45,20 @@ const flowerImage = require('./flower.jpg');
 ReactDOM.render(<img src={flowerImage.src} srcset={flowerImage.srcSet} sizes="50vw">, ...);
 ```
 
-Note: Don't forget to include the
-[`sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes)
+<div class="aside note">
+Don't forget to include the
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes"><code>sizes</code></a>
 attribute in the HTML of any responsive image. `responsive-loader` will not set
 this attribute for you.
+</div>
 
-## 3. View the Final Result
+## View the Final Result
 
 ### Code
 
-- Inspect the code in the live version of this Glitch. (Hint: Click  <web-screenshot type="show-live"> to view the live version)
+- Click the **Show Live** button to preview the app.
+
+<web-screenshot type="show-live"></web-screenshot>
 
 Notice that `responsive-loader` has done the heavy lifting for you and generated
 the contents of the `src` and `srcset` attributes. This is particularly handy

@@ -5,4 +5,6 @@ page_type: glitch
 glitch: responsive-images-resize-with-gulp
 ---
 
-1. View `gulpfile.js` for an example of how to use Gulp to resize images.
+This sample demonstrates a quick way to use `gulp` to resize images.
+
+- View `gulpfile.js` for an example of how to use Gulp to resize images.

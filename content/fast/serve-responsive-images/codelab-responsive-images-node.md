@@ -5,5 +5,7 @@ page_type: glitch
 glitch: responsive-images-resize-with-node
 ---
 
-1. View `resize.js` for an example of how to resize images using the
+This sample demonstrates a quick way to use `gulp` to resize images.
+
+- View `resize.js` for an example of how to resize images using the
 [sharp](https://www.npmjs.com/package/sharp) npm package.

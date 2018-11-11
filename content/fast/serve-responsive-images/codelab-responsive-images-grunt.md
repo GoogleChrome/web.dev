@@ -5,4 +5,6 @@ page_type: glitch
 glitch: responsive-images-resize-with-grunt
 ---
 
-1. View `gruntfile.js` for an example of how to use Grunt to resize images.
+This sample demonstrates a quick way to use `grunt` to resize images.
+
+- View `gruntfile.js` for an example of how to use Grunt to resize images.

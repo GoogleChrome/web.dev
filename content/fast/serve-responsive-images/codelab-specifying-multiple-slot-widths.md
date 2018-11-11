@@ -8,7 +8,11 @@ order: 1
 
 ## Try out this demo
 
-- Reload this demo in different sized browser windows to see the browser load
+- Click the **Show Live** button to preview the app.
+
+<web-screenshot type="show-live"></web-screenshot>
+
+- Reload the app in different sized browser windows to see the browser load
 different images and use different layouts at different browser sizes.
 
 ## View the code
@@ -17,8 +21,8 @@ different images and use different layouts at different browser sizes.
 
 ```html
 <img src="flower.jpg"
-     srcset="flower-small.jpg 480w, flower-large.jpg 800w"
-     sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 800px">
+  srcset="flower-small.jpg 480w, flower-large.jpg 800w"
+  sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 800px">
 ```
 
 ## What's going on here?
