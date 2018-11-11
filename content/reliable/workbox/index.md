@@ -132,12 +132,10 @@ moving forward:
 
 <pre class="devsite-terminal">
 workbox wizard
-<span class="no-select">
-? What is the root of your web app (i.e. which directory do you deploy)? src/
-? Which file types would you like to precache? css, js, html
-? Where would you like your service worker file to be saved? build/sw.js
-? Where would you like to save these configuration options? workbox-config.js
-</span>
+<span class="no-select">? What is the root of your web app (i.e. which directory do you deploy)? src/</span>
+<span class="no-select">? Which file types would you like to precache? css, js, html</span>
+<span class="no-select">? Where would you like your service worker file to be saved? build/sw.js</span>
+<span class="no-select">? Where would you like to save these configuration options? workbox-config.js</span>
 </pre>
 
 To build your service worker, run `workbox generateSW workbox-config.js`
