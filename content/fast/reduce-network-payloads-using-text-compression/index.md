@@ -17,8 +17,8 @@ your web page:
 * Minification
 * Data compression
 
-Incorporating both of these techniques will reduce payload sizes and in turn
-improve page load times.
+Incorporating both of these techniques reduces payload sizes and in turn
+improves page load times.
 
 ## Measure
 
@@ -103,7 +103,7 @@ const listener = app.listen(process.env.PORT, function() {
 });
 </pre>
 
-This will compress your assets using `gzip`. If your web server supports it,
+This compresses your assets using `gzip`. If your web server supports it,
 consider using a separate module like
 [shrink-ray](https://github.com/aickin/shrink-ray#readme) to compress via
 Brotli to achieve better compression ratios.

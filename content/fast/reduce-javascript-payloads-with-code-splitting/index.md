@@ -10,9 +10,9 @@ wf_blink_components: N/A
 # Reduce JavaScript payloads with code-splitting
 
 Nobody likes waiting.
-**[Over 50% of users will abandon a website if it takes longer than 3 seconds to load](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/)**.
+**[Over 50% of users abandon a website if it takes longer than 3 seconds to load](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/)**.
 
-Sending large JavaScript payloads will impact the speed of your site
+Sending large JavaScript payloads impacts the speed of your site
 significantly. Instead of shipping all the JavaScript to your user as soon as
 the first page of your application is loaded, **code-split** your bundle into
 multiple "pieces" and only send what's necessary at the very beginning.
@@ -26,9 +26,9 @@ execute all the JavaScript on a page.
 
 Split the JS bundle to only send the code needed for the initial route when the
 user loads an application. This minimizes the amount of script that needs to be
-parsed and compiled, which will result in faster page load times.
+parsed and compiled, which results in faster page load times.
 
-Popular module bundlers like [webpack]((https://webpack.js.org/)),
+Popular module bundlers like [webpack](https://webpack.js.org/),
 [Parcel](https://parceljs.org/code_splitting.html), and
 [Rollup](https://rollupjs.org/guide/en#dynamic-import) allow you to split your
 bundles using [dynamic imports](https://developers.google.com/web/updates/2017/11/dynamic-import).

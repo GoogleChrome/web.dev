@@ -73,7 +73,7 @@ function soNice(){for(let i=0;i<100;)console.log("nice"),i++}
 The file size now reaches **62 B**.
 
 With each step, the code is becoming harder to read. However, the browser's 
-JavaScript engine will interpret each of these in the exact same way. The 
+JavaScript engine interprets each of these in the exact same way. The 
 benefit of obfuscating code in this manner can help achieve smaller file 
 sizes. 112 B really was not much to begin with, but there was still a 50% 
 reduction in size!
@@ -126,7 +126,7 @@ module.exports = {
   //...
 </pre>
 
-Including a process to minify code in your application will depend on the tools 
+Including a process to minify code in your application depends on the tools 
 that you use:
 
 + If webpack v4 or greater is used, no additional work needs to be done 
@@ -136,7 +136,7 @@ into the webpack build process. The [documentation](https://webpack.js.org/plugi
 explains this in detail.
 + Other minification plugins also exist and can be used instead, 
 such as [BabelMinifyWebpackPlugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin) 
-and [ClosureCompilerPlugin](https://github.com/roman01la/webpack-closure-compiler)
+and [ClosureCompilerPlugin](https://github.com/roman01la/webpack-closure-compiler).
 + If a module bundler is not being used at all, use [UglifyJS](https://github.com/mishoo/UglifyJS2) 
 as a CLI tool or include it directly as a dependency.
 
@@ -156,7 +156,7 @@ literal sense.
 
 **Compression** usually refers to code that has been modified using a data 
 compression algorithm. Unlike minification which ends up providing perfectly 
-valid code, compressed code will need to be _decompressed_ before being used.
+valid code, compressed code needs to be _decompressed_ before being used.
 
 With every HTTP request and response, browsers and web servers can add 
 [headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) to include 
@@ -164,9 +164,9 @@ additional information about the asset being fetched or received. This can be
 seen in the `Headers` tab within the DevTools Network panel where three types 
 are shown:
 
-+ **General** represents general headers relevant to the entire request-response interaction
-+ **Response Headers** shows a list of headers specific to the actual response from the server
-+ **Request Headers** shows a list of headers attached to the request by the client
++ **General** represents general headers relevant to the entire request-response interaction.
++ **Response Headers** shows a list of headers specific to the actual response from the server.
++ **Request Headers** shows a list of headers attached to the request by the client.
 
 Take a look at the `accept-encoding` header in the `Request Headers`.
 
@@ -189,7 +189,7 @@ even faster page loads. It is supported in the
 The sample application in this tutorial is identical to the app completed in the 
 ["Remove unused code"](/fast/remove-unused-code) codelab except for the fact that 
 [Express](https://expressjs.com/) is now used as a server framework. In the next 
-few sections, both static and dynamic compression will be explored.
+few sections, both static and dynamic compression is explored.
 
 ## Dynamic compression
 
@@ -205,8 +205,8 @@ dynamically generated.
 
 ### Cons:
 
-+ Compressing files at higher levels to achieve better compression ratios will 
-take longer. This can cause a performance hit as the user waits for assets to 
++ Compressing files at higher levels to achieve better compression ratios
+takes longer. This can cause a performance hit as the user waits for assets to 
 compress before they are sent by the server.
 
 ### Dynamic compression with Node/Express
@@ -325,13 +325,13 @@ module.exports = {
 }
 </pre>
 
-By default, the plugin will compress the build files using `gzip`. Take a look 
+By default, the plugin compresses the build files using `gzip`. Take a look 
 at the [documentation](https://github.com/webpack-contrib/compression-webpack-plugin) 
 to learn how to add options to use a different algorithm or include/exclude 
 certain files.
 
-When the app reloads and rebuilds, a compressed version of the main bundle will 
-now be created. Open the Glitch Console to take a look at what's inside the 
+When the app reloads and rebuilds, a compressed version of the main bundle is
+now created. Open the Glitch Console to take a look at what's inside the 
 final `public/` directory that's served by the Node server.
 
 <div class="aside note">
@@ -385,7 +385,7 @@ app.use(express.static('public'));
 specific endpoint. A callback function is then used to define how to handle this 
 request. The route works like this:
 
-+ Specifying `'*.js'` as the first argument means that this will work for every 
++ Specifying `'*.js'` as the first argument means that this works for every 
 endpoint that is fired to fetch a JS file.
 + Within the callback, `.gz` is attached to the URL of the request and the 
 `Content-Encoding` response header is set to `gzip`.

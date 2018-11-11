@@ -15,9 +15,9 @@ removing any unused and unneeded dependencies.
 It's always a good idea to first measure how well a website performs before
 adding optimizations.
 
-+  Click on the `Show Live` button.
+- Click on the **Show Live** button to view the live version of the Glitch.
 
-![image](./show-live.png)
+<web-screenshot type="show-live"></web-screenshot>
 
 Go ahead and click on your favorite kitten! Firebase's [Realtime
 Database](https://firebase.google.com/products/realtime-database/) is used in
@@ -53,8 +53,8 @@ unused libraries that can be removed in this application to make it load
 faster.
 
 There are also instances when a particular library is used, but where there may be
-a simpler alternative. The concept of removing **unneeded libraries** will also
-be explored later in this tutorial.
+a simpler alternative. The concept of removing **unneeded libraries** is
+explored later in this tutorial.
 
 ## Analyzing the bundle
 
@@ -73,8 +73,6 @@ one of the reasons is that any dependency can in turn have their own
 dependencies, so there are a lot more than just two if every depth/branch of the
 dependency "tree" is considered. It's easy for an application to become large
 relatively quickly if many dependencies are included.
-
-![image](./dependencies.png)
 
 Analyze the bundler to get a better idea of what is going. There are a number of
 different community-built tools that can help do this, such as
@@ -111,7 +109,7 @@ bundle instead of the app itself.
 ![image](./bundle-visualization.png)
 
 Not as cute as seeing some kittens 🐱, but incredibly helpful nonetheless.
-Hovering over any of the packages will show its size represented in three
+Hovering over any of the packages shows its size represented in three
 different ways:
 
 <table>
@@ -160,17 +158,21 @@ Revert the changes in `webpack.config.js` to see the application again:
 
 + Remove `BundleAnalyzerPlugin` in the list of plugins:
 
-    plugins: [
-     //...
-     new BundleAnalyzerPlugin()
-    ]
+```javascript
+plugins: [
+  //...
+  new BundleAnalyzerPlugin()
+]
+```
 
 + And now remove the unused import from the top of the file:
 
-    const path = require("path");
+```javascript
+const path = require("path");
 
-    //...
-    const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//...
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+```
 
 The application should load normally now. Modify `src/index.js` to update the
 Firebase imports.
@@ -179,7 +181,7 @@ Firebase imports.
     import firebase from 'firebase/app';
     import 'firebase/database';
 
-Now when the app reloads, the DevTools warning will not show. Opening the
+Now when the app reloads, the DevTools warning does not show. Opening the
 DevTools **Network** panel also shows a _nice_ reduction in bundle size:
 
 ![image](reduced-main-bundle.png)
@@ -224,7 +226,7 @@ There is a Firebase event listener that handles value changes in our database:
 
     favoritesRef.on("value", (snapshot) => { ... })
 
-Above this, add a small function to calculates the number of weeks from a
+Above this, add a small function to calculate the number of weeks from a
 given date:
 
     const ageInWeeks = birthDate => {

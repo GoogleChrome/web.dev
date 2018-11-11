@@ -236,7 +236,7 @@ the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
 
 Reload the application. You can now see all the specific polyfills included:
 
-<img class="screenshot" src="./entry-polyfills.png" alt="List of polyfills imported">
+<img class="screenshot" src="./entry-polyfills.gif" alt="List of polyfills imported">
 
 Although only needed polyfills for `"last 2 versions"` is now included, it is still a super long list! This is because
 polyfills needed for the target browsers for _every_ newer feature is still included. Change the value of the attribute to `usage`
@@ -258,7 +258,7 @@ to only include those needed for features that are being used in the code.
 }
 </pre>
 
-With this, polyfills will be automatically included where needed.
+With this, polyfills are automatically included where needed.
 This means you can remove the `@babel/polyfill` import in `src/index.js.`
 
 <pre class="prettyprint">
@@ -379,8 +379,8 @@ const legacyConfig = {
 ```
 
 Notice that instead of using the `targets` value for `"@babel/preset-env"`,
-`esmodules` with a value of `false` is used instead. This means that Babel will
-include all the necessary transforms and polyfills to target every browser that does
+`esmodules` with a value of `false` is used instead. This means that Babel
+includes all the necessary transforms and polyfills to target every browser that does
 not yet support ES modules.
 
 Add `entry`, `cssRule`, and `corePlugins` objects to the beginning of the
@@ -511,7 +511,7 @@ elements as well as a `nomodule` attribute for all `.mjs` script modules.
 
 ## Serving modules in the HTML document
 
-The last thing that needs to be done is to output both the legacy and modern script elements to the HTML file. Unfortunately, the plugin that creates the final HTML file, `HTMLWebpackPlugin`, [does not currently support](https://github.com/jantimon/html-webpack-plugin/issues/782) the output of both the module and nomodule scripts. Although there are workarounds and separate plugins created to solve this problem, such as [BabelMultiTargetPlugin](https://github.com/DanielSchaffer/webpack-babel-multi-target-plugin) and [HTMLWebpackMultiBuildPlugin](https://github.com/firsttris/html-webpack-multi-build-plugin), a simpler approach of adding the module script element manually will be used for the purpose of this tutorial.
+The last thing that needs to be done is to output both the legacy and modern script elements to the HTML file. Unfortunately, the plugin that creates the final HTML file, `HTMLWebpackPlugin`, [does not currently support](https://github.com/jantimon/html-webpack-plugin/issues/782) the output of both the module and nomodule scripts. Although there are workarounds and separate plugins created to solve this problem, such as [BabelMultiTargetPlugin](https://github.com/DanielSchaffer/webpack-babel-multi-target-plugin) and [HTMLWebpackMultiBuildPlugin](https://github.com/firsttris/html-webpack-multi-build-plugin), a simpler approach of adding the module script element manually is used for the purpose of this tutorial.
 
 Add the following to `src/index.js` at the end of the file:
 

@@ -8,10 +8,10 @@ glitch: code-splitting-starter
 Most web pages and applications are made up of many different parts. Instead of
 sending all the JavaScript that makes up the application as soon as the first
 page is loaded, **code-splitting** a bundle into multiple "pieces" (or chunks)
-will improve page performance.
+improves page performance.
 
 In this codelab, the performance of a simple application that sorts three
-numbers will be optimized through code-splitting.
+numbers is optimized through code-splitting.
 
 ![image](./codelab-code-splitting-1.png)
 
@@ -49,16 +49,16 @@ There are a few ways the bundle size can be trimmed:
 4.  Download the code for sorting only when the user clicks the button
 
 Options 1 and 2 are perfectly appropriate methods to reduce the bundle size (and
-would probably make the most sense for a real application). However, those will
-not be used in this tutorial for the sake of teaching 😈.
+would probably make the most sense for a real application). However, those are
+not used in this tutorial for the sake of teaching 😈.
 
 <div class="aside note">
 The concept of removing unused code is explored in further detail in a
 <a href="/fast/remove-unused-code">separate guide</a>.
 </div>
 
-Both options 3 and 4 will help improve the performance of this application. The
-next few sections of this codelab will cover these steps. Like any coding
+Both options 3 and 4 help improve the performance of this application. The
+next few sections of this codelab cover these steps. Like any coding
 tutorial, always try to write the code yourself instead of copy and pasting.
 
 ### Only import what you need
@@ -178,11 +178,11 @@ You may see a linting error that says <code>Parsing error: 'import' and
 the dynamic import syntax is still in the proposal stage and has not been
 finalized. Although webpack already supports it, the settings for
 <a href="https://eslint.org/">ESLint</a> (a JavaScript linting utility) used by
-Glitch has not been updated to include this syntax yet, but it will still work!
+Glitch has not been updated to include this syntax yet, but it still works!
 </div>
 
 The last thing that needs to be done is to write the `sortInput` method at the
-end of the file. This will need to be a function that _returns_ a function that
+end of the file. This needs to be a function that _returns_ a function that
 takes in the imported method from `lodash.sortBy`. The nested function can then
 sort the three input values and update the DOM.
 
@@ -214,7 +214,7 @@ loads.
 <img class="screenshot" src="./codelab-code-splitting-5.png" alt="Network panel showing 2.7 KB JavaScript bundle.">
 
 After the button is pressed to sort the input numbers, the chunk that contains
-the sorting code will get fetched and executed.
+the sorting code gets fetched and executed.
 
 <img class="screenshot" src="./codelab-code-splitting-6.png" alt="Network panel showing 2.7 KB JavaScript bundle followed by a 13.9 KB JavaScript bundle.">
 
