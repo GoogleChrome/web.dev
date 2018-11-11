@@ -27,9 +27,15 @@ The files in the sample project most relevant to this codelab are:
 A service worker (even an empty one, like the current `service-worker.js` file)
 won't be used unless it's
 [registered](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register)
-first. You can do this via a call to
-`navigator.serviceWorker.register('/service-worker.js')` inside your
-`register-sw.js` file.
+first. You can do this via a call to:
+
+```javascript
+navigator.serviceWorker.register(
+  '/service-worker.js'
+)
+```
+
+inside your `register-sw.js` file.
 
 Before you add that code, though, there are a couple of points to take into
 account.
@@ -44,9 +50,9 @@ don't automatically update. So it's a best practice to call
 Second, when you register a service worker, the browser runs the code in your
 `service-worker.js` file, and may potentially start downloading URLs to populate
 caches, depending on the code in your service worker's
-`[install](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install)`
+[`install`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install)
 and
-`[activate](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate)`
+[`activate`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate)
 event handlers. 
 
 Running additional code and downloading assets can use up
@@ -57,7 +63,7 @@ current page. A convenient way of approximating this is to wait until the
 `window.load` event has been fired. 
 
 <div class="aside note">
-Waiting for `window.load` is a one-size-fits-all solution. If you know
+Waiting for <code>window.load</code> is a one-size-fits-all solution. If you know
 more about how your web page loads resources, or if you're using a web app
 framework that supports its own "everything's ready" lifecycle event, you can
 tweak the timing accordingly.
@@ -124,8 +130,8 @@ showing that the service worker has been installed and activated:
 
 <img class="screenshot" src="./sw-installed-activated.png" alt="Shows service worker is installed and activated.">
 
-Then visit the "Applications" tab, and select the "Service Workers" panel. You
-should see something like the following:
+Then visit the **Applications** tab, and select the **Service Workers** panel.
+You should see something like the following:
 
 <img class="screenshot" src="./sw-panel.png" alt="Shows service worker details in service worker panel.">
 
@@ -140,9 +146,11 @@ changes to the currently registered service worker for debugging purposes.
 <div class="aside note">
 Service workers tend to stick around, unless they're explicitly
 unregistered. If you find yourself wanting to "start fresh" during local
-development, a great way of doing so is to use a [Chrome Incognito
-window](https://support.google.com/chrome/answer/95464) to load pages that are
-under service worker control. The service worker will persist only as long as
+development, a great way of doing so is to use a <a href="https://support.google.com/chrome/answer/95464">Chrome Incognito
+window</a> to load pages that are
+under service worker control.
+
+The service worker will persist only as long as
 the window is open, and you could always start over by closing all Incognito
 windows and opening a new one.
 </div> 
@@ -164,8 +172,7 @@ check for any changes. If anything in the service worker script is different,
 then the new service worker will get a chance to install, activate,
 and eventually take control.
 
-You can simulate this update flow by going back to the code editor for your
-Glitch project, and making _any_ change to the code. One quick change would be
+You can simulate this update flow by going back to the code editor for your project, and making _any_ change to the code. One quick change would be
 to replace
 
 ```javascript
@@ -186,15 +193,13 @@ After making that change, return to the Live version of your sample app, and
 reload the page with the DevTools Application tab still open. You should see
 something like the following:
 
-![image](https://drive.google.com/a/google.com/file/d/1UBiiWG2NSjn--8YuKK7TRIAmMD6ViNDH/view?usp=drivesdk)
-
 <img class="screenshot" src="./two-sw-versions.png" alt="Shows two versions of service worker installed.">
 
 This shows that there are two versions of your service worker installed at this
 point. The previous version, which was already activated, is running and in
 control of the current page. The updated version of the service worker is listed
 right below. It's in the
-`[waiting` state](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting),
+[`waiting` state](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting),
 and will remain waiting until all of the open tabs that are controlled by the
 old service worker are closed. 
 
@@ -206,9 +211,9 @@ previous instances of your web app.
 
 <div class="aside note">
 If you don't want to wait, it's possible to
-[call `skipWaiting()`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase)
-inside of your service worker (usually in the `install` handler), or to simulate
-that behave by clicking on the `skipWaiting` link in DevTools.
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase">call <code>skipWaiting()</code></a>
+inside of your service worker (usually in the <code>install</code> handler), or to simulate
+that behave by clicking on the <code>skipWaiting</code> link in DevTools.
 </div> 
 
 ## Summing things up
