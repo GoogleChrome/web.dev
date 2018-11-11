@@ -11,14 +11,13 @@ wf_blink_components: N/A
 
 **Lazy loading** is the strategy of loading resources as they are needed, rather
 than in advance. This approach frees up resources during the initial page load
-and avoids loading assets that are never used. 
+and avoids loading assets that are never used.
 
-If you've ever used sites like Spotify or Medium, you've probably experienced
-this firsthand. Dining in a restaurant is a good example of lazy loading: the
-restaurant brings out your courses as you are ready for them, rather than
-dumping them on you all at once.
+Images that are offscreen during the initial pageload are ideal candidates for
+this technique. Best of all, [lazysizes](https://github.com/aFarkas/lazysizes)
+makes this a very simple strategy to implement.
 
-_Lazy loading in action_
+## What is lazysizes?
 
 [lazysizes](https://github.com/aFarkas/lazysizes) is the most popular library
 for lazy loading images. It is a script that intelligently loads images as the
@@ -62,6 +61,6 @@ When you update the image tags you make two changes:
 Open DevTools and scroll down the page to see these changes in action. As you scroll, you should see new network requests occur and `<img>` tag classes change from `lazyload` to `lazyloaded`.
 
 Additionally, you can use Lighthouse to verify that you haven't forgotten to
-lazy load any offscreen images. Run the Lighthouse performance audit (Lighthouse
-> Options > Performance) and look for the results of the "Defer offscreen
-images" audit.
+lazy load any offscreen images. Run the Lighthouse Performance Audit (Lighthouse > Options >
+Performance) and look for the results of the "Defer offscreen images"
+audit.
