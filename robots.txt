@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /s/results*
+Sitemap: https://web.dev/sitemap.xml
