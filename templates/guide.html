@@ -89,7 +89,7 @@
     <div class="cta-next-guide__heading">
       Next Guide
     </div>
-    <web-guide-complete guide="{{id}}">
+    <web-guide-complete{{#if flags.complete}} guide="{{id}}"{{/if}}>
       <a class="cta-next-guide__link gc-analytics-event"
           data-category="web.dev"
           data-label="guide, next guide"
@@ -98,14 +98,16 @@
         {{next.title}}
       </a>
     </web-guide-complete>
+    {{#if flags.complete}}
     <p class="cta-next-guide__complete-notice">
       <small>Opening the next guide will mark this guide as complete</small>
     </p>
+    {{/if}}
   {{else}}
     <div class="cta-next-guide__heading">
       {{path.title}}
     </div>
-    <web-guide-complete guide="{{id}}">
+    <web-guide-complete{{#if flags.complete}} guide="{{id}}"{{/if}}>
       <a class="cta-next-guide__link gc-analytics-event"
           data-category="web.dev"
           data-label="guide, back to path"
@@ -114,9 +116,11 @@
         {{path.title}}
       </a>
     </web-guide-complete>
+    {{#if flags.complete}}
     <p class="cta-next-guide__complete-notice">
       <small>Returning to the path will mark this guide as complete</small>
     </p>
+    {{/if}}
   {{/if}}
   </div>
 
