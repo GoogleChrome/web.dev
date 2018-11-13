@@ -27,13 +27,8 @@ from the command line.
 
 ### sharp
 
-Here are examples of how to use sharp with [Webpack](/fast/serve-responsive-images/codelab-responsive-images-webpack), [Gulp](/fast/serve-responsive-images/codelab-responsive-images-gulp), and [Grunt](/fast/serve-responsive-images/codelab-responsive-images-grunt).
-
-If you do not use one of those build tools, you can use sharp by itself as a
-Node script.
-
-Save this code as a separate script in your project, and then run it to convert
-your images:
+To use sharp as a Node script, save this code as a separate script in your project,
+and then run it to convert your images:
 
 ```javascript
 const sharp = require('sharp');
