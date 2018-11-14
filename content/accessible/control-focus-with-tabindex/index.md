@@ -18,7 +18,7 @@ built-in for free. If you're building _custom_ interactive components, use
   Whenever possible, use a native HTML element rather than building your
   own custom version. &lt;button&gt;, for example, is very easy to style and
   already has full keyboard support. This will save you from needing to manage
-  tabindex or add additional semantics with ARIA.
+  <code>tabindex</code> or add additional semantics with ARIA.
 </div>
 
 ## Check if your controls are keyboard accessible
@@ -101,7 +101,7 @@ to -1, sets the to-be-focused child's `tabindex` to 0, and calls the `focus()`
 method on it.
 
 **Before**
-<pre class="prettyprint">
+<pre class="prettyprint devsite-disable-click-to-copy">
 &lt;div role=&quot;toolbar&quot;&gt;
   &lt;button tabindex=&quot;-1&quot;&gt;Undo&lt;/div&gt;
   <strong>&lt;button tabindex=&quot;0&quot;&gt;Redo&lt;/div&gt;</strong>
@@ -110,7 +110,7 @@ method on it.
 </pre>
 
 **After**
-<pre class="prettyprint">
+<pre class="prettyprint devsite-disable-click-to-copy">
 &lt;div role=&quot;toolbar&quot;&gt;
   &lt;button tabindex=&quot;-1&quot;&gt;Undo&lt;/div&gt;
   <strong>&lt;button tabindex=&quot;-1&quot;&gt;Redo&lt;/div&gt;</strong>
