@@ -6,3 +6,8 @@ content_license: cc3-apache2
 products_page:
   categories:
   - develop
+social_media:
+  image:
+    path: /images/social.png
+    width: 1200
+    height: 675
