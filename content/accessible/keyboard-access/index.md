@@ -102,14 +102,14 @@ The code for those two examples is compared below:
 &lt;button&gt;Kiwi&lt;/button&gt;
 &lt;button&gt;Peach&lt;/button&gt;
 &lt;button&gt;Coconut&lt;/button&gt;
-</pre>
+        </pre>
       </td>
       <td>
         <pre>
 &lt;button style="float: right"&gt;Kiwi&lt;/button&gt;
 &lt;button&gt;Peach&lt;/button&gt;
 &lt;button&gt;Coconut&lt;/button&gt;
-</pre>
+        </pre>
       </td>
     </tr>
   </tbody>
@@ -130,18 +130,18 @@ when it's closed.
 To prevent a particular interactive element from receiving focus, you should
 give the element either of the following CSS properties:
 
-+  `display: none`
-+  `visibility: hidden`
+- `display: none`
+- `visibility: hidden`
 
 To add the element back into the tab order, for example when the side-nav is
 opened, replace the above CSS properties respectively with:
 
-+  `display: block`
-+ `visibility: visible`
+- `display: block`
+- `visibility: visible`
 
 <div class="aside note">
 If you can't figure out where the focus on your page is as you're
-tabbing, open the console and type: <code>document.activeElement<code>. This
+tabbing, open the console and type: <code>document.activeElement</code>. This
 property will return the element that currently has focus.
 </div>
 
