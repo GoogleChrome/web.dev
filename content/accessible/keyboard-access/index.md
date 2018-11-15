@@ -86,7 +86,7 @@ order versus an illogical tab order:
   </iframe>
 </div>
 
-The code for those two examples is compared below:
+The code for these two examples is compared below:
 
 <table>
   <thead>
@@ -98,14 +98,14 @@ The code for those two examples is compared below:
   <tbody>
     <tr>
       <td>
-        <pre>
+        <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;button&gt;Kiwi&lt;/button&gt;
 &lt;button&gt;Peach&lt;/button&gt;
 &lt;button&gt;Coconut&lt;/button&gt;
         </pre>
       </td>
       <td>
-        <pre>
+        <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;button style="float: right"&gt;Kiwi&lt;/button&gt;
 &lt;button&gt;Peach&lt;/button&gt;
 &lt;button&gt;Coconut&lt;/button&gt;
@@ -117,8 +117,8 @@ The code for those two examples is compared below:
 
 Be careful when changing the visual position of elements using CSS to avoid
 creating an illogical tab order. To fix the illogical tab order above, move the
-floating "Kiwi" button so it comes after the "Coconut" button, and remove the
-inline style.
+floating "Kiwi" button so it comes after the "Coconut" button in the DOM, and
+remove the inline style.
 
 ## Correctly set the visibility of offscreen content
 
