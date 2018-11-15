@@ -11,6 +11,10 @@ web_lighthouse: N/A
 wf_blink_components: N/A
 ---
 
+<div class="devsite-banner devsite-banner-announcement">
+  Coming soon! Master service workers by playing Service Workies, the game: <a href="https://serviceworkies.mastery.games/">Release Preview out now</a>.
+</div>
+
 # Service workers & the Cache Storage API
 
 You're locked in a struggle for network reliability. The browser's HTTP cache is
