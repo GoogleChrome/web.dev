@@ -12,6 +12,7 @@ topics:
 # Topic containing several guides
 - title: Make your site keyboard accessible
   guides:
+    - keyboard-access
     - control-focus-with-tabindex
 - title: Understand semantics and basic screen reader support
   guides:
