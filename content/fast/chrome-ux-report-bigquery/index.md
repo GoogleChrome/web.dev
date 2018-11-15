@@ -35,7 +35,7 @@ SELECT COUNT(DISTINCT origin) FROM `chrome-ux-report.all.201809`
 To run the query, enter it into the query editor and press the 
 "Run query" button:
 
-<img class="screenshot" src="./bigquery_first_query.png" alt="Enter a simple query into editor and press Run.">
+<img class="screenshot" src="./bigquery.png" alt="Enter a simple query into editor and press Run.">
 
 There are two parts to this query:
 
