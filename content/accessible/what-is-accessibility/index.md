@@ -15,7 +15,7 @@ can interact with your page the same way you do. This can lead to an experience
 that works well for some people, but creates issues that range from simple
 annoyances to show-stoppers for others.
 
-## Understanding the diverse needs of users
+## Understanding the diverse needs of your users
 
 When learning about accessibility, it helps to have an understanding of the
 diverse range of users in the world and the kinds of accessibility topics that
@@ -49,16 +49,17 @@ and read descriptions of content and controls.
 
 ### Motor/dexterity
 
-Motor impairment relates to anything that affects a user's ability to use a
-mouse, touchscreen, or other pointing device. Users may rely on alternative
-input devices to access content, such as a keyboard, head or eye tracking
-software, switch devices, sip and puff devices, or voice access.
+Motor and dexterity impairments relate to anything that affects a user's ability
+to use a mouse, touchscreen, or other pointing device. Users experiencing a
+motor or dexterity impairment may rely on alternative input devices to access
+content, such as a keyboard, head or eye tracking software, switch devices, sip
+and puff devices, or voice access.
 
 ### Auditory
 
-Auditory impairments range from hard-of-hearing to completely deafness. Users
-may rely on captions or transcripts to provide an alternative to sound in an
-interface.
+Auditory impairments range from hard-of-hearing to complete deafness. Users
+experiencing an auditory impairment may rely on captions or transcripts to
+provide an alternative to sound in an interface.
 
 ### Cognitive
 
