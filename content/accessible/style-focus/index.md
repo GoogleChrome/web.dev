@@ -30,6 +30,14 @@ button:focus {
 The button in this example will _always_ show a focus indicator. If you use a
 mouse to click on it, or a keyboard to tab to it, the results are the same.
 
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/focus-style?path=index.html&previewSize=100&attributionHidden=true"
+    alt="focus-visible on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
 ## Use :focus-visible to selectively show a focus indicator
 
 The new
@@ -55,6 +63,14 @@ button:focus-visible {
 The button in this example will _selectively_ show a focus indicator. If you use
 a mouse to click on it, or a keyboard to tab to it, the results are different.
 
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/focus-visible-style?path=index.html&previewSize=100&attributionHidden=true"
+    alt="focus-visible on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
 ## Use :focus-within to style the parent of a focused element
 
 The
@@ -64,6 +80,20 @@ contains receive focus.
 
 It can be used to highlight a region of the page, such as a form, to draw the
 user's attention to that area.
+
+```css
+form:focus-within {
+  background: #ffecb3;
+}
+```
+
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/focus-within-style?path=index.html&previewSize=100&attributionHidden=true"
+    alt="focus-visible on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 ## When to display a focus indicator
 

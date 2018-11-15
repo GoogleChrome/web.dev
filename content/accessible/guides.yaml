@@ -1,10 +1,13 @@
 title: Accessible to all
 blurb: Build a site that works for all of your users.
 overview: |
-    All users should be able to access your content. Doloremque laudantium,
-    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-    architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-    quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.
+    All users should be able to access your content. But in the age of fancy
+    JavaScript frameworks, and clever CSS tricks, it can be easy to create an
+    experience that only works for some of your users, some of the time.
+
+    In this section you'll learn how to provide a robust experience to your
+    users that accounts for their context, and any situational, temporary, or
+    permanent impairments.
 
 order: 6
 
