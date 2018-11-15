@@ -68,7 +68,7 @@ you'll need to write additional code to listen for the `keydown` event, check
 that the keycode is `ENTER` or `SPACE`, and then run your click handler. Ouch!
 That's a lot of extra work!
 
-Compare the difference in this example. Tab to either control, and use `ENTER`
+Compare the difference in this example. `TAB` to either control, and use `ENTER`
 and `SPACE` to attempt to click on them. 
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
