@@ -90,6 +90,9 @@ form:focus-within {
 }
 ```
 
+The radio buttons in this example are focusable, so `:focus-within` can be used
+on their parent `form` element to style the entire region.
+
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/focus-within-style?path=index.html&previewSize=100&attributionHidden=true"
