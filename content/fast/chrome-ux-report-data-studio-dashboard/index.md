@@ -34,7 +34,7 @@ This will take you to the CrUX community connector page where you can provide
 the origin for which the dashboard will be generated. Note that first-time users 
 may need to complete permission or marketing preference prompts.
 
-![CrUX Data Studio connector](./dash_connector.png)
+<img class="screenshot" src="./dash_connector.png" alt="CrUX Data Studio connector">
 
 The text input field accepts origins only, not full URLs. For example, 
 `https://developers.google.com` is an origin but 
