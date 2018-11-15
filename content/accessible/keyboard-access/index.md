@@ -66,6 +66,8 @@ earlier on the screen, move it earlier in the DOM****.
 Try tabbing through the two sets of buttons below to experience a logical tab
 order versus an illogical tab order:
 
+**Logical tab order**
+
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
@@ -74,20 +76,7 @@ order versus an illogical tab order:
   </iframe>
 </div>
 
-**Logical tab order (click here before pressing tab)**
-
-<table>
-<thead>
-<tr>
-<th>[Button 1] Mango</th>
-<th> [Button 2] Peach</th>
-<th>[Button 3] Coconut</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
+**Illogical tab order**
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -97,52 +86,38 @@ order versus an illogical tab order:
   </iframe>
 </div>
 
-**Illogical tab order (click here before pressing tab)**
-
-<table>
-<thead>
-<tr>
-<th>[Button 2] Peach</th>
-<th>[Button 3] Coconut</th>
-<th>[Button 3] Mango</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
 The code for those two examples is compared below:
 
 <table>
-<thead>
-<tr>
-<th><strong>Logical tab order </strong></th>
-<th><strong>Illogical tab order</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p><pre>
-&lt;button&gt;Mango&lt;/button&gt;
+  <thead>
+    <tr>
+      <th><strong>Logical tab order </strong></th>
+      <th><strong>Illogical tab order</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <pre>
+&lt;button&gt;Kiwi&lt;/button&gt;
 &lt;button&gt;Peach&lt;/button&gt;
 &lt;button&gt;Coconut&lt;/button&gt;
-</pre></p>
-
-</td>
-<td><p><pre>
-&lt;button style="float: right"&gt;Mango&lt;/button	&gt;
+</pre>
+      </td>
+      <td>
+        <pre>
+&lt;button style="float: right"&gt;Kiwi&lt;/button&gt;
 &lt;button&gt;Peach&lt;/button&gt;
 &lt;button&gt;Coconut&lt;/button&gt;
-</pre></p>
-
-</td>
-</tr>
-</tbody>
+</pre>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 Be careful when changing the visual position of elements using CSS to avoid
 creating an illogical tab order. To fix the illogical tab order above, move the
-floating "Mango" button so comes after the "Coconut" button, and remove the
+floating "Kiwi" button so it comes after the "Coconut" button, and remove the
 inline style.
 
 ## Correctly set the visibility of offscreen content
@@ -164,10 +139,10 @@ opened, replace the above CSS properties respectively with:
 +  `display: block`
 + `visibility: visible`
 
-<div class="note">
+<div class="aside note">
 If you can't figure out where the focus on your page is as you're
-tabbing, open the console and use `document.activeElement`. This property
-will return the element that currently has focus.
+tabbing, open the console and type: <code>document.activeElement<code>. This
+property will return the element that currently has focus.
 </div>
 
 ## Next steps
@@ -176,6 +151,3 @@ For users who operate their computer almost entirely with the keyboard or
 another input device, a logical tab order is essential for making your
 application accessible and usable. As a good habit for checking your tab order,
 try **tabbing through your application before each publish**.
-
-Read on to learn how built-in HTML elements can make good keyboard access a
-breeze!
