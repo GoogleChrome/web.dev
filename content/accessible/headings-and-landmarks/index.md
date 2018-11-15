@@ -16,8 +16,8 @@ landmark regions. In fact, [a recent survey of screen reader users](http://www.h
 found that they most often navigate an unfamiliar page by navigating through
 the headings.
 
-By using the correct semantic elements for headings and landmarks, you can
-dramatically improve the navigation experience for users of assitive technology.
+By using the correct elements for headings and landmarks, you can dramatically
+improve the navigation experience for users of assitive technology.
 
 ## Use headings to outline the page
 
@@ -59,18 +59,11 @@ be tempting to make the headline for the first story into an H2 and "In the
 news" into an H3. While that may match the browser's default styling, it would
 break the outline conveyed to a screen reader user!
 
-It may also be tempting to use divs for the section headings, skip H2s all
-together, and have headlines be H3s. This would also break the outline model
-since every heading level is supposed to support the heading level above it.
-
 <div class="aside note">
-Though it may seem counterintuitive, it does not matter if _visually_ H3s
+Though it may seem counterintuitive, it does not matter if <em>visually</em> H3s
 and H4s are larger than their H2 or H1 counterparts. What matters is the
 structure conveyed by the tags and how they are ordered.
 </div>
-
-Instead of relying on the browser's default font-sizing for headings, use your
-own CSS, and don't skip levels. 
 
 You can use Lighthouse to check if your page skips any heading levels. Run the
 Accessibility Audit (Lighthouse > Options > Accessibility) and look for the
