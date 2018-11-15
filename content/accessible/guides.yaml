@@ -10,6 +10,9 @@ order: 6
 
 topics:
 # Topic containing several guides
+- title: Understand the diverse needs of users
+  guides:
+    - what-is-accessibility
 - title: Make your site keyboard accessible
   guides:
     - keyboard-access
