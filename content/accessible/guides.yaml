@@ -16,6 +16,7 @@ topics:
 - title: Make your site keyboard accessible
   guides:
     - keyboard-access
+    - use-semantic-html
     - control-focus-with-tabindex
 - title: Understand semantics and basic screen reader support
   guides:
