@@ -56,8 +56,9 @@ software, switch devices, sip and puff devices, or voice access.
 
 ### Auditory
 
-Auditory impairments range from hard-of-hearing to completely deaf. Users may
-rely on captions or transcripts for spoken or video content.
+Auditory impairments range from hard-of-hearing to completely deafness. Users
+may rely on captions or transcripts to provide an alternative to sound in an
+interface.
 
 ### Cognitive
 
