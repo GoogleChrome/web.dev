@@ -128,12 +128,12 @@ kick-in.
 
 A very common anti-pattern is to remove the focus indicator using CSS such as:  
 
-```css
+<pre class="prettyprint devsite-disable-click-to-copy">
 /* Don't do this!!! */  
 :focus {  
   outline: none;  
 }  
-```
+</pre>
 
 A better way to work around this issue is to use a combination of `:focus` and
 the `:focus-visible` polyfill.
