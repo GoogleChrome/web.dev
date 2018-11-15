@@ -88,9 +88,9 @@ accessibility wins!
 Another common anti-pattern is to treat links as buttons by attaching JavaScript
 behavior to them.
 
-```html
-<a href="#" onclick="// perform some action">
-```
+<pre class="prettyprint devsite-disable-click-to-copy">
+&lt;a href="#" onclick="// perform some action"&gt;
+</pre>
 
 Both buttons and links support some form of synthetic click activation. So which
 should you choose?
