@@ -18,6 +18,7 @@ topics:
     - keyboard-access
     - use-semantic-html
     - control-focus-with-tabindex
+    - style-focus
 - title: Understand semantics and basic screen reader support
   guides:
     - headings-and-landmarks
