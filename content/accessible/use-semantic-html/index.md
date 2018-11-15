@@ -68,7 +68,8 @@ you'll need to write additional code to listen for the `keydown` event, check
 that the keycode is `ENTER` or `SPACE`, and then run your click handler. Ouch!
 That's a lot of extra work!
 
-Compare the difference: 
+Compare the difference in this example. Tab to either control, and use `ENTER`
+and `SPACE` to attempt to click on them. 
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -80,11 +81,12 @@ Compare the difference:
 
 If you have `div` buttons in your existing site or application, consider
 swapping them out for `button` elements. `button` is easy to style, and full of
-accessibility wins.
+accessibility wins!
 
-### When to use a button and when to use a link
+## Links versus buttons
 
-Another common anti-pattern is to treat links as buttons.
+Another common anti-pattern is to treat links as buttons by attaching JavaScript
+behavior to them.
 
 ```html
 <a href="#" onclick="// perform some action">
@@ -93,9 +95,10 @@ Another common anti-pattern is to treat links as buttons.
 Both buttons and links support some form of synthetic click activation. So which
 should you use?
 
-- If clicking on the element will perform an action on the page, use `<button>`.
-- If clicking on the element will navigate the user to a new page (or load a new
-  page if it's a single-page web app) then use `<a>`.
+- If clicking on the element will perform an _action_ on the page, use
+  `<button>`.
+- If clicking on the element will _navigate_ the user to a new page (or load a
+  new page if it's a single-page web app) then use `<a>`.
 
 The reason for this is that buttons and links are announced differently by
 screen readers. Using the correct element helps screen reader users know which
