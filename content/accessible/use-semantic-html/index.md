@@ -93,12 +93,12 @@ behavior to them.
 ```
 
 Both buttons and links support some form of synthetic click activation. So which
-should you use?
+should you choose?
 
 - If clicking on the element will perform an _action_ on the page, use
   `<button>`.
-- If clicking on the element will _navigate_ the user to a new page (or load a
-  new page if it's a single-page web app) then use `<a>`.
+- If clicking on the element will _navigate_ the user to a new page (or load new
+  content in a single-page web app) then use `<a>`.
 
 The reason for this is that buttons and links are announced differently by
 screen readers. Using the correct element helps screen reader users know which
