@@ -50,9 +50,12 @@ If the most recent user interaction was via the keyboard; and the key press did
 not include a meta, `ALT` / `OPTION`, or `CONTROL` key, then `:focus-visible`
 will match.
 
-_Note that `:focus-visible` is currently only supported in Chrome behind a flag,
-but there is a [lightweight polyfill](https://github.com/WICG/focus-visible)
-that can be added to your app to make it work._
+<div class="aside note">
+<code>:focus-visible</code> is currently only supported in Chrome behind a flag,
+but there is a
+<a href="https://github.com/WICG/focus-visible">lightweight polyfill</a>
+that can be added to your app to make it work.
+</div>
 
 ```css
 button:focus-visible {  
