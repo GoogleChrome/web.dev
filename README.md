@@ -1,30 +1,12 @@
 Thie repo contains content and build scripts for [web.dev](https://web.dev).
 
-## Want to help?
-
-Pitch in on one of the docs fixups!
-
-- [Fast Docs Fixup](https://github.com/GoogleChrome/web.dev/milestone/1)
-- [Discoverable Docs Fixup](https://github.com/GoogleChrome/web.dev/milestone/10)
-- [Reliable Docs Fixup](https://github.com/GoogleChrome/web.dev/milestone/12)
-
-In general we need folks to read through all of the docs in a learning path, and fix any markdown issues or style issues they come across. See style notes below in [the Authoring Guide section](https://github.com/GoogleChrome/web.dev#authoring-guide).
-
 ## Writing on web.dev
 
 The site has two main content types: **guides** and **codelabs**.
 
 
-A guide is any written post or tutorial. For example:
-
-![image](https://user-images.githubusercontent.com/1066253/48244806-5aa58380-e39c-11e8-9e84-9ced3d1e97c5.png)
-
----
-
-
-A codelab is a step-by-step coding exercise, paired with an embedded Glitch editor. For example:
-
-![image](https://user-images.githubusercontent.com/1066253/48244753-16b27e80-e39c-11e8-92b9-016e17867ba4.png)
+- A guide is any written post or tutorial ([example](https://web.dev/fast/use-imagemin-to-compress-images)).
+- A codelab is a step-by-step coding exercise, paired with an embedded Glitch editor ([example](https://web.dev/fast/use-imagemin-to-compress-images/codelab-imagemin-webpack)).
 
 ---
 
@@ -37,7 +19,7 @@ Every subfolder of a learning path should contain a single `index.md`. That mark
 /fast/avoid-invisible-text/index.md
 ```
 
-Tips:
+Authoring guidelines:
 
 - If you want your image to be 100% width, just make sure it's >735px. Then Devsite will handle compressing it, and creating variations for `srcset`.
 - Use sentence case throughout, i.e. "Measure web performance", instead of "Measure Web Performance".
@@ -66,7 +48,10 @@ Tips:
 
 To create a codelab, add a markdown file to a content subdirectory and name it anything other than `index.md`.
 
-Use the ImageMin CLI codelab as an example to emulate—[source](https://github.com/GoogleChrome/web.dev/blob/master/content/fast/use-imagemin-to-compress-images/codelab-imagine-cli.md), [preview](https://web.devsite.corp.google.com/fast/use-imagemin-to-compress-images/codelab-imagine-cli).
+```
+# Produces the URL: https://web.dev/fast/avoid-invisible-text/codelab-avoid-invisible-text
+/content/fast/avoid-invisible-text/codelab-avoid-invisible-text.md
+```
 
 - When you first mention a Glitch panel or button, put its name in bold, followed by a screenshot. You can use `<web-screenshot>` ([preview](https://glitch.com/edit/#!/web-screenshot)) to add the screenshot.
 
