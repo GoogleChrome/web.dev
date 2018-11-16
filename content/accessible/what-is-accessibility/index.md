@@ -8,18 +8,16 @@ wf_blink_components: Blink>Accessibility
 
 # What is accessibility
 
-When a site is accessible it means the site's content is available, and its
-functionality can be operated, by literally _anyone_. As developers, it's easy
-to assume that all users can see and use a keyboard, mouse, or touch screen, and
-can interact with your page the same way you do. This can lead to an experience
-that works well for some people, but creates issues that range from simple
-annoyances to show-stoppers for others.
+An accessible site is one whose content can be accessed regardless of any user's
+impairments, and whose functionality can also be operated by the most diverse
+range of users possible.
+
+As developers, it's easy to assume that all users can see and use a keyboard,
+mouse, or touch screen, and can interact with your page. This can lead to an
+experience that works well for some people, but creates issues that range from
+simple annoyances to show-stoppers for others.
 
 ## Understanding the diverse needs of your users
-
-When learning about accessibility, it helps to have an understanding of the
-diverse range of users in the world and the kinds of accessibility topics that
-affect them.
 
 Generally speaking, accessibility concerns can be split into four broad
 categories:
@@ -43,21 +41,21 @@ context.
 
 Vision impairments range from limited or low vision to complete blindness. Users
 with low vision may use a combination of screen magnification, high contrast
-themes, or text-to-speech to access content. Blind users may rely on a screen
-reader, which is a piece of software that can navigate a page, perform actions,
-and read descriptions of content and controls.
+themes, or text-to-speech to access content. Some users may rely on a screen
+reader or braille display to navigate a page, perform actions, and read
+descriptions of content and controls.
 
 ### Motor/dexterity
 
-Motor and dexterity impairments relate to anything that affects a user's ability
-to use a mouse, touchscreen, or other pointing device. Users experiencing a
-motor or dexterity impairment may rely on alternative input devices to access
-content, such as a keyboard, head or eye tracking software, switch devices, sip
-and puff devices, or voice access.
+Motor and dexterity impairments may affect a user's ability to use a mouse,
+touchscreen, or other pointing device. Some users may rely on alternative input
+devices to access content, such as a keyboard, head or eye tracking software,
+switch devices, sip and puff devices, or voice access.
 
 ### Auditory
 
-Auditory impairments range from hard-of-hearing to complete deafness. Users
+Auditory impairments range from difficulty hearing certain frequencies, to
+speech processing issues, through to a total inability to hear sound. Users
 experiencing an auditory impairment may rely on captions or transcripts to
 provide an alternative to sound in an interface.
 
@@ -67,7 +65,8 @@ Cognitive impairment is a broad category, encompassing topics such as ADHD,
 dyslexia, and autism, just to name a few. The accommodations for these users are
 quite diverse, but generally speaking, users may seek to minimize distractions,
 flashing, heavy animations, and anything which shifts the user's context around
-the page in an unexpected way. 
+the page in an unexpected way. Users may also use custom colors and styles to
+improve readability or prevent headaches.
 
 ## Next Steps
 
