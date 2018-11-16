@@ -19,7 +19,7 @@ Every subfolder of a learning path should contain a single `index.md`. That mark
 /fast/avoid-invisible-text/index.md
 ```
 
-Authoring guidelines:
+#### Authoring guidelines
 
 - If you want your image to be 100% width, just make sure it's >735px. Then Devsite will handle compressing it, and creating variations for `srcset`.
 - Use sentence case throughout, i.e. "Measure web performance", instead of "Measure Web Performance".
@@ -52,6 +52,8 @@ To create a codelab, add a markdown file to a content subdirectory and name it a
 # Produces the URL: https://web.dev/fast/avoid-invisible-text/codelab-avoid-invisible-text
 /content/fast/avoid-invisible-text/codelab-avoid-invisible-text.md
 ```
+
+#### Authoring guidelines
 
 - When you first mention a Glitch panel or button, put its name in bold, followed by a screenshot. You can use `<web-screenshot>` ([preview](https://glitch.com/edit/#!/web-screenshot)) to add the screenshot.
 
