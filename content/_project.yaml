@@ -8,6 +8,6 @@ products_page:
   - develop
 social_media:
   image:
-    path: /images/social.png
-    width: 1200
-    height: 675
+    path: https://web.dev/images/social.png
+    width: 1440
+    height: 1440
