@@ -20,7 +20,7 @@ to the average user.
 <tr>
 <th><p><img src=./20kb.jpg width="100%"></p>
 
-20K B</th>
+20 KB</th>
 <th><p><img src=./12kb.jpg width="100%"></p>
 
 12 KB</th>
