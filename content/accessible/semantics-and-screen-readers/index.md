@@ -45,7 +45,7 @@ the experience when using this embedded screen reader:
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/div-vs-button?path=index.html&previewSize=100&attributionHidden=true"
+    src="https://glitch.com/embed/#!/embed/div-vs-button?path=example.html&previewSize=100&attributionHidden=true"
     alt="div-vs-button on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
