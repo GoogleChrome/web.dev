@@ -20,4 +20,5 @@ topics:
     - style-focus
 - title: Understand semantics and basic screen reader support
   guides:
+    - semantics-and-screen-readers
     - headings-and-landmarks
