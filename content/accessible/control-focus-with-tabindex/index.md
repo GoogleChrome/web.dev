@@ -11,23 +11,21 @@ wf_blink_components: Blink>Accessibility
 # Control focus with tabindex
 
 Native HTML elements such as `<button>` or `<input>` have keyboard accessibility
-built-in for free. If you're building custom interactive components, use
-`tabindex` to ensure that they're keyboard accessible as well.
+built-in for free. If you're building _custom_ interactive components, use
+`tabindex` to ensure that they're keyboard accessible.
 
 <div class="aside note">
   Whenever possible, use a native HTML element rather than building your
   own custom version. &lt;button&gt;, for example, is very easy to style and
   already has full keyboard support. This will save you from needing to manage
-  tabindex or add additional semantics with ARIA.*
+  <code>tabindex</code> or add additional semantics with ARIA.
 </div>
 
 ## Check if your controls are keyboard accessible
 A tool like Lighthouse is great at detecting certain accessibility issues, but
-some things can only be tested by a human. Run the Accessibility Audit
-(Lighthouse > Options > Accessibility) and look in the Manual audits section for
-an item titled “Interactive controls are keyboard focusable".
+some things can only be tested by a human.
 
-Try pressing the `Tab` key to navigate through your site. Are you able to reach
+Try pressing the `TAB` key to navigate through your site. Are you able to reach
 all of the interactive controls on the page? If not, you may need to use
 [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
 to improve the focusability of those controls.
@@ -42,10 +40,10 @@ to improve the focusability of those controls.
 Insert an element into the natural tab order using `tabindex="0"`. For example:
 
 ```
-<div tabindex="0">Focus me with the Tab key</div>
+<div tabindex="0">Focus me with the TAB key</div>
 ```
 
-The element can be focused by pressing the `Tab` key and by calling its
+The element can be focused by pressing the `TAB` key and by calling its
 `focus()` method.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
@@ -59,7 +57,7 @@ The element can be focused by pressing the `Tab` key and by calling its
 ## Remove an element from the tab order
 Remove an element using `tabindex="-1"`. For example:
 ```
-<button tabindex="-1">Can't reach me with the Tab key!</button>
+<button tabindex="-1">Can't reach me with the TAB key!</button>
 ```
 
 This removes an element from the natural tab order, but the element can still be
@@ -103,7 +101,7 @@ to -1, sets the to-be-focused child's `tabindex` to 0, and calls the `focus()`
 method on it.
 
 **Before**
-<pre class="prettyprint">
+<pre class="prettyprint devsite-disable-click-to-copy">
 &lt;div role=&quot;toolbar&quot;&gt;
   &lt;button tabindex=&quot;-1&quot;&gt;Undo&lt;/div&gt;
   <strong>&lt;button tabindex=&quot;0&quot;&gt;Redo&lt;/div&gt;</strong>
@@ -112,7 +110,7 @@ method on it.
 </pre>
 
 **After**
-<pre class="prettyprint">
+<pre class="prettyprint devsite-disable-click-to-copy">
 &lt;div role=&quot;toolbar&quot;&gt;
   &lt;button tabindex=&quot;-1&quot;&gt;Undo&lt;/div&gt;
   <strong>&lt;button tabindex=&quot;-1&quot;&gt;Redo&lt;/div&gt;</strong>
@@ -120,11 +118,19 @@ method on it.
 &lt;/div&gt;
 </pre>
 
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true"
+    alt="tabindex-negative-one on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
 <div class="aside note">
   Curious what those role="" attributes are for? They let you change the
   semantics of an element so it will be announced properly by a screen reader.
   You can learn more about them in our guide on
-  <a href="#">screen reader basics</a>
+  <a href="#">screen reader basics</a>.
 </div>
 
 ## Keyboard access recipes
