@@ -68,7 +68,7 @@ flashing, heavy animations, and anything which shifts the user's context around
 the page in an unexpected way. Users may also use custom colors and styles to
 improve readability or prevent headaches.
 
-## Next Steps
+## Next steps
 
 Now that you have a high level understanding of accessibility it's time to dive
 in to more specific details, starting with keyboard access.

@@ -43,10 +43,16 @@ Here's a classic example: a `<div>` versus a `<button>`. Using CSS it's possible
 to style both elements so they convey the same visual affordances, but compare
 the experience when using this embedded screen reader:
 
-[Glitch div versus button example]
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/div-vs-button?path=index.html&previewSize=100&attributionHidden=true"
+    alt="div-vs-button on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 Because a `<div>`, semantically, is just a generic grouping element, the screen
-reader announces it as a "group". Whereas the `<button>` is announced as a
+reader only announces its text content. Whereas the `<button>` is announced as a
 "button"—a much stronger signal to the user that this is something they can
 interact with!
 
@@ -69,11 +75,6 @@ that determines an element's name factors in things like any text content inside
 of the element, whether or not it's associated with an actual `<label>` element,
 and if it has any ARIA attributes such as `aria-label` and `aria-labelledby`.
 
-<div class="aside note">
-If you're interested in learning more about how element names are computed, take
-a look at our guide on labeling form controls.
-</div>
-
 Some elements may have a **value**, for instance, `<input type="text">` may have
 a value that reflects whatever the user has typed into the text field.
 
@@ -90,23 +91,21 @@ When assistive technology, like a screen reader, is providing an alternative UI
 to the user, it is often doing so by walking this accessibility tree.
 
 <div class="aside note">
-Browsers will often remove semantically uninteresting nodes like `div`s and `span`s from the accessibility tree, especially if they're just being used to position their children with CSS. For instance, if you have a `button` nested inside of 5 `div`s, it may prune out some of the `div`s in the middle to cut down on noise.
+Browsers will often remove semantically uninteresting nodes like
+<code>div</code>s and <code>span</code>s from the accessibility tree,
+especially if they're just being used to position their children with CSS. For
+instance, if you have a <code>button</code> nested inside of 5
+<code>div</code>s, it may prune out some of the <code>div</code>s in the middle
+to cut down on noise.
 </div>
 
-Using Chrome's DevTools you can inspect an element's semantic properties and
-explore its position in the accessibility tree. Try it on the example below:
+Using Chrome's DevTools you can [inspect an element's semantic properties and
+explore its position in the accessibility tree](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane).
 
-1. Right-click on the slider in the example, and choose `Inspect`.
-1. Click on the **Accessibility** pane
+## Next steps
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/slider-semantics?path=index.html&previewSize=100&attributionHidden=true"
-    alt="slider-semantics on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+Once you know a bit about semantics and how they aid screen reader navigation,
+you can't help but look at the pages you build differently. In the next section
+we'll take a step back and consider how the entire outline of a page can be
+conveyed using effective headings and landmarks.
 
-You should end up with a screen that looks similar to the one below:
-
-![Chrome's accessibilty devtools, showing computed properties for a slider.](./a11y-devtools.png)
