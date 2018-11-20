@@ -12,3 +12,9 @@ upper_tabs:
     - title: Measure
       path: /measure
 
+- name: About
+  lower_tabs:
+    guides:
+    - title: About
+      path: /about
+
