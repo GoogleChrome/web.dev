@@ -6,10 +6,6 @@ web_lighthouse: N/A
 wf_blink_components: N/A
 ---
 
-<div class="devsite-banner devsite-banner-announcement">
-  Coming soon! Master service workers by playing Service Workies, the game: <a href="https://serviceworkies.mastery.games/">Release Preview out now</a>.
-</div>
-
 # Service workers & the Cache Storage API
 
 You're locked in a struggle for network reliability. The browser's HTTP cache is
@@ -126,3 +122,7 @@ with a number of edge cases and "gotchas". There are some higher-level tools
 that can help smooth the difficult bits of those APIs, and provide all you need
 to build a production-ready service worker. The next guide covers one such tool:
 [Workbox](https://developers.google.com/web/tools/workbox/).
+
+## Preview the Service Workies game
+
+In addition to these guides and codelabs, learn how to master service workers and the cache by playing Service Workies, the game: [Release Preview out now](https://serviceworkies.mastery.games/).
