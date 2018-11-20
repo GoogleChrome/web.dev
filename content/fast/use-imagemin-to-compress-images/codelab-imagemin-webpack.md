@@ -158,7 +158,13 @@ Instead of using `imagemin-webpack-plugin`'s default plugin for JPG compression
 (`imagemin-jpegtran`), use the `imagemin-mozjpeg` plugin. Unlike Jpegtran,
 Mozjpeg let's you specify a compression quality for your JPG compression.
 
-- Initialize the `imagemin-mozjpeg` plugin by adding the following line at the
+- First, let's install the Mozjpeg plugin:
+
+<pre class="devsite-terminal devsite-click-to-copy">
+npm install --save-dev imagemin-mozjpeg
+</pre>
+
+- Now, initialize the `imagemin-mozjpeg` plugin by adding the following line at the
   top of your `webpack.config.js` file:
 
 ```javascript
