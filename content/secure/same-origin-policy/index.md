@@ -19,7 +19,7 @@ expose everything on a user's browser.
 
 The same-origin policy prevents this from happening by blocking read access to
 resources loaded from a different origin. "But wait", you say. "I load images
-and scripts from other origins _all the time_." Browsers allow a few tags to embed resources from different origin. This is mostly historical artifacts and could expose your site to vulnerabilities such as clickjacking using iframe. You can restrict the origins for these
+and scripts from other origins _all the time_." Browsers allow a few tags to embed resources from different origin. This is mostly historical artifacts and could expose your site to vulnerabilities such as [clickjacking using iframes](#how-to-prevent-clickjacking). You can restrict the origins for these
 tags using a [Content Security Policy](https://developers.google.com/web/fundamentals/security/csp/).
 
 ## What is considered "same-origin"?  
