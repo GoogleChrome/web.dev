@@ -2,6 +2,9 @@
 page_type: guide
 title: Headings and landmarks
 author: robdodson
+description: |
+  By using the correct elements for headings and landmarks, you can dramatically
+  improve the navigation experience for users of assitive technology.
 web_lighthouse:
   - heading-levels
   - use-landmarks
