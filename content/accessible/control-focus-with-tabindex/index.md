@@ -1,6 +1,10 @@
 ---
 page_type: guide
 title: Control focus with tabindex
+description: |
+  Native HTML elements such as <button> or <input> have keyboard accessibility
+  built-in for free. If you're building custom interactive components, use
+  tabindex to ensure that they're keyboard accessible.
 author: robdodson
 web_lighthouse:
   - tabindex
