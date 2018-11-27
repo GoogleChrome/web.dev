@@ -26,7 +26,7 @@ body[type="article"] .devsite-banner {
   <div class="container">
     <div class="hero-area">
       <h1 class="hero-title">Measure</h1>
-      <p>Review performance and get detailed guidance on how to improve it. Sign-in to monitor your progress over time.</p>
+      <p>Review performance and get detailed guidance on how to improve it. <span data-lh-signin="hide">Sign-in to monitor your progress over time.</span></p>
       <a href="#" class="button button-transparent lh-signin-button gc-analytics-event"
           data-category="web.dev"
           data-label="measure, big sign-in"
@@ -59,7 +59,7 @@ body[type="article"] .devsite-banner {
               <h2>Audit your web page</h2>
             </div>
             <p>
-              Provide any URL, and Lighthouse will run a series of audits generating a report of how well the page did.
+              Provide any URL, and web.dev will run a series of audits using <a href="https://developers.google.com/web/tools/lighthouse/" class="gc-analytics-event" data-category="web.dev" data-label="measure, Lighthouse link" data-action="click">Lighthouse</a>. We'll generate a report of how well you did.
             </p>
           </div>
           <div class="profile-step">
@@ -85,7 +85,14 @@ body[type="article"] .devsite-banner {
 
   <section class="lh-categories-section">
     <div class="container">
-      <h2>What Lighthouse looks for:</h2>
+      <h2>What is Lighthouse?</h2>
+      <div class="what-is-lighthouse">
+        Lighthouse is an open-source, automated tool for improving the quality of your web apps.
+        It is integrated directly into the Chrome DevTools Audits panel, but can also be
+        run from the command line, as a <a href="https://www.npmjs.com/package/lighthouse" class="gc-analytics-event" data-label="measure, Lighthouse module lnk" data-action="click">Node module</a>,
+        or by installing the <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk" class="gc-analytics-event" data-label="measure, Lighthouse crx link" data-action="click">Chrome Extension</a>.
+        Lighthouse also provides a REST API which is consumed by sites like web.dev and <a href="https://developers.google.com/speed/docs/insights/v5/get-started" class="gc-analytics-event" data-label="measure, PSI link" data-action="click">PageSpeed Insights</a>.
+      </div>
       <div class="row">
         <div class="lh-categories-row col-sm-12 col-md-12 col-xl-10">
 
