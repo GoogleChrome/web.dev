@@ -69,22 +69,23 @@ properties
 An element's **role** describes its type, i.e. "button", "input", or even just
 "group" for things like `div`s and `span`s.
 
-An element's **name** is it's computed label. Screen readers typically announce
+An element's **name** is its computed label. Screen readers typically announce
 an element's name followed by its role, e.g. "Sign Up, button". The algorithm
 that determines an element's name factors in things like any text content inside
-of the element, whether or not it's associated with an actual `<label>` element,
+of the element, attributes such as `title` or `placeholder`, whether or not the
+element is associated with an actual `<label>` element,
 and if it has any ARIA attributes such as `aria-label` and `aria-labelledby`.
 
-Some elements may have a **value**, for instance, `<input type="text">` may have
+Some elements _may_ have a **value**, for instance, `<input type="text">` may have
 a value that reflects whatever the user has typed into the text field.
 
-Some elements may also have a **state**, which conveys their current status. For
+Some elements _may_ also have a **state**, which conveys their current status. For
 instance, a `<select>` element can be in either an _expanded_ or a _collapsed_
 state, depending on if it's open or closed.
 
 ### The accessibility tree
 
-For each node in the DOM, the browser parses these properties, determines if the
+For each node in the DOM, the browser determines if the
 node is semantically "interesting", and adds it to [the accessibility
 tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree).
 When assistive technology, like a screen reader, is providing an alternative UI
