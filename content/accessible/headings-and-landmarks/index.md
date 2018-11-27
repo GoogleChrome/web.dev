@@ -16,27 +16,27 @@ wf_blink_components: Blink>Accessibility
 
 Screen readers have commands to quickly jump between headings, or to specific
 landmark regions. In fact, [a recent survey of screen reader users](http://www.heydonworks.com/article/responses-to-the-screen-reader-strategy-survey)
-found that they most often navigate an unfamiliar page by navigating through
+found that they most often navigate an unfamiliar page by exploring
 the headings.
 
-By using the correct elements for headings and landmarks, you can dramatically
-improve the navigation experience for users of assitive technology.
+By using the correct heading and landmark elements, you can dramatically
+improve the navigation experience on your site for users of assitive technology.
 
 ## Use headings to outline the page
 
 Use H1-H6 elements to create a _structural_ outline for your page. The goal is
-to create a scaffold or framing of the page such that anyone navigating by
+to create a skeleton or scaffold of the page such that anyone navigating by
 headings can form a mental picture.
 
-A common practice is to use a single H1 for the primary headline or logo on a
-page, H2s to designate major sections, and H3s in supporting subsections:
+A common practice is to use a single `h1` for the primary headline or logo on a
+page, `h2`s to designate major sections, and `h3`s in supporting subsections:
 
 ```  
 <h1>Company name</h1>  
 <section>  
   <h2>Section Heading</h2>  
   …  
-  <h3>Sub-section</h3>  
+  <h3>Sub-section Heading</h3>  
 </section>
 ```
 
@@ -44,28 +44,29 @@ page, H2s to designate major sections, and H3s in supporting subsections:
 
 Developers often skip heading levels to use the browser default styles that
 closely match their design. This is considered an anti-pattern because it breaks
-the scaffolding model.
+the outline model.
 
 Instead of relying on the browser's default font-sizing for headings, use your
 own CSS, and don't skip levels. 
 
-For example, this site has a section called "In the news", followed by two
+For example, this site has a section called "IN THE NEWS", followed by two
 headlines: 
 
-![A news site with a headline, hero image, and subsections.](./headings.png)
+<img class="screenshot" src="./headings.png" alt="A news site with a headline, hero image, and subsections.">
 
-The section heading, "In the news", could be an H2, and the supporting
-headlines could both be H3s.
+The section heading, "IN THE NEWS", could be an `h2`, and the supporting
+headlines could both be `h3`s.
 
-Because the `font-size` for "In the news" is _smaller_ than the headline, It may
-be tempting to make the headline for the first story into an H2 and "In the
-news" into an H3. While that may match the browser's default styling, it would
+Because the `font-size` for "IN THE NEWS" is _smaller_ than the headline, It may
+be tempting to make the headline for the first story into an `h2` and "IN THE NEWS"
+into an `h3`. While that may match the browser's default styling, it would
 break the outline conveyed to a screen reader user!
 
 <div class="aside note">
-Though it may seem counterintuitive, it does not matter if <em>visually</em> H3s
-and H4s are larger than their H2 or H1 counterparts. What matters is the
-structure conveyed by the tags and how they are ordered.
+Though it may seem counterintuitive, it does not matter if <em>visually</em>
+<code>h3</code>s and <code>h4</code>s are larger than their <code>h2</code> or
+<code>h1</code> counterparts. What matters is the outline conveyed by the elements
+and how they are ordered.
 </div>
 
 You can use Lighthouse to check if your page skips any heading levels. Run the
@@ -78,7 +79,7 @@ HTML5 elements such as `main`, `nav`, and `aside` act as **landmarks** or
 special regions on the page that a screen reader can jump to.
 
 Use landmark tags to define major sections of your page, instead of relying on
-`divs`. Be careful not to go overboard, as having _too many_ landmarks can be
+`div`s. Be careful not to go overboard, as having _too many_ landmarks can be
 overwhelming. For example, stick to just one `main` element instead of 3 or
 4.
 
@@ -90,14 +91,15 @@ to check your page.
 ## Bypass repetitive content with skip links
 
 Many sites contain repetitive navigation in their headers, which can be annoying
-to navigate with a screen reader, keyboard, or switch device. Use a **skip
-link** to let users bypass this content.
+to navigate with assistive technology. Use a **skip link** to let users bypass this content.
 
 A skip link is an offscreen anchor that is always the first focusable item in
-the DOM. Screen readers use skip links to quickly jump to a section on a site.
+the DOM. Typically, it contains an in-page link to the main content of the page. Because it is
+the first element in the DOM, it only takes a single action from assistive technology to focus
+it and bypass repetitive navigation.
 
 <pre class="prettyprint">
-<!-- index.html -->
+&lt;!-- index.html --&gt;
 &lt;a class="skip-link" href="#main"&gt;Skip to main&lt;/a&gt;
 …
 &lt;main id="main"&gt;
@@ -111,11 +113,10 @@ the DOM. Screen readers use skip links to quickly jump to a section on a site.
   position: absolute;
   top: -40px;
   left: 0;
-  background: #BF1722;
+  background: #000000;
   color: white;
   padding: 8px;
   z-index: 100;
-  border-bottom-right-radius: 8px;
 }
 
 .skip-link:focus {
