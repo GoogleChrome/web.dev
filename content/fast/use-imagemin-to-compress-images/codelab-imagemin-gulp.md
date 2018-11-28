@@ -2,7 +2,7 @@
 title: Using Imagemin with Gulp
 author: khempenius
 page_type: glitch
-glitch: imagemin-grunt
+glitch: imagemin-gulp
 ---
 
 ## Install the Imagemin Gulp plugin
