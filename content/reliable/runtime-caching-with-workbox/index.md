@@ -1,6 +1,11 @@
 ---
 page_type: guide
 title: Runtime caching with Workbox
+description: |
+  Runtime caching refers to gradually adding responses to a cache "as you go".
+  While runtime caching doesn't help with the reliability of the current
+  request, runtime caching with Workbox can help make future requests for the
+  same URL more reliable.
 author: jeffy
 web_lighthouse: N/A
 wf_blink_components: N/A

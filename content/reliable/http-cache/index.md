@@ -2,6 +2,12 @@
 page_type: guide
 title: 'The HTTP cache: your first line of defense'
 author: jeffy
+description: |
+  The browser's HTTP cache is your first line of defense. It's not necessarily
+  the most powerful or flexible approach, and you have limited control over the
+  lifetime of cached responses. But there are several rules of thumb that give
+  you a sensible caching implementation without much work, so you should always
+  try to follow them.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

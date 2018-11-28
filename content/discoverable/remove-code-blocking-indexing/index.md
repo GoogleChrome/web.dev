@@ -2,6 +2,10 @@
 page_type: guide
 title: Remove code that blocks search engine indexing
 author: ekharvey
+description: |
+  Search engines can only show pages in their search results if those pages are
+  not explicitly blocking indexing. Don't block indexing for content that you
+  want to show up in search results.
 web_lighthouse:
   - is-crawlable
 wf_blink_components: N/A

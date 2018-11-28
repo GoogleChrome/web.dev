@@ -2,6 +2,12 @@
 page_type: guide
 title: Identify resources loaded from the network
 author: jeffy
+description: |
+  Coming up with the right caching strategies for your web application requires
+  getting a handle on what exactly you're loading. When building a reliable web
+  application, the network can be subject to all kinds of dark forces. You need
+  to understand the network's vulnerabilities if you hope to cope with them in
+  your app.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
@@ -26,7 +32,7 @@ Coming up with the right caching strategies for your web application requires
 getting a handle on _what_ exactly you're loading. When building a reliable web
 application, the network can be subject to all kinds of dark forces. You need to
 understand the network's vulnerabilities if you hope to cope with them in your
-app. 
+app.
 
 You might think that you already have a pretty good idea as to what your web
 application loads. If you're just using a small scattering of static HTML,

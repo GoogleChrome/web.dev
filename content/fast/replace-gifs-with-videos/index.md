@@ -2,6 +2,11 @@
 page_type: guide
 title: Replace animated GIFs with video for faster page loads
 author: houssein
+description: |
+  Have you ever seen an animated GIF on a service like Imgur or Gfycat,
+  inspected it in your dev tools, only to find out that GIF was really a video?
+  There's a good reason for that. Animated GIFs can be downright huge! By
+  converting large GIFs to videos, you can save big on users' bandwidth.
 web_lighthouse:
 - efficient-animated-content
 wf_blink_components: N/A

@@ -2,6 +2,12 @@
 page_type: guide
 title: Security attacks, what are they?
 author: kosamari
+description: |
+  An insecure application could expose users and systems to various types of
+  damage. When a malicious party uses vulnerabilities or lack of security
+  features to their advantage to cause damage, it is called an attack. We'll
+  take a look at different types of attacks in this guide so you know what to
+  look for when securing your application.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

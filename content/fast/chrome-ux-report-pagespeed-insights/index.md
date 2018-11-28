@@ -2,6 +2,10 @@
 page_type: guide
 title: Using the Chrome UX Report on PageSpeed Insights
 author: rviscomi
+description: |
+  PageSpeed Insights (PSI) is a tool for web developers to understand what a
+  page's performance is and how to improve it. In this guide, learn how to use
+  PSI to extract insights from CrUX and better understand the user experience.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

@@ -2,6 +2,10 @@
 page_type: guide
 title: Security should not be so scary!
 author: kosamari
+description: |
+  When the word "security" comes to mind, it's usually in the context of bad
+  news. But security is something to be taken as a positive and necessary part
+  of web development just like "user experience" or "accessibility".
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

@@ -2,6 +2,11 @@
 page_type: guide
 title: Same Origin Policy
 author: kosamari
+description: |
+  A browser can load and display resources from multiple sites. If there is no
+  restriction on interactions between those resources, and if a script is
+  compromised by an attacker, the script could expose everything on a user's
+  browser.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
@@ -15,7 +20,7 @@ A browser can load and display resources from multiple sites. You might have
 multiple tabs open at the same time, or a site could embed multiple iframes from
 different sites. If there is no restriction on interactions between those
 resources, and if a script is compromised by an attacker, the script could
-expose everything on a user's browser.  
+expose everything on a user's browser.
 
 The same-origin policy prevents this from happening by blocking read access to
 resources loaded from a different origin. "But wait", you say. "I load images

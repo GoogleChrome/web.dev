@@ -2,6 +2,11 @@
 page_type: guide
 title: How to measure Search Engine Optimization with Lighthouse
 author: ekharvey
+description: |
+  The Lighthouse SEO audit scans your page, tests for things that matter to
+  search engines, and gives you a score so you can see specific areas for
+  improvement. SEO matters because it's how you get more relevant users viewing
+  your content.  
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

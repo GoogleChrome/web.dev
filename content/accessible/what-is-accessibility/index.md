@@ -2,6 +2,10 @@
 page_type: guide
 title: What is accessibility
 author: robdodson
+description: |
+  An accessible site is one whose content can be accessed regardless of any
+  user's impairments, and whose functionality can also be operated by the most
+  diverse range of users possible.
 web_lighthouse: N/A
 wf_blink_components: Blink>Accessibility
 ---

@@ -2,6 +2,12 @@
 page_type: guide
 title: Keyboard access fundamentals
 author: robdodson
+description: |
+  Many different users rely on the keyboard to navigate applications - from
+  users with temporary and permanent motor impairments to users who use keyboard
+  shortcuts to be more efficient and productive. Having a good keyboard
+  navigation strategy for your application creates a better experience for
+  everyone.
 web_lighthouse:
   - visual-order-follows-dom
   - offscreen-content-hidden

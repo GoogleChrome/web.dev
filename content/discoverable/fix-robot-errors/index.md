@@ -2,6 +2,9 @@
 page_type: guide
 title: Fix robots.txt errors
 author: ekharvey
+description: |
+  The robots.txt file tells search engines which URLs of your site they can
+  crawl. An invalid robots.txt file can cause problems with indexing.    
 web_lighthouse:
   - robots-txt
 wf_blink_components: N/A

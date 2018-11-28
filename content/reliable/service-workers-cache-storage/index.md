@@ -2,6 +2,11 @@
 page_type: guide
 title: Service workers and the Cache Storage API
 author: jeffy
+description: |
+    You're locked in a struggle for network reliability. The browser's HTTP
+    cache is your first line of defense, but on its own, the HTTP cache is not
+    enough. Fortunately, two newer tools are available to help turn the tide in
+    your favor—service workers and the Cache Storage API.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

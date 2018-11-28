@@ -2,6 +2,10 @@
 page_type: guide
 title: Add a Web App Manifest
 author: petele
+description: |
+  The web app manifest is a simple JSON file that tells the browser about your
+  web application and how it should behave when 'installed' on the user's mobile
+  device or desktop.
 web_lighthouse:
 - http-status-code
 wf_blink_components: N/A

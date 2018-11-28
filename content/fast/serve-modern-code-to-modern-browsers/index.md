@@ -2,6 +2,12 @@
 page_type: guide
 title: Serve modern code to modern browsers for faster page loads
 author: houssein
+description: |
+  Building websites that work well on all major browsers is a core tenet of an
+  open web ecosystem. However, this means additional work of ensuring that all
+  of the code you write is supported in each browser that you plan to target. If
+  you want to use new JavaScript language features, you need to transpile these
+  features to backwards-compatible formats.  
 wf_blink_components: N/A
 ---
 
