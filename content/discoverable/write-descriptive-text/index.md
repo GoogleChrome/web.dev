@@ -2,6 +2,11 @@
 page_type: guide
 title: Write descriptive titles, descriptions, and link text
 author: ekharvey
+description: |
+  Search engines rely heavily on document titles, descriptions, and link text
+  within a document. High-quality, unique descriptions, titles, and link text
+  can appear in search results, and show how your pages are relevant to users,
+  which in turn can increase your search traffic.  
 web_lighthouse:
   - document-title
   - meta-description

@@ -2,6 +2,11 @@
 page_type: guide
 title: Using the CrUX Dashboard on Data Studio
 author: rviscomi
+description: |
+  Data Studio is a powerful data visualization tool that enables you to build
+  dashboards on top of big data sources, like the Chrome UX Report In this
+  guide, learn how to create your own custom CrUX Dashboard to track an origin's
+  user experience.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

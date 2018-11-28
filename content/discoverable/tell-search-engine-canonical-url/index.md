@@ -2,6 +2,11 @@
 page_type: guide
 title: Tell search engines which version of a page to crawl
 author: ekharvey
+description: |
+  When multiple pages have the same or significantly similar content, search
+  engines consider them duplicate versions of the same page. Providing
+  search engines information about your preferred canonical URL helps search
+  engines display the correct URL to users.
 web_lighthouse:
   - canonical
 wf_blink_components: N/A

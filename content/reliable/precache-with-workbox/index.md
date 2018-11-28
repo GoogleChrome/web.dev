@@ -2,6 +2,11 @@
 page_type: guide
 title: Precaching with Workbox
 author: jeffy
+description: |
+  One feature of service workers is the ability to save files to the cache when
+  the service worker is installing. Precaching makes it possible to serve cached
+  files to the browser without going to the network. Use precaching with Workbox
+  for critical assets that your site needs even when offline.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
@@ -12,7 +17,7 @@ One feature of service workers is the ability to save files to the cache when
 the service worker is installing. This is referred to as "precaching".
 Precaching makes it possible to serve cached files to the browser without going
 to the network. Use precaching for critical assets that your site needs even
-when offline: main page, styles, fallback image, essential scripts…
+when offline: main page, styles, fallback image and essential scripts.
 
 ## Why should you use Workbox?
 

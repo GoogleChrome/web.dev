@@ -2,6 +2,10 @@
 page_type: guide
 title: Tell search engines translated pages are equivalent
 author: ekharvey
+description: |
+  If you have a page that's translated into multiple languages, add link
+  elements with  hreflang attributes. This lets search engines know your page is
+  translated, allowing them to display the correct language to users.
 web_lighthouse:
   - hreflang
 wf_blink_components: N/A

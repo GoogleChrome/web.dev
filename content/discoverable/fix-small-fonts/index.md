@@ -2,6 +2,12 @@
 page_type: guide
 title: Fix small font sizes
 author: ekharvey
+description: |
+  Font sizes smaller than 12px are often difficult to read on mobile devices,
+  and may require users to pinch-to-zoom in order to display the text at a
+  comfortable reading size. Mobile-friendly pages is a ranking factor for many
+  search engines because users should be able to navigate your site on their
+  mobile devices.  
 web_lighthouse:
   - font-size
 wf_blink_components: N/A

@@ -2,6 +2,10 @@
 page_type: guide
 title: Serve images with correct dimensions
 author: khempenius
+description: |
+  We've all been there—you forgot to scale down an image before adding it to the
+  page. The image looks fine, but it is wasting users' data and hurting page
+  performance.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

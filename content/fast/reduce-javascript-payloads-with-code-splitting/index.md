@@ -2,6 +2,11 @@
 page_type: guide
 title: Reduce JavaScript payloads with code-splitting
 author: houssein
+description: |
+  Sending large JavaScript payloads impacts the speed of your site
+  significantly. Instead of shipping all the JavaScript to your user as soon as
+  the first page of your application is loaded, code-split your bundle into
+  multiple "pieces" and only send what's necessary at the very beginning.
 web_lighthouse:
 - bootup-time
 wf_blink_components: N/A

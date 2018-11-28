@@ -2,6 +2,12 @@
 page_type: guide
 title: What is network reliability and how do you measure it?
 author: jeffy
+description: |
+  The modern web is enjoyed by a wide swath of people, using a range of
+  different devices and types of network connections. Your creations can reach
+  users all across the world, but delivering a reliable experience on the web
+  for all of your users can be challenging. It can be a challenge just to
+  understand what reliability means.  
 web_lighthouse: 
 - works-offline
 wf_blink_components: N/A

@@ -2,6 +2,11 @@
 page_type: guide
 title: Avoid invisible text during font loading
 author: khempenius
+description: |
+  Fonts are often large files that take awhile to load. To deal with this, some
+  browsers hide text until the font loads (the "flash of invisible text"). If
+  you're optimizing for performance, you'll want to avoid the "flash of
+  invisible text" and show content to users immediately using a system font.
 web_lighthouse:
 - font-display
 wf_blink_components: N/A

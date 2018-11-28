@@ -2,6 +2,10 @@
 page_type: guide
 title: Using the Chrome UX Report to look at performance in the field
 author: rviscomi
+description: |
+  The Chrome UX Report (informally known as CrUX) is a public dataset of real
+  user experience data on millions of websites. Unlike lab data, CrUX data
+  actually comes from opted-in users in the field.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
@@ -25,7 +29,11 @@ See the
 [CrUX documentation](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics) 
 for the full list of metrics.
 
-Using this data, developers are able to understand the wide distribution of real world user experiences between websites, segments of the web, or the web as a whole. This is a big deal! The Chrome UX Report dataset is the first of its kind to enable web developers to compare their real user performance against the competition and industry.
+Using this data, developers are able to understand the wide distribution of real
+world user experiences between websites, segments of the web, or the web as a
+whole. This is a big deal! The Chrome UX Report dataset is the first of its kind
+to enable web developers to compare their real user performance against the
+competition and industry.
 
 ## How to use it
 
@@ -88,7 +96,9 @@ can follow to ask questions and listen for product announcements.
 
 ## See it in action
 
-In order to get more acquainted with the available data, walk through step-by-step guides for using BigQuery, Data Studio Dashboard, and PageSpeed Insights:
+In order to get more acquainted with the available data, walk through
+step-by-step guides for using BigQuery, Data Studio Dashboard, and PageSpeed
+Insights:
 
 - [CrUX: Data Studio Dashboard](/fast/chrome-ux-report-data-studio-dashboard)
 - [CrUX: PageSpeed Insights](/fast/chrome-ux-report-pagespeed-insights)

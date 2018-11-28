@@ -2,6 +2,10 @@
 page_type: guide
 title: Avoid making pages that rely on browser plugins
 author: ekharvey
+description: |
+  Search engines often can't index content that requires browser plugins such as
+  Java applets or Flash animations. Also, most mobile devices don't support
+  plugins, and this can create frustrating experiences for mobile users.
 web_lighthouse:
   - plugins
 wf_blink_components: N/A
@@ -14,7 +18,7 @@ wf_blink_components: N/A
 Search engines often can't index content that requires browser plugins such as
 Java applets or Flash animations. Content that requires plugins will not show up
 in search results. Also, most mobile devices don't support plugins, and this can
-create frustrating experiences for mobile users. 
+create frustrating experiences for mobile users.
 
 ## Measure
 

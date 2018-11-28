@@ -2,6 +2,10 @@
 page_type: guide
 title: Fix the viewport meta tag
 author: ekharvey
+description: |
+  Without a viewport meta tag, mobile devices render pages at typical desktop
+  screen widths, and then scale the pages to fit mobile screens. Setting the
+  viewport enables you to control the width and scaling of the viewport.  
 web_lighthouse:
   - viewport
 wf_blink_components: N/A

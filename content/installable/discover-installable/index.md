@@ -2,6 +2,11 @@
 page_type: guide
 title: Discover what it takes to be installable
 author: petele
+description: |
+  A Progressive Web App can run in a browser tab or it can be installed on the
+  users device and run like other installed apps. Once installed, it's launched
+  from the Start menu or app launcher, and run in an app window, without an
+  address bar or tabs.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

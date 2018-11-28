@@ -2,6 +2,10 @@
 page_type: guide
 title: Fix unsuccessful HTTP status codes
 author: ekharvey
+description: |
+  HTTP status codes indicate the response given by a server for a request to a
+  URL. 4XX status codes signal to search engines that a page does not provide
+  any content.
 web_lighthouse:
   - http-status-code
 wf_blink_components: N/A

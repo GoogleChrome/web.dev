@@ -2,6 +2,11 @@
 page_type: guide
 title: How search works
 author: ekharvey
+description: |
+  Search engines are the digital version of a librarian. They use a
+  comprehensive index to help find the right information for a query.
+  Understanding the basics of search prepares you to make your content
+  discoverable for users.  
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
