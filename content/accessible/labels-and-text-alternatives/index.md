@@ -213,9 +213,9 @@ they click the link.
 </a>
 ```
 
-Similarly, if an `<input type="image">` element used to create an image button,
-it should contain `alt` text that describes the action that occurs if the user
-clicks the button.
+Similarly, if an `<input type="image">` element is used to create an image
+button, it should contain `alt` text that describes the action that occurs when
+the user clicks the button.
 
 <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;form&gt;
