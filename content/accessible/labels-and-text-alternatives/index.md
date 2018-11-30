@@ -254,11 +254,11 @@ A `button` element will always attempt to compute its accessible name using its
 text content. For buttons that are not part of a `form`, just writing a clear
 action as the text content may be all you need to create a good accessible name.
 
-![A mobile form with a 'Book Room' button.](./button-label.png)
-
 ```html
 <button>Book Room</button>
 ```
+
+![A mobile form with a 'Book Room' button.](./button-label.png)
 
 One common exception to this rule are icon buttons. An icon button may use an
 image, or an icon font, to provide the text content for the button. For example,
