@@ -129,4 +129,4 @@ to build a production-ready service worker. The next guide covers one such tool:
 [Workbox](https://developers.google.com/web/tools/workbox/).
 
 
-<div class="aside success">Learn while having fun. Check out the new Service Workies game: [Release Preview out now](https://serviceworkies.mastery.games/).</div>
+<div class="aside success">Learn while having fun. Check out the new Service Workies game: <a href="https://serviceworkies.mastery.games/">Release Preview out now</a>.</div>
