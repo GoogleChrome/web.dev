@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: Labeling and text alternatives
+title: Labels and text alternatives
 author: robdodson
 description: |
   In order for a screen reader to present a spoken UI to the user, meaningful
@@ -19,7 +19,7 @@ web_lighthouse:
 wf_blink_components: N/A
 ---
 
-# Labeling and text alternatives
+# Labels and text alternatives
 
 In order for a screen reader to present a spoken UI to the user, meaningful
 elements must have proper labels or text alternatives. A label or text
