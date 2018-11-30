@@ -30,15 +30,15 @@ tree](https://web.dev/accessible/semantics-and-screen-readers/#semantic-properti
 When an element's name is combined with the element's **role**, it gives the
 user context so they can understand what type of element they're interacting
 with, and how it is represented on the page. If a name is not present, then a
-screen reader will only announce the element's role. Imagine trying to navigate
+screen reader only announces the element's role. Imagine trying to navigate
 a page and hearing, "button", "checkbox", "image" without any additional
 context. This is why labeling and text alternatives are crucial to a good,
 accessible experience.
 
 ## Inspect an element's name
-It's easy to check an element's accessible name using Chrome's DevTools.
+It's easy to check an element's accessible name using Chrome's DevTools:
 
-1. Right-click on an element and choose **Inspect**. This will open the DevTools
+1. Right-click on an element and choose **Inspect**. This opens the DevTools
    Elements panel.
 1. In the Elements panel, look for the **Accessibility** pane. It may be hidden
    behind a `»` symbol.
@@ -57,7 +57,7 @@ Whether you're looking at an `img` with `alt` text, or an `input` with a
 outcome: giving an element its accessible name.
 
 ## Check for missing names
-There are a number of accessibility and SEO audits in Lighthouse that will test
+There are a number of accessibility and SEO audits in Lighthouse that test
 for missing accessible names.
 
 <table>
@@ -89,8 +89,8 @@ for missing accessible names.
         Image elements have [alt] attributes
       </td>
       <td>
-        <a href="#text-alternatives-for-images-and-objects">
-          Text alternatives for images and objects
+        <a href="#include-text-alternatives-for-images-and-objects">
+          Include text alternatives for images and objects
         </a>
       </td>
     </tr>
@@ -99,8 +99,8 @@ for missing accessible names.
         &lt;input type="image"&gt; elements have [alt] text
       </td>
       <td>
-        <a href="#text-alternatives-for-images-and-objects">
-          Text alternatives for images and objects
+        <a href="#include-text-alternatives-for-images-and-objects">
+          Include text alternatives for images and objects
         </a>
       </td>
     </tr>
@@ -109,8 +109,8 @@ for missing accessible names.
         &lt;object&gt; elements have [alt] text
       </td>
       <td>
-        <a href="#text-alternatives-for-images-and-objects">
-          Text alternatives for images and objects
+        <a href="#include-text-alternatives-for-images-and-objects">
+          Include text alternatives for images and objects
         </a>
       </td>
     </tr>
@@ -146,7 +146,7 @@ Every page should have a
 [`title`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 element that briefly explains what the page is about. The `title` element gives
 the page its accessible name. When a screen reader enters the page, this is the
-first text that will be announced.
+first text that is announced.
 
 <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;!doctype html&gt;
@@ -174,15 +174,15 @@ Similarly, any `frame` or `iframe` elements should have a `title` attribute.
 ```
 
 While an `iframe` may contain its own internal `title` element, a screen
-reader will usually stop at the frame boundary and announce the element's
+reader usually stops at the frame boundary and announces the element's
 role—"frame"—and its accessible name, provided by the `title` attribute. This
 lets the user to decide if they wish to enter the frame or bypass it.
 
-## Text alternatives for images and objects
+## Include text alternatives for images and objects
 An `img` should always be accompanied by an
 [`alt`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes)
 attribute, to give the image its accessible name. If the image fails to load,
-the `alt` text will be used as a placeholder so users have a sense of what the
+the `alt` text is used as a placeholder so users have a sense of what the
 image was trying to convey.
 
 Writing good `alt` text is a bit of an art, but there are a couple of guidelines
@@ -197,7 +197,7 @@ you can give it an empty `alt=""` attribute to remove it from the accessibility
 tree.
 
 <div class="aside note">
-You can learn more about writing effective <code>alt</code> by checking out <a
+Learn more about writing effective <code>alt</code> text by checking out <a
 href="https://webaim.org/techniques/alttext/">WebAIM's guide to Alternative
 Text.</a>
 </div>
@@ -213,9 +213,9 @@ they click the link.
 </a>
 ```
 
-Similarly, if an `<input type="image">` element is being used to create an image
-button, it should contain `alt` text that describes the action that will occur
-if the user clicks the button.
+Similarly, if an `<input type="image">` element used to create an image button,
+it should contain `alt` text that describes the action that occurs if the user
+clicks the button.
 
 <pre class="prettyprint devsite-disable-click-to-copy">
 &lt;form&gt;
@@ -231,8 +231,8 @@ if the user clicks the button.
 ### Embedded objects
 
 `<object>` elements, which are typically used for embeds like Flash, PDFs, or
-ActiveX, should also contain alternative text. Similar to images, this text will
-display if the element fails to render.
+ActiveX, should also contain alternative text. Similar to images, this text is
+displayed if the element fails to render.
 
 ```
 <object type="application/pdf"
@@ -244,15 +244,15 @@ Annual report.
 ```
 
 ## Label buttons and links
-Buttons and links are simple, and common, interactive elements. Because they are
-often crucial to the experience of a site, it is important that both have good
-accessible names.
+Buttons and links are often crucial to the experience of a site, and it is
+important that both have good accessible names.
 
 ### Buttons
 
-A `button` element will always attempt to compute its accessible name using its
-text content. For buttons that are not part of a `form`, just writing a clear
-action as the text content may be all you need to create a good accessible name.
+A `button` element always attempts to compute its accessible name using its
+text content. For buttons that are not part of a `form`, writing a clear
+action as the text content may be all you need to do to create a good accessible
+name.
 
 ```html
 <button>Book Room</button>
@@ -268,7 +268,7 @@ symbols.
 ![A left align icon button.](./icon-button.png)
 
 When working with icon buttons, it can be helpful to give them an explicit
-accessible name using the `aria-label` attribute. `aria-label` will override any
+accessible name using the `aria-label` attribute. `aria-label` overrides any
 text content inside of the button, letting you clearly describe the action to
 anyone using a screen reader.
 
@@ -310,9 +310,9 @@ shortcuts become much less useful.
 There are two ways to associate a label with a form element, such as a checkbox.
 Either of the methods causes the label text to also become a click target for
 the checkbox, which is also helpful for mouse or touchscreen users. To associate
-a label with an element, either
+a label with an element, either:
 
-Place the input element inside a label element
+- Place the input element inside a label element
 
 ```
 <label>
@@ -320,7 +320,7 @@ Place the input element inside a label element
 </label>
 ```
 
-Or, use the label's `for` attribute and refer to the element's `id`
+- Or, use the label's `for` attribute and refer to the element's `id`
 
 ```
 <input id="promo" type="checkbox"></input>
