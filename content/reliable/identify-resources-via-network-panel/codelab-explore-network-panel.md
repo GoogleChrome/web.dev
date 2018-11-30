@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Explore DevTools Network panel
 author: jeffy
-page_type: glitch
+description: |
+  In this codelab, learn how to inerpret network traffic using Chrome's
+  DevTools.
 glitch: explore-devtools
 ---
 
@@ -10,8 +13,8 @@ traffic for a more complex sample application. At the end of the exercise,
 you'll have the skills you need to figure out _what_ your own web application's
 loading, and _when_ each of the requests are being made.
 
-Note: The screenshots and instructions in this codelab assume that you're using 
-Chrome. Each browser has its own DevTools experience, which might 
+Note: The screenshots and instructions in this codelab assume that you're using
+Chrome. Each browser has its own DevTools experience, which might
 not match what you see in this codelab.
 
 ## Navigate to the Network Panel
@@ -66,7 +69,7 @@ initial navigation.
 
 With the Network panel still open and recording, it's time to simulate something
 common for a lot of web apps: additional API requests used to add more data to
-the page after the initial navigation is complete. 
+the page after the initial navigation is complete.
 
 Trigger these additional requests by clicking the **Find Me** button, and then
 **Allow**ing the site to access your current location:

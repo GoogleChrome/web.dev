@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Lazy load offscreen images with lazysizes
 author: khempenius
-page_type: glitch
+description: |
+  In this codelab, learn how to use lazysizes to only load images that are
+  in the current viewport.
 glitch: lazysizes
 ---
 

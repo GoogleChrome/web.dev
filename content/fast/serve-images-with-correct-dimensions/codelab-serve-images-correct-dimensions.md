@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Serve images with correct dimensions
 author: khempenius
-page_type: glitch
+description: |
+  In this codelab, learn how to serve images with the correct dimensions to
+  improve network performance.
 glitch: correct-dimensions
 ---
 

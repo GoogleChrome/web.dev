@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Same Origin Policy & Fetch requests
 author: kosamari
-page_type: glitch
+description: |
+  In this codelab, learn how the same-origin policy works when fetching
+  resources.
 glitch: same-origin-policy-fetch
 ---
 

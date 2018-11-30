@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Specifying multiple slot widths
 author: khempenius
-page_type: glitch
+description: |
+  In this codelab, learn how to use the sizes attribute to size images correctly
+  depending on the user's viewport.
 glitch: responsive-images-multiple-sizes
 order: 1
 ---

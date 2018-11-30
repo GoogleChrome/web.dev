@@ -1,7 +1,11 @@
 ---
+page_type: glitch
 title: Minify and compress network payloads
 author: houssein
-page_type: glitch
+description: |
+  In this codelab, learn how both minifying and compressing the JavaScript
+  bundle for an application improves page performance by reducing the app's
+  request size.
 glitch: fav-kitties-compress-starter
 ---
 
