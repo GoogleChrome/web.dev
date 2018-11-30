@@ -125,7 +125,7 @@ it and bypass repetitive navigation.
 </pre>
 
 Many popular sites such as [GitHub](https://github.com/), [NY
-Times](https://www.nytimes.com/), and [Wikipedia](https://wikipedia.com/) all contain
+Times](https://www.nytimes.com/), and [Wikipedia](https://wikipedia.org/) all contain
 skip links. Try visiting them and pressing the `TAB` key on your keyboard a
 few times.
 
