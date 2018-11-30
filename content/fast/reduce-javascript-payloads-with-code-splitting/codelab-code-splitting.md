@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Reduce JavaScript payloads with code-splitting
 author: houssein
-page_type: glitch
+description: |
+  In this codelab, learn how to improve the performance of a simple application
+  through code-splitting.
 glitch: code-splitting-starter
 ---
 

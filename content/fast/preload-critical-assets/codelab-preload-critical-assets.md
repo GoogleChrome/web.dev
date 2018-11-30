@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Preload critical assets to improve loading speed
 author: houssein
-page_type: glitch
+description: |
+  In this codelab, learn how to improve the performance of a page by preloading
+  and prefetching resources.
 glitch: preload-critical-assets
 ---
 

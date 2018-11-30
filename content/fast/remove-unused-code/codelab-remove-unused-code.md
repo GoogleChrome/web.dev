@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Remove unused code
 author: houssein
-page_type: glitch
+description: |
+  In this codelab, learn how to improve the performance of an application by
+  removing any unused and unneeded dependencies.
 glitch: fav-kitties-starter
 ---
 

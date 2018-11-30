@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Working with service workers
 author: jeffy
-page_type: glitch
+description: |
+  In this codelab, learn how to make an application network resilient by
+  registering a service worker.
 glitch: working-with-sw
 ---
 

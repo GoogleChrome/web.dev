@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Same Origin Policy & iframe
 author: kosamari
-page_type: glitch
+description: |
+  In this codelab, learn how the same-origin policy works when accessing data
+  inside an iframe.
 glitch: same-origin-policy-iframe
 ---
 # Same-origin Policy & iframe

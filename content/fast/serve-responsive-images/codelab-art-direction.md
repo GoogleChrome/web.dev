@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Art direction
 author: khempenius
-page_type: glitch
+description: |
+  In this codelab, learn how to load completely different images based on device
+  display size.
 glitch: responsive-images-art-direction
 order: 2
 ---

@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Avoid flash of invisible text
 author: khempenius
-page_type: glitch
+description: |
+  In this codelab, learn how to display text immediately using Font Face
+  Observer.
 glitch: font-observer
 ---
 
@@ -20,7 +23,7 @@ separately. However, you do need to add a script tag for it.
 <web-screenshot type="remix"></web-screenshot>
 
 - Add a script tag for `fontfaceobserver.js` to `index.html`:
- 
+
 <pre class="prettyprint devsite-disable-click-to-copy">
     &lt;div class=&quot;text&quot;&gt;Some text.&lt;/div&gt;
     <strong>&lt;script src=&quot;fontfaceobserver.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</strong>

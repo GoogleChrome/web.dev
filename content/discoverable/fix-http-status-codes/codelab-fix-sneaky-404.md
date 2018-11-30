@@ -1,7 +1,10 @@
 ---
+page_type: glitch
 title: Fix sneaky 404s
 author: martinsplitt
-page_type: glitch
+description: |
+  In this codelab, learn how to track down a sneaky 404 that may prevent your
+  page from being properly indexed.
 glitch: sneaky-404
 ---
 
