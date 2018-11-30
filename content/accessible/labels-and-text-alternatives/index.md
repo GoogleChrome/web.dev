@@ -47,10 +47,12 @@ It's easy to check an element's accessible name using Chrome's DevTools.
 ![DevTools accessibility pane showing the computed name for a button.](./devtools-name.png)
 
 <div class="aside note">
-To learn more, check out the <a href="">DevTools Accessibility Reference</a>.
+To learn more, check out the <a href="https://developers.google.com/web/tools/chrome-devtools/accessibility/reference">
+DevTools Accessibility Reference
+</a>.
 </div>
 
-Whether you're looking at an `image` with `alt` text, or an `input` with a
+Whether you're looking at an `img` with `alt` text, or an `input` with a
 `label`, you'll soon discover that all of these things result in the same
 outcome: giving an element its accessible name.
 
@@ -71,7 +73,7 @@ for missing accessible names.
         Document has a &lt;title&gt; element
       </td>
       <td>
-        Label documents and frames
+        <a href="#label-documents-and-frames">Label documents and frames</a>
       </td>
     </tr>
     <tr>
@@ -79,7 +81,7 @@ for missing accessible names.
         &lt;frame&gt; or &lt;iframe&gt; elements have a title
       </td>
       <td>
-        Label documents and frames
+        <a href="#label-documents-and-frames">Label documents and frames</a>
       </td>
     </tr>
     <tr>
@@ -87,7 +89,9 @@ for missing accessible names.
         Image elements have [alt] attributes
       </td>
       <td>
-        Text alternatives for images and objects
+        <a href="#text-alternatives-for-images-and-objects">
+          Text alternatives for images and objects
+        </a>
       </td>
     </tr>
     <tr>
@@ -95,7 +99,9 @@ for missing accessible names.
         &lt;input type="image"&gt; elements have [alt] text
       </td>
       <td>
-        Text alternatives for images and objects
+        <a href="#text-alternatives-for-images-and-objects">
+          Text alternatives for images and objects
+        </a>
       </td>
     </tr>
     <tr>
@@ -103,7 +109,9 @@ for missing accessible names.
         &lt;object&gt; elements have [alt] text
       </td>
       <td>
-        Text alternatives for images and objects
+        <a href="#text-alternatives-for-images-and-objects">
+          Text alternatives for images and objects
+        </a>
       </td>
     </tr>
     <tr>
@@ -111,7 +119,7 @@ for missing accessible names.
         Buttons have an accessible name
       </td>
       <td>
-        Label simple interactive elements
+        <a href="#label-buttons-and-links">Label buttons and links</a>
       </td>
     </tr>
     <tr>
@@ -119,7 +127,7 @@ for missing accessible names.
         Links have a discernible name
       </td>
       <td>
-        Label simple interactive elements
+        <a href="#label-buttons-and-links">Label buttons and links</a>
       </td>
     </tr>
     <tr>
@@ -127,7 +135,7 @@ for missing accessible names.
         Form elements have associated labels
       </td>
       <td>
-        Label form elements
+        <a href="#label-form-elements">Label form elements</a>
       </td>
     </tr>
   </tbody>
@@ -209,16 +217,16 @@ Similarly, if an `<input type="image">` element is being used to create an image
 button, it should contain `alt` text that describes the action that will occur
 if the user clicks the button.
 
-```html
-<form>
-  <label>
+<pre class="prettyprint devsite-disable-click-to-copy">
+&lt;form&gt;
+  &lt;label&gt;
     Username:
-    <input type="text">
-  </label>
-  <input type="image" alt="Sign in"
-             src="./sign-in-button.png">
-</form>
-```
+    &lt;input type=&quot;text&quot;&gt;
+  &lt;/label&gt;
+  <strong>&lt;input type=&quot;image&quot; alt=&quot;Sign in&quot;</strong>
+             <strong>src=&quot;./sign-in-button.png&quot;&gt;</strong>
+&lt;/form&gt;
+</pre>
 
 ### Embedded objects
 
@@ -235,10 +243,10 @@ Annual report.
 </object>
 ```
 
-## Label simple interactive elements
+## Label buttons and links
 Buttons and links are simple, and common, interactive elements. Because they are
-often crucial to the experience on a site, it is important that both have a good
-accessible name.
+often crucial to the experience of a site, it is important that both have good
+accessible names.
 
 ### Buttons
 
@@ -247,6 +255,10 @@ text content. For buttons that are not part of a `form`, just writing a clear
 action as the text content may be all you need to create a good accessible name.
 
 ![A mobile form with a 'Book Room' button.](./button-label.png)
+
+```html
+<button>Book Room</button>
+```
 
 One common exception to this rule are icon buttons. An icon button may use an
 image, or an icon font, to provide the text content for the button. For example,
@@ -261,7 +273,7 @@ text content inside of the button, letting you clearly describe the action to
 anyone using a screen reader.
 
 ```html
-<button aria-label="Left align">
+<button aria-label="Left align"></button>
 ```
 
 ### Links
@@ -272,12 +284,12 @@ of text into the link itself, rather than filler words like "Here" or "Read
 More".
 
 <p><span class="compare-worse">Not recommended</span> — not descriptive</p>
-<pre class="prettyprint devsite-disable-click-to-copy">
+<pre class="prettyprint lang-html devsite-disable-click-to-copy">
 Check out our guide to web performance &lt;a href="…"&gt;here&lt;/a&gt;.
 </pre>
 
 <p><span class="compare-better">Recommended</span> — useful content</p>
-<pre class="prettyprint devsite-disable-click-to-copy">
+<pre class="prettyprint lang-html devsite-disable-click-to-copy">
 Check out &lt;a href="…"&gt;our guide to web performance&lt;/a&gt;.
 </pre>
 
@@ -286,7 +298,7 @@ of the links on the page. If links are full of repetitive filler text, these
 shortcuts become much less useful.
 
 <figure>
-  <img src="./vo.png" alt="VoiceOver's links menu filled with the word 'here'.">
+  <img src="./vo.jpg" alt="VoiceOver's links menu filled with the word 'here'.">
   <figcaption>
     Example of VoiceOver, a screen reader for macOS, showing the navigate by
     links menu.
