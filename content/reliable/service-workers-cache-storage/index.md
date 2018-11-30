@@ -127,3 +127,9 @@ with a number of edge cases and "gotchas". There are some higher-level tools
 that can help smooth the difficult bits of those APIs, and provide all you need
 to build a production-ready service worker. The next guide covers one such tool:
 [Workbox](https://developers.google.com/web/tools/workbox/).
+
+## Preview the Service Workies game
+
+Learn while having fun. Check out the new Service Workies game: [Release Preview out now](https://serviceworkies.mastery.games/).
+
+<img class="screenshot" src="./kolohe.jpg" alt="Service Workies character, Kolohe">
