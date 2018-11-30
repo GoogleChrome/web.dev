@@ -30,7 +30,8 @@ a Technical Program Manager at Google.
 
 <div class="video-wrapper-full-width">
   <iframe class="devsite-embedded-youtube-video" data-video-id="RHIVx4m8V4M"
-          data-autohide="1" data-showinfo="0" frameborder="0" allowfullscreen>
+          data-autohide="1" data-showinfo="0" data-rel="0"
+          frameborder="0" allowfullscreen>
   </iframe>
 </div>
 
