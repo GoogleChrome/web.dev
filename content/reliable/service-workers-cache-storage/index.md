@@ -130,4 +130,6 @@ to build a production-ready service worker. The next guide covers one such tool:
 
 ## Preview the Service Workies game
 
-In addition to these guides and codelabs, learn how to master service workers and the cache by playing Service Workies, the game: [Release Preview out now](https://serviceworkies.mastery.games/).
+Learn how to master service workers and the cache by playing Service Workies, the game: [Release Preview out now](https://serviceworkies.mastery.games/).
+
+<img class="screenshot" src="./kolohe.jpg" alt="Service Workies character, Kolohe">
