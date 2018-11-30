@@ -11,6 +11,8 @@ web_lighthouse: N/A
 wf_blink_components: Blink>Accessibility
 ---
 
+# Semantics and screen readers
+
 Have you ever stopped to wonder _how_ assistive technology, such as a screen
 reader, knows what to announce to users? The answer is that these technologies
 rely on developers marking up their pages with **semantic** HTML. But what are

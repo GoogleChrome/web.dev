@@ -22,3 +22,4 @@ topics:
   guides:
     - semantics-and-screen-readers
     - headings-and-landmarks
+    - labels-and-text-alternatives
