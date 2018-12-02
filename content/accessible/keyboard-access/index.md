@@ -16,7 +16,7 @@ wf_blink_components: Blink>Accessibility
 
 # Keyboard access fundamentals
 
-Many different users rely on the keyboard to navigate applications - from users
+Many different users rely on the keyboard to navigate applications — from users
 with temporary and permanent motor impairments to users who use keyboard
 shortcuts to be more efficient and productive. Having a good keyboard navigation
 strategy for your application creates a better experience for everyone.
@@ -59,10 +59,10 @@ from the top to the bottom of your page.
 <div class="note">
 You can use the <a
 href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">dir
-attribute</a> to change the reading order of the page to right to left.
+attribute</a> to change the reading order of the page to right-to-left.
 So long as you stick to the rule of laying out your controls so that they
 follow the reading order, you shouldn't need to change anything to go from
-<em>left to right</em> text, to <em>right to left</em> text.</th>
+<em>left-to-right</em> text, to <em>right-to-left</em> text.</th>
 </div>
 
 If the focus order seems illogical, you should rearrange the elements in the DOM
