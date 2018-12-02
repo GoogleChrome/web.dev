@@ -16,7 +16,7 @@ By using the correct semantic HTML elements you may be able to meet most or all
 of your keyboard access needs. That means less time fiddling with `tabindex`,
 and more happy users!
 
-## Keyboard support for free (and better on mobile)
+## Keyboard support for free (and better mobile experiences)
 
 There are a number of built-in interactive elements, with proper semantics and
 keyboard support. Generally speaking, the ones most developers use are:
@@ -33,9 +33,10 @@ In addition, elements with the
 attribute are sometimes used for freeform text entry.
 
 It's easy to overlook the built-in keyboard support that these elements offer
-for free. Here are some example elements to explore. Instead of using your
+for free. Below are some example elements to explore. Instead of using your
 mouse, try using your keyboard to operate them. You can use `TAB` (or `SHIFT +
-TAB`) to move between controls, and the arrow keys to manipulate them.
+TAB`) to move between controls, and you can use the arrow keys and keys like 
+`ENTER` and `SPACE` to manipulate their values.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -84,7 +85,7 @@ and `SPACE` to attempt to click on them.
 </div>
 
 If you have `div` buttons in your existing site or application, consider
-swapping them out for `button` elements. `button` is easy to style, and full of
+swapping them out for `button` elements. `button` is easy to style and full of
 accessibility wins!
 
 ## Links versus buttons
@@ -114,7 +115,7 @@ Some built-in elements, in particular `<input>`s, can be difficult to style.
 With a bit of clever CSS you may be able to work around some of these
 limitations. The (hilariously named) [WTFForms](http://wtfforms.com/) project
 contains an [example
-stylesheet]([https://github.com/mdo/wtf-forms/blob/master/wtf-forms.css](https://github.com/mdo/wtf-forms/blob/master/wtf-forms.css))
+stylesheet](https://github.com/mdo/wtf-forms/blob/master/wtf-forms.css)
 that demonstrates a number of techniques for styling some of the tougher
 built-in elements.
 
@@ -126,5 +127,5 @@ look for any controls which lack keyboard support. If possible, switch them out
 for native HTML alternatives.
 
 Sometimes you may find an element that doesn't have a counterpart in HTML.
-That's ok! Read on to learn how to add keyboard support to custom interactive
+That's okay! Read on to learn how to add keyboard support to custom interactive
 controls using `tabindex`.
