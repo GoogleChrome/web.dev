@@ -13,13 +13,13 @@ wf_blink_components: Blink>Accessibility
 # What is accessibility
 
 An accessible site is one whose content can be accessed regardless of any user's
-impairments, and whose functionality can also be operated by the most diverse
+impairments and whose functionality can also be operated by the most diverse
 range of users possible.
 
 As developers, it's easy to assume that all users can see and use a keyboard,
-mouse, or touch screen, and can interact with your page. This can lead to an
-experience that works well for some people, but creates issues that range from
-simple annoyances to show-stoppers for others.
+mouse, or touch screen to interact with your page. This can lead to an
+experience that works well for some people but creates issues for others that
+range from simple annoyances to complete blockers.
 
 ## Understanding the diverse needs of your users
 
@@ -44,20 +44,20 @@ categories:
 - Cognitive
 
 Planning for accessibility means thinking about users who are experiencing some
-type of impairment or disability in one or more of these categories — and bear
-in mind that that experience might be non-physical or temporary. For instance,
-trying to read a screen outside during a bright, sunny day, or operating a
+type of impairment or disability in one or more of these categories. Bear
+in mind that that experience might be non-physical or temporary — for instance,
+trying to read a screen outside during a bright, sunny day or operating a
 device one-handed while carrying a cup of coffee.
 
 When you plan for these situations upfront, you end up with an experience that
-is more robust, and works for more users regardless of their ability or
+is more robust and works for more users regardless of their ability or
 context.
 
 ### Vision
 
 Vision impairments range from limited or low vision to complete blindness. Users
 with low vision may use a combination of screen magnification, high contrast
-themes, or text-to-speech to access content. Some users may rely on a screen
+themes, and text-to-speech to access content. Some users may rely on a screen
 reader or braille display to navigate a page, perform actions, and read
 descriptions of content and controls.
 
@@ -65,13 +65,13 @@ descriptions of content and controls.
 
 Motor and dexterity impairments may affect a user's ability to use a mouse,
 touchscreen, or other pointing device. Some users may rely on alternative input
-devices to access content, such as a keyboard, head or eye tracking software,
-switch devices, sip and puff devices, or voice access.
+devices to access content. These devices might include a keyboard, head- or 
+eye-tracking software, switch devices, sip and puff devices, or voice access.
 
 ### Auditory
 
 Auditory impairments range from difficulty hearing certain frequencies, to
-speech processing issues, through to a total inability to hear sound. Users
+speech processing issues, to a total inability to hear sound. Users
 experiencing an auditory impairment may rely on captions or transcripts to
 provide an alternative to sound in an interface.
 
@@ -86,5 +86,5 @@ improve readability or prevent headaches.
 
 ## Next steps
 
-Now that you have a high level understanding of accessibility it's time to dive
+Now that you have a high level understanding of accessibility, it's time to dive
 in to more specific details, starting with keyboard access.
