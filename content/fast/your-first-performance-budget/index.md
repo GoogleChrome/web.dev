@@ -3,9 +3,8 @@ page_type: guide
 title: Your first performance budget
 author: mihajlija
 description: |
-  With a performance budget established and enforced you can be sure that your
-  site will render as quickly as possible. This will provide a better experience
-  for your visitors and positively impact business metrics.
+  Ensure your site loads fast with a step-by-step guide to defining thresholds
+  for performance metrics that are meaningful for your site.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
