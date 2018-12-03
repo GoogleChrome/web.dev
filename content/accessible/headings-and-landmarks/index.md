@@ -14,7 +14,7 @@ wf_blink_components: Blink>Accessibility
 
 # Headings and landmarks
 
-Screen readers have commands to quickly jump between headings, or to specific
+Screen readers have commands to quickly jump between headings or to specific
 landmark regions. In fact, [a recent survey of screen reader users](http://www.heydonworks.com/article/responses-to-the-screen-reader-strategy-survey)
 found that they most often navigate an unfamiliar page by exploring
 the headings.
@@ -24,7 +24,7 @@ improve the navigation experience on your site for users of assitive technology.
 
 ## Use headings to outline the page
 
-Use H1-H6 elements to create a _structural_ outline for your page. The goal is
+Use `h1`-`h6` elements to create a _structural_ outline for your page. The goal is
 to create a skeleton or scaffold of the page such that anyone navigating by
 headings can form a mental picture.
 
@@ -42,7 +42,7 @@ page, `h2`s to designate major sections, and `h3`s in supporting subsections:
 
 ## Don't skip heading levels
 
-Developers often skip heading levels to use the browser default styles that
+Developers often skip heading levels to use the browser's default styles that
 closely match their design. This is considered an anti-pattern because it breaks
 the outline model.
 
@@ -57,16 +57,16 @@ headlines:
 The section heading, "IN THE NEWS", could be an `h2`, and the supporting
 headlines could both be `h3`s.
 
-Because the `font-size` for "IN THE NEWS" is _smaller_ than the headline, It may
-be tempting to make the headline for the first story into an `h2` and "IN THE NEWS"
-into an `h3`. While that may match the browser's default styling, it would
-break the outline conveyed to a screen reader user!
+Because the `font-size` for "IN THE NEWS" is _smaller_ than the headline, it may
+be tempting to make the headline for the first story an `h2` and to make 
+"IN THE NEWS" an `h3`. While that may match the browser's default styling, 
+it would break the outline conveyed to a screen reader user!
 
 <div class="aside note">
 Though it may seem counterintuitive, it does not matter if <em>visually</em>
 <code>h3</code>s and <code>h4</code>s are larger than their <code>h2</code> or
 <code>h1</code> counterparts. What matters is the outline conveyed by the elements
-and how they are ordered.
+and elements' ordering.
 </div>
 
 You can use Lighthouse to check if your page skips any heading levels. Run the
@@ -75,16 +75,16 @@ results of the "Headings don't skip levels" audit.
 
 ## Use landmarks to aid navigation
 
-HTML5 elements such as `main`, `nav`, and `aside` act as **landmarks** or
-special regions on the page that a screen reader can jump to.
+HTML5 elements such as `main`, `nav`, and `aside` act as **landmarks**, or
+special regions on the page to which a screen reader can jump.
 
 Use landmark tags to define major sections of your page, instead of relying on
-`div`s. Be careful not to go overboard, as having _too many_ landmarks can be
+`div`s. Be careful not to go overboard because having _too many_ landmarks can be
 overwhelming. For example, stick to just one `main` element instead of 3 or
 4.
 
 Lighthouse recommends manually auditing your site to check that "HTML5 landmark
-elements are used to improve navigation". You can use this
+elements are used to improve navigation." You can use this
 [list of landmark elements](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/HTML5.html)
 to check your page.
 
@@ -124,7 +124,7 @@ it and bypass repetitive navigation.
 }
 </pre>
 
-Many popular sites such as [GitHub](https://github.com/), [NY
+Many popular sites such as [GitHub](https://github.com/), [The NY
 Times](https://www.nytimes.com/), and [Wikipedia](https://wikipedia.org/) all contain
 skip links. Try visiting them and pressing the `TAB` key on your keyboard a
 few times.
@@ -135,7 +135,8 @@ results of the "The page contains a heading, skip link, or landmark region"
 audit.
 
 <div class="note">
-Technically this test will also pass if your site contains any H1-H6
-elements, or any of the HTML5 landmark elements, so it's a bit vague. But it's
-still nice to pass it if you can!
+  Technically, this test will also pass if your site contains any 
+  <code>h1</code>-<code>h6</code> elements or any of the HTML5 landmark 
+  elements. But although the test is vague in its requirements, it's still 
+  nice to pass it if you can!
 </div>
