@@ -3,8 +3,8 @@ page_type: guide
 title: Using Lighthouse CI to set a performance budget
 author: mihajlija
 description: |
-  You’ve done hard work to get fast so let’s make sure you stay fast! Let’s
-  automate performance testing with Lighthouse CI.
+  You’ve done hard work to get fast, now make sure you stay fast by automating
+  performance testing with Lighthouse CI.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---

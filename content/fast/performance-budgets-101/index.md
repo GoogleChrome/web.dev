@@ -3,10 +3,8 @@ page_type: guide
 title: Performance budgets 101
 author: mihajlija
 description: |
-  Performance is an important part of the user experience and it affects
-  business metrics. It’s tempting to think that if you are a good developer
-  you’ll end up with a performant site, but the truth is that good performance
-  is rarely a side  effect. Start the journey by setting a performance budget.
+  Good performance is rarely a side effect. Learn about performance budgets and
+  how they can set you on track for success.
 web_lighthouse: N/A
 wf_blink_components: N/A
 ---
