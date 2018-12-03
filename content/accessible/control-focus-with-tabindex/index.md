@@ -37,7 +37,7 @@ to improve the focusability of those controls.
 <div class="aside warning">
   If you don't see a focus indicator at all, it may be hidden by your
   CSS. Check for any styles that mention <code>:focus { outline: none; }</code>.
-  You can learn how to fix this in our guide on [styling focus](https://web.dev/accessible/style-focus).
+  You can learn how to fix this in our guide on <a href="https://web.dev/accessible/style-focus">styling focus</a>.
 </div>
 
 ## Insert an element into the tab order
@@ -134,7 +134,7 @@ method on it.
   Curious what those role="" attributes are for? They let you change the
   semantics of an element so it will be announced properly by a screen reader.
   You can learn more about them in our guide on
-  [screen reader basics](https://web.dev/accessible/semantics-and-screen-readers)</a>.
+  <a href="https://web.dev/accessible/semantics-and-screen-readers">screen reader basics</a>.
 </div>
 
 ## Keyboard access recipes
