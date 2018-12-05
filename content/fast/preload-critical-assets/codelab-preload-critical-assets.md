@@ -200,7 +200,7 @@ resource as expected.
 <img class="screenshot" src="./network-panel-six.png" alt="Details page network requests">
 
 Click the `details.css` network request in DevTools to view its details. You'll notice
-that the file is retrieved from the browsers's disk cache.
+that the file is retrieved from the browser's disk cache.
 
 <img class="screenshot" src="./details-css.png" alt="Details request fetched from disk cache">
 
