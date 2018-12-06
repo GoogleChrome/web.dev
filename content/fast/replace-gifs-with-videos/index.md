@@ -9,6 +9,8 @@ description: |
   converting large GIFs to videos, you can save big on users' bandwidth.
 web_lighthouse:
 - efficient-animated-content
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 

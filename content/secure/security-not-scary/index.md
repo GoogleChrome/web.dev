@@ -7,6 +7,8 @@ description: |
   news. But security is something to be taken as a positive and necessary part
   of web development just like "user experience" or "accessibility".
 web_lighthouse: N/A
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 

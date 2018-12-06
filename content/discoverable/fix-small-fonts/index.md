@@ -10,6 +10,8 @@ description: |
   mobile devices.  
 web_lighthouse:
   - font-size
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 

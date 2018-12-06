@@ -5,6 +5,8 @@ author: martinsplitt
 description: |
   In this codelab, learn how to track down a sneaky 404 that may prevent your
   page from being properly indexed.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: sneaky-404
 ---
 

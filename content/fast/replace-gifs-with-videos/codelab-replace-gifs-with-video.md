@@ -5,6 +5,8 @@ author: robdodson
 description: |
   In this codelab, learn how to improve performance by replacing an animated GIF
   with a video.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: gif-to-video
 ---
 

@@ -5,6 +5,8 @@ author: kosamari
 description: |
   In this codelab, learn how the same-origin policy works when fetching
   resources.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: same-origin-policy-fetch
 ---
 

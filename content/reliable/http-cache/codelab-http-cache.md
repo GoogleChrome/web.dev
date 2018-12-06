@@ -5,6 +5,8 @@ author: jeffy
 description: |
   In this codelab, learn how to control resource caching behavior using HTTP
   headers.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: configure-cache-control
 ---
 

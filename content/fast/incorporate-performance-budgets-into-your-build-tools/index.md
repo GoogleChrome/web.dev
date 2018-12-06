@@ -6,6 +6,8 @@ description: |
   The best way to keep an eye on your performance budget is to automate it. Find
   out how to choose a tool that best fits your needs and current setup.
 web_lighthouse: N/A
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 

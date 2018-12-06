@@ -8,6 +8,8 @@ description: |
   files to the browser without going to the network. Use precaching with Workbox
   for critical assets that your site needs even when offline.
 web_lighthouse: N/A
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 

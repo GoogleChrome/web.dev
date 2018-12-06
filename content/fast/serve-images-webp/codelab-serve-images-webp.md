@@ -4,6 +4,8 @@ title: Creating WebP Images with the Command Line
 author: khempenius
 description: |
   In this codelab, learn how to serve optimized images using WebP.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: webp-cli
 ---
 

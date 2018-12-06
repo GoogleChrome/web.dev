@@ -7,6 +7,8 @@ description: |
   add security features to an application. Luckily, on the web, the browser
   provides many security features, including the idea of a "sandbox".
 web_lighthouse: N/A
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 
