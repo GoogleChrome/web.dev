@@ -36,8 +36,7 @@ include it in the page:
 </pre>
 
 <div class="aside note">
-The
-[lazysizes.min.js](https://raw.githubusercontent.com/aFarkas/lazysizes/gh-pages/lazysizes.min.js)
+The <a href="https://raw.githubusercontent.com/aFarkas/lazysizes/gh-pages/lazysizes.min.js">lazysizes.min.js</a>
 file has already been added to this project, so there is no need to add it
 separately. The script you just added can use this script.
 </div>
