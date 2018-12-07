@@ -6,6 +6,8 @@ description: |
   In this codelab, learn how to use the sizes attribute to size images correctly
   depending on the user's viewport.
 glitch: responsive-images-multiple-sizes
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 order: 1
 ---
 

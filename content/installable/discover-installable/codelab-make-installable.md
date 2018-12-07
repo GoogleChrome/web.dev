@@ -5,6 +5,8 @@ author: petele
 description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: make-it-installable
 ---
 

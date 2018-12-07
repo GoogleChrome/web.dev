@@ -7,6 +7,8 @@ description: |
   all of your keyboard access needs. That means less time fiddling with
   tabindex, and more happy users!  
 web_lighthouse: N/A
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-18
 wf_blink_components: Blink>Accessibility
 ---
 

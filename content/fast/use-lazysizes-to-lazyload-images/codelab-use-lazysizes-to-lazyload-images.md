@@ -5,6 +5,8 @@ author: khempenius
 description: |
   In this codelab, learn how to use lazysizes to only load images that are
   in the current viewport.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: lazysizes
 ---
 

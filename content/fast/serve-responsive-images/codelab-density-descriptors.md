@@ -6,6 +6,8 @@ description: |
   In this codelab, learn how to use density descriptors and srcset to load
   images with the right pixel density for the user's device.
 glitch: responsive-images-density-descriptors
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 order: 3
 ---
 

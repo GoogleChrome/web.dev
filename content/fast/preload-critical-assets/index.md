@@ -9,6 +9,8 @@ description: |
   order of resources that are prioritized and fetched by the browser.
 web_lighthouse:
 - uses-rel-preload
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 

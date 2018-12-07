@@ -7,6 +7,8 @@ description: |
   user experience data on millions of websites. Unlike lab data, CrUX data
   actually comes from opted-in users in the field.
 web_lighthouse: N/A
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 

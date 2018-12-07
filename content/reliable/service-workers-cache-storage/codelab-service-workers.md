@@ -5,6 +5,8 @@ author: jeffy
 description: |
   In this codelab, learn how to make an application network resilient by
   registering a service worker.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: working-with-sw
 ---
 

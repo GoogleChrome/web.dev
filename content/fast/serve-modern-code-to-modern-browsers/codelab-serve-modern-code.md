@@ -5,6 +5,8 @@ author: houssein
 description: |
   In this codelab, learn how to improve the performance of an application by
   minizming how much code is transpiled.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: serve-modern-code
 ---
 

@@ -5,6 +5,8 @@ author: khempenius
 description: |
   In this codelab, learn how to use imagemin with webpack to optimize JPEG and
   PNG images for faster download.
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 glitch: imagemin-webpack
 ---
 

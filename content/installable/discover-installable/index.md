@@ -8,6 +8,8 @@ description: |
   from the Start menu or app launcher, and run in an app window, without an
   address bar or tabs.
 web_lighthouse: N/A
+web_updated_on: 2018-12-06
+web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 
