@@ -134,7 +134,7 @@ Accessibility Audit (Lighthouse > Options > Accessibility) and look for the
 results of the "The page contains a heading, skip link, or landmark region"
 audit.
 
-<div class="note">
+<div class="aside note">
   Technically, this test will also pass if your site contains any 
   <code>h1</code>-<code>h6</code> elements or any of the HTML5 landmark 
   elements. But although the test is vague in its requirements, it's still 
