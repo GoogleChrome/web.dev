@@ -176,8 +176,8 @@ Similarly, any `frame` or `iframe` elements should have `title` attributes:
 <iframe title="An interactive map of San Francisco" src="…"></iframe>
 ```
 
-While an `iframe` may contain its own internal `title` element, a screen
-reader usually stops at the frame boundary and announces the element's
+While an `iframe`'s contents may contain their own internal `title` element, a
+screen reader usually stops at the frame boundary and announces the element's
 role—"frame"—and its accessible name, provided by the `title` attribute. This
 lets the user decide if they wish to enter the frame or bypass it.
 
