@@ -56,13 +56,14 @@ To check if your application's tab order is logical, try tabbing through your
 page. In general, focus should follow reading order, moving from left to right,
 from the top to the bottom of your page.
 
-<div class="note">
-You can use the <a
-href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">dir
-attribute</a> to change the reading order of the page to right-to-left.
+<div class="aside note">
 So long as you stick to the rule of laying out your controls so that they
-follow the reading order, you shouldn't need to change anything to go from
-<em>left-to-right</em> text, to <em>right-to-left</em> text.</th>
+follow a given reading order, you shouldn't need to change anything to support
+<em>left-to-right</em> text versus <em>right-to-left</em> text. But if you want 
+to see what your page would look like for folks who use right-to-left text, you can use 
+the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">dir
+attribute</a> to change the reading order of your page.
+</th>
 </div>
 
 If the focus order seems illogical, you should rearrange the elements in the DOM
