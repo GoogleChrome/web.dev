@@ -53,7 +53,7 @@ DevTools Accessibility Reference
 </div>
 
 Whether you're looking at an `img` with `alt` text or an `input` with a
-`label`, all of these attributes result in the same outcome: giving an 
+`label`, all of these scenarios result in the same outcome: giving an 
 element its accessible name.
 
 ## Check for missing names
