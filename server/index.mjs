@@ -61,10 +61,6 @@ app.use('/', async (req, res, next) => {
 // Try static files if dynamic handler can't find resource.
 app.use(express.static('build/en', {extensions: ['html', 'htm']}));
 
-// app.get('/:page', async (req, res, next) => {
-//   return res.render(`pages/${req.params.page}.html`, res.locals.data);
-// });
-
 app.use(serverHelpers.errorHandler); // catch all.
 
 app.listen(PORT, async () => {
