@@ -17,14 +17,14 @@ wf_blink_components: Blink>Accessibility
 # Control focus with tabindex
 
 Native HTML elements such as `<button>` or `<input>` have keyboard accessibility
-built-in for free. If you're building _custom_ interactive components, use
-`tabindex` to ensure that they're keyboard accessible.
+built-in for free. If you're building _custom_ interactive components, use the
+`tabindex` attribute to ensure that they're keyboard accessible.
 
 <div class="aside note">
   Whenever possible, use a native HTML element rather than building your
   own custom version. &lt;button&gt;, for example, is very easy to style and
   already has full keyboard support. This will save you from needing to manage
-  <code>tabindex</code> or add additional semantics with ARIA.
+  <code>tabindex</code> or to add semantics with ARIA.
 </div>
 
 ## Check if your controls are keyboard accessible
@@ -39,7 +39,7 @@ to improve the focusability of those controls.
 <div class="aside warning">
   If you don't see a focus indicator at all, it may be hidden by your
   CSS. Check for any styles that mention <code>:focus { outline: none; }</code>.
-  You can learn how to fix this in our guide on <a href="#">styling focus</a>.
+  You can learn how to fix this in our guide on <a href="https://web.dev/accessible/style-focus">styling focus</a>.
 </div>
 
 ## Insert an element into the tab order
@@ -49,8 +49,7 @@ Insert an element into the natural tab order using `tabindex="0"`. For example:
 <div tabindex="0">Focus me with the TAB key</div>
 ```
 
-The element can be focused by pressing the `TAB` key and by calling its
-`focus()` method.
+To focus an element, press the `TAB` key or call the element's `focus()` method.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -136,7 +135,7 @@ method on it.
   Curious what those role="" attributes are for? They let you change the
   semantics of an element so it will be announced properly by a screen reader.
   You can learn more about them in our guide on
-  <a href="#">screen reader basics</a>.
+  <a href="https://web.dev/accessible/semantics-and-screen-readers">screen reader basics</a>.
 </div>
 
 ## Keyboard access recipes
