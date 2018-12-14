@@ -114,15 +114,10 @@ Promise.all([
 - Replace the `/* Do things */` comment in the script with this line:
 
 ```javascript
-document.documentElement.className += " fonts-loaded";
+document.documentElement.classList.add("fonts-loaded");
 ```
 
 This adds the `fonts-loaded` class to the document's root element (i.e. the <html> tag) once both fonts have loaded.
-
-<div class="aside note">
-The trailing space before <code>fonts-loaded</code> isn't a typo. It prevents
-<code>fonts-loaded</code> from being appended to another class. If it wasn't there you could end up with a class like <code>your-existing-classfonts-loaded</code>.
-</div>
 
 #### ✔️Check-in
 
