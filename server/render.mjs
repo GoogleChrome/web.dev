@@ -25,6 +25,7 @@ import url from 'url';
 const URL = url.URL;
 import puppeteer from 'puppeteer';
 
+const DOMAIN = 'https://web.dev/';
 const RENDER_CACHE = new Map(); // Cache of pre-rendered HTML pages.
 
 let browser = null;
@@ -43,7 +44,7 @@ let browser = null;
  */
 export async function renderPage({path = null, stagingServerOrigin = null,
       useCache = true, headless = true} = {}) {
-  const url = `https://web.dev/${path}`;
+  const url = `${DOMAIN}${path}`;
 
   if (useCache && RENDER_CACHE.has(url)) {
     return RENDER_CACHE.get(url);
@@ -60,33 +61,21 @@ export async function renderPage({path = null, stagingServerOrigin = null,
     });
   }
 
-  // Get local page html.
-  const pageHTML = await getPageContent(browser, path);
+  // Get local version of page.
+  const pageHTML = await getPageContent(path);
   if (!pageHTML) {
     return null;
   }
 
-  const page = await browser.newPage();
+  const page = await getRemotePage(url);
 
-  // Add param so client-side page can know it's being rendered by headless
-  // on the server.
-  const urlToFetch = new URL(url);
-  urlToFetch.searchParams.set('headless', '');
-
-  try {
-    await page.goto(urlToFetch.href, {waitUntil: 'domcontentloaded'});
-  } catch (err) {
-    console.error(err);
-    await page.close();
-    throw new Error('page.goto/waitForSelector timed out.');
-  }
-
-  const body = await page.waitForSelector('.devsite-article-body');
+  const body = await page.waitForSelector(
+      '.devsite-article-body', {timeout: 2000});
 
   // Replace {% include %} with the actual (local) html.
   const include = replaceIncludes(pageHTML);
 
-  await page.evaluate((body, include, pageOrigin, stagingOrigin) => {
+  await page.evaluate((body, include) => {
     // Replace page with include filled in version.
     body.innerHTML = include;
 
@@ -108,7 +97,7 @@ export async function renderPage({path = null, stagingServerOrigin = null,
     // base.href = `${origin}${location.pathname}/`;
     // document.head.prepend(base); // Add to top of head, before all other resources.
 
-  }, body, include, urlToFetch.origin, stagingServerOrigin);
+  }, body, include);
 
   const finalHTML = await page.content(); // get page's serialized, final DOM.
   RENDER_CACHE.set(url, finalHTML); // Cache rendered page.
@@ -120,7 +109,36 @@ export async function renderPage({path = null, stagingServerOrigin = null,
   return finalHTML;
 }
 
-async function getPageContent(browser, path) {
+async function getRemotePage(url) {
+  const page = await browser.newPage();
+
+  // Add param so client-side page can know it's being rendered by headless
+  // on the server.
+  const urlToFetch = new URL(url);
+  urlToFetch.searchParams.set('headless', '');
+
+  let resp;
+  try {
+    resp = await page.goto(urlToFetch.href, {
+      waitUntil: 'domcontentloaded',
+      timeout: 5000,
+    });
+  } catch (err) {
+    console.error(err.message);
+    await page.close();
+    throw new Error('page.goto/waitForSelector timed out.');
+  }
+
+  // If page is new (e.g. doesn't exist in production yet), need to wrap
+  // it in local content in a generic header/footer. Wrap it in index page's markup.
+  if (resp.status() === 404) {
+    return await getRemotePage(DOMAIN);
+  }
+
+  return page;
+}
+
+async function getPageContent(path) {
   let filePath = `./build/en/${path}.html`;
   try {
     // If .html file doesn't exist, try folder's index.html file.
@@ -160,6 +178,7 @@ function replaceIncludes(pageHTML) {
     return '';
   });
 }
+
 export function clearCache() {
   RENDER_CACHE.clear();
 }
