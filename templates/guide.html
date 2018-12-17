@@ -34,13 +34,15 @@
       <article class="guide">
         {{#if author}}
         <div class="author-information">
-          <img src="{{author.picture}}" />
-          <div>
-            <span>Written by</span>
+          <img class="photo" src="{{author.picture}}" />
+          <div class="details">
+            <span class="written-by">Written by</span>
             <span>{{author.name}}</span>
-            <a href="{{author.glitch}}">Glitch</a>
-            <a href="{{author.github}}">GitHub</a>
-            <a href="{{author.twitter}}">Twitter</a>
+            <div class="links"></div>
+              <a href="{{author.glitch}}">Glitch</a>
+              <a href="{{author.github}}">GitHub</a>
+              <a href="{{author.twitter}}">Twitter</a>
+            </div>
           </div>
         </div>
         {{/if}}
