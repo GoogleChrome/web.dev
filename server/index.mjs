@@ -32,11 +32,8 @@ app.use(serverHelpers.addRequestHelpers);
 const inBlacklistUrls = (path) => ['/_d'].find(p => path.startsWith(p));
 
 // Handle / dynamically.
-// app.get('/:page?', async (req, res, next) => {
 app.use('/', async (req, res, next) => {
-  // const pageName = req.params.page || '';
   const path = req.path;
-  const useCache = 'nocache' in req.query ? false : true;
 
   if (path && path.split('.').length > 1) {
     next();
@@ -48,7 +45,6 @@ app.use('/', async (req, res, next) => {
   const tic = Date.now();
   const html = await renderPage({
     path: path.slice(1),
-    useCache,
     origin: req.getOrigin(),
     // headless: false,
   });

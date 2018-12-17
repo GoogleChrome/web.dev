@@ -26,7 +26,6 @@ const URL = url.URL;
 import puppeteer from 'puppeteer';
 
 const DOMAIN = 'https://web.dev/';
-const RENDER_CACHE = new Map(); // Cache of pre-rendered HTML pages.
 
 let browser = null;
 
@@ -37,14 +36,13 @@ let browser = null;
  * @param {!Object} config Optional config settings.
  *     path: Path of page to load.
  *     stagingServerOrigin: Origin of staging server.
- *     headless: Set to false to launch headlful chrome. Default is true.
- *         Note: this param will have no effect if Chrome was launched at
- *         least once with reuseChrome: true.
+ *     headless: Set to false to launch headlful chrome.xg
  * @return {!Promise<?string>} Serialized page output as an html string.
  */
 export async function renderPage({path = null, stagingServerOrigin = null,
-      useCache = true, headless = true} = {}) {
+      headless = true} = {}) {
   const url = `${DOMAIN}${path}`;
+  const tic = Date.now();
 
   if (!browser) {
     browser = await puppeteer.launch({
@@ -55,32 +53,21 @@ export async function renderPage({path = null, stagingServerOrigin = null,
     });
   }
 
-  const tic = Date.now();
-
-  // Get local version of page.
+  // Get local version of the page.
   const pageHTML = await getPageContent(path);
   if (!pageHTML) {
     return null;
   }
 
-  // Use cached remote page
-  let page;
-  if (useCache && RENDER_CACHE.has(url)) {
-    page = await browser.newPage();
-    await page.setContent(RENDER_CACHE.get(url));
-  } else {
-    page = await getRemotePage(url)
-  }
-
-  const body = await page.waitForSelector(
-      '.devsite-article-body', {timeout: 2000});
-
-  // Replace {% include %} with the actual (local) html.
+  // Replace local page's {% include %} with the actual html in those files.
   const include = replaceIncludes(pageHTML);
 
-  await page.evaluate((body, include) => {
-    // Replace page with include filled in version.
-    body.innerHTML = include;
+  const page = await getRemotePage(url);
+
+  // Replace main body of the remote page with the local copy.
+  await page.evaluate((include) => {
+    const mainContentArea = document.querySelector('.devsite-article-body');
+    mainContentArea.innerHTML = include; // Replace page with include filled in version.
 
     // Map relative assets to their local version. Relative assets that do
     // not exist locally (e.g. /_static images) are pulled from the prod site.
@@ -100,10 +87,9 @@ export async function renderPage({path = null, stagingServerOrigin = null,
     // base.href = `${origin}${location.pathname}/`;
     // document.head.prepend(base); // Add to top of head, before all other resources.
 
-  }, body, include);
+  }, include);
 
   const finalHTML = await page.content(); // get page's serialized, final DOM.
-  RENDER_CACHE.set(url, finalHTML); // Cache rendered page.
 
   console.info(`Headless rendered ${url} in: ${Date.now() - tic}ms`);
 
@@ -180,15 +166,4 @@ function replaceIncludes(pageHTML) {
     }
     return '';
   });
-}
-
-export function clearCache() {
-  RENDER_CACHE.clear();
-}
-
-/**
- * @param {string} url
- */
-export function removCacheItem(url) {
-  RENDER_CACHE.delete(url);
 }
