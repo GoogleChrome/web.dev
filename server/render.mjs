@@ -46,12 +46,6 @@ export async function renderPage({path = null, stagingServerOrigin = null,
       useCache = true, headless = true} = {}) {
   const url = `${DOMAIN}${path}`;
 
-  if (useCache && RENDER_CACHE.has(url)) {
-    return RENDER_CACHE.get(url);
-  }
-
-  const tic = Date.now();
-
   if (!browser) {
     browser = await puppeteer.launch({
       // args: ['--disable-dev-shm-usage'],
@@ -61,13 +55,22 @@ export async function renderPage({path = null, stagingServerOrigin = null,
     });
   }
 
+  const tic = Date.now();
+
   // Get local version of page.
   const pageHTML = await getPageContent(path);
   if (!pageHTML) {
     return null;
   }
 
-  const page = await getRemotePage(url);
+  // Use cached remote page
+  let page;
+  if (useCache && RENDER_CACHE.has(url)) {
+    page = await browser.newPage();
+    await page.setContent(RENDER_CACHE.get(url));
+  } else {
+    page = await getRemotePage(url)
+  }
 
   const body = await page.waitForSelector(
       '.devsite-article-body', {timeout: 2000});
