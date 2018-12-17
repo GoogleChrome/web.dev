@@ -1,7 +1,12 @@
 ---
 page_type: guide
 title: Fix unsuccessful HTTP status codes
-author: ekharvey
+author:
+  name: Martin Splitt
+  github: foo.com
+  glitch: bar.com
+  twitter: twitter.com
+  picture: foo.png
 description: |
   HTTP status codes indicate the response given by a server for a request to a
   URL. 4XX status codes signal to search engines that a page does not provide
