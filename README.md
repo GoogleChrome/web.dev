@@ -4,6 +4,9 @@
 
 web.dev is the ultimate resource for developers of all backgrounds to learn, create, and solve on the web. It's meant to not only educate developers, but help them apply what they've learned to any site they work on, be it personal or business.
 
+Note: this repo contains the written content for web.dev. The actual front-end
+(CSS,JS) is not yet open source.
+
 ## Cloning the repo
 
 ```shell
@@ -22,4 +25,13 @@ Take a look [in the issue tracker](https://github.com/GoogleChrome/web.dev/issue
 
 ## Previewing the site
 
-Unfortunately right now we are only able to open source the content for the site, we're still working on making the rest of the infrastructure public so folks can test it locally. We hope to have a proper staging environment available in the near future. In the meantime, we appreciate your patience 🙏
+To create/edit content and preview a page locally, start the "preview server":
+
+```shell
+npm run start
+```
+
+Now open `http://localhost:8080/` to see the site locally. The preview server
+allows you to see how the content will look on the production site, but it's
+not a true staging server. For example, features like search and JS components
+may not work or be entirely broken on the local preview.
