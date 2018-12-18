@@ -4,6 +4,9 @@
 
 web.dev is the ultimate resource for developers of all backgrounds to learn, create, and solve on the web. It's meant to not only educate developers, but help them apply what they've learned to any site they work on, be it personal or business.
 
+Note: this repo contains the written content for web.dev. The actual front-end
+(CSS,JS) is not yet open source.
+
 ## Cloning the repo
 
 ```shell
@@ -22,10 +25,9 @@ Take a look [in the issue tracker](https://github.com/GoogleChrome/web.dev/issue
 
 ## Previewing the site
 
-The content for web.dev is open source here in this repo.  To create/edit content
-and preview the page locally, start the "preview server":
+To create/edit content and preview a page locally, start the "preview server":
 
-``shell
+```shell
 npm run start
 ```
 
