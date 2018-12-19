@@ -126,6 +126,8 @@ it and bypass repetitive navigation.
 }
 </pre>
 
+[**Try the live example!**](https://skip-link.glitch.me/)
+
 Many popular sites such as [GitHub](https://github.com/), [The NY
 Times](https://www.nytimes.com/), and [Wikipedia](https://wikipedia.org/) all contain
 skip links. Try visiting them and pressing the `TAB` key on your keyboard a
