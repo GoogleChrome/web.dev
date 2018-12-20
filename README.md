@@ -23,7 +23,6 @@ npm i
 ### Previewing the site
 
 To create/edit content and preview a page locally as you make edits, start the "preview server":
-author.
 
 ```shell
 npm run watch
