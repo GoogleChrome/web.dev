@@ -12,7 +12,7 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
-    "watch": "gulp watch & yarn start",
+    "dev": "concurrently -k \"gulp watch\" \"npm:start\"",
     "deploy": "./lib/index.js --deploy",
     "start": "node --experimental-modules server/index.mjs"
   },
@@ -31,6 +31,7 @@
     "yaml": "^1.0.0-rc.8"
   },
   "devDependencies": {
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "gulp-run": "^1.7.1",
