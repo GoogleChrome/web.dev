@@ -28,12 +28,12 @@ gulp.task('build', () => {
   return run('node ./lib/index.js').exec();
 });
 
-gulp.task('watch', () => {
+gulp.task('watch', gulp.series('build', () => {
   // TODO(ericbidelman): Don't rebuild all files if only 1 changes.
   gulp.watch('content/**/*.{md,html}', {
     read: false, // Optimization. Not accessing file.contents.
     ignoreInitial: true,
   }, gulp.series('build'));
-});
+}));
 
 gulp.task('default', gulp.series('clean', 'build'));

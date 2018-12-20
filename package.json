@@ -14,7 +14,6 @@
     "build": "gulp build",
     "watch": "gulp watch & yarn start",
     "deploy": "./lib/index.js --deploy",
-    "prestart": "npm run build",
     "start": "node --experimental-modules server/index.mjs"
   },
   "dependencies": {
