@@ -26,7 +26,7 @@ To create/edit content and preview a page locally as you make edits, start the "
 
 ```shell
 npm run watch
-# yarn watch
+ # yarn dev
 ```
 
 This also runs `gulp watch` which rebuild pages as you make edits.
