@@ -31,6 +31,9 @@ To create/edit content and preview a page locally, start the "preview server":
 npm run start
 ```
 
+You may also want to start `gulp watch` in another terminal so changes will show
+up on the preview server as you make edits to a file.
+
 Now open `http://localhost:8080/` to see the site locally. The preview server
 allows you to see how the content will look on the production site, but it's
 not a true staging server. For example, features like search and JS components
