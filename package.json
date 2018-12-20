@@ -12,7 +12,7 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
-    "watch": "npm-run-all --parallel start watch",
+    "watch": "gulp watch & yarn start",
     "deploy": "./lib/index.js --deploy",
     "prestart": "gulp build",
     "start": "node --experimental-modules server/index.mjs"

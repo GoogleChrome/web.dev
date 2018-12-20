@@ -30,7 +30,10 @@ gulp.task('build', () => {
 
 gulp.task('watch', () => {
   // TODO(ericbidelman): Don't rebuild all files if only 1 changes.
-  gulp.watch('content/**/*.{md,html}', gulp.series('build'));
+  gulp.watch('content/**/*.{md,html}', {
+    read: false, // Optimization. Not accessing file.contents.
+    ignoreInitial: true,
+  }, gulp.series('build'));
 });
 
 gulp.task('default', gulp.series('clean', 'build'));
