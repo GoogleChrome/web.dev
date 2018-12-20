@@ -1,7 +1,7 @@
 ---
 page_type: glitch
 title: Art direction
-author: khempenius
+author: katiehempenius
 description: |
   In this codelab, learn how to load completely different images based on device
   display size.

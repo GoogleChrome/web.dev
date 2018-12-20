@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Serve images with correct dimensions
-author: khempenius
+author: katiehempenius
 description: |
   We've all been there—you forgot to scale down an image before adding it to the
   page. The image looks fine, but it is wasting users' data and hurting page

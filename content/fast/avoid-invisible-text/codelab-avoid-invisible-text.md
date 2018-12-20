@@ -1,7 +1,7 @@
 ---
 page_type: glitch
 title: Avoid flash of invisible text
-author: khempenius
+author: katiehempenius
 description: |
   In this codelab, learn how to display text immediately using Font Face
   Observer.

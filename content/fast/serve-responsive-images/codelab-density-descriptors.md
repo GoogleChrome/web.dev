@@ -1,7 +1,7 @@
 ---
 page_type: glitch
 title: Use density descriptors
-author: khempenius
+author: katiehempenius
 description: |
   In this codelab, learn how to use density descriptors and srcset to load
   images with the right pixel density for the user's device.

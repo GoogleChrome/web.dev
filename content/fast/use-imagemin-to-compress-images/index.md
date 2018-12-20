@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Use Imagemin to compress images
-author: khempenius
+author: katiehempenius
 description: |
   Uncompressed images bloat your pages with unnecessary bytes. Run Lighthouse to
   check for opportunities to improve page load by compressing images.

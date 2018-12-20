@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Precaching with Workbox
-author: jeffy
+author: jeffposnick
 description: |
   One feature of service workers is the ability to save files to the cache when
   the service worker is installing. Precaching makes it possible to serve cached

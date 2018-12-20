@@ -1,7 +1,7 @@
 ---
 page_type: glitch
 title: Using Imagemin with Gulp
-author: khempenius
+author: katiehempenius
 description: |
   In this codelab, learn how to use imagemin with gulp to optimize JPEG and
   PNG images for faster download.

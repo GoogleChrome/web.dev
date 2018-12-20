@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Service workers and the Cache Storage API
-author: jeffy
+author: jeffposnick
 description: |
     You're locked in a struggle for network reliability. The browser's HTTP
     cache is your first line of defense, but on its own, the HTTP cache is not

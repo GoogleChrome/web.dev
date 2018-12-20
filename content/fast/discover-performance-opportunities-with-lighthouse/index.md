@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Discover performance opportunities with Lighthouse
-author: kayce
+author: kaycebasques
 description: |
   Lighthouse is a tool that helps you measure and find ways to improve a page's
   performance. Lighthouse gives you a report on how the page did. The report

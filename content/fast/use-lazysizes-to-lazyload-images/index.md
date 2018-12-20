@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Use lazysizes to lazyload images
-author: khempenius
+author: katiehempenius
 description: |
   Lazy loading is the strategy of loading resources as they are needed, rather
   than in advance. This approach frees up resources during the initial page load
