@@ -25,7 +25,7 @@ npm i
 To create/edit content and preview a page locally as you make edits, start the "preview server":
 
 ```shell
-npm run watch
+ npm run dev
  # yarn dev
 ```
 
