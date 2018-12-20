@@ -7,11 +7,34 @@ web.dev is the ultimate resource for developers of all backgrounds to learn, cre
 Note: this repo contains the written content for web.dev. The actual front-end
 (CSS,JS) is not yet open source.
 
-## Cloning the repo
+## Development
 
 ```shell
 git clone https://github.com/GoogleChrome/web.dev.git
 ```
+
+Install the deps:
+
+```shell
+npm i
+# yarn
+```
+
+### Previewing the site
+
+To create/edit content and preview a page locally as you make edits, start the "preview server":
+
+```shell
+ npm run dev
+ # yarn dev
+```
+
+This also runs `gulp watch` which rebuild pages as you make edits.
+
+Next,  open `http://localhost:8080/` to see the site locally. The preview server
+allows you to see how the content will look on the production site, but it's
+not a true staging server. For example, features like search and JS components
+may not work or be entirely broken on the local preview.
 
 ## Found a bug?
 
@@ -22,16 +45,3 @@ You can file an issue [in our issue tracker](https://github.com/GoogleChrome/web
 Take a look [in the issue tracker](https://github.com/GoogleChrome/web.dev/issues) for any bugs with a **content** label.
 
 [Our wiki](https://github.com/GoogleChrome/web.dev/wiki) provides guides on authoring guides and codelabs.
-
-## Previewing the site
-
-To create/edit content and preview a page locally, start the "preview server":
-
-```shell
-npm run start
-```
-
-Now open `http://localhost:8080/` to see the site locally. The preview server
-allows you to see how the content will look on the production site, but it's
-not a true staging server. For example, features like search and JS components
-may not work or be entirely broken on the local preview.

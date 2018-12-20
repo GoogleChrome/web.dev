@@ -10,9 +10,10 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "./lib/index.js",
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "dev": "concurrently -k \"gulp watch\" \"npm:start\"",
     "deploy": "./lib/index.js --deploy",
-    "prestart": "npm run build",
     "start": "node --experimental-modules server/index.mjs"
   },
   "dependencies": {
@@ -30,7 +31,11 @@
     "yaml": "^1.0.0-rc.8"
   },
   "devDependencies": {
+    "concurrently": "^4.1.0",
     "express": "^4.16.4",
+    "gulp": "^4.0.0",
+    "gulp-run": "^1.7.1",
+    "gulp-watch": "^5.0.1",
     "puppeteer": "^1.11.0"
   }
 }
