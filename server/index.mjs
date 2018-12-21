@@ -23,7 +23,6 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(serverHelpers.forceSSL);
-// app.use(serverHelpers.enableCors);
 app.use(serverHelpers.addRequestHelpers);
 
 const inBlacklistUrls = (path) => ['/_d'].find((p) => path.startsWith(p));
