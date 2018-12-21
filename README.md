@@ -16,8 +16,7 @@ git clone https://github.com/GoogleChrome/web.dev.git
 Install the deps:
 
 ```shell
-npm i
-# yarn
+yarn
 ```
 
 ### Previewing the site
@@ -25,8 +24,7 @@ npm i
 To create/edit content and preview a page locally as you make edits, start the "preview server":
 
 ```shell
- npm run dev
- # yarn dev
+ yarn dev
 ```
 
 This also runs `gulp watch` which rebuild pages as you make edits.
