@@ -19,7 +19,11 @@ function enableCors(req, res, next) {
 /* eslint-disable-next-line */
 function forceSSL(req, res, next) {
   const fromCron = req.get('X-Appengine-Cron');
-  if (!fromCron && req.hostname !== 'localhost' && req.get('X-Forwarded-Proto') === 'http') {
+  if (
+    !fromCron &&
+    req.hostname !== 'localhost' &&
+    req.get('X-Forwarded-Proto') === 'http'
+  ) {
     return res.redirect(`https://${req.hostname}${req.url}`);
   }
   next();
@@ -27,7 +31,8 @@ function forceSSL(req, res, next) {
 
 /* eslint-disable-next-line */
 function addRequestHelpers(req, res, next) {
-  req.getCurrentUrl = () => `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+  req.getCurrentUrl = () =>
+    `${req.protocol}://${req.get('host')}${req.originalUrl}`;
   req.getOrigin = () => {
     let protocol = 'https';
     if (req.hostname === 'localhost') {

@@ -1,0 +1,11 @@
+{
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "google"],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  }
+}

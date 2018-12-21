@@ -1,6 +1,6 @@
 {
   "name": "web.dev",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "web.dev content and build tools",
   "repository": "https://github.com/GoogleChrome/web.dev.git",
   "author": "The Chromium Authors",
@@ -12,6 +12,7 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
+    "lint": "gulp lint",
     "dev": "concurrently -k \"gulp watch\" \"npm:start\"",
     "deploy": "./lib/index.js --deploy",
     "start": "node --experimental-modules server/index.mjs"
@@ -32,10 +33,15 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
+    "eslint": "^5.10.0",
+    "eslint-config-google": "^0.11.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "express": "^4.16.4",
     "gulp": "^4.0.0",
+    "gulp-eslint": "^5.0.0",
     "gulp-run": "^1.7.1",
     "gulp-watch": "^5.0.1",
+    "husky": "^1.2.1",
     "puppeteer": "^1.11.0"
   }
 }
