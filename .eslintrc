@@ -7,9 +7,5 @@
   },
   "parserOptions": {
     "ecmaVersion": 2017
-  },
-  "rules": {
-    "require-jsdoc": 0,
-    "valid-jsdoc": 0
   }
 }

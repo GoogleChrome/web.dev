@@ -105,6 +105,10 @@ export async function renderPage({
   return finalHTML;
 }
 
+/**
+ * 
+ * @param url 
+ */
 async function getRemotePage(url) {
   const page = await browser.newPage();
 
@@ -136,6 +140,10 @@ async function getRemotePage(url) {
   return page;
 }
 
+/**
+ * 
+ * @param path 
+ */
 async function getPageContent(path) {
   let filePath = `./build/en/${path}.html`;
   try {
