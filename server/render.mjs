@@ -106,8 +106,8 @@ export async function renderPage({
 }
 
 /**
- * 
- * @param url 
+ * @param {string} url Page to fetch.
+ * @return {!Promise<!Page>}
  */
 async function getRemotePage(url) {
   const page = await browser.newPage();
@@ -141,8 +141,9 @@ async function getRemotePage(url) {
 }
 
 /**
- * 
- * @param path 
+ * Read local file content from disk.
+ * @param {string} path
+ * @return {!Promise<?string>}
  */
 async function getPageContent(path) {
   let filePath = `./build/en/${path}.html`;
@@ -171,6 +172,7 @@ async function getPageContent(path) {
 /**
  * Replaces page's {% include "file.html" %} pragmas.
  * @param {string} pageHTML
+ * @return {string}
  */
 function replaceIncludes(pageHTML) {
   const re = /{% include "(.*)\.html" %}/g;
