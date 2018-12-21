@@ -115,22 +115,7 @@ You’ll get the most value out of bundlesize if you integrate it with a CI to a
 
 You may have a fast app today, but adding new code can often change this. Checking pull requests with bundlesize will help you avoid performance regressions. Bootstrap, Tinder, Trivago and many others use it to keep their budgets in check.
 
-With bundlesize, it’s possible to set thresholds for each file separately in `package.json`. This is especially useful if you are code-splitting a bundle in your application. 
-
-<pre class="prettyprint">
-"bundlesize": [
-  {
-    "path": "./dist/vendor-*.js",
-    "maxSize": "35 kB"
-  },
-  {
-    "path": "./dist/app-*.js",
-    "maxSize": "25 kB"
-  }
-]
-</pre>
-
-<div class="aside note">Setting different budgets per-script with bundlesize</div>
+With bundlesize, it’s possible to set thresholds for each file separately. This is especially useful if you are code-splitting a bundle in your application.
 
 By default, **it tests gzipped asset sizes**. You can use the compression option to switch to [brotli compression](https://css-tricks.com/brotli-static-compression/) or turn it off completely. 
 
