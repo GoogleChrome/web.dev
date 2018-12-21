@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-import url from 'url';
-const URL = url.URL;
 import express from 'express';
 import {renderPage} from './render.mjs';
 import serverHelpers from './helpers.mjs';
 
-const DEV = process.env.DEV || false;
 const PORT = process.env.PORT || 8080;
 
 const app = express();
@@ -29,7 +26,7 @@ app.use(serverHelpers.forceSSL);
 // app.use(serverHelpers.enableCors);
 app.use(serverHelpers.addRequestHelpers);
 
-const inBlacklistUrls = (path) => ['/_d'].find(p => path.startsWith(p));
+const inBlacklistUrls = (path) => ['/_d'].find((p) => path.startsWith(p));
 
 // Handle / dynamically.
 app.use('/', async (req, res, next) => {
@@ -48,8 +45,10 @@ app.use('/', async (req, res, next) => {
     origin: req.getOrigin(),
     // headless: false,
   });
-  res.set('Server-Timing',
-      `Render;dur=${Date.now() - tic};desc="Headless rendering time (ms)"`);
+  res.set(
+      'Server-Timing',
+      `Render;dur=${Date.now() - tic};desc="Headless rendering time (ms)"`
+  );
 
   res.status(200).send(html);
 });

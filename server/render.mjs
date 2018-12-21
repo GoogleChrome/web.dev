@@ -39,8 +39,11 @@ let browser = null;
  *     headless: Set to false to launch headlful chrome.xg
  * @return {!Promise<?string>} Serialized page output as an html string.
  */
-export async function renderPage({path = null, stagingServerOrigin = null,
-      headless = true} = {}) {
+export async function renderPage({
+  path = null,
+  stagingServerOrigin = null,
+  headless = true,
+} = {}) {
   const url = `${DOMAIN}${path}`;
   const tic = Date.now();
 
@@ -67,30 +70,34 @@ export async function renderPage({path = null, stagingServerOrigin = null,
   // Replace main body of the remote page with the local copy.
   await page.evaluate((include) => {
     const mainContentArea = document.querySelector('.devsite-article-body');
-    mainContentArea.innerHTML = include; // Replace page with include filled in version.
+    // Replace page with include filled in version.
+    mainContentArea.innerHTML = include;
 
     // Map relative assets to their local version. Relative assets that do
     // not exist locally (e.g. /_static images) are pulled from the prod site.
-    document.querySelectorAll('[src]').forEach(el => {
+    document.querySelectorAll('[src]').forEach((el) => {
       const src = el.getAttribute('src');
       if (src.startsWith('/_static/')) {
+        // eslint-disable-next-line
         el.src = el.src;
       } else if (src.startsWith('./')) {
         el.src = `${location.pathname}/${el.getAttribute('src')}`;
       }
     });
 
-    // // Lastly, inject <base> on on page so relative resources load local version
+    // // Lastly, inject <base> on on page so relative resources load
+    // // local version
     // // when the page is loaded in the browser by the viewer.
     // // TODO: dont want to do this for relative links.
     // const base = document.createElement('base');
     // base.href = `${origin}${location.pathname}/`;
-    // document.head.prepend(base); // Add to top of head, before all other resources.
-
+    // document.head.prepend(base); // Add to top of head,
+    //                              // before all other resources.
   }, include);
 
   const finalHTML = await page.content(); // get page's serialized, final DOM.
 
+  // eslint-disable-next-line
   console.info(`Headless rendered ${url} in: ${Date.now() - tic}ms`);
 
   await page.close();
@@ -113,13 +120,15 @@ async function getRemotePage(url) {
       timeout: 5000,
     });
   } catch (err) {
+    // eslint-disable-next-line
     console.error(err.message);
     await page.close();
     throw new Error('page.goto/waitForSelector timed out.');
   }
 
   // If page is new (e.g. doesn't exist in production yet), need to wrap
-  // it in local content in a generic header/footer. Wrap it in index page's markup.
+  // it in local content in a generic header/footer.
+  // Wrap it in index page's markup.
   if (resp.status() === 404) {
     return await getRemotePage(DOMAIN);
   }
@@ -143,6 +152,7 @@ async function getPageContent(path) {
     await page.close();
     return body;
   } catch (err) {
+    // eslint-disable-next-line
     console.warn(err);
     // noop
   }
@@ -158,10 +168,12 @@ function replaceIncludes(pageHTML) {
   const re = /{% include "(.*)\.html" %}/g;
   return pageHTML.replace(re, (match, filename, offset) => {
     try {
-      const html = fs.readFileSync(
-          `./build/en/${filename}.html`, {encoding: 'utf-8'});
+      const html = fs.readFileSync(`./build/en/${filename}.html`, {
+        encoding: 'utf-8',
+      });
       return html;
     } catch (err) {
+      // eslint-disable-next-line
       console.warn(err);
     }
     return '';
