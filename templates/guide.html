@@ -38,15 +38,15 @@
           <div class="web-author-information__details">
             <span class="web-author-information__written-by">Written by</span>
             <span>{{author.name.given}} {{author.name.family}}</span>
-            <div class="web-author-information__links"></div>
+            <div class="web-author-information__links">
               {{#if author.glitch}}
-              <a class="web-author-information__link" href="{{author.glitch}}">Glitch</a>
+              <div class="web-author-information__link"><a href="{{author.glitch}}">Glitch</a></div>
               {{/if}}
               {{#if author.github}}
-              <a class="web-author-information__link" href="https://github.com/{{author.github}}">GitHub</a>
+              <div class="web-author-information__link"><a href="https://github.com/{{author.github}}">GitHub</a></div>
               {{/if}}
               {{#if author.twitter}}
-              <a class="web-author-information__link" href="https://twitter.com/{{author.twitter}}">Twitter</a>
+              <div class="web-author-information__link"><a href="https://twitter.com/{{author.twitter}}">Twitter</a></div>
               {{/if}}
             </div>
           </div>
