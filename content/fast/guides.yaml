@@ -11,9 +11,9 @@ overview: |
     Sites should focus on optimizing for user-centric happiness metrics.
     Tools like Lighthouse (baked into web.dev!) highlight these metrics and
     help you take the right steps toward improving your performance.
-    To "stay fast", set and enforce performance budgets
-    to help your team work within the constraints needed to continue loading fast
-    and keeping users happy after your site has launched.
+    To "stay fast," set and enforce performance budgets that work for your
+    team's constraints. In this section you'll learn to keep your site 
+    loading fast and to keep your users happy after your site has launched.
 
 order: 1
 
