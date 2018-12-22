@@ -25,26 +25,25 @@ import url from 'url';
 const URL = url.URL;
 import puppeteer from 'puppeteer';
 
-const DOMAIN = 'https://web.dev/';
+const SITE_ORIGIN = 'https://web.dev';
 
 let browser = null;
 
 /**
- * Server-side renders a URL using headless chrome.
- * @param {string} url The url to prerender.
+ * Constructs a page by fetching it from web.dev, then merging it with the
+ * the local version on disk.
  * @param {string} path File path to render.
- * @param {!Object} config Optional config settings.
- *     path: Path of page to load.
+ * @param {!Object} options Optional config settings.
  *     stagingServerOrigin: Origin of staging server.
- *     headless: Set to false to launch headlful chrome.xg
+ *     headless: False launches headful chrome instead of headless.
  * @return {!Promise<?string>} Serialized page output as an html string.
  */
-export async function renderPage({
-  path = null,
+export async function constructPage(path, {
   stagingServerOrigin = null,
   headless = true,
 } = {}) {
-  const url = `${DOMAIN}${path}`;
+  path = path.slice(1); // strip leading '/'.
+  const url = `${SITE_ORIGIN}/${path}`;
   const tic = Date.now();
 
   if (!browser) {
@@ -90,7 +89,7 @@ export async function renderPage({
     // // when the page is loaded in the browser by the viewer.
     // // TODO: dont want to do this for relative links.
     // const base = document.createElement('base');
-    // base.href = `${origin}${location.pathname}/`;
+    // base.href = `${stagingServerOrigin}${location.pathname}/`;
     // document.head.prepend(base); // Add to top of head,
     //                              // before all other resources.
   }, include);
@@ -134,7 +133,7 @@ async function getRemotePage(url) {
   // it in local content in a generic header/footer.
   // Wrap it in index page's markup.
   if (resp.status() === 404) {
-    return await getRemotePage(DOMAIN);
+    return await getRemotePage(SITE_ORIGIN);
   }
 
   return page;
