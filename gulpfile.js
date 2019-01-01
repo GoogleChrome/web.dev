@@ -18,7 +18,7 @@
 
 const del = require('del');
 const gulp = require('gulp');
-const run = require('gulp-run');
+const spawn = require('child_process').spawn;
 const eslint = require('gulp-eslint');
 
 const DEST = './build/';
@@ -26,7 +26,17 @@ const DEST = './build/';
 gulp.task('clean', () => del([DEST]));
 
 gulp.task('build', () => {
-  return run('node ./lib/index.js').exec();
+  const childProcess = spawn('node', ['./lib/index.js']);
+
+  childProcess.stdout.on('data', (data) => {
+    process.stdout.write(data.toString('utf-8'));
+  });
+
+  childProcess.stderr.on('data', (data) => {
+    process.stderr.write(data.toString('utf-8'));
+  });
+
+  return childProcess;
 });
 
 gulp.task(

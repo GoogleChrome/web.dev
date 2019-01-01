@@ -40,7 +40,6 @@
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "gulp-eslint": "^5.0.0",
-    "gulp-run": "^1.7.1",
     "gulp-watch": "^5.0.1",
     "husky": "^1.2.1",
     "prettier": "^1.15.3",
