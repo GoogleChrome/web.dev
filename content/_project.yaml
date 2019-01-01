@@ -11,3 +11,8 @@ social_media:
     path: https://web.dev/images/social.png
     width: 1440
     height: 1440
+  twitter:
+    card_type: summary
+    image:
+      path: https://web.dev/images/social.png
+    username: '@ChromiumDev'
