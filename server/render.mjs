@@ -36,7 +36,8 @@ let browser = null;
  * @param {!Object} options Optional config settings.
  *     stagingServerOrigin: Origin of staging server.
  *     headless: False launches headful chrome instead of headless.
- * @return {!Promise<?string>} Serialized page output as an html string.
+ * @return {!Promise<?string>} Serialized page output as an html string or null
+ *     if the local page file does not exist.
  */
 export async function constructPage(path, {
   stagingServerOrigin = null,
@@ -44,33 +45,28 @@ export async function constructPage(path, {
 } = {}) {
   path = path.slice(1); // strip leading '/'.
   const url = `${SITE_ORIGIN}/${path}`;
-  const tic = Date.now();
 
   if (!browser) {
     browser = await puppeteer.launch({
-      // args: ['--disable-dev-shm-usage'],
       headless,
       // TODO: check if we need to consider defaultViewport for mobile.
       defaultViewport: null,
     });
   }
 
-  // Get local version of the page.
-  const pageHTML = await getPageContent(path);
-  if (!pageHTML) {
+  // Read local version of the page. Replace {% include %} with their content.
+  const localPageHTML = replaceIncludes(await readLocalPageContent(path));
+  if (!localPageHTML) {
     return null;
   }
 
-  // Replace local page's {% include %} with the actual html in those files.
-  const include = replaceIncludes(pageHTML);
-
-  const page = await getRemotePage(url);
+  const page = await fetchRemotePage(url);
 
   // Replace main body of the remote page with the local copy.
-  await page.evaluate((include) => {
+  await page.evaluate((localPageHTML) => {
     const mainContentArea = document.querySelector('.devsite-article-body');
     // Replace page with include filled in version.
-    mainContentArea.innerHTML = include;
+    mainContentArea.innerHTML = localPageHTML;
 
     // Map relative assets to their local version. Relative assets that do
     // not exist locally (e.g. /_static images) are pulled from the prod site.
@@ -92,12 +88,9 @@ export async function constructPage(path, {
     // base.href = `${stagingServerOrigin}${location.pathname}/`;
     // document.head.prepend(base); // Add to top of head,
     //                              // before all other resources.
-  }, include);
+  }, localPageHTML);
 
-  const finalHTML = await page.content(); // get page's serialized, final DOM.
-
-  // eslint-disable-next-line
-  console.info(`Headless rendered ${url} in: ${Date.now() - tic}ms`);
+  const finalHTML = await page.content(); // serialized HTML of assembled page.
 
   await page.close();
 
@@ -108,7 +101,7 @@ export async function constructPage(path, {
  * @param {string} url Page to fetch.
  * @return {!Promise<!Page>}
  */
-async function getRemotePage(url) {
+async function fetchRemotePage(url) {
   const page = await browser.newPage();
 
   // Add param so client-side page can know it's being rendered by headless
@@ -129,11 +122,10 @@ async function getRemotePage(url) {
     throw new Error('page.goto/waitForSelector timed out.');
   }
 
-  // If page is new (e.g. doesn't exist in production yet), need to wrap
-  // it in local content in a generic header/footer.
-  // Wrap it in index page's markup.
+  // If page is new (e.g. doesn't exist in production yet), need to wrap it in
+  // local content in a generic header/footer. Wrap it in index page's markup.
   if (resp.status() === 404) {
-    return await getRemotePage(SITE_ORIGIN);
+    return await fetchRemotePage(SITE_ORIGIN);
   }
 
   return page;
@@ -144,7 +136,7 @@ async function getRemotePage(url) {
  * @param {string} path
  * @return {!Promise<?string>}
  */
-async function getPageContent(path) {
+async function readLocalPageContent(path) {
   let filePath = `./build/en/${path}.html`;
   try {
     // If .html file doesn't exist, try folder's index.html file.
@@ -170,12 +162,16 @@ async function getPageContent(path) {
 
 /**
  * Replaces page's {% include "file.html" %} pragmas.
- * @param {string} pageHTML
- * @return {string}
+ * @param {?string} html
+ * @return {?string}
  */
-function replaceIncludes(pageHTML) {
+function replaceIncludes(html) {
+  if (!html) {
+    return null;
+  }
+
   const re = /{% include "(.*)\.html" %}/g;
-  return pageHTML.replace(re, (match, filename, offset) => {
+  return html.replace(re, (match, filename, offset) => {
     try {
       const html = fs.readFileSync(`./build/en/${filename}.html`, {
         encoding: 'utf-8',
