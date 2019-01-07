@@ -41,7 +41,7 @@ app.use('/', async (req, res, next) => {
   const toc = Date.now() - tic;
 
   // eslint-disable-next-line
-  console.info(`Headless rendered ${url} in: ${toc}ms`);
+  console.info(`Headless rendered ${path} in: ${toc}ms`);
 
   res.set(
       'Server-Timing',
