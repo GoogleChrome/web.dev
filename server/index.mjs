@@ -15,7 +15,7 @@
  */
 
 import express from 'express';
-import {renderPage} from './render.mjs';
+import {constructPage} from './render.mjs';
 import serverHelpers from './helpers.mjs';
 
 const PORT = process.env.PORT || 8080;
@@ -30,23 +30,22 @@ const inBlacklistUrls = (path) => ['/_d'].find((p) => path.startsWith(p));
 // Handle / dynamically.
 app.use('/', async (req, res, next) => {
   const path = req.path;
-
   if (path && path.split('.').length > 1) {
-    next();
-    return;
+    return next();
   } else if (path && inBlacklistUrls(path)) {
     return res.status(200).send('Fake response from staging server.');
   }
 
   const tic = Date.now();
-  const html = await renderPage({
-    path: path.slice(1),
-    origin: req.getOrigin(),
-    // headless: false,
-  });
+  const html = await constructPage(path);
+  const toc = Date.now() - tic;
+
+  // eslint-disable-next-line
+  console.info(`Headless rendered ${path} in: ${toc}ms`);
+
   res.set(
     'Server-Timing',
-    `Render;dur=${Date.now() - tic};desc="Headless rendering time (ms)"`,
+    `Render;dur=${toc};desc="Headless rendering time (ms)"`,
   );
 
   res.status(200).send(html);
