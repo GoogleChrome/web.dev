@@ -37,7 +37,9 @@ app.use('/', async (req, res, next) => {
   }
 
   const tic = Date.now();
-  const html = await constructPage(path);
+  const html = await constructPage(path, {
+    stagingServerOrigin: req.getOrigin(),
+  });
   const toc = Date.now() - tic;
 
   // eslint-disable-next-line
