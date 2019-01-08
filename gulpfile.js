@@ -57,7 +57,12 @@ gulp.task(
 gulp.task('lint', () => {
   return (
     gulp
-      .src(['{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}', '!glitches/**/*.{js,mjs}', '!lib/devsite.js', '!lib/local-devsite.js'])
+      .src([
+        'gulpfile.js',
+        '{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}',
+        '!glitches/**/*.{js,mjs}',
+        '!lib/devsite.js',
+        '!lib/local-devsite.js'])
       // eslint() attaches the lint output to the "eslint" property
       // of the file object so it can be used by other modules.
       .pipe(eslint())
