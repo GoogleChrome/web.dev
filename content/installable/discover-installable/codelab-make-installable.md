@@ -1,7 +1,7 @@
 ---
 page_type: glitch
 title: Make it installable
-author: petele
+author: petelepage
 description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.

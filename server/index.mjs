@@ -44,8 +44,8 @@ app.use('/', async (req, res, next) => {
   console.info(`Headless rendered ${path} in: ${toc}ms`);
 
   res.set(
-      'Server-Timing',
-      `Render;dur=${toc};desc="Headless rendering time (ms)"`,
+    'Server-Timing',
+    `Render;dur=${toc};desc="Headless rendering time (ms)"`,
   );
 
   res.status(200).send(html);

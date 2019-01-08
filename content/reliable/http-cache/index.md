@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: 'The HTTP cache: your first line of defense'
-author: jeffy
+author: jeffposnick
 description: |
   The browser's HTTP cache is your first line of defense. It's not necessarily
   the most powerful or flexible approach, and you have limited control over the

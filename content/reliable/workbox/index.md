@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Workbox your high-level service worker toolkit
-author: jeffy
+author: jeffposnick
 description: |
   Workbox is a high-level service worker toolkit built on top of the Service
   Worker and Cache Storage APIs. It provides a production-ready set of libraries

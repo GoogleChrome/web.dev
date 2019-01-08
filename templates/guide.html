@@ -32,6 +32,26 @@
     <!-- GUIDE AND SIDEBAR -->
     <div class="row">
       <article class="guide">
+        {{#if author}}
+        <div class="web-author-information">
+          <img class="web-author-information__photo" src="/images/contributors/{{author.picture}}.jpg" />
+          <div class="web-author-information__details">
+            <span class="web-author-information__written-by">Written by</span>
+            <span>{{author.name.given}} {{author.name.family}}</span>
+            <div class="web-author-information__links">
+              {{#if author.glitch}}
+              <div class="web-author-information__link"><a href="{{author.glitch}}">Glitch</a></div>
+              {{/if}}
+              {{#if author.github}}
+              <div class="web-author-information__link"><a href="https://github.com/{{author.github}}">GitHub</a></div>
+              {{/if}}
+              {{#if author.twitter}}
+              <div class="web-author-information__link"><a href="https://twitter.com/{{author.twitter}}">Twitter</a></div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        {{/if}}
 {{{main}}}
 
   <hr />

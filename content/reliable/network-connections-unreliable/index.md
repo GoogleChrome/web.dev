@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: What is network reliability and how do you measure it?
-author: jeffy
+author: jeffposnick
 description: |
   The modern web is enjoyed by a wide swath of people, using a range of
   different devices and types of network connections. Your creations can reach

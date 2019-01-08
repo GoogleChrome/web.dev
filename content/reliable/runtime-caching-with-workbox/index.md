@@ -6,7 +6,7 @@ description: |
   While runtime caching doesn't help with the reliability of the current
   request, runtime caching with Workbox can help make future requests for the
   same URL more reliable.
-author: jeffy
+author: jeffposnick
 web_lighthouse: N/A
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05

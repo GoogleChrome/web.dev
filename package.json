@@ -13,6 +13,7 @@
     "clean": "gulp clean",
     "build": "gulp build",
     "lint": "gulp lint",
+    "format": "prettier --write --single-quote --trailing-comma all --no-bracket-spacing --arrow-parens always \"{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}\"",
     "dev": "concurrently -k \"gulp watch\" \"npm:start\"",
     "deploy": "./lib/index.js --deploy",
     "start": "node --experimental-modules server/index.mjs"
@@ -39,9 +40,9 @@
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "gulp-eslint": "^5.0.0",
-    "gulp-run": "^1.7.1",
     "gulp-watch": "^5.0.1",
     "husky": "^1.2.1",
+    "prettier": "^1.15.3",
     "puppeteer": "^1.11.0"
   }
 }

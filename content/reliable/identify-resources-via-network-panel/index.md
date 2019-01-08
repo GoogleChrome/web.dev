@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Identify resources loaded from the network
-author: jeffy
+author: jeffposnick
 description: |
   Coming up with the right caching strategies for your web application requires
   getting a handle on what exactly you're loading. When building a reliable web

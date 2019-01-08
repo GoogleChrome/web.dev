@@ -1,7 +1,7 @@
 ---
 page_type: glitch
 title: Explore DevTools Network panel
-author: jeffy
+author: jeffposnick
 description: |
   In this codelab, learn how to inerpret network traffic using Chrome's
   DevTools.

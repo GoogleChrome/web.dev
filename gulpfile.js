@@ -18,7 +18,7 @@
 
 const del = require('del');
 const gulp = require('gulp');
-const run = require('gulp-run');
+const spawn = require('child_process').spawn;
 const eslint = require('gulp-eslint');
 
 const DEST = './build/';
@@ -26,37 +26,47 @@ const DEST = './build/';
 gulp.task('clean', () => del([DEST]));
 
 gulp.task('build', () => {
-  return run('node ./lib/index.js').exec();
+  const childProcess = spawn('node', ['./lib/index.js']);
+
+  childProcess.stdout.on('data', (data) => {
+    process.stdout.write(data.toString('utf-8'));
+  });
+
+  childProcess.stderr.on('data', (data) => {
+    process.stderr.write(data.toString('utf-8'));
+  });
+
+  return childProcess;
 });
 
 gulp.task(
-    'watch',
-    gulp.series('build', () => {
-      // TODO(ericbidelman): Don't rebuild all files if only 1 changes.
-      gulp.watch(
-          'content/**/*.{md,html}',
-          {
-            read: false, // Optimization. Not accessing file.contents.
-            ignoreInitial: true,
-          },
-          gulp.series('build')
-      );
-    })
+  'watch',
+  gulp.series('build', () => {
+    // TODO(ericbidelman): Don't rebuild all files if only 1 changes.
+    gulp.watch(
+      'content/**/*.{md,html}',
+      {
+        read: false, // Optimization. Not accessing file.contents.
+        ignoreInitial: true,
+      },
+      gulp.series('build'),
+    );
+  }),
 );
 
 gulp.task('lint', () => {
   return (
     gulp
-        .src(['{,lib,server}/**/*.{js,mjs}', '!glitches/**/*.{js,mjs}'])
-        // eslint() attaches the lint output to the "eslint" property
-        // of the file object so it can be used by other modules.
-        .pipe(eslint())
-        // eslint.format() outputs the lint results to the console.
-        // Alternatively use eslint.formatEach().
-        .pipe(eslint.format())
-        // To have the process exit with an error code (1) on
-        // lint error, return the stream and pipe to failAfterError last.
-        .pipe(eslint.failAfterError())
+      .src(['{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}', '!glitches/**/*.{js,mjs}', '!lib/devsite.js', '!lib/local-devsite.js'])
+      // eslint() attaches the lint output to the "eslint" property
+      // of the file object so it can be used by other modules.
+      .pipe(eslint())
+      // eslint.format() outputs the lint results to the console.
+      // Alternatively use eslint.formatEach().
+      .pipe(eslint.format())
+      // To have the process exit with an error code (1) on
+      // lint error, return the stream and pipe to failAfterError last.
+      .pipe(eslint.failAfterError())
   );
 });
 

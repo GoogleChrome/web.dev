@@ -1,7 +1,7 @@
 ---
 page_type: guide
 title: Discover what it takes to be installable
-author: petele
+author: petelepage
 description: |
   A Progressive Web App can run in a browser tab or it can be installed on the
   users device and run like other installed apps. Once installed, it's launched

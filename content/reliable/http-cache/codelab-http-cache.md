@@ -1,7 +1,7 @@
 ---
 page_type: glitch
 title: Configuring HTTP caching behavior
-author: jeffy
+author: jeffposnick
 description: |
   In this codelab, learn how to control resource caching behavior using HTTP
   headers.
