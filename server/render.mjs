@@ -63,7 +63,7 @@ export async function constructPage(path, {
   const page = await fetchRemotePage(url);
 
   // Replace main body of the remote page with the local copy.
-  await page.evaluate((localPageHTML) => {
+  await page.evaluate((path, localPageHTML, stagingServerOrigin) => {
     const mainContentArea = document.querySelector('.devsite-article-body');
     // Replace page with include filled in version.
     mainContentArea.innerHTML = localPageHTML;
@@ -74,21 +74,16 @@ export async function constructPage(path, {
       const src = el.getAttribute('src');
       if (src.startsWith('/_static/')) {
         // eslint-disable-next-line
-        el.src = el.src;
-      } else if (src.startsWith('./')) {
-        el.src = `${location.pathname}/${el.getAttribute('src')}`;
+        el.src = el.src; // rewrite src attr to be browser's resolved url.
       }
     });
 
-    // // Lastly, inject <base> on on page so relative resources load
-    // // local version
-    // // when the page is loaded in the browser by the viewer.
-    // // TODO: dont want to do this for relative links.
-    // const base = document.createElement('base');
-    // base.href = `${stagingServerOrigin}${location.pathname}/`;
-    // document.head.prepend(base); // Add to top of head,
-    //                              // before all other resources.
-  }, localPageHTML);
+    // Lastly, inject <base> on on page so relative resources load local version
+    // when the page is loaded in the browser by the viewer.
+    const base = document.createElement('base');
+    base.href = `${stagingServerOrigin}/${path}/`;
+    document.head.prepend(base); // Add to top of head, before other resources.
+  }, path, localPageHTML, stagingServerOrigin);
 
   const finalHTML = await page.content(); // serialized HTML of assembled page.
 
