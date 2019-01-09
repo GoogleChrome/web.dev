@@ -16,7 +16,8 @@
     "format": "prettier --write --single-quote --trailing-comma all --no-bracket-spacing --arrow-parens always \"{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}\"",
     "dev": "concurrently -k \"gulp watch\" \"npm:start\"",
     "deploy": "./lib/index.js --deploy",
-    "start": "node --experimental-modules server/index.mjs"
+    "start": "node --experimental-modules server/index.mjs",
+    "test": "cross-env TEST=true concurrently -k \"npm:start\" \"npx mocha server/test/test.js\""
   },
   "dependencies": {
     "ansi-colors": "^3.1.0",
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.10.0",
     "eslint-config-google": "^0.11.0",
     "eslint-plugin-prettier": "^3.0.0",
@@ -42,6 +44,7 @@
     "gulp-eslint": "^5.0.0",
     "gulp-watch": "^5.0.1",
     "husky": "^1.2.1",
+    "mocha": "^5.2.0",
     "prettier": "^1.15.3",
     "puppeteer": "^1.11.0"
   }

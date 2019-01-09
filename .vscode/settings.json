@@ -1,3 +1,4 @@
 {
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "cSpell.enabled": true
 }
