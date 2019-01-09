@@ -38,7 +38,9 @@ after(async function closeChrome() {
   await browser.close();
 });
 
-describe('Image tests', () => {
+describe('Image tests', function() {
+  this.timeout(5 * 1000);
+
   let page;
 
   beforeEach(async function() {
@@ -69,29 +71,31 @@ describe('Image tests', () => {
     assert.ok(true);
   }
 
-  it('renders local images on /', async function() {
-    await verifyImagesLoad(`${SERVER}/`);
-  }).timeout(10 * 10000);
+  it('renders landing pages', async function() {
+    await Promise.all([
+      verifyImagesLoad(`${SERVER}/`),
+      verifyImagesLoad(`${SERVER}/fast`),
+      verifyImagesLoad(`${SERVER}/about`),
+      verifyImagesLoad(`${SERVER}/measure`),
+      verifyImagesLoad(`${SERVER}/about`),
+    ]);
+  });
 
-  it('renders local images on /measure', async function() {
-    await verifyImagesLoad(`${SERVER}/measure`);
-  }).timeout(10 * 10000);
-
-  it('renders local images on page 1', async function() {
+  it('renders local images on guide 1', async function() {
     await verifyImagesLoad(`${SERVER}/installable/add-manifest`);
-  }).timeout(10 * 10000);
+  });
 
-  it('renders local images on page 2', async function() {
+  it('renders local images on guide 2', async function() {
     await verifyImagesLoad(
       `${SERVER}/fast/discover-performance-opportunities-with-lighthouse`);
-  }).timeout(10 * 10000);
+  });
 
-  it('renders local images on page 3', async function() {
+  it('renders local images on guide 3', async function() {
     await verifyImagesLoad(`${SERVER}/fast/use-imagemin-to-compress-images`);
-  }).timeout(10 * 10000);
+  });
 
-  it('renders local images on page 4', async function() {
+  it('renders local images on guide 4', async function() {
     await verifyImagesLoad(`${SERVER}/reliable/runtime-caching-with-workbox`);
-  }).timeout(10 * 10000);
+  });
 });
 
