@@ -39,7 +39,7 @@ after(async function closeChrome() {
 });
 
 describe('Image tests', function() {
-  this.timeout(10 * 1000);
+  this.timeout(10 * 1000); // eslint-disable-line
 
   let page;
 
