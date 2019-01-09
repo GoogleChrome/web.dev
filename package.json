@@ -17,7 +17,7 @@
     "dev": "concurrently -k \"gulp watch\" \"npm:start\"",
     "deploy": "./lib/index.js --deploy",
     "start": "node --experimental-modules server/index.mjs",
-    "test": "cross-env TEST=true concurrently -k \"npm:start\" \"npx mocha server/test/test.js\""
+    "test": "cross-env TEST=true concurrently -k \"npm:start\" \"npx mocha server/test/images.js\""
   },
   "dependencies": {
     "ansi-colors": "^3.1.0",
