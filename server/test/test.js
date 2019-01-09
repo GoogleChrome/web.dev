@@ -30,32 +30,13 @@ let browser;
 
 before(async function launchChrome() {
   if (!browser) {
-    browser = await puppeteer.launch({
-      // headless: false,
-      // defaultViewport: null,
-    });
+    browser = await puppeteer.launch();
   }
 });
 
 after(async function closeChrome() {
   await browser.close();
 });
-
-// describe('Constructs pages', () => {
-//   let page;
-
-//   beforeEach(async function() {
-//     page = await browser.newPage();
-//   });
-
-//   afterEach(async () => {
-//     await page.close();
-//   });
-
-//   it('fetches remote page', async function() {
-
-//   });
-// });
 
 describe('Image tests', () => {
   let page;
