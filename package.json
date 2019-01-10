@@ -13,10 +13,13 @@
     "clean": "gulp clean",
     "build": "gulp build",
     "lint": "gulp lint",
+    "watch": "gulp watch",
     "format": "prettier --write --single-quote --trailing-comma all --no-bracket-spacing --arrow-parens always \"{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}\"",
-    "dev": "concurrently -k \"gulp watch\" \"npm:start\"",
+    "dev": "npm-run-all -r --parallel watch start",
     "deploy": "./lib/index.js --deploy",
-    "start": "node --experimental-modules server/index.mjs"
+    "start": "node --experimental-modules server/index.mjs",
+    "test:mocha": "mocha server/test/images.js",
+    "test": "cross-env TEST=true npm-run-all -r --parallel start test:mocha"
   },
   "dependencies": {
     "ansi-colors": "^3.1.0",
@@ -33,7 +36,7 @@
     "yaml": "^1.0.0-rc.8"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.10.0",
     "eslint-config-google": "^0.11.0",
     "eslint-plugin-prettier": "^3.0.0",
@@ -42,6 +45,8 @@
     "gulp-eslint": "^5.0.0",
     "gulp-watch": "^5.0.1",
     "husky": "^1.2.1",
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3",
     "puppeteer": "^1.11.0"
   }

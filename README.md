@@ -34,6 +34,14 @@ allows you to see how the content will look on the production site, but it's
 not a true staging server. For example, features like search and JS components
 may not work or be entirely broken on the local preview.
 
+### Running the tests
+
+The preview server has tests to verify that pages render locally.
+
+```shell
+yarn test
+```
+
 ## Found a bug?
 
 You can file an issue [in our issue tracker](https://github.com/GoogleChrome/web.dev/issues) and a team member should reply shortly.

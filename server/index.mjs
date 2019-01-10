@@ -42,8 +42,10 @@ app.use('/', async (req, res, next) => {
   });
   const toc = Date.now() - tic;
 
-  // eslint-disable-next-line
-  console.info(`Headless rendered ${path} in: ${toc}ms`);
+  if (process.env.TEST !== 'true') {
+    // eslint-disable-next-line
+    console.info(`Headless rendered ${path} in: ${toc}ms`);
+  }
 
   res.set(
     'Server-Timing',
@@ -61,4 +63,9 @@ app.use(serverHelpers.errorHandler); // catch all.
 app.listen(PORT, async () => {
   console.log(`App listening on port ${PORT}`); /* eslint-disable-line */
   console.log('Press Ctrl+C to quit.'); /* eslint-disable-line */
+});
+
+// Ensure the server shuts down when `npm rum test` exits with a SIGTERM.
+process.on('SIGTERM', (code) => {
+  process.exit(0);
 });
