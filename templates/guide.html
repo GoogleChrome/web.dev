@@ -39,14 +39,14 @@
             <span class="web-author-information__written-by">Written by</span>
             <span>{{author.name.given}} {{author.name.family}}</span>
             <div class="web-author-information__links">
-              {{#if author.glitch}}
-              <div class="web-author-information__link"><a href="{{author.glitch}}">Glitch</a></div>
+              {{#if author.twitter}}
+              <div class="web-author-information__link"><a href="https://twitter.com/{{author.twitter}}">Twitter</a></div>
               {{/if}}
               {{#if author.github}}
               <div class="web-author-information__link"><a href="https://github.com/{{author.github}}">GitHub</a></div>
               {{/if}}
-              {{#if author.twitter}}
-              <div class="web-author-information__link"><a href="https://twitter.com/{{author.twitter}}">Twitter</a></div>
+              {{#if author.glitch}}
+              <div class="web-author-information__link"><a href="https://glitch.com/@{{author.glitch}}">Glitch</a></div>
               {{/if}}
             </div>
           </div>

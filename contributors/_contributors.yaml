@@ -84,6 +84,9 @@ kaycebasques:
   country: US
   role:
     - author
+  twitter: kaycebasques
+  github: kaycebasques
+  glitch: kaycebasques
   description:
     en: Technical Writer, Chrome DevTools & Lighthouse
 
@@ -114,6 +117,7 @@ ericbidelman:
   google: +EricBidelman
   twitter: ebidel
   github: ebidel
+  glitch: ebidel
   role:
     - author
   email: e.bidelman@google.com
@@ -314,6 +318,8 @@ robdodson:
   homepage: 'https://robdodson.me'
   google: +RobDodson
   twitter: rob_dodson
+  github: robdodson
+  glitch: robdodson
   email: robdodson@google.com
 
 tdresser:
@@ -342,6 +348,8 @@ samdutton:
   role:
     - author
   google: +samdutton
+  twitter: sw12
+  github: samdutton
   email: dutton@google.com
   description:
     en: Sam is a Developer Advocate
@@ -380,6 +388,8 @@ ewagasperowicz:
   role:
     - author
   twitter: devnook
+  glitch: devnook
+  github: devnook
   email: ewag@google.com
 
 mattgaunt:
@@ -525,7 +535,10 @@ katiehempenius:
   country: USA
   role:
     - author
+  homepage: https://katiehempenius.com/
   twitter: katiehempenius
+  github: khempenius
+  glitch: khempenius
   email: khempenius@google.com
 
 patrickhulce:
@@ -595,8 +608,21 @@ megginkearney:
     - author
   google: "110573989653316535297"
   email: mkearney@google.com
+  glitch: Meggin
+  github: Meggin
+  twitter: megginkearney
   description:
     en: Meggin is a Tech Writer
+
+mihajlija:
+  name:
+    given: Milica
+    family: Mihajlija
+  role:
+    - author
+  homepage: https://mihajlija.github.io/
+  twitter: bibydigital
+  github: mihajlija
 
 brendankenny:
   name:
@@ -628,6 +654,7 @@ paulkinlan:
   homepage: 'https://paul.kinlan.me'
   google: +PaulKinlan
   twitter: paul_kinlan
+  glitch: PaulKinlan
   email: paulkinlan@google.com
   description:
     en: Paul is a Developer Advocate
@@ -673,7 +700,10 @@ kosamari:
   country: US
   role:
     - author
+  homepage: https://kosamari.com/
   twitter: kosamari
+  github: kosamari
+  glitch: kosamari
   email: kosamari@google.com
   description:
     en: Mariko is a drawsplainer
@@ -849,6 +879,7 @@ addyosmani:
     - author
   google: +AddyOsmani
   twitter: addyosmani
+  glitch: addyosmani
   email: addyo@google.com
   description:
     en: 'Eng Manager, Web Developer Relations'
@@ -866,6 +897,8 @@ jeffposnick:
   homepage: 'https://twitter.com/jeffposnick'
   google: +jeffposnick
   twitter: jeffposnick
+  github: jeffposnick
+  glitch: jeffposnick
   email: jeffy@google.com
   description:
     en: Web DevRel @ Google
@@ -1055,6 +1088,8 @@ samthorogood:
     - engineer
   homepage: 'https://whistlr.info/'
   twitter: samthor
+  github: samthor
+  glitch: samthor
   email: thorogood@google.com
   description:
     en: Evangelises Chrome and the mobile web in the Developer Relations team at Google.
@@ -1101,6 +1136,7 @@ rviscomi:
   country: USA
   twitter: rick_viscomi
   github: rviscomi
+  glitch: rviscomi
   role:
     - author
   email: rviscomi@google.com
@@ -1166,15 +1202,23 @@ kinukoyasuda:
 
 ekharvey:
   name: 
-    given: Lizzy
+    given: Lizzi
     family: Harvey
+  org:
+    name: Google
+    unit: Chrome
+  twitter: HarveyLizzi
+  github: ekharvey
+  glitch: ekharvey
+  description:
+    en: Lizzi is a Tech Writer at Google
 
 houssein:
   name:
     given: Houssein
     family: Djirdeh
-
-mihajlija:
-  name:
-    given: unknown
-    family: unknown
+  homepage: https://houssein.me/
+  twitter: hdjirdeh
+  github: housseindjirdeh
+  glitch: housseindjirdeh
+  
