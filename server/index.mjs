@@ -64,3 +64,8 @@ app.listen(PORT, async () => {
   console.log(`App listening on port ${PORT}`); /* eslint-disable-line */
   console.log('Press Ctrl+C to quit.'); /* eslint-disable-line */
 });
+
+// Ensure the server shuts down when `npm rum test` exits with a SIGTERM.
+process.on('SIGTERM', (code) => {
+  process.exit(0);
+});

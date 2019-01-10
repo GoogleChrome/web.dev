@@ -98,4 +98,3 @@ describe('Image tests', function() {
     await verifyImagesLoad(`${SERVER}/reliable/runtime-caching-with-workbox`);
   });
 });
-
