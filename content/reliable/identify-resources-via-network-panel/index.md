@@ -55,10 +55,10 @@ for your initial HTML, are made unconditionally as soon as a user visits a given
 URL. That HTML might contain hardcoded references to critical CSS or JavaScript
 files that must also load in order to display your interactive page. These
 requests all sit in your critical loading path. You will need to aggressively
-cache these to be reliably fast. 
+cache these to be reliably fast.
 
-Other resources, such as API requests or lazy-loaded assets, might not be
-starting to load until well after all of the initial loading is complete. If
+Other resources, such as API requests or lazy-loaded assets, might not
+start to load until well after all of the initial loading is complete. If
 those requests only happen following a specific sequence of user interactions,
 then a completely different set of resources might end up being requested
 across multiple visits to the same page. A less aggressive caching strategy is
@@ -75,7 +75,7 @@ late-loaded request.
 ### The Name and Type columns help with the what
 
 The Name and Type columns help provide a meaningful picture of _what_'s being
-loaded. The answer to "_what_'s loading?" is a total of four URLs, each
+loaded. The answer to "_what_'s loading?" in the example above is a total of four URLs, each
 representing a unique type of content.
 
 ![Chrome DevTools' network panel showing four files loading.](./network-panel-urls.png)
@@ -83,12 +83,13 @@ representing a unique type of content.
 The Name represents the URL that your browser requested—though you'll only see
 the last portion of the URL's path listed. For example, if
 `https://example.com/main.css` is loaded, you'd only end up seeing `main.css`
-listed under Name. The last few characters of the URL's path, following the
-period (e.g. "css"), are known as the URL's extension.
+listed under Name.
 
-The URL extension generally tells you what type of resource is being requested,
+The last few characters of the URL's path, following the
+period (e.g. "css"), are known as the URL's extension.
+The URL's extension generally tells you what type of resource is being requested,
 and maps directly to the information shown in the Type column. For example,
-`v2.html` is a document; `main.`css is a stylesheet.
+`v2.html` is a document, and `main.css` is a stylesheet.
 
 ### The Waterfall column helps with the when
 
@@ -96,7 +97,7 @@ Examine the Waterfall column, starting at the top and working your way down. The
 length of each bar represents the total amount of time that was spent loading
 each resource. How can you tell the difference between a request that's made as
 part of the critical loading path and a request that's fired off dynamically,
-long after the page's initial load is complete? 
+long after the page's initial load is complete?
 
 The first request in the waterfall is always going to be for the HTML document,
 for example, `v2.html`. All of the subsequent requests will flow (like a
