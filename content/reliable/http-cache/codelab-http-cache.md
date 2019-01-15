@@ -178,7 +178,7 @@ Here, the columns to pay attention to are `Name`, `Status`, `Cache-Control`,
 After the page has loaded, you should see entries in the Network panel that look
 like the following:
 
-<img class="screenshot" src="https://web.devsite.corp.google.com/reliable/http-cache/network-panel.png" alt="Network panel columns.">
+<img class="screenshot" src="./network-panel.png" alt="Network panel columns.">
 
 The first row is for the HTML document that you navigated to. This is properly
 served with `Cache-Control: no-cache`. The HTTP response status for that request
@@ -201,7 +201,7 @@ Because of the configuration used, there is no actual request being made to the
 Node.js server, and clicking on the entry will show you additional detail,
 including that the response came "(from disk cache)".
 
-<img class="screenshot" src="https://web.devsite.corp.google.com/reliable/http-cache/status-code.png" alt="A network response status of 200.">
+<img class="screenshot" src="./status-code.png" alt="A network response status of 200.">
 
 The actual values for the ETag and Last-Modified columns don't matter much. The
 important thing is to confirm that they're being set.
