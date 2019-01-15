@@ -21,7 +21,7 @@ repository](https://help.github.com/articles/about-required-status-checks/) so
 that it won’t allow merging pull-requests unless the bundlesize tests have
 passed.
 
-![bundlesize check](bundlesize-check.jpg)
+<img src="bundlesize-check.jpg" class="screenshot" alt="Bundlesize check on GitHub">
 
 <div class="aside note">
 You can also use bundlesize with <a href="https://circleci.com/">Circle CI</a>,
@@ -33,19 +33,17 @@ To see it in action, here’s an app bundled with
 [webpack](https://webpack.js.org/) that lets you [vote for your favorite
 kitty](https://glitch.com/edit/#!/scarce-pixie). 
 
-
 <a href="https://glitch.com/edit/#!/scarce-pixie">
   <img class="screenshot" src="./cat-voting-app.png" alt="Cat voting app">
 </a>
 
 ## Set the performance budget
 
-This [Glitch](https://glitch.com/edit/#!/scarce-pixie) already contains
+[This Glitch](https://glitch.com/edit/#!/scarce-pixie) already contains
 bundlesize. To start, click the Remix to Edit button to make the project
 editable.
 
-
-![Glitch Remix button](remix-button.png)
+<web-screenshot type="remix" aria-label="remix" role="img"></web-screenshot>
 
 The main bundle of this app is in the public folder. To test its size, add the
 following section to the `package.json` file:
@@ -71,8 +69,8 @@ To keep the compressed JavaScript bundle size [under the recommended
 limit](https://web.dev/fast/your-first-performance-budget#budget-for-quantity-based-metrics),
 set the performance budget to 170KB in the `maxSize` field. 
 
-Bundlesize supports [glob patterns](https://github.com/isaacs/node-glob) and the
-* wildcard character in the file path will match all bundle names in the public
+Bundlesize supports [glob patterns](https://github.com/isaacs/node-glob) and the * 
+wildcard character in the file path will match all bundle names in the public
 folder.
 
 <div class="aside note">
@@ -103,12 +101,12 @@ You’ll need to [register an account on
 Travis](https://docs.travis-ci.com/user/tutorial) and activate GitHub Apps
 integration under the Settings section of your profile.
 
-![Travis CI](travis-ci.png)
+<img src="travis-ci.png" class="screenshot" alt="GitHub Apps integration on Travis CI">
 
 Once you have an account, go to Settings under your profile, hit the Sync
 account button, and make sure your new repo is listed on Travis.
 
-![Travis CI Sync button](travis-ci-sync-button.png)
+<img src="travis-ci-sync-button.png" class="screenshot" alt="Travis CI Sync button">
 
 ### Authorize bundlesize to post on pull requests
 
@@ -117,13 +115,12 @@ this link to get the bundlesize
 token](https://github.com/login/oauth/authorize?scope=repo%3Astatus&client_id=6756cb03a8d6528aca5a)
 that will be stored in the Travis configuration. 
 
-![bundlesize token](bundlesize-token.jpg)
+<img src="bundlesize-token.jpg" class="screenshot" alt="bundlesize token">
 
 In your project's Travis dashboard, go to More options > Settings > Environment
 variables.
 
-
-![Environment variables](environment-variables.png)
+<img src="environment-variables.png" class="screenshot" alt="Adding environment variables on Travis CI">
 
 Add a new environment variable with the token as the value field and
 BUNDLESIZE_GITHUB_TOKEN as the name. 
@@ -145,11 +142,11 @@ To see how the app stacks up against the performance budget, add the code to the
 GitHub repo that you created in step 3. On Glitch, click your project name to go
 to Project options > Advanced options.
 
-![Glitch Advanced options button](advanced-options-button.png)
+<img src="advanced-options-button.png" class="screenshot" alt="Glitch Advanced options button">
 
 In the Advanced options menu, select Export to GitHub.
 
-![Glitch Export to GitHub button](export-to-github-button.png)
+<img src="export-to-github-button.png" class="screenshot" alt="Glitch Export to GitHub button">
 
 In the pop-up, enter your GitHub username and the name of the repo as
 "username/repo". 
@@ -160,13 +157,13 @@ repository.
 
 You’ll now see status checks in progress on the pull request page.
 
-![Github checks in progress](github-checks-in-progress.png)
+<img src="github-checks-in-progress.png" class="screenshot" alt="Github checks in progress">
 
 It won’t take long until all checks are done. Unfortunately, the cat voting app
 is a bit bloated and does not pass the performance budget check. The main bundle
 is 266KB and the budget is 170KB. 
 
-![Failed bundlesize check](failed-bundlesize-check.png)
+<img src="failed-bundlesize-check.png" class="screenshot" alt="Failed bundlesize check">
 
 ### Optimize
 
@@ -205,11 +202,11 @@ bundle file.
 
 * Click the Logs button.
 
-![glitch Logs button](logs-button.png)
+<img src="logs-button.png" class="screenshot" alt="Logs button">
 
 * Then click the Console button. 
 
-![Glitch Console](console-button.png)
+<web-screenshot type="console" aria-label="console" role="img"></web-screenshot>
 
 * In Glitch console, type <pre class="devsite-terminal devsite-click-to-copy">
   webpack</pre> and wait for it to finish the build.
@@ -219,7 +216,7 @@ bundle file.
 
 * Go to the pull request page on GitHub and wait for all checks to finish.
 
-![Passed budnlesize check](passed-bundlesize-check.png)
+<img src="passed-bundlesize-check.png" class="screenshot" alt="Passed budnlesize check">
 
 Success! The new size of the bundle is 125.5KB and all the checks have passed.
 🎉
