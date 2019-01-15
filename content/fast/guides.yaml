@@ -52,4 +52,5 @@ topics:
     - performance-budgets-101
     - your-first-performance-budget
     - incorporate-performance-budgets-into-your-build-tools
+    - using-bundlesize-with-travis-ci
     - using-lighthouse-ci-to-set-a-performance-budget
