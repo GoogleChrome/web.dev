@@ -202,7 +202,7 @@ bundle file.
 
 * Click the **Logs** button.
 
-<img src="logs-button.png" class="screenshot" alt="Logs button">
+<web-screenshot type="logs"></web-screenshot>
 
 * Then click the **Console** button. 
 
