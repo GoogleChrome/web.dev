@@ -40,7 +40,7 @@ kitty](https://glitch.com/edit/#!/scarce-pixie).
 ## Set the performance budget
 
 [This Glitch](https://glitch.com/edit/#!/scarce-pixie) already contains
-bundlesize. To start, click the Remix to Edit button to make the project
+bundlesize. To start, click the **Remix to Edit** button to make the project
 editable.
 
 <web-screenshot type="remix" aria-label="remix" role="img"></web-screenshot>
@@ -200,11 +200,11 @@ the different services, is always required.
 Since the source file has been updated, you need to run webpack to build the new
 bundle file.
 
-* Click the Logs button.
+* Click the **Logs** button.
 
 <img src="logs-button.png" class="screenshot" alt="Logs button">
 
-* Then click the Console button. 
+* Then click the **Console** button. 
 
 <web-screenshot type="console" aria-label="console" role="img"></web-screenshot>
 
