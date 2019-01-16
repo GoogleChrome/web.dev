@@ -7,9 +7,10 @@ description: |
   open web ecosystem. However, this means additional work of ensuring that all
   of the code you write is supported in each browser that you plan to target. If
   you want to use new JavaScript language features, you need to transpile these
-  features to backwards-compatible formats.  
+  features to backwards-compatible formats.
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
+web_lighthouse: N/A
 wf_blink_components: N/A
 ---
 
@@ -117,7 +118,7 @@ also use them with `@babel/preset-env` to only target browsers that support
 them.
 
 
-Instead of querying for specific browser versions or market share, consider 
+Instead of querying for specific browser versions or market share, consider
 specifying `“esmodules” : true` inside your `.babelrc` file's `targets` field.
 
 ```json
