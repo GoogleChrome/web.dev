@@ -22,6 +22,10 @@ numbers is optimized through code-splitting.
 
 ## Measure
 
+<div class="aside note">
+ Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
+</div>
+
 Like always, it's important to first measure how well a website performs before
 attempting to add any optimizations.
 
