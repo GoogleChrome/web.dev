@@ -22,6 +22,10 @@ image.
 
 ## Measure
 
+<div class="aside note">
+ Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
+</div>
+
 It's always a good idea to begin by inspecting a website before adding any
 optimizations.
 
