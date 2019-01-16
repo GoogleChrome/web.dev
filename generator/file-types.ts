@@ -28,9 +28,18 @@ export interface GuideHTMLFileWithMetadata extends
   readonly artifacts: string[];
 }
 
+export interface PathTopic {
+  title: string;
+  guides: string[];
+}
+
 export interface LearningPath {
   readonly name: string;
+  readonly title: string;
+  readonly description: string;
+  readonly overview: string;
   readonly guides: GuideHTMLFileWithMetadata[];
+  readonly topics: PathTopic[];
 }
 
 export interface TopLevelFile {

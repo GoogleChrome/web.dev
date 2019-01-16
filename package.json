@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@types/handlebars": "^4.0.40",
+    "@types/js-yaml": "^3.11.4",
     "@types/mkdirp": "^0.5.2",
     "@types/node": "^10.12.18",
     "cross-env": "^5.2.0",

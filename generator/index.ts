@@ -32,19 +32,14 @@ async function readContentDirectory(): Promise<FileData[]> {
   }));
 }
 
-const shouldPreserveFileForBuildOutput = (_file: FileData) => {
+function shouldPreserveFileForBuildOutput(_file: FileData) {
   return true;
-};
+}
 
 async function writeBuildOutput(_files: FileData[]) {}
 
 async function main() {
   const files = await readContentDirectory();
-  console.log('[')
-  for (const file of files) {
-    console.log(JSON.stringify(file) + ',');
-  }
-  console.log(']')
   const filteredFiles = files.filter(shouldPreserveFileForBuildOutput);
 
   await writeBuildOutput(filteredFiles);
