@@ -125,15 +125,15 @@
     {{/if}}
   {{else}}
     <div class="cta-next-guide__heading">
-      {{path.title}}
+      {{learningPath.title}}
     </div>
     <web-guide-complete{{#if flags.complete}} guide="{{id}}"{{/if}}>
       <a class="cta-next-guide__link gc-analytics-event"
           data-category="web.dev"
           data-label="guide, back to path"
           data-action="click"
-          href="{{path.href}}">
-        {{path.title}}
+          href="/{{learningPath.name}}">
+        {{learningPath.title}}
       </a>
     </web-guide-complete>
     {{#if flags.complete}}
@@ -148,7 +148,7 @@
       data-category="web.dev"
       data-label="guide, go back"
       data-action="click"
-      href="{{path.href}}">
+      href="/{{learningPath.name}}">
     Return to all guides
   </a>
 </div>

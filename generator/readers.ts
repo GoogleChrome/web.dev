@@ -106,19 +106,31 @@ export async function readLearningPath(
       guideFiles.filter(file => file.isDirectory())
           .map(guide => readGuide(directoryName, guide.name)));
 
-  for (const topic of topics) {
+  for (let topicNumber = 0; topicNumber < topics.length; topicNumber++) {
+    const topic = topics[topicNumber];
     topic.id = slug(topic.title);
 
-    for (let i = 0; i < topic.guides.length; i++) {
-      const guide =
-          guides.find(guide => path.basename(guide.name) === topic.guides[i]);
+    for (let guideNumber = 0; guideNumber < topic.guides.length;
+         guideNumber++) {
+      const guide = guides.find(
+          guide => path.basename(guide.name) === topic.guides[guideNumber]);
 
       if (!guide) {
         throw new Error(`Could not find guide specified in "guides.yaml" of "${
-            learningPathName}" with name "${topic.guides[i]}"`);
+            learningPathName}" with name "${topic.guides[guideNumber]}"`);
       }
 
-      topic.guides[i] = guide;
+      if (guideNumber > 0) {
+        topic.guides[guideNumber - 1].next = guide;
+      }
+
+      topic.guides[guideNumber] = guide;
+    }
+
+    if (topicNumber > 0) {
+      const previousTopic = topics[topicNumber - 1];
+      previousTopic.guides[previousTopic.guides.length - 1].next =
+          topic.guides[0];
     }
   }
 
