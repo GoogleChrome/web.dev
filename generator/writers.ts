@@ -17,6 +17,7 @@ const PATH_TEMPLATE = readTemplate('path');
 const DEVSITE_TEMPLATE = readTemplate('devsite');
 const ROOT_CARDS_TEMPLATE = readTemplate('root-cards');
 const GUIDE_TEMPLATE = readTemplate('guide');
+const CODELAB_TEMPLATE = readTemplate('glitch');
 
 export async function writeTopLevelFile(directory: string, file: TopLevelFile) {
   await fs.writeFile(path.resolve(directory, file.name), file.body);
@@ -42,6 +43,21 @@ async function writeSingleGuide(
   await fs.writeFile(
       path.resolve(guideDirectory, 'index.html'),
       DEVSITE_TEMPLATE({title, meta: {description}, body}));
+
+  for (const artifact of guide.artifacts) {
+    await fs.copyFile(
+        artifact.source,
+        path.resolve(directory, guide.name, artifact.fileName));
+  }
+
+  for (const codelab of guide.codelabs) {
+    const {title, description} = codelab.attributes;
+    const codeLabBody = CODELAB_TEMPLATE({main: markdown(codelab.body)});
+
+    await fs.writeFile(
+        path.resolve(guideDirectory, codelab.name + '.html'),
+        DEVSITE_TEMPLATE({title, meta: {description}, body: codeLabBody}));
+  }
 }
 
 export async function writeLearningPath(directory: string, file: LearningPath) {

@@ -22,10 +22,15 @@ export interface HTMLFileWithMetadata<M extends Metadata> {
   readonly body: string;
 }
 
+export interface GuideArtifact {
+  readonly source: string;
+  readonly fileName: string;
+}
+
 export interface GuideHTMLFileWithMetadata extends
     HTMLFileWithMetadata<GuideMetadata> {
   readonly codelabs: Array<HTMLFileWithMetadata<CodelabMetadata>>;
-  readonly artifacts: string[];
+  readonly artifacts: GuideArtifact[];
   readonly href: string;
   readonly title: string;
 }
