@@ -35,11 +35,11 @@ function isCodelab(fileName: string) {
   return fileName.startsWith('codelab-') && fileName.endsWith('.md');
 }
 
-async function readCodelab(codelabFile: string) {
+async function readCodelab(href: string, codelabFile: string) {
   const {attributes, body} = await readYamlAndAssertAttributes(
       CODELAB_REQUIRED_ATTRIBUTES, codelabFile);
 
-  return {name: codelabFile, attributes, body};
+  return {name: codelabFile, attributes, href, body};
 }
 
 async function readGuide(directoryName: string, guideName: string):
@@ -62,12 +62,16 @@ async function readGuide(directoryName: string, guideName: string):
   const artifacts =
       guideContentFiles.filter(file => !isCodelab(file) && file !== 'index.md');
 
+  const href = `/${path.basename(directoryName)}/${guideName}`;
+
   const codelabs = await Promise.all(codelabFiles.map(
-      codelabFile => readCodelab(path.resolve(guideFileName, codelabFile))));
+      codelabFile => readCodelab(
+          `${href}/${codelabFile.substring(0, codelabFile.length - 3)}`,
+          path.resolve(guideFileName, codelabFile))));
 
   return {
     name: guideName,
-    href: `/${path.basename(directoryName)}/${guideName}`,
+    href,
     title: attributes.title,
     attributes,
     body,

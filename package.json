@@ -39,6 +39,7 @@
   "devDependencies": {
     "@types/handlebars": "^4.0.40",
     "@types/js-yaml": "^3.11.4",
+    "@types/marked": "^0.6.0",
     "@types/mkdirp": "^0.5.2",
     "@types/node": "^10.12.18",
     "@types/rimraf": "^2.0.2",

@@ -1,8 +1,10 @@
 import * as handlebars from 'handlebars';
 import * as path from 'path';
 
-import {LearningPath, RootCards, SerializedGuideJson, TopLevelFile} from './file-types.js';
+import {loadContributorFromConfiguration} from './contributors.js';
+import {GuideHTMLFileWithMetadata, LearningPath, PathTopic, RootCards, SerializedGuideJson, TopLevelFile} from './file-types.js';
 import * as fs from './fsp.js';
+import {markdown} from './markdown.js';
 
 const TEMPLATE_DIRECTORY = path.resolve(__dirname, '..', '..', 'templates');
 
@@ -14,9 +16,32 @@ function readTemplate(templateName: string) {
 const PATH_TEMPLATE = readTemplate('path');
 const DEVSITE_TEMPLATE = readTemplate('devsite');
 const ROOT_CARDS_TEMPLATE = readTemplate('root-cards');
+const GUIDE_TEMPLATE = readTemplate('guide');
 
 export async function writeTopLevelFile(directory: string, file: TopLevelFile) {
   await fs.writeFile(path.resolve(directory, file.name), file.body);
+}
+
+async function writeSingleGuide(
+    directory: string, learningPath: LearningPath, topic: PathTopic,
+    guide: GuideHTMLFileWithMetadata) {
+  const guideDirectory = path.resolve(directory, guide.name);
+
+  const main = markdown(guide.body);
+  const {title, attributes: {description}} = guide;
+
+  const body = GUIDE_TEMPLATE({
+    main,
+    learningPath,
+    topic,
+    author: await loadContributorFromConfiguration(guide.attributes.author),
+    ...guide
+  });
+
+  await fs.mkdirp(guideDirectory);
+  await fs.writeFile(
+      path.resolve(guideDirectory, 'index.html'),
+      DEVSITE_TEMPLATE({title, meta: {description}, body}));
 }
 
 export async function writeLearningPath(directory: string, file: LearningPath) {
@@ -26,6 +51,15 @@ export async function writeLearningPath(directory: string, file: LearningPath) {
       path.resolve(directory, name + '.html'),
       DEVSITE_TEMPLATE(
           {title, meta: {description}, body: PATH_TEMPLATE(file)}));
+
+  const contentDirectoryName = path.resolve(directory, name);
+  await fs.mkdirp(contentDirectoryName);
+
+  for (const topic of file.topics) {
+    for (const guide of topic.guides) {
+      await writeSingleGuide(contentDirectoryName, file, topic, guide);
+    }
+  }
 }
 
 export async function writeRootCards(directory: string, cards: RootCards) {

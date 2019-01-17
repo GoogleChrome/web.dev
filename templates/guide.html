@@ -9,21 +9,19 @@
         <div class="breadcrumbs">
           <ul>
             <li>
-              <a href="{{path.href}}"
+              <a href="/{{learningPath.name}}"
                   class="gc-analytics-event"
                   data-category="web.dev"
                   data-label="guide, path breadcrumb"
-                  data-action="click">{{path.title}}</a>
+                  data-action="click">{{learningPath.title}}</a>
             </li>
-            {{#if topic}}
             <li>
-              <a href="{{path.href}}#topic-{{topic.id}}"
+              <a href="/{{learningPath.name}}#topic-{{topic.id}}"
                   class="gc-analytics-event"
                   data-category="web.dev"
                   data-label="guide, topic breadcrumb"
                   data-action="click">{{topic.title}}</a>
             </li>
-            {{/if}}
           </ul>
         </div>
       </div>
@@ -65,7 +63,7 @@
   </p>
   {{#each codelabs}}
   <div class="codelab-cta">
-    <span class="codelab-cta__title">{{title}}</span>
+    <span class="codelab-cta__title">{{attributes.title}}</span>
     <a href="{{href}}"
         class="button button-flat gc-analytics-event"
         data-category="web.dev"
@@ -90,7 +88,7 @@
                 data-label="guide, codelab sidebar cta"
                 data-action="click"
                 href="{{href}}">
-              {{title}}
+              {{attributes.title}}
             </a>
           </div>
         {{/each}}
