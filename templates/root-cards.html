@@ -1,14 +1,14 @@
 {{!-- Copyright 2018 Google LLC. --}}
 {{!-- SPDX-License-Identifier: Apache-2.0 --}}
 {{#each paths}}
-<div class="card card--{{id}}">
-  <div class="card__header card__header--colored card__header--{{id}}">
-    {{#if config.disabled}}<span class="card__progress">Coming Soon</span>{{/if}}
+<div class="card card--{{name}}">
+  <div class="card__header card__header--colored card__header--{{name}}">
+    {{#if disabled}}<span class="card__progress">Coming Soon</span>{{/if}}
   </div>
   <div class="card__content">
-    <p class="card__title">{{config.title}}</p>
-    <p class="card__desc">{{config.description}}</p>
-    {{#if config.disabled}}
+    <p class="card__title">{{title}}</p>
+    <p class="card__desc">{{description}}</p>
+    {{#if disabled}}
     {{else}}
     <div class="card__actions">
       <a href="{{href}}"

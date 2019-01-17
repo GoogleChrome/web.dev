@@ -1,9 +1,9 @@
 import * as path from 'path';
 
-import {FileData} from './file-types.js';
+import {FileData, RootCards} from './file-types.js';
 import * as fs from './fsp.js';
 import {readLearningPath, readTopLevelFile} from './readers.js';
-import {writeLearningPath, writeTopLevelFile} from './writers.js';
+import {writeLearningPath, writeRootCards, writeTopLevelFile} from './writers.js';
 
 const TOP_LEVEL_DIRECTORY = path.resolve(__dirname, '..', '..');
 const BUILD_OUTPUT = path.resolve(TOP_LEVEL_DIRECTORY, 'build_output', 'en');
@@ -41,13 +41,20 @@ async function writeBuildOutput(files: FileData[]) {
   await fs.rimraf(BUILD_OUTPUT);
   await fs.mkdirp(BUILD_OUTPUT);
 
+  const rootCards: RootCards = {paths: []};
+
   for (const file of files) {
     if ('body' in file) {
       await writeTopLevelFile(BUILD_OUTPUT, file);
     } else if ('topics' in file) {
       await writeLearningPath(BUILD_OUTPUT, file);
+      rootCards.paths.push({...file, href: `/${file.name}`});
     }
   }
+
+  rootCards.paths.sort((one, other) => one.order - other.order);
+
+  await writeRootCards(BUILD_OUTPUT, rootCards);
 }
 
 async function main() {

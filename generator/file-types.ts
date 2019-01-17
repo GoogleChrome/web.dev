@@ -42,6 +42,7 @@ export interface LearningPath {
   readonly description: string;
   readonly overview: string;
   readonly topics: PathTopic[];
+  readonly order: number;
 }
 
 export interface TopLevelFile {
@@ -51,6 +52,10 @@ export interface TopLevelFile {
 
 export interface ImagesDirectory {
   readonly name: string;
+}
+
+export interface RootCards {
+  readonly paths: Array<LearningPath&{href: string}>;
 }
 
 export type FileData = LearningPath|TopLevelFile|ImagesDirectory;

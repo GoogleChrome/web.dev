@@ -14,7 +14,7 @@ const REQUIRED_ATTRIBUTES = [
 const GUIDE_REQUIRED_ATTRIBUTES = [...REQUIRED_ATTRIBUTES, 'web_lighthouse'];
 const CODELAB_REQUIRED_ATTRIBUTES = [...REQUIRED_ATTRIBUTES, 'glitch'];
 const GUIDE_CONFIGURATION_REQUIRED_ATTRIBUTES =
-    ['title', 'description', 'overview', 'topics'];
+    ['title', 'description', 'overview', 'topics', 'order'];
 
 async function readYamlAndAssertAttributes(
     requiredAttributes: string[], fileName: string) {
@@ -96,7 +96,7 @@ export async function readLearningPath(
     directoryName: string, learningPathName: string): Promise<LearningPath> {
   const guideFiles = await fs.readdir(directoryName, {withFileTypes: true});
 
-  const {title, description, overview, topics} =
+  const {title, description, overview, order, topics} =
       await readGuideConfiguration(directoryName);
 
   const guides = await Promise.all(
@@ -119,7 +119,7 @@ export async function readLearningPath(
     }
   }
 
-  return {title, description, overview, name: learningPathName, topics};
+  return {title, description, overview, name: learningPathName, order, topics};
 }
 
 export async function readTopLevelFile(
