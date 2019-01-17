@@ -1,9 +1,9 @@
 import * as path from 'path';
 
-import {FileData, RootCards} from './file-types.js';
+import {FileData, RootCards, SerializedGuideJson} from './file-types.js';
 import * as fs from './fsp.js';
 import {readLearningPath, readTopLevelFile} from './readers.js';
-import {writeLearningPath, writeRootCards, writeTopLevelFile} from './writers.js';
+import {writeLearningPath, writeRootCards, writeSerializedGuideJson, writeTopLevelFile} from './writers.js';
 
 const TOP_LEVEL_DIRECTORY = path.resolve(__dirname, '..', '..');
 const BUILD_OUTPUT = path.resolve(TOP_LEVEL_DIRECTORY, 'build_output', 'en');
@@ -42,6 +42,7 @@ async function writeBuildOutput(files: FileData[]) {
   await fs.mkdirp(BUILD_OUTPUT);
 
   const rootCards: RootCards = {paths: []};
+  const allGuides: SerializedGuideJson[] = [];
 
   for (const file of files) {
     if ('body' in file) {
@@ -49,12 +50,26 @@ async function writeBuildOutput(files: FileData[]) {
     } else if ('topics' in file) {
       await writeLearningPath(BUILD_OUTPUT, file);
       rootCards.paths.push({...file, href: `/${file.name}`});
+
+      for (const topic of file.topics) {
+        for (const guide of topic.guides) {
+          allGuides.push({
+            topic: topic.title,
+            path: guide.title,
+            id: guide.name,
+            lighthouse: guide.attributes.web_lighthouse,
+            title: guide.title,
+            url: `/${file.name}/${guide.name}`
+          });
+        }
+      }
     }
   }
 
   rootCards.paths.sort((one, other) => one.order - other.order);
 
   await writeRootCards(BUILD_OUTPUT, rootCards);
+  await writeSerializedGuideJson(BUILD_OUTPUT, allGuides);
 }
 
 async function main() {

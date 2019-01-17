@@ -32,7 +32,7 @@ export interface GuideHTMLFileWithMetadata extends
 
 export interface PathTopic {
   title: string;
-  guides: GuideHTMLFileWithMetadata[]|string[];
+  guides: GuideHTMLFileWithMetadata[];
   id: string;
 }
 
@@ -56,6 +56,15 @@ export interface ImagesDirectory {
 
 export interface RootCards {
   readonly paths: Array<LearningPath&{href: string}>;
+}
+
+export interface SerializedGuideJson {
+  readonly topic: string;
+  readonly path: string;
+  readonly id: string;
+  readonly lighthouse: string[];
+  readonly title: string;
+  readonly url: string;
 }
 
 export type FileData = LearningPath|TopLevelFile|ImagesDirectory;

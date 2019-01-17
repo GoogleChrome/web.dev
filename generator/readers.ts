@@ -76,8 +76,7 @@ async function readGuide(directoryName: string, guideName: string):
   };
 }
 
-async function readGuideConfiguration(directoryName: string):
-    Promise<LearningPath> {
+async function readGuideConfiguration(directoryName: string) {
   const guideConfiguration = yaml.load(
       await fs.readFile(path.resolve(directoryName, 'guides.yaml'), 'utf8'));
 

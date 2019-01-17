@@ -1,7 +1,7 @@
 import * as handlebars from 'handlebars';
 import * as path from 'path';
 
-import {LearningPath, RootCards, TopLevelFile} from './file-types.js';
+import {LearningPath, RootCards, SerializedGuideJson, TopLevelFile} from './file-types.js';
 import * as fs from './fsp.js';
 
 const TEMPLATE_DIRECTORY = path.resolve(__dirname, '..', '..', 'templates');
@@ -31,4 +31,11 @@ export async function writeLearningPath(directory: string, file: LearningPath) {
 export async function writeRootCards(directory: string, cards: RootCards) {
   await fs.writeFile(
       path.resolve(directory, '_root-cards.html'), ROOT_CARDS_TEMPLATE(cards));
+}
+
+export async function writeSerializedGuideJson(
+    directory: string, allGuides: SerializedGuideJson[]) {
+  await fs.writeFile(
+      path.resolve(directory, '_guides-json.html'),
+      JSON.stringify({guides: allGuides}));
 }
