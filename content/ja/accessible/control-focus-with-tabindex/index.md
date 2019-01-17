@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: tabinxed でフォーカスを制御する
+title: tabindex でフォーカスを制御する
 description: |
   <button> や <input> といったネイティブの HTML 要素には、キーボードアクセシビリティ機能が最初から組み込まれています。 カスタムのコンポーネントを開発している場合は、tabindex 属性でキーボードでアクセシブルになるようにしましょう。
 author: robdodson
@@ -11,7 +11,7 @@ web_updated_on: 2018-12-06
 web_published_on: 2018-11-18
 wf_blink_components: Blink>Accessibility
 ---
-# tabinxed でフォーカスを制御する
+# tabindex でフォーカスを制御する
 
 `<button>` や `<input>` といったネイティブの HTML 要素には、キーボードアクセシビリティ機能が最初から組み込まれています。 *カスタム*のコンポーネントを開発している場合は、`tabindex` 属性でキーボードでアクセシブルになるようにしましょう。
 
