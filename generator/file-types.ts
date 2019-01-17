@@ -26,11 +26,14 @@ export interface GuideHTMLFileWithMetadata extends
     HTMLFileWithMetadata<GuideMetadata> {
   readonly codelabs: Array<HTMLFileWithMetadata<CodelabMetadata>>;
   readonly artifacts: string[];
+  readonly href: string;
+  readonly title: string;
 }
 
 export interface PathTopic {
   title: string;
-  guides: string[];
+  guides: GuideHTMLFileWithMetadata[]|string[];
+  id: string;
 }
 
 export interface LearningPath {
@@ -38,7 +41,6 @@ export interface LearningPath {
   readonly title: string;
   readonly description: string;
   readonly overview: string;
-  readonly guides: GuideHTMLFileWithMetadata[];
   readonly topics: PathTopic[];
 }
 

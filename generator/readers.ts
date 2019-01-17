@@ -1,6 +1,7 @@
 import * as yamlFrontMatter from 'front-matter';
 import * as yaml from 'js-yaml';
 import * as path from 'path';
+import * as slug from 'slug';
 
 import {GuideHTMLFileWithMetadata, LearningPath, TopLevelFile} from './file-types.js';
 import * as fs from './fsp.js';
@@ -41,9 +42,10 @@ async function readCodelab(codelabFile: string) {
   return {name: codelabFile, attributes, body};
 }
 
-async function readGuide(guideName: string):
+async function readGuide(directoryName: string, guideName: string):
     Promise<GuideHTMLFileWithMetadata> {
-  const guideIndexPage = path.resolve(guideName, 'index.md');
+  const guideFileName = path.resolve(directoryName, guideName);
+  const guideIndexPage = path.resolve(guideFileName, 'index.md');
   const {attributes, body} = await readYamlAndAssertAttributes(
       GUIDE_REQUIRED_ATTRIBUTES, guideIndexPage);
 
@@ -55,18 +57,27 @@ async function readGuide(guideName: string):
             guideIndexPage}"`);
   }
 
-  const guideContentFiles = await fs.readdir(guideName);
+  const guideContentFiles = await fs.readdir(guideFileName);
   const codelabFiles = guideContentFiles.filter(isCodelab);
   const artifacts =
       guideContentFiles.filter(file => !isCodelab(file) && file !== 'index.md');
 
   const codelabs = await Promise.all(codelabFiles.map(
-      codelabFile => readCodelab(path.resolve(guideName, codelabFile))));
+      codelabFile => readCodelab(path.resolve(guideFileName, codelabFile))));
 
-  return {name: guideName, attributes, body, codelabs, artifacts};
+  return {
+    name: guideName,
+    href: `/${path.basename(directoryName)}/${guideName}`,
+    title: attributes.title,
+    attributes,
+    body,
+    codelabs,
+    artifacts
+  };
 }
 
-async function readGuideConfiguration(directoryName: string) {
+async function readGuideConfiguration(directoryName: string):
+    Promise<LearningPath> {
   const guideConfiguration = yaml.load(
       await fs.readFile(path.resolve(directoryName, 'guides.yaml'), 'utf8'));
 
@@ -90,9 +101,25 @@ export async function readLearningPath(
 
   const guides = await Promise.all(
       guideFiles.filter(file => file.isDirectory())
-          .map(guide => readGuide(path.resolve(directoryName, guide.name))));
+          .map(guide => readGuide(directoryName, guide.name)));
 
-  return {title, description, overview, name: learningPathName, guides, topics};
+  for (const topic of topics) {
+    topic.id = slug(topic.title);
+
+    for (let i = 0; i < topic.guides.length; i++) {
+      const guide =
+          guides.find(guide => path.basename(guide.name) === topic.guides[i]);
+
+      if (!guide) {
+        throw new Error(`Could not find guide specified in "guides.yaml" of "${
+            learningPathName}" with name "${topic.guides[i]}"`);
+      }
+
+      topic.guides[i] = guide;
+    }
+  }
+
+  return {title, description, overview, name: learningPathName, topics};
 }
 
 export async function readTopLevelFile(

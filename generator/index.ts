@@ -3,9 +3,10 @@ import * as path from 'path';
 import {FileData} from './file-types.js';
 import * as fs from './fsp.js';
 import {readLearningPath, readTopLevelFile} from './readers.js';
+import {writeLearningPath, writeTopLevelFile} from './writers.js';
 
 const TOP_LEVEL_DIRECTORY = path.resolve(__dirname, '..', '..');
-// const BUILD_OUTPUT = path.resolve(TOP_LEVEL_DIRECTORY, 'build_output');
+const BUILD_OUTPUT = path.resolve(TOP_LEVEL_DIRECTORY, 'build_output', 'en');
 const CONTENT = path.resolve(TOP_LEVEL_DIRECTORY, 'content');
 
 async function readContentDirectory(): Promise<FileData[]> {
@@ -36,7 +37,18 @@ function shouldPreserveFileForBuildOutput(_file: FileData) {
   return true;
 }
 
-async function writeBuildOutput(_files: FileData[]) {}
+async function writeBuildOutput(files: FileData[]) {
+  await fs.rimraf(BUILD_OUTPUT);
+  await fs.mkdirp(BUILD_OUTPUT);
+
+  for (const file of files) {
+    if ('body' in file) {
+      await writeTopLevelFile(BUILD_OUTPUT, file);
+    } else if ('topics' in file) {
+      await writeLearningPath(BUILD_OUTPUT, file);
+    }
+  }
+}
 
 async function main() {
   const files = await readContentDirectory();
@@ -45,7 +57,8 @@ async function main() {
   await writeBuildOutput(filteredFiles);
 }
 
-main().catch(e => {
-  console.error(`Encountered an error: ${e}`);
+main().catch((e: Error) => {
+  console.error(`Encountered an error: ${e.stack}`);
+  console.error(e);
   process.exit(-1);
 });
