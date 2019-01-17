@@ -51,8 +51,9 @@ async function writeSingleGuide(
   }
 
   for (const codelab of guide.codelabs) {
-    const {title, description} = codelab.attributes;
-    const codeLabBody = CODELAB_TEMPLATE({main: markdown(codelab.body)});
+    const {title, description, glitch} = codelab.attributes;
+    const codeLabBody = CODELAB_TEMPLATE(
+        {main: markdown(codelab.body), glitch, title, relatedGuide: guide});
 
     await fs.writeFile(
         path.resolve(guideDirectory, codelab.name + '.html'),
