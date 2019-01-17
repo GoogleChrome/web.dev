@@ -6,7 +6,7 @@
     <!-- BREADRUMBS AND PROGRESS -->
     <div class="row">
       <div class="breadcrumbs-and-progress">
-        <div class="web-breadcrumbs">
+        <div class="breadcrumbs">
           <ul>
             <li>
               <a href="{{path.href}}"
@@ -26,7 +26,6 @@
             {{/if}}
           </ul>
         </div>
-        <a href="https://github.com/GoogleChrome/web.dev/tree/master/content{{path.href}}/{{id}}/index.md" target="_blank" rel="noopener" class="web-breadcrumbs__edit-link">Edit this page on GitHub</a>
       </div>
     </div>
 
@@ -55,6 +54,10 @@
         {{/if}}
 {{{main}}}
 
+  <h2>Help us improve!</h2>
+  <a class="button button-secondary" href="https://github.com/GoogleChrome/web.dev/tree/master/content{{path.href}}/{{id}}/index.md" rel="noopener">
+    Edit this page on GitHub
+  </a>
   <hr />
 
   {{#if codelabs.length}}
