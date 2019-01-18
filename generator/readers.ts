@@ -71,7 +71,7 @@ async function readGuide(directoryName: string, guideName: string):
   const href = `/${path.basename(directoryName)}/${guideName}`;
 
   const codelabs = await Promise.all(codelabFiles.map(codelabFile => {
-    const codeLabName = codelabFile.substring(0, codelabFile.length - 3);
+    const codeLabName = path.basename(codelabFile, '.md');
 
     return readCodelab(`${href}/${codeLabName}`, guideFileName, codeLabName);
   }));
