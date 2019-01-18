@@ -2,7 +2,7 @@ import * as handlebars from 'handlebars';
 import * as path from 'path';
 
 import {loadContributorFromConfiguration} from './contributors.js';
-import {GuideHTMLFileWithMetadata, LearningPath, PathTopic, RootCards, SerializedGuideJson, TopLevelFile} from './file-types.js';
+import {InMemoryRepresentationOfGuideMetadata, LearningPath, PathTopic, RootCards, SerializedGuideJson, TopLevelFile} from './file-types.js';
 import * as fs from './fsp.js';
 import {markdown} from './markdown.js';
 
@@ -25,7 +25,7 @@ export async function writeTopLevelFile(directory: string, file: TopLevelFile) {
 
 async function writeSingleGuide(
     directory: string, learningPath: LearningPath, topic: PathTopic,
-    guide: GuideHTMLFileWithMetadata) {
+    guide: InMemoryRepresentationOfGuideMetadata) {
   const guideDirectory = path.resolve(directory, guide.name);
 
   const main = markdown(guide.body);

@@ -3,7 +3,7 @@ import * as yaml from 'js-yaml';
 import * as path from 'path';
 import * as slug from 'slug';
 
-import {GuideHTMLFileWithMetadata, LearningPath, TopLevelFile} from './file-types.js';
+import {InMemoryRepresentationOfGuideMetadata, LearningPath, LearningPathConfiguration, TopLevelFile} from './file-types.js';
 import * as fs from './fsp.js';
 
 const REQUIRED_ATTRIBUTES = [
@@ -45,7 +45,7 @@ async function readCodelab(
 }
 
 async function readGuide(directoryName: string, guideName: string):
-    Promise<GuideHTMLFileWithMetadata> {
+    Promise<InMemoryRepresentationOfGuideMetadata> {
   const guideFileName = path.resolve(directoryName, guideName);
   const guideIndexPage = path.resolve(guideFileName, 'index.md');
   const {attributes, body} = await readYamlAndAssertAttributes(
@@ -87,7 +87,8 @@ async function readGuide(directoryName: string, guideName: string):
   };
 }
 
-async function readGuideConfiguration(directoryName: string) {
+async function readLearningPathConfiguration(directoryName: string):
+    Promise<LearningPathConfiguration> {
   const guideConfiguration = yaml.load(
       await fs.readFile(path.resolve(directoryName, 'guides.yaml'), 'utf8'));
 
@@ -107,41 +108,51 @@ export async function readLearningPath(
   const guideFiles = await fs.readdir(directoryName, {withFileTypes: true});
 
   const {title, description, overview, order, topics} =
-      await readGuideConfiguration(directoryName);
+      await readLearningPathConfiguration(directoryName);
 
-  const guides = await Promise.all(
+  const guides: InMemoryRepresentationOfGuideMetadata[] = await Promise.all(
       guideFiles.filter(file => file.isDirectory())
           .map(guide => readGuide(directoryName, guide.name)));
 
-  for (let topicNumber = 0; topicNumber < topics.length; topicNumber++) {
-    const topic = topics[topicNumber];
-    topic.id = slug(topic.title);
+  const learningPath: LearningPath =
+      {title, description, overview, order, topics: [], name: learningPathName};
 
-    for (let guideNumber = 0; guideNumber < topic.guides.length;
+  for (let topicNumber = 0; topicNumber < topics.length; topicNumber++) {
+    const {title, guides: stringGuides} = topics[topicNumber];
+    const id = slug(title);
+
+    const topicGuides: InMemoryRepresentationOfGuideMetadata[] = [];
+
+    for (let guideNumber = 0; guideNumber < stringGuides.length;
          guideNumber++) {
       const guide = guides.find(
-          guide => path.basename(guide.name) === topic.guides[guideNumber]);
+          guide => path.basename(guide.name) === stringGuides[guideNumber]);
 
       if (!guide) {
         throw new Error(`Could not find guide specified in "guides.yaml" of "${
-            learningPathName}" with name "${topic.guides[guideNumber]}"`);
+            learningPathName}" with name "${stringGuides[guideNumber]}"`);
       }
 
+      // Update the "next" of the previous guide to point to the current guide
       if (guideNumber > 0) {
-        topic.guides[guideNumber - 1].next = guide;
+        topicGuides[guideNumber - 1].next = guide;
       }
 
-      topic.guides[guideNumber] = guide;
+      topicGuides[guideNumber] = guide;
     }
 
+    // The "next" of the last guide in a topic will be set to the new topic
     if (topicNumber > 0) {
-      const previousTopic = topics[topicNumber - 1];
+      const previousTopic = learningPath.topics[topicNumber - 1];
+
       previousTopic.guides[previousTopic.guides.length - 1].next =
-          topic.guides[0];
+          topicGuides[0];
     }
+
+    learningPath.topics.push({title, id, guides: topicGuides});
   }
 
-  return {title, description, overview, name: learningPathName, order, topics};
+  return learningPath;
 }
 
 export async function readTopLevelFile(

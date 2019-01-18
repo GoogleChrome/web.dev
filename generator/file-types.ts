@@ -1,3 +1,13 @@
+/**
+ * A filepath relative to the `content` directory, including the language.
+ */
+export type FilePath = string;
+
+/**
+ * The name of a specific file (e.g. `path.basename(FilePath)`).
+ */
+export type FileName = string;
+
 export interface Metadata {
   readonly page_type: string;
   readonly title: string;
@@ -18,7 +28,7 @@ export interface CodelabMetadata extends Metadata {
 
 export interface HTMLFileWithMetadata<M extends Metadata> {
   readonly attributes: M;
-  readonly name: string;
+  readonly name: FileName;
   readonly body: string;
 }
 
@@ -27,17 +37,22 @@ export interface GuideArtifact {
   readonly fileName: string;
 }
 
-export interface GuideHTMLFileWithMetadata extends
-    HTMLFileWithMetadata<GuideMetadata> {
-  readonly codelabs: Array<HTMLFileWithMetadata<CodelabMetadata>>;
-  readonly artifacts: GuideArtifact[];
-  readonly href: string;
+export interface PathTopicConfiguration {
+  title: string;
+  guides: string[];
+}
+
+export interface LearningPathConfiguration {
   readonly title: string;
+  readonly description: string;
+  readonly overview: string;
+  readonly topics: PathTopicConfiguration[];
+  readonly order: number;
 }
 
 export interface PathTopic {
   title: string;
-  guides: GuideHTMLFileWithMetadata[];
+  guides: InMemoryRepresentationOfGuideMetadata[];
   id: string;
 }
 
@@ -48,6 +63,15 @@ export interface LearningPath {
   readonly overview: string;
   readonly topics: PathTopic[];
   readonly order: number;
+}
+
+export interface InMemoryRepresentationOfGuideMetadata extends
+    HTMLFileWithMetadata<GuideMetadata> {
+  readonly codelabs: Array<HTMLFileWithMetadata<CodelabMetadata>>;
+  readonly artifacts: GuideArtifact[];
+  readonly href: string;
+  readonly title: string;
+  next?: InMemoryRepresentationOfGuideMetadata|PathTopic;
 }
 
 export interface TopLevelFile {
