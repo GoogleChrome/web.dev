@@ -1,36 +1,40 @@
 import * as path from 'path';
 
-import {FileData, RootCards, SerializedGuideJson} from './file-types.js';
+import {DirectoryName, FileData, FilePath, readdir, resolvePath, RootCards, SerializedGuideJson} from './file-types.js';
 import * as fs from './fsp.js';
 import {readLearningPath, readTopLevelFile} from './readers.js';
 import {writeLearningPath, writeRootCards, writeSerializedGuideJson, writeTopLevelFile} from './writers.js';
 
-const TOP_LEVEL_DIRECTORY = path.resolve(__dirname, '..', '..');
-const BUILD_OUTPUT = path.resolve(TOP_LEVEL_DIRECTORY, 'build_output', 'en');
-const CONTENT = path.resolve(TOP_LEVEL_DIRECTORY, 'content');
+const TOP_LEVEL_DIRECTORY: FilePath =
+    path.resolve(__dirname, '..', '..') as FilePath;
+const BUILD_OUTPUT: FilePath =
+    resolvePath(TOP_LEVEL_DIRECTORY, 'build_output', 'en');
+const CONTENT: FilePath = resolvePath(TOP_LEVEL_DIRECTORY, 'content');
 
 async function readContentDirectory(): Promise<FileData[]> {
-  const contentFilesOrDirectories =
-      await fs.readdir(CONTENT, {withFileTypes: true});
+  const contentFilesOrDirectories: DirectoryName[] =
+      await readdir(CONTENT, {withFileTypes: true});
 
   if (typeof contentFilesOrDirectories[0] === 'string') {
     throw new Error(`You need at least Node 10.10.0 for this script`);
   }
 
-  return Promise.all(contentFilesOrDirectories.map(async (fileOrDirectory) => {
-    const resolvedName = path.resolve(CONTENT, fileOrDirectory.name);
+  return Promise.all(
+      contentFilesOrDirectories.map(async (fileOrDirectory: DirectoryName) => {
+        const resolvedName =
+            path.resolve(CONTENT, fileOrDirectory.name) as FilePath;
 
-    if (fileOrDirectory.isDirectory()) {
-      // Don't try to parse the images folder as a learning path
-      if (await fs.exists(path.resolve(resolvedName, 'guides.yaml'))) {
-        return readLearningPath(resolvedName, fileOrDirectory.name);
-      }
+        if (fileOrDirectory.isDirectory()) {
+          // Don't try to parse the images folder as a learning path
+          if (await fs.exists(path.resolve(resolvedName, 'guides.yaml'))) {
+            return readLearningPath(resolvedName, fileOrDirectory.name);
+          }
 
-      return {name: fileOrDirectory.name};
-    }
+          return {name: fileOrDirectory.name};
+        }
 
-    return readTopLevelFile(resolvedName, fileOrDirectory.name);
-  }));
+        return readTopLevelFile(resolvedName, fileOrDirectory.name);
+      }));
 }
 
 function shouldPreserveFileForBuildOutput(_file: FileData) {

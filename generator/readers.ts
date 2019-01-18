@@ -3,7 +3,7 @@ import * as yaml from 'js-yaml';
 import * as path from 'path';
 import * as slug from 'slug';
 
-import {InMemoryRepresentationOfGuideMetadata, LearningPath, LearningPathConfiguration, TopLevelFile} from './file-types.js';
+import {CodelabMetadata, FileName, FilePath, HTMLFileWithMetadata, InMemoryRepresentationOfGuideMetadata, LearningPath, LearningPathConfiguration, readdir, TopLevelFile} from './file-types.js';
 import * as fs from './fsp.js';
 
 const REQUIRED_ATTRIBUTES = [
@@ -31,12 +31,12 @@ async function readYamlAndAssertAttributes(
   return {attributes, body};
 }
 
-function isCodelab(fileName: string) {
+function isCodelab(fileName: FileName) {
   return fileName.startsWith('codelab-') && fileName.endsWith('.md');
 }
 
 async function readCodelab(
-    href: string, guideFileName: string, codelabFile: string) {
+    href: string, guideFileName: FilePath, codelabFile: FileName) {
   const {attributes, body} = await readYamlAndAssertAttributes(
       CODELAB_REQUIRED_ATTRIBUTES,
       path.resolve(guideFileName, codelabFile + '.md'));
@@ -44,9 +44,9 @@ async function readCodelab(
   return {name: codelabFile, attributes, href, body};
 }
 
-async function readGuide(directoryName: string, guideName: string):
+async function readGuide(directoryName: FilePath, guideName: FileName):
     Promise<InMemoryRepresentationOfGuideMetadata> {
-  const guideFileName = path.resolve(directoryName, guideName);
+  const guideFileName = path.resolve(directoryName, guideName) as FilePath;
   const guideIndexPage = path.resolve(guideFileName, 'index.md');
   const {attributes, body} = await readYamlAndAssertAttributes(
       GUIDE_REQUIRED_ATTRIBUTES, guideIndexPage);
@@ -59,7 +59,7 @@ async function readGuide(directoryName: string, guideName: string):
             guideIndexPage}"`);
   }
 
-  const guideContentFiles = await fs.readdir(guideFileName);
+  const guideContentFiles = await fs.readdir(guideFileName) as FileName[];
   const codelabFiles = guideContentFiles.filter(isCodelab);
   const artifacts =
       guideContentFiles.filter(file => !isCodelab(file) && file !== 'index.md')
@@ -70,11 +70,13 @@ async function readGuide(directoryName: string, guideName: string):
 
   const href = `/${path.basename(directoryName)}/${guideName}`;
 
-  const codelabs = await Promise.all(codelabFiles.map(codelabFile => {
-    const codeLabName = path.basename(codelabFile, '.md');
+  const codelabs: Array<HTMLFileWithMetadata<CodelabMetadata>> =
+      await Promise.all(codelabFiles.map(codelabFile => {
+        const codeLabName = path.basename(codelabFile, '.md') as FileName;
 
-    return readCodelab(`${href}/${codeLabName}`, guideFileName, codeLabName);
-  }));
+        return readCodelab(
+            `${href}/${codeLabName}`, guideFileName, codeLabName);
+      }));
 
   return {
     name: guideName,
@@ -87,7 +89,7 @@ async function readGuide(directoryName: string, guideName: string):
   };
 }
 
-async function readLearningPathConfiguration(directoryName: string):
+async function readLearningPathConfiguration(directoryName: FilePath):
     Promise<LearningPathConfiguration> {
   const guideConfiguration = yaml.load(
       await fs.readFile(path.resolve(directoryName, 'guides.yaml'), 'utf8'));
@@ -104,15 +106,16 @@ async function readLearningPathConfiguration(directoryName: string):
 }
 
 export async function readLearningPath(
-    directoryName: string, learningPathName: string): Promise<LearningPath> {
-  const guideFiles = await fs.readdir(directoryName, {withFileTypes: true});
+    directoryName: FilePath,
+    learningPathName: FileName): Promise<LearningPath> {
+  const guideFiles = await readdir(directoryName, {withFileTypes: true});
 
   const {title, description, overview, order, topics} =
       await readLearningPathConfiguration(directoryName);
 
   const guides: InMemoryRepresentationOfGuideMetadata[] = await Promise.all(
       guideFiles.filter(file => file.isDirectory())
-          .map(guide => readGuide(directoryName, guide.name)));
+          .map(guide => readGuide(directoryName, guide.name as FileName)));
 
   const learningPath: LearningPath =
       {title, description, overview, order, topics: [], name: learningPathName};

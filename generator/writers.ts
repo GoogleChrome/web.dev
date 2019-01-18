@@ -2,7 +2,7 @@ import * as handlebars from 'handlebars';
 import * as path from 'path';
 
 import {loadContributorFromConfiguration} from './contributors.js';
-import {InMemoryRepresentationOfGuideMetadata, LearningPath, PathTopic, RootCards, SerializedGuideJson, TopLevelFile} from './file-types.js';
+import {FilePath, InMemoryRepresentationOfGuideMetadata, LearningPath, PathTopic, RootCards, SerializedGuideJson, TopLevelFile} from './file-types.js';
 import * as fs from './fsp.js';
 import {markdown} from './markdown.js';
 
@@ -19,7 +19,8 @@ const ROOT_CARDS_TEMPLATE = readTemplate('root-cards');
 const GUIDE_TEMPLATE = readTemplate('guide');
 const CODELAB_TEMPLATE = readTemplate('glitch');
 
-export async function writeTopLevelFile(directory: string, file: TopLevelFile) {
+export async function writeTopLevelFile(
+    directory: FilePath, file: TopLevelFile) {
   await fs.writeFile(path.resolve(directory, file.name), file.body);
 }
 
