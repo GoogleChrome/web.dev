@@ -103,10 +103,14 @@ In a split second, you’ll have a live app.
 You’ll need to [register an account](https://travis-ci.com) on Travis and then
 activate GitHub Apps integration under the Settings section of your profile.
 
+<img src="./travis-ci.png" class="screenshot" alt="GitHub Apps integration on Travis CI">
+
 ### Once you have an account
 
 Go to Settings under your profile, hit the Sync account button, and make sure
 your project repo is listed on Travis.
+
+<img src="./travis-ci-sync-button.png" class="screenshot" alt="Travis CI Sync button">
 
 To kick-off continuous integration, you need two things:
 
