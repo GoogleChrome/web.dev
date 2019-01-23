@@ -32,8 +32,8 @@ the threshold you’ve set (e.g. < 80/100).
 
 <figure>
   <img src="./lighthouse-ci.png"
-       alt="Lighthouse CI" class="screenshot">
-  <figcaption><b>Figure 1</b>: Lighthouse CI</figcaption>
+       alt="A screenshot of failing Lighthouse CI checks on GitHub" class="screenshot">
+  <figcaption><b>Figure 1</b>: Lighthouse CI checks on GitHub</figcaption>
 </figure>
 
 Although you can test performance on localhost, your site will often perform
@@ -55,7 +55,7 @@ To get started, you’ll need a Firebase account. Once you’ve taken care of th
 [create a new project in the Firebase console](https://console.firebase.google.com/)
 by clicking "Add project":
 
-![Firebase console](./firebase-console.png)
+<img src="./firebase-console.png" alt="Firebase console screenshot" class="screenshot">
 
 ### Deploying to Firebase
 
