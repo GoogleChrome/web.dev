@@ -145,7 +145,7 @@ in a couple of minutes. 🎉
 
 ## 4. Automate Firebase deployment with Travis
 
-In Step 2, you logged into our Firebase account and deployed the app from the
+In Step 2, you logged into your Firebase account and deployed the app from the
 command line with `firebase deploy`. In order for Travis to deploy our app to
 Firebase, you have to authorize it. How do you do that? With a Firebase token.
 🗝️🔥
