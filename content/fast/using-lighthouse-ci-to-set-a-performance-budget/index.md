@@ -32,7 +32,7 @@ the threshold you’ve set (e.g. < 80/100).
 
 <figure>
   <img src="./lighthouse-ci.png"
-       alt="A screenshot of failing Lighthouse CI checks on GitHub" class="screenshot">
+       alt="Failing Lighthouse CI checks on GitHub" class="screenshot">
   <figcaption><b>Figure 1</b>: Lighthouse CI checks on GitHub</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ To get started, you’ll need a Firebase account. Once you’ve taken care of th
 [create a new project in the Firebase console](https://console.firebase.google.com/)
 by clicking "Add project":
 
-<img src="./firebase-console.png" alt="Firebase console screenshot" class="screenshot">
+<img src="./firebase-console.png" alt="" class="screenshot">
 
 ### Deploying to Firebase
 
@@ -110,7 +110,7 @@ activate GitHub Apps integration under the Settings section of your profile.
 Go to Settings under your profile, hit the Sync account button, and make sure
 your project repo is listed on Travis.
 
-<img src="./travis-ci-sync-button.png" class="screenshot" alt="Travis CI Sync button">
+<img src="./travis-ci-sync-button.png" class="screenshot" alt="">
 
 To kick-off continuous integration, you need two things:
 
@@ -162,7 +162,7 @@ Copy it and go back to Travis.
 
 In your project's Travis dashboard, go to **More options** > **Settings** > **Environment variables**.
 
-<img class="screenshot" src="./travis-environment-variables.png" alt="Travis environment variables">
+<img class="screenshot" src="./travis-environment-variables.png" alt="">
 
 Paste the token in the value field, name the variable `FIREBASE_TOKEN`, and add it.
 
@@ -199,7 +199,7 @@ and you'll get a Lighthouse CI key in your inbox. 📬
 
 On Travis, add this key as an environment variable and name it `LIGHTHOUSE_API_KEY`:
 
-<img class="screenshot" src="./lighthouse-api-key.jpg" alt="Add Lighthouse API key on Travis">
+<img class="screenshot" src="./lighthouse-api-key.jpg" alt="">
 
 <div class="aside note">
 You can reuse this same key for other projects.
@@ -259,9 +259,9 @@ To trigger the Lighthouse CI test:
 
 Hang tight on that pull request page and wait for the Lighthouse bot to sing! 🎤
 
-<img class="screenshot" src="./lighthouse-scores.png" alt="Lighthouse scores">
+<img class="screenshot" src="./lighthouse-scores.png" alt="Passing Lighthouse scores">
 
-<img class="screenshot" src="./github-checks.png" alt="Github checks">
+<img class="screenshot" src="./github-checks.png" alt="Passing Github checks">
 
 The performance score is great, the app is under budget, and the check has passed!
 
