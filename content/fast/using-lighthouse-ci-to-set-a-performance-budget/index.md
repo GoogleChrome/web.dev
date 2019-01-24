@@ -160,7 +160,7 @@ It will open a new tab in a browser window so that Firebase can verify you.
 After that, look back at the console, and you’ll see your freshly minted token.
 Copy it and go back to Travis.
 
-In your project's Travis dashboard, go to More options > Settings > Environment variables.
+In your project's Travis dashboard, go to **More options** > **Settings** > **Environment variables**.
 
 <img class="screenshot" src="./travis-environment-variables.png" alt="Travis environment variables">
 
