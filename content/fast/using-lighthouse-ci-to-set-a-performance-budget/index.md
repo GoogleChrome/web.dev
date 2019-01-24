@@ -176,7 +176,7 @@ after_success:
    - firebase deploy --token $FIREBASE_TOKEN --non-interactive
 </pre>
 
-Now push this change to GitHub and wait for your first automated deployment.
+Push this change to GitHub and wait for your first automated deployment.
 If you take a look at your Travis log, it should soon say ✔️ Deploy complete!
 
 Now whenever you make changes to your app, they will be automatically deployed to Firebase.
