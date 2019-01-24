@@ -38,7 +38,7 @@ the threshold you’ve set (e.g. < 80/100).
 
 Although you can test performance on localhost, your site will often perform
 differently on live servers. To get a more realistic picture, it’s best to
-deploy your site to a staging server. You can use any hosting service, this
+deploy your site to a staging server. You can use any hosting service; this
 guide will take [Firebase hosting](https://firebase.google.com/docs/hosting/)
 for a spin.
 
