@@ -1,40 +1,44 @@
 ---
 page_type: guide
-title: Using Lighthouse CI to set a performance budget
+title: Using Lighthouse Bot to set a performance budget
 author: mihajlija
 description: |
   You’ve done hard work to get fast, now make sure you stay fast by automating
-  performance testing with Lighthouse CI.
+  performance testing in Travis CI with Lighthouse Bot.
 web_lighthouse: N/A
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 wf_blink_components: N/A
 ---
 
-# Using Lighthouse CI to set a performance budget
+# Using Lighthouse Bot to set a performance budget
 
 You’ve done hard work to get fast, now make sure you stay fast by automating
-performance testing with [Lighthouse CI](https://github.com/ebidel/lighthouse-ci).
+performance testing with [Lighthouse Bot](https://github.com/ebidel/lighthousebot).
 
-Lighthouse grades your app in 5 categories, and one of those is performance.
-While you could try to remember to monitor performance changes with
-[DevTools](https://developers.google.com/web/tools/lighthouse/#devtools) or
-[Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) every
+[Lighthouse](https://developers.google.com/web/tools/lighthouse) grades your app
+in 5 categories, and one of those is performance. While you could try to remember to
+monitor performance changes with [DevTools](https://developers.google.com/web/tools/lighthouse/#devtools)
+or [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) every
 time you edit your code, you don’t have to do that. Tools can do the tedious
 stuff for you. [Travis CI](https://travis-ci.com/) is a great service that
 automatically runs tests for your app in the cloud every time you push new code.
 
-Lighthouse CI integrates with Travis, and its performance budget feature ensures
+Lighthouse Bot integrates with Travis CI, and its performance budget feature ensures
 that you won’t accidentally downgrade performance without noticing. You can
 [configure your repository](https://help.github.com/articles/about-required-status-checks/)
 so that it won’t allow merging pull-requests if the Lighthouse scores fall below
-the threshold you’ve set (e.g. < 80/100).
+the threshold you’ve set (e.g. < 96/100).
 
 <figure>
   <img src="./lighthouse-ci.png"
-       alt="Failing Lighthouse CI checks on GitHub" class="screenshot">
-  <figcaption><b>Figure 1</b>: Lighthouse CI checks on GitHub</figcaption>
+       alt="Failing Lighthouse Bot checks on GitHub" class="screenshot">
+  <figcaption><b>Figure 1</b>: Lighthouse Bot checks on GitHub</figcaption>
 </figure>
+
+<div class="aside note">
+Lighthouse Bot used to be called Lighthouse CI.
+</div>
 
 Although you can test performance on localhost, your site will often perform
 differently on live servers. To get a more realistic picture, it’s best to
@@ -46,7 +50,7 @@ for a spin.
 
 This simple app helps you sort three numbers.
 
-[Clone the example from GitHub](https://github.com/mihajlija/lighthouse-ci-starter/),
+[Clone the example from GitHub](https://github.com/mihajlija/lighthouse-bot-starter),
 and make sure to add it as a repository on your GitHub account.
 
 ## 2. Deploy to Firebase
@@ -117,7 +121,7 @@ To kick-off continuous integration, you need two things:
 1. To have a `.travis.yml` file in the root directory
 2. To trigger a build by doing a regular old git push
 
-The `lighthouse-ci-starter` repo already has a `.travis.yml` YAML file:
+The `lighthouse-bot-starter` repo already has a `.travis.yml` YAML file:
 
 <pre class="prettyprint">
 language: node_js
@@ -181,10 +185,10 @@ If you take a look at your Travis log, it should soon say ✔️ Deploy complete
 
 Now whenever you make changes to your app, they will be automatically deployed to Firebase.
 
-## 5. Setting up Lighthouse CI
+## 5. Setting up Lighthouse Bot
 
-Lighthouse CI has its very own friendly bot that updates you on your app’s
-Lighthouse scores. It just needs an invitation to your repo.
+Friendly Lighthouse Bot updates you on your app’s Lighthouse scores. 
+It just needs an invitation to your repo.
 
 On GitHub, go to your project’s settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
 
@@ -195,7 +199,7 @@ instantly. Before you start testing, make sure lighthousebot has approved its
 collaborator status. In the meantime, you also need to add another key to your
 project's environment variables on Travis. [Leave your email
 here](https://docs.google.com/forms/d/e/1FAIpQLSdIc3QNIMn7bBMgl2cfxmmo6wGBlUpdLGxjB_ml464t9eCg_A/viewform),
-and you'll get a Lighthouse CI key in your inbox. 📬
+and you'll get a Lighthouse Bot key in your inbox. 📬
 
 On Travis, add this key as an environment variable and name it `LIGHTHOUSE_API_KEY`:
 
@@ -205,23 +209,23 @@ On Travis, add this key as an environment variable and name it `LIGHTHOUSE_API_K
 You can reuse this same key for other projects.
 </div>
 
-### Add Lighthouse CI to your project
+### Add Lighthouse Bot to your project
 
-Next, add Lighthouse CI to your project by running:
+Next, add Lighthouse Bot to your project by running:
 
 <pre class="devsite-terminal devsite-click-to-copy">
-npm i --save-dev https://github.com/ebidel/lighthouse-ci
+npm i --save-dev https://github.com/ebidel/lighthousebot
 </pre>
 
 And add this bit to the `package.json`:
 
 <pre class="prettyprint">
 "scripts": {
-  "lh": "lighthouse-ci"
+  "lh": "lighthousebot"
 }
 </pre>
 
-### Add Lighthouse CI to your Travis configuration
+### Add Lighthouse Bot to your Travis configuration
 
 For the final trick, test the performance of the app after every pull
 request!
@@ -245,19 +249,19 @@ the app that bring the performance score below 95:
 - npm run lh -- --perf=95 https://staging.example.com 
 </pre>
 
-### Make a pull request to trigger Lighthouse CI on Travis
+### Make a pull request to trigger Lighthouse Bot test on Travis
 
-Lighthouse CI will only test pull requests, so if you push to the master branch
+Lighthouse Bot will only test pull requests, so if you push to the master branch
 now, you’ll just get "This script can only be run on Travis PR requests" in your
 Travis log.
 
-To trigger the Lighthouse CI test:
+To trigger the Lighthouse Bot test:
 
 1. Checkout a new branch
 2. Push it to Github
 3. Make a pull request
 
-Hang tight on that pull request page and wait for the Lighthouse bot to sing! 🎤
+Hang tight on that pull request page and wait for Lighthouse Bot to sing! 🎤
 
 <img class="screenshot" src="./lighthouse-scores.png" alt="Passing Lighthouse scores">
 
@@ -268,7 +272,7 @@ The performance score is great, the app is under budget, and the check has passe
 ### More Lighthouse options
 
 Remember how Lighthouse tests 5 different categories? You can enforce scores for
-any of those with Lighthouse CI flags:
+any of those with Lighthouse Bot flags:
 
 ```shell
 --perf  # performance
@@ -287,5 +291,5 @@ npm run lh --perf=93 --seo=100 https://staging.example.com
 This will fail the PR if the performance score drops below 93 **or** the SEO
 score drops below 100.
 
-You can also choose not to get Lighthouse bot’s comments with the `--no-comment`
+You can also choose not to get Lighthouse Bot’s comments with the `--no-comment`
 option.
