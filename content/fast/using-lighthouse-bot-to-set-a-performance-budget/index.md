@@ -31,7 +31,7 @@ so that it won’t allow merging pull-requests if the Lighthouse scores fall bel
 the threshold you’ve set (e.g. < 96/100).
 
 <figure>
-  <img src="./lighthouse-ci.png"
+  <img src="./lighthouse-bot.png"
        alt="Failing Lighthouse Bot checks on GitHub" class="screenshot">
   <figcaption><b>Figure 1</b>: Lighthouse Bot checks on GitHub</figcaption>
 </figure>
