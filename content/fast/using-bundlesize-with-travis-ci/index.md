@@ -21,7 +21,7 @@ repository](https://help.github.com/articles/about-required-status-checks/) so
 that it won’t allow merging pull-requests unless the bundlesize tests have
 passed.
 
-Bundlesize checks on GitHub include the size comparisson to the master branch and
+Bundlesize checks on GitHub include a size comparisson to the master branch and
 a warning in case of a big jump in size.
 
 <img src="bundlesize-check-diff.jpg" class="screenshot" alt="Bundlesize check on GitHub">
