@@ -61,7 +61,12 @@ and the default threshold is **244 KiB uncompressed**, for both assets and
 [entry points](https://webpack.js.org/concepts/entry-points/)
 (the combination of all assets used during the initial load of a page).
 
-![Webpack warning that the asset exceeds the recommended size limit](webpack-warning.png)
+<figure>
+  <img src="./webpack-warning.png" alt="Webpack warning that the asset exceeds the recommended size limit">
+  <figcaption>
+    Webpack warning you about bulky JS bundle ⚠️
+  </figcaption>
+</figure>
 
 Webpack will not only warn you, but it will also give you a recommendation on
 how to downsize your bundles. You can learn more about the recommended techniques on
