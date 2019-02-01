@@ -5,7 +5,7 @@ author: mihajlija
 description: |
   Define performance budgets with minimal setup and enforce them as part of your development workflow using bundlesize with Travis CI.
 web_lighthouse: N/A
-web_updated_on: N/A
+web_updated_on: 2019-02-01
 web_published_on: N/A
 wf_blink_components: N/A
 ---
