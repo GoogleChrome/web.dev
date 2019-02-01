@@ -7,7 +7,7 @@ description: |
   out how to choose a tool that best fits your needs and current setup.
 web_lighthouse: N/A
 web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+web_published_on: 2019-02-01
 wf_blink_components: N/A
 ---
 
@@ -33,7 +33,7 @@ After build step, Webpack outputs a color-coded list of assets and their sizes. 
   </figcaption>
 </figure>
 
-The default limit for both assets and entry-points is 250 KB. You can set your own targets in the configuration file.
+The default limit for both assets and entry-points is **250 KB**. You can set your own targets in the configuration file.
 
 The numbers are compared against **uncompressed asset sizes**. This is not an ideal situation, since most hosting platforms, CDNs and reverse proxy servers compress assets by default. You can give yourself some wiggle room during development, but keep in mind that compression speeds up only the transfer. Browsers still have to parse uncompressed files and this [parsing cost is not small](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4), especially on mobile devices.
 
