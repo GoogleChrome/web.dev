@@ -30,7 +30,6 @@ This Glitch already contains the app bundled with webpack.
 
 1. To start, click the **Remix to Edit** button to make the project editable.
 
-<web-screenshot type="remix"></web-screenshot>
 
 2. Click the **Tools** button.
 
