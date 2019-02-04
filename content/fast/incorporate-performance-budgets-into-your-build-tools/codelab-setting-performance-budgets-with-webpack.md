@@ -35,7 +35,7 @@ This Glitch already contains the app bundled with webpack.
 
 ![Tools button](glitch-tools.png)
 
-3. Then click the **Console button**. It will open the Console in another tab.
+3. Then click the **Console** button. It will open the Console in another tab.
 
 <web-screenshot type="console"></web-screenshot>
 
