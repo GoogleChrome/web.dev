@@ -296,7 +296,7 @@ to the following:
       "@babel/preset-env",
       {
         <s>"targets": "last 2 versions",</s>
-        <strong>"targets": ">0.25%", "not ie 11",</strong>
+        <strong>"targets": [">0.25%", "not ie 11"],</strong>
         "debug": true,
         "useBuiltIns": "usage",
       }

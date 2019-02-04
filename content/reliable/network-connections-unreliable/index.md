@@ -79,7 +79,7 @@ you're running.
 What's actually being tested here? It boils down to simulating a loss of network
 connectivity within your browser, followed by an attempt to load whichever URL
 on your site is being audited. This tests one aspect of building a reliable
-site—being _reliable while offline_—using a controlled, repeatable sequence of
+site—being *reliable while offline*—using a controlled, repeatable sequence of
 actions.
 
 ## It's a journey
