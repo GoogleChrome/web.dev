@@ -91,7 +91,7 @@ resources.
 </div>
 
 For this simple demo, try being even more conservative and set the budget to
-100 KB. In the configuration file, add the following:
+100 KB. In `webpack.config.js`, add the following:
 
 <pre class="prettyprint"> 
     module.exports = { 
