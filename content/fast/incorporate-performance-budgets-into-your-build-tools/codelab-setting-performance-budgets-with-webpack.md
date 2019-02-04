@@ -177,7 +177,7 @@ JavaScript:
     const daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
 </pre>
 
-Now remove `moment.js` from `package.json` and run webpack in Glitch console
+Now remove `moment.js` from `package.json` and run webpack in the console
 again to build the optimized bundle.
 
 Ta-da! You have shaved off 223 KiB (230KB) and the app is under budget.🎉
