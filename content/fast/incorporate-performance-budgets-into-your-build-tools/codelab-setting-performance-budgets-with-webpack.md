@@ -142,7 +142,7 @@ possible optimizations.
 In the real world, large client-side frameworks are usually hard to swap out,
 so it’s important to use them wisely. With a bit of research, you can often
 find smaller alternatives to popular libraries that do the job just as well
-([date-fns](https://date-fns.org/) is a good alternative for moment.js).
+([date-fns](https://date-fns.org/) is a good alternative for [moment.js](https://momentjs.com/)).
 Sometimes it makes more sense to not use a framework or library at all if it
 has a significant performance impact.
 
