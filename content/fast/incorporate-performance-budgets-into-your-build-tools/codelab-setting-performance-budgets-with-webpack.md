@@ -26,20 +26,17 @@ It’s built with [React](https://reactjs.org/) and [moment.js](https://momentjs
 
 ## Measure
 
-This Glitch already contains the app bundled with webpack.
+This codelab already contains the app bundled with webpack.
 
 1. To start, click the **Remix to Edit** button to make the project editable.
 
-
 2. Click the **Tools** button.
-
-![Tools button](glitch-tools.png)
 
 3. Then click the **Console** button. It will open the Console in another tab.
 
 <web-screenshot type="console"></web-screenshot>
 
-4. To get a color-coded list of assets and their sizes, in the Glitch console
+4. To get a color-coded list of assets and their sizes, in the console
    type:
 
 <pre class="devsite-terminal devsite-click-to-copy">webpack</pre>
@@ -91,18 +88,18 @@ resources.
 </div>
 
 For this simple demo, try being even more conservative and set the budget to
-100 KB. In `webpack.config.js`, add the following:
+100 KB (97.7 KiB). In `webpack.config.js`, add the following:
 
-<pre class="prettyprint"> 
-    module.exports = { 
-        //... 
-            performance: { 
-            maxAssetSize: 100000, 
-            maxEntrypointSize: 100000, 
-            hints: 'warning' 
-        } 
-    };
-</pre>
+```
+module.exports = {
+  //...
+  performance: {
+    maxAssetSize: 100000,
+    maxEntrypointSize: 100000,
+    hints: "warning"
+  }
+};
+```
 
 The new performance budget is set in **bytes**:
 
@@ -123,7 +120,7 @@ Possible values for **hints** are:
 3. **`false`**: No warnings or errors are shown.
 
 <figure> 
-    <img src="webpack-error.png" alt="" class="screenshot"> 
+    <img src="webpack-error.png" alt="Webpack performance error in red font" class="screenshot"> 
     <figcaption>Webpack performance hint "error" 🚨</figcaption> 
 </figure>
 
@@ -152,30 +149,28 @@ and here’s a quick way to rewrite the countdown code without using moment.js.
 
 In **app/components/Countdown.jsx** remove:
 
-<pre class="prettyprint"> 
-    <s> 
-        const today = moment(); 
-        const yearEnd = moment().endOf('year'); 
-        const daysLeft = yearEnd.diff(today, 'days'); 
-    </s> 
+<pre class="prettyprint">  
+<s>const today = moment();</s> 
+<s>const yearEnd = moment().endOf('year');</s>
+<s>const daysLeft = yearEnd.diff(today, 'days');</s> 
 </pre>
 
 And delete this line:
 
 <pre class="prettyprint"> 
-    <s>const moment = require('moment');</s> 
+<s>const moment = require('moment');</s> 
 </pre>
 
 It takes a bit of math, but you can implement the same countdown with vanilla
 JavaScript:
 
-<pre class="prettyprint"> 
-    const today = new Date(); 
-    const year = today.getFullYear(); 
-    const yearEnd = new Date(year,11,31); //months are zero indexed in JS 
-    const timeDiff = Math.abs(yearEnd.getTime() - today.getTime()); 
-    const daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-</pre>
+```
+const today = new Date(); 
+const year = today.getFullYear(); 
+const yearEnd = new Date(year,11,31); //months are zero indexed in JS 
+const timeDiff = Math.abs(yearEnd.getTime() - today.getTime()); 
+const daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+```
 
 Now remove `moment.js` from `package.json` and run webpack in the console
 again to build the optimized bundle.
