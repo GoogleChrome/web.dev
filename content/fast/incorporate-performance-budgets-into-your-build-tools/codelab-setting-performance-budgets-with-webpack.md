@@ -147,7 +147,7 @@ Sometimes it makes more sense to not use a framework or library at all if it
 has a significant performance impact.
 
 Removing unused code a good way to optimize apps that include large third-party
-libraries. The process is explained in detail in [this guide](https://web.dev/fast/remove-unused-code)
+libraries. The [Remove unused code guide](https://web.dev/fast/remove-unused-code) explains this process in detail.
 and here’s a quick way to rewrite the countdown code without using moment.js.
 
 In **app/components/Countdown.jsx** remove:
