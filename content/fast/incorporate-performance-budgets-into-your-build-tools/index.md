@@ -35,6 +35,13 @@ After the build step, Webpack outputs a color-coded list of assets and their siz
 
 The default limit for both assets and entry-points is **250 KB**. You can set your own targets in the configuration file.
 
+<figure>
+  <img src="./webpack-warning.jpg" alt="Webpack bundle size warning">
+  <figcaption>
+    Webpack bundle size warning ⚠️
+  </figcaption>
+</figure>
+
 The numbers are compared against **uncompressed asset sizes**. This is not an ideal situation, since most hosting platforms, CDNs and reverse proxy servers compress assets by default. You can give yourself some wiggle room during development, but keep in mind that compression speeds up only the transfer. Browsers still have to parse uncompressed files and this [parsing cost is not small](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4), especially on mobile devices.
 
 <div class="aside note">Bonus feature: Webpack won’t only warn you, it will give you a recommendation on how to downsize your bundles.</div>
@@ -77,9 +84,9 @@ Bundlesize will output color-coded test results in one line.
 You’ll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request will not be merged.** It currently works with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
 
 <figure>
-  <img class="screenshot" src="./bundlesize-check.jpg" alt="bundlesize check status on Github">
+  <img class="screenshot" src="./bundlesize-check.jpg" alt="Bundlesize check status on Github">
   <figcaption>
-    bundlesize check status on Github 
+    Bundlesize check status on Github 
   </figcaption>
 </figure>
 
