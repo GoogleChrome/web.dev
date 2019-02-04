@@ -47,7 +47,7 @@ KB).
 <div class="aside note">
     Webpack uses the unit "KiB", which you might not have 
     seen before. 1 “KiB” and 1 “KB” are fairly close in size: 1 KiB is 1024 bytes, 
-    while 1 KB is 1000 bytes.)
+    while 1 KB is 1000 bytes.
 </div>
 
 ![Webpack output showing bundle size of 323 KiB](webpack-bundle-sizes.png)
