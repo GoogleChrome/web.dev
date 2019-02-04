@@ -28,7 +28,7 @@ It’s built with [React](https://reactjs.org/) and [moment.js](https://momentjs
 
 This Glitch already contains the app bundled with webpack.
 
-1. To start, click the Remix to Edit button to make the project editable.
+1. To start, click the **Remix to Edit** button to make the project editable.
 
 <web-screenshot type="remix"></web-screenshot>
 
