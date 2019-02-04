@@ -24,7 +24,7 @@ how to choose one that best fits your needs and current setup. 🕵️‍♀️
 
 Turn on [performance hints](https://webpack.js.org/configuration/performance/) in the configuration file and Webpack will show you command line warnings or errors when your bundle size grows over the limit. It’s a great way to stay mindful about asset sizes throughout the development.
 
-After build step, Webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.
+After the build step, Webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.
 
 <figure>
   <img src="./webpack-output.png" alt="Webpack output highlighting bundle.js">
