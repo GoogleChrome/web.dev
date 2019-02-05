@@ -144,14 +144,13 @@ budget monitoring, you can rest easy knowing that it won’t go unnoticed.
 To see how the app stacks up against the performance budget, add the code to the
 GitHub repo that you created in step 3. 
 
-On Glitch, click **Tools** > **Git, Import, and Export** > **Export to GitHub**.
+1. On Glitch, click **Tools** > **Git, Import, and Export** > **Export to GitHub**.
 
-In the pop-up, enter your GitHub username and the name of the repo as
-"username/repo".
+2. In the pop-up, enter your GitHub username and the name of the repo as
+"username/repo". Glitch will export your app to a new branch named "glitch". 
 
-Glitch will export your app to a new branch named "glitch". Create a new pull
-request by clicking the **New pull request** button on the homepage of the
-repository.
+3. Create a new pull request by clicking the **New pull request** button on
+the homepage of the repository.
 
 You’ll now see status checks in progress on the pull request page.
 
@@ -198,16 +197,16 @@ the different services, is always required.
 Since the source file has been updated, you need to run webpack to build the new
 bundle file.
 
-- Click the **Tools** button.
+1. Click the **Tools** button.
 
-- Then click the **Console** button. This will open the console in another tab.
+2. Then click the **Console** button. This will open the console in another tab.
 
-- In the console, type <pre class="devsite-terminal devsite-click-to-copy">
+3. In the console, type <pre class="devsite-terminal devsite-click-to-copy">
   webpack</pre> and wait for it to finish the build.
 
-- Export the code to GitHub from **Tools** > **Git, Import, and Export** > **Export to GitHub**.
+4. Export the code to GitHub from **Tools** > **Git, Import, and Export** > **Export to GitHub**.
 
-- Go to the pull request page on GitHub and wait for all checks to finish.
+5. Go to the pull request page on GitHub and wait for all checks to finish.
 
 <img src="bundlesize-pass.png" class="screenshot" alt="Passed bundlesize check">
 
