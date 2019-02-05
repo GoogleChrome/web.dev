@@ -3,7 +3,7 @@ page_type: glitch
 title: Setting performance budgets with webpack
 author: mihajlija
 description: |
-  Learn how to set performance budget and keep your bundlesize in check with 
+  Learn how to set performance budgets and keep your bundlesize in check with 
   webpack.
 web_updated_on: 2019-01-31
 web_published_on: 2019-01-31
@@ -33,8 +33,6 @@ This codelab already contains the app bundled with webpack.
 2. Click the **Tools** button.
 
 3. Then click the **Console** button. It will open the Console in another tab.
-
-<web-screenshot type="console"></web-screenshot>
 
 4. To get a color-coded list of assets and their sizes, in the console
    type:
@@ -144,8 +142,8 @@ Sometimes it makes more sense to not use a framework or library at all if it
 has a significant performance impact.
 
 Removing unused code a good way to optimize apps that include large third-party
-libraries. The [Remove unused code guide](https://web.dev/fast/remove-unused-code) explains this process in detail.
-and here’s a quick way to rewrite the countdown code without using moment.js.
+libraries. The [Remove unused code guide](https://web.dev/fast/remove-unused-code) explains this
+process in detail and here’s a quick way to rewrite the countdown code without using moment.js.
 
 In **app/components/Countdown.jsx** remove:
 
