@@ -10,16 +10,16 @@
     "node": ">=10"
   },
   "scripts": {
-    "clean": "gulp clean",
-    "build": "gulp build",
+    "clean": "rm -rf build",
+    "build": "npm run clean && node ./lib/index.js",
     "lint": "gulp lint",
-    "watch": "gulp watch",
     "format": "prettier --write --single-quote --trailing-comma all --no-bracket-spacing --arrow-parens always \"{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}\"",
-    "dev": "npm-run-all -r --parallel watch start",
     "deploy": "./lib/index.js --deploy",
     "start": "node --experimental-modules server/index.mjs",
     "test:mocha": "mocha server/test/images.js",
-    "test": "cross-env TEST=true npm-run-all -r --parallel start test:mocha"
+    "test": "cross-env TEST=true npm-run-all -r --parallel start test:mocha",
+    "webpack-dev": "webpack --mode development",
+    "webpack-build": "webpack --mode production"
   },
   "dependencies": {
     "ansi-colors": "^3.1.0",
@@ -43,11 +43,12 @@
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "gulp-eslint": "^5.0.0",
-    "gulp-watch": "^5.0.1",
     "husky": "^1.2.1",
     "mocha": "^5.2.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3",
-    "puppeteer": "^1.11.0"
+    "puppeteer": "^1.11.0",
+    "webpack": "^4.29.1",
+    "webpack-cli": "^3.2.3"
   }
 }
