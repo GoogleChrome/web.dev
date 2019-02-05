@@ -106,8 +106,8 @@ integration under the Settings section of your profile.
 
 <img src="travis-ci.png" class="screenshot" alt="GitHub Apps integration on Travis CI">
 
-Once you have an account, go to Settings under your profile, hit the Sync
-account button, and make sure your new repo is listed on Travis.
+Once you have an account, go to **Settings** under your profile, hit the **Sync
+account** button, and make sure your new repo is listed on Travis.
 
 <img src="travis-ci-sync-button.png" class="screenshot" alt="Travis CI Sync button">
 
@@ -120,8 +120,8 @@ that will be stored in the Travis configuration.
 
 <img src="bundlesize-token.jpg" class="screenshot" alt="bundlesize token">
 
-In your project's Travis dashboard, go to More options > Settings > Environment
-variables.
+In your project's Travis dashboard, go to **More options** > **Settings** > **Environment
+variables**.
 
 <img src="environment-variables.png" class="screenshot" alt="Adding environment variables on Travis CI">
 
@@ -142,20 +142,15 @@ budget monitoring, you can rest easy knowing that it won’t go unnoticed.
 ### Trigger your first bundlesize test
 
 To see how the app stacks up against the performance budget, add the code to the
-GitHub repo that you created in step 3. On Glitch, click your project name to go
-to Project options > Advanced options.
+GitHub repo that you created in step 3. 
 
-<img src="advanced-options-button.png" class="screenshot" alt="Glitch Advanced options button">
-
-In the Advanced options menu, select Export to GitHub.
-
-<img src="export-to-github-button.png" class="screenshot" alt="Glitch Export to GitHub button">
+On Glitch, click **Tools** > **Git, Import, and Export** > **Export to GitHub**.
 
 In the pop-up, enter your GitHub username and the name of the repo as
 "username/repo".
 
-Glitch will export your app to a new branch named glitch. Create a new pull
-request by clicking the New pull request button on the homepage of the
+Glitch will export your app to a new branch named "glitch". Create a new pull
+request by clicking the **New pull request** button on the homepage of the
 repository.
 
 You’ll now see status checks in progress on the pull request page.
@@ -203,23 +198,18 @@ the different services, is always required.
 Since the source file has been updated, you need to run webpack to build the new
 bundle file.
 
-- Click the **Logs** button.
+- Click the **Tools** button.
 
-<web-screenshot type="logs"></web-screenshot>
+- Then click the **Console** button. This will open the console in another tab.
 
-- Then click the **Console** button.
-
-<web-screenshot type="console" aria-label="console" role="img"></web-screenshot>
-
-- In Glitch console, type <pre class="devsite-terminal devsite-click-to-copy">
+- In the console, type <pre class="devsite-terminal devsite-click-to-copy">
   webpack</pre> and wait for it to finish the build.
 
-- Export the code to GitHub from Project options > Advanced options > Export to
-  GitHub.
+- Export the code to GitHub from **Tools** > **Git, Import, and Export** > **Export to GitHub**.
 
 - Go to the pull request page on GitHub and wait for all checks to finish.
 
-<img src="bundlesize-pass.png" class="screenshot" alt="Passed budnlesize check">
+<img src="bundlesize-pass.png" class="screenshot" alt="Passed bundlesize check">
 
 Success! The new size of the bundle is 125.5KB and all the checks have passed.
 🎉
