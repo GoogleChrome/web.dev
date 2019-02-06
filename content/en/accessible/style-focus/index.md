@@ -11,8 +11,6 @@ web_lighthouse: N/A
 wf_blink_components: Blink>Accessibility
 ---
 
-# Style focus
-
 The focus indicator (often signified by a "focus ring") identifies the currently
 focused element on your page. For users who are unable to use a mouse, this 
 indicator is _extremely important_ because it acts as a stand-in for their 
