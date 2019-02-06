@@ -24,7 +24,7 @@ gulp.task('lint', () => {
     gulp
       .src([
         'gulpfile.js',
-        '{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}',
+        '{src,lib,server}/{*.js,*.mjs,!(deps)/**/*.js}',
         '!glitches/**/*.{js,mjs}',
         '!lib/devsite.js',
         '!lib/local-devsite.js'])
@@ -39,5 +39,3 @@ gulp.task('lint', () => {
       .pipe(eslint.failAfterError())
   );
 });
-
-gulp.task('default', gulp.series('clean', 'build'));
