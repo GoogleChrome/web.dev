@@ -2,12 +2,16 @@
   "name": "11ty-demo",
   "version": "1.0.0",
   "scripts": {
-    "build": "eleventy",
-    "dev": "eleventy --serve"
+    "build": "gulp lint & eleventy",
+    "dev": "gulp lint & eleventy --serve"
   },
   "license": "Apache 2.0",
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
+    "eslint-config-google": "^0.12.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "gulp": "^4.0.0",
+    "gulp-eslint": "^5.0.0",
     "husky": "^1.3.1",
     "yaml-front-matter": "^4.0.0"
   },
