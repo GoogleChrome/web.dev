@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% for key, value in meta %}
+    <meta name="{{key}}" value="{{value}}" />
+    {% endfor %}
+    <meta name="full_width" value="true" />
+    {# <meta
+      property="og:title"
+      content="Use Imagemin to compress images &nbsp;|&nbsp; web.dev"
+    />
+    <meta
+      property="og:description"
+      content="Uncompressed images bloat your pages with unnecessary bytes. Run Lighthouse to check for opportunities to improve page load by compressing images."
+    />
+    <meta
+      property="og:url"
+      content="https://web.dev/fast/use-imagemin-to-compress-images"
+    />
+    <meta property="og:image" content="https://web.dev/images/social.png" />
+    <meta
+      property="og:image:secure_url"
+      content="https://web.dev/images/social.png"
+    />
+    <meta property="og:image:width" content="1440" />
+    <meta property="og:image:height" content="1440" />
+    <meta property="og:locale" content="en" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://web.dev/images/social.png" />
+    <meta name="twitter:site" content="@ChromiumDev" /> #}
+    {# <link rel="manifest" href="/_pwa/web/manifest.json" /> #}
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/app.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/prism-a11y-dark.css"
+    />
+    {# <link
+      rel="shortcut icon"
+      href="/images/favicon@2x.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/web/images/touchicon-180.png"
+    />
+    <link rel="canonical" href="https://web.dev/" /> #}
+    {# <link
+      rel="search"
+      type="application/opensearchdescription+xml"
+      href="https://web.dev/s/opensearch.xml"
+      data-title="web.dev"
+    /> #}
+  </head>
+  <body
+    type="article"
+    theme="web-theme"
+    class="devsite-full-width-page">
+    {# <devsite-progress id="app-progress" ds-is="progress"></devsite-progress> #}
+    <div class="devsite-wrapper">
+      <web-prefs></web-prefs>
+      {% include 'devsite-header.njk' %}
+      {% include 'devsite-book-nav.njk' %}
+      <div id="gc-wrapper" style="margin-top: 64px;">
+        <div class="devsite-main-content">
+          {# <devsite-toc> #}
+          <devsite-content ds-is="content">
+            <article class="devsite-article">
+              <article class="devsite-article-inner">
+                <div class="devsite-article-body clearfix">
+                  {{ content | safe }}
+                </div>
+              </article>
+            </article>
+            <devsite-content-footer
+              ds-is="content-footer"
+              class="container nocontent"
+            >
+              <p>
+                Except as otherwise noted, the content of this page is licensed
+                under the
+                <a href="https://creativecommons.org/licenses/by/3.0/"
+                  >Creative Commons Attribution 3.0 License</a
+                >, and code samples are licensed under the
+                <a href="https://www.apache.org/licenses/LICENSE-2.0"
+                  >Apache 2.0 License</a
+                >. For details, see the
+                <a href="https://developers.google.com/site-policies"
+                  >Google Developers Site Policies</a
+                >. Java is a registered trademark of Oracle and/or its
+                affiliates.
+              </p>
+            </devsite-content-footer>
+          </devsite-content>
+        </div>
+        {% include 'devsite-footer.njk' %}
+      </div>
+    </div>
+    {# <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip></devsite-tooltip>
+    <devsite-analytics> #}
+    {# <script src="/js/custom-elements-es5-adapter.js"></script>
+    <script src="/js/webcomponents-lite.js"></script> #}
+  </body>
+</html>

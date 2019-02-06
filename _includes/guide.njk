@@ -1,0 +1,84 @@
+---
+layout: layout
+---
+<main class="guide-landing-page">
+  <div class="container">
+
+    <div class="row">
+      <article class="guide">
+        {# {% if author %}
+        <div class="web-author-information">
+          <img class="web-author-information__photo" src="/images/contributors/{{author.picture}}.jpg" />
+          <div class="web-author-information__details">
+            <span class="web-author-information__written-by">Written by</span>
+            <span>{{author.name.given}} {{author.name.family}}</span>
+            <div class="web-author-information__links">
+              {{#if author.twitter}}
+              <div class="web-author-information__link"><a href="https://twitter.com/{{author.twitter}}">Twitter</a></div>
+              {{/if}}
+              {{#if author.github}}
+              <div class="web-author-information__link"><a href="https://github.com/{{author.github}}">GitHub</a></div>
+              {{/if}}
+              {{#if author.glitch}}
+              <div class="web-author-information__link"><a href="https://glitch.com/@{{author.glitch}}">Glitch</a></div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        {% endif %} #}
+        <h1>{{title}}</h1>
+        {{ content | safe}}
+        <hr />
+        {# {%if codelabs.length %}
+        <!-- CODELAB CTAs -->
+        <div class="caps-heading">Codelabs</div>
+        <h2 class="no-link">See it in action</h2>
+        <p>Learn more and put this guide into action:</p>
+        {% for codelab in codelabs %}
+        <div class="codelab-cta">
+          <span class="codelab-cta__title">{{title}}</span>
+          <a href="{{href}}"
+              class="button button-flat gc-analytics-event"
+              data-category="web.dev"
+              data-label="guide, codelab cta"
+              data-action="click">Start</a>
+        </div>
+        {% endfor %}
+        {% endif %} #}
+      </article>
+    </div>
+  </div>
+</main>
+
+{# <div class="cta-next-guide">
+  <div class="cta-next-guide__wrapper">
+    {% if next %}
+    <div class="cta-next-guide__heading">
+      Next Guide
+    </div>
+    <a class="cta-next-guide__link gc-analytics-event"
+        data-category="web.dev"
+        data-label="guide, next guide"
+        data-action="click"
+        href="{{next.href}}">
+      {{next.title}}
+    </a>
+    {% else %}
+    <a class="cta-next-guide__link gc-analytics-event"
+        data-category="web.dev"
+        data-label="guide, back to path"
+        data-action="click"
+        href="{{path.href}}">
+      {{path.title}}
+    </a>
+    {% endif %}
+  </div>
+
+  <a class="go-back cta-next-guide__go-back gc-analytics-event"
+      data-category="web.dev"
+      data-label="guide, go back"
+      data-action="click"
+      href="{{path.href}}">
+    Return to all guides
+  </a>
+</div> #}

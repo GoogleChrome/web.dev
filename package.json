@@ -1,0 +1,16 @@
+{
+  "name": "11ty-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "yaml-front-matter": "^4.0.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1"
+  }
+}
