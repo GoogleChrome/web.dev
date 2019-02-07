@@ -1,0 +1,139 @@
+@import '../settings/breakpoints';
+@import '../settings/typography';
+
+// =============================================================================
+// LISTS OVERVIEW
+//
+// List and definition list styles
+//
+// =============================================================================
+
+// list variables
+$LIST_MARGIN_BOTTOM: 20px;
+$LIST_STYLE_POSITION: outside;
+$LIST_SIDE_MARGIN: 20px;
+$LIST_NESTED_MARGIN: 20px;
+
+// definition list variables
+$DEFINITION_LIST_HEADER_WEIGHT: 500;
+$DEFINITION_LIST_MARGIN_BOTTOM: 12px;
+
+ul,
+ol,
+dl {
+  list-style-position: $LIST_STYLE_POSITION;
+  margin-bottom: $LIST_MARGIN_BOTTOM;
+}
+
+ul,
+ol,
+dl,
+li {
+  &.no-bullet {
+    list-style: none;
+  }
+}
+
+ul,
+ol {
+  &.no-bullet {
+    margin-left: 0;
+
+    html[dir="rtl"] & {
+      margin-right: 0;
+    }
+  }
+}
+
+ul,
+ol {
+  margin-left: $LIST_SIDE_MARGIN;
+
+  html[dir="rtl"] & {
+    margin-left: 0;
+    margin-right: $LIST_SIDE_MARGIN;
+  }
+
+  &.inline li {
+    display: inline-block;
+  }
+
+  li {
+    ul,
+    ol {
+      margin-bottom: 0;
+      margin-left: $LIST_NESTED_MARGIN;
+
+      html[dir="rtl"] & {
+        margin-left: 0;
+        margin-right: $LIST_NESTED_MARGIN;
+      }
+    }
+  }
+}
+
+// Unordered Lists
+ul {
+  &.square,
+  &.circle,
+  &.disc {
+    li ul {
+      list-style: inherit;
+    }
+  }
+
+  &.square {
+    list-style-type: square;
+  }
+
+  &.circle {
+    list-style-type: circle;
+  }
+
+  &.disc {
+    list-style-type: disc;
+  }
+}
+
+// Definition Lists
+dl {
+  dt {
+    font-weight: $DEFINITION_LIST_HEADER_WEIGHT;
+  }
+
+  dd {
+    margin-bottom: $DEFINITION_LIST_MARGIN_BOTTOM;
+  }
+}
+
+li,
+dt,
+dd {
+  @include calculate_unitless_line_height(
+    map-get($BODY_MOBILE, LINE_HEIGHT),
+    map-get($BODY_MOBILE, FONT_SIZE)
+  );
+
+  font-size: map-get($BODY_MOBILE, FONT_SIZE);
+  letter-spacing: map-get($BODY_MOBILE, LETTER_SPACING);
+
+  @include bp(md) {
+    @include calculate_unitless_line_height(
+      map-get($BODY_TABLET, LINE_HEIGHT),
+      map-get($BODY_TABLET, FONT_SIZE)
+    );
+
+    font-size: map-get($BODY_TABLET, FONT_SIZE);
+    letter-spacing: map-get($BODY_TABLET, LETTER_SPACING);
+  }
+
+  @include bp(xl) {
+    @include calculate_unitless_line_height(
+      map-get($BODY, LINE_HEIGHT),
+      map-get($BODY, FONT_SIZE)
+    );
+
+    font-size: map-get($BODY, FONT_SIZE);
+    letter-spacing: map-get($BODY, LETTER_SPACING);
+  }
+}

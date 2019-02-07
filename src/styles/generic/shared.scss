@@ -1,0 +1,53 @@
+// =============================================================================
+// SHARED OVERVIEW
+//
+// Shared properties across multiple html tags.
+//
+// =============================================================================
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box; // Android < 2.3, iOS < 4
+  -moz-box-sizing: border-box; // Firefox < 29
+  box-sizing: border-box; // Chrome, IE 8+, Opera, Safari 5.1
+}
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+// https://github.com/typeplate/starter-kit/blob/master/scss/_typeplate-styles.scss#L58
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+}
