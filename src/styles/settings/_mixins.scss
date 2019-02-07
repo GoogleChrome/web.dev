@@ -57,15 +57,15 @@
   $margin: map-get($specs, MARGIN);
 
   &.has-top-margin {
-    margin-top: $margin;
+    margin-top: #{$margin}px;
   }
 
   &.has-bottom-margin {
-    margin-bottom: $margin;
+    margin-bottom: #{$margin}px;
   }
 
   &.has-top-bottom-margin {
-    margin-bottom: $margin;
-    margin-top: $margin;
+    margin-bottom: #{$margin}px;
+    margin-top: #{$margin}px;
   }
 }
