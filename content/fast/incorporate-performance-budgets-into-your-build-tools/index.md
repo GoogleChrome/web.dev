@@ -84,7 +84,7 @@ Bundlesize will output color-coded test results in one line.
 You’ll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request will not be merged.** It currently works with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
 
 <figure>
-  <img class="screenshot" src="./bundlesize-check.jpg" alt="Bundlesize check status on Github">
+  <img class="screenshot" src="./bundlesize-status.jpg" alt="Bundlesize check status on Github">
   <figcaption>
     Bundlesize check status on Github 
   </figcaption>
