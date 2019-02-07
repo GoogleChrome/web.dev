@@ -1,0 +1,418 @@
+@import 'colors';
+
+// =============================================================================
+// TYPOGRAPHY OVERVIEW
+//
+// All constants and mixins in this file concern font properties, such as
+// font-size, font-family, etc.
+//
+// When adding new constants that are specific to a particular responsive
+// breakpoint, append the breakpoint name to the constant. For example,
+// additional constants for a hypothetical $FINEPRINT constant would be
+// $FINEPRINT_TABLET and $FINEPRINT_MOBILE.
+//
+// =============================================================================
+
+// Smoothing.
+$FONT_SMOOTHING_MOZ: grayscale;
+$FONT_SMOOTHING_WEBKIT: antialiased;
+$FONT_SMOOTHING_RENDERING: optimizeLegibility;
+
+// Fonts.
+$HEADLINE_FONT: Google Sans, sans-serif;
+$PRIMARY_FONT: Roboto, sans-serif;
+$CODE_FONT: Roboto Mono, monospace;
+
+// Baseline headline styles.
+$HEADLINE_TEXT_SIZE: 18px;
+$HEADLINE_FONT_WEIGHT: 400;
+
+// General font sizes and line heights.
+$PRIMARY_TEXT_SIZE: 16px;
+$PRIMARY_LINE_HEIGHT: 26px;
+$PRIMARY_FONT_WEIGHT: 400;
+
+$SECONDARY_TEXT_SIZE: 14px;
+$SECONDARY_LINE_HEIGHT: 20px;
+
+$TERTIARY_TEXT_SIZE: 13px;
+
+// Form fields line heights.
+$INPUT_LINE_HEIGHT: 20px;
+
+// -----------------------------------------------------------------------------
+// DESKTOP
+// (1441px+) and (1440 – 1024px)
+// -----------------------------------------------------------------------------
+$DISPLAY_1: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   120,
+  LINE_HEIGHT: 140,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: -2,
+  MARGIN: 70,
+);
+
+$DISPLAY_2: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   96,
+  LINE_HEIGHT: 112,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: -1,
+  MARGIN: 56,
+);
+
+$HEADLINE_1: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   56,
+  LINE_HEIGHT: 66,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: -.5,
+  MARGIN: 20,
+);
+
+$HEADLINE_2: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   44,
+  LINE_HEIGHT: 52,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: -.5,
+  MARGIN: 15,
+);
+
+$HEADLINE_3: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   32,
+  LINE_HEIGHT: 40,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 15,
+);
+
+$HEADLINE_4: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   22,
+  LINE_HEIGHT: 30,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 12,
+);
+
+$SUBHEAD: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   18,
+  LINE_HEIGHT: 30,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 16,
+);
+
+$EYEBROW: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 22,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: 1.5,
+  TEXT_TRANSFORM: uppercase,
+  MARGIN: 5,
+);
+
+$BODY: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   16,
+  LINE_HEIGHT: 26,
+  FONT_FAMILY: $PRIMARY_FONT,
+  MARGIN: 12,
+);
+
+$FOOTNOTE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   12,
+  LINE_HEIGHT: 18,
+  FONT_FAMILY: $PRIMARY_FONT,
+  LETTER_SPACING: .35,
+  MARGIN: 9,
+);
+
+// -----------------------------------------------------------------------------
+// TABLET
+// (1023 – 600px)
+// -----------------------------------------------------------------------------
+$DISPLAY_1_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   72,
+  LINE_HEIGHT: 84,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: -1,
+  MARGIN: 42,
+);
+
+$DISPLAY_2_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   60,
+  LINE_HEIGHT: 70,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: -.75,
+  MARGIN: 35,
+);
+
+$HEADLINE_1_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   38,
+  LINE_HEIGHT: 44,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 13,
+);
+
+$HEADLINE_2_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   32,
+  LINE_HEIGHT: 40,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 12,
+);
+
+$HEADLINE_3_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   24,
+  LINE_HEIGHT: 32,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 13,
+);
+
+$HEADLINE_4_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   16,
+  LINE_HEIGHT: 26,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 6,
+);
+
+$SUBHEAD_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   16,
+  LINE_HEIGHT: 26,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 12,
+);
+
+$EYEBROW_TABLET: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   12,
+  LINE_HEIGHT: 18,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: 1.25,
+  TEXT_TRANSFORM: uppercase,
+  MARGIN: 5,
+);
+
+$BODY_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 24,
+  FONT_FAMILY: $PRIMARY_FONT,
+  LETTER_SPACING: .25,
+  MARGIN: 16,
+);
+
+$FOOTNOTE_TABLET: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   12,
+  LINE_HEIGHT: 18,
+  FONT_FAMILY: $PRIMARY_FONT,
+  LETTER_SPACING: .35,
+  MARGIN: 5,
+);
+
+// -----------------------------------------------------------------------------
+// MOBILE 
+// (599 – 320px)
+// -----------------------------------------------------------------------------
+$DISPLAY_1_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   60,
+  LINE_HEIGHT: 70,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: -.75,
+  MARGIN: 35,
+);
+
+$DISPLAY_2_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   38,
+  LINE_HEIGHT: 44,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 22,
+);
+
+$HEADLINE_1_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   32,
+  LINE_HEIGHT: 40,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 15,
+);
+
+$HEADLINE_2_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   24,
+  LINE_HEIGHT: 32,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 10,
+);
+
+$HEADLINE_3_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   16,
+  LINE_HEIGHT: 26,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 14,
+);
+
+$HEADLINE_4_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   16,
+  LINE_HEIGHT: 26,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 6,
+);
+
+$SUBHEAD_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   16,
+  LINE_HEIGHT: 26,
+  FONT_FAMILY: $HEADLINE_FONT,
+  MARGIN: 12,
+);
+
+$EYEBROW_MOBILE: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   12,
+  LINE_HEIGHT: 18,
+  FONT_FAMILY: $HEADLINE_FONT,
+  LETTER_SPACING: 1.25,
+  TEXT_TRANSFORM: uppercase,
+  MARGIN: 5,
+);
+
+$BODY_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 24,
+  FONT_FAMILY: $PRIMARY_FONT,
+  LETTER_SPACING: .25,
+  MARGIN: 12,
+);
+
+$FOOTNOTE_MOBILE: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   12,
+  LINE_HEIGHT: 18,
+  FONT_FAMILY: $PRIMARY_FONT,
+  LETTER_SPACING: .35,
+  MARGIN: 5,
+);
+
+
+// -----------------------------------------------------------------------------
+// Components.
+
+// Buttons. Line-height is equal to button height to vertically center
+// the label within the button.
+// -----------------------------------------------------------------------------
+$BUTTON: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 36,
+  FONT_FAMILY: $PRIMARY_FONT,
+);
+
+$BUTTON_ENDORSED: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 36,
+  FONT_FAMILY: $HEADLINE_FONT,
+);
+
+// Dynamic content cards.
+$DYNAMIC_CONTENT_CATEGORY: (
+  FONT_WEIGHT: 700,
+  FONT_SIZE:   12,
+  LINE_HEIGHT: 22,
+  FONT_FAMILY: $PRIMARY_FONT,
+  LETTER_SPACING: .3,
+);
+
+$FOOTER: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 16,
+  FONT_FAMILY: $PRIMARY_FONT,
+);
+
+$FOOTER_HEADING: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 16,
+  FONT_FAMILY: $PRIMARY_FONT,
+);
+
+// Book nav.
+$NAV_HEADING: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   12,
+  LINE_HEIGHT: 16,
+  FONT_FAMILY: $PRIMARY_FONT,
+);
+
+$OVERLINE: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   11,
+  LINE_HEIGHT: 16,
+  FONT_FAMILY: $PRIMARY_FONT,
+  LETTER_SPACING: .8,
+);
+
+// Tabs.
+$TAB: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 20,
+  FONT_FAMILY: $PRIMARY_FONT,
+);
+
+$TAB_ENDORSED: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 20,
+  FONT_FAMILY: $HEADLINE_FONT,
+);
+
+// Tables.
+$TABLE_HEADING: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   16,
+  LINE_HEIGHT: 24,
+  FONT_FAMILY: $PRIMARY_FONT,
+);
+
+$TABLE_SUBHEADING: (
+  FONT_WEIGHT: 500,
+  FONT_SIZE:   14,
+  LINE_HEIGHT: 20,
+  FONT_FAMILY: $PRIMARY_FONT,
+);
+
+// 'Google' wordmark. Only applies to products on the 'developers' tenant since
+// their lockups are an image/icon + text, and not a single SVG lockup as found
+// on a typical tenant site.
+$WORDMARK: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   20,
+  LINE_HEIGHT: 32,
+  FONT_FAMILY: $PRIMARY_FONT,
+);
+
+$WORDMARK_ENDORSED: (
+  FONT_WEIGHT: 400,
+  FONT_SIZE:   22,
+  LINE_HEIGHT: 32,
+  FONT_FAMILY: $HEADLINE_FONT,
+);

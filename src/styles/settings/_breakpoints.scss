@@ -1,0 +1,41 @@
+// =============================================================================
+// BREAKPOINTS OVERVIEW
+//
+// Media query breakpoints used across the site.
+//
+// =============================================================================
+
+// XSmall devices (phones, 380px and up)
+$BREAKPOINT_VALUE_MOBILE_SMALL: '(min-width: 380px)';
+
+// Small devices (tablets, 600px and up)
+$BREAKPOINT_VALUE_MOBILE: '(min-width: 600px)';
+
+// Medium devices (tablets, 840px and up)
+$BREAKPOINT_VALUE_TABLET: '(min-width: 840px)';
+
+// Large devices (landscape tablets/small desktops, 1024px and up)
+$BREAKPOINT_VALUE_TABLET_LANDSCAPE: '(min-width: 1024px)';
+
+// XLarge devices (large desktops, 1440px and up)
+$BREAKPOINT_VALUE_DESKTOP: '(min-width: 1440px)';
+
+// Media breakpoint helper
+// Credit: http://css-tricks.com/conditional-media-query-mixins/
+@mixin bp($point) {
+  @if $point == xs {
+    @media #{$BREAKPOINT_VALUE_MOBILE_SMALL} { @content; }
+  }
+  @else if $point == sm {
+    @media #{$BREAKPOINT_VALUE_MOBILE} { @content; }
+  }
+  @else if $point == md {
+    @media #{$BREAKPOINT_VALUE_TABLET} { @content; }
+  }
+  @else if $point == lg {
+    @media #{$BREAKPOINT_VALUE_TABLET_LANDSCAPE} { @content; }
+  }
+  @else if $point == xl {
+    @media #{$BREAKPOINT_VALUE_DESKTOP} { @content; }
+  }
+}

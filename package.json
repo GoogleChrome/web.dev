@@ -11,11 +11,11 @@
   },
   "scripts": {
     "clean": "rm -rf build",
-    "build": "npm run clean && node ./lib/index.js",
+    "build": "npm run clean && webpack --mode production && node ./lib/index.js",
     "lint": "gulp lint",
     "format": "prettier --write --single-quote --trailing-comma all --no-bracket-spacing --arrow-parens always \"{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}\"",
     "deploy": "./lib/index.js --deploy",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development --watch"
   },
   "dependencies": {
     "ansi-colors": "^3.1.0",
@@ -33,6 +33,7 @@
     "yaml": "^1.0.0-rc.8"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
     "eslint": "^5.10.0",

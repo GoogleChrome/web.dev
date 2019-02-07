@@ -1,0 +1,23 @@
+@import '../settings/colors';
+@import '../settings/typography';
+
+// =============================================================================
+// PAGE OVERVIEW
+//
+// Styles for page elements, such as the html and body tags.
+//
+// =============================================================================
+
+// Default body styles
+body {
+  color: $PRIMARY_TEXT_COLOR;
+  font-family: $PRIMARY_FONT;
+  font-size: $PRIMARY_TEXT_SIZE;
+  font-weight: $PRIMARY_FONT_WEIGHT;
+  line-height: $PRIMARY_LINE_HEIGHT;
+  margin: 0;
+  padding: 0;
+  // https://justmarkup.com/log/2015/07/dealing-with-long-words-in-css/
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}

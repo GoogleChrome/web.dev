@@ -1,0 +1,71 @@
+@import "functions";
+
+// Mixin for styling typography via maps containing required integer values for
+// font-family, font-size, font-weight, and line-height; with an optional value
+// for letter-spacing.
+// @param {!map} $specs - SCSS map with key/value pairs for rendering shorthand
+//     'font' property.
+// @prop {!number} $specs.FONT_WEIGHT
+// @prop {!number} $specs.FONT_SIZE
+// @prop {!number} $specs.LINE_HEIGHT
+// @prop {!string} $specs.FONT_FAMILY
+// @prop {?number} $specs.LETTER_SPACING
+@mixin font($specs) {
+  $font_weight: map-get($specs, FONT_WEIGHT);
+  $font_size: map-get($specs, FONT_SIZE);
+  $font_family: map-get($specs, FONT_FAMILY);
+  $line_height: map-get($specs, LINE_HEIGHT);
+
+  // Print font styles in shorthand syntax.
+  font: $font_weight #{$font_size}px/#{calculate_unitless_line_height(
+      $line_height,
+      $font_size
+    )} $font_family;
+
+  // Print letter-spacing if it's defined in the map.
+  @if map-has-key($specs, LETTER_SPACING) {
+    $letter_spacing: map-get($specs, LETTER_SPACING);
+    letter-spacing: #{$letter_spacing}px;
+  }
+}
+
+// Sets font smoothing variables
+// @param {string} $moz The value for moz-osx-font-smoothing
+// @param {string} $webkit The value for webkit-font-smoothing
+// @param {string} $rendering The value for text-rendering
+@mixin font_smoothing($moz, $webkit, $rendering) {
+  -moz-osx-font-smoothing: $moz;
+  -webkit-font-smoothing: $webkit;
+  text-rendering: $rendering;
+}
+
+// Sets unitless line-height based on line-height and font-size
+// Improves accessibility and prevents text from overlapping if users change
+// their default font size in chrome://settings/fonts.
+// @param {string} $line-height Value for line-height, in pixels
+// @param {string} $font-size Value for font-size, in pixels
+@mixin calculate_unitless_line_height($line_height, $font_size) {
+  line-height: $line_height / $font_size;
+}
+
+// Create a modifier class to add vertical margins to an element
+// ---
+// @param {!map} $specs - SCSS map with key/value pairs for typography.
+// @prop {!number} $specs.MARGIN
+// @content: Modifier classes that assign vertical margins
+@mixin create_margins($specs) {
+  $margin: map-get($specs, MARGIN);
+
+  &.has-top-margin {
+    margin-top: #{$margin}px;
+  }
+
+  &.has-bottom-margin {
+    margin-bottom: #{$margin}px;
+  }
+
+  &.has-top-bottom-margin {
+    margin-bottom: #{$margin}px;
+    margin-top: #{$margin}px;
+  }
+}
