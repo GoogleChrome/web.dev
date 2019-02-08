@@ -6,19 +6,19 @@
 * @robdodson @samthor
 
 # Guide collections
-/content/ @Meggin
-/content/accessible/ @robdodson
-/content/discoverable/ @ekharvey @AVGP
-/content/fast/ @addyosmani @housseindjirdeh @khempenius
-/content/installable/ @petele
-/content/reliable/ @jeffposnick
-/content/secure/ @kosamari
+/content/ @Meggin @robdodson @samthor
+/content/accessible/ @robdodson @samthor
+/content/discoverable/ @ekharvey @AVGP @robdodson @samthor
+/content/fast/ @addyosmani @housseindjirdeh @khempenius @robdodson @samthor
+/content/installable/ @petele @robdodson @samthor
+/content/reliable/ @jeffposnick @robdodson @samthor
+/content/secure/ @kosamari @robdodson @samthor
 
 # Build scripts
-/lib/ @TimvdLippe
+/lib/ @TimvdLippe @robdodson @samthor
 
 # Measure page
-/content/measure.html @ebidel @TimvdLippe
+/content/measure.html @ebidel @TimvdLippe @robdodson @samthor
 
 # Preview server
-/server/ @ebidel
+/server/ @ebidel @robdodson @samthor
