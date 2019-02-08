@@ -21,7 +21,7 @@ repository](https://help.github.com/articles/about-required-status-checks/) so
 that it won’t allow merging pull-requests unless the bundlesize tests have
 passed.
 
-Bundlesize checks on GitHub include a size comparisson to the master branch and
+Bundlesize checks on GitHub include a size comparison to the master branch and
 a warning in case of a big jump in size.
 
 <img src="bundlesize-check-diff.jpg" class="screenshot" alt="Bundlesize check on GitHub">
@@ -45,8 +45,6 @@ kitty](https://glitch.com/edit/#!/scarce-pixie).
 [This Glitch](https://glitch.com/edit/#!/scarce-pixie) already contains
 bundlesize. To start, click the **Remix to Edit** button to make the project
 editable.
-
-<web-screenshot type="remix" aria-label="remix" role="img"></web-screenshot>
 
 The main bundle of this app is in the public folder. To test its size, add the
 following section to the `package.json` file:
@@ -128,7 +126,7 @@ variables**.
 Add a new environment variable with the token as the value field and
 BUNDLESIZE_GITHUB_TOKEN as the name.
 
-The last thing needed to kick-off continuous integration is a `.travis.yml`
+The last thing you need to kick-off continuous integration is a `.travis.yml`
 file, which tells Travis CI what to do. To speed things up, it is already
 included in the project and it specifies that the app is using NodeJS.
 
@@ -158,7 +156,7 @@ You’ll now see status checks in progress on the pull request page.
 
 It won’t take long until all checks are done. Unfortunately, the cat voting app
 is a bit bloated and does not pass the performance budget check. The main bundle
-is 266KB and the budget is 170KB.
+is 266 KB and the budget is 170 KB.
 
 <img src="bundlesize-fail.png" class="screenshot" alt="Failed bundlesize check">
 
@@ -210,7 +208,7 @@ bundle file.
 
 <img src="bundlesize-pass.png" class="screenshot" alt="Passed bundlesize check">
 
-Success! The new size of the bundle is 125.5KB and all the checks have passed.
+Success! The new size of the bundle is 125.5 KB and all the checks have passed.
 🎉
 
 Unlike Firebase, importing parts of the moment library cannot be done as easily,
