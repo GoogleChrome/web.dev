@@ -1,7 +1,7 @@
 ---
 page_type: glitch
 title: Using Imagemin with Grunt
-author: khempenius
+author: katiehempenius
 description: |
   In this codelab, learn how to use imagemin with grunt to optimize JPEG and
   PNG images for faster download.
@@ -15,11 +15,11 @@ glitch: imagemin-grunt
 This Glitch already contains `grunt` and `grunt-cli` for you, but you'll need to
 install `grunt-contrib-imagemin`.
 
-- Click the **Remix This** button to make the project editable.
+- Click the **Remix to Edit** button to make the project editable.
 
 <web-screenshot type="remix"></web-screenshot>
 
-- Click the **Status** button.
+- Click the **Tools** button.
 
 <web-screenshot type="status"></web-codelab>
 
