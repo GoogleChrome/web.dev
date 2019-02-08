@@ -15,11 +15,11 @@ glitch: imagemin-webpack
 This Glitch already contains `webpack` and `webpack-cli`, but you'll need to
 install `imagemin-webpack-plugin`.
 
-- Click the **Remix This** button to make the project editable.
+- Click the **Remix to Edit** button to make the project editable.
 
 <web-screenshot type="remix"></web-screenshot>
 
-- Click the **Status** button.
+- Click the **Tools** button.
 
 <web-screenshot type="status"></web-codelab>
 
@@ -34,7 +34,7 @@ npm install --save-dev imagemin-webpack-plugin
 </pre>
 
 
-## Setup imagemin-webpack-plugin:
+## Setup imagemin-webpack-plugin
 
 The existing `webpack.config.js` for this project has been copying images from
 the `images/` directory to the `dist/` directory but it hasn't been
@@ -42,7 +42,7 @@ compressing them.
 
 <div class="aside note">
 Why would you copy images to a new `dist/` folder? `dist/` is short for
-"distribution" and it's fairly common practice to keep original code, images,
+"distribution," and it's fairly common practice to keep original code, images,
 etc. separate from their distributed versions because they may be slightly
 different.
 </div>
@@ -189,9 +189,7 @@ new ImageminPlugin({
 This code tells Webpack to compress JPGs to a quality of '50' ('0' is the worst;
 '100' is the best) using the Mozjpeg plugin.
 
-<div class="aside note">
 Are you wondering why Mozjpeg is added to the plugins array, but Pngquant isn't? Good question.
-</div>
 
 If you're adding settings for a plugin that is a default plugin of
 `imagemin-webpack-plugin`, they can be added as a key-object pair on the object
