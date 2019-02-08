@@ -78,6 +78,10 @@
 }
 
 // Create selectors to allow paragraphs to evenly separate.
+// For example, if you do:
+// p { @include create_paragraph_spacing(5px) }
+// The mixin will generate a new selector:
+// p + p { margin: 5px }
 // ---
 // @param {number} $font-size: A font-size
 // @content: A set of selectors and modifiers for altering the visual layout
