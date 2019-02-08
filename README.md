@@ -7,6 +7,10 @@ web.dev is the ultimate resource for developers of all backgrounds to learn, cre
 Note: this repo contains the written content for web.dev. The actual front-end
 (CSS,JS) is not yet open source.
 
+## Authoring content
+
+[Our wiki](https://github.com/GoogleChrome/web.dev/wiki) provides docs on authoring guides and codelabs.
+
 ## Development
 
 ```shell
@@ -49,5 +53,3 @@ You can file an issue [in our issue tracker](https://github.com/GoogleChrome/web
 ## Want to help?
 
 Take a look [in the issue tracker](https://github.com/GoogleChrome/web.dev/issues) for any bugs with a **content** label.
-
-[Our wiki](https://github.com/GoogleChrome/web.dev/wiki) provides guides on authoring guides and codelabs.
