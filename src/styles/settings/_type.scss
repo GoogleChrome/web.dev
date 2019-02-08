@@ -23,19 +23,23 @@ $HEADLINE_FONT: Google Sans, sans-serif;
 $PRIMARY_FONT: Roboto, sans-serif;
 $CODE_FONT: Roboto Mono, monospace;
 
-// Baseline headline styles.
-$HEADLINE_TEXT_SIZE: 18px;
-$HEADLINE_FONT_WEIGHT: 400;
-
 // General font sizes and line heights.
 $PRIMARY_TEXT_SIZE: 16px;
 $PRIMARY_LINE_HEIGHT: 26px;
 $PRIMARY_FONT_WEIGHT: 400;
+$PRIMARY_FONT_WEIGHT_BOLD: 500;
 
 $SECONDARY_TEXT_SIZE: 14px;
 $SECONDARY_LINE_HEIGHT: 20px;
 
 $TERTIARY_TEXT_SIZE: 13px;
+
+// 
+$h-paragraph-spacing: 12px !default;
+$h-paragraph-print-indent: 24px !default;
+$h-paragraph-lead-font-size: 18px !default;
+$h-paragraph-lead-line-height: 26px !default;
+$h-paragraph-spacing-desktop: 16px !default;
 
 // Form fields line heights.
 $INPUT_LINE_HEIGHT: 20px;

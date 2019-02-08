@@ -1,5 +1,6 @@
-@import '../settings/breakpoints';
-@import '../settings/typography';
+@import '../tools/breakpoints';
+@import '../settings/type';
+@import '../tools/mixins';
 
 // =============================================================================
 // LISTS OVERVIEW
@@ -109,31 +110,16 @@ dl {
 li,
 dt,
 dd {
-  @include calculate_unitless_line_height(
-    map-get($BODY_MOBILE, LINE_HEIGHT),
-    map-get($BODY_MOBILE, FONT_SIZE)
-  );
+  @include font($BODY_MOBILE);
+  @include create_margins($BODY_MOBILE);
 
-  font-size: map-get($BODY_MOBILE, FONT_SIZE);
-  letter-spacing: map-get($BODY_MOBILE, LETTER_SPACING);
-
-  @include bp(md) {
-    @include calculate_unitless_line_height(
-      map-get($BODY_TABLET, LINE_HEIGHT),
-      map-get($BODY_TABLET, FONT_SIZE)
-    );
-
-    font-size: map-get($BODY_TABLET, FONT_SIZE);
-    letter-spacing: map-get($BODY_TABLET, LETTER_SPACING);
+  @include bp(sm) {
+    @include font($BODY_TABLET);
+    @include create_margins($BODY_TABLET);
   }
 
-  @include bp(xl) {
-    @include calculate_unitless_line_height(
-      map-get($BODY, LINE_HEIGHT),
-      map-get($BODY, FONT_SIZE)
-    );
-
-    font-size: map-get($BODY, FONT_SIZE);
-    letter-spacing: map-get($BODY, LETTER_SPACING);
+  @include bp(lg) {
+    @include font($BODY);
+    @include create_margins($BODY);
   }
 }

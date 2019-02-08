@@ -1,4 +1,4 @@
-@import "functions";
+@import 'functions';
 
 // Mixin for styling typography via maps containing required integer values for
 // font-family, font-size, font-weight, and line-height; with an optional value
@@ -10,6 +10,7 @@
 // @prop {!number} $specs.LINE_HEIGHT
 // @prop {!string} $specs.FONT_FAMILY
 // @prop {?number} $specs.LETTER_SPACING
+// @prop {?string} $specs.TEXT_TRANSFORM
 @mixin font($specs) {
   $font_weight: map-get($specs, FONT_WEIGHT);
   $font_size: map-get($specs, FONT_SIZE);
@@ -22,10 +23,16 @@
       $font_size
     )} $font_family;
 
-  // Print letter-spacing if it's defined in the map.
+  // Add letter-spacing if it's defined in the map.
   @if map-has-key($specs, LETTER_SPACING) {
     $letter_spacing: map-get($specs, LETTER_SPACING);
     letter-spacing: #{$letter_spacing}px;
+  }
+
+  // Add text-transform if it's defined in the map.
+  @if map-has-key($specs, TEXT_TRANSFORM) {
+    $text_transform: map-get($specs, TEXT_TRANSFORM);
+    text-transform: $text_transform;
   }
 }
 
@@ -67,5 +74,16 @@
   &.has-top-bottom-margin {
     margin-bottom: #{$margin}px;
     margin-top: #{$margin}px;
+  }
+}
+
+// Create selectors to allow paragraphs to evenly separate.
+// ---
+// @param {number} $font-size: A font-size
+// @content: A set of selectors and modifiers for altering the visual layout
+//  of paragraph elements
+@mixin create_paragraph_spacing($margin) {
+  & + & {
+    margin-top: $margin;
   }
 }

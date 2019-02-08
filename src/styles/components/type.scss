@@ -1,0 +1,161 @@
+@import '../settings/colors';
+@import '../settings/type';
+@import '../tools/mixins';
+@import '../tools/breakpoints';
+
+// =============================================================================
+// TYPOGRAPHY OVERVIEW
+//
+// Styles for generalized typographical elements.
+//
+// =============================================================================
+
+.headline {
+  @include font_smoothing($FONT_SMOOTHING_MOZ, $FONT_SMOOTHING_WEBKIT, $FONT_SMOOTHING_RENDERING);
+
+  color: $PRIMARY_TEXT_COLOR;
+  font-family: $HEADLINE_FONT;
+  font-weight: $HEADLINE_FONT_WEIGHT;
+  // https://justmarkup.com/log/2015/07/dealing-with-long-words-in-css/
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: initial;
+  word-wrap: initial;
+
+  &.headline--display-one {
+    @include font($DISPLAY_1_MOBILE);
+    @include create_margins($DISPLAY_1_MOBILE);
+
+    @include bp(sm) {
+      @include font($DISPLAY_1_TABLET);
+      @include create_margins($DISPLAY_1_TABLET);
+    }
+
+    @include bp(lg) {
+      @include font($DISPLAY_1);
+      @include create_margins($DISPLAY_1);
+    }
+  }
+
+  &.headline--display-two {
+    @include font($DISPLAY_2_MOBILE);
+    @include create_margins($DISPLAY_2_MOBILE);
+
+    @include bp(sm) {
+      @include font($DISPLAY_2_TABLET);
+      @include create_margins($DISPLAY_2_TABLET);
+    }
+
+    @include bp(lg) {
+      @include font($DISPLAY_2);
+      @include create_margins($DISPLAY_2);
+    }
+  }
+
+  &.headline--one {
+    @include font($HEADLINE_1_MOBILE);
+    @include create_margins($HEADLINE_1_MOBILE);
+
+    @include bp(sm) {
+      @include font($HEADLINE_1_TABLET);
+      @include create_margins($HEADLINE_1_TABLET);
+    }
+
+    @include bp(lg) {
+      @include font($HEADLINE_1);
+      @include create_margins($HEADLINE_1);
+    }
+  }
+
+  &.headline--two {
+    @include font($HEADLINE_2_MOBILE);
+    @include create_margins($HEADLINE_2_MOBILE);
+
+    @include bp(sm) {
+      @include font($HEADLINE_2_TABLET);
+      @include create_margins($HEADLINE_2_TABLET);
+    }
+
+    @include bp(lg) {
+      @include font($HEADLINE_2);
+      @include create_margins($HEADLINE_2);
+    }
+  }
+
+  &.headline--three {
+    @include font($HEADLINE_3_MOBILE);
+    @include create_margins($HEADLINE_3_MOBILE);
+
+    @include bp(sm) {
+      @include font($HEADLINE_3_TABLET);
+      @include create_margins($HEADLINE_3_TABLET);
+    }
+
+    @include bp(lg) {
+      @include font($HEADLINE_3);
+      @include create_margins($HEADLINE_3);
+    }
+  }
+
+  &.headline--four {
+    @include font($HEADLINE_4_MOBILE);
+    @include create_margins($HEADLINE_4_MOBILE);
+
+    @include bp(sm) {
+      @include font($HEADLINE_4_TABLET);
+      @include create_margins($HEADLINE_4_TABLET);
+    }
+
+    @include bp(lg) {
+      @include font($HEADLINE_4);
+      @include create_margins($HEADLINE_4);
+    }
+  }
+
+  &.headline--subhead {
+    @include font($SUBHEAD_MOBILE);
+    @include create_margins($SUBHEAD_MOBILE);
+
+    @include bp(sm) {
+      @include font($SUBHEAD_TABLET);
+      @include create_margins($SUBHEAD_TABLET);
+    }
+
+    @include bp(lg) {
+      @include font($SUBHEAD);
+      @include create_margins($SUBHEAD);
+    }
+  }
+}
+
+.eyebrow {
+  @include font($EYEBROW_MOBILE);
+  @include create_margins($EYEBROW_MOBILE);
+
+  @include bp(sm) {
+    @include font($EYEBROW_TABLET);
+    @include create_margins($EYEBROW_TABLET);
+  }
+
+  @include bp(lg) {
+    @include font($EYEBROW);
+    @include create_margins($EYEBROW);
+  }
+}
+
+.footnote {
+  @include font($FOOTNOTE_MOBILE);
+  @include create_margins($FOOTNOTE_MOBILE);
+
+  @include bp(sm) {
+    @include font($FOOTNOTE_TABLET);
+    @include create_margins($FOOTNOTE_TABLET);
+  }
+
+  @include bp(lg) {
+    @include font($FOOTNOTE);
+    @include create_margins($FOOTNOTE);
+  }
+}

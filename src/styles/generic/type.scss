@@ -1,0 +1,66 @@
+@import '../settings/global';
+@import '../settings/colors';
+@import '../settings/type';
+@import '../tools/mixins';
+@import '../tools/breakpoints';
+
+$HEADLINE_TEXT_SIZE: 18px;
+$HEADLINE_FONT_WEIGHT: 400;
+$PARAGRAPH_SPACING_MOBILE: 12px;
+$PARAGRAPH_SPACING: 16px;
+
+// http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+h1, h2, h3, h4, h5, h6 {
+  font-size: $HEADLINE_TEXT_SIZE;
+  font-weight: $HEADLINE_FONT_WEIGHT;
+}
+
+// default font styles for paragraphs are covered by global body styles
+// see generic/page.scss
+p {
+  @include font($BODY_MOBILE);
+  @include create_margins($BODY_MOBILE);
+  @include create_paragraph_spacing($PARAGRAPH_SPACING_MOBILE);
+
+  @include bp(sm) {
+    @include font($BODY_TABLET);
+    @include create_margins($BODY_TABLET);
+  }
+
+  @include bp(lg) {
+    @include font($BODY);
+    @include create_margins($BODY);
+    @include create_paragraph_spacing($PARAGRAPH_SPACING);
+  }
+}
+
+// hr {
+//   border: $h-hr-border-style $h-hr-border-color;
+//   border-width: $h-hr-border-width 0 0;
+//   clear: both;
+//   height: 0;
+//   margin-bottom: $h-hr-margin-bottom;
+//   margin-top: $h-hr-margin-top;
+// }
+
+em,
+i {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: $PRIMARY_FONT_WEIGHT_BOLD;
+}
+
+abbr,
+acronym {
+  color: $PRIMARY_TEXT_COLOR;
+  cursor: $CURSOR_HELP_VALUE;
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+abbr {
+  text-transform: none;
+}
