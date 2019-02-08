@@ -429,7 +429,7 @@ const moduleConfig = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
         options: {
           presets: [
             ["@babel/preset-env", {
@@ -511,8 +511,8 @@ const plugins = [
 ];
 </pre>
 
-These plugin settings add a `type="module"` attribute for all `.js` script
-elements as well as a `nomodule` attribute for all `.mjs` script modules.
+These plugin settings add a `type="module"` attribute for all `.mjs` script
+elements as well as a `type="nomodule"` attribute for all `.js` script modules.
 
 <div class="aside note">
   If you're having trouble understanding how to add all of these configurations to <code>webpack.config.js</code>, take a look at the <a href="https://glitch.com/edit/#!/serve-modern-code-complete?path=webpack.config.js:1:0">complete version of the file</a>.
