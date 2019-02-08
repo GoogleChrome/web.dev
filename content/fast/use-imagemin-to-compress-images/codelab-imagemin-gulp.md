@@ -15,11 +15,11 @@ glitch: imagemin-gulp
 This Glitch already contains `gulp` and `gulp-cli`, but you'll need to
 install the `gulp-imagemin` plugin.
 
-- Click the **Remix This** button to make the project editable.
+- Click the **Remix to Edit** button to make the project editable.
 
 <web-screenshot type="remix"></web-screenshot>
 
-- Click the **Status** button.
+- Click the **Tools** button.
 
 <web-screenshot type="status"></web-codelab>
 
@@ -108,7 +108,7 @@ const pngquant = require('imagemin-pngquant');
 ```
 
 - Add the `imagemin-pngquant` plugin (and its settings) by passing the following
-array to `ImageminPlugin()`:
+array to `imagemin()`:
 
 ```javascript
 [pngquant({quality: '50'})]
