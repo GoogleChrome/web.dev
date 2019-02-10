@@ -2,18 +2,9 @@ title: Fast load times
 description: Guarantee your site loads quickly to avoid user drop off.
 overview: |
 
-    When you're building a modern web experience,
-    it's important to measure, optimize, and monitor
-    if you're to get fast and stay fast.
-    Performance plays a significant role in the success of any online venture,
-    as high performing sites engage and retain users better than poorly performing ones.
-
-    Sites should focus on optimizing for user-centric happiness metrics.
-    Tools like Lighthouse (baked into web.dev!) highlight these metrics and
-    help you take the right steps toward improving your performance.
-    To "stay fast," set and enforce performance budgets that work for your
-    team's constraints. In this section you'll learn to keep your site 
-    loading fast and to keep your users happy after your site has launched.
+    Fast sites engage and retain users better than slow sites. In this 
+    section you'll learn how to measure, optimize, and monitor your site 
+    for performance.
 
 order: 1
 
