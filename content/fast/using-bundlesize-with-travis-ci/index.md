@@ -21,7 +21,7 @@ repository](https://help.github.com/articles/about-required-status-checks/) so
 that it won’t allow merging pull-requests unless the bundlesize tests have
 passed.
 
-Bundlesize checks on GitHub include a size comparison to the master branch and
+Bundlesize's GitHub checks include a size comparison to the master branch and
 a warning in case of a big jump in size.
 
 <img src="bundlesize-check-diff.jpg" class="screenshot" alt="Bundlesize check on GitHub">
@@ -104,7 +104,7 @@ integration under the Settings section of your profile.
 
 <img src="travis-ci.png" class="screenshot" alt="GitHub Apps integration on Travis CI">
 
-Once you have an account, go to **Settings** under your profile, hit the **Sync
+Once you have an account, go to **Settings** under your profile, click the **Sync
 account** button, and make sure your new repo is listed on Travis.
 
 <img src="travis-ci-sync-button.png" class="screenshot" alt="Travis CI Sync button">
@@ -145,7 +145,7 @@ GitHub repo that you created in step 3.
 1. On Glitch, click **Tools** > **Git, Import, and Export** > **Export to GitHub**.
 
 2. In the pop-up, enter your GitHub username and the name of the repo as
-"username/repo". Glitch will export your app to a new branch named "glitch". 
+`username/repo`. Glitch will export your app to a new branch named "glitch". 
 
 3. Create a new pull request by clicking the **New pull request** button on
 the homepage of the repository.
