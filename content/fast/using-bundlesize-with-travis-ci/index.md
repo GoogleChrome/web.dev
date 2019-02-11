@@ -5,7 +5,7 @@ author: mihajlija
 description: |
   Define performance budgets with minimal setup and enforce them as part of your development workflow using bundlesize with Travis CI.
 web_lighthouse: N/A
-web_updated_on: N/A
+web_updated_on: 2019-02-01
 web_published_on: N/A
 wf_blink_components: N/A
 ---
@@ -21,7 +21,10 @@ repository](https://help.github.com/articles/about-required-status-checks/) so
 that it won’t allow merging pull-requests unless the bundlesize tests have
 passed.
 
-<img src="bundlesize-check.jpg" class="screenshot" alt="Bundlesize check on GitHub">
+Bundlesize's GitHub checks include a size comparison to the master branch and
+a warning in case of a big jump in size.
+
+<img src="bundlesize-check-diff.jpg" class="screenshot" alt="Bundlesize check on GitHub">
 
 <div class="aside note">
 You can also use bundlesize with <a href="https://circleci.com/">Circle CI</a>,
@@ -31,7 +34,7 @@ You can also use bundlesize with <a href="https://circleci.com/">Circle CI</a>,
 
 To see it in action, here’s an app bundled with
 [webpack](https://webpack.js.org/) that lets you [vote for your favorite
-kitty](https://glitch.com/edit/#!/scarce-pixie). 
+kitty](https://glitch.com/edit/#!/scarce-pixie).
 
 <a href="https://glitch.com/edit/#!/scarce-pixie">
   <img class="screenshot" src="./cat-voting-app.png" alt="Cat voting app">
@@ -43,8 +46,6 @@ kitty](https://glitch.com/edit/#!/scarce-pixie).
 bundlesize. To start, click the **Remix to Edit** button to make the project
 editable.
 
-<web-screenshot type="remix" aria-label="remix" role="img"></web-screenshot>
-
 The main bundle of this app is in the public folder. To test its size, add the
 following section to the `package.json` file:
 
@@ -55,7 +56,7 @@ following section to the `package.json` file:
     "maxSize": "170 kB"
   }
 ]
-</pre>  
+</pre>
 
 <div class="aside note">
 You can also set
@@ -67,9 +68,9 @@ a bundle in your application.
 
 To keep the compressed JavaScript bundle size [under the recommended
 limit](https://web.dev/fast/your-first-performance-budget#budget-for-quantity-based-metrics),
-set the performance budget to 170KB in the `maxSize` field. 
+set the performance budget to 170KB in the `maxSize` field.
 
-Bundlesize supports [glob patterns](https://github.com/isaacs/node-glob) and the * 
+Bundlesize supports [glob patterns](https://github.com/isaacs/node-glob) and the \*
 wildcard character in the file path will match all bundle names in the public
 folder.
 
@@ -88,7 +89,7 @@ Since Travis needs a test to run, add a test script to `package.json`:
   "start": "webpack && http-server -c-1",
   "test": "bundlesize"
 }
-</pre>  
+</pre>
 
 ## Set up continuous integration
 
@@ -103,8 +104,8 @@ integration under the Settings section of your profile.
 
 <img src="travis-ci.png" class="screenshot" alt="GitHub Apps integration on Travis CI">
 
-Once you have an account, go to Settings under your profile, hit the Sync
-account button, and make sure your new repo is listed on Travis.
+Once you have an account, go to **Settings** under your profile, click the **Sync
+account** button, and make sure your new repo is listed on Travis.
 
 <img src="travis-ci-sync-button.png" class="screenshot" alt="Travis CI Sync button">
 
@@ -113,47 +114,41 @@ account button, and make sure your new repo is listed on Travis.
 Bundlesize needs authorization to be able to post on pull requests, so [visit
 this link to get the bundlesize
 token](https://github.com/login/oauth/authorize?scope=repo%3Astatus&client_id=6756cb03a8d6528aca5a)
-that will be stored in the Travis configuration. 
+that will be stored in the Travis configuration.
 
 <img src="bundlesize-token.jpg" class="screenshot" alt="bundlesize token">
 
-In your project's Travis dashboard, go to More options > Settings > Environment
-variables.
+In your project's Travis dashboard, go to **More options** > **Settings** > **Environment
+variables**.
 
 <img src="environment-variables.png" class="screenshot" alt="Adding environment variables on Travis CI">
 
 Add a new environment variable with the token as the value field and
-BUNDLESIZE_GITHUB_TOKEN as the name. 
+BUNDLESIZE_GITHUB_TOKEN as the name.
 
-The last thing needed to kick-off continuous integration is a `.travis.yml`
+The last thing you need to kick-off continuous integration is a `.travis.yml`
 file, which tells Travis CI what to do. To speed things up, it is already
-included in the project and it specifies that the app is using NodeJS. 
+included in the project and it specifies that the app is using NodeJS.
 
 With this step, you’re all set up and bundlesize will warn you if your
 JavaScript ever goes over the budget. Even when you start off great, over time,
 as you add new features, kilobytes can pile up. With automated performance
-budget monitoring, you can rest easy knowing that it won’t go unnoticed. 
+budget monitoring, you can rest easy knowing that it won’t go unnoticed.
 
 ## Try it out
 
 ### Trigger your first bundlesize test
 
 To see how the app stacks up against the performance budget, add the code to the
-GitHub repo that you created in step 3. On Glitch, click your project name to go
-to Project options > Advanced options.
+GitHub repo that you created in step 3. 
 
-<img src="advanced-options-button.png" class="screenshot" alt="Glitch Advanced options button">
+1. On Glitch, click **Tools** > **Git, Import, and Export** > **Export to GitHub**.
 
-In the Advanced options menu, select Export to GitHub.
+2. In the pop-up, enter your GitHub username and the name of the repo as
+`username/repo`. Glitch will export your app to a new branch named "glitch". 
 
-<img src="export-to-github-button.png" class="screenshot" alt="Glitch Export to GitHub button">
-
-In the pop-up, enter your GitHub username and the name of the repo as
-"username/repo". 
-
-Glitch will export your app to a new branch named glitch. Create a new pull
-request by clicking the New pull request button on the homepage of the
-repository.
+3. Create a new pull request by clicking the **New pull request** button on
+the homepage of the repository.
 
 You’ll now see status checks in progress on the pull request page.
 
@@ -161,9 +156,9 @@ You’ll now see status checks in progress on the pull request page.
 
 It won’t take long until all checks are done. Unfortunately, the cat voting app
 is a bit bloated and does not pass the performance budget check. The main bundle
-is 266KB and the budget is 170KB. 
+is 266 KB and the budget is 170 KB.
 
-<img src="failed-bundlesize-check.png" class="screenshot" alt="Failed bundlesize check">
+<img src="bundlesize-fail.png" class="screenshot" alt="Failed bundlesize check">
 
 ### Optimize
 
@@ -200,31 +195,26 @@ the different services, is always required.
 Since the source file has been updated, you need to run webpack to build the new
 bundle file.
 
-* Click the **Logs** button.
+1. Click the **Tools** button.
 
-<web-screenshot type="logs"></web-screenshot>
+2. Then click the **Console** button. This will open the console in another tab.
 
-* Then click the **Console** button. 
-
-<web-screenshot type="console" aria-label="console" role="img"></web-screenshot>
-
-* In Glitch console, type <pre class="devsite-terminal devsite-click-to-copy">
+3. In the console, type <pre class="devsite-terminal devsite-click-to-copy">
   webpack</pre> and wait for it to finish the build.
 
-* Export the code to GitHub from Project options > Advanced options > Export to
-  GitHub.
+4. Export the code to GitHub from **Tools** > **Git, Import, and Export** > **Export to GitHub**.
 
-* Go to the pull request page on GitHub and wait for all checks to finish.
+5. Go to the pull request page on GitHub and wait for all checks to finish.
 
-<img src="passed-bundlesize-check.png" class="screenshot" alt="Passed budnlesize check">
+<img src="bundlesize-pass.png" class="screenshot" alt="Passed bundlesize check">
 
-Success! The new size of the bundle is 125.5KB and all the checks have passed.
+Success! The new size of the bundle is 125.5 KB and all the checks have passed.
 🎉
 
 Unlike Firebase, importing parts of the moment library cannot be done as easily,
 but it’s worth a shot. Check out how you can further optimize the app in the
 [Remove unused code
-codelab](https://web.dev/fast/remove-unused-code/codelab-remove-unused-code).  
+codelab](https://web.dev/fast/remove-unused-code/codelab-remove-unused-code).
 
 ### Monitor
 
