@@ -42,9 +42,11 @@ as well.
 
 Double-check that FFmpeg is installed and working.
 
-- Click the **Status** button.
+- Click the **Remix to Edit** button to make the project editable.
 
-<web-screenshot type="status"></web-screenshot>
+<web-screenshot type="remix"></web-screenshot>
+
+- Click the **Tools** button.
 
 - Click the **Console** button.
 
