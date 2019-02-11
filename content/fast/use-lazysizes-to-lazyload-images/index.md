@@ -68,12 +68,8 @@ The picture element is also supported by Lazysizes. Add the `lazyload` class to 
 
 ```html
 <picture>
-  <source
-      data-srcset="flower@1200.jpg"
-      media="(max-width: 1200px)" />
-<img
-    data-src="flower.jpg"
-    class="lazyload" />
+  <source data-srcset="flower@1200.jpg" media="(max-width: 1200px)" />
+  <img data-src="flower.jpg" class="lazyload" />
 </picture>
 ```
 
