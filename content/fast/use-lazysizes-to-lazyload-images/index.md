@@ -62,6 +62,21 @@ When you update the image tags you make two changes:
     image, the lazysizes code sets the image `src` attribute using the value
     from the `data-src` attribute.
 
+### Update pictures tags
+
+The picture element is also supported by Lazysizes. Add the `lazyload` class to the `img` and use `data-srcset` on your `source` and the `img` element. The final result should be something similar:
+
+```html
+<picture>
+  <source
+      data-srcset="flower@1200.jpg"
+      media="(max-width: 1200px)" />
+<img
+    data-src="flower.jpg"
+    class="lazyload" />
+</picture>
+```
+
 ## Verify
 
 Open DevTools and scroll down the page to see these changes in action. As you scroll, you should see new network requests occur and `<img>` tag classes change from `lazyload` to `lazyloaded`.
