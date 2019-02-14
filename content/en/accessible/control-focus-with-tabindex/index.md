@@ -10,7 +10,7 @@ author: robdodson
 web_lighthouse:
   - tabindex
   - focusable-controls
-wf_blink_components: Blink>Accessibilitygit stash pop
+wf_blink_components: Blink>Accessibility
 tags: ["accessible"]
 ---
 
