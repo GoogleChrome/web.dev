@@ -50,43 +50,15 @@ layout: layout
   </div>
 </main>
 
-{% set next = false %}
-{% for item in collections[tags[0]] %}
-  {% if item.url == page.url %}
-    {% set next = collections[tags[0]][loop.index0 + 1] %}
-	{% endif %}
-{% endfor %}
-
-{% if next %}
 <div class="cta-next-guide">
   <div class="cta-next-guide__wrapper">
-    <div class="cta-next-guide__heading">
-      Next Guide
-    </div>
-    <a class="cta-next-guide__link gc-analytics-event"
-        data-category="web.dev"
-        data-label="guide, next guide"
-        data-action="click"
-        href="{{next.url}}">
-      {{next.data.title}}
-    </a>
-    {# {% else %}
-    <a class="cta-next-guide__link gc-analytics-event"
-        data-category="web.dev"
-        data-label="guide, back to path"
-        data-action="click"
-        href="{{path.href}}">
-      {{path.title}}
-    </a> #}
-
+    {% nextGuideLink page, paths %}
   </div>
-
-  {#<a class="go-back cta-next-guide__go-back gc-analytics-event"
+  <a class="go-back cta-next-guide__go-back gc-analytics-event"
       data-category="web.dev"
       data-label="guide, go back"
       data-action="click"
-      href="{{path.href}}">
+      href="..">
     Return to all guides
-  </a>#}
+  </a>
 </div>
- {% endif %}

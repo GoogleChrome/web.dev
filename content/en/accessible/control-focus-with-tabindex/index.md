@@ -10,8 +10,7 @@ author: robdodson
 web_lighthouse:
   - tabindex
   - focusable-controls
-wf_blink_components: Blink>Accessibility
-tags: ["accessible"]
+wf_blink_components: Blink>Accessibilitygit stash pop
 ---
 
 Native HTML elements such as `<button>` or `<input>` have keyboard accessibility
