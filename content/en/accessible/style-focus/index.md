@@ -9,7 +9,7 @@ meta:
 author: robdodson
 web_lighthouse: N/A
 wf_blink_components: Blink>Accessibility
-tags: ["accessible"]
+tags: ["accessible", "article"]
 ---
 
 The focus indicator (often signified by a "focus ring") identifies the currently

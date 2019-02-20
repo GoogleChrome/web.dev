@@ -1,6 +1,7 @@
 ---
 layout: layout
 ---
+{% import 'macros.njk' as macros %}
 
 <header class="feature">
   <div class="container">
@@ -59,7 +60,8 @@ layout: layout
           <li>
             <div class="marker" aria-hidden="true"></div>
             <a href="./{{slug}}">
-              {% getTitleBySlug page.inputPath, slug %}
+              {% set guideUrl = '/' + paths[pathName].basePath + slug + '/' %}
+              {{ macros.getTitleFromUrl(guideUrl, collections.article) }}
             </a>
           </li>
           {% endfor %}

@@ -1,6 +1,8 @@
 ---
 layout: layout
 ---
+{% import 'macros.njk' as macros %}
+
 <main class="guide-landing-page">
   <div class="container">
 
@@ -52,7 +54,17 @@ layout: layout
 
 <div class="cta-next-guide">
   <div class="cta-next-guide__wrapper">
-    {% nextGuideLink page, paths %}
+    {% set nextUrl = macros.nextGuide(page, paths).trim() %}
+    {% if nextUrl !== '' %}
+      <div class="cta-next-guide__heading">Next guide</div>
+      <a class="cta-next-guide__link gc-analytics-event"
+        data-category="web.dev"
+        data-label="guide, next guide"
+        data-action="click"
+        href="{{nextUrl}}">
+        {{ macros.getTitleFromUrl(nextUrl, collections.article) }}
+      </a>
+    {% endif %}
   </div>
   <a class="go-back cta-next-guide__go-back gc-analytics-event"
       data-category="web.dev"

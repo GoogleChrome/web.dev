@@ -5,8 +5,8 @@ gulp.task('lint', () => {
   return (
     gulp
       .src([
-        'gulpfile.js',
         '_data/**/*.js',
+        './*.js',
         // More js files here.
       ])
       // eslint() attaches the lint output to the 'eslint' property
