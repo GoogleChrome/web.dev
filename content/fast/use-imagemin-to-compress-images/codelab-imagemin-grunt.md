@@ -98,8 +98,6 @@ To add `imagemin-pngquant` to this project:
 
 - Make sure the **Console** is open.
 
-<web-screenshot type="console"></web-codelab>
-
 - Install the plugin using npm by typing the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -254,6 +252,6 @@ know if the JPEG images on your page are optimally compressed.
   the live version of your Glitch and verify that the "Efficiently encode
   images" audit was passed.
 
-<img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+<img class="screenshot" src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 
 Success! You have used Imagemin to optimally compress the images on your page.
