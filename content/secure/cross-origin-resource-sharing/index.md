@@ -67,7 +67,7 @@ Above is equivalent to saying "I want to receive HTML in response. Here is cooki
 
 <strong>Sample Response header</strong>
 <pre>Content-Encoding: gzip
-Cache-Control: no-cache </pre>
+Cache-Control: no-store </pre>
 Above is same as saying "Data is encoded with gzip. Do not cache this please"
 
 <tr>
