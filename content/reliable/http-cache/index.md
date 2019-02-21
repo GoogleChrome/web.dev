@@ -111,6 +111,15 @@ Build tools like webpack can
 [automate the process](https://webpack.js.org/guides/caching/#output-filenames)
 of assigning hash fingerprints to your web app assets' URLs.
 
+<div class="aside note">
+You can also add the <a
+href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#Revalidation_and_reloading">
+<code>immutable</code> property</a> to your <code>Cache-Control</code> header as
+a further optimization, though it <a
+href="https://www.keycdn.com/blog/cache-control-immutable#browser-support">will
+be ignored</a> in some browsers.
+</div>
+
 ### Server revalidation for unversioned URLs
 
 Unfortunately, not all of the URLs you load are versioned. Maybe you're not able
