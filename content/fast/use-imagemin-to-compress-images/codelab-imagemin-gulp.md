@@ -15,18 +15,9 @@ glitch: imagemin-gulp
 This Glitch already contains `gulp` and `gulp-cli`, but you'll need to
 install the `gulp-imagemin` plugin.
 
-- Click the **Remix This** button to make the project editable.
-
-<web-screenshot type="remix"></web-screenshot>
-
-- Click the **Status** button.
-
-<web-screenshot type="status"></web-codelab>
-
+- Click the **Remix to Edit** button to make the project editable.
+- Click the **Tools** button.
 - Then click the **Console** button.
-
-<web-screenshot type="console"></web-codelab>
-
 - Type the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -111,11 +102,13 @@ const pngquant = require('imagemin-pngquant');
 array to `ImageminPlugin()`:
 
 ```javascript
-[pngquant({quality: '50'})]
+[pngquant({quality: [0.5, 0.5]})]
 ```
 
-This code tells Imagemin to compress PNGs to a quality of '50' ('0' is the
-worst; '100' is the best) using the Pngquant plugin.
+This code tells Imagemin to compress PNGs using the Pngquant plugin. The
+`quality` field uses a `min` and `max` range of values to determine the
+compression level—0 is the lowest and 1 is the highest. To force all images to
+be compressed at 50% quality, pass `0.5` as both the min and max value.
 
 ## ✔︎ Check-in
 
@@ -129,7 +122,7 @@ const gulp = require('gulp');
 gulp.task('default', () => {
   gulp.src('images/*')
     .pipe(imagemin([
-      pngquant({quality: '50'})
+      pngquant({quality: [0.5, 0.5]})
     ]))
     .pipe(gulp.dest('images/'))
 });
@@ -154,13 +147,13 @@ npm install --save-dev imagemin-mozjpeg
 const mozjpeg = require('imagemin-mozjpeg');
 ```
 
-- Next, add `mozjpeg({quality: '50'})` to the array that's passed to
+- Next, add `mozjpeg({quality: 50})` to the array that's passed to
   `ImageminPlugin()`:
 
 ```javascript
 [
-  pngquant({quality: '50'}),
-  mozjpeg({quality: '50'})
+  pngquant({quality: [0.5, 0.5]}),
+  mozjpeg({quality: 50})
 ]
 ```
 
@@ -177,8 +170,8 @@ const gulp = require('gulp');
 gulp.task('default', () => {
   gulp.src('images/*')
     .pipe(imagemin([
-      pngquant({quality: '50'}),
-      mozjpeg({quality: '50'})
+      pngquant({quality: [0.5, 0.5]}),
+      mozjpeg({quality: 50})
     ]))
     .pipe(gulp.dest('images/'))
 });
@@ -207,13 +200,10 @@ Lighthouse's "Efficiently encode images" performance audit can let you know if
 the JPEG images on your page are optimally compressed.
 
 - Click on the **Show Live** button to view the live version of the your Glitch.
-
-<web-screenshot type="show-live"></web-screenshot>
-
-Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
+- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
 live version of your Glitch and verify that the "Efficiently encode images"
 audit was passed.
 
-<img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+<img class="screenshot" src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 
 Success! You have used Imagemin to optimally compress the images on your page.
