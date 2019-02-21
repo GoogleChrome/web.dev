@@ -4,21 +4,23 @@ title: Defer unused CSS
 author: demianrenzulli
 description: |
   Learn how to defer unused CSS with the goal of optimizing the Critical Rendering Path, and improve FCP (First Contentful Paint).
-web_lighthouse: N/A
-web_updated_on: 2010-02-17
-web_published_on:
+web_lighthouse:
+- unused-css-rules
+- render-blocking-resources
+web_updated_on: 2019-02-17
+web_published_on: 2019-02-17
 wf_blink_components: N/A
 ---
 
-# Why should you care?
+# Defer unused CSS
 
 CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), meaning that they have to be loaded and processed before the browser can start rendering the page. For this reason, web pages that contain unnecessarily large or unused styles may take longer to render, increasing the likelihood that a user may bounce: 53% of mobile visits bounce if the page does not load [in 3 seconds or less](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/).
 
-On this guide, you’ll learn how to defer unused CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [FCP (First Contentful Paint)](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
+In this guide, you’ll learn how to defer unused CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [FCP (First Contentful Paint)](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
 
 ## Loading CSS in a suboptimal way
 
-The following example page contains an accordion with three hidden paragraphs of text, each of which is styled with a different class.
+The following example contains an accordion with three hidden paragraphs of text, each of which is styled with a different class.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
@@ -35,9 +37,9 @@ The goal of this guide is to optimize this page, so only the **critical** styles
 
 ## Measure
 
-Run [Lighthouse](https://developers.google.com/web/tools/lighthouse/) on [the page](https://defer-css-unoptimized.glitch.me/) and go to the **Performance** section.
+Run [Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse/#run-lighthouse-from-chrome-devtools) on [the page](https://defer-css-unoptimized.glitch.me/) and go to the **Performance** section.
 
-The report shows the **FCP** metric with a value of "1s", and the Opportunity **Eliminate render-blocking resources**, pointing to the **style.css** file:
+The report shows the **FCP** metric with a value of "1s", and the opportunity **Eliminate render-blocking resources**, pointing to the **style.css** file:
 
 <figure>
   <img src="./lighthouse-unoptimized.png"
@@ -50,7 +52,7 @@ To visualize how this CSS is actually blocking rendering:
 1. Press Control+Shift+J or Cmd+Option+J (Mac), to open DevTools.
 1. Go to the **Performance** tab and click on the **Reload** button.
 
-On the resulting trace you’ll see that the **FCP** marker is placed immediately after the CSS finishes loading:
+In the resulting trace you’ll see that the **FCP** marker is placed immediately after the CSS finishes loading:
 
 <figure>
   <img src="./cdt-perf-unoptimized.png"
@@ -61,12 +63,12 @@ This means that the browser needs to wait for the whole CSS to be loaded and pro
 
 ## Optimize
 
-As a first step to optimize this page, you need to know which classes are actually considered “critical”.
+To optimize this page, you need to know which classes are considered “critical”.
 You'll use the the [Coverage Tool](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) for that:
 
-1. On DevTools, open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/ui#command-menu), by pressing Control+Shift+P or Cmd+Shift+P (Mac).
-1. Type “Coverage” and select “Show Coverage”.
-1. Click the “Reload” button, to reload the page and start capturing the coverage.
+1. In DevTools, open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/ui#command-menu), by pressing Control+Shift+P or Cmd+Shift+P (Mac).
+1. Type "Coverage" and select "Show Coverage".
+1. Click the "Reload" button, to reload the page and start capturing the coverage.
 
 <br/>
 
@@ -78,12 +80,12 @@ You'll use the the [Coverage Tool](https://developers.google.com/web/updates/201
 
 Double-click on the report, to see classes marked in two colors:
 
-* Green (**"critical"**): These are the classes the browser needs to render the visible content (like the title, subtitle, and accordion buttons).
-* Red (**"non-critical"**): These styles are applied to content that's not immediately visible (like the paragraphs that appear after cliking on each button). Additionally, class definitions like "h2" are not even used on this page.
+* Green (**critical**): These are the classes the browser needs to render the visible content (like the title, subtitle, and accordion buttons).
+* Red (**non-critical**): These styles are applied to content that's not immediately visible (like the paragraphs that appear after clicking on each button). Additionally, class definitions like "h2" are not even used on this page.
 
-With this information, you'll apply an optimization to let the browser start processing the “critical” styles immediately after the page loads, while deferring the load of the “non-critical” CSS for later:
+With this information, you'll apply an optimization to let the browser start processing the critical styles immediately after the page loads, while deferring the load of the non-critical CSS for later:
 
-* Extract the class definitions marked with green on the report obtained from the coverage tool, and put those classes inside a ```<style>``` block on the head of the page:
+* Extract the class definitions marked with green in the report obtained from the coverage tool, and put those classes inside a `<style>` block at the head of the page:
 
 ```
 <style type="text/css">
@@ -100,10 +102,10 @@ With this information, you'll apply an optimization to let the browser start pro
 
 This is not the standard way of loading CSS. Here's how it works:
 
-* ```link rel=”preload” as=”style”``` allows to request the style asynchronously (for more information about ```"preload"```  , check out [this guide](https://web.dev/fast/preload-critical-assets)).
-* The ```onload``` attribute on the link allows the CSS to be processed, when it finishes loading.
-* “nulling” the ```onload``` handler once it is used, helps some browsers to avoid re-calling the handler upon switching the rel attribute.
-* The ordinary reference to the stylesheet inside a noscript element works as a fallback, for browsers that don’t execute JS.
+* `link rel="preload" as="style"` requests the stylesheet asynchronously. You can learn more about `preload` in the [Preload critical assets guide](https://web.dev/fast/preload-critical-assets).
+* The `onload` attribute in the `link` allows the CSS to be processed when it finishes loading.
+* "nulling" the `onload` handler once it is used helps some browsers avoid re-calling the handler upon switching the rel attribute.
+* The reference to the stylesheet inside of a `noscript` element works as a fallback for browsers that don’t execute JavaScript.
 
 The [resulting page](https://defer-css-optimized.glitch.me/) looks exactly like the previous version, even when most of its styles are loaded asynchronously:
 
@@ -118,9 +120,9 @@ The [resulting page](https://defer-css-optimized.glitch.me/) looks exactly like 
 
 ## Monitor
 
-Obtain a new Performance trace with DevTools, now running it on the [optimized page](https://defer-css-optimized.glitch.me/). 
+Use the Devtools to run another **Performance** trace on the [optimized page](https://defer-css-optimized.glitch.me/). 
 
-The **FCP** marker appears before the page requests the CSS, which means the browser doesn’t need to wait for the CSS to be loaded to start rendering the page:
+The **FCP** marker appears before the page requests the CSS, which means the browser doesn’t need to wait for the CSS to load before rendering the page:
 
 <figure>
   <img src="./cdt-perf-optimized.png"
@@ -129,11 +131,11 @@ The **FCP** marker appears before the page requests the CSS, which means the bro
 
 As a final step, run Lighthouse on the optimized page. 
 
-On the report you’ll see that the FCP page has been reduced in **0.2s** (a 20% improvement!):
+In the report you’ll see that the FCP page has been reduced by **0.2s** (a 20% improvement!):
 
 <figure>
   <img src="./lighthouse-metrics-optimized.png"
-       alt="Lighthouse report, showing an FCP value of '1s'." class="screenshot">
+       alt="Lighthouse report, showing an FCP value of '0.8s'." class="screenshot">
 </figure>
 
 Also, as a result, the **Eliminate render-blocking resources** suggestion is no longer under **Opportunities**, and now belongs to the **Passed Audits** section:
@@ -145,5 +147,4 @@ Also, as a result, the **Eliminate render-blocking resources** suggestion is no 
 
 ## Next steps & references
 
-On this guide you used vanilla code to implement this optimization. In a real production scenario, it’s a good practice use functions like [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md), that can encapsulate this behavior and work well across browsers. As a complement of this, you can use tools like [Critical](https://github.com/addyosmani/critical/blob/master/README.md), which helps extracting and inlining the “Above the Fold” CSS, you did manually on the **Optimize** step.
-These tools will be covered in an upcoming guide.
+In this guide you used vanilla code to implement this optimization. In a real production scenario, it’s a good practice to use functions like [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md), that can encapsulate this behavior and work well across browsers. As a complement to this, you can use tools like [Critical](https://github.com/addyosmani/critical/blob/master/README.md), which helps extracting and inlining the “Above the Fold” CSS you did manually in the **Optimize** step.
