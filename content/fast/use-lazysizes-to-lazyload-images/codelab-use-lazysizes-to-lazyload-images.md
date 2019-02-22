@@ -96,7 +96,7 @@ add lazy loading to any offscreen images.
 - Click on the **Show Live** button to view the live version of the your Glitch.
 
 With the live site open:
-1. Open Chrome DevTools.
+1. Open Chrome DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 1. Click on the **Audits** tab.
 1. Check the Performance checkbox and run Lighthouse.
 
