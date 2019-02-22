@@ -94,7 +94,8 @@ grunt.registerTask('default', ['imagemin']);
 
 `imagemin-pngquant` is a plugin for specifying compression quality levels. 
 We've already added `imagemin-pngquant` to this project in the `package.json` 
-file so you can declare the plugin and adjust its settings in your Gruntfile.
+file so that you can use it to compress your PNGs. To use it, declare the plugin
+and specify a compression quality level in your Gruntfile.
 
 
 - Add this line to the top your `gruntfile.js`:
