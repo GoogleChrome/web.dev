@@ -19,8 +19,6 @@ First measure how the website performs:
 
 - Click on the **Show Live** button to preview the app.
 
-<web-screenshot type="show-live"></web-screenshot>
-
 1. Open Chrome DevTools.
 1. Click on the **Audits** panel.
 1. Select the **Performance** checkbox.
@@ -44,13 +42,9 @@ Double-check that FFmpeg is installed and working.
 
 - Click the **Remix to Edit** button to make the project editable.
 
-<web-screenshot type="remix"></web-screenshot>
-
 - Click the **Tools** button.
 
 - Click the **Console** button.
-
-<web-screenshot type="console"></web-screenshot>
 
 - In the console, run:
 
@@ -170,8 +164,6 @@ instead. If you prefer a WebM <code>&lt;source&gt;</code> be used first, specify
 ## Preview
 
 -  Click on the **Show Live** button.
-
-<web-screenshot type="show-live"></web-screenshot>
 
 The experience should look the same. So far so good.  
 
