@@ -98,7 +98,8 @@ file so that you can use it to compress your PNGs. To use it, declare the plugin
 and specify a compression quality level in your Gruntfile.
 
 
-- Add this line to the top your `gruntfile.js`:
+- Declare the `imagemin-pngquant` plugin by adding this line to the top of your 
+`gruntfile.js`:
 
 <pre class="prettyprint">
 <strong>const pngquant = require('imagemin-pngquant');</strong>
