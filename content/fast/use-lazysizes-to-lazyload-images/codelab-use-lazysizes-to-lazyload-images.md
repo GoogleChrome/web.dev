@@ -24,8 +24,6 @@ makes this a very simple strategy to implement.
 
 - Click the **Remix to Edit** button to make the project editable.
 
-<web-screenshot type="remix"></web-screenshot>
-
 `lazysizes.min.js` has already been downloaded and added to this Glitch. To
 include it in the page:
 
@@ -79,8 +77,6 @@ That's it! To see these changes in action, follow these steps:
 
 - Click on the **Show Live** button to view the live version of the Glitch.
 
-<web-screenshot type="show-live"></web-screenshot>
-
 - Open the console and find the images that were just added. Their classes
   should change from `lazyload` to `lazyloaded` as you scroll down the page.
 
@@ -98,8 +94,6 @@ Lastly, it's a good idea to use Lighthouse to verify these changes. Lighthouse's
 add lazy loading to any offscreen images.
 
 - Click on the **Show Live** button to view the live version of the your Glitch.
-
-<web-screenshot type="show-live"></web-screenshot>
 
 With the live site open:
 1. Open Chrome DevTools.
