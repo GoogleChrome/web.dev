@@ -82,16 +82,12 @@ be made by using different compression settings.
 
 ## Customize your Imagemin Configuration
 
-Customize your Imagemin configuration to use the `imagemin-pngquant` plugin to
-compress PNGs. This plugin lets you specify a compression quality level.
+`imagemin-pngquant` is a plugin for specifying compression quality levels.
+We've already added `imagemin-pngquant` to this project in the `package.json`
+file so that you can use it to compress your PNGs. To use it, declare the plugin
+and specify a compression quality level in your gulpfile.
 
-- In the console, install the plugin using npm:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-pngquant
-</pre>
-
-- Declare the `imagemin-pngquant` plugin by adding this line at the top your
+- Declare the `imagemin-pngquant` plugin by adding this line to the top of your
 `gulpfile.js`:
 
 ```javascript
