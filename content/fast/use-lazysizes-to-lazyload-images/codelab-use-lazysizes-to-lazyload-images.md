@@ -98,7 +98,8 @@ add lazy loading to any offscreen images.
 With the live site open:
 1. Open Chrome DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 1. Click on the **Audits** tab.
-1. Check the Performance checkbox and run Lighthouse.
+1. Check the **Performance** checkbox.
+1. Click **Run audits**.
 
 Verify that the "Defer offscreen images" audit passed.
 
