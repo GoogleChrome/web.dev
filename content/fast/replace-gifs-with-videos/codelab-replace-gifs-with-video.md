@@ -172,7 +172,8 @@ The experience should look the same. So far so good.
 With the live site open:
 1. Open Chrome DevTools.
 1. Click on the **Audits** tab.
-1. Check the Performance checkbox and run Lighthouse.
+1. Check the Performance checkbox.
+1. Click **Run audits**.
 
 You should see that the "Use video formats for animated content" audit is now
 passing! Woohoo! 💪
