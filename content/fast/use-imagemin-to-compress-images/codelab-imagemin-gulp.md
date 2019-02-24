@@ -10,24 +10,14 @@ web_published_on: 2018-11-05
 glitch: imagemin-gulp
 ---
 
-## Install the Imagemin Gulp plugin
+## Setup the Imagemin Gulp plugin
 
-This Glitch already contains `gulp` and `gulp-cli`, but you'll need to
-install the `gulp-imagemin` plugin.
+This Glitch already contains `gulp`, `gulp-cli`, and the `gulp-imagemin` plugin.
+To add the configuration for Imagemin, you'll need to edit your `gulpfile.js` file.
 
 - Click the **Remix to Edit** button to make the project editable.
-- Click the **Tools** button.
-- Then click the **Console** button.
-- Type the following command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev gulp-imagemin
-</pre>
-
-## Setup your gulpfile.js
-
-- First, initialize the `gulp-imagemin` plugin that you just installed by adding
-this code at the top of `gulpfile.js`:
+- First, initialize the `gulp-imagemin` plugin by adding this code at the top of 
+`gulpfile.js`:
 
 ```javascript
 const imagemin = require('gulp-imagemin');
@@ -65,6 +55,8 @@ You now have a `gulpfile.js` that can be used to compress images.
 
 ## Run Gulp
 
+- Click the **Tools** button.
+- Then click the **Console** button.
 - In the console, run Gulp to compress your images:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -129,13 +121,8 @@ compressed too.
 
 ## Customize your Imagemin Configuration (continued)
 
-Use the `imagemin-mozjpeg` plugin to compress JPG images.
-
-- In the console, install the plugin using npm:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-mozjpeg
-</pre>
+Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to compress 
+JPG images.
 
 - Declare the `imagemin-mozjpeg` plugin by putting this line at the top your `gulpfile.js`.
 
