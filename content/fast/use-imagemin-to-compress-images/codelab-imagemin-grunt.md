@@ -151,8 +151,8 @@ they are compressed as well.
 
 ## Customize your Imagemin configuration (continued)
 
-The `imagemin-mozjpeg` plugin, which has already been installed for you, can be
-used to compress JPEG images.
+Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to 
+compress JPEG images.
 
 - Declare the `imagemin-mozjpeg` plugin by putting this line at the top your
   `gruntfile.js`.
