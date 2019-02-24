@@ -207,9 +207,10 @@ grunt.loadNpmTasks('grunt-contrib-imagemin');
 grunt.registerTask('default', ['imagemin']);
 ```
 
-## Re-run Grunt & verify results with Lighthouse
+## Run Grunt & verify results with Lighthouse
 
-- Click the **Tools** button and open the **Console**.
+- Click the **Tools** button.
+- Then click the **Console** button.
 - Run Grunt by typing the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
