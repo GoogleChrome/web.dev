@@ -10,26 +10,17 @@ web_published_on: 2018-11-05
 glitch: imagemin-webpack
 ---
 
-## Install the Imagemin Webpack plugin
+## Setup the Imagemin Webpack plugin
 
-This Glitch already contains `webpack` and `webpack-cli`, but you'll need to
-install `imagemin-webpack-plugin`.
-
-- Click the **Remix to Edit** button to make the project editable.
-- Click the **Tools** button.
-- Then click the **Console** button. This will open a new window.
-- Lastly, type this command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-webpack-plugin
-</pre>
-
-
-## Setup imagemin-webpack-plugin:
+This Glitch already contains `webpack`, `webpack-cli`, and 
+`imagemin-webpack-plugin`. To add the configuration for Imagemin, you'll need
+to edit your `webpack.config.js` file.
 
 The existing `webpack.config.js` for this project has been copying images from
 the `images/` directory to the `dist/` directory but it hasn't been
 compressing them.
+
+- Click the **Remix to Edit** button to make the project editable.
 
 <div class="aside note">
 Why would you copy images to a new `dist/` folder? `dist/` is short for
@@ -38,14 +29,14 @@ etc. separate from their distributed versions because they may be slightly
 different.
 </div>
 
-First, declare the Imagemin plugin by adding this code at the top of
+- First, declare the Imagemin plugin by adding this code at the top of
 `webpack.config.js`:
 
 ```javascript
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 ```
 
-Next, add the following code as the last item in the `plugins[]` array. This
+- Next, add the following code as the last item in the `plugins[]` array. This
 adds Imagemin to the list of plugins that Webpack uses:
 
 ```javascript
@@ -86,7 +77,10 @@ You now have a Webpack config that compresses images using Imagemin.
 
 ## Run Webpack
 
-- In the console, run Webpack to compress your images:
+- Click the **Tools** button.
+- Then click the **Console** button.
+- To compress your images, run Webpack by typing the following command into the 
+console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 webpack --config webpack.config.js --mode development
@@ -154,15 +148,11 @@ how they are compressed as well.
 
 Instead of using `imagemin-webpack-plugin`'s default plugin for JPG compression
 (`imagemin-jpegtran`), use the `imagemin-mozjpeg` plugin. Unlike Jpegtran,
-Mozjpeg let's you specify a compression quality for your JPG compression.
+Mozjpeg let's you specify a compression quality for your JPG compression. We've 
+already installed the Mozjpeg plugin for you in this Glitch, but you'll need to 
+edit your `webpack.config.js` file:
 
-- Install the Mozjpeg plugin:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-mozjpeg
-</pre>
-
-- Next, initialize the `imagemin-mozjpeg` plugin by adding the following line at the
+- Initialize the `imagemin-mozjpeg` plugin by adding the following line at the
   top of your `webpack.config.js` file:
 
 ```javascript
