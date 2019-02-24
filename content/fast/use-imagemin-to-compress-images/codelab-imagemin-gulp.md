@@ -57,7 +57,8 @@ You now have a `gulpfile.js` that can be used to compress images.
 
 - Click the **Tools** button.
 - Then click the **Console** button.
-- In the console, run Gulp to compress your images:
+- Run Gulp to compress your images by typing the following command into the 
+console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 gulp
