@@ -18,7 +18,6 @@ video.
 First measure how the website performs:
 
 1. Click on the **Show Live** button to preview the app.
-
 1. Open Chrome DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`
 1. Click on the **Audits** panel.
 1. Select the **Performance** checkbox.
@@ -40,13 +39,10 @@ as well.
 
 Double-check that FFmpeg is installed and working.
 
-- Click the **Remix to Edit** button to make the project editable.
-
-- Click the **Tools** button.
-
-- Click the **Console** button.
-
-- In the console, run:
+1. Click the **Remix to Edit** button to make the project editable.
+1. Click the **Tools** button.
+1. Click the **Console** button.
+1. In the console, run:
 
 <pre class="devsite-terminal">
 which ffmpeg
@@ -61,7 +57,7 @@ You should get a file path back:
 ## Change GIF to video
 
 1. In the console, run `cd images` to enter the images directory.
-1. Run `ls` to see the contents.
+2. Run `ls` to see the contents.
 
 You should see something like this:
 
@@ -70,7 +66,7 @@ $ ls
 cat-herd.gif
 ```
 
-- In the console, run:
+3. In the console, run:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 ffmpeg -i cat-herd.gif cat-herd.mp4
@@ -94,13 +90,13 @@ it makes sense to generate both. Thankfully the `<video>` element will let you
 add multiple sources, so if a browser doesn't support WebM, it can fallback to
 MP4.
 
-- In the console, run:
+1. In the console, run:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 ffmpeg -i cat-herd.gif -c vp9 -b:v 0 -crf 41 cat-herd.webm
 </pre>
 
-- To check the file sizes run:
+2. To check the file sizes run:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 ls -lh
