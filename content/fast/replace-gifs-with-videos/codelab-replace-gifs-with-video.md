@@ -17,7 +17,7 @@ video.
 
 First measure how the website performs:
 
-- Click on the **Show Live** button to preview the app.
+1. Click on the **Show Live** button to preview the app.
 
 1. Open Chrome DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`
 1. Click on the **Audits** panel.
