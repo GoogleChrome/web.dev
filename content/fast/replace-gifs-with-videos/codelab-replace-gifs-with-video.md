@@ -19,7 +19,7 @@ First measure how the website performs:
 
 - Click on the **Show Live** button to preview the app.
 
-1. Open Chrome DevTools.
+1. Open Chrome DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`
 1. Click on the **Audits** panel.
 1. Select the **Performance** checkbox.
 1. Click **Run Audits** to generate a report.
