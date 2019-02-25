@@ -16,8 +16,8 @@ This Glitch already contains `grunt`, `grunt-cli`, and the `grunt-contrib-imagem
 plugin. To add the configuration for Imagemin, you'll need to edit your 
 `gruntfile.js` file.
 
-- Click the **Remix to Edit** button to make the project editable.
-- In `gruntfile.js`, replace the `//Add configuration here` comment  
+1. Click the **Remix to Edit** button to make the project editable.
+2. In `gruntfile.js`, replace the `//Add configuration here` comment  
 with this code block:
 
 ```javascript
@@ -45,7 +45,7 @@ Have more questions about this? You can read more about the Grunt file object
 <a href="https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically">here</a>.
 </div>
 
-- Load the Imagemin task by adding this line immediately before
+3. Load the Imagemin task by adding this line immediately before
   `grunt.registerTask(...)`:
 
 <pre class="prettyprint">
@@ -54,7 +54,7 @@ grunt.registerTask('default', [/* list plugins here */]);
 </pre>
 
 
-- Lastly, add Imagemin as the default Grunt task by replacing the `/* list plugins here */` comment with `'imagemin'`. That line should now look like this:
+4. Lastly, add Imagemin as the default Grunt task by replacing the `/* list plugins here */` comment with `'imagemin'`. That line should now look like this:
 
 <pre class="prettyprint">
 grunt.registerTask('default', <strong>['imagemin']</strong>);
@@ -89,7 +89,7 @@ file so that you can use it to compress your PNGs. To use it, declare the plugin
 and specify a compression quality level in your Gruntfile.
 
 
-- Declare the `imagemin-pngquant` plugin by adding this line to the top of your 
+1. Declare the `imagemin-pngquant` plugin by adding this line to the top of your 
 `gruntfile.js`:
 
 <pre class="prettyprint">
@@ -99,7 +99,7 @@ grunt.initConfig({
   ...
 </pre>
 
-- Add settings for compressing PNG images by adding an `options` property to the
+2. Add settings for compressing PNG images by adding an `options` property to the
   `imagemin` object. That `options` property should look like this:
 
 <pre class="prettyprint">
@@ -154,7 +154,7 @@ they are compressed as well.
 Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to 
 compress JPEG images.
 
-- Declare the `imagemin-mozjpeg` plugin by putting this line at the top your
+1. Declare the `imagemin-mozjpeg` plugin by putting this line at the top your
   `gruntfile.js`.
 
 <pre class="prettyprint">
@@ -163,7 +163,7 @@ const pngquant = require('imagemin-pngquant');
 const grunt = require('grunt');
 </pre>
 
-- Next, add `mozjpeg({quality: 50})` to the array in the `options` object.
+2. Next, add `mozjpeg({quality: 50})` to the array in the `options` object.
   That array should now look like this:
 
 <pre class="prettyprint">
@@ -209,9 +209,9 @@ grunt.registerTask('default', ['imagemin']);
 
 ## Run Grunt & verify results with Lighthouse
 
-- Click the **Tools** button.
-- Then click the **Console** button.
-- Run Grunt by typing the following command into the console:
+1. Click the **Tools** button.
+2. Then click the **Console** button.
+3. Run Grunt by typing the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 grunt
@@ -227,7 +227,7 @@ Lastly, it's a good idea to use Lighthouse to verify the changes that you just
 made. Lighthouse's "Efficiently encode images" performance audit will let you
 know if the JPEG images on your page are optimally compressed.
 
-- Click on the **Show Live** button to view the live version of the your Glitch.
+4. Click on the **Show Live** button to view the live version of the your Glitch.
 - Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
   the live version of your Glitch and verify that the "Efficiently encode
   images" audit was passed.
