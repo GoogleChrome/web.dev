@@ -20,7 +20,7 @@ The existing `webpack.config.js` for this project has been copying images from
 the `images/` directory to the `dist/` directory but it hasn't been
 compressing them.
 
-- Click the **Remix to Edit** button to make the project editable.
+1. Click the **Remix to Edit** button to make the project editable.
 
 <div class="aside note">
 Why would you copy images to a new `dist/` folder? `dist/` is short for
@@ -29,14 +29,14 @@ etc. separate from their distributed versions because they may be slightly
 different.
 </div>
 
-- First, declare the Imagemin plugin by adding this code at the top of
+2. First, declare the Imagemin plugin by adding this code at the top of
 `webpack.config.js`:
 
 ```javascript
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 ```
 
-- Next, add the following code as the last item in the `plugins[]` array. This
+3. Next, add the following code as the last item in the `plugins[]` array. This
 adds Imagemin to the list of plugins that Webpack uses:
 
 ```javascript
@@ -77,9 +77,9 @@ You now have a Webpack config that compresses images using Imagemin.
 
 ## Run Webpack
 
-- Click the **Tools** button.
-- Then click the **Console** button.
-- To compress your images, run Webpack by typing the following command into the 
+1. Click the **Tools** button.
+2. Then click the **Console** button.
+3. To compress your images, run Webpack by typing the following command into the 
 console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -88,7 +88,7 @@ webpack --config webpack.config.js --mode development
 
 But what happens if you run Webpack in production mode?
 
-- Re-run Webpack, but this time in production mode:
+4. Re-run Webpack, but this time in production mode:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 webpack --config webpack.config.js --mode production
@@ -152,14 +152,14 @@ Mozjpeg let's you specify a compression quality for your JPG compression. We've
 already installed the Mozjpeg plugin for you in this Glitch, but you'll need to 
 edit your `webpack.config.js` file:
 
-- Initialize the `imagemin-mozjpeg` plugin by adding the following line at the
+1. Initialize the `imagemin-mozjpeg` plugin by adding the following line at the
   top of your `webpack.config.js` file:
 
 ```javascript
 const imageminMozjpeg = require('imagemin-mozjpeg');
 ```
 
-- Add a `plugins` property to the object passed to `ImageminPlugin()`, such that
+2. Add a `plugins` property to the object passed to `ImageminPlugin()`, such that
   the object now looks like this:
 
 ```javascript
@@ -216,7 +216,7 @@ module.exports = {
 
 ## Re-run Webpack & verify results with Lighthouse
 
-- In the console, re-run Webpack:
+1. In the console, re-run Webpack:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 webpack --config webpack.config.js --mode production
@@ -231,8 +231,8 @@ Lighthouse to verify your changes.
 Lighthouse's "Efficiently encode images" performance audit can let you know if
 the JPEG images on your page are optimally compressed.
 
-- Click on the **Show Live** button to view the live version of the your Glitch.
-- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
+2. Click on the **Show Live** button to view the live version of the your Glitch.
+3. Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
 live version of your Glitch and verify that the "Efficiently encode images"
 audit was passed.
 
