@@ -22,12 +22,12 @@ makes this a very simple strategy to implement.
 
 ## Add the lazysizes script to the page
 
-- Click the **Remix to Edit** button to make the project editable.
+1. Click the **Remix to Edit** button to make the project editable.
 
 `lazysizes.min.js` has already been downloaded and added to this Glitch. To
 include it in the page:
 
-- Add the following `<script>` tag to `index.html`:
+2. Add the following `<script>` tag to `index.html`:
 
 <pre class="prettyprint devsite-disable-click-to-copy">
   <strong>&lt;script src=&quot;lazysizes.min.js&quot; async&gt;&lt;/script&gt;</strong>
@@ -75,14 +75,14 @@ browser.
 
 That's it! To see these changes in action, follow these steps:
 
-- Click on the **Show Live** button to view the live version of the Glitch.
+1. Click on the **Show Live** button to view the live version of the Glitch.
 
-- Open the console and find the images that were just added. Their classes
+2. Open the console and find the images that were just added. Their classes
   should change from `lazyload` to `lazyloaded` as you scroll down the page.
 
 ![Images being lazy loaded](./lazyload-console.png)
 
-- Watch the network panel to see the image files load individually as you scroll
+3. Watch the network panel to see the image files load individually as you scroll
   down the page.
 
 ![Images being lazy loaded](./lazysizes-waterfall.png)
