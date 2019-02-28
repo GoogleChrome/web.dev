@@ -1,6 +1,4 @@
-{% macro nextGuide(page, paths) %}
-  {% nextGuideLink page, paths %}
-{% endmacro %}
+{% macro nextGuide(page, paths) %}{% nextGuideLink page, paths %}{% endmacro %}
 
 {% macro getTitleFromUrl(articleUrl, collection) %}
   {% for article in collection %}

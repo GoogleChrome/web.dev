@@ -12,11 +12,12 @@ module.exports = function(eleventyConfig) {
     if (collection && paths[collection]) {
       const guides = helpers.getGuidesFromTopics(paths[collection].topics);
       const nextIndex = guides.indexOf(page.fileSlug) + 1;
-      const nextSlug = (nextIndex && nextIndex < guides.length) ? `${guides[nextIndex]}/` : '';
-      const nextUrl = `/${paths[collection].basePath}${nextSlug}`;
-      return nextUrl;
+      if (nextIndex && nextIndex < guides.length) {
+        const nextUrl = `/${paths[collection].basePath}${guides[nextIndex]}/`;
+        return nextUrl;
+      }
+      return '';
     }
-    return '';
   });
 
   return {
