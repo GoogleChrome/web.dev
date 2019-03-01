@@ -22,6 +22,38 @@
 #   country: US               # Optional - ISO Country Code (not shown)
 #   email: test@example.com   # Optional (not shown)
 
+katejeffreys:
+  name:
+    given: Kate
+    family: Jeffreys
+  org:
+    name: Google
+    unit: Developer Relations
+  country: US
+  role:
+    - author
+  email: katejeffreys@google.com
+  github: katejeffreys
+  description:
+    en: Kate is a Technical Writer
+
+argyleink:
+  name:
+    given: Adam
+    family: Argyle
+  org:
+    name: Google
+    unit: Developer Relations
+  country: US
+  role:
+    - author
+  homepage: https://argyleink.com/
+  twitter: argyleink
+  github: argyleink
+  email: argyle@google.com
+  description:
+    en: repeat(∞, [empathize, define, design, develop, deploy]);
+
 jakearchibald:
   name:
     given: Jake
