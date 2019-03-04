@@ -1,6 +1,6 @@
 ---
 layout: path
-pathName: accessible
+learningPath: accessible
 title: Accessible to all
 description: Build a site that works for all of your users.
 overview: |
@@ -9,4 +9,5 @@ overview: |
     their context and any situational, temporary, or permanent impairments.
 tags:
   - article
+  - path
 ---

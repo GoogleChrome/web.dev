@@ -1,7 +1,8 @@
 ---
-layout: guide
+layout: learn
 permalink: /
+pathcards:
+  - accessible
+  - secure
 ---
 
-## Learning paths
-[Accessible](/content/en/accessible)

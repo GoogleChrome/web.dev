@@ -6,7 +6,7 @@ layout: layout
 <header class="feature">
   <div class="container">
     <div class="row">
-    <div class="feature-right path--{{pathName}}">
+    <div class="feature-right path--{{learningPath}}">
       <!-- nb. feature image appears before text for mobile view -->
     </div>
     <div class="feature-left">
@@ -31,7 +31,7 @@ layout: layout
           <h2 class="no-link">What you'll learn</h2>
           <ul>
             {# paths comes from _data #}
-            {% for topic in paths[pathName].topics %}
+            {% for topic in paths[learningPath].topics %}
               <li>
                 <div class="tick" aria-hidden="true">done</div>
                 <div>{{topic.title}}</div>
@@ -47,7 +47,7 @@ layout: layout
   <main>
     <div class="container">
       <div class="row">
-       {% for topic in paths[pathName].topics %}
+       {% for topic in paths[learningPath].topics %}
       <!-- TOPIC -->
       <div class="topic">
         <div class="title">
@@ -60,7 +60,7 @@ layout: layout
           <li>
             <div class="marker" aria-hidden="true"></div>
             <a href="./{{slug}}">
-              {% set guideUrl = '/' + paths[pathName].basePath + slug + '/' %}
+              {% set guideUrl = '/' + paths[learningPath].basePath + slug + '/' %}
               {{ macros.getTitleFromUrl(guideUrl, collections.article) }}
             </a>
           </li>

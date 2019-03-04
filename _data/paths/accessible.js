@@ -1,5 +1,6 @@
 module.exports = {
   basePath: 'content/en/accessible/',
+  disabled: false,
   topics: [{
     title: 'Understand the diverse needs of users',
     guides: [

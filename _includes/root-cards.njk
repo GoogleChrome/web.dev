@@ -1,0 +1,23 @@
+{% import 'macros.njk' as macros %}
+
+{% for id in pathcards %}
+<div class="card card--{{id}}">
+  <div class="card__header card__header--colored card__header--{{id}}">
+    {% if paths[id].disabled %}<span class="card__progress">Coming Soon</span>{% endif %}
+  </div>
+  <div class="card__content">
+    <p class="card__title">{{ macros.getLearningPathTitle(id, collections.path) }}</p>
+    <p class="card__desc">{{ macros.getLearningPathDescription(id, collections.path) }}</p>
+    {% if paths[id].disabled %}
+    {% else %}
+    <div class="card__actions">
+      <a href="{{ macros.getLearningPathUrl(id, collections.path) }}"
+          data-category="web.dev"
+          data-label="learn, {{id}} explore"
+          data-action="click"
+          class="button button-flat button-justify-left">Explore</a>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}

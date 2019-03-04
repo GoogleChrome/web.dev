@@ -7,3 +7,27 @@
     {% endif %}
   {%- endfor -%}
 {% endmacro %}
+
+{% macro getLearningPathTitle(learningPath, collection) %}
+  {% for path in collection %}
+    {% if path.data.learningPath == learningPath %}
+      {{ path.data.title }}
+    {% endif %}
+  {%- endfor -%}
+{% endmacro %}
+
+{% macro getLearningPathDescription(learningPath, collection) %}
+  {% for path in collection %}
+    {% if path.data.learningPath == learningPath %}
+      {{ path.data.description }}
+    {% endif %}
+  {%- endfor -%}
+{% endmacro %}
+
+{% macro getLearningPathUrl(learningPath, collection) %}
+  {% for path in collection %}
+    {% if path.data.learningPath == learningPath %}
+      {{ path.data.page.url }}
+    {% endif %}
+  {%- endfor -%}
+{% endmacro %}
