@@ -1,8 +1,7 @@
 ---
-layout: learn
+layout: layout
 permalink: /
-pathcards:
-  - accessible
-  - secure
 ---
+
+## Home
 
