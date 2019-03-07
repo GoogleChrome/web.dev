@@ -20,7 +20,8 @@ the app's request size.
 ## Measure
 
 <div class="aside note">
- Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
+ Since webpack is used in this application, any changes made to the code will trigger a new build 
+ which can take a few seconds. Once it completes, you should see your changes reflected in the application.
 </div>
 
 Before diving in to add optimizations, it's always a good idea to first analyze
