@@ -1,6 +1,6 @@
 ---
 page_type: glitch
-title: Brotli compression
+title: Enable Brotli compression
 author: mdiblasio
 description: |
   In this codelab, learn how Brotli compression can further reduce compression ratios and your app's overall size.
@@ -41,10 +41,7 @@ Now take a look at how large this application is:
 
 <img class="screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 
-In the previous [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression), we reduced the `main.js` from 225 KB to 61.6 KB. Let's explore how Brotli compression can reduce this bundle size even further.
-
-Although a lot of progress was made in the ["Remove unused code"](/fast/remove-unused-code) 
-codelab to trim this bundle size down, 225 KB is still quite large.
+In the previous [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression), we reduced the `main.js` from 225 KB to 61.6 KB. In this codelab you will explore how Brotli compression can reduce this bundle size even further.
 
 ## Brotli Compression
 
@@ -58,7 +55,7 @@ assets with compression by default or allow you to easily configure them. If you
 +  21% smaller than `gzip` for HTML
 +  17% smaller than `gzip` for CSS
 
-To use Brotli, your server must support HTTPS. Brotli is supported in the [latest versions of most browsers](https://caniuse.com/#feat=brotli). Browsers that support Brotli will include br in `Accept-Encoding` headers:
+To use Brotli, your server must support HTTPS. Brotli is supported in the [latest versions of most browsers](https://caniuse.com/#feat=brotli). Browsers that support Brotli will include `br` in `Accept-Encoding` headers:
 
 ```
 Accept-Encoding: gzip, deflate, br
