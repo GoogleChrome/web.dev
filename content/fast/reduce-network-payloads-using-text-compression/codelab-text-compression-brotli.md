@@ -41,7 +41,7 @@ Now take a look at how large this application is:
 
 <img class="screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 
-In the previous [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression), we reduced the `main.js` from 225 KB to 61.6 KB. In this codelab you will explore how Brotli compression can reduce this bundle size even further.
+In the previous [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression), we reduced the `main.js` from 225 KB to 61.6 KB. In this codelab, you will explore how Brotli compression can reduce this bundle size even further.
 
 ## Brotli Compression
 
@@ -213,7 +213,7 @@ ls -lh
 
 The brotli compressed version of the bundle, `main.bundle.js.br`, is now saved here as well and is **~76% smaller in size** (225 KB vs. 53 KB) than `main.bundle.js`.
 
-The next thing that needs to be done is tell the server to send these brotli-compressed files whenever their original JS versions are being requested. This can be done by defining a new route in `server.js` before the files are served with `express.static`.
+Next, tell the server to send these brotli-compressed files whenever their original JS versions are being requested. This can be done by defining a new route in `server.js` before the files are served with `express.static`.
 
 <pre class="prettyprint">
 var express = require('express');
@@ -236,7 +236,7 @@ Once the app reloads, take a look at the Network panel once more.
 
 <img class="screenshot" src="./network-static-compression-brotli.png"  alt="Network panel bundle size after static Brotli compression">
 
-Just like before, a significant reduction in bundle size!
+Success! You have used Brotli compression to further compress your assets!
 
 ## Conclusion
 
