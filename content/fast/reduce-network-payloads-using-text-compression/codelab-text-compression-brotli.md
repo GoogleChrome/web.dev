@@ -1,19 +1,15 @@
 ---
 page_type: glitch
-title: Minify and compress network payloads
-author: houssein
+title: Brotli compression
+author: mdiblasio
 description: |
-  In this codelab, learn how both minifying and compressing the JavaScript
-  bundle for an application improves page performance by reducing the app's
-  request size.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+  In this codelab, learn how Brotli compression can further reduce compression ratios and your app's overall size.
+web_updated_on: 2019-05-05
+web_published_on: 2019-05-05
 glitch: fav-kitties-compress-starter
 ---
 
-This codelab explores how both minifying and compressing the JavaScript
-bundle for the following application improves page performance by reducing
-the app's request size.
+This codelab is an extension of the [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression) and assumes you are familiar with the basics concepts of compression. As compared to other compression algorithms like `gzip`, this codelab explores how Brotli compression can further reduce compression ratios and your app’s overall size.
 
 ![App screenshot](./app-screenshot.png)
 
@@ -45,184 +41,49 @@ Now take a look at how large this application is:
 
 <img class="screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 
+In the previous [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression), we reduced the `main.js` from 225 KB to 61.6 KB. Let's explore how Brotli compression can reduce this bundle size even further.
+
 Although a lot of progress was made in the ["Remove unused code"](/fast/remove-unused-code) 
 codelab to trim this bundle size down, 225 KB is still quite large.
 
-## Minification
-
-Consider the following block of code.
-
-```
-function soNice() {
-  let counter = 0;
-
-  while (counter < 100) {
-    console.log('nice');
-    counter++;
-  }
-}
-```
-
-If this function is saved in a file of its own, the file size is around
-**112 B (bytes).**
-
-If all whitespace is removed, the resulting code looks like this:
-
-```
-function soNice(){let counter=0;while(counter<100){console.log("nice");counter++;}}
-```
-
-The file size would now be around 83 B. If it gets further mangled by reducing
-the length of variable name and modifying some expressions, the final code may
-end up looking like this:
-
-```
-function soNice(){for(let i=0;i<100;)console.log("nice"),i++}
-```
-
-The file size now reaches **62 B**.
-
-With each step, the code is becoming harder to read. However, the browser's 
-JavaScript engine interprets each of these in the exact same way. The 
-benefit of obfuscating code in this manner can help achieve smaller file 
-sizes. 112 B really was not much to begin with, but there was still a 50% 
-reduction in size!
-
-In this application, [webpack](https://webpack.js.org/) version 4 is used as a 
-module bundler. The specific version can be seen in `package.json`.
-
-<pre class="prettyprint">
-"devDependencies": {
-  //...
-  <strong>"webpack": "^4.16.4",</strong>
-  //...
-}
-</pre>
-
-Version 4 already minifies the bundle by default during production mode. It uses 
-`UglifyjsWebpackPlugin,` a plugin for [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony). 
-UglifyJS is a popular tool used to minify (or 'uglify') JavaScript code.
-
-To get an idea of what the minified code looks like, go ahead and click
-`main.bundle.js` while still in the DevTools **Network** panel. Now click the
-**Response** tab.
-
-<img class="screenshot" src="./minified-response.png" alt="Minified response">
-
-The code in its final form, minified and mangled, is shown in the response body. 
-To find out how large the bundle may have been if it was not minified, open 
-`webpack.config.js` and update the `mode` configuration.
-
-<pre class="prettyprint">
-module.exports = {
-  <s>mode: 'production',</s>
-  <strong>mode: 'none',</strong>
-  //...
-</pre>
-
-Reload the application and take a look at the bundle size again through the 
-DevTools **Network** panel
-
-<img class="screenshot" src="./network-no-minify.png" alt="Bundle size of 767 KB">
-
-That's a pretty big difference! 😅
-
-Make sure to revert the changes here before continuing.
-
-<pre class="prettyprint">
-module.exports = {
-  <strong>mode: 'production',</strong>
-  <s>mode: 'none',</s>
-  //...
-</pre>
-
-Including a process to minify code in your application depends on the tools 
-that you use:
-
-+ If webpack v4 or greater is used, no additional work needs to be done 
-since code is minified by default in production mode. 👍
-+ If an older version of webpack is used, install and include the `UglifyjsWebpackPlugin` 
-into the webpack build process. The [documentation](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/) 
-explains this in detail.
-+ Other minification plugins also exist and can be used instead, 
-such as [BabelMinifyWebpackPlugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin) 
-and [ClosureCompilerPlugin](https://github.com/roman01la/webpack-closure-compiler).
-+ If a module bundler is not being used at all, use [UglifyJS](https://github.com/mishoo/UglifyJS2) 
-as a CLI tool or include it directly as a dependency.
-
-## Compression
+## Brotli Compression
 
 <div class="aside warning">
 Many hosting platforms, CDNs and reverse proxy servers either encode 
-assets with compression by default or allow you to easily configure them. This 
-means that you may rarely ever need to set up your server similar to how it is 
-done in the compression section of this tutorial, but you can continue to read 
-if you are interested in learning how compression works.
+assets with compression by default or allow you to easily configure them. If your hosting platform supports Brotli, you may not need to setup your server to compress your assets with Brotli as described in this tutorial.
 </div>
 
-Although the term "compression" is sometimes loosely used to explain how code is 
-reduced during the minification process, it isn't actually compressed in the 
-literal sense.
+[Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html) is a newer compression algorithm which can provide even better text compression results than `gzip`. According to [CertSimple](https://certsimple.com/blog/nginx-brotli), Brotli performance is:
++  14% smaller than `gzip` for JavaScript
++  21% smaller than `gzip` for HTML
++  17% smaller than `gzip` for CSS
 
-**Compression** usually refers to code that has been modified using a data 
-compression algorithm. Unlike minification which ends up providing perfectly 
-valid code, compressed code needs to be _decompressed_ before being used.
+To use Brotli, your server must support HTTPS. Brotli is supported in the [latest versions of most browsers](https://caniuse.com/#feat=brotli). Browsers that support Brotli will include br in `Accept-Encoding` headers:
 
-With every HTTP request and response, browsers and web servers can add 
-[headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) to include 
-additional information about the asset being fetched or received. This can be 
-seen in the `Headers` tab within the DevTools Network panel where three types 
-are shown:
+```
+Accept-Encoding: gzip, deflate, br
+```
 
-+ **General** represents general headers relevant to the entire request-response interaction.
-+ **Response Headers** shows a list of headers specific to the actual response from the server.
-+ **Request Headers** shows a list of headers attached to the request by the client.
+You can determine which compression algorithm is used via the `Content-Encoding` field in the Chrome Developer Tools Network tab (CMD+option+I or Ctrl+alt+I):
 
-Take a look at the `accept-encoding` header in the `Request Headers`.
+<img class="screenshot" src="./network-content-encoding-brotli.png" alt="Network panel">
 
-<img class="screenshot" src="./accept-encoding.png" alt="Accept encoding header">
+### Enabling Brotli
 
-`accept-encoding` is used by the browser to specify which content 
-encoding formats, or compression algorithms, it supports. There are many 
-text-compression algorithms out there, but there are only three that are 
-supported here for the compression (and decompression) of HTTP network requests:
+#### Dynamic compression
 
-* [Gzip](https://www.gzip.org/) (`gzip`): The most widely used compression 
-format for server and client interactions. It builds on top of the Deflate 
-algorithm and is supported in all current browsers.
-* Deflate (`deflate`): Not commonly used.
-* [Brotli](https://github.com/google/brotli) (`br`): A newer compression 
-algorithm that aims to further improve compression ratios, which can result in 
-even faster page loads. It is supported in the
-[latest versions of most browsers](https://caniuse.com/#feat=brotli).
+**Dynamic compression** involves compressing assets on-the-fly as they get requested by the browser.
 
-The sample application in this tutorial is identical to the app completed in the 
-["Remove unused code"](/fast/remove-unused-code) codelab except for the fact that 
-[Express](https://expressjs.com/) is now used as a server framework. In the next 
-few sections, both static and dynamic compression is explored.
+#### Pros
+* Creating and updating saved compressed versions of assets does not need to be done.
+* Compressing on-the-fly works especially well for web pages that are dynamically generated.
 
-## Dynamic compression
+#### Cons
++  Compressing files at higher levels to achieve better compression ratios takes longer. This can cause a performance hit as the user waits for assets to compress before they are sent by the server.
 
-**Dynamic** compression involves compressing assets on-the-fly as they get 
-requested by the browser.
+#### Dynamic compression with Node/Express
 
-### Pros:
-
-+ Creating and updating saved compressed versions of assets does not need to be 
-done.
-+ Compressing on-the-fly works especially well for web pages that are 
-dynamically generated.
-
-### Cons:
-
-+ Compressing files at higher levels to achieve better compression ratios
-takes longer. This can cause a performance hit as the user waits for assets to 
-compress before they are sent by the server.
-
-### Dynamic compression with Node/Express
-
-The `server.js` file is responsible for setting up the Node server that hosts 
-the application.
+The `server.js` file is responsible for setting up the Node server that hosts the application.
 
 ```
 const express = require('express');
@@ -236,118 +97,103 @@ const listener = app.listen(process.env.PORT, function() {
 });
 ```
 
-All this currently does is import `express` and use the `express.static` 
-middleware to load all the static HTML, JS and CSS files in the 
-`public/` directory (and those files are created by webpack with every build).
+All this currently does is import `express` and use the `express.static` middleware to load all the static HTML, JS and CSS files in the `public/directory` (and those files are created by webpack with every build).
 
-To make sure all of the assets are compressed every time they're requested, the 
-[compression](https://github.com/expressjs/compression) middleware library can 
-be used. Begin by adding it as a `devDependency` in `package.json`:
+To make sure all of the assets are compressed using brotli every time they're requested, the [`shrink-ray`](https://github.com/aickin/shrink-ray#readme) module can be used. Begin by adding it as a `devDependency` in `package.json`:
 
 <pre class="prettyprint">
 "devDependencies": {
   //...
-  <strong>"compression": "^1.7.3"</strong>
+  <strong>"shrink-ray": "^0.1.3"</strong>
 },
 </pre>
 
 And import it into the server file, `server.js`:
 
 <pre class="prettyprint">
-const express = require('express');
-<strong>const compression = require('compression');</strong>
+var express = require('express');
+<strong>var shrinkRay = require('shrink-ray');</strong>
 </pre>
 
-And add it as a middleware **before** `express.static` is mounted:
+And add it as a middleware before `express.static` is mounted:
 
 <pre class="prettyprint">
 //...
+var app = express();
 
-const app = express();
-
-<strong>app.use(compression());</strong>
-
-app.use(express.static('public'));
-
-//...
+// compress all requests
+<strong>app.use(shrinkRay());</strong>
 </pre>
 
-Now reload the app, and take a look at the bundle size in the **Network** panel.
+Now reload the app, and take a look at the bundle size in the Network panel:
 
-<img class="screenshot" src="./network-dynamic-compress.png" alt="Bundle size with dynamic compression">
+<img class="screenshot" src="./network-dynamic-compression-brotli.png"  alt="Bundle size with dynamic Brotli compression">
 
-From 225 KB to 61.6 KB! In the `Response Headers` now, a `content-encoding` 
-header shows that the server is sending down this file encoded with `gzip`.
+You can now see `brotli` is applied from `bz` in the `Content-Encoding` header. `main.bundle.js` is reduced from **225 KB to 53.1 KB**! This is ~14% smaller compared to `gzip` (61.6 KB).
 
-<img class="screenshot" src="./content-encoding.png" alt="Content encoding header">
+<div class="aside note">
+Brotli has eleven quality levels  from “0” (no compression) to “9” (maximum compression). A quality of "1" is very fast but less effective, whereas a quality setting of "11" is very slow but provides big savings in file size. Note that unlike the standard brotli library, which defaults to quality 11, <code>shrink-ray</code> defaults to quality 4, which is generally more appropriate for dynamic content. You can adjust the parameters of the brotli algorithm by passing in an <code>options</code> parameters to <code>shrinkRay([options])</code>.
+</div>
 
-## Static compression
+### Static compression
 
-The idea behind **static** compression is to have assets compressed and saved 
-ahead of time.
+The idea behind static compression is to have assets compressed and saved ahead of time.
 
-### Pros:
+#### Pros:
++  Latency due to high compression levels is not a concern anymore. Nothing needs to happen on-the-fly to compress files as they can now be fetched directly.
 
-+ Latency due to high compression levels is not a concern anymore. 
-Nothing needs to happen on-the-fly to compress files as they can now be fetched directly.
+#### Cons:
++  Assets need to compressed with every build. Build times can increase significantly if high compression levels are used.
 
-### Cons:
+#### Static compression with Node/Express and webpack
 
-+ Assets need to compressed with every build. Build times can increase 
-significantly if high compression levels are used.
-
-### Static compression with Node/Express and webpack
-
-Since static compression involves compressing files ahead of time, webpack 
-settings can be modified to compress assets as part of the build step. 
-[`CompressionPlugin`](https://github.com/webpack-contrib/compression-webpack-plugin) 
-can be used for this.
+Since **static compression** involves compressing files ahead of time, webpack settings can be modified to compress assets as part of the build step. The `brotli-webpack-plugin` can be used for this.
 
 Begin by adding it as a `devDependency` in `package.json`:
 
 <pre class="prettyprint">
 "devDependencies": {
   //...
-  <strong>"compression-webpack-plugin": "^1.1.11"</strong>
+ <strong>"brotli-webpack-plugin": "^1.1.0"</strong>
 },
 </pre>
 
-Like any other webpack plugin, import it in the configurations file,
-`webpack.config.js:`
+Like any other webpack plugin, import it in the configurations file, `webpack.config.js`:
 
 <pre class="prettyprint">
 const path = require("path");
 
 //...
-
-<strong>const CompressionPlugin = require("compression-webpack-plugin");</strong>
+<strong>const BrotliPlugin = require('brotli-webpack-plugin');</strong>
+},
 </pre>
 
-And include it within the `plugins` array:
+And include it within the plugins array:
 
 <pre class="prettyprint">
 module.exports = {
-  //...
+  // ... 
   plugins: [
-    //...
-    <strong>new CompressionPlugin()</strong>
+    // ... 
+    <strong>new BrotliPlugin({
+      asset: '[file].br[query]',
+      test: /\.(js)$/
+    })</strong>
   ]
 }
+},
 </pre>
 
-By default, the plugin compresses the build files using `gzip`. Take a look 
-at the [documentation](https://github.com/webpack-contrib/compression-webpack-plugin) 
-to learn how to add options to use a different algorithm or include/exclude 
-certain files.
+The following arguments are used in the plugin array:
++  `asset`: The target asset name. Defaults to `'[path].br[query]'`
+ +  `[file]` is replaced with the original asset file name
+ +  `[query]` is replaced with the query
++  `test`: All assets that match this RegExp (i.e. javascript assets ending in `.js`) are processed
 
-When the app reloads and rebuilds, a compressed version of the main bundle is
-now created. Open the Glitch Console to take a look at what's inside the 
-final `public/` directory that's served by the Node server.
+When the app reloads and rebuilds, a compressed version of the main bundle is now created. Open the Glitch Console to take a look at what's inside the final `public/` directory that's served by the Node server.
 
 <div class="aside note">
-The <code>public/</code> directory is included in the <code>.gitignore</code> 
-file. Directories that contain build files are usually included here in order 
-to be ignored by Git, and Glitch also hides these files from the editor tree.
+The <code>public/</code> directory is included in the <code>.gitignore</code> file. Directories that contain build files are usually included here in order to be ignored by Git, and Glitch also hides these files from the editor tree.
 </div>
 
 + Click the **Status** button.
@@ -363,54 +209,38 @@ and see all of its files:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 cd public
-ls
+ls -lh
 </pre>
 
-<img class="screenshot" src="./console-commands.png" alt="Final outputted files in public directory">
+<img class="screenshot" src="./console-static-compression-brotli.png"  alt="Bundle size with static Brotli compression">
 
-The gzipped version of the bundle, `main.bundle.js.gz`, is now saved here as 
-well. `CompressionPlugin` also compresses `index.html` by default.
+The brotli compressed version of the bundle, `main.bundle.js.br`, is now saved here as well and is **~76% smaller in size** (225 KB vs. 53 KB) than `main.bundle.js`.
 
-The next thing that needs to be done is tell the server to send these gzipped 
-files whenever their original JS versions are being requested. This can be done 
-by defining a new route in `server.js` before the files are served with 
-`express.static`.
+The next thing that needs to be done is tell the server to send these brotli-compressed files whenever their original JS versions are being requested. This can be done by defining a new route in `server.js` before the files are served with `express.static`.
 
 <pre class="prettyprint">
-const express = require('express');
-const app = express();
+var express = require('express');
+
+var app = express();
 
 <strong>app.get('*.js', (req, res, next) => {
-  req.url = req.url + '.gz';
-  res.set('Content-Encoding', 'gzip');
+  req.url = req.url + '.br';
+  res.set('Content-Encoding', 'br');
   next();
 });</strong>
-
-app.use(express.static('public'));
-
-//...
 </pre>
 
-`app.get` is used to tell the server how to respond to a GET request for a 
-specific endpoint. A callback function is then used to define how to handle this 
-request. The route works like this:
+`app.get` is used to tell the server how to respond to a `GET` request for a specific endpoint. A callback function is then used to define how to handle this request. The route works like this:
++ Specifying `'*.js'` as the first argument means that this works for every endpoint that is fired to fetch a JS file.
++ Within the callback, `.br` is attached to the URL of the request and the `Content-Encoding` response header is set to `br`.
++ Finally, `next()` ensures that the sequence continues to any callback that may be next.
 
-+ Specifying `'*.js'` as the first argument means that this works for every 
-endpoint that is fired to fetch a JS file.
-+ Within the callback, `.gz` is attached to the URL of the request and the 
-`Content-Encoding` response header is set to `gzip`.
-+ Finally, `next()` ensures that the sequence continues to any callback 
-that may be next.
+Once the app reloads, take a look at the Network panel once more.
 
-Once the app reloads, take a look at the `Network` panel once more.
-
-<img class="screenshot" src="./network-static-compress.png" alt="Bundle size reduction with static compression">
+<img class="screenshot" src="./network-static-compression-brotli.png"  alt="Network panel bundle size after static Brotli compression">
 
 Just like before, a significant reduction in bundle size!
 
 ## Conclusion
 
-This codelab covered the process of minifying and compressing source code. 
-Both these techniques are becoming a default in many of the tools 
-available today, so it's important to find out whether your toolchain already 
-supports them or if you should begin applying both processes yourself.
+This codelab illustrated how `brotli` can further reduce your app’s overall size. Where supported, `brotli` is a more powerful compression algorithm than `gzip`.
