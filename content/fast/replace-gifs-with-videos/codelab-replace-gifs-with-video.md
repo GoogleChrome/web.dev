@@ -56,8 +56,8 @@ You should get a file path back:
 
 ## Change GIF to video
 
-1. In the console, run `cd images` to enter the images directory.
-2. Run `ls` to see the contents.
+- In the console, run `cd images` to enter the images directory.
+- Run `ls` to see the contents.
 
 You should see something like this:
 
@@ -66,7 +66,7 @@ $ ls
 cat-herd.gif
 ```
 
-3. In the console, run:
+- In the console, run:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 ffmpeg -i cat-herd.gif cat-herd.mp4
@@ -90,13 +90,13 @@ it makes sense to generate both. Thankfully the `<video>` element will let you
 add multiple sources, so if a browser doesn't support WebM, it can fallback to
 MP4.
 
-1. In the console, run:
+- In the console, run:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 ffmpeg -i cat-herd.gif -c vp9 -b:v 0 -crf 41 cat-herd.webm
 </pre>
 
-2. To check the file sizes run:
+- To check the file sizes run:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 ls -lh
