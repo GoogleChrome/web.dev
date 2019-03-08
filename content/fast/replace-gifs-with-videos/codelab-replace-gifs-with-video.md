@@ -17,11 +17,8 @@ video.
 
 First measure how the website performs:
 
-- Click on the **Show Live** button to preview the app.
-
-<web-screenshot type="show-live"></web-screenshot>
-
-1. Open Chrome DevTools.
+1. Click on the **Show Live** button to preview the app.
+1. Open Chrome DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`
 1. Click on the **Audits** panel.
 1. Select the **Performance** checkbox.
 1. Click **Run Audits** to generate a report.
@@ -42,15 +39,10 @@ as well.
 
 Double-check that FFmpeg is installed and working.
 
-- Click the **Status** button.
-
-<web-screenshot type="status"></web-screenshot>
-
-- Click the **Console** button.
-
-<web-screenshot type="console"></web-screenshot>
-
-- In the console, run:
+1. Click the **Remix to Edit** button to make the project editable.
+1. Click the **Tools** button.
+1. Click the **Console** button.
+1. In the console, run:
 
 <pre class="devsite-terminal">
 which ffmpeg
@@ -64,8 +56,8 @@ You should get a file path back:
 
 ## Change GIF to video
 
-1. In the console, run `cd images` to enter the images directory.
-1. Run `ls` to see the contents.
+- In the console, run `cd images` to enter the images directory.
+- Run `ls` to see the contents.
 
 You should see something like this:
 
@@ -169,8 +161,6 @@ instead. If you prefer a WebM <code>&lt;source&gt;</code> be used first, specify
 
 -  Click on the **Show Live** button.
 
-<web-screenshot type="show-live"></web-screenshot>
-
 The experience should look the same. So far so good.  
 
 ## Verify with Lighthouse
@@ -178,7 +168,8 @@ The experience should look the same. So far so good.
 With the live site open:
 1. Open Chrome DevTools.
 1. Click on the **Audits** tab.
-1. Check the Performance checkbox and run Lighthouse.
+1. Check the **Performance** checkbox.
+1. Click **Run audits**.
 
 You should see that the "Use video formats for animated content" audit is now
 passing! Woohoo! 💪
