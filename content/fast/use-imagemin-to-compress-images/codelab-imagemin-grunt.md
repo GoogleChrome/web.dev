@@ -10,24 +10,15 @@ web_published_on: 2018-11-05
 glitch: imagemin-grunt
 ---
 
-## Install the Imagemin Grunt plugin
-
-This Glitch already contains `grunt` and `grunt-cli` for you, but you'll need to
-install `grunt-contrib-imagemin`.
-
-- Click the **Remix to Edit** button to make the project editable.
-- Click the **Tools** button.
-- Then click the **Console** button.
-- Lastly, type this command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev grunt-contrib-imagemin
-</pre>
-
 ## Setup the Imagemin Grunt plugin
 
-- To add the configuration for Imagemin, first replace
-the `//Add configuration here` comment in `gruntfile.js` with this code block:
+This Glitch already contains `grunt`, `grunt-cli`, and the `grunt-contrib-imagemin` 
+plugin. To add the configuration for Imagemin, you'll need to edit your 
+`gruntfile.js` file.
+
+- Click the **Remix to Edit** button to make the project editable.
+- In `gruntfile.js`, replace the `//Add configuration here` comment  
+with this code block:
 
 ```javascript
 imagemin: {
@@ -92,20 +83,14 @@ grunt.registerTask('default', ['imagemin']);
 
 ## Customize your Imagemin Configuration
 
-`imagemin-pngquant` is a plugin for specifying compression quality levels.
+`imagemin-pngquant` is a plugin for specifying compression quality levels. 
+We've already added `imagemin-pngquant` to this project in the `package.json` 
+file so that you can use it to compress your PNGs. To use it, declare the plugin
+and specify a compression quality level in your Gruntfile.
 
-To add `imagemin-pngquant` to this project:
 
-- Make sure the **Console** is open.
-
-- Install the plugin using npm by typing the following command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-pngquant
-</pre>
-
-- Declare the `imagemin-pngquant` plugin by adding this line to the top your
-  `gruntfile.js`:
+- Declare the `imagemin-pngquant` plugin by adding this line to the top of your 
+`gruntfile.js`:
 
 <pre class="prettyprint">
 <strong>const pngquant = require('imagemin-pngquant');</strong>
@@ -166,14 +151,8 @@ they are compressed as well.
 
 ## Customize your Imagemin configuration (continued)
 
-The `imagemin-mozjpeg` plugin can be used to compress JPEG images.
-
-- Make sure the **Console** is open.
-- Install the plugin using npm by typing the following command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-mozjpeg
-</pre>
+Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to 
+compress JPEG images.
 
 - Declare the `imagemin-mozjpeg` plugin by putting this line at the top your
   `gruntfile.js`.
@@ -228,10 +207,11 @@ grunt.loadNpmTasks('grunt-contrib-imagemin');
 grunt.registerTask('default', ['imagemin']);
 ```
 
-## Re-run Grunt & verify results with Lighthouse
+## Run Grunt & verify results with Lighthouse
 
-- Make sure the **Console** is open.
-- Run Grunt by typing the following command into the console:
+1. Click the **Tools** button.
+1. Then click the **Console** button.
+1. Run Grunt by typing the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 grunt
