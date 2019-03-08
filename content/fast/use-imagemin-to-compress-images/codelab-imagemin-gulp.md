@@ -15,15 +15,15 @@ glitch: imagemin-gulp
 This Glitch already contains `gulp`, `gulp-cli`, and the `gulp-imagemin` plugin.
 To add the configuration for Imagemin, you'll need to edit your `gulpfile.js` file.
 
-1. Click the **Remix to Edit** button to make the project editable.
-2. First, initialize the `gulp-imagemin` plugin by adding this code at the top of 
+- Click the **Remix to Edit** button to make the project editable.
+- First, initialize the `gulp-imagemin` plugin by adding this code at the top of 
 `gulpfile.js`:
 
 ```javascript
 const imagemin = require('gulp-imagemin');
 ```
 
-3. Next, replace the `//Add tasks here` comment in `gulpfile.js` with this code
+- Next, replace the `//Add tasks here` comment in `gulpfile.js` with this code
 block:
 
 ```javascript
@@ -56,8 +56,8 @@ You now have a `gulpfile.js` that can be used to compress images.
 ## Run Gulp
 
 1. Click the **Tools** button.
-2. Then click the **Console** button.
-3. Run Gulp to compress your images by typing the following command into the 
+1. Then click the **Console** button.
+1. Run Gulp to compress your images by typing the following command into the 
 console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -80,14 +80,14 @@ We've already added `imagemin-pngquant` to this project in the `package.json`
 file so that you can use it to compress your PNGs. To use it, declare the plugin
 and specify a compression quality level in your gulpfile.
 
-1. Declare the `imagemin-pngquant` plugin by adding this line to the top of your
+- Declare the `imagemin-pngquant` plugin by adding this line to the top of your
 `gulpfile.js`:
 
 ```javascript
 const pngquant = require('imagemin-pngquant');
 ```
 
-2. Add the `imagemin-pngquant` plugin (and its settings) by passing the following
+- Add the `imagemin-pngquant` plugin (and its settings) by passing the following
 array to `ImageminPlugin()`:
 
 ```javascript
@@ -125,13 +125,13 @@ compressed too.
 Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to compress 
 JPG images.
 
-1. Declare the `imagemin-mozjpeg` plugin by putting this line at the top your `gulpfile.js`.
+- Declare the `imagemin-mozjpeg` plugin by putting this line at the top your `gulpfile.js`.
 
 ```javascript
 const mozjpeg = require('imagemin-mozjpeg');
 ```
 
-2. Next, add `mozjpeg({quality: 50})` to the array that's passed to
+- Next, add `mozjpeg({quality: 50})` to the array that's passed to
   `ImageminPlugin()`:
 
 ```javascript
@@ -163,7 +163,7 @@ gulp.task('default', () => {
 
 ## Re-run Gulp & verify results with Lighthouse
 
-1. Re-run Gulp:
+- Re-run Gulp:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 gulp
@@ -183,8 +183,8 @@ made.
 Lighthouse's "Efficiently encode images" performance audit can let you know if
 the JPEG images on your page are optimally compressed.
 
-2. Click on the **Show Live** button to view the live version of the your Glitch.
-3. Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
+- Click on the **Show Live** button to view the live version of the your Glitch.
+- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
 live version of your Glitch and verify that the "Efficiently encode images"
 audit was passed.
 
