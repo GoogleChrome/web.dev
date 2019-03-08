@@ -210,8 +210,8 @@ grunt.registerTask('default', ['imagemin']);
 ## Run Grunt & verify results with Lighthouse
 
 1. Click the **Tools** button.
-2. Then click the **Console** button.
-3. Run Grunt by typing the following command into the console:
+1. Then click the **Console** button.
+1. Run Grunt by typing the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 grunt
