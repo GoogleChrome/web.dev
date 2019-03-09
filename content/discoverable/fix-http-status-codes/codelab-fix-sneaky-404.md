@@ -7,7 +7,7 @@ description: |
   page from being properly indexed.
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
-glitch: sneaky-404
+glitch: fix-sneaky-404
 ---
 
 Single Page Apps can show different content without loading a new page.
