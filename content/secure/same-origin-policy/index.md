@@ -33,8 +33,8 @@ tags using a [Content Security Policy](https://developers.google.com/web/fundame
 An origin is defined by the scheme (also known as the  protocol, for example
 HTTP or HTTPS), port (if it is specified), and host. When all three are the same
 for two URLs, it is considered same-origin. For example.
-"http://www.example.com/foo" is same-origin as "http://www.example.com/bar" but
-not "**https**://www.example.com/baz" (the scheme is different).
+`http://www.example.com/foo` is the same-origin as `http://www.example.com/bar` but
+not <code><strong>https</strong>://www.example.com/baz</code> (the scheme is different).
 
 ## What is permitted and what is blocked?
 
