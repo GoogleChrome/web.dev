@@ -1,0 +1,32 @@
+title: React
+description: Build performant and progressive React applications
+overview: |
+    In this section you'll learn how to use built-in APIs and third-party 
+    dependencies to improve the performance of your React applications.
+ order: 7
+
+ topics:
+# Topic containing several guides
+- title: Introduction
+  guides:
+    - getting-started
+- title: Fast
+  guides:
+    - code-splitting-suspense
+    - virtualize-scrolling
+- title: Reliable
+  guides:
+    - add-service-worker
+- title: Discoverable
+  guides:
+    - add-meta-tags
+    - prerender-routes
+- title: Installable
+  guides:
+    - add-manifest
+- title: Accessible
+  guides:
+    - accessibility-in-react
+- title: Extra
+  guides:
+    - next

@@ -1,0 +1,150 @@
+---
+page_type: guide
+title: Code splitting with React.lazy and Suspense
+description: |
+  The `React.lazy` method makes it easy to code-split a React application on a component level using dynamic imports. Use it along with Suspense to show appropriate loading states to your users.
+author: houssein
+web_lighthouse: N/A
+web_updated_on: N/A # TODO: update
+web_published_on: N/A # TODO: update
+wf_blink_components: N/A
+---
+
+# Code splitting with React.lazy and Suspense
+
+<div class="aside note">
+  If you don't yet understand the basic idea behind code splitting, refer to <a href="/fast/reduce-javascript-payloads-with-code-splitting">Reduce JavaScript payloads with code-splitting</a> guide first.
+</div>
+
+The **`React.lazy`** method makes it easy to code-split a React application on a component level using dynamic imports.
+
+```
+import React, { lazy } from 'react';
+
+const AvatarComponent = lazy(() => import('./AvatarComponent'));
+
+const DetailsComponent = () => (
+  <div>
+    <AvatarComponent />
+  </div>
+)
+```
+
+## Why is this useful?
+
+A large React application will usually consist of many components, utility methods and third-party libraries. If an effort isn't made to try and load different parts of an application only when they're needed - a single, large bundle of JavaScript will be shipped to your users as soon as they load the first page. This can affect page performance significantly.
+
+The `React.lazy` function provides a built-in way to separate components in an application into separate chunks of JavaScript with very little legwork. You can then take care of loading states when you couple it with the `Suspense` component.
+
+## Suspense
+
+The problem with shipping a large JavaScript payload to users is the length of time it would take for the page to finish loading, especially on weaker devices and network connections. This is why code-splitting and lazy loading is extremely useful.
+
+However, there will always be a slight delay users experience when a code-split component is being fetched over the network, so it's important to display a useful loading state to users. Using `React.lazy` with the **`Suspense`** component helps solve this problem.
+
+```
+import React, { lazy, Suspense } from 'react';
+import LoadingComponent from './LoadingComponent';
+
+const AvatarComponent = lazy(() => import('./AvatarComponent'));
+
+const DetailsComponent = () => (
+  <Suspense fallback={<LoadingComponent/>}>
+    <AvatarComponent />
+  </Suspense>
+)
+```
+
+`Suspense` accepts a `fallback` component which allows you to display any React component as a loading state.
+
+<div class="aside caution">
+  You must use Suspense to show fallback content if a component contains a separate lazy loaded component that is not loaded after its parent has finished rendering.
+</div>
+
+The following example shows how this works. The `DetailsComponent` is only rendered when the button is clicked, where a request is then made to retrieve the code necessary for the `AvatarComponent`. In the meantime, the fallback component, `LoadingComponent`, is shown.
+
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/react-lazy-suspense?path=src/index.css&previewSize=100&attributionHidden=true"
+    alt="react-lazy-suspense on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+In here, the code that makes up `AvatarComponent` is extremely small which is why the loading spinner only shows for an extremely short amount of time. In a real application, large components can take much longer to load especially on a weak network connection.
+
+To better demonstrate how this works:
+
++  Refresh the page.
++  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
++  Click on the **Network** tab.
++  Click the [**Throttling**](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) dropdown and select `Slow 3G`.
++  Click the button in the application.
+
+The loading indicator will show for longer now. Notice how all the code that makes up the `AvatarComponent` is fetched as a separate chunk.
+
+![Split chunk](./split-component-chunk.png)
+
+<div class="aside note">
+ React does not currently support Suspense when components are being server-side rendered. If you are rendering on the server, consider using another library such as <a href="https://www.smooth-code.com/open-source/loadable-components/docs/server-side-rendering/"><code>loadable-components</code></a> which is recommended in the React docs.
+</div>
+
+### Suspending multiple components
+
+Another feature of `Suspense` is that it allows you suspend multiple components from loading, **even if they are all lazy loaded**.
+
+For example:
+
+```
+import React, { lazy, Suspense } from 'react';
+import LoadingComponent from './LoadingComponent';
+
+const AvatarComponent = lazy(() => import('./AvatarComponent'));
+const InfoComponent = lazy(() => import('./InfoComponent'));
+const MoreInfoComponent = lazy(() => import('./MoreInfoComponent'));
+
+const DetailsComponent = () => (
+  <Suspense fallback={<LoadingComponent/>}>
+    <AvatarComponent />
+    <InfoComponent />
+    <MoreInfoComponent />
+  </Suspense>
+)
+```
+
+This is an extremely useful way to delay rendering of multiple components while only showing a single loading state. Once all the components have finished fetching, the user gets to see them all displayed at the same time.
+
+You can see this with the following embed:
+
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/react-lazy-suspense-multiple?path=src/index.css&previewSize=100&attributionHidden=true"
+    alt="react-lazy-suspense-multiple on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+<div class="aside note">
+ Loading indicator showing a little too quickly? Try simulating a throttled connection in DevTools again.
+</div>
+
+Without this, it's easy to run into the problem of _staggered loading_, or different parts of a UI loading one after the other with each having their own loading indicator. This can make the user experience feel more jarring and is especially noticeable on slow connections.
+
+### Concurrent rendering and data fetching
+
+Although using Suspense to split components is already possible and makes it extremely easy to trim down bundle sizes, the React team is continuing to work on more features that would extend this even further:
+
+* Concurrent, or async, rendering would enable component rendering without blocking the main thread. This would consequently allow certain component trees to not render while other, more important interactions are taking place. For Suspense, this means you can control when loading states should show (or if they shouldn't unless they actually need to.
+* Instead of only showing loading indicators for lazy loaded components, Suspense will also eventually allow you to delay rendering of components for data fetches as well.
+
+<div class="aside note">
+ The <a href="https://reactjs.org/blog/2018/11/27/react-16-roadmap.html">React 16.x roadmap</a> explains each of these concepts in more detail.
+</div>
+
+### Conclusion
+
+If you are unsure where to begin applying code-splitting to your React application, follow these steps:
+
+1. Begin at the route level. Routes are the simplest way to identify points of your application that can be split. The React [docs](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting) show how `Suspense` can be used along with [`react-router`](https://github.com/ReactTraining/react-router).
+2. Identify any large components on a page on your site that only render on certain user interactions (like clicking a button). Splitting these components will minimize your JavaScript payloads.
+3. Consider splitting anything else that is offscreen and not critical for the user.
