@@ -25,18 +25,6 @@ the current state of the application.
 1. Click the **Remix to Edit** button to make the project editable.
 2. Click on the **Show Live** button.
 
-This app, which was also covered in the
-["Remove unused code"](/fast/remove-unused-code)
-codelab, lets you vote for your favorite kitten. 🐈
-
-Now take a look at how large this application is:
-
-<img class="screenshot" src="./network-tab.png" alt="Network panel">
-
-+  Make sure `Disable Cache` is checked and reload the app.
-
-<img class="screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
-
 In the previous [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression), we reduced the size of `main.js` from 225 KB to 61.6 KB. In this codelab, you will explore how Brotli compression can reduce this bundle size even further.
 
 ## Brotli Compression
