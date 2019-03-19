@@ -1,6 +1,6 @@
 ---
 page_type: glitch
-title: Enable Brotli compression
+title: Minify and compress network payloads with brotli
 author: mdiblasio
 description: |
   In this codelab, learn how Brotli compression can further reduce compression ratios and your app's overall size.
@@ -16,15 +16,14 @@ This codelab is an extension of the [Minify and compress network payloads codela
 ## Measure
 
 <div class="aside note">
- Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
+ Since [webpack](https://webpack.js.org/) is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
 </div>
 
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
-+  Click on the **Show Live** button.
-
-<web-screenshot type="show-live"></web-screenshot>
+1. Click the **Remix to Edit** button to make the project editable.
+2. Click on the **Show Live** button.
 
 This app, which was also covered in the
 ["Remove unused code"](/fast/remove-unused-code)
@@ -32,16 +31,13 @@ codelab, lets you vote for your favorite kitten. 🐈
 
 Now take a look at how large this application is:
 
-+  Open the DevTools by pressing `CMD + OPTION + i / CTRL + SHIFT + i`.
-+  Click on the **Network** panel.
-
 <img class="screenshot" src="./network-tab.png" alt="Network panel">
 
 +  Make sure `Disable Cache` is checked and reload the app.
 
 <img class="screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 
-In the previous [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression), we reduced the `main.js` from 225 KB to 61.6 KB. In this codelab, you will explore how Brotli compression can reduce this bundle size even further.
+In the previous [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression), we reduced the size of `main.js` from 225 KB to 61.6 KB. In this codelab, you will explore how Brotli compression can reduce this bundle size even further.
 
 ## Brotli Compression
 
@@ -83,13 +79,13 @@ You can determine which compression algorithm is used via the `Content-Encoding`
 The `server.js` file is responsible for setting up the Node server that hosts the application.
 
 ```
-const express = require('express');
+var express = require('express');
 
-const app = express();
+var app = express();
 
 app.use(express.static('public'));
 
-const listener = app.listen(process.env.PORT, function() {
+var listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
 ```
@@ -118,6 +114,8 @@ And add it as a middleware before `express.static` is mounted:
 //...
 var app = express();
 
+app.use(express.static('public'));
+
 // compress all requests
 <strong>app.use(shrinkRay());</strong>
 </pre>
@@ -129,7 +127,7 @@ Now reload the app, and take a look at the bundle size in the Network panel:
 You can now see `brotli` is applied from `bz` in the `Content-Encoding` header. `main.bundle.js` is reduced from **225 KB to 53.1 KB**! This is ~14% smaller compared to `gzip` (61.6 KB).
 
 <div class="aside note">
-Brotli has eleven quality levels  from “0” (no compression) to “9” (maximum compression). A quality of "1" is very fast but less effective, whereas a quality setting of "11" is very slow but provides big savings in file size. Note that unlike the standard brotli library, which defaults to quality 11, <code>shrink-ray</code> defaults to quality 4, which is generally more appropriate for dynamic content. You can adjust the parameters of the brotli algorithm by passing in an <code>options</code> parameters to <code>shrinkRay([options])</code>.
+Brotli has eleven quality levels  from <code>0</code> (no compression) to <code>9</code> (maximum compression). A quality of <code>1</code> is very fast but less effective, whereas a quality setting of <code>11</code> is very slow but provides big savings in file size. Note that unlike the standard brotli library, which defaults to quality <code>11</code>, <code>shrink-ray</code> defaults to quality 4, which is generally more appropriate for dynamic content. You can adjust the parameters of the brotli algorithm by passing in an <code>options</code> parameters to <code>shrinkRay([options])</code>.
 </div>
 
 ### Static compression
@@ -158,10 +156,10 @@ Begin by adding it as a `devDependency` in `package.json`:
 Like any other webpack plugin, import it in the configurations file, `webpack.config.js`:
 
 <pre class="prettyprint">
-const path = require("path");
+var path = require("path");
 
 //...
-<strong>const BrotliPlugin = require('brotli-webpack-plugin');</strong>
+<strong>var BrotliPlugin = require('brotli-webpack-plugin');</strong>
 },
 </pre>
 
@@ -173,7 +171,7 @@ module.exports = {
   plugins: [
     // ... 
     <strong>new BrotliPlugin({
-      asset: '[file].br[query]',
+      asset: '[file].br',
       test: /\.(js)$/
     })</strong>
   ]
@@ -182,10 +180,11 @@ module.exports = {
 </pre>
 
 The following arguments are used in the plugin array:
-+  `asset`: The target asset name. Defaults to `'[path].br[query]'`
++  `asset`: The target asset name. 
  +  `[file]` is replaced with the original asset file name
- +  `[query]` is replaced with the query
 +  `test`: All assets that match this RegExp (i.e. javascript assets ending in `.js`) are processed
+
+For example, `main.js` would be renamed to `main.js.br`.
 
 When the app reloads and rebuilds, a compressed version of the main bundle is now created. Open the Glitch Console to take a look at what's inside the final `public/` directory that's served by the Node server.
 
