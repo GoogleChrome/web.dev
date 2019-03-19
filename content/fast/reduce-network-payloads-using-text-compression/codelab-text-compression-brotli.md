@@ -127,7 +127,7 @@ Now reload the app, and take a look at the bundle size in the Network panel:
 You can now see `brotli` is applied from `bz` in the `Content-Encoding` header. `main.bundle.js` is reduced from **225 KB to 53.1 KB**! This is ~14% smaller compared to `gzip` (61.6 KB).
 
 <div class="aside note">
-Brotli has eleven quality levels  from <code>0</code> (no compression) to <code>9</code> (maximum compression). A quality of <code>1</code> is very fast but less effective, whereas a quality setting of <code>11</code> is very slow but provides big savings in file size. Note that unlike the standard brotli library, which defaults to quality <code>11</code>, <code>shrink-ray</code> defaults to quality 4, which is generally more appropriate for dynamic content. You can adjust the parameters of the brotli algorithm by passing in an <code>options</code> parameters to <code>shrinkRay([options])</code>.
+Brotli has eleven quality levels  from <code>0</code> (no compression) to <code>9</code> (maximum compression). A quality of <code>1</code> is very fast but less effective, whereas a quality setting of <code>11</code> is very slow but provides big savings in file size. Note that unlike the standard brotli library, which defaults to quality <code>11</code>, <code>shrink-ray</code> defaults to quality <code>4</code>, which is generally more appropriate for dynamic content. You can adjust the parameters of the brotli algorithm by passing in an <code>options</code> parameters to <code>shrinkRay([options])</code>.
 </div>
 
 ### Static compression
@@ -187,10 +187,6 @@ The following arguments are used in the plugin array:
 For example, `main.js` would be renamed to `main.js.br`.
 
 When the app reloads and rebuilds, a compressed version of the main bundle is now created. Open the Glitch Console to take a look at what's inside the final `public/` directory that's served by the Node server.
-
-<div class="aside note">
-The <code>public/</code> directory is included in the <code>.gitignore</code> file. Directories that contain build files are usually included here in order to be ignored by Git, and Glitch also hides these files from the editor tree.
-</div>
 
 + Click the **Status** button.
 
