@@ -45,19 +45,19 @@ It also audits for any uncompressed assets.
 
 **Minification** is the process of removing whitespace and any code that is not
 necessary to create a smaller but perfectly valid code file.
-[UglifyJS](https://github.com/mishoo/UglifyJS2) is a popular JavaScript
-minification tool and [webpack](https://webpack.js.org/) v4 includes a plugin
+[Terser](https://github.com/terser-js/terser) is a popular JavaScript
+compression tool and [webpack](https://webpack.js.org/) v4 includes a plugin
 for this library by default to create minified build files.
 
 * If you're using webpack v4 or greater, you should be good to go
     without doing any additional work. 👍
 * If you are using an older version of webpack, install and include
-`UglifyjsWebpackPlugin` into your webpack configuration settings. Follow
-the [documentation](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/) to
+`TerserWebpackPlugin` into your webpack configuration settings. Follow
+the [documentation](https://webpack.js.org/plugins/terser-webpack-plugin/) to
 learn how. 
-* If you are not using a module bundler, use `UglifyJS` as a CLI tool or
+* If you are not using a module bundler, use `Terser` as a CLI tool or
 include it directly as a dependency to your application. The project 
-[documentation](https://github.com/mishoo/UglifyJS2) provides instructions.
+[documentation](https://github.com/terser-js/terser) provides instructions.
 
 ## Data compression
 
