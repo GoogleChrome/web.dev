@@ -4,4 +4,4 @@ redirects:
   to: /fast/using-lighthouse-bot-to-set-a-performance-budget
 
 - from: /fast/defer-unused-css
-  to: /fast/defer-non-critical-css  
+  to: /fast/defer-non-critical-css
