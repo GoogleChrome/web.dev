@@ -16,7 +16,7 @@ This codelab is an extension of the [Minify and compress network payloads codela
 ## Measure
 
 <div class="aside note">
- Since [webpack](https://webpack.js.org/) is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
+ Since <a href="https://webpack.js.org/">webpack</a> is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
 </div>
 
 Before diving in to add optimizations, it's always a good idea to first analyze
@@ -41,17 +41,17 @@ assets with compression by default or allow you to easily configure them. If you
 
 To use Brotli, your server must support HTTPS. Brotli is supported in the [latest versions of most browsers](https://caniuse.com/#feat=brotli). Browsers that support Brotli will include `br` in `Accept-Encoding` headers:
 
-```
-Accept-Encoding: gzip, deflate, br
-```
+<pre class="prettyprint">
+Accept-Encoding: gzip, deflate, <strong>br</strong>
+</pre>
 
 You can determine which compression algorithm is used via the `Content-Encoding` field in the Chrome Developer Tools Network tab (CMD+option+I or Ctrl+alt+I):
 
 <img class="screenshot" src="./network-content-encoding-brotli.png" alt="Network panel">
 
-### Enabling Brotli
+## Enabling Brotli
 
-#### Dynamic compression
+### Dynamic compression
 
 **Dynamic compression** involves compressing assets on-the-fly as they get requested by the browser.
 
@@ -208,6 +208,8 @@ var app = express();
   res.set('Content-Encoding', 'br');
   next();
 });</strong>
+
+app.use(express.static('public'));
 </pre>
 
 `app.get` is used to tell the server how to respond to a `GET` request for a specific endpoint. A callback function is then used to define how to handle this request. The route works like this:
@@ -215,12 +217,36 @@ var app = express();
 + Within the callback, `.br` is attached to the URL of the request and the `Content-Encoding` response header is set to `br`.
 + Finally, `next()` ensures that the sequence continues to any callback that may be next.
 
+Because some browsers may not support brotli compression, confirm brotli is supported before returning the brotli-compressed file by checking the `Accept-Encoding` request header includes `br`:
+
+<pre class="prettyprint">
+var express = require('express');
+
+var app = express();
+
+app.get('*.js', (req, res, next) => {
+  <strong>if (req.header('Accept-Encoding').includes('br')) {</strong>
+    req.url = req.url + '.br';
+    console.log(req.header('Accept-Encoding'));
+    res.set('Content-Encoding', 'br');
+  <strong>}</strong>
+  next();
+});
+
+app.use(express.static('public'));
+</pre>
+
+
 Once the app reloads, take a look at the Network panel once more.
 
 <img class="screenshot" src="./network-static-compression-brotli.png"  alt="Network panel bundle size after static Brotli compression">
-
+  
 Success! You have used Brotli compression to further compress your assets!
 
 ## Conclusion
 
-This codelab illustrated how `brotli` can further reduce your app’s overall size. Where supported, `brotli` is a more powerful compression algorithm than `gzip`.
+This codelab illustrated how `brotli` can further reduce your app’s overall size. Where supported, `brotli` is a more powerful compression algorithm than `gzip`. 
+
+<div class="aside warning">
+Remember to check if your CDN supports <code>brotli</code> before manually implementing. If you need to implement <code>brotli</code> manually (as described in this codelab) but have CDN support for other compression algorithms such as <code>gzip</code>, it is a good idea to weigh the benefits of <code>brotli</code> against the effort required to implement. 
+</div>
