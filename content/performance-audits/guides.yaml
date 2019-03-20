@@ -1,0 +1,34 @@
+title: Performance audits
+description: Fix failed performance audits to improve your performance score.
+overview: When you run the Lighthouse performance audit on your site, your performance score is a reflection of passed and failed audits. Learn about each performance audit, what might cause it to fail, and opportunities to improve your audit results.
+
+order: 10
+
+topics:
+# Topic containing several guides
+- title: About Lighthouse performance audits
+  guides:
+    - first-contentful-paint
+    - speed-index
+    - time-to-interactive
+    - first-cpu-idle
+    - estimated-input-latency
+    - render-blocking-resources
+    - uses-responsive-images
+    - offscreen-images
+    - minify-and-compress-payloads
+    - unused-css-rules
+    - uses-optimized-images
+    - serve-images-in-next-gen-formats
+    - preload-critical-assets
+    - time-to-first-byte
+    - redirects
+    - efficient-animated-content
+    - total-byte-weight
+    - avoid-invisible-text
+    - uses-long-cache-ttl
+    - dom-size
+    - critical-request-chains
+    - user-timings
+    - bootup-time
+    - mainthread-work-breakdown
