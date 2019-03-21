@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: First contentful paint
+title: First Contentful Paint (FCP)
 author: megginkearney
 description: Reference documentation for the "First Contentful Paint" Lighthouse audit.
 web_lighthouse:
@@ -10,7 +10,7 @@ web_published_on: 2019-03-20
 wf_blink_components: N/A
 ---
 
-# First Contentful Paint 
+# First Contentful Paint (FCP)
 
 ## Overview
 
