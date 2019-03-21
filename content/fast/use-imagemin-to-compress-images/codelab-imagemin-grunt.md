@@ -10,33 +10,15 @@ web_published_on: 2018-11-05
 glitch: imagemin-grunt
 ---
 
-## Install the Imagemin Grunt plugin
-
-This Glitch already contains `grunt` and `grunt-cli` for you, but you'll need to
-install `grunt-contrib-imagemin`.
-
-- Click the **Remix This** button to make the project editable.
-
-<web-screenshot type="remix"></web-screenshot>
-
-- Click the **Status** button.
-
-<web-screenshot type="status"></web-codelab>
-
-- Then click the **Console** button.
-
-<web-screenshot type="console"></web-codelab>
-
-- Lastly, type this command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev grunt-contrib-imagemin
-</pre>
-
 ## Setup the Imagemin Grunt plugin
 
-- To add the configuration for Imagemin, first replace
-the `//Add configuration here` comment in `gruntfile.js` with this code block:
+This Glitch already contains `grunt`, `grunt-cli`, and the `grunt-contrib-imagemin` 
+plugin. To add the configuration for Imagemin, you'll need to edit your 
+`gruntfile.js` file.
+
+- Click the **Remix to Edit** button to make the project editable.
+- In `gruntfile.js`, replace the `//Add configuration here` comment  
+with this code block:
 
 ```javascript
 imagemin: {
@@ -101,22 +83,14 @@ grunt.registerTask('default', ['imagemin']);
 
 ## Customize your Imagemin Configuration
 
-`imagemin-pngquant` is a plugin for specifying compression quality levels.
+`imagemin-pngquant` is a plugin for specifying compression quality levels. 
+We've already added `imagemin-pngquant` to this project in the `package.json` 
+file so that you can use it to compress your PNGs. To use it, declare the plugin
+and specify a compression quality level in your Gruntfile.
 
-To add `imagemin-pngquant` to this project:
 
-- Make sure the **Console** is open.
-
-<web-screenshot type="console"></web-codelab>
-
-- Install the plugin using npm by typing the following command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-pngquant
-</pre>
-
-- Declare the `imagemin-pngquant` plugin by adding this line to the top your
-  `gruntfile.js`:
+- Declare the `imagemin-pngquant` plugin by adding this line to the top of your 
+`gruntfile.js`:
 
 <pre class="prettyprint">
 <strong>const pngquant = require('imagemin-pngquant');</strong>
@@ -133,15 +107,17 @@ grunt.initConfig({
   imagemin: {
     <strong>options: {</strong>
       <strong>use: [</strong>
-        <strong>pngquant({quality: '50'}),</strong>
+        <strong>pngquant({quality: [0.5, 0.5]}),</strong>
       <strong>]</strong>
     <strong>},</strong>
     dynamic: {
   ...
 </pre>
 
-This code tells Grunt to compress PNGs to a quality of `50` (`0` is the worst;
-`100` is the best) using the `imagemin-pngquant` plugin.
+This code tells Imagemin to compress PNGs using the Pngquant plugin. The
+`quality` field uses a `min` and `max` range of values to determine the
+compression level—0 is the lowest and 1 is the highest. To force all images to
+be compressed at 50% quality, pass `0.5` as both the min and max value.
 
 ## ✔︎ Check-in
 
@@ -154,7 +130,7 @@ grunt.initConfig({
   imagemin: {
     options: {
       use: [
-        pngquant({quality: '50'}),
+        pngquant({quality: [0.5, 0.5]}),
       ]
     },
     dynamic: {
@@ -175,17 +151,8 @@ they are compressed as well.
 
 ## Customize your Imagemin configuration (continued)
 
-The `imagemin-mozjpeg` plugin can be used to compress JPEG images.
-
-- Make sure the **Console** is open.
-
-<web-screenshot type="console"></web-codelab>
-
-- Install the plugin using npm by typing the following command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-mozjpeg
-</pre>
+Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to 
+compress JPEG images.
 
 - Declare the `imagemin-mozjpeg` plugin by putting this line at the top your
   `gruntfile.js`.
@@ -196,7 +163,7 @@ const pngquant = require('imagemin-pngquant');
 const grunt = require('grunt');
 </pre>
 
-- Next, add `mozjpeg({quality: '50'})` to the array in the `options` object.
+- Next, add `mozjpeg({quality: 50})` to the array in the `options` object.
   That array should now look like this:
 
 <pre class="prettyprint">
@@ -204,8 +171,8 @@ grunt.initConfig({
   imagemin: {
     options: {
       use: [
-        pngquant({quality: '50'}),
-        <strong>mozjpeg({quality: '50'})</strong>
+        pngquant({quality: [0.5, 0.5]}),
+        <strong>mozjpeg({quality: 50})</strong>
       ]
     },
     dynamic: {
@@ -223,8 +190,8 @@ grunt.initConfig({
   imagemin: {
     options: {
       use: [
-        pngquant({quality: '50'}),
-        mozjpeg({quality: '50'})
+        pngquant({quality: [0.5, 0.5]}),
+        mozjpeg({quality: 50})
       ]
     },
     dynamic: {
@@ -240,14 +207,11 @@ grunt.loadNpmTasks('grunt-contrib-imagemin');
 grunt.registerTask('default', ['imagemin']);
 ```
 
-## Re-run Grunt & verify results with Lighthouse
+## Run Grunt & verify results with Lighthouse
 
-<!-- TODO!: We should remove http-server from this Glitch! -->
-- Make sure the **Console** is open.
-
-<web-screenshot type="console"></web-codelab>
-
-- Run Grunt by typing the following command into the console:
+1. Click the **Tools** button.
+1. Then click the **Console** button.
+1. Run Grunt by typing the following command into the console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 grunt
@@ -264,13 +228,10 @@ made. Lighthouse's "Efficiently encode images" performance audit will let you
 know if the JPEG images on your page are optimally compressed.
 
 - Click on the **Show Live** button to view the live version of the your Glitch.
-
-<web-screenshot type="show-live"></web-codelab>
-
 - Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
   the live version of your Glitch and verify that the "Efficiently encode
   images" audit was passed.
 
-<img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+<img class="screenshot" src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 
 Success! You have used Imagemin to optimally compress the images on your page.

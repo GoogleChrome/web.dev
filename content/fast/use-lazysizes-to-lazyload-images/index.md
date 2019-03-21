@@ -39,7 +39,7 @@ It is simple to add lazysizes:
 
 +  Add the lazysizes script to your pages.
 +  Choose the images you want to lazy-load.
-+  Update image tags for those images.
++  Update the `<img>` and/or `<picture>` tags for those images.
 
 ### Add the lazysizes script
 
@@ -48,19 +48,52 @@ Add the lazysizes
 your pages:
 
     <script src="lazysizes.min.js" async></script>
-### Update image tags
+### Update `<img>` and/or `<picture>` tags
 
-| Before  | After |
-|---------|----------------|
-| `<img src="flower.jpg">` | `<img data-src="flower.jpg" class="lazyload">` |
+**`<img>` tag instructions**
 
-When you update the image tags you make two changes:
+**Before:**
+```
+<img src="flower.jpg">
+```
+
+**After:**
+```
+<img data-src="flower.jpg" class="lazyload">
+```
+
+When you update the `<img>` tag you make two changes:
 
 +  **Add the `lazyload` class**: This indicates to lazysizes that the
     image should be lazy loaded.
 +  **Change the `src` attribute to `data-src`**: When it is time to load the
     image, the lazysizes code sets the image `src` attribute using the value
     from the `data-src` attribute.
+
+**`<picture>` tag instructions**
+
+**Before:**
+```
+<picture>
+  <source type="image/webp" srcset="flower.webp">
+  <source type="image/jpeg" srcset="flower.jpg">
+  <img src="flower.jpg">
+</picture>
+```
+
+**After:**
+```
+<picture>
+  <source type="image/webp" data-srcset="flower.webp">
+  <source type="image/jpeg" data-srcset="flower.jpg">
+  <img data-src="flower.jpg" class="lazyload">
+</picture>
+```
+
+When you update the `<picture>` tag you make two changes:
+
++ Add the `lazyload` class to the `<img>` tag.
++ Change the `<source>` tag `srcset` attribute to `data-srcset`.
 
 ## Verify
 

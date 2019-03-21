@@ -10,35 +10,17 @@ web_published_on: 2018-11-05
 glitch: imagemin-webpack
 ---
 
-## Install the Imagemin Webpack plugin
+## Setup the Imagemin Webpack plugin
 
-This Glitch already contains `webpack` and `webpack-cli`, but you'll need to
-install `imagemin-webpack-plugin`.
-
-- Click the **Remix This** button to make the project editable.
-
-<web-screenshot type="remix"></web-screenshot>
-
-- Click the **Status** button.
-
-<web-screenshot type="status"></web-codelab>
-
-- Then click the **Console** button. This will open a new window.
-
-<web-screenshot type="console"></web-codelab>
-
-- Lastly, type this command into the console:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-webpack-plugin
-</pre>
-
-
-## Setup imagemin-webpack-plugin:
+This Glitch already contains `webpack`, `webpack-cli`, and 
+`imagemin-webpack-plugin`. To add the configuration for Imagemin, you'll need
+to edit your `webpack.config.js` file.
 
 The existing `webpack.config.js` for this project has been copying images from
 the `images/` directory to the `dist/` directory but it hasn't been
 compressing them.
+
+- Click the **Remix to Edit** button to make the project editable.
 
 <div class="aside note">
 Why would you copy images to a new `dist/` folder? `dist/` is short for
@@ -47,14 +29,14 @@ etc. separate from their distributed versions because they may be slightly
 different.
 </div>
 
-First, declare the Imagemin plugin by adding this code at the top of
+- First, declare the Imagemin plugin by adding this code at the top of
 `webpack.config.js`:
 
 ```javascript
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 ```
 
-Next, add the following code as the last item in the `plugins[]` array. This
+- Next, add the following code as the last item in the `plugins[]` array. This
 adds Imagemin to the list of plugins that Webpack uses:
 
 ```javascript
@@ -95,7 +77,10 @@ You now have a Webpack config that compresses images using Imagemin.
 
 ## Run Webpack
 
-- In the console, run Webpack to compress your images:
+1. Click the **Tools** button.
+1. Then click the **Console** button.
+1. To compress your images, run Webpack by typing the following command into the 
+console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
 webpack --config webpack.config.js --mode development
@@ -121,11 +106,13 @@ Customize our Imagemin configuration to fix this warning.
 Add settings for compressing PNG images by passing the following object to `ImageminPlugin()`:
 
 ```javascript
-{pngquant: ({quality: '50'})}
+{pngquant: ({quality: [0.5, 0.5]})}
 ```
 
-This code tells Webpack to compress PNGs to a quality of '50' ('0' is the worst;
-'100' is the best) using the Pngquant plugin.
+This code tells Imagemin to compress PNGs using the Pngquant plugin. The
+`quality` field uses a `min` and `max` range of values to determine the
+compression level—0 is the lowest and 1 is the highest. To force all images to
+be compressed at 50% quality, pass `0.5` as both the min and max value.
 
 ## ✔︎ Check-in
 
@@ -148,7 +135,7 @@ module.exports = {
     	to: path.resolve(__dirname, 'dist')
     }]),
     new ImageminPlugin({
-      pngquant: ({quality: '50'}),
+      pngquant: ({quality: [0.5, 0.5]}),
 	  })
   ]
 }
@@ -161,15 +148,11 @@ how they are compressed as well.
 
 Instead of using `imagemin-webpack-plugin`'s default plugin for JPG compression
 (`imagemin-jpegtran`), use the `imagemin-mozjpeg` plugin. Unlike Jpegtran,
-Mozjpeg let's you specify a compression quality for your JPG compression.
+Mozjpeg let's you specify a compression quality for your JPG compression. We've 
+already installed the Mozjpeg plugin for you in this Glitch, but you'll need to 
+edit your `webpack.config.js` file:
 
-- Install the Mozjpeg plugin:
-
-<pre class="devsite-terminal devsite-click-to-copy">
-npm install --save-dev imagemin-mozjpeg
-</pre>
-
-- Next, initialize the `imagemin-mozjpeg` plugin by adding the following line at the
+- Initialize the `imagemin-mozjpeg` plugin by adding the following line at the
   top of your `webpack.config.js` file:
 
 ```javascript
@@ -181,13 +164,13 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 
 ```javascript
 new ImageminPlugin({
-  pngquant: ({quality: '50'}),
-  plugins: [imageminMozjpeg({quality: '50'})]
+  pngquant: ({quality: [0.5, 0.5]}),
+  plugins: [imageminMozjpeg({quality: 50})]
 })
 ```
 
-This code tells Webpack to compress JPGs to a quality of '50' ('0' is the worst;
-'100' is the best) using the Mozjpeg plugin.
+This code tells Webpack to compress JPGs to a quality of 50 (0 is the worst;
+100 is the best) using the Mozjpeg plugin.
 
 <div class="aside note">
 Are you wondering why Mozjpeg is added to the plugins array, but Pngquant isn't? Good question.
@@ -224,8 +207,8 @@ module.exports = {
       to: path.resolve(__dirname, 'dist')
     }]),
     new ImageminPlugin({
-      pngquant: ({quality: '50'}),
-      plugins: [imageminMozjpeg({quality: '50'})]
+      pngquant: ({quality: [0.5, 0.5]}),
+      plugins: [imageminMozjpeg({quality: 50})]
     })
   ]
 }
@@ -249,13 +232,10 @@ Lighthouse's "Efficiently encode images" performance audit can let you know if
 the JPEG images on your page are optimally compressed.
 
 - Click on the **Show Live** button to view the live version of the your Glitch.
-
-<web-screenshot type="show-live"></web-screenshot>
-
-Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
+- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
 live version of your Glitch and verify that the "Efficiently encode images"
 audit was passed.
 
-<img src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+<img class="screenshot" src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 
 Success! You have used Imagemin to optimally compress the images on your page.

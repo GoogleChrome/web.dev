@@ -903,6 +903,14 @@ jeffposnick:
   description:
     en: Web DevRel @ Google
 
+demianrenzulli:
+  name:
+    given: Demian
+    family: Renzulli
+  twitter: drenzulli
+  github: demianrenzulli
+  glitch: demianrenzulli
+
 taylorsavage:
   name:
     given: Taylor
@@ -1013,6 +1021,23 @@ emilystark:
   homepage: 'https://www.emilymstark.com/'
   twitter: estark37
   email: estark@chromium.org
+
+thomassteiner:
+  name:
+    given: Thomas
+    family: Steiner
+  homepage: https://blog.tomayac.com/
+  twitter: tomayac
+  github: tomayac
+  description:
+    en: "Tom is a Developer Advocate"
+  org:
+    name: Google
+    unit: Developer Relations
+  country: DE
+  role:
+    - author
+  email: tomac@google.com
 
 sunyunjia:
   name:
@@ -1221,7 +1246,7 @@ houssein:
   twitter: hdjirdeh
   github: housseindjirdeh
   glitch: housseindjirdeh
-  
+
 mdiblasio:
   name:
     given: Michael
