@@ -13,7 +13,7 @@ overview: |
 - title: Fast
   guides:
     - code-splitting-suspense
-    - virtualize-scrolling
+    - virtualize-long-lists-react-window
 - title: Reliable
   guides:
     - add-service-worker
