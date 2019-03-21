@@ -1,6 +1,6 @@
 ---
 page_type: glitch
-title: Minify and compress network payloads
+title: Minify and compress network payloads with gzip
 author: houssein
 description: |
   In this codelab, learn how both minifying and compressing the JavaScript
@@ -9,6 +9,7 @@ description: |
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 glitch: fav-kitties-compress-starter
+order: 1
 ---
 
 This codelab explores how both minifying and compressing the JavaScript
