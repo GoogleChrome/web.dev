@@ -176,15 +176,7 @@ For example, `main.js` would be renamed to `main.js.br`.
 
 When the app reloads and rebuilds, a compressed version of the main bundle is now created. Open the Glitch Console to take a look at what's inside the final `public/` directory that's served by the Node server.
 
-+ Click the **Status** button.
-
-<web-screenshot type="status"></web-screenshot>
-
-+ Click the **Console** button.
-
-<web-screenshot type="console"></web-screenshot>
-
-+ In the console, run the following commands to change into the `public` directory
+In the console, run the following commands to change into the `public` directory
 and see all of its files:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -239,7 +231,7 @@ app.use(express.static('public'));
 
 Once the app reloads, take a look at the Network panel once more.
 
-<img class="screenshot" src="./network-static-compression-brotli.png"  alt="Network panel bundle size after static Brotli compression">
+<img class="screenshot" src="./network-static-compression-brotli.png"  alt="Bundle size of 53.1 KB (from 225KB)">
   
 Success! You have used Brotli compression to further compress your assets!
 
