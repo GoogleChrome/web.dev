@@ -176,7 +176,9 @@ For example, `main.js` would be renamed to `main.js.br`.
 
 When the app reloads and rebuilds, a compressed version of the main bundle is now created. Open the Glitch Console to take a look at what's inside the final `public/` directory that's served by the Node server.
 
-In the console, run the following commands to change into the `public` directory
+1. Click the **Status** button.
+1. Click the **Console** button.
+1. In the console, run the following commands to change into the `public` directory
 and see all of its files:
 
 <pre class="devsite-terminal devsite-click-to-copy">
