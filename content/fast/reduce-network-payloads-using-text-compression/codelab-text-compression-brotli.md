@@ -182,10 +182,10 @@ When the app reloads and rebuilds, a compressed version of the main bundle is no
 1. In the console, run the following commands to change into the `public` directory
 and see all of its files:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```sh
 cd public
 ls -lh
-</pre>
+```
 
 <img class="screenshot" src="./console-static-compression-brotli.png"  alt="Bundle size with static Brotli compression">
 
