@@ -7,6 +7,7 @@ description: |
 web_updated_on: 2019-05-05
 web_published_on: 2019-05-05
 glitch: fav-kitties-compress-starter
+order: 2
 ---
 
 This codelab is an extension of the [Minify and compress network payloads codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression) and assumes you are familiar with the basics concepts of compression. As compared to other compression algorithms like `gzip`, this codelab explores how Brotli compression can further reduce compression ratios and your app’s overall size.
@@ -176,7 +177,7 @@ For example, `main.js` would be renamed to `main.js.br`.
 
 When the app reloads and rebuilds, a compressed version of the main bundle is now created. Open the Glitch Console to take a look at what's inside the final `public/` directory that's served by the Node server.
 
-1. Click the **Status** button.
+1. Click the **Tools** button.
 1. Click the **Console** button.
 1. In the console, run the following commands to change into the `public` directory
 and see all of its files:
