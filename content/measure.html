@@ -4,14 +4,14 @@
   <meta name="project_path" value="/_project.yaml" />
   <meta name="book_path" value="/_book.yaml" />
   <meta name="full_width" value="true" />
-  <meta name="description" value="Review performance for your websites, and get detailed guidance on how to improve it. Make a profile to save your progress." />
+  <meta name="description" value="See how well your website performs. Then, get tips to improve your user experience." />
 </head>
 <body>
 <main class="profile-landing-page">
   <div class="container">
     <div class="hero-area">
       <h1 class="hero-title no-link">Measure</h1>
-      <p>Review performance and get detailed guidance on how to improve it. <span data-lh-signin="hide">Sign-in to monitor your progress over time.</span></p>
+      <p>See how well your website performs. Then, get tips to improve your user experience. <span data-lh-signin="hide">Sign in to track your progress over time.</span></p>
       <a href="#" class="button button-transparent lh-signin-button gc-analytics-event"
           data-category="web.dev"
           data-label="measure, big sign-in"
@@ -41,26 +41,26 @@
         <div class="profile-steps-row numbered-headers col-sm-12 col-md-10 col-lg-12 col-xl-10">
           <div class="profile-step">
             <div class="numbered-header numbered-header--vertical">
-              <h2>Audit your web page</h2>
+              <h2>Run tests on your site</h2>
             </div>
             <p>
-              Provide any URL, and web.dev will run a series of audits using <a href="https://developers.google.com/web/tools/lighthouse/" class="gc-analytics-event" data-category="web.dev" data-label="measure, Lighthouse link" data-action="click">Lighthouse</a>. We'll generate a report of how well you did.
+              Enter your site's URL to see how well it performs across all audits
             </p>
           </div>
           <div class="profile-step">
             <div class="numbered-header numbered-header--vertical">
-              <h2>Analyze for improvements</h2>
+              <h2>Choose what matters</h2>
             </div>
             <p>
-              Review the audits report to identify areas in which your page can be improved.
+              See your site's performance across the areas you care about
             </p>
           </div>
           <div class="profile-step">
             <div class="numbered-header numbered-header--vertical">
-              <h2>Learn how to fix it</h2>
+              <h2>Get tips for improving</h2>
             </div>
             <p>
-              For each audit you'll find guidance and immediate steps you can take to improve your scores.
+              Each test comes with helpful steps to improve your site's results
             </p>
           </div>
         </div>
@@ -70,13 +70,20 @@
 
   <section class="lh-categories-section">
     <div class="container">
-      <h2 class="no-link">What is Lighthouse?</h2>
+      <h2 class="no-link">How your site is measured</h2>
       <div class="what-is-lighthouse">
-        Lighthouse is an open-source, automated tool for improving the quality of your web apps.
-        It is integrated directly into the Chrome DevTools Audits panel, but can also be
-        run from the command line, as a <a href="https://www.npmjs.com/package/lighthouse" class="gc-analytics-event" data-label="measure, Lighthouse module lnk" data-action="click">Node module</a>,
-        or by installing the <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk" class="gc-analytics-event" data-label="measure, Lighthouse crx link" data-action="click">Chrome Extension</a>.
-        Lighthouse also provides a REST API which is consumed by sites like web.dev and <a href="https://developers.google.com/speed/docs/insights/v5/get-started" class="gc-analytics-event" data-label="measure, PSI link" data-action="click">PageSpeed Insights</a>.
+        When you measure your site, web.dev uses the <a href="https://developers.google.com/web/tools/lighthouse/" class="gc-analytics-event" data-category="web.dev" data-label="measure, Lighthouse link" data-action="click">Lighthouse</a> tool. Tests are run using Lighthouse's default settings:
+        <ul>
+          <li>Mobile device</li>
+          <li>All audits below</li>
+          <li>Throttled to simulated fast 3G & 4x CPU slowdown</li>
+        </ul>
+        You can measure your site using different settings, like if you want to test your desktop site or turn off audits that you don't care about. To change your report settings, run Lighthouse:
+        <ul>
+          <li>in <a href="https://developers.google.com/web/tools/lighthouse/#devtools" class="gc-analytics-event" data-category="web.dev" data-label="measure, Lighthouse devtools link" data-action="click">Chrome DevTools</a></li>
+          <li>as a <a href="https://www.npmjs.com/package/lighthouse" class="gc-analytics-event" data-label="measure, Lighthouse module lnk" data-action="click">Node module</a>, or</li>
+          <li>with the <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk" class="gc-analytics-event" data-label="measure, Lighthouse crx link" data-action="click">Chrome Extension</a></li>
+        </ul>
       </div>
       <div class="row">
         <div class="lh-categories-row col-sm-12 col-md-12 col-xl-10">
@@ -86,25 +93,25 @@
             <img class="lh-category__icon" src="/_static/web/images/icons/performance.svg" aria-describedby="lh-category-performance-title">
             <div class="lh-category__title" id="lh-category-performance-title">Performance</div>
             <p class="lh-category__body">
-              Audits for metrics like first paint and time to interactive to determine lag.
+              Measures how quickly users can see and interact with your site
             </p>
           </div>
 
           <!-- PWA -->
           <div class="lh-category">
             <img class="lh-category__icon" src="/_static/web/images/icons/pwa.svg" aria-describedby="lh-category-pwa-title">
-            <div class="lh-category__title" id="lh-category-pwa-title">PWA</div>
+            <div class="lh-category__title" id="lh-category-pwa-title">Progressive Web App</div>
             <p class="lh-category__body">
-              Assesses your page against the baseline Progressive Web App Checklist.
+              Checks if your site qualifies as a Progressive Web App
             </p>
           </div>
 
           <!-- BEST PRACTICES -->
           <div class="lh-category">
             <img class="lh-category__icon" src="/_static/web/images/icons/best_practices.svg" aria-describedby="lh-category-best-practices-title">
-            <div class="lh-category__title" id="lh-category-best-practices-title">Best Practices</div>
+            <div class="lh-category__title" id="lh-category-best-practices-title">Best practices</div>
             <p class="lh-category__body">
-              Looks for everything from HTTPS usage to correct image aspect ratios.
+              Checks if your site meets modern web expectations
             </p>
           </div>
 
@@ -113,7 +120,7 @@
             <img class="lh-category__icon" src="/_static/web/images/icons/seo.svg" aria-describedby="lh-category-seo-title">
             <div class="lh-category__title" id="lh-category-seo-title">SEO</div>
             <p class="lh-category__body">
-              Checks for best practices to ensure your site is discoverable.
+              Checks if your site follows best practices to be discoverable
             </p>
           </div>
 
@@ -122,7 +129,7 @@
             <img class="lh-category__icon" src="/_static/web/images/icons/a11y.svg" aria-describedby="lh-category-accessibility-title">
             <div class="lh-category__title" id="lh-category-accessibility-title">Accessibility</div>
             <p class="lh-category__body">
-              Checks for common issues that may prevent users from accessing your content.
+              Checks if all visitors to your site can use it
             </p>
           </div>
 
