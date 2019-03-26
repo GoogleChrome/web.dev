@@ -10,7 +10,7 @@ web_published_on: 2018-11-05
 glitch: preload-web-fonts
 ---
 
-This code lab shows you how to preload web fonts using rel="preload" to remove any flash of unstyled text (FOUT).
+This code lab shows you how to preload web fonts using rel="preload" to remove any flash of unstyled text (FOßUT).
 
 
 ## Measure
