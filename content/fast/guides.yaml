@@ -20,6 +20,7 @@ order: 1
 topics:
 # Topic containing several guides
 - title: Adaptive serving WIP
+  guides:
     - adaptive-serving-based-on-network-quality
 - title: Measure your site's performance
   guides:
