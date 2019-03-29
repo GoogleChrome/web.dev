@@ -19,6 +19,8 @@ order: 1
 
 topics:
 # Topic containing several guides
+- title: Adaptive serving WIP
+    - adaptive-serving-based-on-network-quality
 - title: Measure your site's performance
   guides:
     - discover-performance-opportunities-with-lighthouse
