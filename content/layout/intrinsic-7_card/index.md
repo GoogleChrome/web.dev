@@ -3,6 +3,10 @@ page_type: guide
 title: Resilient Card Layout
 author: adamargyle
 description:
+tags:
+- Layout
+- Design
+- CSS
 web_lighthouse: N/A
 web_updated_on:
 web_published_on:
