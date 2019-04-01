@@ -20,7 +20,7 @@ First measure how the website performs before adding any optimizations.
 2. Open DevTools by pressing `CMD + OPTION + i `/ `CTRL + SHIFT + i`.
 3. Click on the **Audits** panel.
 4. Select the **Performance** checkbox.
-5. Click Run **Audits** to generate a report.
+5. Click **Run Audits** to generate a report.
 
 The Lighthouse report that is generated will show you the fetching sequence of resources under **Maximum critical path latency**.
 
@@ -46,7 +46,7 @@ The `as="font" type="font/woff2"` attributes tell the browser to download this r
 
 The `crossorigin` attribute indicates whether the resource should be fetched with a CORS request as the font may come from a different domain. Without this attribute, the preloaded font is ignored by the browser.
 
-Since Pacifico-Bold is used in page header, we added a preload tag to fetch it even sooner. It isn’t important to preload the Pacifico.woff2 font because it styles the text that is below the fold. 
+Since Pacifico-Bold is used in the page header, we added a preload tag to fetch it even sooner. It isn’t important to preload the Pacifico.woff2 font because it styles the text that is below the fold. 
 
 Reload the application and run lighthouse again. Check the **Maximum critical path latency** section.
 
