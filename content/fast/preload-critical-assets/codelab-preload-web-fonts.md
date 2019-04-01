@@ -18,11 +18,11 @@ This codelab shows you how to preload web fonts using rel="preload" to remove an
 First measure how the website performs before adding any optimizations.
 1. Click on the **Show Live** button to view the live version of the your Glitch.
 2. Open DevTools by pressing `CMD + OPTION + i `/ `CTRL + SHIFT + i`.
-3. Click on the Audits panel.
-4. Select the Performance checkbox.
-5. Click Run Audits to generate a report.
+3. Click on the **Audits** panel.
+4. Select the **Performance** checkbox.
+5. Click Run **Audits** to generate a report.
 
-The Lighthouse report that is generated  will show you  the fetching sequence of resources under **Maximum critical path latency**.
+The Lighthouse report that is generated will show you the fetching sequence of resources under **Maximum critical path latency**.
 
 <img class="screenshot" src="./lighthouse-before.png" alt="Webfonts are present in the critical request chain.">
 
@@ -33,7 +33,7 @@ Here is the sequence of the resources fetched in the application:
 <img class="screenshot" src="./network-request-before.png" alt="Webfonts are lazy loaded.">
  
 ## Preloading Web fonts.
-In order to avoid FOUT, you can preload web fonts that are required immediately. Add the Link element for this application at the head of the document:
+In order to avoid FOUT, you can preload web fonts that are required immediately. Add the `Link` element for this application at the head of the document:
 
 <pre class="prettyprint">
 &lt;head&gt;
