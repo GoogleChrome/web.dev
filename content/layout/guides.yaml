@@ -15,12 +15,12 @@ order: 1
 topics:
 - title: Intrinsic Layout
   guides:
-    - overview
-    - macro
-    - nav
-    - sidebar
-    - grouped-listview
-    - chip
-    - mural
-    - card
-    - summary
+    - intrinsic-0_overview
+    - intrinsic-1_macro
+    - intrinsic-2_nav
+    - intrinsic-3_sidebar
+    - intrinsic-4_grouped-listview
+    - intrinsic-5_chip-card
+    - intrinsic-6_mural-card
+    - intrinsic-7_card
+    - intrinsic-8_summary
