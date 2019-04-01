@@ -1253,3 +1253,17 @@ mdiblasio:
     family: DiBlasio
   github: mdiblasio
   glitch: mdiblasio
+
+adamargyle:
+  name:
+    given: Adam
+    family: Argyle
+  homepage: https://nerdy.dev
+  twitter: argyleink
+  github: argyleink
+  description:
+    en: CSS/JS/UX addict; repeat(∞, [empathize, define, design, develop, deploy]);
+  org:
+    name: Google
+    unit: Chrome
+  email: argyle@google.com
