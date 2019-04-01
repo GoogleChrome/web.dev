@@ -6,7 +6,8 @@ description: |
   We've all been there—you forgot to scale down an image before adding it to the
   page. The image looks fine, but it is wasting users' data and hurting page
   performance.
-web_lighthouse: N/A
+web_lighthouse:
+  - uses-responsive-images
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 wf_blink_components: N/A
