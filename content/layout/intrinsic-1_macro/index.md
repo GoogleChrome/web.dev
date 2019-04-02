@@ -39,22 +39,22 @@ I took a stab at **overlaying estimated macro grid tracks** on the design based 
 ## Layout Observations
 1. An **asymetric** layout 💀🤘
 1. **Rails** are **flanking** a large flexible column
-  <figure style="text-align:center; margin: 1rem 0 3rem;">
+  <figure style="text-align:center; margin: 1rem 0 3rem;" class="screenshot">
     <img src="macro – flanking rails.png" alt="">
   </figure>
 
 1. Rails and aside look like **fixed** **columns**
-  <figure style="text-align:center; margin: 1rem 0 3rem;">
+  <figure style="text-align:center; margin: 1rem 0 3rem;" class="screenshot">
     <img src="macro – fixed widths.png" alt="">
   </figure>
 
 1. Free shipping message **spans 2 columns**
-  <figure style="text-align:center; margin: 1rem 0 3rem;">
+  <figure style="text-align:center; margin: 1rem 0 3rem;" class="screenshot">
     <img src="macro – greeting span.png" alt="">
   </figure>
 
 1. Greeting message is **splitting** our potentially **shared columns** from `<nav>` to `<main>`
-  <figure style="text-align:center; margin: 1rem 0 3rem;">
+  <figure style="text-align:center; margin: 1rem 0 3rem;" class="screenshot">
     <img src="macro – body split.png" alt="">
   </figure>
 
@@ -71,12 +71,13 @@ In case you're wondering where or how I conjured those notes, I don't have a sys
 
 
 <br><br><br>
-##### Let's Code!
 
-# Macro Layout v1: A Slotted Layout
+
+##### Let's Code!
+# Macro Layout v1: <br>A Slotted Layout
 <div class="note">1 grid to rule them all</div>
 
-In this iteration, we follow our gut and what we saw, and do our best to articulate a grid to handle this macro layout. It looks like we can do **the whole grid** with 1 definition **using** a **slotted layout**. We have identifiable elements and grid lines, so let's translate them to [grid-template-areas](<https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas>), **place** our elements in the **defined zones**, and go from there.
+In this iteration, we follow our gut and do our best to articulate a grid to handle this macro layout. It looks like we can do **the whole grid** with 1 definition **using** a **slotted layout**. We have identifiable elements and grid lines, so let's translate them to [grid-template-areas](<https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas>), **place** our elements in the **defined zones**, and go from there.
 
 <br>
 
@@ -132,28 +133,31 @@ body {
 <br><br>
 
 **Results**
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 480px; width: 960px;">
   <iframe
     src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
     alt="logical-tab-order on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
+
 **Open that Glitch up** in a new tab and give it a whirl, kick the tires, peep the code. Try tweaking a few things that you're curious about. What do you think?
 
 <br><br>
 
-Each element **has a place**, each element **in it's place**. Here I've highlighted the row and column tracks we created:
+#### Each element **has a place**, each element **in it's place**
+
 <figure style="text-align:center; margin: 1rem 0;">
   <img src="macro – body grid.png" alt="">
+  <figcaption>tracks visualized: highlighted rows and dashed line columns</figcaption>
 </figure>
 
-## Pros
+## Pros 👍
 1. Sure is **fun to read**, very visual way to create a grid
 1. It's a **slotted layout**, which will play nice with component architecture
 1. Feels like a magazine layout where there's content areas and we **placed elements**
 
-## Cons
+## Cons 👎
 1. High specificity: **specific children** to **specific locations**
 1. **Empty columns** in the `<main>`feel wasteful when we have margin
 1. **Lots of code**, even though it reads well and is satisfying
@@ -164,7 +168,7 @@ Each element **has a place**, each element **in it's place**. Here I've highligh
 <br><br><br><br>
 
 
-# Macro Layout v2 (refactor): Intrinsic Grids
+# Macro Layout v2 (refactor): <br>Intrinsic Grids
 <div class="note">2 grids that do less</div>
 
 <br>
@@ -173,17 +177,16 @@ In this refactor, I **pulled the `<header>` element out**. Upon a closer look, I
 
 Post refactor, 1 grid manages the "stack" / top level rows, and the 2nd manages the aside and articles. You could think of it like **2 grids with less responsibility**, **less knowledge** of children, and ultimately takes **less code** to create.
 
+<br><br>
 
 #### Let's break it down
-
-
 ## 1. `<body>` Layout
 
 Our **most macro grid** is placed on the body. It's **creating spaces** for the highest level elements (`<nav>`, `<header>`, `<main>`, etc) and the **spacing between** them. This grid is minimal and doesn't know anything about what it's laying out except that there should be some healthy space between.
 
 We could add a any element to the `<body>` later and get some spacing **for free**. Free is nice.
 
-
+<br><br>
 
 **HTML**
 ```html
@@ -221,41 +224,38 @@ body {
   </iframe>
 </div>
 
+<br><br>
 
 **Each child** element of `<body>` becomes **a row** with **2rems between** them:
 
-![macro – body grid](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/macro – body rows.png)
+<figure style="text-align:center; margin: 2rem 0;">
+  <img src="macro – body rows.png" alt="Showing simplified grid of only rows" class="screenshot">
+</figure>
 
 
+## Pros 👍
+1. Just rows
+1. Just gaps
+1. Add more elements and layout continues to work great
+1. Respectful rows that don't enforce a height
+1. **Just flow and spacing**
+1. Fallback is straight forward
 
-**Pros**
+## Cons 👎
+1. **No more rails** (not really a con, but doesn't match the mental model my design brain had)
+1. **Dinky**, it's barely doing anything
 
-- Just rows
-- Just gaps
-- Respectful rows that don't enforce a height
-- **Just flow and spacing**
-- Fallback is straight forward
+<br><br><br>
 
-
-
-**Cons**
-
-- **No more rails** (not really a con, but doesn't match the mental model my design brain had)
-- **Dinky**, it's barely doing anything
-
-
-
-
-
-### 2. `<main>` Layout
+#### Next piece
+## 2. `<main>` Layout
 We've spaced our big elements vertically, now we have **1 more large macro layout to create**. In our first version we had rails with placed elements, **I'd like to not place elements this time**.
 
 **Note:** I often find my first grids use `grid-template-area` but become unwieldy at a certain point.
 
-
+<br>
 
 **HTML**
-
 ```html
 <main>
   <aside></aside>
@@ -263,10 +263,9 @@ We've spaced our big elements vertically, now we have **1 more large macro layou
 </main>
 ```
 
-
+<br>
 
 **CSS**
-
 ```css
 main {
   display: grid;
@@ -275,46 +274,46 @@ main {
 }
 ```
 
-> **CSS Grid In English:** I want a **grid** with **2 columns**, the **first at a fixed width** and the **2nd filling** the remaining space.
+<div class="note">
+  <b>CSS Grid In English:</b> I want a <b>grid</b> with <b>2 columns</b>, the <b>first at a fixed width</b> and the <b>2nd filling</b> the remaining space.
+</div>
 
+<br><br>
 
-
-Instead of rails we **use margin** and then just have **2 columns**:
-
-![macro – main](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/macro – main.png)
-
-
-
-**Pros**
-
-- **Cut** the amount of **columns** to manage **in half**
-- **Cut** down the **complexity**
-- **Cut** the **LoC** down to 3
-- Media queries need to **know much less**
-
-
-
-**Cons**
-
-- No more rails (I dont know why, but I liked them, and they're gone lol)
-
-
-
-[glitch embed of v2]
-
-
+**Results**
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
+    alt="logical-tab-order on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 **Open that Glitch up** in a new tab and give it a whirl, kick the tires, peep the code. Try tweaking a few things that you're curious about. What do you think? **How is it different from v1?**
 
+<br><br>
 
+Instead of rails we **use margin** 🤯 and then just have **2 columns**:
 
+<figure style="text-align:center; margin: 2rem 0;">
+  <img src="macro – main.png" alt="Main grid simplified to 2 columns" class="screenshot">
+</figure>
 
+## Pros 👍
+1. **Cut** the amount of **columns** to manage **in half**
+1. **Cut** down the **complexity**
+1. **Cut** the **LoC** down to 3
+1. Media queries need to **know much less**
 
-### Responsive Final Touches
+## Cons
+1. No more rails (I dont know why, but I liked them, and they're gone lol)
 
+<br>
+
+## Responsive Final Touches
 Due to our nice refactor, **our responsive work is pretty minimal**. Nothing needs to be changed on the `<body>`, woh, love it, and the `<main>` grid **only needs a minor adjustment**:
 
-
+<br>
 
 ```css
 @media (width < 768px) {
@@ -323,44 +322,44 @@ Due to our nice refactor, **our responsive work is pretty minimal**. Nothing nee
 }
 ```
 
-> **CSS Grid In English:** When the viewport width is less than 768px, I want a **grid** with **1 full width column** and margin only on the left side.
+<div class="note">
+  <b>CSS Grid In English:</b> When the viewport width is less than 768px, I want a <b>grid</b> with <b>1 full width column</b> and margin only on the left side.
+</div>
 
+<figure style="text-align:center; margin: 4rem 0; max-width: 400px;">
+  <img src="main-responsive.png" alt="Main grid simplified to 2 columns" class="screenshot">
+</figure>
 
+<br><br><br><br>
 
-
-
-![main-responsive](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/main-responsive.png)
-
-
-
-
-
-
-
-
-
-## Conclusion
-
+# Conclusion
 v2 of our macro layout is lookin good. **We've created spaces and boxes for our biggest components**, and they're now resting healthy together. Turned out to be less work then we thought! That's always nice.
 
 We also iterated a bit to use more intrinsic properties:
-
 - Content can **change node names,** **position** or **length** and **no grid needs modified**
 - CSS **knows less about the DOM structure**
 
+<br><br>
 
+**Final Macro Layout**
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
+    alt="logical-tab-order on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
-[glitch]
-
-
+<br><br>
 
 **Play with that Glitch a bit!** Resize your browser. Use the devtools to visualize the grid spaces!
 
-![intrinsic-macro-1](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/intrinsic-macro-1.gif)
+<figure style="text-align:center; margin: 4rem 0;">
+  <img src="intrinsic-macro-1.gif" alt="">
+</figure>
 
 
-
-#### Did we match our estimated grid lines!?
+## Did we match our estimated grid lines!?
 
 **Nope!** 😹
 
@@ -368,24 +367,17 @@ Turns out my original guesses on grid lines were off.. **what's new**!
 
 Here are the designs with **updated grid lines** based on the learnings from development.
 
+### Top Level Grid
+<div class="note">just flow and spacing</div>
+
+<figure style="text-align:center; margin: 1rem 0 4rem 0;">
+  <img src="macro – body rows.png" alt="">
+</figure>
 
 
-**Top Level Grid**
+### Main Level Grid
+<div class="note">2 columns with some margin</div>
 
-> just flow and spacing
-
-![macro – body grid](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/macro – body rows.png)
-
-
-
-**Main Level Grid**
-
-> shown with header which is a simple block level element / not in the grid
-
-![macro – less grids more margin](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/macro – less grids more margin.png)
-
-
-
-
-
-
+<figure style="text-align:center; margin: 0.25rem 0 4rem 0;">
+  <img src="macro – less grids more margin.png" alt="">
+</figure>
