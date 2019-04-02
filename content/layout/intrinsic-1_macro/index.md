@@ -308,9 +308,9 @@ Instead of rails we **use margin** 🤯 and then just have **2 columns**:
 ## Cons
 1. No more rails (I dont know why, but I liked them, and they're gone lol)
 
-<br>
+<br><br><br><br>
 
-## Responsive Final Touches
+# Responsive Final Touches
 Due to our nice refactor, **our responsive work is pretty minimal**. Nothing needs to be changed on the `<body>`, woh, love it, and the `<main>` grid **only needs a minor adjustment**:
 
 <br>
