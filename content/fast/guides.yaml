@@ -19,12 +19,9 @@ order: 1
 
 topics:
 # Topic containing several guides
-# - title: Adaptive serving WIP
-#   guides:
 - title: Measure your site's performance
   guides:
     - discover-performance-opportunities-with-lighthouse
-    - adaptive-serving-based-on-network-quality
 - title: Optimize your images
   guides:
     - use-imagemin-to-compress-images
@@ -47,6 +44,9 @@ topics:
 - title: Optimize web fonts
   guides:
     - avoid-invisible-text
+- title: Optimize how you serve content
+  guides:
+    - adaptive-serving-based-on-network-quality
 - title: Measure performance in the field
   guides:
     - chrome-ux-report

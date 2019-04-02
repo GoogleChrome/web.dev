@@ -3,7 +3,7 @@ page_type: guide
 title: Adaptive serving based on network quality
 author: mihajlija
 description: |
-  AdUsing Network Information API to adapt which assets you're serving to users based on the quality of their connection.
+  Using Network Information API to adapt which assets you're serving to users based on the quality of their connection.
 web_lighthouse: N/A
 web_updated_on: 2019-04-01
 web_published_on: 2019-04-01
@@ -29,7 +29,7 @@ There are many ways you can use this network information to improve the user exp
 
 Many applications are already doing something similar. For example, YouTube, Netflix and most other video (or video calling) services automatically adjust the resolution during streaming. When Gmail is loading, it provides users with a link to "load basic HTML (for slow connections)" - a simplified (yet functional) version of Gmail. 
 
-![A link to load basic HTML version of Gmail when users are on slow connections](loading_gmail_slow_connection.png)
+<img class="screenshot" src="./loading_gmail_slow_connection.png" alt="A link to load basic HTML version of Gmail when users are on slow connections">
 
 With the Network Information API you can now implement these functionalities in your own applications without much effort.
 
@@ -45,7 +45,7 @@ The **navigator.connection** object contains information about a client’s conn
 
 Here’s what this looks like when you run it in the browser’s console:
 
-![Chrome DevTools console displaying the values of navigator.connection object's properties](network_information_in_console.jpg)
+<img class="screenshot" src="./network_information_in_console.jpg" alt="Chrome DevTools console displaying the values of navigator.connection object's properties">
 
 It might seem odd that the **effectiveType **only goes up to ‘**4g’**, but that segment actually includes all connections that are **‘4g’ and higher.** The API determines the effective connection type based on the combination of **round-trip time (RTT) and downlink speed**. For example, if you have a 10 Mbps downlink combined with 1000 ms latency, the **effectiveType **will be ‘3g’ due to the latency. 
 
@@ -91,10 +91,10 @@ The **onchange** event listener enables you to dynamically adapt to changes in n
 
 Use the "onchange" event listener as you would any other event listener:
 
-`navigator.connection.addEventListener('change', doSomethingOnChange);`
+```navigator.connection.addEventListener('change', doSomethingOnChange);```
 
 
-<div class="aside note warning">Network information API is <a href="https://caniuse.com/#feat=netinfo">supported in Chromium-based browsers</a> since version 62.</div>
+<div class="aside note">Network information API is <a href="https://caniuse.com/#feat=netinfo">supported in Chromium-based browsers</a> since version 62.</div>
 
 ## Conclusion 
 
