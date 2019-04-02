@@ -1,3 +1,15 @@
+---
+page_type: guide
+title: Adaptive serving based on network quality
+author: mihajlija
+description: |
+  AdUsing Network Information API to adapt which assets you're serving to users based on the quality of their connection.
+web_lighthouse: N/A
+web_updated_on: 2019-04-01
+web_published_on: 2019-04-01
+wf_blink_components: N/A
+---
+
 # Adaptive serving based on network quality
 
 Loading a website can be a very different experience depending on the network conditions. Everything is usually smooth when you are on a fast network, but when you are on the go with a humble data plan and spotty connection, or stuck with a laptop on a sluggish coffee shop wifi, it's a different story.
@@ -17,7 +29,7 @@ There are many ways you can use this network information to improve the user exp
 
 Many applications are already doing something similar. For example, YouTube, Netflix and most other video (or video calling) services automatically adjust the resolution during streaming. When Gmail is loading, it provides users with a link to "load basic HTML (for slow connections)" - a simplified (yet functional) version of Gmail. 
 
-![image alt text](loading_gmail_slow_connection.png)
+![A link to load basic HTML version of Gmail when users are on slow connections](loading_gmail_slow_connection.png)
 
 With the Network Information API you can now implement these functionalities in your own applications without much effort.
 
@@ -33,18 +45,19 @@ The **navigator.connection** object contains information about a client’s conn
 
 Here’s what this looks like when you run it in the browser’s console:
 
-![image alt text](network_information_in_console.jpg)
+![Chrome DevTools console displaying the values of navigator.connection object's properties](network_information_in_console.jpg)
 
 It might seem odd that the **effectiveType **only goes up to ‘**4g’**, but that segment actually includes all connections that are **‘4g’ and higher.** The API determines the effective connection type based on the combination of **round-trip time (RTT) and downlink speed**. For example, if you have a 10 Mbps downlink combined with 1000 ms latency, the **effectiveType **will be ‘3g’ due to the latency. 
 
 The **effectiveType** values are also available via [Client Hints](https://www.chromestatus.com/features/5407907378102272) and allow you to communicate the browser's connection type to servers.
 
 <table>
+  <caption><a href="https://wicg.github.io/netinfo/#effective-connection-types">Table of effective connection types</a></caption>
   <tr>
-    <td>effectiveType</td>
-    <td>RTT (ms)</td>
-    <td>Downlink (Kbps)</td>
-    <td>Usage</td>
+    <th>effectiveType</th>
+    <th>RTT (ms)</th>
+    <th>Downlink (Kbps)</th>
+    <th>Usage</th>
   </tr>
   <tr>
     <td>slow-2g</td>
@@ -72,23 +85,16 @@ The **effectiveType** values are also available via [Client Hints](https://www.c
   </tr>
 </table>
 
-
-[Table of effective connection types](https://wicg.github.io/netinfo/#effective-connection-types)
-
-Note: You can access Network Information API inside [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker) to adapt to situations when users are offline.
+<div class="aside note">You can access Network Information API inside <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker">Service Workers</a> to adapt to situations when users are offline.</div>
 
 The **onchange** event listener enables you to dynamically adapt to changes in network quality. If you deferred uploads or downloads because of poor network conditions, you can rely on the event listener to restart the transfer when it detects better network conditions. You can also use it to notify users when the network quality changes. For example, if they lost their wi-fi signal and were dropped to a cellular network this can prevent accidental data transfers (and charges 💸).
 
 Use the "onchange" event listener as you would any other event listener:
 
-<table>
-  <tr>
-    <td>  navigator.connection.addEventListener('change', doSomethingOnChange);</td>
-  </tr>
-</table>
+`navigator.connection.addEventListener('change', doSomethingOnChange);`
 
 
-Support: Network information API is [supported in Chromium-based browsers](https://caniuse.com/#feat=netinfo) since version 62.
+<div class="aside note warning">Network information API is <a href="https://caniuse.com/#feat=netinfo">supported in Chromium-based browsers</a> since version 62.</div>
 
 ## Conclusion 
 
