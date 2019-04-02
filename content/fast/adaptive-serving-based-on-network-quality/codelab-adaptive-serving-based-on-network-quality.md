@@ -1,12 +1,12 @@
 --- 
 page_type: glitch 
-title: Setting performance budgets with webpack 
+title: Adaptive serving based on netwotk quality 
 author: mihajlija 
 description: |   
  Learn how to adapt your content based on the network quality.
 web_updated_on: 2019-01-31 
 web_published_on: 2019-01-31 
-glitch: adaotive-serving-netinfo-starter 
+glitch: adaptive-serving-netinfo-starter 
 ---
 
 # Adaptive serving based on network quality
