@@ -1,6 +1,6 @@
 --- 
 page_type: glitch 
-title: Adaptive serving based on netwotk quality 
+title: Adaptive serving based on network quality 
 author: mihajlija 
 description: |   
  Learn how to adapt your content based on the network quality.
@@ -21,7 +21,7 @@ The background video is currently specified index.html and then lazy-loaded in `
 
 To load it conditionally, first check if connection type detection is supported. In `script.js` add an if statement that tests whether the `navigator.connection` object exists and whether it has the effectiveType property.
 
-`if (navigator.connection && !!navigator.connection.effectiveType) {}`
+```if (navigator.connection && !!navigator.connection.effectiveType) {}```
 
 Wrap the existing video loading code in an else statement, so that video will still load in browsers that don’t support the Network Information API.
 
@@ -74,7 +74,7 @@ else {
 
 Here’s how the video loading code works: the video source is specified inside [data-src attribute](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) in `index.html` and then lazy-loaded in `script.js`.
 
-`<video id="coverVideo" autoplay loop muted data-src="https://cdn.glitch.com/b6491350-b058-4eb6-aa6c-55c93122073e%2FMatrix%2C%20Console%2C%20Hacking%2C%20Code.mp4?1551464245607"></video>`
+```<video id="coverVideo" autoplay loop muted data-src="https://cdn.glitch.com/b6491350-b058-4eb6-aa6c-55c93122073e%2FMatrix%2C%20Console%2C%20Hacking%2C%20Code.mp4?1551464245607"></video>```
 
 Because the video source is specified in the `data-src` attribute, it isn’t displayed or downloaded initially. [Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) allow you to store extra information on standard HTML elements. They can be named anything, as long as it starts with "data-". 
 
@@ -82,19 +82,19 @@ To actually display the video on the page, the location from `data-src` needs to
 
 First, get the DOM element that contains the asset:
 
-`const video = document.getElementById("coverVideo");`
+```const video = document.getElementById("coverVideo");```
 
 Then get the resource location from the `data-src` attribute: 
 
-`const videoSource = video.getAttribute('data-src');`
+```const videoSource = video.getAttribute('data-src');```
 
 And finally set that as the `src` attribute of the video element:
 
-`video.setAttribute('src', videoSource);`
+```video.setAttribute('src', videoSource);```
 
 The last line takes care of CSS positioning:
 
-`video.setAttribute('style', "height: 100%; width: 100%; display:inline");`
+```video.setAttribute('style', "height: 100%; width: 100%; display:inline");```
 
 ## Step 4: Load image
 
@@ -102,7 +102,7 @@ To conditionally load an image on slower networks, use the same strategy as for 
 
 Add an image element to `index.html` (right after the video element), and use the `data-src` attribute instead of the `src` attribute. 
 
-`<img id="coverImage" data-src="https://cdn.glitch.com/36529535-5976-40f8-979b-40c898b86bd0%2F36529535-5976-40f8-979b-40c898b86bd0_1_Sn80dgiwpMjBVrqjfiDbnA.jpg?1553003835358" />`
+```<img id="coverImage" data-src="https://cdn.glitch.com/36529535-5976-40f8-979b-40c898b86bd0%2F36529535-5976-40f8-979b-40c898b86bd0_1_Sn80dgiwpMjBVrqjfiDbnA.jpg?1553003835358" />```
 
 In `script.js`, add code to set the image’s `src` attribute depending on the `effectiveType` of the network.
 
@@ -131,7 +131,7 @@ Remember how this API has an `onchange` <a href="">event listener</a>? You can u
 
 Here’s a simple example of how this listener works, add it to `script.js`. This code will call the `displayNetworkInfo` function whenever the network information changes.
 
-`navigator.connection.addEventListener('change', displayNetworkInfo);`
+```navigator.connection.addEventListener('change', displayNetworkInfo);```
 
 There’s already an empty `<h2>` element on the `index.html` page. Now define the `displayNetworkInfo` function so that it displays the network information in the `<h2>` element and invoke the function.
 
@@ -148,7 +148,7 @@ displayNetworkInfo();
 
 Here’s the final state of the [app on Glitch](https://glitch.com/~adaptive-serving-netinfo).
 
-![image alt text](netinfo_app_video_background.png)
+![Matrix-like video background with "NETWORK INFORMATION 4g" text overlay](netinfo_app_video_background.png)
 
 To test it yourself:
 
@@ -160,13 +160,13 @@ To test it yourself:
 
 4. Select **Fast 3G** from throttling presets.
 
-![image alt text](devtools_network_throttling.png)
+![DevTools Network tab with Fast 3G throttling option highlighted](devtools_network_throttling.png)
 
 The app will update the network information to **3g**:
 
-![image alt text](netinfo_app_3g.png)
+![Matrix-like video background with "NETWORK INFORMATION 3g" text overlay](netinfo_app_3g.png)
 
 Now reload the page with Fast 3G still enabled and the app will load an image in the background instead of the video: 
 
-![image alt text](netinfo_app_image.png)
+![Matrix-like image background with "NETWORK INFORMATION 3g" text overlay](netinfo_app_image.png)
 
