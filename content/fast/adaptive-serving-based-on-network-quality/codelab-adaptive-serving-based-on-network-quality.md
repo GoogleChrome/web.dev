@@ -149,7 +149,7 @@ displayNetworkInfo();
 
 Here’s the final state of the [app on Glitch](https://glitch.com/~adaptive-serving-netinfo).
 
-![Matrix-like video background with "NETWORK INFORMATION 4g" text overlay](netinfo_app_video_background.png)
+<img class="screenshot" src="./netinfo_app_video_background.png" alt='Matrix-like video background with "NETWORK INFORMATION 4g" text overlay'>
 
 To test it yourself:
 
@@ -161,13 +161,12 @@ To test it yourself:
 
 4. Select **Fast 3G** from throttling presets.
 
-![DevTools Network tab with Fast 3G throttling option highlighted](devtools_network_throttling.png)
+<img class="screenshot" src="./devtools_network_throttling.png" alt='DevTools Network tab with Fast 3G throttling option highlighted'>
 
 The app will update the network information to **3g**:
 
-![Matrix-like video background with "NETWORK INFORMATION 3g" text overlay](netinfo_app_3g.png)
+<img class="screenshot" src="./netinfo_app_3g.png" alt='Matrix-like video background with "NETWORK INFORMATION 3g" text overlay'>
 
-Now reload the page with Fast 3G still enabled and the app will load an image in the background instead of the video:
+Now reload the page with Fast 3G still enabled and the app will load an image in the background instead of the video: 
 
-![Matrix-like image background with "NETWORK INFORMATION 3g" text overlay](netinfo_app_image.png)
-
+<img class="screenshot" src="./netinfo_app_image.png" alt='Matrix-like image background with "NETWORK INFORMATION 3g" text overlay'>
