@@ -1,6 +1,6 @@
 ---
 page_type: glitch
-title: Minify and compress network payloads
+title: Minify and compress network payloads with gzip
 author: houssein
 description: |
   In this codelab, learn how both minifying and compressing the JavaScript
@@ -9,6 +9,7 @@ description: |
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 glitch: fav-kitties-compress-starter
+order: 1
 ---
 
 This codelab explores how both minifying and compressing the JavaScript
@@ -100,8 +101,8 @@ module bundler. The specific version can be seen in `package.json`.
 </pre>
 
 Version 4 already minifies the bundle by default during production mode. It uses 
-`UglifyjsWebpackPlugin,` a plugin for [UglifyJS v3](https://github.com/mishoo/UglifyJS2/tree/harmony). 
-UglifyJS is a popular tool used to minify (or 'uglify') JavaScript code.
+`TerserWebpackPlugin` a plugin for [Terser](https://github.com/terser-js/terser). 
+Terser is a popular tool used to compress JavaScript code.
 
 To get an idea of what the minified code looks like, go ahead and click
 `main.bundle.js` while still in the DevTools **Network** panel. Now click the
@@ -141,13 +142,13 @@ that you use:
 
 + If webpack v4 or greater is used, no additional work needs to be done 
 since code is minified by default in production mode. 👍
-+ If an older version of webpack is used, install and include the `UglifyjsWebpackPlugin` 
-into the webpack build process. The [documentation](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/) 
++ If an older version of webpack is used, install and include `TerserWebpackPlugin` 
+into the webpack build process. The [documentation](https://webpack.js.org/plugins/terser-webpack-plugin/) 
 explains this in detail.
 + Other minification plugins also exist and can be used instead, 
 such as [BabelMinifyWebpackPlugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin) 
 and [ClosureCompilerPlugin](https://github.com/roman01la/webpack-closure-compiler).
-+ If a module bundler is not being used at all, use [UglifyJS](https://github.com/mishoo/UglifyJS2) 
++ If a module bundler is not being used at all, use [Terser](https://github.com/terser-js/terser) 
 as a CLI tool or include it directly as a dependency.
 
 ## Compression

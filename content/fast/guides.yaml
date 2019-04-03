@@ -40,7 +40,7 @@ topics:
     - serve-modern-code-to-modern-browsers
 - title: Optimize your CSS
   guides:
-    - defer-unused-css
+    - defer-non-critical-css
 - title: Optimize web fonts
   guides:
     - avoid-invisible-text

@@ -5,6 +5,8 @@ author: houssein
 description: |
   In this codelab, learn how to improve the performance of a page by preloading
   and prefetching resources.
+web_lighthouse:
+  - uses-rel-preload
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 glitch: preload-critical-assets

@@ -1,9 +1,9 @@
 ---
 page_type: guide
-title: Defer unused CSS
+title: Defer non-critical CSS
 author: demianrenzulli
 description: |
-  Learn how to defer unused CSS with the goal of optimizing the Critical Rendering Path, and improve FCP (First Contentful Paint).
+  Learn how to defer non-critical CSS with the goal of optimizing the Critical Rendering Path, and improve FCP (First Contentful Paint).
 web_lighthouse:
 - unused-css-rules
 - render-blocking-resources
@@ -12,11 +12,11 @@ web_published_on: 2019-02-17
 wf_blink_components: N/A
 ---
 
-# Defer unused CSS
+# Defer non-critical CSS
 
-CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources): they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large or unused styles take longer to render, increasing the likelihood that users bounce: 53% of mobile visits bounce if the page does not load [in 3 seconds or less](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/).
+CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources): they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles take longer to render, increasing the likelihood that users bounce: 53% of mobile visits bounce if the page does not load [in 3 seconds or less](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/).
 
-In this guide, you’ll learn how to defer unused CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [FCP (First Contentful Paint)](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
+In this guide, you’ll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [FCP (First Contentful Paint)](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
 
 ## Loading CSS in a suboptimal way
 
@@ -45,6 +45,10 @@ The report shows the **First Contentful Paint** metric with a value of "1s", and
   <img src="./lighthouse-unoptimized.png"
        alt="Lighthouse report for unoptimized page, showing FCP of '1s' and 'Eliminate blocking resources' under 'Opportunities'" class="screenshot">
 </figure>
+
+<div class="aside note">
+The CSS we are using for this demo site is quite small. If you were requesting larger CSS files (which are not uncommon in production scenarios), and if Lighthouse detects that a page has, at least, 2048 bytes of CSS rules that weren't used while rendering the <strong>above the fold</strong> content, you'll also receive a suggestion called "Remove Unused CSS".
+</div>  
 
 To visualize how this CSS blocks rendering:
 
@@ -81,7 +85,7 @@ You'll use the the [Coverage Tool](https://developers.google.com/web/updates/201
 Double-click on the report, to see classes marked in two colors:
 
 * Green (**critical**): These are the classes the browser needs to render the visible content (like the title, subtitle, and accordion buttons).
-* Red (**non-critical**): These styles apply to content that's not even used on the page, like "h2", as well as content that's not immediately visible (like the paragraphs inside the accordions).
+* Red (**non-critical**): These styles apply to content that's not immediately visible (like the paragraphs inside the accordions).
 
 With this information, optimize your CSS so that the browser starts processing critical styles immediately after page loads, while deferring non-critical CSS for later:
 
