@@ -1,12 +1,13 @@
---- 
-page_type: glitch 
-title: Adaptive serving based on network quality 
-author: mihajlija 
+---
+page_type: glitch
+title: Adaptive serving based on network quality
+author: mihajlija
 description: |
-  In this codelab you’ll learn how to use the Network Information API to adapt your content based on the network quality.
-web_updated_on: 2019-01-31 
-web_published_on: 2019-01-31 
-glitch: adaptive-serving-netinfo-starter 
+  In this codelab you’ll learn how to use the Network Information API to adapt
+  your content based on the network quality.
+web_updated_on: 2019-01-31
+web_published_on: 2019-01-31
+glitch: adaptive-serving-netinfo-starter
 ---
 
 # Adaptive serving based on network quality
@@ -17,7 +18,7 @@ The [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/N
 
 ## Step 1: Check for browser support
 
-The background video is currently specified index.html and then lazy-loaded in `script.js`. 
+The background video is currently specified index.html and then lazy-loaded in `script.js`.
 
 To load it conditionally, first check if connection type detection is supported. In `script.js` add an if statement that tests whether the `navigator.connection` object exists and whether it has the effectiveType property.
 
@@ -33,7 +34,7 @@ else {
     const video = document.getElementById("coverVideo");
     const videoSource = video.getAttribute('data-src');
     video.setAttribute('src', videoSource);
-    
+
     video.setAttribute('style', "height: 100%; width: 100%; display:inline");
 }
 ```
@@ -64,9 +65,9 @@ if (navigator.connection.effectiveType === '4g') {
     const video = document.getElementById("coverVideo");
     const videoSource = video.getAttribute('data-src');
     video.setAttribute('src', videoSource);
-    
+
     video.setAttribute('style', "height: 100%; width: 100%; display:inline");
-} 
+}
 else {
     // image loading code
 }
@@ -76,7 +77,7 @@ Here’s how the video loading code works: the video source is specified inside 
 
 ```<video id="coverVideo" autoplay loop muted data-src="https://cdn.glitch.com/b6491350-b058-4eb6-aa6c-55c93122073e%2FMatrix%2C%20Console%2C%20Hacking%2C%20Code.mp4?1551464245607"></video>```
 
-Because the video source is specified in the `data-src` attribute, it isn’t displayed or downloaded initially. [Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) allow you to store extra information on standard HTML elements. They can be named anything, as long as it starts with "data-". 
+Because the video source is specified in the `data-src` attribute, it isn’t displayed or downloaded initially. [Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) allow you to store extra information on standard HTML elements. They can be named anything, as long as it starts with "data-".
 
 To actually display the video on the page, the location from `data-src` needs to be set as the `src` attribute of the video element. This is done in `script.js`.
 
@@ -84,7 +85,7 @@ First, get the DOM element that contains the asset:
 
 ```const video = document.getElementById("coverVideo");```
 
-Then get the resource location from the `data-src` attribute: 
+Then get the resource location from the `data-src` attribute:
 
 ```const videoSource = video.getAttribute('data-src');```
 
@@ -98,9 +99,9 @@ The last line takes care of CSS positioning:
 
 ## Step 4: Load image
 
-To conditionally load an image on slower networks, use the same strategy as for the video. 
+To conditionally load an image on slower networks, use the same strategy as for the video.
 
-Add an image element to `index.html` (right after the video element), and use the `data-src` attribute instead of the `src` attribute. 
+Add an image element to `index.html` (right after the video element), and use the `data-src` attribute instead of the `src` attribute.
 
 ```<img id="coverImage" data-src="https://cdn.glitch.com/36529535-5976-40f8-979b-40c898b86bd0%2F36529535-5976-40f8-979b-40c898b86bd0_1_Sn80dgiwpMjBVrqjfiDbnA.jpg?1553003835358" />```
 
@@ -112,7 +113,7 @@ if (navigator.connection.effectiveType === '4g') {
     const video = document.getElementById("coverVideo");
     const videoSource = video.getAttribute('data-src');
     video.setAttribute('src', videoSource);
-    
+
     video.setAttribute('style', "height: 100%; width: 100%; display:inline");
 }
 else {
@@ -166,7 +167,7 @@ The app will update the network information to **3g**:
 
 ![Matrix-like video background with "NETWORK INFORMATION 3g" text overlay](netinfo_app_3g.png)
 
-Now reload the page with Fast 3G still enabled and the app will load an image in the background instead of the video: 
+Now reload the page with Fast 3G still enabled and the app will load an image in the background instead of the video:
 
 ![Matrix-like image background with "NETWORK INFORMATION 3g" text overlay](netinfo_app_image.png)
 
