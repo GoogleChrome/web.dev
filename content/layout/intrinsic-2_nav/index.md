@@ -101,7 +101,7 @@ Look at how they flex, look at how we defined the flex, look at all those new ke
   The above gif goes down below `320px` which is really small! We have 1 layout definition that's <b>getting us almost all the way to tiny device sizes</b>. That's niiiiice. 2 components adjust themselves at certain breakpoints, and I find them to be very manageable adaptive responses.
 </div>
 
-<br><br>
+<br><br><br><br>
 
 # Let's break down each column:
 1. **Brand logo column:** `var(--body-rails)`
@@ -151,7 +151,7 @@ Look at how they flex, look at how we defined the flex, look at all those new ke
      <img src="micro - nav – column 5.png" alt="" class="screenshot">
    </figure>
 
-<br><br><br>
+<br><br><br><br><br>
 
 # Responsive Final Touches
 
@@ -210,7 +210,7 @@ Little preview of the **[adaptive](http://mediumwell.com/responsive-adaptive-mob
 
 Look how **little code** we need handle desktop to tiny phone 😍 **Only the search bar and brand name** needed touched, **not the layout**.
 
-<br><br><br>
+<br><br><br><br>
 
 # Conclusion
 

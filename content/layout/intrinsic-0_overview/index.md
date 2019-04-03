@@ -46,6 +46,7 @@ Our overarching task throughout this guide is to **lay out the following design,
 - **avoid [fixed units](https://www.w3.org/TR/css-sizing-3/)**
 - avoid defining heights (though I'll demo exceptions!)
 - avoid writing @media queries
+- pacify our `grid-template-areas` knee jerk reactions
 - use [**css variables**](https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/)
 - fix the layout at smaller viewports **using our best judgement**
 - use [tomorrow's CSS today](https://preset-env.cssdb.org)
