@@ -196,7 +196,7 @@ And that get's us a **long list of equally spaced columns** that will layout in 
 
 <br><br>
 
-## Responsive Final Touches
+### Responsive Final Touches
 
 **None!** Big screen or little screen, this layout doesn't change 😎
 
@@ -265,29 +265,33 @@ hero-products-list {
 
 <br><br>
 
-#### Responsive Final Touches
+### Responsive Final Touches
+
 **None!** Big screen or little screen, this layout doesn't change 😎
 
 
+<br><br><br><br>
 
 
 
-### 3. "Featured Stuff" Layout
 
-![featured](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/featured.png)
+##### Next Up
+## 3) "Featured Stuff" Layout
 
-**What do I see:**
+<figure style="text-align:center; margin: 4rem 0;">
+  <img src="featured.png" alt="">
+</figure>
 
-- Cards with **dynamic content**
-- **Equal heights**
-- A card that needs to **flex vertically** and **still layout**
-- **Layering**: overlayed text & svg on top of an image
-- **1/3** relationship
+**What I see:**
+1. Cards with **dynamic content**
+1. **Equal heights**
+1. A card that needs to **flex vertically** and **still layout**
+1. **Layering**: overlayed text & svg on top of an image
+1. **1/3** relationship
 
-
+<br><br>
 
 **HTML**
-
 ```html
 <hero-featured>
   <deal-card>...</deal-card>
@@ -296,10 +300,9 @@ hero-products-list {
 </hero-featured>
 ```
 
-
+<br>
 
 **CSS**
-
 ```css
 hero-featured {
   display: grid;
@@ -315,26 +318,43 @@ hero-featured {
 }
 ```
 
-> **CSS Grid In English:** 2 columns where the 2nd is twice as large as the first, with equal height rows. This is a special grid with named slots, and there's 2 nodes in that grid that need to always be in these specific areas.
+<div class="note">
+  <b>CSS Grid In English:</b> 2 columns where the 2nd is twice as large as the first, with equal height rows. This is a special grid with named slots, and there's 2 nodes in that grid that need to always be in these specific areas.
+</div>
 
+<br>
 
+**Glitch**
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
+    alt="logical-tab-order on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
-#### Chaos Test!
+<br><br>
 
-![card-chaos](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/card-chaos.gif)
+##### It's time for a..
+# Chaos Test!
+This is where we get to act like content demons. We'll be simulating missing content, really long content, etc. The type of stuff that comes from a CMS or app where user's get to generate content. It's very important that our layouts are able to handle content variance or we'll end up with bugs.
 
+<figure style="text-align:center; margin: 4rem 0;">
+  <img src="card-chaos.gif" alt="">
+  <figcaption><a href="https://github.com/GoogleChromeLabs/ProjectVisBug" target="_blank">VisBug<a> is used to edit the text, visualize the spacing, delete stuff, etc in the above gif</figcaption>
+</figure>
 
+The layout here is pretty rock solid. The constraint **relationship between the mural cards and the deal card** is performing **great**!
 
-The layout here is pretty rock solid. There's some edge cases in the components themselves that could be smoothed out, but I think the constraint **relationship between the mural cards and the deal card** is performing **great**.
+I think this layout is interesting too from an **intrinsic** point of view. It's created spaces for elements, but hasnt told the elements how tall to be. This **lets the content be variable** and **not break the constraints between space**. Things can grow or shrink and our layout goes on.
 
-I think this layout is interesting too from an **intrinsic** point of view. It's created spaces for elements, but hasnt told the elements how tall to be. This **lets the content be variable** and **not break the constraints between space**.
+<br><br>
 
-
-
-#### Responsive Final Touches
+### Responsive Final Touches
 
 We're looking to take this grid and convert it to a single column stack on mobile / portrait tablet. Content got too squishy and nothing felt featured anymore. We kinda need to **write a whole new grid** for this, there's not really much we get for free except that the 3 feature items will still stick to their named grid areas.
 
+<br>
 
 
 ```css
@@ -354,24 +374,31 @@ hero-featured {
 }
 ```
 
-![featured-stuff-responsive](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/featured-stuff-responsive.gif)
+<figure style="text-align:center; margin: 4rem 0;">
+  <img src="featured-stuff-responsive.gif" alt="">
+</figure>
 
+**Final Glitch**
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
+    alt="logical-tab-order on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
-
-[glitch]
-
-
+<br>
 
 There's the final glitch for our grouped listview, have fun and **check things out**.
 
+<br><br><br><br>
 
-
-
-
-## Conclusion
+# Conclusion
 
 We just built **3 new grid layouts for 4 lists**! 1 of the lists was **multi-dimensional**, and we crushed it.
 
 Our layout for the first list was intrinsic, and just described spacing and flow. While our inner lists were extrinsic as to create uniform content areas for our eyes to track across easily.
 
-The list of chips and the featured stuff layouts made sure to **not specify any height values**. By leavin height up to grid, we're going to have an easier time handling the chaos of the variable content that will be inside those layouts. Not sure what I mean, the next guide goes through building a chip and ensuring it survives chaos.
+The list of chips and the featured stuff layouts made sure to **not specify any height values**. By leaving height up to grid, we're going to have an **easier time handling the chaos of the variable content** that will be inside those layouts.
+
+The next guide goes through building a chip and ensuring it survives chaos.

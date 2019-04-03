@@ -95,8 +95,8 @@ I mean, look at this, **it's not natural**!
 
 <br><br><br>
 
-## The Fix
-### Flexbox to the rescue!
+##### The Fix
+# Flexbox to the rescue!
 
 Yep, it's got some better controls for directionally flowing elements **while respecting their intrinsic size**. **Flexbox** is a quick way to **align** and **distribute** elements, as opposed to creating tracks for content to flow or fit within.
 
@@ -114,6 +114,10 @@ aside > nav {
   }
 }
 ```
+
+<div class="note">
+  <b>Flexbox in English:</b> Layout my children to fit in a column and align them to the front/beginning of the writing direction. <code>align-items: flex-start</code> <b>is crucial here</b> because flexbox stretches items to fit by default, and aligning them to flex-start will <b>remove the stretch and allow them to size intrinsicly</b>.
+</div>
 
 <br><br>
 
