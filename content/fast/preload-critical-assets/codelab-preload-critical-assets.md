@@ -134,26 +134,6 @@ unnecessary preload link for this page.
 &lt;/head&gt;
 </pre>
 
-Stylesheet files aren't the only type of asset that can be preloaded. In this
-application, a web font (`K2D`) is defined using the
-[@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)
-rule in `main.css` and is the last resource fetched by the browser. Since this
-font file is used for the page header, add a preload tag to fetch it even
-sooner.
-
-<pre class="prettyprint">
-&lt;head&gt;
-  &lt;!-- ... --&gt;
-  &lt;link rel=&quot;preload&quot; href=&quot;main.css&quot; as=&quot;style&quot;&gt;
-  <strong>&lt;link rel=&quot;preload&quot; href=&quot;fonts/K2D.woff2&quot; as=&quot;font&quot; crossorigin&gt;</strong>
-&lt;/head&gt;
-</pre>
-
-For this resource, `font` is used as a value for the `as` attribute instead. 
-Reloading the application shows that the font is now fetched earlier.
-
-<img class="screenshot" src="./network-panel-four.png" alt="Network panel with preloaded font">
-
 For a list of all the types of resources that can be fetched along with the
 correct values that should be used for the `as` attribute, refer to the
 [MDN article on Preloading](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded).
