@@ -6,18 +6,4 @@
 * @robdodson @samthor
 
 # Guide collections
-/content/accessible/ @robdodson
-/content/discoverable/ @ekharvey @AVGP
-/content/fast/ @addyosmani @housseindjirdeh @khempenius
-/content/installable/ @petele
-/content/reliable/ @jeffposnick
-/content/secure/ @kosamari
-
-# Build scripts
-/lib/ @TimvdLippe
-
-# Measure page
-/content/measure.html @ebidel @TimvdLippe
-
-# Preview server
-/server/ @ebidel
+/content/ @robdodson @Meggin
