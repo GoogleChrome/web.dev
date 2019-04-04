@@ -3,8 +3,8 @@ layout: layout
 title: Measure
 ---
 
-{# *-landing-page classes are a holdover from devsite. #}
-{# It would be great to remove them as part of the v1 migration. #}
+{# *-landing-page classes are a holdover from devsite. #} {# It would be great
+to remove them as part of the v1 migration. #}
 <div class="profile-landing-page">
   <div class="w-layout-container--large">
     <header class="w-page-header">
@@ -47,167 +47,172 @@ title: Measure
             fill="#34A853"
             d="M0 37l30-23 7.9 1L48 0v48H0z"
           />
-          <path clip-path="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z" />
+          <path
+            clip-path="url(#b)"
+            fill="#4285F4"
+            d="M48 48L17 24l-4-3 35-10z"
+          />
         </svg>
         Sign in with Google
       </a>
     </header>
   </div>
-</div>
 
-<div class="w-layout-container--large">
-  <section class="results-section">
-    <div class="container">
-      <div class="row">
-        <div class="results-row col-xs-12 col-sm-10 col-md-12 col-xl-10">
-          <web-profile></web-profile>
+  <div class="w-layout-container--large">
+    <section class="results-section">
+      <div class="container">
+        <div class="row">
+          <div class="results-row col-xs-12 col-sm-10 col-md-12 col-xl-10">
+            <web-profile></web-profile>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</div>
+    </section>
+  </div>
 
-<div class="w-layout-container">
-  <section class="w-numbered-headers">
-    <div class="w-measure-steps">
-      <div class="w-measure-step">
-        <h3 class="w-numbered-header w-numbered-header--vertical">
-          Audit your web page
-        </h3>
-        <div>
-          Provide any URL, and web.dev will run a series of audits using
-          <a
-            href="https://developers.google.com/web/tools/lighthouse/"
-            class="gc-analytics-event"
-            data-category="web.dev"
-            data-label="measure,
+  <div class="w-layout-container">
+    <section class="w-numbered-headers">
+      <div class="w-measure-steps">
+        <div class="w-measure-step">
+          <h3 class="w-numbered-header w-numbered-header--vertical">
+            Audit your web page
+          </h3>
+          <div>
+            Provide any URL, and web.dev will run a series of audits using
+            <a
+              href="https://developers.google.com/web/tools/lighthouse/"
+              class="gc-analytics-event"
+              data-category="web.dev"
+              data-label="measure,
             Lighthouse link"
-            data-action="click"
-            >Lighthouse</a
-          >. We'll generate a report of how well you did.
+              data-action="click"
+              >Lighthouse</a
+            >. We'll generate a report of how well you did.
+          </div>
+        </div>
+
+        <div class="w-measure-step">
+          <h3 class="w-numbered-header w-numbered-header--vertical">
+            Analyze for improvements
+          </h3>
+          <div>
+            Review the audits report to identify areas in which your page can be
+            improved.
+          </div>
+        </div>
+
+        <div class="w-measure-step">
+          <h3 class="w-numbered-header w-numbered-header--vertical">
+            Learn how to fix it
+          </h3>
+          <div>
+            For each audit you'll find guidance and immediate steps you can take
+            to improve your scores.
+          </div>
         </div>
       </div>
+    </section>
+  </div>
 
-      <div class="w-measure-step">
-        <h3 class="w-numbered-header w-numbered-header--vertical">
-          Analyze for improvements
-        </h3>
-        <div>
-          Review the audits report to identify areas in which your page can be
-          improved.
-        </div>
+  <div class="w-layout-container">
+    <section class="w-text--center">
+      <h2 class="no-link w-headline--two w-font-weight--medium">
+        What is Lighthouse?
+      </h2>
+      <div class="w-mb--l">
+        Lighthouse is an open-source, automated tool for improving the quality
+        of your web apps. It is integrated directly into the Chrome DevTools
+        Audits panel, but can also be run from the command line, as a
+        <a
+          href="https://www.npmjs.com/package/lighthouse"
+          class="gc-analytics-event"
+          data-label="measure, Lighthouse module lnk"
+          data-action="click"
+          >Node module</a
+        >, or by installing the
+        <a
+          href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk"
+          class="gc-analytics-event"
+          data-label="measure, Lighthouse crx link"
+          data-action="click"
+          >Chrome Extension</a
+        >. Lighthouse also provides a REST API which is consumed by sites like
+        web.dev and
+        <a
+          href="https://developers.google.com/speed/docs/insights/v5/get-started"
+          class="gc-analytics-event"
+          data-label="measure, PSI link"
+          data-action="click"
+          >PageSpeed Insights</a
+        >.
       </div>
 
-      <div class="w-measure-step">
-        <h3 class="w-numbered-header w-numbered-header--vertical">
-          Learn how to fix it
-        </h3>
-        <div>
-          For each audit you'll find guidance and immediate steps you can take
-          to improve your scores.
+      <div class="w-measure-categories">
+        <!-- PERFORMANCE -->
+        <div class="w-measure-category">
+          <img
+            src="/images/performance.svg"
+            aria-describedby="lh-category-performance-title"
+          />
+          <div
+            class="w-headline--three w-mt--std"
+            id="lh-category-performance-title"
+          >
+            Performance
+          </div>
+          <div>
+            Audits for metrics like first paint and time to interactive to
+            determine lag.
+          </div>
+        </div>
+
+        <!-- BEST PRACTICES -->
+        <div class="w-measure-category">
+          <img
+            src="/images/best_practices.svg"
+            aria-describedby="lh-category-best-practices-title"
+          />
+          <div
+            class="w-headline--three w-mt--std"
+            id="lh-category-best-practices-title"
+          >
+            Best Practices
+          </div>
+          <div>
+            Looks for everything from HTTPS usage to correct image aspect
+            ratios.
+          </div>
+        </div>
+
+        <!-- SEO -->
+        <div class="w-measure-category">
+          <img src="/images/seo.svg" aria-describedby="lh-category-seo-title" />
+          <div class="w-headline--three w-mt--std" id="lh-category-seo-title">
+            SEO
+          </div>
+          <div>
+            Checks for best practices to ensure your site is discoverable.
+          </div>
+        </div>
+
+        <!-- ACCESSIBILITY -->
+        <div class="w-measure-category">
+          <img
+            src="/images/a11y.svg"
+            aria-describedby="lh-category-accessibility-title"
+          />
+          <div
+            class="w-headline--three w-mt--std"
+            id="lh-category-accessibility-title"
+          >
+            Accessibility
+          </div>
+          <div>
+            Checks for common issues that may prevent users from accessing your
+            content.
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-
-<div class="w-layout-container">
-  <section class="w-text--center">
-    <h2 class="no-link w-headline--two w-font-weight--medium">
-      What is Lighthouse?
-    </h2>
-    <div class="w-mb--l">
-      Lighthouse is an open-source, automated tool for improving the quality of
-      your web apps. It is integrated directly into the Chrome DevTools Audits
-      panel, but can also be run from the command line, as a
-      <a
-        href="https://www.npmjs.com/package/lighthouse"
-        class="gc-analytics-event"
-        data-label="measure, Lighthouse module lnk"
-        data-action="click"
-        >Node module</a
-      >, or by installing the
-      <a
-        href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk"
-        class="gc-analytics-event"
-        data-label="measure, Lighthouse crx link"
-        data-action="click"
-        >Chrome Extension</a
-      >. Lighthouse also provides a REST API which is consumed by sites like
-      web.dev and
-      <a
-        href="https://developers.google.com/speed/docs/insights/v5/get-started"
-        class="gc-analytics-event"
-        data-label="measure, PSI link"
-        data-action="click"
-        >PageSpeed Insights</a
-      >.
-    </div>
-
-    <div class="w-measure-categories">
-      <!-- PERFORMANCE -->
-      <div class="w-measure-category">
-        <img
-          src="/images/performance.svg"
-          aria-describedby="lh-category-performance-title"
-        />
-        <div
-          class="w-headline--three w-mt--std"
-          id="lh-category-performance-title"
-        >
-          Performance
-        </div>
-        <div>
-          Audits for metrics like first paint and time to interactive to
-          determine lag.
-        </div>
-      </div>
-
-      <!-- BEST PRACTICES -->
-      <div class="w-measure-category">
-        <img
-          src="/images/best_practices.svg"
-          aria-describedby="lh-category-best-practices-title"
-        />
-        <div
-          class="w-headline--three w-mt--std"
-          id="lh-category-best-practices-title"
-        >
-          Best Practices
-        </div>
-        <div>
-          Looks for everything from HTTPS usage to correct image aspect ratios.
-        </div>
-      </div>
-
-      <!-- SEO -->
-      <div class="w-measure-category">
-        <img src="/images/seo.svg" aria-describedby="lh-category-seo-title" />
-        <div class="w-headline--three w-mt--std" id="lh-category-seo-title">
-          SEO
-        </div>
-        <div>
-          Checks for best practices to ensure your site is discoverable.
-        </div>
-      </div>
-
-      <!-- ACCESSIBILITY -->
-      <div class="w-measure-category">
-        <img
-          src="/images/a11y.svg"
-          aria-describedby="lh-category-accessibility-title"
-        />
-        <div
-          class="w-headline--three w-mt--std"
-          id="lh-category-accessibility-title"
-        >
-          Accessibility
-        </div>
-        <div>
-          Checks for common issues that may prevent users from accessing your
-          content.
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
