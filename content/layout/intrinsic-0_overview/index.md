@@ -13,6 +13,8 @@ web_published_on:
 wf_blink_components: Blink>Accessibility
 ---
 
+# Overview
+
 Heard this term yet in the context of web, [intrinsic web design](https://adactio.com/journal/13671)? [Jen Simmons](https://shoptalkshow.com/episodes/328-jen-simmons-intrinsic-web-design/) **astutely coined it** and advocates for it. I love it. No, like **loooooove** it, and I must **share** with you **the joy**.
 
 <figure style="text-align:center; margin: 5rem 0;">
@@ -34,8 +36,8 @@ Intrinsic has a few synonyms or alternative implecations and meanings I want to 
 
 <br><br><br><br>
 
-# Tangible Learning
-Intrinsic definitions and articles get abstract, so instead of define it for you again, **I'd rather define it tangibly and visually** with you.
+# Tangible learning
+Intrinsic definitions get abstract, so let's **define it tangibly and visibly together.**
 
 Our overarching task throughout this guide is to **lay out the following design,** as a practical way of learning the ropes. Check it out. It might not look like much, but it's **packed with learning opportunities!** 💀🤘
 
