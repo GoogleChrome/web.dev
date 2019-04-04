@@ -5,66 +5,70 @@ permalink: /{{language}}/{{page.fileSlug}}/index.html
 
 {% import 'macros/components.njk' as components %}
 
-{% if hero %}
-  <figure class="w-figure w-figure--hero">
-    <img src="hero.jpg" alt="">
-  </figure>
-{% endif %}
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+<div class="guide-landing-page">
+  {% if hero %}
+    <figure class="w-figure w-figure--hero">
+      <img src="hero.jpg" alt="">
+    </figure>
+  {% endif %}
 
-<div class="w-layout-container--narrow">
-  <header class="w-article-header">
-    <h1 class="w-article-header__headline">{{ title }}</h1>
-    <p class="w-article-header__summary">
-      {{ meta.description }}
-    </p>
-    {{ components.Author(authors[author], author, showSocialMedia=true) }}
-  </header>
-  {# <button class="w-fab w-fab--share">Share</button> #}
-  {{ content | safe}}
-  <div class="w-chips">
-    <a class="w-chip" href="#">Artificial Intellegence</a>
-    <a class="w-chip" href="#">User Experience</a>
-    <a class="w-chip" href="#">Learning</a>
-  </div>
-  <div>
-    Last updated: <time>September 4, 2018</time>
-    <a href="#">Improve article</a>
-    <a href="#">Suggest translation</a>
-  </div>
-</div>
-
-<nav class="w-article-navigation">
-  <a class="w-article-navigation__link w-article-navigation__link--back" href="#">
-    Return to all articles
-  </a>
-  <a class="w-article-navigation__link w-article-navigation__link--forward" href="#">
-    <div class="w-article-navigation__column">
-      <h3 class="w-article-navigation__heading">Next article</h3>
-      Tell search engines translated pages are equivalent
+  <div class="w-layout-container--narrow">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">{{ title }}</h1>
+      <p class="w-article-header__summary">
+        {{ meta.description }}
+      </p>
+      {{ components.Author(authors[author], author, showSocialMedia=true) }}
+    </header>
+    {# <button class="w-fab w-fab--share">Share</button> #}
+    {{ content | safe}}
+    <div class="w-chips">
+      <a class="w-chip" href="#">Artificial Intellegence</a>
+      <a class="w-chip" href="#">User Experience</a>
+      <a class="w-chip" href="#">Learning</a>
     </div>
-  </a>
-</nav>
+    <div>
+      Last updated: <time>September 4, 2018</time>
+      <a href="#">Improve article</a>
+      <a href="#">Suggest translation</a>
+    </div>
+  </div>
 
-<div>
-  <!-- Unstyled -->
-  <h3>Related content</h3>
-  <ul>
-    {% if related_content %}
-      {% for url in related_content %}
-        <li>
-          <a href="{{ url | stripLanguage }}">{{ macros.getTitleFromUrl(url, collections.all) }}</a>
-        </li>
-      {% endfor %}
-    {% endif %}
-    {% for article in collections.all %}
-      {% set isRelated = article | containsTag(tags) %}
-      {% if isRelated %}
-        <li>
-          <a href="{{ article.url | stripLanguage }}">
-            {{ article.data.title }}
-          </a>
-        </li>
+  <nav class="w-article-navigation">
+    <a class="w-article-navigation__link w-article-navigation__link--back" href="#">
+      Return to all articles
+    </a>
+    <a class="w-article-navigation__link w-article-navigation__link--forward" href="#">
+      <div class="w-article-navigation__column">
+        <h3 class="w-article-navigation__heading">Next article</h3>
+        Tell search engines translated pages are equivalent
+      </div>
+    </a>
+  </nav>
+
+  <div>
+    <!-- Unstyled -->
+    <h3>Related content</h3>
+    <ul>
+      {% if related_content %}
+        {% for url in related_content %}
+          <li>
+            <a href="{{ url | stripLanguage }}">{{ macros.getTitleFromUrl(url, collections.all) }}</a>
+          </li>
+        {% endfor %}
       {% endif %}
-    {% endfor %}
-  </ul>
+      {% for article in collections.all %}
+        {% set isRelated = article | containsTag(tags) %}
+        {% if isRelated %}
+          <li>
+            <a href="{{ article.url | stripLanguage }}">
+              {{ article.data.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </div>

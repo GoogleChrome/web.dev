@@ -6,49 +6,53 @@ layout: layout
 {# Find the global data object for this path in _data/paths/{learningPath} #}
 {% set path = paths[learningPath] %}
 
-<header class="w-masthead-path">
-  <div class="w-masthead-path__container">
-    <div class="w-masthead-path__left">
-      <h1 class="w-masthead-path__headline no-link">{{ path.title }}</h1>
-      <p class="w-masthead-path__description">{{ path.description }}</p>
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+<div class="path-landing-page">
+  <header class="w-masthead-path">
+    <div class="w-masthead-path__container">
+      <div class="w-masthead-path__left">
+        <h1 class="w-masthead-path__headline no-link">{{ path.title }}</h1>
+        <p class="w-masthead-path__description">{{ path.description }}</p>
+      </div>
+      <div class="w-masthead-path__right">
+        <img class="w-masthead-path__image" src="/images/{{ learningPath }}.svg" alt="">
+      </div>
     </div>
-    <div class="w-masthead-path__right">
-      <img class="w-masthead-path__image" src="/images/{{ learningPath }}.svg" alt="">
+  </header>
+
+  <section class="w-layout-container w-path-intro">
+    <div class="w-path-intro__overview">
+      <h2 class="w-headline--three no-link">Overview</h2>
+      <div>{{ path.overview }}</div>
     </div>
-  </div>
-</header>
+    <div class="w-path-intro__learn">
+      <h2 class="w-headline--three no-link">What you'll learn</h2>
+      <ul class="w-icon-list">
+        {# paths comes from _data #}
+        {% for topic in paths[learningPath].topics %}
+          <li class="w-icon-list__item w-icon-list__item--check">
+            {{ topic.title }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
 
-<section class="w-layout-container w-path-intro">
-  <div class="w-path-intro__overview">
-    <h2 class="w-headline--three no-link">Overview</h2>
-    <div>{{ path.overview }}</div>
-  </div>
-  <div class="w-path-intro__learn">
-    <h2 class="w-headline--three no-link">What you'll learn</h2>
-    <ul class="w-icon-list">
-      {# paths comes from _data #}
-      {% for topic in paths[learningPath].topics %}
-        <li class="w-icon-list__item w-icon-list__item--check">
-          {{ topic.title }}
-        </li>
+  <hr>
+
+  <section class="w-layout-container">
+    {% for topic in paths[learningPath].topics %}
+    <h2 id="{{ topic.title | slug }}" class="no-link">{{ topic.title }}</h2>
+    <div class="w-layout-grid--three w-mb--std">
+      {% for slug in topic.guides %}
+        {% for post in collections.post %}
+          {% if post.fileSlug === slug %}
+            {{ components.ArticleSmall(post, authors[post.data.author], post.data.author) }}
+          {% endif %}
+        {% endfor %}
       {% endfor %}
-    </ul>
-  </div>
-</section>
-
-<hr>
-
-<section class="w-layout-container">
-  {% for topic in paths[learningPath].topics %}
-  <h2 id="{{ topic.title | slug }}" class="no-link">{{ topic.title }}</h2>
-  <div class="w-layout-grid--three w-mb--std">
-    {% for slug in topic.guides %}
-      {% for post in collections.post %}
-        {% if post.fileSlug === slug %}
-          {{ components.ArticleSmall(post, authors[post.data.author], post.data.author) }}
-        {% endif %}
-      {% endfor %}
+    </div>
     {% endfor %}
-  </div>
-  {% endfor %}
-</section>
+  </section>
+</div>

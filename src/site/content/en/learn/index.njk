@@ -5,20 +5,24 @@ title: Learn
 
 {% import 'macros/components.njk' as components %}
 
-<div class="w-layout-container">
-  <header class="w-page-header">
-    <h1 class="w-page-header__headline">{{ title }}</h1>
-    <p class="w-page-header__copy">
-      Explore our structured learning paths to discover everything you need
-      to know about building for the modern web.
-    </p>
-  </header>
-  <section>
-    <h3>Realize what the web can be</h3>
-      <div class="w-layout-grid--three">
-        {% for path in learn.paths %}
-          {{ components.Collection(path) }}
-        {% endfor %}
-      </div>
-  </section>
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+<div class="learn-landing-page">
+  <div class="w-layout-container">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline">{{ title }}</h1>
+      <p class="w-page-header__copy">
+        Explore our structured learning paths to discover everything you need
+        to know about building for the modern web.
+      </p>
+    </header>
+    <section>
+      <h3>Realize what the web can be</h3>
+        <div class="w-layout-grid--three">
+          {% for path in learn.paths %}
+            {{ components.Collection(path) }}
+          {% endfor %}
+        </div>
+    </section>
+  </div>
 </div>
