@@ -1,0 +1,10 @@
+redirects:
+
+- from: /fast/using-lighthouse-ci-to-set-a-performance-budget
+  to: /fast/using-lighthouse-bot-to-set-a-performance-budget
+
+- from: /fast/defer-unused-css
+  to: /fast/defer-non-critical-css
+
+- from: /subscribe
+  to: https://services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&utm_source=google-products&utm_team=googledevs&utm_campaign=201611-newsletter-launch

@@ -50,6 +50,12 @@ gulp.task('copy-global-assets', () => {
   return gulp.src(['./src/images/**/*']).pipe(gulp.dest('./dist/images'));
 });
 
+gulp.task('copy-configuration-assets', () => {
+  return gulp
+    .src(['./src/site/content/**/*.{yaml,txt}'])
+    .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('copy-sandbox-assets', () => {
   return gulp
     .src([`./src/site/content/sandbox/**/*.{${assetTypes}}`])
@@ -76,6 +82,7 @@ gulp.task(
   gulp.series(
     'scss',
     'copy-global-assets',
+    'copy-configuration-assets',
     'copy-sandbox-assets',
     'copy-content-assets'
   )
@@ -84,7 +91,14 @@ gulp.task(
 gulp.task('watch', () => {
   gulp.watch('./src/styles/**/*.scss', gulp.series('scss'));
   gulp.watch('./src/images/**/*', gulp.series('copy-global-assets'));
-  gulp.watch('./src/images/**/*', gulp.series('copy-sandbox-assets'));
+  gulp.watch(
+    './src/site/content/**/*.{yaml,txt}',
+    gulp.series('copy-configuration-assets')
+  );
+  gulp.watch(
+    `./src/site/content/sandbox/**/*.{${assetTypes}}`,
+    gulp.series('copy-sandbox-assets')
+  );
   gulp.watch(
     `./src/site/content/en/**/*.{${assetTypes}}`,
     gulp.series('copy-content-assets')
