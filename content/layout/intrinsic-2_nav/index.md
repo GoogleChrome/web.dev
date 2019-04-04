@@ -13,6 +13,8 @@ web_published_on:
 wf_blink_components: Blink>Accessibility
 ---
 
+# Nav Layout
+
 <figure style="text-align:center; margin: 4rem 0;">
   <img src="nav.png" alt="Design comp of navbar for reference">
 </figure>
@@ -89,7 +91,7 @@ nav {
 
 <br>
 
-Let's **flex it** and **then chat** about what's happenin:
+Let's **flex it** and **then chat** about what's happening:
 
 <figure style="text-align:center; margin: 4rem 0;">
   <img src="intrinsic-nav-responsive-before-breakpoint.gif" alt="">
@@ -124,6 +126,8 @@ Look at how they flex, look at how we defined the flex, look at all those new ke
    </figure>
 
    > **Try changing min-content to max-content!** I feel it's a great example to illustrate some of the power and capabilty we have with those words.
+
+   # TODO: Make glitch to play with (consider a codelab)
 
    <br><br>
 
@@ -204,6 +208,7 @@ Little preview of the **[adaptive](http://mediumwell.com/responsive-adaptive-mob
 
 <figure style="text-align:center; margin: 4rem 0;">
   <img src="intrinsic-nav-responsive-after-breakpoint.gif" alt="">
+  <figcaption>gif needs update</figcaption>
 </figure>
 
 <br><br>

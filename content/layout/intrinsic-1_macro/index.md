@@ -13,6 +13,8 @@ web_published_on:
 wf_blink_components: Blink>Accessibility
 ---
 
+# Macro Layout
+
 Macro layouts are the top most layouts of a page. Think of it like **the white space around your white space**. Could also call these an app shell or layout shell. The forest's layout, not a tree's layout. This is where we'll start!
 
 

@@ -13,7 +13,9 @@ web_published_on:
 wf_blink_components: Blink>Accessibility
 ---
 
-## TODO: refactor
+# Mural Card Layout
+
+## TODO: had to refactor for cross browser, explain and share why!
 
 <figure style="text-align:center; margin: 4rem 0;">
   <img src="mural card.png" alt="">

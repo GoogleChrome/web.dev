@@ -13,6 +13,8 @@ web_published_on:
 wf_blink_components: Blink>Accessibility
 ---
 
+Chip Card Layout
+
 <figure style="text-align:center; margin: 4rem 0;">
   <img src="chip.png" alt="">
 </figure>

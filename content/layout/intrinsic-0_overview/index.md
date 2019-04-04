@@ -21,12 +21,6 @@ Heard this term yet in the context of web, [intrinsic web design](https://adacti
   <img src="https://media3.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif?cid=3640f6095c9541ae7945334751d09c8b" alt="Patrick Star admiring with floating hearts">
 </figure>
 
-Intrinsic has a few synonyms or alternative implecations and meanings I want to share quickly too, since I think they can really help you shape a mental model of what we're going for:
-1. [Intrinsic web design](https://twitter.com/jensimmons/status/980980521848127488?lang=en)
-1. [Content centric/outward layout](http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/)
-1. [Resilient CSS](https://www.smashingmagazine.com/2017/03/resilient-web-design/)
-1. Courteous CSS: okay, this one's mine 🤓
-
 <br><br>
 
 ## Why study Intrinsic concepts?
@@ -67,7 +61,7 @@ Our overarching task throughout this guide is to **lay out the following design,
 - **leverage** the size of your **content**
 - use **less** `grid-template-areas`
 - **take snippets** back to your product/project
-- **engineer resilient and intrinsic CSS layout algorithms**
+- engineer **[resilient](https://www.smashingmagazine.com/2017/03/resilient-web-design/) and intrinsic** CSS layout algorithms
 
 <br><br>
 

@@ -13,9 +13,7 @@ web_published_on:
 wf_blink_components: Blink>Accessibility
 ---
 
-
-
-## All Together Now
+# Summary
 
 
 
@@ -372,12 +370,18 @@ deal-card {
 
 
 
+# Learn More
+#### TODO
+Intrinsic has a few synonyms or alternative implecations and meanings I want to share quickly too, since I think they can really help you shape a mental model of what we're going for:
+1. [Intrinsic web design](https://twitter.com/jensimmons/status/980980521848127488?lang=en)
+1. [Content centric/outward layout](http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/)
+1. [Resilient CSS](https://www.smashingmagazine.com/2017/03/resilient-web-design/)
+1. Courteous CSS: okay, this one's mine 🤓
 
 
 
 
-
-## Conclusion
+# Conclusion
 
 **I hope this article helps you grok intrinsic layout**. It's definitely a bit more tricky to learn at first, but with **patience** and **play**, I think you'll find it has big payoffs. Let's respect out content, prepare for change, and ultimately **create resilient front end layouts** that can stand the test of time and variability.
 

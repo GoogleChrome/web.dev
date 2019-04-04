@@ -1,19 +1,15 @@
-title: Layout
-description: Healthy layout strategies for our ever changing & user generated content
+title: Intrinsic Layout
+description: Intrinsic layout starts with healthy layout strategies that respond to ever-changing & user generated content.
 overview: |
-  2 game changing layout tactics are well supported these days, Flexbox and Grid. With
-  these 2 at our fingertips, we can articulate layouts with less code and more strength.
-
-  Sites that use flexbox and grid benefit from an improved developer authoring experience,
-  but most of all benefit from the ability to be content centric. Defining layouts based on
-  contraints, alignments and distributions can put more work on the CSS layout engine, and
-  less work wherever else you're currently handling dynamic content and interactions.
+  Intrinsic layout starts with two game-changing tactics: Flexbox and Grid. With Flexbox and Grid,
+  you can articular layouts with less code. You can also create layouts that are content-centric,
+  able to dynamically adapt to changing content.
 
 
 order: 7
 
 topics:
-- title: Intrinsic Layout
+- title: "Get started: your first intrinsic layout"
   guides:
     - intrinsic-0_overview
     - intrinsic-1_macro
