@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://web.dev/sitemap.xml
