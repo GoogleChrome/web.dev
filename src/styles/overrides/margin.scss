@@ -1,0 +1,31 @@
+// =============================================================================
+// MARGINS OVERVIEW
+//
+// Overrides for common margins.
+//
+// =============================================================================
+
+// All margin settings.
+$MARGIN_POSITION_MAP: (
+  mb: margin-bottom,
+  mt: margin-top,
+  ml: margin-left,
+  mr: margin-right,
+);
+
+$MARGIN_SIZE_MAP: (
+  sm: 8px,
+  std: 18px, // Standard margin
+  l: 36px,
+  xl: 54px,
+);
+
+// Loop through each margin setting and create a class with those settings.
+// For example, .w-mb--l is a large margin on the bottom.
+@each $SIZE_NAME, $SIZE_VALUE in $MARGIN_SIZE_MAP {
+  @each $MARGIN_ALIAS, $MARGIN_PROPERTY in $MARGIN_POSITION_MAP {
+    .w-#{$MARGIN_ALIAS}--#{$SIZE_NAME} {
+      #{$MARGIN_PROPERTY}: $SIZE_VALUE;
+    }
+  }
+}

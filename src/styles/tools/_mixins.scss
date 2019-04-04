@@ -1,0 +1,127 @@
+@import 'functions';
+
+// Mixin for element elevations per Google Material specs.
+@mixin elevation($level, $inset: null) {
+  @if $level == 0 {
+    border: 1px solid $GREY_300;
+    box-shadow: none;
+
+  } @else if $level == 1 {
+    box-shadow: 0 1px 2px 0 rgba($GREY_800, .3),
+                0 1px 3px 1px rgba($GREY_800, .15);
+
+  } @else if $level == 2 {
+    @if $inset == 'inset' {
+      box-shadow: 0 1px 2px 0 rgba($GREY_800, .3),
+                  0 2px 6px 2px rgba($GREY_800, .15),
+                  inset 0 4px 6px -4px rgba($GREY_500, .5);
+    } @else {
+      box-shadow: 0 1px 2px 0 rgba($GREY_800, .3),
+                  0 2px 6px 2px rgba($GREY_800, .15);
+    }
+
+  } @else if $level == 3 {
+    box-shadow: 0 1px 3px 0 rgba($GREY_800, .3),
+                0 4px 8px 3px rgba($GREY_800, .15);
+
+  } @else if $level == 4 {
+    box-shadow: 0 2px 3px 0 rgba($GREY_800, .3),
+                0 6px 10px 4px rgba($GREY_800, .15);
+
+  } @else if $level == 5 {
+    box-shadow: 0 4px 4px 0 rgba($GREY_800, .3),
+                0 8px 12px 6px rgba($GREY_800, .15);
+
+  } @else {
+    box-shadow: none;
+  }
+}
+
+// Module export mixin
+// https://github.com/wilsonpage/sass-import-once
+$imported-modules: () !default;
+
+// This mixin helps making sure a module is imported once and only once.
+// @access public
+// @param {String} $name - Name of exported module
+// @param {Bool} $warn [true] - Warn when module has been already imported
+// @require $imported-modules
+@mixin exports($name, $warn: false) {
+  @if (index($imported-modules, $name) == null) {
+    $imported-modules: append($imported-modules, $name) !global;
+    @content;
+  } @else if $warn == true {
+    @warn "Module `#{$name}` has already been imported.";
+  }
+}
+
+// Mixin for styling typography via maps containing required integer values for
+// font-family, font-size, font-weight, and line-height; with an optional value
+// for letter-spacing.
+// @param {!map} $specs - SCSS map with key/value pairs for rendering shorthand
+//     'font' property.
+// @prop {!number} $specs.FONT_WEIGHT
+// @prop {!number} $specs.FONT_SIZE
+// @prop {!number} $specs.LINE_HEIGHT
+// @prop {!string} $specs.FONT_FAMILY
+// @prop {?number} $specs.LETTER_SPACING
+// @prop {?string} $specs.TEXT_TRANSFORM
+@mixin font($specs) {
+  $font_weight: map-get($specs, FONT_WEIGHT);
+  $font_size: map-get($specs, FONT_SIZE);
+  $font_family: map-get($specs, FONT_FAMILY);
+  $line_height: map-get($specs, LINE_HEIGHT);
+
+  // Print font styles in shorthand syntax.
+  font: $font_weight #{$font_size}px/#{calculate_unitless_line_height(
+      $line_height,
+      $font_size
+    )} $font_family;
+
+  // Add letter-spacing if it's defined in the map.
+  @if map-has-key($specs, LETTER_SPACING) {
+    $letter_spacing: map-get($specs, LETTER_SPACING);
+    letter-spacing: #{$letter_spacing}px;
+  }
+
+  // Add text-transform if it's defined in the map.
+  @if map-has-key($specs, TEXT_TRANSFORM) {
+    $text_transform: map-get($specs, TEXT_TRANSFORM);
+    text-transform: $text_transform;
+  }
+
+  // Add margin-top if it's defined in the map.
+  @if map-has-key($specs, MARGIN_TOP) {
+    $margin_top: map-get($specs, MARGIN_TOP);
+    margin-top: #{$margin_top}px;
+  }
+
+  // Add margin-bottom if it's defined in the map.
+  @if map-has-key($specs, MARGIN_BOTTOM) {
+    $margin_bottom: map-get($specs, MARGIN_BOTTOM);
+    margin-bottom: #{$margin_bottom}px;
+  }
+}
+
+// Mixin for a Material icon. This mimics the important parts of the
+// 'material-icons' class defined at http://fonts.googleapis.com/css?family=Material+Icons.
+// You can look up the name of an icon at https://material.io/icons/.
+@mixin font_material_icon() {
+  font: normal normal normal 24px/1 'Material Icons';
+  font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale; // @alternate
+  -webkit-font-smoothing: antialiased; // @alternate
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  word-wrap: normal;
+}
+
+// Sets font smoothing variables
+// @param {string} $moz The value for moz-osx-font-smoothing
+// @param {string} $webkit The value for webkit-font-smoothing
+// @param {string} $rendering The value for text-rendering
+@mixin font_smoothing($moz, $webkit, $rendering) {
+  -moz-osx-font-smoothing: $moz;
+  -webkit-font-smoothing: $webkit;
+  text-rendering: $rendering;
+}

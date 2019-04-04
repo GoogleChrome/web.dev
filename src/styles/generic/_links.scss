@@ -1,0 +1,37 @@
+@import '../settings/colors';
+
+// DevSite override
+// The use of :link and :visited throughout is because DevSite styles those
+// generic selectors.
+a,
+:link,
+:visited {
+  color: $LINK_COLOR;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover,
+:link:hover,
+:visited:hover {
+  text-decoration: underline;
+}
+
+a:focus,
+:link:focus,
+:visited:focus {
+  outline: 1px solid $FOCUS_COLOR;
+  text-decoration: underline;
+}
+
+a:active,
+:link:active,
+:visited:active {
+  background-color: rgba($FOCUS_COLOR, .16);
+}
+
+// DevSite override
+a code,
+td a code {
+  color: $LINK_COLOR;
+}

@@ -1,0 +1,58 @@
+@import '../tools/breakpoints';
+
+// =============================================================================
+// LAYOUTS OVERVIEW
+//
+// Layout classes that can be extended or used directly.
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// CONTAINERS
+// -----------------------------------------------------------------------------
+
+.w-layout-container,
+.w-layout-container--narrow {
+  box-sizing: content-box;
+  margin: 0 auto;
+  overflow: visible;
+  padding: 0 24px 72px;
+
+  @include bp(sm) {
+    padding: 0 32px 72px;
+  }
+}
+
+.w-layout-container { max-width: 960px; }
+// Article pages have a narrower, single column layout.
+.w-layout-container--narrow { max-width: 800px; }
+
+// -----------------------------------------------------------------------------
+// GRID LAYOUTS
+// -----------------------------------------------------------------------------
+
+.w-layout-grid--two,
+.w-layout-grid--three,
+.w-layout-grid--four {
+  display: grid;
+}
+
+// Based on a max-width of 960px
+.w-layout-grid--two,
+.w-layout-grid--three,
+.w-layout-grid--four {
+  gap: 16px;
+  grid-gap: 16px;
+}
+
+.w-layout-grid--two {
+  grid-template-columns: repeat(auto-fill, minmax(464px, 1fr));
+}
+
+.w-layout-grid--three {
+  grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+}
+
+.w-layout-grid--four {
+  grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
+}

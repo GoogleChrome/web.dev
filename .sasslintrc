@@ -1,0 +1,49 @@
+{
+  "options": {
+    "merge-default-rules": false
+  },
+  "files": {
+    "ignore": [
+      "src/styles/devsite/**/*.scss",
+      "src/styles/tools/**/*.scss"
+    ]
+  },
+  "rules": {
+    "attribute-quotes": 1,
+    "brace-style": [
+      1,
+      {
+        "style": "1tbs"
+      }
+    ],
+    "border-zero": [
+      1,
+      {
+        "convention": "0"
+      }
+    ],
+    "class-name-format": [
+      1,
+      {
+        "convention": "^w-.+",
+        "convention-explanation": "Classes must be namedspaced with w-* prefix."
+      }
+    ],
+    "declarations-before-nesting": 1,
+    "no-debug": 1,
+    "no-css-comments": 1,
+    "property-sort-order": [
+      1,
+      {
+        "order": "alphabetical"
+      }
+    ],
+    "variable-name-format": [
+      1,
+      {
+        "convention": "^[_A-Z0-9]+$",
+        "convention-explanation": "Variable names should be in $SCREAMING_SNAKE_CASE"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+@import "../settings/global";
+@import "../settings/colors";
+@import "../settings/type";
+@import "../tools/mixins";
+@import "components/type";
+
+$CHEVRON_SIZE: 24px;
+$BORDER_COLOR: $GREY_300;
+
+details {
+  border-top: 1px solid $BORDER_COLOR;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 18px 0;
+  position: relative;
+
+  &:last-child {
+    border-bottom: 1px solid $BORDER_COLOR;
+  }
+}
+
+summary {
+  cursor: pointer;
+  flex-grow: 1;
+  font: inherit;
+  list-style: none;
+  padding-right: #{$CHEVRON_SIZE + 8px};
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    @extend %w-material-icons;
+    color: $GREY_500;
+    content: "keyboard_arrow_down";
+    cursor: $CURSOR_POINTER_VALUE;
+    font-size: $CHEVRON_SIZE;
+    position: absolute;
+    right: 0;
+    visibility: visible;
+  }
+}
+
+details[open] summary::before {
+  content: "keyboard_arrow_up";
+}

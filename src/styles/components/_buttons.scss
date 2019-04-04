@@ -1,0 +1,139 @@
+@import '../settings/global';
+@import '../settings/colors';
+@import '../settings/type';
+@import '../tools/mixins';
+@import 'components/type';
+@import 'components/shared';
+
+// =============================================================================
+// BUTTONS OVERVIEW
+//
+// Material button styles.
+//
+// =============================================================================
+
+@include exports('components/buttons') {
+  button,
+  button:hover,
+  button:focus,
+  button:active {
+    all: initial; // DevSite override. Aggressive but it gets the job done...
+  }
+
+  // The basic button is a plain text button.
+  // Normally we wouldn't need to duplicate the pseudo classes
+  // but since we're using all: initial, we need to make things
+  // initially consistent.
+  .w-button,
+  .w-button:hover,
+  .w-button:focus,
+  .w-button:active {
+    align-items: center;
+    border: 0;
+    border-radius: 3px;
+    color: $WEB_PRIMARY_COLOR;
+    display: inline-flex;
+    font-family: $PRIMARY_FONT;
+    font-size: 1em;
+    font-weight: 500;
+    height: 56px;
+    justify-content: center;
+    letter-spacing: 1px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      background-color $TRANSITION_SPEED,
+      box-shadow $TRANSITION_SPEED;
+    @include font_smoothing(
+      $FONT_SMOOTHING_MOZ,
+      $FONT_SMOOTHING_WEBKIT,
+      $FONT_SMOOTHING_RENDERING
+    );
+  }
+
+  // Firefox...why are you like this...
+  .w-button::-moz-focus-inner {
+    border: 0;
+  }
+
+  .w-button:hover,
+  .w-button:focus,
+  .w-button:active {
+    box-shadow:
+      0 2px 4px -1px rgba($BLACK, .2),
+      0 4px 5px 0 rgba($BLACK, .14),
+      0 1px 10px 0 rgba($BLACK, .12);
+  }
+
+  // This element is used to tint the button during user actions such as
+  // hover, focus, and active.
+  .w-button::after {
+    @extend %w-overlay;
+  }
+  .w-button:hover::after {
+    background-color: rgba($WEB_PRIMARY_COLOR, .04);
+  }
+  .w-button:focus::after {
+    background-color: rgba($WEB_PRIMARY_COLOR, .12);
+  }
+  .w-button:active::after {
+    background-color: rgba($WEB_PRIMARY_COLOR, .16);
+  }
+
+  // A button with an icon.
+  .w-button--with-icon,
+  .w-button--with-icon:hover,
+  .w-button--with-icon:focus,
+  .w-button--with-icon:active {
+    padding: 0 24px 0 16px;
+  }
+  .w-button--with-icon::before {
+    @extend %w-material-icons;
+    content: attr(data-icon);
+    display: inline-block;
+    height: 24px;
+    margin-right: 16px;
+    width: 24px;
+  }
+
+  // Primary action button.
+  .w-button--primary,
+  .w-button--primary:hover,
+  .w-button--primary:focus,
+  .w-button--primary:active {
+    background-color: $WEB_PRIMARY_COLOR;
+    color: $WHITE;
+  }
+  .w-button--primary:hover::after {
+    background-color: rgba($WHITE, .08);
+  }
+  .w-button--primary:focus::after {
+    background-color: rgba($WHITE, .24);
+  }
+  .w-button--primary:active::after {
+    background-color: rgba($WHITE, .32);
+  }
+
+  // Secondary action button.
+  .w-button--secondary,
+  .w-button--secondary:hover,
+  .w-button--secondary:focus,
+  .w-button--secondary:active {
+    background-color: $WHITE;
+    border: 1px solid $GREY_300;
+    color: $PRIMARY_TEXT_COLOR;
+  }
+  .w-button--secondary:hover::after {
+    background-color: rgba($BLACK, .04);
+  }
+  .w-button--secondary:focus::after {
+    background-color: rgba($BLACK, .08);
+  }
+  .w-button--secondary:active::after {
+    background-color: rgba($BLACK, .1);
+  }
+}
