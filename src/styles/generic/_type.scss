@@ -1,0 +1,62 @@
+@import '../settings/global';
+@import '../settings/colors';
+@import '../settings/type';
+@import '../tools/mixins';
+@import '../tools/breakpoints';
+@import 'components/type';
+
+h1, h2, h3, h4, h5, h6 {
+  @extend .w-headline;
+}
+
+h1 {
+  @extend .w-headline--one;
+}
+
+h2 {
+  @extend .w-headline--two-small;
+}
+
+h3 {
+  @extend .w-headline--three;
+}
+
+h4 {
+  @extend .w-headline--four;
+}
+
+p {
+  @extend %w-article-text;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted $GREY_600;
+  cursor: $CURSOR_HELP_VALUE;
+  font-size: 90%;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+abbr {
+  text-transform: none;
+}
+
+address,
+cite,
+dfn,
+em {
+  font-style: italic;
+}
+
+
+// sass-lint:disable class-name-format
+.devsite-article h1:first-of-type {
+  position: static; // DevSite override
+}
+
+devsite-content-footer p {
+  font-size: 12px; // DevSite override
+  line-height: 1.5; // DevSite override
+  padding-top: 72px; // DevSite override
+}

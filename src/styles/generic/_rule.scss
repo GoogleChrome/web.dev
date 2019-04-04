@@ -1,0 +1,9 @@
+@import '../settings/colors';
+
+hr {
+  background: $GREY_300;
+  border: 0;
+  height: 1px;
+  margin: 0;
+  width: 100%;
+}

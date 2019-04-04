@@ -1,0 +1,69 @@
+@import '../settings/colors';
+@import '../tools/mixins';
+
+// =============================================================================
+// AUTHOR OVERVIEW
+//
+// An author shows a thumbnail of the author's profile photo, a bit of info
+// about the author (name, social media, etc) and shows the date when they
+// published the current piece of content.
+//
+// =============================================================================
+
+@include exports('components/author') {
+  .w-author {
+    display: flex;
+    padding: 8px;
+  }
+  
+  .w-author__image {
+    background-color: $GREY_300;
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 40px;
+    margin: 0 12px 0 0;
+    overflow: hidden;
+    width: 40px;
+  }
+  
+  .w-author__name,
+  .w-author__published {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 20px;
+  }
+  
+  .w-author__name {
+    color: $GREY_900;
+  }
+  
+  .w-author__published {
+    color: $GREY_700;
+  }
+  
+  .w-author__link-list {
+    display: block;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .w-author__link-listitem {
+    float: left;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+  }
+  
+  .w-author__link-listitem::after {
+    content: "·";
+    display: inline-block;
+    margin: 0 4px;
+  }
+  
+  .w-author__link-listitem:last-of-type::after {
+    content: "";
+    margin: 0;
+  }
+}

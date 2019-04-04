@@ -1,0 +1,28 @@
+@import '../settings/colors';
+@import 'components/type';
+
+
+@include exports('components/icon-list') {
+  .w-icon-list {
+    list-style: none;
+  }
+
+  .w-icon-list__item {
+    font-size: .875rem;
+    margin: .5rem 0;
+    padding-left: 1.875rem;
+  }
+
+  .w-icon-list__item::before {
+    @extend %w-material-icons;
+    float: left;
+    font-size: 1.25rem;
+    margin: 0 0 0 -30px;
+  }
+  
+  .w-icon-list__item--check::before {
+    color: $WEB_PRIMARY_COLOR;
+    content: "done";
+  }
+
+}

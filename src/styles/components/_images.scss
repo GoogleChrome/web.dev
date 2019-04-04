@@ -1,0 +1,53 @@
+@import '../tools/breakpoints';
+
+.w-figure {
+  margin: 32px 0;
+}
+
+.w-figure--hero {
+  margin: 56px auto 0;
+  max-height: 600px;
+  max-width: 1200px;
+  overflow: hidden;
+  width: auto;
+  
+  @include bp(md) {
+    margin: 64px auto 0;
+  }
+}
+
+// Allow images contained within a figure to be break outside of the main
+// container in articles and be full bleed on mobile.
+.w-figure--fullbleed {
+  margin: 64px -32px;
+}
+
+.w-figure--inline-right {
+  float: right;
+  margin: 0 0 16px 32px;
+}
+
+.w-figure--inline-left {
+  float: left;
+  margin: 0 32px 16px 0;
+}
+
+.w-figcaption {
+  font-size: 0.875em;
+  line-height: 1.5em;
+  margin: 16px 0 0;
+}
+
+.w-figcaption--fullbleed {
+  margin: 24px 32px 0;
+}
+
+.w-screenshot {
+  border: 1px solid $GREY_300;
+  padding: 4px;
+}
+
+.w-screenshot--filled {
+  background-color: $GREY_50;
+  padding: 16px;
+}

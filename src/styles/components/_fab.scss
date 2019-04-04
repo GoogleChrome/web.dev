@@ -1,0 +1,85 @@
+@import '../settings/global';
+@import '../settings/colors';
+@import '../tools/mixins';
+@import '../tools/breakpoints';
+@import 'components/shared';
+
+// =============================================================================
+// FAB OVERVIEW
+//
+// A material floating action button ("FAB").
+//
+// =============================================================================
+
+@include exports('components/fab') {
+  .w-fab {
+    background-color: $WEB_PRIMARY_COLOR;
+    border: 0;
+    border-radius: $GLOBAL_ROUNDED;
+    bottom: 24px;
+    box-shadow:
+      0 2px 4px -1px rgba($BLACK, .2),
+      0 4px 5px 0 rgba($BLACK, .14),
+      0 1px 10px 0 rgba($BLACK, .12);
+    color: $WHITE;
+    display: block;
+    font-size: 0.875em;
+    font-weight: 600;
+    height: 56px;
+    padding: 0;
+    position: fixed;
+    right: 24px;
+    text-indent: -9999px;
+    text-overflow: initial;
+    transition: width $TRANSITION_SPEED, border-radius $TRANSITION_SPEED;
+    width: 56px;
+    z-index: 1000;
+  }
+
+  .w-fab:hover {
+    background-color: $WEB_PRIMARY_COLOR; // DevSite override
+  }
+
+  .w-fab:active {
+    background-color: $WEB_PRIMARY_COLOR; // DevSite override
+    box-shadow:
+      0 5px 5px -3px rgba($BLACK, .2),
+      0 8px 10px 1px rgba($BLACK, .14),
+      0 3px 14px 2px rgba($BLACK, .12);
+  }
+
+  .w-fab::before {
+    background-size: 24px 24px;
+    content: "";
+    height: 24px;
+    left: 16px;
+    position: absolute;
+    top: 16px;
+    width: 24px;
+  }
+
+  .w-fab::after {
+    @extend %w-overlay;
+  }
+
+  .w-fab:hover::after {
+    background-color: rgba($WHITE, .08);
+  }
+
+  .w-fab:active::after {
+    background-color: rgba($WHITE, .32);
+  }
+
+  .w-fab--share {
+    @include bp(sm) {
+      border-radius: 28px;
+      padding: 0 24px 0 52px;
+      text-indent: 0;
+      width: 126px;
+    }
+  }
+
+  .w-fab--share::before {
+    background-image: url('/images/ic_share_white.png');
+  }
+}

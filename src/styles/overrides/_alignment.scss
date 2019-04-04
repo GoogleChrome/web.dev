@@ -1,0 +1,29 @@
+@import '../tools/mixins';
+
+// =============================================================================
+// ALIGNMENT OVERVIEW
+//
+// Overrides for vertical and text alignment
+//
+// =============================================================================
+
+@include exports('overrides/alignment') {
+  .w-text--left {
+    text-align: left;
+  
+    [dir='rtl'] & {
+      text-align: right;
+    }
+  }
+  
+  .w-text--right {
+    text-align: right;
+  
+    [dir='rtl'] & {
+      text-align: left;
+    }
+  }
+  
+  .w-text--center { text-align: center; }
+  .w-text--justify { text-align: justify; }
+}
