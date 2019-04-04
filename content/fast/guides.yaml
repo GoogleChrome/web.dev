@@ -41,6 +41,7 @@ topics:
 - title: Optimize your CSS
   guides:
     - defer-non-critical-css
+    - minify-css
 - title: Optimize web fonts
   guides:
     - avoid-invisible-text
