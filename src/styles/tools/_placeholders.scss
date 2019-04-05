@@ -1,0 +1,84 @@
+// Dependencies:
+// settings/_type.scss
+// settings/_global.scss
+
+// =============================================================================
+// PLACEHOLDERS OVERVIEW
+//
+// Shared placeholders that elements can extend to avoid bloating the CSS.
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// Typography
+//
+// Elements should extend these placeholders to get consistent font styles.
+// This is recommended over using mixins like @include font($SOME_FONT_MAP).
+//
+// -----------------------------------------------------------------------------
+
+// For elements that want the standard font-size and line-height that appears
+// on the learn and measure pages.
+%w-body-text {
+  @include font($BODY);
+
+  @include bp(xxsm) {
+    @include font($BODY_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($BODY_XSMALL);
+  }
+}
+
+// For elements that want the larger font-size and line-height that appears in
+// articles and guides.
+%w-article-text {
+  @include font($ARTICLE);
+
+  @include bp(xxsm) {
+    @include font($ARTICLE_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($ARTICLE_XSMALL);
+  }
+}
+
+// For elements that want to display Material icons.
+%w-material-icons {
+  @include font_material_icon();
+}
+
+// -----------------------------------------------------------------------------
+// Overlays
+//
+// Elements should extend these placeholders to get consistent button overlay
+// effects. These are used to tint an interactive control during
+// hover/focus/active states.
+//
+// -----------------------------------------------------------------------------
+
+%w-overlay {
+  bottom: 0;
+  content: "";
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: background-color $TRANSITION_SPEED, border $TRANSITION_SPEED;
+  z-index: 1;
+}
+
+%w-overlay-hover {
+  background-color: rgba($GREY_900, .04);
+}
+
+%w-overlay-focus {
+  background-color: rgba($GREY_900, .12);
+}
+
+%w-overlay-active {
+  background-color: rgba($GREY_900, .16);
+}

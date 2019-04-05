@@ -1,8 +1,9 @@
-@import '../settings/type';
-@import '../tools/breakpoints';
-@import '../tools/mixins';
+// Dependencies:
+// settings/_type.scss
+// tools/_breakpoints.scss
+// tools/_mixins.scss
+
 @import 'components/type';
-@import 'overrides/font';
 
 // =============================================================================
 // PAGE HEADER OVERVIEW

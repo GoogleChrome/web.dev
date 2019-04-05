@@ -1,6 +1,7 @@
-@import '../settings/colors';
-@import '../settings/type';
-@import '../tools/mixins';
+// Dependencies:
+// settings/_colors.scss
+// settings/_type.scss
+// tools/_mixins.scss
 
 // =============================================================================
 // FONT OVERVIEW
@@ -9,11 +10,9 @@
 //
 // =============================================================================
 
-@include exports('overrides/font') {
-  .w-font-weight--light { font-weight: $FONT_WEIGHT_LIGHT; }
-  .w-font-weight--regular { font-weight: $FONT_WEIGHT_REGULAR; }
-  .w-font-weight--medium { font-weight: $FONT_WEIGHT_MEDIUM; }
-  .w-font-weight--bold { font-weight: $FONT_WEIGHT_BOLD; }
-  
-  .w-font--reversed { color: $WHITE; }
-}
+.w-font-weight--light { font-weight: $FONT_WEIGHT_LIGHT; }
+.w-font-weight--regular { font-weight: $FONT_WEIGHT_REGULAR; }
+.w-font-weight--medium { font-weight: $FONT_WEIGHT_MEDIUM; }
+.w-font-weight--bold { font-weight: $FONT_WEIGHT_BOLD; }
+
+.w-font--reversed { color: $WHITE; }

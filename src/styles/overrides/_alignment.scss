@@ -1,4 +1,5 @@
-@import '../tools/mixins';
+// Dependencies:
+// tools/_mixins.scss
 
 // =============================================================================
 // ALIGNMENT OVERVIEW
@@ -7,23 +8,21 @@
 //
 // =============================================================================
 
-@include exports('overrides/alignment') {
-  .w-text--left {
-    text-align: left;
-  
-    [dir='rtl'] & {
-      text-align: right;
-    }
-  }
-  
-  .w-text--right {
+.w-text--left {
+  text-align: left;
+
+  [dir='rtl'] & {
     text-align: right;
-  
-    [dir='rtl'] & {
-      text-align: left;
-    }
   }
-  
-  .w-text--center { text-align: center; }
-  .w-text--justify { text-align: justify; }
 }
+
+.w-text--right {
+  text-align: right;
+
+  [dir='rtl'] & {
+    text-align: left;
+  }
+}
+
+.w-text--center { text-align: center; }
+.w-text--justify { text-align: justify; }
