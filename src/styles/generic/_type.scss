@@ -1,8 +1,10 @@
-@import '../settings/global';
-@import '../settings/colors';
-@import '../settings/type';
-@import '../tools/mixins';
-@import '../tools/breakpoints';
+// Dependencies:
+// settings/_colors.scss
+// settings/_global.scss
+// settings/_type.scss
+// tools/_breakpoints.scss
+// tools/_mixins.scss
+
 @import 'components/type';
 
 h1, h2, h3, h4, h5, h6 {

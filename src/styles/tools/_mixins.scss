@@ -1,4 +1,5 @@
-@import 'functions';
+// Dependencies:
+// tools/_functions.scss
 
 // Mixin for element elevations per Google Material specs.
 @mixin elevation($level, $inset: null) {

@@ -1,9 +1,10 @@
-@import '../settings/global';
-@import '../settings/colors';
-@import '../settings/type';
-@import '../tools/mixins';
+// Dependencies:
+// settings/_colors.scss
+// settings/_global.scss
+// settings/_type.scss
+// tools/_mixins.scss
+
 @import 'components/type';
-@import 'components/shared';
 
 // =============================================================================
 // BUTTONS OVERVIEW

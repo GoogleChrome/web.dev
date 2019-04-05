@@ -1,8 +1,8 @@
-@import "../settings/global";
-@import "../settings/colors";
-@import "../settings/type";
-@import "../tools/mixins";
-@import "components/type";
+// Dependencies:
+// settings/_colors.scss
+// settings/_global.scss
+// settings/_type.scss
+// tools/_mixins.scss
 
 $CHEVRON_SIZE: 24px;
 $BORDER_COLOR: $GREY_300;

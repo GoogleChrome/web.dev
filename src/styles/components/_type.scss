@@ -99,44 +99,4 @@
   .w-eyebrow {
     @include font($EYEBROW);
   }
-  
-  // -----------------------------------------------------------------------------
-  // Placeholders.
-
-  // Elements should extend these placeholders to get consistent font styles.
-  // This is recommended over using mixins like @include font($SOME_FONT_MAP).
-  // -----------------------------------------------------------------------------
-
-  // For elements that want the standard font-size and line-height that appears
-  // on the learn and measure pages.
-  %w-body-text {
-    @include font($BODY);
-
-    @include bp(xxsm) {
-      @include font($BODY_XXSMALL);
-    }
-
-    @include bp(xsm) {
-      @include font($BODY_XSMALL);
-    }
-  }
-
-  // For elements that want the larger font-size and line-height that appears in
-  // articles and guides.
-  %w-article-text {
-    @include font($ARTICLE);
-
-    @include bp(xxsm) {
-      @include font($ARTICLE_XXSMALL);
-    }
-
-    @include bp(xsm) {
-      @include font($ARTICLE_XSMALL);
-    }
-  }
-
-  // For elements that want to display Material icons.
-  %w-material-icons {
-    @include font_material_icon();
-  }
 }
