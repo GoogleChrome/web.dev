@@ -1,0 +1,22 @@
+// Dependencies:
+// settings/_colors.scss
+
+// =============================================================================
+// SCREENSHOT OVERVIEW
+//
+// A screenshot is a helper class to wrap an image and ensure it has some
+// bordering around it. Otherwise screenshots taken against a white background
+// will appear to "float" in the middle of the article if the page also has
+// a white background.
+//
+// =============================================================================
+
+.w-screenshot {
+  border: 1px solid $GREY_300;
+  padding: 4px;
+}
+
+.w-screenshot--filled {
+  background-color: $GREY_50;
+  padding: 16px;
+}

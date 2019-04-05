@@ -10,47 +10,45 @@
 //
 // =============================================================================
 
-@include exports('components/article-header') {
-  .w-article-header {
-    margin: 0 0 48px;
+.w-article-header {
+  margin: 0 0 48px;
 
-    @include bp(md) {
-      margin: 0 0 64px;
-    }
+  @include bp(md) {
+    margin: 0 0 64px;
+  }
+}
+
+.w-article-header__headline {
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 33px;
+  margin: 0 auto 11px;
+
+  @include bp(xxsm) {
+    font-size: 31px;
+    line-height: 38px;
   }
 
-  .w-article-header__headline {
-    font-size: 27px;
-    font-weight: 400;
-    line-height: 33px;
-    margin: 0 auto 11px;
-
-    @include bp(xxsm) {
-      font-size: 31px;
-      line-height: 38px;
-    }
-
-    @include bp(xsm) {
-      font-size: 36px;
-      line-height: 44px;
-    }
-
-    @include bp(md) {
-      font-size: 44px;
-      line-height: 52px;
-    }
+  @include bp(xsm) {
+    font-size: 36px;
+    line-height: 44px;
   }
 
-  .w-article-header__summary {
-    font-family: "Google Sans", sans-serif;
-    font-size: 16px;
-    line-height: 28px;
-    margin: 12px auto;
+  @include bp(md) {
+    font-size: 44px;
+    line-height: 52px;
+  }
+}
 
-    @include bp(xxsm) {
-      font-size: 18px;
-      line-height: 32px;
-      margin: 16px auto;
-    }
+.w-article-header__summary {
+  font-family: "Google Sans", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  margin: 12px auto;
+
+  @include bp(xxsm) {
+    font-size: 18px;
+    line-height: 32px;
+    margin: 16px auto;
   }
 }

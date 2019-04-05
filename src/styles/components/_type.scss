@@ -1,7 +1,8 @@
-@import '../settings/colors';
-@import '../settings/type';
-@import '../tools/mixins';
-@import '../tools/breakpoints';
+// Dependencies:
+// settings/_colors.scss
+// settings/_type.scss
+// tools/_breakpoints.scss
+// tools/_mixins.scss
 
 // =============================================================================
 // TYPOGRAPHY OVERVIEW
@@ -14,89 +15,34 @@
 //
 // =============================================================================
 
-@include exports('components/type') {
-  .w-headline {
-    @include font($BASE_HEADLINE);
-    color: $PRIMARY_TEXT_COLOR; // DevSite override
-    margin: 0;
-    overflow: visible;
-  
-    &--one {
-      @include font($HEADLINE_1);
-  
-      @include bp(xxsm) {
-        @include font($HEADLINE_1_XXSMALL);
-      }
-  
-      @include bp(xsm) {
-        @include font($HEADLINE_1_XSMALL);
-      }
-    }
-  
-    &--two {
-      @include font($HEADLINE_2);
-  
-      @include bp(xxsm) {
-        @include font($HEADLINE_2_XXSMALL);
-      }
-  
-      @include bp(xsm) {
-        @include font($HEADLINE_2_XSMALL);
-      }
-    }
-  
-    &--two-small {
-      @include font($HEADLINE_2_ARTICLE);
-  
-      @include bp(xxsm) {
-        @include font($HEADLINE_2_ARTICLE_XXSMALL);
-      }
-  
-      @include bp(xsm) {
-        @include font($HEADLINE_2_ARTICLE_XSMALL);
-      }
-    }
+.w-headline {
+  @extend %w-headline;
 
-    &--two-faded {
-      @include font($HEADLINE_2_SMALL_CAPS);
-      color: $GREY_600;
-  
-      @include bp(xxsm) {
-        @include font($HEADLINE_2_SMALL_CAPS_XXSMALL);
-      }
-  
-      @include bp(xsm) {
-        @include font($HEADLINE_2_SMALL_CAPS_XSMALL);
-      }
-    }
-  
-    &--three {
-      @include font($HEADLINE_3);
-  
-      @include bp(xxsm) {
-        @include font($HEADLINE_3_XXSMALL);
-      }
-  
-      @include bp(xsm) {
-        @include font($HEADLINE_3_XSMALL);
-      }
-    }
-  
-    &--four {
-      @include font($HEADLINE_4);
-      color: $WEB_PRIMARY_COLOR;
-  
-      @include bp(xxsm) {
-        @include font($HEADLINE_4_XXSMALL);
-      }
-  
-      @include bp(xsm) {
-        @include font($HEADLINE_4_XSMALL);
-      }
-    }
+  &--one {
+    @extend %w-headline--one;
   }
 
-  .w-eyebrow {
-    @include font($EYEBROW);
+  &--two {
+    @extend %w-headline--two;
   }
+
+  &--two-small {
+    @extend %w-headline--two-small;
+  }
+
+  &--two-faded {
+    @extend %w-headline--two-faded;
+  }
+
+  &--three {
+    @extend %w-headline--three;
+  }
+
+  &--four {
+    @extend %w-headline--four;
+  }
+}
+
+.w-eyebrow {
+  @include font($EYEBROW);
 }

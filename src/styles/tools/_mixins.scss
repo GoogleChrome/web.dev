@@ -1,61 +1,6 @@
 // Dependencies:
 // tools/_functions.scss
 
-// Mixin for element elevations per Google Material specs.
-@mixin elevation($level, $inset: null) {
-  @if $level == 0 {
-    border: 1px solid $GREY_300;
-    box-shadow: none;
-
-  } @else if $level == 1 {
-    box-shadow: 0 1px 2px 0 rgba($GREY_800, .3),
-                0 1px 3px 1px rgba($GREY_800, .15);
-
-  } @else if $level == 2 {
-    @if $inset == 'inset' {
-      box-shadow: 0 1px 2px 0 rgba($GREY_800, .3),
-                  0 2px 6px 2px rgba($GREY_800, .15),
-                  inset 0 4px 6px -4px rgba($GREY_500, .5);
-    } @else {
-      box-shadow: 0 1px 2px 0 rgba($GREY_800, .3),
-                  0 2px 6px 2px rgba($GREY_800, .15);
-    }
-
-  } @else if $level == 3 {
-    box-shadow: 0 1px 3px 0 rgba($GREY_800, .3),
-                0 4px 8px 3px rgba($GREY_800, .15);
-
-  } @else if $level == 4 {
-    box-shadow: 0 2px 3px 0 rgba($GREY_800, .3),
-                0 6px 10px 4px rgba($GREY_800, .15);
-
-  } @else if $level == 5 {
-    box-shadow: 0 4px 4px 0 rgba($GREY_800, .3),
-                0 8px 12px 6px rgba($GREY_800, .15);
-
-  } @else {
-    box-shadow: none;
-  }
-}
-
-// Module export mixin
-// https://github.com/wilsonpage/sass-import-once
-$imported-modules: () !default;
-
-// This mixin helps making sure a module is imported once and only once.
-// @access public
-// @param {String} $name - Name of exported module
-// @param {Bool} $warn [true] - Warn when module has been already imported
-// @require $imported-modules
-@mixin exports($name, $warn: false) {
-  @if (index($imported-modules, $name) == null) {
-    $imported-modules: append($imported-modules, $name) !global;
-    @content;
-  } @else if $warn == true {
-    @warn "Module `#{$name}` has already been imported.";
-  }
-}
-
 // Mixin for styling typography via maps containing required integer values for
 // font-family, font-size, font-weight, and line-height; with an optional value
 // for letter-spacing.

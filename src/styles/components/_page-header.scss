@@ -3,8 +3,6 @@
 // tools/_breakpoints.scss
 // tools/_mixins.scss
 
-@import 'components/type';
-
 // =============================================================================
 // PAGE HEADER OVERVIEW
 //
@@ -13,32 +11,30 @@
 //
 // =============================================================================
 
-@include exports('components/page-header') {
-  .w-page-header {
-    height: auto;
-    margin-top: 44px;
-    padding: 24px 16px 0;
-    text-align: center;
+.w-page-header {
+  height: auto;
+  margin-top: 44px;
+  padding: 24px 16px 0;
+  text-align: center;
 
-    @include bp(xxsm) {
-      margin-top: 56px;
-      padding: 60px 24px 28px;
-    }
-  
-    @include bp(md) {
-      height: 288px;
-      margin-top: 64px;
-      padding: 80px 32px 0;
-    }
+  @include bp(xxsm) {
+    margin-top: 56px;
+    padding: 60px 24px 28px;
   }
 
-  .w-page-header__headline {
-    margin: 0 auto 11px;
+  @include bp(md) {
+    height: 288px;
+    margin-top: 64px;
+    padding: 80px 32px 0;
   }
+}
 
-  .w-page-header__copy {
-    font: inherit;
-    margin: 0 auto 12px;
-    max-width: 512px;
-  }
+.w-page-header__headline {
+  margin: 0 auto 11px;
+}
+
+.w-page-header__copy {
+  font: inherit;
+  margin: 0 auto 12px;
+  max-width: 512px;
 }

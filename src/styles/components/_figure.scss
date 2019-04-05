@@ -1,6 +1,15 @@
 // Dependencies:
 // tools/_breakpoints.scss
 
+// =============================================================================
+// FIGURE OVERVIEW
+//
+// Figures are images with an optional caption at the bottom.
+// They can be used as heros, break out of their container, or inlined to the
+// left or right.
+//
+// =============================================================================
+
 .w-figure {
   margin: 32px 0;
 }
@@ -41,14 +50,4 @@
 
 .w-figcaption--fullbleed {
   margin: 24px 32px 0;
-}
-
-.w-screenshot {
-  border: 1px solid $GREY_300;
-  padding: 4px;
-}
-
-.w-screenshot--filled {
-  background-color: $GREY_50;
-  padding: 16px;
 }
