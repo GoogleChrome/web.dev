@@ -8,23 +8,23 @@
 @import 'components/type';
 
 h1, h2, h3, h4, h5, h6 {
-  @extend .w-headline;
+  @extend %w-headline;
 }
 
 h1 {
-  @extend .w-headline--one;
+  @extend %w-headline--one;
 }
 
 h2 {
-  @extend .w-headline--two-small;
+  @extend %w-headline--two-small;
 }
 
 h3 {
-  @extend .w-headline--three;
+  @extend %w-headline--three;
 }
 
 h4 {
-  @extend .w-headline--four;
+  @extend %w-headline--four;
 }
 
 p {

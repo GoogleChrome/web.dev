@@ -1,8 +1,14 @@
 // Dependencies:
 // settings/_type.scss
 // tools/_mixins.scss
+// tools/_placeholders.scss
 
-@import 'components/type';
+// =============================================================================
+// BLOCKQUOTE OVERVIEW
+//
+// A large callout quote with an optional author field.
+//
+// =============================================================================
 
 .w-blockquote {
   @extend %w-article-text;
