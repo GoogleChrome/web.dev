@@ -14,50 +14,38 @@ wf_blink_components: Blink>Accessibility
 ---
 
 # Summary
+We built **macro layouts**, we built **micro layouts**, we **chaos** tested, we **mobilized**, we **strategized** and we **conquered**. We found some **organic harmonies between flexbox and grid**. We **refactored** extrinsic layouts to intrinsic ones. We found **meaningful** use cases for extrinsic **heights**. Ultimately we really dug into some day to day, practical layout work and learned a ton of great stuff along the way.
 
-
-
-[final glitch]
-
-
-
-We built **macro layouts**, we build **micro layouts**, we **chaos** tested, we **mobilized**, we **strategized** and we **conquered**. We found some o**rganic harmonies between flexbox and grid**. We **refactored** extrinsic layouts to intrinsic ones. We found **meaningful** use cases for extrinsic **heights**. Ultimately we really dug into some day to day, practical layout work and learned a ton of great stuff along the way.
-
-
+<br><br>
 
 ![adventure time dancing GIF](https://media3.giphy.com/media/10bxTLrpJNS0PC/giphy.gif?cid=3640f6095c9946a8466466546b017b0e)
 
+<br><br>
 
+**Final Glitch**
+<div class="glitch-embed-wrap" style="height: 70vh; width: 80vw;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
+    alt="logical-tab-order on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
+<figure style="text-align:center; margin: 4rem 0;">
+  <img src="intrinsic-final-overview-tall.gif" alt="">
+  <figcaption>All layouts revealed through devtools in 1 gif 🤓</figcaption>
+</figure>
 
+<br><br>
 
+##### Recap of each layout
 
-
-
-
-<p style="text-align: center; font-weight: bold; font-size: 2rem;">All our CSS grids, in 1 GIF!</p>
-
-
-
-![intrinsic-final-overview-tall](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/intrinsic-final-overview-tall.gif)
-
-
-
-
-
-
-
-## TLDR;
-
-### Macro Layouts
-
+# Macro Layouts
 We laid down some layout code for our **outer most grids first** and created **CSS variables for layouts to share values** for consistency. CSS Grid was able to do the entire macro layout with a slotted layout strategy, but we refactored and were able to achieve the same layout with 2 smaller grids. We gained an easier browser fallback scenario and less code to modify in a media query.
 
+<br><br>
 
-
-**Top Level Grid**
-
-> just flow and spacing
+### Top Level Grid
 
 ```css
 body {
@@ -67,15 +55,15 @@ body {
 }
 ```
 
-![macro – body grid](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/macro%20%E2%80%93%20body%20rows.png)
+<div class="note">just flow and spacing</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="macro%20%E2%80%93%20body%20rows.png" alt="">
+</figure>
 
+<br><br>
 
-
-
-**Main Level Grid**
-
-> used only 2 columns, used margin to simulate shared column with nav
+### Main Level Grid
 
 ```css
 main {
@@ -94,25 +82,21 @@ main {
 }
 ```
 
-![macro – less grids more margin](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/macro%20%E2%80%93%20less%20grids%20more%20margin.png)
+<div class="note">used only 2 columns, used margin to simulate shared column with nav</div>
 
+<figure style="text-align:center; margin: 0;">
+  <img src="macro%20%E2%80%93%20less%20grids%20more%20margin.png" alt="">
+</figure>
 
+<br><br><br><br>
 
-
-
-
-
-
-
-### Micro Layouts
+# Micro Layouts
 
 Turns out **the majority of our layout work is spent in micro layouts**! They even end up being some of the more complex tasks.
 
+<br>
 
-
-#### Nav Layout
-
-> Flat HTML structuring let us use 1 grid for the whole navbar
+### Nav Layout
 
 ```css
 nav {
@@ -149,15 +133,15 @@ nav {
 }
 ```
 
-![micro - nav](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/micro - nav.png)
+<div class="note">Flat HTML structuring let us use 1 grid for the whole navbar</div>
 
-![intrinsic-nav-responsive-after-breakpoint](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/intrinsic-nav-responsive-after-breakpoint.gif)
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="intrinsic-nav-responsive-after-breakpoint.gif" alt="">
+</figure>
 
+<br><br>
 
-
-#### Sidebar Layout
-
-> Intrinsic interactive areas with easy flexbox direction pivot on mobile
+### Sidebar Layout
 
 ```css
 aside > nav {
@@ -179,13 +163,15 @@ aside > nav {
 }
 ```
 
-![intrinsic-aside-flexbox](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/intrinsic-aside-flexbox.gif)
+<div class="note">Intrinsic interactive areas with easy flexbox direction pivot on mobile</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="intrinsic-aside-flexbox.gif" alt="">
+</figure>
 
+<br><br>
 
-#### Grouped ListView
-
-> A grid of grids, a list of lists: 2 dimensional array layout
+### Grouped ListView
 
 ```css
 article {
@@ -194,13 +180,15 @@ article {
 }
 ```
 
-![groupedlist-highlighted](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/groupedlist-highlighted.png)
+<div class="note">A grid of grids, a list of lists: 2 dimensional array layout</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="groupedlist-highlighted.png" alt="">
+</figure>
 
+<br><br>
 
-#### Chips Layout
-
-> Auto height, fixed width, scroll snapping grid
+### Chips Layout
 
 ```css
 chips {
@@ -211,13 +199,15 @@ chips {
 }
 ```
 
-![intrinsic-chips](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/intrinsic-chips.gif)
+<div class="note">Auto height, fixed width, scroll snapping grid</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="intrinsic-chips.gif" alt="">
+</figure>
 
+<br><br>
 
-#### Hero Products List(s)
-
-> Extrinsic equally spaced and equally sized squares
+### Hero Products List(s)
 
 ```css
 hero-products-list {
@@ -229,15 +219,15 @@ hero-products-list {
 }
 ```
 
-![fresh-releases-grid](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/fresh-releases-grid.gif)
+<div class="note">Extrinsic equally spaced and equally sized squares</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="fresh-releases-grid.gif" alt="">
+</figure>
 
+<br><br>
 
-
-
-#### Hero Featured
-
-> Slotted grid with auto and equal heights
+### Hero Featured
 
 ```css
 hero-featured {
@@ -265,15 +255,15 @@ hero-featured {
 }
 ```
 
-![featured-stuff-responsive](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/featured-stuff-responsive.gif)
+<div class="note">Slotted grid with auto and equal heights</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="featured-stuff-responsive.gif" alt="">
+</figure>
 
+<br><br>
 
-
-
-#### Chip
-
-> Grid on the outside
+### Chip
 
 ```css
 figure {
@@ -283,13 +273,15 @@ figure {
 }
 ```
 
-![chip-grid](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/chip-grid.png)
+<div class="note">Grid on the outside</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="chip-grid.png" alt="">
+</figure>
 
+<br><br>
 
-#### Chip Caption
-
-> Flex on the inside
+### Chip Caption
 
 ```css
 figcaption {
@@ -305,13 +297,15 @@ figcaption {
 }
 ```
 
-![intrinsic-chip-flexbox](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/intrinsic-chip-flexbox.gif)
+<div class="note">Flex on the inside</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="intrinsic-chip-flexbox.gif" alt="">
+</figure>
 
+<br><br>
 
-#### Cards
-
-> Grid and Flexbox combo **again**!
+### Featured Card
 
 ```css
 deal-card {
@@ -329,15 +323,15 @@ deal-card {
 }
 ```
 
-![card-chaos-test](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/card-chaos-test.gif)
+<div class="note">Grid and Flexbox combo **again**!</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="card-chaos-test.gif" alt="">
+</figure>
 
+<br><br>
 
-
-
-#### Mural Grid
-
-> Grid FTW
+### Mural Grid
 
 ```css
 .mural-card {
@@ -361,32 +355,32 @@ deal-card {
 }
 ```
 
+<div class="note">Grid FTW</div>
 
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="intrinsic-feature-card-chaos.gif" alt="">
+</figure>
 
-
-
-![intrinsic-feature-card-chaos](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/intrinsic-feature-card-chaos.gif)
-
-
-
-
-# Learn More
-#### TODO
-Intrinsic has a few synonyms or alternative implecations and meanings I want to share quickly too, since I think they can really help you shape a mental model of what we're going for:
-1. [Intrinsic web design](https://twitter.com/jensimmons/status/980980521848127488?lang=en)
-1. [Content centric/outward layout](http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/)
-1. [Resilient CSS](https://www.smashingmagazine.com/2017/03/resilient-web-design/)
-1. Courteous CSS: okay, this one's mine 🤓
-
-
+<br><br>
 
 
 # Conclusion
 
 **I hope this article helps you grok intrinsic layout**. It's definitely a bit more tricky to learn at first, but with **patience** and **play**, I think you'll find it has big payoffs. Let's respect out content, prepare for change, and ultimately **create resilient front end layouts** that can stand the test of time and variability.
 
+## Learn More
+**TODO: fill this learn more area out with more links!**
+
+Intrinsic has a few synonyms or alternative implecations and meanings I want to share quickly too, since I think they can really help you shape a mental model of what we're going for:
+1. [Intrinsic web design](https://twitter.com/jensimmons/status/980980521848127488?lang=en)
+1. [Content centric/outward layout](http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/)
+1. [Resilient CSS](https://www.smashingmagazine.com/2017/03/resilient-web-design/)
+1. Courteous CSS: okay, this one's mine 🤓
+
+<br><br>
 
 
+### One last layout!
 **CSS**
 
 ```css
@@ -398,6 +392,6 @@ Intrinsic has a few synonyms or alternative implecations and meanings I want to 
 }
 ```
 
-
-
-![css-is-awesome](/Users/argyle/design/tenhun/comps/intrinsic-store-exports/css-is-awesome.gif)
+<figure style="text-align:center; margin: 1rem 0;">
+  <img src="css-is-awesome.gif" alt="">
+</figure>
