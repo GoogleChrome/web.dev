@@ -1,6 +1,6 @@
 ---
 page_type: guide
-title: Getting started
+title: 'Get Started: Optimize your React app'
 description: |
   React is an open-source library that makes building UIs easier. This learning path will cover different APIs and tools within the ecosystem that you should consider using to improve the performance and usability of your application.
 author: houssein
@@ -10,35 +10,33 @@ web_published_on: N/A # TODO: update
 wf_blink_components: N/A
 ---
 
-# Getting started
+# Get Started: Optimize your React app
 
 [React](https://reactjs.org/) is an open-source library that makes building UIs easier. This learning path will cover different APIs and tools within the ecosystem that you should consider using to improve the performance and usability of your application.
 
+This guide will show you how to get up and running with a React application. Every other guide in this section will cover topics to optimize the speed or accessibility of a React app.
+
 ## Why is this useful?
 
-There is a lot of content that explain how to build fast and reliable applications by using different techiniques or including new APIs but not many that show how this fits within the tooling that comes with a React app. The guides and codelabs in this section of the site instead cover all of this from the perspective of a React app. Only libraries, APIs and features that are specific to the React ecosystem are mentioned.
+There's a lot of content that explains how to build fast and reliable applications, but not many that show how to build fast and reliable React applications using React tooling. These guides and codelabs cover all this from the perspective of a React app. Only libraries, APIs, and features specific to the React ecosystem are mentioned.
 
-<div class="aside caution">
-  The tutorials in this learning path do not focus on:
+## What will you learn?
 
-  <ul>
-    <li>How to use React</li>
-    <li>How React works under the hood</li>
-  </ul>
+The tutorials in this learning path do *not* focus on:
 
-  Although both of these concepts will be touched on when needed, all the guides and codelabs in this section will instead focus on how to build fast and accessible React sites. For this reason, <strong>a basic knowledge of React is required.</strong>
-</div>
+* How to use React
+* How React works under the hood
 
-To kick things off, this guide will briefly cover [Create React App](https://facebook.github.io/create-react-app/) which is used to build every application in this section. It will then conclude with a brief summary of all the different topics that will be explored in this learning path.
+Although both of these concepts will be touched on when needed, all the guides and codelabs in this section will instead focus on how to build fast and accessible React sites. For this reason, [a basic knowledge of React is required](https://reactjs.org/docs).
 
 ## Create React App
 
-**Create React App** (CRA) is the easiest way to start building a React application with a build system that contains a module bundler (webpack) and transpiler (Babel). It takes care of these configurations by providing a default setup with a number of these core features baked in.
+[Create React App](https://facebook.github.io/create-react-app/) (CRA) is the easiest way to get started building React applications. It provides a default setup with a number of core features baked in, including a build system containing a module bundler (webpack) and a transpiler (Babel).
 
-On a command-line shell, you only need to run the following to create a new application+:
+On a command-line shell, you only need to run the following to create a new application:
 
 ```bash
-npx create-react-app new-app
+npx create-react-app app-name
 ```
 
 <div class="aside note">
@@ -65,33 +63,21 @@ The following embed shows the directory structure and actual web page of a newly
 </div>
 
 <div class="aside note">
-  Although CRA makes it simple to get started building a React application, there are many different ways to begin building sites with React. The <a href="https://github.com/facebook/create-react-app">"Popular Alternatives"</a> section within the README covers a few different cases where you might want to go with a different option.
+  Although CRA makes it simple to get started building a React application, there are many different ways to begin building sites with React. The <a href="https://github.com/facebook/create-react-app">"Popular Alternatives"</a> in the README covers different use-cases and options.
 </div>
 
-There are multiple configuration files and build scripts that CRA uses to set up a webpack and Babel build process that includes a base [Jest](https://jestjs.io/) setup for testing. To make things simpler for the user, these files are hidden and cannot be accessed until you eject from CRA with `npm run eject`. This lets you take control of these configuration files yourself but once you eject, you are on your own.
+There are multiple configuration files and build scripts that CRA uses to set up a webpack and Babel build process that includes a base [Jest](https://jestjs.io/) setup for testing. To make things simpler for the user, these files are hidden and cannot be accessed until you eject from CRA. It is always best to avoid ejecting whenever possible. Ejecting means taking on all of these configuration files as your own source code, which can become difficult to manage.
 
-To give you a better idea of the many configuration files, here is the directory structure of an ejected CRA application:
-
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/ejected-create-react-app?path=package.json&previewSize=0&attributionHidden=true"
-    alt="ejected-create-react-app on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
-<div class="aside note">
-  Although it can be useful to know how all the different configuration files underneath the Create React App hood works, we will not need to eject or dive into any of them for the guides and codelabs in this learning path. 
-</div>
+The directory structure of a new CRA application only contains the files that you would actually need to modify in order to work on your application. The [CRA documentation](https://facebook.github.io/create-react-app/docs/folder-structure) explains this in detail.
 
 ## What's next?
 
-Now that you have a decent understanding of how every React application in this learning path is bootstrapped, each separate guide that follows this will cover a different topic that explains how to improve the performance of a specific part of your React site. This includes:
+Now that you know how to get started building a Create React App, learn how improve your app's performance and accessibility, including:
 
-* Code-splitting with Suspense
-* Virtualizing large lists
-* Caching assets with a service worker
-* Pre-rendering routes
-* Adding a Web App Manifest
-* Auditing and fixing accessibility issues
-* Next.js
+* [Code-splitting with Suspense](/react/code-splitting-suspense)
+* [Virtualizing large lists](/react/virtualize-long-lists-react-window)
+* [Caching assets with a service worker](/react/add-service-worker)
+* [Pre-rendering routes](/react/prerender-routes)
+* [Adding a Web App Manifest](/react/add-manifest)
+* [Auditing and fixing accessibility issues](/react/accessibility-in-react)
+* [Next.js](/react/next)

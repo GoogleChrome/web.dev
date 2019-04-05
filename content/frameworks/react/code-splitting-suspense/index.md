@@ -44,12 +44,13 @@ However, there will always be a slight delay users experience when a code-split 
 
 ```
 import React, { lazy, Suspense } from 'react';
-import LoadingComponent from './LoadingComponent';
 
 const AvatarComponent = lazy(() => import('./AvatarComponent'));
 
+const renderLoader = () => <p>Loading</p>;
+
 const DetailsComponent = () => (
-  <Suspense fallback={<LoadingComponent/>}>
+  <Suspense fallback={renderLoader()}>
     <AvatarComponent />
   </Suspense>
 )
@@ -61,7 +62,7 @@ const DetailsComponent = () => (
   You must use Suspense to show fallback content if a component contains a separate lazy loaded component that is not loaded after its parent has finished rendering.
 </div>
 
-The following example shows how this works. The `DetailsComponent` is only rendered when the button is clicked, where a request is then made to retrieve the code necessary for the `AvatarComponent`. In the meantime, the fallback component, `LoadingComponent`, is shown.
+The following example shows how this works. The avatar is only rendered when the button is clicked, where a request is then made to retrieve the code necessary for the suspended `AvatarComponent`. In the meantime, the fallback loading component is shown.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -97,14 +98,15 @@ For example:
 
 ```
 import React, { lazy, Suspense } from 'react';
-import LoadingComponent from './LoadingComponent';
 
 const AvatarComponent = lazy(() => import('./AvatarComponent'));
 const InfoComponent = lazy(() => import('./InfoComponent'));
 const MoreInfoComponent = lazy(() => import('./MoreInfoComponent'));
 
+const renderLoader = () => <p>Loading</p>;
+
 const DetailsComponent = () => (
-  <Suspense fallback={<LoadingComponent/>}>
+  <Suspense fallback={renderLoader()}>
     <AvatarComponent />
     <InfoComponent />
     <MoreInfoComponent />

@@ -19,7 +19,6 @@ overview: |
     - add-service-worker
 - title: Discoverable
   guides:
-    - add-meta-tags
     - prerender-routes
 - title: Installable
   guides:
