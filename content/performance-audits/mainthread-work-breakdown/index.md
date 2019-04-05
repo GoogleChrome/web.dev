@@ -1,16 +1,13 @@
 ---
 page_type: guide
-title: Mainthread work breakdown
+title: Minimizes main thread work
 author: megginkearney
-description: |
-  TBD
+description: Reference documentation for the "Minimizes main thread work" Lighthouse audit.
 web_lighthouse:
 - mainthread-work-breakdown
-web_updated_on: 2019-03-20
-web_published_on: 2019-03-20
+web_updated_on: 2019-04-05
+web_published_on: 2019-04-05
 wf_blink_components: N/A
 ---
 
-# TBD
-
-## TBD
+# Minimizes main thread work

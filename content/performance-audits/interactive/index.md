@@ -1,8 +1,8 @@
 ---
 page_type: guide
-title: Critical request chains
+title: Time to interactive
 author: megginkearney
-description: Reference documentation for the "Critical request chains" Lighthouse audit.
+description: Reference documentation for the "Time to interactive" Lighthouse audit.
 web_lighthouse:
 - critical-request-chains
 web_updated_on: 2019-04-05
@@ -10,4 +10,4 @@ web_published_on: 2019-04-05
 wf_blink_components: N/A
 ---
 
-# Critical request chains
+# Time to interactive

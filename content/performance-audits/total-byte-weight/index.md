@@ -1,16 +1,13 @@
 ---
 page_type: guide
-title: Total byte weight
+title: Has enormous network payloads
 author: megginkearney
-description: |
-  TBD
+description: Reference documentation for the "Has enormous network payloads" Lighthouse audit.
 web_lighthouse:
 - total-byte-weight
-web_updated_on: 2019-03-20
-web_published_on: 2019-03-20
+web_updated_on: 2019-04-05
+web_published_on: 2019-04-05
 wf_blink_components: N/A
 ---
 
-# TBD
-
-## TBD
+# Has enormous network payloads

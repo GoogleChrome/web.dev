@@ -6,29 +6,37 @@ order: 10
 
 topics:
 # Topic containing several guides
-- title: About Lighthouse performance audits
+- title: Metrics
   guides:
     - first-contentful-paint
+    - first-meaningful-paint
     - speed-index
-    - time-to-interactive
     - first-cpu-idle
+    - interactive
     - estimated-input-latency
+- title: Load opportunities
+  guides:
     - render-blocking-resources
     - uses-responsive-images
     - offscreen-images
-    - minify-and-compress-payloads
+    - unminified-css
+    - unminified-javascript
     - unused-css-rules
     - uses-optimized-images
-    - serve-images-in-next-gen-formats
-    - preload-critical-assets
+    - uses-webp-images
+    - uses-text-compression
+    - uses-rel-preconnect
     - time-to-first-byte
     - redirects
+    - uses-rel-preload
     - efficient-animated-content
+- title: Diagnostics
+  guides:
     - total-byte-weight
-    - avoid-invisible-text
     - uses-long-cache-ttl
     - dom-size
     - critical-request-chains
     - user-timings
     - bootup-time
     - mainthread-work-breakdown
+    - font-display

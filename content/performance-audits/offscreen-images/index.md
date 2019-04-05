@@ -1,16 +1,13 @@
 ---
 page_type: guide
-title: Offscreen images
+title: Defer offscreen images
 author: megginkearney
-description: |
-  TBD
+description: Reference documentation for the "Defer offscreen images" Lighthouse audit.
 web_lighthouse:
 - offscreen-images
-web_updated_on: 2019-03-20
-web_published_on: 2019-03-20
+web_updated_on: 2019-04-05
+web_published_on: 2019-04-05
 wf_blink_components: N/A
 ---
 
-# TBD
-
-## TBD
+# Defer offscreen images

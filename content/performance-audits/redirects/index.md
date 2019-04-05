@@ -1,16 +1,13 @@
 ---
 page_type: guide
-title: Redirects
+title: Avoid multiple page redirects
 author: megginkearney
-description: |
-  TBD
+description: Reference documentation for the "Avoid multiple page redirects" Lighthouse audit.
 web_lighthouse:
 - redirects
-web_updated_on: 2019-03-20
-web_published_on: 2019-03-20
+web_updated_on: 2019-04-05
+web_published_on: 2019-04-05
 wf_blink_components: N/A
 ---
 
-# TBD
-
-## TBD
+# Avoid multiple page redirects

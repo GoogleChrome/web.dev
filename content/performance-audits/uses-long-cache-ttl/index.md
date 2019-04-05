@@ -1,16 +1,13 @@
 ---
 page_type: guide
-title: Uses long cache ttl
+title: Uses inefficient cache policy on static assets
 author: megginkearney
-description: |
-  TBD
+description: Reference documentation for the "Uses inefficient cache policy on static assets" Lighthouse audit.
 web_lighthouse:
 - uses-long-cache-ttl
-web_updated_on: 2019-03-20
-web_published_on: 2019-03-20
+web_updated_on: 2019-04-05
+web_published_on: 2019-04-05
 wf_blink_components: N/A
 ---
 
-# TBD
-
-## TBD
+# Uses inefficient cache policy on static assets
