@@ -21,7 +21,7 @@ table {
 }
 
 th {
-  font-family: "Google Sans", sans-serif;
+  font-family: 'Google Sans', sans-serif;
   font-size: 0.875em;
   font-weight: 500;
 }
@@ -36,7 +36,7 @@ tr {
 th,
 td {
   color: inherit;
-  min-width: 50px; // Prevent narrow columns when you have th's like "JS"
+  min-width: 50px; // Prevent narrow columns when you have th's like 'JS'
   text-align: left;
   vertical-align: middle; // DevSite override
 }

@@ -42,7 +42,7 @@ $KEY_POINT_COLOR: #6001ff;
 }
 
 .w-aside::after {
-  content: "";
+  content: '';
   height: 2px;
   left: 0;
   position: absolute;
@@ -74,7 +74,7 @@ $KEY_POINT_COLOR: #6001ff;
 }
 .w-aside--note::before {
   background-color: $WEB_PRIMARY_COLOR;
-  content: "";
+  content: '';
   height: 64px;
   margin: 0;
   position: absolute;
@@ -89,7 +89,7 @@ $KEY_POINT_COLOR: #6001ff;
   background-color: $CAUTION_COLOR;
 }
 .w-aside--caution::before {
-  content: "error";
+  content: 'error';
 }
 
 .w-aside--warning {
@@ -99,7 +99,7 @@ $KEY_POINT_COLOR: #6001ff;
   background-color: $WARNING_COLOR;
 }
 .w-aside--warning::before {
-  content: "warning";
+  content: 'warning';
 }
 
 .w-aside--success,
@@ -111,10 +111,10 @@ $KEY_POINT_COLOR: #6001ff;
   background-color: $SUCCESS_COLOR;
 }
 .w-aside--success::before {
-  content: "done";
+  content: 'done';
 }
 .w-aside--objective::before {
-  content: "school";
+  content: 'school';
 }
 
 .w-aside--key-point,
@@ -126,10 +126,10 @@ $KEY_POINT_COLOR: #6001ff;
   background-color: $KEY_POINT_COLOR;
 }
 .w-aside--key-point::before {
-  content: "lightbulb_outline";
+  content: 'lightbulb_outline';
 }
 .w-aside--key-term::before {
-  content: "font_download";
+  content: 'font_download';
 }
 
 .w-aside--codelab {
@@ -139,7 +139,7 @@ $KEY_POINT_COLOR: #6001ff;
   background-color: $WEB_EXTENDED_SECONDARY_COLOR;
 }
 .w-aside--codelab::before {
-  content: "code";
+  content: 'code';
 }
 
 // We use descendant selectors here (instead of BEM) because the content inside

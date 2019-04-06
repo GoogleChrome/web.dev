@@ -57,12 +57,12 @@
 }
 
 .w-author__link-listitem::after {
-  content: "·";
+  content: '·';
   display: inline-block;
   margin: 0 4px;
 }
 
 .w-author__link-listitem:last-of-type::after {
-  content: "";
+  content: '';
   margin: 0;
 }

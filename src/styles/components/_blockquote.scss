@@ -20,7 +20,7 @@
 
 .w-blockquote::before {
   @extend %w-material-icons;
-  content: "format_quote";
+  content: 'format_quote';
   float: left;
   margin: 4px 0 0 -48px;
 }

@@ -25,7 +25,7 @@
 
 .w-collection__info::before {
   background-color: $WEB_PRIMARY_COLOR;
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   width: 64px;
@@ -48,7 +48,7 @@
 }
 
 .w-collection__info-listitem::after {
-  content: "·";
+  content: '·';
   display: inline-block;
   margin: 0 8px;
 }
@@ -59,12 +59,12 @@
 }
 
 .w-collection__info-listitem:last-of-type::after {
-  content: "";
+  content: '';
   margin: 0;
 }
 
 .w-collection__info-listitem--more-info::after {
-  content: "";
+  content: '';
 }
 
 .w-collection__info-listitem--updated {

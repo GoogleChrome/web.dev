@@ -30,6 +30,7 @@
       }
     ],
     "declarations-before-nesting": 1,
+    "final-newline": 1,
     "no-debug": 1,
     "no-css-comments": 1,
     "property-sort-order": [
@@ -38,7 +39,7 @@
         "order": "alphabetical"
       }
     ],
-    "final-newline": 1,
+    "quotes": 1,
     "shorthand-values": 1,
     "variable-name-format": [
       1,
