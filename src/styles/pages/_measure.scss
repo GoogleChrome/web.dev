@@ -26,7 +26,12 @@
   @include bp(sm) {
     align-items: center;
     display: grid;
+    // sass-lint:disable-all
+    // scss-lint:disable all
     gap: 54px;
+    grid-gap: 54px;
+    // scss-lint:enable all
+    // sass-lint:enable-all
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }

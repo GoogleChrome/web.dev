@@ -35,10 +35,23 @@ Learn more @ https://speakerdeck.com/dafed/managing-css-projects-with-itcss
 
 ## Linting
 
-We use [Stylelint](https://github.com/sasstools/sass-lint) to match Google's
+We use [sass-lint](https://github.com/sasstools/sass-lint) to match Google's
 internal SCSS style guide.
 
-- [Styelint rules quick reference](https://github.com/sasstools/sass-lint/tree/master/docs/rules).
+If you need to disable a rule you'll need to do it for both sass-lint and
+scss-lint which Google uses internally. We don't use scss-lint because it's
+[deprecated](https://github.com/brigade/scss-lint#notice-consider-other-tools-before-adopting-scss-lint).
+
+```scss
+// sass-lint:disable-all
+// scss-lint:disable all
+gap: 16px;
+grid-gap: 16px;
+// scss-lint:enable all
+// sass-lint:enable-all
+```
+
+- [sass-lint rules quick reference](https://github.com/sasstools/sass-lint/tree/master/docs/rules).
 
 ## Tips
 
