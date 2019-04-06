@@ -142,9 +142,8 @@ $KEY_POINT_COLOR: #6001ff;
   content: "code";
 }
 
-// TODO: It would be great to not use descendant selectors and instead have a
-// markdown macro that converts anchors and paragraphs inside of .w-aside to
-// use a BEM class.
+// We use descendant selectors here (instead of BEM) because the content inside
+// of an aside will likely be coming from markdown.
 .w-aside a,
 .w-aside p,
 .w-aside code {
