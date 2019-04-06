@@ -23,7 +23,7 @@ Learn more @ https://speakerdeck.com/dafed/managing-css-projects-with-itcss
 ```
 
 - Use [hyphenated BEM style](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
-- Prefix classes with `w-` which stands for "web". This helps us namespace our
+- Prefix classes with `w-` which stands for 'web'. This helps us namespace our
   CSS so we don't conflict with DevSite.
 - Only nest 2 levels deep.
 - Add a comment, `// DevSite override`, to any CSS that's used to override a
@@ -32,6 +32,13 @@ Learn more @ https://speakerdeck.com/dafed/managing-css-projects-with-itcss
   ```
   color: pink; // DevSite override
   ```
+
+## Linting
+
+We use [Stylelint](https://github.com/sasstools/sass-lint) to match Google's
+internal SCSS style guide.
+
+- [Styelint rules quick reference](https://github.com/sasstools/sass-lint/tree/master/docs/rules).
 
 ## Tips
 

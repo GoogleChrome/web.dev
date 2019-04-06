@@ -23,7 +23,7 @@ devsite-heading:hover .devsite-heading-link {
   opacity: 1;
 }
 devsite-heading .devsite-heading-link::after {
-  content: "link";
+  content: 'link';
 }
 devsite-heading .devsite-back-to-top-link {
   display: none;
@@ -32,7 +32,7 @@ devsite-heading .devsite-back-to-top-link {
   top: 0;
 }
 devsite-heading .devsite-back-to-top-link::before {
-  content: "arrow_upward";
+  content: 'arrow_upward';
 }
 devsite-heading .devsite-back-to-top-link:focus {
   color: #b3e5fc;

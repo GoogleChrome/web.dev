@@ -108,13 +108,13 @@ devsite-snackbar .devsite-snackbar-link:focus {
     margin-right: 0;
     max-width: 100%;
   }
-  devsite-snackbar [type="cookie-notification"] .devsite-snackbar-inner,
-  devsite-snackbar [type^="notification-"] .devsite-snackbar-inner {
+  devsite-snackbar [type='cookie-notification'] .devsite-snackbar-inner,
+  devsite-snackbar [type^='notification-'] .devsite-snackbar-inner {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
-  devsite-snackbar [type="cookie-notification"] .devsite-snackbar-message,
-  devsite-snackbar [type^="notification-"] .devsite-snackbar-message {
+  devsite-snackbar [type='cookie-notification'] .devsite-snackbar-message,
+  devsite-snackbar [type^='notification-'] .devsite-snackbar-message {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;

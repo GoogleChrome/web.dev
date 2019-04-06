@@ -81,7 +81,7 @@
 
 .w-article__cover--small::before {
   background-color: $WEB_PRIMARY_COLOR;
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   position: absolute;
@@ -132,7 +132,7 @@
 
 .w-article__desc::before {
   background-color: $WEB_PRIMARY_COLOR;
-  content: "";
+  content: '';
   display: block;
   height: 2px;
   position: absolute;
@@ -180,7 +180,7 @@
   color: $GREY_700;
   display: block;
   float: left;
-  font-family: "Google Sans", san-sans-serif;
+  font-family: 'Google Sans', san-sans-serif;
   font-size: 12px;
 
   @include bp(xsm) {
@@ -189,7 +189,7 @@
 }
 
 .w-article__info-listitem::after {
-  content: "·";
+  content: '·';
   display: inline-block;
   margin: 0 8px;
 }
@@ -200,15 +200,15 @@
 }
 
 .w-article__info-listitem:last-of-type::after {
-  content: "";
+  content: '';
   margin: 0;
 }
 
 .w-article__info-listitem--published::after {
-  content: "";
+  content: '';
 
   @include bp(sm) {
-    content: "·";
+    content: '·';
   }
 }
 
