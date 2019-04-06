@@ -34,9 +34,11 @@
 .w-cross-link:hover {
   border: 1px solid rgba($WEB_EXTENDED_SECONDARY_COLOR, .2);
 }
+
 .w-cross-link:focus {
   border: 1px solid rgba($WEB_EXTENDED_SECONDARY_COLOR, .28);
 }
+
 .w-cross-link:active {
   border: 1px solid rgba($WEB_EXTENDED_SECONDARY_COLOR, .43);
   box-shadow:
@@ -56,12 +58,15 @@
 .w-cross-link::before {
   @extend %w-overlay;
 }
+
 .w-cross-link:hover::before {
   background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .04);
 }
+
 .w-cross-link:focus::before {
   background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .12);
 }
+
 .w-cross-link:active::before {
   background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .16);
 }

@@ -30,6 +30,7 @@
       }
     ],
     "declarations-before-nesting": 1,
+    "empty-line-between-blocks": 1,
     "final-newline": 1,
     "no-debug": 1,
     "no-css-comments": 1,

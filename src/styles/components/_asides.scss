@@ -59,9 +59,11 @@ $KEY_POINT_COLOR: #6001ff;
 .w-aside--left {
   padding: 24px 48px 0 0;
 }
+
 .w-aside--left::after {
   left: -100vw;
 }
+
 .w-aside--left::before {
   right: 0;
 }
@@ -69,9 +71,11 @@ $KEY_POINT_COLOR: #6001ff;
 .w-aside--note {
   color: $WEB_PRIMARY_COLOR;
 }
+
 .w-aside--note::after {
   background-color: $WEB_PRIMARY_COLOR;
 }
+
 .w-aside--note::before {
   background-color: $WEB_PRIMARY_COLOR;
   content: '';
@@ -85,9 +89,11 @@ $KEY_POINT_COLOR: #6001ff;
 .w-aside--caution {
   color: $CAUTION_COLOR;
 }
+
 .w-aside--caution::after {
   background-color: $CAUTION_COLOR;
 }
+
 .w-aside--caution::before {
   content: 'error';
 }
@@ -95,9 +101,11 @@ $KEY_POINT_COLOR: #6001ff;
 .w-aside--warning {
   color: $WARNING_COLOR;
 }
+
 .w-aside--warning::after {
   background-color: $WARNING_COLOR;
 }
+
 .w-aside--warning::before {
   content: 'warning';
 }
@@ -106,13 +114,16 @@ $KEY_POINT_COLOR: #6001ff;
 .w-aside--objective {
   color: $SUCCESS_COLOR;
 }
+
 .w-aside--success::after,
 .w-aside--objective::after {
   background-color: $SUCCESS_COLOR;
 }
+
 .w-aside--success::before {
   content: 'done';
 }
+
 .w-aside--objective::before {
   content: 'school';
 }
@@ -121,13 +132,16 @@ $KEY_POINT_COLOR: #6001ff;
 .w-aside--key-term {
   color: $KEY_POINT_COLOR;
 }
+
 .w-aside--key-point::after,
 .w-aside--key-term::after {
   background-color: $KEY_POINT_COLOR;
 }
+
 .w-aside--key-point::before {
   content: 'lightbulb_outline';
 }
+
 .w-aside--key-term::before {
   content: 'font_download';
 }
@@ -135,9 +149,11 @@ $KEY_POINT_COLOR: #6001ff;
 .w-aside--codelab {
   color: $WEB_EXTENDED_SECONDARY_COLOR;
 }
+
 .w-aside--codelab::after {
   background-color: $WEB_EXTENDED_SECONDARY_COLOR;
 }
+
 .w-aside--codelab::before {
   content: 'code';
 }
@@ -149,9 +165,11 @@ $KEY_POINT_COLOR: #6001ff;
 .w-aside code {
   color: inherit;
 }
+
 .w-aside a {
   text-decoration: underline;
 }
+
 .w-aside p {
   font-family: inherit;
   font-size: inherit;
