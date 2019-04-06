@@ -44,8 +44,8 @@ $TAB_HEIGHT: 64px;
 
 [ds-is='tabs'].upper-tabs tab a:focus {
   border: 0;
-  outline: 0;
   box-shadow: inset 0 0 0 1px $WEB_SECONDARY_COLOR;
+  outline: 0;
 }
 
 [ds-is='user']:not([signed-in]) {
