@@ -50,6 +50,7 @@
 
 .w-grid__columns--three {
   @extend %w-grid__columns--two;
+
   @include bp(lg) {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     max-width: 1320px;
