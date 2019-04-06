@@ -47,22 +47,6 @@ The easiest way to debug the site is to add a `debugger` statement to
 `.eleventy.js`, then run `npm run debug`, and go to `chrome://inspect` to
 attach to the running process.
 
-## Creating templates
-
-### Includes vs. macros
-
-[includes](https://mozilla.github.io/nunjucks/templating.html#include)
-have access to the global data objects created by eleventy's `_data` folder and
-have access to the scope of their including template.
-
-[macros](https://mozilla.github.io/nunjucks/templating.html#macro) define their
-own scope and must have all data passed in as arguments.
-
-Whenever possible, **use macros instead of includes**. Explicitly passing data
-to a function is preferred over relying on global state. This avoids situations
-where the global object is accidentally renamed without updating the dependent
-templates.
-
 ## Found a bug?
 
 You can file an issue [in our issue
