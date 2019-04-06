@@ -40,6 +40,7 @@
   max-width: 512px;
 }
 
+%w-grid__columns--two,
 .w-grid__columns--two {
   @include bp(md) {
     grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -48,7 +49,7 @@
 }
 
 .w-grid__columns--three {
-  @extend .w-grid__columns--two;
+  @extend %w-grid__columns--two;
   @include bp(lg) {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     max-width: 1320px;

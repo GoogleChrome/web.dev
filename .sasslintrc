@@ -38,6 +38,7 @@
     "no-mergeable-selectors": 1,
     "no-trailing-whitespace": 1,
     "no-transition-all": 1,
+    "placeholder-in-extend": 1,
     "property-sort-order": [
       1,
       {
