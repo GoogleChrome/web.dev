@@ -4,8 +4,12 @@
   },
   "files": {
     "ignore": [
-      "src/styles/devsite/**/*.scss",
-      "src/styles/tools/**/*.scss"
+      "src/styles/devsite/_app.scss",
+      "src/styles/devsite/_devsite_debug_info.scss",
+      "src/styles/devsite/_devsite_heading.scss",
+      "src/styles/devsite/_devsite_snackbar.scss",
+      "src/styles/devsite/_devsite_tooltip.scss",
+      "src/styles/devsite/_elements.scss",
     ]
   },
   "rules": {

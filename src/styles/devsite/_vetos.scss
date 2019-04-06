@@ -1,0 +1,85 @@
+// =============================================================================
+// VETOS OVERVIEW
+//
+// This file nullifies DevSite styles we don't want on our site.
+//
+// =============================================================================
+
+// sass-lint:disable class-name-format
+
+$TAB_HEIGHT: 64px;
+
+[ds-is='header'] .devsite-top-logo-row,
+[ds-is='tabs'] {
+  height: $TAB_HEIGHT;
+}
+
+[ds-is='header'] .devsite-site-logo-link:focus {
+  opacity: 1;
+}
+
+[ds-is='header'] .devsite-site-logo {
+  height: 30px; // natural height of lockup
+}
+
+[ds-is='search'] {
+  align-self: center;
+  margin: 14px 0 14px 24px;
+}
+
+[ds-is='header'] devsite-search-background {
+  padding: 14px 0;
+}
+
+[ds-is='tabs'].upper-tabs tab a {
+  display: flex;
+}
+
+[ds-is='tabs'].upper-tabs tab a,
+[ds-is='tabs'].upper-tabs tab a:focus,
+[ds-is='tabs'].upper-tabs tab a:hover,
+[ds-is='tabs'].upper-tabs tab a:active {
+  font-weight: 500;
+}
+
+[ds-is='tabs'].upper-tabs tab a:focus {
+  border: 0;
+  outline: 0;
+  box-shadow: inset 0 0 0 1px $WEB_SECONDARY_COLOR;
+}
+
+[ds-is='user']:not([signed-in]) {
+  flex: 0 0 96px;
+  margin-right: -8px; // fouc prevention
+}
+
+// At runtime DevSite will wrap h1-h6s in devsite-heading elements and attempt
+// to linkify them. This disables their link buttons because it breaks our
+// design.
+devsite-heading .devsite-heading-link,
+devsite-heading .devsite-back-to-top-link {
+  display: none !important;
+}
+
+// devsite-heading adds its styles after our CSS has loaded. Its styles already
+// contain !important so we add body to increase specificity :(
+body devsite-heading[link] {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+// TODO (b/118724350)
+.devsite-collapsible-section.devsite-header-no-lower-tabs {
+  display: none;
+}
+
+.devsite-site-logo-link:focus,
+.devsite-footer-sites-logo-link:focus {
+  outline: auto;
+  outline-color: $WEB_SECONDARY_COLOR;
+}
+
+devsite-content-footer.container.nocontent {
+  color: $GREY_700;
+  margin-bottom: 32px;
+}

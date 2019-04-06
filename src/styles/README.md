@@ -11,6 +11,8 @@ Learn more @ https://speakerdeck.com/dafed/managing-css-projects-with-itcss
 - components: Chunks of UI
 - pages: Page-specific styles (use sparingly if at all)
 - overrides: Utility classes for things like text alignment, box shadows, etc.
+- devsite: DevSite specific styles we use to replicate their live environment.
+  There's a file called _veto.scss which we use to nullify some of their styles.
 
 ## Rules
 
