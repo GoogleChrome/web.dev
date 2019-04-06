@@ -73,12 +73,15 @@ button:active {
 .w-button::after {
   @extend %w-overlay;
 }
+
 .w-button:hover::after {
   background-color: rgba($WEB_PRIMARY_COLOR, .04);
 }
+
 .w-button:focus::after {
   background-color: rgba($WEB_PRIMARY_COLOR, .12);
 }
+
 .w-button:active::after {
   background-color: rgba($WEB_PRIMARY_COLOR, .16);
 }
@@ -90,6 +93,7 @@ button:active {
 .w-button--with-icon:active {
   padding: 0 24px 0 16px;
 }
+
 .w-button--with-icon::before {
   @extend %w-material-icons;
   content: attr(data-icon);
@@ -107,12 +111,15 @@ button:active {
   background-color: $WEB_PRIMARY_COLOR;
   color: $WHITE;
 }
+
 .w-button--primary:hover::after {
   background-color: rgba($WHITE, .08);
 }
+
 .w-button--primary:focus::after {
   background-color: rgba($WHITE, .24);
 }
+
 .w-button--primary:active::after {
   background-color: rgba($WHITE, .32);
 }
@@ -126,12 +133,15 @@ button:active {
   border: 1px solid $GREY_300;
   color: $PRIMARY_TEXT_COLOR;
 }
+
 .w-button--secondary:hover::after {
   background-color: rgba($BLACK, .04);
 }
+
 .w-button--secondary:focus::after {
   background-color: rgba($BLACK, .08);
 }
+
 .w-button--secondary:active::after {
   background-color: rgba($BLACK, .1);
 }
