@@ -22,7 +22,7 @@
   background-position: left 50% top -215px;
   background-repeat: no-repeat;
   background-size: 400px;
-  
+
   @include bp(sm) {
     background-position: left 430px top 50%;
     background-size: 650px;
@@ -39,7 +39,7 @@
   max-width: 960px;
   overflow: visible;
   padding: 176px 24px 72px;
-  
+
   @include bp(sm) {
     padding: 72px 24px;
   }
