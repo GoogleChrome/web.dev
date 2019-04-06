@@ -47,9 +47,12 @@
         "order": "alphabetical"
       }
     ],
+    "pseudo-element": 1,
     "quotes": 1,
     "shorthand-values": 1,
+    "single-line-per-selector": 1,
     "space-after-comma": 1,
+    "space-around-operator": 1,
     "variable-name-format": [
       1,
       {
