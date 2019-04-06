@@ -1,5 +1,6 @@
 // Dependencies:
 // settings/_colors.scss
+// settings/_global.scss
 
 // =============================================================================
 // CHIPS OVERVIEW
@@ -25,7 +26,7 @@
   margin: 0 8px 12px 0;
   overflow: hidden;
   padding: 0 12px;
-  transition: all .1s;
+  transition: background-color $TRANSITION_SPEED, border $TRANSITION_SPEED;
 }
 
 .w-chip:hover,
