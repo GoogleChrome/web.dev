@@ -27,9 +27,13 @@ summary {
   list-style: none;
   padding-right: #{$CHEVRON_SIZE + 8px};
 
+  // scss-lint thinks this is a pseudo class instead of a psuedo element
+  // and complains about the two colons.
+  // scss-lint:disable all
   &::-webkit-details-marker {
     display: none;
   }
+  // scss-lint:enable all
 
   &::before {
     @extend %w-material-icons;
