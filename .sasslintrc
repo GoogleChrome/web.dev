@@ -42,6 +42,7 @@
     ],
     "quotes": 1,
     "shorthand-values": 1,
+    "space-after-comma": 1,
     "variable-name-format": [
       1,
       {
