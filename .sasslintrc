@@ -39,6 +39,7 @@
       }
     ],
     "final-newline": 1,
+    "shorthand-values": 1,
     "variable-name-format": [
       1,
       {

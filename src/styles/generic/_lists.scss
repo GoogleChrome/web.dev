@@ -43,7 +43,7 @@ ol:not([class]) li::before {
   height: 20px;
   justify-content: center;
   left: 0;
-  margin: 6px 0 0 0;
+  margin: 6px 0 0;
   position: absolute;
   width: 20px;
 }
@@ -68,7 +68,7 @@ ul:not([class]) li::before {
   content: "";
   height: 8px;
   left: 0;
-  margin: 12px 0 0 0;
+  margin: 12px 0 0;
   position: absolute;
   width: 8px;
 }
