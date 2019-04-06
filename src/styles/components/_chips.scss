@@ -50,6 +50,7 @@
 .w-chip:active {
   background-color: rgba($BLACK, .16);
   border: 1px solid rgba($GREY_900, .43);
+  // sass-lint:disable-block indentation
   box-shadow:
     0 5px 5px -3px rgba($BLACK, .2),
     0 8px 10px 1px rgba($BLACK, .14),

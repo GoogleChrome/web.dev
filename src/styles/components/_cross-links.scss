@@ -41,6 +41,7 @@
 
 .w-cross-link:active {
   border: 1px solid rgba($WEB_EXTENDED_SECONDARY_COLOR, .43);
+  // sass-lint:disable-block indentation
   box-shadow:
     0 5px 5px -3px rgba($WEB_EXTENDED_SECONDARY_COLOR, .2),
     0 8px 10px 1px rgba($WEB_EXTENDED_SECONDARY_COLOR, .14),
