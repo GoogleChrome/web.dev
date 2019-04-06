@@ -1,6 +1,15 @@
 // Dependencies:
 // tools/_functions.scss
 
+// =============================================================================
+// MIXINS OVERVIEW
+//
+// Helpful mixins used throughout the site.
+//
+// =============================================================================
+
+// sass-lint:disable variable-name-format
+
 // Mixin for styling typography via maps containing required integer values for
 // font-family, font-size, font-weight, and line-height; with an optional value
 // for letter-spacing.
@@ -19,10 +28,12 @@
   $line_height: map-get($specs, LINE_HEIGHT);
 
   // Print font styles in shorthand syntax.
-  font: $font_weight #{$font_size}px/#{calculate_unitless_line_height(
+  // sass-lint:disable-block indentation
+  font: $font_weight #{$font_size}px / #{calculate_unitless_line_height(
       $line_height,
       $font_size
     )} $font_family;
+  // sass-lint:enable-block indentation
 
   // Add letter-spacing if it's defined in the map.
   @if map-has-key($specs, LETTER_SPACING) {
@@ -53,10 +64,10 @@
 // 'material-icons' class defined at http://fonts.googleapis.com/css?family=Material+Icons.
 // You can look up the name of an icon at https://material.io/icons/.
 @mixin font_material_icon() {
-  font: normal normal normal 24px/1 'Material Icons';
-  font-feature-settings: 'liga';
   -moz-osx-font-smoothing: grayscale; // @alternate
   -webkit-font-smoothing: antialiased; // @alternate
+  font: normal normal normal 24px / 1 'Material Icons';
+  font-feature-settings: 'liga';
   text-rendering: optimizeLegibility;
   text-transform: none;
   word-wrap: normal;
