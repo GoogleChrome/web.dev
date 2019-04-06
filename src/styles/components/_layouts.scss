@@ -36,12 +36,6 @@
 .w-layout-grid--three,
 .w-layout-grid--four {
   display: grid;
-}
-
-// Based on a max-width of 960px
-.w-layout-grid--two,
-.w-layout-grid--three,
-.w-layout-grid--four {
   gap: 16px;
   grid-gap: 16px;
 }

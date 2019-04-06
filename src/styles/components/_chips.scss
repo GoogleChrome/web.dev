@@ -14,18 +14,15 @@
 }
 
 .w-chip {
-  box-sizing: border-box;
-  display: block;
-  margin: 0 8px 12px 0;
-}
-
-.w-chip {
   background-color: rgba($GREY_900, 0);
   border: 1px solid rgba($GREY_900, .16);
   border-radius: 20px;
+  box-sizing: border-box;
   color: $GREY_900;
+  display: block;
   font-size: 14px;
   line-height: 30px;
+  margin: 0 8px 12px 0;
   overflow: hidden;
   padding: 0 12px;
   transition: all .1s;
