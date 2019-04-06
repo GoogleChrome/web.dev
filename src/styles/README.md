@@ -51,6 +51,10 @@ grid-gap: 16px;
 // sass-lint:enable-all
 ```
 
+Some rules, like `indentation` are stricter in sass-lint then they are in
+scss-lint. It's ok to disable overly strict sass-lint rules if scss-lint isn't
+complaining. This is especially useful for formatting box-shadow properties.
+
 - [sass-lint rules quick reference](https://github.com/sasstools/sass-lint/tree/master/docs/rules).
 
 ## Tips

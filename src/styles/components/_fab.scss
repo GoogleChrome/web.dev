@@ -17,6 +17,7 @@
   border: 0;
   border-radius: $GLOBAL_ROUNDED;
   bottom: 24px;
+  // sass-lint:disable-block indentation
   box-shadow:
     0 2px 4px -1px rgba($BLACK, .2),
     0 4px 5px 0 rgba($BLACK, .14),
@@ -42,6 +43,7 @@
 
 .w-fab:active {
   background-color: $WEB_PRIMARY_COLOR; // DevSite override
+  // sass-lint:disable-block indentation
   box-shadow:
     0 5px 5px -3px rgba($BLACK, .2),
     0 8px 10px 1px rgba($BLACK, .14),

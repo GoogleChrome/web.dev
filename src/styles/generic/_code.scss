@@ -14,68 +14,68 @@
 
 // TODO (robdodson): Need to revsit this color palette.
 $CODE_COLORS: (
-	blue: #183691,
-	teal: #0086b3,
-	black: $PRIMARY_TEXT_COLOR,
-	purple: #a71d5d,
-	maroon: #a71d5d,
-	green: #63a35c,
-	light-gray: #f7f7f7,
-	dark-gray: #969896
+  blue: #183691,
+  teal: #0086b3,
+  black: $PRIMARY_TEXT_COLOR,
+  purple: #a71d5d,
+  maroon: #a71d5d,
+  green: #63a35c,
+  light-gray: #f7f7f7,
+  dark-gray: #969896
 );
 
 code {
-	font-size: .9em;
-	font-weight: 400; // DevSite override
-	margin: 0 .25em;
-	padding: .125em .25em;
+  font-size: .9em;
+  font-weight: 400; // DevSite override
+  margin: 0 .25em;
+  padding: .125em .25em;
 }
 
 code,
 pre {
-	background: map-get($CODE_COLORS, light-gray);
-	border: 1px solid $GREY_300;
-	hyphens: none;
-	tab-size: 2;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
+  background: map-get($CODE_COLORS, light-gray);
+  border: 1px solid $GREY_300;
+  hyphens: none;
+  tab-size: 2;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
 }
 
 // Code block
 pre,
 pre[class*='language-'] {
-	font: 1em/1.5em $CODE_FONT;
-	margin: 32px 0;
-	overflow: auto;
-	padding: 16px;
+  font: 1em/1.5em $CODE_FONT;
+  margin: 32px 0;
+  overflow: auto;
+  padding: 16px;
 }
 
 pre code,
 pre[class*='language-'] code {
-	font-size: 1em;
-	line-height: 1.5em;
-	margin: 0;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0;
 }
 
 pre code,
 table code {
-	background: transparent;
-	border: 0;
+  background: transparent;
+  border: 0;
 }
 
 table code {
-	font-size: .9em; // DevSite override
-	font-weight: 400; // DevSite override
-	line-height: 1.7em; // DevSite override
+  font-size: .9em; // DevSite override
+  font-weight: 400; // DevSite override
+  line-height: 1.7em; // DevSite override
 
-	// Prism inserts white space characters before and after code blocks
-	// help center them in space.
-	&::before,
-	&::after {
-		content: '\00a0';
-		letter-spacing: -3px;
-	}
+  // Prism inserts white space characters before and after code blocks
+  // help center them in space.
+  &::before,
+  &::after {
+    content: '\00a0';
+    letter-spacing: -3px;
+  }
 }
 
 
@@ -88,54 +88,54 @@ table code {
 // our class name format.
 // sass-lint:disable class-name-format
 .token {
-	&.comment,
-	&.prolog,
-	&.doctype,
-	&.cdata {
-		color: map-get($CODE_COLORS, dark-gray);
-	}
+  &.comment,
+  &.prolog,
+  &.doctype,
+  &.cdata {
+    color: map-get($CODE_COLORS, dark-gray);
+  }
 
-	&.punctuation,
-	&.string,
-	&.atrule,
-	&.attr-value {
-		color: map-get($CODE_COLORS, blue);
-	}
+  &.punctuation,
+  &.string,
+  &.atrule,
+  &.attr-value {
+    color: map-get($CODE_COLORS, blue);
+  }
 
-	&.property,
-	&.tag {
-		color: map-get($CODE_COLORS, green);
-	}
+  &.property,
+  &.tag {
+    color: map-get($CODE_COLORS, green);
+  }
 
-	&.boolean,
-	&.number {
-		color: map-get($CODE_COLORS, teal);
-	}
+  &.boolean,
+  &.number {
+    color: map-get($CODE_COLORS, teal);
+  }
 
-	&.selector,
-	&.attr-name,
-	&.attr-value .punctuation:first-child,
-	&.keyword,
-	&.regex,
-	&.important {
-		color: map-get($CODE_COLORS, maroon);
-	}
+  &.selector,
+  &.attr-name,
+  &.attr-value .punctuation:first-child,
+  &.keyword,
+  &.regex,
+  &.important {
+    color: map-get($CODE_COLORS, maroon);
+  }
 
 
-	&.operator,
-	&.entity,
-	&.url,
-	.language-css &.string {
-		color: map-get($CODE_COLORS, purple);
-	}
+  &.operator,
+  &.entity,
+  &.url,
+  .language-css &.string {
+    color: map-get($CODE_COLORS, purple);
+  }
 
-	&.entity {
-		cursor: help;
-	}
+  &.entity {
+    cursor: help;
+  }
 
 }
 
 .namespace {
-	opacity: .7;
+  opacity: .7;
 }
 // sass-lint:enable class-name-format
