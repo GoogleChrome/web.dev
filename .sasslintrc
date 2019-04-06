@@ -38,6 +38,7 @@
         "order": "alphabetical"
       }
     ],
+    "final-newline": 1,
     "variable-name-format": [
       1,
       {
