@@ -1,13 +1,16 @@
 ---
-page_type: glitch
+layout: codelab
 title: Remove unused code
 author: houssein
 description: |
   In this codelab, learn how to improve the performance of an application by
   removing any unused and unneeded dependencies.
+related_post: remove-unused-code
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 glitch: fav-kitties-starter
+tags:
+  - codelab
 ---
 
 In this codelab, improve the performance of the following application by
@@ -17,14 +20,18 @@ removing any unused and unneeded dependencies.
 
 ## Measure
 
-<div class="aside note">
- Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
+<div class="w-aside w-aside--note w-aside--left">
+  Since webpack is used in this application, any changes made to the code will
+  trigger a new build which can take a few seconds. Once it completes, you
+  should see your changes reflected in the application.
 </div>
 
 It's always a good idea to first measure how well a website performs before
 adding optimizations.
 
 - Click on the **Show Live** button to view the live version of the Glitch.
+
+<web-screenshot type="show-live"></web-screenshot>
 
 Go ahead and click on your favorite kitten! Firebase's [Realtime Database](https://firebase.google.com/products/realtime-database/) is used in
 this application which is why the score updates in real-time and is synchronized
