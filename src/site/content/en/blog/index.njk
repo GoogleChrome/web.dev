@@ -18,7 +18,7 @@ title: Blog
   </div>
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
-      {% for post in collections.post %}
+      {% for post in collections.post | reverse %}
       <div class="w-grid__item" role="listitem">
         {{ components.Article(post, authors[post.data.author], post.data.author) }}
       </div>
