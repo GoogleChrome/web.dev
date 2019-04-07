@@ -119,17 +119,17 @@ $KEY_POINT_COLOR: #6001ff;
   content: 'school';
 }
 
-.w-aside--key-point,
+.w-aside--gotchas,
 .w-aside--key-term {
   color: $KEY_POINT_COLOR;
 }
 
-.w-aside--key-point::after,
+.w-aside--gotchas::after,
 .w-aside--key-term::after {
   background-color: $KEY_POINT_COLOR;
 }
 
-.w-aside--key-point::before {
+.w-aside--gotchas::before {
   content: 'lightbulb_outline';
 }
 
@@ -166,5 +166,9 @@ $KEY_POINT_COLOR: #6001ff;
   font-size: inherit;
   letter-spacing: normal;
   line-height: inherit;
-  margin: 8px 0;
+  margin: 0;
+}
+
+.w-aside--gotchas p {
+  margin-top: 8px;
 }
