@@ -1,0 +1,29 @@
+---
+layout: layout
+permalink: /{{language}}/{{page.fileSlug}}/index.html
+---
+
+<main class="codelab-landing-page">
+  <web-codelab glitch="{{ glitch }}" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <div class="web-codelab-instructions__heading">
+        <div class="web-codelab-instructions__heading-breadcrumb">
+          <a class="go-back gc-analytics-event"
+              data-category="web.dev"
+              data-label="codelab, go back"
+              data-action="click"
+              aria-label="Return to guides"
+              href="{{ related_post }}">
+            {{ related_post.title }}
+          </a>
+        </div>
+        <div class="web-codelab-instructions__heading-title">
+          <h1>{{ title }}</h1>
+        </div>
+      </div>
+      <div class="web-codelab-instructions__body">
+        {{ content | safe}}
+      </div>
+    </div>
+  </web-codelab>
+</main>
