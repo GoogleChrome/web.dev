@@ -1,6 +1,16 @@
 // Dependencies:
 // tools/_breakpoints.scss
 
+.w-measure-header {
+  margin-bottom: 96px;
+}
+
+.w-measure-results {
+  padding: 40px 0;
+  background: $GREY_50;
+  min-height: 300px;
+}
+
 .w-measure-steps {
   display: flex;
   flex-direction: column;

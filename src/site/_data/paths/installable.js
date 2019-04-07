@@ -1,6 +1,6 @@
 module.exports = {
   url: '/installable',
-  cover: '/images/installable.svg',
+  cover: '/images/collections/installable.svg',
   title: 'Installable',
   updated: 'May 24, 2018',
   description: `Be on users’ home screens with no need for an app store.`,

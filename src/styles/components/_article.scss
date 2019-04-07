@@ -85,7 +85,7 @@
   display: block;
   height: 2px;
   position: absolute;
-  top: 24px;
+  top: 32px;
   width: 64px;
   z-index: -1;
 }
@@ -105,9 +105,19 @@
   position: relative;
 }
 
-.w-article__image {
+.w-article__image,
+.w-article__image--small {
   max-width: 100%;
   min-width: 100%;
+  object-fit: cover;
+}
+
+.w-article__image {
+  height: 240px;
+}
+
+.w-article__image--small {
+  height: 170px;
 }
 
 .w-article__headline {

@@ -1,6 +1,6 @@
 module.exports = {
   url: '/discoverable',
-  cover: '/images/discoverable.svg',
+  cover: '/images/collections/discoverable.svg',
   title: 'Easily discoverable',
   updated: 'May 24, 2018',
   description: `Ensure users can find your site easily through search.`,

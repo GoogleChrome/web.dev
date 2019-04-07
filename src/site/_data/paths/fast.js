@@ -1,6 +1,6 @@
 module.exports = {
   url: '/fast',
-  cover: '/images/fast.svg',
+  cover: '/images/collections/fast.svg',
   title: 'Fast load times',
   updated: 'May 24, 2018',
   description: 'Guarantee your site loads quickly to avoid user drop off.',

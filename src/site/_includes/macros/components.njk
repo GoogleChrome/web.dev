@@ -111,7 +111,7 @@ Think of it like React components :)
     <div class="w-article__cover {{ 'w-article__cover--with-image-small' if hero else 'w-article__cover--small' }}">
       {% if hero %}
       <figure class="w-article__figure">
-        <img class="w-article__image" src="{{ post.url }}/{{ hero }}" alt="{{ post.data.alt }}">
+        <img class="w-article__image--small" src="{{ post.url }}/{{ hero }}" alt="{{ post.data.alt }}">
       </figure>
       {% endif %}
 
