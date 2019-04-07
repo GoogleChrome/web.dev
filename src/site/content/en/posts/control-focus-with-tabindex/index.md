@@ -1,13 +1,12 @@
 ---
-layout: guide
+layout: post
 title: Control focus with tabindex
 hero: cover.jpg
 alt: A description for the hero image
-meta:
-  description: |
-    Native HTML elements such as <button> or <input> have keyboard accessibility
-    built-in for free. If you're building custom interactive components, use
-    tabindex to ensure that they're keyboard accessible.
+description: |
+  Native HTML elements such as <button> or <input> have keyboard accessibility
+  built-in for free. If you're building custom interactive components, use
+  tabindex to ensure that they're keyboard accessible.
 author: robdodson
 web_lighthouse:
   - tabindex

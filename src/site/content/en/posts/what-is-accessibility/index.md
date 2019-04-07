@@ -1,12 +1,11 @@
 ---
-layout: guide
+layout: post
 title: What is accessibility
 author: robdodson
-meta:
-  description: |
-    An accessible site is one whose content can be accessed regardless of any
-    user's impairments, and whose functionality can also be operated by the most
-    diverse range of users possible.
+description: |
+  An accessible site is one whose content can be accessed regardless of any
+  user's impairments, and whose functionality can also be operated by the most
+  diverse range of users possible.
 web_lighthouse: N/A
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-18

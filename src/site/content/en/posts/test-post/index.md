@@ -1,13 +1,12 @@
 ---
-layout: guide
+layout: post
 title: Test post
+author: robdodson
 hero: hero.jpg
 alt: A description for the hero image
-meta:
-  description: |
-    This post is a test to demonstrate all of the components that can go into
-    an article.
-author: robdodson
+description: |
+  This post is a test to demonstrate all of the components that can go into
+  an article.
 web_lighthouse:
   - tabindex
   - focusable-controls

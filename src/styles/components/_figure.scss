@@ -15,15 +15,11 @@
 }
 
 .w-figure--hero {
-  margin: 56px auto 0;
-  max-height: 600px;
+  margin: 0 auto;
   max-width: 1200px;
+  max-height: 600px;
   overflow: hidden;
   width: auto;
-
-  @include bp(md) {
-    margin: 64px auto 0;
-  }
 }
 
 // Allow images contained within a figure to be break outside of the main
