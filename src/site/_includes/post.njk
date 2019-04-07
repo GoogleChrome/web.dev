@@ -10,16 +10,18 @@ permalink: /{{language}}/{{page.fileSlug}}/index.html
 <div class="guide-landing-page">
   {% if hero %}
     <figure class="w-figure w-figure--hero">
-      <img src="hero.jpg" alt="">
+      <img class="w-hero" src="{{ hero }}" alt="{{ alt }}">
     </figure>
   {% endif %}
 
   <div class="w-layout-container--narrow">
     <header class="w-article-header">
       <h1 class="w-article-header__headline">{{ title }}</h1>
-      <p class="w-article-header__summary">
-        {{ meta.description }}
-      </p>
+      {% if description %}
+        <p class="w-article-header__summary">
+          {{ description }}
+        </p>
+      {% endif %}
       {{ components.Author(authors[author], author, showSocialMedia=true) }}
     </header>
     {# <button class="w-fab w-fab--share">Share</button> #}

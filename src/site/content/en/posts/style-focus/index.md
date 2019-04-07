@@ -1,11 +1,10 @@
 ---
-layout: guide
+layout: post
 title: Style focus
-meta:
-  description: |
-    The focus indicator (often signified by a "focus ring") identifies the currently
-    focused element. For users who are unable to use a mouse, this indicator is
-    _extremely important_, as it acts as a stand-in for their mouse-pointer.
+description: |
+  The focus indicator (often signified by a "focus ring") identifies the currently
+  focused element. For users who are unable to use a mouse, this indicator is
+  _extremely important_, as it acts as a stand-in for their mouse-pointer.
 author: robdodson
 web_lighthouse: N/A
 wf_blink_components: Blink>Accessibility
