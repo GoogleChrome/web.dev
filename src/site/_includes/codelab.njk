@@ -3,27 +3,49 @@ layout: layout
 permalink: /{{language}}/{{page.fileSlug}}/index.html
 ---
 
+{% import 'macros/components.njk' as components %}
+
+{#
+The styles for web-codelab and .w-codelab-glitch live in DevSite.
+When testing locally we can simulate the custom element's styles with
+this inline style tag.
+#}
+{% if env.mode === 'dev' %}
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .w-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+{% endif %}
+
 <main class="codelab-landing-page">
   <web-codelab glitch="{{ glitch }}" attribution-hidden>
-    <div class="web-codelab-instructions">
-      <div class="web-codelab-instructions__heading">
-        <div class="web-codelab-instructions__heading-breadcrumb">
-          <a class="go-back gc-analytics-event"
-              data-category="web.dev"
-              data-label="codelab, go back"
-              data-action="click"
-              aria-label="Return to guides"
-              href="{{ related_post }}">
-            {{ related_post.title }}
-          </a>
-        </div>
-        <div class="web-codelab-instructions__heading-title">
-          <h1>{{ title }}</h1>
-        </div>
-      </div>
-      <div class="web-codelab-instructions__body">
-        {{ content | safe}}
-      </div>
+    <div class="w-codelab-instructions">
+      <h1 class="w-headline w-headline--two">{{ title }}</h1>
+      {{ components.Author(authors[author], author, showSocialMedia=true) }}
+      {{ content | safe }}
     </div>
+
+    {# Generate our own Glitch for local testing #}
+    {% if env.mode === 'dev' %}
+      <div class="w-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/{{ glitch }}?path={{ path }}&amp;previewSize=0"
+            alt="{{ glitch }} on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    {% endif %}
+
   </web-codelab>
 </main>

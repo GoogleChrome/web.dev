@@ -31,11 +31,15 @@ module.exports = (content, type='note') => {
     case 'warning':
     case 'success':
     case 'objective':
-    case 'codelab':
       prefix = capitalize(type);
       // Create a <strong> with the type of aside and render it inline with
       // the generated markdown.
       content = `**${prefix}:** ${content}`;
+      content = md.render(content);
+      break;
+
+    case 'codelab':
+      content = `**Try it!** ${content}`;
       content = md.render(content);
       break;
 

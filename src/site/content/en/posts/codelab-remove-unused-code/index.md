@@ -94,33 +94,35 @@ different community-built tools that can help do this, such as
 
 The package for this tool is already included in the app as a `devDependency`.
 
-```
+``` js
 "devDependencies": {
   //...
   "webpack-bundle-analyzer": "^2.13.1"
 },
 ```
 
-This means that it can be used directly in the webpack configuration file. Import it at the very beginning of `webpack.config.js`:
+This means that it can be used directly in the webpack configuration file.
+Import it at the very beginning of `webpack.config.js`:
 
-<pre class="prettyprint">
+``` js/3
 const path = require("path");
 
 //...
-<strong>const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;</strong>
-</pre>
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+```
+
 
 Now add it as a plugin at the very end of the file within the `plugins` array:
 
-<pre class="prettyprint">
+``` js/4
 module.exports = {
   //...
   plugins: [
     //...
-    <strong>new BundleAnalyzerPlugin()</strong>
+    new BundleAnalyzerPlugin()
   ]
 }
-</pre>
+```
 
 When the application reloads, you should see a visualization of the entire
 bundle instead of the app itself.
@@ -177,12 +179,12 @@ Revert the changes in `webpack.config.js` to see the application again:
 
 + Remove `BundleAnalyzerPlugin` in the list of plugins:
 
-<pre class="prettyprint">
+``` js//2
 plugins: [
   //...
-  <s>new BundleAnalyzerPlugin()</s>
+  new BundleAnalyzerPlugin()
 ]
-</pre>
+```
 
 + And now remove the unused import from the top of the file:
 
