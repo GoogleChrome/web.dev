@@ -1,6 +1,6 @@
 module.exports = {
   url: '/accessible',
-  cover: '/images/accessible.svg',
+  cover: '/images/collections/accessible.svg',
   title: 'Accessible to all',
   description: 'Build a site that works for all of your users.',
   overview: `All users should be able to access your content. In this section

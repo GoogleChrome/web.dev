@@ -6,7 +6,7 @@ title: Measure
 {# *-landing-page classes are a holdover from devsite. #} {# It would be great
 to remove them as part of the v1 migration. #}
 <div class="profile-landing-page">
-  <div class="w-layout-container--large">
+  <div class="w-layout-container--large w-measure-header">
     <header class="w-page-header">
       <h1 class="w-page-header__headline">{{ title }}</h1>
       <p class="w-page-header__copy">
@@ -58,8 +58,8 @@ to remove them as part of the v1 migration. #}
     </header>
   </div>
 
-  <div class="w-layout-container--large">
-    <section class="results-section">
+  <div class="w-layout-container--large w-measure-results">
+    <section>
       <div class="container">
         <div class="row">
           <div class="results-row col-xs-12 col-sm-10 col-md-12 col-xl-10">
@@ -70,7 +70,7 @@ to remove them as part of the v1 migration. #}
     </section>
   </div>
 
-  <div class="w-layout-container">
+  <div class="w-layout-container w-mt--xl">
     <section class="w-numbered-headers">
       <div class="w-measure-steps">
         <div class="w-measure-step">
@@ -151,7 +151,7 @@ to remove them as part of the v1 migration. #}
         <!-- PERFORMANCE -->
         <div class="w-measure-category">
           <img
-            src="/images/performance.svg"
+            src="/images/icons/performance.svg"
             aria-describedby="lh-category-performance-title"
           />
           <div
@@ -169,7 +169,7 @@ to remove them as part of the v1 migration. #}
         <!-- BEST PRACTICES -->
         <div class="w-measure-category">
           <img
-            src="/images/best_practices.svg"
+            src="/images/icons/best_practices.svg"
             aria-describedby="lh-category-best-practices-title"
           />
           <div
@@ -186,7 +186,7 @@ to remove them as part of the v1 migration. #}
 
         <!-- SEO -->
         <div class="w-measure-category">
-          <img src="/images/seo.svg" aria-describedby="lh-category-seo-title" />
+          <img src="/images/icons/seo.svg" aria-describedby="lh-category-seo-title" />
           <div class="w-headline--three w-mt--std" id="lh-category-seo-title">
             SEO
           </div>
@@ -198,7 +198,7 @@ to remove them as part of the v1 migration. #}
         <!-- ACCESSIBILITY -->
         <div class="w-measure-category">
           <img
-            src="/images/a11y.svg"
+            src="/images/icons/a11y.svg"
             aria-describedby="lh-category-accessibility-title"
           />
           <div

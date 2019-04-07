@@ -13,18 +13,18 @@
 
 .w-page-header {
   height: auto;
-  margin-top: 44px;
+  // margin-top: 44px;
   padding: 24px 16px 0;
   text-align: center;
 
   @include bp(xxsm) {
-    margin-top: 56px;
+    // margin-top: 56px;
     padding: 60px 24px 28px;
   }
 
   @include bp(md) {
-    height: 288px;
-    margin-top: 64px;
+    min-height: 288px;
+    // margin-top: 64px;
     padding: 80px 32px 0;
   }
 }

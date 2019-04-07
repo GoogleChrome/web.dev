@@ -1,6 +1,6 @@
 module.exports = {
   url: '/secure',
-  cover: '/images/secure.svg',
+  cover: '/images/collections/secure.svg',
   title: 'Safe and secure',
   updated: 'May 24, 2018',
   description: `Ensure your site and your users' data is secure.`,

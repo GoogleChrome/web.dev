@@ -1,6 +1,6 @@
 module.exports = {
   url: '/reliable',
-  cover: '/images/reliable.svg',
+  cover: '/images/collections/reliable.svg',
   title: 'Network resilience',
   updated: 'May 24, 2018',
   description: `See consistent, reliable performance regardless of network
