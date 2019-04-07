@@ -1,28 +1,34 @@
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const helpers = require('./templateHelpers');
+const helpers = require('./template-helpers');
 
-module.exports = function(eleventyConfig) {
+const componentsDir = 'src/site/_includes/components';
+const Aside = require(`./${componentsDir}/Aside.js`);
+
+module.exports = function(config) {
   // Syntax highlighting for code snippets
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  config.addPlugin(pluginSyntaxHighlight);
 
   // TODO: Add RSS plugin
   // https://github.com/11ty/eleventy-plugin-rss
 
+  // Add shortcode components
+  config.addPairedShortcode('Aside', Aside);
+
   // Return the three most recent blog posts.
-  eleventyConfig.addCollection('recentPosts', function(collection) {
+  config.addCollection('recentPosts', function(collection) {
     return collection
       .getFilteredByTag('post')
       .reverse()
       .slice(0, 3);
   });
 
-  eleventyConfig.addFilter('stripLanguage', function(url) {
+  config.addFilter('stripLanguage', function(url) {
     let urlParts = url.split('/');
     urlParts.splice(1, 1);
     return urlParts.join('/');
   });
 
-  eleventyConfig.addShortcode('getGuidesCount', function(learningPath) {
+  config.addShortcode('getGuidesCount', function(learningPath) {
     const count = learningPath.topics.reduce((guidesCount, topic) => {
       return guidesCount + topic.guides.length;
     }, 0);
@@ -30,7 +36,7 @@ module.exports = function(eleventyConfig) {
     return `${count} ${label}`;
   });
 
-  eleventyConfig.addShortcode('nextGuideLink', function(page, paths) {
+  config.addShortcode('nextGuideLink', function(page, paths) {
     const collection = helpers.getCollectionName(page);
     if (collection && paths[collection]) {
       const guides = helpers.getGuidesFromTopics(paths[collection].topics);
@@ -43,7 +49,7 @@ module.exports = function(eleventyConfig) {
     }
   });
 
-  eleventyConfig.addFilter('containsTag', function(article, tags) {
+  config.addFilter('containsTag', function(article, tags) {
     return article.data.tags && tags.filter(tag => article.data.tags.indexOf(tag) > -1).length > 0;
   });
 

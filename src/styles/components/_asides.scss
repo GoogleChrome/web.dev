@@ -56,24 +56,14 @@ $KEY_POINT_COLOR: #6001ff;
   margin: 4px 0 0 -48px;
 }
 
-.w-aside--left {
-  padding: 24px 48px 0 0;
-}
-
-.w-aside--left::after {
-  left: -100vw;
-}
-
-.w-aside--left::before {
-  right: 0;
-}
-
 .w-aside--note {
   color: $WEB_PRIMARY_COLOR;
+  padding: 24px 48px 0 0;
 }
 
 .w-aside--note::after {
   background-color: $WEB_PRIMARY_COLOR;
+  left: -100vw;
 }
 
 .w-aside--note::before {
@@ -82,6 +72,7 @@ $KEY_POINT_COLOR: #6001ff;
   height: 64px;
   margin: 0;
   position: absolute;
+  right: 0;
   top: 0;
   width: 2px;
 }
