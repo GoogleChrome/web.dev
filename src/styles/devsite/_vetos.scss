@@ -5,9 +5,42 @@
 //
 // =============================================================================
 
+$TAB_HEIGHT: 64px;
+
 // sass-lint:disable class-name-format
 
-$TAB_HEIGHT: 64px;
+// These overrides make the .devsite-main-content element act like any other
+// block level element.
+
+// 599px to minimum size
+body[layout] .devsite-main-content {
+  margin: 0 auto;
+  max-width: none;
+  padding: 0;
+}
+
+// 1023px - 600px
+@media screen and (min-width: $BREAKPOINT_VALUE_MOBILE) {
+  body[layout] .devsite-main-content {
+    max-width: none;
+    padding: 0;
+  }
+}
+
+// 1440px - 1024px
+@media screen and (min-width: $BREAKPOINT_VALUE_TABLET_LANDSCAPE) {
+  body[layout] .devsite-main-content {
+    max-width: none;
+  }
+}
+
+// 1441px+
+@media screen and (min-width: $BREAKPOINT_VALUE_DESKTOP) {
+  body[layout] .devsite-main-content {
+    max-width: none;
+    padding: 0;
+  }
+}
 
 [ds-is='header'] .devsite-top-logo-row,
 [ds-is='tabs'] {
