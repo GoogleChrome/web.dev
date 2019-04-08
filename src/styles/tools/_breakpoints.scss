@@ -35,21 +35,3 @@ $BREAKPOINT_VALUE_LARGE: '(min-width: 1264px)';
     @media #{$BREAKPOINT_VALUE_LARGE} { @content; }
   }
 }
-
-// -----------------------------------------------------------------------------
-// !!! DEPRECATED !!!
-//
-// These breakpoints are from the beta of the site and are only used by the
-// components on the measure page. These will be phased out soon. Do not use!
-// -----------------------------------------------------------------------------
-
-/// @deprecated
-$BREAKPOINT_VALUE_DESKTOP: 1440px;
-/// @deprecated
-$BREAKPOINT_VALUE_TABLET_LANDSCAPE: 1024px;
-/// @deprecated
-$BREAKPOINT_VALUE_TABLET: 840px;
-/// @deprecated
-$BREAKPOINT_VALUE_MOBILE: 600px;
-/// @deprecated
-$BREAKPOINT_VALUE_MOBILE_SMALL: 380px;
