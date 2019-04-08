@@ -5,8 +5,8 @@ author: mihajlija
 description: |
   Learn how to use the Network Information API to adapt
   your content based on the network quality.
-web_updated_on: 2019-01-31
-web_published_on: 2019-01-31
+web_updated_on: 2019-04-06
+web_published_on: 2019-04-01
 glitch: adaptive-serving-netinfo-starter
 ---
 
@@ -137,7 +137,7 @@ To test it yourself:
 
 Now reload the page with Fast 3G still enabled and the app will load an image in the background instead of the video: 
 
-
+<img class="screenshot" src="./netinfo_app_image.png" alt='Matrix-like image background with "NETWORK INFORMATION" text overlay'>
 
 ## Extra Credit: Respond to changes
 
