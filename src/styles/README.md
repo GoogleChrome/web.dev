@@ -61,4 +61,4 @@ complaining. This is especially useful for formatting box-shadow properties.
 
 ## Tips
 
-- To preview your SASS you can use [Sassmeister](https://www.sassmeister.com/).
+- To preview your SASS you can use [Sassmeister](https://www.sassmeister.com/) 👍
