@@ -17,7 +17,7 @@ this inline style tag.
     height: 100%;
   }
 
-  .w-codelab-glitch {
+  .web-codelab-glitch {
     flex: 1;
     padding: 16px;
   }
@@ -26,7 +26,7 @@ this inline style tag.
 
 <main class="codelab-landing-page">
   <web-codelab glitch="{{ glitch }}" attribution-hidden>
-    <div class="w-codelab-instructions">
+    <div class="web-codelab-instructions">
       <h1 class="w-headline w-headline--two">{{ title }}</h1>
       {{ components.Author(authors[author], author, showSocialMedia=true) }}
       {{ content | safe }}
@@ -34,7 +34,7 @@ this inline style tag.
 
     {# Generate our own Glitch for local testing #}
     {% if env.mode === 'dev' %}
-      <div class="w-codelab-glitch">
+      <div class="web-codelab-glitch">
         <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
           <iframe
             allow="geolocation; microphone; camera; midi; encrypted-media"
