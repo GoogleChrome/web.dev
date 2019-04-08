@@ -60,6 +60,7 @@ module.exports = function(config) {
       output: 'dist',
       data: '../_data',
       includes: '../_includes',
+      layouts: '../_layouts',
     },
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',

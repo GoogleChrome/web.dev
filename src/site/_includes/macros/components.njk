@@ -77,7 +77,7 @@ Think of it like React components :)
 
 {# Article cards used on the blog page #}
 {% macro Article(post, author) %}
-{% set url = post.url | stripLanguage %}
+{% set url = post.url %}
 {% set hero = post.data.hero %}
 <a href="{{ url }}" class="w-card">
   <article class="w-article">
@@ -106,7 +106,8 @@ Think of it like React components :)
 {# Smaller article cards used on the home page #}
 {% macro ArticleSmall(post, author) %}
 {% set hero = post.data.hero %}
-<a href="{{ post.url | stripLanguage }}" class="w-card w-card--raised">
+
+<a href="{{ post.url }}" class="w-card w-card--raised">
   <article class="w-article w-article--small">
     <div class="w-article__cover {{ 'w-article__cover--with-image-small' if hero else 'w-article__cover--small' }}">
       {% if hero %}
