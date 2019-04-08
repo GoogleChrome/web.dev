@@ -147,8 +147,8 @@
   margin: 0 auto;
   max-width: 960px;
   overflow: visible;
-  padding: 24px 24px;
-  
+  padding: 24px;
+
   @include bp(md) {
     flex-direction: row;
     padding: 72px 24px;
@@ -157,24 +157,24 @@
 
 .w-masthead-about__left {
   flex: 1;
-  
+
   @include bp(md) {
     margin-right: 32px;
   }
 }
 
 .w-masthead-about__right {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  order: -1;
-  margin-bottom: 18px;
   align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 18px;
+  order: -1;
 
   @include bp(md) {
-    order: initial;
     margin-bottom: 0;
+    order: initial;
   }
 }
 
