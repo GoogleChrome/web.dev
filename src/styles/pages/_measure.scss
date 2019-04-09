@@ -1,10 +1,15 @@
 // Dependencies:
 // tools/_breakpoints.scss
 
+// sass-lint:disable class-name-format
+web-progress-bar {
+  visibility: hidden;
+}
+// sass-lint:enable class-name-format
+
 .w-measure-results {
   background: $GREY_50;
-  min-height: 300px;
-  padding: 40px 0;
+  min-height: 279px;
 }
 
 .w-measure-steps {
