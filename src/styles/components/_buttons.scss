@@ -12,25 +12,18 @@
 //
 // =============================================================================
 
-button,
-button:hover,
-button:focus,
-button:active {
-  all: initial; // DevSite override. Aggressive but it gets the job done...
-}
-
 // The basic button is a plain text button.
 // Normally we wouldn't need to duplicate the pseudo classes
 // but since we're using all: initial, we need to make things
 // initially consistent.
-.w-button,
-.w-button:hover,
-.w-button:focus,
-.w-button:active {
+.w-button {
   align-items: center;
+  background: $WHITE;
   border: 0;
   border-radius: 3px;
+  box-shadow: none; // DevSite override
   color: $WEB_PRIMARY_COLOR;
+  cursor: pointer;
   display: inline-flex;
   font-family: $PRIMARY_FONT;
   font-size: 1em;
@@ -60,6 +53,7 @@ button:active {
 .w-button:hover,
 .w-button:focus,
 .w-button:active {
+  background: $WHITE; // DevSite override
   box-shadow:
   0 2px 4px -1px rgba($BLACK, .2),
   0 4px 5px 0 rgba($BLACK, .14),
@@ -85,10 +79,7 @@ button:active {
 }
 
 // A button with an icon.
-.w-button--with-icon,
-.w-button--with-icon:hover,
-.w-button--with-icon:focus,
-.w-button--with-icon:active {
+.w-button--with-icon {
   padding: 0 24px 0 16px;
 }
 
