@@ -11,3 +11,5 @@ wf_blink_components: N/A
 ---
 
 # Eliminate render-blocking resources
+
+<img class="screenshot" src="./render-blocking-resources.png" alt="Lighthouse: Eliminate render-blocking resources load opportunity">
