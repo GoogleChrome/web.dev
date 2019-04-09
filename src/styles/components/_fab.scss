@@ -5,6 +5,12 @@
 // tools/_mixins.scss
 // tools/_placeholders.scss
 
+@import '../settings/colors';
+@import '../settings/global';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+@import '../tools/placeholders';
+
 // =============================================================================
 // FAB OVERVIEW
 //

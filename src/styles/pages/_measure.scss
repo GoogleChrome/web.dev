@@ -1,5 +1,9 @@
 // Dependencies:
+// settings/_colors.scss
 // tools/_breakpoints.scss
+
+@import '../settings/colors';
+@import '../tools/breakpoints';
 
 // sass-lint:disable class-name-format
 web-progress-bar {

@@ -1,7 +1,9 @@
 // Dependencies:
 // settings/_colors.scss
 // settings/_type.scss
-// tools/_mixins.scss
+
+@import '../settings/colors';
+@import '../settings/type';
 
 // =============================================================================
 // FONT OVERVIEW
