@@ -1,9 +1,5 @@
-// Dependencies:
-// settings/_colors.scss
-// tools/_placeholders.scss
-
 @import '../settings/colors';
-@import '../tools/placeholders';
+@import '../tools/mixins';
 
 // =============================================================================
 // ICON LIST OVERVIEW
@@ -24,7 +20,7 @@
 }
 
 .w-icon-list__item::before {
-  @extend %w-material-icons;
+  @include font-material-icon();
   float: left;
   font-size: 1.25rem;
   margin: 0 0 0 -30px;

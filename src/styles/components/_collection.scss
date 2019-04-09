@@ -1,13 +1,6 @@
-// Dependencies:
-// settings/_colors
-// settings/_type.scss
-// tools/_mixins.scss
-// tools/_placeholders.scss
-
 @import '../settings/colors';
 @import '../settings/type';
 @import '../tools/mixins';
-@import '../tools/placeholders';
 
 // =============================================================================
 // COLLECTION OVERVIEW
@@ -20,7 +13,7 @@
 // =============================================================================
 
 .w-collection {
-  @extend %w-body-text;
+  @include w-body-text();
   padding: 24px;
 }
 

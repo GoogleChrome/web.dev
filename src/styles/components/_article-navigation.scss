@@ -1,13 +1,7 @@
-// Dependencies:
-// settings/_colors.scss
-// settings/_type.scss
-// tools/_breakpoints.scss
-// tools/_placeholders.scss
-
 @import '../settings/colors';
 @import '../settings/type';
 @import '../tools/breakpoints';
-@import '../tools/placeholders';
+@import '../tools/mixins';
 
 // =============================================================================
 // ARTICLE NAVIGATION OVERVIEW
@@ -54,23 +48,23 @@
 }
 
 .w-article-navigation__link::before {
-  @extend %w-material-icons;
+  @include font-material-icon();
 }
 
 .w-article-navigation__link::after {
-  @extend %w-overlay;
+  @include w-overlay();
 }
 
 .w-article-navigation__link:hover::after {
-  @extend %w-overlay-hover;
+  @include w-overlay-hover();
 }
 
 .w-article-navigation__link:focus::after {
-  @extend %w-overlay-focus;
+  @include w-overlay-focus();
 }
 
 .w-article-navigation__link:active::after {
-  @extend %w-overlay-active;
+  @include w-overlay-active();
 }
 
 .w-article-navigation__link--back {
