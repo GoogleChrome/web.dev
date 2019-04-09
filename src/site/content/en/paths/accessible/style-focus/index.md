@@ -12,7 +12,7 @@ wf_blink_components: Blink>Accessibility
 # related_content:
 #   - /en/accessible/control-focus-with-tabindex/
 tags:
-  - post
+  - pathItem
   - accessibility
   - ux
 ---

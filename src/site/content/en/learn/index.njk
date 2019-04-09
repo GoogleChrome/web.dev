@@ -19,8 +19,8 @@ title: Learn
     <section>
       <h3>Realize what the web can be</h3>
         <div class="w-layout-grid--three">
-          {% for path in learn.paths %}
-            {{ components.Collection(path) }}
+          {% for collection in learn.collections %}
+            {{ components.Collection(collection) }}
           {% endfor %}
         </div>
     </section>

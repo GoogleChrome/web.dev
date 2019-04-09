@@ -1,9 +1,10 @@
 ---
 layout: layout
+permalink: /{{language}}/{{page.fileSlug}}/index.html
 ---
 {% import 'macros/components.njk' as components %}
 
-{# Find the global data object for this path in _data/paths/{learningPath} #}
+{# Find the global data object for this collection in _data/collections/{learningPath} #}
 {% set path = paths[learningPath] %}
 
 {# *-landing-page classes are a holdover from devsite. #}
@@ -46,9 +47,9 @@ layout: layout
     <h2 id="{{ topic.title | slug }}" class="no-link">{{ topic.title }}</h2>
     <div class="w-layout-grid--three w-mb--std">
       {% for slug in topic.guides %}
-        {% for post in collections.post %}
-          {% if post.fileSlug === slug %}
-            {{ components.ArticleSmall(post, authors[post.data.author], post.data.author) }}
+        {% for item in collections.pathItem %}
+          {% if item.fileSlug === slug %}
+            {{ components.ArticleSmall(item, authors[item.data.author], item.data.author) }}
           {% endif %}
         {% endfor %}
       {% endfor %}

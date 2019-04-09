@@ -2,31 +2,50 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const helpers = require('./template-helpers');
 
 const componentsDir = 'src/site/_includes/components';
-const Aside = require(`./${componentsDir}/Aside.js`);
+const Aside = require(`./${componentsDir}/Aside`);
+const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
+
+const collectionsDir = 'src/site/_collections';
+const recentPosts = require(`./${collectionsDir}/recent-posts`);
+
+const filtersDir = 'src/site/_filters';
+const collectionSlug = require(`./${filtersDir}/collection-slug`);
+const containsTag = require(`./${filtersDir}/contains-tag`);
+const stripLanguage = require(`./${filtersDir}/strip-language`);
 
 module.exports = function(config) {
+  // Allow data to merge down the cascade.
+  // For example, if you create a directory .json that contains
+  // tags: ["posts"] then every file in the directory will inherit this
+  // property and it will be *combined with* any tags the individual posts
+  // define. So a post defining its own tags: ["foo"] would end up with
+  // tags: ["posts", "foo"].
+  // https://www.11ty.io/docs/config/#data-deep-merge
+  config.setDataDeepMerge(true);
+  
   // Syntax highlighting for code snippets
   config.addPlugin(pluginSyntaxHighlight);
 
   // TODO: Add RSS plugin
   // https://github.com/11ty/eleventy-plugin-rss
 
-  // Add shortcode components
+  //----------------------------------------------------------------------------
+  // COLLECTIONS
+  //----------------------------------------------------------------------------
+  config.addCollection('recentPosts', recentPosts);
+
+  //----------------------------------------------------------------------------
+  // FILTERS
+  //----------------------------------------------------------------------------
+  config.addFilter('collectionSlug', collectionSlug);
+  config.addFilter('containsTag', containsTag);
+  config.addFilter('stripLanguage', stripLanguage);
+
+  //----------------------------------------------------------------------------
+  // SHORTCODES
+  //----------------------------------------------------------------------------
+  config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addPairedShortcode('Aside', Aside);
-
-  // Return the three most recent blog posts.
-  config.addCollection('recentPosts', function(collection) {
-    return collection
-      .getFilteredByTag('post')
-      .reverse()
-      .slice(0, 3);
-  });
-
-  config.addFilter('stripLanguage', function(url) {
-    let urlParts = url.split('/');
-    urlParts.splice(1, 1);
-    return urlParts.join('/');
-  });
 
   config.addShortcode('getGuidesCount', function(learningPath) {
     const count = learningPath.topics.reduce((guidesCount, topic) => {
@@ -47,10 +66,6 @@ module.exports = function(config) {
       }
       return '';
     }
-  });
-
-  config.addFilter('containsTag', function(article, tags) {
-    return article.data.tags && tags.filter(tag => article.data.tags.indexOf(tag) > -1).length > 0;
   });
 
   // https://www.11ty.io/docs/config/#configuration-options
