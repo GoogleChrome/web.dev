@@ -5,6 +5,19 @@
 // tools/_breakpoints.scss
 // tools/_mixins.scss
 
+@import '../settings/colors';
+@import '../settings/global';
+@import '../settings/type';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+// =============================================================================
+// TYPE OVERVIEW
+//
+// Generic type styles.
+//
+// =============================================================================
+
 h1,
 h2,
 h3,

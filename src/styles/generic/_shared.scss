@@ -1,3 +1,8 @@
+// Dependencies:
+// settings/_colors.scss
+
+@import '../settings/colors';
+
 // =============================================================================
 // SHARED OVERVIEW
 //
@@ -15,7 +20,7 @@
 }
 
 *:focus {
-  outline: 1px solid rgba(63, 196, 255, 1);
+  outline: 1px solid $WEB_SECONDARY_COLOR;
 }
 
 div,

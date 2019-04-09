@@ -4,6 +4,11 @@
 // settings/_type.scss
 // tools/_mixins.scss
 
+@import '../settings/colors';
+@import '../settings/global';
+@import '../settings/type';
+@import '../tools/mixins';
+
 $CHEVRON_SIZE: 24px;
 $BORDER_COLOR: $GREY_300;
 

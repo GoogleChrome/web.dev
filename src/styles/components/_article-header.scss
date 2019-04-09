@@ -1,5 +1,9 @@
 // Dependencies:
+// settings/_type.scss
 // tools/_breakpoints.scss
+
+@import '../settings/type';
+@import '../tools/breakpoints';
 
 // =============================================================================
 // ARTICLE HEADER OVERVIEW
@@ -41,7 +45,7 @@
 }
 
 .w-article-header__summary {
-  font-family: 'Google Sans', sans-serif;
+  font-family: $HEADLINE_FONT;
   font-size: 16px;
   line-height: 28px;
   margin: 12px auto;

@@ -1,6 +1,16 @@
 // Dependencies:
 // settings/_colors.scss
 
+@import '../settings/colors';
+
+// =============================================================================
+// LINKS OVERVIEW
+//
+// Anchor link styles. Note the use of :link/:visited throughout. DevSite uses
+// these and we need to override them.
+//
+// =============================================================================
+
 // DevSite override
 // The use of :link and :visited throughout is because DevSite styles those
 // generic selectors.
