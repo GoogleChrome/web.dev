@@ -1,13 +1,7 @@
-// Dependencies:
-// settings/_colors.scss
-// settings/_global.scss
-// tools/_breakpoints.scss
-// tools/_placeholders.scss
-
 @import '../settings/colors';
 @import '../settings/global';
 @import '../tools/breakpoints';
-@import '../tools/placeholders';
+@import '../tools/mixins';
 
 .w-about-principles {
   background-color: $GREY_50;
@@ -16,7 +10,7 @@
 
 // sass-lint:disable property-sort-order
 .w-grid-list {
-  @extend %w-article-text;
+  @include w-article-text();
   display: grid;
   // sass-lint:disable-all
   // scss-lint:disable all

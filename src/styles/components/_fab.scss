@@ -1,15 +1,7 @@
-// Dependencies:
-// settings/_colors.scss
-// settings/_global.scss
-// tools/_breakpoints.scss
-// tools/_mixins.scss
-// tools/_placeholders.scss
-
 @import '../settings/colors';
 @import '../settings/global';
 @import '../tools/breakpoints';
 @import '../tools/mixins';
-@import '../tools/placeholders';
 
 // =============================================================================
 // FAB OVERVIEW
@@ -67,7 +59,7 @@
 }
 
 .w-fab::after {
-  @extend %w-overlay;
+  @include w-overlay();
 }
 
 .w-fab:hover::after {

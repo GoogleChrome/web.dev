@@ -1,11 +1,5 @@
-// Dependencies:
-// settings/_type.scss
-// tools/_mixins.scss
-// tools/_placeholders.scss
-
 @import '../settings/type';
 @import '../tools/mixins';
-@import '../tools/placeholders';
 
 // =============================================================================
 // ARTICLE OVERVIEW
@@ -17,7 +11,7 @@
 // =============================================================================
 
 .w-article {
-  @extend %w-body-text;
+  @include w-body-text();
   padding: 24px;
   position: relative;
 
@@ -125,13 +119,13 @@
 }
 
 .w-article__headline {
-  @extend %w-headline--two;
+  @include w-headline--two();
 }
 
 .w-article__headline--with-image,
 .w-article__headline--small,
 .w-article__headline--with-image-small {
-  @extend %w-headline--two-small;
+  @include w-headline--two-small();
 }
 
 .w-article__headline,

@@ -1,7 +1,5 @@
-// Dependencies:
-// tools/_functions.scss
-
 @import 'functions';
+@import 'breakpoints';
 
 // =============================================================================
 // MIXINS OVERVIEW
@@ -65,7 +63,7 @@
 // Mixin for a Material icon. This mimics the important parts of the
 // 'material-icons' class defined at http://fonts.googleapis.com/css?family=Material+Icons.
 // You can look up the name of an icon at https://material.io/icons/.
-@mixin font_material_icon() {
+@mixin font-material-icon() {
   -moz-osx-font-smoothing: grayscale; // @alternate
   -webkit-font-smoothing: antialiased; // @alternate
   font: normal normal normal 24px / 1 'Material Icons';
@@ -79,8 +77,159 @@
 // @param {string} $moz The value for moz-osx-font-smoothing
 // @param {string} $webkit The value for webkit-font-smoothing
 // @param {string} $rendering The value for text-rendering
-@mixin font_smoothing($moz, $webkit, $rendering) {
+@mixin font-smoothing($moz, $webkit, $rendering) {
   -moz-osx-font-smoothing: $moz;
   -webkit-font-smoothing: $webkit;
   text-rendering: $rendering;
 }
+
+// -----------------------------------------------------------------------------
+// Typography
+//
+// Elements should extend these placeholders to get consistent font styles.
+// This is recommended over using mixins like @include font($SOME_FONT_MAP).
+//
+// -----------------------------------------------------------------------------
+
+// For elements that want the standard font-size and line-height that appears
+// on the learn and measure pages.
+@mixin w-body-text {
+  @include font($BODY);
+
+  @include bp(xxsm) {
+    @include font($BODY_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($BODY_XSMALL);
+  }
+}
+
+// For elements that want the larger font-size and line-height that appears in
+// articles and guides.
+@mixin w-article-text {
+  @include font($ARTICLE);
+
+  @include bp(xxsm) {
+    @include font($ARTICLE_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($ARTICLE_XSMALL);
+  }
+}
+
+@mixin w-headline {
+  @include font($BASE_HEADLINE);
+  color: $PRIMARY_TEXT_COLOR; // DevSite override
+  margin: 0;
+  overflow: visible;
+}
+
+@mixin w-headline--one {
+  @include font($HEADLINE_1);
+
+  @include bp(xxsm) {
+    @include font($HEADLINE_1_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($HEADLINE_1_XSMALL);
+  }
+}
+
+@mixin w-headline--two {
+  @include font($HEADLINE_2);
+
+  @include bp(xxsm) {
+    @include font($HEADLINE_2_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($HEADLINE_2_XSMALL);
+  }
+}
+
+@mixin w-headline--two-small {
+  @include font($HEADLINE_2_ARTICLE);
+
+  @include bp(xxsm) {
+    @include font($HEADLINE_2_ARTICLE_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($HEADLINE_2_ARTICLE_XSMALL);
+  }
+}
+
+@mixin w-headline--two-faded {
+  @include font($HEADLINE_2_SMALL_CAPS);
+  color: $GREY_600;
+
+  @include bp(xxsm) {
+    @include font($HEADLINE_2_SMALL_CAPS_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($HEADLINE_2_SMALL_CAPS_XSMALL);
+  }
+}
+
+@mixin w-headline--three {
+  @include font($HEADLINE_3);
+
+  @include bp(xxsm) {
+    @include font($HEADLINE_3_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($HEADLINE_3_XSMALL);
+  }
+}
+
+@mixin w-headline--four {
+  @include font($HEADLINE_4);
+  color: $WEB_PRIMARY_COLOR;
+
+  @include bp(xxsm) {
+    @include font($HEADLINE_4_XXSMALL);
+  }
+
+  @include bp(xsm) {
+    @include font($HEADLINE_4_XSMALL);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Overlays
+//
+// Elements should extend these placeholders to get consistent button overlay
+// effects. These are used to tint an interactive control during
+// hover/focus/active states.
+//
+// -----------------------------------------------------------------------------
+
+@mixin w-overlay {
+  bottom: 0;
+  content: '';
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: background-color $TRANSITION_SPEED, border $TRANSITION_SPEED;
+  z-index: 1;
+}
+
+@mixin w-overlay-hover {
+  background-color: rgba($GREY_900, .04);
+}
+
+@mixin w-overlay-focus {
+  background-color: rgba($GREY_900, .12);
+}
+
+@mixin w-overlay-active {
+  background-color: rgba($GREY_900, .16);
+}
+

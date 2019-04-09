@@ -1,14 +1,5 @@
-// Dependencies:
-// settings/_colors.scss
-// settings/_global.scss
-// settings/_type.scss
-// tools/_breakpoints.scss
-// tools/_mixins.scss
-
 @import '../settings/colors';
 @import '../settings/global';
-@import '../settings/type';
-@import '../tools/breakpoints';
 @import '../tools/mixins';
 
 // =============================================================================
@@ -24,27 +15,27 @@ h3,
 h4,
 h5,
 h6 {
-  @extend %w-headline;
+  @include w-headline();
 }
 
 h1 {
-  @extend %w-headline--one;
+  @include w-headline--one();
 }
 
 h2 {
-  @extend %w-headline--two-small;
+  @include w-headline--two-small();
 }
 
 h3 {
-  @extend %w-headline--three;
+  @include w-headline--three();
 }
 
 h4 {
-  @extend %w-headline--four;
+  @include w-headline--four();
 }
 
 p {
-  @extend %w-article-text;
+  @include w-article-text();
 }
 
 abbr,

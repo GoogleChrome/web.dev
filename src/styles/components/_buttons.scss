@@ -1,15 +1,7 @@
-// Dependencies:
-// settings/_colors.scss
-// settings/_global.scss
-// settings/_type.scss
-// tools/_mixins.scss
-// tools/_placeholders.scss
-
 @import '../settings/colors';
 @import '../settings/global';
 @import '../settings/type';
 @import '../tools/mixins';
-@import '../tools/placeholders';
 
 // =============================================================================
 // BUTTONS OVERVIEW
@@ -70,7 +62,7 @@
 // This element is used to tint the button during user actions such as
 // hover, focus, and active.
 .w-button::after {
-  @extend %w-overlay;
+  @include w-overlay();
 }
 
 .w-button:hover::after {
@@ -91,7 +83,7 @@
 }
 
 .w-button--with-icon::before {
-  @extend %w-material-icons;
+  @include font-material-icon();
   content: attr(data-icon);
   display: inline-block;
   height: 24px;

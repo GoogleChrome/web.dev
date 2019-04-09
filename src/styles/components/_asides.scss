@@ -1,13 +1,6 @@
-// Dependencies:
-// settings/_colors.scss
-// settings/_type.scss
-// tools/_mixins.scss
-// tools/_placeholders.scss
-
 @import '../settings/colors';
 @import '../settings/type';
 @import '../tools/mixins';
-@import '../tools/placeholders';
 
 // =============================================================================
 // ASIDES OVERVIEW
@@ -56,7 +49,7 @@ $KEY_POINT_COLOR: #6001ff;
 }
 
 .w-aside::before {
-  @extend %w-material-icons;
+  @include font-material-icon();
   float: left;
   margin: 4px 0 0 -48px;
 }

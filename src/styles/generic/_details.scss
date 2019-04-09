@@ -1,9 +1,3 @@
-// Dependencies:
-// settings/_colors.scss
-// settings/_global.scss
-// settings/_type.scss
-// tools/_mixins.scss
-
 @import '../settings/colors';
 @import '../settings/global';
 @import '../settings/type';
@@ -41,7 +35,7 @@ summary {
   // scss-lint:enable all
 
   &::before {
-    @extend %w-material-icons;
+    @include font-material-icon();
     color: $GREY_500;
     content: 'keyboard_arrow_down';
     cursor: $CURSOR_POINTER_VALUE;

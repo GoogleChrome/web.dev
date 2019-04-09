@@ -1,12 +1,5 @@
-// Dependencies:
-// settings/_colors.scss
-// settings/_type.scss
-// tools/_breakpoints.scss
-// tools/_mixins.scss
-
 @import '../settings/colors';
 @import '../settings/type';
-@import '../tools/breakpoints';
 @import '../tools/mixins';
 
 // =============================================================================
@@ -21,30 +14,30 @@
 // =============================================================================
 
 .w-headline {
-  @extend %w-headline;
+  @include w-headline();
 
   &--one {
-    @extend %w-headline--one;
+    @include w-headline--one();
   }
 
   &--two {
-    @extend %w-headline--two;
+    @include w-headline--two();
   }
 
   &--two-small {
-    @extend %w-headline--two-small;
+    @include w-headline--two-small();
   }
 
   &--two-faded {
-    @extend %w-headline--two-faded;
+    @include w-headline--two-faded();
   }
 
   &--three {
-    @extend %w-headline--three;
+    @include w-headline--three();
   }
 
   &--four {
-    @extend %w-headline--four;
+    @include w-headline--four();
   }
 }
 
