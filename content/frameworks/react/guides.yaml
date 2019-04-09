@@ -26,6 +26,3 @@ overview: |
 - title: Accessible
   guides:
     - accessibility-in-react
-- title: Extra
-  guides:
-    - next

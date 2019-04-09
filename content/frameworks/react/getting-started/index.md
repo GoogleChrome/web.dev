@@ -80,4 +80,3 @@ Now that you know how to get started building a Create React App, learn how impr
 * [Pre-rendering routes](/react/prerender-routes)
 * [Adding a Web App Manifest](/react/add-manifest)
 * [Auditing and fixing accessibility issues](/react/accessibility-in-react)
-* [Next.js](/react/next)
