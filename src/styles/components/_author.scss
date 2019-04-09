@@ -20,9 +20,14 @@
   background-color: $GREY_300;
   border-radius: 50%;
   flex-shrink: 0;
-  height: 40px;
+  height: 64px;
   margin: 0 12px 0 0;
   overflow: hidden;
+  width: 64px;
+}
+
+.w-author__image--small {
+  height: 40px;
   width: 40px;
 }
 
