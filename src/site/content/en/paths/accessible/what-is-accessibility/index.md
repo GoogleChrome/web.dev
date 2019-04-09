@@ -11,7 +11,7 @@ web_updated_on: 2018-12-06
 web_published_on: 2018-11-18
 wf_blink_components: Blink>Accessibility
 tags:
-  - post
+  - pathItem
   - accessibility
   - ux
 ---

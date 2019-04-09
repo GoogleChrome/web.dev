@@ -13,7 +13,7 @@ web_lighthouse:
   - focusable-controls
 wf_blink_components: Blink>Accessibility
 tags:
-  - post
+  - pathItem
   - accessibility
   - ux
 ---

@@ -98,7 +98,7 @@ Think of it like React components :)
 {% macro Article(post, author) %}
 {% set url = post.url %}
 {% set hero = post.data.hero %}
-<a href="{{ url }}" class="w-card">
+<a href="{{ url | stripLanguage }}" class="w-card">
   <article class="w-article">
     <div class="w-article__cover {{ 'w-article__cover--with-image' if hero }}">
       {% if hero %}
@@ -126,12 +126,12 @@ Think of it like React components :)
 {% macro ArticleSmall(post, author) %}
 {% set hero = post.data.hero %}
 
-<a href="{{ post.url }}" class="w-card w-card--raised">
+<a href="{{ post.url | stripLanguage }}" class="w-card w-card--raised">
   <article class="w-article w-article--small">
     <div class="w-article__cover {{ 'w-article__cover--with-image-small' if hero else 'w-article__cover--small' }}">
       {% if hero %}
       <figure class="w-article__figure">
-        <img class="w-article__image--small" src="{{ post.url }}/{{ hero }}" alt="{{ post.data.alt }}">
+        <img class="w-article__image--small" src="{{ post.url + hero }}" alt="{{ post.data.alt }}">
       </figure>
       {% endif %}
 

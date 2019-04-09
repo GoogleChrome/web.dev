@@ -1,6 +1,6 @@
 ---
 layout: layout
-permalink: /{{language}}/{{page.fileSlug}}/index.html
+permalink: /{{ language }}/{{ page.fileSlug | collectionSlug(collection) }}/index.html
 ---
 
 {% import 'macros/components.njk' as components %}

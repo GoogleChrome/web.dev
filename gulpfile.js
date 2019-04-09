@@ -82,15 +82,23 @@ gulp.task('copy-post-assets', () => {
   return (
     gulp
       .src([
-        `./src/site/content/en/**/*.{${assetTypes}}`,
-        '!./src/site/content/en/images/**/*', // leave the images dir alone
+        `./src/site/content/en/{blog,paths}/**/*.{${assetTypes}}`,
       ])
-      // Removes the `posts` directory from the image output path.
-      // This makes the images show up in the same spot as the permalinked posts
-      // they belong to.
       .pipe(
         rename(function(assetPath) {
-          assetPath.dirname = path.basename(assetPath.dirname);
+          const pathParts = assetPath.dirname.split('/');
+
+          // Flatten blog posts assets.
+          // e.g. blog/posts/foo/pic.jpg becomes /foo/pic.jpg.
+          if (pathParts[0] === 'blog') {
+            return assetPath.dirname = path.basename(assetPath.dirname);
+          }
+
+          // Strip 'paths' prefix.
+          // e.g. paths/accessible/foo/pic.jpg becomes /accessible/foo/pic.jpg.
+          if (pathParts[0] === 'paths') {
+            return assetPath.dirname = pathParts.slice(1).join('/');
+          }
         })
       )
       .pipe(gulp.dest('./dist/en'))
@@ -125,7 +133,7 @@ gulp.task('watch', () => {
     gulp.series('copy-sandbox-assets')
   );
   gulp.watch(
-    `./src/site/content/en/**/*.{${assetTypes}}`,
+    `./src/site/content/en/blog/**/*.{${assetTypes}}`,
     gulp.series('copy-post-assets')
   );
 });
