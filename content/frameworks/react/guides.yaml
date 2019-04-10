@@ -19,7 +19,7 @@ overview: |
     - add-service-worker
 - title: Discoverable
   guides:
-    - prerender-routes
+    - prerender-with-react-snap
 - title: Installable
   guides:
     - add-manifest
