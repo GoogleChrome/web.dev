@@ -14,7 +14,7 @@ const installable = require('./paths/installable');
 // =============================================================================
 
 module.exports = {
-  collections: [
+  paths: [
     fast,
     accessible,
     reliable,
