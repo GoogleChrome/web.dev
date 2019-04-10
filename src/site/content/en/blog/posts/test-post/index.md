@@ -7,9 +7,6 @@ alt: A description for the hero image
 description: |
   This post is a test to demonstrate all of the components that can go into
   an article.
-web_lighthouse:
-  - tabindex
-  - focusable-controls
 wf_blink_components: Blink>Accessibility
 tags:
   - post

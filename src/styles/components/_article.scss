@@ -36,10 +36,12 @@
 }
 
 .w-article--small {
+  box-sizing: content-box;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+  min-height: 312px;
 }
 
 .w-article__cover {

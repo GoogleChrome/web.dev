@@ -6,11 +6,13 @@ const Aside = require(`./${componentsDir}/Aside`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 
 const collectionsDir = 'src/site/_collections';
+const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
 
 const filtersDir = 'src/site/_filters';
 const collectionSlug = require(`./${filtersDir}/collection-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
+const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
 
 module.exports = function(config) {
@@ -32,6 +34,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // COLLECTIONS
   //----------------------------------------------------------------------------
+  config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
 
   //----------------------------------------------------------------------------
@@ -39,6 +42,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addFilter('collectionSlug', collectionSlug);
   config.addFilter('containsTag', containsTag);
+  config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('stripLanguage', stripLanguage);
 
   //----------------------------------------------------------------------------
@@ -48,6 +52,7 @@ module.exports = function(config) {
   config.addPairedShortcode('Aside', Aside);
 
   config.addShortcode('getGuidesCount', function(learningPath) {
+    debugger;
     const count = learningPath.topics.reduce((guidesCount, topic) => {
       return guidesCount + topic.guides.length;
     }, 0);
