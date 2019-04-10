@@ -102,6 +102,8 @@ general rule, `async` should be used with HTML imports as much as possible.
 ## More information
 
 * [Reduce JavaScript payloads with codesplitting](fast/reduce-javascript-payloads-with-code-splitting)
+* [Remove unused code codelab](/fast/remove-unused-code/codelab-remove-unused-code)
+
 * [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
 
 
