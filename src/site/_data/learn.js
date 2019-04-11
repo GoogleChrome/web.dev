@@ -5,6 +5,8 @@ const discoverable = require('./paths/discoverable');
 const secure = require('./paths/secure');
 const installable = require('./paths/installable');
 
+const performanceAudits = require('./paths/performanceAudits');
+
 // =============================================================================
 // LEARN OVERVIEW
 //
@@ -21,5 +23,6 @@ module.exports = {
     discoverable,
     secure,
     installable,
+    performanceAudits,
   ],
 };
