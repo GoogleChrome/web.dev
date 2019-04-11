@@ -45,7 +45,7 @@ module.exports = ({post, author}) => {
           </h3>
         </div>
 
-        ${Author({author: author, avatar: data.author, small: true})}
+        ${Author({post, author, avatar: data.author, small: true})}
       </article>
     </a>
   `;

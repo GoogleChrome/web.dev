@@ -1,7 +1,13 @@
 const {html} = require('common-tags');
 const AuthorInfo = require('./AuthorInfo');
 
-module.exports = ({author, avatar, showSocialMedia=false, small=false}) => {
+module.exports = ({
+  post,
+  author,
+  avatar,
+  showSocialMedia = false,
+  small = false,
+}) => {
   const fullName = `${author.name.given} ${author.name.family}`;
   return html`
     <div class="w-author">
@@ -10,7 +16,7 @@ module.exports = ({author, avatar, showSocialMedia=false, small=false}) => {
         src="/images/authors/${avatar}.jpg"
         alt="${fullName}"
       />
-      ${AuthorInfo(author, showSocialMedia)}
+      ${AuthorInfo({post, author, showSocialMedia})}
     </div>
   `;
 };

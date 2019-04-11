@@ -1,8 +1,9 @@
 const {html} = require('common-tags');
+const {DateTime} = require('luxon');
 
 /* eslint-disable require-jsdoc */
 
-module.exports = (author, showSocialMedia=false) => {
+module.exports = ({post, author, showSocialMedia = false}) => {
   const fullName = `${author.name.given} ${author.name.family}`;
 
   function renderTwitter({twitter}) {
@@ -43,7 +44,10 @@ module.exports = (author, showSocialMedia=false) => {
     <div class="w-author__info">
       <cite class="w-author__name">${fullName}</cite>
       ${showSocialMedia && renderSocialMedia(author)}
-      <time class="w-author__published">Jan 31, 2019</time>
+      <time class="w-author__published"
+        >${post &&
+          DateTime.local(post.date).toLocaleString(DateTime.DATE_MED)}</time
+      >
     </div>
   `;
 };

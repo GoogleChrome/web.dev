@@ -13,15 +13,15 @@ const Author = require('./Author');
 module.exports = ({post, author}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
-  const hero = data.hero;
+  const hero = data && data.hero;
 
   function renderHero(post, url) {
     return html`
       <figure class="w-article__figure">
         <img
           class="w-article__image"
-          src="${url + post.data.hero}"
-          alt="${post.data.alt}"
+          src="${url + hero}"
+          alt="${data.alt}"
         />
       </figure>
     `;
@@ -39,7 +39,7 @@ module.exports = ({post, author}) => {
           >
             ${data.title}
           </h2>
-          ${Author({author: author, avatar: data.author, small: true})}
+          ${Author({post, author, avatar: data.author, small: true})}
         </div>
         <div class="w-article__desc">
           <p class="w-article__summary">
