@@ -16,11 +16,19 @@ title: Learn
     </header>
     <section>
       <h3>Realize what the web can be</h3>
-        <div class="w-layout-grid--three">
-          {% for path in learn.paths %}
-            {% Collection path %}
-          {% endfor %}
-        </div>
+      <div class="w-layout-grid--three">
+        {% for path in learn.paths %}
+          {% Collection path %}
+        {% endfor %}
+      </div>
     </section>
+    {# <section>
+      <h3>Lighthouse</h3>
+      <div class="w-layout-grid--three">
+        {% for audit in learn.audits %}
+          {% Collection audit %}
+        {% endfor %}
+      </div>
+    </section> #}
   </div>
 </div>
