@@ -7,50 +7,6 @@ Think of it like React components :)
 
 #}
 
-{% macro Collection(ctx) %}
-<a href="{{ ctx.url }}" class="w-card">
-  <div class="w-collection">
-    <div class="w-collection__info">
-      <ul class="w-collection__info-list">
-        <li
-          class="w-collection__info-listitem w-collection__info-listitem--category"
-        >
-          Collection
-        </li>
-        <li
-          class="w-collection__info-listitem w-collection__info-listitem--more-info"
-        >
-          {% getGuidesCount ctx %} resources
-        </li>
-        <li
-          class="w-collection__info-listitem w-collection__info-listitem--updated"
-        >
-          Updated <time>{{ ctx.date }}</time>
-        </li>
-      </ul>
-    </div>
-    <div class="w-collection__cover">
-      <img
-        class="w-collection__cover-image"
-        src="{{ ctx.cover }}"
-        alt=""
-      />
-    </div>
-    <div class="w-collection__desc">
-      <h2 class="w-collection__headline">{{ ctx.title }}</h2>
-      <p class="w-collection__summary">
-        {{ ctx.description }}
-      </p>
-      {# <div class="w-chips">
-        {% for tag in ctx.tags %}
-          <span class="w-chip" href="#">{{ tag }}</span>
-        {% endfor %}
-      </div> #}
-    </div>
-  </div>
-</a>
-{% endmacro %}
-
 {% macro AuthorInfo(author, showSocialMedia) %}
 {% set fullName = author.name.given + ' ' + author.name.family %}
 <div class="w-author__info">

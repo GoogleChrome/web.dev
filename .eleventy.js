@@ -4,6 +4,7 @@ const helpers = require('./template-helpers');
 const componentsDir = 'src/site/_includes/components';
 const Aside = require(`./${componentsDir}/Aside`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
+const Collection = require(`./${componentsDir}/Collection`);
 
 const collectionsDir = 'src/site/_collections';
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
@@ -48,17 +49,9 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // SHORTCODES
   //----------------------------------------------------------------------------
-  config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addPairedShortcode('Aside', Aside);
-
-  config.addShortcode('getGuidesCount', function(learningPath) {
-    debugger;
-    const count = learningPath.topics.reduce((guidesCount, topic) => {
-      return guidesCount + topic.guides.length;
-    }, 0);
-    const label = count > 1 ? 'resources' : 'resource';
-    return `${count} ${label}`;
-  });
+  config.addShortcode('Breadcrumbs', Breadcrumbs);
+  config.addShortcode('Collection', Collection);
 
   config.addShortcode('nextGuideLink', function(page, paths) {
     const collection = helpers.getCollectionName(page);
