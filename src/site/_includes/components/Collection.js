@@ -1,5 +1,7 @@
 const {html} = require('common-tags');
 
+/* eslint-disable max-len */
+
 /**
  * Count the number of posts in a learning path.
  * @param {*} learningPath A learning path data object.

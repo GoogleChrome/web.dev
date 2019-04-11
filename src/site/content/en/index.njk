@@ -3,8 +3,6 @@ layout: layout
 title: web.dev
 ---
 
-{% import 'macros/components.njk' as components %}
-
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 
@@ -52,7 +50,7 @@ title: web.dev
     </header>
     <div class="w-layout-grid--three w-mb--std">
       {% for post in collections.recentPosts %}
-        {{ components.ArticleSmall(post, authors[post.data.author]) }}
+        {% ArticleSmall {post: post, author: authors[post.data.author]} %}
       {% endfor %}
     </div>
     <div class="w-text--center">
