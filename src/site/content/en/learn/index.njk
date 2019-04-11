@@ -20,7 +20,7 @@ title: Learn
       <h3>Realize what the web can be</h3>
         <div class="w-layout-grid--three">
           {% for path in learn.paths %}
-            {{ components.Collection(path) }}
+            {% Collection path %}
           {% endfor %}
         </div>
     </section>

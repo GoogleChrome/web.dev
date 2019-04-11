@@ -74,7 +74,7 @@ title: web.dev
     </header>
     <div class="w-layout-grid--three">
       {% for path in home.paths %}
-        {{ components.Collection(path) }}
+        {% Collection path %}
       {% endfor %}
     </div>
     <div class="w-text--center">
