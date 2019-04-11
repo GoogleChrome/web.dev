@@ -23,7 +23,7 @@ permalink: /{{ language }}/{{ page.fileSlug | collectionSlug(collection) }}/inde
           {{ description }}
         </p>
       {% endif %}
-      {{ components.Author(authors[author], author, showSocialMedia=true) }}
+      {% Author {author: authors[author], avatar: author, showSocialMedia: true} %}
     </header>
     {# <button class="w-fab w-fab--share">Share</button> #}
     {{ content | safe}}

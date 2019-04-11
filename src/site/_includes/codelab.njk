@@ -28,7 +28,7 @@ this inline style tag.
   <web-codelab glitch="{{ glitch }}" attribution-hidden>
     <div class="web-codelab-instructions">
       <h1 class="w-headline w-headline--two">{{ title }}</h1>
-      {{ components.Author(authors[author], author, showSocialMedia=true) }}
+      {% Author {author: authors[author], avatar: author, showSocialMedia: true} %}
       {{ content | safe }}
     </div>
 

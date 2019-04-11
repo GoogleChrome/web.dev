@@ -3,6 +3,8 @@ const helpers = require('./template-helpers');
 
 const componentsDir = 'src/site/_includes/components';
 const Aside = require(`./${componentsDir}/Aside`);
+const Author = require(`./${componentsDir}/Author`);
+const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const Collection = require(`./${componentsDir}/Collection`);
 
@@ -50,6 +52,8 @@ module.exports = function(config) {
   // SHORTCODES
   //----------------------------------------------------------------------------
   config.addPairedShortcode('Aside', Aside);
+  config.addShortcode('Author', Author);
+  config.addShortcode('AuthorInfo', AuthorInfo);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('Collection', Collection);
 
