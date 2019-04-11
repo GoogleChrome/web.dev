@@ -14,11 +14,16 @@ title: Blog
       </p>
     </header>
   </div>
+  <div>
+  </div>
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
       {% for post in collections.post | reverse %}
       <div class="w-grid__item" role="listitem">
         {% Article {post: post, author: authors[post.data.author]} %}
+        {{page.date}}
+        <br>
+        {{post.date}}
       </div>
       {% endfor %}
     </div>
