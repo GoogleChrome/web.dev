@@ -2,6 +2,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const helpers = require('./template-helpers');
 
 const componentsDir = 'src/site/_includes/components';
+const Article = require(`./${componentsDir}/Article`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
@@ -51,6 +52,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // SHORTCODES
   //----------------------------------------------------------------------------
+  config.addShortcode('Article', Article);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);

@@ -1,31 +1,3 @@
-{# Article cards used on the blog page #}
-{% macro Article(post, author) %}
-{% set url = post.url | stripLanguage %}
-{% set hero = post.data.hero %}
-<a href="{{ url }}" class="w-card">
-  <article class="w-article">
-    <div class="w-article__cover {{ 'w-article__cover--with-image' if hero }}">
-      {% if hero %}
-      <figure class="w-article__figure">
-        <img class="w-article__image" src="{{ url + hero }}" alt="{{ post.data.alt }}">
-      </figure>
-      {% endif %}
-
-      <h2 class="{{ 'w-article__headline--with-image' if hero else 'w-article__headline' }}">
-        {{ post.data.title }}
-      </h2>
-
-      {% Author {author: author, avatar: post.data.author, small: true} %}
-    </div>
-    <div class="w-article__desc">
-      <p class="w-article__summary">
-        {{ post.data.description }}
-      </p>
-    </div>
-  </article>
-</a>
-{% endmacro %}
-
 {# Smaller article cards used on the home page #}
 {% macro ArticleSmall(post, author) %}
 {% set url = post.url | stripLanguage %}
