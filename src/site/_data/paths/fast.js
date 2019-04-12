@@ -16,5 +16,10 @@ module.exports = {
   and enforce performance budgets to help your team work within the constraints
   needed to continue loading fast and keeping users happy after your site has
   launched.`,
-  topics: [],
+  topics: [
+    {
+      title: 'Optimize your JavaScript',
+      guides: ['remove-unused-code'],
+    },
+  ],
 };

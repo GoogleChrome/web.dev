@@ -38,9 +38,14 @@ tr {
 th,
 td {
   color: inherit;
-  min-width: 50px; // Prevent narrow columns when you have th's like 'JS'
+  min-width: 120px; // Prevent narrow columns when you have th's like 'JS'
   text-align: left;
   vertical-align: middle; // DevSite override
+}
+
+td {
+  line-height: 1.5;
+  padding: 8px 0;
 }
 
 caption {
