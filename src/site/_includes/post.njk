@@ -21,7 +21,7 @@ permalink: /{{ language }}/{{ page.fileSlug | collectionSlug(collection) }}/inde
           {{ description }}
         </p>
       {% endif %}
-      {% Author {author: authors[author], avatar: author, showSocialMedia: true} %}
+      {% Author {post: page, author: authors[author], avatar: author, showSocialMedia: true} %}
     </header>
     {# <button class="w-fab w-fab--share">Share</button> #}
     {{ content | safe}}

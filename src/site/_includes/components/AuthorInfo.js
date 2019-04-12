@@ -4,7 +4,18 @@ const {DateTime} = require('luxon');
 /* eslint-disable require-jsdoc */
 
 module.exports = ({post, author, showSocialMedia = false}) => {
+  if (!post) {
+    throw new Error(`Can't generate AuthorInfo without post object`);
+  }
+
+  if (!author) {
+    throw new Error(`Can't generate AuthorInfo without author object`);
+  }
+
   const fullName = `${author.name.given} ${author.name.family}`;
+  const prettyDate =
+    post.date &&
+    DateTime.fromJSDate(post.date).toLocaleString(DateTime.DATE_MED);
 
   function renderTwitter({twitter}) {
     return html`
@@ -44,10 +55,7 @@ module.exports = ({post, author, showSocialMedia = false}) => {
     <div class="w-author__info">
       <cite class="w-author__name">${fullName}</cite>
       ${showSocialMedia && renderSocialMedia(author)}
-      <time class="w-author__published"
-        >${post &&
-          DateTime.local(post.date).toLocaleString(DateTime.DATE_MED)}</time
-      >
+      ${prettyDate && `<time class="w-author__published">${prettyDate}</time>`}
     </div>
   `;
 };
