@@ -1,5 +1,5 @@
 const {html} = require('common-tags');
-const {DateTime} = require('luxon');
+const prettyDate = require('../../_filters/pretty-date');
 
 /* eslint-disable require-jsdoc */
 
@@ -13,9 +13,6 @@ module.exports = ({post, author, showSocialMedia = false}) => {
   }
 
   const fullName = `${author.name.given} ${author.name.family}`;
-  const prettyDate =
-    post.date &&
-    DateTime.fromJSDate(post.date).toLocaleString(DateTime.DATE_MED);
 
   function renderTwitter({twitter}) {
     return html`
@@ -55,7 +52,8 @@ module.exports = ({post, author, showSocialMedia = false}) => {
     <div class="w-author__info">
       <cite class="w-author__name">${fullName}</cite>
       ${showSocialMedia && renderSocialMedia(author)}
-      ${prettyDate && `<time class="w-author__published">${prettyDate}</time>`}
+      ${post.date &&
+        `<time class="w-author__published">${prettyDate(post.date)}</time>`}
     </div>
   `;
 };
