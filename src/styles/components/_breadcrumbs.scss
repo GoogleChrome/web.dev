@@ -7,8 +7,8 @@
 //
 // =============================================================================
 
-@import "../settings/colors";
-@import "../tools/mixins";
+@import '../settings/colors';
+@import '../tools/mixins';
 
 .w-breadcrumbs {
   display: flex;
@@ -23,8 +23,8 @@
 .w-breadcrumbs__crumb {
   align-items: center;
   display: flex;
+  font-size: .875rem;
   min-width: 0;
-  font-size: 0.875rem;
 }
 
 // Every crumb except for the last one should have a chevron separator.
