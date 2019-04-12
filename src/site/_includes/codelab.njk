@@ -28,6 +28,14 @@ this inline style tag.
       <h1 class="w-headline w-headline--two">{{ title }}</h1>
       {% Author {post: page, author: authors[author], avatar: author, showSocialMedia: true} %}
       {{ content | safe }}
+      <nav class="w-article-navigation">
+        <a
+          class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single"
+          href="#"
+        >
+          Return to all articles
+        </a>
+      </nav>
     </div>
 
     {# Generate our own Glitch for local testing #}
