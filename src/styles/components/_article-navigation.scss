@@ -31,14 +31,6 @@
   position: relative;
 }
 
-.w-article-navigation__link:first-of-type {
-  margin: 0 0 1px;
-
-  @include bp(sm) {
-    margin: 0 1px 0 0;
-  }
-}
-
 .w-article-navigation__link:hover,
 .w-article-navigation__link:focus,
 .w-article-navigation__link:active {
@@ -69,13 +61,34 @@
 
 .w-article-navigation__link--back {
   flex-basis: 33.3%;
+  margin: 0 0 1px;
   padding: 32px 32px 32px 80px;
+
+  @include bp(sm) {
+    margin: 0 1px 0 0;
+  }
 }
 
 .w-article-navigation__link--back::before {
   content: 'arrow_back';
   left: 32px;
   position: absolute;
+}
+
+// When we only have a single back link, override its styles to make it
+// full width.
+.w-article-navigation__link--single {
+  flex: 1;
+  margin: 0;
+  padding: 32px 48px;
+
+  @include bp(sm) {
+    margin: 0;
+  }
+}
+
+.w-article-navigation__link--single::before {
+  left: 16px;
 }
 
 .w-article-navigation__link--forward {
