@@ -3,13 +3,13 @@ layout: layout
 permalink: /{{ language }}/{{ page.fileSlug | collectionSlug(collection) }}/index.html
 ---
 
-{# *-landing-page classes are a holdover from devsite. #}
-{# It would be great to remove them as part of the v1 migration. #}
+{# *-landing-page classes are a holdover from devsite. #} {# It would be great
+to remove them as part of the v1 migration. #}
 <div class="guide-landing-page">
   {% if hero %}
-    <figure class="w-figure w-figure--hero">
-      <img class="w-hero" src="{{ page.url + hero }}" alt="{{ alt }}">
-    </figure>
+  <figure class="w-figure w-figure--hero">
+    <img class="w-hero" src="{{ page.url + hero }}" alt="{{ alt }}" />
+  </figure>
   {% endif %}
 
   <div class="w-layout-container--narrow w-post-breadcrumbs">
@@ -22,9 +22,7 @@ permalink: /{{ language }}/{{ page.fileSlug | collectionSlug(collection) }}/inde
         >
       </li>
       <li class="w-breadcrumbs__crumb">
-        <a
-          class="w-breadcrumbs__link"
-          href="https://web.dev/fast"
+        <a class="w-breadcrumbs__link" href="https://web.dev/fast"
           >Fast load times</a
         >
       </li>
@@ -36,31 +34,48 @@ permalink: /{{ language }}/{{ page.fileSlug | collectionSlug(collection) }}/inde
     <header class="w-article-header">
       <h1 class="w-article-header__headline">{{ title }}</h1>
       {% if description %}
-        <p class="w-article-header__summary">
-          {{ description }}
-        </p>
-      {% endif %}
-      {% Author {post: page, author: authors[author], avatar: author, showSocialMedia: true} %}
+      <p class="w-article-header__summary">
+        {{ description }}
+      </p>
+      {% endif %} {% Author {post: page, author: authors[author], avatar:
+      author, showSocialMedia: true} %}
     </header>
     {# <button class="w-fab w-fab--share">Share</button> #}
-    {{ content | safe}}
+    {{ content | safe }}
+
+    {# Hide tags for now. #} {#
     <div class="w-chips">
       <a class="w-chip" href="#">Artificial Intellegence</a>
       <a class="w-chip" href="#">User Experience</a>
       <a class="w-chip" href="#">Learning</a>
     </div>
-    <div>
-      Last updated: <time>{{ page.date | prettyDate }}</time>
-      <a href="#">Improve article</a>
-      <a href="#">Suggest translation</a>
+    #}
+
+    <div class="w-post-github-link w-mb--l">
+      <span class="w-mr--sm">
+        Last updated: <time>{{ page.date | prettyDate }}</time>
+      </span>
+      <a
+        href="{{ page.inputPath | githubLink }}"
+      >
+        Improve article
+      </a>
+      {# Hide suggest translation for now. #} {#
+      <a href="#">Suggest translation</a> #}
     </div>
   </div>
 
   <nav class="w-article-navigation">
-    <a class="w-article-navigation__link w-article-navigation__link--back" href="#">
+    <a
+      class="w-article-navigation__link w-article-navigation__link--back"
+      href="#"
+    >
       Return to all articles
     </a>
-    <a class="w-article-navigation__link w-article-navigation__link--forward" href="#">
+    <a
+      class="w-article-navigation__link w-article-navigation__link--forward"
+      href="#"
+    >
       <div class="w-article-navigation__column">
         <h3 class="w-article-navigation__heading">Next article</h3>
         Tell search engines translated pages are equivalent
@@ -72,23 +87,20 @@ permalink: /{{ language }}/{{ page.fileSlug | collectionSlug(collection) }}/inde
     <!-- Unstyled -->
     <h3>Related content</h3>
     <ul>
-      {% if related_content %}
-        {% for url in related_content %}
-          <li>
-            <a href="{{ url | stripLanguage }}">{{ macros.getTitleFromUrl(url, collections.all) }}</a>
-          </li>
-        {% endfor %}
-      {% endif %}
-      {% for article in collections.all %}
-        {% set isRelated = article | containsTag(tags) %}
-        {% if isRelated %}
-          <li>
-            <a href="{{ article.url | stripLanguage }}">
-              {{ article.data.title }}
-            </a>
-          </li>
-        {% endif %}
-      {% endfor %}
+      {% if related_content %} {% for url in related_content %}
+      <li>
+        <a href="{{ url | stripLanguage }}">{{
+          macros.getTitleFromUrl(url, collections.all)
+        }}</a>
+      </li>
+      {% endfor %} {% endif %} {% for article in collections.all %} {% set
+      isRelated = article | containsTag(tags) %} {% if isRelated %}
+      <li>
+        <a href="{{ article.url | stripLanguage }}">
+          {{ article.data.title }}
+        </a>
+      </li>
+      {% endif %} {% endfor %}
     </ul>
   </div>
 </div>

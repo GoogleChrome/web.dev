@@ -1,3 +1,10 @@
+@import '../settings/colors';
+
 .w-post-breadcrumbs {
   padding: 32px 32px 24px;
+}
+
+.w-post-github-link {
+  color: $GREY_700;
+  font-size: .875em;
 }
