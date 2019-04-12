@@ -1,20 +1,20 @@
-module.exports = (page) => {
-  // debugger;
-  return `
-<div class="breadcrumbs">
-  <ul>
-    <li>
-      <a
-        class="gc-analytics-event"
-        href="https://web.dev/fast"
-        data-category="web.dev"
-        data-label="guide, path breadcrumb"
-        data-action="click"
-      >
-        Fast load times
-      </a>
-    </li>
-  </ul>
-</div>
+const {html} = require('common-tags');
+
+module.exports = () => {
+  return html`
+    <ul class="w-breadcrumbs">
+      <li class="w-breadcrumbs__crumb">
+        <a
+          class="w-breadcrumbs__link w-breadcrumbs__link--left-justify"
+          href="https://web.dev"
+          >Home</a
+        >
+      </li>
+      <li class="w-breadcrumbs__crumb">
+        <a class="w-breadcrumbs__link" href="https://web.dev/fast"
+          >Fast load times</a
+        >
+      </li>
+    </ul>
   `;
 };
