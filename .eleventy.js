@@ -9,6 +9,11 @@ const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const Collection = require(`./${componentsDir}/Collection`);
+const {
+  Actions,
+  ShareAction,
+  SubscribeAction,
+} = require(`./${componentsDir}/Actions`);
 
 const collectionsDir = 'src/site/_collections';
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
@@ -31,7 +36,7 @@ module.exports = function(config) {
   // tags: ["posts", "foo"].
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
-  
+
   // Syntax highlighting for code snippets
   config.addPlugin(pluginSyntaxHighlight);
 
@@ -57,6 +62,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // SHORTCODES
   //----------------------------------------------------------------------------
+  config.addPairedShortcode('Actions', Actions);
   config.addShortcode('Article', Article);
   config.addShortcode('ArticleSmall', ArticleSmall);
   config.addPairedShortcode('Aside', Aside);
@@ -64,6 +70,8 @@ module.exports = function(config) {
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('Collection', Collection);
+  config.addShortcode('ShareAction', ShareAction);
+  config.addShortcode('SubscribeAction', SubscribeAction);
 
   config.addShortcode('nextGuideLink', function(page, paths) {
     const collection = helpers.getCollectionName(page);
