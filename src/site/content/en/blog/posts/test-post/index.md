@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Test post
+date: 2018-12-06
 author: robdodson
 hero: hero.jpg
 alt: A description for the hero image

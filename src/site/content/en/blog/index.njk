@@ -21,9 +21,6 @@ title: Blog
       {% for post in collections.post | reverse %}
       <div class="w-grid__item" role="listitem">
         {% Article {post: post, author: authors[post.data.author]} %}
-        {{page.date}}
-        <br>
-        {{post.date}}
       </div>
       {% endfor %}
     </div>
