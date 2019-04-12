@@ -49,7 +49,7 @@ figure {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> Grid of columns with a half rem gap. In this case it'll create 2 columns for the 2 children and make sure there's a little space between them.
+  <b>Plain Speak:</b> Grid of columns with a half rem gap. In this case it'll create 2 columns for the 2 children and make sure there's a little space between them.
 </div>
 
 <figure style="text-align:center; margin: 4rem 0;">

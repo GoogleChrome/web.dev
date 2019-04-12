@@ -23,7 +23,7 @@ We built **macro layouts**, we built **micro layouts**, we **chaos** tested, we 
 <br><br>
 
 **Final Glitch**
-<div class="glitch-embed-wrap" style="height: 70vh; width: 80vw;">
+<div class="glitch-embed-wrap" style="height: 70vh; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
     alt="logical-tab-order on Glitch"
@@ -31,7 +31,7 @@ We built **macro layouts**, we built **micro layouts**, we **chaos** tested, we 
   </iframe>
 </div>
 
-<figure style="text-align:center; margin: 4rem 0;">
+<figure style="text-align:center; margin: 4rem 0;" class="screenshot">
   <img src="intrinsic-final-overview-tall.gif" alt="">
   <figcaption>All layouts revealed through devtools in 1 gif 🤓</figcaption>
 </figure>

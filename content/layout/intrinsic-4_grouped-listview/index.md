@@ -88,7 +88,7 @@ article {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> We're <b>leaning into grid defaults and it's intrinsic layout behavior</b> here and just specifying the gaps.
+  <b>Plain Speak:</b> We're <b>leaning into grid defaults and it's intrinsic layout behavior</b> here and just specifying the gaps.
 </div>
 
 <br><br>
@@ -157,7 +157,7 @@ chips {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> Always a horizontal list of 20rem equal width columns
+  <b>Plain Speak:</b> Always a horizontal list of 20rem equal width columns
 </div>
 
 <figure style="text-align:center; margin: 4rem 0;">
@@ -246,7 +246,7 @@ hero-products-list {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> A grid that's <b>always a horizontal list of 20rem x 20rem squares</b>
+  <b>Plain Speak:</b> A grid that's <b>always a horizontal list of 20rem x 20rem squares</b>
 </div>
 
 <br>
@@ -321,7 +321,7 @@ hero-featured {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> 2 columns where the 2nd is twice as large as the first, with equal height rows. This is a special grid with named slots, and there's 2 nodes in that grid that need to always be in these specific areas.
+  <b>Plain Speak:</b> 2 columns where the 2nd is twice as large as the first, with equal height rows. This is a special grid with named slots, and there's 2 nodes in that grid that need to always be in these specific areas.
 </div>
 
 <br>

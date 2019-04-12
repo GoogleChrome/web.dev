@@ -52,7 +52,7 @@ aside > nav {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> Strictly rows and a healthy gap between them
+  <b>Plain Speak:</b> Strictly rows and a healthy gap between them
 </div>
 
 <br><br>

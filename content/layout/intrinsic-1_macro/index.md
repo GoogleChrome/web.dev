@@ -128,7 +128,7 @@ body {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> I want a <b>grid</b> that's <b>3</b> rows by <b>4</b> columns, the <b>first</b> and <b>last</b> columns should be <b>equal</b> and the width of the `--body-rails`  CSS variable. <b>2nd</b> column at the <b>predetermined width</b> of a sidebar, and our <b>column 3</b> should <b>fill</b> all remaining space. <b>Furthermore</b>, these <b>areas</b> are <b>named</b>, and "these elements" should occupy "these areas".
+  <b>Plain Speak:</b> I want a <b>grid</b> that's <b>3</b> rows by <b>4</b> columns, the <b>first</b> and <b>last</b> columns should be <b>equal</b> and the width of the `--body-rails`  CSS variable. <b>2nd</b> column at the <b>predetermined width</b> of a sidebar, and our <b>column 3</b> should <b>fill</b> all remaining space. <b>Furthermore</b>, these <b>areas</b> are <b>named</b>, and "these elements" should occupy "these areas".
 </div>
 
 <br><br>
@@ -211,7 +211,7 @@ body {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> I want a <b>grid</b> of <b>rows</b> with a <b>2rem gap</b>
+  <b>Plain Speak:</b> I want a <b>grid</b> of <b>rows</b> with a <b>2rem gap</b>
 </div>
 
 <br><br>
@@ -276,7 +276,7 @@ main {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> I want a <b>grid</b> with <b>2 columns</b>, the <b>first at a fixed width</b> and the <b>2nd filling</b> the remaining space.
+  <b>Plain Speak:</b> I want a <b>grid</b> with <b>2 columns</b>, the <b>first at a fixed width</b> and the <b>2nd filling</b> the remaining space.
 </div>
 
 <br><br>
@@ -324,7 +324,7 @@ Due to our nice refactor, **our responsive work is pretty minimal**. Nothing nee
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> When the viewport width is less than 768px, I want a <b>grid</b> with <b>1 full width column</b> and margin only on the left side.
+  <b>Plain Speak:</b> When the viewport width is less than 768px, I want a <b>grid</b> with <b>1 full width column</b> and margin only on the left side.
 </div>
 
 <figure style="text-align:center; margin: 4rem 0; max-width: 400px;">

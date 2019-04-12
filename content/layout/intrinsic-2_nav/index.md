@@ -76,7 +76,7 @@ nav {
 ```
 
 <div class="note">
-  <b>CSS Grid In English:</b> Explained below 👇
+  <b>Plain Speak:</b> Explained below 👇
 </div>
 
 <figure style="text-align:center; margin: 4rem 0;">
