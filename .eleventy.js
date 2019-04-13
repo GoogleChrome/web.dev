@@ -1,8 +1,8 @@
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const helpers = require('./template-helpers');
 
 const componentsDir = 'src/site/_includes/components';
 const Article = require(`./${componentsDir}/Article`);
+const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const ArticleSmall = require(`./${componentsDir}/ArticleSmall`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Author = require(`./${componentsDir}/Author`);
@@ -20,7 +20,7 @@ const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`)
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
 
 const filtersDir = 'src/site/_filters';
-const collectionSlug = require(`./${filtersDir}/collection-slug`);
+const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
@@ -52,7 +52,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // FILTERS
   //----------------------------------------------------------------------------
-  config.addFilter('collectionSlug', collectionSlug);
+  config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('githubLink', githubLink);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
@@ -64,6 +64,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addPairedShortcode('Actions', Actions);
   config.addShortcode('Article', Article);
+  config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addShortcode('ArticleSmall', ArticleSmall);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Author', Author);

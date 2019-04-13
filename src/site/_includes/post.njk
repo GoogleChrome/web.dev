@@ -1,6 +1,6 @@
 ---
 layout: layout
-permalink: /{{ language }}/{{ page.fileSlug | collectionSlug(collection) }}/index.html
+permalink: /{{ language }}/{{ page.fileSlug | pathSlug(path) }}/index.html
 ---
 
 {# *-landing-page classes are a holdover from devsite. #} {# It would be great
@@ -71,23 +71,23 @@ to remove them as part of the v1 migration. #}
     </div>
   </div>
 
-  <nav class="w-article-navigation">
-    <a
-      class="w-article-navigation__link w-article-navigation__link--back"
-      href="#"
-    >
-      Return to all articles
-    </a>
-    <a
-      class="w-article-navigation__link w-article-navigation__link--forward"
-      href="#"
-    >
-      <div class="w-article-navigation__column">
-        <h3 class="w-article-navigation__heading">Next article</h3>
-        Tell search engines translated pages are equivalent
-      </div>
-    </a>
-  </nav>
+  {% if collection %}
+    {# Find next item in path #}
+    {% ArticleNavigation {
+      back: '/{{collection}}',
+      backLabel: 'Return to all articles',
+      forward: '#',
+      forwardLabel: 'Tell search engines translated pages are equivalent'
+    } %}
+  {% else %}
+    {# Find next item in collections.post #}
+    {% ArticleNavigation {
+      back: '/blog',
+      backLabel: 'Return to all articles',
+      forward: '#',
+      forwardLabel: 'Tell search engines translated pages are equivalent'
+    } %}
+  {% endif %}
 
   {# Hide related content for now. #}
   {# <div>
