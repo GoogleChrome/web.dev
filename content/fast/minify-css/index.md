@@ -13,7 +13,7 @@ wf_blink_components: N/A
 
 # Minify CSS
 
-CSS files can contain unnecessary characters, such as comments, whitespaces, and indentation. In production versions of the sites, these bytes can be safely removed, in order to reduce file sizes, without affecting how the browser processes the styles. We call this technique **minification**.
+CSS files can contain unnecessary characters, such as comments, whitespaces, and indentation, but, once in production, these bytes can be safely removed, in order to reduce file sizes, without affecting how the browser processes the styles. This technique is called **minification**.
 
 ## Loading unminified CSS
 
@@ -55,71 +55,81 @@ In practice, you would like to introduce this technique as one of the steps of y
 
 ## Measure
 
-You’ll apply CSS minification to the [Fav Kitties site](https://minify-css-unoptimized.glitch.me/), which has been used for other web.dev articles as well.
+You’ll apply CSS minification to a site that has been used in other guides: [Fav Kitties](https://fav-kitties-animated.glitch.me/). This version of the site uses a cool CSS library: [animate.css](https://github.com/daneden/animate.css), to animate different page elements when a user votes for a cat 😺.
 
-First, obtain the size of the CSS file used by the site:
+First, run [Lighthouse](https://web.dev/measure) on [the page](https://fav-kitties-animated.glitch.me/), click on **Performance** and go the **Opportunities** section.
 
-1. Open the [site](https://minify-css-unoptimized.glitch.me/) in Chrome.
+The resulting report shows that up to **16KB** can be saved from the **animate.css** file:
+
+<img class="screenshot" width="700px" height="150px" src="./lighthouse-unoptimized.png" alt="Lighthouse - Minify CSS opportunity.">
+
+Now you'll inspect the content of the CSS files:
+
+1. Open the [site](https://fav-kitties-animated.glitch.me/) in Chrome.
 1. Press `Control+Shift+J` or `Cmd+Option+J` (Mac), to open DevTools.
 1. Click on the **Network** panel and filter for **CSS**.
 1. Make sure **Disable Cache** is checked and reload the page.
 
-<img class="screenshot" width="510px" height="96px" src="./cdt-css-unoptimized.png" alt="DevTools CSS unoptimized trace">
+<img class="screenshot" width="700px" height="120px" src="./cdt-css-unoptimized.png" alt="DevTools CSS unoptimized trace">
 
-The size of the file is **1.7KB**. If you now click on the file, and go to the **Response** tab, you’ll see that the content of the file includes things like indentation and whitespaces:
+The page is requesting two CSS files, of **1.9KB** and **76.2KB** respectively. 
 
-<img class="screenshot" width="510px" height="96px" src="./cdt-css-unoptimized-res.png" alt="DevTools CSS unoptimized response">
+Inspect the content of **animate.css**, by clicking on the file in the **Response** tab. You’ll see that the stylesheet contains characters for whitespaces and indentation:
 
-Next, you’ll minify this file, and measure the amount of bytes you can save by applying this technique.
+<img class="screenshot" width="700px" height="120px" src="./cdt-css-unoptimized-res.png" alt="DevTools CSS unoptimized response">
+
+Next, you’ll minify these files as part of the build process, by using some useful [Webpack](https://webpack.js.org/) plugins.
 
 <div class="aside note">
-<strong>Note:</strong> If you run <strong>Lighthouse</strong> in this page, it will show the "Minify CSS" opportunity as "Passed", because the bytes saved after minifyng this file would be under the threshold that the tool considers "significant".
-Recall this is a small demo. In general, minifying CSS is recommended, regardless that they show up or not as suggestions on performance tools.
+<strong>Note:</strong> On the previous <strong>Lighthouse</strong> report, the only file that appears as an opportunity for minification is <strong>animate.css</strong>. The reason is that the bytes saved after minifyng <strong>style.css</strong> would be under the threshold that the tool considers "significant".
+In any case, recall that minification is a general best practice, which sould be applied to any CSS file, regardless that they show up or not as suggestions on performance tools.
 </div>
 
 ## CSS Minification with Webpack:
 
-The way the CSS files are produced works as follows:
-
-- **index.js** imports **src/styles.css**, meaning the resulting JS bundle will contain the content of the CSS file inlined.
-- In **webpack-config.js** [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) is used, so, after the previous step, the CSS can be extracted to its own file.
-
-Take a look at the content of these files:
+Before jumping into the optimizations, take some time understanding how the [demo site](https://glitch.com/edit/#!/fav-kitties-animated?path=webpack.config.js:1:0]) works:
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/minify-css-unoptimized?path=src/index.js&previewSize=0"
-    alt="minify-css-unoptimized on Glitch"
+    src="https://glitch.com/embed/#!/embed/fav-kitties-animated?path=webpack.config.js&previewSize=0"
+    alt="fav-kitties-animated on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
+By default, the resulting JS bundle that Webpack produces would contain the content of the CSS files inlined. Since we want each CSS to be on its own file, we are using two complementary plugins:
+
+- [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) will extract each CSS into its own file, as one o the steps of the build process.
+- [webpack-fix-style-only-entries](https://github.com/fqborges/webpack-fix-style-only-entries) is used to correct an issue on Wepback 4, to avoid generating an extra JS file for each CSS declared as entry in **webpack-config.js**.
+
 You will now make some changes in the project:
 
-1. Open the project [in Glitch](https://glitch.com/~minify-css-unoptimized).
-1. Click “View Source”, and then, “Remix and Edit”, to make changes on the project.
-1. Click the “Tools” optoin in the lower left corner of the edit view, and go to “Console”.
+1. Open the project [in Glitch](https://glitch.com/~fav-kitties-animated).
+1. Click “View Source”, and then, click on the name of the project in the upper left side.
+1. In the drop-down menu, choose “Remix and Edit” 🎤, to make changes on the project.
+1. Once in the cloned project, go to the “Tools” option in the lower left corner of the edit view, and click on “Console”.
 
 To minify the resulting CSS, you’ll use the [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin): 
 
-1. In the console, run `npm install --save-dev optimize-css-assets-webpack-plugin`.
+1. In Glitch console, run `npm install --save-dev optimize-css-assets-webpack-plugin`.
 1. Run `refresh`, so the changes are synchronized with the Glitch editor.
 
-Next, go back to the Glitch editor, and open the **webpack.config.js** file, and make some modifications:
+Next, go back to the Glitch editor, open the **webpack.config.js** file, and make the following modifications:
 
-At the beginning of the file, add:
+Load the module at the beginning of the file:
 ```
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 ```
 
-Inside **module.exports**, insert:
+Then, pass an instance of the plugin to the **plugins** array:
 ```
-optimization: {
-	minimizer: [
-		new OptimizeCSSAssetsPlugin({})
-	]
-}
+  plugins: [
+    new HtmlWebpackPlugin({template: "./src/index.html"}),
+    new MiniCssExtractPlugin({filename: "[name].css"}),
+    new FixStyleOnlyEntriesPlugin(),
+    new OptimizeCSSAssetsPlugin({})
+  ]
 ```
 After making the changes a rebuild of the project will be triggered.
 This is how the resulting **webpack.config.js** will look like:
@@ -127,32 +137,33 @@ This is how the resulting **webpack.config.js** will look like:
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/minify-css-optimized?path=webpack.config.js&previewSize=0"
-    alt="minify-css-optimized on Glitch"
+    src="https://glitch.com/embed/#!/embed/fav-kitties-animated-min?path=webpack.config.js&previewSize=0"
+    alt="fav-kitties-animated-min on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
-1. Go back to the console, and run `cd public`.
-1. Run `vi main.css`, to inspect the content of the CSS.
-
-You'll find a more compact version of the CSS, after minification has been applied.
-
-<div class="aside note">
-Note: This demo is based on Webpack 4. It's likely that Webpack 5 will come with a CSS minimizer built-in. If that’s the case you won’t need to configure a plugin as done in the previous step.
-</div>
+Next, you'll check the result of this optimization with performance tools.
 
 ## Monitor
 
-1. Open the resulting [optimized page](https://minify-css-optimized.glitch.me/) in Chrome, and open DevTools.
+First, run Lighthouse on the [optimized site](https://fav-kitties-animated-min.glitch.me/). 
+
+The report doesn't show "Minify CSS" as "Opportunity" anymore, and has now moved to "Passed Audits" section:
+
+<img class="screenshot" width="700px" height="150px" src="./lighthouse-optimized.png" alt="Lighthouse Passed Audits for optimized page.">
+
+To inspect the size and content of the files:
+
+1. Open the resulting [optimized page](https://fav-kitties-animated-min.glitch.me/) in Chrome, and open DevTools.
 1. Click in the **Network** panel and filter for “CSS”.
 1. Make sure "Disable Cache" is checked and reload the page.
 
-<img class="screenshot" width="510px" height="96px" src="./cdt-css-optimized.png" alt="DevTools CSS unoptimized response">
+<img class="screenshot" width="700px" height="120px" src="./cdt-css-optimized.png" alt="DevTools CSS unoptimized response">
 
-Once minified, [the new CSS file](https://minify-css-optimized.glitch.me/main.css) is now **~24% smaller** than its initial version.
+You can inspect these files, and see that the new versions don't contain any whitespaces. Both files are much smaller, in particular, the [animate.css](http://fav-kitties-animated-min.glitch.me/animate.css) has been reduced in **~26%**, saving **~20KB**!
 
-As this is a relatively small demo, you might not see any impact on performance metrics.  On real production sites with larger CSS files, applying this technique can lead to improvements on metrics like [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
+Since CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), if you apply minification on sites that use large CSS files, you can see improvements on metrics like [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
 
 ## Next steps and resources
 
