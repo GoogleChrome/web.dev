@@ -1,7 +1,7 @@
 const {html} = require('common-tags');
 const stripLanguage = require('../../_filters/strip-language');
 
-/* eslint-disable require-jsdoc */
+/* eslint-disable require-jsdoc,max-len */
 
 /**
  * Collapse all topics for a learning path into an array of slugs.
@@ -53,6 +53,8 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
   let forward;
   let forwardLabel;
   let next;
+  // Used to determine if we should only show the back link.
+  let isSingle = false;
 
   // This is gross and should be refactored :(
   // https://github.com/GoogleChrome/web.dev/issues/810
@@ -73,14 +75,17 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
   if (next) {
     forward = stripLanguage(next.url);
     forwardLabel = next.data.title;
+  } else {
+    isSingle = true;
   }
 
   // Otherwise if this is a codelab just render the back button.
 
-  function renderBack(link, label) {
+  function renderBack(link, label, isSingle) {
     return html`
       <a
-        class="w-article-navigation__link w-article-navigation__link--back"
+        class="w-article-navigation__link w-article-navigation__link--back ${isSingle &&
+          `w-article-navigation__link--single`}"
         href="${link}"
       >
         ${label}
@@ -104,7 +109,7 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
 
   return html`
     <nav class="w-article-navigation">
-      ${back && backLabel && renderBack(back, backLabel)}
+      ${back && backLabel && renderBack(back, backLabel, isSingle)}
       ${forward && forwardLabel && renderForward(forward, forwardLabel)}
     </nav>
   `;

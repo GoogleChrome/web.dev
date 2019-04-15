@@ -80,15 +80,10 @@
 .w-article-navigation__link--single {
   flex: 1;
   margin: 0;
-  padding: 32px 48px;
 
   @include bp(sm) {
     margin: 0;
   }
-}
-
-.w-article-navigation__link--single::before {
-  left: 16px;
 }
 
 .w-article-navigation__link--forward {
