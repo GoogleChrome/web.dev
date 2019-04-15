@@ -5,6 +5,10 @@ const discoverable = require('../discoverable/discoverable.11tydata.js');
 const secure = require('../secure/secure.11tydata.js');
 const installable = require('../installable/installable.11tydata.js');
 
+/* eslint-disable max-len */
+const lighthousePerformance = require('../lighthouse-performance/lighthouse-performance.11tydata.js');
+/* eslint-enable max-len */
+
 // =============================================================================
 // LEARN OVERVIEW
 //
@@ -21,5 +25,8 @@ module.exports = {
     discoverable,
     secure,
     installable,
+  ],
+  audits: [
+    lighthousePerformance,
   ],
 };
