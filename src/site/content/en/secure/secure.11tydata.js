@@ -1,5 +1,7 @@
 module.exports = {
-  url: '/secure',
+  // Slug is used by landing pages like / and /learn to link to this path.
+  // Because it affects urls, the slug should never be translated.
+  slug: 'secure',
   cover: '/images/collections/secure.svg',
   title: 'Safe and secure',
   updated: 'May 24, 2018',

@@ -1,5 +1,7 @@
 module.exports = {
-  url: '/performanceAudits',
+  // Slug is used by landing pages like / and /learn to link to this path.
+  // Because it affects urls, the slug should never be translated.
+  slug: 'lighthouse-performance',
   cover: '/images/collections/lighthouse.png',
   title: 'Performance audits',
   description:

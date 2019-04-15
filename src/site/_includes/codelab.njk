@@ -7,7 +7,7 @@ The styles for web-codelab and .w-codelab-glitch live in DevSite.
 When testing locally we can simulate the custom element's styles with
 this inline style tag.
 #}
-{% if env.mode === 'dev' %}
+{% if site.env === 'dev' %}
 <style>
   web-codelab {
     display: flex;
@@ -38,7 +38,7 @@ this inline style tag.
     </div>
 
     {# Generate our own Glitch for local testing #}
-    {% if env.mode === 'dev' %}
+    {% if site.env === 'dev' %}
       <div class="web-codelab-glitch">
         <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
           <iframe

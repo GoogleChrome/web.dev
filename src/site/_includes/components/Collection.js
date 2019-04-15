@@ -17,7 +17,7 @@ function getPostCount(learningPath) {
 
 module.exports = (path) => {
   return html`
-    <a href="${path.url}" class="w-card">
+    <a href="/${path.slug}" class="w-card">
       <div class="w-collection">
         <div class="w-collection__info">
           <ul class="w-collection__info-list">

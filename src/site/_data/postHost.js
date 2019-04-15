@@ -1,4 +1,4 @@
-const learn = require('./learn.js');
+const learn = require('../content/en/learn/learn.11tydata.js');
 
 // =============================================================================
 // POST HOST

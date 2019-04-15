@@ -1,5 +1,4 @@
 ---
-layout: blog
 title: Test post
 date: 2018-12-06
 author: robdodson
