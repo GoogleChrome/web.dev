@@ -2,6 +2,10 @@
 @import '../tools/breakpoints';
 
 // sass-lint:disable class-name-format
+body.lh-signedin [data-lh-signin='hide'] {
+  display: none !important;
+}
+
 web-progress-bar {
   visibility: hidden;
 }

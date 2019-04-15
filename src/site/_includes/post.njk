@@ -21,7 +21,7 @@ to remove them as part of the v1 migration. #}
     {% Breadcrumbs path %}
   </div>
 
-  <div class="w-layout-container--narrow">
+  <main class="w-layout-container--narrow">
     <header class="w-article-header">
       <h1 class="w-article-header__headline">{{ title }}</h1>
       {% if description %}
@@ -53,7 +53,7 @@ to remove them as part of the v1 migration. #}
       {# Hide suggest translation for now. #} {#
       <a href="#">Suggest translation</a> #}
     </div>
-  </div>
+  </main>
 
   {% if path.slug === 'blog' %}
     {# Find next blog post #}
