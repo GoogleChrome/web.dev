@@ -14,9 +14,8 @@ module.exports = function() {
 
   const paths = learn.paths;
   paths.forEach((path) => {
-    debugger;
     path.topics.forEach((topic) => {
-      (topic.guides || []).forEach((id) => {
+      (topic.pathItems || []).forEach((id) => {
         if (id in out) {
           // TODO(samthor): Warn that a guide is in multiple locations?
         }

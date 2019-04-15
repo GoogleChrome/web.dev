@@ -8,8 +8,8 @@ const {html} = require('common-tags');
  * @return {number}
  */
 function getPostCount(learningPath) {
-  const count = learningPath.topics.reduce((guidesCount, topic) => {
-    return guidesCount + topic.guides.length;
+  const count = learningPath.topics.reduce((pathItemsCount, topic) => {
+    return pathItemsCount + topic.pathItems.length;
   }, 0);
   const label = count > 1 ? 'resources' : 'resource';
   return `${count} ${label}`;

@@ -14,8 +14,7 @@ web_lighthouse:
 wf_blink_components: Blink>Accessibility
 tags:
   - pathItem
-  - accessibility
-  - ux
+  - accessible
 ---
 
 Native HTML elements such as `<button>` or `<input>` have keyboard accessibility

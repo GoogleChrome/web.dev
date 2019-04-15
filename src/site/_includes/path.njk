@@ -39,7 +39,7 @@ layout: layout
     {% for topic in path.topics %}
     <h2 id="{{ topic.title | slug }}" class="no-link">{{ topic.title }}</h2>
     <div class="w-layout-grid--three w-mb--std">
-      {% for slug in topic.guides %}
+      {% for slug in topic.pathItems %}
         {% for item in collections.pathItem %}
           {% if item.fileSlug === slug %}
             {% ArticleSmall {post: item, author: authors[item.data.author]} %}

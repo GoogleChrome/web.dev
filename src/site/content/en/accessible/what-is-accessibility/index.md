@@ -12,8 +12,7 @@ web_published_on: 2018-11-18
 wf_blink_components: Blink>Accessibility
 tags:
   - pathItem
-  - accessibility
-  - ux
+  - accessible
 ---
 
 An accessible site is one whose content can be accessed regardless of any user's
