@@ -18,24 +18,10 @@ to remove them as part of the v1 migration. #}
   {% endActions %}
 
   <div class="w-layout-container--narrow w-post-breadcrumbs">
-    <ul class="w-breadcrumbs">
-      <li class="w-breadcrumbs__crumb">
-        <a
-          class="w-breadcrumbs__link w-breadcrumbs__link--left-justify"
-          href="https://web.dev"
-          >Home</a
-        >
-      </li>
-      <li class="w-breadcrumbs__crumb">
-        <a class="w-breadcrumbs__link" href="https://web.dev/fast"
-          >Fast load times</a
-        >
-      </li>
-    </ul>
+    {% Breadcrumbs path %}
   </div>
 
   <div class="w-layout-container--narrow">
-    {# {% Breadcrumbs page %} #}
     <header class="w-article-header">
       <h1 class="w-article-header__headline">{{ title }}</h1>
       {% if description %}
@@ -45,7 +31,6 @@ to remove them as part of the v1 migration. #}
       {% endif %} {% Author {post: page, author: authors[author], avatar:
       author, showSocialMedia: true} %}
     </header>
-    {# <button class="w-fab w-fab--share">Share</button> #}
     {{ content | safe }}
 
     {# Hide tags for now. #} {#

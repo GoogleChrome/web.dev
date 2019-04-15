@@ -14,6 +14,7 @@ module.exports = function() {
 
   const paths = learn.paths;
   paths.forEach((path) => {
+    debugger;
     path.topics.forEach((topic) => {
       (topic.guides || []).forEach((id) => {
         if (id in out) {
