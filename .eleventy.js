@@ -36,7 +36,7 @@ module.exports = function(config) {
   // define. So a post defining its own tags: ["foo"] would end up with
   // tags: ["posts", "foo"].
   // https://www.11ty.io/docs/config/#data-deep-merge
-  config.setDataDeepMerge(true);
+  // config.setDataDeepMerge(true);
 
   // Syntax highlighting for code snippets
   config.addPlugin(pluginSyntaxHighlight);

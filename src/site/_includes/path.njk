@@ -1,20 +1,17 @@
 ---
 layout: layout
 ---
-{# Find the global data object for this collection in _data/collections/{learningPath} #}
-{% set path = paths[learningPath] %}
-
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="path-landing-page">
   <header class="w-masthead-path">
     <div class="w-masthead-path__container">
       <div class="w-masthead-path__left">
-        <h1 class="w-masthead-path__headline no-link">{{ path.title }}</h1>
-        <p class="w-masthead-path__description">{{ path.description }}</p>
+        <h1 class="w-masthead-path__headline no-link">{{title}}</h1>
+        <p class="w-masthead-path__description">{{description}}</p>
       </div>
       <div class="w-masthead-path__right">
-        <img class="w-masthead-path__image" src="/images/collections/{{ learningPath }}.svg" alt="">
+        <img class="w-masthead-path__image" src="{{cover}}" alt="">
       </div>
     </div>
   </header>
@@ -22,13 +19,12 @@ layout: layout
   <section class="w-layout-container w-path-intro">
     <div class="w-path-intro__overview">
       <h2 class="w-headline--three no-link">Overview</h2>
-      <div>{{ path.overview }}</div>
+      <div>{{overview}}</div>
     </div>
     <div class="w-path-intro__learn">
       <h2 class="w-headline--three no-link">What you'll learn</h2>
       <ul class="w-icon-list">
-        {# paths comes from _data #}
-        {% for topic in paths[learningPath].topics %}
+        {% for topic in topics %}
           <li class="w-icon-list__item w-icon-list__item--check">
             {{ topic.title }}
           </li>
@@ -40,7 +36,7 @@ layout: layout
   <hr>
 
   <section class="w-layout-container">
-    {% for topic in paths[learningPath].topics %}
+    {% for topic in topics %}
     <h2 id="{{ topic.title | slug }}" class="no-link">{{ topic.title }}</h2>
     <div class="w-layout-grid--three w-mb--std">
       {% for slug in topic.guides %}

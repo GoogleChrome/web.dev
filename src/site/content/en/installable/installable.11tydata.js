@@ -1,5 +1,7 @@
 module.exports = {
-  url: '/installable',
+  // Slug is used by landing pages like / and /learn to link to this path.
+  // Because it affects urls, the slug should never be translated.
+  slug: 'installable',
   cover: '/images/collections/installable.svg',
   title: 'Installable',
   updated: 'May 24, 2018',
