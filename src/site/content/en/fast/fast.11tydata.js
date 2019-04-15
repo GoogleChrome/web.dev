@@ -22,7 +22,7 @@ module.exports = {
     topics: [
       {
         title: 'Optimize your JavaScript',
-        guides: ['remove-unused-code'],
+        pathItems: ['remove-unused-code'],
       },
     ],
   },

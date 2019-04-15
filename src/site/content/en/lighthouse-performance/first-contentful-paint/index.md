@@ -8,6 +8,7 @@ web_lighthouse:
   - first-contentful-paint
 tags:
   - pathItem
+  - lighthouse-performance
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa

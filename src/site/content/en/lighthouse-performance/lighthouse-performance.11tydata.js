@@ -11,15 +11,15 @@ module.exports = {
     topics: [
       {
         title: 'Metrics',
-        guides: ['first-contentful-paint'],
+        pathItems: ['first-contentful-paint'],
       },
       {
         title: 'Opportunities',
-        guides: [],
+        pathItems: [],
       },
       {
         title: 'Diagnostics',
-        guides: [],
+        pathItems: [],
       },
     ],
   },
