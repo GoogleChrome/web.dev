@@ -75,13 +75,26 @@ devsite-tabs.upper-tabs tab a,
 devsite-tabs.upper-tabs tab a:focus,
 devsite-tabs.upper-tabs tab a:hover,
 devsite-tabs.upper-tabs tab a:active {
+  color: $PRIMARY_TEXT_COLOR !important; // DevSite override
   font-weight: 500;
+  outline: 0;
+  text-decoration: none;
+}
+
+devsite-tabs.upper-tabs tab a:hover {
+  background-color: rgba($PRIMARY_TEXT_COLOR, .04);
 }
 
 devsite-tabs.upper-tabs tab a:focus {
-  border: 0;
-  box-shadow: inset 0 0 0 1px $WEB_SECONDARY_COLOR;
-  outline: 0;
+  background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+}
+
+devsite-tabs.upper-tabs tab a:active {
+  background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+}
+
+devsite-tabs.upper-tabs tab a.selected {
+  color: $WEB_PRIMARY_COLOR !important; // DevSite override
 }
 
 devsite-user:not([signed-in]) {
@@ -112,6 +125,10 @@ body devsite-heading[link] {
 .devsite-footer-sites-logo-link:focus {
   outline: auto;
   outline-color: $WEB_SECONDARY_COLOR;
+}
+
+.devsite-site-logo-link:active {
+  background: transparent !important;
 }
 
 devsite-content-footer.container.nocontent {
