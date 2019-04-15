@@ -90,7 +90,7 @@ If you aren't using a library, remove it.  If the library isn't required for the
 initial page load, consider if it can be [lazy loaded](/fast/reduce-javascript-payloads-with-code-splitting).
 
 {% Aside 'codelab' %}
-  [Remove unused code.](/codelab-remove-unused-code)
+  [Remove unused code.](/fast/codelab-remove-unused-code)
 {% endAside %}
 
 ## Remove unneeded libraries

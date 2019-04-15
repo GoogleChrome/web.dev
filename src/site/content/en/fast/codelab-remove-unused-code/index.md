@@ -8,6 +8,7 @@ description: |
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 glitch: fav-kitties-starter
+related_post: remove-unused-code
 ---
 
 In this codelab, improve the performance of the following application by
