@@ -27,10 +27,17 @@ this inline style tag.
       <h1 class="w-headline w-headline--two">{{ title }}</h1>
       {% Author {post: page, author: authors[author], avatar: author, showSocialMedia: true} %}
       {{ content | safe }}
-      {% ArticleNavigation {
-        back: '/' + path.slug,
-        backLabel: 'Return to all articles'
-      } %}
+      {% if related_post %}
+        {% ArticleNavigation {
+          back: '/' + path.slug + '/' + related_post,
+          backLabel: 'Return to article'
+        } %}
+      {% else %}
+        {% ArticleNavigation {
+          back: '/' + path.slug,
+          backLabel: 'Return to all articles'
+        } %}
+      {% endif %}
     </div>
 
     {# Generate our own Glitch for local testing #}
