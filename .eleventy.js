@@ -25,6 +25,7 @@ const containsTag = require(`./${filtersDir}/contains-tag`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
+const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
 
 module.exports = function(config) {
@@ -57,6 +58,7 @@ module.exports = function(config) {
   config.addFilter('githubLink', githubLink);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
+  config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripLanguage', stripLanguage);
 
   //----------------------------------------------------------------------------
