@@ -12,9 +12,6 @@ web_lighthouse:
   - tabindex
   - focusable-controls
 wf_blink_components: Blink>Accessibility
-tags:
-  - pathItem
-  - accessible
 ---
 
 Native HTML elements such as `<button>` or `<input>` have keyboard accessibility

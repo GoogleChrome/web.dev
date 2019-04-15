@@ -11,9 +11,6 @@ wf_blink_components: Blink>Accessibility
 # Example of related_content
 # related_content:
 #   - /en/accessible/control-focus-with-tabindex/
-tags:
-  - pathItem
-  - accessible
 ---
 
 The focus indicator (often signified by a "focus ring") identifies the currently

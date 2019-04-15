@@ -11,9 +11,6 @@ web_lighthouse: N/A
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 wf_blink_components: N/A
-tags:
-  - pathItem
-  - fast
 ---
 
 Registries like [npm](https://docs.npmjs.com/getting-started/what-is-npm) have
