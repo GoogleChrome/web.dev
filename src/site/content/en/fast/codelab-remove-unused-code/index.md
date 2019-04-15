@@ -8,8 +8,6 @@ description: |
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 glitch: fav-kitties-starter
-tags:
-  - codelab
 ---
 
 In this codelab, improve the performance of the following application by
