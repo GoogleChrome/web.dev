@@ -1,7 +1,8 @@
 ---
-page_type: guide
+layout: post
 title: Keyboard access fundamentals
 author: robdodson
+date: 2018-11-18
 description: |
   Many different users rely on the keyboard to navigate applications - from
   users with temporary and permanent motor impairments to users who use keyboard
@@ -11,12 +12,7 @@ description: |
 web_lighthouse:
   - visual-order-follows-dom
   - offscreen-content-hidden
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-18
-wf_blink_components: Blink>Accessibility
 ---
-
-# Keyboard access fundamentals
 
 Many different users rely on the keyboard to navigate applications — from users
 with temporary and permanent motor impairments to users who use keyboard
@@ -58,19 +54,9 @@ To check if your application's tab order is logical, try tabbing through your
 page. In general, focus should follow reading order, moving from left to right,
 from the top to the bottom of your page.
 
-<div class="aside note">
-So long as you stick to the rule of laying out your controls so that they
-follow a given reading order, you shouldn't need to change anything to support
-<em>left-to-right</em> text versus <em>right-to-left</em> text. But if you want 
-to see what your page would look like for folks who use right-to-left text, you can use 
-the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">dir
-attribute</a> to change the reading order of your page.
-</th>
-</div>
-
-If the focus order seems illogical, you should rearrange the elements in the DOM
-to make the tab order more natural. ****If you want something to appear visually
-earlier on the screen, move it earlier in the DOM****.
+If the focus order seems wrong, you should rearrange the elements in the DOM to
+make the tab order more natural. **If you want something to appear visually
+earlier on the screen, move it earlier in the DOM**.
 
 Try tabbing through the two sets of buttons below to experience a logical tab
 order versus an illogical tab order:
@@ -97,32 +83,19 @@ order versus an illogical tab order:
 
 The code for these two examples is compared below:
 
-<table>
-  <thead>
-    <tr>
-      <th><strong>Logical tab order </strong></th>
-      <th><strong>Illogical tab order</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <pre class="prettyprint devsite-disable-click-to-copy">
-&lt;button&gt;Kiwi&lt;/button&gt;
-&lt;button&gt;Peach&lt;/button&gt;
-&lt;button&gt;Coconut&lt;/button&gt;
-        </pre>
-      </td>
-      <td>
-        <pre class="prettyprint devsite-disable-click-to-copy">
-&lt;button style="float: right"&gt;Kiwi&lt;/button&gt;
-&lt;button&gt;Peach&lt;/button&gt;
-&lt;button&gt;Coconut&lt;/button&gt;
-        </pre>
-      </td>
-    </tr>
-  </tbody>
-</table>
+**Logical tab order**
+```html
+<button>Kiwi</button>
+<button>Peach</button>
+<button>Coconut</button>
+```
+
+**Illogical tab order**
+```html/0
+<button style="float: right">Kiwi</button>
+<button>Peach</button>
+<button>Coconut</button>
+```
 
 Be careful when changing the visual position of elements using CSS to avoid
 creating an illogical tab order. To fix the illogical tab order above, move the
@@ -148,11 +121,11 @@ opened, replace the above CSS properties respectively with:
 - `display: block`
 - `visibility: visible`
 
-<div class="aside note">
+{% Aside %}
 If you can't figure out where the focus on your page is as you're
-tabbing, open the console and type: <code>document.activeElement</code>. This
+tabbing, open the console and type: `document.activeElement`. This
 property will return the element that currently has focus.
-</div>
+{% endAside %}
 
 ## Next steps
 

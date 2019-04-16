@@ -1,12 +1,17 @@
 ---
 layout: post
 title: Remove unused code
+subhead: |
+  npm makes adding code to your project a breeze. But are you really using all
+  those extra bytes?
 author: houssein
 hero: hero.jpg
 alt: A vacuum cleaner vacuuming confetti off of a carpet.
 description: |
-  npm makes adding code to your project a breeze. But are you really using all
-  those extra bytes?
+  Registries like npm have transformed the JavaScript world for the better by
+  allowing anyone to easily download and use over half a million public
+  packages. But we often include libraries we're not fully utilizing. To fix
+  this issue, analyze your bundle to detect unused code.
 web_lighthouse: N/A
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05

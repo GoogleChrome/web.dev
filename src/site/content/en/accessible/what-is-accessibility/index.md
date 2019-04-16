@@ -2,14 +2,12 @@
 layout: post
 title: What is accessibility
 author: robdodson
+date: 2018-11-18
 description: |
   An accessible site is one whose content can be accessed regardless of any
   user's impairments, and whose functionality can also be operated by the most
   diverse range of users possible.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-18
-wf_blink_components: Blink>Accessibility
 ---
 
 An accessible site is one whose content can be accessed regardless of any user's
@@ -65,7 +63,7 @@ descriptions of content and controls.
 
 Motor and dexterity impairments may affect a user's ability to use a mouse,
 touchscreen, or other pointing device. Some users may rely on alternative input
-devices to access content. These devices might include a keyboard, head- or
+devices to access content. These devices might include a keyboard, head- or 
 eye-tracking software, switch devices, sip-and-puff devices, or voice access.
 
 ### Auditory

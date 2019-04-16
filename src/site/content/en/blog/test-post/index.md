@@ -1,7 +1,7 @@
 ---
 title: Test post
-date: 2018-12-06
 author: robdodson
+date: 2018-12-06
 hero: hero.jpg
 alt: A description for the hero image
 description: |

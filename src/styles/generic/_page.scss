@@ -18,9 +18,13 @@ body {
     $FONT_SMOOTHING_WEBKIT,
     $FONT_SMOOTHING_RENDERING
   );
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
   margin: 0;
-  // https://justmarkup.com/log/2015/07/dealing-with-long-words-in-css/
   overflow-wrap: break-word;
   padding: 0;
+  word-break: break-word;
   word-wrap: break-word;
 }

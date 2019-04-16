@@ -20,8 +20,18 @@ module.exports = {
       {
         title: 'Make your site keyboard accessible',
         pathItems: [
-          'style-focus',
+          'keyboard-access',
+          'use-semantic-html',
           'control-focus-with-tabindex',
+          'style-focus',
+        ],
+      },
+      {
+        title: 'Understand semantics and basic screen reader support',
+        pathItems: [
+          'semantics-and-screen-readers',
+          'headings-and-landmarks',
+          'labels-and-text-alternatives',
         ],
       },
     ],
