@@ -1,6 +1,9 @@
 ---
 layout: layout
 ---
+
+{% import 'macros/components.njk' as components %}
+
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <main class="path-landing-page">
@@ -42,7 +45,12 @@ layout: layout
       {% for slug in topic.pathItems %}
         {% for item in collections[path.slug] %}
           {% if item.fileSlug === slug %}
-            {% ArticleSmall {post: item, author: authors[item.data.author]} %}
+            {#
+              Use a macro here instead of a shortcode until
+              https://github.com/11ty/eleventy/issues/498 is fixed.
+            #}
+            {{ components.ArticleSmall(item, authors[item.data.author]) }}
+            {# {% ArticleSmall {post: item, author: authors[item.data.author]} %} #}
           {% endif %}
         {% endfor %}
       {% endfor %}
