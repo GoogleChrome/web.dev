@@ -24,9 +24,9 @@ to remove them as part of the v1 migration. #}
   <main class="w-layout-container--narrow">
     <header class="w-article-header">
       <h1 class="w-article-header__headline">{{ title }}</h1>
-      {% if description %}
-      <p class="w-article-header__summary">
-        {{ description }}
+      {% if subhead %}
+      <p class="w-article-header__subhead">
+        {{ subhead }}
       </p>
       {% endif %}
       
@@ -47,7 +47,7 @@ to remove them as part of the v1 migration. #}
     </div>
     #}
 
-    <div class="w-post-github-link w-mb--l">
+    <div class="w-post-github-link w-mt--l w-mb--l">
       <span class="w-mr--sm">
         Last updated: <time>{{ page.date | prettyDate }}</time>
       </span>

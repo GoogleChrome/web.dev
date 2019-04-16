@@ -1,19 +1,15 @@
 ---
-page_type: guide
+layout: post
 title: Semantics and screen readers
 author: robdodson
+date: 2018-11-18
 description: |
-  Have you ever stopped to wonder _how_ assistive technology, such as a screen
+  Have you ever stopped to wonder how assistive technology, such as a screen
   reader, knows what to announce to users? The answer is that these technologies
-  rely on developers marking up their pages with **semantic** HTML. But what are
+  rely on developers marking up their pages with semantic HTML. But what are
   semantics, and how do screen readers use them?
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-18
-wf_blink_components: Blink>Accessibility
 ---
-
-# Semantics and screen readers
 
 Have you ever stopped to wonder _how_ assistive technology, such as a screen
 reader, knows what to announce to users? The answer is that these technologies
@@ -26,7 +22,12 @@ Before diving into semantics, it's helpful to understand another term:
 **affordances**. An affordance is any object that offers, or affords, its user
 the opportunity to perform an action. A classic example is the teapot:
 
-![A red teapot](./teapot.png)
+<figure class="w-figure  w-figure--center">
+  <img src="./teapot.png" alt="" style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    Fig. 1 — A teapot's handle is a natural affordance.
+  </figcaption>
+</figure>
 
 This teapot doesn't need an instruction manual; instead, its physical design
 conveys to the user how it should be operated. It has a handle, and because
@@ -51,7 +52,7 @@ elements.
 Here's a classic example: a `<div>` versus a `<button>`. Using CSS, it's possible
 to style both elements so they convey the same visual affordances, but compare
 the two experiences when using this embedded screen reader (you'll need to click 
-"Enable ChromeVox Lite" to test it):
+**Enable ChromeVox Lite** to test it):
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -62,9 +63,9 @@ the two experiences when using this embedded screen reader (you'll need to click
 </div>
 
 Because a `<div>`, semantically, is just a generic grouping element, the screen
-reader only announces the `div`'s text content. But the `<button>` is announced as a
-"button" — a much stronger signal to the user that this is something with which 
-they can interact!
+reader only announces the `div`'s text content. But the `<button>` is announced
+as a "button" — a much stronger signal to the user that this is something with
+which they can interact!
 
 ## Semantic properties and the accessibility tree
 
@@ -77,7 +78,7 @@ properties:
 - A **state** (optional)
 
 An element's **role** describes its type, i.e. "button," "input," or even just
-"group" for things like `div`s and `span`s.
+"group" for things like `div`'s and `span`'s.
 
 An element's **name** is its computed label. Screen readers typically announce
 an element's name followed by its role, e.g. "Sign Up, button." The algorithm
@@ -87,12 +88,12 @@ or `placeholder`, whether or not the element is associated with an actual
 `<label>` element, and if the element has any ARIA attributes such as 
 `aria-label` and `aria-labelledby`.
 
-Some elements _may_ have a **value**. For instance, `<input type="text">` may have
-a value that reflects whatever the user has typed into the text field.
+Some elements _may_ have a **value**. For instance, `<input type="text">` may
+have a value that reflects whatever the user has typed into the text field.
 
-Some elements _may_ also have a **state**, which conveys their current status. For
-instance, a `<select>` element can be in either an _expanded_ or a _collapsed_
-state, depending on if it's open or closed.
+Some elements _may_ also have a **state**, which conveys their current status.
+For instance, a `<select>` element can be in either an _expanded_ or a
+_collapsed_ state, depending on if it's open or closed.
 
 ### The accessibility tree
 
@@ -102,17 +103,17 @@ tree](https://developers.google.com/web/fundamentals/accessibility/semantics-bui
 When assistive technology, like a screen reader, is providing an alternative UI
 to the user, it is often doing so by walking this accessibility tree.
 
-<div class="aside note">
-Browsers will often remove semantically uninteresting nodes like
-<code>div</code>s and <code>span</code>s from the accessibility tree,
-especially if they're just being used to position their children with CSS. For
-instance, if you have a <code>button</code> nested inside 5
-<code>div</code>s, the browser may prune out some of the <code>div</code>s
-in the middle to cut down on noise.
-</div>
+{% Aside %}
+Browsers will often remove semantically uninteresting nodes like `div` and
+`span` from the accessibility tree, especially if they're just being used to
+position their children with CSS. For instance, if you have a `button` nested
+inside of 5 `div`'s, the browser may prune out some of the `div`'s in the middle
+to cut down on noise.
+{% endAside %}
 
-Using Chrome's DevTools you can [inspect an element's semantic properties and
-explore its position in the accessibility tree](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane).
+Using Chrome's DevTools you can [inspect an element's semantic
+properties](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
+and explore its position in the accessibility tree.
 
 ## Next steps
 

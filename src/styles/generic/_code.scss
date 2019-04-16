@@ -77,6 +77,17 @@ table code {
   }
 }
 
+// It's not uncommon to have code in markdown headings.
+// In these cases we should remove the border.
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+  border: 0;
+}
+
 
 
 // Github-like theme for Prism.js

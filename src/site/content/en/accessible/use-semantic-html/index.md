@@ -1,18 +1,14 @@
 ---
-page_type: guide
+layout: post
 title: Use semantic HTML for easy keyboard wins
 author: robdodson
+date: 2018-11-18
 description: |
   By using the correct semantic HTML elements you may be able to meet most or
   all of your keyboard access needs. That means less time fiddling with
-  tabindex, and more happy users!  
+  tabindex, and more happy users!
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-18
-wf_blink_components: Blink>Accessibility
 ---
-
-# Use semantic HTML for easy keyboard wins
 
 By using the correct semantic HTML elements you may be able to meet most or all
 of your keyboard access needs. That means less time fiddling with `tabindex`,
@@ -20,8 +16,8 @@ and more happy users!
 
 ## Keyboard support for free (and better mobile experiences)
 
-There are a number of built-in interactive elements, with proper semantics and
-keyboard support. Generally speaking, the ones most developers use are:
+There are a number of built-in interactive elements with proper semantics and
+keyboard support. The ones most developers use are:
 
 - [`<a>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
 - [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
@@ -34,13 +30,13 @@ In addition, elements with the
 [`contenteditable`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable)
 attribute are sometimes used for freeform text entry.
 
-It's easy to overlook the built-in keyboard support that these elements offer
-for free. Below are some example elements to explore. Instead of using your
+It's easy to overlook the built-in keyboard support that these elements offer.
+Below are some example elements to explore. Instead of using your
 mouse, try using your keyboard to operate them. You can use `TAB` (or `SHIFT +
 TAB`) to move between controls, and you can use the arrow keys and keys like 
 `ENTER` and `SPACE` to manipulate their values.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 450px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/interactive-elements?path=index.html&previewSize=100&attributionHidden=true"
     alt="interactive-elements on Glitch"
@@ -50,7 +46,7 @@ TAB`) to move between controls, and you can use the arrow keys and keys like
 
 If you have a phone handy, you can see that many times these built-in elements
 have unique interactions on mobile. Attempting to reproduce these mobile
-interactions yourself is a ton of work! It's another good reason to stick to
+interactions yourself is a lot of work! It's another good reason to stick to
 built-in elements whenever possible.
 
 ## Use `button` instead of `div`
@@ -95,9 +91,9 @@ accessibility wins!
 Another common anti-pattern is to treat links as buttons by attaching JavaScript
 behavior to them.
 
-<pre class="prettyprint devsite-disable-click-to-copy">
-&lt;a href="#" onclick="// perform some action"&gt;
-</pre>
+```html
+<a href="#" onclick="// perform some action">
+```
 
 Both buttons and links support some form of synthetic click activation. So which
 should you choose?
@@ -113,7 +109,7 @@ outcome to expect.
 
 ## Styling
 
-Some built-in elements, in particular `<input>`s, can be difficult to style.
+Some built-in elements, in particular `<input>`, can be difficult to style.
 With a bit of clever CSS you may be able to work around some of these
 limitations. The (hilariously named) [WTFForms](http://wtfforms.com/) project
 contains an [example
