@@ -50,7 +50,7 @@ module.exports = {
           'critical-request-chains',
           'user-timings',
           'bootup-time',
-          'foo',
+          'mainthread-work-breakdown',
           'font-display',
         ],
       },
