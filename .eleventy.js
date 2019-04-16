@@ -1,3 +1,4 @@
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const componentsDir = 'src/site/_includes/components';
@@ -30,11 +31,14 @@ const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
 
 module.exports = function(config) {
+  //----------------------------------------------------------------------------
+  // PLUGINS
+  //----------------------------------------------------------------------------
   // Syntax highlighting for code snippets
   config.addPlugin(pluginSyntaxHighlight);
+  // RSS feeds
+  config.addPlugin(pluginRss);
 
-  // TODO: Add RSS plugin
-  // https://github.com/11ty/eleventy-plugin-rss
 
   //----------------------------------------------------------------------------
   // COLLECTIONS
