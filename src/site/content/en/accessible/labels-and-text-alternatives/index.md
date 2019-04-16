@@ -1,7 +1,8 @@
 ---
-page_type: guide
+layout: post
 title: Labels and text alternatives
 author: robdodson
+date: 2018-11-18
 description: |
   In order for a screen reader to present a spoken UI to the user, meaningful
   elements must have proper labels or text alternatives. A label or text
@@ -16,12 +17,7 @@ web_lighthouse:
   - document-title
   - button-name
   - link-name
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-18
-wf_blink_components: N/A
 ---
-
-# Labels and text alternatives
 
 In order for a screen reader to present a spoken UI to the user, meaningful
 elements must have proper labels or text alternatives. A label or text
@@ -38,6 +34,7 @@ context. This is why labeling and text alternatives are crucial to a good,
 accessible experience.
 
 ## Inspect an element's name
+
 It's easy to check an element's accessible name using Chrome's DevTools:
 
 1. Right-click on an element and choose **Inspect**. This opens the DevTools
@@ -46,105 +43,113 @@ It's easy to check an element's accessible name using Chrome's DevTools:
    behind a `»` symbol.
 1. In the **Computed Properties** dropdown, look for the **Name** property.
 
-![DevTools accessibility pane showing the computed name for a button.](./devtools-name.png)
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./devtools-name.png" alt="">
+  <figcaption class="w-figcaption">
+    DevTools accessibility pane showing the computed name for a button.
+  </figcaption>
+</figure>
 
-<div class="aside note">
-To learn more, check out the <a href="https://developers.google.com/web/tools/chrome-devtools/accessibility/reference">
-DevTools Accessibility Reference
-</a>.
-</div>
+{% Aside %}
+To learn more, check out the [DevTools Accessibility
+Reference](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference).
+{% endAside %}
 
 Whether you're looking at an `img` with `alt` text or an `input` with a
 `label`, all of these scenarios result in the same outcome: giving an 
 element its accessible name.
 
 ## Check for missing names
+
 There are a number of accessibility and SEO audits in Lighthouse that test
 for missing accessible names. Each of the fixes listed in the following table
 is also explained further below.
 
-<table>
-  <thead>
-    <tr>
-      <th>Failed audit</th>
-      <th>How to fix</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        Document has a &lt;title&gt; element
-      </td>
-      <td>
-        <a href="#label-documents-and-frames">Label documents and frames</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        &lt;frame&gt; or &lt;iframe&gt; elements have a title
-      </td>
-      <td>
-        <a href="#label-documents-and-frames">Label documents and frames</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Image elements have [alt] attributes
-      </td>
-      <td>
-        <a href="#include-text-alternatives-for-images-and-objects">
-          Include text alternatives for images and objects
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        &lt;input type="image"&gt; elements have [alt] text
-      </td>
-      <td>
-        <a href="#include-text-alternatives-for-images-and-objects">
-          Include text alternatives for images and objects
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        &lt;object&gt; elements have [alt] text
-      </td>
-      <td>
-        <a href="#include-text-alternatives-for-images-and-objects">
-          Include text alternatives for images and objects
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Buttons have an accessible name
-      </td>
-      <td>
-        <a href="#label-buttons-and-links">Label buttons and links</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Links have a discernible name
-      </td>
-      <td>
-        <a href="#label-buttons-and-links">Label buttons and links</a>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Form elements have associated labels
-      </td>
-      <td>
-        <a href="#label-form-elements">Label form elements</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Failed audit</th>
+        <th>How to fix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Document has a &lt;title&gt; element
+        </td>
+        <td>
+          <a href="#label-documents-and-frames">Label documents and frames</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &lt;frame&gt; or &lt;iframe&gt; elements have a title
+        </td>
+        <td>
+          <a href="#label-documents-and-frames">Label documents and frames</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Image elements have [alt] attributes
+        </td>
+        <td>
+          <a href="#include-text-alternatives-for-images-and-objects">
+            Include text alternatives for images and objects
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &lt;input type="image"&gt; elements have [alt] text
+        </td>
+        <td>
+          <a href="#include-text-alternatives-for-images-and-objects">
+            Include text alternatives for images and objects
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &lt;object&gt; elements have [alt] text
+        </td>
+        <td>
+          <a href="#include-text-alternatives-for-images-and-objects">
+            Include text alternatives for images and objects
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Buttons have an accessible name
+        </td>
+        <td>
+          <a href="#label-buttons-and-links">Label buttons and links</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Links have a discernible name
+        </td>
+        <td>
+          <a href="#label-buttons-and-links">Label buttons and links</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Form elements have associated labels
+        </td>
+        <td>
+          <a href="#label-form-elements">Label form elements</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## Label documents and frames
+
 Every page should have a
 [`title`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title)
 element that briefly explains what the page is about. The `title` element gives
@@ -153,24 +158,22 @@ first text that is announced.
 
 For example, the page below has the title "Mary's Maple Bar Fast-Baking Recipe":
 
-<pre class="prettyprint devsite-disable-click-to-copy">
-&lt;!doctype html&gt;
-  &lt;html lang=&quot;en&quot;&gt;
-    &lt;head&gt;
-      <strong>&lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;</strong>
-    &lt;/head&gt;
-  &lt;body&gt;
+```html/3
+<!doctype html>
+  <html lang="en">
+    <head>
+      <title>Mary's Maple Bar Fast-Baking Recipe</title>
+    </head>
+  <body>
     …
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+  </body>
+</html>
+```
 
-<div class="aside note">
-  For tips on writing effective titles, see the
-  <a href="https://web.dev/discoverable/write-descriptive-text">
-  Write descriptive titles guide
-  </a>.
-</div>
+{% Aside %}
+For tips on writing effective titles, see the [Write descriptive titles
+guide](https://web.dev/discoverable/write-descriptive-text).
+{% endAside %}
 
 Similarly, any `frame` or `iframe` elements should have `title` attributes:
 
@@ -184,11 +187,12 @@ role—"frame"—and its accessible name, provided by the `title` attribute. Thi
 lets the user decide if they wish to enter the frame or bypass it.
 
 ## Include text alternatives for images and objects
+
 An `img` should always be accompanied by an
 [`alt`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes)
-attribute to give the image its accessible name. If the image fails to load,
-the `alt` text is used as a placeholder so users have a sense of what the
-image was trying to convey.
+attribute to give the image its accessible name. If the image fails to load, the
+`alt` text is used as a placeholder so users have a sense of what the image was
+trying to convey.
 
 Writing good `alt` text is a bit of an art, but there are a couple of guidelines
 you can follow:
@@ -201,11 +205,10 @@ If the image acts as decoration and does not provide any useful content,
 you can give it an empty `alt=""` attribute to remove it from the accessibility
 tree.
 
-<div class="aside note">
-  Learn more about writing effective <code>alt</code> text by checking out <a
-  href="https://webaim.org/techniques/alttext/">WebAIM's guide to Alternative
-  Text.</a>
-</div>
+{% Aside %}
+Learn more about writing effective `alt` text by checking out [WebAIM's guide to
+Alternative Text](https://webaim.org/techniques/alttext/).
+{% endAside %}
 
 ### Images as links and inputs
 
@@ -222,16 +225,15 @@ Similarly, if an `<input type="image">` element is used to create an image
 button, it should contain `alt` text that describes the action that occurs when
 the user clicks on the button:
 
-<pre class="prettyprint devsite-disable-click-to-copy">
-&lt;form&gt;
-  &lt;label&gt;
+```html/5
+<form>
+  <label>
     Username:
-    &lt;input type=&quot;text&quot;&gt;
-  &lt;/label&gt;
-  <strong>&lt;input type=&quot;image&quot; alt=&quot;Sign in&quot;</strong>
-             <strong>src=&quot;./sign-in-button.png&quot;&gt;</strong>
-&lt;/form&gt;
-</pre>
+    <input type="text">
+  </label>
+  <input type="image" alt="Sign in" src="./sign-in-button.png">
+</form>
+```
 
 ### Embedded objects
 
@@ -240,16 +242,14 @@ ActiveX, should also contain alternative text. Similar to images, this text is
 displayed if the element fails to render. The alternative text goes inside the 
 `object` element as regular text, like "Annual report" below:
 
-```
-<object type="application/pdf"
-    data="/report.pdf"
-    width="600"
-    height="400">
+```html
+<object type="application/pdf" data="/report.pdf">
 Annual report.
 </object>
 ```
 
 ## Label buttons and links
+
 Buttons and links are often crucial to the experience of a site, and it is
 important that both have good accessible names.
 
@@ -303,9 +303,9 @@ This is especially helpful for screen readers that offer shortcuts to list all
 of the links on the page. If links are full of repetitive filler text, these
 shortcuts become much less useful:
 
-<figure>
+<figure class="w-figure w-figure--center">
   <img src="./vo.jpg" alt="VoiceOver's links menu filled with the word 'here'.">
-  <figcaption>
+  <figcaption class="w-figcaption">
     Example of VoiceOver, a screen reader for macOS, showing the navigate by
     links menu.
   </figcaption>
@@ -318,9 +318,9 @@ Either of the methods causes the label text to also become a click target for
 the checkbox, which is also helpful for mouse or touchscreen users. To associate
 a label with an element, either:
 
-- Place the input element inside a label element
+- Place the input element inside of a label element
 
-```
+```html
 <label>
   <input type="checkbox">Receive promotional offers?</input>
 </label>
@@ -328,7 +328,7 @@ a label with an element, either:
 
 - Or use the label's `for` attribute and refer to the element's `id`
 
-```
+```html
 <input id="promo" type="checkbox"></input>
 <label for="promo">Receive promotional offers?</label>
 ```
@@ -337,4 +337,7 @@ When the checkbox has been labeled correctly, the screen reader can report that
 the element has a role of checkbox, is in a checked state, and is named "Receive
 promotional offers?" like in the VoiceOver example below:
 
-![VoiceOver text output showing 'Receive promotional offers?'](./promo-offers.png)
+<figure class="w-figure w-figure--center">
+  <img src="./promo-offers.png" alt="VoiceOver text output showing 'Receive
+  promotional offers?'">
+</figure>

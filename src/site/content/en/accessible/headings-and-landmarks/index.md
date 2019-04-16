@@ -1,7 +1,8 @@
 ---
-page_type: guide
+layout: post
 title: Headings and landmarks
 author: robdodson
+date: 2018-11-18
 description: |
   By using the correct elements for headings and landmarks, you can dramatically
   improve the navigation experience for users of assitive technology.
@@ -9,17 +10,13 @@ web_lighthouse:
   - heading-levels
   - use-landmarks
   - bypass
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-18
-wf_blink_components: Blink>Accessibility
 ---
 
-# Headings and landmarks
-
 Screen readers have commands to quickly jump between headings or to specific
-landmark regions. In fact, [a recent survey of screen reader users](http://www.heydonworks.com/article/responses-to-the-screen-reader-strategy-survey)
-found that they most often navigate an unfamiliar page by exploring
-the headings.
+landmark regions. In fact, [a recent survey of screen reader
+users](http://www.heydonworks.com/article/responses-to-the-screen-reader-strategy-survey)
+found that they most often navigate an unfamiliar page by exploring the
+headings.
 
 By using the correct heading and landmark elements, you can dramatically
 improve the navigation experience on your site for users of assitive technology.
@@ -31,14 +28,14 @@ to create a skeleton or scaffold of the page such that anyone navigating by
 headings can form a mental picture.
 
 A common practice is to use a single `h1` for the primary headline or logo on a
-page, `h2`s to designate major sections, and `h3`s in supporting subsections:
+page, `h2`s to designate major sections, and `h3`'s in supporting subsections:
 
-```  
-<h1>Company name</h1>  
-<section>  
-  <h2>Section Heading</h2>  
-  …  
-  <h3>Sub-section Heading</h3>  
+```html
+<h1>Company name</h1>
+<section>
+  <h2>Section Heading</h2>
+  …
+  <h3>Sub-section Heading</h3>
 </section>
 ```
 
@@ -49,31 +46,30 @@ closely match their design. This is considered an anti-pattern because it breaks
 the outline model.
 
 Instead of relying on the browser's default font-sizing for headings, use your
-own CSS, and don't skip levels. 
+own CSS, and don't skip levels.
 
 For example, this site has a section called "IN THE NEWS", followed by two
-headlines: 
+headlines:
 
 <img class="screenshot" src="./headings.png" alt="A news site with a headline, hero image, and subsections.">
 
 The section heading, "IN THE NEWS", could be an `h2`, and the supporting
-headlines could both be `h3`s.
+headlines could both be `h3`'s.
 
 Because the `font-size` for "IN THE NEWS" is _smaller_ than the headline, it may
-be tempting to make the headline for the first story an `h2` and to make 
-"IN THE NEWS" an `h3`. While that may match the browser's default styling, 
+be tempting to make the headline for the first story an `h2` and to make
+"IN THE NEWS" an `h3`. While that may match the browser's default styling,
 it would break the outline conveyed to a screen reader user!
 
-<div class="aside note">
-Though it may seem counterintuitive, it does not matter if <em>visually</em>
-<code>h3</code>s and <code>h4</code>s are larger than their <code>h2</code> or
-<code>h1</code> counterparts. What matters is the outline conveyed by the elements
-and elements' ordering.
-</div>
+{% Aside %}
+Though it may seem counterintuitive, it does not matter if _visually_ `h3`'s and
+`h4`'s are larger than their `h2` or `h1` counterparts. What matters is the
+outline conveyed by the elements and elements' ordering.
+{% endAside %}
 
 You can use Lighthouse to check if your page skips any heading levels. Run the
-Accessibility Audit (Lighthouse > Options > Accessibility) and look for the
-results of the "Headings don't skip levels" audit.
+Accessibility audit (**Lighthouse > Options > Accessibility**) and look
+for the results of the **Headings don't skip levels** audit.
 
 ## Use landmarks to aid navigation
 
@@ -86,8 +82,8 @@ overwhelming. For example, stick to just one `main` element instead of 3 or
 4.
 
 Lighthouse recommends manually auditing your site to check that "HTML5 landmark
-elements are used to improve navigation." You can use this
-[list of landmark elements](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/HTML5.html)
+elements are used to improve navigation." You can use this [list of landmark
+elements](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/HTML5.html)
 to check your page.
 
 ## Bypass repetitive content with skip links
@@ -100,16 +96,16 @@ the DOM. Typically, it contains an in-page link to the main content of the page.
 the first element in the DOM, it only takes a single action from assistive technology to focus
 it and bypass repetitive navigation.
 
-<pre class="prettyprint">
-&lt;!-- index.html --&gt;
-&lt;a class="skip-link" href="#main"&gt;Skip to main&lt;/a&gt;
+```html
+<!-- index.html -->
+<a class="skip-link" href="#main">Skip to main</a>
 …
-&lt;main id="main"&gt;
+<main id="main">
   [Main content]
-&lt;/main&gt;
-</pre>
+</main>
+```
 
-<pre class="prettyprint">
+```css
 /* style.css */
 .skip-link {
   position: absolute;
@@ -124,23 +120,24 @@ it and bypass repetitive navigation.
 .skip-link:focus {
   top: 0;
 }
-</pre>
+```
 
-[**Try the live example!**](https://skip-link.glitch.me/)
+{% Aside 'codelab' %}
+[Live skip link example.](https://skip-link.glitch.me/)
+{% endAside %}
 
 Many popular sites such as [GitHub](https://github.com/), [The NY
-Times](https://www.nytimes.com/), and [Wikipedia](https://wikipedia.org/) all contain
-skip links. Try visiting them and pressing the `TAB` key on your keyboard a
-few times.
+Times](https://www.nytimes.com/), and [Wikipedia](https://wikipedia.org/) all
+contain skip links. Try visiting them and pressing the `TAB` key on your
+keyboard a few times.
 
 Lighthouse can help you check if your page contains a skip link. Run the
-Accessibility Audit (Lighthouse > Options > Accessibility) and look for the
-results of the "The page contains a heading, skip link, or landmark region"
-audit.
+Accessibility audit again and look for the results of the **The page contains a
+heading, skip link, or landmark region** audit.
 
-<div class="aside note">
-  Technically, this test will also pass if your site contains any 
-  <code>h1</code>-<code>h6</code> elements or any of the HTML5 landmark 
-  elements. But although the test is vague in its requirements, it's still 
-  nice to pass it if you can!
-</div>
+{% Aside %}
+Technically, this test will also pass if your site contains any
+`h1`-`h6` elements or any of the HTML5 landmark
+elements. But although the test is vague in its requirements, it's still
+nice to pass it if you can!
+{% endAside %}
