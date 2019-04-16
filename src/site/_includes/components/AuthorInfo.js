@@ -25,7 +25,7 @@ module.exports = ({post, author, showSocialMedia = false}) => {
   function renderGitHub({github}) {
     return html`
       <li class="w-author__link-listitem">
-        <a href="https://github.com/{${github}">GitHub</a>
+        <a href="https://github.com/${github}">GitHub</a>
       </li>
     `;
   }
