@@ -6,11 +6,13 @@ description: |
 author: megginkearney
 web_lighthouse:
   - critical-request-chains
+tags:
+  - pathItem
 ---
 
 Critical request chains are series of dependent network requests important for page rendering.
-Minimize critical requests depth by reducing the length of chains, the download size or resources,
-or deferring the download of unnecessary resources to improve page load.
+The greater the length of the chains and the larger the download sizes,
+them ore significant the impact on page load performance.
 Lighthouse reports the critical requests loaded with a high priority in the Diagnostics section: 
 
 <figure class="w-figure">
@@ -19,6 +21,31 @@ Lighthouse reports the critical requests loaded with a high priority in the Diag
     Fig. 1 — Minimize critical requests depth
   </figcaption>
 </figure>
+
+
+## How Lighthouse determines the critical request chains
+
+Lighthouse uses network priority as a proxy for identifying render-blocking critical resources.
+See [Chrome Resource Priorities and Scheduling](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit)
+for more information on how Chrome defines these priorities.
+
+Data on critical request chains, resource sizes,
+and time spent downloading resources is extracted from the
+[Chrome Debugger Protocol](https://github.com/ChromeDevTools/devtools-protocol).
+
+## Ways to reduce impact of critical request chains on performance
+
+Use the critical request chains audit results to target the most effective resources first:
+
+- Minimizing the number of critical resources: eliminating them, deferring their download, marking them as async, and so on.
+- Optimizing the number of critical bytes to reduce the download time (number of roundtrips).
+- Optimizing the order in which the remaining critical resources are loaded: downloading all critical assets as early as possible to shorten the critical path length.
+
+Learn more about optimizing your
+[images](https://web.dev/fast#topic-Optimize-your-images),
+[JavaScript](https://web.dev/fast#topic-Optimize-your-JavaScript),
+[CSS](https://web.dev/fast#topic-Optimize-your-CSS), and
+[web fonts](https://web.dev/fast#topic-Optimize-web-fonts).
 
 ## More information
 
