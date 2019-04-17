@@ -13,6 +13,11 @@ module.exports = {
     homescreen? What about the Start menu or app launcher? In this section
     you'll learn simple techniques to encourage engagement and ensure your app
     is easy to access.`,
-    topics: [],
+    topics: [
+      {
+        title: 'Make it installable',
+        pathItems: ['discover-installable', 'add-manifest'],
+      },
+    ],
   },
 };

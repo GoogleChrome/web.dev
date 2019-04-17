@@ -14,6 +14,22 @@ module.exports = {
     with a range of devices and network connections. In this section you'll
     learn how to provide a consistently reliable experience to all your users,
     wherever and however they access the internet.`,
-    topics: [],
+    topics: [
+      {
+        title: 'How to measure network resilience',
+        pathItems: [
+          'network-connections-unreliable',
+          'identify-resources-via-network-panel',
+        ],
+      },
+      {
+        title: 'The options in your caching toolbox',
+        pathItems: ['http-cache', 'service-workers-cache-storage', 'workbox'],
+      },
+      {
+        title: 'How caching strategies work',
+        pathItems: ['precache-with-workbox', 'runtime-caching-with-workbox'],
+      },
+    ],
   },
 };

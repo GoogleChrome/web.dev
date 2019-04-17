@@ -37,15 +37,15 @@
 // This will also center the figcaption but that doesn't look too bad.
 .w-figure--inline-right,
 .w-figure--inline-left {
+  display: block;
   float: none;
   margin: 16px 0;
-  display: block;
-  text-align: center;
   max-width: 100%;
-  
+  text-align: center;
+
   @include bp(md) {
-    text-align: left;
     max-width: calc((100% - 40px) / 2);
+    text-align: left;
   }
 }
 
