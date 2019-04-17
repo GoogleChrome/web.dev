@@ -41,6 +41,20 @@
   }
 }
 
+// The permalink nested instead of h2-h6 elements.
+.w-headline-link {
+  color: transparent;
+  font-weight: $FONT_WEIGHT_MEDIUM;
+}
+
+// Note that this element will appear inside of markdown headings which
+// don't have a class (though they do include the w-headline mixins).
+// Because of this we use :hover to target it instead of .w-headline:hover.
+:hover > .w-headline-link,
+.w-headline-link:focus {
+  color: $GREY_700;
+}
+
 .w-eyebrow {
   @include font($EYEBROW);
 }

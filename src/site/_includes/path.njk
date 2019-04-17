@@ -40,7 +40,10 @@ layout: layout
 
   <section class="w-layout-container">
     {% for topic in path.topics %}
-    <h2 id="{{ topic.title | slug }}" class="no-link">{{ topic.title }}</h2>
+    <h2 id="{{ topic.title | slug }}" class="no-link">
+      {{ topic.title }}
+      <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
+    </h2>
     <div class="w-layout-grid--three w-mb--std">
       {% for slug in topic.pathItems %}
         {% for item in collections[path.slug] %}
