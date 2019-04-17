@@ -289,15 +289,19 @@ content. A nice trick when creating a link is to put the most meaningful piece
 of text into the link itself, rather than filler words like "Here" or "Read
 More."
 
-<p><span class="compare-worse">Not recommended</span> — not descriptive:</p>
-<pre class="prettyprint lang-html devsite-disable-click-to-copy">
-Check out our guide to web performance &lt;a href="…"&gt;here&lt;/a&gt;.
-</pre>
+```html
+Check out our guide to web performance <a href="/guide">here</a>.
+```
+{% Compare 'worse' %}
+Not descriptive enough.
+{% endCompare %}
 
-<p><span class="compare-better">Recommended</span> — useful content:</p>
-<pre class="prettyprint lang-html devsite-disable-click-to-copy">
-Check out &lt;a href="…"&gt;our guide to web performance&lt;/a&gt;.
-</pre>
+```html
+Check out <a href="/guide">our guide to web performance</a>.
+```
+{% Compare 'better' %}
+Useful content!
+{% endCompare %}
 
 This is especially helpful for screen readers that offer shortcuts to list all
 of the links on the page. If links are full of repetitive filler text, these
@@ -338,6 +342,6 @@ the element has a role of checkbox, is in a checked state, and is named "Receive
 promotional offers?" like in the VoiceOver example below:
 
 <figure class="w-figure w-figure--center">
-  <img src="./promo-offers.png" alt="VoiceOver text output showing 'Receive
-  promotional offers?'">
+  <img class="w-screenshot" src="./promo-offers.png"
+  alt="VoiceOver text output showing 'Receive promotional offers?'">
 </figure>
