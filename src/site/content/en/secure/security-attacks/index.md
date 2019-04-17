@@ -1,7 +1,8 @@
 ---
-page_type: guide
+layout: post
 title: Security attacks, what are they?
 author: kosamari
+date: 2018-11-05
 description: |
   An insecure application could expose users and systems to various types of
   damage. When a malicious party uses vulnerabilities or lack of security
@@ -9,12 +10,7 @@ description: |
   take a look at different types of attacks in this guide so you know what to
   look for when securing your application.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
 ---
-
-# Security attacks, what are they?
 
 An insecure application could expose users and systems to various types of
 damage. When a malicious party uses vulnerabilities or lack of security features
@@ -39,23 +35,31 @@ your application data before it gets to a user's browser, showing modified
 information on the site or direct the user to an unintended destination. This is
 sometimes called **modification of messages**.
 
-<figure>
+<figure class="w-figure">
   <img src="./modification.png" alt="modification of message">
-  <figcaption>
+  <figcaption class="w-figcaption">
     Figure 1: A web site being tampered by attacker to guide user to a phishing site.
   </figcaption>
 </figure>
 
-<div class="aside note">Have you ever logged into free public wifi and seen ads wrapped around web pages you are accessing? That's exactly what <b>modification of message</b> is! The wifi access point injected their advertising into a website before it got to your browser. In many cases, you might dismiss it as "just ads for free wifi", but imagine if the same technique is used to replace some of the javascript or link to a phishing site. Your site may be used by an attacker to misguide users without you noticing.
-</div>
+{% Aside %}
+Have you ever logged into free public wifi and seen ads wrapped around web pages
+you are accessing? That's exactly what **modification of message** is! The wifi
+access point injected their advertising into a website before it got to your
+browser. In many cases, you might dismiss it as "just ads for free wifi", but
+imagine if the same technique is used to replace some of the javascript or link
+to a phishing site. Your site may be used by an attacker to misguide users
+without you noticing.
+{% endAside %}
 
 ### Passive attack
 
 With a **passive attack**, the attacker tries to collect or learn information
 from the application but does not affect the application itself.
-<figure class="attempt-right">
+
+<figure class="w-figure w-figure--inline-right">
   <img src="./passiveattack.png" alt="passive attack">
-  <figcaption>
+  <figcaption class="w-figcaption">
     Figure 2: Attacker eavesdropping communication between a user and a server.
   </figcaption>
 </figure>
@@ -82,6 +86,8 @@ server, and finally at the database; you would also use HTTPS to secure the data
 in transit.
 
 ## Wrap up
+
 Since many attacks can happen without ever hitting your server, it is sometimes
 hard to detect if attacks are happening or not. The good news is that web
-browsers have powerful security features already built in. Follow the next topic "How browser mitigates against attacks" to learn more.
+browsers have powerful security features already built in. Follow the next topic
+"How browser mitigates against attacks" to learn more.
