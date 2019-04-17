@@ -12,6 +12,22 @@ module.exports = {
     overview: `Every website is vulnerable to attack—not just those handling
     sensitive data. In this section you'll learn simple techniques to keep your
     users, your content and your business secure.`,
-    topics: [],
+    topics: [
+      {
+        title: 'Understand security',
+        pathItems: [
+          'security-not-scary',
+          'security-attacks',
+        ],
+      },
+      {
+        title: 'How browsers mitigate against attacks',
+        pathItems: [
+          'browser-sandbox',
+          'same-origin-policy',
+          'cross-origin-resource-sharing',
+        ],
+      },
+    ],
   },
 };

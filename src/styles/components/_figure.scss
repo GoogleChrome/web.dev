@@ -31,14 +31,36 @@
   text-align: center;
 }
 
+// Inline images are typically quite small so we'll center them on smaller
+// displays but we won't force them to 100% width in case that causes their
+// height to get super tall.
+// This will also center the figcaption but that doesn't look too bad.
+.w-figure--inline-right,
+.w-figure--inline-left {
+  float: none;
+  margin: 16px 0;
+  display: block;
+  text-align: center;
+  max-width: 100%;
+  
+  @include bp(md) {
+    text-align: left;
+    max-width: calc((100% - 40px) / 2);
+  }
+}
+
 .w-figure--inline-right {
-  float: right;
-  margin: 0 0 16px 32px;
+  @include bp(md) {
+    float: right;
+    margin: 0 0 16px 32px;
+  }
 }
 
 .w-figure--inline-left {
-  float: left;
-  margin: 0 32px 16px 0;
+  @include bp(md) {
+    float: left;
+    margin: 0 32px 16px 0;
+  }
 }
 
 .w-figcaption {

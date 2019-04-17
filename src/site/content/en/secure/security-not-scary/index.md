@@ -1,18 +1,14 @@
 ---
-page_type: guide
+layout: post
 title: Security should not be so scary!
 author: kosamari
+date: 2018-11-05
 description: |
   When the word "security" comes to mind, it's usually in the context of bad
   news. But security is something to be taken as a positive and necessary part
   of web development just like "user experience" or "accessibility".
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
 ---
-
-# Security should not be so scary!
 
 What do you imagine when someone says "security"? 
 
@@ -25,10 +21,11 @@ or "an attacker stole credit card information from a shopping site".
 But security is something to be taken as a positive and necessary part of web
 development just like "user experience" or "accessibility".
 
-<figure>
-  <img src="./securityimage.png" alt="negative and positive images of security">
-  <figcaption>
-    Figure: A hacker in hoodie is a negative security image. A team working on a project together is a positive security image.
+<figure class="w-figure">
+  <img src="./securityimage.png" alt="Negative and positive images of security">
+  <figcaption class="w-figcaption">
+    A hacker in hoodie is a negative security image. A team working on a project
+    together is a positive security image.
   </figcaption>
 </figure>
 
