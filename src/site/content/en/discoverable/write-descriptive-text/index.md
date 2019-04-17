@@ -1,22 +1,18 @@
 ---
-page_type: guide
+layout: post
 title: Write descriptive titles, descriptions, and link text
 author: ekharvey
+date: 2018-11-05
 description: |
   Search engines rely heavily on document titles, descriptions, and link text
   within a document. High-quality, unique descriptions, titles, and link text
   can appear in search results, and show how your pages are relevant to users,
-  which in turn can increase your search traffic.  
+  which in turn can increase your search traffic.
 web_lighthouse:
   - document-title
   - meta-description
   - link-text
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
 ---
-
-# Write descriptive titles, descriptions, and link text for every page
 
 ## Why does this matter?
 
@@ -30,55 +26,57 @@ in turn can increase your search traffic.
 Lighthouse displays failed audits, like the ones below, if your content is difficult for
 search engines to understand:
 
-<table>
-  <thead>
-    <tr>
-      <th><strong>Failed audit</strong></th>
-      <th><strong>How to fix it</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Document does not have a meta description</td>
-      <td>
-        <a href="#add-tags-to-the-head-of-the-page">Add tags to the head of the page</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Document does not have a title element</td>
-      <td>
-        <a href="#add-tags-to-the-head-of-the-page">Add tags to the head of the page</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Links don't have descriptive text</td>
-      <td>
-        <a href="#add-descriptive-link-text">Add descriptive link text</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Failed audit</strong></th>
+        <th><strong>How to fix it</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Document does not have a meta description</td>
+        <td>
+          <a href="#add-tags-to-the-head-of-the-page">Add tags to the head of the page</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Document does not have a title element</td>
+        <td>
+          <a href="#add-tags-to-the-head-of-the-page">Add tags to the head of the page</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Links don't have descriptive text</td>
+        <td>
+          <a href="#add-descriptive-link-text">Add descriptive link text</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## Add tags to the head of the page
 
 Add a meta description and title for every page on your site. Here's a full
-example of what the ```<head>``` of each page should include:
+example of what the `<head>` of each page should include:
 
-```
+```html
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Mary's Maple Bar Fast-Baking Recipe</title>
-    <meta name="Description" content="Mary's maple bar recipe is simple
-    and sweet, with just a touch of serendipity. Topped with bacon,
-    this sticky donut is to die for.">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+  <title>Mary's Maple Bar Fast-Baking Recipe</title>
+  <meta name="Description" content="Mary's maple bar recipe is simple
+  and sweet, with just a touch of serendipity. Topped with bacon,
+  this sticky donut is to die for.">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+  <!-- import the webpage's javascript file -->
+  <script src="/script.js" defer></script>
 </head>
 <body>
   ...
@@ -88,21 +86,27 @@ example of what the ```<head>``` of each page should include:
 
 Here are some examples of good vs bad titles and descriptions:
 
-<p><span class="compare-worse">Not recommended</span> — too vague</p>
-<pre class="prettyprint devsite-disable-click-to-copy">
-&lt;title&gt;Donut recipe&lt;/title&gt;
-&lt;meta name="description" content="A donut recipe."&gt;
-</pre>
+```html
+<title>Donut recipe</title>
+<meta name="description" content="A donut recipe.">
+```
 
-<p><span class="compare-better">Recommended</span> — precise!</p>
-<pre class="prettyprint devsite-disable-click-to-copy">
-&lt;title&gt;Mary's Maple Bar Fast-Baking Recipe&lt;/title&gt;
-&lt;meta
+{% Compare 'worse' %}
+too vague
+{% endCompare %}
+
+```html
+<title>Mary's Maple Bar Fast-Baking Recipe</title>
+<meta
   name="description"
   content="Mary's maple bar recipe is simple and sweet,
            with just a touch of serendipity. Topped with
-           bacon, this sticky donut is to die for."&gt;
-</pre>
+           bacon, this sticky donut is to die for.">
+```
+
+{% Compare 'better' %}
+precise!
+{% endCompare %}
 
 Here are some best practices to keep in mind when you're writing descriptions
 and titles:
@@ -131,25 +135,31 @@ specific descriptions. You'll need to read the context of the page and write
 relevant text that makes sense with the rest of the content. Here's an example
 of good vs bad link descriptions:
 
-<p><span class="compare-worse">Not recommended</span> — too vague</p>
-<pre class="prettyprint devsite-disable-click-to-copy">
-&lt;p&gt;
+```html
+<p>
   Get cooking and learn how to make a maple bar
-  &lt;a href=&quot;https://donut-be-crazy.com/recipes/maple-bar-recipe&quot;&gt;
+  <a href="https://donut-be-crazy.com/recipes/maple-bar-recipe">
     here
-  &lt;/a&gt;.
-&lt;/p&gt;
-</pre>
+  </a>.
+</p>
+```
 
-<p><span class="compare-better">Recommended</span> — precise!</p>
-<pre class="prettyprint devsite-disable-click-to-copy">
-&lt;p&gt;
+{% Compare 'worse' %}
+too vague
+{% endCompare %}
+
+```html
+<p>
   Get cooking and learn how to
-  &lt;a href=&quot;https://donut-be-crazy.com/recipes/maple-bar-recipe&quot;&gt;
+  <a href="https://donut-be-crazy.com/recipes/maple-bar-recipe">
     make a delicious maple bar with Mary
-  &lt;/a&gt;!
-&lt;/p&gt;
-</pre>
+  </a>!
+</p>
+```
+
+{% Compare 'better' %}
+precise!
+{% endCompare %}
 
 Here are some best practices to keep in mind when you're writing descriptive
 link text:

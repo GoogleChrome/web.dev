@@ -19,6 +19,32 @@ module.exports = {
     result in more interested users coming to your site. Audit your site and
     check the SEO results to see how well search engines can surface your
     content.`,
-    topics: [],
+    topics: [
+      {
+        title: 'How search works and how to measure discoverability',
+        pathItems: ['how-search-works', 'pass-lighthouse-seo-audit'],
+      },
+      {
+        title: 'Make sure search engines can understand your content',
+        pathItems: [
+          'write-descriptive-text',
+          'tell-search-translated-pages-equal',
+          'tell-search-engine-canonical-url',
+        ],
+      },
+      {
+        title: 'Make sure search engines can crawl and index your page',
+        pathItems: [
+          'remove-code-blocking-indexing',
+          'fix-http-status-codes',
+          'remove-browser-plugins',
+          'fix-robot-errors',
+        ],
+      },
+      {
+        title: 'Make sure your page is mobile-friendly',
+        pathItems: ['fix-small-fonts', 'fix-viewport-tag'],
+      },
+    ],
   },
 };
