@@ -1,6 +1,10 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+const slugify = require('slugify');
+
 const componentsDir = 'src/site/_includes/components';
 const Article = require(`./${componentsDir}/Article`);
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -39,6 +43,28 @@ module.exports = function(config) {
   // RSS feeds
   config.addPlugin(pluginRss);
 
+  //----------------------------------------------------------------------------
+  // MARKDOWN
+  //----------------------------------------------------------------------------
+  let markdownItOptions = {
+    html: true,
+  };
+  let markdownItAnchorOptions = {
+    level: 2,
+    permalink: true,
+    permalinkClass: 'w-headline-link',
+    permalinkSymbol: '#',
+    slugify: function(str) {
+      return slugify(str, {
+        replacement: '-',
+        lower: true,
+      });
+    },
+  };
+  config.setLibrary(
+    'md',
+    markdownIt(markdownItOptions).use(markdownItAnchor, markdownItAnchorOptions)
+  );
 
   //----------------------------------------------------------------------------
   // COLLECTIONS
