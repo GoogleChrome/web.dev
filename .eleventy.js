@@ -6,6 +6,11 @@ const markdownItAnchor = require('markdown-it-anchor');
 const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
+const {
+  Actions,
+  ShareAction,
+  SubscribeAction,
+} = require(`./${componentsDir}/Actions`);
 const Article = require(`./${componentsDir}/Article`);
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const ArticleSmall = require(`./${componentsDir}/ArticleSmall`);
@@ -14,11 +19,7 @@ const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const Collection = require(`./${componentsDir}/Collection`);
-const {
-  Actions,
-  ShareAction,
-  SubscribeAction,
-} = require(`./${componentsDir}/Actions`);
+const Compare = require(`./${componentsDir}/Compare`);
 
 const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
@@ -96,6 +97,7 @@ module.exports = function(config) {
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('Collection', Collection);
+  config.addPairedShortcode('Compare', Compare);
   config.addShortcode('ShareAction', ShareAction);
   config.addShortcode('SubscribeAction', SubscribeAction);
 
