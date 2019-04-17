@@ -4,11 +4,11 @@ module.exports = (content, type) => {
   let label;
   switch (type) {
     case 'worse':
-      label = 'Not recommended — ';
+      label = 'Not recommended';
       break;
 
     case 'better':
-      label = 'Recommended — ';
+      label = 'Recommended';
       break;
 
     default:
@@ -22,6 +22,9 @@ module.exports = (content, type) => {
     );
     /* eslint-enable max-len */
   }
+
+  // Add an em dash to separate the content from the label.
+  content = ' — ' + content;
 
   return html`
     <div class="w-compare">

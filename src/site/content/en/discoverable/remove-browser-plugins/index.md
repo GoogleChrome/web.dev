@@ -1,19 +1,15 @@
 ---
-page_type: guide
+layout: post
 title: Avoid making pages that rely on browser plugins
 author: ekharvey
+date: 2018-11-05
 description: |
   Search engines often can't index content that requires browser plugins such as
   Java applets or Flash animations. Also, most mobile devices don't support
   plugins, and this can create frustrating experiences for mobile users.
 web_lighthouse:
   - plugins
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
 ---
-
-# Avoid making pages that rely on browser plugins
 
 ## Why does this matter?
 
@@ -25,7 +21,7 @@ create frustrating experiences for mobile users.
 ## Measure
 
 Lighthouse displays the following failed audit if your content relies on
-plugins: "Document uses plugins".
+plugins: **Document uses plugins**.
 
 ## Don't rely on browser plugins to display your content
 
@@ -35,5 +31,5 @@ documentation for the plugin. For example,
 
 ## Verify
 
-Run the Lighthouse SEO Audit (Lighthouse > Options > SEO) and look for the
-results of the audit "Document uses plugins".
+Run the Lighthouse SEO Audit (**Lighthouse > Options > SEO**) and look for the
+results of the audit **Document uses plugins**.

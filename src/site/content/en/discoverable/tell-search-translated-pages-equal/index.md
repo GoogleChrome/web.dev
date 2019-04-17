@@ -1,19 +1,15 @@
 ---
-page_type: guide
+layout: post
 title: Tell search engines translated pages are equivalent
 author: ekharvey
+date: 2018-11-05
 description: |
   If you have a page that's translated into multiple languages, add link
   elements with  hreflang attributes. This lets search engines know your page is
   translated, allowing them to display the correct language to users.
 web_lighthouse:
   - hreflang
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
 ---
-
-# Tell search engines translated pages are equivalent
 
 ## Why does this matter?
 
@@ -42,51 +38,51 @@ to implement or maintain for your website:
 
 **Option 1. Add the `hreflang` link for each language**
 
-<pre class="prettyprint">
-&lt;link rel="alternate" hreflang="en" 
+```html
+<link rel="alternate" hreflang="en"
 href="https://donut-be-hangry.com/recipes/maple-bar-recipe" />
 
-&lt;link rel="alternate" hreflang="es" 
+<link rel="alternate" hreflang="es"
 href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
 
-&lt;link rel="alternate" hreflang="de" 
+<link rel="alternate" hreflang="de"
 href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
-</pre>
+```
 
 **Option 2. Add Link headers to your HTTP response**
 
-<pre class="prettyprint">
-Link: 
-&lt;https://donut-be-hangry.com/recipes/maple-bar-recipe&gt;;
-rel="alternate"; hreflang="en", 
+```
+Link:
+<https://donut-be-hangry.com/recipes/maple-bar-recipe>;
+rel="alternate"; hreflang="en",
 
-&lt;https://es.donut-be-hangry.com/recipes/maple-bar-recipe&gt;;
-rel="alternate"; hreflang="es", 
+<https://es.donut-be-hangry.com/recipes/maple-bar-recipe>;
+rel="alternate"; hreflang="es",
 
-&lt;https://de.donut-be-hangry.com/recipes/maple-bar-recipe&gt;;
+<https://de.donut-be-hangry.com/recipes/maple-bar-recipe>;
 rel="alternate"; hreflang="de"
-</pre>
+```
 
 **Option 3. Add language version information to your sitemap**
 
-<div class="aside note">
+{% Aside %}
 For more information, see
-Google's <a href="https://support.google.com/webmasters/answer/189077">
-documentation for localized pages</a>.
-</div>
+Google's
+[documentation for localized pages](https://support.google.com/webmasters/answer/189077).
+{% endAside %}
 
- <pre class="prettyprint">
-&lt;url&gt;
-&lt;loc&gt;https://donut-be-hangry.com/recipes/maple-bar-recipe&lt;/loc&gt;
+```xml
+<url>
+<loc>https://donut-be-hangry.com/recipes/maple-bar-recipe</loc>
 
-&lt;xhtml:link rel="alternate" hreflang="de"
-href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe"/&gt;
+<xhtml:link rel="alternate" hreflang="de"
+href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe"/>
 
-&lt;xhtml:link rel="alternate" hreflang="es"
-href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe"/&gt;
+<xhtml:link rel="alternate" hreflang="es"
+href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe"/>
 
-&lt;/url&gt;
-</pre>
+</url>
+```
 
 Each page should specify all the different language versions, including itself.
 Pages must always link to each other. When page A links to page B using
@@ -97,7 +93,7 @@ ignore the `hreflang` links or interpret them incorrectly.
 
 Here's a simple example of `hreflang` attributes in HTML:
 
-```
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -106,11 +102,11 @@ Here's a simple example of `hreflang` attributes in HTML:
     recipe is simple and sweet, with just a touch of
     serendipity. Topped with bacon, this sticky donut
     is to die for.">
-    <link rel="alternate" hreflang="en" 
+    <link rel="alternate" hreflang="en"
     href="https://donut-be-hangry.com/recipes/maple-bar-recipe"/>
-    <link rel="alternate" hreflang="es" 
+    <link rel="alternate" hreflang="es"
     href="https://es.donut-be-hangry.com/recipes/maple-bar-recipe" />
-    <link rel="alternate" hreflang="de" 
+    <link rel="alternate" hreflang="de"
     href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
   </head>
   <body>
@@ -130,5 +126,5 @@ alpha-2](https://wikipedia.org/wiki/ISO_3166-1_alpha-2) format.
 
 ## Verify
 
-Run the Lighthouse SEO Audit (Lighthouse > Options > SEO) and look for the
-results of the audit "Document doesn't have a valid hreflang".
+Run the Lighthouse SEO Audit (**Lighthouse > Options > SEO**) and look for the
+results of the audit **Document doesn't have a valid hreflang**.

@@ -1,19 +1,15 @@
 ---
-page_type: guide
+layout: post
 title: Remove code that blocks search engine indexing
 author: ekharvey
+date: 2018-11-05
 description: |
   Search engines can only show pages in their search results if those pages are
   not explicitly blocking indexing. Don't block indexing for content that you
   want to show up in search results.
 web_lighthouse:
   - is-crawlable
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
 ---
-
-# Remove code that blocks search engine indexing
 
 ## Why does this matter?
 
@@ -42,23 +38,23 @@ private or confidential content on your website.
 Depending on how you set up your site, you might not need to do all of the steps
 below:
 
-- Remove the X-Robots-Tag HTTP response header if you set up a HTTP
+- Remove the `X-Robots-Tag` HTTP response header if you set up a HTTP
     response header:
 
 ```
-`X-Robots-Tag: noindex`
+X-Robots-Tag: noindex
 ```
 
 - Remove the following meta tag if it's present in the head of the page:
 
-```
+```html
 <meta name="robots" content="noindex">
 ```
 
 - Remove meta tags that block specific crawlers if these tags are present in the
   head of the page, such as:
 
-```
+```html
 <meta name="Googlebot" content="noindex">
 ```
 
@@ -75,5 +71,5 @@ engine:
 
 ## Verify
 
-Run the Lighthouse SEO Audit (Lighthouse > Options > SEO) and look for the
-results of the audit "Page is blocked from indexing".
+Run the Lighthouse SEO Audit (**Lighthouse > Options > SEO**) and look for the
+results of the audit **Page is blocked from indexing**.

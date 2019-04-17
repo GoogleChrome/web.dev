@@ -1,7 +1,8 @@
 ---
-page_type: guide
+layout: post
 title: Tell search engines which version of a page to crawl
 author: ekharvey
+date: 2018-11-05
 description: |
   When multiple pages have the same or significantly similar content, search
   engines consider them duplicate versions of the same page. Providing
@@ -9,12 +10,7 @@ description: |
   engines display the correct URL to users.
 web_lighthouse:
   - canonical
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
 ---
-
-# Tell search engines which version of a page to crawl
 
 ## Why does this matter?
 
@@ -36,12 +32,12 @@ rel=canonical".
 ## Decide which URL is the canonical version
 
 First, decide which URL should be the canonical version of your content. Make
-sure that the canonical URL is not blocked from crawling with a `robots.txt` file,
-not blocked from indexing with a robots meta element, and publicly accessible.
-Ideally, use HTTPS URLs instead of HTTP URLs if you have a choice. If you use
-[hreflang links](https://support.google.com/webmasters/answer/189077), make sure
-that the canonical URL points to the proper page for that respective language or
-country.
+sure that the canonical URL is not blocked from crawling with a `robots.txt`
+file, not blocked from indexing with a robots meta element, and publicly
+accessible. Ideally, use HTTPS URLs instead of HTTP URLs if you have a choice.
+If you use [hreflang
+links](https://support.google.com/webmasters/answer/189077), make sure that the
+canonical URL points to the proper page for that respective language or country.
 
 Also, watch out for the following problems:
 
@@ -62,24 +58,24 @@ For a list of pros and cons, see
 
 **Option 1. Add a canonical link element to the head of the HTML**
 
-<pre class="prettyprint devsite-disable-click-to-copy">
-&lt;!doctype html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;link rel=&quot;canonical&quot; href=&quot;https://copycat.com/&quot;/&gt;
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="canonical" href="https://copycat.com/"/>
   ...
-</pre>
+```
 
 
 **Option 2. Add Link header to the HTTP response**
 
-<pre class="prettyprint devsite-disable-click-to-copy">
+```
 Link: https://copycat.com/; rel=canonical
-</pre>
+```
 
 Here's a full example of what the `<head>` should include. 
 
-```
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -99,7 +95,7 @@ Here's a full example of what the `<head>` should include.
 
 ## Verify
 
-Run the Lighthouse SEO Audit (Lighthouse > Options > SEO) and look for the
-results of the audit "Document doesn't have a valid rel=canonical".
+Run the Lighthouse SEO Audit (**Lighthouse > Options > SEO**) and look for the
+results of the audit **Document doesn't have a valid rel=canonical**.
 
 
