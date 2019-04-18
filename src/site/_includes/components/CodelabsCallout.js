@@ -1,6 +1,6 @@
 const {html} = require('common-tags');
 const {findBySlug} = require('../../_filters/find-by-slug');
-// const stripLanguage = require('../../_filters/strip-language');
+const stripLanguage = require('../../_filters/strip-language');
 
 /* eslint-disable require-jsdoc */
 
@@ -18,7 +18,10 @@ module.exports = (slugs) => {
   function renderCodelab(codelab) {
     return html`
       <li class="w-codelabs-callout__listitem">
-        <a class="w-codelabs-callout__link" href="${codelab.url}">
+        <a
+          class="w-codelabs-callout__link"
+          href="${stripLanguage(codelab.url)}"
+        >
           ${codelab.data.title}
         </a>
       </li>

@@ -49,8 +49,7 @@ This project uses an [express.js](https://expressjs.com/) server written in
 JavaScript. Let's fix the server, so it responds with index.html and the single
 page app will take care of the rest.
 
-- Click on **Remix This**.
-
+- Click the **Remix To Edit** button to make the project editable.
 - Select the **server.js** file
 
 This file contains the server code. It sets up an express.js server and sends
