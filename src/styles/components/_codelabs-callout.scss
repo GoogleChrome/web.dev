@@ -4,16 +4,14 @@
 @import '../tools/mixins';
 
 .w-codelabs-callout {
-  margin: -24px;
-  padding: 24px;
-
+  
   @include bp(sm) {
     // sass-lint:disable-block indentation
     border-radius: 8px;
     box-shadow:
-      0 2px 4px -1px rgba(0, 0, 0, .2),
-      0 4px 5px 0 rgba(0, 0, 0, .14),
-      0 1px 10px 0 rgba(0, 0, 0, .12);
+    0 2px 4px -1px rgba(0, 0, 0, .2),
+    0 4px 5px 0 rgba(0, 0, 0, .14),
+    0 1px 10px 0 rgba(0, 0, 0, .12);
     display: grid;
     font-size: .889em;
     // sass-lint:disable-all
@@ -23,7 +21,7 @@
     // sass-lint:enable-all
     // scss-lint:enable all
     grid-template-columns: 1fr 1fr;
-    margin: 64px 0 0;
+    padding: 24px;
   }
 }
 

@@ -1195,9 +1195,20 @@
     "glitch": "mdiblasio"
   },
   "gmimani": {
-    "given": "Garima",
-    "family": "Mimani"
+    "name": {
+      "given": "Garima",
+      "family": "Mimani"
+    },
+    "github": "garimamimani",
+    "glitch": "garimamimani"
   },
-  "github": "garimamimani",
-  "glitch": "garimamimani"
+  "martinsplitt": {
+    "name": {
+      "given": "Martin",
+      "family": "Splitt"
+    },
+    "github": "AVGP",
+    "twitter": "g33konaut",
+    "glitch": "AVGP"
+  }
 }

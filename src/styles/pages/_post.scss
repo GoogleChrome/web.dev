@@ -1,10 +1,25 @@
 @import '../settings/colors';
+@import '../tools/breakpoints';
 
 .w-post-breadcrumbs {
   padding: 32px 32px 24px;
 }
 
+.w-post-content {
+  margin-bottom: 64px;
+
+  @include bp(sm) {
+    margin-bottom: 160px;
+  }
+}
+
 .w-post-github-link {
   color: $GREY_700;
   font-size: .875em;
+}
+
+.w-codelabs-callout {
+  @include bp(sm) {
+    margin-top: 64px;
+  }
 }

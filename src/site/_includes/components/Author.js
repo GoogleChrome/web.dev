@@ -8,6 +8,19 @@ module.exports = ({
   showSocialMedia = false,
   small = false,
 }) => {
+  if (!author) {
+    throw new Error(`
+      Can't create Author component without an author argument.
+      author was null or undefined.
+    `);
+  }
+
+  if (!author.name) {
+    throw new Error(
+      `Can't create Author with missing author.name. author object: ${author}`
+    );
+  }
+
   const fullName = `${author.name.given} ${author.name.family}`;
   return html`
     <div class="w-author">

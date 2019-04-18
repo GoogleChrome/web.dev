@@ -9,6 +9,8 @@ description: |
   any content.
 web_lighthouse:
   - http-status-code
+codelabs:
+  - codelab-fix-sneaky-404
 ---
 
 ## Why does this matter?
@@ -36,9 +38,10 @@ your website.
 To fix the error, refer to the documentation for your specific server or hosting
 provider to make sure that your server returns a `2XX` HTTP status code for all
 valid URLs, or a `3XX` status code if the page has moved to another URL.
-You can also try out our [interactive
-example](/discoverable/fix-http-status-codes/codelab-fix-sneaky-404) and learn
-how to fix the error in an express.js application.
+
+{% Aside 'codelab' %}
+[Learn how to fix 404's in an express.js application](/discoverable/codelab-fix-sneaky-404).
+{% endAside %}
 
 ## Verify
 
