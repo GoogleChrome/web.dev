@@ -4,7 +4,7 @@
 @import '../tools/mixins';
 
 .w-codelabs-callout {
-  
+
   @include bp(sm) {
     // sass-lint:disable-block indentation
     border-radius: 8px;
