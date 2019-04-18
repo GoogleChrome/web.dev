@@ -20,7 +20,37 @@ Optimize these images so that the page loads faster and consumes less data:
 </figure>
 
 
+## How Lighthouse flags images as optimizable
+
+Lighthouse collects all the JPEG or BMP images on the page,
+sets each image's compression level to 85,
+and then compares the original version with the compressed version.
+If the potential savings are 4KB or greater, Lighthouse flags the image as optimizable.
+
+## How to optimize images
+
+There are many steps you can take to optimize your images, including:
+
+- [Compressing images](/fast/use-imagemin-to-compress-images).
+- [Replacing animated GIFs with video](/fast/replace-gifs-with-videos).
+- [Lazyloading images](/fast/use-lazysizes-to-lazyload-images).
+- [Serving responsive images](/fast/serve-responsive-images).
+- [Serving images with correct dimensions](/fast/serve-images-with-correct-dimensions).
+- [Using WebP images](/fast/serve-images-webp).
+
+## Optimize images using GUI tools
+
+Another approach is to run your images through an optimizer
+that you install onto your computer and run as a GUI.
+For example,
+with [ImageOptim](https://imageoptim.com/mac) you drag and drop images into its UI,
+and then it automatically compresses the images without compromising quality noticeably.
+If you're running a small site and can handle manually optimizing all images,
+this option is probably good enough.
+
+[Squoosh](https://imageoptim.com/mac) is another option.
+Squoosh is maintained by the Google Web DevRel team.
+
 ## More information
 
 - [Efficiently encode images audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
-- [Use Imagemin to compress images](https://web.dev/fast/use-imagemin-to-compress-images)

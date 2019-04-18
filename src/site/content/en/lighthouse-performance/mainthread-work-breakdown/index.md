@@ -8,7 +8,6 @@ web_lighthouse:
   - mainthread-work-breakdown
 ---
 
-Consider reducing the time spent parsing, compiling, and executing JS.
 Lighthouse shows a breakdown of execution timings on the main thread
 in the Diagnostics section:
 
@@ -19,6 +18,18 @@ in the Diagnostics section:
   </figcaption>
 </figure>
 
+## How to improve execution timings on the main thread
+
+Consider these tactics to reduce time spent parsing, compiling,
+and executing JS:
+
+- [Reduce JavaSdcript payloads with code-splitting](https://web.dev/fast/reduce-javascript-payloads-with-code-splitting).
+- [Remove unused code](https://web.dev/fast/remove-unused-code).
+- [Minify and compress netwwork payloads](https://web.dev/fast/reduce-network-payloads-using-text-compression).
+
 ## More information
 
 - [Minimize main-thread work audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
+- [Reduce JavaScript payloads with code-splitting codelab]()https://web.dev/fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting.
+- [Minify and compress network payloads with gzip codelab](https://web.dev/fast/reduce-network-payloads-using-text-compression/codelab-text-compression)
+- [Minify and compress network payloads with brotli codelab](https://web.dev/fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli)

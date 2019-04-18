@@ -6,8 +6,6 @@ description: |
 author: megginkearney
 web_lighthouse:
   - critical-request-chains
-tags:
-  - pathItem
 ---
 
 Critical request chains are series of dependent network requests important for page rendering.

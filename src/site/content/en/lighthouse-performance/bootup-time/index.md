@@ -6,8 +6,6 @@ description: |
 author: megginkearney
 web_lighthouse:
   - bootup-time
-tags:
-  - pathItem
 ---
 
 Lighthouse reports the time spent executing JavaScript files during page load
