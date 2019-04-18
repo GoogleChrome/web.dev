@@ -28,6 +28,7 @@ const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`)
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
 
 const filtersDir = 'src/site/_filters';
+const {memoize} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const githubLink = require(`./${filtersDir}/github-link`);
@@ -74,6 +75,11 @@ module.exports = function(config) {
   config.addCollection('postDescending', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
+  // Turn collection.all into a lookup table so we can use findBySlug
+  // to quickly find collection items without looping.
+  config.addCollection('memoized', function(collection) {
+    return memoize(collection.getAll());
+  });
 
   //----------------------------------------------------------------------------
   // FILTERS
