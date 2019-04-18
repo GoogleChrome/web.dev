@@ -9,6 +9,8 @@ description: |
   from the Start menu or app launcher, and run in an app window, without an
   address bar or tabs.
 web_lighthouse: N/A
+codelabs:
+  - codelab-make-installable
 ---
 
 A Progressive Web App can run in a browser tab or it can be installed on the
@@ -87,6 +89,10 @@ the audits. The key audits to check are:
 +  User can be prompted to Install the Web App
 +  Uses HTTPS
 +  Responds with a 200 when offline
+
+{% Aside 'codelab' %}
+[Make a site installable using the beforeinstallprompt event](/installable/codelab-make-installable).
+{% endAside %}
 
 ## Further reading
 

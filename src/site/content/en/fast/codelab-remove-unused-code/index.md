@@ -17,43 +17,42 @@ removing any unused and unneeded dependencies.
 
 ## Measure
 
-<div class="w-aside w-aside--note w-aside--left">
-  Since webpack is used in this application, any changes made to the code will
-  trigger a new build which can take a few seconds. Once it completes, you
-  should see your changes reflected in the application.
-</div>
+{% Aside %}
+Since webpack is used in this application, any changes made to the code will
+trigger a new build which can take a few seconds. Once it completes, you
+should see your changes reflected in the application.
+{% endAside %}
 
 It's always a good idea to first measure how well a website performs before
 adding optimizations.
 
 - Click on the **Show Live** button to view the live version of the Glitch.
 
-<web-screenshot type="show-live"></web-screenshot>
+Go ahead and click on your favorite kitten! Firebase's
+[Realtime Database](https://firebase.google.com/products/realtime-database/) is
+used in this application which is why the score updates in real-time and is
+synchronized with every other person using the application. 🐈
 
-Go ahead and click on your favorite kitten! Firebase's [Realtime Database](https://firebase.google.com/products/realtime-database/) is used in
-this application which is why the score updates in real-time and is synchronized
-with every other person using the application. 🐈
+- Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
+- Click on the **Network** tab.
 
-+  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-+  Click on the **Network** tab.
-
-<img class="screenshot" src="./network.png" alt="Network tab">
+<img class="w-screenshot" src="./network.png" alt="Network tab">
 
 Make sure `Disable Cache` is checked and reload the app.
 
-<img class="screenshot" src="./main-bundle.png" alt="Original bundle size of 992 KB">
+<img class="w-screenshot" src="./main-bundle.png" alt="Original bundle size of 992 KB">
 
 Almost 1 MB worth of JavaScript is being shipped to load this simple application!
 
 Take a look at the project warnings in DevTools.
 
-+  Click on the **Console** tab.
-+  Make sure that `Warnings` is enabled in the levels dropdown next to the
-    `Filter` input.
+- Click on the **Console** tab.
+- Make sure that `Warnings` is enabled in the levels dropdown next to the
+  `Filter` input.
 
 <img class="screenshot" src="./warnings.png" alt="Warnings filter">
 
-+  Take a look at the displayed warning.
+- Take a look at the displayed warning.
 
 <img class="screenshot" src="./displayed-warning.png" alt="Console warning">
 
@@ -71,13 +70,13 @@ explored later in this tutorial.
 
 There are two main dependencies in the application:
 
-* [Firebase](https://firebase.google.com/): a platform that provides a number of
-useful services for iOS, Android or web applications. Here its [Realtime
-Database](https://firebase.google.com/products/realtime-database/) is used to
-store and sync the information for each kitten in real time.
-* [Moment.js](https://momentjs.com/): a utility library that makes it easier to
-handle dates in JavaScript. The birth date of each kitten is stored in the
-Firebase database, and `moment` is used to calculate its age in weeks.
+- [Firebase](https://firebase.google.com/): a platform that provides a number of
+  useful services for iOS, Android or web applications. Here its [Realtime
+  Database](https://firebase.google.com/products/realtime-database/) is used to
+  store and sync the information for each kitten in real time.
+- [Moment.js](https://momentjs.com/): a utility library that makes it easier to
+  handle dates in JavaScript. The birth date of each kitten is stored in the
+  Firebase database, and `moment` is used to calculate its age in weeks.
 
 How can just two dependencies contribute to a bundle size of almost 1 MB? Well,
 one of the reasons is that any dependency can in turn have their own
@@ -91,7 +90,7 @@ different community-built tools that can help do this, such as
 
 The package for this tool is already included in the app as a `devDependency`.
 
-``` js
+```js
 "devDependencies": {
   //...
   "webpack-bundle-analyzer": "^2.13.1"
@@ -101,24 +100,24 @@ The package for this tool is already included in the app as a `devDependency`.
 This means that it can be used directly in the webpack configuration file.
 Import it at the very beginning of `webpack.config.js`:
 
-``` js/3
+```js/3
 const path = require("path");
 
 //...
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 ```
-
 
 Now add it as a plugin at the very end of the file within the `plugins` array:
 
-``` js/4
+```js/4
 module.exports = {
   //...
   plugins: [
     //...
     new BundleAnalyzerPlugin()
   ]
-}
+};
 ```
 
 When the application reloads, you should see a visualization of the entire
@@ -131,26 +130,30 @@ Hovering over any of the packages shows its size represented in three
 different ways:
 
 <table>
-<thead>
-<tr>
-<th><strong>Stat size</strong></th>
-<th>Size before any minification or compression.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Parsed size</strong></td>
-<td>Size of actual package within the bundle after it has been compiled.
-Version 4 of webpack (which is used in this application) minifies the
-compiled files automatically which is why this is smaller than the stat
-size.</td>
-</tr>
-<tr>
-<td><strong>Gzipped size</strong></td>
-<td>Size of package after it has been compressed with gzip encoding. This topic
-is covered in a separate guide.</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th><strong>Stat size</strong></th>
+      <th>Size before any minification or compression.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Parsed size</strong></td>
+      <td>
+        Size of actual package within the bundle after it has been compiled.
+        Version 4 of webpack (which is used in this application) minifies the
+        compiled files automatically which is why this is smaller than the stat
+        size.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Gzipped size</strong></td>
+      <td>
+        Size of package after it has been compressed with gzip encoding. This
+        topic is covered in a separate guide.
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 With the webpack-bundle-analyzer tool, it is easier to identify unused or
@@ -161,11 +164,11 @@ unneeded packages that make up a large percentage of the bundle.
 The visualization shows that the `firebase` package consists of a _lot_ more
 than just a database. It includes additional packages such as:
 
-+  `firestore`
-+  `auth`
-+  `storage`
-+  `messaging`
-+  `functions`
+- `firestore`
+- `auth`
+- `storage`
+- `messaging`
+- `functions`
 
 These are all amazing services provided by Firebase (and refer to the
 [documentation](https://firebase.google.com/docs/web/setup#use_firebase_services)
@@ -174,32 +177,32 @@ no reason to have them all imported.
 
 Revert the changes in `webpack.config.js` to see the application again:
 
-+ Remove `BundleAnalyzerPlugin` in the list of plugins:
+- Remove `BundleAnalyzerPlugin` in the list of plugins:
 
-``` js//2
+```js//2
 plugins: [
   //...
   new BundleAnalyzerPlugin()
-]
+];
 ```
 
-+ And now remove the unused import from the top of the file:
+- And now remove the unused import from the top of the file:
 
-<pre class="prettyprint">
+```js//3
 const path = require("path");
 
 //...
-<s>const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;</s>
-</pre>
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+```
 
 The application should load normally now. Modify `src/index.js` to update the
 Firebase imports.
 
-<pre class="prettyprint">
-<s>import firebase from "firebase";</s>
-<strong>import firebase from 'firebase/app';</strong>
-<strong>import 'firebase/database';</strong>
-</pre>
+```js/1-2/0
+import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
+```
 
 Now when the app reloads, the DevTools warning does not show. Opening the
 DevTools **Network** panel also shows a _nice_ reduction in bundle size:
@@ -238,22 +241,22 @@ age of each kitten in weeks can probably be constructed.
 Like always, try not to copy and paste as you follow along here. Begin by
 removing `moment` from the imports in `src/index.js`.
 
-<pre class="prettyprint">
+```js//2
 import firebase from 'firebase/app';
 import 'firebase/database';
-<s>import * as moment from 'moment';</s>
-</pre>
+import * as moment from 'moment';
+```
 
 There is a Firebase event listener that handles value changes in our database:
 
-```
+```js
 favoritesRef.on("value", (snapshot) => { ... })
 ```
 
 Above this, add a small function to calculate the number of weeks from a
 given date:
 
-```
+```js
 const ageInWeeks = birthDate => {
   const WEEK_IN_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
   const diff = Math.abs((new Date).getTime() - birthDate);
@@ -269,7 +272,7 @@ single week.
 Finally, all instances of `moment` can be removed in the event listener by
 leveraging this function instead:
 
-<pre class="prettyprint">
+<pre>
 favoritesRef.on("value", (snapshot) => {
   const { kitties, favorites, names, birthDates } = snapshot.val();
   favoritesScores = favorites;

@@ -1,13 +1,12 @@
 ---
-page_type: glitch
+layout: codelab
 title: Make it installable
 author: petelepage
 description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
 glitch: make-it-installable
+related_post: discover-installable
 ---
 
 This glitch already contains the critical components required to make a
@@ -28,6 +27,7 @@ that the Progressive Web App can be installed and an install button can be shown
 to the user. The `beforeinstallprompt` event is fired when the PWA meets the
 criteria for installability.
 
+1. Click the **Remix To Edit** button to make the project editable.
 1. Add a `beforeinstallprompt` event handler to the `window` object.
 1. Save the `event` as a global variable, we'll need it later to show the
     prompt.
@@ -35,7 +35,7 @@ criteria for installability.
 
 Code:
 
-```
+```js
 window.addEventListener('beforeinstallprompt', (event) => {
   console.log('👍', 'beforeinstallprompt', event);
   // Stash the event so it can be triggered later.
@@ -59,7 +59,7 @@ event. Calling `prompt()` is done in the install button click handler because
 
 Code:
 
-```
+```js
 butInstall.addEventListener('click', () => {
   console.log('👍', 'butInstall-clicked');
   const promptEvent = window.deferredPrompt
@@ -94,7 +94,7 @@ ways of installation by listening for the `appinstalled` event.
 
 Code:
 
-```
+```js
 window.addEventListener('appinstalled', (event) => {
   console.log('👍', 'appinstalled', event);
 });
