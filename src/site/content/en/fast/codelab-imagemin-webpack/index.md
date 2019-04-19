@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Using Imagemin with Webpack
 author: katiehempenius
+date: 2018-11-05
 description: |
   In this codelab, learn how to use imagemin with webpack to optimize JPEG and
   PNG images for faster download.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
 glitch: imagemin-webpack
+related_post: use-imagemin-to-compress-images
 ---
 
 ## Setup the Imagemin Webpack plugin

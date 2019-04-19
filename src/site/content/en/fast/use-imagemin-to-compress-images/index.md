@@ -1,18 +1,18 @@
 ---
-page_type: guide
+layout: post
 title: Use Imagemin to compress images
 author: katiehempenius
+date: 2018-11-05
 description: |
   Uncompressed images bloat your pages with unnecessary bytes. Run Lighthouse to
   check for opportunities to improve page load by compressing images.
 web_lighthouse:
-    - uses-optimized-images
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+  - uses-optimized-images
+codelabs:
+  - codelab-imagemin-webpack
+  - codelab-imagemin-gulp
+  - codelab-imagemin-grunt
 ---
-
-# Use Imagemin to compress images
 
 ## Why should you care?
 
@@ -21,18 +21,19 @@ right is 40% smaller than the one on the left, yet would probably look identical
 to the average user.
 
 <table>
-<thead>
-<tr>
-<th><p><img src=./20kb.jpg width="100%"></p>
-
-20 KB</th>
-<th><p><img src=./12kb.jpg width="100%"></p>
-
-12 KB</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
+  <thead>
+    <tr>
+      <th>
+        <p><img src=./20kb.jpg width="100%"></p>
+        20 KB
+      </th>
+      <th>
+        <p><img src=./12kb.jpg width="100%"></p>
+        12 KB
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
 </table>
 
 ## Measure
@@ -42,9 +43,10 @@ These opportunities are listed under "Efficiently encode images":
 
 ![image](./efficient-encoding.png)
 
-<div class="aside note">
-Lighthouse currently reports on opportunities to compress images in JPEG format only.
-</div>
+{% Aside %}
+Lighthouse currently reports on opportunities to compress images in JPEG format
+only.
+{% endAside %}
 
 ## Imagemin
 
@@ -75,48 +77,68 @@ your needs. The table below lists popular Imagemin plugins. These aren't the onl
 available, but they'd all be good choices for your project.
 
 <table>
-<thead>
-<tr>
-<th>Image Format</th>
-<th>Lossy Plugin(s)</th>
-<th>Lossless Plugin(s)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>JPEG</td>
-<td><a
-href="https://www.npmjs.com/package/imagemin-mozjpeg">imagemin-mozjpeg</a></td>
-<td><a
-href="https://www.npmjs.com/package/imagemin-jpegtran">imagemin-jpegtran</a></td>
-</tr>
-<tr>
-<td>PNG</td>
-<td><a
-href="https://www.npmjs.com/package/imagemin-pngquant">imagemin-pngquant</a></td>
-<td><a
-href="https://www.npmjs.com/package/imagemin-optipng">imagemin-optipng</a></td>
-</tr>
-<tr>
-<td>GIF</td>
-<td><a
-href="https://www.npmjs.com/package/imagemin-giflossy">imagemin-giflossy</a></td>
-<td><a
-href="https://www.npmjs.com/package/imagemin-gifsicle">imagemin-gifsicle</a></td>
-</tr>
-<tr>
-<td>SVG</td>
-<td><a
-href="https://www.npmjs.com/package/imagemin-svgo">Imagemin-svgo</a></td>
-<td></td>
-</tr>
-<tr>
-<td>WebP</td>
-<td><a
-href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Image Format</th>
+      <th>Lossy Plugin(s)</th>
+      <th>Lossless Plugin(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JPEG</td>
+      <td>
+        <a href="https://www.npmjs.com/package/imagemin-mozjpeg"
+          >imagemin-mozjpeg</a
+        >
+      </td>
+      <td>
+        <a href="https://www.npmjs.com/package/imagemin-jpegtran"
+          >imagemin-jpegtran</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>PNG</td>
+      <td>
+        <a href="https://www.npmjs.com/package/imagemin-pngquant"
+          >imagemin-pngquant</a
+        >
+      </td>
+      <td>
+        <a href="https://www.npmjs.com/package/imagemin-optipng"
+          >imagemin-optipng</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>GIF</td>
+      <td>
+        <a href="https://www.npmjs.com/package/imagemin-giflossy"
+          >imagemin-giflossy</a
+        >
+      </td>
+      <td>
+        <a href="https://www.npmjs.com/package/imagemin-gifsicle"
+          >imagemin-gifsicle</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>SVG</td>
+      <td>
+        <a href="https://www.npmjs.com/package/imagemin-svgo">Imagemin-svgo</a>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>WebP</td>
+      <td>
+        <a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
 </table>
 
 ### Imagemin CLI
@@ -129,7 +151,7 @@ input.
 To compress the images in the "images/" directory and save them to the same
 directory, run the following command (overwrites the original files):
 
-```
+```bash
 $ imagemin images/* --out-dir=images
 ```
 
@@ -137,14 +159,14 @@ $ imagemin images/* --out-dir=images
 
 If you use one of these build tools,
 checkout out the codelabs for Imaginemin with
-[Webpack](/fast/use-imagemin-to-compress-images/codelab-imagemin-webpack), [Gulp](/fast/use-imagemin-to-compress-images/codelab-imagemin-gulp), and
-[Grunt](/fast/use-imagemin-to-compress-images/codelab-imagemin-grunt).
+[webpack](/fast/codelab-imagemin-webpack), [gulp](/fast/codelab-imagemin-gulp),
+or [grunt](/fast/codelab-imagemin-grunt).
 
 You can also use Imagemin by itself as a Node script.
 This code uses the "imagemin-mozjpeg" plugin to compress JPEG files to a quality
 of 50 (‘0' being the worst; ‘100' being the best):
 
-```
+```js
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 

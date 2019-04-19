@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Using Imagemin with Gulp
 author: katiehempenius
+date: 2018-11-05
 description: |
   In this codelab, learn how to use imagemin with gulp to optimize JPEG and
   PNG images for faster download.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
 glitch: imagemin-gulp
+related_post: use-imagemin-to-compress-images
 ---
 
 ## Setup the Imagemin Gulp plugin
@@ -66,7 +66,7 @@ gulp
 
 When Gulp completes, you should see a message like this in the terminal:
 
-```shell
+```bash
 gulp-imagemin: Minified 6 images (saved 50 kB - 14.8%)
 ```
 
