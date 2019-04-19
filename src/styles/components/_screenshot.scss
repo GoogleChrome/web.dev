@@ -19,3 +19,7 @@
   background-color: $GREY_50;
   padding: 16px;
 }
+
+.w-screenshot + .w-screenshot {
+  margin-top: 32px;
+}
