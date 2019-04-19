@@ -1,21 +1,18 @@
 ---
-page_type: glitch
+layout: codelab
 title: Art direction
 author: katiehempenius
 description: |
   In this codelab, learn how to load completely different images based on device
   display size.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 glitch: responsive-images-art-direction
-order: 2
+related_post: serve-responsive-images
 ---
 
 ## Try out this demo
 
 - Click the **Show Live** button to preview the app.
-
-<web-screenshot type="show-live"></web-screenshot>
 
 - Reload the app using different browser sizes. Notice how different the images
   are - they are not just different sizes but also different croppings and
@@ -46,11 +43,11 @@ Art direction uses the
 [`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source),
 and `<img>` tags.
 
-### `<picture>`
+**picture**
 
 The `<picture>` tag provides a wrapper for zero or more `<source>` tags and one `<image>` tag.
 
-### `<source>`
+**source**
 
 The `<source>` tag specifies a media resource.
 
@@ -59,19 +56,17 @@ The browser uses the first `<source>` tag with a [media query](https://developer
 browser falls back to loading the image specified by the `<img>`.
 tag.
 
-**Gotchas:**
-
-✔️ Be careful when ordering source tags. The browser uses the first
+{% Aside 'gotchas' %}
+- Be careful when ordering source tags. The browser uses the first
 `<source>` tag with a matching media query - even if subsequent
 `<source>` tags also have matching media queries.
-
-✔️ The value of the `srcset` attribute is an image filepath.
-
-✔️ Use images that are appropriately sized. Just because art
+- The value of the `srcset` attribute is an image filepath.
+- Use images that are appropriately sized. Just because art
 direction is used for aesthetic purposes, doesn't mean that it shouldn't be
 performant too.
+{% endAside %}
 
-### `<img>`
+**img**
 
 The `<img>` tag makes this code work on browsers that don't
 support the `<picture>` tag.
@@ -79,10 +74,9 @@ support the `<picture>` tag.
 If a browser does not support the `<picture>` tag, it loads the
 image specified by the `<img>` tag.
 
-**Gotchas:**
-
-✔️ The `<img>` tag should always be included, and it should
-always be listed last, after all `<source>` tags.
-
-✔️ The resource specified by the `<img>` tag should be a
-size that works on all devices, so it can be used as a fallback.
+{% Aside 'gotchas' %}
+- The `<img>` tag should always be included, and it should always be listed
+  last, after all `<source>` tags.
+- The resource specified by the `<img>` tag should be a size that works on all
+  devices, so it can be used as a fallback.
+{% endAside %}

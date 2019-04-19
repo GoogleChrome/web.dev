@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Use lazysizes to lazyload images
 author: katiehempenius
 description: |
@@ -8,12 +8,10 @@ description: |
   and avoids loading assets that are never used.
 web_lighthouse:
   - offscreen-images
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2018-11-05
+codelabs:
+  - codelab-use-lazysizes-to-lazyload-images
 ---
-
-# Use lazysizes to lazyload images
 
 **Lazy loading** is the strategy of loading resources as they are needed, rather
 than in advance. This approach frees up resources during the initial page load
@@ -47,18 +45,21 @@ Add the lazysizes
 [script](https://github.com/aFarkas/lazysizes/blob/gh-pages/lazysizes.min.js) to
 your pages:
 
-    <script src="lazysizes.min.js" async></script>
+```html
+<script src="lazysizes.min.js" async></script>
+```
+
 ### Update `<img>` and/or `<picture>` tags
 
 **`<img>` tag instructions**
 
 **Before:**
-```
+```html
 <img src="flower.jpg">
 ```
 
 **After:**
-```
+```html
 <img data-src="flower.jpg" class="lazyload">
 ```
 
@@ -73,7 +74,7 @@ When you update the `<img>` tag you make two changes:
 **`<picture>` tag instructions**
 
 **Before:**
-```
+```html
 <picture>
   <source type="image/webp" srcset="flower.webp">
   <source type="image/jpeg" srcset="flower.jpg">
@@ -82,7 +83,7 @@ When you update the `<img>` tag you make two changes:
 ```
 
 **After:**
-```
+```html
 <picture>
   <source type="image/webp" data-srcset="flower.webp">
   <source type="image/jpeg" data-srcset="flower.jpg">
@@ -95,11 +96,17 @@ When you update the `<picture>` tag you make two changes:
 + Add the `lazyload` class to the `<img>` tag.
 + Change the `<source>` tag `srcset` attribute to `data-srcset`.
 
+{% Aside 'codelab' %}
+[Use lazysizes to only load images that are in the current viewport](/fast/codelab-use-lazysizes-to-lazyload-images).
+{% endAside %}
+
 ## Verify
 
-Open DevTools and scroll down the page to see these changes in action. As you scroll, you should see new network requests occur and `<img>` tag classes change from `lazyload` to `lazyloaded`.
+Open DevTools and scroll down the page to see these changes in action. As you
+scroll, you should see new network requests occur and `<img>` tag classes change
+from `lazyload` to `lazyloaded`.
 
 Additionally, you can use Lighthouse to verify that you haven't forgotten to
-lazy load any offscreen images. Run the Lighthouse Performance Audit (Lighthouse > Options >
-Performance) and look for the results of the "Defer offscreen images"
-audit.
+lazy load any offscreen images. Run the Lighthouse Performance Audit
+(**Lighthouse > Options > Performance**) and look for the results of the
+**Defer offscreen images** audit.
