@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Reduce JavaScript payloads with code-splitting
 author: houssein
 description: |
   In this codelab, learn how to improve the performance of a simple application
   through code-splitting.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 glitch: code-splitting-starter
+related_post: reduce-javascript-payloads-with-code-splitting
 ---
 
 Most web pages and applications are made up of many different parts. Instead of
@@ -18,26 +18,23 @@ improves page performance.
 In this codelab, the performance of a simple application that sorts three
 numbers is optimized through code-splitting.
 
-![image](./codelab-code-splitting-1.png)
+![A browser window shows an application titled Magic Sorter with three fields for inputting numbers and a sort button.](./codelab-code-splitting-1.png)
 
 ## Measure
 
-<div class="aside note">
- Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
-</div>
+{% Aside %}
+Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
+{% endAside %}
 
 Like always, it's important to first measure how well a website performs before
 attempting to add any optimizations.
 
 -  Click on the **Show Live** button.
-
-<web-screenshot type="show-live"></web-screenshot>
-
 -  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 -  Click on the **Network** panel.
 -  Make sure `Disable Cache` is checked and reload the app.
 
-<img class="screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2 KB JavaScript bundle.">
+<img class="w-screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2 KB JavaScript bundle.">
 
 71.2 KB worth of JavaScript just to sort a few numbers in a simple application.
 What gives?
@@ -61,10 +58,10 @@ Options 1 and 2 are perfectly appropriate methods to reduce the bundle size (and
 would probably make the most sense for a real application). However, those are
 not used in this tutorial for the sake of teaching 😈.
 
-<div class="aside note">
+{% Aside %}
 The concept of removing unused code is explored in further detail in a
-<a href="/fast/remove-unused-code">separate guide</a>.
-</div>
+[separate guide](/fast/remove-unused-code).
+{% endAside %}
 
 Both options 3 and 4 help improve the performance of this application. The
 next few sections of this codelab cover these steps. Like any coding
@@ -75,45 +72,45 @@ tutorial, always try to write the code yourself instead of copy and pasting.
 A few files need to be modified to only import the single method from `lodash`.
 To begin with, replace this dependency in `package.json`:
 
-```
+```json
 "lodash": "^4.7.0",
 ```
 
 with this:
 
-```
+```json
 "lodash.sortby": "^4.7.0",
 ```
 
 Now in `src/index.js`, import this specific module:
 
-<pre class="prettyprint">
+```js/2/1
 import "./style.css";
-<s>import _ from "lodash";</s>
-<strong>import sortBy from "lodash.sortby";</strong>
-</pre>
+import _ from "lodash";
+import sortBy from "lodash.sortby";
+```
 
 And update how the values are sorted::
 
-<pre class="prettyprint">
+```js/4/3
 form.addEventListener("submit", e => {
   e.preventDefault();
   const values = [input1.valueAsNumber, input2.valueAsNumber, input3.valueAsNumber];
-  <s>const sortedValues = _.sortBy(values);</s>
-  <strong>const sortedValues = sortBy(values);</strong>
+  const sortedValues = _.sortBy(values);
+  const sortedValues = sortBy(values);
 
   results.innerHTML = `
-    &lt;h2&gt;
+    <h2>
       ${sortedValues}
-    &lt;/h2&gt;
+    </h2>
   `
 });
-</pre>
+```
 
 Reload the application, open DevTools, and take a look at the **Network** panel
 once again.
 
-<img class="screenshot" src="./codelab-code-splitting-4.png" alt="Network panel showing 15.2 KB JavaScript bundle.">
+<img class="w-screenshot" src="./codelab-code-splitting-4.png" alt="Network panel showing 15.2 KB JavaScript bundle.">
 
 For this application, the bundle size was reduced by over 4X with very little
 work, but there's still more room for improvement.
@@ -137,21 +134,21 @@ loaded only when the user presses the button.
 
 Begin by removing the top-level import for the sort method in `src/index.js`:
 
-<pre class="prettyprint">
-<s>import sortBy from "lodash.sortby";</s>
-</pre>
+```js//0
+import sortBy from "lodash.sortby";
+```
 
 And import it within the event listener that fires when the button is pressed:
 
-<pre class="prettyprint">
+```js/2-5
 form.addEventListener("submit", e => {
   e.preventDefault();
-  <strong>import('lodash.sortby')</strong>
-    <strong>.then(module => module.default)</strong>
-    <strong>.then(sortInput())</strong>
-    <strong>.catch(err => { alert(err) });</strong>
+  import('lodash.sortby')
+    .then(module => module.default)
+    .then(sortInput())
+    .catch(err => { alert(err) });
 });
-</pre>
+```
 
 The `import()` feature is part of a
 [proposal](https://github.com/tc39/proposal-dynamic-import) (currently at stage
@@ -159,11 +156,10 @@ The `import()` feature is part of a
 webpack has already included support for this and follows the same syntax laid
 out by the proposal.
 
-<div class="aside note">
-Read more about how
-dynamic imports work in this
-<a href="https://developers.google.com/web/updates/2017/11/dynamic-import">Web Updates article</a>.
-</div>
+{% Aside %}
+Read more about how dynamic imports work in this [Web Updates
+article](https://developers.google.com/web/updates/2017/11/dynamic-import).
+{% endAside %}
 
 
 `import()` returns a promise and when it resolves, the selected
@@ -174,28 +170,33 @@ calls a `sortInput` method to sort the three input values. At the end of the
 promise chain, .`catch()` is used to handle cases where the promise is rejected
 due to an error.
 
-<div class="aside caution">
+{% Aside 'caution' %}
 In a production application, always handle dynamic import
 errors appropriately. A simple alert message similar to what is used here may
 not provide the best user experience to let the user know something has
 failed.
-</div>
+{% endAside %}
 
-<div class="aside note">
-You may see a linting error that says <code>Parsing error: 'import' and
-'export' may only appear at the top level.</code> This is due to the fact that
+{% Aside %}
+You may see a linting error that says:
+
+```bash
+Parsing error: 'import' and 'export' may only appear at the top level.
+```
+
+This is due to the fact that
 the dynamic import syntax is still in the proposal stage and has not been
 finalized. Although webpack already supports it, the settings for
-<a href="https://eslint.org/">ESLint</a> (a JavaScript linting utility) used by
+[ESLint](https://eslint.org) (a JavaScript linting utility) used by
 Glitch has not been updated to include this syntax yet, but it still works!
-</div>
+{% endAside %}
 
 The last thing that needs to be done is to write the `sortInput` method at the
 end of the file. This needs to be a function that _returns_ a function that
 takes in the imported method from `lodash.sortBy`. The nested function can then
 sort the three input values and update the DOM.
 
-```
+```js
 const sortInput = () => {
   return (sortBy) => {
     const values = [
@@ -220,12 +221,12 @@ Reload the application one last time and keep a close eye on the **Network**
 panel again. Only a small initial bundle is downloaded as soon as the app
 loads.
 
-<img class="screenshot" src="./codelab-code-splitting-5.png" alt="Network panel showing 2.7 KB JavaScript bundle.">
+<img class="w-screenshot" src="./codelab-code-splitting-5.png" alt="Network panel showing 2.7 KB JavaScript bundle.">
 
 After the button is pressed to sort the input numbers, the chunk that contains
 the sorting code gets fetched and executed.
 
-<img class="screenshot" src="./codelab-code-splitting-6.png" alt="Network panel showing 2.7 KB JavaScript bundle followed by a 13.9 KB JavaScript bundle.">
+<img class="w-screenshot" src="./codelab-code-splitting-6.png" alt="Network panel showing 2.7 KB JavaScript bundle followed by a 13.9 KB JavaScript bundle.">
 
 Notice how the numbers still get sorted!
 
