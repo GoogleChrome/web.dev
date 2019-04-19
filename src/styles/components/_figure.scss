@@ -52,14 +52,14 @@
 .w-figure--inline-right {
   @include bp(md) {
     float: right;
-    margin: 0 0 16px 32px;
+    margin: 0 0 40px 40px;
   }
 }
 
 .w-figure--inline-left {
   @include bp(md) {
     float: left;
-    margin: 0 32px 16px 0;
+    margin: 0 40px 40px 0;
   }
 }
 
