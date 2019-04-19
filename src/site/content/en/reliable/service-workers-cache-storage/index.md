@@ -118,6 +118,10 @@ and the related
 [`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)/[`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 syntax, before diving in.
 
+{% Aside 'codelab' %}
+[Make an application network resilient by registering a service worker](/reliable/codelab-service-workers).
+{% endAside %}
+
 ## Don't deploy that code… yet
 
 While they provide an important foundation, and can be used as-is, both service

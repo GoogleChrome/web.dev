@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Explore DevTools Network panel
 author: jeffposnick
+date: 2018-11-05
 description: |
   In this codelab, learn how to inerpret network traffic using Chrome's
   DevTools.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
 glitch: explore-devtools
+related_post: identify-resources-via-network-panel
 ---
 
 This codelab walks you through the process of interpreting all of the network
@@ -26,8 +26,6 @@ application.
 
 - Click the **Show Live** button to preview the app.
 
-<web-screenshot type="show-live"></web-screenshot>
-
 1. Open DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 1. Select the **Network** tab.
 1. Reload the page to see the network traffic.
@@ -40,11 +38,11 @@ navigation:
 
 <img class="screenshot" src="./initial-navigation.png" alt="Chrome DevTools' network panel.">
 
-<div class="aside note">
+{% Aside %}
 The actual columns you see in the Network panel may be different; the
 screenshot shows a simplified view with everything but the Name, Type, and
 Waterfall columns hidden.
-</div>
+{% endAside %}
 
 ## How to interpret the entries
 
@@ -78,10 +76,10 @@ Trigger these additional requests by clicking the **Find Me** button, and then
 
 <img src="./allow-location.png" alt="The allow location permission prompt.">
 
-<div class="aside note">
+{% Aside %}
 You could also deny Geolocation permission, in which case the web app
 will fall back to a default location.
-</div>
+{% endAside %}
 
 Once the web app has a location to work with, clicking on the **Find Nearby
 Wikipedia Entries** button results in several additional Network requests. You

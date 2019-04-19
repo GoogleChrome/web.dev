@@ -10,6 +10,8 @@ description: |
   you a sensible caching implementation without much work, so you should always
   try to follow them.
 web_lighthouse: N/A
+codelabs:
+  - codelab-http-cache
 ---
 
 How can you avoid unnecessary network requests?
@@ -165,6 +167,10 @@ actual resource being requested.
     to tell the client to use its cached version of a resource.
   </figcaption>
 </figure>
+
+{% Aside 'codelab' %}
+[Control resource caching behavior using HTTP headers](/reliable/codelab-http-cache).
+{% endAside %}
 
 ## Dig deeper
 

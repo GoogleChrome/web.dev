@@ -10,6 +10,8 @@ description: |
   to understand the network's vulnerabilities if you hope to cope with them in
   your app.
 web_lighthouse: N/A
+codelabs:
+  - codelab-explore-network-panel
 ---
 
 The Network panel in your browser's DevTools helps identify what resources are
@@ -19,6 +21,10 @@ specific URL that your web app has loaded.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./network-panel.png" alt="Chrome DevTools' network panel.">
 </figure>
+
+{% Aside 'codelab' %}
+[Inerpret network traffic using Chrome's DevTools](/reliable/codelab-explore-network-panel).
+{% endAside %}
 
 {% Aside %}
 This guide uses screenshots and descriptions based on Chrome's DevTools

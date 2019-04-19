@@ -1,16 +1,14 @@
 ---
-page_type: glitch
+layout: codelab
 title: Same Origin Policy & Fetch requests
 author: kosamari
+date: 2018-11-05
 description: |
   In this codelab, learn how the same-origin policy works when fetching
   resources.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
 glitch: same-origin-policy-fetch
+related_post: same-origin-policy
 ---
-
-# Same-origin policy & Fetch request
 
 In this codelab, see how the same-origin works when fetching resources.
 

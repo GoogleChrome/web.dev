@@ -2,6 +2,7 @@
 layout: codelab
 title: Fix sneaky 404s
 author: martinsplitt
+date: 2018-11-05
 description: |
   In this codelab, learn how to track down a sneaky 404 that may prevent your
   page from being properly indexed.
