@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Reduce JavaScript payloads with code-splitting
 author: houssein
 description: |
@@ -8,13 +8,11 @@ description: |
   the first page of your application is loaded, code-split your bundle into
   multiple "pieces" and only send what's necessary at the very beginning.
 web_lighthouse:
-- bootup-time
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+  - bootup-time
+date: 2018-11-05
+codelabs:
+  - codelab-code-splitting
 ---
-
-# Reduce JavaScript payloads with code-splitting
 
 Nobody likes waiting.
 **[Over 50% of users abandon a website if it takes longer than 3 seconds to load](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/)**.
@@ -29,7 +27,7 @@ multiple "pieces" and only send what's necessary at the very beginning.
 Lighthouse displays a failed audit when a significant amount of time is taken to
 execute all the JavaScript on a page.
 
-<img class="screenshot" src="./reduce-javascript-payloads-with-code-splitting-2.png" alt="A failing Lighthouse audit showing scripts taking too long to execute.">
+<img class="w-screenshot" src="./reduce-javascript-payloads-with-code-splitting-2.png" alt="A failing Lighthouse audit showing scripts taking too long to execute.">
 
 Split the JS bundle to only send the code needed for the initial route when the
 user loads an application. This minimizes the amount of script that needs to be
@@ -42,7 +40,7 @@ bundles using [dynamic imports](https://developers.google.com/web/updates/2017/1
 For example, consider the following code snippet that shows an example of a
 `someFunction` method that gets fired when a form is submitted.
 
-<pre class="prettyprint">
+```js
 import moduleA from "library";
 
 form.addEventListener("submit", e => {
@@ -53,25 +51,25 @@ form.addEventListener("submit", e => {
 const someFunction = () => {
   // uses moduleA
 }
-</pre>
+```
 
 In here, `someFunction` uses a module imported from a particular library. If
 this module is not being used elsewhere, the code block can be modified to use a
 dynamic import to fetch it only when the form is submitted by the user.
 
-<pre class="prettyprint">
+```js/2-5
 form.addEventListener("submit", e => {
   e.preventDefault();
-  <strong>import('library.moduleA')</strong>
-    <strong>.then(module => module.default) // using the default export</strong>
-    <strong>.then(someFunction())</strong>
-    <strong>.catch(handleError());</strong>
+  import('library.moduleA')
+    .then(module => module.default) // using the default export
+    .then(someFunction())
+    .catch(handleError());
 });
 
 const someFunction = () => {
     // uses moduleA
 }
-</pre>
+```
 
 The code that makes up the module does not get included into the initial bundle
 and is now **lazy loaded**, or provided to the user only when it is needed after
