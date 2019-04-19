@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Serve responsive images
 author: katiehempenius
 description: |
@@ -7,13 +7,13 @@ description: |
   needed. Instead of a "one-size-fits-all" approach to images, serve different
   image sizes to different devices.
 web_lighthouse:
-- uses-responsive-images
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+  - uses-responsive-images
+date: 2018-11-05
+codelabs:
+  - codelab-specifying-multiple-slot-widths
+  - codelab-art-direction
+  - codelab-density-descriptors
 ---
-
-# Serve Responsive Images
 
 Serving desktop-sized images to mobile devices can use 2–4x more data than
 needed. Instead of a "one-size-fits-all" approach to images, serve different
@@ -53,16 +53,15 @@ fs.readdirSync(directory).forEach(file => {
 To resize an image to 33% of its original size, run the following command in
 your terminal:
 
-
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 convert -resize 33% flower.jpg flower-small.jpg
-</pre>
+```
 
 To resize an image to fit within 300px wide by 200px high, run the following command:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 convert flower.jpg -resize 300x200 flower-small.jpg
-</pre>
+```
 
 ### How many image versions should you create?
 
@@ -86,25 +85,25 @@ Specify multiple image versions and the browser will choose the best one to
 use:
 
 <table>
-<thead>
-<tr>
-<th><strong>Before</strong></th>
-<th><strong>After</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-&lt;img src="flower-large.jpg"&gt;
-</td>
-<td>
-&lt;img src="flower-large.jpg"
-     srcset="flower-small.jpg 480w, flower-large.jpg 1080w"
-     sizes="50vw"&gt;
-</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th><strong>Before</strong></th>
+      <th><strong>After</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        &lt;img src="flower-large.jpg"&gt;
+      </td>
+      <td>
+        &lt;img src="flower-large.jpg" srcset="flower-small.jpg 480w,
+        flower-large.jpg 1080w" sizes="50vw"&gt;
+      </td>
+    </tr>
+  </tbody>
 </table>
+
 
 The `<img>` tag's
 [`src`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-src),
@@ -120,9 +119,10 @@ The src attribute makes this code work for browsers that don't
 attributes. If a browser does not support these attributes, it will fall back to
 loading the resource specified by the `src` attribute.
 
-**Gotchas:**  
-✔️ The resource specified by the `src` attribute should be large enough to work
+{% Aside 'gotchas' %}
+The resource specified by the `src` attribute should be large enough to work
 well on all device sizes.
+{% endAside %}
 
 ### The "srcset" attribute
 
@@ -139,16 +139,17 @@ This example uses
 of an image. This saves the browser from needing to download the image to
 determine its size.
 
-**Gotchas:**  
-✔️ Use the `w` unit (instead of `px`) to write width descriptors. For example,
-a 1024px wide image would be written as `1024w`.
+{% Aside 'gotchas' %}
+Use the `w` unit (instead of `px`) to write width descriptors. For example, a
+1024px wide image would be written as `1024w`.
+{% endAside %}
 
-**Extra Credit:**  
+**Extra Credit:**
 You don't need to know about density descriptors to serve different image sizes.
 However, if you're curious about how density descriptors work, check out the
-[Resolution Switching code lab](/fast/serve-responsive-images/codelab-density-descriptors). Density descriptors are used to serve different
-images based on the_ device's [pixel
-density](https://en.wikipedia.org/wiki/Pixel_density).
+[Resolution Switching code lab](/fast/serve-responsive-images/codelab-density-descriptors).
+Density descriptors are used to serve different images based on the_ device's
+[pixel density](https://en.wikipedia.org/wiki/Pixel_density).
 
 ### The "sizes" attribute
 
@@ -165,8 +166,8 @@ loading the image specified by the "`src`" attribute. (Browsers shipped support
 for the "`sizes`" and "`srcset`" attributes at the same time, so a browser will
 either support both attributes or neither.)
 
-**Gotchas:**  
-✔️ Slot width can be specified using a variety of units. The following are all
+{% Aside 'gotchas' %}
+Slot width can be specified using a variety of units. The following are all
 valid sizes:
 
 - `100px`
@@ -177,8 +178,9 @@ valid sizes:
 The following is not a valid size:
 
 +  `25%` (percentages cannot be used with the sizes attribute)
+{% endAside %}
 
-**Extra Credit:**  
+**Extra Credit:**
 If you want to be fancy, you can also use the sizes attribute to specify
 multiple slot sizes. This accommodates websites that use different layouts for
 different viewport sizes. Check out this [multiple slot code sample](/fast/serve-responsive-images/codelab-specifying-multiple-slot-widths)
@@ -197,6 +199,6 @@ can learn more in the [Art Direction code lab](/fast/serve-responsive-images/cod
 
 Once you've implemented responsive images, you can use Lighthouse to make sure
 that you didn't miss any images. Run the Lighthouse Performance Audit
-(Lighthouse > Options > Performance) and look for the results of the "Properly
-size images" audit. These results will list the images that need to be
-resized.
+(**Lighthouse > Options > Performance**) and look for the results of the
+**Properly size images** audit. These results will list the images that need to
+be resized.

@@ -1,21 +1,18 @@
 ---
-page_type: glitch
+layout: codelab
 title: Use density descriptors
 author: katiehempenius
 description: |
   In this codelab, learn how to use density descriptors and srcset to load
   images with the right pixel density for the user's device.
 glitch: responsive-images-density-descriptors
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-order: 3
+date: 2018-11-05
+related_post: serve-responsive-images
 ---
 
 ## Explore This Demo
 
 - Click the **Show Live** button to preview the app.
-
-<web-screenshot type="show-live"></web-screenshot>
 
 - Reload the page using different devices to see the browser load different
   images.
@@ -24,20 +21,20 @@ You can use the device emulator for this. If you're looking for specific display
 densities, here are some devices to try:
 
 <table>
-<tbody>
-<tr>
-<td>1x density</td>
-<td>Blackberry Playbook, many external monitors</td>
-</tr>
-<tr>
-<td>2x density</td>
-<td> iPad or IPhone 5/6</td>
-</tr>
-<tr>
-<td>3x density</td>
-<td>Galaxy S5 or iPhone X</td>
-</tr>
-</tbody>
+  <tbody>
+    <tr>
+      <td>1x density</td>
+      <td>Blackberry Playbook, many external monitors</td>
+    </tr>
+    <tr>
+      <td>2x density</td>
+      <td>iPad or IPhone 5/6</td>
+    </tr>
+    <tr>
+      <td>3x density</td>
+      <td>Galaxy S5 or iPhone X</td>
+    </tr>
+  </tbody>
 </table>
 
 - Checkout `index.html` for the code that makes this work.
@@ -123,31 +120,33 @@ In order for images to look their very best on high resolution screens, it's
 necessary to provide different image versions for different `devicePixelRatios`.
 
 <table>
-<thead>
-<tr>
-<th>Device Pixel Ratio</th>
-<th>Indicates that:</th>
-<th>On this device, an &lt;img&gt; tag with a CSS width of 250 pixels,
-will look best when the source image is...</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>1 device pixel = 1 CSS pixel</td>
-<td>250 pixels wide</td>
-</tr>
-<tr>
-<td>2</td>
-<td>2 device pixels = 1 CSS pixel</td>
-<td>500 pixels wide</td>
-</tr>
-<tr>
-<td>3</td>
-<td>3 device pixels = 1 CSS pixel</td>
-<td>750 pixels wide</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Device Pixel Ratio</th>
+      <th>Indicates that:</th>
+      <th>
+        On this device, an &lt;img&gt; tag with a CSS width of 250 pixels, will
+        look best when the source image is...
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1 device pixel = 1 CSS pixel</td>
+      <td>250 pixels wide</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>2 device pixels = 1 CSS pixel</td>
+      <td>500 pixels wide</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>3 device pixels = 1 CSS pixel</td>
+      <td>750 pixels wide</td>
+    </tr>
+  </tbody>
 </table>
 
 Things to note:
@@ -159,19 +158,19 @@ Things to note:
     serving multiple image versions. The browser would have done this anyway if
     a high resolution image was not provided.
 
-<div class="aside note">
-Tools like <a href="https://www.npmjs.com/package/sharp">sharp</a> make it easy
+{% Aside %}
+Tools like [sharp](https://www.npmjs.com/package/sharp) make it easy
 to create multiple sizes of an image. This is covered in more detail here.
-</div>
+{% endAside %}
 
-## Use Density Descriptors to serve multiple images
+## Use Density Descriptors to serve multiple <br> images
 
 Density descriptors, in conjunction with the "srcset " attribute, can be used to
 serve different images to different devicePixelRatios.
 
 - Take a look at the `index.html` file and note the `<img>` element.
 
-```
+```html
 <img src="flower.jpg"
   srcset="flower-1x.jpg 1x,
           flower-2x.jpg 2x,
@@ -190,16 +189,13 @@ This example put into words:
 -  `flower.jpg` is the fallback image for browsers that do not support
     `srcset`.
 
-How to use this:  
-✔️ Use a devicePixelRatio and the `x` unit to write density descriptors. For
+How to use this:
+- Use a devicePixelRatio and the `x` unit to write density descriptors. For
 example, the density descriptor for many Retina screens
 (`window.devicePixelRatio = 2`) would be written as `2x`.
-
-✔️ If a density descriptor isn't provided, it is assumed to be `1x`.
-
-✔️ Including density descriptors in filenames is a common convention (and will
+- If a density descriptor isn't provided, it is assumed to be `1x`.
+- Including density descriptors in filenames is a common convention (and will
 help you keep track of files) but is not necessary. Images can have any
 filename.
-
-✔️ There is no need to include a `sizes` attribute. The `sizes` attribute is only
+- There is no need to include a `sizes` attribute. The `sizes` attribute is only
 used with width descriptors.
