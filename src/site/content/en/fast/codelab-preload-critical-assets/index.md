@@ -1,5 +1,5 @@
 ---
-page_type: glitch
+layout: codelab
 title: Preload critical assets to improve loading speed
 author: houssein
 description: |
@@ -12,7 +12,7 @@ web_published_on: 2018-11-05
 glitch: preload-critical-assets
 ---
 
-In this codelab, the performance of the following web page is  improved
+In this codelab, the performance of the following web page is improved
 by preloading and prefetching a few resources:
 
 ![App Screenshot](./san-francisco.png)
@@ -23,21 +23,19 @@ First measure how the website performs before adding any optimizations.
 
 - Click on the **Show Live** button to view the live version of the your Glitch.
 
-<web-screenshot type="show-live"></web-screenshot>
-
-Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
+Run the Lighthouse performance audit (**Lighthouse > Options > Performance**) on
 the live version of your Glitch (see also
 [Discover performance opportunities with Lighthouse](/fast/discover-performance-opportunities-with-lighthouse)).
 
 Lighthouse shows the following failed audit for a resource that is fetched
 late:
 
-<img class="screenshot" src="./preload-requests-codelab.png" alt="Lighthouse: Preload key requests audit">
+<img class="w-screenshot" src="./preload-requests-codelab.png" alt="Lighthouse: Preload key requests audit">
 
 Open the **Network** panel in DevTools and take a look at all the resources that
 are fetched.
 
-<img class="screenshot" src="./network-panel-one.png" alt="Network panel with late-discovered resource">
+<img class="w-screenshot" src="./network-panel-one.png" alt="Network panel with late-discovered resource">
 
 The `main.css` file is not fetched by a Link element (`<link>`) placed in the HTML
 document, but a separate JavaScript file, `fetch-css.js`, attaches
@@ -69,34 +67,34 @@ it sooner by adding a Link element to the head of the document.
 
 Add a preload tag for this application:
 
-<pre class="prettyprint">
-&lt;head&gt;
-  &lt;!-- ... --&gt;
-  <strong>&lt;link rel=&quot;preload&quot; href=&quot;main.css&quot; as=&quot;style&quot;&gt;</strong>
-&lt;/head&gt;
-</pre>
+```html/2
+<head>
+  <!-- ... -->
+  <link rel="preload" href="main.css" as="style">
+</head>
+```
 
 The `as` attribute is used to identify which type of resource is being
 fetched, and `as="style"` is used to preload stylesheet files. 
 
 Reload the application and take a look at the **Network** panel in DevTools.
 
-<img class="screenshot" src="./network-panel-two.png" alt="Network panel with preloaded resource">
+<img class="w-screenshot" src="./network-panel-two.png" alt="Network panel with preloaded resource">
 
 Notice how the browser fetches the CSS file before the JavaScript
 responsible for fetching it has even been finished parsing. With preload, the browser
 knows to make a preemptive fetch for the resource with the assumption that it is
 critical for the web page.
 
-<div class="aside note">
-If this was a real production app, it would make more sense to just place
-a <code>&lt;link&gt;</code> element in <code>index.html</code> to fetch the CSS file 
-instead of using JavaScript to append it. Browsers already know to fetch a CSS file
-defined at the head of an HTML document with a high priority as soon as possible. 
-However, preload is used in this codelab to demonstrate the best course of action for files that
-are fetched late in the request chain. For a large application, this can happen
+{% Aside %}
+If this was a real production app, it would make more sense to just place a
+`<link>` element in index.html to fetch the CSS file instead of using JavaScript
+to append it. Browsers already know to fetch a CSS file defined at the head of
+an HTML document with a high priority as soon as possible. However, preload is
+used in this codelab to demonstrate the best course of action for files that are
+fetched late in the request chain. For a large application, this can happen
 quite often.
-</div>
+{% endAside %}
 
 If not used correctly, preload can harm performance by making unnecessary
 requests for resources that aren't used. In this application, `details.css` is
@@ -104,47 +102,47 @@ another CSS file located at the root of the project but is used for a separate
 `/details route`. To show an example of how preload can be used incorrectly, add a
 preload hint for this resource as well.
 
-<pre class="prettyprint">
-&lt;head&gt;
-  &lt;!-- ... --&gt;
-  &lt;link rel=&quot;preload&quot; href=&quot;main.css&quot; as=&quot;style&quot;&gt;
-  <strong>&lt;link rel=&quot;preload&quot; href=&quot;details.css&quot; as=&quot;style&quot;&gt;</strong>
-&lt;/head&gt;
-</pre>
+```html/3
+<head>
+  <!-- ... -->
+  <link rel="preload" href="main.css" as="style">
+  <link rel="preload" href="details.css" as="style">
+</head>
+```
 
 Reload the application and take a look at the **Network** panel. 
 A request is made to retrieve `details.css` even though it is not being used by the web page.
 
-<img class="screenshot" src="./network-panel-three.png" alt="Network panel with unecessary preload">
+<img class="w-screenshot" src="./network-panel-three.png" alt="Network panel with unecessary preload">
 
 Chrome displays a warning in the **Console** panel when a preloaded resource is
 not used by the page within a few seconds after it has loaded.
 
-<img class="screenshot" src="./console.png" alt="Preload warning in console">
+<img class="w-screenshot" src="./console.png" alt="Preload warning in console">
 
 Use this warning as an indicator to identify if you have any preloaded resources
 that are not being used immediately by your web page. You can now remove the
 unnecessary preload link for this page.
 
-<pre class="prettyprint">
-&lt;head&gt;
-  &lt;!-- ... --&gt;
-  &lt;link rel=&quot;preload&quot; href=&quot;main.css&quot; as=&quot;style&quot;&gt;
-  <s>&lt;link rel=&quot;preload&quot; href=&quot;details.css&quot; as=&quot;style&quot;&gt;</s>
-&lt;/head&gt;
-</pre>
+```html//3
+<head>
+  <!-- ... -->
+  <link rel="preload" href="main.css" as="style">
+  <link rel="preload" href="details.css" as="style">
+</head>
+```
 
 For a list of all the types of resources that can be fetched along with the
 correct values that should be used for the `as` attribute, refer to the
 [MDN article on Preloading](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded).
 
-<div class="aside note">
-Cross-origin resources can also be preloaded using the <code>crossorigin</code> attribute.
+{% Aside %}
+Cross-origin resources can also be preloaded using the `crossorigin` attribute.
 Moreover, same-origin font resources must be fetched using anonymous mode CORS
-which is why the <code>crossorigin</code> attribute is also used in this preload tag.
-The <a href="/secure/cross-origin-resource-sharing">Cross Origin Resource Sharing</a>
+which is why the `crossorigin` attribute is also used in this preload tag.
+The [Cross Origin Resource Sharing](/secure/cross-origin-resource-sharing)
 guide explains the topic of same-origin and cross-origin requests in more detail.
-</div>
+{% endAside %}
 
 ## Prefetch future resources
 
@@ -160,33 +158,33 @@ route.
 A separate CSS file, `details.css`, contains all the styles needed for this
 simple page. Add a link element to `index.html` to prefetch this resource.
 
-<pre class="prettyprint">
-&lt;head&gt;
-  &lt;!-- ... --&gt;
-  <strong>&lt;link rel=&quot;prefetch&quot; href=&quot;details.css&quot;&gt;</strong>
-&lt;/head&gt;
-</pre>
+```html/2
+<head>
+  <!-- ... -->
+  <link rel="prefetch" href="details.css">
+</head>
+```
 
 To understand how this triggers a request for the file, open the **Network** panel in DevTools
 and uncheck the **Disable cache** option.
 
-<img class="screenshot" src="./disable-cache.png" alt="Disable cache in Chrome DevTools">
+<img class="w-screenshot" src="./disable-cache.png" alt="Disable cache in Chrome DevTools">
 
 Reload the application and notice how a very low priority request is made for
 `details.css` after all the other files have been fetched.
 
-<img class="screenshot" src="./network-panel-five.png" alt="Network panel with prefetched resource">
+<img class="w-screenshot" src="./network-panel-five.png" alt="Network panel with prefetched resource">
 
 With DevTools open, click the image on the website to navigate to the `details` page. 
 Since a link element is used in `details.html` to fetch `details.css`, a request is made for the
 resource as expected.
 
-<img class="screenshot" src="./network-panel-six.png" alt="Details page network requests">
+<img class="w-screenshot" src="./network-panel-six.png" alt="Details page network requests">
 
 Click the `details.css` network request in DevTools to view its details. You'll notice
 that the file is retrieved from the browser's disk cache.
 
-<img class="screenshot" src="./details-css.png" alt="Details request fetched from disk cache">
+<img class="w-screenshot" src="./details-css.png" alt="Details request fetched from disk cache">
 
 By taking advantage of browser idle time, prefetch makes an early request for a
 resource needed for a different page. This speeds up future navigation requests
@@ -201,14 +199,14 @@ explores the use of dynamic imports to split a bundle into multiple chunks.
 This is demonstrated with a simple application that
 dynamically imports a module from [Lodash](https://lodash.com/) when a form is submitted.
 
-<img class="screenshot" src="./magic.gif" alt="Magic Sorter app that demonstrates code splitting">
+<img class="w-screenshot" src="./magic.gif" alt="Magic Sorter app that demonstrates code splitting">
 
 You can access [the Glitch for this application here](https://glitch.com/edit/#!/code-splitting).
 
 The following block of code, which lives in `src/index.js,` is responsible for
 dynamically importing the method when the button is clicked.
 
-```
+```js
 form.addEventListener("submit", e => {
   e.preventDefault()
   import('lodash.sortby')
@@ -227,15 +225,15 @@ presses the button, there is no delay for the resource to be fetched.
 Use the specific `webpackPrefetch` comment parameter within a dynamic import to prefetch a particular chunk.
 Here is how it would look with this particular application.
 
-<pre class="prettyprint">
+```js/2
 form.addEventListener("submit", e => {
   e.preventDefault()
-  <strong>import(/* webpackPrefetch: true */ 'lodash.sortby')</strong>
+  import(/* webpackPrefetch: true */ 'lodash.sortby')
     .then(module => module.default)
     .then(sortInput())
     .catch(err => { alert(err) });
 });
-</pre>
+```
 
 Once the application is reloaded, webpack injects a prefetch tag for the
 resource into the head of the document. This can be seen in the **Elements**
@@ -246,12 +244,12 @@ panel in DevTools.
 Observing the requests in the **Network** panel also shows that this chunk is
 fetched with a low priority after all other resources have been requested.
 
-<img class="screenshot" src="./another-network-panel.png" alt="Network panel with prefetched request">
+<img class="w-screenshot" src="./another-network-panel.png" alt="Network panel with prefetched request">
 
 Although prefetch makes more sense for this use case, webpack also provides support for preloading
 chunks that are dynamically imported.
 
-```
+```js
 import(/* webpackPreload: true */ 'module')
 ```
 
@@ -274,4 +272,4 @@ If you would like more information about specific aspects of how preloading and
 prefetching can affect your web page, refer to these articles:
 
 + [Preload, Prefetch and Priorities in Chrome](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
-+ [&lt;link rel=&quot;prefetch/preload&quot;&gt; in webpack](https://medium.com/webpack/link-rel-prefetch-preload-in-webpack-51a52358f84c)
++ [&lt;link rel="prefetch/preload"&gt; in webpack](https://medium.com/webpack/link-rel-prefetch-preload-in-webpack-51a52358f84c)

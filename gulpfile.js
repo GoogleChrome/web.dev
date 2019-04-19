@@ -5,7 +5,9 @@ sass.compiler = require('node-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const sasslint = require('gulp-sass-lint');
 
-const assetTypes = `jpg,jpeg,png,svg,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
+/* eslint-disable max-len */
+const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
+/* eslint-enable max-len */
 
 gulp.task('lint-js', () => {
   return (

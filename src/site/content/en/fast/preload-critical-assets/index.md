@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Preload critical assets to improve loading speed
 author: houssein
 description: |
@@ -8,19 +8,18 @@ description: |
   for any other external references. The critical request chain represents the
   order of resources that are prioritized and fetched by the browser.
 web_lighthouse:
-- uses-rel-preload
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+  - uses-rel-preload
+date: 2018-11-05
+codelabs:
+  - codelab-preload-critical-assets
+  - codelab-preload-web-fonts
 ---
-
-# Preload critical assets to improve loading speed
 
 As soon as you open any web page, the browser requests an HTML document from a
 server, parses the contents of the HTML file, and submits separate requests for
 any other external references. The **critical request chain** represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as _late-discovered_.
 
-![Lighthouse: Preload key requests audit](./preload-requests.png)
+<img class="w-screenshot" src="./preload-requests.png" alt="Lighthouse's preload key requests audit.">
 
 **Preload** is a declarative fetch request that tells the browser to request an
 important resource as soon as possible. The browser assigns a higher priority
@@ -50,12 +49,16 @@ rule in a CSS file isn't discovered until the browser finishes requesting and
 parsing the CSS file. Preload this font to ensure it's fetched before the CSS
 file has downloaded.
 
+{% Aside 'codelab' %}
+[Improve the performance of a page by preloading web fonts](/fast/codelab-preload-web-fonts).
+{% endAside %}
+
 If you are using a module bundler that creates build files of your application,
 you will need to check if it supports the injection of preload tags. With
 [webpack](https://webpack.js.org/) version 4.6.0 or later, preloading is supported
 through the use of a special comment parameter:
 
-```
+```js
 import(_/* webpackPreload: true */_ "CriticalChunk")
 ```
 
@@ -79,7 +82,11 @@ different route.
 Similarly, webpack allows you prefetch scripts if you are using version
 4.6.0 or later.
 
-```
+```js
 import(_/* webpackPrefetch: true */_ "ImportantForNextPageChunk")
 ```
+
+{% Aside 'codelab' %}
+[Improve the performance of a page by preloading and prefetching resources](/fast/codelab-preload-critical-assets).
+{% endAside %}
 
