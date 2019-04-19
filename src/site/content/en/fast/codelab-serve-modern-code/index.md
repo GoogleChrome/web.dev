@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Serve modern code to modern browsers for faster page loads
 author: houssein
 description: |
   In this codelab, learn how to improve the performance of an application by
   minizming how much code is transpiled.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 glitch: serve-modern-code
+related_post: serve-modern-code-to-modern-browsers
 ---
 
 In this codelab, improve the performance of this simple application that allows
@@ -22,25 +22,22 @@ image.
 
 ## Measure
 
-<div class="aside note">
+{% Aside %}
  Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
-</div>
+{% endAside %}
 
 It's always a good idea to begin by inspecting a website before adding any
 optimizations.
 
-+ Click on the Show Live button to boot up the app.
-
-<web-screenshot type="show-live"></web-screenshot>
-
++ Click on the **Show Live** button to boot up the app.
 + Open DevTools by pressing `CTRL + SHIFT + i` / `CMD + OPTION + i`.
 + Click on the **Network** panel.
 
-<img class="screenshot" src="./network-panel.png" alt="Network panel">
+<img class="w-screenshot" src="./network-panel.png" alt="Network panel">
 
-+ Make sure Disable Cache is checked and reload the app.
++ Make sure **Disable Cache** is checked and reload the app.
 
-<img class="screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
+<img class="w-screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
 
 Over 80 KB is used for this application! Time to find out if parts of the bundle
 aren't being used.
@@ -48,17 +45,17 @@ aren't being used.
 + With DevTools open, press `CMD + SHIFT + p` / `CTRL + SHIFT + p` to open
 the Command Menu. Search for "coverage".
 
-<img class="screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
+<img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
 
-+ Click "Show Coverage" and click the "Reload" button to reload the
++ Click **Show Coverage** and click the **Reload** button to reload the
 application while capturing coverage.
 
-<img class="screenshot" src="./record-with-code-coverage.png" alt="Reload app with code coverage">
+<img class="w-screenshot" src="./record-with-code-coverage.png" alt="Reload app with code coverage">
 
 + Take a look at how much code was used versus how much was loaded for
 the main bundle.
 
-<img class="screenshot" src="./code-coverage.png" alt="Code coverage of bundle">
+<img class="w-screenshot" src="./code-coverage.png" alt="Code coverage of bundle">
 
 Over half the bundle (44 KB) is not even utilized. This is because a lot of the
 code within consists of polyfills to ensure that the application works in older
@@ -101,7 +98,7 @@ Since these are syntax related changes (such as arrow functions), they cannot be
 
 Look at `package.json` to see which Babel libraries are included:
 
-```
+```json
 "dependencies": {
   "@babel/polyfill": "^7.0.0"
 },
@@ -120,7 +117,7 @@ Look at `package.json` to see which Babel libraries are included:
 Now look at `webpack.config.js` to see how `babel-loader` is included as a
 rule:
 
-<pre class="prettyprint">
+<pre>
 module: {
   rules: [
     //...
@@ -136,16 +133,18 @@ module: {
 + `@babel/polyfill` provides all the necessary polyfills for any newer ECMAScript features so that they can
 work in environments that do not support them. It is already imported at the very top of `src/index.js.`
 
-<pre class="prettyprint">
+```js/1
 import "./style.css";
-<strong>import "@babel/polyfill";</strong>
-</pre>
-
-+ `@babel/preset-env` identifies which transforms and polyfills are necessary for any browsers or environments chosen as targets.
-
-Take a look at the Babel configurations file, `.babelrc`, to see how it's included:
-
+import "@babel/polyfill";
 ```
+
++ `@babel/preset-env` identifies which transforms and polyfills are necessary
+  for any browsers or environments chosen as targets.
+
+Take a look at the Babel configurations file, `.babelrc`, to see how it's
+included:
+
+```json
 {
   "presets": [
     [
@@ -158,8 +157,9 @@ Take a look at the Babel configurations file, `.babelrc`, to see how it's includ
 }
 ```
 
-This is a Babel and webpack setup. [Learn how to include Babel in your application](https://babeljs.io/en/setup)
-if you happen to use a different module bundler than webpack.
+This is a Babel and webpack setup. [Learn how to include Babel in your
+application](https://babeljs.io/en/setup) if you happen to use a different
+module bundler than webpack.
 
 The `targets` attribute
 in `.babelrc` identifies which browsers are being targeted. `@babel/preset-env`
@@ -175,7 +175,7 @@ The `"last 2 versions"` value transpiles the code in the application for the
 To get a complete look at all the browsers Babel targets as well as all the
 transforms and polyfills that are included, add a `debug` field to `.babelrc:`
 
-<pre class="prettyprint">
+```js/6
 {
   "presets": [
     [
@@ -187,11 +187,10 @@ transforms and polyfills that are included, add a `debug` field to `.babelrc:`
     ]
   ]
 }
-</pre>
+```
 
-Click the "Status" button.
-
-<web-screenshot type="status"></web-screenshot>
+- Click the **Tools** button.
+- Click on the **Logs** button.
 
 Reload the application and take a look at the Glitch status logs at the bottom
 of the editor.
@@ -201,7 +200,7 @@ of the editor.
 Babel logs a number of details to the console about the compilation process,
 including all the target environments that the code has been compiled for.
 
-<img class="screenshot" src="./debug-target-browsers.png" alt="Targeted browsers">
+<img class="w-screenshot" src="./debug-target-browsers.png" alt="Targeted browsers">
 
 Notice how discontinued browsers, such as Internet Explorer, are included in
 this list. This is a problem because unsupported browsers won't have newer
@@ -211,14 +210,14 @@ browser to access your site.
 
 Babel also logs a list of transform plugins used:
 
-<img class="screenshot" src="./plugins-list.png" alt="List of plugins used">
+<img class="w-screenshot" src="./plugins-list.png" alt="List of plugins used">
 
 That's a pretty long list! These are all the plugins that Babel needs to use to
 transform any ES2015+ syntax to older syntax for all the targeted browsers.
 
 However, Babel doesn't show any specific polyfills that are used:
 
-<img class="screenshot" src="./no-polyfills-added.png" alt="No polyfills added">
+<img class="w-screenshot" src="./no-polyfills-added.png" alt="No polyfills added">
 
 This is because the entire `@babel/polyfill` is being imported directly.
 
@@ -228,7 +227,7 @@ By default, Babel includes every polyfill needed for a complete ES2015+ environm
 `@babel/polyfill` is imported into a file. To import specific polyfills needed for
 the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
 
-<pre class="prettyprint">
+```js/7
 {
   "presets": [
     [
@@ -241,17 +240,17 @@ the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
     ]
   ]
 }
-</pre>
+```
 
 Reload the application. You can now see all the specific polyfills included:
 
-<img class="screenshot" src="./entry-polyfills.gif" alt="List of polyfills imported">
+<img class="w-screenshot" src="./entry-polyfills.gif" alt="List of polyfills imported">
 
 Although only needed polyfills for `"last 2 versions"` is now included, it is still a super long list! This is because
 polyfills needed for the target browsers for _every_ newer feature is still included. Change the value of the attribute to `usage`
 to only include those needed for features that are being used in the code.
 
-<pre class="prettyprint">
+```js/8/7
 {
   "presets": [
     [
@@ -259,29 +258,29 @@ to only include those needed for features that are being used in the code.
       {
         "targets": "last 2 versions",
         "debug": true,
-        <s>"useBuiltIns": "entry"</s>
-        <strong>"useBuiltIns": "usage"</strong>
+        "useBuiltIns": "entry"
+        "useBuiltIns": "usage"
       }
     ]
   ]
 }
-</pre>
+```
 
 With this, polyfills are automatically included where needed.
 This means you can remove the `@babel/polyfill` import in `src/index.js.`
 
-<pre class="prettyprint">
+```js//1
 import "./style.css";
-<s>import "@babel/polyfill";</s>
-</pre>
+import "@babel/polyfill";
+```
 
 Now only the required polyfills needed for the application are included.
 
-<img class="screenshot" src="./usage-polyfills.png" alt="List of polyfills automatically included">
+<img class="w-screenshot" src="./usage-polyfills.png" alt="List of polyfills automatically included">
 
 The application bundle size is reduced significantly.
 
-<img class="screenshot" src="./usage-polyfills-bundle-size.png" alt="Bundle size reduced to 30.1 KB">
+<img class="w-screenshot" src="./usage-polyfills-bundle-size.png" alt="Bundle size reduced to 30.1 KB">
 
 ## Narrowing the list of supported browsers
 
@@ -289,25 +288,25 @@ The number of browser targets included is still quite large, and not many users
 use discontinued browsers such as Internet Explorer. Update the configurations
 to the following:
 
-<pre class="prettyprint">
+```js/6/5
 {
   "presets": [
     [
       "@babel/preset-env",
       {
-        <s>"targets": "last 2 versions",</s>
-        <strong>"targets": [">0.25%", "not ie 11"],</strong>
+        "targets": "last 2 versions",
+        "targets": [">0.25%", "not ie 11"],
         "debug": true,
         "useBuiltIns": "usage",
       }
     ]
   ]
 }
-</pre>
+```
 
 Take a look at the details for the fetched bundle.
 
-<img class="screenshot" src="./network-use-browser-share.png" alt="Bundle size of 30.0 KB">
+<img class="w-screenshot" src="./network-use-browser-share.png" alt="Bundle size of 30.0 KB">
 
 Since the application is so small, there really isn't much of a difference with
 these changes. However, using a browser market share percentage (such as
@@ -327,7 +326,7 @@ browsers directly without the use of any unnecessary polyfills.
 Modules can be created using a `type="module"` attribute to define scripts that import and export from other
 modules. For example:
 
-```
+```js
 // math.mjs
 export const add = (x, y) => x + y;
 
@@ -356,7 +355,7 @@ version of the application.
 
 Begin by adding a configuration for the legacy script to `webpack.config.js`:
 
-```
+```js
 const legacyConfig = {
   entry,
   output: {
@@ -396,7 +395,7 @@ Add `entry`, `cssRule`, and `corePlugins` objects to the beginning of the
 `webpack.config.js` file. These are all shared between both the module and
 legacy scripts served to the browser.
 
-```
+```js
 const entry = {
   main: "./src"
 };
@@ -417,7 +416,7 @@ const plugins = [
 
 Now similarly, create a config object for the module script below where `legacyConfig` is defined:
 
-```
+```js
 const moduleConfig = {
   entry,
   output: {
@@ -456,7 +455,7 @@ are already supported in browsers that support modules.
 
 At the very end of the file, export both configurations in a single array.
 
-```
+```js
 module.exports = [
   legacyConfig, moduleConfig
 ];
@@ -471,7 +470,7 @@ Conversely, browsers that do not support modules ignore script elements with
 fallback. Ideally, the two versions of the application should be in `index.html`
 like this:
 
-```
+```html
 <script type="module" src="main.mjs"></script>
 <script nomodule src="main.bundle.js"></script>
 ```
@@ -484,17 +483,17 @@ attributes to the module and legacy script respectively, Import the
 [ScriptExtHtmlWebpackPlugin](https://github.com/numical/script-ext-html-webpack-plugin)
 at the very top of `webpack.config.js`:
 
-<pre class="prettyprint">
+```js/4
 const path = require("path");
 
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-<strong>const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");</strong>
-</pre>
+const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
+```
 
 Now update the `plugins` array in the configurations to include this plugin:
 
-<pre class="prettyprint">
+<pre>
 const plugins = [
   new ExtractTextPlugin({filename: "[name].css", allChunks: true}),
   new HtmlWebpackPlugin({template: "./src/index.html"}),
@@ -514,9 +513,9 @@ const plugins = [
 These plugin settings add a `type="module"` attribute for all `.mjs` script
 elements as well as a `nomodule` attribute for all `.js` script modules.
 
-<div class="aside note">
-  If you're having trouble understanding how to add all of these configurations to <code>webpack.config.js</code>, take a look at the <a href="https://glitch.com/edit/#!/serve-modern-code-complete?path=webpack.config.js:1:0">complete version of the file</a>.
-</div>
+{% Aside %}
+  If you're having trouble understanding how to add all of these configurations to `webpack.config.js`, take a look at the [complete version of the file](https://glitch.com/edit/#!/serve-modern-code-complete?path=webpack.config.js:1:0).
+{% endAside %}
 
 ## Serving modules in the HTML document
 
@@ -524,18 +523,18 @@ The last thing that needs to be done is to output both the legacy and modern scr
 
 Add the following to `src/index.js` at the end of the file:
 
-<pre class="prettyprint">
+```html/2
     ...
-    &lt;/form&gt;
-    <strong>&lt;script type=&quot;module&quot; src=&quot;main.mjs&quot;&gt;&lt;/script&gt;</strong>
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+    </form>
+    <script type="module" src="main.mjs"></script>
+  </body>
+</html>
+```
 
 Now load the application in a browser that supports modules, such as the latest
 version of Chrome.
 
-<img class="screenshot" src="./module-network-request.png" alt="5.2 KB module fetched over network for newer browsers">
+<img class="w-screenshot" src="./module-network-request.png" alt="5.2 KB module fetched over network for newer browsers">
 
 Only the module is fetched, with a much smaller bundle size due to it being
 largely untranspiled! The other script element is completely ignored by the
@@ -546,7 +545,7 @@ script with all the needed polyfills and transforms are be fetched. Here is a
 screenshot for all the requests made on an older version of Chrome (version
 38).
 
-<img class="screenshot" src="./legacy-script.png" alt="30 KB script fetched for older browsers">
+<img class="w-screenshot" src="./legacy-script.png" alt="30 KB script fetched for older browsers">
 
 ## Conclusion
 

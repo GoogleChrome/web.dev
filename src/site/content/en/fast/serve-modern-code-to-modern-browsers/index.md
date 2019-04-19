@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Serve modern code to modern browsers for faster page loads
 author: houssein
 description: |
@@ -8,12 +8,10 @@ description: |
   of the code you write is supported in each browser that you plan to target. If
   you want to use new JavaScript language features, you need to transpile these
   features to backwards-compatible formats.  
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2018-11-05
+codelabs:
+  - codelab-serve-modern-code
 ---
-
-# Serve modern code to modern browsers for faster page loads
 
 Building websites that work well on all major browsers is a core tenet of an
 open web ecosystem. However, this means additional work of ensuring that all of
@@ -29,16 +27,16 @@ need to follow the [setup instructions](https://babeljs.io/setup) to
 include it into your application if you haven't already. Select `webpack`
 in `Build Systems` if you are using webpack as the module bundler in your app.
 
-<div class="aside note">
+{% Aside %}
 Fun fact: Lebab is a separate library that does the opposite of what Babel does.
 It converts older code into newer syntax.
-</div>
+{% endAside %}
 
 To use Babel to only transpile what is needed for your users, you
 need to:
 
 1. Identify which browsers you want to target.
-2. Use @babel/preset-env with appropriate browser targets.
+2. Use `@babel/preset-env` with appropriate browser targets.
 3. Use `<script type="module">` to stop sending transpiled code to browsers that don't need it.
 
 ## Identify which browsers you want to target
@@ -77,7 +75,14 @@ configurations file, `.babelrc`:
 }
 ```
 
-Use the `targets` field to specify which browser versions you want to include, by adding an appropriate value (or query) to the `browsers` field. `@babel/preset-env` integrates with browserslist, an open-source configuration shared between different tools for targeting browsers. A full list of compatible queries is in the [browserslist documentation](https://github.com/browserslist/browserslist#full-list). Another option is to use a `.browserslistrc` file to list the environments you wish to target.
+Use the `targets` field to specify which browser versions you want to include,
+by adding an appropriate value (or query) to the `browsers` field.
+`@babel/preset-env` integrates with browserslist, an open-source configuration
+shared between different tools for targeting browsers. A full list of compatible
+queries is in the [browserslist
+documentation](https://github.com/browserslist/browserslist#full-list). Another
+option is to use a `.browserslistrc` file to list the environments you wish to
+target.
 
 Use the `targets` field to specify which browser versions you want to include
 by adding an appropriate query to the `browsers` field. `@babel/preset-env`
