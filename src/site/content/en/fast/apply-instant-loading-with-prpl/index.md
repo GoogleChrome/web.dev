@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Apply instant loading with the PRPL pattern
 author: houssein
 description: |
@@ -8,12 +8,8 @@ description: |
   fit together but still can be used independently to achieve performance
   results.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2018-11-05
 ---
-
-# Apply instant loading with the PRPL pattern
 
 PRPL is an acronym that describes a pattern used to make web pages load and
 become interactive, faster:
@@ -42,14 +38,14 @@ For more information, see [Discover performance opportunities with Lighthouse](/
 Lighthouse shows the following failed audit if a certain resource is parsed and
 fetched late:
 
-<img class="screenshot" src="./preload-requests.png" alt="Lighthouse: Preload key requests audit">
+<img class="w-screenshot" src="./preload-requests.png" alt="Lighthouse: Preload key requests audit">
 
 [**Preload**](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) 
 is a declarative fetch request that tells the browser to request a resource as 
 soon as possible. Preload critical resources by adding a `<link>` tag with 
 `rel="preload"` to the head of your HTML document:
 
-```
+```html
 <link rel="preload" as="style" href="css/style.css">
 ```
 
@@ -64,7 +60,7 @@ For more information about preloading critical resources, refer to the
 Lighthouse provides a warning if there are resources that delay [**First Paint**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint),
 the moment when your site renders pixels to the screen:
 
-<img class="screenshot" src="./eliminate-render-blocking.png" alt="Lighthouse: Eliminate render-blocking resources audit">
+<img class="w-screenshot" src="./eliminate-render-blocking.png" alt="Lighthouse: Eliminate render-blocking resources audit">
 
 To improve First Paint, Lighthouse recommends inlining critical JavaScript and
 deferring the rest using
@@ -89,7 +85,9 @@ learn more about both of these concepts with the following resources.
 +  [Optimize CSS Delivery](https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery)
 +  [What is Server-Side Rendering?](https://www.youtube.com/watch?v=GQzn7XRdzxY)
 
-<img width="300" class="attempt-right" src="./service-workers.png" alt="Requests/responses with service worker">
+<figure class="w-figure w-figure--inline-right">
+  <img src="./service-workers.png" alt="Requests/responses with service worker" style="width: 300px">
+</figure>
 
 ## Pre-cache assets
 
@@ -110,13 +108,13 @@ refer to the [service worker guide](/reliable/service-workers-cache-storage) in 
 
 Lighthouse displays a failed audit if you send too much data over the network.
 
-<img class="screenshot" src="./enormous-payloads.png" alt="Lighthouse: Has enormous network payloads audit">
+<img class="w-screenshot" src="./enormous-payloads.png" alt="Lighthouse: Has enormous network payloads audit">
 
 This includes all asset types, but large JavaScript payloads are especially
 costly due to the time it takes the browser to parse and compile them.
 Lighthouse also provides a warning for this when appropriate.
 
-<img class="screenshot" src="./js-bootup-high.png" alt="Lighthouse: JavaScript boot-up time audit">
+<img class="w-screenshot" src="./js-bootup-high.png" alt="Lighthouse: JavaScript boot-up time audit">
 
 To send a smaller JavaScript payload that contains only the code needed when a
 user initially loads your application, split the entire bundle and [lazy load](/fast/reduce-javascript-payloads-with-code-splitting) chunks on demand.
@@ -129,7 +127,7 @@ by the browser.
 Aside from splitting and loading different JavaScript chunks on demand,
 Lighthouse also provides an audit for lazy-loading non-critical images.
 
-<img class="screenshot" src="./defer-offscreen-images.png" alt="Lighthouse: Defer offscreen images audit">
+<img class="w-screenshot" src="./defer-offscreen-images.png" alt="Lighthouse: Defer offscreen images audit">
 
 If you load many images on your web page, defer all that are below the fold, or
 outside the device viewport, when a page is loaded (see [Use lazysizes to lazyload images](/fast/use-lazysizes-to-lazyload-images)).
