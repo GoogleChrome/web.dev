@@ -23,8 +23,57 @@ module.exports = {
     your site has launched.`,
     topics: [
       {
+        title: 'Measure your site\'s performance',
+        pathItems: ['discover-performance-opportunities-with-lighthouse'],
+      },
+      {
+        title: 'Optimize your images',
+        pathItems: [
+          'use-imagemin-to-compress-images',
+          'replace-gifs-with-videos',
+          'use-lazysizes-to-lazyload-images',
+          'serve-responsive-images',
+          'serve-images-with-correct-dimensions',
+          'serve-images-webp',
+        ],
+      },
+      {
         title: 'Optimize your JavaScript',
-        pathItems: ['remove-unused-code'],
+        pathItems: [
+          'apply-instant-loading-with-prpl',
+          'preload-critical-assets',
+          'reduce-javascript-payloads-with-code-splitting',
+          'remove-unused-code',
+          'reduce-network-payloads-using-text-compression',
+          'serve-modern-code-to-modern-browsers',
+        ],
+      },
+      {
+        title: 'Optimize your CSS',
+        pathItems: ['defer-non-critical-css'],
+      },
+      {
+        title: 'Optimize web fonts',
+        pathItems: ['avoid-invisible-text'],
+      },
+      {
+        title: 'Measure performance in the field',
+        pathItems: [
+          'chrome-ux-report',
+          'chrome-ux-report-data-studio-dashboard',
+          'chrome-ux-report-pagespeed-insights',
+          'chrome-ux-report-bigquery',
+        ],
+      },
+      {
+        title: 'Enforce performance budgets',
+        pathItems: [
+          'performance-budgets-101',
+          'your-first-performance-budget',
+          'incorporate-performance-budgets-into-your-build-tools',
+          'using-bundlesize-with-travis-ci',
+          'using-lighthouse-bot-to-set-a-performance-budget',
+        ],
       },
     ],
   },

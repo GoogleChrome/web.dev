@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Replace GIFs with video
 author: robdodson
+date: 2018-11-05
 description: |
   In this codelab, learn how to improve performance by replacing an animated GIF
   with a video.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
 glitch: gif-to-video
+related_post: replace-gifs-with-videos
 ---
 
 In this codelab, improve performance by replacing an animated GIF with a
@@ -30,9 +30,9 @@ issue in its "Use video formats for animated content" audit.
 
 There are a number of ways you can convert GIFs to video; this guide uses
 **[FFmpeg](https://www.ffmpeg.org/)**. It's already installed in the Glitch VM,
-and, if you want, you can follow **[these instructions to install it on your
+and, if you want, you can follow [these instructions to install it on your
 local
-machine](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/#converting_animated_gifs_to_video)**
+machine](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/#converting_animated_gifs_to_video)
 as well.
 
 ## Open the console
@@ -44,13 +44,13 @@ Double-check that FFmpeg is installed and working.
 1. Click the **Console** button.
 1. In the console, run:
 
-<pre class="devsite-terminal">
+```bash
 which ffmpeg
-</pre>
+```
 
 You should get a file path back:
 
-```shell
+```bash
 /usr/bin/ffmpeg
 ```
 
@@ -61,26 +61,26 @@ You should get a file path back:
 
 You should see something like this:
 
-```shell
+```bash
 $ ls
 cat-herd.gif
 ```
 
 - In the console, run:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 ffmpeg -i cat-herd.gif cat-herd.mp4
-</pre>
+```
 
 This tells FFmpeg to take the **input**, signified by the `-i` flag, of
 cat-herd.gif and convert it to a video called cat-herd.mp4. This should take a
 second to run. When the command finishes, you should be able to type `ls` again
 and see two files:
 
-<pre class="prettyprint devsite-disable-click-to-copy">
+```bash
 $ ls  
 cat-herd.gif  cat-herd.mp4
-</pre>
+```
 
 ## Create WebM videos
 
@@ -92,25 +92,25 @@ MP4.
 
 - In the console, run:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 ffmpeg -i cat-herd.gif -c vp9 -b:v 0 -crf 41 cat-herd.webm
-</pre>
+```
 
 - To check the file sizes run:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 ls -lh
-</pre>
+```
 
 You should have one GIF, and two videos:
 
-<pre class="prettyprint devsite-disable-click-to-copy">
+```bash
 $ ls -lh
 total 4.5M
 -rw-r--r-- 1 app app 3.7M May 26 00:02 cat-herd.gif  
 -rw-r--r-- 1 app app 551K May 31 17:45 cat-herd.mp4  
 -rw-r--r-- 1 app app 341K May 31 17:44 cat-herd.webm
-</pre>
+```
 
 Notice that the original GIF is 3.7M, whereas the MP4 version is 551K, and the
 WebM version is only 341K. That's a huge savings!
@@ -127,10 +127,10 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 
 - In the `index.html` file, replace the line with the `<img>` with:
 
-<pre class="prettyprint devsite-disable-click-to-copy">
-<s>&lt;img src=&quot;/images/cat-herd.gif&quot; alt=&quot;Cowboys herding cats.&quot;&gt;</s>
-<strong>&lt;video autoplay loop muted playsinline&gt;&lt;/video&gt;</strong>
-</pre>
+```html/1/0
+<img src="/images/cat-herd.gif" alt="Cowboys herding cats.">
+<video autoplay loop muted playsinline></video>
+```
 
 A `<video>` element using these attributes will play automatically, loop
 endlessly, play no audio, and play inline (i.e., not fullscreen), all the
@@ -143,19 +143,19 @@ one or more `<source>` child elements pointing to different video files the
 browser can choose from, depending on format support.  
 Update the `<video>` with `<source>` elements that link to your cat-herd videos:  
 
-<pre class="prettyprint">
-&lt;video autoplay loop muted playsinline&gt;
-  <strong>&lt;source src=&quot;/images/cat-herd.webm&quot; type=&quot;video/webm&quot;&gt;</strong>
-  <strong>&lt;source src=&quot;/images/cat-herd.mp4&quot; type=&quot;video/mp4&quot;&gt;</strong>
-&lt;/video&gt;
-</pre>
+```html/1-2
+<video autoplay loop muted playsinline>
+  <source src="/images/cat-herd.webm" type="video/webm">
+  <source src="/images/cat-herd.mp4" type="video/mp4">
+</video>
+```
 
-<div class="aside note">
-Browsers don't speculate about which <code>&lt;source&gt;</code> is optimal, so the order
-of <code>&lt;source&gt;</code>s matters. For example, if you specify an MP4 video first and the
-browser supports WebM, browsers will skip the WebM <code>&lt;source&gt;</code> and use the MPEG-4
-instead. If you prefer a WebM <code>&lt;source&gt;</code> be used first, specify it first!
-</div>
+{% Aside %}
+Browsers don't speculate about which `<source>` is optimal, so the order
+of `<source>`s matters. For example, if you specify an MP4 video first and the
+browser supports WebM, browsers will skip the WebM `<source>` and use the MPEG-4
+instead. If you prefer a WebM `<source>` be used first, specify it first!
+{% endAside %}
 
 ## Preview
 

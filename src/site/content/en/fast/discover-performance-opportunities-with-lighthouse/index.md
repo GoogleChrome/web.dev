@@ -1,19 +1,15 @@
 ---
-page_type: guide
+layout: post
 title: Discover performance opportunities with Lighthouse
 author: kaycebasques
+date: 2018-11-05
 description: |
   Lighthouse is a tool that helps you measure and find ways to improve a page's
   performance. Lighthouse gives you a report on how the page did. The report
   provides a score for each metric and a list of opportunities which, if you
   implement them, should make the page load faster.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
 ---
-
-# Discover performance opportunities with Lighthouse
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a tool that
 helps you measure and find ways to improve a page's performance. Here's the
@@ -48,16 +44,16 @@ the Google Chrome browser. You don't have to download anything to get DevTools.
 If you have Chrome, then you have DevTools.
 
 1. In Chrome, go to the page that you want to audit.
-1. Press Control+Shift+J or Command+Option+J (Mac) to open DevTools.
+1. Press `Control+Shift+J` or `Command+Option+J` (Mac) to open DevTools.
 
-![image](./discover-performance-opportunities-with-lighthouse-1.png)
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-1.png" alt="DevTools opened and docked to the right hand side of the screen.">
 
 Click the **Audits** tab. If you don't see this tab, click the &raquo; symbol
 and then select **Audits** from the list. Lighthouse is the
 engine that powers the **Audits** panel. That's why you see an image of a
 lighthouse.
 
-![image](./discover-performance-opportunities-with-lighthouse-2.png)
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-2.png" alt="DevTools opened to the Lighthouse audits panel.">
 
 1. Make sure the **Mobile** radio button is selected. When Lighthouse
     audits your page, it will simulate a mobile device's viewport and user
@@ -76,15 +72,15 @@ lighthouse.
     how first-time visitors experience the page.
 1. Click **Run Audits**. After 5 to 10 seconds, Lighthouse shows you a report.
 
-![image](./discover-performance-opportunities-with-lighthouse-3.png)
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-3.png" alt="DevTools showing a Lighthouse audit results report.">
 
-<div class="aside note">
+{% Aside %}
 You can set the configuration options to whatever makes the most sense for
 your needs. If you don't understand them, the ones mentioned here are good
 defaults. If you can get your page fast with these options, then your page will
 be fast for everyone. The important thing is to stay consistent with the options
 across audits.
-</div>
+{% endAside %}
 
 For example, if you run some audits with **Simulated Fast 3G**, **4x CPU Slowdown
 throttling enabled** and then other times you run audits with throttling
@@ -100,33 +96,36 @@ perfect score. Below the overall score are the metrics scores.
 [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 explains how each metric score contributes to the overall score.
 
-![image](./discover-performance-opportunities-with-lighthouse-4.png)
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-4.png" alt="Lighthouse metrics scores showing green, passing scores, and yellow, warning scores.">
 
 Hover over a metric to learn more about it. Click **Learn more** to read
 documentation about it.
 
-![image](./discover-performance-opportunities-with-lighthouse-5.png)
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-5.png" alt="">
 
 Below your metrics scores you see screenshots of how the page looked while it
 loaded.
 
-![image](./discover-performance-opportunities-with-lighthouse-6.png)
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-6.png" alt="DevTools' filmstrip view of a page loading.">
 
 Below the screenshots you see opportunities for improving the page's
 performance.
 
-![image](./discover-performance-opportunities-with-lighthouse-7.png)
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-7.png" alt="">
 
 Click an opportunity to learn more about it.
 
-![image](./discover-performance-opportunities-with-lighthouse-8.png)
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-8.png" alt="An expanded audit titled Defer offscreen images shows a number of image paths that can be optimized.">
 
 ## Next steps
 
-Try using Lighthouse to audit your page, either from your profile page or from Chrome DevTools. Implement one of the
-opportunities, and then audit your page again to see how the change affected
-your report. Your metrics scores should ideally be a little better, and
-Lighthouse should no longer be flagging that opportunity as something to work
-on.
+Try using Lighthouse to audit your page, either from your profile page or from
+Chrome DevTools. Implement one of the opportunities, and then audit your page
+again to see how the change affected your report. Your metrics scores should
+ideally be a little better, and Lighthouse should no longer be flagging that
+opportunity as something to work on.
 
-Running Lighthouse yourself is great for spot-checking issues, but ultimately you'll want to setup continuous monitoring to make sure your site stays healthy. To get a daily Lighthouse report that highlights performance opportunities, add your site to the your [profile](/measure).
+Running Lighthouse yourself is great for spot-checking issues, but ultimately
+you'll want to setup continuous monitoring to make sure your site stays healthy.
+To track your Lighthouse progress over time add your site to the your
+[profile](/measure).
