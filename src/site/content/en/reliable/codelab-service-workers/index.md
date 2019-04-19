@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Working with service workers
 author: jeffposnick
+date: 2018-11-05
 description: |
   In this codelab, learn how to make an application network resilient by
   registering a service worker.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
 glitch: working-with-sw
+related_post: service-workers-cache-storage
 ---
 
 This codelab shows you how to register a service worker from within your web
@@ -32,7 +32,7 @@ won't be used unless it's
 [registered](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register)
 first. You can do this via a call to:
 
-```javascript
+```js
 navigator.serviceWorker.register(
   '/service-worker.js'
 )
@@ -56,26 +56,26 @@ caches, depending on the code in your service worker's
 [`install`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install)
 and
 [`activate`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate)
-event handlers. 
+event handlers.
 
 Running additional code and downloading assets can use up
 valuable resources that your browser could otherwise use to display the current
 web page. To help avoid this interference, it's a good practice to delay
 registering a service worker until the browser has finished rendering the
 current page. A convenient way of approximating this is to wait until the
-`window.load` event has been fired. 
+`window.load` event has been fired.
 
-<div class="aside note">
+{% Aside %}
 Waiting for <code>window.load</code> is a one-size-fits-all solution. If you know
 more about how your web page loads resources, or if you're using a web app
 framework that supports its own "everything's ready" lifecycle event, you can
 tweak the timing accordingly.
-</div> 
+{% endAside %}
 
 Putting those two points together, add this general-purpose service worker
 registration code to your `register-sw.js` file:
 
-```javascript
+```js
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js');
@@ -101,7 +101,7 @@ To that end, add in the following code to `service-worker.js`, which will log
 messages to the DevTools console in response to various events (but not do much
 else):
 
-```javascript
+```js
 self.addEventListener('install', (event) => {
   console.log('Inside the install handler:', event);
 });
@@ -122,9 +122,6 @@ files, it's time to visit the Live version of your sample project, and observe
 the service worker in action.
 
 - Click on the **Show Live** button to view the live version of the sample app.
-
-<web-screenshot type="show-live"></web-screenshot>
-
 -  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 -  Click on the **Console** tab.
 
@@ -146,14 +143,15 @@ tab) that's being controlled by the service worker.
 You can use the links on this panel, like `Unregister`, or `stop`, to make
 changes to the currently registered service worker for debugging purposes.
 
-<div class="aside note">
-Service workers tend to stick around, unless they're explicitly
-unregistered. If you find yourself wanting to "start fresh" during local
-development, a great way of doing so is to use a <a href="https://support.google.com/chrome/answer/95464">Chrome Incognito
-window</a> to load pages that are under service worker control. The service worker will persist only as long as
+{% Aside %}
+Service workers tend to stick around, unless they're explicitly unregistered. If
+you find yourself wanting to "start fresh" during local development, a great way
+of doing so is to use a [Chrome Incognito
+window](https://support.google.com/chrome/answer/95464) to load pages that are
+under service worker control. The service worker will persist only as long as
 the window is open, and you could always start over by closing all Incognito
 windows and opening a new one.
-</div> 
+{% endAside %}
 
 ## Trigger the service worker update flow
 
@@ -164,7 +162,7 @@ the idea of
 After your users visit a web app which registers a service worker, they'll end
 up with the code for the current copy of `service-worker.js` installed on their
 local browser. But what happens when you make updates to the version of
-service-worker.js that's stored on your web server? 
+service-worker.js that's stored on your web server?
 
 When a repeat visitor returns to a URL that's within the scope of a service worker,
 the browser will automatically request the latest `service-worker.js` and
@@ -175,7 +173,7 @@ and eventually take control.
 You can simulate this update flow by going back to the code editor for your project, and making _any_ change to the code. One quick change would be
 to replace
 
-```javascript
+```js
 self.addEventListener('install', (event) => {
   console.log('Inside the install handler:', event);
 });
@@ -183,7 +181,7 @@ self.addEventListener('install', (event) => {
 
 with
 
-```javascript
+```js
 self.addEventListener('install', (event) => {
   console.log('Inside the UPDATED install handler:', event);
 });
@@ -201,7 +199,7 @@ control of the current page. The updated version of the service worker is listed
 right below. It's in the
 [`waiting` state](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting),
 and will remain waiting until all of the open tabs that are controlled by the
-old service worker are closed. 
+old service worker are closed.
 
 This default behavior ensures that if your new
 service worker has a fundamental difference in behavior from your old one—like a
@@ -209,12 +207,12 @@ service worker has a fundamental difference in behavior from your old one—like
 versions of your web app—it won't go into effect until a user has shut down all
 previous instances of your web app.
 
-<div class="aside note">
+{% Aside %}
 If you don't want to wait, it's possible to
-<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase">call <code>skipWaiting()</code></a>
-inside of your service worker (usually in the <code>install</code> handler), or to simulate
-that behave by clicking on the <code>skipWaiting</code> link in DevTools.
-</div> 
+[call `skipWaiting()`](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase)
+inside of your service worker (usually in the `install` handler), or to simulate
+that behave by clicking on the `skipWaiting` link in DevTools.
+{% endAside %}
 
 ## Summing things up
 

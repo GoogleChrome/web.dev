@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Configuring HTTP caching behavior
 author: jeffposnick
+date: 2018-11-05
 description: |
   In this codelab, learn how to control resource caching behavior using HTTP
   headers.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-glitch: configure-cache-control
+glitch: make-it-installable
+related_post: http-cache
 ---
 
 This codelab shows you how to change the HTTP caching headers returned by a
@@ -15,11 +15,11 @@ Node.js-based web server, running the [Express](https://expressjs.com/) serving
 framework. It will also show how to confirm that the caching behavior you expect
 is actually being applied, using the Network panel in Chrome's DevTools.
 
-<div class="aside note">
+{% Aside %}
 While the specific instructions are tailored towards Express, the general
 principles about choosing the correct caching headers apply to any web server
 environment.
-</div>
+{% endAside %}
 
 ## Get familiar with the sample project
 
@@ -38,14 +38,14 @@ These are the key files you will be working with in the sample project:
     corresponding to their contents. The `index.html` is responsible for keeping
     track of which specific versioned URL to load.
 
-<div class="aside note">
+{% Aside %}
 In the "real world", the process of assigning hashes and updating HTML
 files to include references to the latest versioned URL would be handled by a
 build tool, like 
-<a href="https://webpack.js.org/guides/caching/#output-filenames">webpack</a>. 
-For the purposes of this codelab, assume that the hashes were generated as part of a
-build process that already took place.
-</div>
+[webpack](https://webpack.js.org/guides/caching/#output-filenames). 
+For the purposes of this codelab, assume that the hashes were generated as part
+of a build process that already took place.
+{% endAside %}
 
 ## Configure caching headers for our HTML
 
@@ -70,20 +70,18 @@ conditionally set this header is to write a custom
 [`setHeaders function`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
 and within that, check to see if the incoming request is for an HTML document.
 
-- Click the **Remix This** button to make the project editable.
-
-<web-screenshot type="remix"></web-screenshot>
+- Click the **Remix to Edit** button to make the project editable.
 
 The static serving configuration in `server.js` starts out as this:
 
-```
+```js
 app.use(express.static('public'));
 ```
 
 - Make the changes described above, and you should end up with something that
 looks like:
 
-```
+```js
 app.use(express.static('public', {
   etag: true, // Just being explicit about the default.
   lastModified: true,  // Just being explicit about the default.
@@ -122,17 +120,17 @@ A regular expression that
 [matches those general rules](https://jex.im/regulex/#!flags=&re=%5C.%5B0-9a-f%5D%7B8%7D%5C.)
 can be expressed as `new RegExp('\\.[0-9a-f]{8}\\.')`.
 
-<div class="aside note">
+{% Aside %}
 It helps to be as specific as possible when coming up with these rules,
 to protect against future problems. A more general match, such as checking for
-the <code>.js</code> or <code>.css</code> file extension, could end up being a problem down the road
+the `.js` or `.css` file extension, could end up being a problem down the road
 if you end up adding in additional, unversioned JavaScript or CSS assets to your
 project.
-</div>
+{% endAside %}
 
 - Modify the `setHeaders` function so it looks like this:
 
-```
+```js
 app.use(express.static('public', {
   etag: true, // Just being explicit about the default.
   lastModified: true,  // Just being explicit about the default.
@@ -152,17 +150,15 @@ app.use(express.static('public', {
 
 ## Confirm the new behavior using DevTools
 
-<div class="aside note">
+{% Aside %}
 You can get familiar with the Network panel in Chrome's DevTools by
-working through <a href="/reliable/identify-resources-via-network-panel/codelab-explore-network-panel">this codelab</a>.
-</div>
+working through [this codelab](/reliable/identify-resources-via-network-panel/codelab-explore-network-panel).
+{% endAside %}
 
 With the modifications to the static file server in place, you can check to make
 sure that the right headers are being set by previewing the live app with the DevTools Network panel open.
 
 - Click the **Show Live** button to preview the app.
-
-<web-screenshot type="show-live"></web-screenshot>
 
 - Customize the columns that are
 displayed in the Network panel to include the information that is most relevant, by right-clicking in
@@ -188,11 +184,11 @@ made an HTTP request to the web server, using the `Last-Modified` and `ETag`
 information to see if there was any update to the HTML that it already had in
 its cache. The HTTP 304 response indicates that there is not updated HTML.
 
-<div class="aside note">
-<code>Cache-Control: no-cache</code> doesn't mean "never used the cached copy". It
+{% Aside %}
+`Cache-Control: no-cache` doesn't mean "never used the cached copy". It
 means "always check with the server first, and use the cached copy if there's a
 HTTP 304 response."
-</div>
+{% endAside %}
 
 The next two rows are for the versioned JavaScript and CSS assets. You should
 see them served with `Cache-Control: max-age=31536000`, and the HTTP status for

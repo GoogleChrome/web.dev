@@ -9,6 +9,9 @@ description: |
   compromised by an attacker, the script could expose everything on a user's
   browser.
 web_lighthouse: N/A
+codelabs:
+  - codelab-same-origin-fetch
+  - codelab-same-origin-iframe
 ---
 
 The same-origin policy is a browser security feature that restricts cross-origin
@@ -37,6 +40,10 @@ for two URLs, it is considered same-origin. For example.
 `http://www.example.com/foo` is the same-origin as `http://www.example.com/bar`
 but not <code><strong>https</strong>://www.example.com/baz</code> (the scheme is
 different).
+
+{% Aside 'codelab' %}
+[See how the same-origin policy works when fetching resources](/secure/codelab-same-origin-fetch).
+{% endAside %}
 
 ## What is permitted and what is blocked?
 
@@ -85,6 +92,10 @@ cross-origin resource is blocked.
     </tbody>
   </table>
 </div>
+
+{% Aside 'codelab' %}
+[See how the same-origin policy works works when accessing data inside an iframe](/secure/codelab-same-origin-iframe).
+{% endAside %}
 
 ### How to prevent Clickjacking
 
