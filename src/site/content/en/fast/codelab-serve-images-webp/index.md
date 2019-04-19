@@ -1,12 +1,12 @@
 ---
-page_type: glitch
+layout: codelab
 title: Creating WebP Images with the Command Line
 author: katiehempenius
 description: |
   In this codelab, learn how to serve optimized images using WebP.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 glitch: webp-cli
+related_post: serve-images-webp
 ---
 
 The webp
@@ -16,37 +16,28 @@ converts JPG, PNG, and TIFF images to WebP.
 
 ## Convert images to WebP
 
-- Click the **Remix This** button to make the project editable.
-
-<web-screenshot type="remix"></web-screenshot>
-
-- Click the **Status** button.
-
-<web-screenshot type="status"></web-screenshot>
-
+- Click the **Remix to Edit** button to make the project editable.
+- Click the **Tools** button.
 - Click the **Console** button.
-
-<web-screenshot type="console"></web-screenshot>
-
 - Type the following command:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 cwebp -q 50 images/flower1.jpg -o images/flower1.webp
-</pre>
+```
 
 This command converts, at a quality of `50` (`0` is the worst; `100` is the
 best), the `images/flower1.jpg` file and saves it as `images/flower1.webp`.
 
-<div class="aside note">
-Are you wondering why you type <code>cwebp</code> instead of <code>webp</code>?
+{% Aside %}
+Are you wondering why you type `cwebp` instead of `webp`?
 WebP has two separate commands for encoding and decoding WebP images.
-<code>cwebp</code> encodes images to WebP, while <code>dwebp</code> decodes
+`cwebp` encodes images to WebP, while `dwebp` decodes
 images from WebP.
-</div>
+{% endAside %}
 
 After doing this, you should see something like this in the console:
 
-```shell
+```bash
 Saving file 'images/flower1.webp'
 File:      images/flower1.jpg
 Dimension: 504 x 378
@@ -71,9 +62,9 @@ instead.
 
 - Run this script in the console (don't forget the backticks):
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 `for file in images/*; do cwebp -q 50 "$file" -o "${file%.*}.webp"; done`
-</pre>
+```
 
 This script converts, at a quality of `50`, all the files in the `images/`
 directory, and saves them as a new file (same filename, but with a `.webp` file
@@ -140,18 +131,16 @@ site.
 
 ## Verify WebP usage with Lighthouse
 
-Lighthouse's "Serve images in next-gen formats" performance audit can let you
+Lighthouse's **Serve images in next-gen formats** performance audit can let you
 know if all the images on your site are using next-gen formats like WebP.
 
 - Click the **Show Live** button to preview the app.
 
-<web-screenshot type="show-live"></web-screenshot>
+- Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
+  on the live version of your app and verify that the **Serve images in next-gen
+  formats** audit is passed.
 
-- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
-the live version of your app and verify that the "Serve images in next-gen
-formats" audit is passed.
-
-<img class="screenshot" src="./lighthouse_passing.png" alt="Passing 'Serve
+<img class="w-screenshot" src="./lighthouse_passing.png" alt="Passing 'Serve
 images in next-gen formats' audit in Lighthouse">
 
 Success! You are now serving WebP images on your site.
