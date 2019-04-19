@@ -1,21 +1,20 @@
 ---
-page_type: guide
+layout: post
 title: Minify and compress network payloads
 author: houssein
+date: 2018-11-05
 description: |
   There are two useful techniques that can be used to improve the performance of
   your web page, minification and data compression. Incorporating both of these
   techniques reduces payload sizes and in turn improves page load times.
 web_lighthouse:
-- uses-text-compression
-- unminified-css
-- unminified-javascript
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+  - uses-text-compression
+  - unminified-css
+  - unminified-javascript
+codelabs:
+  - codelab-text-compression
+  - codelab-text-compression-brotli
 ---
-
-# Minify and compress network payloads
 
 There are two useful techniques that can be used to improve the performance of
 your web page:
@@ -31,15 +30,13 @@ improves page load times.
 Lighthouse displays a failed audit if it detects any CSS or JS resources on your
 page that can be minified.
 
-![Lighthouse: Minify CSS Audit](./reduce-network-payloads-using-text-compression-1.png)
+<img class="w-screenshot" src="./reduce-network-payloads-using-text-compression-1.png" alt="Lighthouse Minify CSS Audit">
 
-<img class="screenshot" src="./reduce-network-payloads-using-text-compression-1.png" alt="Lighthouse Minify CSS Audit">
-
-<img class="screenshot" src="./reduce-network-payloads-using-text-compression-2.png" alt="Lighthouse Minify JS Audit">
+<img class="w-screenshot" src="./reduce-network-payloads-using-text-compression-2.png" alt="Lighthouse Minify JS Audit">
 
 It also audits for any uncompressed assets.
 
-<img class="screenshot" src="./reduce-network-payloads-using-text-compression-3.png" alt="Lighthouse: Enable text compression">
+<img class="w-screenshot" src="./reduce-network-payloads-using-text-compression-3.png" alt="Lighthouse: Enable text compression">
 
 ## Minification
 
@@ -54,9 +51,9 @@ for this library by default to create minified build files.
 * If you are using an older version of webpack, install and include
 `TerserWebpackPlugin` into your webpack configuration settings. Follow
 the [documentation](https://webpack.js.org/plugins/terser-webpack-plugin/) to
-learn how. 
+learn how.
 * If you are not using a module bundler, use `Terser` as a CLI tool or
-include it directly as a dependency to your application. The project 
+include it directly as a dependency to your application. The project
 [documentation](https://github.com/terser-js/terser) provides instructions.
 
 ## Data compression
@@ -68,14 +65,14 @@ the most widely used compression format for server and client interactions.
 is a newer compression algorithm which can provide even better compression
 results than Gzip.
 
-<div class="aside note">
+{% Aside %}
 Compressing files can significantly improve the performance of a
 webpage, but you rarely need to do this yourself. Many hosting
 platforms, CDNs and reverse proxy servers either encode assets with compression
 by default or allow you to easily configure them. Read the documentation for the
 tool that you are using to see if compression is already supported before
 attempting to roll out your own solution.
-</div>
+{% endAside %}
 
 There are two different ways to compress files sent to a browser:
 
@@ -85,7 +82,7 @@ There are two different ways to compress files sent to a browser:
 Both approaches have their own advantages and disadvantages which is covered in
 the next section. Use whichever works best for your application.
 
-## Dynamic compression 
+## Dynamic compression
 
 This process involves compressing assets on-the-fly as they get requested by the
 browser. This can be simpler than compressing files manually or with a build
@@ -96,25 +93,29 @@ provides a [compression](https://github.com/expressjs/compression) middleware
 library. Use it to compress any asset as it gets requested. Here is an example
 of an entire server file that uses it correctly:
 
-<pre class="prettyprint">
+```js/5
 const express = require('express');
 const compression = require('compression');
 
 const app = express();
 
-<strong>app.use(compression());</strong>
+app.use(compression());
 
 app.use(express.static('public'));
 
 const listener = app.listen(process.env.PORT, function() {
 	console.log('Your app is listening on port ' + listener.address().port);
 });
-</pre>
+```
 
 This compresses your assets using `gzip`. If your web server supports it,
 consider using a separate module like
 [shrink-ray](https://github.com/aickin/shrink-ray#readme) to compress via
 Brotli to achieve better compression ratios.
+
+{% Aside 'codelab' %}
+Use express.js to compress assets with [gzip](/fast/codelab-text-compression) and [Brotli](/fast/codelab-text-compression-brotli).
+{% endAside %}
 
 ## Static compression
 
@@ -130,21 +131,21 @@ webpack to compress your assets as part of your build step. Otherwise, use
 to compress your assets with gzip. It can be included just like any other plugin
 in the webpack configurations file:
 
-<pre class="prettyprint">
+```js/4
 module.exports = {
 	//...
 	plugins: [
 		//...
-		<strong>new CompressionPlugin()</strong>
+		new CompressionPlugin()
 	]
 }
-</pre>
+```
 
 Once compressed files are part of the build folder, create a route in your
 server to handle all JS endpoints to serve the compressed files. Here is an
 example of how this can be done with Node and Express for gzipped assets.
 
-<pre class="prettyprint">
+<pre>
 const express = require('express');
 const app = express();
 

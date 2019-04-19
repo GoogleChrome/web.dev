@@ -1,5 +1,5 @@
 ---
-page_type: glitch
+layout: codelab
 title: Minify and compress network payloads with gzip
 author: houssein
 description: |
@@ -9,7 +9,7 @@ description: |
 web_updated_on: 2018-12-06
 web_published_on: 2018-11-05
 glitch: fav-kitties-compress-starter
-order: 1
+related_post: reduce-network-payloads-using-text-compression
 ---
 
 This codelab explores how both minifying and compressing the JavaScript
@@ -20,31 +20,31 @@ the app's request size.
 
 ## Measure
 
-<div class="aside note">
- Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
-</div>
+{% Aside %}
+ Since webpack is used in this application, any changes made to the code will
+ trigger a new build which can take a few seconds. Once it completes, you should
+ see your changes reflected in the application.
+{% endAside %}
 
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
 +  Click on the **Show Live** button.
 
-<web-screenshot type="show-live"></web-screenshot>
-
-This app, which was also covered in the
-["Remove unused code"](/fast/remove-unused-code)
-codelab, lets you vote for your favorite kitten. 🐈
+This app, which was also covered in the ["Remove unused
+code"](/fast/remove-unused-code) codelab, lets you vote for your favorite
+kitten. 🐈
 
 Now take a look at how large this application is:
 
-+  Open the DevTools by pressing `CMD + OPTION + i / CTRL + SHIFT + i`.
++  Open the DevTools by pressing `Command+Option+i / Ctrl+Shift+i`.
 +  Click on the **Network** panel.
 
-<img class="screenshot" src="./network-tab.png" alt="Network panel">
+<img class="w-screenshot" src="./network-tab.png" alt="Network panel">
 
 +  Make sure `Disable Cache` is checked and reload the app.
 
-<img class="screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
+<img class="w-screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 
 Although a lot of progress was made in the ["Remove unused code"](/fast/remove-unused-code) 
 codelab to trim this bundle size down, 225 KB is still quite large.
@@ -53,7 +53,7 @@ codelab to trim this bundle size down, 225 KB is still quite large.
 
 Consider the following block of code.
 
-```
+```js
 function soNice() {
   let counter = 0;
 
@@ -69,7 +69,7 @@ If this function is saved in a file of its own, the file size is around
 
 If all whitespace is removed, the resulting code looks like this:
 
-```
+```js
 function soNice(){let counter=0;while(counter<100){console.log("nice");counter++;}}
 ```
 
@@ -77,7 +77,7 @@ The file size would now be around 83 B. If it gets further mangled by reducing
 the length of variable name and modifying some expressions, the final code may
 end up looking like this:
 
-```
+```js
 function soNice(){for(let i=0;i<100;)console.log("nice"),i++}
 ```
 
@@ -92,13 +92,13 @@ reduction in size!
 In this application, [webpack](https://webpack.js.org/) version 4 is used as a 
 module bundler. The specific version can be seen in `package.json`.
 
-<pre class="prettyprint">
+```json/2
 "devDependencies": {
   //...
   <strong>"webpack": "^4.16.4",</strong>
   //...
 }
-</pre>
+```
 
 Version 4 already minifies the bundle by default during production mode. It uses 
 `TerserWebpackPlugin` a plugin for [Terser](https://github.com/terser-js/terser). 
@@ -108,34 +108,34 @@ To get an idea of what the minified code looks like, go ahead and click
 `main.bundle.js` while still in the DevTools **Network** panel. Now click the
 **Response** tab.
 
-<img class="screenshot" src="./minified-response.png" alt="Minified response">
+<img class="w-screenshot" src="./minified-response.png" alt="Minified response">
 
 The code in its final form, minified and mangled, is shown in the response body. 
 To find out how large the bundle may have been if it was not minified, open 
 `webpack.config.js` and update the `mode` configuration.
 
-<pre class="prettyprint">
+```js/2/1
 module.exports = {
-  <s>mode: 'production',</s>
-  <strong>mode: 'none',</strong>
+  mode: 'production',
+  mode: 'none',
   //...
-</pre>
+```
 
 Reload the application and take a look at the bundle size again through the 
 DevTools **Network** panel
 
-<img class="screenshot" src="./network-no-minify.png" alt="Bundle size of 767 KB">
+<img class="w-screenshot" src="./network-no-minify.png" alt="Bundle size of 767 KB">
 
 That's a pretty big difference! 😅
 
 Make sure to revert the changes here before continuing.
 
-<pre class="prettyprint">
+```js/1/2
 module.exports = {
-  <strong>mode: 'production',</strong>
-  <s>mode: 'none',</s>
+  mode: 'production',
+  mode: 'none',
   //...
-</pre>
+```
 
 Including a process to minify code in your application depends on the tools 
 that you use:
@@ -153,13 +153,13 @@ as a CLI tool or include it directly as a dependency.
 
 ## Compression
 
-<div class="aside warning">
+{% Aside 'warning' %}
 Many hosting platforms, CDNs and reverse proxy servers either encode 
 assets with compression by default or allow you to easily configure them. This 
 means that you may rarely ever need to set up your server similar to how it is 
 done in the compression section of this tutorial, but you can continue to read 
 if you are interested in learning how compression works.
-</div>
+{% endAside %}
 
 Although the term "compression" is sometimes loosely used to explain how code is 
 reduced during the minification process, it isn't actually compressed in the 
@@ -175,13 +175,16 @@ additional information about the asset being fetched or received. This can be
 seen in the `Headers` tab within the DevTools Network panel where three types 
 are shown:
 
-+ **General** represents general headers relevant to the entire request-response interaction.
-+ **Response Headers** shows a list of headers specific to the actual response from the server.
-+ **Request Headers** shows a list of headers attached to the request by the client.
++ **General** represents general headers relevant to the entire request-response
+  interaction.
++ **Response Headers** shows a list of headers specific to the actual response
+  from the server.
++ **Request Headers** shows a list of headers attached to the request by the
+  client.
 
 Take a look at the `accept-encoding` header in the `Request Headers`.
 
-<img class="screenshot" src="./accept-encoding.png" alt="Accept encoding header">
+<img class="w-screenshot" src="./accept-encoding.png" alt="Accept encoding header">
 
 `accept-encoding` is used by the browser to specify which content 
 encoding formats, or compression algorithms, it supports. There are many 
@@ -225,7 +228,7 @@ compress before they are sent by the server.
 The `server.js` file is responsible for setting up the Node server that hosts 
 the application.
 
-```
+```js
 const express = require('express');
 
 const app = express();
@@ -245,42 +248,42 @@ To make sure all of the assets are compressed every time they're requested, the
 [compression](https://github.com/expressjs/compression) middleware library can 
 be used. Begin by adding it as a `devDependency` in `package.json`:
 
-<pre class="prettyprint">
+```json/2
 "devDependencies": {
   //...
-  <strong>"compression": "^1.7.3"</strong>
+  "compression": "^1.7.3"
 },
-</pre>
+```
 
 And import it into the server file, `server.js`:
 
-<pre class="prettyprint">
+```js/1
 const express = require('express');
-<strong>const compression = require('compression');</strong>
-</pre>
+const compression = require('compression');
+```
 
 And add it as a middleware **before** `express.static` is mounted:
 
-<pre class="prettyprint">
+```js/4
 //...
 
 const app = express();
 
-<strong>app.use(compression());</strong>
+app.use(compression());
 
 app.use(express.static('public'));
 
 //...
-</pre>
+```
 
 Now reload the app, and take a look at the bundle size in the **Network** panel.
 
-<img class="screenshot" src="./network-dynamic-compress.png" alt="Bundle size with dynamic compression">
+<img class="w-screenshot" src="./network-dynamic-compress.png" alt="Bundle size with dynamic compression">
 
 From 225 KB to 61.6 KB! In the `Response Headers` now, a `content-encoding` 
 header shows that the server is sending down this file encoded with `gzip`.
 
-<img class="screenshot" src="./content-encoding.png" alt="Content encoding header">
+<img class="w-screenshot" src="./content-encoding.png" alt="Content encoding header">
 
 ## Static compression
 
@@ -306,27 +309,27 @@ can be used for this.
 
 Begin by adding it as a `devDependency` in `package.json`:
 
-<pre class="prettyprint">
+```json/2
 "devDependencies": {
   //...
-  <strong>"compression-webpack-plugin": "^1.1.11"</strong>
+  "compression-webpack-plugin": "^1.1.11"
 },
-</pre>
+```
 
 Like any other webpack plugin, import it in the configurations file,
 `webpack.config.js:`
 
-<pre class="prettyprint">
+```js/4
 const path = require("path");
 
 //...
 
-<strong>const CompressionPlugin = require("compression-webpack-plugin");</strong>
-</pre>
+const CompressionPlugin = require("compression-webpack-plugin");
+```
 
 And include it within the `plugins` array:
 
-<pre class="prettyprint">
+```js/4
 module.exports = {
   //...
   plugins: [
@@ -334,7 +337,7 @@ module.exports = {
     <strong>new CompressionPlugin()</strong>
   ]
 }
-</pre>
+```
 
 By default, the plugin compresses the build files using `gzip`. Take a look 
 at the [documentation](https://github.com/webpack-contrib/compression-webpack-plugin) 
@@ -345,29 +348,23 @@ When the app reloads and rebuilds, a compressed version of the main bundle is
 now created. Open the Glitch Console to take a look at what's inside the 
 final `public/` directory that's served by the Node server.
 
-<div class="aside note">
-The <code>public/</code> directory is included in the <code>.gitignore</code> 
-file. Directories that contain build files are usually included here in order 
-to be ignored by Git, and Glitch also hides these files from the editor tree.
-</div>
+{% Aside %}
+The `public/` directory is included in the `.gitignore` file. Directories that
+contain build files are usually included here in order to be ignored by Git, and
+Glitch also hides these files from the editor tree.
+{% endAside %}
 
-+ Click the **Status** button.
-
-<web-screenshot type="status"></web-screenshot>
-
++ Click the **Tools** button.
 + Click the **Console** button.
++ In the console, run the following commands to change into the `public`
+  directory and see all of its files:
 
-<web-screenshot type="console"></web-screenshot>
-
-+ In the console, run the following commands to change into the `public` directory
-and see all of its files:
-
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 cd public
 ls
-</pre>
+```
 
-<img class="screenshot" src="./console-commands.png" alt="Final outputted files in public directory">
+<img class="w-screenshot" src="./console-commands.png" alt="Final outputted files in public directory">
 
 The gzipped version of the bundle, `main.bundle.js.gz`, is now saved here as 
 well. `CompressionPlugin` also compresses `index.html` by default.
@@ -377,7 +374,7 @@ files whenever their original JS versions are being requested. This can be done
 by defining a new route in `server.js` before the files are served with 
 `express.static`.
 
-<pre class="prettyprint">
+<pre>
 const express = require('express');
 const app = express();
 
@@ -405,7 +402,7 @@ that may be next.
 
 Once the app reloads, take a look at the `Network` panel once more.
 
-<img class="screenshot" src="./network-static-compress.png" alt="Bundle size reduction with static compression">
+<img class="w-screenshot" src="./network-static-compress.png" alt="Bundle size reduction with static compression">
 
 Just like before, a significant reduction in bundle size!
 

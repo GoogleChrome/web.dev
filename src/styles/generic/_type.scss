@@ -38,12 +38,20 @@ p {
   @include w-article-text();
 }
 
-h1 + p,
-h2 + p,
-h3 + p,
-h4 + p,
-h5 + p,
-h6 + p {
+// If an element is coming after a heading,
+// let the heading create a consistent margin.
+h1 + *,
+h1 + [class],
+h2 + *,
+h2 + [class],
+h3 + *,
+h3 + [class],
+h4 + *,
+h4 + [class],
+h5 + *,
+h5 + [class],
+h6 + *,
+h6 + [class] {
   margin-top: 0;
 }
 
