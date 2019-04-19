@@ -27,34 +27,34 @@ to detect unused code. Then remove **unused** and **unneeded** libraries.
 The simplest way to see the size of all network requests is to open the
 **Network** panel in DevTools, check `Disable Cache`, and reload the page.
 
-<img class="screenshot" src="./bundle.png" alt="Network panel with bundle request">
+<img class="w-screenshot" src="./bundle.png" alt="Network panel with bundle request">
 
 The [Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
 tab in DevTools will also tell you how much CSS and JS code in your application
 is unused.
 
-![Code Coverage in DevTools](./devtools-sources.png)
+<img class="w-screenshot w-screenshot--filled" src="./devtools-sources.png" alt="Code Coverage in DevTools">
 
 By specifying a full Lighthouse configuration through its Node CLI, an "Unused
 JavaScript" audit can also be used to trace how much unused code is being
 shipped with your application.
 
-<img class="screenshot" src="./unused-js.png" alt="Lighthouse Unused JS Audit">
+<img class="w-screenshot" src="./unused-js.png" alt="Lighthouse Unused JS Audit">
 
 If you happen to be using [webpack](https://webpack.js.org/) as your bundler,
 [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
 will help you investigate what makes up the bundle. Include the plugin in your
 webpack configurations file like any other plugin: 
 
-<pre class="prettyprint">
+```js/4
 module.exports = {
   //...
   plugins: [
     //...
-    <strong>new BundleAnalyzerPlugin()</strong>
+    new BundleAnalyzerPlugin()
   ]
 }
-</pre>
+```
 
 Although webpack is commonly used to build single-page applications, other
 bundlers, such as [Parcel](https://parceljs.org/) and
@@ -77,11 +77,11 @@ In the previous treemap image, there are quite a few packages within a single
 `@firebase` domain. If your website only needs the firebase database component,
 update the imports to fetch that library: 
 
-<pre class="prettyprint">
-<s>import firebase from 'firebase';</s>
-<strong>import firebase from 'firebase/app';</strong>
-<strong>import 'firebase/database';</strong>
-</pre>
+```js/1-2/0
+import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/database';
+```
 
 It is important to emphasize that this process is significantly more complex for
 larger applications. 
