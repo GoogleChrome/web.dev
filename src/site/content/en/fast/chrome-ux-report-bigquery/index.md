@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Using the Chrome UX Report on BigQuery
 author: rviscomi
 description: |
@@ -7,12 +7,8 @@ description: |
   dataset to extract insightful results about the state of user experiences on 
   the web.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2018-11-05
 ---
-
-# Using the Chrome UX Report on BigQuery
 
 The raw data of the Chrome UX Report 
 ([CrUX](https://developers.google.com/web/tools/chrome-user-experience-report/)) 
@@ -41,7 +37,7 @@ SELECT COUNT(DISTINCT origin) FROM `chrome-ux-report.all.201809`
 To run the query, enter it into the query editor and press the 
 "Run query" button:
 
-<img class="screenshot" src="./bigquery.png" alt="Enter a simple query into editor and press Run.">
+<img class="w-screenshot" src="./bigquery.png" alt="Enter a simple query into editor and press Run.">
 
 There are two parts to this query:
 
@@ -112,7 +108,7 @@ WHERE
   fcp.start = 0
 ```
 
-<img class="screenshot" src="./bigquery_fcp.png" alt="Querying CrUX FCP on BigQuery">
+<img class="w-screenshot" src="./bigquery_fcp.png" alt="Querying CrUX FCP on BigQuery">
 
 The result is `0.0013`, meaning that 0.13% of user experiences on this origin 
 are between 0 and 100ms on 4G and on a phone. If we want to generalize our 
@@ -131,7 +127,7 @@ WHERE
   fcp.start = 0
 ```
 
-<img class="screenshot" src="./bigquery_fcp_sum.png" alt="Summing CrUX FCP on BigQuery">
+<img class="w-screenshot" src="./bigquery_fcp_sum.png" alt="Summing CrUX FCP on BigQuery">
 
 The result is `0.0399`, or 3.99% across all devices and connection types. 
 Let's modify the query slightly and add up the densities for all bins that are 
@@ -148,7 +144,7 @@ WHERE
   fcp.start < 1000
 ```
 
-<img class="screenshot" src="./bigquery_fast_fcp.png" alt="Querying fast FCP on BigQuery">
+<img class="w-screenshot" src="./bigquery_fast_fcp.png" alt="Querying fast FCP on BigQuery">
 
 This gives us `0.3913`. In other words, 39.13% of the FCP user experiences on 
 developers.google.com are considered "fast" according to the FCP range 
@@ -177,7 +173,7 @@ ORDER BY
   yyyymm
 ```
 
-<img class="screenshot" src="./bigquery_timeseries.png" alt="Querying a timeseries of CrUX FCP on BigQuery">
+<img class="w-screenshot" src="./bigquery_timeseries.png" alt="Querying a timeseries of CrUX FCP on BigQuery">
 
 Here, we see that the percent of fast FCP experiences varies by a few percentage 
 points each month.

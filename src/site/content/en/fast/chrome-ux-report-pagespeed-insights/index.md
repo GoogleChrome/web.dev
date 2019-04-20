@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Using the Chrome UX Report on PageSpeed Insights
 author: rviscomi
 description: |
@@ -7,12 +7,8 @@ description: |
   page's performance is and how to improve it. In this guide, learn how to use
   PSI to extract insights from CrUX and better understand the user experience.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2018-11-05
 ---
-
-# Using the Chrome UX Report on PageSpeed Insights
 
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) 
 (PSI) is a tool for web developers to understand what a page's performance is 
@@ -23,21 +19,21 @@ to show how real users experience performance on the page and the origin in
 aggregate. In this guide, learn how to use PSI to extract insights from CrUX 
 and better understand the user experience.
 
-<img class="screenshot" src="./psi.png" alt="Field data from CrUX in PageSpeed Insights">
+<img class="w-screenshot" src="./psi.png" alt="Field data from CrUX in PageSpeed Insights">
 
 ## Reading the data
 
 To get started, go to [https://developers.google.com/speed/pagespeed/insights/](https://developers.google.com/speed/pagespeed/insights/)
 and enter the URL of the page you want to test.
 
-<img class="screenshot" src="./psi_url.png" alt="Enter a URL to get started on PageSpeed Insights">
+<img class="w-screenshot" src="./psi_url.png" alt="Enter a URL to get started on PageSpeed Insights">
 
 After a few seconds, Lighthouse 
 audits will be performed and you will see sections for Field and Lab data. CrUX 
 is a collection of real user experiences from the field, while Lighthouse is a 
 controlled test in the lab.
 
-<img class="screenshot" src="./psi_page.png" alt="Field data from CrUX in PageSpeed Insights">
+<img class="w-screenshot" src="./psi_page.png" alt="Field data from CrUX in PageSpeed Insights">
 
 In the Field Data section, you'll see two metrics: First Contentful Paint (FCP) 
 and First Input Delay (FID). These metrics are representative of the user 
@@ -89,7 +85,7 @@ stats for an entire origin that are available for individual pages. This data is
 closely aligned with what is available on BigQuery, while the page-level 
 performance is not made available to query.
 
-<img class="screenshot" src="./psi_origin.png" alt="Origin CrUX performance in PageSpeed Insights">
+<img class="w-screenshot" src="./psi_origin.png" alt="Origin CrUX performance in PageSpeed Insights">
 
 There is one major difference between the origin-level performance on PSI versus 
 BigQuery. The datasets on BigQuery are released once a month and encompass all 
@@ -107,7 +103,7 @@ like the one below, indicating that there is not enough data. Lab data from
 Lighthouse is still available to give you an approximation of the page's 
 performance.
 
-![No CrUX data on PageSpeed Insights](./psi_no_data.png)
+<img class="w-screenshot" src="./psi_no_data.png" alt="No CrUX data on PageSpeed Insights">
 
 ## FAQ
 
