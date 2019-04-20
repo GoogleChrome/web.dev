@@ -1,16 +1,17 @@
 ---
-page_type: glitch
+layout: codelab
 title: Avoid flash of invisible text
 author: katiehempenius
 description: |
   In this codelab, learn how to display text immediately using Font Face
   Observer.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 glitch: font-observer
+related_post: avoid-invisible-text
 ---
 
-This code lab shows you how to display text immediately using [Font Face Observer](https://github.com/bramstein/fontfaceobserver).
+This code lab shows you how to display text immediately using [Font Face
+Observer](https://github.com/bramstein/fontfaceobserver).
 
 ## Add Font Face Observer
 
@@ -20,18 +21,14 @@ that detects when a font loads. The
 file has already been saved to the project directory, so you don't need to add it
 separately. However, you do need to add a script tag for it.
 
-- Click the **Remix This** button to make the project editable.
-
-<web-screenshot type="remix"></web-screenshot>
-
+- Click the **Remix to Edit** button to make the project editable.
 - Add a script tag for `fontfaceobserver.js` to `index.html`:
 
-<pre class="prettyprint devsite-disable-click-to-copy">
-    &lt;div class=&quot;text&quot;&gt;Some text.&lt;/div&gt;
-    <strong>&lt;script src=&quot;fontfaceobserver.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</strong>
-&lt;/body&gt;
-</pre>
-
+```html/1
+  <div class="text">Some text.</div>
+  <script src="fontfaceobserver.js" type="text/javascript"></script>
+</body>
+```
 
 ## Use Font Face Observer
 
@@ -42,14 +39,14 @@ Create an observer for each font family that it is used on the page.
 - Add the following script after the `fontfaceobserver.js` script. This creates
 observers for the "Pacifico" and "Roboto" font families:
 
-<pre class="prettyprint devsite-disable-click-to-copy">
-    &lt;script src=&quot;fontfaceobserver.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
-    <strong>&lt;script type=&quot;text/javascript&quot;&gt;</strong>
-      <strong>const pacificoObserver = new FontFaceObserver('Pacifico');</strong>
-      <strong>const robotoObserver = new FontFaceObserver('Roboto');</strong>
-    <strong>&lt;/script&gt;</strong>
-&lt;body&gt;
-</pre>
+```html/1-4
+  <script src="fontfaceobserver.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    const pacificoObserver = new FontFaceObserver('Pacifico');
+    const robotoObserver = new FontFaceObserver('Roboto');
+  </script>
+<body>
+```
 
 If you're ever unsure what font face observers you need to create, just look for
 the `font-family` declarations in your CSS. Pass the `font-family` name of these declarations to
@@ -62,15 +59,16 @@ For example, if your CSS was:
 font-family: "Times New Roman", Times, serif;
 ```
 
-you would add `FontFaceObserver(‘Times New Roman')`. Times and serif are fallback fonts, so you would not need to declare FontFaceObservers for them.
+you would add `FontFaceObserver(‘Times New Roman')`. Times and serif are
+fallback fonts, so you would not need to declare FontFaceObservers for them.
 
 ### Detect font load
 
 The code for detecting a font load looks like this:
 
-```javascript
+```js
 robotoObserver.load().then(function(){
-    console.log("Hooray! Font loaded.");
+  console.log("Hooray! Font loaded.");
 });
 ```
 
@@ -82,12 +80,12 @@ to wait until both fonts have loaded.
 - Add this promise to your script, right below the FontFaceObservers that you
 just declared:
 
-```javascript
+```js
 Promise.all([
-    pacificoObserver.load(),
-    robotoObserver.load()
+  pacificoObserver.load(),
+  robotoObserver.load()
 ]).then(function(){
-    /* Do things */
+  /* Do things */
 });
 ```
 
@@ -101,10 +99,10 @@ const pacificoObserver = new FontFaceObserver('Pacifico');
 const robotoObserver = new FontFaceObserver('Roboto');
 
 Promise.all([
-    pacificoObserver.load(),
-    robotoObserver.load()
+  pacificoObserver.load(),
+  robotoObserver.load()
 ]).then(function(){
-    /* Do things */
+  /* Do things */
 });
 </script>
 ```
@@ -113,11 +111,12 @@ Promise.all([
 
 - Replace the `/* Do things */` comment in the script with this line:
 
-```javascript
+```js
 document.documentElement.classList.add("fonts-loaded");
 ```
 
-This adds the `fonts-loaded` class to the document's root element (i.e. the <html> tag) once both fonts have loaded.
+This adds the `fonts-loaded` class to the document's root element (i.e. the
+`<html>` tag) once both fonts have loaded.
 
 #### ✔️Check-in
 
@@ -129,10 +128,10 @@ Your completed script should look like this:
   const robotoObserver = new FontFaceObserver('Roboto');
 
   Promise.all([
-     pacificoObserver.load(),
-     robotoObserver.load()
+    pacificoObserver.load(),
+    robotoObserver.load()
   ]).then(function(){
-     document.documentElement.className += " fonts-loaded";
+    document.documentElement.className += " fonts-loaded";
   });
 </script>
 ```
@@ -144,25 +143,23 @@ the `fonts-loaded` class has been applied.
 
 - Update the CSS:
 
-<pre class="prettyprint devsite-disable-click-to-copy">
-<s>.header {</s>
-<strong>html.fonts-loaded .header {</strong>
-  <strong>font-family: 'Pacifico', cursive;</strong>
-<strong>}</strong>
+```css/1-3,6-8/0,5
+.header {
+html.fonts-loaded .header {
+  font-family: 'Pacifico', cursive;
+}
 
-<s>.text</s>
-<strong>html.fonts-loaded .text {</strong>
-  <strong>font-family: 'Roboto', sans-serif;</strong>
-<strong>}</strong>
-</pre>
+.text
+html.fonts-loaded .text {
+  font-family: 'Roboto', sans-serif;
+}
+```
 
 ## Verify
 
 - Click the **Show Live** button to preview the app.
 
-<web-screenshot type="show-live"></web-screenshot>
-
 If the page looks like this, then you've successfully implemented Font Face
 Observer and gotten rid of the "Flash of Invisible Text."
 
-![image](./fancy-header.png)
+![A heading in a cursive font.](./fancy-header.png)
