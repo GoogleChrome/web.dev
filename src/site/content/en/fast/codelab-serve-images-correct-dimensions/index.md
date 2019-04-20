@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Serve images with correct dimensions
 author: katiehempenius
 description: |
   In this codelab, learn how to serve images with the correct dimensions to
   improve network performance.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 glitch: correct-dimensions
+related_post: serve-images-with-correct-dimensions
 ---
 
 ## Run Lighthouse
@@ -17,12 +17,10 @@ for most websites, using a tool like Lighthouse to automate this is essential.
 
 - Click the **Show Live** button to preview the app.
 
-<web-screenshot type="show-live"></web-screenshot>
+- Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
+  and look for the results of the **Properly Size Images** audit.
 
-- Run the Lighthouse performance audit (Lighthouse > Options > Performance) and
-look for the results of the "Properly Size Images" audit.
-
-<img class="screenshot" src="./notfixed-properly-size-images.png" alt="The
+<img class="w-screenshot" src="./notfixed-properly-size-images.png" alt="The
 properly size images audit failing in Lighthouse.">
 
 The Lighthouse audit shows that both of this page's images need to be resized.
@@ -33,7 +31,7 @@ Start at the top of the page and fix the logo image.
 
 - Inspect `flower_logo.png` in the DevTools Elements panel.
 
-<img class="screenshot" src="./elements-panel-logo.png" alt="The DevTools
+<img class="w-screenshot" src="./elements-panel-logo.png" alt="The DevTools
 elements panel">
 
 This is the CSS for `flower_logo.png`:
@@ -50,23 +48,14 @@ to match. You can use [ImageMagick](https://www.imagemagick.org) to resize the
 image to fit. ImageMagick is a CLI tool for image editing that comes
 pre-installed in the codelab environment.
 
-- Click the **Remix This** button to make the project editable.
-
-<web-screenshot type="remix"></web-screenshot>
-
-- Click the **Status** button.
-
-<web-screenshot type="status"></web-screenshot>
-
+- Click the **Remix to Edit** button to make the project editable.
+- Click the **Tools** button.
 - Click the **Console** button.
-
-<web-screenshot type="console"></web-screenshot>
-
 - In the console, type:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 convert flower_logo.png -resize 50x50 flower_logo.png
-</pre>
+```
 
 ## Fix flower_photo.jpg
 
@@ -74,7 +63,7 @@ Next, fix the photo of the purple flowers.
 
 - Inspect `flower_photo.jpg` in the DevTools elements panel.
 
-<img class="screenshot" src="./elements-panel-photo.png" alt="The DevTools
+<img class="w-screenshot" src="./elements-panel-photo.png" alt="The DevTools
 elements panel">
 
 This is the CSS for `flower_photo.jpg`:
@@ -97,7 +86,7 @@ so you should resize it to a size that works well for most of your users. You
 can check your analytics data to learn which screen resolutions are common
 amongst your users:
 
-<img class="screenshot" src="./screen-resolution.png" alt="Google analytics of
+<img class="w-screenshot" src="./screen-resolution.png" alt="Google analytics of
 screen resolutions.">
 
 This data indicates that 95%+ of the visitors to this site use screen
@@ -113,22 +102,22 @@ should not be very noticeable.
 - Use [ImageMagick](https://www.imagemagick.org) to resize the image to 960
 pixels wide. In the terminal type:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 convert flower_photo.jpg -resize 960x flower_photo.jpg
-</pre>
+```
 
-<div class="aside note">
-<code>960x</code> is not a typo - it specifies a width, but not a height. The
+{% Aside %}
+`960x` is not a typo - it specifies a width, but not a height. The
 image height will be scaled in proportion to the width. This is a handy trick
 for when you only care about an image's dimensions in one direction.
-</div>
+{% endAside %}
 
 ## Re-Run Lighthouse
 
 - Re-run the Lighthouse Performance audit to verify that you have successfully
 re-sized the images.
 
-<img class="screenshot" src="./fixed-properly-size-images.png" alt="Lighthouse
+<img class="w-screenshot" src="./fixed-properly-size-images.png" alt="Lighthouse
 properly size images audit.">
 
 … And it fails! Why is that?

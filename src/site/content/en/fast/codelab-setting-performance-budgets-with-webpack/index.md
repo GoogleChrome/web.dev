@@ -1,13 +1,13 @@
 ---
-page_type: glitch
+layout: codelab
 title: Setting performance budgets with webpack
 author: mihajlija
 description: |
-  Learn how to set performance budgets and keep your bundlesize in check with 
+  Learn how to set performance budgets and keep your bundlesize in check with
   webpack.
-web_updated_on: 2019-01-31
-web_published_on: 2019-01-31
+date: 2019-01-31
 glitch: webpack-performance-budgets
+related_post: incorporate-performance-budgets-into-your-build-tools
 ---
 
 [Webpack](https://developers.google.com/web/fundamentals/performance/webpack/)
@@ -29,35 +29,39 @@ It’s built with [React](https://reactjs.org/) and [moment.js](https://momentjs
 This codelab already contains the app bundled with webpack.
 
 1. To start, click the **Remix to Edit** button to make the project editable.
-
 2. Click the **Tools** button.
-
 3. Then click the **Console** button. It will open the Console in another tab.
-
 4. To get a color-coded list of assets and their sizes, in the console
    type:
 
-<pre class="devsite-terminal devsite-click-to-copy">webpack</pre>
+```bash
+webpack
+```
 
 The main bundle is highlighted in yellow because it’s larger than 244 KiB (250
 KB).
 
-<div class="aside note">
-    Webpack uses the unit "KiB", which you might not have 
-    seen before. 1 “KiB” and 1 “KB” are fairly close in size: 1 KiB is 1024 bytes, 
-    while 1 KB is 1000 bytes.
-</div>
+{% Aside %}
+Webpack uses the unit "KiB", which you might not have
+seen before. 1 “KiB” and 1 “KB” are fairly close in size: 1 KiB is 1024 bytes,
+while 1 KB is 1000 bytes.
+{% endAside %}
 
-![Webpack output showing bundle size of 323 KiB](webpack-bundle-sizes.png)
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./webpack-bundle-sizes.png" alt="Webpack output showing bundle size of 323 KiB">
+  <figcaption class="w-figcaption">
+    Webpack warning you about bulky JS bundle ⚠️
+  </figcaption>
+</figure>
 
 These warnings are enabled by default in [production mode](https://webpack.js.org/concepts/mode/)
 and the default threshold is **244 KiB uncompressed**, for both assets and
 [entry points](https://webpack.js.org/concepts/entry-points/)
 (the combination of all assets used during the initial load of a page).
 
-<figure>
-  <img src="./webpack-warning.png" alt="Webpack warning that the asset exceeds the recommended size limit">
-  <figcaption>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./webpack-warning.png" alt="Webpack warning that the asset exceeds the recommended size limit">
+  <figcaption class="w-figcaption">
     Webpack warning you about bulky JS bundle ⚠️
   </figcaption>
 </figure>
@@ -66,9 +70,9 @@ Webpack will not only warn you, but it will also give you a recommendation on
 how to downsize your bundles. You can learn more about the recommended techniques on
 [Web Fundamentals](https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching#lazy-loading).
 
-<figure> 
-    <img src="webpack-performance-recommendation.png" alt="Webpack performance optimization recommendation" class="screenshot"> 
-    <figcaption>Webpack performance optimization recommendation 💁</figcaption> 
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="webpack-performance-recommendation.png" alt="Webpack performance optimization recommendation">
+  <figcaption class="w-figcaption">Webpack performance optimization recommendation 💁</figcaption>
 </figure>
 
 ## Set a custom performance budget
@@ -80,15 +84,15 @@ of thumb is to deliver under 170 KB of compressed/minified
 [critical-path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
 resources.
 
-<div class="aside note">
-    Critical-path resources are the minimal set of resources required
-    for the browser to display the first screen's worth of content.
-</div>
+{% Aside %}
+Critical-path resources are the minimal set of resources required
+for the browser to display the first screen's worth of content.
+{% endAside %}
 
 For this simple demo, try being even more conservative and set the budget to
 100 KB (97.7 KiB). In `webpack.config.js`, add the following:
 
-```
+```js
 module.exports = {
   //...
   performance: {
@@ -102,7 +106,6 @@ module.exports = {
 The new performance budget is set in **bytes**:
 
 - 100000 bytes for individual assets (maxAssetSize)
-
 - 100000 bytes for the entry-point (maxEntrypointSize)
 
 In this case, there’s only one bundle which also acts as the entry point.
@@ -111,15 +114,13 @@ Possible values for **hints** are:
 
 1. **`warning`** (default): Displays a yellow warning message, but the build
    passes. It’s best to use this in development environments.
-
 2. **`error`**: Displays a red error message, but the build still passes. This
    setting is recommended for production builds.
-
 3. **`false`**: No warnings or errors are shown.
 
-<figure> 
-    <img src="webpack-error.png" alt="Webpack performance error in red font" class="screenshot"> 
-    <figcaption>Webpack performance hint "error" 🚨</figcaption> 
+<figure class="w-figure">
+  <img src="webpack-error.png" alt="Webpack performance error in red font" class="w-screenshot w-screenshot--filled">
+  <figcaption class="w-figcaption">Webpack performance hint "error" 🚨</figcaption>
 </figure>
 
 ## Optimize
@@ -127,7 +128,7 @@ Possible values for **hints** are:
 The purpose of a performance budget is to warn you about performance issues
 before they become too difficult to fix. There is always more than one way to
 build an app and some techniques will make for faster load times. (A lot of
-them are documented right here in [Optimizing your JavaScript](https://web.dev/fast#topic-Optimize-your-JavaScript). 🤓)
+them are documented right here in [Optimizing your JavaScript](https://web.dev/fast#optimize-your-javascript). 🤓)
 
 Frameworks and libraries make developers’ lives easier, but end users don’t
 really care how apps are built, only that they’re functional and fast. If you
@@ -147,27 +148,27 @@ process in detail and here’s a quick way to rewrite the countdown code without
 
 In **app/components/Countdown.jsx** remove:
 
-<pre class="prettyprint">  
-<s>const today = moment();</s> 
-<s>const yearEnd = moment().endOf('year');</s>
-<s>const daysLeft = yearEnd.diff(today, 'days');</s> 
-</pre>
+```js//0-2
+const today = moment();
+const yearEnd = moment().endOf('year');
+const daysLeft = yearEnd.diff(today, 'days');
+```
 
 And delete this line:
 
-<pre class="prettyprint"> 
-<s>const moment = require('moment');</s> 
-</pre>
+```js//0
+const moment = require('moment');
+```
 
 It takes a bit of math, but you can implement the same countdown with vanilla
 JavaScript:
 
-```
-const today = new Date(); 
-const year = today.getFullYear(); 
-const yearEnd = new Date(year,11,31); //months are zero indexed in JS 
-const timeDiff = Math.abs(yearEnd.getTime() - today.getTime()); 
-const daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+```js
+const today = new Date();
+const year = today.getFullYear();
+const yearEnd = new Date(year,11,31); //months are zero indexed in JS
+const timeDiff = Math.abs(yearEnd.getTime() - today.getTime());
+const daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24));
 ```
 
 Now remove `moment.js` from `package.json` and run webpack in the console
@@ -175,7 +176,7 @@ again to build the optimized bundle.
 
 Ta-da! You have shaved off 223 KiB (230KB) and the app is under budget.🎉
 
-![Webpack bundle size output after optimization is 97.7 KiB](optimized-webpack-bundle-size.png)
+<img class="w-screenshot w-screenshot--filled" src="./optimized-webpack-bundle-size.png" alt="Webpack bundle size output after optimization is 97.7 KiB">
 
 ## Monitor
 

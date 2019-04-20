@@ -1,17 +1,13 @@
 ---
-page_type: guide
+layout: post
 title: Using Lighthouse Bot to set a performance budget
 author: mihajlija
 description: |
   You’ve done hard work to get fast, now make sure you stay fast by automating
   performance testing in Travis CI with Lighthouse Bot.
 web_lighthouse: N/A
-web_updated_on: 2019-01-28
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2019-01-28
 ---
-
-# Using Lighthouse Bot to set a performance budget
 
 You’ve done hard work to get fast, now make sure you stay fast by automating
 performance testing with [Lighthouse Bot](https://github.com/ebidel/lighthousebot).
@@ -30,15 +26,15 @@ that you won’t accidentally downgrade performance without noticing. You can
 so that it won’t allow merging pull-requests if the Lighthouse scores fall below
 the threshold you’ve set (e.g. < 96/100).
 
-<figure>
+<figure class="w-figure">
   <img src="./lighthouse-bot.png"
-       alt="Failing Lighthouse Bot checks on GitHub" class="screenshot">
-  <figcaption><b>Figure 1</b>: Lighthouse Bot checks on GitHub</figcaption>
+       alt="Failing Lighthouse Bot checks on GitHub" class="w-screenshot">
+  <figcaption class="w-figcaption"><b>Figure 1</b>: Lighthouse Bot checks on GitHub</figcaption>
 </figure>
 
-<div class="aside note">
+{% Aside %}
 Lighthouse Bot used to be called Lighthouse CI.
-</div>
+{% endAside %}
 
 Although you can test performance on localhost, your site will often perform
 differently on live servers. To get a more realistic picture, it’s best to
@@ -50,7 +46,7 @@ for a spin.
 
 This simple app helps you sort three numbers.
 
-[Clone the example from GitHub](https://github.com/mihajlija/lighthouse-bot-starter),
+[Clone the example from GitHub](https://github.com/GoogleChromeLabs/lighthouse-bot-starter),
 and make sure to add it as a repository on your GitHub account.
 
 ## 2. Deploy to Firebase
@@ -59,7 +55,7 @@ To get started, you’ll need a Firebase account. Once you’ve taken care of th
 [create a new project in the Firebase console](https://console.firebase.google.com/)
 by clicking "Add project":
 
-<img src="./firebase-console.png" alt="" class="screenshot">
+<img src="./firebase-console.png" alt="" class="w-screenshot">
 
 ### Deploying to Firebase
 
@@ -67,21 +63,21 @@ You'll need [Firebase CLI](https://firebase.google.com/docs/cli/) to deploy the
 app. Even if you already have it installed, it's good practice to frequently
 update the CLI to the latest version with this command:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 npm install -g firebase-tools
-</pre>
+```
 
 To authorize the Firebase CLI, run:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 firebase login
-</pre>
+```
 
 Now initialize the project:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 firebase init
-</pre>
+```
 
 The console will ask you a series of questions during setup:
 
@@ -96,9 +92,9 @@ project directory.
 
 Congrats, you’re ready to deploy! Run:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 firebase deploy
-</pre>
+```
 
 In a split second, you’ll have a live app.
 
@@ -107,14 +103,14 @@ In a split second, you’ll have a live app.
 You’ll need to [register an account](https://travis-ci.com) on Travis and then
 activate GitHub Apps integration under the Settings section of your profile.
 
-<img src="./travis-ci.png" class="screenshot" alt="GitHub Apps integration on Travis CI">
+<img src="./travis-ci.png" class="w-screenshot" alt="GitHub Apps integration on Travis CI">
 
 ### Once you have an account
 
 Go to Settings under your profile, hit the Sync account button, and make sure
 your project repo is listed on Travis.
 
-<img src="./travis-ci-sync-button.png" class="screenshot" alt="">
+<img src="./travis-ci-sync-button.png" class="w-screenshot" alt="">
 
 To kick-off continuous integration, you need two things:
 
@@ -123,25 +119,25 @@ To kick-off continuous integration, you need two things:
 
 The `lighthouse-bot-starter` repo already has a `.travis.yml` YAML file:
 
-<pre class="prettyprint">
+```yaml
 language: node_js
 node_js:
- - "8.1.3"
+  - "8.1.3"
 install:
- - npm install
+  - npm install
 before_script:
- - npm install -g firebase-tools
+  - npm install -g firebase-tools
 script:
- - webpack</td>
-</pre>
+  - webpack</td>
+```
 
 The YAML file tells Travis to install all the dependencies and build your app.
 Now it’s your turn to **push the example app to your own GitHub repository**.
 If you haven't already, run the following command:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 git push origin master
-</pre>
+```
 
 Click on your repo under Settings in Travis to see your project's Travis
 dashboard. If everything is cool, you’ll see your build go from yellow to green
@@ -166,7 +162,7 @@ Copy it and go back to Travis.
 
 In your project's Travis dashboard, go to **More options** > **Settings** > **Environment variables**.
 
-<img class="screenshot" src="./travis-environment-variables.png" alt="">
+<img class="w-screenshot" src="./travis-environment-variables.png" alt="">
 
 Paste the token in the value field, name the variable `FIREBASE_TOKEN`, and add it.
 
@@ -175,10 +171,10 @@ Paste the token in the value field, name the variable `FIREBASE_TOKEN`, and add 
 You need the following lines to tell Travis to deploy the app after every successful build.
 Add them to the end of the `.travis.yml` file. 🔚
 
-<pre class="prettyprint">
+```yaml
 after_success:
-   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
-</pre>
+  - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+```
 
 Push this change to GitHub and wait for your first automated deployment.
 If you take a look at your Travis log, it should soon say ✔️ Deploy complete!
@@ -192,7 +188,7 @@ It just needs an invitation to your repo.
 
 On GitHub, go to your project’s settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
 
-<img class="screenshot" src="./lighthouse-bot-collaborator.png" alt="Lighthouse bot collaborator status">
+<img class="w-screenshot" src="./lighthouse-bot-collaborator.png" alt="Lighthouse bot collaborator status">
 
 Approving these requests is a manual process so they don't always happen
 instantly. Before you start testing, make sure lighthousebot has approved its
@@ -203,27 +199,27 @@ and you'll get a Lighthouse Bot key in your inbox. 📬
 
 On Travis, add this key as an environment variable and name it `LIGHTHOUSE_API_KEY`:
 
-<img class="screenshot" src="./lighthouse-api-key.jpg" alt="">
+<img class="w-screenshot" src="./lighthouse-api-key.jpg" alt="">
 
-<div class="aside note">
+{% Aside %}
 You can reuse this same key for other projects.
-</div>
+{% endAside %}
 
 ### Add Lighthouse Bot to your project
 
 Next, add Lighthouse Bot to your project by running:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 npm i --save-dev https://github.com/ebidel/lighthousebot
-</pre>
+```
 
 And add this bit to the `package.json`:
 
-<pre class="prettyprint">
+```json
 "scripts": {
   "lh": "lighthousebot"
 }
-</pre>
+```
 
 ### Add Lighthouse Bot to your Travis configuration
 
@@ -232,11 +228,11 @@ request!
 
 In `.travis.yml` add another step in after_success:
 
-<pre class="prettyprint">
+```yaml
 after_success:
- - firebase deploy --token $FIREBASE_TOKEN --non-interactive
- - npm run lh -- https://staging.example.com
-</pre>
+  - firebase deploy --token $FIREBASE_TOKEN --non-interactive
+  - npm run lh -- https://staging.example.com
+```
 
 It will run a Lighthouse audit on the given URL, so replace
 https://staging.example.com with the URL of your app
@@ -245,9 +241,9 @@ https://staging.example.com with the URL of your app
 Set your standards high and tweak the setup so you don’t accept any changes to
 the app that bring the performance score below 95:
 
-<pre class="prettyprint">
+```yaml
 - npm run lh -- --perf=95 https://staging.example.com 
-</pre>
+```
 
 ### Make a pull request to trigger Lighthouse Bot test on Travis
 
@@ -263,9 +259,9 @@ To trigger the Lighthouse Bot test:
 
 Hang tight on that pull request page and wait for Lighthouse Bot to sing! 🎤
 
-<img class="screenshot" src="./lighthouse-scores.png" alt="Passing Lighthouse scores">
+<img class="w-screenshot" src="./lighthouse-scores.png" alt="Passing Lighthouse scores">
 
-<img class="screenshot" src="./github-checks.png" alt="Passing Github checks">
+<img class="w-screenshot" src="./github-checks.png" alt="Passing Github checks">
 
 The performance score is great, the app is under budget, and the check has passed!
 
@@ -274,7 +270,7 @@ The performance score is great, the app is under budget, and the check has passe
 Remember how Lighthouse tests 5 different categories? You can enforce scores for
 any of those with Lighthouse Bot flags:
 
-```shell
+```bash
 --perf  # performance
 --pwa   # progressive web app score
 --a11y  # accessibility score
@@ -284,9 +280,9 @@ any of those with Lighthouse Bot flags:
 
 Example:
 
-<pre class="prettyprint devsite-terminal">
+```
 npm run lh --perf=93 --seo=100 https://staging.example.com
-</pre>
+```
 
 This will fail the PR if the performance score drops below 93 **or** the SEO
 score drops below 100.

@@ -1,16 +1,12 @@
 ---
-page_type: guide
+layout: post
 title: Using bundlesize with Travis CI
 author: mihajlija
 description: |
   Define performance budgets with minimal setup and enforce them as part of your development workflow using bundlesize with Travis CI.
 web_lighthouse: N/A
-web_updated_on: 2019-02-01
-web_published_on: N/A
-wf_blink_components: N/A
+date: 2019-02-01
 ---
-
-# Using bundlesize with Travis CI
 
 Using [bundlesize](https://github.com/siddharthkp/bundlesize) with [Travis
 CI](https://travis-ci.com/) lets you define performance budgets with minimal
@@ -24,20 +20,19 @@ passed.
 Bundlesize's GitHub checks include a size comparison to the master branch and
 a warning in case of a big jump in size.
 
-<img src="bundlesize-check-diff.jpg" class="screenshot" alt="Bundlesize check on GitHub">
+<img src="bundlesize-check-diff.jpg" class="w-screenshot" alt="Bundlesize check on GitHub">
 
-<div class="aside note">
-You can also use bundlesize with <a href="https://circleci.com/">Circle CI</a>,
-<a href="https://app.wercker.com">Wrecker</a> and
-<a href="https://readme.drone.io/">Drone</a>.
-</div>
+{% Aside %}
+You can also use bundlesize with [Circle CI](https://circleci.com),
+[Wrecker](https://app.wercker.com) and [Drone](https://readme.drone.io).
+{% endAside %}
 
 To see it in action, here’s an app bundled with
 [webpack](https://webpack.js.org/) that lets you [vote for your favorite
 kitty](https://glitch.com/edit/#!/scarce-pixie).
 
 <a href="https://glitch.com/edit/#!/scarce-pixie">
-  <img class="screenshot" src="./cat-voting-app.png" alt="Cat voting app">
+  <img class="w-screenshot w-screenshot--filled" src="./cat-voting-app.png" alt="Cat voting app">
 </a>
 
 ## Set the performance budget
@@ -49,22 +44,22 @@ editable.
 The main bundle of this app is in the public folder. To test its size, add the
 following section to the `package.json` file:
 
-<pre class="prettyprint">
+```json
 "bundlesize": [
   {
     "path": "./public/*.bundle.js",
     "maxSize": "170 kB"
   }
 ]
-</pre>
+```
 
-<div class="aside note">
+{% Aside %}
 You can also set
-<a href="https://github.com/siddharthkp/bundlesize#1-add-the-path-and-maxsize-in-your-packagejson">different thresholds for different files</a>.
+[different thresholds for different files](https://github.com/siddharthkp/bundlesize#1-add-the-path-and-maxsize-in-your-packagejson).
 This is especially useful if you are
-<a href="https://web.dev/fast/reduce-javascript-payloads-with-code-splitting">code-splitting</a>
+[code-splitting](https://web.dev/fast/reduce-javascript-payloads-with-code-splitting)
 a bundle in your application.
-</div>
+{% endAside %}
 
 To keep the compressed JavaScript bundle size [under the recommended
 limit](https://web.dev/fast/your-first-performance-budget#budget-for-quantity-based-metrics),
@@ -74,22 +69,22 @@ Bundlesize supports [glob patterns](https://github.com/isaacs/node-glob) and the
 wildcard character in the file path will match all bundle names in the public
 folder.
 
-<div class="aside note">
-By default, bundlesize tests gzipped sizes. You can use the <a href="https://github.com/siddharthkp/bundlesize#1-add-the-path-and-maxsize-in-your-packagejson">compression option</a>
-to switch to <a href="https://en.wikipedia.org/wiki/Brotli">brotli</a>
+{% Aside %}
+By default, bundlesize tests gzipped sizes. You can use the [compression option](https://github.com/siddharthkp/bundlesize#1-add-the-path-and-maxsize-in-your-packagejson)
+to switch to [brotli](https://en.wikipedia.org/wiki/Brotli)
 compression or turn it off completely.
-</div>
+{% endAside %}
 
 ### Create a test script
 
 Since Travis needs a test to run, add a test script to `package.json`:
 
-<pre class="prettyprint">
+```json
 "scripts": {
   "start": "webpack && http-server -c-1",
   "test": "bundlesize"
 }
-</pre>
+```
 
 ## Set up continuous integration
 
@@ -102,12 +97,12 @@ You’ll need to [register an account on
 Travis](https://docs.travis-ci.com/user/tutorial) and activate GitHub Apps
 integration under the Settings section of your profile.
 
-<img src="travis-ci.png" class="screenshot" alt="GitHub Apps integration on Travis CI">
+<img src="travis-ci.png" class="w-screenshot" alt="GitHub Apps integration on Travis CI">
 
 Once you have an account, go to **Settings** under your profile, click the **Sync
 account** button, and make sure your new repo is listed on Travis.
 
-<img src="travis-ci-sync-button.png" class="screenshot" alt="Travis CI Sync button">
+<img src="travis-ci-sync-button.png" class="w-screenshot" alt="Travis CI Sync button">
 
 ### Authorize bundlesize to post on pull requests
 
@@ -116,12 +111,12 @@ this link to get the bundlesize
 token](https://github.com/login/oauth/authorize?scope=repo%3Astatus&client_id=6756cb03a8d6528aca5a)
 that will be stored in the Travis configuration.
 
-<img src="bundlesize-token.jpg" class="screenshot" alt="bundlesize token">
+<img src="bundlesize-token.jpg" class="w-screenshot" alt="bundlesize token">
 
 In your project's Travis dashboard, go to **More options** > **Settings** > **Environment
 variables**.
 
-<img src="environment-variables.png" class="screenshot" alt="Adding environment variables on Travis CI">
+<img src="environment-variables.png" class="w-screenshot" alt="Adding environment variables on Travis CI">
 
 Add a new environment variable with the token as the value field and
 BUNDLESIZE_GITHUB_TOKEN as the name.
@@ -152,13 +147,13 @@ the homepage of the repository.
 
 You’ll now see status checks in progress on the pull request page.
 
-<img src="github-checks-in-progress.png" class="screenshot" alt="Github checks in progress">
+<img src="github-checks-in-progress.png" class="w-screenshot" alt="Github checks in progress">
 
 It won’t take long until all checks are done. Unfortunately, the cat voting app
 is a bit bloated and does not pass the performance budget check. The main bundle
 is 266 KB and the budget is 170 KB.
 
-<img src="bundlesize-fail.png" class="screenshot" alt="Failed bundlesize check">
+<img src="bundlesize-fail.png" class="w-screenshot" alt="Failed bundlesize check">
 
 ### Optimize
 
@@ -166,10 +161,10 @@ Luckily, there are some easy performance wins you can make by [removing unused
 code](https://web.dev/fast/remove-unused-code). There are two main imports in
 `src/index.js`:
 
-<pre class="prettyprint">
+```js
 import firebase from "firebase";
 import * as moment from 'moment';
-</pre>
+```
 
 The app is using [Firebase Realtime
 Database](https://firebase.google.com/products/realtime-database/) to store the
@@ -179,16 +174,16 @@ more than just a database (auth, storage, messaging etc.).
 Fix this by importing only the package that the app needs in the `src/index.js`
 file:
 
-<pre class="prettyprint">
+```js
 import firebase from "firebase";
 import firebase from 'firebase/app';
 import 'firebase/database';
-</pre>
+```
 
-<div class="aside note">
-The <code>firebase/app</code> import, which sets up the API surface for each of
+{% Aside %}
+The `firebase/app` import, which sets up the API surface for each of
 the different services, is always required.
-</div>
+{% endAside %}
 
 ### Re-run test
 
@@ -199,14 +194,13 @@ bundle file.
 
 2. Then click the **Console** button. This will open the console in another tab.
 
-3. In the console, type <pre class="devsite-terminal devsite-click-to-copy">
-  webpack</pre> and wait for it to finish the build.
+3. In the console, type `webpack` and wait for it to finish the build.
 
 4. Export the code to GitHub from **Tools** > **Git, Import, and Export** > **Export to GitHub**.
 
 5. Go to the pull request page on GitHub and wait for all checks to finish.
 
-<img src="bundlesize-pass.png" class="screenshot" alt="Passed bundlesize check">
+<img src="bundlesize-pass.png" class="w-screenshot" alt="Passed bundlesize check">
 
 Success! The new size of the bundle is 125.5 KB and all the checks have passed.
 🎉
@@ -214,7 +208,7 @@ Success! The new size of the bundle is 125.5 KB and all the checks have passed.
 Unlike Firebase, importing parts of the moment library cannot be done as easily,
 but it’s worth a shot. Check out how you can further optimize the app in the
 [Remove unused code
-codelab](https://web.dev/fast/remove-unused-code/codelab-remove-unused-code).
+codelab](https://web.dev/fast/codelab-remove-unused-code).
 
 ### Monitor
 

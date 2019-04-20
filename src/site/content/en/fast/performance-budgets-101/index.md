@@ -1,17 +1,13 @@
 ---
-page_type: guide
+layout: post
 title: Performance budgets 101
 author: mihajlija
 description: |
   Good performance is rarely a side effect. Learn about performance budgets and
   how they can set you on track for success.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2018-11-05
 ---
-
-# Performance budgets 101
 
 Performance is an important part of the user experience and it [affects business metrics](https://wpostats.com/). It’s tempting to think that if you are a good developer you’ll end up with a performant site, but the truth is that good performance is rarely a side effect. As with most other things—to reach a goal you have to define it clearly. Start the journey by setting a **performance budget**. 
 
@@ -36,7 +32,9 @@ We’ve already mentioned a few things you can include in a performance budget s
 
 However, these numbers don’t tell you much about the user experience. Two pages with the same number of requests or same weight can render differently depending on the order in which resources get requested. If a [critical resource](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) like a hero image or a stylesheet on one of the pages is loaded late in the process, the users will wait longer to see something useful and perceive the page as slower. If on the other page the most important parts load quickly, they may not even notice if the rest of the page doesn't. 
 
-![Image of progressive page rendering based on the critical-path](./progressive-page-rendering.png)
+<figure class="w-figure w-figure--center">
+  <img src="./progressive-page-rendering.png" alt="Image of progressive page rendering based on the critical-path" class="w-screenshot">
+</figure>
 
 This is why it’s important to keep track of another type of metric.
 

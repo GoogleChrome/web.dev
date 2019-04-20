@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Serve images with correct dimensions
 author: katiehempenius
 description: |
@@ -8,12 +8,11 @@ description: |
   performance.
 web_lighthouse:
   - uses-responsive-images
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 wf_blink_components: N/A
+codelabs:
+  - codelab-serve-images-correct-dimensions
 ---
-
-# Serve images with correct dimensions
 
 We've all been there: you forgot to scale down an image before adding it to the
 page. The image looks fine, but it is wasting users' data and hurting page
@@ -22,9 +21,9 @@ performance.
 ## Identify incorrectly sized images
 
 Lighthouse makes it easy to identify incorrectly-sized images. Run the
-Performance Audit (Lighthouse > Options > Performance) and look for the results
-of the "Properly size images" audit. The audit lists any images that need to be
-resized.
+Performance Audit (**Lighthouse > Options > Performance**) and look for the
+results of the **Properly size images** audit. The audit lists any images that
+need to be resized.
 
 ## Determine the correct image size
 
@@ -62,7 +61,7 @@ provides information about the displays of many common devices.
 The DevTools Elements panel can be used to determine what size an image is
 displayed at.
 
-![DevTools element's panel](./elements-panel.png)
+<img src="./elements-panel.png" alt="DevTools element's panel" class="w-screenshot">
 
 ### The "Better" approach
 
@@ -99,14 +98,16 @@ command line tool for creating and editing images. Most people can resize images
 far more quickly when using the CLI than a GUI-based image editor.
 
 Resize image to 25% the size of the original:
-<pre class="devsite-terminal devsite-click-to-copy">
+
+```
 convert flower.jpg -resize 25% flower_small.jpg
-</pre>
+```
 
 Scale image to fit within "200px wide by 100px tall":
-<pre class="devsite-terminal devsite-click-to-copy">
+
+```
 convert flower.jpg -resize 200x100 flower_small.jpg
-</pre>
+```
 
 If you'll be resizing many images, you may find it more convenient to use a
 script or service to automate the process. You can learn more about this in the
