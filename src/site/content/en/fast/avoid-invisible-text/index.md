@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Avoid invisible text during font loading
 author: katiehempenius
 description: |
@@ -8,13 +8,11 @@ description: |
   you're optimizing for performance, you'll want to avoid the "flash of
   invisible text" and show content to users immediately using a system font.
 web_lighthouse:
-- font-display
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+  - font-display
+date: 2018-11-05
+codelabs:
+  - codelab-avoid-invisible-text
 ---
-
-# Avoid invisible text during font loading
 
 ## Why should you care?
 
@@ -34,33 +32,35 @@ you'll actually implement and maintain.
 
 ## Option #1: Use font-display
 
-<table>
-<thead>
-<tr>
-<th>Before</th>
-<th>After</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Before</th>
+        <th>After</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
 <code>
 @font-face {
   font-family: Helvetica;
 }
 </code>
-</td>
-<td>
+        </td>
+        <td>
 <code>
 @font-face {
   font-family: Helvetica;
-  font-display: swap;
+  <strong>font-display: swap;</strong>
 }
 </code>
-</td>
-</tr>
-</tbody>
-</table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
 is an API for specifying font display strategy. `swap` tells the browser that
@@ -73,40 +73,45 @@ it's default behavior for loading fonts. Check which browsers support
 
 These are the default font-loading behaviors for common browsers:
 
-<table>
-<thead>
-<tr>
-<th><strong>Browser</strong></th>
-<th><strong>Default behavior if font is not ready…</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Microsoft Edge</td>
-<td>Uses a system font until font is ready. Swaps out font.</td>
-</tr>
-<tr>
-<td>Chrome</td>
-<td>Will hide text for up to 3 seconds. If text is still not ready, uses a
-system font until font is ready. Swaps out font.</td>
-</tr>
-<tr>
-<td>Firefox</td>
-<td>Will hide text for up to 3 seconds. If text is still not ready, uses a
-system font until font is ready. Swaps out font. </td>
-</tr>
-<tr>
-<td>Safari</td>
-<td>Hides text until font is ready.</td>
-</tr>
-</tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Browser</strong></th>
+        <th><strong>Default behavior if font is not ready…</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Edge</td>
+        <td>Uses a system font until font is ready. Swaps out font.</td>
+      </tr>
+      <tr>
+        <td>Chrome</td>
+        <td>
+          Will hide text for up to 3 seconds. If text is still not ready, uses a
+          system font until font is ready. Swaps out font.
+        </td>
+      </tr>
+      <tr>
+        <td>Firefox</td>
+        <td>
+          Will hide text for up to 3 seconds. If text is still not ready, uses a
+          system font until font is ready. Swaps out font.
+        </td>
+      </tr>
+      <tr>
+        <td>Safari</td>
+        <td>Hides text until font is ready.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ## Option #2: Wait to use custom fonts until they are loaded
 
 With a bit more work, the same behavior can be implemented to work across all
-browsers. Check out the step-by-step [guide](/fast/avoid-invisible-text/codelab-avoid-invisible-text.md) or the [demo](https://glitch.com/~font-observer-demo) for a more detailed
-explanation of the code changes.
+browsers.
 
 There are three parts to this approach:
 
@@ -122,6 +127,10 @@ Here are the changes you can expect to make in order to implement this:
 +  Add a script to your page. This script detects when the custom font is
     loaded and then will update the page styling.
 
+{% Aside 'codelab' %}
+[Use Font Face Observer to display text immediately](/fast/codelab-avoid-invisible-text).
+{% endAside %}
+
 ## Verify
 
 Run Lighthouse to verify the site is using `font-display: swap` to display
@@ -131,5 +140,5 @@ text:
 1. Select the **Performance** checkbox.
 1. Click **Run Audits** to generate a report.
 
-Confirm this audit is passing: "Ensure text remains visible during webfont
-load".
+Confirm this audit is passing: **Ensure text remains visible during webfont
+load**.
