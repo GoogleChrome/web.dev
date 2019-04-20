@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Using the Chrome UX Report to look at performance in the field
 author: rviscomi
 description: |
@@ -7,12 +7,8 @@ description: |
   user experience data on millions of websites. Unlike lab data, CrUX data
   actually comes from opted-in users in the field.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2018-11-05
 ---
-
-# Using the Chrome UX Report to look at performance in the field
 
 The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
 (informally known as CrUX) is a public dataset of real user experience data on 

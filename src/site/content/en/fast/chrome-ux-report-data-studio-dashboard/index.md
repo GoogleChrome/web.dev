@@ -1,5 +1,5 @@
 ---
-page_type: guide
+layout: post
 title: Using the CrUX Dashboard on Data Studio
 author: rviscomi
 description: |
@@ -8,12 +8,8 @@ description: |
   guide, learn how to create your own custom CrUX Dashboard to track an origin's
   user experience.
 web_lighthouse: N/A
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
-wf_blink_components: N/A
+date: 2018-11-05
 ---
-
-# Using the CrUX Dashboard on Data Studio
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/) is a 
 powerful data visualization tool that enables you to build dashboards on top of 
@@ -22,7 +18,7 @@ big data sources, like the Chrome UX Report
 In this guide, learn how to create your own custom CrUX Dashboard to track an 
 origin's user experience.
 
-<img class="screenshot" src="./dash_fcp.png" alt="CrUX Dashboard">
+<img class="w-screenshot" src="./dash_fcp.png" alt="CrUX Dashboard">
 
 The CrUX Dashboard is built with a Data Studio feature called [Community 
 Connectors](https://developers.google.com/datastudio/connector/). 
@@ -41,7 +37,7 @@ This will take you to the CrUX community connector page where you can provide
 the origin for which the dashboard will be generated. Note that first-time users 
 may need to complete permission or marketing preference prompts.
 
-<img class="screenshot" src="./dash_connector.png" alt="CrUX Data Studio connector">
+<img class="w-screenshot" src="./dash_connector.png" alt="CrUX Data Studio connector">
 
 The text input field accepts origins only, not full URLs. For example, 
 `https://developers.google.com` is an origin but 
@@ -68,7 +64,7 @@ performance for each supported metric (e.g., first contentful paint), and of
 course the name of the origin. There's nothing you need to do or change on this 
 page, just click "Create Report" to continue.
 
-<img class="screenshot" src="./dash_schema.png" alt="CrUX Data Studio schema">
+<img class="w-screenshot" src="./dash_schema.png" alt="CrUX Data Studio schema">
 
 ## Using the dashboard
 
