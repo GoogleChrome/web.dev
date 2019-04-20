@@ -83,7 +83,7 @@ Above is same as saying "Data is encoded with gzip. Do not cache this please"
 ## How does CORS work?
 
 Remember, the same-origin policy tells the browser to block cross-origin
-requests. When you want to get a public resource or other server on different origin, the resource providing server needs to tell the browser "This origin where request is coming from can access my resource". The browser remembers that and allow cross-origin resource shearing.
+requests. When you want to get a public resource or other server on different origin, the resource providing server needs to tell the browser "This origin where request is coming from can access my resource". The browser remembers that and allow cross-origin resource sharing.
 
 ### Step 1: client (browser) request
 When the browser is making a cross-origin request, the browser adds an `Origin` header with
