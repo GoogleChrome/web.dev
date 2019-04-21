@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../settings/type';
 
 // =============================================================================
 // CODE OVERVIEW
@@ -22,6 +23,10 @@ $CODE_COLORS: (
   light-gray: #f7f7f7,
   dark-gray: #969896
 );
+
+// Note: An interesting way to target a <code> element appearing outside of
+// a <pre> (for inline code snippets) is to use a selector like this:
+// :not(pre) > code { ... }
 
 code {
   font-size: .9em;
@@ -128,11 +133,36 @@ h6 code {
 
 }
 
-.highlight-line-active {
-  font-weight: bold;
-}
-
 .namespace {
   opacity: .7;
 }
+
+
+.highlight-line-active,
+.highlight-line-add,
+.highlight-line-active *,
+.highlight-line-add * {
+  color: $PRIMARY_TEXT_COLOR !important;
+  font-weight: $FONT_WEIGHT_BOLD;
+}
+
+.highlight-line-active {
+  background-color: $YELLOW_200;
+}
+
+.highlight-line-add {
+  background-color: $GREEN_200;
+  text-decoration: none;
+}
+
+.highlight-line-remove,
+.highlight-line-remove * {
+  color: rgba($PRIMARY_TEXT_COLOR, .6) !important;
+}
+
+.highlight-line-remove {
+  background-color: $RED_200;
+  text-decoration-color: $RED_100;
+}
+
 // sass-lint:enable class-name-format
