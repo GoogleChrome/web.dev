@@ -2,8 +2,6 @@
 layout: layout
 ---
 
-{% import 'macros/components.njk' as components %}
-
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <main class="path-landing-page">
@@ -38,24 +36,16 @@ layout: layout
 
   <hr>
 
-  <section class="w-layout-container">
+  <section class="w-grid">
     {% for topic in path.topics %}
     <h2 id="{{ topic.title | slug }}" class="no-link">
       {{ topic.title }}
       <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
     </h2>
-    <div class="w-layout-grid--three w-mb--std">
+    <div class="w-grid__columns w-grid__columns--three">
       {% for slug in topic.pathItems %}
-        {% for item in collections[path.slug] %}
-          {% if item.fileSlug === slug %}
-            {#
-              Use a macro here instead of a shortcode until
-              https://github.com/11ty/eleventy/issues/498 is fixed.
-            #}
-            {{ components.ArticleSmall(item, authors[item.data.author]) }}
-            {# {% ArticleSmall {post: item, author: authors[item.data.author]} %} #}
-          {% endif %}
-        {% endfor %}
+        {% set item = slug | findBySlug %}
+        {% PostCard {post: item, author: authors[item.data.author]} %}
       {% endfor %}
     </div>
     {% endfor %}

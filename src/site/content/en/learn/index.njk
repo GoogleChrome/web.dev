@@ -14,21 +14,21 @@ title: Learn
         to know about building for the modern web.
       </p>
     </header>
-    <section>
-      <h3 class="w-learn-heading">Realize what the web can be</h3>
-      <div class="w-layout-grid--three">
-        {% for path in paths %}
-          {% Collection path %}
-        {% endfor %}
-      </div>
-    </section>
-    <section>
-      <h3 class="w-learn-heading">Lighthouse</h3>
-      <div class="w-layout-grid--three">
-        {% for audit in audits %}
-          {% Collection audit %}
-        {% endfor %}
-      </div>
-    </section>
   </div>
+  <section class="w-grid">
+    <h3 class="w-learn-heading">Realize what the web can be</h3>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for path in paths %}
+        {% PathCard path %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="w-grid">
+    <h3 class="w-learn-heading">Lighthouse</h3>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for audit in audits %}
+        {% PathCard audit %}
+      {% endfor %}
+    </div>
+  </section>
 </div>

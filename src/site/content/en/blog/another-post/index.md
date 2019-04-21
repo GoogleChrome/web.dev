@@ -1,6 +1,8 @@
 ---
-title: Another post
+title: Move Ya! Or maybe, don't, if the user prefers-reduced-motion!
 author: robdodson
+hero: hero.jpg
+alt: An icon set displayed on a computer monitor.
 description: |
   Another post!
 tags:

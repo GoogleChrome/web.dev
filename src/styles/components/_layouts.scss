@@ -26,31 +26,3 @@
 .w-layout-container { max-width: 960px; }
 // Article pages have a narrower, single column layout.
 .w-layout-container--narrow { max-width: 800px; }
-
-// -----------------------------------------------------------------------------
-// GRID LAYOUTS
-// -----------------------------------------------------------------------------
-
-.w-layout-grid--two,
-.w-layout-grid--three,
-.w-layout-grid--four {
-  display: grid;
-  // sass-lint:disable-all
-  // scss-lint:disable all
-  gap: 16px;
-  grid-gap: 16px;
-  // scss-lint:enable all
-  // sass-lint:enable-all
-}
-
-.w-layout-grid--two {
-  grid-template-columns: repeat(auto-fill, minmax(464px, 1fr));
-}
-
-.w-layout-grid--three {
-  grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
-}
-
-.w-layout-grid--four {
-  grid-template-columns: repeat(auto-fill, minmax(192px, 1fr));
-}

@@ -11,16 +11,15 @@ const {
   ShareAction,
   SubscribeAction,
 } = require(`./${componentsDir}/Actions`);
-const Article = require(`./${componentsDir}/Article`);
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
-const ArticleSmall = require(`./${componentsDir}/ArticleSmall`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
-const Collection = require(`./${componentsDir}/Collection`);
 const Compare = require(`./${componentsDir}/Compare`);
+const PathCard = require(`./${componentsDir}/PathCard`);
+const PostCard = require(`./${componentsDir}/PostCard`);
 
 const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
@@ -28,7 +27,7 @@ const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`)
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
 
 const filtersDir = 'src/site/_filters';
-const {memoize} = require(`./${filtersDir}/find-by-slug`);
+const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const githubLink = require(`./${filtersDir}/github-link`);
@@ -84,6 +83,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // FILTERS
   //----------------------------------------------------------------------------
+  config.addFilter('findBySlug', findBySlug);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('githubLink', githubLink);
@@ -96,16 +96,15 @@ module.exports = function(config) {
   // SHORTCODES
   //----------------------------------------------------------------------------
   config.addPairedShortcode('Actions', Actions);
-  config.addShortcode('Article', Article);
   config.addShortcode('ArticleNavigation', ArticleNavigation);
-  config.addShortcode('ArticleSmall', ArticleSmall);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
-  config.addShortcode('Collection', Collection);
   config.addPairedShortcode('Compare', Compare);
+  config.addShortcode('PathCard', PathCard);
+  config.addShortcode('PostCard', PostCard);
   config.addShortcode('ShareAction', ShareAction);
   config.addShortcode('SubscribeAction', SubscribeAction);
 

@@ -3,6 +3,8 @@ layout: post
 title: Use Imagemin to compress images
 author: katiehempenius
 date: 2018-11-05
+hero: hero.jpg
+alt: gray pipe cutter against black background.
 description: |
   Uncompressed images bloat your pages with unnecessary bytes. Run Lighthouse to
   check for opportunities to improve page load by compressing images.
