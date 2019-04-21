@@ -15,9 +15,9 @@ $MARGIN_POSITION_MAP: (
 $MARGIN_SIZE_MAP: (
   non: 0,
   sm: 8px,
-  std: 18px, // Standard margin
-  l: 36px,
-  xl: 54px,
+  std: 16px, // Standard margin
+  l: 32px,
+  xl: 56px,
 );
 
 // Loop through each margin setting and create a class with those settings.
@@ -40,9 +40,9 @@ $PADDING_POSITION_MAP: (
 $PADDING_SIZE_MAP: (
   non: 0,
   sm: 8px,
-  std: 18px, // Standard padding
-  l: 36px,
-  xl: 54px,
+  std: 16px, // Standard padding
+  l: 32px,
+  xl: 56px,
 );
 
 // Loop through each padding setting and create a class with those settings.

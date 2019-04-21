@@ -10,9 +10,9 @@ description: |
 web_lighthouse: N/A
 ---
 
-What do you imagine when someone says "security"? 
+What do you imagine when someone says "security"?
 
-Hackers? Attacks? Defenses? A programmer in a black hoodie in a dark room? 
+Hackers? Attacks? Defenses? A programmer in a black hoodie in a dark room?
 
 When the word "security" comes to mind, it's usually in the context of bad news.
 You often encounter headlines like "A big social network leaked login passwords"
@@ -38,7 +38,7 @@ In software development, when an application does not work the way it is
 intended to work, it's called "a bug". Sometimes a bug displays wrong
 information or crashes on a certain action. A **vulnerability**
 (sometimes called a **security bug**) is a type of bug that could be used for
-abuse. 
+abuse.
 
 Bugs are common in the day to day activities of a developer. Which means,
 vulnerabilities are also frequently introduced into applications. What's
@@ -46,48 +46,70 @@ important is that you are aware of common vulnerabilities in order
 to mitigate them as much as you can. It is just like minimizing other bugs by
 following common patterns and techniques.
 
-Most security techniques are just good programming, for example:   
+Most security techniques are just good programming, for example:
 - Check values entered by a user (not null, not an empty string, checking the
-amount of data).  
-- Ensure a single user can't take up too much time.  
+amount of data).
+- Ensure a single user can't take up too much time.
 - Build unit tests so security bugs can't slip in by accident.
 
 ## What are security features?
 
 Your first lines of defense are security features such as HTTPS and CORS.
-(You'll learn about these acronyms later so don't worry about them for now.) 
+(You'll learn about these acronyms later so don't worry about them for now.)
 For example, encrypting data using HTTPS might not be fixing a bug, but it
 protects the data you're exchanging with users to other parties (intercepting
-data is a common attack). 
+data is a common attack).
 
 ## What's the impact?
 
-When an application is not secure, different people could be affected. 
+When an application is not secure, different people could be affected.
 
-<table class="responsive">
-<tbody>
-    <tr>
-        <td>Impact on users</td>
+<div class="w-table-wrapper">
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>Impact on users</strong></td>
         <td>
-            - Sensitive information (such as personal data) could be leaked or stolen.<br>
-            - Content could be tampered with. A tampered site could direct users to a malicious site.
+          <ul class="w-unstyled-list">
+            <li>
+              Sensitive information (such as personal data) could be leaked or
+              stolen.
+            </li>
+            <li>
+              Content could be tampered with. A tampered site could direct users
+              to a malicious site.
+            </li>
+          </ul>
         </td>
-    </tr>
-    <tr>
-        <td>Impact on the application</td>
+      </tr>
+      <tr>
+        <td><strong>Impact on the application</strong></td>
         <td>
-            - User trust may be lost.<br>
-            - Business could be lost due to downtime or loss of confidence as a result of tampering or system shortage.
+          <ul class="w-unstyled-list">
+            <li>
+              User trust may be lost.
+            </li>
+            <li>
+              Business could be lost due to downtime or loss of confidence as a
+              result of tampering or system shortage.
+            </li>
+          </ul>
         </td>
-    </tr>
-    <tr>
-        <td>Impact on other systems</td>
+      </tr>
+      <tr>
+        <td><strong>Impact on other systems</strong></td>
         <td>
-            - A hijacked application could be used to attack other systems, such as with a denial-of-service attack using a botnet.
+          <ul class="w-unstyled-list">
+            <li>
+              A hijacked application could be used to attack other systems, such
+              as with a denial-of-service attack using a botnet.
+            </li>
+          </ul>
         </td>
-    </tr>
-</tbody>
-</table>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Taking active steps to secure your application is not only crucial for you and
 your business but also for your users, protecting them and other systems from

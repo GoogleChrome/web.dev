@@ -59,7 +59,9 @@ served from the root (your website's top level directory).
     </thead>
     <tbody>
       <tr>
-        <td><code>short_name</code> (required)</td>
+        <td>
+        <code><strong>short_name</strong></code> (required)
+        </td>
         <td>
           Short human-readable name for the application. This is intended for when
           there is insufficient space to display the full name of the web
@@ -67,15 +69,15 @@ served from the root (your website's top level directory).
         </td>
       </tr>
       <tr>
-        <td><code>name</code> (required)</td>
+        <td><code><strong>name</strong></code> (required)</td>
         <td>Human-readable name for the site when displayed to the user.</td>
       </tr>
       <tr>
-        <td><code>description</code> (recommended)</td>
+        <td><code><strong>description</strong></code> (recommended)</td>
         <td>General description of what the PWA does.</td>
       </tr>
       <tr>
-        <td><code>icons</code> (required)</td>
+        <td><code><strong>icons</strong></code> (required)</td>
         <td>
           An array of image files that can serve as application icons. Chrome
           requires a 192x192px and a 512x512px icon. Additional sizes are
@@ -84,25 +86,25 @@ served from the root (your website's top level directory).
         </td>
       </tr>
       <tr>
-        <td><code>start_url</code> (required)</td>
+        <td><code><strong>start_url</strong></code> (required)</td>
         <td>
           The URL that loads when a user launches the application. This has to be
           a relative URL, relative to the manifest url.
         </td>
       </tr>
       <tr>
-        <td><code>background_color</code> (recommended)</td>
+        <td><code><strong>background_color</strong></code> (recommended)</td>
         <td>
           The background color used on the auto-generated splash screen when the
           PWA is launched.
         </td>
       </tr>
       <tr>
-        <td><code>display</code> (required)</td>
+        <td><code><strong>display</strong></code> (required)</td>
         <td>The developers' preferred display mode for the PWA.</td>
       </tr>
       <tr>
-        <td><code>scope</code> (recommended)</td>
+        <td><code><strong>scope</strong></code> (recommended)</td>
         <td>
           The navigation scope of this website's context. This restricts what web
           pages can be viewed while the manifest is applied. If the user navigates
@@ -111,10 +113,10 @@ served from the root (your website's top level directory).
         </td>
       </tr>
       <tr>
-        <td><code>theme_color</code> (recommended)</td>
+        <td><code><strong>theme_color</strong></code> (recommended)</td>
         <td>
           The default theme color for an application. This affects how the OS
-          displays the site. <br />
+          displays the site. <br>
           <ul>
             <li>
               On Android's task switcher, the theme color surrounds the site.

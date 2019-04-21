@@ -43,15 +43,13 @@ you'll actually implement and maintain.
     <tbody>
       <tr>
         <td>
-<code>
-@font-face {
+<code>@font-face {
   font-family: Helvetica;
 }
 </code>
         </td>
         <td>
-<code>
-@font-face {
+<code>@font-face {
   font-family: Helvetica;
   <strong>font-display: swap;</strong>
 }
