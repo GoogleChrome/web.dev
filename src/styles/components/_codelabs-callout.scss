@@ -55,6 +55,16 @@
   margin: 0;
 }
 
+.w-codelabs-callout__list {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.w-codelabs-callout__listitem {
+  width: 100%;
+}
+
 .w-codelabs-callout__listitem:not(:last-of-type) {
   border-bottom: 1px solid $BORDER_COLOR;
 }
