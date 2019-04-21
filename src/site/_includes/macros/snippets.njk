@@ -1,9 +1,0 @@
-{% macro nextGuide(page, paths) %}{% nextGuideLink page, paths %}{% endmacro %}
-
-{% macro getTitleFromUrl(articleUrl, collection) %}
-  {% for article in collection %}
-    {% if articleUrl == article.url %}
-      {{ article.data.title }}
-    {% endif %}
-  {%- endfor -%}
-{% endmacro %}

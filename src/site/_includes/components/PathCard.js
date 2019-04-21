@@ -15,35 +15,40 @@ function getPostCount(learningPath) {
   return `${count} ${label}`;
 }
 
+/**
+ * PathCard used to preview learning paths.
+ * @param {Object} path A learning path data object.
+ * @return {string}
+ */
 module.exports = (path) => {
   return html`
-    <a href="/${path.slug}" class="w-card">
-      <div class="w-collection">
-        <div class="w-collection__info">
-          <ul class="w-collection__info-list">
+    <a href="/${path.slug}" class="w-card" role="listitem">
+      <div class="w-path-card">
+        <div class="w-path-card__info">
+          <ul class="w-path-card__info-list">
             <li
-              class="w-collection__info-listitem w-collection__info-listitem--category"
+              class="w-path-card__info-listitem w-path-card__info-listitem--category"
             >
               Collection
             </li>
             <li
-              class="w-collection__info-listitem w-collection__info-listitem--more-info"
+              class="w-path-card__info-listitem w-path-card__info-listitem--more-info"
             >
               ${getPostCount(path)} resources
             </li>
             <li
-              class="w-collection__info-listitem w-collection__info-listitem--updated"
+              class="w-path-card__info-listitem w-path-card__info-listitem--updated"
             >
               Updated <time>${path.date}</time>
             </li>
           </ul>
         </div>
-        <div class="w-collection__cover">
-          <img class="w-collection__cover-image" src="${path.cover}" alt="" />
+        <div class="w-path-card__cover">
+          <img class="w-path-card__cover-image" src="${path.cover}" alt="" />
         </div>
-        <div class="w-collection__desc">
-          <h2 class="w-collection__headline">${path.title}</h2>
-          <p class="w-collection__summary">
+        <div class="w-path-card__desc">
+          <h2 class="w-path-card__headline">${path.title}</h2>
+          <p class="w-path-card__subhead">
             ${path.description}
           </p>
         </div>

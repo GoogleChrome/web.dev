@@ -1,11 +1,10 @@
 // =============================================================================
-// MARGINS OVERVIEW
+// SPACING OVERVIEW
 //
-// Overrides for common margins.
+// Overrides for common margins and paddings.
 //
 // =============================================================================
 
-// All margin settings.
 $MARGIN_POSITION_MAP: (
   mb: margin-bottom,
   mt: margin-top,
@@ -14,6 +13,7 @@ $MARGIN_POSITION_MAP: (
 );
 
 $MARGIN_SIZE_MAP: (
+  non: 0,
   sm: 8px,
   std: 18px, // Standard margin
   l: 36px,
@@ -29,3 +29,29 @@ $MARGIN_SIZE_MAP: (
     }
   }
 }
+
+$PADDING_POSITION_MAP: (
+  pb: padding-bottom,
+  pt: padding-top,
+  pl: padding-left,
+  pr: padding-right,
+);
+
+$PADDING_SIZE_MAP: (
+  non: 0,
+  sm: 8px,
+  std: 18px, // Standard padding
+  l: 36px,
+  xl: 54px,
+);
+
+// Loop through each padding setting and create a class with those settings.
+// For example, .w-pb--l is a large padding on the bottom.
+@each $SIZE_NAME, $SIZE_VALUE in $PADDING_SIZE_MAP {
+  @each $PADDING_ALIAS, $PADDING_PROPERTY in $PADDING_POSITION_MAP {
+    .w-#{$PADDING_ALIAS}--#{$SIZE_NAME} {
+      #{$PADDING_PROPERTY}: $SIZE_VALUE;
+    }
+  }
+}
+

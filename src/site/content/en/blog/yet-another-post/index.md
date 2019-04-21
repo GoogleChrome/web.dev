@@ -1,6 +1,8 @@
 ---
-title: Yet another post
+title: "KV Storage: the Web's First Built-in Module"
 author: robdodson
+hero: hero.jpg
+alt: Craggy rocks on the sea shore.
 description: |
   Why not just one more post?
 tags:
