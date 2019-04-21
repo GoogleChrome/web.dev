@@ -30,7 +30,7 @@ but **Cross-Origin Resource Sharing (CORS)** fixes this in a standard way.
 Enabling **CORS** lets the server tell the browser it's permitted to use an
 additional origin.
 
-# How does a resource request work on the web?
+## How does a resource request work on the web?
 
 <figure class="w-figure w-figure--inline-right">
   <img src="./request_response.png" alt="request and response">
@@ -46,38 +46,42 @@ resource.
 
 The HTTP header is used to negotiate the type of message exchange between the
 client and the server and is used to determine access. Both the browser's
-request and the server's response message are divided into two parts: header and
-body:
+request and the server's response message are divided into two parts: **header**
+and **body**:
 
-<table  class="responsive">
-<tbody>
-    <tr>
-        <td>header</td>
-        <td>
-            Information about the message such as type of the message or encoding of the message. A header can include a <a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">variety of information</a> expressed as key-value pairs. The request header and response header contain different information.<br>
-            <br>
-            (Note that headers can't actually have comments)<br>
-            <br>
-            <strong>Sample Request header</strong>
-<pre>Accept: text/html
-Cookie: Version=1</pre>
-Above is equivalent to saying "I want to receive HTML in response. Here is cookie I have"
+### header
 
-<strong>Sample Response header</strong>
+Information about the message such the type of message or the encoding of the
+message. A header can include a
+[variety of information](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
+expressed as key-value pairs. The request header and response header contain
+different information.
 
-<pre>Content-Encoding: gzip
-Cache-Control: no-cache </pre>
+{% Aside %}
+It's important to note that headers cannot contain comments.
+{% endAside %}
 
-Above is same as saying "Data is encoded with gzip. Do not cache this please"
+**Sample Request header**
+```
+Accept: text/html
+Cookie: Version=1
+```
 
-<tr>
-    <td>Body</td>
-    <td>
-        The message itself. This could be plain text, an image binary, JSON, HTML,etc.
-    </td>
-    </tr>
-</tbody>
-</table>
+The above is equivalent to saying "I want to receive HTML in response. Here is
+cookie I have."
+
+**Sample Response header**
+```
+Content-Encoding: gzip
+Cache-Control: no-cache
+```
+
+The above is equivalent to saying "Data is encoded with gzip. Do not cache this
+please."
+
+### body
+
+The message itself. This could be plain text, an image binary, JSON, HTML,etc.
 
 ## How does CORS work?
 
@@ -141,8 +145,12 @@ Open the devtools javascript console and try:
 fetch('https://cors-demo.glitch.me/', {mode:'cors'})
 ```
 
-You should see an error saying `request has been blocked by CORS policy: No
-'Access-Control-Allow-Origin' header is present on the requested resource.`
+You should see an error saying:
+
+```
+request has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header
+is present on the requested resource.
+```
 
 The second endpoint (line 10) sends the same file in response but adds
 `Access-Control-Allow-Origin: *` in the header. From the console, try

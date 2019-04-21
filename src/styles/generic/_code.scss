@@ -57,24 +57,9 @@ pre[class*='language-'] code {
   margin: 0;
 }
 
-pre code,
-table code {
+pre code {
   background: transparent;
   border: 0;
-}
-
-table code {
-  font-size: .9em; // DevSite override
-  font-weight: 400; // DevSite override
-  line-height: 1.7em; // DevSite override
-
-  // Prism inserts white space characters before and after code blocks
-  // help center them in space.
-  &::before,
-  &::after {
-    content: '\00a0';
-    letter-spacing: -3px;
-  }
 }
 
 // It's not uncommon to have code in markdown headings.
@@ -87,8 +72,6 @@ h5 code,
 h6 code {
   border: 0;
 }
-
-
 
 // Github-like theme for Prism.js
 // @author Luke Askew http://github.com/lukeaskew

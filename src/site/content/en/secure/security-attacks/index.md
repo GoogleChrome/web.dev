@@ -70,8 +70,6 @@ you hang out. The same thing could be done on your web traffic. An attacker
 could capture data between the browser and the server collecting usernames &
 passwords, users' browsing history, and data exchanged. 
 
-<div class="clearfix"></div>
-
 ## Defense against attacks
 
 Attackers can directly harm your application or perform a malicious operation on

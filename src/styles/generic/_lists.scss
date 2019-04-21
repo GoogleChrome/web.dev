@@ -76,3 +76,8 @@ ul:not([class]) li::before {
 .w-unstyled-list {
   list-style: none;
 }
+
+// Definition lists
+dd {
+  margin-bottom: 16px;
+}
