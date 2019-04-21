@@ -41,6 +41,19 @@ allows you to see how the content will look on the production site, but it's
 not a true staging server. For example, features like search and JS components
 may not work or be entirely broken on the local preview.
 
+## Staging
+
+Stage the site to App Engine.
+
+```
+npm run stage
+```
+
+☝️You'll need to be a member of the App Engine project to run this command.
+
+Preview the site at
+[https://web-dev-staging.appspot.com](https://web-dev-staging.appspot.com)
+
 ## Debugging
 
 The easiest way to debug the site is to add a `debugger` statement to
