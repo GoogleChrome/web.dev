@@ -8,13 +8,17 @@
     "build:eleventy": "eleventy",
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:eleventy": "eleventy --watch",
-    "serve": "node ./server.js",
+    "start": "node ./server.js",
     "build": "npm run clean && npm run lint && npm run build:eleventy && npm run build:gulp",
-    "dev": "npm run clean && npm-run-all -r --parallel watch:eleventy watch:gulp serve",
+    "dev": "npm run clean && npm-run-all -r --parallel watch:eleventy watch:gulp start",
     "debug": "node --inspect-brk ./node_modules/.bin/eleventy",
+    "stage": "npm run build && gcloud app deploy --project web-dev-staging",
     "deploy": "ELEVENTY_ENV=prod npm run build && node lib/index.js"
   },
   "license": "Apache 2.0",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
     "@11ty/eleventy-plugin-rss": "^1.0.6",
@@ -25,8 +29,6 @@
     "eslint": "^5.10.0",
     "eslint-config-google": "^0.11.0",
     "eslint-plugin-prettier": "^3.0.0",
-    "express": "^4.16.4",
-    "fancy-log": "^1.3.3",
     "gulp": "^4.0.0",
     "gulp-eslint": "^5.0.0",
     "gulp-sass": "^4.0.2",

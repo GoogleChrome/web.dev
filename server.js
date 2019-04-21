@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ const app = express();
 app.use(express.static('dist'));
 app.use(express.static('dist/en'));
 
-const listener = app.listen(8080, () => {
+const listener = app.listen(process.env.PORT || 8080, () => {
   // eslint-disable-next-line
   console.log('The server is listening on port ' + listener.address().port);
 });
