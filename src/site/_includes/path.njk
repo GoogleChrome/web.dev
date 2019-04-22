@@ -36,7 +36,7 @@ layout: layout
 
   <hr>
 
-  <section class="w-grid">
+  {# <section class="w-grid">
     {% for topic in path.topics %}
     <h2 id="{{ topic.title | slug }}" class="no-link w-path-heading w-headline--three">
       {{ topic.title }}
@@ -49,5 +49,29 @@ layout: layout
       {% endfor %}
     </div>
     {% endfor %}
+  </section> #}
+
+  <section class="w-layout-container">
+    <div class="w-numbered-headers">
+    {% for topic in path.topics %}
+      <h2 id="{{ topic.title | slug }}" class="no-link w-headline--three w-numbered-header w-numbered-header--horizontal">
+        {{ topic.title }}
+        <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
+      </h2>
+      <ul class="w-path-list">
+      {% for slug in topic.pathItems %}
+        {% set item = slug | findBySlug %}
+        <li class="w-path-listitem">
+          <a
+            class="w-path-link"
+            href="{{ item.url | stripLanguage }}"
+          >
+            {{ item.data.title }}
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+    {% endfor %}
+    </div>
   </section>
 </main>
