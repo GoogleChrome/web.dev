@@ -2,13 +2,16 @@
 layout: layout
 ---
 
-{# *-landing-page classes are a holdover from devsite. #} {# It would be great
-to remove them as part of the v1 migration. #}
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
 <div class="guide-landing-page">
   {% if hero %}
-  <figure class="w-figure w-figure--hero">
-    <img class="w-hero" src="{{ page.url + hero }}" alt="{{ alt }}" />
-  </figure>
+    {% Hero {
+      page: page,
+      hero: hero,
+      alt: alt,
+      heroPosition: hero_position
+    } %}
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}

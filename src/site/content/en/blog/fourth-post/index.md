@@ -3,6 +3,7 @@ title: Fourth post
 author: robdodson
 date: 2018-12-06
 hero: hero.jpg
+hero_position: bottom
 alt: A description for the hero image
 description: |
   This post is a test to demonstrate all of the components that can go into
