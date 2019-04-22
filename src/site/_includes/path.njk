@@ -38,7 +38,7 @@ layout: layout
 
   <section class="w-grid">
     {% for topic in path.topics %}
-    <h2 id="{{ topic.title | slug }}" class="no-link">
+    <h2 id="{{ topic.title | slug }}" class="no-link w-path-heading w-headline--three">
       {{ topic.title }}
       <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
     </h2>
