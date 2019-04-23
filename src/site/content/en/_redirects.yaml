@@ -1,10 +1,70 @@
 redirects:
 
+- from: /subscribe
+  to: https://services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&utm_source=google-products&utm_team=googledevs&utm_campaign=201611-newsletter-launch
+
 - from: /fast/using-lighthouse-ci-to-set-a-performance-budget
   to: /fast/using-lighthouse-bot-to-set-a-performance-budget
 
 - from: /fast/defer-unused-css
   to: /fast/defer-non-critical-css
 
-- from: /subscribe
-  to: https://services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&utm_source=google-products&utm_team=googledevs&utm_campaign=201611-newsletter-launch
+- from: /fast/use-imagemin-to-compress-images/codelab-imagemin-grunt
+  to: /fast/codelab-imagemin-grunt
+
+- from: /fast/use-imagemin-to-compress-images/codelab-imagemin-gulp
+  to: /fast/codelab-imagemin-gulp
+
+- from: /fast/use-imagemin-to-compress-images/codelab-imagemin-webpack
+  to: /fast/codelab-imagemin-webpack
+
+- from: /fast/replace-gifs-with-videos/codelab-replace-gifs-with-video
+  to: /fast/codelab-replace-gifs-with-video
+
+- from: /fast/use-lazysizes-to-lazyload-images/codelab-use-lazysizes-to-lazyload-images
+  to: /fast/codelab-use-lazysizes-to-lazyload-images
+
+- from: /fast/serve-responsive-images/codelab-specifying-multiple-slot-widths
+  to: /fast/codelab-specifying-multiple-slot-widths
+
+- from: /fast/serve-responsive-images/codelab-art-direction
+  to: /fast/codelab-art-direction
+
+- from: /fast/serve-responsive-images/codelab-density-descriptors
+  to: /fast/codelab-density-descriptors
+
+- from: /fast/serve-images-with-correct-dimensions/codelab-serve-images-correct-dimensions
+  to: /fast/codelab-serve-images-correct-dimensions
+
+- from: /fast/serve-images-webp/codelab-serve-images-webp
+  to: /fast/codelab-serve-images-webp
+
+- from: /fast/preload-critical-assets/codelab-preload-critical-assets
+  to: /fast/codelab-preload-critical-assets
+
+- from: /fast/preload-critical-assets/codelab-preload-web-fonts
+  to: /fast/codelab-preload-web-fonts
+
+- from: /fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting
+  to: /fast/codelab-code-splitting
+
+- from: /fast/remove-unused-code/codelab-remove-unused-code
+  to: /fast/codelab-remove-unused-code
+
+- from: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression
+  to: /fast/codelab-text-compression
+
+- from: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression
+  to: /fast/codelab-text-compression
+
+- from: /fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli
+  to: /fast/codelab-text-compression-brotli
+
+- from: /fast/serve-modern-code-to-modern-browsers/codelab-serve-modern-code
+  to: /fast/codelab-serve-modern-code
+
+- from: /fast/avoid-invisible-text/codelab-avoid-invisible-text
+  to: /fast/codelab-avoid-invisible-text
+
+- from: /fast/incorporate-performance-budgets-into-your-build-tools/codelab-setting-performance-budgets-with-webpack
+  to: /fast/codelab-setting-performance-budgets-with-webpack
