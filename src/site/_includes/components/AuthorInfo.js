@@ -17,7 +17,7 @@ module.exports = ({post, author, showSocialMedia = false}) => {
   function renderTwitter({twitter}) {
     return html`
       <li class="w-author__link-listitem">
-        <a href="https://twitter.com/${twitter}">Twitter</a>
+        <a class="w-author__link" href="https://twitter.com/${twitter}">Twitter</a>
       </li>
     `;
   }
@@ -25,7 +25,7 @@ module.exports = ({post, author, showSocialMedia = false}) => {
   function renderGitHub({github}) {
     return html`
       <li class="w-author__link-listitem">
-        <a href="https://github.com/${github}">GitHub</a>
+        <a class="w-author__link" href="https://github.com/${github}">GitHub</a>
       </li>
     `;
   }
@@ -33,7 +33,7 @@ module.exports = ({post, author, showSocialMedia = false}) => {
   function renderGlitch({glitch}) {
     return html`
       <li class="w-author__link-listitem">
-        <a href="https://glitch.com/@${glitch}">Glitch</a>
+        <a class="w-author__link" href="https://glitch.com/@${glitch}">Glitch</a>
       </li>
     `;
   }
