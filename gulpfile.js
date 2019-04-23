@@ -1,9 +1,11 @@
+const path = require('path');
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const sasslint = require('gulp-sass-lint');
+const rename = require('gulp-rename');
 
 /* eslint-disable max-len */
 const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
@@ -53,26 +55,37 @@ gulp.task('copy-global-assets', () => {
 
 // Images and any other assets in the content directory that should be copied
 // over along with the posts themselves.
-// Note the blog directory is excluded because it uses permalinks to change its
-// output paths. We'll handle the blog in a separate gulp task.
+// Because we use permalinks to strip the parent directories form our posts
+// we need to also strip them from the content paths.
 gulp.task('copy-content-assets', () => {
   return gulp
     .src([
-      `./src/site/content/**/*.{${assetTypes}}`,
-      `!./src/site/content/blog/**/*`,
+      `./src/site/content/en/**/*.{${assetTypes}}`,
     ])
-    .pipe(gulp.dest('./dist/'));
+    // This makes the images show up in the same spot as the permalinked posts
+    // they belong to.
+    .pipe(
+      rename(function(assetPath) {
+        const parts = assetPath.dirname.split('/');
+        // Let the en/images directory pass through.
+        if (parts[0] === 'images') {
+          return;
+        }
+        return assetPath.dirname = path.basename(assetPath.dirname);
+      })
+    )
+    .pipe(gulp.dest('./dist/en'));
 });
 
 // Because eleventy's passthroughFileCopy does not work with permalinks
 // we need to manually copy over blog images ourselves.
 // Note that we only copy over the images in the en/ directory.
 // On the server we'll redirect localized docs to request images from en/.
-gulp.task('copy-blog-assets', () => {
-  return gulp
-    .src([`./src/site/content/en/blog/**/*.{${assetTypes}}`])
-    .pipe(gulp.dest('./dist/en'));
-});
+// gulp.task('copy-blog-assets', () => {
+//   return gulp
+//     .src([`./src/site/content/en/blog/**/*.{${assetTypes}}`])
+//     .pipe(gulp.dest('./dist/en'));
+// });
 
 gulp.task(
   'build',
@@ -80,7 +93,7 @@ gulp.task(
     'scss',
     'copy-global-assets',
     'copy-content-assets',
-    'copy-blog-assets',
+    // 'copy-blog-assets',
   )
 );
 
@@ -91,8 +104,8 @@ gulp.task('watch', () => {
     './src/site/content/**/*',
     gulp.series('copy-content-assets')
   );
-  gulp.watch(
-    `./src/site/content/en/blog/**/*.{${assetTypes}}`,
-    gulp.series('copy-blog-assets')
-  );
+  // gulp.watch(
+  //   `./src/site/content/en/blog/**/*.{${assetTypes}}`,
+  //   gulp.series('copy-blog-assets')
+  // );
 });
