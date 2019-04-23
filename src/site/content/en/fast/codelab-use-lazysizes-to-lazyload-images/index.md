@@ -71,7 +71,8 @@ than the browser.
 
 That's it! To see these changes in action, follow these steps:
 
-- Click on the **Show Live** button to view the live version of the Glitch.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 
 - Open the console and find the images that were just added. Their classes
   should change from `lazyload` to `lazyloaded` as you scroll down the page.
@@ -89,7 +90,7 @@ Lastly, it's a good idea to use Lighthouse to verify these changes. Lighthouse's
 "Defer offscreen images" performance audit will indicate if you've forgotten to
 add lazy loading to any offscreen images.
 
-- Click on the **Show Live** button to view the live version of the your Glitch.
+- Preview the site with the **Show** button.
 
 - Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
   the live version of your Glitch and verify that the "Defer offscreen images"

@@ -158,7 +158,8 @@ working through [this codelab](/reliable/identify-resources-via-network-panel/co
 With the modifications to the static file server in place, you can check to make
 sure that the right headers are being set by previewing the live app with the DevTools Network panel open.
 
-- Click the **Show Live** button to preview the app.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 
 - Customize the columns that are
 displayed in the Network panel to include the information that is most relevant, by right-clicking in

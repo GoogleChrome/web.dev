@@ -12,8 +12,8 @@ related_post: serve-responsive-images
 
 ## Explore This Demo
 
-- Click the **Show Live** button to preview the app.
-
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 - Reload the page using different devices to see the browser load different
   images.
 

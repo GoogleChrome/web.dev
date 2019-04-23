@@ -121,7 +121,8 @@ Now that you've got the code added to `register-sw.js` and `service-worker.js`
 files, it's time to visit the Live version of your sample project, and observe
 the service worker in action.
 
-- Click on the **Show Live** button to view the live version of the sample app.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 -  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 -  Click on the **Console** tab.
 

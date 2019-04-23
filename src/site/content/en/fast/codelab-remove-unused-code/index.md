@@ -26,7 +26,8 @@ should see your changes reflected in the application.
 It's always a good idea to first measure how well a website performs before
 adding optimizations.
 
-- Click on the **Show Live** button to view the live version of the Glitch.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 
 Go ahead and click on your favorite kitten! Firebase's
 [Realtime Database](https://firebase.google.com/products/realtime-database/) is

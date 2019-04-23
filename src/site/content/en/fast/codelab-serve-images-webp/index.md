@@ -134,7 +134,8 @@ site.
 Lighthouse's **Serve images in next-gen formats** performance audit can let you
 know if all the images on your site are using next-gen formats like WebP.
 
-- Click the **Show Live** button to preview the app.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 
 - Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
   on the live version of your app and verify that the **Serve images in next-gen

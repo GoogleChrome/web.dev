@@ -29,7 +29,8 @@ image.
 It's always a good idea to begin by inspecting a website before adding any
 optimizations.
 
-+ Click on the **Show Live** button to boot up the app.
++ To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 + Open DevTools by pressing `CTRL + SHIFT + i` / `CMD + OPTION + i`.
 + Click on the **Network** panel.
 
