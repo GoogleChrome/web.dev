@@ -20,21 +20,23 @@ Uncompressed images bloat your pages with unnecessary bytes. The photo on the
 right is 40% smaller than the one on the left, yet would probably look identical
 to the average user.
 
-<table>
-  <thead>
-    <tr>
-      <th>
-        <p><img src=./20kb.jpg width="100%"></p>
-        20 KB
-      </th>
-      <th>
-        <p><img src=./12kb.jpg width="100%"></p>
-        12 KB
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <p><img src=./20kb.jpg width="100%"></p>
+          20 KB
+        </th>
+        <th>
+          <p><img src=./12kb.jpg width="100%"></p>
+          12 KB
+        </th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
 
 ## Measure
 
@@ -76,70 +78,72 @@ greater filesize savings, and you can customize the compression levels to meet
 your needs. The table below lists popular Imagemin plugins. These aren't the only plugins
 available, but they'd all be good choices for your project.
 
-<table>
-  <thead>
-    <tr>
-      <th>Image Format</th>
-      <th>Lossy Plugin(s)</th>
-      <th>Lossless Plugin(s)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>JPEG</td>
-      <td>
-        <a href="https://www.npmjs.com/package/imagemin-mozjpeg"
-          >imagemin-mozjpeg</a
-        >
-      </td>
-      <td>
-        <a href="https://www.npmjs.com/package/imagemin-jpegtran"
-          >imagemin-jpegtran</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <td>PNG</td>
-      <td>
-        <a href="https://www.npmjs.com/package/imagemin-pngquant"
-          >imagemin-pngquant</a
-        >
-      </td>
-      <td>
-        <a href="https://www.npmjs.com/package/imagemin-optipng"
-          >imagemin-optipng</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <td>GIF</td>
-      <td>
-        <a href="https://www.npmjs.com/package/imagemin-giflossy"
-          >imagemin-giflossy</a
-        >
-      </td>
-      <td>
-        <a href="https://www.npmjs.com/package/imagemin-gifsicle"
-          >imagemin-gifsicle</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <td>SVG</td>
-      <td>
-        <a href="https://www.npmjs.com/package/imagemin-svgo">Imagemin-svgo</a>
-      </td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>WebP</td>
-      <td>
-        <a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a>
-      </td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Image Format</th>
+        <th>Lossy Plugin(s)</th>
+        <th>Lossless Plugin(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-mozjpeg"
+            >imagemin-mozjpeg</a
+          >
+        </td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-jpegtran"
+            >imagemin-jpegtran</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-pngquant"
+            >imagemin-pngquant</a
+          >
+        </td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-optipng"
+            >imagemin-optipng</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-giflossy"
+            >imagemin-giflossy</a
+          >
+        </td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-gifsicle"
+            >imagemin-gifsicle</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>SVG</td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-svgo">Imagemin-svgo</a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>WebP</td>
+        <td>
+          <a href="https://www.npmjs.com/package/imagemin-webp">imagemin-webp</a>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ### Imagemin CLI
 
