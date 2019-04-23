@@ -5,7 +5,7 @@ module.exports = {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
     slug: 'lighthouse-performance',
-    cover: '/images/collections/lighthouse.png',
+    cover: '/images/collections/lighthouse-performance.svg',
     title: 'Performance audits',
     description:
       'How long does your app take to show content and become useable?',
