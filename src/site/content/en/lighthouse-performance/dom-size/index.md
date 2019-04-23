@@ -13,6 +13,7 @@ cause longer [style calculations](https://developers.google.com/web/fundamentals
 and produce costly [layout reflows](https://developers.google.com/speed/docs/insights/browser-reflow?utm_source=lighthouse&utm_medium=cli). 
 Lighthouse reports the total DOM elements for a page, it's maximum child elements,
 and it's maximum DOM depth in the Diagnostics section:
+
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="dom-size.png" alt="Avoids an excessive DOM size">
   <figcaption class="w-figcaption">
