@@ -8,5 +8,6 @@ module.exports = {
     slug: 'blog',
     title: 'Blog',
     titleVariation: 'All articles',
+    description: 'Our latest news, updates, and stories for developers',
   },
 };

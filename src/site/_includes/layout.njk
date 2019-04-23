@@ -1,8 +1,8 @@
 {% if site.env === 'prod' %}
   <html devsite>
     <head>
-      <title>{{title}}</title>
-      <meta name="description" content="{{description}}" />
+      <title>{{title if title else path.title}}</title>
+      <meta name="description" content="{{description if description else path.description}}" />
       <meta name="project_path" value="/_project.yaml" />
       <meta name="book_path" value="/_book.yaml" />
       <meta name="full_width" value="true" />
@@ -34,7 +34,8 @@
   <!DOCTYPE html>
   <html>
     <head>
-      <title>{{title}}</title>
+      <title>{{title if title else path.title}}</title>
+      <meta name="description" content="{{description if description else path.description}}" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta charset="utf-8" />
       <meta content="IE=Edge" http-equiv="X-UA-Compatible" />

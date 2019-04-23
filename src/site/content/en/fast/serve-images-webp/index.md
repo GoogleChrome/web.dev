@@ -61,6 +61,7 @@ Convert a single file, using a quality level of `50`:
 
 ```bash
 cwebp -q 50 images/flower.jpg -o images/flower.webp
+```
 
 Convert all files in a directory:
 
