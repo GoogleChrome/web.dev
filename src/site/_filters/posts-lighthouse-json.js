@@ -1,3 +1,5 @@
+const stripLanguage = require('../_filters/strip-language');
+
 // Generate a JSON object which links posts to their Ligthhouse audits.
 module.exports = (posts) => {
   const toArray = (raw) => (raw instanceof Array ? raw : [raw]);
@@ -13,7 +15,7 @@ module.exports = (posts) => {
       id: post.fileSlug, // e.g. "test-post"
       lighthouse: toArray(post.data.web_lighthouse),
       title: post.data.title,
-      url: post.url,
+      url: stripLanguage(post.url),
     };
 
     const host = post.data.postHost[out.id];
