@@ -10,7 +10,7 @@ web_lighthouse:
 
 Informative elements should aim for short, descriptive alternate text
 Decorative elements can be ignored with an empty alt attribute.
-Lighthouse reports when any`<img>` elements do not have `alt` attributes:
+Lighthouse reports when any `<img>` elements do not have `alt` attributes:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="image-alt.png" alt="Lighthouse: <img> elements do not have alt attributes">
@@ -48,18 +48,17 @@ Learn more in [Images must have alternate text](https://dequeuniversity.com/rule
 {% Aside 'note' %}
 You can also use ARIA labels to describe your images, for example,
 `<img aria-label="Audits set-up in Chrome DevTools" src="...">`
-Learn more in
+See also
 [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and
 [Using the aria-labelledby attribute
 ](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
-
 ## Tips for writing effective `alt` text:
 
 - `alt` text should give the intent, purpose, and meaning of the image.
 - Blind users should get as much information from alt text as a sighted user gets from the image.
-- Avoid words like "chart," "image," "diagram," or image file names.
+- Avoid non-specific words like "chart", "image", or "diagram".
 
 Learn more in
 [WebAIM's guide to Alternative Text](https://webaim.org/techniques/alttext/).
