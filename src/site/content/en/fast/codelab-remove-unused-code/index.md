@@ -130,32 +130,34 @@ Not as cute as seeing some kittens 🐱, but incredibly helpful nonetheless.
 Hovering over any of the packages shows its size represented in three
 different ways:
 
-<table>
-  <thead>
-    <tr>
-      <th><strong>Stat size</strong></th>
-      <th>Size before any minification or compression.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Parsed size</strong></td>
-      <td>
-        Size of actual package within the bundle after it has been compiled.
-        Version 4 of webpack (which is used in this application) minifies the
-        compiled files automatically which is why this is smaller than the stat
-        size.
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Gzipped size</strong></td>
-      <td>
-        Size of package after it has been compressed with gzip encoding. This
-        topic is covered in a separate guide.
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Stat size</strong></th>
+        <th>Size before any minification or compression.</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Parsed size</strong></td>
+        <td>
+          Size of actual package within the bundle after it has been compiled.
+          Version 4 of webpack (which is used in this application) minifies the
+          compiled files automatically which is why this is smaller than the stat
+          size.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Gzipped size</strong></td>
+        <td>
+          Size of package after it has been compressed with gzip encoding. This
+          topic is covered in a separate guide.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 With the webpack-bundle-analyzer tool, it is easier to identify unused or
 unneeded packages that make up a large percentage of the bundle.

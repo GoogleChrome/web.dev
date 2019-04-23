@@ -20,22 +20,24 @@ related_post: serve-responsive-images
 You can use the device emulator for this. If you're looking for specific display
 densities, here are some devices to try:
 
-<table>
-  <tbody>
-    <tr>
-      <td>1x density</td>
-      <td>Blackberry Playbook, many external monitors</td>
-    </tr>
-    <tr>
-      <td>2x density</td>
-      <td>iPad or IPhone 5/6</td>
-    </tr>
-    <tr>
-      <td>3x density</td>
-      <td>Galaxy S5 or iPhone X</td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <tbody>
+      <tr>
+        <td>1x density</td>
+        <td>Blackberry Playbook, many external monitors</td>
+      </tr>
+      <tr>
+        <td>2x density</td>
+        <td>iPad or IPhone 5/6</td>
+      </tr>
+      <tr>
+        <td>3x density</td>
+        <td>Galaxy S5 or iPhone X</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 - Checkout `index.html` for the code that makes this work.
 
@@ -119,35 +121,37 @@ So how do you actually apply this information?
 In order for images to look their very best on high resolution screens, it's
 necessary to provide different image versions for different `devicePixelRatios`.
 
-<table>
-  <thead>
-    <tr>
-      <th>Device Pixel Ratio</th>
-      <th>Indicates that:</th>
-      <th>
-        On this device, an &lt;img&gt; tag with a CSS width of 250 pixels, will
-        look best when the source image is...
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>1 device pixel = 1 CSS pixel</td>
-      <td>250 pixels wide</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>2 device pixels = 1 CSS pixel</td>
-      <td>500 pixels wide</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>3 device pixels = 1 CSS pixel</td>
-      <td>750 pixels wide</td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Device Pixel Ratio</th>
+        <th>Indicates that:</th>
+        <th>
+          On this device, an &lt;img&gt; tag with a CSS width of 250 pixels, will
+          look best when the source image is...
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>1 device pixel = 1 CSS pixel</td>
+        <td>250 pixels wide</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>2 device pixels = 1 CSS pixel</td>
+        <td>500 pixels wide</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>3 device pixels = 1 CSS pixel</td>
+        <td>750 pixels wide</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Things to note:
 

@@ -84,25 +84,27 @@ images.
 Specify multiple image versions and the browser will choose the best one to
 use:
 
-<table>
-  <thead>
-    <tr>
-      <th><strong>Before</strong></th>
-      <th><strong>After</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        &lt;img src="flower-large.jpg"&gt;
-      </td>
-      <td>
-        &lt;img src="flower-large.jpg" srcset="flower-small.jpg 480w,
-        flower-large.jpg 1080w" sizes="50vw"&gt;
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Before</strong></th>
+        <th><strong>After</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          &lt;img src="flower-large.jpg"&gt;
+        </td>
+        <td>
+          &lt;img src="flower-large.jpg" srcset="flower-small.jpg 480w,
+          flower-large.jpg 1080w" sizes="50vw"&gt;
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
 The `<img>` tag's
