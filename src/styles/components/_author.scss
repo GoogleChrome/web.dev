@@ -86,3 +86,8 @@
   content: '';
   margin: 0;
 }
+
+.w-author__link:focus {
+  box-shadow: inset 0px 0px 0px 1px $WEB_SECONDARY_COLOR;
+  outline: none;
+}
