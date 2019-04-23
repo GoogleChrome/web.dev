@@ -3,8 +3,6 @@ layout: post
 title: Discover performance opportunities with Lighthouse
 author: kaycebasques
 date: 2018-11-05
-hero: hero.jpg
-alt: Person using magnifying glass to see gold and white device gears.
 description: |
   Lighthouse is a tool that helps you measure and find ways to improve a page's
   performance. Lighthouse gives you a report on how the page did. The report

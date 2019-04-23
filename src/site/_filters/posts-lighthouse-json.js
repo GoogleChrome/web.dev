@@ -6,7 +6,7 @@ module.exports = (posts) => {
     throw new Error('No posts were passed to the filter!');
   }
 
-  const pathItems = posts.map((post) => {
+  const guides = posts.map((post) => {
     const out = {
       path: '',
       topic: '',
@@ -28,5 +28,5 @@ module.exports = (posts) => {
     return out;
   });
 
-  return {pathItems};
+  return {guides};
 };
