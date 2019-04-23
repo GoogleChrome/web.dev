@@ -37,12 +37,13 @@ Let’s take a highly specialized search engine, doggos.io, as an example. Doggo
 
 <div class="w-table-wrapper">
   <table>
-  <caption>Desktop analysis of doggos.io</caption>
+    <caption>
+      Desktop analysis of doggos.io
+    </caption>
     <tr>
       <td>Desktop</td>
       <td>FCP</td>
-      <td>TTI
-  </td>
+      <td>TTI</td>
     </tr>
     <tr>
       <td>Homepage</td>
@@ -55,9 +56,13 @@ Let’s take a highly specialized search engine, doggos.io, as an example. Doggo
       <td>6,690 ms</td>
     </tr>
   </table>
+</div>
 
+<div class="w-table-wrapper">
   <table>
-  <caption>Mobile analysis of doggos.io</caption>
+    <caption>
+      Mobile analysis of doggos.io
+    </caption>
     <tr>
       <td>Mobile</td>
       <td>FCP</td>
