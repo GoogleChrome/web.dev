@@ -231,10 +231,11 @@ Lighthouse to verify your changes.
 Lighthouse's "Efficiently encode images" performance audit can let you know if
 the JPEG images on your page are optimally compressed.
 
-- Click on the **Show Live** button to view the live version of the your Glitch.
-- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on the
-live version of your Glitch and verify that the "Efficiently encode images"
-audit was passed.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
+- Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
+  on the live version of your Glitch and verify that the **Efficiently encode
+  images** audit was passed.
 
 <img class="screenshot" src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
 

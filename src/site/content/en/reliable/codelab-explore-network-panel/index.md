@@ -24,7 +24,8 @@ not match what you see in this codelab.
 Navigate to the Network panel to see the network traffic for the demo
 application.
 
-- Click the **Show Live** button to preview the app.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 
 1. Open DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 1. Select the **Network** tab.

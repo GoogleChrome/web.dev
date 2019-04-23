@@ -17,7 +17,8 @@ video.
 
 First measure how the website performs:
 
-1. Click on the **Show Live** button to preview the app.
+1. To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 1. Open Chrome DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`
 1. Click on the **Audits** panel.
 1. Select the **Performance** checkbox.
@@ -159,7 +160,7 @@ instead. If you prefer a WebM `<source>` be used first, specify it first!
 
 ## Preview
 
--  Click on the **Show Live** button.
+-  Preview the site using the **Show** button.
 
 The experience should look the same. So far so good.  
 

@@ -29,7 +29,8 @@ Since webpack is used in this application, any changes made to the code will tri
 Like always, it's important to first measure how well a website performs before
 attempting to add any optimizations.
 
--  Click on the **Show Live** button.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 -  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 -  Click on the **Network** panel.
 -  Make sure `Disable Cache` is checked and reload the app.

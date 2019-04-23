@@ -29,7 +29,8 @@ the app's request size.
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
-+  Click on the **Show Live** button.
++ To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 
 This app, which was also covered in the ["Remove unused
 code"](/fast/remove-unused-code) codelab, lets you vote for your favorite

@@ -15,7 +15,8 @@ related_post: serve-images-with-correct-dimensions
 This Glitch is small enough that its images could be inspected by hand. However
 for most websites, using a tool like Lighthouse to automate this is essential.
 
-- Click the **Show Live** button to preview the app.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 
 - Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
   and look for the results of the **Properly Size Images** audit.

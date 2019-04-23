@@ -25,8 +25,8 @@ fine!
 
 Unfortunately there is a subtle bug in the app. Let's take a look!
 
-- Click on the **Show Live** button.
-
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 - Click on the link that says **Doggos**. Notice how the URL changed.
 - Refresh the page.
 
@@ -68,6 +68,10 @@ app.get('/*', function(request, response) {
 ```
 
 The `/*` matches any URL and the server now responds with the web app in
-`index.html` for any given URL. Use the **Show Live** button and try it out.
+`index.html` for any given URL.
+
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
+
 Refreshing and opening the links in a new incognito window should now work as
 expected.
