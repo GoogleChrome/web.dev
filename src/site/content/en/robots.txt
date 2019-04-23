@@ -1,2 +1,3 @@
-User-agent: *
-Sitemap: https://web.dev/sitemap.xml
+user-agent: *
+disallow: /sandbox/
+sitemap: https://web.dev/sitemap.xml
