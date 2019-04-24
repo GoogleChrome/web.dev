@@ -21,7 +21,6 @@ Lighthouse reports when `<dl>` elements do not contain properly-ordered `<dt>` a
   </figcaption>
 </figure>
 
-
 ## How to fix this problem
 
 To fix this problem,

@@ -10,7 +10,7 @@ web_lighthouse:
 
 Tables used for layout purposes shouldn't include data elements:
 `th` element, `caption` element or `summary` attribute.
-Lighthouse reports when presentational `<table>` elements use `<th>`, `<caption>`, or `summary`:
+Lighthouse reports when layout `<table>` elements use `<th>`, `<caption>`, or `summary`:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="layout-table.png" alt="Lighthouse: Presentational <table> elements incorrectly using <th>, <caption>, or summary

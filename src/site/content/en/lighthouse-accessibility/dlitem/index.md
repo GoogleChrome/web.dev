@@ -47,6 +47,6 @@ Todo. I have no idea how accessibility scoring is working!
 
 ## More information
 
-- [Ensure defintion list items are wrapped in parent `<dl>` element](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/dlitem.js)
+- [Ensure defintion list items are wrapped in parent `<dl>` element audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/dlitem.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
 - [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
