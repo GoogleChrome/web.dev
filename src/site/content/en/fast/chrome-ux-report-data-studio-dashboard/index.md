@@ -92,10 +92,13 @@ or more.
 The percent of fast and slow FCP experiences for the most recent release are 
 highlighted on top, along with the percent change from the previous release. 
 So for example, from August to September 2018, users on this origin experienced 
-3.7% more fast FCP and 5.8% fewer slow FCP. _Note: due to a quirk with 
-Data Studio, you may sometimes see "No Data" here. This is normal and due to the 
-previous month's release not being available yet. Datasets are released on the 
-second Tuesday of each month._
+3.7% more fast FCP and 5.8% fewer slow FCP.
+
+{% Aside %}
+Due to a quirk with Data Studio, you may sometimes see "No Data" here. This is
+normal and due to the previous month's release not being available yet. Datasets
+are released on the second Tuesday of each month.
+{% endAside %}
 
 ### Device distribution
 

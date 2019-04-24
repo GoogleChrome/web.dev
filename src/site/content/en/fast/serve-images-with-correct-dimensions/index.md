@@ -74,8 +74,12 @@ display will look sharper than a low pixel density display.
 
 As a result, multiple image versions are necessary if you want users to
 experience the crispest possible images, regardless of the pixel density of
-their device. (Note: Some sites find that this difference in image quality
-matters, some find that it does not.)
+their device.
+
+{% Aside %}
+Some sites find that this difference in image quality matters, some find that it
+does not.
+{% endAside %}
 
 Responsive image techniques make this possible by allowing you to list
 multiple image versions and for the device to choose the image that works

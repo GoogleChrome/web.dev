@@ -17,9 +17,11 @@ and a
 [web app manifest](https://glitch.com/edit/#!/make-it-installable?path=manifest.json).
 It also has an install button that is hidden by default.
 
-**Note:** If you're using a Mac, you'll need to enable the `#enable-desktop-pwas`
+{% Aside %}
+If you're using a Mac, you'll need to enable the `#enable-desktop-pwas`
 flag in `chrome://flags` and restart your browser. Support for Desktop PWAs on
 Mac is planned for Chrome 72.
+{% endAside %}
 
 ## Listen for the beforeinstallprompt event
 
