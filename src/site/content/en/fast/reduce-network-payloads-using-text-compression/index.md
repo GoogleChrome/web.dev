@@ -114,7 +114,7 @@ consider using a separate module like
 Brotli to achieve better compression ratios.
 
 {% Aside 'codelab' %}
-Use express.js to compress assets with [gzip](/fast/codelab-text-compression) and [Brotli](/fast/codelab-text-compression-brotli).
+Use express.js to compress assets with [gzip](/codelab-text-compression) and [Brotli](/codelab-text-compression-brotli).
 {% endAside %}
 
 ## Static compression

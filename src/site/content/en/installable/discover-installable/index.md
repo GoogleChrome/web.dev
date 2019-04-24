@@ -91,7 +91,7 @@ the audits. The key audits to check are:
 +  Responds with a 200 when offline
 
 {% Aside 'codelab' %}
-[Make a site installable using the beforeinstallprompt event](/installable/codelab-make-installable).
+[Make a site installable using the beforeinstallprompt event](/codelab-make-installable).
 {% endAside %}
 
 ## Further reading

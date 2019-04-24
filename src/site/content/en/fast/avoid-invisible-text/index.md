@@ -126,7 +126,7 @@ Here are the changes you can expect to make in order to implement this:
     loaded and then will update the page styling.
 
 {% Aside 'codelab' %}
-[Use Font Face Observer to display text immediately](/fast/codelab-avoid-invisible-text).
+[Use Font Face Observer to display text immediately](/codelab-avoid-invisible-text).
 {% endAside %}
 
 ## Verify

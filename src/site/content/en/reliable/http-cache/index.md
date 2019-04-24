@@ -169,7 +169,7 @@ actual resource being requested.
 </figure>
 
 {% Aside 'codelab' %}
-[Control resource caching behavior using HTTP headers](/reliable/codelab-http-cache).
+[Control resource caching behavior using HTTP headers](/codelab-http-cache).
 {% endAside %}
 
 ## Dig deeper

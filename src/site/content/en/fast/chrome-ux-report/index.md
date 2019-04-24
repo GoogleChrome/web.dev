@@ -52,7 +52,7 @@ handled for you under the hood. The dashboard shows the distribution of user
 experiences, as captured by key performance metrics, and how it changes over
 time. It also shows how the distributions of qualitative metrics like device
 type and effective connection type change over time. Try the
-[Data Studio Dashboard guide](/fast/chrome-ux-report-data-studio-dashboard).
+[Data Studio Dashboard guide](/chrome-ux-report-data-studio-dashboard).
 
 ### PageSpeed Insights
 
@@ -65,7 +65,7 @@ as easy as entering a URL or origin in the search box on the web interface, and
 the field performance data is displayed alongside prescriptive suggestions to
 optimize the page. There is also an API available to programmatically get the
 performance data. Try the
-[PageSpeed Insights guide](/fast/chrome-ux-report-pagespeed-insights).
+[PageSpeed Insights guide](/chrome-ux-report-pagespeed-insights).
 
 ### CrUX on BigQuery
 
@@ -78,7 +78,7 @@ for specific insights. BigQuery requires knowledge of SQL and a GCP project with
 billing enabled to run the queries. This is an especially useful tool for power 
 users who require low-level access to the data to create custom reports, 
 benchmarks, and reports about the state of the web. Try the 
-[BigQuery guide](/fast/chrome-ux-report-bigquery).
+[BigQuery guide](/chrome-ux-report-bigquery).
 
 ## How to get help
 
@@ -98,6 +98,6 @@ In order to get more acquainted with the available data, walk through
 step-by-step guides for using BigQuery, Data Studio Dashboard, and PageSpeed
 Insights:
 
-- [CrUX: Data Studio Dashboard](/fast/chrome-ux-report-data-studio-dashboard)
-- [CrUX: PageSpeed Insights](/fast/chrome-ux-report-pagespeed-insights)
-- [CrUX: BigQuery](/fast/chrome-ux-report-bigquery)
+- [CrUX: Data Studio Dashboard](/chrome-ux-report-data-studio-dashboard)
+- [CrUX: PageSpeed Insights](/chrome-ux-report-pagespeed-insights)
+- [CrUX: BigQuery](/chrome-ux-report-bigquery)

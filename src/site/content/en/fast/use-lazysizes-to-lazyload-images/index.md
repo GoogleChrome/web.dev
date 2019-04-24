@@ -97,7 +97,7 @@ When you update the `<picture>` tag you make two changes:
 + Change the `<source>` tag `srcset` attribute to `data-srcset`.
 
 {% Aside 'codelab' %}
-[Use lazysizes to only load images that are in the current viewport](/fast/codelab-use-lazysizes-to-lazyload-images).
+[Use lazysizes to only load images that are in the current viewport](/codelab-use-lazysizes-to-lazyload-images).
 {% endAside %}
 
 ## Verify

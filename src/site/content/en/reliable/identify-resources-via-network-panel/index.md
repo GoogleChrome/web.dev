@@ -23,7 +23,7 @@ specific URL that your web app has loaded.
 </figure>
 
 {% Aside 'codelab' %}
-[Inerpret network traffic using Chrome's DevTools](/reliable/codelab-explore-network-panel).
+[Inerpret network traffic using Chrome's DevTools](/codelab-explore-network-panel).
 {% endAside %}
 
 {% Aside %}

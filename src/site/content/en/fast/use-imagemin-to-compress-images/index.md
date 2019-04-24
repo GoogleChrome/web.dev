@@ -163,8 +163,8 @@ $ imagemin images/* --out-dir=images
 
 If you use one of these build tools,
 checkout out the codelabs for Imaginemin with
-[webpack](/fast/codelab-imagemin-webpack), [gulp](/fast/codelab-imagemin-gulp),
-or [grunt](/fast/codelab-imagemin-grunt).
+[webpack](/codelab-imagemin-webpack), [gulp](/codelab-imagemin-gulp),
+or [grunt](/codelab-imagemin-grunt).
 
 You can also use Imagemin by itself as a Node script.
 This code uses the "imagemin-mozjpeg" plugin to compress JPEG files to a quality

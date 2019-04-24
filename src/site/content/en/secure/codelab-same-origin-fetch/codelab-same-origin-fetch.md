@@ -35,4 +35,4 @@ The fetch URL is a different origin, but you should see the status code 200. Why
 Modern web applications often request cross-origin resources to load
 third-party scripts or query an API endpoint. To accommodate these use cases,
 there is a mechanism called CORS (Cross Origin Resource Sharing) to tell the
-browser that loading of a cross-origin resource is allowed. See [Share cross-origin resources safely](/secure/cross-origin-resource-sharing) for more on CORS.
+browser that loading of a cross-origin resource is allowed. See [Share cross-origin resources safely](/cross-origin-resource-sharing) for more on CORS.

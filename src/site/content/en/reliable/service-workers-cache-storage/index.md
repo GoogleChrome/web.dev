@@ -119,7 +119,7 @@ and the related
 syntax, before diving in.
 
 {% Aside 'codelab' %}
-[Make an application network resilient by registering a service worker](/reliable/codelab-service-workers).
+[Make an application network resilient by registering a service worker](/codelab-service-workers).
 {% endAside %}
 
 ## Don't deploy that code… yet

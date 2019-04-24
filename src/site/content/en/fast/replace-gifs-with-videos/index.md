@@ -104,7 +104,7 @@ doesn't support WebM, it can fall back to MP4.
 ```
 
 {% Aside 'codelab' %}
-[Replace an animated GIF with a video](/fast/codelab-replace-gifs-with-video).
+[Replace an animated GIF with a video](/codelab-replace-gifs-with-video).
 {% endAside %}
 
 {% Aside %}

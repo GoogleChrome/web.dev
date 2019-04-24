@@ -37,7 +37,7 @@ are loaded in a non-blocking way.
 
 ## Measure
 
-Run [Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse/#run-lighthouse-from-chrome-devtools) on [the page](https://defer-css-unoptimized.glitch.me/) and go to the **Performance** section.
+Run [Lighthouse](https://web.dev/discover-performance-opportunities-with-lighthouse/#run-lighthouse-from-chrome-devtools) on [the page](https://defer-css-unoptimized.glitch.me/) and go to the **Performance** section.
 
 The report shows the **First Contentful Paint** metric with a value of "1s", and
 the opportunity **Eliminate render-blocking resources**, pointing to the
@@ -120,7 +120,7 @@ for later:
 
 This is not the standard way of loading CSS. Here's how it works:
 
-* `link rel="preload" as="style"` requests the stylesheet asynchronously. You can learn more about `preload` in the [Preload critical assets guide](https://web.dev/fast/preload-critical-assets).
+* `link rel="preload" as="style"` requests the stylesheet asynchronously. You can learn more about `preload` in the [Preload critical assets guide](https://web.dev/preload-critical-assets).
 * The `onload` attribute in the `link` allows the CSS to be processed when it finishes loading.
 * "nulling" the `onload` handler once it is used helps some browsers avoid re-calling the handler upon switching the rel attribute.
 * The reference to the stylesheet inside of a `noscript` element works as a fallback for browsers that don’t execute JavaScript.

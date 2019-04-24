@@ -33,7 +33,7 @@ the current state of the application.
   **Show** button.
 
 This app, which was also covered in the ["Remove unused
-code"](/fast/remove-unused-code) codelab, lets you vote for your favorite
+code"](/remove-unused-code) codelab, lets you vote for your favorite
 kitten. 🐈
 
 Now take a look at how large this application is:
@@ -47,7 +47,7 @@ Now take a look at how large this application is:
 
 <img class="w-screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 
-Although a lot of progress was made in the ["Remove unused code"](/fast/remove-unused-code) 
+Although a lot of progress was made in the ["Remove unused code"](/remove-unused-code) 
 codelab to trim this bundle size down, 225 KB is still quite large.
 
 ## Minification
@@ -202,7 +202,7 @@ even faster page loads. It is supported in the
 [latest versions of most browsers](https://caniuse.com/#feat=brotli).
 
 The sample application in this tutorial is identical to the app completed in the 
-["Remove unused code"](/fast/remove-unused-code) codelab except for the fact that 
+["Remove unused code"](/remove-unused-code) codelab except for the fact that 
 [Express](https://expressjs.com/) is now used as a server framework. In the next 
 few sections, both static and dynamic compression is explored.
 

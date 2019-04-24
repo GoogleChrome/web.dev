@@ -40,7 +40,7 @@ provider to make sure that your server returns a `2XX` HTTP status code for all
 valid URLs, or a `3XX` status code if the page has moved to another URL.
 
 {% Aside 'codelab' %}
-[Learn how to fix 404's in an express.js application](/discoverable/codelab-fix-sneaky-404).
+[Learn how to fix 404's in an express.js application](/codelab-fix-sneaky-404).
 {% endAside %}
 
 ## Verify

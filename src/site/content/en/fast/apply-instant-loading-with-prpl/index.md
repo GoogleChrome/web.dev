@@ -31,7 +31,7 @@ techniques:
 2. Select the **Performance** and **Progressive Web App** checkboxes.
 3. Click **Run Audits** to generate a report.
 
-For more information, see [Discover performance opportunities with Lighthouse](/fast/discover-performance-opportunities-with-lighthouse).
+For more information, see [Discover performance opportunities with Lighthouse](/discover-performance-opportunities-with-lighthouse).
 
 ## Preload critical resources
 
@@ -53,7 +53,7 @@ The browser sets a more appropriate priority level for the resource in order to
 try to download it sooner while not delaying the `window.onload` event.
 
 For more information about preloading critical resources, refer to the 
-[Preload critical assets](/fast/preload-critical-assets) guide.
+[Preload critical assets](/preload-critical-assets) guide.
 
 ## Render the initial route as soon as possible
 
@@ -99,10 +99,10 @@ repeat visits.
 Use a third-party library to simplify the process of generating a service worker
 unless you have more complex caching requirements than what a library can
 provide. For example,
-[Workbox](/reliable/workbox) provides a
+[Workbox](/workbox) provides a
 collection of tools that allow you to create and maintain a service worker to
 cache assets. For more information on service workers and offline reliability,
-refer to the [service worker guide](/reliable/service-workers-cache-storage) in the reliability learning path.
+refer to the [service worker guide](/service-workers-cache-storage) in the reliability learning path.
 
 ## Lazy load
 
@@ -117,10 +117,10 @@ Lighthouse also provides a warning for this when appropriate.
 <img class="w-screenshot" src="./js-bootup-high.png" alt="Lighthouse: JavaScript boot-up time audit">
 
 To send a smaller JavaScript payload that contains only the code needed when a
-user initially loads your application, split the entire bundle and [lazy load](/fast/reduce-javascript-payloads-with-code-splitting) chunks on demand.
+user initially loads your application, split the entire bundle and [lazy load](/reduce-javascript-payloads-with-code-splitting) chunks on demand.
 
 Once you've managed to split your bundle, preload the chunks that are more
-important (see the [Preload critical assets](/fast/preload-critical-assets) guide). 
+important (see the [Preload critical assets](/preload-critical-assets) guide). 
 Preloading ensures more important resources are fetched and downloaded sooner 
 by the browser.
 
@@ -130,7 +130,7 @@ Lighthouse also provides an audit for lazy-loading non-critical images.
 <img class="w-screenshot" src="./defer-offscreen-images.png" alt="Lighthouse: Defer offscreen images audit">
 
 If you load many images on your web page, defer all that are below the fold, or
-outside the device viewport, when a page is loaded (see [Use lazysizes to lazyload images](/fast/use-lazysizes-to-lazyload-images)).
+outside the device viewport, when a page is loaded (see [Use lazysizes to lazyload images](/use-lazysizes-to-lazyload-images)).
 
 ## Next Steps
 
