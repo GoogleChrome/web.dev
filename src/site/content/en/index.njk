@@ -21,10 +21,22 @@ description: |
           guidance and analysis from web.dev.
         </p>
         <div>
-          <a class="w-button w-button--primary w-masthead-home__button--primary" href="/measure">
+          <a
+            class="w-button w-button--primary w-masthead-home__button--primary gc-analytics-event"
+            data-category="web.dev"
+            data-label="home, test site"
+            data-action="click"
+            href="/measure"
+          >
             Test my site
           </a>
-          <a class="w-button w-button--secondary" href="/learn">
+          <a
+            class="w-button w-button--secondary gc-analytics-event"
+            data-category="web.dev"
+            data-label="home, start learning"
+            data-action="click"
+            href="/learn"
+          >
             Explore topics
           </a>
         </div>
@@ -37,7 +49,13 @@ description: |
       As the web advances, users' expectations grow. With web.dev's guidance, you
       can give your users the best experience, wherever they are.
     </p>
-    <a class="w-button" href="/about">
+    <a
+      class="w-button gc-analytics-event"
+      data-category="web.dev"
+      data-label="home, learn about"
+      data-action="click"
+      href="/about"
+    >
       About web.dev
     </a>
   </section>
@@ -90,7 +108,13 @@ description: |
     </div>
     <div class="w-layout-container w-pt--non w-pb--xl">
       <div class="w-text--center">
-        <a class="w-button" href="/learn">
+        <a
+          class="w-button gc-analytics-event"
+          data-category="web.dev"
+          data-label="home, all paths"
+          data-action="click"
+          href="/learn"
+        >
           See all topics
         </a>
       </div>
@@ -108,7 +132,13 @@ description: |
       your own schedule.
     </p>
     <div>
-      <a class="w-button w-button--primary" href="/measure">
+      <a
+        class="w-button w-button--primary gc-analytics-event"
+        data-category="web.dev"
+        data-label="home, create profile"
+        data-action="click"
+        href="/measure"
+      >
         Test my site
       </a>
     </div>
