@@ -44,8 +44,13 @@
 // The permalink nested instead of h2-h6 elements.
 .w-headline-link {
   color: transparent;
+  display: none;
   font-weight: $FONT_WEIGHT_MEDIUM;
   margin-left: 4px;
+
+  @include bp(sm) {
+    display: inline;
+  }
 }
 
 // Note that this element will appear inside of markdown headings which
@@ -54,6 +59,7 @@
 :hover > .w-headline-link,
 .w-headline-link:focus {
   color: $GREY_700;
+  display: inline;
 }
 
 .w-eyebrow {
