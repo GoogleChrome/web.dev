@@ -32,6 +32,12 @@ as the label text becomes a click target.
 There are two ways to associate a label with a form element.
 Either place the input element inside a label element:
 
+***Todo*** I got these example from the accessibility docs;
+however, both `<input>` lines of code are throwing errors,
+which seem to be due to input end tag.
+I'm fairly sure you can't have an input end tag,
+but need to confirm with Rob.
+
 ```html
 <label>
   <input type="checkbox">Receive promotional offers?</input>
