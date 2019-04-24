@@ -152,7 +152,7 @@ app.use(express.static('public', {
 
 {% Aside %}
 You can get familiar with the Network panel in Chrome's DevTools by
-working through [this codelab](/reliable/identify-resources-via-network-panel/codelab-explore-network-panel).
+working through [this codelab](/codelab-explore-network-panel).
 {% endAside %}
 
 With the modifications to the static file server in place, you can check to make

@@ -90,10 +90,10 @@ For the mysterious looking package that you're quite sure is not being used
 anywhere, take a step back and see which of your top-level dependencies are
 using it. Try to find a way to only import the components that you need from it.
 If you aren't using a library, remove it.  If the library isn't required for the
-initial page load, consider if it can be [lazy loaded](/fast/reduce-javascript-payloads-with-code-splitting).
+initial page load, consider if it can be [lazy loaded](/reduce-javascript-payloads-with-code-splitting).
 
 {% Aside 'codelab' %}
-[Remove unused code.](/fast/codelab-remove-unused-code)
+[Remove unused code.](/codelab-remove-unused-code)
 {% endAside %}
 
 ## Remove unneeded libraries

@@ -127,14 +127,14 @@ experience to web apps.
 ## Which of your assets should be precached?
 
 Refer back to the [Identify what's being
-loaded](/reliable/identify-resources-via-network-panel/) guide to get a good
+loaded](/identify-resources-via-network-panel/) guide to get a good
 picture of which URLs make the most sense to precache. The general rule is to
 precache any HTML, JavaScript, or CSS that's loaded early on and is crucial to
 displaying the basic structure of a given page.
 
 It's preferable to avoid precaching media or other assets that are loaded later
 (unless crucial for your web app's functionality). Instead, use a [runtime
-caching strategy](/reliable/runtime-caching-with-workbox/) to ensure these
+caching strategy](/runtime-caching-with-workbox/) to ensure these
 assets are cached-as-you-go.
 
 Always keep in mind that precaching involves using network bandwidth and storage

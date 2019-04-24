@@ -11,7 +11,7 @@ related_post: reduce-network-payloads-using-text-compression
 ---
 
 This codelab is an extension of the [Minify and compress network payloads
-codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression)
+codelab](/codelab-text-compression)
 and assumes you are familiar with the basics concepts of compression. As
 compared to other compression algorithms like `gzip`, this codelab explores how
 Brotli compression can further reduce compression ratios and your app’s overall
@@ -36,7 +36,7 @@ the current state of the application.
    the **Show** button.
 
 In the previous [Minify and compress network payloads
-codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression),
+codelab](/codelab-text-compression),
 we reduced the size of `main.js` from 225 KB to 61.6 KB. In this codelab, you
 will explore how Brotli compression can reduce this bundle size even further.
 

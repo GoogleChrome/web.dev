@@ -61,7 +61,7 @@ not used in this tutorial for the sake of teaching 😈.
 
 {% Aside %}
 The concept of removing unused code is explored in further detail in a
-[separate guide](/fast/remove-unused-code).
+[separate guide](/remove-unused-code).
 {% endAside %}
 
 Both options 3 and 4 help improve the performance of this application. The
@@ -274,11 +274,11 @@ Where possible, take advantage of browser hints such as `<link rel="preload">`
 or `<link rel="prefetch">` in order to try and load critical modules even
 sooner. webpack supports both hints through the use of magic comments in import
 statements. This is explained in more detail in the
-[Preload critical chunks](/fast/preload-critical-assets) guide.
+[Preload critical chunks](/preload-critical-assets) guide.
 
 ### Lazy loading more than code
 
 Images can make up a significant part of an application. Lazy loading those that
 are below the fold, or outside the device viewport, can speed up a website. Read
 more about this in the
-[Lazysizes](/fast/use-lazysizes-to-lazyload-images) guide.
+[Lazysizes](/use-lazysizes-to-lazyload-images) guide.

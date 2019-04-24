@@ -149,7 +149,7 @@ Use the `w` unit (instead of `px`) to write width descriptors. For example, a
 **Extra Credit:**
 You don't need to know about density descriptors to serve different image sizes.
 However, if you're curious about how density descriptors work, check out the
-[Resolution Switching code lab](/fast/serve-responsive-images/codelab-density-descriptors).
+[Resolution Switching code lab](/codelab-density-descriptors).
 Density descriptors are used to serve different images based on the_ device's
 [pixel density](https://en.wikipedia.org/wiki/Pixel_density).
 
@@ -185,7 +185,7 @@ The following is not a valid size:
 **Extra Credit:**
 If you want to be fancy, you can also use the sizes attribute to specify
 multiple slot sizes. This accommodates websites that use different layouts for
-different viewport sizes. Check out this [multiple slot code sample](/fast/serve-responsive-images/codelab-specifying-multiple-slot-widths)
+different viewport sizes. Check out this [multiple slot code sample](/codelab-specifying-multiple-slot-widths)
 to learn how to do this.
 
 ### (Even more) Extra Credit
@@ -195,7 +195,7 @@ can also use these same concepts for
 [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction).
 Art direction is the practice of serving completely different looking images
 (rather than different versions of the same image) to different viewports. You
-can learn more in the [Art Direction code lab](/fast/serve-responsive-images/codelab-art-direction).
+can learn more in the [Art Direction code lab](/codelab-art-direction).
 
 ## Verify
 

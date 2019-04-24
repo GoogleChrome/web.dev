@@ -23,7 +23,7 @@ In order for a screen reader to present a spoken UI to the user, meaningful
 elements must have proper labels or text alternatives. A label or text
 alternative gives an element its accessible **name**, one of the key properties
 for [expressing element semantics in the accessibility
-tree](https://web.dev/accessible/semantics-and-screen-readers/#semantic-properties-and-the-accessibility-tree).
+tree](https://web.dev/semantics-and-screen-readers/#semantic-properties-and-the-accessibility-tree).
 
 When an element's name is combined with the element's **role**, it gives the
 user context so they can understand what type of element they're interacting
@@ -172,7 +172,7 @@ For example, the page below has the title "Mary's Maple Bar Fast-Baking Recipe":
 
 {% Aside %}
 For tips on writing effective titles, see the [Write descriptive titles
-guide](https://web.dev/discoverable/write-descriptive-text).
+guide](https://web.dev/write-descriptive-text).
 {% endAside %}
 
 Similarly, any `frame` or `iframe` elements should have `title` attributes:

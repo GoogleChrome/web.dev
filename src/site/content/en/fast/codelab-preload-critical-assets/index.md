@@ -26,7 +26,7 @@ First measure how the website performs before adding any optimizations.
 
 Run the Lighthouse performance audit (**Lighthouse > Options > Performance**) on
 the live version of your Glitch (see also
-[Discover performance opportunities with Lighthouse](/fast/discover-performance-opportunities-with-lighthouse)).
+[Discover performance opportunities with Lighthouse](/discover-performance-opportunities-with-lighthouse)).
 
 Lighthouse shows the following failed audit for a resource that is fetched
 late:
@@ -141,7 +141,7 @@ correct values that should be used for the `as` attribute, refer to the
 Cross-origin resources can also be preloaded using the `crossorigin` attribute.
 Moreover, same-origin font resources must be fetched using anonymous mode CORS
 which is why the `crossorigin` attribute is also used in this preload tag.
-The [Cross Origin Resource Sharing](/secure/cross-origin-resource-sharing)
+The [Cross Origin Resource Sharing](/cross-origin-resource-sharing)
 guide explains the topic of same-origin and cross-origin requests in more detail.
 {% endAside %}
 
@@ -195,7 +195,7 @@ when needed.
 ## Preloading and prefetching with webpack
 
 The
-[code splitting guide](/fast/reduce-javascript-payloads-with-code-splitting)
+[code splitting guide](/reduce-javascript-payloads-with-code-splitting)
 explores the use of dynamic imports to split a bundle into multiple chunks.
 This is demonstrated with a simple application that
 dynamically imports a module from [Lodash](https://lodash.com/) when a form is submitted.

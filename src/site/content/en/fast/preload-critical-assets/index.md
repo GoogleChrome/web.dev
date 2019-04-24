@@ -50,7 +50,7 @@ parsing the CSS file. Preload this font to ensure it's fetched before the CSS
 file has downloaded.
 
 {% Aside 'codelab' %}
-[Improve the performance of a page by preloading web fonts](/fast/codelab-preload-web-fonts).
+[Improve the performance of a page by preloading web fonts](/codelab-preload-web-fonts).
 {% endAside %}
 
 If you are using a module bundler that creates build files of your application,
@@ -62,7 +62,7 @@ through the use of a special comment parameter:
 import(_/* webpackPreload: true */_ "CriticalChunk")
 ```
 
-This works best if you [code-split](/fast/reduce-javascript-payloads-with-code-splitting) your bundle and only
+This works best if you [code-split](/reduce-javascript-payloads-with-code-splitting) your bundle and only
 preload critical chunks. If you are using an older version of webpack, use a
 third-party plugin such as
 [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin).
@@ -87,6 +87,6 @@ import(_/* webpackPrefetch: true */_ "ImportantForNextPageChunk")
 ```
 
 {% Aside 'codelab' %}
-[Improve the performance of a page by preloading and prefetching resources](/fast/codelab-preload-critical-assets).
+[Improve the performance of a page by preloading and prefetching resources](/codelab-preload-critical-assets).
 {% endAside %}
 

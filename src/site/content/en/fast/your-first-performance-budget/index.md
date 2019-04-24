@@ -9,7 +9,7 @@ web_lighthouse: N/A
 date: 2018-11-05
 ---
 
-When you set a personal, business or family budget, you are setting a limit to your spending and making sure you stay within it. [Performance budgets](/fast/performance-budgets-101) work in the same way, but for metrics that affect website performance.
+When you set a personal, business or family budget, you are setting a limit to your spending and making sure you stay within it. [Performance budgets](/performance-budgets-101) work in the same way, but for metrics that affect website performance.
 
 With a performance budget established and enforced you can be sure that your site will render as quickly as possible. This will provide a better experience for your visitors and positively impact business metrics.
 

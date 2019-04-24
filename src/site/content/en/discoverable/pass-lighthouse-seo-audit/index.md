@@ -30,7 +30,7 @@ engine to see:
 
 Lighthouse generates a report for your page so you can see areas where you could
 improve SEO for your site. For more information, see [Discover performance
-opportunities with Lighthouse.](https://web.dev/fast/discover-performance-opportunities-with-lighthouse)
+opportunities with Lighthouse.](https://web.dev/discover-performance-opportunities-with-lighthouse)
 
 ## Next steps
 
