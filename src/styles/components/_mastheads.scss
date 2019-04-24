@@ -48,8 +48,21 @@
   max-width: 408px;
 }
 
+.w-masthead-home__buttons {
+  display: flex;
+  flex-direction: column;
+
+  @include bp(sm) {
+    display: block;
+  }
+}
+
 .w-masthead-home__button--primary {
-  margin-right: 16px;
+  margin: 0 0 16px;
+
+  @include bp(sm) {
+    margin: 0 16px 0 0;
+  }
 }
 
 // -----------------------------------------------------------------------------
