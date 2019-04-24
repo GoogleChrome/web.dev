@@ -85,7 +85,10 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
     return html`
       <a
         class="w-article-navigation__link w-article-navigation__link--back ${isSingle &&
-          `w-article-navigation__link--single`}"
+          `w-article-navigation__link--single`} gc-analytics-event"
+        data-category="web.dev"
+        data-label="navigation, go back"
+        data-action="click"
         href="${link}"
       >
         ${label}
@@ -96,7 +99,10 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
   function renderForward(link, label) {
     return html`
       <a
-        class="w-article-navigation__link w-article-navigation__link--forward"
+        class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+        data-category="web.dev"
+        data-label="navigation, go forward"
+        data-action="click"
         href="${link}"
       >
         <div class="w-article-navigation__column">
