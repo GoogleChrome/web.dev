@@ -1,5 +1,6 @@
 @import '../settings/colors';
 @import '../settings/global';
+@import '../settings/type';
 @import '../tools/mixins';
 
 // =============================================================================
@@ -73,6 +74,10 @@ cite,
 dfn,
 em {
   font-style: italic;
+}
+
+strong {
+  font-weight: $FONT_WEIGHT_MEDIUM;
 }
 
 
