@@ -24,10 +24,6 @@ $CODE_COLORS: (
   dark-gray: #969896
 );
 
-// Note: An interesting way to target a <code> element appearing outside of
-// a <pre> (for inline code snippets) is to use a selector like this:
-// :not(pre) > code { ... }
-
 code {
   font-size: .9em;
   font-weight: 400; // DevSite override
@@ -42,8 +38,12 @@ pre {
   hyphens: none;
   tab-size: 2;
   text-align: left;
-  white-space: pre;
   word-spacing: normal;
+}
+
+// Let inline code elements wrap
+:not(pre) > code {
+  white-space: pre-wrap;
 }
 
 // Code block
@@ -53,6 +53,7 @@ pre[class*='language-'] {
   margin: 32px 0;
   overflow: auto;
   padding: 16px;
+  white-space: pre;
 }
 
 pre code,
