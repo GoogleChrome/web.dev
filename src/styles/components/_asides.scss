@@ -39,6 +39,10 @@ $KEY_POINT_COLOR: #6001ff;
   }
 }
 
+.w-aside strong {
+  font-weight: $FONT_WEIGHT_BOLD;
+}
+
 .w-aside::after {
   content: '';
   height: 2px;
