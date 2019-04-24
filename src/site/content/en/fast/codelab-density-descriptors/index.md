@@ -104,9 +104,12 @@ Ratio").
 for a particular device. A 192 ppi device has a `devicePixelRatio` of 2 (192
 ppi/96 ppi = 2) because "2 of its display pixels are the size of 1 CSS pixel".
 
-These days most devices have a device-pixel-ratio between 1.0 and 4.0. (Note:
+These days most devices have a device-pixel-ratio between 1.0 and 4.0.
+
+{% Aside %}
 This ratio doesn't have to be a whole number. `1.5`, `2.4`, and `2.5` are all
-device-pixel-ratios of common devices.)
+device-pixel-ratios of common devices.
+{% endAside %}
 
 - Determine the pixel density of a device by typing `window.devicePixelRatio`
 in the console.
