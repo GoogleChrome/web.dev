@@ -15,9 +15,11 @@ traffic for a more complex sample application. At the end of the exercise,
 you'll have the skills you need to figure out _what_ your own web application's
 loading, and _when_ each of the requests are being made.
 
-Note: The screenshots and instructions in this codelab assume that you're using
-Chrome. Each browser has its own DevTools experience, which might
-not match what you see in this codelab.
+{% Aside %}
+The screenshots and instructions in this codelab assume that you're using
+Chrome. Each browser has its own DevTools experience, which might not match what
+you see in this codelab.
+{% endAside %}
 
 ## Navigate to the Network Panel
 
