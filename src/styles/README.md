@@ -16,14 +16,6 @@ Learn more @ https://speakerdeck.com/dafed/managing-css-projects-with-itcss
 
 ## Rules
 
-- Do not use `@import` except in the `all.scss` files. This helps to avoid
-  double-importing a resource and bloating the stylesheet.
-- List dependencies at the top of each file. Example:
-```
-// Dependencies:
-// tools/_functions.scss
-```
-
 - Use [hyphenated BEM style](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 - Prefix classes with `w-` which stands for 'web'. This helps us namespace our
   CSS so we don't conflict with DevSite.
