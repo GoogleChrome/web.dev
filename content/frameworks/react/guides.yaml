@@ -16,13 +16,13 @@ overview: |
     - virtualize-long-lists-react-window
 - title: Reliable
   guides:
-    - add-service-worker
+    - precache-with-workbox-react
 - title: Discoverable
   guides:
-    - prerender-routes
+    - prerender-with-react-snap
 - title: Installable
   guides:
-    - add-manifest
+    - add-manifest-react
 - title: Accessible
   guides:
     - accessibility-in-react
