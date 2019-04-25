@@ -1,5 +1,6 @@
 @import '../settings/colors';
 @import '../settings/dimensions';
+@import '../tools/mixins';
 
 // =============================================================================
 // VETOS OVERVIEW
@@ -134,4 +135,43 @@ body devsite-heading[link] {
 devsite-content-footer.container.nocontent {
   color: $GREY_700;
   margin-bottom: 32px;
+}
+
+// Make the sidebar anchor 100% width so the focus
+// ring is wraps around the container.
+.devsite-nav-title {
+  width: 100%;
+}
+
+.devsite-footer-linkbox-link:hover,
+.devsite-footer-linkbox-link:focus,
+.devsite-footer-sites-link:hover,
+.devsite-footer-sites-link:focus,
+.devsite-footer-utility-link:hover,
+.devsite-footer-utility-link:focus {
+  color: $WEB_PRIMARY_COLOR !important;
+}
+
+body devsite-footer-utility .devsite-footer-utility-button > .devsite-footer-utility-link {
+  background-color: $WEB_PRIMARY_COLOR !important;
+  color: $WHITE !important;
+  outline: 0 !important;
+  position: relative;
+  text-decoration: none !important;
+}
+
+body devsite-footer-utility .devsite-footer-utility-button > a::after {
+  @include w-overlay();
+}
+
+body devsite-footer-utility .devsite-footer-utility-button > a:hover::after {
+  background-color: rgba($WHITE, .08);
+}
+
+body devsite-footer-utility .devsite-footer-utility-button > a:focus::after {
+  background-color: rgba($WHITE, .24);
+}
+
+body devsite-footer-utility .devsite-footer-utility-button > a:active::after {
+  background-color: rgba($WHITE, .32);
 }
