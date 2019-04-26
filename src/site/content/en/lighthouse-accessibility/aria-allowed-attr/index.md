@@ -25,7 +25,7 @@ Lighthouse reports any mismatches between roles and `aria-*` attributes:
 
 ## About ARIA
 
-The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/html-aria)
+The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/wai-aria-1.1/)
 is good for bridging areas with accessibility issues that can't be managed with native HTML.
 It works by allowing you to specify attributes that modify the way an element is translated into the accessibility tree. 
 
