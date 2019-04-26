@@ -27,6 +27,6 @@ module.exports = {
     installable,
   ],
   audits: [
-     lighthouseSEO,
+    lighthouseSEO,
   ],
 };
