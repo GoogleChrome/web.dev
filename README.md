@@ -17,20 +17,27 @@ authoring guides and codelabs.
 
 ## Get started
 
-Install dependencies.
+### Clone the repo.
+
+```
+git clone --depth 1 https://github.com/GoogleChrome/web.dev.git --recurse-submodules
+```
+
+### Install dependencies.
 
 ```
 npm ci
 ```
 
-Compile docs into the `dist` directory.
+### Compile docs into the `dist` directory.
 
 ```
 npm run build
 ```
 
-Start a local server to preview the site. Changes to assets will rebuild
-the site. Refresh to see changes.
+### Start a local server to preview the site.
+
+Changes to assets will rebuild the site. Refresh to see changes.
 
 ```
 npm run dev
@@ -40,6 +47,12 @@ Next,  open `http://localhost:8080/` to see the site locally. The preview server
 allows you to see how the content will look on the production site, but it's
 not a true staging server. For example, features like search and JS components
 may not work or be entirely broken on the local preview.
+
+### Pull latest styles
+
+```
+git submodule update --remote
+```
 
 ## Staging
 
