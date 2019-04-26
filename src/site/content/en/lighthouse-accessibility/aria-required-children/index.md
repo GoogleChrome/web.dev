@@ -24,20 +24,7 @@ Lighthouse reports when a role is missing their required child role(s):
   </figcaption>
 </figure>
 
-## About ARIA
-
-The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/html-aria)
-is good for bridging areas with accessibility issues that can't be managed with native HTML.
-It works by allowing you to specify attributes that modify the way an element is translated into the accessibility tree. 
-
-Using ARIA attributes,
-you can give the element the missing information so the screen reader can properly interpret it.
-In order for these attributes to be effective,
-they need to make sense-- you wouldn't want a screen reader
-to misinform a user.
-
-For a brief intro, see the
-[Introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/).
+{% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse finds missing child roles
 
