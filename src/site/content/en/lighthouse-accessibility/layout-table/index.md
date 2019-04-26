@@ -12,6 +12,9 @@ Tables used for layout purposes shouldn't include data elements:
 `th` element, `caption` element or `summary` attribute.
 Lighthouse reports when layout `<table>` elements use `<th>`, `<caption>`, or `summary`:
 
+***Todo*** This audit doesn't seem to be failing for me. I added `role="presentation"` to a table
+with `th` expecting this to fail, and it does not.
+
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="layout-table.png" alt="Lighthouse: Presentational <table> elements incorrectly using <th>, <caption>, or summary
   <figcaption class="w-figcaption">
