@@ -25,7 +25,7 @@ Lighthouse reports any mismatches between roles and `aria-*` attributes:
 
 ## About ARIA
 
-The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/wai-aria-1.1/)
+The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/html-aria)
 is good for bridging areas with accessibility issues that can't be managed with native HTML.
 It works by allowing you to specify attributes that modify the way an element is translated into the accessibility tree. 
 
@@ -54,12 +54,17 @@ In the example Lighthouse audit above,
 the `aria-checked` attribute is not allowed on the `role=list`,
 so the audit fails.
 This makes sense--
-as list elemements wouldn't have a state of checked,
+as list elements wouldn't have a state of checked,
 so applying a checked state would be confusing to screen reader users.
 
 ## How this audit impacts overall Lighthouse score
 
-Todo. I have no idea how accessibility scoring is working!
+Lighthouse will flag this as a low severity issue.
+It is important to fix,
+and probably indicates a mistaken assumption in your code,
+but a disallowed attribute will not break the element's role.
+In the example above, the element would still be announced as a list and
+the `aria-checked` attribute would be ignored.
 
 ## How to avoid ARIA mismatches
 
