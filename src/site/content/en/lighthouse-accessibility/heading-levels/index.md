@@ -10,7 +10,7 @@ web_lighthouse:
   - heading-levels
 ---
 
-Screen readers users often navigation an unfamiliar page by exploring headings.
+Screen readers users often navigate an unfamiliar page by exploring headings.
 By using the correct headings,
 you can dramatically improve the navigation experience on your site
 for users of assitive technology.
@@ -18,7 +18,7 @@ for users of assitive technology.
 ## How to manually test
 
 To check headings don't skip levels,
-first check that headings provide a structural outline for the page.
+make sure all headings follow a logical, numerical order.
 For example:
 
 ```html
@@ -29,11 +29,6 @@ For example:
   <h3>Sub-section Heading</h3>
 </section>
 ```
-
-Next check that headings aren't skipped.
-Make sure all headings follow a logical, numerical order.
-For example,
-look out for an `<h1>` heading followed by an `<h3>` heading.
 
 Use [this list of landmark elements](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/HTML5.html) to check your page.
 Click the "Show Headings" button to see a structural outline for the page.
@@ -50,6 +45,7 @@ Create a skeleton or scaffold of the page
 such that anyone navigating by headings can form a mental picture.
 
 Don't skip heading levels.
+Look out for an `<h1>` heading followed by an `<h3>` heading.
 It is an anti-pattern to skip heading levels to use the browser's default heading styles.
 Fix any skipped heading levels and use your own CSS for styling.
 
