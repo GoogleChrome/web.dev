@@ -87,15 +87,17 @@ gulp.task('copy-content-assets', () => {
 //     .pipe(gulp.dest('./dist/en'));
 // });
 
-gulp.task(
-  'build',
-  gulp.parallel(
+let buildTask;
+if (process.env.ELEVENTY_ENV === 'prod') {
+  buildTask = gulp.parallel('copy-content-assets');
+} else {
+  buildTask = gulp.parallel(
     'scss',
     'copy-global-assets',
     'copy-content-assets',
-    // 'copy-blog-assets',
-  )
-);
+  );
+}
+gulp.task('build', buildTask);
 
 gulp.task('watch', () => {
   gulp.watch('./src/styles/**/*.scss', gulp.series('scss'));
