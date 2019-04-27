@@ -6,7 +6,7 @@ const secure = require('../secure/secure.11tydata.js').path;
 const installable = require('../installable/installable.11tydata.js').path;
 
 /* eslint-disable max-len */
-// const lighthousePerformance = require('../lighthouse-performance/lighthouse-performance.11tydata.js').path;
+const lighthouseBestPractices = require('../lighthouse-best-practices/lighthouse-best-practices.11tydata.js').path;
 /* eslint-enable max-len */
 
 // =============================================================================
@@ -26,7 +26,7 @@ module.exports = {
     secure,
     installable,
   ],
-  // audits: [
-  //   lighthousePerformance,
-  // ],
+  audits: [
+    lighthouseBestPractices,
+  ],
 };

@@ -3,9 +3,7 @@ layout: post
 title: TBD.
 description: |
   Learn about no-document-write audit.
-authors:
- - kaycebasques
- - megginkearney
+author: kaycebasques
 web_lighthouse:
   - no-document-write
 ---

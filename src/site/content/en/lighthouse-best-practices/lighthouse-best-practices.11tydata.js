@@ -1,14 +1,14 @@
 module.exports = {
   // Tags are inherited by all posts.
-  tags: ['pathItem', 'lighthouse-seo'],
+  tags: ['pathItem', 'lighthouse-best-practices'],
   path: {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
-    slug: 'lighthouse-seoe',
+    slug: 'lighthouse-best-practices',
     cover: '/images/collections/lighthouse.png',
-    title: 'SEO audits',
+    title: 'Best Practices audits',
     description:
-      'How well can search engines understand your content?',
+      'Improve the code health of your web page following these best practices',
     overview: `Lorem ipsum dolor set amet...`,
     topics: [
       {
