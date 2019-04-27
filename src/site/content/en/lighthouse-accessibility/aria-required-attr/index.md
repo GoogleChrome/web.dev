@@ -59,7 +59,10 @@ Need to ask Rob for help to get an example.
 
 ## How this audit impacts overall Lighthouse score
 
-Todo. I have no idea how accessibility scoring is working!
+Lighthouse will flag this as a low severity issue. It is important to fix, and
+probably indicates a mistaken assumption in your code, but a missing required
+attribute will not break the element's role. In the example above, the element
+would still be announced as a heading and assigned a default level of `2`.
 
 ## How to check for required child roles
 
