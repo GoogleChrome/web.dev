@@ -35,17 +35,20 @@ Any role that contains "required owned elements",
 is considered a parent role to the child role/s.
 
 Lighthouse fails this audit,
-when it finds a parent role that's missing it's child role/s.
+when it finds a parent role that's missing its child role/s.
 In the example Lighthouse audit above,
-the `list` role requires a group of `listitem` roles.
-Since there's no `listitem` role defined,
+the `list` role requires a group of child elements with `listitem` roles.
+Since there are no children with a `listitem` role defined,
 the audit fails.
 This makes sense,
-as it would be confusing to have a list without list items.
+as it would be confusing to have a list without any list items.
 
 ## How this audit impacts overall Lighthouse score
 
-Todo. I have no idea how accessibility scoring is working!
+Lighthouse will flag this as a medium severity issue. It is important to fix,
+and may break the experience for users. In the example above, the element may
+still be announced as a list, but the number of items within the list may be
+unclear.
 
 ## How to check for required child roles
 
