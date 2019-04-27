@@ -48,12 +48,23 @@ to check the values of roles and their attrbutes.
 Lighthouse fails this audit,
 when it finds attributes with invalid values.
 In the example Lighthouse audit above,
-`aria-checked` should be `true` or `false`;
-it's current undefined value is invalid.
+`aria-checked` should be set to either `"true"`, `"false"`, or `"mixed"`.
+
+{% Aside %}
+HTML boolean attributes such as `hidden` or `checked` are assumed to be either
+true or false depending on if they are present on the element.
+
+However, ARIA attributes require an _explicit_ `"true"` or `"false"` string.
+This is because most ARIA attributes actually support [a third state](https://www.w3.org/TR/wai-aria-1.1/#valuetype_true-false-undefined)—`undefined`—or a [tristate](https://www.w3.org/TR/wai-aria-1.1/#valuetype_tristate)
+with an intermediate `"mixed"` value.
+{% endAside %}
 
 ## How this audit impacts overall Lighthouse score
 
-Todo. I have no idea how accessibility scoring is working!
+Lighthouse will flag this as a low severity issue. It is important to fix, and
+probably indicates a mistaken assumption in your code. In the example above, the
+element would still be announced as a checkbox but it will have an implicit
+checked state of "unchecked.
 
 ## How to check for invalid attribute values
 
