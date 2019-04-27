@@ -2,7 +2,7 @@
 layout: post
 title: Page has the HTML doctype
 description: |
-  Learn about doctype audit.
+  Learn about `doctype` audit.
 author: megginkearney
 web_lighthouse:
   - doctype

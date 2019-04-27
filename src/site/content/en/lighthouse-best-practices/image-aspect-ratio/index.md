@@ -2,7 +2,7 @@
 layout: post
 title: Displays images with incorrect aspect ratio
 description: |
-  Learn about image-aspect-ration audit.
+  Learn about `image-aspect-ration` audit.
 author: kaycebasques
 web_lighthouse:
   - image-aspect-ration

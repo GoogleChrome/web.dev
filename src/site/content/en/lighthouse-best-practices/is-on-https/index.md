@@ -2,7 +2,7 @@
 layout: post
 title: Uses HTTPS
 description: |
-  Learn about is-on-https audit.
+  Learn about `is-on-https` audit.
 author: kaycebasques
 web_lighthouse:
   - is-on-https

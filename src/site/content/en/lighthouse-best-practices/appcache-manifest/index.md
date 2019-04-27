@@ -2,7 +2,7 @@
 layout: post
 title: Avoids application cache
 description: |
-  Learn about appcache-manifest audit.
+  Learn about `appcache-manifest` audit.
 author: kaycebasques
 web_lighthouse:
   - appcache-manifest

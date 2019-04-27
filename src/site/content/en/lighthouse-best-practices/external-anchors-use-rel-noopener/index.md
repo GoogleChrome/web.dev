@@ -2,7 +2,7 @@
 layout: post
 title: Links to cross-origin destinations are unsafe
 description: |
-  Learn about external-anchors-use-rel-noopener audit.
+  Learn about `external-anchors-use-rel-noopener` audit.
 author: kaycebasques
 web_lighthouse:
   - external-anchors-use-rel-noopener
@@ -45,7 +45,7 @@ Lighthouse uses the following algorithm to flag links as `rel="noopener"`
 candidates:
 
 1. Gather all `<a>` nodes that contain the attribute `target="_blank"` and do not contain the attribute `rel="noopener"` or `rel="noreferrer"`.
-1. Filter out any same-host links.
+2. Filter out any same-host links.
 
 Because Lighthouse filters out same-host links, there's an edge case that you
 might want to be aware of if you're working on a large site. If your page opens

@@ -2,7 +2,7 @@
 layout: post
 title: Browser errors were logged to the console
 description: |
-  Learn about errors-in-console audit.
+  Learn about `errors-in-console` audit.
 author: kaycebasques
 web_lighthouse:
   - errors-in-console

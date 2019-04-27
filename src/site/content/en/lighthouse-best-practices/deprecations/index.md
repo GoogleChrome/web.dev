@@ -2,7 +2,7 @@
 layout: post
 title: Avoids deprecated APIs
 description: |
-  Learn about deprecations audit.
+  Learn about `deprecations` audit.
 author: kaycebasques
 web_lighthouse:
   - deprecations

@@ -2,7 +2,7 @@
 layout: post
 title: Avoids requesting geolocation permission on page load
 description: |
-  Learn about geolocation-on-start audit.
+  Learn about `geolocation-on-start` audit.
 author: kaycebasques
 web_lighthouse:
   - geolocation-on-start
