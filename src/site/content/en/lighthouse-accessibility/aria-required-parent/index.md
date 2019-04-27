@@ -11,7 +11,7 @@ web_lighthouse:
 [ARIA](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 roles and attributes help screen readers
 provide missing information about an element.
-For these roles and attributles to make sense,
+For these roles and attributes to make sense,
 each ARIA `role` supports a specific subset of `aria-*` attributes
 (see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
 Some ARIA child roles must be contained by specific parent roles
@@ -49,7 +49,7 @@ Any role that contains "required context role",
 is considered a child role to the parent(s).
 
 Lighthouse fails this audit,
-when it finds a child role that's missing it's parent.
+when it finds a child role that's missing its parent.
 In the example Lighthouse audit above,
 the `listitem` role requires a parent `group` or `list`.
 Since there's no parent role defined,
@@ -57,9 +57,12 @@ the audit fails.
 This makes sense,
 as it would be confusing to have a listitem without grouping into a list.
 
-## How this audit impact overall Lighthouse score
+## How this audit impacts overall Lighthouse score
 
-Todo. I have no idea how accessibility scoring is working!
+Lighthouse will flag this as a low severity issue. It is important to fix, and
+probably indicates a mistaken assumption in your code. In the example above, the
+element would be announced as plain text content and its `listitem` role would
+be discarded.
 
 ## How to check for required parent roles
 
