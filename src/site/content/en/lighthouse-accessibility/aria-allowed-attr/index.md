@@ -53,8 +53,7 @@ when it finds an attribute that isn't allowed for a role on an elememnt.
 In the example Lighthouse audit above,
 the `aria-checked` attribute is not allowed on the `role=list`,
 so the audit fails.
-This makes sense--
-as list elements wouldn't have a state of checked,
+This makes sense—as list elements wouldn't have a state of checked,
 so applying a checked state would be confusing to screen reader users.
 
 ## How this audit impacts overall Lighthouse score
