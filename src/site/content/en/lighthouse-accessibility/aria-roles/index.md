@@ -53,7 +53,10 @@ Looks like a spelling mistake.
 
 ## How this audit impacts overall Lighthouse score
 
-Todo. I have no idea how accessibility scoring is working!
+Lighthouse will flag this as a low severity issue. It is important to fix, and
+probably indicates a mistaken assumption in your code—or a  spelling mistake. In
+the example above, the element's role should be corrected from `buton` to
+`button`.
 
 ## How to check for invalid values
 
