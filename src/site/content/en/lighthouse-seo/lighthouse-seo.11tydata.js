@@ -4,7 +4,7 @@ module.exports = {
   path: {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
-    slug: 'lighthouse-seoe',
+    slug: 'lighthouse-seo',
     cover: '/images/collections/lighthouse.png',
     title: 'SEO audits',
     description:
