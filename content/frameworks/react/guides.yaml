@@ -25,4 +25,4 @@ overview: |
     - add-manifest-react
 - title: Accessible
   guides:
-    - accessibility-in-react
+    - accessibility-auditing-react
