@@ -76,7 +76,7 @@ Now that you know how to get started building a Create React App, learn how impr
 
 * [Code-splitting with Suspense](/react/code-splitting-suspense)
 * [Virtualizing large lists](/react/virtualize-long-lists-react-window)
-* [Caching assets with a service worker](/react/add-service-worker)
-* [Pre-rendering routes](/react/prerender-routes)
-* [Adding a Web App Manifest](/react/add-manifest)
-* [Auditing and fixing accessibility issues](/react/accessibility-in-react)
+* [Caching assets with a service worker](/react/precache-with-workbox-react)
+* [Pre-rendering routes](/react/prerender-with-react-snap)
+* [Adding a Web App Manifest](/react/add-manifest-react)
+* [Auditing and fixing accessibility issues](/react/accessibility-auditing-react)
