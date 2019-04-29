@@ -8,13 +8,12 @@ web_lighthouse:
   - works-offline
 ---
 
-Progressive web apps work offline. If Lighthouse does not receive an HTTP 200
-response when accessing a page while offline, then the page is not accessible
-offline.
+Progressive web apps must work offline. Lighthouse checks whether a page sends an HTTP 200
+response to tell if the page is accessible while the user is offline.
 
-Learn more in [What is network reliability and how do you measure it?](/network-connections-unreliable/).
+Learn more in [What is network reliability and how do you measure it?](/network-connections-unreliable/)
 
-## Recommendations {: #recommendations }
+## Recommendations
 
 1. Add a service worker to your app.
 2. Use the service worker to cache files locally.
@@ -38,14 +37,13 @@ Learn more in [What is network reliability and how do you measure it?](/network-
   </ul>
 </div>
 
-The codelab above shows you some basics on how to debug your service worker
-using Chrome DevTools. For more detailed help, see the codelab dedicated to
-this topic, [Debugging Service
-Workers](https://codelabs.developers.google.com/codelabs/debugging-service-workers).
+The codelab above shows some basics about how to debug a service worker
+using Chrome DevTools. For more detailed help, see the [Debugging Service
+Workers](https://codelabs.developers.google.com/codelabs/debugging-service-workers) codelab.
 
 ## More information
 
-Lighthouse emulates an offline connection using the Chrome Debugging Protocol,
+Lighthouse emulates an offline connection using the Chrome Debugging Protocol
 and then attempts to retrieve the page using `XMLHttpRequest`.
 
 [Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/works-offline)
