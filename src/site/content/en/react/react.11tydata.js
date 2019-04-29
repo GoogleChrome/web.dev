@@ -10,7 +10,7 @@ module.exports = {
     updated: 'April 28, 2019',
     description: `Build performant and progressive React applications.`,
     overview: `In this section you'll learn how to use built-in APIs and
-    third-party dependencies to improve the performance of your
+    third-party libraries to improve the performance of your
     React applications.`,
     topics: [
       {

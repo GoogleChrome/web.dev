@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Precaching in Create React App with Workbox
+subhead: |
+  Precaching with a service worker can speed up repeat visits and provide offline support. Workbox is included in Create React App by default!
+hero: hero-precache-with-workbox-react.jpg
+date: 2019-04-29
 description: |
   Workbox is built into Create React App with a default configuration that
   precaches all static assets in your application with every build.
@@ -16,7 +20,6 @@ author: houssein
 [`Workbox`](https://developers.google.com/web/tools/workbox/) is built into
 Create React App (CRA) with a default configuration that precaches all the
 static assets in your application with every build.
-
 
 <figure class="w-figure w-figure--inline-right">
   <img src="./service-workers.png" width="300" alt="Requests/responses with service worker">

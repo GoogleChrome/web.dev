@@ -1,6 +1,10 @@
 ---
 layout: post
 title: 'Get Started: Optimize your React app'
+subhead: |
+  Want to make your React site as fast and accessible as possible? You've come to the right place!
+hero: hero-code-splitting-suspense.jpg
+date: 2019-04-29
 description: |
   React is an open-source library that makes building UIs easier. This learning
   path will cover different APIs and tools within the ecosystem that you should
