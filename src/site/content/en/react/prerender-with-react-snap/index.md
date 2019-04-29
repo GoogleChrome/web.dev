@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Pre-render routes with react-snap
+subhead: |
+  Not server-side rendering but still want to speed up First Paint times of your React site? Try pre-rendering!
+hero: hero-prerender-with-react-snap.jpg
+date: 2019-04-29
 description: |
   react-snap is a third-party library that pre-renders pages on your site into
   static HTML files. This can improve First Paint times in your application.

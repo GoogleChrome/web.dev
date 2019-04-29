@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Add a web app manifest with Create React App
+subhead: |
+  A web app manifest is included into Create React App by default and allows anyone to install your React application on their device.
+hero: hero-add-manifest-react.jpg
+date: 2019-04-29
 description: |
   Create React App includes a web app manifest by default. Modifying this file
   will allow you to change how your application is displayed when installed on

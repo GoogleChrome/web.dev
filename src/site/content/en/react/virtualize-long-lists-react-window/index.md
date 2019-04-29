@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Virtualize large lists with react-window
+subhead: |
+  Super large tables or lists can slow down performance signficantly. List virtualization can help!
+hero: hero-virtualize-long-lists-react-window.jpg
+date: 2019-04-29
 description: |
   react-window is a library that allows large lists to be rendered efficiently.
 author: houssein
@@ -33,10 +37,10 @@ when the user continues to scroll. This improves both the rendering and
 scrolling performance of the list.
 
 <figure class="w-figure  w-figure--center">
-  <img class="w-screenshot" src="./window-diagram.jpg" alt="">
-  <!-- <figcaption class="w-figcaption">
-    TODO: Add image caption and alt text
-  </figcaption> -->
+  <img class="w-screenshot" src="./window-diagram.jpg" alt="Window of content in a virtualized list">
+  <figcaption class="w-figcaption">
+    Moving "window" of content in a virtualized list
+  </figcaption>
 </figure>
 
 DOM nodes that exit the "window" are recycled, or immediately replaced with
@@ -167,10 +171,10 @@ or grids. In this context, the "window" of visible content changes as the user
 scrolls horizontally **and** vertically.
 
 <figure class="w-figure  w-figure--center">
-  <img class="w-screenshot" src="./window-diagram-grid.jpg" alt="">
-  <!-- <figcaption class="w-figcaption">
-    TODO: Add image caption and alt text
-  </figcaption> -->
+  <img class="w-screenshot" src="./window-diagram-grid.jpg" alt="Moving window of content in a virtualized grid is two-dimensional">
+  <figcaption class="w-figcaption">
+    Moving "window" of content in a virtualized grid is two-dimensional
+  </figcaption>
 </figure>
 
 Similary, both `FixedSizeGrid` and `VariableSizeGrid` components can be used
@@ -207,10 +211,10 @@ calculations and DOM mutations slower.
 The following diagram might help summarize this:
 
 <figure class="w-figure  w-figure--center">
-  <img class="w-screenshot" src="./difference-in-scrolling.jpg" alt="">
-  <!-- <figcaption class="w-figcaption">
-    TODO: Add image caption and alt text
-  </figcaption> -->
+  <img class="w-screenshot" src="./difference-in-scrolling.jpg" alt="Difference in scrolling between a regular and virtualized list">
+  <figcaption class="w-figcaption">
+    Difference in scrolling between a regular and virtualized list
+  </figcaption>
 </figure>
 
 The best approach to solve this problem is continue to use a library like

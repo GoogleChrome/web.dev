@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Accessibility auditing with react-axe and eslint-plugin-jsx-a11y
+hero: hero-accessibility-auditing-react.jpg
+subhead: |
+  Your React site is not progressive if it's not accessible. Auditing during development can help you spot any issues!
+date: 2019-04-29
 description: |
   react-axe is a library that audits a React application and logs any
   accessibility issues to the Chrome DevTools console. eslint-plugin-jsx-a11y
