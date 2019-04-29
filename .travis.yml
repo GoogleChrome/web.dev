@@ -9,5 +9,4 @@ cache:
   directories:
   - node_modules
 script:
-- npm run lint
-- npm run build
+- ELEVENTY_ENV=prod npx eleventy
