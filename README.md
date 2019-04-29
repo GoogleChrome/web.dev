@@ -20,7 +20,7 @@ authoring guides and codelabs.
 ### Clone the repo.
 
 ```
-git clone --depth 1 https://github.com/GoogleChrome/web.dev.git --recurse-submodules
+git clone https://github.com/GoogleChrome/web.dev.git --recurse-submodules
 ```
 
 ### Install dependencies.
