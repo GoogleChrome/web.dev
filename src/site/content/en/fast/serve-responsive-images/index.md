@@ -72,12 +72,12 @@ tiny bit more HTML.
 
 ### Other options
 
-Image services like [Thumbor](https://github.com/thumbor/thumbor) (open-source)
-and [Cloudinary](https://cloudinary.com/) are also worth checking out. Image
-services provide responsive images (and image manipulation) on-demand. Thumbor
-is setup by installing it on a server; Cloudinary takes care of these details
-for you and requires no server setup. Both are easy ways to create responsive
-images.
+Image services like [Thumbor](https://github.com/thumbor/thumbor) (open-source),
+[Cloudinary](https://cloudinary.com/) and [Uploadcare](https://uploadcare.com/)
+are also worth checking out. Image services provide responsive images (and image
+  manipulation) on-demand. Thumbor is setup by installing it on a server;
+Cloudinary and Uploadcare take care of these details for you and require no
+server setup. All three are easy ways to create responsive images.
 
 ## Serve multiple image versions
 
