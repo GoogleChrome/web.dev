@@ -3,7 +3,7 @@ layout: post
 title: Code splitting with React.lazy and Suspense
 subhead: |
   You never need to ship more code than necessary to your users, so code split your bundles to make sure this never happens!
-hero: hero-get-started-optimize-react.jpg
+hero: hero-code-splitting-suspense.jpg
 date: 2019-04-29
 description: |
   The React.lazy method makes it easy to code-split a React application on a
