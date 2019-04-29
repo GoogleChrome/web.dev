@@ -12,11 +12,11 @@ upper_tabs:
     - title: Measure
       path: /measure
 
-# - name: Blog
-#   lower_tabs:
-#     guides:
-#     - title: Blog
-#       path: /blog
+- name: Blog
+  lower_tabs:
+    guides:
+    - title: Blog
+      path: /blog
 
 - name: About
   lower_tabs:
