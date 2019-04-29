@@ -46,3 +46,5 @@ Chrome DevTools Security panel to learn how to debug these situations:
 Lighthouse waits for an event from the Chrome Debugger Protocol indicating that
 the page is running on a secure connection. If the event is not heard within 10
 seconds, the audit fails.
+
+[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/is-on-https.js)

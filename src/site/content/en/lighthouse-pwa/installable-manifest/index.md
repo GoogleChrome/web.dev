@@ -60,13 +60,12 @@ and the page specified in the `start_url` property of the web app manifest.
   </div>
   <ul class="w-unstyled-list w-codelabs-callout__list">
     <li class="w-codelabs-callout__listitem">
-      <a class="w-codelabs-callout__link" href="/codelab-make-installable/">
+      <a class="w-codelabs-callout__link" href="/codelab-make-installable">
         Make it installable
       </a>
     </li>
   </ul>
 </div>
-
 
 ## More information
 

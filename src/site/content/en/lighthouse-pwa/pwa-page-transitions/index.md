@@ -1,11 +1,30 @@
 ---
 layout: post
-title: TBD
+title: Manual PWA audit for janky-free page transitions
 description: |
   Learn about `pwa-page-transitions` audit.
-author: kaycebasques
+author: megginkearney
 web_lighthouse:
   - pwa-page-transitions
 ---
 
-TBD.
+Transitions should feel snappy as you tap around, even on a slow network,
+a key to perceived performance.
+
+# Recommendations
+
+Open the app on a simulated very slow network.
+Every time you tap a link/button in the app the page should respond immediately, either by:
+
+-Transitioning immediately to the next screen and showing a placeholder loading screen
+while waiting for content from the network.
+- A loading indicator is shown while the app waits for a response from the network.
+
+If using a single-page-app (client rendered),
+transition the user to the next page immediately and show a
+[skeleton screen](http://hannahatkin.com/skeleton-screens/).
+Use any content such as title or thumbnail already available while content loads.
+
+# More information
+
+[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/manual/pwa-page-transitions.js)

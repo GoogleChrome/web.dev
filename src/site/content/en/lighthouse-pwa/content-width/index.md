@@ -29,3 +29,5 @@ You can ignore this audit if:
 ## More information
 
 The audit passes if `window.innerWidth === window.outerWidth`.
+
+[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/content-width.js)
