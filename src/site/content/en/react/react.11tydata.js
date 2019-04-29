@@ -16,7 +16,7 @@ module.exports = {
       {
         title: 'Introduction',
         pathItems: [
-          'getting-started',
+          'get-started-optimize-react',
         ],
       },
       {
