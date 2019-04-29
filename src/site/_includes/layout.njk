@@ -37,6 +37,8 @@
       <title>{{title if title else path.title}}</title>
       <meta name="description" content="{{description if description else path.description}}" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      {# Don't index our staging site. #}
+      <meta name="robots" content="noindex">
       <meta charset="utf-8" />
       <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
       <meta name="full_width" value="true" />
