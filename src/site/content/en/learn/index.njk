@@ -1,0 +1,41 @@
+---
+layout: layout
+title: Learn
+description: |
+  Learn best practices for the modern web and hone your skills with hands-on
+  codelabs.
+---
+
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+<div class="learn-landing-page">
+  <div class="w-layout-container">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline">{{ title }}</h1>
+      <p class="w-page-header__copy">
+        Explore our structured learning paths to discover everything you need
+        to know about building for the modern web.
+      </p>
+    </header>
+  </div>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 class="w-learn-heading">Realize what the web can be</h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for path in paths %}
+        {% PathCard path %}
+      {% endfor %}
+    </div>
+  </section>
+  {# <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 class="w-learn-heading">Lighthouse</h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for audit in audits %}
+        {% PathCard audit %}
+      {% endfor %}
+    </div>
+  </section> #}
+</div>

@@ -1,0 +1,54 @@
+{
+  "options": {
+    "merge-default-rules": false
+  },
+  "files": {
+    "ignore": [
+      "src/styles/devsite/_app.scss",
+      "src/styles/devsite/_devsite_debug_info.scss",
+      "src/styles/devsite/_devsite_heading.scss",
+      "src/styles/devsite/_devsite_snackbar.scss",
+      "src/styles/devsite/_devsite_tooltip.scss",
+      "src/styles/devsite/_elements.scss",
+    ]
+  },
+  "rules": {
+    "attribute-quotes": 2,
+    "brace-style": 2,
+    "border-zero": 2,
+    "class-name-format": [
+      2,
+      {
+        "convention": "^w-.+",
+        "convention-explanation": "Classes must be namedspaced with w-* prefix."
+      }
+    ],
+    "declarations-before-nesting": 2,
+    "empty-line-between-blocks": 2,
+    "final-newline": 2,
+    "hex-notation": 2,
+    "indentation": 2,
+    "leading-zero": 2,
+    "no-css-comments": 2,
+    "no-debug": 2,
+    "no-mergeable-selectors": 2,
+    "no-misspelled-properties": 2,
+    "no-trailing-whitespace": 2,
+    "no-transition-all": 2,
+    "placeholder-in-extend": 2,
+    "property-sort-order": 2,
+    "pseudo-element": 2,
+    "quotes": 2,
+    "shorthand-values": 2,
+    "single-line-per-selector": 2,
+    "space-after-comma": 2,
+    "space-around-operator": 2,
+    "variable-name-format": [
+      2,
+      {
+        "convention": "^[_A-Z0-9]+$",
+        "convention-explanation": "Variable names should be in $SCREAMING_SNAKE_CASE"
+      }
+    ]
+  }
+}

@@ -5,10 +5,9 @@ sudo: false
 dist: trusty
 git:
   depth: 1
+  submodules: false
 cache:
   directories:
   - node_modules
 script:
-- npm run lint
-- npm run build
-- npm run test
+- ELEVENTY_ENV=prod npx eleventy
