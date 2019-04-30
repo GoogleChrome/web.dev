@@ -3,9 +3,7 @@ layout: post
 title: Manually check offscreen content is hidden from assistive technology
 description: |
   Learn about offscreen-content-hidden audit.
-authors:
- - robdodson
- - megginkearney
+author: megginkearney
 web_lighthouse:
   - offscreen-content-hidden
 ---
@@ -35,8 +33,9 @@ To hide offscreen content,
 remove the element containing that content from the tab order
 using `tabindex="-1"`.
 
+<!--
 ***Todo*** Ask Rob if `aria-hidden="true"` is also necessary to truly remove something.
-
+-->
 For example:
 
 ```html

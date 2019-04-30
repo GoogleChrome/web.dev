@@ -3,9 +3,7 @@ layout: post
 title: Manually check that headings don't skip levels
 description: |
   Learn about heading-levels audit.
-authors:
- - robdodson
- - megginkearney
+author: megginkearney
 web_lighthouse:
   - heading-levels
 ---
@@ -33,11 +31,12 @@ For example:
 Use [this list of landmark elements](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/HTML5.html) to check your page.
 Click the "Show Headings" button to see a structural outline for the page.
 
+<!--
 ***Todo*** Talk to Rob about "Headings don't skip" mention in his web.dev guide.
 It seems to imply in the guide that this audit will fail.
 But it's a manual audit, I think, so no failure will occur.
 Good to confirm this though!
-
+-->
 ## How to fix
 
 Use headings to create a structural outline for your page.

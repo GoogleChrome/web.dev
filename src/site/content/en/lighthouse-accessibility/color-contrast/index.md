@@ -13,7 +13,7 @@ Lighthouse reports when the background and
 foreground colors do not have a sufficient contrast ratio:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="color-contrast.png" alt="Lighthouse: Background and foreground colors do not have sufficient contrast ratio">
+  <img class="w-screenshot w-screenshot--filled" src="color-contrast.png" alt="Lighthouse audit showing background and foreground colors do not have sufficient contrast ratio">
   <figcaption class="w-figcaption">
     Fig. 1 — The background and foreground colors do not have sufficient contrast ration
 </figure>
@@ -36,10 +36,11 @@ Large text is defined as 18pt or 14pt bold.
 Try the Color Contrast Analyser in
 [Text elements must have sufficient color contrast against the background](https://dequeuniversity.com/rules/axe/3.2/color-contrast).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Ensure background and foreground colors have sufficient contrast ratio audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/color-contrast.js)

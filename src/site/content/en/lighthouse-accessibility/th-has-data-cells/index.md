@@ -12,19 +12,20 @@ Screen readers have features to make navigating tables easier.
 In order for screen readers to be able to help users navigate tables easier,
 table headers must refer to some set of cells.
 Lighthouse reports when `<th>` elements and elements with `[role="columnheader"/"rowheader"]`
-do not have the data cells they describe:
+do not have the data cells they describe.
 
+<!--
 ***Todo*** I cannot for the life of me get this audit to fail. I've tried all sorts of combinations of things.
 For sure, empty columns don't fail. I've also had columns without headers, and they don't fail either.
 I've removed scope, I've tried making the tables as confusing as possible, and the audit just doesn't fail.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="td-headers-attr.png" alt="Lighthouse: Table headers do not have data cells
+  <img class="w-screenshot w-screenshot--filled" src="td-headers-attr.png" alt="Lighthouse audit showing table headers do not have data cells
   <figcaption class="w-figcaption">
     Fig. 1 — Table headers do not have data cells
   </figcaption>
 </figure>
-
+-->
 ## How to fix this problem
 
 To fix this problem,
@@ -74,7 +75,7 @@ add the missing table data cells for the table header column, "Marathon pace":
       <th scope="col">Week</th>
       <th scope="col">Total miles</th>
       <th scope="col">Longest run</th>
-      <th scope="col">Marathon</th>
+      <th scope="col">Marathon pace</th>
     </tr>
   </thead>
 
@@ -104,10 +105,11 @@ it's very confusing to screen reader users.
 Learn more in
 [All `<th>` elements and elements with `role="columnheader"` or `role="rowheader"` must have data cells they describe](https://dequeuniversity.com/rules/axe/3.2/th-has-data-cells).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Ensure each table header has data cells audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/th-has-data-cells.js)

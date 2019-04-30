@@ -8,8 +8,8 @@ module.exports = {
     cover: '/images/collections/lighthouse.png',
     title: 'Accessibility audits',
     description:
-      'Is your app accessible to all?',
-    overview: `Lorem ipsum dolor set amet...`,
+      'Can all users access content and navigate your site effectively?',
+    overview: `These checks highlight opportunities to improve the accessibility of your web app. Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.`,
     topics: [
       {
         title: 'ARIA',

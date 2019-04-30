@@ -13,7 +13,7 @@ from being overlooked by assistive technologies.
 Lighthouse reports any duplicate IDs found in a page:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="duplicate-id.png" alt="Lighthouse: ID attributes on the page are not unique">
+  <img class="w-screenshot w-screenshot--filled" src="duplicate-id.png" alt="Lighthouse audit showing ID attributes on the page are not unique">
   <figcaption class="w-figcaption">
     Fig. 1 — ID attributes on the pgae are not unique
   </figcaption>
@@ -32,10 +32,11 @@ change an ID value if it is used more than once to be sure each is unique.
 Learn more in
 [ID attribute values must be unique](https://dequeuniversity.com/rules/axe/3.2/duplicate-id).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [ID attributes on a page are unique audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id.js)

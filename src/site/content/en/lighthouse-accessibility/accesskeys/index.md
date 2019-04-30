@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure `accesskey` values are unique
+title: Ensure accesskey values are unique
 description: |
   Learn about accesskeys audit.
 author: megginkearney
@@ -32,17 +32,18 @@ access keys so that each access key is unique.
 For each defined `accesskey`,
 ensure the value is unique and does not conflict with any default browser and screen reader shortcut keys.
 Access keys allow users to quickly active or move the focus to a specific element
-by pressing the specified key (usually in combination with the `>kbd<alt>/kbd<` key).
+by pressing the specified key (usually in combination with the `<kbd>alt></kbd>` key).
 
 Duplicating `accesskey` values creates unexpected effects
 for users navigating with keys.
 Learn more in
 [accesskey attribute value must be unique](https://dequeuniversity.com/rules/axe/3.2/accesskeys).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Access key values are unique audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/accesskeys.js)

@@ -19,26 +19,13 @@ can't interpret ARIA attributes with invalid values.
 Lighthouse reports when attributes do not have valid values:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="aria-valid-attr-value.png" alt="Lighthouse: ARIA attributes do not have valid values">
+  <img class="w-screenshot w-screenshot--filled" src="aria-valid-attr-value.png" alt="Lighthouse audit showing aria-checked without the value 'true'">
   <figcaption class="w-figcaption">
     Fig. 1 — ARIA attributes do not have valid values
   </figcaption>
 </figure>
 
-## About ARIA
-
-The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/html-aria)
-is good for bridging areas with accessibility issues that can't be managed with native HTML.
-It works by allowing you to specify attributes that modify the way an element is translated into the accessibility tree. 
-
-Using ARIA attributes,
-you can give the element the missing information so the screen reader can properly interpret it.
-In order for these attributes to be effective,
-they need to make sense-- you wouldn't want a screen reader
-to misinform a user.
-
-For a brief intro, see the
-[Introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/).
+{% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse determines an attribute's value is invalid
 
@@ -61,9 +48,9 @@ with an intermediate `"mixed"` value.
 
 ## How this audit impacts overall Lighthouse score
 
-Lighthouse will flag this as a low severity issue. It is important to fix, and
+Lighthouse flags this as a low severity issue. It is important to fix, and
 probably indicates a mistaken assumption in your code. In the example above, the
-element would still be announced as a checkbox but it will have an implicit
+element is still announced as a checkbox but it will have an implicit
 checked state of "unchecked.
 
 ## How to check for invalid attribute values

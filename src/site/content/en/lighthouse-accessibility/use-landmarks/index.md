@@ -3,9 +3,7 @@ layout: post
 title: Manually check landmark elements improve navigation
 description: |
   Learn about managed-focus audit.
-authors:
- - robdodson
- - megginkearney
+author: megginkearney
 web_lighthouse:
   - managed-focus
 ---

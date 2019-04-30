@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure `<object>` elements have alternative text
+title: Ensure object elements have alternative text
 description: |
   Learn about object-alt audit.
 author: megginkearney
@@ -12,14 +12,15 @@ Screen readers cannot translate non-text content.
 Adding alternative text to define `<object>` elements helps screen readers convey meaning to users.
 Lighthouse reports when any `<object>` elements do not have alternative text:
 
+<!--
 ***Todo*** Rob's docs in accessibility recommend describing objects in the inner text.
 But the Lighthouse audit implies that it is checking for `alt` text.
 Need to check how this audit fails.
 Also need to talk with Rob the slight inconsistencies between
 Rob's doc, the audit, and recommendations in deque docs.
-
+-->
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="object-alt.png" alt="Lighthouse: <object> elements do not have alternative text">
+  <img class="w-screenshot w-screenshot--filled" src="object-alt.png" alt="Lighthouse audit showing <object> elements do not have alternative text">
   <figcaption class="w-figcaption">
     Fig. 1 — <code>&lt;object></code> elements do not have alternative text
   </figcaption>
@@ -43,7 +44,7 @@ like "Annual report" below:
 </object>
 ```
 
-Learn more in [Include text alternatives for images and objects](/accessible/labels-and-text-alternatives#include-text-alternatives-for-images-and-objects).
+Learn more in [Include text alternatives for images and objects](/labels-and-text-alternatives#include-text-alternatives-for-images-and-objects).
 
 {% Aside 'note' %}
 You can also use `alt` and ARIA labels to describe object elements,
@@ -62,10 +63,11 @@ for example,
 Learn more in
 [WebAIM's guide to Alternative Text](https://webaim.org/techniques/alttext/).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Ensure `object` elements have alternative text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/object-alt.js)

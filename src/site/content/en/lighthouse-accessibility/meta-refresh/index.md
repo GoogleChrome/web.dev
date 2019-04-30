@@ -15,7 +15,7 @@ Lighthouse reports timed refreshes:
 
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="meta-refresh.png" alt="Lighthouse: The document uses timed refresh">
+  <img class="w-screenshot w-screenshot--filled" src="meta-refresh.png" alt="Lighthouse audit showing the document uses timed refresh">
   <figcaption class="w-figcaption">
     Fig. 1 — The document uses timed refresh
   </figcaption>
@@ -35,10 +35,11 @@ remove `<meta http-equiv="refresh">` from the page.
 Learn more in
 [Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.2/meta-refresh?application=lighthouse).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Do not use `<meta http-equiv="refresh">` audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-refresh.js)

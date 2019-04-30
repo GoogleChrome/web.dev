@@ -15,7 +15,7 @@ They can also contain script supporting elements (`<script>` and `<template>`).
 Lighthouse reports when lists contain any other content elements that shouldn't be within the lists:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="list.png" alt="Lighthouse: Lists contain content elements that shouldn't be within the list
+  <img class="w-screenshot w-screenshot--filled" src="list.png" alt="Lighthouse audit showing lists contain content elements that shouldn't be within the list
   <figcaption class="w-figcaption">
     Fig. 1 — Lists contain content elements that shouldn't be within the list
   </figcaption>
@@ -32,10 +32,11 @@ Any other content elements are invalid.
 Learn more in
 [`<ul>` and `<ol>` must only directly contain `<li>`, `<script>` or `<template>` elements](https://dequeuniversity.com/rules/axe/3.2/list).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Ensure lists are structured correctly audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/list.js)

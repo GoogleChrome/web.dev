@@ -18,7 +18,7 @@ Some ARIA `roles` require child roles.
 Lighthouse reports when a role is missing their required child role(s):
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="aria-required-children.png" alt="Lighthouse: ARIA role missing required child role(s)">
+  <img class="w-screenshot w-screenshot--filled" src="aria-required-children.png" alt="Lighthouse audit showing ARIA role missing required child role(s)">
   <figcaption class="w-figcaption">
     Fig. 1 — ARIA role missing required child role(s)
   </figcaption>
@@ -45,7 +45,7 @@ as it would be confusing to have a list without any list items.
 
 ## How this audit impacts overall Lighthouse score
 
-Lighthouse will flag this as a medium severity issue. It is important to fix,
+Lighthouse flags this as a medium severity issue. It is important to fix,
 and may break the experience for users. In the example above, the element may
 still be announced as a list, but the number of items within the list may be
 unclear.
@@ -64,5 +64,6 @@ see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com
 
 ## More information
 
+- [Ensure parent role includes required children audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
 - [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure `tabindex` attribute values are not greater than 0
+title: Ensure tabindex attribute values are not greater than 0
 description: |
   Learn about tabindex audit.
 author: megginkearney
@@ -14,7 +14,7 @@ for users who rely on assistive technologies.
 Lighthouse reports when some elements have a `tabindex` value greater than 0:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="tabindex.png" alt="Lighthouse: Some elements have a tabindex value greater than 0">
+  <img class="w-screenshot w-screenshot--filled" src="tabindex.png" alt="Lighthouse audit showing some elements have a tabindex value greater than 0">
   <figcaption class="w-figcaption">
     Fig. 1 — Some elements have a `tabindex` value greater than 0
   </figcaption>
@@ -45,15 +45,16 @@ For example:
 If you need an element to come sooner in the tab order,
 it should be moved to an earlier spot in the DOM.
 Learn more in
-[Control focus with tabindex](/accessible/control-focus-with-tabindex).
+[Control focus with tabindex](/control-focus-with-tabindex).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
-- [Elements should not have tabindex greater than zero](https://dequeuniversity.com/rules/axe/3.2/tabindex).
+- [Elements should not have tabindex greater than zero](https://dequeuniversity.com/rules/axe/3.2/tabindex)
 - [Ensure `tabindex` values aren't greater than 0 audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/tabindex.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
 - [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

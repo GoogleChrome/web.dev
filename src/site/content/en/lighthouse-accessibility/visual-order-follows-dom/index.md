@@ -3,9 +3,7 @@ layout: post
 title: Manually check the visual layout of the page matches the DOM
 description: |
   Learn about visual-order-follows-dom audit.
-authors:
- - robdodson
- - megginkearney
+author: megginkearney
 web_lighthouse:
   - visual-order-follows-dom
 ---

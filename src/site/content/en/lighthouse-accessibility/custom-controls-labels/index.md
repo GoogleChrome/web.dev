@@ -12,7 +12,7 @@ Custom interactive controls should be focusable.
 If you use JavaScript to turn a `<div`> into a fancy dropdown,
 it won't automatically be inserted into the tab order.
 You need to manually check that all custom controls are keyboard focusable.
-See also [Keyboard access fundamentals](/accessible/keyboard-access).
+See also [Keyboard access fundamentals](/keyboard-access).
 
 ## How to manually test
 
@@ -29,7 +29,7 @@ press the `TAB` key to navigate through the site:
 
 Are you able to reach all of the interactive controls on the page?
 If not, you may need to use `tabindex` to improve the focusability of those controls.
-See also [Control focus with tabindex](/accessible/control-focus-with-tabindex).
+See also [Control focus with tabindex](/control-focus-with-tabindex).
 
 ## How to fix
 
@@ -53,5 +53,5 @@ Learn more in [How to do an Accessibility Review](https://developers.google.com/
 ## More information
 
 - [Check all custom controls are keyboard focusable audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-labels.js)
-- [Ensure `tabindex` attribute values are not greater than 0](/lighthouse-accessibility/tabindex)
+- [Ensure `tabindex` attribute values are not greater than 0](/tabindex)
 

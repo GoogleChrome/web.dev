@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure that each HTML document contains a `<title>`
+title: Ensure that each HTML document contains a title
 description: |
   Learn about document-title audit.
 author: megginkearney
@@ -15,7 +15,7 @@ if a page is relevant to their search.
 Lighthouse reports when the HTML document doesn't have a title:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="document-title.png" alt="Lighthouse: HTML document doesn't have a title elemement">
+  <img class="w-screenshot w-screenshot--filled" src="document-title.png" alt="Lighthouse audit showing HTML document doesn't have a title elemement">
   <figcaption class="w-figcaption">
     Fig. 1 — HTML document doesn't have a title element
   </figcaption>
@@ -44,7 +44,7 @@ and that title provides context about the page:
 ```
 
 Learn more in
-[Write descriptive titles, descriptions, and link text for every page](https://web.dev/discoverable/write-descriptive-text)
+[Write descriptive titles, descriptions, and link text for every page](/write-descriptive-text)
 and [Documents must contain a title element to aid in navigation](https://dequeuniversity.com/rules/axe/3.2/document-title).
 
 
@@ -59,13 +59,14 @@ and [Documents must contain a title element to aid in navigation](https://dequeu
 See [Create descriptive page titles](https://support.google.com/webmasters/answer/35624)
 for more on these tips.
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
-- [Label documents and frames](/accessible/labels-and-text-alternatives#label-documents-and-frames)
+- [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)
 - [Ensure HTML document has a title audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/document-title.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
 - [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

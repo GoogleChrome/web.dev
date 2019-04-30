@@ -37,14 +37,14 @@ A `<div>` is just a generic grouping element,
 sp the screen reader only announces the `div`'s text content.
 The `<button>` is announced as a "button",
 a much stronger signal to the user that this is something with which they can interact.
-See also [Semantics and screen readers](/accessible/semantics-and-screen-readers).
+See also [Semantics and screen readers](/semantics-and-screen-readers).
 
 ## How to fix
 
 So the simplest,
 and reasonably the best solution to this problem
 is to aviod custom interactive controls all together.
-For example, replace the `<dib>` that's acting like a button
+For example, replace the `<div>` that's acting like a button
 with an actual `<button>`.
 
 If you must keep the `<div>`,
@@ -69,7 +69,7 @@ of how your content is labeled, and if there are any obstructions to screen read
 If you’re unfamiliar with how semantic markup gets interpreted by assistive technology, 
 see the [Introduction to Semantics](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/) for a refresher.
 
-See also [How to Do an Accessibility Review](/accessibility/how-to-review).
+See also [How to Do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).
 
 ## More information
 

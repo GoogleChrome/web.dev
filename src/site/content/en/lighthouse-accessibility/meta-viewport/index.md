@@ -13,7 +13,7 @@ who rely on screen magnification to properly see the contents of a web page.
 Lighthouse reports when the viewport disables text scaling and zooming:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="meta-viewport.png" alt="Lighthouse: The viewport disables text scaling and zooming">
+  <img class="w-screenshot w-screenshot--filled" src="meta-viewport.png" alt="Lighthouse audit showing the viewport disables text scaling and zooming">
   <figcaption class="w-figcaption">
     Fig. 1 — The viewport disables text scaling and zooming
 </figure>
@@ -33,10 +33,11 @@ to properly see the contents of a web page.
 Learn more in
 [Zooming and scaling must not be disabled](https://dequeuniversity.com/rules/axe/3.2/meta-viewport).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Do not disable text scaling and zooming audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)

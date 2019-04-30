@@ -1,11 +1,9 @@
 ---
 layout: post
-title: Manually check the tab order follows the DOM order.
+title: Manually check the tab order follows the DOM order
 description: |
   Learn about logical-tab-order audit.
-authors:
- - robdodson
- - megginkearney
+author: megginkearney
 web_lighthouse:
   - logical-tab-order
 ---
@@ -25,7 +23,7 @@ In general,
 focus should follow reading order, moving from left to right,
 from the top to the bottom of your page.
 
-Learn more in [Keyboard access fundamentals](/keyboard-access/).
+Learn more in [Keyboard access fundamentals](/keyboard-access).
 
 Are you able to reach all of the interactive controls on the page? 
 If not, you may need to use `tabindex` to improve the focusability of those controls.
@@ -53,7 +51,7 @@ For example:
 <div tabindex="0">Focus me with the TAB key</div>
 ```
 
-Learn more in [Control focus with tabindex](/control-focus-with-tabindex/).
+Learn more in [Control focus with tabindex](/control-focus-with-tabindex).
 
 ## More information
 

@@ -34,7 +34,7 @@ it makes sense to temporarily trap the user.
 
 But you should aim to provide a keyboard-accessible method of escaping the modal as well.
 Check out [this example on how to create an accessible modal](https://github.com/gdkraus/accessible-modal-dialog).
-See also [Modals and Keyboard Traps](/accessibility/focus/using-tabindex#modals_and_keyboard_traps)
+See also [Modals and Keyboard Traps](https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex#modals_and_keyboard_traps).
 In this example,
 you get the desired behaviors of a modal,
 without forcing the user to refresh the page to get out of the focus trap.

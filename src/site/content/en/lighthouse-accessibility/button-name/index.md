@@ -14,7 +14,7 @@ making it unusable for users who rely on screen readers.
 Lighthouse reports when any buttons do not have accessible names:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="button-name.png" alt="Lighthouse: Buttons do not have an accessible name">
+  <img class="w-screenshot w-screenshot--filled" src="button-name.png" alt="Lighthouse audit showing buttons do not have an accessible name">
   <figcaption class="w-figcaption">
     Fig. 1 — Buttons do not have an accessible name
   </figcaption>
@@ -26,7 +26,7 @@ Lighthouse reports when any buttons do not have accessible names:
 To fix this problem,
 provide inner text for each `button` element 
 that is discernible to screen reader users
-(see also [Label buttons and links](/accessible/labels-and-text-alternatives#label-buttons-and-links)).
+(see also [Label buttons and links](/labels-and-text-alternatives#label-buttons-and-links)).
 For example,
 create clear calls to action:
 
@@ -35,7 +35,7 @@ create clear calls to action:
 ```
 
 When working with icon buttons,
-use the aria-label attribute to clearly describe the action
+use the `aria-label` attribute to clearly describe the action
 to anyone using a screen reader, for example:
 
 ```html
@@ -45,11 +45,11 @@ to anyone using a screen reader, for example:
 Learn more in
 [Buttons must have discernible text](https://dequeuniversity.com/rules/axe/3.2/button-name).
 
-
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Ensure buttons have accessible name audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)

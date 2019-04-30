@@ -12,7 +12,7 @@ Adding ways to bypass repetitive content lets keyboard users navigate the page m
 Lighthouse reports when the page doesn't contain a heading, skip link, or landmark region:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="bypass.png" alt="Lighthouse: The page doesn't contain a heading, skip link, or landmark region">
+  <img class="w-screenshot w-screenshot--filled" src="bypass.png" alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region">
   <figcaption class="w-figcaption">
     Fig. 1 — The page doesn't contain a heading, skip link, or landmark region
   </figcaption>
@@ -29,7 +29,7 @@ use correct heading and landmark elements on the entire page.
 By doing this,
 you are greatly improving the navigation experience
 for users of assistive technology.
-See [Headings and landmarks](/accessible/headings-and-landmarks).
+See [Headings and landmarks](/headings-and-landmarks).
 
 In this example,
 all content is inside of a landmark,
@@ -99,10 +99,11 @@ and repetitive content is bypassed:
 Learn more in
 [Page must have means to bypass repeated blocks](https://dequeuniversity.com/rules/axe/3.2/bypass).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Use headings, landmarks, and skip-link audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/bypass.js)

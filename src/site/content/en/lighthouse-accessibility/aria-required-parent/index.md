@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure child roles are contained within required parent roles.
+title: Ensure child roles are contained within required parent roles
 description: |
   Learn about aria-required-parent audit.
 author: megginkearney
@@ -19,26 +19,13 @@ to properly perform their intended accessibility functions.
 Lighthouse reports missing parenrts for these child roles:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="aria-required-parent.png" alt="Lighthouse: ARIA role missing required parent role">
+  <img class="w-screenshot w-screenshot--filled" src="aria-required-parent.png" alt="Lighthouse audit showing ARIA role missing required parent role">
   <figcaption class="w-figcaption">
     Fig. 1 — ARIA role missing required parent role
   </figcaption>
 </figure>
 
-## About ARIA
-
-The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/html-aria)
-is good for bridging areas with accessibility issues that can't be managed with native HTML.
-It works by allowing you to specify attributes that modify the way an element is translated into the accessibility tree. 
-
-Using ARIA attributes,
-you can give the element the missing information so the screen reader can properly interpret it.
-In order for these attributes to be effective,
-they need to make sense-- you wouldn't want a screen reader
-to misinform a user.
-
-For a brief intro, see the
-[Introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/).
+{% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse finds missing parent roles
 
@@ -59,7 +46,7 @@ as it would be confusing to have a listitem without grouping into a list.
 
 ## How this audit impacts overall Lighthouse score
 
-Lighthouse will flag this as a low severity issue. It is important to fix, and
+Lighthouse flags this as a low severity issue. It is important to fix, and
 probably indicates a mistaken assumption in your code. In the example above, the
 element would be announced as plain text content and its `listitem` role would
 be discarded.

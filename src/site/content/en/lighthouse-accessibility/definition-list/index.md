@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure `<dl>` elements are structured correctly
+title: Ensure dl elements are structured correctly
 description: |
   Learn about definition-list audit.
 author: megginkearney
@@ -14,7 +14,7 @@ Lighthouse reports when `<dl>` elements do not contain properly-ordered `<dt>` a
 `<script>`, or `<template>` elements:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="definition-list.png" alt="Lighthouse: Definition lists do not contain properly ordered <dt> and <dd> groups, <script>, or <template> elements">
+  <img class="w-screenshot w-screenshot--filled" src="definition-list.png" alt="Lighthouse audit showing definition lists do not contain properly ordered <dt> and <dd> groups, <script>, or <template> elements">
   <figcaption class="w-figcaption">
     Fig. 1 — Defintion lists do not contain properly ordered <code>&lt;dt></code> and <code>&lt;dd></code> groups,
     <code>&lt;script></code>, or <code>&lt;template></code> elements
@@ -46,10 +46,11 @@ For example:
 Learn more in
 [`<dl>` elements must only directly contain properly-ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements](https://dequeuniversity.com/rules/axe/3.2/definition-list).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Ensure defintion list are structured correctly audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/definition-list.js)

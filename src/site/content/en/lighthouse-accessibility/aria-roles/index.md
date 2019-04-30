@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure ARIA role values are valid.
+title: Ensure ARIA role values are valid
 description: |
   Learn about aria-roles audit.
 author: megginkearney
@@ -19,26 +19,13 @@ to perform their intended accessibility functions.
 Lighthouse reports when a role has invalid values:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="aria-roles.png" alt="Lighthouse: ARIA role has invalid values">
+  <img class="w-screenshot w-screenshot--filled" src="aria-roles.png" alt="Lighthouse audit showing ARIA role has invalid values">
   <figcaption class="w-figcaption">
     Fig. 1 — ARIA role has invalid values
   </figcaption>
 </figure>
 
-## About ARIA
-
-The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/html-aria)
-is good for bridging areas with accessibility issues that can't be managed with native HTML.
-It works by allowing you to specify attributes that modify the way an element is translated into the accessibility tree. 
-
-Using ARIA attributes,
-you can give the element the missing information so the screen reader can properly interpret it.
-In order for these attributes to be effective,
-they need to make sense-- you wouldn't want a screen reader
-to misinform a user.
-
-For a brief intro, see the
-[Introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/).
+{% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse determines role has invalid values
 
@@ -53,8 +40,8 @@ Looks like a spelling mistake.
 
 ## How this audit impacts overall Lighthouse score
 
-Lighthouse will flag this as a low severity issue. It is important to fix, and
-probably indicates a mistaken assumption in your code—or a  spelling mistake. In
+Lighthouse flags this as a low severity issue. It is important to fix, and
+probably indicates a mistaken assumption in your code—or a spelling mistake. In
 the example above, the element's role should be corrected from `buton` to
 `button`.
 
@@ -64,7 +51,7 @@ To check for invalid values,
 refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
 ARIA explicitly defines role values.
 If you set `role=` to any value not appearing in the defintions list,
-the audit will fail.
+the audit fails.
 
 For more information on this audit,
 see [ARIA roles used must conform to valid values](https://dequeuniversity.com/rules/axe/3.1/aria-roles?application=lighthouse).

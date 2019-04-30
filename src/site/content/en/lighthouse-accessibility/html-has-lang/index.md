@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure every HTML document has a `lang` attribute.
+title: Ensure every HTML document has a lang attribute
 description: |
   Learn about html-has-lang audit.
 author: megginkearney
@@ -14,7 +14,7 @@ that the user chose when setting up their screen reader.
 Lighthouse reports when the `<html>` element does not have a `lang` attribute':
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="html-has-lang.png" alt="Lighthouse: <html> element does not have a lang attribute">
+  <img class="w-screenshot w-screenshot--filled" src="html-has-lang.png" alt="Lighthouse audit showing <html> element does not have a lang attribute">
   <figcaption class="w-figcaption">
     Fig. 1 — The <code>&lt;html></code> element does not have a <code>lang</code> attribute
 </figure>
@@ -38,10 +38,11 @@ when screen readers are using the wrong language library.
 
 Learn more in [`<html>` element must have a lang attribute](https://dequeuniversity.com/rules/axe/3.2/html-has-lang).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Ensure every HTML document has a `lang` attribute](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-has-lang.js)

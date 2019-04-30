@@ -22,7 +22,7 @@ start by tabbing through your site.
 Use `TAB` (or `SHIFT +
 TAB`) to move between controls, and use the arrow keys and
 `ENTER` and `SPACE` to manipulate their values
-(see also [Keyboard access fundamentals](/accessible/keyboard-access)):
+(see also [Keyboard access fundamentals](/keyboard-access)):
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -42,7 +42,7 @@ you may need to use `tabindex` to improve the focusability of those controls.
 
 To make a custom control focusable,
 insert the custom control element into the natural tab order using `tabindex="0"`
-(see also [Control focus with tabindex](/accessible/control-focus-with-tabindex).
+(see also [Control focus with tabindex](/control-focus-with-tabindex)).
 For example:
 
 ```html
@@ -50,13 +50,13 @@ For example:
 ```
 
 You may also need to add the appropriate ARIA roles to the custom control elements.
-See [Manually check all custom controls have appropriate ARIA roles](/lighthouse-accessibility-custom-control-roles).
+See [Manually check all custom controls have appropriate ARIA roles](/custom-control-roles).
 
 If you're not seeing a focus indicator,
 consider using `:focus` to always show a focus indicator.
 Regardless of whether you use a mouse or a keyboard to tab to it,
 the button's focus indicator always looks the same
-(see also [Style focus](/accessible/style-focus)).
+(see also [Style focus](/style-focus)).
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -78,5 +78,5 @@ Learn more in [How to do an Accessibility Review](https://developers.google.com/
 ## More information
 
 - [Check all custom controls are keyboard focusable audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/focusable-controls.js)
-- [Ensure `tabindex` attribute values are not greater than 0](/lighthouse-accessibility/tabindex)
-- [Use semantic HTML for easy keyboard wins](https://web.dev/accessible/use-semantic-html)
+- [Ensure `tabindex` attribute values are not greater than 0](/tabindex)
+- [Use semantic HTML for easy keyboard wins](/use-semantic-html)

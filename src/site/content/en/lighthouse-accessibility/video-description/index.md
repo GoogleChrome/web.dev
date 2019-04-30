@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure `<video>` elements have audio descriptions
+title: Ensure video elements have audio descriptions
 description: |
   Learn about video-description audit.
 author: megginkearney
@@ -11,21 +11,21 @@ web_lighthouse:
 Audio descriptions provide relevant information for videos that dialogue
 cannot, such as facial expressions and scenes.
 Lighthouse reports any `<video>` elements that are missing a `<track>` element
-with the attribute `kind="descriptions"`:
+with the attribute `kind="descriptions"`.
 
+<!--
 ***Todo*** I tried very hard to get audio/video audits to fail.
 But no matter what, they seem to pass
 even with all sorts of crazy errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1)
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse: Video element missing audio descriptions">
+  <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse audit showing video element missing audio descriptions">
   <figcaption class="w-figcaption">
     Fig. 1 — Video element missing audio descriptions
   </figcaption>
 </figure>
-
-
+-->
 ## How to fix the problem
 
 To fix the problem,
@@ -49,13 +49,14 @@ Learn more in
 The example above includes both audio descriptions for visually impaired users
 and captions for hearing impaired users.
 Captions make video elements usable for deaf or hearing-impaired users.
-See also [Ensures `<video>` elements have captions](/lighthouse-accessibility/video-caption).
+See also [Ensures `<video>` elements have captions](/video-caption).
 {% endAside %}
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Video elements have audio descriptions audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-description.js)

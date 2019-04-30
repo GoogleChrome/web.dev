@@ -17,26 +17,13 @@ each ARIA `role` supports a specific subset of `aria-*` attributes
 Lighthouse reports any mismatches between roles and `aria-*` attributes:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="aria-allowed-attr.png" alt="Lighthouse: ARIA attributes do not match their roles">
+  <img class="w-screenshot w-screenshot--filled" src="aria-allowed-attr.png" alt="Lighthouse audit showing ARIA attributes do not match their roles">
   <figcaption class="w-figcaption">
     Fig. 1 — ARIA attributes do not match their roles
   </figcaption>
 </figure>
 
-## About ARIA
-
-The [Web Accessibility Initiative's Accessible Rich Internet Applications specification (WAI-ARIA, or just ARIA)](https://www.w3.org/TR/html-aria)
-is good for bridging areas with accessibility issues that can't be managed with native HTML.
-It works by allowing you to specify attributes that modify the way an element is translated into the accessibility tree. 
-
-Using ARIA attributes,
-you can give the element the missing information so the screen reader can properly interpret it.
-In order for these attributes to be effective,
-they need to make sense-- you wouldn't want a screen reader
-to misinform a user.
-
-For a brief intro, see the
-[Introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/).
+{% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse finds ARIA mismatches
 
@@ -48,7 +35,7 @@ Each role has a subset of "supported states and properties" and
 Any element with that role
 can only use the attributes in the role's definition.
 
-Lighthouse fails this audit,
+Lighthouse fails this audit
 when it finds an attribute that isn't allowed for a role on an elememnt.
 In the example Lighthouse audit above,
 the `aria-checked` attribute is not allowed on the `role=list`,
@@ -58,11 +45,11 @@ so applying a checked state would be confusing to screen reader users.
 
 ## How this audit impacts overall Lighthouse score
 
-Lighthouse will flag this as a low severity issue.
+Lighthouse flags this as a low severity issue.
 It is important to fix,
 and probably indicates a mistaken assumption in your code,
-but a disallowed attribute will not break the element's role.
-In the example above, the element would still be announced as a list and
+but a disallowed attribute won't break the element's role.
+In the example above, the element is still announced as a list and
 the `aria-checked` attribute would be ignored.
 
 ## How to avoid ARIA mismatches

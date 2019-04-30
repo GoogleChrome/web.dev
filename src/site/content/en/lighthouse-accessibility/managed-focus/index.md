@@ -3,9 +3,7 @@ layout: post
 title: Manually check user's focus is directed to new content
 description: |
   Learn about managed-focus audit.
-authors:
- - robdodson
- - megginkearney
+author: megginkearney
 web_lighthouse:
   - managed-focus
 ---
@@ -67,7 +65,7 @@ See also [Managing focus for accessibility](https://dev.to/robdodson/managing-fo
 
 {% Aside 'note' %}
 You probably don't want to do this focus management
-when a user first arrives at your site
+when a user first arrives at your site.
 Only implement this for subsequent navigation,
 like when they click a link.
 {% endAside %}

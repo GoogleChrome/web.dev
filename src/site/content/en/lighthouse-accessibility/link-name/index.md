@@ -12,7 +12,7 @@ Link text that is discernible, unique, and focusable improves the navigation exp
 Lighthouse reports when links do not have a discernable name:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="link-name.png" alt="Lighthouse: Links do not have a discernable name">
+  <img class="w-screenshot w-screenshot--filled" src="link-name.png" alt="Lighthouse audit showing links do not have a discernable name">
   <figcaption class="w-figcaption">
     Fig. 1 — Links do not have a discernable name
   </figcaption>
@@ -35,12 +35,13 @@ Check out <a href="…">our guide to creating accessible web pages</a>.
 ```
 
 Learn more in
-[Label buttons and links](/accessible/labels-and-text-alternatives#label-buttons-and-links).
+[Label buttons and links](/labels-and-text-alternatives#label-buttons-and-links).
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Links must have discernible text](https://dequeuniversity.com/rules/axe/3.2/link-name)

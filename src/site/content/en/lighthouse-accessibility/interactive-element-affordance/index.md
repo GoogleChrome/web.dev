@@ -3,9 +3,7 @@ layout: post
 title: Manually check interactive elements indicate their purpose and state
 description: |
   Learn about interactive-element-affordance audit.
-authors:
- - robdodson
- - megginkearney
+author: megginkearney
 web_lighthouse:
   - interactive-element-affordance
 ---
@@ -30,7 +28,7 @@ The `:focus` pseudo-class lets you apply a uniform style to an element.
 That style is applied any time the element is focused,
 regardless of the input device or method used to focus it.
 
-Learn more in [Style focus](/style-focus)].
+Learn more in [Style focus](/style-focus).
 
 ## How to manually test with a screen reader
 
@@ -46,7 +44,7 @@ It is also important to pay close attention to how interactive elements are labe
 Screen reader users rely on labels to understand the context of that element.
 Vague labels are common,
 and they are non-helpful for navigating content.
-Learn how to improve [Labels and text alternatives](labels-and-text-alternatives/).
+Learn how to improve [Labels and text alternatives](/labels-and-text-alternatives).
 
 ## Why this matters
 

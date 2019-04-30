@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure `<video>` elements have captions
+title: Ensure video elements have captions
 description: |
   Learn about video-caption audit.
 author: megginkearney
@@ -12,8 +12,9 @@ Captions make video elements usable for deaf or hearing-impaired users,
 providing critical information such as who is talking, what they're saying,
 and other non-speech information.
 Lighthouse reports any `<video>` elements that are missing a `<track>` element
-with the attribute `kind="captions"`:
+with the attribute `kind="captions"`.
 
+<!--
 ***Todo*** I tried very hard to get this audit to fail.
 But no matter what, it seems to pass,
 even with all sorts of crazy errors.
@@ -25,13 +26,12 @@ We don't have the track info in the codelab,
 which seems problematic as well.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse: Video element missing captions">
+  <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse audit showing video element missing captions">
   <figcaption class="w-figcaption">
     Fig. 1 — Video element missing captions
   </figcaption>
 </figure>
-
-
+-->
 ## How to fix the problem
 
 To fix the problem,
@@ -55,13 +55,14 @@ Learn more in
 The example above includes both captions for hearing impaired users,
 and audio descriptions for visually impaired users.
 Audio descriptions provide context beyond dialog, such as scenery, facial expressions.
-See also [Ensures `<video>` elements have audio descriptions](/lighthouse-accessibility/video-description).
+See also [Ensures `<video>` elements have audio descriptions](/video-description).
 {% endAside %}
 
+<!--
 ## How this audit impacts overall Lighthouse score
 
 Todo. I have no idea how accessibility scoring is working!
-
+-->
 ## More information
 
 - [Video elements have captions audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-caption.js)
