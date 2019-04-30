@@ -16,6 +16,7 @@ permalink: /en/{{page.fileSlug}}/index.html
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
+  <web-actions-controller page="post"></web-actions-controller>
   {% Actions %}
     {% ShareAction title, page.url | stripLanguage %}
     {% SubscribeAction %}
