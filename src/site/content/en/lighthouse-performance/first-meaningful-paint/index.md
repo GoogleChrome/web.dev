@@ -28,7 +28,7 @@ It's essentially the paint after which the biggest above-the-fold layout change 
 Learn more about the technical specifics of FMP in
 [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view).
 
-[First Contentful Paint (FCP)](/performance-audits/first-contentful-paint)
+[First Contentful Paint (FCP)](/first-contentful-paint)
 and FMP often share the same values
 when the first bit of content rendered on the page includes the content above the fold.
 These metrics can differ, say for example, when there's content above the fold within an iframe.
@@ -38,13 +38,13 @@ FMP registers when the content within the iframe is visible to the user.
 
 In order to be able to calculate your overall performance score,
 Lighthouse assigns each performance metric an individual score between 0 - 100.
-FMP uses the [FCP metrics of real website performance data on 
-HTTParchive](https://httparchive.org/reports/loading-speed#fcp).
+FMP uses the [same real website performance data as First Contentful Paint (FCP)](https://httparchive.org/reports/loading-speed#fcp).
 
-FMP and FCP scores are equal
-when they are the same time in seconds.
+When FMP and FCP are the same time in seconds,
+they share the same identical score.
 If FMP is slower than FCP,
-then the FMP score is lower.
+say when there's iframe content loading,
+then the FMP score will be lower than the FCP score.
 
 For example, let's say your FCP is 1.5 seconds, your FMP is 3.0 seconds.
 The FCP score would be 99, but the FMP score would be 75.
@@ -83,10 +83,10 @@ This table helps explain how to interpret your FMP score:
 ## How your FMP score impacts overall performance score
 
 The overall Lighthouse performance score is a weighted-average of the performance metrics, including FMP, as well as,
-[First Contentful Paint](/performance-audits/first-contentful-paint), [First CPU Idle](/performance-audits/first-cpu-idle), [Time to Interactive](/performance-audits/time-to-interactive), and [Speed Index](/performance-audits/speed-index).
+[First Contentful Paint](/first-contentful-paint), [First CPU Idle](/first-cpu-idle), [Time to Interactive](/interactive), and [Speed Index](/speed-index).
 
 Heavier-weighted metrics have a larger impact on the overall performance score.
-FCP is weighted 1, which means it has the lowest impact on the overall performance score
+FMP is weighted 1 out of 5, which means it has the lowest impact on the overall performance score
 (see [Scoring Details](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=0) for specifics).
 
 Try also the [Scoring Calculator](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=283330180) to get a better sense of how Lighthouse scoring works.
@@ -112,12 +112,12 @@ the greater impact it will have on improving your performance score.
 </figure>
 
 For example,
-[Eliminate render-blocking resources](/performance-audits/render-blocking-resources)
+[Eliminate render-blocking resources](/render-blocking-resources)
 shows opportunities to improve page load speed (in seconds).
 Eliminate any one or all of the blocking resources, and not only will your FMP score improve,
 but so will additional performance metrics, and your overall Lighthouse performance score.
 
-Learn more about these potential savings from the [Performance audits landing page](/performance-audits).
+Learn more about these potential savings from the [Performance audits landing page](/lighthouse-performance).
 
 ## Tracking FMP in the real world
 
@@ -126,7 +126,7 @@ see [Tracking FMP using hero elements](https://developers.google.com/web/fundame
 
 See [Assessing Loading Performance in Real Life with Navigation and Resource Timing](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/)
 for more on collecting real-user metrics with the User Timing API.
-The [User Timing Marks and Measures Lighthouse audit](/performance/audits/user-timings)
+The [User Timing Marks and Measures Lighthouse audit](/user-timings)
 enables you to see User Timing data in your report.
 
 ## More information

@@ -78,8 +78,8 @@ Then load the rest of the styles asynchronously using the `preload` link.
 Consider automating the process of extracting and inlining "Above the Fold" CSS
 using the [Critical tool](https://github.com/addyosmani/critical/blob/master/README.md).
 
-Learn more in [Defer non-critical CSS](/fast/defer-non-critical-css).
+Learn more in [Defer non-critical CSS](/defer-non-critical-css).
 
 ## More information
 
-- [Remove unused CSS audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js)
+- [Remove unused CSS audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)

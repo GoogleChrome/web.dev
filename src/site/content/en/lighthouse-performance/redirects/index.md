@@ -52,3 +52,4 @@ consider re-designing your site to use
 
 - [Avoid multiple page redirects audit source](https://developers.google.com/web/tools/lighthouse/audits/redirects)
 - [Redirections in HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
+- [Avoid multiple page redirects audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)

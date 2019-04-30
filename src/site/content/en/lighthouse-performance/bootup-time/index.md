@@ -27,7 +27,7 @@ JavaScript execution can slow down your performance in many ways:
 When the main thread is busy, the page can't respond to user input.
 - Execution cost. JavaScript is also executed on the main thread.
 If your page runs a lot of code before it's really needed,
-that also delays your [Time To Interactive](/performance-audits/interactive),
+that also delays your [Time To Interactive](/interactive),
 which is one of the key metrics related to how users perceive your page speed.
 - Memory cost. If your JavaScript holds on to a lot of references,
 it can potentially consume a lot of memory.
@@ -37,12 +37,12 @@ Memory leaks can cause your page to freeze up completely.
 ## Ways to speed up improve JavaScript execution
 
 - Only send the code that your users need (see
-[Reduce JavaScript payloads with code-splitting](/fast/reduce-javascript-payloads-with-code-splitting))
+[Reduce JavaScript payloads with code-splitting](/reduce-javascript-payloads-with-code-splitting)).
 - Minify and compress your code (see
-[Minify and compress network payloads](/fast/reduce-network-payloads-using-text-compression)).
-- Remove unused code (see [Remove unused code](/fast/remove-unused-code)).
+[Minify and compress network payloads](/reduce-network-payloads-using-text-compression)).
+- Remove unused code (see [Remove unused code](/remove-unused-code)).
 - Cache your code to reduce network trips (see
-[Apply instant loading with the PRPL pattern](fast/apply-instant-loading-with-prpl)).
+[Apply instant loading with the PRPL pattern](/apply-instant-loading-with-prpl)).
 
 ## More information
 

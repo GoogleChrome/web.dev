@@ -31,12 +31,12 @@ If the potential savings are 4KB or greater, Lighthouse flags the image as optim
 
 There are many steps you can take to optimize your images, including:
 
-- [Compressing images](/fast/use-imagemin-to-compress-images).
-- [Replacing animated GIFs with video](/fast/replace-gifs-with-videos).
-- [Lazyloading images](/fast/use-lazysizes-to-lazyload-images).
-- [Serving responsive images](/fast/serve-responsive-images).
-- [Serving images with correct dimensions](/fast/serve-images-with-correct-dimensions).
-- [Using WebP images](/fast/serve-images-webp).
+- [Compressing images](/use-imagemin-to-compress-images).
+- [Replacing animated GIFs with video](/replace-gifs-with-videos).
+- [Lazyloading images](/use-lazysizes-to-lazyload-images).
+- [Serving responsive images](/serve-responsive-images).
+- [Serving images with correct dimensions](/serve-images-with-correct-dimensions).
+- [Using WebP images](/serve-images-webp).
 
 ## Optimize images using GUI tools
 
@@ -48,7 +48,7 @@ and then it automatically compresses the images without compromising quality not
 If you're running a small site and can handle manually optimizing all images,
 this option is probably good enough.
 
-[Squoosh](https://imageoptim.com/mac) is another option.
+[Squoosh](https://squoosh.app/) is another option.
 Squoosh is maintained by the Google Web DevRel team.
 
 ## More information

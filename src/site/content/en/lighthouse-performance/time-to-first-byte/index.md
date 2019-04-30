@@ -49,5 +49,5 @@ There are many possible causes of slow server responses, and therefore many poss
 
 ## More information
 
-- [Time to First Byte audit source}(https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/time-to-first-byte.js)
-- [Adaptive Serving with Network Information API](/fast/adaptive-service-based-on-network-quality)
+- [Time to First Byte audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/time-to-first-byte.js)
+- [Adaptive Serving with Network Information API](/adaptive-service-based-on-network-quality)

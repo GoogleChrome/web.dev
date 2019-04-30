@@ -20,7 +20,7 @@ that aren't yet prioritizing fetch requests with `<link rel=preconnect>`:
 
 ## Improve page load speed with preconnect
 
-Consider adding preconnect or dns-prefetch resource hints
+Consider adding `preconnect` or `dns-prefetch` resource hints
 to establish early connections to important third-party origins.
 
 `<link rel="preconnect">` informs the browser that your page intends
@@ -39,28 +39,30 @@ Informing the browser of your intention is as simple as adding a link tag to you
 
 `<link rel="preconnect" href="https://example.com">`
 
-In this case, we’re letting the browser know that we intend
+This lets the browser know that the page intends
 to connect to `example.com` and retrieve content from there.
 
 Bear in mind that while `<link rel="preconnect">` is pretty cheap,
-it can still take up valuable CPU time, particularly on secure connections.\
+it can still take up valuable CPU time, particularly on secure connections.
 This is especially bad if the connection isn’t used within 10 seconds,
 as the browser closes it, wasting all of that early connection work.
 
 In general,
-try to use `<link rel="preload">` wherever you can,
+try to use `<link rel="preload">`,
 as it’s a more comprehensive performance tweak,
-but do keep `<link rel="preconnect">` in your toolbelt for the edge cases. Let’s look at a couple of them:
+but do keep `<link rel="preconnect">` in your toolbelt for the edge cases like:
 
 - [Use-case: Knowing Where From, but not What You're Fetching](https://developers.google.com/web/fundamentals/performance/resource-prioritization#use-case_knowing_where_from_but_not_what_youre_fetching)
 - [Use-case: Streaming Media](https://developers.google.com/web/fundamentals/performance/resource-prioritization#use-case_knowing_where_from_but_not_what_youre_fetching)
 
-Note: There’s actually another `<link>` type related to connections:
-`<link rel="dns-prefetch">`.
+`<link rel="dns-prefetch">` is another `<link>` type related to connections.
 This handles the DNS lookup only,
-so it’s a small subset of `<link rel="preconnect">`,
 but it’s got wider browser support, so it may serve as a nice fallback.
-You use it the exact same way: `<link rel="dns-prefetch" href="https://example.com">`
+You use it the exact same way: 
+
+```html
+<link rel="dns-prefetch" href="https://example.com">.
+```
 
 ## More information
 

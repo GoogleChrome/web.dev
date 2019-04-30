@@ -70,10 +70,10 @@ your FCP score is 99. This table helps explain how to interpret your FCP score:
 ## How your FCP score impacts overall performance score
 
 The overall Lighthouse performance score is a weighted-average of the performance metrics, including FCP, as well as,
-[First Meaningful Paint](/performance-audits/first-meaningful-paint), [First CPU Idle](/performance-audits/first-cpu-idle), [Time to Interactive](/performance-audits/time-to-interactive), and [Speed Index](/performance-audits/speed-index).
+[First Meaningful Paint](/first-meaningful-paint), [First CPU Idle](/first-cpu-idle), [Time to Interactive](/interactive), and [Speed Index](/speed-index).
 
 Heavier-weighted metrics have a larger impact on the overall performance score.
-FCP is weighted 3, which means it has an average impact on the overall performance score
+FCP is weighted 3 out of 5, which means it has an average impact on the overall performance score
 (see [Scoring Details](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=0) for specifics).
 
 Try also the [Scoring Calculator](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=283330180) to get a better sense of how Lighthouse scoring works.
@@ -99,18 +99,18 @@ the greater impact it will have on improving your performance score.
 </figure>
 
 For example,
-[Eliminate render-blocking resources](/performance-audits/render-blocking-resources)
+[Eliminate render-blocking resources](/render-blocking-resources)
 shows opportunities to improve page load speed (in seconds).
 Eliminate any one or all of the blocking resources, and not only will your FCP score improve,
 but so will additional performance metrics, and your overall Lighthouse performance score.
 
 In addition to the potential savings in the Opportunities section of the Lighthouse report,
 one Diagnostics audit of importance to FCP is
-[Ensure text remains visible during webfont load](/performance-audits/font-display).
+[Ensure text remains visible during webfont load](/font-display).
 Font loads can significantly impact FCP so
 look for ways to speed up them up.
 
-Learn more about these potential savings from the [Performance audits landing page](/performance-audits).
+Learn more about these potential savings from the [Performance audits landing page](/lighthouse-performance).
 
 ## Tracking FCP on real user's devices
 

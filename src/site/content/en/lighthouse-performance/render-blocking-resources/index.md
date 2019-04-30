@@ -77,7 +77,7 @@ you can keep it in the URL,
 and then mark the URL with `async` or `defer` attributes
 (see also [Adding Interactivity with JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript)).
 
-Code that isn't being used at all should be removed (see [Remove unused code](/fast/remove-unused-code)).
+Code that isn't being used at all should be removed (see [Remove unused code](/remove-unused-code)).
 
 ## How to eliminate render-blocking stylesheets
 
@@ -85,7 +85,7 @@ Similar to inlining code in a `<script>` tag,
 inline critical styles required for the first paint
 inside a `<style>` block at the `head` of the HTML page.
 Then load the rest of the styles asynchronously using the `preload` link
-(see [Defer unused CSS](/fast/defer-non-critical-css)).
+(see [Defer unused CSS](/defer-non-critical-css)).
 
 Consider automating the process of extracting and inlining "Above the Fold" CSS
 using the [Critical tool](https://github.com/addyosmani/critical/blob/master/README.md).
@@ -109,6 +109,6 @@ general rule, `async` should be used with HTML imports as much as possible.
 ## More information
 
 - [Render-blocking resources audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js)
-- [Reduce JavaScript payloads with codesplitting](fast/reduce-javascript-payloads-with-code-splitting)
-- [Remove unused code codelab](/fast/remove-unused-code/codelab-remove-unused-code)
+- [Reduce JavaScript payloads with codesplitting](/reduce-javascript-payloads-with-code-splitting)
+- [Remove unused code codelab](/codelab-remove-unused-code)
 - [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)

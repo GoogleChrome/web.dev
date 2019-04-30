@@ -75,9 +75,9 @@ you probably want to set up an automated workflow that minifies your CSS automat
 before you deploy your updated code.
 This is usually accomplished with a build tool like Gulp or Webpack.
 
-Learn how to minify your CSS code in [Minify CSS](/fast/minify-css).
+Learn how to minify your CSS code in [Minify CSS](/minify-css).
 
 ## More information
 
 - [Unminified CSS audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-css.js)
-- [Minify CSS](/fast/minify-css)
+- [Minify CSS](/minify-css)

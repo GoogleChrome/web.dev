@@ -36,15 +36,20 @@ Lighthouse considers a resource cache-able if all of the following conditions ar
 Lighthouse then estimates how much network data you could have saved your users
 if the resources had been cached. This estimate includes some calculations of
 optimal cache duration for each resource, based on aggregate usage statistics reported
-to Chrome. A longer duration is not necessarily better. Check out the audit source
-for details. Ultimately, it's up to you to decide what the optimal cache duration is for
-your resources.
+to Chrome. 
+
+A longer duration is not necessarily better.
+Check out the [audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js) for details.
+Ultimately,
+it's up to you to decide what the optimal cache duration is for your resources.
 
 ## How to cache static resources using HTTP caching
 
 Configure your server to return the `Cache-Control` HTTP response header.
 
-     Cache-Control: max-age=31536000
+```js
+Cache-Control: max-age=31536000
+```
 
 The `max-age` directive tells the browser how long it should cache the resource, in seconds.
 `31536000` corresponds to 1 year: 60 seconds * 60 minutes * 24 hours * 365 days = 
@@ -53,8 +58,8 @@ The `max-age` directive tells the browser how long it should cache the resource,
 When possible, cache immutable static assets for a long time,
 such as a year or longer.
 Configure your build tool to embed a hash in your static asset filenames,
-so that each one is unique (see 
-[Caching](https://webpack.js.org/guides/caching/)for webpack guidance).
+so that each one is unique (see
+[Caching](https://webpack.js.org/guides/caching/) for webpack guidance).
 
 Use `no-cache` if the resource changes and freshness matters
 but you still want to get some of the speed benefits of caching.
@@ -63,8 +68,8 @@ but checks with the server first to make sure that the resource is still current
 
 There are many directives for customizing how the browser caches different resources.
 Learn more about caching resources in
-[The HTTP cache: your first line of defense guide](/reliable/http-cache)
-and [Configuring HTTP caching behavior codelab](https://web.dev/reliable/http-cache/codelab-http-cache).
+[The HTTP cache: your first line of defense guide](/http-cache)
+and [Configuring HTTP caching behavior codelab](/codelab-http-cache).
 
 ## Verify cached responses in Chrome DevTools
 
@@ -90,6 +95,6 @@ as expected.
 
 ## More information
 
-- [Serve static assets with an efficient cache policy](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [Serve static assets with an efficient cache policy audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Cache-Control specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [Cache-Control (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)

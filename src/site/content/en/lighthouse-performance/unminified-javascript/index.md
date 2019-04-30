@@ -29,7 +29,7 @@ There are two useful techniques that can be used to improve the performance of y
 - Data compression
 
 Incorporating both of these techniques reduces payload sizes and in turn improves page load times
-(see [Minify and compress network payloads](https://web.dev/fast/reduce-network-payloads-using-text-compression)).
+(see [Minify and compress network payloads](/reduce-network-payloads-using-text-compression)).
 
 Minification is the process of removing whitespace and any code that is not necessary
 to create a smaller but perfectly valid code file.
@@ -39,11 +39,11 @@ webpack v4 includes a plugin for this library by default to create minified buil
 Compression is the process of modifying data using a compression algorithm.
 [Gzip](https://www.youtube.com/watch?v=whGwm0Lky2s&feature=youtu.be&t=14m11s)
 is the most widely used compression format for server and client interactions
-(see [Minify and compress network payloads with gzip codelab](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression)).
+(see [Minify and compress network payloads with gzip codelab](/codelab-text-compression)).
 
 [Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html)
 is a newer compression algorithm which can provide even better compression results than Gzip
-(see [Minify and compress network payloads with brotli](/fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli)).
+(see [Minify and compress network payloads with brotli](/codelab-text-compression-brotli)).
 
 ## More information
 

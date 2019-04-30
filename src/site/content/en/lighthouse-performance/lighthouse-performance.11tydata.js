@@ -8,8 +8,9 @@ module.exports = {
     cover: '/images/collections/lighthouse.png',
     title: 'Performance audits',
     description:
-      'How long does your app take to show content and become useable?',
-    overview: `Lorem ipsum dolor set amet...`,
+      'Measure performance and find opportunities to speed up page loads.',
+    overview: `These checks ensure that your page is optimized for users
+    to be able to see and interact with page content.`,
     topics: [
       {
         title: 'Metrics',

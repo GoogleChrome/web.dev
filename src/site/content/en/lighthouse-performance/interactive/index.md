@@ -25,7 +25,7 @@ The Time to Interactive (TTI) metric measures how long it takes a page to become
 "Interactive" is defined as the point where:
 
 - The page has displayed useful content, which is measured with
-[First Contentful Paint](/performance-audits/first-contentful-paint).
+[First Contentful Paint](/first-contentful-paint).
 - Event handlers are registered for most visible page elements.
 - The page responds to user interactions within 5 seconds.
 
@@ -85,10 +85,10 @@ This table helps explain how to interpret your TTI score:
 
 The overall Lighthouse performance score is a weighted-average of the performance metrics,
 including TTI, as well as,
-[First Contentful Paint](/performance-audits/first-contentful-paint),
-[First Meaningful Paint](/performance-audits/first-meaningful-paint),
-[First CPU Idle](/performance-audits/first-cpu-idle),
-and [Speed Index](/performance-audits/speed-index).
+[First Contentful Paint](/first-contentful-paint),
+[First Meaningful Paint](/first-meaningful-paint),
+[First CPU Idle](/first-cpu-idle),
+and [Speed Index](/speed-index).
 
 Heavier-weighted metrics have a larger impact on the overall performance score.
 TTI is weighted 5;
@@ -116,18 +116,18 @@ and improving your overall performance score:
 </figure>
 
 To defer or remove unnecessary JavaScript work,
-look for opportunities to [Optimize your JavaScript](https://web.dev/fast#topic-Optimize-your-JavaScript).
+look for opportunities to [Optimize your JavaScript](/fast#optimize-your-javascript).
 In particular,
-consider [reducing JavaScript payloads with code splitting](https://web.dev/fast/reduce-javascript-payloads-with-code-splitting),
-and [applying the PRPL pattern](https://web.dev/fast/apply-instant-loading-with-prpl).
+consider [reducing JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting),
+and [applying the PRPL pattern](/apply-instant-loading-with-prpl).
 
 These two Diagnostic audits provide additional opportunities
 to reduce JavaScript work:
 
-- [Minimize main-thread work](/performance-audits/mainthread-work-breakdown)
-- [JavaScript execution time](/performance-audits/bootup-time)
+- [Minimize main-thread work](/mainthread-work-breakdown)
+- [JavaScript execution time](/bootup-time)
 
-Learn more about these potential savings from the [Performance audits landing page](/performance-audits).
+Learn more about these potential savings from the [Performance audits landing page](/lighthouse-performance).
 
 ## Tracking TTI in the real world
 
@@ -143,7 +143,7 @@ instead.
 
 - [Time to Interactive audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
-- [Reduce JavaScript payloads with code-splitting codelab](https://web.dev/fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting)
+- [Reduce JavaScript payloads with code-splitting codelab](/codelab-code-splitting)
 - [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
 - [Reduce JavaScript Payloads with Tree Shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/)
 

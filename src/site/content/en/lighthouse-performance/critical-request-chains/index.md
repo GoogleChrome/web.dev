@@ -40,10 +40,10 @@ Use the critical request chains audit results to target the most effective resou
 - Optimizing the order in which the remaining critical resources are loaded: downloading all critical assets as early as possible to shorten the critical path length.
 
 Learn more about optimizing your
-[images](https://web.dev/fast#topic-Optimize-your-images),
-[JavaScript](https://web.dev/fast#topic-Optimize-your-JavaScript),
-[CSS](https://web.dev/fast#topic-Optimize-your-CSS), and
-[web fonts](https://web.dev/fast#topic-Optimize-web-fonts).
+[images](/use-imagemin-to-compress-images),
+[JavaScript](/apply-instant-loading-with-prp),
+[CSS](/defer-non-critical-css), and
+[web fonts](/avoid-invisible-text).
 
 ## More information
 

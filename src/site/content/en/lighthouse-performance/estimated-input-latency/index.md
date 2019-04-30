@@ -24,9 +24,9 @@ The Lighthouse reports displays the Estimated Input Latency time period in milli
 Estimated Input Latency is an estimate of how long your app takes to respond to user input,
 during the busiest 5s window of page load.
 The timing of this audit is from
-[First Meaningful Paint](/performance-audits/first-meaningful-paint)
+[First Meaningful Paint](/first-meaningful-paint)
 to the end of the trace which is roughly 5 seconds after
-[Time to Interactive](/performance-audits/interactive).
+[Time to Interactive](/interactive).
 If your latency is higher than 50 ms, users may perceive your app as laggy.
 
 The [RAIL performance model](https://developers.google.com/web/fundamentals/performance/rail)
@@ -71,6 +71,6 @@ are complete within 50ms.
 
 ## More information
 
-- [Estimated Input Latency audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-contentful-paint.js)
+- [Estimated Input Latency audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/estimated-input-latency.js)
 
 

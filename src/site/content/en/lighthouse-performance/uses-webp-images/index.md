@@ -10,7 +10,7 @@ web_lighthouse:
 
 The Opportunities section of your Lighthouse report lists all images
 in older image formats,
-showing potential savings gained by serving webp versions of those images:
+showing potential savings gained by serving WebP versions of those images:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-webp-images.png" alt="Serve images in next-gen formats">
@@ -27,9 +27,21 @@ WebP is supported in Chrome and Opera and provides better lossy and lossless com
 See [A New Image Format For The Web](https://developers.google.com/speed/webp/)
 for more on WebP.
 
-<div class="w-aside w-aside--codelab">
-  <strong>Codelab:</strong>
-  <a href="/fast/serve-images-webp/codelab-serve-images-webp">Creating WebP images with the Command Line codelab</a>
+<div class="w-codelabs-callout">
+  <div class="w-codelabs-callout__header">
+    <h2 class="w-codelabs-callout__lockup">Codelabs</h2>
+    <div class="w-codelabs-callout__headline">See it in action</div>
+    <div class="w-codelabs-callout__blurb">
+      Learn more and put this guide into action.
+    </div>
+  </div>
+  <ul class="w-unstyled-list w-codelabs-callout__list">
+    <li class="w-codelabs-callout__listitem">
+      <a class="w-codelabs-callout__link" href="/codelab-serve-images-webp">
+        Creating WebP images with the Command Line codelab
+      </a>
+    </li>
+  </ul>
 </div>
 
 ## How Lighthouse calcualtes potential savings
@@ -56,4 +68,4 @@ To see the current browser support for each next-gen format, check out the entri
 ## More information
 
 - [Serve images in next-gen formats audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-webp-images.js)
-- [Use WebP images](/fast/serve-images-webp)
+- [Use WebP images](/serve-images-webp)

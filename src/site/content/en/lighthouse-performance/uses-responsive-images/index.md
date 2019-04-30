@@ -38,7 +38,7 @@ Anything larger than that just results in wasted bytes and slows down page load 
 The main strategy for serving appropriately-sized images is called "responsive images".
 With responsive images, you generate multiple versions of each image,
 and then specify which version to use in your HTML or CSS using media queries, viewport dimensions, and so on.
-See [Serve responsive images](/fast/serve-responsive-images) to learn more.
+See [Serve responsive images](/serve-responsive-images) to learn more.
 
 Another strategy is to use vector-based image formats, like SVG.
 With a finite amount of code, an SVG image can scale to any size.
@@ -54,4 +54,4 @@ either when you upload an image, or request it from your page.
 ## More information
 
 - [Properly size images audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
-- [Serve images with correct dimensions codelab](/fast/serve-images-with-correct-dimensions/codelab-serve-images-correct-dimensions)
+- [Serve images with correct dimensions codelab](/codelab-serve-images-correct-dimensions)

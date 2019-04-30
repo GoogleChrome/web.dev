@@ -40,13 +40,14 @@ you can fix this problem in most modern browsers:
 The [font-display API](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
 specifies the font display strategy. 
 `swap` tells the browser that text using this font should be displayed immediately using a system font.
-Once the custom font is ready, the system font is swapped out (see [Avoid invisible text during loading](/fast/avoid-invisible-text)).
+Once the custom font is ready, the system font is swapped out
+(see [Avoid invisible text during loading](/avoid-invisible-text)).
 
 ## Browser support
 
 It's worth mentiong that not all major browsers support `font-display: swap`,
 so you may need to do a bit more work to fix the invisible text problem.
-Follow the [Avoid flast of invisible text codelab](/fast/avoid-invisible-text/codelab-avoid-invisible-text)
+Follow the [Avoid flast of invisible text codelab](/codelab-avoid-invisible-text)
 to learn how to avoid this invisible text across all browsers.
 
 ## More information

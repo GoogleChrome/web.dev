@@ -27,7 +27,7 @@ First CPU Idle measures when a page is minimally interactive:
 - The page responds, on average, to most user input in a reasonable amount of time.
 
 Both First CPU Idle and
-[Time to Interactive](/performance-audits/interactive)
+[Time to Interactive](/interactive)
 measure when the page is ready for user input.
 First CPU Idle is the first moment when the user's able to engage with the page;
 Time to Interactive is when the user's fully able to interact with the content.
@@ -87,10 +87,10 @@ This table helps explain how to interpret your First CPU Idle score:
 
 The overall Lighthouse performance score is a weighted-average of the performance metrics, including First CPU Idle,
 as well as,
-[First Contentful Paint](/performance-audits/first-contentful-paint),
-[First Meaningful Paint](/performance-audits/first-meaningful-paint),
-[Time to Interactive](/performance-audits/time-to-interactive), and
-[Speed Index](/performance-audits/speed-index).
+[First Contentful Paint](/first-contentful-paint),
+[First Meaningful Paint](/first-meaningful-paint),
+[Time to Interactive](/interactive), and
+[Speed Index](/speed-index).
 
 Heavier-weighted metrics have a larger impact on the overall performance score.
 First CPU Idlea is weighted 2 out of possible 5
@@ -119,13 +119,13 @@ the greater impact it will have on improving your performance score.
 </figure>
 
 For example,
-[Eliminate render-blocking resources](/performance-audits/render-blocking-resources)
+[Eliminate render-blocking resources](/render-blocking-resources)
 shows opportunities to improve page load speed (in seconds).
 Eliminate any one or all of the blocking resources,
 and not only will your First CPU Idlea score improve,
 but so will additional performance metrics, and your overall Lighthouse performance score.
 
-Learn more about these potential savings from the [Performance audits landing page](/performance-audits).
+Learn more about these potential savings from the [Performance audits landing page](/lighthouse-performance).
 
 ## More information
 

@@ -20,24 +20,25 @@ flags the third level of requests in your critical request chain as preload cand
 
 ## How Lighthouse flags determines preload candidates
 
-Suppose your page's [critical request chain](/lighthouse-performance/critical-request-chains/) looks like this:
+Suppose your page's
+[critical request chain](/critical-request-chains) looks like this:
 
-[CRC]: /web/tools/lighthouse/audits/critical-request-chains
-
-    index.html
-    |--app.js
-       |--styles.css
-       |--ui.js
+```html
+index.html
+|--app.js
+   |--styles.css
+   |--ui.js
+```
 
 Your `index.html` file declares `<script src="app.js">`. When  `app.js` runs , it calls
 `fetch()` in order to download `styles.css` and `ui.js`. The page doesn't appear complete
 until those last 2 resources are downloaded, parsed, and executed.
-
 Using the example above, Lighthouse would flag `styles.css` and `ui.js` as candidates.
+
 The potential savings are based on how much earlier the browser would be able
 to start the requests if you declared preload links.
-For example, if app.js takes 200ms to download, parse, and execute,
-the potential savings for each resource is 200ms since app.js is no longer a bottleneck for each of the requests.
+For example, if `app.js` takes 200ms to download, parse, and execute,
+the potential savings for each resource is 200ms since `app.js` is no longer a bottleneck for each of the requests.
 
 Preloading requests can make your pages load faster.
 
@@ -54,20 +55,22 @@ Preloading requests can make your pages load faster.
 
 The problem here is that the browser only becomes aware
 of those last 2 resources after it downloads, parses, and executes `app.js`.
-Yet you as a developer know that those resources are
-important and should be downloaded as soon as possible.
+But you know that those resources are important and
+should be downloaded as soon as possible.
 
 ## Declare your preload links
 
 Declare preload links in your HTML to instruct the browser to download key resources
 as soon as possible.
 
-    <head>
-      ...
-      <link rel="preload" href="styles.css" as="style">
-      <link rel="preload" href="ui.js" as="script">
-      ...
-    </head>
+```html
+<head>
+  ...
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="ui.js" as="script">
+  ...
+</head>
+```
 
 <figure>
   <img src="after.png"

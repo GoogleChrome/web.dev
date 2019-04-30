@@ -76,13 +76,13 @@ This table helps explain how to interpret your Speed Index score:
 
 The overall Lighthouse performance score is a weighted-average of the performance metrics,
 including Speed Index, as well as,
-[First Contentful Paint](/performance-audits/first-contentful-paint),
-[First Meaningful Paint](/performance-audits/first-meaningful-paint),
-[First CPU Idle](/performance-audits/first-cpu-idle),
-and [Time to Interactive](/performance-audits/time-to-interactive).
+[First Contentful Paint](/first-contentful-paint),
+[First Meaningful Paint](/first-meaningful-paint),
+[First CPU Idle](/first-cpu-idle),
+and [Time to Interactive](/interactive).
 
 Heavier-weighted metrics have a larger impact on the overall performance score.
-Speed Index is weighted 4, the second heaviest score,
+Speed Index is weighted 4 out of 5, the second heaviest score,
 with Time to Interactive the only heavier-weighted score
 (see [Scoring Details](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=0) for specifics).
 
@@ -109,7 +109,7 @@ the greater impact it will have on improving your performance score.
 </figure>
 
 For example,
-[Eliminate render-blocking resources](/performance-audits/render-blocking-resources)
+[Eliminate render-blocking resources](/render-blocking-resources)
 shows opportunities to improve page load speed (in seconds).
 Eliminate any one or all of the blocking resources, and not only will your Speed Index score improve,
 but so will additional performance metrics, and your overall Lighthouse performance score.
@@ -119,11 +119,11 @@ improves your Speed Index score.
 Look for additional potential savings in these Diagnostic audits
 listed in your Lighthouse report:
 
-- [Minimize main-thread work](/performance-audits/mainthread-work-breakdown)
-- [JavaScript execution time](/performance-audits/bootup-time)
-- [Ensure text remains visible during webfont load](/performance-audits/font-display)
+- [Minimize main-thread work](/mainthread-work-breakdown)
+- [JavaScript execution time](/bootup-time)
+- [Ensure text remains visible during webfont load](/font-display)
 
-Learn more about these potential savings from the [Performance audits landing page](/performance-audits).
+Learn more about these potential savings from the [Performance audits landing page](/lighthouse-performance).
 
 ## More information
 

@@ -46,12 +46,12 @@ You can adjust the results to factor in purchasing power.
 
 Here are some strategies for reducing payload size:
 
-- Defer requests until they're needed. See [The PRPL Pattern](https://web.dev/fast/apply-instant-loading-with-prpl) for one possible approach.
+- Defer requests until they're needed. See [The PRPL Pattern](/apply-instant-loading-with-prpl) for one possible approach.
 - Optimize requests to be as small as possible. Possible techniques include:
-  - [Minify and compress network payloads](https://web.dev/fast/reduce-network-payloads-using-text-compression).
-  - [Use WebP instead of JPEG or PNG](https://web.dev/fast/serve-images-webp).
-  - [Set the compression level of JPEG images to 85](https://web.dev/fast/use-imagemin-to-compress-images).
-- Cache requests so that the page doesn't re-download the resources on repeat visits (see [The options in your caching toolbox](https://web.dev/reliable#topic-The-options-in-your-caching-toolbox)).
+  - [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
+  - [Use WebP instead of JPEG or PNG](/serve-images-webp).
+  - [Set the compression level of JPEG images to 85](/use-imagemin-to-compress-images).
+- Cache requests so that the page doesn't re-download the resources on repeat visits (see [The options in your caching toolbox](/reliable#the-options-in-your-caching-toolbox)).
 
 ## More information
 
