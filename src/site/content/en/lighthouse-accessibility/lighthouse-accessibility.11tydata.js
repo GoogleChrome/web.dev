@@ -9,8 +9,10 @@ module.exports = {
     title: 'Accessibility audits',
     description:
       'Can all users access content and navigate your site effectively?',
-    overview: `These checks highlight opportunities to improve the accessibility of your web app.
-    Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.`,
+    overview: `These checks highlight opportunities
+    to improve the accessibility of your web app.
+    Only a subset of accessibility issues can be automatically detected
+    so manual testing is also encouraged.`,
     topics: [
       {
         title: 'ARIA',
