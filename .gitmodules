@@ -1,3 +1,0 @@
-[submodule "src/styles"]
-	path = src/styles
-	url = https://github.com/GoogleChrome/web.dev-frontend.git
