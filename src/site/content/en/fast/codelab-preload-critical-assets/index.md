@@ -7,8 +7,7 @@ description: |
   and prefetching resources.
 web_lighthouse:
   - uses-rel-preload
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 glitch: preload-critical-assets
 ---
 

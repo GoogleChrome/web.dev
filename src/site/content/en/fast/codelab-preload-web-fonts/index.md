@@ -5,8 +5,7 @@ author: gmimani
 description: |
   In this codelab, learn how to improve the performance of a page by preloading
   web fonts.
-web_updated_on: 2018-12-06
-web_published_on: 2018-11-05
+date: 2018-11-05
 glitch: web-dev-preload-webfont
 ---
 
