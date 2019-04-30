@@ -28,6 +28,7 @@ const site = require('../../_data/site');
  */
 const Actions = (children) =>
   html`
+    <web-actions-controller></web-actions-controller>
     <div class="w-actions">${children}</div>
   `;
 
