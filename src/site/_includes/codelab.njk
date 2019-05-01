@@ -43,7 +43,7 @@ this inline style tag.
       {{ content | safe }}
       {% if related_post %}
         {% ArticleNavigation {
-          back: '/' + path.slug + '/' + related_post,
+          back: '/' + related_post,
           backLabel: 'Return to article'
         } %}
       {% else %}
