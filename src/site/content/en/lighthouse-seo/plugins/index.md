@@ -3,9 +3,7 @@ layout: post
 title: Document uses plugins
 description: |
   Learn about plugins audit.
-authors:
- - kaycebasques
- - megginkearney
+author: megginkearney
 web_lighthouse:
   - plugins
 ---

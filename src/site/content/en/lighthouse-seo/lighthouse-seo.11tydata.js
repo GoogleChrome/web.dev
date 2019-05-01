@@ -9,7 +9,8 @@ module.exports = {
     title: 'SEO audits',
     description:
       'How well can search engines understand your content?',
-    overview: `Lorem ipsum dolor set amet...`,
+    overview: `These checks ensure that your page is optimized
+    for search engine results ranking.`,
     topics: [
       {
         title: 'Content best practices',
