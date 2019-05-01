@@ -1210,5 +1210,21 @@
     "github": "AVGP",
     "twitter": "g33konaut",
     "glitch": "AVGP"
+  },
+  "joemedley": {
+    "name": {
+      "given": "Joe",
+      "family": "Medley"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "country": "US",
+    "github": "samthor",
+    "twitter": "jpmedley",
+    "description": {
+      "en": "If an API's not documented it doesn't exist"
+    }
   }
 }
