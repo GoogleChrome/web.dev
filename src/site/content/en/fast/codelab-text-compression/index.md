@@ -6,7 +6,7 @@ description: |
   In this codelab, learn how both minifying and compressing the JavaScript
   bundle for an application improves page performance by reducing the app's
   request size.
-date: 2018-11-05
+date: 2018-04-24
 glitch: fav-kitties-compress-starter
 related_post: reduce-network-payloads-using-text-compression
 ---
