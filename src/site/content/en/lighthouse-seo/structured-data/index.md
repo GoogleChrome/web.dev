@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Structured data is valid
+title: Manually check structured data is valid
 description: |
   Learn about structured-data audit.
 author: megginkearney
@@ -8,9 +8,15 @@ web_lighthouse:
   - structured-data
 ---
 
-Run the [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/) and the [Structured Data Linter](http://linter.structured-data.org/) to validate structured data.
+Run the [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/) and the
+[Structured Data Linter](http://linter.structured-data.org/)
+to validate structured data.
 
-## Recommendations
+{% Aside 'note' %}
+This is a manual audit and does not impact the overall Lighthouse SEO score.
+{% endAside %}
+
+## Structured data guidelines
 
 1. Identify the [content type](https://developers.google.com/search/docs/guides/mark-up-content#content_types) that represents your content.
 2. Create the structured data mark-up using the [reference docs for that content type](https://developers.google.com/search/docs/data-types/article).
@@ -21,4 +27,4 @@ See [Mark Up Your Content Items](https://developers.google.com/search/docs/guide
 
 ## More information
 
-- [Audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/seo/manual/structured-data.js)
+- [Manually check structured data audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/seo/manual/structured-data.js)
