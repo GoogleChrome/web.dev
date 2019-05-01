@@ -12,3 +12,9 @@
 # limitations under the License.
 
 runtime: nodejs10
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always
+  redirect_http_response_code: 301
