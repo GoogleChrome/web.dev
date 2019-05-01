@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Using Imagemin with Grunt
-author: katiehempenius
+authors:
+  - katiehempenius
 date: 2018-11-05
 description: |
   In this codelab, learn how to use imagemin with grunt to optimize JPEG and
@@ -40,10 +41,11 @@ This code block tells Grunt which files should be compressed with Imagemin.
 - The file pattern `{cwd: 'images/', expand: true, src: ['**/*.{png,jpg}']}`
   will match all the JPEG and PNG images in the `images/` directory.
 
-<div class="aside note">
-Have more questions about this? You can read more about the Grunt file object
-<a href="https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically">here</a>.
-</div>
+{% Aside %}
+Have more questions about this?
+You can
+[read more about the Grunt file object here](https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically).
+{% endAside %}
 
 - Load the Imagemin task by adding this line immediately before
   `grunt.registerTask(...)`:

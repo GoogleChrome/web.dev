@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Fix robots.txt errors
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   The robots.txt file tells search engines which URLs of your site they can

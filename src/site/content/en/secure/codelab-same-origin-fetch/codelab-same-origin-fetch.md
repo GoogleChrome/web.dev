@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Same Origin Policy & Fetch requests
-author: kosamari
+authors:
+  - kosamari
 date: 2018-11-05
 description: |
   In this codelab, learn how the same-origin policy works when fetching

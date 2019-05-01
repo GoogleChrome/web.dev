@@ -4,7 +4,8 @@ title: Remove unused code
 subhead: |
   npm makes adding code to your project a breeze. But are you really using all
   those extra bytes?
-author: houssein
+authors:
+  - houssein
 date: 2018-11-05
 description: |
   Registries like npm have transformed the JavaScript world for the better by

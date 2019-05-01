@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Performance budgets 101
-author: mihajlija
+authors:
+  - mihajlija
 description: |
   Good performance is rarely a side effect. Learn about performance budgets and
   how they can set you on track for success.

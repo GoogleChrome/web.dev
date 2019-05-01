@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Using the Chrome UX Report on BigQuery
-author: rviscomi
+authors:
+  - rviscomi
 description: |
   In this guide, learn how to use BigQuery to write queries against the CrUX 
   dataset to extract insightful results about the state of user experiences on 

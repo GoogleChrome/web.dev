@@ -26,7 +26,20 @@ this inline style tag.
   <web-codelab glitch="{{ glitch }}" attribution-hidden>
     <div class="web-codelab-instructions">
       <h1 class="w-headline w-headline--two">{{ title }}</h1>
-      {% Author {post: page, author: authors[author], avatar: author, showSocialMedia: true} %}
+
+      {% if authors %}
+        <div class="w-authors">
+          {% for author in authors %}
+            {% Author {
+              post: page,
+              author: contributors[author],
+              avatar: author,
+              showSocialMedia: true}
+            %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
       {{ content | safe }}
       {% if related_post %}
         {% ArticleNavigation {

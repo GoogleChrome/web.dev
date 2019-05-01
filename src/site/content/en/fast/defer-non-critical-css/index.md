@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Defer non-critical CSS
-author: demianrenzulli
+authors:
+  - demianrenzulli
 description: |
   Learn how to defer non-critical CSS with the goal of optimizing the Critical
   Rendering Path, and improve FCP (First Contentful Paint).

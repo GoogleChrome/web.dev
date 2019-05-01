@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Discover performance opportunities with Lighthouse
-author: kaycebasques
+authors:
+  - kaycebasques
 date: 2018-11-05
 description: |
   Lighthouse is a tool that helps you measure and find ways to improve a page's

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Tell search engines which version of a page to crawl
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   When multiple pages have the same or significantly similar content, search

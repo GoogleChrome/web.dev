@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Avoid making pages that rely on browser plugins
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   Search engines often can't index content that requires browser plugins such as

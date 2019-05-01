@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Fix unsuccessful HTTP status codes
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   HTTP status codes indicate the response given by a server for a request to a

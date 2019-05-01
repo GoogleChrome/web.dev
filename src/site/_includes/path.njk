@@ -45,7 +45,7 @@ layout: layout
     <div class="w-grid__columns w-grid__columns--three">
       {% for slug in topic.pathItems %}
         {% set item = slug | findBySlug %}
-        {% PostCard {post: item, author: authors[item.data.author]} %}
+        {% PostCard {post: item, author: contributors[item.data.author]} %}
       {% endfor %}
     </div>
     {% endfor %}

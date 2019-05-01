@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Explore DevTools Network panel
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   In this codelab, learn how to inerpret network traffic using Chrome's

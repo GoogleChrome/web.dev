@@ -8,7 +8,8 @@ date: 2019-04-29
 description: |
   react-snap is a third-party library that pre-renders pages on your site into
   static HTML files. This can improve First Paint times in your application.
-author: houssein
+authors:
+  - houssein
 ---
 
 [`react-snap`](https://github.com/stereobooster/react-snap) is a third-party

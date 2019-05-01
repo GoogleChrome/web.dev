@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Fix the viewport meta tag
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   Without a viewport meta tag, mobile devices render pages at typical desktop

@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Setting performance budgets with webpack
-author: mihajlija
+authors:
+  - mihajlija
 description: |
   Learn how to set performance budgets and keep your bundlesize in check with
   webpack.

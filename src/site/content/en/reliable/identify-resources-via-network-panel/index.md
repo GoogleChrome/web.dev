@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Identify resources loaded from the network
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   Coming up with the right caching strategies for your web application requires

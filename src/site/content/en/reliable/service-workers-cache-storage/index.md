@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Service workers and the Cache Storage API
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   The browser's HTTP cache is your first line of defense. It's not necessarily

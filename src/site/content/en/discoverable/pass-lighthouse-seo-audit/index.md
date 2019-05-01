@@ -1,7 +1,8 @@
 ---
 layout: post
 title: How to measure Search Engine Optimization with Lighthouse
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   The Lighthouse SEO audit scans your page, tests for things that matter to

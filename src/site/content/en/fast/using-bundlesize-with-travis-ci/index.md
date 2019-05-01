@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Using bundlesize with Travis CI
-author: mihajlija
+authors:
+  - mihajlija
 description: |
   Define performance budgets with minimal setup and enforce them as part of your development workflow using bundlesize with Travis CI.
 web_lighthouse: N/A

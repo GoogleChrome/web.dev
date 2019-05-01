@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Headings and landmarks
-author: robdodson
+authors:
+  - robdodson
 date: 2018-11-18
 description: |
   By using the correct elements for headings and landmarks, you can dramatically

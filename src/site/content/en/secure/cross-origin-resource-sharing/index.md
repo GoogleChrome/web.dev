@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Share cross-origin resources safely
-author: kosamari
+authors:
+  - kosamari
 date: 2018-11-05
 description: |
   The browser's same-origin policy blocks reading a resource from a different

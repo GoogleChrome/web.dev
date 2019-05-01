@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Preload web fonts to improve loading speed
-author: gmimani
+authors:
+  - gmimani
 description: |
   In this codelab, learn how to improve the performance of a page by preloading
   web fonts.

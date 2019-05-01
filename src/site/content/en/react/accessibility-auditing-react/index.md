@@ -12,7 +12,8 @@ description: |
   rules directly in your JSX. Using them in combination can provide a
   comprehensive auditing approach to find and fix any accessibility concerns in
   your application.
-author: houssein
+authors:
+  - houssein
 ---
 
 {% Aside %}

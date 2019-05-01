@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Preload critical assets to improve loading speed
-author: houssein
+authors:
+  - houssein
 description: |
   In this codelab, learn how to improve the performance of a page by preloading
   and prefetching resources.

@@ -9,7 +9,8 @@ description: |
   The React.lazy method makes it easy to code-split a React application on a
   component level using dynamic imports. Use it along with Suspense to show
   appropriate loading states to your users.
-author: houssein
+authors:
+  - houssein
 ---
 
 {% Aside %}

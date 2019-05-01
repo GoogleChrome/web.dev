@@ -33,13 +33,19 @@ permalink: /en/{{page.fileSlug}}/index.html
         {{ subhead }}
       </p>
       {% endif %}
-      
-      {% Author {
-        post: page,
-        author: authors[author],
-        avatar: author,
-        showSocialMedia: true}
-      %}
+
+      {% if authors %}
+        <div class="w-authors">
+          {% for author in authors %}
+            {% Author {
+              post: page,
+              author: contributors[author],
+              avatar: author,
+              showSocialMedia: true}
+            %}
+          {% endfor %}
+        </div>
+      {% endif %}
     </header>
     {{ content | safe }}
 

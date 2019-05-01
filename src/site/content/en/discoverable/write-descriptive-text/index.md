@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Write descriptive titles, descriptions, and link text
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   Search engines rely heavily on document titles, descriptions, and link text

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Runtime caching with Workbox
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   Runtime caching refers to gradually adding responses to a cache "as you go".

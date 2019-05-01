@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Working with service workers
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   In this codelab, learn how to make an application network resilient by
