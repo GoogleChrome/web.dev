@@ -23,6 +23,8 @@ If the script meets the criteria outlined in the introduction to
 injected script. These are the calls to `document.write()` that you want
 to change. See [How do I fix this?](https://developers.google.com/web/updates/2016/08/removing-document-write#how_do_i_fix_this) for possible solutions. 
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## More information
 
 Lighthouse reports every instance of `document.write()` that it encounters.

@@ -20,6 +20,8 @@ different library.
 
 See [Snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all) to learn more about each library's vulnerability.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## More information
 
 To detect vulnerable libraries, Lighthouse:

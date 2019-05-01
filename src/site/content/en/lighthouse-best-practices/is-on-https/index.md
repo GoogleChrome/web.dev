@@ -41,7 +41,9 @@ requests an unprotected (HTTP) resource. Check out the following doc on the
 Chrome DevTools Security panel to learn how to debug these situations:
 [Understand security issues](https://developers.google.com/web/tools/chrome-devtools/debug/security).
 
-## More information {: #more-info }
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
+## More information
 
 Lighthouse waits for an event from the Chrome Debugger Protocol indicating that
 the page is running on a secure connection. If the event is not heard within 10

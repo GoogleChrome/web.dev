@@ -23,6 +23,8 @@ requests to user gestures instead.
 See [Ask permission responsibly](https://developers.google.com/web/fundamentals/native-hardware/user-location/#ask_permission_responsibly) for a list of best practices when
 requesting a user's location.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## More information
 
 If geolocation permission was already granted to a page before Lighthouse's

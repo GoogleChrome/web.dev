@@ -38,6 +38,8 @@ So, using the syntax above may cause unintended consequences.
 See the polyfill in [Feature Detection](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection) to learn how to safely
 implement passive event listeners.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## More information
 
 Lighthouse uses the following algorithm to flag potential passive event

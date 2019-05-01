@@ -21,6 +21,8 @@ Under **URLs**, Lighthouse reports the line and column numbers where your
 code is requesting permission to send notifications. Remove these calls,
 and tie the requests to user gestures instead.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## More information
 
 If notification permissions was already granted or denied to a page before

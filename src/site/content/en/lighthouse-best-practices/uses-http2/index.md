@@ -23,6 +23,8 @@ To pass this audit, serve each of those resources over HTTP/2.
 
 To learn how to enable HTTP/2 on your servers, see [Setting Up HTTP/2](https://dassur.ma/things/h2setup/).
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## More information
 
 Lighthouse gathers all of the resources that are from the same host as the

@@ -39,7 +39,9 @@ To quickly find and inspect the code that's preventing pasting, try enabling the
 pasting into a password field. DevTools should pause on the first line of code in the `paste`
 event listener.
 
-## More information {: #more-info }
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
+## More information
 
 Lighthouse gathers all `<input type="password">` elements, pastes some text into each element,
 and then verifies that the element's content has been set to the pasted text. If a page
