@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Minify and compress network payloads with gzip
-author: houssein
+authors:
+  - houssein
 description: |
   In this codelab, learn how both minifying and compressing the JavaScript
   bundle for an application improves page performance by reducing the app's

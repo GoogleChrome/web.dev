@@ -1,7 +1,8 @@
 ---
 layout: post
 title: How search works
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   Search engines are the digital version of a librarian. They use a

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Using the Chrome UX Report to look at performance in the field
-author: rviscomi
+authors:
+  - rviscomi
 description: |
   The Chrome UX Report (informally known as CrUX) is a public dataset of real
   user experience data on millions of websites. Unlike lab data, CrUX data

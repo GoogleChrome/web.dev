@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Tell search engines translated pages are equivalent
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   If you have a page that's translated into multiple languages, add link

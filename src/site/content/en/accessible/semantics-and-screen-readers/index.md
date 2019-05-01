@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Semantics and screen readers
-author: robdodson
+authors:
+  - robdodson
 date: 2018-11-18
 description: |
   Have you ever stopped to wonder how assistive technology, such as a screen

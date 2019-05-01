@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Discover what it takes to be installable
-author: petelepage
+authors:
+  - petelepage
 date: 2018-11-05
 description: |
   A Progressive Web App can run in a browser tab or it can be installed on the

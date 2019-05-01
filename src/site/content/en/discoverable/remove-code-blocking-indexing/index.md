@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Remove code that blocks search engine indexing
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   Search engines can only show pages in their search results if those pages are

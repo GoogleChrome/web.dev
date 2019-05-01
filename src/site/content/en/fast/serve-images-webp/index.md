@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Use WebP images
-author: katiehempenius
+authors:
+  - katiehempenius
 description: |
   WebP images are smaller than their JPEG and PNG counterparts - usually on the
   magnitude of a 25-35% reduction in filesize. This decreases page sizes and

@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Serve modern code to modern browsers for faster page loads
-author: houssein
+authors:
+  - houssein
 description: |
   In this codelab, learn how to improve the performance of an application by
   minizming how much code is transpiled.

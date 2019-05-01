@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Serve responsive images
-author: katiehempenius
+authors:
+  - katiehempenius
 description: |
   Serving desktop-sized images to mobile devices can use 2–4x more data than
   needed. Instead of a "one-size-fits-all" approach to images, serve different

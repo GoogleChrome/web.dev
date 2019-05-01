@@ -9,7 +9,8 @@ description: |
   React is an open-source library that makes building UIs easier. This learning
   path will cover different APIs and tools within the ecosystem that you should
   consider using to improve the performance and usability of your application.
-author: houssein
+authors:
+  - houssein
 ---
 
 [React](https://reactjs.org/) is an open-source library that makes building UIs

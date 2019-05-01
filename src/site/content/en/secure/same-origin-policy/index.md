@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Same Origin Policy
-author: kosamari
+authors:
+  - kosamari
 date: 2018-11-05
 description: |
   A browser can load and display resources from multiple sites. If there is no

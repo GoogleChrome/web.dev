@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Use semantic HTML for easy keyboard wins
-author: robdodson
+authors:
+  - robdodson
 date: 2018-11-18
 description: |
   By using the correct semantic HTML elements you may be able to meet most or

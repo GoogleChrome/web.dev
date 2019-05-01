@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Serve modern code to modern browsers for faster page loads
-author: houssein
+authors:
+  - houssein
 description: |
   Building websites that work well on all major browsers is a core tenet of an
   open web ecosystem. However, this means additional work of ensuring that all

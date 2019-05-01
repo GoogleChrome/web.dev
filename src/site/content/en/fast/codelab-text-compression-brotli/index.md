@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Minify and compress network payloads with brotli
-author: mdiblasio
+authors:
+  - mdiblasio
 description: |
   In this codelab, learn how Brotli compression can further reduce compression
   ratios and your app's overall size.

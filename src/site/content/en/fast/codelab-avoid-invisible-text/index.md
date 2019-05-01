@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Avoid flash of invisible text
-author: katiehempenius
+authors: 
+  - katiehempenius
 description: |
   In this codelab, learn how to display text immediately using Font Face
   Observer.

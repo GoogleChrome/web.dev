@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Security should not be so scary!
-author: kosamari
+authors:
+  - kosamari
 date: 2018-11-05
 description: |
   When the word "security" comes to mind, it's usually in the context of bad

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Avoid invisible text during font loading
-author: katiehempenius
+authors:
+  - katiehempenius
 description: |
   Fonts are often large files that take awhile to load. To deal with this, some
   browsers hide text until the font loads (the "flash of invisible text"). If

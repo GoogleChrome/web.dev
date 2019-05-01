@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Keyboard access fundamentals
-author: robdodson
+authors:
+  - robdodson
 date: 2018-11-18
 description: |
   Many different users rely on the keyboard to navigate applications - from

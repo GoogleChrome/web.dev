@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Make it installable
-author: petelepage
+authors:
+  - petelepage
 date: 2018-11-05
 description: |
   In this codelab, learn how to make a site installable using the

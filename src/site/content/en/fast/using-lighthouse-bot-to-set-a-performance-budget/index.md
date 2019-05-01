@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Using Lighthouse Bot to set a performance budget
-author: mihajlija
+authors:
+  - mihajlija
 description: |
   You’ve done hard work to get fast, now make sure you stay fast by automating
   performance testing in Travis CI with Lighthouse Bot.

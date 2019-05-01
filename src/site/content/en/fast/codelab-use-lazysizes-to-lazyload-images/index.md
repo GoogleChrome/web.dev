@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Lazy load offscreen images with lazysizes
-author: katiehempenius
+authors:
+  - katiehempenius
 description: |
   In this codelab, learn how to use lazysizes to only load images that are
   in the current viewport.

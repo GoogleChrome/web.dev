@@ -1,7 +1,8 @@
 ---
 layout: post
 title: What is network reliability and how do you measure it?
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   The modern web is enjoyed by a wide swath of people, using a range of

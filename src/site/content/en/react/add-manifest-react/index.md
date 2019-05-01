@@ -9,7 +9,8 @@ description: |
   Create React App includes a web app manifest by default. Modifying this file
   will allow you to change how your application is displayed when installed on
   the user's device.
-author: houssein
+authors:
+  - houssein
 ---
 
 {% Aside %}

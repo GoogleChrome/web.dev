@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Workbox your high-level service worker toolkit
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   Workbox is a high-level service worker toolkit built on top of the Service

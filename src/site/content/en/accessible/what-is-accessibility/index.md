@@ -1,7 +1,8 @@
 ---
 layout: post
 title: What is accessibility
-author: robdodson
+authors:
+  - robdodson
 date: 2018-11-18
 description: |
   An accessible site is one whose content can be accessed regardless of any
