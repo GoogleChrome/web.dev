@@ -50,7 +50,7 @@ module.exports = (path) => {
             <li
               class="w-path-card__info-listitem w-path-card__info-listitem--more-info"
             >
-              ${getPostCount(path)} resources
+              ${getPostCount(path)}
             </li>
             <li
               class="w-path-card__info-listitem w-path-card__info-listitem--updated"
