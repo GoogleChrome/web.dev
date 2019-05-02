@@ -228,7 +228,7 @@ efficient delivery and consistent quality.
       ```
 
     Find out more in our guide at
-    [web.dev/fast/serve-responsive-images](https://web.dev/fast/serve-responsive-images).
+    [web.dev/serve-responsive-images](/serve-responsive-images).
 
     You can see this in action below — resize the viewport, do a hard reload
     and check the choice of files in your browser's DevTools.
@@ -248,7 +248,7 @@ efficient delivery and consistent quality.
     crops for different display sizes. Take a look at the examples
     [here](https://simpl.info/pictureart/) and
     [here](http://udacity.github.io/responsive-images/examples/3-08/pictureArtDirection/),
-    and try out our codelab: [web.dev/fast/serve-responsive-images/codelab-art-direction](https://web.dev/fast/serve-responsive-images/codelab-art-direction).
+    and try out our codelab: [web.dev/codelab-art-direction](/codelab-art-direction).
 
     The wide image below can work well on a wide viewport, but the square image
     crop is far more striking on a phone. You can enable zoom to
@@ -306,7 +306,7 @@ There are several ways to do this:
     IntersectionObserver with fallbacks.
 
 Find out more from our guide
-[web.dev/fast/use-lazysizes-to-lazyload-images](https://web.dev/fast/use-lazysizes-to-lazyload-images).
+[web.dev/use-lazysizes-to-lazyload-images](/use-lazysizes-to-lazyload-images).
 
 {% Aside %}
 Several other features to optimize image delivery are coming to the web:
