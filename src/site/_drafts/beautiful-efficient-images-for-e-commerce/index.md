@@ -228,7 +228,7 @@ efficient delivery and consistent quality.
       ```
 
     Find out more in our guide at
-    [web.dev/fast/serve-responsive-images](https://web.dev/fast/serve-responsive-images).
+    [web.dev/serve-responsive-images](/serve-responsive-images).
 
     You can see this in action below — resize the viewport, do a hard reload
     and check the choice of files in your browser's DevTools.
