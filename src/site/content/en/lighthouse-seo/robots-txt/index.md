@@ -3,7 +3,6 @@ layout: post
 title: robots.txt is not valid
 description: |
   Learn about robots-txt audit.
-author: megginkearney
 web_lighthouse:
   - robots-txt
 ---

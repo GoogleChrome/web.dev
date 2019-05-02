@@ -3,7 +3,6 @@ layout: post
 title: Document doesn't have a valid hreflang
 description: |
   Learn about hreflang audit.
-author: megginkearney
 web_lighthouse:
   - hreflang
 ---

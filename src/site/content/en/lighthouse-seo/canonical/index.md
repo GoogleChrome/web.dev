@@ -3,7 +3,6 @@ layout: post
 title: Document doesn't have a valid rel=canonical
 description: |
   Learn about the canonical audit.
-author: megginkearney
 web_lighthouse:
   - canonical
 ---

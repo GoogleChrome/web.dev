@@ -3,7 +3,6 @@ layout: post
 title: Page has unsuccessful HTTP status code
 description: |
   Learn about http-status-code audit.
-author: megginkearney
 web_lighthouse:
   - http-status-code
 ---

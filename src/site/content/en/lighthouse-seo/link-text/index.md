@@ -3,7 +3,6 @@ layout: post
 title: Links do not have descriptive text
 description: |
   Learn about link-text audit.
-author: megginkearney
 web_lighthouse:
   - link-text
 ---

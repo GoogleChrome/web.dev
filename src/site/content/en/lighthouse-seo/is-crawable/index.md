@@ -3,7 +3,6 @@ layout: post
 title: Page is blocked from indexing
 description: |
   Learn about is-crawable audit.
-author: megginkearney
 web_lighthouse:
   - is-crawable
 ---
