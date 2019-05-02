@@ -3,7 +3,7 @@ title: "Add search to your website"
 authors:
   - samdutton
 hero: hero.jpg
-alt: Colorful handmade items for sale at a market stall.
+alt: People searching through vinyl LPs at a record store.
 description:
 tags:
   - post
