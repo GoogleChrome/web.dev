@@ -23,7 +23,7 @@ In this guide you'll find out what makes e-commerce different when it comes
 to images.
 
 You can learn more about general image optimization techniques at
-[web.dev/fast](https://web.dev/fast).
+[web.dev/fast](/fast).
 {% endAside %}
 
 
