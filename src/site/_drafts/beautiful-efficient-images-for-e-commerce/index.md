@@ -1,6 +1,7 @@
 ---
 title: "Beautiful, efficient images for e‑commerce"
-author: samdutton
+authors:
+  - samdutton
 hero: hero.jpg
 alt: Screenshot of flowershop website on phone.
 description: Images are crucial for e-commerce. How can you efficiently deliver images that drive engagement and conversion across a variety of devices, platforms and connectivity?
@@ -22,7 +23,7 @@ In this guide you'll find out what makes e-commerce different when it comes
 to images.
 
 You can learn more about general image optimization techniques at
-[web.dev/fast](https://web.dev/fast).
+[web.dev/fast](/fast).
 {% endAside %}
 
 
@@ -102,19 +103,19 @@ maintaining quality.
 
 +   **Use WebP with a JPEG fallback for product photos (not PNG!)** These
     formats give you the [best compression and
-    highest quality](https://web.dev/serve-images-webp) for continuous tone
+    highest quality](/serve-images-webp) for continuous tone
     (raster) images such as photographs. WebP images are around
     [25% smaller than JPEGs](https://developers.google.com/speed/webp/docs/webp_study)
     of the same quality.
 
     [WebP is supported by Chrome, Firefox and other browsers.](https://caniuse.com/#feat=webp)
-    You can easily [code for a JPEG fallback](web.dev/serve-images-webp) or use
+    You can easily [code for a JPEG fallback](/serve-images-webp) or use
     an image service such as [Cloudinary](https://cloudinary.com/) or
     [Thumbor](https://github.com/thumbor/thumbor) that automatically delivers
     WebP or JPEG depending on browser capability — without changing the file
     extension. You can easily produce both WebP and JPEG versions of product
     photos using [image automation in your build
-    workflow](https://web.dev/serve-images-webp), via [image
+    workflow](/serve-images-webp), via [image
     services](https://images.guide/#image-processing-cdns), or with a tool such
     as [Squoosh](https://squoosh.app/).
 
@@ -207,8 +208,8 @@ There are two main options:
 +   **Incorporate image processing in your website build process**
 
     As part of your build process, you add steps to resize and compress images.
-    To find out more, see the guides at
-    [web.dev/fast/use-imagemin-to-compress-images](https://web.dev/fast/use-imagemin-to-compress-images).
+    To find out more, see the guide at
+    [web.dev/use-imagemin-to-compress-images](/use-imagemin-to-compress-images).
 
 ## What's good enough?
 
@@ -333,7 +334,7 @@ Code images with accessibility in mind:
     as shopping carts and search icons.
 
 Learn how to improve accessibility from our guides at
-[web.dev/accessible](https://web.dev/accessible).
+[web.dev/accessible](/accessible).
 
 ## Make image browsing a pleasure
 
@@ -396,5 +397,5 @@ Make sure to include image performance testing in your workflow:
 
 ## Next steps
 
-+   [web.dev/fast](https://web.dev/fast#topic-Optimize-your-images) has a
++   [web.dev/fast](/fast#optimize-your-images) has a
     range of guides and codelabs to help you optimize your images.
