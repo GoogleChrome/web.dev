@@ -50,7 +50,10 @@ module.exports = {
       },
       {
         title: 'Optimize your CSS',
-        pathItems: ['defer-non-critical-css'],
+        pathItems: [
+          'defer-non-critical-css',
+          'minify-css'
+        ],
       },
       {
         title: 'Optimize web fonts',
