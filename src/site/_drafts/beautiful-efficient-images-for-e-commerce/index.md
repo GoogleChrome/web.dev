@@ -306,7 +306,7 @@ There are several ways to do this:
     IntersectionObserver with fallbacks.
 
 Find out more from our guide
-[web.dev/fast/use-lazysizes-to-lazyload-images](https://web.dev/fast/use-lazysizes-to-lazyload-images).
+[web.dev/use-lazysizes-to-lazyload-images](/use-lazysizes-to-lazyload-images).
 
 {% Aside %}
 Several other features to optimize image delivery are coming to the web:
