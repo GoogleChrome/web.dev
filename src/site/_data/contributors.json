@@ -1226,5 +1226,18 @@
     "description": {
       "en": "Tech consultant for Web, Chrome & AMP"
     }
+  },
+  "martinschierle": {
+    "name": {
+      "given": "Martin",
+      "family": "Schierle"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Technical Solutions"
+    },
+    "country": "DE",
+    "twitter": "martinschierle",
+    "github": "martinschierle"
   }
 }
