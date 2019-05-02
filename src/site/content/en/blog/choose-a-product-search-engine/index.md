@@ -1,18 +1,31 @@
-# web.dev e-commerce
-Effective search within your site
-
-# Guide: Choose a search engine
+---
+title: "Choose a product search engine"
+authors:
+  - samdutton
+hero: hero.jpg
+alt:
+description:
+tags:
+  - post
+  - e-commerce
+  - search
+  - discovery
+  - conversion
+---
 
 Once customers have arrived on your site, you need to ensure they can find what
 they want quickly and easily.
+
 Some customers will navigate to products via category listings, but most will
 want to search. For that you need a search engine.
+
 This guide outlines the most popular alternatives.
 
 ## How do I choose a solution?
 
 Every online store has different search engine requirements, depending on
 company size, business type, staffing resources and inventory type.
+
 There are multiple server- and client-side alternatives:
 
 +   A back-end search engine that you run yourself, such as
@@ -34,27 +47,18 @@ There are multiple server- and client-side alternatives:
     database: [PouchDB](https://pouchdb.com/) for example.
 +   [Google Custom Search Engine](https://www.google.com/cse/).
 
-<table>
-<thead>
-<tr>
-<th><strong>We have an app and a website — and multiple data
-sources!<br>
-<br>
-</strong>Many online stores have an app as well as a
-website, and get content and data from many
-sources.<strong><br>
-</strong><br>
-All the search engines, databases and
-managed services discussed in this guide have integrations across multiple
-frameworks, languages, content management systems and e-commerce platforms
- — and for native apps as well as for the web.</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+{% Aside %}
+**We have an app and a website — and multiple data sources!**
 
-## Where is your product data and what do you want from it?
+Many online stores have an app as well as a website, and get content and data
+from many sources.
+
+All the search engines, databases and managed services discussed in this guide
+have integrations across multiple frameworks, languages, content management
+systems and e-commerce platforms—and for native apps as well as for the web.
+{% endAside %}
+
+## Where is your product data and what do you want to do with it?
 
 Whatever your target platforms, there are several key considerations when
 choosing a solution:
@@ -85,35 +89,29 @@ choosing a solution:
 This is just an overview of some of the issues. Pros and cons for each type of
 solution are explored in more detail below.
 
-<table>
-<thead>
-<tr>
-<th><strong>What is a search index?</strong><br>
+{% Aside %}
+**What is a search index?**
+
 It's possible to search a small amount of data simply by scanning all
 of the data for every query. As the quantity of data increases, this
-becomes slow and inefficient.<br>
-In its simplest form a <a
-href="https://en.wikipedia.org/wiki/Search_engine_indexing">search
-indexer</a> gets around this problem by analysing a data set and
-building an index of search terms (words or phrases) and their location
-within the data — a bit like an index at the back of a book. The search
-implementation can then look up the query in the index rather than scanning
-all of the data. Indexers can also implement features such as stop-word
-handling and stemming.<br>
-All search engines use some form of indexing to enable efficient
-search.<br>
-You can view a sample <a
-href="https://simpl.info/search/lunr/data/index.json">here</a> of
-product data combined with an index, built for <a
-href="https://simpl.info/search/lunr">this demo</a> using the <a
-href="https://lunrjs.com/">Lunr</a> JavaScript library.</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+becomes slow and inefficient.
 
-## What are the options?
+In its simplest form a [search
+indexer](https://en.wikipedia.org/wiki/Search_engine_indexing) gets around this
+problem by analyzing a data set and building an index of search terms (words or
+phrases) and their location within the data—a bit like an index at the back of
+a book. The search implementation can then look up the query in the index rather
+than scanning all of the data. Indexers can also implement features such as
+stop-word handling and stemming.
+
+All search engines use some form of indexing to enable efficient search.
+
+You can view a sample [here](https://simpl.info/search/lunr/data/index.json) of
+product data combined with an index, built for [this demo](https://simpl.info/search/lunr)
+using the [Lunr](https://lunrjs.com/) JavaScript library.
+{% endAside %}
+
+## What are the options for product search?
 
 ### Search engine
 
@@ -123,7 +121,7 @@ and [Solr](http://lucene.apache.org/solr/), both open source.
 
 #### Pro
 
-+   A search engine can also serve as a data store — though there are
++   A search engine can also serve as a data store—though there are
     [caveats](https://www.quora.com/Why-shouldnt-I-use-ElasticSearch-as-my-primary-datastore).
 +   Search engines can handle petabytes of data on hundreds of servers.
 +   Queries are extremely fast, and updates can be searchable with very low
@@ -164,7 +162,7 @@ give you search services via APIs.
 +   DIY alternatives can incur greater infrastructure and human resource costs.
 +   A managed service can be simpler and more reliable to scale.
 +   Outsourcing search can simplify the management of setup, maintenance and
-    updates — and reduce startup time.
+    updates—and reduce startup time.
 +   In most cases, the performance of managed services should be at least as
     good as a DIY equivalent.
 +   Managed services are potentially more reliable than self-hosted
@@ -273,27 +271,7 @@ search can enable a number of use cases. For example:
 +   Providing resilience and fallbacks in case of connectivity dropouts.
 
 You can find out more about offline search from the article [Build offline
-search](http://fdsaf) [TODO: Add link].
-
-<table>
-<thead>
-<tr>
-<th><a
-href="http://html5doctor.com/introducing-web-sql-databases/">WebSQL</a>
-enabled fast text matching (<a
-href="https://samdutton.wordpress.com/2011/04/08/instant-search-for-shakespeares-sonnets/">demo</a>)
-and full text search (<a
-href="https://gist.github.com/nolanlawson/0264938033aca2201012">demo</a>).<br>
-However, the WebSQL standard <a
-href="https://softwareengineering.stackexchange.com/questions/220254/why-is-web-sql-database-deprecated">has
-been discontinued</a> and only ever had partial browser support.<br>
-Full text search in WebSQL is now being <a
-href="https://www.chromestatus.com/feature/5704730961510400">removed</a>.</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+search]() [TODO: Add web.dev link].
 
 #### Pro
 
@@ -312,7 +290,7 @@ href="https://www.chromestatus.com/feature/5704730961510400">removed</a>.</th>
 
 #### Con
 
-+   Only viable for a limited amount of data — though this could be up to
++   Only viable for a limited amount of data—though this could be up to
     tens of thousands of documents, potentially more, as long as the data is
     relatively static and doesn't change frequently.
 +   High latency for data updates compared to server-side alternatives.
@@ -339,6 +317,19 @@ href="https://www.chromestatus.com/feature/5704730961510400">removed</a>.</th>
     implemented for both web and native, potentially with server-side fallbacks.
 +   Offline use cases are not (yet) a priority for e-commerce or other types
     of sites, so why bother with client-side search?
+
+
+
+{% Aside %}
+[WebSQL](http://html5doctor.com/introducing-web-sql-databases/) enabled fast
+text matching ([demo](https://samdutton.wordpress.com/2011/04/08/instant-search-for-shakespeares-sonnets/))
+and full text search ([demo](https://gist.github.com/nolanlawson/0264938033aca2201012)).
+
+However, the WebSQL standard [has been discontinued](https://softwareengineering.stackexchange.com/questions/220254/why-is-web-sql-database-deprecated) and only ever had partial
+browser support.
+
+Full text search in WebSQL is now being [removed](https://www.chromestatus.com/feature/5704730961510400).
+{% endAside %}
 
 ### Client-side search with automated replication
 
@@ -369,28 +360,24 @@ You can try an offline-enabled PouchDB demo
 +   For a client with good connectivity, potentially slower than a fast
     backend database or search engine.
 
-<table>
-<thead>
-<tr>
-<th><strong>What is a document?</strong><br>
+{% Aside %}
+**What is a document?**
+
 Confusingly, the word ‘document' is used with two different meanings
-in relation to search engines:<br>
-<ul>
-<li>Data representing a single item, a ‘record' or ‘object', for
-example:<br>
-<code>{name: ‘Big red armchair', SKU: ‘B47516'}</code></li>
-<li>A binary file in a format such as PDF or Word.</li>
-</ul>
+in relation to search engines:
+
++   Data representing a single item, a ‘record' or ‘object', for
+example:
+
+`{name: ‘Big red armchair', SKU: ‘B47516'}`
++   A binary file in a format such as PDF or Word.
+
 Providing high quality search results for a set of binary files can be much
 more complex than searching structured textual data. Imagine a video
 archive catalogue consisting of millions of legacy files with multiple
-different binary formats and a variety of content structures — how can you
-provide consistent and accurate search across the entire document set?</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+different binary formats and a variety of content structures—how can you
+provide consistent and accurate search across the entire document set?
+{% endAside %}
 
 ## What else do you need to think about?
 
@@ -401,7 +388,7 @@ even with large data sets.
 
     Low update latency is crucial for large-scale e-commerce search, or for any
     context where search results must reflect data updates within strict time
-    limits specified by SLAs — for example, if your site urgently needs to
+    limits specified by SLAs—for example, if your site urgently needs to
 remove a product search result.
 
     Client-side search may not be able to provide low enough update latency or
@@ -414,7 +401,7 @@ remove a product search result.
     [precision](https://en.wikipedia.org/wiki/Precision_and_recall#Precision)
     and [recall](https://en.wikipedia.org/wiki/Precision_and_recall#Recall),
     avoiding missing results as well as false positives. Understanding how to
-    rank results — and what the indexer should actually ignore — is often
+    rank results—and what the indexer should actually ignore—is often
     crucial. Search engines need to ensure results can be ranked properly, by
     measuring the frequency or position of the search term within documents,
     phrase word proximity, or with other techniques. For example, a surf shop
