@@ -248,7 +248,7 @@ efficient delivery and consistent quality.
     crops for different display sizes. Take a look at the examples
     [here](https://simpl.info/pictureart/) and
     [here](http://udacity.github.io/responsive-images/examples/3-08/pictureArtDirection/),
-    and try out our codelab: [web.dev/fast/serve-responsive-images/codelab-art-direction](https://web.dev/fast/serve-responsive-images/codelab-art-direction).
+    and try out our codelab: [web.dev/codelab-art-direction](/codelab-art-direction).
 
     The wide image below can work well on a wide viewport, but the square image
     crop is far more striking on a phone. You can enable zoom to
