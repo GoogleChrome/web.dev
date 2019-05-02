@@ -2,11 +2,12 @@
 title: "Hands-on with Portals: seamless navigations on the Web"
 author: uskay
 hero: hero.png
-alt: An icon set displayed on a computer monitor.
+alt: A logo of Portals
 description: |
-  Another post!
+  An article on explaining how to use the new HTML element: Portals
 tags:
-  - post
+  - portals
+  - UX
 ---
 
 We’ve long stressed the importance of web performance. While it is tempting to focus on individual pages, it is also critical to maintain a good user experience as your users navigate across your pages. A new upcoming web platform API called [Portals](https://github.com/WICG/portals) can help you with that.
@@ -14,7 +15,7 @@ We’ve long stressed the importance of web performance. While it is tempting to
 # What Portals enables
 Single Page Applications with an [App Shell model](https://developers.google.com/web/fundamentals/architecture/app-shell) are one way of achieving seamless navigations. Having a static shell on the page, like the header, footer and side nav, and dynamically changing the content with a transition provides continuity to the user experience in ways that a classic navigation experience in Multiple Page Applications can’t. In particular, the navigation experience on Multiple Page Applications is plagued by frequent flashes of blank or unfinished paints. While SPA result in a better user experience, there are many reasons why you might not want to choose SPA as your frontend architecture. Maybe you don’t have the necessary expertise in your team, or you might just want to simplify the front-end and strategically select the more scalable and productivity friendly MPA architecture. The Web is open to any types of websites and each one of them should have a good way to satisfy the users with liquid smooth experience.
 
-![aaa](hero.gif)
+![A gif of a portals demo](hero.gif)
 
 Portals is a new HTML element that can help you keep your front-end simple while allowing seamless navigations with custom transitions. The best part is that Portals is quite easy to work with. Think of it as an iframe in that it allows for embedding, but unlike an iframe it also comes with a feature to directly navigate into its content. Seeing is believing: please first check out what we showcased in Chrome Dev Summit last year.
 
@@ -30,7 +31,7 @@ Before Portals, we could have rendered another page using an iframe. We could al
 
 You can try out Portals in Chrome Canary by flipping an experimental flag (chrome://flags/#enable-portals). Once Portals is enabled, confirm in DevTools that you have the new shiny HTMLPortalElement.
 
-![aaa](HTMLPortalElement.png)
+![A screenshot of the DevTools console showing the HTMLPortalElement](HTMLPortalElement.png)
 
 Let’s walk through a basic example.
 
@@ -50,7 +51,7 @@ portal.activate();
 
 It’s that simple. Try this code in the DevTools console, the wikipedia page should open up. If you wanted to build something like we showed in CDS, the following snippet will be of interest.
 
-![aaa](portal-preview-demo.gif)
+![A gif of preview portal style demo](portal-preview-demo.gif)
 
 ```javascript
 // Adding some styles with transitions
@@ -115,7 +116,7 @@ if ( 'HTMLPortalElement' in window ) {
 
 If you want to quickly experience what Portals feels like, try using [uskay-portals-demo.glitch.me](https://uskay-portals-demo.glitch.me). 1) Enter a URL you want to preview, 2) the page will then be embedded as a portal element, 3) click on the preview 4) The preview will be activated after an animation.
 
-![aaa](glitch.gif)
+![A gif of using the glitch demo](glitch.gif)
 
 # Check out the spec
 We are actively discussing the spec in [WICG](https://github.com/WICG/portals/blob/master/explainer.md). You can check out the details [here](https://wicg.github.io/portals/) but overall there are three important features that builds up the element.
