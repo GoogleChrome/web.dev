@@ -28,16 +28,6 @@ description: |
       {% endfor %}
     </div>
   </section>
-  {# <section class="w-grid">
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
-      <h3 class="w-learn-heading">Lighthouse</h3>
-    </div>
-    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for audit in audits %}
-        {% PathCard audit %}
-      {% endfor %}
-    </div>
-  </section> #}
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
       <h3 class="w-learn-heading">Frameworks</h3>
@@ -45,6 +35,16 @@ description: |
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
       {% for framework in frameworks %}
         {% PathCard framework %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 class="w-learn-heading">Lighthouse</h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for audit in audits %}
+        {% PathCard audit %}
       {% endfor %}
     </div>
   </section>
