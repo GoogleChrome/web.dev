@@ -8,11 +8,18 @@ web_lighthouse:
   - js-libraries
 ---
 
-Lighthouse lists all front-end JavaScript libraries detected on the page.
+Lighthouse lists all front-end JavaScript libraries detected on the page:
 
-## Recommendations
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="js-libraries.png" alt="Lighthouse audit showing all front-end JavaScript libraries detected on page">
+  <figcaption class="w-figcaption">
+    Fig. 1 — Page uses these front-end JavaScript libraries
+  </figcaption>
+</figure>
 
-This diagnostic audit simply lists all front-end JavaScript libraries.
+## This is a diagnostic audit
+
+This audit simply lists all front-end JavaScript libraries.
 Lighthouse also reports
 [front-end JavaScript libraries with known security risks](/no-vulnerable-libraries).
 Watch closely for these vulnerabities.

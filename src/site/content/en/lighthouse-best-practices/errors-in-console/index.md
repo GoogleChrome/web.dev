@@ -17,7 +17,7 @@ Lighthouse flags any browser errors logged to the console:
   </figcaption>
 </figure>
 
-## What causes this error to fail
+## How this audit fails
 
 Most browsers ship with built-in developer tools.
 These developer tools usually include a console.

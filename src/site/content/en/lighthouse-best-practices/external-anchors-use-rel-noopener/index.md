@@ -8,7 +8,14 @@ web_lighthouse:
   - external-anchors-use-rel-noopener
 ---
 
-Lighthouse flags any links to cross-origin destinations that are unsafe.
+Lighthouse flags any links to cross-origin destinations that are unsafe:
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="external-anchors-use-rel-noopener.png" alt="Lighthouse audit showing unsafe links to cross-origin destinations">
+  <figcaption class="w-figcaption">
+    Fig. 1 — Links to cross-origin destinations are unsafe
+  </figcaption>
+</figure>
 
 # How this audit fails
 
@@ -37,6 +44,8 @@ The other page can access your `window` object with the `window.opener` property
 This exposes an [attack surface](https://en.wikipedia.org/wiki/Attack_surface) because the other page
 can potentially redirect your page to a malicious URL.
 See [About rel=noopener](https://en.wikipedia.org/wiki/Attack_surface).
+
+Learn more in [Share cross-origin resources safely](/cross-origin-resource-sharing/)
 
 ## Improve your site's performance and prevent security vulnerabilities
 
