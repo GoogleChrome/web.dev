@@ -10,6 +10,9 @@ const react = require('../react/react.11tydata.js').path;
 const lighthousePerformance = require(
   '../lighthouse-performance/lighthouse-performance.11tydata.js'
 ).path;
+const lighthousePwa = require(
+  '../lighthouse-pwa/lighthouse-pwa.11tydata.js'
+).path;
 const lighthouseBestPractices = require(
   '../lighthouse-best-practices/lighthouse-best-practices.11tydata.js'
 ).path;
@@ -43,6 +46,7 @@ module.exports = {
   ],
   audits: [
     lighthousePerformance,
+    lighthousePwa,
     lighthouseBestPractices,
     lighthouseAccessibility,
     lighthouseSeo,

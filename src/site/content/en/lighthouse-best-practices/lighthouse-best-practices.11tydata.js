@@ -16,7 +16,6 @@ module.exports = {
         title: 'Best practices',
         pathItems: [
           'appcache-manifest',
-          'is-on-https',
           'uses-http2',
           'uses-passive-event-listeners',
           'no-document-write',

@@ -34,7 +34,10 @@ permalink: /en/{{page.fileSlug}}/index.html
           {{ subhead }}
         </p>
       {% endif %}
-      <time class="w-author__published">{{date | prettyDate}}</time>
+
+      {% if date %}
+        <time class="w-author__published">{{date | prettyDate}}</time>
+      {% endif %}
 
       {% if authors %}
         <div class="w-authors w-mt--xl w-pt--sm">

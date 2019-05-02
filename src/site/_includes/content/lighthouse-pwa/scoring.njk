@@ -1,0 +1,17 @@
+## How PWA scoring works
+
+Lighthouse returns a Progressive Web App (PWA) score between 0 and 100.
+0 is the worst possible score, and 100 is the best.
+The PWA audits are based on the
+[Baseline PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist#baseline),
+which lists 14 requirements.
+
+Lighthouse has automated audits for 11 of the 14 requirements.
+Each of the 11 automated PWA audits are weighted equally,
+so each one contributes approximately 9 points to your PWA score.
+
+ These remaining 3 audits can only be tested manually:
+
+ - [Site works cross-browser](/pwa-cross-browser)
+- [Page transitions don't feel like they block on the network](/pwa-page-transitions)
+- [Each page has a URL](/pwa-each-page-has-url)
