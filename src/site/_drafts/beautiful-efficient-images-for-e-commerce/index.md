@@ -1,6 +1,7 @@
 ---
 title: "Beautiful, efficient images for e‑commerce"
-author: samdutton
+authors:
+  - samdutton
 hero: hero.jpg
 alt: Screenshot of flowershop website on phone.
 description: Images are crucial for e-commerce. How can you efficiently deliver images that drive engagement and conversion across a variety of devices, platforms and connectivity?
