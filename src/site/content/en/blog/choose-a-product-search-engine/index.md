@@ -4,7 +4,7 @@ authors:
   - samdutton
 hero: hero.jpg
 alt:
-description:
+description: Once customers have arrived on your site, you need to ensure they can find what they want quickly and easily. This guide outlines the most popular alternatives for adding search to your site.
 tags:
   - post
   - e-commerce
