@@ -112,7 +112,7 @@ The loading indicator will show for longer now. Notice how all the code that
 makes up the `AvatarComponent` is fetched as a separate chunk.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./split-component-chunk.png" alt="DevTools network panel showing one chunk.js file being downloaded">
+  <img src="./split-component-chunk.png" alt="DevTools network panel showing one chunk.js file being downloaded">
 </figure>
 
 {% Aside %}

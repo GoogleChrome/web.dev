@@ -138,7 +138,7 @@ unecessarily included in the final production bundle.
 Now when you run the application during development, issues are surfaced
 directly to the Chrome DevTools console.
 
-<img class="w-screenshot w-screenshot--filled" src="./react-axe-devtools.png" alt="React Axe in Chrome DevTools">
+<img src="./react-axe-devtools.png" alt="React Axe in Chrome DevTools">
 
 A severity level is also assigned for each violation. These levels are:
 
