@@ -109,7 +109,7 @@ maintaining quality.
     of the same quality.
 
     [WebP is supported by Chrome, Firefox and other browsers.](https://caniuse.com/#feat=webp)
-    You can easily [code for a JPEG fallback](web.dev/serve-images-webp) or use
+    You can easily [code for a JPEG fallback](/serve-images-webp) or use
     an image service such as [Cloudinary](https://cloudinary.com/) or
     [Thumbor](https://github.com/thumbor/thumbor) that automatically delivers
     WebP or JPEG depending on browser capability — without changing the file
