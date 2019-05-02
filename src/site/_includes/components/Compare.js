@@ -15,28 +15,31 @@
  */
 
 const {html} = require('common-tags');
+const md = require('markdown-it')();
 
-module.exports = (content, type) => {
-  let label;
-  switch (type) {
-    case 'worse':
-      label = 'Not recommended';
-      break;
-
-    case 'better':
-      label = 'Recommended';
-      break;
-
-    default:
-      break;
-  }
-
-  if (!label) {
+module.exports = (content, type, labelOverride) => {
+  if (!type) {
     /* eslint-disable max-len */
     throw new Error(
-      `Can't create compare component without a type. Did you forget to pass the type as a string?`
+      `Can't create Compare component without a type. Did you forget to pass the type as a string?`
     );
     /* eslint-enable max-len */
+  }
+
+  let label = labelOverride || '';
+  if (!label) {
+    switch (type) {
+      case 'worse':
+        label = 'Not recommended';
+        break;
+
+      case 'better':
+        label = 'Recommended';
+        break;
+
+      default:
+        break;
+    }
   }
 
   // Add an em dash to separate the content from the label.
@@ -47,7 +50,7 @@ module.exports = (content, type) => {
       <span class="w-compare__label w-compare__label--${type}">
         ${label}
       </span>
-      ${content}
+      ${md.render(content)}
     </div>
   `;
 };

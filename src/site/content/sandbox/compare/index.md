@@ -24,3 +24,23 @@ Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a mas
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
+
+```
+Bad code example
+```
+
+{% Compare 'worse', 'Not helpful' %}
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+{% endCompare %}
+
+```
+Good code example
+```
+
+{% Compare 'better', 'Helpful' %}
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+{% endCompare %}
