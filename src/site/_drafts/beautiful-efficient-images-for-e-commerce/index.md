@@ -209,7 +209,7 @@ There are two main options:
 
     As part of your build process, you add steps to resize and compress images.
     To find out more, see the guides at
-    [web.dev/fast/use-imagemin-to-compress-images](https://web.dev/fast/use-imagemin-to-compress-images).
+    [web.dev/use-imagemin-to-compress-images](/use-imagemin-to-compress-images).
 
 ## What's good enough?
 
