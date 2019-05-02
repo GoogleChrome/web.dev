@@ -397,7 +397,7 @@ Make sure to include image performance testing in your workflow:
 
 ## Next steps
 
-+   [web.dev/fast](https://web.dev/fast#topic-Optimize-your-images) has a
++   [web.dev/fast](/fast#optimize-your-images) has a
     range of guides and codelabs to help you optimize your images.
 +   Our codelab
     [Optimize images for e-commerce](https://docs.google.com/document/d/1m7xWYKf7gJ4IeLkKKc7FfhFtk0vZi0BM2nxJhzDPwHU/edit#heading=h.cgvdu9aeouaf)
