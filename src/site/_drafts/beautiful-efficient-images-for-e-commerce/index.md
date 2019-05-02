@@ -103,7 +103,7 @@ maintaining quality.
 
 +   **Use WebP with a JPEG fallback for product photos (not PNG!)** These
     formats give you the [best compression and
-    highest quality](https://web.dev/serve-images-webp) for continuous tone
+    highest quality](/serve-images-webp) for continuous tone
     (raster) images such as photographs. WebP images are around
     [25% smaller than JPEGs](https://developers.google.com/speed/webp/docs/webp_study)
     of the same quality.
