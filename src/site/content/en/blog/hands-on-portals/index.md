@@ -12,10 +12,10 @@ tags:
 
 We’ve long stressed the importance of web performance. While it is tempting to focus on individual pages, it is also critical to maintain a good user experience as your users navigate across your pages. A new upcoming web platform API called [Portals](https://github.com/WICG/portals) can help you with that.
 
+![A gif of a portals demo](hero.gif)
+
 # What Portals enables
 Single Page Applications with an [App Shell model](https://developers.google.com/web/fundamentals/architecture/app-shell) are one way of achieving seamless navigations. Having a static shell on the page, like the header, footer and side nav, and dynamically changing the content with a transition provides continuity to the user experience in ways that a classic navigation experience in Multiple Page Applications can’t. In particular, the navigation experience on Multiple Page Applications is plagued by frequent flashes of blank or unfinished paints. While SPA result in a better user experience, there are many reasons why you might not want to choose SPA as your frontend architecture. Maybe you don’t have the necessary expertise in your team, or you might just want to simplify the front-end and strategically select the more scalable and productivity friendly MPA architecture. The Web is open to any types of websites and each one of them should have a good way to satisfy the users with liquid smooth experience.
-
-![A gif of a portals demo](hero.gif)
 
 Portals is a new HTML element that can help you keep your front-end simple while allowing seamless navigations with custom transitions. The best part is that Portals is quite easy to work with. Think of it as an iframe in that it allows for embedding, but unlike an iframe it also comes with a feature to directly navigate into its content. Seeing is believing: please first check out what we showcased in Chrome Dev Summit last year.
 
@@ -29,7 +29,7 @@ Before Portals, we could have rendered another page using an iframe. We could al
 
 # Try out Portals in Chrome Canary
 
-You can try out Portals in Chrome Canary by flipping an experimental flag (chrome://flags/#enable-portals). Once Portals is enabled, confirm in DevTools that you have the new shiny HTMLPortalElement.
+You can try out Portals in Chrome Canary by flipping an experimental flag (chrome://flags/#enable-portals). Once Portals is enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
 
 ![A screenshot of the DevTools console showing the HTMLPortalElement](HTMLPortalElement.png)
 
