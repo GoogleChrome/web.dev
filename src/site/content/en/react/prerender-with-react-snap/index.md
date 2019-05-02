@@ -2,7 +2,7 @@
 layout: post
 title: Pre-render routes with react-snap
 subhead: |
-  Not server-side rendering but still want to speed up First Paint times of your React site? Try pre-rendering!
+  Not server-side rendering but still want to speed up the performance of your React site? Try pre-rendering!
 hero: hero-prerender-with-react-snap.jpg
 date: 2019-04-29
 description: |
@@ -19,7 +19,7 @@ improve
 times in your application.
 
 Here's a comparison of the same application with and without pre-rendering
-loaded on a simulated 3G connection:
+loaded on a simulated 3G connection and mobile device:
 
 <figure class="w-figure  w-figure--center">
   <img class="w-screenshot" src="./compare.gif" alt="A side by side loading comparsion. The version using pre-rendering loads 4.2 seconds faster.">
@@ -40,7 +40,7 @@ downloading before they can see any real content. The larger the bundles, the
 longer the user will have to wait.
 
 To solve this, many developers take the approach of rendering the application on
-the server instead of only booting it up on the client (browser). With each
+the server instead of only booting it up on the browser. With each
 page/route transition, the complete HTML is generated on the server and sent to
 the browser, which reduces First Paint times but comes at the cost of a slower
 Time to First Byte.

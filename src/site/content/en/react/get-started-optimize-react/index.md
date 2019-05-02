@@ -25,9 +25,9 @@ accessibility of a React app.
 ## Why is this useful?
 
 There's a lot of content that explains how to build fast and reliable
-applications, but not many that show how to build fast and reliable React
-applications using React tooling. These guides and codelabs cover all this from
-the perspective of a React app. Only libraries, APIs, and features specific to
+applications, but not many that show how to build fast and reliable **React**
+applications. These guides cover all this from the perspective of a React 
+app where only libraries, APIs, and features specific to
 the React ecosystem are mentioned.
 
 ## What will you learn?
@@ -96,7 +96,7 @@ There are multiple configuration files and build scripts that CRA uses to set up
 a webpack and Babel build process that includes a base
 [Jest](https://jestjs.io/) setup for testing. To make things simpler for the
 user, these files are hidden and cannot be accessed until you eject from CRA. It
-is always best to avoid ejecting whenever possible. Ejecting means taking on all
+is always best to avoid ejecting whenever possible, since this means taking on all
 of these configuration files as your own source code, which can become difficult
 to manage.
 
@@ -108,11 +108,12 @@ explains this in detail.
 ## What's next?
 
 Now that you know how to get started building a Create React App, learn how
-improve your app's performance and accessibility, including:
+to improve your app's performance and accessibility with all the guides in
+this learning path:
 
-* [Code-splitting with Suspense](/code-splitting-suspense)
-* [Virtualizing large lists](/virtualize-long-lists-react-window)
-* [Caching assets with a service worker](/precache-with-workbox-react)
-* [Pre-rendering routes](/prerender-with-react-snap)
-* [Adding a Web App Manifest](/add-manifest-react)
-* [Auditing and fixing accessibility issues](/accessibility-auditing-react)
+* [Code splitting with React.lazy and Suspense](/code-splitting-suspense)
+* [Virtualize large lists with react-window](/virtualize-long-lists-react-window)
+* [Precaching in Create React App with Workbox](/precache-with-workbox-react)
+* [Pre-render routes with react-snap](/prerender-with-react-snap)
+* [Add a web app manifest with Create React App](/add-manifest-react)
+* [Accessibility auditing with react-axe and eslint-plugin-jsx-a11y](/accessibility-auditing-react)

@@ -82,7 +82,7 @@ file:
   </iframe>
 </div>
 
-To find out if all the properties are working correctly:
+To find out if all the properties are working correctly in this example:
 
 +  Mouse over the editor, press the **App** button, then press the **Show**
    button to preview the app.
@@ -91,9 +91,6 @@ To find out if all the properties are working correctly:
 +  Switch to the **Manifest** tab.
 
 <img class="w-screenshot w-screenshot--filled" src="./devtools.png" alt="DevTool's Manifest tab shows the properties from the app manifest file.">
-
-You can try this with the above
-[Glitch example](https://cra-web-app-manifest-defaut.glitch.me/).
 
 ## Conclusion
 

@@ -2,7 +2,7 @@
 layout: post
 title: Code splitting with React.lazy and Suspense
 subhead: |
-  You never need to ship more code than necessary to your users, so code split your bundles to make sure this never happens!
+  You never need to ship more code than necessary to your users, so split your bundles to make sure this never happens!
 hero: hero-code-splitting-suspense.jpg
 date: 2019-04-29
 description: |
@@ -54,10 +54,10 @@ time it would take for the page to finish loading, especially on weaker devices
 and network connections. This is why code-splitting and lazy loading is
 extremely useful.
 
-However, there will always be a slight delay users experience when a code-split
-component is being fetched over the network, so it's important to display a
-useful loading state. Using `React.lazy` with the **`Suspense`** component helps
-solve this problem.
+However, there will always be a slight delay that users have to experience when
+a code-split component is being fetched over the network, so it's important to
+display a useful loading state. Using `React.lazy` with the **`Suspense`**
+component helps solve this problem.
 
 ```js
 import React, { lazy, Suspense } from 'react';
@@ -95,18 +95,18 @@ component is shown.
   </iframe>
 </div>
 
-In here, the code that makes up `AvatarComponent` is extremely small which is
-why the loading spinner only shows for an extremely short amount of time. In a
-real application, large components can take much longer to load especially on a
-weak network connection.
+In here, the code that makes up `AvatarComponent` is small which is
+why the loading spinner only shows for a short amount of time. Larger
+components can take much longer to load, especially on
+weak network connections.
 
 To better demonstrate how this works:
 
-+  Refresh the page.
++  Mouse over the editor and press the **Show** button to preview the app.
 +  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
 +  Click on the **Network** tab.
 +  Click the [**Throttling**](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) dropdown and select `Slow 3G`.
-+  Click the button in the application.
++  Click the button on the application.
 
 The loading indicator will show for longer now. Notice how all the code that
 makes up the `AvatarComponent` is fetched as a separate chunk.
@@ -123,7 +123,7 @@ makes up the `AvatarComponent` is fetched as a separate chunk.
  which is recommended in the React docs.
 {% endAside %}
 
-### Suspending multiple components
+## Suspending multiple components
 
 Another feature of `Suspense` is that it allows you to suspend multiple
 components from loading, **even if they are all lazy loaded**.
@@ -169,20 +169,19 @@ You can see this with the following embed:
 
 Without this, it's easy to run into the problem of _staggered loading_, or
 different parts of a UI loading one after the other with each having their own
-loading indicator. This can make the user experience feel more jarring and is
-especially noticeable on slow connections.
+loading indicator. This can make the user experience feel more jarring.
 
 ### Concurrent rendering and data fetching
 
 Although using Suspense to split components is already possible and makes it
-extremely easy to trim down bundle sizes, the React team is continuing to work
+easy to trim down bundle sizes, the React team is continuing to work
 on more features that would extend this even further:
 
 * Concurrent, or async, rendering would enable component rendering without
   blocking the main thread. This would consequently allow certain component
   trees to not render while other, more important interactions are taking place.
   For Suspense, this means you can control when loading states should show (or
-  if they shouldn't unless they actually need to.
+  if they shouldn't unless they actually need to).
 * Instead of only showing loading indicators for lazy loaded components,
   Suspense will also eventually allow you to delay rendering of components for
   data fetches as well.
@@ -193,7 +192,7 @@ on more features that would extend this even further:
  explains each of these concepts in more detail.
 {% endAside %}
 
-### Conclusion
+## Conclusion
 
 If you are unsure where to begin applying code-splitting to your React
 application, follow these steps:

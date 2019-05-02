@@ -2,7 +2,7 @@
 layout: post
 title: Precaching in Create React App with Workbox
 subhead: |
-  Precaching with a service worker can speed up repeat visits and provide offline support. Workbox is included in Create React App by default!
+  Caching assets with a service worker can speed up repeat visits and provide offline support. Workbox makes this easy and is included in Create React App by default.
 hero: hero-precache-with-workbox-react.jpg
 date: 2019-04-29
 description: |
@@ -100,7 +100,7 @@ Although Workbox provides support to define different strategies and approaches
 to caching static and dynamic resources, the default configuration in CRA cannot
 be modified or overwritten unless you eject entirely. However, there is an
 [open proposal](https://github.com/facebook/create-react-app/issues/5359)
-to explore adding support for an external `workbox.config.js` file in v3.0. This
+to explore adding support for an external `workbox.config.js` file. This
 would allow developers to override the default settings by just creating a
 single `workbox.config.js` file.
 
@@ -114,8 +114,8 @@ take a look at the
 
 Relying on the service worker cache first and then falling back to the network
 is an excellent way to build sites that load faster on subsequent visits and
-work offline to some extent. However, there are a number of things that need to
-be taken into consideration including:
+work offline to some extent. However, there are a few things that need to
+be taken into consideration:
 
 +  How can caching behaviours by a service worker be tested?
 +  Should there be a message for users to let them know they are looking at
