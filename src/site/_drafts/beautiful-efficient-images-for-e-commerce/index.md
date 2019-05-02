@@ -398,7 +398,3 @@ Make sure to include image performance testing in your workflow:
 
 +   [web.dev/fast](https://web.dev/fast#topic-Optimize-your-images) has a
     range of guides and codelabs to help you optimize your images.
-+   Our codelab
-    [Optimize images for e-commerce](https://docs.google.com/document/d/1m7xWYKf7gJ4IeLkKKc7FfhFtk0vZi0BM2nxJhzDPwHU/edit#heading=h.cgvdu9aeouaf)
-    [TODO: web.dev link] shows how to create beautiful images for online
-    stores: for homepage hero images, search listings and product pages.
