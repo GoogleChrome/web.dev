@@ -52,7 +52,7 @@ module.exports = {
         title: 'Optimize your CSS',
         pathItems: [
           'defer-non-critical-css',
-          'minify-css'
+          'minify-css',
         ],
       },
       {
