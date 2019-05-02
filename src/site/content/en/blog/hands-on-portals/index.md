@@ -107,7 +107,7 @@ setTimeout(_ => portal.classList.add('fade-in'), 2000);
 It is also easy to do feature detection to progressively enhance a website using Portals.
 
 ```javascript
-if ( 'HTMLPortalElement' in window ) {
+if ('HTMLPortalElement' in window) {
   // If this is a platform that has Portals...
   const portal = document.createElement('portal');
   ...
