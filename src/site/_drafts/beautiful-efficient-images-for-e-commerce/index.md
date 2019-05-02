@@ -334,7 +334,7 @@ Code images with accessibility in mind:
     as shopping carts and search icons.
 
 Learn how to improve accessibility from our guides at
-[web.dev/accessible](https://web.dev/accessible).
+[web.dev/accessible](/accessible).
 
 ## Make image browsing a pleasure
 
