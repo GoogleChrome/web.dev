@@ -15,7 +15,6 @@
  */
 
 const {html} = require('common-tags');
-const prettyDate = require('../../_filters/pretty-date');
 
 /* eslint-disable require-jsdoc */
 
@@ -64,12 +63,12 @@ module.exports = ({post, author, showSocialMedia = false}) => {
     `;
   }
 
+  /* eslint-disable max-len */
   return html`
-    <div class="w-author__info">
+    <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
       <cite class="w-author__name">${fullName}</cite>
       ${showSocialMedia && renderSocialMedia(author)}
-      ${post.date &&
-        `<time class="w-author__published">${prettyDate(post.date)}</time>`}
     </div>
   `;
+  /* eslint-enable max-len */
 };
