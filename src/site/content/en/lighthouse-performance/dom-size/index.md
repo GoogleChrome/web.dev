@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Avoids an excessive DOM size
+title: Avoid an excessive DOM size
 description: |
   Learn about the dom-size audit.
 author: megginkearney

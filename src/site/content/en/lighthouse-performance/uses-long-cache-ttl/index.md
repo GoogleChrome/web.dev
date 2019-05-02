@@ -75,9 +75,11 @@ and [Configuring HTTP caching behavior codelab](/codelab-http-cache).
 
 The **Size** column in Chrome DevTools can help you verify that a resource has been cached.
 
-<figure>
-  <img src="size.png" alt="The Size column."/>
-  <figcaption><b>Figure 1</b>. The <b>Size</b> column</figcaption>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="size.png" alt="The Size column.">
+  <figcaption class="w-figcaption">
+    <b>Figure 2</b>. The <b>Size</b> column
+  </figcaption>
 </figure>
 
 Chrome serves the most requested resources from the memory cache, which is very fast,
@@ -86,10 +88,10 @@ but is cleared when the browser is closed.
 The **Headers** tab can help you verify a resource's `Cache-Control` header is set
 as expected.
 
-<figure>
-  <img src="cache-control-header.png" alt="Inspecting the Cache-Control header via the Headers tab."/>
-  <figcaption>
-    <b>Figure 2</b>. Inspecting the <code>Cache-Control</code> header via the <b>Headers</b> tab
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="cache-control-header.png" alt="Inspecting the Cache-Control header via the Headers tab">
+  <figcaption class="w-figcaption">
+    Figure 3 - Inspecting the <code>Cache-Control</code> header via the <b>Headers</b> tab
   </figcaption>
 </figure>
 

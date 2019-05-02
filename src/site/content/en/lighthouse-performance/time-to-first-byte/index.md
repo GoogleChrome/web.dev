@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Server response times are low (TTFB)
+title: Reduce server response times (TTFB)
 description: |
   Learn about the time-to-first-byte audit.
 author: megginkearney
