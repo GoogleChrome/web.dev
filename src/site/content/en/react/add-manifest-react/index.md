@@ -90,7 +90,7 @@ To find out if all the properties are working correctly in this example:
 +  Click on the **Application** panel.
 +  Switch to the **Manifest** tab.
 
-<img src="./devtools.png" alt="DevTool's Manifest tab shows the properties from the app manifest file.">
+<img class="w-screenshot w-screenshot--filled" src="./devtools.png" alt="DevTool's Manifest tab shows the properties from the app manifest file.">
 
 ## Conclusion
 
