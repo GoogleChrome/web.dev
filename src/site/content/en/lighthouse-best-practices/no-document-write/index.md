@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Page uses document.write()
+author: kaycebasques
 description: |
   Learn about `no-document-write` audit.
 web_lighthouse:

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Document missing doctype
+author: kaycebasques
 description: |
   Learn about `doctype` audit.
 web_lighthouse:

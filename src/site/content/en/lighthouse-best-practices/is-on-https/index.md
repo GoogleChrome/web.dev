@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Page doesn't use HTTPS
+author: kaycebasques
 description: |
   Learn about `is-on-https` audit.
 web_lighthouse:
@@ -38,7 +39,7 @@ to generate certificates,
 check out [Let's Encrypt](https://letsencrypt.org/).
 For more help on enabling HTTPS on your servers,
 see the following set of docs:
-[Encrypting data in transit](/web/fundamentals/security/encrypt-in-transit/enable-https).
+[Encrypting data in transit](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https).
 
 If your page is already running on HTTPS but you're failing this audit,
 then you may have problems with mixed content.

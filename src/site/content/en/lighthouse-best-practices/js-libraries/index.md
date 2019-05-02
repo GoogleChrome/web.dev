@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Diagnostic audit that lists all JavaScript libraries
+author: kaycebasques
 description: |
   Learn about `js-libraries` audit.
 web_lighthouse:
@@ -27,4 +28,4 @@ Watch closely for these vulnerabities.
 
 ## More information
 
-[Audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/js-libraries.js)
+[Page uses these front-end JS libraries audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/js-libraries.js)

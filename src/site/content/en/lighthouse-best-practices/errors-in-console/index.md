@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Browser errors were logged to the console
+author: kaycebasques
 description: |
   Learn about `errors-in-console` audit.
 web_lighthouse:
@@ -45,7 +46,7 @@ via a call to
 [`console.error()`](https://developers.google.com/web/tools/chrome-devtools/console/console-reference#error).
 The bottom one comes from the browser,
 which indicates that a variable used in one of the page's scripts does not exist.
-Any browser error outputed to the console is also flagged in the Lighthouse report.
+Lighthouse flags the browser errors.
 
 ## How to fix the browser errors
 
@@ -69,7 +70,7 @@ which called the `doStuff` function.
 Open the Chrome DevTools **Console** by pressing
 <kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>J</kbd> (Mac) or
 <kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd> (Windows, Linux).
-See [Using The Console](/web/tools/chrome-devtools/console/) to learn more.
+See [Using The Console](https://developers.google.com/web/tools/chrome-devtools/console/) to learn more.
 
 If you can't fix the errors, at least consider wrapping them in
 [`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statements

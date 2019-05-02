@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Page doesn't use HTTP/2 for its own resources
+author: kaycebasques
 description: |
   Learn about `uses-http2` audit.
 web_lighthouse:

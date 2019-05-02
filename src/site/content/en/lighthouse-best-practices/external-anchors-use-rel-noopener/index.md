@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Links to cross-origin destinations are unsafe
+author: kaycebasques
 description: |
   Learn about `external-anchors-use-rel-noopener` audit.
 web_lighthouse:
@@ -16,7 +17,7 @@ Lighthouse flags any links to cross-origin destinations that are unsafe:
   </figcaption>
 </figure>
 
-# How this audit fails
+## How this audit fails
 
 Lighthouse uses the following algorithm to flag links as `rel="noopener"`
 candidates:
@@ -42,16 +43,14 @@ also suffer. See [The Performance Benefits of `rel=noopener`](https://jakearchib
 The other page can access your `window` object with the `window.opener` property.
 This exposes an [attack surface](https://en.wikipedia.org/wiki/Attack_surface) because the other page
 can potentially redirect your page to a malicious URL.
-See [About rel=noopener](https://en.wikipedia.org/wiki/Attack_surface).
 
-Learn more in [Share cross-origin resources safely](/cross-origin-resource-sharing/)
+Learn more in [Share cross-origin resources safely](/cross-origin-resource-sharing/).
 
 ## Improve your site's performance and prevent security vulnerabilities
 
 Improve your site's performance and prevent security vulnerabilities
 by adding `rel="noopener"` or `rel="noreferrer"`
-to each link identified in your Lighthouse report
-
+to each link identified in your Lighthouse report.
 In general, when you use `target="_blank"`, always
 add `rel="noopener"` or `rel="noreferrer"`:
 
@@ -73,4 +72,4 @@ See [Link type "noreferrer"](https://html.spec.whatwg.org/multipage/links.html#l
 
 ## More information
 
-[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+[Unsafe links to cross-origin destinations audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Page uses deprecated APIs
+author: kaycebasques
 description: |
   Learn about `deprecations` audit.
 web_lighthouse:
@@ -36,4 +37,4 @@ as well as how to replace them.
 
 ## More information
 
-[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/deprecations.js)
+[Page uses deprecated APIs audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/deprecations.js)

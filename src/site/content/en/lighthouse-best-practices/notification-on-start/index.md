@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Page requests notification permissions on load
+author: kaycebasques
 description: |
   Learn about `notification-on-start` audit.
 web_lighthouse:
@@ -12,10 +13,10 @@ As explained in
 good notifications are timely, relevant, and precise.
 If your page asks for permission to send notifications on page load,
 those notifications may not be relevant to your users or precise to their needs.
-Lighthouse flags when pages request notification permissions on page load:
+Lighthouse flags when pages request notification permissions on load:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="notification-on-start.png" alt="Lighthouse audit shows page requests notification permissions on page load">
+  <img class="w-screenshot w-screenshot--filled" src="notification-on-start.png" alt="Lighthouse audit shows page requests notification permissions on load">
   <figcaption class="w-figcaption">
     Fig. 1 — Page requests notification permissions on load
   </figcaption>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Page stops users from pasting into password fields
+author: kaycebasques
 description: |
   Learn about `password-inputs-can-be-pasted-into` audit.
 web_lighthouse:
@@ -44,7 +45,8 @@ Lighthouse doesn't detect that scenario, either.
 
 To quickly find and inspect the code that's preventing pasting,
 try enabling the **Clipboard** > `paste` checkbox in the
-[Event Listener Breakpoints](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#event-listeners)section of Chrome DevTools,
+[Event Listener Breakpoints](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#event-listeners)
+section of Chrome DevTools,
 then pasting into a password field.
 DevTools should pause on the first line of code in the `paste` event listener.
 

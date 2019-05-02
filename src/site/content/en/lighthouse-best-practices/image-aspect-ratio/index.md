@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Images display with incorrect aspect ratio
+author: kaycebasques
 description: |
   Learn about `image-aspect-ration` audit.
 web_lighthouse:
@@ -11,7 +12,7 @@ If a rendered image has a significantly different aspect ratio
 from the aspect ratio in its source file (the "natural" aspect ratio),
 then the rendered image may look distorted,
 possibly creating an unpleasant user experience.
-Lighthouse flags images with incorrect aspect ratios:
+Lighthouse flags images with incorrect aspect ratios.
 
 <!--***TODO***
 
@@ -39,7 +40,8 @@ Two commom causes for this are:
 
 When possible, it's a good practice to specify image width and height in HTML,
 so that the browser can allocate space for the image.
-In practice this approach can be difficult if you're working with responsive images,
+In practice,
+this approach can be difficult if you're working with responsive images,
 because there's no way to specify width and height until you know the viewport dimensions.
 
 Consider using [css-aspect-ratio](https://www.npmjs.com/package/css-aspect-ratio) or

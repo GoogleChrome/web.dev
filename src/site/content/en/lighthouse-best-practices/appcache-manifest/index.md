@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Uses application cache
+author: kaycebasques
 description: |
   Learn about `appcache-manifest` audit.
 web_lighthouse:

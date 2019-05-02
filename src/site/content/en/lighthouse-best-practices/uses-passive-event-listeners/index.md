@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Page doesn't use passive event listeners to improve scrolling performance
+author: kaycebasques
 description: |
   Learn about `uses-passive-event-listeners` audit.
 web_lighthouse:

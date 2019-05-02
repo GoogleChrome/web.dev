@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Page requests geolocation on load
+author: kaycebasques
 description: |
   Learn about `geolocation-on-start` audit.
-author: kaycebasques
 web_lighthouse:
   - geolocation-on-start
 ---
