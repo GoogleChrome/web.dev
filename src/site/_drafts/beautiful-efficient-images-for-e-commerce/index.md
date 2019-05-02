@@ -208,7 +208,7 @@ There are two main options:
 +   **Incorporate image processing in your website build process**
 
     As part of your build process, you add steps to resize and compress images.
-    To find out more, see the guides at
+    To find out more, see the guide at
     [web.dev/use-imagemin-to-compress-images](/use-imagemin-to-compress-images).
 
 ## What's good enough?
