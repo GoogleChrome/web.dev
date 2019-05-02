@@ -2,7 +2,7 @@
 layout: post
 title: Virtualize large lists with react-window
 subhead: |
-  Super large tables or lists can slow down performance signficantly. List virtualization can help!
+  Super large tables and lists can slow down your site's performance signficantly. Virtualization can help!
 hero: hero-virtualize-long-lists-react-window.jpg
 date: 2019-04-29
 description: |
@@ -28,7 +28,7 @@ Here's an example of a list that contains 1000 rows being rendered with
 ## Why is this useful?
 
 There may be times where you need to display a large table or list that contains
-many rows. Loading every single item on a massive list can affect performance
+many rows. Loading every single item on such a list can affect performance
 significantly.
 
 **List virtualization**, or "windowing", is the concept of only rendering what
@@ -153,8 +153,8 @@ The following embed shows an example of this component.
   </iframe>
 </div>
 
-The item size function passed to `itemSize` prop randomizes the row heights in
-this example. In a real application however, there should be actual logic
+The item size function passed to the `itemSize` prop randomizes the row heights
+in this example. In a real application however, there should be actual logic
 defining the sizes of each item. Ideally, these sizes should be calculated based
 on data or obtained from an API.
 
@@ -220,7 +220,7 @@ The following diagram might help summarize this:
 
 The best approach to solve this problem is continue to use a library like
 `react-window` to maintain a small "window" of elements on a page, but to also
-lazy loading newer entries as the user scrolls down. A separate package,
+lazy load newer entries as the user scrolls down. A separate package,
 `react-window-infinite-loader`, makes this possible with `react-window`.
 
 Consider the following piece of code which shows an example of state that is

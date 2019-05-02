@@ -3,7 +3,7 @@ layout: post
 title: Accessibility auditing with react-axe and eslint-plugin-jsx-a11y
 hero: hero-accessibility-auditing-react.jpg
 subhead: |
-  Your React site is not progressive if it's not accessible. Auditing during development can help you spot any issues!
+  Your React site is not progressive if it's not accessible. Auditing during development can help you spot any issues.
 date: 2019-04-29
 description: |
   react-axe is a library that audits a React application and logs any
@@ -30,12 +30,12 @@ testing library to flag any issues and their severity.
 [`eslint-plugin-jsx-a11y`](https://github.com/evcohen/eslint-plugin-jsx-a11y) is
 an ESLint plugin that identifies and enforces a number of accessibility rules
 directly in your JSX. Using this in combination with a tool that tests the final
-rendered DOM, such as `react-axe`, can provide a comprehensive auditing approach
-to find and fix any accessibility concerns.
+rendered DOM, such as `react-axe`, can help you find and fix any accessibility
+concerns on your site.
 
 ## Why is this useful?
 
-It is crucial to build web sites that provide every user, regardless of any
+It is crucial to build web sites that provide every user, regardless of their
 impairment or restriction, the capability to access its content. Using auditing
 libraries such as `react-axe` and `eslint-plugin-jsx-a11y` during the
 development of your React application will automatically surface any
@@ -61,7 +61,7 @@ default.
 
 To enable pre-configured linting provided by CRA:
 
-1. Install the appropriate ESLint plugin for your code editor
+1. Install the appropriate [ESLint plugin](https://eslint.org/docs/user-guide/integrations#editors) for your code editor
 2. Add a `.eslintrc.json` file to your project
 
 ```json
@@ -89,7 +89,7 @@ include all the recommended rules by the plugin:
 }
 ```
 
-An even stricter subset of rules is also supported:
+If you would like an even stricter subet of rules, switch to strict mode:
 
 ```json
 {
@@ -138,7 +138,7 @@ unecessarily included in the final production bundle.
 Now when you run the application during development, issues are surfaced
 directly to the Chrome DevTools console.
 
-<img class="w-screenshot w-screenshot--filled" src="./react-axe-devtools.png" alt="React Axe in Chrome DevTools">
+<img src="./react-axe-devtools.png" alt="React Axe in Chrome DevTools">
 
 A severity level is also assigned for each violation. These levels are:
 
