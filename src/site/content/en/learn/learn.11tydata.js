@@ -13,6 +13,9 @@ const lighthousePerformance = require(
 const lighthouseBestPractices = require(
   '../lighthouse-best-practices/lighthouse-best-practices.11tydata.js'
 ).path;
+const lighthouseAccessibility = require(
+  '../lighthouse-accessibility/lighthouse-accessibility.11tydata.js'
+).path;
 const lighthouseSeo = require(
   '../lighthouse-seo/lighthouse-seo.11tydata.js'
 ).path;
@@ -41,6 +44,7 @@ module.exports = {
   audits: [
     lighthousePerformance,
     lighthouseBestPractices,
+    lighthouseAccessibility,
     lighthouseSeo,
   ],
 };
