@@ -3,7 +3,6 @@ layout: post
 title: Document missing doctype
 description: |
   Learn about `doctype` audit.
-author: megginkearney
 web_lighthouse:
   - doctype
 ---

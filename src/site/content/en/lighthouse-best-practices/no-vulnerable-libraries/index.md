@@ -3,7 +3,6 @@ layout: post
 title: Includes front-end JavaScript libraries with known security vulnerabilities
 description: |
   Learn about `no-vulnerable-libraries` audit.
-author: kaycebasques
 web_lighthouse:
   - no-vulnerable-libraries
 ---

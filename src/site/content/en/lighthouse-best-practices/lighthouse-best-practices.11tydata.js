@@ -8,8 +8,9 @@ module.exports = {
     cover: '/images/collections/lighthouse.png',
     title: 'Best Practices audits',
     description:
-      'Improve the code health of your web page following these best practices',
-    overview: `Lorem ipsum dolor set amet...`,
+      'Improve code health of your web page following these best practices',
+    overview: `These checks highlight opportunities
+    to improve the overall code health of your web app.`,
     topics: [
       {
         title: 'Best practices',

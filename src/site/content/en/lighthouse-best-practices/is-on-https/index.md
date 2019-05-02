@@ -3,7 +3,6 @@ layout: post
 title: Page doesn't use HTTPS
 description: |
   Learn about `is-on-https` audit.
-author: kaycebasques
 web_lighthouse:
   - is-on-https
 ---

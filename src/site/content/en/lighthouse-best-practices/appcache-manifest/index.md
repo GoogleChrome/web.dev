@@ -3,7 +3,6 @@ layout: post
 title: Uses application cache
 description: |
   Learn about `appcache-manifest` audit.
-author: kaycebasques
 web_lighthouse:
   - appcache-manifest
 ---
@@ -53,4 +52,4 @@ offline.
 
 ## More information
 
-[Uses appcache audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/appcache-manifest.js)
+[Page uses appcache audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/appcache-manifest.js)

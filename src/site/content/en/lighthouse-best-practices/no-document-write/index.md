@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Page uses `document.write()`
+title: Page uses document.write()
 description: |
   Learn about `no-document-write` audit.
-author: kaycebasques
 web_lighthouse:
   - no-document-write
 ---

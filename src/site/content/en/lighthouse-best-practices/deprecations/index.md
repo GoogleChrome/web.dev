@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Uses deprecated APIs
+title: Page uses deprecated APIs
 description: |
   Learn about `deprecations` audit.
-author: kaycebasques
 web_lighthouse:
   - deprecations
 ---
