@@ -115,7 +115,7 @@ maintaining quality.
     WebP or JPEG depending on browser capability — without changing the file
     extension. You can easily produce both WebP and JPEG versions of product
     photos using [image automation in your build
-    workflow](https://web.dev/serve-images-webp), via [image
+    workflow](/serve-images-webp), via [image
     services](https://images.guide/#image-processing-cdns), or with a tool such
     as [Squoosh](https://squoosh.app/).
 
