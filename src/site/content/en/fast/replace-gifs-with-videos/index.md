@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Replace animated GIFs with video for faster page loads
-author: houssein
+authors:
+  - houssein
 description: |
   Have you ever seen an animated GIF on a service like Imgur or Gfycat,
   inspected it in your dev tools, only to find out that GIF was really a video?

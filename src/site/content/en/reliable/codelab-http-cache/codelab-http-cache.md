@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Configuring HTTP caching behavior
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   In this codelab, learn how to control resource caching behavior using HTTP

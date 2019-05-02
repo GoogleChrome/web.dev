@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Security attacks, what are they?
-author: kosamari
+authors:
+  - kosamari
 date: 2018-11-05
 description: |
   An insecure application could expose users and systems to various types of

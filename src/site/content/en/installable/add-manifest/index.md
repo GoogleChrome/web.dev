@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Add a Web App Manifest
-author: petelepage
+authors:
+  - petelepage
 date: 2018-11-05
 description: |
   The web app manifest is a simple JSON file that tells the browser about your

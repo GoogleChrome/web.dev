@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Using Imagemin with Gulp
-author: katiehempenius
+authors:
+  - katiehempenius
 date: 2018-11-05
 description: |
   In this codelab, learn how to use imagemin with gulp to optimize JPEG and

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Style focus
-author: robdodson
+authors:
+  - robdodson
 date: 2018-11-18
 description: |
   The focus indicator (often signified by a "focus ring") identifies the currently

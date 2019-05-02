@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Preload critical assets to improve loading speed
-author: houssein
+authors:
+  - houssein
 description: |
   As soon as you open any web page, the browser requests an HTML document from a
   server, parses the contents of the HTML file, and submits separate requests

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Apply instant loading with the PRPL pattern
-author: houssein
+authors:
+  - houssein
 description: |
   PRPL is an acronym that describes a pattern used to make web pages load and
   become interactive, faster. In this guide, learn how each of these techniques

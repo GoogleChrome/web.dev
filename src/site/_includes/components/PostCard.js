@@ -16,17 +16,15 @@
 
 const {html} = require('common-tags');
 const stripLanguage = require('../../_filters/strip-language');
-const Author = require('./Author');
 
 /* eslint-disable require-jsdoc,indent */
 
 /**
  * PostCard used to preview posts.
  * @param {Object} post An eleventy collection item with post data.
- * @param {Object} author An author data object.
  * @return {string}
  */
-module.exports = ({post, author}) => {
+module.exports = ({post}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
   const hero = data && data.hero;
@@ -38,6 +36,21 @@ module.exports = ({post, author}) => {
       </figure>
     `;
   }
+
+  // function renderAuthors(authors) {
+  //   return html`
+  //     <div class="w-authors">
+  //       ${authors.map((author) => {
+  //         return `${Author({
+  //           post,
+  //           author: contributors[author],
+  //           avatar: author,
+  //           small: true,
+  //         })}`;
+  //       })}
+  //     </div>
+  //   `;
+  // }
 
   return html`
     <a href="${url}" class="w-card">
@@ -53,7 +66,7 @@ module.exports = ({post, author}) => {
           >
             ${data.title}
           </h2>
-          ${Author({post, author, avatar: data.author, small: true})}
+          
         </div>
         <div class="w-post-card__desc">
           <p class="w-post-card__subhead">

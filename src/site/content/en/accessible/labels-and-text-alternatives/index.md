@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Labels and text alternatives
-author: robdodson
+authors:
+  - robdodson
 date: 2018-11-18
 description: |
   In order for a screen reader to present a spoken UI to the user, meaningful

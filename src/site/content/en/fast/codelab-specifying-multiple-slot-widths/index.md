@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Specifying multiple slot widths
-author: katiehempenius
+authors:
+  - katiehempenius
 description: |
   In this codelab, learn how to use the sizes attribute to size images correctly
   depending on the user's viewport.

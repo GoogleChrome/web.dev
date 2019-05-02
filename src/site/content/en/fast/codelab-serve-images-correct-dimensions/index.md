@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Serve images with correct dimensions
-author: katiehempenius
+authors:
+  - katiehempenius
 description: |
   In this codelab, learn how to serve images with the correct dimensions to
   improve network performance.

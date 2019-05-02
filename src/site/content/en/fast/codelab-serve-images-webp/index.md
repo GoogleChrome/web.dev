@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Creating WebP Images with the Command Line
-author: katiehempenius
+authors:
+  - katiehempenius
 description: |
   In this codelab, learn how to serve optimized images using WebP.
 date: 2018-11-05

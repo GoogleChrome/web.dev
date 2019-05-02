@@ -7,7 +7,8 @@ hero: hero-virtualize-long-lists-react-window.jpg
 date: 2019-04-29
 description: |
   react-window is a library that allows large lists to be rendered efficiently.
-author: houssein
+authors:
+  - houssein
 ---
 
 [`react-window`](https://react-window.now.sh/#/examples/list/fixed-size) is a

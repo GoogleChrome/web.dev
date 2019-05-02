@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Incorporate performance budgets into your build process
-author: mihajlija
+author:
+  - mihajlija
 description: |
   The best way to keep an eye on your performance budget is to automate it. Find
   out how to choose a tool that best fits your needs and current setup.

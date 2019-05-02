@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Reduce JavaScript payloads with code-splitting
-author: houssein
+authors:
+  - houssein
 description: |
   Sending large JavaScript payloads impacts the speed of your site
   significantly. Instead of shipping all the JavaScript to your user as soon as

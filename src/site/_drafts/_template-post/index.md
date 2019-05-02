@@ -1,16 +1,17 @@
 ---
-title: Fourth post
+title: An example blog post
+subhead: A catchy subhead that previews the content.
 author: robdodson
-date: 2018-12-06
+date: 2019-04-20
 hero: hero.jpg
-hero_position: bottom
-alt: A description for the hero image
+# You can adjust the position of your hero image with this property.
+# Values: top | bottom | center (default)
+# hero_position: bottom
+alt: A description of the hero image for screen reader users.
 description: |
   This post is a test to demonstrate all of the components that can go into
-  an article.
-wf_blink_components: Blink>Accessibility
+  an article. This description appears in the meta tag.
 tags:
-  - post
   - accessibility
   - ux
 ---
@@ -26,10 +27,9 @@ scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
 sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
 tempus enim.
 
-<div class="w-aside w-aside--codelab">
-  <strong>Codelab:</strong>
-  <a href="#">Using Imagemin with Grunt</a>
-</div>
+{% Aside 'codelab' %}
+  [Using Imagemin with Grunt](#)
+{% endAside %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -64,14 +64,13 @@ quam sem.
   </figcaption>
 </figure>
 
-<div class="w-aside w-aside--note">
-  Lorem ipsum dolor sit amet,
-  <a href="#">consectetur adipiscing elit</a>. Proin dictum a massa sit
-  amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-  varius at. <code>Cras ligula lacus</code>, porta vitae maximus a,
-  ultrices a mauris. <a href="#"><code>Vestibulum porta</code></a> dolor
-  erat, vel molestie dolor posuere in. Nam vel elementum augue.
-</div>
+{% Aside %}
+  Lorem ipsum dolor sit amet, [consectetur adipiscing elit](#). Proin dictum a
+  massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
+  varius at. `Cras ligula lacus`, porta vitae maximus a, ultrices a mauris.
+  [`Vestibulum porta`](#) dolor erat, vel molestie dolor posuere in. Nam vel
+  elementum augue.
+{% endAside %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -132,10 +131,9 @@ velit. Morbi at quam sem.
   </figcaption>
 </figure>
 
-<div class="w-aside w-aside--caution">
-  <strong>Caution:</strong>
-  <a href="#">This type of callout</a> suggests proceeding with caution.
-</div>
+{% Aside 'caution' %}
+  [This type of callout](#) suggests proceeding with caution.
+{% endAside %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -185,11 +183,9 @@ quam sem.
   </table>
 </div>
 
-<div class="w-aside w-aside--warning">
-  <strong>Warning:</strong>
-  This type of callout is stronger than a Caution; it means "Don't do
-  this."
-</div>
+{% Aside 'warning' %}
+  This type of callout is stronger than a Caution; it means "Don't do this."
+{% endAside %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -234,11 +230,9 @@ quam sem.
   </li>
 </ol>
 
-<div class="w-aside w-aside--success">
-  <strong>Success:</strong>
-  This type of callout describes a successful action or an error-free
-  status.
-</div>
+{% Aside 'success' %}
+  This type of callout describes a successful action or an error-free status.
+{% endAside %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -305,10 +299,9 @@ const imageminMozjpeg = require("imagemin-mozjpeg");
 })();
 ```
 
-<div class="w-aside w-aside--objective">
-  <strong>Objective:</strong>
+{% Aside 'objective' %}
   This type of callout defines the goal of a procedure.
-</div>
+{% endAside %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -318,19 +311,74 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
+```js/1
+const imagemin = require('imagemin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+
+(async() => {
+  const files = await imagemin(
+      ['source_dir/*.jpg', 'another_dir/*.jpg'],
+      'destination_dir',
+      {plugins: [imageminMozjpeg({quality: 50})]}
+  );
+  console.log(files);
+})();
+```
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
 at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
 
-<div class="w-aside w-aside--gotchas">
-  <strong>Gotchas!</strong>
-  <p>
-    The value of the <code>type</code> attribute should be the MIME type
-    corresponding to the image format. An image's MIME type and its file
-    extension are often similar, but they aren't necessarily the same
-    thing (e.g. <code>.jpg</code> vs. <code>image/jpeg</code>).
-  </p>
-</div>
+{% Aside 'gotchas' %}
+  The value of the `type` attribute should be the MIME type corresponding to the
+  image format. An image's MIME type and its file extension are often similar,
+  but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
+{% endAside %}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
+at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
+porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
+quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
+ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
+quam sem.
+
+```js//1
+const imagemin = require('imagemin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+
+(async() => {
+  const files = await imagemin(
+      ['source_dir/*.jpg', 'another_dir/*.jpg'],
+      'destination_dir',
+      {plugins: [imageminMozjpeg({quality: 50})]}
+  );
+  console.log(files);
+})();
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
+at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
+porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
+quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
+ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
+quam sem.
+
+```js/6/5
+const imagemin = require('imagemin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+
+(async() => {
+  const files = await imagemin(
+      ['source_dir/*.jpg'],
+      ['source_dir/*.jpg', 'another_dir/*.jpg'],
+      'destination_dir',
+      {plugins: [imageminMozjpeg({quality: 50})]}
+  );
+  console.log(files);
+})();
+```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -367,12 +415,9 @@ quam sem.
   </iframe>
 </div>
 
-<div class="w-aside w-aside--key-term">
-  <strong>Key Term:</strong>
+{% Aside 'key-term' %}
   This type of callout defines important terminology.
-</div>
-
-<!-- TODO (robdodson): Need to add w-tabs -->
+{% endAside %}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
@@ -418,5 +463,3 @@ porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
 quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
-
-<!-- TODO (robdodson): Add recommended/not recommended -->

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Precaching with Workbox
-author: jeffposnick
+authors:
+  - jeffposnick
 date: 2018-11-05
 description: |
   One feature of service workers is the ability to save files to the cache when

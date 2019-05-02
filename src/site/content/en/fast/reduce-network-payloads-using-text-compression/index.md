@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Minify and compress network payloads
-author: houssein
+authors:
+  - houssein
 date: 2018-11-05
 description: |
   There are two useful techniques that can be used to improve the performance of

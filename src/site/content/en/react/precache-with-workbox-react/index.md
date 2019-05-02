@@ -8,7 +8,8 @@ date: 2019-04-29
 description: |
   Workbox is built into Create React App with a default configuration that
   precaches all static assets in your application with every build.
-author: houssein
+authors:
+  - houssein
 ---
 
 {% Aside %}

@@ -16,6 +16,7 @@ permalink: /en/{{page.fileSlug}}/index.html
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
+  <web-actions-controller page="post"></web-actions-controller>
   {% Actions %}
     {% ShareAction title, page.url | stripLanguage %}
     {% SubscribeAction %}
@@ -29,17 +30,24 @@ permalink: /en/{{page.fileSlug}}/index.html
     <header class="w-article-header">
       <h1 class="w-article-header__headline">{{ title }}</h1>
       {% if subhead %}
-      <p class="w-article-header__subhead">
-        {{ subhead }}
-      </p>
+        <p class="w-article-header__subhead w-mb--non">
+          {{ subhead }}
+        </p>
       {% endif %}
-      
-      {% Author {
-        post: page,
-        author: authors[author],
-        avatar: author,
-        showSocialMedia: true}
-      %}
+      <time class="w-author__published">{{date | prettyDate}}</time>
+
+      {% if authors %}
+        <div class="w-authors w-mt--xl w-pt--sm">
+          {% for author in authors %}
+            {% Author {
+              post: page,
+              author: contributors[author],
+              avatar: author,
+              showSocialMedia: true}
+            %}
+          {% endfor %}
+        </div>
+      {% endif %}
     </header>
     {{ content | safe }}
 

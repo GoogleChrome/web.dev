@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Your first performance budget
-author: mihajlija
+authors:
+  - mihajlija
 description: |
   Ensure your site loads fast with a step-by-step guide to defining thresholds
   for performance metrics that are meaningful for your site.

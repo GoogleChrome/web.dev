@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Browser sandbox
-author: kosamari
+authors:
+  - kosamari
 date: 2018-11-05
 description: |
   To defend against attacks, a developer needs to mitigate vulnerabilities and

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Fix small font sizes
-author: ekharvey
+authors:
+  - ekharvey
 date: 2018-11-05
 description: |
   Font sizes smaller than 12px are often difficult to read on mobile devices,

@@ -1,6 +1,9 @@
 ---
 title: Replacing a hot path in your app's JavaScript with WebAssembly
-author: robdodson
+subhead: It's consistently fast, yo.
+authors: 
+  - robdodson
+  - megginkearney
 date: 2018-12-06
 hero: hero.jpg
 alt: A description for the hero image
