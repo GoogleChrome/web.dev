@@ -1210,5 +1210,18 @@
     "github": "AVGP",
     "twitter": "g33konaut",
     "glitch": "AVGP"
+  },
+  "martinschierle": {
+    "name": {
+      "given": "Martin",
+      "family": "Schierle"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Technical Solutions"
+    },
+    "country": "DE",
+    "twitter": "martinschierle",
+    "github": "martinschierle"
   }
 }
