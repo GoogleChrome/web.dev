@@ -5,14 +5,15 @@ const discoverable = require('../discoverable/discoverable.11tydata.js').path;
 const secure = require('../secure/secure.11tydata.js').path;
 const installable = require('../installable/installable.11tydata.js').path;
 
-// const lighthousePerformance = require(
-//   '../lighthouse-performance/lighthouse-performance.11tydata.js'
-// ).path;
+const react = require('../react/react.11tydata.js').path;
+
+const lighthousePerformance = require(
+  '../lighthouse-performance/lighthouse-performance.11tydata.js'
+).path;
 const lighthouseSeo = require(
   '../lighthouse-seo/lighthouse-seo.11tydata.js'
 ).path;
 
-const react = require('../react/react.11tydata.js').path;
 
 // =============================================================================
 // LEARN OVERVIEW
@@ -35,6 +36,7 @@ module.exports = {
     react,
   ],
   audits: [
+    lighthousePerformance,
     lighthouseSeo,
   ],
 };
