@@ -8,8 +8,8 @@ module.exports = {
     cover: '/images/collections/lighthouse.png',
     title: 'PWA audits',
     description:
-      'These checks validate the aspects of a Progressive Web App',
-    overview: `Lorem ipsum dolor set amet...`,
+      'Measure if your site is fast, reliable and installable.',
+    overview: `These checks validate the aspects of a Progressive Web App.`,
     topics: [
       {
         title: 'Fast and reliable',

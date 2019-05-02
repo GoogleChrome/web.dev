@@ -13,6 +13,14 @@ response when accessing a page from the `start_url`,
 then either the `start_url` isn't correct,
 or ths page is not accessible offline
 (see also [What is network reliability and how do you measure it?](/network-connections-unreliable/)).
+Lighthouse flags web apps when the start URL doesn't respond with a 200 when offline
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="offline-start-url.png" alt="Lighthouse audit showing start URL doesn't respond with 200 when offline">
+  <figcaption class="w-figcaption">
+    Fig. 1 — Start URL doesn't respond with 200 when offline
+  </figcaption>
+</figure>
 
 ## Recommendations
 
@@ -44,6 +52,8 @@ worker into your own app.
 
 Learn more in [Current page responds with a 200 when offline](/works-offline).
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## More information
 
-[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/offline-start-url.js)
+[Start URL doesn't respond with 200 when offline audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/offline-start-url.js)

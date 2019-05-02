@@ -10,6 +10,20 @@ web_lighthouse:
 
 Theming the browser's address bar to match your brand's colors provides
 a more immersive user experience.
+Lighthouse flags the page when the address bar isn't themed to the page's colors:
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="themed-omnibox.png" alt="Lighthouse audit showing address bar isn't themed to the page's colors">
+  <figcaption class="w-figcaption">
+    Fig. 1 — Address bar isn't themed to page's colors
+  </figcaption>
+</figure>
+
+## How this audit fails
+
+The audit fails if Lighthouse doesn't find a `theme-color` meta tag in the page's
+HTML and a `theme_color` property in the Web App Manifest.
+Lighthouse does not test whether the values are valid CSS color values.
 
 ## Recommendations
 
@@ -49,10 +63,8 @@ CSS color value.
 See [User can be prompted to install the web app](/installable-manifest)
 for more resources on adding a manifest to your app.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## More information
 
-The audit passes if Lighthouse finds a `theme-color` meta tag in the page's
-HTML and a `theme_color` property in the Web App Manifest. Lighthouse does
-not test whether the values are valid CSS color values.
-
-[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+[Address bar isn't themed to page's color audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)

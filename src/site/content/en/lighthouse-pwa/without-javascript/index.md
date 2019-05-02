@@ -20,6 +20,22 @@ styling using CSS, or interactivity using JavaScript, can be layered on top for
 the browsers that support those technologies. But basic content and page
 functionality should not rely on CSS or JavaScript.
 
+Lighthouse flags pages that don't contain some content
+when JavaScript is unavailable:
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="without-javascript.png" alt="Lighthouse audit showing page doesn't contain some content when JS is unavailable">
+  <figcaption class="w-figcaption">
+    Fig. 1 — Page doesn't contain some content when JS is unavailable
+  </figcaption>
+</figure>
+
+## How this audit fails
+
+Lighthouse disables JavaScript on the page and then inspects the page's HTML. If
+the HTML is empty then the audit fails. If the HTML is not empty then the audit
+passes.
+
 ## Recommendations
 
 Progressive enhancement is a large and contentious topic. One camp says that,
@@ -51,10 +67,8 @@ To see how your site looks and performs when JavaScript is disabled, use
 Chrome DevTools' [Disable
 JavaScript](https://developers.google.com/web/tools/chrome-devtools/settings#disable-js) feature.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## More information
 
-Lighthouse disables JavaScript on the page and then inspects the page's HTML. If
-the HTML is empty then the audit fails. If the HTML is not empty then the audit
-passes.
-
-[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/without-javascript.js)
+[Page doesn't contain content when JS unavailable audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/without-javascript.js)

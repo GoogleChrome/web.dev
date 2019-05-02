@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Manual PWA audit for cross-browser support
+title: Site works cross-browser
 description: |
   Learn about `pwa-cross-browser` audit.
 author: megginkearney
@@ -12,7 +12,7 @@ To reach the most number of users, sites should work across every major browser.
 Test your site in Chrome, Edge, Firefox and Safari;
 fix issues that occur when running the app cross-browser.
 
-# Recommendations
+## Recommendations
 
 Consider using Workbox to manage site's offline reliability.
 Workbox is high-level service worker toolkit built on top
@@ -26,6 +26,8 @@ module uses the [Background Sync API](https://developers.google.com/web/tools/wo
 
 Learn more in [Workbox your high-level service worker toolkit](/workbox).
 
-# More information
+{% include 'content/lighthouse-pwa/scoring.njk' %}
 
-[Audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/manual/pwa-cross-browser.js)
+## More information
+
+[Site doesn't work cross-browser audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/manual/pwa-cross-browser.js)
