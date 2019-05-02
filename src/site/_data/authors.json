@@ -1210,5 +1210,21 @@
     "github": "AVGP",
     "twitter": "g33konaut",
     "glitch": "AVGP"
+  },
+  "uskay": {
+    "name": {
+      "given": "Yusuke",
+      "family": "Utsunomiya"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Mobile Solutions Consultant"
+    },
+    "country": "JP",
+    "homepage": "https://blog.uskay.io/",
+    "twitter": "uskay",
+    "description": {
+      "en": "Tech consultant for Web, Chrome & AMP"
+    }
   }
 }
