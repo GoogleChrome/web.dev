@@ -16,9 +16,6 @@
 
 const {html} = require('common-tags');
 const stripLanguage = require('../../_filters/strip-language');
-const prettyDate = require('../../_filters/pretty-date');
-const contributors = require('../../_data/contributors.json');
-const Author = require('./Author');
 
 /* eslint-disable require-jsdoc,indent */
 
