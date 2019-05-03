@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>20 Modern Layout</title>
+    <desc>Created with Sketch.</desc>
+    <g id="20-Modern-Layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect x="0" y="0" width="120" height="120"></rect>
+        <g id="Group-2" transform="translate(16.000000, 32.000000)" fill-rule="nonzero">
+            <g id="Group">
+                <rect id="Rectangle" stroke="#212121" fill="#FAFAFA" x="0.5" y="0.5" width="75" height="55"></rect>
+                <rect id="Rectangle-Copy-21" stroke="#212121" fill="#FFC836" x="30.9" y="12.5" width="57" height="43"></rect>
+                <rect id="Rectangle-Copy-32" stroke="#212121" fill="#FF8100" x="20.5" y="24.5" width="55" height="31"></rect>
+                <rect id="Rectangle-Copy-33" stroke="#212121" fill="#FFEE43" x="12.5" y="30.5" width="15" height="25"></rect>
+                <rect id="Rectangle-Copy-34" stroke="#000000" fill="#FFEE43" x="68.5" y="41.5" width="14" height="14" rx="7"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

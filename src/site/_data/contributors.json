@@ -1210,5 +1210,22 @@
     "github": "AVGP",
     "twitter": "g33konaut",
     "glitch": "AVGP"
+  },
+  "adamargyle": {
+    "name": {
+      "given": "Adam",
+      "family": "Argyle"
+    },
+    "description": {
+      "en": "CSS/JS/UX addict; repeat(∞, [empathize, define, design, develop, deploy]);"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "homepage": "https://nerdy.dev",
+    "github": "argyleink",
+    "twitter": "argyleink",
+    "glitch": "argyleink"
   }
 }
