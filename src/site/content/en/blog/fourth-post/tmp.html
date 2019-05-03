@@ -1,0 +1,46 @@
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Image Format</th>
+        <th>Lossy Plugin(s)</th>
+        <th>Lossless Plugin(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td>
+          <a href="#">imagemin-mozjpeg</a>
+        </td>
+        <td>
+          <a href="#">imagemin-jpegtran</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="w-table-wrapper">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <img src="https://screenshot.googleplex.com/f7kX9Ox4bjJ.png" alt="">
+        </td>
+        <td>
+          <img src="https://screenshot.googleplex.com/nSZuQrW4rPX.png" alt="">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {% Compare 'worse' %} Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius at. {% endCompare %}
+        </td>
+        <td>
+          {% Compare 'better' %} Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius at. {% endCompare %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
