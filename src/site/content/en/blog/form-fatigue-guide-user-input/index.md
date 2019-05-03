@@ -11,6 +11,8 @@ tags:
   - ux
 ---
 
+<!-- TODO (): update tags -->
+
 _This is post 2 of 5 of the [Reduce form fatigue series](../form-fatigue) that
 shows you how to build better forms for online stores._
 
