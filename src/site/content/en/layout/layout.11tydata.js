@@ -5,8 +5,16 @@ module.exports = {
     cover: '/images/collections/layout.svg',
     title: 'Layout',
     updated: 'May 3, 2019',
-    description: 'Learn how to arrange and align content for ever-changing screens.',
-    overview: `With Flexbox and Grid, you can articular layouts with less code. You can also create layouts that are content-centric, able to dynamically adapt to changing content.`,
+    description: `
+      Learn how to arrange and align content for
+      ever-changing screens.
+    `,
+    overview: `
+      With Flexbox and Grid,
+      you can articular layouts with less code.
+      You can also create layouts that are content-centric,
+      able to dynamically adapt to changing content.
+    `,
     topics: [
       {
         title: 'Intrinsic Layout',
