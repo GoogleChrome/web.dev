@@ -5,7 +5,7 @@ title: components
 
 ## Source
 
-To see how to use each component, [view this page's source on GitHub](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/sandbox/index.njk).
+To see how to use each component, [view this page's source on GitHub](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/sandbox/index.md).
 
 ## Sections
 
