@@ -3,7 +3,7 @@ redirects:
 # Newsletter
 
 - from: /subscribe
-  to: https://services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&utm_source=google-products&utm_team=googledevs&utm_campaign=201611-newsletter-launch
+  to: https://services.google.com/fb/forms/web-dev-subscribe/
 
 # Pre-v1 redirects
 
