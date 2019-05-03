@@ -11,6 +11,8 @@ tags:
   - ux
 ---
 
+<!-- TODO (): update tags -->
+
 _This is post 3 of 5 of the [Reduce form fatigue series](../form-fatigue) that
 shows you how to build better forms for online stores._
 
@@ -42,7 +44,7 @@ app because there are too many steps to purchase</a></p>
     their full name instead of first and last names separately:
 
 <figure class="w-figure">
-  <img src="image-first-last-name.png" alt="" style="max-width: 400px;">
+  <img src="image-first-last-name.png" alt="separate first and last name fields" style="max-width: 400px;">
 </figure>
 
 {% Compare 'worse' %}
@@ -50,7 +52,7 @@ Separate first and last name inputs.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="image-fullname.png" alt="" style="max-width: 400px;">
+  <img src="image-fullname.png" alt="fullname field" style="max-width: 400px;">
 </figure>
 
 {% Compare 'better' %}
@@ -70,7 +72,7 @@ unless they're required for your address format. -->
 +   **Don't make users confirm information twice**, such as email address:
 
 <figure class="w-figure">
-  <img src="image-redundant-information.png" alt="" style="max-width: 400px;">
+  <img src="image-redundant-information.png" alt="redundant form fields" style="max-width: 400px;">
 </figure>
 
 {% Compare 'worse' %}
@@ -78,7 +80,7 @@ User must enter email and password twice.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="image-no-duplicated-fields.png" alt="" style="max-width: 400px;">
+  <img src="image-no-duplicated-fields.png" alt="no duplicated form fields" style="max-width: 400px;">
 </figure>
 
 {% Compare 'better' %}
@@ -91,7 +93,7 @@ User enters email and password once.
     as country and currency. Default to the same billing and shipping addresses:
 
 <figure class="w-figure">
-  <img src="image-sensible-defaults.png" alt="" style="max-width: 400px;">
+  <img src="image-sensible-defaults.png" alt="default option for same billing and shipping address" style="max-width: 400px;">
   <figcaption class="w-figcaption">
     Fig. 2 — Small image.
   </figcaption>
@@ -121,7 +123,7 @@ attributes noted below) as this will create more work for users.
     obvious to users. Avoid using the asterisk (\*) to mean "optional":
 
 <figure class="w-figure">
-  <img src="image-optional-fields.png" alt="" >
+  <img src="image-optional-fields.png" alt="distinguished optional form fields" >
   <figcaption class="w-figcaption">
     Fig. 2 — Distinguish optional fields.
   </figcaption>
@@ -137,7 +139,7 @@ Distinguish optional fields.
     buttons to minimize taps and display all options to users:
 
 <figure class="w-figure">
-  <img src="image-dropdown.png" alt="" style="max-width: 400px;">
+  <img src="image-dropdown.png" alt="shipping options dropdown" style="max-width: 400px;">
 </figure>
 
 {% Compare 'worse' %}
@@ -145,7 +147,7 @@ Delivery methods hidden behind dropdown.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="image-no-dropdown.png" alt="" style="max-width: 400px;">
+  <img src="image-no-dropdown.png" alt="shipping options displayed as radio options" style="max-width: 400px;">
 </figure>
 
 {% Compare 'better' %}
@@ -163,7 +165,7 @@ frameworks or autofill.
     Fields like zip code and state should be narrow in width:
 
 <figure class="w-figure">
-  <img src="image-wide-fields.png" alt="" style="max-width: 400px;">
+  <img src="image-wide-fields.png" alt="form fields do not match expected length" style="max-width: 400px;">
 </figure>
 
 {% Compare 'worse' %}
@@ -171,7 +173,7 @@ Delivery methods hidden behind dropdown.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="image-matching-width.png" alt="" style="max-width: 400px;">
+  <img src="image-matching-width.png" alt="form fields match expected length" style="max-width: 400px;">
 </figure>
 
 {% Compare 'better' %}
