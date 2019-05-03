@@ -30,6 +30,22 @@ module.exports = {
         title: 'How caching strategies work',
         pathItems: ['precache-with-workbox', 'runtime-caching-with-workbox'],
       },
+      {
+        title: 'How to build a resilient sample app',
+        pathItems: [
+          'codelab-reliability-overview',
+          'codelab-reliability-get-familiar',
+          'codelab-reliability-register-service-worker',
+          'codelab-reliability-precaching',
+          'codelab-reliability-integrate-workbox',
+          'codelab-reliability-handle-nav-requests',
+          'codelab-reliability-runtime-caching',
+          'codelab-reliability-offline-fallback',
+          'codelab-reliability-access-caches',
+          'codelab-reliability-user-control',
+          'codelab-reliability-conclusion',
+        ],
+      },
     ],
   },
 };
