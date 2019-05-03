@@ -3,7 +3,7 @@ layout: post
 title: Overview
 authors:
   - adamargyle
-description: A introduction article that sets up the tasks and goals of the guide
+description: Intrinsic layout starts with healthy layout strategies that respond to ever-changing & user generated content.
 tags:
 - Layout
 - Design

@@ -10,6 +10,8 @@ tags:
 - CSS
 web_lighthouse: N/A
 date: 2019-03-05
+codelabs:
+  - codelab-intrinsic-layout-card
 ---
 
 # Featured Card
