@@ -38,7 +38,7 @@ user can touch or click either the label or the input element), and improve form
 accessibility. 
 
 <figure class="w-figure">
-  <img src="image-label.png" alt="" style="max-width: 400px;">
+  <img src="image-label.png" alt="label placement" style="max-width: 400px;">
   <figcaption class="w-figcaption">
     Fig. 1 — Label placement.
   </figcaption>
@@ -96,7 +96,7 @@ expected format or content, typically by displaying the value as light text
 until the user starts typing in the element.
 
 <figure class="w-figure">
-  <img src="image-placeholder.png" alt="" style="max-width: 400px;">
+  <img src="image-placeholder.png" alt="placeholder text for input field" style="max-width: 400px;">
   <figcaption class="w-figcaption">
     Fig. 2 — Placeholder text.
   </figcaption>
@@ -128,7 +128,7 @@ If hints should remain in view while users type, consider:
 +   Using a separate hint element above or below the `input` field:
 
 <figure class="w-figure">
-  <img src="image-hint-element.png" alt="" style="max-width: 400px;">
+  <img src="image-hint-element.png" alt="field hint element displayed below input field" style="max-width: 400px;">
   <figcaption class="w-figcaption">
     Fig. 3 — hint element below input.
   </figcaption>
@@ -240,7 +240,7 @@ number by assigning `type="number"`:
 ```
 
 <figure class="w-figure">
-  <img src="image-input-text.png" alt="" style="max-height: 300px;">
+  <img src="image-input-text.png" alt="no type attribute assigned to input element" style="max-height: 300px;">
   <figcaption class="w-figcaption">
     Fig. 5 — no <code>type</code> attribute assigned.
   </figcaption>
@@ -253,7 +253,7 @@ No <code>type</code> attribute assigned to credit card input.
 <!-- TODO (mdiblasio): update compare -->
 
 <figure class="w-figure">
-  <img src="image-input-numeric.png" alt="" style="max-height: 300px;">
+  <img src="image-input-numeric.png" alt="type attribute assigned to input element" style="max-height: 300px;">
   <figcaption class="w-figcaption">
     Fig. 6 — <code>type="number"</code>.
   </figcaption>
