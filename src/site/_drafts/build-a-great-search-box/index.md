@@ -3,7 +3,7 @@ title: "Build a great search box"
 authors:
   - samdutton
 hero: hero.jpg
-alt:
+alt: Man looking through vinyl LPs at an outdoor sale.
 description:
 tags:
   - post

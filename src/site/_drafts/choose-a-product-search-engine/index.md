@@ -3,7 +3,7 @@ title: "Choose a product search engine"
 authors:
   - samdutton
 hero: hero.jpg
-alt:
+alt: People looking through records at an outdoor sale
 description: Once customers have arrived on your site, you need to ensure they can find what they want quickly and easily. This guide outlines the most popular alternatives for adding search to your site.
 tags:
   - post
