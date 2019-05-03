@@ -54,7 +54,7 @@ portal.activate();
 
 It’s that simple. Try this code in the DevTools console, the wikipedia page should open up. If you wanted to build something like we showed at Chrome Dev Summit, the following snippet will be of interest.
 
-![A gif of preview portal style demo](portal-preview-demo.gif)
+<img class="w-screenshot" src="portal-preview-demo.gif" alt="A gif of preview portal style demo">
 
 ```javascript
 // Adding some styles with transitions
