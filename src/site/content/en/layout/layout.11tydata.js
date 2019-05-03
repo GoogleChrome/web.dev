@@ -5,8 +5,8 @@ module.exports = {
     cover: '/images/collections/layout.svg',
     title: 'Layout',
     updated: 'May 3, 2019',
-    description: 'Intrinsic layout starts with healthy layout strategies that respond to ever-changing & user generated content.',
-    overview: `Intrinsic layout starts with two game-changing tactics: Flexbox and Grid. With Flexbox and Grid, you can articular layouts with less code. You can also create layouts that are content-centric, able to dynamically adapt to changing content.`,
+    description: 'todo',
+    overview: `todo`,
     topics: [
       {
         title: 'Intrinsic Layout',
@@ -21,7 +21,7 @@ module.exports = {
           'intrinsic-layout-card',
           'intrinsic-layout-summary',
         ],
-      }
+      },
     ],
   },
 };
