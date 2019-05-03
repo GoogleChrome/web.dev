@@ -1,7 +1,7 @@
 ---
 title: "Reduce form fatigue: guide users to proper input"
 author: mdiblasio
-date: 2019-05-02
+date: 2019-05-04
 description: |
   This post describes how to guide users to enter the proper information into forms.
 wf_blink_components: Blink>Accessibility

@@ -1,7 +1,7 @@
 ---
 title: Reduce form fatigue to improve conversion
 author: mdiblasio
-date: 2019-05-01
+date: 2019-05-05
 description: |
   Designing efficient forms can reduce the number of actions a user must take, reduce friction and improve conversion
 wf_blink_components: Blink>Accessibility

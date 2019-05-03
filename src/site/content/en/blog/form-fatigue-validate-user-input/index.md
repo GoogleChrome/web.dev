@@ -1,7 +1,7 @@
 ---
 title: "Reduce form fatigue: validate user input"
 author: mdiblasio
-date: 2019-05-04
+date: 2019-05-02
 description: |
   This post describes how to validate user input.
 wf_blink_components: Blink>Accessibility
