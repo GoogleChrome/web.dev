@@ -1,46 +1,39 @@
 ---
 layout: post
-title: Overview
+title: Introduction to Intrinsic Layout
 authors:
   - adamargyle
 description: Intrinsic layout starts with healthy layout strategies that respond to ever-changing & user generated content.
-tags:
-- Layout
-- Design
-- CSS
 web_lighthouse: N/A
 date: 2019-03-05
 ---
 
-# Introduction to Intrinsic Layout
-
-Heard this term yet in the context of web; [intrinsic web design](https://adactio.com/journal/13671)? [Jen Simmons](https://twitter.com/jensimmons) **astutely coined it,** advocates it, and [demonstrates](https://labs.jensimmons.com) it. She's rad.
+[Jen Simmons](https://twitter.com/jensimmons) **astutely** coined [intrinsic web design](https://adactio.com/journal/13671). She also advocates it and [demonstrates](https://labs.jensimmons.com) it. For good reason too, it's most certainly a strong and futuristic layout strategy.
 
 ## What is it?
-Intrinsic Web Design, **in Jen's words** while [chatting with Jeffrey Zeldman](http://www.zeldman.com/2018/05/02/transcript-intrinsic-web-design-with-jen-simmons-the-big-web-show/) on [The Big Web Show](https://5by5.tv/bigwebshow):
+<blockquote class="w-blockquote">
+  <p class="w-blockquote__text">Intrinsic Web Design is a name that I gave to this new era, because I think we’re really in a new era of layout design... it’s not that float-based thing where everything’s set in widths with using percents. It’s this new set of technologies.</p>
+  <p class="w-blockquote__text">It’s not just because the tech is new, it’s also because the possibilities of what you can actually do are new, and the ways in which you can get content to morph and shift and change based on how much space is available is actually really different than Responsive Web Design.</p>
+  <p class="w-blockquote__text">... it includes CSS Grid, but it’s not just about CSS Grid. It’s also about using Flexbox, and kind of rediscovering what Flexbox is actually intended to be for. Plus, it’s about using some floats sometimes, using things like CSS shapes or object-fit, using a flow content, using multi-column. Some of these things are old, and they’ve been around for a long time, but it’s about thinking about the whole system of layout, and how all these pieces fit together in a brand new way.</p>
+  <cite class="w-blockquote__cite">
+    Jen Simmons while <a href="http://www.zeldman.com/2018/05/02/transcript-intrinsic-web-design-with-jen-simmons-the-big-web-show/">chatting with Jeffrey Zeldman</a> on <a href="https://5by5.tv/bigwebshow">The Big Web Show</a>
+  </cite>
+</blockquote>
 
-> Intrinsic Web Design is a name that I gave to this new era, because I think we’re really in a new era of layout design... it’s not that float-based thing where everything’s set in widths with using percents. It’s this new set of technologies.
-<br><br>
-It’s not just because the tech is new, it’s also because the possibilities of what you can actually do are new, and the ways in which you can get content to morph and shift and change based on how much space is available is actually really different than Responsive Web Design.
-<br><br>
-... it includes CSS Grid, but it’s not just about CSS Grid. It’s also about using Flexbox, and kind of rediscovering what Flexbox is actually intended to be for. Plus, it’s about using some floats sometimes, using things like CSS shapes or object-fit, using a flow content, using multi-column. Some of these things are old, and they’ve been around for a long time, but it’s about thinking about the whole system of layout, and how all these pieces fit together in a brand new way.
-
-<figure style="text-align:center; margin: 5rem 0;">
+<figure class="w-figure w-figure--center" style="margin: 5rem 0;">
   <img src="https://media3.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif?cid=3640f6095c9541ae7945334751d09c8b" alt="Patrick Star admiring with floating hearts">
 </figure>
 
-I'm **stoooooked** on it! I've been exploring, building apps and prototyping with it, and it's certainly a **new era of layout** we're in! I must **share with you the joy** as it's applied to my day to day.
+I'm **stoooooked** on this! I've been exploring, building apps and prototyping with it, and it's certainly a **new era of layout** we're in! I must **share with you the joy**.
 
 <br><br>
 
-# Why study intrinsic CSS concepts?
+## Why study intrinsic CSS concepts?
 Here's a couple reasons, though there's plenty more:
 
 **1) Too often the front-end instigates limitations that affect more systems and folks than it should.**
 
 Ever been in a CMS with an odd text length limit on a field that's hindering you from effective articulation? Ever told a copywriter they can't say that there or else it breaks the component or layout?
-
-<br>
 
 **2) Too often the front-end stifles proper communication or implementations because of it's percieved inflexibility.**
 

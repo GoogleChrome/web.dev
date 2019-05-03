@@ -1,11 +1,11 @@
 ---
-page_type: glitch
+layout: codelab
 title: "Pop Quiz: You build a resilient card"
-author: argyle
+authors:
+  - adamargyle
 description:
-web_updated_on:
-web_published_on:
 glitch: resilient-card-layout
+related_post: intrinsic-layout-card
 ---
 
 **Here's a codelab** with all the work done that's not layout related. What you need to do now is **code a resilient layout**.

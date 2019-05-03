@@ -4,10 +4,6 @@ title: Summary
 authors:
   - adamargyle
 description:
-tags:
-- Layout
-- Design
-- CSS
 web_lighthouse: N/A
 date: 2019-03-05
 ---
