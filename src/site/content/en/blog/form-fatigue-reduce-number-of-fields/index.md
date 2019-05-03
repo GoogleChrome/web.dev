@@ -1,7 +1,7 @@
 ---
 title: "Reduce form fatigue: reduce the number of fields and steps"
 author: mdiblasio
-date: 2019-05-01
+date: 2019-05-03
 description: |
   This post describes how to reduce the number of field and steps in forms.
 wf_blink_components: Blink>Accessibility
@@ -59,12 +59,11 @@ Separate first and last name inputs.
 Full name input.
 {% endCompare %}
 
-<div class="w-aside w-aside--note">
-  Ensure the contrast ratios of fields and labels are
+{% Aside 'note' %}
+Ensure the contrast ratios of fields and labels are
 accessible to all users. Small text should have a contrast ratio of at least
-4.5:1 against its background. Large text (at 14-point bold, 18-point regular and
-up) should have a contrast ratio of at least 3:1 against its background.
-</div>
+4.5:1 against its background. Large text (at 14-point bold, 18-point regular and up) should have a contrast ratio of at least 3:1 against its background.
+{% endAside %}
 
 <!-- Use `street-address` vs both `address-line1` and `address-line2`
 unless they're required for your address format. -->
@@ -102,11 +101,13 @@ User enters email and password once.
 <!-- TODO (mdiblasio): highlight checkbox -->
 
 <div class="w-aside w-aside--caution">
-  When users provide separate shipping and billing addresses, don't copy
-the shipping address into the billing address (and use separate <code>autocomplete</code>
-attributes noted below) as this will create more work for users.
+  
 </div>
 
+{% Aside 'caution' %}
+When users provide separate shipping and billing addresses, don't copy
+the shipping address into the billing address (and use separate `autocomplete` attributes noted below) as this will create more work for users.
+{% endAside %}
 
 +   **Avoid collecting data that isn't absolutely necessary**. Remove
     optional form fields that are not required to complete the purchase or
@@ -152,14 +153,13 @@ Delivery methods hidden behind dropdown.
 
 {% Compare 'better' %}
 All delivery options visible to users.
-{% endCompare %}
+{% endCompare %}s
 
-
-<div class="w-aside w-aside--note">
+{% Aside 'note' %}
 If you have more than three options, create standard dropdowns with
-<code>&lt;select&gt;</code> elements. Custom dropdowns may not work properly with accessibility
+`select` elements. Custom dropdowns may not work properly with accessibility
 frameworks or autofill. 
-</div>
+{% endAside %}
 
 +   **Match the field length** to the expected length of the input.
     Fields like zip code and state should be narrow in width:
@@ -361,11 +361,11 @@ recommended list of common `name` and `autocomplete` values:
 For a complete list of all the accepted values, see the
 [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).
 
-<div class="w-aside w-aside--note">
-If your form contains billing and shipping address fields, add
-<code>billing</code> and <code>shipping</code> to the respective <code>autocomplete</code> attributes:
-</div>
 
+{% Aside 'note' %}
+If your form contains billing and shipping address fields, add
+`billing` and `shipping` to the respective `autocomplete` attributes:
+{% endAside %}
 
 ```html
 <label for="shipping-address">Street Address</label>  
@@ -377,22 +377,10 @@ If your form contains billing and shipping address fields, add
 
 <!-- TODO (robdodson): how to highlight / bold individual attributes? -->
 
-<div class="w-aside w-aside--gotchas">
-  <p>
-    Take caution to correctly spell autocomplete values! A common mistake
-for Credit Card CVCs is to use <code>cc-cvc</code> instead of the correct value <code>cc-csv</code>.
-  </p>
-</div>
-
-<div class="w-aside w-aside--caution">
-  <p>
-    Take caution to correctly spell autocomplete values! A common mistake
-for Credit Card CVCs is to use <code>cc-cvc</code> instead of the correct value <code>cc-csv</code>.
-  </p>
-</div>
-
-<!-- TODO (robdodson): gotcha or caution?  -->
-<!-- TODO (meggin): gotcha or caution?  -->
+{% Aside 'gotchas' %}
+Take caution to correctly spell autocomplete values! A common mistake
+for Credit Card CVCs is to use `cc-cvc` instead of the correct value `cc-csv`.
+{% endAside %}
 
 ## Next steps
 

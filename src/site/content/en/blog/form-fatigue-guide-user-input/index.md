@@ -1,7 +1,7 @@
 ---
 title: "Reduce form fatigue: guide users to proper input"
 author: mdiblasio
-date: 2019-05-01
+date: 2019-05-02
 description: |
   This post describes how to guide users to enter the proper information into forms.
 wf_blink_components: Blink>Accessibility
@@ -74,13 +74,11 @@ Assign a label that _describes a clear and concise purpose_ for each input eleme
 <custom-dropdown aria-labelledby="foo"></custom-dropdown>  
 ```
 
-<div class="w-aside w-aside--note">
-  Labels can only point to a single form control. Use the
-  <code>aria-labelledby</code> attribute to associate a single label with multiple form controls for many-to-one relationships.
-</div>
+{% Aside 'note' %}
+Labels can only point to a single form control. Use the `aria-labelledby` attribute to associate a single label with multiple form controls for many-to-one relationships.
+{% endAside %}
 
-Label text should be aligned with the input line, and always be visible. It can
-be placed in the middle of a text field, or rest near the top of the container.
+Label text should be aligned with the input line, and always be visible. It can be placed in the middle of a text field, or rest near the top of the container.
 
 <figure class="w-figure">
   <video autoplay loop muted playsinline>
@@ -109,19 +107,13 @@ until the user starts typing in the element.
 <!-- TODO (robdodson): display code above or below figure?  -->
 <!-- TODO (meggin): display code above or below figure?  -->
 
-<div class="w-aside w-aside--caution">
-  <p>
-    Don't use the <code>input</code> field <code>value</code> to set a placeholder as this can break autofill (described below).
-  </p>
-</div>
+{% Aside 'caution' %}
+Don't use the `input` field `value` to set a placeholder as this can break autofill (described below).
+{% endAside %}
 
-<div class="w-aside w-aside--warning">
-  <p>
-    Placeholders should not be used instead of labels, as they disappear as soon as users start to type,
-    <a href="https://www.smashingmagazine.com/2018/06/placeholder-attribute/">can reduce accessibility</a>, and can't be automatically translated. If you choose not to display a label for a given input field, hide the
-    <code>label</code> element off-screen using CSS so it is still read by screen readers.
-  </p>
-</div>
+{% Aside 'warning' %}
+Placeholders should not be used instead of labels, as they disappear as soon as users start to type, [can reduce accessibility](https://www.smashingmagazine.com/2018/06/placeholder-attribute/), and can't be automatically translated. If you choose not to display a label for a given input field, hide the `label` element off-screen using CSS so it is still read by screen readers.
+{% endAside %}
 
 If hints should remain in view while users type, consider:
 
@@ -134,11 +126,9 @@ If hints should remain in view while users type, consider:
   </figcaption>
 </figure>
 
-<div class="w-aside w-aside--note">
-  <p>
-    When using helper text in addition to a label, associate the text with 
-    the input using the <code>aria-describedby</code> attribute: </p>
-</div>
+{% Aside 'aside' %}
+When using helper text in addition to a label, associate the text with the input using the `aria-describedby` attribute:
+{% endAside %}
 
 ```html
 <label for="password">Password</label>
