@@ -1,11 +1,12 @@
 ---
 title: "Hands-on with Portals: seamless navigations on the Web"
-authors:
-  - uskay
+subhead: |
+  A new web platform API called Portals can help you build good navigation UX across your site.
+author: uskay
 hero: hero.png
 alt: A logo of Portals
 description: |
-  An article on explaining how to use the new HTML element: Portals
+  Portals is a new HTML element that can help you keep your front-end simple while allowing seamless navigations with custom transitions. In this article we will walk through how to creatively use Portals to improve the user experience on the Web.
 tags:
   - post
   - portals
@@ -14,7 +15,7 @@ tags:
 
 We’ve long stressed the importance of web performance. While it is tempting to focus on individual pages, it is also critical to maintain a good user experience as your users navigate across your site. A new web platform API called [Portals](https://github.com/WICG/portals) can help you with that.
 
-![A gif of a portals demo](hero.gif)
+<img class="w-screenshot" src="hero.gif" alt="Showing a demo of seamless navigations between two sites using Portals">
 
 ## What Portals enables
 Single Page Applications (SPAs) with an [App Shell model](https://developers.google.com/web/fundamentals/architecture/app-shell) are one way of achieving seamless navigations. Having a static shell on the page, like the header, footer and side nav, and dynamically changing the content with a transition provides continuity to the user experience in ways that a classic navigation experience in Multiple Page Applications (MPAs) can’t. In particular, the navigation experience on Multiple Page Applications is plagued by frequent flashes of blank or unfinished paints. While SPAs result in a better user experience, there are many reasons why you might not want to choose SPA as your front-end architecture. Maybe you don’t have the necessary expertise in your team, or you might just want to simplify the front-end and strategically select the more scalable and productivity friendly MPA architecture. The Web is open to any type of website and each one of them should have a good way to satisfy the users with liquid smooth experience.
@@ -25,13 +26,13 @@ Portals is a new HTML element that can help you keep your front-end simple while
   <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/Ai4aZ9Jbsys?start=1081" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-As you saw in the manga viewer demo, the current experience was based on classic navigations where the reader had to wait with a blank screen until the browser finished to render the next chapter. Whereas the improved experience with Portals was pre-rendering the next chapter, triggered an animation on user interaction, and finally activated the portal to create a magical seamless experience. The demo didn’t show it (because we used Chrome DevTools mobile simulator 😛) but when the pre-rendered chapter on the bottom left corner fully animated and covered the screen, the URL also switched to the next chapter.
+As you saw in the manga viewer demo, the current experience was based on classic navigations where the reader had to wait with a blank screen until the browser finished to render the next chapter. Whereas the improved experience with Portals was pre-rendering the next chapter, triggered an animation on user interaction, and activated the portal to create a seamless experience. The demo didn’t show it (because we used Chrome DevTools mobile simulator 😛) but when the pre-rendered chapter on the bottom left corner fully animated and covered the screen, the URL also switched to the next chapter.
 
 Before Portals, we could have rendered another page using an iframe. We could also have added animations to move the frame around the page. But iframes won’t let you navigate into their content. Portals close this gap, enabling interesting use cases.
 
 ## Try out Portals in Chrome Canary
 
-You can try out Portals in Chrome Canary by flipping an experimental flag (chrome://flags/#enable-portals). Once Portals is enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
+You can try out Portals in Chrome Canary by flipping an experimental flag: [`chrome://flags/#enable-portals`](chrome://flags/#enable-portals). Once Portals is enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
 
 <img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
 
@@ -116,9 +117,13 @@ if ('HTMLPortalElement' in window) {
 }
 ```
 
-If you want to quickly experience what Portals feels like, try using [uskay-portals-demo.glitch.me](https://uskay-portals-demo.glitch.me). 1) Enter a URL you want to preview, 2) the page will then be embedded as a portal element, 3) click on the preview 4) The preview will be activated after an animation.
+If you want to quickly experience what Portals feels like, try using [uskay-portals-demo.glitch.me](https://uskay-portals-demo.glitch.me). Be sure you access with Chrome Canary and turn on the experimental flag!
+1. Enter a URL you want to preview.
+1. The page will then be embedded as a portal element.
+1. Click on the preview.
+1. The preview will be activated after an animation.
 
-![A gif of using the glitch demo](glitch.gif)
+<img class="w-screenshot" src="glitch.gif" alt="A gif of using the glitch demo of using Portals">
 
 ## Check out the spec
 We are actively discussing [the spec](https://wicg.github.io/portals/) in the Web Incubation Community Group (WICG). To quickly get up to speed, take a look at [the explainer](https://github.com/WICG/portals/blob/master/explainer.md). These are the three important features to familiarize yourself with:
@@ -128,14 +133,14 @@ We are actively discussing [the spec](https://wicg.github.io/portals/) in the We
  - [The PortalActivateEvent interface](https://wicg.github.io/portals/#the-portalactivateevent-interface) … An event that fires when the portal is activated. There is a neat function called `adoptPredecessor` which you can use to retrieve the previous page as a `<portal>` element. This allows you to create seamless navigations and composed experiences between two pages.
 
 Let’s look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.
-## Customize the style when embedded as a portal element
+### Customize the style when embedded as a portal element
 ```javascript
 // Detect whether this page is hosted in a portal
 if (window.portalHost) {
   // Customize the UI when being embedded as a portal
 }
 ```
-## Messaging between the portal element and portal host
+### Messaging between the portal element and portal host
 ```javascript
 // Send message to the portal element
 const portal = document.querySelector('portal');
@@ -147,7 +152,7 @@ window.portalHost.addEventListener('message', evt => {
   // handle the event
 });
 ```
-## Activating the portal element and receiving the `portalactivate` event
+### Activating the portal element and receiving the `portalactivate` event
 ```javascript
 // You can optionally add data to the argument of the activate function
 portal.activate({data: {'somekey': 'somevalue'}});
@@ -159,7 +164,7 @@ window.addEventListener('portalactivate', evt => {
   const data = evt.data;   
 });
 ```
-## Retrieving the predecessor
+### Retrieving the predecessor
 ```javascript
 // Listen to the portalactivate event
 window.addEventListener('portalactivate', evt => {
@@ -168,7 +173,7 @@ window.addEventListener('portalactivate', evt => {
   document.querySelector('someElm').appendChild(portal);
 });
 ```
-## Knowing your page was adopted as a predecessor
+### Knowing your page was adopted as a predecessor
 ```javascript
 // The activate function returns a Promise.
 // When the promise resolves, it means that the portal has been activated.
