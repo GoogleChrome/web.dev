@@ -1,5 +1,5 @@
 ---
-title: "Beautiful, efficient images for e‑commerce"
+title: Help customers input search queries
 author: samdutton
 hero: hero.jpg
 alt: A man in a plaid shirt holding up his hands in front of a laptop computer
@@ -33,13 +33,13 @@ A relevant product may have data worded differently from the customer's query.
 Even the most basic search engines have ways to suggest results that are
 similar to the search query:
 
-+   **Stemming**a search for _run shoes_ should match products that
++   **Stemming**: A search for _run shoes_ should match products that
     mention _running shoes_ — and vice versa.
-+   **Stopword handing:** Search engines need to avoid irrelevant results
-    caused by matching common words such as _a_ and _the_. Conversely, ignoring
-    stopwords can also cause problems for product names that use stopwords.
-+   **Fuzzy matching**A search for _running shoes_ should match results
-    for _running shoe_. This can be a simple way to handle spelling mistakes
++   **Stopword handing**: Search engines need to avoid irrelevant results
+    caused by matching common words such as _a_ and _the_. (Though conversely, ignoring
+    stopwords can also cause problems for product names that use stopwords!)
++   **Fuzzy matching**: A search for _running shoes_ should match results
+    for _running shoe_. This can be a simple way to handle plurals, spelling mistakes
     and typos.
 
 In practice these techniques
@@ -55,60 +55,53 @@ intended.
 High quality search implementations provide additional features to help
 customers at the start of the search process:
 
-+   **Autocomplete**
-
-    Typing _run…_ invokes suggestions including
++   **Autocomplete**: Typing _run…_ invokes suggestions including
     _running shoes_.
 
 [TODO: animation or illustration.]
 
-+   **Spellcheck and autosuggest**
-
-    Typing _runing shoes_ suggests _running shoes_, or does the search automatically. Spellcheck can work better than fuzzy matching, since fuzzy matching can lead to irrelevant results. For e-commerce sites autosuggest can also be used for merchandising, to suggest products the customer may not be aware of.
-
-[TODO: animation or illustration.]
-
-+   **Synonym search**
-
-    A search for _running hat_ should match results for _running cap_, and vice
-    versa. This is crucial for product search, since people tend to use
-    different words for the same thing, especially across different geographical regions: _shoes_ or _footwear_, _wellies_ or _wellingtons_ or _gumboots_.
++   **Spellcheck and autosuggest**: Typing _runing shoes_ suggests
+_running shoes_, or does the search automatically. Spellcheck can work better
+than fuzzy matching, since fuzzy matching can lead to irrelevant results. For
+e-commerce sites autosuggest can also be used for merchandising, to suggest
+products the customer may not be aware of.
 
 [TODO: animation or illustration.]
 
-+   **Recent searches**
-
-    A high proportion of searches are repeat searches: customers often search
-    for the same thing again and again, even during the same session. You may
-    want to provide recent-search suggestions—and potentially cache assets for recent searches, such as images or product data.
-
-[TODO: animation or illustration.]
-
-+   **Phrase matching**
-
-    How much distance can be allowed between words in a search phrase? For
-    example, should a search for _red socks_ match descriptions that include
-    the words _red_ and _socks_, but not the exact phrase _red socks_?
++   **Synonym search**: A search for _running hat_ should match results for
+_running cap_, and vice versa. This is crucial for product search, since people
+tend to use different words for the same thing, especially across different
+geographical regions: _shoes_ or _footwear_, _wellies_ or _wellingtons_ or
+_gumboots_.
 
 [TODO: animation or illustration.]
 
-+   **Scoped and faceted search**
++   **Recent searches**: A high proportion of searches are repeat searches.
+Customers often search for the same thing again and again, even during the same
+session. You may want to provide recent-search suggestions—and potentially cache
+assets for recent searches, such as images or product data.
 
-    Provide the customer with UI controls such as checkboxes and sliders to
-    narrow the range of potential search results. For example, search only
-    within a product type or brand, or _find quilted coats, for a large dog, on
-    sale, priced less than $50.00_.
+[TODO: animation or illustration.]
+
++   **Phrase matching**: How much distance can be allowed between words in a
+search phrase? For example, should a search for _red socks_ match descriptions
+that include the words _red_ and _socks_, but not the exact phrase _red socks_?
+
+[TODO: animation or illustration.]
+
++   **Scoped and faceted search**: Provide the customer with UI controls such as
+checkboxes and sliders to narrow the range of potential search results. For
+example, search only within a product type or brand, or _find quilted coats, for
+a large dog, on sale, priced less than $50.00_.
 
     Functionality like this combines full text search (products that match
     _quilted coats_) with metadata constraints (less than $50).
 
 [TODO: animation or illustration.]
 
-+   **Non-product search**
-
-Customers may not be searching for products.
-    Make sure to suggest relevant results for queries such as 'customer
-    services' or 'returns'.
++   **Non-product search**: Customers may not be searching for products. Make
+sure to suggest relevant results for queries such as 'customer services' or
+'returns'.
 
 {% Aside %}
 For a global audience, all this functionality must work across different
@@ -121,26 +114,39 @@ services all provide different approaches to internationalisation and
 localisation.
 {% endAside %}
 
-## So… What should I do about it?
+## Try it out
 
-Online shoppers have increasingly high expectations for product search—and
+Online shoppers have increasingly high expectations for search—and
 product search increasingly originates on mobile, where text entry is difficult
 and customers are likely to be distracted and rushed.
 
-Getting search right on the input side is much better than forcing customers to
-redo searches and navigate irrelevant search output.
+Helping to get search right on the input side is much better than
+displaying irrelevant search output and forcing customers to redo searches.
+
+So what can you do?
 
 +   Check your competitors. Are they offering better input functionality
     than you? What are the big online retailers doing?
-+   Find out what works. You don't need an expensive usability lab—just
-    ask friends, family and colleagues to try out your search flow.
-+   Try search engine demos. It's relatively straightforward to get a subset
-    of product data and try out search engine features that help customers
-    input search queries.
++   Find out what works: check your analytics. You don't need an expensive
+    usability lab—just ask friends, family and colleagues to test your
+    search flow.
++   All the major search engines provide demos including
+    [Elasticsearch](https://github.com/elastic/examples),
+    [Solr](https://lucene.apache.org/solr/guide/7_7/solr-tutorial.html) and
+    [Algolia](https://www.algolia.com/doc/guides/building-search-ui/resources/demos/react/).
+    It's relatively straightforward to take a subset of your product data and
+    set up a search engine to try out features that might help your
+    customers input search queries.
+
+    Find out more:
+
+    + [Getting started with search engines](https://medium.com/@samdutton/more-about-search-engines-b897f072de90)
+    + [Getting started with search as a service](https://medium.com/@samdutton/more-about-search-as-a-service-1e2a16b4ee9c)
 
 ## Test your changes
 
-Make sure to set up tracking when you add new search input functionality.
+Whatever you do, make sure to set up tracking and analytics before you add new
+search input functionality.
 
 That way you can learn what works and what doesn't: what features customers use,
 what they avoid, and what leads to improvements in discovery and conversion.
