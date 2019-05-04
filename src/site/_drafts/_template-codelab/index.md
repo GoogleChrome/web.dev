@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Remove unused code
-author: houssein
+authors:
+  - houssein
 description: |
   In this codelab, learn how to improve the performance of an application by
   removing any unused and unneeded dependencies.

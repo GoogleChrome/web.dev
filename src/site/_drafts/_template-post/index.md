@@ -1,7 +1,8 @@
 ---
 title: An example blog post
 subhead: A catchy subhead that previews the content.
-author: robdodson
+authors:
+  - robdodson
 date: 2019-04-20
 hero: hero.jpg
 # You can adjust the position of your hero image with this property.
