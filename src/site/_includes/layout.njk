@@ -8,6 +8,7 @@
       <meta name="full_width" value="true" />
     </head>
     <body>
+      {% include 'styles.njk' %}
       {{ content | safe }}
       <devsite-content-footer
         ds-is="content-footer"
@@ -68,6 +69,7 @@
               <article class="devsite-article">
                 <article class="devsite-article-inner">
                   <div class="devsite-article-body clearfix">
+                    {% include 'styles.njk' %}
                     {{ content | safe }}
                   </div>
                 </article>
