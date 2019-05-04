@@ -22,7 +22,7 @@ This pull request adds a **new**:
 - [ ] Guide(s) 📘
 - [ ] Codelab(s) 🔬
 
-Have you read the wiki on writing [a guide](https://github.com/GoogleChrome/web.dev/wiki/How-to-write-a-guide) or [a codelab](https://github.com/GoogleChrome/web.dev/wiki/How-to-write-a-codelab)?
+Have you read the wiki on writing [a guide](https://github.com/GoogleChrome/web.dev/wiki/How-to-write-a-post) or [a codelab](https://github.com/GoogleChrome/web.dev/wiki/How-to-write-a-codelab)?
 - [ ] Done! 🍰
 
 Does your content tell a user how to fix a Lighthouse audit?
