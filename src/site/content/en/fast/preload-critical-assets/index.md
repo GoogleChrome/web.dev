@@ -8,8 +8,6 @@ description: |
   server, parses the contents of the HTML file, and submits separate requests
   for any other external references. The critical request chain represents the
   order of resources that are prioritized and fetched by the browser.
-web_lighthouse:
-  - uses-rel-preload
 date: 2018-11-05
 codelabs:
   - codelab-preload-critical-assets

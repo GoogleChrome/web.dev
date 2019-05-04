@@ -2,9 +2,9 @@
 layout: post
 title: Ensure IFrame and frame elements contain a non-empty title attribute
 description: |
-  Learn about document-title audit.
+  Learn about frame-title audit.
 web_lighthouse:
-  - document-title
+  - frame-title
 ---
 
 Screen reader users rely on frame titles to describe the contents of frames.

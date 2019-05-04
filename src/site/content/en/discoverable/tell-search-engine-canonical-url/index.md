@@ -9,8 +9,6 @@ description: |
   engines consider them duplicate versions of the same page. Providing
   search engines information about your preferred canonical URL helps search
   engines display the correct URL to users.
-web_lighthouse:
-  - canonical
 ---
 
 ## Why does this matter?

@@ -8,8 +8,6 @@ description: |
   Search engines often can't index content that requires browser plugins such as
   Java applets or Flash animations. Also, most mobile devices don't support
   plugins, and this can create frustrating experiences for mobile users.
-web_lighthouse:
-  - plugins
 ---
 
 ## Why does this matter?

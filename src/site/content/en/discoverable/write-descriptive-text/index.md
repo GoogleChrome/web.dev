@@ -11,8 +11,6 @@ description: |
   which in turn can increase your search traffic.
 web_lighthouse:
   - document-title
-  - meta-description
-  - link-text
 ---
 
 ## Why does this matter?

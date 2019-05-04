@@ -8,8 +8,6 @@ description: |
   inspected it in your dev tools, only to find out that GIF was really a video?
   There's a good reason for that. Animated GIFs can be downright huge! By
   converting large GIFs to videos, you can save big on users' bandwidth.
-web_lighthouse:
-  - efficient-animated-content
 date: 2018-11-05
 codelabs:
   - codelab-replace-gifs-with-video

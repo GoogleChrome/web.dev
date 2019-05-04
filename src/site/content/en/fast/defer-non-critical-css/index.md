@@ -6,9 +6,6 @@ authors:
 description: |
   Learn how to defer non-critical CSS with the goal of optimizing the Critical
   Rendering Path, and improve FCP (First Contentful Paint).
-web_lighthouse:
-  - unused-css-rules
-  - render-blocking-resources
 date: 2019-02-17
 ---
 

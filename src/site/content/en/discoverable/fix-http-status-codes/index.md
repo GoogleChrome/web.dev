@@ -8,8 +8,6 @@ description: |
   HTTP status codes indicate the response given by a server for a request to a
   URL. 4XX status codes signal to search engines that a page does not provide
   any content.
-web_lighthouse:
-  - http-status-code
 codelabs:
   - codelab-fix-sneaky-404
 ---

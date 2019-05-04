@@ -7,8 +7,6 @@ date: 2018-11-05
 description: |
   The robots.txt file tells search engines which URLs of your site they can
   crawl. An invalid robots.txt file can cause problems with indexing.
-web_lighthouse:
-  - robots-txt
 ---
 
 ## Why does this matter?

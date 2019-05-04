@@ -7,8 +7,6 @@ description: |
   WebP images are smaller than their JPEG and PNG counterparts - usually on the
   magnitude of a 25-35% reduction in filesize. This decreases page sizes and
   improves performance.
-web_lighthouse:
-  - uses-webp-images
 date: 2018-11-05
 codelabs:
   - codelab-serve-images-webp

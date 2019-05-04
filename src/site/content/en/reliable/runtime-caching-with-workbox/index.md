@@ -9,7 +9,6 @@ description: |
   While runtime caching doesn't help with the reliability of the current
   request, runtime caching with Workbox can help make future requests for the
   same URL more reliable.
-web_lighthouse: N/A
 ---
 
 Runtime caching refers to gradually adding responses to a cache "as you go".

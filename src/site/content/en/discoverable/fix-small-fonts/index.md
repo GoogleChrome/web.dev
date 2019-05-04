@@ -10,8 +10,6 @@ description: |
   comfortable reading size. Mobile-friendly pages is a ranking factor for many
   search engines because users should be able to navigate your site on their
   mobile devices.
-web_lighthouse:
-  - font-size
 ---
 
 ## Why does this matter?

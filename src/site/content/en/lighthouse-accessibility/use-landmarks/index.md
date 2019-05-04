@@ -4,6 +4,7 @@ title: Manually check landmark elements improve navigation
 description: |
   Learn about managed-focus audit.
 web_lighthouse:
+  - use-landmarks
   - managed-focus
 ---
 
@@ -23,18 +24,18 @@ For example:
 
 ```html
 <header role="banner">
-   <p>Put product name and logo here</p>
+  <p>Put product name and logo here</p>
 </header>
 <nav role="navigation">
-   <ul>
-      <li>Put navigation here</li>
-   </ul>
+  <ul>
+    <li>Put navigation here</li>
+  </ul>
 </nav>
 <main role="main">
-   <p>Put main content here</p>
+  <p>Put main content here</p>
 </main>
 <footer role="contentinfo">
-   <p>Put copyright, etc. here</p>
+  <p>Put copyright, etc. here</p>
 </footer>
 ```
 
