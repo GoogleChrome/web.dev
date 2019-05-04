@@ -8,7 +8,6 @@ description: |
   By using the correct semantic HTML elements you may be able to meet most or
   all of your keyboard access needs. That means less time fiddling with
   tabindex, and more happy users!
-web_lighthouse: N/A
 ---
 
 By using the correct semantic HTML elements you may be able to meet most or all

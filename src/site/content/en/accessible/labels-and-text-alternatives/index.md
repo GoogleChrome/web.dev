@@ -9,15 +9,6 @@ description: |
   elements must have proper labels or text alternatives. A label or text
   alternative gives an element its accessible name, one of the key properties
   for expressing element semantics in the accessibility tree.
-web_lighthouse: 
-  - label
-  - image-alt
-  - input-image-alt
-  - frame-title
-  - object-alt
-  - document-title
-  - button-name
-  - link-name
 ---
 
 In order for a screen reader to present a spoken UI to the user, meaningful

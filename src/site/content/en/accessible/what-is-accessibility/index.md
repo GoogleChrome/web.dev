@@ -8,7 +8,6 @@ description: |
   An accessible site is one whose content can be accessed regardless of any
   user's impairments, and whose functionality can also be operated by the most
   diverse range of users possible.
-web_lighthouse: N/A
 ---
 
 An accessible site is one whose content can be accessed regardless of any user's

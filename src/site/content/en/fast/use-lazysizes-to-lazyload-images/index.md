@@ -7,8 +7,6 @@ description: |
   Lazy loading is the strategy of loading resources as they are needed, rather
   than in advance. This approach frees up resources during the initial page load
   and avoids loading assets that are never used.
-web_lighthouse:
-  - offscreen-images
 date: 2018-11-05
 codelabs:
   - codelab-use-lazysizes-to-lazyload-images

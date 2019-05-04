@@ -9,7 +9,6 @@ description: |
   reader, knows what to announce to users? The answer is that these technologies
   rely on developers marking up their pages with semantic HTML. But what are
   semantics, and how do screen readers use them?
-web_lighthouse: N/A
 ---
 
 Have you ever stopped to wonder _how_ assistive technology, such as a screen

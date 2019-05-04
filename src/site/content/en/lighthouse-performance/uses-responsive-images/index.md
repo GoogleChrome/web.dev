@@ -53,4 +53,4 @@ either when you upload an image, or request it from your page.
 ## More information
 
 - [Properly size images audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
-- [Serve images with correct dimensions codelab](/codelab-serve-images-correct-dimensions)
+- [Serve images with correct dimensions](/serve-images-with-correct-dimensions)

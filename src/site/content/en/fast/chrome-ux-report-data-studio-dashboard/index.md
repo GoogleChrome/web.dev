@@ -8,7 +8,6 @@ description: |
   dashboards on top of big data sources, like the Chrome UX Report In this
   guide, learn how to create your own custom CrUX Dashboard to track an origin's
   user experience.
-web_lighthouse: N/A
 date: 2018-11-05
 ---
 

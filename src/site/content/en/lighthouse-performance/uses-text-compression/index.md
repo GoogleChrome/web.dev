@@ -4,7 +4,7 @@ title: Enable text compression
 description: |
   Learn about the uses-text-compression audit.
 web_lighthouse:
-  - uses-text-conmpression
+  - uses-text-compression
 ---
 
 Text-based resources should be served with compression
@@ -85,6 +85,8 @@ See [Use large request rows](https://developers.google.com/web/tools/chrome-devt
 1. Look at the **Size** column for the response you're interested in. The
    top value is the compressed size. The bottom value is the de-compressed
    size.
+
+See also [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
 
 
 ## More information

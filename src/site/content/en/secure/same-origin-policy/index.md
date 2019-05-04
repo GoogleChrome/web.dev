@@ -9,7 +9,6 @@ description: |
   restriction on interactions between those resources, and if a script is
   compromised by an attacker, the script could expose everything on a user's
   browser.
-web_lighthouse: N/A
 codelabs:
   - codelab-same-origin-fetch
   - codelab-same-origin-iframe

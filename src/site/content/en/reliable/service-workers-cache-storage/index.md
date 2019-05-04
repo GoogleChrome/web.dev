@@ -10,7 +10,6 @@ description: |
   lifetime of cached responses. But there are several rules of thumb that give
   you a sensible caching implementation without much work, so you should always
   try to follow them.
-web_lighthouse: N/A
 ---
 
 You're locked in a struggle for network reliability. The browser's HTTP cache is

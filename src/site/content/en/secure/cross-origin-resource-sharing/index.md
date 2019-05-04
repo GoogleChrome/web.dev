@@ -10,7 +10,6 @@ description: |
   data, but it also prevents legitimate uses. What if you wanted to get weather
   data from another country? Enabling CORS lets the server tell the browser it's
   permitted to use an additional origin.
-web_lighthouse: N/A
 ---
 
 The browser's same-origin policy blocks reading a resource from a different

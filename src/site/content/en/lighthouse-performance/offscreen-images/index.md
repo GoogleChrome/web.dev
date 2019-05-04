@@ -21,7 +21,8 @@ to lower [Time to Interactive](/interactive):
   </figcaption>
 </figure>
 
+See also [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysizes-to-lazyload-images).
+
 ## More information
 
 - [Defer offscreen images audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/offscreen-images.js)
-- [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysizes-to-lazyload-images)

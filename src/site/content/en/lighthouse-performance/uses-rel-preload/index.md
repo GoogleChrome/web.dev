@@ -84,6 +84,8 @@ as soon as possible.
 See [Can I Use link-rel-preload?](http://caniuse.com/#feat=link-rel-preload)
 to see browser support for preload links.
 
+See also [Preload critical assets to improve loading speed](/preload-critical-assets)
+
 ## More information
 
 - [Preload key requests audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)
