@@ -2,8 +2,8 @@
 layout: layout
 title: Measure
 description: |
-  Review performance for your websites, and get detailed guidance on how to
-  improve it. Sign-in to save your progress.
+  See how well your website performs. Then, get tips to improve your user
+  experience.
 ---
 
 {# *-landing-page classes are a holdover from devsite. #} {# It would be great
@@ -13,8 +13,11 @@ to remove them as part of the v1 migration. #}
     <header class="w-page-header">
       <h1 class="w-page-header__headline">{{ title }}</h1>
       <p class="w-page-header__copy">
-        Explore our structured learning paths to discover everything you need to
-        know about building for the modern web.
+        See how well your website performs. Then, get tips to improve your user
+        experience. 
+        <span data-lh-signin="hide">
+          Sign in to track your progress over time.
+        </span>
       </p>
       <a
         href="#"
@@ -72,39 +75,28 @@ to remove them as part of the v1 migration. #}
       <div class="w-measure-steps">
         <div class="w-measure-step">
           <h3 class="w-numbered-header w-numbered-header--vertical">
-            Audit your web page
+            Run tests on your site
           </h3>
           <div>
-            Provide any URL, and web.dev will run a series of audits using
-            <a
-              href="https://developers.google.com/web/tools/lighthouse/"
-              class="gc-analytics-event"
-              data-category="web.dev"
-              data-label="measure,
-            Lighthouse link"
-              data-action="click"
-              >Lighthouse</a
-            >. We'll generate a report of how well you did.
+            Enter your site's URL to see how well it performs across all audits.
           </div>
         </div>
 
         <div class="w-measure-step">
           <h3 class="w-numbered-header w-numbered-header--vertical">
-            Analyze for improvements
+            Look at what matters
           </h3>
           <div>
-            Review the audits report to identify areas in which your page can be
-            improved.
+            See your site's performance across the areas you care about.
           </div>
         </div>
 
         <div class="w-measure-step">
           <h3 class="w-numbered-header w-numbered-header--vertical">
-            Learn how to fix it
+            Get tips for improving
           </h3>
           <div>
-            For each audit you'll find guidance and immediate steps you can take
-            to improve your scores.
+            Each test comes with helpful steps to improve your site's results.
           </div>
         </div>
       </div>
@@ -114,37 +106,16 @@ to remove them as part of the v1 migration. #}
   <div class="w-layout-container">
     <section class="w-text--center">
       <h2 class="no-link w-headline--two w-font-weight--medium">
-        What is Lighthouse?
+        How your site is measured
       </h2>
       <div class="w-mb--l">
-        Lighthouse is an open-source, automated tool for improving the quality
-        of your web apps. It is integrated directly into the Chrome DevTools
-        Audits panel, but can also be run from the command line, as a
-        <a
-          href="https://www.npmjs.com/package/lighthouse"
-          class="gc-analytics-event"
-          data-label="measure, Lighthouse module lnk"
-          data-action="click"
-          >Node module</a
-        >, or by installing the
-        <a
-          href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk"
-          class="gc-analytics-event"
-          data-label="measure, Lighthouse crx link"
-          data-action="click"
-          >Chrome Extension</a
-        >. Lighthouse also provides a REST API which is consumed by sites like
-        web.dev and
-        <a
-          href="https://developers.google.com/speed/docs/insights/v5/get-started"
-          class="gc-analytics-event"
-          data-label="measure, PSI link"
-          data-action="click"
-          >PageSpeed Insights</a
-        >.
+        When you measure your site, web.dev uses
+        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>,
+        an open-source, automated tool for improving the quality of web pages.
+        Lighthouse will audit your site in the following categories:
       </div>
 
-      <div class="w-measure-categories">
+      <div class="w-measure-categories w-mb--xl">
         <!-- PERFORMANCE -->
         <div class="w-measure-category">
           <img
@@ -210,8 +181,14 @@ to remove them as part of the v1 migration. #}
           </div>
         </div>
       </div>
+
+      <div>
+        All tests are run using a simluated mobile device, throttled to a fast
+        3G network &amp; 4x CPU slowdown.
+      </div>
     </section>
   </div>
+
 </div>
 
 <code id="guide-audit-mapping" style="display: none;">
