@@ -13,6 +13,7 @@ description: |
   This post is a test to demonstrate all of the components that can go into
   an article. This description appears in the meta tag.
 tags:
+  - post # post is a required tag for the article to show up in the blog.
   - accessibility
   - ux
 ---
