@@ -21,6 +21,8 @@ Lighthouse flags pages that have multiple page redirects:
 
 A page fails this audit when it has 2 or more redirects.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 Your Lighthouse report lists resources that are being redirected.
@@ -45,8 +47,6 @@ Location: /path/to/new/location
 The browser must then make another HTTP request at the new location in order to
 retrieve the resource. This additional trip across the network can delay the
 loading of the resource by hundreds of milliseconds.
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

@@ -32,6 +32,8 @@ Lighthouse marks the audit as a fail if any of the following are true:
   such as for AMP or mobile page variations, but nonetheless Lighthouse marks this scenario as
   a failure.
 
+{% include 'content/lighthouse-seo/scoring.njk' %}
+
 ## How to add canonical links to your pages
 
 Add a canonical link element to the `head` element of your HTML:
@@ -80,8 +82,6 @@ Learn more in [Tell search engines which version of a page to crawl](/tell-searc
 Recommendations for other search engines are welcome.
 [Edit this page.](https://github.com/google/WebFundamentals/tree/master/src/content/en/tools/lighthouse/audits/canonical.md)
 {% endAside %}
-
-{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## Why you should add canonical links to your pages
 

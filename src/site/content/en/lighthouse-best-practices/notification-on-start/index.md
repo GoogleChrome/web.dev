@@ -39,14 +39,14 @@ Lighthouse cannot determine
 if the page requests notification permissions on page load.
 Reset the permissions and run Lighthouse again.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## Ask for user's notification permissions responsibly
 
 A better user experience is to offer to send users a specific type of notification,
 and to present the permissions request after they opt-in.
 
 See [Change website permissions](https://support.google.com/chrome/answer/6148059) for more help.
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

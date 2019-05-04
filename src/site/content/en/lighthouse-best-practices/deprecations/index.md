@@ -24,6 +24,8 @@ Lighthouse flags the deprecated APIs:
 Lighthouse collects the deprecated API warnings that Chrome logs
 to the DevTools Console and includes them in the Lighthouse repot as warnings.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## How to remove deprecated APIs.
 
 Go to
@@ -31,8 +33,6 @@ Go to
 expand the entries for the APIs that you're using
 to learn more about why the APIs are deprecated,
 as well as how to replace them.
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

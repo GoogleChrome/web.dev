@@ -33,6 +33,8 @@ The percentage of text on the page that is affected by the ruleset.
 - **Font Size**.
 The computed size of the text.
 
+{% include 'content/lighthouse-seo/scoring.njk' %}
+
 ## How to fix illegible fonts
 
 Aim to have a font size of at least 12px on at least 60% of the text on your pages. 
@@ -45,8 +47,6 @@ add a `<meta name="viewport" content="width=device-width, initial-scale=1">` tag
 to the `<head>` of your document.
 
 See also [Has a `<meta name="viewport">` tag with `width` or `initial-scale`](/viewport).
-
-{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## More information
 

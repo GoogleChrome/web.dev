@@ -30,6 +30,8 @@ To detect vulnerable libraries, Lighthouse:
 - Checks the list of detected libraries against
 [Snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all).
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## Stop using these JavaScript libraries
 
 An intruder can scan your entire site using a web crawler.
@@ -40,8 +42,6 @@ upgrade to that version, or consider using a different library.
 
 See [Snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all)
 to learn more about each library's vulnerability.
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

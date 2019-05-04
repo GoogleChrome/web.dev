@@ -38,6 +38,8 @@ then the perceived page load time is 10s.
 Lighthouse computes what time to interactive would be on a slow 4G network 
 connection. If the time to interactive is more than 10s, the audit fails.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 To speed up time-to-visually-complete, only load the resources you need in order
@@ -59,8 +61,6 @@ Once you're familiar with the basics,
 do a page load recording and analyze the results to find JS work that can be deferred.
 See
 [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering/) for strategies.
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

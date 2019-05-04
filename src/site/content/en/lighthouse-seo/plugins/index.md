@@ -52,9 +52,9 @@ for example, [how to switch Flash video to HTML5 video](https://developer.mozill
 See also these
 [best practices for displaying videos on the web](https://developers.google.com//web/fundamentals/media/video).
 
-{% include 'content/lighthouse-seo/scoring.njk' %}
-
 ## More information
 
 - [Document uses plugins audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
 - [Unplayable content](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content)
+
+{% include 'content/lighthouse-seo/scoring.njk' %}

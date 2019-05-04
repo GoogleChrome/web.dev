@@ -40,6 +40,8 @@ Lighthouse doesn't detect those elements.
 It's also possible to prevent pasting outside of a `paste` event listener.
 Lighthouse doesn't detect that scenario, either.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## Find and inspect the code that's preventing pasting
 
 To quickly find and inspect the code that's preventing pasting,
@@ -70,8 +72,6 @@ into password fields whenever users need to log in.
 
 See [The "Cobra Effect" That Is Disabling Paste On Password Fields](https://www.troyhunt.com/the-cobra-effect-that-is-disabling/)
 for more on why enabling pasting is a better security practice.
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

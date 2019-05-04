@@ -33,6 +33,8 @@ Lighthouse flags the following generic link descriptions:
 - `more`
 - `learn more`
 
+{% include 'content/lighthouse-seo/scoring.njk' %}
+
 ## How to add descriptive link text
 
 Replace generic descriptions, such as `click here` in the example below:
@@ -62,8 +64,6 @@ such as referencing a site's new address.
 - Format links so that they're easy to spot.
 - Pay attention to your internal links, too. Improving the quality of internal links can
 help users and Google navigate your site easier.
-
-{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## More information
 

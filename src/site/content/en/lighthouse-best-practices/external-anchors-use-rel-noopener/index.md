@@ -30,6 +30,8 @@ If your page opens a link to another section of your site without using `rel="no
 the performance implications of this audit still apply.
 However, you won't see these links in your Lighthouse results.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## How links to cross-origin destinations slow down your page
 
 When you open another page using `target="_blank"`, the other page may
@@ -66,8 +68,6 @@ ensures it runs in a separate process.
 but also prevents the `Referer` header
 from being sent to the new page.
 See [Link type "noreferrer"](https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer).
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

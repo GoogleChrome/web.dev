@@ -36,6 +36,8 @@ Lighthouse cannot determine if the page requests the user's location on page loa
 Reset the permissions and run Lighthouse again.
 See [Change website permissions](https://support.google.com/chrome/answer/6148059) for more help.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## How to ask for user's location responsibly
 
 - Assume users won't give you their location.
