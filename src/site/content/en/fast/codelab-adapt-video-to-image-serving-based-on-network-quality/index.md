@@ -198,7 +198,7 @@ Here’s the final state of the [app on Glitch](https://glitch.com/~adaptive-ser
 
 To test it again:
 
-1. Mouse over the editor, press the **App** button, then press the **Show**
+1. Mouse over the editor, click **App** button, then click **Show**
    button to preview the app.
 2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
 3. Click on the **Network tab**.
