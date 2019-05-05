@@ -23,8 +23,14 @@ module.exports = {
     your site has launched.`,
     topics: [
       {
-        title: 'Measure your site\'s performance',
-        pathItems: ['discover-performance-opportunities-with-lighthouse'],
+        title: 'Introduction',
+        pathItems: [
+          'why-speed-matters',
+          'what-is-speed',
+          'how-to-measure-speed',
+          'how-to-improve-speed',
+          'how-to-stay-fast',
+        ],
       },
       {
         title: 'Optimize your images',
