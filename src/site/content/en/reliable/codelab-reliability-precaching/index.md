@@ -6,7 +6,7 @@ date: 2019-05-07
 description: |
   In this section you'll learn how to use Workbox to implement service worker
   precaching.
-glitch: spot-bottle
+glitch: wiki-offline-precaching
 web_lighthouse: N/A
 ---
 
@@ -50,12 +50,14 @@ is a better choice.
 {% endAside %}
 
 This project will use the `injectManifest` mode, which uses options specified
-in the Workbox config file `workbox-config.js`, discussed below. (A full list
-  of available options can be found here.) Based on these options Workbox:
-+  Looks for a specific string (`precaching.precacheAndRoute([])` by default)
+in the Workbox config file `workbox-config.js`, discussed below (a full list
+  of available options [can be found here](https://developers.google.com/web/tools/workbox/modules/workbox-cli#options_used_by_injectmanifest)). 
+
+Based on these options Workbox:
+1. Looks for a specific string (`precaching.precacheAndRoute([])` by default)
    in your source service worker file,
-+  Replaces the empty array with a list of URLs to precache, and
-+  Writes the service worker file to its destination location.
+1. Replaces the empty array with a list of URLs to precache, and
+1. Writes the service worker file to its destination location.
 
 The rest of the code in your source service worker is left untouched.
 

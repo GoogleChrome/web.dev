@@ -7,7 +7,7 @@ description: |
   In this section you'll learn how to incorporate Workbox into the build process
   so that it updates the list of project assets to be precached each time you
   update your code.
-glitch: spot-bottle
+glitch: wiki-offline-build-process
 web_lighthouse: N/A
 ---
 

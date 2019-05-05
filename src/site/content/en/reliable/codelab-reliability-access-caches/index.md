@@ -6,7 +6,7 @@ date: 2019-05-07
 description: |
   In this section you'll learn how to access a web app's caches to display a
   list of cached assets.
-glitch: spot-bottle
+glitch: wiki-offline-access-cache
 web_lighthouse: N/A
 ---
 If you've finished the previous sections of this project, you've built a sample

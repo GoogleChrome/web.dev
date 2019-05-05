@@ -6,7 +6,7 @@ date: 2019-05-07
 description: |
   In this project you'll learn several techniques for making web applications
   more resilient.
-glitch: spot-bottle
+glitch: wiki-offline-starter
 web_lighthouse: N/A
 ---
 
@@ -119,37 +119,8 @@ using the Wikimedia REST API. Before returning the rendered HTML to the client,
 That's why requests to the Wikimedia REST API are processed server-side instead of
 contacting the Wikimedia REST API directly from the client page.
 
-    The Wikimedia REST API format is
-    `https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&page=pageTitle`
-    where `pageTitle` is replaced with the requested Wikipedia page title:
-
-    ```js
-    const API_BASE = "https://en.wikipedia.org/w/api.php";
-
-    // ...
-
-    // route for Wikimedia REST API requests
-    app.get('/api/wiki/:pageTitle', async(req, res, next) => {
-      const pageTitle = req.params.pageTitle;
-
-      const requestURL = new URL(API_BASE);
-      requestURL.searchParams.set('action', 'parse');
-      requestURL.searchParams.set('format', 'json');
-      requestURL.searchParams.set('page', pageTitle);
-      requestURL.searchParams.set('origin', '*');
-
-      let response = await fetch(requestURL);
-      let responseText = await response.json();
-      let responseArticle = responseText.parse.text['*'];
-
-      // ...
-
-      res.send(responseArticle);
-    });
-    ```
-
-1. The client receives the HTML text response and populates the placeholder
-section element with ID `section--article`:
+1. The client receives the HTML text response and populates the `articleContainer`
+element:
 
     ```js/3-6
     // fetch Wikipedia page by title
@@ -158,7 +129,7 @@ section element with ID `section--article`:
       const response = await fetch(encodeURI(`/api/wiki/${title}`));
       const html = await response.text();
       // ...
-      document.getElementById('section--article').innerHTML = html;
+      articleContainer.innerHTML = html;
       // ...
     }
     ```

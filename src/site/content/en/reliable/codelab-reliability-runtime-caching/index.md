@@ -6,7 +6,7 @@ date: 2019-05-07
 description: |
   In this section you'll learn how to implement runtime caching with a service
   worker to cache external assets.
-glitch: spot-bottle
+glitch: wiki-offline-runtime-caching
 web_lighthouse: N/A
 ---
 
@@ -151,6 +151,8 @@ against Wikipedia image URLs:
 To improve this experience, add another route to runtime cache Wikipedia image
 assets, which take the form `https://upload.wikimedia.org/…(png|svg|jpeg|jpg)`.
 Note that these assets are from a different origin.
+
+<!-- TODO (mdiblasio): add information about different origins / CORS -->
 
 For the sample app we'll assume Wikipedia images are unlikely to change and use
 a __cache-first__ strategy. This requires assigning a separate cache name,

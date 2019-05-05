@@ -6,7 +6,7 @@ date: 2019-05-07
 description: |
   In this section you'll learn how to implement logic in a service worker to
   handle navigation requests.
-glitch: spot-bottle
+glitch: wiki-offline-navigation-requests
 web_lighthouse: N/A
 ---
 

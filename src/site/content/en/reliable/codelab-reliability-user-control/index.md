@@ -6,7 +6,7 @@ date: 2019-05-07
 description: |
   In this section you'll learn how to give users control over what your app
   caches.
-glitch: spot-bottle
+glitch: wiki-offline-give-users-control
 web_lighthouse: N/A
 ---
 
@@ -48,15 +48,6 @@ async function deleteCachedEntry(title) {
 }
 ```
 
-```js
-// clear cached articles
-function clearCache() {
-  caches.delete(WIKI_API_CACHE);
-  caches.delete(WIKI_IMAGES_CACHE);
-  queryWikiCache();
-}
-```
-
 To make the __Cached__ tab a little more useful, you might want to show users
 how much storage they have remaining so they know when they need to delete
 articles. Luckily, some browsers expose an interface for querying your origin's
@@ -83,6 +74,13 @@ function estimateStorage() {
   }
 }
 ```
+
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./image-display-storage-info.png" alt="A screenshot
+  showing Settings view displaying storage information." style="max-width: 400px">
+</figure>
+
+
 
 ## What's next
 [Conclusion](../codelab-reliability-conclusion/)

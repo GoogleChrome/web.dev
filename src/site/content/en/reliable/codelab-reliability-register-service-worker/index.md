@@ -5,7 +5,7 @@ author: mdiblasio
 date: 2019-05-07
 description: |
   In this section you'll learn how to register a Workbox-powered service worker.
-glitch: spot-bottle
+glitch: wiki-offline-starter
 web_lighthouse: N/A
 ---
 

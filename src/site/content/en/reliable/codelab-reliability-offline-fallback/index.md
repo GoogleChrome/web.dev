@@ -6,7 +6,7 @@ date: 2019-05-07
 description: |
   In this section you'll learn how to implement an offline fallback so that users
   get feedback if an article isn't already cached when the network is unavailable.
-glitch: spot-bottle
+glitch: wiki-offline-offline-fallback
 web_lighthouse: N/A
 ---
 
