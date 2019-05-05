@@ -11,16 +11,13 @@ tags:
   - ux
 ---
 
-<!-- TODO (): update tags -->
+<!-- TODO (mdiblasio): update tags -->
 
-_This is post 1 of 5 of the [Reduce form fatigue series](./.) that
-shows you how to build better forms for online stores._
+<!-- Designing efficient forms can reduce the number of actions a user must take,
+reduce friction and improve conversion — and make the whole checkout experience
+less painful for your users!  -->
 
-<!-- TODO (robdodson): is there a format we should use for this line that opens each article?  -->
-
-<!-- TODO (dutton): is there a format we should use for this line that opens each article?  -->
-
-<!-- [Nearly 26% of cart abandonments are due to a “too long/complicated checkout process”](https://baymard.com/lists/cart-abandonment-rate). -->
+Efficiently designed forms can reduce the number of actions a user must take, and improve conversions — and make the whole checkout experience nicer for your users!
 
 <div class="w-stats">
   <div class="w-stat">
@@ -30,9 +27,8 @@ shows you how to build better forms for online stores._
   </div>
 </div>
 
-Designing efficient forms can reduce the number of actions a user must take,
-reduce friction and improve conversion — and make the whole checkout experience
-less painful for your users!
+In this series, learn how to optimize your checkout
+experience to improve e-commerce conversions.
 
 ## Form anatomy
 
@@ -79,9 +75,16 @@ Forms have the following components:
 </table>
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="image-form-anatomy.png" alt="form anatomy">
+  <img src="image-form-anatomy.png" alt="form anatomy" style="max-width: 400px">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Form anatomy.
+    Form anatomy.
+  </figcaption>
+</figure>
+
+<figure class="w-figure w-figure--fullbleed">
+  <img src="image-form-anatomy-2.png" alt="form anatomy">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Form anatomy.
   </figcaption>
 </figure>
 
@@ -96,7 +99,8 @@ e-commerce conversion flows.
 
 +   [Validate user input](../form-fatigue-validate-user-input)
 
-+   [Analytics and A/B testing](../form-fatigue-analytics-ab-testing)
++   _Coming soon!_ Analytics and A/B testing
+<!-- +   [Analytics and A/B testing](../form-fatigue-analytics-ab-testing) -->
 
 ## Find out more
 

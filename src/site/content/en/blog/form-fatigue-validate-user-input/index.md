@@ -11,16 +11,15 @@ tags:
   - ux
 ---
 
-_This is post 4 of 5 of the [Reduce form fatigue series](../form-fatigue) that
-shows you how to build better forms for online stores._
+<!-- TODO (mdiblasio): update tags -->
 
-<!-- TODO (robdodson): is there a format we should use for this line that opens each article?  -->
+<video autoplay loop muted playsinline>
+  <source src="video-typing-on-mobile-is-hard.mp4" type="video/mp4">
+</video>
 
-<!-- TODO (dutton): is there a format we should use for this line that opens each article?  -->
-
-No matter how optimized your forms are, users will make mistakes! When this
+<p class="w-mt--non">No matter how optimized your forms are, users will make mistakes! When this
 happens, provide them with helpful feedback in real-time so they can quickly fix
-the issue. 
+the issue.</p>
 
 ## Restrict user input
 
@@ -44,7 +43,7 @@ possible) using built-in attributes.
     customized message on a flower delivery card to 50 characters:
 
 ```html
-<input type="text" maxlength="50" >  
+<input type="text" maxlength="50">  
 ```
 
 {% Aside 'caution' %}
@@ -57,8 +56,8 @@ manually validate input on form submission.
     from entering invalid dates. For example, prevent users from selecting a
     delivery date in the past or a delivery time outside of your operating hours:
 
-<figure class="w-figure">
-  <img src="image-browser-date-selector.png" alt="browser built-in date selector" style="max-width: 400px;">
+<figure class="w-figure" style="text-align: center;">
+  <img class="w-screenshot" src="image-browser-date-selector.png" alt="browser built-in date selector" style="max-width: 400px;">
   <figcaption class="w-figcaption">
     Chrome's default date picker.
   </figcaption>
@@ -82,7 +81,7 @@ digits and sometimes followed by a dash and an additional 4 digits:
 
 
 ```html  
-<input type="text" pattern="^\d{5,6}(?:[-\s]\d{4})?$" ...>  
+<input type="text" pattern="^\d{5,6}(?:[-\s]\d{4})?$">  
 ```
 
 The following regular expression validates credit card numbers:
@@ -93,52 +92,17 @@ The following regular expression validates credit card numbers:
 ```
 
 {% Aside 'note' %}
-Unlike `pattern`, `min`, `max`, `minlength` and `maxlength` will restrict user input in real-time.
+Unlike `pattern`—`min`, `max`, `minlength` and `maxlength` will restrict user input in real-time.
 {% endAside %}
 
 ## Custom validation
 
-If built-in validation attributes aren't enough, use the
-[Constraint Validation API](https://w3c.github.io/html/sec-forms.html#constraints)
-to manually mark fields invalid. To manually invalidate a field, use
-`setCustomValidity()` to pass a custom validation message to the invalid input
-element. 
-
-For example, you can immediately validate a shipping address using a back-end location service:
-
-```js/3
-let shippingAddress = shippingAddressInput.value;  
-if (!checkValidAddress(shippingAddress)) {  
-  // invalid card number, set custom validity message  
-  shippingAddressInput.setCustomValidity('This is not a valid address.');  
-} else {  
-  // valid card number, reset message  
-  shippingAddressInput.setCustomValidity('');  
-}  
-```  
-Be sure to reset the error message when the field becomes valid:  
-
-<!-- TODO (mdiblasio): how to bold in templates?  -->
-
-```js/6
-let shippingAddress = shippingAddressInput.value;  
-if (!checkValidAddress(shippingAddress)) {  
-  // invalid card number, set custom validity message  
-  shippingAddressInput.setCustomValidity('This is not a valid address.');  
-} else {  
-  // valid card number, reset message  
-  shippingAddressInput.setCustomValidity('');  
-}  
-``` 
-
-### Set custom validation messages
-
-Default validation messages can be vague and difficult to understand. Use the [Constraint Validation API](https://w3c.github.io/html/sec-forms.html#constraints) to provide helpful, specific and non-technical validation messages when users enter invalid information.
+If built-in validation attributes aren't enough, use the [Constraint Validation API](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) to manually mark fields invalid. To manually invalidate a field, call `setCustomValidity()` on the invalid input element and provide a helpful, specific and non-technical validation message to the user.
 
 For example, you can provide different email validation messages based on a
-particular invalidation reason using the `validity` object property:
+particular invalidation reason using the `validity` object property. Be sure to reset the error message when the field becomes valid:
 
-```js/2,5
+```js/2-3,5-6,9
 if (!emailInput.validity.valid) {  
   // case 1 - value missing
   if (emailInput.validity.valueMissing)  
@@ -152,65 +116,28 @@ if (!emailInput.validity.valid) {
 }  
 ```
 
-#### Case 1: Missing required email address
-
 <figure class="w-figure">
-  <img src="image-missing-field-default.png" alt="default validation message for missing field" style="max-width: 400px;">
+  <img class="w-screenshot" src="image-invalid-field-default.png" alt="default validation message for invalid field" style="max-width: 400px;">
 </figure>
-
-<!-- TODO (mdiblasio): update image / message, label should be above -->
-
-{% Compare 'worse', 'Less helpful' %}
-Default validation message is vague.
-{% endCompare %}
-
-<figure class="w-figure">
-  <img src="image-missing-field-custom.png" alt="custom validation message for missing field" style="max-width: 400px;">
-</figure>
-
-<!-- TODO (mdiblasio): update image / message, label should be above -->
-
-{% Compare 'better', 'More helpful' %}
-Custom validation message is specific.
-{% endCompare %}
-
-#### Case 2: Invalid email address
-
-<figure class="w-figure">
-  <img src="image-invalid-field-default.png" alt="default validation message for invalid field" style="max-width: 400px;">
-</figure>
-
-<!-- TODO (mdiblasio): update image / message, label should be above -->
 
 {% Compare 'worse', 'Less helpful' %}
 Default validation message is technincal and may be difficult for some users to understand.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="image-invalid-field-custom.png" alt="custom validation message for invalid field" style="max-width: 400px;">
+  <img class="w-screenshot" src="image-invalid-field-custom.png" alt="custom validation message for invalid field" style="max-width: 400px;">
 </figure>
-
-<!-- TODO (mdiblasio): update image / message, label should be above -->
 
 {% Compare 'better', 'More helpful' %}
 Custom validation message is  non-technical and easy to understand.
 {% endCompare %}
 
 
-### Show feedback in real-time
+## Show feedback in real-time
 
-<!-- <div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">46<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc"><a href="https://bit.ly/msites-benchmark-uk-2018">Did not implement error messaging in real-time</a></p>
-  </div>
-</div> -->
+You should check form data as users complete each field, rather than waiting for them to submit. This makes it quicker for users to correct mistakes, and makes it less likely that invalid or insecure data will be submitted. 
 
-
-You should check form data as users complete each field, rather than waiting for them to submit. This makes it quicker for users to correct mistakes, and makes it less likely that invalid or insecure data will be submitted.
-
-+   **Use CSS pseudo-classes** `invalid` and `valid` to apply custom styling:
-
+**Use CSS pseudo-classes** `invalid` and `valid` to apply custom styling:
 
 ```css
 input:not(:focus):invalid {  
@@ -222,24 +149,18 @@ input:not(:focus):valid {
 ```  
 <!-- [https://codepen.io/samdutton/pen/ZPrpmL](https://codepen.io/samdutton/pen/ZPrpmL) -->
 
-<figure class="w-figure">
-  <img src="https://screenshot.googleplex.com/noq2iTxzuh1.png" alt="CSS validation styling" style="max-width: 400px;">
+<figure class="w-figure" style="text-align: center;">
+  <img class="w-screenshot" src="https://screenshot.googleplex.com/noq2iTxzuh1.png" alt="CSS validation styling" style="max-width: 400px;">
   <figcaption class="w-figcaption">
     Example - CSS validation styling.
   </figcaption>
 </figure>
 
-<div class="w-aside w-aside--caution">
-  Do not rely on color alone to communicate status. Colors
-should compliment validation messages. If you don't plan to use real-time,
-inline validation messages (described below), include an additional cue (e.g.
-validation symbol) that communicates validity.
-</div>
+{% Aside 'caution' %}
+To make your forms accessible to all users, do not rely on color alone to communicate status. Colors should compliment validation messages. If you don't plan to use real-time, inline validation messages (described below), include an additional cue (e.g. validation symbol) that communicates validity.
+{% endAside %}
 
-+   **Display validation messages inline.** Users will not see validation
-    messages until they try to submit the form. Rather than wait, display
-    validation messages inline _after_ the user has finished inputting data
-    using the `blur` event:
+**Display validation messages inline.** Users will not see validation messages until they try to submit the form. Rather than wait, display validation messages inline _after_ the user has inputting data using the `blur` event:
 
 ```js
 firstNameInput.addEventListener("blur", function(evt) {  
@@ -247,8 +168,8 @@ firstNameInput.addEventListener("blur", function(evt) {
 });  
 ```
 
-<figure class="w-figure">
-  <video autoplay loop muted playsinline>
+<figure class="w-figure" style="text-align: center;">
+  <video class="w-screenshot" autoplay loop muted playsinline>
     <source src="video-inline-validation.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
@@ -285,11 +206,6 @@ This doesn't obviate the need for server-side checks! Always be sure to
 validate form submissions server-side.
 {% endAside %}
 
-<!-- <div class="w-aside w-aside--note">
-  Don't group validation messages at the top or bottom of the form. Rather,
-display them inline as described above.
-</div> -->
-
 ## Next steps
 
 This series of guides will show you how to optimize forms for a variety of
@@ -301,7 +217,8 @@ e-commerce conversion flows.
 
 +   [Validate user input](../form-fatigue-validate-user-input)
 
-+   [Analytics and A/B testing](../form-fatigue-analytics-ab-testing)
++   _Coming soon!_ Analytics and A/B testing
+<!-- +   [Analytics and A/B testing](../form-fatigue-analytics-ab-testing) -->
 
 ### Find out more
 

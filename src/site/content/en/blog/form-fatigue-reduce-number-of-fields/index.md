@@ -11,17 +11,7 @@ tags:
   - ux
 ---
 
-<!-- TODO (): update tags -->
-
-_This is post 3 of 5 of the [Reduce form fatigue series](../form-fatigue) that
-shows you how to build better forms for online stores._
-
-<!-- TODO (robdodson): is there a format we should use for this line that opens each article?  -->
-
-<!-- TODO (dutton): is there a format we should use for this line that opens each article?  -->
-
-The best forms are the ones with the fewest inputs. 
-
+<!-- TODO (mdiblasio): update tags -->
 
 <div class="w-stats">
   <div class="w-stat">
@@ -40,8 +30,9 @@ app because there are too many steps to purchase</a></p>
   </div>
 </div>
 
-+   **Consolidate fields where possible**. For example, ask users for
-    their full name instead of first and last names separately:
+The best forms are the ones with the fewest inputs. This guide you will learn how to reduce the number of fields and steps in your forms.
+
+**Consolidate fields where possible**. For example, ask users for their full name instead of first and last names separately:
 
 <figure class="w-figure">
   <img src="image-first-last-name.png" alt="separate first and last name fields" style="max-width: 400px;">
@@ -68,10 +59,10 @@ accessible to all users. Small text should have a contrast ratio of at least
 <!-- Use `street-address` vs both `address-line1` and `address-line2`
 unless they're required for your address format. -->
 
-+   **Don't make users confirm information twice**, such as email address:
+**Don't make users confirm information twice**, such as email address:
 
 <figure class="w-figure">
-  <img src="image-redundant-information.png" alt="redundant form fields" style="max-width: 400px;">
+  <img class="w-screenshot" src="image-redundant-information.png" alt="redundant form fields" style="max-width: 400px;">
 </figure>
 
 {% Compare 'worse' %}
@@ -79,7 +70,7 @@ User must enter email and password twice.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="image-no-duplicated-fields.png" alt="no duplicated form fields" style="max-width: 400px;">
+  <img class="w-screenshot" src="image-no-duplicated-fields.png" alt="no duplicated form fields" style="max-width: 400px;">
 </figure>
 
 {% Compare 'better' %}
@@ -88,59 +79,37 @@ User enters email and password once.
 
 <!-- TODO (mdiblasio): better image illustration -->
 
-+   **Use sensible defaults** on inputs that can be easily inferred, such
-    as country and currency. Default to the same billing and shipping addresses:
+**Use sensible defaults** on inputs that can be easily inferred, such as country and currency. Default to the same billing and shipping addresses:
 
-<figure class="w-figure">
-  <img src="image-sensible-defaults.png" alt="default option for same billing and shipping address" style="max-width: 400px;">
-  <figcaption class="w-figcaption">
-    Fig. 2 — Small image.
-  </figcaption>
+<figure class="w-figure" style="text-align: center;">
+  <img class="w-screenshot" src="image-sensible-defaults.png" alt="default option for same billing and shipping address" style="max-width: 400px;">
 </figure>
-
-<!-- TODO (mdiblasio): highlight checkbox -->
-
-<div class="w-aside w-aside--caution">
-  
-</div>
 
 {% Aside 'caution' %}
 When users provide separate shipping and billing addresses, don't copy
 the shipping address into the billing address (and use separate `autocomplete` attributes noted below) as this will create more work for users.
 {% endAside %}
 
-+   **Avoid collecting data that isn't absolutely necessary**. Remove
-    optional form fields that are not required to complete the purchase or
-    consider asking later (e.g. "How did you hear about us?")
+**Avoid collecting data that isn't absolutely necessary**. Remove optional form fields that are not required to complete the purchase or consider asking later (e.g. "How did you hear about us?")
 
-+   **Set the `required` attribute** on all fields that must contain a
-    value before the form can be submitted. 
+**Set the `required` attribute** on all fields that must contain a value before the form can be submitted. 
 
 ```html
 <input required />  
 ```
 
-+   **Mark optional fields** (instead of required fields) so it is
-    obvious to users. Avoid using the asterisk (\*) to mean "optional":
+**Mark optional fields** (instead of required fields) so it is obvious to users. Avoid using the asterisk (\*) to mean "optional".
+
+<!-- <figure class="w-figure" style="text-align: center;">
+  <img class="w-screenshot" src="image-optional-fields.png" alt="distinguished optional form fields" >
+</figure> -->
+
+<!-- TODO (mdiblasio): keep?  -->
+
+**Don't use drop downs if less than three options.** Instead, use buttons to minimize taps and display all options to users:
 
 <figure class="w-figure">
-  <img src="image-optional-fields.png" alt="distinguished optional form fields" >
-  <figcaption class="w-figcaption">
-    Fig. 2 — Distinguish optional fields.
-  </figcaption>
-</figure>
-
-<!-- TODO (mdiblasio): crop? remove?  -->
-
-{% Compare 'better' %}
-Distinguish optional fields.
-{% endCompare %}
-
-+   **Don't use drop downs if less than three options.** Instead, use
-    buttons to minimize taps and display all options to users:
-
-<figure class="w-figure">
-  <img src="image-dropdown.png" alt="shipping options dropdown" style="max-width: 400px;">
+  <img class="w-screenshot" src="image-dropdown.png" alt="shipping options dropdown" style="max-width: 400px;">
 </figure>
 
 {% Compare 'worse' %}
@@ -148,12 +117,12 @@ Delivery methods hidden behind dropdown.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="image-no-dropdown.png" alt="shipping options displayed as radio options" style="max-width: 400px;">
+  <img class="w-screenshot" src="image-no-dropdown.png" alt="shipping options displayed as radio options" style="max-width: 400px;">
 </figure>
 
 {% Compare 'better' %}
-All delivery options visible to users.
-{% endCompare %}s
+All delivery options visible to user.
+{% endCompare %}
 
 {% Aside 'note' %}
 If you have more than three options, create standard dropdowns with
@@ -161,27 +130,25 @@ If you have more than three options, create standard dropdowns with
 frameworks or autofill. 
 {% endAside %}
 
-+   **Match the field length** to the expected length of the input.
-    Fields like zip code and state should be narrow in width:
+**Match the field length** to the expected length of the input. Fields like zip code and state should be narrow in width:
 
 <figure class="w-figure">
-  <img src="image-wide-fields.png" alt="form fields do not match expected length" style="max-width: 400px;">
+  <img class="w-screenshot" src="image-wide-fields.png" alt="form fields do not match expected length" style="max-width: 400px;">
 </figure>
 
 {% Compare 'worse' %}
-Delivery methods hidden behind dropdown.
+Zip code and state fields do match expected input.
 {% endCompare %}
 
 <figure class="w-figure">
-  <img src="image-matching-width.png" alt="form fields match expected length" style="max-width: 400px;">
+  <img class="w-screenshot" src="image-matching-width.png" alt="form fields match expected length" style="max-width: 400px;">
 </figure>
 
 {% Compare 'better' %}
 Zip code and state fields match input length.
 {% endCompare %}
 
-+   **Wait to reveal parts of your form** until the user needs to
-    interact with it. 
+**Wait to reveal parts of your form** until the user needs to interact with it. 
 
 <!-- TODO (mdiblasio): elaborate? -->
 
@@ -202,9 +169,7 @@ perceived complexity:
 +   **Always show the user their progress** at each step using a visual
     indicator or progress bar.
     [Progress indicators can significantly reduce cart abandonment](https://econsultancy.com/ecommerce-checkout-progress-indicators-essential-not-optional/).
-
 <!-- TODO (mdiblasio): illustration? -->
-
 +   **Use a single high-contrast, large and descriptive call-to-action** 
     that makes the next steps obvious. For example, "Proceed to Payment"
     instead of "Submit".
@@ -357,10 +322,8 @@ recommended list of common `name` and `autocomplete` values:
   </tbody>
 </table>
 
-
 For a complete list of all the accepted values, see the
 [WHATWG HTML Living Standard](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).
-
 
 {% Aside 'note' %}
 If your form contains billing and shipping address fields, add
@@ -374,8 +337,6 @@ If your form contains billing and shipping address fields, add
 <label for="billing-address">Street Address</label>  
 <input id="billing-address" autocomplete="billing street-address" …>  
 ```
-
-<!-- TODO (robdodson): how to highlight / bold individual attributes? -->
 
 {% Aside 'gotchas' %}
 Take caution to correctly spell autocomplete values! A common mistake
@@ -393,7 +354,8 @@ e-commerce conversion flows.
 
 +   [Validate user input](../form-fatigue-validate-user-input)
 
-+   [Analytics and A/B testing](../form-fatigue-analytics-ab-testing)
++   _Coming soon!_ Analytics and A/B testing
+<!-- +   [Analytics and A/B testing](../form-fatigue-analytics-ab-testing) -->
 
 ## Find out more
 
