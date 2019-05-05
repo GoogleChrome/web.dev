@@ -64,7 +64,7 @@ if (navigator.connection && !!navigator.connection.effectiveType) {
 
 ## Step 2: Load video
 
-If the `effectiveType` is `'4g'`, you can use the video loading code from the
+If the `effectiveType` is `'4g'`, use the video loading code from the
 beginning of the codelab.
 
 ```js
