@@ -172,7 +172,7 @@ Remember how this API has an `onchange`
 [event listener](http://localhost:8080/fast/adaptive-serving-based-on-network-quality#how-it-works)?
 You can use it for many things: dynamically adapting content such as video quality; restarting deferred data transfers when a change to a high-bandwidth network type is detected; or notifying users when the network quality changes.
 
-Here’s a simple example of how this listener works, add it to `script.js`. This
+Here’s a simple example of how to use this listener. Add it to `script.js`. This
 code will call the `displayNetworkInfo` function whenever the network
 information changes.
 
