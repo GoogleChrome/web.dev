@@ -22,23 +22,19 @@ serve an image. `effectiveType` can be `'slow-2g'`, `'2g'`, `'3g'`, or `'4g'`.
 
 ## Step 1: Check connection type
 
-The background video is currently specified on line 22 of `index.html` and then
-lazy-loaded in `script.js`.
+The `index.html` file contains a `<video>` tag to display the background video (line 22). The code in `script.js` loads the video by setting the video tag's `src` attribute. (The video loading code is described in more detail in [Step 2](https://web.dev/codelab-adapt-video-to-image-serving-based-on-network-quality#step-2:-load-video).)
 
-To load it conditionally, first check if connection type detection is supported.
-In `script.js` add an if statement that tests whether the `navigator.connection`
-object exists and whether it has the `effectiveType` property.
+To load the video conditionally, first check if the Network Information API is available; if it is, check the connection type.
 
-Then add an if statement to check the `effectiveType` of the network. To load
-the video only on the fastest connections, it’s enough to check the connection
-for `4g` and in any other case load the image.
+1. In `script.js`, add an `if` statement that tests whether the `navigator.connection` object exists and whether it has the `effectiveType` property.
+2. Add an `if` statement to check the `effectiveType` of the network. 
 
 ```js
 if (navigator.connection && !!navigator.connection.effectiveType) {
   if (navigator.connection.effectiveType === '4g') {
-    // video loading code
+    // Only load video on the fastest connections.
   } else {
-    // image loading code
+    // In any other case load the image.
   }
 }
 ```
@@ -78,22 +74,15 @@ if (navigator.connection.effectiveType === '4g') {
 }
 ```
 
-Here’s how the video loading code works: the video source is specified inside
-[data-src attribute](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
-in `index.html` and then lazy-loaded in `script.js`.
+Here’s how the video loading code works: the `<video>` tag doesn't download or display anything at first because its `src` attribute is not set. The video URL to load is specified using the `data-src` attribute.
 
 ```html
 <video id="coverVideo" autoplay loop muted data-src="https://cdn.glitch.com/b6491350-b058-4eb6-aa6c-55c93122073e%2FMatrix%2C%20Console%2C%20Hacking%2C%20Code.mp4?1551464245607"></video>
 ```
 
-Because the video source is specified in the `data-src` attribute, it isn’t
-displayed or downloaded initially.
-[Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
-allow you to store extra information on standard HTML elements. A data element can be
-named anything, as long as it starts with "data-".
+[Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes) allow you to store extra information on standard HTML elements. A data element can be named anything, as long as it starts with "data-".
 
-To actually display the video on the page, the location from `data-src` needs to
-be set as the `src` attribute of the video element. This is done in `script.js`.
+To actually display the video on the page, you need to get the value from `data-src` and set it as the video element's `src` attribute.
 
 First, get the DOM element that contains the asset:
 
@@ -154,11 +143,10 @@ if (navigator.connection.effectiveType === '4g') {
 
 To test it yourself:
 
-1. Mouse over the editor, press the **App** button, then press the **Show**
-   button to preview the app.
+1. Mouse over the editor, click **App** button, then click **Show** to preview the app.
 2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
 3. Click the **Network** tab.
-4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select  **Fast 3G**.
+4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
 
 <img class="w-screenshot" src="./devtools_network_throttling.png" alt='DevTools Network tab with Fast 3G throttling option highlighted'>
 
@@ -169,7 +157,7 @@ Now reload the page with Fast 3G still enabled. The app loads an image in the ba
 ## Extra Credit: Respond to changes
 
 Remember how this API has an `onchange`
-[event listener](http://localhost:8080/fast/adaptive-serving-based-on-network-quality#how-it-works)?
+[event listener](https://web.dev/adaptive-serving-based-on-network-quality#how-it-works)?
 You can use it for many things: dynamically adapting content such as video quality; restarting deferred data transfers when a change to a high-bandwidth network type is detected; or notifying users when the network quality changes.
 
 Here’s a simple example of how to use this listener. Add it to `script.js`. This
@@ -198,11 +186,10 @@ Here’s the final state of the [app on Glitch](https://glitch.com/~adaptive-ser
 
 To test it again:
 
-1. Mouse over the editor, click **App** button, then click **Show**
-   button to preview the app.
+1. Mouse over the editor, click **App** button, then click **Show** to preview the app.
 2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
 3. Click the **Network** tab.
-4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select  **Fast 3G**.
+4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
 5. Reload the page.
 
 The app will update the network information to **3g**:
