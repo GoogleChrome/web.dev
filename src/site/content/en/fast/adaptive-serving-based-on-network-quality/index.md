@@ -35,7 +35,7 @@ experience:
 * Defer uploads and downloads when users are on a slow connection. 
 * Enable offline mode if the network quality is not good enough to load the app
   and use the features.
-* Warn users that doing something (e.g. watching video) over cellular could cost
+* Warn users that doing something (for example, watching video) over cellular could cost
   them money.
 * Use it in your analytics to gather data on your users’ network quality.
 
