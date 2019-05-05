@@ -203,7 +203,7 @@ To test it again:
 2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
 3. Click on the **Network tab**.
 4. Select **Fast 3G** from throttling presets.
-5. **Reload** the page.
+5. Reload the page.
 
 The app will update the network information to **3g**:
 
