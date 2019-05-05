@@ -162,7 +162,7 @@ To test it yourself:
 
 <img class="w-screenshot" src="./devtools_network_throttling.png" alt='DevTools Network tab with Fast 3G throttling option highlighted'>
 
-Now reload the page with Fast 3G still enabled and the app will load an image in the background instead of the video:
+Now reload the page with Fast 3G still enabled. The app loads an image in the background instead of the video:
 
 <img class="w-screenshot" src="./netinfo_app_image.png" alt='Matrix-like image background with "NETWORK INFORMATION" text overlay'>
 
