@@ -157,7 +157,7 @@ To test it yourself:
 1. Mouse over the editor, press the **App** button, then press the **Show**
    button to preview the app.
 2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
-3. Click on the **Network tab**.
+3. Click the **Network** tab.
 4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select  **Fast 3G**.
 
 <img class="w-screenshot" src="./devtools_network_throttling.png" alt='DevTools Network tab with Fast 3G throttling option highlighted'>
