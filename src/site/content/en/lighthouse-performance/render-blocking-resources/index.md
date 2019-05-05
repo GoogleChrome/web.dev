@@ -96,6 +96,10 @@ When loading a page,
 the browser only blocks the first paint to retrieve the stylesheets that match the user's device
 (see [Render-Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css)).
 
+Finally, you'll want to minify your CSS to remove any extra whitespace or
+characters (see [Minify CSS](/minify-css)).
+This ensures that you're sending the smallest possible bundle to your users.
+
 ## How to eliminate render-blocking imports
 
 For non-critical HTML imports, mark them with the `async` attribute. As a

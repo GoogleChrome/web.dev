@@ -1,11 +1,10 @@
 ---
 layout: post
 title: Minify CSS
-author: demianrenzulli
+authors:
+  - demianrenzulli
 description: |
   Learn how to minify CSS files, to improve performance, without affecting how the browser process the styles.
-web_lighthouse:
-- render-blocking-resources
 date: 2019-05-02
 ---
 
