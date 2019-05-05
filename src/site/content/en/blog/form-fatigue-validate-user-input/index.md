@@ -1,6 +1,8 @@
 ---
 title: "Reduce form fatigue: validate user input"
 author: mdiblasio
+hero: hero.jpg
+alt: Online shopping
 date: 2019-05-02
 description: |
   This post describes how to validate user input.

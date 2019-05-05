@@ -1,6 +1,8 @@
 ---
 title: "Reduce form fatigue: guide users to proper input"
 author: mdiblasio
+hero: hero.jpg
+alt: Online shopping
 date: 2019-05-04
 description: |
   This post describes how to guide users to enter the proper information into forms.

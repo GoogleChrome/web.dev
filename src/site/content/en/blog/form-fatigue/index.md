@@ -1,6 +1,8 @@
 ---
 title: Reduce form fatigue to improve conversion
 author: mdiblasio
+hero: hero.jpg
+alt: Online shopping
 date: 2019-05-05
 description: |
   Designing efficient forms can reduce the number of actions a user must take, reduce friction and improve conversion

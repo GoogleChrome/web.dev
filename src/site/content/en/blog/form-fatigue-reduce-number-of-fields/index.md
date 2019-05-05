@@ -1,6 +1,8 @@
 ---
 title: "Reduce form fatigue: reduce the number of fields and steps"
 author: mdiblasio
+hero: hero.jpg
+alt: Online shopping
 date: 2019-05-03
 description: |
   This post describes how to reduce the number of field and steps in forms.
