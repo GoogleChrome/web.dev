@@ -43,7 +43,7 @@ if (navigator.connection && !!navigator.connection.effectiveType) {
 }
 ```
 
-Wrap the existing video loading code in an else statement, so that video will
+Wrap the existing video loading code in an `else` statement, so that video will
 still load in browsers that don’t support the Network Information API.
 
 ```js
