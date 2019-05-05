@@ -1372,5 +1372,18 @@
     "description": {
       "en": "Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed."
     }
+  },
+  "bojanpavic": {
+    "name": {
+      "given": "Bojan",
+      "family": "Pavic"
+    },
+    "github": "bojanpavic"
+  },
+  "ansteychris": {
+    "name": {
+      "given": "Chris",
+      "family": "Anstey"
+    }
   }
 }
