@@ -89,7 +89,7 @@ in `index.html` and then lazy-loaded in `script.js`.
 Because the video source is specified in the `data-src` attribute, it isn’t
 displayed or downloaded initially.
 [Data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
-allow you to store extra information on standard HTML elements. They can be
+allow you to store extra information on standard HTML elements. A data element can be
 named anything, as long as it starts with "data-".
 
 To actually display the video on the page, the location from `data-src` needs to
