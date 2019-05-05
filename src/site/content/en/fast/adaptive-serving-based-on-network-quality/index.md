@@ -12,8 +12,8 @@ codelabs:
 
 Loading a website can be a very different experience depending on the network
 conditions. Everything is usually smooth when you are on a fast network, but
-when you're on the go with a humble data plan and spotty connection, or stuck
-with a laptop on a sluggish coffee shop wifi, it's a different story.
+when you're on the go with a limited data plan and spotty connection, or stuck
+with a laptop on slow coffee-shop Wi-Fi, it's a different story.
 
 One way to deal with this is by adapting which assets you're serving to users
 based on the quality of their connection. This is now possible with the
@@ -50,7 +50,7 @@ link to "load basic HTML (for slow connections)".
 
 ## How it works
 
-The **navigator.connection** object contains information about a client’s
+The `navigator.connection` object contains information about a client’s
 connection. Its properties are explained in the table bellow.
 
 <div class="w-table-wrapper">
@@ -86,7 +86,7 @@ Here’s what this looks like when you run it in the browser’s console:
 
 <img class="w-screenshot" src="./network_information_in_console.jpg" alt="Chrome DevTools console displaying the values of navigator.connection object's properties"> 
 
-The **effectiveType** values are also available via
+The `effectiveType` values are also available via
 [Client Hints](https://www.chromestatus.com/features/5407907378102272)
 and allow you to communicate the browser's connection type to servers.
 
@@ -96,11 +96,11 @@ You can access Network Information API inside
 to adapt to situations when users are offline.
 {% endAside %}
 
-The **onchange** event listener enables you to dynamically adapt to changes in
+The `onchange` event listener enables you to dynamically adapt to changes in
 network quality. If you deferred uploads or downloads because of poor network
 conditions, you can rely on the event listener to restart the transfer when it
 detects better network conditions. You can also use it to notify users when the
-network quality changes. For example, if they lost their wi-fi signal and were
+network quality changes. For example, if they lost their Wi-Fi signal and were
 dropped to a cellular network this can prevent accidental data transfers (and
 charges 💸).
 
