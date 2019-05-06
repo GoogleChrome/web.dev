@@ -100,9 +100,8 @@ still have one load slower than this, and might drop out there.
 So while performance measurement is highly important, make sure to keep an open
 mind and question unexpected results - and make sure to not report misleading
 numbers to stakeholders and management. If unsure on what to pick and report,
-we'd advice as a minimum for 90th percentile FCP, which is also what we use
-across our public tooling
-(see [First Contentful Paint](/first-contentful-paint)).
+we'd advice as a minimum for 90th percentile [First Contentful Paint](/first-contentful-paint), which is also what we use
+across our public tooling.
 
 ## Third party content
 
