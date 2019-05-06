@@ -110,7 +110,7 @@ The basic idea is to:
 
 Such a script could look like this:
 
-```js
+```
 combineSteps  
 navigate	https://www.store.google.com/landingpage  
 navigate	https://www.store.google.com/productpage
@@ -143,17 +143,18 @@ the flow.
 provides an overview of how to get performance metrics via Puppeteer. A very
 simplified example node script could look like this:
 
-```
+```js
 const puppeteer = require('puppeteer');
 (async () => {  
   const browser = await puppeteer.launch();  
   const page = await browser.newPage();  
   const start = performance.now();  
   await page.goto('https://www.store.google.com/landingpage');  
-  await page.goto('[https://www.store.google.com/productpage');  
-  await page.click('#buy_btn');  // click the buy button, which triggers overlay
-basket  
-  await page.waitFor('#close_btn');  // wait until basket overlay is shown  
+  await page.goto('https://www.store.google.com/productpage');
+  // click the buy button, which triggers overlay basket  
+  await page.click('#buy_btn'); 
+  // wait until basket overlay is shown 
+  await page.waitFor('#close_btn'); 
   await page.goto('https://www.store.google.com/basket');  
   await page.goto('https://www.store.google.com/checkout');  
   console.log('Flow took ' + parseInt((performance.now() - start)/1000) + ' seconds');  
@@ -174,12 +175,22 @@ an eye on this though, and a great lab test tool for repeat visits is
 [WebPageTest](https://www.webpagetest.org/), which has a dedicated option for a
 direct repeat visit:
 
-![image](webpagetest_repeat.png)
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./webpagetest_repeat.png" alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.">
+  <figcaption class="w-figcaption w-figcaption--center">
+    Webpagetest offers options to test first load and repeat load as well
+  </figcaption>
+</figure>
 
 To get a better feeling for repeat visit performance in the field use your
 analytics package of choice to segment your performance metrics by user type.
 Here is an example of such a report in Google Analytics:
 
-![image](ga_speed_repeat.png)
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./ga_speed_repeat.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
+  <figcaption class="w-figcaption w-figcaption--center">
+    A Google Analytics custom report can be used to report speed metrics for new and returning users.
+  </figcaption>
+</figure>
 
 A report like this will give you page load times for new and returning users as well.
