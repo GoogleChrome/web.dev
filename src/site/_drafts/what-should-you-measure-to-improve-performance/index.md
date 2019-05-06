@@ -1,20 +1,28 @@
 ---
-layout: post
-title: What should you measure to improve performance
+title: How can performance improve conversion?
 subhead: Strategies to measure performance at each stage in the purchase funnel
-author: martinschierle
+authors: 
+  - martinschierle
+date: 2019-05-05
+hero: hero.jpg
 alt: Image of checkout button on a person's screen
 description: |
-  Learn what to measure to optimize different parts of the funnel for performance and therefore conversions.
-web_lighthouse: N/A
-date: 2019-05-01
+  Learn what impact website performance has on different parts of the e-commerce funnel
+wf_blink_components: Blink>Performance
+tags:
+  - performance
+  - ecommerce
 ---
-
 
 The different steps of a purchase funnel are prone to performance issues in
 different ways, and therefore need different measurement and optimizations:
 
-![image](funnel.png)
+<figure class="w-figure  w-figure--center">
+  <img src="./funnel.png" alt="" style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    Fig. 1 - Conversion funnel
+  </figcaption>
+</figure>
 
 In this guide we'll address how the different steps can be measured. For this we
 recommend you to look at lab as well as field data.
@@ -40,7 +48,7 @@ marks across the funnel.
 Optimizing for discovery means optimizing for the first load, which is what new
 users  will get, but also search and social
 [crawlers](https://developers.google.com/search/docs/guides/rendering). Improving on first load is
-covered in greater detail [here](https://web.dev/fast).   
+covered in greater detail in [Fast load times](/fast).   
 Lab data for a first load can be easily acquired through
 [Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse),
 while field data (at least for Chrome) is readily available through [Chrome UX
