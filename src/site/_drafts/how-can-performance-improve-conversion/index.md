@@ -41,7 +41,7 @@ After getting users to your site, you need to keep them engaged with your conten
 <figure class="w-figure  w-figure--center">
   <img src="./ga_flow.png" alt="" style="max-width: 400px;">
   <figcaption class="w-figcaption">
-    Fig. 3 - A user flow through the funnel as seen by Google Analytics
+    Fig. 2 - A user flow through the funnel as seen by Google Analytics
   </figcaption>
 </figure>
 
@@ -61,6 +61,11 @@ Make sure to optimize for fast repeat loads and smooth UX flows to increase chan
 
 E-commerce sites always strive for conversions, which are at the end of a purchase funnel. Every step along the funnel needs to be optimized for website speed to minimize bounce rates and drop-offs, and for each step there are different things to optimize, different pitfalls and culprits:
 
-![image](funnel2.png)
+<figure class="w-figure  w-figure--center">
+  <img src="./funnel2.png" alt="An e-commerce funnel showing which metric to optimize in which step." style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    Fig. 3 - An e-commerce funnel showing which metric to optimize in which step.
+  </figcaption>
+</figure>
 
 In the following guide and codelab we will show you what and how to measure these steps.
