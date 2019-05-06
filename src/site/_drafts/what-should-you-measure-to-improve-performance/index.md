@@ -4,8 +4,8 @@ subhead: Strategies to measure performance at each stage in the purchase funnel
 authors: 
   - martinschierle
 date: 2019-05-05
-hero: hero.jpg
-alt: Image of checkout button on a person's screen
+hero: funnel.png
+alt: A typical conversion funnel, and what to measure for each step.
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
 wf_blink_components: Blink>Performance
