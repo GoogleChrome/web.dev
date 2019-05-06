@@ -1,7 +1,9 @@
 ---
 layout: post
 title: What should you measure to improve performance
+subhead: Strategies to measure performance at each stage in the purchase funnel
 author: martinschierle
+alt: Image of checkout button on a person's screen
 description: |
   Learn what to measure to optimize different parts of the funnel for performance and therefore conversions.
 web_lighthouse: N/A
