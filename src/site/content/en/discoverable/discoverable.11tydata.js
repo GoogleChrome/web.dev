@@ -12,7 +12,7 @@ module.exports = {
     overview: `Making your content discoverable matters because it's how you get
     more relevant users viewing your content. If a search engine has trouble
     seeing your page, you're possibly missing out on a source of traffic.
-  
+
     By making sure search engines can find and automatically understand your
     content, you are improving the visibility of your site for relevant
     searches. This is called SEO, or search engine optimization, which can

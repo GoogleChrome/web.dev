@@ -66,7 +66,7 @@ module.exports = ({post}) => {
           >
             ${data.title}
           </h2>
-          
+
         </div>
         <div class="w-post-card__desc">
           <p class="w-post-card__subhead">
