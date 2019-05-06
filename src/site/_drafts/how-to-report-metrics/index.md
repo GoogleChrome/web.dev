@@ -48,7 +48,7 @@ report to do so looks like this in Google Analytics:
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./speed_report.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
   <figcaption class="w-figcaption w-figcaption--center">
-    Google Analytics' custom report builder.
+    How to build a custom report to analyze the impact of speed on conversions and engagement in Google Analytics.
   </figcaption>
 </figure>
 
