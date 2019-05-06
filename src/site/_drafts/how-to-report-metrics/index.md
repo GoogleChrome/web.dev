@@ -131,9 +131,16 @@ Some ways to handle third party content with respect to performance:
     [take advantage of HTTP2 synergies](https://developers.google.com/web/fundamentals/performance/http2/)
      as there is only one host involved.
 +   Routinely audit and clean out redundant third party scripts, trackers
-    and widgets.
+    and widgets. This can easily be done via [Ghostery Extension](https://chrome.google.com/webstore/detail/ghostery-%E2%80%93-privacy-ad-blo/mlomiejdfkolichcflejclcbmpeaniij?hl=en) or tools like [WhatRuns](https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=en)
 +   Make sure not to use the same functionality from two different vendors.
     You shouldn't need two tag managers or two analytics platforms.
+    
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./ghostery.png" alt="A Ghostery report showing all loaded trackers.">
+  <figcaption class="w-figcaption w-figcaption--center">
+    A Ghostery report showing all loaded trackers
+  </figcaption>
+</figure>
 
 Find out more from
 [Loading Third-Party JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/).
