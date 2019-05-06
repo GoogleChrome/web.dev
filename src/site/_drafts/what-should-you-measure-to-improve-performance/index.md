@@ -37,7 +37,7 @@ not be representative of the performance users experience in real life.
 representative of their experience. However, it can't easily be compared over
 time or with competitors. Network connections and smartphone hardware evolve
 over time, and different target audiences might have different devices, thereby
-making comparisons with field data tough.   
+making comparisons with field data tough. See also _[Measure Performance In The Field](/fast#measure-performance-in-the-field)_.
 
 To get a complete picture, both data sources are needed. The following sections
 show how to gather lab and field data for the different relevant performance
