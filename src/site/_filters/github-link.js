@@ -25,5 +25,5 @@ module.exports = (inputPath) => {
     );
   }
   const branch = `master`;
-  return path.join(repo, 'blob', branch, inputPath);
+  return `${repo}/${path.join('blob', branch, inputPath)}`;
 };
