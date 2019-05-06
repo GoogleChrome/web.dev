@@ -41,7 +41,7 @@ After getting users to your site, you need to keep them engaged with your conten
 <figure class="w-figure  w-figure--center">
   <img src="./ga_flow.png" alt="" style="max-width: 400px;">
   <figcaption class="w-figcaption">
-    Fig. 1 - A user flow through the funnel as seen by Google Analytics
+    Fig. 3 - A user flow through the funnel as seen by Google Analytics
   </figcaption>
 </figure>
 
