@@ -1,7 +1,9 @@
 ---
 layout: post
 title: How can performance improve conversion?
+subhead: Optimize your site's performance and improve conversions.
 author: martinschierle
+alt: Image of checkout button on a person's screen
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
 web_lighthouse: N/A
