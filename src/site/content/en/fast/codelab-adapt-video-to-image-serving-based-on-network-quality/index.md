@@ -22,7 +22,7 @@ serve an image. `effectiveType` can be `'slow-2g'`, `'2g'`, `'3g'`, or `'4g'`.
 
 ## Step 1: Check connection type
 
-The `index.html` file contains a `<video>` tag to display the background video (line 22). The code in `script.js` loads the video by setting the video tag's `src` attribute. (The video loading code is described in more detail in [Step 2](https://web.dev/codelab-adapt-video-to-image-serving-based-on-network-quality#step-2:-load-video).)
+The `index.html` file contains a `<video>` tag to display the background video (line 22). The code in `script.js` loads the video by setting the video tag's `src` attribute. (The video loading code is described in more detail in [Step 2](/codelab-adapt-video-to-image-serving-based-on-network-quality#step-2:-load-video).)
 
 To load the video conditionally, first check if the Network Information API is available; if it is, check the connection type.
 
@@ -157,7 +157,7 @@ Now reload the page with Fast 3G still enabled. The app loads an image in the ba
 ## Extra Credit: Respond to changes
 
 Remember how this API has an `onchange`
-[event listener](https://web.dev/adaptive-serving-based-on-network-quality#how-it-works)?
+[event listener](/adaptive-serving-based-on-network-quality#how-it-works)?
 You can use it for many things: dynamically adapting content such as video quality; restarting deferred data transfers when a change to a high-bandwidth network type is detected; or notifying users when the network quality changes.
 
 Here’s a simple example of how to use this listener. Add it to `script.js`. This
