@@ -1,13 +1,17 @@
 ---
-layout: post
-title: How to report metrics and build a performance culture
+title: How can performance improve conversion?
 subhead: Understand why performance matters when it comes to conversion
-author: martinschierle
+authors: 
+  - martinschierle
+date: 2019-05-05
+hero: hero.jpg
 alt: Image of checkout button on a person's screen
 description: |
-  Learn how best to report metrics and make them tangible.
-web_lighthouse: N/A
-date: 2019-05-01
+  Learn what impact website performance has on different parts of the e-commerce funnel
+wf_blink_components: Blink>Performance
+tags:
+  - performance
+  - ecommerce
 ---
 
 ## Introduction
@@ -41,7 +45,12 @@ can be done by using your analytics tool of choice to map performance metrics to
 user engagement, conversions and transaction values. For example, a custom
 report to do so looks like this in Google Analytics:
 
-![image](speed_report.png)
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./speed_report.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
+  <figcaption class="w-figcaption w-figcaption--center">
+    Google Analytics' custom report builder.
+  </figcaption>
+</figure>
 
 ## Metrics can be deceiving
 
@@ -92,13 +101,14 @@ So while performance measurement is highly important, make sure to keep an open
 mind and question unexpected results - and make sure to not report misleading
 numbers to stakeholders and management. If unsure on what to pick and report,
 we'd advice as a minimum for 90th percentile FCP, which is also what we use
-across our public tooling.
+across our public tooling
+(see [First Contentful Paint](/first-contentful-paint)).
 
 ## Third party content
 
 Website performance is especially prone to being dragged down by third party
 content
-([see here](https://discuss.httparchive.org/t/analyzing-3rd-party-performance-via-http-archive-crux/1359)).
+(see [Eliminate render-blocking resources](/render-blocking-resources)).
 This is a particular problem for e-commerce, often due to trackers and widgets.   
 Some ways to handle third party content with respect to performance:
 
