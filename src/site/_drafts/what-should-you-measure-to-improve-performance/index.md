@@ -110,7 +110,7 @@ The basic idea is to:
 
 Such a script could look like this:
 
-```
+```js
 combineSteps  
 navigate	https://www.store.google.com/landingpage  
 navigate	https://www.store.google.com/productpage
