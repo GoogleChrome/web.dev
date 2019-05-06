@@ -1,26 +1,38 @@
 ---
-layout: post
 title: How can performance improve conversion?
 subhead: Optimize your site's performance and improve conversions.
-author: martinschierle
+authors: 
+  - martinschierle
+date: 2019-05-05
+hero: hero.jpg
 alt: Image of checkout button on a person's screen
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
-web_lighthouse: N/A
-date: 2019-05-01
+wf_blink_components: Blink>Performance
+tags:
+  - performance
+  - ecommerce
 ---
-
 
 In our other e-commerce guides you have learned about building a successful e-commerce website, which can easily be discovered, is good at engaging users, converts well and re-engages users. It shouldn't be surprising that each of these steps can also be impacted by the website's performance, and low performance will lead to additional dropoffs in the funnel.
 
-![image](funnel1.png)
+<figure class="w-figure  w-figure--center">
+  <img src="./funnel1.png" alt="" style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    Fig. 1 - Conversion funnel
+  </figcaption>
+</figure>
 
 In this guide we'll address the different ways in which a website should be optimized for speed to yield maximum conversions at the end of the funnel.
 
 ## Discovery
 
-New users discover a website in most cases through organic search, social sharing, website links or paid campaigns. Some important discovery mechanisms are directly affected by website performance. Website crawlers may have difficulty indexing sites that are slow to load or have extensive [client side rendering and Javascript](https://developers.google.com/search/docs/guides/dynamic-rendering). Speed can also be a direct ranking factor, for example on [web search](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html), [ad campaigns](https://developers.google.com/web/updates/2018/07/search-ads-speed#the_mobile_speed_score_for_ads_landing_pages) or [social networks](https://newsroom.fb.com/news/2017/08/news-feed-fyi-showing-you-stories-that-link-to-faster-loading-webpages/).  
-Furthermore keep in mind that new users who discover your website will get an uncached first load, so basically the worst possible experience. This can be especially frustrating if good money was spent to get the user to the website, just to see her dropping off due to a long first load. Make sure to use appropriate tools as described in [Fast Load Times](https://web.dev/fast) to optimize towards a first load, because first impressions matter—if the first load is too slow, the user may never see the optimized second load or stay around to look at your products. In general loading times of a website map [very well](https://developer.akamai.com/blog/2015/09/01/mobile-web-performance-monitoring-conversion-rate) to bounce rates, which in turn often correlate well with conversions.
+New users discover a website in most cases through organic search, social sharing, website links or paid campaigns. Some important discovery mechanisms are directly affected by website performance. Website crawlers may have difficulty indexing sites that are slow to load or have extensive [client side rendering and Javascript](https://developers.google.com/search/docs/guides/dynamic-rendering).
+
+Speed can also be a direct ranking factor, for example on [web search](https://webmasters.googleblog.com/2018/01/using-page-speed-in-mobile-search.html), [ad campaigns](https://developers.google.com/web/updates/2018/07/search-ads-speed#the_mobile_speed_score_for_ads_landing_pages) or [social networks](https://newsroom.fb.com/news/2017/08/news-feed-fyi-showing-you-stories-that-link-to-faster-loading-webpages/).  
+Keep in mind that new users who discover your website will get an uncached first load, so basically the worst possible experience. This can be especially frustrating if good money was spent to get the user to the website, just to see her dropping off due to a long first load. 
+
+Make sure to use appropriate tools as described in [Fast Load Times](https://web.dev/fast) to optimize towards a first load, because first impressions matter—if the first load is too slow, the user may never see the optimized second load or stay around to look at your products. In general loading times of a website map [very well](https://developer.akamai.com/blog/2015/09/01/mobile-web-performance-monitoring-conversion-rate) to bounce rates, which in turn often correlate well with conversions.
 
 ## Engagement
 
