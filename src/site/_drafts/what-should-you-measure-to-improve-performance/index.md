@@ -194,3 +194,6 @@ Here is an example of such a report in Google Analytics:
 </figure>
 
 A report like this will give you page load times for new and returning users as well.
+
+## Recap
+This guide showed you how to measure first load, flow and repeat load via field and lab tests. Make sure to optimize the different stzeps of the funnel accordingly to maximize discovery (first load), engagement (navigations and flow) and re-engagement (repeat load).
