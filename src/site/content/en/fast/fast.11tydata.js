@@ -60,6 +60,10 @@ module.exports = {
         pathItems: ['avoid-invisible-text'],
       },
       {
+        title: 'Optimize for network quality',
+        pathItems: ['adaptive-serving-based-on-network-quality'],
+      },
+      {
         title: 'Measure performance in the field',
         pathItems: [
           'chrome-ux-report',
