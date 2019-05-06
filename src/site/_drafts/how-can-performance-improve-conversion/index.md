@@ -36,7 +36,16 @@ Make sure to use appropriate tools as described in [Fast Load Times](https://web
 
 ## Engagement
 
-After getting users to your site, you need to keep them engaged with your content, which you can verify in your analytics of choice by looking at session length, time-on-page, pages-per-session and general [user flows](https://support.google.com/analytics/answer/1709395?hl=en). Besides various UX best practices, a smooth, fast and responsive experience is key here. While optimizing a website for discovery means optimizing for first load, optimizing for engagement means fast navigations and fast repeat loads. This can be analyzed for example via [WebPageTest](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-Sample-scripts), [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md) or via the Chrome DevTools [Record](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#record) feature. We will show you more examples of those in the following guides.
+After getting users to your site, you need to keep them engaged with your content, which you can verify in your analytics of choice by looking at session length, time-on-page, pages-per-session and general [user flows](https://support.google.com/analytics/answer/1709395?hl=en).
+
+<figure class="w-figure  w-figure--center">
+  <img src="./ga_flow.png" alt="" style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    Fig. 1 - A user flow through the funnel as seen by Google Analytics
+  </figcaption>
+</figure>
+
+Besides various UX best practices, a smooth, fast and responsive experience is key here. While optimizing a website for discovery means optimizing for first load, optimizing for engagement means fast navigations and fast repeat loads. Analyze at which steps of the flow users drop out, and then relate back to speed metrics for these navigations. This can be analyzed for example via [WebPageTest](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-Sample-scripts), [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md) or via the Chrome DevTools [Record](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#record) feature. We will show you more examples of those in the following guides.
 
 ## Conversion
 
