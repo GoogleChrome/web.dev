@@ -73,8 +73,7 @@ This is because faster pages reach a bigger audience who might be less engaged
 or committed. So while incremental traffic and conversions increase with faster
 pages, relative conversions (the ratio of conversions to page views or visitors)
 might still drop.  
-**Solution**: This effect can be eased by looking out for absolute conversions
-instead.
+**Solution**: This effect can be eased by looking out for absolute conversions instead, and even calculate Cost Per Sales (conversions divided with investment level) or ROI.
 
 ### Dropping Engagement
 
@@ -167,7 +166,7 @@ to do this:
 +   [Facebook](https://www.theverge.com/2015/10/28/9625062/facebook-2g-tuesdays-slow-internet-developing-world)
     and Google do this by providing slow networks across the company for testing.
 +   Make average, low-spec devices with low
-    [bandwidth or high latencies ](https://developers.google.com/web/fundamentals/performance/poor-connectivity/)available
+    [bandwidth or high latencies ](https://developers.google.com/web/fundamentals/performance/poor-connectivity/) available
     to management and other stakeholders.
 +   Consider adding overlays showing performance metrics on your development
     or staging servers. Connections to these servers from mobile can
@@ -176,3 +175,7 @@ to do this:
     or timestrips of your website's loading behavior, preferably in comparison
     to competitors. WebPageTest [can create
     these](https://www.webpagetest.org/video/) very easily and automatically.
++   Performance can also be fun - maybe a [game based on an individual Lighthouse report](https://g.co/perfgame) can reach         audiences which can't be reached by pure reports and metrics?
+    
+## Recap
+This guide explained why the selection of metrics and how they are reported and handled is as important as the measurement and optimization itself - or even more. Make sure to prefer percentiles or disctributions over averages, be cautious of just bounce rate or relative conversion rate as impact measures, and make sure that metrics are easy to understand and tangible for stakeholders across the company. Establishing a performance culture is also an important step towards a well performing e-commerce site.
