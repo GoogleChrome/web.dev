@@ -1,12 +1,13 @@
 ---
 title: What's new on web.dev
 subhead: New look. New docs. New blog!
-date: 2019-04-20
+date: 2019-05-05
 hero: hero.jpg
-alt: A description of the hero image for screen reader users.
+alt: A group of colorful hot air balloons launching into the sky.
 description: |
-  This post is a test to demonstrate all of the components that can go into
-  an article. This description appears in the meta tag.
+  For Google I/O 2019, the folks on the web.dev team have shipped a number of
+  updates including a refreshed design, more Lighthouse docs, and a brand
+  new blog.
 tags:
   - post # post is a required tag for the article to show up in the blog.
 ---
