@@ -4,8 +4,8 @@ subhead: Understand why performance matters when it comes to conversion
 authors: 
   - martinschierle
 date: 2019-05-05
-hero: hero.jpg
-alt: Image of checkout button on a person's screen
+hero: speed_report.png
+alt: A custom report in Google Analytics to connect speed with engagement and conversions.
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
 wf_blink_components: Blink>Performance
