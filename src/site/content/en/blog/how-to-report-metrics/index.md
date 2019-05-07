@@ -30,7 +30,9 @@ this successfully.
 
 ## A word about metrics
 
-There are countless metrics to evaluate website performance, and while it may seem useful to collect all of them, too many metrics can be confusing and misleading. There are several ways to deal with this:
+There are countless metrics to evaluate website performance, and while it may 
+seem useful to collect all of them, too many metrics can be confusing and 
+misleading. There are several ways to deal with this:
 
 -   Gather multiple metrics and try to narrow and filter afterwards on
     what might be relevant for the task at hand.
@@ -52,7 +54,7 @@ For example, a custom report to do so looks like this in Google Analytics:
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./speed_report.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
   <figcaption class="w-figcaption w-figcaption--center">
-    Fig 1 - Custom report in Google Analytics to analyze the impact of speed on conversions and engagement.
+    Fig 1: Custom report in Google Analytics to analyze the impact of speed on conversions and engagement.
   </figcaption>
 </figure>
 
@@ -60,7 +62,6 @@ For example, a custom report to do so looks like this in Google Analytics:
   **Metrics can be deceiving.**
   Unfortunately metrics can sometimes be misleading with respect to performance.
   Keep reading for specifics.   
-
 {% endAside %}
 
 ## Increasing bounce rate
@@ -90,7 +91,8 @@ might still drop.
 
 ### Solution
 
-This effect can be eased by looking out for absolute conversions instead, and even calculate Cost Per Sales (conversions divided with investment level) or ROI.
+This effect can be eased by looking out for absolute conversions instead, and 
+even calculate Cost Per Sales (conversions divided with investment level) or ROI.
 
 ## Dropping engagement
 
@@ -119,14 +121,15 @@ real performance issues, than to reveal them.
 ### Solution
 
 It's best to analyze complete distributions, but as this is not
-always easily possible we recommend using 90th percentiles—this is the value
+always easily possible we recommend using 90th percentiles — this is the value
 for which 90% of loads were faster. Even then a user hitting ten pages will
 still have one load slower than this, and might drop out there.
 
 While performance measurement is highly important, make sure to keep an open
-mind and question unexpected results - and make sure to not report misleading
+mind and question unexpected results — and make sure to not report misleading
 numbers to stakeholders and management. If unsure on what to pick and report,
-we'd advise as a minimum for 90th percentile [First Contentful Paint](/first-contentful-paint), which is also what we use
+we'd advise as a minimum for 90th percentile 
+[First Contentful Paint](/first-contentful-paint), which is also what we use
 across our public tooling.
 
 ## Third party content
@@ -135,6 +138,7 @@ Website performance is especially prone to being dragged down
 by third party content
 (see [Eliminate render-blocking resources](/render-blocking-resources)).
 This is a particular problem for e-commerce, often due to trackers and widgets.
+
 Some ways to handle third party content with respect to performance:
 
 -   Always keep third party content out of the
@@ -176,6 +180,7 @@ Learn more in
 Unfortunately performance is often seen as a one-off optimization task, and then
 regresses over time as stakeholders raise new feature requests or insist on
 adding new trackers and widgets.  
+
 Performance must be a continuous goal to improve acquisition, discovery, and
 conversion rates as well as safeguarding the reputation of your brand. This can
 be achieved with [performance
@@ -202,8 +207,8 @@ to do this:
     or timestrips of your website's loading behavior, preferably in comparison
     to competitors. WebPageTest [can create
     these](https://www.webpagetest.org/video/) very easily and automatically.
--   Performance can also be fun - maybe a [game based on an individual Lighthouse report](https://g.co/perfgame) can reach audiences which can't be reached by pure reports and metrics?
+-   Performance can also be fun — maybe a [game based on an individual Lighthouse report](https://g.co/perfgame) can reach audiences which can't be reached by pure reports and metrics?
     
 ## Recap
 
-This guide explains why the selection of metrics and how they are reported and handled is as important as the measurement and optimization itself - or even more. Make sure to prefer percentiles or disctributions over averages, be cautious of just bounce rate or relative conversion rate as impact measures, and make sure that metrics are easy to understand and tangible for stakeholders across the company. Establishing a performance culture is also an important step towards a well performing e-commerce site.
+This guide explains why the selection of metrics, and how they are reported and handled, is as important as the measurement and optimization itself — or even more. Make sure to prefer percentiles or distributions over averages, be cautious of using just bounce rate or relative conversion rate as impact measures, and make sure that metrics are easy to understand and tangible for stakeholders across the company. Establishing a performance culture is also an important step towards a well performing e-commerce site.
