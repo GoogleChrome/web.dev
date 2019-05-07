@@ -1,7 +1,7 @@
 ---
 title: web.dev at I/O 2019
 subhead: New look. New docs. New blog!
-date: 2019-05-05
+date: 2019-05-04
 hero: hero.jpg
 alt: A group of colorful hot air balloons launching into the sky.
 description: |
