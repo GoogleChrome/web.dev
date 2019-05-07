@@ -4,6 +4,7 @@ subhead: Secure your site by learning how to explicitly mark your cross-site coo
 authors:
   - rowan_m
 date: 2019-05-07
+hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage the
   SameSite attribute. You can enhance your site's security by making use of
@@ -421,7 +422,7 @@ attributes.
 *Kind thanks for contributions and feedback from Lily Chen, Malte Ubl, Mike
 West, Rob Dodson, Tom Steiner, and Vivek Sekhar*
 
-*"Monster cookie" hero image by [sheri
-silver](https://unsplash.com/photos/OkDURDz8CxU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+*Cookie hero image by [Pille-Riin
+Priske](https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 on
 [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
