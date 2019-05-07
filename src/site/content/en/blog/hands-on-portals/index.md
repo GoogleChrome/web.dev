@@ -17,7 +17,13 @@ tags:
   - ux
 ---
 
-A new web platform API called [Portals](https://github.com/WICG/portals) can help you maintain a good user experience as your users navigate across your site. See Portals in action:
+Making sure your pages load fast from the network is key to delivering a good
+user experience. But one area we often overlook is page transitions — what our
+users see when they move between pages.
+
+A new web platform API called [Portals](https://github.com/WICG/portals) aims to
+help with this by streamlining the experience as users navigate _across_ your
+site. See Portals in action:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="hero.gif" alt="Showing a demo of seamless navigations between two sites using Portals">
@@ -50,10 +56,6 @@ With classic navigations, users have to wait with a blank screen
 until the browser finishes rendering the destination.
 With Portals, users get to experience an animation,
 while the `<portal>` pre-renders content and creates a seamless navigation experience.
-
-For example, when the user selects a new chapter in the Figure 1 demo above,
-the pre-rendered chapter fully animates and covers the screen,
-while the URL switches to the next chapter.
 
 Before Portals, we could have rendered another page using an `<iframe>`. We could also have added animations to move the frame around the page. But an `<iframe>` won’t let you navigate into its content. Portals close this gap, enabling interesting use cases.
 
