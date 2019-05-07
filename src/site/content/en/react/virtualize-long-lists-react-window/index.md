@@ -19,8 +19,8 @@ Here's an example of a list that contains 1000 rows being rendered with
 
 <div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/react-window-fixed-list?path=src/App.js&previewSize=100"
-    alt="react-window-fixed-list on Glitch"
+    src="https://glitch.com/embed/#!/embed/react-window-fixed?path=src/App.js&previewSize=100"
+    alt="react-window-fixed on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -47,8 +47,6 @@ scrolling performance of the list.
 DOM nodes that exit the "window" are recycled, or immediately replaced with
 newer elements as the user scrolls down the list. This keeps the number of all
 rendered elements specific to the size of the window.
-
-<img class="w-screenshot" src="./scroll.gif" alt="DOM nodes changing on scroll in Chrome DevTools">
 
 ## react-window
 
@@ -147,8 +145,8 @@ The following embed shows an example of this component.
 <div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/react-window-variable-list?path=src/ListComponent.js&previewSize=100"
-    alt="react-window-variable-list on Glitch"
+    src="https://glitch.com/embed/#!/embed/react-window-variable?path=src/ListComponent.js&previewSize=100"
+    alt="react-window-variable on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -319,8 +317,8 @@ list.
 
 <div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/react-window-infinite-loader?path=src/ListComponent.js&previewSize=100"
-    alt="react-window-infinite-loader on Glitch"
+    src="https://glitch.com/embed/#!/embed/react-window-infinite?path=src/ListComponent.js&previewSize=100"
+    alt="react-window-infinite on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
