@@ -10,6 +10,7 @@
     <body>
       {% include 'styles.njk' %}
       {{ content | safe }}
+      <link rel="alternate" href="/feed.xml" title="web.dev feed" type="application/atom+xml">
       <devsite-content-footer
         class="w-layout-container nocontent"
       >
