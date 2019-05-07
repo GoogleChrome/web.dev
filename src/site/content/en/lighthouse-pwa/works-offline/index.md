@@ -25,6 +25,8 @@ Lighthouse flags when the page doesn't respond with a 200 when offline:
 Lighthouse emulates an offline connection using the Chrome Debugging Protocol,
 and then attempts to retrieve the page using `XMLHttpRequest`.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 1. Add a service worker to your app.
@@ -53,8 +55,6 @@ The codelab above shows you some basics on how to debug your service worker
 using Chrome DevTools. For more detailed help, see the codelab dedicated to
 this topic, [Debugging Service
 Workers](https://codelabs.developers.google.com/codelabs/debugging-service-workers).
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

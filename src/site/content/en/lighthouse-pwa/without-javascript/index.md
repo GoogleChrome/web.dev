@@ -35,6 +35,8 @@ Lighthouse disables JavaScript on the page and then inspects the page's HTML. If
 the HTML is empty then the audit fails. If the HTML is not empty then the audit
 passes.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 Progressive enhancement is a large and contentious topic. One camp says that,
@@ -65,8 +67,6 @@ computers.
 To see how your site looks and performs when JavaScript is disabled, use
 Chrome DevTools' [Disable
 JavaScript](https://developers.google.com/web/tools/chrome-devtools/settings#disable-js) feature.
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

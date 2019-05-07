@@ -31,6 +31,8 @@ this markup in your document causes the audit to fail:
 </html>
 ```
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## Use the Cache API instead of AppCache
 
 To pass this audit,
@@ -47,8 +49,6 @@ defined in an AppCache manifest.
 See the [URL Responds With a 200 When Offline](/works-offline) audit
 reference for more resources on using service workers to make your site work
 offline.
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

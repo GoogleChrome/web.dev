@@ -24,6 +24,8 @@ The audit fails if Lighthouse doesn't find a `theme-color` meta tag in the page'
 HTML and a `theme_color` property in the Web App Manifest.
 Lighthouse does not test whether the values are valid CSS color values.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 To ensure that the address bar is always themed to your colors:
@@ -61,8 +63,6 @@ CSS color value.
 
 See [User can be prompted to install the web app](/installable-manifest)
 for more resources on adding a manifest to your app.
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

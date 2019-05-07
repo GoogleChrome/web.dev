@@ -26,6 +26,8 @@ and that the value of this attribute contains the text `width=`. However,
 it does not check that `width` equals `device-width`. Lighthouse also does not
 check for a `initial-scale` key-value pair.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 Add a viewport `<meta>` tag in the `<head>` of your HTML:
@@ -49,8 +51,6 @@ Check out the following links to learn more:
 
 - [Configure the Viewport](/https://developers.google.com/speed/docs/insights/ConfigureViewport)
 - [Set the Viewport](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

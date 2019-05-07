@@ -39,6 +39,8 @@ Lighthouse's audit does not represent the full scroll performance of your page.
 There may be third-party scripts that are harming your page's scroll performance,
 but these aren't listed in your Lighthouse report.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## Add passive event listeners to improve scrolling performance
 
 Add the `passive` flag to all of the event listeners
@@ -62,8 +64,6 @@ So, using the syntax above may cause unintended consequences.
 See the polyfill in
 [Feature Detection](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection)
 to learn how to safely implement passive event listeners.
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

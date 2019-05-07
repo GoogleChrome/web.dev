@@ -30,6 +30,8 @@ Chrome's intervention against `document.write()` only applies
 to render-blocking, dynamically-injected scripts.
 Other uses of `document.write()` may be acceptable.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## Avoid `document.write()`
 
 Review the usage of `document.write()`.
@@ -39,8 +41,6 @@ Chrome won't execute the injected script.
 These are the calls to `document.write()` that you want to change.
 
 See [How do I fix this?](https://developers.google.com/web/updates/2016/08/removing-document-write#how_do_i_fix_this) for possible solutions. 
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

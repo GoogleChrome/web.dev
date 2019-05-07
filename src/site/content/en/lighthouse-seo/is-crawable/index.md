@@ -55,6 +55,7 @@ You can inspect your page's response headers via
   </figcaption>
 </figure>
 
+{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## How to ensure search engines can crawl your page
 
@@ -66,8 +67,6 @@ for details about exactly how you can configure your meta tags and HTTP headers
 to get more control over how search engines crawl your page.
 
 Learn more in [Remove code that blocks search engine indexing](/remove-code-blocking-indexing).
-
-{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## More information
 

@@ -28,14 +28,14 @@ Lighthouse excludes resources from other hosts from this audit,
 because it assumes that you have no control
 over how these resources are served.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## How to pass this audit
 
 To pass this audit, serve each of those resources over HTTP/2.
 
 To learn how to enable HTTP/2 on your servers,
 see [Setting Up HTTP/2](https://dassur.ma/things/h2setup/).
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

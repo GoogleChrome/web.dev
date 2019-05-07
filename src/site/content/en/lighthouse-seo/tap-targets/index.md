@@ -38,6 +38,8 @@ The **Overlapping Target** column tells you which other tap target is too close.
 In practice, Lighthouse provides some leniency on the size,
 So tap targets as small as 40 pixels by 40 pixels usually pass.
 
+{% include 'content/lighthouse-seo/scoring.njk' %}
+
 ## How to fix inappropriately-sized tap targets
 
 To fix the inappropriately-sized tap targets,
@@ -54,8 +56,6 @@ Tap targets that are 48 pixels wide and 48 pixels tall never fail:
 Increase the spacing between tap targets,
 using properties such as `padding` or `margin`.
 There should be at least 8 pixels of space between tap targets.
-
-{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## More information
 
