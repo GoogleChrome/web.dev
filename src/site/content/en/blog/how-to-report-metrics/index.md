@@ -112,7 +112,7 @@ less time on page.
 
 In general, it can be deceiving to look at averages and medians of
 performance metrics (see this nicely described in
-_[Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/))_. 
+_[Everything You Know About Latency Is Wrong](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/))_.
 Similar to a chain being just as strong as the weakest link, the performance of
 a funnel is only as good as its slowest load. A single slow load may be enough
 to lose the user. Therefore averages and medians are more likely to hide the
