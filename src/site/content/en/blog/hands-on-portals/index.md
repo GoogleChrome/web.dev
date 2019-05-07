@@ -3,7 +3,8 @@ title: "Hands-on with Portals: seamless navigations on the Web"
 subhead: |
   Learn how to build good navigation UX with the Portals API.
 date: 2019-05-06
-author: uskay
+authors:
+  - uskay
 hero: hero.png
 alt: A logo of Portals
 description: |
