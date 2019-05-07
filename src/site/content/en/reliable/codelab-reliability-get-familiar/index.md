@@ -12,7 +12,7 @@ web_lighthouse: N/A
 
 In this project you'll learn several techniques for making web applications
 more resilient. As you move through the sections of the project, you'll add a
-service worker to an existing sample application that let users download
+service worker to an existing sample application that lets users download
 Wikipedia articles. The service worker will improve the experience when the
 user is offline or has limited connectivity. The sample app has three sections
 (or views):

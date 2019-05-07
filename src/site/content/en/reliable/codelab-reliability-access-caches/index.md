@@ -30,10 +30,10 @@ haven't already.
 {% endAside %}
 
 The [Cache Storage API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api)
-is available for use in both service workers and in the context of window
-clients. So, if you want to make changes to caches—like adding or removing
-entries, or getting a list of cached URLs—from the context of your web app, you
-can do so directly without having to communicate with a service worker.
+is available for use in both service workers and from the client. So, if you
+want to make changes to caches—like adding or removing entries, or getting a
+list of cached URLs—from the context of your web app, you can do so directly
+without having to communicate with a service worker.
 
 To allow users to view and access cached articles in the sample app, you can
 refer to the Wikipedia articles cache name `wiki-articles` to get a list of entries
