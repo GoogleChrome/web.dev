@@ -25,12 +25,7 @@ A new web platform API called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
 site. See Portals in action:
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="hero.gif" alt="Showing a demo of seamless navigations between two sites using Portals">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Portals demo showing navigation between chapters
-  </figcaption>
-</figure>
+<img class="w-screenshot" src="hero.gif" alt="Showing a demo of seamless navigations between two sites using Portals">
 
 ## What Portals enable
 
