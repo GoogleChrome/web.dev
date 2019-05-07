@@ -20,9 +20,11 @@ tags:
 Website performance is a key goal towards e-commerce conversions, so it must be
 a core priority for business stakeholders and leadership, not just development
 teams.
+
 For that reason, it's crucial to make performance metrics visible and tangible
 for all stakeholders, and to build reporting and monitoring into your
 workflow.
+
 This guide describes what to be aware of and what to avoid to achieve
 this successfully.
 
@@ -90,7 +92,7 @@ might still drop.
 
 This effect can be eased by looking out for absolute conversions instead, and even calculate Cost Per Sales (conversions divided with investment level) or ROI.
 
-## Dropping Engagement
+## Dropping engagement
 
 ### Problem
 
@@ -117,7 +119,7 @@ real performance issues, than to reveal them.
 ### Solution
 
 It's best to analyze complete distributions, but as this is not
-always easily possible we recommend using 90th percentiles - this is the value
+always easily possible we recommend using 90th percentiles—this is the value
 for which 90% of loads were faster. Even then a user hitting ten pages will
 still have one load slower than this, and might drop out there.
 
