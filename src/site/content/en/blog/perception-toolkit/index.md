@@ -35,8 +35,8 @@ an experience without writing code.
 
 The open-source Web Perception Toolkit helps you add visual search to your
 website. It passes a device camera stream through a set of detectors that map
-real-world objects, here called "targets", to content on your site. This is done
-with. With this data, you can present the right information in a customizable
+real-world objects, here called "targets", to content on your site. This mapping is defined
+using Structured Data (JSON-LD) on your site. With this data, you can present the right information in a customizable
 UI.
 
 I'll show you enough of this to give you a taste of how it works. For a complete
