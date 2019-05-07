@@ -1,10 +1,11 @@
 ---
 title: Visual searching with the Web Perception Toolkit
 subhead: Easy to use real-world interactivity
-author: joemedley
+authors:
+  - joemedley
 date: 2019-05-07
-hero: hero.jpg
-alt: A man holds a phone up as if he is taking a photo.
+hero: hero.png
+alt: A series of screens shows a phone camera scanning an image and generating a link.
 description: |
   Wouldn't it be great if users could search your site using their camera?
 tags:
@@ -26,7 +27,7 @@ supports in-store price checking. Imagine getting information about a museum
 exhibit or historical marker. Imagine identifying real-world landmarks in games
 like geocaching or scavenger hunts.
 
-[The Web Perception Toolkit](https://github.com/PolymerLabs/perception-toolkit)
+[The Web Perception Toolkit](https://github.com/GoogleChromeLabs/perception-toolkit)
 makes these camera-based scenarios possible. In some cases you can even create
 an experience without writing code.
 
@@ -41,7 +42,7 @@ UI.
 I'll show you enough of this to give you a taste of how it works. For a complete
 explanation, check out the [Getting
 Started](https://perceptiontoolkit.dev/getting-started/) guide, the [toolkit
-reference](https://perceptiontoolkit.dev/documentation/), the [I/O Sandbox demo](https://io.perceptiontoolkit.dev/) and the [sample demos](https://github.com/PolymerLabs/perception-toolkit/tree/restructure_demo/demo).
+reference](https://perceptiontoolkit.dev/documentation/), the [I/O Sandbox demo](https://io.perceptiontoolkit.dev/) and the [sample demos](https://github.com/GoogleChromeLabs/perception-toolkit/tree/restructure_demo/demo).
 
 ## Structured data
 
@@ -53,7 +54,7 @@ The data is all you need to create a user experience like the one in the image
 below. If you do nothing else, the Web Perception Toolkit can identify targets,
 then show and hide cards based on the information provided in the data. Try this
 for yourself using our [artifact-map
-demo](https://github.com/PolymerLabs/perception-toolkit/tree/master/demo/artifact-map).
+demo](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo/artifact-map).
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="found-target.png"
@@ -222,11 +223,11 @@ default stylesheet, add a `<link>` element to your page.
 ## Conclusion
 
 As I said at the top, this is not an exhaustive look at the [Web Perception
-Toolkit](https://github.com/PolymerLabs/perception-toolkit). Hopefully it gives
+Toolkit](https://github.com/GoogleChromeLabs/perception-toolkit). Hopefully it gives
 you a sense of how easy it is to add visual searching to a website. Learn more
 with the [Getting Started](https://perceptiontoolkit.dev/getting-started/) guide
 and the [sample
-demos](https://github.com/PolymerLabs/perception-toolkit/tree/restructure_demo/demo).
+demos](https://github.com/GoogleChromeLabs/perception-toolkit/tree/restructure_demo/demo).
 Dig in to the [toolkit
 documentation](https://perceptiontoolkit.dev/documentation/) to learn what it
 can do.

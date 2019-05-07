@@ -1,7 +1,8 @@
 ---
 title: SameSite cookies explained
 subhead: Secure your site by learning how to explicitly mark your cross-site cookies.
-author: rowan_m
+authors:
+  - rowan_m
 date: 2019-05-07
 description: |
   Learn how to mark your cookies for first-party and third-party usage the
