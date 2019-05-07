@@ -40,10 +40,11 @@ has two primary modes:
    you want to precache into an existing service worker file.
 
 {% Aside %}
-If you want to use other service worker features (e.g., web push), import
-additional scripts, or add additional logic to your service worker, `generateSW`
-probably isn't the best choice. Instead, consider using `injectManifest`,
-which provides more control over your service worker.
+If you want to use other service worker features (e.g.,
+[web push](https://developers.google.com/web/fundamentals/push-notifications/)),
+import additional scripts, or add additional logic to your service worker,
+`generateSW` probably isn't the best choice. Instead, consider using
+`injectManifest`, which provides more control over your service worker.
 {% endAside %}
 
 {% Aside %}
@@ -61,7 +62,7 @@ of available options can be found on the
 [Workbox CLI page](https://developers.google.com/web/tools/workbox/modules/workbox-cli#options_used_by_injectmanifest).)
 
 Based on the options in the config file, Workbox will:
-1. Look for a specific string (`precaching.precacheAndRoute([])` by default)
+1. Look for a specific array (`precaching.precacheAndRoute([])` by default)
    in your source service worker file,
 1. Replace the empty array with a list of URLs to precache, and
 1. Write the service worker file to its destination location.
@@ -263,7 +264,7 @@ Now you're ready to see the app work offline:
   Chrome DevTools showing the Offline checkbox.">
 </figure>
 
-+  Refresh the page
++  Refresh the page to verify that the app loads in offline mode.
 
 Congratulations, you've just added offline functionality to your app!
 

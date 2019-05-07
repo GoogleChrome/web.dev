@@ -1,6 +1,6 @@
 ---
 layout: codelab
-title: Register a service worker using Workbox
+title: Create a service worker using Workbox
 author: mdiblasio
 date: 2019-05-07
 description: |
@@ -9,16 +9,25 @@ glitch: wiki-offline-starter
 web_lighthouse: N/A
 ---
 
-In this section you'll learn how to register a
+In this section you'll learn how to create a
 [Workbox](https://developers.google.com/web/tools/workbox/)-powered service
-worker.
+worker, which you'll use to cache assets in later sections of the project.
 
 {% Aside 'caution' %}
 Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
 haven't already.
 {% endAside %}
 
-To start using Workbox import the `workbox-sw.js` file into your app by adding
+A [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/)
+is a script that your browser runs in the background, separate from a web page.
+Because they're run in the background, service workers let you create features
+similar to those of a native application (like caching assets for viewing
+offline, which you'll set up later).
+
+To create your service worker, you'll use
+[Workbox](https://developers.google.com/web/tools/workbox/), a JavaScript
+library for adding offline support to web apps. To start using Workbox import
+the `workbox-sw.js` file into your app by adding
 the following line to `src/service-worker.js`:
 
 ```js
