@@ -23,6 +23,11 @@ If you've finished previous sections of this project in your own Glitch, you
 can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
+
 The goal is to allow users to delete articles from the __Cached__ tab
 in the sample app by clicking the trash button next to each article in the list.
 

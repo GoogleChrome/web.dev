@@ -22,6 +22,11 @@ If you've finished previous sections of this project in your own Glitch, you
 can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
+
 With runtime caching, you gradually add responses to a cache as the browser
 requests them. While runtime caching doesn't help with the reliability of the
 first request of a URL, it _does_ help make future requests for the same URL

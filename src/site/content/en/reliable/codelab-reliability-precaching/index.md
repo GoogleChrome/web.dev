@@ -20,6 +20,11 @@ If you've finished previous sections of this project in your own Glitch, you
 can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
+
 Precaching makes it possible to serve cached files to the browser without going
 to the network, which makes the app accessible offline. The general rule is to
 precache any HTML, JavaScript, or CSS that's crucial to displaying the basic

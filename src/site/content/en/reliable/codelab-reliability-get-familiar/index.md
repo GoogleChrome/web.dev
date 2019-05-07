@@ -61,30 +61,13 @@ Server
    [Implementing precaching](../codelab-reliability-precaching/).)
 
 ## The app in action
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
 
 You can use Chrome DevTools to see how the app shell architecture affects
 requests:
-+ In Glitch, click __Remix to Edit__. Once a remixed Glitch has been created,
-  click __Edit Fullscreen__.
-
-<figure class="w-figure w-figure--center">
-  <img class="w-screenshot" src="./glitch-remix-btn.png" style="max-width: 347px;"
-  alt="A screenshot of the Glitch Remix to Edit button.">
-</figure>
-
-<figure class="w-figure w-figure--center">
-  <img class="w-screenshot" src="./glitch-fullscreen-btn.png" style="max-width: 347px;"
-  alt="A screenshot of the Glitch Edit Fullscreen button.">
-</figure>
-
-+  In Glitch, click __Show__ and then select __In a New Window__ to view the
-   live version of the sample app.
-
-<figure class="w-figure w-figure--center">
-  <img class="w-screenshot" src="./show-live-btn.png" style="max-width: 347px;"
-  alt="A screenshot of the Glitch Show Live button.">
-</figure>
-
 +  Open Chrome DevTools by pressing `Control+Shift+I`  (or `Command+Option+I`
    on Mac).
 +  Click the __Network__ tab and reload the page.

@@ -23,9 +23,14 @@ If you've finished previous sections of this project in your own Glitch, you
 can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
+
 Recall that the server responds to all navigation requests with `index.html`
 because the sample app for this project uses a
-[single-page application](https://en.wikipedia.org/wiki/Single-page_application) 
+[single-page application](https://en.wikipedia.org/wiki/Single-page_application)
 architecture. Your service worker should follow the same logic when it handles
 navigation requests—except that it will need to respond with the cached copy of
 `index.html`.

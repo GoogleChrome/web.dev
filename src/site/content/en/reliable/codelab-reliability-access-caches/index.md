@@ -24,6 +24,11 @@ If you've finished previous sections of this project in your own Glitch, you
 can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
+
 The [Cache Storage API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api)
 is available for use in both service workers and in the context of window
 clients. So, if you want to make changes to caches—like adding or removing

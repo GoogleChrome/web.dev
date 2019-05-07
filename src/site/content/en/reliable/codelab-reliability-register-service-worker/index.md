@@ -9,7 +9,14 @@ glitch: wiki-offline-starter
 web_lighthouse: N/A
 ---
 
-In this section you'll learn how to register a [Workbox](https://developers.google.com/web/tools/workbox/)-powered service worker.
+In this section you'll learn how to register a
+[Workbox](https://developers.google.com/web/tools/workbox/)-powered service
+worker.
+
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
 
 To start using Workbox import the `workbox-sw.js` file into your app by adding
 the following line to `src/service-worker.js`:

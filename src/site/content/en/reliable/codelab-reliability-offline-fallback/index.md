@@ -23,6 +23,11 @@ If you've finished previous sections of this project in your own Glitch, you
 can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
+
 To see what users experience when they search for an uncached article while
 offline, select the __Offline__ checkbox in the DevTools __Network__ tab and
 run a new search in the sample app. As you'll see, the request fails, and an

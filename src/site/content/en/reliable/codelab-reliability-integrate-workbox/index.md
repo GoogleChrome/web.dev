@@ -23,6 +23,11 @@ If you've finished previous sections of this project in your own Glitch, you
 can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
+{% Aside 'caution' %}
+Make sure to [set up Glitch and DevTools](../codelab-reliability-setup/) if you
+haven't already.
+{% endAside %}
+
 To add Workbox to the build process, modify the `start` script in `package.json` so `workbox
 injectManifest` is run each time files are updated:
 

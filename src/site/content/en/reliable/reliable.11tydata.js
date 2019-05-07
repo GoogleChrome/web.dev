@@ -34,6 +34,7 @@ module.exports = {
         title: 'How to build a resilient sample app',
         pathItems: [
           'codelab-reliability-overview',
+          'codelab-reliability-setup',
           'codelab-reliability-get-familiar',
           'codelab-reliability-register-service-worker',
           'codelab-reliability-precaching',
