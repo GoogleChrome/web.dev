@@ -2,7 +2,7 @@
 title: How to report metrics and build a performance culture
 subhead: Understand why performance matters when it comes to conversion
 authors: 
- - martinschierle
+  - martinschierle
 date: 2019-05-05
 hero: hero.jpg
 alt: Image of laptop with mouse pointing to checkout button on a web page
@@ -10,9 +10,9 @@ description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
 wf_blink_components: Blink>Performance
 tags:
- - post
- - performance
- - ecommerce
+  - post
+  - performance
+  - ecommerce
 ---
 
 ## Introduction
