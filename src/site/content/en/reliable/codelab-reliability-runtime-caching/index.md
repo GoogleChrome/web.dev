@@ -11,65 +11,39 @@ web_lighthouse: N/A
 ---
 
 In previous sections of this project you learned how to create a
-[Workbox](https://developers.google.com/web/tools/workbox/)-based service
-worker that precaches essential assets from your app and handles navigation
-requests. In this section you'll learn how to add runtime caching so that your
-service worker can cache external assets. For this project, you'll set up your
-app to fetch and cache Wikipedia articles and images.
+[Workbox-based service worker](../codelab-reliability-register-service-worker/)
+that [precaches essential assets from your app](../codelab-reliability-precaching/)
+and [handles navigation requests](/codelab-reliability-handle-nav-requests/).
+In this section you'll learn how to add runtime caching so that your service
+worker can cache external assets (in this case, Wikipedia articles and images).
 
 {% Aside %}
 If you've finished previous sections of this project in your own Glitch, you
 can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
-Runtime caching refers to gradually adding responses to a cache as the browser
+With runtime caching, you gradually add responses to a cache as the browser
 requests them. While runtime caching doesn't help with the reliability of the
-current request, it can help make future requests for the same URL more
-reliable.
+first request of a URL, it _does_ help make future requests for the same URL
+more reliable.
 
-When implementing runtime caching, choose the most appropriate caching strategy
-for each asset type that your app uses. Workbox has the following caching
-strategies built in:
+When implementing runtime caching, you should choose the most appropriate
+caching strategy for each asset type that your app uses. Workbox has the
+following caching strategies built in:
 
-+  __Stale While Revalidate__
+| Strategies | Use Cases |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| __Network only__<br>Force the response to come from the network. | Uses maximum bandwidth and doesn't work when the user is offline. Best for cases in which it's critical that the user receives the latest version of an asset. |
+| __Cache only__<br>Force the response to come from the cache. | Rarely appropriate, as the user will never receive an asset if it isn't already cached. |
+| __Network first__<br>Try to get a request from the network first. If a response is received, it's passed to the browser and saved to the cache. If the network request fails, the last cached response is used. | Best for assets that are updated frequently. |
+| __Cache first__<br>Check the cache for a response first. If the response isn't in the cache, the network will be used, and any valid response will be added to the cache before being passed to the browser. | Best for assets that are updated rarely, as users will receive stale content indefinitely. |
+| __Stale while revalidate__<br>Use a cached response if it is available and update the cache in the background with a response from the network. (If the response isn't cached, Workbox will wait for the network response and use that.) | A fairly safe strategy since it ensures the cache is regularly updated. The downside is that an asset is requested from the network in all cases, using up the user's bandwidth. |                                  |
 
-   This strategy uses a cached response for a request if it is available and
-   updates the cache in the background with a response from the network. (If
-   the response isn't cached, Workbox will wait for the network response and
-   use that.) This is a fairly safe strategy as it means users are regularly
-   updating their cache. The downside is that Workbox requests an asset from
-   the network in all cases, using up the user's bandwidth.
-
-+  __Network First__
-
-   This strategy tries to get a request from the network first. If it receives
-   a response, it'll pass that to the browser and also save it to the cache.
-   If the network request fails, the last cached response is used.
-
-+  __Cache First__
-
-   This strategy checks the cache for a response first and uses that if one is
-   available. If the response isn't in the cache, the network will be used and
-   any valid response will be added to the cache before being passed to the
-   browser.
-
-+  __Network Only__
-
-   Force the response to come from the network.
-
-+  __Cache Only__
-
-   Force the response to come from the cache.
-
-To choose an appropriate caching strategy for Wikipedia articles, it's
-important to consider that most articles are updated fairly infrequently:
-+  __Network-first__ is best for requests that are updated frequently, so this
-   strategy wouldn't serve articles from the cache for instant repeat views.
-+  __Cache-first__ could work, but assuming Wikipedia articles are updated
-   somewhat regularly, users could receive stale content indefinitely.
-+  __Stale-while-revalidate__ will serve articles from the cache to
-   dramatically improve the load time of subsequent views, while keeping
-   articles up-to-date. This is an ideal choice for this use case.
+Since most Wikipedia articles are updated fairly infrequently, a
+__stale-while-revalidate__ strategy makes the most sense: it will keep articles
+up-to-date, but it will still serve articles from the cache when it can, which
+will dramatically improve the load time when the user returns to a previously
+viewed page.
 
 To implement a __stale-while-revalidate__ runtime caching strategy, call
 `workbox.routing.registerRoute(match, handler)` to register a route in
@@ -92,7 +66,7 @@ route will be triggered.
 The second parameter is Workbox's built-in
 [`StaleWhileRevalidate` handler](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#stale-while-revalidate).
 The `cacheName` option sets a custom cache name for the specified assets, which
-makes it convenient to manage related groups of assets.
+makes it convenient to manage related asset groups.
 
 This route will match against all Wikimedia REST API requests and apply a
 __stale-while-revalidate__ caching strategy. To see it in action, update the
@@ -104,8 +78,8 @@ should see two Wikimedia REST API requests:
   showing the two requests to the Wikimedia REST API made by the sample app.">
 </figure>
 
-The first request is from the client but is handled by the service worker. The
-second request is made from the service worker to the network and responds to
+The first request is from the client and is handled by the service worker. The
+second request is made from the service worker to the network in response to
 the client. In the DevTools console, you should see Workbox messages confirming
 that the __stale-while-revalidate__ strategy was applied:
 
@@ -116,7 +90,8 @@ that the __stale-while-revalidate__ strategy was applied:
 </figure>
 
 In the __Cache Storage__ panel of the __Application__ tab in DevTools, you
-should now see a new cache named `wiki-api` that contains the Wikipedia article:
+should now see a new cache named `wiki-articles` that contains the Wikipedia
+article:
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./wiki-api-cache.png" alt="A screenshot
@@ -191,22 +166,22 @@ workbox.routing.registerRoute(
 
 A quick explanation of the parameters:
 +  `maxAgeSeconds` specifies the maximum age of an entry before it's treated as
-   stale and removed, in this case 30 days.
-+  `maxEntries` specifies the maximum number of entries to cache, in this case
-   500. Entries used the least will be removed as the maximum is reached.
+   stale and removed (in this case 30 days).
++  `maxEntries` specifies the maximum number of entries to cache (in this case
+   500). Entries used the least will be removed as the maximum is reached.
 
-Whenever a cached request is used or updated, this plugin will look at the used
-cache and remove any old or extra requests.
+Whenever a cached request is used or updated, the `workbox.expiration`
+plugin will evaluate the cache and remove any old or unnecessary requests.
 
 {% Aside %}
-When using maxAgeSeconds, requests may be used once after expiring because the
+When using `maxAgeSeconds`, requests may be used once after expiring because the
 expiration clean up will not have occurred until after the cached request has
-been used. If the request has a "Date" header, then a light weight expiration
-check is performed and the request will not be used immediately.
+been used. If the request has a "Date" header, a lightweight expiration
+check is performed, and the request will not be used immediately.
 {% endAside %}
 
-Try viewing a cached article while offline to verify the image assets are
-served offline from the cache!
+Try viewing a cached article while offline to verify that the image assets are
+served from the cache.
 
 ## What's next
 [Create an offline fallback](../codelab-reliability-offline-fallback/)

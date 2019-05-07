@@ -11,11 +11,12 @@ glitch: wiki-offline-build-process
 web_lighthouse: N/A
 ---
 
-In the previous sections you learned how to use
-[Workbox](https://developers.google.com/web/tools/workbox/) to add precaching to
-a sample app. In this section you'll learn how to incorporate Workbox into the
-build process so that it updates the list of project assets to be precached each
-time you update your code.
+In the previous sections you learned how to
+[use Workbox](../codelab-reliability-register-service-worker/) to
+[add precaching](../codelab-reliability-precaching/) to a sample app. In this
+section you'll learn how to incorporate Workbox into the build process so that
+it updates the list of project assets to be precached each time you change your
+code.
 
 {% Aside %}
 If you've finished previous sections of this project in your own Glitch, you
@@ -50,8 +51,8 @@ console that Workbox has run:
   Glitch console showing that Workbox has run.">
 </figure>
 
-Refresh the page to verify that the service worker updated the precache with the
- modified file.
+Now refresh the page to verify that the service worker updated the precache with
+the modified file.
 
 ## What's next
 [Handle navigation requests from a service worker](../codelab-reliability-handle-nav-requests/)

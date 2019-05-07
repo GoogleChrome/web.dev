@@ -10,9 +10,10 @@ glitch: wiki-offline-precaching
 web_lighthouse: N/A
 ---
 
-In the previous section you learned how to create a service worker using
+In the [previous section](../codelab-reliability-register-service-worker/) you
+learned how to create a service worker using
 [Workbox](https://developers.google.com/web/tools/workbox/). In this section
-you'll learn how to use Workbox to add precaching to your service worker.
+you'll learn how to add precaching to your service worker.
 
 {% Aside %}
 If you've finished previous sections of this project in your own Glitch, you
@@ -21,17 +22,17 @@ can continue working in it. Otherwise, you can use the Glitch provided here.
 
 Precaching makes it possible to serve cached files to the browser without going
 to the network, which makes the app accessible offline. The general rule is to
-precache any HTML, JavaScript, or CSS that's loaded early on and is crucial to
-displaying the basic structure of a given page. In this app, it makes sense to
-precache all the critical app shell files in the `public/` directory.
+precache any HTML, JavaScript, or CSS that's crucial to displaying the basic
+structure of a given page. In this app, it makes sense to precache all the
+critical app shell files in the `public/` directory.
 
 The easiest way to precache files with Workbox is to use its command line
 interface (CLI). The
 [Workbox CLI](https://developers.google.com/web/tools/workbox/modules/workbox-cli)
 has two primary modes:
 +  `generateSW`: generates a complete service worker for you.
-+  `injectManifest`:iInjects the the project assets that you want to precache
-   into an existing service worker file.
++  `injectManifest`: injects a list (or _manifest_) of the project assets that
+   you want to precache into an existing service worker file.
 
 {% Aside %}
 If you want to use other service worker features (e.g., web push), import
@@ -50,22 +51,17 @@ is a better choice.
 {% endAside %}
 
 This project will use the `injectManifest` mode, which uses options specified
-in the Workbox config file `workbox-config.js`, discussed below (a full list
-  of available options [can be found here](https://developers.google.com/web/tools/workbox/modules/workbox-cli#options_used_by_injectmanifest)). 
+in the Workbox config file `workbox-config.js`, discussed below. (A full list
+of available options can be found on the
+[Workbox CLI page](https://developers.google.com/web/tools/workbox/modules/workbox-cli#options_used_by_injectmanifest).)
 
-Based on these options Workbox:
-1. Looks for a specific string (`precaching.precacheAndRoute([])` by default)
+Based on the options in the config file, Workbox will:
+1. Look for a specific string (`precaching.precacheAndRoute([])` by default)
    in your source service worker file,
-1. Replaces the empty array with a list of URLs to precache, and
-1. Writes the service worker file to its destination location.
+1. Replace the empty array with a list of URLs to precache, and
+1. Write the service worker file to its destination location.
 
 The rest of the code in your source service worker is left untouched.
-
-You can use Workbox in `injectManifest` mode by running the following command:
-
-```
-workbox injectManifest workbox-config.js
-```
 
 To get started:
 
@@ -121,13 +117,13 @@ To get started:
     workbox injectManifest workbox-config.js
     ```
 
-    You should see the following message, indicating that a service worker has
+    You should see the following message indicating that a service worker has
     been written to `dist/service-worker.js`:
 
     ```
     Using configuration from /app/workbox-config.js.
     The service worker was written to dist/service-worker.js
-    4 files will be precached, totaling 30.5 kB.
+    4 files will be precached, totalling 17.2 kB.
     ```
 
     If you don't see `service-worker.js` in the `dist/` directory, run the
@@ -137,8 +133,8 @@ To get started:
     refresh
     ```
 
-1. Open and inspect `dist/service-worker.js`. You should see that a precache
-   manifest list has been injected into your service worker, with the remainder
+1. Open `dist/service-worker.js`. You should see that a precache
+   manifest has been injected into your service worker, with the remainder
    of the service worker left untouched:
 
     ```js
@@ -165,11 +161,10 @@ To get started:
     ```
 
 The injected array includes all files that the service worker will precache.
-Each object in the array contains a `revision` attribute, which is used as
-versioning information by Workbox to track and update precached resources that
-have been modified. If a URL/revision combination in the manifest changes, a
-service worker knows that the previous cached entry is no longer valid, and
-needs to be updated.
+Each object in the array contains a `revision` attribute, which Workbox uses
+to track and update precached resources that have been modified. If a
+URL-revision combination in the manifest changes, the service worker knows that
+the previous cached entry is no longer valid and needs to be updated.
 
 To see how Workbox's versioning works, copy the `revision` attribute for
 `app.js` so you can reference it later. Then add a comment anywhere in the
@@ -179,8 +174,8 @@ To see how Workbox's versioning works, copy the `revision` attribute for
 workbox injectManifest workbox-config.js && refresh
 ```
 
-Look at `dist/service-worker.js` to verify the `revision` attribute for
-`app.js` has changed:
+Look at `dist/service-worker.js` to verify that the `revision` attribute for
+`app.js` has changed, similar to the example below:
 
 ```js/5/4
 // ...
@@ -199,15 +194,17 @@ Now you're ready to see precaching in action. Modify `server.js` to serve the
 generated service worker file from the `dist/` directory (instead of the
 `src/` directory):
 
-```js
+```js/3/2
 // route for service worker
 app.get(/service-worker\.js/, function(request, response) {
+  response.sendFile(__dirname + `/src/service-worker.js`);
   response.sendFile(__dirname + `/dist/service-worker.js`);
 });
 ```
 
-Navigate to the app and refresh the page. You should see the service worker
-fetch and precache the app shell files in the precache manifest.
+Navigate to the app and refresh the page. In the __Network__ tab of DevTools,
+you should see the service worker fetch and precache the app shell files in the
+precache manifest.
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./precached-files.png" alt="A screenshot of

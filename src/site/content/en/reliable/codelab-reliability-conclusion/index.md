@@ -20,7 +20,7 @@ Workbox-powered service worker to enhance the user experience. You learned to:
 +  Implement runtime caching to cache external assets on demand
 +  Add offline fallback functionality
 +  Access and modify caches from the client
-+  Give users control over how much is cached
++  Give users control over what is cached
 
 You can learn more about Workbox and see additional demos at the
 [Workbox website](https://developers.google.com/web/tools/workbox/).

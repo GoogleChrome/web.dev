@@ -9,12 +9,12 @@ description: |
 glitch: wiki-offline-access-cache
 web_lighthouse: N/A
 ---
-If you've finished the previous sections of this project, you've built a sample
-app that allows users to search for and view previously cached Wikipedia
-articles offline. That feature is somewhat useful, but it's not an ideal: what
-if your user doesn't remember what articles they've already viewed? A better
-experience would allow users to view the list of articles that are available
-offline.
+If you've finished the [previous sections](../codelab-reliability-overview/) of
+this project, you've built a sample app that allows users to search for and
+view previously cached Wikipedia articles offline. That feature is somewhat
+useful, but it's not an ideal solution: what if your user doesn't remember what
+articles they've already viewed? A better experience would allow users to view
+the list of articles available offline.
 
 To create that experience, in this section you'll learn how to access a web
 app's caches to display a list of cached assets.
@@ -31,9 +31,9 @@ entries, or getting a list of cached URLs—from the context of your web app, yo
 can do so directly without having to communicate with a service worker.
 
 To allow users to view and access cached articles in the sample app, you can
-refer to the Wikipedia articles cache name `wiki-api` to get a list of entries
+refer to the Wikipedia articles cache name `wiki-articles` to get a list of entries
 in that cache. To do that create a `queryWikiCache()` method in `app.js` to
-query the `wiki-api` cache using the Cache Storage API. For each article in the
+query the `wiki-articles` cache using the Cache Storage API. For each article in the
 cache, use the `createArticleThumbnail(title)` method to create an article
 list item based on the article's title and append each list item to the
 `articleHistoryContainer` DOM element.
@@ -66,7 +66,7 @@ list of cached Wikipedia articles viewable offline!
   showing the list of cached articles in the sample app.">
 </figure>
 
-Note that the trash icons in the article list aren't functional yet. You'll
+Note that the trash buttons in the article list aren't functional yet. You'll
 add this functionality in the next section!
 
 ## What's next

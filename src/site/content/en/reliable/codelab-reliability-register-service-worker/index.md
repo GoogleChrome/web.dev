@@ -48,8 +48,8 @@ Register the service worker by adding the following code just before the
 </body>
 ```
 
-It's good practice to check whether the service worker is supported by
-the browser and delay registering the service worker until the browser has
+It's good practice to first check whether the service worker is supported by
+the browser and then delay registering the service worker until the browser has
 finished rendering the current page. A convenient way to approximate when
 rendering is complete is to wait until the `window.load` event has been fired:
 
@@ -70,7 +70,8 @@ that supports its own "everything's ready" lifecycle event, you can tweak the
 timing accordingly.
 {% endAside %}
 
-Reload the page and confirm that the service worker registers and installs:
+Reload the page and confirm that the service worker registers and installs by
+verifying that `SW install event` is logged to the console:
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./service-worker-installed.png" alt="A

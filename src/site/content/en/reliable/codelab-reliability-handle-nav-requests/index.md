@@ -11,11 +11,12 @@ web_lighthouse: N/A
 ---
 
 If you've been following along with this project, you've created a sample app
-with a [Workbox](https://developers.google.com/web/tools/workbox/)-based
-service worker that precaches essential app assets. You've also added Workbox
-to the build process so the list of project assets to be precached is updated
-whenever you change your code. In this section you'll learn how to implement
-logic in a service worker to handle navigation requests.
+with a [Workbox-based service worker](../codelab-reliability-register-service-worker/)
+that [precaches essential app assets](../codelab-reliability-precaching/).
+You've also [added Workbox to the build process](../codelab-reliability-integrate-workbox/)
+so the list of project assets to be precached is updated whenever you change
+your code. In this section you'll learn how to implement logic in a service
+worker to handle navigation requests.
 
 {% Aside %}
 If you've finished previous sections of this project in your own Glitch, you
@@ -23,7 +24,8 @@ can continue working in it. Otherwise, you can use the Glitch provided here.
 {% endAside %}
 
 Recall that the server responds to all navigation requests with `index.html`
-because the sample app for this project uses a single-page-application
+because the sample app for this project uses a
+[single-page application](https://en.wikipedia.org/wiki/Single-page_application) 
 architecture. Your service worker should follow the same logic when it handles
 navigation requests—except that it will need to respond with the cached copy of
 `index.html`.

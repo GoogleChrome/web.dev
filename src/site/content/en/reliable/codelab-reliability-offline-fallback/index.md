@@ -10,10 +10,10 @@ glitch: wiki-offline-offline-fallback
 web_lighthouse: N/A
 ---
 
-In previous sections you learned how to set up caching of Wikipedia articles in
-a sample app so users can access previously viewed articles when they're
-offline. But what happens if the user is offline and searches for a Wikipedia
-article they haven't seen yet?
+In [previous sections](../codelab-reliability-overview/) you learned how to set
+up caching of Wikipedia articles in a sample app so users can access previously
+viewed articles when they're offline. But what happens if the user is offline
+and searches for a Wikipedia article they haven't seen yet?
 
 In this section you'll learn how to implement an offline fallback so that users
 get feedback if an article isn't already cached when the network is unavailable.
@@ -34,7 +34,7 @@ infinite loading spinner appears:
 </figure>
 
 You can improve this experience by returning an offline fallback response if the
-network isn't available for API calls. This approach lets you to give your users
+network isn't available. This approach lets you to give your users
 some content to tell them what's happening. To do that, use the Workbox routing
 module's `setCatchHandler()` method to return the offline partial page
 `offline.partial.html` in response to article requests when the Wikimedia REST API
