@@ -18,9 +18,9 @@ finding the right cartridges for their razor when they reorder. They don't know
 the right keywords for your product search. And let's be honest, they probably
 never will.
 
-What if they never need to? What if they could point their phone's camera at a
-cartridge they already have and your site could present them with the right
-cartridge and a big red "reorder" button?
+What if they never need to? What if they could point their phone's camera at the
+UPC code on package and your site could present them with the right cartridge
+and a big red "reorder" button?
 
 Think of other ways you can use a camera on a site. Imagine a site that
 supports in-store price checking. Imagine getting information about a museum
