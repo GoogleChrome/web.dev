@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const {html} = require('common-tags');
 const site = require('../../_data/site');
 
@@ -49,7 +48,7 @@ const ShareAction = (title, url) => {
 
   const twitter = `https://twitter.com/share`;
   const encodedText = encodeURIComponent(title);
-  const encodedUrl = encodeURIComponent(path.join(site.url, url));
+  const encodedUrl = encodeURIComponent(`${site.url}/${url}`);
 
   return html`
     <a
