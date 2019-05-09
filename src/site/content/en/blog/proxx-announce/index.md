@@ -1,0 +1,70 @@
+---
+title: Introducing PROXX
+subhead: a game of proximity, inspired by minesweeper
+authors:
+  - kosamari
+date: 2019-05-09
+hero: hero.jpg
+alt: a logo image of PROXX.
+description: |
+  This post is a test to demonstrate all of the components that can go into
+  an article. This description appears in the meta tag.
+tags:
+  - post
+  - PROXX
+---
+
+The team that brought you [squoosh.app](https://squoosh.app) is back! This time, we built a web-based game called PROXX ([proxx.app](https://proxx.app)). PROXX is a game of proximity inspired by the legendary game Minesweeper. The game is situated in the space and your job is to find out where the black holes are. It works on all kinds of devices — from desktop all the way to feature phones. Users can play the game using a mouse, keyboard, d-pad even with a screen reader. 
+
+## Our baseline
+
+Before building this game, we set the following goals and budgets for the application:
+
+- **Same core experience**: all devices must function the same way
+- **Accessible**: mouse, keyboard, touch, d-pad, screen readers
+- **Performant**:
+  - Less than 25kb of initial payload
+  - Less than 5 seconds TTI ([time to interactive](https://web.dev/interactive)) on slow 3G
+  - Consistent 60fps animation
+
+## Web Workers
+
+The game consists of 4 main entities, the core game logic, the UI service, the state service, and the animation graphics. Since we knew from the get-go we would have to run heavily animated graphics on the main thread, we moved the game logic and state service to a web worker in order to keep the main thread as free as possible. 
+
+## Build time pre-render
+
+Our UI is built with Preact, as it allows us to hit our aggressive target for an initial payload that is less than 25kb. In order to give a good initial loading experience, we decided to pre-render our 1st view. We prerender at build time using Puppeteer to access the top page and let preact populate the DOM. The resulting DOM is then serialized to HTML and saved as index.html
+
+## Canvas for animation, (invisible) DOM For accessibility
+
+We render the game graphics in a canvas using WebGL. One canvas is responsible for the background animation and another one canvas for the game grid on top. We also have an HTML table with buttons for accessibility reasons, that is on top of both of these canvases, but is made invisible (opacity: 0). Even though what you see is a canvas rendering of the game state, the player is interacting with the invisible DOM table, giving us the ability to attach event listeners and rely on the browser’s focus management. 
+
+By keeping the DOM element in the canvas, we are able to tap into browsers native accessibility features. For example: by setting `role=“grid”` on our game table, screen readers can announce the row and column of the focused cell without us having to implement that.
+
+## Rollup for bundling and code splitting
+
+Our total size for the app comes down to 100KB gzipped. Out of that, 20KB is for the initial payload (index.html). We use Rollup.js for this project. We have shared dependencies between the main thread and our web worker, and Rollup can put these shared dependencies in a separate chunk that only needs to be loaded once. Other bundlers like web pack duplicate the shared dependencies which results in double-loading.
+
+## Supporting feature phones 
+
+Smart feature phones such as KaiOS phones are rapidly gaining popularity. These are very resource constrained devices, but our approach of using web workers whenever we can allowed us to make the experience highly responsive on these phones as well. Since feature phones come with different input interface (d-pad and number keys, no touchscreen), we also implemented key-based interface.
+
+<figure class="w-figure w-figure--fullbleed">
+  <img class="w-screenshot" src="featurephone.jpg"
+       alt="A man playing PROXX on a yellow feature phone" class="screenshot">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — PROXX on a feature phone
+  </figcaption>
+</figure>
+
+## What’s next
+
+We had great but busy time building this game in time for Google I/O 2019, so we will take some well-deserved time off to rest, but plan to come back with more in-depth documentation on each of these areas of the game. 
+
+Until then, please check the talk Mariko gave at I/O on this project.
+
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/w8P5HLxcIO4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Cheers! Surma, Jake, Mariko 
