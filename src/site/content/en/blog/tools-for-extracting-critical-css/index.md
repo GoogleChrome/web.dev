@@ -37,6 +37,15 @@ Inlining extracted styles in the `<head>` of the HTML document eliminates the ne
     </figcaption>
 </figure>
 
+Improving render times can make a huge difference in [perceived performance](https://developers.google.com/web/fundamentals/performance/rail#ux), especially under poor network conditions. On mobile networks, high latency is an issue regardless of bandwidth.
+
+<figure class="w-figure  w-figure--center">
+  <img class="w-screenshot" src="./filmstrip-comparison.png" alt="Filmstrip view comparison of loading a page with render-blocking CSS (top) and the same page with inlined critical CSS (bottom) on a 3G connection. Top filmstrip shows six blank frames before finally displaying content. Bottom filmstrip displays meaningful content in the first frame.">
+  <figcaption class="w-figcaption">
+    Comparison of loading a page with render-blocking CSS (top) and the same page with inlined critical CSS (bottom) on a 3G connection
+  </figcaption>
+</figure>
+
 If you have poor [First Contentful Paint](https://web.dev/first-contentful-paint/) (FCP) and see "Eliminate render-blocking resource" or “Defer unused CSS” as opportunities in Lighthouse audits, it’s a good idea to give critical CSS a go.
 
 <img class="w-screenshot" src="./lighthouse-audit.png" alt="Lighthouse audit with 'Eliminate render-blocking resource' or 'Defer unused CSS' opportunities">
@@ -46,8 +55,6 @@ Keep in mind that if you inline a large amount of CSS, it delays the transmissio
 {% endAside %}
 
 To get the best results, aim to keep your HTML file, including inlined CSS, under **14 KB** (compressed). Due to the [slow start of TCP protocol](https://calendar.perfplanet.com/2018/tcp-slow-start/), approximately 14 KB is the maximum that can be transferred in the initial roundtrip, before browser needs to make another network request. 
-
-Improving render times can make a huge difference in [perceived performance](https://developers.google.com/web/fundamentals/performance/rail#ux), especially under poor network conditions. On mobile networks, high latency is an issue regardless of bandwidth.
 
 The performance impact you can achieve with this technique depends on the type of your website. Generally speaking, the more CSS a site has, the greater the possible impact of inlined CSS.
 
