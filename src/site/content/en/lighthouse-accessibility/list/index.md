@@ -26,7 +26,7 @@ To fix this problem,
 remove any elements in lists that don't belong there.
 Ordered and unordered lists must only contain `<li>`, `<script>` or `<template>` elements.
 
-Valid lists musth have parent elements (`ul` or `ol` elements) and child elements (`li` elements).
+Valid lists must have parent elements (`ul` or `ol` elements) and child elements (`li` elements).
 Any other content elements are invalid.
 Learn more in
 [`<ul>` and `<ol>` must only directly contain `<li>`, `<script>` or `<template>` elements](https://dequeuniversity.com/rules/axe/3.2/list).
