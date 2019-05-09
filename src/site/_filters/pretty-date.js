@@ -28,5 +28,6 @@ module.exports = (date) => {
     return;
   }
 
-  return DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_MED);
+  return DateTime.fromISO(date.toISOString(), {zone: 'utc'})
+    .toLocaleString(DateTime.DATE_MED);
 };
