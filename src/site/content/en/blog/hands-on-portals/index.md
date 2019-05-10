@@ -25,7 +25,15 @@ A new web platform API called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
 site. See Portals in action:
 
-<img class="w-screenshot" src="hero.gif" alt="Showing a demo of seamless navigations between two sites using Portals">
+<figure class="w-figure w-figure--fullbleed">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
+  </video>
+ <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Seamless embeds and navigation with Portals. Created by <a href="https://twitter/com/argyleink">Adam Argyle</a>.
+  </figcaption>
+</figure>
 
 ## What Portals enable
 
