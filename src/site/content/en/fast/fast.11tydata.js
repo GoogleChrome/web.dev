@@ -28,7 +28,6 @@ module.exports = {
           'why-speed-matters',
           'what-is-speed',
           'how-to-measure-speed',
-          'how-to-improve-speed',
           'how-to-stay-fast',
         ],
       },
