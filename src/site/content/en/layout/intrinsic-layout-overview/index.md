@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction to Intrinsic Layout
+title: An Intrinsic Introduction
 authors:
   - adamargyle
 description: Intrinsic layout starts with healthy layout strategies that respond to ever-changing & user generated content.
@@ -8,9 +8,11 @@ web_lighthouse: N/A
 date: 2019-03-05
 ---
 
-[Jen Simmons](https://twitter.com/jensimmons) **astutely** coined [intrinsic web design](https://adactio.com/journal/13671). She also advocates it and [demonstrates](https://labs.jensimmons.com) it. For good reason too, it's most certainly a strong and futuristic layout strategy.
+## ⏳ History
+[Jen Simmons](https://twitter.com/jensimmons) **astutely** coined the term [intrinsic web design](https://adactio.com/journal/13671). She advocates for it as well as [demonstrates](https://labs.jensimmons.com) it. For good reason too, it's most certainly a strong and futuristic layout strategy.
 
-## What is it?
+She describes it so well that I'd like to pull directly from **her words**:
+
 <blockquote class="w-blockquote">
   <p class="w-blockquote__text">Intrinsic Web Design is a name that I gave to this new era, because I think we’re really in a new era of layout design... it’s not that float-based thing where everything’s set in widths with using percents. It’s this new set of technologies.</p>
   <p class="w-blockquote__text">It’s not just because the tech is new, it’s also because the possibilities of what you can actually do are new, and the ways in which you can get content to morph and shift and change based on how much space is available is actually really different than Responsive Web Design.</p>
@@ -24,34 +26,56 @@ date: 2019-03-05
   <img src="https://media3.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif?cid=3640f6095c9541ae7945334751d09c8b" alt="Patrick Star admiring with floating hearts">
 </figure>
 
-I'm **stoooooked** on this! I've been exploring, building apps and prototyping with it, and it's certainly a **new era of layout** we're in! I must **share with you the joy**.
+So **stoooooked** on this approach to layout! I've been exploring, building and prototyping with it, and it's certainly a **"new era of layout"** we're in! I must **share the joy and learnings I've acquired** through these endeavors and research.
 
-<br><br>
+<br>
 
-## Why study intrinsic CSS concepts?
-Here's a couple reasons, though there's plenty more:
+## 🤔 Why "intrinsic"?
+This may look familiar 😂, it's the result of an extrinsic approach to layout, and it's something we'll be seeking to avoid throughout the guide:
 
-**1) Too often the front-end instigates limitations that affect more systems and folks than it should.**
+<p class="codepen" data-height="401" data-theme-id="dark" data-default-tab="result" data-user="brundolf" data-slug-hash="gRaREv" style="height: 401px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS is Awesome">
+  <span>See the Pen <a href="https://codepen.io/brundolf/pen/gRaREv/">
+  CSS is Awesome</a> by Brandon (<a href="https://codepen.io/brundolf">@brundolf</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-Ever been in a CMS with an odd text length limit on a field that's hindering you from effective articulation? Ever told a copywriter they can't say that there or else it breaks the component or layout?
+The article [CSS is Awesome](https://css-tricks.com/css-is-awesome/) from [CSS-Tricks](https://css-tricks.com) **recaps the frustration well**:
+- The content doesn't shrink to fit the container
+- The container doesn't expand to fit the content
+- The container doesn't handle overflow gracefully
 
-**2) Too often the front-end stifles proper communication or implementations because of it's percieved inflexibility.**
+Studying and striving for **intrinsic layouts help alleviate these frustrations**:
+- <s>The content doesn't shrink to fit the container</s> <br>Content's sizing needs are considered first
+- <s>The container doesn't expand to fit the content</s> <br>The container shrinkwraps to the content
+- <s>The container doesn't handle overflow gracefully</s> <br>Overflow isn't an issue when content size and length is respected
 
-Let's confront this. Let's investigate how much flexibility we have these days. **Let's simulate the chaos of user generated content** to put our layouts and components to the test, with the goal of **building layout algorythyms** that elegantly handle the changing contexts and content.
+<br>
+
+### Additionally
+In my experience, laying out a site/components extrinsicly is initially the easiest, but overtime becomes tedious. Then, it becomes more than tedious, it becomes a problem for other folks on the team. Here's a couple scenarios you may have found yourself or your team in, that I believe stem from an extrinsic approach:
+
+1. **Too often the front-end instigates limitations that affect more systems and folks than it should.** <br>Ever been in a CMS with an odd text length limit on a field that's hindering you from effective articulation? Ever told a copywriter they can't say that there or else it breaks the component or layout?
+
+<br>
+
+1. **Too often the front-end stifles proper communication or implementations because of it's percieved inflexibility.** <br>Let's confront this. Let's investigate how much flexibility we have these days. **Let's simulate the chaos of user generated content** to put our layouts and components to the test, with the goal of **building layout algorythyms** that elegantly handle the changing contexts and content.
 
 <br><br><br><br>
 
-# Tangible learning
-Intrinsic definitions get abstract, so I'd like to **define it tangibly and visibly together.**
+## ⚔️ Our Quest
+As a practical way of learning the ropes of intrinsic web design, I'd like to orient this guide towards a meaningful end goal: **a responsive full page layout.** The following design may look innocent, but it's **jam packed** with learning opportunities! Along the way we'll implement **macro and micro layouts**, a mixture of **flexbox and grid**, a blend of **intrinsic and extrinsic**, plus a **sprinkle of chaos** to really help the value add sink in.
 
-Our overarching task throughout this guide is to **lay out the following design,** as a practical way of learning the ropes. It might not look like much, but it's **packed with learning opportunities!** 💀🤘
+These intrinsic concepts are just too abstract and tough to define succinctly, sooooo, I'd like to **define them tangibly and visibly.. together!**
+
+**Checkout the design!**
 
 <figure style="text-align:center; margin: 5rem 0;">
   <img src="home.png" alt="TenHundred store home page" class="screenshot">
   <figcaption><a href="https://argyleink-webdev-intrinsic-layout-guide.glitch.me/">Interactive Demo</a></figcaption>
 </figure>
 
-## Prepare to
+### Prepare to
 - **lean into content variability**: aka assume text/images are out of our control
 - **simulate chaos**: aka simulate content variability
 - lean into **[css grid](https://css-tricks.com/snippets/css/complete-guide-grid/)**
@@ -67,7 +91,7 @@ Our overarching task throughout this guide is to **lay out the following design,
 - use [tomorrow's CSS today](https://preset-env.cssdb.org)
 - take a [Layout Challenge](/layout/intrinsic-7_card/codelab)
 
-## By the end
+### By the end
 - be confident **when playing with layout**
 - be confident in **refactoring layout**
 - **distinguish** when **flexbox or grid** are appropriate
@@ -78,7 +102,7 @@ Our overarching task throughout this guide is to **lay out the following design,
 
 <br><br>
 
-# Better Together
+## 🍻 Better Together
 We'll acquire some bruises along the way as we bump our head, shoulders, knees and toes.. but I believe it's crucial for when y'all run into similar issues, that we've gone through a gauntlet together. That means this guide includes refactor reasoning and results. There's a lot of "play" that needs to happen with intrinsic layouts, **I want you to see how I play and reach resilient layouts.** That way you can do it too!
 
 If you don't have the basics of grid or flexbox down, have no fear. **Y'all can pick up the basics & jargon along the way.** I'll do my best to provide links out to topics that I'm not going to cover but will touch upon. 👍
