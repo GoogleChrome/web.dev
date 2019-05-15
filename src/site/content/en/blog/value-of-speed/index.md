@@ -18,9 +18,9 @@ noticeably faster. Now it's time for the fun part: showing stakeholders how much
 extra revenue your work has generated!
 
 In this post we'll walk through how to do that by calculating the _relative
-mobile conversion rate_. This metric is particularly useful because it
-quantifies the effects of site improvements while excluding external factors
-like marketing campaigns, which can obscure your findings. Let's get started!
+mobile conversion rate_. This metric is useful because it quantifies the
+effects of site improvements while excluding external factors like marketing
+campaigns, which can obscure your findings. Let's get started!
 
 ## Relative Mobile Conversion Rate (Rel mCvR)
 
@@ -37,7 +37,7 @@ marketing team if you're not sure how conversions are counted in your company.
 {% endAside %}
 
 Since you're interested in how site speed affects conversions, the mobile site
-is of particular interest—that's where you're most likely to see the benefits of
+is most relevant—that's where you're most likely to see the benefits of
 speed improvements. Rather than looking at the mobile conversion rate alone,
 though, you'll be analyzing the _relative_ mobile conversion rate (Rel mCvr),
 which is calculated by dividing the mobile conversion rate by the desktop
@@ -119,7 +119,7 @@ To do that in Google Sheets:
 1.  Click **Insert > Chart**.
 1.  In the **Chart Editor **pane, select the **Line chart** chart type.
 1.  Select the _Week Index_, _Mobile Avg. Page Load Time (sec)_, and
-        _Relative Mobile Conversion Rate (Rel mCvR) _columns as the data ranges.
+        _Relative Mobile Conversion Rate (Rel mCvR)_ columns as the data ranges.
 1.  Click the **Customize** tab and then select** Series**.
 1.  In the **Series selector **drop-down list, select **Relative
         Mobile Conversion Rate (Rel mCvR)**.
@@ -165,8 +165,8 @@ to Rel mCvR improving—that is, thanks to the mobile site becoming faster.
 
 +  As noted above, other changes to the site, such aslike UX
     improvements, can influence Rel mCvR. Check that speed was the only big
-    change to the site during the period you want to study. If there _were
-    _other changes, Rel mCvR can tell you the effect of the changes as a group,
+    change to the site during the period you want to study. If there _were_
+    other changes, Rel mCvR can tell you the effect of the changes as a group,
     but not of any individual change.
 +  Watch out for any changes or events that affected the desktop site
     but not the mobile site—they can skew your results. If you discover any
