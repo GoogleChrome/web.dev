@@ -1316,5 +1316,21 @@
     "country": "US",
     "twitter": "geddski",
     "github": "geddski"
+  },
+  "linahansson": {
+    "name": {
+      "given": "Lina",
+      "family": "Hansson"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Platform Sales"
+    },
+    "country": "Sweden",
+    "homepage": "https://digies.se",
+    "twitter": "LinaCHansson",
+    "description": {
+      "en": "Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed."
+    }
   }
 }
