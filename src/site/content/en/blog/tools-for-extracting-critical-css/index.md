@@ -46,7 +46,7 @@ Improving render times can make a huge difference in [perceived performance](htt
   </figcaption>
 </figure>
 
-If you have poor [First Contentful Paint](https://web.dev/first-contentful-paint/) (FCP) and see "Eliminate render-blocking resource" or “Defer unused CSS” as opportunities in Lighthouse audits, it’s a good idea to give critical CSS a go.
+If you have poor [First Contentful Paint](https://web.dev/first-contentful-paint/) (FCP) and see "Eliminate render-blocking resource" opportunity in Lighthouse audits it’s a good idea to give critical CSS a go.
 
 <img class="w-screenshot" src="./lighthouse-audit.png" alt="Lighthouse audit with 'Eliminate render-blocking resource' or 'Defer unused CSS' opportunities">
 
@@ -54,7 +54,11 @@ If you have poor [First Contentful Paint](https://web.dev/first-contentful-paint
 Keep in mind that if you inline a large amount of CSS, it delays the transmission of the rest of the HTML document. If everything is prioritized then nothing is. Inlining also has some downsides in that it prevents the browser from caching the CSS for reuse on subsequent page loads, so it’s best to use it sparingly.
 {% endAside %}
 
-To get the best results, aim to keep your HTML file, including inlined CSS, under **14 KB** (compressed). Due to the [slow start of TCP protocol](https://calendar.perfplanet.com/2018/tcp-slow-start/), approximately 14 KB is the maximum that can be transferred in the initial roundtrip, before browser needs to make another network request. 
+To minimize the number of roundtrips to first render, aim to keep above-the-fold content under **14 KB** (compressed).
+
+{% Aside 'note' %}
+New [TCP](https://hpbn.co/building-blocks-of-tcp/) connections cannot immediately use the full available bandwidth between the client and the server, they all go through [slow-start](https://hpbn.co/building-blocks-of-tcp/#slow-start) to estimate the connection capacity. In this process, the server starts the transfer with a small amount of data and if it reaches the client in perfect condition, doubles the amount in the next roundtrip. For most servers, 10 packets or approximately 14 KB is the maximum that can be transferred in the first roundtrip.
+{% endAside %}
 
 The performance impact you can achieve with this technique depends on the type of your website. Generally speaking, the more CSS a site has, the greater the possible impact of inlined CSS.
 
