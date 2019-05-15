@@ -6,11 +6,13 @@ module.exports = {
     title: 'Layout',
     updated: 'May 13, 2019',
     description: `
-      Learn how to arrange, distribute & align content for ever-changing screens.
+      Learn how to arrange, distribute & align content
+      for ever-changing screens.
     `,
     overview: `
       Articulate layouts with less code with CSS flexbox and grid.
-      Create layouts that are content-centric & able to dynamically adapt to changing content.
+      Create layouts that are content-centric & able to dynamically
+      adapt to changing content.
     `,
     topics: [
       {
