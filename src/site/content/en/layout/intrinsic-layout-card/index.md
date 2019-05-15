@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Featured Card
+title: Featured Card Layout
 authors:
   - adamargyle
 description:
