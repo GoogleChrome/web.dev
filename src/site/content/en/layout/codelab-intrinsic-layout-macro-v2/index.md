@@ -1,21 +1,28 @@
 ---
 layout: codelab
-title: "Macro Layout v2: Intrinsic Grids"
+title: "Macro Layout v2 (refactor): Intrinsic Grids"
 authors:
   - adamargyle
 description:
 glitch: intrinsic-layout-macro-v2
 related_post: intrinsic-layout-macro
 ---
-## Grid in Plain Speak
 
-Grid 2 `<main>`: I want a **grid with 2 columns**, the first at a fixed width and the 2nd filling the remaining space
+In this refactor I want to try and reduce our selector specificity, reduce the amount of code in media queries, and move away from defining explicit boxes.
+
+<!-- Grid 2 `<main>`: I want a **grid with 2 columns**, the first at a fixed width and the 2nd filling the remaining space -->
 
 #### Let's break it down
 ## 1. `<body>` Layout
-Our **most macro grid** is placed on the body. It's **creating spaces** for the highest level elements (`<nav>`, `<header>`, `<main>`, etc) and the **spacing between** them. This grid is minimal and doesn't know anything about what it's laying out except that there should be some healthy space between.
+Our **most macro grid** is placed on the body. It's **creating directionality** for the highest level elements (`<nav>`, `<header>`, `<main>`, etc) and the **spacing between** them. This grid is minimal and doesn't know anything about what it's laying out except that there should be some healthy space applied via gap.
 
-**CSS**
+{% Aside 'gotchas' %}
+  Make sure to check out the HTML so there's context for the selectors and grid implementation.
+{% endAside %}
+
+<br>
+
+#### The CSS
 ```css
 body {
   display: grid;
@@ -23,14 +30,8 @@ body {
   grid-auto-flow: row;
 }
 ```
-
-<div class="note">
-  <b>Grid Plain Speak:</b> I want a <b>grid</b> of <b>rows</b> with a <b>2rem gap</b>
-</div>
-
-We could add a any element to the `<body>` later and get some spacing **for free**. Free is nice.
-
-**Each child** element of `<body>` becomes **a row** with **2rems between** them:
+#### Grid in Plain Speak:
+I want a **grid** of **rows** with a **2rem gap**
 
 <figure style="text-align:center; margin: 2rem 0;">
   <img src="macro – body rows.png" alt="Showing simplified grid of only rows" class="screenshot">
@@ -42,12 +43,12 @@ We could add a any element to the `<body>` later and get some spacing **for free
 1. Just gaps
 1. Add more elements and layout continues to work great
 1. Respectful rows that don't enforce a height
-1. **Just flow and spacing**
 1. Fallback is straight forward
+1. **Just flow and spacing**
 
 ## Cons 👎
 1. **No more rails** (not really a con, but doesn't match the mental model my design brain had)
-1. **Dinky**, it's barely doing anything
+1. **Dinky**, it's barely doing anything (this a con? lol, perhaps to some?)
 
 
 
@@ -59,8 +60,6 @@ We could add a any element to the `<body>` later and get some spacing **for free
 
 We've spaced our big elements vertically, now we have **1 more large macro layout to create**. In our first version we had rails with placed elements, **I'd like to not place elements this time**.
 
-**Note:** I often find my first grids use `grid-template-area` but become unwieldy at a certain point.
-
 **CSS**
 ```css
 main {
@@ -69,10 +68,8 @@ main {
   margin: 0 var(--body-rails);
 }
 ```
-
-<div class="note">
-  <b>Grid Plain Speak:</b> I want a <b>grid</b> with <b>2 columns</b>, the <b>first at a fixed width</b> and the <b>2nd filling</b> the remaining space.
-</div>
+#### Grid in Plain Speak:
+I want a **grid** with **2 columns**, the **first at a fixed width** and the **2nd filling** the remaining space.
 
 Instead of rails we **use margin** 🤯 and then just have **2 columns**:
 
@@ -88,6 +85,10 @@ Instead of rails we **use margin** 🤯 and then just have **2 columns**:
 
 ## Cons
 1. No more rails (I dont know why, but I liked them, and they're gone lol)
+
+
+TODO: simulate some chaos by adding a footer
+TODO: move responsive work into here
 
 <!-- #### Let's break it down
 ## 1. `<body>` Layout

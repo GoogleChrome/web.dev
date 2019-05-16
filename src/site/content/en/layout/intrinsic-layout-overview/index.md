@@ -89,7 +89,7 @@ As a practical way of learning the ropes of intrinsic web design, I'd like to or
 
 <br>
 
-<figure class="w-figure w-figure--fullbleed" >
+<figure class="w-figure w-figure--fullbleed">
   <img src="home.png" alt="TenHundred store home page" class="screenshot">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     <a href="https://argyleink-webdev-intrinsic-layout-guide.glitch.me/">Final Result</a>
