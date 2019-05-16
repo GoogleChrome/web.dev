@@ -31,7 +31,7 @@ site. See Portals in action:
     <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
   </video>
  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Seamless embeds and navigation with Portals. Created by <a href="https://twitter/com/argyleink">Adam Argyle</a>.
+    Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
   </figcaption>
 </figure>
 
