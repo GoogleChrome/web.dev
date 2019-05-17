@@ -50,11 +50,18 @@ module.exports = {
       },
       {
         title: 'Optimize your CSS',
-        pathItems: ['defer-non-critical-css'],
+        pathItems: [
+          'defer-non-critical-css',
+          'minify-css',
+        ],
       },
       {
         title: 'Optimize web fonts',
         pathItems: ['avoid-invisible-text'],
+      },
+      {
+        title: 'Optimize for network quality',
+        pathItems: ['adaptive-serving-based-on-network-quality'],
       },
       {
         title: 'Measure performance in the field',

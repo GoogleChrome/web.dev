@@ -29,31 +29,22 @@ the screen reader shouldn't announce hidden content.
 ## How to fix
 
 To hide offscreen content,
-remove the element containing that content from the tab order
-using `tabindex="-1"`.
+remove the element containing that content from the
+tab order by setting it to `display: none` or `visiblity: hidden`.
 
-<!--
-***Todo*** Ask Rob if `aria-hidden="true"` is also necessary to truly remove something.
--->
 For example:
 
-```html
-<button tabindex="-1">Can't reach me with the TAB key!</button>
+```css
+.remove-me {
+  visibility: hidden;
+}
 ```
 
-This removes an element from the natural tab order,
-but the element can still be
-focused by calling its `focus()` method.
+```html
+<button class="remove-me">Can't reach me with the TAB key!</button>
+```
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-negative-one?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-negative-one on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
-See also [Control focus with tabindex](/control-focus-with-tabindex).
+See also [Correctly set the visibility of offscreen content](/keyboard-access/#correctly-set-the-visibility-of-offscreen-content).
 
 ## More information
 

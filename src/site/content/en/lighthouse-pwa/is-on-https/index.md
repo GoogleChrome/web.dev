@@ -25,6 +25,8 @@ Lighthouse waits for an event from the Chrome Debugger Protocol indicating that
 the page is running on a secure connection. If the event is not heard within 10
 seconds, the audit fails.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 Migrate your site to HTTPS.
@@ -42,8 +44,6 @@ you may have problems with mixed content. Mixed content is when a secure site
 requests an unprotected (HTTP) resource. Check out the following doc on the
 Chrome DevTools Security panel to learn how to debug these situations:
 [Understand security issues](https://developers.google.com/web/tools/chrome-devtools/debug/security).
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## Why all sites should be on HTTPS
 

@@ -8,8 +8,6 @@ description: |
   significantly. Instead of shipping all the JavaScript to your user as soon as
   the first page of your application is loaded, code-split your bundle into
   multiple "pieces" and only send what's necessary at the very beginning.
-web_lighthouse:
-  - bootup-time
 date: 2018-11-05
 codelabs:
   - codelab-code-splitting

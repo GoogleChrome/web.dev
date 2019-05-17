@@ -23,6 +23,8 @@ to the width of the viewport:
 
 The audit fails if `window.innerWidth` does not equal `window.outerWidth`.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 This audit is a roundabout way of determining
@@ -36,8 +38,6 @@ You can ignore this audit if:
 - Your site does not need to be optimized for mobile screens.
 - The content width of your page is intentionally smaller or larger than the
   viewport width.
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

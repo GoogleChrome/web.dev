@@ -7,8 +7,6 @@ description: |
   Serving desktop-sized images to mobile devices can use 2–4x more data than
   needed. Instead of a "one-size-fits-all" approach to images, serve different
   image sizes to different devices.
-web_lighthouse:
-  - uses-responsive-images
 date: 2018-11-05
 codelabs:
   - codelab-specifying-multiple-slot-widths

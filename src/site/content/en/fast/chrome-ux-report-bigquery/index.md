@@ -7,7 +7,6 @@ description: |
   In this guide, learn how to use BigQuery to write queries against the CrUX 
   dataset to extract insightful results about the state of user experiences on 
   the web.
-web_lighthouse: N/A
 date: 2018-11-05
 ---
 

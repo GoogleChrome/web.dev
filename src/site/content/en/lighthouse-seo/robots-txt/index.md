@@ -59,10 +59,10 @@ in the correct location.
 
 Learn more in [Fix robots.txt errors](/fix-robot-errors).
 
-{% include 'content/lighthouse-seo/scoring.njk' %}
-
 ## More information
 
 - [Invalid `robots.txt` audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
 - [Create a `robots.txt file`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
+
+{% include 'content/lighthouse-seo/scoring.njk' %}

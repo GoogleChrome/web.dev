@@ -1227,5 +1227,67 @@
     "github": "argyleink",
     "twitter": "argyleink",
     "glitch": "argyleink"
+  },
+  "uskay": {
+    "name": {
+      "given": "Yusuke",
+      "family": "Utsunomiya"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Mobile Solutions Consultant"
+    },
+    "country": "JP",
+    "homepage": "https://blog.uskay.io/",
+    "twitter": "uskay",
+    "description": {
+      "en": "Tech consultant for Web, Chrome & AMP"
+    }
+  },
+  "martinschierle": {
+    "name": {
+      "given": "Martin",
+      "family": "Schierle"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Technical Solutions"
+    },
+    "country": "DE",
+    "twitter": "martinschierle",
+    "github": "martinschierle"
+  },
+  "joemedley": {
+    "name": {
+      "given": "Joe",
+      "family": "Medley"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "country": "US",
+    "github": "jpmedley",
+    "twitter": "medleyjp",
+    "description": {
+      "en": "If an API's not documented it doesn't exist"
+    }
+  },
+  "rowan_m": {
+    "name": {
+      "given": "Rowan",
+      "family": "Merewood"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "description": {
+      "en": "Developer Advocate for Chrome and web"
+    },
+    "country": "UK",
+    "twitter": "rowan_m",
+    "github": "rowan-m",
+    "glitch": "rowan-m"
   }
 }

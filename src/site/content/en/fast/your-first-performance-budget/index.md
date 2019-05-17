@@ -6,7 +6,6 @@ authors:
 description: |
   Ensure your site loads fast with a step-by-step guide to defining thresholds
   for performance metrics that are meaningful for your site.
-web_lighthouse: N/A
 date: 2018-11-05
 ---
 

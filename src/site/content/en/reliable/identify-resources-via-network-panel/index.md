@@ -10,7 +10,6 @@ description: |
   application, the network can be subject to all kinds of dark forces. You need
   to understand the network's vulnerabilities if you hope to cope with them in
   your app.
-web_lighthouse: N/A
 codelabs:
   - codelab-explore-network-panel
 ---
@@ -24,7 +23,7 @@ specific URL that your web app has loaded.
 </figure>
 
 {% Aside 'codelab' %}
-[Inerpret network traffic using Chrome's DevTools](/codelab-explore-network-panel).
+[Interpret network traffic using Chrome's DevTools](/codelab-explore-network-panel).
 {% endAside %}
 
 {% Aside %}

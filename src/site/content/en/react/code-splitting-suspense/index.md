@@ -171,25 +171,12 @@ Without this, it's easy to run into the problem of _staggered loading_, or
 different parts of a UI loading one after the other with each having their own
 loading indicator. This can make the user experience feel more jarring.
 
-### Concurrent rendering and data fetching
-
-Although using Suspense to split components is already possible and makes it
-easy to trim down bundle sizes, the React team is continuing to work
-on more features that would extend this even further:
-
-* Concurrent, or async, rendering would enable component rendering without
-  blocking the main thread. This would consequently allow certain component
-  trees to not render while other, more important interactions are taking place.
-  For Suspense, this means you can control when loading states should show (or
-  if they shouldn't unless they actually need to).
-* Instead of only showing loading indicators for lazy loaded components,
-  Suspense will also eventually allow you to delay rendering of components for
-  data fetches as well.
-
 {% Aside %}
- The
+ Although using Suspense to split components is already possible and makes it
+ easy to trim down bundle sizes, the React team is continuing to work on 
+ more features that would extend this even further. The
  [React 16.x roadmap](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html)
- explains each of these concepts in more detail.
+ explains this in more detail.
 {% endAside %}
 
 ## Conclusion

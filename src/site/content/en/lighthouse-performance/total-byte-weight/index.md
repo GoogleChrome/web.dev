@@ -4,7 +4,7 @@ title: Avoid enormous network payloads
 description: |
   Learn about the total-byte-weight audit.
 web_lighthouse:
-  - font display
+  - total-byte-weight
 ---
 
 Large network payloads cost users real money and are highly correlated with long load times.

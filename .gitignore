@@ -70,5 +70,4 @@ local-devsite.js
 # local styles for staging
 src/styles
 
-# macos garbage
 .DS_Store

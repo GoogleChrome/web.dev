@@ -7,10 +7,6 @@ date: 2018-11-18
 description: |
   By using the correct elements for headings and landmarks, you can dramatically
   improve the navigation experience for users of assitive technology.
-web_lighthouse:
-  - heading-levels
-  - use-landmarks
-  - bypass
 ---
 
 Screen readers have commands to quickly jump between headings or to specific

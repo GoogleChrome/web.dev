@@ -80,3 +80,4 @@ Learn how to minify your CSS code in [Minify CSS](/minify-css).
 
 - [Unminified CSS audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-css.js)
 - [Minify CSS](/minify-css)
+- [Minify and compress network payloads](/reduce-network-payloads-using-text-compression)

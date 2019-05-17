@@ -4,7 +4,7 @@ title: Ensure input types with a value "image" have alternate text
 description: |
   Learn about input-image audit.
 web_lighthouse:
-  - image-alt
+  - input-image-alt
 ---
 
 When an image is being used as an `<input>` button,

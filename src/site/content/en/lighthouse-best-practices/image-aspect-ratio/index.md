@@ -35,6 +35,8 @@ Two commom causes for this are:
 - Images are are set to explicit width and height values that differ from the source image's dimensions.
 - Images are set to a width and height as a percentage of a variably-sized container.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## Ensure images display with correct aspect ratio
 
 When possible, it's a good practice to specify image width and height in HTML,
@@ -50,8 +52,6 @@ Chrome DevTools can show you the CSS declarations that affect an image's aspect 
 See [View only the CSS that's actually applied to an element](https://developers.google.com/web/tools/chrome-devtools/css/reference#computed).
 
 Learn more in [Serve images with correct dimensions](/serve-images-with-correct-dimensions).
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

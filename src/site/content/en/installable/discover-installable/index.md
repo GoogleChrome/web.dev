@@ -9,7 +9,6 @@ description: |
   users device and run like other installed apps. Once installed, it's launched
   from the Start menu or app launcher, and run in an app window, without an
   address bar or tabs.
-web_lighthouse: N/A
 codelabs:
   - codelab-make-installable
 ---

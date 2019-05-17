@@ -8,7 +8,6 @@ description: |
   become interactive, faster. In this guide, learn how each of these techniques
   fit together but still can be used independently to achieve performance
   results.
-web_lighthouse: N/A
 date: 2018-11-05
 ---
 

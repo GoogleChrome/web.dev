@@ -28,6 +28,8 @@ Lighthouse reports any `hreflang` links with invalid language codes.
 
 Lighthouse does not check region codes or your Sitemap.
 
+{% include 'content/lighthouse-seo/scoring.njk' %}
+
 ## How to define an `hreflang` link
 
 Define an `hreflang` link for each language version of a URL.
@@ -84,8 +86,6 @@ For example, `en-ie` is for English speakers in Ireland,
 whereas `es-ie` is for Spanish speakers in Ireland.
 - The region code must follow
 [ISO 3166-1 alpha-2 format](https://wikipedia.org/wiki/ISO_3166-1_alpha-2).
-
-{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## More information
 

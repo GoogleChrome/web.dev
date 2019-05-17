@@ -43,8 +43,8 @@ Learn more in [Fix unsuccessful HTTP status codes](/fix-http-status-codes).
   </ul>
 </div>
 
-{% include 'content/lighthouse-seo/scoring.njk' %}
-
 ## More information
 
 [Search engines struggling to index your page audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
+
+{% include 'content/lighthouse-seo/scoring.njk' %}

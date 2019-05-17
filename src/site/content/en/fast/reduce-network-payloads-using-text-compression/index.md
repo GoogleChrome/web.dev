@@ -8,10 +8,6 @@ description: |
   There are two useful techniques that can be used to improve the performance of
   your web page, minification and data compression. Incorporating both of these
   techniques reduces payload sizes and in turn improves page load times.
-web_lighthouse:
-  - uses-text-compression
-  - unminified-css
-  - unminified-javascript
 codelabs:
   - codelab-text-compression
   - codelab-text-compression-brotli

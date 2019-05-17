@@ -12,7 +12,6 @@ description: |
   allowing anyone to easily download and use over half a million public
   packages. But we often include libraries we're not fully utilizing. To fix
   this issue, analyze your bundle to detect unused code.
-web_lighthouse: N/A
 codelabs:
   - codelab-remove-unused-code
 ---

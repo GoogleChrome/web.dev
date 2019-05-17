@@ -25,6 +25,8 @@ This audit fails if your page doesn't have a description,
 or if the `content` attribute of the description is empty.
 Lighthouse doesn't evaluate the quality of your description.
 
+{% include 'content/lighthouse-seo/scoring.njk' %}
+
 ## How to add a meta description
 
 Add a description tag to the `<head>` of each of your pages:
@@ -53,8 +55,6 @@ Learn more in [Add tags to the head of the page](/write-descriptive-text#add-tag
 - Descriptions don't have to be in sentence format; they can contain structured data.
 
 See [Create good meta descriptions](https://support.google.com/webmasters/answer/35624#1) for more guidance.
-
-{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## More information
 

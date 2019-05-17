@@ -6,7 +6,6 @@ authors:
 description: |
   Good performance is rarely a side effect. Learn about performance budgets and
   how they can set you on track for success.
-web_lighthouse: N/A
 date: 2018-11-05
 ---
 

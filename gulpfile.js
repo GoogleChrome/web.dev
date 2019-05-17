@@ -21,11 +21,17 @@ const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const sasslint = require('gulp-sass-lint');
+const mozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant');
+const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
+const gulpif = require('gulp-if');
 
 /* eslint-disable max-len */
 const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
 /* eslint-enable max-len */
+
+const isProd = process.env.ELEVENTY_ENV === 'prod';
 
 gulp.task('lint-js', () => {
   return (
@@ -78,6 +84,10 @@ gulp.task('copy-content-assets', () => {
     .src([
       `./src/site/content/en/**/*.{${assetTypes}}`,
     ])
+    .pipe(gulpif(isProd, imagemin([
+      pngquant({quality: [0.5, 0.5]}),
+      mozjpeg({quality: 50}),
+    ])))
     // This makes the images show up in the same spot as the permalinked posts
     // they belong to.
     .pipe(
@@ -104,7 +114,7 @@ gulp.task('copy-content-assets', () => {
 // });
 
 let buildTask;
-if (process.env.ELEVENTY_ENV === 'prod') {
+if (isProd) {
   buildTask = gulp.parallel('copy-content-assets');
 } else {
   buildTask = gulp.parallel(

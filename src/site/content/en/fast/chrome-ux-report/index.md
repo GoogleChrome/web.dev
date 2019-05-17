@@ -7,7 +7,6 @@ description: |
   The Chrome UX Report (informally known as CrUX) is a public dataset of real
   user experience data on millions of websites. Unlike lab data, CrUX data
   actually comes from opted-in users in the field.
-web_lighthouse: N/A
 date: 2018-11-05
 ---
 

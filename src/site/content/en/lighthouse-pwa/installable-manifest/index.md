@@ -46,6 +46,8 @@ is not `true`.
 - Has registered a
 [service worker](/service-workers-cache-storage) with a `fetch` event handler
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 In order for a user to be able to install your Progressive Web App,
@@ -81,8 +83,6 @@ and the page specified in the `start_url` property of the web app manifest.
 </div>
 
 Learn more in [Add a Web App Manifest](/add-manifest/).
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

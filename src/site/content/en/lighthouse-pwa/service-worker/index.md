@@ -29,6 +29,8 @@ Lighthouse flags pages that don't register a service worker:
 Lighthouse checks if the Chrome Debugger returns a service worker version.
 If it does not, the audit fails.
 
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
 ## Recommendations
 
 Registering a service worker involves only a few lines of code, but the only
@@ -44,8 +46,6 @@ the features in your own app:
 
 - [Make it installable](/codelab-make-installable/).
 - [Enable push notifications for your web app](https://codelabs.developers.google.com/codelabs/push-notifications).
-
-{% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## More information
 

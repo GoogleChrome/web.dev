@@ -1,7 +1,8 @@
 ---
 title: An example blog post
 subhead: A catchy subhead that previews the content.
-author: robdodson
+authors:
+  - robdodson
 date: 2019-04-20
 hero: hero.jpg
 # You can adjust the position of your hero image with this property.
@@ -12,6 +13,7 @@ description: |
   This post is a test to demonstrate all of the components that can go into
   an article. This description appears in the meta tag.
 tags:
+  - post # post is a required tag for the article to show up in the blog.
   - accessibility
   - ux
 ---

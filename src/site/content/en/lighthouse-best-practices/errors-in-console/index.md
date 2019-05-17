@@ -47,6 +47,8 @@ The bottom one comes from the browser,
 which indicates that a variable used in one of the page's scripts does not exist.
 Lighthouse flags the browser errors.
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## How to fix the browser errors
 
 Fix each of the errors that Lighthouse reports
@@ -75,8 +77,6 @@ If you can't fix the errors, at least consider wrapping them in
 [`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statements
 to explicitly indicate in the code that you're aware of the issue.
 You can also use the `catch` block to handle the error situation more gracefully.
-
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## More information
 

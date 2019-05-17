@@ -7,8 +7,6 @@ description: |
   WebP images are smaller than their JPEG and PNG counterparts - usually on the
   magnitude of a 25-35% reduction in filesize. This decreases page sizes and
   improves performance.
-web_lighthouse:
-  - uses-webp-images
 date: 2018-11-05
 codelabs:
   - codelab-serve-images-webp
@@ -103,7 +101,7 @@ serve WebP to newer browsers and a fallback image to older browsers:
 
 **Before:**
 ```html
-<img src="flower.jpg"/>
+<img src="flower.jpg" alt="">
 ```
 
 **After:**
@@ -111,7 +109,7 @@ serve WebP to newer browsers and a fallback image to older browsers:
 <picture>
   <source type="image/webp" srcset="flower.webp">
   <source type="image/jpeg" srcset="flower.jpg">
-  <img src="flower.jpg">
+  <img src="flower.jpg" alt="">
 </picture>
 ```
 
@@ -145,7 +143,7 @@ The `<img>` tag is what makes this code work on browsers
 that don't support the `<picture>` tag.
 If a browser does not support the `<picture>` tag, it will
 ignore the tags it doesn't support. Thus, it only "sees" the
-`<img src="flower.jpg">` tag and loads that image.
+`<img src="flower.jpg" alt="">` tag and loads that image.
 
 {% Aside 'gotchas' %}
 - The `<img>` tag should always be included, and it should always be listed last, after all `<source>` tags.

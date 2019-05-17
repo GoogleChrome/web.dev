@@ -6,7 +6,6 @@ author:
 description: |
   The best way to keep an eye on your performance budget is to automate it. Find
   out how to choose a tool that best fits your needs and current setup.
-web_lighthouse: N/A
 date: 2019-02-01
 codelabs:
   - codelab-setting-performance-budgets-with-webpack
