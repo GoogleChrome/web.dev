@@ -5,7 +5,8 @@ authors:
   - adamargyle
 description:
 glitch: intrinsic-layout-macro-v1
-path: app/css/layouts/body.css
+path: app/index.html
+previewSize: 50
 related_post: intrinsic-layout-macro
 ---
 
@@ -17,11 +18,7 @@ related_post: intrinsic-layout-macro
 
 I love `grid-template-areas`, it's very cool, and fits the bill for tons of layout tasks. It's traditionally been the first way I translate a design into grid, it just makes sense and often the code reads very similar to the way we talk about a grid, which I'm a big fan of.
 
-So let's use it! Let's make some tracks, select some nodes and put them into their cells.
-
-{% Aside 'gotchas' %}
-  Make sure to check out the HTML so there's context for the selectors and grid implementation.
-{% endAside %}
+**So let's use it!** Let's make some tracks, select some nodes and put them into their cells.
 
 <br>
 
@@ -29,139 +26,147 @@ So let's use it! Let's make some tracks, select some nodes and put them into the
 ```css
 body {
   display: grid;
-  gap: 2rem; ??
+  gap: 2rem 0;
   grid-template-columns: var(--body-rails) var(--sidebar-width) 1fr var(--body-rails);
+  grid-template-rows: var(--body-rails) min-content 1fr;
   grid-template-areas:
     "nav nav nav nav"
-    ". header header ."
-    ". aside article .";
+    ". header header header"
+    ". aside article article";
 
+  /* select and assign children to an area */
   & > nav {
     grid-area: nav;
   }
 
-  & > header {
+  & > .greeting {
     grid-area: header;
   }
 
-  & aside {
+  & > aside {
     grid-area: aside;
   }
 
-  & article {
+  & > article {
     grid-area: article;
   }
 }
 ```
-#### Grid in Plain Speak:
-I want a **grid** that's **3** rows by **4** columns, the **first** and **last** columns should be **equal** and the width of the `--body-rails`  CSS variable. **2nd** column at the **predetermined width** of a sidebar, and our **column 3** should **fill** all remaining space. **Furthermore**, these **areas** are **named**, and "these elements" should occupy "these areas".
+
+{% Compare 'better', 'Tip' %}
+[Open the Glitch](https://intrinsic-layout-macro-v1.glitch.me) in a new tab and inspect the grid with devtools 👍
+{% endCompare %}
+
+<br>
+
+### Let's break some of that down...
+
+#### Columns in plain speak:
+```css
+grid-template-columns: var(--body-rails) var(--sidebar-width) 1fr var(--body-rails);
+```
+- **1st** and **4th** columns should be fixed and equal with an extrinsic width set by the `--body-rails` CSS custom property. These are the flanking rails of the layout.
+- **2nd** column should be the extrinsic width set by the `--sidebar-width` custom property.
+- **3rd** column is our flexible column and should fill all remaining space.
+
+<br>
+
+#### Rows in plain speak:
+```css
+grid-template-rows: var(--body-rails) min-content 1fr;
+```
+- The **1st** row is our navbar and design decided it's height is the same value as the width of our rails, the custom property `--body-rails`. This means it's extrinsicly set, and also means we don't need padding in that navbar to have vertically centered content, we can align children to the center of the container.
+- The **2nd** row is our header, an intrinsicly sized row indicated by the `min-content` keyword. This keyword in the case of a row, will shrinkwrap to whatever minimum height is required by the contents of the node.
+- The **3rd** row is a fluid row that fill the remaining space or expands to match the needs of it's contents.
 
 <!-- <figure style="text-align:center; margin: 1rem 0;">
   <img src="macro – body grid.png" alt="">
   <figcaption>tracks visualized: highlighted rows and dashed line columns</figcaption>
 </figure> -->
 
-## Pros 👍
-1. Sure is **fun to read**, visual way to create a grid
-1. It's a **slotted layout**, which may play nice with component architectures
+<br>
+
+#### Slotted layout pros 👍
+1. Sure is a **fun to read** visual way to create a grid
+1. Shallow DOM tree
+1. **Slotted**, which may play nice with component architectures
 1. Feels like a traditional print layout where there's content areas and we **placed elements**
 
-## Cons 👎
+<br>
+
+#### Slotted layout cons 👎
 1. High specificity: **specific children** to **specific locations**
 1. **Empty columns** in the `<main>`feel wasteful when we have margin
 1. **Lots of code**, even though it reads well and is satisfying
 1. **Falling back** for older browsers will be tough with `grid-template-area`
-1. Inside a media query when we end up stacking these elements on mobile, we don't just have 1 or 2 levers to pull to tweak the layout, **we've got a handful of rules to update**
+1. Inside a media query when we end up stacking these elements on mobile, we don't just have 1 or 2 levers to pull to tweak the layout, **we've got a handful of rules to update.** Each specific child needs put into a new specific location. #tedious
 1. Adding children, like a `<footer>` would require additional CSS to write
-
-TODO: simulate some chaos by adding a footer: make it easy for users to uncomment a footer and see it not work out well
-
-TODO: move responsive work into here: do the responsive css to demonstrate the tedious nature of it
-
-## Conclusion
-todo: write a recap
-
-<!-- **HTML**
-```html
-<body>
-  <nav></nav>
-  <header>
-    <h2></h2>
-  </header>
-  <main>
-    <aside></aside>
-    <article></article>
-  </main>
-  <footer></footer>
-</body>
-```
-{% Compare 'better', 'Plain Speak' %}
-  Our layout skeleton with our estimated semantic markup begins to take shape
-{% endCompare %}
 
 <br>
 
-**CSS**
-```css
+## Responsive Final Touches
+Our designers didn't provide mobile comps, so through **trial and reason** I found that 768px, a typical portait and tablet size, is a great time to collapse our grid into a single column stack. This can be achieved with out slotted layout like so.
+
+```css/26-34
 body {
   display: grid;
+  gap: 2rem 0;
   grid-template-columns: var(--body-rails) var(--sidebar-width) 1fr var(--body-rails);
+  grid-template-rows: var(--body-rails) min-content 1fr;
   grid-template-areas:
     "nav nav nav nav"
-    ". header header ."
-    ". aside article .";
+    ". header header header"
+    ". aside article article";
 
   & > nav {
     grid-area: nav;
   }
 
-  & > header {
+  & > .greeting {
     grid-area: header;
   }
 
-  & aside {
+  & > aside {
     grid-area: aside;
   }
 
-  & article {
+  & > article {
     grid-area: article;
+  }
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--body-rails) min-content 3rem 1fr;
+    grid-template-areas:
+      "nav"
+      "header"
+      "aside"
+      "article";
   }
 }
 ```
-{% Compare 'better', 'Plain Speak' %}
-I want a **grid** that's **3** rows by **4** columns, the **first** and **last** columns should be **equal** and the width of the `--body-rails`  CSS variable. **2nd** column at the **predetermined width** of a sidebar, and our **column 3** should **fill** all remaining space. **Furthermore**, these **areas** are **named**, and "these elements" should occupy "these areas".
-{% endCompare %}
 
-<br><br>
+Well, **36 lines of code** isn't too bad for a responsive layout. It's not broken, it just needs it hand held a bit.
 
-**Results**
-<div class="glitch-embed-wrap" style="height: 480px; width: 960px;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
-    alt="logical-tab-order on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+#### Incoming Chaos!!
+Ready to write some code and **simulate some chaos?** Incoming change from the design team:
 
-**Open that Glitch up** in a new tab and give it a whirl, kick the tires, peep the code. Try tweaking a few things that you're curious about. What do you think?
+{% Aside 'objective' %}
+  Remix the codelab to the right and uncomment the `<footer>` in `app/index.html`. Finish / author new CSS in `app/css/layouts/body.css` to put the `<footer>` into the proper place in the grid. **Don't forget about the media query!**
 
-<br><br>
+  When you're done, remember the level of effort and simplicity of handling the change. We'll be comparing it against a refactor soon. This type of chaos is typical in most environments, so it makes sense that we're concious of these changes that could come down the pipe.
+{% endAside %}
 
-#### Each element **has a place**, each element **in it's place**
+<br>
 
-<figure style="text-align:center; margin: 1rem 0;">
-  <img src="macro – body grid.png" alt="">
-  <figcaption>tracks visualized: highlighted rows and dashed line columns</figcaption>
-</figure>
+## Conclusion
+Grid template areas works fine, but wow when we uncommented that `<footer>` **it really was not intuitive what happened.** Our footer was tiny, crammed into the first open cell, and not under our content (where it logically should be). **When we start placing items we break out of flow**, almost like when you make an element positioned absolute.
 
-## Pros 👍
-1. Sure is **fun to read**, very visual way to create a grid
-1. It's a **slotted layout**, which will play nice with component architecture
-1. Feels like a magazine layout where there's content areas and we **placed elements**
+Next, **we refactor to remedy some of these trials we learned** through our first grid. This time, we want less code, less selectors, and some flexibility with our container children.
 
-## Cons 👎
-1. High specificity: **specific children** to **specific locations**
-1. **Empty columns** in the `<main>`feel wasteful when we have margin
-1. **Lots of code**, even though it reads well and is satisfying
-1. **Falling back** for older browsers will be tough with `grid-template-area`
-1. Inside a media query when we end up stacking these elements on mobile, we don't just have 1 or 2 levers to pull to tweak the layout, **we've got a handful of rules to update** -->
+<a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v2">
+  Codelab: Intrinsic Macro Grids
+</a>
+
+OR
+<br>
