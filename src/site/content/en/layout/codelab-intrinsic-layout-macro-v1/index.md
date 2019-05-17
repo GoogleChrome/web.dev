@@ -5,6 +5,7 @@ authors:
   - adamargyle
 description:
 glitch: intrinsic-layout-macro-v1
+path: app/css/layouts/body.css
 related_post: intrinsic-layout-macro
 ---
 
