@@ -5,12 +5,19 @@ authors:
   - adamargyle
 description:
 glitch: intrinsic-layout-macro-v2
+path: app/index.html
+previewSize: 50
 related_post: intrinsic-layout-macro
 ---
 
 In this refactor I want to try and reduce our selector specificity, reduce the amount of code in media queries, and move away from defining explicit boxes.
 
-<!-- Grid 2 `<main>`: I want a **grid with 2 columns**, the first at a fixed width and the 2nd filling the remaining space -->
+In case you missed Macro Layout v1, ramp up here:
+<a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v1">
+  Codelab: A Slotted Layout
+</a>
+
+<br>
 
 #### Let's break it down
 ## 1. `<body>` Layout
@@ -37,8 +44,10 @@ I want a **grid** of **rows** with a **2rem gap**
   <img src="macro – body rows.png" alt="Showing simplified grid of only rows" class="screenshot">
 </figure>
 
+No magic is that grid, in fact, we practically don't even need the grid here! They're laying out like block level elements naturally do, or would, without grid, BUT, we get gap, and I like gap.
 
-## Pros 👍
+
+## Macro intrinsic layout pros 👍
 1. Just rows
 1. Just gaps
 1. Add more elements and layout continues to work great
@@ -46,7 +55,7 @@ I want a **grid** of **rows** with a **2rem gap**
 1. Fallback is straight forward
 1. **Just flow and spacing**
 
-## Cons 👎
+## Macro intrinsic layout cons 👎
 1. **No more rails** (not really a con, but doesn't match the mental model my design brain had)
 1. **Dinky**, it's barely doing anything (this a con? lol, perhaps to some?)
 
@@ -65,7 +74,6 @@ We've spaced our big elements vertically, now we have **1 more large macro layou
 main {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
-  margin: 0 var(--body-rails);
 }
 ```
 #### Grid in Plain Speak:
@@ -86,9 +94,61 @@ Instead of rails we **use margin** 🤯 and then just have **2 columns**:
 ## Cons
 1. No more rails (I dont know why, but I liked them, and they're gone lol)
 
+<br>
 
-TODO: simulate some chaos by adding a footer
-TODO: move responsive work into here
+## Responsive Final Touches
+Our tasks at a high level are to remove the heavy left margin and stack our aside and articles in our mobile layout.
+
+I prefer parent containers holding as much spacing logic as possible, so our first order of business is approach this [mobile first](https://www.lukew.com/ff/entry.asp?933), and only have left margin when we're not mobile. AKA, only when we're at a tablet or above viewport should there be a left margin:
+
+```css/5-9
+body {
+  display: grid;
+  gap: 2rem;
+  grid-auto-flow: row;
+
+  @media (width > 768px) {
+    & > :matches(.greeting, main) {
+      margin-left: var(--body-rails);
+    }
+  }
+}
+```
+
+#### CSS in plain speak:
+When the viewport is greater than 768px, then select any direct descendants of the `body` that match `.greeting` or `main` and give them some left margin.
+
+<br>
+
+```css/4-6
+main {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+
+  @media (width <= 768px) {
+    display: contents;
+  }
+}
+```
+
+#### CSS in plain speak:
+When the viewport is less than or equal to 768px, act as if the `main` tag didn't exist. This has the effect of hoisting the aside and article up to the body, therefore inheriting the grid styles we placed there, which is just rows and gaps. We piggy back onto the intrinsic and unassuming grid that's managing the spacing of our top most layout. Kinda neat!
+
+<br>
+
+#### Incoming Chaos!!
+Ready to write some code and **simulate some chaos?** Incoming change from the design team:
+
+{% Aside 'objective' %}
+  Remix the codelab to the right and uncomment the `<footer>` in `app/index.html`. Finish / author new CSS in `app/css/layouts/body.css` to put the `<footer>` into the proper place in the grid.
+
+  Compare this with the work needed in Macro Layout v1.
+{% endAside %}
+
+<br>
+
+## Conclusion
+why was this refactor better? how did the footer prove anything?
 
 <!-- #### Let's break it down
 ## 1. `<body>` Layout

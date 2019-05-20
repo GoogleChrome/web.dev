@@ -167,6 +167,12 @@ body {
   display: grid;
   gap: 2rem;
   grid-auto-flow: row;
+
+  @media (width > 768px) {
+    & > :matches(.greeting, main) {
+      margin-left: var(--body-rails);
+    }
+  }
 }
 ```
 
@@ -187,7 +193,10 @@ Just flow/direction and spacing
 main {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
-  margin: 0 var(--body-rails);
+
+  @media (width <= 768px) {
+    display: contents;
+  }
 }
 ```
 
