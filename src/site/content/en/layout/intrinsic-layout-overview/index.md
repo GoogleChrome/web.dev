@@ -29,7 +29,7 @@ She describes intrinsic web design so well that I'd like to pull directly from *
 </blockquote>
 
 <figure class="w-figure w-figure--center" style="margin: 5rem 0;">
-  <img src="https://media3.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif?cid=3640f6095c9541ae7945334751d09c8b" alt="Patrick Star admiring with floating hearts">
+  <img loading="lazy" src="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/patrick-star.gif" alt="Patrick Star admiring with floating hearts">
 </figure>
 
 #### So **stoooooked** on this approach to layout!
@@ -49,7 +49,7 @@ This may look familiar 😂, it's the result of an extrinsic approach to layout:
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 {% Aside 'caution' %}
-  Extrinsic isn't evil or weak either, I don't want this setup or guide to pitch extrinsic as something to avoid at all costs. We'll just be conciously using extrinsic in this guide, there are still many scenarios where it's the right choice.
+  Extrinsic isn't evil or weak, I don't want this guide to pitch extrinsic as something to avoid at all costs. We'll be using both intrinsic and extrinsic properties and strategies in this guide. There are still many scenarios where extrinsic layout is the right choice 👍.
 {% endAside %}
 
 The article [CSS is Awesome](https://css-tricks.com/css-is-awesome/) from [CSS-Tricks](https://css-tricks.com) **recaps the frustration** of this classic CSS joke really well:
@@ -60,11 +60,11 @@ The article [CSS is Awesome](https://css-tricks.com/css-is-awesome/) from [CSS-T
 Studying and striving for **intrinsic layout can help alleviate these frustrations**:
 - <s>The content doesn't shrink to fit the container</s> <br>Content's sizing needs are considered first
 - <s>The container doesn't expand to fit the content</s> <br>The container shrinkwraps to the content
-- <s>The container doesn't handle overflow gracefully</s> <br>Overflow isn't an issue when content size and length is respected
+- <s>The container doesn't handle overflow gracefully</s> <br>Overflow isn't an issue when content size and length are respected
 
 <br>
 
-### Additionally
+#### Additionally
 In my experience, laying out a site/components extrinsicly is initially the easiest. Later, it becomes tedious to maintain or even becomes a problem for other folks on the team that aren't engineers. **Eventually, the front-end instigates limitations that affect more systems and folks than it should because of it's percieved inflexibility.** I believe these issues stem from overly articulating a layout by applying too many extrinsic properties. Perhaps you or your team have felt 1 or more of the following:
 
 1. Ever been in a CMS with an odd text length limit on a field that's hindering you from proper articulation?
@@ -73,7 +73,9 @@ In my experience, laying out a site/components extrinsicly is initially the easi
 1. Ever seen a field in a CMS required so the front end didn't break?
 1. etc, etc..
 
-### Let's confront these
+<br>
+
+#### Let's confront these
 Let's investigate how much flexibility we have these days. **Let's simulate the chaos of user generated content** to put our layouts and components to the test. Our end goal being [layout algorythyms](https://notlaura.com/writing-css-algorithms/) that elegantly handle changing contexts and content. The front-ends that we build **shouldn't** be continuing the perception of inflexibility, they **should be** liberating our systems and users while simultaneously providing richer design options for a diverse set of viewports.
 
 <br><br><br><br>
@@ -85,31 +87,42 @@ Let's investigate how much flexibility we have these days. **Let's simulate the 
 
 As a practical way of learning the ropes of intrinsic web design, I'd like to orient this guide towards a meaningful, reasonable and tangible end goal: **a full page responsive layout.** The following design may look innocent, but it's **jam packed** with learning opportunities. Along the way we'll implement **macro and micro layouts**, a mixture of **[flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) and [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)**, a blend of **[intrinsic and extrinsic](https://googlechrome.github.io/samples/css-intrinsic-sizing/)**, plus a **sprinkle of chaos** to really help the value add sink in.
 
-#### Checkout the design 💀🤘
-
-<br>
+#### The Design
+A theoretically **CMS powered e-commerce homepage**. Horizontally overflowing scroll areas, component variability, heavy images, etc. Plus the pretty typical scenario of no mobile designs provided, but are expected.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="home.png" alt="TenHundred store home page" class="screenshot">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/home@2x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/home.jpg" alt="TenHundred store home page" class="screenshot">
+  </picture>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    <a href="https://argyleink-webdev-intrinsic-layout-guide.glitch.me/">Final Result</a>
+    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank">Preview the final layout demo page</a>
   </figcaption>
 </figure>
 
-We **break this design down,** piece by piece, focusing **specifically on the layouts**:
+We **break this design down,** piece by piece, focusing **specifically on the layouts** for desktop and mobile:
 
-- [Macro](/intrinsic-layout-macro)
-- [Nav](/intrinsic-layout-nav)
-- [Sidebar](/intrinsic-layout-sidebar)
-- [Grouped ListView](/intrinsic-layout-grouped-listview)
-- [Chip Card](/intrinsic-layout-chip-card)
-- [Mural Card](/intrinsic-layout-mural-card)
-- [Featured Card](/intrinsic-layout-card)
+1. **[Macro](/intrinsic-layout-macro)**<br>The highest level layout, the territory creator
+1. **[Nav](/intrinsic-layout-nav)** <small>(coming soon)</small><br>Reponsive down to 240px plus a shallow DOM tree
+1. **[Sidebar](/intrinsic-layout-sidebar)** <small>(coming soon)</small><br>Learn why flex was better than grid for UX
+1. **[Grouped ListView](/intrinsic-layout-grouped-listview)** <small>(coming soon)</small><br>A listview of listviews
+1. **[Chip Card](/intrinsic-layout-chip-card)** <small>(coming soon)</small><br>Teach this tiny card how to handle lots of chaos
+1. **[Mural Card](/intrinsic-layout-mural-card)** <small>(coming soon)</small><br>The trickiest of the layouts to solve
+1. **[Featured Card](/intrinsic-layout-card)** <small>(coming soon)</small><br>Take what you've learned and apply it in this resilient and intrinsic layout coding challenge
+
+<br><br>
+
+<figure class="w-figure--center">
+  <img loading="lazy" class="w-screenshot" src="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/feature-card-chaos.gif" alt="Showing component being edited, deleted and abused yet the layout and ratios remain intact">
+  <figcaption class="w-figcaption">
+    <b>Example of the chaos</b> we'll throw at layouts to verify resilience
+  </figcaption>
+</figure>
 
 <br>
 
-## TLDR;
-### Prepare to:
+## From This Guide 📓
+#### Prepare to:
 - **lean into content variability**: aka assume text/images are out of our control
 - **simulate chaos**: aka simulate content variability
 - lean into **[css grid](https://css-tricks.com/snippets/css/complete-guide-grid/)**
@@ -118,7 +131,8 @@ We **break this design down,** piece by piece, focusing **specifically on the la
 - **limit [fixed units](https://www.w3.org/TR/css-sizing-3/)**
 - **limit defining heights** (though I'll demo exceptions!)
 - **limit writing @media queries**
-- **limit `grid-template-areas`** usage: it enables creative layouts but they have high specificity
+- Leverage `minmax()` to **curb needs** for media queries or container queries
+- **limit** `grid-template-areas` **usage:** it enables creative layouts but they have high specificity and are difficult to polyfill
 - **curb** our **grid happy tendencies**: perhaps flexbox is better
 - use [**css variables**](https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/)
 - fix the layout at smaller viewports **using our best judgement**
@@ -127,13 +141,13 @@ We **break this design down,** piece by piece, focusing **specifically on the la
 
 <br>
 
-### Takeaways:
-- be confident **when playing with layout**
-- be confident in **refactoring layout**
+#### Takeaway:
+- confidence **when playing with layout**
+- confidence in **refactoring layout**
 - **distinguish** when **flexbox or grid** are most appropriate
 - **leverage** the size of your **content**
 - use **less** `grid-template-areas`
-- **take snippets** back to your product/project
+- **grid snippets** for your product/project
 - engineer **[resilient](https://www.smashingmagazine.com/2017/03/resilient-web-design/) and intrinsic** CSS layout algorithms
 
 <br><br>
@@ -144,6 +158,6 @@ We'll acquire some bruises along the way as we bump our head, shoulders, knees a
 If you don't have the basics of grid or flexbox down, have no fear. **Y'all can pick up the basics & jargon along the way.** I'll do my best to provide links out to topics that I'm not going to cover but will touch upon. 👍
 
 <figure style="text-align:center; margin: 5rem 0;">
-  <img src="https://media3.giphy.com/media/l0IyjiXOXTX6Yemsg/giphy.gif?cid=3640f6095c9542263268556d73ffef90" alt="run begin GIF by Crowdfire">
+  <img loading="lazy" src="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/get-started.gif" alt="run begin GIF by Crowdfire">
   <figcaption>Weeeeeeeeeeeeeeee!</figcaption>
 </figure>

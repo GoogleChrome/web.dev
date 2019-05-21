@@ -5,8 +5,8 @@ authors:
   - adamargyle
 description:
 glitch: intrinsic-layout-macro-v1
-path: app/index.html
-previewSize: 50
+path: app/css/layouts/body.css
+previewSize: 70
 related_post: intrinsic-layout-macro
 ---
 
@@ -14,7 +14,10 @@ related_post: intrinsic-layout-macro
   `grid-template-areas` ([docs](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)) empowers a developer to visually create rows and tracks by name, which then a grid item (child) can reference those area names and claim the space.
 {% endAside %}
 
-## Each element **has a place**, <br>each element **in it's place**
+<h2 style="text-align:center">
+  Each element <b>has a place</b>, <br>
+  each element <b>in it's place</b>
+</h2>
 
 I love `grid-template-areas`, it's very cool, and fits the bill for tons of layout tasks. It's traditionally been the first way I translate a design into grid, it just makes sense and often the code reads very similar to the way we talk about a grid, which I'm a big fan of.
 
