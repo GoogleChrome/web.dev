@@ -4,7 +4,7 @@ subhead: Easy to use real-world interactivity
 authors:
   - joemedley
 date: 2019-05-07
-hero: hero.png
+hero: hero.jpg
 alt: A series of screens shows a phone camera scanning an image and generating a link.
 description: |
   Wouldn't it be great if users could search your site using their camera?
