@@ -10,26 +10,47 @@ previewSize: 70
 related_post: intrinsic-layout-macro
 ---
 
-In this refactor I want to try and reduce our selector specificity, reduce the amount of code in media queries, and move away from defining explicit boxes.
+In this refactor I want to try and reduce our selector specificity, reduce the amount of code in media queries, and move away from defining explicit boxes where it makes sense.
 
-In case you missed Macro Layout v1, ramp up here:
-<a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v1">
-  Codelab: A Slotted Layout
-</a>
+In case you missed Macro Layout v1:
+
+{% Aside 'codelab' %}
+  [Previous Codelab (v1): A Slotted Layout](/codelab-intrinsic-layout-macro-v1)
+{% endAside %}
 
 <br>
 
 #### Let's break it down
 ## 1. `<body>` Layout
-Our **most macro grid** is placed on the body. It's **creating directionality** for the highest level elements (`<nav>`, `<header>`, `<main>`, etc) and the **spacing between** them. This grid is minimal and doesn't know anything about what it's laying out except that there should be some healthy space applied via gap.
+Our **top level macro grid** is the `<body>`. In the [previous codelab](/codelab-intrinsic-layout-macro-v1), adding a `<footer>` was an issue because it didn't just append to the vertical layout stack. Let's fix that by defining a grid that knows less about the children. It's best if the grid on body just **creates directionality** for the highest level elements and the **spacing between** them.
 
 {% Aside 'gotchas' %}
-  The Glitch on the right is editable but you need to click "remix" first
+  Click the **Remix To Edit** button to make the project editable
 {% endAside %}
 
 <br>
 
+#### The HTML
+To support the refactor to vertical rhythm and spacing, I've updated our HTML structure. I've wrapped the `<aside>` and `<article>` in a `<main>` tag:
+
+```html
+<body>
+  <nav>...</nav>
+  <h2>Free Shipping in U.S.</h2>
+  <main>
+    <aside>...</aside>
+    <article>...</article>
+  </main>
+</body>
+```
+
+It's interesting how a refactor to simpler layouts may have enhanced our semantic markup. The `<main>` tag totally makes sense as a wrapper, and it allows us to space both those children at the same time. Our goal of "1 grid to rule them all" in v1 lead us to changing our markup to meet the needs of our CSS. This has been reversed, now our CSS can meet the needs of our HTML.
+
+<br>
+
 #### The CSS
+See `app/css/layouts/body.css` in the Glitch embed.
+
 ```css
 body {
   display: grid;
@@ -37,29 +58,37 @@ body {
   grid-auto-flow: row;
 }
 ```
-#### Grid in Plain Speak:
-I want a **grid** of **rows** with a **2rem gap**
 
-<figure style="text-align:center; margin: 2rem 0;">
-  <img src="macro – body rows.png" alt="Showing simplified grid of only rows" class="screenshot">
+#### Grid in Plain Speak:
+<figure class="w-figure">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-body-rows%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-body-rows.jpg" alt="rows overlayed on the design comp reflecting what CSS grid is making" class="screenshot">
+  </picture>
 </figure>
 
-No magic is that grid, in fact, we practically don't even need the grid here! They're laying out like block level elements naturally do, or would, without grid, BUT, we get gap, and I like gap.
+I want a **grid of rows** with a **2rem gap**.
 
+No magic is that grid, in fact, we practically don't even need the grid here! Children are laying out like block level elements naturally do, or would, without grid. BUT! We get gap, and I like gap.
 
-## Macro intrinsic layout pros 👍
+<br>
+
+## Code Review
+#### Macro intrinsic layout pros 👍
 1. Just rows
 1. Just gaps
-1. Add more elements and layout continues to work great
+1. **Add more elements and layout continues to work great**
 1. Respectful rows that don't enforce a height
 1. Fallback is straight forward
 1. **Just flow and spacing**
 
-## Macro intrinsic layout cons 👎
+<br>
+
+#### Macro intrinsic layout cons 👎
 1. **No more rails** (not really a con, but doesn't match the mental model my design brain had)
 1. **Dinky**, it's barely doing anything (this a con? lol, perhaps to some?)
 
-
+Cool, so our rows are taken care of. Let's checkout what we need to do to match the column styles we achieved in v1.
 
 
 <br><br><br>
@@ -81,18 +110,26 @@ I want a **grid** with **2 columns**, the **first at a fixed width** and the **2
 
 Instead of rails we **use margin** 🤯 and then just have **2 columns**:
 
-<figure style="text-align:center; margin: 2rem 0;">
-  <img src="macro – main.png" alt="Main grid simplified to 2 columns" class="screenshot">
+<figure class="w-figure">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-v2-margins%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-v2-margins.jpg" alt="Main grid simplified to 2 columns" class="screenshot">
+  </picture>
 </figure>
 
-## Pros 👍
+<br>
+
+## Code Review
+#### Pros 👍
 1. **Cut** the amount of **columns** to manage **in half**
 1. **Cut** down the **complexity**
 1. **Cut** the **LoC** down to 3
 1. Media queries need to **know much less**
 
-## Cons
-1. No more rails (I dont know why, but I liked them, and they're gone lol)
+<br>
+
+#### Cons 👎
+1. Margin in place of a column? Aren't we here to learn about CSS grid?
 
 <br>
 
@@ -137,6 +174,12 @@ main {
 
 #### CSS in plain speak:
 When the viewport is less than or equal to 768px, act as if the `main` tag didn't exist. This has the effect of hoisting the aside and article up to the body, therefore inheriting the grid styles we placed there, which is just rows and gaps. We piggy back onto the intrinsic and unassuming grid that's managing the spacing of our top most layout. Kinda neat!
+
+<figure class="w-figure">
+  <picture>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/v1-responsive.gif" alt="gif demoing responsive nature of the layout going from columns to a stack" class="screenshot">
+  </picture>
+</figure>
 
 <br>
 
