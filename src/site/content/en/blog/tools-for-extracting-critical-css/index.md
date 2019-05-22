@@ -62,23 +62,23 @@ New [TCP](https://hpbn.co/building-blocks-of-tcp/) connections cannot immediatel
 
 The performance impact you can achieve with this technique depends on the type of your website. Generally speaking, the more CSS a site has, the greater the possible impact of inlined CSS.
 
-# Overview of tools
+## Overview of tools
 
 Determining the critical CSS for a page is rather complex. It requires analysis of the entire DOM to determine the styles that are applied to each element in the viewport. Doing this manually would be a tedious process, but there are a number of great tools that do this automatically. 
 
-## Critical
+### Critical
 
 [Critical](https://github.com/addyosmani/critical) extracts, minifies and inlines above-the-fold CSS and is available as [npm module](https://www.npmjs.com/package/critical). It can be used with Gulp (directly) or with Grunt (as a [plugin](grunt-critical)) and there’s a [webpack plugin](html-critical-webpack-plugin) too.
 
 It’s a simple tool that takes a lot of thinking out of the process. You don’t even have to specify the stylesheets, Critical automatically detects them. It also supports extracting critical CSS for multiple screen resolutions.
 
-## criticalCSS
+### criticalCSS
 
 [CriticalCSS](https://github.com/filamentgroup/criticalCSS) is another [npm module](https://www.npmjs.com/package/criticalcss) that extracts above-the-fold CSS. It is also available as a CLI. 
 
 It doesn’t have options to inline and minify critical CSS, but it does let you force-include rules that don't actually belong in critical CSS and gives you more granular control over including `@font-face` declarations.
 
-## Penthouse
+### Penthouse
 
 [Penthouse](https://github.com/pocketjoso/penthouse) is a good choice if your site or app has a large number of styles or styles which are being dynamically injected into the DOM (common in Angular apps). It is a more robust tool that uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) under the hood. It features an [online hosted version](https://jonassebastianohlsson.com/criticalpathcssgenerator/) too. 
 
