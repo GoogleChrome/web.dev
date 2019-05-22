@@ -112,7 +112,7 @@ The table below contains some useful Critical options. You can check out all of 
   <tr>
     <td>minify</td>
     <td>boolean</td>
-    <td>When set to true, minifies the generated critical CSS. Can be omitted when extracting critical CSS for multiple resolutions because Critical automatically minifies it to avoid duplicate rule inclusion.</td>
+    <td>When set to true, Critical minifies the generated critical CSS. Can be omitted when extracting critical CSS for multiple resolutions because Critical automatically minifies it to avoid duplicate rule inclusion.</td>
   </tr>
 </table>
 
