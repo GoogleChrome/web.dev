@@ -14,7 +14,7 @@ Whether you use a UI library or handcraft your styles, shipping a significant am
 
 This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap.com/). UI libraries like Bootstrap speed up the development, but that often comes at the expense of bloated and unnecessary CSS which can slow down your load times. Bootstrap 4 is 187 KB, while [Semantic UI](https://semantic-ui.com/), another UI library, is a whopping 730 KB uncompressed. Even when minified and gzipped, Bootstrap still weighs around 20 KB, well over the 14 KB threshold for the first roundtrip. 
 
-[Critical](https://github.com/addyosmani/critical) is a tool that extracts, minifies and inlines [above-the-fold]() CSS. This helps render styled important content to the user faster while the external CSS file is still being loaded. In this codelab, you’ll learn how to use its npm module. 
+[Critical](https://github.com/addyosmani/critical) is a tool that extracts, minifies and inlines [above-the-fold]() CSS. This allows above-the-fold content to be rendered as soon as possible, even if CSS for other parts of the page has not yet loaded. In this codelab, you’ll learn how to use Critical's npm module. 
 
 ## Measure
 
