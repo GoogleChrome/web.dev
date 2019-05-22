@@ -102,7 +102,7 @@ The table below contains some useful Critical options. You can check out all of 
   <tr>
     <td>dimensions</td>
     <td>array</td>
-    <td>Contains objects with width and height properties that represent the viewports you want to target with above-the-fold CSS. If you have media queries in your CSS, this allows you to generate critical CSS that covers multiple viewport sizes.</td>
+    <td>Contains objects with width and height properties. These objects represent the viewports you want to target with above-the-fold CSS. If you have media queries in your CSS, this allows you to generate critical CSS that covers multiple viewport sizes.</td>
   </tr>
   <tr>
     <td>inline</td>
