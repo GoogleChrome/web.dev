@@ -85,32 +85,32 @@ The table below contains some useful Critical options. You can check out all of 
     <td>The base directory for your files.</td>
   </tr>
   <tr>
-    <td>src</td>
+    <td><code>src</code></td>
     <td>string</td>
     <td>HTML source file.</td>
   </tr>
   <tr>
-    <td>dest</td>
+    <td><code>dest</code></td>
     <td>string</td>
     <td>The target for the output file. If CSS is inlined the output file is HTML. If not, the output is a CSS file.</td>
   </tr>
   <tr>
-    <td>width, height</td>
+    <td><code>width</code>, <code>height</code></td>
     <td>numbers</td>
     <td>Viewport width and height in pixels.</td>
   </tr>
   <tr>
-    <td>dimensions</td>
+    <td><code>dimensions</code></td>
     <td>array</td>
     <td>Contains objects with width and height properties. These objects represent the viewports you want to target with above-the-fold CSS. If you have media queries in your CSS, this allows you to generate critical CSS that covers multiple viewport sizes.</td>
   </tr>
   <tr>
-    <td>inline</td>
+    <td><code>inline</code></td>
     <td>boolean</td>
     <td>When set to true, the generated critical CSS is inlined in the <head> of the HTML source file.</td>
   </tr>
   <tr>
-    <td>minify</td>
+    <td><code>minify</code></td>
     <td>boolean</td>
     <td>When set to true, Critical minifies the generated critical CSS. Can be omitted when extracting critical CSS for multiple resolutions because Critical automatically minifies it to avoid duplicate rule inclusion.</td>
   </tr>
