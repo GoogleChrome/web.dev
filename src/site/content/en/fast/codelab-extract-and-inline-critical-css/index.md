@@ -107,7 +107,7 @@ The table below contains some useful Critical options. You can check out all of 
   <tr>
     <td>inline</td>
     <td>boolean</td>
-    <td>When set to true, inlines the generated critical CSS in the <head> of the HTML source file.</td>
+    <td>When set to true, the generated critical CSS is inlined in the <head> of the HTML source file.</td>
   </tr>
   <tr>
     <td>minify</td>
