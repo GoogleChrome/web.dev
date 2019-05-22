@@ -67,8 +67,5 @@ dist
 devsite.js
 local-devsite.js
 
-# local styles for staging
-src/styles
-
 # DS_Store
 .DS_Store
