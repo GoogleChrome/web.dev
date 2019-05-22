@@ -32,7 +32,7 @@ To run a Lighthouse audit on this page:
 
 5. Make sure the **Simulated Fast 3G, 4x CPU Slowdown** radio button is selected. 
 
-6. Make sure that the **Clear Storage** checkbox is enabled. This option forces Lighthouse to go to the network for every page resource, which is how first-time visitors experience the page.
+6. Make sure that the **Clear Storage** checkbox is enabled. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.
 
 7. Click **Run Audits**. 
 
