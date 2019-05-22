@@ -80,7 +80,7 @@ It doesn’t have options to inline and minify critical CSS, but it does let you
 
 ### Penthouse
 
-[Penthouse](https://github.com/pocketjoso/penthouse) is a good choice if your site or app has a large number of styles or styles which are being dynamically injected into the DOM (common in Angular apps). It is a more robust tool that uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) under the hood. It features an [online hosted version](https://jonassebastianohlsson.com/criticalpathcssgenerator/) too. 
+[Penthouse](https://github.com/pocketjoso/penthouse) is a good choice if your site or app has a large number of styles or styles which are being dynamically injected into the DOM (common in Angular apps). It uses [Puppeteer](https://github.com/GoogleChrome/puppeteer) under the hood and even features an [online hosted version](https://jonassebastianohlsson.com/criticalpathcssgenerator/) too. 
 
 Penthouse doesn’t detect stylesheets automatically, you have to specify the HTML and CSS files that you want to generate critical CSS for. The upside is that it’s good at running many jobs in parallel.
 
