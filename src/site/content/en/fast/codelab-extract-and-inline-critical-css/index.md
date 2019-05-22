@@ -146,7 +146,7 @@ critical.generate({
 
 In this example, `index.html` is both the source file and the destination file because the `inline` option is set to true. Critical first reads the HTML source file, extracts critical CSS and then overwrites `index.html` with critical CSS inlined in the `<head>`. 
 
-`dimensions` array has two viewport sizes specified, 300 x 500 for extra small screens and the standard laptop resolution of 1280 x 720.
+`dimensions` array has two viewport sizes specified: 300 x 500 for extra small screens and 1280 x 720 for standard laptop screens.
 
 `minify` option is omitted because Critical automatically minifies the extracted CSS when there are multiple viewport sizes specified.
 
