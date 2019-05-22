@@ -57,7 +57,7 @@ Keep in mind that if you inline a large amount of CSS, it delays the transmissio
 <p id="14KB">To minimize the number of roundtrips to first render, aim to keep above-the-fold content under <strong>14 KB</strong> (compressed).</p>
 
 {% Aside 'note' %}
-New [TCP](https://hpbn.co/building-blocks-of-tcp/) connections cannot immediately use the full available bandwidth between the client and the server, they all go through [slow-start](https://hpbn.co/building-blocks-of-tcp/#slow-start) to estimate the connection capacity. In this process, the server starts the transfer with a small amount of data and if it reaches the client in perfect condition, doubles the amount in the next roundtrip. For most servers, 10 packets or approximately 14 KB is the maximum that can be transferred in the first roundtrip.
+New [TCP](https://hpbn.co/building-blocks-of-tcp/) connections cannot immediately use the full available bandwidth between the client and the server, they all go through [slow-start](https://hpbn.co/building-blocks-of-tcp/#slow-start) to avoid overloading the connection with more data than it can carry. In this process, the server starts the transfer with a small amount of data and if it reaches the client in perfect condition, doubles the amount in the next roundtrip. For most servers, 10 packets or approximately 14 KB is the maximum that can be transferred in the first roundtrip.
 {% endAside %}
 
 The performance impact you can achieve with this technique depends on the type of your website. Generally speaking, the more CSS a site has, the greater the possible impact of inlined CSS.
