@@ -29,7 +29,7 @@ She describes intrinsic web design so well that I'd like to pull directly from *
 </blockquote>
 
 <figure class="w-figure w-figure--center" style="margin: 5rem 0;">
-  <img loading="lazy" src="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/patrick-star.gif" alt="Patrick Star admiring with floating hearts">
+  <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/patrick-star.gif" alt="Patrick Star admiring with floating hearts">
 </figure>
 
 #### So **stoooooked** on this approach to layout!
@@ -49,7 +49,7 @@ This may look familiar 😂, it's the result of an extrinsic approach to layout:
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 {% Aside 'caution' %}
-  Extrinsic isn't evil or weak, I don't want this guide to pitch extrinsic as something to avoid at all costs. We'll be using both intrinsic and extrinsic properties and strategies in this guide. There are still many scenarios where extrinsic layout is the right choice 👍.
+  Extrinsic isn't evil or weak, I don't want this guide to pitch extrinsic as something to avoid at all costs. We'll be using both intrinsic and extrinsic strategies in this guide. There are still many scenarios where extrinsic layout is the right choice 👍.
 {% endAside %}
 
 The article [CSS is Awesome](https://css-tricks.com/css-is-awesome/) from [CSS-Tricks](https://css-tricks.com) **recaps the frustration** of this classic CSS joke really well:
@@ -87,13 +87,15 @@ Let's investigate how much flexibility we have these days. **Let's simulate the 
 
 As a practical way of learning the ropes of intrinsic web design, I'd like to orient this guide towards a meaningful, reasonable and tangible end goal: **a full page responsive layout.** The following design may look innocent, but it's **jam packed** with learning opportunities. Along the way we'll implement **macro and micro layouts**, a mixture of **[flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) and [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)**, a blend of **[intrinsic and extrinsic](https://googlechrome.github.io/samples/css-intrinsic-sizing/)**, plus a **sprinkle of chaos** to really help the value add sink in.
 
+<br>
+
 #### The Design
 A theoretically **CMS powered e-commerce homepage**. Horizontally overflowing scroll areas, component variability, heavy images, etc. Plus the pretty typical scenario of no mobile designs provided, but are expected.
 
 <figure class="w-figure w-figure--fullbleed">
   <picture>
-    <source type="image/jpeg" srcset="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/home@2x.jpg 2x"/>
-    <img loading="lazy" src="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/home.jpg" alt="TenHundred store home page" class="screenshot">
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/home@2x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/home.jpg" alt="TenHundred store home page" class="screenshot">
   </picture>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     <a href="https://intrinsic-layout-guide.glitch.me" target="_blank">Preview the final layout demo page</a>
@@ -113,7 +115,7 @@ We **break this design down,** piece by piece, focusing **specifically on the la
 <br><br>
 
 <figure class="w-figure--center">
-  <img loading="lazy" class="w-screenshot" src="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/feature-card-chaos.gif" alt="Showing component being edited, deleted and abused yet the layout and ratios remain intact">
+  <img loading="lazy" class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/feature-card-chaos.gif" alt="Showing component being edited, deleted and abused yet the layout and ratios remain intact">
   <figcaption class="w-figcaption">
     <b>Example of the chaos</b> we'll throw at layouts to verify resilience
   </figcaption>
@@ -158,6 +160,6 @@ We'll acquire some bruises along the way as we bump our head, shoulders, knees a
 If you don't have the basics of grid or flexbox down, have no fear. **Y'all can pick up the basics & jargon along the way.** I'll do my best to provide links out to topics that I'm not going to cover but will touch upon. 👍
 
 <figure style="text-align:center; margin: 5rem 0;">
-  <img loading="lazy" src="https://storage.googleapis.com/visbug-1337.appspot.com/public/webdev/get-started.gif" alt="run begin GIF by Crowdfire">
+  <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/get-started.gif" alt="run begin GIF by Crowdfire">
   <figcaption>Weeeeeeeeeeeeeeee!</figcaption>
 </figure>

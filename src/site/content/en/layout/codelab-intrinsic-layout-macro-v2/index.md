@@ -24,7 +24,7 @@ In case you missed Macro Layout v1, ramp up here:
 Our **most macro grid** is placed on the body. It's **creating directionality** for the highest level elements (`<nav>`, `<header>`, `<main>`, etc) and the **spacing between** them. This grid is minimal and doesn't know anything about what it's laying out except that there should be some healthy space applied via gap.
 
 {% Aside 'gotchas' %}
-  Make sure to check out the HTML so there's context for the selectors and grid implementation.
+  The Glitch on the right is editable but you need to click "remix" first
 {% endAside %}
 
 <br>

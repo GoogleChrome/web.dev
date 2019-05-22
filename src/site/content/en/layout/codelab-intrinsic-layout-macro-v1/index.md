@@ -23,9 +23,14 @@ I love `grid-template-areas`, it's very cool, and fits the bill for tons of layo
 
 **So let's use it!** Let's make some tracks, select some nodes and put them into their cells.
 
+{% Aside 'gotchas' %}
+  The Glitch on the right is editable but you need to click "remix" first
+{% endAside %}
+
 <br>
 
 #### The CSS
+See `app/css/layouts/body.css` file in the Glitch embed.
 ```css
 body {
   display: grid;
@@ -66,7 +71,9 @@ body {
 
 #### Columns in plain speak:
 ```css
-grid-template-columns: var(--body-rails) var(--sidebar-width) 1fr var(--body-rails);
+grid-template-columns:
+        /* 1 */            /* 2 */     /* 3 */    /* 4 */
+  var(--body-rails) var(--sidebar-width) 1fr var(--body-rails);
 ```
 - **1st** and **4th** columns should be fixed and equal with an extrinsic width set by the `--body-rails` CSS custom property. These are the flanking rails of the layout.
 - **2nd** column should be the extrinsic width set by the `--sidebar-width` custom property.
@@ -76,7 +83,11 @@ grid-template-columns: var(--body-rails) var(--sidebar-width) 1fr var(--body-rai
 
 #### Rows in plain speak:
 ```css
-grid-template-rows: var(--body-rails) min-content 1fr;
+grid-template-rows:
+  var(--body-rails)
+  min-content
+  1fr
+;
 ```
 - The **1st** row is our navbar and design decided it's height is the same value as the width of our rails, the custom property `--body-rails`. This means it's extrinsicly set, and also means we don't need padding in that navbar to have vertically centered content, we can align children to the center of the container.
 - The **2nd** row is our header, an intrinsicly sized row indicated by the `min-content` keyword. This keyword in the case of a row, will shrinkwrap to whatever minimum height is required by the contents of the node.

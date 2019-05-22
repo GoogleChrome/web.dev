@@ -6,6 +6,9 @@ authors:
 description:
 web_lighthouse: N/A
 date: 2019-03-05
+codelabs:
+  - codelab-intrinsic-layout-macro-v1
+  - codelab-intrinsic-layout-macro-v2
 ---
 
 {% Aside 'key-term' %}
@@ -19,7 +22,10 @@ I find overlaying estimated macro grid tracks and areas on a design pacify the i
 **I don't expect my groupings to be right, but I expect it to help me get to the right solution faster.** It's a discovery phase where I'm learning the relationships between elements by grouping them (probably wrong), and adjusting.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="macro.png" alt="Full page design mockup with estimated rows and columns highlighted" class="screenshot">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-initial-estimate%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-initial-estimate.jpg" alt="Full page design mockup with estimated rows and columns highlighted" class="screenshot">
+  </picture>
 </figure>
 
 {% Aside 'objective' %}
@@ -29,21 +35,69 @@ I find overlaying estimated macro grid tracks and areas on a design pacify the i
 <br>
 
 #### Layout Semantics
-1. 2 `<nav>`s': 1 at the top, 1 on the side
-1. A `<main>` should be used to wrap an `<aside>` and an `<article>`
-1. The `<aside>` should contain a `<nav>`
-1. Lots of `<img>`'s inside `<figure>`'s' with `<figcaption>`'s
-1. `<input type="search"/>` in the top bar
-1. `<button>`s and `<a>`s
+Goal here is to identify HTML elements that match the intent alluded to by the design. For me it's a typical translation task, where I'm translating elements and interactions from the pixels to the web, aka the HTML provided base elements that serve those purposes.
+
+- 2 `<nav>`s': 1 at the top, 1 on the side
+- A `<main>` should be used to wrap an `<aside>` and an `<article>`
+- The `<aside>` should contain a `<nav>`
+- Lots of `<img>`'s inside `<figure>`'s' with `<figcaption>`'s
+- `<input type="search"/>` in the top bar
+- `<button>`s and `<a>`s
 
 <br>
 
 #### Layout Observations
-1. An **asymetric** layout
-1. **Rails** are **flanking** a large flexible column <br><figure style="text-align:center; margin: 1rem 0 3rem;" class="screenshot"><img src="macro – flanking rails.png" alt=""></figure>
-1. Rails and aside look like **fixed** **columns** <br><figure style="text-align:center; margin: 1rem 0 3rem;" class="screenshot"><img src="macro – fixed widths.png" alt=""></figure>
-1. Free shipping message **spans 2 columns** <br><figure style="text-align:center; margin: 1rem 0 3rem;" class="screenshot"><img src="macro – greeting span.png" alt=""></figure>
-1. Greeting message is **splitting** our potentially **shared columns** from `<nav>` to `<main>` <br><figure style="text-align:center; margin: 1rem 0 3rem;" class="screenshot"><img src="macro – body split.png" alt=""></figure>
+These are places for me to aknowledge the consistencies and inconsistencies being presented by the design. These help inform my decisions as well as my refactors. It's also fun!
+
+<figure class="w-figure--center" style="margin-bottom:5rem;">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-concerning-estimate%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-concerning-estimate.jpg" alt="problem area exposed" class="screenshot">
+  </picture>
+  <figcaption class="w-figcaption">
+    These are the isolated overlapping zones I found when estimating tracks which expose some of the tricky parts we'll need to deal with
+  </figcaption>
+</figure>
+
+<figure class="w-figure--center" style="margin-bottom:5rem;">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-rag-right%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-rag-right.jpg" alt="rag right grid shown" class="screenshot">
+  </picture>
+  <figcaption class="w-figcaption">
+    An <b>asymmetric</b> layout, almost like the whole layout is aligned left and <a href="https://www.fonts.com/content/learning/fontology/level-2/making-type-choices/justified-vs-rag-right" target="_blank">rag right</a>
+  </figcaption>
+</figure>
+
+<figure class="w-figure--center" style="margin-bottom:3rem;">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-flanking-rails%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-flanking-rails.jpg" alt="common edges highlighted" class="screenshot">
+  </picture>
+  <figcaption class="w-figcaption">
+    <b>Rails appear to flank</b> a large flexible column
+  </figcaption>
+</figure>
+
+<figure class="w-figure--center" style="margin-bottom:3rem;">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-extrinsic-estimate%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-extrinsic-estimate.jpg" alt="common edges highlighted" class="screenshot">
+  </picture>
+  <figcaption class="w-figcaption">
+    <b>Extrinsicly sized</b> rails and sidebar space
+  </figcaption>
+</figure>
+
+<figure class="w-figure--center" style="margin-bottom:3rem;">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-split%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-split.jpg" alt="common edges highlighted" class="screenshot">
+  </picture>
+  <figcaption class="w-figcaption">
+    Shipping message is splitting our potentially shared tracks
+  </figcaption>
+</figure>
 
 <br>
 
@@ -54,7 +108,8 @@ I find overlaying estimated macro grid tracks and areas on a design pacify the i
 
 <br><br>
 
-I don't have a systemic process to share in regards to these assertions. I look for alignments, shared spaces, dynamic content areas, and I try to see which areas **should** be flexible. Top that off with an intent to **let the content speak for itself** when it can with a **content outward** layout strategy, let content length be a breakpoint.
+#### Process Recap
+I don't have a systemic process to share in regards to these assertions. I look for alignments, shared spaces, dynamic content areas, and I try to see which areas **should** be flexible. Top that off with an intent to **let the content speak for itself** when it can with a [content outward](https://alistapart.com/article/content-out-layout/) layout strategy, let [content length be a breakpoint](http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/#content).
 
 Even if my first layout works great, I like going back and looking for places to optimize: trim logic, code, or whatever. **Just like I do in my Javascript.**
 
@@ -76,6 +131,10 @@ In this iteration, we follow our gut and do our best to articulate one grid to h
   Codelab: Slotted Macro Layout
 </a>
 
+<!-- {% Aside 'codelab' %}
+  [Slotted Macro Layout](/codelab-intrinsic-layout-macro-v1)
+{% endAside %} -->
+
 <br><br><br>
 
 ###### Let's Code!
@@ -91,6 +150,10 @@ Post refactor, 1 grid manages the "stack" and the 2nd manages the aside and arti
 <a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v2">
   Codelab: Intrinsic Macro Grids
 </a>
+
+<!-- {% Aside 'codelab' %}
+  [Intrinsic Macro Grids](/codelab-intrinsic-layout-macro-v2)
+{% endAside %} -->
 
 
 
