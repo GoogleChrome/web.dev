@@ -29,11 +29,6 @@ git clone https://github.com/GoogleChrome/web.dev.git
 npm ci
 ```
 
-⚠️ **Important:** We're currently in the process of open sourcing our CSS.
-Unfortunately the above command will only work for folks who are part of our
-team and have access to the styles submodule. We plan to resolve this in
-the second half of May. Thank you for your patience! 🙇‍♂️
-
 ### Start a local server to preview the site.
 
 Changes to assets will rebuild the site. Refresh to see changes.

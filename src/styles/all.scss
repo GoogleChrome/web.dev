@@ -1,0 +1,12 @@
+// This is devsite's theme.
+@import 'devsite/app.scss';
+
+// This is our CSS.
+@import 'devsite/vetos';
+@import 'generic/all';
+@import 'components/all';
+@import 'pages/all';
+@import 'overrides/all';
+
+// These are elements that devsite lazy loads after our CSS.
+@import 'devsite/elements.scss';
