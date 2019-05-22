@@ -64,7 +64,7 @@ The performance impact you can achieve with this technique depends on the type o
 
 ## Overview of tools
 
-Determining the critical CSS for a page is rather complex. It requires analysis of the entire DOM to determine the styles that are applied to each element in the viewport. Doing this manually would be a tedious process, but there are a number of great tools that do this automatically. 
+There are a number of great tools that can automatically determine the critical CSS for a page. This is good news because doing this manually would be a tedious process. It requires analysis of the entire DOM to determine the styles that are applied to each element in the viewport.
 
 ### Critical
 
