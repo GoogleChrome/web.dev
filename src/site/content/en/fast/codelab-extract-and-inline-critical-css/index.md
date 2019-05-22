@@ -193,6 +193,6 @@ Follow the steps from the beginning of the codelab to run Lighthouse performance
  <img src="lighthouse-audit-after.png" alt='Lighthouse audit showing performance score of 100, FCP 0.9 seconds and improved filmstrip view of loading the app' class="w-screenshot">
 
 {% Aside 'success' %}
-The filmstrip view shows the rendered content much sooner which is reflected in improved paint metrics. And "Eliminate render-blocking resources" has been eliminated! 🎉
+The filmstrip view shows that content is rendered much sooner and this is reflected in improved paint metrics. And "Eliminate render-blocking resources" has been eliminated! 🎉
 {% endAside %}
 
