@@ -82,7 +82,7 @@ The table below contains some useful Critical options. You can check out all of 
   <tr>
     <td><code>base</code></td>
     <td>string</td>
-    <td>The common path for your files.</td>
+    <td>The base directory for your files.</td>
   </tr>
   <tr>
     <td>src</td>
