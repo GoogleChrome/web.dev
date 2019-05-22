@@ -17,7 +17,7 @@ tags:
 The browser must download and parse CSS files before it can show the page, which makes CSS a render-blocking resource. If CSS files are big, or network conditions are poor, requests for CSS files can significantly increase the time it takes for a web page to render.
 
 {% Aside 'key-term' %}
-Critical CSS is a technique that extracts the CSS for above-the-fold content in order to get a meaningful render as fast as possible.
+Critical CSS is a technique that extracts the CSS for above-the-fold content in order to render content to the user as fast as possible.
 {% endAside %}
 
 <figure class="w-figure  w-figure--center">
