@@ -54,8 +54,12 @@ in either dimension will be replaced with a placeholder image.
 #### Why?
 
 Serving images larger than what the viewing device can render&mdash;for example,
-serving desktop images to mobile contexts, or serving high-pixel-density images
-to a low-pixel-density device&mdash;is wasting network traffic and device memory.
+serving desktopß images to mobile contexts, or serving high-pixel-density images
+to a low-pixel-density device&mdash;is wasting network traffic and device
+memory. Read [Serve images with correct
+dimensions](https://web.dev/serve-images-with-correct-dimensions/) and [Serve
+responsive images](https://web.dev/serve-responsive-images/) for information on
+optimizing your images.
 
 #### Examples
 
@@ -91,9 +95,9 @@ To declare the `oversized-images` policy, you need to provide:
 * The threshold values (i.e., the downscaling ratio X) for the origins, specified in
   parenthesis (Optional)
 
-We recommend a downscaling ratio of 2.0 or lower. Consider using responsive
-images with different resolutions to best serve images on various screen sizes,
-resolutions, etc..
+We recommend a downscaling ratio of 2.0 or lower. Consider using [responsive
+images](https://web.dev/serve-responsive-images/) with different resolutions to
+best serve images on various screen sizes, resolutions, etc..
 
 #### More examples
 
@@ -132,6 +136,10 @@ the constraint will be replaced with a placeholder image.
 The larger the download size is, the longer it takes for an image to load. The
 file size should be kept as small as possible when optimizing an image:
 stripping metadata, picking a good image format, using image compression, etc..
+Read [Use Imagemin to compress
+images](https://web.dev/use-imagemin-to-compress-images/) and [Use WebP
+images](https://web.dev/serve-images-webp/) for information on optimizing your
+images.
 
 #### Example
 
