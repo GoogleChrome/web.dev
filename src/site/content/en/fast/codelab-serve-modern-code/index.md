@@ -478,7 +478,7 @@ like this:
 ```
 
 Browsers that support modules fetch and execute `main.mjs` and ignore
-`compiled.js.` The browsers that do not support modules do the opposite.
+`main.bundle.js.` The browsers that do not support modules do the opposite.
 
 The last thing that needs to be done here is to add the `module` and `nomodule`
 attributes to the module and legacy script respectively, Import the

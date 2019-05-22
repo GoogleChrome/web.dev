@@ -1,0 +1,16 @@
+@import '../settings/colors';
+@import '../settings/type';
+
+// =============================================================================
+// FONT OVERVIEW
+//
+// Overrides for font settings (weight, etc)
+//
+// =============================================================================
+
+.w-font-weight--light { font-weight: $FONT_WEIGHT_LIGHT; }
+.w-font-weight--regular { font-weight: $FONT_WEIGHT_REGULAR; }
+.w-font-weight--medium { font-weight: $FONT_WEIGHT_MEDIUM; }
+.w-font-weight--bold { font-weight: $FONT_WEIGHT_BOLD; }
+
+.w-font--reversed { color: $WHITE; }

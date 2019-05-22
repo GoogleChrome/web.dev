@@ -8,8 +8,8 @@ git:
   submodules: false
 cache:
   directories:
-  - node_modules
+    - node_modules
 install:
-  - npm ci --ignore-scripts
+  - npm ci
 script:
-- ELEVENTY_ENV=prod npx eleventy
+  - npm run build
