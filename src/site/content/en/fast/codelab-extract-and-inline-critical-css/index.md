@@ -42,7 +42,7 @@ When you run an audit on your machine, the exact results may vary, but in the fi
 
 <img src="lighthouse-audit-before.png" alt='Lighthouse audit showing performance score of 84, FCP 3 seconds and a filmstrip view of loading the app' class="w-screenshot">
 
-Lighthouse is here to help you fix performance issues, so look for solutions in the "Opportunities" section. “Eliminate render-blocking resources” is listed as an opportunity and that’s where Critical shines!
+Lighthouse is here to help you fix performance issues, so look for solutions in the **Opportunities** section. **Eliminate render-blocking resources** is listed as an opportunity and that’s where Critical shines!
 
 
 <img src="eliminate-render-blocking-resources.png" alt='Lighthouse audit "Opportunities" section listing “Eliminate render-blocking resources”' class="w-screenshot">
