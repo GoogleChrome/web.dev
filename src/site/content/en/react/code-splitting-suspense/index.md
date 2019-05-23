@@ -183,7 +183,7 @@ loading indicator. This can make the user experience feel more jarring.
 
 `Suspense` allows you to display a temporary loading state while network
 requests are made under the hood. But what if those network requests fail for
-some reason? You might offline, or perhaps your web app is attempting to
+some reason? You might be offline, or perhaps your web app is attempting to
 lazy-load a [versioned URL](/http-cache/#long-lived-caching-for-versioned-urls)
 that is out of date, and no longer available following a server redeployment.
 
