@@ -183,7 +183,7 @@ Glitch console and editor don’t automatically sync, so `refresh` command is ne
 Now in the `<head>` tag of `index.html`, generated critical CSS is inlined between `<style>` tags, followed by a script that loads the rest of the CSS asynchronously. 
 
 <figure class="w-figure">
-  <img src="inline-critical-css.png" alt='Screenshot of index.html with inlined critical CSS' class="w-screenshot">
+  <img src="inline-critical-css.png" alt="index.html with inlined critical CSS" class="w-screenshot">
   <figcaption class="w-figcaption">Inlined critical CSS</figcaption>
 </figure>
 
