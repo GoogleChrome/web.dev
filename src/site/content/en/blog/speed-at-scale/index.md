@@ -60,7 +60,7 @@ A [write-up](https://addyosmani.com/blog/lazy-loading/) on the native lazy-loadi
 
 ## Google Fonts now supports font-display as a query parameter
 
-We announced support for [font-display](https://font-display.glitch.me) is now available in production for all [Google Fonts](https://fonts.google.com) via the [display](https://developers.google.com/fonts/docs/getting_started#use_font-display) query-string parameter:
+We announced support for [font-display](https://font-display.glitch.me) is now available in production for all [Google Fonts](https://fonts.google.com) via the [display query-string parameter](https://developers.google.com/fonts/docs/getting_started#use_font-display):
 
 ```html
 https://fonts.googleapis.com/css?family=Lobster&display=swap
