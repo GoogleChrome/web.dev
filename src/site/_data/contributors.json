@@ -1272,5 +1272,22 @@
     "twitter": "rowan_m",
     "github": "rowan-m",
     "glitch": "rowan-m"
+  },
+  "adamargyle": {
+    "name": {
+      "given": "Adam",
+      "family": "Argyle"
+    },
+    "description": {
+      "en": "CSS/JS/UX addict; repeat(∞, [empathize, define, design, develop, deploy]);"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "homepage": "https://nerdy.dev",
+    "github": "argyleink",
+    "twitter": "argyleink",
+    "glitch": "argyleink"
   }
 }
