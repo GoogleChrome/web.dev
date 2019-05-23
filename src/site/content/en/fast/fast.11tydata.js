@@ -53,6 +53,7 @@ module.exports = {
         pathItems: [
           'defer-non-critical-css',
           'minify-css',
+          'tools-for-extracting-critical-css'
         ],
       },
       {
