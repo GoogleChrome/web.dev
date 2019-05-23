@@ -184,7 +184,7 @@ Now in the `<head>` tag of `index.html`, generated critical CSS is inlined betwe
 
 <figure class="w-figure">
   <img src="inline-critical-css.png" alt='Screenshot of index.html with inlined critical CSS' class="w-screenshot">
-  <figcaption>Inlined critical CSS</figcaption>
+  <figcaption class="w-figcaption">Inlined critical CSS</figcaption>
 </figure>
 
 ## Measure again
