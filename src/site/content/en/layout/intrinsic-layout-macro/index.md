@@ -158,35 +158,6 @@ Post refactor, 1 grid manages the "stack" and the 2nd manages the aside and arti
 
 
 
-<!-- <br><br><br><br>
-
-## Responsive Final Touches
-TODO: move into codelabs
-
-Due to our nice refactor, **our responsive work is pretty minimal**. Nothing needs to be changed on the `<body>`, woh, love it, and the `<main>` grid **only needs a minor adjustment**:
-
-<br>
-
-```css
-@media (width < 768px) {
-  grid-template-columns: 1fr;
-  margin: 0 0 0 1rem;
-}
-```
-
-<div class="note">
-  <b>Plain Speak:</b> When the viewport width is less than 768px, I want a <b>grid</b> with <b>1 full width column</b> and margin only on the left side.
-</div>
-
-<figure style="text-align:center; margin: 4rem 0; max-width: 400px;">
-  <img src="main-responsive.png" alt="Main grid simplified to 2 columns" class="screenshot">
-</figure> -->
-
-
-
-
-
-
 <br><br><br><br>
 
 ## Conclusion
@@ -199,21 +170,6 @@ The refactored v2 of our macro layout is less code, less assumptive and will sca
 - Less code in media queries
 - Less to think about
 - Less to manage
-
-<!-- <br><br>
-
-**Final Macro Layout**
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
-    alt="logical-tab-order on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
-<br><br>
-
-**Play with that Glitch a bit!** Resize your browser. Use the devtools to visualize the grid spaces! -->
 
 <br>
 
@@ -231,9 +187,13 @@ body {
   gap: 2rem;
   grid-auto-flow: row;
 
-  @media (width > 768px) {
-    & > :matches(.greeting, main) {
-      margin-left: var(--body-rails);
+  & > :matches(.greeting, main) {
+    margin-left: var(--body-rails);
+  }
+
+  @media (width <= 768px) {
+    & > .greeting {
+      margin: 0 1rem;
     }
   }
 }
@@ -243,8 +203,11 @@ body {
 Just flow/direction and spacing
 {% endCompare %}
 
-<figure class="w-figure w-figure--fullbleed">
-  <img src="macro – body rows.png" alt="">
+<figure class="w-figure">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro2-margin-rows%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro2-margin-rows.jpg" alt="rows overlayed on the design comp reflecting what CSS grid is making" class="screenshot">
+  </picture>
 </figure>
 
 
@@ -267,22 +230,25 @@ main {
 2 columns with margin, 1 extrinsic (`<aside>`) the other fluid
 {% endCompare %}
 
-TODO: update graphic to only be the main grid and not have the header. consider making margin a different color and being consistent with column visuals
-
-<figure class="w-figure w-figure--fullbleed">
-  <img src="macro – less grids more margin.png" alt="">
+<figure class="w-figure">
+  <picture>
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-v2-margins%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-v2-margins.jpg" alt="Main grid simplified to 2 columns" class="screenshot">
+  </picture>
 </figure>
 
 <br><br>
 
 ### All Together
 
-TODO: better gif of results
+<figure class="w-figure w-figure--fullbleed">
+  <picture>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-layout-recap.gif" alt="gif showing columns and rows across desktop and mobile" class="screenshot">
+  </picture>
+</figure>
 
 {% Compare 'better', 'Result' %}
 Devtools highlighting the 2 grids and showing them respond from desktop to mobile
 {% endCompare %}
 
-<figure class="w-figure w-figure--fullbleed">
-  <img src="intrinsic-macro-1.gif" alt="">
-</figure>
+<br><br>

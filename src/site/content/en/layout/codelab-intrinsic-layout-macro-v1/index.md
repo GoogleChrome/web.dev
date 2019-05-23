@@ -23,10 +23,6 @@ I love `grid-template-areas`, it's very cool, and fits the bill for tons of layo
 
 **So let's use it!** Let's make some tracks, select some nodes and put them into their cells.
 
-{% Aside 'gotchas' %}
-  Click the **Remix To Edit** button to make the project editable
-{% endAside %}
-
 <br>
 
 #### The HTML
@@ -215,7 +211,7 @@ Well, **36 lines of code** isn't too bad for a responsive layout. Was even satis
 
 <br>
 
-## Chaos 😈
+## Chaos Time 😈
 
 {% Aside 'warning' %}
   Changes from the design team! 😲
@@ -226,9 +222,13 @@ Well, **36 lines of code** isn't too bad for a responsive layout. Was even satis
 {% endAside %}
 
 1. Uncomment the `<footer>` in `app/index.html`
-1. Author new CSS in `app/css/layouts/body.css` to put the `<footer>` into the proper place in the grid (below the article and aside)
+1. Author new CSS in `app/css/layouts/body.css` to put the `<footer>` into the proper place in the grid (below the `<article>` and `<aside>`)
 1. Ensure the layout still works on mobile
 1. **Extra:** remove other HTML, like the `<nav>` and observe the effect it has on our layout. Poke it, prod it, feel out it's resilience to change and turbulence.
+
+{% Aside 'gotchas' %}
+  Click the **Remix To Edit** button to make the project editable
+{% endAside %}
 
 When you're done, **remember the level of effort of handling this change**. Also remember how well the layout algorithm handled change and turbulence. We'll be comparing it against [a refactor](/codelab-intrinsic-layout-macro-v2) next.
 

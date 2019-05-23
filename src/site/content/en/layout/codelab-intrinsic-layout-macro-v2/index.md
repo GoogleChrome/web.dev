@@ -10,9 +10,14 @@ previewSize: 70
 related_post: intrinsic-layout-macro
 ---
 
-In this refactor I want to try and reduce our selector specificity, reduce the amount of code in media queries, and move away from defining explicit boxes where it makes sense.
+**In this refactor** I want to try and:
+- reduce our selector [specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+- reduce the amount of code in media queries
+- move away from defining extrinsic boxes (where it makes sense)
 
-In case you missed Macro Layout v1:
+{% Aside 'gotchas' %}
+  This codelab is 2/2, in case you missed 1/2, you can find it below
+{% endAside %}
 
 {% Aside 'codelab' %}
   [Previous Codelab (v1): A Slotted Layout](/codelab-intrinsic-layout-macro-v1)
@@ -24,19 +29,17 @@ In case you missed Macro Layout v1:
 ## 1. `<body>` Layout
 Our **top level macro grid** is the `<body>`. In the [previous codelab](/codelab-intrinsic-layout-macro-v1), adding a `<footer>` was an issue because it didn't just append to the vertical layout stack. Let's fix that by defining a grid that knows less about the children. It's best if the grid on body just **creates directionality** for the highest level elements and the **spacing between** them.
 
-{% Aside 'gotchas' %}
-  Click the **Remix To Edit** button to make the project editable
-{% endAside %}
-
 <br>
 
 #### The HTML
 To support the refactor to vertical rhythm and spacing, I've updated our HTML structure. I've wrapped the `<aside>` and `<article>` in a `<main>` tag:
 
-```html
+```html/5-8/3-4
 <body>
   <nav>...</nav>
   <h2>Free Shipping in U.S.</h2>
+  <aside>...</aside>
+  <article>...</article>
   <main>
     <aside>...</aside>
     <article>...</article>
@@ -44,32 +47,66 @@ To support the refactor to vertical rhythm and spacing, I've updated our HTML st
 </body>
 ```
 
-It's interesting how a refactor to simpler layouts may have enhanced our semantic markup. The `<main>` tag totally makes sense as a wrapper, and it allows us to space both those children at the same time. Our goal of "1 grid to rule them all" in v1 lead us to changing our markup to meet the needs of our CSS. This has been reversed, now our CSS can meet the needs of our HTML.
+It's interesting how a refactor to simpler layouts may have enhanced our semantic markup. The `<main>` tag totally makes sense as a wrapper, and it allows us to space both those children at the same time. Our goal of "1 grid to rule them all" in v1 lead us to changing our markup to meet the needs of our CSS. This has been reversed, **now our CSS can meet the needs of our HTML.**
 
 <br>
 
 #### The CSS
 See `app/css/layouts/body.css` in the Glitch embed.
 
-```css
+```css/2-7/4-31
 body {
   display: grid;
   gap: 2rem;
   grid-auto-flow: row;
+
+  & > :matches(.greeting, main) {
+    margin-left: var(--body-rails);
+  }
+
+  gap: 2rem 0;
+  grid-template-columns: var(--body-rails) var(--sidebar-width) 1fr var(--body-rails);
+  grid-template-rows: var(--body-rails) min-content 1fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    ". header header header"
+    ". aside article article";
+
+  & > nav {
+    grid-area: nav;
+  }
+
+  & > .greeting {
+    grid-area: header;
+  }
+
+  & > aside {
+    grid-area: aside;
+  }
+
+  & > article {
+    grid-area: article;
+  }
 }
 ```
 
-#### Grid in Plain Speak:
 <figure class="w-figure">
   <picture>
-    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-body-rows%402x.jpg 2x"/>
-    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-body-rows.jpg" alt="rows overlayed on the design comp reflecting what CSS grid is making" class="screenshot">
+    <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro2-margin-rows%402x.jpg 2x"/>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro2-margin-rows.jpg" alt="rows overlayed on the design comp reflecting what CSS grid is making" class="screenshot">
   </picture>
 </figure>
 
-I want a **grid of rows** with a **2rem gap**.
+#### Grid in Plain Speak:
+I want a **grid of rows** with a **2rem gap**. Also, 2 elements need special spacing treatment, give them a left margin which simulates a left rail.
 
-No magic is that grid, in fact, we practically don't even need the grid here! Children are laying out like block level elements naturally do, or would, without grid. BUT! We get gap, and I like gap.
+No magic in that grid, in fact, we practically don't even need the grid here. Children are laying out like block level elements naturally do, or would, without grid. BUT! **We get gap**, and I like gap.
+
+I think it's worth noting here too that I didn't need to number the example image rows because our grid isn't creating specific tracks. Our grid now has no idea how many or what type the children are. **Pretty drastic simplification which unlocks the ability for the layout to scale and adapt on it's own.**
+
+{% Aside 'note' %}
+  I prefer when containers manage spacing. Some may want the `.greeting` or `<main>` to manage the margin in this case, but I think it's best when components only know about their internal spacing. **Containers have more context, they're the orchestrators of space.**
+{% endAside %}
 
 <br>
 
@@ -96,19 +133,17 @@ Cool, so our rows are taken care of. Let's checkout what we need to do to match 
 #### Let's break it down
 ## 2. `<main>` Layout
 
-We've spaced our big elements vertically, now we have **1 more large macro layout to create**. In our first version we had rails with placed elements, **I'd like to not place elements this time**.
+We've spaced our big elements vertically, leaves us with 1 more large macro layout to create. In our first version we had rails with placed elements. We've already gotten rid of the rails in favor of margin, now I'd like to **not place elements** this time.
 
-**CSS**
+#### The CSS
+See `app/css/layouts/main.css` in the Glitch embed.
+
 ```css
 main {
   display: grid;
   grid-template-columns: var(--sidebar-width) 1fr;
 }
 ```
-#### Grid in Plain Speak:
-I want a **grid** with **2 columns**, the **first at a fixed width** and the **2nd filling** the remaining space.
-
-Instead of rails we **use margin** 🤯 and then just have **2 columns**:
 
 <figure class="w-figure">
   <picture>
@@ -117,13 +152,18 @@ Instead of rails we **use margin** 🤯 and then just have **2 columns**:
   </picture>
 </figure>
 
+#### Grid in Plain Speak:
+I want a **grid** with **2 columns**, the **first at a fixed width** and the **2nd filling** the remaining space.
+
+Another drastically simplified grid: 2 columns. The concept of "rails" we had in the 1st layout is gone now and this `<main>` relies on the parent container to use margin to simulate those rails. Less code, less to think about, smaller sets of responsibility.
+
 <br>
 
 ## Code Review
 #### Pros 👍
 1. **Cut** the amount of **columns** to manage **in half**
 1. **Cut** down the **complexity**
-1. **Cut** the **LoC** down to 3
+1. **Cut** the **LoC** down to 2
 1. Media queries need to **know much less**
 
 <br>
@@ -134,9 +174,7 @@ Instead of rails we **use margin** 🤯 and then just have **2 columns**:
 <br>
 
 ## Responsive Final Touches
-Our tasks at a high level are to remove the heavy left margin and stack our aside and articles in our mobile layout.
-
-I prefer parent containers holding as much spacing logic as possible, so our first order of business is approach this [mobile first](https://www.lukew.com/ff/entry.asp?933), and only have left margin when we're not mobile. AKA, only when we're at a tablet or above viewport should there be a left margin:
+Our tasks at a high level are to remove the heavy left margin and stack our aside and articles. :cracks knuckles:
 
 ```css/9-13
 body {
@@ -144,20 +182,22 @@ body {
   gap: 2rem;
   grid-auto-flow: row;
 
-  & > .greeting {
-    margin: 0 1rem;
+  & > :matches(.greeting, main) {
+    margin-left: var(--body-rails);
   }
 
-  @media (width > 768px) {
-    & > :matches(.greeting, main) {
-      margin-left: var(--body-rails);
+  @media (width <= 768px) {
+    & > .greeting {
+      margin: 0 1rem;
     }
   }
 }
 ```
 
 #### CSS in plain speak:
-When the viewport is greater than 768px, then select any direct descendants of the `body` that match `.greeting` or `main` and give them some left margin.
+When the viewport is less than or equal to `768px`, then select any direct descendants of the `body` that match `.greeting` and adjust the margin to `1rem` on left and right. TLDR; on mobile/portrait tablet, make sure the greeting text doesn't touch viewport edges.
+
+You might be thinking I forgot to adjust the `<main>` element, but I've got a trick up my sleeve.
 
 <br>
 
@@ -173,26 +213,48 @@ main {
 ```
 
 #### CSS in plain speak:
-When the viewport is less than or equal to 768px, act as if the `main` tag didn't exist. This has the effect of hoisting the aside and article up to the body, therefore inheriting the grid styles we placed there, which is just rows and gaps. We piggy back onto the intrinsic and unassuming grid that's managing the spacing of our top most layout. Kinda neat!
+When the viewport is less than or equal to `768px`, act as if the `main` tag doesn't exist and inherit the parent elements layout. This has the effect of hoisting the aside and article up to children of the `<body>`, therefore inheriting the grid styles we placed there, which is just rows and gaps. **We piggy back onto the intrinsic and unassuming grid that's managing the spacing of our top most layout**. Kinda neat!
 
 <figure class="w-figure">
   <picture>
-    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/v1-responsive.gif" alt="gif demoing responsive nature of the layout going from columns to a stack" class="screenshot">
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/webdev-macro-layout-v2-recap2.gif" alt="gif demoing responsive nature of the layout going from columns to a stack" class="screenshot">
   </picture>
 </figure>
 
 <br>
 
-#### Incoming Chaos!!
-Ready to write some code and **simulate some chaos?** Incoming change from the design team:
+## Chaos Time 😈
+
+{% Aside 'warning' %}
+  Changes from the design team! 😲
+{% endAside %}
 
 {% Aside 'objective' %}
-  Remix the codelab to the right and uncomment the `<footer>` in `app/index.html`. Finish / author new CSS in `app/css/layouts/body.css` to put the `<footer>` into the proper place in the grid.
+**Remix the codelab to the right** and complete the following tasks
+{% endAside %}
 
-  Compare this with the work needed in Macro Layout v1.
+1. Uncomment the `<footer>` in `app/index.html`
+1. Author new CSS in `app/css/layouts/body.css` to put the `<footer>` into the proper place in the grid (below `<main>`)
+1. Ensure the layout still works on mobile
+1. **Extra:** remove other HTML, like the `<nav>` and observe the effect it has on our layout. Poke it, prod it, feel out it's resilience to change and turbulence.
+
+{% Aside 'gotchas' %}
+  Click the **Remix To Edit** button to make the project editable
 {% endAside %}
 
 <br>
 
 ## Conclusion
-why was this refactor better? how did the footer prove anything?
+We couldn't shake all the specificity in this refactor, or more literally, our body styles still reach into the child list and specifically target elements and apply styles, but it's much less than our first version. This refactor let us unlock a few interesting follow up gains: adding a `<footer>` was a piece of cake, and our nested grid got to inherit and opt into the parent flow.
+
+I also felt like the amount of work our media queries were doing matches the amount I expected it to take. At the end of the day, this layout doesn't need to adjust a whole lot, it's decently ready for small and large screens as is. It was unfortunate in our first layout how much we needed to change, as opposed to our refactor which only needed 2 lines of code.
+
+#### TLDR;
+- We removed some grid
+- We removed lines of code
+- We removed issues around adding content
+- **We did less and got more**
+
+For a guide about learning how to do modern layouts, I found it interesting that removing layout code ended up getting us further than adding more. I think you'll find that's a common theme throughout this guide. I get grid happy because it's so much fun to author, but I like working my way out of strict tracks as they can get me into tricky scale issues as my design or site evolve.
+
+This is why I like introducing chaos, we need our layouts to withstand not only user generated content (which we'll heavily tackle in some of the other layouts), but we also need to be flexible when design changes happen.
