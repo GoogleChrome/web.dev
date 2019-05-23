@@ -68,7 +68,7 @@ https://fonts.googleapis.com/css?family=Lobster&display=swap
 
 The `font-display` descriptor lets you decide how your web fonts will render or fallback, depending on how long it takes for them to load. It supports a number of values including `auto`, `block`, `swap`, `fallback` and `optional`.
 
-Previously, the only way to specify font-display for web fonts from Google Fonts was to self-host them but this change removes the need to do so. 
+Previously, the only way to specify `font-display` for web fonts from Google Fonts was to self-host them but this change removes the need to do so. 
 
 The [Google Fonts documentation](https://developers.google.com/fonts/docs/getting_started#use_font-display) has been updated to include `font-display` in the default code embeds (as seem below). We hope this will encourage more developers to try out this exciting addition.
 
