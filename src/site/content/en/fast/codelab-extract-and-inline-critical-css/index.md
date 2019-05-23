@@ -54,7 +54,7 @@ Click the **Remix to Edit** button to make the project editable.
 
 To speed things up, Critical is already installed and an empty configuration file is included in the codelab.
 
-In configuration file `critical.js`, add a reference to Critical and then invoke the `critical.generate()` function. This function accepts an object containing the configuration.
+In the configuration file `critical.js`, add a reference to Critical and then invoke the `critical.generate()` function. This function accepts an object containing the configuration.
 
 ```js
 const critical = require('critical');
