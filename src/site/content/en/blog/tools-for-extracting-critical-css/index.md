@@ -5,7 +5,7 @@ authors:
   - mihajlija
 date: 2019-05-07
 hero: hero.jpg
-alt: A description of the hero image for screen reader users.
+alt: A flatlay photo of wrenches and screwdrivers.
 description: |
   Learn how to improve render times with critical CSS technique and how to choose the best tool for your project.
 tags:
