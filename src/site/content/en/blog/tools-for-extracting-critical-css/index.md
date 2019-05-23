@@ -21,7 +21,7 @@ Critical CSS is a technique that extracts the CSS for above-the-fold content in 
 {% endAside %}
 
 <figure class="w-figure  w-figure--center">
-  <img class="" src="./above-the-fold.png" alt="An illustration of a laptop and a mobile device with web pages overflowing the edges of screens" style="max-width: 600px;">
+  <img class="" src="./above-the-fold.png" alt="An illustration of a laptop and a mobile device with web pages overflowing the edges of screens" style="max-width: 600px; width: 100%;">
 </figure>
 
 {% Aside 'note' %}
