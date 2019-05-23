@@ -54,7 +54,7 @@ in either dimension will be replaced with a placeholder image.
 #### Why?
 
 Serving images larger than what the viewing device can render&mdash;for example,
-serving desktopß images to mobile contexts, or serving high-pixel-density images
+serving desktop images to mobile contexts, or serving high-pixel-density images
 to a low-pixel-density device&mdash;is wasting network traffic and device
 memory. Read [Serve images with correct
 dimensions](https://web.dev/serve-images-with-correct-dimensions/) and [Serve
