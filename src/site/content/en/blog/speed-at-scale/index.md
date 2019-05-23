@@ -4,13 +4,14 @@ subhead: Learn about three new Web Performance launches from I/O 2019
 authors:
   - katiehempenius
   - addyosmani
-date: 2019-05-23
+date: 2019-05-24
 hero: scale-header.jpg
 alt: Speedometer on a retro car
 description: |
   For Google I/O 2019, we introduced three new Web Performance initiatives that we hope will lead to better user experiences for everyone.
 tags:
   - post # post is a required tag for the article to show up in the blog.
+  - performance
 ---
 
 
@@ -27,6 +28,8 @@ LightWallet is available in the newest version of the Lighthouse CLI and only ta
 <figure class="w-figure">
   <img src="./Speed-at0.png" alt="LightWallet performance budgets" loading="lazy">
 </figure>
+
+Unsure what your budgets should be? Try our experimental [Performance Budget Calculator](https://bit.ly/perf-budget-calculator) which can generate a LightWallet compatible budget configuration.
 
 ## Native image and iframe lazy-loading comes to the web
 
@@ -57,7 +60,7 @@ A [write-up](https://addyosmani.com/blog/lazy-loading/) on the native lazy-loadi
 
 ## Google fonts now supports font-display as a query parameter
 
-We announced that we would finally be bringing support for [font-display](https://font-display.glitch.me) to Google Fonts. We are happy to share this is now available in production for all Google Fonts users via the new [display](https://developers.google.com/fonts/docs/getting_started#use_font-display) query-string parameter.
+We announced that we would finally be bringing support for [font-display](https://font-display.glitch.me) to [Google Fonts](https://fonts.google.com). We are happy to share this is now available in production for all Google Fonts users via the new [display](https://developers.google.com/fonts/docs/getting_started#use_font-display) query-string parameter.
 
 ```html
 https://fonts.googleapis.com/css?family=Lobster&display=swap
