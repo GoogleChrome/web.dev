@@ -18,7 +18,8 @@ This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap
 
 ## Measure
 
-Click **App** and then click **Show** to open the project without the code editor.
+- To preview the site, mouse over the editor, press the **App** button, then the
+  **Show** button.
 
 To run a Lighthouse audit on this page:
 
