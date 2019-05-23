@@ -1,6 +1,6 @@
 ---
 title: Speed at Scale - What's new in Web Performance? 
-subhead: Learn about three new Web Performance launches from I/O 2019
+subhead: Learn about three new Web Performance launches from I/O 2019.
 authors:
   - katiehempenius
   - addyosmani
@@ -15,27 +15,27 @@ tags:
 ---
 
 
-During the "Speed at Scale" [talk](https://www.youtube.com/watch?v=YJGCZCaIZkQ&feature=youtu.be) at Google I/O 2019 we announced three things that we hope will improve web performance over the coming year.
+During the ["Speed at Scale" talk](https://www.youtube.com/watch?v=YJGCZCaIZkQ&feature=youtu.be) at Google I/O 2019, we announced three things that we hope will improve web performance over the coming year.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YJGCZCaIZkQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## LightWallet - Performance Budgeting  in Lighthouse
+## Lighthouse now supports Performance Budgeting
 
 [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets) is a new feature in Lighthouse that adds support for [performance budgets](/fast#enforce-performance-budgets). Performance budgets establish standards for the performance of your site. More importantly, they make it is easy to identify and fix performance regressions before they ship.
-
-LightWallet is available in the newest version of the Lighthouse CLI and only takes a couple minutes to set up. These[ instructions](https://developers.google.com/web/tools/lighthouse/audits/budgets) provide more information.
 
 <figure class="w-figure">
   <img src="./Speed-at0.png" alt="LightWallet performance budgets" loading="lazy">
 </figure>
 
+LightWallet is available in the newest version of the Lighthouse CLI and only takes a couple minutes to set up. These[ instructions](https://developers.google.com/web/tools/lighthouse/audits/budgets) provide more information.
+
 Unsure what your budgets should be? Try our experimental [Performance Budget Calculator](https://bit.ly/perf-budget-calculator) which can generate a LightWallet compatible budget configuration.
 
 ## Native image and iframe lazy-loading comes to the web
 
-Web pages often contain a large number of images, which contribute to data-usage, [page-bloat](https://httparchive.org/reports/state-of-images) and how fast a page can load. Many of these images are offscreen, requiring a user to scroll in order to view them. 
+Web pages often contain a large number of images, which contribute to data-usage, [page-bloat](https://httparchive.org/reports/state-of-images) and slower page loads. Many of these images are offscreen, requiring a user to scroll in order to view them. 
 
-Until now, you've needed to solve lazy-loading images using a JavaScript library but that may soon change. This summer, Chrome will be [launching](https://www.youtube.com/embed/YJGCZCaIZkQ?start=705) support for the [loading](https://addyosmani.com/blog/lazy-loading/) attribute which brings native `<img>` and `<iframe>` lazy-loading to the web!.
+Until now, you've needed to solve lazy-loading images using a JavaScript library but that may soon change. This summer, Chrome will be launching support for the [loading](https://addyosmani.com/blog/lazy-loading/) attribute which brings native `<img>` and `<iframe>` lazy-loading to the web.
 
 <figure class="w-figure">
   <img src="./Speed-at1.png" alt="Native lazy-loading highlighting offscreen content being loaded on-demand" loading="lazy">
@@ -60,7 +60,7 @@ A [write-up](https://addyosmani.com/blog/lazy-loading/) on the native lazy-loadi
 
 ## Google fonts now supports font-display as a query parameter
 
-We announced that we would finally be bringing support for [font-display](https://font-display.glitch.me) to [Google Fonts](https://fonts.google.com). We are happy to share this is now available in production for all Google Fonts users via the new [display](https://developers.google.com/fonts/docs/getting_started#use_font-display) query-string parameter.
+We announced support for [font-display](https://font-display.glitch.me) is now available in production for all [Google Fonts](https://fonts.google.com) via the [display](https://developers.google.com/fonts/docs/getting_started#use_font-display) query-string parameter:
 
 ```html
 https://fonts.googleapis.com/css?family=Lobster&display=swap
@@ -70,10 +70,10 @@ The `font-display` descriptor lets you decide how your web fonts will render or 
 
 Previously, the only way to specify font-display for web fonts from Google Fonts was to self-host them but this change removes the need to do so. 
 
-The Google Fonts documentation has been updated to include `font-display` in the default code embeds. We hope this will encourage more developers to try out this exciting addition.
+The [Google Fonts documentation](https://developers.google.com/fonts/docs/getting_started#use_font-display) has been updated to include `font-display` in the default code embeds (as seem below). We hope this will encourage more developers to try out this exciting addition.
 
 <figure class="w-figure">
-  <img src="./Speed-at2.png" alt="Google Fonts embed code"  loading="lazy">
+  <img src="./Speed-at2.png" alt="Google Fonts embed code with font-display included in the URL as a query-parameter"  loading="lazy">
 </figure>
 
 Here's a [demo](https://codepen.io/addyosmani/pen/RmaOVJ) on Codepen of using display with multiple font families.
