@@ -11,6 +11,7 @@ description: |
   appropriate loading states to your users.
 authors:
   - houssein
+  - jeffposnick
 ---
 
 {% Aside %}
@@ -173,11 +174,69 @@ loading indicator. This can make the user experience feel more jarring.
 
 {% Aside %}
  Although using Suspense to split components is already possible and makes it
- easy to trim down bundle sizes, the React team is continuing to work on 
+ easy to trim down bundle sizes, the React team is continuing to work on
  more features that would extend this even further. The
  [React 16.x roadmap](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html)
  explains this in more detail.
 {% endAside %}
+
+## Handle loading failures
+
+`Suspense` allows you to display a temporary loading state while network
+requests are made under the hood. But what if those network requests fail for
+some reason? You might be offline, or perhaps your web app is attempting to
+lazy-load a [versioned URL](/http-cache/#long-lived-caching-for-versioned-urls)
+that is out of date, and no longer available following a server redeployment.
+
+React has a standard pattern for gracefully handling these types of loading
+failures: using an error boundary. As described [in the documentation](https://reactjs.org/docs/error-boundaries.html),
+any React component can serve as an error boundary if it implements either (or
+both) of the lifecycle methods `static getDerivedStateFromError()` or
+`componentDidCatch()`.
+
+To detect and handle lazy-loading failures, you can wrap your `Suspense`
+component with a parent components that serves as an error boundary. Inside the
+error boundary's `render()` method, you can render the children as-is if there's
+no error, or render a custom error message if something goes wrong:
+
+```js
+import React, { lazy, Suspense } from 'react';
+
+const AvatarComponent = lazy(() => import('./AvatarComponent'));
+const InfoComponent = lazy(() => import('./InfoComponent'));
+const MoreInfoComponent = lazy(() => import('./MoreInfoComponent'));
+
+const renderLoader = () => <p>Loading</p>;
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {hasError: false};
+  }
+
+  static getDerivedStateFromError(error) {
+    return {hasError: true};
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <p>Loading failed! Please reload.</p>;
+    }
+
+    return this.props.children; 
+  }
+}
+
+const DetailsComponent = () => (
+  <ErrorBoundary>
+    <Suspense fallback={renderLoader()}>
+      <AvatarComponent />
+      <InfoComponent />
+      <MoreInfoComponent />
+    </Suspense>
+  </ErrorBoundary>
+)
+```
 
 ## Conclusion
 
