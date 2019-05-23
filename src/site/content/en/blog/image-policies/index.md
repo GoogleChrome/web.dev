@@ -240,7 +240,7 @@ I've talked quite a bit about optimizing your images, but haven't said how to do
 
 Image policies are available in Chrome 75 via an origin trial.
 
-To participate
+To participate:
 
 1. [request a token](https://developers.chrome.com/origintrials/#/view_trial/2562548187973812225)
 
