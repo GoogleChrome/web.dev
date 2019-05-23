@@ -167,7 +167,7 @@ Click **Tools** > **Logs** > **Console**.
 To generate critical CSS, in the console, run:
 
 ```
-pnpm run critical
+npm run critical
 refresh
 ```
 
