@@ -1283,7 +1283,7 @@
       "unit": "Chrome"
     },
     "country": "Canada",
-    "github": "https://github.com/loonybear",
+    "github": "loonybear",
     "description": {
       "en": "Build and enforce guardrails for the web."
     }
