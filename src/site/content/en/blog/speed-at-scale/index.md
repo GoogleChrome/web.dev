@@ -58,7 +58,7 @@ The `loading` attribute is implemented behind flags in Chrome Canary. You can tr
 
 A [write-up](https://addyosmani.com/blog/lazy-loading/) on the native lazy-loading feature is available with more details.
 
-## Google fonts now supports font-display as a query parameter
+## Google Fonts now supports font-display as a query parameter
 
 We announced support for [font-display](https://font-display.glitch.me) is now available in production for all [Google Fonts](https://fonts.google.com) via the [display](https://developers.google.com/fonts/docs/getting_started#use_font-display) query-string parameter:
 
