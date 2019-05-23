@@ -24,7 +24,7 @@ During the ["Speed at Scale" talk](https://www.youtube.com/watch?v=YJGCZCaIZkQ&f
 [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets) is a new feature in Lighthouse that adds support for [performance budgets](/fast#enforce-performance-budgets). Performance budgets establish standards for the performance of your site. More importantly, they make it is easy to identify and fix performance regressions before they ship.
 
 <figure class="w-figure">
-  <img src="./Speed-at0.png" alt="LightWallet performance budgets" loading="lazy">
+  <img class="w-screenshot w-screenshot--filled" src="./Speed-at0.png" alt="LightWallet performance budgets" loading="lazy">
 </figure>
 
 LightWallet is available in the newest version of the Lighthouse CLI and only takes a couple minutes to set up. These[ instructions](https://developers.google.com/web/tools/lighthouse/audits/budgets) provide more information.
