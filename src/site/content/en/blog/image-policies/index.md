@@ -79,10 +79,6 @@ I get similar results if I lower only the width or the height.
 
 #### How to use
 
-If you are new to feature policy, please check out [Introduction to Feature
-Policy](https://developers.google.com/web/updates/2018/06/feature-policy) for
-more details.
-
 To summarize, `oversized-images` policy can be specified through either:
 
 * `Feature-Policy` HTTP header
