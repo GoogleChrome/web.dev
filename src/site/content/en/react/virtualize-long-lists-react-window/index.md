@@ -9,6 +9,7 @@ description: |
   react-window is a library that allows large lists to be rendered efficiently.
 authors:
   - houssein
+  - developit
 ---
 
 [`react-window`](https://react-window.now.sh/#/examples/list/fixed-size) is a
@@ -346,6 +347,39 @@ const Row = ({ index, style }) => {
 };
 ```
 
+## Overscanning
+
+Since items in a virtualized list only change when the user scrolls, blank
+space can briefly flash as newer entries are about to be displayed. You can
+try quckly scrolling any of the previous examples in this guide to notice
+this. 
+
+To improve the user experience of virtualized lists, `react-window` allows
+you to overscan items with the `overscanCount` property. This allows you to
+define how many items outside of the visible "window" to render at all times.
+
+```js
+<FixedSizeList
+  //...
+  overscanCount={4}
+>
+  {...}
+</FixedSizeList>
+```
+
+`overscanCount` works for both the `FixedSizeList` and `VariableSizeList`
+components and has a default value of 1. Depending on how large a list is
+as well as the size of each item, overscanning more than just one entry can
+help prevent a noticeable flash of empty space when the user scrolls. However,
+overscanning too many entries can affect performance negatively. The whole
+point of using a virtualized list is to minimize the number of entries to what
+the user can see at any given moment, so try to keep the number of overscanned
+items as low as possible.
+
+For `FixedSizeGrid` and `VariableSizeGrid`, use the `overscanColumnsCount` and
+`overscanRowsCount` properties to control the number of columns and rows to
+overscan respectively.
+
 ## Conclusion
 
 If you are unsure where to begin virtualizing lists and tables in your
@@ -363,3 +397,7 @@ application, follow these steps:
    cannot add this functionality yourself.
 4. Wrap your virtualized list with `react-window-infinite-loader` if you need to
    lazy load items as the user scrolls.
+5. Use the `overscanCount` property for your lists and the 
+   `overscanColumnsCount` and `overscanRowsCount` properties for your grids
+   to prevent a flash of empty content. Do not overscan too many entries as
+   this will affect performance negatively.

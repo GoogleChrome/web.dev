@@ -74,18 +74,10 @@ const DetailsComponent = () => (
 ```
 
 `Suspense` accepts a `fallback` component which allows you to display any React
-component as a loading state.
-
-{% Aside 'caution' %}
-  You must use Suspense to show fallback content if a component contains a
-  separate lazy loaded component that is not loaded after its parent has
-  finished rendering.
-{% endAside %}
-
-The following example shows how this works. The avatar is only rendered when the
-button is clicked, where a request is then made to retrieve the code necessary
-for the suspended `AvatarComponent`. In the meantime, the fallback loading
-component is shown.
+component as a loading state. The following example shows how this works.
+The avatar is only rendered when the button is clicked, where a request is
+then made to retrieve the code necessary for the suspended `AvatarComponent`.
+In the meantime, the fallback loading component is shown.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
