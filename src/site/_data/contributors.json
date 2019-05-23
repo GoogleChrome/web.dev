@@ -1256,6 +1256,22 @@
       "en": "If an API's not documented it doesn't exist"
     }
   },
+   "egsweeny": {
+    "name": {
+      "given": "Elizabeth",
+      "family": "Sweeny"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Product Manager"
+    },
+    "country": "US",
+    "github": "egsweeny",
+    "twitter": "egsweeny",
+    "description": {
+      "en": "Product manager for developer tools on the web platform in Chrome."
+    }
+  },
   "rowan_m": {
     "name": {
       "given": "Rowan",
