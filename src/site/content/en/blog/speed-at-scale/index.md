@@ -37,8 +37,7 @@ standards for the performance of your site. More importantly, they make it is
 easy to identify and fix performance regressions before they ship.
 
 <figure class="w-figure">
-<img src="./Speed-at0.png" alt="A LightWallet report showing which assets are
-over the file size budget" loading="lazy">
+  <img class="w-screenshot w-screenshot--filled" src="./Speed-at0.png" alt="A LightWallet report showing which assets are over the file size budget." loading="lazy">
 </figure>
 
 LightWallet is available in the newest version of the Lighthouse CLI and only
@@ -91,13 +90,9 @@ try out [this demo](https://mathiasbynens.be/demo/img-loading-lazy) in Chrome
 A [write-up](https://addyosmani.com/blog/lazy-loading/) on the native
 lazy-loading feature is available with more details.
 
-## Google fonts now supports font-display as a query parameter
+## Google Fonts now supports font-display as a query parameter
 
-We announced support for [font-display](https://font-display.glitch.me) is now
-available in production for all [Google Fonts](https://fonts.google.com) via
-the
-[display](https://developers.google.com/fonts/docs/getting_started#use_font-display)
-query-string parameter:
+We announced support for [font-display](https://font-display.glitch.me) is now available in production for all [Google Fonts](https://fonts.google.com) via the [display query-string parameter](https://developers.google.com/fonts/docs/getting_started#use_font-display):
 
 ```html
 https://fonts.googleapis.com/css?family=Lobster&display=swap
@@ -107,8 +102,7 @@ The `font-display` descriptor lets you decide how your web fonts will render or
 fallback, depending on how long it takes for them to load. It supports a number
 of values including `auto`, `block`, `swap`, `fallback` and `optional`.
 
-Previously, the only way to specify font-display for web fonts from Google
-Fonts was to self-host them but this change removes the need to do so. 
+Previously, the only way to specify `font-display` for web fonts from Google Fonts was to self-host them but this change removes the need to do so. 
 
 The [Google Fonts
 documentation](https://developers.google.com/fonts/docs/getting_started#use_font-display)
@@ -117,8 +111,7 @@ below). We hope this will encourage more developers to try out this exciting
 addition.
 
 <figure class="w-figure">
-<img src="./Speed-at2.png" alt="Google Fonts embed code with font-display
-included in the URL as a query-parameter"  loading="lazy">
+  <img class="w-screenshot" src="./Speed-at2.png" alt="Google Fonts embed code with font-display included in the URL as a query-parameter" loading="lazy">
 </figure>
 
 Here's a [demo](https://glitch.com/~truth-bookcase) on Glitch of using display
