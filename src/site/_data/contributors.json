@@ -821,13 +821,13 @@
     },
     "org": {
       "name": "Google",
-      "unit": "Developer Relations"
+      "unit": "Chrome"
     },
     "country": "USA",
     "twitter": "addyosmani",
     "glitch": "addyosmani",
     "description": {
-      "en": "Eng Manager, Web Developer Relations"
+      "en": "Eng Manager working on Chrome and Web Platform"
     }
   },
   "jeffposnick": {
@@ -1272,22 +1272,5 @@
     "twitter": "rowan_m",
     "github": "rowan-m",
     "glitch": "rowan-m"
-  },
-  "addyosmani": {
-    "name": {
-      "given": "Addy",
-      "family": "Osmani"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
-    },
-    "description": {
-      "en": "Engineering Manager on Chrome and web"
-    },
-    "country": "US",
-    "twitter": "addyosmani",
-    "github": "addyosmani",
-    "glitch": "addyosmani"
   }
 }
