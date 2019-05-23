@@ -270,4 +270,4 @@ We would love to know what threshold values you used and found useful. We would
 love to know whether `unoptimized-lossless-images` or
 `unoptimized-lossless-images-strict` is more intuitive and easy to use, or if we
 should use a difference overhead allowance instead. We will be sending out a
-survey near the end of the trials. Stay tuned!
+survey near the end of the trial. Stay tuned!
