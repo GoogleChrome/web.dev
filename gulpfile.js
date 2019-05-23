@@ -26,6 +26,7 @@ const pngquant = require('imagemin-pngquant');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const gulpif = require('gulp-if');
+const removeCode = require('gulp-remove-code');
 
 /* eslint-disable max-len */
 const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
@@ -68,6 +69,13 @@ gulp.task('scss', () => {
       .pipe(sourcemaps.write('./maps'))
       .pipe(gulp.dest('./dist'))
   );
+});
+
+gulp.task('copy-scss', () => {
+  return gulp
+    .src('./src/styles/**/*.scss')
+    .pipe(removeCode({production: true, commentStart: '//'}))
+    .pipe(gulp.dest('./dist/styles'));
 });
 
 // These are images that our CSS refers to and must be checked in to DevSite.
@@ -115,7 +123,10 @@ gulp.task('copy-content-assets', () => {
 
 let buildTask;
 if (isProd) {
-  buildTask = gulp.parallel('copy-content-assets');
+  buildTask = gulp.parallel(
+    'copy-scss',
+    'copy-content-assets',
+  );
 } else {
   buildTask = gulp.parallel(
     'scss',
