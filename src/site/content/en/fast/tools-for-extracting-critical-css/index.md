@@ -8,6 +8,7 @@ hero: hero.jpg
 alt: A flatlay photo of wrenches and screwdrivers.
 description: |
   Learn how to improve render times with critical CSS technique and how to choose the best tool for your project.
+codelabs: codelab-extract-and-inline-critical-css  
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
