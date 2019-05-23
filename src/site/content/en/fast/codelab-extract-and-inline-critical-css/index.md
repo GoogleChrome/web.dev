@@ -173,7 +173,7 @@ refresh
 
 <figure class="w-figure">
   <img src="console-success.png" alt='Success message saying "Generated critical CSS" in the console]()' style="max-width: 243px">
-  <figcaption>Success message in the console</figcaption>
+  <figcaption class="w-figcaption">Success message in the console</figcaption>
 </figure>
 
 {% Aside 'note' %}
