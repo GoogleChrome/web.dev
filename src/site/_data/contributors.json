@@ -1272,5 +1272,22 @@
     "twitter": "rowan_m",
     "github": "rowan-m",
     "glitch": "rowan-m"
+  },
+  "addyosmani": {
+    "name": {
+      "given": "Addy",
+      "family": "Osmani"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "description": {
+      "en": "Engineering Manager on Chrome and web"
+    },
+    "country": "US",
+    "twitter": "addyosmani",
+    "github": "addyosmani",
+    "glitch": "addyosmani"
   }
 }
