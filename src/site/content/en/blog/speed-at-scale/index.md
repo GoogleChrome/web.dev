@@ -73,7 +73,7 @@ Previously, the only way to specify `font-display` for web fonts from Google Fon
 The [Google Fonts documentation](https://developers.google.com/fonts/docs/getting_started#use_font-display) has been updated to include `font-display` in the default code embeds (as seem below). We hope this will encourage more developers to try out this exciting addition.
 
 <figure class="w-figure">
-  <img src="./Speed-at2.png" alt="Google Fonts embed code with font-display included in the URL as a query-parameter"  loading="lazy">
+  <img class="w-screenshot" src="./Speed-at2.png" alt="Google Fonts embed code with font-display included in the URL as a query-parameter"  loading="lazy">
 </figure>
 
 Here's a [demo](https://codepen.io/addyosmani/pen/RmaOVJ) on Codepen of using display with multiple font families.
