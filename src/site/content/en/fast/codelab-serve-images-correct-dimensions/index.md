@@ -105,7 +105,11 @@ should not be very noticeable.
 pixels wide. In the terminal type:
 
 ```
+# macOS/Linux
 convert flower_photo.jpg -resize 960x flower_photo.jpg
+
+# Windows
+magick convert flower_photo.jpg -resize 960x flower_photo.jpg
 ```
 
 {% Aside %}
