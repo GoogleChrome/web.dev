@@ -1,6 +1,6 @@
 ---
-title: Hello Darkness, My Old Friend—Dark Theme is Here
-subhead:
+title: Hello Darkness, My Old Friend
+subhead: Dark Theme is Here
 authors:
   - thomassteiner
 date: 2019-05-23
@@ -9,16 +9,15 @@ alt: macOS X Dark Mode preferences.
 description: |
 
 tags:
+  - post
   - dark-mode
 ---
 
-# Hello Darkness, My Old Friend: Dark Theme is Here
-
 ## Background
 
-<figure class="attempt-right">
+<figure class="w-figure w-figure--inline-right">
   <img style="height:175px; width:auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
-  <figcaption><b>Fig. 1</b> Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Fig. 1 — Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
 </figure>
 
 We have gone full circle with dark mode.
@@ -42,9 +41,9 @@ To the present day, web pages and apps are typically designed with dark text on 
 a baseline assumption that is also hard-coded in User-Agent (UA) stylesheets like
 [Chrome's](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
 
-<figure class="attempt-right">
+<figure class="w-figure w-figure--inline-right">
   <img style="height:175px; width:auto;" src="word-processing.jpg" alt="Dark-on-white word processing" intrinsicsize="698x551">
-  <figcaption><b>Fig. 2</b> Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Fig. 2 — Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
 </figure>
 
 Today, a lot of content consumption and creation has shifted to mobile devices
@@ -68,9 +67,9 @@ Apple in their
 explicitly write: *"The choice of whether to enable a light or dark appearance
 is an aesthetic one for most users, and might not relate to ambient lighting conditions."*
 
-<figure class="attempt-right">
+<figure class="w-figure w-figure--inline-right">
   <img style="height:225px; width:auto;" src="closeview.png" alt="CloseView in Mac OS System 7 with \"White on Black\" mode" intrinsicsize="531x618">
-  <figcaption><b>Fig. 3</b> System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Fig. 3 — System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
 </figure>
 
 However, there're also people who actually need dark mode or other accessibility tools,
@@ -124,11 +123,13 @@ and in various other contexts and languages, such as HTML and JavaScript.
 introduces so-called user preference media features, that is,
 a way for sites to detect the user's preferred way to display content.
 
-Note: An established user preference media feature is `prefers-reduced-motion`
-that lets you detect the desire for less motion on a page.
-If you're interested, I have written about
-[`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
-before.
+{% Aside 'note' %}
+  An established user preference media feature is `prefers-reduced-motion`
+  that lets you detect the desire for less motion on a page.
+  If you're interested, I have written about
+  [`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
+  before.
+{% endAside %}
 
 The `prefers-color-scheme` media feature is used to detect
 if the user has requested the page to use a light or dark color theme.
@@ -147,14 +148,14 @@ It takes the following values:
 
 Before we dive into this, let's first clarify how people can activate dark mode in the first place.
 
-<figure class="attempt-left">
+<figure class="w-figure w-figure--inline-left">
   <img style="height:225px; width:auto;" src="windows10.png" alt="Windows 10 dark theme settings" intrinsicsize="1812x1513">
-  <figcaption><b>Fig. 4</b> Windows&nbsp;10 dark theme settings</figcaption>
+  <figcaption class="w-figcaption">Fig. 4 — Windows&nbsp;10 dark theme settings</figcaption>
 </figure>
 
-<figure class="attempt-left">
+<figure class="w-figure w-figure--inline-left">
   <img style="height:225px; width:auto;" src="macosx.png" alt="macOS X dark mode settings" intrinsicsize="668x678">
-  <figcaption><b>Fig. 5</b> macOS&nbsp;X dark mode settings</figcaption>
+  <figcaption class="w-figcaption">Fig. 5 — macOS&nbsp;X dark mode settings</figcaption>
 </figure>
 
 ## Dark Mode Best Practices
