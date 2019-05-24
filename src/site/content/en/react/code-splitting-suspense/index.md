@@ -22,7 +22,7 @@ authors:
 The **`React.lazy`** method makes it easy to code-split a React application on a
 component level using dynamic imports.
 
-```js
+```jsx
 import React, { lazy } from 'react';
 
 const AvatarComponent = lazy(() => import('./AvatarComponent'));
@@ -59,7 +59,7 @@ a code-split component is being fetched over the network, so it's important to
 display a useful loading state. Using `React.lazy` with the **`Suspense`**
 component helps solve this problem.
 
-```js
+```jsx
 import React, { lazy, Suspense } from 'react';
 
 const AvatarComponent = lazy(() => import('./AvatarComponent'));
@@ -122,7 +122,7 @@ components from loading, **even if they are all lazy loaded**.
 
 For example:
 
-```js
+```jsx
 import React, { lazy, Suspense } from 'react';
 
 const AvatarComponent = lazy(() => import('./AvatarComponent'));

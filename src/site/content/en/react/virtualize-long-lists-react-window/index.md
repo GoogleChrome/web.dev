@@ -60,7 +60,7 @@ that can be used for different types of lists and tables.
 Use the `FixedSizeList` component if you have a long, one-dimensional list
 of equally sized items.
 
-```js
+```jsx
 import React from 'react';
 import { FixedSizeList } from 'react-window';
 
@@ -111,7 +111,7 @@ Use the `VariableSizeList` component to render a list of items that have
 different sizes. This component works in the same way as a fixed size list, but
 instead expects a function for the `itemSize` prop instead of a specific value.
 
-```js
+```jsx
 import React from 'react';
 import { VariableSizeList } from 'react-window';
 
@@ -225,7 +225,7 @@ lazy load newer entries as the user scrolls down. A separate package,
 Consider the following piece of code which shows an example of state that is
 managed in a parent `App` component.
 
-```js
+```jsx
 import React, { Component } from 'react';
 
 import ListComponent from './ListComponent';
@@ -264,7 +264,7 @@ point.
 
 Here's how the `ListComponent` that renders the list can look like:
 
-```js
+```jsx
 import React from 'react';
 import { FixedSizeList } from 'react-window';
 import InfiniteLoader from "react-window-infinite-loader";
@@ -358,7 +358,7 @@ To improve the user experience of virtualized lists, `react-window` allows
 you to overscan items with the `overscanCount` property. This allows you to
 define how many items outside of the visible "window" to render at all times.
 
-```js
+```jsx
 <FixedSizeList
   //...
   overscanCount={4}
