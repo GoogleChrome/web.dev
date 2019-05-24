@@ -1,4 +1,22 @@
 [[redirects]]
+  from = "/all.css"
+  to = "/all.css"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/images/*"
+  to = "/images/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/maps/*"
+  to = "/maps/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/en/:splat"
   status = 200
