@@ -83,6 +83,12 @@ gulp.task('copy-global-assets', () => {
   return gulp.src(['./src/images/**/*']).pipe(gulp.dest('./dist/images'));
 });
 
+gulp.task('copy-admin', () => {
+  return gulp
+    .src('./src/site/content/en/admin/*')
+    .pipe(gulp.dest('./dist/admin'));
+});
+
 // Images and any other assets in the content directory that should be copied
 // over along with the posts themselves.
 // Because we use permalinks to strip the parent directories form our posts
@@ -132,6 +138,7 @@ if (isProd) {
     'scss',
     'copy-global-assets',
     'copy-content-assets',
+    'copy-admin',
   );
 }
 gulp.task('build', buildTask);
