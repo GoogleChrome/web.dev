@@ -1,6 +1,6 @@
 ---
 title: Hello Darkness, My Old Friend
-subhead: Dark Theme is Here
+subhead: Dark theme is here
 authors:
   - thomassteiner
 date: 2019-05-23
@@ -23,8 +23,8 @@ tags:
 We have gone full circle with dark mode.
 In the dawn of personal computing, dark mode wasn't a deliberate choice,
 but purely a matter of fact:
-Monochrome Cathod-Ray Tube (CRT) computer monitors work by firing electron beams
-on a phosphorescent screen, and as the phospor that these early CRTs used was green,
+Monochrome Cathode-Ray Tube (CRT) computer monitors work by firing electron beams
+on a phosphorescent screen, and as the phosphor that these early CRTs used was green,
 they were oftentimes referred to as
 [green screens](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg).
 Information like text was displayed in green, and the rest of the screen was black.
@@ -118,7 +118,7 @@ through features like iOS' [Night Shift](https://support.apple.com/en-us/HT20757
 [Night Light](https://support.google.com/pixelphone/answer/7169926?) can help,
 as well as avoiding bright lights or irregular lights in general through dark themes or dark modes.
 
-## Supporting Dark Mode
+## Activating Dark Mode in the Operation System
 
 Now that I have covered the background of why dark mode is such a big thing,
 let me go into detail how you can support it.
@@ -132,27 +132,29 @@ For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle swi
 <div style="overflow-x: auto">
   <table class="w-screenshot w-screenshot--filled">
     <tr>
-      <td style="vertical-align:bottom;">
+      <td style="vertical-align:top;">
         <figure class="w-figure w-figure--inline-left">
-          <img src="windows10.png" alt="Windows 10 dark theme settings" intrinsicsize="1812x1513">
+          <img style="height:250px; width:auto;" src="windows10.png" alt="Windows 10 dark theme settings" intrinsicsize="838x700">
           <figcaption class="w-figcaption">Fig. 4 — Windows&nbsp;10 dark theme settings</figcaption>
         </figure>
       </td>
-      <td style="vertical-align:bottom;">
+      <td style="vertical-align:top;">
         <figure class="w-figure w-figure--inline-left">
-          <img src="macosx.png" alt="macOS X dark mode settings" intrinsicsize="668x678">
+          <img style="height:250px; width:auto;" src="macosx.png" alt="macOS X dark mode settings" intrinsicsize="668x678">
           <figcaption class="w-figcaption">Fig. 5 — macOS&nbsp;X dark mode settings</figcaption>
         </figure>
       </td>
-      <td style="vertical-align:bottom;">
+      <td style="vertical-align:top;">
         <figure class="w-figure w-figure--inline-left">
-          <img src="android.png" alt="Android Q dark mode settings" intrinsicsize="1080x1920">
+          <img style="height:250px; width:auto;" src="android.png" alt="Android Q dark mode settings" intrinsicsize="610x700">
           <figcaption class="w-figcaption">Fig. 6 — Android&nbsp;Q dark theme settings</figcaption>
         </figure>
       </td>
     </tr>
   </table>
 </div>
+
+## The `prefers-color-scheme` Media Query
 
 [Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 allow authors to test and query values or features of the user agent or display device,
@@ -186,20 +188,48 @@ It takes the following values:
   Indicates that the user has notified the system that they prefer a page that has a dark theme
   (light text on dark background).
 
-So with that out of the way, let's finally see how this looks in practice.
+## Supporting Dark Mode
+
+Let's finally see how supporting dark mode looks in practice.
+To optimize load speed, I have split my CSS into three parts:
+
+- `style.css` that contains generic styles that are used universally on the site.
+- `dark.css` that contains only the rules needed for dark mode.
+- `light.css` that contains only the rules needed for light mode.
+
+The two latter ones are loaded conditionally with a `<link media>` query.
+Not all browsers will support this media query quite yet,
+which I counter by loading the default `light.css` file via `document.write`
+in a minuscule inline script.
 
 ```html
 <!-- index.html -->
-<link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
 <script>
-  // If `prefers-color-scheme` is not supported, fall back to light mode
+  // If `prefers-color-scheme` is not supported, fall back to light mode.
+  // In this case, the file will be downloaded with `highest` priority.
   if (!window.matchMedia('(prefers-color-scheme)').matches) {
     document.write('<link rel="stylesheet" href="/light.css"">');
   }
 </script>
+<!-- The main stylesheet -->
+<link rel="stylesheet" href="/style.css">
+<!--
+  Conditionally either load the light or the dark stylesheet. The matching file
+  will be downloaded with `highest`, the non-matching file with `lowest`
+  priority. If the browser doesn't support `prefers-color-scheme`, the media
+  query is unknown and the files are downloaded with `lowest` priority (but
+  above I force `highest` for the default experience).
+-->
+<link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
 ```
+
+I make maximum use of [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var),
+this allows my generic `style.css` to be, well, generic,
+and all the customization happens in the two other files `dark.css` and `light.css`.
+Below you can see an excerpt of the actual styles, but it should suffice to convey the overall idea.
+I declare two variables, `--background-color` and `--color`
+that essentially create a *dark-on-light* and a *light-on-dark* baseline theme.
 
 ```css
 /* light.css */
@@ -217,10 +247,23 @@ So with that out of the way, let's finally see how this looks in practice.
 }
 ```
 
+In my `style.css`, I then use these variables in the `body { … }` rule.
+You will also have noticed a property `color-scheme` with the space-separated value `light dark`.
+
+{% Aside 'note' %}
+  Read up more on
+  [what `color-scheme` actually does](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d).
+{% endAside %}
+
+This tells the browser which color themes my app supports,
+and allows it to activate special variants of the User Agent stylesheet.
+This is useful to, for example, let the browser render form fields
+with a dark background and light text, or to enable a theme-aware highlight color.
+
 ```css
 /* style.css */
 :root {
-  supported-color: dark light;
+  color-scheme: dark light;
 }
 
 body {
@@ -229,6 +272,9 @@ body {
 }
 ```
 
+In the following [Glitch](https://dark-mode-baseline.glitch.me/) embed,
+you can see a more complete example that puts the concepts from above into practice.
+
 <div style="height: 420px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
@@ -236,6 +282,17 @@ body {
     style="height:100%; width:100%; border:0;">
   </iframe>
 </div>
+
+When you play with this example, you can see
+why I load my `dark.css` and `light.css` via media queries.
+Try toggling dark mode and reload the page:
+the particular currently non-matching stylesheets are still loaded, but with lowest priority,
+so that they never compete with resources that are needed by the site right now.
+
+{% Aside 'note' %}
+  Read up more on
+  [why browsers download stylesheets with non-matching media queries](https://blog.tomayac.com/2018/11/08/why-browsers-download-stylesheets-with-non-matching-media-queries-180513).
+{% endAside %}
 
 <figure class="w-figure">
   <img src="light.png" alt="Network loading diagram showing how in light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
@@ -247,7 +304,87 @@ body {
   <figcaption class="w-figcaption">Fig. 8 — Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
 </figure>
 
+<figure class="w-figure">
+  <img src="unsupported.png" alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
+  <figcaption class="w-figcaption">Fig. 9 — Site in default light mode on a browser that doesn't support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
+</figure>
+
 ## Dark Mode Best Practices
+
+### Photographic images
+
+If you compare the two screenshots above, you will notice that not only the core theme has changed
+from *dark-on-light* to *light-on-dark*, but that also the hero image looks slightly different.
+My [research](https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b)
+has shown that the majority of the surveyed people
+prefer slightly less vibrant and brilliant images when dark mode is active.
+I refer to this as *re-colorization*.
+Re-colorization can be achieved through a CSS filter on my images.
+I use a CSS selector that matches all images that don't have `.svg` in their URL,
+the idea being that I can give vector graphics (icons) a different re-colorization treatment
+than my images (photos), more about this in the [next paragraph](#vector-graphics-and-icons).
+Note how I again use a [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/var),
+so I can later on flexibly change my filter.
+
+{% Aside 'note' %}
+  Read up more on
+  [user research regarding re-colorization preferences with dark mode](https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b).
+{% endAside %}
+
+```css
+/* dark.css */
+--image-filter: grayscale(50%);
+
+img:not([src*=".svg"]) {
+  filter: var(--image-filter);
+}
+```
+
+Not everyone is the same and people have different dark mode needs.
+By sticking to the re-colorization method described above,
+I can easily make the grayscale intensity a user preference that I can change via JavaScript.
+
+```js
+const filter = 'grayscale(70%)';
+document.documentElement.style.setProperty('--image-filter', value);
+```
+
+### Vector graphics and icons
+
+For vector graphics—that in my case are used as icons—I use a different re-colorization method.
+While [research](https://dl.acm.org/citation.cfm?id=2982168) has shown
+that people don't like inversion for photos, it works very well for most icons.
+Again I use CSS variables to determine the inversion amount
+in the regular and in the `:hover` state.
+Note how I only invert icons in `dark.css` but not in `light.css`, and how the `:hover` state
+gets a different inversion intensity in the two cases to make the icon appear
+slightly darker or slightly brighter, dependent on the mode the user has selected.
+
+```css
+/* dark.css */
+--icon-filter: invert(100%);
+--icon-filter_hover: invert(40%);
+
+img[src*=".svg"] {
+  filter: var(--icon-filter);
+}
+```
+
+```css
+/* light.css */
+--icon-filter_hover: invert(60%);
+```
+
+```css
+/* style.css */
+img[src*=".svg"]:hover {
+  filter: var(--icon-filter_hover);
+}
+```
+
+## Conclusions
+
+
 
 ## Related Links
 
@@ -255,10 +392,13 @@ body {
     - [Chrome Platform Status page](https://chromestatus.com/feature/5109758977638400)
     - [Chromium bug](https://crbug.com/889087)
     - [Media Queries Level&nbsp;5 spec](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)
-- Resources for the `supported-color-schemes` meta tag and CSS property:
+- Resources for the `color-scheme` meta tag and CSS property:
     - [Chrome Platform Status page](https://chromestatus.com/feature/5330651267989504)
     - [Chromium bug](http://crbug.com/925935)
     - [CSS WG GitHub Issue for the meta tag and the CSS property](https://github.com/w3c/csswg-drafts/issues/3299)
     - [HTML WHATWG GitHub Issue for the meta tag](https://github.com/whatwg/html/issues/4504)
 
 ## Acknowledgements
+
+I would like to thank the participants of the various user studies
+that have helped shape the recommendations in this article.
