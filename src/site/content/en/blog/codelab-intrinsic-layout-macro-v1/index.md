@@ -230,6 +230,15 @@ Well, **36 lines of code** isn't too bad for a responsive layout. Was even satis
   Click the **Remix To Edit** button to make the project editable
 {% endAside %}
 
+<figure class="w-figure w-figure--center">
+  <picture>
+    <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-v1-footer-chaos.png" alt="footer is laid out in the wrong location without custom CSS" class="screenshot">
+  </picture>
+  <figcaption class="w-figcaption">
+    Default footer placement in the grid is not good
+  </figcaption>
+</figure>
+
 When you're done, **remember the level of effort of handling this change**. Also remember how well the layout algorithm handled change and turbulence. We'll be comparing it against [a refactor](/codelab-intrinsic-layout-macro-v2) next.
 
 <br>
