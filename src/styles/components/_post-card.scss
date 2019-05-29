@@ -39,6 +39,8 @@
   display: flex;
   justify-content: center;
   margin: 0 0 16px;
+  outline: 1px solid #eee;
+  outline-offset: -1px;
   overflow: hidden;
   padding: 0;
   position: relative;
