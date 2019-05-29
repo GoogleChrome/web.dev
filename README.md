@@ -8,7 +8,7 @@ help them apply what they've learned to any site they work on, be it personal or
 business.
 
 Note: this repo contains the written content for web.dev. The client-side JS and
-server are not yet open source.
+server are not yet open source but we hope to share them soon! 🙇‍♂️
 
 ## Authoring content
 
