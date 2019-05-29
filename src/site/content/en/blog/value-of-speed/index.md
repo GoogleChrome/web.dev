@@ -49,10 +49,12 @@ improvements.
 ![image](relative-versus-absolute.jpg)
 
 {% Aside 'caution' %}
-Rel mCvR is influenced not only by speed, but also by other
-site characteristics like usability. If other big changes were made to the
-site during the period you want to analyze, it will be difficult to measure
-the effects of speed improvements on their own.
+Caution: Rel mCvR is influenced not only by speed, but also by other site 
+characteristics like usability. If other big changes were made to the site 
+during the period you want to analyze, you won’t be able to measure the effects 
+of speed improvements on their own, but you can show the benefits of all the 
+improvements as a group.
+
 {% endAside %}
 
 ## Doing the analysis
@@ -105,7 +107,7 @@ spreadsheet and insert it next to the _Ecommerce Conversion Rate_ in the
 mobile report spreadsheet.
 
 1.  To calculate the Rel mCvR, create a new column titled _Relative
-Mobile Conversion Rate (Rel mCvr)_. Then add a formula to divide the mobile
+Mobile Conversion Rate (Rel mCvR)_. Then add a formula to divide the mobile
 conversion rate by the desktop conversion rate.
 <br><br>
 ![image](relative-rate-formula.jpg)
@@ -161,28 +163,26 @@ to Rel mCvR improving—that is, thanks to the mobile site becoming faster.
 
 ![image](thanks-to-increased.jpg)
 
-## Things to consider when analysing Rel mCvR
+## Things to consider when analyzing Rel mCvR
 
-+  As noted above, other changes to the site, such aslike UX
-    improvements, can influence Rel mCvR. Check that speed was the only big
-    change to the site during the period you want to study. If there _were_
-    other changes, Rel mCvR can tell you the effect of the changes as a group,
-    but not of any individual change.
-+  Watch out for any changes or events that affected the desktop site
-    but not the mobile site—they can skew your results. If you discover any
-    desktop-only changes, omit the affected period from your analysis.
-+  Check whether conversions increased overall, or whether people just
-    started using the mobile site instead of the desktop site. Otherwise you'll
-    end up with an inflated estimate of increased revenue. (Note, though, that
-    Rel mCvR has a high safety margin because it doesn't include the total
-    increase in conversions across devices. Desktop conversion is likely to
-    increase as speed improves, but the increase in conversions on mobile is
-    usually higher since mobile is more dependent on speed. Since Rel mCvR
-    divides mobile conversion rates by desktop conversion rates, you'll only
-    see how much more the mobile conversion rates increase. We thereby count
-    low in this calculation, so if some of the increase in mobile conversions
-    is caused by a shift from desktop, we will have a safety margin which can
-    balance this.)
+* As noted above, other changes to the site, such as UX improvements, can 
+influence Rel mCvR. Check that speed was the only big change to the site during 
+the period you want to study. If there were other changes, Rel mCvR can tell you 
+the effect of the changes as a group, but not of an individual change.
+
+* Watch out for any changes or events that affected the desktop site but not the 
+mobile site—they can skew your results. If you discover any desktop-only 
+changes, omit the affected period from your analysis.
+
+* You might wonder whether an increase in Rel mCvR is caused by a shift in 
+conversions from desktop to mobile rather than an increase in conversions 
+overall. While there is likely to be some change in the mix of desktop and 
+mobile conversions due to speed improvements, keep in mind that Rel mCvR 
+calculates the mobile conversion rate relative to the desktop conversion rate. 
+So, you only see an increase in Rel mCvR when mCvR goes up more than dCvR. In 
+other words, you’re excluding a chunk of mobile conversions from your count, 
+which provides a safety margin that can absorb any possible increase caused by 
+a shift in channels.
 
 ## Summing up
 
