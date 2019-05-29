@@ -1272,5 +1272,19 @@
     "twitter": "rowan_m",
     "github": "rowan-m",
     "glitch": "rowan-m"
+  },
+  "eae": {
+    "name": {
+      "given": "Emil",
+      "family": "Eklund"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "description": {
+      "en": "Chrome Rendering tech lead and manager."
+    },
+    "country": "US"
   }
 }
