@@ -1272,5 +1272,18 @@
     "twitter": "rowan_m",
     "github": "rowan-m",
     "glitch": "rowan-m"
+  },
+  "geddski": {
+    "name": {
+      "given": "Dave",
+      "family": "Geddes"
+    },
+    "description": {
+      "en": "Founder at Mastery Games"
+    },
+    "homepage": "https://gedd.ski/",
+    "country": "US",
+    "twitter": "geddski",
+    "github": "geddski"
   }
 }
