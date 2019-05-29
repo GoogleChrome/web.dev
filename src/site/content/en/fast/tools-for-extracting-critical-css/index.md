@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Tools for extracting critical CSS
+title: Extract critical CSS
 subhead: Learn how to improve render times with critical CSS technique.
 authors:
   - mihajlija
-date: 2019-05-07
+date: 2019-05-29
 hero: hero.jpg
 alt: A flatlay photo of wrenches and screwdrivers.
 description: |
