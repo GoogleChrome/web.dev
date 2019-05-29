@@ -22,9 +22,12 @@ tags:
 {% endAside %}
 
 <div class="video-wrapper">
-  <iframe class="devsite-embedded-youtube-video" data-video-id="GSiUzuB-PoI"
-          data-autohide="1" data-showinfo="1" frameborder="1" allowfullscreen>
-  </iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GSiUzuB-PoI"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="position:relative"
+  ></iframe>
 </div>
 
 The web is an amazing platform, it reaches users all around the world - on
