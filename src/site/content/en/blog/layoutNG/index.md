@@ -25,7 +25,7 @@ tags:
 
 Scheduled to be released in Chrome 76, LayoutNG's multi-year efforts begin rolling out to the public from beta. While this article intends to cover the list of immediate effects, longer term goals exist which bring additional performance gains and advanced layout features.
 
-#### LayoutNG
+#### What's New?
 1. Provides **improved performance** isolation
 1. **Better support** for scripts other than Latin
 1. **Fixes** many issues around floats and margins
