@@ -33,7 +33,7 @@ But other service worker behavior causes you to scratch your head in confusion. 
 
 Normally when building a site you have just two layers to think about: the client and the server. Service worker is a brand new layer that sits in the middle.
 
-![Middle Layer](./middle-layer.jpg)
+![A service worker acts as a middle layer between the client and the server](./middle-layer.jpg)
 
 Think of your service worker as a sort of _browser extension_ — one that your site can install in your users' browser. Once installed, the service worker _extends_ the browser for your site with a powerful middle layer. This service worker layer can intercept and handle all of the requests your site makes.
 
@@ -41,7 +41,7 @@ The service worker layer has its **own lifecycle** independent of the browser ta
 
 In the [Service Workies](https://serviceworkies.com) game we cover the many details of the service worker lifecycle and give you a ton of practice working with it.
 
-![service worker lifecycle update](./update-lifecycle.gif)
+![a new service worker replacing an old one](./update-lifecycle.gif)
 
 {% Aside 'note' %}
 Think of your service worker as a new middle layer, with its own lifecycle and methods for updating.
@@ -74,7 +74,7 @@ An active service worker goes on living even after a user leaves your site or cl
 
 In [Service Workies](https://serviceworkies.com) we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.
 
-![service worker intercepting requests](./intercept.gif)
+![service worker intercepting http requests](./intercept.gif)
 
 ### Stopped
 
@@ -123,7 +123,7 @@ This snag is especially important to keep in mind while working on your service 
 
 In [Service Workies chapter 3](https://gedd.ski/post/service-workies-chapter3/) we visualize our stopped service worker as losing all color while he hangs out waiting to be woken up.
 
-![service worker stopped](./kolohe-stopped.jpg)
+![visualization of a stopped service worker](./kolohe-stopped.jpg)
 
 {% Aside 'note' %}
 Think of your service worker as a [whippet](https://www.akc.org/dog-breeds/whippet/) dog. He's fast, loyal and awesome. He'll stick around by your side no matter what. But mostly he just wants to sleep. All the time. You've got to let him know when you want him to stay awake. Good boy!
@@ -161,7 +161,7 @@ self.addEventListener("install", event => {
 
 When you deploy a new service worker, you'll bump the `version` so that it does what it needs with an entirely separate cache from the previous service worker.
 
-![Cache](./cache.jpg)
+![visualization of a cache](./cache.jpg)
 
 ### End clean
 
@@ -203,4 +203,4 @@ Getting into the right mindset while thinking about service workers will help yo
 
 If you want to master all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! [Google Developers](https://twitter.com/ChromiumDev) and I collaborated on a project — [Service Workies](https://serviceworkies.com) where you master the ways of the service worker to slay the offline beasts. Go check it out!
 
-![Service Workies game](./spider.gif)
+![preview of the Service Workies game](./spider.gif)
