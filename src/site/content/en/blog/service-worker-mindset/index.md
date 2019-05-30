@@ -1,5 +1,5 @@
 ---
-title: Service Worker Mindset
+title: Service worker mindset
 subhead: How to think when thinking about Service Workers.
 authors:
   - geddski
