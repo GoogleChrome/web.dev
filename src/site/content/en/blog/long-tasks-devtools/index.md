@@ -59,7 +59,7 @@ srcset="
 src="./Are-long1_yp7hwf_c_scale,w_1400.png"
 alt="A DevTools Performance panel screenshot showing the differences between short tasks and long tasks">
 
-To help ease your performance auditing workflow, [DevTools in now visualizes Long Tasks](https://developers.google.com/web/updates/2019/03/devtools#longtasks). Tasks are now gray and have red flags if they are causing a performance bottleneck in your application.
+To help ease your performance auditing workflow, [DevTools now visualizes Long Tasks](https://developers.google.com/web/updates/2019/03/devtools#longtasks). Tasks are gray and have red flags if they are causing a performance bottleneck in your application.
 
 <img
 class="w-screenshot" sizes="(max-width: 1400px) 100vw, 1400px"
@@ -76,13 +76,13 @@ srcset="
 src="./Are-long2_momntc_c_scale,w_1400.png"
 alt="DevTools visualizing Long Tasks as gray bars in the Performance Panel with a red flag for long tasks">
 
-* Record a trace in the [Performance panel](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/) of loading up a web page
+* Record a trace in the [Performance panel](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/) of loading up a web page.
 * Look for a red flag in the main thread view. You should see tasks are now gray ("Task"). 
-*  Hovering over a bar will let you know the duration of the task and if it was considered "long"
+*  Hovering over a bar will let you know the duration of the task and if it was considered "long".
 
 ## What is causing my Long Tasks?
 
-To discover what is causing a long task, select the gray "Task" bar. In the drawer beneath, select "Bottom-Up" and "Group by Activity". This allows you to see what activities contributed the most (in total) to the task taking so long to complete. Below, itappears to be a costly set of DOM queries.
+To discover what is causing a long task, select the gray **Task** bar. In the drawer beneath, select **Bottom-Up** and **Group by Activity**. This allows you to see what activities contributed the most (in total) to the task taking so long to complete. Below, it appears to be a costly set of DOM queries.
 
 <img
 class="w-screenshot" sizes="(max-width: 1400px) 100vw, 1400px"
