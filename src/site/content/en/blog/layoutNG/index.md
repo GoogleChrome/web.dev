@@ -23,7 +23,7 @@ tags:
   }
 </style>
 
-Scheduled to be released in Chrome 76, a new layout engine **LayoutNG** is exiting a multi-year effort. While this article intends to cover the list of immediate effects, longer term goals exist which intend to bring additional performance gains and advanced layout features.
+Scheduled to be released in Chrome 76, LayoutNG is a new layout engine exiting a multi-year effort. While this article intends to cover the list of immediate effects, longer term goals exist which intend to bring additional performance gains and advanced layout features.
 
 #### What's New?
 1. Provides **improved performance** isolation
