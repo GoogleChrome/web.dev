@@ -3,7 +3,7 @@ title: Image policies for fast load times and more
 subhead: Use optimized image policies to ensure your site is using the best performing images.
 authors:
   - lunalu
-date: 2019-05-23
+date: 2019-05-31
 codelabs:
   - codelab-serve-images-webp
 hero: pankaj-patel-721645-unsplash.jpg
