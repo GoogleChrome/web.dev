@@ -1,11 +1,11 @@
 ---
 title: Unlocking New Capabilities for the Web
-subhead: We strongly believe that every developer should have access to the capabilities they need to make a great web experience, and we are committed to a more capable web. Learn about some of the new APIs we're considering and how you can get involved.
+subhead: Learn about some of the new APIs we're considering and how you can get involved.
 authors:
   - petelepage
   - thomassteiner
-date: 2019-05-23
-hero: capabilities-process.jpg
+date: 2019-05-29
+hero: hero.jpg
 alt: The capabilities process consisting of identifying the need, writing the explainer, soliciting feedback, writing a formal spec, and shipping it.
 description: |
   Web apps should be able to do anything native apps can. Through Project Fugu, we want to make it
@@ -21,29 +21,26 @@ tags:
   web that have never been possible before.
 {% endAside %}
 
-<div class="video-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GSiUzuB-PoI"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          style="position:relative"
-  ></iframe>
-</div>
-
 The web is an amazing platform, it reaches users all around the world - on
 essentially any device. It’s easy to use, and easy to share. There’s nothing
 to install. But most importantly, it’s an open-ecosystem that anyone can use
 or build on.
+
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube-nocookie.com/embed/GSiUzuB-PoI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 There are some apps that are not possible to build and deliver on the open
 web today. We call this, the *app gap*. The gap between what’s possible on the
 web and what’s possible on native. We want to close that gap. We believe web
 apps should be able to do anything native apps can.
 
-> Through our capabilities project, we want to make it possible for web apps
-> to do anything native apps can, by exposing the capabilities of native
-> platforms to the web platform, while maintaining user security, privacy,
-> trust, and other core tenets of the web.
+<blockquote class="w-blockquote">
+  Through our capabilities project, we want to make it possible for web apps
+  to do anything native apps can, by exposing the capabilities of native
+  platforms to the web platform, while maintaining user security, privacy,
+  trust, and other core tenets of the web.
+</blockquote>
 
 ## The new capabilities
 
