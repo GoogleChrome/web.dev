@@ -65,17 +65,33 @@ optimizing your images.
 
 A few examples illustrate this. The following shows the default behavior when cutting an image's display size in half.
 
-![The default resizing behavior](default-100x100.png)
+<figure class="w-figure">
+  <img src="./default-100x100.png" alt="The default resizing behavior" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    Fig. 1 — The default resizing behavior.
+  </figcaption>
+</figure>
 
 If I apply the following feature policy, I get a placeholder image instead.
 
 `Feature-Policy: oversized-images *(2);`
 
-![When the image is too large for the container](resize-both-dimensions.png)
+<figure class="w-figure">
+  <img src="./resize-both-dimensions.png" alt="When the image is too large for the container" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    Fig. 2 — When the image is too large for the container.
+  </figcaption>
+</figure>
 
 I get similar results if I lower only the width or the height.
 
-![Resized width](resize-width.png) ![Resized height](resized-height.png)
+<figure class="w-figure">
+  <img src="./resize-width.png" alt="Resized width" style="max-width: 326px;">
+  <img src="./resize-height.png" alt="Resized height" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    Fig. 3 — Resize width and height.
+  </figcaption>
+</figure>
 
 #### How to use
 
@@ -141,13 +157,23 @@ images.
 
 The following shows the default browser behavior. Without the feature policy an unoptimized lossy image can be displayed just the same as an optimized image.
 
-![Comparing an optimized image with an unoptimized image](unoptimized-lossy.png)
+<figure class="w-figure">
+  <img src="./unoptimized-lossy.png" alt="Comparing an optimized image with an unoptimized image" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    Fig. 4 — Comparing an optimized image with an unoptimized image.
+  </figcaption>
+</figure>
 
 If I apply the following feature policy, I get a placeholder image instead.
 
 `Feature-Policy: unoptimized-lossy-images *(0.5);`
 
-![When the image is not optimized](lossy-image-excluded.png)
+<figure class="w-figure">
+  <img src="./lossy-image-excluded.png" alt="When the image is not optimized" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    Fig. 5 — When the image is not optimized.
+  </figcaption>
+</figure>
 
 #### How to use
 
