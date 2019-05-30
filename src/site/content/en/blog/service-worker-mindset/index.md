@@ -17,7 +17,9 @@ tags:
   - caching
 ---
 
-Service Workers are powerful and absolutely worth mastering. They'll enable you to deliver an entirely new level of experience to your users. But Service Workers are unlike anything most of us web devs are used to. They come with a steep learning curve and a handful of snags you've got to watch out for.
+Service Workers are powerful and absolutely worth mastering. They'll enable you to deliver an entirely new level of experience to your users. Your site can load _instantly_. It can work _offline_. It can be installed as a native app, and feel every bit as polished, but with the reach and freedom of the web.
+
+But Service Workers are unlike anything most of us web devs are used to. They come with a steep learning curve and a handful of snags you've got to watch out for.
 
 The best way to ensure success with Service Workers is to have the right mindset when working with them. In this post we'll wrap our brains around the paradoxical traits that make Service Workers both tricky and awesome.
 
@@ -54,7 +56,7 @@ Having a Service Worker on your site gives you incredible benefits. Your site ca
 - use [push notifications](https://developers.google.com/web/fundamentals/push-notifications/)
 - be installed as a [PWA](https://developers.google.com/web/progressive-web-apps/)
 
-With as much as Server Workers can do, they are limited by design. They can't do anything synchronous or in the same thread as your site. So that means no access to:
+With as much as Service Workers can do, they are limited by design. They can't do anything synchronous or in the same thread as your site. So that means no access to:
 
 - localStorage
 - the DOM
