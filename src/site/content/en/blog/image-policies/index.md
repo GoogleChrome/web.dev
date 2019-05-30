@@ -109,7 +109,7 @@ To declare the `oversized-images` policy, you need to provide:
 
 We recommend a downscaling ratio of 2.0 or lower. Consider using [responsive
 images](https://web.dev/serve-responsive-images/) with different resolutions to
-best serve images on various screen sizes, resolutions, etc..
+best serve images on various screen sizes, resolutions, and so on.
 
 #### More examples
 
@@ -147,7 +147,7 @@ the constraint will be replaced with a placeholder image.
 
 The larger the download size is, the longer it takes for an image to load. The
 file size should be kept as small as possible when optimizing an image:
-stripping metadata, picking a good image format, using image compression, etc..
+stripping metadata, picking a good image format, using image compression, and so on.
 Read [Use Imagemin to compress
 images](https://web.dev/use-imagemin-to-compress-images/) and [Use WebP
 images](https://web.dev/serve-images-webp/) for information on optimizing your
