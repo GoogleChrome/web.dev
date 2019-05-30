@@ -78,7 +78,7 @@ In [Service Workies](https://serviceworkies.com) we visualize this concept with 
 
 ### Stopped
 
-Despite Service Workers appearing to immortal, they can be **stopped** at almost any time. The browser doesn't want to waste resources on a Service Worker that isn't currently doing anything. Getting stopped isn't the same thing as getting _terminated_ — the Service Worker remains installed and activated. It's just put to sleep. The next time it's needed (e.g. to handle a request) the browser wakes it back up.
+Despite Service Workers appearing to be immortal, they can be **stopped** at almost any time. The browser doesn't want to waste resources on a Service Worker that isn't currently doing anything. Getting stopped isn't the same thing as getting _terminated_ — the Service Worker remains installed and activated. It's just put to sleep. The next time it's needed (e.g. to handle a request) the browser wakes it back up.
 
 ### waitUntil
 
