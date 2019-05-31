@@ -90,7 +90,7 @@ If you have problems with your JavaScript site, [walk through our troubleshootin
 
 Googlebot is a pipeline with different components. Let's take a look at this pipeline to understand how Googlebot indexes pages for Google Search.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure w-figure--center w-figure--fullbleed">
   <img src="googlebot-process.png" alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Fig. 1 — Googlebot's pipeline for crawling, rendering and indexing a page.
