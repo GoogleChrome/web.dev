@@ -65,7 +65,7 @@ optimizing your images.
 
 A few examples illustrate this. The following shows the default behavior when cutting an image's display size in half.
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--center">
   <img src="./default-100x100.png" alt="The default resizing behavior" style="max-width: 326px;">
   <figcaption class="w-figcaption">
     Fig. 1 — The default resizing behavior.
