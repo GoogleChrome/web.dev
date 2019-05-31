@@ -110,7 +110,7 @@ Your technical setup can influence the process of crawling, rendering, and index
 
 ## Choose the right rendering strategy for your web app
 
-The default rendering strategy for single-page apps today is client-side rendering. The HTML is loading the JavaScript which is generating the entire content in the browser as it executes. 
+The default rendering strategy for single-page apps today is client-side rendering. The HTML loads the JavaScript which generates the content in the browser as it executes. 
 
 <figure class="w-figure">
   <img src="spa-kittens.png" alt="A code box showing HTML that loads some scripts. A screenshot of a web page on mobile that shows placeholder images while loading the actual content." style="max-width: 400px;">
