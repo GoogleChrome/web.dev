@@ -155,7 +155,7 @@ We recommend to verify your domain in [Google Search Console](https://g.co/searc
 For general SEO tips and guidance, you can use the SEO audits in Lighthouse. To integrate SEO audits into your testing suite, use the [Lighthouse CLI](https://github.com/GoogleChrome/lighthouse/tree/master/lighthouse-cli) or the [Lighthouse CI bot](https://github.com/GoogleChromeLabs/lighthousebot).
 
 <figure class="w-figure">
-  <img src="lighthouse-seo-audit-report.png" alt="A lighthouse SEO report with a score of 44 and warnings about mobile-friendliness as well as warnings about content best practices" style="max-width: 400px;">
+  <img class="w-screenshot" src="lighthouse-seo-audit-report.png" alt="A lighthouse SEO report with a score of 44 and warnings about mobile-friendliness as well as warnings about content best practices">
   <figcaption class="w-figcaption">
     Lighthouse shows general SEO recommendations for a page.
   </figcaption>
