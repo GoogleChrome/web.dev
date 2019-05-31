@@ -116,7 +116,7 @@ Intrinsic sizes are now calculated correctly when a LayoutNG block contains chil
 <br>
 
 ### Text Layout & Line Breaking
-The old layout engine in Chromium does text layout element by element and line by line. This has historically worked well but requires a lot of extra complexity to support complex scripts and to get good performance. It's also prone to inconsistencies in measurements which tend to manifest themselves as subtle differences in sizing of size-to-content containers and their content or unnecessary line breaks.
+The old layout engine in Chromium does text layout element-by-element and line-by-line. This has historically worked well but requires a lot of extra complexity to support scripts and to achieve good performance. It's also prone to inconsistencies in measurements which tend to manifest themselves as subtle differences in sizing of size-to-content containers and their content or unnecessary line breaks.
 
 In LayoutNG, text layout is done on a paragraph level and is then split into lines. This allows for better performance, higher quality text rendering, and more consistent line breaking. The most notable differences here from a developer and user standpoint are detailed below.
 
