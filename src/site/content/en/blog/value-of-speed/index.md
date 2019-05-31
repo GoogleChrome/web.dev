@@ -59,7 +59,7 @@ improvements as a group.
 ## Doing the analysis
 
 If you have access to your site's page analytics data, you can follow along
-using that. In this walkthrough you'll be using Google Analytics to get site
+using that. This walkthrough uses Google Analytics to get site
 data. If you don't have a Google Analytics account, you can learn how to set one
 up at [Get started with Analytics](https://support.google.com/analytics/answer/1008015?hl=en).
 Or, if you just want to see how Rel mCvR is calculated, you can get the sample
@@ -67,7 +67,7 @@ data set shown below from
 [this Google Sheet](https://docs.google.com/spreadsheets/d/1Mxmy1luPBOvJneSM9g2NZt6yHKx8xkpBXygOpm4LgNM/edit?usp=sharing)
 and skip steps 1–3.
 
-1. First you'll get the speed and conversion data for the mobile site.
+1. First get the speed and conversion data for the mobile site.
     * Open
     [this custom report](https://analytics.google.com/analytics/web/template?uid=NPvTU2zoTf2JFsHi6-auyQ)
     in Google Analytics, select your site from the **Select a view**
@@ -133,7 +133,7 @@ would compare eight weeks in Jan–Feb to eight weeks in Aug–Sept.
 
 1. In a new sheet, calculate the average load time and rel mCvR for the
 two periods. Then add the revenue coming from mobile visitors during the
-period after the speed optimization (Aug–Sept in the example). You find
+period after the speed optimization (Aug–Sept in the example). You can find
 revenue data in Google Analytics under the section **Audience > Mobile >
 Overview**.
 
