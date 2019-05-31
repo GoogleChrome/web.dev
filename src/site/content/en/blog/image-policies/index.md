@@ -168,7 +168,7 @@ If I apply the following feature policy, I get a placeholder image instead.
 
 `Feature-Policy: unoptimized-lossy-images *(0.5);`
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--center">
   <img src="./lossy-image-excluded.png" alt="When the image is not optimized" style="max-width: 326px;">
   <figcaption class="w-figcaption">
     Fig. 5 — When the image is not optimized.
