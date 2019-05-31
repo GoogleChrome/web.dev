@@ -74,7 +74,7 @@ This page might not show any content in some cases. The code doesn't handle when
          }, function onError() {
            // we failed to get the location, show fallback content
            loadGlobalContent();
-         })
+         });
      } else {
        // this browser does not support the Geolocation API, show fallback content
        loadGlobalContent();
