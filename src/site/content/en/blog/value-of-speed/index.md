@@ -46,7 +46,7 @@ tend to affect both desktop and mobile, and makes it easier to see whether any
 increases in the mobile site's effectiveness were actually caused by the speed
 improvements.
 
-![image](relative-versus-absolute.jpg)
+![Table showing comparison of mobile/desktop conversion rate and relative mobile conversion rate](relative-versus-absolute.jpg)
 
 {% Aside 'caution' %}
 Rel mCvR is influenced not only by speed, but also by other site
@@ -76,22 +76,22 @@ and skip steps 1–3.
 
     * Once the report has been generated, click **Select a metric >
     Metric Group >** **Ecommerce Conversion Rate**.
-    ![image](conversion-rate.jpg)
+    <img class="w-screenshot" src="./conversion-rate.jpg" alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate">
     <br><br>
 
     * Select the **Week** view for the dataset.
-    ![image](landing-pages-week.jpg)
+    ![Screenshot of Google Analytics: select a week](landing-pages-week.jpg)
     <br><br>
 
     * Select a time period that covers 2–3 months before the speed
     optimization and 2–3 months after. (In our example, that's January 2018
     through October 2018.)
-    ![image](analytics-start-date.jpg)
+    ![Screenshot of Google Analytics: select a start date](analytics-start-date.jpg)
     <br><br>
 
     * Export the report to [Google Sheets](http://sheets.google.com) or
     your preferred spreadsheet application.
-    ![image](export-google-sheets.jpg)
+    ![Screenshot of Google Analytics: export to Google Sheets](export-google-sheets.jpg)
     <br><br>
 
 1. Now get the speed and conversion data for the desktop site. Open
@@ -103,11 +103,10 @@ a spreadsheet.
 spreadsheet and insert it next to the _Ecommerce Conversion Rate_ in the
 mobile report spreadsheet.
 
-1.  To calculate the Rel mCvR, create a new column titled _Relative
-Mobile Conversion Rate (Rel mCvR)_. Then add a formula to divide the mobile
-conversion rate by the desktop conversion rate.
+1.  To calculate the Rel mCvR, create a new column titled _Relative Mobile Conversion Rate (Rel mCvR)_. 
+Then add a formula to divide the mobile conversion rate by the desktop conversion rate.
 <br><br>
-![image](relative-rate-formula.jpg)
+![Screenshot: spreadsheet cells showing relative rate formula](relative-rate-formula.jpg)
 <br><br>
 
 1. Create a chart based on the _Mobile Avg. Page Load Time (sec)_ and
@@ -126,7 +125,7 @@ Sheets:
       and the left and right _y_-axis labels.
 
   You should now have a chart that looks something like this:
-  ![image](mobile-versus-relative-chart.jpg)
+  ![Chart: mobile load time versus relative mobile conversion rate](mobile-versus-relative-chart.jpg)
   <br><br>
 
 1. Using the chart, identify a period before the speed optimization
@@ -139,25 +138,33 @@ two periods. Then add the revenue coming from mobile visitors during the
 period after the speed optimization (Aug–Sept in the example). You find
 revenue data in Google Analytics under the section **Audience > Mobile >
 Overview**.
-
-  ![image](period-revenue.jpg)
+  
+<figure class="w-figure  w-figure--center">
+  <img src="./period-revenue.jpg" alt="Revenue data for January through September showing Rel mCvR" style="max-width: 600px; width: 100%">
+</figure>
 
 1. Now calculate what the revenue would have been if Rel mCvR had not
 improved. Do this by dividing the revenue (€1,835,962) by the current Rel
 mCvR (51%) and multiplying by the Rel mCvR for the period before the speed
 optimization (42%).
 
-  ![image](revenue-would-have-been.jpg)
+<figure class="w-figure  w-figure--center">
+  <img src="./revenue-would-have-been.jpg" alt="Screenshot: spreadsheet cells showing formula for revenue without Rel mCvR improvements" style="max-width: 600px; width: 100%">
+</figure>
 
 1. Subtract the revenue that the company earned from what it would have
 earned if Rel mCvR had not improved.
 
-  ![image](extra-revenue-formula.jpg)
+<figure class="w-figure  w-figure--center">
+  <img src="./extra-revenue-formula.jpg" alt="Screenshot: spreadsheet cells showing extra revenue formula" style="max-width: 600px; width: 100%">
+</figure>
 
 In this example, the company earned an additional €323,993 in eight weeks thanks
 to Rel mCvR improving—that is, thanks to the mobile site becoming faster.
 
-![image](thanks-to-increased.jpg)
+<figure class="w-figure  w-figure--center">
+  <img src="./thanks-to-increased.jpg" alt="Screenshot: spreadsheet cells showing extra revenue due to Rel mCvR improvements" style="max-width: 600px; width: 100%">
+</figure>
 
 ## Things to consider when analyzing Rel mCvR
 
