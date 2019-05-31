@@ -40,7 +40,7 @@ Scheduled to be released in Chrome 76, LayoutNG is a new layout engine exiting a
 
 <br>
 
-## Developer Visible Changes
+## Developer visible changes
 Although the user visible impact should be minimal, LayoutNG changes some behavior in very subtle ways, fixes hundreds of tests, and improves compatibility with other browsers. Despite our best efforts, it is likely that this will cause some sites and applications to render or behave slightly differently.
 
 The performance characteristics are also quite different; although performance on a whole is similar or slightly better than before, certain use cases are likely to see performance improvements, while others are expected to regress somewhat, at least short-term.
@@ -122,6 +122,10 @@ In LayoutNG, text layout is done on a paragraph level and is then split into lin
 
 #### Joining across Element Boundaries
 In some scripts graphemes join with adjacent ones and changes presentation. In LayoutNG this works even if the graphemes are in different elements, allowing the joins to be preserved even if different styling is applied ([#6122](https://crbug.com/6122)).
+
+{% Aside 'key-term' %}
+  a grapheme is the smallest unit of a writing system of any given language
+{% endAside %}
 
 The example below shows the rendering of the following HTML in legacy layout and LayoutNG respectively:
 
