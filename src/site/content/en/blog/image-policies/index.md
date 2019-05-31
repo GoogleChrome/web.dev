@@ -76,7 +76,7 @@ If I apply the following feature policy, I get a placeholder image instead.
 
 `Feature-Policy: oversized-images *(2);`
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--center">
   <img src="./resize-both-dimensions.png" alt="When the image is too large for the container" style="max-width: 326px;">
   <figcaption class="w-figcaption">
     Fig. 2 — When the image is too large for the container.
