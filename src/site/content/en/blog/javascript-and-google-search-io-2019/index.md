@@ -20,7 +20,7 @@ tags:
 
 This year Google I/O brought exciting news around Google Search and JavaScript: the much-awaited announcement of the [new evergreen Googlebot](https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html).
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--center">
   <img src="evergreen-googlebot.png" alt="Googlebot holding the Chrome logo" style="max-width: 400px;">
   <figcaption class="w-figcaption">
     Googlebot is now running a modern Chromium rendering engine.
