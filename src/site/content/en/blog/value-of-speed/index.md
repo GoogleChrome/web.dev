@@ -73,24 +73,24 @@ and skip steps 1–3.
     in Google Analytics, select your site from the **Select a view**
     drop-down list, and click **Create**.
     * Once the report has been generated, click **Select a metric > Metric Group > Ecommerce Conversion Rate**.
-    <br><br>
-    <img class="w-screenshot" src="./conversion-rate.jpg" alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate">
-    <br><br>
+      <br><br>
+      <img class="w-screenshot" src="./conversion-rate.jpg" alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate">
+      <br><br>
     * Select the **Week** view for the dataset.
-    <br><br>
-    <img class="w-screenshot" src="./landing-pages-week.jpg" alt="Screenshot of Google Analytics: select a week">
-    <br><br>
+      <br><br>
+      <img class="w-screenshot" src="./landing-pages-week.jpg" alt="Screenshot of Google Analytics: select a week">
+      <br><br>
     * Select a time period that covers 2–3 months before the speed
     optimization and 2–3 months after. (In our example, that's January 2018
     through October 2018.)
-    <br><br>
-    <img class="w-screenshot" src="./analytics-start-date.jpg" alt="Screenshot of Google Analytics: select a start date">
-    <br><br>
+      <br><br>
+      <img class="w-screenshot" src="./analytics-start-date.jpg" alt="Screenshot of Google Analytics: select a start date">
+      <br><br>
     * Export the report to [Google Sheets](http://sheets.google.com) or
     your preferred spreadsheet application.
-    <br><br>
-    <img class="w-screenshot" src="./export-google-sheets.jpg" alt="Screenshot of Google Analytics: export to Google Sheets"  style="max-width: 400px; width: 100%">
-    <br><br>
+      <br><br>
+      <img class="w-screenshot" src="./export-google-sheets.jpg" alt="Screenshot of Google Analytics: export to Google Sheets"  style="max-width: 400px; width: 100%">
+      <br><br>
 
 1. Now get the speed and conversion data for the desktop site. Open
 [this custom report](https://analytics.google.com/analytics/web/template?uid=X21Nb_soQp69U_ylfNmLvg)
@@ -122,9 +122,9 @@ Sheets:
     * If you like, click **Chart & axis titles** to customize the chart title
       and the left and right _y_-axis labels.
 
-  You should now have a chart that looks something like this:
-  ![Chart: mobile load time versus relative mobile conversion rate](mobile-versus-relative-chart.jpg)
-  <br><br>
+   You should now have a chart that looks something like this:
+   ![Chart: mobile load time versus relative mobile conversion rate](mobile-versus-relative-chart.jpg)
+   <br><br>
 
 1. Using the chart, identify a period before the speed optimization
 (when load times were high) and a period after the speed optimization (when
@@ -137,25 +137,25 @@ period after the speed optimization (Aug–Sept in the example). You find
 revenue data in Google Analytics under the section **Audience > Mobile >
 Overview**.
 
-<figure class="w-figure  w-figure--center">
-  <img src="./period-revenue.jpg" alt="Revenue data for January through September showing Rel mCvR" style="max-width: 600px; width: 100%">
-</figure>
+    <figure class="w-figure  w-figure--center">
+      <img src="./period-revenue.jpg" alt="Revenue data for January through September showing Rel mCvR" style="max-width: 600px; width: 100%">
+    </figure>
 
 1. Now calculate what the revenue would have been if Rel mCvR had not
 improved. Do this by dividing the revenue (€1,835,962) by the current Rel
 mCvR (51%) and multiplying by the Rel mCvR for the period before the speed
 optimization (42%).
 
-<figure class="w-figure  w-figure--center">
-  <img src="./revenue-would-have-been.jpg" alt="Screenshot: spreadsheet cells showing formula for revenue without Rel mCvR improvements" style="max-width: 600px; width: 100%">
-</figure>
+    <figure class="w-figure  w-figure--center">
+      <img src="./revenue-would-have-been.jpg" alt="Screenshot: spreadsheet cells showing formula for revenue without Rel mCvR improvements" style="max-width: 600px; width: 100%">
+    </figure>
 
 1. Subtract the revenue that the company earned from what it would have
 earned if Rel mCvR had not improved.
 
-<figure class="w-figure  w-figure--center">
-  <img src="./extra-revenue-formula.jpg" alt="Screenshot: spreadsheet cells showing extra revenue formula" style="max-width: 600px; width: 100%">
-</figure>
+    <figure class="w-figure  w-figure--center">
+      <img src="./extra-revenue-formula.jpg" alt="Screenshot: spreadsheet cells showing extra revenue formula" style="max-width: 600px; width: 100%">
+    </figure>
 
 In this example, the company earned an additional €323,993 in eight weeks thanks
 to Rel mCvR improving—that is, thanks to the mobile site becoming faster.
