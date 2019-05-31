@@ -157,7 +157,7 @@ images.
 
 The following shows the default browser behavior. Without the feature policy an unoptimized lossy image can be displayed just the same as an optimized image.
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--center">
   <img src="./unoptimized-lossy.png" alt="Comparing an optimized image with an unoptimized image" style="max-width: 326px;">
   <figcaption class="w-figcaption">
     Fig. 4 — Comparing an optimized image with an unoptimized image.
