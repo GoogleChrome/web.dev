@@ -146,7 +146,7 @@ You can also find out if there are resource loading issues or JavaScript errors.
 We recommend to verify your domain in [Google Search Console](https://g.co/searchconsole) so you can use the URL inspection tool to find out more about the crawling and indexing state of a URL, receive messages when we detect issues and find out more details of how your site performs in Google Search.
 
 <figure class="w-figure">
-  <img src="search-console-url-inspection-tool.png" alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL" style="max-width: 400px;">
+  <img class="w-screenshot" src="search-console-url-inspection-tool.png" alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL">
   <figcaption class="w-figcaption">
     The URL Inspection Tool in Search Console shows the status of a page in crawling, rendering, and indexing.
   </figcaption>
