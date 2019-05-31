@@ -85,7 +85,7 @@ If I apply the following feature policy, I get a placeholder image instead.
 
 I get similar results if I lower only the width or the height.
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--center">
   <img src="./resize-width.png" alt="Resized width" style="max-width: 326px;">
   <img src="./resize-height.png" alt="Resized height" style="max-width: 326px;">
   <figcaption class="w-figcaption">
