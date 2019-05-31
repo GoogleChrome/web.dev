@@ -2,6 +2,8 @@
 title: LayoutNG
 subhead: |
   A new layout engine for Chromium
+authors:
+  - eae
 date: 2019-05-29
 hero: mariko-layout.png
 alt: hand sketched diagram of Chrome's paint and render pipeline
