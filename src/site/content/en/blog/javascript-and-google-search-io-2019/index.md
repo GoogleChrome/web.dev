@@ -137,7 +137,7 @@ While most pages generally work fine with Googlebot, we recommend testing your p
 You can also find out if there are resource loading issues or JavaScript errors.
 
 <figure class="w-figure">
-  <img src="mobile-friendly-test-js-error.png" alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace." style="max-width: 400px;">
+  <img class="w-screenshot" src="mobile-friendly-test-js-error.png" alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace.">
   <figcaption class="w-figcaption">
     You can use the mobile-friendly test as well to find loading issues or JavaScript errors.
   </figcaption>
