@@ -181,9 +181,9 @@ overall. While there is likely to be some change in the mix of desktop and
 mobile conversions due to speed improvements, keep in mind that Rel mCvR
 calculates the mobile conversion rate relative to the desktop conversion rate.
 So, you only see an increase in Rel mCvR when mCvR goes up more than dCvR. In
-other words, you’re excluding a chunk of mobile conversions from your count,
-which provides a safety margin that can absorb any possible increase caused by
-a shift in channels.
+other words, when doing this calculation you're already counting low, which
+means you have a safety margin that can compensate for any shifts in the
+channel mix.
 
 ## Summing up
 
