@@ -12,6 +12,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 1. [Asides](#asides)
 1. [Blockquotes](#blockquotes)
 1. [Buttons](#buttons)
+1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
 1. [Details](#details)
@@ -104,6 +105,23 @@ To see how to use each component, [view this page's source on GitHub](https://gi
   <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
     Secondary button with icon
   </button>
+</div>
+
+## Columns
+
+<div class="w-columns">
+  <figure class="w-figure w-figure--center">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Fig. 2 — Small image.
+    </figcaption>
+  </figure>
+  <figure class="w-figure w-figure--center">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Fig. 2 — Small image.
+    </figcaption>
+  </figure>
 </div>
 
 ## Code
