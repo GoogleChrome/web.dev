@@ -55,7 +55,7 @@ Let's look at an example:
    <script>
      navigator.geolocation.getCurrentPosition(function onSuccess(position) {
        loadLocalContent(position);
-     })
+     });
    </script>
  </body>
 ```
