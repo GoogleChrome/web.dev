@@ -5,7 +5,7 @@ subhead: |
 authors:
   - eae
 date: 2019-05-29
-hero: mariko-layout.png
+hero: hero.jpg
 alt: hand sketched diagram of Chrome's paint and render pipeline
 description: |
   LayoutNG is a new layout engine for Chromium that has been designed for the needs of modern scalable web applications. It provides improved performance isolation, better support for scripts other than Latin, fixes many issues around floats/margins and a large number of web compatibility issues.
