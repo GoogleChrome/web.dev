@@ -55,7 +55,7 @@ The legacy float implementation didn’t correctly account for margins when plac
 
 <div class="w-figures-2-up">
   <figure class="w-figure w-figure--center">
-    <img loading="lazy" src="legacy_float_margin.png" alt="top text line shown overlaying floated image">
+    <img class="w-screenshot" loading="lazy" src="legacy_float_margin.png" alt="top text line shown overlaying floated image">
     <figcaption class="w-figcaption w-figcaption--center">
       <small>Fig 1a, Legacy Layout</small><br>
       Text overlaps the floating image to the right
@@ -63,7 +63,7 @@ The legacy float implementation didn’t correctly account for margins when plac
   </figure>
 
   <figure class="w-figure w-figure--center">
-    <img loading="lazy" src="ng_float_margin.png" alt="proper text on left and floated image on right">
+    <img class="w-screenshot" loading="lazy" src="ng_float_margin.png" alt="proper text on left and floated image on right">
     <figcaption class="w-figcaption w-figcaption--center">
       <small>Fig 1b, LayoutNG</small><br>
       Text is positioned beside the floating image to the right
