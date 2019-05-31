@@ -177,7 +177,7 @@ The example below shows the rendering of three discretionary ligatures using the
 </div>
 
 #### Size to Content
-For elements that size to content (such as inline blocks) the current layout engine computes the size of the block first and then performs layout on the content. In some cases, such as when a font kerns aggressively, this may result in a mismatch between the size of the content and the block. In LayoutNG this failure mode has been eliminated as the block is sized based on the actual content.
+For elements that size-to-content (such as inline blocks) the current layout engine computes the size of the block first and then performs layout on the content. In some cases, such as when a font kerns aggressively, this may result in a mismatch between the size of the content and the block. In LayoutNG this failure mode has been eliminated as the block is sized based on the actual content.
 
 The example below shows a yellow block sized to content. It uses the Lato font which uses kerning to adjust the spacing between T and -. The bounds of the yellow box should match the bounds of the text.
 
