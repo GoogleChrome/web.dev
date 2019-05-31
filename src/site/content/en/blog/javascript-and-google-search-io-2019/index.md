@@ -128,7 +128,7 @@ If you are looking for a workaround to help crawlers that don't execute JavaScri
 While most pages generally work fine with Googlebot, we recommend testing your pages regularly to make sure your content is available to Googlebot and there are no problems. The easiest way to do a quick check of a page is the [Mobile-Friendly Test](https://g.co/mobilefriendly). Besides showing you issues with mobile-friendliness, it also gives you a screenshot of the above-the-fold content and the rendered HTML as Googlebot sees it.
 
 <figure class="w-figure">
-  <img src="mobile-friendly-test-rendered-html.png" alt="The mobile-friendly test shows the rendered HTML Googlebot sees after rendering the page" style="max-width: 400px;">
+  <img class="w-screenshot" src="mobile-friendly-test-rendered-html.png" alt="The mobile-friendly test shows the rendered HTML Googlebot sees after rendering the page">
   <figcaption class="w-figcaption">
     The mobile-friendly test shows you the rendered HTML Googlebot uses.
   </figcaption>
