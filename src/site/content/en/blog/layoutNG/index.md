@@ -177,7 +177,7 @@ The example below shows the rendering of three discretionary ligatures using the
 </div>
 
 #### Size to Content
-For elements that size to content (such as inline blocks) the current layout engine computes the size of the block first and then performs layout on the content. In some cases, such as when a font kerns aggressively, this may result in a mismatch between the size of the content and the block. In LayoutNG this failure mode has been eliminated as the block is sized based on the actual content.
+For elements that size-to-content (such as inline blocks) the current layout engine computes the size of the block first and then performs layout on the content. In some cases, such as when a font kerns aggressively, this may result in a mismatch between the size of the content and the block. In LayoutNG this failure mode has been eliminated as the block is sized based on the actual content.
 
 The example below shows a yellow block sized to content. It uses the Lato font which uses kerning to adjust the spacing between T and -. The bounds of the yellow box should match the bounds of the text.
 
@@ -224,7 +224,7 @@ Similar to the problem described above, if the content of a size-to-content bloc
 
 ## Further Information
 - [Documentation](https://chromium.googlesource.com/chromium/src/+/master/third_party/blink/renderer/core/layout/ng/README.md)
-- [Design Document](https://docs.google.com/document/d/1uxbDh4uONFQOiGuiumlJBLGgO4KDWB8ZEkp7Rd47fw4/)
+- [Layout NG design document](https://docs.google.com/document/d/1uxbDh4uONFQOiGuiumlJBLGgO4KDWB8ZEkp7Rd47fw4/)
 - [Master tracking bug](https://crbug.com/591099)
 
 For more detailed information about the specific compatibility issues and bugs fixed by LayoutNG, please see the issues linked above or search the Chromium bug database for bugs marked [Fixed-In-LayoutNG](https://bugs.chromium.org/p/chromium/issues/list?can=1&q=label%3AFixed-In-LayoutNG).
