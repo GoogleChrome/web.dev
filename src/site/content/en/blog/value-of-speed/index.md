@@ -46,7 +46,7 @@ tend to affect both desktop and mobile, and makes it easier to see whether any
 increases in the mobile site's effectiveness were actually caused by the speed
 improvements.
 
-![Table showing comparison of mobile/desktop conversion rate and relative mobile conversion rate](relative-versus-absolute.jpg)
+<img class="w-screenshot" src="./relative-versus-absolute.jpg" alt="Table showing comparison of mobile/desktop conversion rate and relative mobile conversion rate">
 
 {% Aside 'caution' %}
 Rel mCvR is influenced not only by speed, but also by other site
@@ -68,30 +68,28 @@ data set shown below from
 and skip steps 1–3.
 
 1. First you'll get the speed and conversion data for the mobile site.
-
     * Open
     [this custom report](https://analytics.google.com/analytics/web/template?uid=NPvTU2zoTf2JFsHi6-auyQ)
     in Google Analytics, select your site from the **Select a view**
     drop-down list, and click **Create**.
-
-    * Once the report has been generated, click **Select a metric >
-    Metric Group >** **Ecommerce Conversion Rate**.
+    * Once the report has been generated, click **Select a metric > Metric Group > Ecommerce Conversion Rate**.
+    <br><br>
     <img class="w-screenshot" src="./conversion-rate.jpg" alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate">
     <br><br>
-
     * Select the **Week** view for the dataset.
-    ![Screenshot of Google Analytics: select a week](landing-pages-week.jpg)
     <br><br>
-
+    <img class="w-screenshot" src="./landing-pages-week.jpg" alt="Screenshot of Google Analytics: select a week">
+    <br><br>
     * Select a time period that covers 2–3 months before the speed
     optimization and 2–3 months after. (In our example, that's January 2018
     through October 2018.)
-    ![Screenshot of Google Analytics: select a start date](analytics-start-date.jpg)
     <br><br>
-
+    <img class="w-screenshot" src="./analytics-start-date.jpg" alt="Screenshot of Google Analytics: select a start date">
+    <br><br>
     * Export the report to [Google Sheets](http://sheets.google.com) or
     your preferred spreadsheet application.
-    ![Screenshot of Google Analytics: export to Google Sheets](export-google-sheets.jpg)
+    <br><br>
+    <img class="w-screenshot" src="./export-google-sheets.jpg" alt="Screenshot of Google Analytics: export to Google Sheets"  style="max-width: 400px; width: 100%">
     <br><br>
 
 1. Now get the speed and conversion data for the desktop site. Open
@@ -103,7 +101,7 @@ a spreadsheet.
 spreadsheet and insert it next to the _Ecommerce Conversion Rate_ in the
 mobile report spreadsheet.
 
-1.  To calculate the Rel mCvR, create a new column titled _Relative Mobile Conversion Rate (Rel mCvR)_. 
+1.  To calculate the Rel mCvR, create a new column titled _Relative Mobile Conversion Rate (Rel mCvR)_.
 Then add a formula to divide the mobile conversion rate by the desktop conversion rate.
 <br><br>
 ![Screenshot: spreadsheet cells showing relative rate formula](relative-rate-formula.jpg)
@@ -138,7 +136,7 @@ two periods. Then add the revenue coming from mobile visitors during the
 period after the speed optimization (Aug–Sept in the example). You find
 revenue data in Google Analytics under the section **Audience > Mobile >
 Overview**.
-  
+
 <figure class="w-figure  w-figure--center">
   <img src="./period-revenue.jpg" alt="Revenue data for January through September showing Rel mCvR" style="max-width: 600px; width: 100%">
 </figure>
