@@ -224,7 +224,7 @@ Similar to the problem described above, if the content of a size-to-content bloc
 
 ## Further Information
 - [Documentation](https://chromium.googlesource.com/chromium/src/+/master/third_party/blink/renderer/core/layout/ng/README.md)
-- [Design Document](https://docs.google.com/document/d/1uxbDh4uONFQOiGuiumlJBLGgO4KDWB8ZEkp7Rd47fw4/)
+- [Layout NG design document](https://docs.google.com/document/d/1uxbDh4uONFQOiGuiumlJBLGgO4KDWB8ZEkp7Rd47fw4/)
 - [Master tracking bug](https://crbug.com/591099)
 
 For more detailed information about the specific compatibility issues and bugs fixed by LayoutNG, please see the issues linked above or search the Chromium bug database for bugs marked [Fixed-In-LayoutNG](https://bugs.chromium.org/p/chromium/issues/list?can=1&q=label%3AFixed-In-LayoutNG).
