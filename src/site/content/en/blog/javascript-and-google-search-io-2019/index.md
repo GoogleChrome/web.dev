@@ -6,7 +6,7 @@ authors:
   - ekharvey
 date: 2019-06-03
 hero: hero.png
-alt: A website with placeholder images instead of real cat images in the URL inspection tool within Search Console.
+alt: A pile of gears.
 description: |
   We introduced a new Googlebot at Google I/O and took this opportunity to discuss improvements and best practices for JavaScript web apps in Google Search.
 tags:
