@@ -31,7 +31,7 @@ alt="Time to Interactive displayed in the Lighthouse Report">
 
 A [Long Task](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API) is JavaScript code that monopolizes the main thread for extended periods of time, causing the UI to "freeze". 
 
-While a web page is loading, Long Tasks can tie up the main thread and make the page unresponsive to user input even if it looks ready. Clicks, taps, and scrolls often don't work because event listeners, click handlers etc have not yet been attached.
+While a web page is loading, Long Tasks can tie up the main thread and make the page unresponsive to user input even if it looks ready. Clicks and taps often don't work because event listeners, click handlers etc have not yet been attached.
 
 CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms?[ The RAIL model](https://developers.google.com/web/fundamentals/performance/rail) suggests you process user input events in[ 50ms](https://developers.google.com/web/fundamentals/performance/rail#response) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
 
@@ -59,7 +59,7 @@ srcset="
 src="./Are-long1_yp7hwf_c_scale_w_1400.png"
 alt="A DevTools Performance panel screenshot showing the differences between short tasks and long tasks">
 
-To help ease your performance auditing workflow, [DevTools now visualizes Long Tasks](https://developers.google.com/web/updates/2019/03/devtools#longtasks). Tasks are gray and have red flags if they are causing a performance bottleneck in your application.
+To help ease your performance auditing workflow, [DevTools now visualizes Long Tasks](https://developers.google.com/web/updates/2019/03/devtools#longtasks). Tasks (shown in gray) have red flags if they are Long Tasks.
 
 <img
 class="w-screenshot" sizes="(max-width: 1400px) 100vw, 1400px"
@@ -105,6 +105,6 @@ alt="Selecting a long task (labelled 'Task') in DevTools allows us to drill-down
 
 Large scripts are often a major cause of Long Tasks so consider [splitting them up](/reduce-javascript-payloads-with-code-splitting). Also keep an eye on third-party scripts - their Long Tasks can delay primary content from getting interactive.
 
-Break all your work into small chunks (that run in < 50ms) and run these chunks at the right place and time – the right place may even be off the main thread, in a worker. 
+Break all your work into small chunks (that run in < 50ms) and run these chunks at the right place and time – the right place may even be off the main thread, in a worker. Phil Walton's [Idle Until Urgent](https://philipwalton.com/articles/idle-until-urgent/) is a good read on this topic.
 
-Keep your pages responsive. Minimizing Long Tasks is a great way to ensure your users have a delightful experience when they visit your site. To learn more about Long Tasks, check out [User-centric Performance Metrics](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_long_tasks).
+Keep your pages responsive. Minimizing Long Tasks is a great way to ensure your users have a delightful experience when they visit your site. For more on Long Tasks, check out [User-centric Performance Metrics](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_long_tasks).
