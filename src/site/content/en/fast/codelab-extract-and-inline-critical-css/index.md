@@ -6,8 +6,8 @@ authors:
 description: |
   Learn how use Critical to extract and inline critical CSS, and improve render times.
 glitch: critical-css-starter
-date: 2019-05-08
-related_post: tools-for-extracting-critical-css
+date: 2019-05-29
+related_post: extract-critical-css
 ---
 
 Whether you use a UI library or handcraft your styles, shipping a significant amount of CSS delays rendering because the browser must download and parse CSS files before it can show the page.

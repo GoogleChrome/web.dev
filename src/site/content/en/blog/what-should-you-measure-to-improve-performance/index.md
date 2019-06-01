@@ -1,15 +1,15 @@
 ---
 title: How can performance improve conversion?
 subhead: Strategies to measure performance at each stage in the purchase funnel
-authors: 
+authors:
   - martinschierle
-date: 2019-05-05
-hero: funnel.png
-alt: A typical conversion funnel, and what to measure for each step.
+date: 2019-05-31
+hero: hero.jpg
+alt: A row of shopping carts.
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
-wf_blink_components: Blink>Performance
 tags:
+  - post
   - performance
   - ecommerce
 ---
@@ -18,7 +18,7 @@ The different steps of a purchase funnel are prone to performance issues in
 different ways, and therefore need different measurement and optimizations:
 
 <figure class="w-figure  w-figure--center">
-  <img src="./funnel.png" alt="" style="max-width: 400px;">
+  <img src="./funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
   <figcaption class="w-figcaption">
     Fig. 1 - Conversion funnel
   </figcaption>
@@ -31,7 +31,7 @@ recommend you to look at lab as well as field data.
 [Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse)
 and other tools.  This can make it possible  to compare website performance over
 time and with competitors through a controlled, stable environment, but it might
-not be representative of the performance users experience in real life.   
+not be representative of the performance users experience in real life.
 
 **Field data** is gathered via analytics from real users, and is therefore
 representative of their experience. However, it can't easily be compared over
@@ -47,8 +47,7 @@ marks across the funnel.
 
 Optimizing for discovery means optimizing for the first load, which is what new
 users  will get, but also search and social
-[crawlers](https://developers.google.com/search/docs/guides/rendering). Improving on first load is
-covered in greater detail in [Fast load times](/fast).   
+[crawlers](https://developers.google.com/search/docs/guides/rendering).
 Lab data for a first load can be easily acquired through
 [Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse),
 while field data (at least for Chrome) is readily available through [Chrome UX
@@ -57,13 +56,14 @@ both can be found in [PageSpeed
 Insights](https://developers.google.com/speed/pagespeed/insights/). You should
 also track relevant metrics from the field yourself:
 [Measuring these metrics on real users' devices](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices)
-provides a good overview.  
+provides a good overview.
+
 From a user perspective the most important metrics are:
 
-+   **[First Contentful Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fpfcp)
++   **[First Contentful Paint](https://web.dev/first-contentful-paint/)
     (FCP)**: The time the user stares at a blank screen. This is
     when most users bounce, as they don't see progress.
-+   **[First Meaningful Paint](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements)
++   **[First Meaningful Paint](https://web.dev/first-meaningful-paint/)
     (FMP):** When the user begins to see the main content they came for. This
     is often the hero image, but for a landing page it may even be a call to
     action such as a ‘Buy' button, since the user may have arrived with a clear
@@ -78,20 +78,23 @@ There are more metrics you can look at, but these are a good baseline. Additiona
 ## Engagement And Conversion
 
 After the first load of a landing page, a user will proceed through your site,
-hopefully towards a successful conversion.   
+hopefully towards a successful conversion.
+
+
 In this phase it is important to have fast and responsive navigations and
 interactions. Unfortunately it is not trivial to measure the complete flow of
 navigation and interaction events in the field, as every user takes different
 paths through the page. We therefore recommend measuring the time needed towards
-conversion or conversion subgoals (‘_Time-to-Action_') by scripting and
+conversion or conversion subgoals ("_Time-to-Action_") by scripting and
 measuring the flow in a lab test, to compare performance over time or with
-competitors. There are two convenient ways of doing this:
+competitors.
+
+There are two convenient ways of doing this:
 
 ### WebPageTest
 
-[WebPageTest](https://www.webpagetest.org/) offers a very flexible scripting
-solution described
-[here](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting).
+[WebPageTest](https://www.webpagetest.org/) offers a very flexible [scripting
+solution](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting).
 The basic idea is to:
 
 +   Tell WebPageTest to navigate through the pages of the flow with the
@@ -111,11 +114,11 @@ The basic idea is to:
 Such a script could look like this:
 
 ```
-combineSteps  
-navigate	https://www.store.google.com/landingpage  
+combineSteps
+navigate	https://www.store.google.com/landingpage
 navigate	https://www.store.google.com/productpage
-clickAndWait	innerText=Buy Now  
-navigate	https://www.store.google.com/basket  
+clickAndWait	innerText=Buy Now
+navigate	https://www.store.google.com/basket
 navigate	https://www.store.google.com/checkout
 ```
 
@@ -136,29 +139,31 @@ to fill fields or
 [click](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options)
 buttons and proceed through the funnel through further
 [goto](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagegotourl-options)
-calls as needed. As a metric the duration of the flow can be measured directly,
+calls as needed.
+
+As a metric the duration of the flow can be measured directly,
 but you could also sum up the FCP, FMP or TTI values of the individual loads of
 the flow.
 [Test website performance with Puppeteer](https://michaljanaszek.com/blog/test-website-performance-with-puppeteer)
 provides an overview of how to get performance metrics via Puppeteer. A very
-simplified example node script could look like this:
+simplified example Node script could look like this:
 
 ```js
 const puppeteer = require('puppeteer');
-(async () => {  
-  const browser = await puppeteer.launch();  
-  const page = await browser.newPage();  
-  const start = performance.now();  
-  await page.goto('https://www.store.google.com/landingpage');  
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  const start = performance.now();
+  await page.goto('https://www.store.google.com/landingpage');
   await page.goto('https://www.store.google.com/productpage');
-  // click the buy button, which triggers overlay basket  
-  await page.click('#buy_btn'); 
-  // wait until basket overlay is shown 
-  await page.waitFor('#close_btn'); 
-  await page.goto('https://www.store.google.com/basket');  
-  await page.goto('https://www.store.google.com/checkout');  
-  console.log('Flow took ' + parseInt((performance.now() - start)/1000) + ' seconds');  
-  await browser.close();  
+  // click the buy button, which triggers overlay basket
+  await page.click('#buy_btn');
+  // wait until basket overlay is shown
+  await page.waitFor('#close_btn');
+  await page.goto('https://www.store.google.com/basket');
+  await page.goto('https://www.store.google.com/checkout');
+  console.log('Flow took ' + parseInt((performance.now() - start)/1000) + ' seconds');
+  await browser.close();
 })();
 ```
 
@@ -196,4 +201,4 @@ Here is an example of such a report in Google Analytics:
 A report like this will give you page load times for new and returning users as well.
 
 ## Recap
-This guide showed you how to measure first load, flow and repeat load via field and lab tests. Make sure to optimize the different stzeps of the funnel accordingly to maximize discovery (first load), engagement (navigations and flow) and re-engagement (repeat load).
+This guide showed you how to measure first load, flow and repeat load via field and lab tests. Make sure to optimize the different steps of the funnel accordingly to maximize discovery (first load), engagement (navigations and flow) and re-engagement (repeat load).
