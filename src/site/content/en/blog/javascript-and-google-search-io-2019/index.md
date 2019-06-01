@@ -8,7 +8,7 @@ date: 2019-06-03
 hero: hero.png
 alt: A pile of gears.
 description: |
-  We introduced a new Googlebot at Google I/O and took this opportunity to discuss improvements and best practices for JavaScript web apps in Google Search.
+  We introduced a new Googlebot at Google I/O and took the opportunity to discuss improvements and best practices for making JavaScript web apps work well with Google Search.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - seo
