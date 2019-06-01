@@ -18,7 +18,7 @@ tags:
 
 ## Meet the evergreen Googlebot
 
-This year Google I/O brought exciting news around Google Search and JavaScript: the much-awaited announcement of the [new evergreen Googlebot](https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html).
+This year we announced the much-awaited [new evergreen Googlebot](https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html).
 
 <figure class="w-figure w-figure--center">
   <img src="evergreen-googlebot.png" alt="Googlebot holding the Chrome logo" style="max-width: 400px;">
