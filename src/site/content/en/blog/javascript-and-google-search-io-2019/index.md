@@ -38,7 +38,7 @@ While the [session on new and upcoming features in Google Search](https://www.yo
 *   Common challenges and possible solutions
 *   Best practices for SEO in JavaScript web apps
 
-Here's the full video:
+Here's the full video, and the highlights of the session are below:
 
 <div style="width:100%; padding-top: 56.25%; position: relative;">
   <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/Ey0N1Ry0BPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
