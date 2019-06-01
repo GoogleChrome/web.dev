@@ -1,6 +1,6 @@
 ---
 title: JavaScript and Google Search
-subhead: Updates and insights from Google I/O 2019
+subhead: Get the latest updates and insights from Google I/O 2019.
 authors:
   - martinsplitt
   - ekharvey
