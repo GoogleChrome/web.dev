@@ -191,7 +191,7 @@ self.addEventListener("activate", event => {
 
 ```
 
-It takes just a bit of work and disciple to keep your service workers isolated, but it's definitely worth it.
+Preventing your service workers from clobbering each other takes a bit of work and disciple but is worth the trouble.
 
 {% Aside 'note' %}
 Think of the combination of your service worker and your site as an [installable](https://web.dev/installable) app. Each version should work. Each version should be separate from the others. Imagine how buggy a game like Overwatch would be if Blizzard accidentally released a patch that used new game logic but outdated assets. You'd rage on the forums so fast! Keep your app versions tidy & clean.
