@@ -93,7 +93,7 @@ Googlebot is a pipeline with several components. Let's take a look to understand
 <figure class="w-figure w-figure--center w-figure--fullbleed">
   <img src="googlebot-process.png" alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Googlebot's pipeline for crawling, rendering and indexing a page.
+    Fig. 1 — Googlebot's pipeline for crawling, rendering, and indexing a page.
   </figcaption>
 </figure>
 
