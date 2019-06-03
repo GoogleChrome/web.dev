@@ -29,7 +29,7 @@ This year we announced the much-awaited [new evergreen Googlebot](https://webmas
 
 Googlebot now uses a modern Chromium engine to render websites for Google Search. On top of that, we will test newer versions of Chromium to _keep_ Googlebot updated, usually within a few weeks of each stable Chrome release. This announcement is big news for web developers and SEOs because it marks the arrival of [1000+ new features](https://caniuse.com/#compare=chrome+41,chrome+74) — such as ES6+, `IntersectionObserver`, and Web Components v1 — in Googlebot. 
 
-While the [session on new and upcoming features in Google Search](https://www.youtube.com/watch?v=ufcijo46LCU&list=PLKoqnv2vTMUPsSoDoVlUlgVkyh0OfjB-x) focused on new and upcoming features, we also had a session on JavaScript and Google Search. In this session we shared more details on improving JavaScript-driven web apps. We looked at:
+Great things are happening with Google Search, and we were excited to share them at Google I/O 2019! You should check out the [session about new and upcoming features](https://www.youtube.com/watch?v=ufcijo46LCU&list=PLKoqnv2vTMUPsSoDoVlUlgVkyh0OfjB-x) if you want a general overview. But in this post we're focusing on the JavaScript and Google Search session, where we talked about best practices for making JavaScript web apps discoverable in Google Search, including:
 
 *   Feature detection and error handling
 *   Googlebot's pipeline for crawling, rendering and indexing
@@ -60,7 +60,9 @@ Let's look at an example:
  </body>
 ```
 
-This page might not show any content in some cases. The code doesn't handle when the user declines the permission or when getCurrentPosition call returns an error. Googlebot declines permission requests like this by default. This is a better solution:
+This page might not show any content in some cases because the code doesn't handle when the user declines the permission or when getCurrentPosition call returns an error. Googlebot declines permission requests like this by default. 
+
+This is a better solution:
 
 ```html
  <body>
@@ -106,7 +108,7 @@ The process works like this:
 5. As soon as possible, a headless Chromium instance renders the page (JavaScript is executed here).
 6. Googlebot uses the rendered HTML to index the page.
 
-Your technical setup can influence the process of crawling, rendering, and indexing. For example, slow response times or server errors can impact the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html) and links that are only rendered with JavaScript can lead to a slower discovery of these links.
+Your technical setup can influence the process of crawling, rendering, and indexing. For example, slow response times or server errors can impact the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html). Another example would be requiring JavaScript to render the links can lead to a slower discovery of these links.
 
 ## Choose the right rendering strategy for your web app
 
@@ -140,12 +142,9 @@ You can also find out if there are resource loading issues or JavaScript errors.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="mobile-friendly-test-js-error.png" alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace.">
-  <figcaption class="w-figcaption">
-    You can use the mobile-friendly test as well to find loading issues or JavaScript errors.
-  </figcaption>
 </figure>
 
-We recommend to verify your domain in [Google Search Console](https://g.co/searchconsole) so you can use the URL inspection tool to find out more about the crawling and indexing state of a URL, receive messages when we detect issues and find out more details of how your site performs in Google Search.
+It's recommended to verify your domain in [Google Search Console](https://g.co/searchconsole) so you can use the URL inspection tool to find out more about the crawling and indexing state of a URL, receive messages when Search Console detects issues and find out more details of how your site performs in Google Search.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="search-console-url-inspection-tool.png" alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL">
