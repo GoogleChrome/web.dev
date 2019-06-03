@@ -27,7 +27,7 @@ This year we announced the much-awaited [new evergreen Googlebot](https://webmas
   </figcaption>
 </figure>
 
-Googlebot now uses a modern Chromium engine to render websites for Google Search. On top of that, we test newer versions of Chromium to keep Googlebot updated in the future. We will update Googlebot within a few weeks of a stable Chrome release. This announcement is big news for web developers and SEOs, because it marks the arrival of [1000+ new features](https://caniuse.com/#compare=chrome+41,chrome+74), such as ES6+, IntersectionObserver, and Web Components v1 in Googlebot. 
+Googlebot now uses a modern Chromium engine to render websites for Google Search. On top of that, we will test newer versions of Chromium to _keep_ Googlebot updated, usually within a few weeks of each stable Chrome release. This announcement is big news for web developers and SEOs because it marks the arrival of [1000+ new features](https://caniuse.com/#compare=chrome+41,chrome+74)—such as ES6+, `IntersectionObserver`, and Web Components v1—in Googlebot. 
 
 While the [session on new and upcoming features in Google Search](https://www.youtube.com/watch?v=ufcijo46LCU&list=PLKoqnv2vTMUPsSoDoVlUlgVkyh0OfjB-x) focused on new and upcoming features, we also had a session on JavaScript and Google Search. In this session we shared more details on improving JavaScript-driven web apps. We looked at:
 
