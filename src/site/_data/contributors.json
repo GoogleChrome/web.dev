@@ -1256,7 +1256,7 @@
       "en": "If an API's not documented it doesn't exist"
     }
   },
-   "egsweeny": {
+  "egsweeny": {
     "name": {
       "given": "Elizabeth",
       "family": "Sweeny"
@@ -1288,6 +1288,21 @@
     "twitter": "rowan_m",
     "github": "rowan-m",
     "glitch": "rowan-m"
+  },
+  "lunalu": {
+    "name": {
+      "given": "Luna",
+      "family": "Lu"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "country": "Canada",
+    "github": "loonybear",
+    "description": {
+      "en": "Build and enforce guardrails for the web."
+    }
   },
   "geddski": {
     "name": {
