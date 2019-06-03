@@ -103,7 +103,7 @@ The process works like this:
 
 1. Googlebot queues URLs for crawling.
 2. It then fetches the URLs with an HTTP request based on the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html).
-3. Googlebot's next stage is scanning the HTML for links and queues the discovered links for crawling.
+3. Googlebot scans the HTML for links and queues the discovered links for crawling.
 4. Googlebot then queues the page for rendering.
 5. As soon as possible, a headless Chromium instance renders the page (JavaScript is executed here).
 6. Googlebot uses the rendered HTML to index the page.
