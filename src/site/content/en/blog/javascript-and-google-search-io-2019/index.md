@@ -114,6 +114,8 @@ Your technical setup can influence the process of crawling, rendering, and index
 
 The default rendering strategy for single-page apps today is client-side rendering. The HTML loads the JavaScript, which then generates the content in the browser as it executes. 
 
+Let's look at a web app that shows a collection of cat images and uses JavaScript to render entirely in the browser.
+
 <figure class="w-figure">
   <img src="spa-kittens.png" alt="A code box showing HTML that loads some scripts. A screenshot of a web page on mobile that shows placeholder images while loading the actual content.">
   <figcaption class="w-figcaption">
@@ -121,7 +123,7 @@ The default rendering strategy for single-page apps today is client-side renderi
   </figcaption>
 </figure> 
 
-The rendering strategy of your website influences performance. It also has an impact on how bots like Googlebot interact with it.
+The rendering strategy of a website influences its performance. It also has an impact on how bots like Googlebot interact with it. Server-side rendering or pre-rendering can improve the performance for users and crawlers. Those strategies execute JavaScript on the server to generate the initial HTML content. The browser can start rendering the HTML as it arrives over the network, making the page load faster.  The [rendering session at I/O](https://www.youtube.com/watch?v=k-A2VfuUROg)  or [the blog post about rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) shows how server-side rendering and hydration can improve the performance and user experience of web apps with more examples of how these strategies are implemented.
 
 If you're free to choose your rendering strategy, consider server-side rendering or pre-rendering. They execute JavaScript on the server to generate the initial HTML content, which can improve performance for both users and crawlers. These strategies allow the browser to start rendering HTML as it arrives over the network, making the page load faster.  The [rendering session at I/O](https://www.youtube.com/watch?v=k-A2VfuUROg)  or [the blog post about rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) shows how server-side rendering and hydration can improve the performance and user experience of web apps and provides more examples of how these strategies can be implemented.
 
