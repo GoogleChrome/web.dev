@@ -86,7 +86,7 @@ This is a better solution:
 
 ```
 
-If you have problems with your JavaScript site, [walk through our troubleshooting guide](https://developers.google.com/search/docs/guides/fix-search-javascript) to find solutions.
+If you have problems with getting your JavaScript site indexed, [walk through our troubleshooting guide](https://developers.google.com/search/docs/guides/fix-search-javascript) to find solutions.
 
 ## Learn how Googlebot works
 
