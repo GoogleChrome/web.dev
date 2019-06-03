@@ -17,7 +17,7 @@ tags:
   - caching
 ---
 
-Service workers are powerful and absolutely worth mastering. They'll enable you to deliver an entirely new level of experience to your users. Your site can load _instantly_. It can work _offline_. It can be installed as a native app, and feel every bit as polished, but with the reach and freedom of the web.
+Service workers are powerful and absolutely worth mastering. They let you deliver an entirely new level of experience to your users. Your site can load _instantly_. It can work _offline_. It can be installed as a native app and feel every bit as polished—but with the reach and freedom of the web.
 
 But service workers are unlike anything most of us web devs are used to. They come with a steep learning curve and a handful of snags you've got to watch out for.
 
