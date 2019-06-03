@@ -16,6 +16,22 @@ tags:
   - javascript
 ---
 
+Great things are happening with Google Search, and we were excited to share them at Google I/O 2019! You should check out the [session about new and upcoming features](https://www.youtube.com/watch?v=ufcijo46LCU&list=PLKoqnv2vTMUPsSoDoVlUlgVkyh0OfjB-x) if you want a general overview. But in this post we're focusing on the JavaScript and Google Search session, where we talked about best practices for making JavaScript web apps discoverable in Google Search, including:
+
+*   The new evergreen Googlebot 
+*   Googlebot's pipeline for crawling, rendering and indexing
+*   Feature detection and error handling
+*   Rendering strategies
+*   Testing tools for your website in Google Search
+*   Common challenges and possible solutions
+*   Best practices for SEO in JavaScript web apps
+
+Here's the full video, and the highlights of the session are below:
+
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/Ey0N1Ry0BPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 ## Meet the evergreen Googlebot
 
 This year we announced the much-awaited [new evergreen Googlebot](https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html).
@@ -29,20 +45,27 @@ This year we announced the much-awaited [new evergreen Googlebot](https://webmas
 
 Googlebot now uses a modern Chromium engine to render websites for Google Search. On top of that, we will test newer versions of Chromium to _keep_ Googlebot updated, usually within a few weeks of each stable Chrome release. This announcement is big news for web developers and SEOs because it marks the arrival of [1000+ new features](https://caniuse.com/#compare=chrome+41,chrome+74) — such as ES6+, `IntersectionObserver`, and Web Components v1 — in Googlebot. 
 
-Great things are happening with Google Search, and we were excited to share them at Google I/O 2019! You should check out the [session about new and upcoming features](https://www.youtube.com/watch?v=ufcijo46LCU&list=PLKoqnv2vTMUPsSoDoVlUlgVkyh0OfjB-x) if you want a general overview. But in this post we're focusing on the JavaScript and Google Search session, where we talked about best practices for making JavaScript web apps discoverable in Google Search, including:
+## Learn how Googlebot works
 
-*   Feature detection and error handling
-*   Googlebot's pipeline for crawling, rendering and indexing
-*   Rendering strategies
-*   Testing tools for your website in Google Search
-*   Common challenges and possible solutions
-*   Best practices for SEO in JavaScript web apps
+Googlebot is a pipeline with several components. Let's take a look to understand how Googlebot indexes pages for Google Search.
 
-Here's the full video, and the highlights of the session are below:
+<figure class="w-figure w-figure--center w-figure--fullbleed">
+  <img src="googlebot-process.png" alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — Googlebot's pipeline for crawling, rendering, and indexing a page.
+  </figcaption>
+</figure>
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/Ey0N1Ry0BPM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+The process works like this:
+
+1. Googlebot queues URLs for crawling.
+2. It then fetches the URLs with an HTTP request based on the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html).
+3. Googlebot scans the HTML for links and queues the discovered links for crawling.
+4. Googlebot then queues the page for rendering.
+5. As soon as possible, a headless Chromium instance renders the page, which includes JavaScript execution.
+6. Googlebot uses the rendered HTML to index the page.
+
+Your technical setup can influence the process of crawling, rendering, and indexing. For example, slow response times or server errors can impact the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html). Another example would be requiring JavaScript to render the links can lead to a slower discovery of these links.
 
 ## Use feature detection and handle errors
 
@@ -87,28 +110,6 @@ This is a better solution:
 ```
 
 If you have problems with getting your JavaScript site indexed, [walk through our troubleshooting guide](https://developers.google.com/search/docs/guides/fix-search-javascript) to find solutions.
-
-## Learn how Googlebot works
-
-Googlebot is a pipeline with several components. Let's take a look to understand how Googlebot indexes pages for Google Search.
-
-<figure class="w-figure w-figure--center w-figure--fullbleed">
-  <img src="googlebot-process.png" alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Googlebot's pipeline for crawling, rendering, and indexing a page.
-  </figcaption>
-</figure>
-
-The process works like this:
-
-1. Googlebot queues URLs for crawling.
-2. It then fetches the URLs with an HTTP request based on the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html).
-3. Googlebot scans the HTML for links and queues the discovered links for crawling.
-4. Googlebot then queues the page for rendering.
-5. As soon as possible, a headless Chromium instance renders the page, which includes JavaScript execution.
-6. Googlebot uses the rendered HTML to index the page.
-
-Your technical setup can influence the process of crawling, rendering, and indexing. For example, slow response times or server errors can impact the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html). Another example would be requiring JavaScript to render the links can lead to a slower discovery of these links.
 
 ## Choose the right rendering strategy for your web app
 
