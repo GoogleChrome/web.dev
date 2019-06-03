@@ -169,7 +169,7 @@ Once your service worker reaches the `activated` state, you know it has taken ov
 
 The [caches.match](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match) function is an often used shortcut for retrieving an item from _any_ cache where there's a match. But it iterates through the caches in the order they were **created**. So let's say you've got two versions of a script file `app.js` hanging out in two different caches — `assets-1` and `assets-2`. Your page is expecting the newer script that's stored in `assets-2`. But if you haven't deleted the old cache, `caches.match('app.js')` is going to return the old one from `assets-1` and most likely break your site.
 
-All it takes to clean up after previous service workers is to delete any cache this new service worker doesn't use:
+All it takes to clean up after previous service workers is to delete any cache that the new service worker doesn't need:
 
 ```js
 const version = 2;
