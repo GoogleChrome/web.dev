@@ -105,7 +105,7 @@ The process works like this:
 2. It then fetches the URLs with an HTTP request based on the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html).
 3. Googlebot scans the HTML for links and queues the discovered links for crawling.
 4. Googlebot then queues the page for rendering.
-5. As soon as possible, a headless Chromium instance renders the page (JavaScript is executed here).
+5. As soon as possible, a headless Chromium instance renders the page, which includes JavaScript execution.
 6. Googlebot uses the rendered HTML to index the page.
 
 Your technical setup can influence the process of crawling, rendering, and indexing. For example, slow response times or server errors can impact the [crawl budget](https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html). Another example would be requiring JavaScript to render the links can lead to a slower discovery of these links.
