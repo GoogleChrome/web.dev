@@ -21,7 +21,7 @@ Service workers are powerful and absolutely worth mastering. They let you delive
 
 But service workers are unlike anything most of us web devs are used to. They come with a steep learning curve and a handful of snags you've got to watch out for.
 
-The best way to ensure success with service workers is to have the right mindset when working with them. In this post we'll wrap our brains around the paradoxical traits that make service workers both tricky and awesome.
+[Google Developers](https://twitter.com/ChromiumDev) and I recently collaborated on a project — [Service Workies](https://serviceworkies.com) — a free game for mastering service worker. While building it and working with the complex ins and outs of service workers, I ran into a few snags. What helped me the most was coming up with a handful of depictive metaphors. In this post we'll explore these mental models and wrap our brains around the paradoxical traits that make service workers both tricky and awesome.
 
 ## The same, but different
 
@@ -164,6 +164,7 @@ When you deploy a new service worker, you'll bump the `version` so that it does 
 ![visualization of a cache](./cache.jpg)
 
 ### End clean
+
 Once your service worker reaches the `activated` state, you know it has taken over and the previous service worker is redundant (no longer used). At this point it's important to clean up after the old service worker. Not only is is polite to your users' cache storage limits, but it can also prevent unintentional bugs.
 
 The [caches.match](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match) function is an often used shortcut for retrieving an item from _any_ cache where there's a match. But it iterates through the caches in the order they were **created**. So let's say you've got two versions of a script file `app.js` hanging out in two different caches — `assets-1` and `assets-2`. Your page is expecting the newer script that's stored in `assets-2`. But if you haven't deleted the old cache, `caches.match('app.js')` is going to return the old one from `assets-1` and most likely break your site.
@@ -200,6 +201,6 @@ Think of the combination of your service worker and your site as an [installable
 
 Getting into the right mindset while thinking about service workers will help you build yours with confidence. Once you get the hang of them you'll be able to create incredible experiences for your users.
 
-If you want to master all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! [Google Developers](https://twitter.com/ChromiumDev) and I collaborated on a project — [Service Workies](https://serviceworkies.com) where you master the ways of the service worker to slay the offline beasts. Go check it out!
+If you want to master all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! Go play [Service Workies](https://serviceworkies.com) where you'll learn the ways of the service worker in order to slay the offline beasts.
 
 ![preview of the Service Workies game](./spider.gif)
