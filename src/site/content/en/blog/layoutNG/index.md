@@ -25,7 +25,7 @@ tags:
   }
 </style>
 
-Scheduled to be released in Chrome 76, LayoutNG is a new layout engine exiting a multi-year effort. While this article intends to cover the list of immediate effects, longer term goals exist which intend to bring additional performance gains and advanced layout features.
+Scheduled to be released in Chrome 76, LayoutNG is a new layout engine exiting a multi-year effort. There are several exciting immediate improvements, and additional performance gains and advanced layout features will be coming.
 
 <h2 class="w-headline--four">What's New?</h2>
 
