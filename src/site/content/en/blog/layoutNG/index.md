@@ -178,7 +178,7 @@ The example below shows a yellow block sized to content. It uses the Lato font w
     <img loading="lazy" src="kern_legacy.png" alt="trailing whitespace shown at the end of the text container">
     <figcaption class="w-figcaption w-figcaption--center">
       <small>Fig 5a, Legacy Layout</small><br>
-      Note the trailing whitespace after the last T
+      Note the trailing whitespace after the last _T_
     </figcaption>
   </figure>
 
@@ -192,7 +192,7 @@ The example below shows a yellow block sized to content. It uses the Lato font w
 </div>
 
 #### Line Wrapping
-Similar to the problem described above, if the content of a size-to-content block is larger (wider) than the block, this can cause the content to wrap unnecessarily. This is quite rare but sometimes happens for mixed directionality content.
+Similar to the problem described above, if the content of a size-to-content block is larger (wider) than the block, content can sometimes wrap unnecessarily. This is quite rare but sometimes happens for mixed directionality content.
 
 <div class="w-figures-2-up">
   <figure class="w-figure w-figure--center">
@@ -220,5 +220,5 @@ Similar to the problem described above, if the content of a size-to-content bloc
 For more detailed information about the specific compatibility issues and bugs fixed by LayoutNG, please see the issues linked above or search the Chromium bug database for bugs marked [Fixed-In-LayoutNG](https://bugs.chromium.org/p/chromium/issues/list?can=1&q=label%3AFixed-In-LayoutNG).
 
 {% Aside 'warning' %}
-  If you suspect that LayoutNG may have caused a web site to break, please [file a bug report](https://bugs.chromium.org/p/chromium/issues/entry?summary=%5BLayoutNG%5D+Enter+one-line+summary&labels=LayoutNG&components=Blink%3ELayout) and we'll investigate.
+  If you suspect that LayoutNG may have caused a website to break, please [file a bug report](https://bugs.chromium.org/p/chromium/issues/entry?summary=%5BLayoutNG%5D+Enter+one-line+summary&labels=LayoutNG&components=Blink%3ELayout), and we'll investigate.
 {% endAside %}
