@@ -1256,7 +1256,7 @@
       "en": "If an API's not documented it doesn't exist"
     }
   },
-   "egsweeny": {
+  "egsweeny": {
     "name": {
       "given": "Elizabeth",
       "family": "Sweeny"
@@ -1303,5 +1303,18 @@
     "description": {
       "en": "Build and enforce guardrails for the web."
     }
+  },
+  "geddski": {
+    "name": {
+      "given": "Dave",
+      "family": "Geddes"
+    },
+    "description": {
+      "en": "Founder at Mastery Games"
+    },
+    "homepage": "https://gedd.ski/",
+    "country": "US",
+    "twitter": "geddski",
+    "github": "geddski"
   }
 }
