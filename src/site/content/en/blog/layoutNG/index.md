@@ -200,7 +200,7 @@ The example below shows a yellow block sized to content. It uses the Lato font w
 </div>
 
 #### Line Wrapping
-Similar to the problem described above, if the content of a size-to-content block is larger (wider) than the block, this can cause the content to wrap unnecessarily. This is quite rare but sometimes happens for mixed directionality content.
+Similar to the problem described above, if the content of a size-to-content block is larger (wider) than the block, content can sometimes wrap unnecessarily. This is quite rare but sometimes happens for mixed directionality content.
 
 <div class="w-figures-2-up">
   <figure class="w-figure w-figure--center">
