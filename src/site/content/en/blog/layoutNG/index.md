@@ -186,7 +186,7 @@ The example below shows a yellow block sized to content. It uses the Lato font w
     <img loading="lazy" src="kern_legacy.png" alt="trailing whitespace shown at the end of the text container">
     <figcaption class="w-figcaption w-figcaption--center">
       <small>Fig 5a, Legacy Layout</small><br>
-      Note the trailing whitespace after the last T
+      Note the trailing whitespace after the last _T_
     </figcaption>
   </figure>
 
