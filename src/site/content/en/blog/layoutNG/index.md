@@ -29,7 +29,7 @@ Scheduled to be released in Chrome 76, LayoutNG is a new layout engine exiting a
 
 <h2 class="w-headline--four">What's New?</h2>
 
-1. Provides **improved performance** isolation
+1. Improves performance isolation.
 1. **Better support** for scripts other than Latin
 1. **Fixes** many issues around floats and margins
 1. **Fixes** a large number of web compatibility issues
