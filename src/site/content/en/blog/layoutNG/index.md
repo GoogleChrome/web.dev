@@ -47,13 +47,13 @@ The performance characteristics are also quite different; although performance o
 LayoutNG reimplements support for floating elements (`float: left;` and `float: right;`) fixing a number of correctness issues around placement of floats in relation to other content.
 
 #### Superimposed Content
-The legacy float implementation didn’t correctly account for margins when placing content around a floating element, resulting in the content partially or fully overlapping the float itself. The most common manifestation of this bug is when positioning images besides paragraphs of text where the avoidance logic fails to account for the height of a line ([#861540](https://crbug.com/861540)).
+The legacy float implementation didn’t correctly account for margins when placing content around a floating element, resulting in the content partially or fully overlapping the float itself. The most common manifestation of this bug appears when an image is positioned beside a paragraph where the avoidance logic fails to account for the height of a line. (See [Chromium bug #861540](https://crbug.com/861540).)
 
 <div class="w-figures-2-up">
   <figure class="w-figure w-figure--center">
     <img class="w-screenshot" loading="lazy" src="legacy_float_margin.png" alt="top text line shown overlaying floated image">
     <figcaption class="w-figcaption w-figcaption--center">
-      <small>Fig 1a, Legacy Layout</small><br>
+      <small>Fig 1a, Legacy layout engine</small><br>
       Text overlaps the floating image to the right
     </figcaption>
   </figure>
@@ -73,7 +73,7 @@ The same problem may occur within a single line. The example below shows a block
   <figure class="w-figure w-figure--center">
     <img loading="lazy" src="legacy_float_overlap.png" alt="text line shown overlaying an orange box">
     <figcaption class="w-figcaption w-figcaption--center">
-      <small>Fig 2a, Legacy Layout</small><br>
+      <small>Fig 2a, Legacy layout engine</small><br>
       Text overlaps the floating orange element
     </figcaption>
   </figure>
@@ -88,38 +88,42 @@ The same problem may occur within a single line. The example below shows a block
 </div>
 
 #### Formatting Context Positioning
-When an element forming a block formatting context is sized next to floats, Chromium would try size the block a fixed number of times before giving up. This resulted in unpredictable and unstable behavior and didn't match other implementations. In LayoutNG all floats are taken into account when sizing the block ([#548033](https://crbug.com/548033)).
+When an element forming a block formatting context is sized next to floats, the legacy layout engine would try to size the block a fixed number of times before giving up. This approach led to unpredictable and unstable behavior and didn't match other implementations. In LayoutNG all floats are taken into account when sizing the block. (See [Chromium bug #548033](https://crbug.com/548033).)
 
-Absolute/fixed positioning has been reimplemented and is more spec compliant than the old implementation. It also better matches the behavior in other browsers. The differences between the two are most visible in the areas where the old implementation did not follow the spec:
+Absolute and fixed positioning are now more compliant with W3C specifications and better match the behavior in other browsers. The differences between the two are most visible in two cases:
 
-- **Multi-line Inline Containing Blocks** <br>If an abspos containing block spanned multiple lines, the legacy engine might incorrectly use only a subset of the lines to compute the containing block bounds.
-- **Writing Modes** <br>The legacy engine had many problems placing out of flow elements to default position in vertical writing modes. See the next section for more details around improved writing mode support.
+- **Multi-line inline containing blocks** <br>If an absolutely positioned containing block spanned multiple lines, the legacy engine might incorrectly use only a subset of the lines to compute the containing block bounds.
+- **Vertical writing modes** <br>The legacy engine had many problems placing out-of-flow elements in the default position in vertical writing modes. See the next section for more details about improved writing mode support.
 
-### RTL & Writing Modes
-LayoutNG was designed from the ground up to support vertical writing modes and bi-directional content. This fixes numerous issues around both writing modes, right-to-left inlines, and orthogonal flows.
+## Right-to-left (RTL) languages and vertical writing modes
+LayoutNG was designed from the ground up to support vertical writing modes and RTL languages, including bidirectional content.
 
 #### Bidirectional Text
-LayoutNG supports the most up-to-date Unicode bidirectional algorithm defined by [The Unicode Standard](https://unicode.org/standard/standard.html). Not only does it fix various cases where rendering was not correct, it also includes missing features in the old engine such as paired bracket support ([#302469](https://crbug.com/302469)).
+LayoutNG supports the most up-to-date bidirectional algorithm defined by [The Unicode Standard](https://unicode.org/standard/standard.html). Not only does this update fix various rendering errors, but it also includes missing features such as paired bracket support (See [Chromium bug #302469](https://crbug.com/302469).)
 
 #### Orthogonal Flows
-LayoutNG improves vertical flow layout correctness, for more correct positioning of absolute positioned objects, sizing of orthogonal flow boxes especially when percent is used, and so forth. Among the 1,258 tests in W3C test suites, **103 tests that failed in the old engine pass in LayoutNG.**
+LayoutNG improves the accuracy of vertical flow layout, including, for example, placement of absolutely positioned objects and sizing of orthogonal flow boxes (especially when percent is used). Of the 1,258 tests in the W3C test suites, **103 tests that failed in the old layout engine pass in LayoutNG.**
 
 #### Intrinsic Sizing
-Intrinsic sizes are now calculated correctly when a LayoutNG block contains children in an orthogonal writing mode.
+Intrinsic sizes are now calculated correctly when a block contains children in an orthogonal writing mode.
 
 ### Text Layout & Line Breaking
-The old layout engine in Chromium does text layout element-by-element and line-by-line. This has historically worked well but requires a lot of extra complexity to support scripts and to achieve good performance. It's also prone to inconsistencies in measurements which tend to manifest themselves as subtle differences in sizing of size-to-content containers and their content or unnecessary line breaks.
+The legacy Chromium layout engine laid out text element-by-element and line-by-line. This approach worked well in most cases but required a lot of extra complexity to support scripts and achieve good performance. It was also prone to measurement inconsistencies, which led to subtle differences in the sizing of size-to-content containers and their content or unnecessary line breaks.
 
-In LayoutNG, text layout is done on a paragraph level and is then split into lines. This allows for better performance, higher quality text rendering, and more consistent line breaking. The most notable differences here from a developer and user standpoint are detailed below.
+In LayoutNG, text is laid out at the paragraph level and then split into lines. This allows for better performance, higher quality text rendering, and more consistent line breaking. The most notable differences are detailed below.
 
 #### Joining across Element Boundaries
-In some scripts graphemes join with adjacent ones and changes presentation. In LayoutNG this works even if the graphemes are in different elements, allowing the joins to be preserved even if different styling is applied ([#6122](https://crbug.com/6122)).
+In some scripts, certain characters can be visually joined when they're adjacent. Check out this example from Arabic:
+
+[Add a two-up showing two characters separate, and then the same characters joined.]
+
+In LayoutNG joining now works even if the characters are in different elements. Joins will even be preserved when different styling is applied (See [Chromium bug #6122](https://crbug.com/6122).)
 
 {% Aside 'key-term' %}
   A grapheme is the smallest unit of a language's writing system. For example, in English and other languages that use the Latin alphabet, each letter is a grapheme.
 {% endAside %}
 
-The example below shows the rendering of the following HTML in legacy layout and LayoutNG respectively:
+The images below show the rendering of the following HTML in the legacy layout engine and LayoutNG, respectively:
 
 ```html
 <div>&#1606;&#1587;&#1602;</div>
@@ -130,7 +134,7 @@ The example below shows the rendering of the following HTML in legacy layout and
   <figure class="w-figure w-figure--center">
     <img loading="lazy" src="legacy_shape.png" alt="proper grapheme on left and separated improper rendering on right">
     <figcaption class="w-figcaption w-figcaption--center">
-      <small>Fig 3a, Legacy Layout</small><br>
+      <small>Fig 3a, Legacy layout engine</small><br>
       Note how the form of the second letter changes
     </figcaption>
   </figure>
@@ -139,13 +143,13 @@ The example below shows the rendering of the following HTML in legacy layout and
     <img loading="lazy" src="ng_shape.png" alt="proper combined graphemes shown">
     <figcaption class="w-figcaption w-figcaption--center">
       <small>Fig 3b, LayoutNG</small><br>
-      Note they're now identical
+      The two versions are now identical
     </figcaption>
   </figure>
 </div>
 
-#### CJK Ligatures
-Although Chromium already supports ligatures and enable them by default, there are some limitations. Ligatures involving multiple CJK codepoints are not supported in the legacy engine due to a rendering optimization. LayoutNG removes these restrictions and supports ligatures regardless of script.
+### Chinese, Japanese, and Korean (CJK) ligatures
+Although Chromium already supports ligatures and enables them by default, there are some limitations: ligatures involving multiple CJK codepoints are not supported in the legacy layout engine due to a rendering optimization. LayoutNG removes these restrictions and supports ligatures regardless of script.
 
 The example below shows the rendering of three discretionary ligatures using the Adobe SourceHanSansJP font:
 
