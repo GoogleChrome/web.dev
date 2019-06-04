@@ -38,14 +38,10 @@ Scheduled to be released in Chrome 76, LayoutNG is a new layout engine exiting a
   Please note that LayoutNG will be **launched in stages**. In Chrome 76, LayoutNG is used for inline and block layout. Other layout primitives (such as table, flexbox, grid, and block fragmentation) will be replaced in subsequent releases.
 {% endAside %}
 
-<br>
-
 ## Developer visible changes
 Although the user visible impact should be minimal, LayoutNG changes some behavior in very subtle ways, fixes hundreds of tests, and improves compatibility with other browsers. Despite our best efforts, it is likely that this will cause some sites and applications to render or behave slightly differently.
 
 The performance characteristics are also quite different; although performance on a whole is similar or slightly better than before, certain use cases are likely to see performance improvements, while others are expected to regress somewhat, at least short-term.
-
-<br>
 
 ### Floats
 LayoutNG reimplements support for floating elements (`float: left;` and `float: right;`) fixing a number of correctness issues around placement of floats in relation to other content.
@@ -99,8 +95,6 @@ Absolute/fixed positioning has been reimplemented and is more spec compliant tha
 - **Multi-line Inline Containing Blocks** <br>If an abspos containing block spanned multiple lines, the legacy engine might incorrectly use only a subset of the lines to compute the containing block bounds.
 - **Writing Modes** <br>The legacy engine had many problems placing out of flow elements to default position in vertical writing modes. See the next section for more details around improved writing mode support.
 
-<br>
-
 ### RTL & Writing Modes
 LayoutNG was designed from the ground up to support vertical writing modes and bi-directional content. This fixes numerous issues around both writing modes, right-to-left inlines, and orthogonal flows.
 
@@ -112,8 +106,6 @@ LayoutNG improves vertical flow layout correctness, for more correct positioning
 
 #### Intrinsic Sizing
 Intrinsic sizes are now calculated correctly when a LayoutNG block contains children in an orthogonal writing mode.
-
-<br>
 
 ### Text Layout & Line Breaking
 The old layout engine in Chromium does text layout element-by-element and line-by-line. This has historically worked well but requires a lot of extra complexity to support scripts and to achieve good performance. It's also prone to inconsistencies in measurements which tend to manifest themselves as subtle differences in sizing of size-to-content containers and their content or unnecessary line breaks.
@@ -219,8 +211,6 @@ Similar to the problem described above, if the content of a size-to-content bloc
     </figcaption>
   </figure>
 </div>
-
-<br>
 
 ## Further Information
 - [Documentation](https://chromium.googlesource.com/chromium/src/+/master/third_party/blink/renderer/core/layout/ng/README.md)
