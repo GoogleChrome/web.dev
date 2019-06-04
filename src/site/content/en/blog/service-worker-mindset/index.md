@@ -3,7 +3,7 @@ title: Service worker mindset
 subhead: How to think when thinking about service workers.
 authors:
   - geddski
-date: 2019-05-28
+date: 2019-06-04
 hero: hero.jpg
 hero_position: center
 alt: Service workers lining up.
