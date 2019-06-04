@@ -157,9 +157,9 @@ The example below shows the rendering of three discretionary ligatures using the
   <figure class="w-figure w-figure--center">
     <img loading="lazy" src="legacy_dlig_jp.png" alt="middle character combination not forming ligature">
     <figcaption class="w-figcaption w-figcaption--center">
-      <small>Fig 4a, Legacy layout</small><br>
+      <small>Fig 4a, Legacy layout engine</small><br>
       MHz correctly forms a ligature<br>
-      but マンション and 10点 does not
+      but マンション and 10点 do not
     </figcaption>
   </figure>
 
@@ -172,7 +172,7 @@ The example below shows the rendering of three discretionary ligatures using the
   </figure>
 </div>
 
-#### Size to Content
+### Size-to-content elements
 For elements that size-to-content (such as inline blocks) the current layout engine computes the size of the block first and then performs layout on the content. In some cases, such as when a font kerns aggressively, this may result in a mismatch between the size of the content and the block. In LayoutNG this failure mode has been eliminated as the block is sized based on the actual content.
 
 The example below shows a yellow block sized to content. It uses the Lato font which uses kerning to adjust the spacing between T and -. The bounds of the yellow box should match the bounds of the text.
@@ -181,7 +181,7 @@ The example below shows a yellow block sized to content. It uses the Lato font w
   <figure class="w-figure w-figure--center">
     <img loading="lazy" src="kern_legacy.png" alt="trailing whitespace shown at the end of the text container">
     <figcaption class="w-figcaption w-figcaption--center">
-      <small>Fig 5a, Legacy Layout</small><br>
+      <small>Fig 5a, Legacy layout engine</small><br>
       Note the trailing whitespace after the last _T_
     </figcaption>
   </figure>
@@ -202,7 +202,7 @@ Similar to the problem described above, if the content of a size-to-content bloc
   <figure class="w-figure w-figure--center">
     <img loading="lazy" src="legacy_ar_wrap.png" alt="premature line break shown causing extra space">
     <figcaption class="w-figcaption w-figcaption--center">
-      <small>Fig 6a, Legacy layout</small><br>
+      <small>Fig 6a, Legacy layout engine</small><br>
       Note the unnecessary line break and extra space on the right
     </figcaption>
   </figure>
