@@ -230,5 +230,5 @@ Similar to the problem described above, if the content of a size-to-content bloc
 For more detailed information about the specific compatibility issues and bugs fixed by LayoutNG, please see the issues linked above or search the Chromium bug database for bugs marked [Fixed-In-LayoutNG](https://bugs.chromium.org/p/chromium/issues/list?can=1&q=label%3AFixed-In-LayoutNG).
 
 {% Aside 'warning' %}
-  If you suspect that LayoutNG may have caused a web site to break, please [file a bug report](https://bugs.chromium.org/p/chromium/issues/entry?summary=%5BLayoutNG%5D+Enter+one-line+summary&labels=LayoutNG&components=Blink%3ELayout) and we'll investigate.
+  If you suspect that LayoutNG may have caused a website to break, please [file a bug report](https://bugs.chromium.org/p/chromium/issues/entry?summary=%5BLayoutNG%5D+Enter+one-line+summary&labels=LayoutNG&components=Blink%3ELayout), and we'll investigate.
 {% endAside %}
