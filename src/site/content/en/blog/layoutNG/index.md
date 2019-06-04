@@ -8,7 +8,7 @@ date: 2019-05-29
 hero: hero.jpg
 alt: An overhead photograph of hundreds of shipping containers
 description: |
-  LayoutNG is a new layout engine for Chromium that has been designed for the needs of modern scalable web applications. It provides improved performance isolation, better support for scripts other than Latin, fixes many issues around floats/margins and a large number of web compatibility issues.
+  LayoutNG is a new layout engine for Chromium that has been designed for the needs of modern scalable web applications. It improves performance isolation, better supports scripts other than Latin, and fixes many float, margin, and web compatibility issues.
 tags:
   - post
   - layout
