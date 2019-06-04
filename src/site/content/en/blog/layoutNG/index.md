@@ -116,7 +116,7 @@ In LayoutNG, text layout is done on a paragraph level and is then split into lin
 In some scripts graphemes join with adjacent ones and changes presentation. In LayoutNG this works even if the graphemes are in different elements, allowing the joins to be preserved even if different styling is applied ([#6122](https://crbug.com/6122)).
 
 {% Aside 'key-term' %}
-  a grapheme is the smallest unit of a writing system of any given language
+  A grapheme is the smallest unit of a language's writing system. For example, in English and other languages that use the Latin alphabet, each letter is a grapheme.
 {% endAside %}
 
 The example below shows the rendering of the following HTML in legacy layout and LayoutNG respectively:
