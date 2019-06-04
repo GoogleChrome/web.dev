@@ -213,7 +213,7 @@ Similar to the problem described above, if the content of a size-to-content bloc
 </div>
 
 ## Further Information
-- [Documentation](https://chromium.googlesource.com/chromium/src/+/master/third_party/blink/renderer/core/layout/ng/README.md)
+- [LayoutNG README](https://chromium.googlesource.com/chromium/src/+/master/third_party/blink/renderer/core/layout/ng/README.md)
 - [Layout NG design document](https://docs.google.com/document/d/1uxbDh4uONFQOiGuiumlJBLGgO4KDWB8ZEkp7Rd47fw4/)
 - [Master tracking bug](https://crbug.com/591099)
 
