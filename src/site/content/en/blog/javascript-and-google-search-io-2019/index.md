@@ -16,17 +16,7 @@ tags:
   - javascript
 ---
 
-Great things are happening with Google Search, and we were excited to share them at Google I/O 2019! You should check out the [session about new and upcoming features](https://www.youtube.com/watch?v=ufcijo46LCU&list=PLKoqnv2vTMUPsSoDoVlUlgVkyh0OfjB-x) if you want a general overview. But in this post we're focusing on the JavaScript and Google Search session, where we talked about best practices for making JavaScript web apps discoverable in Google Search, including:
-
-*   The new evergreen Googlebot 
-*   Googlebot's pipeline for crawling, rendering and indexing
-*   Feature detection and error handling
-*   Rendering strategies
-*   Testing tools for your website in Google Search
-*   Common challenges and possible solutions
-*   Best practices for SEO in JavaScript web apps
-
-Here's the full video, and the highlights of the session are below:
+Great things are happening with Google Search, and we were excited to share them at Google I/O 2019!
 
 <div style="width:100%; padding-top: 56.25%; position: relative;">
 <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
@@ -35,6 +25,16 @@ src="https://www.youtube.com/embed/ufcijo46LCU" frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 </div>
+
+In this post we'll focus on best practices for making JavaScript web apps discoverable in Google Search, including:
+
+*   The new evergreen Googlebot 
+*   Googlebot's pipeline for crawling, rendering and indexing
+*   Feature detection and error handling
+*   Rendering strategies
+*   Testing tools for your website in Google Search
+*   Common challenges and possible solutions
+*   Best practices for SEO in JavaScript web apps
 
 ## Meet the evergreen Googlebot
 
@@ -128,9 +128,7 @@ Let's look at a web app that shows a collection of cat images and uses JavaScrip
   </figcaption>
 </figure> 
 
-The rendering strategy of a website influences its performance. It also has an impact on how bots like Googlebot interact with it. Server-side rendering or pre-rendering can improve the performance for users and crawlers. Those strategies execute JavaScript on the server to generate the initial HTML content. The browser can start rendering the HTML as it arrives over the network, making the page load faster.  The [rendering session at I/O](https://www.youtube.com/watch?v=k-A2VfuUROg)  or [the blog post about rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) shows how server-side rendering and hydration can improve the performance and user experience of web apps with more examples of how these strategies are implemented.
-
-If you're free to choose your rendering strategy, consider server-side rendering or pre-rendering. They execute JavaScript on the server to generate the initial HTML content, which can improve performance for both users and crawlers. These strategies allow the browser to start rendering HTML as it arrives over the network, making the page load faster.  The [rendering session at I/O](https://www.youtube.com/watch?v=k-A2VfuUROg)  or [the blog post about rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) shows how server-side rendering and hydration can improve the performance and user experience of web apps and provides more examples of how these strategies can be implemented.
+If you're free to choose your rendering strategy, consider server-side rendering or pre-rendering. They execute JavaScript on the server to generate the initial HTML content, which can improve performance for both users and crawlers. These strategies allow the browser to start rendering HTML as it arrives over the network, making the page load faster.  The [rendering session at I/O](https://www.youtube.com/watch?v=k-A2VfuUROg)  or [the blog post about rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) shows how server-side rendering and hydration can improve the performance and user experience of web apps and provides more code examples for these strategies.
 
 If you're looking for a workaround to help crawlers that don't execute JavaScript—or if you can't make changes to your frontend codebase—consider [dynamic rendering](https://developers.google.com/search/docs/guides/dynamic-rendering), which you can try out in [this codelab](https://codelabs.developers.google.com/codelabs/dynamic-rendering). Note, though, that you won't get the user experience or performance benefits that you would with server-side rendering or pre-rendering because dynamic rendering only serves static HTML to crawlers. That makes it a stop-gap rather than a long-term strategy.
 
