@@ -4,7 +4,7 @@ subhead: Get the latest updates and insights from Google I/O 2019.
 authors:
   - martinsplitt
   - ekharvey
-date: 2019-06-03
+date: 2019-06-05
 hero: hero.png
 alt: A pile of gears.
 description: |
