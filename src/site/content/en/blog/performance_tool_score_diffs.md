@@ -16,464 +16,164 @@ tags:
   - performance
 ---
 
+# Why is my performance score different between different tools? What is my REAL score?
 
+<a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics">Load is not a single moment in time</a>—it's an experience that no one metric can fully capture. There are multiple moments during the load experience that can affect whether a user perceives it as "fast", and if you just focus on one you might miss bad experiences that happen during the rest of the time. <b>This is why we generally use multiple metrics blended together to create our performance scores;</b> but different tools use different metrics and different weighted blends. This can be frustrating when you're looking for a source of truth about how fast your website is.
 
-{% Aside 'key-term' %}
-  Page speed refers to the speed of an individual page on your site (URL level).
-{% endAside %}
+This blog post serves to explain the reasons that there are differences in performance scores between three Google tools: <a href="https://www.thinkwithgoogle.com/intl/en-gb/feature/testmysite">Test My Site (TMS)</a>, <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights (PSI)</a>, and <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>. This document does <b>not</b> detail other differences in the tools, such as server run locations, network throttling presets, score variance between runs, etc.
 
-{% Aside 'key-term' %}
-  Site speed refers to the speed of all of the pages on your site (origin level).
-{% endAside %}
+## Terminology
 
+Various terms about speed/performance are referenced in our tools. We want to start off with some clarification of how these terms are used.
 
+- <b>Page speed</b> refers to the speed of an individual page on your site (URL level).
+- <b>Site speed</b> refers to the speed of all of the pages on your site (origin level).
 
+It is important to note that ‘performance’ or ‘speed’ is not to be defined by a single metric (i.e. First Contentful Paint (FCP), Time to Interactive (TTI), etc.). This is motivated by several considerations, including:
+- (as mentioned before) Page "load is not a single moment in time—it's an experience that no one metric can fully capture" [<a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics">source</a>]
+- Similarly, no single metric in isolation is able to give a meaningful indication of the health of the web (critical for benchmarking).
+- Depending on which metric is chosen, a very different picture of page speed is presented (each requiring different optimizations to improve).
 
+## Performance Scores within Tools
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem. Integer et erat ac mi scelerisque suscipit et vitae nulla. Aliquam
-scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
-sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
-tempus enim.
+The performance score (top level gauge, 1-100 score) in PSI and Lighthouse is calculated from a weighted blend of multiple metrics to summarize a website's/web app's speed. This <a href="https://docs.google.com/spreadsheets/d/1sH_T4G_RZAg4CpcV1bT-tmUegBdBpCOOwsdzqtWnO4U/edit#gid=0">weighted blend</a> of metrics that together constitute the performance score in both PSI and LH (as of May 2019, <a href="https://github.com/GoogleChrome/lighthouse/releases">LH v5.0</a>) is as follows:
+- 3X - First Contentful Paint (FCP)
+- 1X - First Meaningful Paint (FMP)
+- 2X - First CPU Idle (FCPUI)
+- 5X - Time to Interactive (TTI)
+- 4X - Speed index (SI)
+- 0X - Max Potential First Input Delay (MPFID)
 
-{% Aside 'codelab' %}
-  [Using Imagemin with Grunt](#)
-{% endAside %}
+<i>[Reasons for variance of scores between report runs of Lighthouse and PSI can be found <a href="https://docs.google.com/document/d/1AujmeKvBhzr-d8IsB7zPeS-vOtxCdw2GnspKpxJ7d_I/edit">here</a>.]</i>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem. Integer et erat ac mi scelerisque suscipit et vitae nulla. Aliquam
-scelerisque efficitur ante ut facilisis. Aenean et risus fringilla, hendrerit
-sapien et, tincidunt orci. Aenean sed tellus aliquam, consectetur metus in,
-tempus enim.
-
-<figure class="w-figure w-figure--fullbleed">
-  <img src="a.jpg" alt="">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Large image.
-  </figcaption>
-</figure>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-<figure class="w-figure">
-  <img src="image-small.png" alt="" style="max-width: 400px;">
-  <figcaption class="w-figcaption">
-    Fig. 2 — Small image.
-  </figcaption>
-</figure>
-
-{% Aside %}
-  Lorem ipsum dolor sit amet, [consectetur adipiscing elit](#). Proin dictum a
-  massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-  varius at. `Cras ligula lacus`, porta vitae maximus a, ultrices a mauris.
-  [`Vestibulum porta`](#) dolor erat, vel molestie dolor posuere in. Nam vel
-  elementum augue.
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-## Image, Inline
-
-<figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
-  <figcaption class="w-figcaption">
-    Fig. 3 — Inline right, outlined image.
-  </figcaption>
-</figure>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
-Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum
-augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
-aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
-velit. Morbi at quam sem.
-
-<figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
-  <figcaption class="w-figcaption">
-    Fig. 4 — Inline left, outlined image.
-  </figcaption>
-</figure>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
-Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum
-augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce
-aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
-velit. Morbi at quam sem.
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
-  <figcaption class="w-figcaption">
-    Fig. 5 — Filled screenshot.
-  </figcaption>
-</figure>
-
-{% Aside 'caution' %}
-  [This type of callout](#) suggests proceeding with caution.
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+TMS uses only FCP (from both Lighthouse and from the CrUX) to provide both site and page speed scores.
 
 <div class="w-table-wrapper">
   <table>
     <thead>
       <tr>
-        <th>Image Format</th>
-        <th>Lossy Plugin(s)</th>
-        <th>Lossless Plugin(s)</th>
+        <th>Tool Name</th>
+        <th>Lab / Field Tool</th>
+        <th>Lab Metrics*</th>
+        <th>Field Metrics*</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>JPEG</td>
-        <td><a href="#">imagemin-mozjpeg</a></td>
-        <td><a href="#">imagemin-jpegtran</a></td>
+        <td><a href="https://www.thinkwithgoogle.com/intl/en-gb/feature/testmysite">Test My Site</a></td>
+        <td>Lab & Field</td>
+        <td>FCP**</td>
+        <td>FCP**</td>
       </tr>
       <tr>
-        <td>PNG</td>
-        <td><a href="#">imagemin-pngquant</a></td>
-        <td><a href="#">imagemin-optipng</a></td>
+        <td><a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a></td>
+        <td>Lab & Field</td>
+        <td>FCP, FMP, FCPUI, TTI, SI</td>
+        <td>FCP, FID</td>
       </tr>
       <tr>
-        <td>GIF</td>
-        <td><a href="#">imagemin-giflossy</a></td>
-        <td><a href="#">imagemin-gifsicle</a></td>
-      </tr>
-      <tr>
-        <td>SVG</td>
-        <td><a href="#">Imagemin-svgo</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>WebP</td>
-        <td><a href="#">imagemin-webp</a></td>
-        <td></td>
+        <td><a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a></td>
+        <td>Lab</td>
+        <td>FCP, FMP, FCPUI, TTI, SI</td>
+        <td>---</td>
       </tr>
     </tbody>
-    <caption>Table 1 — Imagemin plugins for filetypes.</caption>
+    <caption>Table 1 — Performance metrics considered in score (by tool).</caption>
   </table>
+  <p>*other metrics might be measured by the tools, but they aren’t included in performance/speed score calculations<br>**TMS uses FID as a tiebreaker in cases where FCP between compared sites is the same (but FCP is the lead metric)</p>
 </div>
 
-{% Aside 'warning' %}
-  This type of callout is stronger than a Caution; it means "Don't do this."
-{% endAside %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+# Tool Sections: Breakdown
 
-## Ordered list
+## Test My Site (TMS)
+TMS is a ‘Think with Google’ tool that allows you to compare your FCP to that of your competitors and estimate the monetary value of improving your site’s performance.
 
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+### Mobile Site Speed: Field Data, FCP Only, Site Level
+The first part of the report, the mobile site speed seconds figure === First Contentful Paint (FCP) of the origin from CrUX.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+Site speed is the speed of <b>all the pages</b> that make up your site.
 
-<ol>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  </li>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
-    <figcaption class="w-figcaption">
-      Fig. 5 — Filled screenshot.
-    </figcaption>
-  </figure>
-  </li>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  </li>
-</ol>
+<figure class="w-figure w-figure--fullbleed">
+  <img src="F1_tms_sitespeed.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — Mobile Site Speed (Field Data, FCP Only, Site Level)
+  </figcaption>
+</figure>
 
-{% Aside 'success' %}
-  This type of callout describes a successful action or an error-free status.
-{% endAside %}
+### Site Speed Tools: Field Data, FCP Only, Site Level
+In the second part of the report, the mobile site speed seconds figure === First Contentful Paint (FCP) of the origin from CrUX. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+<figure class="w-figure w-figure--fullbleed">
+  <img src="F2_tms_sitespeed.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — Site Speed Tools (Field Data, FCP Only, Site Level)
+  </figcaption>
+</figure>
 
-## Unordered list
+### Page Speed Tools: Lab Data, FCP Only, URL Level
+The third part of the report, the page speed seconds figure === First Contentful Paint (FCP) of the page (not the site) from Lighthouse. 
 
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+The page speed tool calculates the speed of <b>individual pages</b> on your site.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+<figure class="w-figure w-figure--fullbleed">
+  <img src="F3_tms_pagespeed.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — Page Speed Tools (Lab Data, FCP Only, URL Level)
+  </figcaption>
+</figure>
 
-<ul>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  </li>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
-    <figcaption class="w-figcaption">
-      Fig. 5 — Filled screenshot.
-    </figcaption>
-  </figure>
-  </li>
-  <li>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper.
-  </li>
-</ul>
+FAQs for TMS can be found <a href="https://www.thinkwithgoogle.com/feature/testmysite/faq">here</a>.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+<hr>
 
-```js
-const imagemin = require("imagemin");
-const imageminMozjpeg = require("imagemin-mozjpeg");
+## PageSpeed Insights (PSI)
 
-(async () => {
-  const files = await imagemin(
-    ["source_dir/*.jpg", "another_dir/*.jpg"],
-    "destination_dir",
-    { plugins: [imageminMozjpeg({ quality: 50 })] }
-  );
-  console.log(files);
-})();
-```
+PSI is powered by Lighthouse and includes data from the Chrome User Experience Report (CrUX). It runs on Google Servers, and the high level performance score is === the Lighthouse performance score. The tool allows for in-depth performance analysis of a page during load.
 
-{% Aside 'objective' %}
-  This type of callout defines the goal of a procedure.
-{% endAside %}
+### PSI Performance Score: Lab Data, Blended Score (5 metrics), URL Level
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+Here we see the top level performance gauge shown in PSI. This score is 0-100 and it is a weighted blend of the lab metrics that are measured by Lighthouse. 
 
-```js/1
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
+The high level performance score is the same as it is in Lighthouse, calculated from a weighted blend of 6 lab performance metrics. Information about thresholds can be found <a href="https://developers.google.com/web/tools/lighthouse/v3/scoring">here</a>.
 
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
+<figure class="w-figure w-figure--fullbleed">
+  <img src="F4_psi_lab.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — PSI Performance Score (Lab Data, Blended Metrics, URL Level)
+  </figcaption>
+</figure>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
+### PSI Field Data: Field Data, FCP & FID, URL & Origin Level
 
-{% Aside 'gotchas' %}
-  The value of the `type` attribute should be the MIME type corresponding to the
-  image format. An image's MIME type and its file extension are often similar,
-  but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
-{% endAside %}
+The field data shown in PSI is taken from the <a href="https://developers.google.com/web/tools/chrome-user-experience-report/">Chrome User Experience Report (CrUX)</a>, with FCP and FID being shown for the page that was run, and - if available - for the origin as well. By focusing on 90th and 95th percentile values for our metrics, this ensures that pages meet a minimum standard of performance under the most difficult device and network conditions.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+<figure class="w-figure w-figure--fullbleed">
+  <img src="F5_psi_field.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — PSI Field Data (Field Data, FCP & FID, URL & Origin Level)
+  </figcaption>
+</figure>
 
-```js//1
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
+<hr>
 
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
+## Lighthouse
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+Lighthouse is an open-source, automated tool for improving the quality of web pages. It is available in Chrome DevTools (Audits Panel), among other product surfaces (like PSI and the v5 PSI API). 
 
-```js/6/5
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
+### Lighthouse Performance Score: Lab Data, Blended Score (5 metrics), URL Level
+The high level performance score in Lighthouse is a blend of 5 weighted lab metrics.
 
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg'],
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
+<figure class="w-figure w-figure--fullbleed">
+  <img src="F6_LH_lab.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — Lighthouse Lab Data (Lab Data, Blended Metrics, URL Level)
+  </figcaption>
+</figure>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+<i>*Note: In Lighthouse v5 (launched May 2019), Estimated Input Latency was replaced by Max Potential First Input Delay (FID), but it doesn't change scoring (both metrics had/have a weight of 0).</i>
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-    a massa sit amet ullamcorper.
-  </p>
-  <cite class="w-blockquote__cite">
-    by Jon Doe
-  </cite>
-</blockquote>
+# Conclusion
+It's important that performance scores aren't fetishized; they are meant to be signals for the general health of your page/site, and to help you isolate where to optimize and to diagnose issues. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/fav-kitties-starter?path=src/index.js&amp;previewSize=0"
-    alt="fav-kitties-starter on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
-{% Aside 'key-term' %}
-  This type of callout defines important terminology.
-{% endAside %}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
-
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Lower cost per conversion</p>
-  </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
-    <p class="w-stat__desc">Higher CTR</p>
-  </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">Faster load times</p>
-  </div>
-</div>
-
-<div class="w-text--center">
-  <a href="https://example.com/some.pdf" class="w-button w-button--with-icon" data-icon="file_download">
-    Download case study 
-  </a>
-</div>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
-quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
-ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
-quam sem.
+For more information about performance check out the <a href="https://web.dev/fast">'Fast load times'</a> collection on web.dev.
