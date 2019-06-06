@@ -1,6 +1,8 @@
 ---
-title: YouTube enhances UX with Media Capabilities Web API
-subhead: Learn how Media Capabilities helped YouTube.
+title: YouTube enhances UX with Media Capabilities API
+subhead: |
+  How do you ensure buttery smooth playback when all your users are on
+  different devices?
 authors:
   - beaufortfrancois
 date: 2019-06-05
@@ -9,15 +11,16 @@ hero_position: top
 alt: Youtube application screengrab
 description: |
   In an experiment with the Media Capabilities API, YouTube saw a 7.1% increase
-  in MTBR with only a 0.4% decrease in average resolution of videos served. 
+  in MTBR with only a 0.4% decrease in average resolution of videos served.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - post
   - media
   - ux
+  - case-study
 ---
 
 In an experiment with the Media Capabilities API, YouTube saw a 7.1% increase in
-MTBR with only a 0.4% decrease in average resolution of videos served. 
+MTBR with only a 0.4% decrease in average resolution of videos served.
 
 {% Aside 'key-term' %}
 MTBR (Mean Time Between Rebuffers) is total play time divided by the number of
@@ -52,6 +55,13 @@ likely to have a poor playback experience.
 In Chrome, the Media Capabilities API uses metrics from previous playbacks to
 predict whether future playbacks in the same codec and at the same resolution
 will be smoothly decoded.
+
+<figure class="w-figure w-figure--fullbleed">
+  <img src="./maxime-rossignol-266384-unsplash.jpg" alt="Computer motherboard near graphics card">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — Computer motherboard near graphics card
+  </figcaption>
+</figure>
 
 ## YouTube Case Study
 
