@@ -1,8 +1,7 @@
 ---
 title: YouTube enhances UX with Media Capabilities API
 subhead: |
-  How do you ensure buttery smooth playback when all your users are on
-  different devices?
+  Ensure buttery smooth playback when your users are on different devices.
 authors:
   - beaufortfrancois
 date: 2019-06-05
