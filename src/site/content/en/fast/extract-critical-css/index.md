@@ -70,7 +70,7 @@ There are a number of great tools that can automatically determine the critical 
 
 ### Critical
 
-[Critical](https://github.com/addyosmani/critical) extracts, minifies and inlines above-the-fold CSS and is available as [npm module](https://www.npmjs.com/package/critical). It can be used with Gulp (directly) or with Grunt (as a [plugin](grunt-critical)) and there’s a [webpack plugin](html-critical-webpack-plugin) too.
+[Critical](https://github.com/addyosmani/critical) extracts, minifies and inlines above-the-fold CSS and is available as [npm module](https://www.npmjs.com/package/critical). It can be used with Gulp (directly) or with Grunt (as a [plugin](https://github.com/bezoerb/grunt-critical)) and there’s a [webpack plugin](https://github.com/anthonygore/html-critical-webpack-plugin) too.
 
 It’s a simple tool that takes a lot of thinking out of the process. You don’t even have to specify the stylesheets, Critical automatically detects them. It also supports extracting critical CSS for multiple screen resolutions.
 
