@@ -30,10 +30,8 @@ image.
 It's always a good idea to begin by inspecting a website before adding any
 optimizations.
 
-+ To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
-+ Open DevTools by pressing `CTRL + SHIFT + i` / `CMD + OPTION + i`.
-+ Click on the **Network** panel.
+{% Instruction 'preview' %}
+{% Instruction 'devtools-network' %}
 
 <img class="w-screenshot" src="./network-panel.png" alt="Network panel">
 

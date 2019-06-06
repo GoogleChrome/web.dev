@@ -19,8 +19,7 @@ by preloading and prefetching a few resources:
 
 First measure how the website performs before adding any optimizations.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 Run the Lighthouse performance audit (**Lighthouse > Options > Performance**) on
 the live version of your Glitch (see also
@@ -31,8 +30,7 @@ late:
 
 <img class="w-screenshot" src="./preload-requests-codelab.png" alt="Lighthouse: Preload key requests audit">
 
-Open the **Network** panel in DevTools and take a look at all the resources that
-are fetched.
+{% Instruction 'devtools-network' %}
 
 <img class="w-screenshot" src="./network-panel-one.png" alt="Network panel with late-discovered resource">
 

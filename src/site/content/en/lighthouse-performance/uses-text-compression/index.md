@@ -65,7 +65,7 @@ for examples.
 
 To check if a server compressed a response:
 
-1. Go to the **Network** panel in DevTools.
+{% Instruction 'devtools-network', 'ol' %}
 1. Click the request that caused the response you're interested in.
 1. Click the **Headers** tab.
 1. Check the `content-heading` header in the **Response Headers** section.
@@ -79,7 +79,7 @@ To check if a server compressed a response:
 
 To compare the compressed and de-compressed sizes of a response:
 
-1. Go to the **Network** panel.
+{% Instruction 'devtools-network', 'ol' %}
 1. Enable large request rows.
 See [Use large request rows](https://developers.google.com/web/tools/chrome-devtools/network/reference#request-rows).
 1. Look at the **Size** column for the response you're interested in. The

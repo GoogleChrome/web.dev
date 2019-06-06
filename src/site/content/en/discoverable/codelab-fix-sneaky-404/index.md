@@ -26,8 +26,7 @@ fine!
 
 Unfortunately there is a subtle bug in the app. Let's take a look!
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 - Click on the link that says **Doggos**. Notice how the URL changed.
 - Refresh the page.
 
@@ -51,7 +50,7 @@ This project uses an [express.js](https://expressjs.com/) server written in
 JavaScript. Let's fix the server, so it responds with index.html and the single
 page app will take care of the rest.
 
-- Click the **Remix To Edit** button to make the project editable.
+{% Instruction 'remix' %}
 - Select the **server.js** file
 
 This file contains the server code. It sets up an express.js server and sends
@@ -71,8 +70,7 @@ app.get('/*', function(request, response) {
 The `/*` matches any URL and the server now responds with the web app in
 `index.html` for any given URL.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 Refreshing and opening the links in a new incognito window should now work as
 expected.

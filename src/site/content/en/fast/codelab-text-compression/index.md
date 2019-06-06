@@ -29,8 +29,7 @@ the app's request size.
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
-+ To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 This app, which was also covered in the ["Remove unused
 code"](/remove-unused-code) codelab, lets you vote for your favorite
@@ -38,8 +37,7 @@ kitten. 🐈
 
 Now take a look at how large this application is:
 
-+  Open the DevTools by pressing `Command+Option+i / Ctrl+Shift+i`.
-+  Click on the **Network** panel.
+{% Instruction 'devtools-network' %}
 
 <img class="w-screenshot" src="./network-tab.png" alt="Network panel">
 

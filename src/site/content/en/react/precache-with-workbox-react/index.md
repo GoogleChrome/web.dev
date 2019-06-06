@@ -67,10 +67,9 @@ Here is an example of a React app built with CRA that has a service worker enabl
 
 In order to see which assets are being cached:
 
-+  Mouse over the editor and press the **Show** button to preview the app.
-+  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-+  Click on the **Network** tab.
-+  Reload the application.
+{% Instruction 'preview' %}
+{% Instruction 'devtools-network' %}
+-  Reload the application.
 
 You'll notice that instead of showing the payload size, the `Size` column shows
 a `(from ServiceWorker)` message to indicate that these resources were retrieved
