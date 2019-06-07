@@ -73,9 +73,17 @@ module.exports = (type, listStyle = 'ul') => {
       // used by this component so it's a bit easier to keep everything
       // contained in this one file.
       instruction = html`
-        ${bullet}To preview the site, press the **View App** button, then press the <img src="/images/glitch/fullscreen.svg"
-          alt="fullscreen" style="padding: 4px 8px; opacity: .5; border: 1px solid #c3c3c3; border-radius: 5px;"> button.
+        ${bullet}To preview the site, press **View&nbsp;App**. Then press **Fullscreen** <img src="/images/glitch/fullscreen.svg"
+          alt="fullscreen" style="padding: 4px 8px; opacity: .5; border: 1px solid #c3c3c3; border-radius: 5px;">.
       `;
+      break;
+
+    case 'disable-cache':
+      instruction = html`${bullet}Select the **Disable cache** checkbox.`;
+      break;
+
+    case 'reload':
+      instruction = html`${bullet}Reload the app.`;
       break;
 
     case 'devtools':

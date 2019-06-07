@@ -90,11 +90,9 @@ Lastly, it's a good idea to use Lighthouse to verify these changes. Lighthouse's
 "Defer offscreen images" performance audit will indicate if you've forgotten to
 add lazy loading to any offscreen images.
 
-{% Instruction 'preview' %}
-
-- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
-  the live version of your Glitch and verify that the "Defer offscreen images"
-  audit was passed.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
+1. Verify the **Defer offscreen images** audit was passed.
 
 ![Passing 'Efficiently encode images' audit in Lighthouse](./lighthouse_passing.png)
 

@@ -19,7 +19,7 @@ video.
 First measure how the website performs:
 
 {% Instruction 'preview', 'ol' %}
-{% Instruction 'performance-audit', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
 
 When you're finished, you should see that Lighthouse has flagged the GIF as an
 issue in its "Use video formats for animated content" audit.
@@ -163,7 +163,7 @@ The experience should look the same. So far so good.
 ## Verify with Lighthouse
 
 With the live site open:
-{% Instruction 'performance-audit', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
 
 You should see that the "Use video formats for animated content" audit is now
 passing! Woohoo! 💪

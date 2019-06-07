@@ -12,24 +12,23 @@ related_post: extract-critical-css
 
 Whether you use a UI library or handcraft your styles, shipping a significant amount of CSS delays rendering because the browser must download and parse CSS files before it can show the page.
 
-This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap.com/). UI libraries like Bootstrap speed up the development, but that often comes at the expense of bloated and unnecessary CSS which can slow down your load times. Bootstrap 4 is 187 KB, while [Semantic UI](https://semantic-ui.com/), another UI library, is a whopping 730 KB uncompressed. Even when minified and gzipped, Bootstrap still weighs around 20 KB, well over the [14 KB threshold](/tools-for-extracting-critical-css/#14KB) for the first roundtrip. 
+This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap.com/). UI libraries like Bootstrap speed up the development, but that often comes at the expense of bloated and unnecessary CSS which can slow down your load times. Bootstrap 4 is 187 KB, while [Semantic UI](https://semantic-ui.com/), another UI library, is a whopping 730 KB uncompressed. Even when minified and gzipped, Bootstrap still weighs around 20 KB, well over the [14 KB threshold](/extract-critical-css/#14KB) for the first roundtrip.
 
-[Critical](https://github.com/addyosmani/critical) is a tool that extracts, minifies and inlines [above-the-fold](/tools-for-extracting-critical-css) CSS. This allows above-the-fold content to be rendered as soon as possible, even if CSS for other parts of the page has not yet loaded. In this codelab, you’ll learn how to use Critical's npm module. 
+[Critical](https://github.com/addyosmani/critical) is a tool that extracts, minifies and inlines [above-the-fold](/extract-critical-css) CSS. This allows above-the-fold content to be rendered as soon as possible, even if CSS for other parts of the page has not yet loaded. In this codelab, you’ll learn how to use Critical's npm module.
 
 ## Measure
 
 {% Instruction 'preview' %}
 
-To run a Lighthouse audit on this page:
+To run a Lighthouse audit on this site:
 
-{% Instruction 'devtools', 'ol' %}
-1. Click the **Audits** tab. 
+{% Instruction 'devtools-audits', 'ol' %}
 1. Click **Mobile**.
-{% Instruction 'performance-audit', 'ol' %}
+1. Select the **Performance** checkbox.
 1. Clear the rest of the checkboxes in the Audits section.
-1. Click **Simulated Fast 3G, 4x CPU Slowdown**. 
+1. Click **Simulated Fast 3G, 4x CPU Slowdown**.
 1. Select the **Clear Storage** checkbox. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.
-1. Click **Run Audits**. 
+1. Click **Run Audits**.
 
 ![Audits panel of Chrome DevTools, powered by Lighthouse](lighthouse-audits.png)
 
@@ -139,7 +138,7 @@ critical.generate({
 });
 ```
 
-In this example, `index.html` is both the source file and the destination file because the `inline` option is set to true. Critical first reads the HTML source file, extracts critical CSS and then overwrites `index.html` with critical CSS inlined in the `<head>`. 
+In this example, `index.html` is both the source file and the destination file because the `inline` option is set to true. Critical first reads the HTML source file, extracts critical CSS and then overwrites `index.html` with critical CSS inlined in the `<head>`.
 
 `dimensions` array has two viewport sizes specified: 300 x 500 for extra small screens and 1280 x 720 for standard laptop screens.
 
@@ -174,7 +173,7 @@ refresh
 Glitch console and editor don’t automatically sync, so `refresh` command is neccessary to update the editor with files generated from the console.
 {% endAside %}
 
-Now in the `<head>` tag of `index.html`, generated critical CSS is inlined between `<style>` tags, followed by a script that loads the rest of the CSS asynchronously. 
+Now in the `<head>` tag of `index.html`, generated critical CSS is inlined between `<style>` tags, followed by a script that loads the rest of the CSS asynchronously.
 
 <figure class="w-figure">
   <img src="inline-critical-css.png" alt="index.html with inlined critical CSS" class="w-screenshot">
@@ -190,4 +189,3 @@ Follow the steps from the beginning of the codelab to run Lighthouse performance
 {% Aside 'success' %}
 The filmstrip view shows that content is rendered much sooner and this is reflected in improved paint metrics. And "Eliminate render-blocking resources" has been eliminated! 🎉
 {% endAside %}
-

@@ -27,8 +27,7 @@ used independently to achieve performance results.
 Run Lighthouse to identify opportunities for improvement aligned with the PRPL
 techniques:
 
-{% Instruction 'devtools', 'ol' %}
-1. Click on the **Audits** tab.
+{% Instruction 'devtools-audits', 'ol' %}
 1. Select the **Performance** and **Progressive Web App** checkboxes.
 1. Click **Run Audits** to generate a report.
 
@@ -41,9 +40,9 @@ fetched late:
 
 <img class="w-screenshot" src="./preload-requests.png" alt="Lighthouse: Preload key requests audit">
 
-[**Preload**](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content) 
-is a declarative fetch request that tells the browser to request a resource as 
-soon as possible. Preload critical resources by adding a `<link>` tag with 
+[**Preload**](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+is a declarative fetch request that tells the browser to request a resource as
+soon as possible. Preload critical resources by adding a `<link>` tag with
 `rel="preload"` to the head of your HTML document:
 
 ```html
@@ -53,7 +52,7 @@ soon as possible. Preload critical resources by adding a `<link>` tag with
 The browser sets a more appropriate priority level for the resource in order to
 try to download it sooner while not delaying the `window.onload` event.
 
-For more information about preloading critical resources, refer to the 
+For more information about preloading critical resources, refer to the
 [Preload critical assets](/preload-critical-assets) guide.
 
 ## Render the initial route as soon as possible
@@ -121,8 +120,8 @@ To send a smaller JavaScript payload that contains only the code needed when a
 user initially loads your application, split the entire bundle and [lazy load](/reduce-javascript-payloads-with-code-splitting) chunks on demand.
 
 Once you've managed to split your bundle, preload the chunks that are more
-important (see the [Preload critical assets](/preload-critical-assets) guide). 
-Preloading ensures more important resources are fetched and downloaded sooner 
+important (see the [Preload critical assets](/preload-critical-assets) guide).
+Preloading ensures more important resources are fetched and downloaded sooner
 by the browser.
 
 Aside from splitting and loading different JavaScript chunks on demand,
@@ -135,10 +134,10 @@ outside the device viewport, when a page is loaded (see [Use lazysizes to lazylo
 
 ## Next Steps
 
-Now that you understand some of the basic concepts behind the PRPL pattern, 
-continue to the next guide in this section to learn more. 
-It's important to remember that not all of the techniques need to be 
-applied together. Any efforts made with any of the following will provide 
+Now that you understand some of the basic concepts behind the PRPL pattern,
+continue to the next guide in this section to learn more.
+It's important to remember that not all of the techniques need to be
+applied together. Any efforts made with any of the following will provide
 noticeable performance improvements.
 
 +  **Push** (or **preload**) critical resources.

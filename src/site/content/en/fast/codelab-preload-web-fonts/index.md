@@ -17,7 +17,7 @@ any flash of unstyled text (FOUT).
 
 First measure how the website performs before adding any optimizations.
 {% Instruction 'preview', 'ol' %}
-{% Instruction 'performance-audit', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
 
 The Lighthouse report that is generated will show you the fetching sequence of resources under **Maximum critical path latency**.
 
@@ -28,7 +28,7 @@ In the above audit the web fonts are part of the critical request chain and fetc
 Here is the sequence of the resources fetched in the application:
 
 <img class="w-screenshot" src="./network-before-preload.png" alt="Webfonts are lazy loaded.">
- 
+
 ## Preloading Web fonts.
 In order to avoid FOUT, you can preload web fonts that are required immediately. Add the `Link` element for this application at the head of the document:
 
@@ -39,11 +39,11 @@ In order to avoid FOUT, you can preload web fonts that are required immediately.
 </head>
 ```
 
-The `as="font" type="font/woff2"` attributes tell the browser to download this resource as a font and helps in prioritization of the re­source queue. 
+The `as="font" type="font/woff2"` attributes tell the browser to download this resource as a font and helps in prioritization of the re­source queue.
 
 The `crossorigin` attribute indicates whether the resource should be fetched with a CORS request as the font may come from a different domain. Without this attribute, the preloaded font is ignored by the browser.
 
-Since Pacifico-Bold is used in the page header, we added a preload tag to fetch it even sooner. It isn’t important to preload the Pacifico.woff2 font because it styles the text that is below the fold. 
+Since Pacifico-Bold is used in the page header, we added a preload tag to fetch it even sooner. It isn’t important to preload the Pacifico.woff2 font because it styles the text that is below the fold.
 
 Reload the application and run lighthouse again. Check the **Maximum critical path latency** section.
 

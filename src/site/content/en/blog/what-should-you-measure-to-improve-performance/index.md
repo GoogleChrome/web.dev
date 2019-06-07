@@ -1,5 +1,5 @@
 ---
-title: How can performance improve conversion?
+title: What should you measure to improve performance?
 subhead: Strategies to measure performance at each stage in the purchase funnel
 authors:
   - martinschierle

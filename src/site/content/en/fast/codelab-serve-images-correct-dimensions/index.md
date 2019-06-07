@@ -16,10 +16,9 @@ related_post: serve-images-with-correct-dimensions
 This Glitch is small enough that its images could be inspected by hand. However
 for most websites, using a tool like Lighthouse to automate this is essential.
 
-{% Instruction 'preview' %}
-
-- Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
-  and look for the results of the **Properly Size Images** audit.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
+1. Look for the results of the **Properly Size Images** audit.
 
 <img class="w-screenshot" src="./notfixed-properly-size-images.png" alt="The
 properly size images audit failing in Lighthouse.">
@@ -131,7 +130,7 @@ For the Nexus 5x, the optimal size of `flower_photo.jpg` would be 460 pixels
 wide (1080 pixels * . 5). This is much smaller than our resized image.
 
 Should you resize the image to be even smaller? Probably. However, the answer to
-this isn't always clear-cut. 
+this isn't always clear-cut.
 
 The trade-off here is between image quality on high-resolution devices and
 performance. It's easy to overestimate how closely users will be inspecting
