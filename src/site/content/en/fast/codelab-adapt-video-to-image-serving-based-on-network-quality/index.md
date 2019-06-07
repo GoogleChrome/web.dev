@@ -143,10 +143,9 @@ if (navigator.connection.effectiveType === '4g') {
 
 To test it yourself:
 
-1. Mouse over the editor, click **App** button, then click **Show** to preview the app.
-2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
-3. Click the **Network** tab.
-4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'devtools-network', 'ol' %}
+1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
 
 <img class="w-screenshot" src="./devtools_network_throttling.png" alt='DevTools Network tab with Fast 3G throttling option highlighted'>
 
@@ -186,11 +185,10 @@ Here’s the final state of the [app on Glitch](https://glitch.com/~adaptive-ser
 
 To test it again:
 
-1. Mouse over the editor, click **App** button, then click **Show** to preview the app.
-2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
-3. Click the **Network** tab.
-4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
-5. Reload the page.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'devtools-network', 'ol' %}
+1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
+1. Reload the page.
 
 The app will update the network information to **3g**:
 
