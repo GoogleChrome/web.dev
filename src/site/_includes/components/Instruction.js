@@ -150,7 +150,7 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`
         ${shared.devtools}
         ${shared.audits}
-        ${bullet}Check the **Performance** checkbox.
+        ${bullet}Select the **Performance** checkbox.
         ${shared.runAudit}
       `;
       break;
