@@ -61,7 +61,7 @@ module.exports = (type, listStyle = 'ul') => {
 
     case 'console':
       instruction = html`
-        ${bullet}Click the **Tools** button.
+        ${bullet}Click **Tools**.
         ${bullet}Click the **Logs** button.
         ${bullet}Click the **Console** button.
       `;
