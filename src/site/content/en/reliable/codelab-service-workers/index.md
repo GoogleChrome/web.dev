@@ -124,7 +124,7 @@ the service worker in action.
 
 {% Instruction 'preview' %}
 {% Instruction 'devtools' %}
--  Click on the **Console** tab.
+{% Instruction 'devtools-console', 'ul' %}
 
 You should see something like the following log messages,
 showing that the service worker has been installed and activated:

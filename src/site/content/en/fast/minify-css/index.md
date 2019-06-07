@@ -64,12 +64,13 @@ The resulting report shows that up to **16KB** can be saved from the **animate.c
 
 <img class="screenshot" width="700px" height="150px" src="./lighthouse-unoptimized.png" alt="Lighthouse - Minify CSS opportunity.">
 
-Now you'll inspect the content of the CSS:
+Now inspect the content of the CSS:
 
-1. Open the [Fav Kitties site](https://fav-kitties-animated.glitch.me/) in Chrome (it might take a while for Glitch servers to respond the first time).
+1. Open the [Fav Kitties site](https://fav-kitties-animated.glitch.me/) in Chrome. (It might take a while for Glitch servers to respond the first time.)
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the **CSS** filter.
-1. Make sure **Disable Cache** is checked and reload the page.
+1. Select the **Disable cache** checkbox.
+1. Reload the page.
 
 <img class="w-screenshot" width="700px" height="120px" src="./cdt-css-unoptimized.png" alt="DevTools CSS unoptimized trace">
 

@@ -140,7 +140,7 @@ The first endpoint (line 5) does not have any response header set, it just sends
 a file in response.
 
 {% Instruction 'devtools' %}
-- Click on the **Console** tab.
+{% Instruction 'devtools-console', 'ul' %}
 - Try the following command:
 
 ```js

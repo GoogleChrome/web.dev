@@ -145,7 +145,7 @@ To test it yourself:
 
 {% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-network', 'ol' %}
-1. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
+1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
 
 <img class="w-screenshot" src="./devtools_network_throttling.png" alt='DevTools Network tab with Fast 3G throttling option highlighted'>
 
@@ -187,7 +187,7 @@ To test it again:
 
 {% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-network', 'ol' %}
-1. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
+1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
 1. Reload the page.
 
 The app will update the network information to **3g**:

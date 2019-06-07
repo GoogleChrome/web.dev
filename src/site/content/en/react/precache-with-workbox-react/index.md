@@ -65,7 +65,7 @@ Here is an example of a React app built with CRA that has a service worker enabl
   </iframe>
 </div>
 
-In order to see which assets are being cached:
+To see which assets are being cached:
 
 {% Instruction 'preview' %}
 {% Instruction 'devtools-network' %}

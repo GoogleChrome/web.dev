@@ -11,7 +11,7 @@ glitch: imagemin-webpack
 related_post: use-imagemin-to-compress-images
 ---
 
-## Setup the Imagemin webpack plugin
+## Set up the Imagemin webpack plugin
 
 This Glitch already contains `webpack`, `webpack-cli`, and 
 `imagemin-webpack-plugin`. To add the configuration for Imagemin, you'll need
@@ -215,7 +215,7 @@ module.exports = {
 }
 ```
 
-## Re-run webpack & verify results with Lighthouse
+## Re-run webpack and verify results with Lighthouse
 
 - In the console, re-run webpack:
 

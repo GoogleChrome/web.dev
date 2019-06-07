@@ -27,7 +27,7 @@ fine!
 Unfortunately there is a subtle bug in the app. Let's take a look!
 
 {% Instruction 'preview' %}
-- Click on the link that says **Doggos**. Notice how the URL changed.
+- Click the **Doggos** link. Notice how the URL changed.
 - Refresh the page.
 
 You get a page with "`Cannot GET /doggos`" on it - a sneaky 404. It is "sneaky",
@@ -51,7 +51,7 @@ JavaScript. Let's fix the server, so it responds with index.html and the single
 page app will take care of the rest.
 
 {% Instruction 'remix' %}
-- Select the **server.js** file
+- Select the `server.js` file.
 
 This file contains the server code. It sets up an express.js server and sends
 the content of index.html. The route setup in line 15 only serves the web app

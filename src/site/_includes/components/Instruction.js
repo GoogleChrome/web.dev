@@ -62,8 +62,8 @@ module.exports = (type, listStyle = 'ul') => {
     case 'console':
       instruction = html`
         ${bullet}Click **Tools**.
-        ${bullet}Click the **Logs** button.
-        ${bullet}Click the **Console** button.
+        ${bullet}Click **Logs**.
+        ${bullet}Click **Console**.
       `;
       break;
 
@@ -186,7 +186,7 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`
         ${shared.devtools}
         ${shared.audits}
-        ${bullet}Check the **Best practices** checkbox.
+        ${bullet}Select the **Best practices** checkbox.
         ${shared.runAudit}
       `;
       break;

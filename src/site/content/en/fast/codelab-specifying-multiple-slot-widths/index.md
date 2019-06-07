@@ -15,7 +15,7 @@ related_post: serve-responsive-images
 
 {% Instruction 'preview' %}
 
-- Reload the app in different sized browser windows to see the browser load
+- Reload the app in differently sized browser windows to see the browser load
 different images and use different layouts at different browser sizes.
 
 ## View the code

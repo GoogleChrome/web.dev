@@ -24,10 +24,11 @@ To run a Lighthouse audit on this page:
 
 {% Instruction 'devtools', 'ol' %}
 1. Click the **Audits** tab. 
-1. Make sure the **Mobile** radio button is selected. 
-1. Make sure the **Performance** checkbox is enabled. You can disable the rest of the checkboxes in the Audits section.
-1. Make sure the **Simulated Fast 3G, 4x CPU Slowdown** radio button is selected. 
-1. Make sure that the **Clear Storage** checkbox is enabled. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.
+1. Click **Mobile**.
+{% Instruction 'performance-audit', 'ol' %}
+1. Clear the rest of the checkboxes in the Audits section.
+1. Click **Simulated Fast 3G, 4x CPU Slowdown**. 
+1. Select the **Clear Storage** checkbox. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.
 1. Click **Run Audits**. 
 
 ![Audits panel of Chrome DevTools, powered by Lighthouse](lighthouse-audits.png)

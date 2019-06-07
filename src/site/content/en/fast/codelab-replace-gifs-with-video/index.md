@@ -35,7 +35,7 @@ as well.
 
 ## Open the console
 
-Double-check that FFmpeg is installed and working.
+Double-check that FFmpeg is installed and working:
 
 {% Instruction 'remix', 'ol' %}
 {% Instruction 'console', 'ol' %}

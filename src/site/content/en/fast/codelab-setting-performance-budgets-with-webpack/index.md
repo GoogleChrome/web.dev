@@ -31,8 +31,7 @@ This codelab already contains the app bundled with webpack.
 
 {% Instruction 'remix', 'ol' %}
 {% Instruction 'console', 'ol' %}
-1. To get a color-coded list of assets and their sizes, in the console
-   type:
+1. To get a color-coded list of assets and their sizes, type `webpack` in the console.
 
 ```bash
 webpack

@@ -27,7 +27,7 @@ you see in this codelab.
 Navigate to the Network panel to see the network traffic for the demo
 application.
 
-{% Instruction 'preview' %}
+{% Instruction 'preview', 'ol' %}
 
 {% Instruction 'devtools-network', 'ol' %}
 1. Reload the page to see the network traffic.

@@ -30,8 +30,8 @@ Since webpack is used in this application, any changes made to the code will tri
 Like always, it's important to first measure how well a website performs before
 attempting to add any optimizations.
 
-{% Instruction 'preview' %}
-{% Instruction 'devtools-network' %}
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'devtools-network', 'ol' %}
 -  Make sure `Disable Cache` is checked and reload the app.
 
 <img class="w-screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2 KB JavaScript bundle.">
