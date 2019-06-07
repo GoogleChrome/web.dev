@@ -159,7 +159,7 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`
         ${shared.devtools}
         ${shared.audits}
-        ${bullet}Check the **SEO** checkbox.
+        ${bullet}Select the **SEO** checkbox.
         ${shared.runAudit}
       `;
       break;
