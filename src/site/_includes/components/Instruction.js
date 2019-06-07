@@ -78,6 +78,10 @@ module.exports = (type, listStyle = 'ul') => {
       `;
       break;
 
+    case 'disable-cache':
+      instruction = html`${bullet}Select the **Disable cache** checkbox.`;
+      break;
+
     case 'devtools':
     case 'devtools-elements':
     case 'devtools-console':
