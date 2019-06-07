@@ -15,26 +15,8 @@
  */
 
 const md = require('markdown-it')();
-
-/**
- * Capitalize the first letter of a word.
- * @param {string} str
- * @return {string} A capitalized copy of the string.
- */
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-/**
- * Title case a string of dash separated words
- * @param {string} str
- * @return {string} A title cased copy of the string.
- */
-function titleCase(str) {
-  return str.split('-').map((part) => {
-    return capitalize(part);
-  }).join(' ');
-}
+const capitalize = require('../../_filters/capitalize');
+const titleCase = require('../../_filters/title-case');
 
 module.exports = (content, type='note') => {
   let prefix;
