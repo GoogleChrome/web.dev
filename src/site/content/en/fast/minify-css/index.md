@@ -160,7 +160,8 @@ To inspect the size and content of the files:
 
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the **CSS** filter.
-1. Make sure **Disable Cache** is checked and reload the page.
+1. Select the **Disable cache** checkbox if it isn't already.
+1. Reload the page.
 
 <img class="w-screenshot" width="700px" height="120px" src="./cdt-css-optimized.png" alt="DevTools CSS unoptimized response">
 
