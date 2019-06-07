@@ -49,7 +49,7 @@ module.exports = (type, listStyle = 'ul') => {
 
   // These are common phrases shared across multiple instructions.
   const shared = {
-    devtools: `${bullet}Press \`CTRL + SHIFT + J\` or \`CMD + OPTION + J\` (Mac), to open DevTools.`,
+    devtools: `${bullet}Press \`Control+Shift+J\` (or \`Command+Option+J\` on Mac) to open DevTools.`,
     audits: `${bullet}Click the **Audits** tab.`,
     runAudit: `${bullet}Click **Run audits**.`,
   };
