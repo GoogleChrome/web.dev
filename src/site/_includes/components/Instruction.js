@@ -56,7 +56,7 @@ module.exports = (type, listStyle = 'ul') => {
 
   switch (type) {
     case 'remix':
-      instruction = `${bullet}Click the **Remix to Edit** button to make the project editable.`;
+      instruction = `${bullet}Click **Remix to Edit** to make the project editable.`;
       break;
 
     case 'console':
