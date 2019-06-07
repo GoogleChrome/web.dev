@@ -177,7 +177,7 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`
         ${shared.devtools}
         ${shared.audits}
-        ${bullet}Check the **Progressive Web App** checkbox.
+        ${bullet}Select the **Progressive Web App** checkbox.
         ${shared.runAudit}
       `;
       break;
