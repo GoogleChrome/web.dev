@@ -168,7 +168,7 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`
         ${shared.devtools}
         ${shared.audits}
-        ${bullet}Check the **Accessibility** checkbox.
+        ${bullet}Select the **Accessibility** checkbox.
         ${shared.runAudit}
       `;
       break;
