@@ -16,10 +16,9 @@ related_post: serve-images-with-correct-dimensions
 This Glitch is small enough that its images could be inspected by hand. However
 for most websites, using a tool like Lighthouse to automate this is essential.
 
-{% Instruction 'preview' %}
-
-- Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
-  and look for the results of the **Properly Size Images** audit.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
+1. Look for the results of the **Properly Size Images** audit.
 
 <img class="w-screenshot" src="./notfixed-properly-size-images.png" alt="The
 properly size images audit failing in Lighthouse.">

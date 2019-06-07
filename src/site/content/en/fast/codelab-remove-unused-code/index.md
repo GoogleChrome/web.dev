@@ -34,11 +34,9 @@ Go ahead and click on your favorite kitten! Firebase's
 used in this application which is why the score updates in real-time and is
 synchronized with every other person using the application. 🐈
 
-{% Instruction 'devtools-network' %}
-
-<img class="w-screenshot" src="./network.png" alt="Network tab">
-
-Make sure `Disable Cache` is checked and reload the app.
+{% Instruction 'devtools-network', 'ol' %}
+{% Instruction 'disable-cache', 'ol' %}
+{% Instruction 'reload', 'ol' %}
 
 <img class="w-screenshot" src="./main-bundle.png" alt="Original bundle size of 992 KB">
 

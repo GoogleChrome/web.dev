@@ -133,6 +133,6 @@ Here are the changes you can expect to make in order to implement this:
 Run Lighthouse to verify the site is using `font-display: swap` to display
 text:
 
-{% Instruction 'performance-audit', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
 
 Confirm the **Ensure text remains visible during webfont load** audit is passing.

@@ -22,10 +22,9 @@ This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap
 
 To run a Lighthouse audit on this site:
 
-{% Instruction 'devtools', 'ol' %}
-1. Click the **Audits** tab. 
+{% Instruction 'devtools-audits', 'ol' %}
 1. Click **Mobile**.
-{% Instruction 'performance-audit', 'ol' %}
+1. Select the **Performance** checkbox.
 1. Clear the rest of the checkboxes in the Audits section.
 1. Click **Simulated Fast 3G, 4x CPU Slowdown**. 
 1. Select the **Clear Storage** checkbox. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.

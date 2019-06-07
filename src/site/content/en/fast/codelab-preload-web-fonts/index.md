@@ -17,7 +17,7 @@ any flash of unstyled text (FOUT).
 
 First measure how the website performs before adding any optimizations.
 {% Instruction 'preview', 'ol' %}
-{% Instruction 'performance-audit', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
 
 The Lighthouse report that is generated will show you the fetching sequence of resources under **Maximum critical path latency**.
 

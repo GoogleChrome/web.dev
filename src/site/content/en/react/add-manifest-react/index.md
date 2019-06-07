@@ -85,8 +85,7 @@ file:
 To find out if all the properties are working correctly in this example:
 
 {% Instruction 'preview' %}
-{% Instruction 'devtools' %}
--  Click on the **Application** panel.
+{% Instruction 'devtools-application' %}
 -  Click the **Manifest** tab.
 
 <img class="w-screenshot w-screenshot--filled" src="./devtools.png" alt="DevTool's Manifest tab shows the properties from the app manifest file.">

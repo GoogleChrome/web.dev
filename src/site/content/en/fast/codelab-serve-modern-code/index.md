@@ -30,19 +30,17 @@ image.
 It's always a good idea to begin by inspecting a website before adding any
 optimizations.
 
-{% Instruction 'preview' %}
-{% Instruction 'devtools-network' %}
-
-<img class="w-screenshot" src="./network-panel.png" alt="Network panel">
-
-+ Make sure **Disable Cache** is checked and reload the app.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'devtools-network', 'ol' %}
+{% Instruction 'disable-cache', 'ol' %}
+{% Instruction 'reload', 'ol' %}
 
 <img class="w-screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
 
 Over 80 KB is used for this application! Time to find out if parts of the bundle
 aren't being used.
 
-+ With DevTools open, press `CMD + SHIFT + p` / `CTRL + SHIFT + p` to open
++ With DevTools open, press `Command+Shift+p` / `Control+Shift+p` to open
 the Command Menu. Search for "coverage".
 
 <img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">

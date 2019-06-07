@@ -25,7 +25,7 @@ traffic sources.
 Run Lighthouse on a page that's representative of content that you want a search
 engine to see:
 
-{% Instruction 'seo-audit', 'ol' %}
+{% Instruction 'audit-seo', 'ol' %}
 
 Lighthouse generates a report for your page so you can see areas where you could
 improve SEO for your site. For more information, see [Discover performance
