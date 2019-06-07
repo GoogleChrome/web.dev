@@ -31,9 +31,9 @@ that the Progressive Web App can be installed and an install button can be shown
 to the user. The `beforeinstallprompt` event is fired when the PWA meets the
 criteria for installability.
 
-1. Click the **Remix To Edit** button to make the project editable.
+{% Instruction 'remix', 'ol' %}
 1. Add a `beforeinstallprompt` event handler to the `window` object.
-1. Save the `event` as a global variable, we'll need it later to show the
+1. Save the `event` as a global variable; we'll need it later to show the
     prompt.
 1. Unhide the install button.
 

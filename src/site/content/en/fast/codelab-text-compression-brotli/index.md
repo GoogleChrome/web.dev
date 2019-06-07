@@ -32,9 +32,8 @@ application.
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
-1. Click the **Remix to Edit** button to make the project editable.
-1. To preview the site, mouse over the editor, press the **App** button, then
-   the **Show** button.
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'preview', 'ol' %}
 
 In the previous [Minify and compress network payloads
 codelab](/codelab-text-compression),

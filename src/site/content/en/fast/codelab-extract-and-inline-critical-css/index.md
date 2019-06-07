@@ -18,24 +18,18 @@ This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap
 
 ## Measure
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 To run a Lighthouse audit on this page:
 
-1. Press **Control+Shift+J** or **Command+Option+J** (Mac) to open DevTools.
-
-2. Click the **Audits** tab. 
-
-3. Make sure the **Mobile** radio button is selected. 
-
-4. Make sure the **Performance** checkbox is enabled. You can disable the rest of the checkboxes in the Audits section.
-
-5. Make sure the **Simulated Fast 3G, 4x CPU Slowdown** radio button is selected. 
-
-6. Make sure that the **Clear Storage** checkbox is enabled. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.
-
-7. Click **Run Audits**. 
+{% Instruction 'devtools', 'ol' %}
+1. Click the **Audits** tab. 
+1. Click **Mobile**.
+{% Instruction 'performance-audit', 'ol' %}
+1. Clear the rest of the checkboxes in the Audits section.
+1. Click **Simulated Fast 3G, 4x CPU Slowdown**. 
+1. Select the **Clear Storage** checkbox. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.
+1. Click **Run Audits**. 
 
 ![Audits panel of Chrome DevTools, powered by Lighthouse](lighthouse-audits.png)
 
@@ -50,7 +44,7 @@ Lighthouse is here to help you fix performance issues, so look for solutions in 
 
 ## Optimize
 
-Click the **Remix to Edit** button to make the project editable.
+{% Instruction 'remix' %}
 
 To speed things up, Critical is already installed and an empty configuration file is included in the codelab.
 
