@@ -3,7 +3,7 @@ title: Performance Tooling Score Differences
 subhead: Why do I get different scores in Test My Site, PageSpeeD Insights, and Lighthouse?
 authors:
   - egsweeny
-date: 2019-07-05
+date: 2019-06-05
 hero: hero.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
