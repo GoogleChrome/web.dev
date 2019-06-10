@@ -17,7 +17,7 @@ tags:
 ---
 
 ## History ⏳
-The term [intrinsic](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size), with regard to the web, is used to help us talk specifically about a **type or strategy** to calculating element sizing.
+The term [intrinsic](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size), with regard to the web, is used to help us talk specifically about a **strategy to calculating element sizing.**
 
 {% Aside 'key-term' %}
   The **intrinsic size** of an element is the size it would be based on its content, if no external factors were applied to it.
@@ -41,8 +41,11 @@ She describes intrinsic web design so well that I'd like to pull directly from *
 </figure>
 
 #### So **stoooooked** on this approach to layout!
+A way I like to think of it is self reflective. You, yes you the reader (I'm busting the 4th wall or whatever) what's your height? Stand up, no shoes on, just you. Ok, now what's your width? **That's your intrinsic size.** Now extend your arms to the ceiling, that's your `max-content` size. Now get into the fetal position, haha, that's your `min-content` size. Those sizes are relative to you, and they're quite personal. **Intrinsic properties are very personal.** Okay, now think about a friend, family member, etc, and think about their natural height, width, max-content and min-content. It's different from yours no?
 
-I've been exploring, building and prototyping with it, and it's certainly a **"new era of layout"** we're in! I must **share the joy and power I've acquired** through these endeavors and research. Do you like joy and power? lol, hopefully this guide delivers.
+**Intrinsic design is about thinking and treating your content just as you would a fellow human, that's dynamic, different and unique.** We should create layouts that are respectful of our content's needs as to not squish something beyond it's min-content or extend it beyond it's max-content. Think about our layouts more like lining up a group of friends, as opposed to faceless boxes. This will help you be mindful of the dynamic uniqueness of each node of content we wish to layout. We want to encourage and revel in the content's personal and intrinsic sizing needs, even if they change without our control.
+
+I've been exploring, building and prototyping with intrinsic design as a strategy and mentality, and it's certainly a **"new era of layout"** we're in! I must **share the joy and power I've acquired** through these endeavors and research. Do you like joy and power? lol, hopefully this guide delivers.
 
 <br>
 
