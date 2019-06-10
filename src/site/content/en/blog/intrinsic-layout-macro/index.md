@@ -24,7 +24,7 @@ tags:
 
 
 ## &#60;Discovery-Phase&#62;
-I find overlaying estimated macro grid tracks and areas on a design pacify the initially overwhelming nature of starting from scratch. I use my wrong initial assumptions to fail fast where it's cheap to retry. I'm not drawing tracks to inform my code, I'm drawing tracks to inform my strategy.
+I find overlaying estimated grid lines and tracks on a design pacify the initially overwhelming nature of starting from scratch. I use my wrong initial assumptions to fail fast where it's cheap to retry. I'm not drawing tracks to inform my code, I'm drawing tracks to inform my strategy.
 
 **I don't expect my groupings to be right, but I expect it to help me get to the right solution faster.** It's a discovery phase where I'm learning the relationships between elements by grouping them (probably wrong), and adjusting.
 
@@ -33,6 +33,9 @@ I find overlaying estimated macro grid tracks and areas on a design pacify the i
     <source type="image/jpeg" srcset="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-initial-estimate%402x.jpg 2x"/>
     <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-macro/macro-initial-estimate.jpg" alt="Full page design mockup with estimated rows and columns highlighted" class="screenshot">
   </picture>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    I used semi-transparent blocks to draw groups, rows and columns. Hot pink areas show overlaps where I can learn about the shared or conflicting grid areas. Gridlines emerge as a result, as well as areas for margin and gap.
+  </figcaption>
 </figure>
 
 {% Aside 'objective' %}
@@ -109,7 +112,7 @@ These are places for me to aknowledge the consistencies and inconsistencies bein
 <br>
 
 #### Layout Concerns
-1. Our side `<aside>` and site name share the same column, but they're in different places in the DOM tree
+1. Our `<aside>` and site name share the same column, but they're in different places in the DOM tree
 1. `<nav>` and `<main>` share column guides but we don't have [subgrid](https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/) to enforce or enable shared tracks
 1. The rails will need to collapse on mobile changing alignments of the account and brand logo
 
@@ -132,7 +135,9 @@ Even if my first layout works great, I like going back and looking for places to
   1 grid to rule them all 💍
 {% endAside %}
 
-In this iteration, we follow our gut and do our best to articulate one grid to handle this macro layout. It looks like we can do **the whole grid with 1 definition using a slotted layout**. We have identifiable elements and grid lines, so let's translate them to [grid-template-areas](<https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas>), **place** our elements in the **defined zones**, and go from there.
+Let's follow our gut and code one grid to handle this whole macro layout. Judging from our estimated gridlines, it looks like we can do **it with 1 slotted layout via** `grid-template-areas`. We have identifiable elements and grid lines, so let's translate them to [grid-template-areas](<https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas>) and **place** our elements in the **defined zones**. We'll also write some media queries so this layout can handle mobile viewports. Lastly take a design challenge to add a footer once we're all done, see how our layout can handle an additional macro layout element.
+
+What we make works, and there's aspects of it that are great, but it's tedious and needy nature emerge as we respond to mobile and add a new element.
 
 <a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v1">
   Codelab: Slotted Macro Layout
@@ -150,9 +155,9 @@ In this iteration, we follow our gut and do our best to articulate one grid to h
   2 grids that do less
 {% endAside %}
 
-In this refactor, I pulled the `<header>` element out. Upon a closer look, I noticed that the `<header>` didnt need to be in a grid at all! It's a full width element from biggest screens to smallest. **Felt like I overarchitected the first grid** / incurred code debt to be pushing that naturally responsive element into a more complicated layout.
+In this refactor, I removed `grid-template-areas` code, pulled the `<h2 class="greeting">` element out from grid's control and added a `<main>` element. Upon a closer look, I noticed that the `<h2 class="greeting">` didnt need to be in a grid at all, it's a full width element from biggest screens to smallest. The `<main>` tag not only adds some nice semantics to our markup layout, but isolates the 2 nodes that need to be horizontally layed out: `<aside>` and `<article>`. **Felt like I overarchitected the first grid** / incurred code debt to be pushing naturally responsive elements into a more complicated slot based layout.
 
-Post refactor, 1 grid manages the "stack" and the 2nd manages the aside and articles.
+Post refactor, 1 grid manages the vertical "stack" and the 2nd manages the aside and article. Less CSS, less responsible CSS, and more flexibility. Really shows it's true colors when chaos shows up.
 
 <a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v2">
   Codelab: Intrinsic Macro Grids
