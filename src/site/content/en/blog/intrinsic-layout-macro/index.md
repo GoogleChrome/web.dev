@@ -10,7 +10,8 @@ date: 2019-03-05
 codelabs:
   - codelab-intrinsic-layout-macro-v1
   - codelab-intrinsic-layout-macro-v2
-hero: macro.jpg
+hero: hero.jpg
+hero_position: top
 tags:
   - post
   - layout
