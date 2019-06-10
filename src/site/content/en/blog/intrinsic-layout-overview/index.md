@@ -7,7 +7,7 @@ authors:
 description: Intrinsic layout starts with healthy layout strategies that respond to ever-changing & user generated content.
 alt: A full page design is shown alluding to a large amount of layout work
 web_lighthouse: N/A
-date: 2019-03-05
+date: 2019-06-10
 hero: hero.jpg
 hero_position: top
 tags:

@@ -6,7 +6,7 @@ authors:
 subhead: Macro layouts are the top most layouts on the page, like the white space around your white space
 description: Macro layouts are the top most layouts on the page, like the white space around your white space
 web_lighthouse: N/A
-date: 2019-03-05
+date: 2019-06-10
 codelabs:
   - codelab-intrinsic-layout-macro-v1
   - codelab-intrinsic-layout-macro-v2
