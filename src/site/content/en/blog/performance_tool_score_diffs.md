@@ -1,6 +1,6 @@
 ---
 title: Performance Tooling Score Differences
-subhead: I get different scores in Test My Site, PageSpee Insights, and Lighthouse - why?
+subhead: Why do I get different scores in Test My Site, PageSpeeD Insights, and Lighthouse?
 authors:
   - egsweeny
 date: 2019-07-05
