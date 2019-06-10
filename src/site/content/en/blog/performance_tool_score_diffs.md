@@ -176,4 +176,4 @@ The high level performance score in Lighthouse is a blend of 5 weighted lab metr
 # Conclusion
 It's important that performance scores aren't fetishized; they are meant to be signals for the general health of your page/site, and to help you isolate where to optimize and to diagnose issues. 
 
-For more information about performance check out the <a href="https://web.dev/fast">'Fast load times'</a> collection on web.dev.
+For more information about performance check out the [Fast load times](/fast) collection.
