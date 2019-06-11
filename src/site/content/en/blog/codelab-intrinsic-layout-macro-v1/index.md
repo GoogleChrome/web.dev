@@ -157,7 +157,7 @@ grid-template-rows:
 <br>
 
 ## Responsive Final Touches
-Our designers didn't provide mobile comps, so we'll use **trial and reason.** I found that 768px, a typical portait and tablet size, is a great point to collapse our grid into a stack. This can be achieved with out slotted layout like so.
+Our designers didn't provide mobile comps, so we'll use **trial and reason.** I found that 768px, a typical portait and tablet size, is a great point to collapse our grid into a stack. This can be achieved with our slotted layout like so.
 
 ```css/26-34
 body {
@@ -211,11 +211,13 @@ Well, **36 lines of code** isn't too bad for a responsive layout. Was even satis
 
 <br>
 
-## Chaos Time 😈
-
 {% Aside 'warning' %}
   Changes from the design team! 😲
 {% endAside %}
+
+<br>
+
+## Chaos Time 😈
 
 {% Aside 'objective' %}
 **Remix the codelab to the right** and complete the following tasks
@@ -246,7 +248,7 @@ When you're done, **remember the level of effort of handling this change**. Also
 ## Conclusion
 Grid template areas works fine, but wow when we uncommented that `<footer>` **it really was not intuitive what happened.** Our footer was tiny, crammed into the first open cell, and not under our content (where it logically should be). **When we start placing items we break out of flow**, almost like when you make an element positioned absolute.
 
-Ok, so.. next, **we refactor to remedy some of these trials we learned** through our first grid. This time, we want less code, less selectors, and some flexibility with our container children. We also want the ability to add footers without adding to our CSS so much, or at all.
+Next, **we refactor to remedy some of these trials we learned** through our first grid. This time, we want less code, less selectors, and some flexibility with our container children. We also want the ability to add footers without adding to our CSS so much, or at all.
 
 {% Aside 'codelab' %}
   [Next Codelab (the refactor): Intrinsic Macro Grids](/codelab-intrinsic-layout-macro-v2)
