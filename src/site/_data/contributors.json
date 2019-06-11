@@ -627,6 +627,7 @@
     "country": "JP",
     "homepage": "https://blog.agektmr.com",
     "twitter": "agektmr",
+    "github": "agektmr",
     "description": {
       "en": "Developer Advocate in Tokyo"
     }
@@ -1316,5 +1317,16 @@
     "country": "US",
     "twitter": "geddski",
     "github": "geddski"
+  },
+  "danyao": {
+    "name": {
+      "given": "Danyao",
+      "family": "Wang"
+    },
+    "description": {
+      "en": ""
+    },
+    "country": "US",
+    "twitter": "danyaowang"
   }
 }
