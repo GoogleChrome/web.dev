@@ -153,35 +153,7 @@ up and run the service worker code is pure overhead added on top of every
 navigation, and puts the service worker implementation at too much of a latency
 disadvantage to justify any other benefits.
 
-<style>
-  .no-preload {
-    height: 38px;
-    display: flex;
-  }
-  .no-preload div {
-    display: flex;
-    align-items: center;
-    font: normal 1.2rem/1 sans-serif;
-    text-shadow: 0 1.6px 2.7px rgba(0,0,0,0.5);
-    color: #fff;
-    box-sizing: border-box;
-    padding: 0 8px;
-    white-space: pre;
-  }
-  .no-preload > .sw-startup {
-    margin-right: 1px;
-    width: 100px;
-    background: #f0c457;
-  }
-  .no-preload > .network-request {
-    flex: 1;
-    background: #6ea1e3;
-  }
-</style>
-<div class="no-preload">
-  <div class="sw-startup">SW boot</div>
-  <div class="network-request">Navigation request</div>
-</div>
+![An illustration of the SW startup blocking the navigation request.](no-preload.png)
 
 Additionally, the team found that, based on measuring service worker boot times
 on real-world devices, there was a wide distribution of startup times, with some
@@ -201,38 +173,7 @@ amount of time it takes for the service worker to start up is less than the
 amount of time it takes to get a response back from the network, it means that
 there should not be any latency overhead introduced by the service worker.
 
-<style>
-  .with-preload {
-    height: 38px;
-    display: flex;
-    margin-bottom: 84px;
-  }
-  .with-preload div {
-    display: flex;
-    align-items: center;
-    font: normal 1.2rem/1 sans-serif;
-    text-shadow: 0 1.6px 2.7px rgba(0,0,0,0.5);
-    color: #fff;
-    box-sizing: border-box;
-    padding: 0 8px;
-    white-space: pre;
-  }
-  .with-preload > .sw-startup {
-    margin-right: 1px;
-    width: 100px;
-    background: #f0c457;
-  }
-  .with-preload > .network-request {
-    flex: 1;
-    transform: translate(-101px, 1px) translate(0, 100%);
-    background: #6ea1e3;
-  }
-</style>
-<p>
-<div class="with-preload">
-  <div class="sw-startup">SW boot</div>
-  <div class="network-request">Navigation request</div>
-</div>
+![An illustration of the SW startup done in parallel with the navigation request.](with-preload.png)
 
 The Search team also needed to avoid using a service worker on low-end mobile
 devices where that service worker boot time could exceed the time it would take
