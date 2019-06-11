@@ -28,7 +28,7 @@ clicking something else!
 Most of the time these kinds of experiences are just a mild annoyance or
 frustration. But in some cases, they can actually cause real damage or harm.
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure w-figure--center">
   <video autoplay controls loop muted
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
