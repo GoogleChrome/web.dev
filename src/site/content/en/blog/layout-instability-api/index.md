@@ -28,6 +28,23 @@ clicking something else!
 Most of the time these kinds of experiences are just a mild annoyance or
 frustration. But in some cases, they can actually cause real damage or harm.
 
+<figure class="w-figure w-figure--fullbleed">
+  <video autoplay controls loop muted
+    class="w-screenshot"
+    poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
+    width="658" height="510">
+    <source
+      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability.webm"
+      type="video/webm; codecs=vp8">
+    <source
+      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability.mp4"
+      type="video/mp4; codecs=h264">
+  </video>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    A screencast illustrating how layout instability can negatively affect users.
+  </figcaption>
+</figure>
+
 Unexpected movement of page content usually happens because resources are
 loaded asynchronously or DOM elements get dynamically added to the page above
 existing content. The culprit might be an image or video with unknown
