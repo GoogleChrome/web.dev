@@ -7,7 +7,7 @@ date: 2019-06-11
 hero: hero.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
-# hero_position: bottom
+hero_position: bottom
 alt: An unstable stack of rocks on a beach
 description: |
   This post introduces the Layout Instability API, its key concepts, and
@@ -22,7 +22,7 @@ Have you ever been reading an article online when something suddenly changes on
 the page? Without warning, the text moves, and you've lost your place.
 
 Or even worse: you're about to tap a link or a button, but in the instant
-before your finger lands&mdash;BOOM!&mdash;the link moves, and you end up
+before your finger lands&mdash;**BOOM**&mdash;the link moves, and you end up
 clicking something else!
 
 Most of the time these kinds of experiences are just a mild annoyance or
@@ -70,7 +70,7 @@ viewport&mdash;is the **layout shift score** for the current frame.
 
 Here are a few examples of how the layout shift score is calculated:
 
-![Layout shift example #1](layout-shift-1.png)
+![Layout shift example with one unstable element](layout-shift-1.png)
 
 In the image above there's an element that takes up half of the viewport in one
 frame. Then, in the next frame, the element shifts down by 25% of the viewport
@@ -81,7 +81,8 @@ layout shift score is 0.75.
 The next example illustrates how adding content to an existing element affects
 the layout shift score:
 
-![Layout shift example #2](layout-shift-2.png)
+![Layout shift example with stable and unstable elements and viewport
+clipping](layout-shift-2.png)
 
 Here the "Click Me!" button is appended to the bottom of the gray box with
 black text, which pushes the green box with white text down (and partially out
@@ -97,7 +98,8 @@ shift score is therefore 0.5 (as illustrated by the red, dotted rectangle).
 
 This last example illustrates multiple unstable elements:
 
-![Layout shift example #3](layout-shift-3.png)
+![Layout shift example with multiple stable and unstable
+elements](layout-shift-3.png)
 
 In the first frame above we have the initial results of an API request for
 animals, sorted in alphabetical order. In the second frame we have some more
