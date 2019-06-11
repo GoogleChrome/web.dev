@@ -173,7 +173,7 @@ In this guide, you used vanilla code to implement this optimization. In a real
 production scenario, it’s a good practice to use functions like
 [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md), that
 can encapsulate this behavior and work well across browsers. As a complement to
-this, the [extract critical CSS guide](https://web.dev/extract-critical-css/) 
+this, the [extract critical CSS guide](/extract-critical-css/) 
 covers some of the most popular tools to extract critical CSS and includes 
 [a codelab](https://web.dev/codelab-extract-and-inline-critical-css/) to see how 
 they work in practice.
