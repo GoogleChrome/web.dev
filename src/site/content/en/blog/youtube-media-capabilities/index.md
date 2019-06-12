@@ -4,7 +4,7 @@ subhead: Ensuring buttery smooth video playback across all devices.
 authors:
   - beaufortfrancois
 date: 2019-06-12
-hero: hero.jpeg
+hero: hero.jpg
 hero_position: top
 alt: Youtube application screenshot
 description: |
