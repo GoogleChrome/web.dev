@@ -92,12 +92,12 @@ TMS is a ‘Think with Google’ tool that allows you to compare your FCP to tha
 #### Mobile Site Speed: Field Data, FCP Only, Site Level
 The first part of the report, the mobile site speed seconds figure === First Contentful Paint (FCP) of the origin from CrUX.
 
-Site speed is the speed of <b>all the pages</b> that make up your site.
+Site speed is the speed of **all the pages** that make up your site.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="F1_tms_sitespeed.png" alt="Test my site mobile site speed score in seconds, with a 'Slow' rating and a 'No Change' monthly trend.">
+  <img class="w-screenshot" src="F1_tms_sitespeed.png" alt="Test my site mobile site speed score in seconds, with a 'Slow' rating and a 'No Change' monthly trend.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Mobile Site Speed (Field Data, FCP Only, Site Level)
+    Mobile Site Speed (Field Data, FCP Only, Site Level)
   </figcaption>
 </figure>
 
@@ -105,9 +105,9 @@ Site speed is the speed of <b>all the pages</b> that make up your site.
 In the second part of the report, the mobile site speed seconds figure === First Contentful Paint (FCP) of the origin from CrUX. 
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="F2_tms_sitespeed.png" alt="Test my site site speed benchmark and evaluate against competitors.">
+  <img class="w-screenshot" src="F2_tms_sitespeed.png" alt="Test my site site speed benchmark and evaluate against competitors.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Site Speed Tools (Field Data, FCP Only, Site Level)
+    Site Speed Tools (Field Data, FCP Only, Site Level)
   </figcaption>
 </figure>
 
@@ -117,9 +117,9 @@ The third part of the report, the page speed seconds figure === First Contentful
 The page speed tool calculates the speed of <b>individual pages</b> on your site.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="F3_tms_pagespeed.png" alt="Test my site optimize pages on your site custom fix suggestions.">
+  <img class="w-screenshot" src="F3_tms_pagespeed.png" alt="Test my site optimize pages on your site custom fix suggestions.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Page Speed Tools (Lab Data, FCP Only, URL Level)
+    Page Speed Tools (Lab Data, FCP Only, URL Level)
   </figcaption>
 </figure>
 
@@ -138,9 +138,9 @@ Here we see the top level performance gauge shown in PSI. This score is 0-100 an
 The high level performance score is the same as it is in Lighthouse, calculated from a weighted blend of 6 lab performance metrics. Information about thresholds can be found [here](https://developers.google.com/web/tools/lighthouse/v3/scoring).
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="F4_psi_lab.png" alt="PageSpeed Insights high level performance score, with six lab metrics (FCP, SI, TTI, FMP, FCPUI, and MP-FID.">
+  <img class="w-screenshot" src="F4_psi_lab.png" alt="PageSpeed Insights high level performance score, with six lab metrics (FCP, SI, TTI, FMP, FCPUI, and MP-FID.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — PSI Performance Score (Lab Data, Blended Metrics, URL Level)
+    PSI Performance Score (Lab Data, Blended Metrics, URL Level)
   </figcaption>
 </figure>
 
@@ -149,9 +149,9 @@ The high level performance score is the same as it is in Lighthouse, calculated 
 The field data shown in PSI is taken from the [Chrome User Experience Report (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report/), with FCP and FID being shown for the page that was run, and - if available - for the origin as well. By focusing on 90th and 95th percentile values for our metrics, this ensures that pages meet a minimum standard of performance under the most difficult device and network conditions.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="F5_psi_field.png" alt="PageSpeed Insights field data from CrUX, first contentful paint and first input delay for both the page and the origin.">
+  <img class="w-screenshot" src="F5_psi_field.png" alt="PageSpeed Insights field data from CrUX, first contentful paint and first input delay for both the page and the origin.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — PSI Field Data (Field Data, FCP & FID, URL & Origin Level)
+    PSI Field Data (Field Data, FCP & FID, URL & Origin Level)
   </figcaption>
 </figure>
 
@@ -165,9 +165,9 @@ Lighthouse is an open-source, automated tool for improving the quality of web pa
 The high level performance score in Lighthouse is a blend of 5 weighted lab metrics.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="F6_LH_lab.png" alt="Performance metrics from Lighthouse, DevTools Audit Panel product surface UI.">
+  <img class="w-screenshot" src="F6_LH_lab.png" alt="Performance metrics from Lighthouse, DevTools Audit Panel product surface UI.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Lighthouse Lab Data (Lab Data, Blended Metrics, URL Level)
+    Lighthouse Lab Data (Lab Data, Blended Metrics, URL Level)
   </figcaption>
 </figure>
 
