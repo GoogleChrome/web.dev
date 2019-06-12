@@ -87,7 +87,7 @@ In my experience, laying out a site/components extrinsicly is initially the easi
 <br>
 
 #### Let's confront these
-Let's investigate how much flexibility we have these days. **Let's simulate the chaos of user generated content** to put our layouts and components to the test. Our end goal being [layout algorythyms](https://notlaura.com/writing-css-algorithms/) that elegantly handle changing contexts and content. The front-ends that we build **shouldn't** be continuing the perception of inflexibility, they **should be** liberating our systems and users while simultaneously providing richer design options for a diverse set of viewports.
+Let's investigate how much flexibility we have these days. **Let's simulate the chaos of user generated content** to put our layouts and components to the test. Our end goal being [layout algorithms](https://notlaura.com/writing-css-algorithms/) that elegantly handle changing contexts and content. The front-ends that we build **shouldn't** be continuing the perception of inflexibility, they **should be** liberating our systems and users while simultaneously providing richer design options for a diverse set of viewports.
 
 <br><br><br><br>
 
