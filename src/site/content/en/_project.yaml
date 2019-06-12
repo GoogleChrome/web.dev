@@ -2,7 +2,7 @@ name: web.dev
 description: web.dev
 home_url: /
 buganizer_id: 180451
-content_license: cc3-apache2
+content_license: cc-apache
 products_page:
   categories:
   - develop

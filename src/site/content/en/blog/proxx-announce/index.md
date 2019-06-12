@@ -126,4 +126,6 @@ Until then, please check the talk Mariko gave at I/O on this project.
   <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/w8P5HLxcIO4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
+You can browse the code at [the proxx github repo](https://github.com/GoogleChromeLabs/proxx).
+
 Cheers! Surma, Jake, Mariko

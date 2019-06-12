@@ -23,7 +23,7 @@ authors:
 The **`React.lazy`** method makes it easy to code-split a React application on a
 component level using dynamic imports.
 
-```js
+```jsx
 import React, { lazy } from 'react';
 
 const AvatarComponent = lazy(() => import('./AvatarComponent'));
@@ -60,7 +60,7 @@ a code-split component is being fetched over the network, so it's important to
 display a useful loading state. Using `React.lazy` with the **`Suspense`**
 component helps solve this problem.
 
-```js
+```jsx
 import React, { lazy, Suspense } from 'react';
 
 const AvatarComponent = lazy(() => import('./AvatarComponent'));
@@ -75,18 +75,10 @@ const DetailsComponent = () => (
 ```
 
 `Suspense` accepts a `fallback` component which allows you to display any React
-component as a loading state.
-
-{% Aside 'caution' %}
-  You must use Suspense to show fallback content if a component contains a
-  separate lazy loaded component that is not loaded after its parent has
-  finished rendering.
-{% endAside %}
-
-The following example shows how this works. The avatar is only rendered when the
-button is clicked, where a request is then made to retrieve the code necessary
-for the suspended `AvatarComponent`. In the meantime, the fallback loading
-component is shown.
+component as a loading state. The following example shows how this works.
+The avatar is only rendered when the button is clicked, where a request is
+then made to retrieve the code necessary for the suspended `AvatarComponent`.
+In the meantime, the fallback loading component is shown.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
@@ -131,7 +123,7 @@ components from loading, **even if they are all lazy loaded**.
 
 For example:
 
-```js
+```jsx
 import React, { lazy, Suspense } from 'react';
 
 const AvatarComponent = lazy(() => import('./AvatarComponent'));

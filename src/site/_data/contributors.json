@@ -821,13 +821,13 @@
     },
     "org": {
       "name": "Google",
-      "unit": "Developer Relations"
+      "unit": "Chrome"
     },
     "country": "USA",
     "twitter": "addyosmani",
     "glitch": "addyosmani",
     "description": {
-      "en": "Eng Manager, Web Developer Relations"
+      "en": "Eng Manager working on Chrome and Web Platform"
     }
   },
   "jeffposnick": {
@@ -1256,6 +1256,22 @@
       "en": "If an API's not documented it doesn't exist"
     }
   },
+  "egsweeny": {
+    "name": {
+      "given": "Elizabeth",
+      "family": "Sweeny"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Product Manager"
+    },
+    "country": "US",
+    "github": "egsweeny",
+    "twitter": "egsweeny",
+    "description": {
+      "en": "Product manager for developer tools on the web platform in Chrome."
+    }
+  },
   "rowan_m": {
     "name": {
       "given": "Rowan",
@@ -1279,15 +1295,39 @@
       "family": "Argyle"
     },
     "description": {
-      "en": "CSS/JS/UX addict; repeat(∞, [empathize, define, design, develop, deploy]);"
-    },
-    "org": {
-      "name": "Google",
-      "unit": "Chrome"
+      "en": "Developer Advocate for Chrome"
     },
     "homepage": "https://nerdy.dev",
     "github": "argyleink",
     "twitter": "argyleink",
     "glitch": "argyleink"
+  },
+  "lunalu": {
+    "name": {
+      "given": "Luna",
+      "family": "Lu"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "country": "Canada",
+    "github": "loonybear",
+    "description": {
+      "en": "Build and enforce guardrails for the web."
+    }
+  },
+  "geddski": {
+    "name": {
+      "given": "Dave",
+      "family": "Geddes"
+    },
+    "description": {
+      "en": "Founder at Mastery Games"
+    },
+    "homepage": "https://gedd.ski/",
+    "country": "US",
+    "twitter": "geddski",
+    "github": "geddski"
   }
 }

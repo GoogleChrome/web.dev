@@ -48,7 +48,7 @@ const ShareAction = (title, url) => {
 
   const twitter = `https://twitter.com/share`;
   const encodedText = encodeURIComponent(title);
-  const encodedUrl = encodeURIComponent(`${site.url}/${url}`);
+  const encodedUrl = encodeURIComponent(`${site.url}${url}`);
 
   return html`
     <a

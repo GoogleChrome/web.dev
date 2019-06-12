@@ -109,7 +109,11 @@ convert flower.jpg -resize 25% flower_small.jpg
 Scale image to fit within "200px wide by 100px tall":
 
 ```
+# macOS/Linux
 convert flower.jpg -resize 200x100 flower_small.jpg
+
+# Windows
+magick convert flower.jpg -resize 200x100 flower_small.jpg
 ```
 
 If you'll be resizing many images, you may find it more convenient to use a

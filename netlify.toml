@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "/en/:splat"
+  status = 200
+  force = false

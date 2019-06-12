@@ -1,0 +1,11 @@
+# Auto-assign owners for different areas of the site.
+# These folks will automatically get tagged to review PRs in their area.
+# Read more @ https://help.github.com/articles/about-code-owners/
+
+# Default owners for everything
+* @robdodson
+
+# Guide collections
+content/ @robdodson @Meggin @mfriesenhahn
+
+content/en/react/ @housseindjirdeh @robdodson

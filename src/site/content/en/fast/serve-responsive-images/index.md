@@ -59,7 +59,11 @@ convert -resize 33% flower.jpg flower-small.jpg
 To resize an image to fit within 300px wide by 200px high, run the following command:
 
 ```bash
+# macOS/Linux
 convert flower.jpg -resize 300x200 flower-small.jpg
+
+# Windows
+magick convert flower.jpg -resize 300x200 flower-small.jpg
 ```
 
 ### How many image versions should you create?

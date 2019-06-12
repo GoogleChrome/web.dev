@@ -9,6 +9,7 @@ description: |
   react-window is a library that allows large lists to be rendered efficiently.
 authors:
   - houssein
+  - developit
 ---
 
 [`react-window`](https://react-window.now.sh/#/examples/list/fixed-size) is a
@@ -59,7 +60,7 @@ that can be used for different types of lists and tables.
 Use the `FixedSizeList` component if you have a long, one-dimensional list
 of equally sized items.
 
-```js
+```jsx
 import React from 'react';
 import { FixedSizeList } from 'react-window';
 
@@ -110,7 +111,7 @@ Use the `VariableSizeList` component to render a list of items that have
 different sizes. This component works in the same way as a fixed size list, but
 instead expects a function for the `itemSize` prop instead of a specific value.
 
-```js
+```jsx
 import React from 'react';
 import { VariableSizeList } from 'react-window';
 
@@ -224,7 +225,7 @@ lazy load newer entries as the user scrolls down. A separate package,
 Consider the following piece of code which shows an example of state that is
 managed in a parent `App` component.
 
-```js
+```jsx
 import React, { Component } from 'react';
 
 import ListComponent from './ListComponent';
@@ -234,7 +235,8 @@ class App extends Component {
     super(props);
     this.state = {
       items: [], // instantiate initial list here
-      moreItemsLoading: false
+      moreItemsLoading: false,
+      hasNextPage: true
     };
 
     this.loadMore = this.loadMore.bind(this);
@@ -245,10 +247,15 @@ class App extends Component {
   }
 
   render() {
-    const { items, moreItemsLoading } = this.state;
+    const { items, moreItemsLoading, hasNextPage } = this.state;
 
     return (
-      <ListComponent items={items} moreItemsLoading={moreItemsLoading} loadMore={this.loadMore}/>
+      <ListComponent
+        items={items}
+        moreItemsLoading={moreItemsLoading}
+        loadMore={this.loadMore}
+        hasNextPage={hasNextPage}
+      />
     );
   }
 }
@@ -263,27 +270,29 @@ point.
 
 Here's how the `ListComponent` that renders the list can look like:
 
-```js
+```jsx
 import React from 'react';
 import { FixedSizeList } from 'react-window';
 import InfiniteLoader from "react-window-infinite-loader";
 
-const ListComponent = ({ items, moreItemsLoading, loadMore }) => {
+const ListComponent = ({ items, moreItemsLoading, loadMore, hasNextPage }) => {
   const Row = ({ index, style }) => (
      {/* define the row component using items[index] */}
   );
 
+  const itemCount = hasNextPage ? items.length + 1 : items.length;
+
   return (
     <InfiniteLoader
-      isItemLoaded={index => index < items.length - 1}
-      itemCount={items.length}
+      isItemLoaded={index => index < items.length}
+      itemCount={itemCount}
       loadMoreItems={loadMore}
     >
       {({ onItemsRendered, ref }) => (
         <FixedSizeList
           height={500}
           width={500}
-          itemCount={items.length}
+          itemCount={itemCount}
           itemSize={120}
           onItemsRendered={onItemsRendered}
           ref={ref}
@@ -346,6 +355,39 @@ const Row = ({ index, style }) => {
 };
 ```
 
+## Overscanning
+
+Since items in a virtualized list only change when the user scrolls, blank
+space can briefly flash as newer entries are about to be displayed. You can
+try quckly scrolling any of the previous examples in this guide to notice
+this. 
+
+To improve the user experience of virtualized lists, `react-window` allows
+you to overscan items with the `overscanCount` property. This allows you to
+define how many items outside of the visible "window" to render at all times.
+
+```jsx
+<FixedSizeList
+  //...
+  overscanCount={4}
+>
+  {...}
+</FixedSizeList>
+```
+
+`overscanCount` works for both the `FixedSizeList` and `VariableSizeList`
+components and has a default value of 1. Depending on how large a list is
+as well as the size of each item, overscanning more than just one entry can
+help prevent a noticeable flash of empty space when the user scrolls. However,
+overscanning too many entries can affect performance negatively. The whole
+point of using a virtualized list is to minimize the number of entries to what
+the user can see at any given moment, so try to keep the number of overscanned
+items as low as possible.
+
+For `FixedSizeGrid` and `VariableSizeGrid`, use the `overscanColumnsCount` and
+`overscanRowsCount` properties to control the number of columns and rows to
+overscan respectively.
+
 ## Conclusion
 
 If you are unsure where to begin virtualizing lists and tables in your
@@ -363,3 +405,7 @@ application, follow these steps:
    cannot add this functionality yourself.
 4. Wrap your virtualized list with `react-window-infinite-loader` if you need to
    lazy load items as the user scrolls.
+5. Use the `overscanCount` property for your lists and the 
+   `overscanColumnsCount` and `overscanRowsCount` properties for your grids
+   to prevent a flash of empty content. Do not overscan too many entries as
+   this will affect performance negatively.

@@ -1,0 +1,16 @@
+// =============================================================================
+// COLUMNS OVERVIEW
+//
+// Columns are used in posts to position content side-by-side.
+//
+// =============================================================================
+
+.w-columns {
+  display: grid;
+  // sass-lint:disable-all
+  // scss-lint:disable all
+  gap: 1rem;
+  // scss-lint:enable all
+  // sass-lint:enable-all
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+}
