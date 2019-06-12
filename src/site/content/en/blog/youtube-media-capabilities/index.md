@@ -1,6 +1,6 @@
 ---
 title: How YouTube improved video performance with the Media Capabilities API
-subhead: Ensure buttery smooth video playback across all devices.
+subhead: Ensuring buttery smooth video playback across all devices.
 authors:
   - beaufortfrancois
 date: 2019-06-12
