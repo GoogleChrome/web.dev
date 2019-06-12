@@ -3,7 +3,7 @@ title: How YouTube improved video performance with the Media Capabilities API
 subhead: Ensure buttery smooth video playback across all devices.
 authors:
   - beaufortfrancois
-date: 2019-06-05
+date: 2019-06-12
 hero: hero.jpeg
 hero_position: top
 alt: Youtube application screenshot
@@ -52,13 +52,6 @@ likely to have a poor playback experience.
 In Chrome, the Media Capabilities API uses metrics from previous playbacks to
 predict whether future playbacks in the same codec and at the same resolution
 will be smoothly decoded.
-
-<figure class="w-figure w-figure--fullbleed">
-  <img src="./maxime-rossignol-266384-unsplash.jpg" alt="Computer motherboard near graphics card">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Computer motherboard near graphics card
-  </figcaption>
-</figure>
 
 ## YouTube Case Study
 
