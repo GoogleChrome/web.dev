@@ -18,7 +18,7 @@ tags:
 
 [Load is not a single moment in time](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) — it's an experience that no one metric can fully capture. There are multiple moments during the load experience that can affect whether a user perceives it as "fast", and if you just focus on one you might miss bad experiences that happen during the rest of the time. **This is why we generally use multiple metrics blended together to create our performance scores;** but different tools use different metrics and different weighted blends. This can be frustrating when you're looking for a source of truth about how fast your website is.
 
-This post serves to explain the reasons that there are differences in performance scores between three Google tools: [Test My Site (TMS)](https://www.thinkwithgoogle.com/intl/en-gb/feature/testmysite), [PageSpeed Insights (PSI)](https://developers.google.com/speed/pagespeed/insights/), and [Lighthouse](https://developers.google.com/web/tools/lighthouse/). This document does **not** detail other differences in the tools, such as server run locations, network throttling presets, score variance between runs, etc.
+This post serves to explain the reasons that there are differences in performance scores between three Google tools: [Test My Site (TMS)](https://www.thinkwithgoogle.com/intl/en-gb/feature/testmysite), [PageSpeed Insights (PSI)](https://developers.google.com/speed/pagespeed/insights/), and [Lighthouse (LH)](https://developers.google.com/web/tools/lighthouse/). This document does **not** detail other differences in the tools, such as server run locations, network throttling presets, score variance between runs, etc.
 
 ## Terminology
 
