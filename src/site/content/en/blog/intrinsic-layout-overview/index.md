@@ -47,8 +47,6 @@ A way I like to think of it is self reflective. You, yes you the reader (I'm bus
 
 I've been exploring, building and prototyping with intrinsic design as a strategy and mentality, and it's certainly a **"new era of layout"** we're in! I must **share the joy and power I've acquired** through these endeavors and research. Do you like joy and power? lol, hopefully this guide delivers.
 
-<br>
-
 ## Why "intrinsic"? 🤔
 This may look familiar 😂, it's the result of an extrinsic approach to layout:
 
@@ -73,8 +71,6 @@ Studying and striving for **intrinsic layout can help alleviate these frustratio
 - <s>The container doesn't expand to fit the content</s> <br>The container shrinkwraps to the content
 - <s>The container doesn't handle overflow gracefully</s> <br>Overflow isn't an issue when content size and length are respected
 
-<br>
-
 #### Additionally
 In my experience, laying out a site/components extrinsicly is initially the easiest. Later, it becomes tedious to maintain or even becomes a problem for other folks on the team that aren't engineers. **Eventually, the front-end instigates limitations that affect more systems and folks than it should because of it's percieved inflexibility.** I believe these issues stem from overly articulating a layout by applying too many extrinsic properties. Perhaps you or your team have felt 1 or more of the following:
 
@@ -84,12 +80,8 @@ In my experience, laying out a site/components extrinsicly is initially the easi
 1. Ever seen a field in a CMS required so the front end didn't break?
 1. etc, etc..
 
-<br>
-
 #### Let's confront these
 Let's investigate how much flexibility we have these days. **Let's simulate the chaos of user generated content** to put our layouts and components to the test. Our end goal being [layout algorithms](https://notlaura.com/writing-css-algorithms/) that elegantly handle changing contexts and content. The front-ends that we build **shouldn't** be continuing the perception of inflexibility, they **should be** liberating our systems and users while simultaneously providing richer design options for a diverse set of viewports.
-
-<br><br><br><br>
 
 ## Our Quest ⚔️
 {% Aside 'objective' %}
@@ -97,8 +89,6 @@ Let's investigate how much flexibility we have these days. **Let's simulate the 
 {% endAside %}
 
 As a practical way of learning the ropes of intrinsic web design, I'd like to orient this guide towards a meaningful, reasonable and tangible end goal: **a full page responsive layout.** The following design may look innocent, but it's **jam packed** with learning opportunities. Along the way we'll implement **macro and micro layouts**, a mixture of **[flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) and [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)**, a blend of **[intrinsic and extrinsic](https://googlechrome.github.io/samples/css-intrinsic-sizing/)**, plus a **sprinkle of chaos** to really help the value add sink in.
-
-<br>
 
 #### The Design
 A theoretically **CMS powered e-commerce homepage**. Horizontally overflowing scroll areas, component variability, heavy images, etc. Plus the pretty typical scenario of no mobile designs provided, but are expected.
@@ -123,16 +113,12 @@ We **break this design down,** piece by piece, focusing **specifically on the la
 1. **[Mural Card](/intrinsic-layout-mural-card)** <small>(coming soon)</small><br>The trickiest of the layouts to solve
 1. **[Featured Card](/intrinsic-layout-card)** <small>(coming soon)</small><br>Take what you've learned and apply it in this resilient and intrinsic layout coding challenge
 
-<br><br>
-
 <figure class="w-figure--center">
   <img loading="lazy" class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/feature-card-chaos.gif" alt="Showing component being edited, deleted and abused yet the layout and ratios remain intact">
   <figcaption class="w-figcaption">
     <b>Example of the chaos</b> we'll throw at layouts to verify resilience
   </figcaption>
 </figure>
-
-<br>
 
 ## From This Guide 📓
 #### Prepare to:
@@ -152,8 +138,6 @@ We **break this design down,** piece by piece, focusing **specifically on the la
 - use [tomorrow's CSS today](https://preset-env.cssdb.org)
 - take a [Layout Challenge](/codelab-intrinsic-layout-card)
 
-<br>
-
 #### Takeaway:
 - confidence **when playing with layout**
 - confidence in **refactoring layout**
@@ -162,8 +146,6 @@ We **break this design down,** piece by piece, focusing **specifically on the la
 - use **less** `grid-template-areas`
 - **grid snippets** for your product/project
 - engineer **[resilient](https://www.smashingmagazine.com/2017/03/resilient-web-design/) and intrinsic** CSS layout algorithms
-
-<br><br>
 
 ## Better Together 🍻
 We'll acquire some bruises along the way as we bump our head, shoulders, knees and toes.. but I believe it's crucial for when y'all run into similar issues, that we've gone through a gauntlet together. That means this guide includes refactor reasoning and results. There's a lot of "play" that needs to happen with intrinsic layouts, **I want you to see how I play and reach resilient layouts.** That way you can do it too!

@@ -23,13 +23,9 @@ related_post: intrinsic-layout-macro
   [Previous Codelab (v1): A Slotted Layout](/codelab-intrinsic-layout-macro-v1)
 {% endAside %}
 
-<br>
-
 #### Let's break it down
 ## 1. `<body>` Layout
 Our **top level macro grid** is the `<body>`. In the [previous codelab](/codelab-intrinsic-layout-macro-v1), adding a `<footer>` was an issue because it didn't just append to the vertical layout stack. Let's fix that by defining a grid that knows less about the children. It's best if the grid on body just **creates directionality** for the highest level elements and the **spacing between** them.
-
-<br>
 
 #### The HTML
 To support the refactor to vertical rhythm and spacing, I've updated our HTML structure. I've wrapped the `<aside>` and `<article>` in a `<main>` tag:
@@ -48,8 +44,6 @@ To support the refactor to vertical rhythm and spacing, I've updated our HTML st
 ```
 
 It's interesting how a refactor to simpler layouts may have enhanced our semantic markup. The `<main>` tag totally makes sense as a wrapper, and it allows us to space both those children at the same time. Our goal of "1 grid to rule them all" in v1 lead us to changing our markup to meet the needs of our CSS. This has been reversed, **now our CSS can meet the needs of our HTML.**
-
-<br>
 
 #### The CSS
 See `app/css/layouts/body.css` in the Glitch embed.
@@ -108,8 +102,6 @@ I think it's worth noting here too that I didn't need to number the example imag
   I prefer when containers manage spacing. Some may want the `.greeting` or `<main>` to manage the margin in this case, but I think it's best when components only know about their internal spacing. **Containers have more context, they're the orchestrators of space.**
 {% endAside %}
 
-<br>
-
 ## Code Review
 #### Macro intrinsic layout pros 👍
 1. Just rows
@@ -119,16 +111,11 @@ I think it's worth noting here too that I didn't need to number the example imag
 1. Fallback is straight forward
 1. **Just flow and spacing**
 
-<br>
-
 #### Macro intrinsic layout cons 👎
 1. **No more rails** (not really a con, but doesn't match the mental model my design brain had)
 1. **Dinky**, it's barely doing anything (this a con? lol, perhaps to some?)
 
 Cool, so our rows are taken care of. Let's checkout what we need to do to match the column styles we achieved in v1.
-
-
-<br><br><br>
 
 #### Let's break it down
 ## 2. `<main>` Layout
@@ -157,8 +144,6 @@ I want a **grid** with **2 columns**, the **first at a fixed width** and the **2
 
 Another drastically simplified grid: 2 columns. The concept of "rails" we had in the 1st layout is gone now and this `<main>` relies on the parent container to use margin to simulate those rails. Less code, less to think about, smaller sets of responsibility.
 
-<br>
-
 ## Code Review
 #### Pros 👍
 1. **Cut** the amount of **columns** to manage **in half**
@@ -166,12 +151,8 @@ Another drastically simplified grid: 2 columns. The concept of "rails" we had in
 1. **Cut** the **LoC** down to 2
 1. Media queries need to **know much less**
 
-<br>
-
 #### Cons 👎
 1. Margin in place of a column? Aren't we here to learn about CSS grid?
-
-<br>
 
 ## Responsive Final Touches
 Our tasks at a high level are to remove the heavy left margin and stack our aside and articles. :cracks knuckles:
@@ -199,8 +180,6 @@ When the viewport is less than or equal to `768px`, then select any direct desce
 
 You might be thinking I forgot to adjust the `<main>` element, but I've got a trick up my sleeve.
 
-<br>
-
 ```css/4-6
 main {
   display: grid;
@@ -221,8 +200,6 @@ When the viewport is less than or equal to `768px`, act as if the `main` tag doe
   </picture>
 </figure>
 
-<br>
-
 ## Chaos Time 😈
 
 {% Aside 'warning' %}
@@ -241,8 +218,6 @@ When the viewport is less than or equal to `768px`, act as if the `main` tag doe
 {% Aside 'gotchas' %}
   Click the **Remix To Edit** button to make the project editable
 {% endAside %}
-
-<br>
 
 ## Conclusion
 We couldn't shake all the specificity in this refactor, or more literally, our body styles still reach into the child list and specifically target elements and apply styles, but it's much less than our first version. This refactor let us unlock a few interesting follow up gains: adding a `<footer>` was a piece of cake, and our nested grid got to inherit and opt into the parent flow.

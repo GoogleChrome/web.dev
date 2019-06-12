@@ -42,8 +42,6 @@ I find overlaying estimated grid lines and tracks on a design pacify the initial
   After drawing a few estimated gridlines and getting more familiar with their relationship, I'm ready to attempt some assertions. I've got semantic assertions, some observation assertions, as well as some preliminary concerns to be mindful of as we continue.
 {% endAside %}
 
-<br>
-
 #### Layout Semantics
 Goal here is to identify HTML elements that match the intent alluded to by the design. For me it's a typical translation task, where I'm translating elements and interactions from the pixels to the web, aka the HTML provided base elements that serve those purposes.
 
@@ -53,8 +51,6 @@ Goal here is to identify HTML elements that match the intent alluded to by the d
 - Lots of `<img>`'s inside `<figure>`'s' with `<figcaption>`'s
 - `<input type="search"/>` in the top bar
 - `<button>`s and `<a>`s
-
-<br>
 
 #### Layout Observations
 These are places for me to aknowledge the consistencies and inconsistencies being presented by the design. These help inform my decisions as well as my refactors. It's also fun!
@@ -109,14 +105,10 @@ These are places for me to aknowledge the consistencies and inconsistencies bein
   </figcaption>
 </figure>
 
-<br>
-
 #### Layout Concerns
 1. Our `<aside>` and site name share the same column, but they're in different places in the DOM tree
 1. `<nav>` and `<main>` share column guides but we don't have [subgrid](https://rachelandrew.co.uk/archives/2018/04/27/grid-level-2-and-subgrid/) to enforce or enable shared tracks
 1. The rails will need to collapse on mobile changing alignments of the account and brand logo
-
-<br><br>
 
 #### Process Recap
 I don't have a systemic process to share in regards to these assertions. I look for alignments, shared spaces, dynamic content areas, and I try to see which areas **should** be flexible. Top that off with an intent to **let the content speak for itself** when it can with a [content outward](https://alistapart.com/article/content-out-layout/) layout strategy, let [content length be a breakpoint](http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/#content).
@@ -124,10 +116,6 @@ I don't have a systemic process to share in regards to these assertions. I look 
 Even if my first layout works great, I like going back and looking for places to optimize: trim logic, code, or whatever. **Just like I do in my Javascript.**
 
 ## &#60;/Discovery-Phase&#62;
-
-
-<br><br><br>
-
 
 ###### Let's Code!
 ## Macro Layout v1: A Slotted Layout
@@ -139,15 +127,13 @@ Let's follow our gut and code one grid to handle this whole macro layout. Judgin
 
 What we make works, and there's aspects of it that are great, but it's tedious and needy nature emerge as we respond to mobile and add a new element.
 
-<a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v1">
+<!-- <a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v1">
   Codelab: Slotted Macro Layout
-</a>
+</a> -->
 
-<!-- {% Aside 'codelab' %}
+{% Aside 'codelab' %}
   [Slotted Macro Layout](/codelab-intrinsic-layout-macro-v1)
-{% endAside %} -->
-
-<br><br><br>
+{% endAside %}
 
 ###### Let's Code!
 ## Macro Layout v2 (refactor): Intrinsic Grids
@@ -159,18 +145,13 @@ In this refactor, I removed `grid-template-areas` code, pulled the `<h2 class="g
 
 Post refactor, 1 grid manages the vertical "stack" and the 2nd manages the aside and article. Less CSS, less responsible CSS, and more flexibility. Really shows it's true colors when chaos shows up.
 
-<a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v2">
+<!-- <a class="w-button w-button--primary w-button--with-icon" data-icon="code" href="/codelab-intrinsic-layout-macro-v2">
   Codelab: Intrinsic Macro Grids
-</a>
+</a> -->
 
-<!-- {% Aside 'codelab' %}
+{% Aside 'codelab' %}
   [Intrinsic Macro Grids](/codelab-intrinsic-layout-macro-v2)
-{% endAside %} -->
-
-
-
-
-<br><br><br><br>
+{% endAside %}
 
 ## Conclusion
 The refactored v2 of our macro layout is less code, less assumptive and will scale well as new children get introduced. **We've relinquished some of our control over the content** by defining less areas with specific widths, and instead, defining containers mostly responsible for spacing and direction.
@@ -183,13 +164,9 @@ The refactored v2 of our macro layout is less code, less assumptive and will sca
 - Less to think about
 - Less to manage
 
-<br>
-
 #### Did we match our estimated grid lines!? Nope! 😹
 
 Turns out my original guesses on grid lines were off.. **what's new**! Here are the designs with **updated grid lines** based on the learnings from development which also accurately reflect the refactored results.
-
-<br>
 
 ### Top Level Grid
 
@@ -222,9 +199,6 @@ Just flow/direction and spacing
   </picture>
 </figure>
 
-
-<br><br>
-
 ### Main Level Grid
 
 ```css
@@ -249,8 +223,6 @@ main {
   </picture>
 </figure>
 
-<br><br>
-
 ### All Together
 
 <figure class="w-figure w-figure--fullbleed">
@@ -262,5 +234,3 @@ main {
 {% Compare 'better', 'Result' %}
 Devtools highlighting the 2 grids and showing them respond from desktop to mobile
 {% endCompare %}
-
-<br><br>

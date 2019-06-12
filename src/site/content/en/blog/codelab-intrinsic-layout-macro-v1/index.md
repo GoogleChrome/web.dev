@@ -23,8 +23,6 @@ I love `grid-template-areas`, it's very cool, and fits the bill for tons of layo
 
 **So let's use it!** Let's make some tracks, select some nodes and put them into their cells.
 
-<br>
-
 #### The HTML
 See `app/index.html` in the Glitch embed for the full HTML. It's important with intrinsic layout to have your content in HTML before you get started, otherwise achieving a content outward layout wouldn't be possible.
 
@@ -40,8 +38,6 @@ At a macro view, here's the HTML we're working with:
 ```
 
 With this we want to create CSS grid tracks that will enable us to match the design comp. Here's what I came up with!
-
-<br>
 
 #### The CSS
 See `app/css/layouts/body.css` in the Glitch embed.
@@ -93,8 +89,6 @@ Future spec compliant CSS syntax enabled via [PostCSS preset-env](https://preset
 
 ### Let's break some of that down...
 
-<br>
-
 #### Columns in plain speak:
 ```css
 grid-template-columns:
@@ -112,8 +106,6 @@ grid-template-columns:
 - **1st** and **4th** columns should be fixed and equal with an extrinsic width set by the `--body-rails` CSS custom property. These are the flanking rails of the layout.
 - **2nd** column should be the extrinsic width set by the `--sidebar-width` custom property.
 - **3rd** column is our flexible column and should fill all remaining space.
-
-<br>
 
 #### Rows in plain speak:
 ```css
@@ -135,16 +127,12 @@ grid-template-rows:
 - The **2nd** row is our header, an intrinsicly sized row indicated by the `min-content` keyword. This keyword in the case of a row, will shrinkwrap to whatever minimum height is required by the contents of the node.
 - The **3rd** row is a fluid row that fill the remaining space or expands to match the needs of it's contents.
 
-<br>
-
 ## Code Review
 #### Slotted layout pros 👍
 1. Sure is a **fun to read** visual way to create a grid
 1. Shallow DOM tree
 1. **Slotted**, which may play nice with component architectures
 1. Feels like a traditional print layout where there's content areas and we **placed elements**
-
-<br>
 
 #### Slotted layout cons 👎
 1. High specificity: **specific children** to **specific locations**
@@ -153,8 +141,6 @@ grid-template-rows:
 1. **Falling back** for older browsers will be tough with `grid-template-areas`
 1. Inside a media query when we end up stacking these elements on mobile, we don't just have 1 or 2 levers to pull to tweak the layout, **we've got a handful of rules to update.** Each specific child needs put into a new specific location. #tedious
 1. Adding children, like a `<footer>` would require additional CSS to place the new child
-
-<br>
 
 ## Responsive Final Touches
 Our designers didn't provide mobile comps, so we'll use **trial and reason.** I found that 768px, a typical portait and tablet size, is a great point to collapse our grid into a stack. This can be achieved with our slotted layout like so.
@@ -209,13 +195,9 @@ body {
 
 Well, **36 lines of code** isn't too bad for a responsive layout. Was even satisfying writing that media query `grid-template-areas` stack because it looks like our result. But.. the layout's hand does needs held a bit much.
 
-<br>
-
 {% Aside 'warning' %}
   Changes from the design team! 😲
 {% endAside %}
-
-<br>
 
 ## Chaos Time 😈
 
@@ -243,8 +225,6 @@ Well, **36 lines of code** isn't too bad for a responsive layout. Was even satis
 
 When you're done, **remember the level of effort of handling this change**. Also remember how well the layout algorithm handled change and turbulence. We'll be comparing it against [a refactor](/codelab-intrinsic-layout-macro-v2) next.
 
-<br>
-
 ## Conclusion
 Grid template areas works fine, but wow when we uncommented that `<footer>` **it really was not intuitive what happened.** Our footer was tiny, crammed into the first open cell, and not under our content (where it logically should be). **When we start placing items we break out of flow**, almost like when you make an element positioned absolute.
 
@@ -253,4 +233,3 @@ Next, **we refactor to remedy some of these trials we learned** through our firs
 {% Aside 'codelab' %}
   [Next Codelab (the refactor): Intrinsic Macro Grids](/codelab-intrinsic-layout-macro-v2)
 {% endAside %}
-<br>
