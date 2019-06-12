@@ -32,7 +32,7 @@ It is important to note that "performance" or "speed" is not to be defined by a 
 - Similarly, no single metric in isolation is able to give a meaningful indication of the health of the web (critical for benchmarking).
 - Depending on which metric is chosen, a very different picture of page speed is presented (each requiring different optimizations to improve).
 
-## Performance Scores within Tools
+## Performance Scores within tools
 
 The performance score (top level gauge, 1-100 score) in PSI and Lighthouse is calculated from a weighted blend of multiple metrics to summarize a website's/web app's speed. This [weighted blend](https://docs.google.com/spreadsheets/d/1sH_T4G_RZAg4CpcV1bT-tmUegBdBpCOOwsdzqtWnO4U/edit#gid=0) of metrics that together constitute the performance score in both PSI and LH (as of May 2019, [LH v5.0](https://github.com/GoogleChrome/lighthouse/releases)) is as follows:
 - 3X - First Contentful Paint (FCP)
