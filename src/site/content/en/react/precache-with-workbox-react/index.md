@@ -69,7 +69,7 @@ To see which assets are being cached:
 
 {% Instruction 'preview' %}
 {% Instruction 'devtools-network' %}
--  Reload the application.
+{% Instruction 'reload' %}
 
 You'll notice that instead of showing the payload size, the `Size` column shows
 a `(from ServiceWorker)` message to indicate that these resources were retrieved
@@ -82,7 +82,7 @@ while offline:
 
 +  In the **Network** tab in DevTools, enable the **Offline** checkbox to
    simulate an offline experience.
-+  Reload the application.
+{% Instruction 'reload' %}
 
 The application works in exactly the same way, even without a network
 connection!

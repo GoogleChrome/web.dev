@@ -27,7 +27,7 @@ The `index.html` file contains a `<video>` tag to display the background video (
 To load the video conditionally, first check if the Network Information API is available; if it is, check the connection type.
 
 1. In `script.js`, add an `if` statement that tests whether the `navigator.connection` object exists and whether it has the `effectiveType` property.
-2. Add an `if` statement to check the `effectiveType` of the network. 
+2. Add an `if` statement to check the `effectiveType` of the network.
 
 ```js
 if (navigator.connection && !!navigator.connection.effectiveType) {
@@ -188,7 +188,7 @@ To test it again:
 {% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
-1. Reload the page.
+{% Instruction 'reload', 'ol' %}
 
 The app will update the network information to **3g**:
 

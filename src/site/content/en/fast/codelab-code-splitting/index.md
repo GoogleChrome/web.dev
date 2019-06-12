@@ -33,7 +33,7 @@ attempting to add any optimizations.
 {% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'disable-cache', 'ol' %}
-1. Reload the app.
+{% Instruction 'reload', 'ol' %}
 
 <img class="w-screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2 KB JavaScript bundle.">
 

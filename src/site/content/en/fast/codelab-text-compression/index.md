@@ -273,7 +273,7 @@ app.use(express.static('public'));
 //...
 ```
 
-Now reload the app, and take a look at the bundle size in the **Network** panel.
+Now reload the app and take a look at the bundle size in the **Network** panel.
 
 <img class="w-screenshot" src="./network-dynamic-compress.png" alt="Bundle size with dynamic compression">
 
