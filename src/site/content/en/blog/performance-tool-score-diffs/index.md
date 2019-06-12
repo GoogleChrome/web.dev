@@ -78,9 +78,10 @@ TMS uses only FCP (from both Lighthouse and from the CrUX) to provide both site 
         <td>---</td>
       </tr>
     </tbody>
-    <caption>Table 1 — Performance metrics considered in score (by tool).</caption>
+    <caption>Performance metrics considered in score (by tool).</caption>
   </table>
-  <p>*other metrics might be measured by the tools, but they aren’t included in performance/speed score calculations<br>**TMS uses FID as a tiebreaker in cases where FCP between compared sites is the same (but FCP is the lead metric)</p>
+  <br>
+  <small>* other metrics might be measured by the tools, but they aren’t included in performance/speed score calculations<br>**TMS uses FID as a tiebreaker in cases where FCP between compared sites is the same (but FCP is the lead metric)</small>
 </div>
 
 
@@ -171,11 +172,19 @@ The high level performance score in Lighthouse is a blend of 5 weighted lab metr
   </figcaption>
 </figure>
 
-<i>*Note: In Lighthouse v5 (launched May 2019), Estimated Input Latency was replaced by Max Potential First Input Delay (FID), but it doesn't change scoring (both metrics had/have a weight of 0).</i>
+{% Aside %}
+In Lighthouse v5 (launched May 2019), Estimated Input Latency was replaced by
+Max Potential First Input Delay (FID), but it doesn't change scoring (both
+metrics had/have a weight of 0).
+{% endAside %}
 
-To learn more about the components of Lighthouse's performance score, check out [web.dev's Lighthouse Performance](https://web.dev/lighthouse-performance) guides.
+To learn more about the components of Lighthouse's performance score, check out
+the [Lighthouse Performance](/lighthouse-performance) guides.
 
 ## Conclusion
-It's important that performance scores aren't fetishized; they are meant to be signals for the general health of your page/site, and to help you isolate where to optimize and to diagnose issues. 
+It's important that performance scores aren't fetishized; they are meant to be
+signals for the general health of your page/site, and to help you isolate where
+to optimize and to diagnose issues. 
 
-For more information about performance check out the [Fast load times](/fast) collection.
+For more information about performance check out the [Fast load times](/fast)
+collection.
