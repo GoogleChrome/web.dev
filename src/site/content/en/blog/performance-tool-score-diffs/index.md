@@ -16,7 +16,7 @@ tags:
   - performance
 ---
 
-[Load is not a single moment in time](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics) — it's an experience that no one metric can fully capture. There are multiple moments during the load experience that can affect whether a user perceives it as "fast", and if you just focus on one you might miss bad experiences that happen during the rest of the time. **This is why we generally use multiple metrics blended together to create our performance scores;** but different tools use different metrics and different weighted blends. This can be frustrating when you're looking for a source of truth about how fast your website is.
+Load is not a single point in time- there are multiple moments during the load experience that can affect whether a user perceives it as "fast", and if you just focus on one you might miss bad experiences that happen during the rest of the time. **This is why we generally use multiple metrics blended together to create our performance scores;** but different tools use different metrics and different weighted blends. This can be frustrating when you're looking for a source of truth about how fast your website is.
 
 This post serves to explain the reasons that there are differences in performance scores between three Google tools: [Test My Site (TMS)](https://www.thinkwithgoogle.com/intl/en-gb/feature/testmysite), [PageSpeed Insights (PSI)](https://developers.google.com/speed/pagespeed/insights/), and [Lighthouse (LH)](https://developers.google.com/web/tools/lighthouse/). This document does **not** detail other differences in the tools, such as server run locations, network throttling presets, score variance between runs, etc.
 
@@ -28,8 +28,8 @@ Various terms about speed/performance are referenced in our tools. We want to st
 - **Site speed** refers to the speed of all of the pages on your site (origin level).
 
 It is important to note that "performance" or "speed" is not to be defined by a single metric (i.e. [First Contentful Paint (FCP)](/first-contentful-paint/), [Time to Interactive (TTI)](/interactive/), etc.). This is motivated by several considerations, including:
-- As mentioned in the introduction, 'page load is not a single moment in time—it's an experience that no one metric can fully capture' [source](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics)
-- Similarly, no single metric in isolation is able to give a meaningful indication of the health of the web (critical for benchmarking).
+- Page load is not a single moment in time - it's an experience that no one metric can fully capture. [source](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics)
+- No single metric in isolation is able to give a meaningful indication of the health of the web (critical for benchmarking).
 - Depending on which metric is chosen, a very different picture of page speed is presented (each requiring different optimizations to improve).
 
 ## Performance Scores within tools
