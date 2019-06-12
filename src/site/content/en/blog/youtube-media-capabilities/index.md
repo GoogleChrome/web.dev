@@ -1,5 +1,5 @@
 ---
-title: YouTube enhances UX with Media Capabilities API
+title: How YouTube improved video performance with the Media Capabilities API
 subhead: Ensure buttery smooth video playback across all devices.
 authors:
   - beaufortfrancois
