@@ -134,7 +134,7 @@ The Payment Handler API feature
 [`PaymentRequestEvent.changePaymentMethod()`](https://chromestatus.com/feature/5698314223747072)
 allows payment handlers (e.g., Google Pay) to trigger the
 [`onpaymentmethodchange`](https://w3c.github.io/payment-request/#dom-paymentmethodchangeevent)
-event handler. `changePaymentMethod()` returns a Promise that resolves to a
+event handler. `changePaymentMethod()` returns a promise that resolves to a
 [merchant
 response](https://w3c.github.io/payment-handler/#dom-paymentmethodchangeresponse)
 with updated price information (e.g. tax recalculation).
