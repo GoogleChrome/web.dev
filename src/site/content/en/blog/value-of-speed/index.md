@@ -74,7 +74,7 @@ and skip steps 1–3.
     drop-down list, and click **Create**.
     * Once the report has been generated, click **Select a metric > Metric Group > Ecommerce Conversion Rate**.
       <br><br>
-      <img class="w-screenshot" src="./conversion-rate.jpg" alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate">
+      <img class="w-screenshot" src="./conversion-rate.png" alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate">
       <br><br>
     * Select the **Week** view for the dataset.
       <br><br>
