@@ -137,7 +137,7 @@ allows payment handlers (e.g., Google Pay) to trigger the
 event handler. `changePaymentMethod()` returns a promise that resolves to a
 [merchant
 response](https://w3c.github.io/payment-handler/#dom-paymentmethodchangeresponse)
-with updated price information (e.g. tax recalculation).
+with updated price information (e.g., tax recalculation).
 
 Both `PaymentRequestEvent.changePaymentMethod()` and the `paymentmethodchange`
 event are shipped in Chrome 76. Webkit has implemented the
