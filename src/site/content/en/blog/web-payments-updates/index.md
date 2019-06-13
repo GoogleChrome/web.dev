@@ -140,7 +140,7 @@ response](https://w3c.github.io/payment-handler/#dom-paymentmethodchangeresponse
 with updated price information (e.g., tax recalculation).
 
 Both `PaymentRequestEvent.changePaymentMethod()` and the `paymentmethodchange`
-event are shipped in Chrome 76. Webkit has implemented the
+event are available in Chrome 76. Webkit has implemented the
 [`paymentmethodchange` event in its Technology
 Preview](https://webkit.org/blog/9167/whats-new-in-the-payment-request-api-for-apple-pay/).
 
