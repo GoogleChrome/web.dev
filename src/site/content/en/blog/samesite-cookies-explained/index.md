@@ -89,10 +89,9 @@ them set significantly more than just three cookies. In most cases, those
 cookies are sent on every single request to that domain - and this has a number
 of implications. Upload bandwidth is often more restricted than download for
 your users, so that overhead on all outbound requests is adding a delay on your
-time to first byte. This is magnified on connections with a smaller packet size
-where that cookie payload may fragment your outbound request. Be conservative in
-the number and size of cookies you set. Make use of the `Max-Age` attribute to
-help ensure that cookies don't hang around longer than needed.
+time to first byte. Be conservative in the number and size of cookies you set.
+Make use of the `Max-Age` attribute to help ensure that cookies don't hang
+around longer than needed.
 
 ## What are first-party and third-party cookies?
 
