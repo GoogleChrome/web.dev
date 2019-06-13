@@ -21,8 +21,8 @@ tags:
 Web Payments have been publicly available in browsers since 2016. The core
 feature — the [Payment Request API](https://www.w3.org/TR/payment-request/) — is
 now available across multiple browsers: Chrome, Safari, Edge and soon Firefox.
-If you're new to Web Payments take a look at the _[Web Payments
-Overview](https://developers.google.com/web/fundamentals/payments/?hl=en)_ to
+If you're new to Web Payments take a look at the ["Web Payments
+Overview"](https://developers.google.com/web/fundamentals/payments/?hl=en) to
 get started.
 
 Since the launch of the Payment Request API and the [Payment Handler
