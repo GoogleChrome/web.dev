@@ -12,7 +12,7 @@ description: |
   Since the launch of the Payment Request API in Chrome 53 and the Payment
   Handler API in Chrome 68, there have been quite a few changes made to their
   respective specifications.
-  recommend that you look out for them. This post summarizes those updates and
+This post summarizes those updates and
   will continue accumulating those API changes.
 tags:
   - post # post is a required tag for the article to show up in the blog.
