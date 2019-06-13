@@ -1,5 +1,5 @@
 ---
-title: Updates to the Web Payments APIs
+title: Updates to the web payments APIs
 subhead: Accumulated updates to the Web Payments
 authors:
   - rsolomakhin
