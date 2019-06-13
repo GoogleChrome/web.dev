@@ -1,5 +1,5 @@
 ---
-title: Updates to the web payments APIs
+title: Updates to the Web Payments APIs
 subhead: Accumulated updates to the Web Payments
 authors:
   - rsolomakhin
@@ -11,15 +11,24 @@ alt: Transfer money from a phone
 description: |
   Since the launch of the Payment Request API in Chrome 53 and the Payment
   Handler API in Chrome 68, there have been quite a few changes made to their
-  respective specifications.
-This post summarizes those updates and
-  will continue accumulating those API changes.
+  respective specifications. This post summarizes those updates and will
+  continue accumulating those API changes.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - payment
 ---
 
-Since the launch of the Payment Request API in Chrome 53 and the Payment Handler API in Chrome 68, there have been quite a few changes made to their respective specifications. These changes won't break your working code, but we recommend that you look out for them. This post summarizes those updates and will continue accumulating those API changes.
+Web Payments are publicly available in browsers since 2016. Its core feature -
+[Payment Request API](https://www.w3.org/TR/payment-request/) - is now available
+across multiple browsers: Chrome, Safari, Edge and soon Firefox. Review big
+pictures here: "[Web Payments
+Overview](https://developers.google.com/web/fundamentals/payments/?hl=en)".
+
+Since the launch of the Payment Request API and the [Payment Handler
+API](https://w3c.github.io/payment-handler/), there have been quite a few
+changes made to their respective specifications. These changes won't break your
+working code, but we recommend that you look out for them. This post summarizes
+those updates and will continue accumulating those API changes.
 
 {% Aside 'note' %} If you want to subscribe to further upcoming changes to
 Chrome's Web Payments APIs, please join the [Public Payment Request
@@ -35,17 +44,18 @@ Fundamentals](https://developers.google.com/web/updates/2017/01/payment-request-
 
 ## New method: `hasEnrolledInstrument()`
 
-As of Chrome 74, checking for payment instrument presence has been removed from
-`PaymentRequest.canMakePayment()` (see below for more info).
-[`PaymentRequest.hasEnrolledInstrument()`](https://w3c.github.io/payment-request/#hasenrolledinstrument-method)
-replaces this functionality in Chrome 74+.
+In Payment Request API, canMakePayment() has been available to check for user's
+payment instrument presence. In a recent update to the spec, canMakePayment()
+has been replaced with
+[hasEnrolledInstrument()](https://w3c.github.io/payment-request/#hasenrolledinstrument-method)
+without changing its functionality.
 
-[`hasEnrolledInstrument()`](https://chromestatus.com/feature/5646573451083776)
-has [consensus from all major
-browsers](https://chromestatus.com/feature/5646573451083776). As of June 2019,
-both [Webkit](https://bugs.webkit.org/show_bug.cgi?id=197386) and
-[Gecko](https://bugzilla.mozilla.org/show_bug.cgi?id=1528663) have tracking bugs
-but have not yet implemented the method.
+[hasEnrolledInstrument()](https://chromestatus.com/feature/5646573451083776) has
+[consensus from all major
+browsers](https://chromestatus.com/feature/5646573451083776). Chrome implemented
+it in version 74. Both [Webkit](https://bugs.webkit.org/show_bug.cgi?id=197386)
+and [Gecko](https://bugzilla.mozilla.org/show_bug.cgi?id=1528663) have tracking
+bugs but have not yet implemented the method as of June 2019.
 
 To adapt to the addition of `hasEnrolledInstrument()`, change code that looks
 like this:
@@ -69,11 +79,9 @@ if (request.hasEnrolledInstrument) {
 
 ## `canMakePayment()` no longer checks for instrument presence
 
-As of Chrome 74, the
-[`PaymentRequest.canMakePayment()`](https://w3c.github.io/payment-request/#canmakepayment-method)
-method only checks for payment app availability and no longer checks for payment
-instrument presence. To check for payment instrument presence in Chrome 74+, use
-the new `PaymentRequest.hasEnrolledInstrument()` method.
+By replacing with `hasEnrolledInstrument()`,
+[`canMakePayment()`](https://w3c.github.io/payment-request/#canmakepayment-method)
+now only checks for payment app availability.
 
 The change to `canMakePayment()` is bound to the implementation of
 `hasEnrolledInstrument()`. As of June 2019, it is implemented in Chrome 74 but
