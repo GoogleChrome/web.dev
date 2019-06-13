@@ -31,7 +31,7 @@ Typically, media sites have several variants of each video that they can present
 to users, encoded in different frame rates, resolutions, and codecs. Until
 recently, web developers had to rely solely on `isTypeSupported()` or
 `canPlayType()` to determine whether each variant could be played in an
-individual user’s browser. While this approach told the developer
+individual user’s browser.
 While this told the developer whether media could be played at all, it didn’t
 provide an indication of playback quality, such as whether there would be frame
 drops or device battery drain. Without this information, developers either had
