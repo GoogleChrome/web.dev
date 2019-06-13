@@ -283,9 +283,9 @@ enabled.
 
 {% Aside 'warning' %} Warning: At the time of writing, the network library on
 iOS and Mac incorrectly handles unknown `SameSite` values and will **treat any
-unknown value** (including `None`) as if it was SameSite=Strict, which affects
+unknown value** (including `None`) as if it was `SameSite=Strict`, which affects
 Safari and any other browser wrapping WebKit (like Chrome on iOS or Firefox on
-iOS) . This should be fixed in an upcoming release and may be available in the
+iOS). This should be fixed in an upcoming release and may be available in the
 Tech Preview now. You can track their progress in the
 [WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
 {% endAside %}
