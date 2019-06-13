@@ -128,7 +128,7 @@ request.show(new Promise(function(resolveDetailsPromise, rejectDetailsPromise) {
 .catch(handleError);
 ```
 
-## PaymentRequestEvent.changePaymentMethod()
+## `PaymentRequestEvent.changePaymentMethod()`
 
 The Payment Handler API feature
 [`PaymentRequestEvent.changePaymentMethod()`](https://chromestatus.com/feature/5698314223747072)
