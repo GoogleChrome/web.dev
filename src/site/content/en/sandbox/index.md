@@ -18,6 +18,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 1. [Details](#details)
 1. [Glitch](#glitch)
 1. [Images](#images)
+1. [Instruction](#instruction)
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
@@ -368,6 +369,47 @@ at.
     Fig. 5 — Regular screenshot.
   </figcaption>
 </figure>
+
+## Instruction
+
+{% Instruction 'remix' %}
+{% Instruction 'preview' %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
+{% Instruction 'console', 'ol' %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
+{% Instruction 'devtools', 'none' %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
+{% Instruction 'devtools-performance' %}
+
+{% Aside %}
+All DevTools panels are supported. View [the element source](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js) for details.
+{% endAside %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
+{% Instruction 'audit-performance', 'ol' %}
+
+{% Aside %}
+All Lighthouse audits are supported. View [the element source](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js) for details.
+{% endAside %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
 
 ## Lists
 
