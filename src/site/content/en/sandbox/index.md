@@ -22,6 +22,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
+1. [Video](#video)
 
 ## Asides
 
@@ -739,3 +740,33 @@ assumenda perspiciatis.
     </tbody>
   </table>
 </div>
+
+## Video
+
+### Native video
+
+<figure class="w-figure w-figure--fullbleed">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
+  </video>
+ <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
+  </figcaption>
+</figure>
+
+### YouTube
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam repellendus,
+doloremque cum odit blanditiis voluptas deserunt dolore soluta facilis alias est
+nam sint animi provident enim temporibus inventore, laudantium quam.
+
+<figure class="w-figure w-figure--fullbleed">
+  {% YouTube 'ViyTYEv9dM8' %}
+</figure>
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam repellendus,
+doloremque cum odit blanditiis voluptas deserunt dolore soluta facilis alias est
+nam sint animi provident enim temporibus inventore, laudantium quam.
+
+{% YouTube 'Ai4aZ9Jbsys', '1081' %}

@@ -38,6 +38,7 @@ const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
+const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
@@ -127,6 +128,7 @@ module.exports = function(config) {
   config.addShortcode('PostCard', PostCard);
   config.addShortcode('ShareAction', ShareAction);
   config.addShortcode('SubscribeAction', SubscribeAction);
+  config.addShortcode('YouTube', YouTube);
 
   // https://www.11ty.io/docs/config/#configuration-options
   return {
