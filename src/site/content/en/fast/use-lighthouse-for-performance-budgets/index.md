@@ -1,6 +1,18 @@
-# Use Lighthouse for Performance Budgets
+---
+layout: post
+title: Use Lighthouse for performance budgets
+authors:
+  - katiehempenius
+description: |
+  Lighthouse now supports performance budgets. This feature, LightWallet, can be
+  set up in under five minutes and provides feedvack on the size and quantity of
+  page resources.
+date: 2018-06-14
+tags:
+  - performance
+---
 
-Lighthouse now supports performance budgets. This feature, LightWallet, can be set up in under five minutes and provides feedback on the size and quantity of page resources.
+[Lighthouse](https://github.com/GoogleChrome/lighthouset) now supports performance budgets. This feature, [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets), can be set up in under five minutes and provides feedback on the size and quantity of page resources.
 
 ## Install Lighthouse
 
@@ -14,7 +26,7 @@ $ npm install -g lighthouse
 
 ## Create a Budget
 
-Create a file named `budget.json`. In this file add the following JSON:
+Create a file, named `budget.json`. In this file add the following JSON:
 
 ```json
 [
@@ -39,27 +51,31 @@ Create a file named `budget.json`. In this file add the following JSON:
 ]
 ```
 
-This example budget.json file sets three separate budgets:
+This example `budget.json` file sets three separate budgets:
 
-*   A budget of 125 KB for the total amount of JavaScript on the page.
+*   A budgetof 125 KB for the total amount of JavaScript on the page.
 *   A budget of 300 KB for the overall size of the page.
 *   A budget of 10 requests for the numer of requests made to third-party origins.
 
-A `budget.json` file can contain any number of budgets. These are the resource types supported by LightWallet: `document`, `font`, `image`, `media`, `other`,`script`, `stylesheet`, `third-party`, and `total`.
+You can set budgets for any of the following resource types: `document`, `font`, `image`, `media`, `other`,`script`, `stylesheet`, `third-party`, and `total`.
 
 
 ## Run Lighthouse
 
-Run Lighthouse using the `--budget-path` flag. This flag tells Lighthouse the location of your budget file. (Note: A budget file does not have to be named `budget.json`.)  
+Run Lighthouse using the `--budget-path` flag. This flag tells Lighthouse the location of your budget file.
 
 ```bash
 $ lighthouse https://example.com --budget-path=./budget.json
 ```
 
-## View Results
+{% Aside %}
+Note: A budget file does not have to be named `budget.json`.
+{% endAside %}
+
+## View the Results
 
 If LightWallet has been configured correctly, the Lighthouse report will contain a “Budgets” section within the “Performance” category.
 
-<img src="lightwallet.png" class="w-screenshot" alt="'Budgets' section of the Lighthouse report">
+<img src="./lightwallet.png" class="w-screenshot" alt="'Budgets' section of the Lighthouse report">
 
 In the JSON version of the Lighthouse report, Lightwallet results can be found within the audit findings for the `performance-budget` audit.
