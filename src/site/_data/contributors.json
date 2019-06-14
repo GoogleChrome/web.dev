@@ -1344,5 +1344,18 @@
     "description": {
       "en": "Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed."
     }
+  },
+  "adamargyle": {
+    "name": {
+      "given": "Adam",
+      "family": "Argyle"
+    },
+    "description": {
+      "en": "Developer Advocate for Chrome"
+    },
+    "homepage": "https://nerdy.dev",
+    "github": "argyleink",
+    "twitter": "argyleink",
+    "glitch": "argyleink"
   }
 }
