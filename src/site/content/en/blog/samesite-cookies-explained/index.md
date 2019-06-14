@@ -39,7 +39,8 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
 <figure class="w-figure  w-figure--center">
-  <img src="set-cookie-response-header.png" alt="Three cookies being sent to a browser from a server in a response" style="max-width: 60vw">
+  <img src="set-cookie-response-header.png" alt="Three cookies being sent to a
+    browser from a server in a response" style="max-width: 60vw">
   <figcaption class="w-figcaption">
     Servers set cookies using the <tt>Set-Cookie</tt> header.
   </figcaption>
@@ -54,7 +55,8 @@ Cookie: promo_shown=1
 ```
 
 <figure class="w-figure  w-figure--center">
-  <img src="cookie-request-header.png" alt="Three cookies being sent from a browser to a server in a request" style="max-width: 60vw;">
+  <img src="cookie-request-header.png" alt="Three cookies being sent from a
+    browser to a server in a request" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
     Your browser sends cookies back in the <tt>Cookie</tt> header.
   </figcaption>
@@ -79,7 +81,8 @@ context, with each cookie separated by a semicolon:
 ```
 
 <figure class="w-figure  w-figure--center">
-  <img src="document-cookie.png" alt="Javascript accessing cookies within the browser" style="max-width: 35vw;">
+  <img src="document-cookie.png" alt="Javascript accessing cookies within the
+    browser" style="max-width: 35vw;">
   <figcaption class="w-figcaption">
     JavaScript can access cookies using <tt>document.cookie</tt>.
   </figcaption>
@@ -106,7 +109,9 @@ label but is relative to the user's context; the same cookie can be either
 first-party or third-party depending on which site the user is on at the time.
 
 <figure class="w-figure  w-figure--center">
-  <img src="cross-site-set-cookie-response-header.png" alt="Three cookies being sent to a browser from different requests on the same page" style="max-width: 60vw;">
+  <img src="cross-site-set-cookie-response-header.png" alt="Three cookies being
+    sent to a browser from different requests on the same page"
+    style="max-width: 60vw;">
   <figcaption class="w-figcaption">
     Cookies may come from a variety of different domains on one page.
   </figcaption>
@@ -131,7 +136,8 @@ just save the video in one go rather than prompting them to sign-in or having to
 navigate them away from your page and back over to YouTube.
 
 <figure class="w-figure  w-figure--center">
-  <img src="cross-site-cookie-request-header.png" alt="The same cookie being sent in three different contexts" style="max-width: 60vw;">
+  <img src="cross-site-cookie-request-header.png" alt="The same cookie being
+    sent in three different contexts" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
     A cookie in a third-party context is sent when visiting different pages.
   </figcaption>
@@ -173,8 +179,8 @@ That enables `your-project.github.io` and `my-project.github.io` to count as
 separate sites.
 
 {% Aside 'key-term' %} If the user is on `your-project.github.io` and requests
-an image from `my-project.github.io` that's a **cross-site** request. {%
-  endAside %}
+an image from `my-project.github.io` that's a **cross-site** request.
+{% endAside %}
 
 Introducing the `SameSite` attribute on a cookie provides three different ways
 to control this behaviour. You can choose to not specify the attribute, or you
@@ -237,7 +243,8 @@ you can use `None` to clearly communicate you intentionally want the cookie sent
 in a third-party context.
 
 <figure class="w-figure  w-figure--center">
-  <img src="samesite-none-lax-strict.png" alt="Three cookies labelled None, Lax, or Strict depending on their context" style="max-width: 60vw;">
+  <img src="samesite-none-lax-strict.png" alt="Three cookies labelled None,
+    Lax, or Strict depending on their context" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
     Explicitly mark the context of a cookie as <tt>None</tt>, <tt>Lax</tt>, or <tt>Strict</tt>.
   </figcaption>
@@ -252,16 +259,19 @@ across multiple sites then you should use `None` to ensure your intent is clear.
 
 [Chrome 76](https://chromestatus.com/features/schedule) introduces a new
 `same-site-by-default-cookies` flag. Setting this flag will shift the default
-behaviour of `Set-Cookie` to apply `SameSite=Lax` if no other `SameSite` value
-is provided. This is a move towards providing a more secure default and one that
+treatment of cookies to apply `SameSite=Lax` if no other `SameSite` value is
+provided. This is a move towards providing a more secure default and one that
 makes the intended purpose of cookies clearer to users. If you want to delve
 into the details, check out Mike West's
 ["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00).
 
-With this flag enabled in Chrome, cookies without the `SameSite` attribute will
-be restricted to the same site the user is browsing. If you have cookies that
-need to be available in a third-party context, then you need to declare that to
-the browser and the user by marking them as `SameSite=None`.
+With this flag enabled in Chrome, both **new and existing cookies** without the
+`SameSite` attribute will be restricted to the same site the user is browsing.
+If you have cookies that need to be available in a third-party context, then you
+must declare that to the browser and the user by marking them as
+`SameSite=None`. You will want to apply this when setting new cookies and
+actively refresh existing cookies even if they are not approaching their expiry
+date.
 
 {% Aside 'note' %} If you rely on any services that provide third-party content
 on your site, you should also check with the provider that they are updating
@@ -269,11 +279,11 @@ their services. You may need to update your dependencies or snippets to ensure
 that your site picks up the new behavior. {% endAside %}
 
 These changes are backwards-compatible with browsers that have correctly
-implemented earlier versions `SameSite` or do not support it at all. By making
-these changes to your cookies, you are making their intended use explicit rather
-than relying on the default behavior of the browser. Likewise, any clients that
-do not recognize `SameSite=None` as of yet should ignore it and carry on as if
-the attribute was not set.
+implemented earlier versions of the `SameSite` attribute, or just do not support
+it at all. By applying these changes to your cookies, you are making their
+intended use explicit rather than relying on the default behavior of the
+browser. Likewise, any clients that do not recognize `SameSite=None` as of yet
+should ignore it and carry on as if the attribute was not set.
 
 Additionally in Chrome, if you also enable the
 `cookies-without-same-site-must-be-secure` flag then you must also specify
@@ -281,11 +291,11 @@ Additionally in Chrome, if you also enable the
 won't have any effect unless you also have `same-site-by-default-cookies`
 enabled.
 
-{% Aside 'warning' %} Warning: At the time of writing, the network library on
-iOS and Mac incorrectly handles unknown `SameSite` values and will **treat any
-unknown value** (including `None`) as if it was `SameSite=Strict`, which affects
-Safari and any other browser wrapping WebKit (like Chrome on iOS or Firefox on
-iOS). This should be fixed in an upcoming release and may be available in the
+{% Aside 'warning' %} At the time of writing, the network library on iOS and Mac
+incorrectly handles unknown `SameSite` values and will **treat any unknown
+value** (including `None`) as if it was `SameSite=Strict`, which affects Safari
+on Mac and browsers wrapping WebKit on iOS (Safari, Chrome, Firefox, and
+others). This should be fixed in an upcoming release and may be available in the
 Tech Preview now. You can track their progress in the
 [WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
 {% endAside %}
