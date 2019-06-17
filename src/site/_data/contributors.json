@@ -1235,13 +1235,12 @@
     },
     "org": {
       "name": "Google",
-      "unit": "TBI"
+      "unit": "Earth"
     },
-    "country": "TBI",
-    "homepage": "TBI",
-    "twitter": "TBI",
+    "country": "USA",
+    "homepage": "https://www.finefrog.com/",
     "description": {
-      "en": "TBI"
+      "en": "Jordon is a Tech Lead Manager working on Google Earth."
     }
   },
   "martinschierle": {
