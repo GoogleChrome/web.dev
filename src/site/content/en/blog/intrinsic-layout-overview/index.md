@@ -61,7 +61,7 @@ Jen explains:
 </blockquote>
 
 ## Why "intrinsic"? 🤔
-This may look familiar, it's the result of an _extrinsic_ approach to layout:
+This may look familiar; it's the result of an _extrinsic_ approach to layout:
 
 <p class="codepen" data-height="401" data-theme-id="dark" data-default-tab="result" data-user="brundolf" data-slug-hash="gRaREv" style="height: 401px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS is Awesome">
   <span>See the Pen <a href="https://codepen.io/brundolf/pen/gRaREv/">
@@ -77,8 +77,8 @@ frustration of this classic CSS joke really well:
 - The container doesn't handle overflow gracefully
 
 In my experience, initially laying out a site extrinsicly is the easiest. Later,
-it becomes tedious to maintain or even becomes a problem for other folks on the
-team that aren't engineers. Perhaps you or your team have felt one or more of
+it becomes tedious to maintain or even becomes a problem for other folks working
+on the site. Perhaps you or your team have felt one or more of
 these problems:
 
 1. Ever been in a CMS with an odd text length limit on a field?
