@@ -41,7 +41,7 @@ that's dynamic, different, and unique.** It means creating layouts that are
 respectful of your content's needs so as not to squish something beyond its
 `min-content` or extend it beyond its `max-content`.
 
-It also means accomodating those needs if they change. To do this we need to
+It also means accommodating those needs if they change. To do this we need to
 leverage every part of the CSS toolbox and choose the right tool for the job. As
 Jen explains:
 
@@ -97,6 +97,17 @@ Striving for an intrinsic layout can help alleviate these frustrations:
   layout is the right choice 👍.
 {% endAside %}
 
+The example below demonstrates the flexibility your site gains when it uses an
+intrinsic layout. While the content might change—sometimes dramatically—the layout
+is able to accommodate these changes in a way that preserves the site's design.
+
+<figure class="w-figure w-figure--center">
+  <video class="w-screenshot" autoplay loop muted playsinline aria-label="Large amounts of text are added to a three column layout. The layout flows the text correctly so it preserves its three column appearance.">
+    <source src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/intrinsic-layout-overview_intrinsic-chaos-overview.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/intrinsic-layout-overview_intrinsic-chaos-overview.mp4" type="video/mp4; codecs=h264">
+  </video>
+</figure>
+
 ## Our Quest ⚔️
 {% Aside 'objective' %}
   Understand the features of intrinsic layout by engineering resilient
@@ -146,6 +157,11 @@ pick up the basics along the way** and I'll do my best to provide links that
 explain certain topics in-depth. 👍
 
 <figure class="w-figure w-figure--center">
-  <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/get-started.gif" alt="run begin GIF by Crowdfire">
-  <figcaption class="w-figcaption w-figcaption--center">Weeeeeeeeeeeeeeee!</figcaption>
+  <video autoplay loop muted playsinline aria-label="A man and a woman quickly running in place.">
+    <source src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/intrinsic-layout-overview_get-started.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/intrinsic-layout-overview_get-started.mp4" type="video/mp4; codecs=h264">
+  </video>
+ <figcaption class="w-figcaption w-figcaption--center">
+    Weeeeeeeeeeeeeeee!
+  </figcaption>
 </figure>
