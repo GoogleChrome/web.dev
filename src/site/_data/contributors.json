@@ -1290,6 +1290,19 @@
     "github": "rowan-m",
     "glitch": "rowan-m"
   },
+  "adamargyle": {
+    "name": {
+      "given": "Adam",
+      "family": "Argyle"
+    },
+    "description": {
+      "en": "Developer Advocate for Chrome"
+    },
+    "homepage": "https://nerdy.dev",
+    "github": "argyleink",
+    "twitter": "argyleink",
+    "glitch": "argyleink"
+  },
   "lunalu": {
     "name": {
       "given": "Luna",
