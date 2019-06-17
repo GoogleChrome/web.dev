@@ -78,7 +78,7 @@ frustration of this classic CSS joke really well:
 
 In my experience, initially laying out a site extrinsicly is the easiest. Later,
 it becomes tedious to maintain or even becomes a problem for other folks on the
-team that aren't engineers.Perhaps you or your team have felt one or more of
+team that aren't engineers. Perhaps you or your team have felt one or more of
 these problems:
 
 1. Ever been in a CMS with an odd text length limit on a field?
@@ -120,7 +120,7 @@ intrinsic layout.**
 </figure>
 
 This layout demonstrates a CMS powered e-commerce homepage. The design may look
-innocent, but it's jam packed with learning opportunities: Horizontally
+innocent, but it's jam packed with learning opportunities: horizontally
 overflowing scroll areas, component variability, heavy images, etc. Plus the
 designer forgot to create a mock for mobile devices 😅
 
