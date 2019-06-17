@@ -1,0 +1,87 @@
+<svg  xmlns="http://www.w3.org/2000/svg" width="700" height="320"  viewBox="0 110 700 350" aria-label="Pie chart with data from HTTP Archive showing the proportion of page weight for each resource type">
+   <rect x="0" y="0" width="700" height="300" stroke="none" stroke-width="0" fill="#ffffff" />
+   <g>
+      <rect x="542" y="174" width="198" height="152" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff" />
+      <g column-id="Images">
+         <rect x="542" y="174" width="198" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff" />
+         <g>
+            <text text-anchor="start" x="561" y="185.9" font-family="Google Sans" font-size="14" stroke="none" stroke-width="0" fill="#222222">Images</text>
+         </g>
+         <circle cx="549" cy="181" r="7" stroke="none" stroke-width="0" fill="#3366cc" />
+      </g>
+      <g column-id="JavaScript">
+         <rect x="542" y="197" width="198" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff" />
+         <g>
+            <text text-anchor="start" x="561" y="208.9" font-family="Google Sans" font-size="14" stroke="none" stroke-width="0" fill="#222222">JavaScript</text>
+         </g>
+         <circle cx="549" cy="204" r="7" stroke="none" stroke-width="0" fill="#dc3912" />
+      </g>
+      <g column-id="Fonts">
+         <rect x="542" y="220" width="198" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff" />
+         <g>
+            <text text-anchor="start" x="561" y="231.9" font-family="Google Sans" font-size="14" stroke="none" stroke-width="0" fill="#222222">Fonts</text>
+         </g>
+         <circle cx="549" cy="227" r="7" stroke="none" stroke-width="0" fill="#ff9900" />
+      </g>
+      <g column-id="CSS">
+         <rect x="542" y="243" width="198" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff" />
+         <g>
+            <text text-anchor="start" x="561" y="254.9" font-family="Google Sans" font-size="14" stroke="none" stroke-width="0" fill="#222222">CSS</text>
+         </g>
+         <circle cx="549" cy="250" r="7" stroke="none" stroke-width="0" fill="#109618" />
+      </g>
+      <g column-id="Video">
+         <rect x="542" y="266" width="198" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff" />
+         <g>
+            <text text-anchor="start" x="561" y="277.9" font-family="Google Sans" font-size="14" stroke="none" stroke-width="0" fill="#222222">Video</text>
+         </g>
+         <circle cx="549" cy="273" r="7" stroke="none" stroke-width="0" fill="#990099" />
+      </g>
+      <g column-id="HTML">
+         <rect x="542" y="289" width="198" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff" />
+         <g>
+            <text text-anchor="start" x="561" y="300.9" font-family="Google Sans" font-size="14" stroke="none" stroke-width="0" fill="#222222">HTML</text>
+         </g>
+         <circle cx="549" cy="296" r="7" stroke="none" stroke-width="0" fill="#0099c6" />
+      </g>
+      <g column-id="Other">
+         <rect x="542" y="312" width="198" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff" />
+         <g>
+            <text text-anchor="start" x="561" y="323.9" font-family="Google Sans" font-size="14" stroke="none" stroke-width="0" fill="#222222">Other</text>
+         </g>
+         <circle cx="549" cy="319" r="7" stroke="none" stroke-width="0" fill="#dd4477" />
+      </g>
+   </g>
+   <g>
+      <path d="M340,235.6L340,266.4L338.1485127708158,143.20890423076142L338.1485127708158,112.40890423076142" stroke="#a63359" stroke-width="1" fill="#a63359" />
+      <path d="M340,235.6L338.1485127708158,112.40890423076142A154,123.2,0,0,1,340,112.39999999999999L340,235.6A0,0,0,0,0,340,235.6" stroke="#dd4477" stroke-width="1" fill="#dd4477" />
+   </g>
+   <g>
+      <path d="M340,235.6L340,266.4L321.5292561934012,144.08936171016097L321.5292561934012,113.28936171016096" stroke="#007395" stroke-width="1" fill="#007395" />
+      <path d="M340,235.6L321.5292561934012,113.28936171016096A154,123.2,0,0,1,338.1485127708158,112.40890423076142L340,235.6A0,0,0,0,0,340,235.6" stroke="#0099c6" stroke-width="1" fill="#0099c6" />
+   </g>
+   <g>
+      <path d="M340,235.6L340,266.4L300.81293579583536,147.25538468148233L300.81293579583536,116.45538468148233" stroke="#730073" stroke-width="1" fill="#730073" />
+      <path d="M340,235.6L300.81293579583536,116.45538468148233A154,123.2,0,0,1,321.5292561934012,113.28936171016096L340,235.6A0,0,0,0,0,340,235.6" stroke="#990099" stroke-width="1" fill="#990099" />
+   </g>
+   <g>
+      <path d="M340,235.6L340,266.4L264.52828935316643,159.00906290144405L264.52828935316643,128.20906290144404" stroke="#0c7112" stroke-width="1" fill="#0c7112" />
+      <path d="M340,235.6L264.52828935316643,128.20906290144404A154,123.2,0,0,1,300.81293579583536,116.45538468148233L340,235.6A0,0,0,0,0,340,235.6" stroke="#109618" stroke-width="1" fill="#109618" />
+   </g>
+   <g>
+      <path d="M340,235.6L340,266.4L230.48545024083978,179.78337012864682L230.48545024083978,148.9833701286468" stroke="#bf7300" stroke-width="1" fill="#bf7300" />
+      <path d="M340,235.6L230.48545024083978,148.9833701286468A154,123.2,0,0,1,264.5282893531663,128.2090629014441L340,235.6A0,0,0,0,0,340,235.6" stroke="#ff9900" stroke-width="1" fill="#ff9900" />
+   </g>
+   <g>
+      <path d="M195.48891744436244,278.17734247111406L195.48891744436244,308.97734247111407A154,123.2,0,0,1,186,266.4L186,235.6A154,123.2,0,0,0,195.48891744436244,278.17734247111406" stroke="#a52b0e" stroke-width="1" fill="#a52b0e" />
+      <path d="M340,235.6L340,266.4L195.48891744436244,308.97734247111407L195.48891744436244,278.17734247111406" stroke="#a52b0e" stroke-width="1" fill="#a52b0e" />
+      <path d="M340,235.6L195.48891744436244,278.17734247111406A154,123.2,0,0,1,230.48545024083978,148.9833701286468L340,235.6A0,0,0,0,0,340,235.6" stroke="#dc3912" stroke-width="1" fill="#dc3912" />
+
+   </g>
+   <g>
+      <path d="M494,235.6L494,266.4A154,123.2,0,0,1,195.48891744436244,308.97734247111407L195.48891744436244,278.17734247111406A154,123.2,0,0,0,494,235.6" stroke="#264d99" stroke-width="1" fill="#264d99" />
+      <path d="M340,235.6L340,112.39999999999999A154,123.2,0,1,1,195.48891744436244,278.17734247111406L340,235.6A0,0,0,1,0,340,235.6" stroke="#3366cc" stroke-width="1" fill="#3366cc" />
+      <text text-anchor="start" x="377.4269594502394" y="247.86352883898064" font-family="Google Sans" font-size="20" stroke="none" stroke-width="0" fill="#ffffff">1,813 KB</text>
+   </g>
+   <g />
+</svg>
