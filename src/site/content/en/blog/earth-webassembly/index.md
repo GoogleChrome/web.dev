@@ -1,260 +1,60 @@
 ---
-title: "Definitely not web payments"
+title: "How we’re bringing Google Earth to the web"
 subhead: |
-  Learn how to build good navigation UX with the Portals API.
-date: 2019-06-17
+  Improving cross-browser access to Google Earth with WebAssembly.
+date: 2019-06-20
 authors:
-  - uskay
-hero: hero.png
-alt: A logo of Portals
+  - jormears
+hero: hero.jpg
+alt: A globe with code overlaid
 description: |
-  Portals help keep your front-end simple while allowing seamless navigations
-  with custom transitions. In this article, get hands-on experience using
-  Portals to improve user experience across your site.
+  Improving cross-browser access to Google Earth with WebAssembly
 tags:
   - post
-  - portals
-  - ux
+  - wasm
+  - WebAssembly
+  - Earth
+  - Web App
 ---
 
-Making sure your pages load fast is key to delivering a good user experience.
-But one area we often overlook is page transitions — what our users see when
-they move between pages.
+In an ideal world, every application that developers build, regardless of technology, would be easily made available in the browser. But there are barriers to bringing projects to the web, depending on the technology they were built with and how well that technology is supported by the various browser vendors. [WebAssembly](https://webassembly.org/) (Wasm) is a compile target standardized by the [W3C](https://www.w3.org/), allowing you to run codebases from languages other than JavaScript on the web.
 
-A new web platform API called [Portals](https://github.com/WICG/portals) aims to
-help with this by streamlining the experience as users navigate _across_ your
-site. See Portals in action:
+We’ve done just that with Google Earth, available today in [preview beta](https://g.co/earth/beta) on WebAssembly. Keep in mind that this is a preview beta of Google Earth that may not be as smooth as you’re used to (try out regular [Earth for web](https://earth.google.com/web/)). You can experiment with this beta in Chrome and other Chromium-based browsers, including Edge (Canary version) and Opera; plus Firefox. Consider this beta your inspiration if you too are looking for better cross-browser support for your native applications.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
-  </video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
-  </figcaption>
-</figure>
+## Why we chose WebAssembly for Google Earth
 
-## What Portals enable
+We originally wrote most of Google Earth in C++ because it was initially a native application, intended for desktop install. Then we were able to port it to Android and iOS as smartphones took hold and retain most of our C++ codebase using [NDK](https://developer.android.com/ndk) and [Objective-C++](https://www.wikipedia.org/wiki/Objective-C#Objective-C++). 
 
-Single Page Applications (SPAs) offer nice transitions
-but come at the cost of higher complexity to build. 
-Multi-page Applications (MPAs) are much easier to build,
-but you end up with blank screens between pages.
+In 2017, when we brought Earth to the web, we used [Native Client](https://developer.chrome.com/native-client) (NaCl) to compile the C++ code and run it in Chrome browser. At the time, it was the only browser technology that allowed us to port our C++ code to the browser and give us the kind of performance Earth needed. Unfortunately, NaCl was a Chrome-only technology that never saw adoption across browsers. Now we’re starting to switch to WebAssembly, which lets us take that same code and run it across browsers. This means Earth will be available to more people across the web.
 
-Portals offer the best of both worlds:
-the low complexity of an MPA with the seamless transitions of an SPA. 
-Think of them like an `<iframe>` in that they allow for embedding,
-but unlike an `<iframe>`,
-they also come with features to navigate to their content.
+## A thread on threading
 
-Seeing is believing:
-please first check out what we showcased at Chrome Dev Summit last year:
+WebAssembly is still evolving as a standard, and browsers continue to get extended with more features and functionality. From the Earth perspective, the most significant difference in support for WebAssembly between browsers is support for threading. Some browsers offer multi-threading support and others don't. Think of Earth like a huge 3D video game of the real world. As such, we’re constantly streaming data to the browser, decompressing it and making it ready for rendering to the screen. Being able to do this work on a background thread has shown a clear improvement in [the performance of Earth in the browser](https://medium.com/google-earth/performance-of-web-assembly-a-thread-on-threading-54f62fd50cf7).
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/Ai4aZ9Jbsys?start=1081" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+Multi-threaded WebAssembly relies on a browser feature called SharedArrayBuffer, which was pulled from browsers after the Spectre and Meltdown security vulnerabilities were revealed. To mitigate potential damage from attacks, Google’s security team [introduced Site Isolation](https://security.googleblog.com/2018/07/mitigating-spectre-with-site-isolation.html) in Chrome for all desktop operating systems. Site Isolation limits each renderer process to documents from a single site. With this security feature in place, Chrome re-enabled SharedArrayBuffer for desktop—which allowed us to use multi-threaded WebAssembly for Earth on Chrome.
 
-With classic navigations, users have to wait with a blank screen
-until the browser finishes rendering the destination.
-With Portals, users get to experience an animation,
-while the `<portal>` pre-renders content and creates a seamless navigation experience.
+Other browsers are working on Site Isolation or other mitigations as well in order to re-enable SharedArrayBuffer. In the meantime, Earth runs single-threaded in those browsers.
 
-Before Portals, we could have rendered another page using an `<iframe>`. We could also have added animations to move the frame around the page. But an `<iframe>` won’t let you navigate into its content. Portals close this gap, enabling interesting use cases.
+## How WebAssembly works with different browsers
 
-## Try out Portals in Chrome Canary
+We’ve learned a lot about the state of WebAssembly support in browsers porting Earth. If you’re going to develop applications using WebAssembly, it’s important to understand the current state of how WebAssembly works with different browsers. 
 
-Try out Portals in Chrome Canary by flipping an experimental flag:
-`chrome://flags/#enable-portals`.
-Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
+### Edge: 
+Edge is on the verge of becoming two distinct development experiences based on Microsoft's choice to move from the EdgeHTML renderer over to a Chromium-based renderer moving forward. At the moment, the Google Earth beta on WebAssembly won’t run on the current public version of Edge due to lack of support for WebGL2—but that’ll be fixed once the new version of Edge, based on Chromium, ships in the near future. In the meantime, you can [download the Canary version of Edge](https://www.microsoftedgeinsider.com/download) and see that Earth works quite well.
 
-<img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
+### Chrome:
+Chrome has strong support for WebAssembly, including multi-threading, so you can expect Earth to run smoother as a result. However, we look forward to Chrome adding support for dynamic memory allocation with multi-threading in WebAssembly. Until then, Earth may fail to start on devices with limited amounts of memory (such as 32-bit machines).
 
-Let’s walk through a basic example.
+### Firefox: 
+Firefox offers good support for WebAssembly, but has disabled support for multi-threading. As a result, you can expect a slower experience with Earth. We look forward to Mozilla bringing back support for multi-threading in future versions. On the upside, Firefox does support dynamic memory allocation.
 
-```javascript
-// Create a portal with the wikipedia page, and embed it
-// (like an iframe). You can also use the <portal> tag instead.
-portal = document.createElement('portal');
-portal.src = 'https://en.wikipedia.org/wiki/World_Wide_Web';
-portal.style = '...';
-document.body.appendChild(portal);
+### Opera: 
+Opera is based on Chromium just as Chrome is, along with upcoming versions of Edge. However, the current version of Opera only offers single-threaded support of WebAssembly. Earth does run in Opera, but at a somewhat degraded experience. Hopefully newer versions of Opera will have support for multi-threading and more robust WebAssembly support.
 
-// When the user touches the preview (embedded portal):
-// do fancy animation, e.g. expand …
-// and finish by doing the actual transition
-portal.activate();
-```
+### Safari: 
+Safari has a strong implementation of WebAssembly, but it lacks full support for WebGL2. Therefore, Earth with WebAssembly does not run in Safari. Specifically, some of our shaders require GLSL 1.2. We hope that Earth will be available on Safari as well, once better support for WebGL2 is added.
 
-It’s that simple. Try this code in the DevTools console, the wikipedia page should open up.
+## Looking forward to more adoption of WebAssembly features
+It’s been a long road to make Earth available on the web at its launch, and today with our beta, a first step toward better cross-browser experiences. About six years ago, we started with an initial [asm.js](http://asmjs.org/)-based internal demo that was maintained and expanded over the years. It was then converted into a WebAssembly build of Earth, as WebAssembly became the W3C adopted standard. 
 
-<img class="w-screenshot" src="portal-preview-demo.gif" alt="A gif of preview portal style demo">
-
-If you wanted to build something like we showed at Chrome Dev Summit which works just like the demo above, 
-the following snippet will be of interest.
-
-```javascript
-// Adding some styles with transitions
-const style = document.createElement('style');
-const initialScale = 0.4;
-style.innerHTML = `
-  portal {
-    position:fixed;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition:
-      transform 0.4s,
-      bottom 0.7s,
-      left 0.7s,
-      opacity 1.0s;
-    box-shadow: 0 0 20px 10px #999;
-    transform: scale(${initialScale});
-    bottom: calc(20px + 50% * ${initialScale} - 50%);
-    left: calc(20px + 50% * ${initialScale} - 50%);
-    z-index: 10000;
-  }
-  .portal-reveal {
-    transform: scale(1.0);
-    bottom: 0px;
-    left: 0px;
-  }
-  .fade-in {
-    opacity: 1.0;
-  }
-`;
-const portal = document.createElement('portal');
-// Let’s navigate into the WICG Portals spec page
-portal.src = 'https://wicg.github.io/portals/';
-portal.addEventListener('click', evt => {
-  // Animate the portal once user interacts
-  portal.classList.add('portal-reveal');
-});
-portal.addEventListener('transitionend', evt => {
-  if (evt.propertyName == 'bottom') {
-    // Activate the portal once the transition has completed
-    portal.activate();
-  }
-});
-document.body.append(style, portal);
-
-// Waiting for the page to load.
-// using setTimeout is a suboptimal way and it’s best to fade-in
-// when receiving a load complete message from the portal via postMessage
-setTimeout(_ => portal.classList.add('fade-in'), 2000);
-```
-
-It is also easy to do feature detection to progressively enhance a website using Portals.
-
-```javascript
-if ('HTMLPortalElement' in window) {
-  // If this is a platform that have Portals...
-  const portal = document.createElement('portal');
-  ...
-}
-```
-
-If you want to quickly experience what Portals feel like, try using
-[uskay-portals-demo.glitch.me](https://uskay-portals-demo.glitch.me).
-Be sure you access it with Chrome Canary and turn on the experimental flag!
-
-1. Enter a URL you want to preview.
-1. The page will then be embedded as a `<portal>` element.
-1. Click on the preview.
-1. The preview will be activated after an animation.
-
-<img class="w-screenshot" src="glitch.gif" alt="A gif of using the glitch demo of using Portals">
-
-## Check out the spec
-
-We are actively discussing
-[the Portals spec](https://wicg.github.io/portals/) in the Web Incubation Community Group (WICG).
-To quickly get up to speed, take a look at
-[the explainer](https://github.com/WICG/portals/blob/master/explainer.md).
-These are the three important features to familiarize yourself with:
-
- - [The `<portal>` element:](https://wicg.github.io/portals/#the-portal-element) The HTML element itself. The API is very simple. It consists of the `src` attribute, the `activate` function and an interface for messaging (`postMessage`). `activate` takes an optional argument to pass data to the `<portal>` upon activation.
- - [The `portalHost` interface:](https://wicg.github.io/portals/#the-portalhost-interface) Adds a `portalHost` object to the `window` object. This lets you check if the page is embedded as a `<portal>` element. It also provides an interface for messaging (`postMessage`) back to the host.
- - [The PortalActivateEvent interface:](https://wicg.github.io/portals/#the-portalactivateevent-interface) An event that fires when the `<portal>` is activated. There is a neat function called `adoptPredecessor` which you can use to retrieve the previous page as a `<portal>` element. This allows you to create seamless navigations and composed experiences between two pages.
-
-Let’s look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.
-### Customize the style when embedded as a `<portal>` element
-```javascript
-// Detect whether this page is hosted in a portal
-if (window.portalHost) {
-  // Customize the UI when being embedded as a portal
-}
-```
-### Messaging between the `<portal>` element and `portalHost`
-```javascript
-// Send message to the portal element
-const portal = document.querySelector('portal');
-portal.postMessage({someKey: someValue}, ORIGIN);
-
-// Receive message via window.portalHost
-window.portalHost.addEventListener('message', evt => {
-  const data = evt.data.someKey;
-  // handle the event
-});
-```
-### Activating the `<portal>` element and receiving the `portalactivate` event
-```javascript
-// You can optionally add data to the argument of the activate function
-portal.activate({data: {'somekey': 'somevalue'}});
-
-// The portal content will receive the portalactivate event
-// when the activate happens
-window.addEventListener('portalactivate', evt => {
-  // Data available as evt.data
-  const data = evt.data;   
-});
-```
-### Retrieving the predecessor
-```javascript
-// Listen to the portalactivate event
-window.addEventListener('portalactivate', evt => {
-  // ... and creatively use the predecessor
-  const portal = evt.adoptPredecessor();
-  document.querySelector('someElm').appendChild(portal);
-});
-```
-### Knowing your page was adopted as a predecessor
-```javascript
-// The activate function returns a Promise.
-// When the promise resolves, it means that the portal has been activated.
-// If this document was adopted by it, then window.portalHost will exist.
-portal.activate().then(_ => {
-  // Check if this document was adopted into a portal element.
-  if (window.portalHost) {
-    // You can start communicating with the portal element
-    // i.e. listen to messages
-    window.portalHost.addEventListener('message', evt => {
-      // handle the event
-    });
-  }
-});
-```
-By combining all of the features supported by Portals,
-you can build really fancy user experiences.
-For instance, the demo below demonstrates how Portals can enable a seamless user experience
-between a website and third party embed content. 
-
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/4JkipxFVE9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-{% Aside %}
-Interested in this demo?
-[Fork it on GitHub](https://github.com/WICG/portals/tree/master/demos/portal-embed-demo)
-and build your own version!
-{% endAside %}
-
-## Use cases and plans
-
-We hope you liked this brief tour of Portals! We can’t wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page. 
-
-Another important thing to know is that Portals can be used in cross-origin navigations, just like an `<iframe>`. So, if you have multiple websites that cross reference one another, you can also use Portals to create seamless navigations between two different websites. This cross-origin use case is very unique to Portals, and can even improve the user experience of SPAs.
-
-## Feedback welcome
-
-Portals are still in the early stages so not everything is working yet (that’s why it’s behind an experimental flag). That said, it’s ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on [the Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836) and if you have any feature requests, or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+We still have a ways to go for WebAssembly and Earth. Specifically, we’d like to move to the LLVM backend using Emscripten (the toolchain to generate WebAssembly out of C++ code). This change will enable future SIMD support, as well as stronger debugging tools like source maps for native code. Other things we hope to see are adoption of [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) and full support for dynamic memory allocation in WebAssembly. But we know we’re on the right track: WebAssembly is the long-term future for Earth on the web.

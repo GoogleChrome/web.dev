@@ -1228,6 +1228,22 @@
       "en": "Tech consultant for Web, Chrome & AMP"
     }
   },
+  "jormears": {
+    "name": {
+      "given": "Jordon",
+      "family": "Mears‎"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "TBI"
+    },
+    "country": "TBI",
+    "homepage": "TBI",
+    "twitter": "TBI",
+    "description": {
+      "en": "TBI"
+    }
+  },
   "martinschierle": {
     "name": {
       "given": "Martin",
