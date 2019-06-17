@@ -1,6 +1,6 @@
 ---
 title: Hello Darkness, My Old Friend
-subhead: Dark theme is here
+subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to benefit your users!
 authors:
   - thomassteiner
 date: 2019-05-23
@@ -13,7 +13,7 @@ tags:
   - dark-mode
 ---
 
-## Background
+## Dark mode before *Dark Mode*
 
 <figure class="w-figure w-figure--inline-right">
   <img style="height:175px; width:auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
@@ -43,21 +43,23 @@ the idea of making the document resemble a physical sheet of paper became popula
 This is where *dark-on-white* as a design trend started,
 and this trend was carried over to the document-based web.
 To the present day, web pages and apps are typically designed with dark text on a light background,
-a baseline assumption that is also hard-coded in User-Agent (UA) stylesheets like
+a baseline assumption that is also hard-coded in user agent stylesheets like
 [Chrome's](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
 
-Today, a lot of content consumption and creation has shifted to mobile devices
+Nowadays, a lot of content consumption and creation has shifted to mobile devices
 that use backlit Liquid Crystal Displays (LCD)
 or energy-saving Active-Matrix Organic Light-Emitting Diode (AMOLED) screens,
-and on the desktop as well (which can be a full PC or a laptop), the days of CRTs are long over.
+and on the desktop as well—which can be a full PC or a laptop—the days of CRTs are long over.
 With such smaller and more transportable computers, tablets, and smartphones,
-new usage patterns have evolved, like people using their devices in their beds at night-time;
-and tasks like coding or high-end gaming frequently happen after-hours in dim environments anyway.
-The more people use their devices in the dark, and even more since Apple has introduced
-[Dark Mode in macOS Mojave](https://support.apple.com/en-us/HT208976) on the desktop,
-the idea of going back to the roots of *light-on-dark* is becoming increasingly popular again.
+new usage patterns have evolved.
+People use their devices even in their beds at night-time, and leisure tasks
+like web browsing, coding for fun, or high-end gaming
+frequently happen after-hours in dim environments anyway.
+The more people use their devices in the dark—and even more since Apple has introduced
+[Dark Mode in macOS Mojave](https://support.apple.com/en-us/HT208976) on the desktop—the
+more the idea of going back to the roots of *light-on-dark* becomes popular.
 
-## Why Dark Mode
+## Why dark mode
 
 When people get asked
 [why they like or want dark mode](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d),
@@ -78,16 +80,23 @@ is an aesthetic one for most users, and might not relate to ambient lighting con
   <figcaption class="w-figcaption">Fig. 3 — System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
 </figure>
 
-However, there're also people who actually need dark mode or other accessibility tools,
+### Accessibility
+
+However, there're also people who actually *need* dark mode or other accessibility tools,
 for example, users with low vision.
-The earliest occurrence of such a tool I could find is
+The earliest occurrence of such an accessibility tool I could find is
 [System&nbsp;7](https://en.wikipedia.org/wiki/System_7)'s *CloseView* feature that had a toggle for
 *"Black on White"* and *"White on Black,"* which arguably can be called dark mode.
 While System&nbsp;7 supported color, the default user interface was still black-and-white.
-You can actually
-experience System&nbsp;7 live thanks to the
-[Internet Archive](https://archive.org/details/mac_MacOS_7.0.1_compilation)
-(unfortunately the *CloseView* feature was on a separate floppy disk not part of the emulation).
+
+{% Aside 'note' %}
+  You can actually
+  [experience System&nbsp;7](https://archive.org/details/mac_MacOS_7.0.1_compilation)
+  live thanks to the
+  [Internet Archive](https://archive.org/)
+  (unfortunately the *CloseView* feature was on a separate floppy disk not part of the emulation).
+{% endAside %}
+
 These inversion-based implementations showed their weaknesses the moment color was introduced.
 User research by Szpiro *et al.* on
 [how people with low vision access computing devices](https://dl.acm.org/citation.cfm?id=2982168)
@@ -98,10 +107,12 @@ On its mobile devices, Apple accommodates for this shortcoming with a feature ca
 that reverses the colors on the display, except for images, media,
 and some apps that use dark color styles.
 
+### Computer Vision Syndrome
+
 Computer Vision Syndrome, also known as Digital Eye Strain, is
 [defined](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1475-1313.2011.00834.x)
 as *"the combination of eye and vision problems associated with the use of computers
-(including desktop, laptop and tablets) and other electronic displays (e.g.
+(including desktop, laptop, and tablets) and other electronic displays (e.g.
 smartphones and electronic reading devices)."*
 It has been [proposed](https://bmjopen.bmj.com/content/5/1/e006748)
 that the use of electronic devices by adolescents, particularly at night time,
@@ -112,21 +123,33 @@ Additionally, exposure to blue light has been widely
 to be involved in the regulation of circadian rhythm and the sleep cycle,
 and irregular light environments may lead to sleep deprivation,
 possibly affecting mood and task performance, according to
-[Rosenfield](https://www.college-optometrists.org/oip-resource/computer-vision-syndrome--a-k-a--digital-eye-strain.html).
-To limit these negative effects, limiting blue light by adjusting the display color temperature
+[research by Rosenfield](https://www.college-optometrists.org/oip-resource/computer-vision-syndrome--a-k-a--digital-eye-strain.html).
+To limit these negative effects, reducing blue light by adjusting the display color temperature
 through features like iOS' [Night Shift](https://support.apple.com/en-us/HT207570) or Android's
 [Night Light](https://support.google.com/pixelphone/answer/7169926?) can help,
 as well as avoiding bright lights or irregular lights in general through dark themes or dark modes.
 
-## Activating Dark Mode in the Operation System
+### Power savings on AMOLED screens
 
-Now that I have covered the background of why dark mode is such a big thing,
+Finally, dark mode is known to save a *lot* of energy on AMOLED screens.
+Case studies by the Android team that focused on popular Google apps
+like YouTube have shown that the power savings can be up to 60%.
+The video below has more details on this.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/N_6sPd0Jd3g?start=305"
+    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+## Activating dark mode in the operation system
+
+Now that I have covered the background of why dark mode is such a big thing for many,
 let me go into detail how you can support it.
-Before we dive into this, let's first clarify how people can activate dark mode in the first place.
+Before I dive into this, let me first clarify how people can activate dark mode in the first place.
 Operating systems that support a dark mode or theme
 typically have an option to activate it somewhere in the settings.
-On macOS&nbsp;X, it's in the system preference's *General* section and called *Apprearance*,
-and on Windows&nbsp;10 it's in the *Colors* section and called *Choose your color*.
+On macOS&nbsp;X, it's in the system preference's *General* section and called *Appearance*,
+and on Windows&nbsp;10, it's in the *Colors* section and called *Choose your color*.
 For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch.
 
 <div style="overflow-x: auto">
@@ -154,9 +177,9 @@ For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle swi
   </table>
 </div>
 
-## The `prefers-color-scheme` Media Query
+## The `prefers-color-scheme` media query
 
-[Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+[Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 allow authors to test and query values or features of the user agent or display device,
 independent of the document being rendered.
 They are used in the CSS `@media` rule to conditionally apply styles to a document,
@@ -168,7 +191,7 @@ a way for sites to detect the user's preferred way to display content.
 {% Aside 'note' %}
   An established user preference media feature is `prefers-reduced-motion`
   that lets you detect the desire for less motion on a page.
-  If you're interested, I have written about
+  I have written about
   [`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
   before.
 {% endAside %}
@@ -179,7 +202,7 @@ It takes the following values:
 
 - `no-preference`:
   Indicates that the user has made no preference known to the system.
-  This keyword value evaluates as false in the
+  This keyword value evaluates as `false` in the
   [boolean context](https://drafts.csswg.org/mediaqueries-5/#boolean-context).
 - `light`:
   Indicates that the user has notified the system that they prefer a page that has a light theme
@@ -188,18 +211,24 @@ It takes the following values:
   Indicates that the user has notified the system that they prefer a page that has a dark theme
   (light text on dark background).
 
-## Supporting Dark Mode
+## Supporting dark mode
 
-Let's finally see how supporting dark mode looks in practice.
-To optimize load speed, I have split my CSS into three parts:
+Let's finally see how supporting dark mode looks like in practice.
+Just like with the [Highlander](https://en.wikipedia.org/wiki/Highlander_(film)),
+with dark mode, *there can be only one*: dark or light, but never both!
+Please don't force users to download CSS in the critical rendering path
+that is for a mode they don't currently use.
+To optimize load speed, I have therefore split my CSS into three parts
+in order to [defer non-critical CSS](/defer-non-critical-css/):
 
 - `style.css` that contains generic styles that are used universally on the site.
 - `dark.css` that contains only the rules needed for dark mode.
 - `light.css` that contains only the rules needed for light mode.
 
 The two latter ones are loaded conditionally with a `<link media>` query.
-Not all browsers will support this media query quite yet,
-which I counter by loading the default `light.css` file via `document.write`
+Initially,
+[not all browsers will support `prefers-color-scheme`](https://caniuse.com/#feat=prefers-color-scheme),
+which I deal with dynamically by loading the default `light.css` file via `document.write`
 in a minuscule inline script.
 
 ```html
@@ -218,7 +247,7 @@ in a minuscule inline script.
   will be downloaded with `highest`, the non-matching file with `lowest`
   priority. If the browser doesn't support `prefers-color-scheme`, the media
   query is unknown and the files are downloaded with `lowest` priority (but
-  above I force `highest` for the default experience).
+  above I force `highest` for the default light experience).
 -->
 <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
@@ -249,16 +278,18 @@ that essentially create a *dark-on-light* and a *light-on-dark* baseline theme.
 
 In my `style.css`, I then use these variables in the `body { … }` rule.
 You will also have noticed a property `color-scheme` with the space-separated value `light dark`.
+This tells the browser which color themes my app supports
+and allows it to activate special variants of the user agent stylesheet.
+This is useful to, for example, let the browser render form fields
+with a dark background and light text, adjust the scrollbars,
+or to enable a theme-aware highlight color.
+The exact details of `color-scheme` are specified in
+[CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/).
 
 {% Aside 'note' %}
   Read up more on
   [what `color-scheme` actually does](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d).
 {% endAside %}
-
-This tells the browser which color themes my app supports,
-and allows it to activate special variants of the User Agent stylesheet.
-This is useful to, for example, let the browser render form fields
-with a dark background and light text, or to enable a theme-aware highlight color.
 
 ```css
 /* style.css */
@@ -309,7 +340,7 @@ so that they never compete with resources that are needed by the site right now.
   <figcaption class="w-figcaption">Fig. 9 — Site in default light mode on a browser that doesn't support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
-## Dark Mode Best Practices
+## Dark mode best practices
 
 ### Photographic images
 
@@ -386,7 +417,7 @@ img[src*=".svg"]:hover {
 
 
 
-## Related Links
+## Related links
 
 - Resources for the `prefers-color-scheme` media query:
     - [Chrome Platform Status page](https://chromestatus.com/feature/5109758977638400)
