@@ -37,6 +37,9 @@ Multi-threaded WebAssembly relies on a browser feature called SharedArrayBuffer,
 
 Other browsers are working on Site Isolation or other mitigations in order to re-enable SharedArrayBuffer. In the meantime, Earth runs single-threaded in those browsers.
 
+<img class="w-screenshot" src="GoogleEarthEiffel.jpg" alt="A screenshot of Earth showing Eiffel Tower">
+
+
 ## How WebAssembly works with different browsers
 
 We’ve learned a lot about the state of WebAssembly support in browsers porting Earth. If you’re going to develop applications using WebAssembly, it’s important to understand the current state of how WebAssembly works with different browsers.  
