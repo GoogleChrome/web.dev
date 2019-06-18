@@ -398,7 +398,7 @@ A small detail you may have noticed is that I don't use pure white.
 Instead, to prevent glowing and bleeding against the surrounding dark content,
 I choose a slightly darker white, `rgb(250, 250, 250)` or similar works well.
 
-## Example
+## Full example
 
 In the following [Glitch](https://dark-mode-baseline.glitch.me/) embed,
 you can see the complete example that puts the concepts from above into practice.
@@ -472,6 +472,24 @@ img:not([src*=".svg"]) {
 }
 ```
 
+<figure>
+  <div style="width: 100%">
+    <div style="display: inline-block;
+      width: 45%;
+      height: 100px;
+      background-image: url(dark.png);
+      background-repeat: no-repeat;
+      background-position-y: center;"></div>
+    <div style="display: inline-block;
+      width: 45%;
+      height: 100px;
+      background-image: url(light.png);
+      background-repeat: no-repeat;
+      background-position-y: center;"></div>
+  </div>
+  <figcaption class="w-figcaption">Fig. — Image re-colorization</figcaption>
+</figure>
+
 ### Customizing dark mode choices with JavaScript
 
 Not everyone is the same and people have different dark mode needs.
@@ -516,6 +534,47 @@ img[src*=".svg"]:hover {
   filter: var(--icon-filter_hover);
 }
 ```
+
+<figure>
+  <div style="width: 100%">
+    <div style="display: inline-block;
+      width: 45%;
+      height: 100px;
+      background-image: url(dark.png);
+      background-repeat: no-repeat;
+      background-position: bottom -50px left 0;"></div>
+    <div style="display: inline-block;
+      width: 45%;
+      height: 100px;
+      background-image: url(light.png);
+      background-repeat: no-repeat;
+      background-position: bottom -50px left 0;"></div>
+  </div>
+  <figcaption class="w-figcaption">Fig. — Icon re-colorization</figcaption>
+</figure>
+
+## Dark mode, but add an opt-out
+
+As mentioned in the [why dark mode](#why-dark-mode) section above,
+dark mode is an aesthetic choice for most users.
+In consequence, some users may actually like to have their operating system UI
+in dark, but still prefer to see their webpages the way they are used to seeing them.
+A great pattern is to initially adhere to the signal the browser sends through
+`prefer-color-scheme`, but to then optionally allow users to override that color scheme.
+You can of course create the code for this yourself, but you can also just use
+a ready-made custom element (web component) that I have created right for this purpose.
+It's called `<dark-mode-toggle>` and it adds a toggle (dark mode on/off) or
+a theme switcher (theme light/dark) to your page that you can fully customize.
+The demo below shows the element in action
+(oh, and I have also snuck it in the [full example](#full-example) above).
+
+<div style="height: 420px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html"
+    style="height:100%; width:100%; border:0;">
+  </iframe>
+</div>
 
 ## Conclusions
 
