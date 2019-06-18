@@ -18,9 +18,11 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 1. [Details](#details)
 1. [Glitch](#glitch)
 1. [Images](#images)
+1. [Instruction](#instruction)
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
+1. [Video](#video)
 
 ## Asides
 
@@ -369,6 +371,47 @@ at.
   </figcaption>
 </figure>
 
+## Instruction
+
+{% Instruction 'remix' %}
+{% Instruction 'preview' %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
+{% Instruction 'console', 'ol' %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
+{% Instruction 'devtools', 'none' %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
+{% Instruction 'devtools-performance' %}
+
+{% Aside %}
+All DevTools panels are supported. View [the element source](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js) for details.
+{% endAside %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
+{% Instruction 'audit-performance', 'ol' %}
+
+{% Aside %}
+All Lighthouse audits are supported. View [the element source](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js) for details.
+{% endAside %}
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+
 ## Lists
 
 ### Ordered list
@@ -697,3 +740,33 @@ assumenda perspiciatis.
     </tbody>
   </table>
 </div>
+
+## Video
+
+### Native video
+
+<figure class="w-figure w-figure--fullbleed">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
+  </video>
+ <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
+  </figcaption>
+</figure>
+
+### YouTube
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam repellendus,
+doloremque cum odit blanditiis voluptas deserunt dolore soluta facilis alias est
+nam sint animi provident enim temporibus inventore, laudantium quam.
+
+<figure class="w-figure w-figure--fullbleed">
+  {% YouTube 'ViyTYEv9dM8' %}
+</figure>
+
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam repellendus,
+doloremque cum odit blanditiis voluptas deserunt dolore soluta facilis alias est
+nam sint animi provident enim temporibus inventore, laudantium quam.
+
+{% YouTube 'Ai4aZ9Jbsys', '1081' %}

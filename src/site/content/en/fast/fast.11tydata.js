@@ -79,6 +79,7 @@ module.exports = {
           'performance-budgets-101',
           'your-first-performance-budget',
           'incorporate-performance-budgets-into-your-build-tools',
+          'use-lighthouse-for-performance-budgets',
           'using-bundlesize-with-travis-ci',
           'using-lighthouse-bot-to-set-a-performance-budget',
         ],

@@ -1,0 +1,21 @@
+// =============================================================================
+// YOUTUBE OVERVIEW
+//
+// Styles for a responsive YouTube video embed.
+//
+// =============================================================================
+
+.w-youtube {
+  padding-top: 56.25%;
+  position: relative;
+  width: 100%;
+}
+
+.w-youtube__embed {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}

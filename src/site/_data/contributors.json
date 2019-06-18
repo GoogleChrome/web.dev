@@ -627,6 +627,7 @@
     "country": "JP",
     "homepage": "https://blog.agektmr.com",
     "twitter": "agektmr",
+    "github": "agektmr",
     "description": {
       "en": "Developer Advocate in Tokyo"
     }
@@ -1289,6 +1290,19 @@
     "github": "rowan-m",
     "glitch": "rowan-m"
   },
+  "adamargyle": {
+    "name": {
+      "given": "Adam",
+      "family": "Argyle"
+    },
+    "description": {
+      "en": "Developer Advocate for Chrome"
+    },
+    "homepage": "https://nerdy.dev",
+    "github": "argyleink",
+    "twitter": "argyleink",
+    "glitch": "argyleink"
+  },
   "lunalu": {
     "name": {
       "given": "Luna",
@@ -1316,5 +1330,32 @@
     "country": "US",
     "twitter": "geddski",
     "github": "geddski"
+  },
+  "danyao": {
+    "name": {
+      "given": "Danyao",
+      "family": "Wang"
+    },
+    "description": {
+      "en": ""
+    },
+    "country": "US",
+    "twitter": "danyaowang"
+  },
+  "linahansson": {
+    "name": {
+      "given": "Lina",
+      "family": "Hansson"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Platform Sales"
+    },
+    "country": "Sweden",
+    "homepage": "https://digies.se",
+    "twitter": "LinaCHansson",
+    "description": {
+      "en": "Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed."
+    }
   }
 }
