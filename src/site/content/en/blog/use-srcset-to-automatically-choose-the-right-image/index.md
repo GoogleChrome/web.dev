@@ -18,6 +18,8 @@ tags:
   - sizes
 ---
 
+{% YouTube 'SyVKRnusyqM' %}
+
 According to [HTTP Archive](https://httparchive.org/reports/state-of-images), a
 typical mobile web page weighs over 2.6 MB, and more than two thirds of that
 weight is images. That's a great opportunity for optimization!
