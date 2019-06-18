@@ -18,22 +18,22 @@ tags:
   - sizes
 ---
 
-{% Aside %}
-This post accompanies the video below, from **Top tips for web performance**, a
-fortnightly series covering the basics for improving site speed.
-{% endAside %}
+According to [HTTP Archive](https://httparchive.org/reports/state-of-images), a
+typical mobile web page weighs over 2.6 MB, and more than two thirds of that
+weight is images. That's a great opportunity for optimization!
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/SyVKRnusyqM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-<!-- <a href="https://www.youtube.com/watch?v=SyVKRnusyqM" title=""><img src="youtube-screenshot.png" style="border: 1px solid #ccc; max-width: 400px; width: 100%;" alt="Screenshot of YouTube playing video accompanying this article"></a> -->
+<figure>
+  <img src="http-archive.svg">
+  <figcaption style="text-align: center"><a href="https://mobile.httparchive.org/">Average mobile page bytes by content type</a>
+  </figcaption>
+</figure>
 
 ## tl;dr
-* Don't save images with width and height larger than the display size.
-* Provide multiple sizes for each image and use the `srcset` attribute to enable
-the browser to get the smallest possible image. The _w_ value tells the browser
-the width of each version:
+* Don't save images larger than their display size.
+* Save multiple sizes for each image and use the
+[`srcset`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)
+attribute to enable the browser to choose the smallest.
+The `w` value tells the browser the width of each version:
 
 ```html/1
    <img src="small.jpg"
@@ -43,17 +43,7 @@ the width of each version:
         alt="...">
 ```
 
-<br>
 
-
-According to [HTTP Archive](https://httparchive.org/reports/state-of-images), a
-typical mobile web page weighs over 2.6 MB, and more than two thirds of that
-weight is images. That's a great opportunity for optimization!
-
-
-<figure> <img src="http-archive.svg"> <figcaption style="text-align: center;
-width: 100%"><a href="https://mobile.httparchive.org/">Average mobile page bytes
-by content type</a></figcaption> </figure>
 
 ## Save images with the right size
 
@@ -63,46 +53,49 @@ width and height when you save them.
 
 Take a look at the images below.
 
-The images look identical, but the file size of one is 10 times larger
-than the other.
+They appear identical, but the file size of one is more than 10 times
+larger than the other.
 
-<figure style="display: inline-block; margin: 0 20px 20px 0; width: 300px"> <img
+<figure style="display: inline-block; margin: 0 20px 20px 0; width: 300px">
+  <img
 src="kittens-1000.jpg" alt="Little Puss and Lias: two ten week old tabby
-kittens." class="screenshot"> <figcaption style="text-align: center;">Saved
-width 1000 px, file size 184 KB</figcaption> </figure>
+kittens." class="screenshot">
+  <figcaption style="text-align: center;">Saved width 1000 px,
+      file size 184 KB</figcaption>
+</figure>
 
-<figure style="display: inline-block; width: 300px"> <img src="kittens-1000.jpg"
+<figure style="display: inline-block; width: 300px">
+  <img src="kittens-1000.jpg"
 alt="Little Puss and Lias: two ten week old tabby kittens." class="screenshot">
-<figcaption style="text-align: center;">Saved width 300 px, file size 16
-KB</figcaption> </figure>
+  <figcaption style="text-align: center;">Saved width 300 px, file size
+      16 KB</figcaption>
+</figure>
 
 The one on the left is much larger in file size because it's saved with
 dimensions much larger than the display size. Both these images are displayed
 with a fixed width of 300 pixels, so it makes sense to use an image saved at
 the same size.
 
-{% Aside %}
-For image elements with a fixed CSS size, use images saved with the same
-dimensions.
-{% endAside %}
+**For fixed widths, use images saved with the same dimensions as the
+display size.**
 
 ## But... what if display size varies?
 
-In a multi-device world, images aren't displayed at a single fixed size.
+In a multi-device world, images aren't always displayed at a single fixed size.
 
-What about image elements with a percentage width, or responsive layouts
-where image display sizes change to fit the screen size?
+Image elements might have a percentage width, or be part of responsive layouts
+where image display sizes change to fit the screen size.
 
 ...and what about pixel-hungry devices like Retina displays?
 
 ## Help the browser choose the right image size
 
-Wouldn't it be great if you make each image available at different sizes, then
+Wouldn't it be great if you could make each image available at different sizes, then
 let the browser choose the best size for the device and display size?
 Unfortunately there's a
-[Catch-22](https://en.wikipedia.org/wiki/Catch-22_(logic)) when it comes to
+[catch-22](https://en.wikipedia.org/wiki/Catch-22_(logic)) when it comes to
 working out which image is best. The browser should use the smallest possible
-image, but it can't know the size of an image without downloading it to check.
+image, but it can't know the width of an image without downloading it to check.
 
 This is where `srcset` comes in handy. You save images at different sizes, then
 tell the browser the width of each version:
@@ -120,14 +113,14 @@ depending on the screen type and the viewport size — without having to
 download images to check their size.
 
 {% Aside 'caution'%}
-Just to be clear: `srcset` gives the browser information about the
+`srcset` gives the browser information about the
 saved width of each image file.
 
 It does NOT specify the size to display the image — you still need CSS for that!
 {% endAside%}
 
-You can see this in action with the image below if you're on a laptop or
-desktop computer. Change your browser window size and reopen this page.
+You can see `srcset` in action for the image below. If you're on a laptop or
+desktop computer, change your browser window size and reopen this page.
 Then use the Network panel of your browser tools to check which image was used.
 (You'll need to do that in an Incognito or Private window, otherwise the
 original image file will be cached.)
@@ -140,9 +133,8 @@ alt="Lias and Little Puss: two ten week old grey tabby kittens">
 You'll need to make multiple sizes available for every image you want to use
 with `srcset`.
 
-For one-off images such as hero images you can manually save different sizes.
-
-If you have lots of images, such as product photos, you'll need to automate.
+For one-off images such as hero images you can manually save different sizes. If
+you have lots of images, such as product photos, you'll need to automate.
 For that there are two approaches.
 
 ### Incorporate image processing in your build process
@@ -153,7 +145,7 @@ versions of your images.
 To find out more see the guide at
 [web.dev/use-imagemin-to-compress-images](/use-imagemin-to-compress-images).
 
-### Image service
+### Use an image service
 
 Image creation and delivery can be automated using a commercial service like
 [Cloudinary](https://cloudinary.com/), or an open source equivalent such as
@@ -162,10 +154,10 @@ Image creation and delivery can be automated using a commercial service like
 You upload your high resolution images, and the image service automatically
 creates and delivers different image formats and sizes depending on the URL
 parameters. For an example, open [res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg](https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg)
-and try changing the _w_ value or the file extension.
+and try changing the _w_ value or the file extension in the URL.
 
 Image services also have more advanced features such as the ability to automate
-'smart cropping' for different image sizes and automatically deliver WebP images
+"smart cropping" for different image sizes and automatically deliver [WebP](https://developers.google.com/speed/webp/) images
 to browsers that support the format, instead of JPEGs — without changing the file
 extension.
 
@@ -179,17 +171,17 @@ extension.
 
 <img src="devtools-headers-for-cloudinary-image.png" alt="Screenshot of Chrome
 DevTools showing WebP content-type header for file served by Cloudinary"
-style="margin: 0 0 0 45px; max-width: 100%; width: 400px;">
+style="border: 1px solid #eee; margin: 0 0 0 45px; max-width: 100%; padding: 2px; width: 400px;">
 
-<br>
 
-## What if the image doesn't work well at different sizes?
+## What if the image doesn't look right at different sizes?
 
-In that case, you'll need to use the `<picture>` element for 'art direction':
+In that case, you'll need to use the `<picture>` element for "art direction":
   providing a different image or image crop at different sizes.
 
-For an example try out the demo at
-[simpl.info/pictureart](https://simpl.info/pictureart/).
+Try out the
+[art direction codelab](https://web.dev/codelab-art-direction/).
+
 
 ## What about pixel density?
 
@@ -198,16 +190,19 @@ high-end phone might have two or three times as many pixels in each row of
 pixels as a cheaper device.
 
 That can affect the size you need to save your images. We won't go into the gory
-details here, but the article [Responsive images with srcset and sizes](https://medium.com/@woutervanderzee/responsive-images-with-srcset-and-sizes-fc434845e948)
-provides a good summary.
+details here, but you can find out more from the [density descriptor codelab](https://web.dev/codelab-density-descriptors).
+
 
 ## What about the display size of the image?
 
-You can use `sizes` to make `srcset` work even better. The `sizes` attribute
-tells the browser the size an image will be displayed, so the browser can choose
-the smallest possible image file — before it makes any layout calculations.
+You can use `sizes` to make `srcset` work even better.
 
-In the example below, `sizes=50vw` tells the browser that this image will be
+Without it, the browser uses the full width of the viewport when choosing an
+image from a `srcset`. The `sizes` attribute tells the browser the width that an
+image element will be displayed, so the browser can choose the smallest possible
+image file — before it makes any layout calculations.
+
+In the example below, `sizes="50vw"` tells the browser that this image will be
 displayed at 50% of the viewport width.
 
 ``` html/2
@@ -218,26 +213,36 @@ displayed at 50% of the viewport width.
 ```
 
 You can see this in action at
-[simpl.info/sizeswvalues](https://simpl.info/sizeswvalues/).
+[simpl.info/sizes](https://simpl.info/sizeswvalues/) and the [multiple slot widths codelab](https://web.dev/codelab-specifying-multiple-slot-widths).
 
 {% Aside 'caution'%}
-Just to be clear: `sizes` gives the browser information about the display width
+`sizes` gives the browser information about the display width
 of on image element.
 
-As with `srcset` it does NOT specify the size to display the image — you still
-need CSS for that!
+As with `srcset` it does NOT specify the size to display the image — you need
+CSS for that.
 {% endAside%}
 
 ## What about browser support?
 
-`srcset` and `sizes` are [supported globally by over 90% of
-browsers](https://caniuse.com/#feat=srcset).
+`srcset` and `sizes` are [supported by over 90% of
+browsers globally](https://caniuse.com/#feat=srcset).
 
-Your browser will use the `src` value and ignore `srcset` and `sizes` if they're
-not supported.
+If a browser does not support `srcset` or `sizes` it will fall back to just using the `src` attribute.
+
+This makes `srcset` and `sizes` great progressive enhancements!
 
 ## Find out more
 
-* [Optimize your images](https://web.dev/fast#optimize-your-images)
-* [Responsive Images](https://udacity.com/course/responsive-images--ud882):
-free Udacity course
+* Guides from web.dev: [Optimize your images](https://web.dev/fast#optimize-your-images)
+* Codelab: [Specifying multiple slot widths](https://web.dev/codelab-specifying-multiple-slot-widths)
+* Codelab: [Use density descriptors](https://web.dev/codelab-density-descriptors)
+* Free course: [Responsive Images](https://udacity.com/course/responsive-images--ud882)
+
+
+{% Aside %}
+This post accompanies the video below, from **Top tips for web performance**, a
+fortnightly series covering simple techniques to improve site speed.
+{% endAside %}
+
+
