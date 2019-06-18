@@ -73,7 +73,7 @@ cookie I have."
 **Sample Response header**
 ```
 Content-Encoding: gzip
-Cache-Control: no-cache
+Cache-Control: no-store
 ```
 
 The above is equivalent to saying "Data is encoded with gzip. Do not cache this
