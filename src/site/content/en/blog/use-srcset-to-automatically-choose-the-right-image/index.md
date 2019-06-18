@@ -3,7 +3,7 @@ title: Top tips for web performance
 subhead: Use srcset to automatically choose the right image size.
 authors:
   - samdutton
-date: 2019-06-18
+date: 2019-06-19
 hero: hero.jpg
 alt: Photo of rower displayed on multiple devices
 description: Use srcset to automatically choose the right image size.
@@ -243,8 +243,5 @@ This makes `srcset` and `sizes` great progressive enhancements!
 
 
 {% Aside %}
-This post accompanies the video below, from **Top tips for web performance**, a
-fortnightly series covering simple techniques to improve site speed.
+This post accompanies [**Top tips for web performance**](https://www.youtube.com/playlist?list=PLNYkxOF6rcICVl6Vb-AFlw81bQLuv6a_P): a fortnightly video series showing simple techniques to improve site speed.
 {% endAside %}
-
-
