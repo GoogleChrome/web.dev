@@ -1,5 +1,5 @@
 ---
-title: "Web components: the secret ingredient powering the web" 
+title: "Web components: the secret ingredient helping power the web" 
 subhead: Web components at I/O 2019
 authors:
   - arthurevans
