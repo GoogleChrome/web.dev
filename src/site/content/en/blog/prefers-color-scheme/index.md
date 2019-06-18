@@ -3,7 +3,7 @@ title: Hello Darkness, My Old Friend
 subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to benefit your users!
 authors:
   - thomassteiner
-date: 2019-05-23
+date: 2019-06-30
 hero: dark.png
 alt: macOS X Dark Mode preferences.
 description: |
@@ -17,7 +17,7 @@ tags:
 
 <figure class="w-figure w-figure--inline-right">
   <img style="height:175px; width:auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
-  <figcaption class="w-figcaption">Fig. 1 — Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Fig. — Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
 </figure>
 
 We have gone full circle with dark mode.
@@ -31,7 +31,7 @@ Information like text was displayed in green, and the rest of the screen was bla
 
 <figure class="w-figure w-figure--inline-left">
   <img style="height:175px; width:auto;" src="word-processing.jpg" alt="Dark-on-white word processing" intrinsicsize="698x551">
-  <figcaption class="w-figcaption">Fig. 2 — Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Fig. — Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
 </figure>
 
 The subsequently introduced Color CRTs display multiple colors
@@ -39,12 +39,32 @@ through the use of red, green, and blue phosphors.
 They create white by activating all three phosphors simultaneously.
 With the advent of more sophisticated *What You See Is What You Get* (WYSIWYG)
 [desktop publishing](https://en.wikipedia.org/wiki/Desktop_publishing),
-the idea of making the document resemble a physical sheet of paper became popular.
+the idea of making the virtual document resemble a physical sheet of paper became popular.
+
+
+<figure class="w-figure w-figure--inline-right">
+  <img style="height:175px; width:auto;" src="worldwideweb.png" alt="Dark-on-white webpage in the WorldWideWeb browser" intrinsicsize="1024x768">
+  <figcaption class="w-figcaption">Fig. — The WorldWideWeb browser (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Source</a>)</figcaption>
+</figure>
+
 This is where *dark-on-white* as a design trend started,
-and this trend was carried over to the document-based web.
-To the present day, web pages and apps are typically designed with dark text on a light background,
-a baseline assumption that is also hard-coded in user agent stylesheets like
+and this trend was carried over to the
+[early document-based web](http://info.cern.ch/hypertext/WWW/TheProject.html)
+and was also the way the first browser, [WorldWideWeb](https://en.wikipedia.org/wiki/WorldWideWeb)
+(remember,
+[CSS wasn't even invented](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#History) yet),
+[displayed webpages](https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png).
+Fun fact: the second ever browser, the
+[Line Mode Browser](https://en.wikipedia.org/wiki/Line_Mode_Browser)—as a terminal-based browser—was
+green on dark.
+To the present day, web pages and web apps are typically designed with dark text
+on a light background, a baseline assumption that is also hard-coded in user agent stylesheets like
 [Chrome's](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
+
+<figure class="w-figure w-figure--inline-left">
+  <img style="height:175px; width:auto;" src="smartphone-in-bed.jpg" alt="Smartphone used while lying in bed" intrinsicsize="500x334">
+  <figcaption class="w-figcaption">Fig. — Smartphone used in bed (<a href="https://unsplash.com/photos/W39xsPWZgA4">Source</a>)</figcaption>
+</figure>
 
 Nowadays, a lot of content consumption and creation has shifted to mobile devices
 that use backlit Liquid Crystal Displays (LCD)
@@ -77,7 +97,7 @@ is an aesthetic one for most users, and might not relate to ambient lighting con
 
 <figure class="w-figure w-figure--inline-right">
   <img style="height:225px; width:auto;" src="closeview.png" alt="CloseView in Mac OS System 7 with \"White on Black\" mode" intrinsicsize="531x618">
-  <figcaption class="w-figcaption">Fig. 3 — System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Fig. — System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
 </figure>
 
 ### Accessibility
@@ -152,30 +172,39 @@ On macOS&nbsp;X, it's in the system preference's *General* section and called *A
 and on Windows&nbsp;10, it's in the *Colors* section and called *Choose your color*.
 For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch.
 
-<div style="overflow-x: auto">
-  <table class="w-screenshot w-screenshot--filled">
-    <tr>
-      <td style="vertical-align:top;">
-        <figure class="w-figure w-figure--inline-left">
-          <img style="height:250px; width:auto;" src="windows10.png" alt="Windows 10 dark theme settings" intrinsicsize="838x700">
-          <figcaption class="w-figcaption">Fig. 4 — Windows&nbsp;10 dark theme settings</figcaption>
-        </figure>
-      </td>
-      <td style="vertical-align:top;">
-        <figure class="w-figure w-figure--inline-left">
-          <img style="height:250px; width:auto;" src="macosx.png" alt="macOS X dark mode settings" intrinsicsize="668x678">
-          <figcaption class="w-figcaption">Fig. 5 — macOS&nbsp;X dark mode settings</figcaption>
-        </figure>
-      </td>
-      <td style="vertical-align:top;">
-        <figure class="w-figure w-figure--inline-left">
-          <img style="height:250px; width:auto;" src="android.png" alt="Android Q dark mode settings" intrinsicsize="610x700">
-          <figcaption class="w-figcaption">Fig. 6 — Android&nbsp;Q dark theme settings</figcaption>
-        </figure>
-      </td>
-    </tr>
-  </table>
-</div>
+<figure>
+  <div style="overflow-x: auto; padding-left:1rem;">
+    <table class="w-screenshot w-screenshot--filled">
+      <tr>
+        <td style="vertical-align:top;">
+          <figure class="w-figure w-figure--inline-left">
+            <img style="height:250px; width:auto;" src="windows10.png" alt="Windows 10 dark theme settings" intrinsicsize="838x700">
+            <figcaption class="w-figcaption">Windows&nbsp;10 dark theme settings</figcaption>
+          </figure>
+        </td>
+        <td style="vertical-align:top;">
+          <figure class="w-figure w-figure--inline-left">
+            <img style="height:250px; width:auto;" src="macosx.png" alt="macOS X dark mode settings" intrinsicsize="668x678">
+            <figcaption class="w-figcaption">macOS&nbsp;X dark mode settings</figcaption>
+          </figure>
+        </td>
+        <td style="vertical-align:top;">
+          <figure class="w-figure w-figure--inline-left">
+            <img style="height:250px; width:auto;" src="android.png" alt="Android Q dark mode settings" intrinsicsize="610x700">
+            <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
+          </figure>
+        </td>
+        <td style="vertical-align:top;">
+          <figure class="w-figure w-figure--inline-left">
+            <img style="height:250px; width:auto;" src="ios.jpg" alt="iOS 13 appearance settings" intrinsicsize="323x700">
+            <figcaption style="width: 10rem;" class="w-figcaption">iOS&nbsp;13 appearance settings</figcaption>
+          </figure>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <figcaption class="w-figcaption">Fig. — Dark mode settings on various operating systems</figcaption>
+</figure>
 
 ## The `prefers-color-scheme` media query
 
@@ -327,17 +356,17 @@ so that they never compete with resources that are needed by the site right now.
 
 <figure class="w-figure">
   <img src="light.png" alt="Network loading diagram showing how in light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
-  <figcaption class="w-figcaption">Fig. 7 — Site in light mode loads the dark mode CSS with lowest priority.</figcaption>
+  <figcaption class="w-figcaption">Fig. — Site in light mode loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
 <figure class="w-figure">
   <img src="dark.png" alt="Network loading diagram showing how in dark mode the light mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
-  <figcaption class="w-figcaption">Fig. 8 — Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
+  <figcaption class="w-figcaption">Fig. — Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
 </figure>
 
 <figure class="w-figure">
   <img src="unsupported.png" alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
-  <figcaption class="w-figcaption">Fig. 9 — Site in default light mode on a browser that doesn't support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
+  <figcaption class="w-figcaption">Fig. — Site in default light mode on a browser that doesn't support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
 ## Dark mode best practices
