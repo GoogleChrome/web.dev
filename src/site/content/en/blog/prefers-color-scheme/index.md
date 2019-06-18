@@ -445,7 +445,6 @@ img[src*=".svg"]:hover {
 ## Conclusions
 
 
-
 ## Related links
 
 - Resources for the `prefers-color-scheme` media query:
