@@ -17,7 +17,7 @@ tags:
   - Web App
 ---
 
-In an ideal world, every application that developers build, regardless of technology, would be easily made available in the browser. But there are barriers to bringing projects to the web, depending on the technology they were built with and how well that technology is supported by the various browser vendors. [WebAssembly](https://webassembly.org/) (Wasm) is a compile target standardized by the [W3C](https://www.w3.org/)that helps us solve this problem by allowing us to run codebases from languages other than JavaScript on the web.
+In an ideal world, every application that developers build, regardless of technology, would be easily made available in the browser. But there are barriers to bringing projects to the web, depending on the technology they were built with and how well that technology is supported by the various browser vendors. [WebAssembly](https://webassembly.org/) (Wasm) is a compile target standardized by the [W3C](https://www.w3.org/) that helps us solve this problem by allowing us to run codebases from languages other than JavaScript on the web.
 
 
 We’ve done just that with Google Earth, available today in [preview beta](https://g.co/earth/beta) on WebAssembly. Keep in mind that this is still a beta of Google Earth and may not be as smooth as you’re used to (try out regular [Earth for web](https://earth.google.com/web/)). You can experiment with this beta in Chrome and other Chromium-based browsers, including Edge (Canary version) and Opera, as well as Firefox. Consider this beta your inspiration if you too are looking for better cross-browser support for your native applications.
