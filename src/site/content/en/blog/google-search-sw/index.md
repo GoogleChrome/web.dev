@@ -3,8 +3,8 @@ title: Bringing service workers to Google Search
 subhead: The story of what shipped, how the impact was measured, and the tradeoffs that were made.
 authors:
   - jeffposnick
-date: 2019-06-17
-hero: hero.png
+date: 2019-06-19
+hero: hero.jpg
 alt: The Google Search interface.
 description: |
   Search for just about any topic on Google, and you're presented with a page of meaningful, relevant results. What you probably didn't realize is that this search results page may be served by a powerful piece of web technology called a service worker.
@@ -36,9 +36,9 @@ that code isn't free, so you need to make sure that what you're doing inside the
 service worker adds enough of a caching or functionality benefit to justify the
 cost of running the code. (This [talk](https://www.youtube.com/watch?v=25aCD5XL1Jk)
 at the Chrome Dev Summit 2018 does a great job of exploring that idea in more
-detail.) An upfront understanding what you hope to achieve—and then collecting a
-full set of metrics to ensure that you've actually achieved it—should be the
-first step in your service worker journey.
+detail.) An upfront understanding of what you hope to achieve—and then
+collecting a full set of metrics to ensure that you've actually achieved
+it—should be the first step in your service worker journey.
 
 For the Google Search team, there were a couple of key reasons why adding a
 service worker was worth exploring.
@@ -70,7 +70,10 @@ back and try again once their connection returned. With a service worker, it's
 possible to serve a custom offline HTML response, and allow users to enter their
 search query immediately.
 
-![A screenshot of the background retry interface.](offline-screenshot.png)
+<figure class="w-figure  w-figure--center">
+  <img src="./offline-screenshot.png"
+       alt="A mobile phone shows the user that they're offline but that they can retry the request">
+</figure>
 
 The results won't be available until there's an Internet connection, but the
 service worker allows the search to be deferred and sent to Google's servers as
