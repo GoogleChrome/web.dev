@@ -17,7 +17,7 @@ tags:
   - Web App
 ---
 
-In an ideal world, every application that developers build, regardless of technology, would be easily made available in the browser. But there are barriers to bringing projects to the web, depending on the technology they were built with and how well that technology is supported by the various browser vendors. [WebAssembly](https://webassembly.org/) (Wasm) is a compile target standardized by the [W3C](https://www.w3.org/) that helps us solve this problem by allowing us to run codebases from languages other than JavaScript on the web.
+In an ideal world, every application that developers build, regardless of technology, would be available in the browser. But there are barriers to bringing projects to the web, depending on the technology they were built with and how well that technology is supported by the various browser vendors. [WebAssembly](https://webassembly.org/) (Wasm) is a compile target standardized by the [W3C](https://www.w3.org/) that helps us solve this problem by allowing us to run codebases from languages other than JavaScript on the web.
 
 
 We’ve done just that with Google Earth, available today in [preview beta](https://g.co/earth/beta) on WebAssembly. Keep in mind that this is still a beta of Google Earth and may not be as smooth as you’re used to (try out regular [Earth for web](https://earth.google.com/web/)). You can experiment with this beta in Chrome and other Chromium-based browsers, including Edge (Canary version) and Opera, as well as Firefox. Consider this beta your inspiration if you too are looking for better cross-browser support for your native applications.
@@ -25,20 +25,19 @@ We’ve done just that with Google Earth, available today in [preview beta](http
 
 ## Why we chose WebAssembly for Google Earth
 
-We originally wrote most of Google Earth in C++ because it was initially a native application, intended for desktop install. Then we were able to port it to Android and iOS as smartphones took hold and retain most of our C++ codebase using [NDK](https://developer.android.com/ndk) and [Objective-C++](https://www.wikipedia.org/wiki/Objective-C#Objective-C++). 
+We originally wrote most of Google Earth in C++ because it was a native application intended for desktop install. Then we were able to port it to Android and iOS as smartphones took hold, retaining most of our C++ codebase using [NDK](https://developer.android.com/ndk) and [Objective-C++](https://www.wikipedia.org/wiki/Objective-C#Objective-C++). In 2017, when we brought Earth to the web, we used [Native Client](https://developer.chrome.com/native-client) (NaCl) to compile the C++ code and run it in Chrome browser.
 
-In 2017, when we brought Earth to the web, we used [Native Client](https://developer.chrome.com/native-client) (NaCl) to compile the C++ code and run it in Chrome browser. At the time, it was the only browser technology that allowed us to port our C++ code to the browser and give us the kind of performance Earth needed. Unfortunately, NaCl was a Chrome-only technology that never saw adoption across browsers. Now we’re starting to switch to WebAssembly, which lets us take that same code and run it across browsers. This means Earth will be available to more people across the web.
+ At the time, NaCl was the only browser technology that allowed us to port our C++ code to the browser and give us the kind of performance Earth needed. Unfortunately, NaCl was a Chrome-only technology that never saw adoption across browsers. Now we’re starting to switch to WebAssembly, which lets us take that same code and run it across browsers. This means Earth will be available to more people across the web.
+
+ <img class="w-screenshot" src="GoogleEarthEiffel.jpg" alt="A screenshot of Earth showing Eiffel Tower">
 
 ## A thread on threading
 
 WebAssembly is still evolving as a standard, and browsers continue to get extended with more features and functionality. From the Earth perspective, the most significant difference in support for WebAssembly between browsers is support for threading. Some browsers offer multi-threading support and others don't. Think of Earth like a huge 3D video game of the real world. As such, we’re constantly streaming data to the browser, decompressing it and making it ready for rendering to the screen. Being able to do this work on a background thread has shown a clear improvement in [the performance of Earth in the browser](https://medium.com/google-earth/performance-of-web-assembly-a-thread-on-threading-54f62fd50cf7).
 
-Multi-threaded WebAssembly relies on a browser feature called SharedArrayBuffer, which was pulled from browsers after the Spectre and Meltdown security vulnerabilities were revealed. To mitigate potential damage from attacks, Google’s security team [introduced Site Isolation](https://security.googleblog.com/2018/07/mitigating-spectre-with-site-isolation.html) in Chrome for all desktop operating systems. Site Isolation limits each renderer process to documents from a single site. With this security feature in place, Chrome re-enabled SharedArrayBuffer for desktop—which allowed us to use multi-threaded WebAssembly with Earth for Chrome.
+Multi-threaded WebAssembly relies on a browser feature called SharedArrayBuffer, which was pulled from browsers after the Spectre and Meltdown security vulnerabilities were revealed. To mitigate potential damage from attacks, Chrome's security team [introduced Site Isolation](https://security.googleblog.com/2018/07/mitigating-spectre-with-site-isolation.html) in Chrome for all desktop operating systems. Site Isolation limits each renderer process to documents from a single site. With this security feature in place, Chrome re-enabled SharedArrayBuffer for desktop—which allowed us to use multi-threaded WebAssembly with Earth for Chrome.
 
 Other browsers are working on Site Isolation or other mitigations in order to re-enable SharedArrayBuffer. In the meantime, Earth runs single-threaded in those browsers.
-
-<img class="w-screenshot" src="GoogleEarthEiffel.jpg" alt="A screenshot of Earth showing Eiffel Tower">
-
 
 ## How WebAssembly works with different browsers
 
