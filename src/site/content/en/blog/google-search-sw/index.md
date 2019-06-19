@@ -3,7 +3,7 @@ title: Bringing service workers to Google Search
 subhead: The story of what shipped, how the impact was measured, and the tradeoffs that were made.
 authors:
   - jeffposnick
-date: 2019-06-19
+date: 2019-06-20
 hero: hero.jpg
 alt: The Google Search interface.
 description: |
