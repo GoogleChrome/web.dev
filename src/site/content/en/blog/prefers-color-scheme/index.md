@@ -21,7 +21,7 @@ tags:
 </figure>
 
 We have gone full circle with dark mode.
-In the dawn of personal computing, dark mode wasn't a deliberate choice,
+In the dawn of personal computing, dark mode wasn’t a deliberate choice,
 but purely a matter of fact:
 Monochrome Cathode-Ray Tube (CRT) computer monitors work by firing electron beams
 on a phosphorescent screen, and as the phosphor that these early CRTs used was green,
@@ -53,14 +53,14 @@ and this trend was carried over to the
 and was also the way the first ever browser,
 [WorldWideWeb](https://en.wikipedia.org/wiki/WorldWideWeb)
 (remember,
-[CSS wasn't even invented](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#History) yet),
+[CSS wasn’t even invented](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#History) yet),
 [displayed webpages](https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png).
 Fun fact: the second ever browser,
 [Line Mode Browser](https://en.wikipedia.org/wiki/Line_Mode_Browser)—as a terminal-based browser—was
 green on dark.
 To the present day, web pages and web apps are typically designed with dark text
 on a light background, a baseline assumption that is also hard-coded in user agent stylesheets like
-[Chrome's](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
+[Chrome’s](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
 
 <figure class="w-figure w-figure--inline-left">
   <img style="height:175px; width:auto;" src="smartphone-in-bed.jpg" alt="Smartphone used while lying in bed" intrinsicsize="500x334">
@@ -86,12 +86,12 @@ more the idea of going back to the roots of *light-on-dark* becomes popular.
 
 When people get asked
 [why they like or want dark mode](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d),
-the most popular response is that *"it's easier on the eyes,"*
-followed by *"it's elegant and beautiful."*
+the most popular response is that *“it’s easier on the eyes,”*
+followed by *“it’s elegant and beautiful.”*
 Apple in their
 [Dark Mode developer documentation](https://developer.apple.com/documentation/appkit/supporting_dark_mode_in_your_interface)
-explicitly write: *"The choice of whether to enable a light or dark appearance
-is an aesthetic one for most users, and might not relate to ambient lighting conditions."*
+explicitly write: *“The choice of whether to enable a light or dark appearance
+is an aesthetic one for most users, and might not relate to ambient lighting conditions.”*
 
 {% Aside 'note' %}
   👩‍🔬 Read up more on
@@ -105,11 +105,11 @@ is an aesthetic one for most users, and might not relate to ambient lighting con
 
 ### Accessibility
 
-However, there're also people who actually *need* dark mode or other accessibility tools,
+However, there’re also people who actually *need* dark mode or other accessibility tools,
 for example, users with low vision.
 The earliest occurrence of such an accessibility tool I could find is
-[System&nbsp;7](https://en.wikipedia.org/wiki/System_7)'s *CloseView* feature that had a toggle for
-*"Black on White"* and *"White on Black,"* which arguably can be called dark mode.
+[System&nbsp;7](https://en.wikipedia.org/wiki/System_7)’s *CloseView* feature that had a toggle for
+*Black on White* and *White on Black*, which arguably can be called dark mode.
 While System&nbsp;7 supported color, the default user interface was still black-and-white.
 
 {% Aside 'note' %}
@@ -134,9 +134,9 @@ and some apps that use dark color styles.
 
 Computer Vision Syndrome, also known as Digital Eye Strain, is
 [defined](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1475-1313.2011.00834.x)
-as *"the combination of eye and vision problems associated with the use of computers
+as *“the combination of eye and vision problems associated with the use of computers
 (including desktop, laptop, and tablets) and other electronic displays (e.g.
-smartphones and electronic reading devices)."*
+smartphones and electronic reading devices).”*
 It has been [proposed](https://bmjopen.bmj.com/content/5/1/e006748)
 that the use of electronic devices by adolescents, particularly at night time,
 leads to an increased risk of shorter sleep duration,
@@ -150,7 +150,7 @@ and irregular light environments may lead to sleep deprivation,
 possibly affecting mood and task performance, according to
 [research by Rosenfield](https://www.college-optometrists.org/oip-resource/computer-vision-syndrome--a-k-a--digital-eye-strain.html).
 To limit these negative effects, reducing blue light by adjusting the display color temperature
-through features like iOS' [Night Shift](https://support.apple.com/en-us/HT207570) or Android's
+through features like iOS’ [Night Shift](https://support.apple.com/en-us/HT207570) or Android’s
 [Night Light](https://support.google.com/pixelphone/answer/7169926?) can help,
 as well as avoiding bright lights or irregular lights in general through dark themes or dark modes.
 
@@ -161,10 +161,9 @@ Case studies by the Android team that focused on popular Google apps
 like YouTube have shown that the power savings can be up to 60%.
 The video below has more details on these case studies and the power savings.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/N_6sPd0Jd3g?start=305"
-    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-></iframe>
+<figure class="w-figure w-figure--fullbleed">
+  {% YouTube 'N_6sPd0Jd3g?start=305' %}
+</figure>
 
 ## Activating dark mode in the operation system
 
@@ -173,42 +172,55 @@ let me go into detail how you can support it.
 Before I dive into this, let me first clarify how people can activate dark mode in the first place.
 Operating systems that support a dark mode or theme
 typically have an option to activate it somewhere in the settings.
-On macOS&nbsp;X, it's in the system preference's *General* section and called *Appearance*,
-and on Windows&nbsp;10, it's in the *Colors* section and called *Choose your color*.
+On macOS&nbsp;X, it’s in the system preference’s *General* section and called *Appearance*,
+and on Windows&nbsp;10, it’s in the *Colors* section and called *Choose your color*.
 For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch,
-and on iOS&nbsp;13, you can change the appearance in the *Display &amp; Brightnesss*
+and on iOS&nbsp;13, you can change the appearance in the *Display &amp; Brightness*
 section of the settings.
 
 <figure>
-  <div style="overflow-x: auto; padding-left:1rem;">
-    <table class="w-screenshot w-screenshot--filled">
-      <tr>
-        <td style="vertical-align:top;">
-          <figure class="w-figure w-figure--inline-left">
-            <img style="height:250px; width:auto;" src="windows10.png" alt="Windows 10 dark theme settings" intrinsicsize="838x700">
-            <figcaption class="w-figcaption">Windows&nbsp;10 dark theme settings</figcaption>
-          </figure>
-        </td>
-        <td style="vertical-align:top;">
-          <figure class="w-figure w-figure--inline-left">
-            <img style="height:250px; width:auto;" src="macosx.png" alt="macOS X dark mode settings" intrinsicsize="668x678">
-            <figcaption class="w-figcaption">macOS&nbsp;X dark mode settings</figcaption>
-          </figure>
-        </td>
-        <td style="vertical-align:top;">
-          <figure class="w-figure w-figure--inline-left">
-            <img style="height:250px; width:auto;" src="android.png" alt="Android Q dark mode settings" intrinsicsize="610x700">
-            <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
-          </figure>
-        </td>
-        <td style="vertical-align:top;">
-          <figure class="w-figure w-figure--inline-left">
-            <img style="height:250px; width:auto;" src="ios.jpg" alt="iOS 13 appearance settings" intrinsicsize="323x700">
-            <figcaption style="width: 10rem;" class="w-figcaption">iOS&nbsp;13 appearance settings</figcaption>
-          </figure>
-        </td>
-      </tr>
-    </table>
+  <style>
+    #dark-mode-overview::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, transparent 0%, transparent 90%, currentColor 100%)
+    }
+  </style>
+  <div style="position: relative;">
+    <div id="dark-mode-overview" style="overflow-x: auto; padding-left:1rem;">
+      <table class="w-screenshot w-screenshot--filled">
+        <tr>
+          <td style="vertical-align:top;">
+            <figure class="w-figure w-figure--inline-left">
+              <img style="height:250px; width:auto;" src="windows10.png" alt="Windows 10 dark theme settings" intrinsicsize="838x700">
+              <figcaption class="w-figcaption">Windows&nbsp;10 dark theme settings</figcaption>
+            </figure>
+          </td>
+          <td style="vertical-align:top;">
+            <figure class="w-figure w-figure--inline-left">
+              <img style="height:250px; width:auto;" src="macosx.png" alt="macOS X dark mode settings" intrinsicsize="668x678">
+              <figcaption class="w-figcaption">macOS&nbsp;X dark mode settings</figcaption>
+            </figure>
+          </td>
+          <td style="vertical-align:top;">
+            <figure class="w-figure w-figure--inline-left">
+              <img style="height:250px; width:auto;" src="android.png" alt="Android Q dark mode settings" intrinsicsize="610x700">
+              <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
+            </figure>
+          </td>
+          <td style="vertical-align:top;">
+            <figure class="w-figure w-figure--inline-left">
+              <img style="height:250px; width:auto;" src="ios.jpg" alt="iOS 13 appearance settings" intrinsicsize="323x700">
+              <figcaption style="width: 10rem;" class="w-figcaption">iOS&nbsp;13 appearance settings</figcaption>
+            </figure>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
   <figcaption class="w-figcaption">Fig. — Dark mode settings on various operating systems</figcaption>
 </figure>
@@ -223,7 +235,7 @@ They are used in the CSS `@media` rule to conditionally apply styles to a docume
 and in various other contexts and languages, such as HTML and JavaScript.
 [Media Queries Level&nbsp;5](https://drafts.csswg.org/mediaqueries-5/)
 introduces so-called user preference media features, that is,
-a way for sites to detect the user's preferred way to display content.
+a way for sites to detect the user’s preferred way to display content.
 
 {% Aside 'note' %}
   ☝️ An established user preference media feature is `prefers-reduced-motion`
@@ -251,12 +263,12 @@ It works with the following values:
 
 ## Supporting dark mode
 
-Let's finally see how supporting dark mode looks like in practice.
+Let’s finally see how supporting dark mode looks like in practice.
 Just like with the [Highlander](https://en.wikipedia.org/wiki/Highlander_(film)),
 with dark mode, *there can be only one*: dark or light, but never both!
 Why do I mention this? Because this fact has an impact on the loading strategy.
-Please don't force users to download CSS in the critical rendering path
-that is for a mode they don't currently use.
+Please don’t force users to download CSS in the critical rendering path
+that is for a mode they don’t currently use.
 To optimize load speed, I have therefore split my CSS for the example app
 into three parts in order to [defer non-critical CSS](/defer-non-critical-css/):
 
@@ -365,7 +377,7 @@ Everything else is then just a matter of defining CSS variables
 for things that matter on my site.
 Semantically organizing styles helps a lot when working with dark mode.
 For example, rather than `--highlight-yellow`, consider calling the variable
-`--accent-color`, as "yellow" may actually not be yellow in dark mode or vice versa.
+`--accent-color`, as “yellow” may actually not be yellow in dark mode or vice versa.
 Below is an example of some more variables that I use in my example.
 
 ```css
@@ -394,7 +406,7 @@ Below is an example of some more variables that I use in my example.
 
 ### Avoid pure white
 
-A small detail you may have noticed is that I don't use pure white.
+A small detail you may have noticed is that I don’t use pure white.
 Instead, to prevent glowing and bleeding against the surrounding dark content,
 I choose a slightly darker white, `rgb(250, 250, 250)` or similar works well.
 
@@ -403,7 +415,7 @@ I choose a slightly darker white, `rgb(250, 250, 250)` or similar works well
 In the following [Glitch](https://dark-mode-baseline.glitch.me/) embed,
 you can see the complete example that puts the concepts from above into practice.
 
-<div style="height: 420px; width: 100%;">
+<div style="height: 900px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     src="https://glitch.com/embed/#!/embed/dark-mode-baseline?path=style.css&previewSize=100&attributionHidden=true"
@@ -434,10 +446,59 @@ so that they never compete with resources that are needed by the site right now.
 
 <figure class="w-figure">
   <img src="unsupported.png" alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
-  <figcaption class="w-figcaption">Fig. — Site in default light mode on a browser that doesn't support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
+  <figcaption class="w-figcaption">Fig. — Site in default light mode on a browser that doesn’t support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
+### Finding out if dark mode is supported
+
+As dark mode is reported through media queries, you can easily check if the current browser
+supports dark mode by checking if the media query `prefers-color-scheme` matches at all.
+Note how I don’t include any value, but purely check if the media query alone matches.
+Actually, I have silently used this pattern already above in the
+[loading strategy](#loading-strategy) code snippet.
+
+```js
+if (window.matchMedia('(prefers-color-scheme)').matches) {
+  console.log('🎉 Dark mode is supported');
+}
+```
+
+### Reacting on dark mode changes
+
+Like any other media query change, dark mode changes can be subscribed to via JavaScript.
+You can use this to, for example, dynamically change the favicon of a page
+or change the `<meta name="theme-color">` that determines the color of the URL bar in Chrome.
+The [full example](#full-example) above shows this in action.
+
+```js
+  const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  darkModeMediaQuery.addListener((e) => {
+    const darkModeOn = e.matches;
+    console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
+  });
+```
+
 ## Dark mode best practices
+
+### Smooth transitions between modes
+
+Switching from dark mode to light mode or vice versa can be smoothened thanks to the fact
+that both `color` and `background-color` are animatable CSS properties.
+Creating the animation is as easy as declaring two `transition`s for the two properties.
+The example below illustrates the overall idea.
+
+```css
+body {
+  --duration: 0.5s;
+   --timing: ease;
+
+  background-color: var(--background-color);
+  color: var(--color);
+  transition:
+    color var(--duration) var(--timing),
+    background-color var(--duration) var(--timing);
+}
+```
 
 ### Photographic images
 
@@ -449,7 +510,7 @@ prefer slightly less vibrant and brilliant images when dark mode is active.
 I refer to this as *re-colorization*.
 
 Re-colorization can be achieved through a CSS filter on my images.
-I use a CSS selector that matches all images that don't have `.svg` in their URL,
+I use a CSS selector that matches all images that don’t have `.svg` in their URL,
 the idea being that I can give vector graphics (icons) a different re-colorization treatment
 than my images (photos), more about this in the [next paragraph](#vector-graphics-and-icons).
 Note how I again use a [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/var),
@@ -506,7 +567,7 @@ document.documentElement.style.setProperty('--image-filter', value);
 
 For vector graphics—that in my case are used as icons—I use a different re-colorization method.
 While [research](https://dl.acm.org/citation.cfm?id=2982168) has shown
-that people don't like inversion for photos, it does work very well for most icons.
+that people don’t like inversion for photos, it does work very well for most icons.
 Again I use CSS variables to determine the inversion amount
 in the regular and in the `:hover` state.
 Note how again I only invert icons in `dark.css` but not in `light.css`, and how the `:hover` state
@@ -553,6 +614,38 @@ img[src*=".svg"]:hover {
   <figcaption class="w-figcaption">Fig. — Icon re-colorization</figcaption>
 </figure>
 
+### Art direction with dark mode
+
+While for loading performance reasons in general I recommend to exclusively work with `prefers-color-scheme`
+in the `media` attribute of `<link>` elements (rather than inline in stylesheets),
+there are situations where you actually may want to work with `prefers-color-scheme` directly inline in your HTML code.
+Art direction is such a situation.
+On the web, art direction deals with the overall visual appearance of a page and how it communicates visually,
+stimulates moods, contrasts features, and psychologically appeals to a target audience.
+With dark mode, it’s up to the judgment of the designer to decide what is the best image at a particular mode
+and whether [re-colorization of images](#photographic-images) is maybe *not* good enough.
+If used with the `<picture>` element, the `<source>` of the image to be shown can be made dependent on the `media` attribute.
+In the example below, I show the Western hemisphere for dark mode, and the Eastern hemisphere for light mode
+and when no preference is given, defaulting to the Eastern hemisphere in all other cases.
+Toggle dark mode on your device to see the difference.
+
+```html
+<picture>
+  <source srcset="western.webp" media="(prefers-color-scheme: dark)">
+  <source srcset="eastern.webp" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+  <img src="eastern.webp">
+</picture>
+```
+
+<div style="height: 600px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/spark-bumper-1?path=index.html&previewSize=100"
+    alt="spark-bumper-1 on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
 ## Dark mode, but add an opt-out
 
 As mentioned in the [why dark mode](#why-dark-mode) section above,
@@ -563,7 +656,8 @@ A great pattern is to initially adhere to the signal the browser sends through
 `prefer-color-scheme`, but to then optionally allow users to override that color scheme.
 You can of course create the code for this yourself, but you can also just use
 a ready-made custom element (web component) that I have created right for this purpose.
-It's called `<dark-mode-toggle>` and it adds a toggle (dark mode on/off) or
+It’s called [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle)
+and it adds a toggle (dark mode on/off) or
 a theme switcher (theme light/dark) to your page that you can fully customize.
 The demo below shows the element in action
 (oh, and I have also snuck it in the [full example](#full-example) above).
@@ -578,18 +672,41 @@ The demo below shows the element in action
 
 ## Conclusions
 
+Working with and supporting dark mode is fun and opens up new design alleys, but above all,
+it can make the difference for some of your visitors between not being able to handle your site
+and being a happy user.
+There are some pitfalls and careful testing is required, but dark mode is definitely a great opportunity
+for you to show that you care for all of your users.
+With the best practices mentioned in this post and helpers like the
+[`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle) custom element
+that allows people to easily override their system preference for your website,
+you hopefully have everything at hand to create an amazing dark mode experience.
+[Let me know on Twitter](https://twitter.com/tomayac) what you create and if this post was useful.
+Thanks for reading! 🌒
 
 ## Related links
 
-- Resources for the `prefers-color-scheme` media query:
-    - [Chrome Platform Status page](https://chromestatus.com/feature/5109758977638400)
-    - [Chromium bug](https://crbug.com/889087)
-    - [Media Queries Level&nbsp;5 spec](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)
-- Resources for the `color-scheme` meta tag and CSS property:
-    - [Chrome Platform Status page](https://chromestatus.com/feature/5330651267989504)
-    - [Chromium bug](http://crbug.com/925935)
-    - [CSS WG GitHub Issue for the meta tag and the CSS property](https://github.com/w3c/csswg-drafts/issues/3299)
-    - [HTML WHATWG GitHub Issue for the meta tag](https://github.com/whatwg/html/issues/4504)
+Resources for the `prefers-color-scheme` media query:
+  - [Chrome Platform Status page](https://chromestatus.com/feature/5109758977638400)
+  - [Chromium bug](https://crbug.com/889087)
+  - [Media Queries Level&nbsp;5 spec](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)
+
+Resources for the `color-scheme` meta tag and CSS property:
+  - [Chrome Platform Status page](https://chromestatus.com/feature/5330651267989504)
+  - [Chromium bug](http://crbug.com/925935)
+  - [CSS WG GitHub Issue for the meta tag and the CSS property](https://github.com/w3c/csswg-drafts/issues/3299)
+  - [HTML WHATWG GitHub Issue for the meta tag](https://github.com/whatwg/html/issues/4504)
+
+General dark mode links:
+  - [Material Design — Dark Theme](https://material.io/design/color/dark-theme.html)
+  - [Dark Mode in Web Inspector](https://webkit.org/blog/8892/dark-mode-in-web-inspector/)
+  - [Dark Mode Support in WebKit](https://webkit.org/blog/8840/dark-mode-support-in-webkit/)
+  - [Apple Human Interface Guidelines — Dark Mode](https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/dark-mode/)
+
+Background research articles for this post:
+  - [What Does Dark Mode’s “supported-color-schemes” Actually Do? 🤔](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d)
+  - [Let there be darkness! 🌚 Maybe…](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d)
+  - [Re-Colorization for Dark Mode](https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b)
 
 ## Acknowledgements
 
