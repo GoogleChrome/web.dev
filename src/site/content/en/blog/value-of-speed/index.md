@@ -67,95 +67,95 @@ data set shown below from
 [this Google Sheet](https://docs.google.com/spreadsheets/d/1Mxmy1luPBOvJneSM9g2NZt6yHKx8xkpBXygOpm4LgNM/edit?usp=sharing)
 and skip steps 1–3.
 
-1. First get the speed and conversion data for the mobile site.
-    * Open
-    [this custom report](https://analytics.google.com/analytics/web/template?uid=NPvTU2zoTf2JFsHi6-auyQ)
-    in Google Analytics, select your site from the **Select a view**
-    drop-down list, and click **Create**.
-    * Once the report has been generated, click **Select a metric > Metric Group > Ecommerce Conversion Rate**.
-      <br><br>
-      <img class="w-screenshot" src="./conversion-rate.png" alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate">
-      <br><br>
-    * Select the **Week** view for the dataset.
-      <br><br>
-      <img class="w-screenshot" src="./landing-pages-week.jpg" alt="Screenshot of Google Analytics: select a week">
-      <br><br>
-    * Select a time period that covers 2–3 months before the speed
-    optimization and 2–3 months after. (In our example, that's January 2018
-    through October 2018.)
-      <br><br>
-      <img class="w-screenshot" src="./analytics-start-date.jpg" alt="Screenshot of Google Analytics: select a start date">
-      <br><br>
-    * Export the report to [Google Sheets](http://sheets.google.com) or
-    your preferred spreadsheet application.
-      <br><br>
-      <img class="w-screenshot" src="./export-google-sheets.jpg" alt="Screenshot of Google Analytics: export to Google Sheets"  style="max-width: 400px; width: 100%">
-      <br><br>
+**Step 1:** First get the speed and conversion data for the mobile site.
+  * Open
+  [this custom report](https://analytics.google.com/analytics/web/template?uid=NPvTU2zoTf2JFsHi6-auyQ)
+  in Google Analytics, select your site from the **Select a view**
+  drop-down list, and click **Create**.
+  * Once the report has been generated, click **Select a metric > Metric Group > Ecommerce Conversion Rate**.
+    <br><br>
+    <img class="w-screenshot" src="./conversion-rate.png" alt="Screenshot of Google Analytics: select a metric, Metric Group, Ecommerce Conversion Rate">
+    <br><br>
+  * Select the **Week** view for the dataset.
+    <br><br>
+    <img class="w-screenshot" src="./landing-pages-week.jpg" alt="Screenshot of Google Analytics: select a week">
+    <br><br>
+  * Select a time period that covers 2–3 months before the speed
+  optimization and 2–3 months after. (In our example, that's January 2018
+  through October 2018.)
+    <br><br>
+    <img class="w-screenshot" src="./analytics-start-date.jpg" alt="Screenshot of Google Analytics: select a start date">
+    <br><br>
+  * Export the report to [Google Sheets](http://sheets.google.com) or
+  your preferred spreadsheet application.
+    <br><br>
+    <img class="w-screenshot" src="./export-google-sheets.jpg" alt="Screenshot of Google Analytics: export to Google Sheets"  style="max-width: 400px; width: 100%">
+    <br><br>
 
-1. Now get the speed and conversion data for the desktop site. Open
+**Step 2:** Now get the speed and conversion data for the desktop site. Open
 [this custom report](https://analytics.google.com/analytics/web/template?uid=X21Nb_soQp69U_ylfNmLvg)
 in Google Analytics and repeat the process for step 1 to export the data to
 a spreadsheet.
 
-1.  Copy the _Ecommerce Conversion Rate_ column in the desktop report
+**Step 3:** Copy the _Ecommerce Conversion Rate_ column in the desktop report
 spreadsheet and insert it next to the _Ecommerce Conversion Rate_ in the
 mobile report spreadsheet.
 
-1.  To calculate the Rel mCvR, create a new column titled _Relative Mobile Conversion Rate (Rel mCvR)_.
+**Step 4:** To calculate the Rel mCvR, create a new column titled _Relative Mobile Conversion Rate (Rel mCvR)_.
 Then add a formula to divide the mobile conversion rate by the desktop conversion rate.
 <br><br>
 ![Screenshot: spreadsheet cells showing relative rate formula](relative-rate-formula.jpg)
 <br><br>
 
-1. Create a chart based on the _Mobile Avg. Page Load Time (sec)_ and
+**Step 5:** Create a chart based on the _Mobile Avg. Page Load Time (sec)_ and
 _Relative Mobile Conversion Rate (Rel mCvR)_ columns. To do that in Google
 Sheets:
 
-    * Click **Insert > Chart**.
-    * In the **Chart Editor** pane, select the **Line chart** chart type.
-    * Select the _Week Index_, _Mobile Avg. Page Load Time (sec)_, and
-      _Relative Mobile Conversion Rate (Rel mCvR)_ columns as the data ranges.
-    * Click the **Customize** tab and then select **Series**.
-    * In the **Series selector** drop-down list, select **Relative
-      Mobile Conversion Rate (Rel mCvR)**.
-    * In the **Axis** drop-down list select **Right axis**.
-    * If you like, click **Chart & axis titles** to customize the chart title
-      and the left and right _y_-axis labels.
+* Click **Insert > Chart**.
+* In the **Chart Editor** pane, select the **Line chart** chart type.
+* Select the _Week Index_, _Mobile Avg. Page Load Time (sec)_, and
+  _Relative Mobile Conversion Rate (Rel mCvR)_ columns as the data ranges.
+* Click the **Customize** tab and then select **Series**.
+* In the **Series selector** drop-down list, select **Relative
+  Mobile Conversion Rate (Rel mCvR)**.
+* In the **Axis** drop-down list select **Right axis**.
+* If you like, click **Chart & axis titles** to customize the chart title
+  and the left and right _y_-axis labels.
 
-   You should now have a chart that looks something like this:
-   ![Chart: mobile load time versus relative mobile conversion rate](mobile-versus-relative-chart.jpg)
-   <br><br>
+You should now have a chart that looks something like this:
+![Chart: mobile load time versus relative mobile conversion rate](mobile-versus-relative-chart.jpg)
+<br><br>
 
-1. Using the chart, identify a period before the speed optimization
+**Step 6:** Using the chart, identify a period before the speed optimization
 (when load times were high) and a period after the speed optimization (when
 load times should be lower) that you want to analyze. In this example, you
 would compare eight weeks in Jan–Feb to eight weeks in Aug–Sept.
 
-1. In a new sheet, calculate the average load time and rel mCvR for the
+**Step 7:** In a new sheet, calculate the average load time and rel mCvR for the
 two periods. Then add the revenue coming from mobile visitors during the
 period after the speed optimization (Aug–Sept in the example). You can find
 revenue data in Google Analytics under the section **Audience > Mobile >
 Overview**.
 
-    <figure class="w-figure  w-figure--center">
-      <img src="./period-revenue.jpg" alt="Revenue data for January through September showing Rel mCvR" style="max-width: 600px; width: 100%">
-    </figure>
+<figure class="w-figure  w-figure--center">
+  <img src="./period-revenue.jpg" alt="Revenue data for January through September showing Rel mCvR" style="max-width: 600px; width: 100%">
+</figure>
 
-1. Now calculate what the revenue would have been if Rel mCvR had not
+**Step 8:** Now calculate what the revenue would have been if Rel mCvR had not
 improved. Do this by dividing the revenue (€1,835,962) by the current Rel
 mCvR (51%) and multiplying by the Rel mCvR for the period before the speed
 optimization (42%).
 
-    <figure class="w-figure  w-figure--center">
-      <img src="./revenue-would-have-been.jpg" alt="Screenshot: spreadsheet cells showing formula for revenue without Rel mCvR improvements" style="max-width: 600px; width: 100%">
-    </figure>
+<figure class="w-figure  w-figure--center">
+  <img src="./revenue-would-have-been.jpg" alt="Screenshot: spreadsheet cells showing formula for revenue without Rel mCvR improvements" style="max-width: 600px; width: 100%">
+</figure>
 
-1. Subtract the revenue that the company earned from what it would have
+**Step 9:** Subtract the revenue that the company earned from what it would have
 earned if Rel mCvR had not improved.
 
-    <figure class="w-figure  w-figure--center">
-      <img src="./extra-revenue-formula.jpg" alt="Screenshot: spreadsheet cells showing extra revenue formula" style="max-width: 600px; width: 100%">
-    </figure>
+<figure class="w-figure  w-figure--center">
+  <img src="./extra-revenue-formula.jpg" alt="Screenshot: spreadsheet cells showing extra revenue formula" style="max-width: 600px; width: 100%">
+</figure>
 
 In this example, the company earned an additional €323,993 in eight weeks thanks
 to Rel mCvR improving—that is, thanks to the mobile site becoming faster.
