@@ -25,11 +25,11 @@ We’ve done just that with Google Earth, available today in [preview beta](http
 
 ## Why we chose WebAssembly for Google Earth
 
-We originally wrote most of Google Earth in C++ because it was a native application intended for desktop install. Then we were able to port it to Android and iOS as smartphones took hold, retaining most of our C++ codebase using [NDK](https://developer.android.com/ndk) and [Objective-C++](https://www.wikipedia.org/wiki/Objective-C#Objective-C++). In 2017, when we brought Earth to the web, we used [Native Client](https://developer.chrome.com/native-client) (NaCl) to compile the C++ code and run it in Chrome browser.
+We originally wrote most of Google Earth in C++ because it was a native application intended for desktop install. Then we were able to port it to Android and iOS as smartphones took hold, retaining most of our C++ codebase using [NDK](https://developer.android.com/ndk) and [Objective-C++](https://www.wikipedia.org/wiki/Objective-C#Objective-C++). In 2017, when we brought Earth to the web, we used [Native Client](https://developer.chrome.com/native-client) (NaCl) to compile the C++ code and run it in the Chrome browser.
 
  At the time, NaCl was the only browser technology that allowed us to port our C++ code to the browser and give us the kind of performance Earth needed. Unfortunately, NaCl was a Chrome-only technology that never saw adoption across browsers. Now we’re starting to switch to WebAssembly, which lets us take that same code and run it across browsers. This means Earth will be available to more people across the web.
 
- <img class="w-screenshot" src="GoogleEarthEiffel.jpg" alt="A screenshot of Earth showing Eiffel Tower">
+ <img class="w-screenshot" src="eiffeltower.webp" alt="A screenshot of Earth showing Eiffel Tower">
 
 ## A thread on threading
 
@@ -44,7 +44,7 @@ Other browsers are working on Site Isolation or other mitigations in order to re
 We’ve learned a lot about the state of WebAssembly support in browsers porting Earth. If you’re going to develop applications using WebAssembly, it’s important to understand the current state of how WebAssembly works with different browsers.  
 
 ### Edge: 
-Edge is on the verge of becoming two distinct development experiences based on Microsoft's choice to move from the EdgeHTML renderer over to a Chromium-based renderer moving forward. At the moment, the Google Earth beta on WebAssembly won’t run on the current public version of Edge due to lack of support for WebGL2—but that’ll be fixed once the new version of Edge, based on Chromium, ships in the near future. In the meantime, you can [download the Canary version of Edge](https://www.microsoftedgeinsider.com/download) and see that Earth works quite well.
+Edge is on the verge of becoming two distinct development experiences based on Microsoft's choice to move from the EdgeHTML renderer over to a Chromium-based renderer. At the moment, the Google Earth beta on WebAssembly won’t run on the current public version of Edge due to lack of support for WebGL2. That will be fixed once the new version of Edge, based on Chromium, ships in the near future. In the meantime, you can [download the Canary version of Edge](https://www.microsoftedgeinsider.com/download) and see that Earth works quite well.
 
 ### Chrome:
 Chrome has strong support for WebAssembly, including multi-threading on desktop, so you can expect Earth to run smoother as a result. However, we look forward to Chrome adding support for dynamic memory allocation with multi-threading in WebAssembly. Until then, Earth may fail to start on devices with limited amounts of memory (such as 32-bit machines).
@@ -59,7 +59,7 @@ Opera is based on Chromium just as Chrome is, along with upcoming versions of Ed
 Safari has a strong implementation of WebAssembly, but it lacks full support for WebGL2. Therefore, Earth with WebAssembly does not run in Safari. Specifically, some of our shaders require GLSL 1.2. We hope that Earth will be available on Safari as well, once better support for WebGL2 is added.
 
 ## Looking forward to more adoption of WebAssembly features
-It’s been a long road to make Earth available on the web at its launch, and today with our beta, a first step toward better cross-browser experiences. About six years ago, we started with an initial [asm.js](http://asmjs.org/)-based internal demo that was maintained and expanded over the years. It was then converted into a WebAssembly build of Earth, as WebAssembly became the W3C adopted standard. 
+It’s been a long road to make Earth available on the web. About six years ago, we started with an initial [asm.js](http://asmjs.org/)-based internal demo that was maintained and expanded over the years. It was then converted into a WebAssembly build of Earth, as WebAssembly became the W3C adopted standard. 
 
 We still have a ways to go for WebAssembly and Earth. Specifically, we’d like to move to the LLVM backend using Emscripten (the toolchain to generate WebAssembly out of C++ code). This change will enable future SIMD support, as well as stronger debugging tools like source maps for native code. Other things we hope to see are adoption of [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) and full support for dynamic memory allocation in WebAssembly. But we know we’re on the right track: WebAssembly is the long-term future for Earth on the web.
 
