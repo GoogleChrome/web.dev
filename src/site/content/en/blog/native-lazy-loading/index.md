@@ -87,17 +87,17 @@ In order for images to be lazy loaded effectively, height and width attributes m
 specified directly in the inline style).
 
 ```html
-<img src="..." loading="lazy" width=”200” height=”200” /> <!-- lazy loaded -->
-<img src="..." loading="lazy" style="height:200px;width:200px;" /> <!-- lazy loaded -->
-<img src="..." loading="lazy" /> <!-- not lazy loaded -->
+<img src="…" alt="…" loading="lazy" width="200" height="200"> <!-- lazy-loaded -->
+<img src="…" alt="…" loading="lazy" style="height:200px;width:200px;"> <!-- lazy-loaded -->
+<img src="…" alt="…" loading="lazy"> <!-- not lazy-loaded -->
 ```
 
 Support for the `intrinsicsize` attribute is also being [worked
-on](https://bugs.chromium.org/p/chromium/issues/detail?id=967992), where images will also lazy load
-correctly if `intrinsicsize`is specified along with one other dimension (width or height).
+on](https://bugs.chromium.org/p/chromium/issues/detail?id=967992), so images will also lazy-load
+correctly if `intrinsicsize` is specified along with one other dimension (`width` or `height`).
 
 ```html
-<img src="..." loading="lazy" intrinsicsize="250 x 200" width="450"/> <!-- lazy loaded -->
+<img src="…" alt="…" loading="lazy" intrinsicsize="250x200" width="450"> <!-- lazy-loaded -->
 ```
 
 <div class="w-aside w-aside--note">
@@ -107,23 +107,23 @@ correctly if `intrinsicsize`is specified along with one other dimension (width o
 ### Inline frame loading
 
 Iframes that are intentionally hidden from view are usually used for analytics or communication
-purposes and will not be lazy loaded in most cases. The following criteria is used to identify if a
+purposes and are not lazy-loaded in most cases. The following criteria is used to identify if a
 frame is not hidden in Chrome:
 
 - Must have a larger width and height than 4px
 - `display: none` and `visibility: hidden` cannot be used
 - Not off-screen using negative X or Y positioning
 
-If an inline frame meets all of these conditions, those that are offscreen will only load when they
-reach a certain distance from the viewport. A similar placeholder will also show for lazily loaded
-iframes that are still being fetched.
+If an inline frame meets all of these conditions, those that are offscreen only load when they reach
+a certain distance from the viewport. A similar placeholder also shows for lazily-loaded iframes that
+are still being fetched.
 
 ### Load-in distance threshold
 
-All images and iframes that are above the fold, or immediately viewable without scrolling, will load
-normally. Those that are outside, and not near, the device viewport will not load right after the
-page has finished loading. They will only be fetched when the user scrolls near them (or when the
-image or iframe reaches a certain distance from the viewport).
+All images and iframes that are above the fold, or immediately viewable without scrolling, load
+normally. Those that are outside, and not near, the device viewport do not load right after the
+page has finished loading. They are only fetched when the user scrolls near them (or when the image
+or iframe reaches a certain distance from the viewport).
 
 The distance threshold is not fixed and varies depending on a number of different factors:
 
@@ -138,13 +138,13 @@ reached, may change in the near future as we improve heuristics to determine whe
 
 ### Feature Policy
 
-Developers will also be able to overwrite the default behaviour through [feature
+Developers can override the default behavior through [feature
 policies](https://developers.google.com/web/updates/2018/06/feature-policy):
 
 - `loading-image-default-eager`: changes the default behavior of the `loading` attribute for images.
 - `loading-frame-default-eager`: changes the default behavior of the `loading` attribute for frames.
 
-The Feature-Policy HTTP header can be used to control both features. For example, the follower
+The Feature-Policy HTTP header can be used to control both features. For example, the following
 header can be used for all images on the page:
 
 ```
@@ -164,7 +164,7 @@ The same can be done for iframes:
 Feature-Policy: loading-frame-default-eager 'none'
 ```
 
-To learn more about how both these policies will work, as well as how to allow the feature for only
+To learn more about how both these policies work, as well as how to allow the feature for only
 certain origins on a page, take a look at the policy proposals for both
 [images](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/loading-image-default-eager.md)
 and
@@ -186,80 +186,81 @@ experiment with different threshold distances and variables.
 
 The `loading` attribute can only be used for image tags in markup and cannot be used for images that
 load via the CSS
-[background-image](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image) property.
+[`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image) property.
 
 ### How does this feature work with images that are above the viewport but are not immediately visible (for example: behind a carousel)?
 
-Only images that are below the device viewport by a certain distance will load lazily. All images
+Only images that are below the device viewport by a certain distance load lazily. All images
 above the viewport, regardless if they are not immediately visible (behind a carousel for example),
-will load normally.
+load normally.
 
-### What if I’m already using a third-party library or a script to lazy load images or inline frames?
+### What if I’m already using a third-party library or a script to lazy-load images or inline frames?
 
-The lazy loading attribute should not affect the code that currently lazy loads your assets in any
-way, but there are a few important things to consider:
+The `loading` attribute should not affect code that currently lazy-loads your assets in any way, but
+there are a few important things to consider:
 
-1. If your custom lazy loader attempts to load images or frames sooner than when Chrome will load
+1. If your custom lazy-loader attempts to load images or frames sooner than when Chrome loads
    them normally, i.e., at a distance greater than the buffer distance the browser uses to determine
-   when to load, they will still be deferred and load as per the normal browser behaviour.
-2. If your custom lazy loader uses a shorter distance to determine when to load a particular image
-   or inline frame than the browser, than the behaviour would conform to your custom settings.
+   when to load, they are still deferred and load as per the normal browser behaviour.
+2. If your custom lazy-loader uses a shorter distance to determine when to load a particular image
+   or inline frame than the browser, then the behaviour would conform to your custom settings.
 
-One of the important reasons to continue to use a third-party library along with `loading=”lazy”` is
+One of the important reasons to continue to use a third-party library along with `loading="lazy"` is
 to provide a polyfill for browsers that do not yet support the attribute.
 
 ### Do other browsers support native lazy-loading?
 
 The `loading` attribute can be treated as a progressive enhancement. Browsers that do support it can
-lazy-load images and iframes. Those that don’t (yet) will still be able to load their images as you
-would today. In terms of cross-browser support, `loading` should be supported in Chromium browsers
-based on Chrome 76. There is also an open implementation bug for Firefox.
+lazy-load images and iframes. Those that don’t (yet) are still able to load their images, just like
+they would today. In terms of cross-browser support, `loading` should be supported in Chrome 76 and
+any Chromium 76-based browsers. There is also [an open implementation bug for
+Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1542784).
 
 A [similar API](https://w3c.github.io/web-performance/specs/ResourcePriorities/Overview.html) was
 proposed and used in IE and Edge but was focused on lowering the download priorities of resources
 instead of deferring them entirely. It was discontinued in favour of [resource
-hints](https://www.w3.org/TR/resource-hints/). 
+hints](https://w3c.github.io/resource-hints/). 
 
 ### How do I handle browsers that do not yet support this feature?
 
 For browsers that do not yet support the `loading` attribute, create a polyfill or leverage a
-third-party library to lazily load images on your site. The loading property can be used to detect
+third-party library to lazily load images on your site. The `loading` property can be used to detect
 if the feature is supported in the browser:
 
 ```js
 if ('loading' in HTMLImageElement.prototype) {
-    // supported in browser    
+  // supported in browser
 } else {
-    // fetch polyfill/third-party library        
+  // fetch polyfill/third-party library
 }
 ```
 
 For example, [lazysizes](https://github.com/aFarkas/lazysizes) is a popular JavaScript lazy-loading
-library. We can use the `loading` attribute feature detect to load lazysizes as a fallback library
-in case it isn’t supported. This works as follows:
+library. We can feature-detect support for the `loading` attribute to load lazysizes as a fallback
+library only when it isn’t supported. This works as follows:
 
 - Replace `<img src>` with `<img data-src>` to avoid an eager load in unsupported browsers. If the
-  `loading` attribute is supported, we swap data-src for src.
+  `loading` attribute is supported, we swap `data-src` for `src`.
 - If `loading` is not supported, we load a fallback (lazysizes) and initiate it. Here, we use
-  `class=lazyload` as a way to indicate to LazySizes images we want to be lazily-loaded.
+  `class=lazyload` as a way to indicate to lazysizes images we want to be lazily-loaded.
 
 ```html
 <!-- Let's load this in-viewport image normally -->
-<img src="hero.jpg" alt=".."/>
+<img src="hero.jpg" alt="…">
 
 <!-- Let's lazy-load the rest of these images -->
-<img data-src="unicorn.jpg" loading="lazy" alt=".." class="lazyload">
-<img data-src="cats.jpg" loading="lazy" alt=".." class="lazyload">
-<img data-src="dogs.jpg" loading="lazy" alt=".." class="lazyload">
+<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload">
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {
-      const images = document.querySelectorAll("img.lazyload");
-      images.forEach(img => {
-          img.src = img.dataset.src;
-      });
+    const images = document.querySelectorAll("img.lazyload");
+    images.forEach(img => {
+      img.src = img.dataset.src;
+    });
   } else {
-      // Dynamically import the LazySizes library
+    // Dynamically import the LazySizes library
     const script = document.createElement("script");
     script.src =
       "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
@@ -278,10 +279,10 @@ available. Try it out in a browser like Firefox or Safari to see the fallback in
 
 ### How does this affect advertisements on a web page?
 
-All ads displayed to the user in the form of an image or inline frame will lazy load in the exact
-same way.
+All ads displayed to the user in the form of an image or inline frame lazy-load in the exact same
+way.
 
-### How will images be handled when a web page is printed?
+### How are images handled when a web page is printed?
 
 Although not in Chrome 76, there is an [open
 issue](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) to ensure that all images and
@@ -289,8 +290,8 @@ iframes are immediately loaded if a page is printed.
 
 ## Conclusion
 
-Baking in native support for lazy loading images and iframes can make it significantly easier for
-developers to improve the performance of their web pages. We will always love to hear feedback:
+Baking in native support for lazy-loading images and iframes can make it significantly easier for
+developers to improve the performance of their web pages. We always love to hear feedback:
 
 - Are you noticing any unusual behaviour with this feature enabled in Chrome? [File a
   bug](https://bugs.chromium.org/p/chromium/issues/entry) and we’ll help you.
