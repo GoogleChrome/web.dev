@@ -51,9 +51,8 @@ Currently, there are two ways to defer the loading of off-screen images and inli
 
 Either option can let developers include lazy loading functionality, and many have built third-party
 libraries to provide even simpler-to-use abstractions. With lazy loading supported directly by the
-browser however, an external library would not need to be loaded and relied upon. This will also
-ensure that deferred loading of images and frames will still work even if JavaScript is disabled on
-the client.
+browser however, an external library would not need to be loaded and relied upon. This also ensures
+that deferred loading of images and frames still works even if JavaScript is disabled on the client.
 
 ## Lazy loading
 
