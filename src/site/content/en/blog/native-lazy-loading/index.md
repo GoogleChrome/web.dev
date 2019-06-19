@@ -39,8 +39,8 @@ resource. At the 90th percentile, sites send down ~4.7 MB of images on desktop &
 lot of cat pictures.
 
 Embedded inline frames use a lot of data too and can also harm page performance. Only loading
-non-critical, below-the-fold images and iframes when the user is likely to see them will improve
-page load times, minimize user bandwidth and reduce memory usage.
+non-critical, below-the-fold images and iframes when the user is likely to see them improves
+page load times, minimize user bandwidth, and reduce memory usage.
 
 Currently, there are two ways to defer the loading of off-screen images and inline frames:
 
