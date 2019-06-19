@@ -5,12 +5,21 @@ authors:
   - thomassteiner
 date: 2019-06-30
 hero: dark.png
-alt: macOS X Dark Mode preferences.
+alt: |
+  Web page rendered in the dark mode experience with the Chrome Developer Tools open on the Network tab
+  that shows the CSS file responsible for the (currently not used) light mode experience
+  being downloaded with the lowest priority.
 description: |
-
+  Many devices now support an operating system wide dark mode or dark theme experience.
+  This post explains how dark mode can be supported on web pages, lists best practices,
+  and introduces a custom element named dark-mode-toggle that allows web developers
+  to offer users a way to override their operating system level preference on specific web pages.
 tags:
   - post
   - dark-mode
+  - dark-theme
+  - prefers-color-scheme
+  - color-scheme
 ---
 
 ## Dark mode before *Dark Mode*
