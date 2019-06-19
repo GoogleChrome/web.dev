@@ -25,7 +25,7 @@ In the dawn of personal computing, dark mode wasn’t a deliberate choice,
 but purely a matter of fact:
 Monochrome Cathode-Ray Tube (CRT) computer monitors work by firing electron beams
 on a phosphorescent screen, and as the phosphor that these early CRTs used was green,
-they were oftentimes referred to as
+they were often referred to as
 [green screens](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg).
 Information like text was displayed in green, and the rest of the screen was black.
 
@@ -143,7 +143,7 @@ leads to an increased risk of shorter sleep duration,
 longer sleep-onset latency, and increased sleep deficiency.
 Additionally, exposure to blue light has been widely
 [reported](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4254760/)
-to be involved in the regulation of the
+to be involved in the regulation of
 [circadian rhythm](https://en.wikipedia.org/wiki/Circadian_rhythm)
 and the sleep cycle,
 and irregular light environments may lead to sleep deprivation,
@@ -165,7 +165,7 @@ The video below has more details on these case studies and the power savings.
   {% YouTube 'N_6sPd0Jd3g?start=305' %}
 </figure>
 
-## Activating dark mode in the operation system
+## Activating dark mode in the operating system
 
 Now that I have covered the background of why dark mode is such a big thing for many,
 let me go into detail how you can support it.
@@ -426,7 +426,7 @@ you can see the complete example that puts the concepts from above into practice
 When you play with this example, you can see
 why I load my `dark.css` and `light.css` via media queries.
 Try toggling dark mode and reload the page:
-the particular currently non-matching stylesheets are still loaded, but with lowest priority,
+the particular currently non-matching stylesheets are still loaded, but with the lowest priority,
 so that they never compete with resources that are needed by the site right now.
 
 {% Aside 'note' %}
@@ -482,7 +482,7 @@ The [full example](#full-example) above shows this in action.
 
 ### Smooth transitions between modes
 
-Switching from dark mode to light mode or vice versa can be smoothened thanks to the fact
+Switching from dark mode to light mode or vice versa can be smoothed thanks to the fact
 that both `color` and `background-color` are animatable CSS properties.
 Creating the animation is as easy as declaring two `transition`s for the two properties.
 The example below illustrates the overall idea.
