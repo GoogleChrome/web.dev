@@ -93,8 +93,8 @@ gulp.task('copy-content-assets', () => {
       `./src/site/content/en/**/*.{${assetTypes}}`,
     ])
     .pipe(gulpif(isProd, imagemin([
-      pngquant({quality: [0.5, 0.5]}),
-      mozjpeg({quality: 50}),
+      pngquant({quality: [0.8, 0.8]}),
+      mozjpeg({quality: 80}),
     ])))
     // This makes the images show up in the same spot as the permalinked posts
     // they belong to.
