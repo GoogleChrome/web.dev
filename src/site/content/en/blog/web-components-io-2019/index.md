@@ -27,7 +27,7 @@ At Google I/O 2019, Kevin Schaaf of the Polymer Project and Caridy Patiño of Sa
 If you've used the web today, you've probably used web components. By our count, somewhere between 5% and 8% of all page loads today use one or more web components. That makes web components one of the most successful new web platform features shipped in the last five years.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="./usage-graph.png" alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.">
+  <img class="w-screenshot" src="./usage-graph.png" alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.">
 </figure>
 
 You can find web components on sites you probably use every day, like YouTube and GitHub. They're also used on many news and publishing sites built with [AMP](http://amp.dev)—AMP components are also web components. And many enterprises are also adopting web components.
@@ -151,5 +151,15 @@ More resources:
 *   [MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components) provides reference docs for the web components APIs, plus some tutorials. \
 
 _Hero image by Jason Tuinstra on Unsplash._
+
+_Editor’s note: The custom elements usage chart has been updated to show the
+full monthly usage data, as reported on
+[chromestatus.com](http://chromestatus.com). A previous version of this post
+included a graph at a 6-month granularity, without the most recent months. The
+V0 & V1 series in the original chart were stacked; they are now shown unstacked
+with a total line to remove ambiguity. The abrupt jump in late 2017 is due to a
+change in the data collection system for chromestatus.com. This change affected
+the stats for all web platform features and resulted in more accurate
+measurements going forward._
 
 
