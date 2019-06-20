@@ -1228,6 +1228,21 @@
       "en": "Tech consultant for Web, Chrome & AMP"
     }
   },
+  "jormears": {
+    "name": {
+      "given": "Jordon",
+      "family": "Mears‎"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Earth"
+    },
+    "country": "USA",
+    "homepage": "https://www.finefrog.com/",
+    "description": {
+      "en": "Jordon is a Tech Lead Manager working on Google Earth."
+    }
+  },
   "martinschierle": {
     "name": {
       "given": "Martin",
