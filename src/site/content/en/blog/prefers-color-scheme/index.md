@@ -721,3 +721,5 @@ Background research articles for this post:
 
 I would like to thank the participants of the various user studies
 that have helped shape the recommendations in this article.
+The `prefers-color-scheme` media feature and the `color-scheme` CSS property
+and the related meta tag were implemented by 👏 [Rune Lillesveen](https://twitter.com/runeli).
