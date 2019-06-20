@@ -35,7 +35,7 @@ Any element with that role
 can only use the attributes in the role's definition.
 
 Lighthouse fails this audit
-when it finds an attribute that isn't allowed for a role on an elememnt.
+when it finds an attribute that isn't allowed for a role on an element.
 In the example Lighthouse audit above,
 the `aria-checked` attribute is not allowed on the `role=list`,
 so the audit fails.

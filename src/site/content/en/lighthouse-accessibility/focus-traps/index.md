@@ -43,7 +43,7 @@ without forcing the user to refresh the page to get out of the focus trap.
 For users who either cannot or choose not to use a mouse,
 keyboard navigation is the primary means of reaching everything on a screen.
 Good keyboarding experiences depend on a logical tab order and easily discernable focus styles.
-If a keyboard user gets trapped in a particular page elememnt,
+If a keyboard user gets trapped in a particular page element,
 they have no way of interacting with the page.
 
 Learn more in [How to do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).
