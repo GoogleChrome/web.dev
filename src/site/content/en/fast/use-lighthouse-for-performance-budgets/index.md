@@ -13,7 +13,7 @@ tags:
   - performance
 ---
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouset) now supports performance budgets. This feature, [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets), can be set up in under five minutes and provides feedback on the size and quantity of page resources.
+[Lighthouse](https://github.com/GoogleChrome/lighthouse) now supports performance budgets. This feature, [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets), can be set up in under five minutes and provides feedback on the size and quantity of page resources.
 
 ## Install Lighthouse
 
