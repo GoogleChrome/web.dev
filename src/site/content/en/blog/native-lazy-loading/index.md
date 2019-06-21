@@ -83,14 +83,16 @@ earliest, but can currently be tested by enabling the following flags:
 
 ### Image loading
 
-In order for images to be lazy loaded effectively, height and width attributes must be included (or
-specified directly in the inline style).
+To take advantage of lazy loading effectively, include height and width attributes or specify their
+values directly in the inline style.
 
 ```html
-<img src="…" alt="…" loading="lazy" width="200" height="200"> <!-- lazy-loaded -->
-<img src="…" alt="…" loading="lazy" style="height:200px;width:200px;"> <!-- lazy-loaded -->
-<img src="…" alt="…" loading="lazy"> <!-- not lazy-loaded -->
+<img src="..." loading="lazy" width=”200” height=”200” />
+<img src="..." loading="lazy" style="height:200px;width:200px;" />
 ```
+
+Images will still load lazily if dimensions are not included, but this increases the chance of
+browser reflow.
 
 Support for the `intrinsicsize` attribute is also being [worked
 on](https://bugs.chromium.org/p/chromium/issues/detail?id=967992), so images will also lazy-load
