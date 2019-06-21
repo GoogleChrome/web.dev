@@ -669,7 +669,7 @@ a theme switcher (theme light/dark) to your page that you can fully customize.
 The demo below shows the element in action
 (oh, and I have also snuck it in the [full example](#full-example) above).
 
-<div style="height: 420px; width: 100%;">
+<div style="height: 800px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     src="https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html"
