@@ -647,8 +647,8 @@ Toggle dark mode on your device to see the difference.
 <div style="height: 600px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/spark-bumper-1?path=index.html&previewSize=100"
-    alt="spark-bumper-1 on Glitch"
+    src="https://glitch.com/embed/#!/embed/dark-mode-picture?path=index.html&previewSize=100"
+    alt="dark-mode-picture on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
