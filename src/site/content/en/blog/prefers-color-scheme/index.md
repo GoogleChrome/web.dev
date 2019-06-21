@@ -32,7 +32,7 @@ tags:
 We have gone full circle with dark mode.
 In the dawn of personal computing, dark mode wasn’t a deliberate choice,
 but purely a matter of fact:
-Monochrome Cathode-Ray Tube (CRT) computer monitors work by firing electron beams
+Monochrome <abbr title="Cathode-Ray Tube">CRT</abbr> computer monitors work by firing electron beams
 on a phosphorescent screen, and as the phosphor that these early CRTs used was green,
 they were often referred to as
 [green screens](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg).
@@ -46,7 +46,7 @@ Information like text was displayed in green, and the rest of the screen was bla
 The subsequently introduced Color CRTs display multiple colors
 through the use of red, green, and blue phosphors.
 They create white by activating all three phosphors simultaneously.
-With the advent of more sophisticated *What You See Is What You Get* (WYSIWYG)
+With the advent of more sophisticated <abbr title="What You See Is What You Get">WYSIWYG</abbr>
 [desktop publishing](https://en.wikipedia.org/wiki/Desktop_publishing),
 the idea of making the virtual document resemble a physical sheet of paper became popular.
 
@@ -77,8 +77,8 @@ on a light background, a baseline assumption that is also hard-coded in user age
 </figure>
 
 Nowadays, a lot of content consumption and creation has shifted to mobile devices
-that use backlit Liquid Crystal Displays (LCD)
-or energy-saving Active-Matrix Organic Light-Emitting Diode (AMOLED) screens,
+that use backlit <abbr title="Liquid Crystal Display">LCD</abbr>
+or energy-saving <abbr title="Active-Matrix Organic Light-Emitting Diode">AMOLED</abbr> screens,
 and on the desktop as well—which can be a full PC or a laptop—the days of CRTs are long over.
 With such smaller and more transportable computers, tablets, and smartphones,
 new usage patterns have evolved.
