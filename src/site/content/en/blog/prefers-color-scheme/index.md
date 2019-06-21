@@ -423,6 +423,8 @@ I choose a slightly darker white, `rgb(250, 250, 250)` or similar works well
 
 In the following [Glitch](https://dark-mode-baseline.glitch.me/) embed,
 you can see the complete example that puts the concepts from above into practice.
+Try toggling dark mode in your particular [operating system’s settings](#activating-dark-mode-in-the-operating-system)
+and see how the page reacts.
 
 <div style="height: 900px; width: 100%;">
   <iframe
