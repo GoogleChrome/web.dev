@@ -24,6 +24,12 @@ tags:
 
 ## Dark mode before *Dark Mode*
 
+{% Aside 'note' %}
+  📚 I have done a lot of background research on the history and theory of dark mode,
+  if you are only interested in working with dark mode, feel free to
+  [skip the introduction](#activating-dark-mode-in-the-operating-system).
+{% endAside %}
+
 <figure class="w-figure w-figure--inline-right">
   <img style="height:175px; width:auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
   <figcaption class="w-figcaption">Fig. — Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
@@ -49,7 +55,6 @@ They create white by activating all three phosphors simultaneously.
 With the advent of more sophisticated <abbr title="What You See Is What You Get">WYSIWYG</abbr>
 [desktop publishing](https://en.wikipedia.org/wiki/Desktop_publishing),
 the idea of making the virtual document resemble a physical sheet of paper became popular.
-
 
 <figure class="w-figure w-figure--inline-right">
   <img style="height:175px; width:auto;" src="worldwideweb.png" alt="Dark-on-white webpage in the WorldWideWeb browser" intrinsicsize="1024x768">
