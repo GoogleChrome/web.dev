@@ -3,7 +3,7 @@ title: Hello Darkness, My Old Friend
 subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to benefit your users!
 authors:
   - thomassteiner
-date: 2019-06-30
+date: 2019-06-21
 hero: dark.png
 alt: |
   Web page rendered in the dark mode experience with the Chrome Developer Tools open on the Network tab
@@ -36,22 +36,21 @@ tags:
 </figure>
 
 We have gone full circle with dark mode.
-In the dawn of personal computing, dark mode wasn’t a deliberate choice,
-but purely a matter of fact:
-Monochrome <abbr title="Cathode-Ray Tube">CRT</abbr> computer monitors work by firing electron beams
-on a phosphorescent screen, and as the phosphor that these early CRTs used was green,
-they were often referred to as
+In the dawn of personal computing, dark mode wasn’t a matter of choice,
+but a matter of fact:
+Monochrome <abbr title="Cathode-Ray Tube">CRT</abbr> computer monitors worked by firing electron beams
+on a phosphorescent screen and the phosphor used in early CRTs was green.
+Because text was displayed in green and the rest of the screen was black, these models were often referred to as
 [green screens](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg).
-Information like text was displayed in green, and the rest of the screen was black.
 
 <figure class="w-figure w-figure--inline-left">
   <img style="height:175px; width:auto;" src="word-processing.jpg" alt="Dark-on-white word processing" intrinsicsize="698x551">
   <figcaption class="w-figcaption">Fig. — Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
 </figure>
 
-The subsequently introduced Color CRTs display multiple colors
+The subsequently introduced Color CRTs displayed multiple colors
 through the use of red, green, and blue phosphors.
-They create white by activating all three phosphors simultaneously.
+They created white by activating all three phosphors simultaneously.
 With the advent of more sophisticated <abbr title="What You See Is What You Get">WYSIWYG</abbr>
 [desktop publishing](https://en.wikipedia.org/wiki/Desktop_publishing),
 the idea of making the virtual document resemble a physical sheet of paper became popular.
@@ -63,17 +62,17 @@ the idea of making the virtual document resemble a physical sheet of paper becam
 
 This is where *dark-on-white* as a design trend started,
 and this trend was carried over to the
-[early document-based web](http://info.cern.ch/hypertext/WWW/TheProject.html)
-and was also the way the first ever browser,
+[early document-based web](http://info.cern.ch/hypertext/WWW/TheProject.html).
+The first ever browser,
 [WorldWideWeb](https://en.wikipedia.org/wiki/WorldWideWeb)
 (remember,
 [CSS wasn’t even invented](https://en.wikipedia.org/wiki/Cascading_Style_Sheets#History) yet),
-[displayed webpages](https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png).
+[displayed webpages](https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png) this way.
 Fun fact: the second ever browser,
-[Line Mode Browser](https://en.wikipedia.org/wiki/Line_Mode_Browser)—as a terminal-based browser—was
+[Line Mode Browser](https://en.wikipedia.org/wiki/Line_Mode_Browser)—a terminal-based browser—was
 green on dark.
-To the present day, web pages and web apps are typically designed with dark text
-on a light background, a baseline assumption that is also hard-coded in user agent stylesheets like
+These days, web pages and web apps are typically designed with dark text
+on a light background, a baseline assumption that is also hard-coded in user agent stylesheets, including
 [Chrome’s](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
 
 <figure class="w-figure w-figure--inline-left">
@@ -81,18 +80,16 @@ on a light background, a baseline assumption that is also hard-coded in user age
   <figcaption class="w-figcaption">Fig. — Smartphone used in bed (<a href="https://unsplash.com/photos/W39xsPWZgA4">Source</a>)</figcaption>
 </figure>
 
-Nowadays, a lot of content consumption and creation has shifted to mobile devices
+The days of CRTs are long over.
+Content consumption and creation has shifted to mobile devices
 that use backlit <abbr title="Liquid Crystal Display">LCD</abbr>
-or energy-saving <abbr title="Active-Matrix Organic Light-Emitting Diode">AMOLED</abbr> screens,
-and on the desktop as well—which can be a full PC or a laptop—the days of CRTs are long over.
-With such smaller and more transportable computers, tablets, and smartphones,
-new usage patterns have evolved.
-People use their devices even in their beds at night-time, and leisure tasks
-like web browsing, coding for fun, or high-end gaming
-frequently happen after-hours in dim environments anyway.
-The more people use their devices in the dark—and even more since Apple has introduced
-[Dark Mode in macOS Mojave](https://support.apple.com/en-us/HT208976) on the desktop—the
-more the idea of going back to the roots of *light-on-dark* becomes popular.
+or energy-saving <abbr title="Active-Matrix Organic Light-Emitting Diode">AMOLED</abbr> screens.
+Smaller and more transportable computers, tablets, and smartphones led to new usage patterns.
+Leisure tasks like web browsing, coding for fun, and high-end gaming
+frequently happen after-hours in dim environments.
+People even use their devices in their beds at night-time.
+The more people use their devices in the dark,
+the more the idea of going back to the roots of *light-on-dark* becomes popular.
 
 ## Why dark mode
 
@@ -104,7 +101,7 @@ the most popular response is that *“it’s easier on the eyes,”*
 followed by *“it’s elegant and beautiful.”*
 Apple in their
 [Dark Mode developer documentation](https://developer.apple.com/documentation/appkit/supporting_dark_mode_in_your_interface)
-explicitly write: *“The choice of whether to enable a light or dark appearance
+explicitly writes: *“The choice of whether to enable a light or dark appearance
 is an aesthetic one for most users, and might not relate to ambient lighting conditions.”*
 
 {% Aside 'note' %}
@@ -119,21 +116,21 @@ is an aesthetic one for most users, and might not relate to ambient lighting con
 
 ### Accessibility
 
-However, there’re also people who actually *need* dark mode or other accessibility tools,
+There are also people who actually *need* dark mode and use it as another accessibility tool,
 for example, users with low vision.
 The earliest occurrence of such an accessibility tool I could find is
-[System&nbsp;7](https://en.wikipedia.org/wiki/System_7)’s *CloseView* feature that had a toggle for
-*Black on White* and *White on Black*, which arguably can be called dark mode.
+[System&nbsp;7](https://en.wikipedia.org/wiki/System_7)’s *CloseView* feature, which had a toggle for
+*Black on White* and *White on Black*.
 While System&nbsp;7 supported color, the default user interface was still black-and-white.
 
-These inversion-based implementations showed their weaknesses the moment color was introduced.
+These inversion-based implementations showed their weaknesses once color was introduced.
 User research by Szpiro *et al.* on
 [how people with low vision access computing devices](https://dl.acm.org/citation.cfm?id=2982168)
-showed that all interviewed users disliked inverted images, however,
-that many preferred light text on a dark background.
-On its mobile devices, Apple accommodates for this shortcoming with a feature called
-[Smart Invert](https://www.apple.com//accessibility/iphone/vision/)
-that reverses the colors on the display, except for images, media,
+showed that all interviewed users disliked inverted images,
+but that many preferred light text on a dark background.
+Apple accommodates for this user preference with a feature called
+[Smart Invert](https://www.apple.com//accessibility/iphone/vision/),
+which reverses the colors on the display, except for images, media,
 and some apps that use dark color styles.
 
 ### Computer Vision Syndrome
@@ -163,7 +160,7 @@ as well as avoiding bright lights or irregular lights in general through dark th
 ### Power savings on AMOLED screens
 
 Finally, dark mode is known to save a *lot* of energy on AMOLED screens.
-Case studies by the Android team that focused on popular Google apps
+Android case studies that focused on popular Google apps
 like YouTube have shown that the power savings can be up to 60%.
 The video below has more details on these case studies and the power savings.
 
@@ -173,10 +170,10 @@ The video below has more details on these case studies and the power savings.
 
 ## Activating dark mode in the operating system
 
-Now that I have covered the background of why dark mode is such a big thing for many,
-let me go into detail how you can support it.
-Before I dive into this, let me first clarify how people can activate dark mode in the first place.
-Operating systems that support a dark mode or theme
+Now that I have covered the background of why dark mode is such a big deal for many users,
+let’s review how you can support it.
+
+Operating systems that support a dark mode or dark theme
 typically have an option to activate it somewhere in the settings.
 On macOS&nbsp;X, it’s in the system preference’s *General* section and called *Appearance*,
 and on Windows&nbsp;10, it’s in the *Colors* section and called *Choose your color*.
@@ -682,15 +679,14 @@ The demo below shows the element in action
 
 ## Conclusions
 
-Working with and supporting dark mode is fun and opens up new design alleys, but above all,
-it can make the difference for some of your visitors between not being able to handle your site
+Working with and supporting dark mode is fun and opens up new design avenues.
+For some of your visitors it can be the difference between not being able to handle your site
 and being a happy user.
 There are some pitfalls and careful testing is required, but dark mode is definitely a great opportunity
-for you to show that you care for all of your users.
-With the best practices mentioned in this post and helpers like the
+for you to show that you care about all of your users.
+The best practices mentioned in this post and helpers like the
 [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle) custom element
-that allows people to easily override their system preference for your website,
-you hopefully have everything at hand to create an amazing dark mode experience.
+should make you confident in your ability to create an amazing dark mode experience.
 [Let me know on Twitter](https://twitter.com/tomayac) what you create and if this post was useful.
 Thanks for reading! 🌒
 
@@ -704,14 +700,15 @@ Resources for the `prefers-color-scheme` media query:
 Resources for the `color-scheme` meta tag and CSS property:
   - [Chrome Platform Status page](https://chromestatus.com/feature/5330651267989504)
   - [Chromium bug](http://crbug.com/925935)
+  - [CSS Color Adjustment Module Level&nbsp;1 spec](https://drafts.csswg.org/css-color-adjust-1/)
   - [CSS WG GitHub Issue for the meta tag and the CSS property](https://github.com/w3c/csswg-drafts/issues/3299)
   - [HTML WHATWG GitHub Issue for the meta tag](https://github.com/whatwg/html/issues/4504)
 
 General dark mode links:
-  - [Material Design — Dark Theme](https://material.io/design/color/dark-theme.html)
+  - [Material Design — Dark Theme](https://material.io/design/color/dark-theme.html)
   - [Dark Mode in Web Inspector](https://webkit.org/blog/8892/dark-mode-in-web-inspector/)
   - [Dark Mode Support in WebKit](https://webkit.org/blog/8840/dark-mode-support-in-webkit/)
-  - [Apple Human Interface Guidelines — Dark Mode](https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/dark-mode/)
+  - [Apple Human Interface Guidelines — Dark Mode](https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/dark-mode/)
 
 Background research articles for this post:
   - [What Does Dark Mode’s “supported-color-schemes” Actually Do? 🤔](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d)
@@ -720,7 +717,10 @@ Background research articles for this post:
 
 ## Acknowledgements
 
-I would like to thank the participants of the various user studies
+I would like to thank 🙏 [Lukasz Zbylut](https://www.linkedin.com/in/lukasz-zbylut/)
+for his thorough review of this article.
+The `prefers-color-scheme` media feature, the `color-scheme` CSS property,
+and the related meta tag are the implementation work of 👏 [Rune Lillesveen](https://twitter.com/runeli).
+Rune is also a co-editor of the [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/) spec.
+Finally, I am thankful to the many anonymous participants of the various user studies
 that have helped shape the recommendations in this article.
-The `prefers-color-scheme` media feature and the `color-scheme` CSS property
-and the related meta tag were implemented by 👏 [Rune Lillesveen](https://twitter.com/runeli).
