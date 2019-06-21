@@ -121,14 +121,6 @@ The earliest occurrence of such an accessibility tool I could find is
 *Black on White* and *White on Black*, which arguably can be called dark mode.
 While System&nbsp;7 supported color, the default user interface was still black-and-white.
 
-{% Aside 'note' %}
-  🤓 You can actually
-  [experience System&nbsp;7](https://archive.org/details/mac_MacOS_7.0.1_compilation)
-  live thanks to the
-  [Internet Archive](https://archive.org/)
-  (unfortunately the *CloseView* feature was on a separate floppy disk not part of the emulation).
-{% endAside %}
-
 These inversion-based implementations showed their weaknesses the moment color was introduced.
 User research by Szpiro *et al.* on
 [how people with low vision access computing devices](https://dl.acm.org/citation.cfm?id=2982168)
@@ -364,23 +356,25 @@ body {
 In the code sample above, you will probably have noticed a property
 [`color-scheme`](https://drafts.csswg.org/css-color-adjust-1/#propdef-color-scheme)
 with the space-separated value `light dark`.
+
+{% Aside 'warning' %}
+  The `color-scheme` property is still [in development](https://crbug.com/925935)
+  and it might not work as advertised, full support in Chrome will come later this year.
+{% endAside %}
+
 This tells the browser which color themes my app supports
-and allows it to activate special variants of the user agent stylesheet.
-This is useful to, for example, let the browser render form fields
+and allows it to activate special variants of the user agent stylesheet,
+which is useful to, for example, let the browser render form fields
 with a dark background and light text, adjust the scrollbars,
 or to enable a theme-aware highlight color.
-The exact details of `color-scheme` are specified in
-[CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/).
 
 {% Aside 'note' %}
   🌒 Read up more on
   [what `color-scheme` actually does](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d).
 {% endAside %}
 
-{% Aside 'warning' %}
-  The `color-scheme` property is still [in development](https://crbug.com/925935)
-  and it might not work as advertised, full support in Chrome will come later this year.
-{% endAside %}
+The exact details of `color-scheme` are specified in
+[CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/).
 
 Everything else is then just a matter of defining CSS variables
 for things that matter on my site.
