@@ -430,6 +430,8 @@ and see how the page reacts.
   </iframe>
 </div>
 
+### Loading impact
+
 When you play with this example, you can see
 why I load my `dark.css` and `light.css` via media queries.
 Try toggling dark mode and reload the page:
