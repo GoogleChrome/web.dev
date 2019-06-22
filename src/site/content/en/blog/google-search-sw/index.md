@@ -4,7 +4,7 @@ subhead: The story of what shipped, how the impact was measured, and the tradeof
 authors:
   - jeffposnick
 date: 2019-06-20
-hero: hero.png
+hero: hero.jpg
 alt: An illustration of a service worker interacting with a cache.
 description: |
   Search for just about any topic on Google, and you're presented with a page of meaningful, relevant results. What you probably didn't realize is that this search results page may be served by a powerful piece of web technology called a service worker.
