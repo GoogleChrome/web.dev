@@ -15,7 +15,7 @@
     "stage": "npm run build && gcloud app deploy --project web-dev-staging --quiet",
     "deploy": "ELEVENTY_ENV=prod npm run build && node lib/index.js"
   },
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "dependencies": {
     "express": "^4.16.4"
   },
