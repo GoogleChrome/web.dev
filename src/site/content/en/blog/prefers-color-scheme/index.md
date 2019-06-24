@@ -4,11 +4,9 @@ subhead: Overhyped or necessity? Learn everything about dark mode and how to sup
 authors:
   - thomassteiner
 date: 2019-06-21
-hero: dark.png
+hero: hero.jpg
 alt: |
-  Web page rendered in the dark mode experience with the Chrome Developer Tools open on the Network tab
-  that shows the CSS file responsible for the (currently not used) light mode experience
-  being downloaded with the lowest priority.
+  Silhouette photo of a mountain during nighttime, photo by Nathan Anderson on Unsplash.
 description: |
   Many devices now support an operating system wide dark mode or dark theme experience.
   This post explains how dark mode can be supported on web pages, lists best practices,
@@ -727,3 +725,4 @@ and [Rowan Merewood](https://twitter.com/rowan_m)
 for their thorough reviews of this article.
 Finally, I am thankful to the many anonymous participants of the various user studies
 that have helped shape the recommendations in this article.
+Hero image by [Nathan Anderson](https://unsplash.com/photos/kujXUuh1X0o).
