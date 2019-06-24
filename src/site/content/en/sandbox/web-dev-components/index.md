@@ -1,6 +1,6 @@
 ---
-layout: sandbox/article
-title: components
+layout: post
+title: Components
 ---
 
 ## Source
