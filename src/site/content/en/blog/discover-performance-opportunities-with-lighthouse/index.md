@@ -9,6 +9,10 @@ description: |
   performance. Lighthouse gives you a report on how the page did. The report
   provides a score for each metric and a list of opportunities which, if you
   implement them, should make the page load faster.
+tags:
+    - post
+    - performance
+    - devtools
 ---
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) is a tool that
