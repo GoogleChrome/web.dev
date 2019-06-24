@@ -719,10 +719,11 @@ Background research articles for this post:
 
 ## Acknowledgements
 
-I would like to thank 🙏 [Lukasz Zbylut](https://www.linkedin.com/in/lukasz-zbylut/)
-for his thorough review of this article.
 The `prefers-color-scheme` media feature, the `color-scheme` CSS property,
 and the related meta tag are the implementation work of 👏 [Rune Lillesveen](https://twitter.com/runeli).
 Rune is also a co-editor of the [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/) spec.
+I would like to 🙏 thank [Lukasz Zbylut](https://www.linkedin.com/in/lukasz-zbylut/)
+and [Rowan Merewood](https://twitter.com/rowan_m)
+for their thorough reviews of this article.
 Finally, I am thankful to the many anonymous participants of the various user studies
 that have helped shape the recommendations in this article.
