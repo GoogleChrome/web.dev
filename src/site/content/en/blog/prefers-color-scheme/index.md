@@ -286,36 +286,34 @@ are loaded conditionally with a `<link media>` query.
 Initially,
 [not all browsers will support `prefers-color-scheme`](https://caniuse.com/#feat=prefers-color-scheme),
 which I deal with dynamically by loading the default `light.css` file
-via `document.write` in a minuscule inline script
-(which is an arbitrary choice, I could also have made the dark experience the default).
-
-{% Aside 'warning' %}
-  Using `document.write()` is generally considered a
-  [bad practice](https://developers.google.com/web/tools/lighthouse/audits/document-write).
-  In this concrete case it is acceptable, as `light.css` is a critical resource and
-  the code path will only be taken in the (decreasingly frequent) case where `prefers-color-scheme` is unknown.
-{% endAside %}
+via a conditionally inserted `<link rel="stylesheet">` element in a minuscule inline script
+(light is an arbitrary choice, I could also have made dark the default fallback experience).
+To avoid a [flash of unstyled content](https://en.wikipedia.org/wiki/Flash_of_unstyled_content),
+I hide the content of the page until `light.css` has loaded.
 
 ```html
-<!-- index.html -->
 <script>
   // If `prefers-color-scheme` is not supported, fall back to light mode.
-  // In this case, the file will be downloaded with `highest` priority.
+  // In this case, light.css will be downloaded with `highest` priority.
   if (!window.matchMedia('(prefers-color-scheme)').matches) {
-    document.write('<link rel="stylesheet" href="/light.css"">');
+    document.documentElement.style.display = 'none';
+    document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="stylesheet" href="/light.css" onload="document.documentElement.style.display = ``">'
+    );
   }
 </script>
-<!-- The main stylesheet -->
-<link rel="stylesheet" href="/style.css">
 <!--
   Conditionally either load the light or the dark stylesheet. The matching file
   will be downloaded with `highest`, the non-matching file with `lowest`
   priority. If the browser doesn't support `prefers-color-scheme`, the media
   query is unknown and the files are downloaded with `lowest` priority (but
-  above I already force `highest` for my default light experience).
+  above I already force `highest` priority for my default light experience).
 -->
 <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+<!-- The main stylesheet -->
+<link rel="stylesheet" href="/style.css">
 ```
 
 ### Stylesheet architecture
@@ -811,6 +809,7 @@ Rune is also a co-editor of the [CSS Color Adjustment Module Level&nbsp;1](https
 I would like to 🙏 thank [Lukasz Zbylut](https://www.linkedin.com/in/lukasz-zbylut/)
 and [Rowan Merewood](https://twitter.com/rowan_m)
 for their thorough reviews of this article.
+The [loading strategy](#loading-strategy) is the brainchild of [Jake Archibald](https://twitter.com/jaffathecake).
 Finally, I am thankful to the many anonymous participants of the various user studies
 that have helped shape the recommendations in this article.
 Hero image by [Nathan Anderson](https://unsplash.com/photos/kujXUuh1X0o).
