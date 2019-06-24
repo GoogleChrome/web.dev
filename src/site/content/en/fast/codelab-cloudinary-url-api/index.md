@@ -56,7 +56,7 @@ There are three dynamic parts in this fetch URL which are explained below.
 2. `<transformations>`
 3. `<remote_image_url>`
 
-### 1. REPLACE `<cloud_name>`
+### #1 REPLACE `<cloud_name>`
 
 Replace `<cloud_name>` with your Cloudinary [cloud name](https://cloudinary.com/documentation/solution_overview?query=cloud%20name&c_query=Account%20and%20API%20setup%20%E2%80%BA%20Identifiers%20%E2%80%BA%20Cloud%20name#cloud_name). For example, we are going to use the `demo` cloud name here.
 
@@ -67,7 +67,7 @@ https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_im
 https://res.cloudinary.com/demo/image/fetch/<transformations>/<remote_image_url>
 ```
 
-### 2. REPLACE `<transformations>`
+### #2 REPLACE `<transformations>`
 
 Replace `<transformations>` with relevant [Image Transformations](https://cloudinary.com/blog/the_holy_grail_of_image_optimization_or_balancing_visual_quality_and_file_size). Use comma-separated values to optimize the image quality and format delivery by using `q_auto,f_auto`.
 
@@ -81,7 +81,7 @@ While there are many [Image transformations](https://cloudinary.com/documentatio
 1. [**Quality**](https://cloudinary.com/documentation/image_transformation_reference#quality_parameter): The parameter `q` controls the quality of the image delivered by cloud. You can set `q_1` to `q_100` 1 is the lowest quality, and 100 is the highest. Use `q_auto` to calculate the optimal quality of an image automatically.
 2. [**Format**](https://cloudinary.com/documentation/image_transformation_reference#format_parameter): The parameter `f` can automatically convert delivered images to WebP and JPEG-XR on supported browsers to save bandwidth and optimize delivery time. Again use `f_auto` to auto format the image.
 
-### 3. REPLACE `<remote_image_url>`
+### #3 REPLACE `<remote_image_url>`
 
 Now replace the `<remote_image_url>` with the original link of the first image. The final URL looks like this:
 
@@ -171,10 +171,11 @@ Copyright 2018 Google LLC.
 SPDX-License-Identifier: Apache-2.0
 -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Imagemin Demo</title>
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <title>Cloudinary URL API Demo: Optimized Images</title>
+    <meta name="Description" content="In this codelab, learn how to use Cloudinary with its simple URL API to optimize images for faster downloads and serve media in next-gen formats. All of that happens dynamically in Cloud without any build step.">
+    <link href="https://cloudinary-res.cloudinary.com/image/asset/favicon-192x192-d6a96e11dd5adfebbb717d154665ee80.png" rel="icon" sizes="192x192" type="image/png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -188,27 +189,27 @@ SPDX-License-Identifier: Apache-2.0
       <p>We sell the best flowers!</p>
     </header>
     <div class="wrapper">
-      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png"/>
-      <div class="price">Violet bouquet- $9</div>
+      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower1.png" alt="Yellow bouquet" />
+      <div class="price">Yellow bouquet - $9</div>
     </div>
     <div class="wrapper">
-      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower2.jpg"/>
+      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower2.jpg" alt="Cream bouquet" />
       <div class="price">Cream bouquet - $5</div>
     </div>
     <div class="wrapper">
-      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower3.png"/>
+      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower3.png" alt="Light pink" />
       <div class="price">Light pink bouquet - $6</div>
     </div>
     <div class="wrapper">
-      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower4.png"/>
-      <div class="price">Yellow bouquet - $8</div>
+      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower4.jpg" alt="Violet bouquet" />
+      <div class="price">Violet bouquet - $8</div>
     </div>
     <div class="wrapper">
-      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower5.jpg"/>
+      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower5.jpg" alt="Polka dot" />
       <div class="price">Polka dot bouquet - $11</div>
     </div>
     <div class="wrapper">
-      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower6.jpg"/>
+      <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower6.jpg" alt="Burgandy bouquet" />
       <div class="price">Burgandy bouquet - $7</div>
     </div>
   </body>
