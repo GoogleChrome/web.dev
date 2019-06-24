@@ -292,7 +292,7 @@ the JPEG images on your page are optimally compressed.
 Lighthouse audit results for when images were not optimized.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images-not-optimized.jpeg" alt="Images Not Optimized">
+  <img class="w-screenshot" src="./images-not-optimized.png" alt="Images Not Optimized">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Fig. 1 — Images Not Optimized.
   </figcaption>
@@ -304,7 +304,7 @@ You can use `https://codelab-cloudinary.glitch.me/` for the first audit. This re
 2. Efficiently encode images.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./optimized-images.jpeg" alt="Images Not Optimized">
+  <img class="w-screenshot" src="./optimized-images.png" alt="Images Not Optimized">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Fig. 2 — Optimized Images.
   </figcaption>
