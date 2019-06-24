@@ -20,13 +20,15 @@ tags:
   - color-scheme
 ---
 
-## Dark mode before *Dark Mode*
+## Introduction
 
 {% Aside 'note' %}
   📚 I have done a lot of background research on the history and theory of dark mode,
   if you are only interested in working with dark mode, feel free to
   [skip the introduction](#activating-dark-mode-in-the-operating-system).
 {% endAside %}
+
+### Dark mode before *Dark Mode*
 
 <figure class="w-figure w-figure--inline-right">
   <img style="height:175px; width:auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
@@ -85,13 +87,13 @@ or energy-saving <abbr title="Active-Matrix Organic Light-Emitting Diode">AMOLED
 Smaller and more transportable computers, tablets, and smartphones led to new usage patterns.
 Leisure tasks like web browsing, coding for fun, and high-end gaming
 frequently happen after-hours in dim environments.
-People even use their devices in their beds at night-time.
+People even enjoy their devices in their beds at night-time.
 The more people use their devices in the dark,
 the more the idea of going back to the roots of *light-on-dark* becomes popular.
 
-## Why dark mode
+### Why dark mode
 
-### Aesthetics
+#### Dark mode for aesthetic reasons
 
 When people get asked
 [why they like or want dark mode](https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d),
@@ -112,7 +114,7 @@ is an aesthetic one for most users, and might not relate to ambient lighting con
   <figcaption class="w-figcaption">Fig. — System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
 </figure>
 
-### Accessibility
+#### Dark mode as an accessibility tool
 
 There are also people who actually *need* dark mode and use it as another accessibility tool,
 for example, users with low vision.
@@ -121,7 +123,7 @@ The earliest occurrence of such an accessibility tool I could find is
 *Black on White* and *White on Black*.
 While System&nbsp;7 supported color, the default user interface was still black-and-white.
 
-These inversion-based implementations showed their weaknesses once color was introduced.
+These inversion-based implementations demonstrated their weaknesses once color was introduced.
 User research by Szpiro *et al.* on
 [how people with low vision access computing devices](https://dl.acm.org/citation.cfm?id=2982168)
 showed that all interviewed users disliked inverted images,
@@ -131,9 +133,7 @@ Apple accommodates for this user preference with a feature called
 which reverses the colors on the display, except for images, media,
 and some apps that use dark color styles.
 
-### Computer Vision Syndrome
-
-Computer Vision Syndrome, also known as Digital Eye Strain, is
+A special form of low vision is Computer Vision Syndrome, also known as Digital Eye Strain, which is
 [defined](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1475-1313.2011.00834.x)
 as *“the combination of eye and vision problems associated with the use of computers
 (including desktop, laptop, and tablets) and other electronic displays (e.g.
@@ -155,9 +155,10 @@ through features like iOS’ [Night Shift](https://support.apple.com/en-us/HT207
 [Night Light](https://support.google.com/pixelphone/answer/7169926?) can help,
 as well as avoiding bright lights or irregular lights in general through dark themes or dark modes.
 
-### Power savings on AMOLED screens
+#### Dark mode power savings on AMOLED screens
 
-Finally, dark mode is known to save a *lot* of energy on AMOLED screens.
+Finally, dark mode is known to save a *lot* of energy on
+<abbr title="Active-Matrix Organic Light-Emitting Diode">AMOLED</abbr> screens.
 Android case studies that focused on popular Google apps
 like YouTube have shown that the power savings can be up to 60%.
 The video below has more details on these case studies and the power savings.
@@ -176,7 +177,7 @@ typically have an option to activate it somewhere in the settings.
 On macOS&nbsp;X, it’s in the system preference’s *General* section and called *Appearance*,
 and on Windows&nbsp;10, it’s in the *Colors* section and called *Choose your color*.
 For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch,
-and on iOS&nbsp;13, you can change the appearance in the *Display &amp; Brightness*
+and on iOS&nbsp;13, you can change the *Appearance* in the *Display &amp; Brightness*
 section of the settings.
 
 <figure>
@@ -267,13 +268,14 @@ It works with the following values:
 Let’s finally see how supporting dark mode looks like in practice.
 Just like with the [Highlander](https://en.wikipedia.org/wiki/Highlander_(film)),
 with dark mode, *there can be only one*: dark or light, but never both!
-Why do I mention this? Because this fact has an impact on the loading strategy.
-Please don’t force users to download CSS in the critical rendering path
-that is for a mode they don’t currently use.
+Why do I mention this? Because this fact should have an impact on the loading strategy.
+**Please don’t force users to download CSS in the critical rendering path
+that is for a mode they don’t currently use.**
 To optimize load speed, I have therefore split my CSS for the example app
+that shows the following recommendations in practice
 into three parts in order to [defer non-critical CSS](/defer-non-critical-css/):
 
-- `style.css` that contains generic styles that are used universally on the site.
+- `style.css` that contains generic rules that are used universally on the site.
 - `dark.css` that contains only the rules needed for dark mode.
 - `light.css` that contains only the rules needed for light mode.
 
@@ -284,8 +286,15 @@ are loaded conditionally with a `<link media>` query.
 Initially,
 [not all browsers will support `prefers-color-scheme`](https://caniuse.com/#feat=prefers-color-scheme),
 which I deal with dynamically by loading the default `light.css` file
-(an arbitrary choice, I could also have made the dark experience the default)
-via `document.write` in a minuscule inline script.
+via `document.write` in a minuscule inline script
+(which is an arbitrary choice, I could also have made the dark experience the default).
+
+{% Aside 'warning' %}
+  Using `document.write()` is generally considered a
+  [bad practice](https://developers.google.com/web/tools/lighthouse/audits/document-write).
+  In this concrete case it is acceptable, as `light.css` is a critical resource and
+  the code path will only be taken in the (decreasingly frequent) case where `prefers-color-scheme` is unknown.
+{% endAside %}
 
 ```html
 <!-- index.html -->
@@ -313,24 +322,24 @@ via `document.write` in a minuscule inline script.
 
 I make maximum use of [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/var),
 this allows my generic `style.css` to be, well, generic,
-and all the customization happens in the two other files `dark.css` and `light.css`.
+and all the light or dark mode customization happens in the two other files `dark.css` and `light.css`.
 Below you can see an excerpt of the actual styles, but it should suffice to convey the overall idea.
-I declare two variables, `--background-color` and `--color`
+I declare two variables, `--color` and `--background-color`
 that essentially create a *dark-on-light* and a *light-on-dark* baseline theme.
 
 ```css
-/* light.css */
+/* light.css: 👉 dark-on-light */
 :root {
-  --background-color: rgb(250, 250, 250);
   --color: rgb(5, 5, 5);
+  --background-color: rgb(250, 250, 250);
 }
 ```
 
 ```css
-/* dark.css */
+/* dark.css: 👉 light-on-dark */
 :root {
-  --background-color: rgb(5, 5, 5);
   --color: rgb(250, 250, 250);
+  --background-color: rgb(5, 5, 5);
 }
 ```
 
@@ -344,12 +353,12 @@ higher—they cascade down, which serves me for declaring global CSS variables.
 ```css
 /* style.css */
 :root {
-  color-scheme: dark light;
+  color-scheme: light dark;
 }
 
 body {
-  background-color: var(--background-color);
   color: var(--color);
+  background-color: var(--background-color);
 }
 ```
 
@@ -367,27 +376,26 @@ and allows it to activate special variants of the user agent stylesheet,
 which is useful to, for example, let the browser render form fields
 with a dark background and light text, adjust the scrollbars,
 or to enable a theme-aware highlight color.
+The exact details of `color-scheme` are specified in
+[CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/).
 
 {% Aside 'note' %}
   🌒 Read up more on
   [what `color-scheme` actually does](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d).
 {% endAside %}
 
-The exact details of `color-scheme` are specified in
-[CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/).
-
 Everything else is then just a matter of defining CSS variables
 for things that matter on my site.
 Semantically organizing styles helps a lot when working with dark mode.
-For example, rather than `--highlight-yellow`, consider calling the variable
+For example, rather than `-⁠-highlight-yellow`, consider calling the variable
 `--accent-color`, as “yellow” may actually not be yellow in dark mode or vice versa.
 Below is an example of some more variables that I use in my example.
 
 ```css
 /* dark.css */
 :root {
-  --background-color: rgb(5, 5, 5);
   --color: rgb(250, 250, 250);
+  --background-color: rgb(5, 5, 5);
   --link-color: rgb(0, 188, 212);
   --main-headline-color: rgb(233, 30, 99);
   --accent-background-color: rgb(0, 188, 212);
@@ -398,8 +406,8 @@ Below is an example of some more variables that I use in my example.
 ```css
 /* light.css */
 :root {
-  --background-color: rgb(250, 250, 250);
   --color: rgb(5, 5, 5);
+  --background-color: rgb(250, 250, 250);
   --link-color: rgb(0, 0, 238);
   --main-headline-color: rgb(0, 0, 192);
   --accent-background-color: rgb(0, 0, 238);
@@ -407,13 +415,7 @@ Below is an example of some more variables that I use in my example.
 }
 ```
 
-### Avoid pure white
-
-A small detail you may have noticed is that I don’t use pure white.
-Instead, to prevent glowing and bleeding against the surrounding dark content,
-I choose a slightly darker white, `rgb(250, 250, 250)` or similar works well.
-
-## Full example
+### Full example
 
 In the following [Glitch](https://dark-mode-baseline.glitch.me/) embed,
 you can see the complete example that puts the concepts from above into practice.
@@ -473,9 +475,14 @@ if (window.matchMedia('(prefers-color-scheme)').matches) {
 ### Reacting on dark mode changes
 
 Like any other media query change, dark mode changes can be subscribed to via JavaScript.
-You can use this to, for example, dynamically change the favicon of a page
-or change the `<meta name="theme-color">` that determines the color of the URL bar in Chrome.
-The [full example](#full-example) above shows this in action.
+You can use this to, for example, dynamically change the
+[favicon](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/#provide_great_icons_tiles)
+of a page or change the
+[`<meta name="theme-color">`](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/#meta_theme_color_for_chrome_and_opera)
+that determines the color of the URL bar in Chrome.
+The [full example](#full-example) above shows this in action,
+in order to see the theme color and favicon changes, open the
+[demo in a separate tab](https://dark-mode-baseline.glitch.me/).
 
 ```js
   const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -487,34 +494,38 @@ The [full example](#full-example) above shows this in action.
 
 ## Dark mode best practices
 
-### Smooth transitions between modes
+### Avoid pure white
 
-Switching from dark mode to light mode or vice versa can be smoothed thanks to the fact
-that both `color` and `background-color` are animatable CSS properties.
-Creating the animation is as easy as declaring two `transition`s for the two properties.
-The example below illustrates the overall idea.
+A small detail you may have noticed is that I don’t use pure white.
+Instead, to prevent glowing and bleeding against the surrounding dark content,
+I choose a slightly darker white. Something like `rgb(250, 250, 250)` works well.
 
-```css
-body {
-  --duration: 0.5s;
-   --timing: ease;
+### Re-colorize and darken photographic images
 
-  background-color: var(--background-color);
-  color: var(--color);
-  transition:
-    color var(--duration) var(--timing),
-    background-color var(--duration) var(--timing);
-}
-```
-
-### Photographic images
-
-If you compare the two screenshots above, you will notice that not only the core theme has changed
+If you compare the two screenshots below, you will notice that not only the core theme has changed
 from *dark-on-light* to *light-on-dark*, but that also the hero image looks slightly different.
-My [research](https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b)
+My [user research](https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b)
 has shown that the majority of the surveyed people
 prefer slightly less vibrant and brilliant images when dark mode is active.
 I refer to this as *re-colorization*.
+
+<figure>
+  <div style="width: 100%">
+    <div style="display: inline-block;
+      width: 45%;
+      height: 100px;
+      background-image: url(dark.png);
+      background-repeat: no-repeat;
+      background-position-y: center;"></div>
+    <div style="display: inline-block;
+      width: 45%;
+      height: 100px;
+      background-image: url(light.png);
+      background-repeat: no-repeat;
+      background-position-y: center;"></div>
+  </div>
+  <figcaption class="w-figcaption">Fig. — Image re-colorization</figcaption>
+</figure>
 
 Re-colorization can be achieved through a CSS filter on my images.
 I use a CSS selector that matches all images that don’t have `.svg` in their URL,
@@ -540,6 +551,32 @@ img:not([src*=".svg"]) {
 }
 ```
 
+#### Customizing dark mode re-colorization intensities with JavaScript
+
+Not everyone is the same and people have different dark mode needs.
+By sticking to the re-colorization method described above,
+I can easily make the grayscale intensity a user preference that I can
+[change via JavaScript](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Values_in_JavaScript),
+and by setting a value of `0%`, I can also disable re-colorization completely.
+Note that [`document.documentElement`](https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement)
+provides a reference to the root element of the document,
+that is, the same element I can reference with the
+[`:root` CSS pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:root).
+
+```js
+const filter = 'grayscale(70%)';
+document.documentElement.style.setProperty('--image-filter', value);
+```
+
+### Invert vector graphics and icons
+
+For vector graphics—that in my case are used as icons that I reference via `<img>` elements—I
+use a different re-colorization method.
+While [research](https://dl.acm.org/citation.cfm?id=2982168) has shown
+that people don’t like inversion for photos, it does work very well for most icons.
+Again I use CSS variables to determine the inversion amount
+in the regular and in the [`:hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover) state.
+
 <figure>
   <div style="width: 100%">
     <div style="display: inline-block;
@@ -547,37 +584,18 @@ img:not([src*=".svg"]) {
       height: 100px;
       background-image: url(dark.png);
       background-repeat: no-repeat;
-      background-position-y: center;"></div>
+      background-position: bottom -50px left 0;"></div>
     <div style="display: inline-block;
       width: 45%;
       height: 100px;
       background-image: url(light.png);
       background-repeat: no-repeat;
-      background-position-y: center;"></div>
+      background-position: bottom -50px left 0;"></div>
   </div>
-  <figcaption class="w-figcaption">Fig. — Image re-colorization</figcaption>
+  <figcaption class="w-figcaption">Fig. — Icon re-colorization</figcaption>
 </figure>
 
-### Customizing dark mode choices with JavaScript
-
-Not everyone is the same and people have different dark mode needs.
-By sticking to the re-colorization method described above,
-I can easily make the grayscale intensity a user preference that I can change via JavaScript,
-and by setting a value of `0%`, I can also disable re-colorization completely.
-
-```js
-const filter = 'grayscale(70%)';
-document.documentElement.style.setProperty('--image-filter', value);
-```
-
-### Vector graphics and icons
-
-For vector graphics—that in my case are used as icons—I use a different re-colorization method.
-While [research](https://dl.acm.org/citation.cfm?id=2982168) has shown
-that people don’t like inversion for photos, it does work very well for most icons.
-Again I use CSS variables to determine the inversion amount
-in the regular and in the `:hover` state.
-Note how again I only invert icons in `dark.css` but not in `light.css`, and how the `:hover` state
+Note how again I only invert icons in `dark.css` but not in `light.css`, and how `:hover`
 gets a different inversion intensity in the two cases to make the icon appear
 slightly darker or slightly brighter, dependent on the mode the user has selected.
 
@@ -603,23 +621,58 @@ img[src*=".svg"]:hover {
 }
 ```
 
-<figure>
-  <div style="width: 100%">
-    <div style="display: inline-block;
-      width: 45%;
-      height: 100px;
-      background-image: url(dark.png);
-      background-repeat: no-repeat;
-      background-position: bottom -50px left 0;"></div>
-    <div style="display: inline-block;
-      width: 45%;
-      height: 100px;
-      background-image: url(light.png);
-      background-repeat: no-repeat;
-      background-position: bottom -50px left 0;"></div>
-  </div>
-  <figcaption class="w-figcaption">Fig. — Icon re-colorization</figcaption>
-</figure>
+### Use `currentColor` for inline SVGs
+
+For *inline* SVG images, instead of [using inversion filters](#invert-vector-graphics-and-icons),
+you can leverage the [`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword)
+CSS keyword that represents the value of an element’s `color` property.
+This lets you use the `color` value on properties that do not receive it by default.
+Conveniently, if `currentColor` is used as the value of the SVG
+[`fill` or `stroke` attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes#Fill_and_Stroke_Attributes),
+it instead takes its value from the inherited value of the color property.
+Please note that this only works for *inline* SVGs, but not SVGs that are referenced as the `src` of an image.
+You can see this applied in the demo below.
+
+```html/2
+<!-- Some inline SVG -->
+<svg xmlns="http://www.w3.org/2000/svg"
+    stroke="currentColor"
+>
+  […]
+</svg>
+```
+
+<div style="height: 600px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/dark-mode-currentcolor?path=light.css&previewSize=100"
+    alt="dark-mode-currentcolor on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+### Smooth transitions between modes
+
+Switching from dark mode to light mode or vice versa can be smoothed thanks to the fact
+that both `color` and `background-color` are
+[animatable CSS properties](https://www.quackit.com/css/css3/animations/animatable_properties/).
+Creating the animation is as easy as declaring two `transition`s for the two properties.
+The example below illustrates the overall idea and you can experience it in the
+[demo](https://dark-mode-baseline.glitch.me/).
+
+```css
+body {
+  --duration: 0.5s;
+   --timing: ease;
+
+  color: var(--color);
+  background-color: var(--background-color);
+
+  transition:
+    color var(--duration) var(--timing),
+    background-color var(--duration) var(--timing);
+}
+```
 
 ### Art direction with dark mode
 
@@ -629,11 +682,13 @@ there are situations where you actually may want to work with `prefers-color-sch
 Art direction is such a situation.
 On the web, art direction deals with the overall visual appearance of a page and how it communicates visually,
 stimulates moods, contrasts features, and psychologically appeals to a target audience.
+
 With dark mode, it’s up to the judgment of the designer to decide what is the best image at a particular mode
 and whether [re-colorization of images](#photographic-images) is maybe *not* good enough.
 If used with the `<picture>` element, the `<source>` of the image to be shown can be made dependent on the `media` attribute.
 In the example below, I show the Western hemisphere for dark mode, and the Eastern hemisphere for light mode
-and when no preference is given, defaulting to the Eastern hemisphere in all other cases.
+or when no preference is given, defaulting to the Eastern hemisphere in all other cases.
+This is of course purely for illustrative purposes.
 Toggle dark mode on your device to see the difference.
 
 ```html
@@ -653,14 +708,17 @@ Toggle dark mode on your device to see the difference.
   </iframe>
 </div>
 
-## Dark mode, but add an opt-out
+### Dark mode, but add an opt-out
 
 As mentioned in the [why dark mode](#why-dark-mode) section above,
 dark mode is an aesthetic choice for most users.
 In consequence, some users may actually like to have their operating system UI
 in dark, but still prefer to see their webpages the way they are used to seeing them.
 A great pattern is to initially adhere to the signal the browser sends through
-`prefer-color-scheme`, but to then optionally allow users to override that color scheme.
+`prefers-color-scheme`, but to then optionally allow users to override their system-level setting.
+
+#### The `<dark-mode-toggle>` custom element
+
 You can of course create the code for this yourself, but you can also just use
 a ready-made custom element (web component) that I have created right for this purpose.
 It’s called [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle)
@@ -668,6 +726,32 @@ and it adds a toggle (dark mode on/off) or
 a theme switcher (theme light/dark) to your page that you can fully customize.
 The demo below shows the element in action
 (oh, and I have also snuck it in the [full example](#full-example) above).
+
+```html
+<dark-mode-toggle
+    legend="Theme Switcher"
+    appearance="switch"
+    dark="Dark"
+    light="Light"
+    remember="Remember this"
+></dark-mode-toggle>
+```
+
+<figure style="margin-bottom:1rem;">
+  <div style="width: 320px;">
+    <div style="display: inline-block;
+      width: 45%;
+      height: 76px;
+      background-image: url(dark-mode-toggle-light.png);
+      background-repeat: no-repeat;"></div>
+    <div style="display: inline-block;
+      width: 45%;
+      height: 76px;
+      background-image: url(dark-mode-toggle-dark.png);
+      background-repeat: no-repeat;"></div>
+  </div>
+  <figcaption class="w-figcaption">Fig. — <code>&lt;dark-mode-toggle&gt;</code> custom element</figcaption>
+</figure>
 
 <div style="height: 800px; width: 100%;">
   <iframe
@@ -687,7 +771,8 @@ for you to show that you care about all of your users.
 The best practices mentioned in this post and helpers like the
 [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle) custom element
 should make you confident in your ability to create an amazing dark mode experience.
-[Let me know on Twitter](https://twitter.com/tomayac) what you create and if this post was useful.
+[Let me know on Twitter](https://twitter.com/tomayac) what you create and if this post was useful
+or suggestions for improving it.
 Thanks for reading! 🌒
 
 ## Related links
