@@ -1,6 +1,6 @@
 ---
 layout: codelab
-title: Cloudinary to optimize images and serve next-gen formats
+title: Optimize images and serve next-gen formats using Cloudinary
 authors:
   - ahmadawais
 date: 2019-06-24
