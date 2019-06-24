@@ -1385,5 +1385,23 @@
       "given": "Chris",
       "family": "Anstey"
     }
+  },
+  "ahmadawais": {
+    "name": {
+      "given": "Ahmad",
+      "family": "Awais"
+    },
+    "org": {
+      "name": "Cloudinary",
+      "unit": "Developer Relations"
+    },
+    "country": "",
+    "homepage": "https://AhmadAwais.com/",
+    "twitter": "MrAhmadAwais",
+    "github": "ahmadawais",
+    "glitch": "ahmadawais",
+    "description": {
+      "en": "Principal Developer Advocate ❯ Google Developers Expert ❯ Full-time Open Sourcerer."
+    }
   }
 }
