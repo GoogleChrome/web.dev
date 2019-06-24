@@ -1432,6 +1432,10 @@
       "given": "Stephen",
       "family": "Fluin"
     },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Advocate for Angular"
+    },
     "country": "US",
     "twitter": "stephenfluin",
     "github": "stephenfluin"
