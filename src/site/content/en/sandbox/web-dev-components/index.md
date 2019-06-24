@@ -1,5 +1,6 @@
 ---
 layout: post
+noindex: true
 title: Components
 ---
 
