@@ -158,7 +158,7 @@ $KEY_POINT_COLOR: #6001ff;
 // Force markdown generated code blocks to match font size.
 .w-aside pre,
 .w-aside pre code {
-  font-size: .889em;
+  font-size: 0.889em;
   line-height: 1;
   white-space: pre;
 }
@@ -188,4 +188,13 @@ $KEY_POINT_COLOR: #6001ff;
 // "Gotchas!" from the first paragraph of text.
 .w-aside--gotchas p {
   margin-top: 8px;
+}
+
+// Colors.
+.w-c--success {
+  color: $SUCCESS_COLOR;
+}
+
+.w-c--warning {
+  color: $WARNING_COLOR;
 }
