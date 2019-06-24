@@ -1385,5 +1385,20 @@
       "given": "Chris",
       "family": "Anstey"
     }
+  },
+  "mgechev": {
+    "name": {
+      "given": "Minko",
+      "family": "Gechev"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Programs Engineer for Angular"
+    },
+    "country": "USA",
+    "homepage": "https://blog.mgechev.com/",
+    "twitter": "mgechev",
+    "github": "mgechev",
+    "glitch": "mgechev"
   }
 }
