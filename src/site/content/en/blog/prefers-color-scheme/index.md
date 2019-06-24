@@ -725,7 +725,10 @@ It’s called [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mo
 and it adds a toggle (dark mode on/off) or
 a theme switcher (theme light/dark) to your page that you can fully customize.
 The demo below shows the element in action
-(oh, and I have also snuck it in the [full example](#full-example) above).
+(oh, and I have also 🤫 silently snuck it in all of the
+[other](https://dark-mode-baseline.glitch.me/)
+[examples](https://dark-mode-currentcolor.glitch.me/)
+[above](https://dark-mode-picture.glitch.me/)).
 
 ```html
 <dark-mode-toggle
