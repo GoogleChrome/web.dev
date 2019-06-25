@@ -306,7 +306,7 @@ I hide the content of the page until `light.css` has loaded.
 <!--
   Conditionally either load the light or the dark stylesheet. The matching file
   will be downloaded with `highest`, the non-matching file with `lowest`
-  priority. If the browser doesn't support `prefers-color-scheme`, the media
+  priority. If the browser doesn’t support `prefers-color-scheme`, the media
   query is unknown and the files are downloaded with `lowest` priority (but
   above I already force `highest` priority for my default light experience).
 -->
@@ -469,6 +469,17 @@ if (window.matchMedia('(prefers-color-scheme)').matches) {
   console.log('🎉 Dark mode is supported');
 }
 ```
+
+At the time of writing, `prefers-color-scheme` is supported on both desktop and mobile (where available)
+by Chrome and Edge as of version 76, Firefox as of version 67,
+and Safari as of version 12.1 on macOS and as of version 13 on iOS.
+For all other browsers, you can check the [Can I use support tables](https://caniuse.com/#feat=prefers-color-scheme).
+
+{% Aside 'note' %}
+  There is a custom element [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle)
+  available that adds dark mode support to older browsers.
+  I write about it [further down in this article](#the-lessdark-mode-togglegreater-custom-element).
+{% endAside%}
 
 ### Reacting on dark mode changes
 
