@@ -5,21 +5,44 @@ module.exports = {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
     slug: 'sandbox',
-    title: 'Sandbox',
+    // cover: '/images/collections/handbook.svg',
+    title: 'Content handbook',
     updated: 'Jun 24, 2019',
-    description: 'Instructions for working with web.dev.',
-    overview: `Learn how to author content and build web.dev.`,
+    description: 'Create great content for web.dev.',
+    overview: `This handbook helps contributors to web.dev create effective,
+      engaging content and get it published as easily as possible. This is a
+      living document that will evolve as we learn more about what works.`,
     topics: [
       {
-        title: 'Authoring content',
+        title: 'How to get started',
         pathItems: [
-          'authoring-content-for-web-dev',
+          'quick-start',
         ],
       },
       {
-        title: 'Components',
+        title: 'Content guidelines',
         pathItems: [
+          'content-types',
+          'style',
+          'voice',
+          'audience',
+          'grammar',
+          'inclusion-and-accessibility',
+          'effective-instruction',
+          'write-code-samples',
+          'use-media',
+          'word-list',
+        ],
+      },
+      {
+        title: 'web.dev markup',
+        pathItems: [
+          'contributor-profile',
+          'markup-post-codelab',
           'web-dev-components',
+          'markup-media',
+          'markup-code',
+          'markup-sample-app',
         ],
       },
     ],
