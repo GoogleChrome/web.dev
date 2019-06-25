@@ -3,7 +3,7 @@ title: Hello Darkness, My Old Friend
 subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to benefit your users!
 authors:
   - thomassteiner
-date: 2019-06-21
+date: 2019-06-25
 hero: hero.jpg
 alt: |
   Silhouette photo of a mountain during nighttime, photo by Nathan Anderson on Unsplash.
