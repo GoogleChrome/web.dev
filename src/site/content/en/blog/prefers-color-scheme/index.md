@@ -456,7 +456,7 @@ so that they never compete with resources that are needed by the site right now.
   <figcaption class="w-figcaption">Fig. — Site in default light mode on a browser that doesn’t support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
-### Finding out if dark mode is supported
+### Finding out if dark mode is supported by the browser
 
 As dark mode is reported through media queries, you can easily check if the current browser
 supports dark mode by checking if the media query `prefers-color-scheme` matches at all.
