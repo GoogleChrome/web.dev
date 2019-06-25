@@ -822,7 +822,7 @@ I would like to 🙏 thank [Lukasz Zbylut](https://www.linkedin.com/in/lukasz-zb
 [Chirag Desai](https://www.linkedin.com/in/chiragd/)
 for their thorough reviews of this article.
 The [loading strategy](#loading-strategy) is the brainchild of [Jake Archibald](https://twitter.com/jaffathecake).
-[Emilio Cobos Álvarez](http://emiliocobos.me/) has pointed me to the correct `prefers-color-scheme` detection method.
+[Emilio Cobos Álvarez](https://twitter.com/ecbos_) has pointed me to the correct `prefers-color-scheme` detection method.
 Finally, I am thankful to the many anonymous participants of the various user studies
 that have helped shape the recommendations in this article.
 Hero image by [Nathan Anderson](https://unsplash.com/photos/kujXUuh1X0o).
