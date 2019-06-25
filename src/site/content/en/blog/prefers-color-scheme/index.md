@@ -806,8 +806,9 @@ Background research articles for this post:
 The `prefers-color-scheme` media feature, the `color-scheme` CSS property,
 and the related meta tag are the implementation work of 👏 [Rune Lillesveen](https://twitter.com/runeli).
 Rune is also a co-editor of the [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/) spec.
-I would like to 🙏 thank [Lukasz Zbylut](https://www.linkedin.com/in/lukasz-zbylut/)
-and [Rowan Merewood](https://twitter.com/rowan_m)
+I would like to 🙏 thank [Lukasz Zbylut](https://www.linkedin.com/in/lukasz-zbylut/),
+[Rowan Merewood](https://twitter.com/rowan_m), and
+[Chirag Desai](https://www.linkedin.com/in/chiragd/)
 for their thorough reviews of this article.
 The [loading strategy](#loading-strategy) is the brainchild of [Jake Archibald](https://twitter.com/jaffathecake).
 Finally, I am thankful to the many anonymous participants of the various user studies
