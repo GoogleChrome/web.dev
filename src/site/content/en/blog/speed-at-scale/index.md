@@ -32,7 +32,7 @@ allowfullscreen></iframe>
 
 [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets)
 is a new feature in Lighthouse that adds support for [performance
-budgets](/fast#enforce-performance-budgets). Performance budgets establish
+budgets](/fast#set-performance-budgets). Performance budgets establish
 standards for the performance of your site. More importantly, they make it is
 easy to identify and fix performance regressions before they ship.
 
