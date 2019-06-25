@@ -94,8 +94,8 @@ Get started in one line of CSS.
 ### iOS Frosted Notifications
 
 ```css
-.brighten-saturate-and-blur-behind-me {
-  backdrop-filter: blur(.5rem);
+.frost {
+  backdrop-filter: blur(.25rem);
 }
 ```
 
