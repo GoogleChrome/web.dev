@@ -40,7 +40,7 @@ The YAML fields at the start of each piece of web.dev content define how the pie
   * `center` (default)
   * `top`
   * `bottom`
-* `alt`: The [alt text](/input-image-alt) for the hero image. Required if `hero` is present.
+* `alt`: The [alt text](/image-alt) for the hero image. Required if `hero` is present.
 * `description`: Content for the `description` `<meta>` tag.
 * `tags`: Tags for the site search. The `post` tag is required for a post to appear on the blog.
 

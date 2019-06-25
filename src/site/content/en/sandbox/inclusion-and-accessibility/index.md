@@ -55,7 +55,7 @@ Spell out acronyms the first time they're used. For example: _Web Incubation Com
 Exceptions, edge cases, and other kinds of supplemental information should be right next to the primary content they're related to.
 
 ## Use inclusive images
-Always provide [alt text](/input-image-alt).
+Always provide [alt text](/image-alt).
 
 If you're creating an illustration, the parts that are essential for understanding the illustration should have a contrast ratio of at least 3:1. You can verify the contrast using checkers like the ones from [WeAIM](https://webaim.org/resources/contrastchecker/) or the [Paciello Group](https://developer.paciellogroup.com/resources/contrastanalyser/).
 
@@ -64,7 +64,7 @@ Avoid images that may exclude certain audience members. Just like when we _write
 ## Create accessible code blocks
 While code blocks should be as [simple as possible](/style#keep-it-simple), they must always include accessibility best practices. At a minimum:
 * Form elements should have [labels](/labels-and-text-alternatives/#label-form-elements).
-* Images should have [alt text](/input-image-alt).
+* Images should have [alt text](/image-alt).
 
 In the rare case that you need to omit an accessibility detail to better convey what you're teaching,
 1. Add a note explaining that the developer needs to include accessibility features.

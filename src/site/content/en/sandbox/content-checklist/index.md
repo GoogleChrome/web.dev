@@ -36,7 +36,7 @@ This is a checklist for web.dev content reviews. It includes critical high-level
 1. Are images and videos used to clarify ideas that would be difficult to understand from text alone?
 1. Are any images or videos included that don't directly relate to ideas in the text?
 1. Are [image captions](/use-media/#image-captions) correctly formatted?
-1. Do all images have [alt text](/input-image-alt)?
+1. Do all images have [alt text](/image-alt)?
 
 ## Code
 1. Are code blocks and sample apps as simple as possible while still conveying the core concept?
