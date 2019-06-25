@@ -23,7 +23,7 @@ A hero image should represent the main idea of the post in some way. It often wo
 Take a look at the "[Stock photos that don't suck](https://medium.com/@dustin/stock-photos-that-dont-suck-62ae4bcbe01b)" post on Medium for a list of sites that offer public domain or Creative Commons-licensed images.
 
 ## Body images
-Body images should be related to body content in some way. Typically, an image illustrates an idea that immediately precedes it in the text of the post or codelab. Avoid including a body image just to break up text. Just as irrelevant text can be confusing, so too can an irrelevant image, especially for readers with cognitive or behavioral differences.
+Body images should be related to body content in some way. Typically, an image illustrates an idea that immediately precedes it in the text of the post or codelab. Avoid including a body image just to break up text. Just as irrelevant text can be confusing, so too can an irrelevant image, especially for readers with cognitive differences.
 
 ## Image captions
 Captions should be in sentence case. End all captions with a period.
@@ -61,4 +61,4 @@ Video has some tradeoffs that are worth considering when deciding whether to use
 
 Taking these tradeoffs into account, try to use video primarily when:
 * You need to show something moving or changing
-* You need to show a recordings of an event (e.g., a conference talk)
+* You need to show a recording of an event (e.g., a conference talk)

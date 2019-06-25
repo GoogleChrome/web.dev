@@ -9,7 +9,7 @@ description: |
   Learn how to create sample apps for web.dev using Glitch.
 ---
 
-This post is about how to get sample apps to work right in your post and follow site conventions. See the "[Write useful code samples](/write-code-samples)" post for guidance about how to use sample apps to support your writing goals.
+This post is about how to get sample apps to work right in your post and follow site conventions. For guidance about how to use sample apps to support your writing goals, see the "[Write useful code samples](/write-code-samples)" post.
 
 web.dev uses [Glitch](https://glitch.com/) to embed web-based sample apps and development environments in its posts and codelabs. Glitch is handy because it lets you demonstrate both frontend and backend code.
 

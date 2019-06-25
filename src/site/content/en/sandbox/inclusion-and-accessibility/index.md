@@ -10,14 +10,14 @@ description: |
   and get it published as easily as possible.
 ---
 
-web.dev has a large international audience. Members of that audience should be able to access and understand web.dev content. And they should feel included in the ways we speak to our readers.
+web.dev has a large international audience. Members of that audience should be able to access and understand web.dev content, and they should feel included in the ways we speak to our readers.
 
 ## Use readable language
 Aim for a grade 8 reading level when possible. If you don't have a feel for what grade 8 texts look like, check out some [examples on Newsela](https://newsela.com/articles/#/rule/latest?grade_levels=8.0). If you're feeling frisky, you can also run your text through a readability test.
 * [TextEvaluator](http://textevaluator.ets.org/TextEvaluator/) can be used for pieces up to 1,600 words.
 * You can also use [Lexile](https://lexile.com/educators/tools-to-support-reading-at-school/tools-to-determine-a-books-complexity/the-lexile-analyzer/) for pieces up to 1,000 words.
 
-Admittedly, web.dev tends to deal with technical content, so the reading level will sometimes be high. But following the following guidelines will keep your language as accessible as it can be.
+Admittedly, web.dev tends to deal with technical content, so the reading level will sometimes be high. But the following guidelines will help keep your language as accessible as it can be.
 
 Prefer shorter, simpler sentences.
 
@@ -59,14 +59,16 @@ Always provide [alt text](/input-image-alt).
 
 If you're creating an illustration, the parts that are essential for understanding the illustration should have a contrast ratio of at least 3:1. You can verify the contrast using checkers like the ones from [WeAIM](https://webaim.org/resources/contrastchecker/) or the [Paciello Group](https://developer.paciellogroup.com/resources/contrastanalyser/).
 
-Avoid images that may exclude certain audience members. Like when we _write_ about people, we must remain inclusive when we _show_ people and the things they do and make. For example, avoid stock photos that show only male developers.
+Avoid images that may exclude certain audience members. Just like when we _write_ about people, we must remain inclusive when we _show_ people and the things they do and make. For example, avoid stock photos that show only male developers.
 
 ## Create accessible code blocks
 While code blocks should be as [simple as possible](/style#keep-it-simple), they must always include accessibility best practices. At a minimum:
 * Form elements should have [labels](/labels-and-text-alternatives/#label-form-elements).
 * Images should have [alt text](/input-image-alt).
 
-In the rare case that you need to omit an accessibility detail to better convey what you're teaching, add a note explaining that the developer needs to include accessibility features and link to the web.dev "[Accessible to all](/accessible)" collection.
+In the rare case that you need to omit an accessibility detail to better convey what you're teaching,
+1. Add a note explaining that the developer needs to include accessibility features.
+1. Link to the relevant post in the web.dev "[Accessible to all](/accessible)" collection.
 
 ## Writing about people
 There are several excellent online guides for using inclusive language when writing about groups of people. The [Content Guide](https://content-guide.18f.gov/inclusive-language/) from 18F (a U.S. government office that helps other agencies improve their user experience) is a great place to start.
@@ -84,7 +86,7 @@ To be more gender inclusive, use _they/them_ for singular personal pronouns inst
 {% endCompare %}
 
 ## Writing for an international audience
-Avoid idioms. If non-native speakers aren't familiar with the idiom, they may read it literally and be confused.
+Avoid idioms. If non-native speakers aren't familiar with the idiom, they may be confused.
 
 {% Compare 'worse', 'Don’t' %}
 > The sample app should work now. Give it a shot!
@@ -96,4 +98,4 @@ Avoid idioms. If non-native speakers aren't familiar with the idiom, they may re
 
 {% endCompare %}
 
-Don't rely on cultural references alone to convey essential information. It's likely that at least some of your audience won't know the same movies, TV, books, and games that you do. While a reference here and there can [add personality](/voice) to your writing, make sure the reader can understand your ideas even if they don't catch the reference.
+Don't rely on cultural references alone to convey essential information. It's likely that at least some of your audience won't know the same movies, TV, books, and games that you do. While a reference here and there can [add personality](/voice) to your writing, make sure readers can understand your ideas even if they don't catch the reference.

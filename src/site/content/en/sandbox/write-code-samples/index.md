@@ -21,10 +21,10 @@ Use a sample app when it would be helpful to see how code works. For example, yo
 ## Give useful context
 Summarize what the sample code or app does before explaining how it does it.
 
-Indicate which details are relevant in longer code blocks by providing explanations and code highlighting. If readers don't need to understand everything about the code, tell them that—it makes the task less intimidating, especially for less experienced readers.
+Indicate which details are relevant in longer code blocks by providing explanations and [code highlighting](/markup-code/#code-highlighting). If readers don't need to understand everything about the code, tell them that—it makes the task less intimidating, especially for less experienced readers.
 
 ## Keep it simple
-Sample code should be as simple as possible while still conveying the essential concept. (The one exception is [accessibility details](/inclusion-and-accessibility#create-accessible-code-blocks), which should always be included.) If there are complications that would appear in common real-world applications, include additional samples or provide supplemental codelabs.
+Sample code should be as simple as possible while still conveying the essential concept. (The one exception is [accessibility details](/inclusion-and-accessibility#create-accessible-code-blocks), which should always be included.) If there are complications that would appear in common real-world applications, provide supplemental codelabs.
 
 ## Have a little fun
 Code blocks and sample apps are good places to [have fun](/voice)—as long as the reader doesn't need unrelated background knowledge to understand the concept you're conveying.

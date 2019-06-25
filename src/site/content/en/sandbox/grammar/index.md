@@ -53,7 +53,7 @@ Favor the imperative mood (giving commands) over declarative (making statements)
 Avoid using _can_ in instructions unless you really mean to convey that the step is optional.
 
 ## Linking
-Don't include preceding articles (a, an, the) or surrounding punctuation in link text.
+Don't include preceding articles (_a_, _an_, _the_) or surrounding punctuation in link text.
 
 {% Compare 'worse', 'Don’t' %}
 > See [the "Easily discoverable" collection](/discoverable) for more information.
@@ -135,7 +135,7 @@ Use em dashes (—) with no surrounding space—like this—to set off an aside.
 Use an en dash (–) for ranges (e.g., _10–100 KB_).
 
 ### Quotation marks and apostrophes
-Use straight quotation marks and apostrophes, not smart (curly) quotation marks.
+Use straight quotation marks and apostrophes, not smart (curly).
 
 {% Compare 'worse', 'Don’t' %}
 > The “Accessible to all” collection
@@ -160,7 +160,7 @@ Periods and commas always go inside quotation marks. Question marks and exclamat
 {% endCompare %}
 
 ## Text formatting
-Bold words for emphasis sparingly. (The primary use for bolding is indicating UI element names.)
+Bold words for emphasis sparingly. (The primary use for bolding is [indicating UI element names](/grammar/#ui-elements-and-interaction).)
 
 Avoid mixing code font and standard font in a single word.
 
@@ -263,7 +263,7 @@ Use consistent vocabulary throughout a piece and the collection it lives in.
 Acronyms should be spelled out the first time they're used, with the acronym following immediately after in parentheses.
 
 {% Compare 'worse', 'Don’t' %}
-> CLI
+> WICG
 
 {% endCompare %}
 

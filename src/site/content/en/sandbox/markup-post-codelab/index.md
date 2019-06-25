@@ -13,7 +13,7 @@ This post is about how to set up a new post or codelab so it works correctly on 
 
 ## Get started
 1. Create a new branch of the web.dev repository.
-1. Depending on what you're writing, copy the post template `(_template-post)` or the codelab template `(_template-codelab)` in `src/site/_drafts` to the appropriate location:
+1. Depending on what you're writing, copy the post template directory (`_template-post`) or the codelab template directory (`_template-codelab`) in `src/site/_drafts` to the appropriate location:
     * Codelabs and posts that will live in a collection go in `src/site/content/en/<YOUR_LEARNING_PATH>`
     * Posts that will live only on the blog go in `src/site/content/en/blog`
 1. Rename the template directory to match the content of your piece.
@@ -33,9 +33,9 @@ The YAML fields at the start of each piece of web.dev content define how the pie
   * `codelab`
 * `title`: The title for your piece.
 * `subhead`: The subtitle for your piece. Only required for posts.
-* `authors`: The slug(s) for the author(s) of the piece.
+* `authors`: The [slug(s)](/contributor-profile) for the author(s) of the piece.
 * `date`: The publication date.
-* `hero`: The filename of the image that appears full-bleed above the title. Optional.
+* `hero`: The filename of the hero image, which appears full-bleed above the title. Optional.
 * `hero_position`: The position of the hero image. Optional. Possible values:
   * `center` (default)
   * `top`

@@ -9,7 +9,7 @@ description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
 
-This post is about how to format and store images on web.dev. For guidance about how to select or create appropriate images, see the "[Use images and video effectively](/use-media)" post.
+This post is about how to format and store images on web.dev. For guidance about how to select or create images to support your writing goals, see the "[Use images and video effectively](/use-media)" post.
 
 ## All images
 Images that appear in a post should live in the same directory as the post's `index.md` file.
@@ -19,7 +19,7 @@ Use lossless images whenever possible. They'll be optimized automatically at bui
 ## Hero images
 Hero images should be 1600 px x 800 px.
 
-Adjust hero image positioning using the [`hero_position`](/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the Markdown file.
+Adjust hero image positioning using the [`hero_position`](/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
 
 ## Body images
 Make sure images are [accessible](/inclusion-and-accessibility#use-inclusive-images).
@@ -46,7 +46,7 @@ Use a `<figure>` tag when you need a caption or you need special presentation (e
 </figure>
 
 ### Styling body images
-To make an image extend slightly beyond the width of the content column for emphasis, add the `w-figure--fullbleed` class to the `figure` element and the `w-figcaption--fullbleed` class to the `figcaption` element:
+To make an image extend slightly beyond the width of the content column (for emphasis), add the `w-figure--fullbleed` class to the `figure` element and the `w-figcaption--fullbleed` class to the `figcaption` element:
 
 <figure class="w-figure w-figure--fullbleed">
   <img src="./a.jpg" alt="An office with two people working at a table.">
