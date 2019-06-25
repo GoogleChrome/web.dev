@@ -11,7 +11,7 @@ glitch: codelab-cloudinary?path=index.html:25:0
 related_post: use-imagemin-to-compress-images
 ---
 
-In this codelab, learn how to use a simple URL API to optimize images for faster downloads and serve media in next-gen formats. All of that happens dynamically in the Cloud without any build step.
+In this codelab, learn how to use a simple URL API to optimize images for faster downloads and serve media in next-gen formats. All of that happens dynamically in the cloud without any build step.
 
 ## Get a Cloudinary account
 
@@ -30,7 +30,7 @@ For example: `https://res.cloudinary.com/`<span class="w-c--success">my_cloud_na
 
 ## Next up
 
-This codelab demonstrates how you can use the power of a cloud to dynamically optimize your images and serve next-gen formats. You will learn how to use dynamic cloud Fetch and Image Transformations features. You will replace the image links with Fetch URLs (explained below) that will automagically upload, transform, and optimize your images.
+This codelab demonstrates how you can use the power of a cloud to optimize your images and serve next-gen formats dynamically. You will learn how to use dynamic cloud Fetch and Image Transformations features. You will replace the image links with Fetch URLs (explained below) that will automagically upload, transform, and optimize your images.
 
 For example:
 
@@ -46,7 +46,7 @@ For example:
 ## Optimize an image
 
 - Click the **Remix to Edit** button (top-right corner) to make the project editable.
-- In the next few steps you will replace the image link on Line #25 of `index.html` file, with a fetch URL.
+- In the next few steps, you will replace the image link on Line #25 of `index.html` file, with a fetch URL.
 
 ### Fetch URL
 
@@ -87,7 +87,7 @@ https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/<remote_image_url>
 
 While there are many [Image transformations](https://cloudinary.com/documentation/image_transformations) available, for the sake of this Codelab, we are only going to use two of them.
 
-1. [**Quality**](https://cloudinary.com/documentation/image_transformation_reference#quality_parameter): The parameter `q` controls the quality of the image delivered by cloud. You can set `q_1` to `q_100` 1 is the lowest quality, and 100 is the highest. Use `q_auto` to calculate the optimal quality of an image automatically.
+1. [**Quality**](https://cloudinary.com/documentation/image_transformation_reference#quality_parameter): The parameter `q` controls the quality of the image delivered by the cloud. You can set `q_1` to `q_100` 1 is the lowest quality, and 100 is the highest. Use `q_auto` to calculate the optimal quality of an image automatically.
 2. [**Format**](https://cloudinary.com/documentation/image_transformation_reference#format_parameter): The parameter `f` can automatically convert delivered images to WebP and JPEG-XR on supported browsers to save bandwidth and optimize delivery time. Again use `f_auto` to auto format the image.
 
 ### #3 REPLACE `<remote_image_url>`
@@ -108,7 +108,7 @@ https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudi
 
 ```
 
-Which means that you can auto-optimize any image by prepending the following to it's URL.
+Which means that you can auto-optimize any image by prepending the following to its URL.
 
 ```html
 https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/
@@ -116,7 +116,7 @@ https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/
 
 ### RESULTS
 
-After replacing the link of the first image (line #25) with the fetch URL your HTML should look like this:
+After replacing the link of the first image (line #25) with the fetch URL, your HTML should look like this:
 
 ```html/2/1
 <div class="wrapper">
@@ -309,7 +309,7 @@ Lighthouse audit results for when images were not optimized.
 
 You can use `https://codelab-cloudinary.glitch.me/` for the first audit. This results in two optimization opportunities:
 
-1. Serve images in next-gen formats e.g., WebP and JPEG-XR.
+1. Serve images in next-gen formats, e.g., WebP and JPEG-XR.
 2. Efficiently encode images.
 
 <figure class="w-figure">
@@ -319,7 +319,7 @@ You can use `https://codelab-cloudinary.glitch.me/` for the first audit. This re
   </figcaption>
 </figure>
 
-The cloud optimized image links exist in the `optimized.html` file. You can test <a target="_blank" rel="noopener noreferrer" href="https://codelab-cloudinary.glitch.me/optimized.html">this link</a>, which results into a perfect score and the page load time is down by 4.05 secs. That is impressive.
+The cloud-optimized image links exist in the `optimized.html` file. You can test <a target="_blank" rel="noopener noreferrer" href="https://codelab-cloudinary.glitch.me/optimized.html">this link</a>, which results in a perfect score and the page load time is down by 4.05 secs. That is impressive.
 
 {% Aside 'success' %}
   You have used Cloudinary to compress the images optimally, and your page is serving next-gen image formats.
