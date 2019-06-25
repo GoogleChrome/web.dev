@@ -16,14 +16,14 @@ Images that appear in a post should live in the same directory as the post's `in
 
 Use lossless images whenever possible. They'll be optimized automatically at build time.
 
+Make sure images are [accessible](/inclusion-and-accessibility#use-inclusive-images).
+
 ## Hero images
 Hero images should be 1600 px x 800 px.
 
 Adjust hero image positioning using the [`hero_position`](/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
 
 ## Body images
-Make sure images are [accessible](/inclusion-and-accessibility#use-inclusive-images).
-
 Images intended to fill the full width of the content column should be at least 800 px wide.
 
 Use Markdown syntax for standard standalone images:
