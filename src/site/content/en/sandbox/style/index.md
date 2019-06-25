@@ -9,7 +9,7 @@ description: |
   The primary guidelines for writing in the web.dev style.
 ---
 
-The style guidelines apply to posts, codelabs, and anything else you might write on web.dev. They're intended to help both writers and reviewers evaluate drafts, and they're included in the [web.dev Content Checklist](/content-checklist).
+The style guidelines apply to posts, codelabs, and anything else you might write on web.dev. They're intended to help both writers and reviewers evaluate drafts, and they're included in the [web.dev content checklist](/content-checklist).
 
 ## Know your audience and purpose
 Have a specific [audience](/audience) in mind as you write.

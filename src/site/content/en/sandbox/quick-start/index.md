@@ -24,7 +24,7 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. A tech writer will set up a meeting to sketch out a plan for your piece. Try to come to the meeting with an outline if you can.
 1. Write a draft in the Google doc you used to propose your piece. (Before you start, read our [style guidelines](/style).)
 1. When you're ready, request a content review in the GitHub issue.
-1. The tech writer will review using the [Content Checklist](/content-checklist) and work with you to polish the piece.
+1. The tech writer will review using the [web.dev content checklist](/content-checklist) and work with you to polish the piece.
 
 ## Publishing
 1. Once you and the tech writer think the piece is good to go, submit a pull request on GitHub with your content authored in Markdown. (Check out the "[web.dev markup](/sandbox/#web.dev-markup)" section for details.)
