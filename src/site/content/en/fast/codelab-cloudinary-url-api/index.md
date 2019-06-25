@@ -11,17 +11,26 @@ glitch: codelab-cloudinary?path=index.html:25:0
 related_post: use-imagemin-to-compress-images
 ---
 
-In this codelab, learn how to use [Cloudinary](https://cloudinary.com/) with its simple URL API to optimize images for faster downloads and serve media in next-gen formats. All of that happens dynamically in Cloud without any build step.
+In this codelab, learn how to use a simple URL API to optimize images for faster downloads and serve media in next-gen formats. All of that happens dynamically in the Cloud without any build step.
 
-## Sign up for a Cloudinary account
+## Get a Cloudinary account
 
 Click [here](https://cloudinary.com/users/register/free) to sign up for a free [Cloudinary account](https://cloudinary.com/users/register/free). Remember to set a custom cloud name (at the end of the registration form). Your cloud name is used to build the URL that your images will be publicly available from.
 
 For example: `https://res.cloudinary.com/`<span class="w-c--success">my_cloud_name</span>`/...`
 
+<figure class="w-figure">
+  <a href="https://cloudinary.com/users/register/free" target="_blank" rel="noopener noreferrer">
+    <img class="w-screenshot" src="./cloudname.gif" alt="Setting a custom Cloud Name" />
+  </a>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — Setting a custom Cloud Name.
+  </figcaption>
+</figure>
+
 ## Next up
 
-This codelab demonstrates how you can use the power of a cloud to dynamically optimize your images and serve next-gen formats. You will learn how to use dynamic cloud Fetch and Image Transformations features. You will replace the image links with Fetch URLs that will automagically upload, transform, and optimize your images.
+This codelab demonstrates how you can use the power of a cloud to dynamically optimize your images and serve next-gen formats. You will learn how to use dynamic cloud Fetch and Image Transformations features. You will replace the image links with Fetch URLs (explained below) that will automagically upload, transform, and optimize your images.
 
 For example:
 
@@ -31,13 +40,13 @@ For example:
 ```
 
 {% Aside 'key-term' %}
-  The [Cloudinary Fetch](https://cloudinary.com/documentation/fetch_remote_images) feature is a quick way to deliver images from remote URLs. The image can be manipulated and optimized on-the-fly, before being cached and delivered through fast, localized CDNs and not via local web servers. It requires no build step and no manual upload.
+  The [Cloudinary Fetch URL](https://cloudinary.com/documentation/fetch_remote_images) feature is a quick way to deliver images from remote URLs. The image can be manipulated and optimized on-the-fly, before being cached and delivered through fast, localized CDNs and not via local web servers. It requires no build step and no manual upload.
 {% endAside %}
 
 ## Optimize an image
 
 - Click the **Remix to Edit** button (top-right corner) to make the project editable.
-- In the next few steps you will replace the image link on Line #26 of `index.html` file, with a fetch URL.
+- In the next few steps you will replace the image link on Line #25 of `index.html` file, with a fetch URL.
 
 ### Fetch URL
 
@@ -69,7 +78,7 @@ https://res.cloudinary.com/demo/image/fetch/<transformations>/<remote_image_url>
 
 ### #2 REPLACE `<transformations>`
 
-Replace `<transformations>` with relevant [Image Transformations](https://cloudinary.com/blog/the_holy_grail_of_image_optimization_or_balancing_visual_quality_and_file_size). Use comma-separated values to optimize the image quality and format delivery by using `q_auto,f_auto`.
+Replace `<transformations>` with relevant [Image Transformations](https://cloudinary.com/documentation/image_transformations). Use comma-separated values to optimize the image quality and format delivery by using `q_auto,f_auto`.
 
 ```html/1/0
 https://res.cloudinary.com/demo/image/fetch/<transformations>/<remote_image_url>
@@ -107,7 +116,7 @@ https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/
 
 ### RESULTS
 
-After replacing the link of the first image (line #26) with the fetch URL your HTML should look like this:
+After replacing the link of the first image (line #25) with the fetch URL your HTML should look like this:
 
 ```html/2/1
 <div class="wrapper">
@@ -174,7 +183,7 @@ SPDX-License-Identifier: Apache-2.0
 <html lang="en">
   <head>
     <title>Cloudinary URL API Demo: Optimized Images</title>
-    <meta name="Description" content="In this codelab, learn how to use Cloudinary with its simple URL API to optimize images for faster downloads and serve media in next-gen formats. All of that happens dynamically in Cloud without any build step.">
+    <meta name="Description" content="In this codelab, learn how to use Cloudinary with its simple URL API to optimize images for faster downloads and serve media in next-gen formats. All of that happens dynamically in the Cloud without any build step.">
     <link href="https://cloudinary-res.cloudinary.com/image/asset/favicon-192x192-d6a96e11dd5adfebbb717d154665ee80.png" rel="icon" sizes="192x192" type="image/png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -218,7 +227,7 @@ SPDX-License-Identifier: Apache-2.0
 
 ## Image Performance Gains
 
-There are impressive web performance gains by using <a href="https://cloudinary.com/blog/the_holy_grail_of_image_optimization_or_balancing_visual_quality_and_file_size">cloud to optimize images</a> without losing quality.
+There are impressive web performance gains by using <a href="https://cloudinary.com/documentation/image_optimization">cloud to optimize images</a> without losing quality.
 
 <div class="w-table-wrapper">
   <table>
@@ -276,7 +285,7 @@ Hooray! These results are much better.
 
 ## Lighthouse Audit
 
-Lastly, it's a good idea to use Lighthouse to verify the changes that you just
+Lastly, it's a good idea to use <a target="_blank" rel="noopener noreferrer" href="https://web.dev/discover-performance-opportunities-with-lighthouse">Lighthouse</a> to verify the changes that you just
 made.
 
 Lighthouse's "Efficiently encode images" performance audit can let you know if
@@ -284,7 +293,7 @@ the JPEG images on your page are optimally compressed.
 
 - To preview the site press the **View App** button (right-bottom corner).
 - Run the Lighthouse performance audit (Lighthouse ❯ Options ❯ Performance) on
-  the [live version](https://codelab-cloudinary.glitch.me/) of your Glitch and verify that the "Efficiently encode
+  the <a target="_blank" rel="noopener noreferrer" href="https://codelab-cloudinary.glitch.me/">live version</a> of your Glitch and verify that the "Efficiently encode
   images" as well as "Serve images in next-gen formats" audits were passed.
 
 ### RESULTS
@@ -294,7 +303,7 @@ Lighthouse audit results for when images were not optimized.
 <figure class="w-figure">
   <img class="w-screenshot" src="./images-not-optimized.png" alt="Images Not Optimized">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Images Not Optimized.
+    Fig. 2 — Images Not Optimized.
   </figcaption>
 </figure>
 
@@ -306,11 +315,11 @@ You can use `https://codelab-cloudinary.glitch.me/` for the first audit. This re
 <figure class="w-figure">
   <img class="w-screenshot" src="./optimized-images.png" alt="Images Not Optimized">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 2 — Optimized Images.
+    Fig. 3 — Optimized Images.
   </figcaption>
 </figure>
 
-The cloud optimized image links exist in the `optimized.html` file. You can test <a href="https://codelab-cloudinary.glitch.me/optimized.html">this link</a>, which results into a perfect score and the page load time is down by 4.05 secs. That is impressive.
+The cloud optimized image links exist in the `optimized.html` file. You can test <a target="_blank" rel="noopener noreferrer" href="https://codelab-cloudinary.glitch.me/optimized.html">this link</a>, which results into a perfect score and the page load time is down by 4.05 secs. That is impressive.
 
 {% Aside 'success' %}
   You have used Cloudinary to compress the images optimally, and your page is serving next-gen image formats.
