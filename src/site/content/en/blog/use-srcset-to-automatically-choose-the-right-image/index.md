@@ -71,10 +71,10 @@ larger than the other.
   </figure>
 </div>
 
-The one on the left is much larger in file size because it's saved with
-dimensions much larger than the display size. Both these images are displayed
-with a fixed width of 300 pixels, so it makes sense to use an image saved at
-the same size.
+The first image is much larger in file size because it's saved with dimensions 
+much larger than the display size. Both images are displayed with a fixed 
+width of 300 pixels, so it makes sense to use an image saved at the same 
+size.
 
 **For fixed widths, use images saved with the same dimensions as the
 display size.**
