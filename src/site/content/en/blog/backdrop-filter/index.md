@@ -44,6 +44,12 @@ In order for the filter to apply any augmentations, some portion of the overlayi
 
 Backdrop-filter shares attributes with CSS filters in that they create a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing blocks](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) when the property is used properly, in other words it's not 'none'. Note, only elements with absolute and fixed position descendants will get a containing block.
 
+<div>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="_blank" class="w-button w-button--secondary w-button--with-icon" data-icon="school">
+    Full API on MDN
+  </a>
+</div>
+
 ### Summary
 1. Overlaying element OR it's background must be at least partially transparent
 1. Overlaying element will get a new stacking context
@@ -150,40 +156,8 @@ input:not(:checked) ~ .censor {
 
 
 ## Conclusion
-Better late than never! Safari's had this feature since 2015. Regardless, Chrome's excited to release it in 76. The [Chromium bug](https://crbug.com/497522) has **560+ stars** on it, clearly marking it as a desired web design capability.
+Chrome's excited to release `backdrop-filter` in 76. The [Chromium bug](https://crbug.com/497522) has **560+ stars** on it, clearly marking it as a desired web design capability.
 
-Here's a final CSS API list and additional resources in case you're ready to start developing.
-
-### Overview
-```css
-/* Keyword value */
-backdrop-filter: none;
-
-/* URL to SVG filter */
-backdrop-filter: url(commonfilters.svg#filter);
-
-/* <filter-function> values */
-backdrop-filter: blur(2px);
-backdrop-filter: brightness(60%);
-backdrop-filter: contrast(40%);
-backdrop-filter: drop-shadow(4px 4px 10px blue);
-backdrop-filter: grayscale(30%);
-backdrop-filter: hue-rotate(120deg);
-backdrop-filter: invert(70%);
-backdrop-filter: opacity(20%);
-backdrop-filter: sepia(90%);
-backdrop-filter: saturate(80%);
-
-/* Multiple filters */
-backdrop-filter: url(filters.svg#filter) blur(4px) saturate(150%);
-
-/* Global values */
-backdrop-filter: inherit;
-backdrop-filter: initial;
-backdrop-filter: unset;
-```
-
-### One more demo
 A glimpse into the now possible in Chrome:
 
 <figure class="w-figure w-figure--fullbleed">
