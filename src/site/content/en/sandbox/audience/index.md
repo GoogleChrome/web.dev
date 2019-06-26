@@ -67,6 +67,6 @@ Be mindful of your [voice](/voice). You want readers to feel they can trust the 
 
 ### Value propositions
 A value proposition is a promise to readers that a piece of content will be useful—that is, provide value—to them. Create a value proposition for everything you write by crafting titles, subtitles, and descriptions that tell your target audience why your post or codelab is worth reading. Some common strategies:
-* Say what readers will learn or understand by reading the post
-* Say what a post will let readers do
-* Say how a technique will improve the experience of the readers' users
+* Say what readers will learn or understand by reading the piece
+* Say what a piece will let readers do
+* Say how a technique or tool will improve the experience of readers' users

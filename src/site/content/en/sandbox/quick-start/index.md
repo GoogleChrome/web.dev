@@ -12,8 +12,8 @@ description: |
 Content creation for web.dev has three phases: planning, writing, and publishing.
 
 ## Planning
-1. Start a content request issue on GitHub using [this issue template](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=content+request&template=content_request.md&title=). The checklist in your issue will guide you through the rest of the process.
-1. Create a copy of [this document template](/google-doc) to briefly write up your content idea. Put the link to the doc in your GitHub issue.
+1. Start a content proposal issue on GitHub using [this issue template](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=content+request&template=content_request.md&title=). The checklist in your issue will guide you through the rest of the process.
+1. Create a copy of [this document template](/google-doc) to briefly write up your content idea. Put the link to your doc in your GitHub issue.
 1. The web.dev team will take a look to see if the idea fits with the [goals of the site](/about). If the idea is approved, it gets slated for a publication date!
 
 {% Aside 'caution' %}
@@ -21,7 +21,6 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 {% endAside %}
 
 ## Writing
-1. A tech writer will set up a meeting to sketch out a plan for your piece. Try to come to the meeting with an outline if you can.
 1. Write a draft in the Google doc you used to propose your piece. (Before you start, read our [style guidelines](/style).)
 1. When you're ready, request a content review in the GitHub issue.
 1. The tech writer will review using the [web.dev content checklist](/content-checklist) and work with you to polish the piece.

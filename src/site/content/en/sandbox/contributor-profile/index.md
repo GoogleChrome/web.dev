@@ -63,5 +63,7 @@ description: |
     ```
 
 ## Create a profile image
-1. Edit a photo of yourself so that its dimensions are 192 px x 192 px. The photo should clearly show your face and upper shoulders.
-1. Save the photo as a JPEG image in `/images/authors`. Use your author slug for the filename.
+1. Select a photo of yourself that clearly shows your face and upper shoulders.
+1. Save two versions of the photo in `/images/authors`:
+    * yourauthorslug.jpg (96 px x 96 px)
+    * yourauthorslug@2x.jpg (192 px x 192 px)
