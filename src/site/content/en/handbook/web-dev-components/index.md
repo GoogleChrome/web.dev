@@ -1,11 +1,17 @@
 ---
-layout: sandbox/article
-title: components
+layout: handbook
+title: web.dev components
+authors:
+  - robdodson
+  - mfriesenhahn
+date: 2019-06-26
+description: |
+  Learn how to use web.dev's UI and content components.
 ---
 
 ## Source
 
-To see how to use each component, [view this page's source on GitHub](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/sandbox/index.md).
+To see how to use each component, [view this page's source on GitHub](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/web-dev-components/index.md).
 
 ## Sections
 
@@ -115,91 +121,20 @@ To see how to use each component, [view this page's source on GitHub](https://gi
   <figure class="w-figure w-figure--center">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
-      Fig. 2 — Small image.
+      Small image.
     </figcaption>
   </figure>
   <figure class="w-figure w-figure--center">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
-      Fig. 2 — Small image.
+      Small image.
     </figcaption>
   </figure>
 </div>
 
 ## Code
 
-The value of the `type` attribute should be the MIME type
-corresponding to the image format. An image's MIME type and its file
-extension are often similar, but they aren't necessarily the same
-thing (e.g. `.jpg` vs. `image/jpeg`).
-
-- The value of the `type` attribute should be the MIME type.
-- (e.g. `.jpg` vs. `image/jpeg`)
-
-### Code block
-
-```js
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
-
-### Highlight code
-
-```js/1
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
-
-### Remove code
-
-```js//1
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
-
-### Add/Remove code
-
-```js/6/5
-const imagemin = require('imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-
-(async() => {
-  const files = await imagemin(
-      ['source_dir/*.jpg'],
-      ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
-  );
-  console.log(files);
-})();
-```
+See the "[Code](/handbook/markup-code)" post.
 
 ## Compare
 
@@ -250,7 +185,7 @@ at.
 <details>
   <summary>Developer tools for Lighthouse</summary>
   <p>
-    The browser uses the first listed source that’s in a format it
+    The browser uses the first listed source that's in a format it
     supports. If the browser does not support any of the formats.
   </p>
 </details>
@@ -267,109 +202,7 @@ at.
 
 ## Images
 
-<figure class="w-figure w-figure--fullbleed">
-  <img src="./a.jpg" alt="">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Large image.
-  </figcaption>
-</figure>
-
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-  at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-  porta dolor erat, vel molestie dolor posuere in.
-</p>
-
-<figure class="w-figure">
-  <img src="./image-small.png" alt="" style="max-width: 400px;">
-  <figcaption class="w-figcaption">
-    Fig. 2 — Small image.
-  </figcaption>
-</figure>
-
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-  at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-  porta dolor erat, vel molestie dolor posuere in.
-</p>
-
-<figure class="w-figure  w-figure--center">
-  <img src="./image-small.png" alt="" style="max-width: 400px;">
-  <figcaption class="w-figcaption">
-    Fig. 2a — Centered, small image.
-  </figcaption>
-</figure>
-
-<figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" src="./image-inline.png" alt="" style="max-width: 200px;">
-  <figcaption class="w-figcaption">
-    Fig. 3 — Inline right, outlined image.
-  </figcaption>
-</figure>
-
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a
-    massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus
-    nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
-    Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel
-    elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque
-    diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit
-    amet imperdiet velit. Morbi at quam sem. Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper.
-    Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula
-    lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor
-    erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim
-    blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac
-    blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi
-    at quam sem.
-</p>
-
-<figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="./image-inline.png" alt="" style="max-width: 200px;">
-  <figcaption class="w-figcaption">
-    Fig. 4 — Inline left, outlined image.
-  </figcaption>
-</figure>
-
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a
-    massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus
-    nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris.
-    Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel
-    elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque
-    diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit
-    amet imperdiet velit. Morbi at quam sem. Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper.
-    Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula
-    lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor
-    erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim
-    blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac
-    blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi
-    at quam sem.
-</p>
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
-  <figcaption class="w-figcaption">
-    Fig. 5 — Filled screenshot.
-  </figcaption>
-</figure>
-
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
-  sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius
-  at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum
-  porta dolor erat, vel molestie dolor posuere in.
-</p>
-
-<figure class="w-figure">
-  <img class="w-screenshot" src="./img2.png" alt="">
-  <figcaption class="w-figcaption">
-    Fig. 5 — Regular screenshot.
-  </figcaption>
-</figure>
+See the "[Images and video](/handbook/markup-media)" post.
 
 ## Instruction
 
@@ -423,7 +256,7 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
   <figure class="w-figure">
     <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
     <figcaption class="w-figcaption">
-      Fig. 5 — Filled screenshot.
+      Filled screenshot.
     </figcaption>
   </figure>
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
@@ -742,31 +575,4 @@ assumenda perspiciatis.
 </div>
 
 ## Video
-
-### Native video
-
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
-  </video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
-  </figcaption>
-</figure>
-
-### YouTube
-
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam repellendus,
-doloremque cum odit blanditiis voluptas deserunt dolore soluta facilis alias est
-nam sint animi provident enim temporibus inventore, laudantium quam.
-
-<figure class="w-figure w-figure--fullbleed">
-  {% YouTube 'ViyTYEv9dM8' %}
-</figure>
-
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam repellendus,
-doloremque cum odit blanditiis voluptas deserunt dolore soluta facilis alias est
-nam sint animi provident enim temporibus inventore, laudantium quam.
-
-{% YouTube 'Ai4aZ9Jbsys', '1081' %}
+See the "[Images and video](/handbook/markup-media#video)" post.

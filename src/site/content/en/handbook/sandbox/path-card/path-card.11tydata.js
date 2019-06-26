@@ -1,11 +1,11 @@
 const fast = require(
-  '../../../en/fast/fast.11tydata.js'
+  '../../../fast/fast.11tydata.js'
 ).path;
 const accessible = require(
-  '../../../en/accessible/accessible.11tydata.js'
+  '../../../accessible/accessible.11tydata.js'
 ).path;
 const reliable = require(
-  '../../../en/reliable/reliable.11tydata.js'
+  '../../../reliable/reliable.11tydata.js'
 ).path;
 
 // =============================================================================
