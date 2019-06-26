@@ -42,7 +42,7 @@ CSS `backdrop-filter` applies one or more filters to the backdrop of an element,
 
 In order for the filter to apply any augmentations, some portion of the overlaying element needs to be transparent. Alternatively, consider that opaque elements will not produce a backdrop-filter effect while fully transparent elements produce a full filtered backdrop.
 
-Backdrop-filter shares attributes with CSS filters in that they create a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing blocks](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) when the property is used properly, aka it's not 'none'. Note, only elements with absolute and fixed position decendants will get a containing block.
+Backdrop-filter shares attributes with CSS filters in that they create a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing blocks](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) when the property is used properly, in other words it's not 'none'. Note, only elements with absolute and fixed position descendants will get a containing block.
 
 ### Summary
 1. Overlaying element OR it's background must be at least partially transparent
