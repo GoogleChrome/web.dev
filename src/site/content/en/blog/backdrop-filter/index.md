@@ -1,11 +1,11 @@
 ---
 title: "CSS backdrop-filter"
 subhead: |
-  Enabled in Chrome 76
+  Unleash 60fps transparent designs
 date: 2019-06-25
 authors:
   - adamargyle
-hero: hero.jpeg
+hero: hero.jpg
 alt: Women behind frosted glass
 description: |
   CSS backdrop-filter was made famous by Apple's design team. It brings
@@ -55,7 +55,6 @@ Backdrop-filter shares attributes with CSS filters in that they create a new [st
 
 
 ## Using backdrop-filter
-Get started in one line of CSS.
 
 ### Single Filter
 
@@ -91,20 +90,61 @@ Get started in one line of CSS.
   </figcaption>
 </figure>
 
-### iOS Frosted Notifications
+
+## Example Usage
+
+### Overlays
 
 ```css
-.frost {
-  backdrop-filter: blur(.25rem);
+.modal {
+  backdrop-filter: blur(10px);
 }
 ```
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-ios_notifications.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    <a href="https://s.codepen.io/robinrendle/pen/ZoXGgG" target="_blank">CodePen</a>
+    <a href="https://mfreed7.github.io/backdrop-filter-feature/examples/scrollable.html" target="_blank">Demo</a>
+  </figcaption>
+</figure>
+
+### Text Contrast on Dynamic Backgrounds
+
+```css
+.background {
+  filter: invert(1);
+}
+
+.foreground {
+  backdrop-filter: invert(1);
+}
+```
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    <a href="https://tympanus.net/codrops-playground/huijing/Qqpwg5Iy/editor" target="_blank">Codrops</a>
+  </figcaption>
+</figure>
+
+### Censorship
+
+```css
+input:not(:checked) ~ .censor {
+  backdrop-filter: contrast(4) blur(20px);
+}
+```
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-censorship.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    <a href="https://tympanus.net/codrops-playground/huijing/6cZVcORz/editor" target="_blank">Codrops</a>
   </figcaption>
 </figure>
 
@@ -155,7 +195,7 @@ A glimpse into the now possible in Chrome:
 
 ### Additional Resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)
-- [Proposal](https://github.com/w3ctag/design-reviews/issues/353)
+- [TAG Proposal](https://github.com/w3ctag/design-reviews/issues/353)
 - [GitHub](https://github.com/mfreed7/backdrop-filter-feature)
 - [Chrome Platform Status](https://www.chromestatus.com/feature/5679432723333120)
 - [Caniuse](http://caniuse.com/#feat=css-backdrop-filter)
