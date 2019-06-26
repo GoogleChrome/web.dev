@@ -13,7 +13,7 @@ description: |
   Creates a nice layering effect that keeps beneath elements in context.
 tags:
   - post
-  - CSS
+  - css
   - backdrop-filter
 ---
 
