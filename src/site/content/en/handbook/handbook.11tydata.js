@@ -32,6 +32,7 @@ module.exports = {
           'write-code-samples',
           'use-media',
           'word-list',
+          'content-checklist',
         ],
       },
       {
