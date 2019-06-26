@@ -1,12 +1,12 @@
 ---
 title: "CSS backdrop-filter"
 subhead: |
-  Unleash 60fps transparent designs
+  Unleash 60fps blurry translucency across your UI's
 date: 2019-06-25
 authors:
   - adamargyle
 hero: hero.jpg
-alt: Women behind frosted glass
+alt: View through rain covered foggy window
 description: |
   CSS backdrop-filter was made famous by Apple's design team. It brings
   the ability for a background to apply a filter to the contents beneath,
@@ -17,7 +17,16 @@ tags:
   - backdrop-filter
 ---
 
-Designers and developers alike can celebrate as a long awaited CSS feature [arrives in Chrome 76](https://www.chromestatus.com/feature/5679432723333120): backdrop-filter. Frosted glass effects, video overlays, translucent navigation headers, inappropriate image censoring, image loading, and more, no longer require [hacks or workarounds](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter).
+Designers and developers alike can celebrate as a long awaited CSS feature [arrives in Chrome 76](https://www.chromestatus.com/feature/5679432723333120): `backdrop-filter`. Until now, [hacks or workarounds](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter) were required to create the effects that backdrop-filter provides: frosted glass, video overlays, translucent navigation headers, inappropriate image censoring, image loading, etc.
+
+<figure class="w-figure w-figure--center">
+  <img src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/weather_app.jpg" alt="Translucent weather card design">
+  <figcaption class="w-figcaption">
+    <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank">Source</a>
+  </figcaption>
+</figure>
+
+Translucency, vibrancy, and blurring are effective ways of creating depth while keeping context of background content. `backdrop-filter` dynamically blends foreground and background colors based on filter functions. The result helps foreground content pop off the background content.
 
 You may recognize the effect from two popular operating systems: [Windows Vista](https://i.kinja-img.com/gawker-media/image/upload/s--9RLXARU4--/c_scale,dpr_2.0,f_auto,fl_progressive,q_80,w_800/trgz8yivyyqrpcnwscu5.png) and [iOS](https://static.businessinsider.com/image/51fd2822eab8eae16e00000b-750.jpg). Now [Chrome](https://www.chromestatus.com/feature/5679432723333120) can do it too.
 
@@ -60,7 +69,7 @@ The `backdrop-filter` may harm performance.
 {% endAside %}
 
 
-## Using backdrop-filter
+## Essentials
 
 ### Single Filter
 
@@ -97,7 +106,7 @@ The `backdrop-filter` may harm performance.
 </figure>
 
 
-## Example Usage
+## Creative Examples
 
 ### Overlays
 
@@ -157,6 +166,13 @@ input:not(:checked) ~ .censor {
 
 ## Conclusion
 Chrome's excited to release `backdrop-filter` in 76. The [Chromium bug](https://crbug.com/497522) has **560+ stars** on it, clearly marking it as a desired web design capability.
+
+<figure class="w-figure">
+  <img src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/translucent-chrome.png" alt="Translucent Chrome logo over a dark gradient">
+  <figcaption class="w-figcaption">
+    <a href="https://dribbble.com/shots/1224915-Roundaque-Icons-Closeup-Chrome" target="_blank">Source</a>
+  </figcaption>
+</figure>
 
 ### Additional Resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)
