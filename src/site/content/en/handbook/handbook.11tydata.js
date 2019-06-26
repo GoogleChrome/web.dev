@@ -1,10 +1,10 @@
 module.exports = {
   // Tags are inherited by all posts.
-  tags: ['pathItem', 'sandbox'],
+  tags: ['pathItem', 'handbook'],
   path: {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
-    slug: 'sandbox',
+    slug: 'handbook',
     cover: '/images/collections/handbook.svg',
     title: 'Content handbook',
     updated: 'Jun 24, 2019',
