@@ -120,48 +120,49 @@ After replacing the link of the first image (line #25) with the fetch URL, your 
 
 ```html/2/1
 <div class="wrapper">
-    <img src="https://codelab-cloudinary.glitch.me/images/flower1.png"/>
-    <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png"/>
-    <div class="price">Violet bouquet- $9</div>
- </div>
+  <img src="https://codelab-cloudinary.glitch.me/images/flower1.png"/>
+  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png"/>
+  <div class="price">Violet bouquet- $9</div>
+</div>
 ```
 
 This helps save more than 90% on image size.
 
 <div class="w-table-wrapper">
-	<table>
-		<thead>
-			<tr>
-				<th>
-					<p>
-						<a
-							href="https://codelab-cloudinary.glitch.me/images/flower1.png"
-							target="_blank"
-							rel="noopener noreferrer"
-							><img src="https://codelab-cloudinary.glitch.me/images/flower1.png" width="100%"
-						/></a>
-					</p>
-					<strong>289 KB</strong> (Original)
-				</th>
-				<th>
-					<p>
-						<a
-							href="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<img
-								src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto,a_ignore/https://codelab-cloudinary.glitch.me/images/flower1.png"
-								width="100%"
-							/>
-						</a>
-					</p>
-					<strong>22 KB</strong> (Cloudinary)
-				</th>
-			</tr>
-		</thead>
-		<tbody></tbody>
-	</table>
+  <table>
+    <tbody>
+      <thead>
+        <tr>
+          <th>
+            <p>
+              <a
+                href="https://codelab-cloudinary.glitch.me/images/flower1.png"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img src="https://codelab-cloudinary.glitch.me/images/flower1.png" width="100%"
+              /></a>
+            </p>
+            <strong>289 KB</strong> (Original)
+          </th>
+          <th>
+            <p>
+              <a
+                href="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto,a_ignore/https://codelab-cloudinary.glitch.me/images/flower1.png"
+                  width="100%"
+                />
+              </a>
+            </p>
+            <strong>22 KB</strong> (Cloudinary)
+          </th>
+        </tr>
+      </thead>
+    </tbody>
+  </table>
 </div>
 
 The photo on the right is 92.39% smaller than the one on the left, yet would probably look identical to the average user.
