@@ -46,7 +46,7 @@ Backdrop-filter shares attributes with CSS filters in that they create a new [st
 
 ### Summary
 1. The overlaying element OR it's background must be at least partially transparent
-1. Overlaying element will get a new stacking context
+1. The overlaying element will get a new stacking context
 1. Filters may be combined
 
 {% Aside 'warning' %}
