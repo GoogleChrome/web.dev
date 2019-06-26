@@ -5,7 +5,7 @@ module.exports = {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
     slug: 'sandbox',
-    // cover: '/images/collections/handbook.svg',
+    cover: '/images/collections/handbook.svg',
     title: 'Content handbook',
     updated: 'Jun 24, 2019',
     description: 'Create great content for web.dev.',
