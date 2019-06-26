@@ -31,7 +31,7 @@ description: |
 * [Code splitting with React.lazy and Suspense](/code-splitting-suspense)
 
 ## Codelabs
-**Format:** Multi-step instructions paired with an embedded [sample app](/markup-sample-app)
+**Format:** Multi-step instructions paired with an embedded [sample app](/handbook/markup-sample-app)
 
 **Typical use case:** showing how to do small, fairly discrete development tasks
 

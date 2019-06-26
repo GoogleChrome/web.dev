@@ -20,7 +20,7 @@ Examples of pieces with a personal voice we like:
 * [JavaScript Promises: An Introduction](https://developers.google.com/web/fundamentals/primers/promises), by Jake Archibald
 * [The Gift of Giving Up](https://dev.to/chromiumdev/the-gift-of-giving-up-1lgl), by Sam Thorogood
 
-Making content engaging while remaining [inclusive](/inclusion-and-accessibility) can sometimes be challenging; for example, a reference to an American TV show might not be clear to an international audience, no matter how perfectly it illustrates an idea.
+Making content engaging while remaining [inclusive](/handbook/inclusion-and-accessibility) can sometimes be challenging; for example, a reference to an American TV show might not be clear to an international audience, no matter how perfectly it illustrates an idea.
 
 It's great to include details that convey your interests or your journey as a developer—just make sure they don't get in the way of the concepts you're teaching. Use these details sparingly—maybe 2–3 per piece.
 

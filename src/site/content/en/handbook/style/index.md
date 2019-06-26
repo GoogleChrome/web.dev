@@ -8,10 +8,10 @@ description: |
   The primary guidelines for writing in the web.dev style.
 ---
 
-The style guidelines apply to posts, codelabs, and anything else you might write on web.dev. They're intended to help both writers and reviewers evaluate drafts, and they're included in the [web.dev content checklist](/content-checklist).
+The style guidelines apply to posts, codelabs, and anything else you might write on web.dev. They're intended to help both writers and reviewers evaluate drafts, and they're included in the [web.dev content checklist](/handbook/content-checklist).
 
 ## Know your audience and purpose
-Have a specific [audience](/audience) in mind as you write.
+Have a specific [audience](/handbook/audience) in mind as you write.
 
 Make sure your content is meeting a need of your audience. (For example, is it teaching them how to do something? Helping them grasp a commonly misunderstood concept?)
 
@@ -28,7 +28,7 @@ While slightly longer, this title tells less experienced readers what they'll le
 {% endCompare %}
 
 ## Be concise
-Use the fewest words possible while keeping language clear and [readable](/inclusion-and-accessibility#use-readable-language).
+Use the fewest words possible while keeping language clear and [readable](/handbook/inclusion-and-accessibility#use-readable-language).
 
 {% Compare 'worse', 'Don’t' %}
 > Absolute and fixed positioning have been reimplemented and are more spec compliant than the old implementation. They also better match the behavior in other browsers.
@@ -67,12 +67,12 @@ Include examples and figures. (See the next guideline.)
 ## Use figures when text won't do
 Aside from breaking up long sections of prose, media can be better than text for conveying some concepts and instructions. A key question to ask as you write is: "Would this idea be easier to understand if I provided a figure?"
 
-web.dev supports the following figures, which you can include in your post or codelab by following the examples in the "[web.dev components](/web-dev-components)" post.
+web.dev supports the following figures, which you can include in your post or codelab by following the examples in the "[web.dev components](/handbook/web-dev-components)" post.
 * Tables (Use tables sparingly—they don't resize well on mobile.)
 * Comparisons
-* Images and video (See the "[Use images and video effectively](/use-media)" post.)
+* Images and video (See the "[Use images and video effectively](/handbook/use-media)" post.)
 * Code blocks
-* Sample apps (See the "[Write useful code samples](/write-code-samples)" post.)
+* Sample apps (See the "[Write useful code samples](/handbook/write-code-samples)" post.)
 
 ## Help readers get things done
 Focus on readers and the concrete task they're trying to complete. While an introductory paragraph can provide important [context](#give-useful-context), get to the instructional content as soon as possible. The "[Use Imagemin to compress images](/use-imagemin-to-compress-images)" post is a great example.
@@ -116,7 +116,7 @@ If the reader isn't a seller, this detail may not seem relevant.
 {% Compare 'better', 'Do' %}
 > You can choose a variety of shopfront themes.
 
-Using second person helps convey that we think this information is relevant to readers. (This strategy assumes that the post has been appropriately targeted to an [audience](/audience).)
+Using second person helps convey that we think this information is relevant to readers. (This strategy assumes that the post has been appropriately targeted to an [audience](/handbook/audience).)
 {% endCompare %}
 
 Provide a way to measure success. How can developers test that they've followed your instruction correctly?
@@ -124,7 +124,7 @@ Provide a way to measure success. How can developers test that they've followed 
 ## Keep it simple
 Focus on essential details when explaining a tool or technique. Avoid overwhelming the reader with "real-world" examples that include complexities that aren't required to understand the basic concept. Save those details for supplemental codelabs or follow-up posts. See the "[Code splitting with React.lazy and Suspense](/code-splitting-suspense)" post for an example.
 
-Avoid jargon. If you absolutely _must_ use a term most web.dev readers are unlikely to know, define it in a short aside. See the "[web.dev components](/web-dev-components#asides)" post for how to include asides. Also check out the "[Inclusion and accessibility](/inclusion-and-accessibility#use-readable-language)" post for more info about writing readable language.
+Avoid jargon. If you absolutely _must_ use a term most web.dev readers are unlikely to know, define it in a short aside. See the "[web.dev components](/handbook/web-dev-components#asides)" post for how to include asides. Also check out the "[Inclusion and accessibility](/handbook/inclusion-and-accessibility#use-readable-language)" post for more info about writing readable language.
 
 {% Compare 'worse', 'Don’t' %}
 > In some scripts, graphemes can be visually joined when they're adjacent.

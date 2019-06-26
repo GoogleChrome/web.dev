@@ -11,7 +11,7 @@ description: |
 
 ## Source
 
-To see how to use each component, [view this page's source on GitHub](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/sandbox/index.md).
+To see how to use each component, [view this page's source on GitHub](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/web-dev-components/index.md).
 
 ## Sections
 
@@ -134,7 +134,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 
 ## Code
 
-See the "[Code](/markup-code)" post.
+See the "[Code](/handbook/markup-code)" post.
 
 ## Compare
 
@@ -202,7 +202,7 @@ at.
 
 ## Images
 
-See the "[Images and video](/markup-media)" post.
+See the "[Images and video](/handbook/markup-media)" post.
 
 ## Instruction
 
@@ -575,4 +575,4 @@ assumenda perspiciatis.
 </div>
 
 ## Video
-See the "[Images and video](/markup-media#video)" post.
+See the "[Images and video](/handbook/markup-media#video)" post.

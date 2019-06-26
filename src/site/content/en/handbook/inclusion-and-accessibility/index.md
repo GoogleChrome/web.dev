@@ -30,7 +30,7 @@ Prefer shorter, simpler sentences.
 
 {% endCompare %}
 
-Prefer commonly used words that your [audience](/audience) is likely to be familiar with over specialized vocabulary. If you need help finding a more accessible alternative, the [Merriam-Webster Learner's Dictionary](http://learnersdictionary.com/) is a handy tool.
+Prefer commonly used words that your [audience](/handbook/audience) is likely to be familiar with over specialized vocabulary. If you need help finding a more accessible alternative, the [Merriam-Webster Learner's Dictionary](http://learnersdictionary.com/) is a handy tool.
 
 {% Compare 'worse', 'Don’t' %}
 > In some scripts, graphemes can be visually joined when they're adjacent.
@@ -44,7 +44,7 @@ _Script_ and _grapheme_ are very precise, but they're likely to be unfamiliar to
 While _written language_ and _character_ are slightly less precise, they should be more familiar and less likely to cause misunderstandings.
 {% endCompare %}
 
-If you must use a word that your audience is unlikely to know, provide a definition using the [Key-term Aside component](/web-dev-components#asides).
+If you must use a word that your audience is unlikely to know, provide a definition using the [Key-term Aside component](/handbook/web-dev-components#asides).
 
 ## Make information easy to find
 Headings [shouldn't skip levels](/heading-levels). Also, don't add custom styles to headings—it makes the page hierarchy more difficult to follow for sighted readers.
@@ -61,7 +61,7 @@ If you're creating an illustration, the parts that are essential for understandi
 Avoid images that may exclude certain audience members. Just like when we _write_ about people, we must remain inclusive when we _show_ people and the things they do and make. For example, avoid stock photos that show only male developers.
 
 ## Create accessible code blocks
-While code blocks should be as [simple as possible](/style#keep-it-simple), they must always include accessibility best practices. At a minimum:
+While code blocks should be as [simple as possible](/handbook/style#keep-it-simple), they must always include accessibility best practices. At a minimum:
 * Form elements should have [labels](/labels-and-text-alternatives/#label-form-elements).
 * Images should have [alt text](/image-alt).
 
@@ -97,4 +97,4 @@ Avoid idioms. If non-native speakers aren't familiar with the idiom, they may be
 
 {% endCompare %}
 
-Don't rely on cultural references alone to convey essential information. It's likely that at least some of your audience won't know the same movies, TV, books, and games that you do. While a reference here and there can [add personality](/voice) to your writing, make sure readers can understand your ideas even if they don't catch the reference.
+Don't rely on cultural references alone to convey essential information. It's likely that at least some of your audience won't know the same movies, TV, books, and games that you do. While a reference here and there can [add personality](/handbook/voice) to your writing, make sure readers can understand your ideas even if they don't catch the reference.

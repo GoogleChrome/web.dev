@@ -8,7 +8,7 @@ description: |
   Learn how to create the Markdown for posts and codelabs on web.dev.
 ---
 
-This post is about how to set up a new post or codelab so it works correctly on web.dev. For guidelines about what to put _in_ your post, see the "[Content guidelines](/sandbox/#content-guidelines)" section.
+This post is about how to set up a new post or codelab so it works correctly on web.dev. For guidelines about what to put _in_ your post, see the "[Content guidelines](/handbook/#content-guidelines)" section.
 
 ## Get started
 1. Create a new branch of the web.dev repository.
@@ -32,7 +32,7 @@ The YAML fields at the start of each piece of web.dev content define how the pie
   * `codelab`
 * `title`: The title for your piece.
 * `subhead`: The subtitle for your piece. Only required for posts.
-* `authors`: The [slug(s)](/contributor-profile) for the author(s) of the piece.
+* `authors`: The [slug(s)](/handbook/contributor-profile) for the author(s) of the piece.
 * `date`: The publication date.
 * `hero`: The filename of the hero image, which appears full-bleed above the title. Optional.
 * `hero_position`: The position of the hero image. Optional. Possible values:

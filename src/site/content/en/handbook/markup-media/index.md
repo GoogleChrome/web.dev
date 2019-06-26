@@ -8,19 +8,19 @@ description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
 
-This post is about how to format and store images on web.dev. For guidance about how to select or create images to support your writing goals, see the "[Use images and video effectively](/use-media)" post.
+This post is about how to format and store images on web.dev. For guidance about how to select or create images to support your writing goals, see the "[Use images and video effectively](/handbook/use-media)" post.
 
 ## All images
 Images that appear in a post should live in the same directory as the post's `index.md` file.
 
 Use lossless images whenever possible. They'll be optimized automatically at build time.
 
-Make sure images are [accessible](/inclusion-and-accessibility#use-inclusive-images).
+Make sure images are [accessible](/handbook/inclusion-and-accessibility#use-inclusive-images).
 
 ## Hero images
 Hero images should be 1600 px x 800 px.
 
-Adjust hero image positioning using the [`hero_position`](/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
+Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
 
 ## Body images
 Images intended to fill the full width of the content column should be at least 800 px wide.
@@ -110,7 +110,7 @@ To take a screenshot on Mac:
 ## Video
 
 ### Video hosted on YouTube
-To embed a YouTube video, use the web.dev `YouTube` [component](/web-dev-components).
+To embed a YouTube video, use the web.dev `YouTube` [component](/handbook/web-dev-components).
 * Grab the video's unique ID from its URL for the `id` parameter.
 * To specify the start time in seconds, use the optional `startTime` parameter.
 ```

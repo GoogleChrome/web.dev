@@ -62,7 +62,7 @@ That said, we want our content to address as much of our audience as we can. How
 * A post about optimizing images in general, with associated codelabs showing how to integrate image optimization into different build processes
 * A post about how to address an issue most web developers will encounter, with sections at the end focused on solving the problem as it appears in particular business verticals
 
-Be mindful of your [voice](/voice). You want readers to feel they can trust the guidance you're giving. They should feel neither talked down to nor overwhelmed. Check out "[Instruction for adult learners](/effective-instruction#instruction-for-adult-learners)" in the "[Writing effective instruction](/effective-instruction)" post.
+Be mindful of your [voice](/handbook/voice). You want readers to feel they can trust the guidance you're giving. They should feel neither talked down to nor overwhelmed. Check out "[Instruction for adult learners](/handbook/effective-instruction#instruction-for-adult-learners)" in the "[Writing effective instruction](/handbook/effective-instruction)" post.
 
 ### Value propositions
 A value proposition is a promise to readers that a piece of content will be useful—that is, provide value—to them. Create a value proposition for everything you write by crafting titles, subtitles, and descriptions that tell your target audience why your post or codelab is worth reading. Some common strategies:

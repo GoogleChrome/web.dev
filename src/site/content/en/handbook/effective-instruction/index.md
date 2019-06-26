@@ -16,11 +16,11 @@ Keep the scope of instruction manageable. If a task is complex, find ways to chu
 
 Always provide examples for complex or abstract concepts. If you're debating whether to give an example, do.
 
-Use web.dev's built-in [Instruction components](/web-dev-components#instruction) for instructing common tasks in the tools often referenced on the site (e.g., Glitch, Chrome DevTools). This approach provides a consistent user experience and makes it easy to update instructions across the site when needed.
+Use web.dev's built-in [Instruction components](/handbook/web-dev-components#instruction) for instructing common tasks in the tools often referenced on the site (e.g., Glitch, Chrome DevTools). This approach provides a consistent user experience and makes it easy to update instructions across the site when needed.
 
 ## Instruction for adult learners
 Adult learners bring a lot experience. It's important to honor that experience while acknowledging the challenges of the tasks you're teaching.
 
-Be mindful of [voice](/voice). Try to strike a balance between showing expertise and humility to avoid alienating your readers.
+Be mindful of [voice](/handbook/voice). Try to strike a balance between showing expertise and humility to avoid alienating your readers.
 
 Avoid words and phrases that make it sound like a concept or task is easy or obvious—it may not be! Words and phrases like _obviously_, _simply_, _of course_, _clearly_, _everyone knows_, and _easy_ usually shouldn't be in your instruction.

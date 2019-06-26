@@ -159,7 +159,7 @@ Periods and commas always go inside quotation marks. Question marks and exclamat
 {% endCompare %}
 
 ## Text formatting
-Bold words for emphasis sparingly. (The primary use for bolding is [indicating UI element names](/grammar/#ui-elements-and-interaction).)
+Bold words for emphasis sparingly. (The primary use for bolding is [indicating UI element names](/handbook/grammar/#ui-elements-and-interaction).)
 
 Avoid mixing code font and standard font in a single word.
 
@@ -276,4 +276,4 @@ These are the references content reviewers use when reviewing posts and codelabs
 * The [Google Developer Documentation Style Guide](https://developers.google.com/style/) (GDDSG) is the primary reference for writing style issues.
 * If a style issue isn't covered in the GDDGS, check the [Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html).
 * [Merriam-Webster](http://www.m-w.com) is the primary reference for spelling and capitalization.
-* The [Word list](/word-list) provides spelling and capitalization conventions specific to web.dev.
+* The [Word list](/handbook/word-list) provides spelling and capitalization conventions specific to web.dev.
