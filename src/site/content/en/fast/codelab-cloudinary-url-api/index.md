@@ -45,7 +45,7 @@ For example:
 
 ## Optimize an image
 
-- Click the **Remix to Edit** button (top-right corner) to make the project editable.
+- Click the **Remix to Edit** button (in the top-right corner) to make the project editable.
 - In the next few steps, you will replace the image link on Line #25 of `index.html` file, with a fetch URL.
 
 ### Fetch URL
@@ -292,7 +292,7 @@ made.
 Lighthouse's "Efficiently encode images" performance audit can let you know if
 the JPEG images on your page are optimally compressed.
 
-- To preview the site press the **View App** button (right-bottom corner).
+- To preview the site press the **View App** button (in the right-bottom corner).
 - Run the Lighthouse performance audit (Lighthouse ❯ Options ❯ Performance) on
   the <a target="_blank" rel="noopener noreferrer" href="https://codelab-cloudinary.glitch.me/">live version</a> of your Glitch and verify that the "Efficiently encode
   images" as well as "Serve images in next-gen formats" audits were passed.
