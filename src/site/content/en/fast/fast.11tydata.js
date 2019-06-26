@@ -23,8 +23,13 @@ module.exports = {
     your site has launched.`,
     topics: [
       {
-        title: 'Measure your site\'s performance',
-        pathItems: ['discover-performance-opportunities-with-lighthouse'],
+        title: 'Introduction',
+        pathItems: [
+          'why-speed-matters',
+          'what-is-speed',
+          'how-to-measure-speed',
+          'how-to-stay-fast',
+        ],
       },
       {
         title: 'Optimize your images',
@@ -79,6 +84,7 @@ module.exports = {
           'performance-budgets-101',
           'your-first-performance-budget',
           'incorporate-performance-budgets-into-your-build-tools',
+          'use-lighthouse-for-performance-budgets',
           'using-bundlesize-with-travis-ci',
           'using-lighthouse-bot-to-set-a-performance-budget',
         ],

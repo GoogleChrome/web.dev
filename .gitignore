@@ -69,3 +69,6 @@ local-devsite.js
 
 # DS_Store
 .DS_Store
+
+# IDEs
+.idea

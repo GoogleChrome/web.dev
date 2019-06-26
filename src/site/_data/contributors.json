@@ -1228,6 +1228,21 @@
       "en": "Tech consultant for Web, Chrome & AMP"
     }
   },
+  "jormears": {
+    "name": {
+      "given": "Jordon",
+      "family": "Mears‎"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Earth"
+    },
+    "country": "USA",
+    "homepage": "https://www.finefrog.com/",
+    "description": {
+      "en": "Jordon is a Tech Lead Manager working on Google Earth."
+    }
+  },
   "martinschierle": {
     "name": {
       "given": "Martin",
@@ -1290,6 +1305,19 @@
     "github": "rowan-m",
     "glitch": "rowan-m"
   },
+  "adamargyle": {
+    "name": {
+      "given": "Adam",
+      "family": "Argyle"
+    },
+    "description": {
+      "en": "Developer Advocate for Chrome"
+    },
+    "homepage": "https://nerdy.dev",
+    "github": "argyleink",
+    "twitter": "argyleink",
+    "glitch": "argyleink"
+  },
   "lunalu": {
     "name": {
       "given": "Luna",
@@ -1343,6 +1371,19 @@
     "twitter": "LinaCHansson",
     "description": {
       "en": "Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed."
+    }
+  },
+  "bojanpavic": {
+    "name": {
+      "given": "Bojan",
+      "family": "Pavic"
+    },
+    "github": "bojanpavic"
+  },
+  "ansteychris": {
+    "name": {
+      "given": "Chris",
+      "family": "Anstey"
     }
   }
 }
