@@ -111,14 +111,6 @@ To take a screenshot on Mac:
 
 ### Video hosted on YouTube
 To embed a YouTube video, use the web.dev `YouTube` [component](/handbook/web-dev-components).
-* Grab the video's unique ID from its URL for the `id` parameter.
-* To specify the start time in seconds, use the optional `startTime` parameter.
-{% raw %}
-```html
-{% YouTube 'Ai4aZ9Jbsys', '1081' %}
-```
-{% endraw %}
-{% YouTube 'Ai4aZ9Jbsys', '1081' %}
 
 ### Video hosted on web.dev
 Always use video, not animated GIFs. (Check out the "[Replace animated GIFs with video for faster page loads](/replace-gifs-with-videos/)" post to learn how to use [FFmpeg](https://www.ffmpeg.org/) to convert GIFs to video.)
@@ -149,13 +141,3 @@ Embed the video in your post or codelab by following this example:
 
 ### Full-bleed video
 If you want any video to be full-bleed, put it in a `figure` element with the `w-figure--fullbleed` class. (Make sure to add the `w-figcaption--fullbleed` class to the `figcaption` element if you have one.)
-```html
-  <figure class="w-figure w-figure--fullbleed">
-    {% raw %}
-    {% YouTube 'ViyTYEv9dM8' %}
-    {% endraw %}
-  </figure>
-```
-<figure class="w-figure w-figure--fullbleed">
-  {% YouTube 'ViyTYEv9dM8' %}
-</figure>
