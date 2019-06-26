@@ -51,12 +51,12 @@ Backdrop-filters are like CSS filters. When the property is not 'none', a new [s
 </div>
 
 ### Summary
-1. `backdrop-filter` can apply one or more filters to an element
-1. The overlaying element OR it's background must be at least partially transparent
-1. The overlaying element will get a new stacking context
+- `backdrop-filter` can apply one or more filters to an element
+- The overlaying element must be at least partially transparent
+- The overlaying element will get a new stacking context
 
 {% Aside 'warning' %}
-The `backdrop-filter` property is computationally intensive, as are filters in general, so it may impact the performance of sites using it.
+The `backdrop-filter` may harm performance.
 {% endAside %}
 
 
@@ -160,7 +160,6 @@ Chrome's excited to release `backdrop-filter` in 76. The [Chromium bug](https://
 
 ### Additional Resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)
-- [TAG Proposal](https://github.com/w3ctag/design-reviews/issues/353)
 - [Chrome Platform Status](https://www.chromestatus.com/feature/5679432723333120)
 - [Caniuse](http://caniuse.com/#feat=css-backdrop-filter)
 - [API](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
