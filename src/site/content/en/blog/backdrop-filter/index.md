@@ -9,15 +9,15 @@ hero: hero.jpg
 alt: Women behind frosted glass
 description: |
   CSS backdrop-filter was made famous by Apple's design team. It brings
-  the ability for a background to apply a filter to the contents beneath.
-  Creates a nice layering effect that keeps beneath elements in context.
+  the ability for a background to apply a filter to the contents beneath,
+  and creates a nice layering effect that keeps beneath elements in context.
 tags:
   - post
   - css
   - backdrop-filter
 ---
 
-Designers and developers alike can celebrate as a long awaited CSS feature [releases in Chrome 76](https://www.chromestatus.com/feature/5679432723333120): backdrop-filter. Frosted glass effects, video overlays, translucent navigation headers, inappropriate image censoring, image loading, and more, no longer require [hacks or workarounds](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter).
+Designers and developers alike can celebrate as a long awaited CSS feature [arrives in Chrome 76](https://www.chromestatus.com/feature/5679432723333120): backdrop-filter. Frosted glass effects, video overlays, translucent navigation headers, inappropriate image censoring, image loading, and more, no longer require [hacks or workarounds](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter).
 
 You may recognize the effect from two popular operating systems: [Windows Vista](https://i.kinja-img.com/gawker-media/image/upload/s--9RLXARU4--/c_scale,dpr_2.0,f_auto,fl_progressive,q_80,w_800/trgz8yivyyqrpcnwscu5.png) and [iOS](https://static.businessinsider.com/image/51fd2822eab8eae16e00000b-750.jpg). Now [Chrome](https://www.chromestatus.com/feature/5679432723333120) can do it too.
 
@@ -35,14 +35,14 @@ The following video demonstrates `backdrop-filter` and each individual filter:
 
 ## Technical Details
 {% Aside 'key-term' %}
-  backdrop refers to all painted content behind the element, except when the ancestor has filters, opacity or [a few other documented properties applied](https://drafts.fxtf.org/filter-effects-2/#BackdropRootTriggers).
+  backdrop - the painted content behind the element.
 {% endAside %}
 
 CSS `backdrop-filter` applies one or more filters to the backdrop of an element, leaving the contents unchanged.
 
 In order for the filter to apply any augmentations, some portion of the overlaying element needs to be transparent. Alternatively, consider that opaque elements will not produce a backdrop-filter effect while fully transparent elements produce a full filtered backdrop.
 
-Backdrop-filter shares attributes with CSS filters in that they create a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing blocks](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) when the property is used properly, in other words it's not 'none'. Note, only elements with absolute and fixed position descendants will get a containing block.
+Backdrop-filters are like CSS filters. When the property is not 'none', a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) are created. Note, only elements with absolute and fixed position descendants will get a containing block.
 
 <div>
   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="_blank" class="w-button w-button--secondary w-button--with-icon" data-icon="school">
