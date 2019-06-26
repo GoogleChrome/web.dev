@@ -31,7 +31,7 @@ tags:
 ### Dark mode before *Dark Mode*
 
 <figure class="w-figure w-figure--inline-right">
-  <img style="height:175px; width:auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
+  <img style="height: 175px; width: auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
   <figcaption class="w-figcaption">Fig. — Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
 </figure>
 
@@ -44,7 +44,7 @@ Because text was displayed in green and the rest of the screen was black, these 
 [green screens](https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg).
 
 <figure class="w-figure w-figure--inline-left">
-  <img style="height:175px; width:auto;" src="word-processing.jpg" alt="Dark-on-white word processing" intrinsicsize="698x551">
+  <img style="height: 175px; width: auto;" src="word-processing.jpg" alt="Dark-on-white word processing" intrinsicsize="698x551">
   <figcaption class="w-figcaption">Fig. — Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
 </figure>
 
@@ -56,7 +56,7 @@ With the advent of more sophisticated <abbr title="What You See Is What You Get"
 the idea of making the virtual document resemble a physical sheet of paper became popular.
 
 <figure class="w-figure w-figure--inline-right">
-  <img style="height:175px; width:auto;" src="worldwideweb.png" alt="Dark-on-white webpage in the WorldWideWeb browser" intrinsicsize="1024x768">
+  <img style="height: 175px; width: auto;" src="worldwideweb.png" alt="Dark-on-white webpage in the WorldWideWeb browser" intrinsicsize="1024x768">
   <figcaption class="w-figcaption">Fig. — The WorldWideWeb browser (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Source</a>)</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ on a light background, a baseline assumption that is also hard-coded in user age
 [Chrome’s](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css).
 
 <figure class="w-figure w-figure--inline-left">
-  <img style="height:175px; width:auto;" src="smartphone-in-bed.jpg" alt="Smartphone used while lying in bed" intrinsicsize="500x334">
+  <img style="height: 175px; width: auto;" src="smartphone-in-bed.jpg" alt="Smartphone used while lying in bed" intrinsicsize="500x334">
   <figcaption class="w-figcaption">Fig. — Smartphone used in bed (<a href="https://unsplash.com/photos/W39xsPWZgA4">Source</a>)</figcaption>
 </figure>
 
@@ -110,7 +110,7 @@ is an aesthetic one for most users, and might not relate to ambient lighting con
 {% endAside %}
 
 <figure class="w-figure w-figure--inline-right">
-  <img style="height:225px; width:auto;" src="closeview.png" alt="CloseView in Mac OS System 7 with \"White on Black\" mode" intrinsicsize="531x618">
+  <img style="height: 225px; width: auto;" src="closeview.png" alt="CloseView in Mac OS System 7 with \"White on Black\" mode" intrinsicsize="531x618">
   <figcaption class="w-figcaption">Fig. — System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
 </figure>
 
@@ -172,60 +172,18 @@ The video below has more details on these case studies and the power savings.
 Now that I have covered the background of why dark mode is such a big deal for many users,
 let’s review how you can support it.
 
+<figure class="w-figure w-figure--inline-left">
+  <img style="height: 250px; width: auto;" src="android.png" alt="Android Q dark mode settings" intrinsicsize="610x700">
+  <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
+</figure>
+
 Operating systems that support a dark mode or dark theme
 typically have an option to activate it somewhere in the settings.
-On macOS&nbsp;X, it’s in the system preference’s *General* section and called *Appearance*,
-and on Windows&nbsp;10, it’s in the *Colors* section and called *Choose your color*.
-For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch,
+On macOS&nbsp;X, it’s in the system preference’s *General* section and called *Appearance* ([screenshot](macosx.png)),
+and on Windows&nbsp;10, it’s in the *Colors* section and called *Choose your color* ([screenshot](windows10.png)).
+For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle switch ([screenshot](android.png)),
 and on iOS&nbsp;13, you can change the *Appearance* in the *Display &amp; Brightness*
-section of the settings.
-
-<figure>
-  <style>
-    #dark-mode-overview::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to right, transparent 0%, transparent 90%, currentColor 100%)
-    }
-  </style>
-  <div style="position: relative;">
-    <div id="dark-mode-overview" style="overflow-x: auto; padding-left:1rem;">
-      <table class="w-screenshot w-screenshot--filled">
-        <tr>
-          <td style="vertical-align:top;">
-            <figure class="w-figure w-figure--inline-left">
-              <img style="height:250px; width:auto;" src="windows10.png" alt="Windows 10 dark theme settings" intrinsicsize="838x700">
-              <figcaption class="w-figcaption">Windows&nbsp;10 dark theme settings</figcaption>
-            </figure>
-          </td>
-          <td style="vertical-align:top;">
-            <figure class="w-figure w-figure--inline-left">
-              <img style="height:250px; width:auto;" src="macosx.png" alt="macOS X dark mode settings" intrinsicsize="668x678">
-              <figcaption class="w-figcaption">macOS&nbsp;X dark mode settings</figcaption>
-            </figure>
-          </td>
-          <td style="vertical-align:top;">
-            <figure class="w-figure w-figure--inline-left">
-              <img style="height:250px; width:auto;" src="android.png" alt="Android Q dark mode settings" intrinsicsize="610x700">
-              <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
-            </figure>
-          </td>
-          <td style="vertical-align:top;">
-            <figure class="w-figure w-figure--inline-left">
-              <img style="height:250px; width:auto;" src="ios.jpg" alt="iOS 13 appearance settings" intrinsicsize="323x700">
-              <figcaption style="width: 10rem;" class="w-figcaption">iOS&nbsp;13 appearance settings</figcaption>
-            </figure>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <figcaption class="w-figcaption">Fig. — Dark mode settings on various operating systems</figcaption>
-</figure>
+section of the settings ([screenshot](ios.jpg)).
 
 ## The `prefers-color-scheme` media query
 
@@ -424,7 +382,7 @@ and see how the page reacts.
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     src="https://glitch.com/embed/#!/embed/dark-mode-baseline?path=style.css&previewSize=100&attributionHidden=true"
-    style="height:100%; width:100%; border:0;">
+    style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
@@ -749,7 +707,7 @@ The demo below shows the element in action
 ></dark-mode-toggle>
 ```
 
-<figure style="margin-bottom:1rem;">
+<figure style="margin-bottom: 2rem;">
   <div style="width: 320px;">
     <div style="display: inline-block;
       width: 45%;
@@ -769,7 +727,7 @@ The demo below shows the element in action
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     src="https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html"
-    style="height:100%; width:100%; border:0;">
+    style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
