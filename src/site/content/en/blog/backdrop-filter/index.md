@@ -158,15 +158,6 @@ input:not(:checked) ~ .censor {
 ## Conclusion
 Chrome's excited to release `backdrop-filter` in 76. The [Chromium bug](https://crbug.com/497522) has **560+ stars** on it, clearly marking it as a desired web design capability.
 
-A glimpse of what's now possible using `backdrop-filter`:
-
-<figure class="w-figure w-figure--fullbleed">
-  {% YouTube 'MWHBpReeAJ0' %}
-  <figcaption class="w-figcaption">
-    Demo by <a href="https://ferdychristant.com/please-help-make-backdrop-filter-a-reality-f81805ba3d52" target="_blank">Ferdy Christant</a>
-  </figcaption>
-</figure>
-
 ### Additional Resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)
 - [TAG Proposal](https://github.com/w3ctag/design-reviews/issues/353)
