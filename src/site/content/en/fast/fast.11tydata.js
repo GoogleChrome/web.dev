@@ -32,6 +32,17 @@ module.exports = {
         ],
       },
       {
+        title: 'Set performance budgets',
+        pathItems: [
+          'performance-budgets-101',
+          'your-first-performance-budget',
+          'incorporate-performance-budgets-into-your-build-tools',
+          'use-lighthouse-for-performance-budgets',
+          'using-bundlesize-with-travis-ci',
+          'using-lighthouse-bot-to-set-a-performance-budget',
+        ],
+      },
+      {
         title: 'Optimize your images',
         pathItems: [
           'use-imagemin-to-compress-images',
@@ -76,17 +87,6 @@ module.exports = {
           'chrome-ux-report-data-studio-dashboard',
           'chrome-ux-report-pagespeed-insights',
           'chrome-ux-report-bigquery',
-        ],
-      },
-      {
-        title: 'Enforce performance budgets',
-        pathItems: [
-          'performance-budgets-101',
-          'your-first-performance-budget',
-          'incorporate-performance-budgets-into-your-build-tools',
-          'use-lighthouse-for-performance-budgets',
-          'using-bundlesize-with-travis-ci',
-          'using-lighthouse-bot-to-set-a-performance-budget',
         ],
       },
     ],
