@@ -50,7 +50,7 @@ Backdrop-filter shares attributes with CSS filters in that they create a new [st
 1. Filters may be combined
 
 {% Aside 'warning' %}
-  The backdrop-filter feature is computationally intensive, as are filters in general, so it may impact the performance of sites using it.
+The `backdrop-filter` property is computationally intensive, as are filters in general, so it may impact the performance of sites using it.
 {% endAside %}
 
 
