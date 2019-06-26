@@ -51,9 +51,9 @@ Backdrop-filter shares attributes with CSS filters in that they create a new [st
 </div>
 
 ### Summary
+1. `backdrop-filter` can apply one or more filters to an element
 1. The overlaying element OR it's background must be at least partially transparent
 1. The overlaying element will get a new stacking context
-1. Filters may be combined
 
 {% Aside 'warning' %}
   The backdrop-filter feature is computationally intensive, as are filters in general, so it may impact the performance of sites using it.
@@ -158,7 +158,7 @@ input:not(:checked) ~ .censor {
 ## Conclusion
 Chrome's excited to release `backdrop-filter` in 76. The [Chromium bug](https://crbug.com/497522) has **560+ stars** on it, clearly marking it as a desired web design capability.
 
-A glimpse into the now possible in Chrome:
+A glimpse of what's now possible using `backdrop-filter`:
 
 <figure class="w-figure w-figure--fullbleed">
   {% YouTube 'MWHBpReeAJ0' %}
