@@ -229,8 +229,6 @@ It works with the following values:
 As dark mode is reported through a media query, you can easily check if the current browser
 supports dark mode by checking if the media query `prefers-color-scheme` matches at all.
 Note how I don’t include any value, but purely check if the media query alone matches.
-Actually, I have silently used this pattern already above in the
-[loading strategy](#loading-strategy) code snippet.
 
 ```js
 if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
@@ -481,10 +479,16 @@ I refer to this as *re-colorization*.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./dark.png" alt="">
+    <img src="./hero-dark.png" alt="Hero image slightly darkened in dark mode.">
+    <figcaption class="w-figcaption">
+      Hero image slightly darkened in dark mode
+    </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./light.png" alt="">
+    <img src="./hero-light.png" alt="Regular hero image in light mode.">
+    <figcaption class="w-figcaption">
+      Regular hero image in light mode
+    </figcaption>
   </figure>
 </div>
 
@@ -692,21 +696,21 @@ The demo below shows the element in action
 ></dark-mode-toggle>
 ```
 
-<figure style="margin-bottom: 2rem;">
-  <div style="width: 320px;">
-    <div style="display: inline-block;
-      width: 45%;
-      height: 76px;
-      background-image: url(dark-mode-toggle-light.png);
-      background-repeat: no-repeat;"></div>
-    <div style="display: inline-block;
-      width: 45%;
-      height: 76px;
-      background-image: url(dark-mode-toggle-dark.png);
-      background-repeat: no-repeat;"></div>
-  </div>
-  <figcaption class="w-figcaption"><code>&lt;dark-mode-toggle&gt;</code> custom element</figcaption>
-</figure>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img style="height: 76px;" src="./dark-mode-toggle-light.png" alt="<dark-mode-toggle> in light mode.">
+    <figcaption class="w-figcaption">
+      <code>&lt;dark-mode-toggle&gt;</code> in light mode.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img style="height: 76px;" src="./dark-mode-toggle-dark.png" alt="<dark-mode-toggle> in light mode.">
+    <figcaption class="w-figcaption">
+      <code>&lt;dark-mode-toggle&gt;</code> in dark mode.
+    </figcaption>
+  </figure>
+</div>
+
 
 Try clicking or tapping the dark mode controls in the upper right corner in the demo below.
 If you check the checkbox in the third and the fourth control, see how your mode selection
