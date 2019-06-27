@@ -1,5 +1,5 @@
 ---
-name: Propose an article
+name: Propose new content
 about: Use this ticket when you are submitting new content to the site.
 title: 'content: <Add your title>'
 labels: content proposal
