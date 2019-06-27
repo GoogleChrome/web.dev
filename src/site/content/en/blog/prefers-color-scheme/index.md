@@ -1,6 +1,6 @@
 ---
 title: Hello Darkness, My Old Friend
-subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to benefit your users!
+subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to the benefit of your users!
 authors:
   - thomassteiner
 date: 2019-06-25
@@ -544,12 +544,19 @@ in the regular and in the [`:hover`](https://developer.mozilla.org/en-US/docs/We
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="./dark.png" alt="">
+    <img src="./icons-dark.png" alt="Icons are inverted in dark mode.">
+    <figcaption class="w-figcaption">
+      Icons are inverted in dark mode
+    </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="./light.png" alt="">
+    <img src="./icons-light.png" alt="Regular icons in light mode.">
+    <figcaption class="w-figcaption">
+      Regular icons in light mode
+    </figcaption>
   </figure>
 </div>
+
 
 Note how again I only invert icons in `dark.css` but not in `light.css`, and how `:hover`
 gets a different inversion intensity in the two cases to make the icon appear
