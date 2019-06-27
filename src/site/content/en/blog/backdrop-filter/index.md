@@ -69,7 +69,7 @@ Backdrop-filters are like CSS filters. When the property is not 'none', a new [s
 - The overlaying element will get a new stacking context
 
 {% Aside 'warning' %}
-The `backdrop-filter` may harm performance.
+`backdrop-filter` may harm performance.
 {% endAside %}
 
 
