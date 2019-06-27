@@ -1,8 +1,8 @@
 ---
-name: Request an article
-about: Suggest an article for the site.
+name: Propose an article
+about: Use this ticket when you are submitting new content to the site.
 title: 'content: <Add your title>'
-labels: content request
+labels: content proposal
 assignees: ''
 
 ---
