@@ -5,6 +5,7 @@ authors:
   - thomassteiner
 date: 2019-06-25
 hero: hero.jpg
+hero_position: bottom
 alt: |
   Silhouette photo of a mountain during nighttime, photo by Nathan Anderson on Unsplash.
 description: |
@@ -32,7 +33,7 @@ tags:
 
 <figure class="w-figure w-figure--inline-right">
   <img style="height: 175px; width: auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
-  <figcaption class="w-figcaption">Fig. — Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
 </figure>
 
 We have gone full circle with dark mode.
@@ -45,7 +46,7 @@ Because text was displayed in green and the rest of the screen was black, these 
 
 <figure class="w-figure w-figure--inline-left">
   <img style="height: 175px; width: auto;" src="word-processing.jpg" alt="Dark-on-white word processing" intrinsicsize="698x551">
-  <figcaption class="w-figcaption">Fig. — Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
 </figure>
 
 The subsequently introduced Color CRTs displayed multiple colors
@@ -57,7 +58,7 @@ the idea of making the virtual document resemble a physical sheet of paper becam
 
 <figure class="w-figure w-figure--inline-right">
   <img style="height: 175px; width: auto;" src="worldwideweb.png" alt="Dark-on-white webpage in the WorldWideWeb browser" intrinsicsize="1024x768">
-  <figcaption class="w-figcaption">Fig. — The WorldWideWeb browser (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">The WorldWideWeb browser (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Source</a>)</figcaption>
 </figure>
 
 This is where *dark-on-white* as a design trend started,
@@ -77,7 +78,7 @@ on a light background, a baseline assumption that is also hard-coded in user age
 
 <figure class="w-figure w-figure--inline-left">
   <img style="height: 175px; width: auto;" src="smartphone-in-bed.jpg" alt="Smartphone used while lying in bed" intrinsicsize="500x334">
-  <figcaption class="w-figcaption">Fig. — Smartphone used in bed (<a href="https://unsplash.com/photos/W39xsPWZgA4">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Smartphone used in bed (<a href="https://unsplash.com/photos/W39xsPWZgA4">Source</a>)</figcaption>
 </figure>
 
 The days of CRTs are long over.
@@ -111,7 +112,7 @@ is an aesthetic one for most users, and might not relate to ambient lighting con
 
 <figure class="w-figure w-figure--inline-right">
   <img style="height: 225px; width: auto;" src="closeview.png" alt="CloseView in Mac OS System 7 with \"White on Black\" mode" intrinsicsize="531x618">
-  <figcaption class="w-figcaption">Fig. — System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
 </figure>
 
 #### Dark mode as an accessibility tool
@@ -185,7 +186,7 @@ For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle swi
 and on iOS&nbsp;13, you can change the *Appearance* in the *Display &amp; Brightness*
 section of the settings ([screenshot](ios.jpg)).
 
-## The `prefers-color-scheme` media query
+<h2 class="w-clearfix">The <code>prefers-color-scheme</code> media query</h2>
 
 One last bit of theory before I get going.
 [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
@@ -428,17 +429,17 @@ so that they never compete with resources that are needed by the site right now.
 
 <figure class="w-figure">
   <img src="light.png" alt="Network loading diagram showing how in light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
-  <figcaption class="w-figcaption">Fig. — Site in light mode loads the dark mode CSS with lowest priority.</figcaption>
+  <figcaption class="w-figcaption">Site in light mode loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
 <figure class="w-figure">
   <img src="dark.png" alt="Network loading diagram showing how in dark mode the light mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
-  <figcaption class="w-figcaption">Fig. — Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
+  <figcaption class="w-figcaption">Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
 </figure>
 
 <figure class="w-figure">
   <img src="unsupported.png" alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
-  <figcaption class="w-figcaption">Fig. — Site in default light mode on a browser that doesn’t support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
+  <figcaption class="w-figcaption">Site in default light mode on a browser that doesn’t support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
 
 ### Reacting on dark mode changes
@@ -478,23 +479,14 @@ has shown that the majority of the surveyed people
 prefer slightly less vibrant and brilliant images when dark mode is active.
 I refer to this as *re-colorization*.
 
-<figure>
-  <div style="width: 100%">
-    <div style="display: inline-block;
-      width: 45%;
-      height: 100px;
-      background-image: url(dark.png);
-      background-repeat: no-repeat;
-      background-position-y: center;"></div>
-    <div style="display: inline-block;
-      width: 45%;
-      height: 100px;
-      background-image: url(light.png);
-      background-repeat: no-repeat;
-      background-position-y: center;"></div>
-  </div>
-  <figcaption class="w-figcaption">Fig. — Image re-colorization</figcaption>
-</figure>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="./dark.png" alt="">
+  </figure>
+  <figure class="w-figure">
+    <img src="./light.png" alt="">
+  </figure>
+</div>
 
 Re-colorization can be achieved through a CSS filter on my images.
 I use a CSS selector that matches all images that don’t have `.svg` in their URL,
@@ -546,23 +538,14 @@ that people don’t like inversion for photos, it does work very well for most i
 Again I use CSS variables to determine the inversion amount
 in the regular and in the [`:hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover) state.
 
-<figure>
-  <div style="width: 100%">
-    <div style="display: inline-block;
-      width: 45%;
-      height: 100px;
-      background-image: url(dark.png);
-      background-repeat: no-repeat;
-      background-position: bottom -50px left 0;"></div>
-    <div style="display: inline-block;
-      width: 45%;
-      height: 100px;
-      background-image: url(light.png);
-      background-repeat: no-repeat;
-      background-position: bottom -50px left 0;"></div>
-  </div>
-  <figcaption class="w-figcaption">Fig. — Icon re-colorization</figcaption>
-</figure>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="./dark.png" alt="">
+  </figure>
+  <figure class="w-figure">
+    <img src="./light.png" alt="">
+  </figure>
+</div>
 
 Note how again I only invert icons in `dark.css` but not in `light.css`, and how `:hover`
 gets a different inversion intensity in the two cases to make the icon appear
@@ -722,10 +705,10 @@ The demo below shows the element in action
       background-image: url(dark-mode-toggle-dark.png);
       background-repeat: no-repeat;"></div>
   </div>
-  <figcaption class="w-figcaption">Fig. — <code>&lt;dark-mode-toggle&gt;</code> custom element</figcaption>
+  <figcaption class="w-figcaption"><code>&lt;dark-mode-toggle&gt;</code> custom element</figcaption>
 </figure>
 
-<div style="height: 800px; width: 100%;">
+<div class="w-screenshot" style="height: 800px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     src="https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html"
