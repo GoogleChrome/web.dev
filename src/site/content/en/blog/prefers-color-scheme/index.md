@@ -223,6 +223,33 @@ It works with the following values:
 
 ## Supporting dark mode
 
+### Finding out if dark mode is supported by the browser
+
+As dark mode is reported through a media query, you can easily check if the current browser
+supports dark mode by checking if the media query `prefers-color-scheme` matches at all.
+Note how I don’t include any value, but purely check if the media query alone matches.
+Actually, I have silently used this pattern already above in the
+[loading strategy](#loading-strategy) code snippet.
+
+```js
+if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+  console.log('🎉 Dark mode is supported');
+}
+```
+
+At the time of writing, `prefers-color-scheme` is supported on both desktop and mobile (where available)
+by Chrome and Edge as of version 76, Firefox as of version 67,
+and Safari as of version 12.1 on macOS and as of version 13 on iOS.
+For all other browsers, you can check the [Can I use support tables](https://caniuse.com/#feat=prefers-color-scheme).
+
+{% Aside 'note' %}
+  There is a custom element [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle)
+  available that adds dark mode support to older browsers.
+  I write about it [further down in this article](#the-lessdark-mode-togglegreater-custom-element).
+{% endAside%}
+
+### Dark mode in practice
+
 Let’s finally see how supporting dark mode looks like in practice.
 Just like with the [Highlander](https://en.wikipedia.org/wiki/Highlander_(film)),
 with dark mode, *there can be only one*: dark or light, but never both!
@@ -413,31 +440,6 @@ so that they never compete with resources that are needed by the site right now.
   <img src="unsupported.png" alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
   <figcaption class="w-figcaption">Fig. — Site in default light mode on a browser that doesn’t support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
 </figure>
-
-### Finding out if dark mode is supported by the browser
-
-As dark mode is reported through media queries, you can easily check if the current browser
-supports dark mode by checking if the media query `prefers-color-scheme` matches at all.
-Note how I don’t include any value, but purely check if the media query alone matches.
-Actually, I have silently used this pattern already above in the
-[loading strategy](#loading-strategy) code snippet.
-
-```js
-if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
-  console.log('🎉 Dark mode is supported');
-}
-```
-
-At the time of writing, `prefers-color-scheme` is supported on both desktop and mobile (where available)
-by Chrome and Edge as of version 76, Firefox as of version 67,
-and Safari as of version 12.1 on macOS and as of version 13 on iOS.
-For all other browsers, you can check the [Can I use support tables](https://caniuse.com/#feat=prefers-color-scheme).
-
-{% Aside 'note' %}
-  There is a custom element [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle)
-  available that adds dark mode support to older browsers.
-  I write about it [further down in this article](#the-lessdark-mode-togglegreater-custom-element).
-{% endAside%}
 
 ### Reacting on dark mode changes
 
