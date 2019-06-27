@@ -162,7 +162,7 @@ Finally, dark mode is known to save a *lot* of energy on
 <abbr title="Active-Matrix Organic Light-Emitting Diode">AMOLED</abbr> screens.
 Android case studies that focused on popular Google apps
 like YouTube have shown that the power savings can be up to 60%.
-The video below has more details on these case studies and the power savings.
+The video below has more details on these case studies and the power savings per app.
 
 <figure class="w-figure w-figure--fullbleed">
   {% YouTube 'N_6sPd0Jd3g?start=305' %}
@@ -201,8 +201,8 @@ a way for sites to detect the user’s preferred way to display content.
 {% Aside 'note' %}
   ☝️ An established user preference media feature is `prefers-reduced-motion`
   that lets you detect the desire for less motion on a page.
-  I have written about
-  [`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
+  I have
+  [written about `prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion)
   before.
 {% endAside %}
 
@@ -251,7 +251,7 @@ For all other browsers, you can check the [Can I use support tables](https://can
 
 Let’s finally see how supporting dark mode looks like in practice.
 Just like with the [Highlander](https://en.wikipedia.org/wiki/Highlander_(film)),
-with dark mode, *there can be only one*: dark or light, but never both!
+with dark mode *there can be only one*: dark or light, but never both!
 Why do I mention this? Because this fact should have an impact on the loading strategy.
 **Please don’t force users to download CSS in the critical rendering path
 that is for a mode they don’t currently use.**
@@ -268,7 +268,8 @@ into three parts in order to [defer non-critical CSS](/defer-non-critical-css/):
 The two latter ones, `light.css` and `dark.css`,
 are loaded conditionally with a `<link media>` query.
 Initially,
-[not all browsers will support `prefers-color-scheme`](https://caniuse.com/#feat=prefers-color-scheme),
+[not all browsers will support `prefers-color-scheme`](https://caniuse.com/#feat=prefers-color-scheme)
+(detectable using the [pattern above](#finding-out-if-dark-mode-is-supported-by-the-browser)),
 which I deal with dynamically by loading the default `light.css` file
 via a conditionally inserted `<link rel="stylesheet">` element in a minuscule inline script
 (light is an arbitrary choice, I could also have made dark the default fallback experience).
@@ -306,7 +307,7 @@ I make maximum use of [CSS variables](https://developer.mozilla.org/en-US/docs/W
 this allows my generic `style.css` to be, well, generic,
 and all the light or dark mode customization happens in the two other files `dark.css` and `light.css`.
 Below you can see an excerpt of the actual styles, but it should suffice to convey the overall idea.
-I declare two variables, `--color` and `--background-color`
+I declare two variables, `-⁠-⁠color` and `-⁠-⁠background-color`
 that essentially create a *dark-on-light* and a *light-on-dark* baseline theme.
 
 ```css
@@ -369,8 +370,8 @@ The exact details of `color-scheme` are specified in
 Everything else is then just a matter of defining CSS variables
 for things that matter on my site.
 Semantically organizing styles helps a lot when working with dark mode.
-For example, rather than `-⁠-highlight-yellow`, consider calling the variable
-`--accent-color`, as “yellow” may actually not be yellow in dark mode or vice versa.
+For example, rather than `-⁠-⁠highlight-yellow`, consider calling the variable
+`-⁠-⁠accent-color`, as “yellow” may actually not be yellow in dark mode or vice versa.
 Below is an example of some more variables that I use in my example.
 
 ```css
@@ -481,13 +482,13 @@ I refer to this as *re-colorization*.
   <figure class="w-figure">
     <img src="./hero-dark.png" alt="Hero image slightly darkened in dark mode.">
     <figcaption class="w-figcaption">
-      Hero image slightly darkened in dark mode
+      Hero image slightly darkened in dark mode.
     </figcaption>
   </figure>
   <figure class="w-figure">
     <img src="./hero-light.png" alt="Regular hero image in light mode.">
     <figcaption class="w-figcaption">
-      Regular hero image in light mode
+      Regular hero image in light mode.
     </figcaption>
   </figure>
 </div>
@@ -546,13 +547,13 @@ in the regular and in the [`:hover`](https://developer.mozilla.org/en-US/docs/We
   <figure class="w-figure">
     <img src="./icons-dark.png" alt="Icons are inverted in dark mode.">
     <figcaption class="w-figcaption">
-      Icons are inverted in dark mode
+      Icons are inverted in dark mode.
     </figcaption>
   </figure>
   <figure class="w-figure">
     <img src="./icons-light.png" alt="Regular icons in light mode.">
     <figcaption class="w-figcaption">
-      Regular icons in light mode
+      Regular icons in light mode.
     </figcaption>
   </figure>
 </div>
@@ -584,7 +585,7 @@ img[src*=".svg"]:hover {
 }
 ```
 
-### Use `currentColor` for inline SVGs
+<h3>Use <code style="color: currentColor;">currentColor</code> for inline SVGs</h3>
 
 For *inline* SVG images, instead of [using inversion filters](#invert-vector-graphics-and-icons),
 you can leverage the [`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword)
@@ -620,7 +621,7 @@ Switching from dark mode to light mode or vice versa can be smoothed thanks to t
 that both `color` and `background-color` are
 [animatable CSS properties](https://www.quackit.com/css/css3/animations/animatable_properties/).
 Creating the animation is as easy as declaring two `transition`s for the two properties.
-The example below illustrates the overall idea and you can experience it in the
+The example below illustrates the overall idea, you can experience it live in the
 [demo](https://dark-mode-baseline.glitch.me/).
 
 ```css
@@ -680,13 +681,13 @@ in dark, but still prefer to see their webpages the way they are used to seeing 
 A great pattern is to initially adhere to the signal the browser sends through
 `prefers-color-scheme`, but to then optionally allow users to override their system-level setting.
 
-#### The `<dark-mode-toggle>` custom element
+<h4>The <code style="color: currentColor;">&lt;dark-mode-toggle&gt;</code> custom element</h4>
 
 You can of course create the code for this yourself, but you can also just use
 a ready-made custom element (web component) that I have created right for this purpose.
 It’s called [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle)
-and it adds a toggle (dark mode on/off) or
-a theme switcher (theme light/dark) to your page that you can fully customize.
+and it adds a toggle (dark mode: on/off) or
+a theme switcher (theme: light/dark) to your page that you can fully customize.
 The demo below shows the element in action
 (oh, and I have also 🤫 silently snuck it in all of the
 [other](https://dark-mode-baseline.glitch.me/)
@@ -718,7 +719,6 @@ The demo below shows the element in action
   </figure>
 </div>
 
-
 Try clicking or tapping the dark mode controls in the upper right corner in the demo below.
 If you check the checkbox in the third and the fourth control, see how your mode selection
 is remembered even when you reload the page.
@@ -738,13 +738,13 @@ but enjoy your site in light mode or vice versa.
 Working with and supporting dark mode is fun and opens up new design avenues.
 For some of your visitors it can be the difference between not being able to handle your site
 and being a happy user.
-There are some pitfalls and careful testing is required, but dark mode is definitely a great opportunity
-for you to show that you care about all of your users.
+There are some pitfalls and careful testing is definitely required,
+but dark mode is definitely a great opportunity for you to show that you care about all of your users.
 The best practices mentioned in this post and helpers like the
 [`<dark-mode-toggle>`](https://github.com/GoogleChromeLabs/dark-mode-toggle) custom element
 should make you confident in your ability to create an amazing dark mode experience.
 [Let me know on Twitter](https://twitter.com/tomayac) what you create and if this post was useful
-or suggestions for improving it.
+or also suggestions for improving it.
 Thanks for reading! 🌒
 
 ## Related links
@@ -762,10 +762,10 @@ Resources for the `color-scheme` meta tag and CSS property:
   - [HTML WHATWG GitHub Issue for the meta tag](https://github.com/whatwg/html/issues/4504)
 
 General dark mode links:
-  - [Material Design — Dark Theme](https://material.io/design/color/dark-theme.html)
+  - [Material Design—Dark Theme](https://material.io/design/color/dark-theme.html)
   - [Dark Mode in Web Inspector](https://webkit.org/blog/8892/dark-mode-in-web-inspector/)
   - [Dark Mode Support in WebKit](https://webkit.org/blog/8840/dark-mode-support-in-webkit/)
-  - [Apple Human Interface Guidelines — Dark Mode](https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/dark-mode/)
+  - [Apple Human Interface Guidelines—Dark Mode](https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/dark-mode/)
 
 Background research articles for this post:
   - [What Does Dark Mode’s “supported-color-schemes” Actually Do? 🤔](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d)
@@ -778,8 +778,9 @@ The `prefers-color-scheme` media feature, the `color-scheme` CSS property,
 and the related meta tag are the implementation work of 👏 [Rune Lillesveen](https://twitter.com/runeli).
 Rune is also a co-editor of the [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/) spec.
 I would like to 🙏 thank [Lukasz Zbylut](https://www.linkedin.com/in/lukasz-zbylut/),
-[Rowan Merewood](https://twitter.com/rowan_m), and
-[Chirag Desai](https://www.linkedin.com/in/chiragd/)
+[Rowan Merewood](https://twitter.com/rowan_m),
+[Chirag Desai](https://www.linkedin.com/in/chiragd/),
+and [Rob Dodson](https://twitter.com/rob_dodson)
 for their thorough reviews of this article.
 The [loading strategy](#loading-strategy) is the brainchild of [Jake Archibald](https://twitter.com/jaffathecake).
 [Emilio Cobos Álvarez](https://twitter.com/ecbos_) has pointed me to the correct `prefers-color-scheme` detection method.
