@@ -708,6 +708,12 @@ The demo below shows the element in action
   <figcaption class="w-figcaption"><code>&lt;dark-mode-toggle&gt;</code> custom element</figcaption>
 </figure>
 
+Try clicking or tapping the dark mode controls in the upper right corner in the demo below.
+If you check the checkbox in the third and the fourth control, see how your mode selection
+is remembered even when you reload the page.
+This allows your visitors to keep their operating system in dark mode,
+but enjoy your site in light mode or vice versa.
+
 <div class="w-screenshot" style="height: 800px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
