@@ -51,6 +51,10 @@ CSS `backdrop-filter` applies one or more filters to the backdrop of an element,
 
 In order for the backdrop-filter to have any effect, some portion of the overlaying element needs to be transparent. Therefore, overlaying elements without any transparency will produce no backdrop-filter effects.
 
+<figure class="w-figure w-figure--center">
+  <img src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop-filter.png" alt="2 comparisons where one is opaque and the other has transparency and therefore blurred translucency">
+</figure>
+
 Backdrop-filters are like CSS filters. When the property is not 'none', a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) are created. Note, only elements with absolute and fixed position descendants will get a containing block.
 
 <div>
