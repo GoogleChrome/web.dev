@@ -2,5 +2,5 @@ tasks:
   - init: npm ci
     command: npm run dev
 ports:
-  - port: 8080
-    onOpen: open-preview
+- port: 8080
+  onOpen: open-preview
