@@ -594,7 +594,12 @@ This lets you use the `color` value on properties that do not receive it by defa
 Conveniently, if `currentColor` is used as the value of the SVG
 [`fill` or `stroke` attributes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes#Fill_and_Stroke_Attributes),
 it instead takes its value from the inherited value of the color property.
-Please note that this only works for *inline* SVGs, but not SVGs that are referenced as the `src` of an image.
+Even better: this also works for
+[`<svg><use href="…"></svg>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use),
+so you can have separate resources
+and `currentColor` will still be applied in context.
+Please note that this only works for *inline* or `<use href="…">` SVGs,
+but not SVGs that are referenced as the `src` of an image or somehow via CSS.
 You can see this applied in the demo below.
 
 ```html/2
@@ -784,6 +789,8 @@ and [Rob Dodson](https://twitter.com/rob_dodson)
 for their thorough reviews of this article.
 The [loading strategy](#loading-strategy) is the brainchild of [Jake Archibald](https://twitter.com/jaffathecake).
 [Emilio Cobos Álvarez](https://twitter.com/ecbos_) has pointed me to the correct `prefers-color-scheme` detection method.
+The tip with referenced SVGs and `currentColor` came from
+[Timothy Hatcher](https://twitter.com/xeenon).
 Finally, I am thankful to the many anonymous participants of the various user studies
 that have helped shape the recommendations in this article.
 Hero image by [Nathan Anderson](https://unsplash.com/photos/kujXUuh1X0o).
