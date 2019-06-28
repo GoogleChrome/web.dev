@@ -96,7 +96,7 @@ module.exports = {
 
 1. Build your application, specifying your extended webpack config with the `--extra-webpack-config` option.
 
-For a video introduction, check the video below.
+For a quick walkthrough, check out this video:
 
 <div style="width:100%; padding-top: 56.25%; position: relative;">
 <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
