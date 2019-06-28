@@ -120,7 +120,7 @@ Guess.js will add predictive prefetching going through the following steps:
 
 ## Learn more
 
-You learn more about Guess.js in the following resources:
+To learn more about Guess.js, check out these resources:
 
 - [Faster Web Navigations with Predictive Prefetching](https://www.youtube.com/watch?v=0jB4YWgAxUo)
 - [Introducing Guess.js - a toolkit for enabling data-driven user-experiences on the Web](https://blog.mgechev.com/2018/05/09/introducing-guess-js-data-driven-user-experiences-web/)
