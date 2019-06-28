@@ -113,7 +113,7 @@ Guess.js will add predictive prefetching going through the following steps:
 1. Extract data from your favorite analytics provider
 1. Map the URLs from the report to the JavaScript chunks produced by webpack
 1. Based on the extracted data, it creates a simple predictive model of which pages a user is likely to navigate to from any given page.
-1. Invoke the model for each chunk, predicting which are the other chunks likely to be needed next
+1. It invokes the model for each JavaScript chunk, predicting the other chunks that are likely to be needed next.
 1. Add prefetching instructions in each chunk
 
 ![How Guess.js works](guess-2.png)
