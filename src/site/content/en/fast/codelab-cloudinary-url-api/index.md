@@ -113,7 +113,7 @@ Which means that you can auto-optimize any image by prepending the following to 
 https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/
 ```
 
-### RESULTS
+### Results
 
 After replacing the link of the first image (line #25) with the fetch URL, your HTML should look like this:
 
