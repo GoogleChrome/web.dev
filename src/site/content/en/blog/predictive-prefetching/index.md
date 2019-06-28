@@ -34,7 +34,7 @@ Lazy-loading is an efficient technique to reduce the bytes of JavaScript that yo
 - Component-level code-splitting
 - Route-level code-splitting
 
-With component-level code-splitting, you can move individual components to separate JavaScript chunks. On particular events, you can load the scripts and render the components.
+With component-level code-splitting, you can move individual components into separate JavaScript chunks. On particular events, you can load the relevant scripts and render the components.
 
 Route-level code-splitting has similar functionality with the difference that you move entire routes into independent chunks. Once the user performs a transition from one route to another, they have to download the associated JavaScript and bootstrap the requested page. All these operations can lead to significant delays, especially on slow networks.
 
