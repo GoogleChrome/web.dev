@@ -96,7 +96,7 @@ module bundler. The specific version can be seen in `package.json`.
 ```json/2
 "devDependencies": {
   //...
-  <strong>"webpack": "^4.16.4",</strong>
+  "webpack": "^4.16.4",
   //...
 }
 ```
@@ -335,7 +335,7 @@ module.exports = {
   //...
   plugins: [
     //...
-    <strong>new CompressionPlugin()</strong>
+    new CompressionPlugin()
   ]
 }
 ```

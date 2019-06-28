@@ -63,7 +63,7 @@ It's still recommended that you configure the `Cache-Control` headers on your we
 server, even when you know that you're using the Cache Storage API. You can
 usually get away with setting `Cache-Control: no-cache` for unversioned URLs,
 and/or `Cache-Control: max-age=31536000` for URLs that contain versioning
-information, like hashes. 
+information, like hashes.
 
 When populating the Cache Storage API cache, the browser
 [defaults to checking for existing entries](https://jakearchibald.com/2016/caching-best-practices/#the-service-worker-the-http-cache-play-well-together-dont-make-them-fight)
@@ -119,7 +119,7 @@ and the related
 syntax, before diving in.
 
 {% Aside 'codelab' %}
-[Make an application network resilient by registering a service worker](/codelab-service-workers).
+[Make an application reliable by registering a service worker](/codelab-service-workers).
 {% endAside %}
 
 ## Don't deploy that code… yet
