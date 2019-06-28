@@ -33,7 +33,7 @@
       {% if date %}
         <div class="w-author__published">
           <time>{{page.date | prettyDate}}</time>
-          {% if updated %} · Updated on <time>{{ updated | prettyDate }}</time> {% endif %}
+          {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
 
