@@ -70,7 +70,7 @@ If you're not using Google Analytics, you can specify a `reportProvider` and dow
 
 ### Integration with Angular
 
-To integrate Guess.js with an Angular CLI project, you can use [`ngx-build-plus`](https://github.com/manfredsteyer/ngx-build-plus). The steps you need to go through include:
+To integrate Guess.js with an Angular CLI project, use the [`ngx-build-plus`](https://github.com/manfredsteyer/ngx-build-plus) package:
 
 * Install of `ngx-build-plus`, `guess-webpack`, and `guess-parser`
 * Add the `GuessPlugin` as part of your webpack configuration specifying a Google Analytics view ID or, if using different analytics provider, a `reportProvider`:
