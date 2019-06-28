@@ -115,7 +115,7 @@ https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/
 
 ### Results
 
-After replacing the link of the first image (line #25) with the fetch URL, your HTML should look like this:
+After updating the `src` attribute of the first image (line #25) with the fetch URL, your HTML should look like this:
 
 ```html/2/1
 <div class="wrapper">
