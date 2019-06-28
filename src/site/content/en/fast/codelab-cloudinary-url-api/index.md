@@ -239,7 +239,7 @@ the JPEG images on your page are optimally compressed.
 
 - To preview the site press the **View App** button (in the right-bottom corner).
 - Run the Lighthouse performance audit (Lighthouse ❯ Options ❯ Performance) on
-  the <a target="_blank" rel="noopener noreferrer" href="https://codelab-cloudinary.glitch.me/">live version</a> of your Glitch and verify that the "Efficiently encode
+  the live version of your Glitch and verify that the "Efficiently encode
   images" as well as "Serve images in next-gen formats" audits were passed.
 
 ### RESULTS
