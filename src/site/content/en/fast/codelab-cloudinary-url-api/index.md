@@ -75,7 +75,7 @@ https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_im
 https://res.cloudinary.com/demo/image/fetch/<transformations>/<remote_image_url>
 ```
 
-### #2 REPLACE `<transformations>`
+### #2. Replace `<transformations>`
 
 Replace `<transformations>` with relevant [Image Transformations](https://cloudinary.com/documentation/image_transformations). Use comma-separated values to optimize the image quality and format delivery by using `q_auto,f_auto`.
 
