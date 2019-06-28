@@ -27,7 +27,7 @@ Click [here](https://cloudinary.com/users/register/free) to sign up for a free C
   </figcaption>
 </figure>
 
-## Next up
+## The Cloudinary Fetch URL
 
 This codelab demonstrates how you can use the power of a cloud to optimize your images and serve next-gen formats dynamically. You will learn how to use dynamic cloud Fetch and Image Transformations features. You will replace the image links with Fetch URLs (explained below) that will automagically upload, transform, and optimize your images.
 
@@ -47,7 +47,7 @@ For example:
 - Click the **Remix to Edit** button (in the top-right corner) to make the project editable.
 - In the next few steps, you will replace the image link on Line #25 of `index.html` file, with a fetch URL.
 
-### Fetch URL
+### Create a Fetch URL
 
 To create a fetch URL, you have to prepend the following prefix to the existing URL of the image.
 
@@ -64,7 +64,7 @@ There are three dynamic parts in this fetch URL which are explained below.
 2. `<transformations>`
 3. `<remote_image_url>`
 
-### #1 REPLACE `<cloud_name>`
+### #1. Replace `<cloud_name>`
 
 Replace `<cloud_name>` with your Cloudinary [cloud name](https://cloudinary.com/documentation/solution_overview?query=cloud%20name&c_query=Account%20and%20API%20setup%20%E2%80%BA%20Identifiers%20%E2%80%BA%20Cloud%20name#cloud_name). For example, we are going to use the `demo` cloud name here.
 
@@ -75,7 +75,7 @@ https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_im
 https://res.cloudinary.com/demo/image/fetch/<transformations>/<remote_image_url>
 ```
 
-### #2 REPLACE `<transformations>`
+### #2. Replace `<transformations>`
 
 Replace `<transformations>` with relevant [Image Transformations](https://cloudinary.com/documentation/image_transformations). Use comma-separated values to optimize the image quality and format delivery by using `q_auto,f_auto`.
 
@@ -89,7 +89,7 @@ While there are many [Image transformations](https://cloudinary.com/documentatio
 1. [**Quality**](https://cloudinary.com/documentation/image_transformation_reference#quality_parameter): The parameter `q` controls the quality of the image delivered by the cloud. You can set `q_1` to `q_100` 1 is the lowest quality, and 100 is the highest. Use `q_auto` to calculate the optimal quality of an image automatically.
 2. [**Format**](https://cloudinary.com/documentation/image_transformation_reference#format_parameter): The parameter `f` can automatically convert delivered images to WebP and JPEG-XR on supported browsers to save bandwidth and optimize delivery time. Again use `f_auto` to auto format the image.
 
-### #3 REPLACE `<remote_image_url>`
+### #3. Replace `<remote_image_url>`
 
 Now replace the `<remote_image_url>` with the original link of the first image. The final URL looks like this:
 
@@ -113,9 +113,9 @@ Which means that you can auto-optimize any image by prepending the following to 
 https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/
 ```
 
-### RESULTS
+### Results
 
-After replacing the link of the first image (line #25) with the fetch URL, your HTML should look like this:
+After updating the `src` attribute of the first image (line #25) with the fetch URL, your HTML should look like this:
 
 ```html/2/1
 <div class="wrapper">
