@@ -7,7 +7,7 @@ alt: Guess.js logo
 authors:
   - mgechev
 description: |
-  Code-splitting allows you to speed up your applications, but it may slow down subsequent-navigations. Predictive prefetching is an efficient way to empower data analytics to smartly prefetch what the user is likely to use next, optimizing the network utilization.
+  Code-splitting allows you to speed up your applications, but it may slow down subsequent navigation. Predictive prefetching is an efficient way to use data analytics to smartly prefetch what the user is likely to use next, optimizing network utilization.
 tags:
   - post
   - performance
