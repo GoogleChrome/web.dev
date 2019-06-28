@@ -62,35 +62,15 @@ plugins: [
 
 If you're not using Google Analytics, you can specify a `reportProvider` and download data from your favorite service.
 
-### Integration with Angular
+### Integration with frameworks
 
-To integrate Guess.js with an Angular CLI project, use the [`ngx-build-plus`](https://github.com/manfredsteyer/ngx-build-plus) package:
+To learn more about how to integrate Guess.js with your favorite framework check out these resources:
 
-1.  Install `ngx-build-plus`, `guess-webpack`, and `guess-parser`.
-1. Add `GuessPlugin` to your webpack configuration. Specify a Google Analytics view ID or, if using different analytics provider, a `reportProvider`:
+1. [Using Guess.js with Angular](https://guess-js.github.io/docs/angular)
+1. [Using Guess.js with Next.js](https://guess-js.github.io/docs/next)
+1. [Using Guess.js with Nuxt.js](https://guess-js.github.io/docs/nuxt)
 
-    ```js
-    const { GuessPlugin } = require('guess-webpack');
-    const { parseRoutes } = require('guess-parser');
-
-    module.exports = {
-      plugins: [
-	new GuessPlugin({
-	  GA: 'VIEW_ID',
-	  runtime: {
-	    delegate: false
-	  },
-	  routeProvider() {
-	    return parseRoutes('.');
-	  }
-	})
-      ]
-    };
-    ```
-
-1. Build your application, specifying your extended webpack config with the `--extra-webpack-config` option.
-
-For a quick walkthrough, check out this video:
+For a quick walkthrough on the integration with Angular, check out this video:
 
 {% YouTube '5FRxQiGqqmM' %}
 
