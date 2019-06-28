@@ -13,15 +13,9 @@ tags:
   - performance
 ---
 
-In my "[Faster Web Navigations with Predictive Prefetching](https://www.youtube.com/watch?v=0jB4YWgAxUo)" session at Google I/O 2019, I began by talking about optimizing web apps with code-splitting and the potential performance implications for subsequent page navigations. In the second part of the talk, I discussed how to improve navigation speed by using Guess.js to set up predictive prefetching:
+In my "[Faster Web Navigation with Predictive Prefetching](https://www.youtube.com/watch?v=0jB4YWgAxUo)" session at Google I/O 2019, I began by talking about optimizing web apps with code-splitting and the potential performance implications for subsequent page navigation. In the second part of the talk, I discussed how to improve navigation speed by using Guess.js to set up predictive prefetching:
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
-50%; transform: translate(-50%,-50%);"
-src="https://www.youtube.com/embed/0jB4YWgAxUo" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
+{% YouTube '0jB4YWgAxUo' %}
 
 ## Code-splitting for faster web apps
 
@@ -40,8 +34,6 @@ With route-level code-splitting, however, you move entire _routes_ into independ
 
 ## Prefetching JavaScript
 
-![Prefetching example](guess-1.png)
-
 Prefetching allows the browser to download and cache resources that the user is likely to need soon. The usual method is to use `<link rel="prefetch">`, but there are two common pitfalls:
 
 - Prefetching too many resources (_overfetching_) consumes a lot of data.
@@ -49,11 +41,13 @@ Prefetching allows the browser to download and cache resources that the user is 
 
 Predictive prefetching solves these problems by using a report of users' navigational patterns to determine what assets to prefetch.
 
+![Prefetching example](guess-1.png)
+
 ## Predictive prefetching with Guess.js
 
 [Guess.js](https://github.com/guess-js) is a JavaScript library that provides predictive prefetching functionality. Guess.js consumes a report from Google Analytics or another analytics provider to build a predictive model that can be used to smartly prefetch only what the user is likely to need.
 
-Guess.js has integration with Angular, Next.js, Nuxt.js, and Gatsby. To use it in your application, you should add a single line of webpack configuration specifying a [Google Analytics view ID](https://stackoverflow.com/questions/36898103/what-is-a-viewid-in-google-analytics):
+Guess.js has integration with [Angular](https://angular.io), [Next.js](https://nextjs.org/), [Nuxt.js](https://nuxtjs.org/), and [Gatsby](https://www.gatsbyjs.org/). To use it in your application, you should add a single line of webpack configuration specifying a [Google Analytics view ID](https://stackoverflow.com/questions/36898103/what-is-a-viewid-in-google-analytics):
 
 ```js/0,5
 const { GuessPlugin } = require('guess-webpack');
@@ -75,42 +69,36 @@ To integrate Guess.js with an Angular CLI project, use the [`ngx-build-plus`](ht
 1.  Install `ngx-build-plus`, `guess-webpack`, and `guess-parser`.
 1. Add `GuessPlugin` to your webpack configuration. Specify a Google Analytics view ID or, if using different analytics provider, a `reportProvider`:
 
-```js
-const { GuessPlugin } = require('guess-webpack');
-const { parseRoutes } = require('guess-parser');
+    ```js
+    const { GuessPlugin } = require('guess-webpack');
+    const { parseRoutes } = require('guess-parser');
 
-module.exports = {
-  plugins: [
-    new GuessPlugin({
-      GA: 'VIEW_ID',
-      runtime: {
-	      delegate: false
-      },
-      routeProvider() {
-	      return parseRoutes('.');
-      }
-    })
-  ]
-};
-```
+    module.exports = {
+      plugins: [
+	new GuessPlugin({
+	  GA: 'VIEW_ID',
+	  runtime: {
+	    delegate: false
+	  },
+	  routeProvider() {
+	    return parseRoutes('.');
+	  }
+	})
+      ]
+    };
+    ```
 
 1. Build your application, specifying your extended webpack config with the `--extra-webpack-config` option.
 
 For a quick walkthrough, check out this video:
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
-50%; transform: translate(-50%,-50%);"
-src="https://www.youtube.com/embed/5FRxQiGqqmM" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
+{% YouTube '5FRxQiGqqmM' %}
 
-## How does Guess.js work?
+### How does Guess.js work?
 
-Guess.js will add predictive prefetching going through the following steps:
+Here's how Guess.js implements predictive prefetching:
 
-1. Extract data from your favorite analytics provider
+1. It first extracts data for the user navigational patterns from your favorite analytics provider.
 1. It then maps the URLs from the report to the JavaScript chunks produced by webpack.
 1. Based on the extracted data, it creates a simple predictive model of which pages a user is likely to navigate to from any given page.
 1. It invokes the model for each JavaScript chunk, predicting the other chunks that are likely to be needed next.
@@ -122,7 +110,7 @@ Guess.js will add predictive prefetching going through the following steps:
 
 To learn more about Guess.js, check out these resources:
 
-- [Faster Web Navigations with Predictive Prefetching](https://www.youtube.com/watch?v=0jB4YWgAxUo)
+- [Faster Web Navigation with Predictive Prefetching](https://www.youtube.com/watch?v=0jB4YWgAxUo)
 - [Introducing Guess.js - a toolkit for enabling data-driven user-experiences on the Web](https://blog.mgechev.com/2018/05/09/introducing-guess-js-data-driven-user-experiences-web/)
 - [Documentation](https://guess-js.github.io)
 - [Source code](https://github.com/guess-js)
