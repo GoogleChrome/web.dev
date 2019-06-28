@@ -64,7 +64,7 @@ There are three dynamic parts in this fetch URL which are explained below.
 2. `<transformations>`
 3. `<remote_image_url>`
 
-### #1 REPLACE `<cloud_name>`
+### #1. Replace `<cloud_name>`
 
 Replace `<cloud_name>` with your Cloudinary [cloud name](https://cloudinary.com/documentation/solution_overview?query=cloud%20name&c_query=Account%20and%20API%20setup%20%E2%80%BA%20Identifiers%20%E2%80%BA%20Cloud%20name#cloud_name). For example, we are going to use the `demo` cloud name here.
 
