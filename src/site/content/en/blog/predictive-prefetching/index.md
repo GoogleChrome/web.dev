@@ -44,7 +44,7 @@ With route-level code-splitting, however, you move entire _routes_ into independ
 
 Prefetching allows the browser to download and cache resources that the user is likely to need soon. The usual method is to use `<link rel="prefetch">`, but there are two common pitfalls:
 
-- Prefetching too many resources and consuming a lot of data (*overfetching*)
+- Prefetching too many resources (_overfetching_) consumes a lot of data.
 - Never prefetching the resources the user needs
 
 Predictive allows you to solve these problems by consuming a report for the users' navigational patterns.
