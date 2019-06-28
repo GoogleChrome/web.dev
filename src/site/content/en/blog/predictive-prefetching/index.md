@@ -49,7 +49,7 @@ Prefetching is a technique which allows you to download in the background and sa
 
 Predictive allows you to solve these problems by consuming a report for the users' navigational patterns.
 
-## Predictive Prefetching with Guess.js
+## Predictive prefetching with Guess.js
 
 A JavaScript library which provides predictive prefetching functionality is [Guess.js](https://github.com/guess-js). Guess.js consumes a report from Google Analytics or another analytics provider to build a predictive model that could be used for smartly prefetching only what the user may need in the future.
 
