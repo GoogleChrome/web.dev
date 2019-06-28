@@ -1386,6 +1386,17 @@
       "family": "Anstey"
     }
   },
+  "mfriesenhahn": {
+    "name": {
+      "given": "Michael",
+      "family": "Friesenhahn"
+    },
+    "country": "US",
+    "github": "mfriesenhahn",
+    "description": {
+      "en": "Michael is a Tech Writer"
+    }
+  },
   "ahmadawais": {
     "name": {
       "given": "Ahmad",
