@@ -242,7 +242,7 @@ the JPEG images on your page are optimally compressed.
   the live version of your Glitch and verify that the "Efficiently encode
   images" as well as "Serve images in next-gen formats" audits were passed.
 
-### RESULTS
+### Results
 
 Lighthouse audit results for when images were not optimized.
 
