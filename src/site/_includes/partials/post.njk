@@ -31,7 +31,10 @@
       {% endif %}
 
       {% if date %}
-        <time class="w-author__published">{{date | prettyDate}}</time>
+        <div class="w-author__published">
+          <time>{{page.date | prettyDate}}</time>
+          {% if updated %} · Updated on <time>{{ updated | prettyDate }}</time> {% endif %}
+        </div>
       {% endif %}
 
       {% if authors %}
@@ -59,7 +62,11 @@
 
     <div class="w-post-github-link w-mt--l w-mb--l">
       <span class="w-mr--sm">
+        {% if updated %}
+        Last updated: <time>{{ updated | prettyDate }}</time>
+        {% else %}
         Last updated: <time>{{ page.date | prettyDate }}</time>
+        {% endif %}
       </span>
       <a
         href="{{ page.inputPath | githubLink }}"

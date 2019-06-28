@@ -26,7 +26,12 @@ this inline style tag.
   <web-codelab glitch="{{ glitch }}" preview-size="{{ previewSize }}" attribution-hidden>
     <div class="web-codelab-instructions">
       <h1 class="w-headline w-headline--two w-mb--sm">{{ title }}</h1>
-      <time class="w-author__published">{{date | prettyDate}}</time>
+      {% if date %}
+        <div class="w-author__published">
+          <time>{{page.date | prettyDate}}</time>
+          {% if updated %} · Updated on <time>{{ updated | prettyDate }}</time> {% endif %}
+        </div>
+      {% endif %}
 
       {% if authors %}
         <div class="w-authors w-mt--xl w-pt--sm">
