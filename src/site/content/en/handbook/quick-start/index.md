@@ -11,7 +11,7 @@ description: |
 Content creation for web.dev has three phases: planning, writing, and publishing.
 
 ## Planning
-1. Start a content proposal issue on GitHub using [this issue template](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=content+request&template=content_request.md&title=). The checklist in your issue will guide you through the rest of the process.
+1. Start a content proposal issue on GitHub using [this issue template](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=content+request&template=content_request.md&title=). The checklist in your issue guides you through the rest of the process.
 1. Create a copy of [this document template](https://docs.google.com/document/d/1ydauCufwwavStaKxhIDHuNivVxgQBOdDno4uLjGIjmE/edit?usp=sharing) to briefly write up your content idea. Put the link to your doc in your GitHub issue.
 1. The web.dev team will take a look to see if the idea fits with the [goals of the site](/about). If the idea is approved, it gets slated for a publication date!
 
@@ -25,9 +25,9 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. The tech writer will review using the [web.dev content checklist](/handbook/content-checklist) and work with you to polish the piece.
 
 ## Publishing
-1. Once you and the tech writer think the piece is good to go, submit a pull request on GitHub with your content authored in Markdown. (Check out the "[web.dev markup](/handbook/#web.dev-markup)" section for details.)
+1. Once you and the tech writer think the piece is good to go, submit a pull request on GitHub with your content authored in Markdown. Check out the [web.dev markup](/handbook/#web.dev-markup) section for details.
 1. The web.dev team will give your Markdown a once over. If everything looks good, your pull request is merged, and your piece is published! 🎉
 
 {% Aside %}
-Googlers: if you'd like to see our process in more detail, check out the [web.dev Process Document](https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY).
+Googlers: If you'd like to see our process in more detail, check out the [web.dev Process Document](https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY).
 {% endAside %}
