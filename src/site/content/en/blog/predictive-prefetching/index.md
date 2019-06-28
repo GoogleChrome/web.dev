@@ -42,7 +42,7 @@ With route-level code-splitting, however, you move entire _routes_ into independ
 
 ![Prefetching example](guess-1.png)
 
-Prefetching is a technique which allows you to download in the background and save into the cache resources that you think the user will need soon. The usual way to do this is by using `<link rel="prefetch">`. Two common pitfalls with prefetching are:
+Prefetching allows the browser to download and cache resources that the user is likely to need soon. The usual method is to use `<link rel="prefetch">`, but there are two common pitfalls:
 
 - Prefetching too many resources and consuming a lot of data (*overfetching*)
 - Never prefetching the resources the user needs
