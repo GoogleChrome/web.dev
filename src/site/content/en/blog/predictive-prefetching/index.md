@@ -106,7 +106,7 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 </div>
 
-## How Does Guess.js Work
+## How does Guess.js work?
 
 Guess.js will add predictive prefetching going through the following steps:
 
