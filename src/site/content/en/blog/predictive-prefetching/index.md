@@ -51,7 +51,7 @@ Predictive prefetching solves these problems by using a report of users' navigat
 
 ## Predictive prefetching with Guess.js
 
-A JavaScript library which provides predictive prefetching functionality is [Guess.js](https://github.com/guess-js). Guess.js consumes a report from Google Analytics or another analytics provider to build a predictive model that could be used for smartly prefetching only what the user may need in the future.
+[Guess.js](https://github.com/guess-js) is a JavaScript library that provides predictive prefetching functionality. Guess.js consumes a report from Google Analytics or another analytics provider to build a predictive model that can be used to smartly prefetch only what the user is likely to need.
 
 Guess.js has integration with Angular, Next.js, Nuxt.js, and Gatsby. To use it in your application, you should add a single line of webpack configuration specifying a [Google Analytics view ID](https://stackoverflow.com/questions/36898103/what-is-a-viewid-in-google-analytics):
 
