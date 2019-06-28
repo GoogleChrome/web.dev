@@ -18,11 +18,11 @@ In this codelab, learn how to use a simple URL API to optimize images for faster
 Click [here](https://cloudinary.com/users/register/free) to sign up for a free Cloudinary account. Remember to set a custom cloud name (at the end of the registration form). Your cloud name is used to build the URL that your images will be publicly available from.
 
 <figure class="w-figure">
-  <a href="https://cloudinary.com/users/register/free" target="_blank" rel="noopener noreferrer">
-    <img class="w-screenshot" src="./cloudname.gif" alt="Setting a custom Cloud Name" />
-  </a>
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Setting a custom Cloud Name.
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="./cloudname.mp4" type="video/mp4; codecs=h264">
+  </video>
+  <figcaption class="w-figcaption">
+    Setting a custom Cloud Name.
   </figcaption>
 </figure>
 
