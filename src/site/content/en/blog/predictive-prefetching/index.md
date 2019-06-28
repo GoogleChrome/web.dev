@@ -94,7 +94,7 @@ module.exports = {
 };
 ```
 
-* Build your application specifying your extended webpack config with the `--extra-webpack-config` option
+1. Build your application, specifying your extended webpack config with the `--extra-webpack-config` option.
 
 For a video introduction, check the video below.
 
