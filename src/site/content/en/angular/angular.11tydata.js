@@ -9,9 +9,9 @@ module.exports = {
     title: 'Angular',
     updated: 'June 24, 2019',
     description: `Build performant and progressive Angular applications.`,
-    overview: `In this section you'll learn how to use built-in APIs and
-    third-party libraries to improve the performance of your
-    Angular applications.`,
+    overview: `In this collection you’ll learn practical tips and tricks to
+    make your Angular applications faster, more reliable, more accessible,
+    and more generally awesome.`,
     topics: [
       {
 	title: 'Introduction',
