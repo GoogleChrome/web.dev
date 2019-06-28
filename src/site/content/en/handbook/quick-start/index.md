@@ -1,6 +1,6 @@
 ---
 layout: handbook
-title: Quick start guide
+title: Content quick start guide
 authors:
   - mfriesenhahn
 date: 2019-06-26
