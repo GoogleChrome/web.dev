@@ -27,7 +27,7 @@ Click [here](https://cloudinary.com/users/register/free) to sign up for a free C
   </figcaption>
 </figure>
 
-## Next up
+## The Cloudinary Fetch URL
 
 This codelab demonstrates how you can use the power of a cloud to optimize your images and serve next-gen formats dynamically. You will learn how to use dynamic cloud Fetch and Image Transformations features. You will replace the image links with Fetch URLs (explained below) that will automagically upload, transform, and optimize your images.
 
