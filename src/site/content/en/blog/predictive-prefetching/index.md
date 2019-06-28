@@ -27,7 +27,7 @@ allowfullscreen></iframe>
 
 Web apps are slow, and JavaScript is among the most expensive resources that you ship. Waiting for a slow web app to load can frustrate your users and decrease conversions.
 
-![Slow web apps are stressful](guess-0.png)
+![Slow web apps are stressful.](guess-0.png)
 
 Lazy-loading is an efficient technique to reduce the bytes of JavaScript that you're transferring over the wire. You can use several techniques to lazy-load JavaScript, including:
 
