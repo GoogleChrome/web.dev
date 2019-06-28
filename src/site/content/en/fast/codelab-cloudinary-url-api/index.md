@@ -89,7 +89,7 @@ While there are many [Image transformations](https://cloudinary.com/documentatio
 1. [**Quality**](https://cloudinary.com/documentation/image_transformation_reference#quality_parameter): The parameter `q` controls the quality of the image delivered by the cloud. You can set `q_1` to `q_100` 1 is the lowest quality, and 100 is the highest. Use `q_auto` to calculate the optimal quality of an image automatically.
 2. [**Format**](https://cloudinary.com/documentation/image_transformation_reference#format_parameter): The parameter `f` can automatically convert delivered images to WebP and JPEG-XR on supported browsers to save bandwidth and optimize delivery time. Again use `f_auto` to auto format the image.
 
-### #3 REPLACE `<remote_image_url>`
+### #3. Replace `<remote_image_url>`
 
 Now replace the `<remote_image_url>` with the original link of the first image. The final URL looks like this:
 
