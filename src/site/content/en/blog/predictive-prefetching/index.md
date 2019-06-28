@@ -13,7 +13,7 @@ tags:
   - performance
 ---
 
-During my session ["Faster Web Navigations with Predictive Prefetching"](https://www.youtube.com/watch?v=0jB4YWgAxUo) at Google I/O 2019, I talked about optimizing web apps with code-splitting and its potential performance implication on subsequent page navigations. In the second part of the talk, I discussed how to improve navigation speed by empowering predictive prefetching and how Guess.js implements this technique.
+In my "[Faster Web Navigations with Predictive Prefetching](https://www.youtube.com/watch?v=0jB4YWgAxUo)" session at Google I/O 2019, I began by talking about optimizing web apps with code-splitting and the potential performance implications for subsequent page navigations. In the second part of the talk, I discussed how to improve navigation speed by using Guess.js to set up predictive prefetching:
 
 <div style="width:100%; padding-top: 56.25%; position: relative;">
 <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
