@@ -4,6 +4,7 @@ subhead: Overhyped or necessity? Learn everything about dark mode and how to sup
 authors:
   - thomassteiner
 date: 2019-06-27
+updated: 2019-06-28
 hero: hero.jpg
 hero_position: bottom
 alt: |
