@@ -25,7 +25,7 @@ allowfullscreen></iframe>
 
 ## Code-Splitting for Faster Web Apps
 
-Web applications are slow, and JavaScript is among the most expensive resources that we ship to the user. Waiting for a slow web application to load can frustrate your users and decrease their conversion.
+Web apps are slow, and JavaScript is among the most expensive resources that you ship. Waiting for a slow web app to load can frustrate your users and decrease conversions.
 
 ![Slow web apps are stressful](guess-0.png)
 
