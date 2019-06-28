@@ -17,7 +17,6 @@ In this codelab, learn how to use a simple URL API to optimize images for faster
 
 Click [here](https://cloudinary.com/users/register/free) to sign up for a free Cloudinary account. Remember to set a custom cloud name (at the end of the registration form). Your cloud name is used to build the URL that your images will be publicly available from.
 
-
 <figure class="w-figure">
   <a href="https://cloudinary.com/users/register/free" target="_blank" rel="noopener noreferrer">
     <img class="w-screenshot" src="./cloudname.gif" alt="Setting a custom Cloud Name" />
@@ -231,41 +230,37 @@ Hooray! These results are much better.
 
 ## Lighthouse Audit
 
-Lastly, it's a good idea to use <a target="_blank" rel="noopener noreferrer" href="https://web.dev/discover-performance-opportunities-with-lighthouse">Lighthouse</a> to verify the changes that you just
-made.
+Lastly, it's a good idea to use <a target="_blank" rel="noopener noreferrer" href="https://web.dev/discover-performance-opportunities-with-lighthouse">Lighthouse</a> to verify the changes that you just made.
 
 Lighthouse's "Efficiently encode images" performance audit can let you know if
 the JPEG images on your page are optimally compressed.
 
-- To preview the site press the **View App** button (in the right-bottom corner).
+- To preview the site press the **Share** button (in the right-bottom corner) and copy the **Live App** link.
 - Run the Lighthouse performance audit (Lighthouse ❯ Options ❯ Performance) on
   the live version of your Glitch and verify that the "Efficiently encode
   images" as well as "Serve images in next-gen formats" audits were passed.
 
 ### Results
 
-Lighthouse audit results for when images were not optimized.
-
-<figure class="w-figure">
-  <img class="w-screenshot" src="./images-not-optimized.png" alt="Images Not Optimized">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 2 — Images Not Optimized.
-  </figcaption>
-</figure>
-
-You can use `https://codelab-cloudinary.glitch.me/` for the first audit. This results in two optimization opportunities:
-
-1. Serve images in next-gen formats, e.g., WebP and JPEG-XR.
-2. Efficiently encode images.
+Lighthouse audit results for when images are optimized.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./optimized-images.png" alt="Images Not Optimized">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 3 — Optimized Images.
+    Fig. 2 — Optimized Images.
   </figcaption>
 </figure>
 
-The cloud-optimized image links exist in the `optimized.html` file. You can test <a target="_blank" rel="noopener noreferrer" href="https://codelab-cloudinary.glitch.me/optimized.html">this link</a>, which results in a perfect score and the page load time is down by 4.05 secs. That is impressive.
+If you've optimized your images correctly the Lighthouse audit should have a perfect score. As you can see the page load time is down by 4.05 secs. That is impressive.
+
+_Lighthouse audit results when images are not optimized._
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./images-not-optimized.png" alt="Images Not Optimized">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 3 — Images Not Optimized.
+  </figcaption>
+</figure>
 
 {% Aside 'success' %}
   You have used Cloudinary to compress the images optimally, and your page is serving next-gen image formats.
