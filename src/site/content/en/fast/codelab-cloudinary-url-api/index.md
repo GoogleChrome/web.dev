@@ -187,18 +187,6 @@ Your `index.html` file should now look like this:
   <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower3.png" alt="Light pink" />
   <div class="price">Light pink bouquet - $6</div>
 </div>
-<div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower4.jpg" alt="Violet bouquet" />
-  <div class="price">Violet bouquet - $8</div>
-</div>
-<div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower5.jpg" alt="Polka dot" />
-  <div class="price">Polka dot bouquet - $11</div>
-</div>
-<div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower6.jpg" alt="Burgandy bouquet" />
-  <div class="price">Burgandy bouquet - $7</div>
-</div>
 ```
 
 ## Image Performance Gains
@@ -234,24 +222,6 @@ There are impressive web performance gains by using <a href="https://cloudinary.
         <td><span class="w-c--warning">367 KB</span></td>
         <td><span class="w-c--success">38 KB</span></td>
         <td><span class="w-c--success">↓ -89.65%</span></td>
-      </tr>
-      <tr>
-        <td>flower4.jpg</td>
-        <td><span class="w-c--warning">125 KB</span></td>
-        <td><span class="w-c--success">73 KB</span></td>
-        <td><span class="w-c--success">↓ -41.6%</span></td>
-      </tr>
-      <tr>
-        <td>flower5.jpg</td>
-        <td><span class="w-c--warning">96 KB</span></td>
-        <td><span class="w-c--success">47 KB</span></td>
-        <td><span class="w-c--success">↓ -51.04%</span></td>
-      </tr>
-      <tr>
-        <td>flower6.jpg</td>
-        <td><span class="w-c--warning">68 KB</span></td>
-        <td><span class="w-c--success">24 KB</span></td>
-        <td><span class="w-c--success">↓ -64.71%</span></td>
       </tr>
     </tbody>
   </table>
