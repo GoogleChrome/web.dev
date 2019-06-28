@@ -611,7 +611,7 @@ You can see this applied in the demo below.
 </svg>
 ```
 
-<div style="height: 600px; width: 100%;">
+<div style="height: 950px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
     src="https://glitch.com/embed/#!/embed/dark-mode-currentcolor?path=light.css&previewSize=100"
