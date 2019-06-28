@@ -23,7 +23,7 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 allowfullscreen></iframe>
 </div>
 
-## Code-Splitting for Faster Web Apps
+## Code-splitting for faster web apps
 
 Web apps are slow, and JavaScript is among the most expensive resources that you ship. Waiting for a slow web app to load can frustrate your users and decrease conversions.
 
