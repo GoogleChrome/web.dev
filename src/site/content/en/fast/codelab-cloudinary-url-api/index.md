@@ -176,27 +176,27 @@ Your `index.html` file should now look like this:
 
 ```html/(1,1,5,9,13,17,21)
 <div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower1.png" alt="Yellow bouquet" />
+  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png" alt="Yellow bouquet" />
   <div class="price">Yellow bouquet - $9</div>
 </div>
 <div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower2.jpg" alt="Cream bouquet" />
+  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower2.jpg" alt="Cream bouquet" />
   <div class="price">Cream bouquet - $5</div>
 </div>
 <div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower3.png" alt="Light pink" />
+  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower3.png" alt="Light pink" />
   <div class="price">Light pink bouquet - $6</div>
 </div>
 <div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower4.jpg" alt="Violet bouquet" />
+  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower4.jpg" alt="Violet bouquet" />
   <div class="price">Violet bouquet - $8</div>
 </div>
 <div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower5.jpg" alt="Polka dot" />
+  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower5.jpg" alt="Polka dot" />
   <div class="price">Polka dot bouquet - $11</div>
 </div>
 <div class="wrapper">
-  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://cloudinary-url-api.glitch.me/images/flower6.jpg" alt="Burgandy bouquet" />
+  <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower6.jpg" alt="Burgandy bouquet" />
   <div class="price">Burgandy bouquet - $7</div>
 </div>
 ```
