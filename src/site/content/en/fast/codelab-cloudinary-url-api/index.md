@@ -19,6 +19,7 @@ Click [here](https://cloudinary.com/users/register/free) to sign up for a free C
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
+    <source src="./cloudname.webm" type="video/webm; codecs=vp8">
     <source src="./cloudname.mp4" type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption">
