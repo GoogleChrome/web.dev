@@ -47,7 +47,7 @@ Prefetching allows the browser to download and cache resources that the user is 
 - Prefetching too many resources (_overfetching_) consumes a lot of data.
 - Some resources the user needs may never be prefetched.
 
-Predictive allows you to solve these problems by consuming a report for the users' navigational patterns.
+Predictive prefetching solves these problems by using a report of users' navigational patterns to determine what assets to prefetch.
 
 ## Predictive prefetching with Guess.js
 
