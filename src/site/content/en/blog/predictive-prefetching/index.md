@@ -84,6 +84,19 @@ Here's how Guess.js implements predictive prefetching:
 1. It invokes the model for each JavaScript chunk, predicting the other chunks that are likely to be needed next.
 1. It adds prefetching instructions to each chunk.
 
+In the end, each chunk will contain prefetching instructions similar to:
+
+```js
+__GUESS__.p(
+  ['a.js', 0.2],
+  ['b.js', 0.8]
+)
+```
+
+The meaning behind this code that Guess.js generated is: consider prefetching chunk `a.js` with probability `0.2` and chunk `b.js` with probability `0.8`.
+
+Once the browser executes this code Guess.js will first check the user's connection speed. If it's sufficient enough Guess.js will insert two `<link rel="prefetch">` tags in the header of the page, one for each chunk. If the user has a poor network connection, Guess.js will only prefetch the chunk `b.js` since it has `0.8` probability to be needed next.
+
 ![How Guess.js works](guess-2.png)
 
 ## Learn more
