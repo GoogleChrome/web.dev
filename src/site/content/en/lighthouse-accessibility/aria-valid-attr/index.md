@@ -20,7 +20,7 @@ Lighthouse reports ARIA attributes with invalid values:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="aria-valid-attr.png" alt="Lighthouse audit showing ARIA attribute has invalid value">
   <figcaption class="w-figcaption">
-    Fig. 1 — ARIA attribute has invalid value
+    ARIA attribute has invalid value.
   </figcaption>
 </figure>
 

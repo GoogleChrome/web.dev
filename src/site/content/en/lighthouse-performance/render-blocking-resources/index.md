@@ -16,7 +16,7 @@ and removing anything unused.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="blocking-resources.png" alt="Eliminate render-blocking resources">
   <figcaption class="w-figcaption">
-    Fig. 1 — Eliminate render-blocking resources
+    Eliminate render-blocking resources.
   </figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ versus how much was loaded:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
   <figcaption class="w-figcaption">
-    Fig. 1 — Chrome DevTools: Coverage tab
+    Chrome DevTools: Coverage tab.
   </figcaption>
 </figure>
 

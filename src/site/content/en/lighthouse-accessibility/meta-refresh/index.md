@@ -16,7 +16,7 @@ Lighthouse reports timed refreshes:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="meta-refresh.png" alt="Lighthouse audit showing the document uses timed refresh">
   <figcaption class="w-figcaption">
-    Fig. 1 — The document uses timed refresh
+    The document uses timed refresh.
   </figcaption>
 </figure>
 

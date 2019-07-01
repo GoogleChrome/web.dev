@@ -14,7 +14,7 @@ Lighthouse flags pages without a viewport:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="viewport.png" alt="Lighthouse audit shows page is missing a viewport">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page is missing a viewport
+    Page is missing a viewport.
   </figcaption>
 </figure>
 

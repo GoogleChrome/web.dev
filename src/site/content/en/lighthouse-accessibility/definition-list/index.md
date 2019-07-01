@@ -15,8 +15,8 @@ Lighthouse reports when `<dl>` elements do not contain properly-ordered `<dt>` a
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="definition-list.png" alt="Lighthouse audit showing definition lists do not contain properly ordered <dt> and <dd> groups, <script>, or <template> elements">
   <figcaption class="w-figcaption">
-    Fig. 1 — Defintion lists do not contain properly ordered <code>&lt;dt></code> and <code>&lt;dd></code> groups,
-    <code>&lt;script></code>, or <code>&lt;template></code> elements
+    Defintion lists do not contain properly ordered <code>&lt;dt></code> and <code>&lt;dd></code> groups,
+    <code>&lt;script></code>, or <code>&lt;template></code> elements.
   </figcaption>
 </figure>
 

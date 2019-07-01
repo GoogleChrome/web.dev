@@ -21,7 +21,7 @@ Rob's doc, the audit, and recommendations in deque docs.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="object-alt.png" alt="Lighthouse audit showing <object> elements do not have alternative text">
   <figcaption class="w-figcaption">
-    Fig. 1 — <code>&lt;object></code> elements do not have alternative text
+    <code>&lt;object></code> elements do not have alternative text.
   </figcaption>
 </figure>
 

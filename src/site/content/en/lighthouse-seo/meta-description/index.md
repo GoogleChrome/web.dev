@@ -15,7 +15,7 @@ Lighthouse flags your page when it's missing a meta description:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">
   <figcaption class="w-figcaption">
-    Fig. 1 — Document doesn't have a meta description
+    Document doesn't have a meta description.
   </figcaption>
 </figure>
 
@@ -38,8 +38,8 @@ Add a description tag to the `<head>` of each of your pages:
 Include clearly-tagged facts in the descriptions, for example:
 
 ```html
-<meta name="Description" content="Author: A.N. Author, 
-    Illustrator: P. Picture, Category: Books, Price: $17.99, 
+<meta name="Description" content="Author: A.N. Author,
+    Illustrator: P. Picture, Category: Books, Price: $17.99,
     Length: 784 pages>
 ```
 
@@ -47,8 +47,8 @@ Learn more in [Add tags to the head of the page](/write-descriptive-text#add-tag
 
 ## Meta description guidelines
 
-- Make them descriptive and concise. 
-- Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358). 
+- Make them descriptive and concise.
+- Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358).
 - Create a description for every page.
 - Avoid repeated or boilerplate titles.
 - Use different descriptions for different pages.

@@ -15,9 +15,9 @@ therefore, there should onlhy be one table header per column
 Lighthouse reports when there's more than one table header per column:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="td-headers-attr.png" alt="Lighthouse audit showing there's more than one table header for a single colum 
+  <img class="w-screenshot w-screenshot--filled" src="td-headers-attr.png" alt="Lighthouse audit showing there's more than one table header for a single colum
   <figcaption class="w-figcaption">
-    Fig. 1 — There's more than one table header for a single column
+    There's more than one table header for a single column.
   </figcaption>
 </figure>
 

@@ -15,7 +15,7 @@ Lighthouse reports when some elements have a `tabindex` value greater than 0:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="tabindex.png" alt="Lighthouse audit showing some elements have a tabindex value greater than 0">
   <figcaption class="w-figcaption">
-    Fig. 1 — Some elements have a `tabindex` value greater than 0
+    Some elements have a `tabindex` value greater than 0.
   </figcaption>
 </figure>
 

@@ -14,7 +14,7 @@ The Lighthouse reports displays the FCP time period in seconds:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="first-contentful-paint.png" alt="Lighthouse: First Contentful Paint">
   <figcaption class="w-figcaption">
-    Fig. 1 — First Contentful Paint
+    First Contentful Paint.
   </figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ it reports the "time when the browser first renders any text, image (including b
 In order to be able to calculate your overall performance score,
 Lighthouse assigns each performance metric an individual score between 0 - 100.
 The FCP score, in it's simplest terms, is based on a comparison between how fast your FCP is,
-compared to [FCP metrics of real website performance data on 
+compared to [FCP metrics of real website performance data on
 HTTParchive](https://httparchive.org/reports/loading-speed#fcp).
 
 For example, sites performing in the top 99 percentile render FCP in about 1.5 seconds.
@@ -48,17 +48,17 @@ your FCP score is 99. This table helps explain how to interpret your FCP score:
     <tbody>
       <tr>
         <td>0 - 2 seconds</td>
-        <td>Green (fast)</td> 
+        <td>Green (fast)</td>
         <td>75 - 100</td>
       </tr>
       <tr>
         <td>2 - 4 seconds</td>
-        <td>Orange (average)</td> 
+        <td>Orange (average)</td>
         <td>50 - 74</td>
       </tr>
       <tr>
         <td>Over 4 seconds</td>
-        <td>Red (slow)</td> 
+        <td>Red (slow)</td>
         <td>0 - 49</td>
       </tr>
     </tbody>
@@ -93,7 +93,7 @@ the greater impact it will have on improving your performance score.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="opportunities.png" alt="Lighthouse: Opportunities section">
   <figcaption class="w-figcaption">
-    Fig. 2 — Opportunities section
+    Opportunities section.
   </figcaption>
 </figure>
 
@@ -125,5 +125,3 @@ for more on collecting real-user metrics.
 - [FCP audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-contentful-paint.js)
 - [Paint Timing specification](https://w3c.github.io/paint-timing)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
-
-

@@ -14,7 +14,7 @@ Lighthouse flags documents that use AppCache:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="appcache-manifest.png" alt="Lighthouse audit showing document uses AppCache">
   <figcaption class="w-figcaption">
-    Fig. 1 — Document uses AppCache
+    Document uses AppCache.
   </figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ this markup in your document causes the audit to fail:
 
 To pass this audit,
 remove the manifest from your document,
-and use the 
+and use the
 [service worker Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) instead.
 
 To help migrate from AppCache to service workers,

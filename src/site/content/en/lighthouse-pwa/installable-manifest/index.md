@@ -24,7 +24,7 @@ Lighthouse flags when your page is missing an installable manifest:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="installable-manifest.png" alt="Lighthouse audit showing user can't install the web app from their homescreen">
   <figcaption class="w-figcaption">
-    Fig. 1 — User can't install the web app from their homescreen
+    User can't install the web app from their homescreen.
   </figcaption>
 </figure>
 

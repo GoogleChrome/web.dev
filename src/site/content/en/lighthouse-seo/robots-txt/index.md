@@ -22,7 +22,7 @@ Lighthouse flags invalid `robots.txt` files:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="robots-txt.png" alt="Lighthouse audit showing invalid robots.txt">
   <figcaption class="w-figcaption">
-    Fig. 1 — <code>robots.txt</code> isn't valid
+    <code>robots.txt</code> isn't valid.
   </figcaption>
 </figure>
 
@@ -34,14 +34,14 @@ to learn why your `robots.txt` file is invalid.
 Common errors include:
 
 - `No user-agent specified`
-- `Pattern should either be empty, start with "/" or "*"` 
+- `Pattern should either be empty, start with "/" or "*"`
 - `Unknown directive`
 - `Invalid sitemap URL`
-- `"$" should only be used at the end of the pattern` 
+- `"$" should only be used at the end of the pattern`
 
 Most Lighthouse audits only apply to the page that you're currently on.
 However, since `robots.txt` is defined at the domain level,
-this audit applies to your entire domain (or subdomain). 
+this audit applies to your entire domain (or subdomain).
 
 {% Aside 'note' %}
 Lighthouse does not ensure that your `robots.txt` file is

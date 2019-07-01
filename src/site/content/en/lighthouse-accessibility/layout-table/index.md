@@ -18,7 +18,7 @@ with `th` expecting this to fail, and it does not.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="layout-table.png" alt="Lighthouse audit showing presentational <table> elements incorrectly using <th>, <caption>, or summary
   figcaption class with a value of 'w-figcaption'">
-    Fig. 1 — Presentational <code>&lt;table></code> elements incorrectly using <code>&lt;th></code>, <code>&lt;caption></code>, or <code>summary</code>
+    Presentational <code>&lt;table></code> elements incorrectly using <code>&lt;th></code>, <code>&lt;caption></code>, or <code>summary</code>.
   </figcaption>
 </figure>
 -->

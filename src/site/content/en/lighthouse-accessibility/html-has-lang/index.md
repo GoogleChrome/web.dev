@@ -15,7 +15,7 @@ Lighthouse reports when the `<html>` element does not have a `lang` attribute':
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="html-has-lang.png" alt="Lighthouse audit showing <html> element does not have a lang attribute">
   <figcaption class="w-figcaption">
-    Fig. 1 — The <code>&lt;html></code> element does not have a <code>lang</code> attribute
+    The <code>&lt;html></code> element does not have a <code>lang</code> attribute.
 </figure>
 
 
@@ -28,9 +28,9 @@ add a `lang` attribute to the `<html>` element:
 <html lang="en">
 ```
 
-Screen readers use different sound libraries for each language. 
+Screen readers use different sound libraries for each language.
 Screen readers can switch between these language libraries easily,
-but only if the documents specify which language(s) to read and when. 
+but only if the documents specify which language(s) to read and when.
 If the language is not specified,
 it is impossible to understand anything
 when screen readers are using the wrong language library.

@@ -9,12 +9,12 @@ web_lighthouse:
 
 A long cache lifetime can speed up repeat visits to your page.
 Lighthouse reports all static resources that aren't cached
-in the Diagnostics section: 
+in the Diagnostics section:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-long-cache-ttl.png" alt="Lighthouse: Serve static assets with an efficient cache policy">
   <figcaption class="w-figcaption">
-    Fig. 1 — Serve static assets with an efficient cache policy
+    Serve static assets with an efficient cache policy.
   </figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ Lighthouse considers a resource cache-able if all of the following conditions ar
 Lighthouse then estimates how much network data you could have saved your users
 if the resources had been cached. This estimate includes some calculations of
 optimal cache duration for each resource, based on aggregate usage statistics reported
-to Chrome. 
+to Chrome.
 
 A longer duration is not necessarily better.
 Check out the [audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js) for details.
@@ -51,7 +51,7 @@ Cache-Control: max-age=31536000
 ```
 
 The `max-age` directive tells the browser how long it should cache the resource, in seconds.
-`31536000` corresponds to 1 year: 60 seconds * 60 minutes * 24 hours * 365 days = 
+`31536000` corresponds to 1 year: 60 seconds * 60 minutes * 24 hours * 365 days =
 31536000 seconds.
 
 When possible, cache immutable static assets for a long time,

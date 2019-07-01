@@ -22,7 +22,7 @@ See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-acce
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse audit showing Audio element missing captions">
   <figcaption class="w-figcaption">
-    Fig. 1 — Audio element missing captions
+    Audio element missing captions.
   </figcaption>
 </figure>
 -->

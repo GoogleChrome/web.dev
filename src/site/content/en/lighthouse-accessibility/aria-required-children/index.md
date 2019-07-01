@@ -19,7 +19,7 @@ Lighthouse reports when a role is missing their required child role(s):
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="aria-required-children.png" alt="Lighthouse audit showing ARIA role missing required child role(s)">
   <figcaption class="w-figcaption">
-    Fig. 1 — ARIA role missing required child role(s)
+    ARIA role missing required child role(s).
   </figcaption>
 </figure>
 

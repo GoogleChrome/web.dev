@@ -8,13 +8,13 @@ web_lighthouse:
 ---
 
 Disabling zooming is problematic for users with low vision
-who rely on screen magnification to properly see the contents of a web page. 
+who rely on screen magnification to properly see the contents of a web page.
 Lighthouse reports when the viewport disables text scaling and zooming:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="meta-viewport.png" alt="Lighthouse audit showing the viewport disables text scaling and zooming">
   <figcaption class="w-figcaption">
-    Fig. 1 — The viewport disables text scaling and zooming
+    The viewport disables text scaling and zooming.
 </figure>
 
 

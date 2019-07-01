@@ -135,7 +135,7 @@ that network requests are as quick and efficient as possible.
 
 First off, make sure you add `Cache-Control: no-cache` to your response
 messages. This explicitly tells the browser that you've surrendered, and that
-going to the network to check if there's been an update is necessary. 
+going to the network to check if there's been an update is necessary.
 
 Along with that, setting one of two additional response headers is recommended:
 either
@@ -163,7 +163,7 @@ actual resource being requested.
 <figure class="w-figure w-figure--center">
   <img src="./http-cache.png" alt="A diagram of a client requesting a resource and the server responding with a 304 header.">
   <figcaption class="w-figcaption w-text--left">
-    Fig. 1 — A request/response flow. The server uses a 304 Not Modifier header
+    A request/response flow. The server uses a 304 Not Modifier header
     to tell the client to use its cached version of a resource.
   </figcaption>
 </figure>

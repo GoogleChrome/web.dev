@@ -20,7 +20,7 @@ different ways, and therefore need different measurement and optimizations:
 <figure class="w-figure  w-figure--center">
   <img src="./funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
   <figcaption class="w-figcaption">
-    Fig. 1 - Conversion funnel
+    A conversion funnel.
   </figcaption>
 </figure>
 
