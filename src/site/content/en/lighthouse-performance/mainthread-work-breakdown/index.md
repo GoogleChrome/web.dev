@@ -24,7 +24,7 @@ and executing JS:
 
 - [Reduce JavaScript payloads with code-splitting](/reduce-javascript-payloads-with-code-splitting).
 - [Remove unused code](/remove-unused-code).
-- [Minify and compress netwwork payloads](/reduce-network-payloads-using-text-compression).
+- [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
 
 ## More information
 
