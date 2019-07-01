@@ -7,7 +7,7 @@ web_lighthouse:
   - load-fast-enough-for-pwa
 ---
 
-Many users of your page visit over a slow cellular network connection. 
+Many users of your page visit over a slow cellular network connection.
 Ensuring that your page loads fast over a simulated mobile network
 ensures that your page loads in a reasonable amount of time for your mobile
 users.
@@ -16,7 +16,7 @@ Lighthouse flags any pages that don't load fast enough on mobile:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="load-fast-enough-for-pwa.png" alt="Lighthouse audit showing page doesn't load fast enough on mobile">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page doesn't load fast enough on mobile
+    Page doesn't load fast enough on mobile.
   </figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ There are two main metrics regarding how users perceive load time:
 but the user can't interact with it until 10s,
 then the perceived page load time is 10s.
 
-Lighthouse computes what time to interactive would be on a slow 4G network 
+Lighthouse computes what time to interactive would be on a slow 4G network
 connection. If the time to interactive is more than 10s, the audit fails.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
@@ -45,7 +45,7 @@ connection. If the time to interactive is more than 10s, the audit fails.
 To speed up time-to-visually-complete, only load the resources you need in order
 to display the page.
 See
-[Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) and 
+[Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/) and
 [Optimizing Content Efficiency](/web/fundamentals/performance/optimizing-content-efficiency/).
 
 To speed up time-to-interactive, only execute the JavaScript that you need in

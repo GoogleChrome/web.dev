@@ -12,7 +12,7 @@ Lighthouse flags any browser errors logged to the console:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="errors-in-console.png" alt="Lighthouse audit showing browser errors in the console">
   <figcaption class="w-figcaption">
-    Fig. 1 — Browser errors logged to the console
+    Browser errors logged to the console.
   </figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ when you see an error, the page isn't running as intended.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="errors.png" alt="An example of console errors in Chrome DevTools">
   <figcaption class="w-figcaption">
-    Fig. 2 — An example of console errors in Chrome DevTools
+    An example of console errors in Chrome DevTools.
   </figcaption>
 </figure>
 

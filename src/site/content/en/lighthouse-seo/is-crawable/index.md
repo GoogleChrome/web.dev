@@ -15,7 +15,7 @@ Lighthouse flags when search engines can't index your page:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="is-crawable.png" alt="Lighthouse audit showing search engines can't index your page">
   <figcaption class="w-figcaption">
-    Fig. 1 — Search engines can't index your page
+    Search engines can't index your page.
   </figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ You can inspect your page's response headers via
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="headers.svg" alt="The Headers tab">
   <figcaption class="w-figcaption">
-    Fig. 1 — The Headers tab
+    The Headers tab.
   </figcaption>
 </figure>
 

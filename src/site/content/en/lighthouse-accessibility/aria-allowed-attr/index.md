@@ -18,7 +18,7 @@ Lighthouse reports any mismatches between roles and `aria-*` attributes:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="aria-allowed-attr.png" alt="Lighthouse audit showing ARIA attributes do not match their roles">
   <figcaption class="w-figcaption">
-    Fig. 1 — ARIA attributes do not match their roles
+    ARIA attributes do not match their roles.
   </figcaption>
 </figure>
 

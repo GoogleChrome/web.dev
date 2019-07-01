@@ -14,7 +14,7 @@ Lighthouse reports when form elements do not have associated labels:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="label.png" alt="Lighthouse audit showing form elements do not have associated labels">
   <figcaption class="w-figcaption">
-    Fig. 1 — Form elements do not have associated labels
+    Form elements do not have associated labels.
   </figcaption>
 </figure>
 

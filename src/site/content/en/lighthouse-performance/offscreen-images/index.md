@@ -17,7 +17,7 @@ to lower [Time to Interactive](/interactive):
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="offscreen-images.png" alt="Defer offscreen images">
   <figcaption class="w-figcaption">
-    Fig. 1 — Defer offscreen images
+    Defer offscreen images.
   </figcaption>
 </figure>
 

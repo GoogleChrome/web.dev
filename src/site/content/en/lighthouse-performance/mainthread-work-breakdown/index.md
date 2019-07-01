@@ -13,7 +13,7 @@ in the Diagnostics section:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="mainthread-work-breakdown.png" alt="Lighthouse: Minimize main-thread work">
   <figcaption class="w-figcaption">
-    Fig. 1 — Minimize main-thread work
+    Minimize main-thread work.
   </figcaption>
 </figure>
 

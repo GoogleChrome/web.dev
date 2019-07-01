@@ -14,7 +14,7 @@ The Lighthouse reports displays the Time to Interactive period in seconds:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="interactive.png" alt="Lighthouse: Time to Interactive">
   <figcaption class="w-figcaption">
-    Fig. 1 — Time to Interactive
+    Time to Interactive.
   </figcaption>
 </figure>
 
@@ -33,7 +33,7 @@ This can create a frustrating user experience.
 The site appears to be ready, but when the user tries to interact with it, nothing happens.
 
 See the [Time to Interactive Definition](https://github.com/WICG/time-to-interactive#definition)
-for more details on how exactly TTI is calculated. 
+for more details on how exactly TTI is calculated.
 
 ## How Lighthouse determines your TTI score
 
@@ -41,7 +41,7 @@ In order to be able to calculate your overall performance score,
 Lighthouse assigns each performance metric an individual score between 0 - 100.
 The TTI score, in it's simplest terms,
 is based on a comparison between how fast your TTI is,
-compared to [TTI metrics of real website performance data on 
+compared to [TTI metrics of real website performance data on
 HTTParchive](https://httparchive.org/reports/loading-speed#ttci).
 
 For example,
@@ -62,17 +62,17 @@ This table helps explain how to interpret your TTI score:
     <tbody>
       <tr>
         <td>0 - 5.2 seconds</td>
-        <td>Green (fast)</td> 
+        <td>Green (fast)</td>
         <td>75 - 100</td>
       </tr>
       <tr>
         <td>5.3 - 7.3 seconds</td>
-        <td>Orange (average)</td> 
+        <td>Orange (average)</td>
         <td>50 - 74</td>
       </tr>
       <tr>
         <td>Over 7.3 seconds</td>
-        <td>Red (slow)</td> 
+        <td>Red (slow)</td>
         <td>0 - 49</td>
       </tr>
     </tbody>
@@ -110,7 +110,7 @@ and improving your overall performance score:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="opportunities.png" alt="Lighthouse: Opportunities section">
   <figcaption class="w-figcaption">
-    Fig. 2 — Opportunities section
+    Opportunities section.
   </figcaption>
 </figure>
 
@@ -145,5 +145,3 @@ instead.
 - [Reduce JavaScript payloads with code-splitting codelab](/codelab-code-splitting)
 - [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
 - [Reduce JavaScript Payloads with Tree Shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/)
-
-

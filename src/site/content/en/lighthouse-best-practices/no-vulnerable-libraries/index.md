@@ -18,7 +18,7 @@ Lighthouse flags front-end JavaScript libraries with known security vulnerabilit
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="no-vulnerable-libraries.png" alt="Lighthouse audit showing any front-end JavaScript libraries with known security vulnerabilities used by the page">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page uses front-end JavaScript libraries with security vulnerabilities
+    Page uses front-end JavaScript libraries with security vulnerabilities.
   </figcaption>
 </figure>
 

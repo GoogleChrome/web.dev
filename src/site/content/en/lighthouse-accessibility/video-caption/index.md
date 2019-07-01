@@ -27,7 +27,7 @@ which seems problematic as well.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse audit showing video element missing captions">
   <figcaption class="w-figcaption">
-    Fig. 1 — Video element missing captions
+    Video element missing captions.
   </figcaption>
 </figure>
 -->

@@ -15,7 +15,7 @@ that aren't compressed:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-text-compression.png" alt="Enable text compression">
   <figcaption class="w-figcaption">
-    Fig. 1 — Enable text compression
+    Enable text compression.
   </figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ Lighthouse then compresses each of these with
 [GZIP](https://www.gnu.org/software/gzip/) to compute the potential
 savings.
 
-If the original size of a response is less than 1.4KB, or if the 
+If the original size of a response is less than 1.4KB, or if the
 potential compression savings is less than 10% of the original size, then
 Lighthouse does not flag that response in the results.
 
@@ -73,7 +73,7 @@ To check if a server compressed a response:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="content-encoding.svg" alt="The content-encoding response header">
   <figcaption class="w-figcaption">
-    Fig. 1 — The <code>content-encoding</code> response header
+    The <code>content-encoding</code> response header.
   </figcaption>
 </figure>
 

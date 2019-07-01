@@ -15,7 +15,7 @@ within `<ul>` ' or `<ol>` parent elements:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="listitem.png" alt="Lighthouse audit showing list item isn't contained within a parent list
   <figcaption class="w-figcaption">
-    Fig. 1 — List item isn't contained within a parent list
+    List item isn't contained within a parent list.
   </figcaption>
 </figure>
 

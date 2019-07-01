@@ -17,14 +17,14 @@ Lighthouse flags when pages request notification permissions on load:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="notification-on-start.png" alt="Lighthouse audit shows page requests notification permissions on load">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page requests notification permissions on load
+    Page requests notification permissions on load.
   </figcaption>
 </figure>
 
 ## How this audit fails
 
 Lighthouse collects the JavaScript that was executed on page load.
-If this code contains calls to `notification.requestPermission()`, 
+If this code contains calls to `notification.requestPermission()`,
 and notification permission was not already granted,
 then Lighthouse fails the audit.
 
@@ -33,7 +33,7 @@ where your code is requesting permission to send notifications.
 Remove these calls,
 and tie the requests to user gestures instead.
 
-If notification permissions was already granted or denied 
+If notification permissions was already granted or denied
 to a page before Lighthouse's audit,
 Lighthouse cannot determine
 if the page requests notification permissions on page load.
@@ -51,7 +51,3 @@ See [Change website permissions](https://support.google.com/chrome/answer/614805
 ## More information
 
 [Page requests notification permissions on load audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/notification-on-start.js)
-
-
-
-

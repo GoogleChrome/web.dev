@@ -15,7 +15,7 @@ Lighthouse flags the deprecated APIs:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="deprecations.png" alt="Lighthouse audit shows usage of deprecated APIs">
   <figcaption class="w-figcaption">
-    Fig. 1 — Document uses deprecated APIs
+    Document uses deprecated APIs.
   </figcaption>
 </figure>
 

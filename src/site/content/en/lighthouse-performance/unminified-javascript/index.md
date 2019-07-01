@@ -16,7 +16,7 @@ when these files are minified:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="unminified-javascript.png" alt="Minify JavaScript">
   <figcaption class="w-figcaption">
-    Fig. 1 — Minify JavaScript
+    Minify JavaScript.
   </figcaption>
 </figure>
 

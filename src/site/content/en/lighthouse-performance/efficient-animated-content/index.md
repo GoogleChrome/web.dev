@@ -14,7 +14,7 @@ achieved by converting these GIFs to video:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="efficient-animated-content.png" alt="Use video formats for animated content">
   <figcaption class="w-figcaption">
-    Fig. 1 — Use video formats for animated content
+    Use video formats for animated content.
   </figcaption>
 </figure>
 
@@ -22,7 +22,7 @@ achieved by converting these GIFs to video:
 
 Large GIFs are inefficient for delivering animated content.
 By converting large GIFs to videos, you can save big on users' bandwidth.
-Consider using MPEG4/WebM videos for animations and PNG/WebP 
+Consider using MPEG4/WebM videos for animations and PNG/WebP
 for static images instead of GIF to save network bytes.
 
 ## Create MPEG videos

@@ -16,7 +16,7 @@ Lighthouse reports when the HTML document doesn't have a title:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="document-title.png" alt="Lighthouse audit showing HTML document doesn't have a title elemement">
   <figcaption class="w-figcaption">
-    Fig. 1 — HTML document doesn't have a title element
+    HTML document doesn't have a title element.
   </figcaption>
 </figure>
 

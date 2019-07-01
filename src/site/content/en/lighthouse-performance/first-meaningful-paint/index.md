@@ -14,7 +14,7 @@ The Lighthouse reports displays the FMP time period in seconds:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="first-meaningful-paint.png" alt="Lighthouse: First Meaningful Paint">
   <figcaption class="w-figcaption">
-    Fig. 1 — First Meaningful Paint
+    First Meaningful Paint.
   </figcaption>
 </figure>
 
@@ -61,17 +61,17 @@ This table helps explain how to interpret your FMP score:
     <tbody>
       <tr>
         <td>0 - 2 seconds</td>
-        <td>Green (fast)</td> 
+        <td>Green (fast)</td>
         <td>75 - 100</td>
       </tr>
       <tr>
         <td>2 - 4 seconds</td>
-        <td>Orange (average)</td> 
+        <td>Orange (average)</td>
         <td>50 - 74</td>
       </tr>
       <tr>
         <td>Over 4 seconds</td>
-        <td>Red (slow)</td> 
+        <td>Red (slow)</td>
         <td>0 - 49</td>
       </tr>
     </tbody>
@@ -106,7 +106,7 @@ the greater impact it will have on improving your performance score.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="opportunities.png" alt="Lighthouse: Opportunities section">
   <figcaption class="w-figcaption">
-    Fig. 2 — Opportunities section
+    Opportunities section.
   </figcaption>
 </figure>
 
@@ -133,5 +133,3 @@ enables you to see User Timing data in your report.
 - [FMP audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
-
-

@@ -21,7 +21,7 @@ See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-acce
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse audit showing video element missing audio descriptions">
   <figcaption class="w-figcaption">
-    Fig. 1 — Video element missing audio descriptions
+    Video element missing audio descriptions.
   </figcaption>
 </figure>
 -->

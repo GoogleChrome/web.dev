@@ -14,7 +14,7 @@ Lighthouse reports when any `<img>` elements do not have `alt` attributes:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="image-alt.png" alt="Lighthouse audit showing <img> elements do not have alt attributes">
   <figcaption class="w-figcaption">
-    Fig. 1 — <code>&lt;img></code> elements do not have <code>alt</code> attributes
+    <code>&lt;img></code> elements do not have <code>alt</code> attributes.
   </figcaption>
 </figure>
 

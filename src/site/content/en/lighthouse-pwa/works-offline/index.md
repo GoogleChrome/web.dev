@@ -17,7 +17,7 @@ Lighthouse flags when the page doesn't respond with a 200 when offline:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="works-offline.png" alt="Lighthouse audit showing page doesn't respond with a 200 when offline">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page doesn't respond with a 200 when offline
+    Page doesn't respond with a 200 when offline.
   </figcaption>
 </figure>
 
@@ -60,4 +60,3 @@ codelab.
 ## More information
 
 [Page doesn't respond with 200 when offline audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/works-offline)
-
