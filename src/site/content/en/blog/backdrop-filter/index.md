@@ -77,7 +77,9 @@ View the full API on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/back
 
 
 ## Essentials
+All the favorite [filter functions](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Filter_functions) are present with `backdrop-filter`: blur(), brightness(), contrast(), opacity(), drop-shadow(), [etc](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter). Combine them for rich and clever effects, or use just one filter for more subtle or precise effects. Even combine [SVG filters](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter) with these CSS filters!
 
+In the following demo, the frosted effect is 2 part: color and blur. The blur is coming from `backdrop-filter`, while the tint is coming from the element's transparent background color. A frosted effect is the result of a blurred semi-transparent white backdrop.
 
 ### Single Filter
 
@@ -96,7 +98,10 @@ View the full API on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/back
   </figcaption>
 </figure>
 
-### Combining Filters
+### Multiple Filters
+Sometimes multiple filters are needed to achieve the desired effect and CSS provides a way to do this. Works just by providing a list of filters separated by a space.
+
+In the following demo, each of the 4 window panes have different combinations of backdrop filters applied while the same set of shapes are animated behind them. Can you spot the differences?
 
 ```css
 .brighten-saturate-and-blur-behind-me {
@@ -113,8 +118,13 @@ View the full API on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/back
   </figcaption>
 </figure>
 
+These essentials provide a sturdy foundation for creativity and performance. Design techniques and styles previously reserved for native operating systems are now performant and elegantly available in the browser with just a few additions to CSS. Very exciting!
+
 
 ## Creative Examples
+The web community is stellar at converting primitive features into sophisticated masterpieces. Backdrop filters have many incarnations of clever community samples. I find these demo's are best for teaching "what could be". Knowing the capabilities are there make me feel stronger.
+
+Here are some interesting capabilities unlocked with `backdrop-filter`:
 
 ### Overlays
 
