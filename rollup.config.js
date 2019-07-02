@@ -1,3 +1,5 @@
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 import htmlEntryPlugin from './lib/html-entry-plugin.mjs';
 import copyFilesBuild from './lib/copy-files-build.mjs';
 import eleventyBuild from './lib/11ty-build.mjs';
@@ -18,6 +20,10 @@ export default async function({watch}) {
     },
     plugins: [
       htmlEntryPlugin(),
+      resolve(),
+      commonjs({
+        include: 'node_modules/**',
+      }),
     ],
   };
 }
