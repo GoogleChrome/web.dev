@@ -36,12 +36,19 @@
       rel="stylesheet"
       href="/all.css"
     />
+    <script type="module" src="/bundle.mjs"></script>
   </head>
   <body>
     {% include 'devsite/devsite-header.njk' %}
     <main>
+<<<<<<< HEAD
 >>>>>>> Remove devsite from layouts.
       {{ content | safe }}
+=======
+      <div id="content">
+        {{ content | safe }}
+      </div>
+>>>>>>> Add rollup.
     </main>
   </body>
 </html>
