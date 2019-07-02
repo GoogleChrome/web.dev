@@ -42,7 +42,7 @@ The following video demonstrates `backdrop-filter` and each individual filter:
 </figure>
 
 
-## Technical Details
+## Technical details
 {% Aside 'key-term' %}
   backdrop - the painted content behind the element.
 {% endAside %}
