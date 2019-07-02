@@ -1,3 +1,4 @@
+import '../styles/all.scss';
 import {router} from './router';
 
 // Run as long-lived router w/ history & "<a>" bindings

@@ -72,3 +72,4 @@ local-devsite.js
 
 # IDEs
 .idea
+entrypoint.hashmanifest.json

@@ -1,9 +1,10 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonJs from 'rollup-plugin-commonjs';
+import postcss from 'rollup-plugin-postcss';
 import entrypointHashmanifest from 'rollup-plugin-entrypoint-hashmanifest';
 
 module.exports = {
-  input: 'src/lib/app.mjs',
+  input: 'src/lib/app.js',
   output: {
     dir: 'dist',
     format: 'esm',
@@ -14,6 +15,9 @@ module.exports = {
     resolve(),
     commonJs({
       include: 'node_modules/**',
+    }),
+    postcss({
+      extract: true,
     }),
     entrypointHashmanifest(),
   ],
