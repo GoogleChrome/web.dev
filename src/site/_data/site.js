@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+const entrypointManifest = require('../../../entrypoint.hashmanifest.json');
+
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
   title: 'web.dev',
