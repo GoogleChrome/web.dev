@@ -68,7 +68,7 @@ Backdrop-filters are like CSS filters. When the property is not 'none', a new [s
 - The overlaying element must be at least partially transparent
 - The overlaying element will get a new stacking context
 
-{% Aside 'warning' %}
+{% Aside 'caution' %}
 `backdrop-filter` may harm performance.
 {% endAside %}
 
