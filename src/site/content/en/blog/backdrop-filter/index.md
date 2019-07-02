@@ -71,7 +71,7 @@ View the full API on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/back
 - The overlaying element must be at least partially transparent
 - The overlaying element will get a new stacking context
 
-{% Aside 'warning' %}
+{% Aside 'caution' %}
 `backdrop-filter` may harm performance.
 {% endAside %}
 
@@ -182,7 +182,7 @@ input:not(:checked) ~ .sensitive-overlay {
   </figcaption>
 </figure>
 
-### Additional Resources
+### Additional resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)
 - [Chrome Platform Status](https://www.chromestatus.com/feature/5679432723333120)
 - [Caniuse](http://caniuse.com/#feat=css-backdrop-filter)
