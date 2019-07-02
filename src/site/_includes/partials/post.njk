@@ -22,7 +22,7 @@
     {% Breadcrumbs path %}
   </div>
 
-  <main class="w-layout-container--narrow w-post-content">
+  <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
       <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
       {% if subhead %}
@@ -88,7 +88,7 @@
     {% if codelabs %}
       {% CodelabsCallout codelabs %}
     {% endif %}
-  </main>
+  </div>
 
   {% if path.slug === 'blog' %}
     {# Find next blog post #}
