@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+const entrypointManifest = require('../../../entrypoint.hashmanifest.json');
+
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
   title: 'web.dev',
@@ -21,4 +23,7 @@ module.exports = {
   url: 'https://web.dev',
   repo: 'https://github.com/GoogleChrome/web.dev',
   subscribe: 'https://web.dev/subscribe',
+  entrypoints: {
+    appJs: entrypointManifest['src/lib/app.mjs'],
+  },
 };
