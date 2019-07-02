@@ -3,8 +3,11 @@
     "merge-default-rules": false
   },
   "files": {
-    "include": [src/styles/**/*.scss],
+    "include": [
+      "src/styles/**/*.scss",
+    ],
     "ignore": [
+      "node_modules/**/*.s+(a|c)ss",
       "src/styles/devsite/_app.scss",
       "src/styles/devsite/_devsite_debug_info.scss",
       "src/styles/devsite/_devsite_heading.scss",
