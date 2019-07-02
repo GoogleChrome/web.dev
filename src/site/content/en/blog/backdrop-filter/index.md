@@ -1,7 +1,7 @@
 ---
 title: "CSS backdrop-filter"
 subhead: |
-  Unleash 60fps blurry translucency across your UI's
+  Unleash 60 fps of blurry translucency in your user interfaces.
 date: 2019-06-25
 authors:
   - adamargyle
