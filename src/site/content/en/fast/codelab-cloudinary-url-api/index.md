@@ -7,7 +7,8 @@ date: 2019-06-24
 description: |
   In this codelab, learn how to use Cloudinary with its URL API to optimize JPEG and
   PNG images for faster download and serve next-gen formats.
-glitch: codelab-cloudinary?path=index.html:25:0
+glitch: codelab-cloudinary
+path: index.html:25:0
 related_post: use-imagemin-to-compress-images
 ---
 
