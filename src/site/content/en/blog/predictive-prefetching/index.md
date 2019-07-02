@@ -84,7 +84,7 @@ Here's how Guess.js implements predictive prefetching:
 1. It invokes the model for each JavaScript chunk, predicting the other chunks that are likely to be needed next.
 1. It adds prefetching instructions to each chunk.
 
-In the end, each chunk will contain prefetching instructions similar to:
+When Guess.js is done, each chunk will contain prefetching instructions similar to:
 
 ```js
 __GUESS__.p(
