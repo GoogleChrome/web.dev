@@ -6,7 +6,7 @@ date: 2019-06-25
 authors:
   - adamargyle
 hero: hero.jpg
-alt: View through rain covered foggy window
+alt: A view through a rain-covered foggy window.
 description: |
   CSS backdrop-filter was made famous by Apple's design team. It brings
   the ability for a background to apply a filter to the contents beneath,
