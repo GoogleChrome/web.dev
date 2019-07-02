@@ -17,10 +17,6 @@
 const path = require('path');
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
-const sass = require('gulp-sass');
-sass.compiler = require('node-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const sasslint = require('gulp-sass-lint');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const imagemin = require('gulp-imagemin');
@@ -47,27 +43,6 @@ gulp.task('lint-js', () => {
       // To have the process exit with an error code (1) on
       // lint error, return the stream and pipe to failAfterError last.
       .pipe(eslint.failAfterError())
-  );
-});
-
-gulp.task('lint-scss', () => {
-  return gulp
-    .src('src/styles/**/*.scss')
-    .pipe(sasslint())
-    .pipe(sasslint.format())
-    .pipe(sasslint.failOnError());
-});
-
-gulp.task('scss', () => {
-  return (
-    gulp
-      .src('./src/styles/all.scss')
-      .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError))
-      // Sourcemaps directory is relative to the output directory.
-      // If output dir is './dist' this will place them in './dist/maps'.
-      .pipe(sourcemaps.write('./maps'))
-      .pipe(gulp.dest('./dist'))
   );
 });
 
