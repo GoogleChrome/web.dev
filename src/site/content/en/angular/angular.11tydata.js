@@ -19,6 +19,12 @@ module.exports = {
           'get-started-optimize-angular',
         ],
       },
+      {
+        title: 'Reliable',
+        pathItems: [
+          'precaching-with-the-angular-service-worker',
+        ],
+      },
     ],
   },
 };
