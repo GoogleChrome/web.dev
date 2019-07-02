@@ -57,11 +57,7 @@ In order for the backdrop-filter to have any effect, some portion of the overlay
 
 Backdrop-filters are like CSS filters. When the property is not 'none', a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) are created. Note, only elements with absolute and fixed position descendants will get a containing block.
 
-<div>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="_blank" class="w-button w-button--secondary w-button--with-icon" data-icon="school">
-    Full API on MDN
-  </a>
-</div>
+View the full API on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) for syntax, filters and values.
 
 ### Summary
 - `backdrop-filter` can apply one or more filters to an element
