@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Defer non-critical CSS</title>
+    <meta name="description" content="Learn how to defer non-critical CSS with the goal of optimizing the Critical
+Rendering Path, and improve FCP (First Contentful Paint).
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Defer%20non-critical%20CSS&amp;url=https%3A%2F%2Fweb.dev%2Fdefer-non-critical-css%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Defer non-critical CSS</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Feb 17, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/demianrenzulli.jpg"
+    alt="Demian Renzulli"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Demian Renzulli</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/drenzulli">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/demianrenzulli">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@demianrenzulli">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>CSS files are <a href="https://developers.google.com/web/tools/lighthouse/audits/blocking-resources">render-blocking resources</a>: they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles take longer to render, increasing the likelihood that users bounce: 53% of mobile visits bounce if the page does not load <a href="https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/">in 3 seconds or less</a>.</p>
+<p>In this guide, you’ll learn how to defer non-critical CSS with the goal of optimizing the <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/">Critical Rendering Path</a>, and improving <a href="https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint">FCP (First Contentful Paint)</a>.</p>
+<h2 id="loading-css-in-a-suboptimal-way">Loading CSS in a suboptimal way <a class="w-headline-link" href="#loading-css-in-a-suboptimal-way" aria-hidden="true">#</a></h2>
+<p>The following example contains an accordion with three hidden paragraphs of text, each of which is styled with a different class:</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/defer-css-unoptimized?path=index.html&previewSize=100&attributionHidden=true"
+    alt="defer-css-unoptimized on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<p>This page requests a CSS file with eight classes, but not all of them are
+necessary to render the &quot;visible&quot; content.</p>
+<p>The goal of this guide is to optimize this page, so only the <strong>critical</strong> styles
+are loaded synchronously, while the rest (like the ones applied to paragraphs),
+are loaded in a non-blocking way.</p>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<p>Run <a href="https://web.dev/discover-performance-opportunities-with-lighthouse/#run-lighthouse-from-chrome-devtools">Lighthouse</a> on <a href="https://defer-css-unoptimized.glitch.me/">the page</a> and go to the <strong>Performance</strong> section.</p>
+<p>The report shows the <strong>First Contentful Paint</strong> metric with a value of &quot;1s&quot;, and
+the opportunity <strong>Eliminate render-blocking resources</strong>, pointing to the
+<strong>style.css</strong> file:</p>
+<figure class="w-figure">
+  <img src="./lighthouse-unoptimized.png"
+       alt="Lighthouse report for unoptimized page, showing FCP of '1s' and 'Eliminate blocking resources' under 'Opportunities'" class="screenshot">
+</figure>
+<div class="w-aside w-aside--note">
+<p>The CSS we are using for this demo site is quite small. If you were requesting
+larger CSS files (which are not uncommon in production scenarios), and if
+Lighthouse detects that a page has, at least, 2048 bytes of CSS rules that
+weren't used while rendering the <strong>above the fold</strong> content, you'll
+also receive a suggestion called <strong>Remove Unused CSS</strong>.</p>
+</div>
+<p>To visualize how this CSS blocks rendering:</p>
+<ol>
+<li>Open <a href="https://defer-css-unoptimized.glitch.me/">the page</a> in Chrome.</li>
+<li>Press Control+Shift+J or Cmd+Option+J (Mac), to open DevTools.</li>
+<li>Go to the <strong>Performance</strong> tab and click on the <strong>Reload</strong> button.</li>
+</ol>
+<p>In the resulting trace, you’ll see that the <strong>FCP</strong> marker is placed immediately
+after the CSS finishes loading:</p>
+<figure>
+  <img src="./cdt-perf-unoptimized.png"
+       alt="DevTools performance trace for unoptimized page, showing FCP starting after CSS loads." class="w-screenshot">
+</figure>
+<p>This means that the browser needs to wait for all CSS to load and get processed
+before painting a single pixel on the screen.</p>
+<h2 id="optimize">Optimize <a class="w-headline-link" href="#optimize" aria-hidden="true">#</a></h2>
+<p>To optimize this page, you need to know which classes are considered “critical”.
+You'll use the the <a href="https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage">Coverage Tool</a> for that:</p>
+<ol>
+<li>In DevTools, open the <a href="https://developers.google.com/web/tools/chrome-devtools/ui#command-menu">Command Menu</a>, by pressing <code>Control+Shift+P</code> or <code>Command+Shift+P</code> (Mac).</li>
+<li>Type &quot;Coverage&quot; and select <strong>Show Coverage</strong>.</li>
+<li>Click the <strong>Reload</strong> button, to reload the page and start capturing the
+coverage.</li>
+</ol>
+<figure class="w-figure">
+  <img class="w-screenshot"
+       src="./coverage-unoptimized.png"
+       alt="Coverage for CSS file, showing 55.9% unused bytes.">
+</figure>
+<p>Double-click on the report, to see classes marked in two colors:</p>
+<ul>
+<li>Green (<strong>critical</strong>): These are the classes the browser needs to render the
+visible content (like the title, subtitle, and accordion buttons).</li>
+<li>Red (<strong>non-critical</strong>): These styles apply to content that's not immediately
+visible (like the paragraphs inside the accordions).</li>
+</ul>
+<p>With this information, optimize your CSS so that the browser starts processing
+critical styles immediately after page loads, while deferring non-critical CSS
+for later:</p>
+<ul>
+<li>Extract the class definitions marked with green in the report obtained from
+the coverage tool, and put those classes inside a <code>&lt;style&gt;</code> block at the head
+of the page:</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css"><br><span class="highlight-line"><span class="token selector">.accordion-btn</span> <span class="token punctuation">{</span><span class="token property">background-color</span><span class="token punctuation">:</span> #ADD8E6<span class="token punctuation">;</span><span class="token property">color</span><span class="token punctuation">:</span> #444<span class="token punctuation">;</span><span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span><span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span class="token property">text-align</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span><span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span class="token property">font-size</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span><span class="token property">transition</span><span class="token punctuation">:</span> 0.4s<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token selector">.container</span> <span class="token punctuation">{</span><span class="token property">padding</span><span class="token punctuation">:</span> 0 18px<span class="token punctuation">;</span><span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span><span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token selector">h1</span> <span class="token punctuation">{</span><span class="token property">word-spacing</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span><span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span><span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><span class="token punctuation">}</span></span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<ul>
+<li>Then, load the rest of the classes asynchronously, by applying the following pattern:</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>styles.css<span class="token punctuation">"</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style<span class="token punctuation">"</span></span> <span class="token attr-name">onload</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>this.onload=null;this.rel='stylesheet'<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>noscript</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>styles.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>noscript</span><span class="token punctuation">></span></span></span></code></pre>
+<p>This is not the standard way of loading CSS. Here's how it works:</p>
+<ul>
+<li><code>link rel=&quot;preload&quot; as=&quot;style&quot;</code> requests the stylesheet asynchronously. You can learn more about <code>preload</code> in the <a href="https://web.dev/preload-critical-assets">Preload critical assets guide</a>.</li>
+<li>The <code>onload</code> attribute in the <code>link</code> allows the CSS to be processed when it finishes loading.</li>
+<li>&quot;nulling&quot; the <code>onload</code> handler once it is used helps some browsers avoid re-calling the handler upon switching the rel attribute.</li>
+<li>The reference to the stylesheet inside of a <code>noscript</code> element works as a fallback for browsers that don’t execute JavaScript.</li>
+</ul>
+<p>The <a href="https://defer-css-optimized.glitch.me/">resulting page</a> looks exactly like the previous version, even when most styles load asynchronously. Here's how the inlined styles and asynchronous request to the CSS file look like in the HTML file:</p>
+<!-- Copy and Paste Me -->
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/defer-css-optimized?path=index.html&previewSize=0&attributionHidden=true"
+    alt="defer-css-optimized on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h2 id="monitor">Monitor <a class="w-headline-link" href="#monitor" aria-hidden="true">#</a></h2>
+<p>Use DevTools to run another <strong>Performance</strong> trace on the <a href="https://defer-css-optimized.glitch.me/">optimized
+page</a>.</p>
+<p>The <strong>FCP</strong> marker appears before the page requests the CSS, which means the
+browser doesn’t need to wait for the CSS to load before rendering the page:</p>
+<figure class="w-figure">
+  <img src="./cdt-perf-optimized.png"
+       alt="DevTools performance trace for unoptimized page, showing FCP starting before CSS loads." class="w-screenshot">
+</figure>
+<p>As a final step, run Lighthouse on the optimized page.</p>
+<p>In the report you’ll see that the FCP page has been reduced by <strong>0.2s</strong> (a 20%
+improvement!):</p>
+<figure class="w-figure">
+  <img src="./lighthouse-metrics-optimized.png"
+       alt="Lighthouse report, showing an FCP value of '0.8s'."
+       class="w-screenshot">
+</figure>
+<p>The <strong>Eliminate render-blocking resources</strong> suggestion is no longer under
+<strong>Opportunities</strong>, and now belongs to the <strong>Passed Audits</strong> section:</p>
+<figure class="w-figure">
+  <img src="./lighthouse-opportunities-optimized.png"
+       alt="Lighthouse report, showing 'Eliminate blocing resources' on the 'Passed Audits' section." class="w-screenshot">
+</figure>
+<h2 id="next-steps-and-references">Next steps &amp; references <a class="w-headline-link" href="#next-steps-and-references" aria-hidden="true">#</a></h2>
+<p>In this guide, you used vanilla code to implement this optimization. In a real
+production scenario, it’s a good practice to use functions like
+<a href="https://github.com/filamentgroup/loadCSS/blob/master/README.md">loadCSS</a>, that
+can encapsulate this behavior and work well across browsers. As a complement to
+this, the <a href="/extract-critical-css/">extract critical CSS guide</a>
+covers some of the most popular tools to extract critical CSS and includes
+<a href="/codelab-extract-and-inline-critical-css/">a codelab</a> to see how
+they work in practice.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Feb 17, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/defer-non-critical-css/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/minify-css/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Minify CSS
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

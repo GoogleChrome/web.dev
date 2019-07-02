@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <meta name="description" content="Our latest news, updates, and stories for developers" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="blog-landing-page">
+
+  
+  <web-actions-controller page="blog"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container w-pb--non">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline">Blog</h1>
+      <p class="w-page-header__copy">
+        Our latest news, updates, and stories for developers
+      </p>
+    </header>
+  </div>
+
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--three" role="list">
+      
+        <a href="/prefers-color-scheme/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/prefers-color-scheme/hero.jpg" alt="Silhouette photo of a mountain during nighttime, photo by Nathan Anderson on Unsplash. " />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Hello Darkness, My Old Friend
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Overhyped or necessity? Learn everything about dark mode and how to support it to the benefit of your users!
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/use-srcset-to-automatically-choose-the-right-image/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover "
+    >
+      
+      <h2
+        class="w-post-card__headline"
+      >
+        Top tips for web performance
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Use srcset to automatically choose the right image size.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/google-search-sw/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/google-search-sw/hero.jpg" alt="An illustration of a service worker interacting with a cache." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Bringing service workers to Google Search
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        The story of what shipped, how the impact was measured, and the tradeoffs that were made.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/earth-webassembly/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/earth-webassembly/hero.jpg" alt="A globe with code overlaid" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        How we’re bringing Google Earth to the Web
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Improving cross-browser access to Google Earth with WebAssembly.
+        
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/web-components-io-2019/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/web-components-io-2019/hero.jpg" alt="A wooden spoon, full of salt." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Web components: the secret ingredient helping power the web
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Web components at I/O 2019
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/use-lighthouse-for-performance-budgets/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover "
+    >
+      
+      <h2
+        class="w-post-card__headline"
+      >
+        Use Lighthouse for performance budgets
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/web-payments-updates/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/web-payments-updates/hero.jpg" alt="Transfering money from a phone" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Updates to the Web Payments APIs
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Stay up to date on what's new in Web Payments
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/value-of-speed/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/value-of-speed/hero.jpg" alt="Aircraft instrument panel, photographer Arie Wubben via unsplash.com" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        The value of speed
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Show stakeholders how site speed improvements can increase revenue.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/youtube-media-capabilities/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/youtube-media-capabilities/hero.jpg" alt="Youtube application screenshot" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        How YouTube improved video performance with the Media Capabilities API
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Ensuring buttery smooth video playback across all devices.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/layout-instability-api/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/layout-instability-api/hero.jpg" alt="An unstable stack of rocks on a beach" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        The Layout Instability API
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Detect unexpected layout shifts in JavaScript.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/how-can-performance-improve-conversion/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/how-can-performance-improve-conversion/hero.jpg" alt="A man at a whiteboard draws a flow diagram depicting shopping cart abandonment." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        How can performance improve conversion?
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Optimize your site's performance and improve conversions.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/javascript-and-google-search-io-2019/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/javascript-and-google-search-io-2019/hero.png" alt="A pile of gears." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Making JavaScript and Google Search work together
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Get the latest updates and insights from Google I/O 2019.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/service-worker-mindset/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/service-worker-mindset/hero.jpg" alt="Service workers lining up." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Service worker mindset
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        How to think when thinking about service workers.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/what-should-you-measure-to-improve-performance/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/what-should-you-measure-to-improve-performance/hero.jpg" alt="A row of shopping carts." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        What should you measure to improve performance?
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Strategies to measure performance at each stage in the purchase funnel
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/image-policies/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/image-policies/pankaj-patel-721645-unsplash.jpg" alt="A description of the hero image for screen reader users." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Image policies for fast load times and more
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Use optimized image policies to ensure your site is using the best performing images.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/extract-critical-css/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/extract-critical-css/hero.jpg" alt="A flatlay photo of wrenches and screwdrivers." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Extract critical CSS
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Learn how to improve render times with critical CSS technique.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/long-tasks-devtools/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/long-tasks-devtools/long-tasks.jpg" alt="An hourglass with sand pouring through it" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Are long JavaScript tasks delaying your Time to Interactive?
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Learn to diagnose costly work preventing user interaction.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/speed-at-scale/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/speed-at-scale/scale-header.jpg" alt="Speedometer on a retro car" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Speed at Scale - What's new in Web Performance?
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Learn about three new Web Performance launches from I/O 2019.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/proxx-announce/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/proxx-announce/hero.jpg" alt="a logo image of PROXX." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Introducing PROXX
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        A game of proximity, inspired by minesweeper
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/samesite-cookies-explained/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/samesite-cookies-explained/cookie-hero.jpg" alt="" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        SameSite cookies explained
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Secure your site by learning how to explicitly mark your cross-site cookies.
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/perception-toolkit/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/perception-toolkit/hero.png" alt="A series of screens shows a phone camera scanning an image and generating a link." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Visual searching with the Web Perception Toolkit
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Easy to use real-world interactivity
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/hands-on-portals/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/hands-on-portals/hero.png" alt="A logo of Portals" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        Hands-on with Portals: seamless navigations on the Web
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Learn how to build good navigation UX with the Portals API.
+        
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/how-to-report-metrics/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/how-to-report-metrics/hero.jpg" alt="Image of laptop with mouse pointing to checkout button on a web page" />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        How to report metrics and build a performance culture
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        Understand why performance matters when it comes to conversion
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/web-dev-io-2019/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover w-post-card__cover--with-image"
+    >
+      <figure class="w-post-card__figure">
+        <img class="w-post-card__image" src="/web-dev-io-2019/hero.jpg" alt="A group of colorful hot air balloons launching into the sky." />
+      </figure>
+      <h2
+        class="w-post-card__headline--with-image"
+      >
+        web.dev at I/O 2019
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        New look. New docs. New blog!
+      </p>
+    </div>
+  </article>
+</a>
+      
+        <a href="/discover-performance-opportunities-with-lighthouse/" class="w-card">
+  <article class="w-post-card">
+    <div
+      class="w-post-card__cover "
+    >
+      
+      <h2
+        class="w-post-card__headline"
+      >
+        Discover performance opportunities with Lighthouse
+      </h2>
+      
+    </div>
+    <div class="w-post-card__desc">
+      <p class="w-post-card__subhead">
+        
+      </p>
+    </div>
+  </article>
+</a>
+      
+    </div>
+  </section>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Specifying multiple slot widths</title>
+    <meta name="description" content="In this codelab, learn how to use the sizes attribute to size images correctly
+depending on the user&#39;s viewport.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="responsive-images-multiple-sizes" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Specifying multiple slot widths</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/katiehempenius.jpg"
+    alt="Katie Hempenius"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Katie Hempenius</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/katiehempenius">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/khempenius">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@khempenius">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <h2 id="try-out-this-demo">Try out this demo <a class="w-headline-link" href="#try-out-this-demo" aria-hidden="true">#</a></h2>
+<ul>
+<li>
+<p>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</p>
+</li>
+<li>
+<p>Reload the app in different sized browser windows to see the browser load
+different images and use different layouts at different browser sizes.</p>
+</li>
+</ul>
+<h2 id="view-the-code">View the code <a class="w-headline-link" href="#view-the-code" aria-hidden="true">#</a></h2>
+<ul>
+<li>Checkout <code>index.html</code> for the code that makes this work:</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flower.jpg<span class="token punctuation">"</span></span><br><span class="highlight-line">  <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flower-small.jpg 480w, flower-large.jpg 800w<span class="token punctuation">"</span></span></span><br>  <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 800px<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<h2 id="what's-going-on-here">What's going on here? <a class="w-headline-link" href="#what's-going-on-here" aria-hidden="true">#</a></h2>
+<p>The value of the <code>sizes</code> attribute dictates that image display width will be:
+&quot;100% of the viewport width&quot; on viewports up to 480px wide, &quot;50% of the viewport
+width&quot; on screens 481–1024px wide, and 800px on screens wider than 1024px. These
+widths match the widths specified in the CSS.</p>
+<p>The ability to specify multiple slot widths accommodates page layouts that use
+different styling (i.e. image widths) for different viewport sizes.</p>
+<h2 id="how-to-specify-multiple-slot-widths">How to specify multiple slot widths <a class="w-headline-link" href="#how-to-specify-multiple-slot-widths" aria-hidden="true">#</a></h2>
+<ul>
+<li>
+<p>Use a comma-separated list to specify multiple slot widths. Each list item,
+except for the last item, consists of a media condition (e.g. <code>max-width</code> or
+<code>min-width</code>) and a slot width.</p>
+</li>
+<li>
+<p>The last item in this list is the default slot width. It is the default, so
+you do not need to specify a media condition.</p>
+</li>
+<li>
+<p>You can list as many slot widths as you want - the number of images listed in
+<code>srcset</code> does not matter.</p>
+</li>
+<li>
+<p>Slot width can be specified using a variety of units. The following are all
+valid widths:</p>
+</li>
+<li>
+<p><code>100px</code></p>
+</li>
+<li>
+<p><code>33vw</code></p>
+</li>
+<li>
+<p><code>20em</code></p>
+</li>
+<li>
+<p><code>calc(50vw-10px)</code></p>
+</li>
+</ul>
+<p>The following is not a valid width:</p>
+<ul>
+<li><code>25%</code> (percentages cannot be used with the sizes attribute)</li>
+</ul>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/serve-responsive-images"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/responsive-images-multiple-sizes?path=[object Object]&amp;previewSize="
+            alt="responsive-images-multiple-sizes on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

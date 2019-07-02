@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SameSite cookies explained</title>
+    <meta name="description" content="Learn how to mark your cookies for first-party and third-party usage the
+SameSite attribute. You can enhance your site&#39;s security by making use of
+SameSite&#39;s Lax and Strict values gaining some protection against CSRF attacks.
+Specifying the new None attribute allows you to explicitly mark your cookies
+for cross-site usage.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/samesite-cookies-explained/cookie-hero.jpg"
+  alt=""
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=SameSite%20cookies%20explained&amp;url=https%3A%2F%2Fweb.dev%2Fsamesite-cookies-explained%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">SameSite cookies explained</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Secure your site by learning how to explicitly mark your cross-site cookies.
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>May 7, 2019</time>
+           <span class="w-author__separator">•</span> Updated <time>Jun 13, 2019</time> 
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/rowan_m.jpg"
+    alt="Rowan Merewood"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rowan Merewood</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rowan_m">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/rowan-m">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@rowan-m">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Cookies are one of the methods available for adding persistent state to web
+sites. Each cookie is a <code>key=value</code> pair along with a number of attributes that
+control when and where that cookie is used. You've probably already used these
+attributes to set things like expiry dates or indicating the cookie should only
+be sent over HTTPS. Servers set cookies by sending the aptly-named <code>Set-Cookie</code>
+header in their response. For all the detail you can dive into
+<a href="https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03#section-4.1">RFC6265bis</a>,
+but for now here's a quick refresher.</p>
+<p>Say you have a blog where you want to display a &quot;What's new&quot; promo to your
+users. Users can dismiss the promo and then they won't see it again for a while.
+You can store that preference in a cookie, set it to expire in a month
+(2,600,000 seconds), and only send it over HTTPS. That header would look like
+this:</p>
+<pre><code>Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
+</code></pre>
+<figure class="w-figure  w-figure--center">
+  <img src="set-cookie-response-header.png" alt="Three cookies being sent to a
+    browser from a server in a response" style="max-width: 60vw">
+  <figcaption class="w-figcaption">
+    Servers set cookies using the <tt>Set-Cookie</tt> header.
+  </figcaption>
+</figure>
+<p>When your reader views a page that meets those requirements, i.e. they're on a
+secure connection and the cookie is less than a month old, then their browser
+will send this header in its request:</p>
+<pre><code>Cookie: promo_shown=1
+</code></pre>
+<figure class="w-figure  w-figure--center">
+  <img src="cookie-request-header.png" alt="Three cookies being sent from a
+    browser to a server in a request" style="max-width: 60vw;">
+  <figcaption class="w-figcaption">
+    Your browser sends cookies back in the <tt>Cookie</tt> header.
+  </figcaption>
+</figure>
+<p>You can also add and read the cookies available to that site in JavaScript using
+<code>document.cookie</code>. Making an assignment to <code>document.cookie</code> will create or
+override a cookie with that key. For example, you can try the following in your
+browser's JavaScript console:</p>
+<pre><code>&gt; document.cookie = &quot;promo_shown=1; Max-Age=2600000; Secure&quot;
+&lt; &quot;promo_shown=1; Max-Age=2600000; Secure&quot;
+</code></pre>
+<p>Reading <code>document.cookie</code> will output all the cookies accessible in the current
+context, with each cookie separated by a semicolon:</p>
+<pre><code>&gt; document.cookie;
+&lt; &quot;promo_shown=1; color_theme=peachpuff; sidebar_loc=left&quot;
+</code></pre>
+<figure class="w-figure  w-figure--center">
+  <img src="document-cookie.png" alt="Javascript accessing cookies within the
+    browser" style="max-width: 35vw;">
+  <figcaption class="w-figcaption">
+    JavaScript can access cookies using <tt>document.cookie</tt>.
+  </figcaption>
+</figure>
+<p>If you try this on a selection of popular sites you will notice that most of
+them set significantly more than just three cookies. In most cases, those
+cookies are sent on every single request to that domain - and this has a number
+of implications. Upload bandwidth is often more restricted than download for
+your users, so that overhead on all outbound requests is adding a delay on your
+time to first byte. Be conservative in the number and size of cookies you set.
+Make use of the <code>Max-Age</code> attribute to help ensure that cookies don't hang
+around longer than needed.</p>
+<h2 id="what-are-first-party-and-third-party-cookies">What are first-party and third-party cookies? <a class="w-headline-link" href="#what-are-first-party-and-third-party-cookies" aria-hidden="true">#</a></h2>
+<p>If you go back to that same selection of sites you were looking at before, you
+probably noticed that there were cookies present for a variety of domains - not
+just the one you were currently visiting. Cookies that match the domain of the
+current site, i.e. what's displayed in the browser's address bar, are referred
+to as <strong>first-party</strong> cookies. Similarly, cookies from domains other than the
+current site are referred to as <strong>third-party</strong> cookies. This isn't an absolute
+label but is relative to the user's context; the same cookie can be either
+first-party or third-party depending on which site the user is on at the time.</p>
+<figure class="w-figure  w-figure--center">
+  <img src="cross-site-set-cookie-response-header.png" alt="Three cookies being
+    sent to a browser from different requests on the same page"
+    style="max-width: 60vw;">
+  <figcaption class="w-figcaption">
+    Cookies may come from a variety of different domains on one page.
+  </figcaption>
+</figure>
+<p>Continuing the example from above, let's say one of your blog posts has a
+picture of a particularly amazing cat in it and it's hosted at
+<code>/blog/img/amazing-cat.png</code>. Because it's such an amazing image, another person
+uses it directly on their site. If a visitor has been to your blog and has the
+<code>promo_shown</code> cookie, then when they view <code>amazing-cat.png</code> on the other
+person's site that cookie <strong>will be sent</strong> in that request for the image. This
+isn't particularly useful for anyone since <code>promo_shown</code> isn't used for anything
+on this other person's site, it's just adding that overhead to the request.</p>
+<p>If that's an unintended effect, why would you want to do this? It's this
+mechanism that allows sites to maintain state when they are being used in a
+third-party context. For example, if you embed a YouTube video on your site then
+visitors will see a &quot;Watch later&quot; option in the player. If your visitor is
+already signed-in to YouTube then that session is being made available in the
+embedded player by a third-party cookie - meaning that &quot;Watch later&quot; button will
+just save the video in one go rather than prompting them to sign-in or having to
+navigate them away from your page and back over to YouTube.</p>
+<figure class="w-figure  w-figure--center">
+  <img src="cross-site-cookie-request-header.png" alt="The same cookie being
+    sent in three different contexts" style="max-width: 60vw;">
+  <figcaption class="w-figcaption">
+    A cookie in a third-party context is sent when visiting different pages.
+  </figcaption>
+</figure>
+<p>One of the cultural properties of the web is that it's tended to be open by
+default. This is part of what has made it possible for so many people to create
+their own content and apps there. However, this has also brought a number of
+security and privacy concerns. Cross-site request forgery (CSRF) attacks rely on
+the fact that cookies are attached to any request to a given origin, no matter
+who initiates the request. For example, if you visit <code>evil.example</code> then it can
+trigger requests to <code>your-blog.example</code>, and your browser will happily attach
+the associated cookies. If your blog isn't careful with how it validates those
+requests then <code>evil.example</code> could trigger actions like deleting posts or adding
+their own content.</p>
+<p>Users are also becoming more aware of how cookies can be used to track their
+activity across multiple sites. However until now there hasn't been a way to
+explicitly state your intent with the cookie. Your <code>promo_shown</code> cookie should
+only be sent in a first-party context, whereas a session cookie for a widget
+meant to be embedded on other sites is intentionally there for providing the
+signed-in state in a third-party context.</p>
+<h2 id="explicitly-state-cookie-usage-with-the-samesite-attribute">Explicitly state cookie usage with the <code>SameSite</code> attribute <a class="w-headline-link" href="#explicitly-state-cookie-usage-with-the-samesite-attribute" aria-hidden="true">#</a></h2>
+<p>The introduction of the <code>SameSite</code> attribute (defined in
+<a href="https://tools.ietf.org/html/draft-ietf-httpbis-cookie-same-site-00">RFC6265bis</a>)
+allows you to declare if your cookie should be restricted to a first-party or
+same-site context. It's helpful to understand exactly what 'site' means here.
+The site is the combination of the domain suffix and the part of the domain just
+before it. For example, the <code>www.web.dev</code> domain is part of the <code>web.dev</code> site.</p>
+<div class="w-aside w-aside--key-term">
+<p><strong>Key Term:</strong>  If the user is on <code>www.web.dev</code> and requests an image
+from <code>static.web.dev</code> then that is a <strong>same-site</strong> request.</p>
+</div>
+<p>The <a href="https://publicsuffix.org/">public suffix list</a> defines this, so it's not
+just top-level domains like <code>.com</code> but also includes services like <code>github.io</code>.
+That enables <code>your-project.github.io</code> and <code>my-project.github.io</code> to count as
+separate sites.</p>
+<div class="w-aside w-aside--key-term">
+<p><strong>Key Term:</strong>  If the user is on <code>your-project.github.io</code> and requests
+an image from <code>my-project.github.io</code> that's a <strong>cross-site</strong> request.</p>
+</div>
+<p>Introducing the <code>SameSite</code> attribute on a cookie provides three different ways
+to control this behaviour. You can choose to not specify the attribute, or you
+can use <code>Strict</code> or <code>Lax</code> to limit the cookie to same-site requests.</p>
+<p>If you set <code>SameSite=Strict</code> this means your cookie will only be sent in a
+first-party context. In user terms, the cookie will only be sent if the site for
+the cookie matches the site currently shown in the browser's URL bar. So, if the
+<code>promo_shown</code> cookie is set as follows:</p>
+<pre><code>Set-Cookie: promo_shown=1; SameSite=Strict
+</code></pre>
+<p>When the user is on your site, then the cookie will be sent with the request as
+expected. However when following a link into your site, say from another site or
+via an email from a friend, on that initial request the cookie will not be sent.
+This is good where you have cookies relating to functionality that will always
+be behind an initial navigation, such as changing a password or making a
+purchase, but is too restrictive for <code>promo_shown</code>. If your reader follows the
+link into the site, they want the cookie sent so their preference can be
+applied.</p>
+<p>That's where <code>SameSite=Lax</code> comes in by allowing the cookie to be sent with
+these top-level navigations. Let's revisit the cat article example from above
+where another site is referencing your content. They make use of your photo of
+the cat directly and provide a link through to your original article.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Look at this amazing cat!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://blog.example/blog/img/amazing-cat.png<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Read the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://blog.example/blog/cat.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>article<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></span></code></pre>
+<p>If the cookie has been set as so:</p>
+<pre><code>Set-Cookie: promo_shown=1; SameSite=Lax
+</code></pre>
+<p>When the reader is on the other person's blog the cookie <strong>will not be sent</strong>
+when the browser requests <code>amazing-cat.png</code>. However when the reader follows the
+link through to <code>cat.html</code> on your blog, that request <strong>will include</strong> the
+cookie. This makes <code>Lax</code> a good choice for cookies affecting the display of the
+site with <code>Strict</code> being useful for cookies related to actions your user is
+taking.</p>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>  Neither <code>Strict</code> nor <code>Lax</code> are a silver bullet for your
+site security. Cookies are sent as part of the user's request and you should
+treat them the same as any other user input. That means sanitizing and
+validating the input. Never use a cookie to store data you consider a
+server-side secret.</p>
+</div>
+<p>Finally there is the option of not specifying the value which has previously
+been the way of implicitly stating that you want the cookie to be sent in all
+contexts. In the latest draft of
+<a href="https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03">RFC6265bis</a> this
+is being made explicit by introducing a new value of <code>SameSite=None</code>. This means
+you can use <code>None</code> to clearly communicate you intentionally want the cookie sent
+in a third-party context.</p>
+<figure class="w-figure  w-figure--center">
+  <img src="samesite-none-lax-strict.png" alt="Three cookies labelled None,
+    Lax, or Strict depending on their context" style="max-width: 60vw;">
+  <figcaption class="w-figcaption">
+    Explicitly mark the context of a cookie as <tt>None</tt>, <tt>Lax</tt>, or <tt>Strict</tt>.
+  </figcaption>
+</figure>
+<div class="w-aside w-aside--objective">
+<p><strong>Objective:</strong>  If you provide a service that other sites consume such
+as widgets, embedded content, affiliate programmes, advertising, or sign-in
+across multiple sites then you should use <code>None</code> to ensure your intent is clear.</p>
+</div>
+<h2 id="changes-to-the-default-behavior-without-samesite">Changes to the default behavior without SameSite <a class="w-headline-link" href="#changes-to-the-default-behavior-without-samesite" aria-hidden="true">#</a></h2>
+<p><a href="https://chromestatus.com/features/schedule">Chrome 76</a> introduces a new
+<code>same-site-by-default-cookies</code> flag. Setting this flag will shift the default
+treatment of cookies to apply <code>SameSite=Lax</code> if no other <code>SameSite</code> value is
+provided. This is a move towards providing a more secure default and one that
+makes the intended purpose of cookies clearer to users. If you want to delve
+into the details, check out Mike West's
+<a href="https://tools.ietf.org/html/draft-west-cookie-incrementalism-00">&quot;Incrementally Better Cookies&quot;</a>.</p>
+<p>With this flag enabled in Chrome, both <strong>new and existing cookies</strong> without the
+<code>SameSite</code> attribute will be restricted to the same site the user is browsing.
+If you have cookies that need to be available in a third-party context, then you
+must declare that to the browser and the user by marking them as
+<code>SameSite=None</code>. You will want to apply this when setting new cookies and
+actively refresh existing cookies even if they are not approaching their expiry
+date.</p>
+<div class="w-aside w-aside--note">
+<p>If you rely on any services that provide third-party content
+on your site, you should also check with the provider that they are updating
+their services. You may need to update your dependencies or snippets to ensure
+that your site picks up the new behavior.</p>
+</div>
+<p>These changes are backwards-compatible with browsers that have correctly
+implemented earlier versions of the <code>SameSite</code> attribute, or just do not support
+it at all. By applying these changes to your cookies, you are making their
+intended use explicit rather than relying on the default behavior of the
+browser. Likewise, any clients that do not recognize <code>SameSite=None</code> as of yet
+should ignore it and carry on as if the attribute was not set.</p>
+<p>Additionally in Chrome, if you also enable the
+<code>cookies-without-same-site-must-be-secure</code> flag then you must also specify
+<code>SameSite=None</code> cookies as <code>Secure</code> or they will be rejected. Note, this flag
+won't have any effect unless you also have <code>same-site-by-default-cookies</code>
+enabled.</p>
+<div class="w-aside w-aside--warning">
+<p><strong>Warning:</strong>  At the time of writing, the network library on iOS and Mac
+incorrectly handles unknown <code>SameSite</code> values and will <strong>treat any unknown
+value</strong> (including <code>None</code>) as if it was <code>SameSite=Strict</code>, which affects Safari
+on Mac and browsers wrapping WebKit on iOS (Safari, Chrome, Firefox, and
+others). This should be fixed in an upcoming release and may be available in the
+Tech Preview now. You can track their progress in the
+<a href="https://bugs.webkit.org/show_bug.cgi?id=198181">WebKit Bugzilla #198181</a>.</p>
+</div>
+<h3 id="behavior-with-same-site-by-default-cookies-enabled">Behavior with <code>same-site-by-default-cookies</code> enabled <a class="w-headline-link" href="#behavior-with-same-site-by-default-cookies-enabled" aria-hidden="true">#</a></h3>
+<pre><code>Set-Cookie: promo_shown=1
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    No attribute set
+  </span>
+  <p>—  If you send a cookie without any
+  <code>SameSite</code> attribute specified.</p>
+</div>
+<pre><code>Set-Cookie: promo_shown=1; SameSite=Lax
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Default behavior applied
+  </span>
+  <p>—  Chrome will treat that cookie
+  as if <code>SameSite=Lax</code> was specified.</p>
+</div>
+<h3 id="behavior-with-cookies-without-same-site-must-be-secure-enabled">Behavior with <code>cookies-without-same-site-must-be-secure</code> enabled <a class="w-headline-link" href="#behavior-with-cookies-without-same-site-must-be-secure-enabled" aria-hidden="true">#</a></h3>
+<pre><code>Set-Cookie: widget_session=abc123; SameSite=None
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Rejected
+  </span>
+  <p>—  Setting a cookie without <code>Secure</code> <strong>will be
+  rejected</strong>.</p>
+</div>
+<pre><code>Set-Cookie: widget_session=abc123; SameSite=None; Secure
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Accepted
+  </span>
+  <p>—  You must ensure that you pair <code>SameSite=None</code>
+  with the <code>Secure</code> attribute.</p>
+</div>
+<div class="w-aside w-aside--objective">
+<p><strong>Objective:</strong>  These flags are intended to encourage more secure
+defaults, but you shouldn't rely on a browser's default behavior. Best practice
+is to always be explicit in stating the attributes so your intent is clear.</p>
+</div>
+<h2 id="designing-for-samesite-cookies">Designing for <code>SameSite</code> cookies <a class="w-headline-link" href="#designing-for-samesite-cookies" aria-hidden="true">#</a></h2>
+<p>A core practice in software design is the
+<a href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of Concerns</a>
+which essentially states that each part of your system should have one clear
+purpose. This is more simply put in the
+<a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a> which says,
+&quot;Make each program do one thing well&quot;. By adding the <code>SameSite</code> attribute to
+your cookies you are creating the distinction between first-party and
+third-party usage, but a third-party cookie can still be used in a first-party
+context. It might seem simpler to just have the single cookie, but now you have
+one component doing two jobs.</p>
+<p>If you have one cookie that's providing functionality in both contexts, for
+example perhaps providing a user identifier for your main site and for an
+embeddable widget, then consider separating these into separate cookies. As
+browsers and users start to change how they accept and manage cookies providing
+this distinction makes your site more robust in scenarios where third-party
+cookies are blocked or cleared.</p>
+<h2 id="what-should-i-do-to-enable-samesite-today">What should I do to enable <code>SameSite</code> today? <a class="w-headline-link" href="#what-should-i-do-to-enable-samesite-today" aria-hidden="true">#</a></h2>
+<p>The majority of languages and libraries support the <code>SameSite</code> attribute for
+cookies, however the addition of <code>SameSite=None</code> is still relatively new which
+means that you may need to work around some of the standard behavior for now.
+These are documented in the
+<a href="https://github.com/GoogleChromeLabs/samesite-examples"><code>SameSite</code> examples repo on GitHub</a>.
+If your particular use case is missing, please raise issue or submit a pull
+request with your solution.</p>
+<p><em>Kind thanks for contributions and feedback from Lily Chen, Malte Ubl, Mike
+West, Rob Dodson, Tom Steiner, and Vivek Sekhar</em></p>
+<p><em>Cookie hero image by
+<a href="https://unsplash.com/photos/UiP3uF5JRWM?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pille-Riin Priske</a>
+on
+<a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></em></p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 13, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/samesite-cookies-explained/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/perception-toolkit/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Visual searching with the Web Perception Toolkit
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

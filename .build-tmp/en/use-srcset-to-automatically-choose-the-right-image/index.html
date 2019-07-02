@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Top tips for web performance</title>
+    <meta name="description" content="Use srcset to automatically choose the right image size." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Top%20tips%20for%20web%20performance&amp;url=https%3A%2F%2Fweb.dev%2Fuse-srcset-to-automatically-choose-the-right-image%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Top tips for web performance</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Use srcset to automatically choose the right image size.
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 24, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/samdutton.jpg"
+    alt="Sam Dutton"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Sam Dutton</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/sw12">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/samdutton">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <div class="w-youtube">
+  <iframe
+    class="w-youtube__embed"
+    src="https://www.youtube.com/embed/SyVKRnusyqM"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+<p>According to <a href="https://httparchive.org/reports/state-of-images">HTTP Archive</a>, a
+typical mobile web page weighs over 2.6 MB, and more than two thirds of that
+weight is images. That's a great opportunity for optimization!</p>
+<figure class="w-figure w-figure--center">
+  <img src="http-archive.svg">
+  <figcaption class="w-figcaption">
+    <a href="https://mobile.httparchive.org/">Average mobile page bytes by content type</a>
+  </figcaption>
+</figure>
+<h2 id="tldr">tl;dr <a class="w-headline-link" href="#tldr" aria-hidden="true">#</a></h2>
+<ul>
+<li>Don't save images larger than their display size.</li>
+<li>Save multiple sizes for each image and use the
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset"><code>srcset</code></a>
+attribute to enable the browser to choose the smallest.
+The <code>w</code> value tells the browser the width of each version:</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>small.jpg<span class="token punctuation">"</span></span><br>     <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>small.jpg 500w,<br><span class="highlight-line">             medium.jpg 1000w,</span><br>             large.jpg 1500w<span class="token punctuation">"</span></span><br>     <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<h2 id="save-images-with-the-right-size">Save images with the right size <a class="w-headline-link" href="#save-images-with-the-right-size" aria-hidden="true">#</a></h2>
+<p>You can make your website faster and less data hungry by using images with
+dimensions that match the display size. In other words, give images the right
+width and height when you save them.</p>
+<p>Take a look at the images below.</p>
+<p>They appear nearly identical, but the file size of one is more than 10 times
+larger than the other.</p>
+<div class="w-columns">
+  <figure class="w-figure w-figure--center">
+    <img class="w-screenshot" src="kittens-1000.jpg" alt="Little Puss and Lias: two ten week old tabby kittens." width="300">
+    <figcaption class="w-figcaption">Saved width 1000 px, file size 184 KB</figcaption>
+  </figure>
+  <figure class="w-figure w-figure--center">
+    <img class="w-screenshot" src="kittens-300.jpg" alt="Little Puss and Lias: two ten week old tabby kittens." width="300">
+    <figcaption class="w-figcaption">Saved width 300 px, file size 16 KB</figcaption>
+  </figure>
+</div>
+<p>The first image is much larger in file size because it's saved with dimensions
+much larger than the display size. Both images are displayed with a fixed
+width of 300 pixels, so it makes sense to use an image saved at the same
+size.</p>
+<p><strong>For fixed widths, use images saved with the same dimensions as the
+display size.</strong></p>
+<h2 id="but...-what-if-display-size-varies">But... what if display size varies? <a class="w-headline-link" href="#but...-what-if-display-size-varies" aria-hidden="true">#</a></h2>
+<p>In a multi-device world, images aren't always displayed at a single fixed size.</p>
+<p>Image elements might have a percentage width, or be part of responsive layouts
+where image display sizes change to fit the screen size.</p>
+<p>...and what about pixel-hungry devices like Retina displays?</p>
+<h2 id="help-the-browser-choose-the-right-image-size">Help the browser choose the right image size <a class="w-headline-link" href="#help-the-browser-choose-the-right-image-size" aria-hidden="true">#</a></h2>
+<p>Wouldn't it be great if you could make each image available at different sizes, then
+let the browser choose the best size for the device and display size?
+Unfortunately there's a
+<a href="https://en.wikipedia.org/wiki/Catch-22_(logic)">catch-22</a> when it comes to
+working out which image is best. The browser should use the smallest possible
+image, but it can't know the width of an image without downloading it to check.</p>
+<p>This is where <code>srcset</code> comes in handy. You save images at different sizes, then
+tell the browser the width of each version:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>small.jpg<span class="token punctuation">"</span></span><br><mark class="highlight-line highlight-line-active">     <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>small.jpg 500w, medium.jpg 1000w, large.jpg 1500w<span class="token punctuation">"</span></span></mark><br>     <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>The <code>w</code> values show the width of each image in pixels. For example,
+<code>small.jpg 500w</code> tells the browser that <a href="small.jpg">small.jpg</a> is 500
+pixels wide. This enables the browser to choose the smallest possible image,
+depending on the screen type and the viewport size — without having to
+download images to check their size.</p>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+<code>srcset</code> gives the browser information about the
+saved width of each image file.</p>
+<p>It does NOT specify the size to display the image — you still need CSS for that!</p>
+</div>
+<p>You can see <code>srcset</code> in action for the image below. If you're on a laptop or
+desktop computer, change your browser window size and reopen this page.
+Then use the Network panel of your browser tools to check which image was used.
+(You'll need to do that in an Incognito or Private window, otherwise the
+original image file will be cached.)</p>
+<p><img
+  src="small.jpg"
+  srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
+  alt="Lias and Little Puss: two ten week old grey tabby kittens"></p>
+<h2 id="how-can-i-create-multiple-image-sizes">How can I create multiple image sizes? <a class="w-headline-link" href="#how-can-i-create-multiple-image-sizes" aria-hidden="true">#</a></h2>
+<p>You'll need to make multiple sizes available for every image you want to use
+with <code>srcset</code>.</p>
+<p>For one-off images such as hero images you can manually save different sizes. If
+you have lots of images, such as product photos, you'll need to automate.
+For that there are two approaches.</p>
+<h3 id="incorporate-image-processing-in-your-build-process">Incorporate image processing in your build process <a class="w-headline-link" href="#incorporate-image-processing-in-your-build-process" aria-hidden="true">#</a></h3>
+<p>As part of your build process, you can add steps to create different sized
+versions of your images. See <a href="/use-imagemin-to-compress-images">&quot;Use Imagemin to compress images&quot;</a>
+to learn more.</p>
+<h3 id="use-an-image-service">Use an image service <a class="w-headline-link" href="#use-an-image-service" aria-hidden="true">#</a></h3>
+<p>Image creation and delivery can be automated using a commercial service like
+<a href="https://cloudinary.com/">Cloudinary</a>, or an open source equivalent such as
+<a href="https://github.com/thumbor/thumbor">Thumbor</a> that you install and run yourself.</p>
+<p>You upload your high resolution images, and the image service automatically
+creates and delivers different image formats and sizes depending on the URL
+parameters. For an example, open <a href="https://res.cloudinary.com/webdotdev/f_auto/w_500/IMG_20190113_113201.jpg">this sample image on Cloudinary</a> and try changing the <code>w</code> value or the file extension in the URL bar.</p>
+<p>Image services also have more advanced features such as the ability to automate
+&quot;smart cropping&quot; for different image sizes and automatically deliver <a href="https://developers.google.com/speed/webp/">WebP</a> images
+to browsers that support the format, instead of JPEGs — without changing the file
+extension.</p>
+<div class="w-aside w-aside--note">
+<p>You can check the format delivered using your browser tools.</p>
+<p>For the image URL above, a WebP file is automatically
+delivered to browsers that support WebP, without changing the <code>.jpg</code> file
+extension.</p>
+</div>
+<p><img class="w-screenshot" src="devtools-headers-for-cloudinary-image.png" alt="Chrome
+DevTools showing WebP content-type header for file served by Cloudinary"></p>
+<h2 id="what-if-the-image-doesn't-look-right-at-different-sizes">What if the image doesn't look right at different sizes? <a class="w-headline-link" href="#what-if-the-image-doesn't-look-right-at-different-sizes" aria-hidden="true">#</a></h2>
+<p>In that case, you'll need to use the <code>&lt;picture&gt;</code> element for &quot;art direction&quot;:
+providing a different image or image crop at different sizes. To learn more
+take a look at the <a href="/codelab-art-direction">&quot;Art direction&quot;</a> codelab.</p>
+<h2 id="what-about-pixel-density">What about pixel density? <a class="w-headline-link" href="#what-about-pixel-density" aria-hidden="true">#</a></h2>
+<p>High-end devices have smaller (more dense) physical pixels. For example, a
+high-end phone might have two or three times as many pixels in each row of
+pixels as a cheaper device.</p>
+<p>That can affect the size you need to save your images. We won't go into the gory
+details here, but you can find out more from the
+<a href="/codelab-density-descriptors">&quot;Use density descriptors&quot;</a> codelab.</p>
+<h2 id="what-about-the-display-size-of-the-image">What about the display size of the image? <a class="w-headline-link" href="#what-about-the-display-size-of-the-image" aria-hidden="true">#</a></h2>
+<p>You can use <code>sizes</code> to make <code>srcset</code> work even better.</p>
+<p>Without it, the browser uses the full width of the viewport when choosing an
+image from a <code>srcset</code>. The <code>sizes</code> attribute tells the browser the width that an
+image element will be displayed, so the browser can choose the smallest possible
+image file — before it makes any layout calculations.</p>
+<p>In the example below, <code>sizes=&quot;50vw&quot;</code> tells the browser that this image will be
+displayed at 50% of the viewport width.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>small.jpg<span class="token punctuation">"</span></span><br><span class="highlight-line">     <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>small.jpg 500w, medium.jpg 1000w, large.jpg 1500w<span class="token punctuation">"</span></span></span><br><mark class="highlight-line highlight-line-active">     <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50vw<span class="token punctuation">"</span></span></mark><br>     <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>You can see this in action at
+<a href="https://simpl.info/sizeswvalues/">simpl.info/sizes</a> and the <a href="/codelab-specifying-multiple-slot-widths">&quot;Specifying multiple slot widths&quot;</a> codelab.</p>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+<code>sizes</code> gives the browser information about the display width
+of on image element.</p>
+<p>As with <code>srcset</code> it does NOT specify the size to display the image — you need
+CSS for that.</p>
+</div>
+<h2 id="what-about-browser-support">What about browser support? <a class="w-headline-link" href="#what-about-browser-support" aria-hidden="true">#</a></h2>
+<p><code>srcset</code> and <code>sizes</code> are <a href="https://caniuse.com/#feat=srcset">supported by over 90% of
+browsers globally</a>.</p>
+<p>If a browser does not support <code>srcset</code> or <code>sizes</code> it will fall back to just using the <code>src</code> attribute.</p>
+<p>This makes <code>srcset</code> and <code>sizes</code> great progressive enhancements!</p>
+<h2 id="learn-more">Learn more <a class="w-headline-link" href="#learn-more" aria-hidden="true">#</a></h2>
+<p>Take a look at the <a href="/fast#optimize-your-images">&quot;Optimize your images&quot;</a> section
+of web.dev for a deeper drive in to image optimization. For a more guided
+experience, consider trying the free <a href="https://udacity.com/course/responsive-images--ud882">&quot;Responsive
+Images&quot;</a> course offered by
+Udacity.</p>
+<div class="w-aside w-aside--note">
+<p>This post accompanies <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcICVl6Vb-AFlw81bQLuv6a_P"><strong>Top tips for web performance</strong></a>: a fortnightly video series showing simple techniques to improve site speed.</p>
+</div>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 24, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/use-srcset-to-automatically-choose-the-right-image/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+      <div class="w-codelabs-callout">
+      <div class="w-codelabs-callout__header">
+        <h2 class="w-codelabs-callout__lockup">Codelabs</h2>
+        <div class="w-codelabs-callout__headline">See it in action</div>
+        <div class="w-codelabs-callout__blurb">
+          Learn more and put this guide into action.
+        </div>
+      </div>
+      <ul class="w-unstyled-list w-codelabs-callout__list">
+        <li class="w-codelabs-callout__listitem">
+  <a
+    class="w-codelabs-callout__link"
+    href="/codelab-art-direction/"
+  >
+    Art direction
+  </a>
+</li>
+        <li class="w-codelabs-callout__listitem">
+  <a
+    class="w-codelabs-callout__link"
+    href="/codelab-density-descriptors/"
+  >
+    Use density descriptors
+  </a>
+</li>
+        <li class="w-codelabs-callout__listitem">
+  <a
+    class="w-codelabs-callout__link"
+    href="/codelab-specifying-multiple-slot-widths/"
+  >
+    Specifying multiple slot widths
+  </a>
+</li>
+      </ul>
+    </div>
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/google-search-sw/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Bringing service workers to Google Search
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

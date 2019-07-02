@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speed at Scale - What&#39;s new in Web Performance?</title>
+    <meta name="description" content="For Google I/O 2019, we introduced three new Web Performance initiatives that we hope will lead to better user experiences for everyone.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/speed-at-scale/scale-header.jpg"
+  alt="Speedometer on a retro car"
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Speed%20at%20Scale%20-%20What's%20new%20in%20Web%20Performance%3F&amp;url=https%3A%2F%2Fweb.dev%2Fspeed-at-scale%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Speed at Scale - What&#39;s new in Web Performance?</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Learn about three new Web Performance launches from I/O 2019.
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>May 24, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/katiehempenius.jpg"
+    alt="Katie Hempenius"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Katie Hempenius</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/katiehempenius">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/khempenius">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@khempenius">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/addyosmani.jpg"
+    alt="Addy Osmani"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Addy Osmani</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/addyosmani">Twitter</a>
+      </li>
+      
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@addyosmani">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>During the <a href="https://www.youtube.com/watch?v=YJGCZCaIZkQ&amp;feature=youtu.be">&quot;Speed at Scale&quot;
+talk</a> at Google
+I/O 2019, we announced three things that we hope will improve web performance
+over the coming year.</p>
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
+50%; transform: translate(-50%,-50%);"
+src="https://www.youtube.com/embed/YJGCZCaIZkQ" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</div>
+<h2 id="lighthouse-now-supports-performance-budgeting">Lighthouse now supports Performance Budgeting <a class="w-headline-link" href="#lighthouse-now-supports-performance-budgeting" aria-hidden="true">#</a></h2>
+<p><a href="https://developers.google.com/web/tools/lighthouse/audits/budgets">LightWallet</a>
+is a new feature in Lighthouse that adds support for <a href="/fast#set-performance-budgets">performance
+budgets</a>. Performance budgets establish
+standards for the performance of your site. More importantly, they make it is
+easy to identify and fix performance regressions before they ship.</p>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./Speed-at0.png" alt="A LightWallet report showing which assets are over the file size budget." loading="lazy">
+</figure>
+<p>LightWallet is available in the newest version of the Lighthouse CLI and only
+takes a couple minutes to set up. These<a href="https://developers.google.com/web/tools/lighthouse/audits/budgets">
+instructions</a>
+provide more information.</p>
+<p>Unsure what your budgets should be? Try our experimental <a href="https://bit.ly/perf-budget-calculator">Performance Budget
+Calculator</a> which can generate a
+LightWallet compatible budget configuration.</p>
+<h2 id="native-image-and-iframe-lazy-loading-comes-to-the-web">Native image and iframe lazy-loading comes to the web <a class="w-headline-link" href="#native-image-and-iframe-lazy-loading-comes-to-the-web" aria-hidden="true">#</a></h2>
+<p>Web pages often contain a large number of images, which contribute to
+data-usage, <a href="https://httparchive.org/reports/state-of-images">page-bloat</a> and
+slower page loads. Many of these images are offscreen, requiring a user to
+scroll in order to view them.</p>
+<p>Until now, you've needed to solve lazy-loading images using a JavaScript
+library but that may soon change. This summer, Chrome will be launching support
+for the <a href="https://addyosmani.com/blog/lazy-loading/">loading</a> attribute which
+brings native <code>&lt;img&gt;</code> and <code>&lt;iframe&gt;</code> lazy-loading to the web.</p>
+<figure class="w-figure">
+<img src="./Speed-at1.png" alt="Native lazy-loading highlighting offscreen
+content being loaded on-demand" loading="lazy">
+</figure>
+<p>The <code>loading</code> attribute allows a browser to defer loading offscreen images and
+iframes until users scroll near them. <code>loading</code> supports three values:</p>
+<ul>
+<li><code>lazy</code>: is a good candidate for lazy loading.</li>
+<li><code>eager</code>: is not a good candidate for lazy loading. Load right away.</li>
+<li><code>auto</code>: browser will determine whether or not to lazily load.</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>io2019.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">loading</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lazy<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>video-player.html<span class="token punctuation">"</span></span> <span class="token attr-name">loading</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lazy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span></span></code></pre>
+<p>The exact heuristics for &quot;when the user scrolls near&quot; is left up to the
+browser. In general, our hope is that browsers will start fetching deferred
+images and iframe content a little before it comes into the viewport.</p>
+<p>The <code>loading</code> attribute is implemented behind flags in Chrome Canary. You can
+try out <a href="https://mathiasbynens.be/demo/img-loading-lazy">this demo</a> in Chrome
+75+ with the <code>chrome://flags/#enable-lazy-image-loading</code> and
+<code>chrome://flags/#enable-lazy-frame-loading</code> flags turned on.</p>
+<p>A <a href="https://addyosmani.com/blog/lazy-loading/">write-up</a> on the native
+lazy-loading feature is available with more details.</p>
+<h2 id="google-fonts-now-supports-font-display-as-a-query-parameter">Google Fonts now supports font-display as a query parameter <a class="w-headline-link" href="#google-fonts-now-supports-font-display-as-a-query-parameter" aria-hidden="true">#</a></h2>
+<p>We announced support for <a href="https://font-display.glitch.me">font-display</a> is now available in production for all <a href="https://fonts.google.com">Google Fonts</a> via the <a href="https://developers.google.com/fonts/docs/getting_started#use_font-display">display query-string parameter</a>:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line">https://fonts.googleapis.com/css?family=Lobster&amp;display=swap</span></code></pre>
+<p>The <code>font-display</code> descriptor lets you decide how your web fonts will render or
+fallback, depending on how long it takes for them to load. It supports a number
+of values including <code>auto</code>, <code>block</code>, <code>swap</code>, <code>fallback</code> and <code>optional</code>.</p>
+<p>Previously, the only way to specify <code>font-display</code> for web fonts from Google Fonts was to self-host them but this change removes the need to do so.</p>
+<p>The <a href="https://developers.google.com/fonts/docs/getting_started#use_font-display">Google Fonts
+documentation</a>
+has been updated to include <code>font-display</code> in the default code embeds (as seem
+below). We hope this will encourage more developers to try out this exciting
+addition.</p>
+<figure class="w-figure">
+  <img class="w-screenshot" src="./Speed-at2.png" alt="Google Fonts embed code with font-display included in the URL as a query-parameter" loading="lazy">
+</figure>
+<p>Here's a <a href="https://glitch.com/~truth-bookcase">demo</a> on Glitch of using display
+with multiple font families. Try it out with <a href="https://developers.google.com/web/tools/chrome-devtools/network/#throttle">DevTools network
+emulation</a>
+to see the impact of <code>font-display: swap</code>.</p>
+<h2 id="watch-for-more">Watch for more <a class="w-headline-link" href="#watch-for-more" aria-hidden="true">#</a></h2>
+<p>Our talk also covered several production case studies of using advanced
+performance patterns to improve user-experience. These included sites
+leveraging image CDNs, <a href="/fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli">Brotli
+compression</a>,
+smart JavaScript serving and prefetching to speed up their pages. <a href="https://www.youtube.com/watch?v=YJGCZCaIZkQ&amp;feature=youtu.be">Watch the
+talk</a> to learn
+more :)</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>May 24, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/speed-at-scale/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/proxx-announce/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Introducing PROXX
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Precaching in Create React App with Workbox</title>
+    <meta name="description" content="Workbox is built into Create React App with a default configuration that
+precaches all static assets in your application with every build.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/precache-with-workbox-react/hero-precache-with-workbox-react.jpg"
+  alt=""
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Precaching%20in%20Create%20React%20App%20with%20Workbox&amp;url=https%3A%2F%2Fweb.dev%2Fprecache-with-workbox-react%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/react
+    >
+      React
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Precaching in Create React App with Workbox</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Caching assets with a service worker can speed up repeat visits and provide offline support. Workbox makes this easy and is included in Create React App by default.
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Apr 29, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/houssein.jpg"
+    alt="Houssein Djirdeh"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Houssein Djirdeh</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/hdjirdeh">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/housseindjirdeh">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@housseindjirdeh">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <div class="w-aside w-aside--note">
+<p>If you don't yet understand the basic idea behind service workers and
+precaching, read the <a href="/precache-with-workbox">Precaching with Workbox</a> guide
+first.</p>
+</div>
+<p><a href="https://developers.google.com/web/tools/workbox/"><code>Workbox</code></a> is built into
+Create React App (CRA) with a default configuration that precaches all the
+static assets in your application with every build.</p>
+<figure class="w-figure w-figure--inline-right">
+  <img src="./service-workers.png" width="300" alt="Requests/responses with service worker">
+</figure>
+<h2 id="why-is-this-useful">Why is this useful? <a class="w-headline-link" href="#why-is-this-useful" aria-hidden="true">#</a></h2>
+<p>Service workers enable you to store important resources in its cache
+(<em>precaching</em>) so that when a user loads the web page for a second time, the
+browser can retrieve them from the service worker instead of making requests to
+the network. This results in faster page loads on repeat visits as well as the
+ability to surface content when the user is offline.</p>
+<h2 id="workbox-in-cra">Workbox in CRA <a class="w-headline-link" href="#workbox-in-cra" aria-hidden="true">#</a></h2>
+<p><strong>Workbox</strong> is a collection of tools that allow you create and maintain service
+workers. In CRA, the
+<a href="https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin"><code>workbox-webpack-plugin</code></a>
+is already included into the production build and only needs to be enabled in
+the <code>src/index.js</code> file in order to register a new service worker with every
+build:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token string">'./index.css'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> serviceWorker <span class="token keyword">from</span> <span class="token string">'./serviceWorker'</span><span class="token punctuation">;</span></span><br><span class="highlight-line">ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><del class="highlight-line highlight-line-remove">serviceWorker<span class="token punctuation">.</span><span class="token function">unregister</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></del><br><ins class="highlight-line highlight-line-add">serviceWorker<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></ins></code></pre>
+<p>Here is an example of a React app built with CRA that has a service worker enabled through this file:</p>
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/react-sw-example?path=src/index.css&previewSize=100&attributionHidden=true"
+    alt="react-sw-example on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<p>In order to see which assets are being cached:</p>
+<ul>
+<li>Mouse over the editor and press the <strong>Show</strong> button to preview the app.</li>
+<li>Open the DevTools by pressing <code>CMD + OPTION + i</code> / <code>CTRL + SHIFT + i</code>.</li>
+<li>Click on the <strong>Network</strong> tab.</li>
+<li>Reload the application.</li>
+</ul>
+<p>You'll notice that instead of showing the payload size, the <code>Size</code> column shows
+a <code>(from ServiceWorker)</code> message to indicate that these resources were retrieved
+from the service worker.</p>
+<img class="w-screenshot w-screenshot--filled" src="./network-requests-sw.png" alt="Network requests with a service worker">
+<p>Since the service worker caches all static assets, try to use the application
+while offline:</p>
+<ul>
+<li>In the <strong>Network</strong> tab in DevTools, enable the <strong>Offline</strong> checkbox to
+simulate an offline experience.</li>
+<li>Reload the application.</li>
+</ul>
+<p>The application works in exactly the same way, even without a network
+connection!</p>
+<h2 id="modifying-caching-strategies">Modifying caching strategies <a class="w-headline-link" href="#modifying-caching-strategies" aria-hidden="true">#</a></h2>
+<p>The default precaching strategy used by Workbox in CRA is <strong>cache-first</strong>, where
+all static assets are fetched from the service worker cache and if that fails
+(if the resource is not cached for example), the network request is made. This
+is how content can still be served to users even when they are in a complete
+offline state.</p>
+<p>Although Workbox provides support to define different strategies and approaches
+to caching static and dynamic resources, the default configuration in CRA cannot
+be modified or overwritten unless you eject entirely. However, there is an
+<a href="https://github.com/facebook/create-react-app/issues/5359">open proposal</a>
+to explore adding support for an external <code>workbox.config.js</code> file. This
+would allow developers to override the default settings by just creating a
+single <code>workbox.config.js</code> file.</p>
+<div class="w-aside w-aside--note">
+<p>For more details on all the caching strategies that a service worker can use,
+take a look at the
+<a href="https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/">Offline Cookbook</a>.</p>
+</div>
+<h2 id="handling-a-cache-first-strategy">Handling a cache-first strategy <a class="w-headline-link" href="#handling-a-cache-first-strategy" aria-hidden="true">#</a></h2>
+<p>Relying on the service worker cache first and then falling back to the network
+is an excellent way to build sites that load faster on subsequent visits and
+work offline to some extent. However, there are a few things that need to
+be taken into consideration:</p>
+<ul>
+<li>How can caching behaviours by a service worker be tested?</li>
+<li>Should there be a message for users to let them know they are looking at
+cached content?</li>
+</ul>
+<p><a href="https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app#offline-first-considerations">The CRA
+documentation</a>
+explains these points, and more, in detail.</p>
+<h2 id="conclusion">Conclusion <a class="w-headline-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<p>Use a service worker to precache important resources in your application to
+provide a faster experience for your users as well as offline support.</p>
+<ol>
+<li>If you are using CRA, enable the pre-configured service worker in
+<code>src/index.js</code>.</li>
+<li>If you are not using CRA to build a React application, include one of the
+many libraries Workbox provides, such as <code>workbox-webpack-plugin</code>, into your
+build process.</li>
+<li>Keep an eye out for when CRA will support a <code>workbox.config.js</code> override file
+in this
+<a href="https://github.com/facebook/create-react-app/issues/5359">GitHub issue</a>.</li>
+</ol>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Apr 29, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/react/precache-with-workbox-react/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/react"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/prerender-with-react-snap/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Pre-render routes with react-snap
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

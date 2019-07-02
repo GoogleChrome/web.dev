@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Setting performance budgets with webpack</title>
+    <meta name="description" content="Learn how to set performance budgets and keep your bundlesize in check with
+webpack.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="webpack-performance-budgets" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Setting performance budgets with webpack</h1>
+      
+        <div class="w-author__published">
+          <time>Jan 31, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mihajlija.jpg"
+    alt="Milica Mihajlija"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Milica Mihajlija</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/bibydigital">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mihajlija">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p><a href="https://developers.google.com/web/fundamentals/performance/webpack/">Webpack</a>
+combines all your imported files and packages them into one or more output
+files known as bundles. Bundling is neat, but as your app grows your bundles
+will grow too. You need to monitor bundle sizes to ensure that they don’t grow
+too large and affect how long your application takes to load. Webpack supports
+setting <a href="https://web.dev/performance-budgets-101">performance budgets</a>
+based on <strong>asset size</strong> and it can keep an eye on bundle sizes for you.</p>
+<p>To see it in action, here’s an app that counts the days left until New Year’s.
+It’s built with <a href="https://reactjs.org/">React</a> and <a href="https://momentjs.com/">moment.js</a>.
+(Just like real-world apps that increasingly rely on frameworks and libraries. 😉)</p>
+<p><img src="countdown-app.png" alt="An app that counts the days left until New Year’s day"></p>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<p>This codelab already contains the app bundled with webpack.</p>
+<ol>
+<li>To start, click the <strong>Remix to Edit</strong> button to make the project editable.</li>
+<li>Click the <strong>Tools</strong> button.</li>
+<li>Then click the <strong>Console</strong> button. It will open the Console in another tab.</li>
+<li>To get a color-coded list of assets and their sizes, in the console
+type:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">webpack</span></code></pre>
+<p>The main bundle is highlighted in yellow because it’s larger than 244 KiB (250
+KB).</p>
+<div class="w-aside w-aside--note">
+<p>Webpack uses the unit &quot;KiB&quot;, which you might not have
+seen before. 1 “KiB” and 1 “KB” are fairly close in size: 1 KiB is 1024 bytes,
+while 1 KB is 1000 bytes.</p>
+</div>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./webpack-bundle-sizes.png" alt="Webpack output showing bundle size of 323 KiB">
+  <figcaption class="w-figcaption">
+    Webpack warning you about bulky JS bundle ⚠️
+  </figcaption>
+</figure>
+<p>These warnings are enabled by default in <a href="https://webpack.js.org/concepts/mode/">production mode</a>
+and the default threshold is <strong>244 KiB uncompressed</strong>, for both assets and
+<a href="https://webpack.js.org/concepts/entry-points/">entry points</a>
+(the combination of all assets used during the initial load of a page).</p>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./webpack-warning.png" alt="Webpack warning that the asset exceeds the recommended size limit">
+  <figcaption class="w-figcaption">
+    Webpack warning you about bulky JS bundle ⚠️
+  </figcaption>
+</figure>
+<p>Webpack will not only warn you, but it will also give you a recommendation on
+how to downsize your bundles. You can learn more about the recommended techniques on
+<a href="https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching#lazy-loading">Web Fundamentals</a>.</p>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="webpack-performance-recommendation.png" alt="Webpack performance optimization recommendation">
+  <figcaption class="w-figcaption">Webpack performance optimization recommendation 💁</figcaption>
+</figure>
+<h2 id="set-a-custom-performance-budget">Set a custom performance budget <a class="w-headline-link" href="#set-a-custom-performance-budget" aria-hidden="true">#</a></h2>
+<p>An appropriate performance budget will depend on the nature of your project.
+It’s always best to <a href="https://web.dev/your-first-performance-budget">do your own research</a>.
+A <a href="https://web.dev/your-first-performance-budget#budget-for-quantity-based-metrics">good rule</a>
+of thumb is to deliver under 170 KB of compressed/minified
+<a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/">critical-path</a>
+resources.</p>
+<div class="w-aside w-aside--note">
+<p>Critical-path resources are the minimal set of resources required
+for the browser to display the first screen's worth of content.</p>
+</div>
+<p>For this simple demo, try being even more conservative and set the budget to
+100 KB (97.7 KiB). In <code>webpack.config.js</code>, add the following:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">//...</span></span><br><span class="highlight-line">  performance<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    maxAssetSize<span class="token punctuation">:</span> <span class="token number">100000</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    maxEntrypointSize<span class="token punctuation">:</span> <span class="token number">100000</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    hints<span class="token punctuation">:</span> <span class="token string">"warning"</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<p>The new performance budget is set in <strong>bytes</strong>:</p>
+<ul>
+<li>100000 bytes for individual assets (maxAssetSize)</li>
+<li>100000 bytes for the entry-point (maxEntrypointSize)</li>
+</ul>
+<p>In this case, there’s only one bundle which also acts as the entry point.</p>
+<p>Possible values for <strong>hints</strong> are:</p>
+<ol>
+<li><strong><code>warning</code></strong> (default): Displays a yellow warning message, but the build
+passes. It’s best to use this in development environments.</li>
+<li><strong><code>error</code></strong>: Displays a red error message, but the build still passes. This
+setting is recommended for production builds.</li>
+<li><strong><code>false</code></strong>: No warnings or errors are shown.</li>
+</ol>
+<figure class="w-figure">
+  <img src="webpack-error.png" alt="Webpack performance error in red font" class="w-screenshot w-screenshot--filled">
+  <figcaption class="w-figcaption">Webpack performance hint "error" 🚨</figcaption>
+</figure>
+<h2 id="optimize">Optimize <a class="w-headline-link" href="#optimize" aria-hidden="true">#</a></h2>
+<p>The purpose of a performance budget is to warn you about performance issues
+before they become too difficult to fix. There is always more than one way to
+build an app and some techniques will make for faster load times. (A lot of
+them are documented right here in <a href="https://web.dev/fast#optimize-your-javascript">Optimizing your JavaScript</a>. 🤓)</p>
+<p>Frameworks and libraries make developers’ lives easier, but end users don’t
+really care how apps are built, only that they’re functional and fast. If you
+find yourself going over the performance budget, it’s time to think about
+possible optimizations.</p>
+<p>In the real world, large client-side frameworks are usually hard to swap out,
+so it’s important to use them wisely. With a bit of research, you can often
+find smaller alternatives to popular libraries that do the job just as well
+(<a href="https://date-fns.org/">date-fns</a> is a good alternative for <a href="https://momentjs.com/">moment.js</a>).
+Sometimes it makes more sense to not use a framework or library at all if it
+has a significant performance impact.</p>
+<p>Removing unused code a good way to optimize apps that include large third-party
+libraries. The <a href="https://web.dev/remove-unused-code">Remove unused code guide</a> explains this
+process in detail and here’s a quick way to rewrite the countdown code without using moment.js.</p>
+<p>In <strong>app/components/Countdown.jsx</strong> remove:</p>
+<pre class="language-js"><code class="language-js"><del class="highlight-line highlight-line-remove"><span class="token keyword">const</span> today <span class="token operator">=</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></del><br><del class="highlight-line highlight-line-remove"><span class="token keyword">const</span> yearEnd <span class="token operator">=</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">endOf</span><span class="token punctuation">(</span><span class="token string">'year'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></del><br><del class="highlight-line highlight-line-remove"><span class="token keyword">const</span> daysLeft <span class="token operator">=</span> yearEnd<span class="token punctuation">.</span><span class="token function">diff</span><span class="token punctuation">(</span>today<span class="token punctuation">,</span> <span class="token string">'days'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></del></code></pre>
+<p>And delete this line:</p>
+<pre class="language-js"><code class="language-js"><del class="highlight-line highlight-line-remove"><span class="token keyword">const</span> moment <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'moment'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></del></code></pre>
+<p>It takes a bit of math, but you can implement the same countdown with vanilla
+JavaScript:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> today <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> year <span class="token operator">=</span> today<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> yearEnd <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//months are zero indexed in JS</span></span><br><span class="highlight-line"><span class="token keyword">const</span> timeDiff <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>yearEnd<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> today<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> daysLeft <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>timeDiff <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Now remove <code>moment.js</code> from <code>package.json</code> and run webpack in the console
+again to build the optimized bundle.</p>
+<p>Ta-da! You have shaved off 223 KiB (230KB) and the app is under budget.🎉</p>
+<img class="w-screenshot w-screenshot--filled" src="./optimized-webpack-bundle-size.png" alt="Webpack bundle size output after optimization is 97.7 KiB">
+<h2 id="monitor">Monitor <a class="w-headline-link" href="#monitor" aria-hidden="true">#</a></h2>
+<p>Setting up a performance budget in webpack takes just a couple of lines of code
+and it will warn you if you ever (accidentally) add a big dependency. The
+saying goes &quot;out of sight, out of mind&quot; but webpack can make sure that you are
+aware of performance implications at all times.</p>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/incorporate-performance-budgets-into-your-build-tools"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/webpack-performance-budgets?path=[object Object]&amp;previewSize="
+            alt="webpack-performance-budgets on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using the CrUX Dashboard on Data Studio</title>
+    <meta name="description" content="Data Studio is a powerful data visualization tool that enables you to build
+dashboards on top of big data sources, like the Chrome UX Report In this
+guide, learn how to create your own custom CrUX Dashboard to track an origin&#39;s
+user experience.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Using%20the%20CrUX%20Dashboard%20on%20Data%20Studio&amp;url=https%3A%2F%2Fweb.dev%2Fchrome-ux-report-data-studio-dashboard%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Using the CrUX Dashboard on Data Studio</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/rviscomi.jpg"
+    alt="Rick Viscomi"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rick Viscomi</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rick_viscomi">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/rviscomi">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@rviscomi">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p><a href="https://marketingplatform.google.com/about/data-studio/">Data Studio</a> is a
+powerful data visualization tool that enables you to build dashboards on top of
+big data sources, like the Chrome UX Report
+(<a href="https://developers.google.com/web/tools/chrome-user-experience-report/">CrUX</a>).
+In this guide, learn how to create your own custom CrUX Dashboard to track an
+origin's user experience.</p>
+<img class="w-screenshot" src="./dash_fcp.png" alt="CrUX Dashboard">
+<p>The CrUX Dashboard is built with a Data Studio feature called <a href="https://developers.google.com/datastudio/connector/">Community
+Connectors</a>.
+This connector is a pre-established link between the raw CrUX data on
+<a href="./bigquery.html">BigQuery</a> and the visualizations of Data Studio. It eliminates
+the need for users of the dashboard to write any queries or generate any charts.
+Everything is built for you -- all you need is to provide an origin to look up.
+The connector code is also
+<a href="https://github.com/googledatastudio/community-connectors/tree/master/chrome-ux-report">open source</a>
+if you want to see how it works.</p>
+<h2 id="creating-a-dashboard">Creating a dashboard <a class="w-headline-link" href="#creating-a-dashboard" aria-hidden="true">#</a></h2>
+<p>To get started, go to <a href="https://g.co/chromeuxdash">g.co/chromeuxdash</a>.
+This will take you to the CrUX community connector page where you can provide
+the origin for which the dashboard will be generated. Note that first-time users
+may need to complete permission or marketing preference prompts.</p>
+<img class="w-screenshot" src="./dash_connector.png" alt="CrUX Data Studio connector">
+<p>The text input field accepts origins only, not full URLs. For example,
+<code>https://developers.google.com</code> is an origin but
+<code>https://developers.google.com/web/tools/chrome-user-experience-report/</code> is not.
+If you omit the protocol, HTTPS is assumed. Subdomains matter, so
+<code>developers.google.com</code> is very different from <code>google.com</code>.</p>
+<p>Some common issues with origins are providing the wrong protocol, for example
+&quot;https://&quot; instead of &quot;http://&quot;, and omitting the subdomain when needed.
+Some websites include redirects, so if <code>example.com</code> redirects to
+<code>https://www.example.com</code>, then you should use the latter, resolved version of
+the origin. As a rule of thumb, use whichever origin users see in the URL bar.</p>
+<p>If your origin is not included in the CrUX dataset, you may get an error message
+like the one below. There are over 4 million origins in the dataset, but the one
+you want may not have sufficient data to be included.</p>
+<p><img src="./dash_error.png" alt="CrUX Data Studio connector error"></p>
+<p>If the origin exists, you'll be taken to the schema page for the dashboard.
+This shows you all of the fields that are included: each effective connection
+type, each form factor, the month of the dataset release, the distribution of
+performance for each supported metric (e.g., first contentful paint), and of
+course the name of the origin. There's nothing you need to do or change on this
+page, just click &quot;Create Report&quot; to continue.</p>
+<img class="w-screenshot" src="./dash_schema.png" alt="CrUX Data Studio schema">
+<h2 id="using-the-dashboard">Using the dashboard <a class="w-headline-link" href="#using-the-dashboard" aria-hidden="true">#</a></h2>
+<p>Each dashboard comes with three pages:</p>
+<ol>
+<li>FCP performance</li>
+<li>Device distribution</li>
+<li>Connection distribution</li>
+</ol>
+<p>Each page includes a chart showing distributions over time for each available
+monthly release. As new datasets are released, you can simply refresh the
+dashboard to get the latest data.</p>
+<h3 id="fcp-performance">FCP Performance <a class="w-headline-link" href="#fcp-performance" aria-hidden="true">#</a></h3>
+<p>The first page shows you the distribution of FCP performance for each monthly
+release. The raw histograms on BigQuery are in 100ms intervals. Here, those
+intervals are simplified into three buckets: fast, average, and slow
+performance. Fast FCP experiences occur in less than 1 second, average
+experiences are between 1 and 2.5 seconds, and slow experiences are 2.5 seconds
+or more.</p>
+<p><img src="./dash_fcp.png" alt="CrUX Data Studio FCP dashboard"></p>
+<p>The percent of fast and slow FCP experiences for the most recent release are
+highlighted on top, along with the percent change from the previous release.
+So for example, from August to September 2018, users on this origin experienced
+3.7% more fast FCP and 5.8% fewer slow FCP.</p>
+<div class="w-aside w-aside--note">
+<p>Due to a quirk with Data Studio, you may sometimes see &quot;No Data&quot; here. This is
+normal and due to the previous month's release not being available yet. Datasets
+are released on the second Tuesday of each month.</p>
+</div>
+<h3 id="device-distribution">Device distribution <a class="w-headline-link" href="#device-distribution" aria-hidden="true">#</a></h3>
+<p>The device distribution chart shows you the breakdown of phone, desktop, and
+tablet users over time. Many origins tend to have little to no tablet data so
+you'll see &quot;0%&quot; hanging off the edge of the chart.</p>
+<p><img src="./dash_device.png" alt="CrUX Data Studio device dashboard"></p>
+<h3 id="connection-distribution">Connection distribution <a class="w-headline-link" href="#connection-distribution" aria-hidden="true">#</a></h3>
+<p>The third and final page shows you the breakdown of effective connection types
+per month. There are five possible connection types (4G, 3G, 2G, Slow 2G, and
+Offline), but you will typically only see two or three in the chart. In the
+example above, 2G, Slow 2G, and offline are all 0%.</p>
+<p><img src="./dash_ect.png" alt="CrUX Data Studio effective connection type dashboard"></p>
+<h2 id="sharing-the-dashboard">Sharing the dashboard <a class="w-headline-link" href="#sharing-the-dashboard" aria-hidden="true">#</a></h2>
+<p>Data Studio dashboards can be shared just like a Google Doc to provide access to
+your team or to make the dashboard publicly viewable by permalink. Needless to
+say, you don’t have to own the site you are getting a dashboard for, so you can
+easily use this tool to keep an eye on your competitors' sites.</p>
+<p><img src="./dash_embed.png" alt="CrUX Data Studio embedding and sharing"></p>
+<p>Dashboards may also be embedded into websites or blog posts and retain all of
+their interactivity features.</p>
+<h2 id="faq">FAQ <a class="w-headline-link" href="#faq" aria-hidden="true">#</a></h2>
+<h3 id="when-would-i-use-the-crux-dashboard-as-opposed-to-other-tools">When would I use the CrUX Dashboard as opposed to other tools? <a class="w-headline-link" href="#when-would-i-use-the-crux-dashboard-as-opposed-to-other-tools" aria-hidden="true">#</a></h3>
+<p>The CrUX Dashboard is based on the same underlying data available on BigQuery,
+but you don't need to write a single line of SQL to extract the data and you
+don't ever have to worry about exceeding any free quotas. Setting up a dashboard
+is quick and easy, all of the visualizations are generated for you, and you have
+the control to share it with anyone you want.</p>
+<h3 id="are-there-any-limitations-to-using-the-crux-dashboard">Are there any limitations to using the CrUX Dashboard? <a class="w-headline-link" href="#are-there-any-limitations-to-using-the-crux-dashboard" aria-hidden="true">#</a></h3>
+<p>Currently, only FCP is available in the dashboard. Seeing other metrics would
+require querying the raw data on BigQuery. Also, there is not currently a way to
+drill down into segments like specific countries or form factors.</p>
+<h3 id="where-can-i-learn-more-about-data-studio">Where can I learn more about Data Studio? <a class="w-headline-link" href="#where-can-i-learn-more-about-data-studio" aria-hidden="true">#</a></h3>
+<p>Check out the <a href="https://marketingplatform.google.com/about/data-studio/features/">Data Studio features page</a>
+for more info.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/chrome-ux-report-data-studio-dashboard/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/chrome-ux-report-pagespeed-insights/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Using the Chrome UX Report on PageSpeed Insights
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

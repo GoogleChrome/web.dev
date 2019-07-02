@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eliminate render-blocking resources</title>
+    <meta name="description" content="Learn about the render-blocking-resources audit.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Eliminate%20render-blocking%20resources&amp;url=https%3A%2F%2Fweb.dev%2Frender-blocking-resources%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/lighthouse-performance
+    >
+      Performance audits
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Eliminate render-blocking resources</h1>
+      
+
+      
+
+      
+    </header>
+    <p>The Opportunities section of your Lighthouse report lists all URLs
+blocking the first paint of your page.
+The goal is to reduce the impact of these render-blocking URLs
+by inlining critical resources, deferring non-critical resources,
+and removing anything unused.</p>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="blocking-resources.png" alt="Eliminate render-blocking resources">
+  <figcaption class="w-figcaption">
+    Eliminate render-blocking resources.
+  </figcaption>
+</figure>
+<h2 id="which-urls-get-flagged-as-render-blocking-resources">Which URLs get flagged as render-blocking resources? <a class="w-headline-link" href="#which-urls-get-flagged-as-render-blocking-resources" aria-hidden="true">#</a></h2>
+<p>Lighthouse flags three types of render-blocking URLs: scripts, stylesheets, and HTML
+imports:</p>
+<p>A <code>&lt;script&gt;</code> tag that:</p>
+<ul>
+<li>Is in the <code>&lt;head&gt;</code> of the document.</li>
+<li>Does not have a <code>defer</code> attribute.</li>
+<li>Does not have an <code>async</code> attribute.</li>
+</ul>
+<p>A <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code> tag that:</p>
+<ul>
+<li>Does not have a <code>disabled</code> attribute. When this attribute is present,
+the browser does not download the stylesheet.</li>
+<li>Does not have a <code>media</code> attribute that matches the user's device.</li>
+</ul>
+<p>A <code>&lt;link rel=&quot;import&quot;&gt;</code> tag that:</p>
+<ul>
+<li>Does not have an <code>async</code> attribute.</li>
+</ul>
+<h2 id="how-to-identify-critical-resources">How to identify critical resources <a class="w-headline-link" href="#how-to-identify-critical-resources" aria-hidden="true">#</a></h2>
+<p>The first step to reducing the impact of render-blocking resources,
+is to identify what's critical, and what's not.
+Use the <a href="https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage">Coverage tab</a>
+in Chrome DevTools to identify non-critical CSS and JS.
+When you load or run a page, the tab tells you how much code was used,
+versus how much was loaded:</p>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
+  <figcaption class="w-figcaption">
+    Chrome DevTools: Coverage tab.
+  </figcaption>
+</figure>
+<p>You can reduce the size of your pages by only shipping the code and styles
+that you need. Click on a URL to inspect that file in the Sources panel.
+Styles in CSS files and code in JavaScript files are marked in two colors:</p>
+<ul>
+<li><strong>Green (critical):</strong> Styles that are required for first paint; code that's critical to the page's core functionality.</li>
+<li><strong>Red (non-critical):</strong> Styles that apply to content not immediately visible; code not being used in page's core functionality.</li>
+</ul>
+<h2 id="how-to-eliminate-render-blocking-scripts">How to eliminate render-blocking scripts <a class="w-headline-link" href="#how-to-eliminate-render-blocking-scripts" aria-hidden="true">#</a></h2>
+<p>Once you've identified critical code,
+move that code from the render-blocking URL to an inline <code>script</code> tag in your HTML page.
+When the page loads, it will have what it needs to handle the page's core functionality.</p>
+<p>If there's code in a render-blocking URL that's not critical,
+you can keep it in the URL,
+and then mark the URL with <code>async</code> or <code>defer</code> attributes
+(see also <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">Adding Interactivity with JavaScript</a>).</p>
+<p>Code that isn't being used at all should be removed (see <a href="/remove-unused-code">Remove unused code</a>).</p>
+<h2 id="how-to-eliminate-render-blocking-stylesheets">How to eliminate render-blocking stylesheets <a class="w-headline-link" href="#how-to-eliminate-render-blocking-stylesheets" aria-hidden="true">#</a></h2>
+<p>Similar to inlining code in a <code>&lt;script&gt;</code> tag,
+inline critical styles required for the first paint
+inside a <code>&lt;style&gt;</code> block at the <code>head</code> of the HTML page.
+Then load the rest of the styles asynchronously using the <code>preload</code> link
+(see <a href="/defer-non-critical-css">Defer unused CSS</a>).</p>
+<p>Consider automating the process of extracting and inlining &quot;Above the Fold&quot; CSS
+using the <a href="https://github.com/addyosmani/critical/blob/master/README.md">Critical tool</a>.</p>
+<p>Another approach to eliminating render-blocking styles is
+to split up those styles into different files, organized by media query.
+Then add a media attribute to each stylesheet link.
+When loading a page,
+the browser only blocks the first paint to retrieve the stylesheets that match the user's device
+(see <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css">Render-Blocking CSS</a>).</p>
+<p>Finally, you'll want to minify your CSS to remove any extra whitespace or
+characters (see <a href="/minify-css">Minify CSS</a>).
+This ensures that you're sending the smallest possible bundle to your users.</p>
+<h2 id="how-to-eliminate-render-blocking-imports">How to eliminate render-blocking imports <a class="w-headline-link" href="#how-to-eliminate-render-blocking-imports" aria-hidden="true">#</a></h2>
+<p>For non-critical HTML imports, mark them with the <code>async</code> attribute. As a
+general rule, <code>async</code> should be used with HTML imports as much as possible.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>import<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>myfile.html<span class="token punctuation">"</span></span> <span class="token attr-name">async</span><span class="token punctuation">></span></span></span></code></pre>
+<h2 id="more-information">More information <a class="w-headline-link" href="#more-information" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js">Render-blocking resources audit source</a></li>
+<li><a href="/reduce-javascript-payloads-with-code-splitting">Reduce JavaScript payloads with codesplitting</a></li>
+<li><a href="/codelab-remove-unused-code">Remove unused code codelab</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/">JavaScript Start-up Optimization</a></li>
+</ul>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jul 1, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/lighthouse-performance/render-blocking-resources/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/lighthouse-performance"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/uses-responsive-images/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Properly size images
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Explore DevTools Network panel</title>
+    <meta name="description" content="In this codelab, learn how to inerpret network traffic using Chrome&#39;s
+DevTools.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="explore-devtools" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Explore DevTools Network panel</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/jeffposnick.jpg"
+    alt="Jeff Posnick"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jeff Posnick</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/jeffposnick">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/jeffposnick">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@jeffposnick">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>This codelab walks you through the process of interpreting all of the network
+traffic for a more complex sample application. At the end of the exercise,
+you'll have the skills you need to figure out <em>what</em> your own web application's
+loading, and <em>when</em> each of the requests are being made.</p>
+<div class="w-aside w-aside--note">
+<p>The screenshots and instructions in this codelab assume that you're using
+Chrome. Each browser has its own DevTools experience, which might not match what
+you see in this codelab.</p>
+</div>
+<h2 id="navigate-to-the-network-panel">Navigate to the Network Panel <a class="w-headline-link" href="#navigate-to-the-network-panel" aria-hidden="true">#</a></h2>
+<p>Navigate to the Network panel to see the network traffic for the demo
+application.</p>
+<ul>
+<li>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</li>
+</ul>
+<ol>
+<li>Open DevTools by pressing <code>CMD + OPTION + i</code> / <code>CTRL + SHIFT + i</code>.</li>
+<li>Select the <strong>Network</strong> tab.</li>
+<li>Reload the page to see the network traffic.</li>
+</ol>
+<p>You should see the DevTools interface open up, in either a new window or as a
+sidebar in your existing window. In the DevTools, select the Network
+tab to open the Network panel.
+The Network panel shows all the assets loaded as a result of your initial
+navigation:</p>
+<img class="screenshot" src="./initial-navigation.png" alt="Chrome DevTools' network panel.">
+<div class="w-aside w-aside--note">
+<p>The actual columns you see in the Network panel may be different; the
+screenshot shows a simplified view with everything but the Name, Type, and
+Waterfall columns hidden.</p>
+</div>
+<h2 id="how-to-interpret-the-entries">How to interpret the entries <a class="w-headline-link" href="#how-to-interpret-the-entries" aria-hidden="true">#</a></h2>
+<p>Each row of recorded network traffic represents a single request and response
+pair.</p>
+<p>The first row, with type <code>document</code>, is the initial navigation request for the
+web app's HTML. This is the &quot;source&quot; for the waterfall; each of the subsequent
+requests for additional assets (known as subresources of the main document) flow
+from this original source.</p>
+<p>The second and third rows, showing a CSS <code>stylesheet</code> and a <code>script</code> subresource
+being loaded, are dependent requests that were initiated by the main document.</p>
+<p>Looking at <em>when</em> those requests are made, the waterfall diagram shows that
+they're not started until very late in the process of responding to the
+navigation request.</p>
+<p>Taken together, the requests for the HTML document along with some CSS and
+JavaScript are the set of requests needed to display the full page during the
+initial navigation.</p>
+<h2 id="create-some-additional-runtime-requests">Create some additional runtime requests <a class="w-headline-link" href="#create-some-additional-runtime-requests" aria-hidden="true">#</a></h2>
+<p>With the Network panel still open and recording, it's time to simulate something
+common for a lot of web apps: additional API requests used to add more data to
+the page after the initial navigation is complete.</p>
+<p>Trigger these additional requests by clicking the <strong>Find Me</strong> button, and then
+<strong>Allow</strong>ing the site to access your current location:</p>
+<img src="./allow-location.png" alt="The allow location permission prompt.">
+<div class="w-aside w-aside--note">
+<p>You could also deny Geolocation permission, in which case the web app
+will fall back to a default location.</p>
+</div>
+<p>Once the web app has a location to work with, clicking on the <strong>Find Nearby
+Wikipedia Entries</strong> button results in several additional Network requests. You
+should see something like this:</p>
+<p><img src="./network-requests.png" alt="image"></p>
+<h2 id="interpret-the-new-entries">Interpret the new entries <a class="w-headline-link" href="#interpret-the-new-entries" aria-hidden="true">#</a></h2>
+<p>As before, each row of recorded network traffic represents a single request
+and response pair.</p>
+<p>The first row of the new entries represents a request with a type of <code>fetch</code>,
+which corresponds to the
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">way the web app requests data</a>
+from the Wikipedia API.</p>
+<p>The following rows all are images (<code>png</code> or <code>jpeg</code>) associated with the
+Wikipedia entries. Although it's a little hard to see from the screenshot, their
+entries in the Waterfall column directly flow from the API response.</p>
+<p>For all of these additional requests, the <em>when</em> is going to vary based on how
+long you've had the page open before you click on <strong>Find Nearby Wikipedia
+Entries</strong>. Most important here is that the <em>when</em> is disconnected from the
+initial navigation request. You can tell this from the large gap that exists in
+the Waterfall display, representing a period of time that passed in between the
+initial loading and when the Wikipedia API request is made.</p>
+<p>Requests made after a gap of time following a navigation fall into the category
+of &quot;runtime requests,&quot; as opposed to the initial set of requests used to display
+the page when you first navigated to it.</p>
+<h2 id="summing-things-up">Summing things up <a class="w-headline-link" href="#summing-things-up" aria-hidden="true">#</a></h2>
+<p>Having gone through the steps in this codelab, you're now familiar with the
+tools you can use to analyze what <em>any</em> web application loads.</p>
+<p>The Network panel helps you answer the question of <em>what</em>'s being loaded, via
+the URLs in the Name column and the data in the Type column, along with <em>when</em>
+it's being loaded, via the waterfall display.</p>
+<p>You've also seen that requests made by a web page can (usually) be grouped into
+one of two categories:</p>
+<ol>
+<li>Initial requests, made right after navigating to a new page, for the
+HTML, JavaScript, CSS (and potentially other assets).</li>
+<li>Runtime requests made as a result of user interaction with the page. This
+can often start with a request to an API, and then flow into several
+follow-up requests based on the API data retrieved.</li>
+</ol>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/identify-resources-via-network-panel"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/explore-devtools?path=[object Object]&amp;previewSize="
+            alt="explore-devtools on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

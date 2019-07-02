@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using Imagemin with Grunt</title>
+    <meta name="description" content="In this codelab, learn how to use imagemin with grunt to optimize JPEG and
+PNG images for faster download.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="imagemin-gulp" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Using Imagemin with Grunt</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/katiehempenius.jpg"
+    alt="Katie Hempenius"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Katie Hempenius</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/katiehempenius">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/khempenius">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@khempenius">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <h2 id="setup-the-imagemin-grunt-plugin">Setup the Imagemin Grunt plugin <a class="w-headline-link" href="#setup-the-imagemin-grunt-plugin" aria-hidden="true">#</a></h2>
+<p>This Glitch already contains <code>grunt</code>, <code>grunt-cli</code>, and the <code>grunt-contrib-imagemin</code>
+plugin. To add the configuration for Imagemin, you'll need to edit your
+<code>gruntfile.js</code> file.</p>
+<ul>
+<li>Click the <strong>Remix to Edit</strong> button to make the project editable.</li>
+<li>In <code>gruntfile.js</code>, replace the <code>//Add configuration here</code> comment<br>
+with this code block:</li>
+</ul>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line">imagemin<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  dynamic<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    files<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span></span><br><span class="highlight-line">      cwd<span class="token punctuation">:</span> <span class="token string">'images/'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      expand<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      src<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'**/*.{png,jpg}'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">]</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>This code block tells Grunt which files should be compressed with Imagemin.</p>
+<ul>
+<li>
+<p><code>dynamic</code> indicates that the list of files to compress will be <em>dynamically</em>
+generated by matching the filenames against the specified file pattern.</p>
+</li>
+<li>
+<p>The file pattern <code>{cwd: 'images/', expand: true, src: ['**/*.{png,jpg}']}</code>
+will match all the JPEG and PNG images in the <code>images/</code> directory.</p>
+</li>
+</ul>
+<div class="w-aside w-aside--note">
+<p>Have more questions about this?
+You can
+<a href="https://gruntjs.com/configuring-tasks#building-the-files-object-dynamically">read more about the Grunt file object here</a>.</p>
+</div>
+<ul>
+<li>Load the Imagemin task by adding this line immediately before
+<code>grunt.registerTask(...)</code>:</li>
+</ul>
+<pre class="prettyprint">
+<strong>grunt.loadNpmTasks('grunt-contrib-imagemin');</strong>
+grunt.registerTask('default', [/* list plugins here */]);
+</pre>
+<ul>
+<li>Lastly, add Imagemin as the default Grunt task by replacing the <code>/* list plugins here */</code> comment with <code>'imagemin'</code>. That line should now look like this:</li>
+</ul>
+<pre class="prettyprint">
+grunt.registerTask('default', <strong>['imagemin']</strong>);
+</pre>
+<h2 id="check-in">✔︎ Check-in <a class="w-headline-link" href="#check-in" aria-hidden="true">#</a></h2>
+<p>The complete <code>gruntfile.js</code> file should now look like this:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">const</span> grunt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'grunt'</span><span class="token punctuation">)</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">initConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  imagemin<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    dynamic<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      files<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span></span><br><span class="highlight-line">        cwd<span class="token punctuation">:</span> <span class="token string">'images/'</span></span><br><span class="highlight-line">        expand<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        src<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'**/*.{png,jpg}'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">}</span><span class="token punctuation">]</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">loadNpmTasks</span><span class="token punctuation">(</span><span class="token string">'grunt-contrib-imagemin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">registerTask</span><span class="token punctuation">(</span><span class="token string">'default'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'imagemin'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="customize-your-imagemin-configuration">Customize your Imagemin Configuration <a class="w-headline-link" href="#customize-your-imagemin-configuration" aria-hidden="true">#</a></h2>
+<p><code>imagemin-pngquant</code> is a plugin for specifying compression quality levels.
+We've already added <code>imagemin-pngquant</code> to this project in the <code>package.json</code>
+file so that you can use it to compress your PNGs. To use it, declare the plugin
+and specify a compression quality level in your Gruntfile.</p>
+<ul>
+<li>Declare the <code>imagemin-pngquant</code> plugin by adding this line to the top of your
+<code>gruntfile.js</code>:</li>
+</ul>
+<pre class="prettyprint">
+<strong>const pngquant = require('imagemin-pngquant');</strong>
+const grunt = require('grunt')
+grunt.initConfig({
+  ...
+</pre>
+<ul>
+<li>Add settings for compressing PNG images by adding an <code>options</code> property to the
+<code>imagemin</code> object. That <code>options</code> property should look like this:</li>
+</ul>
+<pre class="prettyprint">
+grunt.initConfig({
+  imagemin: {
+    <strong>options: {</strong>
+      <strong>use: [</strong>
+        <strong>pngquant({quality: [0.5, 0.5]}),</strong>
+      <strong>]</strong>
+    <strong>},</strong>
+    dynamic: {
+  ...
+</pre>
+<p>This code tells Imagemin to compress PNGs using the Pngquant plugin. The
+<code>quality</code> field uses a <code>min</code> and <code>max</code> range of values to determine the
+compression level—0 is the lowest and 1 is the highest. To force all images to
+be compressed at 50% quality, pass <code>0.5</code> as both the min and max value.</p>
+<h2 id="check-in-2">✔︎ Check-in <a class="w-headline-link" href="#check-in-2" aria-hidden="true">#</a></h2>
+<p>Your <code>gruntfile.js</code> file should now look like this:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">const</span> pngquant <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'imagemin-pngquant'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> grunt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'grunt'</span><span class="token punctuation">)</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">initConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  imagemin<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    options<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      use<span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">        <span class="token function">pngquant</span><span class="token punctuation">(</span><span class="token punctuation">{</span>quality<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">]</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    dynamic<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      files<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span></span><br><span class="highlight-line">        cwd<span class="token punctuation">:</span> <span class="token string">'images/'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        expand<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        src<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'**/*.{png,jpg}'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">}</span><span class="token punctuation">]</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">loadNpmTasks</span><span class="token punctuation">(</span><span class="token string">'grunt-contrib-imagemin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">registerTask</span><span class="token punctuation">(</span><span class="token string">'default'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'imagemin'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>But what about JPEGs? The project also has JPEG images, so you should specify how
+they are compressed as well.</p>
+<h2 id="customize-your-imagemin-configuration-(continued)">Customize your Imagemin configuration (continued) <a class="w-headline-link" href="#customize-your-imagemin-configuration-(continued)" aria-hidden="true">#</a></h2>
+<p>Use the <code>imagemin-mozjpeg</code> plugin, which has already been installed for you, to
+compress JPEG images.</p>
+<ul>
+<li>Declare the <code>imagemin-mozjpeg</code> plugin by putting this line at the top your
+<code>gruntfile.js</code>.</li>
+</ul>
+<pre class="prettyprint">
+<strong>const mozjpeg = require('imagemin-mozjpeg');</strong>
+const pngquant = require('imagemin-pngquant');
+const grunt = require('grunt');
+</pre>
+<ul>
+<li>Next, add <code>mozjpeg({quality: 50})</code> to the array in the <code>options</code> object.
+That array should now look like this:</li>
+</ul>
+<pre class="prettyprint">
+grunt.initConfig({
+  imagemin: {
+    options: {
+      use: [
+        pngquant({quality: [0.5, 0.5]}),
+        <strong>mozjpeg({quality: 50})</strong>
+      ]
+    },
+    dynamic: {
+</pre>
+<h2 id="check-in-3">✔︎ Check-in <a class="w-headline-link" href="#check-in-3" aria-hidden="true">#</a></h2>
+<p>Your <code>gruntfile.js</code> file should now look like this:</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">const</span> mozjpeg <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'imagemin-mozjpeg'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> pngquant <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'imagemin-pngquant'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> grunt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'grunt'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">initConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  imagemin<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    options<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      use<span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">        <span class="token function">pngquant</span><span class="token punctuation">(</span><span class="token punctuation">{</span>quality<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        <span class="token function">mozjpeg</span><span class="token punctuation">(</span><span class="token punctuation">{</span>quality<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span><br><span class="highlight-line">      <span class="token punctuation">]</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    dynamic<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      files<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span></span><br><span class="highlight-line">        cwd<span class="token punctuation">:</span> <span class="token string">'images/'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        expand<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        src<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'**/*.{png,jpg}'</span><span class="token punctuation">]</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">}</span><span class="token punctuation">]</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">loadNpmTasks</span><span class="token punctuation">(</span><span class="token string">'grunt-contrib-imagemin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">grunt<span class="token punctuation">.</span><span class="token function">registerTask</span><span class="token punctuation">(</span><span class="token string">'default'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'imagemin'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="run-grunt-and-verify-results-with-lighthouse">Run Grunt &amp; verify results with Lighthouse <a class="w-headline-link" href="#run-grunt-and-verify-results-with-lighthouse" aria-hidden="true">#</a></h2>
+<ol>
+<li>Click the <strong>Tools</strong> button.</li>
+<li>Then click the <strong>Console</strong> button.</li>
+<li>Run Grunt by typing the following command into the console:</li>
+</ol>
+<pre class="devsite-terminal devsite-click-to-copy">
+grunt
+</pre>
+<p>When Grunt completes you should see a message like this in console:</p>
+<p><code>Minified 6 images (saved 667 kB - 66.5%)</code></p>
+<p>Hooray! These results are much better.</p>
+<p>Lastly, it's a good idea to use Lighthouse to verify the changes that you just
+made. Lighthouse's &quot;Efficiently encode images&quot; performance audit will let you
+know if the JPEG images on your page are optimally compressed.</p>
+<ul>
+<li>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</li>
+<li>Run the Lighthouse performance audit (Lighthouse &gt; Options &gt; Performance) on
+the live version of your Glitch and verify that the &quot;Efficiently encode
+images&quot; audit was passed.</li>
+</ul>
+<img class="screenshot" src="./lighthouse_passing.png" width="100%" alt="Passing 'Efficiently encode images' audit in Lighthouse">
+<p>Success! You have used Imagemin to optimally compress the images on your page.</p>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/use-imagemin-to-compress-images"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/imagemin-gulp?path=[object Object]&amp;previewSize="
+            alt="imagemin-gulp on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

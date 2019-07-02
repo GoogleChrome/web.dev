@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using bundlesize with Travis CI</title>
+    <meta name="description" content="Define performance budgets with minimal setup and enforce them as part of your development workflow using bundlesize with Travis CI.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Using%20bundlesize%20with%20Travis%20CI&amp;url=https%3A%2F%2Fweb.dev%2Fusing-bundlesize-with-travis-ci%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Using bundlesize with Travis CI</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Feb 1, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mihajlija.jpg"
+    alt="Milica Mihajlija"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Milica Mihajlija</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/bibydigital">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mihajlija">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Using <a href="https://github.com/siddharthkp/bundlesize">bundlesize</a> with <a href="https://travis-ci.com/">Travis
+CI</a> lets you define performance budgets with minimal
+setup and enforce them as part of your development workflow. Travis CI is a
+service that runs tests for your app in the cloud every time you push code to
+GitHub. You can <a href="https://help.github.com/articles/about-required-status-checks/">configure your
+repository</a> so
+that it won’t allow merging pull-requests unless the bundlesize tests have
+passed.</p>
+<p>Bundlesize's GitHub checks include a size comparison to the master branch and
+a warning in case of a big jump in size.</p>
+<img src="bundlesize-check-diff.jpg" class="w-screenshot" alt="Bundlesize check on GitHub">
+<div class="w-aside w-aside--note">
+<p>You can also use bundlesize with <a href="https://circleci.com">Circle CI</a>,
+<a href="https://app.wercker.com">Wrecker</a> and <a href="https://readme.drone.io">Drone</a>.</p>
+</div>
+<p>To see it in action, here’s an app bundled with
+<a href="https://webpack.js.org/">webpack</a> that lets you <a href="https://glitch.com/edit/#!/scarce-pixie">vote for your favorite
+kitty</a>.</p>
+<a href="https://glitch.com/edit/#!/scarce-pixie">
+  <img class="w-screenshot w-screenshot--filled" src="./cat-voting-app.png" alt="Cat voting app">
+</a>
+<h2 id="set-the-performance-budget">Set the performance budget <a class="w-headline-link" href="#set-the-performance-budget" aria-hidden="true">#</a></h2>
+<p><a href="https://glitch.com/edit/#!/scarce-pixie">This Glitch</a> already contains
+bundlesize. To start, click the <strong>Remix to Edit</strong> button to make the project
+editable.</p>
+<p>The main bundle of this app is in the public folder. To test its size, add the
+following section to the <code>package.json</code> file:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"bundlesize"</span><span class="token operator">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">  <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"./public/*.bundle.js"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token property">"maxSize"</span><span class="token operator">:</span> <span class="token string">"170 kB"</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">]</span></span></code></pre>
+<div class="w-aside w-aside--note">
+<p>You can also set
+<a href="https://github.com/siddharthkp/bundlesize#1-add-the-path-and-maxsize-in-your-packagejson">different thresholds for different files</a>.
+This is especially useful if you are
+<a href="https://web.dev/reduce-javascript-payloads-with-code-splitting">code-splitting</a>
+a bundle in your application.</p>
+</div>
+<p>To keep the compressed JavaScript bundle size <a href="https://web.dev/your-first-performance-budget#budget-for-quantity-based-metrics">under the recommended
+limit</a>,
+set the performance budget to 170KB in the <code>maxSize</code> field.</p>
+<p>Bundlesize supports <a href="https://github.com/isaacs/node-glob">glob patterns</a> and the *
+wildcard character in the file path will match all bundle names in the public
+folder.</p>
+<div class="w-aside w-aside--note">
+<p>By default, bundlesize tests gzipped sizes. You can use the <a href="https://github.com/siddharthkp/bundlesize#1-add-the-path-and-maxsize-in-your-packagejson">compression option</a>
+to switch to <a href="https://en.wikipedia.org/wiki/Brotli">brotli</a>
+compression or turn it off completely.</p>
+</div>
+<h3 id="create-a-test-script">Create a test script <a class="w-headline-link" href="#create-a-test-script" aria-hidden="true">#</a></h3>
+<p>Since Travis needs a test to run, add a test script to <code>package.json</code>:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"webpack &amp;&amp; http-server -c-1"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"bundlesize"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h2 id="set-up-continuous-integration">Set up continuous integration <a class="w-headline-link" href="#set-up-continuous-integration" aria-hidden="true">#</a></h2>
+<h3 id="integrate-github-and-travis-ci">Integrate GitHub and Travis CI <a class="w-headline-link" href="#integrate-github-and-travis-ci" aria-hidden="true">#</a></h3>
+<p>First, create a new repository for this project on your GitHub account and
+initialize it with a <code>README.md</code>.</p>
+<p>You’ll need to <a href="https://docs.travis-ci.com/user/tutorial">register an account on
+Travis</a> and activate GitHub Apps
+integration under the Settings section of your profile.</p>
+<img src="travis-ci.png" class="w-screenshot" alt="GitHub Apps integration on Travis CI">
+<p>Once you have an account, go to <strong>Settings</strong> under your profile, click the <strong>Sync
+account</strong> button, and make sure your new repo is listed on Travis.</p>
+<img src="travis-ci-sync-button.png" class="w-screenshot" alt="Travis CI Sync button">
+<h3 id="authorize-bundlesize-to-post-on-pull-requests">Authorize bundlesize to post on pull requests <a class="w-headline-link" href="#authorize-bundlesize-to-post-on-pull-requests" aria-hidden="true">#</a></h3>
+<p>Bundlesize needs authorization to be able to post on pull requests, so <a href="https://github.com/login/oauth/authorize?scope=repo%3Astatus&amp;client_id=6756cb03a8d6528aca5a">visit
+this link to get the bundlesize
+token</a>
+that will be stored in the Travis configuration.</p>
+<img src="bundlesize-token.jpg" class="w-screenshot" alt="bundlesize token">
+<p>In your project's Travis dashboard, go to <strong>More options</strong> &gt; <strong>Settings</strong> &gt; <strong>Environment
+variables</strong>.</p>
+<img src="environment-variables.png" class="w-screenshot" alt="Adding environment variables on Travis CI">
+<p>Add a new environment variable with the token as the value field and
+BUNDLESIZE_GITHUB_TOKEN as the name.</p>
+<p>The last thing you need to kick-off continuous integration is a <code>.travis.yml</code>
+file, which tells Travis CI what to do. To speed things up, it is already
+included in the project and it specifies that the app is using NodeJS.</p>
+<p>With this step, you’re all set up and bundlesize will warn you if your
+JavaScript ever goes over the budget. Even when you start off great, over time,
+as you add new features, kilobytes can pile up. With automated performance
+budget monitoring, you can rest easy knowing that it won’t go unnoticed.</p>
+<h2 id="try-it-out">Try it out <a class="w-headline-link" href="#try-it-out" aria-hidden="true">#</a></h2>
+<h3 id="trigger-your-first-bundlesize-test">Trigger your first bundlesize test <a class="w-headline-link" href="#trigger-your-first-bundlesize-test" aria-hidden="true">#</a></h3>
+<p>To see how the app stacks up against the performance budget, add the code to the
+GitHub repo that you created in step 3.</p>
+<ol>
+<li>
+<p>On Glitch, click <strong>Tools</strong> &gt; <strong>Git, Import, and Export</strong> &gt; <strong>Export to GitHub</strong>.</p>
+</li>
+<li>
+<p>In the pop-up, enter your GitHub username and the name of the repo as
+<code>username/repo</code>. Glitch will export your app to a new branch named &quot;glitch&quot;.</p>
+</li>
+<li>
+<p>Create a new pull request by clicking the <strong>New pull request</strong> button on
+the homepage of the repository.</p>
+</li>
+</ol>
+<p>You’ll now see status checks in progress on the pull request page.</p>
+<img src="github-checks-in-progress.png" class="w-screenshot" alt="Github checks in progress">
+<p>It won’t take long until all checks are done. Unfortunately, the cat voting app
+is a bit bloated and does not pass the performance budget check. The main bundle
+is 266 KB and the budget is 170 KB.</p>
+<img src="bundlesize-fail.png" class="w-screenshot" alt="Failed bundlesize check">
+<h3 id="optimize">Optimize <a class="w-headline-link" href="#optimize" aria-hidden="true">#</a></h3>
+<p>Luckily, there are some easy performance wins you can make by <a href="https://web.dev/remove-unused-code">removing unused
+code</a>. There are two main imports in
+<code>src/index.js</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> firebase <span class="token keyword">from</span> <span class="token string">"firebase"</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> moment <span class="token keyword">from</span> <span class="token string">'moment'</span><span class="token punctuation">;</span></span></code></pre>
+<p>The app is using <a href="https://firebase.google.com/products/realtime-database/">Firebase Realtime
+Database</a> to store the
+data, but it’s importing the entire firebase package which consists of a lot
+more than just a database (auth, storage, messaging etc.).</p>
+<p>Fix this by importing only the package that the app needs in the <code>src/index.js</code>
+file:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> firebase <span class="token keyword">from</span> <span class="token string">"firebase"</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> firebase <span class="token keyword">from</span> <span class="token string">'firebase/app'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token string">'firebase/database'</span><span class="token punctuation">;</span></span></code></pre>
+<div class="w-aside w-aside--note">
+<p>The <code>firebase/app</code> import, which sets up the API surface for each of
+the different services, is always required.</p>
+</div>
+<h3 id="re-run-test">Re-run test <a class="w-headline-link" href="#re-run-test" aria-hidden="true">#</a></h3>
+<p>Since the source file has been updated, you need to run webpack to build the new
+bundle file.</p>
+<ol>
+<li>
+<p>Click the <strong>Tools</strong> button.</p>
+</li>
+<li>
+<p>Then click the <strong>Console</strong> button. This will open the console in another tab.</p>
+</li>
+<li>
+<p>In the console, type <code>webpack</code> and wait for it to finish the build.</p>
+</li>
+<li>
+<p>Export the code to GitHub from <strong>Tools</strong> &gt; <strong>Git, Import, and Export</strong> &gt; <strong>Export to GitHub</strong>.</p>
+</li>
+<li>
+<p>Go to the pull request page on GitHub and wait for all checks to finish.</p>
+</li>
+</ol>
+<img src="bundlesize-pass.png" class="w-screenshot" alt="Passed bundlesize check">
+<p>Success! The new size of the bundle is 125.5 KB and all the checks have passed.
+🎉</p>
+<p>Unlike Firebase, importing parts of the moment library cannot be done as easily,
+but it’s worth a shot. Check out how you can further optimize the app in the
+<a href="https://web.dev/codelab-remove-unused-code">Remove unused code
+codelab</a>.</p>
+<h3 id="monitor">Monitor <a class="w-headline-link" href="#monitor" aria-hidden="true">#</a></h3>
+<p>The app is now under the budget and all is well. Travis CI and bundlesize will
+keep monitoring the performance budget for you, making sure your app stays fast.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Feb 1, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/using-bundlesize-with-travis-ci/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/using-lighthouse-bot-to-set-a-performance-budget/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Using Lighthouse Bot to set a performance budget
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

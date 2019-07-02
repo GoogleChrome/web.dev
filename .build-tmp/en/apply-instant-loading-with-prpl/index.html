@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Apply instant loading with the PRPL pattern</title>
+    <meta name="description" content="PRPL is an acronym that describes a pattern used to make web pages load and
+become interactive, faster. In this guide, learn how each of these techniques
+fit together but still can be used independently to achieve performance
+results.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Apply%20instant%20loading%20with%20the%20PRPL%20pattern&amp;url=https%3A%2F%2Fweb.dev%2Fapply-instant-loading-with-prpl%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Apply instant loading with the PRPL pattern</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/houssein.jpg"
+    alt="Houssein Djirdeh"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Houssein Djirdeh</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/hdjirdeh">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/housseindjirdeh">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@housseindjirdeh">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>PRPL is an acronym that describes a pattern used to make web pages load and
+become interactive, faster:</p>
+<ul>
+<li><strong>Push</strong> (or <strong>preload</strong>) the most important resources.</li>
+<li><strong>Render</strong> the initial route as soon as possible.</li>
+<li><strong>Pre-cache</strong> remaining assets.</li>
+<li><strong>Lazy load</strong> other routes and non-critical assets.</li>
+</ul>
+<p>In this guide, learn how each of these techniques fit together but still can be
+used independently to achieve performance results.</p>
+<h2 id="audit-your-page-with-lighthouse">Audit your page with Lighthouse <a class="w-headline-link" href="#audit-your-page-with-lighthouse" aria-hidden="true">#</a></h2>
+<p>Run Lighthouse to identify opportunities for improvement aligned with the PRPL
+techniques:</p>
+<ol>
+<li>Navigate to the <strong>Audits</strong> panel in DevTools.</li>
+<li>Select the <strong>Performance</strong> and <strong>Progressive Web App</strong> checkboxes.</li>
+<li>Click <strong>Run Audits</strong> to generate a report.</li>
+</ol>
+<p>For more information, see <a href="/discover-performance-opportunities-with-lighthouse">Discover performance opportunities with Lighthouse</a>.</p>
+<h2 id="preload-critical-resources">Preload critical resources <a class="w-headline-link" href="#preload-critical-resources" aria-hidden="true">#</a></h2>
+<p>Lighthouse shows the following failed audit if a certain resource is parsed and
+fetched late:</p>
+<img class="w-screenshot" src="./preload-requests.png" alt="Lighthouse: Preload key requests audit">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content"><strong>Preload</strong></a>
+is a declarative fetch request that tells the browser to request a resource as
+soon as possible. Preload critical resources by adding a <code>&lt;link&gt;</code> tag with
+<code>rel=&quot;preload&quot;</code> to the head of your HTML document:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>css/style.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span></code></pre>
+<p>The browser sets a more appropriate priority level for the resource in order to
+try to download it sooner while not delaying the <code>window.onload</code> event.</p>
+<p>For more information about preloading critical resources, refer to the
+<a href="/preload-critical-assets">Preload critical assets</a> guide.</p>
+<h2 id="render-the-initial-route-as-soon-as-possible">Render the initial route as soon as possible <a class="w-headline-link" href="#render-the-initial-route-as-soon-as-possible" aria-hidden="true">#</a></h2>
+<p>Lighthouse provides a warning if there are resources that delay <a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint"><strong>First Paint</strong></a>,
+the moment when your site renders pixels to the screen:</p>
+<img class="w-screenshot" src="./eliminate-render-blocking.png" alt="Lighthouse: Eliminate render-blocking resources audit">
+<p>To improve First Paint, Lighthouse recommends inlining critical JavaScript and
+deferring the rest using
+<a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript"><code>async</code></a>,
+as well as inlining critical CSS used above-the-fold. This improves performance
+by eliminating round-trips to the server to fetch render-blocking assets.
+However, inline code is harder to maintain from a development perspective and
+cannot be cached separately by the browser.</p>
+<p>Another approach to improve First Paint is to <strong>server-side render</strong> the initial
+HTML of your page. This displays content immediately to the user while scripts
+are still being fetched, parsed, and executed. However, this can increase the
+payload of the HTML file significantly, which can harm <a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#time_to_interactive"><strong>Time to Interactive</strong></a>,
+or the time it takes for your application to become interactive and can respond
+to user input.</p>
+<p>There is no single correct solution to reduce the First Paint in your
+application, and you should only consider inlining styles and server-side
+rendering if the benefits outweigh the tradeoffs for your application. You can
+learn more about both of these concepts with the following resources.</p>
+<ul>
+<li><a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery">Optimize CSS Delivery</a></li>
+<li><a href="https://www.youtube.com/watch?v=GQzn7XRdzxY">What is Server-Side Rendering?</a></li>
+</ul>
+<figure class="w-figure w-figure--inline-right">
+  <img src="./service-workers.png" alt="Requests/responses with service worker" style="width: 300px">
+</figure>
+<h2 id="pre-cache-assets">Pre-cache assets <a class="w-headline-link" href="#pre-cache-assets" aria-hidden="true">#</a></h2>
+<p>By acting as a proxy, <strong>service workers</strong> can fetch assets directly from the cache
+rather than the server on repeat visits. This not only allows users to use your
+application when they are offline, but also results in faster page load times on
+repeat visits.</p>
+<p>Use a third-party library to simplify the process of generating a service worker
+unless you have more complex caching requirements than what a library can
+provide. For example,
+<a href="/workbox">Workbox</a> provides a
+collection of tools that allow you to create and maintain a service worker to
+cache assets. For more information on service workers and offline reliability,
+refer to the <a href="/service-workers-cache-storage">service worker guide</a> in the reliability learning path.</p>
+<h2 id="lazy-load">Lazy load <a class="w-headline-link" href="#lazy-load" aria-hidden="true">#</a></h2>
+<p>Lighthouse displays a failed audit if you send too much data over the network.</p>
+<img class="w-screenshot" src="./enormous-payloads.png" alt="Lighthouse: Has enormous network payloads audit">
+<p>This includes all asset types, but large JavaScript payloads are especially
+costly due to the time it takes the browser to parse and compile them.
+Lighthouse also provides a warning for this when appropriate.</p>
+<img class="w-screenshot" src="./js-bootup-high.png" alt="Lighthouse: JavaScript boot-up time audit">
+<p>To send a smaller JavaScript payload that contains only the code needed when a
+user initially loads your application, split the entire bundle and <a href="/reduce-javascript-payloads-with-code-splitting">lazy load</a> chunks on demand.</p>
+<p>Once you've managed to split your bundle, preload the chunks that are more
+important (see the <a href="/preload-critical-assets">Preload critical assets</a> guide).
+Preloading ensures more important resources are fetched and downloaded sooner
+by the browser.</p>
+<p>Aside from splitting and loading different JavaScript chunks on demand,
+Lighthouse also provides an audit for lazy-loading non-critical images.</p>
+<img class="w-screenshot" src="./defer-offscreen-images.png" alt="Lighthouse: Defer offscreen images audit">
+<p>If you load many images on your web page, defer all that are below the fold, or
+outside the device viewport, when a page is loaded (see <a href="/use-lazysizes-to-lazyload-images">Use lazysizes to lazyload images</a>).</p>
+<h2 id="next-steps">Next Steps <a class="w-headline-link" href="#next-steps" aria-hidden="true">#</a></h2>
+<p>Now that you understand some of the basic concepts behind the PRPL pattern,
+continue to the next guide in this section to learn more.
+It's important to remember that not all of the techniques need to be
+applied together. Any efforts made with any of the following will provide
+noticeable performance improvements.</p>
+<ul>
+<li><strong>Push</strong> (or <strong>preload</strong>) critical resources.</li>
+<li><strong>Render</strong> the initial route as soon as possible.</li>
+<li><strong>Pre-cache</strong> remaining assets.</li>
+<li><strong>Lazy load</strong> other routes and non-critical assets.</li>
+</ul>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/apply-instant-loading-with-prpl/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/preload-critical-assets/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Preload critical assets to improve loading speed
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

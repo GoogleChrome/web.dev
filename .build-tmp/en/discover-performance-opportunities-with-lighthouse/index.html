@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discover performance opportunities with Lighthouse</title>
+    <meta name="description" content="Lighthouse is a tool that helps you measure and find ways to improve a page&#39;s
+performance. Lighthouse gives you a report on how the page did. The report
+provides a score for each metric and a list of opportunities which, if you
+implement them, should make the page load faster.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Discover%20performance%20opportunities%20with%20Lighthouse&amp;url=https%3A%2F%2Fweb.dev%2Fdiscover-performance-opportunities-with-lighthouse%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Discover performance opportunities with Lighthouse</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/kaycebasques.jpg"
+    alt="Kayce Basques"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Kayce Basques</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/kaycebasques">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/kaycebasques">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@kaycebasques">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p><a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is a tool that
+helps you measure and find ways to improve a page's performance. Here's the
+general workflow for how you use Lighthouse:</p>
+<ol>
+<li>You tell Lighthouse what page to audit.</li>
+<li>Lighthouse loads that page and records how long the page takes to hit
+various performance milestones. These milestones are called <strong>metrics</strong>.</li>
+<li>Lighthouse gives you a report on how the page did. The report provides a
+score for each metric and a list of <strong>opportunities</strong> which, if you implement
+them, should make the page load faster.</li>
+</ol>
+<p>Your mission is to improve your metrics scores over time, or at least make sure
+that they don't get worse. There's no way to work on metrics directly, though.
+Instead, you follow the opportunities that Lighthouse provides. Working on those
+opportunities tends to improve your metrics scores.</p>
+<h2 id="run-lighthouse-from-your-profile-page">Run Lighthouse from your profile page <a class="w-headline-link" href="#run-lighthouse-from-your-profile-page" aria-hidden="true">#</a></h2>
+<p>Run Lighthouse from your <a href="/measure">web.dev profile</a> page:</p>
+<ol>
+<li>
+<p>Provide any URL, and Lighthouse runs a series of audits generating a report of how well the page did.</p>
+</li>
+<li>
+<p>Review the audits report to identify areas in which your page can be improved.</p>
+</li>
+<li>
+<p>For each audit, you'll find guidance and immediate steps you can take to improve your scores.</p>
+</li>
+</ol>
+<h2 id="run-lighthouse-from-chrome-devtools">Run Lighthouse from Chrome DevTools <a class="w-headline-link" href="#run-lighthouse-from-chrome-devtools" aria-hidden="true">#</a></h2>
+<p>Chrome DevTools is the set of web developer tools that are built directly into
+the Google Chrome browser. You don't have to download anything to get DevTools.
+If you have Chrome, then you have DevTools.</p>
+<ol>
+<li>In Chrome, go to the page that you want to audit.</li>
+<li>Press <code>Control+Shift+J</code> or <code>Command+Option+J</code> (Mac) to open DevTools.</li>
+</ol>
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-1.png" alt="DevTools opened and docked to the right hand side of the screen.">
+<p>Click the <strong>Audits</strong> tab. If you don't see this tab, click the » symbol
+and then select <strong>Audits</strong> from the list. Lighthouse is the
+engine that powers the <strong>Audits</strong> panel. That's why you see an image of a
+lighthouse.</p>
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-2.png" alt="DevTools opened to the Lighthouse audits panel.">
+<ol>
+<li>Make sure the <strong>Mobile</strong> radio button is selected. When Lighthouse
+audits your page, it will simulate a mobile device's viewport and user
+agent string.</li>
+<li>Make sure the <strong>Performance</strong> checkbox is enabled. You can enable or
+disable the rest of the checkboxes in the <strong>Audits</strong> section. If you enable
+them, then you'll see a bunch of opportunities on ways to improve those
+other aspects of your page.</li>
+<li>Make sure the <strong>Simulated Fast 3G, 4x CPU Slowdown</strong> radio button is
+selected. Lighthouse doesn't actually throttle your network or CPU while it
+loads the page. Instead, it looks at how long the page took to load under
+normal conditions, and then it estimates how long it would have taken on a
+fast 3G network with a CPU that is 4 times less powerful than your machine's.</li>
+<li>Make sure that the <strong>Clear Storage</strong> checkbox is enabled. This option
+forces Lighthouse to go to the network for every page resource, which is
+how first-time visitors experience the page.</li>
+<li>Click <strong>Run Audits</strong>. After 5 to 10 seconds, Lighthouse shows you a report.</li>
+</ol>
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-3.png" alt="DevTools showing a Lighthouse audit results report.">
+<div class="w-aside w-aside--note">
+<p>You can set the configuration options to whatever makes the most sense for
+your needs. If you don't understand them, the ones mentioned here are good
+defaults. If you can get your page fast with these options, then your page will
+be fast for everyone. The important thing is to stay consistent with the options
+across audits.</p>
+</div>
+<p>For example, if you run some audits with <strong>Simulated Fast 3G</strong>, <strong>4x CPU Slowdown
+throttling enabled</strong> and then other times you run audits with throttling
+disabled, your metrics scores will be significantly lower when you have
+throttling enabled. You might spend a lot of time trying to figure out why your
+page is so much slower now, when in reality the only thing that changed was your
+configuration.</p>
+<h3 id="understand-your-report">Understand your report <a class="w-headline-link" href="#understand-your-report" aria-hidden="true">#</a></h3>
+<p>The top-right of your report lists your overall performance score. 100 is a
+perfect score. Below the overall score are the metrics scores.
+<a href="https://developers.google.com/web/tools/lighthouse/v3/scoring">Lighthouse v3 Scoring Guide</a>
+explains how each metric score contributes to the overall score.</p>
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-4.png" alt="Lighthouse metrics scores showing green, passing scores, and yellow, warning scores.">
+<p>Hover over a metric to learn more about it. Click <strong>Learn more</strong> to read
+documentation about it.</p>
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-5.png" alt="">
+<p>Below your metrics scores you see screenshots of how the page looked while it
+loaded.</p>
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-6.png" alt="DevTools' filmstrip view of a page loading.">
+<p>Below the screenshots you see opportunities for improving the page's
+performance.</p>
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-7.png" alt="">
+<p>Click an opportunity to learn more about it.</p>
+<img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-8.png" alt="An expanded audit titled Defer offscreen images shows a number of image paths that can be optimized.">
+<h2 id="next-steps">Next steps <a class="w-headline-link" href="#next-steps" aria-hidden="true">#</a></h2>
+<p>Try using Lighthouse to audit your page, either from your profile page or from
+Chrome DevTools. Implement one of the opportunities, and then audit your page
+again to see how the change affected your report. Your metrics scores should
+ideally be a little better, and Lighthouse should no longer be flagging that
+opportunity as something to work on.</p>
+<p>Running Lighthouse yourself is great for spot-checking issues, but ultimately
+you'll want to setup continuous monitoring to make sure your site stays healthy.
+To track your Lighthouse progress over time add your site to the your
+<a href="/measure">profile</a>.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/discover-performance-opportunities-with-lighthouse/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

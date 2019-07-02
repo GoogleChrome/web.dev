@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Semantics and screen readers</title>
+    <meta name="description" content="Have you ever stopped to wonder how assistive technology, such as a screen
+reader, knows what to announce to users? The answer is that these technologies
+rely on developers marking up their pages with semantic HTML. But what are
+semantics, and how do screen readers use them?
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Semantics%20and%20screen%20readers&amp;url=https%3A%2F%2Fweb.dev%2Fsemantics-and-screen-readers%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/accessible
+    >
+      Accessible to all
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Semantics and screen readers</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 18, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/robdodson.jpg"
+    alt="Rob Dodson"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rob Dodson</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rob_dodson">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/robdodson">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@robdodson">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Have you ever stopped to wonder <em>how</em> assistive technology, such as a screen
+reader, knows what to announce to users? The answer is that these technologies
+rely on developers marking up their pages with <strong>semantic</strong> HTML. But what are
+semantics, and how do screen readers use them?</p>
+<h2 id="affordances-and-semantics">Affordances and semantics <a class="w-headline-link" href="#affordances-and-semantics" aria-hidden="true">#</a></h2>
+<p>Before diving into semantics, it's helpful to understand another term:
+<strong>affordances</strong>. An affordance is any object that offers, or affords, its user
+the opportunity to perform an action. A classic example is the teapot:</p>
+<figure class="w-figure  w-figure--center">
+  <img src="./teapot.png" alt="" style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    A teapot's handle is a natural affordance.
+  </figcaption>
+</figure>
+<p>This teapot doesn't need an instruction manual; instead, its physical design
+conveys to the user how it should be operated. It has a handle, and because
+you've seen other objects in the world with similar handles, you can infer how
+you should pick it up and operate it.</p>
+<p>When we build graphical user interfaces, we use things like CSS to add <strong>visual
+affordances</strong> to our UI. For instance, you might give a button a drop shadow and
+border so that it resembles an actual button in the real world.</p>
+<p>But if a user is unable to see the screen, then these visual affordances will
+not be conveyed to them. Therefore, you need to make sure that your UI is
+constructed in a way that can convey these same affordances to assistive
+technology. This non-visual exposure of a UI element's affordances is called
+its <strong>semantics</strong>.</p>
+<h2 id="use-semantic-html">Use semantic HTML <a class="w-headline-link" href="#use-semantic-html" aria-hidden="true">#</a></h2>
+<p>The easiest way of conveying proper semantics is to use semantically rich HTML
+elements.</p>
+<p>Here's a classic example: a <code>&lt;div&gt;</code> versus a <code>&lt;button&gt;</code>. Using CSS, it's possible
+to style both elements so they convey the same visual affordances, but compare
+the two experiences when using this embedded screen reader (you'll need to click
+<strong>Enable ChromeVox Lite</strong> to test it):</p>
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/div-vs-button?path=example.html&previewSize=100&attributionHidden=true"
+    alt="div-vs-button on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<p>Because a <code>&lt;div&gt;</code>, semantically, is just a generic grouping element, the screen
+reader only announces the <code>div</code>'s text content. But the <code>&lt;button&gt;</code> is announced
+as a &quot;button&quot; — a much stronger signal to the user that this is something with
+which they can interact!</p>
+<h2 id="semantic-properties-and-the-accessibility-tree">Semantic properties and the accessibility tree <a class="w-headline-link" href="#semantic-properties-and-the-accessibility-tree" aria-hidden="true">#</a></h2>
+<p>Generally speaking, every HTML element will have some of the following semantic
+properties:</p>
+<ul>
+<li>A <strong>role</strong> or type</li>
+<li>A <strong>name</strong></li>
+<li>A <strong>value</strong> (optional)</li>
+<li>A <strong>state</strong> (optional)</li>
+</ul>
+<p>An element's <strong>role</strong> describes its type, i.e. &quot;button,&quot; &quot;input,&quot; or even just
+&quot;group&quot; for things like <code>div</code>'s and <code>span</code>'s.</p>
+<p>An element's <strong>name</strong> is its computed label. Screen readers typically announce
+an element's name followed by its role, e.g. &quot;Sign Up, button.&quot; The algorithm
+that determines an element's name factors in things like if there is any text
+content inside the element, whether or not it has attributes such as <code>title</code>
+or <code>placeholder</code>, whether or not the element is associated with an actual
+<code>&lt;label&gt;</code> element, and if the element has any ARIA attributes such as
+<code>aria-label</code> and <code>aria-labelledby</code>.</p>
+<p>Some elements <em>may</em> have a <strong>value</strong>. For instance, <code>&lt;input type=&quot;text&quot;&gt;</code> may
+have a value that reflects whatever the user has typed into the text field.</p>
+<p>Some elements <em>may</em> also have a <strong>state</strong>, which conveys their current status.
+For instance, a <code>&lt;select&gt;</code> element can be in either an <em>expanded</em> or a
+<em>collapsed</em> state, depending on if it's open or closed.</p>
+<h3 id="the-accessibility-tree">The accessibility tree <a class="w-headline-link" href="#the-accessibility-tree" aria-hidden="true">#</a></h3>
+<p>For each node in the DOM, the browser determines if the
+node is semantically &quot;interesting&quot; and adds it to <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree">the accessibility
+tree</a>.
+When assistive technology, like a screen reader, is providing an alternative UI
+to the user, it is often doing so by walking this accessibility tree.</p>
+<div class="w-aside w-aside--note">
+<p>Browsers will often remove semantically uninteresting nodes like <code>div</code> and
+<code>span</code> from the accessibility tree, especially if they're just being used to
+position their children with CSS. For instance, if you have a <code>button</code> nested
+inside of 5 <code>div</code>'s, the browser may prune out some of the <code>div</code>'s in the middle
+to cut down on noise.</p>
+</div>
+<p>Using Chrome's DevTools you can <a href="https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane">inspect an element's semantic
+properties</a>
+and explore its position in the accessibility tree.</p>
+<h2 id="next-steps">Next steps <a class="w-headline-link" href="#next-steps" aria-hidden="true">#</a></h2>
+<p>Once you know a bit about semantics and how they aid screen reader navigation,
+you can't help but look at the pages you build differently. In the next section,
+we'll take a step back and consider how the entire outline of a page can be
+conveyed using effective headings and landmarks.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 18, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/accessible/semantics-and-screen-readers/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/accessible"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/headings-and-landmarks/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Headings and landmarks
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

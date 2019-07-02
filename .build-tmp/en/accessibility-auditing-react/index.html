@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accessibility auditing with react-axe and eslint-plugin-jsx-a11y</title>
+    <meta name="description" content="react-axe is a library that audits a React application and logs any
+accessibility issues to the Chrome DevTools console. eslint-plugin-jsx-a11y
+is an ESLint plugin that identifies and enforces a number of accessibility
+rules directly in your JSX. Using them in combination can provide a
+comprehensive auditing approach to find and fix any accessibility concerns in
+your application.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/accessibility-auditing-react/hero-accessibility-auditing-react.jpg"
+  alt=""
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Accessibility%20auditing%20with%20react-axe%20and%20eslint-plugin-jsx-a11y&amp;url=https%3A%2F%2Fweb.dev%2Faccessibility-auditing-react%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/react
+    >
+      React
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Accessibility auditing with react-axe and eslint-plugin-jsx-a11y</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Your React site is not progressive if it&#39;s not accessible. Auditing during development can help you spot any issues.
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Apr 29, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/houssein.jpg"
+    alt="Houssein Djirdeh"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Houssein Djirdeh</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/hdjirdeh">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/housseindjirdeh">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@housseindjirdeh">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <div class="w-aside w-aside--note">
+<p>If you would like to learn about the basic concepts behind accessibility in
+web pages, refer to the <a href="/what-is-accessibility">What is accessibility</a> guide
+first.</p>
+</div>
+<p><a href="https://github.com/dequelabs/react-axe"><code>react-axe</code></a> is a library that audits a
+React application and logs any accessibility issues to the Chrome DevTools
+console. It uses the open-source <a href="https://github.com/dequelabs/axe-core">axe</a>
+testing library to flag any issues and their severity.</p>
+<p><a href="https://github.com/evcohen/eslint-plugin-jsx-a11y"><code>eslint-plugin-jsx-a11y</code></a> is
+an ESLint plugin that identifies and enforces a number of accessibility rules
+directly in your JSX. Using this in combination with a tool that tests the final
+rendered DOM, such as <code>react-axe</code>, can help you find and fix any accessibility
+concerns on your site.</p>
+<h2 id="why-is-this-useful">Why is this useful? <a class="w-headline-link" href="#why-is-this-useful" aria-hidden="true">#</a></h2>
+<p>It is crucial to build web sites that provide every user, regardless of their
+impairment or restriction, the capability to access its content. Using auditing
+libraries such as <code>react-axe</code> and <code>eslint-plugin-jsx-a11y</code> during the
+development of your React application will automatically surface any
+accessibility issues as they pop up.</p>
+<h2 id="use-eslint-plugin-jsx-a11y">Use eslint-plugin-jsx-a11y <a class="w-headline-link" href="#use-eslint-plugin-jsx-a11y" aria-hidden="true">#</a></h2>
+<p>React already supports writing accessible HTML elements within JSX syntax. For
+example, you only need to use the <code>htmlFor</code> attribute instead of <code>for</code> to link a
+label to a specific form element within a React component.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>promo<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">htmlFor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>promo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Receive promotional offers?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span></span></code></pre>
+<p>The
+<a href="https://reactjs.org/docs/accessibility.html">React accessibility documentation</a>
+covers all the nuances of handling accessibility concerns within a React
+component. To make it easier to spot these issues during development, Create
+React App (CRA) includes the <strong><code>eslint-plugin-jsx-a11y</code></strong> plugin for ESLint by
+default.</p>
+<p>To enable pre-configured linting provided by CRA:</p>
+<ol>
+<li>Install the appropriate <a href="https://eslint.org/docs/user-guide/integrations#editors">ESLint plugin</a> for your code editor</li>
+<li>Add a <code>.eslintrc.json</code> file to your project</li>
+</ol>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"react-app"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<div class="w-aside w-aside--note">
+<p>You can find more details about configuring your editor to support out-of-box
+linting in the
+<a href="https://facebook.github.io/create-react-app/docs/setting-up-your-editor">CRA documentation</a>.</p>
+</div>
+<p>Some common accessibility issues will now show up.</p>
+<p><img src="./img-a11y-lint.png" alt="Image accessibility warning in linter"></p>
+<p>To check for even more accessibility rules, modify the file to automatically
+include all the recommended rules by the plugin:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"react-app"</span><span class="token punctuation">,</span> <span class="token string">"plugin:jsx-a11y/recommended"</span><span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>If you would like an even stricter subset of rules, switch to strict mode:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"react-app"</span><span class="token punctuation">,</span> <span class="token string">"plugin:jsx-a11y/strict"</span><span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p><img src="./label-a11y-lint.png" alt="Label accessibility error in linter"></p>
+<p>The project
+<a href="https://github.com/evcohen/eslint-plugin-jsx-a11y#difference-between-recommended-and-strict-mode">documentation</a>
+provides information on the differences between recommended and strict mode.</p>
+<h2 id="use-react-axe">Use react-axe <a class="w-headline-link" href="#use-react-axe" aria-hidden="true">#</a></h2>
+<p><code>eslint-plugin-jsx-a11y</code> can help you easily pinpoint any accessibility issues
+in your JSX, but it does not test any of the final HTML output. <strong><code>react-axe</code></strong>
+is a library that does exactly this by providing a React wrapper around the
+<a href="https://github.com/dequelabs/axe-core"><code>axe-core</code></a> testing tool by Deque Labs.</p>
+<p>Install the library as a development dependency to begin:</p>
+<pre><code>npm install --save-dev react-axe
+</code></pre>
+<p>You now only need to initialize the module in <code>index.js</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'react-axe'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">axe</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token function">axe</span><span class="token punctuation">(</span>React<span class="token punctuation">,</span> ReactDOM<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>A
+<a href="https://developers.google.com/web/updates/2017/11/dynamic-import">dynamic import</a>
+is used here to only load the library when it is not in production mode before
+rendering and booting up the root <code>App</code> component. This ensures that it is not
+unecessarily included in the final production bundle.</p>
+<p>Now when you run the application during development, issues are surfaced
+directly to the Chrome DevTools console.</p>
+<img class="w-screenshot w-screenshot--filled" src="./react-axe-devtools.png" alt="React Axe in Chrome DevTools">
+<p>A severity level is also assigned for each violation. These levels are:</p>
+<ul>
+<li>Minor</li>
+<li>Moderate</li>
+<li>Serious</li>
+<li>Critical</li>
+</ul>
+<div class="w-aside w-aside--note">
+<p>If you would like to include accessibility testing in your unit testing
+workflow, take a look at the
+<a href="https://github.com/dequelabs/axe-core/tree/develop/doc/examples/jest_react">Jest and axe integration example</a>
+to understand how.</p>
+</div>
+<h2 id="conclusion">Conclusion <a class="w-headline-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<ol>
+<li>If you are building a site with React, include accessibility auditing into
+your workflow early to catch problems as you build your components.</li>
+<li>Use <code>eslint-plugin-jsx-a11y</code> to add accessibility checks into your linting
+workflow. CRA already comes with it included, but switch to either the
+recommended or strict mode.</li>
+<li>In addition to local development testing, include <code>react-axe</code> into your
+application to catch any issues on the final rendered DOM. Do not include it
+into your production bundle.</li>
+</ol>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Apr 29, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/react/accessibility-auditing-react/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/react"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

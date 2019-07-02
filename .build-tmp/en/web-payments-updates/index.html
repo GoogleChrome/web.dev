@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Updates to the Web Payments APIs</title>
+    <meta name="description" content="Since the launch of the Payment Request API in Chrome 53 and the Payment
+Handler API in Chrome 68, there have been quite a few changes made to their
+respective specifications. This post summarizes those updates and will
+continue accumulating those API changes.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/web-payments-updates/hero.jpg"
+  alt="Transfering money from a phone"
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Updates%20to%20the%20Web%20Payments%20APIs&amp;url=https%3A%2F%2Fweb.dev%2Fweb-payments-updates%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Updates to the Web Payments APIs</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Stay up to date on what&#39;s new in Web Payments
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 13, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/rsolomakhin.jpg"
+    alt="Rouslan Solomakhin"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rouslan Solomakhin</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rsolomakhin">Twitter</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/danyao.jpg"
+    alt="Danyao Wang"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Danyao Wang</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/danyaowang">Twitter</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/agektmr.jpg"
+    alt="Eiji Kitamura"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Eiji Kitamura</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/agektmr">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/agektmr">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Web Payments have been publicly available in browsers since 2016. The core
+feature — the <a href="https://www.w3.org/TR/payment-request/">Payment Request API</a> — is
+now available across multiple browsers: Chrome, Safari, Edge and soon Firefox.
+If you're new to Web Payments take a look at the <a href="https://developers.google.com/web/fundamentals/payments/?hl=en">&quot;Web Payments
+Overview&quot;</a> to
+get started.</p>
+<p>Since the launch of the Payment Request API and the <a href="https://w3c.github.io/payment-handler/">Payment Handler
+API</a>, there have been quite a few
+changes made to their respective specifications. These changes won't break your
+working code, but we recommend that you look out for them. This post summarizes
+those updates and will continue accumulating those API changes.</p>
+<div class="w-aside w-aside--note">
+<p>If you want to subscribe to further upcoming changes to
+Chrome's Web Payments implementation, please join the <a href="https://groups.google.com/a/chromium.org/forum/#!forum/paymentrequest">Public Payment Request
+Announcements
+group</a>.</p>
+<p>Alternatively, join the
+<a href="https://spectrum.chat/web-payments">public Web Payments community</a> for the same
+updates. You may ask questions there as well.</p>
+<p>If you want to check older updates to Chrome, head over to
+<a href="https://developers.google.com/web/updates/2017/01/payment-request-updates">&quot;Changes in the Payment Request API&quot; article at Web Fundamentals</a>.</p>
+</div>
+<h2 id="new-method:-hasenrolledinstrument()">New method: <code>hasEnrolledInstrument()</code> <a class="w-headline-link" href="#new-method:-hasenrolledinstrument()" aria-hidden="true">#</a></h2>
+<p>In the previous version of the Payment Request API, <code>canMakePayment()</code> was used
+to check for the user's presence of the user's payment instrument. In a recent
+update to the spec, <code>canMakePayment()</code> has been replaced with
+<a href="https://w3c.github.io/payment-request/#hasenrolledinstrument-method"><code>hasEnrolledInstrument()</code></a>
+without changing its functionality.</p>
+<p>The <a href="https://chromestatus.com/feature/5646573451083776"><code>hasEnrolledInstrument()</code></a>
+method has <a href="https://chromestatus.com/feature/5646573451083776">consensus from all major browsers</a>.
+Chrome has implemented it in version 74 and both <a href="https://bugs.webkit.org/show_bug.cgi?id=197386">Webkit</a>
+and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1528663">Gecko</a> have tracking
+bugs but have not yet implemented the method as of June 2019.</p>
+<p>To use the new <code>hasEnrolledInstrument()</code> method, replace code that looks like
+this:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// Checking for instrument presence.</span></span><br><span class="highlight-line">request<span class="token punctuation">.</span><span class="token function">canMakePayment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>handleInstrumentPresence<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>handleError<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>With code that looks like this:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// Checking for instrument presence.</span></span><br><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>hasEnrolledInstrument<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// hasEnrolledInstrument() is available.</span></span><br><span class="highlight-line">  request<span class="token punctuation">.</span><span class="token function">hasEnrolledInstrument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>handleInstrumentPresence<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>handleError<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  request<span class="token punctuation">.</span><span class="token function">canMakePayment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>handleInstrumentPresence<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>handleError<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h2 id="canmakepayment()-no-longer-checks-for-instrument-presence"><code>canMakePayment()</code> no longer checks for instrument presence <a class="w-headline-link" href="#canmakepayment()-no-longer-checks-for-instrument-presence" aria-hidden="true">#</a></h2>
+<p>Because <code>hasEnrolledInstrument()</code> now handles checking for the user's payment
+instrument,
+<a href="https://w3c.github.io/payment-request/#canmakepayment-method"><code>canMakePayment()</code></a>
+has been updated to only check for payment app availability.</p>
+<p>This change to <code>canMakePayment()</code> is bound to the implementation of
+<code>hasEnrolledInstrument()</code>. As of June 2019, it is implemented in Chrome 74 but
+not in any other browsers. Be sure to check if the <code>hasEnrolledInstrument()</code>
+method is available in the user's browser before attempting to use it.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// Checking for payment app availability without checking for instrument presence.</span></span><br><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>hasEnrolledInstrument<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// `canMakePayment()` behavior change corresponds to</span></span><br><span class="highlight-line">  <span class="token comment">// `hasEnrolledInstrument()` availability. </span></span><br><span class="highlight-line">  request<span class="token punctuation">.</span><span class="token function">canMakePayment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>handlePaymentAppAvailable<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>handleError<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Cannot check for payment app availability without checking for instrument presence."</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h2 id="languagecode-removed-from-basic-card-payment-method"><code>languageCode</code> removed from <code>basic-card</code> payment method <a class="w-headline-link" href="#languagecode-removed-from-basic-card-payment-method" aria-hidden="true">#</a></h2>
+<p><code>PaymentAddress.languageCode</code> has been removed from the shipping addresses and
+billing addresses for <code>basic-card</code>. The billing addresses of other payment
+methods (such as Google Pay) are not affected.</p>
+<p>This change has been implemented <a href="https://chromestatus.com/features/4992562146312192">in Chrome 74, Firefox, and Safari</a>.</p>
+<h2 id="paymentrequest.show()-now-takes-an-optional-detailspromise"><code>PaymentRequest.show()</code> now takes an optional <code>detailsPromise</code> <a class="w-headline-link" href="#paymentrequest.show()-now-takes-an-optional-detailspromise" aria-hidden="true">#</a></h2>
+<p><a href="https://w3c.github.io/payment-request/#show-method"><code>PaymentRequest.show()</code></a>
+allows a merchant to present a payment request UI before the final total is
+known. The merchant has ten seconds to resolve the <code>detailsPromise</code> before a
+timeout. This feature is intended for a quick server-side roundtrip.</p>
+<p>This feature has shipped in Chrome 75 and Safari.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// Not implemented in Chrome 74 and older.</span></span><br><span class="highlight-line"><span class="token comment">// There’s no way to feature-detect this, so check a few</span></span><br><span class="highlight-line"><span class="token comment">// older versions of Chrome that you’re seeing hit your servers.</span></span><br><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token regex">/Chrome\/((6[0-9])|(7[0-4]))/g</span><span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">return</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Supported in Chrome 75+.</span></span><br><span class="highlight-line">request<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolveDetailsPromise<span class="token punctuation">,</span> rejectDetailsPromise</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// Find out the exact total amount and call </span></span><br><span class="highlight-line">  <span class="token comment">// `resolveDetailsPromise(details)`.</span></span><br><span class="highlight-line">  <span class="token comment">// Use a 3 second timeout as an example.</span></span><br><span class="highlight-line">  window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token function">resolveDetailsPromise</span><span class="token punctuation">(</span>details<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3 seconds.</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>handleResponse<span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span>handleError<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="paymentrequestevent.changepaymentmethod()"><code>PaymentRequestEvent.changePaymentMethod()</code> <a class="w-headline-link" href="#paymentrequestevent.changepaymentmethod()" aria-hidden="true">#</a></h2>
+<p>The Payment Handler API feature
+<a href="https://chromestatus.com/feature/5698314223747072"><code>PaymentRequestEvent.changePaymentMethod()</code></a>
+allows payment handlers (e.g., Google Pay) to trigger the
+<a href="https://w3c.github.io/payment-request/#dom-paymentmethodchangeevent"><code>onpaymentmethodchange</code></a>
+event handler. <code>changePaymentMethod()</code> returns a promise that resolves to a
+<a href="https://w3c.github.io/payment-handler/#dom-paymentmethodchangeresponse">merchant
+response</a>
+with updated price information (e.g., tax recalculation).</p>
+<p>Both <code>PaymentRequestEvent.changePaymentMethod()</code> and the <code>paymentmethodchange</code>
+event are available in Chrome 76 and Webkit has implemented the
+<a href="https://webkit.org/blog/9167/whats-new-in-the-payment-request-api-for-apple-pay/"><code>paymentmethodchange</code> event in its Technology
+Preview</a>.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// In service worker context, `self` is the global object.</span></span><br><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'paymentrequest'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">evt</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  evt<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">confirmPaymentFunction<span class="token punctuation">,</span> rejectPaymentFunction</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>evt<span class="token punctuation">.</span>changePaymentMethod <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token comment">// Not implemented in this version of Chrome.</span></span><br><span class="highlight-line">      <span class="token keyword">return</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span><br><span class="highlight-line">    <span class="token comment">// Notify merchant that the user selected a different payment method.</span></span><br><span class="highlight-line">    evt<span class="token punctuation">.</span><span class="token function">changePaymentMethod</span><span class="token punctuation">(</span><span class="token string">'https://paymentapp.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>country<span class="token punctuation">:</span> <span class="token string">'US'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span><br><span class="highlight-line">    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">responseFromMerchant</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token keyword">if</span> <span class="token punctuation">(</span>responseFromMerchant <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">        <span class="token comment">// Merchant ignored the 'paymentmethodchange' event.</span></span><br><span class="highlight-line">        <span class="token keyword">return</span><span class="token punctuation">;</span></span><br><span class="highlight-line">      <span class="token punctuation">}</span></span><br><span class="highlight-line">      <span class="token function">handleResponseFromMerchant</span><span class="token punctuation">(</span>responseFromMerchant<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span></span><br><span class="highlight-line">    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token function">handleError</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Merchant example:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>onpaymentmethodchange <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// Feature not available in this browser.</span></span><br><span class="highlight-line">  <span class="token keyword">return</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">request<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'paymentmethodchange'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">evt</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  evt<span class="token punctuation">.</span><span class="token function">updateWith</span><span class="token punctuation">(</span><span class="token function">updateDetailsBasedOnPaymentMethod</span><span class="token punctuation">(</span>evt<span class="token punctuation">,</span> paymentDetails<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<div class="w-aside w-aside--note">
+<p><strong>Try it yourself</strong>! We've put together <a href="https://rsolomakhin.github.io/pr/apps/pmc/">an example so you can experiment with this API</a>.</p>
+</div>
+<h2 id="improved-local-development">Improved local development <a class="w-headline-link" href="#improved-local-development" aria-hidden="true">#</a></h2>
+<p>Chrome 76 adds two small improvements for developer productivity. If your local
+development environment uses a self-signed certificate, you can now use the
+<code>--ignore-certificate-errors</code> command line flag to make Chrome allow Web
+Payments APIs in your development environment. If you develop using a local web
+server that does not support HTTPS, you can also use the
+<code>--unsafely-treat-insecure-origin-as-secure=&lt;origin&gt;</code> flag to make Chrome treat
+the HTTP origin as HTTPS.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 13, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/web-payments-updates/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/value-of-speed/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      The value of speed
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

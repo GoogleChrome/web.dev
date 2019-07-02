@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image policies for fast load times and more</title>
+    <meta name="description" content="Images take up a significant amount of visual space and make up the
+majority of the downloaded bytes on a website. Use the new feature
+policies to identify oversized images.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/image-policies/pankaj-patel-721645-unsplash.jpg"
+  alt="A description of the hero image for screen reader users."
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Image%20policies%20for%20fast%20load%20times%20and%20more&amp;url=https%3A%2F%2Fweb.dev%2Fimage-policies%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Image policies for fast load times and more</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Use optimized image policies to ensure your site is using the best performing images.
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>May 31, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/lunalu.jpg"
+    alt="Luna Lu"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Luna Lu</cite>
+    <ul class="w-author__link-list">
+      
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/loonybear">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Images often take up a significant amount of visual space and make up the
+majority of the downloaded bytes on a website. Optimizing images can improve
+loading performance and reduce network traffic.</p>
+<p>Surprisingly, more than half of the sites on the web are serving poorly
+compressed or unnecessarily large images. This leaves a lot of room for
+performance improvements simply by optimizing the images.</p>
+<p>You may ask, how do I know if my images are optimized and how should I optimize
+them? We are experimenting with a new set of feature policies for image
+optimization: <code>oversized-images</code>, <code>unoptimized-lossy-images</code>,
+<code>unoptimized-lossless-images</code>, and<code>unoptimized-lossless-images-strict</code>.
+All are now available for <a href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">origin
+trials</a>.</p>
+<h2 id="optimized-image-policies">Optimized image policies <a class="w-headline-link" href="#optimized-image-policies" aria-hidden="true">#</a></h2>
+<p>Feature policy is introducing a new set restrictions on images that can be
+applied with development-time enforcement. Images violating any of the
+restrictions will be rendered as placeholder images, which are easy to identify
+and fix. These policies can be specified in report-only mode where images will
+render normally without enforcement while violations are being observed via
+reports. (See <a href="#report-only-mode-in-the-wild">Report-only mode in the wild</a>,
+below for details.)</p>
+<h3 id="oversized-images">oversized-images <a class="w-headline-link" href="#oversized-images" aria-hidden="true">#</a></h3>
+<p>The <code>oversized-images</code> feature policy restricts the intrinsic dimensions
+of an image in relation to its container size.</p>
+<p>When a document uses the <code>oversized-images</code> policy, any <code>&lt;img&gt;</code> element
+whose intrinsic resolution is more than X times larger than the container size
+in either dimension will be replaced with a placeholder image.</p>
+<h4 id="why">Why? <a class="w-headline-link" href="#why" aria-hidden="true">#</a></h4>
+<p>Serving images larger than what the viewing device can render—for example,
+serving desktop images to mobile contexts, or serving high-pixel-density images
+to a low-pixel-density device—is wasting network traffic and device
+memory. Read <a href="https://web.dev/serve-images-with-correct-dimensions/">Serve images with correct
+dimensions</a> and <a href="https://web.dev/serve-responsive-images/">Serve
+responsive images</a> for information on
+optimizing your images.</p>
+<h4 id="examples">Examples <a class="w-headline-link" href="#examples" aria-hidden="true">#</a></h4>
+<p>A few examples illustrate this. The following shows the default behavior when cutting an image's display size in half.</p>
+<figure class="w-figure w-figure--center">
+  <img src="./default-100x100.png" alt="The default resizing behavior" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    The default resizing behavior.
+  </figcaption>
+</figure>
+<p>If I apply the following feature policy, I get a placeholder image instead.</p>
+<p><code>Feature-Policy: oversized-images *(2);</code></p>
+<figure class="w-figure w-figure--center">
+  <img src="./resize-both-dimensions.png" alt="When the image is too large for the container" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    When the image is too large for the container.
+  </figcaption>
+</figure>
+<p>I get similar results if I lower only the width or the height.</p>
+<figure class="w-figure w-figure--center">
+  <img src="./resize-width.png" alt="Resized width" style="max-width: 326px;">
+  <img src="./resize-height.png" alt="Resized height" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    Resize width and height.
+  </figcaption>
+</figure>
+<h4 id="how-to-use">How to use <a class="w-headline-link" href="#how-to-use" aria-hidden="true">#</a></h4>
+<p>To summarize, <code>oversized-images</code> policy can be specified through either:</p>
+<ul>
+<li><code>Feature-Policy</code> HTTP header</li>
+<li><code>&lt;iframe&gt;</code> <code>allow</code> attribute</li>
+</ul>
+<p>To declare the <code>oversized-images</code> policy, you need to provide:</p>
+<ul>
+<li>The feature name, <code>oversized-images</code> (Required)</li>
+<li>A list of origins (Optional)</li>
+<li>The threshold values (i.e., the downscaling ratio X) for the origins, specified in
+parenthesis (Optional)</li>
+</ul>
+<p>We recommend a downscaling ratio of 2.0 or lower. Consider using <a href="https://web.dev/serve-responsive-images/">responsive
+images</a> with different resolutions to
+best serve images on various screen sizes, resolutions, and so on.</p>
+<h4 id="more-examples">More examples <a class="w-headline-link" href="#more-examples" aria-hidden="true">#</a></h4>
+<p><code>Feature-Policy: oversized-images *(2.0)</code></p>
+<p>The policy is enforced on all origins with a threshold value of 2.0. Any
+<code>&lt;img&gt;</code> element with an image whose downscaling ratio that is greater than
+2.0 is disallowed and will be replaced with a placeholder image.</p>
+<p><code>Feature-Policy: oversized-images *(inf) 'self'(1.5)</code></p>
+<p>The policy is enforced on the site's origin with a threshold value of 1.5.
+<code>&lt;img&gt;</code> elements in top-level browsing contexts and same origin nested
+browsing contexts will only render normally if the downscaling ratio is less
+than or equal to 1.5. <code>&lt;img&gt;</code> elements everywhere else will render normally.</p>
+<h3 id="unoptimized-lossylossless-images">unoptimized-{lossy,lossless}-images <a class="w-headline-link" href="#unoptimized-lossylossless-images" aria-hidden="true">#</a></h3>
+<p>The <code>unoptimized-lossy-images</code>, <code>unoptimized-lossless-images</code>,
+<code>unoptimized-lossless-images-strict</code> feature policies restrict the file
+size of an image in relation to its intrinsic resolution:</p>
+<dl>
+  <dt><code>unoptimized-lossy-images</code></dt>
+  <dd>Lossy formats should not exceed a byte-per-pixel ratio of X, with a fixed <strong>1KB</strong> overhead allowance. For a W x H image, the file size threshold is calculated as W x H x X + 1024.</dd>
+  <dt><code>unoptimized-lossless-images</code></dt>
+  <dd>Lossless formats should not exceed a byte-per-pixel ratio of X, with a fixed <strong>10KB</strong> overhead allowance. For a W x H image, the file size threshold is calculated as W x H x X + 10240.</dd>
+  <dt><code>unoptimized-lossless-images-strict</code></dt>
+  <dd>Lossless formats should not exceed a byte-per-pixel ratio of X, with a fixed <strong>1KB</strong> overhead allowance. For a W x H image, the file size threshold is calculated as W x H x X + 1024.</dd>
+</dl>
+<p>When a document uses any of these policies, any <code>&lt;img&gt;</code> element violating
+the constraint will be replaced with a placeholder image.</p>
+<h4 id="why-2">Why? <a class="w-headline-link" href="#why-2" aria-hidden="true">#</a></h4>
+<p>The larger the download size is, the longer it takes for an image to load. The
+file size should be kept as small as possible when optimizing an image:
+stripping metadata, picking a good image format, using image compression, and so on.
+Read <a href="https://web.dev/use-imagemin-to-compress-images/">Use Imagemin to compress
+images</a> and <a href="https://web.dev/serve-images-webp/">Use WebP
+images</a> for information on optimizing your
+images.</p>
+<h4 id="example">Example <a class="w-headline-link" href="#example" aria-hidden="true">#</a></h4>
+<p>The following shows the default browser behavior. Without the feature policy an unoptimized lossy image can be displayed just the same as an optimized image.</p>
+<figure class="w-figure w-figure--center">
+  <img src="./unoptimized-lossy.png" alt="Comparing an optimized image with an unoptimized image" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    Comparing an optimized image with an unoptimized image.
+  </figcaption>
+</figure>
+<p>If I apply the following feature policy, I get a placeholder image instead.</p>
+<p><code>Feature-Policy: unoptimized-lossy-images *(0.5);</code></p>
+<figure class="w-figure w-figure--center">
+  <img src="./lossy-image-excluded.png" alt="When the image is not optimized" style="max-width: 326px;">
+  <figcaption class="w-figcaption">
+    When the image is not optimized.
+  </figcaption>
+</figure>
+<h4 id="how-to-use-2">How to use <a class="w-headline-link" href="#how-to-use-2" aria-hidden="true">#</a></h4>
+<p>If you are new to feature policy, please check out <a href="https://developers.google.com/web/updates/2018/06/feature-policy">Introduction to Feature
+Policy</a> for
+more details.</p>
+<p>To summarize, <code>unoptimized-{lossy,lossless}-images</code> policies can be either
+specified through:</p>
+<ul>
+<li><code>Feature-Policy</code> HTTP header</li>
+<li><code>&lt;iframe&gt;</code> <code>allow</code> attribute</li>
+</ul>
+<p>To declare an <code>unoptimized-{lossy,lossless}-images</code> policy, you will need to
+provide:</p>
+<ul>
+<li>The feature name, for example, <code>unoptimized-lossy-images</code> (Required)</li>
+<li>A list of origins (Optional)</li>
+<li>The threshold values (i.e., byte-per-pixel ratio X) for the origins, specified
+in parenthesis (Optional)</li>
+</ul>
+<p>We recommend a byte-per-pixel ratio of 0.5 or lower for
+<code>unoptimized-lossy-images</code> and a byte-per-pixel ratio of 1 or lower for
+<code>unoptimized-lossless-images</code> and <code>unoptimized-lossless-images-strict</code>.</p>
+<p>WebP formats have better compression ratios than other formats. Serve all your
+images in WebP lossy format if you can. If that is not sufficient, try WebP
+lossless format. Use JPEG on browsers that don't support WebP formats. Use PNG
+if none of thes formats work.</p>
+<p>If you are using WebP formats, try with stricter thresholds:</p>
+<ul>
+<li>0.2 for WEBPV8</li>
+<li>0.5 for WEBPL</li>
+</ul>
+<h4 id="more-examples-2">More examples <a class="w-headline-link" href="#more-examples-2" aria-hidden="true">#</a></h4>
+<pre><code>Feature-Policy:  unoptimized-lossy-images *(0.5);
+                 unoptimized-lossless-images *(1.0);
+                 unoptimized-lossless-images-strict *(1.0);
+</code></pre>
+<p>This policy is enforced on all origins with a threshold value of 0.5 (for lossy
+formats) and 1 (for lossless formats). Any <code>&lt;img&gt;</code> element whose image has a
+byte-per-pixel ratio exceeding the constraint is disallowed and will be replaced
+with a placeholder image.</p>
+<pre><code>Feature-Policy: unoptimized-lossy-images *(inf) 'self'(0.3);
+                unoptimized-lossless-images *(inf) 'self'(0.8);
+                unoptimized-lossless-images-strict *(inf) 'self'(0.8);
+</code></pre>
+<p>This policy is enforced on the site's origin with a threshold value of 0.3 (for
+lossy formats) and 0.8 (for lossless formats). The <code>&lt;img&gt;</code> elements in top-level
+browsing contexts and same origin nested browsing contexts will only render
+normally if the byte-per-pixel ratio meets these constraints. The <code>&lt;img&gt;</code> elements
+everywhere else will render normally.</p>
+<h3 id="report-only-mode-in-the-wild">Report-only mode in the wild <a class="w-headline-link" href="#report-only-mode-in-the-wild" aria-hidden="true">#</a></h3>
+<p>Publishing a site with placeholder images may not be what you want. You can use
+the policies in enforcement mode (with unoptimized images rendered as
+placeholder images) during development and staging, and use report-only mode in
+production. (Check out <a href="https://github.com/w3c/webappsec-feature-policy/blob/master/reporting.md">Feature Policy
+Reporting</a>
+for more details.) Similar to <code>Feature-Policy</code> HTTP header, the
+<code>Feature-Policy-Report-Only</code> header lets you observe violation reports in the
+wild without any enforcement.</p>
+<h3 id="limitations">Limitations <a class="w-headline-link" href="#limitations" aria-hidden="true">#</a></h3>
+<p>Image policies only work on HTML image elements (<code>&lt;img&gt;</code>, <code>&lt;source&gt;</code>,
+etc.) and are not yet supported on background images or generated content. If you
+would like to have policies supported on broader contents, please let us know.</p>
+<h2 id="optimizing-your-images">Optimizing your images <a class="w-headline-link" href="#optimizing-your-images" aria-hidden="true">#</a></h2>
+<p>I've talked quite a bit about optimizing your images, but haven't said how to do it. That topic is out of scope for this article, but you can learn more from the links below and from the codelabs listed at the end of the article.</p>
+<ul>
+<li><a href="https://web.dev/fast#optimize-your-images">Optimizing images</a></li>
+<li><a href="https://web.dev/serve-images-with-correct-dimensions/">Serve images with correct dimentions</a></li>
+</ul>
+<h2 id="experiment-with-the-policies-in-origin-trials">Experiment with the policies in origin trials <a class="w-headline-link" href="#experiment-with-the-policies-in-origin-trials" aria-hidden="true">#</a></h2>
+<p>Image policies are available in Chrome 75 via an origin trial.</p>
+<p>To participate:</p>
+<ol>
+<li>
+<p><a href="https://developers.chrome.com/origintrials/#/view_trial/2562548187973812225">request a token</a></p>
+</li>
+<li>
+<p>Add the token on any pages in your origin using an <code>Origin-Trial</code> HTTP
+header:<br/>
+<br/>
+<code>Origin-Trial: **token as provided in the developer console**</code></p>
+</li>
+<li>
+<p>Specify an image policy via HTTP header Feature-Policy header:<br/>
+<br/>
+<code>Feature-Policy: **image policies specified here**</code></p>
+</li>
+</ol>
+<p>Check out  <a href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md">Origin Trials Guide for Web
+Developers</a>
+for more details.</p>
+<h2 id="please-give-us-feedback">Please give us feedback <a class="w-headline-link" href="#please-give-us-feedback" aria-hidden="true">#</a></h2>
+<p>Hopefully this article has given you a good understanding of the image policies
+and gotten you excited. We'd really love for you to try out the policies and
+give us feedback.</p>
+<p>You can give us feedback for each of the features mentioned in this article to
+our mailing list: <a href="mailto:feature-control@chromium.org">feature-control@</a><a href="mailto:feature-control@chromium.org">chromium.org</a>.</p>
+<p>We would love to know what threshold values you used and found useful. We would
+love to know whether <code>unoptimized-lossless-images</code> or
+<code>unoptimized-lossless-images-strict</code> is more intuitive and easy to use, or if we
+should use a difference overhead allowance instead. We will be sending out a
+survey near the end of the trial. Stay tuned!</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>May 31, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/image-policies/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+      <div class="w-codelabs-callout">
+      <div class="w-codelabs-callout__header">
+        <h2 class="w-codelabs-callout__lockup">Codelabs</h2>
+        <div class="w-codelabs-callout__headline">See it in action</div>
+        <div class="w-codelabs-callout__blurb">
+          Learn more and put this guide into action.
+        </div>
+      </div>
+      <ul class="w-unstyled-list w-codelabs-callout__list">
+        <li class="w-codelabs-callout__listitem">
+  <a
+    class="w-codelabs-callout__link"
+    href="/codelab-serve-images-webp/"
+  >
+    Creating WebP Images with the Command Line
+  </a>
+</li>
+      </ul>
+    </div>
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/extract-critical-css/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Extract critical CSS
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

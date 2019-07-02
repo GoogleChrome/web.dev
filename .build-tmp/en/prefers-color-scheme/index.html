@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Darkness, My Old Friend</title>
+    <meta name="description" content="Many devices now support an operating system wide dark mode or dark theme experience.
+This post explains how dark mode can be supported on web pages, lists best practices,
+and introduces a custom element named dark-mode-toggle that allows web developers
+to offer users a way to override their operating system level preference on specific web pages.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero w-hero--bottom"
+  src="/prefers-color-scheme/hero.jpg"
+  alt="Silhouette photo of a mountain during nighttime, photo by Nathan Anderson on Unsplash. "
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Hello%20Darkness%2C%20My%20Old%20Friend&amp;url=https%3A%2F%2Fweb.dev%2Fprefers-color-scheme%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Hello Darkness, My Old Friend</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Overhyped or necessity? Learn everything about dark mode and how to support it to the benefit of your users!
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 27, 2019</time>
+           <span class="w-author__separator">•</span> Updated <time>Jun 28, 2019</time> 
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/thomassteiner.jpg"
+    alt="Thomas Steiner"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Thomas Steiner</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/tomayac">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/tomayac">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <h2 id="introduction">Introduction <a class="w-headline-link" href="#introduction" aria-hidden="true">#</a></h2>
+<div class="w-aside w-aside--note">
+<p>📚 I have done a lot of background research on the history and theory of dark mode,
+if you are only interested in working with dark mode, feel free to
+<a href="#activating-dark-mode-in-the-operating-system">skip the introduction</a>.</p>
+</div>
+<h3 id="dark-mode-before-dark-mode">Dark mode before <em>Dark Mode</em> <a class="w-headline-link" href="#dark-mode-before-dark-mode" aria-hidden="true">#</a></h3>
+<figure class="w-figure w-figure--inline-right">
+  <img style="height: 175px; width: auto;" src="green-screen.jpg" alt="Green screen computer monitor" intrinsicsize="640x480">
+  <figcaption class="w-figcaption">Green screen (<a href="https://commons.wikimedia.org/wiki/File:Compaq_Portable_and_Wordperfect.JPG">Source</a>)</figcaption>
+</figure>
+<p>We have gone full circle with dark mode.
+In the dawn of personal computing, dark mode wasn’t a matter of choice,
+but a matter of fact:
+Monochrome <abbr title="Cathode-Ray Tube">CRT</abbr> computer monitors worked by firing electron beams
+on a phosphorescent screen and the phosphor used in early CRTs was green.
+Because text was displayed in green and the rest of the screen was black, these models were often referred to as
+<a href="https://commons.wikimedia.org/wiki/File:Schneider_CPC6128_with_green_monitor_GT65,_start_screen.jpg">green screens</a>.</p>
+<figure class="w-figure w-figure--inline-left">
+  <img style="height: 175px; width: auto;" src="word-processing.jpg" alt="Dark-on-white word processing" intrinsicsize="698x551">
+  <figcaption class="w-figcaption">Dark-on-white (<a href="https://www.youtube.com/watch?v=qKkABzt0Zqg">Source</a>)</figcaption>
+</figure>
+<p>The subsequently introduced Color CRTs displayed multiple colors
+through the use of red, green, and blue phosphors.
+They created white by activating all three phosphors simultaneously.
+With the advent of more sophisticated <abbr title="What You See Is What You Get">WYSIWYG</abbr>
+<a href="https://en.wikipedia.org/wiki/Desktop_publishing">desktop publishing</a>,
+the idea of making the virtual document resemble a physical sheet of paper became popular.</p>
+<figure class="w-figure w-figure--inline-right">
+  <img style="height: 175px; width: auto;" src="worldwideweb.png" alt="Dark-on-white webpage in the WorldWideWeb browser" intrinsicsize="1024x768">
+  <figcaption class="w-figcaption">The WorldWideWeb browser (<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">Source</a>)</figcaption>
+</figure>
+<p>This is where <em>dark-on-white</em> as a design trend started,
+and this trend was carried over to the
+<a href="http://info.cern.ch/hypertext/WWW/TheProject.html">early document-based web</a>.
+The first ever browser,
+<a href="https://en.wikipedia.org/wiki/WorldWideWeb">WorldWideWeb</a>
+(remember,
+<a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets#History">CSS wasn’t even invented</a> yet),
+<a href="https://commons.wikimedia.org/wiki/File:WorldWideWeb_FSF_GNU.png">displayed webpages</a> this way.
+Fun fact: the second ever browser,
+<a href="https://en.wikipedia.org/wiki/Line_Mode_Browser">Line Mode Browser</a>—a terminal-based browser—was
+green on dark.
+These days, web pages and web apps are typically designed with dark text
+on a light background, a baseline assumption that is also hard-coded in user agent stylesheets, including
+<a href="https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css">Chrome’s</a>.</p>
+<figure class="w-figure w-figure--inline-left">
+  <img style="height: 175px; width: auto;" src="smartphone-in-bed.jpg" alt="Smartphone used while lying in bed" intrinsicsize="500x334">
+  <figcaption class="w-figcaption">Smartphone used in bed (<a href="https://unsplash.com/photos/W39xsPWZgA4">Source</a>)</figcaption>
+</figure>
+<p>The days of CRTs are long over.
+Content consumption and creation has shifted to mobile devices
+that use backlit <abbr title="Liquid Crystal Display">LCD</abbr>
+or energy-saving <abbr title="Active-Matrix Organic Light-Emitting Diode">AMOLED</abbr> screens.
+Smaller and more transportable computers, tablets, and smartphones led to new usage patterns.
+Leisure tasks like web browsing, coding for fun, and high-end gaming
+frequently happen after-hours in dim environments.
+People even enjoy their devices in their beds at night-time.
+The more people use their devices in the dark,
+the more the idea of going back to the roots of <em>light-on-dark</em> becomes popular.</p>
+<h3 id="why-dark-mode">Why dark mode <a class="w-headline-link" href="#why-dark-mode" aria-hidden="true">#</a></h3>
+<h4 id="dark-mode-for-aesthetic-reasons">Dark mode for aesthetic reasons <a class="w-headline-link" href="#dark-mode-for-aesthetic-reasons" aria-hidden="true">#</a></h4>
+<p>When people get asked
+<a href="https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d">why they like or want dark mode</a>,
+the most popular response is that <em>“it’s easier on the eyes,”</em>
+followed by <em>“it’s elegant and beautiful.”</em>
+Apple in their
+<a href="https://developer.apple.com/documentation/appkit/supporting_dark_mode_in_your_interface">Dark Mode developer documentation</a>
+explicitly writes: <em>“The choice of whether to enable a light or dark appearance
+is an aesthetic one for most users, and might not relate to ambient lighting conditions.”</em></p>
+<div class="w-aside w-aside--note">
+<p>👩‍🔬 Read up more on
+<a href="https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d">user research regarding why people want dark mode and how they use it</a>.</p>
+</div>
+<figure class="w-figure w-figure--inline-right">
+  <img style="height: 225px; width: auto;" src="closeview.png" alt="CloseView in Mac OS System 7 with \"White on Black\" mode" intrinsicsize="531x618">
+  <figcaption class="w-figcaption">System&nbsp;7 CloseView (<a href="https://archive.org/details/mac_Macintosh_System_7_at_your_Fingertips_1992">Source</a>)</figcaption>
+</figure>
+<h4 id="dark-mode-as-an-accessibility-tool">Dark mode as an accessibility tool <a class="w-headline-link" href="#dark-mode-as-an-accessibility-tool" aria-hidden="true">#</a></h4>
+<p>There are also people who actually <em>need</em> dark mode and use it as another accessibility tool,
+for example, users with low vision.
+The earliest occurrence of such an accessibility tool I could find is
+<a href="https://en.wikipedia.org/wiki/System_7">System 7</a>’s <em>CloseView</em> feature, which had a toggle for
+<em>Black on White</em> and <em>White on Black</em>.
+While System 7 supported color, the default user interface was still black-and-white.</p>
+<p>These inversion-based implementations demonstrated their weaknesses once color was introduced.
+User research by Szpiro <em>et al.</em> on
+<a href="https://dl.acm.org/citation.cfm?id=2982168">how people with low vision access computing devices</a>
+showed that all interviewed users disliked inverted images,
+but that many preferred light text on a dark background.
+Apple accommodates for this user preference with a feature called
+<a href="https://www.apple.com//accessibility/iphone/vision/">Smart Invert</a>,
+which reverses the colors on the display, except for images, media,
+and some apps that use dark color styles.</p>
+<p>A special form of low vision is Computer Vision Syndrome, also known as Digital Eye Strain, which is
+<a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1475-1313.2011.00834.x">defined</a>
+as <em>“the combination of eye and vision problems associated with the use of computers
+(including desktop, laptop, and tablets) and other electronic displays (e.g.
+smartphones and electronic reading devices).”</em>
+It has been <a href="https://bmjopen.bmj.com/content/5/1/e006748">proposed</a>
+that the use of electronic devices by adolescents, particularly at night time,
+leads to an increased risk of shorter sleep duration,
+longer sleep-onset latency, and increased sleep deficiency.
+Additionally, exposure to blue light has been widely
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4254760/">reported</a>
+to be involved in the regulation of
+<a href="https://en.wikipedia.org/wiki/Circadian_rhythm">circadian rhythm</a>
+and the sleep cycle,
+and irregular light environments may lead to sleep deprivation,
+possibly affecting mood and task performance, according to
+<a href="https://www.college-optometrists.org/oip-resource/computer-vision-syndrome--a-k-a--digital-eye-strain.html">research by Rosenfield</a>.
+To limit these negative effects, reducing blue light by adjusting the display color temperature
+through features like iOS’ <a href="https://support.apple.com/en-us/HT207570">Night Shift</a> or Android’s
+<a href="https://support.google.com/pixelphone/answer/7169926?">Night Light</a> can help,
+as well as avoiding bright lights or irregular lights in general through dark themes or dark modes.</p>
+<h4 id="dark-mode-power-savings-on-amoled-screens">Dark mode power savings on AMOLED screens <a class="w-headline-link" href="#dark-mode-power-savings-on-amoled-screens" aria-hidden="true">#</a></h4>
+<p>Finally, dark mode is known to save a <em>lot</em> of energy on
+<abbr title="Active-Matrix Organic Light-Emitting Diode">AMOLED</abbr> screens.
+Android case studies that focused on popular Google apps
+like YouTube have shown that the power savings can be up to 60%.
+The video below has more details on these case studies and the power savings per app.</p>
+<figure class="w-figure w-figure--fullbleed">
+  <div class="w-youtube">
+  <iframe
+    class="w-youtube__embed"
+    src="https://www.youtube.com/embed/N_6sPd0Jd3g?start=305"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+</figure>
+<h2 id="activating-dark-mode-in-the-operating-system">Activating dark mode in the operating system <a class="w-headline-link" href="#activating-dark-mode-in-the-operating-system" aria-hidden="true">#</a></h2>
+<p>Now that I have covered the background of why dark mode is such a big deal for many users,
+let’s review how you can support it.</p>
+<figure class="w-figure w-figure--inline-left">
+  <img style="height: 250px; width: auto;" src="android.png" alt="Android Q dark mode settings" intrinsicsize="610x700">
+  <figcaption class="w-figcaption">Android&nbsp;Q dark theme settings</figcaption>
+</figure>
+<p>Operating systems that support a dark mode or dark theme
+typically have an option to activate it somewhere in the settings.
+On macOS X, it’s in the system preference’s <em>General</em> section and called <em>Appearance</em> (<a href="macosx.png">screenshot</a>),
+and on Windows 10, it’s in the <em>Colors</em> section and called <em>Choose your color</em> (<a href="windows10.png">screenshot</a>).
+For Android Q, you can find it under <em>Display</em> as a <em>Dark Theme</em> toggle switch (<a href="android.png">screenshot</a>),
+and on iOS 13, you can change the <em>Appearance</em> in the <em>Display &amp; Brightness</em>
+section of the settings (<a href="ios.jpg">screenshot</a>).</p>
+<h2 class="w-clearfix">The <code>prefers-color-scheme</code> media query</h2>
+<p>One last bit of theory before I get going.
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Media queries</a>
+allow authors to test and query values or features of the user agent or display device,
+independent of the document being rendered.
+They are used in the CSS <code>@media</code> rule to conditionally apply styles to a document,
+and in various other contexts and languages, such as HTML and JavaScript.
+<a href="https://drafts.csswg.org/mediaqueries-5/">Media Queries Level 5</a>
+introduces so-called user preference media features, that is,
+a way for sites to detect the user’s preferred way to display content.</p>
+<div class="w-aside w-aside--note">
+<p>☝️ An established user preference media feature is <code>prefers-reduced-motion</code>
+that lets you detect the desire for less motion on a page.
+I have
+<a href="https://developers.google.com/web/updates/2019/03/prefers-reduced-motion">written about <code>prefers-reduced-motion</code></a>
+before.</p>
+</div>
+<p>The <a href="https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme"><code>prefers-color-scheme</code></a>
+media feature is used to detect
+if the user has requested the page to use a light or dark color theme.
+It works with the following values:</p>
+<ul>
+<li><code>no-preference</code>:
+Indicates that the user has made no preference known to the system.
+This keyword value evaluates as <code>false</code> in the
+<a href="https://drafts.csswg.org/mediaqueries-5/#boolean-context">boolean context</a>.</li>
+<li><code>light</code>:
+Indicates that the user has notified the system that they prefer a page that has a light theme
+(dark text on light background).</li>
+<li><code>dark</code>:
+Indicates that the user has notified the system that they prefer a page that has a dark theme
+(light text on dark background).</li>
+</ul>
+<h2 id="supporting-dark-mode">Supporting dark mode <a class="w-headline-link" href="#supporting-dark-mode" aria-hidden="true">#</a></h2>
+<h3 id="finding-out-if-dark-mode-is-supported-by-the-browser">Finding out if dark mode is supported by the browser <a class="w-headline-link" href="#finding-out-if-dark-mode-is-supported-by-the-browser" aria-hidden="true">#</a></h3>
+<p>As dark mode is reported through a media query, you can easily check if the current browser
+supports dark mode by checking if the media query <code>prefers-color-scheme</code> matches at all.
+Note how I don’t include any value, but purely check if the media query alone matches.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span><span class="token function">matchMedia</span><span class="token punctuation">(</span><span class="token string">'(prefers-color-scheme)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>media <span class="token operator">!==</span> <span class="token string">'not all'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'🎉 Dark mode is supported'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>At the time of writing, <code>prefers-color-scheme</code> is supported on both desktop and mobile (where available)
+by Chrome and Edge as of version 76, Firefox as of version 67,
+and Safari as of version 12.1 on macOS and as of version 13 on iOS.
+For all other browsers, you can check the <a href="https://caniuse.com/#feat=prefers-color-scheme">Can I use support tables</a>.</p>
+<div class="w-aside w-aside--note">
+<p>There is a custom element <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle"><code>&lt;dark-mode-toggle&gt;</code></a>
+available that adds dark mode support to older browsers.
+I write about it <a href="#the-lessdark-mode-togglegreater-custom-element">further down in this article</a>.</p>
+</div>
+<h3 id="dark-mode-in-practice">Dark mode in practice <a class="w-headline-link" href="#dark-mode-in-practice" aria-hidden="true">#</a></h3>
+<p>Let’s finally see how supporting dark mode looks like in practice.
+Just like with the <a href="https://en.wikipedia.org/wiki/Highlander_(film)">Highlander</a>,
+with dark mode <em>there can be only one</em>: dark or light, but never both!
+Why do I mention this? Because this fact should have an impact on the loading strategy.
+<strong>Please don’t force users to download CSS in the critical rendering path
+that is for a mode they don’t currently use.</strong>
+To optimize load speed, I have therefore split my CSS for the example app
+that shows the following recommendations in practice
+into three parts in order to <a href="/defer-non-critical-css/">defer non-critical CSS</a>:</p>
+<ul>
+<li><code>style.css</code> that contains generic rules that are used universally on the site.</li>
+<li><code>dark.css</code> that contains only the rules needed for dark mode.</li>
+<li><code>light.css</code> that contains only the rules needed for light mode.</li>
+</ul>
+<h3 id="loading-strategy">Loading strategy <a class="w-headline-link" href="#loading-strategy" aria-hidden="true">#</a></h3>
+<p>The two latter ones, <code>light.css</code> and <code>dark.css</code>,
+are loaded conditionally with a <code>&lt;link media&gt;</code> query.
+Initially,
+<a href="https://caniuse.com/#feat=prefers-color-scheme">not all browsers will support <code>prefers-color-scheme</code></a>
+(detectable using the <a href="#finding-out-if-dark-mode-is-supported-by-the-browser">pattern above</a>),
+which I deal with dynamically by loading the default <code>light.css</code> file
+via a conditionally inserted <code>&lt;link rel=&quot;stylesheet&quot;&gt;</code> element in a minuscule inline script
+(light is an arbitrary choice, I could also have made dark the default fallback experience).
+To avoid a <a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content">flash of unstyled content</a>,
+I hide the content of the page until <code>light.css</code> has loaded.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br><span class="highlight-line">  <span class="token comment">// If `prefers-color-scheme` is not supported, fall back to light mode.</span></span><br><span class="highlight-line">  <span class="token comment">// In this case, light.css will be downloaded with `highest` priority.</span></span><br><span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span><span class="token function">matchMedia</span><span class="token punctuation">(</span><span class="token string">'(prefers-color-scheme)'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>media <span class="token operator">===</span> <span class="token string">'not all'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">insertAdjacentHTML</span><span class="token punctuation">(</span></span><br><span class="highlight-line">        <span class="token string">'beforeend'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        <span class="token string">'&lt;link rel="stylesheet" href="/light.css" onload="document.documentElement.style.display = ``">'</span></span><br><span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><span class="token comment">&lt;!--<br><span class="highlight-line">  Conditionally either load the light or the dark stylesheet. The matching file</span><br><span class="highlight-line">  will be downloaded with `highest`, the non-matching file with `lowest`</span><br><span class="highlight-line">  priority. If the browser doesn’t support `prefers-color-scheme`, the media</span><br><span class="highlight-line">  query is unknown and the files are downloaded with `lowest` priority (but</span><br><span class="highlight-line">  above I already force `highest` priority for my default light experience).</span><br>--></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/dark.css<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(prefers-color-scheme: dark)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/light.css<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(prefers-color-scheme: no-preference), (prefers-color-scheme: light)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token comment">&lt;!-- The main stylesheet --></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/style.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span></code></pre>
+<h3 id="stylesheet-architecture">Stylesheet architecture <a class="w-headline-link" href="#stylesheet-architecture" aria-hidden="true">#</a></h3>
+<p>I make maximum use of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var">CSS variables</a>,
+this allows my generic <code>style.css</code> to be, well, generic,
+and all the light or dark mode customization happens in the two other files <code>dark.css</code> and <code>light.css</code>.
+Below you can see an excerpt of the actual styles, but it should suffice to convey the overall idea.
+I declare two variables, <code>-⁠-⁠color</code> and <code>-⁠-⁠background-color</code>
+that essentially create a <em>dark-on-light</em> and a <em>light-on-dark</em> baseline theme.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* light.css: 👉 dark-on-light */</span></span><br><span class="highlight-line"><span class="token selector">:root</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>5<span class="token punctuation">,</span> 5<span class="token punctuation">,</span> 5<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>250<span class="token punctuation">,</span> 250<span class="token punctuation">,</span> 250<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* dark.css: 👉 light-on-dark */</span></span><br><span class="highlight-line"><span class="token selector">:root</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>250<span class="token punctuation">,</span> 250<span class="token punctuation">,</span> 250<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>5<span class="token punctuation">,</span> 5<span class="token punctuation">,</span> 5<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>In my <code>style.css</code>, I then use these variables in the <code>body { … }</code> rule.
+As they are defined on the
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"><code>:root</code> CSS pseudo-class</a>—a
+selector that in HTML represents the <code>&lt;html&gt;</code> element
+and is identical to the selector <code>html</code>, except that its specificity is
+higher—they cascade down, which serves me for declaring global CSS variables.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* style.css */</span></span><br><span class="highlight-line"><span class="token selector">:root</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">color-scheme</span><span class="token punctuation">:</span> light dark<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token selector">body</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--background-color<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>In the code sample above, you will probably have noticed a property
+<a href="https://drafts.csswg.org/css-color-adjust-1/#propdef-color-scheme"><code>color-scheme</code></a>
+with the space-separated value <code>light dark</code>.</p>
+<div class="w-aside w-aside--warning">
+<p><strong>Warning:</strong>
+The <code>color-scheme</code> property is still <a href="https://crbug.com/925935">in development</a>
+and it might not work as advertised, full support in Chrome will come later this year.</p>
+</div>
+<p>This tells the browser which color themes my app supports
+and allows it to activate special variants of the user agent stylesheet,
+which is useful to, for example, let the browser render form fields
+with a dark background and light text, adjust the scrollbars,
+or to enable a theme-aware highlight color.
+The exact details of <code>color-scheme</code> are specified in
+<a href="https://drafts.csswg.org/css-color-adjust-1/">CSS Color Adjustment Module Level 1</a>.</p>
+<div class="w-aside w-aside--note">
+<p>🌒 Read up more on
+<a href="https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d">what <code>color-scheme</code> actually does</a>.</p>
+</div>
+<p>Everything else is then just a matter of defining CSS variables
+for things that matter on my site.
+Semantically organizing styles helps a lot when working with dark mode.
+For example, rather than <code>-⁠-⁠highlight-yellow</code>, consider calling the variable
+<code>-⁠-⁠accent-color</code>, as “yellow” may actually not be yellow in dark mode or vice versa.
+Below is an example of some more variables that I use in my example.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* dark.css */</span></span><br><span class="highlight-line"><span class="token selector">:root</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>250<span class="token punctuation">,</span> 250<span class="token punctuation">,</span> 250<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>5<span class="token punctuation">,</span> 5<span class="token punctuation">,</span> 5<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--link-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 188<span class="token punctuation">,</span> 212<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--main-headline-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>233<span class="token punctuation">,</span> 30<span class="token punctuation">,</span> 99<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--accent-background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 188<span class="token punctuation">,</span> 212<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--accent-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>5<span class="token punctuation">,</span> 5<span class="token punctuation">,</span> 5<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* light.css */</span></span><br><span class="highlight-line"><span class="token selector">:root</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>5<span class="token punctuation">,</span> 5<span class="token punctuation">,</span> 5<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>250<span class="token punctuation">,</span> 250<span class="token punctuation">,</span> 250<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--link-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 238<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--main-headline-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 192<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--accent-background-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 238<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">--accent-color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>250<span class="token punctuation">,</span> 250<span class="token punctuation">,</span> 250<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="full-example">Full example <a class="w-headline-link" href="#full-example" aria-hidden="true">#</a></h3>
+<p>In the following <a href="https://dark-mode-baseline.glitch.me/">Glitch</a> embed,
+you can see the complete example that puts the concepts from above into practice.
+Try toggling dark mode in your particular <a href="#activating-dark-mode-in-the-operating-system">operating system’s settings</a>
+and see how the page reacts.</p>
+<div style="height: 900px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/dark-mode-baseline?path=style.css&previewSize=100&attributionHidden=true"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h3 id="loading-impact">Loading impact <a class="w-headline-link" href="#loading-impact" aria-hidden="true">#</a></h3>
+<p>When you play with this example, you can see
+why I load my <code>dark.css</code> and <code>light.css</code> via media queries.
+Try toggling dark mode and reload the page:
+the particular currently non-matching stylesheets are still loaded, but with the lowest priority,
+so that they never compete with resources that are needed by the site right now.</p>
+<div class="w-aside w-aside--note">
+<p>😲 Read up more on
+<a href="https://blog.tomayac.com/2018/11/08/why-browsers-download-stylesheets-with-non-matching-media-queries-180513">why browsers download stylesheets with non-matching media queries</a>.</p>
+</div>
+<figure class="w-figure">
+  <img src="light.png" alt="Network loading diagram showing how in light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
+  <figcaption class="w-figcaption">Site in light mode loads the dark mode CSS with lowest priority.</figcaption>
+</figure>
+<figure class="w-figure">
+  <img src="dark.png" alt="Network loading diagram showing how in dark mode the light mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
+  <figcaption class="w-figcaption">Site in dark mode loads the light mode CSS with lowest priority.</figcaption>
+</figure>
+<figure class="w-figure">
+  <img src="unsupported.png" alt="Network loading diagram showing how in default light mode the dark mode CSS gets loaded with lowest priority" intrinsicsize="1633x851">
+  <figcaption class="w-figcaption">Site in default light mode on a browser that doesn’t support <code>prefers-color-scheme</code> loads the dark mode CSS with lowest priority.</figcaption>
+</figure>
+<h3 id="reacting-on-dark-mode-changes">Reacting on dark mode changes <a class="w-headline-link" href="#reacting-on-dark-mode-changes" aria-hidden="true">#</a></h3>
+<p>Like any other media query change, dark mode changes can be subscribed to via JavaScript.
+You can use this to, for example, dynamically change the
+<a href="https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/#provide_great_icons_tiles">favicon</a>
+of a page or change the
+<a href="https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/#meta_theme_color_for_chrome_and_opera"><code>&lt;meta name=&quot;theme-color&quot;&gt;</code></a>
+that determines the color of the URL bar in Chrome.
+The <a href="#full-example">full example</a> above shows this in action,
+in order to see the theme color and favicon changes, open the
+<a href="https://dark-mode-baseline.glitch.me/">demo in a separate tab</a>.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">  <span class="token keyword">const</span> darkModeMediaQuery <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">matchMedia</span><span class="token punctuation">(</span><span class="token string">'(prefers-color-scheme: dark)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  darkModeMediaQuery<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">const</span> darkModeOn <span class="token operator">=</span> e<span class="token punctuation">.</span>matches<span class="token punctuation">;</span></span><br><span class="highlight-line">    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Dark mode is </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>darkModeOn <span class="token operator">?</span> <span class="token string">'🌒 on'</span> <span class="token punctuation">:</span> <span class="token string">'☀️ off'</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="dark-mode-best-practices">Dark mode best practices <a class="w-headline-link" href="#dark-mode-best-practices" aria-hidden="true">#</a></h2>
+<h3 id="avoid-pure-white">Avoid pure white <a class="w-headline-link" href="#avoid-pure-white" aria-hidden="true">#</a></h3>
+<p>A small detail you may have noticed is that I don’t use pure white.
+Instead, to prevent glowing and bleeding against the surrounding dark content,
+I choose a slightly darker white. Something like <code>rgb(250, 250, 250)</code> works well.</p>
+<h3 id="re-colorize-and-darken-photographic-images">Re-colorize and darken photographic images <a class="w-headline-link" href="#re-colorize-and-darken-photographic-images" aria-hidden="true">#</a></h3>
+<p>If you compare the two screenshots below, you will notice that not only the core theme has changed
+from <em>dark-on-light</em> to <em>light-on-dark</em>, but that also the hero image looks slightly different.
+My <a href="https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b">user research</a>
+has shown that the majority of the surveyed people
+prefer slightly less vibrant and brilliant images when dark mode is active.
+I refer to this as <em>re-colorization</em>.</p>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="./hero-dark.png" alt="Hero image slightly darkened in dark mode.">
+    <figcaption class="w-figcaption">
+      Hero image slightly darkened in dark mode.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img src="./hero-light.png" alt="Regular hero image in light mode.">
+    <figcaption class="w-figcaption">
+      Regular hero image in light mode.
+    </figcaption>
+  </figure>
+</div>
+<p>Re-colorization can be achieved through a CSS filter on my images.
+I use a CSS selector that matches all images that don’t have <code>.svg</code> in their URL,
+the idea being that I can give vector graphics (icons) a different re-colorization treatment
+than my images (photos), more about this in the <a href="#vector-graphics-and-icons">next paragraph</a>.
+Note how I again use a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var">CSS variable</a>,
+so I can later on flexibly change my filter.</p>
+<div class="w-aside w-aside--note">
+<p>🎨 Read up more on
+<a href="https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b">user research regarding re-colorization preferences with dark mode</a>.</p>
+</div>
+<p>As re-colorization is only needed in dark mode, that is, when <code>dark.css</code> is active,
+there are no corresponding rules in <code>light.css</code>.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* dark.css */</span></span><br><span class="token property">--image-filter</span><span class="token punctuation">:</span> <span class="token function">grayscale</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token selector">;<br><span class="highlight-line"></span><br>img:not([src*=".svg"])</span> <span class="token punctuation">{</span><br><span class="highlight-line">  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--image-filter<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h4 id="customizing-dark-mode-re-colorization-intensities-with-javascript">Customizing dark mode re-colorization intensities with JavaScript <a class="w-headline-link" href="#customizing-dark-mode-re-colorization-intensities-with-javascript" aria-hidden="true">#</a></h4>
+<p>Not everyone is the same and people have different dark mode needs.
+By sticking to the re-colorization method described above,
+I can easily make the grayscale intensity a user preference that I can
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Values_in_JavaScript">change via JavaScript</a>,
+and by setting a value of <code>0%</code>, I can also disable re-colorization completely.
+Note that <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/documentElement"><code>document.documentElement</code></a>
+provides a reference to the root element of the document,
+that is, the same element I can reference with the
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"><code>:root</code> CSS pseudo-class</a>.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> filter <span class="token operator">=</span> <span class="token string">'grayscale(70%)'</span><span class="token punctuation">;</span></span><br><span class="highlight-line">document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">'--image-filter'</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h3 id="invert-vector-graphics-and-icons">Invert vector graphics and icons <a class="w-headline-link" href="#invert-vector-graphics-and-icons" aria-hidden="true">#</a></h3>
+<p>For vector graphics—that in my case are used as icons that I reference via <code>&lt;img&gt;</code> elements—I
+use a different re-colorization method.
+While <a href="https://dl.acm.org/citation.cfm?id=2982168">research</a> has shown
+that people don’t like inversion for photos, it does work very well for most icons.
+Again I use CSS variables to determine the inversion amount
+in the regular and in the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"><code>:hover</code></a> state.</p>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="./icons-dark.png" alt="Icons are inverted in dark mode.">
+    <figcaption class="w-figcaption">
+      Icons are inverted in dark mode.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img src="./icons-light.png" alt="Regular icons in light mode.">
+    <figcaption class="w-figcaption">
+      Regular icons in light mode.
+    </figcaption>
+  </figure>
+</div>
+<p>Note how again I only invert icons in <code>dark.css</code> but not in <code>light.css</code>, and how <code>:hover</code>
+gets a different inversion intensity in the two cases to make the icon appear
+slightly darker or slightly brighter, dependent on the mode the user has selected.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* dark.css */</span></span><br><span class="highlight-line"><span class="token property">--icon-filter</span><span class="token punctuation">:</span> <span class="token function">invert</span><span class="token punctuation">(</span>100%<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="token property">--icon-filter_hover</span><span class="token punctuation">:</span> <span class="token function">invert</span><span class="token punctuation">(</span>40%<span class="token punctuation">)</span><span class="token selector">;<br><span class="highlight-line"></span><br>img[src*=".svg"]</span> <span class="token punctuation">{</span><br><span class="highlight-line">  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--icon-filter<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* light.css */</span></span><br><span class="highlight-line"><span class="token property">--icon-filter_hover</span><span class="token punctuation">:</span> <span class="token function">invert</span><span class="token punctuation">(</span>60%<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* style.css */</span></span><br><span class="highlight-line"><span class="token selector">img[src*=".svg"]:hover</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--icon-filter_hover<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3>Use <code style="color: currentColor;">currentColor</code> for inline SVGs</h3>
+<p>For <em>inline</em> SVG images, instead of <a href="#invert-vector-graphics-and-icons">using inversion filters</a>,
+you can leverage the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword"><code>currentColor</code></a>
+CSS keyword that represents the value of an element’s <code>color</code> property.
+This lets you use the <code>color</code> value on properties that do not receive it by default.
+Conveniently, if <code>currentColor</code> is used as the value of the SVG
+<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes#Fill_and_Stroke_Attributes"><code>fill</code> or <code>stroke</code> attributes</a>,
+it instead takes its value from the inherited value of the color property.
+Even better: this also works for
+<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use"><code>&lt;svg&gt;&lt;use href=&quot;…&quot;&gt;&lt;/svg&gt;</code></a>,
+so you can have separate resources
+and <code>currentColor</code> will still be applied in context.
+Please note that this only works for <em>inline</em> or <code>&lt;use href=&quot;…&quot;&gt;</code> SVGs,
+but not SVGs that are referenced as the <code>src</code> of an image or somehow via CSS.
+You can see this applied in the demo below.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token comment">&lt;!-- Some inline SVG --></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/2000/svg<span class="token punctuation">"</span></span><br><mark class="highlight-line highlight-line-active">    <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>currentColor<span class="token punctuation">"</span></span></mark><br><span class="token punctuation">></span></span><br><span class="highlight-line">  […]</span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span></span></code></pre>
+<div style="height: 950px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/dark-mode-currentcolor?path=light.css&previewSize=100"
+    alt="dark-mode-currentcolor on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h3 id="smooth-transitions-between-modes">Smooth transitions between modes <a class="w-headline-link" href="#smooth-transitions-between-modes" aria-hidden="true">#</a></h3>
+<p>Switching from dark mode to light mode or vice versa can be smoothed thanks to the fact
+that both <code>color</code> and <code>background-color</code> are
+<a href="https://www.quackit.com/css/css3/animations/animatable_properties/">animatable CSS properties</a>.
+Creating the animation is as easy as declaring two <code>transition</code>s for the two properties.
+The example below illustrates the overall idea, you can experience it live in the
+<a href="https://dark-mode-baseline.glitch.me/">demo</a>.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">body</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">--duration</span><span class="token punctuation">:</span> 0.5s<span class="token punctuation">;</span></span><br><span class="highlight-line">   <span class="token property">--timing</span><span class="token punctuation">:</span> ease<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--background-color<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token property">transition</span><span class="token punctuation">:</span></span><br><span class="highlight-line">    color <span class="token function">var</span><span class="token punctuation">(</span>--duration<span class="token punctuation">)</span> <span class="token function">var</span><span class="token punctuation">(</span>--timing<span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    background-color <span class="token function">var</span><span class="token punctuation">(</span>--duration<span class="token punctuation">)</span> <span class="token function">var</span><span class="token punctuation">(</span>--timing<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="art-direction-with-dark-mode">Art direction with dark mode <a class="w-headline-link" href="#art-direction-with-dark-mode" aria-hidden="true">#</a></h3>
+<p>While for loading performance reasons in general I recommend to exclusively work with <code>prefers-color-scheme</code>
+in the <code>media</code> attribute of <code>&lt;link&gt;</code> elements (rather than inline in stylesheets),
+there are situations where you actually may want to work with <code>prefers-color-scheme</code> directly inline in your HTML code.
+Art direction is such a situation.
+On the web, art direction deals with the overall visual appearance of a page and how it communicates visually,
+stimulates moods, contrasts features, and psychologically appeals to a target audience.</p>
+<p>With dark mode, it’s up to the judgment of the designer to decide what is the best image at a particular mode
+and whether <a href="#photographic-images">re-colorization of images</a> is maybe <em>not</em> good enough.
+If used with the <code>&lt;picture&gt;</code> element, the <code>&lt;source&gt;</code> of the image to be shown can be made dependent on the <code>media</code> attribute.
+In the example below, I show the Western hemisphere for dark mode, and the Eastern hemisphere for light mode
+or when no preference is given, defaulting to the Eastern hemisphere in all other cases.
+This is of course purely for illustrative purposes.
+Toggle dark mode on your device to see the difference.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>western.webp<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(prefers-color-scheme: dark)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>eastern.webp<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(prefers-color-scheme: light), (prefers-color-scheme: no-preference)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>eastern.webp<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span></span></code></pre>
+<div style="height: 600px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/dark-mode-picture?path=index.html&previewSize=100"
+    alt="dark-mode-picture on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h3 id="dark-mode-but-add-an-opt-out">Dark mode, but add an opt-out <a class="w-headline-link" href="#dark-mode-but-add-an-opt-out" aria-hidden="true">#</a></h3>
+<p>As mentioned in the <a href="#why-dark-mode">why dark mode</a> section above,
+dark mode is an aesthetic choice for most users.
+In consequence, some users may actually like to have their operating system UI
+in dark, but still prefer to see their webpages the way they are used to seeing them.
+A great pattern is to initially adhere to the signal the browser sends through
+<code>prefers-color-scheme</code>, but to then optionally allow users to override their system-level setting.</p>
+<h4>The <code style="color: currentColor;">&lt;dark-mode-toggle&gt;</code> custom element</h4>
+<p>You can of course create the code for this yourself, but you can also just use
+a ready-made custom element (web component) that I have created right for this purpose.
+It’s called <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle"><code>&lt;dark-mode-toggle&gt;</code></a>
+and it adds a toggle (dark mode: on/off) or
+a theme switcher (theme: light/dark) to your page that you can fully customize.
+The demo below shows the element in action
+(oh, and I have also 🤫 silently snuck it in all of the
+<a href="https://dark-mode-baseline.glitch.me/">other</a>
+<a href="https://dark-mode-currentcolor.glitch.me/">examples</a>
+<a href="https://dark-mode-picture.glitch.me/">above</a>).</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dark-mode-toggle</span><br><span class="highlight-line">    <span class="token attr-name">legend</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Theme Switcher<span class="token punctuation">"</span></span></span><br><span class="highlight-line">    <span class="token attr-name">appearance</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>switch<span class="token punctuation">"</span></span></span><br><span class="highlight-line">    <span class="token attr-name">dark</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Dark<span class="token punctuation">"</span></span></span><br><span class="highlight-line">    <span class="token attr-name">light</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Light<span class="token punctuation">"</span></span></span><br><span class="highlight-line">    <span class="token attr-name">remember</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Remember this<span class="token punctuation">"</span></span></span><br><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dark-mode-toggle</span><span class="token punctuation">></span></span></code></pre>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img style="height: 76px;" src="./dark-mode-toggle-light.png" alt="<dark-mode-toggle> in light mode.">
+    <figcaption class="w-figcaption">
+      <code>&lt;dark-mode-toggle&gt;</code> in light mode.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img style="height: 76px;" src="./dark-mode-toggle-dark.png" alt="<dark-mode-toggle> in light mode.">
+    <figcaption class="w-figcaption">
+      <code>&lt;dark-mode-toggle&gt;</code> in dark mode.
+    </figcaption>
+  </figure>
+</div>
+<p>Try clicking or tapping the dark mode controls in the upper right corner in the demo below.
+If you check the checkbox in the third and the fourth control, see how your mode selection
+is remembered even when you reload the page.
+This allows your visitors to keep their operating system in dark mode,
+but enjoy your site in light mode or vice versa.</p>
+<div class="w-screenshot" style="height: 800px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h2 id="conclusions">Conclusions <a class="w-headline-link" href="#conclusions" aria-hidden="true">#</a></h2>
+<p>Working with and supporting dark mode is fun and opens up new design avenues.
+For some of your visitors it can be the difference between not being able to handle your site
+and being a happy user.
+There are some pitfalls and careful testing is definitely required,
+but dark mode is definitely a great opportunity for you to show that you care about all of your users.
+The best practices mentioned in this post and helpers like the
+<a href="https://github.com/GoogleChromeLabs/dark-mode-toggle"><code>&lt;dark-mode-toggle&gt;</code></a> custom element
+should make you confident in your ability to create an amazing dark mode experience.
+<a href="https://twitter.com/tomayac">Let me know on Twitter</a> what you create and if this post was useful
+or also suggestions for improving it.
+Thanks for reading! 🌒</p>
+<h2 id="related-links">Related links <a class="w-headline-link" href="#related-links" aria-hidden="true">#</a></h2>
+<p>Resources for the <code>prefers-color-scheme</code> media query:</p>
+<ul>
+<li><a href="https://chromestatus.com/feature/5109758977638400">Chrome Platform Status page</a></li>
+<li><a href="https://crbug.com/889087">Chromium bug</a></li>
+<li><a href="https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme">Media Queries Level 5 spec</a></li>
+</ul>
+<p>Resources for the <code>color-scheme</code> meta tag and CSS property:</p>
+<ul>
+<li><a href="https://chromestatus.com/feature/5330651267989504">Chrome Platform Status page</a></li>
+<li><a href="http://crbug.com/925935">Chromium bug</a></li>
+<li><a href="https://drafts.csswg.org/css-color-adjust-1/">CSS Color Adjustment Module Level 1 spec</a></li>
+<li><a href="https://github.com/w3c/csswg-drafts/issues/3299">CSS WG GitHub Issue for the meta tag and the CSS property</a></li>
+<li><a href="https://github.com/whatwg/html/issues/4504">HTML WHATWG GitHub Issue for the meta tag</a></li>
+</ul>
+<p>General dark mode links:</p>
+<ul>
+<li><a href="https://material.io/design/color/dark-theme.html">Material Design—Dark Theme</a></li>
+<li><a href="https://webkit.org/blog/8892/dark-mode-in-web-inspector/">Dark Mode in Web Inspector</a></li>
+<li><a href="https://webkit.org/blog/8840/dark-mode-support-in-webkit/">Dark Mode Support in WebKit</a></li>
+<li><a href="https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/dark-mode/">Apple Human Interface Guidelines—Dark Mode</a></li>
+</ul>
+<p>Background research articles for this post:</p>
+<ul>
+<li><a href="https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d">What Does Dark Mode’s “supported-color-schemes” Actually Do? 🤔</a></li>
+<li><a href="https://medium.com/dev-channel/let-there-be-darkness-maybe-9facd9c3023d">Let there be darkness! 🌚 Maybe…</a></li>
+<li><a href="https://medium.com/dev-channel/re-colorization-for-dark-mode-19e2e17b584b">Re-Colorization for Dark Mode</a></li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements <a class="w-headline-link" href="#acknowledgements" aria-hidden="true">#</a></h2>
+<p>The <code>prefers-color-scheme</code> media feature, the <code>color-scheme</code> CSS property,
+and the related meta tag are the implementation work of 👏 <a href="https://twitter.com/runeli">Rune Lillesveen</a>.
+Rune is also a co-editor of the <a href="https://drafts.csswg.org/css-color-adjust-1/">CSS Color Adjustment Module Level 1</a> spec.
+I would like to 🙏 thank <a href="https://www.linkedin.com/in/lukasz-zbylut/">Lukasz Zbylut</a>,
+<a href="https://twitter.com/rowan_m">Rowan Merewood</a>,
+<a href="https://www.linkedin.com/in/chiragd/">Chirag Desai</a>,
+and <a href="https://twitter.com/rob_dodson">Rob Dodson</a>
+for their thorough reviews of this article.
+The <a href="#loading-strategy">loading strategy</a> is the brainchild of <a href="https://twitter.com/jaffathecake">Jake Archibald</a>.
+<a href="https://twitter.com/ecbos_">Emilio Cobos Álvarez</a> has pointed me to the correct <code>prefers-color-scheme</code> detection method.
+The tip with referenced SVGs and <code>currentColor</code> came from
+<a href="https://twitter.com/xeenon">Timothy Hatcher</a>.
+Finally, I am thankful to the many anonymous participants of the various user studies
+that have helped shape the recommendations in this article.
+Hero image by <a href="https://unsplash.com/photos/kujXUuh1X0o">Nathan Anderson</a>.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 28, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/prefers-color-scheme/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/use-srcset-to-automatically-choose-the-right-image/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Top tips for web performance
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

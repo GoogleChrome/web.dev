@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Configuring HTTP caching behavior</title>
+    <meta name="description" content="In this codelab, learn how to control resource caching behavior using HTTP
+headers.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="make-it-installable" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Configuring HTTP caching behavior</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/jeffposnick.jpg"
+    alt="Jeff Posnick"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jeff Posnick</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/jeffposnick">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/jeffposnick">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@jeffposnick">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>This codelab shows you how to change the HTTP caching headers returned by a
+Node.js-based web server, running the <a href="https://expressjs.com/">Express</a> serving
+framework. It will also show how to confirm that the caching behavior you expect
+is actually being applied, using the Network panel in Chrome's DevTools.</p>
+<div class="w-aside w-aside--note">
+<p>While the specific instructions are tailored towards Express, the general
+principles about choosing the correct caching headers apply to any web server
+environment.</p>
+</div>
+<h2 id="get-familiar-with-the-sample-project">Get familiar with the sample project <a class="w-headline-link" href="#get-familiar-with-the-sample-project" aria-hidden="true">#</a></h2>
+<p>These are the key files you will be working with in the sample project:</p>
+<ul>
+<li><code>server.js</code> contains the Node.js code that serves the web app's
+content. It uses <a href="https://expressjs.com/">Express</a> to handle HTTP requests
+and responses. In particular, <code>express.static()</code> is used to serve all of
+the local files in the public directory, so the <code>serve-static</code>
+<a href="https://expressjs.com/en/resources/middleware/serve-static.html">documentation</a>
+will come in handy.</li>
+<li><code>public/index.html</code> is the web app's HTML. Like most HTML files, it does not
+contain any versioning information as part of its URL.</li>
+<li><code>public/app.15261a07.js</code> and <code>public/style.391484cf.css</code> are the web app's JavaScript
+and CSS assets. These files each contain a hash in their URLs,
+corresponding to their contents. The <code>index.html</code> is responsible for keeping
+track of which specific versioned URL to load.</li>
+</ul>
+<div class="w-aside w-aside--note">
+<p>In the &quot;real world&quot;, the process of assigning hashes and updating HTML
+files to include references to the latest versioned URL would be handled by a
+build tool, like
+<a href="https://webpack.js.org/guides/caching/#output-filenames">webpack</a>.
+For the purposes of this codelab, assume that the hashes were generated as part
+of a build process that already took place.</p>
+</div>
+<h2 id="configure-caching-headers-for-our-html">Configure caching headers for our HTML <a class="w-headline-link" href="#configure-caching-headers-for-our-html" aria-hidden="true">#</a></h2>
+<p>When responding to requests for URLs that don't contain versioning info, make
+sure you add <code>Cache-Control: no-cache</code> to your response messages. Along with
+that, setting one of two additional response headers is recommended: either
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified"><code>Last-Modified</code></a>
+or <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag"><code>ETag</code></a>. The
+<code>index.html</code> falls into this category. You can break this down into two steps.</p>
+<p>First, the <code>Last-Modified</code> and <code>ETag</code> headers are controlled by the
+<a href="https://expressjs.com/en/resources/middleware/serve-static.html#etag"><code>etag</code></a>
+and
+<a href="https://expressjs.com/en/resources/middleware/serve-static.html#lastmodified"><code>lastModified</code></a>
+configuration options. Both of these options actually default to <code>true</code> for all
+HTTP responses, so in this current setup, you don't <em>have</em> to opt-in to get that
+behavior. But you can be explicit in your configuration anyway.</p>
+<p>Second, you need to be able to add in the <code>Cache-Control: no-cache</code> header, but
+only for your HTML documents (<code>index.html</code>, in this case). The easiest way to
+conditionally set this header is to write a custom
+<a href="https://expressjs.com/en/resources/middleware/serve-static.html#setheaders"><code>setHeaders function</code></a>,
+and within that, check to see if the incoming request is for an HTML document.</p>
+<ul>
+<li>Click the <strong>Remix to Edit</strong> button to make the project editable.</li>
+</ul>
+<p>The static serving configuration in <code>server.js</code> starts out as this:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span><span class="token string">'public'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<ul>
+<li>Make the changes described above, and you should end up with something that
+looks like:</li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span><span class="token string">'public'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  etag<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// Just being explicit about the default.</span></span><br><span class="highlight-line">  lastModified<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// Just being explicit about the default.</span></span><br><span class="highlight-line">  <span class="token function-variable function">setHeaders</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">res<span class="token punctuation">,</span> path</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'.html'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token comment">// All of the project's HTML files end in .html</span></span><br><span class="highlight-line">      res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Cache-Control'</span><span class="token punctuation">,</span> <span class="token string">'no-cache'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="configure-caching-headers-for-the-versioned-urls">Configure caching headers for the versioned URLs <a class="w-headline-link" href="#configure-caching-headers-for-the-versioned-urls" aria-hidden="true">#</a></h2>
+<p>When responding to requests for URLs that contain
+&quot;<a href="https://en.wikipedia.org/wiki/Fingerprint_(computing)">fingerprint</a>&quot; or
+versioning information, and whose contents are never meant to change, add
+<code>Cache-Control: max-age=31536000</code> to your responses. The <code>app.15261a07.js</code> and
+<code>style.391484cf.css</code> fall into this category.</p>
+<p>Building off the
+<a href="https://expressjs.com/en/resources/middleware/serve-static.html#setheaders"><code>setHeaders function</code></a>
+used in the last step, you can add in additional logic to check whether a given
+request is for a versioned URL, and if so, add the <code>Cache-Control: max-age=31536000</code> header.</p>
+<p>The most robust way of doing this is to use a
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regular expression</a>
+to see whether the asset being requested matches a specific pattern that you
+know the hashes fall into. In the case of this sample project, it's always eight
+characters from the set of digits 0–9 and the lowercase letters a–f (i.e.
+<a href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a> characters). The hash
+is always separated by a <code>.</code> character on either side.</p>
+<p>A regular expression that
+<a href="https://jex.im/regulex/#!flags=&amp;re=%5C.%5B0-9a-f%5D%7B8%7D%5C.">matches those general rules</a>
+can be expressed as <code>new RegExp('\\.[0-9a-f]{8}\\.')</code>.</p>
+<div class="w-aside w-aside--note">
+<p>It helps to be as specific as possible when coming up with these rules,
+to protect against future problems. A more general match, such as checking for
+the <code>.js</code> or <code>.css</code> file extension, could end up being a problem down the road
+if you end up adding in additional, unversioned JavaScript or CSS assets to your
+project.</p>
+</div>
+<ul>
+<li>Modify the <code>setHeaders</code> function so it looks like this:</li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span><span class="token string">'public'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  etag<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// Just being explicit about the default.</span></span><br><span class="highlight-line">  lastModified<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>  <span class="token comment">// Just being explicit about the default.</span></span><br><span class="highlight-line">  <span class="token function-variable function">setHeaders</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token parameter">res<span class="token punctuation">,</span> path</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">const</span> hashRegExp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'\\.[0-9a-f]{8}\\.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'.html'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token comment">// All of the project's HTML files end in .html</span></span><br><span class="highlight-line">      res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Cache-Control'</span><span class="token punctuation">,</span> <span class="token string">'no-cache'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>hashRegExp<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token comment">// If the RegExp matched, then we have a versioned URL.</span></span><br><span class="highlight-line">      res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Cache-Control'</span><span class="token punctuation">,</span> <span class="token string">'max-age=31536000'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="confirm-the-new-behavior-using-devtools">Confirm the new behavior using DevTools <a class="w-headline-link" href="#confirm-the-new-behavior-using-devtools" aria-hidden="true">#</a></h2>
+<div class="w-aside w-aside--note">
+<p>You can get familiar with the Network panel in Chrome's DevTools by
+working through <a href="/codelab-explore-network-panel">this codelab</a>.</p>
+</div>
+<p>With the modifications to the static file server in place, you can check to make
+sure that the right headers are being set by previewing the live app with the DevTools Network panel open.</p>
+<ul>
+<li>
+<p>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</p>
+</li>
+<li>
+<p>Customize the columns that are
+displayed in the Network panel to include the information that is most relevant, by right-clicking in
+the column header:</p>
+</li>
+</ul>
+<img class="screenshot" src="./configure-response-headers.png" alt="Configuring DevTools' Network panel.">
+<p>Here, the columns to pay attention to are <code>Name</code>, <code>Status</code>, <code>Cache-Control</code>,
+<code>ETag</code>, and <code>Last-Modified</code>.</p>
+<ul>
+<li>With the DevTools open to the Network panel, refresh the page.</li>
+</ul>
+<p>After the page has loaded, you should see entries in the Network panel that look
+like the following:</p>
+<img class="screenshot" src="./network-panel.png" alt="Network panel columns.">
+<p>The first row is for the HTML document that you navigated to. This is properly
+served with <code>Cache-Control: no-cache</code>. The HTTP response status for that request
+is a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304"><code>304</code></a>. This
+means that the browser knew not to use the cached HTML immediately, but instead
+made an HTTP request to the web server, using the <code>Last-Modified</code> and <code>ETag</code>
+information to see if there was any update to the HTML that it already had in
+its cache. The HTTP 304 response indicates that there is not updated HTML.</p>
+<div class="w-aside w-aside--note">
+<p><code>Cache-Control: no-cache</code> doesn't mean &quot;never used the cached copy&quot;. It
+means &quot;always check with the server first, and use the cached copy if there's a
+HTTP 304 response.&quot;</p>
+</div>
+<p>The next two rows are for the versioned JavaScript and CSS assets. You should
+see them served with <code>Cache-Control: max-age=31536000</code>, and the HTTP status for
+each is <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200"><code>200</code></a>.
+Because of the configuration used, there is no actual request being made to the
+Node.js server, and clicking on the entry will show you additional detail,
+including that the response came &quot;(from disk cache)&quot;.</p>
+<img class="screenshot" src="./status-code.png" alt="A network response status of 200.">
+<p>The actual values for the ETag and Last-Modified columns don't matter much. The
+important thing is to confirm that they're being set.</p>
+<h2 id="summing-things-up">Summing things up <a class="w-headline-link" href="#summing-things-up" aria-hidden="true">#</a></h2>
+<p>Having gone through the steps in this codelab, you're now familiar with how to
+configure the HTTP response headers in a Node.js-based web server using Express,
+for optimal use of the HTTP cache. You also have the steps you need to confirm
+that the expected caching behavior is being used, via the Network panel in
+Chrome's DevTools.</p>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/http-cache"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/make-it-installable?path=[object Object]&amp;previewSize="
+            alt="make-it-installable on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

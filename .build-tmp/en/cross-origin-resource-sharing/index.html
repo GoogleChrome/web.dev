@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Share cross-origin resources safely</title>
+    <meta name="description" content="The browser&#39;s same-origin policy blocks reading a resource from a different
+origin. This mechanism stops a malicious site from reading another site&#39;s
+data, but it also prevents legitimate uses. What if you wanted to get weather
+data from another country? Enabling CORS lets the server tell the browser it&#39;s
+permitted to use an additional origin.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Share%20cross-origin%20resources%20safely&amp;url=https%3A%2F%2Fweb.dev%2Fcross-origin-resource-sharing%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/secure
+    >
+      Safe and secure
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Share cross-origin resources safely</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/kosamari.jpg"
+    alt="Mariko Kosaka"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Mariko Kosaka</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/kosamari">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/kosamari">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@kosamari">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>The browser's same-origin policy blocks reading a resource from a different
+origin. This mechanism stops a malicious site from reading another site's data,
+but it also prevents legitimate uses. What if you wanted to get weather data
+from another country?</p>
+<p>In a modern web application, an application often wants to get resources from a
+different origin. For example, you want to retrieve JSON data from a different
+domain or load images from another site into a <code>&lt;canvas&gt;</code> element.</p>
+<p>In other words, there are <strong>public resources</strong> that should be available for
+anyone to read, but the same-origin policy blocks that. Developers have used
+work-arounds such as
+<a href="https://stackoverflow.com/questions/2067472/what-is-jsonp-all-about">JSONP</a>,
+but <strong>Cross-Origin Resource Sharing (CORS)</strong> fixes this in a standard way.</p>
+<p>Enabling <strong>CORS</strong> lets the server tell the browser it's permitted to use an
+additional origin.</p>
+<h2 id="how-does-a-resource-request-work-on-the-web">How does a resource request work on the web? <a class="w-headline-link" href="#how-does-a-resource-request-work-on-the-web" aria-hidden="true">#</a></h2>
+<figure class="w-figure w-figure--inline-right">
+  <img src="./request_response.png" alt="request and response">
+  <figcaption class="w-figcaption">
+    Figure: Illustrated client request and server response
+  </figcaption>
+</figure>
+<p>A browser and a server can exchange data over the network using the <strong>Hypertext
+Transfer Protocol</strong> (HTTP). HTTP defines the communication rules between the
+requester and the responder, including what information is needed to get a
+resource.</p>
+<p>The HTTP header is used to negotiate the type of message exchange between the
+client and the server and is used to determine access. Both the browser's
+request and the server's response message are divided into two parts: <strong>header</strong>
+and <strong>body</strong>:</p>
+<h3 id="header">header <a class="w-headline-link" href="#header" aria-hidden="true">#</a></h3>
+<p>Information about the message such the type of message or the encoding of the
+message. A header can include a
+<a href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">variety of information</a>
+expressed as key-value pairs. The request header and response header contain
+different information.</p>
+<div class="w-aside w-aside--note">
+<p>It's important to note that headers cannot contain comments.</p>
+</div>
+<p><strong>Sample Request header</strong></p>
+<pre><code>Accept: text/html
+Cookie: Version=1
+</code></pre>
+<p>The above is equivalent to saying &quot;I want to receive HTML in response. Here is
+cookie I have.&quot;</p>
+<p><strong>Sample Response header</strong></p>
+<pre><code>Content-Encoding: gzip
+Cache-Control: no-store
+</code></pre>
+<p>The above is equivalent to saying &quot;Data is encoded with gzip. Do not cache this
+please.&quot;</p>
+<h3 id="body">body <a class="w-headline-link" href="#body" aria-hidden="true">#</a></h3>
+<p>The message itself. This could be plain text, an image binary, JSON, HTML,etc.</p>
+<h2 id="how-does-cors-work">How does CORS work? <a class="w-headline-link" href="#how-does-cors-work" aria-hidden="true">#</a></h2>
+<p>Remember, the same-origin policy tells the browser to block cross-origin
+requests. When you want to get a public resource or other server on different
+origin, the resource providing server needs to tell the browser &quot;This origin
+where request is coming from can access my resource&quot;. The browser remembers that
+and allow cross-origin resource sharing.</p>
+<h3 id="step-1:-client-(browser)-request">Step 1: client (browser) request <a class="w-headline-link" href="#step-1:-client-(browser)-request" aria-hidden="true">#</a></h3>
+<p>When the browser is making a cross-origin request, the browser adds an <code>Origin</code>
+header with the current origin (scheme, host, and port).</p>
+<h3 id="step-2:-server-response">Step 2: server response <a class="w-headline-link" href="#step-2:-server-response" aria-hidden="true">#</a></h3>
+<p>On the server side, When a server sees this header, and wants to allow access,
+it needs to add an <code>Access-Control-Allow-Origin</code> header to the response
+specifying the requesting origin (or <code>*</code> to allow any origin.)</p>
+<h3 id="step-3:-browser-receives-response">Step 3: browser receives response <a class="w-headline-link" href="#step-3:-browser-receives-response" aria-hidden="true">#</a></h3>
+<p>When the browser sees this response with appropriate
+<code>Access-Control-Allow-Origin</code> header, the browser allows the response data to be
+shared with the client site.</p>
+<h2 id="see-cors-in-action">See CORS in action <a class="w-headline-link" href="#see-cors-in-action" aria-hidden="true">#</a></h2>
+<p>Here is a tiny web server using Express. It is hosted at
+<code>https://cors-demo.glitch.me/</code></p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// No CORS Header set</span></span><br><span class="highlight-line">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  response<span class="token punctuation">.</span><span class="token function">sendFile</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/message.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// CORS header `Access-Control-Allow-Origin` set to accept all</span></span><br><span class="highlight-line">app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/allow-cors'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">request<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  response<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Origin'</span><span class="token punctuation">,</span> <span class="token string">'*'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  response<span class="token punctuation">.</span><span class="token function">sendFile</span><span class="token punctuation">(</span>__dirname <span class="token operator">+</span> <span class="token string">'/message.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// listen for requests :)</span></span><br><span class="highlight-line"><span class="token keyword">const</span> listener <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Your app is listening on port '</span> <span class="token operator">+</span> listener<span class="token punctuation">.</span><span class="token function">address</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>(<a href="https://glitch.com/edit/#!/cors-demo?path=server.js">See the sever code in action on Glitch</a>)</p>
+<p>The first endpoint (line 5) does not have any response header set, it just sends
+a file in response.</p>
+<p>Open the devtools javascript console and try:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'https://cors-demo.glitch.me/'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>mode<span class="token punctuation">:</span><span class="token string">'cors'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span></code></pre>
+<p>You should see an error saying:</p>
+<pre><code>request has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header
+is present on the requested resource.
+</code></pre>
+<p>The second endpoint (line 10) sends the same file in response but adds
+<code>Access-Control-Allow-Origin: *</code> in the header. From the console, try</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'https://cors-demo.glitch.me/allow-cors'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>mode<span class="token punctuation">:</span><span class="token string">'cors'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span></code></pre>
+<p>This time, your request should not be blocked.</p>
+<h2 id="share-credentials-with-cors">Share credentials with CORS <a class="w-headline-link" href="#share-credentials-with-cors" aria-hidden="true">#</a></h2>
+<p>For privacy reasons, CORS is normally used for &quot;anonymous requests&quot; — ones where
+the request doesn't identify the requestor. If you want to send cookies when
+using CORS (which could identify the sender), you need to add additional headers
+to the request and response.</p>
+<h3 id="request">Request <a class="w-headline-link" href="#request" aria-hidden="true">#</a></h3>
+<p>Add <code>credentials: 'include'</code> to the fetch options like below. This will include
+the cookie with the request.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'https://example.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  mode<span class="token punctuation">:</span> <span class="token string">'cors'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  credentials<span class="token punctuation">:</span> <span class="token string">'include'</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span></span></code></pre>
+<h3 id="response">Response <a class="w-headline-link" href="#response" aria-hidden="true">#</a></h3>
+<p><code>Access-Control-Allow-Origin</code> must be set to a specific origin (no wildcard
+using <code>*</code>) and must set <code>Access-Control-Allow-Credentials</code> to <code>true</code>.</p>
+<pre><code>HTTP/1.1 200 OK
+Access-Control-Allow-Origin: https://example.com
+Access-Control-Allow-Credentials: true
+</code></pre>
+<h2 id="preflight-requests-for-complex-http-calls">Preflight requests for complex HTTP calls <a class="w-headline-link" href="#preflight-requests-for-complex-http-calls" aria-hidden="true">#</a></h2>
+<p>If a web app needs a complex HTTP request, the browser adds a <strong>preflight
+request</strong> to the front of the request chain.</p>
+<p>The CORS specification defines a <strong>complex request</strong> as</p>
+<ul>
+<li>A request that uses methods other than GET, POST, or HEAD</li>
+<li>A request that includes headers other than <code>Accept</code>, <code>Accept-Language</code> or
+<code>Content-Language</code></li>
+<li>A request that has a <code>Content-Type</code> header other than
+<code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code>, or <code>text/plain</code></li>
+</ul>
+<p>Browsers create a preflight request if it is needed. It's an <code>OPTIONS</code> request
+like below and is sent before the actual request message.</p>
+<pre><code>OPTIONS /data HTTP/1.1
+Origin: https://example.com
+Access-Control-Request-Method: DELETE
+</code></pre>
+<p>On the server side, an application needs to respond to the preflight request
+with information about the methods the application accepts from this origin.</p>
+<pre><code>HTTP/1.1 200 OK
+Access-Control-Allow-Origin: https://example.com
+Access-Control-Allow-Methods: GET,DELETE,HEAD,OPTIONS
+</code></pre>
+<p>The server response can also include an <code>Access-Control-Max-Age</code> header to
+specify the duration to cache preflight results so the client does not need to
+make a preflight request every time it they sends a complex request.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/secure/cross-origin-resource-sharing/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/secure"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

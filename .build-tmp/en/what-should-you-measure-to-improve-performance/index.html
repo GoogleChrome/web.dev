@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>What should you measure to improve performance?</title>
+    <meta name="description" content="Learn what impact website performance has on different parts of the e-commerce funnel
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/what-should-you-measure-to-improve-performance/hero.jpg"
+  alt="A row of shopping carts."
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=What%20should%20you%20measure%20to%20improve%20performance%3F&amp;url=https%3A%2F%2Fweb.dev%2Fwhat-should-you-measure-to-improve-performance%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">What should you measure to improve performance?</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Strategies to measure performance at each stage in the purchase funnel
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>May 31, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/martinschierle.jpg"
+    alt="Martin Schierle"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Martin Schierle</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/martinschierle">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/martinschierle">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>The different steps of a purchase funnel are prone to performance issues in
+different ways, and therefore need different measurement and optimizations:</p>
+<figure class="w-figure  w-figure--center">
+  <img src="./funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
+  <figcaption class="w-figcaption">
+    A conversion funnel.
+  </figcaption>
+</figure>
+<p>In this guide we'll address how the different steps can be measured. For this we
+recommend you to look at lab as well as field data.</p>
+<p><strong>Lab data</strong> is gathered by running tests locally, for example by using
+<a href="https://web.dev/fast/discover-performance-opportunities-with-lighthouse">Lighthouse</a>
+and other tools.  This can make it possible  to compare website performance over
+time and with competitors through a controlled, stable environment, but it might
+not be representative of the performance users experience in real life.</p>
+<p><strong>Field data</strong> is gathered via analytics from real users, and is therefore
+representative of their experience. However, it can't easily be compared over
+time or with competitors. Network connections and smartphone hardware evolve
+over time, and different target audiences might have different devices, thereby
+making comparisons with field data tough. See also <em><a href="/fast#measure-performance-in-the-field">Measure Performance In The Field</a></em>.</p>
+<p>To get a complete picture, both data sources are needed. The following sections
+show how to gather lab and field data for the different relevant performance
+marks across the funnel.</p>
+<h2 id="discovery">Discovery <a class="w-headline-link" href="#discovery" aria-hidden="true">#</a></h2>
+<p>Optimizing for discovery means optimizing for the first load, which is what new
+users  will get, but also search and social
+<a href="https://developers.google.com/search/docs/guides/rendering">crawlers</a>.
+Lab data for a first load can be easily acquired through
+<a href="https://web.dev/fast/discover-performance-opportunities-with-lighthouse">Lighthouse</a>,
+while field data (at least for Chrome) is readily available through <a href="https://web.dev/fast/chrome-ux-report">Chrome UX
+reports</a>. A convenient combination of
+both can be found in <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed
+Insights</a>. You should
+also track relevant metrics from the field yourself:
+<a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices">Measuring these metrics on real users' devices</a>
+provides a good overview.</p>
+<p>From a user perspective the most important metrics are:</p>
+<ul>
+<li><strong><a href="https://web.dev/first-contentful-paint/">First Contentful Paint</a>
+(FCP)</strong>: The time the user stares at a blank screen. This is
+when most users bounce, as they don't see progress.</li>
+<li><strong><a href="https://web.dev/first-meaningful-paint/">First Meaningful Paint</a>
+(FMP):</strong> When the user begins to see the main content they came for. This
+is often the hero image, but for a landing page it may even be a call to
+action such as a ‘Buy' button, since the user may have arrived with a clear
+intent (for example, through a targeted ad campaign).</li>
+<li><strong><a href="https://developers.google.com/web/updates/2018/05/first-input-delay">First Input Delay</a>
+(FID):</strong> The time the website needs to react to the user's first input.
+Excessive JavaScript and other asset loading problems can block this,
+leading to failed taps or clicks, erroneous inputs and page abandonment.</li>
+</ul>
+<p>There are more metrics you can look at, but these are a good baseline. Additionally also make sure to capture bounce rates, conversions and user engagement so that you can set these in relation.</p>
+<h2 id="engagement-and-conversion">Engagement And Conversion <a class="w-headline-link" href="#engagement-and-conversion" aria-hidden="true">#</a></h2>
+<p>After the first load of a landing page, a user will proceed through your site,
+hopefully towards a successful conversion.</p>
+<p>In this phase it is important to have fast and responsive navigations and
+interactions. Unfortunately it is not trivial to measure the complete flow of
+navigation and interaction events in the field, as every user takes different
+paths through the page. We therefore recommend measuring the time needed towards
+conversion or conversion subgoals (&quot;<em>Time-to-Action</em>&quot;) by scripting and
+measuring the flow in a lab test, to compare performance over time or with
+competitors.</p>
+<p>There are two convenient ways of doing this:</p>
+<h3 id="webpagetest">WebPageTest <a class="w-headline-link" href="#webpagetest" aria-hidden="true">#</a></h3>
+<p><a href="https://www.webpagetest.org/">WebPageTest</a> offers a very flexible <a href="https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting">scripting
+solution</a>.
+The basic idea is to:</p>
+<ul>
+<li>Tell WebPageTest to navigate through the pages of the flow with the
+<a href="https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-navigate"><code>navigate</code></a>
+command.</li>
+<li>If needed script the clicking of buttons via
+<a href="https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-clickAndWait"><code>clickAndWait</code></a>
+commands and fill text fields via
+<a href="https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-setValue"><code>setValue</code></a>.
+For testing of Single Page Applications use <code>clickAndWait</code> rather than
+<code>navigate</code> commands for all steps after the first, as <code>navigate</code> will do a
+full load instead of the lightweight virtual page load.</li>
+<li>Make sure to combine the different steps of the flow in the analysis via
+<a href="https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-combineSteps"><code>combineSteps</code></a>
+to produce a single overall result report for the complete flow.</li>
+</ul>
+<p>Such a script could look like this:</p>
+<pre><code>combineSteps
+navigate	https://www.store.google.com/landingpage
+navigate	https://www.store.google.com/productpage
+clickAndWait	innerText=Buy Now
+navigate	https://www.store.google.com/basket
+navigate	https://www.store.google.com/checkout
+</code></pre>
+<p>With a script like this in place you can easily measure and compare performance
+over time. This can even be automated through the
+<a href="https://sites.google.com/a/webpagetest.org/docs/advanced-features/webpagetest-restful-apis">WebPageTest API</a>.</p>
+<h3 id="puppeteer">Puppeteer <a class="w-headline-link" href="#puppeteer" aria-hidden="true">#</a></h3>
+<p>Another great option to script testing is via headless Chrome, which can be
+controlled through the Node API
+<a href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a>. The general idea is to
+start the browser through Puppeteer, navigate to the landing page through the
+<a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagegotourl-options">goto</a>
+function,
+<a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageevaluatepagefunction-args">inject Javascript</a>
+to fill fields or
+<a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options">click</a>
+buttons and proceed through the funnel through further
+<a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagegotourl-options">goto</a>
+calls as needed.</p>
+<p>As a metric the duration of the flow can be measured directly,
+but you could also sum up the FCP, FMP or TTI values of the individual loads of
+the flow.
+<a href="https://michaljanaszek.com/blog/test-website-performance-with-puppeteer">Test website performance with Puppeteer</a>
+provides an overview of how to get performance metrics via Puppeteer. A very
+simplified example Node script could look like this:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> puppeteer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'puppeteer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> start <span class="token operator">=</span> performance<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.store.google.com/landingpage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.store.google.com/productpage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token comment">// click the buy button, which triggers overlay basket</span></span><br><span class="highlight-line">  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token string">'#buy_btn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token comment">// wait until basket overlay is shown</span></span><br><span class="highlight-line">  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitFor</span><span class="token punctuation">(</span><span class="token string">'#close_btn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.store.google.com/basket'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">'https://www.store.google.com/checkout'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Flow took '</span> <span class="token operator">+</span> <span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token punctuation">(</span>performance<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">1000</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' seconds'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>This script can easily be automated, and even be made part of the build process
+or perf budgets, and be monitored regularly.</p>
+<h2 id="re-engagement">Re-Engagement <a class="w-headline-link" href="#re-engagement" aria-hidden="true">#</a></h2>
+<p>Users will return to your site in different time intervals. Depending on time
+passed, the browser may have less of the website's resources cached, needing
+more network requests. This makes it difficult to estimate performance
+differences across repeat visits in lab tests. It is still recommended to keep
+an eye on this though, and a great lab test tool for repeat visits is
+<a href="https://www.webpagetest.org/">WebPageTest</a>, which has a dedicated option for a
+direct repeat visit:</p>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./webpagetest_repeat.png" alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.">
+  <figcaption class="w-figcaption w-figcaption--center">
+    Webpagetest offers options to test first load and repeat load as well
+  </figcaption>
+</figure>
+<p>To get a better feeling for repeat visit performance in the field use your
+analytics package of choice to segment your performance metrics by user type.
+Here is an example of such a report in Google Analytics:</p>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./ga_speed_repeat.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
+  <figcaption class="w-figcaption w-figcaption--center">
+    A Google Analytics custom report can be used to report speed metrics for new and returning users.
+  </figcaption>
+</figure>
+<p>A report like this will give you page load times for new and returning users as well.</p>
+<h2 id="recap">Recap <a class="w-headline-link" href="#recap" aria-hidden="true">#</a></h2>
+<p>This guide showed you how to measure first load, flow and repeat load via field and lab tests. Make sure to optimize the different steps of the funnel accordingly to maximize discovery (first load), engagement (navigations and flow) and re-engagement (repeat load).</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>May 31, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/what-should-you-measure-to-improve-performance/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/image-policies/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Image policies for fast load times and more
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

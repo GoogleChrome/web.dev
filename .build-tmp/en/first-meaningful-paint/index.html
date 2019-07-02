@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First Meaningful Paint</title>
+    <meta name="description" content="Learn about the first-meaningful-paint audit.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=First%20Meaningful%20Paint&amp;url=https%3A%2F%2Fweb.dev%2Ffirst-meaningful-paint%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/lighthouse-performance
+    >
+      Performance audits
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">First Meaningful Paint</h1>
+      
+
+      
+
+      
+    </header>
+    <p>First Meaningful Paint (FMP) is one of six metrics tracked in the performance section of the Lighthouse report.
+Each of these metrics captures some aspect of page load speed.
+The Lighthouse reports displays the FMP time period in seconds:</p>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="first-meaningful-paint.png" alt="Lighthouse: First Meaningful Paint">
+  <figcaption class="w-figcaption">
+    First Meaningful Paint.
+  </figcaption>
+</figure>
+<h2 id="what-does-fmp-measure">What does FMP measure <a class="w-headline-link" href="#what-does-fmp-measure" aria-hidden="true">#</a></h2>
+<p>FMP measures when a user perceives that the primary content of a page is visible.
+The raw score for FMP represents the time duration between the user initiating the page load
+and the page rendering its primary content above the fold.
+It's essentially the paint after which the biggest above-the-fold layout change has happened.
+Learn more about the technical specifics of FMP in
+<a href="https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view">Time to First Meaningful Paint: a layout-based approach</a>.</p>
+<p><a href="/first-contentful-paint">First Contentful Paint (FCP)</a>
+and FMP often share the same values
+when the first bit of content rendered on the page includes the content above the fold.
+These metrics can differ, say for example, when there's content above the fold within an iframe.
+FMP registers when the content within the iframe is visible to the user.</p>
+<h2 id="how-lighthouse-determines-your-fmp-score">How Lighthouse determines your FMP score <a class="w-headline-link" href="#how-lighthouse-determines-your-fmp-score" aria-hidden="true">#</a></h2>
+<p>In order to be able to calculate your overall performance score,
+Lighthouse assigns each performance metric an individual score between 0 - 100.
+FMP uses the <a href="https://httparchive.org/reports/loading-speed#fcp">same real website performance data as First Contentful Paint (FCP)</a>.</p>
+<p>When FMP and FCP are the same time in seconds,
+they share the same identical score.
+If FMP is slower than FCP,
+say when there's iframe content loading,
+then the FMP score will be lower than the FCP score.</p>
+<p>For example, let's say your FCP is 1.5 seconds, your FMP is 3.0 seconds.
+The FCP score would be 99, but the FMP score would be 75.
+This table helps explain how to interpret your FMP score:</p>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>FMP metric (in seconds)</th>
+        <th>Color-coding</th>
+        <th>FMP score (FCP HTTParchive %-tile)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0 - 2 seconds</td>
+        <td>Green (fast)</td>
+        <td>75 - 100</td>
+      </tr>
+      <tr>
+        <td>2 - 4 seconds</td>
+        <td>Orange (average)</td>
+        <td>50 - 74</td>
+      </tr>
+      <tr>
+        <td>Over 4 seconds</td>
+        <td>Red (slow)</td>
+        <td>0 - 49</td>
+      </tr>
+    </tbody>
+    <caption>Table 1 — FMP metric compared to FMP score</caption>
+  </table>
+</div>
+<h2 id="how-your-fmp-score-impacts-overall-performance-score">How your FMP score impacts overall performance score <a class="w-headline-link" href="#how-your-fmp-score-impacts-overall-performance-score" aria-hidden="true">#</a></h2>
+<p>The overall Lighthouse performance score is a weighted-average of the performance metrics, including FMP, as well as,
+<a href="/first-contentful-paint">First Contentful Paint</a>, <a href="/first-cpu-idle">First CPU Idle</a>, <a href="/interactive">Time to Interactive</a>, and <a href="/speed-index">Speed Index</a>.</p>
+<p>Heavier-weighted metrics have a larger impact on the overall performance score.
+FMP is weighted 1 out of 5, which means it has the lowest impact on the overall performance score
+(see <a href="https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=0">Scoring Details</a> for specifics).</p>
+<p>Try also the <a href="https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=283330180">Scoring Calculator</a> to get a better sense of how Lighthouse scoring works.</p>
+<h2 id="how-to-improve-your-performance-score">How to improve your performance score <a class="w-headline-link" href="#how-to-improve-your-performance-score" aria-hidden="true">#</a></h2>
+<p>Improving your Lighthouse performance score
+isn't so much about tackling one performance metric at a time,
+but seeing page load speed more holistic.
+Anything you do to improve page load speed, will improve not just one performance metric,
+but quite likely all of these metrics.</p>
+<p>The most effective way to improve your performance score
+is to fix the load opportunities highlighted in your Lighthouse report.
+The more significant the opportunity,
+the greater impact it will have on improving your performance score.</p>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="opportunities.png" alt="Lighthouse: Opportunities section">
+  <figcaption class="w-figcaption">
+    Opportunities section.
+  </figcaption>
+</figure>
+<p>For example,
+<a href="/render-blocking-resources">Eliminate render-blocking resources</a>
+shows opportunities to improve page load speed (in seconds).
+Eliminate any one or all of the blocking resources, and not only will your FMP score improve,
+but so will additional performance metrics, and your overall Lighthouse performance score.</p>
+<p>Learn more about these potential savings from the <a href="/lighthouse-performance">Performance audits landing page</a>.</p>
+<h2 id="tracking-fmp-in-the-real-world">Tracking FMP in the real world <a class="w-headline-link" href="#tracking-fmp-in-the-real-world" aria-hidden="true">#</a></h2>
+<p>To measure when FMP actually occurs on your users' devices,
+see <a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements">Tracking FMP using hero elements</a>.</p>
+<p>See <a href="https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/">Assessing Loading Performance in Real Life with Navigation and Resource Timing</a>
+for more on collecting real-user metrics with the User Timing API.
+The <a href="/user-timings">User Timing Marks and Measures Lighthouse audit</a>
+enables you to see User Timing data in your report.</p>
+<h2 id="more-information">More information <a class="w-headline-link" href="#more-information" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js">FMP audit source</a></li>
+<li><a href="https://developers.google.com/web/tools/lighthouse/v3/scoring">Lighthouse v3 Scoring Guide</a></li>
+<li><a href="https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view">Time to First Meaningful Paint: a layout-based approach</a></li>
+</ul>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jul 1, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/lighthouse-performance/first-meaningful-paint/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/lighthouse-performance"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/speed-index/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Speed Index
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

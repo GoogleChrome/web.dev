@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hands-on with Portals: seamless navigations on the Web</title>
+    <meta name="description" content="Portals help keep your front-end simple while allowing seamless navigations
+with custom transitions. In this article, get hands-on experience using
+Portals to improve user experience across your site.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/hands-on-portals/hero.png"
+  alt="A logo of Portals"
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Hands-on%20with%20Portals%3A%20seamless%20navigations%20on%20the%20Web&amp;url=https%3A%2F%2Fweb.dev%2Fhands-on-portals%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Hands-on with Portals: seamless navigations on the Web</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Learn how to build good navigation UX with the Portals API.
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>May 6, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/uskay.jpg"
+    alt="Yusuke Utsunomiya"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Yusuke Utsunomiya</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/uskay">Twitter</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Making sure your pages load fast is key to delivering a good user experience.
+But one area we often overlook is page transitions — what our users see when
+they move between pages.</p>
+<p>A new web platform API called <a href="https://github.com/WICG/portals">Portals</a> aims to
+help with this by streamlining the experience as users navigate <em>across</em> your
+site. See Portals in action:</p>
+<figure class="w-figure w-figure--fullbleed">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
+  </video>
+ <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
+  </figcaption>
+</figure>
+<h2 id="what-portals-enable">What Portals enable <a class="w-headline-link" href="#what-portals-enable" aria-hidden="true">#</a></h2>
+<p>Single Page Applications (SPAs) offer nice transitions
+but come at the cost of higher complexity to build.
+Multi-page Applications (MPAs) are much easier to build,
+but you end up with blank screens between pages.</p>
+<p>Portals offer the best of both worlds:
+the low complexity of an MPA with the seamless transitions of an SPA.
+Think of them like an <code>&lt;iframe&gt;</code> in that they allow for embedding,
+but unlike an <code>&lt;iframe&gt;</code>,
+they also come with features to navigate to their content.</p>
+<p>Seeing is believing:
+please first check out what we showcased at Chrome Dev Summit last year:</p>
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/Ai4aZ9Jbsys?start=1081" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>With classic navigations, users have to wait with a blank screen
+until the browser finishes rendering the destination.
+With Portals, users get to experience an animation,
+while the <code>&lt;portal&gt;</code> pre-renders content and creates a seamless navigation experience.</p>
+<p>Before Portals, we could have rendered another page using an <code>&lt;iframe&gt;</code>. We could also have added animations to move the frame around the page. But an <code>&lt;iframe&gt;</code> won’t let you navigate into its content. Portals close this gap, enabling interesting use cases.</p>
+<h2 id="try-out-portals-in-chrome-canary">Try out Portals in Chrome Canary <a class="w-headline-link" href="#try-out-portals-in-chrome-canary" aria-hidden="true">#</a></h2>
+<p>Try out Portals in Chrome Canary by flipping an experimental flag:
+<code>chrome://flags/#enable-portals</code>.
+Once Portals are enabled, confirm in DevTools that you have the new shiny <code>HTMLPortalElement</code>.</p>
+<img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
+<p>Let’s walk through a basic example.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Create a portal with the wikipedia page, and embed it</span></span><br><span class="highlight-line"><span class="token comment">// (like an iframe). You can also use the &lt;portal> tag instead.</span></span><br><span class="highlight-line">portal <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'portal'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'https://en.wikipedia.org/wiki/World_Wide_Web'</span><span class="token punctuation">;</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span>style <span class="token operator">=</span> <span class="token string">'...'</span><span class="token punctuation">;</span></span><br><span class="highlight-line">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>portal<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// When the user touches the preview (embedded portal):</span></span><br><span class="highlight-line"><span class="token comment">// do fancy animation, e.g. expand …</span></span><br><span class="highlight-line"><span class="token comment">// and finish by doing the actual transition</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span><span class="token function">activate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>It’s that simple. Try this code in the DevTools console, the wikipedia page should open up.</p>
+<img class="w-screenshot" src="portal-preview-demo.gif" alt="A gif of preview portal style demo">
+<p>If you wanted to build something like we showed at Chrome Dev Summit which works just like the demo above,
+the following snippet will be of interest.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Adding some styles with transitions</span></span><br><span class="highlight-line"><span class="token keyword">const</span> style <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'style'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> initialScale <span class="token operator">=</span> <span class="token number">0.4</span><span class="token punctuation">;</span></span><br>style<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token string">`<br><span class="highlight-line">  portal {</span><br><span class="highlight-line">    position:fixed;</span><br><span class="highlight-line">    width: 100%;</span><br><span class="highlight-line">    height: 100%;</span><br><span class="highlight-line">    opacity: 0;</span><br><span class="highlight-line">    transition:</span><br><span class="highlight-line">      transform 0.4s,</span><br><span class="highlight-line">      bottom 0.7s,</span><br><span class="highlight-line">      left 0.7s,</span><br><span class="highlight-line">      opacity 1.0s;</span><br><span class="highlight-line">    box-shadow: 0 0 20px 10px #999;</span><br><span class="highlight-line">    transform: scale(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>initialScale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">);</span><br><span class="highlight-line">    bottom: calc(20px + 50% * </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>initialScale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - 50%);</span><br><span class="highlight-line">    left: calc(20px + 50% * </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>initialScale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - 50%);</span><br><span class="highlight-line">    z-index: 10000;</span><br><span class="highlight-line">  }</span><br><span class="highlight-line">  .portal-reveal {</span><br><span class="highlight-line">    transform: scale(1.0);</span><br><span class="highlight-line">    bottom: 0px;</span><br><span class="highlight-line">    left: 0px;</span><br><span class="highlight-line">  }</span><br><span class="highlight-line">  .fade-in {</span><br><span class="highlight-line">    opacity: 1.0;</span><br><span class="highlight-line">  }</span><br>`</span></span><span class="token punctuation">;</span><br><span class="highlight-line"><span class="token keyword">const</span> portal <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'portal'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token comment">// Let’s navigate into the WICG Portals spec page</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'https://wicg.github.io/portals/'</span><span class="token punctuation">;</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token parameter">evt</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// Animate the portal once user interacts</span></span><br><span class="highlight-line">  portal<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'portal-reveal'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'transitionend'</span><span class="token punctuation">,</span> <span class="token parameter">evt</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>evt<span class="token punctuation">.</span>propertyName <span class="token operator">==</span> <span class="token string">'bottom'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token comment">// Activate the portal once the transition has completed</span></span><br><span class="highlight-line">    portal<span class="token punctuation">.</span><span class="token function">activate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>style<span class="token punctuation">,</span> portal<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Waiting for the page to load.</span></span><br><span class="highlight-line"><span class="token comment">// using setTimeout is a suboptimal way and it’s best to fade-in</span></span><br><span class="highlight-line"><span class="token comment">// when receiving a load complete message from the portal via postMessage</span></span><br><span class="highlight-line"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token parameter">_</span> <span class="token operator">=></span> portal<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'fade-in'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>It is also easy to do feature detection to progressively enhance a website using Portals.</p>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'HTMLPortalElement'</span> <span class="token keyword">in</span> window<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// If this is a platform that have Portals...</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> portal <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'portal'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token operator">...</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>If you want to quickly experience what Portals feel like, try using
+<a href="https://uskay-portals-demo.glitch.me">uskay-portals-demo.glitch.me</a>.
+Be sure you access it with Chrome Canary and turn on the experimental flag!</p>
+<ol>
+<li>Enter a URL you want to preview.</li>
+<li>The page will then be embedded as a <code>&lt;portal&gt;</code> element.</li>
+<li>Click on the preview.</li>
+<li>The preview will be activated after an animation.</li>
+</ol>
+<img class="w-screenshot" src="glitch.gif" alt="A gif of using the glitch demo of using Portals">
+<h2 id="check-out-the-spec">Check out the spec <a class="w-headline-link" href="#check-out-the-spec" aria-hidden="true">#</a></h2>
+<p>We are actively discussing
+<a href="https://wicg.github.io/portals/">the Portals spec</a> in the Web Incubation Community Group (WICG).
+To quickly get up to speed, take a look at
+<a href="https://github.com/WICG/portals/blob/master/explainer.md">the explainer</a>.
+These are the three important features to familiarize yourself with:</p>
+<ul>
+<li><a href="https://wicg.github.io/portals/#the-portal-element">The <code>&lt;portal&gt;</code> element:</a> The HTML element itself. The API is very simple. It consists of the <code>src</code> attribute, the <code>activate</code> function and an interface for messaging (<code>postMessage</code>). <code>activate</code> takes an optional argument to pass data to the <code>&lt;portal&gt;</code> upon activation.</li>
+<li><a href="https://wicg.github.io/portals/#the-portalhost-interface">The <code>portalHost</code> interface:</a> Adds a <code>portalHost</code> object to the <code>window</code> object. This lets you check if the page is embedded as a <code>&lt;portal&gt;</code> element. It also provides an interface for messaging (<code>postMessage</code>) back to the host.</li>
+<li><a href="https://wicg.github.io/portals/#the-portalactivateevent-interface">The PortalActivateEvent interface:</a> An event that fires when the <code>&lt;portal&gt;</code> is activated. There is a neat function called <code>adoptPredecessor</code> which you can use to retrieve the previous page as a <code>&lt;portal&gt;</code> element. This allows you to create seamless navigations and composed experiences between two pages.</li>
+</ul>
+<p>Let’s look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.</p>
+<h3 id="customize-the-style-when-embedded-as-a-lessportalgreater-element">Customize the style when embedded as a <code>&lt;portal&gt;</code> element <a class="w-headline-link" href="#customize-the-style-when-embedded-as-a-lessportalgreater-element" aria-hidden="true">#</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Detect whether this page is hosted in a portal</span></span><br><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>portalHost<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// Customize the UI when being embedded as a portal</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="messaging-between-the-lessportalgreater-element-and-portalhost">Messaging between the <code>&lt;portal&gt;</code> element and <code>portalHost</code> <a class="w-headline-link" href="#messaging-between-the-lessportalgreater-element-and-portalhost" aria-hidden="true">#</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Send message to the portal element</span></span><br><span class="highlight-line"><span class="token keyword">const</span> portal <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'portal'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>someKey<span class="token punctuation">:</span> someValue<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token constant">ORIGIN</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Receive message via window.portalHost</span></span><br><span class="highlight-line">window<span class="token punctuation">.</span>portalHost<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token parameter">evt</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> data <span class="token operator">=</span> evt<span class="token punctuation">.</span>data<span class="token punctuation">.</span>someKey<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token comment">// handle the event</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h3 id="activating-the-lessportalgreater-element-and-receiving-the-portalactivate-event">Activating the <code>&lt;portal&gt;</code> element and receiving the <code>portalactivate</code> event <a class="w-headline-link" href="#activating-the-lessportalgreater-element-and-receiving-the-portalactivate-event" aria-hidden="true">#</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// You can optionally add data to the argument of the activate function</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span><span class="token function">activate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>data<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token string">'somekey'</span><span class="token punctuation">:</span> <span class="token string">'somevalue'</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// The portal content will receive the portalactivate event</span></span><br><span class="highlight-line"><span class="token comment">// when the activate happens</span></span><br><span class="highlight-line">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'portalactivate'</span><span class="token punctuation">,</span> <span class="token parameter">evt</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// Data available as evt.data</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> data <span class="token operator">=</span> evt<span class="token punctuation">.</span>data<span class="token punctuation">;</span>   </span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h3 id="retrieving-the-predecessor">Retrieving the predecessor <a class="w-headline-link" href="#retrieving-the-predecessor" aria-hidden="true">#</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// Listen to the portalactivate event</span></span><br><span class="highlight-line">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'portalactivate'</span><span class="token punctuation">,</span> <span class="token parameter">evt</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// ... and creatively use the predecessor</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> portal <span class="token operator">=</span> evt<span class="token punctuation">.</span><span class="token function">adoptPredecessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'someElm'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>portal<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h3 id="knowing-your-page-was-adopted-as-a-predecessor">Knowing your page was adopted as a predecessor <a class="w-headline-link" href="#knowing-your-page-was-adopted-as-a-predecessor" aria-hidden="true">#</a></h3>
+<pre class="language-javascript"><code class="language-javascript"><span class="highlight-line"><span class="token comment">// The activate function returns a Promise.</span></span><br><span class="highlight-line"><span class="token comment">// When the promise resolves, it means that the portal has been activated.</span></span><br><span class="highlight-line"><span class="token comment">// If this document was adopted by it, then window.portalHost will exist.</span></span><br><span class="highlight-line">portal<span class="token punctuation">.</span><span class="token function">activate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">_</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// Check if this document was adopted into a portal element.</span></span><br><span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>portalHost<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token comment">// You can start communicating with the portal element</span></span><br><span class="highlight-line">    <span class="token comment">// i.e. listen to messages</span></span><br><span class="highlight-line">    window<span class="token punctuation">.</span>portalHost<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token parameter">evt</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token comment">// handle the event</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>By combining all of the features supported by Portals,
+you can build really fancy user experiences.
+For instance, the demo below demonstrates how Portals can enable a seamless user experience
+between a website and third party embed content.</p>
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/4JkipxFVE9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="w-aside w-aside--note">
+<p>Interested in this demo?
+<a href="https://github.com/WICG/portals/tree/master/demos/portal-embed-demo">Fork it on GitHub</a>
+and build your own version!</p>
+</div>
+<h2 id="use-cases-and-plans">Use cases and plans <a class="w-headline-link" href="#use-cases-and-plans" aria-hidden="true">#</a></h2>
+<p>We hope you liked this brief tour of Portals! We can’t wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page.</p>
+<p>Another important thing to know is that Portals can be used in cross-origin navigations, just like an <code>&lt;iframe&gt;</code>. So, if you have multiple websites that cross reference one another, you can also use Portals to create seamless navigations between two different websites. This cross-origin use case is very unique to Portals, and can even improve the user experience of SPAs.</p>
+<h2 id="feedback-welcome">Feedback welcome <a class="w-headline-link" href="#feedback-welcome" aria-hidden="true">#</a></h2>
+<p>Portals are still in the early stages so not everything is working yet (that’s why it’s behind an experimental flag). That said, it’s ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=957836">the Chromium bug tracker</a> and if you have any feature requests, or feedback, please head over to the <a href="https://github.com/WICG/portals/issues">WICG GitHub repo</a>.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>May 6, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/hands-on-portals/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/how-to-report-metrics/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      How to report metrics and build a performance culture
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

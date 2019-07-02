@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pre-render routes with react-snap</title>
+    <meta name="description" content="react-snap is a third-party library that pre-renders pages on your site into
+static HTML files. This can improve First Paint times in your application.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/prerender-with-react-snap/hero-prerender-with-react-snap.jpg"
+  alt=""
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Pre-render%20routes%20with%20react-snap&amp;url=https%3A%2F%2Fweb.dev%2Fprerender-with-react-snap%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/react
+    >
+      React
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Pre-render routes with react-snap</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Not server-side rendering but still want to speed up the performance of your React site? Try pre-rendering!
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Apr 29, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/houssein.jpg"
+    alt="Houssein Djirdeh"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Houssein Djirdeh</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/hdjirdeh">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/housseindjirdeh">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@housseindjirdeh">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p><a href="https://github.com/stereobooster/react-snap"><code>react-snap</code></a> is a third-party
+library that pre-renders pages on your site into static HTML files. This can
+improve
+<a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint">First Paint</a>
+times in your application.</p>
+<p>Here's a comparison of the same application with and without pre-rendering
+loaded on a simulated 3G connection and mobile device:</p>
+<figure class="w-figure  w-figure--center">
+  <img class="w-screenshot" src="./compare.gif" alt="A side by side loading comparsion. The version using pre-rendering loads 4.2 seconds faster.">
+</figure>
+<div class="w-aside w-aside--note">
+<p><code>react-snap</code> is not the only library that can pre-render static HTML content
+for your React application.
+<a href="https://github.com/geelen/react-snapshot"><code>react-snapshot</code></a>
+is another alternative.</p>
+</div>
+<h2 id="why-is-this-useful">Why is this useful? <a class="w-headline-link" href="#why-is-this-useful" aria-hidden="true">#</a></h2>
+<p>The main performance problem with large single-page applications is that the
+user needs to wait for the JavaScript bundle(s) that make up the site to finish
+downloading before they can see any real content. The larger the bundles, the
+longer the user will have to wait.</p>
+<p>To solve this, many developers take the approach of rendering the application on
+the server instead of only booting it up on the browser. With each
+page/route transition, the complete HTML is generated on the server and sent to
+the browser, which reduces First Paint times but comes at the cost of a slower
+Time to First Byte.</p>
+<p><strong>Pre-rendering</strong> is a separate technique that is less complex than server
+rendering, but also provides a way to improve First Paint times in your
+application. A headless browser, or a browser without a user interface, is used
+to generate static HTML files of every route during <em>build time</em>. These files
+can then be shipped along with the JavaScript bundles that are needed for the
+application.</p>
+<h2 id="react-snap">react-snap <a class="w-headline-link" href="#react-snap" aria-hidden="true">#</a></h2>
+<p><code>react-snap</code> uses <a href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a> to
+create pre-rendered HTML files of different routes in your application. To
+begin, install it as a development dependency:</p>
+<pre><code>npm install --save-dev react-snap
+</code></pre>
+<p>Then add a <code>postbuild</code> script in your <code>package.json</code>:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">//...</span></span><br><span class="highlight-line">  <span class="token property">"postbuild"</span><span class="token operator">:</span> <span class="token string">"react-snap"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>This would automatically run the <code>react-snap</code> command everytime a new build of
+the applications made (<code>npm build</code>).</p>
+<div class="w-aside w-aside--note">
+<p><code>npm</code> supports <em>pre</em> and <em>post</em> commands for main and arbitrary scripts which
+will always run directly before or after the original script respectively. You
+can learn more in the
+<a href="https://docs.npmjs.com/misc/scripts">npm documentation</a>.</p>
+</div>
+<p>The last thing you will need to do is change how the application is booted.
+Change the <code>src/index.js</code> file to the following:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token string">'./index.css'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><del class="highlight-line highlight-line-remove">ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></del><br><ins class="highlight-line highlight-line-add"><span class="token keyword">const</span> rootElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></ins><br><span class="highlight-line"></span><br><ins class="highlight-line highlight-line-add"><span class="token keyword">if</span> <span class="token punctuation">(</span>rootElement<span class="token punctuation">.</span><span class="token function">hasChildNodes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></ins><br><ins class="highlight-line highlight-line-add">  ReactDOM<span class="token punctuation">.</span><span class="token function">hydrate</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> rootElement<span class="token punctuation">)</span><span class="token punctuation">;</span></ins><br><ins class="highlight-line highlight-line-add"><span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></ins><br><ins class="highlight-line highlight-line-add">  ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> rootElement<span class="token punctuation">)</span><span class="token punctuation">;</span></ins><br><ins class="highlight-line highlight-line-add"><span class="token punctuation">}</span></ins></code></pre>
+<p>Instead of only using <code>ReactDOM.render</code> to render the root React element
+directly into the DOM, this checks to see if any child nodes are already present
+to determine whether HTML contents were pre-rendered (or rendered on the
+server). If that's the case, <code>ReactDOM.hydrate</code> is used instead to attach event
+listeners to the already created HTML instead of creating it anew.</p>
+<p>Building the application will now generate static HTML files as payloads for
+each route that is crawled. You can take a look at what the HTML payload looks
+like by clicking the URL of the HTML request and then clicking the <strong>Previews</strong>
+tab within Chrome DevTools.</p>
+<img class="w-screenshot" src="./preview-html.png" alt="A before and after comparison. The after shot shows content has rendered.">
+<div class="w-aside w-aside--note">
+<p><code>react-snap</code> can be used for other frameworks than React! This includes Vue
+and Preact. More instructions about this can be found in the
+<a href="https://github.com/stereobooster/react-snap"><code>react-snap</code> README</a>.</p>
+</div>
+<h2 id="flash-of-unstyled-content">Flash of unstyled content <a class="w-headline-link" href="#flash-of-unstyled-content" aria-hidden="true">#</a></h2>
+<p>Although static HTML is now rendered almost immediately, it still remains
+unstyled by default which may cause the issue of showing a &quot;flash of unstyled
+content&quot; (FOUC). This can be especially noticeable if you are using a CSS-in-JS
+library to generate selectors since the JavaScript bundle will have to finish
+executing before any styles can be applied.</p>
+<p>To help prevent this, the <strong>critical</strong> CSS, or the minimum amount of CSS that is
+needed for the initial page to render, can be inlined directly to the <code>&lt;head&gt;</code>
+of the HTML document. <code>react-snap</code> uses another third-party library under the
+hood, <a href="https://github.com/peterbe/minimalcss"><code>minimalcss</code></a>, to extract any
+critical CSS for different routes. You can enable this by specifying the
+following in your <code>package.json</code> file:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"reactSnap"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"inlineCss"</span><span class="token operator">:</span> <span class="token boolean">true</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>Taking a look at the response preview in Chrome DevTools will now show the styled page with critical CSS inlined.</p>
+<img class="w-screenshot" src="./preview-critical-css-inline.png" alt="A before and after comparison. The after shot shows content has rendered and is styled because of inlined critical CSS.">
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+The <code>inlineCSS</code> option is still experimental. It is worth double-checking to
+make sure styles are being applied correctly for your routes.</p>
+</div>
+<h3 id="conclusion">Conclusion <a class="w-headline-link" href="#conclusion" aria-hidden="true">#</a></h3>
+<p>If you are not server-side rendering routes in your application, use
+<code>react-snap</code> to pre-render static HTML to your users.</p>
+<ol>
+<li>Install it as a development dependency and begin with just the default
+settings.</li>
+<li>Use the experimental <code>inlineCss</code> option to inline critical CSS if it works
+for your site.</li>
+<li>If you are code-splitting on a component level within any routes, be careful
+to not pre-render a loading state to your users. The
+<a href="https://github.com/stereobooster/react-snap#async-components"><code>react-snap</code> README</a>
+covers this in more detail.</li>
+</ol>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Apr 29, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/react/prerender-with-react-snap/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/react"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/add-manifest-react/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Add a web app manifest with Create React App
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

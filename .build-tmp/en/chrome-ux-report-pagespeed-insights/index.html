@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using the Chrome UX Report on PageSpeed Insights</title>
+    <meta name="description" content="PageSpeed Insights (PSI) is a tool for web developers to understand what a
+page&#39;s performance is and how to improve it. In this guide, learn how to use
+PSI to extract insights from CrUX and better understand the user experience.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Using%20the%20Chrome%20UX%20Report%20on%20PageSpeed%20Insights&amp;url=https%3A%2F%2Fweb.dev%2Fchrome-ux-report-pagespeed-insights%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Using the Chrome UX Report on PageSpeed Insights</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/rviscomi.jpg"
+    alt="Rick Viscomi"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rick Viscomi</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rick_viscomi">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/rviscomi">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@rviscomi">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p><a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>
+(PSI) is a tool for web developers to understand what a page's performance is
+and how to improve it. It uses <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>
+to audit a given page and identify opportunities to improve performance. It also
+integrates with the Chrome UX Report (<a href="https://developers.google.com/web/tools/chrome-user-experience-report/">CrUX</a>)
+to show how real users experience performance on the page and the origin in
+aggregate. In this guide, learn how to use PSI to extract insights from CrUX
+and better understand the user experience.</p>
+<img class="w-screenshot" src="./psi.png" alt="Field data from CrUX in PageSpeed Insights">
+<h2 id="reading-the-data">Reading the data <a class="w-headline-link" href="#reading-the-data" aria-hidden="true">#</a></h2>
+<p>To get started, go to <a href="https://developers.google.com/speed/pagespeed/insights/">https://developers.google.com/speed/pagespeed/insights/</a>
+and enter the URL of the page you want to test.</p>
+<img class="w-screenshot" src="./psi_url.png" alt="Enter a URL to get started on PageSpeed Insights">
+<p>After a few seconds, Lighthouse
+audits will be performed and you will see sections for Field and Lab data. CrUX
+is a collection of real user experiences from the field, while Lighthouse is a
+controlled test in the lab.</p>
+<img class="w-screenshot" src="./psi_page.png" alt="Field data from CrUX in PageSpeed Insights">
+<p>In the Field Data section, you'll see two metrics: First Contentful Paint (FCP)
+and First Input Delay (FID). These metrics are representative of the user
+experience in different ways. FCP measures the time until the page displays
+something in the foreground, like some text or a logo. FID measures the
+interactivity of the page, from the user's first interaction to the time the
+page responds to it.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Fast</th>
+<th>Average</th>
+<th>Slow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FCP</td>
+<td>0 - 1000ms</td>
+<td>1000ms - 2500ms</td>
+<td>2500ms+</td>
+</tr>
+<tr>
+<td>FID</td>
+<td>0 - 50ms</td>
+<td>50 - 250ms</td>
+<td>250ms+</td>
+</tr>
+</tbody>
+</table>
+<p>This table describes how FCP and FID values are categorized as either fast,
+average, or slow.</p>
+<p>There are three ways that the user experience is displayed in PSI:</p>
+<ul>
+<li>a label summarizing the page as fast, average, or slow</li>
+<li>a percentile measured in seconds or milliseconds</li>
+<li>a distribution representing the percent of fast, average, and slow experiences</li>
+</ul>
+<p>In the screenshot above, the page has a speed label of &quot;average&quot;. To achieve a
+&quot;fast&quot; label, both FCP and FID must be categorized as fast. A page is labelled
+as &quot;slow&quot; if either metric is categorized as slow. All other cases are labelled
+as &quot;average&quot;.</p>
+<p>A percentile is shown for each metric. For FCP, the 90th percentile is used.
+For FID, it's the 95th percentile. A percentile is a measure used in statistics
+indicating the value below which a given percentage of observations in a group
+of observations fall. For example, the 20th percentile is the value below which
+20% of the observations may be found. Using the screenshot above as an example,
+90% of FCP experiences on this page are 2 seconds or less. Similarly, 95% of FID
+are 149ms or less. These values are also color-coded according to the speed
+label rules, where fast values are green, average values are orange, and slow
+values are red.</p>
+<p>Finally, the distributions for each metric are illustrated using the fast,
+average, slow grouping. For example, FCP on this page are &quot;fast&quot; (less than 1
+second) 74% of the time. FID is &quot;slow&quot; (at least 250 milliseconds) 2% of the
+time. These distributions represent the totality of the user experience and
+their shapes indicate the tendency to be either fast or slow.</p>
+<h2 id="summary-of-origin-performance">Summary of origin performance <a class="w-headline-link" href="#summary-of-origin-performance" aria-hidden="true">#</a></h2>
+<p>PSI also includes a summary of origin performance. This is an aggregation of
+user experiences across all pages on an origin. You can get the same FCP and FID
+stats for an entire origin that are available for individual pages. This data is
+closely aligned with what is available on BigQuery, while the page-level
+performance is not made available to query.</p>
+<img class="w-screenshot" src="./psi_origin.png" alt="Origin CrUX performance in PageSpeed Insights">
+<p>There is one major difference between the origin-level performance on PSI versus
+BigQuery. The datasets on BigQuery are released once a month and encompass all
+of the data in the previous calendar month. For example, the 201809 dataset
+includes all user experiences that occurred in September 2018. On the other
+hand, PSI aggregates new data every day encompassing the previous 30 days. So
+the results you see today may be different tomorrow and they would not
+necessarily be the same as what you'd see in the monthly aggregations on
+BigQuery.</p>
+<h2 id="null-response-when-url-not-available">Null response when URL not available <a class="w-headline-link" href="#null-response-when-url-not-available" aria-hidden="true">#</a></h2>
+<p>If the URL you entered is not available in CrUX, you will see a null response
+like the one below, indicating that there is not enough data. Lab data from
+Lighthouse is still available to give you an approximation of the page's
+performance.</p>
+<img class="w-screenshot" src="./psi_no_data.png" alt="No CrUX data on PageSpeed Insights">
+<h2 id="faq">FAQ <a class="w-headline-link" href="#faq" aria-hidden="true">#</a></h2>
+<h3 id="when-would-i-use-pagespeed-insights-as-opposed-to-other-tools">When would I use PageSpeed Insights as opposed to other tools? <a class="w-headline-link" href="#when-would-i-use-pagespeed-insights-as-opposed-to-other-tools" aria-hidden="true">#</a></h3>
+<p>PSI is the only tool that provides page-level performance from real users. It is also the only tool that aggregates on a daily basis, so you can track how performance changes on a more granular basis. Additionally, there is an API (not covered here) for extracting CrUX data programmatically for both the page and origin.</p>
+<h3 id="are-there-any-limitations-to-using-pagespeed-insights">Are there any limitations to using PageSpeed Insights? <a class="w-headline-link" href="#are-there-any-limitations-to-using-pagespeed-insights" aria-hidden="true">#</a></h3>
+<p>PSI does not give you access to previous aggregations, only the most recent one. So if you want to see historical data, you will need to be actively collecting it or use the monthly aggregations in BigQuery. PSI also only supports two metrics: FCP and FID.</p>
+<h3 id="where-can-i-learn-more-about-pagespeed-insights">Where can I learn more about PageSpeed Insights? <a class="w-headline-link" href="#where-can-i-learn-more-about-pagespeed-insights" aria-hidden="true">#</a></h3>
+<p>Check out the <a href="https://developers.google.com/speed/docs/insights/v5/about">PSI documentation</a>
+for more info.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/chrome-ux-report-pagespeed-insights/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/chrome-ux-report-bigquery/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Using the Chrome UX Report on BigQuery
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

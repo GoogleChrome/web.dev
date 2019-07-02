@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About</title>
+    <meta name="description" content="web.dev is the ultimate resource for developers of all backgrounds to learn,
+create, and solve on the web.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+<div class="about-landing-page">
+  <header class="w-masthead-about">
+    <div class="w-masthead-about__container">
+      <div class="w-masthead-about__left">
+        <h1 class="w-headline--two w-font-weight--medium">
+          Where you can learn and measure
+        </h1>
+        <p>
+          Whether you already have a website or you're just getting started,
+          learn to build for the modern web at web.dev. Then, apply your new
+          skills and solutions to any personal or professional site you work on.
+        </p>
+        <p>
+          After you've launched your site, come back to web.dev and measure how
+          well it supports your users. If there are areas where it can improve,
+          you'll get immediate steps to increase your metrics.
+        </p>
+        <p>
+          As the web advances, users' expectations get higher. With web.dev's
+          guidance, you can give your users the best possible experience,
+          wherever they are.
+        </p>
+      </div>
+      <div class="w-masthead-about__right">
+        <img class="w-masthead-about__image" src="/images/headers/about.svg" alt="">
+      </div>
+    </div>
+  </header>
+
+  <div class="w-about-principles">
+    <div class="w-layout-container">
+      <h2 class="w-headline w-headline--two w-font-weight--medium">
+        What the web can be
+      </h2>
+      <p>
+        You know your users, and you have solutions for their needs. But, to win
+        your users' loyalty, you also need to give them the best possible
+        experience with your site.
+      </p>
+      <p>
+        Make sure your audience can:
+      </p>
+      <ul class="w-unstyled-list w-grid-list">
+        <li class="w-grid-list__item">
+          Find your site
+        </li>
+        <li class="w-grid-list__item">
+          Open your site from any device
+        </li>
+        <li class="w-grid-list__item">
+          Load your site on a poor network connection
+        </li>
+        <li class="w-grid-list__item">
+          Use your site with assistive technology, like a screen reader
+        </li>
+      </ul>
+      <p>
+        While these principles seem basic, there's a lot of room for improvement
+        across the web. With web.dev, you can see how your website is
+        performing, and learn tips to improve your user experience.
+      </p>
+      <h2 class="w-headline w-headline--two w-font-weight--medium">
+        Reaching users on the mobile web
+      </h2>
+      <div class="video-wrapper">
+        <iframe class="devsite-embedded-youtube-video" data-video-id="3bKMnYJzrqI"
+                data-autohide="1" data-showinfo="0" frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+      <p>
+        At first, Pinterest's mobile site pushed all their users to
+        download their app. Then, they invested in building a modern web
+        experience.
+      </p>
+      <p>
+        With a new focus on speed and performance, Pinterest's mobile
+        site became more engaging to their users. Now, the mobile web is
+        their top channel where new users sign up to join Pinterest.
+      </p>
+    </div>
+  </div>
+
+  <div class="w-layout-container">
+    <h2 class="w-headline w-headline--two w-font-weight--medium w-text--center">
+      Your tools for success
+    </h2>
+    <p class="w-text--center">
+      To get started, all you need is a basic understanding of HTML, CSS, and
+      JavaScript.
+    </p>
+    <div class="w-about-boxes">
+      <div class="w-about-box">
+        <h3 class="w-about-box__headline">
+          Measure
+        </h3>
+        <p class="w-about-box__copy">
+          Audit your site with Lighthouse to get guidance you can use to improve:
+        </p>
+        <ul>
+          <li>
+            Performance
+          </li>
+          <li>
+            Progressive Web App status
+          </li>
+          <li>
+            Accessibility
+          </li>
+          <li>
+            Use of best practices
+          </li>
+          <li>
+            Search engine optimization
+          </li>
+        </ul>
+        <div class="w-text--center">
+          <a
+            class="w-button gc-analytics-event"
+            data-category="web.dev"
+            data-label="about, explore measure"
+            data-action="click"
+            href="/measure"
+          >
+            Test my site
+          </a>
+        </div>
+      </div>
+      <div class="w-about-box">
+        <h3 class="w-about-box__headline">Learn</h3>
+        <p class="w-about-box__copy">
+          Practice new skills for the modern web and expand your
+          knowledge on:
+        </p>
+        <ul>
+          <li>
+            Load speed
+          </li>
+          <li>
+            Network reliability
+          </li>
+          <li>
+            Data security
+          </li>
+          <li>
+            Site discoverability
+          </li>
+          <li>
+            Accessibility for all users
+          </li>
+        </ul>
+        <div class="w-text--center">
+          <a
+            class="w-button gc-analytics-event"
+            data-category="web.dev"
+            data-label="about, explore learn"
+            data-action="click"
+            href="/learn"
+          >
+            Explore topics
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

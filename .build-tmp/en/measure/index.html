@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Measure</title>
+    <meta name="description" content="See how well your website performs. Then, get tips to improve your user
+experience.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+ 
+<div class="profile-landing-page">
+  <div class="w-layout-container--large w-mb--std">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline">Measure</h1>
+      <p class="w-page-header__copy">
+        See how well your website performs. Then, get tips to improve your user
+        experience. 
+        <span data-lh-signin="hide">
+          Sign in to track your progress over time.
+        </span>
+      </p>
+      <a
+        href="#"
+        class="w-button w-button--secondary w-mt--std lh-signin-button gc-analytics-event"
+        data-category="web.dev"
+        data-label="measure, big sign-in"
+        data-action="click"
+        data-lh-signin="hide"
+      >
+        <svg
+          class="w-mr--sm"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 48 48"
+          width="24"
+          heigh="24"
+        >
+          <defs>
+            <path
+              id="a"
+              d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"
+            />
+          </defs>
+          <clipPath id="b"><use xlink:href="#a" overflow="visible" /></clipPath>
+          <path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z" />
+          <path
+            clip-path="url(#b)"
+            fill="#EA4335"
+            d="M0 11l17 13 7-6.1L48 14V0H0z"
+          />
+          <path
+            clip-path="url(#b)"
+            fill="#34A853"
+            d="M0 37l30-23 7.9 1L48 0v48H0z"
+          />
+          <path
+            clip-path="url(#b)"
+            fill="#4285F4"
+            d="M48 48L17 24l-4-3 35-10z"
+          />
+        </svg>
+        Sign in with Google
+      </a>
+    </header>
+  </div>
+
+  <div class="w-measure-results">
+    <div class="w-layout-container">
+      <web-profile></web-profile>
+    </div>
+  </div>
+
+  <div class="w-layout-container w-mt--std">
+    <section class="w-numbered-headers">
+      <div class="w-measure-steps">
+        <div class="w-measure-step">
+          <h3 class="w-numbered-header w-numbered-header--vertical">
+            Run tests on your site
+          </h3>
+          <div>
+            Enter your site's URL to see how well it performs across all audits.
+          </div>
+        </div>
+
+        <div class="w-measure-step">
+          <h3 class="w-numbered-header w-numbered-header--vertical">
+            Look at what matters
+          </h3>
+          <div>
+            See your site's performance across the areas you care about.
+          </div>
+        </div>
+
+        <div class="w-measure-step">
+          <h3 class="w-numbered-header w-numbered-header--vertical">
+            Get tips for improving
+          </h3>
+          <div>
+            Each test comes with helpful steps to improve your site's results.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="w-layout-container">
+    <section class="w-text--center">
+      <h2 class="no-link w-headline--two w-font-weight--medium">
+        How your site is measured
+      </h2>
+      <div class="w-mb--l">
+        When you measure your site, web.dev uses
+        <a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a>,
+        an open-source, automated tool for improving the quality of web pages.
+        Lighthouse will audit your site in the following categories:
+      </div>
+
+      <div class="w-measure-categories w-mb--xl">
+        <!-- PERFORMANCE -->
+        <div class="w-measure-category">
+          <img
+            src="/images/icons/performance.svg"
+            aria-describedby="lh-category-performance-title"
+          />
+          <div
+            class="w-headline--three w-mt--std"
+            id="lh-category-performance-title"
+          >
+            Performance
+          </div>
+          <div>
+            Audits for metrics like first paint and time to interactive to
+            determine lag.
+          </div>
+        </div>
+
+        <!-- BEST PRACTICES -->
+        <div class="w-measure-category">
+          <img
+            src="/images/icons/best_practices.svg"
+            aria-describedby="lh-category-best-practices-title"
+          />
+          <div
+            class="w-headline--three w-mt--std"
+            id="lh-category-best-practices-title"
+          >
+            Best Practices
+          </div>
+          <div>
+            Looks for everything from HTTPS usage to correct image aspect
+            ratios.
+          </div>
+        </div>
+
+        <!-- SEO -->
+        <div class="w-measure-category">
+          <img src="/images/icons/seo.svg" aria-describedby="lh-category-seo-title" />
+          <div class="w-headline--three w-mt--std" id="lh-category-seo-title">
+            SEO
+          </div>
+          <div>
+            Checks for best practices to ensure your site is discoverable.
+          </div>
+        </div>
+
+        <!-- ACCESSIBILITY -->
+        <div class="w-measure-category">
+          <img
+            src="/images/icons/a11y.svg"
+            aria-describedby="lh-category-accessibility-title"
+          />
+          <div
+            class="w-headline--three w-mt--std"
+            id="lh-category-accessibility-title"
+          >
+            Accessibility
+          </div>
+          <div>
+            Checks for common issues that may prevent users from accessing your
+            content.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        All tests are run using a simulated mobile device, throttled to a fast
+        3G network &amp; 4x CPU slowdown.
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<code id="guide-audit-mapping" style="display: none;">
+  {"guides":[{"path":"Easily discoverable","topic":"Make sure your page is mobile-friendly","id":"fix-viewport-tag","lighthouse":["viewport"],"title":"Fix the viewport meta tag","url":"/fix-viewport-tag/"},{"path":"Easily discoverable","topic":"Make sure search engines can crawl and index your page","id":"remove-code-blocking-indexing","lighthouse":["is-crawlable"],"title":"Remove code that blocks search engine indexing","url":"/remove-code-blocking-indexing/"},{"path":"Easily discoverable","topic":"Make sure search engines can understand your content","id":"write-descriptive-text","lighthouse":["document-title"],"title":"Write descriptive titles, descriptions, and link text","url":"/write-descriptive-text/"},{"path":"","topic":"","id":"custom-control-roles","lighthouse":["custom-controls-labels"],"title":"Manually check all custom controls have appropriate ARIA roles","url":"/custom-control-roles/"},{"path":"","topic":"","id":"custom-controls-labels","lighthouse":["custom-controls-labels"],"title":"Manually check all custom interactive controls are keyboard focusable","url":"/custom-controls-labels/"},{"path":"","topic":"","id":"focusable-controls","lighthouse":["focusable-controls"],"title":"Manually check custom interactive controls are keyboard focusable and display a focus indicator","url":"/focusable-controls/"},{"path":"","topic":"","id":"heading-levels","lighthouse":["heading-levels"],"title":"Manually check that headings don't skip levels","url":"/heading-levels/"},{"path":"","topic":"","id":"interactive-element-affordance","lighthouse":["interactive-element-affordance"],"title":"Manually check interactive elements indicate their purpose and state","url":"/interactive-element-affordance/"},{"path":"","topic":"","id":"logical-tab-order","lighthouse":["logical-tab-order"],"title":"Manually check the tab order follows the DOM order","url":"/logical-tab-order/"},{"path":"","topic":"","id":"managed-focus","lighthouse":["managed-focus"],"title":"Manually check user's focus is directed to new content","url":"/managed-focus/"},{"path":"","topic":"","id":"offscreen-content-hidden","lighthouse":["offscreen-content-hidden"],"title":"Manually check offscreen content is hidden from assistive technology","url":"/offscreen-content-hidden/"},{"path":"","topic":"","id":"use-landmarks","lighthouse":["use-landmarks","managed-focus"],"title":"Manually check landmark elements improve navigation","url":"/use-landmarks/"},{"path":"","topic":"","id":"visual-order-follows-dom","lighthouse":["visual-order-follows-dom"],"title":"Manually check the visual layout of the page matches the DOM","url":"/visual-order-follows-dom/"},{"path":"","topic":"","id":"pwa-cross-browser","lighthouse":["pwa-cross-browser"],"title":"Site works cross-browser","url":"/pwa-cross-browser/"},{"path":"","topic":"","id":"pwa-each-page-has-url","lighthouse":["pwa-each-page-has-url"],"title":"Each page has a URL","url":"/pwa-each-page-has-url/"},{"path":"","topic":"","id":"pwa-page-transitions","lighthouse":["pwa-page-transitions"],"title":"Page transitions don't feel like they block on the network","url":"/pwa-page-transitions/"},{"path":"","topic":"","id":"structured-data","lighthouse":["structured-data"],"title":"Manually check structured data is valid","url":"/structured-data/"},{"path":"","topic":"","id":"focus-traps","lighthouse":["focus-traps"],"title":"Manually check users can't accidentally trap their focus","url":"/focus-traps/"},{"path":"","topic":"","id":"accesskeys","lighthouse":["accesskeys"],"title":"Ensure accesskey values are unique","url":"/accesskeys/"},{"path":"","topic":"","id":"aria-allowed-attr","lighthouse":["aria-allowed-attr"],"title":"Ensure ARIA attributes are allowed for an element's role","url":"/aria-allowed-attr/"},{"path":"","topic":"","id":"aria-required-attr","lighthouse":["aria-required-attr"],"title":"Ensure ARIA roles have required states and properties","url":"/aria-required-attr/"},{"path":"","topic":"","id":"aria-required-children","lighthouse":["aria-required-children"],"title":"Ensure parent roles contain required child role(s)","url":"/aria-required-children/"},{"path":"","topic":"","id":"aria-required-parent","lighthouse":["aria-required-parent"],"title":"Ensure child roles are contained within required parent roles","url":"/aria-required-parent/"},{"path":"","topic":"","id":"aria-roles","lighthouse":["aria-roles"],"title":"Ensure ARIA role values are valid","url":"/aria-roles/"},{"path":"","topic":"","id":"aria-valid-attr-value","lighthouse":["aria-valid-attr-value"],"title":"Ensure ARIA attributes have valid values","url":"/aria-valid-attr-value/"},{"path":"","topic":"","id":"aria-valid-attr","lighthouse":["aria-valid-attr"],"title":"Ensure ARIA attributes are valid and not misspelled or non-existent","url":"/aria-valid-attr/"},{"path":"","topic":"","id":"audio-caption","lighthouse":["audio-caption"],"title":"Ensure audio elements have captions","url":"/audio-caption/"},{"path":"","topic":"","id":"button-name","lighthouse":["button-name"],"title":"Ensure buttons have discernible text","url":"/button-name/"},{"path":"","topic":"","id":"bypass","lighthouse":["bypass"],"title":"Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content","url":"/bypass/"},{"path":"","topic":"","id":"color-contrast","lighthouse":["color-contrast"],"title":"Ensure background and foreground colors have a sufficient contrast ratio","url":"/color-contrast/"},{"path":"","topic":"","id":"definition-list","lighthouse":["definition-list"],"title":"Ensure dl elements are structured correctly","url":"/definition-list/"},{"path":"","topic":"","id":"dlitem","lighthouse":["dlitem"],"title":"Ensure all child dd and dt elements have a dl parent","url":"/dlitem/"},{"path":"","topic":"","id":"document-title","lighthouse":["document-title"],"title":"Ensure that each HTML document contains a title","url":"/document-title/"},{"path":"","topic":"","id":"duplicate-id","lighthouse":["duplicate-id"],"title":"Ensure every ID attribute value is unique","url":"/duplicate-id/"},{"path":"","topic":"","id":"frame-title","lighthouse":["frame-title"],"title":"Ensure IFrame and frame elements contain a non-empty title attribute","url":"/frame-title/"},{"path":"","topic":"","id":"html-has-lang","lighthouse":["html-has-lang"],"title":"Ensure every HTML document has a lang attribute","url":"/html-has-lang/"},{"path":"","topic":"","id":"html-lang-valid","lighthouse":["html-lang-valid"],"title":"Ensure the lang attribute of the html element has a valid value","url":"/html-lang-valid/"},{"path":"","topic":"","id":"image-alt","lighthouse":["image-alt"],"title":"Ensure img elements have alternate text or a role of none or presentation","url":"/image-alt/"},{"path":"","topic":"","id":"input-image-alt","lighthouse":["input-image-alt"],"title":"Ensure input types with a value \"image\" have alternate text","url":"/input-image-alt/"},{"path":"","topic":"","id":"label","lighthouse":["label"],"title":"Ensure every form element has a label","url":"/label/"},{"path":"","topic":"","id":"layout-table","lighthouse":["layout-table"],"title":"Ensure layout tables do not use data table elements","url":"/layout-table/"},{"path":"","topic":"","id":"link-name","lighthouse":["link-name"],"title":"Ensure links have discernible text","url":"/link-name/"},{"path":"","topic":"","id":"list","lighthouse":["list"],"title":"Ensure lists are structured correctly","url":"/list/"},{"path":"","topic":"","id":"listitem","lighthouse":["listitem"],"title":"Ensure list items are contained within a parent list","url":"/listitem/"},{"path":"","topic":"","id":"meta-refresh","lighthouse":["meta-refresh"],"title":"Ensure timed refreshes do not exist","url":"/meta-refresh/"},{"path":"","topic":"","id":"meta-viewport","lighthouse":["meta-viewport"],"title":"Ensure the viewport doesn't disable text scaling and zooming","url":"/meta-viewport/"},{"path":"","topic":"","id":"object-alt","lighthouse":["object-alt"],"title":"Ensure object elements have alternative text","url":"/object-alt/"},{"path":"","topic":"","id":"tabindex","lighthouse":["tabindex"],"title":"Ensure tabindex attribute values are not greater than 0","url":"/tabindex/"},{"path":"","topic":"","id":"td-headers-attr","lighthouse":["td-headers-attr"],"title":"Ensure there's only one table header per table column","url":"/td-headers-attr/"},{"path":"","topic":"","id":"th-has-data-cells","lighthouse":["th-has-data-cells"],"title":"Ensure each table header has data cells","url":"/th-has-data-cells/"},{"path":"","topic":"","id":"valid-lang","lighthouse":["valid-lange"],"title":"Ensure all lang attributes have a valid value","url":"/valid-lang/"},{"path":"","topic":"","id":"video-caption","lighthouse":["video-caption"],"title":"Ensure video elements have captions","url":"/video-caption/"},{"path":"","topic":"","id":"video-description","lighthouse":["video-description"],"title":"Ensure video elements have audio descriptions","url":"/video-description/"},{"path":"","topic":"","id":"appcache-manifest","lighthouse":["appcache-manifest"],"title":"Uses application cache","url":"/appcache-manifest/"},{"path":"","topic":"","id":"deprecations","lighthouse":["deprecations"],"title":"Page uses deprecated APIs","url":"/deprecations/"},{"path":"","topic":"","id":"doctype","lighthouse":["doctype"],"title":"Document missing doctype","url":"/doctype/"},{"path":"","topic":"","id":"errors-in-console","lighthouse":["errors-in-console"],"title":"Browser errors were logged to the console","url":"/errors-in-console/"},{"path":"","topic":"","id":"external-anchors-use-rel-noopener","lighthouse":["external-anchors-use-rel-noopener"],"title":"Links to cross-origin destinations are unsafe","url":"/external-anchors-use-rel-noopener/"},{"path":"","topic":"","id":"geolocation-on-start","lighthouse":["geolocation-on-start"],"title":"Page requests geolocation on load","url":"/geolocation-on-start/"},{"path":"","topic":"","id":"image-aspect-ratio","lighthouse":["image-aspect-ration"],"title":"Images display with incorrect aspect ratio","url":"/image-aspect-ratio/"},{"path":"","topic":"","id":"js-libraries","lighthouse":["js-libraries"],"title":"Diagnostic audit that lists all JavaScript libraries","url":"/js-libraries/"},{"path":"","topic":"","id":"no-document-write","lighthouse":["no-document-write"],"title":"Page uses document.write()","url":"/no-document-write/"},{"path":"","topic":"","id":"no-vulnerable-libraries","lighthouse":["no-vulnerable-libraries"],"title":"Includes front-end JavaScript libraries with known security vulnerabilities","url":"/no-vulnerable-libraries/"},{"path":"","topic":"","id":"notification-on-start","lighthouse":["notification-on-start"],"title":"Page requests notification permissions on load","url":"/notification-on-start/"},{"path":"","topic":"","id":"password-inputs-can-be-pasted-into","lighthouse":["password-inputs-can-be-pasted-into"],"title":"Page stops users from pasting into password fields","url":"/password-inputs-can-be-pasted-into/"},{"path":"","topic":"","id":"uses-http2","lighthouse":["uses-http2"],"title":"Page doesn't use HTTP/2 for its own resources","url":"/uses-http2/"},{"path":"","topic":"","id":"uses-passive-event-listeners","lighthouse":["uses-passive-event-listeners"],"title":"Page doesn't use passive event listeners to improve scrolling performance","url":"/uses-passive-event-listeners/"},{"path":"","topic":"","id":"bootup-time","lighthouse":["bootup-time"],"title":"Reduce JavaScript execution time","url":"/bootup-time/"},{"path":"","topic":"","id":"critical-request-chains","lighthouse":["critical-request-chains"],"title":"Minimize critical requests depth","url":"/critical-request-chains/"},{"path":"","topic":"","id":"dom-size","lighthouse":["dom-size"],"title":"Avoid an excessive DOM size","url":"/dom-size/"},{"path":"","topic":"","id":"efficient-animated-content","lighthouse":["efficient-animated-content"],"title":"Use video formats for animated content","url":"/efficient-animated-content/"},{"path":"","topic":"","id":"estimated-input-latency","lighthouse":["estimated-input-latency"],"title":"Estimated Input Latency","url":"/estimated-input-latency/"},{"path":"","topic":"","id":"first-contentful-paint","lighthouse":["first-contentful-paint"],"title":"First Contentful Paint","url":"/first-contentful-paint/"},{"path":"","topic":"","id":"first-cpu-idle","lighthouse":["first-cpu-idle"],"title":"First CPU Idle","url":"/first-cpu-idle/"},{"path":"","topic":"","id":"first-meaningful-paint","lighthouse":["first-meaningful-paint"],"title":"First Meaningful Paint","url":"/first-meaningful-paint/"},{"path":"","topic":"","id":"font-display","lighthouse":["font-display"],"title":"Ensure text remains visible during webfont loads","url":"/font-display/"},{"path":"","topic":"","id":"interactive","lighthouse":["interactive"],"title":"Time to Interactive","url":"/interactive/"},{"path":"","topic":"","id":"offscreen-images","lighthouse":["offscreen-images"],"title":"Defer offscreen images","url":"/offscreen-images/"},{"path":"","topic":"","id":"redirects","lighthouse":["redirects"],"title":"Avoid multiple page redirects","url":"/redirects/"},{"path":"","topic":"","id":"render-blocking-resources","lighthouse":["render-blocking-resources"],"title":"Eliminate render-blocking resources","url":"/render-blocking-resources/"},{"path":"","topic":"","id":"speed-index","lighthouse":["speed-index"],"title":"Speed Index","url":"/speed-index/"},{"path":"","topic":"","id":"time-to-first-byte","lighthouse":["time-to-first-byte"],"title":"Reduce server response times (TTFB)","url":"/time-to-first-byte/"},{"path":"","topic":"","id":"total-byte-weight","lighthouse":["total-byte-weight"],"title":"Avoid enormous network payloads","url":"/total-byte-weight/"},{"path":"","topic":"","id":"unminified-css","lighthouse":["unminified-css"],"title":"Minify CSS","url":"/unminified-css/"},{"path":"","topic":"","id":"unminified-javascript","lighthouse":["unminified-javascript"],"title":"Minify JavaScript","url":"/unminified-javascript/"},{"path":"","topic":"","id":"unused-css-rules","lighthouse":["unused-css-rules"],"title":"Remove unused CSS","url":"/unused-css-rules/"},{"path":"","topic":"","id":"user-timings","lighthouse":["user-timings"],"title":"User Timing marks and measures","url":"/user-timings/"},{"path":"","topic":"","id":"uses-long-cache-ttl","lighthouse":["uses-long-cache-ttle"],"title":"Serve static assets with an efficient cache policy","url":"/uses-long-cache-ttl/"},{"path":"","topic":"","id":"uses-optimized-images","lighthouse":["uses-optimized-images"],"title":"Efficiently encode images","url":"/uses-optimized-images/"},{"path":"","topic":"","id":"uses-rel-preconnect","lighthouse":["uses-rel-preconnect"],"title":"Preconnect to required origins","url":"/uses-rel-preconnect/"},{"path":"","topic":"","id":"uses-rel-preload","lighthouse":["uses-rel-preload"],"title":"Preload key requests","url":"/uses-rel-preload/"},{"path":"","topic":"","id":"uses-responsive-images","lighthouse":["uses-responsive-images"],"title":"Properly size images","url":"/uses-responsive-images/"},{"path":"","topic":"","id":"uses-text-compression","lighthouse":["uses-text-compression"],"title":"Enable text compression","url":"/uses-text-compression/"},{"path":"","topic":"","id":"uses-webp-images","lighthouse":["uses-webp-images"],"title":"Serve images in next-gen formats","url":"/uses-webp-images/"},{"path":"","topic":"","id":"content-width","lighthouse":["content-width"],"title":"Content is not sized correctly for the viewport","url":"/content-width/"},{"path":"","topic":"","id":"installable-manifest","lighthouse":["installable-manifest"],"title":"User can be prompted to install the web app","url":"/installable-manifest/"},{"path":"","topic":"","id":"is-on-https","lighthouse":["is-on-https"],"title":"Uses HTTPS","url":"/is-on-https/"},{"path":"","topic":"","id":"load-fast-enough-for-pwa","lighthouse":["load-fast-enough-for-pwa"],"title":"Page load is fast enough on mobile","url":"/load-fast-enough-for-pwa/"},{"path":"","topic":"","id":"offline-start-url","lighthouse":["offline-start-url"],"title":"Start URL responds with a 200 when offline","url":"/offline-start-url/"},{"path":"","topic":"","id":"redirects-http","lighthouse":["redirects-http"],"title":"Avoid multiple page redirects","url":"/redirects-http/"},{"path":"","topic":"","id":"service-worker","lighthouse":["service-worker"],"title":"Registers a service worker that controls page and start_url","url":"/service-worker/"},{"path":"","topic":"","id":"splash-screen","lighthouse":["splash-screen"],"title":"Configured for a custom splash screen","url":"/splash-screen/"},{"path":"","topic":"","id":"themed-omnibox","lighthouse":["themed-omnibox"],"title":"Sets an address-bar theme color","url":"/themed-omnibox/"},{"path":"","topic":"","id":"viewport","lighthouse":["viewport"],"title":"Has a viewport tag with width or initial-scale","url":"/viewport/"},{"path":"","topic":"","id":"without-javascript","lighthouse":["without-javascript"],"title":"Contains some content when JavaScript is not available","url":"/without-javascript/"},{"path":"","topic":"","id":"works-offline","lighthouse":["works-offline"],"title":"Current page responds with a 200 when offline","url":"/works-offline/"},{"path":"","topic":"","id":"canonical","lighthouse":["canonical"],"title":"Document doesn't have a valid rel=canonical","url":"/canonical/"},{"path":"","topic":"","id":"font-size","lighthouse":["font-size"],"title":"Document doesn't use legible font sizes","url":"/font-size/"},{"path":"","topic":"","id":"hreflang","lighthouse":["hreflang"],"title":"Document doesn't have a valid hreflang","url":"/hreflang/"},{"path":"","topic":"","id":"http-status-code","lighthouse":["http-status-code"],"title":"Page has unsuccessful HTTP status code","url":"/http-status-code/"},{"path":"","topic":"","id":"is-crawable","lighthouse":["is-crawable"],"title":"Page is blocked from indexing","url":"/is-crawable/"},{"path":"","topic":"","id":"link-text","lighthouse":["link-text"],"title":"Links do not have descriptive text","url":"/link-text/"},{"path":"","topic":"","id":"meta-description","lighthouse":["meta-description"],"title":"Document doesn't have a meta description","url":"/meta-description/"},{"path":"","topic":"","id":"plugins","lighthouse":["plugins"],"title":"Document uses plugins","url":"/plugins/"},{"path":"","topic":"","id":"robots-txt","lighthouse":["robots-txt"],"title":"robots.txt is not valid","url":"/robots-txt/"},{"path":"","topic":"","id":"tap-targets","lighthouse":["tap-targets"],"title":"Tap targets are not sized appropriately","url":"/tap-targets/"},{"path":"","topic":"","id":"mainthread-work-breakdown","lighthouse":["mainthread-work-breakdown"],"title":"Minimize main-thread work","url":"/mainthread-work-breakdown/"}]}
+</code>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introducing PROXX</title>
+    <meta name="description" content="PROXX as a minesweeper-like game built as a PWA. It works on a vast variety
+of devices and progressively enhances the visual appearance the more capable
+the device is.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/proxx-announce/hero.jpg"
+  alt="a logo image of PROXX."
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Introducing%20PROXX&amp;url=https%3A%2F%2Fweb.dev%2Fproxx-announce%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Introducing PROXX</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          A game of proximity, inspired by minesweeper
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>May 9, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/kosamari.jpg"
+    alt="Mariko Kosaka"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Mariko Kosaka</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/kosamari">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/kosamari">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@kosamari">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>The team that brought you <a href="https://squoosh.app">squoosh.app</a> is back! This time,
+we built a web-based game called PROXX (<a href="https://proxx.app">proxx.app</a>). PROXX
+is a game of proximity inspired by the legendary game Minesweeper. The game is
+situated in the space and your job is to find out where the black holes are. It
+works on all kinds of devices — from desktop all the way to feature phones.
+Users can play the game using a mouse, keyboard, d-pad even with a screen
+reader.</p>
+<figure class="w-figure w-figure--fullbleed">
+<video controls autoplay loop muted poster="https://storage.googleapis.com/webfundamentals-assets/proxx-announce-blogpost/poster.jpg">
+  <source src="https://storage.googleapis.com/webfundamentals-assets/proxx-announce-blogpost/kaios_vp8.webm" type="video/webm; codecs=vp8">
+  <source src="https://storage.googleapis.com/webfundamentals-assets/proxx-announce-blogpost/kaios_x264.mp4" type="video/mp4; codecs=h264">
+</video>
+ <figcaption class="w-figcaption w-figcaption--fullbleed">
+    PROXX on a feature phone.
+  </figcaption>
+</figure>
+<h2 id="our-baseline">Our baseline <a class="w-headline-link" href="#our-baseline" aria-hidden="true">#</a></h2>
+<p>Before building this game, we set the following goals and budgets for the
+application:</p>
+<ul>
+<li><strong>Same core experience</strong>: all devices must function the same way</li>
+<li><strong>Accessible</strong>: mouse, keyboard, touch, d-pad, screen readers</li>
+<li><strong>Performant</strong>:
+<ul>
+<li>Less than 25kb of initial payload</li>
+<li>Less than 5 seconds TTI (<a href="https://web.dev/interactive">time to interactive</a>)
+on slow 3G</li>
+<li>Consistent 60fps animation</li>
+</ul>
+</li>
+</ul>
+<figure class="w-figure w-figure--fullbleed">
+  <img class="w-screenshot" src="pixelbook.jpg"
+       alt="A pixelbook running PROXX" class="screenshot">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    PROXX on a pixelbook.
+  </figcaption>
+</figure>
+<h2 id="web-workers">Web Workers <a class="w-headline-link" href="#web-workers" aria-hidden="true">#</a></h2>
+<p>The game consists of 4 main entities, the core game logic, the UI service, the
+state service, and the animation graphics. Since we knew from the get-go we
+would have to run heavily animated graphics on the main thread, we moved the
+game logic and state service to a web worker in order to keep the main thread as
+free as possible.</p>
+<h2 id="build-time-pre-render">Build time pre-render <a class="w-headline-link" href="#build-time-pre-render" aria-hidden="true">#</a></h2>
+<p>Our UI is built with <a href="https://preactjs.com/">Preact</a>, as it allows us to hit our
+aggressive target for an initial payload that is less than 25kb. In order to
+give a good initial loading experience, we decided to pre-render our 1st view.
+We prerender at build time using <a href="https://pptr.dev/">Puppeteer</a> to access the
+top page and let preact populate the DOM. The resulting DOM is then serialized
+to HTML and saved as index.html</p>
+<h2 id="canvas-for-animation-(invisible)-dom-for-accessibility">Canvas for animation, (invisible) DOM For accessibility <a class="w-headline-link" href="#canvas-for-animation-(invisible)-dom-for-accessibility" aria-hidden="true">#</a></h2>
+<p>We render the game graphics in a canvas using
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL</a>. One canvas
+is responsible for the background animation and another one canvas for the game
+grid on top. We also have an HTML table with buttons for accessibility reasons,
+that is on top of both of these canvases, but is made invisible (opacity: 0).
+Even though what you see is a canvas rendering of the game state, the player is
+interacting with the invisible DOM table, giving us the ability to attach event
+listeners and rely on the browser’s focus management.</p>
+<p>By keeping the DOM element in the canvas, we are able to tap into browsers
+native accessibility features. For example: by setting <code>role=“grid”</code> on our game
+table, screen readers can announce the row and column of the focused cell
+without us having to implement that.</p>
+<h2 id="rollup-for-bundling-and-code-splitting">Rollup for bundling and code splitting <a class="w-headline-link" href="#rollup-for-bundling-and-code-splitting" aria-hidden="true">#</a></h2>
+<p>Our total size for the app comes down to 100KB gzipped. Out of that, 20KB is for
+the initial payload (index.html). We use <a href="https://rollupjs.org">Rollup.js</a> for
+this project. We have shared dependencies between the main thread and our web
+worker, and Rollup can put these shared dependencies in a separate chunk that
+only needs to be loaded once. Other bundlers like webpack duplicate the shared
+dependencies which results in double-loading.</p>
+<h2 id="supporting-feature-phones">Supporting feature phones <a class="w-headline-link" href="#supporting-feature-phones" aria-hidden="true">#</a></h2>
+<p>Smart feature phones such as <a href="https://www.kaiostech.com/">KaiOS</a> phones are
+rapidly gaining popularity. These are very resource constrained devices, but our
+approach of using web workers whenever we can allowed us to make the experience
+highly responsive on these phones as well. Since feature phones come with
+different input interface (d-pad and number keys, no touchscreen), we also
+implemented key-based interface.</p>
+<figure class="w-figure w-figure--fullbleed">
+  <img src="featurephone.jpg"
+       alt="A man playing PROXX on a yellow feature phone" class="screenshot">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    PROXX on a feature phone.
+  </figcaption>
+</figure>
+<h2 id="what's-next">What’s next <a class="w-headline-link" href="#what's-next" aria-hidden="true">#</a></h2>
+<p>We had great but busy time building this game in time for Google I/O 2019, so we
+will take some well-deserved time off to rest, but plan to come back with more
+in-depth documentation on each of these areas of the game.</p>
+<p>Until then, please check the talk Mariko gave at I/O on this project.</p>
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/w8P5HLxcIO4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p>You can browse the code at <a href="https://github.com/GoogleChromeLabs/proxx">the proxx github repo</a>.</p>
+<p>Cheers! Surma, Jake, Mariko</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>May 9, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/proxx-announce/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/samesite-cookies-explained/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      SameSite cookies explained
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How we’re bringing Google Earth to the Web</title>
+    <meta name="description" content="Improving cross-browser access to Google Earth with WebAssembly
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/earth-webassembly/hero.jpg"
+  alt="A globe with code overlaid"
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=How%20we%E2%80%99re%20bringing%20Google%20Earth%20to%20the%20Web&amp;url=https%3A%2F%2Fweb.dev%2Fearth-webassembly%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">How we’re bringing Google Earth to the Web</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Improving cross-browser access to Google Earth with WebAssembly.
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 20, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/jormears.jpg"
+    alt="Jordon Mears‎"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jordon Mears‎</cite>
+    <ul class="w-author__link-list">
+      
+      
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>In an ideal world, every application that developers build, regardless of technology, would be available in the browser. But there are barriers to bringing projects to the web, depending on the technology they were built with and how well that technology is supported by the various browser vendors. <a href="https://webassembly.org/">WebAssembly</a> (Wasm) is a compile target standardized by the <a href="https://www.w3.org/">W3C</a> that helps us solve this problem by allowing us to run codebases from languages other than JavaScript on the web.</p>
+<p>We’ve done just that with Google Earth, available today in <a href="https://g.co/earth/beta">preview beta</a> on WebAssembly. Keep in mind that this is still a beta of Google Earth and may not be as smooth as you’re used to (try out regular <a href="https://earth.google.com/web/">Earth for web</a>). You can experiment with this beta in Chrome and other Chromium-based browsers, including Edge (Canary version) and Opera, as well as Firefox. Consider this beta your inspiration if you too are looking for better cross-browser support for your native applications.</p>
+<h2 id="why-we-chose-webassembly-for-google-earth">Why we chose WebAssembly for Google Earth <a class="w-headline-link" href="#why-we-chose-webassembly-for-google-earth" aria-hidden="true">#</a></h2>
+<p>We originally wrote most of Google Earth in C++ because it was a native application intended for desktop install. Then we were able to port it to Android and iOS as smartphones took hold, retaining most of our C++ codebase using <a href="https://developer.android.com/ndk">NDK</a> and <a href="https://www.wikipedia.org/wiki/Objective-C#Objective-C++">Objective-C++</a>. In 2017, when we brought Earth to the web, we used <a href="https://developer.chrome.com/native-client">Native Client</a> (NaCl) to compile the C++ code and run it in the Chrome browser.</p>
+<p>At the time, NaCl was the only browser technology that allowed us to port our C++ code to the browser and give us the kind of performance Earth needed. Unfortunately, NaCl was a Chrome-only technology that never saw adoption across browsers. Now we’re starting to switch to WebAssembly, which lets us take that same code and run it across browsers. This means Earth will be available to more people across the web.</p>
+ <img class="w-screenshot" src="earth-wasm-big.webp" alt="A screenshot of Earth showing Eiffel Tower">
+<h2 id="a-thread-on-threading">A thread on threading <a class="w-headline-link" href="#a-thread-on-threading" aria-hidden="true">#</a></h2>
+<p>WebAssembly is still evolving as a standard, and browsers continue to get extended with more features and functionality. From the Earth perspective, the most significant difference in support for WebAssembly between browsers is support for threading. Some browsers offer multi-threading support and others don't. Think of Earth like a huge 3D video game of the real world. As such, we’re constantly streaming data to the browser, decompressing it and making it ready for rendering to the screen. Being able to do this work on a background thread has shown a clear improvement in <a href="https://medium.com/google-earth/performance-of-web-assembly-a-thread-on-threading-54f62fd50cf7">the performance of Earth in the browser</a>.</p>
+<p>Multi-threaded WebAssembly relies on a browser feature called SharedArrayBuffer, which was pulled from browsers after the Spectre and Meltdown security vulnerabilities were revealed. To mitigate potential damage from attacks, Chrome's security team <a href="https://security.googleblog.com/2018/07/mitigating-spectre-with-site-isolation.html">introduced Site Isolation</a> in Chrome for all desktop operating systems. Site Isolation limits each renderer process to documents from a single site. With this security feature in place, Chrome re-enabled SharedArrayBuffer for desktop—which allowed us to use multi-threaded WebAssembly with Earth for Chrome.</p>
+<p>Other browsers are working on Site Isolation or other mitigations in order to re-enable SharedArrayBuffer. In the meantime, Earth runs single-threaded in those browsers.</p>
+<h2 id="how-webassembly-works-with-different-browsers">How WebAssembly works with different browsers <a class="w-headline-link" href="#how-webassembly-works-with-different-browsers" aria-hidden="true">#</a></h2>
+<p>We’ve learned a lot about the state of WebAssembly support in browsers porting Earth. If you’re going to develop applications using WebAssembly, it’s important to understand the current state of how WebAssembly works with different browsers.</p>
+<h3 id="edge:">Edge: <a class="w-headline-link" href="#edge:" aria-hidden="true">#</a></h3>
+<p>Edge is on the verge of becoming two distinct development experiences based on Microsoft's choice to move from the EdgeHTML renderer over to a Chromium-based renderer. At the moment, the Google Earth beta on WebAssembly won’t run on the current public version of Edge due to lack of support for WebGL2. That will be fixed once the new version of Edge, based on Chromium, ships in the near future. In the meantime, you can <a href="https://www.microsoftedgeinsider.com/download">download the Canary version of Edge</a> and see that Earth works quite well.</p>
+<h3 id="chrome:">Chrome: <a class="w-headline-link" href="#chrome:" aria-hidden="true">#</a></h3>
+<p>Chrome has strong support for WebAssembly, including multi-threading on desktop, so you can expect Earth to run smoother as a result. However, we look forward to Chrome adding support for dynamic memory allocation with multi-threading in WebAssembly. Until then, Earth may fail to start on devices with limited amounts of memory (such as 32-bit machines).</p>
+<h3 id="firefox:">Firefox: <a class="w-headline-link" href="#firefox:" aria-hidden="true">#</a></h3>
+<p>Firefox offers good support for WebAssembly, but has disabled support for multi-threading. As a result, you can expect a slower experience with Earth. We look forward to Mozilla bringing back support for multi-threading in future versions. On the upside, Firefox does support dynamic memory allocation.</p>
+<h3 id="opera:">Opera: <a class="w-headline-link" href="#opera:" aria-hidden="true">#</a></h3>
+<p>Opera is based on Chromium just as Chrome is, along with upcoming versions of Edge. However, the current version of Opera only offers single-threaded support of WebAssembly. Earth does run in Opera, but at a somewhat degraded experience. Hopefully newer versions of Opera will have support for multi-threading and more robust WebAssembly support.</p>
+<h3 id="safari:">Safari: <a class="w-headline-link" href="#safari:" aria-hidden="true">#</a></h3>
+<p>Safari has a strong implementation of WebAssembly, but it lacks full support for WebGL2. Therefore, Earth with WebAssembly does not run in Safari. Specifically, some of our shaders require GLSL 1.2. We hope that Earth will be available on Safari as well, once better support for WebGL2 is added.</p>
+<h2 id="looking-forward-to-more-adoption-of-webassembly-features">Looking forward to more adoption of WebAssembly features <a class="w-headline-link" href="#looking-forward-to-more-adoption-of-webassembly-features" aria-hidden="true">#</a></h2>
+<p>It’s been a long road to make Earth available on the web. About six years ago, we started with an initial <a href="http://asmjs.org/">asm.js</a>-based internal demo that was maintained and expanded over the years. It was then converted into a WebAssembly build of Earth, as WebAssembly became the W3C adopted standard.</p>
+<p>We still have a ways to go for WebAssembly and Earth. Specifically, we’d like to move to the LLVM backend using Emscripten (the toolchain to generate WebAssembly out of C++ code). This change will enable future SIMD support, as well as stronger debugging tools like source maps for native code. Other things we hope to see are adoption of <a href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas">OffscreenCanvas</a> and full support for dynamic memory allocation in WebAssembly. But we know we’re on the right track: WebAssembly is the long-term future for Earth on the web.</p>
+<p>Please take a moment to try our <a href="https://g.co/earth/beta">beta</a>. Let us know how it works for you by leaving feedback directly in Earth.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 20, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/earth-webassembly/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/web-components-io-2019/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Web components: the secret ingredient helping power the web
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

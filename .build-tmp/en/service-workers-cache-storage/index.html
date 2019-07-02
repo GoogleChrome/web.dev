@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Service workers and the Cache Storage API</title>
+    <meta name="description" content="The browser&#39;s HTTP cache is your first line of defense. It&#39;s not necessarily
+the most powerful or flexible approach, and you have limited control over the
+lifetime of cached responses. But there are several rules of thumb that give
+you a sensible caching implementation without much work, so you should always
+try to follow them.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Service%20workers%20and%20the%20Cache%20Storage%20API&amp;url=https%3A%2F%2Fweb.dev%2Fservice-workers-cache-storage%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/reliable
+    >
+      Network reliability
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Service workers and the Cache Storage API</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/jeffposnick.jpg"
+    alt="Jeff Posnick"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jeff Posnick</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/jeffposnick">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/jeffposnick">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@jeffposnick">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>You're locked in a struggle for network reliability. The browser's HTTP cache is
+your first line of defense, but as you've learned, it's only really effective
+when loading versioned URLs that you've previously visited. On its own, the HTTP
+cache is not enough.</p>
+<p>Fortunately, two newer tools are available to help turn the tide in your favor:
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">service workers</a>
+and the
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage">Cache Storage API</a>.
+Since they're so often used together, it's worth learning about them both at the
+same time.</p>
+<h2 id="service-workers">Service workers <a class="w-headline-link" href="#service-workers" aria-hidden="true">#</a></h2>
+<p>A service worker is built into the browser and controlled by a bit of extra
+JavaScript code that you are responsible for creating. You deploy this alongside
+the other files that make up your actual web application.</p>
+<p>A service worker has some special powers—among other duties, it patiently waits
+for your web app to make an outgoing request, and then springs into action by
+intercepting it. What the service worker does with this intercepted request is
+up to you!</p>
+<p>For some requests, the best course of action might be just to allow the request
+to continue on to the network, just like what would happen if there were no
+service worker at all.</p>
+<p>For other requests, though, you can take advantage of something more flexible
+than the browser's HTTP cache, and return a reliably fast response without
+having to worry about the network. That entails using the other piece of the
+puzzle: the Cache Storage API.</p>
+<h2 id="the-cache-storage-api">The Cache Storage API <a class="w-headline-link" href="#the-cache-storage-api" aria-hidden="true">#</a></h2>
+<p>The Cache Storage  API opens up a whole new range of possibilities, by giving
+developers complete control over the contents of the cache. Instead of relying
+on a combination of HTTP headers and the browser's built-in <a href="https://httpwg.org/specs/rfc7234.html#heuristic.freshness">heuristics</a>,
+the Cache
+Storage API exposes a code-driven approach to caching. The Cache Storage API
+proves very useful when called from your service worker's JavaScript code.</p>
+<h3 id="wait...-there's-another-cache-to-think-about-now">Wait… there's another cache to think about now? <a class="w-headline-link" href="#wait...-there's-another-cache-to-think-about-now" aria-hidden="true">#</a></h3>
+<p>You're probably asking yourself questions like &quot;Do I still need to configure my
+HTTP headers?&quot; and &quot;What can I do with this new cache that wasn't possible with
+the HTTP cache?&quot; Don't worry—those are natural reactions.</p>
+<p>It's still recommended that you configure the <code>Cache-Control</code> headers on your web
+server, even when you know that you're using the Cache Storage API. You can
+usually get away with setting <code>Cache-Control: no-cache</code> for unversioned URLs,
+and/or <code>Cache-Control: max-age=31536000</code> for URLs that contain versioning
+information, like hashes.</p>
+<p>When populating the Cache Storage API cache, the browser
+<a href="https://jakearchibald.com/2016/caching-best-practices/#the-service-worker-the-http-cache-play-well-together-dont-make-them-fight">defaults to checking for existing entries</a>
+in the HTTP cache, and uses those if found. If you're adding versioned URLs to
+the Cache Storage API cache, the browser avoids an additional network request. The
+flip side of this is that if you're using misconfigured <code>Cache-Control</code> headers,
+like specifying a long-lived cache lifetime for an unversioned URL, you can end
+up
+<a href="https://jakearchibald.com/2016/caching-best-practices/#a-service-worker-can-extend-the-life-of-these-bugs">making things worse</a>
+by adding that stale content to the Cache Storage API. Getting your HTTP cache
+behavior sorted is a prerequisite for effectively using the Cache Storage API.</p>
+<p>As for what's now possible with this new API, the answer is: a lot. Some common
+uses that would be difficult or impossible with just the HTTP cache include:</p>
+<ul>
+<li>Use a &quot;refresh in the background&quot; approach to cached content, known as
+stale-while-revalidate.</li>
+<li>Impose a cap on the maximum number of assets to cache, and implement a
+custom expiration policy to remove items once that limit is reached.</li>
+<li>Compare previously cached and fresh network responses to see if
+anything's changed, and enable the user to update content (with a button,
+for example)  when data has actually been updated.</li>
+</ul>
+<h3 id="api-nuts-and-bolts">API nuts and bolts <a class="w-headline-link" href="#api-nuts-and-bolts" aria-hidden="true">#</a></h3>
+<p>There are some things to keep in mind about the API's design:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request"><code>Request</code></a>
+objects are used as the unique keys when reading and writing to these
+caches. As a convenience, you can pass in a URL string like
+<code>'https://example.com/index.html'</code> as the key instead of an actual
+<code>Request</code> object, and the API will automatically handle that for you.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Response"><code>Response</code></a>
+objects are used as the values in these caches.</li>
+<li>The <code>Cache-Control</code> header on a given <code>Response</code> is effectively ignored
+when caching data. There are no automatic, built-in expiration or freshness
+checks, and once you store an item in the cache, it will persist until your
+code explicitly removes it. (There are libraries to simplify cache
+maintenance on your behalf—they'll be covered later on in this series.)</li>
+<li>Unlike with older, synchronous APIs such as
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage"><code>LocalStorage</code></a>,
+all Cache Storage API operations are asynchronous.</li>
+</ul>
+<h2 id="a-quick-detour:-promises-and-asyncawait">A quick detour: promises and async/await <a class="w-headline-link" href="#a-quick-detour:-promises-and-asyncawait" aria-hidden="true">#</a></h2>
+<p>Service workers and the Cache Storage API use
+<a href="https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)">asynchronous programming concepts</a>.
+In particular, they rely heavily on promises to represent the future result of
+async operations. You should familiarize yourself with
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">promises</a>,
+and the related
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"><code>async</code></a>/<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await"><code>await</code></a>
+syntax, before diving in.</p>
+<div class="w-aside w-aside--codelab">
+<p><strong>Try it!</strong>
+<a href="/codelab-service-workers">Make an application reliable by registering a service worker</a>.</p>
+</div>
+<h2 id="don't-deploy-that-code...-yet">Don't deploy that code… yet <a class="w-headline-link" href="#don't-deploy-that-code...-yet" aria-hidden="true">#</a></h2>
+<p>While they provide an important foundation, and can be used as-is, both service
+workers and the Cache Storage API are effectively lower-level building blocks,
+with a number of edge cases and &quot;gotchas&quot;. There are some higher-level tools
+that can help smooth the difficult bits of those APIs, and provide all you need
+to build a production-ready service worker. The next guide covers one such tool:
+<a href="https://developers.google.com/web/tools/workbox/">Workbox</a>.</p>
+<div class="w-aside w-aside--success">
+<p><strong>Success:</strong>
+Learn while having fun. Check out the new Service Workies game:
+<a href="https://serviceworkies.mastery.games/">Release Preview out now</a>.</p>
+</div>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/reliable/service-workers-cache-storage/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/reliable"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/workbox/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Workbox your high-level service worker toolkit
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

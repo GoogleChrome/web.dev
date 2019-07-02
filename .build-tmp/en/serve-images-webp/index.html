@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Use WebP images</title>
+    <meta name="description" content="WebP images are smaller than their JPEG and PNG counterparts - usually on the
+magnitude of a 25-35% reduction in filesize. This decreases page sizes and
+improves performance.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Use%20WebP%20images&amp;url=https%3A%2F%2Fweb.dev%2Fserve-images-webp%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Use WebP images</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/katiehempenius.jpg"
+    alt="Katie Hempenius"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Katie Hempenius</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/katiehempenius">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/khempenius">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@khempenius">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <h2 id="why-should-you-care">Why should you care? <a class="w-headline-link" href="#why-should-you-care" aria-hidden="true">#</a></h2>
+<p>WebP images are smaller than their JPEG and PNG counterparts - usually on the
+magnitude of a 25-35% reduction in filesize. This decreases page sizes and
+improves performance.</p>
+<ul>
+<li>YouTube found that switching to WebP thumbnails resulted in <a href="https://www.youtube.com/watch?v=rqXMwLbYEE4">10%
+faster page loads</a>.</li>
+<li>Facebook
+<a href="https://code.fb.com/android/improving-facebook-on-android/">experienced</a> a
+25-35% filesize savings for JPEGs and an 80% filesize savings for PNGs when
+they switched to using WebP.</li>
+</ul>
+<p>WebP is an excellent replacement for JPEG, PNG, and GIF images. In addition,
+WebP offers both lossless and lossy compression. In lossless compression no data
+is lost. Lossy compression reduces file size, but at the expense of possibly
+reducing image quality.</p>
+<h2 id="convert-images-to-webp">Convert images to WebP <a class="w-headline-link" href="#convert-images-to-webp" aria-hidden="true">#</a></h2>
+<p>People generally use one of the following approaches for converting their images
+to WebP: the
+<a href="https://developers.google.com/speed/webp/docs/using">cwebp command-line tool</a>
+or the <a href="https://github.com/imagemin/imagemin-webp">Imagemin WebP plugin</a> (npm
+package).
+The Imagemin WebP plugin is generally the best choice if your project uses build
+scripts or build tools (e.g. Webpack or Gulp), whereas the CLI is a good choice
+for simple projects or if you'll only need to convert images once.</p>
+<p>When you convert images to WebP, you have the option to set a wide variety of
+compression settings—but for most people the only thing you'll ever need to
+care about is the quality setting. You can specify a quality level from 0
+(worst) to 100 (best). It's worth playing around with this find
+which level is the right tradeoff between image quality and filesize for your
+needs.</p>
+<h3 id="use-cwebp">Use cwebp <a class="w-headline-link" href="#use-cwebp" aria-hidden="true">#</a></h3>
+<p>Convert a single file, using cwebp's default compression settings:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">cwebp images/flower.jpg -o images/flower.webp</span></code></pre>
+<p>Convert a single file, using a quality level of <code>50</code>:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">cwebp -q 50 images/flower.jpg -o images/flower.webp</span></code></pre>
+<p>Convert all files in a directory:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token keyword">for</span> <span class="token function">file</span> <span class="token keyword">in</span> images/*<span class="token punctuation">;</span> <span class="token keyword">do</span> cwebp <span class="token string">"<span class="token variable">$file</span>"</span> -o <span class="token string">"<span class="token variable">${file%.*}</span>.webp"</span><span class="token punctuation">;</span> <span class="token keyword">done</span></span></code></pre>
+<h3 id="use-imagemin">Use Imagemin <a class="w-headline-link" href="#use-imagemin" aria-hidden="true">#</a></h3>
+<p>The Imagemin WebP plugin can be used by itself or with your favorite build tool
+(Webpack/Gulp/Grunt/etc.). This usually involves adding ~10 lines of code to a
+build script or the configuration file for your build tool.
+Here are examples of how to do that for
+<a href="https://glitch.com/~webp-webpack">Webpack</a>,
+<a href="https://glitch.com/~webp-gulp">Gulp</a>, and
+<a href="https://glitch.com/~webp-grunt">Grunt</a>.</p>
+<p>If you are not using one of those build tools, you can use Imagemin by itself as
+a Node script. This script will convert the files in the <code>images</code> directory and
+save them in the <code>compressed_images</code> directory.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> imagemin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'imagemin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> imageminWebp <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'imagemin-webp'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token function">imagemin</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'images/*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'compressed_images'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">imageminWebp</span><span class="token punctuation">(</span><span class="token punctuation">{</span>quality<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Done!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="serve-webp-images">Serve WebP images <a class="w-headline-link" href="#serve-webp-images" aria-hidden="true">#</a></h2>
+<p>If your site only supports WebP compatible
+<a href="https://caniuse.com/#search=webp">browsers</a>, you can stop reading. Otherwise,
+serve WebP to newer browsers and a fallback image to older browsers:</p>
+<p><strong>Before:</strong></p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flower.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span></code></pre>
+<p><strong>After:</strong></p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>picture</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/webp<span class="token punctuation">"</span></span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flower.webp<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/jpeg<span class="token punctuation">"</span></span> <span class="token attr-name">srcset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flower.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>flower.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>picture</span><span class="token punctuation">></span></span></span></code></pre>
+<p>The
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture"><code>&lt;picture&gt;</code></a>,
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source"><code>&lt;source&gt;</code></a>,
+and <code>&lt;img&gt;</code> tags, including how they are ordered relative to each other, all
+interact to achieve this end result.</p>
+<h3 id="picture">picture <a class="w-headline-link" href="#picture" aria-hidden="true">#</a></h3>
+<p>The <code>&lt;picture&gt;</code> tag provides a wrapper for zero or more <code>&lt;source&gt;</code> tags and one <code>&lt;img&gt;</code> tag.</p>
+<h3 id="source">source <a class="w-headline-link" href="#source" aria-hidden="true">#</a></h3>
+<p>The <code>&lt;source&gt;</code> tag specifies a media resource.</p>
+<p>The browser uses the first listed source that's in a format it supports. If the browser does not support any of the formats listed in the <code>&lt;source&gt;</code> tags, it falls back to loading the image specified by the <code>&lt;img&gt;</code> tag.</p>
+<div class="w-aside w-aside--gotchas">
+<strong>Gotchas!</strong> <ul>
+<li>
+<p>The <code>&lt;source&gt;</code> tag for the &quot;preferred&quot; image format (in this case that is WebP) should be listed first, before other <code>&lt;source&gt;</code> tags.</p>
+</li>
+<li>
+<p>The value of the <code>type</code> attribute should be the MIME type corresponding to the image format. An image's <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types">MIME type</a> and its file extension are often similar, but they aren't necessarily the same thing (e.g. <code>.jpg</code> vs. <code>image/jpeg</code>).</p>
+</li>
+</ul>
+</div>
+<h3 id="img">img <a class="w-headline-link" href="#img" aria-hidden="true">#</a></h3>
+<p>The <code>&lt;img&gt;</code> tag is what makes this code work on browsers
+that don't support the <code>&lt;picture&gt;</code> tag.
+If a browser does not support the <code>&lt;picture&gt;</code> tag, it will
+ignore the tags it doesn't support. Thus, it only &quot;sees&quot; the
+<code>&lt;img src=&quot;flower.jpg&quot; alt=&quot;&quot;&gt;</code> tag and loads that image.</p>
+<div class="w-aside w-aside--gotchas">
+<strong>Gotchas!</strong> <ul>
+<li>The <code>&lt;img&gt;</code> tag should always be included, and it should always be listed last, after all <code>&lt;source&gt;</code> tags.</li>
+<li>The resource specified by the <code>&lt;img&gt;</code> tag should be in a universally supported format (e.g. JPEG), so it can be used as a fallback.</li>
+</ul>
+</div>
+<h2 id="verify-webp-usage">Verify WebP usage <a class="w-headline-link" href="#verify-webp-usage" aria-hidden="true">#</a></h2>
+<p>Lighthouse can be used to verify that all images on your site are being served
+using WebP. Run the Lighthouse Performance Audit (<strong>Lighthouse &gt; Options &gt;
+Performance</strong>) and look for the results of the <strong>Serve images in next-gen
+formats</strong> audit. Lighthouse will list any images that are not being served in
+WebP.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/serve-images-webp/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+      <div class="w-codelabs-callout">
+      <div class="w-codelabs-callout__header">
+        <h2 class="w-codelabs-callout__lockup">Codelabs</h2>
+        <div class="w-codelabs-callout__headline">See it in action</div>
+        <div class="w-codelabs-callout__blurb">
+          Learn more and put this guide into action.
+        </div>
+      </div>
+      <ul class="w-unstyled-list w-codelabs-callout__list">
+        <li class="w-codelabs-callout__listitem">
+  <a
+    class="w-codelabs-callout__link"
+    href="/codelab-serve-images-webp/"
+  >
+    Creating WebP Images with the Command Line
+  </a>
+</li>
+      </ul>
+    </div>
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/apply-instant-loading-with-prpl/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Apply instant loading with the PRPL pattern
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

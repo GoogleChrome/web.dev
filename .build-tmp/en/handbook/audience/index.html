@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audience</title>
+    <meta name="description" content="Definitions of the the key personas for web.dev and advice about how to write for them.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Audience&amp;url=https%3A%2F%2Fweb.dev%2Fhandbook%2Faudience%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/handbook
+    >
+      Content handbook
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Audience</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 26, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mfriesenhahn.jpg"
+    alt="Michael Friesenhahn"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Michael Friesenhahn</cite>
+    <ul class="w-author__link-list">
+      
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mfriesenhahn">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <h2 id="who-is-the-web.dev-audience">Who is the web.dev audience? <a class="w-headline-link" href="#who-is-the-web.dev-audience" aria-hidden="true">#</a></h2>
+<p>web.dev readers come with a variety of needs and preferences based on several characteristics:</p>
+<ul>
+<li>Prior knowledge about the domains of web development (accessibility, performance, etc.)</li>
+<li>Role (hobbyist, student, data scientist, frontend engineer, etc.)</li>
+<li>Organization (independent contractor, startup, large company in a non-tech industry, etc.)</li>
+<li>Focus on a business vertical (e-commerce, etc.)</li>
+<li>Preferences for frameworks and tools (e.g., React, Gulp, webpack, etc.)</li>
+<li>Purpose for reading (fix a Lighthouse audit, solve a specific problem, improve general skills, etc.)</li>
+</ul>
+<p>Trying to address all permutations of those characteristics would be unmanageable, so we've captured the most common clusters in several personas.</p>
+<h3 id="metrics-initiated-problem-solver-(alice)">Metrics-initiated problem solver (Alice) <a class="w-headline-link" href="#metrics-initiated-problem-solver-(alice)" aria-hidden="true">#</a></h3>
+<p>Alice is a developer working in a team for a large e-commerce website. The site's homepage received a low Lighthouse score for performance. Alice has been assigned to resolve the top three opportunities for improving the performance in the next two weeks, with the first solution due later today.</p>
+<ul>
+<li><strong>Prior knowledge:</strong> Alice is familiar with DevTools and understands the Lighthouse metrics well enough to tell whether a resource is relevant to her problem. Alice also has enough experience to be able to apply a concept from a generic sample code to her specific problem.</li>
+<li><strong>Entry point:</strong> A &quot;Learn more&quot; link in a Lighthouse performance audit takes Alice to the related post on web.dev.</li>
+<li><strong>Goal:</strong> Find a solution to a low Lighthouse score that is directly applicable to her existing project as quickly as possible.</li>
+</ul>
+<h3 id="goal-driven-problem-solver-(damir)">Goal-driven problem solver (Damir) <a class="w-headline-link" href="#goal-driven-problem-solver-(damir)" aria-hidden="true">#</a></h3>
+<p>Damir is a developer at a small fintech startup. His boss has asked him to help turn their company's site into a PWA. After trying to enable some offline functionality, Damir realizes through a StackOverflow post (<a href="https://stackoverflow.com/questions/50777677/pwa-offline-capability-on-data-that-frecuently-changes">example</a>) that the best bet to solving his problem is to create a service worker. He needs to learn how to create a service worker that will work with his company's existing site and the dynamic data that it handles.</p>
+<ul>
+<li><strong>Prior knowledge:</strong> Damir is a more advanced developer. He can quickly skim documentation to find the code snippets and examples relevant to his use case.</li>
+<li><strong>Entry point:</strong> Damir searches for &quot;service worker for PWA,&quot; and one of the first search results is a post in the web.dev &quot;<a href="/installable">Installable</a>&quot; collection.</li>
+<li><strong>Goal:</strong> Find a specific, implementable solution to an issue as quickly as possible. (Unlike Alice, Damir is trying to fix a problem identified by his team or manager rather than by Lighthouse.)</li>
+</ul>
+<h3 id="topic-deep-diver-(andrew)">Topic deep-diver (Andrew) <a class="w-headline-link" href="#topic-deep-diver-(andrew)" aria-hidden="true">#</a></h3>
+<p>Andrew is a frontend developer at a startup whose main product is a peer-to-peer resource sharing web app.  He wants to become the go-to accessibility person on the engineering team since accessibility is an issue he feels is important but knows very little about. Andrew has signed up to give a 30-minute accessibility introductory talk to his team in two weeks.</p>
+<ul>
+<li><strong>Prior knowledge:</strong> Andrew has heard of accessibility and knows that it's about helping users with special needs, but he doesn't have a fully accurate sense of who those users are or how they interact with his product.</li>
+<li><strong>Entry point:</strong> Andrew's searches for accessibility, and one of the first search results is the landing page for the &quot;<a href="/accessible">Accessible to all</a>&quot; collection.</li>
+<li><strong>Goal:</strong> Master the basics of web accessibility and find high-quality resources to learn from and share with fellow engineers.</li>
+</ul>
+<h3 id="demo-builder-(emily)">Demo builder (Emily) <a class="w-headline-link" href="#demo-builder-(emily)" aria-hidden="true">#</a></h3>
+<p>Emily works as a software engineer. In her free time, she likes experimenting with the most recent web development technologies and tools. Emily has no experience with portals and wants to try adding seamless page transitions to a prototype on her personal portfolio.</p>
+<ul>
+<li><strong>Prior knowledge:</strong> Emily has extensive web development experience and is aware of the technology she wants to learn (portals in this case) but doesn't know any details about how to use it.</li>
+<li><strong>Entry point:</strong> Emily has used web.dev before, so she visits the site homepage and searches for &quot;portals.&quot; She finds a relevant post on the <a href="/blog">blog</a>.</li>
+<li><strong>Goal:</strong> Create a working prototype of a specific type of app or site (one using portals in this case) as quickly as possible.</li>
+</ul>
+<h3 id="new-developer-(jaimie)">New developer (Jaimie) <a class="w-headline-link" href="#new-developer-(jaimie)" aria-hidden="true">#</a></h3>
+<p>Jaimie first took a web development class at their local community college and is now a computer science student at a California state university. They are applying for internships to gain more hands-on experience, and they want to learn about the latest web development technologies to become a more competitive candidate.</p>
+<ul>
+<li><strong>Prior knowledge:</strong> Jaimie has taken several college-level computer science courses, but they've only covered the basics of HTML, CSS, and vanilla Javascript.</li>
+<li><strong>Entry point:</strong> Whether directed to the page through searching or at the recommendation of a friend or instructor, Jaimie arrives at the &quot;Getting Started&quot; collection (forthcoming) on web.dev.</li>
+<li><strong>Goal:</strong> Learn about the most recent web development tools and best practices to create a personal site from scratch to apply for industry jobs.</li>
+</ul>
+<h2 id="writing-to-the-audience">Writing to the audience <a class="w-headline-link" href="#writing-to-the-audience" aria-hidden="true">#</a></h2>
+<p>All posts and codelabs should be targeted to one of our personas (or more, if their needs overlap).</p>
+<p>That said, we want our content to address as much of our audience as we can. How do you do that in a given piece, especially when the needs of different readers compete? One way to address multiple audience segments is to provide multiple paths for a given topic. For example, you might write:</p>
+<ul>
+<li>A post using vanilla JavaScript, with associated codelabs using common frameworks to solve the same problem</li>
+<li>A post about optimizing images in general, with associated codelabs showing how to integrate image optimization into different build processes</li>
+<li>A post about how to address an issue most web developers will encounter, with sections at the end focused on solving the problem as it appears in particular business verticals</li>
+</ul>
+<p>Be mindful of your <a href="/handbook/voice">voice</a>. You want readers to feel they can trust the guidance you're giving. They should feel neither talked down to nor overwhelmed. Check out &quot;<a href="/handbook/effective-instruction#instruction-for-adult-learners">Instruction for adult learners</a>&quot; in the &quot;<a href="/handbook/effective-instruction">Writing effective instruction</a>&quot; post.</p>
+<h3 id="value-propositions">Value propositions <a class="w-headline-link" href="#value-propositions" aria-hidden="true">#</a></h3>
+<p>A value proposition is a promise to readers that a piece of content will be useful—that is, provide value—to them. Create a value proposition for everything you write by crafting titles, subtitles, and descriptions that tell your target audience why your post or codelab is worth reading. Some common strategies:</p>
+<ul>
+<li>Say what readers will learn or understand by reading the piece</li>
+<li>Say what a piece will let readers do</li>
+<li>Say how a technique or tool will improve the experience of readers' users</li>
+</ul>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 26, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/audience/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/handbook"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/handbook/grammar/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Grammar, mechanics, and usage
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

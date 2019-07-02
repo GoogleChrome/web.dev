@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fix robots.txt errors</title>
+    <meta name="description" content="The robots.txt file tells search engines which URLs of your site they can
+crawl. An invalid robots.txt file can cause problems with indexing.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Fix%20robots.txt%20errors&amp;url=https%3A%2F%2Fweb.dev%2Ffix-robot-errors%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/discoverable
+    >
+      Easily discoverable
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Fix robots.txt errors</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/ekharvey.jpg"
+    alt="Lizzi Harvey"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Lizzi Harvey</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/HarveyLizzi">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/ekharvey">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@ekharvey">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <h2 id="why-does-this-matter">Why does this matter? <a class="w-headline-link" href="#why-does-this-matter" aria-hidden="true">#</a></h2>
+<p>The <a href="https://developers.google.com/search/reference/robots_txt">robots.txt file</a>
+tells search engines which URLs of your site they can crawl. An invalid
+robots.txt file can cause two general types of problems:</p>
+<ul>
+<li>Not crawling public pages, causing your pages to not show up in search
+results.</li>
+<li>Unwanted crawling of pages, exposing information you may not want shown
+in search results.</li>
+</ul>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<p>Lighthouse displays the following failed audit if there's an issue with your
+robots.txt file: <strong>robots.txt is not valid</strong>.</p>
+<p>Most Lighthouse audits only apply to the page that you're currently on. However,
+since robots.txt is defined at the host-name level, this audit applies to your
+entire domain or subdomain.</p>
+<h2 id="make-sure-the-robots.txt-doesn't-return-http-50x">Make sure the robots.txt doesn't return HTTP 50X <a class="w-headline-link" href="#make-sure-the-robots.txt-doesn't-return-http-50x" aria-hidden="true">#</a></h2>
+<p>If the server returns a server error (HTTP <code>50X</code> result code) for the
+robots.txt, search engines won't know which URLs are allowed to be crawled or
+not. They may stop all crawling of the website, which would prevent new content
+from being indexed. To check the HTTP status code, open the robots.txt file in
+Chrome and <a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#analyze">check the request in Chrome
+DevTools</a>.</p>
+<h2 id="make-sure-the-robots.txt-file-is-smaller-than-500-kb">Make sure the robots.txt file is smaller than 500 KB <a class="w-headline-link" href="#make-sure-the-robots.txt-file-is-smaller-than-500-kb" aria-hidden="true">#</a></h2>
+<p>Search engines may stop processing robots.txt files when they get too large.
+If a search engine stops processing in the middle of a directive, it's
+impossible to follow that directive properly, and could result in the search
+engine getting needlessly confused. Also, large robots.txt files are a hassle
+to maintain.</p>
+<p>One way to make a robots.txt file smaller is to focus less on individually
+excluded pages, and more on broader patterns. For example, if you need to block
+crawling of PDF files, don't list these files with individual disallow
+directives. Instead, use a broader match like <code>disallow: /*.pdf</code> to disallow
+crawling of all URLs containing <code>.pdf</code>.</p>
+<h2 id="review-the-format">Review the format <a class="w-headline-link" href="#review-the-format" aria-hidden="true">#</a></h2>
+<p>Review the format of the robots.txt file. Only empty lines, comments, and
+directives matching the &quot;name: value&quot; format are allowed.</p>
+<p>Make sure <code>allow</code> and <code>disallow</code> values are either empty or start with <code>/</code> or
+<code>*</code>. Make sure they don't use <code>$</code> in the middle of a value (for example,
+<code>allow: /file$html</code>). Here's an example:</p>
+<pre><code>user-agent: *
+disallow: /downloads/
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Recommended
+  </span>
+  <p>—
+  Do this</p>
+</div>
+<pre><code>user-agent: *
+
+# missing &quot;/&quot;
+disallow: downloads
+
+# incorrect directive name
+dis-allow downloads
+
+# invalid character in the value provided
+disallow: /OffersFor$5
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Not recommended
+  </span>
+  <p>—
+  Don't do this</p>
+</div>
+<p>Use comments in the robots.txt file to explain what you're trying to allow or
+disallow. While robots.txt directives look simple, in combination they can be
+surprisingly complex. Here's an example of how to use comments in a robots.txt
+file:</p>
+<pre><code>user-agent: *
+
+# block crawling of all download URLs
+disallow: /downloads/
+
+# allow crawling of our whitepaper as per marketing team's request
+allow: /downloads/whitepaper.pdf
+</code></pre>
+<h2 id="make-sure-there-are-no-allow-or-disallow-directives-before-user-agent">Make sure there are no <code>allow</code> or <code>disallow</code> directives before <code>user-agent</code> <a class="w-headline-link" href="#make-sure-there-are-no-allow-or-disallow-directives-before-user-agent" aria-hidden="true">#</a></h2>
+<pre><code># start of file
+user-agent: *
+disallow: /downloads/
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Recommended
+  </span>
+  <p>—
+  Do this</p>
+</div>
+<pre><code># start of file
+disallow: /downloads/
+
+user-agent: magicsearchbot
+allow: /
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Not recommended
+  </span>
+  <p>—
+  Don't do this</p>
+</div>
+<p>All <code>allow</code> and <code>disallow</code> directives must apply to specific user-agents (also
+known as crawlers), so they are only valid if they're in a section for a given
+user-agent. For user-agents, crawlers only use the section with the most
+specific user-agent to determine which URLs are disallowed from crawling.</p>
+<p>For example, if you have <code>user-agent: *</code> and <code>user-agent: magicsearchbot</code>
+sections, MagicSearchBot won't follow any of the directives in the generic
+(<code>user-agent: *</code>) section and will only follow the directive in its own section.</p>
+<h2 id="make-sure-there's-a-value-for-user-agent">Make sure there's a value for <code>user-agent</code> <a class="w-headline-link" href="#make-sure-there's-a-value-for-user-agent" aria-hidden="true">#</a></h2>
+<p>In order for a search engine crawler to find the appropriate user-agent section
+to follow, you must provide a user-agent name, or use <code>*</code> to match all otherwise
+unmatched crawlers. Search engines will generally publish the user-agent names
+that they use; for example, here's
+<a href="https://support.google.com/webmasters/answer/1061943">Google's list of user-agents used for crawling</a>.</p>
+<pre><code>user-agent: *
+disallow: /downloads/
+
+user-agent: magicsearchbot
+disallow: /uploads/
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Recommended
+  </span>
+  <p>—
+  Do this</p>
+</div>
+<pre><code>user-agent:
+disallow: /downloads/
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Not recommended
+  </span>
+  <p>—
+  Don't do this</p>
+</div>
+<h2 id="provide-an-absolute-url-for-sitemap-with-httphttpsftp-scheme">Provide an absolute URL for <code>sitemap</code> with http/https/ftp scheme <a class="w-headline-link" href="#provide-an-absolute-url-for-sitemap-with-httphttpsftp-scheme" aria-hidden="true">#</a></h2>
+<p><a href="https://sitemaps.org/">Sitemap</a> files are a great way to let search engines
+know about the pages on a website. A sitemap file generally includes a list of
+the URLs on your website, together with information about when they were last
+changed. If you choose to refer to submit a sitemap file through the robots.txt
+file, make sure to use a <a href="https://tools.ietf.org/html/rfc3986#page-27">fully-qualified/absolute
+URL</a>.</p>
+<pre><code>sitemap: https://example.com/sitemap-file.xml
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Recommended
+  </span>
+  <p>—
+  Do this</p>
+</div>
+<pre><code>sitemap: /sitemap-file.xml
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Not recommended
+  </span>
+  <p>—
+  Don't do this</p>
+</div>
+<h2 id="add-additional-control-(optional-step)">Add additional control (optional step) <a class="w-headline-link" href="#add-additional-control-(optional-step)" aria-hidden="true">#</a></h2>
+<p>See
+<a href="https://developers.google.com/search/reference/robots_meta_tag">Robots meta tag and X-Robots-Tag HTTP header specifications</a>
+for details about exactly how you can configure your meta tags and HTTP headers
+to get more control over how search engines crawl your page. As mentioned in the
+beginning, don't use robots.txt as a way of limiting access to your private
+content.</p>
+<p>Keep in mind that robots.txt prevents crawling, and with that, the indexing of
+the content, but URLs can be indexed without any known content. If you need to
+keep URLs from appearing in search (rather than just preventing crawling, or
+preventing indexing of the content on the pages), use the
+<a href="https://developers.google.com/search/reference/robots_meta_tag"><code>noindex</code> robots meta tag</a>
+instead.</p>
+<h2 id="remember-to-keep-it-simple">Remember to keep it simple <a class="w-headline-link" href="#remember-to-keep-it-simple" aria-hidden="true">#</a></h2>
+<p>A robots.txt file can be surprisingly complex and hard to understand by us
+humans. Keep things as simple as possible to avoid search engines having to
+guess at the outcome. Take advantage of the various robots.txt testing tools
+available. Put as much of the page-level logic into the pages themselves (using
+authentication or robots meta tags as needed) to help with keeping the
+robots.txt file in an easily understandable size.</p>
+<h2 id="verify">Verify <a class="w-headline-link" href="#verify" aria-hidden="true">#</a></h2>
+<p>Run the Lighthouse SEO Audit (<strong>Lighthouse &gt; Options &gt; SEO</strong>) and look for the
+results of the audit <strong>robots.txt is not valid</strong>.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/discoverable/fix-robot-errors/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/discoverable"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/fix-small-fonts/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Fix small font sizes
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>web.dev components</title>
+    <meta name="description" content="Learn how to use web.dev&#39;s UI and content components.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=web.dev%20components&amp;url=https%3A%2F%2Fweb.dev%2Fhandbook%2Fweb-dev-components%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/handbook
+    >
+      Content handbook
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">web.dev components</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 26, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/robdodson.jpg"
+    alt="Rob Dodson"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rob Dodson</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rob_dodson">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/robdodson">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@robdodson">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mfriesenhahn.jpg"
+    alt="Michael Friesenhahn"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Michael Friesenhahn</cite>
+    <ul class="w-author__link-list">
+      
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mfriesenhahn">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <h2 id="source">Source <a class="w-headline-link" href="#source" aria-hidden="true">#</a></h2>
+<p>To see how to use each component, <a href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/web-dev-components/index.md">view this page's source on GitHub</a>.</p>
+<h2 id="sections">Sections <a class="w-headline-link" href="#sections" aria-hidden="true">#</a></h2>
+<ol>
+<li><a href="#asides">Asides</a></li>
+<li><a href="#blockquotes">Blockquotes</a></li>
+<li><a href="#buttons">Buttons</a></li>
+<li><a href="#columns">Columns</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#compare">Compare</a></li>
+<li><a href="#details">Details</a></li>
+<li><a href="#glitch">Glitch</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#instruction">Instruction</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#stats">Stats</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#video">Video</a></li>
+</ol>
+<h2 id="asides">Asides <a class="w-headline-link" href="#asides" aria-hidden="true">#</a></h2>
+<div class="w-aside w-aside--note">
+<p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Proin dictum a
+massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
+varius at. <code>Cras ligula lacus</code>, porta vitae maximus a, ultrices a mauris.
+<a href="#"><code>Vestibulum porta</code></a> dolor erat, vel molestie dolor posuere in. Nam vel
+elementum augue.</p>
+</div>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+<a href="#">This type of callout</a> suggests proceeding with caution.</p>
+</div>
+<div class="w-aside w-aside--warning">
+<p><strong>Warning:</strong>
+This type of callout is stronger than a Caution; it means &quot;Don't do
+this.&quot;</p>
+</div>
+<div class="w-aside w-aside--success">
+<p><strong>Success:</strong>
+This type of callout describes a successful action or an error-free
+status.</p>
+</div>
+<div class="w-aside w-aside--objective">
+<p><strong>Objective:</strong>
+This type of callout defines the goal of a procedure.</p>
+</div>
+<div class="w-aside w-aside--gotchas">
+<strong>Gotchas!</strong> <p>The value of the <code>type</code> attribute should be the MIME type corresponding to the
+image format. An image's MIME type and its file extension are often similar,
+but they aren't necessarily the same thing (e.g. <code>.jpg</code> vs. <code>image/jpeg</code>).</p>
+</div>
+<div class="w-aside w-aside--key-term">
+<p><strong>Key Term:</strong>
+This type of callout defines important terminology.</p>
+</div>
+<div class="w-aside w-aside--codelab">
+<p><strong>Try it!</strong>
+<a href="#">Using Imagemin with Grunt</a></p>
+</div>
+<h2 id="blockquotes">Blockquotes <a class="w-headline-link" href="#blockquotes" aria-hidden="true">#</a></h2>
+<blockquote class="w-blockquote">
+  <p class="w-blockquote__text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
+    a massa sit amet ullamcorper.
+  </p>
+  <cite class="w-blockquote__cite">
+    by Jon Doe
+  </cite>
+</blockquote>
+<h2 id="buttons">Buttons <a class="w-headline-link" href="#buttons" aria-hidden="true">#</a></h2>
+<div>
+  <button class="w-button">
+    Text button
+  </button>
+  <button class="w-button w-button--with-icon" data-icon="file_download">
+    Text button with icon
+  </button>
+</div>
+<br>
+<div>
+  <button class="w-button w-button--primary">
+    Primary button
+  </button>
+  <button class="w-button w-button--primary w-button--with-icon" data-icon="file_download">
+    Primary button with icon
+  </button>
+</div>
+<br>
+<div>
+  <button class="w-button w-button--secondary">
+    Secondary button
+  </button>
+  <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
+    Secondary button with icon
+  </button>
+</div>
+<h2 id="columns">Columns <a class="w-headline-link" href="#columns" aria-hidden="true">#</a></h2>
+<div class="w-columns">
+  <figure class="w-figure w-figure--center">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+  <figure class="w-figure w-figure--center">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+</div>
+<h2 id="code">Code <a class="w-headline-link" href="#code" aria-hidden="true">#</a></h2>
+<p>See the &quot;<a href="/handbook/markup-code">Code</a>&quot; post.</p>
+<h2 id="compare">Compare <a class="w-headline-link" href="#compare" aria-hidden="true">#</a></h2>
+<pre><code>Bad code example
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Not recommended
+  </span>
+  <p>—
+  Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipiscing elit. Proin dictum a massa
+  sit amet ullamcorper. <code>Suspendisse</code> auctor ultrices ante, nec tempus nibh varius
+  at.</p>
+</div>
+<pre><code>Good code example
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Recommended
+  </span>
+  <p>—
+  Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipiscing elit. Proin dictum a massa
+  sit amet ullamcorper. <code>Suspendisse</code> auctor ultrices ante, nec tempus nibh varius
+  at.</p>
+</div>
+<h3 id="compare-with-custom-labels">Compare with custom labels <a class="w-headline-link" href="#compare-with-custom-labels" aria-hidden="true">#</a></h3>
+<pre><code>Bad code example
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Not helpful
+  </span>
+  <p>—
+  Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipiscing elit. Proin dictum a massa
+  sit amet ullamcorper. <code>Suspendisse</code> auctor ultrices ante, nec tempus nibh varius
+  at.</p>
+</div>
+<pre><code>Good code example
+</code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Helpful
+  </span>
+  <p>—
+  Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipiscing elit. Proin dictum a massa
+  sit amet ullamcorper. <code>Suspendisse</code> auctor ultrices ante, nec tempus nibh varius
+  at.</p>
+</div>
+<h2 id="details">Details <a class="w-headline-link" href="#details" aria-hidden="true">#</a></h2>
+<details>
+  <summary>Developer tools for Lighthouse</summary>
+  <p>
+    The browser uses the first listed source that's in a format it
+    supports. If the browser does not support any of the formats.
+  </p>
+</details>
+<h2 id="glitch">Glitch <a class="w-headline-link" href="#glitch" aria-hidden="true">#</a></h2>
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true"
+    alt="tabindex-zero on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h2 id="images">Images <a class="w-headline-link" href="#images" aria-hidden="true">#</a></h2>
+<p>See the &quot;<a href="/handbook/markup-media">Images and video</a>&quot; post.</p>
+<h2 id="instruction">Instruction <a class="w-headline-link" href="#instruction" aria-hidden="true">#</a></h2>
+<ul>
+<li>Click <strong>Remix to Edit</strong> to make the project editable.</li>
+<li>To preview the site, press <strong>View App</strong>. Then press <strong>Fullscreen</strong> <img src="/images/glitch/fullscreen.svg"
+alt="fullscreen" style="padding: 4px 8px; opacity: .5; border: 1px solid #c3c3c3; border-radius: 5px;">.</li>
+</ul>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.</p>
+<ol>
+<li>Click <strong>Tools</strong>.</li>
+<li>Click <strong>Logs</strong>.</li>
+<li>Click <strong>Console</strong>.</li>
+</ol>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.</p>
+<p>Press <code>Control+Shift+J</code> (or <code>Command+Option+J</code> on Mac) to open DevTools.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.</p>
+<ul>
+<li>Press <code>Control+Shift+J</code> (or <code>Command+Option+J</code> on Mac) to open DevTools.</li>
+<li>Click the <strong>Performance</strong> tab.</li>
+</ul>
+<div class="w-aside w-aside--note">
+<p>All DevTools panels are supported. View <a href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js">the element source</a> for details.</p>
+</div>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.</p>
+<ol>
+<li>Press <code>Control+Shift+J</code> (or <code>Command+Option+J</code> on Mac) to open DevTools.</li>
+<li>Click the <strong>Audits</strong> tab.</li>
+<li>Select the <strong>Performance</strong> checkbox.</li>
+<li>Click <strong>Run audits</strong>.</li>
+</ol>
+<div class="w-aside w-aside--note">
+<p>All Lighthouse audits are supported. View <a href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js">the element source</a> for details.</p>
+</div>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
+accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
+iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.</p>
+<h2 id="lists">Lists <a class="w-headline-link" href="#lists" aria-hidden="true">#</a></h2>
+<h3 id="ordered-list">Ordered list <a class="w-headline-link" href="#ordered-list" aria-hidden="true">#</a></h3>
+<ol>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper.</li>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper.</li>
+</ol>
+  <figure class="w-figure">
+    <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
+    <figcaption class="w-figcaption">
+      Filled screenshot.
+    </figcaption>
+  </figure>
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
+   sit amet ullamcorper.
+<h3 id="unordered-list">Unordered list <a class="w-headline-link" href="#unordered-list" aria-hidden="true">#</a></h3>
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper.</li>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper.</li>
+</ul>
+<h2 id="stats">Stats <a class="w-headline-link" href="#stats" aria-hidden="true">#</a></h2>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower cost per conversion</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Higher CTR</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">4<sub class="w-stat__sub">x</sub></p>
+    <p class="w-stat__desc">Faster load times</p>
+  </div>
+</div>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
+laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
+corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower cost per conversion</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Higher CTR</p>
+  </div>
+</div>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, numquam
+laboriosam reprehenderit aliquam possimus natus magnam nulla illo blanditiis
+corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!</p>
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower cost per conversion</p>
+  </div>
+</div>
+<h2 id="tables">Tables <a class="w-headline-link" href="#tables" aria-hidden="true">#</a></h2>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Image Format</th>
+        <th>Lossy Plugin(s)</th>
+        <th>Lossless Plugin(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>JPEG</td>
+        <td><a href="#">imagemin-mozjpeg</a></td>
+        <td><a href="#">imagemin-jpegtran</a></td>
+      </tr>
+      <tr>
+        <td>PNG</td>
+        <td><a href="#">imagemin-pngquant</a></td>
+        <td><a href="#">imagemin-optipng</a></td>
+      </tr>
+      <tr>
+        <td>GIF</td>
+        <td><a href="#">imagemin-giflossy</a></td>
+        <td><a href="#">imagemin-gifsicle</a></td>
+      </tr>
+      <tr>
+        <td>SVG</td>
+        <td><a href="#">Imagemin-svgo</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>WebP</td>
+        <td><a href="#">imagemin-webp</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+    <caption>Table 1 — Imagemin plugins for filetypes.</caption>
+  </table>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
+incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
+deleniti! Atque aliquam facilis labore odio similique provident illo culpa
+assumenda perspiciatis.
+</p>
+<div class="w-table-wrapper">
+  <table>
+    <caption>
+      Table 2 — Desktop analysis of doggos.io
+    </caption>
+    <tbody>
+      <tr>
+        <th>Desktop</th>
+        <th>FCP</th>
+        <th>TTI</th>
+      </tr>
+      <tr>
+        <td>Homepage</td>
+        <td>1,680 ms</td>
+        <td>5,550 ms</td>
+      </tr>
+      <tr>
+        <td>Results page</td>
+        <td>2,060 ms</td>
+        <td>6,690 ms</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
+incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
+deleniti! Atque aliquam facilis labore odio similique provident illo culpa
+assumenda perspiciatis.
+</p>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Before</th>
+        <th>After</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>@font-face {
+  font-family: Helvetica;
+}
+</code>
+        </td>
+        <td><code>@font-face {
+  font-family: Helvetica;
+  <strong>font-display: swap;</strong>
+}
+</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
+incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
+deleniti! Atque aliquam facilis labore odio similique provident illo culpa
+assumenda perspiciatis.
+</p>
+<div class="w-table-wrapper">
+  <table>
+    <tbody>
+      <tr>
+        <th>Network</th>
+        <th>Device</th>
+        <th>JS</th>
+        <th>Images</th>
+        <th>CSS</th>
+        <th>HTML</th>
+        <th>Fonts</th>
+        <th>Total</th>
+        <th>Time to Interactive budget</th>
+      </tr>
+      <tr>
+        <td>Slow 3G</td>
+        <td>Moto G4</td>
+        <td>100</td>
+        <td>30</td>
+        <td>10</td>
+        <td>10</td>
+        <td>20</td>
+        <td>~170 KB</td>
+        <td>5s</td>
+      </tr>
+      <tr>
+        <td>Slow 4G</td>
+        <td>Moto G4</td>
+        <td>200</td>
+        <td>50</td>
+        <td>35</td>
+        <td>30</td>
+        <td>30</td>
+        <td>~345 KB</td>
+        <td>3s</td>
+      </tr>
+      <tr>
+        <td>WiFi</td>
+        <td>Desktop</td>
+        <td>300</td>
+        <td>250</td>
+        <td>50</td>
+        <td>50</td>
+        <td>100</td>
+        <td>~750 KB</td>
+        <td>2s</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
+incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
+deleniti! Atque aliquam facilis labore odio similique provident illo culpa
+assumenda perspiciatis.
+</p>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Property</strong></th>
+        <th><strong>Use</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+        <code><strong>short_name</strong></code> (required)
+        </td>
+        <td>
+          Short human-readable name for the application. This is intended for when
+          there is insufficient space to display the full name of the web
+          application, like device homescreens.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>name</strong></code> (required)</td>
+        <td>Human-readable name for the site when displayed to the user.</td>
+      </tr>
+      <tr>
+        <td><code><strong>description</strong></code> (recommended)</td>
+        <td>General description of what the PWA does.</td>
+      </tr>
+      <tr>
+        <td><code><strong>icons</strong></code> (required)</td>
+        <td>
+          An array of image files that can serve as application icons. Chrome
+          requires a 192x192px and a 512x512px icon. Additional sizes are
+          optional, and recommended for those who want to ensure pixel perfect
+          icons.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>start_url</strong></code> (required)</td>
+        <td>
+          The URL that loads when a user launches the application. This has to be
+          a relative URL, relative to the manifest url.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>background_color</strong></code> (recommended)</td>
+        <td>
+          The background color used on the auto-generated splash screen when the
+          PWA is launched.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>display</strong></code> (required)</td>
+        <td>The developers' preferred display mode for the PWA.</td>
+      </tr>
+      <tr>
+        <td><code><strong>scope</strong></code> (recommended)</td>
+        <td>
+          The navigation scope of this website's context. This restricts what web
+          pages can be viewed while the manifest is applied. If the user navigates
+          outside the scope, it returns to a normal web page inside a browser
+          tab/window.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>theme_color</strong></code> (recommended)</td>
+        <td>
+          The default theme color for an application. This affects how the OS
+          displays the site. <br>
+          <ol>
+            <li>
+              On Android's task switcher, the theme color surrounds the site.
+            </li>
+            <li>On desktop, the theme color is used to style the title bar.</li>
+          </ol>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Dicta nam possimus doloribus minima repellendus!
+          <ul>
+            <li>
+              On Android's task switcher, the theme color surrounds the site.
+            </li>
+            <li>On desktop, the theme color is used to style the title bar.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="video">Video <a class="w-headline-link" href="#video" aria-hidden="true">#</a></h2>
+<p>See the &quot;<a href="/handbook/markup-media#video">Images and video</a>&quot; post.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 26, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/web-dev-components/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/handbook"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/handbook/markup-media/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Images and video
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

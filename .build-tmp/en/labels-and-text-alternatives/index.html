@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Labels and text alternatives</title>
+    <meta name="description" content="In order for a screen reader to present a spoken UI to the user, meaningful
+elements must have proper labels or text alternatives. A label or text
+alternative gives an element its accessible name, one of the key properties
+for expressing element semantics in the accessibility tree.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Labels%20and%20text%20alternatives&amp;url=https%3A%2F%2Fweb.dev%2Flabels-and-text-alternatives%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/accessible
+    >
+      Accessible to all
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Labels and text alternatives</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 18, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/robdodson.jpg"
+    alt="Rob Dodson"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rob Dodson</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rob_dodson">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/robdodson">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@robdodson">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>In order for a screen reader to present a spoken UI to the user, meaningful
+elements must have proper labels or text alternatives. A label or text
+alternative gives an element its accessible <strong>name</strong>, one of the key properties
+for <a href="https://web.dev/semantics-and-screen-readers/#semantic-properties-and-the-accessibility-tree">expressing element semantics in the accessibility
+tree</a>.</p>
+<p>When an element's name is combined with the element's <strong>role</strong>, it gives the
+user context so they can understand what type of element they're interacting
+with and how it is represented on the page. If a name is not present, then a
+screen reader only announces the element's role. Imagine trying to navigate
+a page and hearing, &quot;button,&quot; &quot;checkbox,&quot; &quot;image&quot; without any additional
+context. This is why labeling and text alternatives are crucial to a good,
+accessible experience.</p>
+<h2 id="inspect-an-element's-name">Inspect an element's name <a class="w-headline-link" href="#inspect-an-element's-name" aria-hidden="true">#</a></h2>
+<p>It's easy to check an element's accessible name using Chrome's DevTools:</p>
+<ol>
+<li>Right-click on an element and choose <strong>Inspect</strong>. This opens the DevTools
+Elements panel.</li>
+<li>In the Elements panel, look for the <strong>Accessibility</strong> pane. It may be hidden
+behind a <code>»</code> symbol.</li>
+<li>In the <strong>Computed Properties</strong> dropdown, look for the <strong>Name</strong> property.</li>
+</ol>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./devtools-name.png" alt="">
+  <figcaption class="w-figcaption">
+    DevTools accessibility pane showing the computed name for a button.
+  </figcaption>
+</figure>
+<div class="w-aside w-aside--note">
+<p>To learn more, check out the <a href="https://developers.google.com/web/tools/chrome-devtools/accessibility/reference">DevTools Accessibility
+Reference</a>.</p>
+</div>
+<p>Whether you're looking at an <code>img</code> with <code>alt</code> text or an <code>input</code> with a
+<code>label</code>, all of these scenarios result in the same outcome: giving an
+element its accessible name.</p>
+<h2 id="check-for-missing-names">Check for missing names <a class="w-headline-link" href="#check-for-missing-names" aria-hidden="true">#</a></h2>
+<p>There are a number of accessibility and SEO audits in Lighthouse that test
+for missing accessible names. Each of the fixes listed in the following table
+is also explained further below.</p>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Failed audit</th>
+        <th>How to fix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Document has a &lt;title&gt; element
+        </td>
+        <td>
+          <a href="#label-documents-and-frames">Label documents and frames</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &lt;frame&gt; or &lt;iframe&gt; elements have a title
+        </td>
+        <td>
+          <a href="#label-documents-and-frames">Label documents and frames</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Image elements have [alt] attributes
+        </td>
+        <td>
+          <a href="#include-text-alternatives-for-images-and-objects">
+            Include text alternatives for images and objects
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &lt;input type="image"&gt; elements have [alt] text
+        </td>
+        <td>
+          <a href="#include-text-alternatives-for-images-and-objects">
+            Include text alternatives for images and objects
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          &lt;object&gt; elements have [alt] text
+        </td>
+        <td>
+          <a href="#include-text-alternatives-for-images-and-objects">
+            Include text alternatives for images and objects
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Buttons have an accessible name
+        </td>
+        <td>
+          <a href="#label-buttons-and-links">Label buttons and links</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Links have a discernible name
+        </td>
+        <td>
+          <a href="#label-buttons-and-links">Label buttons and links</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Form elements have associated labels
+        </td>
+        <td>
+          <a href="#label-form-elements">Label form elements</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="label-documents-and-frames">Label documents and frames <a class="w-headline-link" href="#label-documents-and-frames" aria-hidden="true">#</a></h2>
+<p>Every page should have a
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title"><code>title</code></a>
+element that briefly explains what the page is about. The <code>title</code> element gives
+the page its accessible name. When a screen reader enters the page, this is the
+first text that is announced.</p>
+<p>For example, the page below has the title &quot;Mary's Maple Bar Fast-Baking Recipe&quot;:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token doctype">&lt;!doctype html></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span><br><mark class="highlight-line highlight-line-active">      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Mary's Maple Bar Fast-Baking Recipe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></mark><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    …</span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></span></code></pre>
+<div class="w-aside w-aside--note">
+<p>For tips on writing effective titles, see the <a href="https://web.dev/write-descriptive-text">Write descriptive titles
+guide</a>.</p>
+</div>
+<p>Similarly, any <code>frame</code> or <code>iframe</code> elements should have <code>title</code> attributes:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>An interactive map of San Francisco<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>…<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span></span></code></pre>
+<p>While an <code>iframe</code>'s contents may contain their own internal <code>title</code> element, a
+screen reader usually stops at the frame boundary and announces the element's
+role—&quot;frame&quot;—and its accessible name, provided by the <code>title</code> attribute. This
+lets the user decide if they wish to enter the frame or bypass it.</p>
+<h2 id="include-text-alternatives-for-images-and-objects">Include text alternatives for images and objects <a class="w-headline-link" href="#include-text-alternatives-for-images-and-objects" aria-hidden="true">#</a></h2>
+<p>An <code>img</code> should always be accompanied by an
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Attributes"><code>alt</code></a>
+attribute to give the image its accessible name. If the image fails to load, the
+<code>alt</code> text is used as a placeholder so users have a sense of what the image was
+trying to convey.</p>
+<p>Writing good <code>alt</code> text is a bit of an art, but there are a couple of guidelines
+you can follow:</p>
+<ol>
+<li>Determine if the image provides content that would otherwise be difficult to
+attain from reading the surrounding text.</li>
+<li>If so, convey the content as succinctly as possible.</li>
+</ol>
+<p>If the image acts as decoration and does not provide any useful content,
+you can give it an empty <code>alt=&quot;&quot;</code> attribute to remove it from the accessibility
+tree.</p>
+<div class="w-aside w-aside--note">
+<p>Learn more about writing effective <code>alt</code> text by checking out <a href="https://webaim.org/techniques/alttext/">WebAIM's guide to
+Alternative Text</a>.</p>
+</div>
+<h3 id="images-as-links-and-inputs">Images as links and inputs <a class="w-headline-link" href="#images-as-links-and-inputs" aria-hidden="true">#</a></h3>
+<p>An image wrapped in a link should use the  <code>img</code>'s <code>alt</code> attribute to describe
+where the user will navigate to if they click on the link:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://en.wikipedia.org/wiki/Google<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Google's wikipedia page<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>google-logo.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></span></code></pre>
+<p>Similarly, if an <code>&lt;input type=&quot;image&quot;&gt;</code> element is used to create an image
+button, it should contain <code>alt</code> text that describes the action that occurs when
+the user clicks on the button:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">    Username:</span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span></span><br><mark class="highlight-line highlight-line-active">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Sign in<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./sign-in-button.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></mark><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></span></code></pre>
+<h3 id="embedded-objects">Embedded objects <a class="w-headline-link" href="#embedded-objects" aria-hidden="true">#</a></h3>
+<p><code>&lt;object&gt;</code> elements, which are typically used for embeds like Flash, PDFs, or
+ActiveX, should also contain alternative text. Similar to images, this text is
+displayed if the element fails to render. The alternative text goes inside the
+<code>object</code> element as regular text, like &quot;Annual report&quot; below:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>object</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>application/pdf<span class="token punctuation">"</span></span> <span class="token attr-name">data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/report.pdf<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><span class="highlight-line">Annual report.</span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>object</span><span class="token punctuation">></span></span></span></code></pre>
+<h2 id="label-buttons-and-links">Label buttons and links <a class="w-headline-link" href="#label-buttons-and-links" aria-hidden="true">#</a></h2>
+<p>Buttons and links are often crucial to the experience of a site, and it is
+important that both have good accessible names.</p>
+<h3 id="buttons">Buttons <a class="w-headline-link" href="#buttons" aria-hidden="true">#</a></h3>
+<p>A <code>button</code> element always attempts to compute its accessible name using its
+text content. For buttons that are not part of a <code>form</code>, writing a clear
+action as the text content may be all you need to create a good accessible
+name.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Book Room<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></span></code></pre>
+<p><img src="./button-label.png" alt="A mobile form with a 'Book Room' button."></p>
+<p>One common exception to this rule is icon buttons. An icon button may use an
+image or an icon font to provide the text content for the button. For example,
+the buttons used in a What You See Is What You Get (WYSIWYG) editor to format
+text are typically just graphic symbols:</p>
+<p><img src="./icon-button.png" alt="A left align icon button."></p>
+<p>When working with icon buttons, it can be helpful to give them an explicit
+accessible name using the <code>aria-label</code> attribute. <code>aria-label</code> overrides any
+text content inside the button, letting you clearly describe the action to
+anyone using a screen reader.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Left align<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></span></code></pre>
+<h3 id="links">Links <a class="w-headline-link" href="#links" aria-hidden="true">#</a></h3>
+<p>Similar to buttons, links primarily get their accessible name from their text
+content. A nice trick when creating a link is to put the most meaningful piece
+of text into the link itself, rather than filler words like &quot;Here&quot; or &quot;Read
+More.&quot;</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line">Check out our guide to web performance <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/guide<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>here<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>.</span></code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Not recommended
+  </span>
+  <p>—
+  Not descriptive enough.</p>
+</div>
+<pre class="language-html"><code class="language-html"><span class="highlight-line">Check out <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/guide<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>our guide to web performance<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>.</span></code></pre>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Recommended
+  </span>
+  <p>—
+  Useful content!</p>
+</div>
+<p>This is especially helpful for screen readers that offer shortcuts to list all
+of the links on the page. If links are full of repetitive filler text, these
+shortcuts become much less useful:</p>
+<figure class="w-figure w-figure--center">
+  <img src="./vo.jpg" alt="VoiceOver's links menu filled with the word 'here'.">
+  <figcaption class="w-figcaption">
+    Example of VoiceOver, a screen reader for macOS, showing the navigate by
+    links menu.
+  </figcaption>
+</figure>
+<h2 id="label-form-elements">Label form elements <a class="w-headline-link" href="#label-form-elements" aria-hidden="true">#</a></h2>
+<p>There are two ways to associate a label with a form element such as a checkbox.
+Either of the methods causes the label text to also become a click target for
+the checkbox, which is also helpful for mouse or touchscreen users. To associate
+a label with an element, either:</p>
+<ul>
+<li>Place the input element inside of a label element</li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Receive promotional offers?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span></span></code></pre>
+<ul>
+<li>Or use the label's <code>for</code> attribute and refer to the element's <code>id</code></li>
+</ul>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>promo<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>promo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Receive promotional offers?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span></span></code></pre>
+<p>When the checkbox has been labeled correctly, the screen reader can report that
+the element has a role of checkbox, is in a checked state, and is named &quot;Receive
+promotional offers?&quot; like in the VoiceOver example below:</p>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./promo-offers.png"
+  alt="VoiceOver text output showing 'Receive promotional offers?'">
+</figure>
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 18, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/accessible/labels-and-text-alternatives/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/accessible"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

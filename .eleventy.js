@@ -134,7 +134,7 @@ module.exports = function(config) {
   return {
     dir: {
       input: 'src/site/content',
-      output: 'dist',
+      output: '.build-tmp',
       data: '../_data',
       includes: '../_includes',
     },

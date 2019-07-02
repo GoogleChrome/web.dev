@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Working with service workers</title>
+    <meta name="description" content="In this codelab, learn how to make an application reliable by
+registering a service worker.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="working-with-sw" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Working with service workers</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/jeffposnick.jpg"
+    alt="Jeff Posnick"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jeff Posnick</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/jeffposnick">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/jeffposnick">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@jeffposnick">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>This codelab shows you how to register a service worker from within your web
+application, and use the Chrome DevTools to observe its behavior. It also
+covers some debugging techniques that you might find useful when dealing with
+service workers.</p>
+<h2 id="get-familiar-with-the-sample-project">Get familiar with the sample project <a class="w-headline-link" href="#get-familiar-with-the-sample-project" aria-hidden="true">#</a></h2>
+<p>The files in the sample project most relevant to this codelab are:</p>
+<ul>
+<li><code>register-sw.js</code> starts out empty, but it will contain the code used
+to register the service worker. It's already being loaded via a <code>&lt;script&gt;</code>
+tag inside of the project's <code>index.html</code>.</li>
+<li><code>service-worker.js</code> is similarly empty. It's the file that will contain
+the service worker for this project.</li>
+</ul>
+<h2 id="add-in-the-service-worker-registration-code">Add in the service worker registration code <a class="w-headline-link" href="#add-in-the-service-worker-registration-code" aria-hidden="true">#</a></h2>
+<p>A service worker (even an empty one, like the current <code>service-worker.js</code> file)
+won't be used unless it's
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register">registered</a>
+first. You can do this via a call to:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">navigator<span class="token punctuation">.</span>serviceWorker<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span></span><br><span class="highlight-line">  <span class="token string">'/service-worker.js'</span></span><br><span class="highlight-line"><span class="token punctuation">)</span></span></code></pre>
+<p>inside your <code>register-sw.js</code> file.</p>
+<p>Before you add that code, though, there are a couple of points to take into
+account.</p>
+<p>First, not every browser
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API#Browser_compatibility">supports</a>
+service workers. This is particularly true for older versions of browsers that
+don't automatically update. So it's a best practice to call
+<code>navigator.serviceWorker.register()</code> conditionally, after checking whether
+<code>navigator.serviceWorker</code> is supported.</p>
+<p>Second, when you register a service worker, the browser runs the code in your
+<code>service-worker.js</code> file, and may potentially start downloading URLs to populate
+caches, depending on the code in your service worker's
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install"><code>install</code></a>
+and
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate"><code>activate</code></a>
+event handlers.</p>
+<p>Running additional code and downloading assets can use up
+valuable resources that your browser could otherwise use to display the current
+web page. To help avoid this interference, it's a good practice to delay
+registering a service worker until the browser has finished rendering the
+current page. A convenient way of approximating this is to wait until the
+<code>window.load</code> event has been fired.</p>
+<div class="w-aside w-aside--note">
+<p>Waiting for &lt;code&gt;window.load&lt;/code&gt; is a one-size-fits-all solution. If you know
+more about how your web page loads resources, or if you're using a web app
+framework that supports its own &quot;everything's ready&quot; lifecycle event, you can
+tweak the timing accordingly.</p>
+</div>
+<p>Putting those two points together, add this general-purpose service worker
+registration code to your <code>register-sw.js</code> file:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'serviceWorker'</span> <span class="token keyword">in</span> navigator<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    navigator<span class="token punctuation">.</span>serviceWorker<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'/service-worker.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h2 id="add-some-service-worker-logging-code">Add some service worker logging code <a class="w-headline-link" href="#add-some-service-worker-logging-code" aria-hidden="true">#</a></h2>
+<p>Your <code>service-worker.js</code> file is where all the logic for your service worker
+implementation would normally go. You'd use a mix of the service worker
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle">lifecycle events</a>,
+the
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage">Cache Storage API</a>,
+and knowledge about your web app's network traffic to create a perfectly crafted
+service worker, ready to handle all of your web app's requests.</p>
+<p>But... that's all for learning later. At this stage, the focus is on observing
+various service worker events, and getting comfortable using Chrome's DevTools
+to debug the state of your service worker.</p>
+<p>To that end, add in the following code to <code>service-worker.js</code>, which will log
+messages to the DevTools console in response to various events (but not do much
+else):</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'install'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Inside the install handler:'</span><span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'activate'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Inside the activate handler:'</span><span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span>fetch<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Inside the fetch handler:'</span><span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="get-familiar-with-the-service-workers-panel-in-devtools">Get familiar with the Service Workers panel in DevTools <a class="w-headline-link" href="#get-familiar-with-the-service-workers-panel-in-devtools" aria-hidden="true">#</a></h2>
+<p>Now that you've got the code added to <code>register-sw.js</code> and <code>service-worker.js</code>
+files, it's time to visit the Live version of your sample project, and observe
+the service worker in action.</p>
+<ul>
+<li>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</li>
+<li>Open the DevTools by pressing <code>CMD + OPTION + i</code> / <code>CTRL + SHIFT + i</code>.</li>
+<li>Click on the <strong>Console</strong> tab.</li>
+</ul>
+<p>You should see something like the following log messages,
+showing that the service worker has been installed and activated:</p>
+<img class="screenshot" src="./sw-installed-activated.png" alt="Shows service worker is installed and activated.">
+<p>Then visit the <strong>Applications</strong> tab, and select the <strong>Service Workers</strong> panel.
+You should see something like the following:</p>
+<img class="screenshot" src="./sw-panel.png" alt="Shows service worker details in service worker panel.">
+<p>This lets you know that there's a service worker with a source URL of
+<code>service-worker.js</code>, for the web app <code>solar-donkey.glitch.me</code>, that's currently
+activated and running. It also tells you that there's currently one client (open
+tab) that's being controlled by the service worker.</p>
+<p>You can use the links on this panel, like <code>Unregister</code>, or <code>stop</code>, to make
+changes to the currently registered service worker for debugging purposes.</p>
+<div class="w-aside w-aside--note">
+<p>Service workers tend to stick around, unless they're explicitly unregistered. If
+you find yourself wanting to &quot;start fresh&quot; during local development, a great way
+of doing so is to use a <a href="https://support.google.com/chrome/answer/95464">Chrome Incognito
+window</a> to load pages that are
+under service worker control. The service worker will persist only as long as
+the window is open, and you could always start over by closing all Incognito
+windows and opening a new one.</p>
+</div>
+<h2 id="trigger-the-service-worker-update-flow">Trigger the service worker update flow <a class="w-headline-link" href="#trigger-the-service-worker-update-flow" aria-hidden="true">#</a></h2>
+<p>One of the key concepts to understand when developing with service workers is
+the idea of
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#updates">an update flow</a>.</p>
+<p>After your users visit a web app which registers a service worker, they'll end
+up with the code for the current copy of <code>service-worker.js</code> installed on their
+local browser. But what happens when you make updates to the version of
+service-worker.js that's stored on your web server?</p>
+<p>When a repeat visitor returns to a URL that's within the scope of a service worker,
+the browser will automatically request the latest <code>service-worker.js</code> and
+check for any changes. If anything in the service worker script is different,
+then the new service worker will get a chance to install, activate,
+and eventually take control.</p>
+<p>You can simulate this update flow by going back to the code editor for your project, and making <em>any</em> change to the code. One quick change would be
+to replace</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'install'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Inside the install handler:'</span><span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>with</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'install'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Inside the UPDATED install handler:'</span><span class="token punctuation">,</span> event<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>After making that change, return to the Live version of your sample app, and
+reload the page with the DevTools Application tab still open. You should see
+something like the following:</p>
+<img class="screenshot" src="./two-sw-versions.png" alt="Shows two versions of service worker installed.">
+<p>This shows that there are two versions of your service worker installed at this
+point. The previous version, which was already activated, is running and in
+control of the current page. The updated version of the service worker is listed
+right below. It's in the
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#waiting"><code>waiting</code> state</a>,
+and will remain waiting until all of the open tabs that are controlled by the
+old service worker are closed.</p>
+<p>This default behavior ensures that if your new
+service worker has a fundamental difference in behavior from your old one—like a
+<code>fetch</code> handler which responds with resources that are incompatible with older
+versions of your web app—it won't go into effect until a user has shut down all
+previous instances of your web app.</p>
+<div class="w-aside w-aside--note">
+<p>If you don't want to wait, it's possible to
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase">call <code>skipWaiting()</code></a>
+inside of your service worker (usually in the <code>install</code> handler), or to simulate
+that behave by clicking on the <code>skipWaiting</code> link in DevTools.</p>
+</div>
+<h2 id="summing-things-up">Summing things up <a class="w-headline-link" href="#summing-things-up" aria-hidden="true">#</a></h2>
+<p>You should now be comfortable with the process of registering a service worker
+and observing a service worker's behavior using Chrome's DevTools.</p>
+<p>You're now in a good position to start implementing caching strategies, and all
+the good stuff that will help your web app load both reliably and reliably
+fast.</p>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/service-workers-cache-storage"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/working-with-sw?path=[object Object]&amp;previewSize="
+            alt="working-with-sw on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

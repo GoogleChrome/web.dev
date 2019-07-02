@@ -1,18 +1,23 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonJs from 'rollup-plugin-commonjs';
+import htmlEntryPlugin from './lib/html-entry-plugin.mjs';
+import copyFilesBuild from './lib/copy-files-build.mjs';
+import eleventyBuild from './lib/11ty-build.mjs';
 
-module.exports = {
-  input: 'src/lib/app.mjs',
-  output: {
-    dir: 'dist',
-    format: 'esm',
-    entryFileNames: '[name].[hash].js',
-    chunkFileNames: '[name].[hash].js',
-  },
-  plugins: [
-    resolve(),
-    commonJs({
-      include: 'node_modules/**',
-    }),
-  ],
-};
+/* eslint-disable require-jsdoc */
+
+export default async function({watch}) {
+  await Promise.all([
+    copyFilesBuild('src/**/*.mjs', '.build-tmp', {watch}),
+  ]);
+  await eleventyBuild({watch});
+
+  return {
+    output: {
+      dir: 'dist',
+      format: 'esm',
+      assetFileNames: '[name]-[hash][extname]',
+    },
+    plugins: [
+      htmlEntryPlugin(),
+    ],
+  };
+}

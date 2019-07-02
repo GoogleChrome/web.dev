@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How to report metrics and build a performance culture</title>
+    <meta name="description" content="Learn what impact website performance has on different parts of the e-commerce funnel
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/how-to-report-metrics/hero.jpg"
+  alt="Image of laptop with mouse pointing to checkout button on a web page"
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=How%20to%20report%20metrics%20and%20build%20a%20performance%20culture&amp;url=https%3A%2F%2Fweb.dev%2Fhow-to-report-metrics%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">How to report metrics and build a performance culture</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Understand why performance matters when it comes to conversion
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>May 5, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/martinschierle.jpg"
+    alt="Martin Schierle"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Martin Schierle</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/martinschierle">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/martinschierle">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <h2 id="introduction">Introduction <a class="w-headline-link" href="#introduction" aria-hidden="true">#</a></h2>
+<p>Website performance is a key goal towards e-commerce conversions, so it must be
+a core priority for business stakeholders and leadership, not just development
+teams.</p>
+<p>For that reason, it's crucial to make performance metrics visible and tangible
+for all stakeholders, and to build reporting and monitoring into your
+workflow.</p>
+<p>This guide describes what to be aware of and what to avoid to achieve
+this successfully.</p>
+<h2 id="a-word-about-metrics">A word about metrics <a class="w-headline-link" href="#a-word-about-metrics" aria-hidden="true">#</a></h2>
+<p>There are countless metrics to evaluate website performance, and while it may
+seem useful to collect all of them, too many metrics can be confusing and
+misleading. There are several ways to deal with this:</p>
+<ul>
+<li>Gather multiple metrics and try to narrow and filter afterwards on
+what might be relevant for the task at hand.</li>
+<li>Abstract metrics into an overall score, as for example
+<a href="https://developers.google.com/web/tools/lighthouse/v3/scoring#perf">Lighthouse does</a>.
+This can be especially useful for non-technical staff and other
+stakeholders, but is probably insufficient for deeper technical analysis.</li>
+<li>Try to find the one metric which is most relevant as a predictor for
+your conversions and then optimize towards this.</li>
+</ul>
+<p>In reality, a pragmatic combination makes the most sense here. Gather more rather
+than less to begin with, report an abstract score to management, and optimize
+towards the one metric which best predicts your conversions.</p>
+<p>Finding this metric can be done by using your analytics tool of choice
+to map performance metrics to user engagement, conversions and transaction values.
+For example, a custom report to do so looks like this in Google Analytics:</p>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./speed_report.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
+  <figcaption class="w-figcaption w-figcaption--center">
+    Fig 1: Custom report in Google Analytics to analyze the impact of speed on conversions and engagement.
+  </figcaption>
+</figure>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+<strong>Metrics can be deceiving.</strong>
+Unfortunately metrics can sometimes be misleading with respect to performance.
+Keep reading for specifics.</p>
+</div>
+<h2 id="increasing-bounce-rate">Increasing bounce rate <a class="w-headline-link" href="#increasing-bounce-rate" aria-hidden="true">#</a></h2>
+<h3 id="problem">Problem <a class="w-headline-link" href="#problem" aria-hidden="true">#</a></h3>
+<p>Often it is assumed that bounce rate will drop when page load speed
+increases. While this normally does hold true, measurements sometimes show the
+opposite. This is because analytics can only measure a bounce after the
+analytics library is loaded. A faster page load means analytics code also loads
+faster, so analytics may see more bounces even if there aren't more happening.</p>
+<h3 id="solution">Solution <a class="w-headline-link" href="#solution" aria-hidden="true">#</a></h3>
+<p>This can be eased by measuring
+<a href="https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#load_abandonment">real page abandonment </a>instead.</p>
+<h2 id="decreasing-relative-conversions">Decreasing relative conversions <a class="w-headline-link" href="#decreasing-relative-conversions" aria-hidden="true">#</a></h2>
+<h3 id="problem-2">Problem <a class="w-headline-link" href="#problem-2" aria-hidden="true">#</a></h3>
+<p>Relative conversions may sometimes seem to drop for faster sites.
+This is because faster pages reach a bigger audience who might be less engaged
+or committed. While incremental traffic and conversions increase with faster
+pages, relative conversions (the ratio of conversions to page views or visitors)
+might still drop.</p>
+<h3 id="solution-2">Solution <a class="w-headline-link" href="#solution-2" aria-hidden="true">#</a></h3>
+<p>This effect can be eased by looking out for absolute conversions instead, and
+even calculate Cost Per Sales (conversions divided with investment level) or ROI.</p>
+<h2 id="dropping-engagement">Dropping engagement <a class="w-headline-link" href="#dropping-engagement" aria-hidden="true">#</a></h2>
+<h3 id="problem-3">Problem <a class="w-headline-link" href="#problem-3" aria-hidden="true">#</a></h3>
+<p>Page engagement may seem to drop for a faster page.</p>
+<h3 id="solution-3">Solution <a class="w-headline-link" href="#solution-3" aria-hidden="true">#</a></h3>
+<p>This can actually be a positive signal! If the page is faster
+users can reach their goal more quickly and might just have shorter sessions and
+less time on page.</p>
+<h2 id="using-averages-or-medians">Using averages or medians <a class="w-headline-link" href="#using-averages-or-medians" aria-hidden="true">#</a></h2>
+<h3 id="problem-4">Problem <a class="w-headline-link" href="#problem-4" aria-hidden="true">#</a></h3>
+<p>In general, it can be deceiving to look at averages and medians of
+performance metrics (see this nicely described in
+<em><a href="https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/">Everything You Know About Latency Is Wrong</a>)</em>.
+Similar to a chain being just as strong as the weakest link, the performance of
+a funnel is only as good as its slowest load. A single slow load may be enough
+to lose the user. Therefore averages and medians are more likely to hide the
+real performance issues, than to reveal them.</p>
+<h3 id="solution-4">Solution <a class="w-headline-link" href="#solution-4" aria-hidden="true">#</a></h3>
+<p>It's best to analyze complete distributions, but as this is not
+always easily possible we recommend using 90th percentiles — this is the value
+for which 90% of loads were faster. Even then a user hitting ten pages will
+still have one load slower than this, and might drop out there.</p>
+<p>While performance measurement is highly important, make sure to keep an open
+mind and question unexpected results — and make sure to not report misleading
+numbers to stakeholders and management. If unsure on what to pick and report,
+we'd advise as a minimum for 90th percentile
+<a href="/first-contentful-paint">First Contentful Paint</a>, which is also what we use
+across our public tooling.</p>
+<h2 id="third-party-content">Third party content <a class="w-headline-link" href="#third-party-content" aria-hidden="true">#</a></h2>
+<p>Website performance is especially prone to being dragged down
+by third party content
+(see <a href="/render-blocking-resources">Eliminate render-blocking resources</a>).
+This is a particular problem for e-commerce, often due to trackers and widgets.</p>
+<p>Some ways to handle third party content with respect to performance:</p>
+<ul>
+<li>Always keep third party content out of the
+<a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/">critical rendering path</a>.
+If the third party has server problems and times out, it will impact your
+website heavily. You can test and simulate this via
+<a href="https://css-tricks.com/use-webpagetest-api/#single-point-of-failure">WebPageTest Single-Point-of-Failure</a>
+tests.</li>
+<li>Continually measure and report the ratio of third party content, for
+example via WebPageTest <a href="https://www.webpagetest.org/domains.php">domain
+breakdown</a>. Make sure to use
+performance budgets for third party content.</li>
+<li>If you suspect that a particular third party component is having a
+detrimental effect on performance, do a performance comparison with it
+included and excluded.
+<a href="https://andydavies.me/blog/2018/02/19/using-webpagetest-to-measure-the-impact-of-3rd-party-tags/">Find out how</a>.</li>
+<li>Try to stay on one stack from one vendor if possible. For example, if
+you have a tag manager and analytics on one stack, you may only need a
+single script, and may be able to
+<a href="https://developers.google.com/web/fundamentals/performance/http2/">take advantage of HTTP2 synergies</a>
+as there is only one host involved.</li>
+<li>Make sure not to use the same functionality from two different vendors.
+You shouldn't need two tag managers or two analytics platforms.</li>
+<li>Routinely audit and clean out redundant third party scripts, trackers
+and widgets. This can easily be done via <a href="https://chrome.google.com/webstore/detail/ghostery-%E2%80%93-privacy-ad-blo/mlomiejdfkolichcflejclcbmpeaniij?hl=en">Ghostery Extension</a> or tools like <a href="https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=en">WhatRuns</a>:</li>
+</ul>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./ghostery.png" alt="A Ghostery report showing all loaded trackers.">
+  <figcaption class="w-figcaption w-figcaption--center">
+    A Ghostery report showing all loaded trackers
+  </figcaption>
+</figure>
+<p>Learn more in
+<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/">Loading Third-Party JavaScript</a>.</p>
+<h2 id="performance-culture">Performance Culture <a class="w-headline-link" href="#performance-culture" aria-hidden="true">#</a></h2>
+<p>Unfortunately performance is often seen as a one-off optimization task, and then
+regresses over time as stakeholders raise new feature requests or insist on
+adding new trackers and widgets.</p>
+<p>Performance must be a continuous goal to improve acquisition, discovery, and
+conversion rates as well as safeguarding the reputation of your brand. This can
+be achieved with <a href="/performance-budgets-101">performance
+budgets</a>
+like<a href="https://medium.com/@addyosmani/a-tinder-progressive-web-app-performance-case-study-78919d98ece0"> Tinder did</a>,
+and by establishing and fostering a performance culture, where all employees and
+especially decision makers recognize speed as a core feature of the website.</p>
+<h2 id="make-metrics-tangible">Make metrics tangible <a class="w-headline-link" href="#make-metrics-tangible" aria-hidden="true">#</a></h2>
+<p>Reports on metrics are often abstract and easy to challenge or dismiss. It's
+best to make your performance tangible and visible. There are several good ways
+to do this:</p>
+<ul>
+<li><a href="https://www.theverge.com/2015/10/28/9625062/facebook-2g-tuesdays-slow-internet-developing-world">Facebook</a>
+and Google do this by providing slow networks across the company for testing.</li>
+<li>Make average, low-spec devices with low
+<a href="https://developers.google.com/web/fundamentals/performance/poor-connectivity/">bandwidth or high latencies </a> available
+to management and other stakeholders.</li>
+<li>Consider adding overlays showing performance metrics on your development
+or staging servers. Connections to these servers from mobile can
+potentially be throttled by default on corporate networks.</li>
+<li>Monitors can be placed strategically across the company showing videos
+or timestrips of your website's loading behavior, preferably in comparison
+to competitors. WebPageTest <a href="https://www.webpagetest.org/video/">can create
+these</a> very easily and automatically.</li>
+<li>Performance can also be fun — maybe a <a href="https://g.co/perfgame">game based on an individual Lighthouse report</a> can reach audiences which can't be reached by pure reports and metrics?</li>
+</ul>
+<h2 id="recap">Recap <a class="w-headline-link" href="#recap" aria-hidden="true">#</a></h2>
+<p>This guide explains why the selection of metrics, and how they are reported and handled, is as important as the measurement and optimization itself — or even more. Make sure to prefer percentiles or distributions over averages, be cautious of using just bounce rate or relative conversion rate as impact measures, and make sure that metrics are easy to understand and tangible for stakeholders across the company. Establishing a performance culture is also an important step towards a well performing e-commerce site.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>May 5, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/how-to-report-metrics/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/web-dev-io-2019/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      web.dev at I/O 2019
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

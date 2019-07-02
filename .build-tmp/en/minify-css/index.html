@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minify CSS</title>
+    <meta name="description" content="Learn how to minify CSS files, to improve performance, without affecting how the browser process the styles.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Minify%20CSS&amp;url=https%3A%2F%2Fweb.dev%2Fminify-css%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Minify CSS</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>May 2, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/demianrenzulli.jpg"
+    alt="Demian Renzulli"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Demian Renzulli</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/drenzulli">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/demianrenzulli">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@demianrenzulli">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>CSS files can contain unnecessary characters, such as comments, whitespaces, and indentation.
+In production, these characters can be safely removed, to reduce file size without affecting how the browser processes the styles. This technique is called <strong>minification</strong>.</p>
+<h2 id="loading-unminified-css">Loading unminified CSS <a class="w-headline-link" href="#loading-unminified-css" aria-hidden="true">#</a></h2>
+<p>Take a look at the following CSS block:</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">body</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Benton Sans"</span><span class="token punctuation">,</span> <span class="token string">"Helvetica Neue"</span><span class="token punctuation">,</span> helvetica<span class="token punctuation">,</span> arial<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">margin</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">/* all titles need to have the same font, color and background */</span></span><br><span class="highlight-line"><span class="token selector">h1</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> #373fff<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> #000000<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token selector">h2</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">color</span><span class="token punctuation">:</span> #373fff<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> #000000<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>This content is easy to read, at the cost of producing a larger than necessary file:</p>
+<ul>
+<li>It uses spaces for indentation purposes and contains comments, which are ignored by the browser, so they can be removed.</li>
+<li>The <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> elements have the same styles: instead of declaring them separately: &quot;<code>h1 {...} h2 {...}</code>&quot; they could be expressed as &quot;<code>h1, h2{...}</code>&quot;.</li>
+<li>The <strong>background-color</strong>, <code>#000000</code> could be expressed as just <code>#000</code>.</li>
+</ul>
+<p>After making these changes, you would obtain a more compact version of the same styles:</p>
+<pre><code>body{font-family:&quot;Benton Sans&quot;,&quot;Helvetica Neue&quot;,helvetica,arial,sans-serif;margin:2em}h1,h2{font-style:italic;color:#373fff;background-color:#000}
+</code></pre>
+<p>You probably don't want to write CSS like that. Instead, you can write CSS as usual, and add a minification step to your build process. In this guide, you’ll learn how to do it by using a popular build tool: <a href="https://webpack.js.org/">webpack</a>.</p>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<p>You’ll apply CSS minification to a site that has been used in other guides: <a href="https://fav-kitties-animated.glitch.me/">Fav Kitties</a>. This version of the site uses a cool CSS library: <a href="https://github.com/daneden/animate.css">animate.css</a>, to animate different page elements when a user votes for a cat 😺.</p>
+<p>As a first step, you need to understand what would be the opportunity after minifying this file:</p>
+<ol>
+<li>Open <a href="https://web.dev/measure">the measure page</a>.</li>
+<li>Enter the URL: <code>https://fav-kitties-animated.glitch.me</code> and click <strong>Run Audit</strong>.</li>
+<li>Click <strong>View report</strong>.</li>
+<li>Click on <strong>Performance</strong> and go the <strong>Opportunities</strong> section.</li>
+</ol>
+<p>The resulting report shows that up to <strong>16KB</strong> can be saved from the <strong>animate.css</strong> file:</p>
+<img class="screenshot" width="700px" height="150px" src="./lighthouse-unoptimized.png" alt="Lighthouse - Minify CSS opportunity.">
+<p>Now you'll inspect the content of the CSS:</p>
+<ol>
+<li>Open the <a href="https://fav-kitties-animated.glitch.me/">Fav Kitties site</a> in Chrome (it might take a while for Glitch servers to respond the first time).</li>
+<li>Press <code>Control+Shift+J</code> or <code>Cmd+Option+J</code> (Mac), to open DevTools.</li>
+<li>Click on the <strong>Network</strong> panel and filter for <strong>CSS</strong>.</li>
+<li>Make sure <strong>Disable Cache</strong> is checked and reload the page.</li>
+</ol>
+<img class="w-screenshot" width="700px" height="120px" src="./cdt-css-unoptimized.png" alt="DevTools CSS unoptimized trace">
+<p>The page is requesting two CSS files, of <strong>1.9KB</strong> and <strong>76.2KB</strong> respectively.</p>
+<ol>
+<li>Click <strong>animate.css</strong>.</li>
+<li>Click the <strong>Response</strong> tab, to see the file contents.</li>
+</ol>
+<p>Note that the stylesheet contains characters for whitespaces and indentation:</p>
+<img class="w-screenshot" width="700px" height="120px" src="./cdt-css-unoptimized-res.png" alt="DevTools CSS unoptimized response">
+<p>Next, you'll add some webpack plugins to your build process to minify these files.</p>
+<div class="w-aside w-aside--note">
+<p><strong>Note:</strong> the previous Lighthouse report only lists <code>animate.css</code> as an opportunity for minification. Minifying <code>style.css</code> will also save some bytes, but not enough for Lighthouse to consider it a significant savings. However, minifying CSS is a general best practice; so it makes sense to minify all of your CSS files.</p>
+</div>
+<h2 id="css-minification-with-webpack:">CSS Minification with webpack: <a class="w-headline-link" href="#css-minification-with-webpack:" aria-hidden="true">#</a></h2>
+<p>Before jumping into the optimizations, take some time understanding how build process for the <a href="https://glitch.com/edit/#!/fav-kitties-animated?path=webpack.config.js:1:0%5D">Fav Kitties site</a> works:</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/fav-kitties-animated?path=webpack.config.js&previewSize=0"
+    alt="fav-kitties-animated on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<p>By default, the resulting JS bundle that webpack produces would contain the content of the CSS files inlined. Since we want to maintain separate CSS files, we are using two complementary plugins:</p>
+<ul>
+<li><a href="https://github.com/webpack-contrib/mini-css-extract-plugin">mini-css-extract-plugin</a> will extract each style sheet into its own file, as one of the steps of the build process.</li>
+<li><a href="https://github.com/fqborges/webpack-fix-style-only-entries">webpack-fix-style-only-entries</a> is used to correct an issue in wepback 4, to avoid generating an extra JS file for each CSS file listed in <strong>webpack-config.js</strong>.</li>
+</ul>
+<p>You will now make some changes in the project:</p>
+<ol>
+<li>Open <a href="https://glitch.com/~fav-kitties-animated">the Fav Kitties project in Glitch</a>.</li>
+<li>Click <strong>View Source</strong>.</li>
+<li>Click the project name in the upper-left corner. Choose <strong>Remix and Edit</strong> 🎤, from the drop-down menu, to make your own, editable copy of the project.</li>
+<li>Once in the cloned project, click <strong>Tools</strong> (in the lower-left corner of the edit view), then select <strong>Console</strong>. The Glitch console opens in a new browser tab.</li>
+</ol>
+<p>To minify the resulting CSS, you’ll use the <a href="https://github.com/NMFR/optimize-css-assets-webpack-plugin">optimize-css-assets-webpack-plugin</a>:</p>
+<ol>
+<li>In Glitch console, run <code>npm install --save-dev optimize-css-assets-webpack-plugin</code>.</li>
+<li>Run <code>refresh</code>, so the changes are synchronized with the Glitch editor.</li>
+</ol>
+<p>Next, go back to the Glitch editor, open the <strong>webpack.config.js</strong> file, and make the following modifications:</p>
+<p>Load the module at the beginning of the file:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> OptimizeCSSAssetsPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"optimize-css-assets-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Then, pass an instance of the plugin to the <strong>plugins</strong> array:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">    <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>template<span class="token punctuation">:</span> <span class="token string">"./src/index.html"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token keyword">new</span> <span class="token class-name">MiniCssExtractPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>filename<span class="token punctuation">:</span> <span class="token string">"[name].css"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token keyword">new</span> <span class="token class-name">FixStyleOnlyEntriesPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token keyword">new</span> <span class="token class-name">OptimizeCSSAssetsPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span><br><span class="highlight-line">  <span class="token punctuation">]</span></span></code></pre>
+<p>After making the changes a rebuild of the project will be triggered.
+This is how the resulting <strong>webpack.config.js</strong> will look like:</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/fav-kitties-animated-min?path=webpack.config.js&previewSize=0"
+    alt="fav-kitties-animated-min on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<p>Next, you'll check the result of this optimization with performance tools.</p>
+<h2 id="verify">Verify <a class="w-headline-link" href="#verify" aria-hidden="true">#</a></h2>
+<p>Click <strong>Show live</strong> and then, <strong>In New Window</strong>, to open your optimized app in a new window. If you got lost in any previous step, you can click <a href="https://fav-kitties-animated-min.glitch.me/">here</a>, to open an optimized version of the site.</p>
+<p>To inspect the size and content of the files:</p>
+<ol>
+<li>Open DevTools.</li>
+<li>Click in the <strong>Network</strong> panel and filter for “CSS”.</li>
+<li>Make sure &quot;Disable Cache&quot; is checked and reload the page.</li>
+</ol>
+<img class="w-screenshot" width="700px" height="120px" src="./cdt-css-optimized.png" alt="DevTools CSS unoptimized response">
+<p>You can inspect these files, and see that the new versions don't contain any whitespaces. Both files are much smaller, in particular, the <a href="http://fav-kitties-animated-min.glitch.me/animate.css">animate.css</a> has been reduced in <strong>~26%</strong>, saving <strong>~20KB</strong>!</p>
+<p>As a final step:</p>
+<ol>
+<li>Open <a href="https://web.dev/measure">the measure page</a>.</li>
+<li>Enter the URL of the optimized site.</li>
+<li>Click <strong>View report</strong>.</li>
+<li>Click on <strong>Performance</strong> and find the <strong>Opportunities</strong> section.</li>
+</ol>
+<p>The report doesn't show &quot;Minify CSS&quot; as &quot;Opportunity&quot; anymore, and has now moved to &quot;Passed Audits&quot; section:</p>
+<img class="w-screenshot" width="700px" height="150px" src="./lighthouse-optimized.png" alt="Lighthouse Passed Audits for optimized page.">
+<p>Since CSS files are <a href="https://developers.google.com/web/tools/lighthouse/audits/blocking-resources">render-blocking resources</a>, if you apply minification on sites that use large CSS files, you can see improvements on metrics like <a href="https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint">First Contentful Paint</a>.</p>
+<h2 id="next-steps-and-resources">Next steps and resources <a class="w-headline-link" href="#next-steps-and-resources" aria-hidden="true">#</a></h2>
+<p>In this guide, we've covered CSS Minification with webpack, but the same approach can be followed with other build tools, like <a href="https://www.npmjs.com/package/gulp-clean-css">gulp-clean-css</a> for <a href="https://gulpjs.com/">Gulp</a>, or
+<a href="https://www.npmjs.com/package/grunt-contrib-cssmin">grunt-contrib-cssmin</a> for <a href="https://gruntjs.com/">Grunt</a>.</p>
+<p>Minification can also be applied to other types of files. Check out the <a href="https://web.dev/fast/reduce-network-payloads-using-text-compression">Minify and compress network payloads guide</a> to learn more about tools to minify JS, and some complementary techniques, like compression.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>May 2, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/minify-css/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

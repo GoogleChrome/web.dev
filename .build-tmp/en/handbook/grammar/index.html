@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grammar, mechanics, and usage</title>
+    <meta name="description" content="A list of grammar, mechanics, and usage rules for web.dev, followed by a list of style and usage references.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Grammar%2C%20mechanics%2C%20and%20usage&amp;url=https%3A%2F%2Fweb.dev%2Fhandbook%2Fgrammar%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/handbook
+    >
+      Content handbook
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Grammar, mechanics, and usage</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 26, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mfriesenhahn.jpg"
+    alt="Michael Friesenhahn"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Michael Friesenhahn</cite>
+    <ul class="w-author__link-list">
+      
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mfriesenhahn">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <style>
+  img[src*="icon"] {
+    max-width: 32px;
+    vertical-align: middle;
+  }
+
+  img[src*="bordered"] {
+    border: 1px solid #949494;
+    border-radius: 5px;
+  }
+</style>
+<p>Grammar and mechanics are important for making writing clear, but don't let them get in the way of putting text on the page! Content reviewers will always support you with editorial stuff. That said, here are a few conventions to be aware of.</p>
+<h2 id="instructions">Instructions <a class="w-headline-link" href="#instructions" aria-hidden="true">#</a></h2>
+<p>Use second person (<em>you</em>) rather than first person (<em>we</em>) except in rare cases where you're providing a rationale for a recommendation (e.g., &quot;We chose this library because…&quot;).</p>
+<p>Begin instructions with the objective rather than the action.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Drag a photo to the trash to remove it from an album.</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>To remove a photo from an album, drag it to the trash.</p>
+  </blockquote>
+</div>
+<p>Favor the imperative mood (giving commands) over declarative (making statements) in instructions.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>You will click <strong>Run Audit</strong>.</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Click <strong>Run Audit</strong>.</p>
+  </blockquote>
+</div>
+<p>Avoid using <em>can</em> in instructions unless you really mean to convey that the step is optional.</p>
+<h2 id="linking">Linking <a class="w-headline-link" href="#linking" aria-hidden="true">#</a></h2>
+<p>Don't include preceding articles (<em>a</em>, <em>an</em>, <em>the</em>) or surrounding punctuation in link text.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>See <a href="/discoverable">the &quot;Easily discoverable&quot; collection</a> for more information.</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>See the &quot;<a href="/discoverable">Easily discoverable</a>&quot; collection for more information.</p>
+  </blockquote>
+</div>
+<p>When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title and put double quotation marks outside the hyperlink. (See example above.)</p>
+<p>Libraries and tools should be linked the first time they're mentioned.</p>
+<h2 id="lists">Lists <a class="w-headline-link" href="#lists" aria-hidden="true">#</a></h2>
+<p>Use an ordered list (numbers) when instructing the reader to perform a series of actions.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Good
+  </span>
+  <p>—</p>
+  <ol>
+  <li>Click <strong>Remix to Edit</strong> to make the project editable.</li>
+  <li>Click <strong>Tools</strong>.</li>
+  <li>Click <strong>Console</strong>.</li>
+  </ol>
+</div>
+<p>Use an unordered list (bullets) when breaking down sub-steps of an action.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Good
+  </span>
+  <p>—</p>
+  <ol>
+  <li>Do the hokey pokey:
+  <ul>
+  <li>Put your left foot in.</li>
+  <li>Take your left foot out.</li>
+  <li>Put your left foot in and shake it all about.</li>
+  </ul>
+  </li>
+  </ol>
+</div>
+<p>Use an unordered list item for a standalone action.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Good
+  </span>
+  <p>—</p>
+  <ul>
+  <li>To preview the site, press <strong>View App</strong>. Then press <strong>Fullscreen</strong>.</li>
+  </ul>
+</div>
+<h2 id="numbers">Numbers <a class="w-headline-link" href="#numbers" aria-hidden="true">#</a></h2>
+<p>In general, spell out integers from one to nine unless:</p>
+<ul>
+<li>The integer is attached to a unit (e.g., <em>3 KB</em>, <em>page 3</em>).</li>
+<li>The integer is in the same sentence as a number larger than nine (e.g., &quot;The menu contains 15 options, but 6 of them are disabled.&quot;)</li>
+</ul>
+<p>Use numerals for decimals and numbers higher than nine.</p>
+<h2 id="punctuation">Punctuation <a class="w-headline-link" href="#punctuation" aria-hidden="true">#</a></h2>
+<h3 id="ampersands">Ampersands <a class="w-headline-link" href="#ampersands" aria-hidden="true">#</a></h3>
+<p>Don't use ampersands unless one is part of a company or brand name.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Safe &amp; secure</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Safe and secure</p>
+  </blockquote>
+</div>
+<h3 id="commas">Commas <a class="w-headline-link" href="#commas" aria-hidden="true">#</a></h3>
+<p>Use the serial comma before the last item in a list.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>React, Vue and Angular are popular frameworks.</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>React, Vue, and Angular are popular frameworks.</p>
+  </blockquote>
+</div>
+<h3 id="dashes-and-hyphens">Dashes and hyphens <a class="w-headline-link" href="#dashes-and-hyphens" aria-hidden="true">#</a></h3>
+<p>Use hyphens (-) with no surrounding space to link words together (e.g., <em>two-year-old</em>).</p>
+<p>Use em dashes (—) with no surrounding space—like this—to set off an aside.</p>
+<p>Use an en dash (–) for ranges (e.g., <em>10–100 KB</em>).</p>
+<h3 id="quotation-marks-and-apostrophes">Quotation marks and apostrophes <a class="w-headline-link" href="#quotation-marks-and-apostrophes" aria-hidden="true">#</a></h3>
+<p>Use straight quotation marks and apostrophes, not smart (curly).</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>The “Accessible to all” collection</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>The &quot;Accessible to all&quot; collection</p>
+  </blockquote>
+</div>
+<p>Periods and commas always go inside quotation marks. Question marks and exclamation points go inside quotation marks if they're part of the quotation; outside if not.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Jane said, &quot;Reader, I married him&quot;.</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Jane said, &quot;Reader, I married him.&quot;</p>
+  </blockquote>
+</div>
+<h2 id="text-formatting">Text formatting <a class="w-headline-link" href="#text-formatting" aria-hidden="true">#</a></h2>
+<p>Bold words for emphasis sparingly. (The primary use for bolding is <a href="/handbook/grammar/#ui-elements-and-interaction">indicating UI element names</a>.)</p>
+<p>Avoid mixing code font and standard font in a single word.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p><code>integer</code>s</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p><code>integer</code> values</p>
+  </blockquote>
+</div>
+<h2 id="titles-and-headings">Titles and headings <a class="w-headline-link" href="#titles-and-headings" aria-hidden="true">#</a></h2>
+<p>Use sentence case for titles and headings.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Optimize Your Images</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Optimize your images</p>
+  </blockquote>
+</div>
+<p>Use imperative mood for titles and headings whenever possible.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Optimizing your images</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Optimize your images</p>
+  </blockquote>
+</div>
+<h2 id="ui-elements-and-interaction">UI elements and interaction <a class="w-headline-link" href="#ui-elements-and-interaction" aria-hidden="true">#</a></h2>
+<p>Bold the names of UI elements.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>In the New Project window, select the &quot;New Activity&quot; checkbox, and then click &quot;Next.&quot;</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>In the <strong>New Project</strong> window, select the <strong>New Activity</strong> checkbox, and then click <strong>Next</strong>.</p>
+  </blockquote>
+</div>
+<p>When referring to a button with an icon but no label, use the name of the button as shown in the tooltip, and add the button icon immediately after. Don't style the icon unless the button would be difficult to recognize without its original styling.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Click <img src="fullscreen.png#_icon" alt="Fullscreen icon">.</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Click <strong>Fullscreen</strong> <img src="fullscreen.png#_icon_bordered" alt="Fullscreen icon">.</p>
+  </blockquote>
+</div>
+<p>To refer to a keyboard key:</p>
+<ul>
+<li>Use the key's name in code font.</li>
+<li>Spell out the names of modifier keys.</li>
+<li>To refer to a key combination, use the form <em>Modifier+Key</em> (no spaces).</li>
+<li>When the reader may be on either Windows or Mac, put the Mac shortcut in parentheses after the Windows shortcut.</li>
+</ul>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>To copy, press Ctrl + C (⌘ + C).</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>To copy, press <code>Control+C</code> (or <code>Command+C</code> on Mac).</p>
+  </blockquote>
+</div>
+<p>Use <em>pane</em> to refer to the content areas associated with tabs—unless you're referring to an area in DevTools; then use <em>panel</em>.</p>
+<h2 id="units">Units <a class="w-headline-link" href="#units" aria-hidden="true">#</a></h2>
+<p>Use <em>KB</em> for kilobytes, <em>kb</em> for kilobits.</p>
+<p>Add a space before units.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>100KB</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>100 KB</p>
+  </blockquote>
+</div>
+<h2 id="usage">Usage <a class="w-headline-link" href="#usage" aria-hidden="true">#</a></h2>
+<p>Use consistent vocabulary throughout a piece and the collection it lives in.</p>
+<p>Acronyms should be spelled out the first time they're used, with the acronym following immediately after in parentheses.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>WICG</p>
+  </blockquote>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Web Incubation Community Groups (WICG)</p>
+  </blockquote>
+</div>
+<h2 id="references">References <a class="w-headline-link" href="#references" aria-hidden="true">#</a></h2>
+<p>These are the references content reviewers use when reviewing posts and codelabs for editorial issues beyond the ones covered in this post. They worry about this stuff so you don't have to!</p>
+<ul>
+<li>The <a href="https://developers.google.com/style/">Google Developer Documentation Style Guide</a> (GDDSG) is the primary reference for writing style issues.</li>
+<li>If a style issue isn't covered in the GDDGS, check the <a href="https://www.chicagomanualofstyle.org/home.html">Chicago Manual of Style</a>.</li>
+<li><a href="http://www.m-w.com">Merriam-Webster</a> is the primary reference for spelling and capitalization.</li>
+<li>The <a href="/handbook/word-list">Word list</a> provides spelling and capitalization conventions specific to web.dev.</li>
+</ul>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 26, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/grammar/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/handbook"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/handbook/inclusion-and-accessibility/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Inclusion and accessibility
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

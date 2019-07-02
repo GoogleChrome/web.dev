@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Making JavaScript and Google Search work together</title>
+    <meta name="description" content="We introduced a new Googlebot at Google I/O and took the opportunity to discuss improvements and best practices for making JavaScript web apps work well with Google Search.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/javascript-and-google-search-io-2019/hero.png"
+  alt="A pile of gears."
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Making%20JavaScript%20and%20Google%20Search%20work%20together&amp;url=https%3A%2F%2Fweb.dev%2Fjavascript-and-google-search-io-2019%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Making JavaScript and Google Search work together</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Get the latest updates and insights from Google I/O 2019.
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 5, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/martinsplitt.jpg"
+    alt="Martin Splitt"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Martin Splitt</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/g33konaut">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/AVGP">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@AVGP">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/ekharvey.jpg"
+    alt="Lizzi Harvey"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Lizzi Harvey</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/HarveyLizzi">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/ekharvey">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@ekharvey">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Great things are happening with Google Search, and we were excited to share them at Google I/O 2019!</p>
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
+50%; transform: translate(-50%,-50%);"
+src="https://www.youtube.com/embed/ufcijo46LCU" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</div>
+<p>In this post we'll focus on best practices for making JavaScript web apps discoverable in Google Search, including:</p>
+<ul>
+<li>The new evergreen Googlebot</li>
+<li>Googlebot's pipeline for crawling, rendering and indexing</li>
+<li>Feature detection and error handling</li>
+<li>Rendering strategies</li>
+<li>Testing tools for your website in Google Search</li>
+<li>Common challenges and possible solutions</li>
+<li>Best practices for SEO in JavaScript web apps</li>
+</ul>
+<h2 id="meet-the-evergreen-googlebot">Meet the evergreen Googlebot <a class="w-headline-link" href="#meet-the-evergreen-googlebot" aria-hidden="true">#</a></h2>
+<p>This year we announced the much-awaited <a href="https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html">new evergreen Googlebot</a>.</p>
+<figure class="w-figure w-figure--center">
+  <img src="evergreen-googlebot.png" alt="Googlebot holding the Chrome logo" style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    Googlebot is now running a modern Chromium rendering engine.
+  </figcaption>
+</figure>
+<p>Googlebot now uses a modern Chromium engine to render websites for Google Search. On top of that, we will test newer versions of Chromium to <em>keep</em> Googlebot updated, usually within a few weeks of each stable Chrome release. This announcement is big news for web developers and SEOs because it marks the arrival of <a href="https://caniuse.com/#compare=chrome+41,chrome+74">1000+ new features</a> — such as ES6+, <code>IntersectionObserver</code>, and Web Components v1 — in Googlebot.</p>
+<h2 id="learn-how-googlebot-works">Learn how Googlebot works <a class="w-headline-link" href="#learn-how-googlebot-works" aria-hidden="true">#</a></h2>
+<p>Googlebot is a pipeline with several components. Let's take a look to understand how Googlebot indexes pages for Google Search.</p>
+<figure class="w-figure w-figure--center w-figure--fullbleed">
+  <img src="googlebot-process.png" alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Googlebot's pipeline for crawling, rendering, and indexing a page.
+  </figcaption>
+</figure>
+<p>The process works like this:</p>
+<ol>
+<li>Googlebot queues URLs for crawling.</li>
+<li>It then fetches the URLs with an HTTP request based on the <a href="https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html">crawl budget</a>.</li>
+<li>Googlebot scans the HTML for links and queues the discovered links for crawling.</li>
+<li>Googlebot then queues the page for rendering.</li>
+<li>As soon as possible, a headless Chromium instance renders the page, which includes JavaScript execution.</li>
+<li>Googlebot uses the rendered HTML to index the page.</li>
+</ol>
+<p>Your technical setup can influence the process of crawling, rendering, and indexing. For example, slow response times or server errors can impact the <a href="https://webmasters.googleblog.com/2017/01/what-crawl-budget-means-for-googlebot.html">crawl budget</a>. Another example would be requiring JavaScript to render the links can lead to a slower discovery of these links.</p>
+<h2 id="use-feature-detection-and-handle-errors">Use feature detection and handle errors <a class="w-headline-link" href="#use-feature-detection-and-handle-errors" aria-hidden="true">#</a></h2>
+<p>The evergreen Googlebot has lots of new features, but some features are still not supported. Relying on unsupported features or not handling errors properly can mean Googlebot can't render or index your content.</p>
+<p>Let's look at an example:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></span><br>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br><span class="highlight-line">     navigator<span class="token punctuation">.</span>geolocation<span class="token punctuation">.</span><span class="token function">getCurrentPosition</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">onSuccess</span><span class="token punctuation">(</span><span class="token parameter">position</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">       <span class="token function">loadLocalContent</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br>   </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><span class="highlight-line"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></span></code></pre>
+<p>This page might not show any content in some cases because the code doesn't handle when the user declines the permission or when getCurrentPosition call returns an error. Googlebot declines permission requests like this by default.</p>
+<p>This is a better solution:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></span><br>   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br><span class="highlight-line">     <span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>geolocation<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">       <span class="token comment">// this browser supports the Geolocation API, request location!</span></span><br><span class="highlight-line">       navigator<span class="token punctuation">.</span>geolocation<span class="token punctuation">.</span><span class="token function">getCurrentPosition</span><span class="token punctuation">(</span></span><br><span class="highlight-line">         <span class="token keyword">function</span> <span class="token function">onSuccess</span><span class="token punctuation">(</span><span class="token parameter">position</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">           <span class="token comment">// we successfully got the location, show local content</span></span><br><span class="highlight-line">           <span class="token function">loadLocalContent</span><span class="token punctuation">(</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">         <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token function">onError</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">           <span class="token comment">// we failed to get the location, show fallback content</span></span><br><span class="highlight-line">           <span class="token function">loadGlobalContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">       <span class="token comment">// this browser does not support the Geolocation API, show fallback content</span></span><br><span class="highlight-line">       <span class="token function">loadGlobalContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">     <span class="token punctuation">}</span></span><br>   </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><span class="highlight-line"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"></span></code></pre>
+<p>If you have problems with getting your JavaScript site indexed, <a href="https://developers.google.com/search/docs/guides/fix-search-javascript">walk through our troubleshooting guide</a> to find solutions.</p>
+<h2 id="choose-the-right-rendering-strategy-for-your-web-app">Choose the right rendering strategy for your web app <a class="w-headline-link" href="#choose-the-right-rendering-strategy-for-your-web-app" aria-hidden="true">#</a></h2>
+<p>The default rendering strategy for single-page apps today is client-side rendering. The HTML loads the JavaScript, which then generates the content in the browser as it executes.</p>
+<p>Let's look at a web app that shows a collection of cat images and uses JavaScript to render entirely in the browser.</p>
+<figure class="w-figure">
+  <img src="spa-kittens.png" alt="A code box showing HTML that loads some scripts. A screenshot of a web page on mobile that shows placeholder images while loading the actual content.">
+  <figcaption class="w-figcaption">
+    The rendering strategy influences the performance and robustness of your web apps.
+  </figcaption>
+</figure>
+<p>If you're free to choose your rendering strategy, consider server-side rendering or pre-rendering. They execute JavaScript on the server to generate the initial HTML content, which can improve performance for both users and crawlers. These strategies allow the browser to start rendering HTML as it arrives over the network, making the page load faster.  The <a href="https://www.youtube.com/watch?v=k-A2VfuUROg">rendering session at I/O</a>  or <a href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web">the blog post about rendering on the web</a> shows how server-side rendering and hydration can improve the performance and user experience of web apps and provides more code examples for these strategies.</p>
+<p>If you're looking for a workaround to help crawlers that don't execute JavaScript—or if you can't make changes to your frontend codebase—consider <a href="https://developers.google.com/search/docs/guides/dynamic-rendering">dynamic rendering</a>, which you can try out in <a href="https://codelabs.developers.google.com/codelabs/dynamic-rendering">this codelab</a>. Note, though, that you won't get the user experience or performance benefits that you would with server-side rendering or pre-rendering because dynamic rendering only serves static HTML to crawlers. That makes it a stop-gap rather than a long-term strategy.</p>
+<h2 id="test-your-pages">Test your pages <a class="w-headline-link" href="#test-your-pages" aria-hidden="true">#</a></h2>
+<p>While most pages generally work fine with Googlebot, we recommend testing your pages regularly to make sure your content is available to Googlebot and there are no problems. There are several great tools to help you do that.</p>
+<p>The easiest way to do a quick check of a page is the <a href="https://g.co/mobilefriendly">Mobile-Friendly Test</a>. Besides showing you issues with mobile-friendliness, it also gives you a screenshot of the above-the-fold content and the rendered HTML as Googlebot sees it.</p>
+<figure class="w-figure">
+  <img class="w-screenshot" src="mobile-friendly-test-rendered-html.png" alt="The mobile-friendly test shows the rendered HTML Googlebot sees after rendering the page">
+  <figcaption class="w-figcaption">
+    The mobile-friendly test shows you the rendered HTML Googlebot uses.
+  </figcaption>
+</figure>
+<p>You can also find out if there are resource loading issues or JavaScript errors.</p>
+<figure class="w-figure">
+  <img class="w-screenshot" src="mobile-friendly-test-js-error.png" alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace.">
+</figure>
+<p>It's recommended to verify your domain in <a href="https://g.co/searchconsole">Google Search Console</a> so you can use the URL inspection tool to find out more about the crawling and indexing state of a URL, receive messages when Search Console detects issues and find out more details of how your site performs in Google Search.</p>
+<figure class="w-figure">
+  <img class="w-screenshot" src="search-console-url-inspection-tool.png" alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL">
+  <figcaption class="w-figcaption">
+    The URL Inspection Tool in Search Console shows the status of a page in crawling, rendering, and indexing.
+  </figcaption>
+</figure>
+<p>For general SEO tips and guidance, you can use the SEO audits in Lighthouse. To integrate SEO audits into your testing suite, use the <a href="https://github.com/GoogleChrome/lighthouse/tree/master/lighthouse-cli">Lighthouse CLI</a> or the <a href="https://github.com/GoogleChromeLabs/lighthousebot">Lighthouse CI bot</a>.</p>
+<figure class="w-figure">
+  <img class="w-screenshot" src="lighthouse-seo-audit-report.png" alt="A lighthouse SEO report with a score of 44 and warnings about mobile-friendliness as well as warnings about content best practices">
+  <figcaption class="w-figcaption">
+    Lighthouse shows general SEO recommendations for a page.
+  </figcaption>
+</figure>
+<p>These tools help you identify, debug, and fix issues with pages in Google Search and should be part of your development routine.</p>
+<h2 id="stay-up-to-date-and-get-in-touch">Stay up to date and get in touch <a class="w-headline-link" href="#stay-up-to-date-and-get-in-touch" aria-hidden="true">#</a></h2>
+<p>To stay up to date with announcements and changes to Google Search, keep an eye on our <a href="https://webmasters.googleblog.com">Webmasters Blog</a>, the <a href="https://youtube.com/GoogleWebmasterHelp">Google Webmasters Youtube channel</a>, and our <a href="https://twitter.com/googlewmc">Twitter account</a>.
+Also check out our <a href="http://developers.google.com/search/docs/guides/">developer guide to Google Search</a> and our <a href="https://www.youtube.com/watch?v=LXF8bM4g-J4&amp;list=PLKoqnv2vTMUPOalM1zuWDP9OQl851WMM9">JavaScript SEO video series</a> to learn more about SEO and JavaScript.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 5, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/javascript-and-google-search-io-2019/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/service-worker-mindset/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Service worker mindset
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

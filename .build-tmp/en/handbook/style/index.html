@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Style</title>
+    <meta name="description" content="The primary guidelines for writing in the web.dev style.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Style&amp;url=https%3A%2F%2Fweb.dev%2Fhandbook%2Fstyle%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/handbook
+    >
+      Content handbook
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Style</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 26, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mfriesenhahn.jpg"
+    alt="Michael Friesenhahn"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Michael Friesenhahn</cite>
+    <ul class="w-author__link-list">
+      
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mfriesenhahn">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>The style guidelines apply to posts, codelabs, and anything else you might write on web.dev. They're intended to help both writers and reviewers evaluate drafts, and they're included in the <a href="/handbook/content-checklist">web.dev content checklist</a>.</p>
+<h2 id="know-your-audience-and-purpose">Know your audience and purpose <a class="w-headline-link" href="#know-your-audience-and-purpose" aria-hidden="true">#</a></h2>
+<p>Have a specific <a href="/handbook/audience">audience</a> in mind as you write.</p>
+<p>Make sure your content is meeting a need of your audience. (For example, is it teaching them how to do something? Helping them grasp a commonly misunderstood concept?)</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>A post titled &quot;The Media Capabilities API&quot;</p>
+  </blockquote>
+  <p>If the reader isn't familiar with the API, its name isn't meaningful and doesn't convey how the post will be useful.</p>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>A post titled &quot;How YouTube improved video performance with the Media Capabilities API&quot;</p>
+  </blockquote>
+  <p>While slightly longer, this title tells less experienced readers what they'll learn from the post while still providing the name of the API for readers who recognize it.</p>
+</div>
+<h2 id="be-concise">Be concise <a class="w-headline-link" href="#be-concise" aria-hidden="true">#</a></h2>
+<p>Use the fewest words possible while keeping language clear and <a href="/handbook/inclusion-and-accessibility#use-readable-language">readable</a>.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Absolute and fixed positioning have been reimplemented and are more spec compliant than the old implementation. They also better match the behavior in other browsers.</p>
+  </blockquote>
+  <p>This sentence includes unnecessary words in some places (e.g., multiple phrases saying there's a new version), while not providing enough detail in others (e.g., which spec?).</p>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Absolute and fixed positioning are now more compliant with W3C specifications and better match the behavior in other browsers.</p>
+  </blockquote>
+  <p>This revision gives detail readers will likely need (e.g., the relevant specification) while omitting unnecessary words.</p>
+</div>
+<p>Keep posts and codelabs short—typically 1,000 words or less.</p>
+<p>This emphasis on concision often means you can't discuss every aspect of a tool or technique. Instead, focus on the essential concepts required for readers to get started with a technique and apply it to their projects. If readers are interested in diving deeper, they can move on to resources outside of web.dev.</p>
+<h2 id="chunk-your-content">Chunk your content <a class="w-headline-link" href="#chunk-your-content" aria-hidden="true">#</a></h2>
+<p>Dividing your content into logical chunks makes it easier to understand.</p>
+<p>Use section headings and subheadings to convey the structure of your piece. There are two structures that tend to work well on web.dev (though feel free to try others!):</p>
+<ul>
+<li>
+<p><strong>Measure → optimize → monitor</strong></p>
+<p>This sequence works in many posts and is all but essential for posts about how to address Lighthouse audits.</p>
+</li>
+<li>
+<p><strong>Concept → how-to → further reading</strong></p>
+<p>This sequence works well for codelabs.</p>
+</li>
+</ul>
+<p>Focus each paragraph (typically 2–3 sentences) on one main idea.</p>
+<p>Use a list for a set of instructions or related ideas.</p>
+<p>Include examples and figures. (See the next guideline.)</p>
+<h2 id="use-figures-when-text-won't-do">Use figures when text won't do <a class="w-headline-link" href="#use-figures-when-text-won't-do" aria-hidden="true">#</a></h2>
+<p>Aside from breaking up long sections of prose, media can be better than text for conveying some concepts and instructions. A key question to ask as you write is: &quot;Would this idea be easier to understand if I provided a figure?&quot;</p>
+<p>web.dev supports the following figures, which you can include in your post or codelab by following the examples in the &quot;<a href="/handbook/web-dev-components">web.dev components</a>&quot; post.</p>
+<ul>
+<li>Tables (Use tables sparingly—they don't resize well on mobile.)</li>
+<li>Comparisons</li>
+<li>Images and video (See the &quot;<a href="/handbook/use-media">Use images and video effectively</a>&quot; post.)</li>
+<li>Code blocks</li>
+<li>Sample apps (See the &quot;<a href="/handbook/write-code-samples">Write useful code samples</a>&quot; post.)</li>
+</ul>
+<h2 id="help-readers-get-things-done">Help readers get things done <a class="w-headline-link" href="#help-readers-get-things-done" aria-hidden="true">#</a></h2>
+<p>Focus on readers and the concrete task they're trying to complete. While an introductory paragraph can provide important <a href="#give-useful-context">context</a>, get to the instructional content as soon as possible. The &quot;<a href="/use-imagemin-to-compress-images">Use Imagemin to compress images</a>&quot; post is a great example.</p>
+<p>When providing instruction, favor the imperative mood.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>You can do <em>x</em> by clicking <strong>Run Audit</strong>.</p>
+  </blockquote>
+  <p>The declarative mood (&quot;you can…&quot;) makes it less clear that the reader needs to take an action.</p>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Click <strong>Run Audit</strong> to do <em>x</em>.</p>
+  </blockquote>
+  <p>The imperative &quot;click&quot; makes it obvious that an action is needed.</p>
+</div>
+<p>When talking about technologies or tools, focus on what they let the reader do, not on their features or the work that went into creating them. (Avoiding first-person pronouns helps.)</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>We've added <em>[a cool thing]</em> in DevTools.</p>
+  </blockquote>
+  <p>This sentence emphasizes the work the developers of DevTools did rather than what it lets the reader do.</p>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>Use <em>[a cool thing]</em> in DevTools to <em>[do neat stuff]</em>.</p>
+  </blockquote>
+  <p>This sentence better focuses on what how readers can meet their goals.</p>
+</div>
+<p>Address the reader directly rather than imagining a hypothetical third party.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>A seller can choose a variety of shopfront themes.</p>
+  </blockquote>
+  <p>If the reader isn't a seller, this detail may not seem relevant.</p>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>You can choose a variety of shopfront themes.</p>
+  </blockquote>
+  <p>Using second person helps convey that we think this information is relevant to readers. (This strategy assumes that the post has been appropriately targeted to an <a href="/handbook/audience">audience</a>.)</p>
+</div>
+<p>Provide a way to measure success. How can developers test that they've followed your instruction correctly?</p>
+<h2 id="keep-it-simple">Keep it simple <a class="w-headline-link" href="#keep-it-simple" aria-hidden="true">#</a></h2>
+<p>Focus on essential details when explaining a tool or technique. Avoid overwhelming the reader with &quot;real-world&quot; examples that include complexities that aren't required to understand the basic concept. Save those details for supplemental codelabs or follow-up posts. See the &quot;<a href="/code-splitting-suspense">Code splitting with React.lazy and Suspense</a>&quot; post for an example.</p>
+<p>Avoid jargon. If you absolutely <em>must</em> use a term most web.dev readers are unlikely to know, define it in a short aside. See the &quot;<a href="/handbook/web-dev-components#asides">web.dev components</a>&quot; post for how to include asides. Also check out the &quot;<a href="/handbook/inclusion-and-accessibility#use-readable-language">Inclusion and accessibility</a>&quot; post for more info about writing readable language.</p>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--worse">
+    Don’t
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>In some scripts, graphemes can be visually joined when they're adjacent.</p>
+  </blockquote>
+  <p><em>Script</em> and <em>grapheme</em> are very precise, but they're likely to be unfamiliar to most readers and may cause confusion since readers probably more commonly see <em>script</em> referring to a piece of code.</p>
+</div>
+<div class="w-compare">
+  <span class="w-compare__label w-compare__label--better">
+    Do
+  </span>
+  <p>—</p>
+  <blockquote>
+  <p>In some written languages, certain characters can be visually joined when they're adjacent.</p>
+  </blockquote>
+  <p>While <em>written language</em> and <em>character</em> are slightly less precise, they should be more familiar and less likely to cause misunderstandings.</p>
+</div>
+<h2 id="be-accurate">Be accurate <a class="w-headline-link" href="#be-accurate" aria-hidden="true">#</a></h2>
+<p>Make sure your information aligns to current documentation, standards, and best practices. If you're writing about a topic that isn't in your area of expertise (or even if it is!), get input from other experts.</p>
+<h2 id="give-useful-context">Give useful context <a class="w-headline-link" href="#give-useful-context" aria-hidden="true">#</a></h2>
+<p>Tell readers what you're expecting them to know up front—and provide links to where they can learn it if you can. See the &quot;<a href="/get-started-optimize-react/#what-will-you-learn">Get started: optimize your React app</a>&quot; post for an example.</p>
+<p>Explain why what you're teaching matters before jumping into the instruction. This context can be provided in a collection via an introductory post (see the &quot;<a href="/accessible">Accessible to all</a>&quot; collection for an example) or in a post via an introductory paragraph (the &quot;<a href="/use-imagemin-to-compress-images">Use Imagemin to compress images</a>&quot; post is a nice example).</p>
+<p>Indicate which details are relevant in longer code blocks by providing explanations and code highlighting. If readers don't need to understand everything about the code, tell them that—it makes the task less intimidating, especially for less experienced developers. See the &quot;<a href="/serve-responsive-images">Serve responsive images</a>&quot; post for an example.</p>
+<p>When there's more than one way to solve a problem, organize them in order of simplest to most complex.</p>
+<h2 id="be-mindful-of-the-development-landscape">Be mindful of the development landscape <a class="w-headline-link" href="#be-mindful-of-the-development-landscape" aria-hidden="true">#</a></h2>
+<p>Acknowledge browser complexity. Clearly state browser support (e.g., link to the relevant feature page on <a href="https://www.caniuse.com/">caniuse</a>) and provide workarounds for browser incompatibilities (e.g., polyfills).</p>
+<p>Use well-known, well-established tooling. Strike a balance between what's most commonly used and what's best practice (in terms of compatibility, accessibility, functionality, etc.). Choosing tooling can be one of the most overwhelming and time consuming aspects of web development. Rather than providing exhaustive lists of options, suggest tooling and libraries to help readers feel confident in their choices.</p>
+<p>When appropriate, provide multiple paths, frameworks, or tools to achieve a goal. Attaching a codelab for each path to a post is often a good way to do this. To see an example, check out the codelab callout at the end of the &quot;<a href="/use-imagemin-to-compress-images/#imagemin-npm-module">Use Imagemin to compress images</a>&quot; post.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 26, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/style/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/handbook"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/handbook/voice/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Voice
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

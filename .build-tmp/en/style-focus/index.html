@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Style focus</title>
+    <meta name="description" content="The focus indicator (often signified by a &quot;focus ring&quot;) identifies the currently
+focused element. For users who are unable to use a mouse, this indicator is
+extremely important, as it acts as a stand-in for their mouse-pointer.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Style%20focus&amp;url=https%3A%2F%2Fweb.dev%2Fstyle-focus%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/accessible
+    >
+      Accessible to all
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Style focus</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 18, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/robdodson.jpg"
+    alt="Rob Dodson"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rob Dodson</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rob_dodson">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/robdodson">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@robdodson">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>The focus indicator (often signified by a &quot;focus ring&quot;) identifies the currently
+focused element on your page. For users who are unable to use a mouse, this
+indicator is <em>extremely important</em> because it acts as a stand-in for their
+mouse-pointer.</p>
+<p>If the browser's default focus indicator clashes with your design, you can use
+CSS to restyle it. Just remember to keep your keyboard users in mind!</p>
+<h2 id="use-:focus-to-always-show-a-focus-indicator">Use <code>:focus</code> to always show a focus indicator <a class="w-headline-link" href="#use-:focus-to-always-show-a-focus-indicator" aria-hidden="true">#</a></h2>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus"><code>:focus</code></a>
+pseudo-class is applied any time an element is focused, regardless of the input
+device (mouse, keyboard, stylus, etc.) or method used to focus it. For example,
+the button below has a dashed orange focus indicator:</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">button:focus</span> <span class="token punctuation">{</span>  </span><br><span class="highlight-line">  <span class="token property">outline</span><span class="token punctuation">:</span> 4px dashed orange<span class="token punctuation">;</span>  </span><br><span class="highlight-line"><span class="token punctuation">}</span>  </span></code></pre>
+<p>Regardless of whether you use a mouse to click on it or a keyboard to tab to it,
+the button's focus indicator will <em>always</em> look the same.</p>
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/focus-style?path=index.html&previewSize=100&attributionHidden=true"
+    alt="focus-visible on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h2 id="use-:focus-visible-to-selectively-show-a-focus-indicator">Use <code>:focus-visible</code> to selectively show a focus indicator <a class="w-headline-link" href="#use-:focus-visible-to-selectively-show-a-focus-indicator" aria-hidden="true">#</a></h2>
+<p>The new
+<a href="%5Bhttps://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible%5D(https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)"><code>:focus-visible</code></a>
+pseudo-class is applied any time that an element receives focus and that the
+browser determines via heuristics that displaying a focus indicator would be
+beneficial to the user. In particular, if the most recent user interaction
+was via the keyboard and the key press did not include a meta, <code>ALT</code> / <code>OPTION</code>,
+or <code>CONTROL</code> key, then <code>:focus-visible</code> will match.</p>
+<div class="w-aside w-aside--note">
+<p><code>:focus-visible</code> is currently only supported in Chrome behind a flag,
+but there is a <a href="https://github.com/WICG/focus-visible">lightweight polyfill</a>
+that can be added to your app to make it work.</p>
+</div>
+<p>The button in the example below will <em>selectively</em> show a focus indicator. If
+you use a mouse to click on it, the results are different than if you first use
+a keyboard to tab to it.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">button:focus-visible</span> <span class="token punctuation">{</span>  </span><br><span class="highlight-line">  <span class="token property">outline</span><span class="token punctuation">:</span> 4px dashed orange<span class="token punctuation">;</span>  </span><br><span class="highlight-line"><span class="token punctuation">}</span>  </span></code></pre>
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/focus-visible-style?path=index.html&previewSize=100&attributionHidden=true"
+    alt="focus-visible on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h2 id="use-:focus-within-to-style-the-parent-of-a-focused-element">Use <code>:focus-within</code> to style the parent of a focused element <a class="w-headline-link" href="#use-:focus-within-to-style-the-parent-of-a-focused-element" aria-hidden="true">#</a></h2>
+<p>The
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within"><code>:focus-within</code></a>
+pseudo-class is applied to an element either when the element iteslf receives
+focus or when another element inside that element receives focus.</p>
+<p>It can be used to highlight a region of the page to draw the
+user's attention to that area. For example, the form below receives focus both
+when the form itself is selected and also when any of its radio buttons are
+selected.</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">form:focus-within</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">background</span><span class="token punctuation">:</span> #ffecb3<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/focus-within-style?path=index.html&previewSize=100&attributionHidden=true"
+    alt="focus-visible on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h2 id="when-to-display-a-focus-indicator">When to display a focus indicator <a class="w-headline-link" href="#when-to-display-a-focus-indicator" aria-hidden="true">#</a></h2>
+<p>A good rule of thumb is to ask yourself, &quot;If you clicked on this control while
+using a mobile device, would you expect it to display a keyboard?&quot;</p>
+<p>If the answer is &quot;yes,&quot; then the control should probably <em>always</em> show a focus
+indicator, regardless of the input device used to focus it. A good example is
+the <code>&lt;input type=&quot;text&quot;&gt;</code> element. The user will need to send input to the
+element via the keyboard regardless of how the input element originally received
+focus, so it's helpful to always display a focus indicator.</p>
+<p>If the answer is &quot;no,&quot; then the control may choose to selectively show a focus
+indicator. A good example is the <code>&lt;button&gt;</code> element. If a user clicks on it with
+a mouse or touch screen, the action is complete, and a focus indicator may not
+be necessary. However, if the user is <em>navigating</em> with a keyboard, it's useful
+to show a focus indicator so the user can decide whether or not they want to
+click the control using the <code>ENTER</code> or <code>SPACE</code> keys.</p>
+<h2 id="avoid-outline:-none">Avoid <code>outline: none</code> <a class="w-headline-link" href="#avoid-outline:-none" aria-hidden="true">#</a></h2>
+<p>The way browsers decide when to draw a focus indicator is, frankly, very
+confusing. Changing the appearance of a <code>&lt;button&gt;</code> element with CSS or giving
+an element a <code>tabindex</code> will cause the browser's default focus ring behavior to
+kick-in.</p>
+<p>A very common anti-pattern is to remove the focus indicator using CSS such as:</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token comment">/* Don't do this!!! */</span>  </span><br><span class="highlight-line"><span class="token selector">:focus</span> <span class="token punctuation">{</span>  </span><br><span class="highlight-line">  <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>  </span><br><span class="highlight-line"><span class="token punctuation">}</span>  </span></code></pre>
+<p>A better way to work around this issue is to use a combination of <code>:focus</code> and
+the <code>:focus-visible</code> polyfill. The first block of code below demonstrates how
+the polyfill works, and the sample app beneath it provides an example of using
+the polyfill to change the focus indicator on a button.</p>
+<pre class="language-css"><code class="language-css"><span class="token comment">/*  <br><span class="highlight-line">  This will hide the focus indicator if the element receives focus via the</span><br><span class="highlight-line">  mouse, but it will still show up on keyboard focus.  </span><br>*/</span>  <br><span class="highlight-line"><span class="token selector">.js-focus-visible :focus:not(.focus-visible)</span> <span class="token punctuation">{</span>  </span><br><span class="highlight-line">  <span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>  </span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="token comment">/*  <br><span class="highlight-line">  Optionally: Define a strong focus indicator for keyboard focus.  </span><br><span class="highlight-line">  If you choose to skip this step, then the browser's default focus  </span><br><span class="highlight-line">  indicator will be displayed instead.  </span><br>*/</span>  <br><span class="highlight-line"><span class="token selector">.js-focus-visible .focus-visible</span> <span class="token punctuation">{</span>  </span><br><span class="highlight-line">  …  </span><br><span class="highlight-line"><span class="token punctuation">}</span>  </span></code></pre>
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/focus-visible?path=index.html&previewSize=100&attributionHidden=true"
+    alt="focus-visible on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 18, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/accessible/style-focus/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/accessible"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/semantics-and-screen-readers/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Semantics and screen readers
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

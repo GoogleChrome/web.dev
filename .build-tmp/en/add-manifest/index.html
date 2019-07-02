@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add a Web App Manifest</title>
+    <meta name="description" content="The web app manifest is a simple JSON file that tells the browser about your
+web application and how it should behave when &#39;installed&#39; on the user&#39;s mobile
+device or desktop.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Add%20a%20Web%20App%20Manifest&amp;url=https%3A%2F%2Fweb.dev%2Fadd-manifest%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/installable
+    >
+      Installable
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Add a Web App Manifest</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/petelepage.jpg"
+    alt="Pete LePage"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Pete LePage</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/petele">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/petele">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>The web app manifest is a simple JSON file that tells the browser about your web
+application and how it should behave when 'installed' on the user's mobile
+device or desktop. A typical manifest file includes information about the app
+name, icons it should use, and the URL that should be opened when the app is
+launched.</p>
+<p>Manifest files are supported in Chrome, Edge, Firefox, UC Browser, Opera and the
+Samsung browser, and Safari is currently working on adding support.</p>
+<h2 id="create-the-manifest.json-file">Create the manifest.json file <a class="w-headline-link" href="#create-the-manifest.json-file" aria-hidden="true">#</a></h2>
+<p>The manifest file can have any name, but is commonly named <code>manifest.json</code> and
+served from the root (your website's top level directory).</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"short_name"</span><span class="token operator">:</span> <span class="token string">"Weather"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Weather - Do I need an umbrella?"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Weather forecast information"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"icons"</span><span class="token operator">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">    <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token property">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons-192.png"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token property">"sizes"</span><span class="token operator">:</span> <span class="token string">"192x192"</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token property">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons-512.png"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token property">"sizes"</span><span class="token operator">:</span> <span class="token string">"512x512"</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span><br><span class="highlight-line">  <span class="token punctuation">]</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"start_url"</span><span class="token operator">:</span> <span class="token string">"/?source=pwa"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"background_color"</span><span class="token operator">:</span> <span class="token string">"#3367D6"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"display"</span><span class="token operator">:</span> <span class="token string">"standalone"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"theme_color"</span><span class="token operator">:</span> <span class="token string">"#3367D6"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Property</strong></th>
+        <th><strong>Use</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+        <code><strong>short_name</strong></code> (required)
+        </td>
+        <td>
+          Short human-readable name for the application. This is intended for when
+          there is insufficient space to display the full name of the web
+          application, like device homescreens.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>name</strong></code> (required)</td>
+        <td>Human-readable name for the site when displayed to the user.</td>
+      </tr>
+      <tr>
+        <td><code><strong>description</strong></code> (recommended)</td>
+        <td>General description of what the PWA does.</td>
+      </tr>
+      <tr>
+        <td><code><strong>icons</strong></code> (required)</td>
+        <td>
+          An array of image files that can serve as application icons. Chrome
+          requires a 192x192px and a 512x512px icon. Additional sizes are
+          optional, and recommended for those who want to ensure pixel perfect
+          icons.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>start_url</strong></code> (required)</td>
+        <td>
+          The URL that loads when a user launches the application. This has to be
+          a relative URL, relative to the manifest url.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>background_color</strong></code> (recommended)</td>
+        <td>
+          The background color used on the auto-generated splash screen when the
+          PWA is launched.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>display</strong></code> (required)</td>
+        <td>The developers' preferred display mode for the PWA.</td>
+      </tr>
+      <tr>
+        <td><code><strong>scope</strong></code> (recommended)</td>
+        <td>
+          The navigation scope of this website's context. This restricts what web
+          pages can be viewed while the manifest is applied. If the user navigates
+          outside the scope, it returns to a normal web page inside a browser
+          tab/window.
+        </td>
+      </tr>
+      <tr>
+        <td><code><strong>theme_color</strong></code> (recommended)</td>
+        <td>
+          The default theme color for an application. This affects how the OS
+          displays the site. <br>
+          <ul>
+            <li>
+              On Android's task switcher, the theme color surrounds the site.
+            </li>
+            <li>On desktop, the theme color is used to style the title bar.</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="add-the-web-app-manifest-to-your-pages">Add the web app manifest to your pages <a class="w-headline-link" href="#add-the-web-app-manifest-to-your-pages" aria-hidden="true">#</a></h2>
+<p>When you have created the manifest, add a <code>&lt;link&gt;</code> tag to all the pages of your
+Progressive Web App.</p>
+<p>For example:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>manifest<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/manifest.json<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span></code></pre>
+<h2 id="test-your-manifest">Test your manifest <a class="w-headline-link" href="#test-your-manifest" aria-hidden="true">#</a></h2>
+<p>To verify your manifest is setup correctly, use the <strong>Manifest</strong> tab on the
+<strong>Application</strong> panel of Chrome DevTools.</p>
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./lh-manifest.png" alt="The application panel in Chrome Devtools with the manifest tab selected.">
+</figure>
+<p>This tab provides a human-readable version of many of your manifest's
+properties, and makes it easy to verify that all of the images are loading
+properly.</p>
+<h3 id="try-it">Try it <a class="w-headline-link" href="#try-it" aria-hidden="true">#</a></h3>
+<ol>
+<li>Open a new tab to
+<a href="https://manifest-good.glitch.me/">manifest-good.glitch.me</a>.</li>
+<li>Open Chrome DevTools and switch to the Application panel, then the
+Manifest tab</li>
+</ol>
+<h2 id="further-reading">Further reading <a class="w-headline-link" href="#further-reading" aria-hidden="true">#</a></h2>
+<p>There are several additional properties that can be added to the web app
+manifest, refer to the <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest">MDN Web App Manifest
+documentation</a> for full
+details.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/installable/add-manifest/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/installable"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

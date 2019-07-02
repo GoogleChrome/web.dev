@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reduce JavaScript payloads with code-splitting</title>
+    <meta name="description" content="In this codelab, learn how to improve the performance of a simple application
+through code-splitting.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="code-splitting-starter" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Reduce JavaScript payloads with code-splitting</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/houssein.jpg"
+    alt="Houssein Djirdeh"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Houssein Djirdeh</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/hdjirdeh">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/housseindjirdeh">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@housseindjirdeh">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>Most web pages and applications are made up of many different parts. Instead of
+sending all the JavaScript that makes up the application as soon as the first
+page is loaded, <strong>code-splitting</strong> a bundle into multiple &quot;pieces&quot; (or chunks)
+improves page performance.</p>
+<p>In this codelab, the performance of a simple application that sorts three
+numbers is optimized through code-splitting.</p>
+<p><img src="./codelab-code-splitting-1.png" alt="A browser window shows an application titled Magic Sorter with three fields for inputting numbers and a sort button."></p>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<div class="w-aside w-aside--note">
+<p>Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.</p>
+</div>
+<p>Like always, it's important to first measure how well a website performs before
+attempting to add any optimizations.</p>
+<ul>
+<li>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</li>
+<li>Open the DevTools by pressing <code>CMD + OPTION + i</code> / <code>CTRL + SHIFT + i</code>.</li>
+<li>Click on the <strong>Network</strong> panel.</li>
+<li>Make sure <code>Disable Cache</code> is checked and reload the app.</li>
+</ul>
+<img class="w-screenshot" src="./codelab-code-splitting-3.png" alt="Network panel showing 71.2 KB JavaScript bundle.">
+<p>71.2 KB worth of JavaScript just to sort a few numbers in a simple application.
+What gives?</p>
+<p>In the source code (<code>src/index.js</code>), the <code>lodash</code> library is imported and used
+in this application. <a href="https://lodash.com/">Lodash</a> provides many useful utility
+functions, but only a single method from the package is being used here.
+Installing and importing entire third-party dependencies where only a small
+portion of it is being utilized is a common mistake.</p>
+<h2 id="optimize">Optimize <a class="w-headline-link" href="#optimize" aria-hidden="true">#</a></h2>
+<p>There are a few ways the bundle size can be trimmed:</p>
+<ol>
+<li>Write a custom sorting method instead of importing a third-party library</li>
+<li>Use the built in <code>Array.prototype.sort()</code> method to sort numerically</li>
+<li>Only import the <code>sortBy</code> method from <code>lodash</code> and not the entire library</li>
+<li>Download the code for sorting only when the user clicks the button</li>
+</ol>
+<p>Options 1 and 2 are perfectly appropriate methods to reduce the bundle size (and
+would probably make the most sense for a real application). However, those are
+not used in this tutorial for the sake of teaching 😈.</p>
+<div class="w-aside w-aside--note">
+<p>The concept of removing unused code is explored in further detail in a
+<a href="/remove-unused-code">separate guide</a>.</p>
+</div>
+<p>Both options 3 and 4 help improve the performance of this application. The
+next few sections of this codelab cover these steps. Like any coding
+tutorial, always try to write the code yourself instead of copy and pasting.</p>
+<h3 id="only-import-what-you-need">Only import what you need <a class="w-headline-link" href="#only-import-what-you-need" aria-hidden="true">#</a></h3>
+<p>A few files need to be modified to only import the single method from <code>lodash</code>.
+To begin with, replace this dependency in <code>package.json</code>:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"lodash"</span><span class="token operator">:</span> <span class="token string">"^4.7.0"</span><span class="token punctuation">,</span></span></code></pre>
+<p>with this:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"lodash.sortby"</span><span class="token operator">:</span> <span class="token string">"^4.7.0"</span><span class="token punctuation">,</span></span></code></pre>
+<p>Now in <code>src/index.js</code>, import this specific module:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> <span class="token string">"./style.css"</span><span class="token punctuation">;</span></span><br><del class="highlight-line highlight-line-remove"><span class="token keyword">import</span> _ <span class="token keyword">from</span> <span class="token string">"lodash"</span><span class="token punctuation">;</span></del><br><ins class="highlight-line highlight-line-add"><span class="token keyword">import</span> sortBy <span class="token keyword">from</span> <span class="token string">"lodash.sortby"</span><span class="token punctuation">;</span></ins></code></pre>
+<p>And update how the values are sorted::</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">form<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"submit"</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token punctuation">[</span>input1<span class="token punctuation">.</span>valueAsNumber<span class="token punctuation">,</span> input2<span class="token punctuation">.</span>valueAsNumber<span class="token punctuation">,</span> input3<span class="token punctuation">.</span>valueAsNumber<span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><del class="highlight-line highlight-line-remove">  <span class="token keyword">const</span> sortedValues <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">sortBy</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><span class="token punctuation">;</span></del><br><ins class="highlight-line highlight-line-add">  <span class="token keyword">const</span> sortedValues <span class="token operator">=</span> <span class="token function">sortBy</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><span class="token punctuation">;</span></ins><br><span class="highlight-line"></span><br>  results<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token string">`<br><span class="highlight-line">    &lt;h2></span><br><span class="highlight-line">      </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sortedValues<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span><br><span class="highlight-line">    &lt;/h2></span><br>  `</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Reload the application, open DevTools, and take a look at the <strong>Network</strong> panel
+once again.</p>
+<img class="w-screenshot" src="./codelab-code-splitting-4.png" alt="Network panel showing 15.2 KB JavaScript bundle.">
+<p>For this application, the bundle size was reduced by over 4X with very little
+work, but there's still more room for improvement.</p>
+<h3 id="code-splitting">Code splitting <a class="w-headline-link" href="#code-splitting" aria-hidden="true">#</a></h3>
+<p><a href="https://webpack.js.org/"><strong>webpack</strong></a> is one of the most popular open-source
+module bundlers used today. In short, it <em>bundles</em> all JavaScript modules (as
+well as other assets) that make up a web application into static files that can
+be read by the browser.</p>
+<p>The single bundle used in this application can be split into two separate
+chunks:</p>
+<ul>
+<li>One responsible for the code that makes up our initial route</li>
+<li>A secondary chunk that contains our sorting code</li>
+</ul>
+<p>With the use of <strong>dynamic imports</strong>, a secondary chunk can be <em>lazy loaded,</em> or
+loaded on demand. In this application, the code that makes up the chunk can be
+loaded only when the user presses the button.</p>
+<p>Begin by removing the top-level import for the sort method in <code>src/index.js</code>:</p>
+<pre class="language-js"><code class="language-js"><del class="highlight-line highlight-line-remove"><span class="token keyword">import</span> sortBy <span class="token keyword">from</span> <span class="token string">"lodash.sortby"</span><span class="token punctuation">;</span></del></code></pre>
+<p>And import it within the event listener that fires when the button is pressed:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">form<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"submit"</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><mark class="highlight-line highlight-line-active">  <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'lodash.sortby'</span><span class="token punctuation">)</span></mark><br><mark class="highlight-line highlight-line-active">    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">module</span> <span class="token operator">=></span> module<span class="token punctuation">.</span>default<span class="token punctuation">)</span></mark><br><mark class="highlight-line highlight-line-active">    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">sortInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></mark><br><mark class="highlight-line highlight-line-active">    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token function">alert</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></mark><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>The <code>import()</code> feature is part of a
+<a href="https://github.com/tc39/proposal-dynamic-import">proposal</a> (currently at stage
+3 of the TC39 process) to include the capability to dynamically import a module.
+webpack has already included support for this and follows the same syntax laid
+out by the proposal.</p>
+<div class="w-aside w-aside--note">
+<p>Read more about how dynamic imports work in this <a href="https://developers.google.com/web/updates/2017/11/dynamic-import">Web Updates
+article</a>.</p>
+</div>
+<p><code>import()</code> returns a promise and when it resolves, the selected
+module is provided which is split out into a separate chunk. After the module is
+returned, <code>module.default</code> is used to reference the default
+export provided by lodash. The promise is chained with another <code>.then</code> that
+calls a <code>sortInput</code> method to sort the three input values. At the end of the
+promise chain, .<code>catch()</code> is used to handle cases where the promise is rejected
+due to an error.</p>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+In a production application, always handle dynamic import
+errors appropriately. A simple alert message similar to what is used here may
+not provide the best user experience to let the user know something has
+failed.</p>
+</div>
+<div class="w-aside w-aside--note">
+<p>You may see a linting error that says:</p>
+<pre><code class="language-bash">Parsing error: 'import' and 'export' may only appear at the top level.
+</code></pre>
+<p>This is due to the fact that
+the dynamic import syntax is still in the proposal stage and has not been
+finalized. Although webpack already supports it, the settings for
+<a href="https://eslint.org">ESLint</a> (a JavaScript linting utility) used by
+Glitch has not been updated to include this syntax yet, but it still works!</p>
+</div>
+<p>The last thing that needs to be done is to write the <code>sortInput</code> method at the
+end of the file. This needs to be a function that <em>returns</em> a function that
+takes in the imported method from <code>lodash.sortBy</code>. The nested function can then
+sort the three input values and update the DOM.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">sortInput</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token parameter">sortBy</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">      input1<span class="token punctuation">.</span>valueAsNumber<span class="token punctuation">,</span></span><br><span class="highlight-line">      input2<span class="token punctuation">.</span>valueAsNumber<span class="token punctuation">,</span></span><br><span class="highlight-line">      input3<span class="token punctuation">.</span>valueAsNumber</span><br><span class="highlight-line">    <span class="token punctuation">]</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token keyword">const</span> sortedValues <span class="token operator">=</span> <span class="token function">sortBy</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br>    results<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token string">`<br><span class="highlight-line">      &lt;h2></span><br><span class="highlight-line">        </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sortedValues<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"></span><br><span class="highlight-line">      &lt;/h2></span><br>    `</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h2 id="monitor">Monitor <a class="w-headline-link" href="#monitor" aria-hidden="true">#</a></h2>
+<p>Reload the application one last time and keep a close eye on the <strong>Network</strong>
+panel again. Only a small initial bundle is downloaded as soon as the app
+loads.</p>
+<img class="w-screenshot" src="./codelab-code-splitting-5.png" alt="Network panel showing 2.7 KB JavaScript bundle.">
+<p>After the button is pressed to sort the input numbers, the chunk that contains
+the sorting code gets fetched and executed.</p>
+<img class="w-screenshot" src="./codelab-code-splitting-6.png" alt="Network panel showing 2.7 KB JavaScript bundle followed by a 13.9 KB JavaScript bundle.">
+<p>Notice how the numbers still get sorted!</p>
+<h2 id="conclusion">Conclusion <a class="w-headline-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<p>Code splitting and lazy loading can be extremely useful techniques to trim down
+the initial bundle size of your application, and this can directly result in
+much faster page load times. However, there are some important things that need
+to be considered before including this optimization in your application.</p>
+<h3 id="lazy-loading-ui">Lazy loading UI <a class="w-headline-link" href="#lazy-loading-ui" aria-hidden="true">#</a></h3>
+<p>When lazy loading specific modules of code, it's important to consider how the
+experience would be for users with weaker network connections. Splitting and
+loading a very large chunk of code when a user submits an action can make it
+seem like the application may have stopped working, so consider showing a
+loading indicator of some sort.</p>
+<h3 id="lazy-loading-third-party-node-modules">Lazy loading third-party node modules <a class="w-headline-link" href="#lazy-loading-third-party-node-modules" aria-hidden="true">#</a></h3>
+<p>It is not always the best approach to lazy load third-party dependencies in your
+application and it depends on where you use them. Usually, third party
+dependencies are split into a separate <code>vendor</code> bundle that can be cached since
+they don't update as often. Read more about how the
+<a href="https://webpack.js.org/plugins/split-chunks-plugin/">SplitChunksPlugin</a> can
+help you do this.</p>
+<h3 id="lazy-loading-with-a-javascript-framework">Lazy loading with a JavaScript framework <a class="w-headline-link" href="#lazy-loading-with-a-javascript-framework" aria-hidden="true">#</a></h3>
+<p>Many popular frameworks and libraries that use webpack provide abstractions to
+make lazy loading easier than using dynamic imports in the middle of your
+application.</p>
+<ul>
+<li><a href="https://angular.io/guide/lazy-loading-ngmodules">Lazy loading modules with Angular</a></li>
+<li><a href="https://reacttraining.com/react-router/web/guides/code-splitting">Code splitting with React Router</a></li>
+<li><a href="https://router.vuejs.org/guide/advanced/lazy-loading.html">Lazy loading with Vue Router</a></li>
+</ul>
+<p>Although it is useful to understand how dynamic imports work, always use the
+method recommended by your framework/library to lazy load specific modules.</p>
+<h3 id="preloading-and-prefetching">Preloading and prefetching <a class="w-headline-link" href="#preloading-and-prefetching" aria-hidden="true">#</a></h3>
+<p>Where possible, take advantage of browser hints such as <code>&lt;link rel=&quot;preload&quot;&gt;</code>
+or <code>&lt;link rel=&quot;prefetch&quot;&gt;</code> in order to try and load critical modules even
+sooner. webpack supports both hints through the use of magic comments in import
+statements. This is explained in more detail in the
+<a href="/preload-critical-assets">Preload critical chunks</a> guide.</p>
+<h3 id="lazy-loading-more-than-code">Lazy loading more than code <a class="w-headline-link" href="#lazy-loading-more-than-code" aria-hidden="true">#</a></h3>
+<p>Images can make up a significant part of an application. Lazy loading those that
+are below the fold, or outside the device viewport, can speed up a website. Read
+more about this in the
+<a href="/use-lazysizes-to-lazyload-images">Lazysizes</a> guide.</p>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/reduce-javascript-payloads-with-code-splitting"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/code-splitting-starter?path=[object Object]&amp;previewSize="
+            alt="code-splitting-starter on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

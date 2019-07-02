@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bringing service workers to Google Search</title>
+    <meta name="description" content="Search for just about any topic on Google, and you&#39;re presented with a page of meaningful, relevant results. What you probably didn&#39;t realize is that this search results page may be served by a powerful piece of web technology called a service worker.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/google-search-sw/hero.jpg"
+  alt="An illustration of a service worker interacting with a cache."
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Bringing%20service%20workers%20to%20Google%20Search&amp;url=https%3A%2F%2Fweb.dev%2Fgoogle-search-sw%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Bringing service workers to Google Search</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          The story of what shipped, how the impact was measured, and the tradeoffs that were made.
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 20, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/jeffposnick.jpg"
+    alt="Jeff Posnick"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jeff Posnick</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/jeffposnick">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/jeffposnick">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@jeffposnick">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <h2 id="background">Background <a class="w-headline-link" href="#background" aria-hidden="true">#</a></h2>
+<p>Search for just about any topic on Google, and you're presented with an
+instantly recognizable page of meaningful, relevant results. What you probably
+<em>didn't</em> realize is that this search results page is, under certain scenarios,
+served by a powerful piece of web technology called a
+<a href="/service-workers-cache-storage/">service worker</a>.</p>
+<p>Rolling out service worker support for Google Search without negatively
+impacting the performance required dozens of engineers working across multiple
+teams. This is the story of what shipped, how performance was measured, and what
+tradeoffs were made.</p>
+<h2 id="key-reasons-for-exploring-service-workers">Key reasons for exploring service workers <a class="w-headline-link" href="#key-reasons-for-exploring-service-workers" aria-hidden="true">#</a></h2>
+<p>Adding a service worker to a web app, just like making any architectural change
+to your site, should be done with a clear set of goals in mind. For the Google
+Search team, there were a few key reasons why adding a service worker was worth
+exploring.</p>
+<div class="w-aside w-aside--note">
+<p>A service worker is extra code that sits in between your web app and
+the network, and running that code isn't free, so you need to make sure that
+what you're doing inside the service worker adds enough of a caching or
+functionality benefit to justify the cost of running the code. (This <a href="https://www.youtube.com/watch?v=25aCD5XL1Jk">talk</a>
+at the Chrome Dev Summit 2018 does a great job of exploring that idea in more
+detail.) An upfront understanding what you hope to achieve—and then collecting a
+full set of metrics to ensure that you've actually achieved it—should be the
+first step in your service worker journey.</p>
+</div>
+<h3 id="limited-search-result-caching">Limited search result caching <a class="w-headline-link" href="#limited-search-result-caching" aria-hidden="true">#</a></h3>
+<p>The Google Search team found that it's common for users to search for the
+same terms more than once within a short period of time. Rather than trigger a
+new backend request just to get what's likely to be the same results, the Search
+team wanted to take advantage of caching and fulfill those repeat requests
+locally.</p>
+<p>The importance of freshness can't be discounted, and sometimes users search for
+the same terms repeatedly because it's an evolving topic, and they expect to see
+fresh results. Using a service worker allows the Search team to implement
+fine-grained logic to control the lifetime of locally cached search results, and
+achieve the exact balance of speed vs. freshness that they believe best serves
+users.</p>
+<h3 id="meaningful-offline-experience">Meaningful offline experience <a class="w-headline-link" href="#meaningful-offline-experience" aria-hidden="true">#</a></h3>
+<p>Additionally, the Google Search team wanted to provide a meaningful offline
+experience. When a user wants to find out about a topic, they want to go
+straight to the Google Search page and start searching, without worrying about
+an active Internet connection.</p>
+<p>Without a service worker, visiting the Google search page while offline would
+just lead to the browser's standard network error page, and users would have to
+remember to come back and try again once their connection returned. With a
+service worker, it's possible to serve a custom offline HTML response, and allow
+users to enter their search query immediately.</p>
+<p><img src="offline-screenshot.png" alt="A screenshot of the background retry interface."></p>
+<p>The results won't be available until there's an Internet connection, but the
+service worker allows the search to be deferred and sent to Google's servers as
+soon as the device goes back online using the
+<a href="https://developers.google.com/web/updates/2015/12/background-sync">background sync API</a>.</p>
+<h3 id="smarter-javascript-caching-and-serving">Smarter JavaScript caching and serving <a class="w-headline-link" href="#smarter-javascript-caching-and-serving" aria-hidden="true">#</a></h3>
+<p>Another motivation was to optimize the caching and loading of the modularized
+JavaScript code that powers the various types of features on the search results
+page. There are a number of benefits offered by JavaScript bundling that make
+sense when there's no service worker involvement, so the Search team did not
+want to simply stop bundling entirely.</p>
+<p>By using a service worker's ability to version and cache fine-grained chunks of
+JavaScript at runtime, the Search team suspected that they could reduce the
+amount of cache churn and ensure that JavaScript reused in the
+future can be cached efficiently. The logic inside of their service worker can
+analyze an outgoing HTTP request for a bundle that contains multiple JavaScript
+modules, and fulfill it by piecing together multiple, locally cached
+modules—effectively &quot;unbundling&quot; when possible. This saves user bandwidth, and
+improves overall responsiveness.</p>
+<div class="w-aside w-aside--success">
+<p><strong>Success:</strong>
+On average, repeat visits handled by the service worker
+result in <strong>half as much new JavaScript downloaded</strong>, and that directly leads to
+<strong>6% fewer delayed user interactions</strong>.</p>
+</div>
+<p>There are also performance benefits of using cached JavaScript served by a
+service worker: in Chrome, <a href="https://v8.dev/blog/code-caching-for-devs#use-service-worker-caches">a parsed, byte code representation</a>
+of that JavaScript is stored and reused, leading to less work that needs to be
+done at runtime in order to execute the JavaScript on the page.</p>
+<h2 id="challenges-and-solutions">Challenges and solutions <a class="w-headline-link" href="#challenges-and-solutions" aria-hidden="true">#</a></h2>
+<p>Here are a few of the hurdles that needed to be overcome in order to achieve the
+team's stated goals. While some of these challenges are specific to Google
+Search, many of them are applicable to a wide range of sites that might be
+considering a service worker deployment.</p>
+<h3 id="problem:-service-worker-overhead">Problem: service worker overhead <a class="w-headline-link" href="#problem:-service-worker-overhead" aria-hidden="true">#</a></h3>
+<p>The biggest challenge, and the one true blocker for launching a service worker
+on Google Search, was to ensure that it did not do anything that might increase
+user-perceived latency. Google Search takes performance <em>very</em> seriously, and in
+the past, has blocked launches of new functionality if it contributed even tens
+of milliseconds of additional latency for a given user population.</p>
+<p>When the team started collecting performance data during their earliest
+experiments, it became obvious that there would be a problem. The HTML returned
+in response to
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#first_what_are_navigation_requests">navigation requests</a>
+for the search result page is dynamic, and varies greatly depending on logic
+that needs to run on Search's web servers. There's currently no way for the
+service worker to replicate this logic and return cached HTML immediately—the
+best it could do is to pass along navigation requests to the backend web
+servers, which necessitates a network request.</p>
+<p>Without a service worker, this network request happens immediately upon user
+navigation. When a service worker is registered, it always needs to be started
+up and given a chance to execute its
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/#cache_and_return_requests"><code>fetch</code> event handlers</a>,
+even when there's no chance those fetch handlers will do anything other than go
+to the network. The amount of time that it takes to start up and run the service
+worker code is pure overhead added on top of every navigation:</p>
+<p><img src="no-preload.png" alt="An illustration of the SW startup blocking the navigation request."></p>
+<p>This puts the service worker implementation at too much of a latency
+disadvantage to justify any other benefits. Additionally, the team found that,
+based on measuring service worker boot times on real-world devices, there was a
+wide distribution of startup times, with some low-end mobile devices taking
+almost as much time to start up the service worker as it might take to make the
+network request for the results page's HTML.</p>
+<h3 id="solution:-use-navigation-preload">Solution: use navigation preload <a class="w-headline-link" href="#solution:-use-navigation-preload" aria-hidden="true">#</a></h3>
+<p>The single, most crucial feature that allowed the Google Search team to move
+ahead with their service worker launch is
+<a href="https://developers.google.com/web/updates/2017/02/navigation-preload">navigation preload</a>.
+Using navigation preload is a key performance win for any service worker that
+needs to use a response from the network to satisfy navigation requests. It
+provides a hint to the browser to start making the navigation request
+immediately, at the same time as the service worker starts up:</p>
+<p><img src="with-preload.png" alt="An illustration of the SW startup done in parallel with the navigation request."></p>
+<p>As long as the amount of time it takes for the service worker to start up is
+less than the amount of time it takes to get a response back from the network,
+there shouldn't be any latency overhead introduced by the service worker.</p>
+<p>The Search team also needed to avoid using a service worker on low-end mobile
+devices where the service worker boot time could exceed the navigation request.
+Since there's no hard-and-fast rule for what constitutes a &quot;low-end&quot; device,
+they came up with the heuristic of
+<a href="https://developers.google.com/web/updates/2017/12/device-memory">checking the total RAM</a>
+installed on the device. Anything less than 2 gigabytes of memory fell into
+their low-end device category, where service worker startup time would be unacceptable.</p>
+<p>Available storage space is another consideration, since the full set of
+resources to be cached for future use can run to several megabytes. The
+<a href="https://developers.google.com/web/updates/2017/08/estimating-available-storage-space"><code>navigator.storage</code> interface</a>
+allows the Google Search page to figure out in advance whether their attempts to
+cache data run the risk of failing due to storage quota failures.</p>
+<p>This left the Search team with multiple pieces of criteria that they could use
+to determine whether or not to use a service worker: if a user comes to the
+Google Search page using a browser that supports navigation preload, and has at
+least 2 gigabytes of RAM, and enough free storage space, then a
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#the_first_service_worker">service worker is registered</a>.
+Browsers or devices that don't meet that criteria won't end up with a service
+worker, but they'll still see the same Google Search experience as they always
+have.</p>
+<p>One side benefit of this selective registration is the ability to ship a
+smaller, more efficient service worker. Targeting fairly modern browsers to run
+the service worker code eliminates the overhead of transpilation and polyfills
+for older browsers. This ended up cutting out around 8 kilobytes of uncompressed
+JavaScript code from the total size of the service worker's implementation.</p>
+<h3 id="problem:-service-worker-scopes">Problem: service worker scopes <a class="w-headline-link" href="#problem:-service-worker-scopes" aria-hidden="true">#</a></h3>
+<p>Once the Search team ran enough latency experiments and were confident that
+using navigation preload offered them a viable, latency-neutral path for using a
+service worker, some practical issues started moving to the forefront. One of
+those issues has to do with service worker's
+<a href="https://developers.google.com/web/ilt/pwa/introduction-to-service-worker#registration_and_scope">scoping rules</a>.
+A service worker's scope determines which pages it can potentially take control
+of.</p>
+<p>Scoping works based on the URL path prefix. For domains that host a single
+web app, this isn't an issue, as you'd normally just use a service worker with
+the maximal scope of <code>/</code>, which could take control of any page under the domain.
+But Google Search's URL structure is a little more complicated.</p>
+<p>If the service worker were given the maximal scope of <code>/</code>, it would end up being
+able to take control of any page hosted under <code>www.google.com</code> (or the regional
+equivalent), and there are URLs under that domain that have nothing to do with
+Google Search. A more reasonable, restrictive scope would be <code>/search</code>, which at
+least would eliminate URLs completely unrelated to search results.</p>
+<p>Unfortunately, even that <code>/search</code> URL path is shared amongst different flavor
+of Google Search results, with URL query parameters determining which specific
+type of search result is shown. Some of those flavors use completely different
+codebases than the traditional web search result page. For example, Image Search
+and Shopping Search are both served under the <code>/search</code> URL path with different
+query parameters, but neither of those interfaces were ready to ship their own
+service worker experience (yet).</p>
+<h3 id="solution:-create-a-dispatch-and-routing-framework">Solution: create a dispatch and routing framework <a class="w-headline-link" href="#solution:-create-a-dispatch-and-routing-framework" aria-hidden="true">#</a></h3>
+<p>While there are <a href="https://github.com/w3c/ServiceWorker/issues/1373">some proposals</a>
+that allow for something more powerful than URL path prefixes to determine
+service worker scopes, the Google Search team was stuck deploying a service
+worker that did nothing for a subset of pages it controlled.</p>
+<p>To work around this, the Google Search team built up a bespoke dispatch and
+routing framework that could be configured to check for criteria like the query
+parameters of the client page, and use those to determine which specific code
+path to go down. Rather than hardcoding rules, the system was built to be
+flexible and allow teams that share the URL space, like Image Search and
+Shopping Search, to drop in their own service worker logic down the line, if
+they decide to implement it.</p>
+<div class="w-aside w-aside--note">
+<p>While this custom solution is internal to Google, the same general principle can
+be applied to any domain that includes a number of different logical web apps,
+all of whom live under a common URL.</p>
+</div>
+<h3 id="problem:-personalized-results-and-metrics">Problem: personalized results and metrics <a class="w-headline-link" href="#problem:-personalized-results-and-metrics" aria-hidden="true">#</a></h3>
+<p>Users can sign in to Google Search using their Google Accounts, and their search
+results experience may be customized based on their particular account data.
+Logged in users are identified by specific <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">browser cookies</a>,
+which is a venerable and widely-supported standard.</p>
+<p>One downside of using browser cookies, though, is that they are not exposed
+inside of a service worker, and there is no way of automatically examining their
+values and ensuring that they have not changed due to a user logging out or
+switching accounts. (There is effort underway to
+<a href="https://developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies#welcome_service_workers">bring cookie access to service workers</a>,
+but as of this writing, the approach is
+<a href="https://developers.google.com/web/updates/2018/09/asynchronous-access-to-http-cookies#origin-trial">experimental</a>
+and is not widely supported.)</p>
+<p>A mismatch between the service worker's view of the current logged in user and
+the actual user logged in to the Google Search web interface could lead to
+incorrectly personalized search results or misattributed metrics and logging.
+Any of those failure scenarios would be a serious issue for the Google Search
+team.</p>
+<h3 id="solution:-send-cookies-using-postmessage">Solution: send cookies using postMessage <a class="w-headline-link" href="#solution:-send-cookies-using-postmessage" aria-hidden="true">#</a></h3>
+<p>Rather than wait for experimental APIs to launch and provide direct access to
+the browser's cookies inside of a service worker, the Google Search team went
+with a stop-gap solution: whenever a page controlled by the service worker is
+loaded, the page reads the relevant cookies and uses
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage"><code>postMessage()</code></a>
+to send them to the service worker.</p>
+<p>The service worker then checks the current cookie value against the value
+that it expects, and if there's a mismatch, it takes steps to purge any
+user-specific data from its storage, and reloads the search results page without
+any incorrect personalization.</p>
+<p>The specific steps that the service worker takes to reset things to a baseline
+are particular to Google Search's requirements, but the same general approach
+may be useful to other developers who deal with personalized data keyed off of
+browsers cookies.</p>
+<h3 id="problem:-experiments-and-dynamism">Problem: experiments and dynamism <a class="w-headline-link" href="#problem:-experiments-and-dynamism" aria-hidden="true">#</a></h3>
+<p>As mentioned, the Google Search team relies heavily on running experiments in
+production, and testing the effects of new code and features in the real world
+before turning them on by default. This can be a bit of a challenge with a
+static service worker that relies heavily on cached data, since opting users in
+and out of experiments often requires communication with the backend server.</p>
+<h3 id="solution:-dynamically-generated-service-worker-script">Solution: dynamically generated service worker script <a class="w-headline-link" href="#solution:-dynamically-generated-service-worker-script" aria-hidden="true">#</a></h3>
+<p>The solution that the team went with was to use a dynamically generated service
+worker script, customized by the web server for each individual user, instead of
+a single, static service worker script that gets generated ahead of time.
+Information about experiments that might affect the service worker's behavior or
+network requests in general are included directly in this customized service
+worker scripts. Changing the sets of active experiences for a user is done via a
+combination of traditional techniques, like browser cookies, as well as serving
+updated code in the registered service worker URL.</p>
+<p>Using a dynamically generated service worker script also makes it easier to
+provide an escape hatch in the unlikely event that a service worker
+implementation has a fatal bug that needs to be avoided. The dynamic server
+worker response could be a <a href="https://stackoverflow.com/a/38980776/385997">no-op implementation</a>,
+effectively disabling the service worker for some or all of the current users.</p>
+<h3 id="problem:-coordinating-updates">Problem: coordinating updates <a class="w-headline-link" href="#problem:-coordinating-updates" aria-hidden="true">#</a></h3>
+<p>One of the toughest challenges facing any real-world service worker deployment
+is to devise a reasonable tradeoff between avoiding the network in favor of the
+cache, while at the same time, ensuring that existing users get critical updates
+and changes soon after they're deployed to production. The right balance depends
+on a lot of factors:</p>
+<ul>
+<li>Whether your web app is a long-lived <a href="https://en.wikipedia.org/wiki/Single-page_application">single page app</a>
+that a user keeps open indefinitely, without navigating to new pages.</li>
+<li>What the deployment cadence is for updates to your backend web server.</li>
+<li>Whether the average user would tolerate using a slightly out-of-date version
+of your web app, or whether freshness is the top priority.</li>
+</ul>
+<p>While experimenting with service workers, the Google Search team made sure to
+keep the experiments running across a number of scheduled backend updates, to
+ensure that the metrics and user experience would more closely match what return
+users would end up seeing in the real-world.</p>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+It's important to remember that shipping a service worker
+is <strong>not a one-time deployment</strong>—you need to have a process in place, tailored to
+your own production infrastructure, to make sure that updates happen smoothly
+over time!</p>
+</div>
+<h3 id="solution:-balance-freshness-and-cache-utilization">Solution: balance freshness and cache-utilization <a class="w-headline-link" href="#solution:-balance-freshness-and-cache-utilization" aria-hidden="true">#</a></h3>
+<p>After testing a number of different configuration options, the Google Search
+team found that the following setup provided the right balance between freshness
+and cache-utilization.</p>
+<p>The service worker script URL is served with the
+<code>Cache-Control: private, max-age=1500</code> (1500 seconds, or 25 minutes) response
+header, and is
+<a href="https://developers.google.com/web/updates/2018/06/fresher-sw#updateviacache">registered with updateViaCache set to 'all'</a>
+to ensure that the header is honored. The Google Search web backend is, as you
+might imagine, a large, globally distributed set of servers that requires as
+close to 100% uptime as possible. Deploying a change that would affect the
+service worker script's contents is done in a rolling fashion.</p>
+<p>If a user hits a backend that has been updated, and then quickly navigates to
+another page which hits a backend that hasn't yet received the updated service
+worker, they'd end up flip-flopping between versions multiple times. Therefore,
+telling the browser to only bother checking for an updated script if 25 minutes
+has passed since the last check does not have a significant downside. The upside
+of opting-in to this behavior is cutting down significantly on the traffic
+received by the endpoint that dynamically generates the service worker script.</p>
+<p>Additionally, an ETag header is set on the service worker script's HTTP
+response, ensuring that when an update check is made after 25 minutes has
+passed, the server can respond efficiently with an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304">HTTP 304</a>
+response if there haven't been any updates to the service worker deployed in the
+interim.</p>
+<p>While some interactions within the Google Search web app use single page
+app-style navigations (i.e. via the
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API#Adding_and_modifying_history_entries">History API</a>),
+for the most part, Google Search is a traditional web app that uses &quot;real&quot;
+navigations. This comes into play when the team decided that it would be
+effective to use two options that accelerate the service worker update
+lifecycle:
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#clientsclaim"><code>clients.claim()</code></a>
+and
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase"><code>skipWaiting()</code></a>.
+Clicking around Google Search's interface generally ends up navigating to new
+HTML documents. Calling <code>skipWaiting</code> ensures that an updated service worker
+gets a chance to handle those new navigation requests immediately after
+installation. Similarly, calling <code>clients.claim()</code> means that the updated
+service worker gets a chance to start controlling any open Google Search pages
+that are uncontrolled, following service worker activation.</p>
+<p>The approach that Google Search went with isn't necessarily a solution that
+works for everyone—it was the result of carefully A/B testing various
+combinations of serving options until they found what worked best for them.
+Developers whose backend infrastructure allow them to deploy updates more
+quickly might prefer that the browser check for an updated service worker script
+as frequently as possible, by
+<a href="https://developers.google.com/web/updates/2018/06/fresher-sw#whats_changing">always ignoring the HTTP cache</a>.
+If you're building a single page app that users will might keep open for a long
+period of time, using <code>skipWaiting()</code> is probably not the right choice for
+you—you
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase">risk running into cache inconsistencies</a>
+if you allow the new service worker to activate while there are long-lived
+clients.</p>
+<h2 id="key-takeaways">Key Takeaways <a class="w-headline-link" href="#key-takeaways" aria-hidden="true">#</a></h2>
+<h3 id="by-default-service-workers-aren't-performance-neutral">By default, service workers aren't performance neutral <a class="w-headline-link" href="#by-default-service-workers-aren't-performance-neutral" aria-hidden="true">#</a></h3>
+<p>Adding a service worker to your web app means inserting an additional piece of
+JavaScript that needs to be loaded and executed before your web app gets
+responses to its requests. If those responses end up coming from a local cache
+rather than from the network, then the overhead of running the service worker
+is usually negligible in comparison to the performance win from going
+cache-first. But if you know that your service worker always has to
+consult the network when handling navigation requests, using navigation preload
+is a crucial performance win.</p>
+<h3 id="service-workers-are-(still!)-a-progressive-enhancement">Service workers are (still!) a progressive enhancement <a class="w-headline-link" href="#service-workers-are-(still!)-a-progressive-enhancement" aria-hidden="true">#</a></h3>
+<p>The service worker support story is much brighter today than it was even a year
+ago. All modern browsers now feature at least some
+<a href="https://jakearchibald.github.io/isserviceworkerready/">support for service workers</a>,
+but unfortunately, there are some advanced service worker features—like
+background sync and navigation preload—that aren't rolled out universally.
+Feature checking for the specific subset of features that you know you need, and
+only registering a service worker when those are present, is still a reasonable
+approach to take.</p>
+<p>Similarly, if you've run experiments in the wild, and know that low-end devices
+end up performing poorly with the additional overhead of a service worker, you
+can abstain from registering a service worker in those scenarios as well.</p>
+<p>You should continue to treat service workers as a <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a>
+that gets added to a web app when all the prerequisites are met and the service
+worker adds something positive to user experience and overall loading
+performance.</p>
+<h3 id="measure-everything">Measure everything <a class="w-headline-link" href="#measure-everything" aria-hidden="true">#</a></h3>
+<p>The only way you can figure out whether shipping a service worker has had a
+positive or negative impact on your users' experiences is to experiment and
+measure the results.</p>
+<p>The specifics of setting up meaningful measurements depends on what
+analytics provider you're using, and how you normally conduct experiments in
+your deployment setup. One approach, using Google Analytics to collect metrics,
+is detailed in
+<a href="https://developers.google.com/web/showcase/2016/service-worker-perf">this case study</a>
+based on the experience using service workers in the Google I/O web app.</p>
+<h2 id="non-goals">Non-goals <a class="w-headline-link" href="#non-goals" aria-hidden="true">#</a></h2>
+<p>While many in the web development community associate service workers with <a href="https://developers.google.com/web/progressive-web-apps/">Progressive Web Apps</a>,
+building a &quot;Google Search PWA&quot; was not an initial goal of the team. The Google
+Search web app doesn't currently provide metadata via a
+<a href="https://developers.google.com/web/fundamentals/web-app-manifest/">web app manifest</a>,
+nor does it encourage users to go through the
+<a href="https://developers.google.com/web/fundamentals/app-install-banners/">Add to Homescreen flow</a>.
+The Search team is currently satisfied with users coming to their web app via
+the traditional entry points for Google Search.</p>
+<p>Rather than trying to turn the Google Search web experience into the equivalent
+of what you'd expect from an installed application, the focus on the initial
+roll out was to progressively enhance the existing web site.</p>
+<h2 id="acknowledgements">Acknowledgements <a class="w-headline-link" href="#acknowledgements" aria-hidden="true">#</a></h2>
+<p>Thanks to the entire Google Search web development team for their work on the
+service worker implementation, and for sharing the background material that went
+into writing this article. Particular thanks goes to Philippe Golle, Rajesh
+Jagannathan, R. Samuel Klatchko, Andy Martone, Leonardo Peña, Rachel Shearer,
+Greg Terrono, and Clay Woolam.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 20, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/google-search-sw/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/earth-webassembly/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      How we’re bringing Google Earth to the Web
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using Lighthouse Bot to set a performance budget</title>
+    <meta name="description" content="You’ve done hard work to get fast, now make sure you stay fast by automating
+performance testing in Travis CI with Lighthouse Bot.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Using%20Lighthouse%20Bot%20to%20set%20a%20performance%20budget&amp;url=https%3A%2F%2Fweb.dev%2Fusing-lighthouse-bot-to-set-a-performance-budget%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Using Lighthouse Bot to set a performance budget</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jan 28, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mihajlija.jpg"
+    alt="Milica Mihajlija"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Milica Mihajlija</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/bibydigital">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mihajlija">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>You’ve done hard work to get fast, now make sure you stay fast by automating
+performance testing with <a href="https://github.com/ebidel/lighthousebot">Lighthouse Bot</a>.</p>
+<p><a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a> grades your app
+in 5 categories, and one of those is performance. While you could try to remember to
+monitor performance changes with <a href="https://developers.google.com/web/tools/lighthouse/#devtools">DevTools</a>
+or <a href="https://developers.google.com/web/tools/lighthouse/#cli">Lighthouse CLI</a> every
+time you edit your code, you don’t have to do that. Tools can do the tedious
+stuff for you. <a href="https://travis-ci.com/">Travis CI</a> is a great service that
+automatically runs tests for your app in the cloud every time you push new code.</p>
+<p>Lighthouse Bot integrates with Travis CI, and its performance budget feature ensures
+that you won’t accidentally downgrade performance without noticing. You can
+<a href="https://help.github.com/articles/about-required-status-checks/">configure your repository</a>
+so that it won’t allow merging pull-requests if the Lighthouse scores fall below
+the threshold you’ve set (e.g. &lt; 96/100).</p>
+<figure class="w-figure">
+  <img src="./lighthouse-bot.png"
+       alt="Failing Lighthouse Bot checks on GitHub" class="w-screenshot">
+  <figcaption class="w-figcaption"><b>Figure 1</b>: Lighthouse Bot checks on GitHub</figcaption>
+</figure>
+<div class="w-aside w-aside--note">
+<p>Lighthouse Bot used to be called Lighthouse CI.</p>
+</div>
+<p>Although you can test performance on localhost, your site will often perform
+differently on live servers. To get a more realistic picture, it’s best to
+deploy your site to a staging server. You can use any hosting service; this
+guide will take <a href="https://firebase.google.com/docs/hosting/">Firebase hosting</a>
+for a spin.</p>
+<h2 id="1.-setup">1. Setup <a class="w-headline-link" href="#1.-setup" aria-hidden="true">#</a></h2>
+<p>This simple app helps you sort three numbers.</p>
+<p><a href="https://github.com/GoogleChromeLabs/lighthouse-bot-starter">Clone the example from GitHub</a>,
+and make sure to add it as a repository on your GitHub account.</p>
+<h2 id="2.-deploy-to-firebase">2. Deploy to Firebase <a class="w-headline-link" href="#2.-deploy-to-firebase" aria-hidden="true">#</a></h2>
+<p>To get started, you’ll need a Firebase account. Once you’ve taken care of that,
+<a href="https://console.firebase.google.com/">create a new project in the Firebase console</a>
+by clicking &quot;Add project&quot;:</p>
+<img src="./firebase-console.png" alt="" class="w-screenshot">
+<h3 id="deploying-to-firebase">Deploying to Firebase <a class="w-headline-link" href="#deploying-to-firebase" aria-hidden="true">#</a></h3>
+<p>You'll need <a href="https://firebase.google.com/docs/cli/">Firebase CLI</a> to deploy the
+app. Even if you already have it installed, it's good practice to frequently
+update the CLI to the latest version with this command:</p>
+<pre><code>npm install -g firebase-tools
+</code></pre>
+<p>To authorize the Firebase CLI, run:</p>
+<pre><code>firebase login
+</code></pre>
+<p>Now initialize the project:</p>
+<pre><code>firebase init
+</code></pre>
+<p>The console will ask you a series of questions during setup:</p>
+<ul>
+<li>When prompted to select features, choose &quot;Hosting.&quot;</li>
+<li>For the default Firebase project, select the project that you’ve created in
+the Firebase console.</li>
+<li>Type in &quot;public&quot; as your public directory.</li>
+<li>Type &quot;N&quot; (no) to configuring as a single-page app.</li>
+</ul>
+<p>This process creates a <code>firebase.json</code> configuration file in the root of your
+project directory.</p>
+<p>Congrats, you’re ready to deploy! Run:</p>
+<pre><code>firebase deploy
+</code></pre>
+<p>In a split second, you’ll have a live app.</p>
+<h2 id="3.-setting-up-travis">3. Setting up Travis <a class="w-headline-link" href="#3.-setting-up-travis" aria-hidden="true">#</a></h2>
+<p>You’ll need to <a href="https://travis-ci.com">register an account</a> on Travis and then
+activate GitHub Apps integration under the Settings section of your profile.</p>
+<img src="./travis-ci.png" class="w-screenshot" alt="GitHub Apps integration on Travis CI">
+<h3 id="once-you-have-an-account">Once you have an account <a class="w-headline-link" href="#once-you-have-an-account" aria-hidden="true">#</a></h3>
+<p>Go to Settings under your profile, hit the Sync account button, and make sure
+your project repo is listed on Travis.</p>
+<img src="./travis-ci-sync-button.png" class="w-screenshot" alt="">
+<p>To kick-off continuous integration, you need two things:</p>
+<ol>
+<li>To have a <code>.travis.yml</code> file in the root directory</li>
+<li>To trigger a build by doing a regular old git push</li>
+</ol>
+<p>The <code>lighthouse-bot-starter</code> repo already has a <code>.travis.yml</code> YAML file:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="highlight-line"><span class="token key atrule">language</span><span class="token punctuation">:</span> node_js</span><br><span class="highlight-line"><span class="token key atrule">node_js</span><span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token punctuation">-</span> <span class="token string">"8.1.3"</span></span><br><span class="highlight-line"><span class="token key atrule">install</span><span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token punctuation">-</span> npm install</span><br><span class="highlight-line"><span class="token key atrule">before_script</span><span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token punctuation">-</span> npm install <span class="token punctuation">-</span>g firebase<span class="token punctuation">-</span>tools</span><br><span class="highlight-line"><span class="token key atrule">script</span><span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token punctuation">-</span> webpack&lt;/td<span class="token punctuation">></span></span></code></pre>
+<p>The YAML file tells Travis to install all the dependencies and build your app.
+Now it’s your turn to <strong>push the example app to your own GitHub repository</strong>.
+If you haven't already, run the following command:</p>
+<pre><code>git push origin master
+</code></pre>
+<p>Click on your repo under Settings in Travis to see your project's Travis
+dashboard. If everything is cool, you’ll see your build go from yellow to green
+in a couple of minutes. 🎉</p>
+<h2 id="4.-automate-firebase-deployment-with-travis">4. Automate Firebase deployment with Travis <a class="w-headline-link" href="#4.-automate-firebase-deployment-with-travis" aria-hidden="true">#</a></h2>
+<p>In Step 2, you logged into your Firebase account and deployed the app from the
+command line with <code>firebase deploy</code>. In order for Travis to deploy your app to
+Firebase, you have to authorize it. How do you do that? With a Firebase token.
+🗝️🔥</p>
+<h3 id="authorize-firebase">Authorize Firebase <a class="w-headline-link" href="#authorize-firebase" aria-hidden="true">#</a></h3>
+<p>To generate the token run this command:</p>
+<pre class="devsite-terminal devsite-click-to-copy">firebase login:ci</pre>
+<p>It will open a new tab in a browser window so that Firebase can verify you.
+After that, look back at the console, and you’ll see your freshly minted token.
+Copy it and go back to Travis.</p>
+<p>In your project's Travis dashboard, go to <strong>More options</strong> &gt; <strong>Settings</strong> &gt; <strong>Environment variables</strong>.</p>
+<img class="w-screenshot" src="./travis-environment-variables.png" alt="">
+<p>Paste the token in the value field, name the variable <code>FIREBASE_TOKEN</code>, and add it.</p>
+<h3 id="add-deployment-to-your-travis-setup">Add deployment to your Travis setup <a class="w-headline-link" href="#add-deployment-to-your-travis-setup" aria-hidden="true">#</a></h3>
+<p>You need the following lines to tell Travis to deploy the app after every successful build.
+Add them to the end of the <code>.travis.yml</code> file. 🔚</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="highlight-line"><span class="token key atrule">after_success</span><span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token punctuation">-</span> firebase deploy <span class="token punctuation">-</span><span class="token punctuation">-</span>token $FIREBASE_TOKEN <span class="token punctuation">-</span><span class="token punctuation">-</span>non<span class="token punctuation">-</span>interactive</span></code></pre>
+<p>Push this change to GitHub and wait for your first automated deployment.
+If you take a look at your Travis log, it should soon say ✔️ Deploy complete!</p>
+<p>Now whenever you make changes to your app, they will be automatically deployed to Firebase.</p>
+<h2 id="5.-setting-up-lighthouse-bot">5. Setting up Lighthouse Bot <a class="w-headline-link" href="#5.-setting-up-lighthouse-bot" aria-hidden="true">#</a></h2>
+<p>Friendly Lighthouse Bot updates you on your app’s Lighthouse scores.
+It just needs an invitation to your repo.</p>
+<p>On GitHub, go to your project’s settings and <strong>add &quot;lighthousebot&quot; as a collaborator</strong> (Settings&gt;Collaborators):</p>
+<img class="w-screenshot" src="./lighthouse-bot-collaborator.png" alt="Lighthouse bot collaborator status">
+<p>Approving these requests is a manual process so they don't always happen
+instantly. Before you start testing, make sure lighthousebot has approved its
+collaborator status. In the meantime, you also need to add another key to your
+project's environment variables on Travis. <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIc3QNIMn7bBMgl2cfxmmo6wGBlUpdLGxjB_ml464t9eCg_A/viewform">Leave your email
+here</a>,
+and you'll get a Lighthouse Bot key in your inbox. 📬</p>
+<p>On Travis, add this key as an environment variable and name it <code>LIGHTHOUSE_API_KEY</code>:</p>
+<img class="w-screenshot" src="./lighthouse-api-key.jpg" alt="">
+<div class="w-aside w-aside--note">
+<p>You can reuse this same key for other projects.</p>
+</div>
+<h3 id="add-lighthouse-bot-to-your-project">Add Lighthouse Bot to your project <a class="w-headline-link" href="#add-lighthouse-bot-to-your-project" aria-hidden="true">#</a></h3>
+<p>Next, add Lighthouse Bot to your project by running:</p>
+<pre><code>npm i --save-dev https://github.com/ebidel/lighthousebot
+</code></pre>
+<p>And add this bit to the <code>package.json</code>:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"lh"</span><span class="token operator">:</span> <span class="token string">"lighthousebot"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<h3 id="add-lighthouse-bot-to-your-travis-configuration">Add Lighthouse Bot to your Travis configuration <a class="w-headline-link" href="#add-lighthouse-bot-to-your-travis-configuration" aria-hidden="true">#</a></h3>
+<p>For the final trick, test the performance of the app after every pull
+request!</p>
+<p>In <code>.travis.yml</code> add another step in after_success:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="highlight-line"><span class="token key atrule">after_success</span><span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token punctuation">-</span> firebase deploy <span class="token punctuation">-</span><span class="token punctuation">-</span>token $FIREBASE_TOKEN <span class="token punctuation">-</span><span class="token punctuation">-</span>non<span class="token punctuation">-</span>interactive</span><br><span class="highlight-line">  <span class="token punctuation">-</span> npm run lh <span class="token punctuation">-</span><span class="token punctuation">-</span> https<span class="token punctuation">:</span>//staging.example.com</span></code></pre>
+<p>It will run a Lighthouse audit on the given URL, so replace
+https://staging.example.com with the URL of your app
+(that’s your-app-123.firebaseapp.com).</p>
+<p>Set your standards high and tweak the setup so you don’t accept any changes to
+the app that bring the performance score below 95:</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="highlight-line"><span class="token punctuation">-</span> npm run lh <span class="token punctuation">-</span><span class="token punctuation">-</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>perf=95 https<span class="token punctuation">:</span>//staging.example.com </span></code></pre>
+<h3 id="make-a-pull-request-to-trigger-lighthouse-bot-test-on-travis">Make a pull request to trigger Lighthouse Bot test on Travis <a class="w-headline-link" href="#make-a-pull-request-to-trigger-lighthouse-bot-test-on-travis" aria-hidden="true">#</a></h3>
+<p>Lighthouse Bot will only test pull requests, so if you push to the master branch
+now, you’ll just get &quot;This script can only be run on Travis PR requests&quot; in your
+Travis log.</p>
+<p>To trigger the Lighthouse Bot test:</p>
+<ol>
+<li>Checkout a new branch</li>
+<li>Push it to Github</li>
+<li>Make a pull request</li>
+</ol>
+<p>Hang tight on that pull request page and wait for Lighthouse Bot to sing! 🎤</p>
+<img class="w-screenshot" src="./lighthouse-scores.png" alt="Passing Lighthouse scores">
+<img class="w-screenshot" src="./github-checks.png" alt="Passing Github checks">
+<p>The performance score is great, the app is under budget, and the check has passed!</p>
+<h3 id="more-lighthouse-options">More Lighthouse options <a class="w-headline-link" href="#more-lighthouse-options" aria-hidden="true">#</a></h3>
+<p>Remember how Lighthouse tests 5 different categories? You can enforce scores for
+any of those with Lighthouse Bot flags:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">--perf  <span class="token comment"># performance</span></span><br><span class="highlight-line">--pwa   <span class="token comment"># progressive web app score</span></span><br><span class="highlight-line">--a11y  <span class="token comment"># accessibility score</span></span><br><span class="highlight-line">--bp    <span class="token comment"># best practices score</span></span><br><span class="highlight-line">--seo   <span class="token comment"># SEO score</span></span></code></pre>
+<p>Example:</p>
+<pre><code>npm run lh --perf=93 --seo=100 https://staging.example.com
+</code></pre>
+<p>This will fail the PR if the performance score drops below 93 <strong>or</strong> the SEO
+score drops below 100.</p>
+<p>You can also choose not to get Lighthouse Bot’s comments with the <code>--no-comment</code>
+option.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jan 28, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/using-lighthouse-bot-to-set-a-performance-budget/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/use-imagemin-to-compress-images/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Use Imagemin to compress images
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

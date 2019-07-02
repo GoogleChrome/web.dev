@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Replace GIFs with video</title>
+    <meta name="description" content="In this codelab, learn how to improve performance by replacing an animated GIF
+with a video.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="gif-to-video" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Replace GIFs with video</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/robdodson.jpg"
+    alt="Rob Dodson"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Rob Dodson</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/rob_dodson">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/robdodson">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@robdodson">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>In this codelab, improve performance by replacing an animated GIF with a
+video.</p>
+<h2 id="measure-first">Measure first <a class="w-headline-link" href="#measure-first" aria-hidden="true">#</a></h2>
+<p>First measure how the website performs:</p>
+<ol>
+<li>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</li>
+<li>Open Chrome DevTools by pressing <code>CMD + OPTION + i</code> / <code>CTRL + SHIFT + i</code></li>
+<li>Click on the <strong>Audits</strong> panel.</li>
+<li>Select the <strong>Performance</strong> checkbox.</li>
+<li>Click <strong>Run Audits</strong> to generate a report.</li>
+</ol>
+<p>When you're finished, you should see that Lighthouse has flagged the GIF as an
+issue in its &quot;Use video formats for animated content&quot; audit.</p>
+<h2 id="get-ffmpeg">Get FFmpeg <a class="w-headline-link" href="#get-ffmpeg" aria-hidden="true">#</a></h2>
+<p>There are a number of ways you can convert GIFs to video; this guide uses
+<strong><a href="https://www.ffmpeg.org/">FFmpeg</a></strong>. It's already installed in the Glitch VM,
+and, if you want, you can follow <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/replace-animated-gifs-with-video/#converting_animated_gifs_to_video">these instructions to install it on your
+local
+machine</a>
+as well.</p>
+<h2 id="open-the-console">Open the console <a class="w-headline-link" href="#open-the-console" aria-hidden="true">#</a></h2>
+<p>Double-check that FFmpeg is installed and working.</p>
+<ol>
+<li>Click the <strong>Remix to Edit</strong> button to make the project editable.</li>
+<li>Click the <strong>Tools</strong> button.</li>
+<li>Click the <strong>Console</strong> button.</li>
+<li>In the console, run:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">which</span> ffmpeg</span></code></pre>
+<p>You should get a file path back:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">/usr/bin/ffmpeg</span></code></pre>
+<h2 id="change-gif-to-video">Change GIF to video <a class="w-headline-link" href="#change-gif-to-video" aria-hidden="true">#</a></h2>
+<ul>
+<li>In the console, run <code>cd images</code> to enter the images directory.</li>
+<li>Run <code>ls</code> to see the contents.</li>
+</ul>
+<p>You should see something like this:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">$ <span class="token function">ls</span></span><br><span class="highlight-line">cat-herd.gif</span></code></pre>
+<ul>
+<li>In the console, run:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">ffmpeg -i cat-herd.gif cat-herd.mp4</span></code></pre>
+<p>This tells FFmpeg to take the <strong>input</strong>, signified by the <code>-i</code> flag, of
+cat-herd.gif and convert it to a video called cat-herd.mp4. This should take a
+second to run. When the command finishes, you should be able to type <code>ls</code> again
+and see two files:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">$ <span class="token function">ls</span>  </span><br><span class="highlight-line">cat-herd.gif  cat-herd.mp4</span></code></pre>
+<h2 id="create-webm-videos">Create WebM videos <a class="w-headline-link" href="#create-webm-videos" aria-hidden="true">#</a></h2>
+<p>While MP4 has been around since 1999, WebM is a relative newcomer having been
+initially released in 2010. WebM videos can be much smaller than MP4 videos, so
+it makes sense to generate both. Thankfully the <code>&lt;video&gt;</code> element will let you
+add multiple sources, so if a browser doesn't support WebM, it can fallback to
+MP4.</p>
+<ul>
+<li>In the console, run:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">ffmpeg -i cat-herd.gif -c vp9 -b:v 0 -crf 41 cat-herd.webm</span></code></pre>
+<ul>
+<li>To check the file sizes run:</li>
+</ul>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">ls</span> -lh</span></code></pre>
+<p>You should have one GIF, and two videos:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">$ <span class="token function">ls</span> -lh</span><br><span class="highlight-line">total 4.5M</span><br><span class="highlight-line">-rw-r--r-- 1 app app 3.7M May 26 00:02 cat-herd.gif  </span><br><span class="highlight-line">-rw-r--r-- 1 app app 551K May 31 17:45 cat-herd.mp4  </span><br><span class="highlight-line">-rw-r--r-- 1 app app 341K May 31 17:44 cat-herd.webm</span></code></pre>
+<p>Notice that the original GIF is 3.7M, whereas the MP4 version is 551K, and the
+WebM version is only 341K. That's a huge savings!</p>
+<h2 id="update-html-to-recreate-gif-effect">Update HTML to recreate GIF effect <a class="w-headline-link" href="#update-html-to-recreate-gif-effect" aria-hidden="true">#</a></h2>
+<p>Animated GIFs have three key traits that videos need to replicate:</p>
+<ul>
+<li>They play automatically.</li>
+<li>They loop continuously (usually, but it is possible to prevent looping).</li>
+<li>They're silent.</li>
+</ul>
+<p>Luckily, you can recreate these behaviors using the <code>&lt;video&gt;</code> element.</p>
+<ul>
+<li>In the <code>index.html</code> file, replace the line with the <code>&lt;img&gt;</code> with:</li>
+</ul>
+<pre class="language-html"><code class="language-html"><del class="highlight-line highlight-line-remove"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/images/cat-herd.gif<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Cowboys herding cats.<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></del><br><ins class="highlight-line highlight-line-add"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">loop</span> <span class="token attr-name">muted</span> <span class="token attr-name">playsinline</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></ins></code></pre>
+<p>A <code>&lt;video&gt;</code> element using these attributes will play automatically, loop
+endlessly, play no audio, and play inline (i.e., not fullscreen), all the
+behaviors expected of animated GIFs! 🎉</p>
+<h2 id="specify-your-sources">Specify your sources <a class="w-headline-link" href="#specify-your-sources" aria-hidden="true">#</a></h2>
+<p>All that's left to do is specify your video sources. The <code>&lt;video&gt;</code> element requires
+one or more <code>&lt;source&gt;</code> child elements pointing to different video files the
+browser can choose from, depending on format support.<br>
+Update the <code>&lt;video&gt;</code> with <code>&lt;source&gt;</code> elements that link to your cat-herd videos:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">loop</span> <span class="token attr-name">muted</span> <span class="token attr-name">playsinline</span><span class="token punctuation">></span></span></span><br><mark class="highlight-line highlight-line-active">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/images/cat-herd.webm<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>video/webm<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></mark><br><mark class="highlight-line highlight-line-active">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/images/cat-herd.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></mark><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></span></code></pre>
+<div class="w-aside w-aside--note">
+<p>Browsers don't speculate about which <code>&lt;source&gt;</code> is optimal, so the order
+of <code>&lt;source&gt;</code>s matters. For example, if you specify an MP4 video first and the
+browser supports WebM, browsers will skip the WebM <code>&lt;source&gt;</code> and use the MPEG-4
+instead. If you prefer a WebM <code>&lt;source&gt;</code> be used first, specify it first!</p>
+</div>
+<h2 id="preview">Preview <a class="w-headline-link" href="#preview" aria-hidden="true">#</a></h2>
+<ul>
+<li>Preview the site using the <strong>Show</strong> button.</li>
+</ul>
+<p>The experience should look the same. So far so good.</p>
+<h2 id="verify-with-lighthouse">Verify with Lighthouse <a class="w-headline-link" href="#verify-with-lighthouse" aria-hidden="true">#</a></h2>
+<p>With the live site open:</p>
+<ol>
+<li>Open Chrome DevTools.</li>
+<li>Click on the <strong>Audits</strong> tab.</li>
+<li>Check the <strong>Performance</strong> checkbox.</li>
+<li>Click <strong>Run audits</strong>.</li>
+</ol>
+<p>You should see that the &quot;Use video formats for animated content&quot; audit is now
+passing! Woohoo! 💪</p>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/replace-gifs-with-videos"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/gif-to-video?path=[object Object]&amp;previewSize="
+            alt="gif-to-video on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

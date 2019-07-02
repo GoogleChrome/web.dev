@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Preload critical assets to improve loading speed</title>
+    <meta name="description" content="In this codelab, learn how to improve the performance of a page by preloading
+and prefetching resources.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="preload-critical-assets" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Preload critical assets to improve loading speed</h1>
+      
+        <div class="w-author__published">
+          <time>Apr 24, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/houssein.jpg"
+    alt="Houssein Djirdeh"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Houssein Djirdeh</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/hdjirdeh">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/housseindjirdeh">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@housseindjirdeh">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>In this codelab, the performance of the following web page is improved
+by preloading and prefetching a few resources:</p>
+<p><img src="./san-francisco.png" alt="App Screenshot"></p>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<p>First measure how the website performs before adding any optimizations.</p>
+<ul>
+<li>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</li>
+</ul>
+<p>Run the Lighthouse performance audit (<strong>Lighthouse &gt; Options &gt; Performance</strong>) on
+the live version of your Glitch (see also
+<a href="/discover-performance-opportunities-with-lighthouse">Discover performance opportunities with Lighthouse</a>).</p>
+<p>Lighthouse shows the following failed audit for a resource that is fetched
+late:</p>
+<img class="w-screenshot" src="./preload-requests-codelab.png" alt="Lighthouse: Preload key requests audit">
+<p>Open the <strong>Network</strong> panel in DevTools and take a look at all the resources that
+are fetched.</p>
+<img class="w-screenshot" src="./network-panel-one.png" alt="Network panel with late-discovered resource">
+<p>The <code>main.css</code> file is not fetched by a Link element (<code>&lt;link&gt;</code>) placed in the HTML
+document, but a separate JavaScript file, <code>fetch-css.js</code>, attaches
+the Link element to the DOM after the <code>window.onLoad</code> event. This means that the
+file is only fetched <em>after</em> the browser finishes parsing and executing the JS
+file.  Similarly, a web font (<code>K2D.woff2</code>) specified within <code>main.css</code> is only
+fetched once the CSS file has finished downloading.</p>
+<p>The <strong>critical request chain</strong> represents the order of resources that are
+prioritized and fetched by the browser. For this web page, it currently looks
+like this:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">├─┬ / <span class="token punctuation">(</span>initial HTML file<span class="token punctuation">)</span>  </span><br><span class="highlight-line">  └── fetch-css.js</span><br><span class="highlight-line">    └── main.css  </span><br><span class="highlight-line">      └── K2D.woff2</span></code></pre>
+<p>Since the CSS file is on the third level of the request chain, Lighthouse has
+identified it as a late-discovered resource.</p>
+<h2 id="preload-critical-resources">Preload critical resources <a class="w-headline-link" href="#preload-critical-resources" aria-hidden="true">#</a></h2>
+<p>The <code>main.css</code> file is a critical asset that's needed immediately as soon as the
+page is loaded. For important files like this resource that are fetched late in
+your application, use a link preload tag to inform the browser to download
+it sooner by adding a Link element to the head of the document.</p>
+<p>Add a preload tag for this application:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token comment">&lt;!-- ... --></span></span><br><mark class="highlight-line highlight-line-active">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.css<span class="token punctuation">"</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></mark><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></span></code></pre>
+<p>The <code>as</code> attribute is used to identify which type of resource is being
+fetched, and <code>as=&quot;style&quot;</code> is used to preload stylesheet files.</p>
+<p>Reload the application and take a look at the <strong>Network</strong> panel in DevTools.</p>
+<img class="w-screenshot" src="./network-panel-two.png" alt="Network panel with preloaded resource">
+<p>Notice how the browser fetches the CSS file before the JavaScript
+responsible for fetching it has even been finished parsing. With preload, the browser
+knows to make a preemptive fetch for the resource with the assumption that it is
+critical for the web page.</p>
+<div class="w-aside w-aside--note">
+<p>If this was a real production app, it would make more sense to just place a
+<code>&lt;link&gt;</code> element in index.html to fetch the CSS file instead of using JavaScript
+to append it. Browsers already know to fetch a CSS file defined at the head of
+an HTML document with a high priority as soon as possible. However, preload is
+used in this codelab to demonstrate the best course of action for files that are
+fetched late in the request chain. For a large application, this can happen
+quite often.</p>
+</div>
+<p>If not used correctly, preload can harm performance by making unnecessary
+requests for resources that aren't used. In this application, <code>details.css</code> is
+another CSS file located at the root of the project but is used for a separate
+<code>/details route</code>. To show an example of how preload can be used incorrectly, add a
+preload hint for this resource as well.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token comment">&lt;!-- ... --></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.css<span class="token punctuation">"</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><mark class="highlight-line highlight-line-active">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>details.css<span class="token punctuation">"</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></mark><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></span></code></pre>
+<p>Reload the application and take a look at the <strong>Network</strong> panel.
+A request is made to retrieve <code>details.css</code> even though it is not being used by the web page.</p>
+<img class="w-screenshot" src="./network-panel-three.png" alt="Network panel with unecessary preload">
+<p>Chrome displays a warning in the <strong>Console</strong> panel when a preloaded resource is
+not used by the page within a few seconds after it has loaded.</p>
+<img class="w-screenshot" src="./console.png" alt="Preload warning in console">
+<p>Use this warning as an indicator to identify if you have any preloaded resources
+that are not being used immediately by your web page. You can now remove the
+unnecessary preload link for this page.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token comment">&lt;!-- ... --></span></span><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.css<span class="token punctuation">"</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span><br><del class="highlight-line highlight-line-remove">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>details.css<span class="token punctuation">"</span></span> <span class="token attr-name">as</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>style<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></del><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></span></code></pre>
+<p>For a list of all the types of resources that can be fetched along with the
+correct values that should be used for the <code>as</code> attribute, refer to the
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#What_types_of_content_can_be_preloaded">MDN article on Preloading</a>.</p>
+<div class="w-aside w-aside--note">
+<p>Cross-origin resources can also be preloaded using the <code>crossorigin</code> attribute.
+Moreover, same-origin font resources must be fetched using anonymous mode CORS
+which is why the <code>crossorigin</code> attribute is also used in this preload tag.
+The <a href="/cross-origin-resource-sharing">Cross Origin Resource Sharing</a>
+guide explains the topic of same-origin and cross-origin requests in more detail.</p>
+</div>
+<h2 id="prefetch-future-resources">Prefetch future resources <a class="w-headline-link" href="#prefetch-future-resources" aria-hidden="true">#</a></h2>
+<p><strong>Prefetch</strong> is another browser hint that can be used to make
+a request for an asset used for a different navigation route but at
+a lower priority than other important assets needed for the current page.</p>
+<p>In this website, clicking the image takes you to a separate <code>details/</code>
+route.</p>
+<p><img src="./details.png" alt="Details route"></p>
+<p>A separate CSS file, <code>details.css</code>, contains all the styles needed for this
+simple page. Add a link element to <code>index.html</code> to prefetch this resource.</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span><br><span class="highlight-line">  <span class="token comment">&lt;!-- ... --></span></span><br><mark class="highlight-line highlight-line-active">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>prefetch<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>details.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></mark><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></span></code></pre>
+<p>To understand how this triggers a request for the file, open the <strong>Network</strong> panel in DevTools
+and uncheck the <strong>Disable cache</strong> option.</p>
+<img class="w-screenshot" src="./disable-cache.png" alt="Disable cache in Chrome DevTools">
+<p>Reload the application and notice how a very low priority request is made for
+<code>details.css</code> after all the other files have been fetched.</p>
+<img class="w-screenshot" src="./network-panel-five.png" alt="Network panel with prefetched resource">
+<p>With DevTools open, click the image on the website to navigate to the <code>details</code> page.
+Since a link element is used in <code>details.html</code> to fetch <code>details.css</code>, a request is made for the
+resource as expected.</p>
+<img class="w-screenshot" src="./network-panel-six.png" alt="Details page network requests">
+<p>Click the <code>details.css</code> network request in DevTools to view its details. You'll notice
+that the file is retrieved from the browser's disk cache.</p>
+<img class="w-screenshot" src="./details-css.png" alt="Details request fetched from disk cache">
+<p>By taking advantage of browser idle time, prefetch makes an early request for a
+resource needed for a different page. This speeds up future navigation requests
+by allowing the browser to cache the asset sooner and serve it from the cache
+when needed.</p>
+<h2 id="preloading-and-prefetching-with-webpack">Preloading and prefetching with webpack <a class="w-headline-link" href="#preloading-and-prefetching-with-webpack" aria-hidden="true">#</a></h2>
+<p>The
+<a href="/reduce-javascript-payloads-with-code-splitting">code splitting guide</a>
+explores the use of dynamic imports to split a bundle into multiple chunks.
+This is demonstrated with a simple application that
+dynamically imports a module from <a href="https://lodash.com/">Lodash</a> when a form is submitted.</p>
+<img class="w-screenshot" src="./magic.gif" alt="Magic Sorter app that demonstrates code splitting">
+<p>You can access <a href="https://glitch.com/edit/#!/code-splitting">the Glitch for this application here</a>.</p>
+<p>The following block of code, which lives in <code>src/index.js,</code> is responsible for
+dynamically importing the method when the button is clicked.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">form<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"submit"</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br><span class="highlight-line">  <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'lodash.sortby'</span><span class="token punctuation">)</span></span><br><span class="highlight-line">    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">module</span> <span class="token operator">=></span> module<span class="token punctuation">.</span>default<span class="token punctuation">)</span></span><br><span class="highlight-line">    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">sortInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span><br><span class="highlight-line">    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token function">alert</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Splitting a bundle improves page loading times by
+reducing its initial size. Version 4.6.0 of webpack provides support to preload or
+prefetch chunks that are imported dynamically. Using this application as an
+example, the <code>lodash</code> method can be prefetched at browser idle time; when a user
+presses the button, there is no delay for the resource to be fetched.</p>
+<p>Use the specific <code>webpackPrefetch</code> comment parameter within a dynamic import to prefetch a particular chunk.
+Here is how it would look with this particular application.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">form<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"submit"</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br><mark class="highlight-line highlight-line-active">  <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackPrefetch: true */</span> <span class="token string">'lodash.sortby'</span><span class="token punctuation">)</span></mark><br><span class="highlight-line">    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">module</span> <span class="token operator">=></span> module<span class="token punctuation">.</span>default<span class="token punctuation">)</span></span><br><span class="highlight-line">    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token function">sortInput</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></span><br><span class="highlight-line">    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">{</span> <span class="token function">alert</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Once the application is reloaded, webpack injects a prefetch tag for the
+resource into the head of the document. This can be seen in the <strong>Elements</strong>
+panel in DevTools.</p>
+<p><img src="./devtools-elements.png" alt="Elements panel with prefetch tag"></p>
+<p>Observing the requests in the <strong>Network</strong> panel also shows that this chunk is
+fetched with a low priority after all other resources have been requested.</p>
+<img class="w-screenshot" src="./another-network-panel.png" alt="Network panel with prefetched request">
+<p>Although prefetch makes more sense for this use case, webpack also provides support for preloading
+chunks that are dynamically imported.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackPreload: true */</span> <span class="token string">'module'</span><span class="token punctuation">)</span></span></code></pre>
+<h2 id="conclusion">Conclusion <a class="w-headline-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<p>With this codelab, you should have a solid understanding of how preloading or prefetching certain assets can improve the user experience of your site. It is important to mention that these techniques should not be used for every resource and using them incorrectly can harm performance. The best results are noticed by only preloading or prefetching selectively.</p>
+<p>To summarize:</p>
+<ul>
+<li>Use <strong>preload</strong> for resources that are discovered late but are critical to the current page.</li>
+<li>Use <strong>prefetch</strong> for resources that are needed for a future navigation route or user action.</li>
+</ul>
+<p>Not all browsers currently support both preload and prefetch. This means that
+not all users of your application may notice performance improvements.</p>
+<ul>
+<li><a href="https://caniuse.com/#feat=link-rel-preload">Browser support - Preload</a></li>
+<li><a href="https://caniuse.com/#feat=link-rel-prefetch">Browser support - Prefetch</a></li>
+</ul>
+<p>If you would like more information about specific aspects of how preloading and
+prefetching can affect your web page, refer to these articles:</p>
+<ul>
+<li><a href="https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf">Preload, Prefetch and Priorities in Chrome</a></li>
+<li><a href="https://medium.com/webpack/link-rel-prefetch-preload-in-webpack-51a52358f84c">&lt;link rel=&quot;prefetch/preload&quot;&gt; in webpack</a></li>
+</ul>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/preload-critical-assets?path=[object Object]&amp;previewSize="
+            alt="preload-critical-assets on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

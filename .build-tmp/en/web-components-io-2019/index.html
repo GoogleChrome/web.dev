@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web components: the secret ingredient helping power the web</title>
+    <meta name="description" content="This post sums up a talk on the state of web components in 2019, 
+given by Kevin Schaaf of the Polymer Project and Caridy Patiño of Salesforce.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/web-components-io-2019/hero.jpg"
+  alt="A wooden spoon, full of salt."
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Web%20components%3A%20the%20secret%20ingredient%20helping%20power%20the%20web&amp;url=https%3A%2F%2Fweb.dev%2Fweb-components-io-2019%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Web components: the secret ingredient helping power the web</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Web components at I/O 2019
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 18, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/arthurevans.jpg"
+    alt="Arthur Evans"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Arthur Evans</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/devdocdude">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/arthurevans">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>At Google I/O 2019, Kevin Schaaf of the Polymer Project and Caridy Patiño of Salesforce talked about the state of web components.</p>
+<div class="w-youtube">
+  <iframe
+    class="w-youtube__embed"
+    src="https://www.youtube.com/embed/YBwgkr_Sbx0"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+<h2 id="how-popular-are-web-components">How popular are web components? <a class="w-headline-link" href="#how-popular-are-web-components" aria-hidden="true">#</a></h2>
+<p>If you've used the web today, you've probably used web components. By our count, somewhere between 5% and 8% of all page loads today use one or more web components. That makes web components one of the most successful new web platform features shipped in the last five years.</p>
+<figure class="w-figure w-figure--fullbleed">
+  <img class="w-screenshot" src="./usage-graph.png" alt="A graph showing that 8% of sites use v1 custom elements. This figure eclipses the 5% highpoint for v0 custom elements.">
+</figure>
+<p>You can find web components on sites you probably use every day, like YouTube and GitHub. They're also used on many news and publishing sites built with <a href="http://amp.dev">AMP</a>—AMP components are also web components. And many enterprises are also adopting web components.</p>
+<h2 id="what-are-web-components">What are web components? <a class="w-headline-link" href="#what-are-web-components" aria-hidden="true">#</a></h2>
+<p>So what are web components? The web components specifications provide a low-level set of APIs that let you extend the browser's built-in set of HTML tags. Web components provide:</p>
+<ul>
+<li>A common method for creating a component (using standard DOM APIs).</li>
+<li>A common way of receiving and sending data (using properties/events).</li>
+</ul>
+<p>Outside of that standard interface, the standards don't say anything about how a component is actually implemented:</p>
+<ul>
+<li>What rendering engine it uses to create its DOM.</li>
+<li>How it updates itself based on changes to its properties or attributes.</li>
+</ul>
+<p>In other words, web components  tell the browser <strong>when</strong> and <strong>where</strong> to make a component, but not <strong>how</strong>.</p>
+<p>Authors can choose functional rendering patterns just like React to build their web components, or they can use declarative templates like you might find in Angular or Vue. As an author you have total freedom to choose the technology you use inside the component, while still maintaining interoperability.</p>
+<h2 id="what-are-web-components-good-for">What are web components good for? <a class="w-headline-link" href="#what-are-web-components-good-for" aria-hidden="true">#</a></h2>
+<p>The key difference between web components and proprietary component systems is  <strong>interoperability</strong>. Because of their standard interface, you can use web components anywhere you'd use a built-in element like <code>&lt;input&gt;</code> or <code>&lt;video&gt;</code>.</p>
+<p>Because they can be expressed as real HTML, they can be rendered by all the popular frameworks. So your components can be consumed more widely, in a more diverse range of applications, without locking users into any one framework.</p>
+<p>And because the component interface is standard, web components implemented using different libraries can be mixed on the same page. This fact helps future-proof your applications when you update your tech stack. Instead of a giant step-change between one framework and another, where you replace all of your components, you can update your components one at a time.</p>
+<h2 id="who's-using-web-components">Who's using web components? <a class="w-headline-link" href="#who's-using-web-components" aria-hidden="true">#</a></h2>
+<p>So for all of these reasons, Web Components are actually finding huge success in a variety of different use cases. Three use cases have been especially popular: content sites, design systems, and enterprise applications.</p>
+<h3 id="content-sites">Content sites <a class="w-headline-link" href="#content-sites" aria-hidden="true">#</a></h3>
+<p>Web components are the perfect technology for progressively enhancing content, because they can already be output as standard HTML by an untold number of CMS systems.</p>
+<p>AMP is a great example of how quickly and easily Web Components slotted into the publishing industry's infrastructure for serving content.</p>
+<h3 id="design-systems">Design systems <a class="w-headline-link" href="#design-systems" aria-hidden="true">#</a></h3>
+<p>More and more companies are unifying the way they present themselves using a design system—a set of components and guidelines that define the common look and feel for an organization's sites and applications. Web components are a great fit here, too.</p>
+<figure class="w-figure w-figure--fullbleed">
+  <img src="./material-design.png" alt="The material design homepage, https://material.io.">
+</figure>
+<p>Often, designers have to contend with many teams building their own versions of the design system components on top of React, Angular, and all the other frameworks, instead of having a single set of canonical components.</p>
+<p>Web components are the answer—a truly write once, run everywhere component system that still gives app teams freedom to use the framework of their choice</p>
+<p>Companies like ING, EA, and Google are implementing their company's design language in web components.</p>
+<h3 id="enterprise:-web-components-at-salesforce">Enterprise: Web components at Salesforce <a class="w-headline-link" href="#enterprise:-web-components-at-salesforce" aria-hidden="true">#</a></h3>
+<p>Web components are also hitting a remarkable stride inside enterprises as a safe, future-proof technology to standardize on. Caridy Patiño, architect for Salesforce's UI platform, explained why they built their UI platform using web components.</p>
+<p>Salesforce is a collection of applications—many of which came from acquisitions. Each of these may run on its own technology stack. Because they're built on different stacks, it's hard to give them all the same look and feel. In addition, Salesforce enables customers to build their own custom applications using the Salesforce platform. So ideally the components should be usable by outside developers, too.</p>
+<p>Salesforce identified a set of needs from customers of their platform:</p>
+<ul>
+<li>Standard, rather than proprietary solutions—so it's easier to find experienced developers, and quicker to ramp up new developers.</li>
+<li>A common component model—so customizing any Salesforce application works the same way.</li>
+</ul>
+<p>They also identified some things customers <em>didn't</em> want:</p>
+<ul>
+<li>Breaking changes on their components and apps. In other words, backwards compatibility was a must.</li>
+<li>Being stuck with old technology, and unable to evolve.</li>
+<li>Being stuck inside a walled garden.</li>
+</ul>
+<p>Using web components as the basis for the new UI platform met all of these needs, and the result is the new <a href="https://developer.salesforce.com/docs/component-library/documentation/lwc">Lightning Web Components</a>.</p>
+<h2 id="get-started-with-web-components">Get started with web components <a class="w-headline-link" href="#get-started-with-web-components" aria-hidden="true">#</a></h2>
+<p>There are a lot of great ways to get started with web components.</p>
+<p>If you're building a web app, consider using some of the many off-the-shelf web components available. Here are just a few examples:</p>
+<ul>
+<li>Google vends its own Material design system as web components: <a href="https://github.com/material-components/material-components-web-components">Material Web Components</a>.</li>
+<li>The <a href="https://wiredjs.com/">Wired Elements</a> are a cool set of web components that feature a sketchy, hand-drawn look.</li>
+<li>There are great special-purpose Web Components like <a href="https://github.com/GoogleWebComponents/model-viewer"><model-viewer></a>, which you can drop into any app to add 3D content.</li>
+</ul>
+<p>If you're developing a design system for your company, or you're vending a single component or library that you want to be usable in any environment, consider authoring your components using web components. You can use the native web components APIs, but they're pretty low-level, so there are a number of libraries available to make the process easier.</p>
+<p>To get started building your own components, you can check out LitElement, a web component base class developed by Google that has a great functional rendering experience similar to React.</p>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/lit-element-simple?path=my-component.js&amp;previewSize=0"
+    alt="lit-element-simple on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<p>Other tools and libraries to consider:</p>
+<ul>
+<li><a href="https://stenciljs.com/">Stencil</a> is a web-components-first framework. It includes several popular framework features, like JSX and TypeScript</li>
+<li><a href="https://angular.io/guide/elements">Angular Elements</a> provides a way to wrap Angular components as web components.</li>
+<li>Vue.js <a href="https://github.com/vuejs/vue-web-component-wrapper">web component wrapper</a> provides a way to package Vue components as web components.</li>
+</ul>
+<p>More resources:</p>
+<ul>
+<li><a href="https://open-wc.org/">open-wc.org</a> features great getting started information, as well as tips and default configurations for build and development tooling.</li>
+<li><a href="https://developers.google.com/web/fundamentals/web-components/">Web Fundamentals</a> provides primers on the basic web components APIs, and best practices for designing web components.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">MDN</a> provides reference docs for the web components APIs, plus some tutorials. \</li>
+</ul>
+<p><em>Hero image by Jason Tuinstra on Unsplash.</em></p>
+<p><em>Editor’s note: The custom elements usage chart has been updated to show the
+full monthly usage data, as reported on
+<a href="http://chromestatus.com">chromestatus.com</a>. A previous version of this post
+included a graph at a 6-month granularity, without the most recent months. The
+V0 &amp; V1 series in the original chart were stacked; they are now shown unstacked
+with a total line to remove ambiguity. The abrupt jump in late 2017 is due to a
+change in the data collection system for chromestatus.com. This change affected
+the stats for all web platform features and resulted in more accurate
+measurements going forward.</em></p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 18, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/web-components-io-2019/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/use-lighthouse-for-performance-budgets/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Use Lighthouse for performance budgets
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

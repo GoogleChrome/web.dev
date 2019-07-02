@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Incorporate performance budgets into your build process</title>
+    <meta name="description" content="The best way to keep an eye on your performance budget is to automate it. Find
+out how to choose a tool that best fits your needs and current setup.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Incorporate%20performance%20budgets%20into%20your%20build%20process&amp;url=https%3A%2F%2Fweb.dev%2Fincorporate-performance-budgets-into-your-build-tools%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/fast
+    >
+      Fast load times
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Incorporate performance budgets into your build process</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Feb 1, 2019</time>
+          
+        </div>
+      
+
+      
+    </header>
+    <p>Once you’ve defined a performance budget, it’s time to set up the build process
+to keep track of it. There are a number of tools that let you define thresholds
+for chosen performance metrics and will warn you if you go over budget. Find out
+how to choose one that best fits your needs and current setup. 🕵️‍♀️</p>
+<h2 id="webpack-performance-hints">Webpack Performance Hints <a class="w-headline-link" href="#webpack-performance-hints" aria-hidden="true">#</a></h2>
+<p><a href="https://developers.google.com/web/fundamentals/performance/webpack/">Webpack</a> is a powerful build tool for optimizing how your code is delivered to the users. It also supports setting performance budgets based on <strong>asset size</strong>.</p>
+<p>Turn on <a href="https://webpack.js.org/configuration/performance/">performance hints</a> in the configuration file and Webpack will show you command line warnings or errors when your bundle size grows over the limit. It’s a great way to stay mindful about asset sizes throughout the development.</p>
+<p>After the build step, Webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.</p>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot w-screenshot--filled" src="./webpack-output.png" alt="Webpack output highlighting bundle.js">
+  <figcaption class="w-figcaption">
+    The highlighted bundle.js is bigger than your budget
+  </figcaption>
+</figure>
+<p>The default limit for both assets and entry-points is <strong>250 KB</strong>. You can set your own targets in the configuration file.</p>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot w-screenshot--filled" src="./webpack-warning.jpg" alt="Webpack bundle size warning">
+  <figcaption class="w-figcaption">
+    Webpack bundle size warning ⚠️
+  </figcaption>
+</figure>
+<p>The numbers are compared against <strong>uncompressed asset sizes</strong>. This is not an ideal situation, since most hosting platforms, CDNs and reverse proxy servers compress assets by default. You can give yourself some wiggle room during development, but keep in mind that compression speeds up only the transfer. Browsers still have to parse uncompressed files and this <a href="https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4">parsing cost is not small</a>, especially on mobile devices.</p>
+<div class="w-aside w-aside--note">
+<p>Bonus feature: Webpack won’t only warn you, it will give you a recommendation
+on how to downsize your bundles.</p>
+</div>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot w-screenshot--filled" src="./webpack-recommendation.jpg" alt="Webpack performance optimization recommendation">
+  <figcaption class="w-figcaption">
+    Webpack performance optimization recommendation 💁
+  </figcaption>
+</figure>
+<h2 id="bundlesize">Bundlesize <a class="w-headline-link" href="#bundlesize" aria-hidden="true">#</a></h2>
+<p><a href="https://github.com/siddharthkp/bundlesize">Bundlesize</a> is a simple npm package that tests asset size against a threshold you’ve set. It can run locally and integrate with your CI.</p>
+<h3 id="bundlesize-cli">Bundlesize CLI <a class="w-headline-link" href="#bundlesize-cli" aria-hidden="true">#</a></h3>
+<p>Run <a href="https://github.com/siddharthkp/bundlesize#cli">bundlesize CLI</a> by specifying a threshold and the file that you want to test.</p>
+<pre><code>bundlesize -f &quot;dist/bundle.js&quot; -s 170kB
+</code></pre>
+<p>Bundlesize will output color-coded test results in one line.</p>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot w-screenshot--filled" src="./bundlesize-fail.png" alt="Failing bundlesize CLI test">
+  <figcaption class="w-figcaption">
+    Failing bundlesize CLI test ❌
+  </figcaption>
+</figure>
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot w-screenshot--filled" src="./bundlesize-pass.png" alt="Passing bundlesize CLI test">
+  <figcaption class="w-figcaption">
+    Passing bundlesize CLI test ✔️
+  </figcaption>
+</figure>
+<h3 id="bundlesize-for-ci">Bundlesize for CI <a class="w-headline-link" href="#bundlesize-for-ci" aria-hidden="true">#</a></h3>
+<p>You’ll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. <strong>If bundlesize test fails, that pull request will not be merged.</strong> It currently works with <a href="https://travis-ci.org/">Travis CI</a>, <a href="https://circleci.com/">CircleCI</a>, <a href="http://www.wercker.com/">Wercker</a>, and <a href="http://readme.drone.io/">Drone</a>.</p>
+<figure class="w-figure">
+  <img class="screenshot" src="./bundlesize-status.jpg" alt="Bundlesize check status on Github">
+  <figcaption class="w-figcaption">
+    Bundlesize check status on Github 
+  </figcaption>
+</figure>
+<p>You may have a fast app today, but adding new code can often change this. Checking pull requests with bundlesize will help you avoid performance regressions. Bootstrap, Tinder, Trivago and many others use it to keep their budgets in check.</p>
+<p>With bundlesize, it’s possible to set thresholds for each file separately. This is especially useful if you are code-splitting a bundle in your application.</p>
+<p>By default, <strong>it tests gzipped asset sizes</strong>. You can use the compression option to switch to <a href="https://css-tricks.com/brotli-static-compression/">brotli compression</a> or turn it off completely.</p>
+<h2 id="lighthouse-bot">Lighthouse Bot <a class="w-headline-link" href="#lighthouse-bot" aria-hidden="true">#</a></h2>
+<figure class="w-figure">
+  <img src="./lighthouse-travis.png" alt="Lighthouse Bot">
+  <figcaption class="w-figcaption">
+  </figcaption>
+</figure>
+<p><a href="https://developers.google.com/web/tools/lighthouse/">Lighthouse</a> is an auditing tool that tests sites in a few key areas — performance, accessibility, best practices and how well your site performs as a progressive web application. You can run it in Chrome DevTools, from the command line, or as a Node module.</p>
+<figure class="w-figure">
+  <img class="screenshot" src="./lighthouse-scores.jpg" alt="Lighthouse scores 💯">
+  <figcaption class="w-figcaption">
+    Lighthouse scores 💯 
+  </figcaption>
+</figure>
+<p>It’s sometimes simpler to keep an eye on a single number than individual asset budgets and Lighthouse performance score takes a lot of things into account.</p>
+<p><a href="https://github.com/ebidel/lighthouse-ci">Lighthouse Bot</a> currently integrates only with Travis and runs an audit after you deploy a site to staging server. It enforces budgets based on any of the five scores. In .travis.yml file set targets with <code>--perf</code>, <code>--pwa</code>, <code>--a11y</code>, <code>--bp</code> or <code>--seo</code> options. Aim to stay in the green zone with a performance score of at least 80.</p>
+<pre class="prettyprint">
+after_success:
+  - ./deploy.sh # Deploy the PR changes to staging server
+  - npm run lh -- --perf=96 https://staging.example.com # Run Lighthouse test
+</pre>
+<p>If the scores for a pull request fall below the threshold you’ve set, <strong>Lighthouse Bot can prevent pull request from being merged</strong>. ⛔</p>
+<figure class="w-figure">
+  <img class="screenshot" src="./lighthouse-check.png" alt="Lighthouse Bot check status on Github">
+  <figcaption class="w-figcaption">
+    Lighthouse Bot check status on Github  
+  </figcaption>
+</figure>
+<p><strong>Lighthouse Bot</strong> will then comment on your pull request with updated scores. This is a neat feature which encourages conversation about performance as code changes are happening.</p>
+<figure class="w-figure">
+  <img src="./lighthouse-bot.png" alt="Lighthouse reporting scores on pull request">
+  <figcaption class="w-figcaption">
+    Lighthouse reporting scores on pull request 💬 
+  </figcaption>
+</figure>
+<p>If you find your pull request blocked by a poor Lighthouse score, run an audit with <a href="https://developers.google.com/web/tools/lighthouse/#cli">Lighthouse CLI</a> or in <a href="https://developers.google.com/web/tools/lighthouse/#devtools">Dev Tools</a>. You’ll get a report with details about bottlenecks and hints for simple optimizations.</p>
+<h2 id="summary">Summary <a class="w-headline-link" href="#summary" aria-hidden="true">#</a></h2>
+<div class="w-table-wrapper">
+  <table>
+    <tr>
+      <th>Tool</th>
+      <th>CLI</th>
+      <th>CI</th>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+    <tr>
+      <td>Webpack</td>
+      <td>✅</td>
+      <td>✘</td>
+      <td>Easy to set up</td>
+      <td>Checks uncompressed sizes </td>
+    </tr>
+    <tr>
+      <td>Bundlesize</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>
+          - Checks compressed sizes<br>
+          - Enforces budgets on PRs
+      </td>
+      <td>Works only for PRs on GitHub</td>
+    </tr>
+    <tr>
+      <td>Lighthouse Bot</td>
+      <td>✘</td>
+      <td>✅</td>
+      <td>
+          - Enforces budgets on PRs<br>
+          - Score history in PR comments
+      </td>
+      <td>
+          - Only checks scores, no other metrics (yet)<br>
+          - Works only for PRs on GitHub
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Feb 1, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/fast/incorporate-performance-budgets-into-your-build-tools/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+      <div class="w-codelabs-callout">
+      <div class="w-codelabs-callout__header">
+        <h2 class="w-codelabs-callout__lockup">Codelabs</h2>
+        <div class="w-codelabs-callout__headline">See it in action</div>
+        <div class="w-codelabs-callout__blurb">
+          Learn more and put this guide into action.
+        </div>
+      </div>
+      <ul class="w-unstyled-list w-codelabs-callout__list">
+        <li class="w-codelabs-callout__listitem">
+  <a
+    class="w-codelabs-callout__link"
+    href="/codelab-setting-performance-budgets-with-webpack/"
+  >
+    Setting performance budgets with webpack
+  </a>
+</li>
+      </ul>
+    </div>
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/fast"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

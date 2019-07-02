@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Extract and inline critical CSS with Critical</title>
+    <meta name="description" content="Learn how use Critical to extract and inline critical CSS, and improve render times.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="critical-css-starter" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Extract and inline critical CSS with Critical</h1>
+      
+        <div class="w-author__published">
+          <time>May 29, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mihajlija.jpg"
+    alt="Milica Mihajlija"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Milica Mihajlija</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/bibydigital">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mihajlija">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>Whether you use a UI library or handcraft your styles, shipping a significant amount of CSS delays rendering because the browser must download and parse CSS files before it can show the page.</p>
+<p>This responsive ice cream gallery is built with <a href="https://getbootstrap.com/">Bootstrap</a>. UI libraries like Bootstrap speed up the development, but that often comes at the expense of bloated and unnecessary CSS which can slow down your load times. Bootstrap 4 is 187 KB, while <a href="https://semantic-ui.com/">Semantic UI</a>, another UI library, is a whopping 730 KB uncompressed. Even when minified and gzipped, Bootstrap still weighs around 20 KB, well over the <a href="/extract-critical-css/#14KB">14 KB threshold</a> for the first roundtrip.</p>
+<p><a href="https://github.com/addyosmani/critical">Critical</a> is a tool that extracts, minifies and inlines <a href="/extract-critical-css">above-the-fold</a> CSS. This allows above-the-fold content to be rendered as soon as possible, even if CSS for other parts of the page has not yet loaded. In this codelab, you’ll learn how to use Critical's npm module.</p>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<p>To preview the site, mouse over the editor and press the <strong>View App</strong> button.</p>
+<p>To run a Lighthouse audit on this site:</p>
+<ol>
+<li>
+<p>Press <strong>Control+Shift+J</strong> or <strong>Command+Option+J</strong> (Mac) to open DevTools.</p>
+</li>
+<li>
+<p>Click the <strong>Audits</strong> tab.</p>
+</li>
+<li>
+<p>Make sure the <strong>Mobile</strong> radio button is selected.</p>
+</li>
+<li>
+<p>Make sure the <strong>Performance</strong> checkbox is enabled. You can disable the rest of the checkboxes in the Audits section.</p>
+</li>
+<li>
+<p>Make sure the <strong>Simulated Fast 3G, 4x CPU Slowdown</strong> radio button is selected.</p>
+</li>
+<li>
+<p>Make sure that the <strong>Clear Storage</strong> checkbox is enabled. With this option selected, Lighthouse will not load resources from the cache, which simulates how first-time visitors would experience the page.</p>
+</li>
+<li>
+<p>Click <strong>Run Audits</strong>.</p>
+</li>
+</ol>
+<p><img src="lighthouse-audits.png" alt="Audits panel of Chrome DevTools, powered by Lighthouse"></p>
+<p>When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you’ll notice the app has a blank screen for quite a while before finally rendering the content. This is why <a href="https://web.dev/first-contentful-paint/">First Contentful Paint</a> (FCP) is high and why overall performance score is not great.</p>
+<img src="lighthouse-audit-before.png" alt='Lighthouse audit showing performance score of 84, FCP 3 seconds and a filmstrip view of loading the app' class="w-screenshot">
+<p>Lighthouse is here to help you fix performance issues, so look for solutions in the <strong>Opportunities</strong> section. <strong>Eliminate render-blocking resources</strong> is listed as an opportunity and that’s where Critical shines!</p>
+<img src="eliminate-render-blocking-resources.png" alt='Lighthouse audit "Opportunities" section listing “Eliminate render-blocking resources”' class="w-screenshot">
+<h2 id="optimize">Optimize <a class="w-headline-link" href="#optimize" aria-hidden="true">#</a></h2>
+<p>Click the <strong>Remix to Edit</strong> button to make the project editable.</p>
+<p>To speed things up, Critical is already installed and an empty configuration file is included in the codelab.</p>
+<p>In the configuration file <code>critical.js</code>, add a reference to Critical and then invoke the <code>critical.generate()</code> function. This function accepts an object containing the configuration.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> critical <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'critical'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">critical<span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token comment">// configuration</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> output</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>output<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Generated critical CSS'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Error handling isn’t mandatory, but it’s an easy way to gauge the operation success in the console.</p>
+<h3 id="configure-critical">Configure Critical <a class="w-headline-link" href="#configure-critical" aria-hidden="true">#</a></h3>
+<p>The table below contains some useful Critical options. You can check out all of the <a href="https://github.com/addyosmani/critical#usage">available options on Github</a>.</p>
+<table>
+    <th>Option</th>
+    <th>Type</th>
+    <th>Explanation</th>
+  <tr>
+    <td><code>base</code></td>
+    <td>string</td>
+    <td>The base directory for your files.</td>
+  </tr>
+  <tr>
+    <td><code>src</code></td>
+    <td>string</td>
+    <td>HTML source file.</td>
+  </tr>
+  <tr>
+    <td><code>dest</code></td>
+    <td>string</td>
+    <td>The target for the output file. If CSS is inlined the output file is HTML. If not, the output is a CSS file.</td>
+  </tr>
+  <tr>
+    <td><code>width</code>, <code>height</code></td>
+    <td>numbers</td>
+    <td>Viewport width and height in pixels.</td>
+  </tr>
+  <tr>
+    <td><code>dimensions</code></td>
+    <td>array</td>
+    <td>Contains objects with width and height properties. These objects represent the viewports you want to target with above-the-fold CSS. If you have media queries in your CSS, this allows you to generate critical CSS that covers multiple viewport sizes.</td>
+  </tr>
+  <tr>
+    <td><code>inline</code></td>
+    <td>boolean</td>
+    <td>When set to true, the generated critical CSS is inlined in the <head> of the HTML source file.</td>
+  </tr>
+  <tr>
+    <td><code>minify</code></td>
+    <td>boolean</td>
+    <td>When set to true, Critical minifies the generated critical CSS. Can be omitted when extracting critical CSS for multiple resolutions because Critical automatically minifies it to avoid duplicate rule inclusion.</td>
+  </tr>
+</table>
+<p>Below is a configuration example for extracting critical CSS for multiple resolutions. Add it to <code>critical.js</code> or play around and tweak the options.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">critical<span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><ins class="highlight-line highlight-line-add">  base<span class="token punctuation">:</span> <span class="token string">'public/'</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">  src<span class="token punctuation">:</span> <span class="token string">'./index.html'</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">  dest<span class="token punctuation">:</span> <span class="token string">'./index.html'</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">  inline<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">  dimensions<span class="token punctuation">:</span> <span class="token punctuation">[</span></ins><br><ins class="highlight-line highlight-line-add">    <span class="token punctuation">{</span></ins><br><ins class="highlight-line highlight-line-add">      height<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">      width<span class="token punctuation">:</span> <span class="token number">300</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">    <span class="token punctuation">}</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">    <span class="token punctuation">{</span></ins><br><ins class="highlight-line highlight-line-add">      height<span class="token punctuation">:</span> <span class="token number">720</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">      width<span class="token punctuation">:</span> <span class="token number">1280</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">    <span class="token punctuation">}</span><span class="token punctuation">,</span></ins><br><ins class="highlight-line highlight-line-add">  <span class="token punctuation">]</span></ins><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> output</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>output<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Generated critical CSS'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>In this example, <code>index.html</code> is both the source file and the destination file because the <code>inline</code> option is set to true. Critical first reads the HTML source file, extracts critical CSS and then overwrites <code>index.html</code> with critical CSS inlined in the <code>&lt;head&gt;</code>.</p>
+<p><code>dimensions</code> array has two viewport sizes specified: 300 x 500 for extra small screens and 1280 x 720 for standard laptop screens.</p>
+<p><code>minify</code> option is omitted because Critical automatically minifies the extracted CSS when there are multiple viewport sizes specified.</p>
+<h3 id="run-critical">Run Critical <a class="w-headline-link" href="#run-critical" aria-hidden="true">#</a></h3>
+<p>Add Critical to your scripts in <code>package.json</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">scripts<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token string">"start"</span><span class="token punctuation">:</span> <span class="token string">"node server.js"</span><span class="token punctuation">,</span></span><br><ins class="highlight-line highlight-line-add">    <span class="token string">"critical"</span><span class="token punctuation">:</span> <span class="token string">"node critical.js"</span></ins><br><span class="highlight-line">  <span class="token punctuation">}</span></span></code></pre>
+<p>Click <strong>Tools</strong> &gt; <strong>Logs</strong> &gt; <strong>Console</strong>.</p>
+<p>To generate critical CSS, in the console, run:</p>
+<pre><code>npm run critical
+refresh
+</code></pre>
+<figure class="w-figure">
+  <img src="console-success.png" alt='Success message saying "Generated critical CSS" in the console]()' style="max-width: 243px">
+  <figcaption class="w-figcaption">Success message in the console</figcaption>
+</figure>
+<div class="w-aside w-aside--note">
+<p>Glitch console and editor don’t automatically sync, so <code>refresh</code> command is neccessary to update the editor with files generated from the console.</p>
+</div>
+<p>Now in the <code>&lt;head&gt;</code> tag of <code>index.html</code>, generated critical CSS is inlined between <code>&lt;style&gt;</code> tags, followed by a script that loads the rest of the CSS asynchronously.</p>
+<figure class="w-figure">
+  <img src="inline-critical-css.png" alt="index.html with inlined critical CSS" class="w-screenshot">
+  <figcaption class="w-figcaption">Inlined critical CSS</figcaption>
+</figure>
+<h2 id="measure-again">Measure again <a class="w-headline-link" href="#measure-again" aria-hidden="true">#</a></h2>
+<p>Follow the steps from the beginning of the codelab to run Lighthouse performance audit again. The results you get will look similar to this:</p>
+ <img src="lighthouse-audit-after.png" alt='Lighthouse audit showing performance score of 100, FCP 0.9 seconds and improved filmstrip view of loading the app' class="w-screenshot">
+<div class="w-aside w-aside--success">
+<p><strong>Success:</strong>
+The filmstrip view shows that content is rendered much sooner and this is reflected in improved paint metrics. And &quot;Eliminate render-blocking resources&quot; has been eliminated! 🎉</p>
+</div>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/extract-critical-css"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/critical-css-starter?path=[object Object]&amp;previewSize="
+            alt="critical-css-starter on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

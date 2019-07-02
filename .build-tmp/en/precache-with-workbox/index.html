@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Precaching with Workbox</title>
+    <meta name="description" content="One feature of service workers is the ability to save files to the cache when
+the service worker is installing. Precaching makes it possible to serve cached
+files to the browser without going to the network. Use precaching with Workbox
+for critical assets that your site needs even when offline.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Precaching%20with%20Workbox&amp;url=https%3A%2F%2Fweb.dev%2Fprecache-with-workbox%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/reliable
+    >
+      Network reliability
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Precaching with Workbox</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/jeffposnick.jpg"
+    alt="Jeff Posnick"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jeff Posnick</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/jeffposnick">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/jeffposnick">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@jeffposnick">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>One feature of service workers is the ability to save files to the cache when
+the service worker is installing. This is referred to as &quot;precaching&quot;.
+Precaching makes it possible to serve cached files to the browser without going
+to the network. Use precaching for critical assets that your site needs even
+when offline: main page, styles, fallback image and essential scripts.</p>
+<h2 id="why-should-you-use-workbox">Why should you use Workbox? <a class="w-headline-link" href="#why-should-you-use-workbox" aria-hidden="true">#</a></h2>
+<p>Using Workbox for precaching is optional. You can write your own code to
+<a href="https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker">precache critical assets when the service worker is installing</a>.
+The primary benefit of using Workbox is its out-of-the-box version control.
+You'll run into a lot less trouble updating precached assets using Workbox than
+if you had to manage the versioning and updating of these files on your own.</p>
+<h2 id="precache-manifests">Precache manifests <a class="w-headline-link" href="#precache-manifests" aria-hidden="true">#</a></h2>
+<p>Precaching is driven by a list of URLs and associated versioning information for
+each URL. Taken together, this information is known as a
+<a href="https://developers.google.com/web/tools/workbox/modules/workbox-precaching#explanation_of_the_precache_list"><strong>precache manifest</strong></a>.
+The manifest is the &quot;source of truth&quot; for the state of everything meant to be in
+the precache for a given version of a web app. A precache manifest, in the
+format used by <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>,
+looks something like:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token punctuation">[</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  url<span class="token punctuation">:</span> <span class="token string">'app.abcd1234.js'</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  url<span class="token punctuation">:</span> <span class="token string">'offline.svg'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  revision<span class="token punctuation">:</span> <span class="token string">'7836745f'</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  url<span class="token punctuation">:</span> <span class="token string">'index.html'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  revision<span class="token punctuation">:</span> <span class="token string">'518747aa'</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">]</span></span></code></pre>
+<p>When the service worker is installed, three cache entries are created in the
+Cache Storage, for each of the three listed URLs. The first asset has versioning
+information already included in its URL (<code>app</code> is the actual file name, and
+<code>.abcd1234</code> contains the versioning information, right before the file extension
+<code>.js</code>). Workbox's build tools can detect this and exclude a revision field. The
+other two assets do not include any versioning info in their URLs, so Workbox's
+build tools create a separate <code>revision</code> field, containing a hash of the local
+file's contents.</p>
+<h2 id="serving-precached-resources">Serving precached resources <a class="w-headline-link" href="#serving-precached-resources" aria-hidden="true">#</a></h2>
+<p>Adding assets to the cache is just one part of the precaching story—once the
+assets are cached, they need to respond to outgoing requests. That requires a
+<code>fetch</code> event listener in your service worker that can check which URLs have
+been precached, and return those cached responses reliably, bypassing the
+network in the process. Since the service worker checks the cache for responses
+(and uses those before the network), this is called a
+<a href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network"><strong>cache-first strategy</strong></a>.</p>
+<h2 id="efficient-updates">Efficient updates <a class="w-headline-link" href="#efficient-updates" aria-hidden="true">#</a></h2>
+<p>A precache manifest provides an exact representation of the expected cache
+state; if a URL/revision combination in the manifest changes, a service worker
+<em>knows</em> that the previous cached entry is no longer valid, and needs to be
+updated. It only takes a single network request, made automatically by the
+browser as part of the service worker
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#updates">update check</a>,
+to determine which precached URLs need to be refreshed.</p>
+<h2 id="updates-to-precached-resources">Updates to precached resources <a class="w-headline-link" href="#updates-to-precached-resources" aria-hidden="true">#</a></h2>
+<p>As you release new versions of your web app over time, you need to keep
+previously precached URLs up to date, precache new assets, and delete outdated
+entries. As long as you continue generating a full precache manifest each time
+you rebuild your site, that manifest serves as the &quot;source of truth&quot; for your
+precache state at any point in time.</p>
+<p>If there's an existing URL with a new revision field, or if any URLs have been
+added or dropped from the manifest, that's a sign to your service worker that
+updates need to be performed, as part of the
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install_1"><code>install</code></a>
+and
+<a href="https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate_1"><code>activate</code></a>
+event handlers. For instance, if you've made some changes to your site and
+rebuilt, your latest precache manifest might have undergone the following
+changes:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token punctuation">[</span><span class="token punctuation">{</span></span><br><span class="highlight-line">  url<span class="token punctuation">:</span> <span class="token string">'app.ffaa4455.js'</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  url<span class="token punctuation">:</span> <span class="token string">'offline.svg'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  revision<span class="token punctuation">:</span> <span class="token string">'7836745f'</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  url<span class="token punctuation">:</span> <span class="token string">'index.html'</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  revision<span class="token punctuation">:</span> <span class="token string">'518747aa'</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">]</span></span></code></pre>
+<p>Each of these changes tells your service worker that new requests need to be
+made to update previously cached entries (<code>'offline.svg'</code> and <code>'index.html'</code>)
+and cache new URLs (<code>'app.ffaa4455.js'</code>), as well as deletions to clean up URLs
+that are no longer used (<code>'app.abcd1234.js'</code>).</p>
+<h2 id="true-&quot;app-store&quot;-install-experience">True &quot;app store&quot; install experience <a class="w-headline-link" href="#true-&quot;app-store&quot;-install-experience" aria-hidden="true">#</a></h2>
+<p>Another benefit of precaching is that you can give your users an experience that
+would otherwise be difficult to achieve outside of a native &quot;app store&quot;
+installation. Once a user visits any page on your web app for the first time,
+you can potentially precache <em>all</em> of the URLs needed to display <em>any</em> of your
+web app's views ahead of time, without having to wait until they visit each
+individual view.</p>
+<p>When a user installs a native app, they expect every part to display quickly,
+not just the views that they've gone to in the past. Precaching brings that same
+experience to web apps.</p>
+<h2 id="which-of-your-assets-should-be-precached">Which of your assets should be precached? <a class="w-headline-link" href="#which-of-your-assets-should-be-precached" aria-hidden="true">#</a></h2>
+<p>Refer back to the <a href="/identify-resources-via-network-panel/">Identify what's being
+loaded</a> guide to get a good
+picture of which URLs make the most sense to precache. The general rule is to
+precache any HTML, JavaScript, or CSS that's loaded early on and is crucial to
+displaying the basic structure of a given page.</p>
+<p>It's preferable to avoid precaching media or other assets that are loaded later
+(unless crucial for your web app's functionality). Instead, use a <a href="/runtime-caching-with-workbox/">runtime
+caching strategy</a> to ensure these
+assets are cached-as-you-go.</p>
+<p>Always keep in mind that precaching involves using network bandwidth and storage
+on a user's device (just like installing a native app from an app store does).
+It's up to you as the developer to precache judiciously, and avoid a bloated
+precache manifest.</p>
+<p>Workbox's build tools help by telling you the number of items in the precache
+manifest as well as the total size of the precache payload.</p>
+<p>Repeat visitors to your web app benefit in the long run from the upfront cost of
+precaching, since the ability it offers to avoid the network quickly pays for
+itself in saved bandwidth over time.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/reliable/precache-with-workbox/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/reliable"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/runtime-caching-with-workbox/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Runtime caching with Workbox
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Virtualize large lists with react-window</title>
+    <meta name="description" content="react-window is a library that allows large lists to be rendered efficiently.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero "
+  src="/virtualize-long-lists-react-window/hero-virtualize-long-lists-react-window.jpg"
+  alt=""
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Virtualize%20large%20lists%20with%20react-window&amp;url=https%3A%2F%2Fweb.dev%2Fvirtualize-long-lists-react-window%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/react
+    >
+      React
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Virtualize large lists with react-window</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          Super large tables and lists can slow down your site&#39;s performance signficantly. Virtualization can help!
+
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Apr 29, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/houssein.jpg"
+    alt="Houssein Djirdeh"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Houssein Djirdeh</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/hdjirdeh">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/housseindjirdeh">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@housseindjirdeh">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/developit.jpg"
+    alt="Jason Miller"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jason Miller</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/_developit">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/developit">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p><a href="https://react-window.now.sh/#/examples/list/fixed-size"><code>react-window</code></a> is a
+library that allows large lists to be rendered efficiently.</p>
+<p>Here's an example of a list that contains 1000 rows being rendered with
+<code>react-window</code>. Try scrolling as fast you can.</p>
+<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/react-window-fixed?path=src/App.js&previewSize=100"
+    alt="react-window-fixed on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<h2 id="why-is-this-useful">Why is this useful? <a class="w-headline-link" href="#why-is-this-useful" aria-hidden="true">#</a></h2>
+<p>There may be times where you need to display a large table or list that contains
+many rows. Loading every single item on such a list can affect performance
+significantly.</p>
+<p><strong>List virtualization</strong>, or &quot;windowing&quot;, is the concept of only rendering what
+is visible to the user. The number of elements that are rendered at first is a
+very small subset of the entire list and the &quot;window&quot; of visible content <em>moves</em>
+when the user continues to scroll. This improves both the rendering and
+scrolling performance of the list.</p>
+<figure class="w-figure  w-figure--center">
+  <img class="w-screenshot" src="./window-diagram.jpg" alt="Window of content in a virtualized list">
+  <figcaption class="w-figcaption">
+    Moving "window" of content in a virtualized list
+  </figcaption>
+</figure>
+<p>DOM nodes that exit the &quot;window&quot; are recycled, or immediately replaced with
+newer elements as the user scrolls down the list. This keeps the number of all
+rendered elements specific to the size of the window.</p>
+<h2 id="react-window">react-window <a class="w-headline-link" href="#react-window" aria-hidden="true">#</a></h2>
+<p><code>react-window</code> is a small, third-party library that makes it easier to
+create virtualized lists in your application. It provides a number of base APIs
+that can be used for different types of lists and tables.</p>
+<h3 id="when-to-use-fixed-size-lists">When to use fixed size lists <a class="w-headline-link" href="#when-to-use-fixed-size-lists" aria-hidden="true">#</a></h3>
+<p>Use the <code>FixedSizeList</code> component if you have a long, one-dimensional list
+of equally sized items.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="highlight-line"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> FixedSizeList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-window'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span> <span class="token comment">// some list of items</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">Row</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> index<span class="token punctuation">,</span> style <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>style<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text"><br><span class="highlight-line">     </span><span class="token punctuation">{</span><span class="token comment">/* define the row component using items[index] */</span><span class="token punctuation">}</span><span class="token plain-text"></span><br>  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">ListComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">FixedSizeList</span></span><br><span class="highlight-line">    <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span></span><br><span class="highlight-line">    <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span></span><br><span class="highlight-line">    <span class="token attr-name">itemSize</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">120</span><span class="token punctuation">}</span></span></span><br><span class="highlight-line">    <span class="token attr-name">itemCount</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>items<span class="token punctuation">.</span>length<span class="token punctuation">}</span></span></span><br><span class="highlight-line">  <span class="token punctuation">></span></span><span class="token plain-text"></span><br><span class="highlight-line">    </span><span class="token punctuation">{</span>Row<span class="token punctuation">}</span><span class="token plain-text"></span><br>  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">FixedSizeList</span></span><span class="token punctuation">></span></span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> ListComponent<span class="token punctuation">;</span></span></code></pre>
+<ul>
+<li>The <code>FixedSizeList</code> component accepts a <code>height</code>, <code>width</code> and <code>itemSize</code> prop
+to control the size of the items within the list.</li>
+<li>A function that renders the rows is passed as a child to <code>FixedSizeList</code>.
+Details about the particular item can be accessed with the <code>index</code> argument
+(<code>items[index]</code>).</li>
+<li>A <code>style</code> parameter is also passed in to the row rendering method that
+<strong>must</strong> be attached to the row element. List items are absolutely positioned
+with their height and width values assigned inline, and the <code>style</code> parameter
+is responsible for this.</li>
+</ul>
+<div class="w-aside w-aside--caution">
+<p><strong>Caution:</strong>
+Do not assign <code>height</code> and <code>width</code> properties to the list or the list item with
+an external CSS file. They would be ignored due to the fact that these style
+attributes are applied inline.</p>
+</div>
+<p>The Glitch example shown earlier in this article shows an example of a
+<code>FixedSizeList</code> component.</p>
+<h3 id="when-to-use-variable-sized-lists">When to use variable sized lists <a class="w-headline-link" href="#when-to-use-variable-sized-lists" aria-hidden="true">#</a></h3>
+<p>Use the <code>VariableSizeList</code> component to render a list of items that have
+different sizes. This component works in the same way as a fixed size list, but
+instead expects a function for the <code>itemSize</code> prop instead of a specific value.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="highlight-line"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> VariableSizeList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-window'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span> <span class="token comment">// some list of items</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">Row</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> index<span class="token punctuation">,</span> style <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">style</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>style<span class="token punctuation">}</span></span><span class="token punctuation">></span></span><span class="token plain-text"><br><span class="highlight-line">     </span><span class="token punctuation">{</span><span class="token comment">/* define the row component using items[index] */</span><span class="token punctuation">}</span><span class="token plain-text"></span><br>  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">getItemSize</span> <span class="token operator">=</span> <span class="token parameter">index</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// return a size for items[index]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">ListComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">VariableSizeList</span></span><br><span class="highlight-line">    <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span></span><br><span class="highlight-line">    <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span></span><br><span class="highlight-line">    <span class="token attr-name">itemCount</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>items<span class="token punctuation">.</span>length<span class="token punctuation">}</span></span></span><br><span class="highlight-line">    <span class="token attr-name">itemSize</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>getItemSize<span class="token punctuation">}</span></span></span><br><span class="highlight-line">  <span class="token punctuation">></span></span><span class="token plain-text"></span><br><span class="highlight-line">    </span><span class="token punctuation">{</span>Row<span class="token punctuation">}</span><span class="token plain-text"></span><br>  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">VariableSizeList</span></span><span class="token punctuation">></span></span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> ListComponent<span class="token punctuation">;</span></span></code></pre>
+<p>The following embed shows an example of this component.</p>
+<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
+  <iframe
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/react-window-variable?path=src/ListComponent.js&previewSize=100"
+    alt="react-window-variable on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<p>The item size function passed to the <code>itemSize</code> prop randomizes the row heights
+in this example. In a real application however, there should be actual logic
+defining the sizes of each item. Ideally, these sizes should be calculated based
+on data or obtained from an API.</p>
+<div class="w-aside w-aside--note">
+<p>Both <code>FixedSizeList</code> and <code>VariableSizeList</code> components support horizontal lists
+by using a <code>layout=&quot;horizontal&quot;</code> prop. Take a look at the
+<a href="https://react-window.now.sh/#/examples/list/fixed-size">documentation</a> to see
+an example.</p>
+</div>
+<h3 id="grids">Grids <a class="w-headline-link" href="#grids" aria-hidden="true">#</a></h3>
+<p><code>react-window</code> also provides support for virtualizing multi-dimensional lists,
+or grids. In this context, the &quot;window&quot; of visible content changes as the user
+scrolls horizontally <strong>and</strong> vertically.</p>
+<figure class="w-figure  w-figure--center">
+  <img class="w-screenshot" src="./window-diagram-grid.jpg" alt="Moving window of content in a virtualized grid is two-dimensional">
+  <figcaption class="w-figcaption">
+    Moving "window" of content in a virtualized grid is two-dimensional
+  </figcaption>
+</figure>
+<p>Similary, both <code>FixedSizeGrid</code> and <code>VariableSizeGrid</code> components can be used
+depending on whether the size of specific list items can vary.</p>
+<ul>
+<li>For <code>FixedSizeGrid</code>, the API is about the same but with the fact that heights,
+widths and item counts need to be represented for both columns and rows.</li>
+<li>For <code>VariableSizeGrid</code>, both the column widths and row heights can be changed
+by passing in functions instead of values to their respective props.</li>
+</ul>
+<p>Take a look at the
+<a href="https://react-window.now.sh/#/examples/grid/fixed-size">documentation</a> to see
+examples of virtualized grids.</p>
+<div class="w-aside w-aside--note">
+<p>Aside from providing the base components to create efficient lists and grids,
+<code>react-window</code> also provides other capabilities such as scrolling to a
+specific item or providing an indicator when the user is scrolling. The
+<a href="https://react-window.now.sh/#/examples/list/scrolling-indicators">documentation</a>
+provides examples for this.</p>
+</div>
+<h2 id="lazy-loading-on-scroll">Lazy loading on scroll <a class="w-headline-link" href="#lazy-loading-on-scroll" aria-hidden="true">#</a></h2>
+<p>Many websites improve performance by waiting to load and render items in a long
+list until the user has scrolled down. This technique, commonly referred to as
+&quot;infinite loading&quot;, adds new DOM nodes into the list as the user scrolls past a
+certain threshold close to the end. Although this is better than loading all
+items on a list at once, it still ends up populating the DOM with thousands of
+row entries if the user has scrolled past that many. This can lead to an
+excessively large DOM size, which starts to impact performance by making style
+calculations and DOM mutations slower.</p>
+<p>The following diagram might help summarize this:</p>
+<figure class="w-figure  w-figure--center">
+  <img class="w-screenshot" src="./difference-in-scrolling.jpg" alt="Difference in scrolling between a regular and virtualized list">
+  <figcaption class="w-figcaption">
+    Difference in scrolling between a regular and virtualized list
+  </figcaption>
+</figure>
+<p>The best approach to solve this problem is continue to use a library like
+<code>react-window</code> to maintain a small &quot;window&quot; of elements on a page, but to also
+lazy load newer entries as the user scrolls down. A separate package,
+<code>react-window-infinite-loader</code>, makes this possible with <code>react-window</code>.</p>
+<p>Consider the following piece of code which shows an example of state that is
+managed in a parent <code>App</code> component.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="highlight-line"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">import</span> ListComponent <span class="token keyword">from</span> <span class="token string">'./ListComponent'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      items<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// instantiate initial list here</span></span><br><span class="highlight-line">      moreItemsLoading<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      hasNextPage<span class="token punctuation">:</span> <span class="token boolean">true</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>loadMore <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">loadMore</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token function">loadMore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">   <span class="token comment">// method to fetch newer entries for the list</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">const</span> <span class="token punctuation">{</span> items<span class="token punctuation">,</span> moreItemsLoading<span class="token punctuation">,</span> hasNextPage <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">    <span class="token keyword">return</span> <span class="token punctuation">(</span></span><br>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ListComponent</span></span><br><span class="highlight-line">        <span class="token attr-name">items</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>items<span class="token punctuation">}</span></span></span><br><span class="highlight-line">        <span class="token attr-name">moreItemsLoading</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>moreItemsLoading<span class="token punctuation">}</span></span></span><br><span class="highlight-line">        <span class="token attr-name">loadMore</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>loadMore<span class="token punctuation">}</span></span></span><br><span class="highlight-line">        <span class="token attr-name">hasNextPage</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>hasNextPage<span class="token punctuation">}</span></span></span><br>      <span class="token punctuation">/></span></span><br><span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></span></code></pre>
+<p>A <code>loadMore</code> method is passed into a child <code>ListComponent</code> that contains the
+infinite loader list. This is important because the infinite loader needs to
+fire a callback to load more items once the user has scrolled past a certain
+point.</p>
+<p>Here's how the <code>ListComponent</code> that renders the list can look like:</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="highlight-line"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> FixedSizeList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-window'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> InfiniteLoader <span class="token keyword">from</span> <span class="token string">"react-window-infinite-loader"</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">ListComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> items<span class="token punctuation">,</span> moreItemsLoading<span class="token punctuation">,</span> loadMore<span class="token punctuation">,</span> hasNextPage <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> <span class="token function-variable function">Row</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> index<span class="token punctuation">,</span> style <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span></span><br><span class="highlight-line">     <span class="token punctuation">{</span><span class="token comment">/* define the row component using items[index] */</span><span class="token punctuation">}</span></span><br><span class="highlight-line">  <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token keyword">const</span> itemCount <span class="token operator">=</span> hasNextPage <span class="token operator">?</span> items<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">:</span> items<span class="token punctuation">.</span>length<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">InfiniteLoader</span></span><br><span class="highlight-line">      <span class="token attr-name">isItemLoaded</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token parameter">index</span> <span class="token operator">=></span> index <span class="token operator">&lt;</span> items<span class="token punctuation">.</span>length<span class="token punctuation">}</span></span></span><br><span class="highlight-line">      <span class="token attr-name">itemCount</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>itemCount<span class="token punctuation">}</span></span></span><br><span class="highlight-line">      <span class="token attr-name">loadMoreItems</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>loadMore<span class="token punctuation">}</span></span></span><br><span class="highlight-line">    <span class="token punctuation">></span></span><span class="token plain-text"></span><br>      </span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> onItemsRendered<span class="token punctuation">,</span> ref <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">FixedSizeList</span></span><br><span class="highlight-line">          <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span></span><br><span class="highlight-line">          <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">500</span><span class="token punctuation">}</span></span></span><br><span class="highlight-line">          <span class="token attr-name">itemCount</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>itemCount<span class="token punctuation">}</span></span></span><br><span class="highlight-line">          <span class="token attr-name">itemSize</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">120</span><span class="token punctuation">}</span></span></span><br><span class="highlight-line">          <span class="token attr-name">onItemsRendered</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>onItemsRendered<span class="token punctuation">}</span></span></span><br><span class="highlight-line">          <span class="token attr-name">ref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>ref<span class="token punctuation">}</span></span></span><br><span class="highlight-line">        <span class="token punctuation">></span></span><span class="token plain-text"></span><br><span class="highlight-line">          </span><span class="token punctuation">{</span>Row<span class="token punctuation">}</span><span class="token plain-text"></span><br>        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">FixedSizeList</span></span><span class="token punctuation">></span></span><br>      <span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text"><br>  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">InfiniteLoader</span></span><span class="token punctuation">></span></span><br><span class="highlight-line">  <span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> ListComponent<span class="token punctuation">;</span></span></code></pre>
+<p>In here, the <code>FixedSizeList</code> component is wrapped within the <code>InfiniteLoader</code>.
+The props assigned to the loader are:</p>
+<ul>
+<li><code>isItemLoaded</code>: Method that checks whether a certain item has loaded</li>
+<li><code>itemCount</code>: Number of items on the list (or expected)</li>
+<li><code>loadMoreItems</code>: Callback that returns a promise that resolves to additional
+data for the list</li>
+</ul>
+<p>A
+<a href="https://reactjs.org/docs/render-props.html#using-props-other-than-render">render prop</a>
+is used to return a function that the list component uses in order to render.
+Both <code>onItemsRendered</code> and <code>ref</code> attributes are attributes that need to be
+passed in.</p>
+<p>The following is an example of how infinite loading can work with a virtualized
+list.</p>
+<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/react-window-infinite?path=src/ListComponent.js&previewSize=100"
+    alt="react-window-infinite on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+<p>Scrolling down the list might feel the same, but a request is now made to
+retrieve 10 users from a <a href="https://randomuser.me/">random user API</a> everytime you
+scroll close to the end of the list. This is all done while only rendering a
+single &quot;window&quot; of results at at a time.</p>
+<p>By checking the <code>index</code> of a certain item, a different loading state can be
+shown for an item depending on whether a request has been made for newer entries
+and the item is still loading.</p>
+<p>For example:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">Row</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> index<span class="token punctuation">,</span> style <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">const</span> itemLoading <span class="token operator">=</span> index <span class="token operator">===</span> items<span class="token punctuation">.</span>length<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>itemLoading<span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token comment">// return loading state</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token comment">// return item</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span></code></pre>
+<h2 id="overscanning">Overscanning <a class="w-headline-link" href="#overscanning" aria-hidden="true">#</a></h2>
+<p>Since items in a virtualized list only change when the user scrolls, blank
+space can briefly flash as newer entries are about to be displayed. You can
+try quckly scrolling any of the previous examples in this guide to notice
+this.</p>
+<p>To improve the user experience of virtualized lists, <code>react-window</code> allows
+you to overscan items with the <code>overscanCount</code> property. This allows you to
+define how many items outside of the visible &quot;window&quot; to render at all times.</p>
+<pre class="language-jsx"><code class="language-jsx"><span class="highlight-line"><span class="token operator">&lt;</span>FixedSizeList</span><br><span class="highlight-line">  <span class="token comment">//...</span></span><br><span class="highlight-line">  overscanCount<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token operator">></span></span><br><span class="highlight-line">  <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">FixedSizeList</span></span><span class="token punctuation">></span></span></span></code></pre>
+<p><code>overscanCount</code> works for both the <code>FixedSizeList</code> and <code>VariableSizeList</code>
+components and has a default value of 1. Depending on how large a list is
+as well as the size of each item, overscanning more than just one entry can
+help prevent a noticeable flash of empty space when the user scrolls. However,
+overscanning too many entries can affect performance negatively. The whole
+point of using a virtualized list is to minimize the number of entries to what
+the user can see at any given moment, so try to keep the number of overscanned
+items as low as possible.</p>
+<p>For <code>FixedSizeGrid</code> and <code>VariableSizeGrid</code>, use the <code>overscanColumnsCount</code> and
+<code>overscanRowsCount</code> properties to control the number of columns and rows to
+overscan respectively.</p>
+<h2 id="conclusion">Conclusion <a class="w-headline-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<p>If you are unsure where to begin virtualizing lists and tables in your
+application, follow these steps:</p>
+<ol>
+<li>Measure rendering and scrolling performance. This
+<a href="https://addyosmani.com/blog/react-window/">article</a> shows how the <a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#analyze_frames_per_second">FPS
+meter</a>
+in Chrome DevTools can be used to explore how efficiently items are rendered
+on a list.</li>
+<li>Include <code>react-window</code> for any long lists or grids that are affecting
+performance.</li>
+<li>If there are certain features not supported in <code>react-window</code>, consider using
+<a href="https://github.com/bvaughn/react-virtualized"><code>react-virtualized</code></a> if you
+cannot add this functionality yourself.</li>
+<li>Wrap your virtualized list with <code>react-window-infinite-loader</code> if you need to
+lazy load items as the user scrolls.</li>
+<li>Use the <code>overscanCount</code> property for your lists and the
+<code>overscanColumnsCount</code> and <code>overscanRowsCount</code> properties for your grids
+to prevent a flash of empty content. Do not overscan too many entries as
+this will affect performance negatively.</li>
+</ol>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Apr 29, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/react/virtualize-long-lists-react-window/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/react"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/precache-with-workbox-react/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      Precaching in Create React App with Workbox
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

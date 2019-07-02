@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Serve images with correct dimensions</title>
+    <meta name="description" content="In this codelab, learn how to serve images with the correct dimensions to
+improve network performance.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="correct-dimensions" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Serve images with correct dimensions</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/katiehempenius.jpg"
+    alt="Katie Hempenius"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Katie Hempenius</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/katiehempenius">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/khempenius">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@khempenius">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <h2 id="run-lighthouse">Run Lighthouse <a class="w-headline-link" href="#run-lighthouse" aria-hidden="true">#</a></h2>
+<p>This Glitch is small enough that its images could be inspected by hand. However
+for most websites, using a tool like Lighthouse to automate this is essential.</p>
+<ul>
+<li>
+<p>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</p>
+</li>
+<li>
+<p>Run the Lighthouse performance audit (<strong>Lighthouse &gt; Options &gt; Performance</strong>)
+and look for the results of the <strong>Properly Size Images</strong> audit.</p>
+</li>
+</ul>
+<p><img class="w-screenshot" src="./notfixed-properly-size-images.png" alt="The
+properly size images audit failing in Lighthouse."></p>
+<p>The Lighthouse audit shows that both of this page's images need to be resized.</p>
+<h2 id="fix-flower_logo.png">Fix <code>flower_logo.png</code> <a class="w-headline-link" href="#fix-flower_logo.png" aria-hidden="true">#</a></h2>
+<p>Start at the top of the page and fix the logo image.</p>
+<ul>
+<li>Inspect <code>flower_logo.png</code> in the DevTools Elements panel.</li>
+</ul>
+<p><img class="w-screenshot" src="./elements-panel-logo.png" alt="The DevTools
+elements panel"></p>
+<p>This is the CSS for <code>flower_logo.png</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.logo</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>The CSS width of this image is 50 pixels, so <code>flower_logo.png</code> should be resized
+to match. You can use <a href="https://www.imagemagick.org">ImageMagick</a> to resize the
+image to fit. ImageMagick is a CLI tool for image editing that comes
+pre-installed in the codelab environment.</p>
+<ul>
+<li>Click the <strong>Remix to Edit</strong> button to make the project editable.</li>
+<li>Click the <strong>Tools</strong> button.</li>
+<li>Click the <strong>Console</strong> button.</li>
+<li>In the console, type:</li>
+</ul>
+<pre><code>convert flower_logo.png -resize 50x50 flower_logo.png
+</code></pre>
+<h2 id="fix-flower_photo.jpg">Fix flower_photo.jpg <a class="w-headline-link" href="#fix-flower_photo.jpg" aria-hidden="true">#</a></h2>
+<p>Next, fix the photo of the purple flowers.</p>
+<ul>
+<li>Inspect <code>flower_photo.jpg</code> in the DevTools elements panel.</li>
+</ul>
+<p><img class="w-screenshot" src="./elements-panel-photo.png" alt="The DevTools
+elements panel"></p>
+<p>This is the CSS for <code>flower_photo.jpg</code>:</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token selector">.photo</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">width</span><span class="token punctuation">:</span> 50vw<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">margin</span><span class="token punctuation">:</span> 30px auto<span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p><code>50vw</code> sets the CSS width of <code>flower_photo.jpg</code> to &quot;half the width of
+the browser.&quot;<br>
+(<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units">1vw</a>
+is equal to 1% the width of the browser).</p>
+<p>The ideal size for this image would depend on the device it is being viewed on,
+so you should resize it to a size that works well for most of your users. You
+can check your analytics data to learn which screen resolutions are common
+amongst your users:</p>
+<p><img class="w-screenshot" src="./screen-resolution.png" alt="Google analytics of
+screen resolutions."></p>
+<p>This data indicates that 95%+ of the visitors to this site use screen
+resolutions 1920 pixels wide or less.</p>
+<p>Using this information we can calculate how wide the image should be:<br>
+(1920 pixels wide) * (50% of browser width) = 960 pixels</p>
+<p>On resolutions greater than 1920 pixels wide, the image will be stretched to
+cover the area. The resized image is still fairly large, so the effects of this
+should not be very noticeable.</p>
+<ul>
+<li>Use <a href="https://www.imagemagick.org">ImageMagick</a> to resize the image to 960
+pixels wide. In the terminal type:</li>
+</ul>
+<pre><code># macOS/Linux
+convert flower_photo.jpg -resize 960x flower_photo.jpg
+
+# Windows
+magick convert flower_photo.jpg -resize 960x flower_photo.jpg
+</code></pre>
+<div class="w-aside w-aside--note">
+<p><code>960x</code> is not a typo - it specifies a width, but not a height. The
+image height will be scaled in proportion to the width. This is a handy trick
+for when you only care about an image's dimensions in one direction.</p>
+</div>
+<h2 id="re-run-lighthouse">Re-Run Lighthouse <a class="w-headline-link" href="#re-run-lighthouse" aria-hidden="true">#</a></h2>
+<ul>
+<li>Re-run the Lighthouse Performance audit to verify that you have successfully
+re-sized the images.</li>
+</ul>
+<p><img class="w-screenshot" src="./fixed-properly-size-images.png" alt="Lighthouse
+properly size images audit."></p>
+<p>… And it fails! Why is that?</p>
+<p>Lighthouse runs its tests on a Nexus 5x. The Nexus 5x has a 1080 x 1920 screen.
+For the Nexus 5x, the optimal size of <code>flower_photo.jpg</code> would be 460 pixels
+wide (1080 pixels * . 5). This is much smaller than our resized image.</p>
+<p>Should you resize the image to be even smaller? Probably. However, the answer to
+this isn't always clear-cut.</p>
+<p>The trade-off here is between image quality on high-resolution devices and
+performance. It's easy to overestimate how closely users will be inspecting
+images (and therefore you should probably make them smaller) - but there are
+certainly use cases where image quality is more important.</p>
+<p>The good news is that you can bypass this tradeoff altogether by using
+responsive images to serve multiple images sizes. You can learn more about this
+in the <a href="/serve-responsive-images">Responsive Images guide</a>.</p>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/serve-images-with-correct-dimensions"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/correct-dimensions?path=[object Object]&amp;previewSize="
+            alt="correct-dimensions on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

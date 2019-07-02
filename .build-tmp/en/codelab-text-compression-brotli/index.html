@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minify and compress network payloads with brotli</title>
+    <meta name="description" content="In this codelab, learn how Brotli compression can further reduce compression
+ratios and your app&#39;s overall size.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="fav-kitties-compress-starter" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Minify and compress network payloads with brotli</h1>
+      
+        <div class="w-author__published">
+          <time>May 5, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/mdiblasio.jpg"
+    alt="Michael DiBlasio"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Michael DiBlasio</cite>
+    <ul class="w-author__link-list">
+      
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/mdiblasio">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@mdiblasio">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>This codelab is an extension of the <a href="/codelab-text-compression">Minify and compress network payloads
+codelab</a>
+and assumes you are familiar with the basics concepts of compression. As
+compared to other compression algorithms like <code>gzip</code>, this codelab explores how
+Brotli compression can further reduce compression ratios and your app’s overall
+size.</p>
+<p><img src="./app-screenshot.png" alt="App screenshot"></p>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<div class="w-aside w-aside--note">
+<p>Since <a href="https://webpack.js.org">webpack</a> is used in this application,
+any changes made to the codewill trigger a new build which can take a few
+seconds. Once it completes, you should see your changes reflectedin the
+application.</p>
+</div>
+<p>Before diving in to add optimizations, it's always a good idea to first analyze
+the current state of the application.</p>
+<ol>
+<li>Click the <strong>Remix to Edit</strong> button to make the project editable.</li>
+<li>To preview the site, mouse over the editor, press the <strong>App</strong> button, then
+the <strong>Show</strong> button.</li>
+</ol>
+<p>In the previous <a href="/codelab-text-compression">Minify and compress network payloads
+codelab</a>,
+we reduced the size of <code>main.js</code> from 225 KB to 61.6 KB. In this codelab, you
+will explore how Brotli compression can reduce this bundle size even further.</p>
+<h2 id="brotli-compression">Brotli Compression <a class="w-headline-link" href="#brotli-compression" aria-hidden="true">#</a></h2>
+<div class="w-aside w-aside--warning">
+<p><strong>Warning:</strong>
+Many hosting platforms, CDNs and reverse proxy servers either encode assets with
+compression by default or allow you to easily configure them. If your hosting
+platform supports Brotli, you may not need to setup your server to compress your
+assets with Brotli as described in this tutorial.</p>
+</div>
+<p><a href="https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html">Brotli</a>
+is a newer compression algorithm which can provide even better text compression
+results than <code>gzip</code>. According to
+<a href="https://certsimple.com/blog/nginx-brotli">CertSimple</a>, Brotli performance is:</p>
+<ul>
+<li>14% smaller than <code>gzip</code> for JavaScript</li>
+<li>21% smaller than <code>gzip</code> for HTML</li>
+<li>17% smaller than <code>gzip</code> for CSS</li>
+</ul>
+<p>To use Brotli, your server must support HTTPS. Brotli is supported in the
+<a href="https://caniuse.com/#feat=brotli">latest versions of most browsers</a>. Browsers
+that support Brotli will include <code>br</code> in <code>Accept-Encoding</code> headers:</p>
+<pre>
+Accept-Encoding: gzip, deflate, <strong>br</strong>
+</pre>
+<p>You can determine which compression algorithm is used via the <code>Content-Encoding</code>
+field in the Chrome Developer Tools Network tab (<code>Command+Option+I</code> or
+<code>Ctrl+Alt+I</code>):</p>
+<img class="w-screenshot" src="./network-content-encoding-brotli.png" alt="Network panel">
+<h2 id="enabling-brotli">Enabling Brotli <a class="w-headline-link" href="#enabling-brotli" aria-hidden="true">#</a></h2>
+<h3 id="dynamic-compression">Dynamic compression <a class="w-headline-link" href="#dynamic-compression" aria-hidden="true">#</a></h3>
+<p><strong>Dynamic compression</strong> involves compressing assets on-the-fly as they get
+requested by the browser.</p>
+<h4 id="pros">Pros <a class="w-headline-link" href="#pros" aria-hidden="true">#</a></h4>
+<ul>
+<li>Creating and updating saved compressed versions of assets does not need to be
+done.</li>
+<li>Compressing on-the-fly works especially well for web pages that are
+dynamically generated.</li>
+</ul>
+<h4 id="cons">Cons <a class="w-headline-link" href="#cons" aria-hidden="true">#</a></h4>
+<ul>
+<li>Compressing files at higher levels to achieve better compression ratios takes
+longer. This can cause a performance hit as the user waits for assets to
+compress before they are sent by the server.</li>
+</ul>
+<h4 id="dynamic-compression-with-nodeexpress">Dynamic compression with Node/Express <a class="w-headline-link" href="#dynamic-compression-with-nodeexpress" aria-hidden="true">#</a></h4>
+<p>The <code>server.js</code> file is responsible for setting up the Node server that hosts
+the application.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span><span class="token string">'public'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">var</span> listener <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Your app is listening on port '</span> <span class="token operator">+</span> listener<span class="token punctuation">.</span><span class="token function">address</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>All this currently does is import <code>express</code> and use the <code>express.static</code>
+middleware to load all the static HTML, JS and CSS files in the
+<code>public/directory</code> (and those files are created by webpack with every build).</p>
+<p>To make sure all of the assets are compressed using brotli every time they're
+requested, the <a href="https://github.com/aickin/shrink-ray#readme"><code>shrink-ray</code></a>
+module can be used. Begin by adding it as a <code>devDependency</code> in <code>package.json</code>:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">//...</span></span><br><mark class="highlight-line highlight-line-active">  <span class="token property">"shrink-ray"</span><span class="token operator">:</span> <span class="token string">"^0.1.3"</span></mark><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span></span></code></pre>
+<p>And import it into the server file, <code>server.js</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><mark class="highlight-line highlight-line-active"><span class="token keyword">var</span> shrinkRay <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'shrink-ray'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></mark></code></pre>
+<p>And add it as a middleware before <code>express.static</code> is mounted:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">//...</span></span><br><span class="highlight-line"><span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span><span class="token string">'public'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// compress all requests</span></span><br><mark class="highlight-line highlight-line-active">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">shrinkRay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></mark></code></pre>
+<p>Now reload the app, and take a look at the bundle size in the Network panel:</p>
+<img class="w-screenshot" src="./network-dynamic-compression-brotli.png"  alt="Bundle size with dynamic Brotli compression">
+<p>You can now see <code>brotli</code> is applied from <code>bz</code> in the <code>Content-Encoding</code> header.
+<code>main.bundle.js</code> is reduced from <strong>225 KB to 53.1 KB</strong>! This is ~14% smaller
+compared to <code>gzip</code> (61.6 KB).</p>
+<div class="w-aside w-aside--note">
+<p>Brotli has eleven quality levels  from <code>0</code> (no compression) to
+<code>9</code> (maximum compression). A quality of <code>1</code> is very fast
+but less effective, whereas a quality setting of <code>11</code> is very slow
+but provides big savings in file size. Note that unlike the standard brotli
+library, which defaults to quality <code>11</code>, <code>shrink-ray</code>
+defaults to quality <code>4</code>, which is generally more appropriate for
+dynamic content. You can adjust the parameters of the brotli algorithm by
+passing in an <code>options</code> parameters to
+<code>shrinkRay([options])</code>.</p>
+</div>
+<h3 id="static-compression">Static compression <a class="w-headline-link" href="#static-compression" aria-hidden="true">#</a></h3>
+<p>The idea behind static compression is to have assets compressed and saved ahead
+of time.</p>
+<h4 id="pros:">Pros: <a class="w-headline-link" href="#pros:" aria-hidden="true">#</a></h4>
+<ul>
+<li>Latency due to high compression levels is not a concern anymore. Nothing
+needs to happen on-the-fly to compress files as they can now be fetched
+directly.</li>
+</ul>
+<h4 id="cons:">Cons: <a class="w-headline-link" href="#cons:" aria-hidden="true">#</a></h4>
+<ul>
+<li>Assets need to compressed with every build. Build times can increase
+significantly if high compression levels are used.</li>
+</ul>
+<h4 id="static-compression-with-nodeexpress-and-webpack">Static compression with Node/Express and webpack <a class="w-headline-link" href="#static-compression-with-nodeexpress-and-webpack" aria-hidden="true">#</a></h4>
+<p>Since <strong>static compression</strong> involves compressing files ahead of time, webpack
+settings can be modified to compress assets as part of the build step. The
+<code>brotli-webpack-plugin</code> can be used for this.</p>
+<p>Begin by adding it as a <code>devDependency</code> in <code>package.json</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token string">"devDependencies"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">//...</span></span><br><mark class="highlight-line highlight-line-active"> <span class="token string">"brotli-webpack-plugin"</span><span class="token punctuation">:</span> <span class="token string">"^1.1.0"</span></mark><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span></span></code></pre>
+<p>Like any other webpack plugin, import it in the configurations file,
+<code>webpack.config.js</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">//...</span></span><br><span class="highlight-line"><span class="token keyword">var</span> BrotliPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'brotli-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><mark class="highlight-line highlight-line-active"><span class="token punctuation">}</span><span class="token punctuation">,</span></mark></code></pre>
+<p>And include it within the plugins array:</p>
+<pre>
+module.exports = {
+  // ... 
+  plugins: [
+    // ... 
+    <strong>new BrotliPlugin({
+      asset: '[file].br',
+      test: /\.(js)$/
+    })</strong>
+  ]
+},
+</pre>
+<p>The following arguments are used in the plugin array:</p>
+<ul>
+<li><code>asset</code>: The target asset name.</li>
+<li><code>[file]</code> is replaced with the original asset file name</li>
+<li><code>test</code>: All assets that match this RegExp (i.e. javascript assets ending in
+<code>.js</code>) are processed</li>
+</ul>
+<p>For example, <code>main.js</code> would be renamed to <code>main.js.br</code>.</p>
+<p>When the app reloads and rebuilds, a compressed version of the main bundle is
+now created. Open the Glitch Console to take a look at what's inside the final
+<code>public/</code> directory that's served by the Node server.</p>
+<ol>
+<li>Click the <strong>Tools</strong> button.</li>
+<li>Click the <strong>Console</strong> button.</li>
+<li>In the console, run the following commands to change into the <code>public</code>
+directory and see all of its files:</li>
+</ol>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">cd</span> public</span><br><span class="highlight-line"><span class="token function">ls</span> -lh</span></code></pre>
+<img class="w-screenshot" src="./console-static-compression-brotli.png"  alt="Bundle size with static Brotli compression">
+<p>The brotli compressed version of the bundle, <code>main.bundle.js.br</code>, is now saved
+here as well and is <strong>~76% smaller in size</strong> (225 KB vs. 53 KB) than
+<code>main.bundle.js</code>.</p>
+<p>Next, tell the server to send these brotli-compressed files whenever their
+original JS versions are being requested. This can be done by defining a new
+route in <code>server.js</code> before the files are served with <code>express.static</code>.</p>
+<pre>
+var express = require('express');
+
+var app = express();
+
+<strong>app.get('*.js', (req, res, next) => {
+  req.url = req.url + '.br';
+  res.set('Content-Encoding', 'br');
+  next();
+});</strong>
+
+app.use(express.static('public'));
+</pre>
+<p><code>app.get</code> is used to tell the server how to respond to a <code>GET</code> request for a
+specific endpoint. A callback function is then used to define how to handle this
+request. The route works like this:</p>
+<ul>
+<li>Specifying <code>'*.js'</code> as the first argument means that this works for every
+endpoint that is fired to fetch a JS file.</li>
+<li>Within the callback, <code>.br</code> is attached to the URL of the request and the
+<code>Content-Encoding</code> response header is set to <code>br</code>.</li>
+<li>Finally, <code>next()</code> ensures that the sequence continues to any callback that may
+be next.</li>
+</ul>
+<p>Because some browsers may not support brotli compression, confirm brotli is
+supported before returning the brotli-compressed file by checking the
+<code>Accept-Encoding</code> request header includes <code>br</code>:</p>
+<pre>
+var express = require('express');
+
+var app = express();
+
+app.get('*.js', (req, res, next) => {
+  <strong>if (req.header('Accept-Encoding').includes('br')) {</strong>
+    req.url = req.url + '.br';
+    console.log(req.header('Accept-Encoding'));
+    res.set('Content-Encoding', 'br');
+  <strong>}</strong>
+  next();
+});
+
+app.use(express.static('public'));
+</pre>
+<p>Once the app reloads, take a look at the Network panel once more.</p>
+<img class="w-screenshot" src="./network-static-compression-brotli.png"  alt="Bundle size of 53.1 KB (from 225KB)">
+<p>Success! You have used Brotli compression to further compress your assets!</p>
+<h2 id="conclusion">Conclusion <a class="w-headline-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<p>This codelab illustrated how <code>brotli</code> can further reduce your app’s overall
+size. Where supported, <code>brotli</code> is a more powerful compression algorithm than
+<code>gzip</code>.</p>
+<div class="w-aside w-aside--warning">
+<p><strong>Warning:</strong>
+Remember to check if your CDN supports <code>brotli</code> before manually
+implementing. If you need to implement <code>brotli</code> manually (as
+described in this codelab) but have CDN support for other compression algorithms
+such as <code>gzip</code>, it is a good idea to weigh the benefits of
+<code>brotli</code> against the effort required to implement.</p>
+</div>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/reduce-network-payloads-using-text-compression"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/fav-kitties-compress-starter?path=[object Object]&amp;previewSize="
+            alt="fav-kitties-compress-starter on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

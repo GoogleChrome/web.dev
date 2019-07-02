@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Runtime caching with Workbox</title>
+    <meta name="description" content="Runtime caching refers to gradually adding responses to a cache &quot;as you go&quot;.
+While runtime caching doesn&#39;t help with the reliability of the current
+request, runtime caching with Workbox can help make future requests for the
+same URL more reliable.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Runtime%20caching%20with%20Workbox&amp;url=https%3A%2F%2Fweb.dev%2Fruntime-caching-with-workbox%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/reliable
+    >
+      Network reliability
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Runtime caching with Workbox</h1>
+      
+
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/jeffposnick.jpg"
+    alt="Jeff Posnick"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Jeff Posnick</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/jeffposnick">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/jeffposnick">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@jeffposnick">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Runtime caching refers to gradually adding responses to a cache &quot;as you go&quot;.
+While runtime caching doesn't help with the reliability of the <em>current</em>
+request, it can help make <em>future</em> requests for the same URL more reliable.</p>
+<p>The browser's HTTP cache is an example of runtime caching; it's only populated
+after a request for a given URL. But service workers allow you to implement
+runtime caching that goes beyond what the HTTP cache alone can offer.</p>
+<h2 id="getting-strategic">Getting strategic <a class="w-headline-link" href="#getting-strategic" aria-hidden="true">#</a></h2>
+<p>As opposed to <a href="/precache-with-workbox/">precaching</a> (which always tries
+to serve a set of predefined files from a cache), runtime caching can combine
+network and cache access in multiple ways. Each combination is generally
+referred to as a caching strategy. Key caching strategies include:</p>
+<ul>
+<li>Network-first</li>
+<li>Cache-first</li>
+<li>Stale-while-revalidate</li>
+</ul>
+<h3 id="network-first">Network-first <a class="w-headline-link" href="#network-first" aria-hidden="true">#</a></h3>
+<p>In this approach, your service worker first attempts to retrieve a response from
+the network. If the network request succeeds, great! The response is returned to
+your web app, and a copy of the response is stored using the Cache Storage
+API—either creating a new entry, or updating a previous entry for the same
+URL.</p>
+<p><img src="network-first.png" alt="Diagram showing the request going from the page to the service worker and from the servic worker to the network. The network request fails so the request goes to the cache."></p>
+<p>If the network request fails entirely, or
+<a href="https://developers.google.com/web/tools/workbox/guides/common-recipes#force_a_timeout_on_network_requests">takes too long</a>
+to return a response, then the most recent response from the cache is returned
+instead.</p>
+<h3 id="cache-first">Cache-first <a class="w-headline-link" href="#cache-first" aria-hidden="true">#</a></h3>
+<p>A cache-first strategy is effectively the opposite of network-first. In this
+approach, when your service worker intercepts a request, it first uses the Cache
+Storage API to see whether there's a cached response available. If there is,
+that response is returned to the web app.</p>
+<p>If there's a cache miss, though, then the service worker will go to the network
+and attempt to retrieve a response there. Assuming that network request is
+successful, it's returned to your web app and a copy is saved in a cache. This
+cached copy will be used to bypass the network the next time a request for the
+same URLs is made.</p>
+<p><img src="./cache-first.png" alt="Diagram showing the request going from the page to the service worker and from the servic worker to the cache. The cache request fails so the request goes to the network."></p>
+<h3 id="stale-while-revalidate">Stale-while-revalidate <a class="w-headline-link" href="#stale-while-revalidate" aria-hidden="true">#</a></h3>
+<p>Stale-while-revalidate is something of a hybrid. When using it, your service
+worker will immediately check for a cached response and, if one is found, pass
+it back to your web app.</p>
+<p>In the meantime, regardless of whether there was a cache match, your service
+worker also fires off a network request to get back a &quot;fresh&quot; response. This
+response is used to update any previously cached response. If the initial cache
+check was a miss, a copy of the network response is also passed back to your web
+app.</p>
+<p><img src="stale-while-revalidate.png" alt="Diagram showing the request going from the page to the service worker and from the servic worker to the cache. The cache immediately returns a response while also fetching an update from the network for future requests."></p>
+<h3 id="why-should-you-use-workbox">Why should you use Workbox? <a class="w-headline-link" href="#why-should-you-use-workbox" aria-hidden="true">#</a></h3>
+<p>These caching strategies amount to recipes that you would normally have to
+rewrite in your own service worker, again and again. Instead of resorting to
+that, Workbox offers them packaged up as part of its
+<a href="https://developers.google.com/web/tools/workbox/modules/workbox-strategies">strategies library</a>,
+ready for you to drop in to your service worker.</p>
+<p>Workbox also provides versioning support, allowing you to automatically
+<a href="https://developers.google.com/web/tools/workbox/modules/workbox-cache-expiration">expire</a>
+cached entries, or notify your web app when
+<a href="https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-cache-update">updates</a>
+to a previously cached entry occur.</p>
+<h2 id="which-of-your-assets-should-be-cached-with-which-strategies">Which of your assets should be cached, with which strategies? <a class="w-headline-link" href="#which-of-your-assets-should-be-cached-with-which-strategies" aria-hidden="true">#</a></h2>
+<p>Runtime caching can be viewed as a complement to precaching. If all of your
+assets are already being precached, then you're done—there's nothing that needs
+to be cached at runtime. Chances are, for any relatively complex web app, you're
+not going to be precaching <em>everything</em> though.</p>
+<p>Larger media files, assets that are served from a third-party host like a CDN,
+or API responses, are just a few examples of the types of assets that can't be
+effectively precached. Use the Network panel in DevTools to identify requests
+that fall into this category, and for each of them, think about what tradeoff of
+freshness vs. reliability is appropriate.</p>
+<h3 id="use-stale-while-revalidate-to-prioritize-reliability-over-freshness">Use stale-while-revalidate to prioritize reliability over freshness <a class="w-headline-link" href="#use-stale-while-revalidate-to-prioritize-reliability-over-freshness" aria-hidden="true">#</a></h3>
+<p>Since a stale-while-revalidate strategy returns a cached response almost
+immediately—after the cache has been populated via the first request—you'll end
+up seeing reliably fast performance when using this strategy. This comes with
+the tradeoff of getting back response data that could be stale in comparison to
+what would have been retrieved from the network. Using this strategy works best
+for assets like user profile images or the initial API responses used to
+populate a view, when you know that showing something <em>immediately</em> is key, even
+if it's an older value.</p>
+<h3 id="use-network-first-to-prioritize-freshness-over-reliability">Use network-first to prioritize freshness over reliability <a class="w-headline-link" href="#use-network-first-to-prioritize-freshness-over-reliability" aria-hidden="true">#</a></h3>
+<p>In some sense, using a network-first strategy is admitting defeat in your battle
+against the network—it's given priority, but that brings with it uncertainty
+about reliability. For certain types of assets, seeing a fresh response is
+preferable to getting back stale information. You might prefer freshness when
+making an API request for the text of an article that is updated frequently, for
+instance.</p>
+<p>By using a network-first strategy inside of a service worker, instead of just
+going against the network directly, you have the benefit of being able to fall
+back to <em>something</em>, even if it's a potentially stale response. You won't be
+reliably fast, but at least you'll be reliable while offline.</p>
+<h3 id="use-cache-first-for-versioned-urls">Use cache-first for versioned URLs <a class="w-headline-link" href="#use-cache-first-for-versioned-urls" aria-hidden="true">#</a></h3>
+<p>In a cache-first strategy, once an entry is cached, it's never updated. For that
+reason, make sure that you only use it with assets that you know are unlikely to
+change. In particular, it works best for URLs that contain versioning
+information—the same sort of URLs that should also be served with a
+<code>Cache-Control: max-age=31536000</code> response header.</p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Nov 5, 2018</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/reliable/runtime-caching-with-workbox/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/reliable"
+  >
+    Return to all articles
+  </a>
+  
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

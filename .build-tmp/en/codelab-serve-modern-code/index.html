@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Serve modern code to modern browsers for faster page loads</title>
+    <meta name="description" content="In this codelab, learn how to improve the performance of an application by
+minizming how much code is transpiled.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<style>
+  web-codelab {
+    display: flex;
+    height: 100%;
+  }
+
+  .web-codelab-glitch {
+    flex: 1;
+    padding: 16px;
+  }
+</style>
+
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="serve-modern-code" path="[object Object]" preview-size="" attribution-hidden>
+    <div class="web-codelab-instructions">
+      <h1 class="w-headline w-headline--two w-mb--sm">Serve modern code to modern browsers for faster page loads</h1>
+      
+        <div class="w-author__published">
+          <time>Nov 5, 2018</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/houssein.jpg"
+    alt="Houssein Djirdeh"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Houssein Djirdeh</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/hdjirdeh">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/housseindjirdeh">GitHub</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://glitch.com/@housseindjirdeh">Glitch</a>
+      </li>
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+
+      <p>In this codelab, improve the performance of this simple application that allows
+users to rate random cats. Learn how to optimize the JavaScript bundle by
+minizming how much code is transpiled.</p>
+<p><img src="./app-screenshot.png" alt="App screenshot"></p>
+<p>You only have the option to select a word or emoji to convey how much you like
+each cat. With any button that you click, the value is displayed underneath the
+image.</p>
+<h2 id="measure">Measure <a class="w-headline-link" href="#measure" aria-hidden="true">#</a></h2>
+<div class="w-aside w-aside--note">
+<p>Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.</p>
+</div>
+<p>It's always a good idea to begin by inspecting a website before adding any
+optimizations.</p>
+<ul>
+<li>To preview the site, mouse over the editor, press the <strong>App</strong> button, then the
+<strong>Show</strong> button.</li>
+<li>Open DevTools by pressing <code>CTRL + SHIFT + i</code> / <code>CMD + OPTION + i</code>.</li>
+<li>Click on the <strong>Network</strong> panel.</li>
+</ul>
+<img class="w-screenshot" src="./network-panel.png" alt="Network panel">
+<ul>
+<li>Make sure <strong>Disable Cache</strong> is checked and reload the app.</li>
+</ul>
+<img class="w-screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
+<p>Over 80 KB is used for this application! Time to find out if parts of the bundle
+aren't being used.</p>
+<ul>
+<li>With DevTools open, press <code>CMD + SHIFT + p</code> / <code>CTRL + SHIFT + p</code> to open
+the Command Menu. Search for &quot;coverage&quot;.</li>
+</ul>
+<img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
+<ul>
+<li>Click <strong>Show Coverage</strong> and click the <strong>Reload</strong> button to reload the
+application while capturing coverage.</li>
+</ul>
+<img class="w-screenshot" src="./record-with-code-coverage.png" alt="Reload app with code coverage">
+<ul>
+<li>Take a look at how much code was used versus how much was loaded for
+the main bundle.</li>
+</ul>
+<img class="w-screenshot" src="./code-coverage.png" alt="Code coverage of bundle">
+<p>Over half the bundle (44 KB) is not even utilized. This is because a lot of the
+code within consists of polyfills to ensure that the application works in older
+browsers.</p>
+<h2 id="use-@babelpreset-env">Use @babel/preset-env <a class="w-headline-link" href="#use-@babelpreset-env" aria-hidden="true">#</a></h2>
+<p>The syntax of the JavaScript language conforms to a standard known as
+ECMAScript, or <a href="https://github.com/tc39/ecma262">ECMA-262</a>. Newer versions of
+the specification are released every year and include new features that have
+passed the proposal process. Each major browser is always at a different stage
+of supporting these features.</p>
+<p>The following ES2015 features are used in the application:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow functions</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template literals</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">For...of loop</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring">Destructuring assignment</a></li>
+</ul>
+<p>The following ES2017 feature is used as well:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">Async functions</a></li>
+</ul>
+<p>Feel free to dive into the source code in <code>src/index.js</code> to see how all of this
+is used.</p>
+<p>All of these features are supported in the latest version of Chrome, but what
+about other browsers that don't support them? <a href="https://babeljs.io/docs/en">Babel</a>,
+which is included in the application, is the most popular library used to compile
+code that contains newer syntax into code that older browsers and environments can
+understand. It does this in two ways:</p>
+<ul>
+<li><strong>Polyfills</strong> are included to emulate newer ES2015+ functions so that their APIs
+can be used even if it is not supported by the browser. Here is an example of a
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes#Polyfill">polyfill</a>
+of the <code>Array.includes</code> method.</li>
+<li><strong>Plugins</strong> are used to transform ES2015 code (or later) into older ES5 syntax.
+Since these are syntax related changes (such as arrow functions), they cannot be emulated with polyfills.</li>
+</ul>
+<p>Look at <code>package.json</code> to see which Babel libraries are included:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"@babel/polyfill"</span><span class="token operator">:</span> <span class="token string">"^7.0.0"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line"><span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">//...</span></span><br><span class="highlight-line">  <span class="token property">"babel-loader"</span><span class="token operator">:</span> <span class="token string">"^8.0.2"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"@babel/core"</span><span class="token operator">:</span> <span class="token string">"^7.1.0"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token property">"@babel/preset-env"</span><span class="token operator">:</span> <span class="token string">"^7.1.0"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token comment">//...</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<ul>
+<li><code>@babel/core</code> is the core Babel compiler. With this, all the Babel configurations are defined in a <code>.babelrc</code> at the root of the project.</li>
+<li><code>babel-loader</code> includes Babel in the webpack build process.</li>
+</ul>
+<p>Now look at <code>webpack.config.js</code> to see how <code>babel-loader</code> is included as a
+rule:</p>
+<pre>
+module: {
+  rules: [
+    //...
+    <strong>{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "babel-loader"
+    }</strong>
+  ]
+},
+</pre>
+<ul>
+<li><code>@babel/polyfill</code> provides all the necessary polyfills for any newer ECMAScript features so that they can
+work in environments that do not support them. It is already imported at the very top of <code>src/index.js.</code></li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> <span class="token string">"./style.css"</span><span class="token punctuation">;</span></span><br><mark class="highlight-line highlight-line-active"><span class="token keyword">import</span> <span class="token string">"@babel/polyfill"</span><span class="token punctuation">;</span></mark></code></pre>
+<ul>
+<li><code>@babel/preset-env</code> identifies which transforms and polyfills are necessary
+for any browsers or environments chosen as targets.</li>
+</ul>
+<p>Take a look at the Babel configurations file, <code>.babelrc</code>, to see how it's
+included:</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">    <span class="token punctuation">[</span></span><br><span class="highlight-line">      <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">{</span></span><br><span class="highlight-line">        <span class="token property">"targets"</span><span class="token operator">:</span> <span class="token string">"last 2 versions"</span></span><br><span class="highlight-line">      <span class="token punctuation">}</span></span><br><span class="highlight-line">    <span class="token punctuation">]</span></span><br><span class="highlight-line">  <span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>This is a Babel and webpack setup. <a href="https://babeljs.io/en/setup">Learn how to include Babel in your
+application</a> if you happen to use a different
+module bundler than webpack.</p>
+<p>The <code>targets</code> attribute
+in <code>.babelrc</code> identifies which browsers are being targeted. <code>@babel/preset-env</code>
+integrates with browserslist, which means you can find a full list of compatible
+queries that can be used in this field in the
+<a href="https://github.com/browserslist/browserslist#full-list">browserlist documentation</a>.</p>
+<p>The <code>&quot;last 2 versions&quot;</code> value transpiles the code in the application for the
+<a href="http://browserl.ist/?q=last+2+versions">last two versions</a> of every browser.</p>
+<h3 id="debugging">Debugging <a class="w-headline-link" href="#debugging" aria-hidden="true">#</a></h3>
+<p>To get a complete look at all the browsers Babel targets as well as all the
+transforms and polyfills that are included, add a <code>debug</code> field to <code>.babelrc:</code></p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token string">"presets"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">    <span class="token punctuation">[</span></span><br><span class="highlight-line">      <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">{</span></span><br><span class="highlight-line">        <span class="token string">"targets"</span><span class="token punctuation">:</span> <span class="token string">"last 2 versions"</span><span class="token punctuation">,</span></span><br><mark class="highlight-line highlight-line-active">        <span class="token operator">&lt;</span>strong<span class="token operator">></span><span class="token string">"debug"</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token operator">&lt;</span><span class="token operator">/</span>strong<span class="token operator">></span></mark><br><span class="highlight-line">      <span class="token punctuation">}</span></span><br><span class="highlight-line">    <span class="token punctuation">]</span></span><br><span class="highlight-line">  <span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<ul>
+<li>Click the <strong>Tools</strong> button.</li>
+<li>Click on the <strong>Logs</strong> button.</li>
+</ul>
+<p>Reload the application and take a look at the Glitch status logs at the bottom
+of the editor.</p>
+<h3 id="targeted-browsers">Targeted browsers <a class="w-headline-link" href="#targeted-browsers" aria-hidden="true">#</a></h3>
+<p>Babel logs a number of details to the console about the compilation process,
+including all the target environments that the code has been compiled for.</p>
+<img class="w-screenshot" src="./debug-target-browsers.png" alt="Targeted browsers">
+<p>Notice how discontinued browsers, such as Internet Explorer, are included in
+this list. This is a problem because unsupported browsers won't have newer
+features added, and Babel continues to transpile specific syntax for them. This
+unnecessarily increases the size of your bundle if users are not using this
+browser to access your site.</p>
+<p>Babel also logs a list of transform plugins used:</p>
+<img class="w-screenshot" src="./plugins-list.png" alt="List of plugins used">
+<p>That's a pretty long list! These are all the plugins that Babel needs to use to
+transform any ES2015+ syntax to older syntax for all the targeted browsers.</p>
+<p>However, Babel doesn't show any specific polyfills that are used:</p>
+<img class="w-screenshot" src="./no-polyfills-added.png" alt="No polyfills added">
+<p>This is because the entire <code>@babel/polyfill</code> is being imported directly.</p>
+<h3 id="load-polyfills-individually">Load polyfills individually <a class="w-headline-link" href="#load-polyfills-individually" aria-hidden="true">#</a></h3>
+<p>By default, Babel includes every polyfill needed for a complete ES2015+ environment when
+<code>@babel/polyfill</code> is imported into a file. To import specific polyfills needed for
+the target browsers, add a <code>useBuiltIns: 'entry'</code> to the configuration.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token string">"presets"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">    <span class="token punctuation">[</span></span><br><span class="highlight-line">      <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">{</span></span><br><span class="highlight-line">        <span class="token string">"targets"</span><span class="token punctuation">:</span> <span class="token string">"last 2 versions"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        <span class="token string">"debug"</span><span class="token punctuation">:</span> <span class="token boolean">true</span></span><br><mark class="highlight-line highlight-line-active">        <span class="token operator">&lt;</span>strong<span class="token operator">></span><span class="token string">"useBuiltIns"</span><span class="token punctuation">:</span> <span class="token string">"entry"</span><span class="token operator">&lt;</span><span class="token operator">/</span>strong<span class="token operator">></span></mark><br><span class="highlight-line">      <span class="token punctuation">}</span></span><br><span class="highlight-line">    <span class="token punctuation">]</span></span><br><span class="highlight-line">  <span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>Reload the application. You can now see all the specific polyfills included:</p>
+<img class="w-screenshot" src="./entry-polyfills.gif" alt="List of polyfills imported">
+<p>Although only needed polyfills for <code>&quot;last 2 versions&quot;</code> is now included, it is still a super long list! This is because
+polyfills needed for the target browsers for <em>every</em> newer feature is still included. Change the value of the attribute to <code>usage</code>
+to only include those needed for features that are being used in the code.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token string">"presets"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">    <span class="token punctuation">[</span></span><br><span class="highlight-line">      <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">{</span></span><br><span class="highlight-line">        <span class="token string">"targets"</span><span class="token punctuation">:</span> <span class="token string">"last 2 versions"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        <span class="token string">"debug"</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span><br><del class="highlight-line highlight-line-remove">        <span class="token string">"useBuiltIns"</span><span class="token punctuation">:</span> <span class="token string">"entry"</span></del><br><ins class="highlight-line highlight-line-add">        <span class="token string">"useBuiltIns"</span><span class="token punctuation">:</span> <span class="token string">"usage"</span></ins><br><span class="highlight-line">      <span class="token punctuation">}</span></span><br><span class="highlight-line">    <span class="token punctuation">]</span></span><br><span class="highlight-line">  <span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>With this, polyfills are automatically included where needed.
+This means you can remove the <code>@babel/polyfill</code> import in <code>src/index.js.</code></p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> <span class="token string">"./style.css"</span><span class="token punctuation">;</span></span><br><del class="highlight-line highlight-line-remove"><span class="token keyword">import</span> <span class="token string">"@babel/polyfill"</span><span class="token punctuation">;</span></del></code></pre>
+<p>Now only the required polyfills needed for the application are included.</p>
+<img class="w-screenshot" src="./usage-polyfills.png" alt="List of polyfills automatically included">
+<p>The application bundle size is reduced significantly.</p>
+<img class="w-screenshot" src="./usage-polyfills-bundle-size.png" alt="Bundle size reduced to 30.1 KB">
+<h2 id="narrowing-the-list-of-supported-browsers">Narrowing the list of supported browsers <a class="w-headline-link" href="#narrowing-the-list-of-supported-browsers" aria-hidden="true">#</a></h2>
+<p>The number of browser targets included is still quite large, and not many users
+use discontinued browsers such as Internet Explorer. Update the configurations
+to the following:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token string">"presets"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">    <span class="token punctuation">[</span></span><br><span class="highlight-line">      <span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">{</span></span><br><del class="highlight-line highlight-line-remove">        <span class="token string">"targets"</span><span class="token punctuation">:</span> <span class="token string">"last 2 versions"</span><span class="token punctuation">,</span></del><br><ins class="highlight-line highlight-line-add">        <span class="token string">"targets"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">">0.25%"</span><span class="token punctuation">,</span> <span class="token string">"not ie 11"</span><span class="token punctuation">]</span><span class="token punctuation">,</span></ins><br><span class="highlight-line">        <span class="token string">"debug"</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        <span class="token string">"useBuiltIns"</span><span class="token punctuation">:</span> <span class="token string">"usage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      <span class="token punctuation">}</span></span><br><span class="highlight-line">    <span class="token punctuation">]</span></span><br><span class="highlight-line">  <span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>Take a look at the details for the fetched bundle.</p>
+<img class="w-screenshot" src="./network-use-browser-share.png" alt="Bundle size of 30.0 KB">
+<p>Since the application is so small, there really isn't much of a difference with
+these changes. However, using a browser market share percentage (such as
+<code>&quot;&gt;0.25%&quot;</code>) along with excluding specific browsers that you are confident your
+users are not using is the recommended approach. Take a look at the
+<a href="https://jamie.build/last-2-versions">&quot;Last 2 versions&quot; considered harmful</a>
+article by James Kyle to learn more about this.</p>
+<h2 id="use-lessscript-type&quot;module&quot;greater">Use &lt;script type=&quot;module&quot;&gt; <a class="w-headline-link" href="#use-lessscript-type&quot;module&quot;greater" aria-hidden="true">#</a></h2>
+<p>There is still more room for improvement. Although a number of unused polyfills
+have been removed, there are many that are being shipped that are not needed for
+some browsers. By using modules, newer syntax can be written and shipped to
+browsers directly without the use of any unnecessary polyfills.</p>
+<p><strong>JavaScript modules</strong> are a relatively new feature supported in <a href="https://caniuse.com/#feat=es6-module">all major browsers</a>.
+Modules can be created using a <code>type=&quot;module&quot;</code> attribute to define scripts that import and export from other
+modules. For example:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// math.mjs</span></span><br><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token operator">=></span> x <span class="token operator">+</span> y<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> index<span class="token punctuation">.</span>html <span class="token operator">--</span><span class="token operator">></span></span><br><span class="highlight-line"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"module"</span><span class="token operator">></span></span><br><span class="highlight-line">  <span class="token keyword">import</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./math.mjs'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 7</span></span><br><span class="highlight-line"><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></span></code></pre>
+<p>Many newer ECMAScript features are already supported in environments that
+support JavaScript modules (instead of needing Babel.) This means that the Babel
+config can be modified to send two different versions of your application to the
+browser:</p>
+<ul>
+<li>A version that would work in newer browsers that support modules and that includes a module that is largely untranspiled but has a smaller file size</li>
+<li>A version that includes a larger, transpiled script that would work in any legacy browser</li>
+</ul>
+<h2 id="using-es-modules-with-babel">Using ES Modules with Babel <a class="w-headline-link" href="#using-es-modules-with-babel" aria-hidden="true">#</a></h2>
+<p>In order to have separate <code>@babel/preset-env</code> settings for the two versions of
+the application, remove the <code>.babelrc</code> file. Babel settings can be added to the
+webpack configuration by specifying two different compilation formats for each
+version of the application.</p>
+<p>Begin by adding a configuration for the legacy script to <code>webpack.config.js</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> legacyConfig <span class="token operator">=</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  entry<span class="token punctuation">,</span></span><br><span class="highlight-line">  output<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"public"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    filename<span class="token punctuation">:</span> <span class="token string">"[name].bundle.js"</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  module<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">      <span class="token punctuation">{</span></span><br><span class="highlight-line">        test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        exclude<span class="token punctuation">:</span> <span class="token regex">/node_modules/</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        loader<span class="token punctuation">:</span> <span class="token string">"babel-loader"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        options<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">          presets<span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">            <span class="token punctuation">[</span><span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">              useBuiltIns<span class="token punctuation">:</span> <span class="token string">"usage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">              targets<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">                esmodules<span class="token punctuation">:</span> <span class="token boolean">false</span></span><br><span class="highlight-line">              <span class="token punctuation">}</span></span><br><span class="highlight-line">            <span class="token punctuation">}</span><span class="token punctuation">]</span></span><br><span class="highlight-line">          <span class="token punctuation">]</span></span><br><span class="highlight-line">        <span class="token punctuation">}</span></span><br><span class="highlight-line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      cssRule</span><br><span class="highlight-line">    <span class="token punctuation">]</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  plugins</span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>Notice that instead of using the <code>targets</code> value for <code>&quot;@babel/preset-env&quot;</code>,
+<code>esmodules</code> with a value of <code>false</code> is used instead. This means that Babel
+includes all the necessary transforms and polyfills to target every browser that does
+not yet support ES modules.</p>
+<p>Add <code>entry</code>, <code>cssRule</code>, and <code>corePlugins</code> objects to the beginning of the
+<code>webpack.config.js</code> file. These are all shared between both the module and
+legacy scripts served to the browser.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> entry <span class="token operator">=</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  main<span class="token punctuation">:</span> <span class="token string">"./src"</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> cssRule <span class="token operator">=</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  use<span class="token punctuation">:</span> ExtractTextPlugin<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">{</span></span><br><span class="highlight-line">    fallback<span class="token punctuation">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    use<span class="token punctuation">:</span> <span class="token string">"css-loader"</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> plugins <span class="token operator">=</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">  <span class="token keyword">new</span> <span class="token class-name">ExtractTextPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>filename<span class="token punctuation">:</span> <span class="token string">"[name].css"</span><span class="token punctuation">,</span> allChunks<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>template<span class="token punctuation">:</span> <span class="token string">"./src/index.html"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">]</span><span class="token punctuation">;</span></span></code></pre>
+<p>Now similarly, create a config object for the module script below where <code>legacyConfig</code> is defined:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> moduleConfig <span class="token operator">=</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  entry<span class="token punctuation">,</span></span><br><span class="highlight-line">  output<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"public"</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">    filename<span class="token punctuation">:</span> <span class="token string">"[name].mjs"</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  module<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">      <span class="token punctuation">{</span></span><br><span class="highlight-line">        test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        exclude<span class="token punctuation">:</span> <span class="token regex">/node_modules/</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        loader<span class="token punctuation">:</span> <span class="token string">"babel-loader"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">        options<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">          presets<span class="token punctuation">:</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">            <span class="token punctuation">[</span><span class="token string">"@babel/preset-env"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">              useBuiltIns<span class="token punctuation">:</span> <span class="token string">"usage"</span><span class="token punctuation">,</span></span><br><span class="highlight-line">              targets<span class="token punctuation">:</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">                esmodules<span class="token punctuation">:</span> <span class="token boolean">true</span></span><br><span class="highlight-line">              <span class="token punctuation">}</span></span><br><span class="highlight-line">            <span class="token punctuation">}</span><span class="token punctuation">]</span></span><br><span class="highlight-line">          <span class="token punctuation">]</span></span><br><span class="highlight-line">        <span class="token punctuation">}</span></span><br><span class="highlight-line">      <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">      cssRule</span><br><span class="highlight-line">    <span class="token punctuation">]</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span></span><br><span class="highlight-line">  plugins</span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>The main difference here is that a <code>.mjs</code> file extension is used for the output
+filename. The <code>esmodules</code> value is set to true here which means that the code
+that is outputted into this module is a smaller, less compiled script that does
+not go through any transformation in this example since all the features used
+are already supported in browsers that support modules.</p>
+<p>At the very end of the file, export both configurations in a single array.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">[</span></span><br><span class="highlight-line">  legacyConfig<span class="token punctuation">,</span> moduleConfig</span><br><span class="highlight-line"><span class="token punctuation">]</span><span class="token punctuation">;</span></span></code></pre>
+<p>Now this builds both a smaller module for browsers that support it and a larger
+transpiled script for older browsers.</p>
+<p>Browsers that support modules ignore scripts with a <code>nomodule</code> attribute.
+Conversely, browsers that do not support modules ignore script elements with
+<code>type=&quot;module&quot;</code>. This means you can include a module as well as a compiled
+fallback. Ideally, the two versions of the application should be in <code>index.html</code>
+like this:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.mjs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">nomodule</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.bundle.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></span></code></pre>
+<p>Browsers that support modules fetch and execute <code>main.mjs</code> and ignore
+<code>main.bundle.js.</code> The browsers that do not support modules do the opposite.</p>
+<p>The last thing that needs to be done here is to add the <code>module</code> and <code>nomodule</code>
+attributes to the module and legacy script respectively, Import the
+<a href="https://github.com/numical/script-ext-html-webpack-plugin">ScriptExtHtmlWebpackPlugin</a>
+at the very top of <code>webpack.config.js</code>:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"webpack"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"html-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><mark class="highlight-line highlight-line-active"><span class="token keyword">const</span> ScriptExtHtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"script-ext-html-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></mark></code></pre>
+<p>Now update the <code>plugins</code> array in the configurations to include this plugin:</p>
+<pre>
+const plugins = [
+  new ExtractTextPlugin({filename: "[name].css", allChunks: true}),
+  new HtmlWebpackPlugin({template: "./src/index.html"}),
+  new ScriptExtHtmlWebpackPlugin({
+    <strong>module: /\.mjs$/,
+    custom: [
+      {
+        test: /\.js$/,
+        attribute: 'nomodule',
+        value: ''
+    },
+    ]</strong>
+  })
+];
+</pre>
+<p>These plugin settings add a <code>type=&quot;module&quot;</code> attribute for all <code>.mjs</code> script
+elements as well as a <code>nomodule</code> attribute for all <code>.js</code> script modules.</p>
+<div class="w-aside w-aside--note">
+<p>If you're having trouble understanding how to add all of these configurations to <code>webpack.config.js</code>, take a look at the <a href="https://glitch.com/edit/#!/serve-modern-code-complete?path=webpack.config.js:1:0">complete version of the file</a>.</p>
+</div>
+<h2 id="serving-modules-in-the-html-document">Serving modules in the HTML document <a class="w-headline-link" href="#serving-modules-in-the-html-document" aria-hidden="true">#</a></h2>
+<p>The last thing that needs to be done is to output both the legacy and modern script elements to the HTML file. Unfortunately, the plugin that creates the final HTML file, <code>HTMLWebpackPlugin</code>, <a href="https://github.com/jantimon/html-webpack-plugin/issues/782">does not currently support</a> the output of both the module and nomodule scripts. Although there are workarounds and separate plugins created to solve this problem, such as <a href="https://github.com/DanielSchaffer/webpack-babel-multi-target-plugin">BabelMultiTargetPlugin</a> and <a href="https://github.com/firsttris/html-webpack-multi-build-plugin">HTMLWebpackMultiBuildPlugin</a>, a simpler approach of adding the module script element manually is used for the purpose of this tutorial.</p>
+<p>Add the following to <code>src/index.js</code> at the end of the file:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line">    ...</span><br><span class="highlight-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></span><br><mark class="highlight-line highlight-line-active">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main.mjs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></mark><br><span class="highlight-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></span><br><span class="highlight-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></span></code></pre>
+<p>Now load the application in a browser that supports modules, such as the latest
+version of Chrome.</p>
+<img class="w-screenshot" src="./module-network-request.png" alt="5.2 KB module fetched over network for newer browsers">
+<p>Only the module is fetched, with a much smaller bundle size due to it being
+largely untranspiled! The other script element is completely ignored by the
+browser.</p>
+<p>If you load the application on an older browser, only the larger, transpiled
+script with all the needed polyfills and transforms are be fetched. Here is a
+screenshot for all the requests made on an older version of Chrome (version
+38).</p>
+<img class="w-screenshot" src="./legacy-script.png" alt="30 KB script fetched for older browsers">
+<h2 id="conclusion">Conclusion <a class="w-headline-link" href="#conclusion" aria-hidden="true">#</a></h2>
+<p>You now understand how to use <code>@babel/preset-env</code> to provide only the necessary
+polyfills required for targeted browsers. You also know how JavaScript modules
+can improve performance further by shipping two different transpiled versions of an
+application. With a decent understanding of how both these techniques can cut
+your bundle size down significantly, go forth and optimize!</p>
+
+      
+        <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back w-article-navigation__link--single gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/serve-modern-code-to-modern-browsers"
+  >
+    Return to article
+  </a>
+  
+</nav>
+      
+    </div>
+
+    
+    
+      <div class="web-codelab-glitch">
+        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
+          <iframe
+            allow="geolocation; microphone; camera; midi; encrypted-media"
+            src="https://glitch.com/embed/#!/embed/serve-modern-code?path=[object Object]&amp;previewSize="
+            alt="serve-modern-code on Glitch"
+            style="height: 100%; width: 100%; border: 0;"
+          >
+          </iframe>
+        </div>
+      </div>
+    
+
+  </web-codelab>
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>

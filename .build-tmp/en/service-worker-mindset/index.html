@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Service worker mindset</title>
+    <meta name="description" content="Working with service workers is new and unfamiliar for many web devs. This post provides some tips for wrapping your mind around them.
+" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="/all.css"
+    />
+    <script type="module" src="confboxScript(/site/_includes/lib/app.mjs)"></script>
+  </head>
+  <body>
+    <devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <devsite-user
+            ds-is="user"
+            sign-in-url="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+            ><div class="ogb-wrapper ogb-si">
+              <a
+                href="https://web.dev/_d/signin?continue=https%3A%2F%2Fweb.dev%2Ffast%2Fuse-imagemin-to-compress-images"
+                class="devsite-user-signin button devsite-top-button"
+              >
+                Sign in
+              </a>
+            </div></devsite-user
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>
+    <main>
+      <div id="content">
+        
+
+
+<div class="guide-landing-page">
+  
+    <img
+  class="w-hero w-hero--center"
+  src="/service-worker-mindset/hero.jpg"
+  alt="Service workers lining up."
+/>
+  
+
+  
+  <web-actions-controller page="post"></web-actions-controller>
+  <div class="w-actions">     <a   class="w-actions__fab w-actions__fab--share"   href="https://twitter.com/share?text=Service%20worker%20mindset&amp;url=https%3A%2F%2Fweb.dev%2Fservice-worker-mindset%2F"   onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;" >   <span>Share</span> </a>     <a   class="w-actions__fab w-actions__fab--subscribe"   href="https://web.dev/subscribe" >   <span>Subscribe</span> </a>   </div>
+
+  <div class="w-layout-container--narrow w-post-breadcrumbs">
+    <ul class="w-breadcrumbs">
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link w-breadcrumbs__link--left-justify gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, home breadcrumb"
+      data-action="click"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li class="w-breadcrumbs__crumb">
+    <a
+      class="w-breadcrumbs__link gc-analytics-event"
+      data-category="web.dev"
+      data-label="post, path breadcrumb"
+      data-action="click"
+      href=/blog
+    >
+      All articles
+    </a>
+  </li>
+</ul>
+  </div>
+
+  <div class="w-layout-container--narrow w-post-content">
+    <header class="w-article-header">
+      <h1 class="w-article-header__headline">Service worker mindset</h1>
+      
+        <p class="w-article-header__subhead w-mb--non">
+          How to think when thinking about service workers.
+        </p>
+      
+
+      
+        <div class="w-author__published">
+          <time>Jun 4, 2019</time>
+          
+        </div>
+      
+
+      
+        <div class="w-authors w-mt--xl w-pt--sm">
+          
+            <div class="w-author">
+  <img
+    class="w-author__image "
+    src="/images/authors/geddski.jpg"
+    alt="Dave Geddes"
+  />
+  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <cite class="w-author__name">Dave Geddes</cite>
+    <ul class="w-author__link-list">
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://twitter.com/geddski">Twitter</a>
+      </li>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="https://github.com/geddski">GitHub</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+          
+        </div>
+      
+    </header>
+    <p>Service workers are powerful and absolutely worth mastering. They let you deliver an entirely new level of experience to your users. Your site can load <em>instantly</em>. It can work <em>offline</em>. It can be installed as a native app and feel every bit as polished—but with the reach and freedom of the web.</p>
+<p>But service workers are unlike anything most of us web devs are used to. They come with a steep learning curve and a handful of snags you've got to watch out for.</p>
+<p><a href="https://twitter.com/ChromiumDev">Google Developers</a> and I recently collaborated on a project—<a href="https://serviceworkies.com">Service Workies</a>—a free game for mastering service workers. While building it and working with the complex ins and outs of service workers, I ran into a few snags. What helped me the most was coming up with a handful of depictive metaphors. In this post we'll explore these mental models and wrap our brains around the paradoxical traits that make service workers both tricky and awesome.</p>
+<h2 id="the-same-but-different">The same, but different <a class="w-headline-link" href="#the-same-but-different" aria-hidden="true">#</a></h2>
+<p>While coding your service worker, many things will feel familiar. You get to use your favorite new JavaScript language features. You listen to lifecycle events just like with UI events. You manage control flow with promises like you're used to.</p>
+<p>But other service worker behavior causes you to scratch your head in confusion. Especially when you refresh the page and don't see your code changes applied.</p>
+<h3 id="a-new-layer">A new layer <a class="w-headline-link" href="#a-new-layer" aria-hidden="true">#</a></h3>
+<p>Normally when building a site you have just two layers to think about: the client and the server. The service worker is a brand new layer that sits in the middle.</p>
+<p><img src="./middle-layer.jpg" alt="A service worker acts as a middle layer between the client and the server"></p>
+<p>Think of your service worker as a sort of <em>browser extension</em>—one that your site can install in your user's browser. Once installed, the service worker <em>extends</em> the browser for your site with a powerful middle layer. This service worker layer can intercept and handle all of the requests your site makes.</p>
+<p>The service worker layer has its <strong>own lifecycle</strong> independent of the browser tab. A simple page refresh isn't enough to update a service worker—just like you wouldn't expect a page refresh to update code deployed on a server. Each layer has its own unique rules for updating.</p>
+<p>In the <a href="https://serviceworkies.com">Service Workies</a> game we cover the many details of the service worker lifecycle and give you a ton of practice working with it.</p>
+<p><img src="./update-lifecycle.gif" alt="a new service worker replacing an old one"></p>
+<div class="w-aside w-aside--note">
+<p>Think of your service worker as a new middle layer with its own lifecycle and methods for updating.</p>
+</div>
+<h2 id="powerful-but-limited">Powerful, but limited <a class="w-headline-link" href="#powerful-but-limited" aria-hidden="true">#</a></h2>
+<p>Having a service worker on your site gives you incredible benefits. Your site can:</p>
+<ul>
+<li>work flawlessly even when the user is offline</li>
+<li>gain massive performance improvements through <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache">caching</a></li>
+<li>use <a href="https://developers.google.com/web/fundamentals/push-notifications/">push notifications</a></li>
+<li>be installed as a <a href="https://developers.google.com/web/progressive-web-apps/">PWA</a></li>
+</ul>
+<p>With as much as service workers can do, they are limited by design. They can't do anything synchronous or in the same thread as your site. So that means no access to:</p>
+<ul>
+<li>localStorage</li>
+<li>the DOM</li>
+<li>the window</li>
+</ul>
+<p>The good news is there are a handful of ways your page can communicate with its service worker, including direct <a href="https://developer.mozilla.org/en-US/docs/Web/API/Client/postMessage"><code>postMessage</code></a>, one-to-one <a href="https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel">Message Channels</a> and one-to-many <a href="https://developers.google.com/web/updates/2016/09/broadcastchannel">Broadcast Channels</a>.</p>
+<div class="w-aside w-aside--note">
+<p>Think of your service worker as something that lives outside of your page. You can talk to it, but it can't access your page directly.</p>
+</div>
+<h2 id="long-lived-but-short-lived">Long-lived, but short-lived <a class="w-headline-link" href="#long-lived-but-short-lived" aria-hidden="true">#</a></h2>
+<p>An active service worker goes on living even after a user leaves your site or closes the tab. The browser keeps this service worker around so that it will be ready the next time the user comes back to your site. Before the very first request is made, the service worker gets a chance to intercept it and take control of the page. This is what allows a site to work offline — the service worker can serve a cached version of the page itself, even if the user has no connection to the internet.</p>
+<p>In <a href="https://serviceworkies.com">Service Workies</a> we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.</p>
+<p><img src="./intercept.gif" alt="service worker intercepting http requests"></p>
+<h3 id="stopped">Stopped <a class="w-headline-link" href="#stopped" aria-hidden="true">#</a></h3>
+<p>Despite service workers appearing to be immortal, they can be <strong>stopped</strong> at almost any time. The browser doesn't want to waste resources on a service worker that isn't currently doing anything. Getting stopped isn't the same thing as getting <em>terminated</em>—the service worker remains installed and activated. It's just put to sleep. The next time it's needed (e.g., to handle a request), the browser wakes it back up.</p>
+<h3 id="waituntil">waitUntil <a class="w-headline-link" href="#waituntil" aria-hidden="true">#</a></h3>
+<p>Because of the constant possibility of getting put to sleep, your service worker needs a way to let the browser know when it's doing something important and doesn't feel like taking a nap. This is where <code>event.waitUntil()</code> comes into play. This method extends the lifecycle it's used in, keeping it both from being stopped and from moving on to the next phase of its lifecycle until we're ready. This gives us time to setup caches, fetch resources from the network, etc.</p>
+<p>This example tells the browser that our service worker isn't done installing until the <code>assets</code> cache has been created and populated with the picture of a sword:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"install"</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  event<span class="token punctuation">.</span><span class="token function">waitUntil</span><span class="token punctuation">(</span></span><br><span class="highlight-line">    caches<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"assets"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">cache</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token keyword">return</span> cache<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"/weapons/sword/blade.png"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span></span><br><span class="highlight-line">  <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<h3 id="watch-out-for-global-state">Watch out for global state <a class="w-headline-link" href="#watch-out-for-global-state" aria-hidden="true">#</a></h3>
+<p>When this start/stop happens the service worker's global scope is reset. So be careful not to use any global state in your service worker or you'll be sad the next time it wakes back up and has different state from what it was expecting.</p>
+<p>Consider this example that uses a global state:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> favoriteNumber <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">let</span> hasHandledARequest <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"fetch"</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>favoriteNumber<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>hasHandledARequest<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  hasHandledARequest <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>On each request this service worker will log a number—let's say <code>0.13981866382421893</code>. The <code>hasHandledARequest</code> variable also changes to <code>true</code>. Now the service worker sits idle for a bit, so the browser stops it. The next time there's a request, the service worker is needed again, so the browser wakes it up. Its script is <strong>evaluated again</strong>. Now <code>hasHandledARequest</code> is reset to <code>false</code>, and <code>favoriteNumber</code> is something completely different—<code>0.5907281835659033</code>.</p>
+<p>You can't rely on stored state in a service worker. Also, creating instances of things like Message Channels can cause bugs: you'll get a brand new instance every time the service worker stops/starts.</p>
+<div class="w-aside w-aside--warning">
+<p><strong>Warning:</strong>
+This snag is especially important to keep in mind while working on your service worker code because when Chrome DevTools is open, the start/stop behavior is disabled. You may not even see bugs caused by relying on global state until they've shipped to your users.</p>
+</div>
+<p>In <a href="https://gedd.ski/post/service-workies-chapter3/">Service Workies chapter 3</a> we visualize our stopped service worker as losing all color while he hangs out waiting to be woken up.</p>
+<p><img src="./kolohe-stopped.jpg" alt="visualization of a stopped service worker"></p>
+<div class="w-aside w-aside--note">
+<p>Think of your service worker as a <a href="https://www.akc.org/dog-breeds/whippet/">whippet</a> dog. He's fast, loyal and awesome. He'll stick around by your side no matter what. But mostly he just wants to sleep. All the time. You've got to let him know when you want him to stay awake. Good boy!</p>
+</div>
+<h2 id="together-but-separate">Together, but separate <a class="w-headline-link" href="#together-but-separate" aria-hidden="true">#</a></h2>
+<p>Your page can only be <em>controlled</em> by one service worker at a time. But it can have two service workers <em>installed</em> at once. When you make a change to your service worker code and refresh the page, you aren't actually editing your service worker at all. Service workers are <em>immutable</em>. You're instead making a brand new one. This new service worker (let's call it SW2) will <em>install</em> but it won't <em>activate</em> yet. It has to <em>wait</em> for the current service worker (SW1) to terminate (when your user leaves your site).</p>
+<h3 id="messing-with-another-service-worker's-caches">Messing with another service worker's caches <a class="w-headline-link" href="#messing-with-another-service-worker's-caches" aria-hidden="true">#</a></h3>
+<p>While installing, SW2 can get things setup—usually creating and populating caches. But heads up: this new service worker has access to everything that the current service worker has access to. If you're not careful, your new waiting service worker can really mess things up for your current service worker. Some examples that could cause you trouble:</p>
+<ul>
+<li>SW2 could delete a cache that SW1 is actively using.</li>
+<li>SW2 could edit the contents of a cache that SW1 is using, causing SW1 to respond with assets that the page isn't expecting.</li>
+</ul>
+<h3 id="skip-skipwaiting">Skip skipWaiting <a class="w-headline-link" href="#skip-skipwaiting" aria-hidden="true">#</a></h3>
+<p>A service worker can also use the risky <code>skipWaiting()</code> method to take control of the page as soon as it's done installing. This is generally a bad idea unless you're intentionally trying to replace a buggy service worker. The new service worker might be using updated resources that the current page isn't expecting, leading to errors and bugs.</p>
+<h3 id="start-clean">Start clean <a class="w-headline-link" href="#start-clean" aria-hidden="true">#</a></h3>
+<p>The way to prevent your service workers from clobbering each other is to make sure they use different caches. The easiest way to accomplish that is to version the cache names they use.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> version <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> assetCacheName <span class="token operator">=</span> <span class="token template-string"><span class="token string">`assets-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>version<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"install"</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  caches<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>assetCacheName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">cache</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token comment">// confidently do stuff with your very own cache</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>When you deploy a new service worker, you'll bump the <code>version</code> so that it does what it needs with an entirely separate cache from the previous service worker.</p>
+<p><img src="./cache.jpg" alt="visualization of a cache"></p>
+<h3 id="end-clean">End clean <a class="w-headline-link" href="#end-clean" aria-hidden="true">#</a></h3>
+<p>Once your service worker reaches the <code>activated</code> state, you know it has taken over, and the previous service worker is redundant (i.e., no longer needed). At this point it's important to clean up after the old service worker. Not only does it respect your users' cache storage limits, but it can also prevent unintentional bugs.</p>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match"><code>caches.match()</code></a> method is an often-used shortcut for retrieving an item from <em>any</em> cache where there's a match. But it iterates through the caches in the order they were created. So let's say you've got two versions of a script file <code>app.js</code> hanging out in two different caches—<code>assets-1</code> and <code>assets-2</code>. Your page is expecting the newer script that's stored in <code>assets-2</code>. But if you haven't deleted the old cache, <code>caches.match('app.js')</code> is going to return the old one from <code>assets-1</code> and most likely break your site.</p>
+<p>All it takes to clean up after previous service workers is to delete any cache that the new service worker doesn't need:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> version <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> assetCacheName <span class="token operator">=</span> <span class="token template-string"><span class="token string">`assets-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>version<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"activate"</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  event<span class="token punctuation">.</span><span class="token function">waitUntil</span><span class="token punctuation">(</span></span><br><span class="highlight-line">    caches<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">cacheNames</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">      <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span></span><br><span class="highlight-line">        cacheNames<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">cacheName</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">          <span class="token keyword">if</span> <span class="token punctuation">(</span>cacheName <span class="token operator">!==</span> assetCacheName<span class="token punctuation">)</span><span class="token punctuation">{</span></span><br><span class="highlight-line">            <span class="token keyword">return</span> caches<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>cacheName<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">          <span class="token punctuation">}</span></span><br><span class="highlight-line">        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">      <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span></code></pre>
+<p>Preventing your service workers from clobbering each other takes a bit of work and disciple but is worth the trouble.</p>
+<div class="w-aside w-aside--note">
+<p>Think of the combination of your service worker and your site as an <a href="https://web.dev/installable">installable</a> app. Each version should work. Each version should be separate from the others. Imagine how buggy a game would be if the developer accidentally released a patch that used new game logic but outdated assets. You'd rage on the forums so fast! Keep your app versions tidy &amp; clean.</p>
+</div>
+<h2 id="service-worker-mindset">Service worker mindset <a class="w-headline-link" href="#service-worker-mindset" aria-hidden="true">#</a></h2>
+<p>Getting into the right mindset while thinking about service workers will help you build yours with confidence. Once you get the hang of them you'll be able to create incredible experiences for your users.</p>
+<p>If you want to master all this by <a href="https://gedd.ski/post/mastery-through-play/">playing a game</a>, then you're in luck! Go play <a href="https://serviceworkies.com">Service Workies</a> where you'll learn the ways of the service worker in order to slay the offline beasts.</p>
+<p><img src="./spider.gif" alt="preview of the Service Workies game"></p>
+
+
+     
+
+    <div class="w-post-github-link w-mt--l w-mb--l">
+      <span class="w-mr--sm">
+        
+        Last updated: <time>Jun 4, 2019</time>
+        
+      </span>
+      <a
+        href="https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/service-worker-mindset/index.md"
+      >
+        Improve article
+      </a>
+       
+    </div>
+
+    
+  </div>
+
+  
+    
+    <nav class="w-article-navigation">
+  <a
+    class="w-article-navigation__link w-article-navigation__link--back  gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go back"
+    data-action="click"
+    href="/blog"
+  >
+    Return to all articles
+  </a>
+  <a
+    class="w-article-navigation__link w-article-navigation__link--forward gc-analytics-event"
+    data-category="web.dev"
+    data-label="navigation, go forward"
+    data-action="click"
+    href="/what-should-you-measure-to-improve-performance/"
+  >
+    <div class="w-article-navigation__column">
+      <h3 class="w-article-navigation__heading">Next article</h3>
+      What should you measure to improve performance?
+    </div>
+  </a>
+</nav>
+  
+
+  
+  
+</div>
+
+      </div>
+    </main>
+  </body>
+</html>
