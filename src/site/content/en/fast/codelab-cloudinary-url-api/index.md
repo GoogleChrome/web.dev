@@ -249,7 +249,7 @@ Lighthouse audit results for when images are optimized.
 <figure class="w-figure">
   <img class="w-screenshot" src="./optimized-images.png" alt="Images Not Optimized">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 2 — Optimized Images.
+    Fig. 2 — Results with optimized images.
   </figcaption>
 </figure>
 
@@ -260,7 +260,7 @@ _Lighthouse audit results when images are not optimized._
 <figure class="w-figure">
   <img class="w-screenshot" src="./images-not-optimized.png" alt="Images Not Optimized">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 3 — Images Not Optimized.
+    Fig. 3 — Results when images are not optimized.
   </figcaption>
 </figure>
 
