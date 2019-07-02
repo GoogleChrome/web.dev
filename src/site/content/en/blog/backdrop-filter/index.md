@@ -165,7 +165,7 @@ input:not(:checked) ~ .sensitive-overlay {
 
 
 ## Conclusion
-Chrome's excited to release `backdrop-filter` in 76. The [Chromium bug](https://crbug.com/497522) has **560+ stars** on it, clearly marking it as a desired web design capability.
+560+ of you all upvoted the [Chromium bug](https://crbug.com/497522) over the past few years, clearly marking this as a long awaited CSS feature. The wait is over! Chrome's excited to release `backdrop-filter` in 76.
 
 <figure class="w-figure">
   <img src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/translucent-chrome.png" alt="Translucent Chrome logo over a dark gradient">
