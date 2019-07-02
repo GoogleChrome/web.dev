@@ -178,7 +178,7 @@ Chrome's excited to release `backdrop-filter` in 76. The [Chromium bug](https://
   </figcaption>
 </figure>
 
-### Additional Resources
+### Additional resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)
 - [Chrome Platform Status](https://www.chromestatus.com/feature/5679432723333120)
 - [Caniuse](http://caniuse.com/#feat=css-backdrop-filter)
