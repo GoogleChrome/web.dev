@@ -14,7 +14,7 @@
         "SwitchCase": 1
       }
     ],
-    "new-cap": 0,
+    "new-cap": 0
   },
   "env": {
     "es6": true,
