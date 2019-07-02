@@ -42,12 +42,19 @@ The following video demonstrates `backdrop-filter` and each individual filter:
 </figure>
 
 
-## Technical Details
+## Technical Overview
 {% Aside 'key-term' %}
   backdrop - the painted content behind the element.
 {% endAside %}
 
 CSS `backdrop-filter` applies one or more filters to the backdrop of an element, leaving the contents unchanged.
+
+```css
+.frosty-glass-pane {
+  opacity: .9;
+  backdrop-filter: blur(2px);
+}
+```
 
 In order for the backdrop-filter to have any effect, some portion of the overlaying element needs to be transparent. Therefore, overlaying elements without any transparency will produce no backdrop-filter effects.
 
@@ -55,7 +62,7 @@ In order for the backdrop-filter to have any effect, some portion of the overlay
   <img src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop-filter.png" alt="2 comparisons where one is opaque and the other has transparency and therefore blurred translucency">
 </figure>
 
-Backdrop-filters are like CSS filters. When the property is not 'none', a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) are created. Note, only elements with absolute and fixed position descendants will get a containing block.
+Backdrop-filters are like CSS [filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter). When the property is not 'none', a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html) and/or [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) are created. Note, only elements with absolute and fixed position descendants will get a containing block.
 
 View the full API on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) for syntax, filters and values.
 
@@ -70,6 +77,7 @@ View the full API on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/back
 
 
 ## Essentials
+
 
 ### Single Filter
 
