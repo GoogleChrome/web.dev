@@ -9,7 +9,7 @@ hero: hero.jpg
 alt: A view through a rain-covered foggy window.
 description: |
   CSS backdrop-filter was made famous by Apple's design team. It brings
-  the ability for a background to apply a filter to the contents beneath,
+  a background to act as a filter for the contents beneath
   and creates a nice layering effect that keeps beneath elements in context.
 tags:
   - post
