@@ -1,8 +1,8 @@
 ---
 layout: codelab
 title: Minify and compress network payloads with brotli
-authors:
-  - mdiblasio
+authors: 
+ - mdiblasio
 description: |
   In this codelab, learn how Brotli compression can further reduce compression
   ratios and your app's overall size.
@@ -193,7 +193,7 @@ Begin by adding it as a `devDependency` in `package.json`:
 Like any other webpack plugin, import it in the configurations file,
 `webpack.config.js`:
 
-```js/4
+```js/3
 var path = require("path");
 
 //...
@@ -256,6 +256,7 @@ var app = express();
 <strong>app.get('*.js', (req, res, next) => {
   req.url = req.url + '.br';
   res.set('Content-Encoding', 'br');
+  res.set('Content-Type', 'application/javascript; charset=UTF-8');
   next();
 });</strong>
 
@@ -269,6 +270,8 @@ request. The route works like this:
   endpoint that is fired to fetch a JS file.
 + Within the callback, `.br` is attached to the URL of the request and the
   `Content-Encoding` response header is set to `br`.
++ The `Content-Type` header is set to `application/javascript; charset=UTF-8` to 
+  specify the MIME type. 
 + Finally, `next()` ensures that the sequence continues to any callback that may
   be next.
 
@@ -276,22 +279,23 @@ Because some browsers may not support brotli compression, confirm brotli is
 supported before returning the brotli-compressed file by checking the
 `Accept-Encoding` request header includes `br`:
 
-<pre>
+```js/5,10
 var express = require('express');
 
 var app = express();
 
 app.get('*.js', (req, res, next) => {
-  <strong>if (req.header('Accept-Encoding').includes('br')) {</strong>
+  if (req.header('Accept-Encoding').includes('br')) {
     req.url = req.url + '.br';
     console.log(req.header('Accept-Encoding'));
     res.set('Content-Encoding', 'br');
-  <strong>}</strong>
+    res.set('Content-Type', 'application/javascript; charset=UTF-8');
+  }
   next();
 });
 
 app.use(express.static('public'));
-</pre>
+```
 
 
 Once the app reloads, take a look at the Network panel once more.
