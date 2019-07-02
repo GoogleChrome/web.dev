@@ -14,6 +14,7 @@
     "watch:eleventy": "eleventy --watch",
     "watch:rollup": "rollup -c -w -m",
     "start": "node ./server.js",
+    "lint": "npm-run-all -p -c lint:js lint:scss",
     "build": "npm run clean && npm run lint && npm run build:rollup && npm run build:eleventy && npm run build:gulp",
     "dev": "npm run clean && npm-run-all -r --parallel watch:eleventy watch:gulp start watch:rollup",
     "debug": "node --inspect-brk ./node_modules/.bin/eleventy",
