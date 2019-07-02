@@ -68,7 +68,7 @@ There are three dynamic parts in this fetch URL which are explained below.
 
 Replace `<cloud_name>` with your Cloudinary [cloud name](https://cloudinary.com/documentation/solution_overview?query=cloud%20name&c_query=Account%20and%20API%20setup%20%E2%80%BA%20Identifiers%20%E2%80%BA%20Cloud%20name#cloud_name). For example, we are going to use the `demo` cloud name here.
 
-`https://res.cloudinary.com/`<span class="w-c--success">demo</span>`/image/fetch/<transformations>/<remote_image_url>`
+`https://res.cloudinary.com/`demo`/image/fetch/<transformations>/<remote_image_url>`
 
 ```html/1/0
 https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_image_url>
@@ -207,21 +207,21 @@ There are impressive web performance gains by using <a href="https://cloudinary.
       </tr>
       <tr>
         <td>flower1.png</td>
-        <td><span class="w-c--warning">289 KB</span></td>
-        <td><span class="w-c--success">22 KB</span></td>
-        <td><span class="w-c--success">↓ -92.39%</span></td>
+        <td>289 KB</td>
+        <td>22 KB</td>
+        <td>↓ -92.39%</td>
       </tr>
       <tr>
         <td>flower2.jpg</td>
-        <td><span class="w-c--warning">59 KB</span></td>
-        <td><span class="w-c--success">19 KB</span></td>
-        <td><span class="w-c--success">↓ -67.8%</span></td>
+        <td>59 KB</td>
+        <td>19 KB</td>
+        <td>↓ -67.8%</td>
       </tr>
       <tr>
         <td>flower3.png</td>
-        <td><span class="w-c--warning">367 KB</span></td>
-        <td><span class="w-c--success">38 KB</span></td>
-        <td><span class="w-c--success">↓ -89.65%</span></td>
+        <td>367 KB</td>
+        <td>38 KB</td>
+        <td>↓ -89.65%</td>
       </tr>
     </tbody>
   </table>
