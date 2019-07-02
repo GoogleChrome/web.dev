@@ -95,7 +95,7 @@ __GUESS__.p(
 
 The meaning behind this code that Guess.js generated is: consider prefetching chunk `a.js` with probability `0.2` and chunk `b.js` with probability `0.8`.
 
-Once the browser executes this code Guess.js will first check the user's connection speed. If it's sufficient enough Guess.js will insert two `<link rel="prefetch">` tags in the header of the page, one for each chunk. If the user has a poor network connection, Guess.js will only prefetch the chunk `b.js` since it has `0.8` probability to be needed next.
+Once the browser executes the code, Guess.js will check the user's connection speed. If it's sufficient, Guess.js will insert two `<link rel="prefetch">` tags in the header of the page, one for each chunk. If the user is on a high-speed network, Guess.js will prefetch both chunks. If the user has a poor network connection, Guess.js will only prefetch chunk `b.js` since it has a high probability of being needed.
 
 ![How Guess.js works](guess-2.png)
 
