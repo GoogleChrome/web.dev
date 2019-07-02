@@ -146,10 +146,10 @@ View the full API on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/back
   </figcaption>
 </figure>
 
-### Censorship
+### Sensitive Content Overlay
 
 ```css
-input:not(:checked) ~ .censor {
+input:not(:checked) ~ .sensitive-overlay {
   backdrop-filter: contrast(4) blur(20px);
 }
 ```
