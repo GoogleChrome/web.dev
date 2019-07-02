@@ -4,8 +4,10 @@ import commonJs from 'rollup-plugin-commonjs';
 module.exports = {
   input: 'src/lib/app.mjs',
   output: {
-    file: 'dist/bundle.mjs',
+    dir: 'dist',
     format: 'esm',
+    entryFileNames: '[name].[hash].js',
+    chunkFileNames: '[name].[hash].js',
   },
   plugins: [
     resolve(),
