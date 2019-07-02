@@ -20,11 +20,15 @@
       rel="stylesheet"
       href="/all.css"
     />
+    <script type="module" src="/bundle.mjs"></script>
   </head>
   <body>
     {% include 'devsite/devsite-header.njk' %}
     <main>
       {{ content | safe }}
+      <div id="content">
+        {{ content | safe }}
+      </div>
     </main>
   </body>
 </html>
