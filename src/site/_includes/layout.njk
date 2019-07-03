@@ -16,8 +16,14 @@
       rel="stylesheet"
       href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
     />
-    <link rel="stylesheet" href="/{{site.entrypoints.appCss}}" />
-    <script type="module" src="/{{site.entrypoints.appJs}}"></script>
+    {# Add cache busting URLs when we're doing a prod build #}
+    {% if site.env === 'prod' %}
+      <link rel="stylesheet" href="/{{site.entrypoints.appCss}}" />
+      <script type="module" src="/{{site.entrypoints.appJs}}"></script>
+    {% else %}
+      <link rel="stylesheet" href="/app.css" />
+      <script type="module" src="/app.js"></script>
+    {% endif %}
   </head>
   <body>
     {% include 'devsite/devsite-header.njk' %}
