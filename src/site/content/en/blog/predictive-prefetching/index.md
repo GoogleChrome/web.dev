@@ -47,7 +47,7 @@ Predictive prefetching solves these problems by using a report of users' navigat
 
 [Guess.js](https://github.com/guess-js) is a JavaScript library that provides predictive prefetching functionality. Guess.js consumes a report from Google Analytics or another analytics provider to build a predictive model that can be used to smartly prefetch only what the user is likely to need.
 
-Guess.js has integration with [Angular](https://angular.io), [Next.js](https://nextjs.org/), [Nuxt.js](https://nuxtjs.org/), and [Gatsby](https://www.gatsbyjs.org/). To use it in your application, you should add a single line of webpack configuration specifying a [Google Analytics view ID](https://stackoverflow.com/questions/36898103/what-is-a-viewid-in-google-analytics):
+Guess.js has integrations with [Angular](https://angular.io), [Next.js](https://nextjs.org/), [Nuxt.js](https://nuxtjs.org/), and [Gatsby](https://www.gatsbyjs.org/). To use it in your application, add these lines to your webpack configuration to specify a [Google Analytics view ID](https://stackoverflow.com/questions/36898103/what-is-a-viewid-in-google-analytics):
 
 ```js/0,5
 const { GuessPlugin } = require('guess-webpack');
@@ -66,9 +66,9 @@ If you're not using Google Analytics, you can specify a `reportProvider` and dow
 
 To learn more about how to integrate Guess.js with your favorite framework check out these resources:
 
-1. [Using Guess.js with Angular](https://guess-js.github.io/docs/angular)
-1. [Using Guess.js with Next.js](https://guess-js.github.io/docs/next)
-1. [Using Guess.js with Nuxt.js](https://guess-js.github.io/docs/nuxt)
+- [Using Guess.js with Angular](https://guess-js.github.io/docs/angular)
+- [Using Guess.js with Next.js](https://guess-js.github.io/docs/next)
+- [Using Guess.js with Nuxt.js](https://guess-js.github.io/docs/nuxt)
 
 For a quick walkthrough on the integration with Angular, check out this video:
 
