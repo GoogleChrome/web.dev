@@ -250,7 +250,7 @@ Lighthouse audit results for when images are optimized.
   </figcaption>
 </figure>
 
-If you've optimized your images correctly the Lighthouse audit should have a perfect score. As you can see the page load time is down by 4.05 secs. That is impressive.
+If you've optimized your images correctly the Lighthouse audit should have a perfect score. As you can see First Meaningful Paint is down by 2.5 secs. That is impressive.
 
 _Lighthouse audit results when images are not optimized._
 
