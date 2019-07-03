@@ -106,7 +106,7 @@ https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudi
 
 ```
 
-Which means that you can auto-optimize any image by prepending the following to its URL.
+This works for other images too. You can auto-optimize any image by prepending the following to its URL:
 
 ```html
 https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/
