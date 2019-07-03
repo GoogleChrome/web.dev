@@ -83,7 +83,7 @@ https://res.cloudinary.com/demo/image/fetch/<transformations>/<remote_image_url>
 https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/<remote_image_url>
 ```
 
-While there are many [Image transformations](https://cloudinary.com/documentation/image_transformations) available, for the sake of this Codelab, we are only going to use two of them.
+While there are many [Image transformations](https://cloudinary.com/documentation/image_transformations) available, for the sake of this Codelab, we are only going to use two of them. Transformations are comma-separated.
 
 1. [**Quality**](https://cloudinary.com/documentation/image_transformation_reference#quality_parameter): The parameter `q` controls the quality of the image delivered by the cloud. You can set `q_1` to `q_100` 1 is the lowest quality, and 100 is the highest. Use `q_auto` to calculate the optimal quality of an image automatically.
 2. [**Format**](https://cloudinary.com/documentation/image_transformation_reference#format_parameter): The parameter `f` can automatically convert delivered images to WebP and JPEG-XR on supported browsers to save bandwidth and optimize delivery time. Again use `f_auto` to auto format the image.
