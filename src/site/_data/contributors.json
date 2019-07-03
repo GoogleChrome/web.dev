@@ -1411,5 +1411,20 @@
     "description": {
       "en": "Harleen is a Developer Marketing Manager"
     }
+  },
+  "mgechev": {
+    "name": {
+      "given": "Minko",
+      "family": "Gechev"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Programs Engineer for Angular"
+    },
+    "country": "USA",
+    "homepage": "https://blog.mgechev.com/",
+    "twitter": "mgechev",
+    "github": "mgechev",
+    "glitch": "mgechev"
   }
 }
