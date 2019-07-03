@@ -241,7 +241,6 @@ the JPEG images on your page are optimally compressed.
 
 ### Results
 
-Lighthouse audit results for when images are optimized.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./optimized-images.png" alt="Images Not Optimized">
