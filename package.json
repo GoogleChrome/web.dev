@@ -1,6 +1,6 @@
 {
   "name": "web.dev-frontend",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "clean": "rm -rf dist",
     "lint:md": "remark -q -f .",
@@ -15,8 +15,8 @@
     "watch:rollup": "rollup -c -w -m",
     "start": "node ./server.js",
     "lint": "npm-run-all -p -c lint:js lint:scss",
-    "build": "npm run clean && npm run lint && npm run build:rollup && npm run build:eleventy && npm run build:gulp",
-    "dev": "npm run clean && npm-run-all -r --parallel watch:rollup watch:eleventy start",
+    "build": "ELEVENTY_ENV=prod npm-run-all lint clean build:rollup build:eleventy build:gulp start",
+    "dev": "npm-run-all clean --parallel --race watch:rollup watch:eleventy watch:gulp start",
     "debug": "node --inspect-brk ./node_modules/.bin/eleventy",
     "stage": "npm run build && gcloud app deploy --project web-dev-staging --quiet",
     "stage:personal": "npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",
