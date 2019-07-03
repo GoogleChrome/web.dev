@@ -1,6 +1,6 @@
 ---
-title: How OpenSooq increased engagement by making a PWA
-subhead: Learn how a small team created a compelling marketplace web experience.
+title: How OpenSooq increased engagement by investing in the web
+subhead: Learn how a small team achieved big wins by creating a compelling marketplace PWA.
 authors:
   - hbatra
 date: 2019-07-03
@@ -59,7 +59,7 @@ By adopting these best practices, the team was able to cut the average page load
 <figure class="w-figure w-figure--inline-right">
   <img class="w-screenshot" src="notifications.png" alt="A smartphone displaying OpenSooq notifications." style="max-width: 284px;">
   <figcaption class="w-figcaption">
-    Some OpenSooq notifications.
+    OpenSooq's meaningful user notifications.
   </figcaption>
 </figure>
 
