@@ -21,7 +21,7 @@ I've removed scope, I've tried making the tables as confusing as possible, and t
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="td-headers-attr.png" alt="Lighthouse audit showing table headers do not have data cells
   <figcaption class="w-figcaption">
-    Fig. 1 — Table headers do not have data cells
+    Table headers do not have data cells.
   </figcaption>
 </figure>
 -->

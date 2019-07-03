@@ -20,7 +20,7 @@ Lighthouse flags pages that don't register a service worker:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="service-worker.png" alt="Lighthouse audit showing site doesn't register a service worker">
   <figcaption class="w-figcaption">
-    Fig. 1 — Site doesn't register a service worker
+    Site doesn't register a service worker.
   </figcaption>
 </figure>
 

@@ -25,7 +25,7 @@ when JavaScript is unavailable:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="without-javascript.png" alt="Lighthouse audit showing page doesn't contain some content when JS is unavailable">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page doesn't contain some content when JS is unavailable
+    Page doesn't contain some content when JS is unavailable.
   </figcaption>
 </figure>
 

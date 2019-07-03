@@ -13,7 +13,7 @@ flags the third level of requests in your critical request chain as preload cand
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-rel-preload.png" alt="Preload key requests">
   <figcaption class="w-figcaption">
-    Fig. 1 — Preload key requests
+    Preload key requests.
   </figcaption>
 </figure>
 

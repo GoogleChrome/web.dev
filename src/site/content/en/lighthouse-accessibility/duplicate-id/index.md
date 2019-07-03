@@ -14,7 +14,7 @@ Lighthouse reports any duplicate IDs found in a page:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="duplicate-id.png" alt="Lighthouse audit showing ID attributes on the page are not unique">
   <figcaption class="w-figcaption">
-    Fig. 1 — ID attributes on the pgae are not unique
+    ID attributes on the page are not unique.
   </figcaption>
 </figure>
 

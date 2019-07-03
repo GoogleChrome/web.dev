@@ -16,7 +16,7 @@ Lighthouse lists out every call to `document.write()`:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page uses <code>document.write()</code>
+    Page uses <code>document.write()</code>.
   </figcaption>
 </figure>
 
@@ -36,14 +36,12 @@ Other uses of `document.write()` may be acceptable.
 
 Review the usage of `document.write()`.
 If the script meets the criteria outlined in the introduction to
-[Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write), 
+[Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write),
 Chrome won't execute the injected script.
 These are the calls to `document.write()` that you want to change.
 
-See [How do I fix this?](https://developers.google.com/web/updates/2016/08/removing-document-write#how_do_i_fix_this) for possible solutions. 
+See [How do I fix this?](https://developers.google.com/web/updates/2016/08/removing-document-write#how_do_i_fix_this) for possible solutions.
 
 ## More information
 
 [Page uses `document.write()` audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
-
-

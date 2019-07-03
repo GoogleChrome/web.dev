@@ -7,6 +7,8 @@ description: |
   In this codelab, learn how to improve the performance of an application by
   removing any unused and unneeded dependencies.
 date: 2018-11-05
+# Add an updated date to your post if you edit in the future.
+# updated: 2019-06-27
 glitch: fav-kitties-starter
 related_post: remove-unused-code
 ---

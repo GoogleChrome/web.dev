@@ -9,12 +9,12 @@ web_lighthouse:
 
 Large network payloads cost users real money and are highly correlated with long load times.
 Lighthouse reports the total byte size in killobytes of all network resources
-in the Diagnostics section: 
+in the Diagnostics section:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="total-byte-weight.png" alt="Lighthouse: Avoid enormous network payloads">
   <figcaption class="w-figcaption">
-    Fig. 1 — Avoid enormous network payloads
+    Avoid enormous network payloads.
   </figcaption>
 </figure>
 
@@ -23,7 +23,7 @@ in the Diagnostics section:
 
 Lighthouse sums up the total byte size of all resources that the page requested.
 Click View Details to see your page's requests.
-The largest requests are presented first. 
+The largest requests are presented first.
 
 
 Aim for total byte size to stay 1600 KB;

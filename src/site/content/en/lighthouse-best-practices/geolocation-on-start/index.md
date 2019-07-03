@@ -14,7 +14,7 @@ Lighthouse flags when pages request geolocation permission on load:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="geolocation-on-start.png" alt="Lighthouse audit showing geolocation request on page load">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page requests geolocation on load
+    Page requests geolocation on load.
   </figcaption>
 </figure>
 
@@ -28,8 +28,8 @@ then Lighthouse fails the audit.
 Under **URLs**,
 Lighthouse reports the line and column numbers
 where your code is requesting the user's location.
-Remove these calls, 
-and tie the requests to user gestures instead. 
+Remove these calls,
+and tie the requests to user gestures instead.
 
 If geolocation permission was already granted to a page before Lighthouse's audit,
 Lighthouse cannot determine if the page requests the user's location on page load.

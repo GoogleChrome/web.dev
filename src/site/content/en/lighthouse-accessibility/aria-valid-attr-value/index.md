@@ -20,7 +20,7 @@ Lighthouse reports when attributes do not have valid values:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="aria-valid-attr-value.png" alt="Lighthouse audit showing aria-checked without the value 'true'">
   <figcaption class="w-figcaption">
-    Fig. 1 — ARIA attributes do not have valid values
+    ARIA attributes do not have valid values.
   </figcaption>
 </figure>
 

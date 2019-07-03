@@ -14,7 +14,7 @@ Lighthouse flags your page when it's missing `<!DOCTYPE html>`:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="doctype.png" alt="Lighthouse audit showing missing doctype">
   <figcaption class="w-figcaption">
-    Fig. 1 — Document missing doctype
+    Document missing doctype.
   </figcaption>
 </figure>
 

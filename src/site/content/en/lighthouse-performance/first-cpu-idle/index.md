@@ -14,7 +14,7 @@ The Lighthouse reports displays the First CPU Idle time period in seconds:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="first-cpu-idle.png" alt="Lighthouse: First CPU Idle">
   <figcaption class="w-figcaption">
-    Fig. 1 — First CPU Idle
+    First CPU Idle.
   </figcaption>
 </figure>
 
@@ -44,7 +44,7 @@ In order to be able to calculate your overall performance score,
 Lighthouse assigns each performance metric an individual score between 0 - 100.
 The First CPU idle score, in it's simplest terms,
 is based on a comparison between how fast your First CPU Idle is,
-compared to [First CPU Idle metrics of real website performance data on 
+compared to [First CPU Idle metrics of real website performance data on
 HTTParchive](https://httparchive.org/reports/loading-speed#ttfi).
 
 For example, sites performing in the top 95 percentile render First CPU Idle in about 3 seconds.
@@ -64,17 +64,17 @@ This table helps explain how to interpret your First CPU Idle score:
     <tbody>
       <tr>
         <td>0 - 4.7 seconds</td>
-        <td>Green (fast)</td> 
+        <td>Green (fast)</td>
         <td>75 - 100</td>
       </tr>
       <tr>
         <td>4.8 - 6.5 seconds</td>
-        <td>Orange (average)</td> 
+        <td>Orange (average)</td>
         <td>50 - 74</td>
       </tr>
       <tr>
         <td>Over 6.5 seconds</td>
-        <td>Red (slow)</td> 
+        <td>Red (slow)</td>
         <td>0 - 49</td>
       </tr>
     </tbody>
@@ -113,7 +113,7 @@ the greater impact it will have on improving your performance score.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="opportunities.png" alt="Lighthouse: Opportunities section">
   <figcaption class="w-figcaption">
-    Fig. 2 — Opportunities section
+    Opportunities section.
   </figcaption>
 </figure>
 
@@ -130,5 +130,3 @@ Learn more about these potential savings from the [Performance audits landing pa
 
 - [First CPU Idle audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-cpu-idle.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
-
-

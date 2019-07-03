@@ -25,7 +25,7 @@ the opportunity to perform an action. A classic example is the teapot:
 <figure class="w-figure  w-figure--center">
   <img src="./teapot.png" alt="" style="max-width: 400px;">
   <figcaption class="w-figcaption">
-    Fig. 1 — A teapot's handle is a natural affordance.
+    A teapot's handle is a natural affordance.
   </figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ elements.
 
 Here's a classic example: a `<div>` versus a `<button>`. Using CSS, it's possible
 to style both elements so they convey the same visual affordances, but compare
-the two experiences when using this embedded screen reader (you'll need to click 
+the two experiences when using this embedded screen reader (you'll need to click
 **Enable ChromeVox Lite** to test it):
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
@@ -82,10 +82,10 @@ An element's **role** describes its type, i.e. "button," "input," or even just
 
 An element's **name** is its computed label. Screen readers typically announce
 an element's name followed by its role, e.g. "Sign Up, button." The algorithm
-that determines an element's name factors in things like if there is any text 
-content inside the element, whether or not it has attributes such as `title` 
-or `placeholder`, whether or not the element is associated with an actual 
-`<label>` element, and if the element has any ARIA attributes such as 
+that determines an element's name factors in things like if there is any text
+content inside the element, whether or not it has attributes such as `title`
+or `placeholder`, whether or not the element is associated with an actual
+`<label>` element, and if the element has any ARIA attributes such as
 `aria-label` and `aria-labelledby`.
 
 Some elements _may_ have a **value**. For instance, `<input type="text">` may
@@ -121,4 +121,3 @@ Once you know a bit about semantics and how they aid screen reader navigation,
 you can't help but look at the pages you build differently. In the next section,
 we'll take a step back and consider how the entire outline of a page can be
 conveyed using effective headings and landmarks.
-

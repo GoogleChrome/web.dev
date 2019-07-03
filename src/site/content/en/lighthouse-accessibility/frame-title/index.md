@@ -13,7 +13,7 @@ Lighthouse reports when any`<frame>` or `<iframe>` elements do not have a title:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="frame-title.png" alt="Lighthouse audit showing frame or IFrame doesn't have a title element">
   <figcaption class="w-figcaption">
-    Fig. 1 — Frame or IFrame doesn't have a title element
+    Frame or IFrame doesn't have a title element.
   </figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ Learn more in [Frames must have title attribute](https://dequeuniversity.com/rul
 
 ## Tips for creating descriptive frame titles:
 
-- As previously mentioned, give the enclosed document a title element with content identical to title attribute. 
+- As previously mentioned, give the enclosed document a title element with content identical to title attribute.
 - Replace placeholder titles such as “untitled frame” with a more appropriate phrase.
 - Make each title unique - don’t duplicate titles, even if they are similar.
 

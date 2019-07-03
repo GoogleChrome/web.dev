@@ -20,7 +20,7 @@ Lighthouse reports when a role has invalid values:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="aria-roles.png" alt="Lighthouse audit showing ARIA role has invalid values">
   <figcaption class="w-figcaption">
-    Fig. 1 — ARIA role has invalid values
+    ARIA role has invalid values.
   </figcaption>
 </figure>
 

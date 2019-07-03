@@ -15,7 +15,7 @@ to be unsuccessful and flags them in the report:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="http-status-code.png" alt="Lighthouse audit showing search engines are struggling to index your page">
   <figcaption class="w-figcaption">
-    Fig. 1 — Search engines struggling to index your page
+    Search engines struggling to index your page.
   </figcaption>
 </figure>
 

@@ -13,7 +13,7 @@ Lighthouse reports when the page doesn't contain a heading, skip link, or landma
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="bypass.png" alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region">
   <figcaption class="w-figcaption">
-    Fig. 1 — The page doesn't contain a heading, skip link, or landmark region
+    The page doesn't contain a heading, skip link, or landmark region.
   </figcaption>
 </figure>
 

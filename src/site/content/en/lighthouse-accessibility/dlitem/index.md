@@ -14,7 +14,7 @@ Lighthouse reports when definition list items are not wrapped in `<dl>` elements
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="dlitem.png" alt="Lighthouse audit showing definition list items are not wrapped in <dl> elements">
   <figcaption class="w-figcaption">
-    Fig. 1 — Defintion list items are not wrapped in <code>&lt;dl></code> elements
+    Defintion list items are not wrapped in <code>&lt;dl></code> elements.
   </figcaption>
 </figure>
 

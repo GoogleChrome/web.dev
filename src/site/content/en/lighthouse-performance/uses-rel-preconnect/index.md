@@ -13,7 +13,7 @@ that aren't yet prioritizing fetch requests with `<link rel=preconnect>`:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-rel-preconnect.png" alt="Preconnect to required origins">
   <figcaption class="w-figcaption">
-    Fig. 1 — Preconnect to required origins
+    Preconnect to required origins.
   </figcaption>
 </figure>
 
@@ -57,7 +57,7 @@ but do keep `<link rel="preconnect">` in your toolbelt for the edge cases like:
 `<link rel="dns-prefetch">` is another `<link>` type related to connections.
 This handles the DNS lookup only,
 but it’s got wider browser support, so it may serve as a nice fallback.
-You use it the exact same way: 
+You use it the exact same way:
 
 ```html
 <link rel="dns-prefetch" href="https://example.com">.

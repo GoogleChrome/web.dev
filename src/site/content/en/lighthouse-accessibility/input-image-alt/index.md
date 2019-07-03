@@ -14,7 +14,7 @@ Lighthouse reports when any `<input type="image">` elements do not have `alt` te
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="input-image-alt.png" alt="Lighthouse audit showing input types with a value of 'image' do not have alt attributes">
   <figcaption class="w-figcaption">
-    Fig. 1 — <code>&lt;input type="image"></code> elements do not have <code>alt</code> attributes
+    <code>&lt;input type="image"></code> elements do not have <code>alt</code> attributes.
   </figcaption>
 </figure>
 

@@ -14,7 +14,7 @@ Optimize these images so that the page loads faster and consumes less data:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-optimized-images.png" alt="Efficiently encode images">
   <figcaption class="w-figcaption">
-    Fig. 1 — Efficiently encode images
+    Efficiently encode images.
   </figcaption>
 </figure>
 

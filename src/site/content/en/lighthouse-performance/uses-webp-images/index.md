@@ -14,7 +14,7 @@ showing potential savings gained by serving WebP versions of those images:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-webp-images.png" alt="Serve images in next-gen formats">
   <figcaption class="w-figcaption">
-    Fig. 1 — Serve images in next-gen formats
+    Serve images in next-gen formats.
   </figcaption>
 </figure>
 

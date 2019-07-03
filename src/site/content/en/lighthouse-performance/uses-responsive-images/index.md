@@ -15,7 +15,7 @@ Resize these images to save data and improve page load time:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-responsive-images.png" alt="Properly size images">
   <figcaption class="w-figcaption">
-    Fig. 1 — Properly size images
+    Properly size images.
   </figcaption>
 </figure>
 

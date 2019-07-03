@@ -24,7 +24,7 @@ Post-IO fix.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="password-inputs-can-be-pasted-into.png" alt="Lighthouse audit shows page stops users from pasting into password fields">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page stops users from pasting into password fields
+    Page stops users from pasting into password fields.
   </figcaption>
 </figure>
 -->

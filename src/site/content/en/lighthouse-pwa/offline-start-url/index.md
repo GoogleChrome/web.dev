@@ -17,13 +17,13 @@ Lighthouse flags web apps when the start URL doesn't respond with a 200 when off
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="offline-start-url.png" alt="Lighthouse audit showing start URL doesn't respond with 200 when offline">
   <figcaption class="w-figcaption">
-    Fig. 1 — Start URL doesn't respond with 200 when offline
+    Start URL doesn't respond with 200 when offline.
   </figcaption>
 </figure>
 
 ## Recommendations
 
-1. Check that the `start_url` in your manifest is correct [Add a web app manifest](/add-manifest/). 
+1. Check that the `start_url` in your manifest is correct [Add a web app manifest](/add-manifest/).
 2. Add a service worker to your app.
 4. Use the service worker to cache files locally.
 4. When offline, use the service worker as a network proxy to return the locally cached version of the file.

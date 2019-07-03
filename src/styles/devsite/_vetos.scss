@@ -23,6 +23,12 @@ body[layout] .devsite-main-content {
   padding: 0;
 }
 
+@media screen and (max-width: 600px) {
+  body[layout='full'] .devsite-main-content {
+    padding: 0;
+  }
+}
+
 // 1023px - 600px
 @media screen and (min-width: $BREAKPOINT_VALUE_MOBILE) {
   body[layout] .devsite-main-content {

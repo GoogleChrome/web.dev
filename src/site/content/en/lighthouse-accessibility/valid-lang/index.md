@@ -18,7 +18,7 @@ Lighthouse reports when any `lang` attribute does not have a valid value.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="valid-lang.png" alt="Lighthouse audit showing `lang` attribute does not have a valid value">
   <figcaption class="w-figcaption">
-    Fig. 1 — The <code>lang</code> attribute does not have a valid value
+    The <code>lang</code> attribute does not have a valid value.
 </figure>
 -->
 ## How to fix this problem

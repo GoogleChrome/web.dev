@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 date: 2018-11-05
 description: |
-  In this codelab, learn how to make an application network resilient by
+  In this codelab, learn how to make an application reliable by
   registering a service worker.
 glitch: working-with-sw
 related_post: service-workers-cache-storage

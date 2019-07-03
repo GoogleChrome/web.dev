@@ -14,7 +14,7 @@ to receive the first byte of page content:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="time-to-first-byte.png" alt="Server resonse times are low (TTFB)">
   <figcaption class="w-figcaption">
-    Fig. 1 — Server response times are low (TTFB)
+    Server response times are low (TTFB).
   </figcaption>
 </figure>
 
