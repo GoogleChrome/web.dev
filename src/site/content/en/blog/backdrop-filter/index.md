@@ -164,23 +164,6 @@ Here are some interesting capabilities unlocked with `backdrop-filter`:
   </figcaption>
 </figure>
 
-### Sensitive Content Overlay
-
-```css
-input:not(:checked) ~ .sensitive-overlay {
-  backdrop-filter: contrast(4) blur(20px);
-}
-```
-
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-censorship.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
-    <a href="https://tympanus.net/codrops-playground/huijing/6cZVcORz/editor" target="_blank">Codrops</a>
-  </figcaption>
-</figure>
-
 
 ## Conclusion
 560+ of you all upvoted the [Chromium bug](https://crbug.com/497522) over the past few years, clearly marking this as a long awaited CSS feature. The wait is over! Chrome's excited to release `backdrop-filter` in 76.
