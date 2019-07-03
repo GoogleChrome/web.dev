@@ -189,7 +189,7 @@ Your `index.html` file should now look like this:
 
 ## Image Performance Gains
 
-There are impressive web performance gains by using <a href="https://cloudinary.com/documentation/image_optimization">cloud to optimize images</a> without losing quality.
+These are the results of using <a href="https://cloudinary.com/documentation/image_optimization">cloud to optimize images</a> without losing quality.
 
 <div class="w-table-wrapper">
   <table>
