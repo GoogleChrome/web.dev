@@ -90,7 +90,7 @@ While there are many [Image transformations](https://cloudinary.com/documentatio
 
 ### #3. Replace `<remote_image_url>`
 
-Now replace the `<remote_image_url>` with the original link of the first image. The final URL looks like this:
+Now replace the `<remote_image_url>` with the original URL for the first image. The final URL looks like this:
 
 ```html/1/0
 https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/<remote_image_url>
