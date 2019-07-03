@@ -10,115 +10,115 @@ hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
   This post covers the loading attribute and how it can be used
-  to defer the loading of images and iframes
+  to defer the loading of images and iframes.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
 ---
 
-Support for natively lazy-loading images and iframes is coming to the web!
+Support for natively lazy loading images and iframes is coming to the web! The following video shows
+a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of this feature.
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="./lazyload.webm" type="video/webm">
     <source src="./lazyload.mp4" type="video/mp4">
   </video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
-    <a href="https://mathiasbynens.be/demo/img-loading-lazy">Lazy loading demo</a>
-  </figcaption>
 </figure>
 
-Starting with Chrome 76, you’ll be able to use the new `loading` attribute to lazy-load resources,
-without the need for a separate JavaScript library. Let’s dive into the details.
+Starting with Chrome 76, you'll be able to use the new `loading` attribute to lazy load resources,
+without the need for a separate JavaScript library. Let's dive into the details.
 
-## Motivation
+## Why native lazy loading?
 
 According to [HTTPArchive](https://httparchive.org/reports/page-weight), images are the most
-requested type of asset for a majority of websites and usually take up more bandwidth than any other
-resource. At the 90th percentile, sites send down ~4.7 MB of images on desktop & mobile. That’s a
-lot of cat pictures.
+requested asset type for most websites and usually take up more bandwidth than any other
+resource. At the 90th percentile, sites send about 4.7 MB of images on desktop & mobile. That's a
+lot of [cat pictures](https://en.wikipedia.org/wiki/Cats_and_the_Internet).
 
-Embedded inline frames use a lot of data too and can also harm page performance. Only loading
+Embedded iframes also use a lot of data and can harm page performance. Only loading
 non-critical, below-the-fold images and iframes when the user is likely to see them improves
-page load times, minimize user bandwidth, and reduce memory usage.
+page load times, minimizes user bandwidth, and reduces memory usage.
 
-Currently, there are two ways to defer the loading of off-screen images and inline frames:
+Currently, there are two ways to defer the loading of off-screen images and iframes:
 
 - Using the [Intersection Observer
   API](https://developers.google.com/web/updates/2016/04/intersectionobserver)
-- Using [`scroll`, `resize`, or `orientationchange` event
-  listeners](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way)
+- Using `scroll`, `resize`, or `orientationchange` [event
+  handlers](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/#using_event_handlers_the_most_compatible_way)
 
-Either option can let developers include lazy loading functionality, and many have built third-party
-libraries to provide even simpler-to-use abstractions. With lazy loading supported directly by the
-browser however, an external library would not need to be loaded and relied upon. This also ensures
-that deferred loading of images and frames still works even if JavaScript is disabled on the client.
+Either option can let developers include lazy loading functionality, and many developers have built
+third-party libraries to provide abstractions that are even easier to use. With lazy loading
+supported directly by the browser, however, there's no need for an external library. Native lazy
+loading also ensures that deferred loading of images and frames still work even if JavaScript is
+disabled on the client.
 
-## Lazy loading
+## The `loading` attribute
 
-Today, Chrome already loads images at different priorities depending on where they are located with
-respect to the device viewport. Although this means that images below the viewport are loaded with a
-lower priority, they are still fetched as soon as possible.
+Today, Chrome already loads images at different priorities depending on where they're located with
+respect to the device viewport. Images below the viewport are loaded with a lower priority, but they're
+still fetched as soon as possible.
 
-In Chrome 76, the loading attribute can be used to completely defer the loading of offscreen images
+In Chrome 76, you can use the `loading` attribute to completely defer the loading of offscreen images
 and iframes until the user scrolls near them:
 
 ```html
-<img src="image.png" loading="lazy" alt="…" width=”200” height=”200” />
+<img src="image.png" loading="lazy" alt="…" width="”200”" height="”200”" />
 <iframe src="https://example.com" loading="lazy"></iframe>
 ```
 
-The supported values for the attribute are as follows:
+Here are the supported values for the `loading` attribute:
 
-- `loading="auto"`: Default lazy-loading behaviour of the browser, which is the same as not
+- `auto`: Default lazy loading behavior of the browser, which is the same as not
   including the attribute.
-- `loading="lazy"`: Defer loading of resource until it reaches a certain distance from the viewport.
-- `loading="eager"`: Load resource immediately regardless of where it is located on the page.
+- `lazy`: Defer loading of the resource until it reaches a certain distance from the viewport.
+- `eager`: Load the resource immediately, regardless of where it's located on the page.
 
-Updates to the feature will continue to be rolled in with a final, stable launch in Chrome 76 at the
-earliest, but can currently be tested by enabling the following flags:
+The feature will continue to be updated until it's launched in a stable release (Chrome 76 at the
+earliest). But you can try it out by enabling the following flags in Chrome:
 
 - `chrome://flags/#enable-lazy-image-loading`
 - `chrome://flags/#enable-lazy-frame-loading`
 
 ### Image loading
 
-To take advantage of lazy loading effectively, include height and width attributes or specify their
-values directly in the inline style.
+To prevent the surrounding content from reflowing when a lazy loaded image is downloaded, make sure to add `height` and `width` attributes to the `<img>` element or specify their values directly in an inline style.
 
 ```html
-<img src="..." loading="lazy" width=”200” height=”200” />
-<img src="..." loading="lazy" style="height:200px;width:200px;" />
+<img src="..." loading="lazy" width="”200”" height="”200”" />
+<img src="..." loading="lazy" style="height:200px; width:200px;" />
 ```
 
-Images will still load lazily if dimensions are not included, but this increases the chance of
+Images will still load lazily if dimensions are not included, but specifying them decreases the chance of
 browser reflow.
 
 Support for the `intrinsicsize` attribute is also being [worked
-on](https://bugs.chromium.org/p/chromium/issues/detail?id=967992), so images will also lazy-load
+on](https://bugs.chromium.org/p/chromium/issues/detail?id=967992), so images will also lazy load
 correctly if `intrinsicsize` is specified along with one other dimension (`width` or `height`).
 
 ```html
-<img src="…" alt="…" loading="lazy" intrinsicsize="250x200" width="450"> <!-- lazy-loaded -->
+<img src="…" alt="…" loading="lazy" intrinsicsize="250x200" width="450" />
+<!-- lazy loaded -->
 ```
 
 <div class="w-aside w-aside--note">
-  Take a look at the following <a href="https://mathiasbynens.be/demo/img-loading-lazy">demo</a> to see how the <code>loading</code> attribute works with 100 pictures.
+  Take a look at this <a href="https://mathiasbynens.be/demo/img-loading-lazy">demo</a> to see how the <code>loading</code> attribute works with 100 pictures.
 </div>
 
-### Inline frame loading
+### iframe loading
 
-Iframes that are intentionally hidden from view are usually used for analytics or communication
-purposes and are not lazy-loaded in most cases. The following criteria is used to identify if a
-frame is not hidden in Chrome:
+The `loading` attribute affects iframes differently than images, depending on whether the iframe is
+hidden. (Hidden iframes are often used for analytics or communication purposes.) Chrome uses the
+following criteria to determine whether an iframe is hidden:
 
-- Must have a larger width and height than 4px
-- `display: none` and `visibility: hidden` cannot be used
-- Not off-screen using negative X or Y positioning
+- The iframe's width and height are 4 px or smaller.
+- `display: none` or `visibility: hidden` is applied.
+- The iframe is placed off-screen using negative X or Y positioning.
 
-If an inline frame meets all of these conditions, those that are offscreen only load when they reach
-a certain distance from the viewport. A similar placeholder also shows for lazily-loaded iframes that
-are still being fetched.
+If an iframe meets any of these conditions, Chrome considers it hidden and won't lazy load it in
+most cases. Iframes that _aren't_ hidden will only load when they're within a certain distance from
+the viewport. A similar placeholder also shows for lazily loaded iframes that are still being
+fetched.
 
 ### Load-in distance threshold
 
@@ -156,8 +156,10 @@ Feature-Policy: loading-image-default-eager 'none'
 This lazily loads every image below the device viewport unless `loading=eager` is used.
 
 ```html
-<img src="kitten.jpg" alt="…"> <!-- loaded lazily -->
-<img loading="eager" src="puppy.jpg" alt="…"> <!-- loaded eagerly -->
+<img src="kitten.jpg" alt="…" />
+<!-- loaded lazily -->
+<img loading="eager" src="puppy.jpg" alt="…" />
+<!-- loaded eagerly -->
 ```
 
 The same can be done for iframes:
@@ -196,32 +198,32 @@ Only images that are below the device viewport by a certain distance load lazily
 above the viewport, regardless if they are not immediately visible (behind a carousel for example),
 load normally.
 
-### What if I’m already using a third-party library or a script to lazy-load images or inline frames?
+### What if I'm already using a third-party library or a script to lazy load images or iframes?
 
-The `loading` attribute should not affect code that currently lazy-loads your assets in any way, but
+The `loading` attribute should not affect code that currently lazy loads your assets in any way, but
 there are a few important things to consider:
 
-1. If your custom lazy-loader attempts to load images or frames sooner than when Chrome loads
+1. If your custom lazy loader attempts to load images or frames sooner than when Chrome loads
    them normally, i.e., at a distance greater than the buffer distance the browser uses to determine
    when to load, they are still deferred and load as per the normal browser behaviour.
-2. If your custom lazy-loader uses a shorter distance to determine when to load a particular image
-   or inline frame than the browser, then the behaviour would conform to your custom settings.
+2. If your custom lazy loader uses a shorter distance to determine when to load a particular image
+   or iframe than the browser, then the behaviour would conform to your custom settings.
 
 One of the important reasons to continue to use a third-party library along with `loading="lazy"` is
 to provide a polyfill for browsers that do not yet support the attribute.
 
-### Do other browsers support native lazy-loading?
+### Do other browsers support native lazy loading?
 
 The `loading` attribute can be treated as a progressive enhancement. Browsers that do support it can
-lazy-load images and iframes. Those that don’t (yet) are still able to load their images, just like
-they would today. In terms of cross-browser support, `loading` should be supported in Chrome 76 and
-any Chromium 76-based browsers. There is also [an open implementation bug for
+lazy load images and iframes. Those that don't yet can load images just like they would today. In
+terms of cross-browser support, `loading` should be supported in Chrome 76 and any Chromium 76-based
+browsers. There is also [an open implementation bug for
 Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1542784).
 
 A [similar API](https://w3c.github.io/web-performance/specs/ResourcePriorities/Overview.html) was
 proposed and used in IE and Edge but was focused on lowering the download priorities of resources
 instead of deferring them entirely. It was discontinued in favour of [resource
-hints](https://w3c.github.io/resource-hints/). 
+hints](https://w3c.github.io/resource-hints/).
 
 ### How do I handle browsers that do not yet support this feature?
 
@@ -237,35 +239,35 @@ if ('loading' in HTMLImageElement.prototype) {
 }
 ```
 
-For example, [lazysizes](https://github.com/aFarkas/lazysizes) is a popular JavaScript lazy-loading
+For example, [lazysizes](https://github.com/aFarkas/lazysizes) is a popular JavaScript lazy loading
 library. We can feature-detect support for the `loading` attribute to load lazysizes as a fallback
-library only when it isn’t supported. This works as follows:
+library only when it isn't supported. This works as follows:
 
 - Replace `<img src>` with `<img data-src>` to avoid an eager load in unsupported browsers. If the
   `loading` attribute is supported, we swap `data-src` for `src`.
 - If `loading` is not supported, we load a fallback (lazysizes) and initiate it. Here, we use
-  `class=lazyload` as a way to indicate to lazysizes images we want to be lazily-loaded.
+  `class=lazyload` as a way to indicate to lazysizes images we want to be lazily loaded.
 
 ```html
 <!-- Let's load this in-viewport image normally -->
-<img src="hero.jpg" alt="…">
+<img src="hero.jpg" alt="…" />
 
-<!-- Let's lazy-load the rest of these images -->
-<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload">
-<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload">
-<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload">
+<!-- Let's lazy load the rest of these images -->
+<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload" />
+<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload" />
+<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload" />
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll("img.lazyload");
+    const images = document.querySelectorAll('img.lazyload');
     images.forEach(img => {
       img.src = img.dataset.src;
     });
   } else {
     // Dynamically import the LazySizes library
-    const script = document.createElement("script");
+    const script = document.createElement('script');
     script.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js";
+      'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js';
     document.body.appendChild(script);
   }
 </script>
@@ -281,19 +283,19 @@ available. Try it out in a browser like Firefox or Safari to see the fallback in
 
 ### How does this affect advertisements on a web page?
 
-All ads displayed to the user in the form of an image or inline frame lazy-load in the exact same
+All ads displayed to the user in the form of an image or iframe lazy load in the exact same
 way.
 
 ### How are images handled when a web page is printed?
 
 Although not in Chrome 76, there is an [open
 issue](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) to ensure that all images and
-iframes are immediately loaded if a page is printed. 
+iframes are immediately loaded if a page is printed.
 
 ## Conclusion
 
-Baking in native support for lazy-loading images and iframes can make it significantly easier for
+Baking in native support for lazy loading images and iframes can make it significantly easier for
 developers to improve the performance of their web pages. We always love to hear feedback:
 
 - Are you noticing any unusual behaviour with this feature enabled in Chrome? [File a
-  bug](https://bugs.chromium.org/p/chromium/issues/entry) and we’ll help you.
+  bug](https://bugs.chromium.org/p/chromium/issues/entry)!
