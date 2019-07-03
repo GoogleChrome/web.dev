@@ -198,7 +198,6 @@ var path = require("path");
 
 //...
 var BrotliPlugin = require('brotli-webpack-plugin');
-},
 ```
 
 And include it within the plugins array:
