@@ -1396,5 +1396,20 @@
     "description": {
       "en": "Michael is a Tech Writer"
     }
+  },
+  "hbatra": {
+    "name": {
+      "given": "Harleen",
+      "family": "Batra"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Marketing"
+    },
+    "country": "US",
+    "twitter": "harleenkbatra",
+    "description": {
+      "en": "Harleen is a Developer Marketing Manager"
+    }
   }
 }
