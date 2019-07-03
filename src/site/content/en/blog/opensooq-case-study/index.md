@@ -27,16 +27,16 @@ Based in Amman, Jordan, [OpenSooq](http://jo.opensooq.com/en) is a mobile-first 
 
 Over 85% of OpenSooq's traffic comes from mobile devices, and that number continues to rise. Many people in the region rely on low-end devices with limited storage capacities, which creates a strong need for OpenSooq's mobile site to be as fast and light as possible. However, slow load times on OpenSooq's old mobile site were affecting customer satisfaction and led to [bounce rates](https://support.google.com/analytics/answer/1009409?hl=en--for) as high as 49% in markets like Kuwait.
 
-To serve its customers with a consistently better experience across all platforms, the company realized it needed a faster, more responsive website. So, in June 2017, OpenSooq's engineering team launched a [Progressive Web App (PWA)](https://web.dev/discover-installable/).
+To serve its customers with a consistently better experience across all platforms, the company realized it needed a faster, more responsive website. So, in June 2017, OpenSooq's engineering team launched a [Progressive Web App (PWA)](/discover-installable/).
 
 
 ## A focus on performance and reliability
 
 OpenSooq's three in-house developers were able to build a full-featured PWA with [React](https://reactjs.org/) and [webpack](https://webpack.js.org/) in just two and a half months.
 
-To ensure that the site would be fast and easily indexable by search engines, the team chose to implement server-side rendering. With almost 28% of their users accessing the PWA on patchy 2G or 3G networks, it was critical that users trust the experience to work, regardless of network constraints. So the team implemented an offline experience using [service workers](https://web.dev/service-workers-cache-storage) and a [cache-first-then-network strategy](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network). They also used the [PRPL pattern](https://web.dev/apply-instant-loading-with-prpl/?hl=en) to give their users instant loading.
+To ensure that the site would be fast and easily indexable by search engines, the team chose to implement server-side rendering. With almost 28% of their users accessing the PWA on patchy 2G or 3G networks, it was critical that users trust the experience to work, regardless of network constraints. So the team implemented an offline experience using [service workers](/service-workers-cache-storage) and a [cache-first-then-network strategy](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network). They also used the [PRPL pattern](/apply-instant-loading-with-prpl/?hl=en) to give their users instant loading.
 
-By adopting these best practices, the team was able to cut the average page load time ([Time to Interactive](https://web.dev/interactive?hl=en)) from 4 seconds to less than 2 seconds. And they used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to make sure the site _stayed_ that fast. Those efforts helped OpenSooq hit over 1.8 billion pageviews a month.
+By adopting these best practices, the team was able to cut the average page load time ([Time to Interactive](/interactive)) from 4 seconds to less than 2 seconds. And they used [Lighthouse](https://developers.google.com/web/tools/lighthouse/) to make sure the site _stayed_ that fast. Those efforts helped OpenSooq hit over 1.8 billion pageviews a month.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="lh-performance.png" alt="A screenshot of the Lighthouse performance metrics for the OpenSooq PWA.">
