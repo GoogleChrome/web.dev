@@ -30,7 +30,9 @@ Click [here](https://cloudinary.com/users/register/free) to sign up for a free C
 
 ## The Cloudinary Fetch URL
 
-This codelab demonstrates how you can use the power of a cloud to optimize your images and serve next-gen formats dynamically. You will learn how to use dynamic cloud Fetch and Image Transformations features. You will replace the image links with Fetch URLs (explained below) that will automagically upload, transform, and optimize your images.
+The [Cloudinary Fetch URL](https://cloudinary.com/documentation/fetch_remote_images) feature is a quick way to deliver images from remote URLs. The images can be manipulated and optimized on-the-fly, before being cached and delivered through fast, localized CDNs and not via local web servers. It requires no build step and no manual upload.
+
+In this code lab you will replace the image links with Fetch URLs that will automagically upload, transform, and optimize your images.
 
 For example:
 
@@ -38,10 +40,6 @@ For example:
 <img src="https://codelab-cloudinary.glitch.me/images/flower1.png"/>
 <img src="https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png"/>
 ```
-
-{% Aside 'key-term' %}
-  The [Cloudinary Fetch URL](https://cloudinary.com/documentation/fetch_remote_images) feature is a quick way to deliver images from remote URLs. The image can be manipulated and optimized on-the-fly, before being cached and delivered through fast, localized CDNs and not via local web servers. It requires no build step and no manual upload.
-{% endAside %}
 
 ## Optimize an image
 
