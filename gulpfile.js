@@ -65,40 +65,15 @@ gulp.task('copy-content-assets', () => {
     .pipe(gulp.dest('./dist/en'));
 });
 
-// Because eleventy's passthroughFileCopy does not work with permalinks
-// we need to manually copy over blog images ourselves.
-// Note that we only copy over the images in the en/ directory.
-// On the server we'll redirect localized docs to request images from en/.
-// gulp.task('copy-blog-assets', () => {
-//   return gulp
-//     .src([`./src/site/content/en/blog/**/*.{${assetTypes}}`])
-//     .pipe(gulp.dest('./dist/en'));
-// });
-
-let buildTask;
-if (isProd) {
-  buildTask = gulp.parallel(
-    'copy-scss',
-    'copy-content-assets',
-  );
-} else {
-  buildTask = gulp.parallel(
-    'scss',
-    'copy-global-assets',
-    'copy-content-assets',
-  );
-}
-gulp.task('build', buildTask);
+gulp.task('build', gulp.parallel(
+  'copy-global-assets',
+  'copy-content-assets',
+));
 
 gulp.task('watch', () => {
-  gulp.watch('./src/styles/**/*.scss', gulp.series('scss'));
   gulp.watch('./src/images/**/*', gulp.series('copy-global-assets'));
   gulp.watch(
     './src/site/content/**/*',
     gulp.series('copy-content-assets')
   );
-  // gulp.watch(
-  //   `./src/site/content/en/blog/**/*.{${assetTypes}}`,
-  //   gulp.series('copy-blog-assets')
-  // );
 });
