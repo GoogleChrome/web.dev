@@ -19,6 +19,12 @@ module.exports = {
           'get-started-optimize-angular',
         ],
       },
+      {
+        title: 'Accessible',
+        pathItems: [
+          'accessible-angular-with-codelyzer',
+        ],
+      },
     ],
   },
 };
