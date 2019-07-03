@@ -123,7 +123,7 @@ After updating the `src` attribute of the first image (line #25) with the fetch 
 </div>
 ```
 
-This helps save more than 90% on image size.
+This decreases image size by more than 90%.
 
 <div class="w-table-wrapper">
   <table>
