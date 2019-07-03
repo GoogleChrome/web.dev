@@ -48,7 +48,7 @@ For example:
 
 ### Create a Fetch URL
 
-To create a fetch URL, you have to prepend the following prefix to the existing URL of the image.
+To create a fetch URL, prepend the following prefix to the existing URL of the image:
 
 An example fetch URL looks like this:
 
