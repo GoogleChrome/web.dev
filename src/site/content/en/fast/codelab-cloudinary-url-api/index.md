@@ -251,7 +251,6 @@ the JPEG images on your page are optimally compressed.
 
 If you've optimized your images correctly the Lighthouse audit should have a perfect score. As you can see First Meaningful Paint is down by 2.5 secs. That is impressive.
 
-_Lighthouse audit results when images are not optimized._
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./images-not-optimized.png" alt="Images Not Optimized">
