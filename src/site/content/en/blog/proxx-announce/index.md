@@ -30,7 +30,7 @@ reader.
   <source src="https://storage.googleapis.com/webfundamentals-assets/proxx-announce-blogpost/kaios_x264.mp4" type="video/mp4; codecs=h264">
 </video>
  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — PROXX on a feature phone
+    PROXX on a feature phone.
   </figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ application:
   <img class="w-screenshot" src="pixelbook.jpg"
        alt="A pixelbook running PROXX" class="screenshot">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 2 — PROXX on a pixelbook
+    PROXX on a pixelbook.
   </figcaption>
 </figure>
 
@@ -110,7 +110,7 @@ implemented key-based interface.
   <img src="featurephone.jpg"
        alt="A man playing PROXX on a yellow feature phone" class="screenshot">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 3 — PROXX on a feature phone
+    PROXX on a feature phone.
   </figcaption>
 </figure>
 

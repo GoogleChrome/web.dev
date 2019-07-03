@@ -21,7 +21,7 @@ without any different in terms of validity.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="html-lang-valid.png" alt="Lighthouse audit showing <html> element does not have a valid value for its lang attribute">
   <figcaption class="w-figcaption">
-    Fig. 1 — The <code>&lt;html></code> element does not have a valid value for its <code>lang</code> attribute
+    The <code>&lt;html></code> element does not have a valid value for its <code>lang</code> attribute.
 </figure>
 -->
 ## How to fix this problem

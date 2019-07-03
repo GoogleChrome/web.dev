@@ -15,7 +15,7 @@ to the width of the viewport:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="content-width.png" alt="Lighthouse audit showing content not correctly sized for viewport">
   <figcaption class="w-figcaption">
-    Fig. 1 — Content not correctly sized for viewport
+    Content not correctly sized for viewport.
   </figcaption>
 </figure>
 

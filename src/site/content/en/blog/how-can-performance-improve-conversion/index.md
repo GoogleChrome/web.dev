@@ -21,7 +21,7 @@ to improve performance](/what-should-you-measure-to-improve-performance/), and
 <figure class="w-figure  w-figure--center">
   <img src="https://web.dev/what-should-you-measure-to-improve-performance/funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
   <figcaption class="w-figcaption">
-    Fig. 1 - Conversion funnel
+    A conversion funnel.
   </figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ After getting users to your site, you need to keep them engaged with your conten
 <figure class="w-figure  w-figure--center">
   <img class="w-screenshot" src="./ga_flow.png" alt="A Google Analytics dashboard shows the number of users that drop off from starting page to first and second interactions.">
   <figcaption class="w-figcaption">
-    Fig. 2 - A user flow through the funnel as seen by Google Analytics
+    A user flow through the funnel as seen by Google Analytics.
   </figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ E-commerce sites always strive for conversions, which are at the end of a purcha
 <figure class="w-figure  w-figure--center">
   <img src="https://web.dev/what-should-you-measure-to-improve-performance/funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
   <figcaption class="w-figcaption">
-    Fig. 3 - An e-commerce funnel showing which metric to optimize in which step.
+    An e-commerce funnel showing which metric to optimize in which step.
   </figcaption>
 </figure>
 

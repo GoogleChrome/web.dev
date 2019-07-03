@@ -15,7 +15,7 @@ Lighthouse flags pages with illegible font sizes:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="font-size.png" alt="Lighthouse audit showing page has illegible font sizes">
   <figcaption class="w-figcaption">
-    Fig. 1 — Font sizes illegible
+    Font sizes illegible.
   </figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ The computed size of the text.
 
 ## How to fix illegible fonts
 
-Aim to have a font size of at least 12px on at least 60% of the text on your pages. 
+Aim to have a font size of at least 12px on at least 60% of the text on your pages.
 Learn more in [Fix small font sizes](/fix-small-fonts).
 
 ## Text is illegible because of a missing viewport config

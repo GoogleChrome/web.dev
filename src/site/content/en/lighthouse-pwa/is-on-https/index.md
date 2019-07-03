@@ -15,7 +15,7 @@ Lighthouse flags any pages that aren't on HTTPS:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="is-on-https.png" alt="Lighthouse audit showing page isn't on HTTPS">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page isn't on HTTPS
+    Page isn't on HTTPS.
   </figcaption>
 </figure>
 

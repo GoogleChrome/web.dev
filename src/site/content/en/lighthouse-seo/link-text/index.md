@@ -15,7 +15,7 @@ Lighthouse flags any links with non-descriptive text:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="link-text.png" alt="Lighthouse audit showing links don't have descriptive text">
   <figcaption class="w-figcaption">
-    Fig. 1 — Links do not have descriptive text
+    Links don't have descriptive text.
   </figcaption>
 </figure>
 

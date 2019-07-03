@@ -20,7 +20,7 @@ Lighthouse reports missing parenrts for these child roles:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="aria-required-parent.png" alt="Lighthouse audit showing ARIA role missing required parent role">
   <figcaption class="w-figcaption">
-    Fig. 1 — ARIA role missing required parent role
+    ARIA role missing required parent role.
   </figcaption>
 </figure>
 

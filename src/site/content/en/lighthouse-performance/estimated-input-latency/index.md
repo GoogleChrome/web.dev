@@ -14,7 +14,7 @@ The Lighthouse reports displays the Estimated Input Latency time period in milli
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="estimated-input-latency.png" alt="Lighthouse: Estimated Input Latency">
   <figcaption class="w-figcaption">
-    Fig. 1 — Estimated Input Latency
+    Estimated Input Latency.
   </figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ There is a 90% probability a user would encounter input latency of the amount th
 ## How to improve the Estimated Input Latency metric
 
 To make your app respond to user input faster,
-you need to optimize how your code runs in the browser. 
+you need to optimize how your code runs in the browser.
 Check out the series of techniques outlined in the
 [Rendering Performance docs](https://developers.google.com/web/fundamentals/performance/rendering/).
 These tips range from offloading computation to web workers in order to free up the main thread,
@@ -71,5 +71,3 @@ are complete within 50ms.
 ## More information
 
 - [Estimated Input Latency audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/estimated-input-latency.js)
-
-

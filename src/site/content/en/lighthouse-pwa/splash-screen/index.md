@@ -15,14 +15,14 @@ is to display a white screen until the PWA is ready. The user may see a blank,
 white screen for up to 200ms. With a custom splash screen, the user sees a
 custom background color and your PWA's icon instead.
 
-See [Adding a Splash Screen for Installed Web Apps in Chrome 47](https://developers.google.com/web/updates/2015/10/splashscreen) for more information. 
+See [Adding a Splash Screen for Installed Web Apps in Chrome 47](https://developers.google.com/web/updates/2015/10/splashscreen) for more information.
 
 Lighthouse flags when the page isn't configured for a splash screen:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="splash-screen.png" alt="Lighthouse audit showing site isn't configured for a custom splash screen">
   <figcaption class="w-figcaption">
-    Fig. 1 — Site isn't configured for a custom splash screen
+    Site isn't configured for a custom splash screen.
   </figcaption>
 </figure>
 
