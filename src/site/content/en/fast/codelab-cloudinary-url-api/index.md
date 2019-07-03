@@ -50,7 +50,6 @@ For example:
 
 To create a fetch URL, prepend the following prefix to the existing URL of the image:
 
-An example fetch URL looks like this:
 
 ```html
 https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_image_url>
