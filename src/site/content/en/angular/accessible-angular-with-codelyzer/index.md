@@ -76,4 +76,5 @@ To improve the accessibility of your Angular app:
 
 1. Enable the experimental accessibility rules in codelyzer.
 1. Perform accessibility linting over your entire project using the Angular CLI.
-1. To identify common accessibility issues in your Angular app.
+1. Fix all the accessibility problems reported by codelyzer.
+1. Consider using Lighthouse for accessibility audits at runtime.
