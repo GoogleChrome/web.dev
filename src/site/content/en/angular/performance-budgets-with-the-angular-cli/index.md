@@ -49,7 +49,7 @@ You should see this error in the console:
 
 ![Budget failure](budget-failure.png "Budget failure")
 
-To fix the build error, take a look at `app.component.ts`, which includes an import from `rxjs/internal/operators`. This is a private import that’s not supposed to be used by consumers of `rxjs`. That increases the bundle size a lot! When you update to the correct import, `rxjs/operators`, and run the build again, you’ll see that it passes the budget check successfully.
+To fix the build error, take a look at `app.component.ts`, which includes an import from `rxjs/internal/operators`. This is a private import that's not supposed to be used by consumers of `rxjs`. It increases the bundle size a lot! When you update to the correct import, `rxjs/operators`, and run the build again, you'll see that it passes the budget check successfully.
 
 Note that, since [differential loading](https://dev.to/lacolaco/differential-loading-a-new-feature-of-angular-cli-v8-4jl) is enabled by default in the Angular CLI, the `ng build` command produces two builds of the app:
 
