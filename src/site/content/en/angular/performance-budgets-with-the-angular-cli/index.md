@@ -43,7 +43,7 @@ Here’s a summary of what’s being specified:
 * If the `main` bundle gets bigger than 170 KB, the Angular CLI will show a warning in the console when you build the app.
 * If the `main` bundle gets bigger than 250 KB, the build will fail.
 
-Now try building the app:
+Now try building the app by running `ng build --prod`.
 
 When you run `ng build --prod`, you should see this error in the console:
 
