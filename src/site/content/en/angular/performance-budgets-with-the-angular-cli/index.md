@@ -2,7 +2,7 @@
 layout: post
 title: 'Performance budgets with the Angular CLI'
 subhead: |
-  Monitor the sizes of your bundles over time to make sure your application stays on the fast path!
+  Monitor the sizes of your bundles over time to make sure your application stays fast.
 hero: performance-budgets-with-the-angular-cli.jpg
 date: 2019-07-02
 description: |
