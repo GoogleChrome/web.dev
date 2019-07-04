@@ -26,7 +26,7 @@ You can use [this online budget calculator](https://bit.ly/perf-budget-calculato
 
 Once you have a target JavaScript budget, you can enforce it using the [Angular command line interface (CLI)](https://cli.angular.io/). To see how that works, check out [this sample app on GitHub](https://github.com/mgechev/budgets-web-dev/blob/master/angular.json#L33-L38).
 
-You’ll see that the following budget has been configured in `angular.json`:
+You'll see that the following budget has been configured in `angular.json`:
 
 ```json
 "budgets": [{
