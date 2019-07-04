@@ -45,7 +45,7 @@ Currently, all the accessibility rules are experimental and disabled by default.
 }
 ```
 
-TSLint works with all popular text editors and IDEs. To use it with VSCode, install the [tslint plugin](https://marketplace.visualstudio.com/items?itemName=eg2.tslint). In WebStorm TSLint is enabled by default. For other editors, check the tslint [README](https://github.com/palantir/tslint#tslint).
+TSLint works with all popular text editors and IDEs. To use it with VSCode, install the [TSLint plugin](https://marketplace.visualstudio.com/items?itemName=eg2.tslint). In WebStorm, TSLint is enabled by default. For other editors, check the TSLint [README](https://github.com/palantir/tslint#tslint).
 
 With codelyzer’s accessibility checks set up, you get a popup showing accessibility errors in TypeScript files or inline templates as you code.
 
