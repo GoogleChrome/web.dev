@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Audit your Angular app’s accessibility with codelyzer'
+title: 'Audit your Angular app's accessibility with codelyzer'
 subhead: |
   Want to make your Angular site accessible for everyone? This is the right place!
 hero: accessible.jpg
