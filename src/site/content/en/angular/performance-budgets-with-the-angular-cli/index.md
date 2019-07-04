@@ -39,7 +39,7 @@ You’ll see that the following budget has been configured in `angular.json`:
 
 Here’s a summary of what’s being specified:
 
-* There’s a budget for a JavaScript bundle called `main`.
+* There's a budget for a JavaScript bundle called `main`.
 * If the `main` bundle gets bigger than 170 KB, the Angular CLI will show a warning in the console when you build the app.
 * If the `main` bundle gets bigger than 250 KB, the build will fail.
 
