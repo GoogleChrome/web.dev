@@ -23,7 +23,7 @@ this inline style tag.
 {% endif %}
 
 <main class="codelab-landing-page">
-  <web-codelab glitch="{{ glitch }}" path="{{ path }}" preview-size="{{ previewSize }}" attribution-hidden>
+  <web-codelab glitch="{{ glitch }}" path="{{ glitchPath }}" attribution-hidden>
     <div class="web-codelab-instructions">
       <h1 class="w-headline w-headline--two w-mb--sm">{{ title }}</h1>
       {% if date %}
@@ -66,7 +66,7 @@ this inline style tag.
         <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
           <iframe
             allow="geolocation; microphone; camera; midi; encrypted-media"
-            src="https://glitch.com/embed/#!/embed/{{ glitch }}?path={{ path }}&amp;previewSize={{ previewSize }}"
+            src="https://glitch.com/embed/#!/embed/{{ glitch }}?path={{ glitchPath }}&amp;previewSize={{ previewSize }}"
             alt="{{ glitch }} on Glitch"
             style="height: 100%; width: 100%; border: 0;"
           >
