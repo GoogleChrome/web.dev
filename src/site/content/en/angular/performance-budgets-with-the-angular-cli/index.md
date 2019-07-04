@@ -45,7 +45,7 @@ Here’s a summary of what’s being specified:
 
 Now try building the app by running `ng build --prod`.
 
-When you run `ng build --prod`, you should see this error in the console:
+You should see this error in the console:
 
 ![Budget failure](budget-failure.png "Budget failure")
 
