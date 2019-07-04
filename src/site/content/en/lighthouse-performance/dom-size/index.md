@@ -12,7 +12,7 @@ and it's maximum child elements in the Diagnostics section:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="dom-size.png" alt="Avoids an excessive DOM size">
   <figcaption class="w-figcaption">
-    Fig. 1 — Avoids an excessive DOM size
+    Avoids an excessive DOM size.
   </figcaption>
 </figure>
 

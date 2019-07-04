@@ -15,7 +15,7 @@ Lighthouse reports when any buttons do not have accessible names:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="button-name.png" alt="Lighthouse audit showing buttons do not have an accessible name">
   <figcaption class="w-figcaption">
-    Fig. 1 — Buttons do not have an accessible name
+    Buttons do not have an accessible name.
   </figcaption>
 </figure>
 
@@ -23,7 +23,7 @@ Lighthouse reports when any buttons do not have accessible names:
 ## How to fix this problem
 
 To fix this problem,
-provide inner text for each `button` element 
+provide inner text for each `button` element
 that is discernible to screen reader users
 (see also [Label buttons and links](/labels-and-text-alternatives#label-buttons-and-links)).
 For example,

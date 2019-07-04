@@ -15,7 +15,7 @@ Lighthouse flags your document when it uses plugins:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="plugins.png" alt="Lighthouse audit showing document uses plugins">
   <figcaption class="w-figcaption">
-    Fig. 1 — Document uses plugins
+    Document uses plugins.
   </figcaption>
 </figure>
 

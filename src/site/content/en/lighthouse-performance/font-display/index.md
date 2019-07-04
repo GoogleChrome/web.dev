@@ -10,12 +10,12 @@ web_lighthouse:
 Fonts are often large files that take awhile to load.
 Some browsers hide text until the font loads causing the "flash of invisible text".
 You need to ensure that text remains visible during webfont loads.
-Lighthouse reports in the Diagnostics section any font URLs that may flash invisible text: 
+Lighthouse reports in the Diagnostics section any font URLs that may flash invisible text:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="font-display.png" alt="Lighthouse: Ensure text remains visible during webfont loads">
   <figcaption class="w-figcaption">
-    Fig. 1 — Ensure text remains visible during webfont loads
+    Ensure text remains visible during webfont loads.
   </figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ you can fix this problem in most modern browsers:
 ```
 
 The [font-display API](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display)
-specifies the font display strategy. 
+specifies the font display strategy.
 `swap` tells the browser that text using this font should be displayed immediately using a system font.
 Once the custom font is ready, the system font is swapped out
 (see [Avoid invisible text during loading](/avoid-invisible-text)).

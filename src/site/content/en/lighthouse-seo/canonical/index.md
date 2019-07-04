@@ -9,14 +9,14 @@ web_lighthouse:
 
 When multiple pages have similar content,
 search engines consider them duplicate versions of the same page.
-Search engines select one of the pages as the canonical version and crawl that one more. 
+Search engines select one of the pages as the canonical version and crawl that one more.
 Canonical links let you explicitly specify which version to crawl.
 Lighthouse flags pages with an invalid `rel=canonical`:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="canonical.png" alt="Lighthouse audit showing document with invalid canonical link">
   <figcaption class="w-figcaption">
-    Fig. 1 — Document has an invalid canonical link
+    Document has an invalid canonical link.
   </figcaption>
 </figure>
 
@@ -103,4 +103,3 @@ There are multiple advantages to adding canonical links:
 - [Consolidate duplicate URLs](https://support.google.com/webmasters/answer/139066)
 - [Learn the impact of duplicate URLs](https://support.google.com/webmasters/answer/6080548)
 - [5 common mistakes with rel=canonical](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)
-

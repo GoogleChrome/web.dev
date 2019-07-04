@@ -14,7 +14,7 @@ Lighthouse lists every resource that was not served over HTTP/2:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-http2.png" alt="Lighthouse audit shows resources not served over HTTP/2 ">
   <figcaption class="w-figcaption">
-    Fig. 1 — Resources not served over HTTP/2
+    Resources not served over HTTP/2.
   </figcaption>
 </figure>
 
@@ -42,5 +42,3 @@ see [Setting Up HTTP/2](https://dassur.ma/things/h2setup/).
 - [Page doesn't use HTTP/2 for its own resources audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
 - [Introduction to HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/)
 - [HTTP/2 Frequently Asked Question](https://http2.github.io/faq/)
-
-

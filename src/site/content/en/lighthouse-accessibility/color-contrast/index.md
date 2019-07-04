@@ -14,7 +14,7 @@ foreground colors do not have a sufficient contrast ratio:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="color-contrast.png" alt="Lighthouse audit showing background and foreground colors do not have sufficient contrast ratio">
   <figcaption class="w-figcaption">
-    Fig. 1 — The background and foreground colors do not have sufficient contrast ration
+    The background and foreground colors do not have sufficient contrast ration.
 </figure>
 
 

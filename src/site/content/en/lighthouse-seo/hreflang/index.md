@@ -15,7 +15,7 @@ Lighthouse flags any incorrect `hreflang` links:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="hreflang.png" alt="Lighthouse audit showing incorrect hreflang links">
   <figcaption class="w-figcaption">
-    Fig. 1 — Incorrect <code>hreflang</code> links
+    Incorrect <code>hreflang</code> links.
   </figcaption>
 </figure>
 

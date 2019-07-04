@@ -1385,5 +1385,46 @@
       "given": "Chris",
       "family": "Anstey"
     }
+  },
+  "mfriesenhahn": {
+    "name": {
+      "given": "Michael",
+      "family": "Friesenhahn"
+    },
+    "country": "US",
+    "github": "mfriesenhahn",
+    "description": {
+      "en": "Michael is a Tech Writer"
+    }
+  },
+  "hbatra": {
+    "name": {
+      "given": "Harleen",
+      "family": "Batra"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Marketing"
+    },
+    "country": "US",
+    "twitter": "harleenkbatra",
+    "description": {
+      "en": "Harleen is a Developer Marketing Manager"
+    }
+  },
+  "mgechev": {
+    "name": {
+      "given": "Minko",
+      "family": "Gechev"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Programs Engineer for Angular"
+    },
+    "country": "USA",
+    "homepage": "https://blog.mgechev.com/",
+    "twitter": "mgechev",
+    "github": "mgechev",
+    "glitch": "mgechev"
   }
 }

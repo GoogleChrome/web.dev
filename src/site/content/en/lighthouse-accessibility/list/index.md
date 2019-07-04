@@ -14,9 +14,9 @@ They can also contain script supporting elements (`<script>` and `<template>`).
 Lighthouse reports when lists contain any other content elements that shouldn't be within the lists:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="list.png" alt="Lighthouse audit showing lists contain content elements that shouldn't be within the list
+  <img class="w-screenshot w-screenshot--filled" src="list.png" alt="Lighthouse audit showing lists contain content elements that shouldn't be within the lists
   <figcaption class="w-figcaption">
-    Fig. 1 — Lists contain content elements that shouldn't be within the list
+    Lists contain content elements that shouldn't be within the lists.
   </figcaption>
 </figure>
 

@@ -68,7 +68,7 @@ A few examples illustrate this. The following shows the default behavior when cu
 <figure class="w-figure w-figure--center">
   <img src="./default-100x100.png" alt="The default resizing behavior" style="max-width: 326px;">
   <figcaption class="w-figcaption">
-    Fig. 1 — The default resizing behavior.
+    The default resizing behavior.
   </figcaption>
 </figure>
 
@@ -79,7 +79,7 @@ If I apply the following feature policy, I get a placeholder image instead.
 <figure class="w-figure w-figure--center">
   <img src="./resize-both-dimensions.png" alt="When the image is too large for the container" style="max-width: 326px;">
   <figcaption class="w-figcaption">
-    Fig. 2 — When the image is too large for the container.
+    When the image is too large for the container.
   </figcaption>
 </figure>
 
@@ -89,7 +89,7 @@ I get similar results if I lower only the width or the height.
   <img src="./resize-width.png" alt="Resized width" style="max-width: 326px;">
   <img src="./resize-height.png" alt="Resized height" style="max-width: 326px;">
   <figcaption class="w-figcaption">
-    Fig. 3 — Resize width and height.
+    Resize width and height.
   </figcaption>
 </figure>
 
@@ -160,7 +160,7 @@ The following shows the default browser behavior. Without the feature policy an 
 <figure class="w-figure w-figure--center">
   <img src="./unoptimized-lossy.png" alt="Comparing an optimized image with an unoptimized image" style="max-width: 326px;">
   <figcaption class="w-figcaption">
-    Fig. 4 — Comparing an optimized image with an unoptimized image.
+    Comparing an optimized image with an unoptimized image.
   </figcaption>
 </figure>
 
@@ -171,7 +171,7 @@ If I apply the following feature policy, I get a placeholder image instead.
 <figure class="w-figure w-figure--center">
   <img src="./lossy-image-excluded.png" alt="When the image is not optimized" style="max-width: 326px;">
   <figcaption class="w-figcaption">
-    Fig. 5 — When the image is not optimized.
+    When the image is not optimized.
   </figcaption>
 </figure>
 

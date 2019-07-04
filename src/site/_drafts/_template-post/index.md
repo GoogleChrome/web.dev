@@ -4,6 +4,8 @@ subhead: A catchy subhead that previews the content.
 authors:
   - robdodson
 date: 2019-04-20
+# Add an updated date to your post if you edit in the future.
+# updated: 2019-06-27
 hero: hero.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)

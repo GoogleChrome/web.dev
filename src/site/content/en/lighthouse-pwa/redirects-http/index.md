@@ -13,7 +13,7 @@ Lighthouse flags pages that have multiple page redirects:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="redirects-http.png" alt="Lighthouse audit showing page doesn't avoid multiple redirects">
   <figcaption class="w-figcaption">
-    Fig. 1 — Page doesn't avoid multiple redirects
+    Page doesn't avoid multiple redirects.
   </figcaption>
 </figure>
 

@@ -15,16 +15,16 @@ to reduce unnecessary bytes consumed by network activity:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="unused-css-rules.png" alt="Remove unused CSS">
   <figcaption class="w-figcaption">
-    Fig. 1 — Remove unused CSS
+    Remove unused CSS.
   </figcaption>
 </figure>
 
 
-## How unused CSS slows down performance 
+## How unused CSS slows down performance
 
 Using a `<link>` tag is a common way to add styles to a page:
 
-```css
+```html
 <!doctype html>
 <html>
   <head>
@@ -54,13 +54,13 @@ the more time that a browser might potentially need to spend calculating the sty
 
 ## How to detect unused CSS
 
-The Coverage tab of Chrome DevTools can help you discover critical and uncritical CSS. 
+The Coverage tab of Chrome DevTools can help you discover critical and uncritical CSS.
 See [View used and unused CSS with the Coverage tab](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
   <figcaption class="w-figcaption">
-    Fig. 1 — Chrome DevTools: Coverage tab
+    Chrome DevTools: Coverage tab.
   </figcaption>
 </figure>
 

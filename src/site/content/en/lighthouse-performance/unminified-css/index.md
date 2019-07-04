@@ -15,7 +15,7 @@ when these files are minified:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="unminified-css.png" alt="Minify CSS">
   <figcaption class="w-figcaption">
-    Fig. 1 — Minify CSS
+    Minify CSS.
   </figcaption>
 </figure>
 

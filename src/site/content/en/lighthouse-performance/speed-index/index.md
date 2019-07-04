@@ -14,7 +14,7 @@ The Lighthouse reports displays the Speed Index time period in seconds:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="speed-index.png" alt="Lighthouse: Speed Index">
   <figcaption class="w-figcaption">
-    Fig. 1 — Speed Index
+    Speed Index.
   </figcaption>
 </figure>
 
@@ -53,17 +53,17 @@ This table helps explain how to interpret your Speed Index score:
     <tbody>
       <tr>
         <td>0 - 4.3 seconds</td>
-        <td>Green (fast)</td> 
+        <td>Green (fast)</td>
         <td>75 - 100</td>
       </tr>
       <tr>
         <td>4.4 - 5.8 seconds</td>
-        <td>Orange (average)</td> 
+        <td>Orange (average)</td>
         <td>50 - 74</td>
       </tr>
       <tr>
         <td>Over 5.8 seconds</td>
-        <td>Red (slow)</td> 
+        <td>Red (slow)</td>
         <td>0 - 49</td>
       </tr>
     </tbody>
@@ -103,7 +103,7 @@ the greater impact it will have on improving your performance score.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="opportunities.png" alt="Lighthouse: Opportunities section">
   <figcaption class="w-figcaption">
-    Fig. 2 — Opportunities section
+    Opportunities section.
   </figcaption>
 </figure>
 
@@ -129,5 +129,3 @@ Learn more about these potential savings from the [Performance audits landing pa
 - [Speed Index audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/speed-index.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Speedline](https://github.com/paulirish/speedline)
-
-

@@ -13,13 +13,13 @@ provide missing information about an element.
 For these roles and attributes to make sense,
 each ARIA `role` supports a specific subset of `aria-*` attributes
 (see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
-Some ARIA roles have required attributes that describe the state of the element to screen readers. 
+Some ARIA roles have required attributes that describe the state of the element to screen readers.
 Lighthouse reports a role's missing required states and properties:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="aria-required-attr.png" alt="Lighthouse audit showing ARIA role missing required states and properties">
   <figcaption class="w-figcaption">
-    Fig. 1 — ARIA role missing required states and properties
+    ARIA role missing required states and properties.
   </figcaption>
 </figure>
 

@@ -14,7 +14,7 @@ Lighthouse flags the page when the address bar isn't themed to the page's colors
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="themed-omnibox.png" alt="Lighthouse audit showing address bar isn't themed to the page's colors">
   <figcaption class="w-figcaption">
-    Fig. 1 — Address bar isn't themed to page's colors
+    Address bar isn't themed to page's colors.
   </figcaption>
 </figure>
 

@@ -15,13 +15,13 @@ Lighthouse flags images with incorrect aspect ratios.
 
 <!--***TODO***
 
-Having trouble getting this audit to fail. 
+Having trouble getting this audit to fail.
 Even when I see terrible view of images in a glitch,
 I am not seeing this error.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="image-aspect-ratio.png" alt="Lighthouse audit shows images displayed with incorrect aspect ratio">
   <figcaption class="w-figcaption">
-    Fig. 1 — Images display with incorrect aspect ratio
+    Images display with incorrect aspect ratio.
   </figcaption>
 </figure>
 -->

@@ -9,12 +9,12 @@ web_lighthouse:
 
 
 The Opportunities section of the Lighthouse report
-lists resources that are being redirected: 
+lists resources that are being redirected:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="redirects.png" alt="">
   <figcaption class="w-figcaption">
-    Fig. 1 — Avoid multiple page redirects
+    Avoid multiple page redirects.
   </figcaption>
 </figure>
 
@@ -40,7 +40,7 @@ of the resource by hundreds of milliseconds.
 Eliminate the redirects by upading the links to these resources.
 Update the links to these resources.
 The links should point to the current locations of the resources.
-It's especially important to avoid redirects in resources 
+It's especially important to avoid redirects in resources
 required for your [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
 
 If you're using redirects to divert mobile users to the mobile version of your page,

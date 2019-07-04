@@ -9,7 +9,7 @@ web_lighthouse:
 
 Tap targets are interactive elements, like buttons or links,
 that users frequently tap.
-Appropriately-sized tap targets make pages more mobile-friendly and accessible. 
+Appropriately-sized tap targets make pages more mobile-friendly and accessible.
 In-appropriately sized tap-targets have the opposite effect.
 
 A tap target is inappropriately-sized when it's too small, or too close to other tap targets.
@@ -18,7 +18,7 @@ Lighthouse flags pages with inappropriately-sized tap targets:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="tap-targets.png" alt="Lighthouse audit showing inappropriately sized tap targets">
   <figcaption class="w-figcaption">
-    Fig. 1 — Tap targets are inappropriately sized
+    Tap targets are inappropriately sized.
   </figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ Tap targets that are 48 pixels wide and 48 pixels tall never fail:
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="touch-target.jpg" alt="Appropriately-sized tap targets">
   <figcaption class="w-figcaption">
-    Fig. 1 — Appropriately-sized tap targets
+    Appropriately-sized tap targets.
   </figcaption>
 </figure>
 

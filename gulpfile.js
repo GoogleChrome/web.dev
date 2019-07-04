@@ -105,6 +105,10 @@ gulp.task('copy-content-assets', () => {
         if (parts[0] === 'images') {
           return;
         }
+        // Let en/handbook images pass through.
+        if (parts[0] === 'handbook') {
+          return;
+        }
         return assetPath.dirname = path.basename(assetPath.dirname);
       })
     )

@@ -8,12 +8,12 @@ web_lighthouse:
 ---
 
 Link text that is discernible, unique, and focusable improves the navigation experience for screen reader users.
-Lighthouse reports when links do not have a discernable name:
+Lighthouse reports when links do not have discernible names:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="link-name.png" alt="Lighthouse audit showing links do not have a discernable name">
+  <img class="w-screenshot w-screenshot--filled" src="link-name.png" alt="Lighthouse audit showing links do not have discernible names">
   <figcaption class="w-figcaption">
-    Fig. 1 — Links do not have a discernable name
+    Links do not have discernible names.
   </figcaption>
 </figure>
 
@@ -44,6 +44,6 @@ Todo. I have no idea how accessibility scoring is working!
 ## More information
 
 - [Links must have discernible text](https://dequeuniversity.com/rules/axe/3.2/link-name)
-- [Ensure links have discernable text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
+- [Ensure links have discernible text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
 - [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
