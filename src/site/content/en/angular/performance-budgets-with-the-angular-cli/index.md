@@ -70,7 +70,7 @@ bundlesize is quite similar to the Angular CLI's budget check; the main differen
 
 Establish performance budgets with the Angular CLI to make sure your Angular app’s performance doesn’t regress over time:
 
-1. Set a baseline for the resource size either by using a budget calculator or by following your organization’s practices.
+1. Set a baseline for the resource size either by using a budget calculator or by following your organization's practices.
 2. Configure size budgets in `angular.json` under `projects.[PROJECT-NAME].architect.build.configurations.production.budgets`
 3. The budgets will be automatically enforced on each build with the Angular CLI.
 4. Consider introducing budget monitoring as part of continuous integration (which can also be achieved with the Angular CLI).
