@@ -49,7 +49,10 @@ TSLint works with all popular text editors and IDEs. To use it with VSCode, inst
 
 With codelyzer’s accessibility checks set up, you get a popup showing accessibility errors in TypeScript files or inline templates as you code.
 
-![Linting in editor](editor-template.png "Linting in the editor")
+<figure class="w-figure">
+  <img src="./editor-template.png" alt="A screenshot of a codelyzer popup in a text editor.">
+  <figcaption class="w-figcaption">A codelyzer popup showing a form element labeling error.</figcaption>
+</figure>
 
 A codelyzer popup showing a form element labeling error.
 
