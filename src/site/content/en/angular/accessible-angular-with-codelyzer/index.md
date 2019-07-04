@@ -54,7 +54,6 @@ With codelyzer's accessibility checks set up, you get a popup showing accessibil
   <figcaption class="w-figcaption">A codelyzer popup showing a form element labeling error.</figcaption>
 </figure>
 
-
 To perform linting over the entire project (including external templates), use the `ng lint` command:
 
 ![Linting with Angular CLI](ng-lint.png "Linting with Angular CLI")
