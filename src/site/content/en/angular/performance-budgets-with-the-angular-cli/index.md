@@ -64,7 +64,7 @@ The `index.html` file of the sample app refers to both builds so that modern bro
 
 If you prefer, you can also enforce a performance budget using [bundlesize](https://github.com/siddharthkp/bundlesize) and [Lighthouse](https://web.dev/using-lighthouse-bot-to-set-a-performance-budget/). The main difference between performance budgets in the Angular CLI and Lighthouse is when the checks get performed. The Angular CLI performs the checks at build time, looking at the production assets and verifying their sizes. Lighthouse, however, opens the deployed version of the application and measures the asset size. Both approaches have their pros and cons. The check that Angular CLI performs is less robust but much faster since it's a single disk lookup. On the other hand, the LightWallet of Lighthouse can perform a very accurate check by considering dynamically loaded resources, but it needs to deploy and open the app each time it runs.
 
-bundlesize is quite similar to the Angular CLI’s budget check; the main difference is that bundlesize can show the check results directly in GitHub’s user interface.
+bundlesize is quite similar to the Angular CLI's budget check; the main difference is that bundlesize can show the check results directly in GitHub's user interface.
 
 ## Conclusion
 
