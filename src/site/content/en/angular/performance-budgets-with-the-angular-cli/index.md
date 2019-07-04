@@ -4,6 +4,7 @@ title: 'Performance budgets with the Angular CLI'
 subhead: |
   Monitor the sizes of your bundles over time to make sure your application stays fast.
 hero: performance-budgets-with-the-angular-cli.jpg
+alt: A closeup photo of a calculator.
 date: 2019-07-02
 description: |
   Learn how to use performance budgets directly in the Angular CLI!
