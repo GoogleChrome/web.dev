@@ -27,7 +27,7 @@ served from the root (your website's top level directory).
 ```json
 {
   "short_name": "Weather",
-  "name": "Weather; Do I need an umbrella?",
+  "name": "Weather: Do I need an umbrella?",
   "description": "Weather forecast information",
   "icons": [
     {
