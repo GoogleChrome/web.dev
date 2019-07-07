@@ -29,7 +29,7 @@ Lighthouse reports when a role has invalid values:
 ## How Lighthouse determines role has invalid values
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check a role's values.
 Lighthouse fails this audit,
 when it finds a role with invalid values.

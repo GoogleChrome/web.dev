@@ -29,7 +29,7 @@ Lighthouse reports missing parenrts for these child roles:
 ## How Lighthouse finds missing parent roles
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check for required parent roles.
 Any role that contains "required context role",
 is considered a child role to the parent(s).

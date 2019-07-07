@@ -90,7 +90,7 @@ as expected.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="cache-control-header.png" alt="Inspecting the Cache-Control header via the Headers tab">
   <figcaption class="w-figcaption">
-    Figure 3 - Inspecting the <code>Cache-Control</code> header via the <b>Headers</b> tab
+    Inspecting the <code>Cache-Control</code> header via the <b>Headers</b> tab.
   </figcaption>
 </figure>
 

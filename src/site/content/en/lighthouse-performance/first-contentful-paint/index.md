@@ -27,7 +27,7 @@ it reports the "time when the browser first renders any text, image (including b
 ## How Lighthouse determines your FCP score
 
 In order to be able to calculate your overall performance score,
-Lighthouse assigns each performance metric an individual score between 0 - 100.
+Lighthouse assigns each performance metric an individual score between 0–100.
 The FCP score, in it's simplest terms, is based on a comparison between how fast your FCP is,
 compared to [FCP metrics of real website performance data on
 HTTParchive](https://httparchive.org/reports/loading-speed#fcp).
@@ -47,22 +47,22 @@ your FCP score is 99. This table helps explain how to interpret your FCP score:
     </thead>
     <tbody>
       <tr>
-        <td>0 - 2 seconds</td>
+        <td>0–2 seconds</td>
         <td>Green (fast)</td>
-        <td>75 - 100</td>
+        <td>75–100</td>
       </tr>
       <tr>
-        <td>2 - 4 seconds</td>
+        <td>2–4 seconds</td>
         <td>Orange (average)</td>
-        <td>50 - 74</td>
+        <td>50–74</td>
       </tr>
       <tr>
         <td>Over 4 seconds</td>
         <td>Red (slow)</td>
-        <td>0 - 49</td>
+        <td>0–49</td>
       </tr>
     </tbody>
-    <caption>Table 1 — FCP metric compared to FCP score</caption>
+    <caption>FCP metric compared to FCP score.</caption>
   </table>
 </div>
 

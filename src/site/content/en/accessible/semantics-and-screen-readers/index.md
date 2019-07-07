@@ -64,7 +64,7 @@ the two experiences when using this embedded screen reader (you'll need to click
 
 Because a `<div>`, semantically, is just a generic grouping element, the screen
 reader only announces the `div`'s text content. But the `<button>` is announced
-as a "button" — a much stronger signal to the user that this is something with
+as a "button"—a much stronger signal to the user that this is something with
 which they can interact!
 
 ## Semantic properties and the accessibility tree

@@ -31,7 +31,7 @@ Unfortunately there is a subtle bug in the app. Let's take a look!
 - Click on the link that says **Doggos**. Notice how the URL changed.
 - Refresh the page.
 
-You get a page with "`Cannot GET /doggos`" on it - a sneaky 404. It is "sneaky",
+You get a page with "`Cannot GET /doggos`" on it—a sneaky 404. It is "sneaky",
 because the web app seems to work fine as long as you only click on links within
 it. It breaks when using the URLs in a new browser window or when refreshing the
 page. The issue is that the server does not know how to respond to a request for

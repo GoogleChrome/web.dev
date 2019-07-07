@@ -27,7 +27,7 @@ served from the root (your website's top level directory).
 ```json
 {
   "short_name": "Weather",
-  "name": "Weather - Do I need an umbrella?",
+  "name": "Weather; Do I need an umbrella?",
   "description": "Weather forecast information",
   "icons": [
     {
@@ -143,7 +143,7 @@ For example:
 
 ## Test your manifest
 
-To verify your manifest is setup correctly, use the **Manifest** tab on the 
+To verify your manifest is setup correctly, use the **Manifest** tab on the
 **Application** panel of Chrome DevTools.
 
 <figure class="w-figure">

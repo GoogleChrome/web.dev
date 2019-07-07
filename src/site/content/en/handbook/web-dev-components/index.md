@@ -352,7 +352,7 @@ corporis nam sed, velit fugiat dolorum placeat. Odio, aut nisi. Fuga!
         <td></td>
       </tr>
     </tbody>
-    <caption>Table 1 — Imagemin plugins for filetypes.</caption>
+    <caption>Imagemin plugins for filetypes.</caption>
   </table>
 </div>
 
@@ -366,7 +366,7 @@ assumenda perspiciatis.
 <div class="w-table-wrapper">
   <table>
     <caption>
-      Table 2 — Desktop analysis of doggos.io
+      Desktop analysis of doggos.io.
     </caption>
     <tbody>
       <tr>

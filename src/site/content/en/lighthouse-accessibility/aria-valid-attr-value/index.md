@@ -29,7 +29,7 @@ Lighthouse reports when attributes do not have valid values:
 ## How Lighthouse determines an attribute's value is invalid
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check the values of roles and their attrbutes.
 Lighthouse fails this audit,
 when it finds attributes with invalid values.
