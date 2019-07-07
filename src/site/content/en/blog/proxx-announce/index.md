@@ -81,10 +81,10 @@ grid on top. We also have an HTML table with buttons for accessibility reasons,
 that is on top of both of these canvases, but is made invisible (opacity: 0).
 Even though what you see is a canvas rendering of the game state, the player is
 interacting with the invisible DOM table, giving us the ability to attach event
-listeners and rely on the browser’s focus management.
+listeners and rely on the browser's focus management.
 
 By keeping the DOM element in the canvas, we are able to tap into browsers
-native accessibility features. For example: by setting `role=“grid”` on our game
+native accessibility features. For example: by setting `role="grid"` on our game
 table, screen readers can announce the row and column of the focused cell
 without us having to implement that.
 
@@ -114,7 +114,7 @@ implemented key-based interface.
   </figcaption>
 </figure>
 
-## What’s next
+## What's next
 
 We had great but busy time building this game in time for Google I/O 2019, so we
 will take some well-deserved time off to rest, but plan to come back with more

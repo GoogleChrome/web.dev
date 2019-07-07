@@ -8,7 +8,7 @@ description: |
 date: 2019-05-02
 ---
 
-CSS files can contain unnecessary characters, such as comments, whitespaces, and indentation. 
+CSS files can contain unnecessary characters, such as comments, whitespaces, and indentation.
 In production, these characters can be safely removed, to reduce file size without affecting how the browser processes the styles. This technique is called **minification**.
 
 ## Loading unminified CSS
@@ -47,16 +47,16 @@ After making these changes, you would obtain a more compact version of the same 
 body{font-family:"Benton Sans","Helvetica Neue",helvetica,arial,sans-serif;margin:2em}h1,h2{font-style:italic;color:#373fff;background-color:#000}
 ```
 
-You probably don't want to write CSS like that. Instead, you can write CSS as usual, and add a minification step to your build process. In this guide, you’ll learn how to do it by using a popular build tool: [webpack](https://webpack.js.org/).
+You probably don't want to write CSS like that. Instead, you can write CSS as usual, and add a minification step to your build process. In this guide, you'll learn how to do it by using a popular build tool: [webpack](https://webpack.js.org/).
 
 ## Measure
 
-You’ll apply CSS minification to a site that has been used in other guides: [Fav Kitties](https://fav-kitties-animated.glitch.me/). This version of the site uses a cool CSS library: [animate.css](https://github.com/daneden/animate.css), to animate different page elements when a user votes for a cat 😺.
+You'll apply CSS minification to a site that has been used in other guides: [Fav Kitties](https://fav-kitties-animated.glitch.me/). This version of the site uses a cool CSS library: [animate.css](https://github.com/daneden/animate.css), to animate different page elements when a user votes for a cat 😺.
 
 As a first step, you need to understand what would be the opportunity after minifying this file:
 
-1. Open [the measure page](https://web.dev/measure). 
-1. Enter the URL: `https://fav-kitties-animated.glitch.me` and click **Run Audit**. 
+1. Open [the measure page](https://web.dev/measure).
+1. Enter the URL: `https://fav-kitties-animated.glitch.me` and click **Run Audit**.
 1. Click **View report**.
 1. Click on **Performance** and go the **Opportunities** section.
 
@@ -73,10 +73,10 @@ Now you'll inspect the content of the CSS:
 
 <img class="w-screenshot" width="700px" height="120px" src="./cdt-css-unoptimized.png" alt="DevTools CSS unoptimized trace">
 
-The page is requesting two CSS files, of **1.9KB** and **76.2KB** respectively. 
+The page is requesting two CSS files, of **1.9KB** and **76.2KB** respectively.
 
 1. Click **animate.css**.
-1. Click the **Response** tab, to see the file contents. 
+1. Click the **Response** tab, to see the file contents.
 
 Note that the stylesheet contains characters for whitespaces and indentation:
 
@@ -113,7 +113,7 @@ You will now make some changes in the project:
 1. Click the project name in the upper-left corner. Choose **Remix and Edit** 🎤, from the drop-down menu, to make your own, editable copy of the project.
 1. Once in the cloned project, click **Tools** (in the lower-left corner of the edit view), then select **Console**. The Glitch console opens in a new browser tab.
 
-To minify the resulting CSS, you’ll use the [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin): 
+To minify the resulting CSS, you'll use the [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin): 
 
 1. In Glitch console, run `npm install --save-dev optimize-css-assets-webpack-plugin`.
 1. Run `refresh`, so the changes are synchronized with the Glitch editor.
@@ -155,7 +155,7 @@ Click **Show live** and then, **In New Window**, to open your optimized app in a
 To inspect the size and content of the files:
 
 1. Open DevTools.
-1. Click in the **Network** panel and filter for “CSS”.
+1. Click in the **Network** panel and filter for "CSS".
 1. Make sure "Disable Cache" is checked and reload the page.
 
 <img class="w-screenshot" width="700px" height="120px" src="./cdt-css-optimized.png" alt="DevTools CSS unoptimized response">

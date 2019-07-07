@@ -95,7 +95,7 @@ method is available in the user's browser before attempting to use it.
 // Checking for payment app availability without checking for instrument presence.
 if (request.hasEnrolledInstrument) {
   // `canMakePayment()` behavior change corresponds to
-  // `hasEnrolledInstrument()` availability. 
+  // `hasEnrolledInstrument()` availability.
   request.canMakePayment().then(handlePaymentAppAvailable).catch(handleError);
 } else {
   console.log("Cannot check for payment app availability without checking for instrument presence.");
@@ -121,15 +121,15 @@ This feature has shipped in Chrome 75 and Safari.
 
 ```js
 // Not implemented in Chrome 74 and older.
-// There’s no way to feature-detect this, so check a few
-// older versions of Chrome that you’re seeing hit your servers.
+// There's no way to feature-detect this, so check a few
+// older versions of Chrome that you're seeing hit your servers.
 if (/Chrome\/((6[0-9])|(7[0-4]))/g.exec(navigator.userAgent) !== null) {
   return;
 }
 
 // Supported in Chrome 75+.
 request.show(new Promise(function(resolveDetailsPromise, rejectDetailsPromise) {
-  // Find out the exact total amount and call 
+  // Find out the exact total amount and call
   // `resolveDetailsPromise(details)`.
   // Use a 3 second timeout as an example.
   window.setTimeout(function() {

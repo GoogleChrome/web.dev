@@ -55,7 +55,7 @@ What makes this issue even more problematic is that how a site functions in
 development is often quite different from how users experience it in
 production: personalized or third-party content often doesn't behave the same
 in development as it does in production, test images are often already in the
-developer’s browser cache, and API calls that run locally are often so fast
+developer's browser cache, and API calls that run locally are often so fast
 that the delay isn't noticeable.
 
 The first step toward properly solving this problem is to give developers the
@@ -134,7 +134,7 @@ the viewport's area (a layout shift score of 0.38).
 
 A key point that's hopefully clear from these examples is that layout shifts
 only occur when _existing_ elements change their _start position_. If a new
-element is added to the DOM or an existing element changes size, it doesn’t
+element is added to the DOM or an existing element changes size, it doesn't
 count as a layout shift&mdash;**as long as the change doesn't cause other visible
 elements to change their start position**.
 
@@ -154,7 +154,7 @@ is clear to the user.
 For example, if a user interaction triggers a network request that may take a
 while to complete, it's best to create some space right away and show a loading
 indicator to avoid an unpleasant layout shift when the request completes. If
-the user doesn't realize something is loading, or doesn’t have a sense of when
+the user doesn't realize something is loading, or doesn't have a sense of when
 the resource will be ready, they may try to click something else while
 waiting&mdash;something that could move out from under them.
 

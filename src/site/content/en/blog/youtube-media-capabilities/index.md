@@ -31,8 +31,8 @@ Typically, media sites have several variants of each video that they can present
 to users, encoded in different frame rates, resolutions, and codecs. Until
 recently, web developers had to rely solely on `isTypeSupported()` or
 `canPlayType()` to determine whether each variant could be played in an
-individual user’s browser.
-While this told the developer whether media could be played at all, it didn’t
+individual user's browser.
+While this told the developer whether media could be played at all, it didn't
 provide an indication of playback quality, such as whether there would be frame
 drops or device battery drain. Without this information, developers either had
 to create their own heuristics or just assume that if a device could play a
@@ -42,7 +42,7 @@ For users with less capable devices, this often led to a poor experience.
 ## The Solution
 
 The [Media Capabilities](https://wicg.github.io/media-capabilities/) API allows
-websites to get more information about the client’s video decode performance and
+websites to get more information about the client's video decode performance and
 make an informed decision about which codec and resolution to deliver to the
 user. Specifically, the API provides the developer with an estimate of the
 smoothness and power efficiency of a particular codec and resolution
