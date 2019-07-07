@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Security attacks, what are they?
+title: What are security attacks?
 authors:
   - kosamari
 date: 2018-11-05
@@ -28,7 +28,7 @@ With an **active attack,** the attacker tries to break into the application
 directly. There are a variety of ways this could be done, from using a false
 identity to access sensitive data (masquerade attack) to flooding your server
 with massive amounts of traffic to make your application unresponsive (denial of
-service attack). 
+service attack).
 
 Active attacks can also be done to data in transit. An attacker could modify
 your application data before it gets to a user's browser, showing modified
@@ -68,7 +68,7 @@ Imagine someone is eavesdropping on your conversation with friends and family,
 collecting information about your personal life, who your friends are, and where
 you hang out. The same thing could be done on your web traffic. An attacker
 could capture data between the browser and the server collecting usernames &
-passwords, users' browsing history, and data exchanged. 
+passwords, users' browsing history, and data exchanged.
 
 ## Defense against attacks
 

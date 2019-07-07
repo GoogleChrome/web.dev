@@ -1,6 +1,6 @@
 ---
 title: What should you measure to improve performance?
-subhead: Strategies to measure performance at each stage in the purchase funnel
+subhead: Strategies to measure performance at each stage in the purchase funnel.
 authors:
   - martinschierle
 date: 2019-05-31

@@ -1,6 +1,6 @@
 ---
 title: Updates to the Web Payments APIs
-subhead: Stay up to date on what's new in Web Payments
+subhead: Stay up to date on what's new in Web Payments.
 authors:
   - rsolomakhin
   - danyao
@@ -95,7 +95,7 @@ method is available in the user's browser before attempting to use it.
 // Checking for payment app availability without checking for instrument presence.
 if (request.hasEnrolledInstrument) {
   // `canMakePayment()` behavior change corresponds to
-  // `hasEnrolledInstrument()` availability. 
+  // `hasEnrolledInstrument()` availability.
   request.canMakePayment().then(handlePaymentAppAvailable).catch(handleError);
 } else {
   console.log("Cannot check for payment app availability without checking for instrument presence.");
@@ -129,7 +129,7 @@ if (/Chrome\/((6[0-9])|(7[0-4]))/g.exec(navigator.userAgent) !== null) {
 
 // Supported in Chrome 75+.
 request.show(new Promise(function(resolveDetailsPromise, rejectDetailsPromise) {
-  // Find out the exact total amount and call 
+  // Find out the exact total amount and call
   // `resolveDetailsPromise(details)`.
   // Use a 3 second timeout as an example.
   window.setTimeout(function() {

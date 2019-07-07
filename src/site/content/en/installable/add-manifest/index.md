@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Add a Web App Manifest
+title: Add a web app manifest
 authors:
   - petelepage
 date: 2018-11-05
@@ -143,7 +143,7 @@ For example:
 
 ## Test your manifest
 
-To verify your manifest is setup correctly, use the **Manifest** tab on the 
+To verify your manifest is setup correctly, use the **Manifest** tab on the
 **Application** panel of Chrome DevTools.
 
 <figure class="w-figure">

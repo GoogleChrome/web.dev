@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why speed matters?
+title: Why does speed matter?
 authors:
   - bojanpavic
   - ansteychris  
@@ -23,7 +23,7 @@ When it comes to user experience, speed matters. A [consumer study](https://www.
 {% endAside %}
 
 
- 
+
 <figure class="w-figure w-figure--inline-right">
   <blockquote class="w-blockquote">
     <p class="w-blockquote__text">
@@ -36,5 +36,3 @@ When it comes to user experience, speed matters. A [consumer study](https://www.
 </figure>
 
 Many brands are already investing in mobile speed and achieving great results. In just [one example](https://www.thinkwithgoogle.com/intl/en-gb/success-stories/uk-success-stories/furniture-village-and-greenlight-slash-page-load-times-boosting-user-experience/), retailer Furniture Village audited their site speed and developed a plan to address the problems they found, leading to a 20% reduction in page load time and a 10% increase in conversion rate.
-
-

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is accessibility
+title: What is accessibility?
 authors:
   - robdodson
 date: 2018-11-18
@@ -63,7 +63,7 @@ descriptions of content and controls.
 
 Motor and dexterity impairments may affect a user's ability to use a mouse,
 touchscreen, or other pointing device. Some users may rely on alternative input
-devices to access content. These devices might include a keyboard, head- or 
+devices to access content. These devices might include a keyboard, head- or
 eye-tracking software, switch devices, sip-and-puff devices, or voice access.
 
 ### Auditory

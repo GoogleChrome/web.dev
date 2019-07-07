@@ -1,6 +1,6 @@
 ---
 title: Introducing PROXX
-subhead: A game of proximity, inspired by minesweeper
+subhead: A game of proximity, inspired by minesweeper.
 authors:
   - kosamari
 date: 2019-05-09

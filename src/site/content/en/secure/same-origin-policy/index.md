@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Same Origin Policy
+title: Same-origin policy
 authors:
   - kosamari
 date: 2018-11-05
