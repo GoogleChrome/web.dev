@@ -34,7 +34,6 @@ Here's a basic Angular app:
 
 To add the service worker:
 
-1. Run this command in the CLI:
 
 ```
 $ ng add @angular/pwa
