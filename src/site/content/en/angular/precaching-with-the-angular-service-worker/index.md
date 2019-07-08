@@ -46,7 +46,7 @@ If you have multiple projects in the Angular CLI workspace, you can optionally s
 
 {% endAside %}
 
-`@angular/service-worker` and `@angular/pwa` should now be installed in the app and should appear in `package.json`. The `ng-add` [schematic](https://angular.io/guide/schematics) also adds a file called `ngsw-config.json` to the project, which you can use to configure the service worker. (The file includes a default configuration that you’ll customize a little later.)
+`@angular/service-worker` and `@angular/pwa` should now be installed in the app and should appear in `package.json`. The `ng-add` [schematic](https://angular.io/guide/schematics) also adds a file called `ngsw-config.json` to the project, which you can use to configure the service worker. (The file includes a default configuration that you'll customize a little later.)
 
 Now build the project for production:
 
