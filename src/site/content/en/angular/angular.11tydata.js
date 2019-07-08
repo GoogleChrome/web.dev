@@ -19,6 +19,12 @@ module.exports = {
 	  'get-started-optimize-angular',
 	],
       },
+      {
+	title: 'Performance Budgets',
+	pathItems: [
+	  'performance-budgets-with-the-angular-cli',
+	],
+      },
     ],
   },
 };
