@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to measure Search Engine Optimization with Lighthouse
+title: How to measure search engine optimization with Lighthouse
 authors:
   - ekharvey
 date: 2018-11-05
@@ -18,7 +18,7 @@ The Lighthouse SEO audit scans your page, tests for things that matter to search
 engines, and gives you a score so you can see specific areas for improvement.
 SEO matters because it's how you get more relevant users viewing your content.
 If a search engine has trouble seeing your page, you're possibly missing out on
-traffic sources. 
+traffic sources.
 
 ## Audit your page with Lighthouse
 
@@ -27,7 +27,7 @@ engine to see:
 
 1. Navigate to the **Audits** panel in DevTools.
 1. Select the **SEO** checkbox.
-1. Click **Run Audits** to generate a report. 
+1. Click **Run Audits** to generate a report.
 
 Lighthouse generates a report for your page so you can see areas where you could
 improve SEO for your site. For more information, see [Discover performance
@@ -41,7 +41,7 @@ individual search engines, because they may have different requirements (for
 example,
 [Bing](https://www.bing.com/webmaster/help/webmaster-guidelines-30fba23a),
 [Google Search](https://support.google.com/webmasters/answer/35769),
-[Yandex](https://webmaster.yandex.com/). 
+[Yandex](https://webmaster.yandex.com/).
 
 There are also non-technical aspects that can improve visibility of your content
 in search engines, such as writing in the style of your target audience. Bottom

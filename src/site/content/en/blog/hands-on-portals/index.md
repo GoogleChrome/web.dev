@@ -1,5 +1,5 @@
 ---
-title: "Hands-on with Portals: seamless navigations on the Web"
+title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
   Learn how to build good navigation UX with the Portals API.
 date: 2019-05-06
@@ -18,7 +18,7 @@ tags:
 ---
 
 Making sure your pages load fast is key to delivering a good user experience.
-But one area we often overlook is page transitions — what our users see when
+But one area we often overlook is page transitions—what our users see when
 they move between pages.
 
 A new web platform API called [Portals](https://github.com/WICG/portals) aims to

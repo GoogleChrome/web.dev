@@ -1,6 +1,6 @@
 ---
 title: Introducing PROXX
-subhead: A game of proximity, inspired by minesweeper
+subhead: A game of proximity, inspired by minesweeper.
 authors:
   - kosamari
 date: 2019-05-09
@@ -20,7 +20,7 @@ The team that brought you [squoosh.app](https://squoosh.app) is back! This time,
 we built a web-based game called PROXX ([proxx.app](https://proxx.app)). PROXX
 is a game of proximity inspired by the legendary game Minesweeper. The game is
 situated in the space and your job is to find out where the black holes are. It
-works on all kinds of devices — from desktop all the way to feature phones.
+works on all kinds of devices—from desktop all the way to feature phones.
 Users can play the game using a mouse, keyboard, d-pad even with a screen
 reader.
 

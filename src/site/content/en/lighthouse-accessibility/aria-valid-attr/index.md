@@ -29,7 +29,7 @@ Lighthouse reports ARIA attributes with invalid values:
 ## How Lighthouse checks for invalid attribute values
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check accepted values for roles and attributes.
 
 Lighthouse fails this audit,
@@ -47,7 +47,7 @@ Todo. I have no idea how accessibility scoring is working!
 ## How to check attribute values are valid
 
 To check attribute values
-refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
+refer to the [WAI ARIA Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
 Check the role definition that the attribute describes,
 and then check the values for that attribute.
 

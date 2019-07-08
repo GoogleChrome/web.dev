@@ -11,13 +11,13 @@ web_lighthouse: N/A
 date: 2019-05-01
 ---
 
-Brands that optimize speed will often find they regress quickly. This is because website performance is a lot like getting fit: it's not enough to make a one time effort - you have to change your lifestyle.
+Brands that optimize speed will often find they regress quickly. This is because website performance is a lot like getting fit: it's not enough to make a one time effort; you have to change your lifestyle.
 
 {% Aside 'note' %}
   [Internal Google study](https://www.youtube.com/watch?v=YJGCZCaIZkQ) has found that 40% of brands regress on web performance after 6 months.
 {% endAside %}
 
-Performance budgets are one way to address this. A performance budget is a set of limits on metrics that affect site performance. The concept is similar to a financial budget - you set a limit and make sure you stay within it. In general, a good performance budget combines different types of metrics; so, for example, the performance budget for a product page might look as follows:
+Performance budgets are one way to address this. A performance budget is a set of limits on metrics that affect site performance. The concept is similar to a financial budget: you set a limit and make sure you stay within it. In general, a good performance budget combines different types of metrics; so, for example, the performance budget for a product page might look as follows:
 
 <figure class="w-figure w-figure--center">
   <img src="./performance-budget-example.png" alt="Image of a performance budget example" style="max-width: 600px;">

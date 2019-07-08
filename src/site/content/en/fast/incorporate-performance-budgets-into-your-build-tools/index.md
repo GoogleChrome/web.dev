@@ -107,7 +107,7 @@ By default, **it tests gzipped asset sizes**. You can use the compression option
   </figcaption>
 </figure>
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an auditing tool that tests sites in a few key areas — performance, accessibility, best practices and how well your site performs as a progressive web application. You can run it in Chrome DevTools, from the command line, or as a Node module.
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an auditing tool that tests sites in a few key areas—performance, accessibility, best practices, and how well your site performs as a progressive web application. You can run it in Chrome DevTools, from the command line, or as a Node module.
 
 <figure class="w-figure">
   <img class="screenshot" src="./lighthouse-scores.jpg" alt="Lighthouse scores 💯">

@@ -62,7 +62,7 @@ As a first step, you need to understand what would be the opportunity after mini
 
 The resulting report shows that up to **16KB** can be saved from the **animate.css** file:
 
-<img class="screenshot" width="700px" height="150px" src="./lighthouse-unoptimized.png" alt="Lighthouse - Minify CSS opportunity.">
+<img class="screenshot" width="700px" height="150px" src="./lighthouse-unoptimized.png" alt="Lighthouse: Minify CSS opportunity.">
 
 Now you'll inspect the content of the CSS:
 

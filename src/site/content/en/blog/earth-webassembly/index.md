@@ -1,5 +1,5 @@
 ---
-title: "How we're bringing Google Earth to the Web"
+title: "How we're bringing Google Earth to the web"
 subhead: |
   Improving cross-browser access to Google Earth with WebAssembly.
 date: 2019-06-20

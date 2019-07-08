@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why speed matters?
+title: Why does speed matter?
 authors:
   - bojanpavic
   - ansteychris  

@@ -46,7 +46,7 @@ Preloading requests can make your pages load faster.
        alt="Without preload links, styles.css and ui.js are requested only after
             app.js has been downloaded, parsed, and executed."/>
   <figcaption>
-    <b>Figure 1</b>. Without preload links, <code>styles.css</code> and
+    Without preload links, <code>styles.css</code> and
     <code>ui.js</code> are requested only after <code>app.js</code> has been downloaded,
     parsed, and executed.
   </figcaption>
@@ -76,7 +76,7 @@ as soon as possible.
        alt="With preload links, styles.css and ui.js are requested at the same time
             as app.js."/>
   <figcaption>
-    <b>Figure 2</b>. With preload links, <code>styles.css</code> and
+    With preload links, <code>styles.css</code> and
     <code>ui.js</code> are requested at the same time as <code>app.js</code>.
   </figcaption>
 </figure>

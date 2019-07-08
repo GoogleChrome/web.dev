@@ -29,7 +29,7 @@ the threshold you've set (e.g. < 96/100).
 <figure class="w-figure">
   <img src="./lighthouse-bot.png"
        alt="Failing Lighthouse Bot checks on GitHub" class="w-screenshot">
-  <figcaption class="w-figcaption"><b>Figure 1</b>: Lighthouse Bot checks on GitHub</figcaption>
+  <figcaption class="w-figcaption">Lighthouse Bot checks on GitHub.</figcaption>
 </figure>
 
 {% Aside %}

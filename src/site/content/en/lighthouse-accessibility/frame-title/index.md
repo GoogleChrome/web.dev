@@ -40,7 +40,7 @@ Learn more in [Frames must have title attribute](https://dequeuniversity.com/rul
 
 - As previously mentioned, give the enclosed document a title element with content identical to title attribute.
 - Replace placeholder titles such as "untitled frame" with a more appropriate phrase.
-- Make each title unique - don't duplicate titles, even if they are similar.
+- Make each title unique. Don't duplicate titles, even if they are similar.
 
 Learn more in
 [Write descriptive titles, descriptions, and link text for every page](/write-descriptive-text).

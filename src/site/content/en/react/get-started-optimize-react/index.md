@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Get Started: Optimize your React app'
+title: 'Get started: optimize your React app'
 subhead: |
   Want to make your React site as fast and accessible as possible? You've come to the right place!
 hero: hero-get-started-optimize-react.jpg
@@ -26,7 +26,7 @@ accessibility of a React app.
 
 There's a lot of content that explains how to build fast and reliable
 applications, but not many that show how to build fast and reliable **React**
-applications. These guides cover all this from the perspective of a React 
+applications. These guides cover all this from the perspective of a React
 app where only libraries, APIs, and features specific to
 the React ecosystem are mentioned.
 

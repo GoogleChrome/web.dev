@@ -41,7 +41,7 @@ to handle user intput.
 ## How Lighthouse determines your First CPU Idle score
 
 In order to be able to calculate your overall performance score,
-Lighthouse assigns each performance metric an individual score between 0 - 100.
+Lighthouse assigns each performance metric an individual score between 0–100.
 The First CPU idle score, in it's simplest terms,
 is based on a comparison between how fast your First CPU Idle is,
 compared to [First CPU Idle metrics of real website performance data on
@@ -63,22 +63,22 @@ This table helps explain how to interpret your First CPU Idle score:
     </thead>
     <tbody>
       <tr>
-        <td>0 - 4.7 seconds</td>
+        <td>0–4.7 seconds</td>
         <td>Green (fast)</td>
-        <td>75 - 100</td>
+        <td>75–100</td>
       </tr>
       <tr>
-        <td>4.8 - 6.5 seconds</td>
+        <td>4.8–6.5 seconds</td>
         <td>Orange (average)</td>
-        <td>50 - 74</td>
+        <td>50–74</td>
       </tr>
       <tr>
         <td>Over 6.5 seconds</td>
         <td>Red (slow)</td>
-        <td>0 - 49</td>
+        <td>0–49</td>
       </tr>
     </tbody>
-    <caption>Table 1 — First CPU Idle metric compared to First CPU Idle score</caption>
+    <caption>First CPU Idle metric compared to First CPU Idle score.</caption>
   </table>
 </div>
 
