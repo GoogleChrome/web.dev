@@ -2,7 +2,7 @@
 layout: post
 title: 'Precaching with the Angular service worker'
 subhead: |
-  Use the Angular service worker to make your app faster and more reliable on networks with poor connectivity!
+  Use the Angular service worker to make your app faster and more reliable on networks with poor connectivity.
 hero: performance-budgets-with-the-angular-cli.jpg
 date: 2019-07-02
 description: |
