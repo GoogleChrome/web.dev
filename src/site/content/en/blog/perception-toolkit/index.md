@@ -61,7 +61,7 @@ demo](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo/ar
        alt="The default interface is available by using just the linked data." class="screenshot"
        width="300">
   <figcaption class="w-figcaption w-figcaption--center">
-    <b>Figure 1</b>: The default interface.
+    The default interface.
   </figcaption>
 </figure>
 

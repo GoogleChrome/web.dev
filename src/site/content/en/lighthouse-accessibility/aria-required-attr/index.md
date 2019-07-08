@@ -28,7 +28,7 @@ Lighthouse reports a role's missing required states and properties:
 ## How Lighthouse identifies missing required states and properties
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check for a role's required attributes.
 Any role that contains "required states and properties",
 must have the required state and property defined.

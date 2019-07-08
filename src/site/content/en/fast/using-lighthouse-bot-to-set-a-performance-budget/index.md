@@ -29,7 +29,7 @@ the threshold you’ve set (e.g. < 96/100).
 <figure class="w-figure">
   <img src="./lighthouse-bot.png"
        alt="Failing Lighthouse Bot checks on GitHub" class="w-screenshot">
-  <figcaption class="w-figcaption"><b>Figure 1</b>: Lighthouse Bot checks on GitHub</figcaption>
+  <figcaption class="w-figcaption">Lighthouse Bot checks on GitHub.</figcaption>
 </figure>
 
 {% Aside %}
@@ -183,7 +183,7 @@ Now whenever you make changes to your app, they will be automatically deployed t
 
 ## 5. Setting up Lighthouse Bot
 
-Friendly Lighthouse Bot updates you on your app’s Lighthouse scores. 
+Friendly Lighthouse Bot updates you on your app’s Lighthouse scores.
 It just needs an invitation to your repo.
 
 On GitHub, go to your project’s settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
@@ -242,7 +242,7 @@ Set your standards high and tweak the setup so you don’t accept any changes to
 the app that bring the performance score below 95:
 
 ```yaml
-- npm run lh -- --perf=95 https://staging.example.com 
+- npm run lh -- --perf=95 https://staging.example.com
 ```
 
 ### Make a pull request to trigger Lighthouse Bot test on Travis

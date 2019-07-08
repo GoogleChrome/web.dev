@@ -38,8 +38,8 @@ const DetailsComponent = () => (
 ## Why is this useful?
 
 A large React application will usually consist of many components, utility
-methods and third-party libraries. If an effort isn't made to try and load
-different parts of an application only when they're needed - a single, large
+methods and third-party libraries. If an effort isn't made to try to load
+different parts of an application only when they're needed, a single, large
 bundle of JavaScript will be shipped to your users as soon as they load the
 first page. This can affect page performance significantly.
 
@@ -215,7 +215,7 @@ class ErrorBoundary extends React.Component {
       return <p>Loading failed! Please reload.</p>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 

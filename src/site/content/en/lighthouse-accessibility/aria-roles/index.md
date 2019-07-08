@@ -29,7 +29,7 @@ Lighthouse reports when a role has invalid values:
 ## How Lighthouse determines role has invalid values
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check a role's values.
 Lighthouse fails this audit,
 when it finds a role with invalid values.
@@ -47,7 +47,7 @@ the example above, the element's role should be corrected from `buton` to
 ## How to check for invalid values
 
 To check for invalid values,
-refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
+refer to the [WAI ARIA Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
 ARIA explicitly defines role values.
 If you set `role=` to any value not appearing in the defintions list,
 the audit fails.
