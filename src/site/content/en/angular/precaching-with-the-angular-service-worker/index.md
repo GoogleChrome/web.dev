@@ -27,15 +27,6 @@ _You can find the code for the current example [on GitHub](https://github.com/mg
 
 The Angular team offers a service worker module with precaching functionality that's well integrated with the framework and the [Angular command line interface (CLI)](https://cli.angular.io/).
 
-Here's a basic Angular app:
-
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://stackblitz.com/github/mgechev/service-worker-web-dev/tree/external-image?embed=1&file=src/app/app.component.ts&view=preview"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
 To add the service worker, run this command in the CLI:
 
 ```
