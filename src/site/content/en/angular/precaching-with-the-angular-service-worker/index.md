@@ -21,7 +21,7 @@ _You can find the code for the current example [on GitHub](https://github.com/mg
 
 ## Introducing the Angular service worker
 
-The Angular team offers a service worker module with precaching functionality that’s well integrated with the framework and the [Angular command line interface (CLI)](https://cli.angular.io/).
+The Angular team offers a service worker module with precaching functionality that's well integrated with the framework and the [Angular command line interface (CLI)](https://cli.angular.io/).
 
 Here’s a basic Angular app:
 
