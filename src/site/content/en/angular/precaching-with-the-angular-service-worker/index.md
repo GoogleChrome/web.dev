@@ -17,7 +17,11 @@ When users have limited network access—or none at all—web app functionality 
 
 This post walks through how to set up precaching in an Angular app. It assumes you’re already familiar with precaching and service workers in general. If you need a refresher, check out the “[Service workers and the Cache Storage API](https://web.dev/service-workers-cache-storage/)” post.
 
+{% Aside %}
+
 _You can find the code for the current example [on GitHub](https://github.com/mgechev/service-worker-web-dev)._
+
+{% endAside %}
 
 ## Introducing the Angular service worker
 
@@ -54,7 +58,7 @@ Now build the project for production:
 $ ng build --prod
 ```
 
-Inside the `dist/[PROJECT_NAME]` directory you’ll find a file called `ngsw.json`. This file tells the Angular service worker how to cache the assets in the app. The file is generated during the build process based on the configuration (`ngsw-config.json`) and the assets produced at build time.
+Inside the `dist/service-worker-web-dev` directory you’ll find a file called `ngsw.json`. This file tells the Angular service worker how to cache the assets in the app. The file is generated during the build process based on the configuration (`ngsw-config.json`) and the assets produced at build time.
 
 Now start an HTTP server in the directory containing your app’s production assets, open the public URL, and check out its network requests in Chrome DevTools:
 
