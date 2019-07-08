@@ -19,6 +19,12 @@ module.exports = {
           'get-started-optimize-angular',
         ],
       },
+      {
+        title: 'Fast',
+        pathItems: [
+          'route-level-code-splitting',
+        ],
+      },
     ],
   },
 };
