@@ -34,7 +34,6 @@ Here's a basic Angular app:
 
 To add the service worker:
 
-
 ```
 $ ng add @angular/pwa
 ```
