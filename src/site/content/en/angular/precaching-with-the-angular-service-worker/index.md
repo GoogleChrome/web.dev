@@ -32,7 +32,7 @@ Here's a basic Angular app:
   </iframe>
 </div>
 
-To add the service worker:
+To add the service worker, run this command in the CLI:
 
 ```
 $ ng add @angular/pwa
