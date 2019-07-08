@@ -59,7 +59,7 @@ Inside the `dist/[PROJECT_NAME]` directory you’ll find a file called `ngsw.jso
 Now start an HTTP server in the directory containing your app’s production assets, open the public URL, and check out its network requests in Chrome DevTools:
 
 {% Instruction 'preview' %}
-{% Instruction 'devtools-network' %}
+{% Instruction 'devtools-network', 'ol' %}
 
 Note that the network tab has a bunch of static assets directly downloaded in the background by the `ngsw-worker.js` script:
 
