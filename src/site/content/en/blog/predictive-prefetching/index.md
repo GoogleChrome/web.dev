@@ -1,7 +1,7 @@
 ---
 title: Faster web navigation with predictive prefetching
 subhead: Learn about predictive prefetching and how Guess.js implements it.
-date: 2019-07-03
+date: 2019-07-08
 hero: predictive-prefetching-header.png
 alt: Guess.js logo
 authors:
