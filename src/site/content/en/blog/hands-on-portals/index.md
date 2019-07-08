@@ -1,5 +1,5 @@
 ---
-title: "Hands-on with Portals: seamless navigations on the Web"
+title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
   Learn how to build good navigation UX with the Portals API.
 date: 2019-05-06
@@ -38,12 +38,12 @@ site. See Portals in action:
 ## What Portals enable
 
 Single Page Applications (SPAs) offer nice transitions
-but come at the cost of higher complexity to build. 
+but come at the cost of higher complexity to build.
 Multi-page Applications (MPAs) are much easier to build,
 but you end up with blank screens between pages.
 
 Portals offer the best of both worlds:
-the low complexity of an MPA with the seamless transitions of an SPA. 
+the low complexity of an MPA with the seamless transitions of an SPA.
 Think of them like an `<iframe>` in that they allow for embedding,
 but unlike an `<iframe>`,
 they also come with features to navigate to their content.
@@ -90,7 +90,7 @@ It’s that simple. Try this code in the DevTools console, the wikipedia page sh
 
 <img class="w-screenshot" src="portal-preview-demo.gif" alt="A gif of preview portal style demo">
 
-If you wanted to build something like we showed at Chrome Dev Summit which works just like the demo above, 
+If you wanted to build something like we showed at Chrome Dev Summit which works just like the demo above,
 the following snippet will be of interest.
 
 ```javascript
@@ -237,7 +237,7 @@ portal.activate().then(_ => {
 By combining all of the features supported by Portals,
 you can build really fancy user experiences.
 For instance, the demo below demonstrates how Portals can enable a seamless user experience
-between a website and third party embed content. 
+between a website and third party embed content.
 
 <div style="width:100%; padding-top: 56.25%; position: relative;">
   <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/4JkipxFVE9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -251,7 +251,7 @@ and build your own version!
 
 ## Use cases and plans
 
-We hope you liked this brief tour of Portals! We can’t wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page. 
+We hope you liked this brief tour of Portals! We can’t wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page.
 
 Another important thing to know is that Portals can be used in cross-origin navigations, just like an `<iframe>`. So, if you have multiple websites that cross reference one another, you can also use Portals to create seamless navigations between two different websites. This cross-origin use case is very unique to Portals, and can even improve the user experience of SPAs.
 

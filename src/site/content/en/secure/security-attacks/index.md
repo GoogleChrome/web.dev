@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Security attacks, what are they?
+title: What are security attacks?
 authors:
   - kosamari
 date: 2018-11-05

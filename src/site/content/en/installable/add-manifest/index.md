@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Add a Web App Manifest
+title: Add a web app manifest
 authors:
   - petelepage
 date: 2018-11-05

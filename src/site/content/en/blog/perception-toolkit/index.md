@@ -1,6 +1,6 @@
 ---
 title: Visual searching with the Web Perception Toolkit
-subhead: Easy to use real-world interactivity
+subhead: Easy to use real-world interactivity.
 authors:
   - joemedley
 date: 2019-05-07
