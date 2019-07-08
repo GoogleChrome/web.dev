@@ -54,7 +54,7 @@ Now build the project for production:
 $ ng build --prod
 ```
 
-Inside the `dist/[PROJECT_NAME]` directory you’ll find a file called `ngsw.json`. This file tells the Angular service worker how to cache the assets in the app. The file is generated during the build process based on the configuration (`ngsw-config.json`) and the assets produced at build time.
+Inside the `dist/[PROJECT_NAME]` directory you'll find a file called `ngsw.json`. This file tells the Angular service worker how to cache the assets in the app. The file is generated during the build process based on the configuration (`ngsw-config.json`) and the assets produced at build time.
 
 Now start an HTTP server in the directory containing your app’s production assets, open the public URL, and check out its network requests in Chrome DevTools:
 
