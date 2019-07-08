@@ -45,7 +45,7 @@ For example:
 For users who either cannot or choose not to use a mouse,
 keyboard navigation is the primary means of reaching everything on a screen.
 Good keyboarding experiences depend on a logical tab order and easily discernable focus styles.
-If a keyboard user can’t see what’s focused, they have no way of interacting with the page.
+If a keyboard user can't see what's focused, they have no way of interacting with the page.
 
 Learn more in [How to do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).
 
@@ -53,4 +53,3 @@ Learn more in [How to do an Accessibility Review](https://developers.google.com/
 
 - [Check all custom controls are keyboard focusable audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-labels.js)
 - [Ensure `tabindex` attribute values are not greater than 0](/tabindex)
-

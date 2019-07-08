@@ -15,7 +15,7 @@ This codelab is an extension of the [Minify and compress network payloads
 codelab](/codelab-text-compression)
 and assumes you are familiar with the basics concepts of compression. As
 compared to other compression algorithms like `gzip`, this codelab explores how
-Brotli compression can further reduce compression ratios and your app’s overall
+Brotli compression can further reduce compression ratios and your app's overall
 size.
 
 ![App screenshot](./app-screenshot.png)
@@ -204,9 +204,9 @@ And include it within the plugins array:
 
 <pre>
 module.exports = {
-  // ... 
+  // ...
   plugins: [
-    // ... 
+    // ...
     <strong>new BrotliPlugin({
       asset: '[file].br',
       test: /\.(js)$/
@@ -216,7 +216,7 @@ module.exports = {
 </pre>
 
 The following arguments are used in the plugin array:
-+  `asset`: The target asset name. 
++  `asset`: The target asset name.
 +  `[file]` is replaced with the original asset file name
 +  `test`: All assets that match this RegExp (i.e. javascript assets ending in
    `.js`) are processed
@@ -269,8 +269,8 @@ request. The route works like this:
   endpoint that is fired to fetch a JS file.
 + Within the callback, `.br` is attached to the URL of the request and the
   `Content-Encoding` response header is set to `br`.
-+ The `Content-Type` header is set to `application/javascript; charset=UTF-8` to 
-  specify the MIME type. 
++ The `Content-Type` header is set to `application/javascript; charset=UTF-8` to
+  specify the MIME type.
 + Finally, `next()` ensures that the sequence continues to any callback that may
   be next.
 
@@ -300,19 +300,19 @@ app.use(express.static('public'));
 Once the app reloads, take a look at the Network panel once more.
 
 <img class="w-screenshot" src="./network-static-compression-brotli.png"  alt="Bundle size of 53.1 KB (from 225KB)">
-  
+
 Success! You have used Brotli compression to further compress your assets!
 
 ## Conclusion
 
-This codelab illustrated how `brotli` can further reduce your app’s overall
+This codelab illustrated how `brotli` can further reduce your app's overall
 size. Where supported, `brotli` is a more powerful compression algorithm than
-`gzip`. 
+`gzip`.
 
 {% Aside 'warning' %}
 Remember to check if your CDN supports `brotli` before manually
 implementing. If you need to implement `brotli` manually (as
 described in this codelab) but have CDN support for other compression algorithms
 such as `gzip`, it is a good idea to weigh the benefits of
-`brotli` against the effort required to implement. 
+`brotli` against the effort required to implement.
 {% endAside %}

@@ -66,7 +66,7 @@ From a user perspective the most important metrics are:
 +   **[First Meaningful Paint](https://web.dev/first-meaningful-paint/)
     (FMP):** When the user begins to see the main content they came for. This
     is often the hero image, but for a landing page it may even be a call to
-    action such as a ‘Buy' button, since the user may have arrived with a clear
+    action such as a **Buy** button, since the user may have arrived with a clear
     intent (for example, through a targeted ad campaign).
 +   **[First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay)
     (FID):** The time the website needs to react to the user's first input.

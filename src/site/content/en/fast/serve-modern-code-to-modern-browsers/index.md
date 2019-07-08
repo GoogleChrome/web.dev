@@ -124,7 +124,7 @@ them.
 
 
 Instead of querying for specific browser versions or market share, consider 
-specifying `“esmodules” : true` inside your `.babelrc` file's `targets` field.
+specifying `"esmodules" : true` inside your `.babelrc` file's `targets` field.
 
 ```json
 {

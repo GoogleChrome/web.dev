@@ -1,6 +1,6 @@
 ---
 title: "Web components: the secret ingredient helping power the web"
-subhead: Web components at I/O 2019.
+subhead: Web components at I/O 2019
 authors:
   - arthurevans
 date: 2019-06-18
@@ -152,7 +152,7 @@ More resources:
 
 _Hero image by Jason Tuinstra on Unsplash._
 
-_Editor’s note: The custom elements usage chart has been updated to show the
+_Editor's note: The custom elements usage chart has been updated to show the
 full monthly usage data, as reported on
 [chromestatus.com](http://chromestatus.com). A previous version of this post
 included a graph at a 6-month granularity, without the most recent months. The

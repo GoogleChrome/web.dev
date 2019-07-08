@@ -9,8 +9,8 @@ web_lighthouse:
 
 Check all custom controls have appropriate `role` and
 any required ARIA attributes that confer their interactive state.
-For example, a custom checkbox needs a `role=”checkbox”` and
-`aria-checked=”true|false”` to properly convey its state.
+For example, a custom checkbox needs a `role="checkbox"` and
+`aria-checked="true|false"` to properly convey its state.
 See the [Introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/)
 for a general overview of how ARIA can provide missing semantics for custom controls.
 
@@ -65,7 +65,7 @@ The only way to truly understand how screen reader users experience your content
 is to check that content yourself using a screen reader.
 Using a screen reader first hand will give you a clear understanding
 of how your content is labeled, and if there are any obstructions to screen reader navigation.
-If you’re unfamiliar with how semantic markup gets interpreted by assistive technology, 
+If you're unfamiliar with how semantic markup gets interpreted by assistive technology, 
 see the [Introduction to Semantics](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/) for a refresher.
 
 See also [How to Do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).

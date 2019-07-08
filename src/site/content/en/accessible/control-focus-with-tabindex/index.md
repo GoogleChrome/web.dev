@@ -88,7 +88,7 @@ in the DOM.
 
 Lighthouse makes it easy to identify elements with a `tabindex` > 0. Run the
 Accessibility Audit (Lighthouse > Options > Accessibility) and look for the
-results of the “No element has a [tabindex] value greater than 0” audit.
+results of the "No element has a [tabindex] value greater than 0" audit.
 
 ## Create accessible components with "roving `tabindex`"
 

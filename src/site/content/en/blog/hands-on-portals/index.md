@@ -60,7 +60,7 @@ until the browser finishes rendering the destination.
 With Portals, users get to experience an animation,
 while the `<portal>` pre-renders content and creates a seamless navigation experience.
 
-Before Portals, we could have rendered another page using an `<iframe>`. We could also have added animations to move the frame around the page. But an `<iframe>` won’t let you navigate into its content. Portals close this gap, enabling interesting use cases.
+Before Portals, we could have rendered another page using an `<iframe>`. We could also have added animations to move the frame around the page. But an `<iframe>` won't let you navigate into its content. Portals close this gap, enabling interesting use cases.
 
 ## Try out Portals in Chrome Canary
 
@@ -70,7 +70,7 @@ Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLP
 
 <img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
 
-Let’s walk through a basic example.
+Let's walk through a basic example.
 
 ```javascript
 // Create a portal with the wikipedia page, and embed it
@@ -86,7 +86,7 @@ document.body.appendChild(portal);
 portal.activate();
 ```
 
-It’s that simple. Try this code in the DevTools console, the wikipedia page should open up.
+It's that simple. Try this code in the DevTools console, the wikipedia page should open up.
 
 <img class="w-screenshot" src="portal-preview-demo.gif" alt="A gif of preview portal style demo">
 
@@ -124,7 +124,7 @@ style.innerHTML = `
   }
 `;
 const portal = document.createElement('portal');
-// Let’s navigate into the WICG Portals spec page
+// Let's navigate into the WICG Portals spec page
 portal.src = 'https://wicg.github.io/portals/';
 portal.addEventListener('click', evt => {
   // Animate the portal once user interacts
@@ -139,7 +139,7 @@ portal.addEventListener('transitionend', evt => {
 document.body.append(style, portal);
 
 // Waiting for the page to load.
-// using setTimeout is a suboptimal way and it’s best to fade-in
+// using setTimeout is a suboptimal way and it's best to fade-in
 // when receiving a load complete message from the portal via postMessage
 setTimeout(_ => portal.classList.add('fade-in'), 2000);
 ```
@@ -177,7 +177,7 @@ These are the three important features to familiarize yourself with:
  - [The `portalHost` interface:](https://wicg.github.io/portals/#the-portalhost-interface) Adds a `portalHost` object to the `window` object. This lets you check if the page is embedded as a `<portal>` element. It also provides an interface for messaging (`postMessage`) back to the host.
  - [The PortalActivateEvent interface:](https://wicg.github.io/portals/#the-portalactivateevent-interface) An event that fires when the `<portal>` is activated. There is a neat function called `adoptPredecessor` which you can use to retrieve the previous page as a `<portal>` element. This allows you to create seamless navigations and composed experiences between two pages.
 
-Let’s look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.
+Let's look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.
 ### Customize the style when embedded as a `<portal>` element
 ```javascript
 // Detect whether this page is hosted in a portal
@@ -251,10 +251,10 @@ and build your own version!
 
 ## Use cases and plans
 
-We hope you liked this brief tour of Portals! We can’t wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page.
+We hope you liked this brief tour of Portals! We can't wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page. 
 
 Another important thing to know is that Portals can be used in cross-origin navigations, just like an `<iframe>`. So, if you have multiple websites that cross reference one another, you can also use Portals to create seamless navigations between two different websites. This cross-origin use case is very unique to Portals, and can even improve the user experience of SPAs.
 
 ## Feedback welcome
 
-Portals are still in the early stages so not everything is working yet (that’s why it’s behind an experimental flag). That said, it’s ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on [the Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836) and if you have any feature requests, or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+Portals are still in the early stages so not everything is working yet (that's why it's behind an experimental flag). That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on [the Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836) and if you have any feature requests, or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).

@@ -11,7 +11,7 @@ web_lighthouse: N/A
 date: 2019-05-01
 ---
 
-Brands that optimize speed will often find they regress quickly. This is because website performance is a lot like getting fit: it’s not enough to make a one time effort; you have to change your lifestyle.
+Brands that optimize speed will often find they regress quickly. This is because website performance is a lot like getting fit: it's not enough to make a one time effort; you have to change your lifestyle.
 
 {% Aside 'note' %}
   [Internal Google study](https://www.youtube.com/watch?v=YJGCZCaIZkQ) has found that 40% of brands regress on web performance after 6 months.
