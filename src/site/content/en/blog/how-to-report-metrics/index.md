@@ -121,12 +121,12 @@ real performance issues, than to reveal them.
 ### Solution
 
 It's best to analyze complete distributions, but as this is not
-always easily possible we recommend using 90th percentiles — this is the value
+always easily possible we recommend using 90th percentiles—this is the value
 for which 90% of loads were faster. Even then a user hitting ten pages will
 still have one load slower than this, and might drop out there.
 
 While performance measurement is highly important, make sure to keep an open
-mind and question unexpected results — and make sure to not report misleading
+mind and question unexpected results—and make sure to not report misleading
 numbers to stakeholders and management. If unsure on what to pick and report,
 we'd advise as a minimum for 90th percentile 
 [First Contentful Paint](/first-contentful-paint), which is also what we use
@@ -207,8 +207,8 @@ to do this:
     or timestrips of your website's loading behavior, preferably in comparison
     to competitors. WebPageTest [can create
     these](https://www.webpagetest.org/video/) very easily and automatically.
--   Performance can also be fun — maybe a [game based on an individual Lighthouse report](https://g.co/perfgame) can reach audiences which can't be reached by pure reports and metrics?
+-   Performance can also be fun—maybe a [game based on an individual Lighthouse report](https://g.co/perfgame) can reach audiences which can't be reached by pure reports and metrics?
     
 ## Recap
 
-This guide explains why the selection of metrics, and how they are reported and handled, is as important as the measurement and optimization itself — or even more. Make sure to prefer percentiles or distributions over averages, be cautious of using just bounce rate or relative conversion rate as impact measures, and make sure that metrics are easy to understand and tangible for stakeholders across the company. Establishing a performance culture is also an important step towards a well performing e-commerce site.
+This guide explains why the selection of metrics, and how they are reported and handled, is as important as the measurement and optimization itself—or even more. Make sure to prefer percentiles or distributions over averages, be cautious of using just bounce rate or relative conversion rate as impact measures, and make sure that metrics are easy to understand and tangible for stakeholders across the company. Establishing a performance culture is also an important step towards a well performing e-commerce site.

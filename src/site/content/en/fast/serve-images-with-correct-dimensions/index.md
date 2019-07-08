@@ -27,9 +27,9 @@ need to be resized.
 ## Determine the correct image size
 
 Image sizing can be deceptively complicated. For this reason, we've provided two
-approaches: the "good" and the "better." Both will improve performance - but the
-"better" approach may take a bit longer to understand and implement (however, it
-will also reward you with bigger performance improvements). The best choice for
+approaches: the "good" and the "better." Both will improve performance, but the
+"better" approach may take a bit longer to understand and implement. However, it
+will also reward you with bigger performance improvements. The best choice for
 you is the one that you feel comfortable implementing.
 
 ### A quick note on CSS units

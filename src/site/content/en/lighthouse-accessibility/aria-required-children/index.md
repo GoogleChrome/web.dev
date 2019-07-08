@@ -28,7 +28,7 @@ Lighthouse reports when a role is missing their required child role(s):
 ## How Lighthouse finds missing child roles
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check for required child roles.
 Any role that contains "required owned elements",
 is considered a parent role to the child role/s.
@@ -52,7 +52,7 @@ unclear.
 ## How to check for required child roles
 
 To check for required child roles
-refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
+refer to the [WAI ARIA Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
 ARIA explicitly defines required child roles for parent roles.
 Link to the parent role from the specification,
 and check the required child roles.

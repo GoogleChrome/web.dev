@@ -90,7 +90,7 @@ context, with each cookie separated by a semicolon:
 
 If you try this on a selection of popular sites you will notice that most of
 them set significantly more than just three cookies. In most cases, those
-cookies are sent on every single request to that domain - and this has a number
+cookies are sent on every single request to that domain, which has a number
 of implications. Upload bandwidth is often more restricted than download for
 your users, so that overhead on all outbound requests is adding a delay on your
 time to first byte. Be conservative in the number and size of cookies you set.
@@ -100,7 +100,7 @@ around longer than needed.
 ## What are first-party and third-party cookies?
 
 If you go back to that same selection of sites you were looking at before, you
-probably noticed that there were cookies present for a variety of domains - not
+probably noticed that there were cookies present for a variety of domains, not
 just the one you were currently visiting. Cookies that match the domain of the
 current site, i.e. what's displayed in the browser's address bar, are referred
 to as **first-party** cookies. Similarly, cookies from domains other than the
@@ -130,9 +130,9 @@ If that's an unintended effect, why would you want to do this? It's this
 mechanism that allows sites to maintain state when they are being used in a
 third-party context. For example, if you embed a YouTube video on your site then
 visitors will see a "Watch later" option in the player. If your visitor is
-already signed-in to YouTube then that session is being made available in the
-embedded player by a third-party cookie - meaning that "Watch later" button will
-just save the video in one go rather than prompting them to sign-in or having to
+already signed in to YouTube, that session is being made available in the
+embedded player by a third-party cookie—meaning that "Watch later" button will
+just save the video in one go rather than prompting them to sign in or having to
 navigate them away from your page and back over to YouTube.
 
 <figure class="w-figure  w-figure--center">

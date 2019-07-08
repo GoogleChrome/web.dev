@@ -29,7 +29,7 @@ Lighthouse reports missing parenrts for these child roles:
 ## How Lighthouse finds missing parent roles
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check for required parent roles.
 Any role that contains "required context role",
 is considered a child role to the parent(s).
@@ -53,7 +53,7 @@ be discarded.
 ## How to check for required parent roles
 
 To check for required parent roles
-refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
+refer to the [WAI ARIA Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
 ARIA explicitly defines required parent roles.
 Link to the child role from the specification,
 and check the "required context role".
@@ -64,6 +64,6 @@ see [Certain ARIA roles must be contained by particular parent elements](https:/
 
 ## More information
 
-- [ARIA child roles are contained within parent roles  audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-parent.js)
+- [ARIA child roles are contained within parent roles audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-parent.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
 - [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

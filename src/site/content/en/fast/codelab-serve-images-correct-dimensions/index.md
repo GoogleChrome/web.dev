@@ -113,7 +113,7 @@ magick convert flower_photo.jpg -resize 960x flower_photo.jpg
 ```
 
 {% Aside %}
-`960x` is not a typo - it specifies a width, but not a height. The
+`960x` is not a typo; it specifies a width, but not a height. The
 image height will be scaled in proportion to the width. This is a handy trick
 for when you only care about an image's dimensions in one direction.
 {% endAside %}
@@ -133,11 +133,11 @@ For the Nexus 5x, the optimal size of `flower_photo.jpg` would be 460 pixels
 wide (1080 pixels * . 5). This is much smaller than our resized image.
 
 Should you resize the image to be even smaller? Probably. However, the answer to
-this isn't always clear-cut. 
+this isn't always clear-cut.
 
 The trade-off here is between image quality on high-resolution devices and
 performance. It's easy to overestimate how closely users will be inspecting
-images (and therefore you should probably make them smaller) - but there are
+images—so you should probably make them smaller—but there are
 certainly use cases where image quality is more important.
 
 The good news is that you can bypass this tradeoff altogether by using
