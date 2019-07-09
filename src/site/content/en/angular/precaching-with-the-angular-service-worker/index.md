@@ -3,7 +3,7 @@ layout: post
 title: 'Precaching with the Angular service worker'
 subhead: |
   Use the Angular service worker to make your app faster and more reliable on networks with poor connectivity.
-hero: performance-budgets-with-the-angular-cli.jpg
+hero: precaching-with-the-angular-service-worker.jpg
 date: 2019-07-02
 description: |
   Learn how to use the Angular service worker to precache the static assets in your app.
@@ -51,7 +51,6 @@ Inside the `dist/service-worker-web-dev` directory you'll find a file called `ng
 
 Now start an HTTP server in the directory containing your app's production assets, open the public URL, and check out its network requests in Chrome DevTools:
 
-{% Instruction 'preview' %}
 {% Instruction 'devtools-network', 'ol' %}
 
 Note that the network tab has a bunch of static assets directly downloaded in the background by the `ngsw-worker.js` script:
