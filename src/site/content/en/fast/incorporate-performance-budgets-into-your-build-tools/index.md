@@ -145,7 +145,7 @@ By default, **it tests gzipped asset sizes**. You can use the compression option
   </figcaption>
 </figure>
 
-Lighthouse Bot runs an audit after you deploy a site to staging server. In `.travis.yml` file set targets with `--perf`, `--a11y`, `--bp`, `--seo` or `--pwa` options. Aim to stay in the green zone with a performance score of at least 90.
+Lighthouse Bot runs an audit after you deploy a site to staging server. In `.travis.yml` set budgets for particular Lighthouse categories by using the `--perf`, `--a11y`, `--bp`, `--seo` or `--pwa` options. Aim to stay in the green zone with a performance score of at least 90.
 
 <pre class="prettyprint">
 after_success:
