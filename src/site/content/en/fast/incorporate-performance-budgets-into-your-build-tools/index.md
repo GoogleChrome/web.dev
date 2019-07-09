@@ -49,7 +49,7 @@ Budgets are set in a JSON file and after defining them the new Over Budget colum
 
 [Webpack](https://developers.google.com/web/fundamentals/performance/webpack/) is a powerful build tool for optimizing how your code is delivered to the users. It also supports setting performance budgets based on **asset size**.
 
-Turn on [performance hints](https://webpack.js.org/configuration/performance/) in the configuration file to get command line warnings or errors when your bundle size grows over the limit. It’s a great way to stay mindful about asset sizes throughout the development.
+Turn on [performance hints](https://webpack.js.org/configuration/performance/) in `webpack.config.js` to get command line warnings or errors when your bundle size grows over the limit. It’s a great way to stay mindful about asset sizes throughout the development.
 
 After the build step, webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.
 
