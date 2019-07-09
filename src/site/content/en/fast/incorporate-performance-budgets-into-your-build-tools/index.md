@@ -136,7 +136,7 @@ By default, **it tests gzipped asset sizes**. You can use the compression option
   </figcaption>
 </figure>
 
-[Lighthouse Bot](https://github.com/ebidel/lighthouse-ci) integrates with Travis CI and enforces budgets based on any of the five Lighthouse audit categories. It’s sometimes simpler to keep an eye on a single number than individual asset budgets and Lighthouse scores take many things into account.
+[Lighthouse Bot](https://github.com/ebidel/lighthouse-ci) integrates with Travis CI and enforces budgets based on any of the five Lighthouse audit categories. For example, a budget of 100 for your Lighthouse performance score. It’s sometimes simpler to keep an eye on a single number than individual asset budgets and Lighthouse scores take many things into account.
 
 <figure class="w-figure">
   <img class="screenshot" src="./lighthouse-scores.png" alt="Lighthouse scores 💯">
@@ -145,7 +145,7 @@ By default, **it tests gzipped asset sizes**. You can use the compression option
   </figcaption>
 </figure>
 
-Lighthouse Bot runs an audit after you deploy a site to staging server. In `.travis.yml` set budgets for particular Lighthouse categories by using the `--perf`, `--a11y`, `--bp`, `--seo` or `--pwa` options. Aim to stay in the green zone with a performance score of at least 90.
+Lighthouse Bot runs an audit after you deploy a site to staging server. In `.travis.yml` set budgets for particular Lighthouse categories with `--perf`, `--a11y`, `--bp`, `--seo` or `--pwa` options. Aim to stay in the green zone with scores of at least 90.
 
 <pre class="prettyprint">
 after_success:
