@@ -25,7 +25,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "express": "^4.16.4",
-    "navaid": "^1.0.5"
+    "htm": "^2.1.1",
+    "navaid": "^1.0.5",
+    "preact": "^8.4.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",

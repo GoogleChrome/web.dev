@@ -18,9 +18,9 @@ router
  * @return {Promise}
  */
 async function swapContent(url) {
+  // When the router boots it will always try to run a handler for the current
+  // route. But we don't need this for initial page load so we cancel it.
   if (isFirstRun) {
-    /* eslint-disable-next-line */
-    console.log('First run, returning.');
     isFirstRun = false;
     return;
   }
@@ -29,7 +29,7 @@ async function swapContent(url) {
   // Grab the new page content
   const page = await getPage(url);
   // Remove the current #content element
-  main.firstElementChild.remove();
+  main.querySelector('#content').remove();
   // Swap in the new #content element
   main.appendChild(page.querySelector('#content'));
 }
