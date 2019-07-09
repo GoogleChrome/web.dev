@@ -211,7 +211,7 @@ If you find your pull request blocked by a poor Lighthouse score, run an audit w
       <td>
         <ul>
           <li>Budgets based on sizes of specific resources.</li>
-          <li>Checks compressed sizes.</li>
+          <li>Checks compressed or uncompressed sizes.</li>
         </ul>
       </td>
     </tr>
