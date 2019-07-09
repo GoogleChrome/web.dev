@@ -37,7 +37,7 @@ You can set budgets for any of the following resource types:
 - `third-party`
 - `total`
 
-Budgets are set in a JSON file and after defining them the new Over Budget column tells you whether you're exceeding any limits.
+Budgets are set in a JSON file and after defining them the new "Over Budget" column tells you whether you're exceeding any limits.
 
 <figure class="w-figure">
   <img src="./lightwallet.png" alt="Lighthouse Bot">
