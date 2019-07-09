@@ -1,6 +1,6 @@
 import '../styles/all.scss';
 import {router} from './router';
-import './components/Clock.js';
+import './components/UserProfile';
 
 // Run as long-lived router w/ history & "<a>" bindings
 // Also immediately calls `run()` handler for current location
