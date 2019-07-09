@@ -25,9 +25,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "express": "^4.16.4",
-    "htm": "^2.1.1",
+    "firebase": "^6.2.4",
+    "lit-element": "^2.2.0",
     "navaid": "^1.0.5",
-    "preact": "^8.4.2"
+    "unistore": "^3.4.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
