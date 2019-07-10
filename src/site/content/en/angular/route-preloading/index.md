@@ -55,7 +55,7 @@ You should see that the router downloaded `nyan-nyan-module.js` and `about-about
   <source src="https://storage.googleapis.com/web-dev-angular/preloading/preload-all.mp4" type="video/mp4; codecs=h264">
 </video>
  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — PreloadAll Angular strategy
+    The PreloadAllModules strategy in action.
   </figcaption>
 </figure>
 
