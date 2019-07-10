@@ -25,6 +25,12 @@ module.exports = {
           'performance-budgets-with-the-angular-cli',
         ],
       },
+      {
+        title: 'Fast',
+        pathItems: [
+          'route-preloading',
+        ],
+      },
     ],
   },
 };
