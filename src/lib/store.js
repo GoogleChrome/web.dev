@@ -1,25 +1,20 @@
 import createStore from 'unistore';
 import devtools from 'unistore/devtools';
-import * as fb from './fb';
 
 /* eslint-disable require-jsdoc */
 
 const initialState = {
+  // The first time the app boots we won't know whether the user is signed
+  // in or out.
+  // While we check, we should put things into an indeterminate state so we
+  // don't render incorrect UI.
+  checkingSignedInState: true,
+
+  // The user has successfully signed in.
   isSignedIn: false,
   user: null,
 };
 
 const store = devtools(createStore(initialState));
-const signIn = store.action(async (state) => {
-  const user = await fb.auth();
-  if (!user) {
-    return;
-  }
 
-  return {
-    isSignedIn: true,
-    user,
-  };
-});
-
-export {store, signIn};
+export {store};
