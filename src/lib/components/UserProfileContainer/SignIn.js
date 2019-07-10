@@ -1,8 +1,9 @@
-import {LitElement, html} from 'lit-element';
-import {signIn} from '../../store.js';
+import {BaseElement} from '../BaseElement';
+import {html} from 'lit-element';
+import {signIn} from '../../fb';
 
 /* eslint-disable require-jsdoc */
-class SignIn extends LitElement {
+class SignIn extends BaseElement {
   render() {
     return html`
       <button @click="${signIn}">Sign in</button>
