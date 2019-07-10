@@ -100,6 +100,10 @@ These numbers, and even the approach of fetching only when a certain distance fr
 reached, may change in the near future as the Chrome team improves heuristics to determine when to
 begin loading.
 
+<div class="w-aside w-aside--note">
+  There is an <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=982020&q=component:Blink">open bug</a> to ensure that these different thresholds can be experimented with by <a href="experimented">throttling the network</a> in Chrome DevTools. In the meantime, you will need to override the effective connection type of the browser through its flag (<code>chrome://flags/#force-effective-connection-type</code>).
+</div>
+
 ### Image loading
 
 To prevent the surrounding content from reflowing when a lazy loaded image is downloaded, make sure
