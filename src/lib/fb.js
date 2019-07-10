@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import {store} from './store';
 
 /* eslint-disable require-jsdoc */
 
@@ -16,7 +17,24 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-async function auth() {
+// Listen for the user's signed in state and update the store.
+firebase.auth().onAuthStateChanged((user) => {
+  store.setState({checkingSignedInState: false});
+  if (user) {
+    store.setState({
+      isSignedIn: true,
+      user,
+    });
+  } else {
+    store.setState({
+      isSignedIn: false,
+      user: null,
+    });
+  }
+});
+
+// Sign in the user
+export async function signIn() {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   let user;
@@ -25,10 +43,18 @@ async function auth() {
     user = res.user;
   } catch (err) {
     /* eslint-disable-next-line */
-    console.log('error', err);
+    console.error('error', err);
   }
 
   return user;
 }
 
-export {auth};
+// Sign out the user
+export async function signOut() {
+  try {
+    await firebase.auth().signOut();
+  } catch (err) {
+    /* eslint-disable-next-line */
+    console.error('error', err);
+  }
+}

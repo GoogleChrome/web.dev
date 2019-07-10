@@ -1,13 +1,16 @@
-import {LitElement, html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {html} from 'lit-element';
 import './ProfileSwitcher';
 import './SignIn';
 import {store} from '../../store';
 
 /* eslint-disable require-jsdoc */
-class UserProfile extends LitElement {
+class UserProfileContainer extends BaseElement {
   static get properties() {
     return {
+      checkingSignedInState: {type: Boolean},
       isSignedIn: {type: Boolean},
+      user: {type: Object},
     };
   }
 
@@ -18,9 +21,13 @@ class UserProfile extends LitElement {
   }
 
   render() {
+    if (this.checkingSignedInState) {
+      return '';
+    }
+
     if (this.isSignedIn) {
       return html`
-        <web-profile-switcher></web-profile-switcher>
+        <web-profile-switcher .user="${this.user}"></web-profile-switcher>
       `;
     } else {
       return html`
@@ -31,8 +38,10 @@ class UserProfile extends LitElement {
 
   onStateChanged() {
     const state = store.getState();
+    this.checkingSignedInState = state.checkingSignedInState;
     this.isSignedIn = state.isSignedIn;
+    this.user = state.user;
   }
 }
 
-customElements.define('web-user-profile', UserProfile);
+customElements.define('web-user-profile', UserProfileContainer);
