@@ -74,7 +74,7 @@ You can add quicklink to an Angular app by using the [ngx-quicklink](https://www
 npm install --save quicklink
 ```
 
-Once it's available in your project, you can use the `QuicklinkStrategy` by specifying the router's `preloadingStrategy` and importing the `QuicklinkModule`:
+Once it's available in your project, you can use `QuicklinkStrategy` by specifying the router's `preloadingStrategy` and importing the `QuicklinkModule`:
 
 ```js
 import {QuicklinkStrategy, QuicklinkModule} from 'ngx-quicklink';
