@@ -10,6 +10,8 @@ description: |
   Learn how to use performance budgets directly in the Angular CLI!
 authors:
   - mgechev
+tags:
+  - angular
 ---
 
 Optimizing an Angular application is important, but how do you make sure its performance doesn't regress over time? By introducing performance metrics and monitoring them on each code change!

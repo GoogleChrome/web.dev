@@ -4,12 +4,15 @@ title: "Audit your Angular app's accessibility with codelyzer"
 subhead: |
   Want to make your Angular site accessible for everyone? This is the right place!
 hero: accessible.jpg
+alt: Gondolas.
 date: 2019-07-03
 description: |
   Learn how to make your Angular application accessible using codelyzer.
 authors:
   - mohamedzamakhan
   - mgechev
+tags:
+  - angular
 ---
 
 Making your app accessible means that all users, including those with special needs, can use it and understand the content. According to the [World Health Report](https://www.who.int/disabilities/world_report/2011/report.pdf), more than a billion people—about 15% of the world's population—have some form of disability. So [accessibility](https://web.dev/accessible) is a priority for any development project.

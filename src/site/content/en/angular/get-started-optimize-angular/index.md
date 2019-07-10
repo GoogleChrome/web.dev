@@ -4,11 +4,14 @@ title: 'Get started: optimize an Angular application'
 subhead: |
   Want to make your Angular site as fast and accessible as possible? You've come to the right place!
 hero: get-started-optimize-angular.jpg
+alt: A hand dipping a paintbrush in one of several buckets of paint.
 date: 2019-06-24
 description: |
   Learn how to make your Angular application faster, more reliable, discoverable, installable, and accessible!
 authors:
   - mgechev
+tags:
+  - angular
 ---
 
 ## What's Angular?
