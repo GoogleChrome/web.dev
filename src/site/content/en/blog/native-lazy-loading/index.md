@@ -10,7 +10,7 @@ hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
   This post covers the loading attribute and how it can be used
-  to defer the loading of images and iframes.
+  to control the loading of images and iframes.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
