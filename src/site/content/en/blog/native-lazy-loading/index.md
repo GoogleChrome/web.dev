@@ -107,8 +107,8 @@ to add `height` and `width` attributes to the `<img>` element or specify their v
 inline style.
 
 ```html
-<img src="..." loading="lazy" width="200" height="200" />
-<img src="..." loading="lazy" style="height:200px; width:200px;" />
+<img src="..." loading="lazy" width="200" height="200">
+<img src="..." loading="lazy" style="height:200px; width:200px;">
 ```
 
 Images will still load lazily if dimensions are not included, but specifying them decreases the chance of
@@ -119,7 +119,7 @@ on](https://bugs.chromium.org/p/chromium/issues/detail?id=967992), so images wil
 correctly if `intrinsicsize` is specified along with one other dimension (`width` or `height`).
 
 ```html
-<img src="…" alt="…" loading="lazy" intrinsicsize="250x200" width="450" />
+<img src="…" alt="…" loading="lazy" intrinsicsize="250x200" width="450">
 <!-- lazy loaded -->
 ```
 
@@ -160,9 +160,9 @@ Feature-Policy: loading-image-default-eager 'none'
 This lazily loads every image below the device viewport unless `loading=eager` is used.
 
 ```html
-<img src="kitten.jpg" alt="…" />
+<img src="kitten.jpg" alt="…">
 <!-- loaded lazily -->
-<img loading="eager" src="puppy.jpg" alt="…" />
+<img loading="eager" src="puppy.jpg" alt="…">
 <!-- loaded eagerly -->
 ```
 
@@ -250,12 +250,12 @@ library only when it isn't supported. This works as follows:
 
 ```html
 <!-- Let's load this in-viewport image normally -->
-<img src="hero.jpg" alt="…" />
+<img src="hero.jpg" alt="…">
 
 <!-- Let's lazy load the rest of these images -->
-<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload" />
-<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload" />
-<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload" />
+<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload">
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {
