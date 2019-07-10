@@ -102,7 +102,7 @@ Now when you open the application again, you'll notice that the router only prel
   <source src="https://storage.googleapis.com/web-dev-angular/preloading/ngx-quicklink.mp4" type="video/mp4; codecs=h264">
 </video>
  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 2 — Quicklink Preloading Strategy
+    A demo of the quicklink preloading strategy.
   </figcaption>
 </figure>
 
