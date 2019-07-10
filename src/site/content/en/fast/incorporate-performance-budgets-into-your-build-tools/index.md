@@ -40,8 +40,9 @@ You can set budgets for any of the following resource types:
 Budgets are set in a JSON file and after defining them the new "Over Budget" column tells you whether you're exceeding any limits.
 
 <figure class="w-figure">
-  <img src="./lightwallet.png" alt="Lighthouse Bot">
+  <img class="w-screenshot" src="./lightwallet.png" alt="Budgets section in Lighthouse report">
   <figcaption class="w-figcaption">
+    "Budgets" section in Lighthouse report
   </figcaption>
 </figure>
 
