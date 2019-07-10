@@ -20,9 +20,16 @@ module.exports = {
         ],
       },
       {
+        title: 'Performance Budgets',
         title: 'Fast',
         pathItems: [
           'performance-budgets-with-the-angular-cli',
+        ],
+      },
+      {
+        title: 'Reliable',
+        pathItems: [
+          'precaching-with-the-angular-service-worker',
         ],
       },
       {
