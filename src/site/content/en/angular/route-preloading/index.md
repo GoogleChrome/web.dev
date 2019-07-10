@@ -43,7 +43,7 @@ RouterModule.forRoot([
 // ...
 ```
 
-Now let's serve the application and look at the **Network** panel in Chrome DevTools:
+Now serve the application and look at the **Network** panel in Chrome DevTools:
 
 {% Instruction 'devtools-network', 'ol' %}
 
