@@ -94,7 +94,7 @@ import {QuicklinkStrategy, QuicklinkModule} from 'ngx-quicklink';
 export class AppModule {}
 ```
 
-Now when you open the application again, you'll notice that the router only preloads `nyan-nyan-module.js` since the button in the center of the page has a router link to it:
+Now when you open the application again, you'll notice that the router only preloads `nyan-nyan-module.js` since the button in the center of the page has a router link to it. And when you open the side navigation, you'll notice that the router then preloads the "About" route:
 
 <figure class="w-figure w-figure--fullbleed">
 <video controls loop muted poster="https://storage.googleapis.com/web-dev-angular/preloading/poster.png">
