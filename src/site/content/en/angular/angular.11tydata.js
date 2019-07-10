@@ -18,8 +18,15 @@ module.exports = {
         pathItems: ['get-started-optimize-angular'],
       },
       {
+	title: 'Performance Budgets',
         title: 'Fast',
         pathItems: ['performance-budgets-with-the-angular-cli'],
+      },
+      {
+	title: 'Reliable',
+	pathItems: [
+	  'precaching-with-the-angular-service-worker',
+	],
       },
       {
         title: 'Accessible',
