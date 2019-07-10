@@ -14,7 +14,6 @@ description: |
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
-  - angular
 ---
 
 Support for natively lazy loading images and iframes is coming to the web! This video shows
