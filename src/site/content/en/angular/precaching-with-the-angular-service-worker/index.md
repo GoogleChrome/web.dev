@@ -4,11 +4,14 @@ title: 'Precaching with the Angular service worker'
 subhead: |
   Use the Angular service worker to make your app faster and more reliable on networks with poor connectivity.
 hero: precaching-with-the-angular-service-worker.jpg
+alt: Sparks flying off a metal grinder.
 date: 2019-07-02
 description: |
   Learn how to use the Angular service worker to precache the static assets in your app.
 authors:
   - mgechev
+tags:
+  - angular
 ---
 
 ## Dealing with limited connectivity
