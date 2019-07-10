@@ -20,7 +20,6 @@ module.exports = {
         ],
       },
       {
-        title: 'Performance Budgets',
         title: 'Fast',
         pathItems: [
           'performance-budgets-with-the-angular-cli',
