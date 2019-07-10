@@ -119,5 +119,5 @@ To speed up navigation when using route-level code-splitting:
 
 1. Pick the right preloading strategy depending on the size of your application:
     - Applications with few modules can use Angular's built-in `PreloadAllModules` strategy.
-    1. Applications with many modules should use a custom preloading strategy, like Angular's quicklink, or predictive preloading, as implemented in Guess.js.
+    - Applications with many modules should use a custom preloading strategy, like Angular's quicklink, or predictive preloading, as implemented in Guess.js.
 1. Configure the preloading strategy by setting the `preloadStrategy` property of the Angular router.
