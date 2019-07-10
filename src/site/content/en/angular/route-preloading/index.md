@@ -4,12 +4,15 @@ title: 'Route preloading strategies in Angular'
 subhead: |
   Preload routes ahead of time to speed up users' navigation.
 hero: route-preloading.jpg
+hero_position: bottom
 alt: Glass crystal ball
 date: 2019-07-09
 description: |
   Learn how to use Angular's preloading strategies for faster apps.
 authors:
   - mgechev
+tags:
+  - angular
 ---
 
 [Route-level code-splitting](/route-level-code-splitting) can help you reduce the initial load time of an application by delaying the JavaScript associated with routes that aren't initially needed. This way, the Angular router waits until a user navigates to a given route before triggering a network request to download the associated JavaScript.
