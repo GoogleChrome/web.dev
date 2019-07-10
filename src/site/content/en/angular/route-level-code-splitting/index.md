@@ -191,7 +191,7 @@ In the example below we've introduced artificial 500ms latency so that you can s
   </iframe>
 </div>
 
-In this post we optimized the app's initial load time at the cost of slowing down navigation to pages. In the next post on route preloading we'll see how we can workaround this problem!
+In this post we optimized the app's initial load time at the cost of slowing down navigation to pages. In the [next post](/route-preloading) on route preloading we'll see how we can workaround this problem!
 
 ## Conclusion
 
