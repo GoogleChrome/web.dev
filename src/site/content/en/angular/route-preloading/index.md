@@ -25,7 +25,7 @@ The Angular router provides a configuration property called `preloadingStrategy`
 * `PreloadAllModules`, which preloads all lazy-loaded routes, as the name implies
 * `QuicklinkStrategy`, which preloads only the routes associated with links on the current page.
 
-<em>The rest of this post refers to a sample Angular app. You can find the source code on <a href="https://github.com/mgechev/route-preloading-web-dev">GitHub</a>.</em></p>
+_The rest of this post refers to a sample Angular app. You can find the source code [on GitHub](https://github.com/mgechev/route-preloading-web-dev)._
 
 ### Using the `PreloadAllModules` strategy
 
