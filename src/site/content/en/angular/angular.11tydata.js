@@ -1,6 +1,6 @@
 module.exports = {
   // Tags are inherited by all posts.
-  tags: ['pathItem', 'react'],
+  tags: ['pathItem', 'angular'],
   path: {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
@@ -23,6 +23,20 @@ module.exports = {
         title: 'Fast',
         pathItems: [
           'route-level-code-splitting',
+          'route-preloading',
+          'performance-budgets-with-the-angular-cli',
+        ],
+      },
+      {
+        title: 'Reliable',
+        pathItems: [
+          'precaching-with-the-angular-service-worker',
+        ],
+      },
+      {
+        title: 'Accessible',
+        pathItems: [
+          'accessible-angular-with-codelyzer',
         ],
       },
     ],
