@@ -4,7 +4,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "lint:js": "eslint src/lib/** --no-ignore",
-    "lint:scss": "sass-lint -v -q",
+    "lint:scss": "sass-lint -c .sasslintrc -v -q",
     "build:gulp": "npx gulp build",
     "build:eleventy": "eleventy",
     "build:rollup": "rollup -c",
