@@ -7,6 +7,8 @@
 //
 // =============================================================================
 
+// TODO: Add focus and hover states to button-like elements.
+
 .w-profile-dialog {
   background: $WHITE;
   border-radius: 2px;
@@ -75,6 +77,11 @@
   white-space: nowrap;
   width: 100%;
   text-align: center;
+}
+
+.w-profile-dialog__account:focus {
+  outline: none;
+  text-decoration: none;
 }
 
 .w-profile-dialog__controls {
