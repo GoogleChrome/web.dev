@@ -1,0 +1,106 @@
+@import '../settings/colors';
+
+// =============================================================================
+// PROFILE SWITCHER OVERVIEW
+//
+// The profile switcher is our variation of the Google One Bar seen
+//
+// =============================================================================
+
+.w-profile-dialog {
+  background: $WHITE;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,.2);
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  right: 15px;
+  top: 62px;
+}
+
+.w-profile-dialog__user {
+  padding: 20px;
+}
+
+.w-profile-dialog__photo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.w-profile-dialog__photo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.w-profile-dialog__details {
+  font-size: 13px;
+  line-height: normal;
+}
+
+.w-profile-dialog__name {
+  margin-bottom: 1px;
+  font-weight: 500;
+}
+
+.w-profile-dialog__email {
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.w-profile-dialog__privacy {
+  color: #1a73e8;
+  display: block;
+  margin: 6px 0;
+}
+
+.w-profile-dialog__privacy:hover {
+  text-decoration: none;
+}
+
+.w-profile-dialog__account {
+  color: $WHITE;
+  background: #4d90fe;
+  border: 1px solid #3079ed;
+  border-radius: 2px;
+  display: inline-block;
+  font: 13px/28px Roboto ,Noto Sans, sans-serif;
+  font-weight: bold;
+  margin: 10px 0 0;
+  padding: 0 12px;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+
+.w-profile-dialog__controls {
+  background: #f5f5f5;
+  border-top: 1px solid rgba(0,0,0,.2);
+  display: block;
+  padding: 10px 20px;
+}
+
+.w-profile-dialog__button {
+  background: #f8f8f8;
+  border-radius: 2px;
+  border: 1px solid #c6c6c6;
+  box-shadow: none;
+  color: #666;
+  display: block;
+  font: 13px/28px Roboto ,Noto Sans, sans-serif;
+  height: auto;
+  margin: 0;
+  padding: 0 12px;
+  text-align: center;
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+}
+
+.w-profile-dialog__button:not(:last-of-type) {
+  margin-bottom: 8px;
+}
