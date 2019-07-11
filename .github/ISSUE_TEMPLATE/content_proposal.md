@@ -8,13 +8,19 @@ assignees: ''
 ---
 
 **A one to two sentence description of your post**
+
 What are you planning to teach folks in this post?
 
 **Target publish date:** `<yyyy-mm-dd>`
+
 - [ ] Check this box if this is a hard deadline.
 
 **Process**
-Make a copy of [this template](https://docs.google.com/document/d/1ydauCufwwavStaKxhIDHuNivVxgQBOdDno4uLjGIjmE/edit)
+
+Take a moment to look over the [web.dev handbook](https://web.dev/handbook) and
+familiarize yourself with the process.
+
+When you're ready, make a copy of [this template](https://docs.google.com/document/d/1ydauCufwwavStaKxhIDHuNivVxgQBOdDno4uLjGIjmE/edit)
 and fill in the proposal and outline sections. When you're finished, drop a link
 to the doc in the 1st step below and check the box. A member of the web.dev team
 will assign this ticket to themselves and work as your reviewer to help you
