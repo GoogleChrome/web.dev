@@ -1,6 +1,6 @@
-import {BaseElement} from '../BaseElement';
+import {BaseElement} from './BaseElement';
 import {html} from 'lit-element';
-import {signIn, signOut} from '../../fb';
+import {signIn, signOut} from '../fb';
 
 /* eslint-disable require-jsdoc */
 class ProfileSwitcher extends BaseElement {
@@ -13,24 +13,30 @@ class ProfileSwitcher extends BaseElement {
 
   render() {
     return html`
-      <button @click="${() => this.expanded = !this.expanded}">
-        <img
-          style="width: 32px; height: 32px; border-radius: 50%"
-          src="${this.user.photoURL}"
-        >
+      <button
+        class="w-profile-toggle"
+        @click="${() => this.expanded = !this.expanded}"
+      >
+        <img class="w-profile-toggle__photo" src="${this.user.photoURL}">
       </button>
       ${this.expanded ? this.expandedTemplate : ''}
     `;
   }
 
   firstUpdated() {
-    this.expanded = true;
     // Close the profile switcher if it's open and the user presses escape.
     this.addEventListener('keyup', (e) => {
       if (e.key === 'Escape') {
         if (this.expanded) {
           this.expanded = false;
         }
+      }
+    });
+
+    // Close the profile switcher if it's open and the user clicks outside.
+    document.addEventListener('click', (e) => {
+      if (this.expanded && !this.contains(e.target)) {
+        this.expanded = false;
       }
     });
   }
