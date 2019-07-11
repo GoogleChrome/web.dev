@@ -1,11 +1,11 @@
-import {BaseElement} from '../BaseElement';
+import {BaseElement} from './BaseElement';
 import {html} from 'lit-element';
+import {signIn} from '../fb';
+import {store} from '../store';
 import './ProfileSwitcher';
-import './SignIn';
-import {store} from '../../store';
 
 /* eslint-disable require-jsdoc */
-class UserProfileContainer extends BaseElement {
+class ProfileSwitcherContainer extends BaseElement {
   static get properties() {
     return {
       checkingSignedInState: {type: Boolean},
@@ -31,7 +31,7 @@ class UserProfileContainer extends BaseElement {
       `;
     } else {
       return html`
-        <web-sign-in></web-sign-in>
+        <button class="w-profile-signin" @click="${signIn}">Sign in</button>
       `;
     }
   }
@@ -44,4 +44,5 @@ class UserProfileContainer extends BaseElement {
   }
 }
 
-customElements.define('web-user-profile', UserProfileContainer);
+customElements.define(
+  'web-profile-switcher-container', ProfileSwitcherContainer);

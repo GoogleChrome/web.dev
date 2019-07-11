@@ -20,6 +20,9 @@ module.exports = {
     entryFileNames: outputPattern,
     chunkFileNames: outputPattern,
   },
+  watch: {
+    clearScreen: false,
+  },
   plugins: [
     resolve(),
     commonJs({
@@ -27,7 +30,7 @@ module.exports = {
     }),
     postcss({
       extract: true,
-      sourceMap: isProd ? false : true,
+      sourceMap: isProd ? false : 'inline',
     }),
     entrypointHashmanifest(),
   ],
