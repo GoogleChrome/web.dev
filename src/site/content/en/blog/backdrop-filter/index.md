@@ -44,7 +44,7 @@ Historically, these effects were difficult to implement on the web, requiring le
 - The overlaying element will get a new stacking context.
 
 {% Aside 'caution' %}
-`backdrop-filter` may harm performance. Test its use before deploying.
+`backdrop-filter` may harm performance. Test it before deploying.
 {% endAside %}
 
 CSS `backdrop-filter` applies one or more filters to the backdrop of an element, leaving the contents unchanged. Some people find its name confusing. Is it changing the background? Does it add another layer between the forground and background? Actually it does neither of these things. Rather, it makes an existing element transparent or partially transparent, altering the appearance of whatever is seen through it. It almost goes without saying that if the element has no transparency, that is, if its value is set to `none` there will be no effect on the background.
@@ -65,7 +65,7 @@ The following example illustrates this. For comparison, the image on the left sh
 <figure class="w-figure w-figure--center">
   <img src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop-filter.png" alt="The item on the right uses <code>backdrop-filter<code>. The one on the left does not.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    The item on the right uses <code>backdrop-filter<code>. The one on the left does not.
+    The item on the right uses <code>backdrop-filter</code>. The one on the left does not.
   </figcaption>
 </figure>
 
@@ -154,7 +154,7 @@ This example shows how to blur a semi-transparent background to make text readab
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    Try this <a href="https://mfreed7.github.io/backdrop-filter-feature/examples/scrollable.html" target="_blank">example</a>  for yourself.
+    Try this <a href="https://mfreed7.github.io/backdrop-filter-feature/examples/scrollable.html" target="_blank">example</a> for yourself.
   </figcaption>
 </figure>
 
@@ -183,7 +183,7 @@ This animation starts with the default background color `darkslategray` and uses
     <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    Try this example from [Chen Hui Jing](https://www.chenhuijing.com/#%F0%9F%91%9F) in <a href="https://tympanus.net/codrops-playground/huijing/Qqpwg5Iy/editor" target="_blank">Codrops</a>.
+    Try this example from <a href="https://www.chenhuijing.com/#%F0%9F%91%9F">Chen Hui Jing</a> in <a href="https://tympanus.net/codrops-playground/huijing/Qqpwg5Iy/editor" target="_blank">Codrops</a>.
   </figcaption>
 </figure>
 
