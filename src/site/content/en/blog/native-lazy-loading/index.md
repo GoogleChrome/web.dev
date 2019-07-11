@@ -5,7 +5,7 @@ authors:
   - houssein
   - addyosmani
   - mathiasbynens
-date: 2019-06-20
+date: 2019-07-17
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
