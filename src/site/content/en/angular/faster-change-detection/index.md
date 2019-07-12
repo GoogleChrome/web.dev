@@ -146,7 +146,7 @@ If there are many employees in the list, this process may block the browser's UI
 
 ## Skipping component subtrees
 
-When the user is typing in the text input for the sales `EmployeeListComponent` you know that the data in the R&D department isn't changing—so there's no reason to run change detection on its component. To make sure the R&D instance doesn't trigger change detection, set the `changeDetectionStrategy` of `EmployeeListComponent` to `OnPush`:
+When the user is typing in the text input for the _sales_ `EmployeeListComponent` you know that the data in the _R&D_ department isn't changing—so there's no reason to run change detection on its component. To make sure the R&D instance doesn't trigger change detection, set the `changeDetectionStrategy` of `EmployeeListComponent` to `OnPush`:
 
 ```js
 import { ChangeDetectionStrategy, ... } from '@angular/core';
