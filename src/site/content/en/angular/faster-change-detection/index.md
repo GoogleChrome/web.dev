@@ -28,7 +28,6 @@ To understand how Angular's change detection works, let's look at a sample app!
 _You can find the code for the app in [this GitHub repository](https://github.com/mgechev/change-detection-web-dev)._
 
 
-![Sample application](app.png "Sample application")
 
 The app lists employees from two departments in a company—sales and R&D—and has two components:
 
