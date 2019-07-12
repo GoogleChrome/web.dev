@@ -35,6 +35,8 @@ The app lists employees from two departments in a company—sales and R&D—and 
 * `AppComponent`, which is the root component of the app, and
 * Two instances of `EmployeeListComponent`, one for sales and one for R&D.
 
+![Sample application](app.png "Sample application")
+
 You can see the two instances of `EmployeeListComponent` in the template for `AppComponent`:
 
 ```html
