@@ -20,10 +20,16 @@ description: |
   }
 </style>
 
-Grammar and mechanics are important for making writing clear, but don't let them get in the way of putting text on the page! Content reviewers will always support you with editorial stuff. That said, here are a few conventions to be aware of.
+Grammar and mechanics are important for making writing clear. Content reviewers review posts and codelabs for editorial issues covered in this post. If a piece is already error free, the entire review process goes faster. To keep things simple, web.dev uses the following resources:
+* The [Google Developer Documentation Style Guide](https://developers.google.com/style/) (GDDSG) is the primary reference for writing style issues.
+* If a style issue isn't covered in the GDDGS, check the [Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html).
+* [Merriam-Webster](http://www.m-w.com) is the primary reference for spelling and capitalization.
+* The [Word list](/handbook/word-list) provides spelling and capitalization conventions specific to web.dev.
+
+The rest of this post describes grammar styles that are specific to web.dev and are different from the core resources.
 
 ## Instructions
-Use second person (_you_) rather than first person (_we_) except in rare cases where you're providing a rationale for a recommendation (e.g., "We chose this library because…").
+Use second person (_you_) rather than first person (_we_) except in rare cases where you're providing a rationale for a recommendation (for example, "We chose this library because…").
 
 Begin instructions with the objective rather than the action.
 
@@ -64,9 +70,9 @@ Don't include preceding articles (_a_, _an_, _the_) or surrounding punctuation i
 
 {% endCompare %}
 
-When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title and put double quotation marks outside the hyperlink. (See example above.)
+When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title and put double quotation marks outside the hyperlink.
 
-Libraries and tools should be linked the first time they're mentioned.
+Link to libraries and tools on the first time they're mentioned.
 
 ## Lists
 Use an ordered list (numbers) when instructing the reader to perform a series of actions.
@@ -94,8 +100,8 @@ Use an unordered list item for a standalone action.
 
 ## Numbers
 In general, spell out integers from one to nine unless:
-* The integer is attached to a unit (e.g., _3 KB_, _page 3_).
-* The integer is in the same sentence as a number larger than nine (e.g., "The menu contains 15 options, but 6 of them are disabled.")
+* The integer is attached to a unit (for example, _3 KB_, _page 3_).
+* The integer is in the same sentence as a number larger than nine (for example, "The menu contains 15 options, but 6 of them are disabled.")
 
 Use numerals for decimals and numbers higher than nine.
 
@@ -127,11 +133,11 @@ Use the serial comma before the last item in a list.
 {% endCompare %}
 
 ### Dashes and hyphens
-Use hyphens (-) with no surrounding space to link words together (e.g., _two-year-old_).
+Use hyphens (-) with no surrounding space to link words together (for example, _two-year-old_).
 
 Use em dashes (—) with no surrounding space—like this—to set off an aside.
 
-Use an en dash (–) for ranges (e.g., _10–100 KB_).
+Use an en dash (–) for ranges (for example, _10–100 KB_).
 
 ### Quotation marks and apostrophes
 Use straight quotation marks and apostrophes, not smart (curly).
@@ -161,7 +167,7 @@ Periods and commas always go inside quotation marks. Question marks and exclamat
 ## Text formatting
 Bold words for emphasis sparingly. (The primary use for bolding is [indicating UI element names](/handbook/grammar/#ui-elements-and-interaction).)
 
-Avoid mixing code font and standard font in a single word.
+Don't mix code font and standard font in a single word.
 
 {% Compare 'worse', 'Don’t' %}
 > `integer`s
@@ -259,7 +265,7 @@ Add a space before units.
 ## Usage
 Use consistent vocabulary throughout a piece and the collection it lives in.
 
-Acronyms should be spelled out the first time they're used, with the acronym following immediately after in parentheses.
+Spell out acronyms the first time they're used, with the acronym following immediately after in parentheses.
 
 {% Compare 'worse', 'Don’t' %}
 > WICG
@@ -270,10 +276,3 @@ Acronyms should be spelled out the first time they're used, with the acronym fol
 > Web Incubation Community Groups (WICG)
 
 {% endCompare %}
-
-## References
-These are the references content reviewers use when reviewing posts and codelabs for editorial issues beyond the ones covered in this post. They worry about this stuff so you don't have to!
-* The [Google Developer Documentation Style Guide](https://developers.google.com/style/) (GDDSG) is the primary reference for writing style issues.
-* If a style issue isn't covered in the GDDGS, check the [Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html).
-* [Merriam-Webster](http://www.m-w.com) is the primary reference for spelling and capitalization.
-* The [Word list](/handbook/word-list) provides spelling and capitalization conventions specific to web.dev.
