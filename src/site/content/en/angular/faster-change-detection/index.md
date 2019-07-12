@@ -2,7 +2,7 @@
 layout: post
 title: "Optimize Angular's change detection"
 subhead: |
-  Faster change detection for better user experience.
+  Implement faster change detection for better user experience.
 hero: change-detection.jpg
 alt: Different light bulb
 date: 2019-07-09
