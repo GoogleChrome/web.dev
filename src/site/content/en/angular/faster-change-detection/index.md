@@ -7,7 +7,7 @@ hero: change-detection.jpg
 alt: An array of light bulbs with a single bulb turned on.
 date: 2019-07-09
 description: |
-  Optimize the change detection of your app to make it more responsive and faster to use.
+  Learn how to optimize your Angular app's change detection to make it more responsive.
 authors:
   - mgechev
 tags:
