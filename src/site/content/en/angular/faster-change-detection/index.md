@@ -142,7 +142,7 @@ Now click **Record** <span style="width: 13px;height: 13px;background-color: #6E
 
 ![Performance profiling](profiling.png "Performance profiling in Chrome DevTools")
 
-If there are many employees in the list, this process may block the browser's UI thread and causes frame drops, which leads to a bad user experience.
+If there are many employees in the list, this process may block the browser's UI thread and cause frame drops, which leads to a bad user experience.
 
 ## Skipping component subtrees
 
