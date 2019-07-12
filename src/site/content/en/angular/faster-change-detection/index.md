@@ -138,7 +138,7 @@ You can verify that the slowdown comes from the `fibonacci` function by setting 
 
 {% Instruction 'devtools-performance', 'ol' %}
 
-Now click <span style="width: 13px;height: 13px;background-color: #6E6E6E;display: inline-block;border-radius: 50%;margin-left: 3px;margin-right: 3px;"></span> **Record** (in the top-left corner of the **Performance** panel) and start typing in one of the text boxes in the app. In a few seconds, click **Record** [icon] again to stop recording. Once Chrome DevTools processes all the profiling data it collected, you'll see something like this:
+Now click **Record** <span style="width: 13px;height: 13px;background-color: #6E6E6E;display: inline-block;border-radius: 50%;margin-left: 3px;margin-right: 3px;"></span> (in the top-left corner of the **Performance** panel) and start typing in one of the text boxes in the app. In a few seconds, click **Record** <span style="width: 13px;height: 13px;background-color: #6E6E6E;display: inline-block;border-radius: 50%;margin-left: 3px;margin-right: 3px;"></span> again to stop recording. Once Chrome DevTools processes all the profiling data it collected, you'll see something like this:
 
 ![Performance profiling](profiling.png "Performance profiling in Chrome DevTools")
 
