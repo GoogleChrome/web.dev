@@ -4,7 +4,7 @@ title: "Optimize Angular's change detection"
 subhead: |
   Implement faster change detection for better user experience.
 hero: change-detection.jpg
-alt: Different light bulb
+alt: An array of light bulbs with a single bulb turned on.
 date: 2019-07-09
 description: |
   Optimize the change detection of your app to make it more responsive and faster to use.
