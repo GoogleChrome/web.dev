@@ -11,13 +11,13 @@ authors:
   - mgechev
 ---
 
+This post explains how to set up route-level [code-splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive](https://web.dev/interactive).
+
 _You can find the code samples from this article on [GitHub](https://github.com/mgechev/code-splitting-web-dev). The eager routing example is available in the [eager branch](https://github.com/mgechev/code-splitting-web-dev/tree/eager). The route-level code-splitting example is in the [lazy branch](https://github.com/mgechev/code-splitting-web-dev/tree/lazy)._
 
 {% Aside %}
 This post assumes understanding of the Angular router. For a guide on how to use it, visit Angular's [official documentation](https://angular.io/guide/router).
 {% endAside %}
-
-This post explains how to set up route-level [code-splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive.](https://web.dev/interactive)
 
 ## Why code-splitting matters
 
@@ -94,7 +94,7 @@ This will generate:
 - A default route in the `NyanModule`
 - A component called `NyanComponent` that will be rendered when the user hits the default route
 
-To explain what's happening behind the scene, however, we'll go through these steps manually.
+Let's go through these steps manually so we get a better understanding of implementing code-splitting with Angular!
 
 When the user navigates to the `nyan` route, the router will render the `NyanComponent` in the router outlet.
 
@@ -134,7 +134,7 @@ import { RouterModule } from '@angular/router';
 export class NyanModule {}
 ```
 
-This code renders `NyanComponent` when the user navigates to [https://example.com/nyan](https://example.com/nyan).
+This code renders `NyanComponent` when the user navigates to `https://example.com/nyan`.
 
 To check that the Angular router downloads the `nyan.module` lazily in your local environment:
 
@@ -193,11 +193,14 @@ In the example below we've introduced an artificial 500 ms latency so that you c
   </iframe>
 </div>
 
-In this post we optimized the app's initial load time at the cost of slowing down navigation to pages. In the [next post](/route-preloading) on route preloading we'll see how we can workaround this problem!
+
+{% Aside %}
+Code-splitting can significantly improve an app's initial load time, but it comes at the cost of slowing down subsequent navigation. In the [next post](/route-preloading) on route preloading you'll see how to work around this problem!
+{% endAside %}
 
 ## Conclusion
 
 You can shrink the bundle size of your Angular applications by applying route-level code-splitting:
 
-1. Use the `ng g module nyan --module app --route nyan` generator to automatically scaffold a dynamically loaded route
+1. Use the Angular CLI lazy-loaded module generator to automatically scaffold a dynamically loaded route
 1. Add a loading indicator when the user navigates to a lazy route to show there's an ongoing action.
