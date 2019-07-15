@@ -199,6 +199,5 @@ In this post we optimized the app's initial load time at the cost of slowing dow
 
 You can shrink the bundle size of your Angular applications by applying route-level code-splitting:
 
-1. Introduce route-level code-splitting in an Angular application.
 1. Use the `ng g module nyan --module app --route nyan` generator to automatically scaffold a dynamically loaded route
 1. Add a loading indicator when the user navigates to a lazy route to show there's an ongoing action.
