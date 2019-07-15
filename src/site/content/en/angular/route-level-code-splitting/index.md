@@ -13,7 +13,9 @@ authors:
 
 _You can find the code samples from this article on [GitHub](https://github.com/mgechev/code-splitting-web-dev). The eager routing example is available in the [eager branch](https://github.com/mgechev/code-splitting-web-dev/tree/eager). The route-level code-splitting example is in the [lazy branch](https://github.com/mgechev/code-splitting-web-dev/tree/lazy)._
 
-_This post assumes understanding of the Angular router. For a guide on how to use it, visit Angular's [official documentation](https://angular.io/guide/router)._
+{% Aside %}
+This post assumes understanding of the Angular router. For a guide on how to use it, visit Angular's [official documentation](https://angular.io/guide/router).
+{% endAside %}
 
 This post explains how to set up route-level [code-splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive.](https://web.dev/interactive)
 
