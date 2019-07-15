@@ -194,7 +194,7 @@ In the example below we've introduced an artificial 500 ms latency so that you c
 </div>
 
 
-{% Aside %}
+{% Aside 'warning' %}
 Code-splitting can significantly improve an app's initial load time, but it comes at the cost of slowing down subsequent navigation. In the [next post](/route-preloading) on route preloading you'll see how to work around this problem!
 {% endAside %}
 
@@ -202,5 +202,5 @@ Code-splitting can significantly improve an app's initial load time, but it come
 
 You can shrink the bundle size of your Angular applications by applying route-level code-splitting:
 
-1. Use the Angular CLI lazy-loaded module generator to automatically scaffold a dynamically loaded route
+1. Use the Angular CLI lazy-loaded module generator to automatically scaffold a dynamically loaded route.
 1. Add a loading indicator when the user navigates to a lazy route to show there's an ongoing action.
