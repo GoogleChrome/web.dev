@@ -184,7 +184,7 @@ export class AppComponent {
 }
 ```
 
-In the example below we've introduced artificial 500ms latency so that you can see the spinner in action.
+In the example below we've introduced an artificial 500 ms latency so that you can see the spinner in action.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
