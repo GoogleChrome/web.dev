@@ -39,7 +39,7 @@ Historically, these effects were difficult to implement on the web, requiring le
 
 # Overview
 
-- The `backdrop-filter` property can apply one or more filters to an element.
+- The `backdrop-filter` property applies one or more filters to an element, changing the appearance of anything behind the element.
 - The overlaying element must be at least partially transparent.
 - The overlaying element will get a new stacking context.
 
