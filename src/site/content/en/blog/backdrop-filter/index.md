@@ -94,7 +94,7 @@ Let's look at some examples.
 
 ### Single filter
 
-In the following example, the frosted effect is achieved by combining color and blur. The blur is supplied by `backdrop-filter`, while the color comes from the element's transparent background color. Combined, they produce the blurred, semi-transparent backdrop you see here.
+In the following example, the frosted effect is achieved by combining color and blur. The blur is supplied by `backdrop-filter`, while the color comes from the element's semi-transparent background color.
 
 ```css
 .blur-behind-me {
