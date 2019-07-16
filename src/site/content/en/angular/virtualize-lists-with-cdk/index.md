@@ -31,7 +31,14 @@ In Angular, virtual scrolling is provided by the [Component Dev Kit (CDK)](https
 
 Instead of rendering the entire list at a time, only a subset of the items that fits on the screen (plus a small buffer) will be rendered. As the user navigates, a new subset of items is calculated and rendered, re-using the existing DOM if desired.
 
-The rest of this post walks through how to set up basic virtual scrolling. You can see a [full working example on StackBlitz](https://stackblitz.com/edit/scroll-list?file=src/app/app.component.ts).
+The rest of this post walks through how to set up basic virtual scrolling. You can see a full working example in this sample app:
+
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://stackblitz.com/edit/scroll-list?embed=1&file=src/app/app.component.ts&view=preview"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 ## Setting up virtual scrolling
 First make sure you've installed `@angular/cdk` using your favorite package manager. To install it using npm run this command in the terminal:
@@ -82,7 +89,6 @@ export class ScrollComponent {
 ```
 
 Because `ScrollingModule` dynamically renders subsets of the list, you have to specify the height of the viewport via standard CSS. You also need to give the viewport a hint about its content by specifying the `itemSize`. The module uses this information to determine how many items to keep in the DOM at a given time and how to render an appropriately sized scrollbar.
-
 
 ```js/1
 @Component({
