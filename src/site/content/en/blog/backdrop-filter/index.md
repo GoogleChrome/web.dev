@@ -114,7 +114,7 @@ In the following example, the frosted effect is achieved by combining color and 
 
 ### Multiple filters
 
-Sometimes you'll need multiple filters to achieve the desired effect. To do this, provide a list of filters separated by a space.
+Sometimes you'll need multiple filters to achieve the desired effect. To do this, provide a list of filters separated by a space. For example:
 
 In the following example, each of the four panes have different combinations of backdrop filters while the same set of shapes are animated behind them.
 
