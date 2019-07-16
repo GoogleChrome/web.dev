@@ -101,7 +101,7 @@ should you choose?
 - If clicking on the element will perform an _action_ on the page, use
   `<button>`.
 - If clicking on the element will _navigate_ the user to a new page then use
-  `<a>`. This includes single page web apps which load new content and update
+  `<a>`. This includes single page web apps that load new content and update
   the URL using the
   [History API](https://developer.mozilla.org/en-US/docs/Web/API/History).
 
