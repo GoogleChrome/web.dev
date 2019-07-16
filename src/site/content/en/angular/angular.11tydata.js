@@ -22,6 +22,7 @@ module.exports = {
         pathItems: [
           'performance-budgets-with-the-angular-cli',
           'route-preloading',
+	  'faster-change-detection',
         ],
       },
       {
