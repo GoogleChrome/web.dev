@@ -135,7 +135,7 @@ In the following example, each of the four panes has a different combination of 
 
 ## Creative examples
 
-Here are some interesting capabilities unlocked with `backdrop-filter`. I find these examples are best for teaching what could beß.
+`backdrop-filter` unlocks many interesting design possibilities. These examples show just a few of the things you can do with the property.
 
 ### Overlays
 
