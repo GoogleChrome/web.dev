@@ -116,7 +116,7 @@ In the following example, the frosted effect is achieved by combining color and 
 
 Sometimes you'll need multiple filters to achieve the desired effect. To do this, provide a list of filters separated by a space. For example:
 
-In the following example, each of the four panes have different combinations of backdrop filters while the same set of shapes are animated behind them.
+In the following example, each of the four panes has a different combination of backdrop filters while the same set of shapes is animated behind them.
 
 ```css
 .brighten-saturate-and-blur-behind-me {
