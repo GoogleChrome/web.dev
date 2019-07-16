@@ -39,7 +39,7 @@ Historically, these techniques were difficult to implement on the web, requiring
 
 ## Basics
 
-- The `backdrop-filter` property can apply one or more filters to an element.
+- The `backdrop-filter` property applies one or more filters to an element, changing the appearance of anything behind the element.
 - The overlaying element must be at least partially transparent.
 - The overlaying element will get a new stacking context.
 
@@ -88,7 +88,7 @@ Design techniques and styles previously reserved for native operating systems ar
 
 ### Single filter
 
-In the following example, the frosted effect is achieved by combining color and blur. The blur is supplied by `backdrop-filter`, while the color comes from the element's transparent background color. Combined, they produce the blurred, semi-transparent backdrop you see here.
+In the following example, the frosted effect is achieved by combining color and blur. The blur is supplied by `backdrop-filter`, while the color comes from the element's semi-transparent background color.
 
 ```css
 .blur-behind-me {
@@ -108,7 +108,7 @@ In the following example, the frosted effect is achieved by combining color and 
 
 ### Multiple filters
 
-Sometimes you'll need multiple filters to achieve the desired effect. To do this, provide a list of filters separated by a space.
+Sometimes you'll need multiple filters to achieve the desired effect. To do this, provide a list of filters separated by a space. For example:
 
 ```css
 .brighten-saturate-and-blur-behind-me {
