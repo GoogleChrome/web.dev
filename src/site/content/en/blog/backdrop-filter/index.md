@@ -2,7 +2,7 @@
 title: "A view through the fog"
 subhead: |
   Blurring and color shifting behind an element.
-date: 2019-07-12
+date: 2019-07-17
 authors:
   - adamargyle
   - joemedley
@@ -149,7 +149,7 @@ This example shows how to blur a semi-transparent background to make text readab
 
 ### Text contrast on dynamic backgrounds
 
-I said earlier that `backdrop-filter` allows performant effects that would be difficult or impossible on the web. An example of this is changing a background in respone to an animation. In this example, `backdrop-filter` maintains the high contrast between the text and its background in spite of what's going on behind the text. It starts with the default background color `darkslategray` and uses `backdrop-filter` to invert the colors after the transformation.
+As stated earlier that `backdrop-filter` allows performant effects that would be difficult or impossible on the web. An example of this is changing a background in respone to an animation. In this example, `backdrop-filter` maintains the high contrast between the text and its background in spite of what's going on behind the text. It starts with the default background color `darkslategray` and uses `backdrop-filter` to invert the colors after the transformation.
 
 ```css
 .container::before {
