@@ -116,7 +116,7 @@ Sometimes you'll need multiple filters to achieve the desired effect. To do this
 }
 ```
 
-In the following example, each of the four panes have different combinations of backdrop filters while the same set of shapes are animated behind them.
+In the following example, each of the four panes has a different combination of backdrop filters while the same set of shapes are animated behind them.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
