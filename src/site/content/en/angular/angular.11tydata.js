@@ -18,12 +18,13 @@ module.exports = {
         pathItems: ['get-started-optimize-angular'],
       },
       {
-        title: 'Fast',
-        pathItems: [
-          'performance-budgets-with-the-angular-cli',
-          'route-preloading',
+	title: 'Fast',
+	pathItems: [
+	  'route-level-code-splitting',
+	  'route-preloading',
+	  'performance-budgets-with-the-angular-cli',
 	  'faster-change-detection',
-        ],
+	],
       },
       {
         title: 'Reliable',
