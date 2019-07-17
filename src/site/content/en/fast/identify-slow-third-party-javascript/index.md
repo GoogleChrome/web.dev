@@ -79,7 +79,9 @@ You should now see a badge next to each third-party script. Click on a badge to 
 
 ![Screenshot of the Chrome DevTools Network panel with third-party badges turned on.](badge-popup.png)
 
+{% Aside %}
 For more info about the impact of third-party JavaScript on performance, check out [https://www.thirdpartyweb.today](https://www.thirdpartyweb.today/). It uses [HTTP Archive](https://httparchive.org/) data to give an overview of third-party vendors and their impact on the web.
+{% endAside %}
 
 ### Chrome DevTools Performance panel
 Once enabled, third-party badges also appear in the DevTools **Performance** panel. The **Performance** panel records a waterfall representing where your site is spending time and helps you inspect performance in detail.
