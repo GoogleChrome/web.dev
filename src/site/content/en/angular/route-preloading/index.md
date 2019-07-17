@@ -13,7 +13,7 @@ authors:
   - mgechev
 tags:
   - angular
-  - fast
+  - performance
 ---
 
 [Route-level code-splitting](/route-level-code-splitting) can help you reduce the initial load time of an application by delaying the JavaScript associated with routes that aren't initially needed. This way, the Angular router waits until a user navigates to a given route before triggering a network request to download the associated JavaScript.

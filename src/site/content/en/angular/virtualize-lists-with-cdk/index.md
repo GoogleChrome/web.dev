@@ -16,7 +16,7 @@ description: |
   Learn how to make large lists more responsive by implementing virtual scrolling with the Angular Component Dev Kit.
 tags:
   - angular
-  - fast
+  - performance
 ---
 
 The scrolling list is one of the most common UI patterns today, whether it's browsing an infinitely scrolling feed on your favorite social media site, or navigating an enterprise dashboard. When scrolling lists become very long (hundreds, thousands, or hundreds of thousands of items), application performance can suffer.

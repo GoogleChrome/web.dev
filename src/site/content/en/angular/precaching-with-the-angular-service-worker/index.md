@@ -12,8 +12,8 @@ authors:
   - mgechev
 tags:
   - angular
-  - fast
-  - reliable
+  - performance
+  - reliability
 ---
 
 ## Dealing with limited connectivity
