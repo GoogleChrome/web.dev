@@ -6,6 +6,7 @@ const secure = require('../secure/secure.11tydata.js').path;
 const installable = require('../installable/installable.11tydata.js').path;
 
 const react = require('../react/react.11tydata.js').path;
+const angular = require('../angular/angular.11tydata.js').path;
 
 const lighthousePerformance = require(
   '../lighthouse-performance/lighthouse-performance.11tydata.js'
@@ -43,6 +44,7 @@ module.exports = {
   ],
   frameworks: [
     react,
+    angular,
   ],
   audits: [
     lighthousePerformance,

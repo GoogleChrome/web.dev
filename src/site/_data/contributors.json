@@ -1432,8 +1432,26 @@
       "given": "Stephen",
       "family": "Fluin"
     },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Advocate for Angular"
+    },
     "country": "US",
     "twitter": "stephenfluin",
     "github": "stephenfluin"
+  },
+  "mohamedzamakhan": {
+    "name": {
+      "given": "Zama Khan",
+      "family": "Mohammed"
+    },
+    "org": {
+      "name": "Tekzenit, Inc.",
+      "unit": "Software Engineering"
+    },
+    "country": "USA",
+    "homepage": "https://blog.mgechev.com/",
+    "twitter": "mohamedzamakhan",
+    "github": "mohammedzamakhan"
   }
 }
