@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Route-Level code-splitting in Angular'
+title: 'Route-level code-splitting in Angular'
 subhead: |
   Improve the performance of your app by using route-level code-splitting!
 hero: route-level-code-splitting.jpg
