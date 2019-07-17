@@ -116,7 +116,15 @@ export class ScrollComponent {
 
  Instead of iterating through the entire list, the viewport will dynamically identify and iterate through the correct subset of the list for the user. Now when the user loads the page, the CDK should render the subset of the list that fits on the screen (plus a bit of buffer), and any scrolling events in the viewport will load and render the appropriate subset of the list:
 
-![A video showing the CDK rendering subsets of a list as the user scrolls](./render-subset.gif)
+<figure>
+  <video autoplay loop muted playsinline>
+    <source src="./render-subset.webm" type="video/webm">
+    <source src="./render-subset.mp4" type="video/mp4">
+  </video>
+  <figcaption>
+    The CDK rendering subsets of a list as the user scrolls.
+  </figcaption>
+</figure>
 
 ## Going further
 The CDK's virtual scroll abilities go much further than this basic example. In the [sample app](https://stackblitz.com/edit/scroll-list?file=src/app/app.component.ts), the entire list was in memory, but the list could be fetched on demand for more complex applications. You can learn more about the other capabilities of `ScrollingModule` and the `cdkVirtualOf` directive by reading about `Scrolling` in the [CDK documentation](https://material.angular.io/cdk/scrolling/overview).
