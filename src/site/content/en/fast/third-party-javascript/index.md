@@ -68,4 +68,4 @@ Using third-party JavaScript is often unavoidable, but there are things you can 
 - Don't use the same functionality from two different vendors. You probably don't need two tag managers or two analytics platforms.
 - Routinely audit and clean out redundant third-party scripts.
 
-To learn how to audit third-party content and load it efficiently for better performance and user experience, check out the other posts in the [third-party resources collection](/fast/#optimize-your-third-party-resources).
+To learn how to audit third-party content and load it efficiently for better performance and user experience, check out the other posts in the [Optimize your third-party resources](/fast/#optimize-your-third-party-resources) section.
