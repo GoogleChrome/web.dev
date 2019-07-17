@@ -48,21 +48,28 @@ Historically, these techniques were difficult to implement on the web, requiring
 
 CSS `backdrop-filter` applies one or more filters to the backdrop of an element, leaving the contents unchanged. Some people find its name confusing. Is it changing the background? It does not. Rather, it alters the appearance of whatever is seen through it. It almost goes without saying that if the element has no transparency, that is, if its value is set to `none` there will be no effect on the background.
 
-The following example illustrates this. For comparison, the image on the left shows how overlapping elements would be rendered if `backdrop-filter` were not used or supported. The image on the right applies `backdrop-filter` and `opacity`. Here's the CSS declaration that defines this.
+The following example illustrates this. For comparison, the image on the left shows how overlapping elements would be rendered if `backdrop-filter` were not used or supported. The image on the right applies `backdrop-filter` and `opacity`.
 
+<div class="w-columns">
+{% Compare 'worse', 'No foreground transparency' %}
 ```css
+.frosty-glass-pane {
+  backdrop-filter: blur(2px);
+}
+```
+![A triangle superimposed on a circle. The circle can't be seen through the triangle.](./transparency-off.png)
+{% endCompare %}
+
+{% Compare 'better', 'Foreground transparency' %}
+```css/1
 .frosty-glass-pane {
   opacity: .9;
   backdrop-filter: blur(2px);
 }
 ```
-
-<figure class="w-figure w-figure--center">
-  <img src="backdrop-filter.png" alt="The item on the right uses <code>backdrop-filter<code>. The one on the left does not.">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    The item on the right uses <code>backdrop-filter</code> and <code>opacity</code>. The one on the left does not.
-  </figcaption>
-</figure>
+![A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.](./transparency-on.png)
+{% endCompare %}
+</div>
 
 The `backdrop-filter` property is like CSS [filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) in that all your favorite [filter functions](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Filter_functions) are supported: `blur()`, `brightness()`, `contrast()`, `opacity()`, `drop-shadow()`, and so on. It also supports the `url()` function if you want to use an external image as the filter, as well as the keywords `none`, `inherit`, `initial`, and `unset`. There are explanations for all of this on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), including descriptions of syntax, filters, and values.
 
