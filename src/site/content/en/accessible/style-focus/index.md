@@ -76,7 +76,7 @@ for a summary of which browsers and operating systems will apply focus to
 `<button>` elements.
 {% endAside %}
 
-Because the behavior of focus be inconsistent, it may require a bit of testing
+Because the behavior of focus is inconsistent, it may require a bit of testing
 on different devices to ensure your focus styles are acceptable to your users.
 
 ## Use `:focus-visible` to selectively show a focus indicator
