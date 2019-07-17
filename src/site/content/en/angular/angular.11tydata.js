@@ -20,7 +20,7 @@ module.exports = {
       {
         title: 'Fast',
         pathItems: [
-          'route-level-code-splitting',
+          'route-level-code-splitting-in-angular',
           'route-preloading',
           'performance-budgets-with-the-angular-cli',
           'faster-change-detection',
