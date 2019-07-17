@@ -9,9 +9,8 @@ authors:
 hero: hero.jpg
 alt: A view through a rain-covered foggy window.
 description: |
-  CSS backdrop-filter was made famous by Apple's design team.
-  It adds background effects like blurring and transparency to
-  the artefacts behind an element.
+  Learn how to add background effects like blurring and transparency to UI
+  elements on the web using the CSS backdrop-filter property.
 tags:
   - post
   - css
