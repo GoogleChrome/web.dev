@@ -70,17 +70,16 @@ The default limit for both assets and entry-points is **250 KB**. You can set yo
   </figcaption>
 </figure>
 
-The numbers are compared against **uncompressed asset sizes**. This is not an ideal situation, since most hosting platforms, CDNs and reverse proxy servers compress assets by default. You can give yourself some wiggle room during development, but keep in mind that compression speeds up only the transfer. Browsers still have to execute uncompressed files and the [cost of this is not small](https://v8.dev/blog/cost-of-javascript-2019), especially on mobile devices.
+The budgets are compared against **uncompressed asset sizes**. Uncompressed [JavaScript size is related to the execution time](https://v8.dev/blog/cost-of-javascript-2019) and big files can take a long time to execute, especially on mobile devices. 
 
 {% Aside %}
-Bonus feature: webpack won’t only warn you, it will give you a recommendation
-on how to downsize your bundles.
+Compressed asset sizes affect the transfer time, which is very important on slow networks.
 {% endAside %}
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot w-screenshot--filled" src="./webpack-recommendation.jpg" alt="Webpack performance optimization recommendation">
   <figcaption class="w-figcaption">
-    Webpack performance optimization recommendation 💁
+    Bonus feature: webpack won’t only warn you, it will give you a recommendation on how to downsize your bundles. 💁
   </figcaption>
 </figure>
 
@@ -195,7 +194,7 @@ If you find your pull request blocked by a poor Lighthouse score, run an audit w
       </td>
     </tr>
     <tr>
-      <td>Webpack</td>
+      <td>webpack</td>
       <td>✅</td>
       <td>✘</td>
       <td>
@@ -206,7 +205,7 @@ If you find your pull request blocked by a poor Lighthouse score, run an audit w
       </td>
     </tr>
     <tr>
-      <td>Bundlesize</td>
+      <td>bundlesize</td>
       <td>✅</td>
       <td>✅</td>
       <td>
