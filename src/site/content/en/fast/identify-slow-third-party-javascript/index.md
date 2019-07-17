@@ -67,7 +67,7 @@ To enable third-party badges:
 1. Press `Control+Shift+P` (or `Command+Shift+P` on Mac) to bring up the **Command** menu.
 1. Enter `Show third party badges` in the box.
 
-![Screenshot of the Chrome DevTools Command menu.](./badges.png)
+<img class="w-figure--center" src="./badges.png" alt="Screenshot of the Chrome DevTools Command menu.">
 
 Now you can see third-party badges on any site you visit. To test this, navigate to [https://developers.google.com/web/](https://developers.google.com/web/).
 
