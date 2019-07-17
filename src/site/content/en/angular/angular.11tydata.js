@@ -23,7 +23,7 @@ module.exports = {
           'route-level-code-splitting-in-angular',
           'route-preloading-in-angular',
           'performance-budgets-with-the-angular-cli',
-          'faster-change-detection',
+          'faster-angular-change-detection',
           'virtualize-lists-with-cdk',
         ],
       },
