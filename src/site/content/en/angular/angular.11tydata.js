@@ -11,7 +11,7 @@ module.exports = {
     description: `Build performant and progressive Angular applications.`,
     overview: `In this collection you’ll learn practical tips and tricks to
     make your Angular applications faster, more reliable, more accessible,
-    and more generally awesome.`,
+    and generally awesome.`,
     topics: [
       {
         title: 'Introduction',
