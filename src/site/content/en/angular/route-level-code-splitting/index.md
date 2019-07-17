@@ -9,6 +9,9 @@ description: |
   Learn how to make your initial app bundle smaller by using route-level code-splitting.
 authors:
   - mgechev
+tags:
+  - angular
+  - fast
 ---
 
 This post explains how to set up route-level [code-splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive](https://web.dev/interactive).
@@ -63,13 +66,13 @@ Check out the implementation of the app's modules. Inside `AppModule` two routes
     BrowserModule,
     RouterModule.forRoot([
       {
-	path: '',
-	component: HomeComponent,
-	pathMatch: 'full'
+        path: '',
+        component: HomeComponent,
+        pathMatch: 'full'
       },
       {
-	path: 'nyan',
-	component: NyanComponent
+        path: 'nyan',
+        component: NyanComponent
       }
     ])
   ],
@@ -173,11 +176,11 @@ export class AppComponent {
     this.loading = false;
     router.events.subscribe(
       (event: RouterEvent): void => {
-	if (event instanceof NavigationStart) {
-	  this.loading = true;
-	} else if (event instanceof NavigationEnd) {
-	  this.loading = false;
-	}
+        if (event instanceof NavigationStart) {
+          this.loading = true;
+        } else if (event instanceof NavigationEnd) {
+          this.loading = false;
+        }
       }
     );
   }

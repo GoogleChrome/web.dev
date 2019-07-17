@@ -16,6 +16,7 @@ description: |
   Learn how to make large lists more responsive by implementing virtual scrolling with the Angular Component Dev Kit.
 tags:
   - angular
+  - fast
 ---
 
 The scrolling list is one of the most common UI patterns today, whether it's browsing an infinitely scrolling feed on your favorite social media site, or navigating an enterprise dashboard. When scrolling lists become very long (hundreds, thousands, or hundreds of thousands of items), application performance can suffer.
@@ -68,7 +69,7 @@ To see how the package works, try creating a component with a simple list of num
 @Component({
   template: `<div *ngFor="let item of list">{{item}}</div>`
 })
-export class ScrollComponent {  
+export class ScrollComponent {
   list = Array.from({length: 100000}).map((_, i) => i);
 }
 ```
@@ -96,7 +97,7 @@ Because `ScrollingModule` dynamically renders subsets of the list, you have to s
     <div *ngFor="let item of list">{{item}}</div>
     </cdk-virtual-scroll-viewport>`
 })
-export class ScrollComponent {  
+export class ScrollComponent {
   list = Array.from({length: 100000}).map((_, i) => i);
 }
 ```
@@ -109,7 +110,7 @@ Finally, convert `*ngFor` to `*cdkVirtualFor`:
     <div *cdkVirtualFor="let item of list">{{item}}</div>
     </cdk-virtual-scroll-viewport>`
 })
-export class ScrollComponent {  
+export class ScrollComponent {
   list = Array.from({length: 100000}).map((_, i) => i);
 }
 ```

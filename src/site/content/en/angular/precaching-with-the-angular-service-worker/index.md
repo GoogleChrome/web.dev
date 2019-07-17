@@ -12,6 +12,8 @@ authors:
   - mgechev
 tags:
   - angular
+  - fast
+  - reliable
 ---
 
 ## Dealing with limited connectivity
@@ -73,13 +75,13 @@ One important asset is missing though: `nyan.png`. To precache this image you ne
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-	"files": [
-	  "/favicon.ico",
-	  "/index.html",
-	  "/*.css",
-	  "/*.js",
-	  "/assets/*.png"
-	]
+      "files": [
+        "/favicon.ico",
+        "/index.html",
+        "/*.css",
+        "/*.js",
+        "/assets/*.png"
+        ]
       }
     },
     ...

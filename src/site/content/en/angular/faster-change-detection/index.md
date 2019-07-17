@@ -12,6 +12,7 @@ authors:
   - mgechev
 tags:
   - angular
+  - fast
 ---
 
 Angular runs its [change detection mechanism](https://angular.io/api/core/ChangeDetectorRef) periodically so that changes to the data model are reflected in an app's view. Change detection can be triggered either manually or through an asynchronous event (for example, a user interaction or an XHR completion).

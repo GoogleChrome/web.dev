@@ -18,13 +18,14 @@ module.exports = {
         pathItems: ['get-started-optimize-angular'],
       },
       {
-	title: 'Fast',
-	pathItems: [
-	  'route-level-code-splitting',
-	  'route-preloading',
-	  'performance-budgets-with-the-angular-cli',
-	  'faster-change-detection',
-	],
+        title: 'Fast',
+        pathItems: [
+          'route-level-code-splitting',
+          'route-preloading',
+          'performance-budgets-with-the-angular-cli',
+          'faster-change-detection',
+          "virtualize-lists-with-cdk",
+        ],
       },
       {
         title: 'Reliable',
