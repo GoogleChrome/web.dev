@@ -1421,10 +1421,19 @@
       "name": "Google",
       "unit": "Developer Programs Engineer for Angular"
     },
-    "country": "USA",
+    "country": "US",
     "homepage": "https://blog.mgechev.com/",
     "twitter": "mgechev",
     "github": "mgechev",
     "glitch": "mgechev"
+  },
+  "sfluin": {
+    "name": {
+      "given": "Stephen",
+      "family": "Fluin"
+    },
+    "country": "US",
+    "twitter": "stephenfluin",
+    "github": "stephenfluin"
   }
 }
