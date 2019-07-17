@@ -24,7 +24,7 @@ module.exports = {
           'route-preloading-in-angular',
           'performance-budgets-with-the-angular-cli',
           'faster-angular-change-detection',
-          'virtualize-lists-with-cdk',
+          'virtualize-lists-with-angular-cdk',
         ],
       },
       {
