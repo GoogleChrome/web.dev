@@ -1,16 +1,14 @@
 ---
 layout: post
 title: Third-party JavaScript performance
+subhead: Find out how third-party JavaScript can affect performance and what you can do to keep it from slowing down your sites.
 authors:
   - mihajlija
 date: 2019-07-16
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-# hero: hero.jpg
-# You can adjust the position of your hero image with this property.
-# Values: top | bottom | center (default)
-# hero_position: bottom
-# alt: A description of the hero image for screen reader users.
+hero: hero.png
+alt: A blue diagram of a webpage.
 description: |
   This post describes the common kinds of third-party JavaScript and the performance issues they can cause. It also provides general guidance about how to optimize third-party scripts.
 tags:
@@ -31,7 +29,9 @@ Sites use these scripts for various purposes, including:
 - A/B testing scripts for experiments
 - Helper libraries (like date formatting, animation, and functional libraries)
 
-![A diagram of a webpage showing multiple kinds of third-party scripts, including social sharing buttons, video player embeds, ads, map embeds, chat widgets, and A/B testing scripts.](./script-examples.png)
+<figure class="w-figure w-figure--fullbleed">
+  <img src="./script-examples.png" alt="A diagram of a webpage showing multiple kinds of third-party scripts, including social sharing buttons, video player embeds, ads, map embeds, chat widgets, and A/B testing scripts.">
+</figure>
 
 Third-party scripts can provide powerful functionality, but that's not the whole story. They also affect privacy, security, and page behavior⁠—and they can be particularly problematic for performance.
 
