@@ -16,7 +16,7 @@ tags:
   - performance
 ---
 
-[Route-level code-splitting](/route-level-code-splitting) can help you reduce the initial load time of an application by delaying the JavaScript associated with routes that aren't initially needed. This way, the Angular router waits until a user navigates to a given route before triggering a network request to download the associated JavaScript.
+[Route-level code-splitting](/route-level-code-splitting-in-angular) can help you reduce the initial load time of an application by delaying the JavaScript associated with routes that aren't initially needed. This way, the Angular router waits until a user navigates to a given route before triggering a network request to download the associated JavaScript.
 
 While this technique is great for initial page load, it can slow down navigation, depending on the users' network latency and bandwidth. One way to tackle this problem is **route preloading**. Using preloading, when the user is at a given route, you can download and cache JavaScript associated with routes that are likely to be needed next. The Angular router provides this functionality out of the box.
 

@@ -198,7 +198,7 @@ In the example below we've introduced an artificial 500 ms latency so that you c
 
 
 {% Aside 'warning' %}
-Code-splitting can significantly improve an app's initial load time, but it comes at the cost of slowing down subsequent navigation. In the [next post](/route-preloading) on route preloading you'll see how to work around this problem!
+Code-splitting can significantly improve an app's initial load time, but it comes at the cost of slowing down subsequent navigation. In the [next post](/route-preloading-in-angular) on route preloading you'll see how to work around this problem!
 {% endAside %}
 
 ## Conclusion
