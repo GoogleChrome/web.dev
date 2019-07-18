@@ -3,15 +3,20 @@ title: stale-while-revalidate via Cache-Control
 subhead: An additional tool to help you balance immediacy and freshness when serving your web app.
 authors:
   - jeffposnick
-date: 2019-07-15
+date: 2019-07-18
 description: stale-while-revalidate helps developers balance between immediacy—loading cached content right away—and freshness—ensuring updates to the cached content are used in the future.
+hero: hero.jpg
+# You can adjust the position of your hero image with this property.
+# Values: top | bottom | center (default)
+# hero_position: bottom
+alt: A photograph of a half-painted wall.
 tags:
   - post
   - speed
   - caching
 ---
 
-# What shipped?
+## What shipped?
 
 [`stale-while-revalidate`](https://tools.ietf.org/html/rfc5861#section-3) helps
 developers balance between immediacy—*loading cached content right away*—and
@@ -30,7 +35,7 @@ configuration value, and use
 [`max-age`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#max-age),
 as I'll explain shortly..
 
-# What's it mean?
+## What's it mean?
 
 Let's break down `stale-while-revalidate` into two parts: the idea that a cached
 response might be stale, and the process of revalidation.
@@ -64,7 +69,7 @@ request. The browser will instead retrieve a response from the network, and use
 that for both fulfilling the initial request and also populating the local cache
 with a fresh response.
 
-# Live Example
+## Live Example
 
 Below is a simple example of an HTTP API for returning the current time—more
 specifically, the current number of minutes past the hour.
@@ -99,9 +104,9 @@ revalidation will depend on getting a response back from the network.
 Here's a breakdown of those three distinct states, along with the window of time
 in which each of them apply for our example:
 
-![A diagram illustrating the information from the previous section.](s-w-r-diagram.png)
+![A diagram illustrating the information from the previous section.](s-w-r-diagram.svg)
 
-# What are the common use cases?
+## What are the common use cases?
 
 While the above example for a "minutes after the hour" API service is contrived,
 it illustrates the expected use case—services that provide information which
@@ -116,7 +121,7 @@ for short-term caching via `max-age`. Using `stale-while-revalidate` in addition
 to `max-age` increases the likelihood that future requests can be fulfilled from
 the cache with fresher content, without blocking on a network response.
 
-# How does it interact with service workers?
+## How does it interact with service workers?
 
 If you've heard of `stale-while-revalidate` chances are that it was in the
 context of
@@ -130,7 +135,7 @@ there are a few considerations that you should take into account when deciding
 whether to implement a service worker-based approach, or just rely on the
 `Cache-Control` header configuration.
 
-**Use a service worker approach if...**
+### Use a service worker approach if...
 
 * You're already using a service worker in your web app.
 * You need fine-grained control over the contents of your caches, and want to
@@ -143,7 +148,7 @@ whether to implement a service worker-based approach, or just rely on the
   module can help with this.
 * You need this `stale-while-revalidate` behavior in all modern browsers.
 
-**Use a Cache-Control approach if...**
+### Use a Cache-Control approach if...
 
 * You would rather not deal with the overhead of deploying and maintaining a
   service worker for your web app.
@@ -160,7 +165,7 @@ network request using [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/A
 then the behavior configured via the `Cache-Control` header will end up going
 into effect.
 
-# Learn more
+## Learn more
 
 *
   [`stale-while-revalidate` response](https://fetch.spec.whatwg.org/#concept-stale-while-revalidate-response)
@@ -169,3 +174,5 @@ into effect.
   `stale-while-revalidate` specification.
 * [The HTTP cache: your first line of defense](/http-cache/), from the "Network
   reliability" guide on this site.
+
+_Hero image by Samuel Zeller on [Unsplash](https://unsplash.com/photos/oBb-Y26PJgg)._
