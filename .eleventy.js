@@ -90,7 +90,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // COLLECTIONS
   //----------------------------------------------------------------------------
-  config.addCollection('postDescending', postDescending);
+  config.addCollection('postsDescending', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
   // Turn collection.all into a lookup table so we can use findBySlug
