@@ -72,10 +72,10 @@ The router also registered the modules' route declarations so that when you navi
 
 The [quicklink](https://github.com/GoogleChromeLabs/quicklink) library provides a better strategy for larger apps. It uses the [IntersectionObserver](https://developers.google.com/web/updates/2019/02/intersectionobserver-v2) API to preload only modules associated with links that are currently visible on the page.
 
-You can add quicklink to an Angular app by using the [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink) package. Start by installing the package from npm:
+You can add quicklink to an Angular app by using the [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink) package. Start by installing the packages from npm:
 
 ```
-npm install --save quicklink
+npm install --save quicklink ngx-quicklink
 ```
 
 Once it's available in your project, you can use `QuicklinkStrategy` by specifying the router's `preloadingStrategy` and importing the `QuicklinkModule`:
