@@ -1,14 +1,11 @@
 ---
-title: stale-while-revalidate via Cache-Control
+title: Keeping things fresh with stale-while-revalidate
 subhead: An additional tool to help you balance immediacy and freshness when serving your web app.
 authors:
   - jeffposnick
 date: 2019-07-18
 description: stale-while-revalidate helps developers balance between immediacy—loading cached content right away—and freshness—ensuring updates to the cached content are used in the future.
 hero: hero.jpg
-# You can adjust the position of your hero image with this property.
-# Values: top | bottom | center (default)
-# hero_position: bottom
 alt: A photograph of a half-painted wall.
 tags:
   - post
