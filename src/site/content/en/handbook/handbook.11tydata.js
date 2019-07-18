@@ -33,6 +33,8 @@ module.exports = {
           'use-media',
           'word-list',
           'content-checklist',
+          'tooling-and-libraries',
+          'third-party-contributions',
         ],
       },
       {
