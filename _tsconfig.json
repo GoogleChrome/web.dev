@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./dist,",
+    "target": "esnext"
+  },
+  "include": [
+    "./src/lib"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
