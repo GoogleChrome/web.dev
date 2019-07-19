@@ -87,6 +87,7 @@ If you need to use double `{` braces in your code examples you will need to
 
 The `{% raw %}{% verbatim %}{% endraw %}` tags will be visible when you stage
 locally but not in production.
+{% endAside %}
 
 ## Coding Style
 Indent using two spaces.
