@@ -244,7 +244,7 @@ observer.observe({type: 'layout-shift', buffered: true});
 **Note:** The
 [`buffered`](https://w3c.github.io/performance-timeline/#dom-performanceobserverinit-buffered)
 flag in the above example (supported in Chrome 77+) gives you access to entries
-that may have occurred prior to creating the performance observer.
+that may have occurred prior to creating the `PerformanceObserver`.
 
 </div>
 
@@ -252,21 +252,12 @@ that may have occurred prior to creating the performance observer.
 
 **Beware:** The `entryType` value for this API has changed a few times during
 the experimentation period. In Chrome 76 it was `layoutShift` and in Chrome
-74-75 it was `layoutJank`.
-
-Developers implementing the stable API should only need to observe the current
-`layout-shift` value (as shown in the example above), but developers who are
-part of the origin trial may need to observe multiple entry types to cover
-their full user base).
-
-```js
-if (PerformanceObserver.supportedEntryTypes &&
-    PerformanceObserver.supportedEntryTypes.includes('layout-shift')) {
-  observer.observe({type: 'layout-shift', buffered: true});
-} else {
-  observer.observe({entryTypes: ['layoutShift', 'layoutJank']});
-}
-```
+74-75 it was `layoutJank`. Developers implementing the stable API should only
+need to observe the current `layout-shift` value (as shown in the example
+above), but developers who are part of the origin trial may need to observe
+multiple entry types to cover their full user base. See [this
+demo](https://output.jsbin.com/zajamil/quiet) for an example of code that
+works in Chrome 74+.
 
 </div>
 
