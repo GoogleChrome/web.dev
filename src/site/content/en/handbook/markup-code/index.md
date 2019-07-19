@@ -80,7 +80,6 @@ Show that lines have changed by using the pattern `language/lineNumAdded/lineNum
 
 ## Escaping code
 If you need to use double `{` braces in your code examples you will need to
-escape them:
 
 ```html
 {% raw %}{% raw %}{% verbatim %}{{ item.num | calculate }}{% endverbatim %}{% endraw %}{% endraw %}
