@@ -1,6 +1,6 @@
-import {BaseElement} from './BaseElement';
-import {html} from 'lit-element';
-import {signIn, signOut} from '../fb';
+import {BaseElement} from "./BaseElement";
+import {html} from "lit-element";
+import {signIn, signOut} from "../fb";
 
 /* eslint-disable require-jsdoc */
 class ProfileSwitcher extends BaseElement {
@@ -15,18 +15,18 @@ class ProfileSwitcher extends BaseElement {
     return html`
       <button
         class="w-profile-toggle"
-        @click="${() => this.expanded = !this.expanded}"
+        @click="${() => (this.expanded = !this.expanded)}"
       >
-        <img class="w-profile-toggle__photo" src="${this.user.photoURL}">
+        <img class="w-profile-toggle__photo" src="${this.user.photoURL}" />
       </button>
-      ${this.expanded ? this.expandedTemplate : ''}
+      ${this.expanded ? this.expandedTemplate : ""}
     `;
   }
 
   firstUpdated() {
     // Close the profile switcher if it's open and the user presses escape.
-    this.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') {
+    this.addEventListener("keyup", (e) => {
+      if (e.key === "Escape") {
         if (this.expanded) {
           this.expanded = false;
         }
@@ -34,7 +34,7 @@ class ProfileSwitcher extends BaseElement {
     });
 
     // Close the profile switcher if it's open and the user clicks outside.
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
       if (this.expanded && !this.contains(e.target)) {
         this.expanded = false;
       }
@@ -55,10 +55,7 @@ class ProfileSwitcher extends BaseElement {
       <div class="w-profile-dialog">
         <div class="w-profile-dialog__user">
           <div class="w-profile-dialog__photo-container">
-            <img
-              class="w-profile-dialog__photo"
-              src="${this.user.photoURL}"
-            >
+            <img class="w-profile-dialog__photo" src="${this.user.photoURL}" />
           </div>
           <div class="w-profile-dialog__details">
             <div class="w-profile-dialog__name">
@@ -84,16 +81,10 @@ class ProfileSwitcher extends BaseElement {
           </div>
         </div>
         <div class="w-profile-dialog__controls">
-          <button
-            class="w-profile-dialog__button"
-            @click="${signIn}"
-          >
+          <button class="w-profile-dialog__button" @click="${signIn}">
             Change accounts
           </button>
-          <button
-            class="w-profile-dialog__button"
-            @click="${signOut}"
-          >
+          <button class="w-profile-dialog__button" @click="${signOut}">
             Sign out
           </button>
         </div>
@@ -102,4 +93,4 @@ class ProfileSwitcher extends BaseElement {
   }
 }
 
-customElements.define('web-profile-switcher', ProfileSwitcher);
+customElements.define("web-profile-switcher", ProfileSwitcher);
