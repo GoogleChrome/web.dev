@@ -1,8 +1,8 @@
-import {BaseElement} from './BaseElement';
-import {html} from 'lit-element';
-import {signIn} from '../fb';
-import {store} from '../store';
-import './ProfileSwitcher';
+import {BaseElement} from "./BaseElement";
+import {html} from "lit-element";
+import {signIn} from "../fb";
+import {store} from "../store";
+import "./ProfileSwitcher";
 
 /* eslint-disable require-jsdoc */
 class ProfileSwitcherContainer extends BaseElement {
@@ -22,7 +22,7 @@ class ProfileSwitcherContainer extends BaseElement {
 
   render() {
     if (this.checkingSignedInState) {
-      return '';
+      return "";
     }
 
     if (this.isSignedIn) {
@@ -45,4 +45,6 @@ class ProfileSwitcherContainer extends BaseElement {
 }
 
 customElements.define(
-  'web-profile-switcher-container', ProfileSwitcherContainer);
+  "web-profile-switcher-container",
+  ProfileSwitcherContainer,
+);
