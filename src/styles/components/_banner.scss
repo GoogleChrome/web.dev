@@ -1,0 +1,40 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+
+// =============================================================================
+// BANNER OVERVIEW
+//
+// A banner widget that can be displayed at the top of the screen.
+// Note that the banner is not absolutely or fixed positioned.
+// It is intended to scroll away as the user scrolls down the page.
+//
+// =============================================================================
+
+.w-banner {
+  font-size: .889rem;
+  padding: 24px;
+
+  @include bp(sm) {
+    padding: 24px 32px;
+  }
+
+  @include bp(md) {
+    padding: 24px 64px;
+  }
+}
+
+.w-banner--info {
+  background: $GREEN_100;
+}
+
+.w-banner--caution {
+  background: $YELLOW_100;
+}
+
+.w-banner--warning {
+  background: $RED_100;
+}
+
+.w-banner__link {
+  text-decoration: underline;
+}

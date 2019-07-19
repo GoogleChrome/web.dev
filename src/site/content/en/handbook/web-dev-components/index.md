@@ -16,6 +16,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 ## Sections
 
 1. [Asides](#asides)
+1. [Banner](#banner)
 1. [Blockquotes](#blockquotes)
 1. [Buttons](#buttons)
 1. [Columns](#columns)
@@ -71,6 +72,14 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 {% Aside 'codelab' %}
   [Using Imagemin with Grunt](#)
 {% endAside %}
+
+## Banner
+
+{% Banner %}This is an info banner with a <a href="#">link</a>.{% endBanner %}
+
+{% Banner 'caution' %}This is a caution banner with a <a href="#">link</a>.{% endBanner %}
+
+{% Banner 'warning' %}This is a warning banner with a <a href="#">link</a>.{% endBanner %}
 
 ## Blockquotes
 
