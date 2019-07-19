@@ -24,7 +24,7 @@ codelabs:
 We want to find out more about the way web developers use images.
 
 It would really help if you could answer a few simple questions using our
-[survey form](forms.gle/vF9SW95simXKoZrKA).
+[survey form](https://forms.gle/vF9SW95simXKoZrKA).
 
 We'll take a couple of weeks to collect responses, then collate and publish the
 results.
