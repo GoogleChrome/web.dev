@@ -31,6 +31,7 @@ const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
+const Banner = require(`./${componentsDir}/Banner`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
 const Compare = require(`./${componentsDir}/Compare`);
@@ -119,6 +120,7 @@ module.exports = function(config) {
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
+  config.addPairedShortcode('Banner', Banner);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addPairedShortcode('Compare', Compare);
