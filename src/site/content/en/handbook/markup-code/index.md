@@ -78,7 +78,7 @@ Show that lines have changed by using the pattern `language/lineNumAdded/lineNum
 </label>
 ```
 
-## Escaping code
+## Escaping special characters
 If you need to use double `{` braces in your code examples you will need to
 
 ```html
