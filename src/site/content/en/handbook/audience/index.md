@@ -28,7 +28,7 @@ Alice is a developer working in a team for a large e-commerce website. The site'
 * **Goal:** Find a solution to a low Lighthouse score that is directly applicable to her existing project as quickly as possible.
 
 ### Goal-driven problem solver (Damir)
-Damir is a developer at a small fintech startup. His boss has asked him to help turn their company's site into a PWA. After trying to enable some offline functionality, Damir realizes through a StackOverflow post ([for example, a post about PWA offline capability on data that frecuently changes ](https://stackoverflow.com/questions/50777677/pwa-offline-capability-on-data-that-frecuently-changes)) that the best bet to solving his problem is to create a service worker. He needs to learn how to create a service worker that will work with his company's existing site and the dynamic data that it handles.
+Damir is a developer at a small fintech startup. His boss has asked him to help turn their company's site into a PWA. After trying to enable some offline functionality, Damir realizes through a StackOverflow post ([for example, a post about PWA offline capability on data that frecuently changes ](https://stackoverflow.com/questions/50777677/pwa-offline-capability-on-data-that-frecuently-changes)) that the best way to solve his problem is to create a service worker. He needs to learn how to create a service worker that works with his company's existing site and the dynamic data that it handles.
 
 * **Prior knowledge:** Damir is a more advanced developer. He can quickly skim documentation to find the code snippets and examples relevant to his use case.
 * **Entry point:** Damir searches for "service worker for PWA", and one of the first search results is a post in the web.dev [Installable](/installable) collection.
@@ -59,7 +59,7 @@ Jaimie first took a web development class at their local community college and i
 When you're writing a post or codelab, keep the web.dev personas in mind (or more, if their needs overlap). How do you do that in a given piece, especially when the needs of different readers compete? One way to address multiple audience segments is to provide multiple paths for a given topic. For example, you might write:
 * A post using vanilla JavaScript, with associated codelabs using common frameworks to solve the same problem
 * A post about optimizing images in general, with associated codelabs showing how to integrate image optimization into different build processes
-* A post about how to address an issue most web developers will encounter, with sections at the end focused on solving the problem as it appears in particular business verticals
+* A post about how to address an issue most web developers encounter, with sections at the end focused on solving the problem as it appears in particular business verticals
 
 Be mindful of your [voice](/handbook/voice). You want readers to feel they can trust the guidance you're giving. They should feel neither talked down to nor overwhelmed. Check out [Instruction for adult learners](/handbook/effective-instruction#instruction-for-adult-learners) in the [Writing effective instruction](/handbook/effective-instruction) post.
 

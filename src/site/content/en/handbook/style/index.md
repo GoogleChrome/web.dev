@@ -39,7 +39,7 @@ This sentence includes unnecessary words in some places (e.g., multiple phrases 
 {% Compare 'better', 'Do' %}
 > Absolute and fixed positioning are now more compliant with W3C specifications and better match the behavior in other browsers.
 
-This revision gives detail readers will likely need (e.g., the relevant specification) while omitting unnecessary words.
+This revision gives detail readers likely need (e.g., the relevant specification) while omitting unnecessary words.
 {% endCompare %}
 
 Keep posts and codelabs short—typically 1,000 words or less.

@@ -39,4 +39,4 @@ Use the license headers for HTML, CSS, and JS files:
 // SPDX-License-Identifier: Apache-2.0
 ```
 
-Manage the dependencies in your Glitch by adding them to the `package.json` file. Otherwise, dependencies can get out of date and break the Glitch. (Or you can ask readers to add dependencies to the Glitch's `package.json` themselves if that's relevant to what you're teaching. Any time the `package.json` file is edited, Glitch will automatically run `npm` again.)
+Manage the dependencies in your Glitch by adding them to the `package.json` file. Otherwise, dependencies can get out of date and break the Glitch. (Or you can ask readers to add dependencies to the Glitch's `package.json` themselves if that's relevant to what you're teaching. Any time the `package.json` file is edited, Glitch automatically runs `npm` again.)
