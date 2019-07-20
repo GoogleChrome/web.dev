@@ -159,7 +159,7 @@ Density descriptors are used to serve different images based on the_ device's
 ### The "sizes" attribute
 
 The sizes attribute tells the browser how wide the image will be when it is
-displayed. However, the sizes attribute has no effect on display size - you
+displayed. However, the sizes attribute has no effect on display size; you
 still need CSS for that.
 
 The browser uses this information, along with what it knows about the user's

@@ -137,7 +137,7 @@ Use an en dash (–) for ranges (e.g., _10–100 KB_).
 Use straight quotation marks and apostrophes, not smart (curly).
 
 {% Compare 'worse', 'Don’t' %}
-> The “Accessible to all” collection
+> The "Accessible to all" collection
 
 {% endCompare %}
 

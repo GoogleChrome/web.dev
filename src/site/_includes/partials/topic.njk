@@ -1,0 +1,21 @@
+<h2 id="{{ topic.title | slug }}" class="no-link w-headline--three w-numbered-header w-numbered-header--horizontal">
+  {{ topic.title }}
+  <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
+</h2>
+<ul class="w-path-list">
+  {% for slug in topic.pathItems %}
+    {% set item = slug | findBySlug %}
+    {% if item.data.draft %}
+      {# noop #}
+    {% else %}
+      <li class="w-path-listitem">
+        <a
+          class="w-path-link"
+          href="{{ item.url | stripLanguage }}"
+        >
+          {{ item.data.title }}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

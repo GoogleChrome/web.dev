@@ -11,7 +11,7 @@ codelabs:
   - codelab-setting-performance-budgets-with-webpack
 ---
 
-Once you’ve defined a performance budget, it’s time to set up the build process
+Once you've defined a performance budget, it's time to set up the build process
 to keep track of it. There are a number of tools that let you define thresholds
 for chosen performance metrics and warn you if you go over budget. Find out
 how to choose one that best fits your needs and current setup. 🕵️‍♀️
@@ -85,7 +85,7 @@ Compressed asset sizes affect the transfer time, which is very important on slow
 
 ## Bundlesize
 
-[Bundlesize](https://github.com/siddharthkp/bundlesize) is a simple npm package that tests asset size against a threshold you’ve set. It can run locally and integrate with your CI.
+[Bundlesize](https://github.com/siddharthkp/bundlesize) is a simple npm package that tests asset size against a threshold you've set. It can run locally and integrate with your CI.
 
 ### Bundlesize CLI
 
@@ -118,13 +118,13 @@ You’ll get the most value out of bundlesize if you integrate it with a CI to a
 <figure class="w-figure">
   <img class="screenshot" src="./bundlesize-status.jpg" alt="Bundlesize check status on Github">
   <figcaption class="w-figcaption">
-    Bundlesize check status on Github 
+    Bundlesize check status on Github
   </figcaption>
 </figure>
 
 You may have a fast app today, but adding new code can often change this. Checking pull requests with bundlesize will help you avoid performance regressions. Bootstrap, Tinder, Trivago and many others use it to keep their budgets in check.
 
-With bundlesize, it’s possible to set thresholds for each file separately. This is especially useful if you are code-splitting a bundle in your application.
+With bundlesize, it's possible to set thresholds for each file separately. This is especially useful if you are code-splitting a bundle in your application.
 
 By default, **it tests gzipped asset sizes**. You can use the compression option to switch to [brotli compression](https://css-tricks.com/brotli-static-compression/) or turn it off completely.
 
@@ -141,7 +141,7 @@ By default, **it tests gzipped asset sizes**. You can use the compression option
 <figure class="w-figure">
   <img class="screenshot" src="./lighthouse-scores.png" alt="Lighthouse scores 💯">
   <figcaption class="w-figcaption">
-    Lighthouse scores 💯 
+    Lighthouse scores 💯
   </figcaption>
 </figure>
 
@@ -167,7 +167,7 @@ If the scores for a pull request on GitHub fall below the threshold you’ve set
 <figure class="w-figure">
   <img src="./lighthouse-bot.png" alt="Lighthouse reporting scores on pull request">
   <figcaption class="w-figcaption">
-    Lighthouse reporting scores on pull request 💬 
+    Lighthouse reporting scores on pull request 💬
   </figcaption>
 </figure>
 

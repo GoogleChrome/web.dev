@@ -163,7 +163,7 @@ This time, your request should not be blocked.
 
 ## Share credentials with CORS
 
-For privacy reasons, CORS is normally used for "anonymous requests" — ones where
+For privacy reasons, CORS is normally used for "anonymous requests"—ones where
 the request doesn't identify the requestor. If you want to send cookies when
 using CORS (which could identify the sender), you need to add additional headers
 to the request and response.

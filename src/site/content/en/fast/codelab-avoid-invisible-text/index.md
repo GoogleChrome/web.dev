@@ -1,7 +1,7 @@
 ---
 layout: codelab
 title: Avoid flash of invisible text
-authors: 
+authors:
   - katiehempenius
 description: |
   In this codelab, learn how to display text immediately using Font Face
@@ -60,7 +60,7 @@ For example, if your CSS was:
 font-family: "Times New Roman", Times, serif;
 ```
 
-you would add `FontFaceObserver(‘Times New Roman')`. Times and serif are
+you would add `FontFaceObserver('Times New Roman')`. Times and serif are
 fallback fonts, so you would not need to declare FontFaceObservers for them.
 
 ### Detect font load

@@ -71,9 +71,9 @@ larger than the other.
   </figure>
 </div>
 
-The first image is much larger in file size because it's saved with dimensions 
-much larger than the display size. Both images are displayed with a fixed 
-width of 300 pixels, so it makes sense to use an image saved at the same 
+The first image is much larger in file size because it's saved with dimensions
+much larger than the display size. Both images are displayed with a fixed
+width of 300 pixels, so it makes sense to use an image saved at the same
 size.
 
 **For fixed widths, use images saved with the same dimensions as the
@@ -109,14 +109,14 @@ tell the browser the width of each version:
 The `w` values show the width of each image in pixels. For example,
 `small.jpg 500w` tells the browser that <a href="small.jpg">small.jpg</a> is 500
 pixels wide. This enables the browser to choose the smallest possible image,
-depending on the screen type and the viewport size — without having to
+depending on the screen type and the viewport size—without having to
 download images to check their size.
 
 {% Aside 'caution'%}
 `srcset` gives the browser information about the
 saved width of each image file.
 
-It does NOT specify the size to display the image — you still need CSS for that!
+It does _not_ specify the size to display the image—you still need CSS for that!
 {% endAside%}
 
 You can see `srcset` in action for the image below. If you're on a laptop or
@@ -157,7 +157,7 @@ parameters. For an example, open [this sample image on Cloudinary](https://res.c
 
 Image services also have more advanced features such as the ability to automate
 "smart cropping" for different image sizes and automatically deliver [WebP](https://developers.google.com/speed/webp/) images
-to browsers that support the format, instead of JPEGs — without changing the file
+to browsers that support the format, instead of JPEGs—without changing the file
 extension.
 
 {% Aside %}
@@ -174,7 +174,7 @@ DevTools showing WebP content-type header for file served by Cloudinary">
 
 ## What if the image doesn't look right at different sizes?
 
-In that case, you'll need to use the `<picture>` element for "art direction": 
+In that case, you'll need to use the `<picture>` element for "art direction":
 providing a different image or image crop at different sizes. To learn more
 take a look at the ["Art direction"](/codelab-art-direction) codelab.
 
@@ -197,7 +197,7 @@ You can use `sizes` to make `srcset` work even better.
 Without it, the browser uses the full width of the viewport when choosing an
 image from a `srcset`. The `sizes` attribute tells the browser the width that an
 image element will be displayed, so the browser can choose the smallest possible
-image file — before it makes any layout calculations.
+image file—before it makes any layout calculations.
 
 In the example below, `sizes="50vw"` tells the browser that this image will be
 displayed at 50% of the viewport width.
@@ -216,7 +216,7 @@ You can see this in action at
 `sizes` gives the browser information about the display width
 of on image element.
 
-As with `srcset` it does NOT specify the size to display the image — you need
+As with `srcset` it does NOT specify the size to display the image—you need
 CSS for that.
 {% endAside%}
 
@@ -232,7 +232,7 @@ This makes `srcset` and `sizes` great progressive enhancements!
 ## Learn more
 
 Take a look at the ["Optimize your images"](/fast#optimize-your-images) section
-of web.dev for a deeper drive in to image optimization. For a more guided
+of web.dev for a deeper dive into image optimization. For a more guided
 experience, consider trying the free ["Responsive
 Images"](https://udacity.com/course/responsive-images--ud882) course offered by
 Udacity.

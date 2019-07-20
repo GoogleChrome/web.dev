@@ -9,7 +9,7 @@ web_lighthouse:
 
 Many different users rely on the keyboard to navigate applications,
 from users with temporary and permanent motor impairments
-to users who use keyboard shortcuts to be more efficient and productive. 
+to users who use keyboard shortcuts to be more efficient and productive.
 A logical tab order is an important part
 of providing a smooth keyboard navigation experience.
 
@@ -24,11 +24,11 @@ from the top to the bottom of your page.
 
 Learn more in [Keyboard access fundamentals](/keyboard-access).
 
-Are you able to reach all of the interactive controls on the page? 
+Are you able to reach all of the interactive controls on the page?
 If not, you may need to use `tabindex` to improve the focusability of those controls.
 The general rule of thumb is that any control a user can interact with or provide input to
 should aim to be focusable and display a focus indicator.
-If a keyboard user can’t see what’s focused, they have no way of interacting with the page.
+If a keyboard user can't see what's focused, they have no way of interacting with the page.
 
 ## How to fix
 

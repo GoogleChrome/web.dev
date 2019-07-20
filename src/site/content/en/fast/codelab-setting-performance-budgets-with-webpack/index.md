@@ -14,16 +14,16 @@ related_post: incorporate-performance-budgets-into-your-build-tools
 [Webpack](https://developers.google.com/web/fundamentals/performance/webpack/)
 combines all your imported files and packages them into one or more output
 files known as bundles. Bundling is neat, but as your app grows your bundles
-will grow too. You need to monitor bundle sizes to ensure that they don’t grow
+will grow too. You need to monitor bundle sizes to ensure that they don't grow
 too large and affect how long your application takes to load. Webpack supports
 setting [performance budgets](https://web.dev/performance-budgets-101)
 based on **asset size** and it can keep an eye on bundle sizes for you.
 
-To see it in action, here’s an app that counts the days left until New Year’s.
-It’s built with [React](https://reactjs.org/) and [moment.js](https://momentjs.com/).
+To see it in action, here's an app that counts the days left until New Year's.
+It's built with [React](https://reactjs.org/) and [moment.js](https://momentjs.com/).
 (Just like real-world apps that increasingly rely on frameworks and libraries. 😉)
 
-![An app that counts the days left until New Year’s day](countdown-app.png)
+![An app that counts the days left until New Year's day](countdown-app.png)
 
 ## Measure
 
@@ -39,12 +39,12 @@ This codelab already contains the app bundled with webpack.
 webpack
 ```
 
-The main bundle is highlighted in yellow because it’s larger than 244 KiB (250
+The main bundle is highlighted in yellow because it's larger than 244 KiB (250
 KB).
 
 {% Aside %}
 Webpack uses the unit "KiB", which you might not have
-seen before. 1 “KiB” and 1 “KB” are fairly close in size: 1 KiB is 1024 bytes,
+seen before. 1 "KiB" and 1 "KB" are fairly close in size: 1 KiB is 1024 bytes,
 while 1 KB is 1000 bytes.
 {% endAside %}
 
@@ -79,7 +79,7 @@ how to downsize your bundles. You can learn more about the recommended technique
 ## Set a custom performance budget
 
 An appropriate performance budget will depend on the nature of your project.
-It’s always best to [do your own research](https://web.dev/your-first-performance-budget).
+It's always best to [do your own research](https://web.dev/your-first-performance-budget).
 A [good rule](https://web.dev/your-first-performance-budget#budget-for-quantity-based-metrics)
 of thumb is to deliver under 170 KB of compressed/minified
 [critical-path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
@@ -109,12 +109,12 @@ The new performance budget is set in **bytes**:
 - 100000 bytes for individual assets (maxAssetSize)
 - 100000 bytes for the entry-point (maxEntrypointSize)
 
-In this case, there’s only one bundle which also acts as the entry point.
+In this case, there's only one bundle which also acts as the entry point.
 
 Possible values for **hints** are:
 
 1. **`warning`** (default): Displays a yellow warning message, but the build
-   passes. It’s best to use this in development environments.
+   passes. It's best to use this in development environments.
 2. **`error`**: Displays a red error message, but the build still passes. This
    setting is recommended for production builds.
 3. **`false`**: No warnings or errors are shown.
@@ -131,13 +131,13 @@ before they become too difficult to fix. There is always more than one way to
 build an app and some techniques will make for faster load times. (A lot of
 them are documented right here in [Optimizing your JavaScript](https://web.dev/fast#optimize-your-javascript). 🤓)
 
-Frameworks and libraries make developers’ lives easier, but end users don’t
-really care how apps are built, only that they’re functional and fast. If you
-find yourself going over the performance budget, it’s time to think about
+Frameworks and libraries make developers' lives easier, but end users don't
+really care how apps are built, only that they're functional and fast. If you
+find yourself going over the performance budget, it's time to think about
 possible optimizations.
 
 In the real world, large client-side frameworks are usually hard to swap out,
-so it’s important to use them wisely. With a bit of research, you can often
+so it's important to use them wisely. With a bit of research, you can often
 find smaller alternatives to popular libraries that do the job just as well
 ([date-fns](https://date-fns.org/) is a good alternative for [moment.js](https://momentjs.com/)).
 Sometimes it makes more sense to not use a framework or library at all if it
@@ -145,7 +145,7 @@ has a significant performance impact.
 
 Removing unused code a good way to optimize apps that include large third-party
 libraries. The [Remove unused code guide](https://web.dev/remove-unused-code) explains this
-process in detail and here’s a quick way to rewrite the countdown code without using moment.js.
+process in detail and here's a quick way to rewrite the countdown code without using moment.js.
 
 In **app/components/Countdown.jsx** remove:
 

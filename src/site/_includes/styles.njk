@@ -1,80 +1,34 @@
 <style>
-.w-youtube {
-  padding-top: 56.25%;
-  position: relative;
-  width: 100%;
+.w-banner {
+  padding: 24px;
+  font-size: 0.889rem;
 }
 
-.w-youtube__embed {
-  height: 100%;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+@media (min-width: 481px) {
+  .w-banner {
+    padding: 24px 32px;
+  }
 }
 
-ol:not([class]) {
-  counter-reset: ol-step-counter;
-  list-style: none;
-  margin: 32px 0;
-  padding-left: 48px;
-  position: relative;
+@media (min-width: 865px) {
+  .w-banner {
+    padding: 24px 64px;
+  }
 }
 
-ol:not([class]) > li {
-  counter-increment: ol-step-counter;
-  font-size: 1.125rem;
-  line-height: 1.778rem;
-  margin-bottom: 8px;
+.w-banner--info {
+  background: #c8e6c9;
 }
 
-ol:not([class]) > li::before {
-  -ms-flex-align: center;
-  -ms-flex-negative: 0;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  -webkit-box-pack: center;
-  align-items: center;
-  background: $GREY_700;
-  border-radius: $GLOBAL_ROUNDED;
-  color: $WHITE;
-  content: counter(ol-step-counter);
-  display: -ms-inline-flexbox;
-  display: -webkit-inline-box;
-  display: inline-flex;
-  flex-shrink: 0;
-  font-size: .75em;
-  height: 20px;
-  justify-content: center;
-  left: 0;
-  margin: 6px 0 0;
-  position: absolute;
-  width: 20px;
+.w-banner--caution {
+  background: #feefc3;
 }
 
-ul:not([class]) {
-  list-style: none;
-  margin: 32px 0;
-  padding-left: 48px;
-  position: relative;
+.w-banner--warning {
+  background: #ffcdd2;
 }
 
-ul:not([class]) > li {
-  font-size: 1.125rem;
-  line-height: 1.778rem;
-  margin-bottom: 8px;
-}
-
-ul:not([class]) > li::before {
-  background: $GREY_700;
-  border-radius: $GLOBAL_ROUNDED;
-  color: $WHITE;
-  content: '';
-  height: 8px;
-  left: 0;
-  margin: 12px 0 0;
-  position: absolute;
-  width: 8px;
+.w-banner__link {
+  text-decoration: underline;
 }
 </style>
