@@ -67,7 +67,7 @@ While code blocks should be as [simple as possible](/handbook/style#keep-it-simp
 
 In the rare case that you need to omit an accessibility detail to better convey what you're teaching,
 1. Add a note explaining that the developer needs to include accessibility features.
-1. Link to the relevant post in the web.dev "[Accessible to all](/accessible)" collection.
+1. Link to the relevant post in the web.dev [Accessible to all](/accessible) collection.
 
 ## Writing about people
 There are several excellent online guides for using inclusive language when writing about groups of people. The [Content Guide](https://content-guide.18f.gov/inclusive-language/) from 18F (a U.S. government office that helps other agencies improve their user experience) is a great place to start.

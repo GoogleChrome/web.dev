@@ -8,7 +8,7 @@ description: |
   Learn how to create the Markdown for posts and codelabs on web.dev.
 ---
 
-This post is about how to set up a new post or codelab so it works correctly on web.dev. For guidelines about what to put _in_ your post, see the "[Content guidelines](/handbook/#content-guidelines)" section.
+This post is about how to set up a new post or codelab so it works correctly on web.dev. For guidelines about what to put _in_ your post, see the [Content guidelines](/handbook/#content-guidelines) section.
 
 ## Get started
 1. Create a new branch of the web.dev repository.

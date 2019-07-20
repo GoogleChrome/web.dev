@@ -143,7 +143,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 
 ## Code
 
-See the "[Code](/handbook/markup-code)" post.
+See the [Code](/handbook/markup-code) post.
 
 ## Compare
 
@@ -211,7 +211,7 @@ at.
 
 ## Images
 
-See the "[Images and video](/handbook/markup-media)" post.
+See the [Images and video](/handbook/markup-media) post.
 
 ## Instruction
 
@@ -584,4 +584,4 @@ assumenda perspiciatis.
 </div>
 
 ## Video
-See the "[Images and video](/handbook/markup-media#video)" post.
+See the [Images and video](/handbook/markup-media#video) post.
