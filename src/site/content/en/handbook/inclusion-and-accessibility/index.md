@@ -5,7 +5,7 @@ authors:
   - mfriesenhahn
 date: 2019-06-26
 description: |
-  Learn how to write for an international audience.
+  Learn how to write for an international audience with varying needs and preferences.
 ---
 
 web.dev has a large international audience. We want members of that audience to access and understand web.dev content, and they should feel included in the ways we speak to our readers.
