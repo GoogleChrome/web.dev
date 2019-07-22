@@ -1,12 +1,18 @@
-import {BaseElement} from "../BaseElement";
+/**
+ * @fileoverview An indeterminate progress bar.
+ */
+
 import {html} from "lit-element";
+import {BaseElement} from "../BaseElement";
 
 /**
- * A progress indicator element.
+ * An indeterminate progress bar.
+ * @extends {BaseElement}
+ * @final
  */
 class ProgressBar extends BaseElement {
   render() {
-    html`
+    return html`
       <div class="web-progress-bar-wrapper">
         <div class="web-progress-bar-indeterminate"></div>
       </div>

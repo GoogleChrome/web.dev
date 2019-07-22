@@ -1,17 +1,17 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import {store} from './store';
+import firebase from "firebase/app";
+import "firebase/auth";
+import {store} from "./store";
 
 /* eslint-disable require-jsdoc */
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBjcWKserQhn4mygIluGr9eTMfR_S0PDEU',
-  authDomain: 'v2-prototype.firebaseapp.com',
-  databaseURL: 'https://v2-prototype.firebaseio.com',
-  projectId: 'v2-prototype',
-  storageBucket: '',
-  messagingSenderId: '960947587576',
-  appId: '1:960947587576:web:b8e4ff1671c6c131',
+  apiKey: "AIzaSyBjcWKserQhn4mygIluGr9eTMfR_S0PDEU",
+  authDomain: "v2-prototype.firebaseapp.com",
+  databaseURL: "https://v2-prototype.firebaseio.com",
+  projectId: "v2-prototype",
+  storageBucket: "",
+  messagingSenderId: "960947587576",
+  appId: "1:960947587576:web:b8e4ff1671c6c131",
 };
 
 // Initialize Firebase
