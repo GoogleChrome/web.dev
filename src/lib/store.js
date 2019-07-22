@@ -1,5 +1,5 @@
-import createStore from 'unistore';
-import devtools from 'unistore/devtools';
+import createStore from "unistore";
+import devtools from "unistore/devtools";
 
 /* eslint-disable require-jsdoc */
 
