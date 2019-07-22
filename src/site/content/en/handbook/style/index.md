@@ -67,15 +67,15 @@ Include examples and figures. (See the next guideline.)
 ## Use figures when text won't do
 Aside from breaking up long sections of prose, media can be better than text for conveying some concepts and instructions. A key question to ask as you write is: "Would this idea be easier to understand if I provided a figure?"
 
-web.dev supports the following figures, which you can include in your post or codelab by following the examples in the "[web.dev components](/handbook/web-dev-components)" post.
+web.dev supports the following figures, which you can include in your post or codelab by following the examples in the [web.dev components](/handbook/web-dev-components) post.
 * Tables (Use tables sparingly—they don't resize well on mobile.)
 * Comparisons
-* Images and video (See the "[Use images and video effectively](/handbook/use-media)" post.)
+* Images and video (See the [Use images and video effectively](/handbook/use-media) post.)
 * Code blocks
-* Sample apps (See the "[Write useful code samples](/handbook/write-code-samples)" post.)
+* Sample apps (See the [Write useful code samples](/handbook/write-code-samples) post.)
 
 ## Help readers get things done
-Focus on readers and the concrete task they're trying to complete. While an introductory paragraph can provide important [context](#give-useful-context), get to the instructional content as soon as possible. The "[Use Imagemin to compress images](/use-imagemin-to-compress-images)" post is a great example.
+Focus on readers and the concrete task they're trying to complete. While an introductory paragraph can provide important [context](#give-useful-context), get to the instructional content as soon as possible. The [Use Imagemin to compress images](/use-imagemin-to-compress-images) post is a great example.
 
 When providing instruction, favor the imperative mood.
 
@@ -122,9 +122,9 @@ Using second person helps convey that we think this information is relevant to r
 Provide a way to measure success. How can developers test that they've followed your instruction correctly?
 
 ## Keep it simple
-Focus on essential details when explaining a tool or technique. Avoid overwhelming the reader with "real-world" examples that include complexities that aren't required to understand the basic concept. Save those details for supplemental codelabs or follow-up posts. See the "[Code splitting with React.lazy and Suspense](/code-splitting-suspense)" post for an example.
+Focus on essential details when explaining a tool or technique. Avoid overwhelming the reader with "real-world" examples that include complexities that aren't required to understand the basic concept. Save those details for supplemental codelabs or follow-up posts. See the [Code splitting with React.lazy and Suspense](/code-splitting-suspense) post for an example.
 
-Avoid jargon. If you absolutely _must_ use a term most web.dev readers are unlikely to know, define it in a short aside. See the "[web.dev components](/handbook/web-dev-components#asides)" post for how to include asides. Also check out the "[Inclusion and accessibility](/handbook/inclusion-and-accessibility#use-readable-language)" post for more info about writing readable language.
+Avoid jargon. If you absolutely _must_ use a term most web.dev readers are unlikely to know, define it in a short aside. See the [web.dev components](/handbook/web-dev-components#asides) post for how to include asides. Also check out the [Inclusion and accessibility](/handbook/inclusion-and-accessibility#use-readable-language) post for more info about writing readable language.
 
 {% Compare 'worse', 'Don’t' %}
 > In some scripts, graphemes can be visually joined when they're adjacent.
@@ -142,11 +142,11 @@ While _written language_ and _character_ are slightly less precise, they should 
 Make sure your information aligns to current documentation, standards, and best practices. If you're writing about a topic that isn't in your area of expertise (or even if it is!), get input from other experts.
 
 ## Give useful context
-Tell readers what you're expecting them to know up front—and provide links to where they can learn it if you can. See the "[Get started: optimize your React app](/get-started-optimize-react/#what-will-you-learn)" post for an example.
+Tell readers what you're expecting them to know up front—and provide links to where they can learn it if you can. See the [Get started: optimize your React app](/get-started-optimize-react/#what-will-you-learn) post for an example.
 
-Explain why what you're teaching matters before jumping into the instruction. This context can be provided in a collection via an introductory post (see the "[Accessible to all](/accessible)" collection for an example) or in a post via an introductory paragraph (the "[Use Imagemin to compress images](/use-imagemin-to-compress-images)" post is a nice example).
+Explain why what you're teaching matters before jumping into the instruction. This context can be provided in a collection via an introductory post (see the [Accessible to all](/accessible) collection for an example) or in a post via an introductory paragraph (the [Use Imagemin to compress images](/use-imagemin-to-compress-images) post is a nice example).
 
-Indicate which details are relevant in longer code blocks by providing explanations and code highlighting. If readers don't need to understand everything about the code, tell them that—it makes the task less intimidating, especially for less experienced developers. See the "[Serve responsive images](/serve-responsive-images)" post for an example.
+Indicate which details are relevant in longer code blocks by providing explanations and code highlighting. If readers don't need to understand everything about the code, tell them that—it makes the task less intimidating, especially for less experienced developers. See the [Serve responsive images](/serve-responsive-images) post for an example.
 
 When there's more than one way to solve a problem, organize them in order of simplest to most complex.
 
@@ -155,4 +155,4 @@ Acknowledge browser complexity. Clearly state browser support (e.g., link to the
 
 Use well-known, well-established tooling. Strike a balance between what's most commonly used and what's best practice (in terms of compatibility, accessibility, functionality, etc.). Choosing tooling can be one of the most overwhelming and time consuming aspects of web development. Rather than providing exhaustive lists of options, suggest tooling and libraries to help readers feel confident in their choices.
 
-When appropriate, provide multiple paths, frameworks, or tools to achieve a goal. Attaching a codelab for each path to a post is often a good way to do this. To see an example, check out the codelab callout at the end of the "[Use Imagemin to compress images](/use-imagemin-to-compress-images/#imagemin-npm-module)" post.
+When appropriate, provide multiple paths, frameworks, or tools to achieve a goal. Attaching a codelab for each path to a post is often a good way to do this. To see an example, check out the codelab callout at the end of the [Use Imagemin to compress images](/use-imagemin-to-compress-images/#imagemin-npm-module) post.

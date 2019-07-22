@@ -25,7 +25,7 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. The tech writer will review using the [web.dev content checklist](/handbook/content-checklist) and work with you to polish the piece.
 
 ## Publishing
-1. Once you and the tech writer think the piece is good to go, submit a pull request on GitHub with your content authored in Markdown. (Check out the "[web.dev markup](/handbook/#web.dev-markup)" section for details.)
+1. Once you and the tech writer think the piece is good to go, submit a pull request on GitHub with your content authored in Markdown. (Check out the [web.dev markup](/handbook/#web.dev-markup) section for details.)
 1. The web.dev team will give your Markdown a once over. If everything looks good, your pull request is merged, and your piece is published! 🎉
 
 {% Aside %}

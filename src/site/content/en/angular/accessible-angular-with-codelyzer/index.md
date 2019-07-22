@@ -24,7 +24,7 @@ In this post you'll learn how to add [codelyzer's](https://github.com/mgechev/co
 
 [codelyzer](https://github.com/mgechev/codelyzer) is a tool that sits on top of [TSLint](https://palantir.github.io/tslint/) and checks whether Angular TypeScript projects follow a set of linting rules. Projects set up with the [Angular command line interface (CLI)](https://cli.angular.io/) include codelyzer by default.
 
-codelyzer has over 50 rules for checking if an Angular application follows best practices. Of those, there are about 10 rules for enforcing accessibility criteria. To learn about the various accessibility checks provided by codelyzer and their rationales, see the "[New Accessibility rules in Codelyzer](https://medium.com/ngconf/new-accessibility-rules-in-codelyzer-v5-0-0-85eec1d3e9bb)" article.
+codelyzer has over 50 rules for checking if an Angular application follows best practices. Of those, there are about 10 rules for enforcing accessibility criteria. To learn about the various accessibility checks provided by codelyzer and their rationales, see the [New Accessibility rules in Codelyzer](https://medium.com/ngconf/new-accessibility-rules-in-codelyzer-v5-0-0-85eec1d3e9bb) article.
 
 Currently, all the accessibility rules are experimental and disabled by default. You can enable them by adding them to the TSLint configuration file (`tslint.json`):
 

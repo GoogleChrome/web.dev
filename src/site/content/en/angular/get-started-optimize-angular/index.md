@@ -32,7 +32,7 @@ Each post in the collection will describe techniques that you can directly apply
 
 ## What's *not* in this collection?
 
-This collection assumes that you're already familiar with Angular and TypeScript. If you're not feeling confident with them yet, check out the TypeScript [documentation](https://www.typescriptlang.org/docs/home.html) and the "[Getting Started with Angular](https://angular.io/start)" guide on [angular.io](https://angular.io).
+This collection assumes that you're already familiar with Angular and TypeScript. If you're not feeling confident with them yet, check out the TypeScript [documentation](https://www.typescriptlang.org/docs/home.html) and the [Getting Started with Angular](https://angular.io/start) guide on [angular.io](https://angular.io).
 
 ## Start a project
 
