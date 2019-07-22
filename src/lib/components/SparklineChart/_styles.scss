@@ -1,0 +1,86 @@
+@import '../../../styles/settings/colors';
+
+@keyframes sparkline-dash-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+web-sparkline-chart {
+  &:focus {
+    // Note: Focus style should be applied to the parent element using
+    // :focus-within.
+    outline: none;
+  }
+
+  .path.dashed {
+    stroke-linecap: round;
+    stroke-width: 1;
+    stop-color: $GREY_500;
+    stroke: $GREY_500;
+  }
+
+  .red {
+    stroke: $FAIL_COLOR;
+    stop-color: $FAIL_COLOR;
+    fill: $FAIL_COLOR;
+    stroke-width: 2;
+  }
+
+  .orange {
+    stroke: $AVERAGE_COLOR;
+    stop-color: $AVERAGE_COLOR;
+    fill: $AVERAGE_COLOR;
+    stroke-width: 2;
+  }
+
+  .green {
+    stroke: $PASS_COLOR;
+    stop-color: $PASS_COLOR;
+    fill: $PASS_COLOR;
+    stroke-width: 2;
+  }
+
+  text#value {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  text#date {
+    font-size: 12px;
+    stroke-width: 0 !important;
+    fill: $GREY_500;
+  }
+
+  #score {
+    z-index: 100;
+    position: relative;
+
+    rect {
+      stroke-width: 0;
+    }
+  }
+
+  .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: sparkline-dash-animation 300ms linear forwards;
+  }
+
+  .gradient {
+    transition: opacity 600ms ease-in-out;
+    opacity: 0;
+  }
+
+  .gradient.fadein {
+    opacity: 1;
+  }
+
+  .sr-announcer {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+  }
+}

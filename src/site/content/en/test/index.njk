@@ -1,0 +1,34 @@
+---
+layout: layout
+---
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed rem
+  pariatur, explicabo nemo veniam veritatis iure deleniti nobis asperiores quod
+  sint ab, dignissimos, molestiae maiores perferendis magni non obcaecati.
+</p>
+
+<web-progress-bar></web-progress-bar>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed rem
+  pariatur, explicabo nemo veniam veritatis iure deleniti nobis asperiores quod
+  sint ab, dignissimos, molestiae maiores perferendis magni non obcaecati.
+</p>
+
+<div id="foo"></div>
+
+<script>
+  const DATE1 = (new Date).toISOString();
+  const DATE2 = (new Date).toISOString();
+  const DATE3 = (new Date).toISOString();
+  const DATE4 = (new Date).toISOString();
+  const element = document.createElement('web-sparkline-chart');
+  element.values = [
+    {score: 30, date: DATE1},
+    {score: 60, date: DATE2},
+    {score: 90, date: DATE3},
+    {score: 100, date: DATE4},
+  ];
+  foo.appendChild(element);
+</script>

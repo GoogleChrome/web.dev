@@ -1,10 +1,14 @@
 @import '../../../styles/settings/colors';
 
 // animate transforms instead of left/right
-@keyframes indeterminate{
+@keyframes indeterminate {
   0% { left: -35%; right: 100%; }
   60% { left: 100%; right: -90%; }
   100% { left: 100%; right: -90%; }
+}
+
+web-progress-bar {
+  display: block;
 }
 
 .web-progress-bar-wrapper {

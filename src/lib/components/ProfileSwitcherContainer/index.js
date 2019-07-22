@@ -1,8 +1,8 @@
-import {BaseElement} from "./BaseElement";
 import {html} from "lit-element";
-import {signIn} from "../fb";
-import {store} from "../store";
-import "./ProfileSwitcher";
+import {signIn} from "../../fb";
+import {store} from "../../store";
+import {BaseElement} from "../BaseElement";
+import "../ProfileSwitcher";
 
 /* eslint-disable require-jsdoc */
 class ProfileSwitcherContainer extends BaseElement {
