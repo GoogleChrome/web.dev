@@ -12,12 +12,15 @@ Here's how to spell, punctuate, and capitalize words and phrases commonly used o
 * DevTools, Chrome DevTools
 * e-commerce
 * FFmpeg
+* ~~guide~~ (use _post_ instead)
 * Hypertext Markup Language (HTML)
 * internet
 * JavaScript
 * JPEG image
+* lazy-load
 * npm
 * web
+* web page
 * web.dev
 * webpack
 * website
