@@ -97,6 +97,19 @@ In general, spell out integers from one to nine unless:
 
 Use numerals for decimals and numbers higher than nine.
 
+## Pronouns
+Avoid ambiguous pronouns. Follow the advice on the GDDSC [Pronouns](https://developers.google.com/style/pronouns) page. Also avoid pronouns that refer to clauses or phrases, which can complicate translation into some languages.
+
+{% Compare 'worse', 'Don’t' %}
+> Speed optimizations often regress quickly. Performance budgets are one way to address this.
+
+{% endCompare %}
+
+{% Compare 'better', 'Do' %}
+> Speed optimizations often regress quickly. Performance budgets are one way to address this problem.
+
+{% endCompare %}
+
 ## Punctuation
 ### Ampersands
 Don't use ampersands unless one is part of a company or brand name.
