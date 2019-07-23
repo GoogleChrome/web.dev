@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore";
 import {store} from "./store";
 
 /* eslint-disable require-jsdoc */
@@ -17,13 +18,28 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+let firestoreUserUnsubscribe = null;
+
 // Listen for the user's signed in state and update the store.
 firebase.auth().onAuthStateChanged((user) => {
   store.setState({checkingSignedInState: false});
+  if (firestoreUserUnsubscribe) {
+    firestoreUserUnsubscribe();
+    firestoreUserUnsubscribe = null;
+  }
+
   if (user) {
     store.setState({
       isSignedIn: true,
       user,
+    });
+    const firestore = firebase.firestore();
+    const ref = firestore.collection("users").doc(user.uid);
+    firestoreUserUnsubscribe = ref.onSnapshot((snapshot) => {
+      const data = snapshot.data();
+      store.setState({
+        userUrl: data.url,
+      });
     });
   } else {
     store.setState({

@@ -13,6 +13,9 @@ const initialState = {
   // The user has successfully signed in.
   isSignedIn: false,
   user: null,
+
+  // The most recent URL measured.
+  userUrl: null,
 };
 
 const store = devtools(createStore(initialState));
