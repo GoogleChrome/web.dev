@@ -30,7 +30,9 @@ Sites use these scripts for various purposes, including:
 - Helper libraries (like date formatting, animation, and functional libraries)
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="./script-examples.png" alt="A diagram of a webpage showing multiple kinds of third-party scripts, including social sharing buttons, video player embeds, ads, map embeds, chat widgets, and A/B testing scripts.">
+  <video autoplay loop muted playsinline>
+    <source src="./third-party-examples.mp4" type="video/mp4">
+  </video>
 </figure>
 
 Third-party scripts can provide powerful functionality, but that's not the whole story. They also affect privacy, security, and page behavior⁠—and they can be particularly problematic for performance.
