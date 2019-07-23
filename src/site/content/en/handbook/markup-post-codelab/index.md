@@ -46,8 +46,6 @@ Codelabs have two additional fields:
 * `related_post`: The slug for the post associated with your codelab. (This is what makes breadcrumbs work.)
 
 ## Authoring tips
-To make diffing on GitHub easier, wrap lines at 80 characters.
-
 Use relative URLs to link to other posts and codelabs on web.dev.
 
 {% Compare 'worse', 'Don’t' %}
