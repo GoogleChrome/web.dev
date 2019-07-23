@@ -197,7 +197,7 @@ Use imperative mood for titles and headings whenever possible.
 {% endCompare %}
 
 ## UI elements and interaction
-Bold the names of UI elements.
+Bold the names of UI elements and Lighthouse audits.
 
 {% Compare 'worse', 'Don’t' %}
 > In the New Project window, select the "New Activity" checkbox, and then click "Next."
@@ -206,6 +206,11 @@ Bold the names of UI elements.
 
 {% Compare 'better', 'Do' %}
 > In the **New Project** window, select the **New Activity** checkbox, and then click **Next**.
+
+{% endCompare %}
+
+{% Compare 'better', 'Do' %}
+> To find slow third-party scripts, check the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits in the **Diagnostics** section.
 
 {% endCompare %}
 
