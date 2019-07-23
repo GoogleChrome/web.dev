@@ -53,25 +53,24 @@ layout: layout
 
   <section class="w-layout-container">
     <div class="w-numbered-headers">
-    {% for topic in path.topics %}
-      <h2 id="{{ topic.title | slug }}" class="no-link w-headline--three w-numbered-header w-numbered-header--horizontal">
-        {{ topic.title }}
-        <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
-      </h2>
-      <ul class="w-path-list">
-      {% for slug in topic.pathItems %}
-        {% set item = slug | findBySlug %}
-        <li class="w-path-listitem">
-          <a
-            class="w-path-link"
-            href="{{ item.url | stripLanguage }}"
-          >
-            {{ item.data.title }}
-          </a>
-        </li>
+      {#
+        Check to see if the only item within a topic is a draft post.
+        If so, don't render the topic heading and skip the post.
+      #}
+      {% for topic in path.topics %}
+        {% if topic.pathItems.length === 1 %}
+          {% set item = topic.pathItems[0] | findBySlug %}
+          {% if item.data.draft %}
+            {# noop #}
+          {% else %}
+            {# render topic #}
+            {% include 'partials/topic.njk' %}
+          {% endif %}
+        {% else %}
+          {# render topic #}
+          {% include 'partials/topic.njk' %}
+        {% endif %}
       {% endfor %}
-      </ul>
-    {% endfor %}
     </div>
   </section>
 </main>

@@ -8,9 +8,9 @@ description: |
   Strategies for using code blocks and sample apps to support the author's purpose on web.dev.
 ---
 
-This post is about how to use code blocks and sample apps to support your writing goals. If you're looking for how to author code blocks in Markdown, see the "[Code](/handbook/markup-code)" post.
+This post is about how to use code blocks and sample apps to support your writing goals. If you're looking for how to author code blocks in Markdown, see the [Code](/handbook/markup-code) post.
 
-web.dev uses embedded [Glitches](https://glitch.com/) to embed sample apps in posts and codelabs. See the "[Sample apps](/handbook/markup-sample-app)" post for information about how to set up a Glitch.
+web.dev uses embedded [Glitches](https://glitch.com/) to embed sample apps in posts and codelabs. See the [Sample apps](/handbook/markup-sample-app) post for information about how to set up a Glitch.
 
 ## Typical use cases
 Use code blocks when the key concept you want to convey can be understood by looking at code alone. For example, a code block would make sense if you wanted to show the [markup for a well-structured set of HTML heading elements](/headings-and-landmarks/#use-headings-to-outline-the-page).

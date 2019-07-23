@@ -103,16 +103,23 @@ style.innerHTML = `
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition:
-      transform 0.4s,
-      bottom 0.7s,
-      left 0.7s,
-      opacity 1.0s;
     box-shadow: 0 0 20px 10px #999;
     transform: scale(${initialScale});
     bottom: calc(20px + 50% * ${initialScale} - 50%);
     left: calc(20px + 50% * ${initialScale} - 50%);
     z-index: 10000;
+  }
+  .portal-transition {
+    transition:
+      transform 0.4s,
+      bottom 0.7s,
+      left 0.7s,
+      opacity 1.0s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .portal-transition {
+      transition: all 0.001s;
+    }
   }
   .portal-reveal {
     transform: scale(1.0);
@@ -126,6 +133,10 @@ style.innerHTML = `
 const portal = document.createElement('portal');
 // Let's navigate into the WICG Portals spec page
 portal.src = 'https://wicg.github.io/portals/';
+// Add a class that defines the transition. Consider using 
+// `prefers-reduced-motion` media query to control the animation. 
+// https://developers.google.com/web/updates/2019/03/prefers-reduced-motion
+portal.classList.add('portal-transition');
 portal.addEventListener('click', evt => {
   // Animate the portal once user interacts
   portal.classList.add('portal-reveal');

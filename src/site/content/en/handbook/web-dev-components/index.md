@@ -16,6 +16,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 ## Sections
 
 1. [Asides](#asides)
+1. [Banner](#banner)
 1. [Blockquotes](#blockquotes)
 1. [Buttons](#buttons)
 1. [Columns](#columns)
@@ -71,6 +72,14 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 {% Aside 'codelab' %}
   [Using Imagemin with Grunt](#)
 {% endAside %}
+
+## Banner
+
+{% Banner %}This is an info banner with a <a href="#">link</a>.{% endBanner %}
+
+{% Banner 'caution' %}This is a caution banner with a <a href="#">link</a>.{% endBanner %}
+
+{% Banner 'warning' %}This is a warning banner with a <a href="#">link</a>.{% endBanner %}
 
 ## Blockquotes
 
@@ -134,7 +143,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 
 ## Code
 
-See the "[Code](/handbook/markup-code)" post.
+See the [Code](/handbook/markup-code) post.
 
 ## Compare
 
@@ -194,7 +203,7 @@ at.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true"
+    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true"
     alt="tabindex-zero on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -202,7 +211,7 @@ at.
 
 ## Images
 
-See the "[Images and video](/handbook/markup-media)" post.
+See the [Images and video](/handbook/markup-media) post.
 
 ## Instruction
 
@@ -575,4 +584,4 @@ assumenda perspiciatis.
 </div>
 
 ## Video
-See the "[Images and video](/handbook/markup-media#video)" post.
+See the [Images and video](/handbook/markup-media#video) post.

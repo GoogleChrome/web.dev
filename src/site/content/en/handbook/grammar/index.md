@@ -60,11 +60,11 @@ Don't include preceding articles (_a_, _an_, _the_) or surrounding punctuation i
 {% endCompare %}
 
 {% Compare 'better', 'Do' %}
-> See the "[Easily discoverable](/discoverable)" collection for more information.
+> See the [Easily discoverable](/discoverable) collection for more information.
 
 {% endCompare %}
 
-When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title and put double quotation marks outside the hyperlink. (See example above.)
+When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title only, without quotation marks. (See example above.)
 
 Libraries and tools should be linked the first time they're mentioned.
 
