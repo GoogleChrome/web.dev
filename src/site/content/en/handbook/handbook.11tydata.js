@@ -14,9 +14,11 @@ module.exports = {
       living document that will evolve as we learn more about what works.`,
     topics: [
       {
-        title: 'How to get started',
+        title: 'Content process',
         pathItems: [
           'quick-start',
+          'content-checklist',
+          'third-party-contributions',
         ],
       },
       {
@@ -32,9 +34,7 @@ module.exports = {
           'write-code-samples',
           'use-media',
           'word-list',
-          'content-checklist',
           'tooling-and-libraries',
-          'third-party-contributions',
         ],
       },
       {

@@ -8,24 +8,20 @@ description: |
   Guidance on selecting the tooling and libraries for web.dev content.
 ---
 
-This posts explains how to select tooling and libraries for web.dev content that requires non-native dependencies.
+Choosing tooling and libraries can be one of the most overwhelming and time consuming aspects of web development. To help readers feel confident in their choices, provide instructions for well-known, well-established tools rather than an exhaustive list of options. Strike a balance between what's most commonly used and what's best practice, in terms of compatibility, accessibility, and functionality.
 
-## Open source
+When appropriate, provide multiple paths, frameworks, or tools to achieve a goal. Including a codelab for each path is often a good way to achieve that goal. To see an example, check out the codelab callout at the end of the [Use Imagemin to compress images](/use-imagemin-to-compress-images/#imagemin-npm-module) post.
 
-Open-source tools and libraries should be used as much as possible. Using open-source software helps keep web.dev accessible to as many developers as possible.
+## Favor open-source software
+Use open-source tooling and libraries whenever possible. This approach keeps web.dev accessible to as many developers as possible.
 
-For topic areas that are dominated by proprietary solutions, web.dev should provide at least one open-source option (when available) along with proprietary options. 
+For topic areas that are dominated by proprietary tools, provide at least one open-source option, when available, along with the proprietary options.
 
+## Ensure tooling is well-established
+When you're planning to include tooling in a post or codelab, make sure it meets at least one of these criteria:
+*   **[HTTP Archive](https://httparchive.org) data:** Tooling is used by ≥ 10K domains.
+*   **[npm](https://www.npmjs.com/) weekly download statistics:** Tooling consistently has ≥ 50K weekly downloads.
 
-## Use well-known and well-established tooling.
+Include a link to the relevant data source in your [content proposal](http://localhost:8080/handbook/quick-start/#planning).
 
-Choosing tooling can be one of the most overwhelming and time consuming aspects of web development. We want users to feel confident and well-supported with the tooling they choose, so web.dev deliberately focuses on providing instructions for the most well-known and well-established tooling and libraries. The tooling mentioned on web.dev is not intended to be an exhaustive listing of all available options.
-
-Third-party contributions should focus on tooling that meets at least one of these criteria:
-
-
-
-*   **[HTTP Archive](https://httparchive.org)** **data:** Tooling is used by ≥ 10K domains
-*   **npm weekly downloads statistics:** Tooling consistently has ≥ 50K weekly downloads.
-
-If the nature of the tooling in question makes it impossible to use either of these data sources to verify its popularity (e.g., if you were writing an article on servers, neither of these data sources could be used to verify usage of nginx), this can alternatively be demonstrated by providing a list of 5–10 well-known sites who’ve self-identified as users. 
+Sometimes it's impossible to use these data sources to verify the popularity of a given tool. (For example, if you're writing an article about servers, neither data source can be used to verify the usage of [NGINX](https://www.nginx.com/).) In such cases you can demonstrate the popularity of a tool in your content proposal by listing 5–10 well-known sites that have self-identified as users.

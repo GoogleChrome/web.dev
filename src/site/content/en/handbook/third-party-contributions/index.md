@@ -1,16 +1,13 @@
 ---
 layout: handbook
-title: Third-party contributions
+title: Third-party contributors
 authors:
   - katiehempenius
 date: 2019-07-28
 description: |
-  Web.dev's policies regarding third-party contributions.
+  Guidance for third-party contributors to web.dev.
 ---
 
-This post outlines web.dev policies specific to third-party contributions.
+First, thanks for contributing to web.dev! We really appreciate your help in making this community better.
 
-
-## Provide support
-
-Third-party contributions to web.dev should provide a point of contact who can respond to  GitHub issues related to their content within a week of being submitted. The web.dev team will tag the point of contact in issues so that they can respond.
+If you're not a Googler, we ask that you provide a point of contact who can respond to GitHub issues related to your content.  Ideally, your point of contact will be able to respond within a week of when the issue is submitted. The web.dev team will tag the point of contact in relevant issues so that they can respond.
