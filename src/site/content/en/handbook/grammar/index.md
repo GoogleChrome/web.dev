@@ -255,6 +255,18 @@ Add a space before units.
 {% endCompare %}
 
 ## Usage
+To maintain a conversational tone, use common contractions.
+
+{% Compare 'worse', 'Don’t' %}
+> This collection assumes that you are already familiar with Angular.
+
+{% endCompare %}
+
+{% Compare 'better', 'Do' %}
+> This collection assumes that you're already familiar with Angular.
+
+{% endCompare %}
+
 Use consistent vocabulary throughout a piece and the collection it lives in.
 
 Acronyms should be spelled out the first time they're used, with the acronym following immediately after in parentheses.
