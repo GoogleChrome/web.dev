@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Style
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   The primary guidelines for writing in the web.dev style.

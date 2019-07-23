@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Posts and codelabs
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create the Markdown for posts and codelabs on web.dev.

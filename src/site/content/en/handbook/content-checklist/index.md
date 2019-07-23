@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: web.dev content checklist
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   A checklist for web.dev content reviews.

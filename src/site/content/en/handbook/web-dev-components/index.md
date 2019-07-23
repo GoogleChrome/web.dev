@@ -1,9 +1,6 @@
 ---
 layout: handbook
 title: web.dev components
-authors:
-  - robdodson
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to use web.dev's UI and content components.

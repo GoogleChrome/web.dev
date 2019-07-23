@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Inclusion and accessibility
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   This handbook helps contributors to web.dev create effective, engaging content

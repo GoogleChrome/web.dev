@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Grammar, mechanics, and usage
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   A list of grammar, mechanics, and usage rules for web.dev, followed by a list of style and usage references.

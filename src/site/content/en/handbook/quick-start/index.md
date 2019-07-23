@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Quick start guide
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   The basic steps to create and publish content on web.dev.

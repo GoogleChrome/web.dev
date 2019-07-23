@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Audience
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Definitions of the the key personas for web.dev and advice about how to write for them.
