@@ -32,7 +32,7 @@ In this post, you'll learn how to use [Lighthouse](https://developers.google.com
 
 ## If you only have 5 minutes
 
-The Lighthouse [Performance audit](/lighthouse-performance) helps you discover opportunities to speed up page loads. Slow third-party scripts are likely to appear in the **Diagnostics** section under the "Reduce JavaScript execution time" and "Avoid enormous network payloads" audits.
+The Lighthouse [Performance audit](/lighthouse-performance) helps you discover opportunities to speed up page loads. Slow third-party scripts are likely to appear in the **Diagnostics** section under the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits.
 
 To run an audit:
 
@@ -48,12 +48,12 @@ To run an audit:
 ### Reduce JavaScript execution time
 The Lighthouse [JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
 
-![Screenshot showing that the "Show third-party resources" checkbox is checked.](show-third-party.png)
+<img class="w-screenshot" src="./show-third-party.png" alt='Screenshot showing that the "Show third-party resources" checkbox is checked.'>
 
 ### Avoid enormous network payloads
 The Lighthouse [Network Payloads](/total-byte-weight) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
 
-![Screenshot of the Chrome DevTools "Avoid enormous network payloads" audit.](./network-payloads.png)
+<img class="w-screenshot" src="./network-payloads.png" alt='Screenshot of the Chrome DevTools "Avoid enormous network payloads" audit.'>
 
 ## If you only have 15 minutes
 Lighthouse audits call out only the worst speed offenders, so you might have room for improvement even if your site passes all audits. Chrome DevTools **Network** and **Performance** panels can help you identify slow third-party scripts.
@@ -114,7 +114,7 @@ To enable request blocking:
 1. Right-click any request in the **Network** panel.
 1. Select **Block request URL**.
 
-![A screenshot of the context menu in the Chrome DevTools Performance panel. The "Block request URL" option is highlighted.](request-blocking.png)
+<img class="w-screenshot" src="./request-blocking.png" alt='A screenshot of the context menu in the Chrome DevTools Performance panel. The "Block request URL" option is highlighted.'>
 
 A **Request blocking** tab will appear in the DevTools drawer. You can manage which requests have been blocked there.
 
