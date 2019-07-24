@@ -3,6 +3,8 @@ import "firebase/auth";
 import "firebase/firestore";
 import {store} from "./store";
 
+export {firebase as firebase};  // yes really
+
 /* eslint-disable require-jsdoc */
 
 const firebaseConfig = {
@@ -17,6 +19,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const firestore = firebase.firestore();
 
 let firestoreUserUnsubscribe = null;
 
@@ -26,6 +29,11 @@ firebase.auth().onAuthStateChanged((user) => {
   if (firestoreUserUnsubscribe) {
     firestoreUserUnsubscribe();
     firestoreUserUnsubscribe = null;
+
+    // Clear Firestore values here, so they don't persist between signins.
+    store.setState({
+      userUrl: null,
+    });
   }
 
   if (user) {
@@ -33,12 +41,10 @@ firebase.auth().onAuthStateChanged((user) => {
       isSignedIn: true,
       user,
     });
-    const firestore = firebase.firestore();
-    const ref = firestore.collection("users").doc(user.uid);
-    firestoreUserUnsubscribe = ref.onSnapshot((snapshot) => {
-      const data = snapshot.data();
+    firestoreUserUnsubscribe = userRef().onSnapshot((snapshot) => {
+      const data = snapshot.data() || {};  // is empty on new user
       store.setState({
-        userUrl: data.url,
+        userUrl: data.userUrl || '',
       });
     });
   } else {
@@ -48,6 +54,14 @@ firebase.auth().onAuthStateChanged((user) => {
     });
   }
 });
+
+export function userRef() {
+  const state = store.getState();
+  if (!state.user) {
+    return null;
+  }
+  return firestore.collection("users").doc(state.user.uid);
+}
 
 // Sign in the user
 export async function signIn() {

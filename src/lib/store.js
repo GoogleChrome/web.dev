@@ -14,7 +14,8 @@ const initialState = {
   isSignedIn: false,
   user: null,
 
-  // The most recent URL measured.
+  // The most recent URL measured. Null for unknown/not signed in, blank is
+  // unset.
   userUrl: null,
 };
 
