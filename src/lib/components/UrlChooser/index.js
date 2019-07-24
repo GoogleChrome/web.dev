@@ -15,7 +15,7 @@ class UrlChooser extends BaseElement {
 
   constructor() {
     super();
-    this.href = null;  // when signed out or waiting for Firestore, this is null
+    this.href = null; // when signed out or waiting for Firestore, this is null
     this.switching = true;
     this.active = false;
 
@@ -29,22 +29,48 @@ class UrlChooser extends BaseElement {
 
   render() {
     return html`
-    <div class="report_header_enterurl">
-      <div class="lh-enterurl lh-enterurl--selected">${this.href}</div>
-      <div class="lh-enterurl lh-enterurl--switch">
-        <input type="url" class="lh-input" .value="${this.href}" placeholder="Enter a web page URL" pattern="https?://.*" minlength="7" required @keyup="${this.onUrlKeyup}" />
-        <button class="lh-enterurl__close" aria-label="Remove URL" @click=${this.clearInput}></button>
+      <div class="report_header_enterurl">
+        <div class="lh-enterurl lh-enterurl--selected">${this.href}</div>
+        <div class="lh-enterurl lh-enterurl--switch">
+          <input
+            type="url"
+            class="lh-input"
+            .value="${this.href}"
+            placeholder="Enter a web page URL"
+            pattern="https?://.*"
+            minlength="7"
+            required
+            @keyup="${this.onUrlKeyup}"
+          />
+          <button
+            class="lh-enterurl__close"
+            aria-label="Remove URL"
+            @click=${this.clearInput}
+          ></button>
+        </div>
+        <div class="lh-controls">
+          <button
+            ?disabled=${this.active}
+            class="w-button w-button--secondary"
+            @click=${this.switchUrl}
+          >
+            Switch URL
+          </button>
+          <button
+            ?disabled=${this.active}
+            class="w-button w-button--primary"
+            id="run-lh-button"
+            @click=${this.runAudit}
+          >
+            Run Audit
+          </button>
+        </div>
       </div>
-      <div class="lh-controls">
-        <button ?disabled=${this.active} class="w-button w-button--secondary" @click=${this.switchUrl}>Switch URL</button>
-        <button ?disabled=${this.active} class="w-button w-button--primary" id="run-lh-button" @click=${this.runAudit}>Run Audit</button>
-      </div>
-    </div>
     `;
   }
 
   updated() {
-    this.urlInput = this.renderRoot.querySelector("input[type=\"url\"]");
+    this.urlInput = this.renderRoot.querySelector('input[type="url"]');
     this.runLighthouseButton = this.renderRoot.querySelector("#run-lh-button");
   }
 
@@ -53,7 +79,12 @@ class UrlChooser extends BaseElement {
 
     if (this.active) {
       // do nothing, the URL is being run through Lighthouse
-    } else if (this.href == null && this.switching && state.userUrl && !this.urlInput.value) {
+    } else if (
+      this.href == null &&
+      this.switching &&
+      state.userUrl &&
+      !this.urlInput.value
+    ) {
       // if the user has just signed in, the element was in an initial state,
       // AND the user hasn"t typed anything, reset element with URL
       this.href = state.userUrl;
@@ -76,7 +107,7 @@ class UrlChooser extends BaseElement {
     // TODO: actually run Lighthouse. Currently just freezes the page.
     this.switching = false;
     this.active = true;
-    console.warn("web-url-chooser in terminal state: should run Lighthouse")
+    console.warn("web-url-chooser in terminal state: should run Lighthouse");
   }
 
   switchUrl(ev) {
@@ -115,18 +146,20 @@ class UrlChooser extends BaseElement {
     }
 
     if (!this.urlInput.validity.valid) {
-      this.dispatchEvent(new CustomEvent("web-error", {
-        bubbles: true,
-        detail: `Invalid URL. Please enter a full URL starting with https://.`,
-      }))
+      const detail = `Invalid URL. Please enter a full URL starting with https://.`;
+      const ce = new CustomEvent("web-error", {bubbles: true, detail});
+      this.dispatchEvent(ce);
       return false;
     }
-  
+
     const ref = userRef();
-    const p = ref.set({
-      userUrl: url || null,
-      userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
-    }, {merge: true});
+    const p = ref.set(
+      {
+        userUrl: url || null,
+        userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
+      },
+      {merge: true},
+    );
     p.catch((err) => {
       // TODO: Firestore errors are problematic but we can still run with the new URL.
       console.warn("could not write URL", err);

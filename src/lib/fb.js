@@ -3,7 +3,7 @@ import "firebase/auth";
 import "firebase/firestore";
 import {store} from "./store";
 
-export {firebase as firebase};  // yes really
+export {firebase};
 
 /* eslint-disable require-jsdoc */
 
@@ -42,9 +42,9 @@ firebase.auth().onAuthStateChanged((user) => {
       user,
     });
     firestoreUserUnsubscribe = userRef().onSnapshot((snapshot) => {
-      const data = snapshot.data() || {};  // is empty on new user
+      const data = snapshot.data() || {}; // is empty on new user
       store.setState({
-        userUrl: data.userUrl || '',
+        userUrl: data.userUrl || "",
       });
     });
   } else {
