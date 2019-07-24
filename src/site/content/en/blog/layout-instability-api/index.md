@@ -225,7 +225,7 @@ which will be available until Sept. 3, 2019.
 
 Similar to other performance APIs, Layout Instability can be observed via the
 `PerformanceObserver` interface, where you can subscribe to entries of type
-`layoutShift`.
+`layout-shift`.
 
 The following code logs all layout shift entries as they happen:
 
@@ -236,8 +236,30 @@ const observer = new PerformanceObserver((list) => {
   }
 })
 
-observer.observe({entryTypes: ['layoutShift']});
+observer.observe({type: 'layout-shift', buffered: true});
 ```
+
+{% Aside %}
+
+**Note:** The
+[`buffered`](https://w3c.github.io/performance-timeline/#dom-performanceobserverinit-buffered)
+flag in the above example (supported in Chrome 77+) gives you access to entries
+that may have occurred prior to creating the `PerformanceObserver`.
+
+{% endAside %}
+
+{% Aside 'caution' %}
+
+The `entryType` value for this API has changed a few times during
+the experimentation period. In Chrome 76 it was `layoutShift`, and in Chrome
+74-75 it was `layoutJank`. Developers implementing the stable API should only
+need to observe the current `layout-shift` value (as shown in the example
+above), but developers who are part of the origin trial may need to observe
+multiple entry types to cover their full user base. See [this
+demo](https://output.jsbin.com/zajamil/quiet) for an example of code that
+works in Chrome 74+.
+
+{% endAside %}
 
 If you want to calculate the cumulative layout shift score for your pages and
 track them in your analytics back end, you can declare a variable that stores
@@ -253,11 +275,14 @@ let cumulativeLayoutShiftScore = 0;
 // `cumulativeLayoutShiftScore` variable.
 const observer = new PerformanceObserver((list) => {
   for (const entry of list.getEntries()) {
-    cumulativeLayoutShiftScore += entry.value;
+    // Only count layout shifts without recent user input.
+    if (!entry.hadRecentInput) {
+      cumulativeLayoutShiftScore += entry.value;
+    }
   }
 });
 
-observer.observe({entryTypes: ['layoutShift']});
+observer.observe({type: 'layout-shift', buffered: true});
 
 // Sends the final score to your analytics back end once
 // the page's lifecycle state becomes hidden.
@@ -272,18 +297,6 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 ```
-
-<div class="w-aside w-aside--note">
-  <p><strong>Note:</strong>
-  The Layout Instability API does not currently expose whether a layout shift
-  entry occurred shortly after a user input event. The goal is to eventually
-  expose it, but the exact format and duration is still being discussed.</p>
-  <p>In the meantime, developers wanting to track CLS scores themselves can
-  manually ignore specific layout shift entries by comparing `event.timeStamp`
-  with `entry.startTime` for events they expect to cause layout shifts. For
-  consistency with the CLS scores reported to CrUX, you can ignore entries that
-  occur within 500 milliseconds of user input.</p>
-</div>
 
 ## How to avoid unexpected layout shifts
 
