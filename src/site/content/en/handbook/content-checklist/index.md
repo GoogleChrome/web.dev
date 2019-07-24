@@ -1,6 +1,6 @@
 ---
 layout: handbook
-title: web.dev content checklist
+title: Content checklist
 authors:
   - mfriesenhahn
 date: 2019-06-26
