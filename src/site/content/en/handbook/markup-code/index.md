@@ -78,6 +78,17 @@ Show that lines have changed by using the pattern `language/lineNumAdded/lineNum
 </label>
 ```
 
+## Escaping special characters
+To use special characters (for example, double curly brackets) in your code samples, escape them like this:
+
+```html
+{% raw %}{% raw %}{% verbatim %}{{ item.num | calculate }}{% endverbatim %}{% endraw %}{% endraw %}
+```
+
+{% Aside %}
+The `{% raw %}{% verbatim %}{% endraw %}` tags will be visible when you stage
+locally but not in production.
+{% endAside %}
 
 ## Coding Style
 Indent using two spaces.
