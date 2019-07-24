@@ -70,7 +70,7 @@ Think of your service worker as something that lives outside of your page. You c
 
 ## Long-lived, but short-lived
 
-An active service worker goes on living even after a user leaves your site or closes the tab. The browser keeps this service worker around so that it will be ready the next time the user comes back to your site. Before the very first request is made, the service worker gets a chance to intercept it and take control of the page. This is what allows a site to work offline — the service worker can serve a cached version of the page itself, even if the user has no connection to the internet.
+An active service worker goes on living even after a user leaves your site or closes the tab. The browser keeps this service worker around so that it will be ready the next time the user comes back to your site. Before the very first request is made, the service worker gets a chance to intercept it and take control of the page. This is what allows a site to work offline—the service worker can serve a cached version of the page itself, even if the user has no connection to the internet.
 
 In [Service Workies](https://serviceworkies.com) we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.
 

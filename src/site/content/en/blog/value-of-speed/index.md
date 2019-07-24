@@ -51,7 +51,7 @@ improvements.
 {% Aside 'caution' %}
 Rel mCvR is influenced not only by speed, but also by other site
 characteristics like usability. If other big changes were made to the site
-during the period you want to analyze, you won’t be able to measure the effects
+during the period you want to analyze, you won't be able to measure the effects
 of speed improvements on their own, but you can show the benefits of all the
 improvements as a group.
 {% endAside %}

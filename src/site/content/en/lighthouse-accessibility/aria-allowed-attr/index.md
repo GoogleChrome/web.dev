@@ -27,7 +27,7 @@ Lighthouse reports any mismatches between roles and `aria-*` attributes:
 ## How Lighthouse finds ARIA mismatches
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
 to check for mismatches between ARIA roles and attributes.
 Each role has a subset of "supported states and properties" and
 "inherited states and properties".

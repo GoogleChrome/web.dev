@@ -20,7 +20,7 @@ description: |
 
 **Placement on the site:**
 * Always appears on the [blog](/blog), organized chronologically
-* May transition into a collection in the "[Learn](/learn)" section, organized thematically with other posts
+* May transition into a collection in the [Learn](/learn) section, organized thematically with other posts
 
 **Length:** typically less than 1,000–1,500 words
 

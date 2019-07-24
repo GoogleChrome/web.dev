@@ -4,8 +4,8 @@ title: Use WebP images
 authors:
   - katiehempenius
 description: |
-  WebP images are smaller than their JPEG and PNG counterparts - usually on the
-  magnitude of a 25-35% reduction in filesize. This decreases page sizes and
+  WebP images are smaller than their JPEG and PNG counterparts—usually on the
+  magnitude of a 25–35% reduction in filesize. This decreases page sizes and
   improves performance.
 date: 2018-11-05
 codelabs:
@@ -14,8 +14,8 @@ codelabs:
 
 ## Why should you care?
 
-WebP images are smaller than their JPEG and PNG counterparts - usually on the
-magnitude of a 25-35% reduction in filesize. This decreases page sizes and
+WebP images are smaller than their JPEG and PNG counterparts—usually on the
+magnitude of a 25–35% reduction in filesize. This decreases page sizes and
 improves performance.
 
 -  YouTube found that switching to WebP thumbnails resulted in [10%

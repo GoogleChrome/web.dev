@@ -8,7 +8,7 @@ description: |
   Learn how to create well-formatted code samples for web.dev.
 ---
 
-This post is about how to get sample code to look right in your piece and follow site conventions. For guidance about how to use code samples to support your writing goals, see the "[Write useful code samples](/handbook/write-code-samples/)" post.
+This post is about how to get sample code to look right in your piece and follow site conventions. For guidance about how to use code samples to support your writing goals, see the [Write useful code samples](/handbook/write-code-samples/) post.
 
 ## All code
 Make all code samples [accessible](/handbook/inclusion-and-accessibility/#create-accessible-code-blocks).
@@ -78,6 +78,17 @@ Show that lines have changed by using the pattern `language/lineNumAdded/lineNum
 </label>
 ```
 
+## Escaping special characters
+To use special characters (for example, double curly brackets) in your code samples, escape them like this:
+
+```html
+{% raw %}{% raw %}{% verbatim %}{{ item.num | calculate }}{% endverbatim %}{% endraw %}{% endraw %}
+```
+
+{% Aside %}
+The `{% raw %}{% verbatim %}{% endraw %}` tags will be visible when you stage
+locally but not in production.
+{% endAside %}
 
 ## Coding Style
 Indent using two spaces.

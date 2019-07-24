@@ -35,7 +35,7 @@ instead of the histogram distance.
 ## How Lighthouse determines your Speed Index score
 
 In order to be able to calculate your overall performance score,
-Lighthouse assigns each performance metric an individual score between 0 - 100.
+Lighthouse assigns each performance metric an individual score between 0–100.
 The Speed Index score is a comparison between how fast your Speed Index is,
 compared to [real website performance data tracked in HTTParchive](https://bigquery.cloud.google.com/table/httparchive:lighthouse.2019_03_01_mobile?pli=1).
 
@@ -52,22 +52,22 @@ This table helps explain how to interpret your Speed Index score:
     </thead>
     <tbody>
       <tr>
-        <td>0 - 4.3 seconds</td>
+        <td>0–4.3 seconds</td>
         <td>Green (fast)</td>
-        <td>75 - 100</td>
+        <td>75–100</td>
       </tr>
       <tr>
-        <td>4.4 - 5.8 seconds</td>
+        <td>4.4–5.8 seconds</td>
         <td>Orange (average)</td>
-        <td>50 - 74</td>
+        <td>50–74</td>
       </tr>
       <tr>
         <td>Over 5.8 seconds</td>
         <td>Red (slow)</td>
-        <td>0 - 49</td>
+        <td>0–49</td>
       </tr>
     </tbody>
-    <caption>Table 1 — Speed Index metric compared to Speed Index score</caption>
+    <caption>Speed Index metric compared to Speed Index score.</caption>
   </table>
 </div>
 

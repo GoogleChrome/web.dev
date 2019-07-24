@@ -15,6 +15,7 @@
  */
 
 const {html} = require('common-tags');
+const {findBySlug} = require('../../_filters/find-by-slug');
 const stripLanguage = require('../../_filters/strip-language');
 
 /* eslint-disable require-jsdoc,max-len */
@@ -34,14 +35,24 @@ function getPathItemsFromTopics(topics) {
 
 /**
  * Find the slug for the next pathItem in a learning path.
+ * This requires grabbing the eleventy object for the post and checking if
+ * it is a draft or not.
  * @param {Object} path A learning path.
  * @param {string} slug The current page slug.
  * @return {string} The next pathItem slug or a terminating empty string.
  */
 function findNextPathItemBySlug(path, slug) {
+  let next = '';
   const items = getPathItemsFromTopics(path.topics);
   const idx = items.indexOf(slug);
-  return items[idx + 1] || '';
+  for (let i = idx + 1; i < items.length; i++) {
+    const item = findBySlug(items[i]);
+    if (!item.data.draft) {
+      next = items[i];
+      break;
+    }
+  }
+  return next;
 }
 
 /**

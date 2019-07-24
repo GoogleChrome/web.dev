@@ -5,14 +5,14 @@ authors:
   - robdodson
 date: 2018-11-18
 description: |
-  Many different users rely on the keyboard to navigate applications - from
+  Many different users rely on the keyboard to navigate applications—from
   users with temporary and permanent motor impairments to users who use keyboard
   shortcuts to be more efficient and productive. Having a good keyboard
   navigation strategy for your application creates a better experience for
   everyone.
 ---
 
-Many different users rely on the keyboard to navigate applications — from users
+Many different users rely on the keyboard to navigate applications—from users
 with temporary and permanent motor impairments to users who use keyboard
 shortcuts to be more efficient and productive. Having a good keyboard navigation
 strategy for your application creates a better experience for everyone.

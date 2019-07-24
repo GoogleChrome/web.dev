@@ -60,11 +60,11 @@ Don't include preceding articles (_a_, _an_, _the_) or surrounding punctuation i
 {% endCompare %}
 
 {% Compare 'better', 'Do' %}
-> See the "[Easily discoverable](/discoverable)" collection for more information.
+> See the [Easily discoverable](/discoverable) collection for more information.
 
 {% endCompare %}
 
-When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title and put double quotation marks outside the hyperlink. (See example above.)
+When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title only, without quotation marks. (See example above.)
 
 Libraries and tools should be linked the first time they're mentioned.
 
@@ -137,7 +137,7 @@ Use an en dash (–) for ranges (e.g., _10–100 KB_).
 Use straight quotation marks and apostrophes, not smart (curly).
 
 {% Compare 'worse', 'Don’t' %}
-> The “Accessible to all” collection
+> The "Accessible to all" collection
 
 {% endCompare %}
 

@@ -77,7 +77,7 @@ The **Size** column in Chrome DevTools can help you verify that a resource has b
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="size.png" alt="The Size column.">
   <figcaption class="w-figcaption">
-    <b>Figure 2</b>. The <b>Size</b> column
+    The <b>Size</b> column.
   </figcaption>
 </figure>
 
@@ -90,7 +90,7 @@ as expected.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="cache-control-header.png" alt="Inspecting the Cache-Control header via the Headers tab">
   <figcaption class="w-figcaption">
-    Figure 3 - Inspecting the <code>Cache-Control</code> header via the <b>Headers</b> tab
+    Inspecting the <code>Cache-Control</code> header via the <b>Headers</b> tab.
   </figcaption>
 </figure>
 

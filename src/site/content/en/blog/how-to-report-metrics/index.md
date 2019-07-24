@@ -1,7 +1,7 @@
 ---
 title: How to report metrics and build a performance culture
-subhead: Understand why performance matters when it comes to conversion
-authors: 
+subhead: Understand why performance matters when it comes to conversion.
+authors:
   - martinschierle
 date: 2019-05-05
 hero: hero.jpg
@@ -30,8 +30,8 @@ this successfully.
 
 ## A word about metrics
 
-There are countless metrics to evaluate website performance, and while it may 
-seem useful to collect all of them, too many metrics can be confusing and 
+There are countless metrics to evaluate website performance, and while it may
+seem useful to collect all of them, too many metrics can be confusing and
 misleading. There are several ways to deal with this:
 
 -   Gather multiple metrics and try to narrow and filter afterwards on
@@ -91,7 +91,7 @@ might still drop.
 
 ### Solution
 
-This effect can be eased by looking out for absolute conversions instead, and 
+This effect can be eased by looking out for absolute conversions instead, and
 even calculate Cost Per Sales (conversions divided with investment level) or ROI.
 
 ## Dropping engagement
@@ -121,14 +121,14 @@ real performance issues, than to reveal them.
 ### Solution
 
 It's best to analyze complete distributions, but as this is not
-always easily possible we recommend using 90th percentiles — this is the value
+always easily possible we recommend using 90th percentiles—this is the value
 for which 90% of loads were faster. Even then a user hitting ten pages will
 still have one load slower than this, and might drop out there.
 
 While performance measurement is highly important, make sure to keep an open
-mind and question unexpected results — and make sure to not report misleading
+mind and question unexpected results—and make sure to not report misleading
 numbers to stakeholders and management. If unsure on what to pick and report,
-we'd advise as a minimum for 90th percentile 
+we'd advise as a minimum for 90th percentile
 [First Contentful Paint](/first-contentful-paint), which is also what we use
 across our public tooling.
 
@@ -164,7 +164,7 @@ Some ways to handle third party content with respect to performance:
     You shouldn't need two tag managers or two analytics platforms.
 -   Routinely audit and clean out redundant third party scripts, trackers
     and widgets. This can easily be done via [Ghostery Extension](https://chrome.google.com/webstore/detail/ghostery-%E2%80%93-privacy-ad-blo/mlomiejdfkolichcflejclcbmpeaniij?hl=en) or tools like [WhatRuns](https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=en):
-    
+
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./ghostery.png" alt="A Ghostery report showing all loaded trackers.">
   <figcaption class="w-figcaption w-figcaption--center">
@@ -207,8 +207,8 @@ to do this:
     or timestrips of your website's loading behavior, preferably in comparison
     to competitors. WebPageTest [can create
     these](https://www.webpagetest.org/video/) very easily and automatically.
--   Performance can also be fun — maybe a [game based on an individual Lighthouse report](https://g.co/perfgame) can reach audiences which can't be reached by pure reports and metrics?
-    
+-   Performance can also be fun—maybe a [game based on an individual Lighthouse report](https://g.co/perfgame) can reach audiences which can't be reached by pure reports and metrics?
+
 ## Recap
 
-This guide explains why the selection of metrics, and how they are reported and handled, is as important as the measurement and optimization itself — or even more. Make sure to prefer percentiles or distributions over averages, be cautious of using just bounce rate or relative conversion rate as impact measures, and make sure that metrics are easy to understand and tangible for stakeholders across the company. Establishing a performance culture is also an important step towards a well performing e-commerce site.
+This guide explains why the selection of metrics, and how they are reported and handled, is as important as the measurement and optimization itself—or even more. Make sure to prefer percentiles or distributions over averages, be cautious of using just bounce rate or relative conversion rate as impact measures, and make sure that metrics are easy to understand and tangible for stakeholders across the company. Establishing a performance culture is also an important step towards a well performing e-commerce site.

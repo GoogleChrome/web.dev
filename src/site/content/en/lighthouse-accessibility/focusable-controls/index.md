@@ -10,14 +10,14 @@ web_lighthouse:
 Manually check that all custom controls are keyboard focusable
 and display a focus indicator.
 The order in which elements are focused should aim to follow the DOM order.
-If you’re unsure which elements should receive focus,
+If you're unsure which elements should receive focus,
 see [Introduction to Focus](https://developers.google.com/web/fundamentals/accessibility/focus/).
 
 ## How to manually test
 
 To test that the custom control is focusable
 and displays a focus indicator,
-start by tabbing through your site. 
+start by tabbing through your site.
 Use `TAB` (or `SHIFT +
 TAB`) to move between controls, and use the arrow keys and
 `ENTER` and `SPACE` to manipulate their values
@@ -70,7 +70,7 @@ the button's focus indicator always looks the same
 For users who either cannot or choose not to use a mouse,
 keyboard navigation is the primary means of reaching everything on a screen.
 Good keyboarding experiences depend on a logical tab order and easily discernable focus styles.
-If a keyboard user can’t see what’s focused, they have no way of interacting with the page.
+If a keyboard user can't see what's focused, they have no way of interacting with the page.
 
 Learn more in [How to do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).
 

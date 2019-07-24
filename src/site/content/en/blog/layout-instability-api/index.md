@@ -55,7 +55,7 @@ What makes this issue even more problematic is that how a site functions in
 development is often quite different from how users experience it in
 production: personalized or third-party content often doesn't behave the same
 in development as it does in production, test images are often already in the
-developer’s browser cache, and API calls that run locally are often so fast
+developer's browser cache, and API calls that run locally are often so fast
 that the delay isn't noticeable.
 
 The first step toward properly solving this problem is to give developers the
@@ -134,7 +134,7 @@ the viewport's area (a layout shift score of 0.38).
 
 A key point that's hopefully clear from these examples is that layout shifts
 only occur when _existing_ elements change their _start position_. If a new
-element is added to the DOM or an existing element changes size, it doesn’t
+element is added to the DOM or an existing element changes size, it doesn't
 count as a layout shift&mdash;**as long as the change doesn't cause other visible
 elements to change their start position**.
 
@@ -154,7 +154,7 @@ is clear to the user.
 For example, if a user interaction triggers a network request that may take a
 while to complete, it's best to create some space right away and show a loading
 indicator to avoid an unpleasant layout shift when the request completes. If
-the user doesn't realize something is loading, or doesn’t have a sense of when
+the user doesn't realize something is loading, or doesn't have a sense of when
 the resource will be ready, they may try to click something else while
 waiting&mdash;something that could move out from under them.
 
@@ -202,17 +202,17 @@ developers can get a better understanding of how users experience layout
 instability on their sites, on their competitors' sites, and on the web as a
 whole.
 
-<div class="w-aside w-aside--objective">
-  <p><strong>Important:</strong>
-  while most sites should strive for a CLS score of 0, it's certainly
-  possible that some sites employ layout shifts deliberately  (for example, in
-  multimedia presentations, progressive visualisations, slideshows, etc.).</p>
-  <p>
+{% Aside %}
+  **Important:** while most sites should strive for a CLS score of 0, it's
+  certainly possible that some sites employ layout shifts deliberately  (for
+  example, in multimedia presentations, progressive visualisations, slideshows,
+  etc.).
+
   This is perfectly fine. CLS scores are intended to help developers who may
   not be aware of the problems caused by unexpected layout shifts; they're not
   intended to suggest that sites that deliberately shift the layout are
-  necessarily problematic.</p>
-</div>
+  necessarily problematic.
+{% endAside %}
 
 ## How to use the Layout Instability API
 
@@ -225,7 +225,7 @@ which will be available until Sept. 3, 2019.
 
 Similar to other performance APIs, Layout Instability can be observed via the
 `PerformanceObserver` interface, where you can subscribe to entries of type
-`layoutShift`.
+`layout-shift`.
 
 The following code logs all layout shift entries as they happen:
 
@@ -236,8 +236,26 @@ const observer = new PerformanceObserver((list) => {
   }
 })
 
-observer.observe({entryTypes: ['layoutShift']});
+observer.observe({type: 'layout-shift', buffered: true});
 ```
+
+{% Aside %}
+  **Note:** The
+  [`buffered`](https://w3c.github.io/performance-timeline/#dom-performanceobserverinit-buffered)
+  flag in the above example (supported in Chrome 77+) gives you access to entries
+  that may have occurred prior to creating the `PerformanceObserver`.
+{% endAside %}
+
+{% Aside 'caution' %}
+  The `entryType` value for this API has changed a few times during
+  the experimentation period. In Chrome 76 it was `layoutShift`, and in Chrome
+  74-75 it was `layoutJank`. Developers implementing the stable API should only
+  need to observe the current `layout-shift` value (as shown in the example
+  above), but developers who are part of the origin trial may need to observe
+  multiple entry types to cover their full user base. See [this
+  demo](https://output.jsbin.com/zajamil/quiet) for an example of code that
+  works in Chrome 74+.
+{% endAside %}
 
 If you want to calculate the cumulative layout shift score for your pages and
 track them in your analytics back end, you can declare a variable that stores
@@ -253,11 +271,14 @@ let cumulativeLayoutShiftScore = 0;
 // `cumulativeLayoutShiftScore` variable.
 const observer = new PerformanceObserver((list) => {
   for (const entry of list.getEntries()) {
-    cumulativeLayoutShiftScore += entry.value;
+    // Only count layout shifts without recent user input.
+    if (!entry.hadRecentInput) {
+      cumulativeLayoutShiftScore += entry.value;
+    }
   }
 });
 
-observer.observe({entryTypes: ['layoutShift']});
+observer.observe({type: 'layout-shift', buffered: true});
 
 // Sends the final score to your analytics back end once
 // the page's lifecycle state becomes hidden.
@@ -272,18 +293,6 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 ```
-
-<div class="w-aside w-aside--note">
-  <p><strong>Note:</strong>
-  The Layout Instability API does not currently expose whether a layout shift
-  entry occurred shortly after a user input event. The goal is to eventually
-  expose it, but the exact format and duration is still being discussed.</p>
-  <p>In the meantime, developers wanting to track CLS scores themselves can
-  manually ignore specific layout shift entries by comparing `event.timeStamp`
-  with `entry.startTime` for events they expect to cause layout shifts. For
-  consistency with the CLS scores reported to CrUX, you can ignore entries that
-  occur within 500 milliseconds of user input.</p>
-</div>
 
 ## How to avoid unexpected layout shifts
 

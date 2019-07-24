@@ -1,5 +1,5 @@
 ---
-title: "Web components: the secret ingredient helping power the web" 
+title: "Web components: the secret ingredient helping power the web"
 subhead: Web components at I/O 2019
 authors:
   - arthurevans
@@ -10,7 +10,7 @@ hero: hero.jpg
 # hero_position: bottom
 alt: A wooden spoon, full of salt.
 description: |
-  This post sums up a talk on the state of web components in 2019, 
+  This post sums up a talk on the state of web components in 2019,
   given by Kevin Schaaf of the Polymer Project and Caridy Patiño of Salesforce.
 tags:
   - post # post is a required tag for the article to show up in the blog.
@@ -18,10 +18,10 @@ tags:
 ---
 
 
-At Google I/O 2019, Kevin Schaaf of the Polymer Project and Caridy Patiño of Salesforce talked about the state of web components. 
+At Google I/O 2019, Kevin Schaaf of the Polymer Project and Caridy Patiño of Salesforce talked about the state of web components.
 
 {% YouTube 'YBwgkr_Sbx0' %}
- 
+
 ## How popular are web components?
 
 If you've used the web today, you've probably used web components. By our count, somewhere between 5% and 8% of all page loads today use one or more web components. That makes web components one of the most successful new web platform features shipped in the last five years.
@@ -54,9 +54,9 @@ Authors can choose functional rendering patterns just like React to build their 
 
 The key difference between web components and proprietary component systems is  **interoperability**. Because of their standard interface, you can use web components anywhere you'd use a built-in element like `<input>` or `<video>`.
 
-Because they can be expressed as real HTML, they can be rendered by all the popular frameworks. So your components can be consumed more widely, in a more diverse range of applications, without locking users into any one framework. 
+Because they can be expressed as real HTML, they can be rendered by all the popular frameworks. So your components can be consumed more widely, in a more diverse range of applications, without locking users into any one framework.
 
-And because the component interface is standard, web components implemented using different libraries can be mixed on the same page. This fact helps future-proof your applications when you update your tech stack. Instead of a giant step-change between one framework and another, where you replace all of your components, you can update your components one at a time. 
+And because the component interface is standard, web components implemented using different libraries can be mixed on the same page. This fact helps future-proof your applications when you update your tech stack. Instead of a giant step-change between one framework and another, where you replace all of your components, you can update your components one at a time.
 
 
 ## Who's using web components?
@@ -68,7 +68,7 @@ So for all of these reasons, Web Components are actually finding huge success in
 
 Web components are the perfect technology for progressively enhancing content, because they can already be output as standard HTML by an untold number of CMS systems.
 
- 
+
 
 AMP is a great example of how quickly and easily Web Components slotted into the publishing industry's infrastructure for serving content.
 
@@ -146,13 +146,13 @@ More resources:
 
 
 
-*   [open-wc.org](https://open-wc.org/) features great getting started information, as well as tips and default configurations for build and development tooling. 
+*   [open-wc.org](https://open-wc.org/) features great getting started information, as well as tips and default configurations for build and development tooling.
 *   [Web Fundamentals](https://developers.google.com/web/fundamentals/web-components/) provides primers on the basic web components APIs, and best practices for designing web components.
 *   [MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components) provides reference docs for the web components APIs, plus some tutorials. \
 
 _Hero image by Jason Tuinstra on Unsplash._
 
-_Editor’s note: The custom elements usage chart has been updated to show the
+_Editor's note: The custom elements usage chart has been updated to show the
 full monthly usage data, as reported on
 [chromestatus.com](http://chromestatus.com). A previous version of this post
 included a graph at a 6-month granularity, without the most recent months. The
@@ -161,5 +161,3 @@ with a total line to remove ambiguity. The abrupt jump in late 2017 is due to a
 change in the data collection system for chromestatus.com. This change affected
 the stats for all web platform features and resulted in more accurate
 measurements going forward._
-
-

@@ -38,7 +38,7 @@ for more details on how exactly TTI is calculated.
 ## How Lighthouse determines your TTI score
 
 In order to be able to calculate your overall performance score,
-Lighthouse assigns each performance metric an individual score between 0 - 100.
+Lighthouse assigns each performance metric an individual score between 0–100.
 The TTI score, in it's simplest terms,
 is based on a comparison between how fast your TTI is,
 compared to [TTI metrics of real website performance data on
@@ -61,22 +61,22 @@ This table helps explain how to interpret your TTI score:
     </thead>
     <tbody>
       <tr>
-        <td>0 - 5.2 seconds</td>
+        <td>0–5.2 seconds</td>
         <td>Green (fast)</td>
-        <td>75 - 100</td>
+        <td>75–100</td>
       </tr>
       <tr>
-        <td>5.3 - 7.3 seconds</td>
+        <td>5.3–7.3 seconds</td>
         <td>Orange (average)</td>
-        <td>50 - 74</td>
+        <td>50–74</td>
       </tr>
       <tr>
         <td>Over 7.3 seconds</td>
         <td>Red (slow)</td>
-        <td>0 - 49</td>
+        <td>0–49</td>
       </tr>
     </tbody>
-    <caption>Table 1 — TTI metric compared to TTI score</caption>
+    <caption>TTI metric compared to TTI score.</caption>
   </table>
 </div>
 
