@@ -4,7 +4,7 @@ import "./components/ProfileSwitcherContainer";
 import "./components/ProgressBar";
 import "./components/SparklineChart";
 import "./components/LighthouseGauge";
-import "./components/LighthouseScoresAudits"
+import "./components/LighthouseScoresAudits";
 import {store} from "./store";
 
 // Run as long-lived router w/ history & "<a>" bindings
