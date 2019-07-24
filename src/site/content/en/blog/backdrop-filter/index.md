@@ -2,7 +2,7 @@
 title: "A view through the fog"
 subhead: |
   Blurring and color shifting behind an element.
-date: 2019-07-17
+date: 2019-07-26
 authors:
   - adamargyle
   - joemedley
@@ -47,16 +47,7 @@ Historically, these techniques were difficult to implement on the web, requiring
 `backdrop-filter` may harm performance. Test it before deploying.
 {% endAside %}
 
-CSS `backdrop-filter` applies one or more filters to the backdrop of an element, leaving the contents unchanged. Some people find its name confusing. Is it changing the background? It does not. Rather, it alters the appearance of whatever is seen through it. It almost goes without saying that if the element has no transparency, that is, if its value is set to `none` there will be no effect on the background.
-
-The following example illustrates this. For comparison, the image on the left shows how overlapping elements would be rendered if `backdrop-filter` were not used or supported. The image on the right applies `backdrop-filter` and `opacity`. Here's the CSS declaration that defines this.
-
-```css
-.frosty-glass-pane {
-  opacity: .9;
-  backdrop-filter: blur(2px);
-}
-```
+CSS `backdrop-filter` applies one or more effects to an element that is translucent or transparent. To understand that, consider the image below.
 
 <figure class="w-figure w-figure--center">
   <img src="backdrop-filter.png" alt="The item on the right uses <code>backdrop-filter<code>. The one on the left does not.">
@@ -65,23 +56,41 @@ The following example illustrates this. For comparison, the image on the left sh
   </figcaption>
 </figure>
 
+The image on the left shows how overlapping elements would be rendered if `backdrop-filter` were not used or supported. The image on the right applies a blurring effect using `backdrop-filter`. Here's the CSS declaration that defines this.
+
+```css
+.frosty-glass-pane {
+  opacity: .9;
+  backdrop-filter: blur(2px);
+}
+```
+
+Notice that it uses `opacity` in addition to `backdrop-filter`. Without `opacity`, there would be nothing to apply blurring to. It almost goes without saying that if `opacity` is set to `1` (fully opaque) there will be no effect on the background.
+
 The `backdrop-filter` property is like CSS [filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) in that all your favorite [filter functions](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Filter_functions) are supported: `blur()`, `brightness()`, `contrast()`, `opacity()`, `drop-shadow()`, and so on. It also supports the `url()` function if you want to use an external image as the filter, as well as the keywords `none`, `inherit`, `initial`, and `unset`. There are explanations for all of this on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), including descriptions of syntax, filters, and values.
 
 When `backdrop-filter` is set to anything other than `none`, the browser creates a new [stacking context](https://www.w3.org/TR/CSS21/zindex.html). A [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block) may also be created, but only if the element has absolute and fixed position descendants.
 
 You can combine filters for rich and clever effects, or use just one filter for more subtle or precise effects. You can even combine them with [SVG filters](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter).
 
-As with many features of the modern web, you'll want to know whether the user's browser supports `backdrop-filter` before using it. Do this with `@supports()`:
+## Feature detection and fallback
+
+As with many features of the modern web, you'll want to know whether the user's browser supports `backdrop-filter` before using it. Do this with `@supports()`. For performance reasons, fall back to an image instead of a polyfill when `backdrop-image` isn't supported. The example below shows this.
 
 ```css
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-	.ManipulateElement {
+	.background {
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
 	}
 }
-```
 
+@supports not (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .background {
+    background-image: blurred-hero.png;
+  }
+}
+```
 ## Examples
 
 Design techniques and styles previously reserved for native operating systems are now performant and achievable with a single CSS declaration. Let's look at some examples.
