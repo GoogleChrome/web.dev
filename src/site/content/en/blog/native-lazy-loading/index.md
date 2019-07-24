@@ -61,7 +61,7 @@ respect to the device viewport. Images below the viewport are loaded with a lowe
 still fetched as soon as possible.
 
 In Chrome 76, you can use the `loading` attribute to completely defer the loading of offscreen images
-and iframes until the user scrolls near them:
+and iframes that can be reached by scrolling:
 
 ```html
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
@@ -84,7 +84,7 @@ earliest). But you can try it out by enabling the following flags in Chrome:
 ### Load-in distance threshold
 
 All images and iframes that are above the fold—that is, immediately viewable without scrolling—load
-normally. Those that are far outside the device viewport are only fetched when the user scrolls near
+normally. Those that are far below the device viewport are only fetched when the user scrolls near
 them.
 
 The distance threshold is not fixed and varies depending on several factors:
@@ -101,7 +101,10 @@ reached, may change in the near future as the Chrome team improves heuristics to
 begin loading.
 
 {% Aside %}
-There is an [open bug](https://bugs.chromium.org/p/chromium/issues/detail?id=982020&q=component:Blink) to ensure that these different thresholds can be experimented with by [throttling the network](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) in Chrome DevTools. In the meantime, you will need to override the effective connection type of the browser using the `chrome://flags/#force-effective-connection-type` flag.
+In Chrome 77, you can experiment with these different thresholds by [throttling the
+network](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) in DevTools. In
+the meantime, you will need to override the effective connection type of the browser using the
+`chrome://flags/#force-effective-connection-type` flag.
 {% endAside %}
 
 ### Image loading
