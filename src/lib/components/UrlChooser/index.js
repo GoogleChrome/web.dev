@@ -76,6 +76,7 @@ class UrlChooser extends BaseElement {
 
   onStateChanged() {
     const state = store.getState();
+    const urlInputValue = this.urlInput ? this.urlInput.value : null;
 
     if (this.active) {
       // do nothing, the URL is being run through Lighthouse
@@ -83,7 +84,7 @@ class UrlChooser extends BaseElement {
       this.href == null &&
       this.switching &&
       state.userUrl &&
-      !this.urlInput.value
+      !urlInputValue
     ) {
       // if the user has just signed in, the element was in an initial state,
       // AND the user hasn"t typed anything, reset element with URL
@@ -100,12 +101,33 @@ class UrlChooser extends BaseElement {
   }
 
   runAudit(ev) {
-    if (!this.fixUpAndValidateUrl()) {
-      return;
+    if (this.switching) {
+      if (!this.fixUpAndValidateUrl()) {
+        return;
+      }
+
+      // write URL to firestore and local
+      const url = this.urlInput.value;
+      store.setState({userUrl: url});
+      const ref = userRef();
+      if (ref) {
+        const p = ref.set(
+          {
+            userUrl: url,
+            userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
+          },
+          {merge: true},
+        );
+        p.catch((err) => {
+          // TODO: Firestore errors are problematic but we can still run with the new URL.
+          console.warn("could not write URL", err);
+        });
+      }
+
+      this.switching = false;
     }
 
     // TODO: actually run Lighthouse. Currently just freezes the page.
-    this.switching = false;
     this.active = true;
     console.warn("web-url-chooser in terminal state: should run Lighthouse");
   }
@@ -151,19 +173,6 @@ class UrlChooser extends BaseElement {
       this.dispatchEvent(ce);
       return false;
     }
-
-    const ref = userRef();
-    const p = ref.set(
-      {
-        userUrl: url || null,
-        userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
-      },
-      {merge: true},
-    );
-    p.catch((err) => {
-      // TODO: Firestore errors are problematic but we can still run with the new URL.
-      console.warn("could not write URL", err);
-    });
 
     return true;
   }
