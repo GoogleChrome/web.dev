@@ -9,9 +9,8 @@ authors:
 hero: hero.jpg
 alt: A view through a rain-covered foggy window.
 description: |
-  CSS backdrop-filter was made famous by Apple's design team.
-  It adds background effects like blurring and transparency to
-  the artefacts behind an element.
+  Learn how to add background effects like blurring and transparency to UI
+  elements on the web using the CSS backdrop-filter property.
 tags:
   - post
   - css
@@ -47,25 +46,30 @@ Historically, these techniques were difficult to implement on the web, requiring
 `backdrop-filter` may harm performance. Test it before deploying.
 {% endAside %}
 
-CSS `backdrop-filter` applies one or more effects to an element that is translucent or transparent. To understand that, consider the image below.
+CSS `backdrop-filter` applies one or more effects to an element that is translucent or transparent. To understand that, consider the images below.
 
-<figure class="w-figure w-figure--center">
-  <img src="backdrop-filter.png" alt="The item on the right uses <code>backdrop-filter<code>. The one on the left does not.">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    The item on the right uses <code>backdrop-filter</code> and <code>opacity</code>. The one on the left does not.
-  </figcaption>
-</figure>
-
-The image on the left shows how overlapping elements would be rendered if `backdrop-filter` were not used or supported. The image on the right applies a blurring effect using `backdrop-filter`. Here's the CSS declaration that defines this.
-
+<div class="w-columns">
+{% Compare 'worse', 'No foreground transparency' %}
+![A triangle superimposed on a circle. The circle can't be seen through the triangle.](./transparency-off.png)
 ```css
+.frosty-glass-pane {
+  backdrop-filter: blur(2px);
+}
+```
+{% endCompare %}
+
+{% Compare 'better', 'Foreground transparency' %}
+![A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.](./transparency-on.png)
+```css/1
 .frosty-glass-pane {
   opacity: .9;
   backdrop-filter: blur(2px);
 }
 ```
+{% endCompare %}
+</div>
 
-Notice that it uses `opacity` in addition to `backdrop-filter`. Without `opacity`, there would be nothing to apply blurring to. It almost goes without saying that if `opacity` is set to `1` (fully opaque) there will be no effect on the background.
+The image on the left shows how overlapping elements would be rendered if `backdrop-filter` were not used or supported. The image on the right applies a blurring effect using `backdrop-filter`. Notice that it uses `opacity` in addition to `backdrop-filter`. Without `opacity`, there would be nothing to apply blurring to. It almost goes without saying that if `opacity` is set to `1` (fully opaque) there will be no effect on the background.
 
 The `backdrop-filter` property is like CSS [filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) in that all your favorite [filter functions](https://developer.mozilla.org/en-US/docs/Web/CSS/filter#Filter_functions) are supported: `blur()`, `brightness()`, `contrast()`, `opacity()`, `drop-shadow()`, and so on. It also supports the `url()` function if you want to use an external image as the filter, as well as the keywords `none`, `inherit`, `initial`, and `unset`. There are explanations for all of this on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter), including descriptions of syntax, filters, and values.
 
@@ -158,7 +162,7 @@ This example shows how to blur a semi-transparent background to make text readab
 
 ### Text contrast on dynamic backgrounds
 
-As stated earlier that `backdrop-filter` allows performant effects that would be difficult or impossible on the web. An example of this is changing a background in respone to an animation. In this example, `backdrop-filter` maintains the high contrast between the text and its background in spite of what's going on behind the text. It starts with the default background color `darkslategray` and uses `backdrop-filter` to invert the colors after the transformation.
+As stated earlier, `backdrop-filter` allows performant effects that would be difficult or impossible on the web. An example of this is changing a background in respone to an animation. In this example, `backdrop-filter` maintains the high contrast between the text and its background in spite of what's going on behind the text. It starts with the default background color `darkslategray` and uses `backdrop-filter` to invert the colors after the transformation.
 
 ```css
 .container::before {
