@@ -202,17 +202,17 @@ developers can get a better understanding of how users experience layout
 instability on their sites, on their competitors' sites, and on the web as a
 whole.
 
-<div class="w-aside w-aside--objective">
-  <p><strong>Important:</strong>
-  while most sites should strive for a CLS score of 0, it's certainly
-  possible that some sites employ layout shifts deliberately  (for example, in
-  multimedia presentations, progressive visualisations, slideshows, etc.).</p>
-  <p>
+{% Aside %}
+  **Important:** while most sites should strive for a CLS score of 0, it's
+  certainly possible that some sites employ layout shifts deliberately  (for
+  example, in multimedia presentations, progressive visualisations, slideshows,
+  etc.).
+
   This is perfectly fine. CLS scores are intended to help developers who may
   not be aware of the problems caused by unexpected layout shifts; they're not
   intended to suggest that sites that deliberately shift the layout are
-  necessarily problematic.</p>
-</div>
+  necessarily problematic.
+{% endAside %}
 
 ## How to use the Layout Instability API
 
@@ -240,25 +240,21 @@ observer.observe({type: 'layout-shift', buffered: true});
 ```
 
 {% Aside %}
-
-**Note:** The
-[`buffered`](https://w3c.github.io/performance-timeline/#dom-performanceobserverinit-buffered)
-flag in the above example (supported in Chrome 77+) gives you access to entries
-that may have occurred prior to creating the `PerformanceObserver`.
-
+  **Note:** The
+  [`buffered`](https://w3c.github.io/performance-timeline/#dom-performanceobserverinit-buffered)
+  flag in the above example (supported in Chrome 77+) gives you access to entries
+  that may have occurred prior to creating the `PerformanceObserver`.
 {% endAside %}
 
 {% Aside 'caution' %}
-
-The `entryType` value for this API has changed a few times during
-the experimentation period. In Chrome 76 it was `layoutShift`, and in Chrome
-74-75 it was `layoutJank`. Developers implementing the stable API should only
-need to observe the current `layout-shift` value (as shown in the example
-above), but developers who are part of the origin trial may need to observe
-multiple entry types to cover their full user base. See [this
-demo](https://output.jsbin.com/zajamil/quiet) for an example of code that
-works in Chrome 74+.
-
+  The `entryType` value for this API has changed a few times during
+  the experimentation period. In Chrome 76 it was `layoutShift`, and in Chrome
+  74-75 it was `layoutJank`. Developers implementing the stable API should only
+  need to observe the current `layout-shift` value (as shown in the example
+  above), but developers who are part of the origin trial may need to observe
+  multiple entry types to cover their full user base. See [this
+  demo](https://output.jsbin.com/zajamil/quiet) for an example of code that
+  works in Chrome 74+.
 {% endAside %}
 
 If you want to calculate the cumulative layout shift score for your pages and
