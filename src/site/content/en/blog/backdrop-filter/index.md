@@ -1,5 +1,5 @@
 ---
-title: "A view through the fog"
+title: "Create OS-style backgrounds with backdrop-filter"
 subhead: |
   Blurring and color shifting behind an element.
 date: 2019-07-26
