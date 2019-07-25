@@ -8,24 +8,18 @@
 //
 // =============================================================================
 
-$border-radius: 6px;
-
 web-url-chooser {
-  $padding: 16px;
-  $cardsHeight: 219px;
-  $inputHeight: 56px;
+  $INPUT_HEIGHT: 56px;
 
   display: block;
-  border-radius: $border-radius;
+  border-radius: 6px;
 
-  &[switching] {
-    .lh-enterurl--switch {
-      display: block;
-    }
+  &:not([switching]) .lh-enterurl--switch {
+    display: none;
+  }
 
-    .lh-enterurl--selected {
-      display: none;
-    }
+  &[switching] .lh-enterurl--selected {
+    display: none;
   }
 
   .report_header_enterurl {
@@ -35,35 +29,37 @@ web-url-chooser {
   .lh-enterurl {
     position: relative;
     align-self: center;
+  }
 
-    .lh-enterurl__close {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      padding: 0;
-      background: none;
-      box-shadow: none;
-      display: flex;
-      align-items: center;
+  /** The "X" button that appears to the right of a URL. */
+  .lh-enterurl .lh-enterurl__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
 
-      &::after {
-        @include font-material-icon();
-        content: 'close';
-        color: $GREY_400;
-      }
+    &::after {
+      @include font-material-icon();
+      content: 'close';
+      color: $GREY_400;
+    }
 
-      &:focus,
-      &::-moz-focus-inner {
-        outline: 0;
-      }
+    &:focus,
+    &::-moz-focus-inner {
+      outline: 0;
+    }
 
-      &:focus::after {
-        color: $GREY_900;
-      }
+    &:focus::after {
+      color: $GREY_900;
     }
   }
 
+  /** The currently selected URL, not in editing mode. */
   .lh-enterurl--selected {
     font-weight: 500;
     padding-left: 24px;
@@ -77,12 +73,8 @@ web-url-chooser {
     }
   }
 
-  .lh-enterurl--switch {
-    display: none;
-  }
-
   .lh-input {
-    height: $inputHeight;
+    height: $INPUT_HEIGHT;
     width: 100%;
     transition: border 200ms ease-in-out;
     outline: none;
@@ -97,16 +89,21 @@ web-url-chooser {
     display: flex;
     flex-wrap: wrap;
     margin-top: 8px;
-
-    .w-button {
-      // List all vals so autoprefixer doesn't rewrite this to flex: 1 1 0%
-      // and make "switch url" text ellipsis.
-      flex: 1 1 auto;
-      height: $inputHeight;
-      justify-content: center;
-    }
   }
 
+  .lh-controls .w-button {
+    // List all vals so autoprefixer doesn't rewrite this to flex: 1 1 0%
+    // and make "switch url" text ellipsis.
+    flex: 1 1 auto;
+    height: $INPUT_HEIGHT;
+    justify-content: center;
+  }
+}
+
+web-url-chooser {
+  /// @deprecated
+  // TODO(robdodson): This should be replaced with the @media rules from breakpoints.scss, but the
+  // Measure page is special and currently does not have a matching value.
   @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) {
     .report_header_enterurl {
       display: flex;
