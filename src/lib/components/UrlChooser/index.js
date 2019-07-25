@@ -39,7 +39,6 @@ class UrlChooser extends BaseElement {
             placeholder="Enter a web page URL"
             pattern="https?://.*"
             minlength="7"
-            required
             @keyup="${this.onUrlKeyup}"
           />
           <button
@@ -100,7 +99,7 @@ class UrlChooser extends BaseElement {
     }
   }
 
-  runAudit(ev) {
+  runAudit() {
     if (this.switching) {
       if (!this.fixUpAndValidateUrl()) {
         return;
@@ -132,7 +131,7 @@ class UrlChooser extends BaseElement {
     console.warn("web-url-chooser in terminal state: should run Lighthouse");
   }
 
-  switchUrl(ev) {
+  switchUrl() {
     this.switching = true;
 
     const input = this.urlInput;
@@ -148,9 +147,9 @@ class UrlChooser extends BaseElement {
   }
 
   onUrlKeyup(e) {
-    if (e.keyCode === /* ESC */ 27) {
+    if (e.key === "Escape") {
       this.clearInput();
-    } else if (e.keyCode === /* ENTER */ 13) {
+    } else if (e.key === "Enter") {
       this.runLighthouseButton.click();
     }
   }
