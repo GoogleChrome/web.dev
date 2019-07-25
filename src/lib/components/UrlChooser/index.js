@@ -1,41 +1,39 @@
 import {html} from "lit-element";
-import {store} from "../../store";
 import {BaseElement} from "../BaseElement";
-import {userRef, firebase} from "../../fb";
+
+/**
+ * @fileoverview Displays the primary URL chooser for Lighthouse.
+ */
 
 /* eslint-disable require-jsdoc */
 class UrlChooser extends BaseElement {
   static get properties() {
     return {
-      href: {type: String},
-      switching: {type: Boolean, reflect: true},
+      url: {type: String},
       active: {type: Boolean},
+      switching: {type: Boolean, reflect: true}, // FIXME: internal but must reflect as [switching]
     };
   }
 
   constructor() {
     super();
-    this.href = null; // when signed out or waiting for Firestore, this is null
-    this.switching = true;
-    this.active = false;
+    this.url = null; // when signed out or waiting for Firestore, this is null
+    this.switching = true; // controls whether the user is editing the URL
+    this.active = false; // disables buttons (because Lighthouse is active)
 
-    // non-properties
-    this.urlInput = null;
-    this.runLighthouseButton = null;
-
-    store.subscribe(this.onStateChanged.bind(this));
-    this.onStateChanged();
+    // non-properties (stolen DOM nodes)
+    this._urlInput = null;
+    this._runLighthouseButton = null;
   }
 
   render() {
     return html`
       <div class="report_header_enterurl">
-        <div class="lh-enterurl lh-enterurl--selected">${this.href}</div>
+        <div class="lh-enterurl lh-enterurl--selected">${this.url}</div>
         <div class="lh-enterurl lh-enterurl--switch">
           <input
             type="url"
             class="lh-input"
-            .value="${this.href}"
             placeholder="Enter a web page URL"
             pattern="https?://.*"
             minlength="7"
@@ -59,7 +57,7 @@ class UrlChooser extends BaseElement {
             ?disabled=${this.active}
             class="w-button w-button--primary"
             id="run-lh-button"
-            @click=${this.runAudit}
+            @click=${this.requestAudit}
           >
             Run Audit
           </button>
@@ -68,73 +66,59 @@ class UrlChooser extends BaseElement {
     `;
   }
 
-  updated() {
-    this.urlInput = this.renderRoot.querySelector('input[type="url"]');
-    this.runLighthouseButton = this.renderRoot.querySelector("#run-lh-button");
-  }
+  updated(changedProperties) {
+    this._urlInput = this.renderRoot.querySelector('input[type="url"]');
+    this._runLighthouseButton = this.renderRoot.querySelector("#run-lh-button");
 
-  onStateChanged() {
-    const state = store.getState();
-    const urlInputValue = this.urlInput ? this.urlInput.value : null;
+    if (!changedProperties.has("url")) {
+      return;
+    }
 
-    if (this.active) {
-      // do nothing, the URL is being run through Lighthouse
-    } else if (
-      this.href == null &&
-      this.switching &&
-      state.userUrl &&
-      !urlInputValue
-    ) {
+    const inputValue = this._urlInput.value;
+    const updateUrl = this.url;
+
+    if (this.switching && updateUrl && !inputValue) {
       // if the user has just signed in, the element was in an initial state,
-      // AND the user hasn"t typed anything, reset element with URL
-      this.href = state.userUrl;
+      // AND the user hasn't typed anything, reset element with URL
+      this._urlInput.value = updateUrl;
       this.switching = false;
-    } else if (state.userUrl == null && !this.switching) {
+    } else if (updateUrl == null && !this.switching) {
       // if the user has signed out, clear the href and enter switching mode
-      this.href = null;
+      this._urlInput.value = null;
       this.switching = true;
-    } else if (state.userUrl && !this.switching) {
-      // in all other cases, only update the URL if ther user isn"t switching
-      this.href = state.userUrl;
+    } else if (!this.switching) {
+      // in all other cases, only update the URL if ther user isn't switching
+      this._urlInput.value = updateUrl;
     }
   }
 
-  runAudit() {
+  requestAudit() {
+    let url = this.url;
+
     if (this.switching) {
-      if (!this.fixUpAndValidateUrl()) {
+      this.fixUpUrl();
+
+      if (!this._urlInput.validity.valid) {
+        const detail = `Invalid URL. Please enter a full URL starting with https://.`;
+        const event = new CustomEvent("web-error", {bubbles: true, detail});
+        this.dispatchEvent(event);
         return;
       }
 
-      // write URL to firestore and local
-      const url = this.urlInput.value;
-      store.setState({userUrl: url});
-      const ref = userRef();
-      if (ref) {
-        const p = ref.set(
-          {
-            userUrl: url,
-            userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
-          },
-          {merge: true},
-        );
-        p.catch((err) => {
-          // TODO: Firestore errors are problematic but we can still run with the new URL.
-          console.warn("could not write URL", err);
-        });
-      }
-
+      // if Request was pressed as part of switching, "url" still reflects prior state, so request
+      // audit based on the typed URL
       this.switching = false;
+      url = this._urlInput.value;
     }
 
-    // TODO: actually run Lighthouse. Currently just freezes the page.
-    this.active = true;
-    console.warn("web-url-chooser in terminal state: should run Lighthouse");
+    const event = new CustomEvent("audit", {detail: url});
+    this.dispatchEvent(event);
   }
 
   switchUrl() {
     this.switching = true;
 
-    const input = this.urlInput;
+    const input = this._urlInput;
     input.setSelectionRange(0, input.value.length);
     input.focus();
 
@@ -150,34 +134,24 @@ class UrlChooser extends BaseElement {
     if (e.key === "Escape") {
       this.clearInput();
     } else if (e.key === "Enter") {
-      this.runLighthouseButton.click();
+      this._runLighthouseButton.click();
     }
   }
 
-  fixUpAndValidateUrl() {
-    let url = this.urlInput.value.trim();
+  fixUpUrl() {
+    let url = this._urlInput.value.trim();
     if (!url.startsWith("https://") && !url.startsWith("http://")) {
       url = `http://${url}`;
     }
 
-    this.href = url;
-    if (url !== this.urlInput.value) {
-      // Could also call this.update() here, this just short-circuits the change.
-      this.urlInput.value = url;
+    this.url = url;
+    if (url !== this._urlInput.value) {
+      this._urlInput.value = url;
     }
-
-    if (!this.urlInput.validity.valid) {
-      const detail = `Invalid URL. Please enter a full URL starting with https://.`;
-      const ce = new CustomEvent("web-error", {bubbles: true, detail});
-      this.dispatchEvent(ce);
-      return false;
-    }
-
-    return true;
   }
 
   clearInput() {
-    this.href = "";
+    this._urlInput.value = null;
   }
 }
 
