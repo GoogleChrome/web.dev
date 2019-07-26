@@ -11,7 +11,6 @@ import {
   sortOnWeights,
   getAuditReferenceDocLink,
 } from "./lighthouse";
-import {demoLhr} from "./demo";
 
 const NUM_AUDITS_TO_SHOW = 10;
 
@@ -92,10 +91,7 @@ class LighthouseScoresAudits extends BaseElement {
       timesExpanded: {type: Number}, // number of times a user has asked for more help
       inverted: {type: Boolean}, // whether to sort by low impact first
       filteringOn: {type: String}, // the Lighthouse category to filter to
-      demo: {type: Boolean},
-
-      // Contains the raw Lighthouse results data.
-      lhr: {type: Object},
+      lhr: {type: Object}, // contains the raw Lighthouse results data
     };
   }
 
@@ -123,11 +119,6 @@ class LighthouseScoresAudits extends BaseElement {
   firstUpdated() {
     this.setAttribute("role", "table");
     this.setAttribute("aria-label", "Lighthouse audit results");
-
-    // FIXME FIXME FIXME: remove this demo before submit
-    if (this.demo) {
-      this.lhr = JSON.parse(demoLhr)[0].lhr;
-    }
   }
 
   /**
