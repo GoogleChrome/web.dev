@@ -1,8 +1,12 @@
+/**
+ * @fileoverview Contains helpers for interacting with Lighthouse report data.
+ */
+
 const descriptionRegex = /^(.+) \[Learn more\]\((.+)\)\.$/;
 
+// prettier-ignore
 /**
- * @const {!Object<string, function({weight: number, overallSavingsMs:
- * ?number}): string>}
+ * @const {!Object<string, function({weight: number, overallSavingsMs: ?number}): string>}
  */
 const CATEGORY_TO_IMPACT_MAPPING = {
   Accessibility: ({weight}) => {

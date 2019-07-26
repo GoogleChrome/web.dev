@@ -1,3 +1,11 @@
+/**
+ * @fileoverview Wraps fetching the global audit mapping data from HTML.
+ *
+ * We embed the "Guide To Audit" mapping, which tells users what guide to read to help them solve a
+ * particular Lighthouse audit, on the Measure page as JSON in a hidden `<code>` block. This lazily
+ * parses the JSON when it is first required.
+ */
+
 let cache = null;
 
 /**
