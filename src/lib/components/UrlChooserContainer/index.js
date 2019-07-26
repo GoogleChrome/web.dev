@@ -1,7 +1,7 @@
 import {html} from "lit-element";
 import {store} from "../../store";
 import {BaseElement} from "../BaseElement";
-import {userRef, firebase} from "../../fb";
+import {updateUrl} from "../../fb";
 import "../UrlChooser";
 
 /**
@@ -32,7 +32,7 @@ class UrlChooserContainer extends BaseElement {
     return html`
       <web-url-chooser
         .url=${this.url}
-        .active=${this.active}
+        .disabled=${this.active}
         @audit=${this.runAudit}
       ></web-url-chooser>
     `;
@@ -41,7 +41,12 @@ class UrlChooserContainer extends BaseElement {
   onStateChanged() {
     const state = store.getState();
 
-    // if Lighthouse is active, ignore changes to the URL from Firestore
+    // As userUrl can change (a signed-in user can modify it in another browser
+    // window), _prefer_ any URL that's currently being run through Lighthouse.
+    // This will prevent e.g. "foo.com" (after a user has hit "Run Audit") being
+    // replaced by "bar.com" (which is run in another browser window), and then
+    // results being approprtioned to the wrong URL.
+
     this.url = state.activeLighthouseUrl || state.userUrl;
     this.active = state.activeLighthouseUrl !== null;
   }
@@ -49,26 +54,17 @@ class UrlChooserContainer extends BaseElement {
   runAudit(e) {
     const url = e.detail;
 
-    // write URL to firestore and local
+    // We're writing the user's new URL choice to local state, but also kicking
+    // off a Lighthouse run here. We store the active URL running through
+    // Lighthouse as their preferred URL could change because of another
+    // browser, and this prevents results being appropritioned to the wrong URL.
+
     // TODO(samthor): This should happen in a controller setting.
     store.setState({
       userUrl: url,
       activeLighthouseUrl: url,
     });
-    const ref = userRef();
-    if (ref) {
-      const p = ref.set(
-        {
-          userUrl: url,
-          userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
-        },
-        {merge: true},
-      );
-      p.catch((err) => {
-        // TODO: Firestore errors are problematic but we can still run with the new URL.
-        console.warn("could not write URL", err);
-      });
-    }
+    updateUrl(url);
 
     // TODO: actually run Lighthouse. Currently just freezes the page.
     console.warn("web-url-chooser in terminal state: should run Lighthouse");

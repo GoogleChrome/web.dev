@@ -3,8 +3,6 @@ import "firebase/auth";
 import "firebase/firestore";
 import {store} from "./store";
 
-export {firebase};
-
 /* eslint-disable require-jsdoc */
 
 const firebaseConfig = {
@@ -61,6 +59,28 @@ export function userRef() {
     return null;
   }
   return firestore.collection("users").doc(state.user.uid);
+}
+
+export function updateUrl(url) {
+  const ref = userRef();
+  if (!ref) {
+    // TODO(samthor): This doesn't really inform whether the user is signed-in or not
+    return null;
+  }
+
+  const p = ref.set(
+    {
+      userUrl: url,
+      userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
+    },
+    {merge: true},
+  );
+  p.catch((err) => {
+    // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
+    // try to invoke Lighthouse with the new URL.
+    console.warn("could not write URL to Firestore", err);
+  });
+  return p;
 }
 
 // Sign in the user
