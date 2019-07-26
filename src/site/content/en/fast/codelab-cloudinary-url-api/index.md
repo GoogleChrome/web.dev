@@ -9,6 +9,7 @@ description: |
 glitch: codelab-cloudinary
 path: index.html:25:0
 related_post: use-imagemin-to-compress-images
+draft: true
 ---
 
 Learn to use Cloudinary's fetch URL API to optimize images and serve them in next-gen formats. 
