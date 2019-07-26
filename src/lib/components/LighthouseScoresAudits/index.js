@@ -1,3 +1,7 @@
+/**
+ * @fileoverview An element which shows a friendly list of failing audits and related guides.
+ */
+
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {getAuditGuideMapping} from "./mapping";
@@ -85,11 +89,13 @@ function createRowForAuditCategory(lhr, category) {
 class LighthouseScoresAudits extends BaseElement {
   static get properties() {
     return {
-      timesExpanded: {type: Number},
-      inverted: {type: Boolean},
-      filteringOn: {type: String},
-      lhr: {type: Object},
+      timesExpanded: {type: Number}, // number of times a user has asked for more help
+      inverted: {type: Boolean}, // whether to sort by low impact first
+      filteringOn: {type: String}, // the Lighthouse category to filter to
       demo: {type: Boolean},
+
+      // Contains the raw Lighthouse results data.
+      lhr: {type: Object},
     };
   }
 
@@ -97,25 +103,31 @@ class LighthouseScoresAudits extends BaseElement {
     super();
     this.timesExpanded = 0;
     this.inverted = false;
+  }
 
-    this.setAttribute("role", "table");
-    this.setAttribute("aria-label", "Lighthouse audit results");
+  set lhr(value) {
+    // setting lhr resets most properties of this element
+    this.timesExpanded = 1;
+    this.inverted = false;
+    this.filteringOn = null;
+
+    const oldValue = this._lhr;
+    this._lhr = value;
+    this.requestUpdate("lhr", oldValue);
+  }
+
+  get lhr() {
+    return this._lhr;
   }
 
   firstUpdated() {
+    this.setAttribute("role", "table");
+    this.setAttribute("aria-label", "Lighthouse audit results");
+
     // FIXME FIXME FIXME: remove this demo before submit
     if (this.demo) {
       this.lhr = JSON.parse(demoLhr)[0].lhr;
     }
-  }
-
-  update(changedProperties) {
-    if (changedProperties.has("lhr")) {
-      this.timesExpanded = 1;
-      this.inverted = false;
-      this.filteringOn = null;
-    }
-    super.update(changedProperties);
   }
 
   /**
@@ -180,7 +192,7 @@ class LighthouseScoresAudits extends BaseElement {
         >
           <button
             class="lh-audit-list-row__impact-arrow"
-            @click="${this.invert}"
+            @click="${this.onInvert}"
             ?data-inverted="${this.inverted}"
           >
             Impact
@@ -207,7 +219,7 @@ class LighthouseScoresAudits extends BaseElement {
       </div>
       <div class="lh-audit-list-see-more__container">
         <button
-          @click="${this.increaseAuditsShown}"
+          @click="${this.onIncreaseAuditsShown}"
           ?disabled="${!lhr || allRowsShown}"
           class="w-button lh-audit-list-see-more__button gc-analytics-event"
           data-category="web.dev"
@@ -220,12 +232,13 @@ class LighthouseScoresAudits extends BaseElement {
     `;
   }
 
-  invert() {
+  onInvert(e) {
+    e.preventDefault();
     this.inverted = !this.inverted;
   }
 
-  increaseAuditsShown(ev) {
-    ev.preventDefault();
+  onIncreaseAuditsShown(e) {
+    e.preventDefault();
     this.timesExpanded++;
   }
 

@@ -15,8 +15,10 @@ web-lighthouse-scores-audits {
   min-height: 400px; // Give layout before CE upgrade.
   margin-top: 40px;
 
-  $impactChipWidth: 75px;
-  $rowPadding: 16px;
+  $IMPACT_CHIP_WIDTH: 75px;
+  $ROW_PADDING: 16px;
+
+  // TODO(robdodson): Move this to `settings/_type.scss`.
   $FILTERFONT: (
     FONT_WEIGHT: 500,
     FONT_SIZE:   14,
@@ -29,7 +31,7 @@ web-lighthouse-scores-audits {
     color: $GREY_700;
     text-transform: uppercase;
     display: flex;
-    padding: $rowPadding / 2 $rowPadding;
+    padding: $ROW_PADDING / 2 $ROW_PADDING;
 
     .lh-audit-list-row__item {
       // Enforce vertical alignment w/o flex.
@@ -41,7 +43,7 @@ web-lighthouse-scores-audits {
     .lh-audit-list-row {
       background-color: $WHITE;
       margin: 8px 0;
-      padding: $rowPadding;
+      padding: $ROW_PADDING;
       border-radius: 2px;
       @include elevation(1);
       display: flex;
@@ -57,7 +59,7 @@ web-lighthouse-scores-audits {
       display: inline-flex;
       background-color: transparentize($WEB_EXTENDED_TERTIARY_COLOR, .8);
       color: $WEB_EXTENDED_TERTIARY_COLOR;
-      font-weight: 600;
+      font-weight: $FONT_WEIGHT_MEDIUM;
       border-radius: 20px;
       height: 32px;
       flex-grow: 0;
@@ -96,35 +98,36 @@ web-lighthouse-scores-audits {
 
   // Sizes of each "column".
   .lh-audit-list-row__impact {
-    min-width: $impactChipWidth;
+    min-width: $IMPACT_CHIP_WIDTH;
     display: flex;
     align-items: center;
+  }
 
-    .lh-audit-list-row__impact-arrow {
-      display: flex;
-      align-items: center;
-      background: none;
-      border: 0;
-      padding-left: 0;
-      border-bottom: 1px solid transparent;
-      color: inherit;
-      text-transform: uppercase;
-      outline: none;
-      box-shadow: none;
-      @include font($FILTERFONT);
-    }
+  // Button to flip the ordering of failing audits.
+  .lh-audit-list-row__impact-arrow {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 0;
+    padding-left: 0;
+    border-bottom: 1px solid transparent;
+    color: inherit;
+    text-transform: uppercase;
+    outline: none;
+    box-shadow: none;
+    @include font($FILTERFONT);
 
-    .lh-audit-list-row__impact-arrow:focus-within {
+    &:focus-within {
       border-bottom: 1px solid $GREY_700;
       margin-bottom: 0;
     }
-
-    .lh-audit-list-row__impact-arrow::after {
-      @include font_material_icon();
+  
+    &::after {
+      @include font-material-icon();
       content: 'arrow_drop_down';
     }
-
-    .lh-audit-list-row__impact-arrow[data-inverted]::after {
+  
+    &[data-inverted]::after {
       content: 'arrow_drop_up';
     }
   }
@@ -147,16 +150,19 @@ web-lighthouse-scores-audits {
     display: flex;
     margin-top: 32px;
     flex-direction: column;
+  }
 
-    .lh-audit-list-see-more__button {
-      align-self: center;
-    }
+  .lh-audit-list-see-more__button {
+    align-self: center;
 
-    .lh-audit-list-see-more__button:disabled {
+    &:disabled {
       display: none;
     }
   }
 
+  /// @deprecated
+  // TODO(robdodson): This should be replaced with the @media rules from breakpoints.scss, but the
+  // Measure page is special and currently does not have a matching value.
   @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
     .lh-audit-list-headers  .lh-audit-list-row__category,
     .lh-audit-list-row__category {
