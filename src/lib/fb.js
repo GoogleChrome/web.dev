@@ -17,6 +17,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const firestore = firebase.firestore();
 
 let firestoreUserUnsubscribe = null;
 
@@ -26,6 +27,11 @@ firebase.auth().onAuthStateChanged((user) => {
   if (firestoreUserUnsubscribe) {
     firestoreUserUnsubscribe();
     firestoreUserUnsubscribe = null;
+
+    // Clear Firestore values here, so they don't persist between signins.
+    store.setState({
+      userUrl: null,
+    });
   }
 
   if (user) {
@@ -33,12 +39,10 @@ firebase.auth().onAuthStateChanged((user) => {
       isSignedIn: true,
       user,
     });
-    const firestore = firebase.firestore();
-    const ref = firestore.collection("users").doc(user.uid);
-    firestoreUserUnsubscribe = ref.onSnapshot((snapshot) => {
-      const data = snapshot.data();
+    firestoreUserUnsubscribe = userRef().onSnapshot((snapshot) => {
+      const data = snapshot.data() || {}; // is empty on new user
       store.setState({
-        userUrl: data.url,
+        userUrl: data.userUrl || "",
       });
     });
   } else {
@@ -48,6 +52,36 @@ firebase.auth().onAuthStateChanged((user) => {
     });
   }
 });
+
+export function userRef() {
+  const state = store.getState();
+  if (!state.user) {
+    return null;
+  }
+  return firestore.collection("users").doc(state.user.uid);
+}
+
+export function updateUrl(url) {
+  const ref = userRef();
+  if (!ref) {
+    // TODO(samthor): This doesn't really inform whether the user is signed-in or not
+    return null;
+  }
+
+  const p = ref.set(
+    {
+      userUrl: url,
+      userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
+    },
+    {merge: true},
+  );
+  p.catch((err) => {
+    // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
+    // try to invoke Lighthouse with the new URL.
+    console.warn("could not write URL to Firestore", err);
+  });
+  return p;
+}
 
 // Sign in the user
 export async function signIn() {
