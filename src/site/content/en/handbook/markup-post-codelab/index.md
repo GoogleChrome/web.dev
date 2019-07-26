@@ -45,6 +45,8 @@ Codelabs have two additional fields:
 * `glitch`: The name of the glitch to be presented in the right pane.
 * `related_post`: The slug for the post associated with your codelab. (This is what makes breadcrumbs work.)
 
+Finally, if you don't want your post to be published as soon as it's done, add the `draft: true` flag to the YAML. (When it's time for the post to go live, the web.dev team will remove the `draft` flag.)
+
 ## Authoring tips
 Use relative URLs to link to other posts and codelabs on web.dev.
 
