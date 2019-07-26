@@ -14,8 +14,12 @@ const initialState = {
   isSignedIn: false,
   user: null,
 
-  // The most recent URL measured.
+  // The most recent URL measured. Null for unknown/not signed in, blank is
+  // unset.
   userUrl: null,
+
+  // The URL currently being run through Lighthouse.
+  activeLighthouseUrl: null,
 };
 
 const store = devtools(createStore(initialState));
