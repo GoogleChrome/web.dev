@@ -13,9 +13,16 @@ web-sparkline-chart {
     outline: none;
   }
 
+  .lr-sparkine-outer {
+    display: block;
+    border: 1px solid transparent;
+  }
+
   .path.dashed {
     stroke-linecap: round;
     stroke-width: 1;
+    stroke-dasharray: 4;
+    stroke-dashoffset: 0;
     stop-color: $GREY_500;
     stroke: $GREY_500;
   }
@@ -61,10 +68,20 @@ web-sparkline-chart {
     }
   }
 
+  svg {
+    pointer-events: none;  // otherwise mouseout generates events for every part of SVG
+    display: block;
+  }
+
+  .sl-cursor {
+    stroke-linecap: round;
+  }
+
   .path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: sparkline-dash-animation 300ms linear forwards;
+    // TODO(robdodson): This doesn't animate even in the old site.
+    // stroke-dasharray: 1000;
+    // stroke-dashoffset: 1000;
+    // animation: sparkline-dash-animation 300ms linear forwards;
   }
 
   .gradient {
