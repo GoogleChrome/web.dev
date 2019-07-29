@@ -48,7 +48,7 @@ The difference between `async` and `defer` is when they start executing the scri
 
 ### `async`
 
-Scripts with the `async` attribute execute at the first opportunity after they finish downloading and before the window’s [load](https://developer.mozilla.org/en-US/docs/Web/Events/load) event. This means it’s possible (and likely) that `async` scripts will not be executed in the order in which they appear in the HTML. It also means they can interrupt DOM building if they finish downloading while the parser is still at work.
+Scripts with the `async` attribute execute at the first opportunity after they finish downloading and before the window's [load](https://developer.mozilla.org/en-US/docs/Web/Events/load) event. This means it's possible (and likely) that `async` scripts will not be executed in the order in which they appear in the HTML. It also means they can interrupt DOM building if they finish downloading while the parser is still at work.
 
 ![Diagram of parser blocking script with async attribute](async@2x.png)
 
