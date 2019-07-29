@@ -6,7 +6,7 @@ authors:
   - mihajlija
 date: 2019-07-29
 description: |
-  Learn how to avoid common pitfalls of using third-party scripts and improve load times and user experience.
+  Learn how to avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 hero: hero.jpg
 alt: Aerial view of shipping containers.  
 tags:
