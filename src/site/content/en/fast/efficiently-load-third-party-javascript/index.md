@@ -71,7 +71,7 @@ Analytics scripts are usually loaded early so you don't miss any valuable analyt
 
 ## Establish early connections to required origins 
 
-Establishing connections takes significant time on slow networks. This is especially true for secure connections, which may involve DNS lookups, redirects, and several round trips to the final server that handles the user’s request. 
+Establishing connections takes significant time on slow networks. This is especially true for secure connections, which may involve DNS lookups, redirects, and several round trips to the final server that handles the user's request. 
 
 You can save 100–500 ms by establishing early connections to important third-party origins.
 
