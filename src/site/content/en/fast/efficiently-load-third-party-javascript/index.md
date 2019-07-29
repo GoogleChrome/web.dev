@@ -118,7 +118,7 @@ Embedded third-party resources can be a big contributor to slow page speed when 
 <img src="lazy-load.png" alt="A diagram of a webpage shown on a mobile device with scrollable content extending beyond the screen. The content that's below-the-fold is desaturated because it's not loaded yet.">
 </figure>
 
-One way to do that is to lazy-load third-party content after the main page content loads. Ads are a good candidate for this approach.
+One effective approach is to lazy-load third-party content after the main page content loads. Ads are a good candidate for this approach.
 
 Ads are an important source of income for many sites, but users come for the content. By lazy-loading ads and delivering the main content faster, you can increase the overall viewability percentage of an ad. For example, MediaVine switched to [lazy-loading ads](https://www.mediavine.com/lazy-loading-ads-mediavine-ads-load-200-faster/) and saw a 200% improvement in page load speed. DoubleClick have guidance on how to lazy-load ads in their [official documentation](https://support.google.com/dfp_premium/answer/4578089#lazyloading). 
 
