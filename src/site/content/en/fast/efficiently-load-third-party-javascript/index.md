@@ -22,7 +22,7 @@ If a third-party script is [slowing down](/third-party-javascript/) your page lo
 
 * Optimize the loading process.
 
-This guide explains how to optimize the loading process of third-party scripts with the following techniques: 
+This post explains how to optimize the loading process of third-party scripts with the following techniques: 
 
 1. Using the `async` or `defer` attribute on `<script>` tags
 
