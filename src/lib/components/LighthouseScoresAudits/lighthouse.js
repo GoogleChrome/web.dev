@@ -4,6 +4,30 @@
 
 const descriptionRegex = /^(.+) \[Learn more\]\((.+)\)\.$/;
 
+export const categories = [
+  {
+    id: "performance",
+    title: "Performance",
+  },
+  // TODO(b/119501689): remove PWA audits for now.
+  /* {
+    id: 'pwa',
+    title: 'PWA',
+  },*/
+  {
+    id: "accessibility",
+    title: "Accessibility",
+  },
+  {
+    id: "best-practices",
+    title: "Best Practices",
+  },
+  {
+    id: "seo",
+    title: "SEO",
+  },
+];
+
 // prettier-ignore
 /**
  * @const {!Object<string, function({weight: number, overallSavingsMs: ?number}): string>}
