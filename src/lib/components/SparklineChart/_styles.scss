@@ -7,15 +7,17 @@
 }
 
 web-sparkline-chart {
+  display: block;
+  height: 100px;
+
+  .lr-sparkline-outer {
+    position: absolute;  // w/h is set explicitly, need this otherwise we hold it
+  }
+
   &:focus {
     // Note: Focus style should be applied to the parent element using
     // :focus-within.
     outline: none;
-  }
-
-  .lr-sparkine-outer {
-    display: block;
-    border: 1px solid transparent;
   }
 
   .path.dashed {
@@ -78,6 +80,7 @@ web-sparkline-chart {
   }
 
   .path {
+    stroke-linecap: round;
     // TODO(robdodson): This doesn't animate even in the old site.
     // stroke-dasharray: 1000;
     // stroke-dashoffset: 1000;
