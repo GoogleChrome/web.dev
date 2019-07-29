@@ -62,7 +62,7 @@ Scripts with the `defer` attribute execute after HTML parsing is completely fini
 
 * Use `defer` for less critical resources. A video player that's below-the-fold, for example.
 
-Using these attributes can significantly speed up page load. For example, [Telegraph recently deferred all of their scripts](https://medium.com/p/a0a1000be5#4123), including ads and analytics, and improved the First Ad Loaded metric by an average of four seconds.
+Using these attributes can significantly speed up page load. For example, [Telegraph recently deferred all of their scripts](https://medium.com/p/a0a1000be5#4123), including ads and analytics, and improved the ad loading time by an average of four seconds.
 
 
 {% Aside %}
