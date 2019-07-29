@@ -34,7 +34,7 @@ Taking care of all that ahead of time makes applications feel much faster. This 
 
 Modern browsers [try their best to anticipate](https://www.igvita.com/posa/high-performance-networking-in-google-chrome/#tcp-pre-connect) what connections a page will need, but they cannot reliably predict them all. The good news is that you can give them a (resource 😉) hint.
 
-Adding `rel=preconnect` to a `<link>` informs the browser that your page intends to establish a connection to another domain, and that you’d like the process to start as soon as possible. Resources will load more quickly because the setup process has already been completed by the time the browser requests them.
+Adding `rel=preconnect` to a `<link>` informs the browser that your page intends to establish a connection to another domain, and that you'd like the process to start as soon as possible. Resources will load more quickly because the setup process has already been completed by the time the browser requests them.
 
 Informing the browser of your intention is as simple as adding a `<link>` tag to your page:
 
@@ -54,27 +54,27 @@ chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/
 
 ## Knowing *where from*, but not *what* you're fetching
 
-Due to versioned dependencies, you sometimes end up in a situation where you know you’ll be requesting a resource from a particular CDN, but not the exact path for it. 
+Due to versioned dependencies, you sometimes end up in a situation where you know you'll be requesting a resource from a particular CDN, but not the exact path for it. 
 
 <figure class="w-figure w-figure--center">
 <img src="versioned-url.png" style="max-width:450px" alt="A url of a script with the version name.">
 <figcaption>An example of a versioned URL</figcaption>
 </figure>
 
-The other common case is loading images from an [image CDN](/image-cdns), where the exact path for an image depends on media queries or runtime feature checks on the user’s browser.
+The other common case is loading images from an [image CDN](/image-cdns), where the exact path for an image depends on media queries or runtime feature checks on the user's browser.
 
 <figure class="w-figure w-figure--center">
 <img src="image-cdn-url.png" alt="An image CDN URL with the parameters size=300x400 and quality=auto.">
 <figcaption>An example of an image CDN URL</figcaption>
 </figure>
 
-In these situations, if the resource you’ll be fetching is important, you want to save as much time as possible by pre-connecting to the server. The browser won’t download the file before it needs it (that is, once the request is made from your page somehow), but at least it can handle the connection aspects ahead of time, saving the user from waiting for several round trips.
+In these situations, if the resource you'll be fetching is important, you want to save as much time as possible by pre-connecting to the server. The browser won't download the file before it needs it (that is, once the request is made from your page somehow), but at least it can handle the connection aspects ahead of time, saving the user from waiting for several round trips.
 
 ### Streaming media
 
 Another example where you may want to save some time in the connection phase, but not necessarily start retrieving content right away, is when streaming media from a different origin.
 
-Depending on how your page handles the streamed content, you may want to wait until your scripts have loaded and are ready to process the stream. Pre-connecting helps you cut the waiting time to a single round trip once you’re ready to start fetching.
+Depending on how your page handles the streamed content, you may want to wait until your scripts have loaded and are ready to process the stream. Pre-connecting helps you cut the waiting time to a single round trip once you're ready to start fetching.
 
 ## How to implement `rel=preconnect`
 
@@ -86,10 +86,10 @@ One way of initiating a `preconnect` is adding a `<link>` tag to the `<head>` of
 </head>
 ```
 
-Pre-connecting is only effective for domains other than the origin domain, so you shouldn’t use it for your site. 
+Pre-connecting is only effective for domains other than the origin domain, so you shouldn't use it for your site. 
 
 {% Aside 'caution' %}
-Only pre-connect to critical origins you will use soon because if the connection isn’t used within 10 seconds the browser closes it. There’s a limit to the number of simultaneous connections a browser can handle (for example, Chrome can handle six), and unnecessary pre-connecting can delay other important resources.
+Only pre-connect to critical origins you will use soon because if the connection isn't used within 10 seconds the browser closes it. There's a limit to the number of simultaneous connections a browser can handle (for example, Chrome can handle six), and unnecessary pre-connecting can delay other important resources.
 {% endAside %}
 
 You can also initiate a preconnect via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
@@ -97,7 +97,7 @@ You can also initiate a preconnect via the [`Link` HTTP header](https://develope
 `Link: <https://example.com/>; rel=preconnect`
 
 {% Aside %}
-A benefit of specifying a preconnect hint in the HTTP header is that it doesn’t rely on markup being parsed and it can be triggered by requests for stylesheets, scripts and more. For example, Google Fonts sends a `Link` header in the stylesheet response in order to pre-connect the domain that hosts the font files.
+A benefit of specifying a preconnect hint in the HTTP header is that it doesn't rely on markup being parsed and it can be triggered by requests for stylesheets, scripts and more. For example, Google Fonts sends a `Link` header in the stylesheet response in order to pre-connect the domain that hosts the font files.
 {% endAside %}
 
 Some types of resources, such as fonts, are loaded in ["anonymous mode"](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with the `preconnect` hint.
@@ -112,7 +112,7 @@ If you omit the `crossorigin` attribute, the browser only performs the DNS looku
 
 You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process — [domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection. 
 
-Because there’s a limit to the number of connections a browser can open, you sometimes can’t pre-connect to all your important domains. In that case use  `<link rel=dns-prefetch>` to save time on the first step—the DNS lookup which usually takes around [20-120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
+Because there's a limit to the number of connections a browser can open, you sometimes can't pre-connect to all your important domains. In that case use  `<link rel=dns-prefetch>` to save time on the first step—the DNS lookup which usually takes around [20-120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
 
 DNS resolution is initiated similarly to `preconnect`, by adding a `<link>` tag to the `<head>` of the document.
 
@@ -120,7 +120,7 @@ DNS resolution is initiated similarly to `preconnect`, by adding a `<link>` tag 
 <link rel="dns-prefetch" href="http://example.com">
 ```
 
-[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect` ](https://caniuse.com/#search=preconnect)[support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don’t support `preconnect`. 
+[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect` ](https://caniuse.com/#search=preconnect)[support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`. 
 
 ```html
 <link rel="preconnect" href="http://example.com">
@@ -138,4 +138,4 @@ Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Sa
 {% endCompare %}
 
 ## Conclusion
-These two resource hints are helpful at improving page speed when you know you’ll download something from a third-party domain soon, but you don’t know the exact URL for the resource. Examples include CDNs that distribute JavaScript libraries, images or fonts. Be mindful of constraints, use `preconnect` only for the most important resources, rely on `dns-prefetch` for the rest, and always measure the impact in the real-world.
+These two resource hints are helpful at improving page speed when you know you'll download something from a third-party domain soon, but you don't know the exact URL for the resource. Examples include CDNs that distribute JavaScript libraries, images or fonts. Be mindful of constraints, use `preconnect` only for the most important resources, rely on `dns-prefetch` for the rest, and always measure the impact in the real-world.
