@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Efficiently load third-party JavaScript
-subhead: Avoid common pitfalls of using third-party scripts and improve load times and user experience.
+subhead: Avoid common the pitfalls of using third-party scripts to improve load times and user experience.
 authors:
   - mihajlija
 date: 2019-07-29
