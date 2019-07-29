@@ -36,7 +36,7 @@ This guide explains how to optimize the loading process of third-party scripts w
 
 Because [synchronous scripts](link-to-intro) delay DOM construction and rendering, you should always load third-party scripts asynchronously unless the script has to run before the page can be rendered.
 
-The `async` and `defer` attributes tell the browser that it may go on parsing the HTML while loading the script in the background, and then execute the script after it loads. This way, script downloads don’t block DOM construction and page rendering. The result is that the user can see the page before all scripts have finished loading.
+The `async` and `defer` attributes tell the browser that it may go on parsing the HTML while loading the script in the background, and then execute the script after it loads. This way, script downloads don't block DOM construction and page rendering. The result is that the user can see the page before all scripts have finished loading.
 
 ```html
 <script async src="script.js">
