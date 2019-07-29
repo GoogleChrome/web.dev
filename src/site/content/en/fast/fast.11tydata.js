@@ -73,6 +73,12 @@ module.exports = {
         ],
       },
       {
+        title: 'Optimize your third-party resources',
+        pathItems: [
+          'efficiently-load-third-party-javascript',
+        ],
+      },
+      {
         title: 'Optimize web fonts',
         pathItems: ['avoid-invisible-text'],
       },
