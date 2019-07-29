@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Efficiently load third-party JavaScript
-subhead: Avoid common the pitfalls of using third-party scripts to improve load times and user experience.
+subhead: Avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 authors:
   - mihajlija
 date: 2019-07-29
@@ -124,9 +124,7 @@ Ads are an important source of income for many sites, but users come for the con
 
 An alternative approach is to load third-party content only when users scroll down to that section of the page.
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) is a browser API that efficiently detects when an element enters or exits the browser's viewport and it can be used to implement this technique.
-
-[lazysizes](https://web.dev/use-lazysizes-to-lazyload-images/) is a popular JavaScript library for lazy-loading images and [`iframes`](http://afarkas.github.io/lazysizes/#examples). It supports YouTube embeds and [widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). It also has [optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) for IntersectionObserver. 
+[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) is a browser API that efficiently detects when an element enters or exits the browser's viewport and it can be used to implement this technique. [lazysizes](https://web.dev/use-lazysizes-to-lazyload-images/) is a popular JavaScript library for lazy-loading images and [`iframes`](http://afarkas.github.io/lazysizes/#examples). It supports YouTube embeds and [widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). It also has [optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) for IntersectionObserver. 
 
 {% Aside 'caution' %}
 
@@ -137,22 +135,17 @@ Be careful when lazy-loading resources with JavaScript. If JavaScript fails to l
 ## Optimize how you serve third-party scripts
 
 
-### Use third-party CDN hosting
+### Third-party CDN hosting
 
 It's common for third-party vendors to provide URLs of JavaScript files that they host, usually on a [content delivery network (CDN)](https://en.wikipedia.org/wiki/Content_delivery_network). The benefits of this approach are that you can get started quickly—just copy and paste the URL—and there's no maintenance overhead. The third-party vendor handles server configuration and script updates.
 
-But because they are not on the same origin as the rest of your resources, loading files from a public CDN comes with a network cost. The browser needs to perform a DNS lookup, establish a new HTTP connection, and, on secure origins, perform an SSL handshake with the vendor’s server. 
+But because they are not on the same origin as the rest of your resources, loading files from a public CDN comes with a network cost. The browser needs to perform a DNS lookup, establish a new HTTP connection, and, on secure origins, perform an SSL handshake with the vendor's server. 
 
-When you use files from third-party servers, you rarely have control over caching. Relying on someone else’s caching strategy might cause scripts to be unnecessarily re-fetched from the network too often.
-
-{% Aside %}
-
-One possible benefit of serving third-party code this way is cross-domain caching. Sometimes a resource served from a public CDN may already be cached in the user’s browser if they previously visited another site that used the same resource from the same public CDN. This optimization[ doesn’t happen in Safari](https://andydavies.me/blog/2018/09/06/safari-caching-and-3rd-party-resources/) due to security reasons and it’s hard to tell how common it is in other browsers.
-{% endAside %}
+When you use files from third-party servers, you rarely have control over caching. Relying on someone else's caching strategy might cause scripts to be unnecessarily re-fetched from the network too often.
 
 ### Self-host third-party scripts
 
-Self-hosting third-party scripts is an option that gives you more control over a script’s loading process. By self-hosting you can: 
+Self-hosting third-party scripts is an option that gives you more control over a script's loading process. By self-hosting you can: 
 
 * Reduce DNS lookup and round-trip times. 
 * Improve [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) headers.
