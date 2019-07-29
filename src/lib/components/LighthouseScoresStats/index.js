@@ -4,7 +4,7 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import {categories, metrics} from "../LighthouseScoresAudits/lighthouse";
+import {categories, metrics} from "../../lighthouse";
 import lhrRuns from "./data";
 
 /* eslint-disable require-jsdoc */
