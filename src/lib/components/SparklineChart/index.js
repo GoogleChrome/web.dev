@@ -286,18 +286,12 @@ class SparklineChart extends BaseElement {
    * @private
    */
   setNextPoint_() {
+    // Unless the user has focused on the last, this should always find a point
+    // as the disused cursor is hidden offscreen to the left.
     const cursorX = this.cursorElement_.getAttribute("x1");
     const nextPoint = this.datapoints.find((entry) => entry.x > cursorX);
-
-    let point;
-    if (!nextPoint) {
-      point = this.datapoints[this.datapoints.length - 1];
-    } else {
-      point = nextPoint;
-    }
-
-    if (point) {
-      this.point = point;
+    if (nextPoint) {
+      this.point = nextPoint;
     }
   }
 
@@ -306,21 +300,17 @@ class SparklineChart extends BaseElement {
    * @private
    */
   setPrevPoint_() {
-    const cursorX = this.cursorElement_.getAttribute("x1");
+    const cursorX = +this.cursorElement_.getAttribute("x1");
     const currentPointIdx = this.datapoints.findIndex(
-      (entry) => entry.x == cursorX,
+      (entry) => entry.x === cursorX,
     );
-    const prevPoint = this.datapoints[currentPointIdx - 1];
 
-    let point;
-    if (!prevPoint) {
-      point = this.datapoints[0];
-    } else {
-      point = prevPoint;
-    }
-
-    if (point) {
-      this.point = point;
+    const prevPoint =
+      currentPointIdx === -1
+        ? this.datapoints.slice(-1)[0]
+        : this.datapoints[currentPointIdx - 1];
+    if (prevPoint) {
+      this.point = prevPoint;
     }
   }
 
