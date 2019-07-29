@@ -83,7 +83,7 @@ Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) t
 
 ### `preconnect`
 
-`<link rel="preconnect">` informs the browser that your page intends to establish a connection to another origin, and that you’d like the process to start as soon as possible. When the request for a resource from the preconnected origin is made, the download starts immediately. 
+`<link rel="preconnect">` informs the browser that your page intends to establish a connection to another origin, and that you'd like the process to start as soon as possible. When the request for a resource from the preconnected origin is made, the download starts immediately. 
 
 ```html
 <link rel="preconnect" href="https://cdn.example.com">
