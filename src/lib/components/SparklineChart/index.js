@@ -48,10 +48,9 @@ class SparklineChart extends BaseElement {
       medians: {type: Object},
 
       // TODO: make these all --var?
-      padding: {type: Number}, // configurable padding
+      topPadding: {type: Number}, // top padding to prevent catching popup
       circleRadius: {type: Number}, // configurable circle radius
       strokeWidth: {type: Number}, // width of SVG stroke
-      scoreHeight: {type: Number}, // ?????
 
       demo: {type: Boolean},
     };
@@ -60,10 +59,9 @@ class SparklineChart extends BaseElement {
   constructor() {
     super();
 
-    this.padding = 0;
+    this.topPadding = 20;
     this.circleRadius = 3;
     this.strokeWidth = 2;
-    this.scoreHeight = 0; // FIXME: was 15
 
     // private, updated in render() by calling getBoundingClientRect
     this.width_ = 0;
@@ -84,28 +82,28 @@ class SparklineChart extends BaseElement {
 
     // bind so this can be added/removed from a global handler
     this.onResize = this.onResize.bind(this);
+
+    if (HAS_RESIZE_OBSERVER) {
+      // We rely on our user ensuring that <web-sparkline-chart> has size.
+      const ro = new ResizeObserver(this.onResize);
+      ro.observe(this);
+    }
   }
 
   set demo(demo) {
     this.demo_ = demo;
 
     if (demo) {
-      // FIXME FIXME FIXME remove before submit
       this.values = [
-        // {score: 35, date: "2019-05-22"},
-        // {score: 30, date: "2019-05-24"},
-        // {score: 20, date: "2019-06-01"},
-        // {score: 50, date: "2019-06-24"},
-        // {score: 92, date: "2019-06-29"},
+        {score: 35, date: "2019-05-22"},
+        {score: 30, date: "2019-05-24"},
+        {score: 20, date: "2019-06-01"},
+        {score: 50, date: "2019-06-24"},
+        {score: 92, date: "2019-06-29"},
         {score: 90, date: "2019-07-01"},
       ];
 
-      this.medians = [
-        {score: 85, date: "2019-05-31"},
-        {score: 89, date: "2019-06-24"},
-      ];
-
-      console.debug("demo mode activated for web-sparkline-chart", this);
+      this.medians = [{score: 89, date: "2019-06-24"}];
     }
   }
 
@@ -130,7 +128,7 @@ class SparklineChart extends BaseElement {
     this.cursorElement_.setAttribute("x1", this.point_.x);
     this.cursorElement_.setAttribute("x2", this.point_.x);
     this.cursorElement_.setAttribute("y1", this.point_.y);
-    this.cursorElement_.setAttribute("y2", this.height_ + this.scoreHeight);
+    this.cursorElement_.setAttribute("y2", this.height_);
     const colorClass = this.computeColorClass_(this.point_.score);
     this.cursorElement_.style.stroke = colorClass;
     this.cursorElement_.classList.value = `sl-cursor ${colorClass}`;
@@ -347,18 +345,12 @@ class SparklineChart extends BaseElement {
 
   /**
    * Calculate the data point y's value
-   * @param {number} y
+   * @param {number} score
    * @return {number}
    */
-  calculateY(y) {
-    const min = 0;
-    const max = this.height_;
-    if (!max) {
-      return 0; // not on page yet
-    }
-
-    const s = max !== min ? this.height_ / (max - min) : 1;
-    return this.height_ - s * (y - min);
+  calculateY(score) {
+    const scoreRatio = Math.min(1, Math.max(score / 100, 0));
+    return (1 - scoreRatio) * this.height_;
   }
 
   /**
@@ -460,15 +452,16 @@ class SparklineChart extends BaseElement {
       // we can't bail early, as firstUpdated() still needs to steal rendered nodes
     }
 
-    const pixelBuffer = this.padding + this.circleRadius + this.strokeWidth / 2;
+    const pixelBuffer = this.circleRadius + this.strokeWidth / 2;
 
     // Save width and height, padded by any requested buffer. This is needed for processValues()
     // and showing the user's cursor.
-    // Align the SVG content by `pixelBuffer` on the top, left, and right sides.
+    // Align the SVG content by `pixelBuffer` on the top, left, and right sides. Add topPadding on
+    // the top, to allow the popup to be contained properly.
     const groupTransform = `translate(${pixelBuffer},${pixelBuffer +
-      this.scoreHeight})`;
+      this.topPadding})`;
     this.width_ = rect.width - pixelBuffer * 2;
-    this.height_ = rect.height - pixelBuffer - this.scoreHeight;
+    this.height_ = rect.height - pixelBuffer - this.topPadding;
 
     const {paths, datapoints} = this.processValues(this.values);
     this.datapoints = datapoints;
@@ -496,7 +489,7 @@ class SparklineChart extends BaseElement {
     /* eslint-disable max-len,indent */
     const innerSVG = svg`
       <svg xmlns="http://www.w3.org/2000/svg"
-          width="100%" height="130%" style="padding: ${this.padding}px;">
+          width="100%" height="100%">
         <defs>
           <filter id="hover-shadow">
             <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000"
@@ -515,10 +508,9 @@ class SparklineChart extends BaseElement {
         <g transform="${groupTransform}">
           ${paths.map(({firstPoint, points, color}) => {
             // Ensures that each path segment's fill is complete.
-            const height = this.height_ + this.scoreHeight / 2;
-            const d = `${points} V ${height} H ${firstPoint.x} Z`;
+            const d = `${points} V ${this.height_} H ${firstPoint.x} Z`;
             return svg`
-              <path class="gradient" stroke="none"
+              <path class="gradient"
                   d="${d}"
                   fill="${this.fill ? `url(#gradient-${color})` : "none"}" />
               <path d="${points}" class="path ${color}" style="fill:none" />
@@ -541,6 +533,7 @@ class SparklineChart extends BaseElement {
 
     return html`
       <div
+        style="width: ${rect.width}px; height: ${rect.height}px"
         tabindex="0"
         class="lr-sparkline-outer"
         @blur=${this.onClearPoint}
@@ -579,14 +572,6 @@ class SparklineChart extends BaseElement {
   }
 
   firstUpdated() {
-    if (HAS_RESIZE_OBSERVER) {
-      // Observe a DOM node we control, as the <web-sparkline-chart> itself may
-      // not be `display: block`.
-      const outer = this.renderRoot.querySelector(".lr-sparkline-outer");
-      const ro = new ResizeObserver(this.onResize);
-      ro.observe(outer);
-    }
-
     this.cursorElement_ = this.renderRoot.querySelector("#cursor");
     this.scoreElement_ = this.renderRoot.querySelector("#score");
     this.announcerElement_ = this.querySelector(".sr-announcer");
