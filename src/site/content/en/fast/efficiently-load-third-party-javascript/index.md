@@ -139,7 +139,7 @@ Be careful when lazy-loading resources with JavaScript. If JavaScript fails to l
 
 ### Use third-party CDN hosting
 
-It’s common for third-party vendors to provide URLs of JavaScript files that they host, usually on a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). The benefits of this approach are that you can get started quickly—just copy and paste the URL—and there’s no maintenance overhead. The third-party vendor handles server configuration and script updates.
+It's common for third-party vendors to provide URLs of JavaScript files that they host, usually on a [content delivery network (CDN)](https://en.wikipedia.org/wiki/Content_delivery_network). The benefits of this approach are that you can get started quickly—just copy and paste the URL—and there's no maintenance overhead. The third-party vendor handles server configuration and script updates.
 
 But because they are not on the same origin as the rest of your resources, loading files from a public CDN comes with a network cost. The browser needs to perform a DNS lookup, establish a new HTTP connection, and, on secure origins, perform an SSL handshake with the vendor’s server. 
 
