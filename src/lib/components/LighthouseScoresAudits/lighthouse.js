@@ -28,6 +28,33 @@ export const categories = [
   },
 ];
 
+export const metrics = [
+  {
+    title: "First Contentful Paint",
+    id: "first-contentful-paint",
+  },
+  {
+    title: "First Meaningful Paint",
+    id: "first-meaningful-paint",
+  },
+  {
+    title: "Speed Index",
+    id: "speed-index",
+  },
+  {
+    title: "First CPU Idle",
+    id: "first-cpu-idle",
+  },
+  {
+    title: "Time to Interactive",
+    id: "interactive",
+  },
+  {
+    title: "Estimated Input Latency",
+    id: "estimated-input-latency",
+  },
+];
+
 // prettier-ignore
 /**
  * @const {!Object<string, function({weight: number, overallSavingsMs: ?number}): string>}

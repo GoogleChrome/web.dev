@@ -4,7 +4,7 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import {categories} from "../LighthouseScoresAudits/lighthouse";
+import {categories, metrics} from "../LighthouseScoresAudits/lighthouse";
 import lhrRuns from "./data";
 
 /* eslint-disable require-jsdoc */
@@ -12,13 +12,15 @@ class LighthouseScoresStats extends BaseElement {
   static get properties() {
     return {
       lhrRuns: {type: Array}, // all the Lighthouse runs being shown
+      category: {type: String}, // the current chosen category
+      disabled: {type: Boolean}, // fades out UI elements for LH run
       demo: {type: Boolean},
     };
   }
 
   firstUpdated() {
     this.setAttribute("role", "table");
-    this.setAttribute("aria-label", "Lighthouse audit results");
+    this.setAttribute("aria-label", "Lighthouse results");
   }
 
   constructor() {
@@ -33,14 +35,17 @@ class LighthouseScoresStats extends BaseElement {
    * @private
    */
   onCardClick_(e) {
-    // let target = event.target;
-    // while (target && target.classList) {
-    //   if (target.classList.contains("lh-score-card")) {
-    //     this.selectNewCard_(target);
-    //     break;
-    //   }
-    //   target = target.parentNode;
-    // }
+    if (this.category === e.target.value) {
+      // clicking on card again clears filter
+      this.category = null;
+    } else {
+      this.category = e.target.value;
+    }
+    const event = new CustomEvent("category", {
+      detail: this.category,
+      bubbles: true,
+    });
+    this.dispatchEvent(event);
   }
 
   /**
@@ -55,7 +60,6 @@ class LighthouseScoresStats extends BaseElement {
         const items = run.lhrSlim;
         const item = (items || []).find((item) => item.id === catId);
         if (!item) {
-          console.warn(`No Lighthouse reports for "${this.url}".`);
           return null;
         }
         return {
@@ -100,11 +104,14 @@ class LighthouseScoresStats extends BaseElement {
       const lastScore = scores.slice(-1)[0] || {score: 0};
 
       return html`
-        <div
-          class="lh-score-card"
-          @click="${this.onCardClick_}"
-          data-category="${id}"
-        >
+        <label class="lh-score-card">
+          <input
+            type="radio"
+            name="lh-score-category"
+            value="${id}"
+            .checked=${this.category === id}
+            @click=${this.onCardClick_}
+          />
           <div class="lh-score-card__header">
             <span
               id="${id}-score-gauge-title"
@@ -143,19 +150,58 @@ class LighthouseScoresStats extends BaseElement {
     `;
   }
 
+  /**
+   * @private
+   * @param {?LighthouseLastRunDetail} lhr
+   * @return {!TemplateResult}
+   */
+  generateMetricsTable_(lhr) {
+    if (!lhr) {
+      return html``;
+    }
+
+    const metricToHtml = (metric) => {
+      const audit = lhr.audits[metric.id];
+
+      let label = null;
+      if (audit.score >= 0.9) {
+        label = "pass";
+      } else if (audit.score >= 0.5) {
+        label = "average";
+      } else {
+        label = "fail";
+      }
+
+      return html`
+        <div class="lh-metrics-table__metric">
+          <span>${metric.title}</span>
+          <span
+            class="lh-metrics-table__score lh-score--${label}"
+            aria-label="${label} score: ${audit.displayValue}"
+            role="group"
+          >
+            ${audit.displayValue}
+            <span class="lh-metrics-table__icon"></span>
+          </span>
+        </div>
+      `;
+    };
+    return html`
+      <div class="lh-metrics-table">${metrics.map(metricToHtml)}</div>
+    `;
+  }
+
   render() {
-    const auditRunning = false;
     const lastRun = this.lhrRuns && this.lhrRuns.slice(-1)[0];
     const lhr = lastRun ? lastRun.lhr : null;
 
     return html`
-      <div class="${auditRunning ? "lh-audit-running" : ""}">
+      <div class="${this.disabled ? "lh-audit-running" : ""}">
         <div class="lh-score-cards ${!lhr ? "lh-score-cards--fade" : ""}">
           <web-progress-bar></web-progress-bar>
           ${this.generateCards_()} ${this.scoreLegend_(true)}
         </div>
-        ${this.scoreLegend_(false)}
-        <div class="lh-metrics-table"></div>
+        ${this.scoreLegend_(false)} ${this.generateMetricsTable_(lhr)}
       </div>
     `;
   }

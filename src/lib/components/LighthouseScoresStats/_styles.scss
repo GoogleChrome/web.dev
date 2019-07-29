@@ -37,6 +37,22 @@ web-lighthouse-scores-stats {
     margin-top: 32px;
   }
 
+  .lh-score-card {
+    color: unset;
+    font-size: unset;
+    display: block;
+
+    > input[type="radio"] {
+      display: none;
+    }
+  }
+
+  .lh-audit-running {
+    web-progress-bar {
+      visibility: visible;
+    }
+  }
+
   .lh-score-cards--fade {
     .lh-score-card {
       opacity: .5;

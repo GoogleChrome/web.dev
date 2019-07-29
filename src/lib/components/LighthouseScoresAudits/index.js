@@ -118,7 +118,7 @@ class LighthouseScoresAudits extends BaseElement {
 
   firstUpdated() {
     this.setAttribute("role", "table");
-    this.setAttribute("aria-label", "Lighthouse audit results");
+    this.setAttribute("aria-label", "Lighthouse audits and suggested guides");
   }
 
   /**
