@@ -66,7 +66,7 @@ Using these attributes can significantly speed up page load. For example, [Teleg
 
 
 {% Aside %}
-Analytics scripts are usually loaded early to not miss any valuable analytics data. Fortunately, there are [patterns to initialize analytics lazily](https://philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build/) while retaining early page-load data.
+Analytics scripts are usually loaded early so you don't miss any valuable analytics data. Fortunately, there are [patterns to initialize analytics lazily](https://philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build/) while retaining early page-load data.
 {% endAside %}
 
 ## Establish early connections to required origins 
