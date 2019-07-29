@@ -82,14 +82,13 @@ You can combine filters for rich and clever effects, or use just one filter for 
 As with many features of the modern web, you'll want to know whether the user's browser supports `backdrop-filter` before using it. Do this with `@supports()`. For performance reasons, fall back to an image instead of a polyfill when `backdrop-image` isn't supported. The example below shows this.
 
 ```css
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+@supports (backdrop-filter: none) {
 	.background {
 		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
 	}
 }
 
-@supports not (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+@supports not (backdrop-filter: none) {
   .background {
     background-image: blurred-hero.png;
   }
@@ -172,8 +171,7 @@ As stated earlier, `backdrop-filter` allows performant effects that would be dif
 }
 
 .container::after {
-	-webkit-backdrop-filter: invert(1);
-  backdrop-filter: invert(1);
+	backdrop-filter: invert(1);
   z-index: 3;
 }
 ```
