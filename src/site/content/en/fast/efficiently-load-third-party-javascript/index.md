@@ -112,7 +112,7 @@ Because there's a limit to the number of connections a browser can open, for les
 ```
 ## Lazy-load third-party resources
 
-Embedded third-party resources can be a big contributor to slow page speed when constructed poorly. If they aren’t critical or are below the fold (that is, if users have to scroll to view them), lazy-loading is a good way to improve page speed and paint metrics. This way users will get the main page content faster and have a better experience.
+Embedded third-party resources can be a big contributor to slow page speed when constructed poorly. If they aren't critical or are below the fold (that is, if users have to scroll to view them), lazy-loading is a good way to improve page speed and paint metrics. This way, users will get the main page content faster and have a better experience.
 
 <figure class='w-figure w-figure--inline-left'>
 <img src="lazy-load.png" alt="A diagram of a webpage shown on a mobile device with scrollable content extending beyond the screen. The content that's below-the-fold is desaturated because it's not loaded yet.">
