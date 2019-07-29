@@ -160,7 +160,7 @@ Self-hosting third-party scripts is an option that gives you more control over a
 
 For example, Casper managed to [shave 1.7 seconds](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec) off load time by self-hosting an A/B testing script.
 
-Self-hosting comes with one big downside though: scripts can go out of date and won’t get automatic updates when there’s an API change or a security fix. 
+Self-hosting comes with one big downside though: scripts can go out of date and won't get automatic updates when there's an API change or a security fix. 
 
 {% Aside 'caution' %}
 
