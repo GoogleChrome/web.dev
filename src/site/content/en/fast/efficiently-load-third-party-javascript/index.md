@@ -99,7 +99,7 @@ Only preconnect to critical origins you will use soon because if the connection 
 
 `<link rel="dns-prefetch>` handles a small subset of what is handled by `<link rel="preconnect">`.  Establishing a connection involves the DNS lookup and TCP handshake, and for secure origins, TLS negotiations. `dns-prefetch` instructs the browser to only resolve the DNS of a specific domain before it has been explicitly called.
 
-Because there’s a limit to the number of connections a browser can open, for less critical third-party origins use `<link rel=dns-prefetch>`. 
+Because there's a limit to the number of connections a browser can open, for less critical third-party origins use `<link rel=dns-prefetch>`. 
 
 ```html
 <link rel="dns-prefetch" href="http://example.com">
