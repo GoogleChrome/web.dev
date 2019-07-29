@@ -90,7 +90,7 @@ Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) t
 ```
 
 {% Aside 'caution' %}
-Only preconnect to critical origins you will use soon because if the connection isn’t used within 10 seconds the browser closes it. There’s a limit to the number of simultaneous connections a browser can handle (for example, Chrome can handle six), and unnecessary preconnecting can delay other important resources.
+Only preconnect to critical origins you will use soon; if the connection isn't used within 10 seconds, the browser closes it. There's a limit to the number of simultaneous connections a browser can handle. (For example, Chrome can handle six.) Unnecessary preconnecting can delay other important resources.
 
 {% endAside %}
 
