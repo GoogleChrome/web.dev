@@ -104,7 +104,7 @@ Because there's a limit to the number of connections a browser can open, for les
 <link rel="dns-prefetch" href="http://example.com">
 ```
 
-[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect` support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don’t support `preconnect`. Use separate link tags to implement this safely: 
+[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect` support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`. Use separate link tags to implement this safely: 
 
 ```html
 <link rel="preconnect" href="http://example.com">
@@ -128,7 +128,7 @@ An alternative approach is to load third-party content only when users scroll do
 
 {% Aside 'caution' %}
 
-Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won’t load at all. Keep an eye out for [native lazy-loading support for images and iframes](https://addyosmani.com/blog/lazy-loading/) that’s coming soon to Chrome.
+Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all. Keep an eye out for [native lazy-loading support for images and iframes](https://addyosmani.com/blog/lazy-loading/) that's coming soon to Chrome.
 
 {% endAside %}
 
@@ -163,4 +163,3 @@ Manually updating scripts can add a lot of overhead to your development process 
 ### Use service workers to cache scripts from third-party servers
 
 An alternative to self-hosting that allows you greater control over caching while still getting the third-party CDN benefits is [using service workers to cache scripts from third-party servers](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests). This gives you control over how often scripts are re-fetched from the network and makes it possible to create a loading strategy that throttles requests for non-essential third-party resources until the page reaches a key user moment. Using `preconnect` to establish early connections in this case can also mitigate the network costs to an extent.
-
