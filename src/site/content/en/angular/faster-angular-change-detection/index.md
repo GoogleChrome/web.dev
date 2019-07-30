@@ -130,7 +130,7 @@ To see how slow this can be, try entering the name of a new employee in the app 
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://stackblitz.com/ball-demo?embed=1&ctl=1"
+    src="https://stackblitz.com/edit/ball-demo?embed=1&ctl=1"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -173,7 +173,7 @@ To see the effect of this optimization, enter a new employee in the application 
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://stackblitz.com/ball-demo?embed=1&ctl=1"
+    src="https://stackblitz.com/edit/ball-demo?embed=1&ctl=1"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -226,7 +226,7 @@ In the app below you can see how much smoother the typing is!
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://stackblitz.com/ball-demo?embed=1&ctl=1"
+    src="https://stackblitz.com/edit/ball-demo?embed=1&ctl=1"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
