@@ -85,7 +85,7 @@ module.exports = (type, listStyle = 'ul') => {
     case 'reload':
       instruction = html`${bullet}Reload the app.`;
       break;
-      
+
     case 'start-profiling':
       instruction = html`
         ${bullet}Click **Start profiling and reload page** <img src="/images/icons/reload.svg"
