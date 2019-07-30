@@ -19,6 +19,17 @@ tags:
   - cookies
 ---
 
+If you're just here for the `SameSite` cookie guidance, you can skip to the
+relevant sections:
+
+- [What are first-party and third-party cookies?](#what-are-first-party-and-third-party-cookies)
+- [Explicitly state cookie usage with the `SameSite` attribute](#explicitly-state-cookie-usage-with-the-samesite-attribute)
+- [Changes to the default behavior without `SameSite`](#changes-to-the-default-behavior-without-samesite)
+- [`SameSite=Lax` by default](#samesitelax-by-default)
+- [`SameSite=None` must be secure](#samesitenone-must-be-secure)
+- [Handling incompatible clients](#handling-incompatible-clients)
+- [How to implement `SameSite` today](#how-to-implement-samesite-today)
+
 Cookies are one of the methods available for adding persistent state to web
 sites. Each cookie is a `key=value` pair along with a number of attributes that
 control when and where that cookie is used. You've probably already used these
@@ -90,12 +101,12 @@ context, with each cookie separated by a semicolon:
 
 If you try this on a selection of popular sites you will notice that most of
 them set significantly more than just three cookies. In most cases, those
-cookies are sent on every single request to that domain, which has a number
-of implications. Upload bandwidth is often more restricted than download for
-your users, so that overhead on all outbound requests is adding a delay on your
-time to first byte. Be conservative in the number and size of cookies you set.
-Make use of the `Max-Age` attribute to help ensure that cookies don't hang
-around longer than needed.
+cookies are sent on every single request to that domain, which has a number of
+implications. Upload bandwidth is often more restricted than download for your
+users, so that overhead on all outbound requests is adding a delay on your time
+to first byte. Be conservative in the number and size of cookies you set. Make
+use of the `Max-Age` attribute to help ensure that cookies don't hang around
+longer than needed.
 
 ## What are first-party and third-party cookies?
 
@@ -257,50 +268,29 @@ across multiple sites then you should use `None` to ensure your intent is clear.
 
 ## Changes to the default behavior without SameSite
 
-[Chrome 76](https://chromestatus.com/features/schedule) introduces a new
-`same-site-by-default-cookies` flag. Setting this flag will shift the default
-treatment of cookies to apply `SameSite=Lax` if no other `SameSite` value is
-provided. This is a move towards providing a more secure default and one that
-makes the intended purpose of cookies clearer to users. If you want to delve
-into the details, check out Mike West's
+While the `SameSite` attribute is widely supported, it has unfortunately not
+been widely adopted by developers. The open default of sending cookies
+everywhere means all use case work, but leave the user vulnerable to CSRF and
+unintentional information leakage. In order to encourage developers to state
+their intent and provide users with a safer experience, Mike West has proposed
+two key changes in
 ["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00).
+These updates are:
 
-With this flag enabled in Chrome, both **new and existing cookies** without the
-`SameSite` attribute will be restricted to the same site the user is browsing.
-If you have cookies that need to be available in a third-party context, then you
-must declare that to the browser and the user by marking them as
-`SameSite=None`. You will want to apply this when setting new cookies and
-actively refresh existing cookies even if they are not approaching their expiry
-date.
+- cookies without a `SameSite` attribute will be treated as `SameSite=None`
+- cookies with `SameSite=None` must also specify `Secure`
 
-{% Aside 'note' %} If you rely on any services that provide third-party content
-on your site, you should also check with the provider that they are updating
-their services. You may need to update your dependencies or snippets to ensure
-that your site picks up the new behavior. {% endAside %}
+Both
+[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ)
+and
+[Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
+have this functionality available to test now and will be making this their
+default behavior in future releases.
 
-These changes are backwards-compatible with browsers that have correctly
-implemented earlier versions of the `SameSite` attribute, or just do not support
-it at all. By applying these changes to your cookies, you are making their
-intended use explicit rather than relying on the default behavior of the
-browser. Likewise, any clients that do not recognize `SameSite=None` as of yet
-should ignore it and carry on as if the attribute was not set.
-
-Additionally in Chrome, if you also enable the
-`cookies-without-same-site-must-be-secure` flag then you must also specify
-`SameSite=None` cookies as `Secure` or they will be rejected. Note, this flag
-won't have any effect unless you also have `same-site-by-default-cookies`
-enabled.
-
-{% Aside 'warning' %} At the time of writing, the network library on iOS and Mac
-incorrectly handles unknown `SameSite` values and will **treat any unknown
-value** (including `None`) as if it was `SameSite=Strict`, which affects Safari
-on Mac and browsers wrapping WebKit on iOS (Safari, Chrome, Firefox, and
-others). This should be fixed in an upcoming release and may be available in the
-Tech Preview now. You can track their progress in the
-[WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
+{% Aside %}This article will be updated as additional browsers announce support.
 {% endAside %}
 
-### Behavior with `same-site-by-default-cookies` enabled
+### `SameSite=Lax` by default
 
 ```
 Set-Cookie: promo_shown=1
@@ -313,10 +303,23 @@ Set-Cookie: promo_shown=1
 Set-Cookie: promo_shown=1; SameSite=Lax
 ```
 
-{% Compare 'better', 'Default behavior applied' %} Chrome will treat that cookie
-as if `SameSite=Lax` was specified. {% endCompare %}
+{% Compare 'better', 'Default behavior applied' %} The browser will treat that
+cookie as if `SameSite=Lax` was specified. {% endCompare %}
 
-### Behavior with `cookies-without-same-site-must-be-secure` enabled
+You can test this behavior as of Chrome 76 by enabling
+`chrome://flags/#same-site-by-default-cookies` and from Firefox 69 in
+`about:config` by setting `network.cookie.sameSite.laxByDefault`.
+
+While this is intended to apply a more secure default, you should ideally set an
+explicit `SameSite` attribute rather than relying on the browser to apply that
+for you. This makes your intent for the cookie explicit and improves the chances
+of a consistent experience across browsers.
+
+{% Aside 'caution' %} The default behaviour applied by Chrome is slightly more
+permissive than `Lax` as it will specifically allow cookies to be sent on
+cross-site POST requests. {% endAside %}
+
+### `SameSite=None` must be secure
 
 ```
 Set-Cookie: widget_session=abc123; SameSite=None
@@ -332,32 +335,121 @@ Set-Cookie: widget_session=abc123; SameSite=None; Secure
 {% Compare 'better', 'Accepted' %} You must ensure that you pair `SameSite=None`
 with the `Secure` attribute. {% endCompare %}
 
-{% Aside 'objective' %} These flags are intended to encourage more secure
-defaults, but you shouldn't rely on a browser's default behavior. Best practice
-is to always be explicit in stating the attributes so your intent is clear.
+You can test this behavior as of Chrome 76 by enabling
+`chrome://flags/#cookies-without-same-site-must-be-secure` and from Firefox 69
+in `about:config` by setting `network.cookie.sameSite.noneRequiresSecure`.
+
+You will want to apply this when setting new cookies and actively refresh
+existing cookies even if they are not approaching their expiry date.
+
+{% Aside 'note' %} If you rely on any services that provide third-party content
+on your site, you should also check with the provider that they are updating
+their services. You may need to update your dependencies or snippets to ensure
+that your site picks up the new behavior. {% endAside %}
+
+Both of these changes are backwards-compatible with browsers that have correctly
+implemented earlier versions of the `SameSite` attribute, or just do not support
+it at all. By applying these changes to your cookies, you are making their
+intended use explicit rather than relying on the default behavior of the
+browser. Likewise, any clients that do not recognize `SameSite=None` as of yet
+should ignore it and carry on as if the attribute was not set.
+
+{% Aside 'warning' %} At the time of writing, the network library on iOS and Mac
+incorrectly handles unknown `SameSite` values and will treat **any unknown
+value** (including `None`) as if it was `SameSite=Strict`, which affects Safari
+on Mac and browsers wrapping WebKit on iOS (Safari, Chrome, Firefox, and
+others). This will be fixed as of macOS 10.15 and iOS 13 and is available in the
+Tech Preview now. You can track their progress on
+[WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
 {% endAside %}
 
-## Designing for `SameSite` cookies
+### Handling incompatible clients
 
-A core practice in software design is the
-[Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
-which essentially states that each part of your system should have one clear
-purpose. This is more simply put in the
-[Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) which says,
-"Make each program do one thing well". By adding the `SameSite` attribute to
-your cookies you are creating the distinction between first-party and
-third-party usage, but a third-party cookie can still be used in a first-party
-context. It might seem simpler to just have the single cookie, but now you have
-one component doing two jobs.
+If you have a significant number of users still using browsers or clients that
+are incompatible with these changes there are some choices for working around
+this. The general rule is to treat the incompatible clients as the special case,
+don't create an exception for browsers implementing the newer rules.
 
-If you have one cookie that's providing functionality in both contexts, for
-example perhaps providing a user identifier for your main site and for an
-embeddable widget, then consider separating these into separate cookies. As
-browsers and users start to change how they accept and manage cookies providing
-this distinction makes your site more robust in scenarios where third-party
-cookies are blocked or cleared.
+At the point of sending the `Set-Cookie` header, you can choose to detect the
+client via the user agent string. For example, this snippet shows detecting iOS
+12 or Safari on Mac OS X 10.14 and serving a cookie without the `SameSite`
+attribute to those browsers. This makes use of the
+[ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library for Node.js
+as you probably do not want to spend time writing your own regular expressions
+for this.
 
-## What should I do to enable `SameSite` today?
+```javascript
+const http = require('http');
+const parser = require('ua-parser-js');
+
+http
+  .createServer(function(req, res) {
+    const ua = parser(req.headers['user-agent']);
+
+    if (
+      // iOS 12 browsers
+      (ua.os.name == 'iOS' && ua.os.version.startsWith('12')) ||
+      // or MacOS 10.14
+      (ua.os.name == 'Mac OS' && ua.os.version.startsWith('10.14'))
+    ) {
+      // Don't send SameSite=None for affected browsers
+      res.setHeader('Set-Cookie', '3pcookie=value; Secure');
+    } else {
+      // Default is the new SameSite=None attribute
+      res.setHeader('Set-Cookie', '3pcookie=value; SameSite=None; Secure');
+    }
+
+    res.end();
+  })
+  .listen(process.env.PORT);
+```
+
+The benefit of this approach is making one change at the point of setting the
+cookie. However, the necessary warning here is that user agent sniffing is
+inherently fragile and may not catch all of the affected users.
+
+Alternatively, as the incompatible browsers will disregard the cookies with the
+new attribute you may also choose to set an additional "legacy" cookie. On the
+receiving side, you will then need to check for the presence of the new cookie
+falling back to the legacy value if it is not present.
+
+```javascript
+const express = require('express');
+const cp = require('cookie-parser');
+const app = express();
+app.use(cp());
+
+app.get('/', function(req, res) {
+  let cookieVal = null;
+
+  if (req.cookies['3pcookie']) {
+    // check the new style cookie first
+    cookieVal = req.cookies['3pcookie'];
+  } else if (req.cookies['3pcookie-legacy']) {
+    // otherwise fall back to the legacy cookie
+    cookieVal = req.cookies['3pcookie-legacy'];
+  }
+
+  // Set the new style cookie
+  res.cookie('3pcookie', 'value', { sameSite: 'none', secure: true });
+  // And set the same value
+  res.cookie('3pcookie-legacy', 'value', { secure: true });
+  res.end();
+});
+
+app.listen(process.env.PORT);
+```
+
+The downside here is that this change will be doubling up the amount of cookies
+sent in third-party contexts. This also requires making changes both where the
+cookie is sent and where it's read. However, this is more robust than relying on
+the user agent to capture incompatible clients.
+
+In either case, you should monitor the levels of traffic that need to receive
+the legacy-style cookie so that you can remove the workaround when those levels
+drop below an acceptable threshold.
+
+## How to implement `SameSite` today
 
 The majority of languages and libraries support the `SameSite` attribute for
 cookies, however the addition of `SameSite=None` is still relatively new which
