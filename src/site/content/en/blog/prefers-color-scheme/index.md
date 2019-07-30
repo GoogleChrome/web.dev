@@ -1,4 +1,4 @@
----
+----------
 title: Hello darkness, my old friend
 subhead: Overhyped or necessity? Learn everything about dark mode and how to support it to the benefit of your users!
 authors:
