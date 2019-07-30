@@ -4,15 +4,14 @@ title: Third-party JavaScript performance
 subhead: Find out how third-party JavaScript can affect performance and what you can do to keep it from slowing down your sites.
 authors:
   - mihajlija
-date: 2019-07-16
+date: 2019-07-30
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
-hero: hero.png
-alt: A blue diagram of a webpage.
 description: |
   This post describes the common kinds of third-party JavaScript and the performance issues they can cause. It also provides general guidance about how to optimize third-party scripts.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - performance
+  - third-party # post is a required tag for the article to show up in the blog.
   - fast
 ---
 
