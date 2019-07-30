@@ -84,6 +84,7 @@ web-url-chooser {
     transition: border 200ms ease-in-out;
     outline: none;
     background-color: $WHITE;
+    padding: 8px 16px;
 
     &::-ms-clear {
       display: none;
