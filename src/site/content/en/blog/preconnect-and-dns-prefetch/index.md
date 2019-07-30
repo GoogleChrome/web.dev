@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Establish network connections early to improve perceived page speed
 subhead: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
@@ -34,7 +33,9 @@ Taking care of all that ahead of time makes applications feel much faster. This 
 
 Modern browsers [try their best to anticipate](https://www.igvita.com/posa/high-performance-networking-in-google-chrome/#tcp-pre-connect) what connections a page will need, but they cannot reliably predict them all. The good news is that you can give them a (resource 😉) hint.
 
-Adding `rel=preconnect` to a `<link>` informs the browser that your page intends to establish a connection to another domain, and that you'd like the process to start as soon as possible. Resources will load more quickly because the setup process has already been completed by the time the browser requests them.
+Adding `rel=preconnect` to a `<link>` informs the browser that your page intends to establish a connection to another domain, and that you'd like the process to start as soon as possible. Resources will load more quickly because the setup process has already been completed by the time the browser requests them. 
+
+Resource hints are named so because they are not mandatory instructions. They provide the information about what you'd like to happen, but it's ultimately up to the browser to decide whether to execute them. Setting up and keeping a connection open is a lot of work, so the browser might choose to ignore resource hints or execute them partially depending on the situation.
 
 Informing the browser of your intention is as simple as adding a `<link>` tag to your page:
 
@@ -52,7 +53,7 @@ chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/
 
 ## Use-cases
 
-## Knowing *where from*, but not *what* you're fetching
+### Knowing *where from*, but not *what* you're fetching
 
 Due to versioned dependencies, you sometimes end up in a situation where you know you'll be requesting a resource from a particular CDN, but not the exact path for it. 
 
@@ -108,7 +109,7 @@ Some types of resources, such as fonts, are loaded in ["anonymous mode"](https:/
 
 If you omit the `crossorigin` attribute, the browser only performs the DNS lookup.
 
-## Resolve DNS name early with `rel=dns-prefetch`
+## Resolve domain name early with `rel=dns-prefetch`
 
 You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process — [domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection. 
 
