@@ -1471,5 +1471,19 @@
     "description": {
       "en": "Principal Developer Advocate ❯ Google Developers Expert ❯ Full-time Open Sourcerer."
     }
+  },
+  "katejeffreys": {
+    "name": {
+      "given": "Kate",
+      "family": "Jeffreys"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "github": "katejeffreys",
+    "description": {
+      "en": "Kate is a tech writer."
+    }
   }
 }
