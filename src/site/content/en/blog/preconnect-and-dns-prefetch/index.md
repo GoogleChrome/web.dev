@@ -90,7 +90,7 @@ One way of initiating a `preconnect` is adding a `<link>` tag to the `<head>` of
 Pre-connecting is only effective for domains other than the origin domain, so you shouldn't use it for your site. 
 
 {% Aside 'caution' %}
-Only pre-connect to critical origins you will use soon because if the connection isn't used within 10 seconds the browser closes it. There's a limit to the number of simultaneous connections a browser can handle (for example, Chrome can handle six), and unnecessary pre-connecting can delay other important resources.
+Only pre-connect to critical origins you will use soon. If the connection isn't used within 10 seconds, the browser closes it. There's a limit to the number of simultaneous connections a browser can handle. (For example, Chrome can handle six.) Unnecessary pre-connecting can delay other important resources.
 {% endAside %}
 
 You can also initiate a preconnect via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
