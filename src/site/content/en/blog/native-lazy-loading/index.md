@@ -11,6 +11,7 @@ alt: Phone outline with loading image and assets
 description: |
   This post covers the loading attribute and how it can be used
   to control the loading of images and iframes.
+draft: true
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
