@@ -44,7 +44,7 @@ Image URLs used by image CDNs convey important information about an image and th
 
 ### Origin
 
-An image CDN can live on your own domain or the domain of your image CDN. Third-party image CDNs typically offer the option of using a custom domain (for example, yours) for a fee. Using your own domain makes it easier to switch image CDNs at a later date because no URL changes will be needed.
+An image CDN can live on your own domain or the domain of your image CDN. Third-party image CDNs typically offer the option of using a custom domain for a fee. Using your own domain makes it easier to switch image CDNs at a later date because no URL changes will be needed.
 
 Figure 2 uses the image CDN's domain ("example-cdn.com") with a personalized subdomain, rather than a custom domain.
 
