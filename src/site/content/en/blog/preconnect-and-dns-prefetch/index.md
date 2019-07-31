@@ -69,7 +69,7 @@ The other common case is loading images from an [image CDN](/image-cdns), where 
 <figcaption>An example of an image CDN URL.</figcaption>
 </figure>
 
-In these situations, if the resource you'll be fetching is important, you want to save as much time as possible by pre-connecting to the server. The browser won't download the file before it needs it (that is, once the request is made from your page somehow), but at least it can handle the connection aspects ahead of time, saving the user from waiting for several round trips.
+In these situations, if the resource you'll be fetching is important, you want to save as much time as possible by pre-connecting to the server. The browser won't download the file until your page requests it, but at least it can handle the connection aspects ahead of time, saving the user from waiting for several round trips.
 
 ### Streaming media
 
