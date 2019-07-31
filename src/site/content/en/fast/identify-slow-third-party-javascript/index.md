@@ -19,13 +19,6 @@ tags:
   - fast
 ---
 
-<style>
-  img[src*="icon"] {
-    max-width: 16px;
-    vertical-align: middle;
-  }
-</style>
-
 As a developer, you often don't have control over [which third-party scripts](/third-party-javascript/#network) your site loads. Before you can optimize third-party content you have to do some detective work to find out what's making your site slow. 🕵️
 
 In this post, you'll learn how to use [Lighthouse](https://developers.google.com/web/tools/lighthouse/) and [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) to identify slow third-party resources. The post walks through increasingly robust techniques which are best used in combination.
@@ -89,7 +82,7 @@ Once enabled, third-party badges also appear in the DevTools **Performance** pan
 To record a page load:
 
 {% Instruction 'devtools-performance', 'ol' %}
-1. Click **Start profiling and reload page** ![Start profiling and reload page icon](./icon-reload-page.png#_icon).
+{% Instruction 'start-profiling', 'ol' %}
 
 To view activity that occurred on the page's main thread, check out the **Main** section. **Long tasks** are labeled with red flags, and hovering them gives more detail about their execution time.
 
