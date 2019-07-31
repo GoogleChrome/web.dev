@@ -32,7 +32,7 @@ Image CDNs are different from build-time image optimization scripts in that they
 
 ## Image URLs
 
-Image URLs used by image CDNs convey important information about an image and the transformations and optimizations that should be applied to it. URL formats will vary depending on image CDN, but at a high-level, they all have similar features.
+Image URLs used by image CDNs convey important information about an image and the transformations and optimizations that should be applied to it. URL formats will vary depending on image CDN, but at a high-level, they all have similar features. Let's walk through some of the most common features.
 
 
 
