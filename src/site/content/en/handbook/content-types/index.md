@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Content types
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   The content types available to use on web.dev.

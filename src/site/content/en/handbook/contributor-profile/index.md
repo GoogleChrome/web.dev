@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Contributor profile
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create a contributor profile for web.dev.

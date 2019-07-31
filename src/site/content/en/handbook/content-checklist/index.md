@@ -1,8 +1,6 @@
 ---
 layout: handbook
-title: Content checklist
-authors:
-  - mfriesenhahn
+title: web.dev content checklist
 date: 2019-06-26
 description: |
   A checklist for web.dev content reviews.
@@ -21,6 +19,8 @@ This is a checklist for web.dev content reviews. It includes critical high-level
 1. Is the language as simple as possible? Is there any unnecessary jargon?
 
 ## Organization
+1. Are top-level section headings `<h2>` elements rather than `<h1>` elements? (That is, do they begin with `##` in Markdown?)
+1. Headings should not [skip levels](/heading-levels).
 1. Is the structure of the piece clear? Do headings convey the structure?
 1. Does each paragraph focus on one main idea?
 
