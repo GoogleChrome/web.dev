@@ -51,6 +51,7 @@ module.exports = {
           'serve-responsive-images',
           'serve-images-with-correct-dimensions',
           'serve-images-webp',
+          'image-cdns',
         ],
       },
       {
