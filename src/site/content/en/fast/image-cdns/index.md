@@ -9,6 +9,7 @@ description: |
 date: 2019-07-28
 codelabs:
   - codelab-cloudinary-url-api
+draft: true
 ---
 
 ## Why use an image CDN?
