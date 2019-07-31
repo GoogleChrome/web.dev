@@ -27,7 +27,7 @@ In each of these steps the browser sends a piece of data to a server, and the se
 
 Depending on network conditions, a single round trip might take a significant amount of time. The connection setup process might involve up to three round trips—and more in unoptimized cases. 
 
-Taking care of all that ahead of time makes applications feel much faster. This post explains how to achieve that with two resource hints: `<rel=preconnect>` and `<rel=dns-prefetch>`.
+Taking care of all that ahead of time makes applications feel much faster. This post explains how to achieve that with two resource hints: `<link rel=preconnect>` and `<link rel=dns-prefetch>`.
 
 ## Establish early connections with `rel=preconnect`
 
