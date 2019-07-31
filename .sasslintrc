@@ -3,6 +3,7 @@
     "merge-default-rules": false
   },
   "files": {
+    "include": [src/styles/**/*.scss],
     "ignore": [
       "src/styles/devsite/_app.scss",
       "src/styles/devsite/_devsite_debug_info.scss",
