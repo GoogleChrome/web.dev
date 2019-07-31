@@ -7,7 +7,7 @@ module.exports = rule('remark-lint:no-dash-spaces', noDashSpaces);
 const reason = 'No spaces around en or em dashes.';
 
 /**
- * Walk the AST for the markdown file and find any smart quotes or apostrophes.
+ * Walk the AST for the markdown file and find any en dashes or em dashes.
  * @param {*} tree An AST of the markdown file.
  * @param {*} file The markdown file.
  */
