@@ -13,7 +13,7 @@ codelabs:
 
 ## Why use an image CDN?
 
-Image CDNs are excellent at optimizing images. Switching to an image CDN can yield a [40-80% savings](https://www.youtube.com/watch?v=YJGCZCaIZkQ&t=1010s) in image bytes. In theory, it is possible to achieve the same results by using only build scripts - but in practice this is rare.
+Image content delivery networks (CDNs) are excellent at optimizing images. Switching to an image CDN can yield a [40–80% savings](https://www.youtube.com/watch?v=YJGCZCaIZkQ&t=1010s) in image file size. In theory, it's possible to achieve the same results using only build scripts, but it's rare in practice.
 
 
 ## What's an image CDN?
