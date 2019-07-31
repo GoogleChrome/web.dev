@@ -151,6 +151,4 @@ When there's more than one way to solve a problem, organize them in order of sim
 ## Be mindful of the development landscape
 Acknowledge browser complexity. Clearly state browser support (e.g., link to the relevant feature page on [caniuse](https://www.caniuse.com/)) and provide workarounds for browser incompatibilities (e.g., polyfills).
 
-Use well-known, well-established tooling. Strike a balance between what's most commonly used and what's best practice (in terms of compatibility, accessibility, functionality, etc.). Choosing tooling can be one of the most overwhelming and time consuming aspects of web development. Rather than providing exhaustive lists of options, suggest tooling and libraries to help readers feel confident in their choices.
-
-When appropriate, provide multiple paths, frameworks, or tools to achieve a goal. Attaching a codelab for each path to a post is often a good way to do this. To see an example, check out the codelab callout at the end of the [Use Imagemin to compress images](/use-imagemin-to-compress-images/#imagemin-npm-module) post.
+When selecting tooling, follow the advice in the [Tooling and libraries](/handbook/tooling-and-libraries) post.
