@@ -23,7 +23,7 @@ Before the browser can request a resource from a server, it must establish a con
 
 * Encrypt the connection for security.
 
-In each of these steps the browser sends a piece of data to a server and the server sends back a response. That journey, from origin to destination and back, is called a [round trip](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT)). 
+In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a [round trip](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT)). 
 
 Depending on network conditions, a single round trip might take a significant amount of time. The connection setup process might involve up to three round trips—and more in unoptimized cases. 
 
@@ -59,14 +59,14 @@ Due to versioned dependencies, you sometimes end up in a situation where you kno
 
 <figure class="w-figure w-figure--center">
 <img src="versioned-url.png" style="max-width:450px" alt="A url of a script with the version name.">
-<figcaption>An example of a versioned URL</figcaption>
+<figcaption>An example of a versioned URL.</figcaption>
 </figure>
 
 The other common case is loading images from an [image CDN](/image-cdns), where the exact path for an image depends on media queries or runtime feature checks on the user's browser.
 
 <figure class="w-figure w-figure--center">
 <img src="image-cdn-url.png" alt="An image CDN URL with the parameters size=300x400 and quality=auto.">
-<figcaption>An example of an image CDN URL</figcaption>
+<figcaption>An example of an image CDN URL.</figcaption>
 </figure>
 
 In these situations, if the resource you'll be fetching is important, you want to save as much time as possible by pre-connecting to the server. The browser won't download the file before it needs it (that is, once the request is made from your page somehow), but at least it can handle the connection aspects ahead of time, saving the user from waiting for several round trips.
@@ -98,10 +98,10 @@ You can also initiate a preconnect via the [`Link` HTTP header](https://develope
 `Link: <https://example.com/>; rel=preconnect`
 
 {% Aside %}
-A benefit of specifying a preconnect hint in the HTTP header is that it doesn't rely on markup being parsed and it can be triggered by requests for stylesheets, scripts and more. For example, Google Fonts sends a `Link` header in the stylesheet response in order to pre-connect the domain that hosts the font files.
+A benefit of specifying a preconnect hint in the HTTP header is that it doesn't rely on markup being parsed, and it can be triggered by requests for stylesheets, scripts, and more. For example, Google Fonts sends a `Link` header in the stylesheet response to pre-connect to the domain that hosts the font files.
 {% endAside %}
 
-Some types of resources, such as fonts, are loaded in ["anonymous mode"](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with the `preconnect` hint.
+Some types of resources, such as fonts, are loaded in [anonymous mode](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with the `preconnect` hint:
 
 ```html
 <link rel="preconnect" href="https://example.com/ComicSans" crossorigin>
@@ -113,9 +113,9 @@ If you omit the `crossorigin` attribute, the browser only performs the DNS looku
 
 You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process — [domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection. 
 
-Because there's a limit to the number of connections a browser can open, you sometimes can't pre-connect to all your important domains. In that case use  `<link rel=dns-prefetch>` to save time on the first step—the DNS lookup which usually takes around [20-120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
+Because there's a limit to the number of connections a browser can open, you sometimes can't pre-connect to all your important domains. In that case use  `<link rel=dns-prefetch>` to save time on the first step—the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
 
-DNS resolution is initiated similarly to `preconnect`, by adding a `<link>` tag to the `<head>` of the document.
+DNS resolution is initiated similarly to `preconnect`: by adding a `<link>` tag to the `<head>` of the document.
 
 ```html
 <link rel="dns-prefetch" href="http://example.com">
@@ -139,4 +139,4 @@ Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Sa
 {% endCompare %}
 
 ## Conclusion
-These two resource hints are helpful at improving page speed when you know you'll download something from a third-party domain soon, but you don't know the exact URL for the resource. Examples include CDNs that distribute JavaScript libraries, images or fonts. Be mindful of constraints, use `preconnect` only for the most important resources, rely on `dns-prefetch` for the rest, and always measure the impact in the real-world.
+These two resource hints are helpful for improving page speed when you know you'll download something from a third-party domain soon, but you don't know the exact URL for the resource. Examples include CDNs that distribute JavaScript libraries, images or fonts. Be mindful of constraints, use `preconnect` only for the most important resources, rely on `dns-prefetch` for the rest, and always measure the impact in the real-world.
