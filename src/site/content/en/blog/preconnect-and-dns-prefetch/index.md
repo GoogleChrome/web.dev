@@ -35,7 +35,7 @@ Modern browsers [try their best to anticipate](https://www.igvita.com/posa/high-
 
 Adding `rel=preconnect` to a `<link>` informs the browser that your page intends to establish a connection to another domain, and that you'd like the process to start as soon as possible. Resources will load more quickly because the setup process has already been completed by the time the browser requests them. 
 
-Resource hints are named so because they are not mandatory instructions. They provide the information about what you'd like to happen, but it's ultimately up to the browser to decide whether to execute them. Setting up and keeping a connection open is a lot of work, so the browser might choose to ignore resource hints or execute them partially depending on the situation.
+Resource hints get their name because they are not mandatory instructions. They provide the information about what you'd like to happen, but it's ultimately up to the browser to decide whether to execute them. Setting up and keeping a connection open is a lot of work, so the browser might choose to ignore resource hints or execute them partially depending on the situation.
 
 Informing the browser of your intention is as simple as adding a `<link>` tag to your page:
 
