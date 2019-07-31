@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2019-06-13
+updated: 2019-08-01
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage the
@@ -308,7 +308,8 @@ cookie as if `SameSite=Lax` was specified. {% endCompare %}
 
 You can test this behavior as of Chrome 76 by enabling
 `chrome://flags/#same-site-by-default-cookies` and from Firefox 69 in
-`about:config` by setting `network.cookie.sameSite.laxByDefault`.
+[`about:config`](http://kb.mozillazine.org/About:config) by setting
+`network.cookie.sameSite.laxByDefault`.
 
 While this is intended to apply a more secure default, you should ideally set an
 explicit `SameSite` attribute rather than relying on the browser to apply that
@@ -316,8 +317,11 @@ for you. This makes your intent for the cookie explicit and improves the chances
 of a consistent experience across browsers.
 
 {% Aside 'caution' %} The default behaviour applied by Chrome is slightly more
-permissive than `Lax` as it will specifically allow cookies to be sent on
-cross-site POST requests. {% endAside %}
+permissive than an explicit `SameSite=Lax` as it will allow certain cookies to
+be sent on top-level POST requests. You can see the exact details on
+[the blink-dev announcement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/YKBxPCScCwAJ).
+This is intended as a temporary mitigation, you should still be fixing your
+cross-site cookies to use `SameSite=None; Secure`. {% endAside %}
 
 ### `SameSite=None` must be secure
 
@@ -337,7 +341,8 @@ with the `Secure` attribute. {% endCompare %}
 
 You can test this behavior as of Chrome 76 by enabling
 `chrome://flags/#cookies-without-same-site-must-be-secure` and from Firefox 69
-in `about:config` by setting `network.cookie.sameSite.noneRequiresSecure`.
+in [`about:config`](http://kb.mozillazine.org/About:config) by setting
+`network.cookie.sameSite.noneRequiresSecure`.
 
 You will want to apply this when setting new cookies and actively refresh
 existing cookies even if they are not approaching their expiry date.
@@ -374,16 +379,16 @@ At the point of sending the `Set-Cookie` header, you can choose to detect the
 client via the user agent string. For example, this snippet shows detecting iOS
 12 or Safari on Mac OS X 10.14 and serving a cookie without the `SameSite`
 attribute to those browsers. This makes use of the
-[ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library for Node.js
-as you probably do not want to spend time writing your own regular expressions
-for this.
+[ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library for Node.js,
+it's advisable to find a library to handle user agent detection as you most
+probably don't want to write those regular expressions yourself.
 
 ```javascript
 const http = require('http');
 const parser = require('ua-parser-js');
 
 http
-  .createServer(function(req, res) {
+  .createServer((req, res) => {
     const ua = parser(req.headers['user-agent']);
 
     if (
@@ -411,7 +416,10 @@ inherently fragile and may not catch all of the affected users.
 Alternatively, as the incompatible browsers will disregard the cookies with the
 new attribute you may also choose to set an additional "legacy" cookie. On the
 receiving side, you will then need to check for the presence of the new cookie
-falling back to the legacy value if it is not present.
+falling back to the legacy value if it is not present. This example below shows
+how to do this in Node.js making use of the
+[Express framework](https://expressjs.com) and its
+[cookie-parser](https://www.npmjs.com/package/cookie-parser) middleware.
 
 ```javascript
 const express = require('express');
@@ -419,7 +427,7 @@ const cp = require('cookie-parser');
 const app = express();
 app.use(cp());
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   let cookieVal = null;
 
   if (req.cookies['3pcookie']) {
@@ -443,7 +451,7 @@ app.listen(process.env.PORT);
 The downside here is that this change will be doubling up the amount of cookies
 sent in third-party contexts. This also requires making changes both where the
 cookie is sent and where it's read. However, this is more robust than relying on
-the user agent to capture incompatible clients.
+the user agent to detect incompatible clients.
 
 In either case, you should monitor the levels of traffic that need to receive
 the legacy-style cookie so that you can remove the workaround when those levels
