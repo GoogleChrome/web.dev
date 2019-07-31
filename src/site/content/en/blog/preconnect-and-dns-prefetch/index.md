@@ -48,7 +48,7 @@ Informing the browser of your intention is as simple as adding a `<link>` tag to
 You can speed up the load time by 100–500 ms by establishing early connections to important third-party origins. These numbers might seem small, but they make a difference in how [users perceive web page performance](https://developers.google.com/web/fundamentals/performance/rail#ux).
 
 {% Aside %}
-chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/1090874825286000640) by almost 1 s by pre-connecting to important origins. An e-commerce website [improved product image load time by 500 ms](https://andydavies.me/blog/2019/03/22/improving-perceived-performance-with-a-link-rel-equals-preconnect-http-header/) by pre-connecting to the image CDN.
+chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/1090874825286000640) by almost 1 s by pre-connecting to important origins.
 {% endAside %}
 
 ## Use-cases for `rel=preconnect`
