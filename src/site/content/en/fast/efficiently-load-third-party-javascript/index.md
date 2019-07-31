@@ -10,7 +10,6 @@ description: |
 hero: hero.jpg
 alt: Aerial view of shipping containers.  
 tags:
-  - post # post is a required tag for the article to show up in the blog.
   - performance
   - third-party
   - javascript
