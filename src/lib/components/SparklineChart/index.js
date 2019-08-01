@@ -131,7 +131,7 @@ class SparklineChart extends BaseElement {
     this.cursorElement_.setAttribute("y2", this.height_);
     const colorClass = this.computeColorClass_(this.point_.score);
     this.cursorElement_.style.stroke = colorClass;
-    this.cursorElement_.classList.value = `sl-cursor ${colorClass}`;
+    this.cursorElement_.classList.value = `sl-cursor result--${colorClass}`;
 
     // Set text first, then measure.
     this.scoreValueText_.textContent = this.point_.score;
@@ -180,8 +180,7 @@ class SparklineChart extends BaseElement {
       scoreHoverRectWidth / 2 - scoreTextWidth / 2,
     );
     this.scoreElement_.setAttribute("transform", `translate(${x},${y})`);
-    this.scoreElement_.style.fill = colorClass;
-    this.scoreElement_.classList.value = colorClass;
+    this.scoreElement_.classList.value = `sl-caption result--${colorClass}`;
   }
 
   set point(point) {
@@ -472,7 +471,7 @@ class SparklineChart extends BaseElement {
         cy="${lastDataPoint.lastPoint.y}"
         r="${this.circleRadius}"
         stroke-width="${this.strokeWidth}"
-        class="${lastDataPoint.color}"
+        class="result--${lastDataPoint.color}"
         style="fill:#fff" />`
       : "";
 
@@ -485,13 +484,13 @@ class SparklineChart extends BaseElement {
             <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000"
                flood-opacity="0.4"/>
           </filter>
-          <linearGradient id="gradient-green" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="gradient-pass" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stop-color="rgb(24,182,99)" stop-opacity="0.2" />
           </linearGradient>
-          <linearGradient id="gradient-orange" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="gradient-average" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stop-color="rgb(251,140,0)" stop-opacity="0.2" />
           </linearGradient>
-          <linearGradient id="gradient-red" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="gradient-fail" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stop-color="rgb(229,57,53)" stop-opacity="0.2" />
           </linearGradient>
         </defs>
@@ -503,20 +502,20 @@ class SparklineChart extends BaseElement {
               <path class="gradient"
                   d="${d}"
                   fill="${this.fill ? `url(#gradient-${color})` : "none"}" />
-              <path d="${points}" class="path ${color}" style="fill:none" />
+              <path d="${points}" class="path result--${color}" style="fill:none" />
             `;
           })}
           ${medianPaths.map(({points}) => {
             return svg`<path d="${points}" class="path dashed" />`;
           })}
-          <line id="cursor" class="sl-cursor"
+          <line class="sl-cursor"
                 x1="-10000" x2="-10000" y1="0" y2="${this.height_}" />
           ${lastDataPointCircle}
-          <g id="score" transform="translate(-10000,-10000)" aria-hidden="true">
+          <g class="sl-caption" transform="translate(-10000,-10000)" aria-hidden="true">
             <rect width="50" height="40" fill="#fff" rx="2" ry="2"
                   style="filter:url(#hover-shadow)"/>
-            <text id="value" stroke="none" x="25" y="18"></text>
-            <text id="date" stroke="none" x="3" y="32"></text>
+            <text class="sl-caption--value" stroke="none" x="25" y="18"></text>
+            <text class="sl-caption--date" stroke="none" x="3" y="32"></text>
           </g>
         </g>
       </svg>`;
@@ -525,7 +524,7 @@ class SparklineChart extends BaseElement {
       <div
         style="width: ${rect.width}px; height: ${rect.height}px"
         tabindex="0"
-        class="lr-sparkline-outer"
+        class="sl-outer"
         @blur=${this.onClearPoint}
         @mouseout=${this.onClearPoint}
         @mousemove=${this.onMouseMove}
@@ -545,13 +544,13 @@ class SparklineChart extends BaseElement {
    */
   computeColorClass_(val) {
     // Match to Lighthouse rating. See https://goo.gl/Pz6xfR.
-    let colorClass = "red";
+    let result = "fail";
     if (val >= 90) {
-      colorClass = "green";
+      result = "pass";
     } else if (val >= 50) {
-      colorClass = "orange";
+      result = "average";
     }
-    return colorClass;
+    return result;
   }
 
   onResize() {
@@ -562,11 +561,13 @@ class SparklineChart extends BaseElement {
   }
 
   firstUpdated() {
-    this.cursorElement_ = this.renderRoot.querySelector("#cursor");
-    this.scoreElement_ = this.renderRoot.querySelector("#score");
+    this.cursorElement_ = this.renderRoot.querySelector(".sl-cursor");
+    this.scoreElement_ = this.renderRoot.querySelector(".sl-caption");
     this.announcerElement_ = this.querySelector(".sr-announcer");
-    this.scoreValueText_ = this.scoreElement_.querySelector("text#value");
-    this.scoreDateText_ = this.scoreElement_.querySelector("text#date");
+    this.scoreValueText_ = this.scoreElement_.querySelector(
+      ".sl-caption--value",
+    );
+    this.scoreDateText_ = this.scoreElement_.querySelector(".sl-caption--date");
   }
 }
 
