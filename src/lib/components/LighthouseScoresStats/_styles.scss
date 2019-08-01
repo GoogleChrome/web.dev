@@ -6,7 +6,7 @@
 // =============================================================================
 // LIGHTHOUSE SCORES STATS
 //
-// Shows the list of categories and misc information from a Lighthouse run.
+// Shows the sparklines and gauges for recent Lighthouse runs.
 //
 // =============================================================================
 
@@ -22,8 +22,7 @@ web-lighthouse-scores-stats {
     right: 0;
   }
 
-  .lh-score-cards,
-  .lh-metrics-table {
+  .lh-score-cards {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -274,8 +273,7 @@ web-lighthouse-scores-stats {
       }
     }
 
-    .lh-score-cards + .lh-score__label,
-    .lh-metrics-table + .lh-score__label {
+    .lh-score-cards + .lh-score__label {
       display: none;
     }
 
@@ -301,66 +299,6 @@ web-lighthouse-scores-stats {
 
     .lh-report-meta__lastaudit {
       flex: 1;
-    }
-  }
-
-  .lh-metrics-table {
-    margin-top: $PADDING;
-    flex-wrap: wrap;
-    padding: $PADDING * 2;
-    justify-content: center;
-
-    .lh-metrics-table__metric {
-      $MARGIN: 15px;
-
-      flex: 1;
-      width: calc(50% - #{$MARGIN});
-      min-width: 260px;
-      max-width: 300px;
-      flex-basis: auto;
-      margin-right: $MARGIN;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 40px;
-      border-bottom: 1px solid $GREY_200;
-
-      span {
-        display: flex;
-      }
-
-      .lh-metrics-table__score {
-        .lh-metrics-table__icon {
-          @include font_material_icon();
-          align-items: center;
-          font-size: 16px;
-          margin-left: 5px;
-        }
-
-        &.lh-score--fail {
-          color: $FAIL_COLOR;
-
-          .lh-metrics-table__icon::before {
-            content: 'warning';
-          }
-        }
-
-        &.lh-score--average {
-          color: $AVERAGE_COLOR;
-
-          .lh-metrics-table__icon::before {
-            content: 'info';
-          }
-        }
-
-        &.lh-score--pass {
-          color: $PASS_COLOR;
-
-          .lh-metrics-table__icon::before {
-            content: 'check_circle';
-          }
-        }
-      }
     }
   }
 }
