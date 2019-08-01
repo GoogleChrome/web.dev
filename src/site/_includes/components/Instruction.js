@@ -72,7 +72,7 @@ module.exports = (type, listStyle = 'ul') => {
       ${bullet}Click **New File**.
       ${bullet}Click **Add This File**.
       `;
-      break;     
+      break;
 
     case 'preview':
       // Note: This uses an inline style on the image button instead of pulling
