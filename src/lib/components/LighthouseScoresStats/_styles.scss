@@ -153,6 +153,7 @@ web-lighthouse-scores-stats {
     }
   }
 
+  /// @deprecated
   @media screen and (min-width: $BREAKPOINT_VALUE_DESKTOP) {
     web-lighthouse-gauge {
       width: 50px;
@@ -168,6 +169,7 @@ web-lighthouse-scores-stats {
     }
   }
 
+  /// @deprecated
   @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) and
       (max-width: $BREAKPOINT_VALUE_TABLET_LANDSCAPE) {
     web-lighthouse-gauge {
@@ -182,6 +184,7 @@ web-lighthouse-scores-stats {
     }
   }
 
+  /// @deprecated
   @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) {
     .results-row {
       grid-column: 1 / span 12;
@@ -246,6 +249,7 @@ web-lighthouse-scores-stats {
     }
   }
 
+  /// @deprecated
   @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
     &:not([mini]) .lh-score-card {
       height: $CARDS_HEIGHT + 40;

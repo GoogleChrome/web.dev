@@ -79,7 +79,6 @@ class LighthouseScoresStats extends BaseElement {
       const medians = [];
       return html`
         <web-sparkline-chart
-          id="${id}-score-line"
           class="score-line"
           fill
           showlast
@@ -107,13 +106,11 @@ class LighthouseScoresStats extends BaseElement {
           />
           <div class="lh-score-card__header">
             <span
-              id="${id}-score-gauge-title"
               class="lh-score-card__title"
               aria-hidden="true"
               >${title}</span
             >
             <web-lighthouse-gauge
-              id="${id}-score-gauge"
               aria-labelledby="${id}-score-gauge-title"
               score="${lastScore.score / 100}"
             ></web-lighthouse-gauge>
