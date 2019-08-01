@@ -28,8 +28,6 @@ To understand how Angular's change detection works, let's look at a sample app!
 
 _You can find the code for the app in [this GitHub repository](https://github.com/mgechev/change-detection-web-dev)._
 
-
-
 The app lists employees from two departments in a company—sales and R&D—and has two components:
 
 * `AppComponent`, which is the root component of the app, and
@@ -162,19 +160,7 @@ _You can find this optimization applied to the original application [here](https
 
 You can read more about the `OnPush` change detection strategy in the [official Angular documentation](https://angular.io/api/core/ChangeDetectionStrategy).
 
-To see the effect of this optimization, enter a new employee in the application below:
-
-<figure class="w-figure w-figure--fullbleed">
-<video controls loop muted poster="https://storage.googleapis.com/web-dev-angular/change-detection/poster.png">
-  <source src="https://storage.googleapis.com/web-dev-angular/change-detection/onpush.webm" type="video/webm; codecs=vp8">
-  <source src="https://storage.googleapis.com/web-dev-angular/change-detection/onpush.mp4" type="video/mp4; codecs=h264">
-</video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Not optimized Angular application
-  </figcaption>
-</figure>
-
-_Find the example on [StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev/tree/onpush)._
+To see the effect of this optimization, enter a new employee in the [application on StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev/tree/onpush).
 
 ## Using pure pipes
 
@@ -222,17 +208,9 @@ That's it! Now when the user types in the text input associated with any departm
 
 In the app below you can see how much smoother the typing is!
 
-<figure class="w-figure w-figure--fullbleed">
-<video controls loop muted poster="https://storage.googleapis.com/web-dev-angular/change-detection/poster.png">
-  <source src="https://storage.googleapis.com/web-dev-angular/change-detection/pure-pipe.webm" type="video/webm; codecs=vp8">
-  <source src="https://storage.googleapis.com/web-dev-angular/change-detection/pure-pipe.mp4" type="video/mp4; codecs=h264">
-</video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Not optimized Angular application
-  </figcaption>
-</figure>
+To see the effect of the last optimization [try this example on StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev/tree/pure-pipe).
 
-_The code with the pure pipe optimization of the original application is available [here](https://github.com/mgechev/change-detection-web-dev/tree/pure-pipe). Find the example on [StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev/tree/pure-pipe)._
+_The code with the pure pipe optimization of the original application is available [here](https://github.com/mgechev/change-detection-web-dev/tree/pure-pipe)._
 
 ## Conclusion
 
