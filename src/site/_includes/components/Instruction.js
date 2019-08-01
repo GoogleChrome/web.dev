@@ -67,6 +67,13 @@ module.exports = (type, listStyle = 'ul') => {
       `;
       break;
 
+    case 'create':
+      instruction = html`
+      ${bullet}Click **New File**.
+      ${bullet}Click **Add This File**.
+      `;
+      break;     
+
     case 'preview':
       // Note: This uses an inline style on the image button instead of pulling
       // from one of our CSS files. This is mainly because this style is only
