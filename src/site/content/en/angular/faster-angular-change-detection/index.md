@@ -126,19 +126,7 @@ With the two instances of `EmployeeListComponent`, the app forms the following c
 
 When the user begins entering the name of a new employee in the input box in an`EmployeeListComponent`, Angular triggers change detection for the entire component tree starting from `AppComponent`. This means that while the user is typing in the text input, Angular is repeatedly recalculating the numeric values associated with each employee to verify that they haven't changed since the last check.
 
-To see how slow this can be, try entering the name of a new employee in the app below:
-
-<figure class="w-figure w-figure--fullbleed">
-<video controls loop muted poster="https://storage.googleapis.com/web-dev-angular/change-detection/poster.png">
-  <source src="https://storage.googleapis.com/web-dev-angular/change-detection/non-optimized.webm" type="video/webm; codecs=vp8">
-  <source src="https://storage.googleapis.com/web-dev-angular/change-detection/non-optimized.mp4" type="video/mp4; codecs=h264">
-</video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Not optimized Angular application
-  </figcaption>
-</figure>
-
-_Find the example on [StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev)._
+To see how slow this can be, open the non-optimized version of the project on [StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev) and try entering an employee name.
 
 You can verify that the slowdown comes from the `fibonacci` function by setting up the [example project](https://github.com/mgechev/change-detection-web-dev) and opening the **Performance** tab of Chrome DevTools.
 
