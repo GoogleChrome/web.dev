@@ -94,7 +94,7 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'reload-page':
-      instruction = html`${bullet}Reload the app.`;
+      instruction = html`${bullet}Reload the page.`;
       break;
 
     case 'start-profiling':
@@ -105,7 +105,8 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'devtools-command':
-      instruction = html`Press \`Control+Shift+P\` (or \`Command+Shift+P\` on Mac) to open the **Command** menu.
+      instruction = html`
+      ${bullet}Press \`Control+Shift+P\` (or \`Command+Shift+P\` on Mac) to open the **Command** menu.
         `;
       break;
 

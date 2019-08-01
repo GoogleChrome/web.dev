@@ -25,6 +25,13 @@ Translucence, blurring, and other effects are useful ways of creating depth whil
   </figcaption>
 </figure>
 
+{% Instruction 'create' %}
+{% Instruction 'devtools-command' %}
+{% Instruction 'reload-page' %}
+{% Instruction 'reload-app' %}
+
+
+
 Historically, these techniques were difficult to implement on the web, requiring less than perfect [hacks or workarounds](https://stackoverflow.com/questions/38145368/css-workaround-to-backdrop-filter). In recent years both [Safari](https://webkit.org/blog/3632/introducing-backdrop-filters/) and Edge have provided these capabilities through the `background-filter` (and alternatively, the `-webkit-backdrop-filter`) property, which dynamically blends foreground and background colors based on filter functions. Now Chrome supports `background-filter`, starting in version 76.
 
 <figure class="w-figure w-figure--fullbleed">
