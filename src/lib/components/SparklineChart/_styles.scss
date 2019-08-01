@@ -10,14 +10,14 @@ web-sparkline-chart {
   display: block;
   height: 100px;
 
-  .lr-sparkline-outer {
-    position: absolute;  // w/h is set explicitly, need this otherwise we hold it
-  }
-
   &:focus {
     // Note: Focus style should be applied to the parent element using
     // :focus-within.
     outline: none;
+  }
+
+  .sl-outer {
+    position: absolute;  // w/h is set explicitly, need this otherwise we hold it
   }
 
   .path.dashed {
@@ -29,45 +29,45 @@ web-sparkline-chart {
     stroke: $GREY_500;
   }
 
-  .red {
+  .result--fail {
     stroke: $FAIL_COLOR;
     stop-color: $FAIL_COLOR;
     fill: $FAIL_COLOR;
     stroke-width: 2;
   }
 
-  .orange {
+  .result--average {
     stroke: $AVERAGE_COLOR;
     stop-color: $AVERAGE_COLOR;
     fill: $AVERAGE_COLOR;
     stroke-width: 2;
   }
 
-  .green {
+  .result--pass {
     stroke: $PASS_COLOR;
     stop-color: $PASS_COLOR;
     fill: $PASS_COLOR;
     stroke-width: 2;
   }
 
-  text#value {
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  text#date {
-    font-size: 12px;
-    stroke-width: 0 !important;
-    fill: $GREY_500;
-  }
-
-  #score {
+  .sl-caption {
     z-index: 100;
     position: relative;
 
     rect {
       stroke-width: 0;
     }
+  }
+
+  .sl-caption--value {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .sl-caption--date {
+    font-size: 12px;
+    stroke-width: 0 !important;
+    fill: $GREY_500;
   }
 
   svg {
@@ -81,10 +81,6 @@ web-sparkline-chart {
 
   .path {
     stroke-linecap: round;
-    // TODO(robdodson): This doesn't animate even in the old site.
-    // stroke-dasharray: 1000;
-    // stroke-dashoffset: 1000;
-    // animation: sparkline-dash-animation 300ms linear forwards;
   }
 
   .gradient {
