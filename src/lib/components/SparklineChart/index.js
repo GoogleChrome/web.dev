@@ -2,8 +2,10 @@
  * @fileoverview Element that renders data as a spark line.
  */
 
-import {svg} from "lit-element";
+import {html, svg} from "lit-element";
 import {BaseElement} from "../BaseElement";
+
+const HAS_RESIZE_OBSERVER = typeof ResizeObserver === "function";
 
 /**
  * @typedef {{
@@ -39,187 +41,121 @@ function clampTo2Decimals(val) {
  * @final
  */
 class SparklineChart extends BaseElement {
+  static get properties() {
+    return {
+      fill: {type: Boolean},
+      values: {type: Object},
+      medians: {type: Object},
+
+      // TODO(robdodson): make these all --var?
+      topPadding: {type: Number}, // top padding to prevent catching popup
+      circleRadius: {type: Number}, // configurable circle radius
+      strokeWidth: {type: Number}, // width of SVG stroke
+
+      demo: {type: Boolean},
+    };
+  }
+
   constructor() {
     super();
 
-    /** @private {!Array<!LighthouseScore>} */
-    this.values_ = [];
+    this.topPadding = 20;
+    this.circleRadius = 3;
+    this.strokeWidth = 2;
 
-    /** @private {?Promise<!Array<!LighthouseScore>>} */
-    this.mediansPromise_ = null;
+    // private, updated in render() by calling getBoundingClientRect
+    this.width_ = 0;
+    this.height_ = 0;
 
-    /** @private {!Array<!LighthouseScore>} */
-    this.medians_ = [];
-
-    /** @private {number} */
-    this.stroke_ = 2;
-    /** @private {number} */
-    this.circleRadius_ = 3;
-    /** @private {number} */
-    this.padding_ = 0;
-    /** @private {number} */
-    this.scoreHeight_ = 15;
-    /** @private {number} */
-    this.transformY_ = this.scoreHeight_ + 30;
-
-    /** @private {?number} */
-    this.width_ = null;
-    /** @private {?number} */
-    this.height_ = null;
-
-    /** @private {?HTMLElement} */
-    this.cursor_ = null;
-    /** @private {?HTMLElement} */
-    this.score_ = null;
-    /** @private {?HTMLElement} */
-    this.scoreValueText_ = null;
-    /** @private {?HTMLElement} */
-    this.scoreDateText_ = null;
-    /** @private {?HTMLElement} */
-    this.announcer_ = null;
-
-    /** @private {?DataPoint} */
+    // cursor selection, causes non-render() changes
     this.point_ = null;
 
-    /** @export {!Array<!DataPoint>} */
+    // elements stolen from renderRoot
+    this.cursorElement_ = null;
+    this.scoreElement_ = null;
+    this.announcerElement_ = null;
+    this.scoreValueText_ = null;
+    this.scoreDateText_ = null;
+
+    // processed points from values that allow mouse focus
     this.datapoints = [];
-  }
 
-  /** @export @override */
-  static get observedAttributes() {
-    return ["fill", "showlast"];
-  }
+    // bind so this can be added/removed from a global handler
+    this.onResize = this.onResize.bind(this);
 
-  /**
-   * @return {!Array<!LighthouseScore>}
-   * @export
-   */
-  get values() {
-    return this.values_;
-  }
-
-  /**
-   * @param {!Array<!LighthouseScore>} val
-   * @export
-   */
-  set values(val) {
-    this.values_ = val;
-    this.update_();
-  }
-
-  /**
-   * @return {?Promise<!Array<!LighthouseScore>>} val
-   * @export
-   */
-  get medians() {
-    return this.mediansPromise_;
-  }
-
-  /**
-   * @param {?Promise<!Array<!LighthouseScore>>} val
-   * @export
-   */
-  set medians(val) {
-    // nb. Because `Promise.resolve` is used, this could accept a non-Promise.
-    const localPromise = Promise.resolve(val || []);
-    this.mediansPromise_ = localPromise;
-
-    localPromise.then((medians) => {
-      if (localPromise !== this.mediansPromise_) {
-        return; // something changed
-      }
-      this.medians_ = medians;
-      this.update_();
-    });
-  }
-
-  /**
-   * @return {boolean}
-   * @export
-   */
-  get fill() {
-    return this.hasAttribute("fill");
-  }
-
-  /**
-   * @param {boolean} val
-   * @export
-   */
-  set fill(val) {
-    if (Boolean(val)) {
-      this.setAttribute("fill", "");
-    } else {
-      this.removeAttribute("fill");
+    if (HAS_RESIZE_OBSERVER) {
+      // We rely on our user ensuring that <web-sparkline-chart> has size.
+      const ro = new ResizeObserver(this.onResize);
+      ro.observe(this);
     }
   }
 
-  /**
-   * @return {boolean}
-   * @export
-   */
-  get showlast() {
-    return this.hasAttribute("showlast");
-  }
+  set demo(demo) {
+    this.demo_ = demo;
 
-  /**
-   * @param {boolean} val
-   * @export
-   */
-  set showlast(val) {
-    if (Boolean(val)) {
-      this.setAttribute("showlast", "");
-    } else {
-      this.removeAttribute("showlast");
+    if (demo) {
+      this.values = [
+        {score: 35, date: "2019-05-22"},
+        {score: 30, date: "2019-05-24"},
+        {score: 20, date: "2019-06-01"},
+        {score: 50, date: "2019-06-24"},
+        {score: 92, date: "2019-06-29"},
+        {score: 90, date: "2019-07-01"},
+      ];
+
+      this.medians = [{score: 89, date: "2019-06-24"}];
     }
   }
 
-  /**
-   * @param {?DataPoint} point
-   * @export
-   */
-  set point(point) {
-    this.point_ = point;
-    if (point) {
-      const date = new Date(point.date).toLocaleDateString();
-      this.announce_(`Score ${point.score} on date ${date}`);
-    }
-    if (!(this.cursor_ && this.score_)) {
+  get demo() {
+    return this.demo_;
+  }
+
+  redrawPoint() {
+    if (!(this.cursorElement_ && this.scoreElement_)) {
       return;
     }
 
     // Clear the point if it was drawn on the screen.
     if (!this.point_) {
-      this.cursor_.setAttribute("x1", -10000);
-      this.cursor_.setAttribute("x2", -10000);
-      this.score_.setAttribute("transform", `translate(-10000,-10000)`);
+      this.cursorElement_.setAttribute("x1", -10000);
+      this.cursorElement_.setAttribute("x2", -10000);
+      this.scoreElement_.setAttribute("transform", `translate(-10000,-10000)`);
       return;
     }
 
     // Draw the point on the screen.
-    this.cursor_.setAttribute("x1", this.point_.x);
-    this.cursor_.setAttribute("x2", this.point_.x);
-    this.cursor_.setAttribute("y1", this.point_.y);
-    this.cursor_.setAttribute("y2", this.height_ + this.transformY_);
+    this.cursorElement_.setAttribute("x1", this.point_.x);
+    this.cursorElement_.setAttribute("x2", this.point_.x);
+    this.cursorElement_.setAttribute("y1", this.point_.y);
+    this.cursorElement_.setAttribute("y2", this.height_);
     const colorClass = this.computeColorClass_(this.point_.score);
-    this.cursor_.style.stroke = colorClass;
-    this.cursor_.classList.value = colorClass;
+    this.cursorElement_.style.stroke = colorClass;
+    this.cursorElement_.classList.value = `sl-cursor result--${colorClass}`;
 
     // Set text first, then measure.
     this.scoreValueText_.textContent = this.point_.score;
-    try {
-      this.scoreDateText_.textContent = new Intl.DateTimeFormat("en-US", {
-        day: "numeric",
-        month: "short",
-      }).format(new Date(this.point_.date));
-    } catch (err) {
-      this.scoreDateText_.textContent = new Date(
-        this.point_.date,
-      ).toLocaleDateString();
+
+    const d = new Date(this.point_.date);
+    let dateText = "\u2014"; // em dash
+
+    if (d.getTime()) {
+      // d.getTime() is NaN/falsey if invalid
+      try {
+        dateText = new Intl.DateTimeFormat("en-US", {
+          day: "numeric",
+          month: "short",
+        }).format(d);
+      } catch (err) {
+        dateText = d.toLocaleDateString();
+      }
     }
+    this.scoreDateText_.textContent = dateText;
 
     const PADDING = 3;
 
-    const scoreHoverRectWidth = this.score_.getBoundingClientRect().width;
+    const scoreHoverRectWidth = this.scoreElement_.getBoundingClientRect()
+      .width;
     const x = Math.max(
       PADDING,
       Math.min(
@@ -243,55 +179,58 @@ class SparklineChart extends BaseElement {
       "x",
       scoreHoverRectWidth / 2 - scoreTextWidth / 2,
     );
-    this.score_.setAttribute("transform", `translate(${x},${y})`);
-    this.score_.style.fill = colorClass;
-    this.score_.classList.value = colorClass;
+    this.scoreElement_.setAttribute("transform", `translate(${x},${y})`);
+    this.scoreElement_.classList.value = `sl-caption result--${colorClass}`;
   }
 
-  /**
-   * @return {?DataPoint}
-   * @export
-   */
+  set point(point) {
+    if (this.point_ === point) {
+      return;
+    }
+
+    this.point_ = point;
+    if (point) {
+      const date = new Date(point.date).toLocaleDateString();
+      this.announce_(`Score ${point.score} on date ${date}`);
+    }
+    this.redrawPoint();
+  }
+
   get point() {
     return this.point_;
   }
 
-  /** @export @override */
-  /* eslint-disable-next-line */
-  attributeChangedCallback(attr, oldValue, newValue, namespace) {
-    this.update_();
-  }
-
-  /** @export @override */
   connectedCallback() {
-    this.update_(); // generate DOM.
+    super.connectedCallback();
+
     this.setAttribute("aria-valuemin", 0);
     this.setAttribute("aria-valuemax", 100);
 
-    this.tabIndex = 0;
     this.setAttribute("role", "group");
     this.setAttribute(
       "aria-label",
       "scores over time. Use arrow keys to navigate",
     );
 
-    window.addEventListener("resize", this.update_);
-    this.addEventListener("mousemove", this.onMouseMove_);
-    this.addEventListener("mouseout", this.onMouseOut_);
-    this.addEventListener("keydown", this.onKeyDown_);
-    this.addEventListener("blur", this.onBlur_);
+    if (!HAS_RESIZE_OBSERVER) {
+      window.addEventListener("resize", this.onResize);
+    }
   }
 
-  /** @export @override */
   disconnectedCallback() {
-    this.eventHandler_.removeAll();
+    super.disconnectedCallback();
+
+    if (!HAS_RESIZE_OBSERVER) {
+      window.removeEventListener("resize", this.onResize);
+    }
   }
 
   /**
-   * @private
-   * @param {!goog.events.BrowserEvent} e
+   * As a mouse moves over this element, find and highlight the nearest point in the chart.
+   *
+   * @param {!Event} e
    */
-  onMouseMove_(e) {
+  onMouseMove(e) {
     // TODO(b/117590606): Make this work with touch events.
     const mouseX = e.offsetX;
 
@@ -318,29 +257,27 @@ class SparklineChart extends BaseElement {
   }
 
   /**
-   * @private
-   * @param {!goog.events.BrowserEvent} e
+   * Allow keyboard navigation through points.
+   *
+   * @param {!Event} e
    */
-  onMouseOut_(e) {
-    this.point = null;
-  }
-
-  /**
-   * @private
-   * @param {!goog.events.BrowserEvent} e
-   */
-  onKeyDown_(e) {
+  onKeyDown(e) {
     switch (e.key) {
-      case Keys.RIGHT:
-        e.preventDefault();
+      case "Right":
+      case "ArrowRight":
         this.setNextPoint_();
         break;
 
-      case Keys.LEFT:
-        e.preventDefault();
+      case "Left":
+      case "ArrowLeft":
         this.setPrevPoint_();
         break;
+
+      default:
+        return;
     }
+
+    e.preventDefault();
   }
 
   /**
@@ -348,18 +285,12 @@ class SparklineChart extends BaseElement {
    * @private
    */
   setNextPoint_() {
-    const cursorX = this.cursor_.getAttribute("x1");
+    // Unless the user has focused on the last, this should always find a point
+    // as the disused cursor is hidden offscreen to the left.
+    const cursorX = this.cursorElement_.getAttribute("x1");
     const nextPoint = this.datapoints.find((entry) => entry.x > cursorX);
-
-    let point;
-    if (!nextPoint) {
-      point = this.datapoints[this.datapoints.length - 1];
-    } else {
-      point = nextPoint;
-    }
-
-    if (point) {
-      this.point = point;
+    if (nextPoint) {
+      this.point = nextPoint;
     }
   }
 
@@ -368,30 +299,24 @@ class SparklineChart extends BaseElement {
    * @private
    */
   setPrevPoint_() {
-    const cursorX = this.cursor_.getAttribute("x1");
+    const cursorX = +this.cursorElement_.getAttribute("x1");
     const currentPointIdx = this.datapoints.findIndex(
-      (entry) => entry.x == cursorX,
+      (entry) => entry.x === cursorX,
     );
-    const prevPoint = this.datapoints[currentPointIdx - 1];
 
-    let point;
-    if (!prevPoint) {
-      point = this.datapoints[0];
-    } else {
-      point = prevPoint;
-    }
-
-    if (point) {
-      this.point = point;
+    const prevPoint =
+      currentPointIdx === -1
+        ? this.datapoints.slice(-1)[0]
+        : this.datapoints[currentPointIdx - 1];
+    if (prevPoint) {
+      this.point = prevPoint;
     }
   }
 
   /**
-   * Clear the point if it has been drawn to the screen.
-   * @private
-   * @param {!goog.events.BrowserEvent} e
+   * Clear the point due to blur or mouseout.
    */
-  onBlur_(e) {
+  onClearPoint() {
     this.point = null;
   }
 
@@ -401,67 +326,63 @@ class SparklineChart extends BaseElement {
    * @param {string} msg
    */
   announce_(msg) {
-    this.announcer_.textContent = msg;
+    this.announcerElement_.textContent = msg;
     window.setTimeout(() => {
-      this.announcer_.textContent = "";
+      this.announcerElement_.textContent = "";
     }, 100);
   }
 
   /**
    * Calculate the data point y's value
-   * @param {number} y
+   * @param {number} score
    * @return {number}
    */
-  calculateY(y) {
-    const min = 0;
-    const max = this.height_;
-    if (!max) {
-      return 0; // not on page yet
-    }
-
-    const s = max !== min ? this.height_ / (max - min) : 1;
-    return this.height_ - s * (y - min);
+  calculateY(score) {
+    const scoreRatio = Math.min(1, Math.max(score / 100, 0));
+    return (1 - scoreRatio) * this.height_;
   }
 
   /**
    * Generates the line path from values.
-   * @param {!Array<!LighthouseScore>} values Values to generate a path from.
-   * @param {boolean=} updateDataPoints Updates .datapoints property if true.
-   *     Defaults to true.
-   * @return {!Array<!PathPart>}
+   * @param {?Array<!LighthouseScore>} values Values to generate a path from.
+   * @return {{datapoints: !Array<Object>, path: !Array<!PathPart>}}
    * @private
    */
-  generatePath_(values, updateDataPoints = true) {
-    if (values.length === 0) {
-      return [
-        {
-          points: "M0 0 L0 0",
-          firstPoint: {x: 0, y: 0},
-          lastPoint: {x: 0, y: 0},
-          color: "",
-        },
-      ];
+  processValues(values) {
+    if (!values || values.length === 0) {
+      // no values, failure case: just draw in the top-left corner
+      return {
+        datapoints: [],
+        paths: [
+          {
+            points: "M0 0 L0 0",
+            firstPoint: {x: 0, y: 0},
+            lastPoint: {x: 0, y: 0},
+            color: "",
+          },
+        ],
+      };
     }
 
+    // Regardless of how many values we have, each is interspersed by the same offset.
     const offset =
       values.length > 1 ? Math.floor(this.width_ / (values.length - 1)) : 0;
 
-    const paths = /** @type {!Array<!PathPart>} */ ([]);
+    const datapoints = [];
+    const paths = [];
 
     let points = `M0 ${this.calculateY(values[0].score).toFixed(2)}`;
     let firstPoint = {x: NaN, y: NaN};
     let lastPoint = {x: NaN, y: NaN};
     let prevColor;
 
-    if (updateDataPoints) {
-      this.datapoints = [];
-    }
-
     values.forEach((value, i) => {
-      const x = i * offset;
-      const y = parseFloat(this.calculateY(value.score).toFixed(2));
       const isFirstPoint = i === 0;
       const isLastPoint = i === values.length - 1;
+
+      // if last point, use width (otherwise the clamp hides ~fractional pixels)
+      const x = isLastPoint ? this.width_ : i * offset;
+      const y = parseFloat(this.calculateY(value.score).toFixed(2));
       const currColor = this.computeColorClass_(value.score);
 
       if (isFirstPoint) {
@@ -475,83 +396,144 @@ class SparklineChart extends BaseElement {
       points += ` L${x} ${y}`;
 
       if (isLastPoint) {
+        if (isFirstPoint) {
+          // if this graph only has one point, the fill needs to reset to far left
+          firstPoint.x = 0;
+        }
         paths.push({firstPoint, lastPoint: {x, y}, color: currColor, points});
       }
 
       prevColor = currColor;
       lastPoint = {x, y};
 
-      if (updateDataPoints) {
-        this.datapoints.push({
-          x,
-          y,
-          score: clampTo2Decimals(value.score),
-          date: value.date,
-        });
-      }
+      datapoints.push({
+        x,
+        y,
+        score: clampTo2Decimals(value.score),
+        date: value.date,
+      });
     });
 
-    return paths;
+    return {paths, datapoints};
   }
 
-  /**
-   * Generates element's markup.
-   * @return {!TemplateResult}
-   * @private
-   */
-  // prettier-ignore
-  generateTemplate_() {
-    const paths = this.generatePath_(this.values_);
-    const lastDataPoint = paths[paths.length - 1];
-    const medianPaths = this.generatePath_(this.medians_, false);
+  updated(changedProperties) {
+    super.updated(changedProperties);
+
+    if (changedProperties.has("fill") || changedProperties.has("values")) {
+      const gradients = this.renderRoot.getElementsByClassName("gradient");
+      for (const gradient of gradients) {
+        if (this.fill) {
+          gradient.classList.add("fadein");
+        } else {
+          gradient.classList.remove("fadein");
+        }
+      }
+    }
+  }
+
+  render() {
+    const rect = this.getBoundingClientRect();
+
+    // If the element hasn't yet had layout, then request a rerender a frame later.
+    if (!rect.width || !rect.height) {
+      window.requestAnimationFrame(() => this.requestUpdate());
+      // we can't bail early, as firstUpdated() still needs to steal rendered nodes
+    }
+
+    const pixelBuffer = this.circleRadius + this.strokeWidth / 2;
+
+    // Save width and height, padded by any requested buffer. This is needed for processValues()
+    // and showing the user's cursor.
+    // Align the SVG content by `pixelBuffer` on the top, left, and right sides. Add topPadding on
+    // the top, to allow the popup to be contained properly.
+    const groupTransform = `translate(${pixelBuffer},${pixelBuffer +
+      this.topPadding})`;
+    this.width_ = rect.width - pixelBuffer * 2;
+    this.height_ = rect.height - pixelBuffer - this.topPadding;
+
+    const {paths, datapoints} = this.processValues(this.values);
+    this.datapoints = datapoints;
+
+    if (this.datapoints.length) {
+      this.setAttribute("aria-valuenow", this.datapoints.slice(-1)[0].score);
+    } else {
+      this.removeAttribute("aria-valuenow");
+    }
+
+    const lastDataPoint = paths[paths.length - 1] || null;
+    const {paths: medianPaths} = this.processValues(this.medians);
+
+    const lastDataPointCircle = lastDataPoint
+      ? svg`
+      <circle
+        cx="${lastDataPoint.lastPoint.x}"
+        cy="${lastDataPoint.lastPoint.y}"
+        r="${this.circleRadius}"
+        stroke-width="${this.strokeWidth}"
+        class="result--${lastDataPoint.color}"
+        style="fill:#fff" />`
+      : "";
 
     /* eslint-disable max-len,indent */
-    const template = svg`
+    const innerSVG = svg`
       <svg xmlns="http://www.w3.org/2000/svg"
-          width="100%" height="130%" style="padding: ${this.padding_}px;">
+          width="100%" height="100%">
         <defs>
           <filter id="hover-shadow">
             <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000"
                flood-opacity="0.4"/>
           </filter>
-          <linearGradient id="gradient-green" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="gradient-pass" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stop-color="rgb(24,182,99)" stop-opacity="0.2" />
           </linearGradient>
-          <linearGradient id="gradient-orange" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="gradient-average" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stop-color="rgb(251,140,0)" stop-opacity="0.2" />
           </linearGradient>
-          <linearGradient id="gradient-red" x1="0" x2="0" y1="0" y2="1">
+          <linearGradient id="gradient-fail" x1="0" x2="0" y1="0" y2="1">
             <stop offset="0" stop-color="rgb(229,57,53)" stop-opacity="0.2" />
           </linearGradient>
         </defs>
-        <g transform="translate(0,${this.transformY_})">
-          ${paths.map(({firstPoint, points, color}, i) => svg`
-            <path class="gradient" stroke="none"
-                d="${points} V ${this.height_ + this.scoreHeight_ / 2} H ${firstPoint.x} Z"
-                fill="${this.fill ? `url(#gradient-${color})` : 'none'}" />
-            <path d="${points}" class="path ${color}" style="fill:none" />
-          `)}
-          ${medianPaths.map(({points}) => {
-            return svg`<path d="${points}" class="path dashed"
-                             style="stroke-dasharray:4;stroke-dashoffset:0;"/>`;
+        <g transform="${groupTransform}">
+          ${paths.map(({firstPoint, points, color}) => {
+            // Ensures that each path segment's fill is complete.
+            const d = `${points} V ${this.height_} H ${firstPoint.x} Z`;
+            return svg`
+              <path class="gradient"
+                  d="${d}"
+                  fill="${this.fill ? `url(#gradient-${color})` : "none"}" />
+              <path d="${points}" class="path result--${color}" style="fill:none" />
+            `;
           })}
-          <line id="cursor" stroke-opacity="1" stroke-width="1"
+          ${medianPaths.map(({points}) => {
+            return svg`<path d="${points}" class="path dashed" />`;
+          })}
+          <line class="sl-cursor"
                 x1="-10000" x2="-10000" y1="0" y2="${this.height_}" />
-          <circle cx="${lastDataPoint.lastPoint.x}"
-                cy="${lastDataPoint.lastPoint.y}"
-                r="${this.circleRadius_}" stroke-width="${this.stroke_}"
-                class="${lastDataPoint.color}" style="fill:#fff" />
-          <g id="score" transform="translate(-10000,-10000)" aria-hidden="true">
+          ${lastDataPointCircle}
+          <g class="sl-caption" transform="translate(-10000,-10000)" aria-hidden="true">
             <rect width="50" height="40" fill="#fff" rx="2" ry="2"
                   style="filter:url(#hover-shadow)"/>
-            <text id="value" stroke="none" x="25" y="18"></text>
-            <text id="date" stroke="none" x="3" y="32"></text>
+            <text class="sl-caption--value" stroke="none" x="25" y="18"></text>
+            <text class="sl-caption--date" stroke="none" x="3" y="32"></text>
           </g>
         </g>
-      </svg>
-      <div aria-live="assertive" class="sr-announcer"></div>`;
+      </svg>`;
 
-    return template;
+    return html`
+      <div
+        style="width: ${rect.width}px; height: ${rect.height}px"
+        tabindex="0"
+        class="sl-outer"
+        @blur=${this.onClearPoint}
+        @mouseout=${this.onClearPoint}
+        @mousemove=${this.onMouseMove}
+        @keydown=${this.onKeyDown}
+      >
+        ${innerSVG}
+        <div aria-live="assertive" class="sr-announcer"></div>
+      </div>
+    `;
   }
 
   /**
@@ -562,73 +544,30 @@ class SparklineChart extends BaseElement {
    */
   computeColorClass_(val) {
     // Match to Lighthouse rating. See https://goo.gl/Pz6xfR.
-    let colorClass = "red";
+    let result = "fail";
     if (val >= 90) {
-      colorClass = "green";
+      result = "pass";
     } else if (val >= 50) {
-      colorClass = "orange";
+      result = "average";
     }
-    return colorClass;
+    return result;
   }
 
-  /**
-   * (Re)renders the line, gradient. Should be called when .values is changed.
-   * @private
-   */
-  update_() {
-    // Don't do work if no values yet.
-    if (!this.values_.length) {
-      return;
-    }
-
-    const rect = this.getBoundingClientRect();
-    this.width_ = rect.width;
-    this.height_ = rect.height;
-
-    // Account for padding and diameter of data point circle.
-    const circleDiameter = this.circleRadius_ * 2;
-    this.width_ = this.width_ - this.padding_ - circleDiameter;
-    this.height_ =
-      this.height_ - this.padding_ - circleDiameter - this.scoreHeight_;
-
-    render(this.generateTemplate_(), this);
-    this.cursor_ = /** @type {!HTMLElement} */ (this.querySelector("#cursor"));
-    this.score_ = /** @type {!HTMLElement} */ (this.querySelector("#score"));
-
-    if (this.score_ !== null) {
-      this.scoreValueText_ = /** @type {!HTMLElement} */ (this.score_.querySelector(
-        "text#value",
-      ));
-      this.scoreDateText_ = /** @type {!HTMLElement} */ (this.score_.querySelector(
-        "text#date",
-      ));
-    }
-    this.announcer_ = /** @type {!HTMLElement} */ (this.querySelector(
-      ".sr-announcer",
-    ));
-
-    // Animate the line draws by changing the length of the dash-offset.
-    const paths = /** @type {!NodeList<!SVGPathElement>} */ (this.querySelectorAll(
-      ".path:not(.dashed)",
-    ));
-    Array.from(paths).forEach((path) => {
-      const length = path.getTotalLength();
-      path.style.strokeDasharray = length;
-      path.style.strokeDashoffset = length;
+  onResize() {
+    // When the browser window resizes, force a render to redraw the SVG.
+    this.requestUpdate().then(() => {
+      this.redrawPoint();
     });
+  }
 
-    // nb. this relies on side effects of generateTemplate_ which calls
-    // generatePath_ and creates the datapoints array.
-    this.setAttribute("aria-valuenow", this.datapoints.slice(-1)[0].score);
-
-    if (this.fill) {
-      window.requestAnimationFrame(() => {
-        const gradients = this.getElementsByClassName("gradient");
-        for (const gradient of gradients) {
-          gradient.classList.add("fadein");
-        }
-      });
-    }
+  firstUpdated() {
+    this.cursorElement_ = this.renderRoot.querySelector(".sl-cursor");
+    this.scoreElement_ = this.renderRoot.querySelector(".sl-caption");
+    this.announcerElement_ = this.querySelector(".sr-announcer");
+    this.scoreValueText_ = this.scoreElement_.querySelector(
+      ".sl-caption--value",
+    );
+    this.scoreDateText_ = this.scoreElement_.querySelector(".sl-caption--date");
   }
 }
 
