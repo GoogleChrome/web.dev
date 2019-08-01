@@ -87,7 +87,7 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'reload-page':
-      instruction = html`${bullet}Reload the page.`;
+      instruction = html`${bullet}Reload the app.`;
       break;
 
     case 'start-profiling':
@@ -95,6 +95,11 @@ module.exports = (type, listStyle = 'ul') => {
         ${bullet}Click **Start profiling and reload page** <img src="/images/icons/reload.svg"
         alt="reload" style="width: 1.2em; padding: 0px 0px 2px 2px; opacity: .5">.
       `;
+      break;
+
+    case 'devtools-command':
+      instruction = html`Press \`Control+Shift+P\` (or \`Command+Shift+P\` on Mac) to open the **Command** menu.
+        `;
       break;
 
     case 'devtools':
