@@ -47,7 +47,7 @@ class SparklineChart extends BaseElement {
       values: {type: Object},
       medians: {type: Object},
 
-      // TODO: make these all --var?
+      // TODO(robdodson): make these all --var?
       topPadding: {type: Number}, // top padding to prevent catching popup
       circleRadius: {type: Number}, // configurable circle radius
       strokeWidth: {type: Number}, // width of SVG stroke
