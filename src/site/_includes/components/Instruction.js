@@ -82,8 +82,12 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`${bullet}Select the **Disable cache** checkbox.`;
       break;
 
-    case 'reload':
+    case 'reload-app':
       instruction = html`${bullet}Reload the app.`;
+      break;
+
+    case 'reload-page':
+      instruction = html`${bullet}Reload the page.`;
       break;
 
     case 'start-profiling':
