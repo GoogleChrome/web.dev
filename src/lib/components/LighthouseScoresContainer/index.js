@@ -2,8 +2,6 @@
  * @fileoverview Container element for displaying Lighthouse results.
  */
 
-import rawData from "./data";
-
 /* eslint-disable require-jsdoc */
 class LighthouseScoresContainer extends HTMLElement {
   constructor() {
@@ -19,9 +17,9 @@ class LighthouseScoresContainer extends HTMLElement {
     }
     this.firstUpdated = true;
 
-    const lhrRuns = JSON.parse(rawData);
-    const lastLhrRun = lhrRuns.slice(-1)[0];
-    const lastLhr = lastLhrRun ? lastLhrRun.lhr : null;
+    // TODO: There's no data included as of yet.
+    const lhrRuns = [];
+    const lastLhr = null;
 
     const stats = this.querySelector("web-lighthouse-scores-stats");
     if (stats) {
