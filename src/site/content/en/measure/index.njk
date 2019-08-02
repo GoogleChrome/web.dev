@@ -68,10 +68,11 @@ to remove them as part of the v1 migration. #}
   <div class="w-measure-results">
     <div class="w-layout-container">
       <web-url-chooser-container></web-url-chooser-container>
-      <web-sparkline-chart style="display: inline-block; min-width: 300px; min-height: 200px;" fill demo></web-sparkline-chart>
-      <web-lighthouse-gauge score="0.4"></web-lighthouse-gauge>
-      <web-profile></web-profile>
-      <web-lighthouse-scores-audits demo></web-lighthouse-scores-audits>
+      <web-lighthouse-scores-container demo>
+        <web-lighthouse-scores-stats></web-lighthouse-scores-stats>
+        <web-lighthouse-scores-metrics></web-lighthouse-scores-metrics>
+        <web-lighthouse-scores-audits></web-lighthouse-scores-audits>
+      </web-lighthouse-scores-container>
     </div>
   </div>
 
