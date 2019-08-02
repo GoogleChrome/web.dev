@@ -29,8 +29,9 @@
     ["lint-emphasis-marker", false],
     ["lint-no-emphasis-as-heading", false],
 
-    "lint-no-duplicate-headings-in-section",
     "lint-are-links-valid",
+    "lint-no-duplicate-headings-in-section",
+    "lint-no-repeat-punctuation",
 
     "./tools/linting/no-dash-spaces.js",
     "./tools/linting/no-smart-quotes.js"
