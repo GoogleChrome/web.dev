@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import controller from "./controller";
 import {store} from "./store";
 
 /* eslint-disable require-jsdoc */
@@ -40,11 +41,19 @@ firebase.auth().onAuthStateChanged((user) => {
       user,
     });
     firestoreUserUnsubscribe = userRef().onSnapshot((snapshot) => {
+      const state = store.getState();
+      const initialSnapshot = (state.userUrl === null);
+
       const data = snapshot.data() || {}; // is empty on new user
       store.setState({
         userUrl: data.userUrl || "",
       });
-      console.info("got updated userUrl", data.userUrl || "");
+
+      // TODO(samthor): This will request reports as soon as the user is signed in, regardless of
+      // what page they're on. It should only request if we're on /measure.
+      if (initialSnapshot && data.userUrl) {
+        controller.requestFetchReports(data.userUrl);
+      }
     });
   } else {
     store.setState({

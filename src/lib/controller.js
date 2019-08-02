@@ -27,6 +27,7 @@ class Controller {
     store.setState({
       userUrl: url,
       activeLighthouseUrl: url,
+      lighthouseError: null,
     });
 
     // TODO: Some of the Firebase logic still lives in fb.js.
@@ -36,6 +37,7 @@ class Controller {
       let state = store.getState();  // might have changed
       const runs = await runLighthouse(url, state.isSignedIn);
 
+      state = store.getState();  // might have changed
       store.setState({
         activeLighthouseUrl: null,
         lighthouseResult: {
@@ -44,19 +46,20 @@ class Controller {
         },
       });
 
-      state = store.getState();  // might have changed
       if (state.userUrl !== store.activeLighthouseUrl) {
         this.requestFetchReports(state.userUrl);
       }
     }).catch((err) => {
       console.warn("failed to run Lighthouse", err);
       store.setState({
+        lighthouseError: err.toString(),
         activeLighthouseUrl: null,
       });
     });
   }
 
   requestFetchReports(url) {
+    // TODO(samthor): Don't allow multiple parallel requests (possibly just for the same URL).
     this.pending = this.pending.then(async () => {
       const runs = await fetchReports(url);
       store.setState({

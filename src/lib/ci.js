@@ -1,5 +1,5 @@
 
-const CI_HOST = "https://lighthouse-dot-webdotdevsite.appspot.com";
+export const CI_HOST = "https://lighthouse-dot-webdotdevsite.appspot.com";
 
 export async function fetchMedians() {
   const resp = await window.fetch(`${CI_HOST}/lh/medians?url=all`);

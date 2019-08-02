@@ -9,6 +9,7 @@ class LighthouseScoresContainer extends HTMLElement {
   constructor() {
     super();
 
+    this.metaElement = null;
     this.statsElement = null;
     this.metricsElement = null;
     this.auditsElement = null;
@@ -22,14 +23,36 @@ class LighthouseScoresContainer extends HTMLElement {
   }
 
   onStateChanged() {
-    const {lighthouseResult, activeLighthouseUrl} = store.getState();
+    const {
+      lighthouseError,
+      lighthouseResult,
+      activeLighthouseUrl,
+    } = store.getState();
+
     if (!lighthouseResult) {
       // TODO: clear data?
+      // TODO: We're awkwardly setting just errorMessage here.
+      if (this.metaElement) {
+        this.metaElement.errorMessage = lighthouseError;
+      }
       return;
     }
     const lastRun = lighthouseResult.runs.slice(-1)[0];
     const lastLhr = lastRun ? lastRun.lhr : null;
 
+    if (this.metaElement) {
+      let auditedOn = null;
+      if (lastRun) {
+        const d = new Date(lastRun.auditedOn);
+        if (d.getTime()) {
+          auditedOn = d;
+        }
+      }
+
+      this.metaElement.errorMessage = lighthouseError;
+      this.metaElement.auditedOn = auditedOn;
+      this.metaElement.url = lighthouseResult.url;
+    }
     if (this.statsElement) {
       this.statsElement.lhrRuns = lighthouseResult.runs;
       this.statsElement.disabled = Boolean(activeLighthouseUrl);
@@ -44,6 +67,7 @@ class LighthouseScoresContainer extends HTMLElement {
   }
 
   connectedCallback() {
+    this.metaElement = this.querySelector("web-lighthouse-scores-meta");
     this.statsElement = this.querySelector("web-lighthouse-scores-stats");
     this.metricsElement = this.querySelector("web-lighthouse-scores-metrics");
     this.auditsElement = this.querySelector("web-lighthouse-scores-audits");

@@ -23,6 +23,9 @@ const initialState = {
 
   // The most recent Lighthouse results.
   lighthouseResult: null,
+
+  // The most recent error from the Lighthouse CI, if any.
+  lighthouseError: null,
 };
 
 const store = devtools(createStore(initialState));
