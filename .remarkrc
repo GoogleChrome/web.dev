@@ -1,6 +1,37 @@
 {
   "plugins": [
     "lint",
+
+    "preset-lint-markdown-style-guide",
+    ["lint-no-file-name-articles", false],
+    ["lint-maximum-line-length", false],
+    ["lint-no-shell-dollars", false],
+    ["lint-hard-break-spaces", false],
+    ["lint-no-multiple-toplevel-headings", false],
+    ["lint-no-consecutive-blank-lines", false],
+    ["lint-maximum-heading-length", false],
+    ["lint-no-heading-punctuation", ":.,;"],
+    ["lint-blockquote-indentation", false],
+    ["lint-no-blockquote-without-marker", false],
+    ["lint-unordered-list-marker-style", false],
+    ["lint-ordered-list-marker-style", false],
+    ["lint-ordered-list-marker-value", false],
+    ["lint-list-item-indent", false],
+    ["lint-list-item-content-indent", false],
+    ["lint-list-item-spacing", false],
+    ["lint-rule-style", false],
+    ["lint-no-table-indentation", false],
+    ["lint-table-pipes", false],
+    ["lint-table-pipe-alignment", false],
+    ["lint-table-cell-padding", false],
+    ["lint-link-title-style", false],
+    ["lint-strong-marker", false],
+    ["lint-emphasis-marker", false],
+    ["lint-no-emphasis-as-heading", false],
+
+    "lint-no-duplicate-headings-in-section",
+    "lint-are-links-valid",
+
     "./tools/linting/no-dash-spaces.js",
     "./tools/linting/no-smart-quotes.js"
   ]
