@@ -1,17 +1,19 @@
 /**
- * @fileoverview An element which wraps behavior of the Profile.
+ * @fileoverview Container element for displaying Lighthouse results.
  */
 
 import rawData from "./data";
 
 /* eslint-disable require-jsdoc */
-class Profile extends HTMLElement {
+class LighthouseScoresContainer extends HTMLElement {
   constructor() {
     super();
     this.firstUpdated = false;
   }
 
   connectedCallback() {
+    // LighthouseScoresContainer expects to find children elements which it manages. It's not a
+    // LitElement, so wire things up once it's connected, and keep track of whether it's done.
     if (this.firstUpdated) {
       return;
     }
@@ -42,4 +44,4 @@ class Profile extends HTMLElement {
   }
 }
 
-customElements.define("web-profile", Profile);
+customElements.define("web-lighthouse-scores-container", LighthouseScoresContainer);

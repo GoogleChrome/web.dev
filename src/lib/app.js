@@ -1,11 +1,11 @@
 import "../styles/all.scss";
 import {router} from "./router";
 import "./components/ProfileSwitcherContainer";
-import "./components/Profile";
 import "./components/ProgressBar";
 import "./components/SparklineChart";
 import "./components/LighthouseGauge";
 import "./components/LighthouseScoresAudits";
+import "./components/LighthouseScoresContainer";
 import "./components/LighthouseScoresMetrics";
 import "./components/LighthouseScoresStats";
 import "./components/UrlChooser";

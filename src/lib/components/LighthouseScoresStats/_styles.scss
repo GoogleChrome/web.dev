@@ -33,7 +33,12 @@ web-lighthouse-scores-stats {
   }
 
   .lh-score-cards {
-    margin-top: 32px;
+    margin-top: 16px;
+
+    /// @deprecated
+    @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) {
+      margin-top: 32px;
+    }
   }
 
   .lh-score-card {
@@ -110,8 +115,7 @@ web-lighthouse-scores-stats {
     }
   }
 
-  .lh-score__label,
-  .lh-report-meta {
+  .lh-score__label {
     font-size: 14px;
   }
 
@@ -160,10 +164,6 @@ web-lighthouse-scores-stats {
       height: 50px;
     }
 
-    .lh-report-meta {
-      margin-bottom: 32px;
-    }
-
     .lh-score-cards {
       flex-wrap: nowrap;
     }
@@ -206,17 +206,6 @@ web-lighthouse-scores-stats {
 
     .lh-input {
       width: 100%;
-    }
-
-    .lh-report-meta {
-      display: flex;
-      align-items: center;
-    }
-
-    .lh-report-meta__lastaudit {
-      min-width: 180px;
-      margin-right: 16px;
-      display: inline-block;
     }
 
     .lh-score-card {
@@ -285,11 +274,6 @@ web-lighthouse-scores-stats {
       margin-bottom: 8px;
     }
 
-    .lh-report-meta__links {
-      display: flex;
-      justify-content: space-between;
-    }
-
     .lh-score-card__legend {
       display: flex;
       flex-direction: column;
@@ -299,10 +283,6 @@ web-lighthouse-scores-stats {
       &:last-child {
         order: -1;
       }
-    }
-
-    .lh-report-meta__lastaudit {
-      flex: 1;
     }
   }
 }
