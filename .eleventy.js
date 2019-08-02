@@ -19,6 +19,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
@@ -83,9 +84,16 @@ module.exports = function(config) {
       });
     },
   };
+  const markdownItAttrsOpts = {
+    leftDelimiter: '{:',
+    rightDelimiter: '}',
+    allowedAttributes: [],
+  };
   config.setLibrary(
     'md',
-    markdownIt(markdownItOptions).use(markdownItAnchor, markdownItAnchorOptions)
+    markdownIt(markdownItOptions)
+      .use(markdownItAnchor, markdownItAnchorOptions)
+      .use(markdownItAttrs, markdownItAttrsOpts)
   );
 
   //----------------------------------------------------------------------------
