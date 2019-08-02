@@ -20,7 +20,7 @@
     "debug:test": "TEST_MODE=debug npm-run-all clean build:rollup --parallel watch:rollup karma",
     "start": "node ./server.js",
     "lint": "npm-run-all -p -c lint:js lint:scss",
-    "build": "ELEVENTY_ENV=prod npm-run-all lint clean build:rollup build:eleventy build:gulp start",
+    "build": "ELEVENTY_ENV=prod npm-run-all lint clean build:rollup build:eleventy build:gulp",
     "dev": "npm-run-all clean build:rollup --parallel --race watch:rollup watch:eleventy watch:gulp start",
     "stage": "npm run build && gcloud app deploy --project web-dev-staging --quiet",
     "stage:personal": "npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",
