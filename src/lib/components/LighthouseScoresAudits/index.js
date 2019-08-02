@@ -4,13 +4,13 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import {getAuditGuideMapping} from "./mapping";
+import {getAuditGuideMapping} from "../../lighthouse/mapping";
 import {
   computeWeightForAuditResult,
   filterAuditResult,
   sortOnWeights,
   getAuditReferenceDocLink,
-} from "./lighthouse";
+} from "../../lighthouse";
 
 const NUM_AUDITS_TO_SHOW = 10;
 
@@ -118,7 +118,7 @@ class LighthouseScoresAudits extends BaseElement {
 
   firstUpdated() {
     this.setAttribute("role", "table");
-    this.setAttribute("aria-label", "Lighthouse audit results");
+    this.setAttribute("aria-label", "Lighthouse audits and suggested guides");
   }
 
   /**
