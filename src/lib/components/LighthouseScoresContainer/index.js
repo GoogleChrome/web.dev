@@ -42,4 +42,7 @@ class LighthouseScoresContainer extends HTMLElement {
   }
 }
 
-customElements.define("web-lighthouse-scores-container", LighthouseScoresContainer);
+customElements.define(
+  "web-lighthouse-scores-container",
+  LighthouseScoresContainer,
+);
