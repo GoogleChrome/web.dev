@@ -1471,5 +1471,19 @@
     "description": {
       "en": "Principal Developer Advocate ❯ Google Developers Expert ❯ Full-time Open Sourcerer."
     }
+  },
+  "sherwinski": {
+    "name": {
+      "given": "Sherwin",
+      "family": "Heydarbeygi"
+    },
+    "github": "sherwinski",
+    "glitch": "sherwinski",
+    "org": {
+      "name": "imgix",
+      "unit": "SDK Engineer"
+    },
+    "country": "US",
+    "homepage": "https://sherwinski.com"
   }
 }
