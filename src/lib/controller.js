@@ -62,6 +62,8 @@ class Controller {
     // TODO(samthor): Don't allow multiple parallel requests (possibly just for the same URL).
     this.pending = this.pending.then(async () => {
       const runs = await fetchReports(url);
+      // This is safe to blindly set as it's not interacting with userUrl at all, and is guaranteed
+      // to happen in serial due to using the core promise.
       store.setState({
         lighthouseResult: {
           url,
