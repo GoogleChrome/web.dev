@@ -1,3 +1,5 @@
+import {store} from "../../store";
+
 /**
  * @fileoverview Container element for displaying Lighthouse results.
  */
@@ -6,39 +8,55 @@
 class LighthouseScoresContainer extends HTMLElement {
   constructor() {
     super();
-    this.firstUpdated = false;
+
+    this.statsElement = null;
+    this.metricsElement = null;
+    this.auditsElement = null;
+
+    store.subscribe(this.onStateChanged.bind(this));
+    this.onStateChanged();
+
+    this.onCategoryChanged = (ev) => {
+      this.auditsElement.filteringOn = ev.detail;
+    };
+  }
+
+  onStateChanged() {
+    const {lighthouseResult, activeLighthouseUrl} = store.getState();
+    if (!lighthouseResult) {
+      // TODO: clear data?
+      return;
+    }
+    const lastRun = lighthouseResult.runs.slice(-1)[0];
+    const lastLhr = lastRun ? lastRun.lhr : null;
+
+    if (this.statsElement) {
+      this.statsElement.lhrRuns = lighthouseResult.runs;
+      this.statsElement.disabled = Boolean(activeLighthouseUrl);
+    }
+    if (this.metricsElement) {
+      this.metricsElement.lhr = lastLhr;
+    }
+    if (this.auditsElement) {
+      this.auditsElement.lhr = lastLhr;
+    }
+
   }
 
   connectedCallback() {
-    // LighthouseScoresContainer expects to find children elements which it manages. It's not a
-    // LitElement, so wire things up once it's connected, and keep track of whether it's done.
-    if (this.firstUpdated) {
-      return;
+    this.statsElement = this.querySelector("web-lighthouse-scores-stats");
+    this.metricsElement = this.querySelector("web-lighthouse-scores-metrics");
+    this.auditsElement = this.querySelector("web-lighthouse-scores-audits");
+
+    if (this.statsElement && this.auditsElement) {
+      this.statsElement.addEventListener("category", this.onCategoryChanged);
     }
-    this.firstUpdated = true;
+  }
 
-    // TODO: There's no data included as of yet.
-    const lhrRuns = [];
-    const lastLhr = null;
-
-    const stats = this.querySelector("web-lighthouse-scores-stats");
-    if (stats) {
-      stats.lhrRuns = lhrRuns;
+  disconnectedCallback() {
+    if (this.statsElement) {
+      this.statsElement.removeEventListener("category", this.onCategoryChanged);
     }
-
-    const metrics = this.querySelector("web-lighthouse-scores-metrics");
-    if (metrics) {
-      metrics.lhr = lastLhr;
-    }
-
-    const audits = this.querySelector("web-lighthouse-scores-audits");
-    if (audits) {
-      audits.lhr = lastLhr;
-    }
-
-    stats.addEventListener("category", (ev) => {
-      audits.filteringOn = ev.detail;
-    });
   }
 }
 

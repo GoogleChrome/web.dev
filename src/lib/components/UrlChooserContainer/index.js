@@ -1,7 +1,7 @@
 import {html} from "lit-element";
 import {store} from "../../store";
 import {BaseElement} from "../BaseElement";
-import {updateUrl} from "../../fb";
+import controller from "../../controller";
 import "../UrlChooser";
 
 /**
@@ -53,21 +53,7 @@ class UrlChooserContainer extends BaseElement {
 
   runAudit(e) {
     const url = e.detail;
-
-    // We're writing the user's new URL choice to local state, but also kicking
-    // off a Lighthouse run here. We store the active URL running through
-    // Lighthouse as their preferred URL could change because of another
-    // browser, and this prevents results being appropritioned to the wrong URL.
-
-    // TODO(samthor): This should happen in a controller setting.
-    store.setState({
-      userUrl: url,
-      activeLighthouseUrl: url,
-    });
-    updateUrl(url);
-
-    // TODO: actually run Lighthouse. Currently just freezes the page.
-    console.warn("web-url-chooser in terminal state: should run Lighthouse");
+    controller.requestRunLighthouse(url);
   }
 }
 

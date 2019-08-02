@@ -44,6 +44,7 @@ firebase.auth().onAuthStateChanged((user) => {
       store.setState({
         userUrl: data.userUrl || "",
       });
+      console.info("got updated userUrl", data.userUrl || "");
     });
   } else {
     store.setState({

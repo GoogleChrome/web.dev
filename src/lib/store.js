@@ -20,6 +20,9 @@ const initialState = {
 
   // The URL currently being run through Lighthouse.
   activeLighthouseUrl: null,
+
+  // The most recent Lighthouse results.
+  lighthouseResult: null,
 };
 
 const store = devtools(createStore(initialState));
