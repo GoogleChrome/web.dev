@@ -55,9 +55,8 @@ class LighthouseScoresMeta extends BaseElement {
             data-action="click"
             target="_blank"
             rel="noopener"
+            >View Report</a
           >
-            View Report
-          </a>
           |
           <a
             href="${LH_HOST}/lh/html?url=${this.url}&download"

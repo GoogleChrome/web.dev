@@ -76,6 +76,9 @@ class Controller {
       })
       .catch((err) => {
         console.warn("failed to fetch reports", err);
+        store.setState({
+          lighthouseError: err.toString(),
+        });
       });
   }
 }

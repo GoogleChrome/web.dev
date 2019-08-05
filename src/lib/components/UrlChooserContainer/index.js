@@ -16,6 +16,7 @@ class UrlChooserContainer extends BaseElement {
     return {
       url: {type: String},
       active: {type: Boolean},
+      hasError: {type: Boolean},
     };
   }
 
@@ -33,6 +34,7 @@ class UrlChooserContainer extends BaseElement {
       <web-url-chooser
         .url=${this.url}
         .disabled=${this.active}
+        .hasError=${this.hasError}
         @audit=${this.runAudit}
       ></web-url-chooser>
     `;
@@ -49,6 +51,7 @@ class UrlChooserContainer extends BaseElement {
 
     this.url = state.activeLighthouseUrl || state.userUrl;
     this.active = state.activeLighthouseUrl !== null;
+    this.hasError = Boolean(state.lighthouseError);
   }
 
   runAudit(e) {

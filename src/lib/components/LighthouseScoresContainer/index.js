@@ -29,17 +29,17 @@ class LighthouseScoresContainer extends HTMLElement {
       activeLighthouseUrl,
     } = store.getState();
 
-    if (!lighthouseResult) {
-      // If there's no result, _don't_ explicitly clear all container elements, and just retain
-      // whatever was previously displayed. This lets our users change URLs but not immediately
-      // invalidate previous results, which only occurs when Lighthouse is finished running.
-      if (this.metaElement) {
-        // if lighthouseError is null, no error is displayed
-        this.metaElement.errorMessage = lighthouseError;
-      }
-      return;
+    // Enact changes that occur regardless of whether a result is being displayed.
+    if (this.metaElement) {
+      // if lighthouseError is null, no error is displayed
+      this.metaElement.errorMessage = lighthouseError;
     }
-    const lastRun = lighthouseResult.runs.slice(-1)[0];
+    if (this.statsElement) {
+      this.statsElement.disabled = Boolean(activeLighthouseUrl);
+    }
+
+    const runs = (lighthouseResult && lighthouseResult.runs) || [];
+    const lastRun = runs.slice(-1)[0] || null;
     const lastLhr = lastRun ? lastRun.lhr : null;
 
     if (this.metaElement) {
@@ -50,19 +50,19 @@ class LighthouseScoresContainer extends HTMLElement {
           auditedOn = d;
         }
       }
-
       this.metaElement.errorMessage = lighthouseError;
       this.metaElement.auditedOn = auditedOn;
-      this.metaElement.url = lighthouseResult.url;
+      this.metaElement.url = lighthouseResult ? lighthouseResult.url : null;
     }
     if (this.statsElement) {
-      this.statsElement.lhrRuns = lighthouseResult.runs;
-      this.statsElement.disabled = Boolean(activeLighthouseUrl);
+      this.statsElement.lhrRuns = runs;
     }
     if (this.metricsElement) {
+      this.metricsElement.hidden = !lastLhr;
       this.metricsElement.lhr = lastLhr;
     }
     if (this.auditsElement) {
+      this.auditsElement.hidden = !lastLhr;
       this.auditsElement.lhr = lastLhr;
     }
   }
