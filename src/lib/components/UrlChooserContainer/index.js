@@ -1,7 +1,7 @@
 import {html} from "lit-element";
 import {store} from "../../store";
 import {BaseElement} from "../BaseElement";
-import controller from "../../controller";
+import {requestRunLighthouse} from "../../controller";
 import "../UrlChooser";
 
 /**
@@ -56,7 +56,7 @@ class UrlChooserContainer extends BaseElement {
 
   runAudit(e) {
     const url = e.detail;
-    controller.requestRunLighthouse(url);
+    requestRunLighthouse(url);
   }
 }
 

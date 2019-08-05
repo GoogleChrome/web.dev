@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import controller from "./controller";
+import {requestFetchReports} from "./controller";
 import {store} from "./store";
 
 /* eslint-disable require-jsdoc */
@@ -50,6 +50,7 @@ firebase.auth().onAuthStateChanged((user) => {
       const prevSeen = (data.userUrlSeen && data.userUrlSeen[userUrl]) || null;
       const userUrlSeen = prevSeen ? prevSeen.toDate() : null;
 
+      console.info("snapshot: got userUser", userUrl, userUrlSeen);
       store.setState({
         userUrlSeen,
         userUrl,
@@ -59,7 +60,7 @@ firebase.auth().onAuthStateChanged((user) => {
       // what page they're on. It should only request if we're on /measure.
       if (isInitialSnapshot && data.userUrl) {
         const state = store.getState();
-        controller.requestFetchReports(state.userUrl, state.userUrlSeen);
+        requestFetchReports(state.userUrl, state.userUrlSeen);
       }
     });
   } else {
@@ -78,11 +79,17 @@ export function userRef() {
   return firestore.collection("users").doc(state.user.uid);
 }
 
-export function updateUrl(url) {
+/**
+ * Update's the user's row in Firestore (if signed in) with an updated URL and optional audit time.
+ *
+ * @param {string} url to update the user's row with
+ * @param {!Date} auditedOn of the most recent Lighthouse run
+ * @return {!Date} the earliest audit seen for this URL
+ */
+export async function updateUrl(url, auditedOn = null) {
   const ref = userRef();
   if (!ref) {
-    // TODO(samthor): This doesn't really inform whether the user is signed-in or not
-    return null;
+    return null; // not signed in so user has never seen this site
   }
 
   const p = firestore.runTransaction(async (transaction) => {
@@ -101,26 +108,33 @@ export function updateUrl(url) {
     // Is it worth simply using the bare hostname here? (would still have www. vs not)
 
     const prevSeen = (data.userUrlSeen && data.userUrlSeen[url]) || null;
-    if (!prevSeen) {
-      // TODO(robdodson): Does our backend expect exact timestamps of previous runs?
-      update.userUrlSeen = {
-        [url]: firebase.firestore.FieldValue.serverTimestamp(),
-      };
-    } else {
-      // nb. There's already a valid timestamp here, so don't replace it with a future time.
+    if (prevSeen) {
+      // nb. There's already a valid timestamp here, so don't replace it with a future time,
+      // but grab it so we can inform a signed-in caller.
+      const cand = prevSeen.toDate();
+      if (cand.getTime() && cand.getTime() < auditedOn.getTime()) {
+        auditedOn = cand; // take earliest date
+      }
       // TODO(robdodson): Do we care about migrating userdata from DevSite?
+    } else if (auditedOn && auditedOn.getTime()) {
+      // Set the timestamp of this run, so the user gets runs from it and forward in future.
+      update.userUrlSeen = {
+        [url]: auditedOn,
+      };
     }
 
     return transaction.set(ref, update, {merge: true});
   });
 
-  p.catch((err) => {
+  try {
+    await p;
+  } catch (err) {
     // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
     // try to invoke Lighthouse with the new URL.
     console.warn("could not write URL to Firestore", err);
-  });
+  }
 
-  return p;
+  return auditedOn;
 }
 
 // Sign in the user
