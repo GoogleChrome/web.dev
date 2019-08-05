@@ -28,7 +28,7 @@ are not good because they don't necessarily correspond to what the user sees on
 their screen. And newer, user-centric performance metrics like [First Paint
 (FP) and First Contentful Paint
 (FCP)](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)
-only capture the very beginning on the loading experience. If a page shows a
+only capture the very beginning of the loading experience. If a page shows a
 splash screen or displays a loading indicator, this moment is not very relevant
 to the user.
 
@@ -36,20 +36,20 @@ In the past we've recommended performance metrics like [First Meaningful Paint
 (FMP)](https://web.dev/first-meaningful-paint/) and [Speed Index
 (SI)](https://web.dev/speed-index/) (both available in Lighthouse) to help
 capture more of the loading experience after the initial paint, but these
-metrics are complex, hard to explain, and often wrong -- meaning they still do
+metrics are complex, hard to explain, and often wrong&mdash;meaning they still do
 not identify when the main content of the page has loaded.
 
-Sometimes simpler is better, and the latest research done in the [Web
-Performance Working Group](https://www.w3.org/webperf/) suggests that a more
-accurate way to measure when the main content of a page is loaded is to look at
-when the largest element was rendered.
+Sometimes simpler is better. Based on discussions in the [W3C Web
+Performance Working Group](https://www.w3.org/webperf/) and research done at
+Google, we've found that a more accurate way to measure when the main content
+of a page is loaded is to look at when the largest element was rendered.
 
 ## Largest Contentful Paint defined
 
 The [Largest Contentful Paint
-API](https://wicg.github.io/largest-contentful-paint/), available in the Chrome
-77 beta, reports the render time of the largest content element visible in the
-viewport.
+(LCP)](https://wicg.github.io/largest-contentful-paint/) API, available in
+Chrome 77 beta, reports the render time of the largest content element visible
+in the viewport.
 
 ### What elements are considered?
 
@@ -58,9 +58,12 @@ Paint are:
 
 * `<img>` elements
 * `<image>` elements inside an `<svg>` element
-* Any element with a background image that is fetched (as opposed to a gradient)
-* Block-level elements containing text nodes or other inline-level text elements
-  children.
+* An element with a background image loaded via the
+  [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) function
+  (as opposed to a
+  [CSS gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients))
+* [Block-level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
+  elements containing text nodes or other inline-level text elements children.
 
 Note, restricting the elements considered to this limited set was intentional
 in order to keep things simple in the beginning. Additional elements (e.g.
@@ -76,8 +79,8 @@ portions do not count toward the element's size.
 
 For image elements, only the visible size of the rendered image is considered.
 The original size of the image is not factored into the element size
-calculation, nor is any margin, padding, or border applied to the image via
-CSS.
+calculation, nor is any margin, padding, or border that is applied to the image
+via CSS.
 
 For text elements, only the size of its text nodes is considered (the smallest
 rectangle that encompases all text nodes). As with images, the element's
@@ -89,8 +92,10 @@ contentful size.
   be tricky, especially for elements whose children includes inline elements and
   plain text nodes but also block-level elements. The key point is that every
   text node belongs to (and only to) its closest block-level ancestor element.
-  In spec terms: each text nodes belong to the element that generates its
-  containing block.
+  In [spec
+  terms](https://wicg.github.io/element-timing/#set-of-owned-text-nodes):
+  each text nodes belong to the element that generates its [containing
+  block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block).
 {% endAside %}
 
 ### When is largest contentful paint reported?
@@ -98,7 +103,7 @@ contentful size.
 Web pages often load in stages, and as a result, it's possible that the largest
 element on the page might change.
 
-To handle this potential for change, the browser will dispatch a
+To handle this potential for change, the browser dispatches a
 [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
 of type `largest-contentful-paint` identifying the largest contentful element
 as soon as the browser has painted the first frame. But then, after rendering
@@ -112,7 +117,7 @@ have not yet loaded are not considered "rendered". Neither are text nodes using
 web fonts during the [font block
 period](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display#The_font_display_timeline).
 In such cases a smaller element may be reported as the largest contentful
-element, but as soon as the larger element finishes rendering, it'll will be
+element, but as soon as the larger element finishes rendering, it'll be
 reported via another  `PerformanceEntry` object.
 
 In addition to late-loading images and fonts, a page may add new elements to
@@ -128,7 +133,7 @@ For analysis purposes, only the most recently dispatched `PerformanceEntry`
 object should be reported to your analytics service.
 
 {% Aside 'caution' %}
-  Since users can open pages a background tab, it's possible that the largest
+  Since users can open pages in a background tab, it's possible that the largest
   contentful paint will not happen until the user focuses the tab, which can be
   much later than when they first loaded it.
 {% endAside %}
@@ -136,7 +141,7 @@ object should be reported to your analytics service.
 
 #### Load time vs. render time
 
-For security reasons, the render timestamp of images is not be exposed for
+For security reasons, the render timestamp of images is not exposed for
 cross-origin images that lack the
 [`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
 header. Instead, only their load time is exposed (since this is already exposed
@@ -174,7 +179,7 @@ popular websites:
 
 In both of the timelines above, the largest element changes as content loads.
 In the first example, new content is added to the DOM and that changes what
-elements is largest. And in the second example, the layout changes and content
+element is the largest. In the second example, the layout changes and content
 that was previously the largest is removed from the viewport.
 
 While it's often the case that late-loading content is larger than content
@@ -186,17 +191,17 @@ show the Largest Contentful Paint occurring before the page fully loads.
 ![Largest Contentful Paint timeline from google.com](lcp-google-filmstrip.png)
 
 In the first example, the Instagram logo is loaded relatively early and it
-remains the largest element even as other content is progressively shown. And
-in the example Google search results page example, the largest element is a
-paragraph of text that is displayed before any of the images or logo finish
-loading. Since all the individual images are smaller than this paragraph of
-text, it remains the largest element throughout the load process.
+remains the largest element even as other content is progressively shown. In
+the Google search results page example, the largest element is a paragraph of
+text that is displayed before any of the images or logo finish loading. Since
+all the individual images are smaller than this paragraph, it remains the
+largest element throughout the load process.
 
 {% Aside %}
   In the first frame of the Instagram timeline, you may notice the camera logo
   does not have a green box around it. That's because it's an `<svg>` element,
-  and `<svg>` elements are not currently considered as LCP candidates. The
-  first LCP candidate is the text in the second frame.
+  and `<svg>` elements are not currently considered LCP candidates. The first
+  LCP candidate is the text in the second frame.
 {% endAside %}
 
 ## How to measure Largest Contentful Paint in JavaScript
@@ -214,14 +219,14 @@ const po = new PerformanceObserver((entryList) => {
   const lastEntry = entries[entries.length - 1];
 
   // Update `lcp` to the latest value, using `renderTime` if it's available,
-  // otherwise using `loadTime`. (Note: `renderTime` may not available if the
-  // element is an image and it's loaded cross-origin without the
+  // otherwise using `loadTime`. (Note: `renderTime` may not be available if
+  // the element is an image and it's loaded cross-origin without the
   // `Timing-Allow-Origin` header.)
   lcp = entry.renderTime || entry.loadTime;
 });
 
 // Observe entries of type `largest-contentful-paint`, including buffered
-// entries, i.e. entries that occurred prior to calling `observe()`.
+// entries, i.e. entries that occurred before calling `observe()`.
 po.observe({type: 'largest-contentful-paint', buffered: true});
 
 // Send the latest LCP value to your analytics server once the user
@@ -235,11 +240,11 @@ addEventListener('visibilitychange', function fn() {
 ```
 
 Note, this example waits until the user leaves the tab to report LCP as a way
-of ensuring it only reports the latest entry. If developers would prefer to
-report every entry (to avoid potentially missing sessions), make sure to
-configure your analytics to only include the last entry received per page load.
+of ensuring it only reports the latest entry. If you would prefer to report
+every entry (to avoid potentially missing sessions), make sure to configure
+your analytics to only include the last entry received per page load.
 
-## How to improve LCP on your site
+## How to improve Largest Contentful Paint on your site
 
 LCP is primarily affected by three factors:
 
