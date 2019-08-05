@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Code
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create well-formatted code samples for web.dev.

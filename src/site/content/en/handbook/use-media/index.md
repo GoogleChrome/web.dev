@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Use images and video effectively
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Strategies for using images and video to support the author's purpose on web.dev.

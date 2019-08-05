@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Write useful code samples
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Strategies for using code blocks and sample apps to support the author's purpose on web.dev.

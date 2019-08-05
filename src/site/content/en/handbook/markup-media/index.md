@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Images and video
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create the Markdown for images and video for web.dev.
