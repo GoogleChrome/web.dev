@@ -25,7 +25,7 @@ export async function runLighthouse(url, signedIn = false) {
   } else if (!r["lhrSlim"]) {
     throw new Error("unexpected result, no lhrSlim key");
   }
-  return r["lhrSlim"] || [];
+  return r;
 }
 
 export async function fetchReports(url, startDate = null) {

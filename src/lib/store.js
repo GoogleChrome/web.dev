@@ -14,9 +14,9 @@ const initialState = {
   isSignedIn: false,
   user: null,
 
-  // The most recent URL measured. Null for unknown/not signed in, blank is
-  // unset.
-  userUrl: null,
+  // The most recent URL measured and the Date when it was first analyzed by the user.
+  userUrlSeen: null,
+  userUrl: null, // null for unknown/not signed-in, "" for unset
 
   // The URL currently being run through Lighthouse.
   activeLighthouseUrl: null,

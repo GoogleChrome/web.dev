@@ -2,6 +2,28 @@ import {store} from "./store";
 import {updateUrl} from "./fb";
 import {runLighthouse, fetchReports} from "./lighthouse-service";
 
+/**
+ * @param {!Array<!LighthouseRun>} runs to filter
+ * @param {!Date} until pop runs that are after or equal to this date
+ * @return {!Array<!LighthouseRun>}
+ */
+function sliceRunsUntil(runs, until) {
+  if (!runs || !runs.length) {
+    return [];
+  }
+
+  const out = runs.slice();
+  while (out.length) {
+    const last = out[out.length - 1];
+    const when = new Date(last.auditedOn);
+    if (when < until) {
+      break;
+    }
+    out.pop();
+  }
+  return out;
+}
+
 class Controller {
   constructor() {
     store.subscribe(this.onStateChanged.bind(this));
@@ -36,20 +58,31 @@ class Controller {
     this.pending = this.pending
       .then(async () => {
         let state = store.getState(); // might have changed
-        const runs = await runLighthouse(url, state.isSignedIn);
+
+        const additionalRun = await runLighthouse(url, state.isSignedIn);
+        const lighthouseResult = {
+          url,
+          runs: [additionalRun],
+        };
 
         state = store.getState(); // might have changed
+        const previousLighthouseResult = state.lighthouseResult;
+        if (previousLighthouseResult && previousLighthouseResult.url === url) {
+          // If the previous result was for the same URL, prepend these results to our new result,
+          // but replace any from the last ~24 hours.
+          const replaceRunsFrom = new Date(additionalRun.auditedOn);
+          replaceRunsFrom.setHours(replaceRunsFrom.getHours() - 24);
+          const prepend = sliceRunsUntil(
+            previousLighthouseResult.runs,
+            replaceRunsFrom,
+          );
+          lighthouseResult.runs.unshift(...prepend);
+        }
+
         store.setState({
           activeLighthouseUrl: null,
-          lighthouseResult: {
-            url,
-            runs,
-          },
+          lighthouseResult,
         });
-
-        if (state.userUrl !== store.activeLighthouseUrl) {
-          this.requestFetchReports(state.userUrl);
-        }
       })
       .catch((err) => {
         console.warn("failed to run Lighthouse", err);

@@ -45,14 +45,21 @@ firebase.auth().onAuthStateChanged((user) => {
       const isInitialSnapshot = state.userUrl === null;
 
       const data = snapshot.data() || {}; // is empty on new user
+
+      const userUrl = data.userUrl || "";
+      const prevSeen = (data.userUrlSeen && data.userUrlSeen[userUrl]) || null;
+      const userUrlSeen = prevSeen ? prevSeen.toDate() : null;
+
       store.setState({
-        userUrl: data.userUrl || "",
+        userUrlSeen,
+        userUrl,
       });
 
       // TODO(samthor): This will request reports as soon as the user is signed in, regardless of
       // what page they're on. It should only request if we're on /measure.
       if (isInitialSnapshot && data.userUrl) {
-        controller.requestFetchReports(data.userUrl);
+        const state = store.getState();
+        controller.requestFetchReports(state.userUrl, state.userUrlSeen);
       }
     });
   } else {
@@ -78,18 +85,41 @@ export function updateUrl(url) {
     return null;
   }
 
-  const p = ref.set(
-    {
+  const p = firestore.runTransaction(async (transaction) => {
+    const snapshot = await transaction.get(ref);
+    const data = snapshot.data() || {};
+
+    // nb. If the userUrl matches, we can't actually just return, because Firestore demands that
+    // every document read during a transaction is written again.
+
+    const update = {
       userUrl: url,
-      userUrlUpdate: firebase.firestore.FieldValue.serverTimestamp(),
-    },
-    {merge: true},
-  );
+    };
+
+    // TODO(robdodson): Users can pass (examples for the same site):
+    //   "https://google.com/", "http://google.com", "https://www.google.com/?foo"
+    // Is it worth simply using the bare hostname here? (would still have www. vs not)
+
+    const prevSeen = (data.userUrlSeen && data.userUrlSeen[url]) || null;
+    if (!prevSeen) {
+      // TODO(robdodson): Does our backend expect exact timestamps of previous runs?
+      update.userUrlSeen = {
+        [url]: firebase.firestore.FieldValue.serverTimestamp(),
+      };
+    } else {
+      // nb. There's already a valid timestamp here, so don't replace it with a future time.
+      // TODO(robdodson): Do we care about migrating userdata from DevSite?
+    }
+
+    return transaction.set(ref, update, {merge: true});
+  });
+
   p.catch((err) => {
     // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
     // try to invoke Lighthouse with the new URL.
     console.warn("could not write URL to Firestore", err);
   });
+
   return p;
 }
 
@@ -102,8 +132,7 @@ export async function signIn() {
     const res = await firebase.auth().signInWithPopup(provider);
     user = res.user;
   } catch (err) {
-    /* eslint-disable-next-line */
-    console.error('error', err);
+    console.error("error", err);
   }
 
   return user;
@@ -114,7 +143,6 @@ export async function signOut() {
   try {
     await firebase.auth().signOut();
   } catch (err) {
-    /* eslint-disable-next-line */
-    console.error('error', err);
+    console.error("error", err);
   }
 }

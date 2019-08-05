@@ -79,6 +79,8 @@ class LighthouseScoresContainer extends HTMLElement {
     if (this.statsElement && this.auditsElement) {
       this.statsElement.addEventListener("category", this.onCategoryChanged);
     }
+
+    this.onStateChanged();
   }
 
   disconnectedCallback() {
