@@ -87,7 +87,7 @@ module.exports = function(config) {
   const markdownItAttrsOpts = {
     leftDelimiter: '{:',
     rightDelimiter: '}',
-    allowedAttributes: [],
+    allowedAttributes: ['id', 'class', /^data\-.*$/],
   };
   config.setLibrary(
     'md',
