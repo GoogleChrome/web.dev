@@ -1,6 +1,6 @@
 import {store} from "./store";
 import {updateUrl} from "./fb";
-import {runLighthouse, fetchReports} from "./ci";
+import {runLighthouse, fetchReports} from "./lighthouse-service";
 
 class Controller {
   constructor() {
@@ -33,46 +33,50 @@ class Controller {
     // TODO: Some of the Firebase logic still lives in fb.js.
     updateUrl(url);
 
-    this.pending = this.pending.then(async () => {
-      let state = store.getState();  // might have changed
-      const runs = await runLighthouse(url, state.isSignedIn);
+    this.pending = this.pending
+      .then(async () => {
+        let state = store.getState(); // might have changed
+        const runs = await runLighthouse(url, state.isSignedIn);
 
-      state = store.getState();  // might have changed
-      store.setState({
-        activeLighthouseUrl: null,
-        lighthouseResult: {
-          url,
-          runs,
-        },
-      });
+        state = store.getState(); // might have changed
+        store.setState({
+          activeLighthouseUrl: null,
+          lighthouseResult: {
+            url,
+            runs,
+          },
+        });
 
-      if (state.userUrl !== store.activeLighthouseUrl) {
-        this.requestFetchReports(state.userUrl);
-      }
-    }).catch((err) => {
-      console.warn("failed to run Lighthouse", err);
-      store.setState({
-        lighthouseError: err.toString(),
-        activeLighthouseUrl: null,
+        if (state.userUrl !== store.activeLighthouseUrl) {
+          this.requestFetchReports(state.userUrl);
+        }
+      })
+      .catch((err) => {
+        console.warn("failed to run Lighthouse", err);
+        store.setState({
+          lighthouseError: err.toString(),
+          activeLighthouseUrl: null,
+        });
       });
-    });
   }
 
   requestFetchReports(url) {
     // TODO(samthor): Don't allow multiple parallel requests (possibly just for the same URL).
-    this.pending = this.pending.then(async () => {
-      const runs = await fetchReports(url);
-      // This is safe to blindly set as it's not interacting with userUrl at all, and is guaranteed
-      // to happen in serial due to using the core promise.
-      store.setState({
-        lighthouseResult: {
-          url,
-          runs,
-        },
+    this.pending = this.pending
+      .then(async () => {
+        const runs = await fetchReports(url);
+        // This is safe to blindly set as it's not interacting with userUrl at all, and is guaranteed
+        // to happen in serial due to using the core promise.
+        store.setState({
+          lighthouseResult: {
+            url,
+            runs,
+          },
+        });
+      })
+      .catch((err) => {
+        console.warn("failed to fetch reports", err);
       });
-    }).catch((err) => {
-      console.warn("failed to fetch reports", err);
-    });
   }
 }
 
