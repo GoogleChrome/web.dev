@@ -232,7 +232,7 @@ This makes `srcset` and `sizes` great progressive enhancements!
 ## Learn more
 
 Take a look at the ["Optimize your images"](/fast#optimize-your-images) section
-of web.dev for a deeper drive in to image optimization. For a more guided
+of web.dev for a deeper dive into image optimization. For a more guided
 experience, consider trying the free ["Responsive
 Images"](https://udacity.com/course/responsive-images--ud882) course offered by
 Udacity.

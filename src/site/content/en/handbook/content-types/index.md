@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Content types
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   The content types available to use on web.dev.
@@ -20,7 +18,7 @@ description: |
 
 **Placement on the site:**
 * Always appears on the [blog](/blog), organized chronologically
-* May transition into a collection in the "[Learn](/learn)" section, organized thematically with other posts
+* May transition into a collection in the [Learn](/learn) section, organized thematically with other posts
 
 **Length:** typically less than 1,000–1,500 words
 

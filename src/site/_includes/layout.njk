@@ -6,7 +6,7 @@
       <meta name="project_path" value="/_project.yaml" />
       <meta name="book_path" value="/_book.yaml" />
       <meta name="full_width" value="true" />
-      {% if noindex -%}
+      {% if noindex or draft -%}
         <meta name="robots" content="noindex">
       {%- endif %}
     </head>

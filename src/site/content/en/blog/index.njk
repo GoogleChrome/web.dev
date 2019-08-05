@@ -7,7 +7,6 @@ permalink: /en/blog/index.html
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="blog-landing-page">
-
   {# Make sure Actions are first in the tab order. #}
   <web-actions-controller page="blog"></web-actions-controller>
   {% Actions %}
@@ -25,7 +24,7 @@ permalink: /en/blog/index.html
 
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
-      {% for post in collections.post | reverse %}
+      {% for post in collections.posts %}
         {% PostCard {post: post} %}
       {% endfor %}
     </div>

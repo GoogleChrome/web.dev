@@ -1421,10 +1421,55 @@
       "name": "Google",
       "unit": "Developer Programs Engineer for Angular"
     },
-    "country": "USA",
+    "country": "US",
     "homepage": "https://blog.mgechev.com/",
     "twitter": "mgechev",
     "github": "mgechev",
     "glitch": "mgechev"
+  },
+  "sfluin": {
+    "name": {
+      "given": "Stephen",
+      "family": "Fluin"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Advocate for Angular"
+    },
+    "country": "US",
+    "twitter": "stephenfluin",
+    "github": "stephenfluin"
+  },
+  "mohamedzamakhan": {
+    "name": {
+      "given": "Zama Khan",
+      "family": "Mohammed"
+    },
+    "org": {
+      "name": "Tekzenit, Inc.",
+      "unit": "Software Engineering"
+    },
+    "country": "USA",
+    "homepage": "https://blog.mgechev.com/",
+    "twitter": "mohamedzamakhan",
+    "github": "mohammedzamakhan"
+  },
+  "ahmadawais": {
+    "name": {
+      "given": "Ahmad",
+      "family": "Awais"
+    },
+    "org": {
+      "name": "Cloudinary",
+      "unit": "Developer Relations"
+    },
+    "country": "",
+    "homepage": "https://AhmadAwais.com/",
+    "twitter": "MrAhmadAwais",
+    "github": "ahmadawais",
+    "glitch": "ahmadawais",
+    "description": {
+      "en": "Principal Developer Advocate ❯ Google Developers Expert ❯ Full-time Open Sourcerer."
+    }
   }
 }

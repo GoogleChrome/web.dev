@@ -1,22 +1,23 @@
 ---
 layout: handbook
 title: web.dev components
-authors:
-  - robdodson
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to use web.dev's UI and content components.
 ---
 
-## Source
+The web.dev platform includes various components to make it easy for content
+contributors to include common content features, like videos, side-by-side
+comparisons, and asides.
 
-To see how to use each component, [view this page's source on GitHub](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/web-dev-components/index.md).
+This post shows sample markup for each of web.dev's content components and provides
+guidance about how to use them effectively.
 
-## Sections
+## Component types
 
 1. [Asides](#asides)
-1. [Blockquotes](#blockquotes)
+1. [Banner](#banner)
+1. [Block quotes](#blockquotes)
 1. [Buttons](#buttons)
 1. [Columns](#columns)
 1. [Code](#code)
@@ -31,48 +32,122 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 1. [Video](#video)
 
 ## Asides
+Use asides to provide information that's related to but distinct from the
+content in the body of the post or codelab. Asides should generally be short—no
+more than 2–3 lines.
 
-{% Aside 'note' %}
-  Lorem ipsum dolor sit amet, [consectetur adipiscing elit](#). Proin dictum a
-  massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-  varius at. `Cras ligula lacus`, porta vitae maximus a, ultrices a mauris.
-  [`Vestibulum porta`](#) dolor erat, vel molestie dolor posuere in. Nam vel
-  elementum augue.
+Asides can contain links and formatted text, including code.
+
+There are several kinds of asides, each for a different purpose.
+
+### Note asides
+```
+{% raw %}{% Aside %}
+Use the note aside to provide supplemental information.
+{% endAside %}{% endraw %}
+
+```
+{% Aside %}
+Use the note aside to provide supplemental information.
 {% endAside %}
+
+### Caution asides
+
+```
+{% raw %}{% Aside 'caution' %}
+Use the caution aside to indicate a potential pitfall or complication.
+{% endAside %}{% endraw %}
+```
 
 {% Aside 'caution' %}
-  [This type of callout](#) suggests proceeding with caution.
+Use the caution aside to indicate a potential pitfall or complication.
 {% endAside %}
+
+### Warning asides
+```
+{% raw %}{% Aside 'warning' %}
+The warning aside is stronger than a caution aside; use it to tell the reader
+not to do something.
+{% endAside %}{% endraw %}
+```
 
 {% Aside 'warning' %}
-  This type of callout is stronger than a Caution; it means "Don't do
-  this."
+The warning aside is stronger than a caution aside; use it to tell the reader
+not to do something.
 {% endAside %}
+
+### Success asides
+```
+{% raw %}{% Aside 'success' %}
+Use the success aside to describe a successful action or an error-free status.
+{% endAside %}{% endraw %}
+```
 
 {% Aside 'success' %}
-  This type of callout describes a successful action or an error-free
-  status.
+Use the success aside to describe a successful action or an error-free status.
 {% endAside %}
+
+### Objective asides
+```
+{% raw %}{% Aside 'objective' %}
+Use the objective aside to define the goal of a process described in the body
+copy.
+{% endAside %}{% endraw %}
+```
 
 {% Aside 'objective' %}
-  This type of callout defines the goal of a procedure.
+Use the objective aside to define the goal of a process described in the body
+copy.
 {% endAside %}
+
+### Gotcha asides
+```
+{% raw %}{% Aside 'gotchas' %}
+Use the gotcha aside to indicate a common problem that the reader wouldn't know
+without specialized knowledge of the topic.
+{% endAside %}{% endraw %}
+```
 
 {% Aside 'gotchas' %}
-  The value of the `type` attribute should be the MIME type corresponding to the
-  image format. An image's MIME type and its file extension are often similar,
-  but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
+Use the gotcha aside to indicate a common problem that the reader wouldn't know
+without specialized knowledge of the topic.
 {% endAside %}
 
+### Key-term asides
+```
+{% raw %}{% Aside 'key-term' %}
+Use the key-term aside to define a term that's essential to understanding an
+idea in the body copy. Key-term asides should be a single sentence that
+includes the term in italics. For example, "A _portal_ is..."
+{% endAside %}{% endraw %}
+```
+
 {% Aside 'key-term' %}
-  This type of callout defines important terminology.
+Use the key-term aside to define a term that's essential to understanding an
+idea in the body copy. Key-term asides should be a single sentence that
+includes the term in italics. For example, "A _portal_ is..."
 {% endAside %}
+
+### Codelab asides
+```
+{% raw %}{% Aside 'codelab' %}
+  Use the codelab aside to link to an associated codelab.
+{% endAside %}{% endraw %}
+```
 
 {% Aside 'codelab' %}
   [Using Imagemin with Grunt](#)
 {% endAside %}
 
-## Blockquotes
+## Banner
+
+{% Banner %}This is an info banner with a <a href="#">link</a>.{% endBanner %}
+
+{% Banner 'caution' %}This is a caution banner with a <a href="#">link</a>.{% endBanner %}
+
+{% Banner 'warning' %}This is a warning banner with a <a href="#">link</a>.{% endBanner %}
+
+## Block quotes
 
 <blockquote class="w-blockquote">
   <p class="w-blockquote__text">
@@ -134,7 +209,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 
 ## Code
 
-See the "[Code](/handbook/markup-code)" post.
+See the [Code](/handbook/markup-code) post.
 
 ## Compare
 
@@ -194,7 +269,7 @@ at.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true"
+    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true"
     alt="tabindex-zero on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -202,7 +277,7 @@ at.
 
 ## Images
 
-See the "[Images and video](/handbook/markup-media)" post.
+See the [Images and video](/handbook/markup-media) post.
 
 ## Instruction
 
@@ -575,4 +650,4 @@ assumenda perspiciatis.
 </div>
 
 ## Video
-See the "[Images and video](/handbook/markup-media#video)" post.
+See the [Images and video](/handbook/markup-media#video) post.

@@ -86,10 +86,10 @@ The message itself. This could be plain text, an image binary, JSON, HTML,etc.
 ## How does CORS work?
 
 Remember, the same-origin policy tells the browser to block cross-origin
-requests. When you want to get a public resource or other server on different
-origin, the resource providing server needs to tell the browser "This origin
-where request is coming from can access my resource". The browser remembers that
-and allow cross-origin resource sharing.
+requests. When you want to get a public resource from a different
+origin, the resource-providing server needs to tell the browser "This origin
+where the request is coming from can access my resource". The browser remembers that
+and allows cross-origin resource sharing.
 
 ### Step 1: client (browser) request
 

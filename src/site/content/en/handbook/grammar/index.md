@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Grammar, mechanics, and usage
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   A list of grammar, mechanics, and usage rules for web.dev, followed by a list of style and usage references.
@@ -60,11 +58,11 @@ Don't include preceding articles (_a_, _an_, _the_) or surrounding punctuation i
 {% endCompare %}
 
 {% Compare 'better', 'Do' %}
-> See the "[Easily discoverable](/discoverable)" collection for more information.
+> See the [Easily discoverable](/discoverable) collection for more information.
 
 {% endCompare %}
 
-When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title and put double quotation marks outside the hyperlink. (See example above.)
+When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title only, without quotation marks. (See example above.)
 
 Libraries and tools should be linked the first time they're mentioned.
 
@@ -98,6 +96,19 @@ In general, spell out integers from one to nine unless:
 * The integer is in the same sentence as a number larger than nine (e.g., "The menu contains 15 options, but 6 of them are disabled.")
 
 Use numerals for decimals and numbers higher than nine.
+
+## Pronouns
+Avoid ambiguous pronouns. Follow the advice on the GDDSC [Pronouns](https://developers.google.com/style/pronouns) page. Also avoid pronouns that refer to clauses or phrases, which can complicate translation into some languages.
+
+{% Compare 'worse', 'Don’t' %}
+> Speed optimizations often regress quickly. Performance budgets are one way to address this.
+
+{% endCompare %}
+
+{% Compare 'better', 'Do' %}
+> Speed optimizations often regress quickly. Performance budgets are one way to address this problem.
+
+{% endCompare %}
 
 ## Punctuation
 ### Ampersands
@@ -199,7 +210,7 @@ Use imperative mood for titles and headings whenever possible.
 {% endCompare %}
 
 ## UI elements and interaction
-Bold the names of UI elements.
+Bold the names of UI elements and Lighthouse audits.
 
 {% Compare 'worse', 'Don’t' %}
 > In the New Project window, select the "New Activity" checkbox, and then click "Next."
@@ -208,6 +219,11 @@ Bold the names of UI elements.
 
 {% Compare 'better', 'Do' %}
 > In the **New Project** window, select the **New Activity** checkbox, and then click **Next**.
+
+{% endCompare %}
+
+{% Compare 'better', 'Do' %}
+> To find slow third-party scripts, check the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits in the **Diagnostics** section.
 
 {% endCompare %}
 
@@ -257,6 +273,18 @@ Add a space before units.
 {% endCompare %}
 
 ## Usage
+To maintain a conversational tone, use common contractions.
+
+{% Compare 'worse', 'Don’t' %}
+> This collection assumes that you are already familiar with Angular.
+
+{% endCompare %}
+
+{% Compare 'better', 'Do' %}
+> This collection assumes that you're already familiar with Angular.
+
+{% endCompare %}
+
 Use consistent vocabulary throughout a piece and the collection it lives in.
 
 Acronyms should be spelled out the first time they're used, with the acronym following immediately after in parentheses.

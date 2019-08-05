@@ -1,14 +1,12 @@
 ---
 layout: handbook
 title: Code
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create well-formatted code samples for web.dev.
 ---
 
-This post is about how to get sample code to look right in your piece and follow site conventions. For guidance about how to use code samples to support your writing goals, see the "[Write useful code samples](/handbook/write-code-samples/)" post.
+This post is about how to get sample code to look right in your piece and follow site conventions. For guidance about how to use code samples to support your writing goals, see the [Write useful code samples](/handbook/write-code-samples/) post.
 
 ## All code
 Make all code samples [accessible](/handbook/inclusion-and-accessibility/#create-accessible-code-blocks).

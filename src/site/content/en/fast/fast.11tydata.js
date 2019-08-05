@@ -51,6 +51,7 @@ module.exports = {
           'serve-responsive-images',
           'serve-images-with-correct-dimensions',
           'serve-images-webp',
+          'image-cdns',
         ],
       },
       {
@@ -76,6 +77,7 @@ module.exports = {
         title: 'Optimize your third-party resources',
         pathItems: [
           'identify-slow-third-party-javascript',
+          'third-party-javascript',
         ],
       },
       {

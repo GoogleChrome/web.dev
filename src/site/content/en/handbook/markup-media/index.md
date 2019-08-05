@@ -1,14 +1,12 @@
 ---
 layout: handbook
 title: Images and video
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
 
-This post is about how to format and store images on web.dev. For guidance about how to select or create images to support your writing goals, see the "[Use images and video effectively](/handbook/use-media)" post.
+This post is about how to format and store images on web.dev. For guidance about how to select or create images to support your writing goals, see the [Use images and video effectively](/handbook/use-media) post.
 
 ## All images
 Images that appear in a post should live in the same directory as the post's `index.md` file.
@@ -98,12 +96,12 @@ To include an entire screenshot, add the `w-screenshot-filled` class to the `img
 
 ## Screenshots
 To take a screenshot on Windows:
-1. Check out Microsoft's "[Use Snipping Tool to capture screenshots](https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots)" page.
+1. Check out Microsoft's [Use Snipping Tool to capture screenshots](https://support.microsoft.com/en-us/help/13776/windows-use-snipping-tool-to-capture-screenshots) page.
 1. In the Snipping Tool, use the pen to add a red box around any highlighted areas.
 1. Click **Save Snip** and choose the desired options.
 
 To take a screenshot on Mac:
-1. Check out Apple's "[How to take a screenshot on your Mac](https://support.apple.com/en-us/HT201361)" page.
+1. Check out Apple's [How to take a screenshot on your Mac](https://support.apple.com/en-us/HT201361) page.
 1. In Mac Preview, indicate any highlighted areas by adding a red box with borders set to the medium thickness.
 1. Close Mac Preview. The screenshot image will appear on your desktop.
 
@@ -113,7 +111,7 @@ To take a screenshot on Mac:
 To embed a YouTube video, use the web.dev `YouTube` [component](/handbook/web-dev-components).
 
 ### Video hosted on web.dev
-Always use video, not animated GIFs. (Check out the "[Replace animated GIFs with video for faster page loads](/replace-gifs-with-videos/)" post to learn how to use [FFmpeg](https://www.ffmpeg.org/) to convert GIFs to video.)
+Always use video, not animated GIFs. (Check out the [Replace animated GIFs with video for faster page loads](/replace-gifs-with-videos/) post to learn how to use [FFmpeg](https://www.ffmpeg.org/) to convert GIFs to video.)
 
 Once you have a video ready, message your content reviewer, and they'll help you upload it to the web.dev Google Cloud Storage bucket.
 

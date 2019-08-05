@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Audience
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Definitions of the the key personas for web.dev and advice about how to write for them.
@@ -30,14 +28,14 @@ Alice is a developer working in a team for a large e-commerce website. The site'
 Damir is a developer at a small fintech startup. His boss has asked him to help turn their company's site into a PWA. After trying to enable some offline functionality, Damir realizes through a StackOverflow post ([example](https://stackoverflow.com/questions/50777677/pwa-offline-capability-on-data-that-frecuently-changes)) that the best bet to solving his problem is to create a service worker. He needs to learn how to create a service worker that will work with his company's existing site and the dynamic data that it handles.
 
 * **Prior knowledge:** Damir is a more advanced developer. He can quickly skim documentation to find the code snippets and examples relevant to his use case.
-* **Entry point:** Damir searches for "service worker for PWA," and one of the first search results is a post in the web.dev "[Installable](/installable)" collection.
+* **Entry point:** Damir searches for "service worker for PWA," and one of the first search results is a post in the web.dev [Installable](/installable) collection.
 * **Goal:** Find a specific, implementable solution to an issue as quickly as possible. (Unlike Alice, Damir is trying to fix a problem identified by his team or manager rather than by Lighthouse.)
 
 ### Topic deep-diver (Andrew)
 Andrew is a frontend developer at a startup whose main product is a peer-to-peer resource sharing web app.  He wants to become the go-to accessibility person on the engineering team since accessibility is an issue he feels is important but knows very little about. Andrew has signed up to give a 30-minute accessibility introductory talk to his team in two weeks.
 
 * **Prior knowledge:** Andrew has heard of accessibility and knows that it's about helping users with special needs, but he doesn't have a fully accurate sense of who those users are or how they interact with his product.
-* **Entry point:** Andrew's searches for accessibility, and one of the first search results is the landing page for the "[Accessible to all](/accessible)" collection.
+* **Entry point:** Andrew's searches for accessibility, and one of the first search results is the landing page for the [Accessible to all](/accessible) collection.
 * **Goal:** Master the basics of web accessibility and find high-quality resources to learn from and share with fellow engineers.
 
 ### Demo builder (Emily)
@@ -62,7 +60,7 @@ That said, we want our content to address as much of our audience as we can. How
 * A post about optimizing images in general, with associated codelabs showing how to integrate image optimization into different build processes
 * A post about how to address an issue most web developers will encounter, with sections at the end focused on solving the problem as it appears in particular business verticals
 
-Be mindful of your [voice](/handbook/voice). You want readers to feel they can trust the guidance you're giving. They should feel neither talked down to nor overwhelmed. Check out "[Instruction for adult learners](/handbook/effective-instruction#instruction-for-adult-learners)" in the "[Writing effective instruction](/handbook/effective-instruction)" post.
+Be mindful of your [voice](/handbook/voice). You want readers to feel they can trust the guidance you're giving. They should feel neither talked down to nor overwhelmed. Check out [Instruction for adult learners](/handbook/effective-instruction#instruction-for-adult-learners) in the [Writing effective instruction](/handbook/effective-instruction) post.
 
 ### Value propositions
 A value proposition is a promise to readers that a piece of content will be useful—that is, provide value—to them. Create a value proposition for everything you write by crafting titles, subtitles, and descriptions that tell your target audience why your post or codelab is worth reading. Some common strategies:
