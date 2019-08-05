@@ -4,7 +4,7 @@ title: Efficiently load third-party JavaScript
 subhead: Avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 authors:
   - mihajlija
-date: 2019-07-29
+date: 2019-08-08
 description: |
   Learn how to avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 hero: hero.jpg
@@ -13,6 +13,7 @@ tags:
   - performance
   - third-party
   - javascript
+draft: true
 ---
 
 If a third-party script is [slowing down](/third-party-javascript/) your page load, you have two options to improve performance:
