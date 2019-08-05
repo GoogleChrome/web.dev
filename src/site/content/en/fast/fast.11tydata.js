@@ -76,6 +76,7 @@ module.exports = {
       {
         title: 'Optimize your third-party resources',
         pathItems: [
+          'identify-slow-third-party-javascript',
           'third-party-javascript',
         ],
       },
