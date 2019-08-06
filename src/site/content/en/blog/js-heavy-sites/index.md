@@ -24,8 +24,6 @@ At Google I/O 2019 we shipped [PROXX], a modern Minesweeper-clone on the web. So
     preload="metadata"
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/proxx-intro-poster.jpg"
-    >
-    <source
       src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/proxx-intro.mp4"
       type="video/mp4; codecs=h264">
   </video>
@@ -66,8 +64,6 @@ That being said, we are going to focus on 2G in this article as we were explicit
     preload="metadata"
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/stupid-proxx-load-poster.jpg"
-    >
-    <source
       src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/stupid-proxx-load.mp4"
       type="video/mp4; codecs=h264">
   </video>
@@ -135,8 +131,6 @@ At this point it's time to take a quick look at what our changes have achieved. 
     preload="metadata"
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/preload-proxx-load-poster.jpg"
-    >
-    <source
       src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/preload-proxx-load.mp4"
       type="video/mp4; codecs=h264">
   </video>
@@ -170,8 +164,6 @@ With this in place, we can expect an improvement for our TTFMP, but we still nee
     preload="metadata"
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load-poster.jpg"
-    >
-    <source
       src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load.mp4"
       type="video/mp4; codecs=h264">
   </video>
@@ -210,8 +202,6 @@ Our critical CSS is already inlined thanks to CSS Modules and our Puppeteer-base
     preload="metadata"
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load-poster.jpg"
-    >
-    <source
       src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load.mp4"
       type="video/mp4; codecs=h264">
   </video>
@@ -510,9 +500,7 @@ With all of this in place, we reduced our `index.html` to 20KiB, less than half 
     preload="metadata"
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/optimized-proxx-load-poster.jpg"
-    >
-    <source
-      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/optimized-proxx-load.mp4"
+     src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/optimized-proxx-load.mp4"
       type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
