@@ -39,6 +39,15 @@ To run an audit:
 
 ![Screenshot of the Chrome DevTools Audits panel.](./audits-panel.png)
 
+### Third-party usage
+
+The Lighthouse **Third-party usage** audit shows a list of third-party providers a page uses. This overview can help you better understand the big picture and eliminate redundant third-party code. The audit is available in the [Lighthouse extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) and it will soon be added to DevTools in Chrome 77. 
+
+<figure>
+<img class="w-screenshot" src="./third-party-lighthouse.png" alt='Screenshot showing that 51 third-parties were found and a list imaginary startups.'>
+<fig-caption>Any similarity to actual startups, living or dead, is purely coincidental.</fig-caption>
+</figure>
+
 ### Reduce JavaScript execution time
 The Lighthouse [JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
 
