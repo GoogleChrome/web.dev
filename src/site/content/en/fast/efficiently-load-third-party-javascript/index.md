@@ -82,15 +82,14 @@ Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) t
 
 ### `preconnect`
 
-`<link rel="preconnect">` informs the browser that your page intends to establish a connection to another origin, and that you'd like the process to start as soon as possible. When the request for a resource from the preconnected origin is made, the download starts immediately. 
+`<link rel="preconnect">` informs the browser that your page intends to establish a connection to another origin, and that you'd like the process to start as soon as possible. When the request for a resource from the pre-connected origin is made, the download starts immediately. 
 
 ```html
 <link rel="preconnect" href="https://cdn.example.com">
 ```
 
 {% Aside 'caution' %}
-Only preconnect to critical origins you will use soon; if the connection isn't used within 10 seconds, the browser closes it. There's a limit to the number of simultaneous connections a browser can handle. (For example, Chrome can handle six.) Unnecessary preconnecting can delay other important resources.
-
+Only pre-connect to critical origins you will use soon; if the connection isn't used within 10 seconds, the browser closes it. Limit the number of pre-connected domains to 5 or 6, as unnecessary pre-connecting can delay other important resources.
 {% endAside %}
 
 ### `dns-prefetch`
