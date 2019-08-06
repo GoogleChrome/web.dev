@@ -15,7 +15,7 @@ tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
 ---
-[Third-party scripts impact performance](http://link-to-intro), which is why it’s important to [audit them regularly](http://identify-slow-scripts) and use [efficient techniques for loading ](http://link-to-that)them. This codelab shows you how to optimize the loading of third-party resources. It covers the following techniques:
+[Third-party scripts impact performance](third-party-javascript), which is why it’s important to [audit them regularly](/identify-slow-third-party-javascript/) and use [efficient techniques for loading](efficiently-load-third-party-javascript/) them. This codelab shows you how to optimize the loading of third-party resources. It covers the following techniques:
 
 * Deferring script loading
 
@@ -171,8 +171,7 @@ let observer = new IntersectionObserver(function(entries, observer) {
       console.log(entry.target);
       console.log(entry.isIntersecting);
     });
-  };
-);
+  });
 ```
 {% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-console', 'ol' %}
@@ -181,7 +180,7 @@ Try scrolling up and down. You should see the value of `isIntersecting` change a
 
 To load the video when the user scrolls to its position, use `isIntersecting` as a condition to run a `loadElement` function, which gets the value from the `iframe` element’s `data-src` and sets it as the `iframe` element's `src` attribute. That replacement triggers the loading of the video. Then, once the video is loaded, call the [`unobserve`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/unobserve) method on the `observer` to stop watching the target element:
 
-```js/4-8,13-16/2-3
+```js/4-11,13-16/2-3
 let observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach(entry => {
     console.log(entry.target);
@@ -218,7 +217,7 @@ Now scroll down the page and keep an eye on the **Network** panel. When you get 
   </video>
 
 {% Aside %}
-In this example, the element is loaded when it enters the viewport and you can see it happening in the video above. You can avoid that delay and create smoother user-experience by starting to load elements a little before they enter the viewport. The [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) property allows you to define margins around the target element which effectively grow (or shrink) the area that triggers the `isIntersecting` change.
+In this example, the element is loaded when it enters the viewport and you can see it happening in the video above. You can avoid that delay and create smoother user-experience by starting to load elements a little before they enter the viewport. Use [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) property to define margins around the target element which effectively grow (or shrink) the area that triggers the `isIntersecting` change.
 {% endAside %}
 
 ## Preconnect to required origins
