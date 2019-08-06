@@ -154,7 +154,7 @@ A placeholder shows for lazy-loaded iframes that are still being fetched.
 ### Are there plans to expand this feature?
 
 There are plans to change the default lazy-loading behavior of the browser to automatically
-lazy-load images and iframes if [Lite
+lazy-load any images and iframes that are well suited to being deferred if [Lite
 mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled on Chrome for
 Android.
 
