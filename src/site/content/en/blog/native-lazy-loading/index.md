@@ -151,6 +151,13 @@ A placeholder shows for lazy-loaded iframes that are still being fetched.
 
 ## FAQ
 
+### Are there plans to expand this feature?
+
+There are plans to change the default lazy-loading behavior of the browser to automatically
+lazy-load images and iframes if [Lite
+mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled on Chrome for
+Android.
+
 ### Can I change how close an image or iframe needs to be before a load is triggered?
 
 These values are hardcoded and can't be changed through the API. However, they may change in the
@@ -265,4 +272,4 @@ Baking in native support for lazy-loading images and iframes can make it signifi
 you to improve the performance of your web pages.
 
 Are you noticing any unusual behavior with this feature enabled in Chrome? [File a
-bug](https://bugs.chromium.org/p/chromium/issues/entry)!
+bug](https://bugs.chromium.org/p/chromium/issues/entry?summary=%5BLazyLoad%5D:&comment=Application%20Version%20%28from%20%22Chrome%20Settings%20%3E%20About%20Chrome%22%29:%20%0DAndroid%20Build%20Number%20%28from%20%22Android%20Settings%20%3E%20About%20Phone/Tablet%22%29:%20%0DDevice:%20%0D%0DSteps%20to%20reproduce:%20%0D%0DObserved%20behavior:%20%0D%0DExpected%20behavior:%20%0D%0DFrequency:%20%0D%3Cnumber%20of%20times%20you%20were%20able%20to%20reproduce%3E%20%0D%0DAdditional%20comments:%20%0D&labels=Pri-2&components=Blink%3ELoader%3ELazyLoad%2C)!
