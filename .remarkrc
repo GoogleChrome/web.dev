@@ -37,6 +37,7 @@
 
     "./tools/linting/no-dash-spaces.js",
     "./tools/linting/no-repeat-punctuation.js",
-    "./tools/linting/no-smart-quotes.js"
+    "./tools/linting/no-smart-quotes.js",
+    "./tools/linting/no-unescaped-template-tags.js"
   ]
 }
