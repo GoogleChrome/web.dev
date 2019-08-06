@@ -5,7 +5,7 @@ authors:
   - houssein
   - addyosmani
   - mathiasbynens
-date: 2019-07-17
+date: 2019-08-07
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
@@ -148,46 +148,6 @@ following criteria to determine whether an iframe is hidden:
 If an iframe meets any of these conditions, Chrome considers it hidden and won't lazy-load it in
 most cases. Iframes that _aren't_ hidden will only load when they're within the [load-in distance threshold](#load-in-distance-threshold).
 A placeholder shows for lazy-loaded iframes that are still being fetched.
-
-### Feature Policy
-
-Developers can override the default behavior through [feature
-policies](https://developers.google.com/web/updates/2018/06/feature-policy):
-
-- `loading-image-default-eager` changes the default behavior of the `loading` attribute for images.
-- `loading-frame-default-eager` changes the default behavior of the `loading` attribute for iframes.
-
-The Feature-Policy HTTP header can be used to control both features. For example, the following
-header can be used for all images on the page:
-
-```
-Feature-Policy: loading-image-default-eager 'none'
-```
-
-This lazy-loads every image below the device viewport unless `loading=eager` is used.
-
-```html
-<img src="kitten.jpg" alt="…">
-<!-- lazy-loaded -->
-<img loading="eager" src="puppy.jpg" alt="…">
-<!-- loaded eagerly -->
-```
-
-The same can be done for iframes:
-
-```
-Feature-Policy: loading-frame-default-eager 'none'
-```
-
-To learn more about how both these policies work, as well as how to allow the feature for only
-certain origins on a page, take a look at the policy proposals for both
-[images](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/loading-image-default-eager.md)
-and
-[frames](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/loading-frame-default-eager.md).
-
-{% Aside %}
-  Complete functionality for both feature policies is expected to launch by Chrome 77.
-{% endAside %}
 
 ## FAQ
 
