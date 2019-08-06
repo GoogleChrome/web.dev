@@ -8,7 +8,8 @@ date: 2019-08-08
 description: |
   Learn how to avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 hero: hero.jpg
-alt: Aerial view of shipping containers.  
+alt: Aerial view of shipping containers. 
+codelabs: codelab-optimize-third-party-javascript 
 tags:
   - performance
   - third-party
