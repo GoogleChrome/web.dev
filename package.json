@@ -46,6 +46,7 @@
     "luxon": "^1.12.1",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
+    "markdown-it-attrs": "^3.0.0",
     "mkdirp": "^0.5.1",
     "node-fetch": "^2.3.0",
     "node-sass": "^4.11.0",
