@@ -70,11 +70,9 @@ Using these attributes can significantly speed up page load. For example, [Teleg
 Analytics scripts are usually loaded early so you don't miss any valuable analytics data. Fortunately, there are [patterns to initialize analytics lazily](https://philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build/) while retaining early page-load data.
 {% endAside %}
 
-## Establish early connections to required origins 
+## Establish early connections to required origins  
 
-Establishing connections takes significant time on slow networks. This is especially true for secure connections, which may involve DNS lookups, redirects, and several round trips to the final server that handles the user's request. 
-
-You can save 100–500 ms by establishing early connections to important third-party origins.
+You can save 100–500 ms by [establishing early connections](/preconnect-and-dns-prefetch/) to important third-party origins.
 
 Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) types can help here:
 
