@@ -5,13 +5,12 @@ authors:
   - houssein
   - addyosmani
   - mathiasbynens
-date: 2019-08-07
+date: 2019-08-06
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
   This post covers the loading attribute and how it can be used
   to control the loading of images and iframes.
-draft: true
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
@@ -154,7 +153,7 @@ A placeholder shows for lazy-loaded iframes that are still being fetched.
 ### Are there plans to expand this feature?
 
 There are plans to change the default lazy-loading behavior of the browser to automatically
-lazy-load any images and iframes that are well suited to being deferred if [Lite
+lazy-load any images or iframes that are well suited to being deferred if [Lite
 mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled on Chrome for
 Android.
 
