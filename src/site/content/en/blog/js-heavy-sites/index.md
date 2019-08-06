@@ -39,7 +39,7 @@ Before we start into _how_ to address the performance problems, let's cover _why
 
 |   | **Modern phone**  | **Feature phone**  |
 |---|---|---|
-| **Time to interactive** | ~20s  | ~39s  |
+| **Time to interactive (TTI)** | ~20s  | ~39s  |
 | **Total script execution** | ~713ms   | ~16.7s   |
 | **Data transferred**  | ~1.1MB  | ~1.1MB  |
 
@@ -59,7 +59,24 @@ Testing your loading performance on a _real_ device is critical. If you don't ha
   In emerging markets, 3G coverage is far from complete. Often people are limited to 2G most of the time. Since the PROXX team was targeting feature phones for emerging markets, we will also be looking at 2G speeds in this article.
 {% endAside %}
 
-Without any optimizations, PROXX is a pretty normal JS-driven web app and behaves pretty badly in both of these situations: When loaded over 3G, the user sees 4 seconds of white nothingness. Over 2G it's even worse: The duration for which the user sees absolutely nothing is over 8 seconds long. If you read Jeremy's article above you know that we have now lost a good porition of our potential users due to impatience. The user needs to download all of 61k of JavaScript to download our UI framework [Preact] and wait for it to put anything on the screen at all. The silver lining in this scenario is that the second anything appears on screen it is also interactive. Or is it?
+That being said, we are going to focus on 2G in this article as we were explicitly including feature phones in emerging markets as part of our target audience. Once WebPageTest has run its test, you get a waterfall (similar to what you see in DevTools) as well as a filmstrip at the top. The film strip shows what your user sees at what point in time. On 2G, the loading experience of PROXX was pretty bad:
+
+<figure class="w-figure w-figure--center">
+  <video controls muted
+    preload="metadata"
+    class="w-screenshot"
+    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/stupid-proxx-load-poster.jpg"
+    >
+    <source
+      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/stupid-proxx-load.mp4"
+      type="video/mp4; codecs=h264">
+  </video>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    The filmstrip video shows what the user sees when PROXX is loading on a real, low-end device over an emulated 2G connection.
+  </figcaption>
+</figure>
+
+When loaded over 3G, the user sees 4 seconds of white nothingness. Over 2G it's even worse: The duration for which the user sees absolutely nothing is over 8 seconds long. If you read Jeremy's article above you know that we have now lost a good porition of our potential users due to impatience. The user needs to download all of 62k of JavaScript to download our UI framework [Preact] and wait for it to put anything on the screen at all. The silver lining in this scenario is that the second anything appears on screen it is also interactive. Or is it?
 
 <figure class="w-figure w-figure--center">
   <picture>
@@ -67,18 +84,344 @@ Without any optimizations, PROXX is a pretty normal JS-driven web app and behave
     <img src="proxx-first-render.jpg">
   </picture>
   <figcaption class="w-figcaption">
-    The First Meaningful Paint (FMP) in the unoptimized version of PROXX is _technically_ interactive but useless to the user.
+    The [First Meaningful Paint (FMP)][FMP] in the unoptimized version of PROXX is _technically_ [interactive][TTI] but useless to the user.
   </figcaption>
 </figure>
 
-After the JS has downloaded and DOM has been generated, the user gets to see our app. The app is _technically_ interactive. Looking at the visual, however, shows a different reality. The web fonts are still loading in the background and until they are reader the user can see no text. While we can count this state as a "First Meaningful Paint" (FMP), we cannot count it as interactive. It takes another second on 3G and 3 seconds on 2G until the app is ready to go. **All in all, the app takes 6 seconds on 3G and 12 seconds on 2G to load.**
+After about 62kB of gzip'd JS have been downloaded and DOM has been generated, the user gets to see our app. The app is _technically_ interactive. Looking at the visual, however, shows a different reality. The web fonts are still loading in the background and until they are reader the user can see no text. While we can count this state as a ["First Meaningful Paint" (FMP)][FMP], we cannot count it as [interactive][TTI]. It takes another second on 3G and 3 seconds on 2G until the app is ready to go. **All in all, the app takes 6 seconds on 3G and 11 seconds on 2G to load.**
 
+### Waterfall analysis
+
+Now that we know _what_ the user sees, we need to figure out the _why_. For this we will be taking a look at the waterfall and ask ourselves which resources are loading too late. In our 2G trace for PROXX we can see two major red flags:
+
+1. There are multiple thin lines.
+2. JavaScript files look sequential.
+
+<figure class="w-figure w-figure--center">
+  <picture>
+    <img src="waterfall_opt.png">
+  </picture>
+  <figcaption class="w-figcaption">
+    The waterfall gives insight into which resources are loading when and how long they take. While the colored lines try to estimate multiple metrics (like [Time-to-Meaningful-First-Paint][FMP] or [Time-to-Interactive][TTI]), the film strip is much more reliable for these.
+  </figcaption>
+</figure>
+
+#### Reducing connection count
+Thin lines stand for the creating of a new HTTP/HTTPS/HTTP2 connection. Setting up a new connection is costly and adds around 1s on 3G and roughly 2.5s on 2G. In our waterfall we see a new connection for:
+
+- Our `index.html`
+- The styles from `fonts.googleapis.com`
+- The fonts themselves from `fonts.gstatic.com`
+- Google Analytics
+- The Web App Manifest
+
+The new connection for `index.html` is unavoidable. The browser _has_ to create a connection to our server to get the contents. The new connection for Google Analytics might be avoidable with something like [Minimal Analytics], but Google Analytics is not blocking our app from rendering or becoming interactive, so we don't really care about how fast it loads. On the contrary, Google Analytics should be loaded in idle time and should ideally not take up your bandwidth or processing power during the initial load. The new connection for the web app manifest is [prescribed by the fetch spec][fetch connections], as the manifest has to be loaded over a non-credentialed conneciton. Again, the web app manifest doesn't block our app from rendering or becoming interactive, so we don't need to care that much.
+
+The two fonts we are using, however, are a problem as they block rendering and also interactivity. If we look at the CSS that is delivered by `fonts.googleapis.com`, it's just two `@font-face` rules, one for each font. It's so small in fact, that we decided to inline it into our HTML. To avoid the additional connection setup for the font files we can copy them to our own server.
+
+{% Aside %}
+  **Note:** Copying CSS or font files to your own server is okay when using [Google Fonts]. Other font providers might have different rules. Please check with your font provider's terms of service!
+{% endAside %}
+
+#### Paralleleizing loads
+Looking at the waterfall, we see that once the first JavaScript file is done loading, new files start loading immediately. This is indicative for module dependencies. Our main file cannot run until the main dependencies have been loaded. The important thing to realize here is that these kind of dependencies are known at build time. We can make use of `<link rel="preload">` tags to make sure all the files we need start loading the second we receive our HTML.
+
+#### Results
+
+At this point it's time to take a quick look at what our changes have achieved. It's important to not change any other variables in our test setup, so we will be using [WebPageTest's easy setup][wpt simple] again and look at the filmstrip:
+
+<figure class="w-figure w-figure--center">
+  <video controls muted
+    preload="metadata"
+    class="w-screenshot"
+    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/preload-proxx-load-poster.jpg"
+    >
+    <source
+      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/preload-proxx-load.mp4"
+      type="video/mp4; codecs=h264">
+  </video>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Once again we are looking at the filmstrip after our changes have been applied to compare to our earlier results.
+  </figcaption>
+</figure>
+
+**These changes reduced our TTI from 10.9 to 8.5**, which is roughly the 2.5s connection setup we were expecting to save.
+
+### Prerendering
+
+While we just reduced our [TTI], we haven't really affected the eternally long white screen the user has to endure for 8.5 seconds. Arguably the biggest improvements for Time To First Meaningful Paint (TTFMP)][FMP] can be achieved by adopting a server-side rendering technique (in contrast to a full client-side render). The most common techniques are Prerendering and Server-Side Rendering, which are closely related and are explained in our [Rendering article][Rendering]. Both run the web app in Node to capture the state of the DOM and serialize it to HTML. Server-Side Rendering does this per request on the, well, server's side, while Prerendering does this at build time and stores the output as your new `index.html`. In combination with preloading or even inlining the critical CSS, the browser is able to render the first view much sooner and doesn't have to wait for JavaScript to be downloaded, parsed and executed.
+
+There's many ways to implement a Prerender. In PROXX we chose to use [Puppeteer], which starts Chrome without any UI and allows you to remote control that instance. We utilize this to inject our markup and our initial bundle and then read back the DOM as a string of HTML that has been created. Because we are using [CSS Modules], we get CSS inlining of the styles that we need for free.
+
+```js
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.setContent(rawIndexHTML);
+  await page.evaluate(codeToRun);
+  const renderedHTML = await page.content();
+  browser.close();
+  await writeFile("index.html", renderedHTML);
+```
+
+With this in place, we can expect an improvement for our TTFMP, but we still need to load and execute the same amount of JavaScript to become interactive, so we shouldn't expect TTI to change much. If anything, our `index.html` has gotten bigger and might push back our TTI a bit. There's only way to find out: Running WebPageTest.
+
+<figure class="w-figure w-figure--center">
+  <video controls muted
+    preload="metadata"
+    class="w-screenshot"
+    poster="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load-poster.jpg"
+    >
+    <source
+      src="https://storage.googleapis.com/web-dev-assets/js-heavy-sites/ssr-proxx-load.mp4"
+      type="video/mp4; codecs=h264">
+  </video>
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    The filmstrip shows a clear improvement for our TTFMP metric. TTI is mostly unaffected.
+  </figcaption>
+</figure>
+
+**Our first meaningful paint is moved from 8.5 seconds to 4.9 seconds.** Our TTI still happens at around 8.5 seconds so has been largly unaffected by this change. We did a _perceptual_ change. Some might even call it a sleight of hand. We are visualizing what we are loading, including the user in our progress and changing perceived performance.
 
 ### Aggressive code splitting
 
-Code splitting is closely related to lazy-loading: It is the act of breaking apart your monolithic bundle into smaller parts that can be lazy-loaded on-demand. Popular bundlers like [Webpack], [Rollup], and [Parcel] support code splitting by using dynamic `import()`. All the modules that are imported _statically_ will be inlined into the initial bundle. Everything that you import _dynamically_ will be put into it's own file and will only be fetched from the network once the `import()` call gets executed. The mantra here should be to only load the code that is _critically_ needed at load time and defer everything. A good pattern for deferring loading is [Phil Walton]'s ["Idle until Urgent][IUU].
+Code splitting is closely related to lazy-loading: It is the act of breaking apart your monolithic bundle into smaller parts that can be lazy-loaded on-demand. Popular bundlers like [Webpack], [Rollup], and [Parcel] support code splitting by using dynamic `import()`. The bundler will analyze your code and _inline_ all modules that are imported _statically_. Everything that you import _dynamically_ will be put into it's own file and will only be fetched from the network once the `import()` call gets executed. Of course hitting the network has a cost and should only be used if you can afford to wait for the network to respond. The mantra here is to statically import the modules that is _critically_ needed at load time and dynamically load everything else. A good pattern for handling dynamic loading is [Phil Walton]'s ["Idle until Urgent][IUU].
 
+<figure class="w-figure w-figure--center">
+  <picture>
+    <source srcset="proxx-loaded.webp" type="image/webp">
+    <img src="proxx-loaded.jpg">
+  </picture>
+  <figcaption class="w-figcaption">
+    The landing page of PROXX. Everything that is shown here is considered "critical".
+  </figcaption>
+</figure>
 
+Looking at the landing page PROXX, we see a form to configure the game, a logo, and that's pretty much everything there is. Looking at our bundle with a [source map explorer] (or a similar tool) shows that our initial bundle contains much more code: The game logic, the rendering engine, the win screen, the lose screen and a bunch of utilities. Only a small subset of these modules are needed for the very first render. Moving everything that is not strictly required for the first render into a lazily loaded module will decrease the time needed for the FMP _significantly_
+
+<figure class="w-figure w-figure--center">
+  <style>
+    #map {
+      --highlight: #ccc;
+      background-color: #eee;
+      font-family: monospace;
+      color: #333;
+    }
+    .webtreemap-node {
+      margin: 3px 0;
+      padding: 3px 7px;
+      border: 1px solid #bbb;
+      border-radius: 2px;
+      display: grid;
+      place-content: flex-start stretch;
+      place-items: flex-start stretch;
+    }
+    .webtreemap-caption {
+      grid-column: 1 / -1;
+    }
+    .webtreemap-level0 {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 6px;
+    }
+    @media (max-width: 480px) {
+      .webtreemap-level0 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+  <div id="map">
+    <div class="webtreemap-node webtreemap-level0" title="/ • 117.39 KB • 100.0%">
+      <div class="webtreemap-caption">/ • 117.39 KB • 100.0%</div>
+      <div
+        class="webtreemap-node webtreemap-level1"
+        title="src • 101.51 KB • 86.5%"
+      >
+        <div class="webtreemap-caption">src • 101.51 KB • 86.5%</div>
+        <div
+          class="webtreemap-node webtreemap-level2"
+          title="main • 101.06 KB • 86.1%"
+        >
+          <div class="webtreemap-caption">main • 101.06 KB • 86.1%</div>
+          <div
+            class="webtreemap-node webtreemap-level3"
+            title="services • 60.78 KB • 51.8%"
+          >
+            <div class="webtreemap-caption">services • 60.78 KB • 51.8%</div>
+            <div
+              class="webtreemap-node webtreemap-level4"
+              title="preact-canvas • 58.01 KB • 49.4%"
+            >
+              <div class="webtreemap-caption">
+                preact-canvas • 58.01 KB • 49.4%
+              </div>
+              <div
+                class="webtreemap-node webtreemap-level4"
+                title="components • 50.69 KB • 43.2%"
+              >
+                <div class="webtreemap-caption">
+                  components • 50.69 KB • 43.2%
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="about • 8.15 KB • 6.9%"
+                >
+                  <div class="webtreemap-caption">about • 8.15 KB • 6.9%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="board • 7.93 KB • 6.8%"
+                >
+                  <div class="webtreemap-caption">board • 7.93 KB • 6.8%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="nebula • 5.94 KB • 5.1%"
+                >
+                  <div class="webtreemap-caption">nebula • 5.94 KB • 5.1%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="showbiz-title • 4.46 KB • 3.8%"
+                >
+                  <div class="webtreemap-caption">
+                    showbiz-title • 4.46 KB • 3.8%
+                  </div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="top-bar • 4.16 KB • 3.5%"
+                  style="background-color: var(--highlight)"
+                >
+                  <div class="webtreemap-caption">top-bar • 4.16 KB • 3.5%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="game • 4.07 KB • 3.5%"
+                >
+                  <div class="webtreemap-caption">game • 4.07 KB • 3.5%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="intro • 3.79 KB • 3.2%"
+                  style="background-color: var(--highlight)"
+                >
+                  <div class="webtreemap-caption">intro • 3.79 KB • 3.2%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="bottom-bar • 3.53 KB • 3.0%"
+                  style="background-color: var(--highlight)"
+                >
+                  <div class="webtreemap-caption">
+                    bottom-bar • 3.53 KB • 3.0%
+                  </div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="win • 3.04 KB • 2.6%"
+                >
+                  <div class="webtreemap-caption">win • 3.04 KB • 2.6%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="icons • 1.83 KB • 1.6%"
+                >
+                  <div class="webtreemap-caption">icons • 1.83 KB • 1.6%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="settings • 1.65 KB • 1.4%"
+                >
+                  <div class="webtreemap-caption">settings • 1.65 KB • 1.4%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="game-loading • 1.5 KB • 1.3%"
+                >
+                  <div class="webtreemap-caption">
+                    game-loading • 1.5 KB • 1.3%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="webtreemap-node webtreemap-level3"
+            title="rendering • 27.54 KB • 23.5%"
+          >
+            <div class="webtreemap-caption">rendering • 27.54 KB • 23.5%</div>
+          </div>
+          <div
+            class="webtreemap-node webtreemap-level3"
+            title="utils • 10.74 KB • 9.2%"
+          >
+            <div class="webtreemap-caption">utils • 10.74 KB • 9.2%</div>
+            <div
+              class="webtreemap-node webtreemap-level4"
+              title="shaderbox.ts • 5.9 KB • 5.0%"
+            >
+              <div class="webtreemap-caption">shaderbox.ts • 5.9 KB • 5.0%</div>
+            </div>
+            <div
+              class="webtreemap-node webtreemap-level4"
+              title="focus-visible.js • 2.32 KB • 2.0%"
+            >
+              <div class="webtreemap-caption">
+                focus-visible.js • 2.32 KB • 2.0%
+              </div>
+            </div>
+            <div
+              class="webtreemap-node webtreemap-level4"
+              title="cell-sizing.ts • 1.44 KB • 1.2%"
+            >
+              <div class="webtreemap-caption">
+                cell-sizing.ts • 1.44 KB • 1.2%
+              </div>
+            </div>
+          </div>
+          <div
+            class="webtreemap-node webtreemap-level3"
+            title="offline • 1.54 KB • 1.3%"
+          >
+            <div class="webtreemap-caption">offline • 1.54 KB • 1.3%</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="webtreemap-node webtreemap-level1"
+        title="node_modules • 15.06 KB • 12.8%"
+      >
+        <div class="webtreemap-caption">node_modules • 15.06 KB • 12.8%</div>
+        <div
+          class="webtreemap-node webtreemap-level2"
+          title="preact • 8.2 KB • 7.0%"
+          style="background-color: var(--highlight)"
+        >
+          <div class="webtreemap-caption">preact • 8.2 KB • 7.0%</div>
+        </div>
+        <div
+          class="webtreemap-node webtreemap-level2"
+          title="comlink • 3.32 KB • 2.8%"
+        >
+          <div class="webtreemap-caption">comlink • 3.32 KB • 2.8%</div>
+        </div>
+        <div
+          class="webtreemap-node webtreemap-level2"
+          title="style-inject • 2.81 KB • 2.4%"
+          style="background-color: var(--highlight)"
+        >
+          <div class="webtreemap-caption">style-inject • 2.81 KB • 2.4%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <figcaption class="w-figcaption">
+    Anaylizing the initial bundle of PROXX shows a lot of unneeded resources. Critical resources are highlighted.
+  </figcaption>
+</figure>
+
+### Server-side rendering
+
+Server-side rendering
 
 <figure class="w-figure w-figure--center">
   <video autoplay controls loop muted
@@ -422,3 +765,12 @@ for real users.
 [WebPageTest]: https://webpagetest.org
 [wpt simple]: https://webpagetest.org/easy
 [Preact]: https://preactjs.com
+[source map explorer]: https://npm.im/source-map-explorer
+[Rendering]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web
+[Puppeteer]: https://pptr.dev
+[CSS Modules]: https://github.com/css-modules/css-modules
+[Minimal Analytics]: https://minimalanalytics.com
+[fetch connections]: https://fetch.spec.whatwg.org/#connections
+[Google Fonts]: https://fonts.google.com
+[FMP]: https://web.dev/first-meaningful-paint
+[TTI]: https://web.dev/interactive
