@@ -1,6 +1,6 @@
 ---
 title: Largest Contentful Paint
-subhead: Making it easier to know when a page's important content has loaded
+subhead: Making it easier to know when a page's important content has loaded.
 authors:
   - philipwalton
 date: 2019-08-08
