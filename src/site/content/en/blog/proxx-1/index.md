@@ -8,10 +8,9 @@ hero: hero.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 hero_position: center
-alt: An unstable stack of rocks on a beach
+alt: A screenshot of PROXX
 description: |
-  This post introduces the Layout Instability API, its key concepts, and
-  explains how to use the API and provide feedback
+  Feature phones are making a resurgance and are popular, especially in emerging markets where 2G is the norm. Here are our learnings from making PROXX, a mobile Minesweeper clone, load fast on feature phones on 2G.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
