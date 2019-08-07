@@ -10,7 +10,7 @@ hero: hero.jpg
 hero_position: center
 alt: A screenshot of PROXX
 description: |
-  Feature phones are making a resurgance and are popular, especially in emerging markets where 2G is the norm. Here are our learnings from making PROXX, a mobile Minesweeper clone, load fast on feature phones on 2G.
+  Feature phones are making a resurgence and are popular, especially in emerging markets where 2G is the norm. Here are our learnings from making PROXX, a mobile Minesweeper clone, load fast on feature phones on 2G.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
