@@ -243,6 +243,42 @@ of ensuring it only reports the latest entry. If you would prefer to report
 every entry (to avoid potentially missing sessions), make sure to configure
 your analytics to only include the last entry received per page load.
 
+## What if the largest element isn't the most important?
+
+In some cases the most important element (or elements) on the page is not the
+same as the largest element, and developers may be more interested in measuring
+the render times of these other elements instead. This is possible using the
+[Element Timing API](https://wicg.github.io/element-timing/).
+
+The Largest Contentful Paint API is actually built on top of the Element Timing
+API and adds automatic reporting of the largest contentful element, but you can
+report on additional elements by explicitly adding the `elementtiming`
+attribute to them, and registering a `PerformanceObserver` to observe the
+`element` entry type.
+
+Here's the [example](https://wicg.github.io/element-timing/#sec-example)
+used in the specification:
+
+```html
+<img... elementtiming='foobar'/>
+<p elementtiming='important-paragraph'>This is text I care about.</p>
+...
+<script>
+const observer = new PerformanceObserver((list) => {
+  let perfEntries = list.getEntries();
+  // Process the entries by iterating over them.
+});
+observer.observe({type: 'element', buffered: true});
+</script>
+```
+
+{% Aside %}
+  **Important:** the [types of elements](#what-elements-are-considered)
+  considered for Largest Contentful Paint are the same as those observable via
+  the Element Timing API. If you add the `elementtiming` attribute to an
+  element that isn't one of those types, it will be ignored.
+{% endAside %}
+
 ## How to improve Largest Contentful Paint on your site
 
 LCP is primarily affected by three factors:
