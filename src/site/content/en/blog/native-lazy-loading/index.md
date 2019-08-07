@@ -218,21 +218,21 @@ library only when `loading` isn't supported. This works as follows:
 
 - Replace `<img src>` with `<img data-src>` to avoid an eager load in unsupported browsers. If the
   `loading` attribute is supported, swap `data-src` for `src`.
-- If `loading` is not supported, load a fallback (lazysizes) and initiate it. You can use the custom
-  `data-loading-fallback` attribute as a way to indicate to lazysizes which images to lazy-load.
+- If `loading` is not supported, load a fallback (lazysizes) and initiate it. As per lazysizes docs, you use the
+  `lazyload` class as a way to indicate to lazysizes which images to lazy-load.
 
 ```html
 <!-- Let's load this in-viewport image normally -->
 <img src="hero.jpg" alt="…">
 
 <!-- Let's lazy-load the rest of these images -->
-<img data-src="unicorn.jpg" alt="…" loading="lazy" data-loading-fallback="lazysizes">
-<img data-src="cats.jpg" alt="…" loading="lazy" data-loading-fallback="lazysizes">
-<img data-src="dogs.jpg" alt="…" loading="lazy" data-loading-fallback="lazysizes">
+<img data-src="unicorn.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="cats.jpg" alt="…" loading="lazy" class="lazyload">
+<img data-src="dogs.jpg" alt="…" loading="lazy" class="lazyload">
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[data-loading-fallback="lazysizes"]');
+    const images = document.querySelectorAll('img[loading="lazy"]');
     images.forEach(img => {
       img.src = img.dataset.src;
     });
