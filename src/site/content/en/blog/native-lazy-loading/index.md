@@ -219,7 +219,7 @@ library only when `loading` isn't supported. This works as follows:
 - Replace `<img src>` with `<img data-src>` to avoid an eager load in unsupported browsers. If the
   `loading` attribute is supported, swap `data-src` for `src`.
 - If `loading` is not supported, load a fallback (lazysizes) and initiate it. You can use the custom
-  `data-lazysizes` attribute as a way to indicate to lazysizes which images to lazy-load.
+  `data-loading-fallback` attribute as a way to indicate to lazysizes which images to lazy-load.
 
 ```html
 <!-- Let's load this in-viewport image normally -->
