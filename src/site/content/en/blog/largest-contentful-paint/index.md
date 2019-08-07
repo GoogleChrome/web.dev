@@ -10,8 +10,7 @@ hero: hero.jpg
 hero_position: top
 alt: Artist painting tools
 description: |
-  This post introduces the Largest Contentful Paint API, how to use it,
-  and offers advice on how to optimize your pages for this metric
+  Use the Largest Contentful Paint API to optimize for faster page loads.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
@@ -48,7 +47,7 @@ of a page is loaded is to look at when the largest element was rendered.
 
 The [Largest Contentful Paint
 (LCP)](https://wicg.github.io/largest-contentful-paint/) API, available in
-Chrome 77 beta, reports the render time of the largest content element visible
+Chrome 77, reports the render time of the largest content element visible
 in the viewport.
 
 ### What elements are considered?
@@ -65,9 +64,9 @@ Paint are:
 * [Block-level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
   elements containing text nodes or other inline-level text elements children.
 
-Note, restricting the elements considered to this limited set was intentional
-in order to keep things simple in the beginning. Additional elements (e.g.
-`<svg>`, `<video>`) may be added in the future as more research is conducted.
+Note, restricting the elements to this limited set was intentional in order to
+keep things simple in the beginning. Additional elements (e.g. `<svg>`,
+`<video>`) may be added in the future as more research is conducted.
 
 ### How is an element's size determined?
 
@@ -94,7 +93,7 @@ contentful size.
   text node belongs to (and only to) its closest block-level ancestor element.
   In [spec
   terms](https://wicg.github.io/element-timing/#set-of-owned-text-nodes):
-  each text nodes belong to the element that generates its [containing
+  each text node belongs to the element that generates its [containing
   block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block).
 {% endAside %}
 
@@ -123,14 +122,14 @@ reported via another  `PerformanceEntry` object.
 In addition to late-loading images and fonts, a page may add new elements to
 the DOM as new content becomes available. If any of these new elements is
 larger than the previous largest contentful element, a new `PerformanceEntry`
-will also reported.
+will also be reported.
 
 The browser will stop reporting new entries as soon as the user interacts with
 the page (via a tap, scroll, or keypress), as user interaction often changes
 what's visible to the user (which is especially true with scrolling).
 
-For analysis purposes, only the most recently dispatched `PerformanceEntry`
-object should be reported to your analytics service.
+For analysis purposes, you should only report the most recently dispatched
+`PerformanceEntry` to your analytics service.
 
 {% Aside 'caution' %}
   Since users can open pages in a background tab, it's possible that the largest
