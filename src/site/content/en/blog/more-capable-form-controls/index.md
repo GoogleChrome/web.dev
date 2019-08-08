@@ -72,9 +72,9 @@ Try this out using our example on Glitch. Be sure to run it on Chrome 77+ (Canar
 
 ## Form-associated custom elements
 
-The event-based API is simple, but it only allows you to interact with the submission process.
+You can use the event-based API with any kind of component, but it only allows you to interact with the submission process.
 
-Native form controls participate in many parts of the form lifecycle besides submission. Form-aware custom elements aim to bridge the gap between custom widgets and native controls. Form-aware custom elements match many of the features of native form elements:
+Native form controls participate in many parts of the form lifecycle besides submission. Form-associated custom elements aim to bridge the gap between custom widgets and native controls. Form-associated custom elements match many of the features of native form elements:
 
 *   When you place a form-associated custom element inside a `<form>`, it's automatically associated with the form, like a native control.
 *   The element can be labeled using a `<label>` element.
@@ -92,9 +92,9 @@ That's a lot of features! This article won't touch on all of them, but will desc
 Defining a form-associated custom element requires two additions to your custom element:
 
 *   Add a static `formAssociated` property to your custom element class. This tells the browser to treat the element like a form control.
-*   Call the `attachInternals()` method on the element to get access to extra methods and properties for form controls, like `setFormValue` and `setValidity`.
+*   Call the `attachInternals()` method on the element to get access to extra methods and properties for form controls, like `setFormValue()` and `setValidity()`.
 
-Here's how those two items fit into a basic custom element definition: \
+Here's how those two items fit into a basic custom element definition:
 
 ```js
 // Form-associated custom elements must be autonomous custom elements--
@@ -103,7 +103,6 @@ class MyCounter extends HTMLElement {
 
   // Identify the element as a form-associated custom element
   static formAssociated = true;
-
 
   constructor() {
     super();
@@ -146,9 +145,9 @@ Once registered, you can use this element wherever you'd use a native form contr
 
 ### Setting a value {: #setting-a-value }
 
-The `attachInternals` method returns an `ElementInternals` object that provides access to form control APIs. The most basic of these is the `setFormValue` method, which sets the current value of the control. 
+The `attachInternals()` method returns an `ElementInternals` object that provides access to form control APIs. The most basic of these is the `setFormValue()` method, which sets the current value of the control. 
 
-The `setFormValue` method can take one of three types of values:
+The `setFormValue()` method can take one of three types of values:
 
 *   A string value.
 *   A [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object.
@@ -171,11 +170,11 @@ entries.append(n + '-last-name', this.lastName_);
 this.internals_.setFormValue(entries);
 ```
 
-{% Aside %}The `setFormValue` method takes a second, optional `state` parameter, used to store the internal state of the control. For more information, see [Restoring form state](#restoring-form-state).{% endAside %}
+{% Aside %}The `setFormValue()` method takes a second, optional `state` parameter, used to store the internal state of the control. For more information, see [Restoring form state](#restoring-form-state).{% endAside %}
 
 ### Input validation
 
-Your control can also participate in form validation by calling the `setValidity`
+Your control can also participate in form validation by calling the `setValidity()`
 method on the internals object.
 
 ```js
@@ -195,6 +194,9 @@ onUpdateValue() {
 
 You can style a form-associated custom element with the `:valid` and `:invalid`
 pseudoclasses, just like a built-in form control.
+
+{% Aside %}Although you can set a validation message, Chrome currently
+fails to display the validation message for form-associated custom elements.{% endAside %}
 
 ### Lifecycle callbacks
 
@@ -219,7 +221,7 @@ Called in one of two circumstances:
 *   When the browser restores the state of the element (for example, after a navigation, or when the browser restarts).  The <code>mode</code> argument is <code>"restore"</code> in this case.
 *   When the browser's input-assist features such as form autofilling sets a value. The <code>mode</code> argument is <code>"autocomplete"</code> in this case.
 
-The type of the first argument depends on how the <code>setFormValue</code> method was called. For more details, see [Restoring form state](#restoring-form-state).
+The type of the first argument depends on how the `setFormValue()` method was called. For more details, see [Restoring form state](#restoring-form-state).
 
 ### Restoring form state {: #restoring-form-state }
 
