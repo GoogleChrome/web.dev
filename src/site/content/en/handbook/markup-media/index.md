@@ -25,7 +25,7 @@ Images intended to fill the full width of the content column should be at least 
 
 Use Markdown syntax for standard standalone images:
 
-```md
+```markdown
 ![alt text](./image-name.png)
 ```
 
