@@ -131,7 +131,7 @@ class MyCounter extends HTMLElement {
 
   … 
 }
-customElements.register('my-counter', MyCounter);
+customElements.define('my-counter', MyCounter);
 ```
 
 Once registered, you can use this element wherever you'd use a native form control:
@@ -180,7 +180,6 @@ method on the internals object.
 ```js
 // Assume this is called whenever the internal value is updated
 onUpdateValue() {
-  // 
   if (!this.matches(':disabled') && this.hasAttribute('required') &&
       this._value < 0) {
     this._internals.setValidity({customError: true}, 'Value cannot be negative.');
