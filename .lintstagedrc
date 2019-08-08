@@ -1,5 +1,0 @@
-{
-  "*.js": "eslint",
-  "*.scss": sass-lint -v -q",
-  "*.md": "remark -q"
-}

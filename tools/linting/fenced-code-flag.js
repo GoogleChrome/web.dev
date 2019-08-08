@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 /**
  * @author Titus Wormer
  * @copyright 2015 Titus Wormer
