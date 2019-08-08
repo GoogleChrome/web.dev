@@ -8,6 +8,7 @@ exports.plugins = [
   require('remark-preset-lint-markdown-style-guide'),
   ['lint-blockquote-indentation', false],
   ['lint-emphasis-marker', false],
+  ['lint-fenced-code-flag', false],
   ['lint-hard-break-spaces', false],
   ['lint-link-title-style', false],
   ['lint-list-item-content-indent', false],
@@ -39,6 +40,7 @@ exports.plugins = [
   require('remark-lint-no-duplicate-headings-in-section'),
 
   // Custom plugins.
+  require('./tools/linting/fenced-code-flag.js'),
   require('./tools/linting/no-dash-spaces.js'),
   require('./tools/linting/no-repeat-punctuation.js'),
   require('./tools/linting/no-smart-quotes.js'),
