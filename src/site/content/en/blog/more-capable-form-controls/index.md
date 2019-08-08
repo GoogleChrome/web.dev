@@ -113,7 +113,7 @@ class MyCounter extends HTMLElement {
     this._value = 0;
   }
 
-  // Form controls usually expose a "value"  property
+  // Form controls usually expose a "value" property
   get value() { return this._value; }
   set value(v) { this._value = v; }
 
