@@ -182,7 +182,7 @@ Try scrolling up and down. You should see the value of `isIntersecting` change a
 
 To load the video when the user scrolls to its position, use `isIntersecting` as a condition to run a `loadElement` function, which gets the value from the `iframe` element’s `data-src` and sets it as the `iframe` element's `src` attribute. That replacement triggers the loading of the video. Then, once the video is loaded, call the [`unobserve`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/unobserve) method on the `observer` to stop watching the target element:
 
-```js/4-11,13-16/2-3
+```js/6-13,15-18/2-5
 let observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach(entry => {
     console.log(entry.target);
