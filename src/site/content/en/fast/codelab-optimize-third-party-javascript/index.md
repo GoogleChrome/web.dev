@@ -108,6 +108,7 @@ All resources that are below the fold are good candidates for [lazy-loading](/ef
 
 The sample app has a YouTube video embedded in an [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). To check out how many requests the page makes and which come from the embedded YouTube iframe:
 
+{% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'disable-cache', 'ol' %}
 1. Select *Fast 3G* in the **Throttling** dropdown menu.
