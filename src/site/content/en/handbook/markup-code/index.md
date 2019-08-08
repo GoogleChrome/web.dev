@@ -35,6 +35,23 @@ Include the [language name](https://prismjs.com/#supported-languages) after the 
 ```
 ````
 
+For code blocks that don't need syntax highlighting (for example, HTTP headers), set
+the language to `text`:
+
+````markdown
+```text
+Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
+```
+````
+
+For terminal commands, set the language to `bash` and omit leading `$` signs:
+
+````markdown
+```bash
+npm install left-pad
+```
+````
+
 ## Code highlighting
 Highlight lines in a code block by adding a slash and the zero-indexed line numbers after the language name. For example, here's what `html/4-5` looks like:
 
