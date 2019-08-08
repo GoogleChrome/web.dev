@@ -76,7 +76,6 @@ Since this chart is not really critical to the overall page and will most likely
 
 ### Step 1: Load the script asynchronously with the `defer` attribute
 
-{% Instruction 'remix' %}
 
 On line 17 in `index.html`, add the `defer` attribute to the `<script>` element:
 
