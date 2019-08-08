@@ -121,7 +121,7 @@ To identify the requests that the YouTube `iframe` made, look for the video ID `
 
 The new sorting reveals that there are additional requests to Google domains. In total, the YouTube iframe makes 14 requests for scripts, stylesheets, images, and fonts. But unless users actually scroll down to play the video, they don't really need all those assets.
 
-By waiting to lazy-load the video until a user scrolls down to that section of the page, you cut the number of requests the page initially makes. This approach saves users’ data and speeds up the initial load. 
+By waiting to lazy-load the video until a user scrolls down to that section of the page, you cut the number of requests the page initially makes. This approach saves users' data and speeds up the initial load. 
 
 One way to implement lazy-loading is by using the [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), a browser API that notifies you when an element enters or exits the browser's viewport. 
 
