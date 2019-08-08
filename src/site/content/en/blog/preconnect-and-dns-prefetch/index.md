@@ -121,7 +121,7 @@ DNS resolution is initiated similarly to `preconnect`: by adding a `<link>` tag 
 <link rel="dns-prefetch" href="http://example.com">
 ```
 
-[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect` ](https://caniuse.com/#search=preconnect)[support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`. 
+[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect`](https://caniuse.com/#search=preconnect) [support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`. 
 
 ```html
 <link rel="preconnect" href="http://example.com">

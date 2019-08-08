@@ -87,7 +87,7 @@ To set up code-splitting, the `nyan` eager route needs to be refactored.
 
 Version 8.1.0 of the Angular CLI can do everything for you with this command:
 
-```
+```bash
 ng g module nyan --module app --route nyan
 ```
 

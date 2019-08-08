@@ -146,7 +146,7 @@ By the end of this series you should have:
 
 ## Better Together 🍻
 We'll acquire some bruises along the way as we bump our heads, shoulders, knees,
-and toes... but I believe it's crucial for when you run into similar issues,
+and toes… but I believe it's crucial for when you run into similar issues,
 that we've gone through a gauntlet together. That means this series includes
 refactor reasoning and results. There's a lot of "play" that needs to happen
 with intrinsic layouts, **I want you to see how I play and reach resilient

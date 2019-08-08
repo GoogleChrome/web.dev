@@ -61,7 +61,7 @@ Make sure `allow` and `disallow` values are either empty or start with `/` or
 `*`. Make sure they don't use `$` in the middle of a value (for example,
 `allow: /file$html`). Here's an example:
 
-```
+```text
 user-agent: *
 disallow: /downloads/
 ```
@@ -69,7 +69,7 @@ disallow: /downloads/
 Do this
 {% endCompare %}
 
-```
+```text
 user-agent: *
 
 # missing "/"
@@ -90,7 +90,7 @@ disallow. While robots.txt directives look simple, in combination they can be
 surprisingly complex. Here's an example of how to use comments in a robots.txt
 file:
 
-```
+```text
 user-agent: *
 
 # block crawling of all download URLs
@@ -102,7 +102,7 @@ allow: /downloads/whitepaper.pdf
 
 ## Make sure there are no `allow` or `disallow` directives before `user-agent`
 
-```
+```text
 # start of file
 user-agent: *
 disallow: /downloads/
@@ -111,7 +111,7 @@ disallow: /downloads/
 Do this
 {% endCompare %}
 
-```
+```text
 # start of file
 disallow: /downloads/
 
@@ -139,7 +139,7 @@ unmatched crawlers. Search engines will generally publish the user-agent names
 that they use; for example, here's
 [Google's list of user-agents used for crawling](https://support.google.com/webmasters/answer/1061943).
 
-```
+```text
 user-agent: *
 disallow: /downloads/
 
@@ -150,7 +150,7 @@ disallow: /uploads/
 Do this
 {% endCompare %}
 
-```
+```text
 user-agent:
 disallow: /downloads/
 ```
@@ -167,14 +167,14 @@ changed. If you choose to refer to submit a sitemap file through the robots.txt
 file, make sure to use a [fully-qualified/absolute
 URL](https://tools.ietf.org/html/rfc3986#page-27).
 
-```
+```text
 sitemap: https://example.com/sitemap-file.xml
 ```
 {% Compare 'better' %}
 Do this
 {% endCompare %}
 
-```
+```text
 sitemap: /sitemap-file.xml
 ```
 {% Compare 'worse' %}

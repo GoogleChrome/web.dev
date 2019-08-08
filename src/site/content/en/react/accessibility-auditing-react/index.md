@@ -112,7 +112,7 @@ is a library that does exactly this by providing a React wrapper around the
 
 Install the library as a development dependency to begin:
 
-```
+```bash
 npm install --save-dev react-axe
 ```
 

@@ -16,7 +16,8 @@ In this codelab, see how the same-origin policy works when accessing data inside
 ## Set up: Page with a same-origin iframe
 This page embeds an `iframe`, called `iframe.html`, in the same origin.  
 Since the host and the iframe share the same origin, the host site is able to access data inside of the iframe and expose the secret message like blow.
-```
+
+```js
 const iframe = document.getElementById('iframe');
 const message = iframe.contentDocument.getElementById('message').innerText;
 ```

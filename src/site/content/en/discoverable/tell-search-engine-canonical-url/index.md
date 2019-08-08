@@ -68,7 +68,7 @@ For a list of pros and cons, see
 
 **Option 2. Add Link header to the HTTP response**
 
-```
+```text
 Link: https://copycat.com/; rel=canonical
 ```
 

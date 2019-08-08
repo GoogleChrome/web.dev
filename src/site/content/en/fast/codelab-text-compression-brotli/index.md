@@ -166,12 +166,12 @@ passing in an `options` parameters to
 The idea behind static compression is to have assets compressed and saved ahead
 of time.
 
-#### Pros:
+#### Pros
 +  Latency due to high compression levels is not a concern anymore. Nothing
    needs to happen on-the-fly to compress files as they can now be fetched
    directly.
 
-#### Cons:
+#### Cons
 +  Assets need to compressed with every build. Build times can increase
    significantly if high compression levels are used.
 

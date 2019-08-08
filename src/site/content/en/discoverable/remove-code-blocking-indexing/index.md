@@ -42,7 +42,7 @@ below:
 - Remove the `X-Robots-Tag` HTTP response header if you set up a HTTP
     response header:
 
-```
+```text
 X-Robots-Tag: noindex
 ```
 

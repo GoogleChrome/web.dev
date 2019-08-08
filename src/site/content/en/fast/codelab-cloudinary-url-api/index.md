@@ -64,15 +64,16 @@ To optimize the three images in the starting code, you'll create Cloudinary fetc
 
 A Cloudinary fetch URL looks like this:
 
-```
+```text
 https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_image_url>
 ```
+
 
 *   `<cloud_name>` is your Cloudinary [cloud name](https://cloudinary.com/documentation/solution_overview?query=cloud%20name&c_query=Account%20and%20API%20setup%20%E2%80%BA%20Identifiers%20%E2%80%BA%20Cloud%20name#cloud_name).
 
     Example: 
     
-    ```
+    ```text
     demo
     ```
 
@@ -80,7 +81,7 @@ https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_im
 
     Example: 
     
-    ```
+    ```text
     q_auto,f_auto
     ```
 
@@ -96,7 +97,7 @@ https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_im
 
     Example: 
 
-    ```
+    ```text
     https://codelab-cloudinary.glitch.me/images/flower1.png
     ```
 

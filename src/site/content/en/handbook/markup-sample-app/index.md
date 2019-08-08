@@ -25,14 +25,14 @@ Make all Glitch code [accessible](/handbook/inclusion-and-accessibility#create-a
 
 Make sure the `README` for your Glitch links back to web.dev. Here's a template you can use:
 
-```
+```text
 # [Your Article Name]
 This example is part of the [name of article](link/to/article) post on [web.dev](https://web.dev).
 ```
 
 Use the license headers for HTML, CSS, and JS files:
 
-```
+```js
 // Copyright 2018 Google LLC.
 // SPDX-License-Identifier: Apache-2.0
 ```

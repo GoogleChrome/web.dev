@@ -45,7 +45,7 @@ The `w` value tells the browser the width of each version:
      srcset="small.jpg 500w,
              medium.jpg 1000w,
              large.jpg 1500w"
-     alt="...">
+     alt="…">
 ```
 
 
@@ -79,14 +79,14 @@ size.
 **For fixed widths, use images saved with the same dimensions as the
 display size.**
 
-## But... what if display size varies?
+## But… what if display size varies?
 
 In a multi-device world, images aren't always displayed at a single fixed size.
 
 Image elements might have a percentage width, or be part of responsive layouts
 where image display sizes change to fit the screen size.
 
-...and what about pixel-hungry devices like Retina displays?
+…and what about pixel-hungry devices like Retina displays?
 
 ## Help the browser choose the right image size
 
@@ -103,7 +103,7 @@ tell the browser the width of each version:
 ``` html/1
 <img src="small.jpg"
      srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
-     alt="...">
+     alt="…">
 ```
 
 The `w` values show the width of each image in pixels. For example,
@@ -206,7 +206,7 @@ displayed at 50% of the viewport width.
 <img src="small.jpg"
      srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w"
      sizes="50vw"
-     alt="...">
+     alt="…">
 ```
 
 You can see this in action at

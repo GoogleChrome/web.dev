@@ -52,7 +52,7 @@ for example,
 (see [&lt;object> elements must have alternate text](https://dequeuniversity.com/rules/axe/3.2/object-alt))
 {% endAside %}
 
-## Tips for writing effective `alt` text:
+## Tips for writing effective `alt` text
 
 - As previously mentioned, describe the information contained in the embedded object.
 - Alternative text should give the intent, purpose, and meaning of the object.

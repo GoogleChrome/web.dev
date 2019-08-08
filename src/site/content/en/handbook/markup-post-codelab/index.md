@@ -17,7 +17,7 @@ This post is about how to set up a new post or codelab so it works correctly on 
     * The folder name will become the URL for your piece, so it should be all lowercase, and words should be separated by hyphens.
     * Keep the name as short as possible while still being meaningful.
     * Codelabs always start with the `codelab-*` prefix. Example:
-      ```
+      ```text
       secure/
       ├── codelab-same-origin-fetch/
       │   └── index.md
@@ -50,7 +50,7 @@ Finally, if you don't want your post to be published as soon as it's done, add t
 ## Authoring tips
 Use relative URLs to link to other posts and codelabs on web.dev.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 `https://web.dev/some-article`
 {% endCompare %}
 
@@ -60,7 +60,7 @@ Use relative URLs to link to other posts and codelabs on web.dev.
 
 Use relative URLs to link to assets for the post or codelab.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 `https://web.dev/some-article/image.png`
 {% endCompare %}
 

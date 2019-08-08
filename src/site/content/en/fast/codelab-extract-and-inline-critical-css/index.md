@@ -156,16 +156,16 @@ Add Critical to your scripts in `package.json`:
 
 ```js/2-2/
 scripts: {
-    "start": "node server.js",
-    "critical": "node critical.js"
-  }
+  "start": "node server.js",
+  "critical": "node critical.js"
+}
 ```
 
 Click **Tools** > **Logs** > **Console**.
 
 To generate critical CSS, in the console, run:
 
-```
+```bash
 npm run critical
 refresh
 ```

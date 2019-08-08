@@ -62,7 +62,8 @@ It's important to note that headers cannot contain comments.
 {% endAside %}
 
 **Sample Request header**
-```
+
+```text
 Accept: text/html
 Cookie: Version=1
 ```
@@ -71,7 +72,8 @@ The above is equivalent to saying "I want to receive HTML in response. Here is
 cookie I have."
 
 **Sample Response header**
-```
+
+```text
 Content-Encoding: gzip
 Cache-Control: no-store
 ```
@@ -147,7 +149,7 @@ fetch('https://cors-demo.glitch.me/', {mode:'cors'})
 
 You should see an error saying:
 
-```
+```bash
 request has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header
 is present on the requested resource.
 ```
@@ -185,7 +187,7 @@ fetch('https://example.com', {
 `Access-Control-Allow-Origin` must be set to a specific origin (no wildcard
 using `*`) and must set `Access-Control-Allow-Credentials` to `true`.
 
-```
+```text
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: https://example.com
 Access-Control-Allow-Credentials: true
@@ -207,7 +209,7 @@ The CORS specification defines a **complex request** as
 Browsers create a preflight request if it is needed. It's an `OPTIONS` request
 like below and is sent before the actual request message.
 
-```
+```text
 OPTIONS /data HTTP/1.1
 Origin: https://example.com
 Access-Control-Request-Method: DELETE
@@ -216,7 +218,7 @@ Access-Control-Request-Method: DELETE
 On the server side, an application needs to respond to the preflight request
 with information about the methods the application accepts from this origin.
 
-```
+```text
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: https://example.com
 Access-Control-Allow-Methods: GET,DELETE,HEAD,OPTIONS

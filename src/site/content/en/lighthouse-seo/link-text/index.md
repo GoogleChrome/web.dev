@@ -43,7 +43,7 @@ Replace generic descriptions, such as `click here` in the example below:
 <p>To see all of our basketball videos, <a href="videos.html">click here</a>.</p>
 ```
 
-...with specific descriptions, such as `basketball videos` in the example below:
+…with specific descriptions, such as `basketball videos` in the example below:
 
 ```html
 <p>Check out all of our <a href="videos.html">basketball videos</a>.</p>
@@ -53,7 +53,7 @@ In general,
 the link text should clearly indicate to users what type of content they'll get
 if they click the link.
 
-Learn more in [Add descriptive link text ](/write-descriptive-text#add-descriptive-link-text).
+Learn more in [Add descriptive link text](/write-descriptive-text#add-descriptive-link-text).
 
 ## Link text guidelines
 

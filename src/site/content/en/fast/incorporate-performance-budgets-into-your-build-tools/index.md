@@ -19,7 +19,7 @@ how to choose one that best fits your needs and current setup. 🕵️‍♀️
 
 ## Lighthouse performance budgets
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an auditing tool that tests sites in a few key areas — performance, accessibility, best practices and how well your site performs as a progressive web application.
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an auditing tool that tests sites in a few key areas—performance, accessibility, best practices and how well your site performs as a progressive web application.
 
 The [command line version](https://developers.google.com/web/tools/lighthouse/#cli) of Lighthouse (v5+) supports setting [performance budgets](https://developers.google.com/web/tools/lighthouse/audits/budgets) based on:
 
@@ -50,7 +50,7 @@ Budgets are set in a JSON file and after defining them the new "Over Budget" col
 
 [Webpack](https://developers.google.com/web/fundamentals/performance/webpack/) is a powerful build tool for optimizing how your code is delivered to the users. It also supports setting performance budgets based on **asset size**.
 
-Turn on [performance hints](https://webpack.js.org/configuration/performance/) in `webpack.config.js` to get command line warnings or errors when your bundle size grows over the limit. It’s a great way to stay mindful about asset sizes throughout the development.
+Turn on [performance hints](https://webpack.js.org/configuration/performance/) in `webpack.config.js` to get command line warnings or errors when your bundle size grows over the limit. It's a great way to stay mindful about asset sizes throughout the development.
 
 After the build step, webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.
 
@@ -91,7 +91,7 @@ Compressed asset sizes affect the transfer time, which is very important on slow
 
 Run [bundlesize CLI](https://github.com/siddharthkp/bundlesize#cli) by specifying a threshold and the file that you want to test.
 
-```
+```bash
 bundlesize -f "dist/bundle.js" -s 170kB
 ```
 
@@ -113,7 +113,7 @@ Bundlesize outputs color-coded test results in one line.
 
 ### Bundlesize for CI
 
-You’ll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request is not merged.** It works for pull requests on GitHub with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
+You'll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request is not merged.** It works for pull requests on GitHub with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
 
 <figure class="w-figure">
   <img class="screenshot" src="./bundlesize-status.jpg" alt="Bundlesize check status on Github">
@@ -136,7 +136,7 @@ By default, **it tests gzipped asset sizes**. You can use the compression option
   </figcaption>
 </figure>
 
-[Lighthouse Bot](https://github.com/ebidel/lighthouse-ci) integrates with Travis CI and enforces budgets based on any of the five Lighthouse audit categories. For example, a budget of 100 for your Lighthouse performance score. It’s sometimes simpler to keep an eye on a single number than individual asset budgets and Lighthouse scores take many things into account.
+[Lighthouse Bot](https://github.com/ebidel/lighthouse-ci) integrates with Travis CI and enforces budgets based on any of the five Lighthouse audit categories. For example, a budget of 100 for your Lighthouse performance score. It's sometimes simpler to keep an eye on a single number than individual asset budgets and Lighthouse scores take many things into account.
 
 <figure class="w-figure">
   <img class="screenshot" src="./lighthouse-scores.png" alt="Lighthouse scores 💯">
@@ -153,7 +153,7 @@ after_success:
   - npm run lh -- --perf=96 https://staging.example.com # Run Lighthouse test
 </pre>
 
-If the scores for a pull request on GitHub fall below the threshold you’ve set, **Lighthouse Bot can prevent pull request from being merged**. ⛔
+If the scores for a pull request on GitHub fall below the threshold you've set, **Lighthouse Bot can prevent pull request from being merged**. ⛔
 
 <figure class="w-figure">
   <img class="screenshot" src="./lighthouse-check.png" alt="Lighthouse Bot check status on Github">

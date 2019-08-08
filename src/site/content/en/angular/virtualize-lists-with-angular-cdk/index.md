@@ -44,7 +44,7 @@ The rest of this post walks through how to set up basic virtual scrolling. You c
 ## Setting up virtual scrolling
 First make sure you've installed `@angular/cdk` using your favorite package manager. To install it using npm run this command in the terminal:
 
-```
+```bash
 npm install --save @angular/cdk
 ```
 

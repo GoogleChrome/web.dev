@@ -58,7 +58,7 @@ application.
 create pre-rendered HTML files of different routes in your application. To
 begin, install it as a development dependency:
 
-```
+```bash
 npm install --save-dev react-snap
 ```
 

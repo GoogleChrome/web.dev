@@ -74,7 +74,7 @@ The [quicklink](https://github.com/GoogleChromeLabs/quicklink) library provides 
 
 You can add quicklink to an Angular app by using the [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink) package. Start by installing the package from npm:
 
-```
+```bash
 npm install --save ngx-quicklink
 ```
 

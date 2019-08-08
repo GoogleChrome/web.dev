@@ -24,21 +24,21 @@ proposal.
 
 ## Building the site 🏗
 
-### Clone the repo.
+### Clone the repo
 
-```
+```bash
 git clone https://github.com/GoogleChrome/web.dev.git
 ```
 
-### Install dependencies.
+### Install dependencies
 
-```
+```bash
 npm ci
 ```
 
-### Start a local server to preview the site.
+### Start a local server to preview the site
 
-```
+```bash
 npm run dev
 ```
 

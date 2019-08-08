@@ -26,7 +26,7 @@ to the DevTools Console and includes them in the Lighthouse repot as warnings.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## How to remove deprecated APIs.
+## How to remove deprecated APIs
 
 Go to
 [Chrome Platform Status](https://www.chromestatus.com/features#deprecated) and

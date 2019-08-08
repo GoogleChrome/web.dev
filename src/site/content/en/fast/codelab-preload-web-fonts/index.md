@@ -33,7 +33,7 @@ Here is the sequence of the resources fetched in the application:
 
 <img class="w-screenshot" src="./network-before-preload.png" alt="Webfonts are lazy loaded.">
 
-## Preloading Web fonts.
+## Preloading Web fonts
 In order to avoid FOUT, you can preload web fonts that are required immediately. Add the `Link` element for this application at the head of the document:
 
 ```html

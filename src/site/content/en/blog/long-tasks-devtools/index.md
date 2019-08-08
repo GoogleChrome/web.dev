@@ -33,11 +33,11 @@ A [Long Task](https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API) i
 
 While a web page is loading, Long Tasks can tie up the main thread and make the page unresponsive to user input even if it looks ready. Clicks and taps often don't work because event listeners, click handlers etc have not yet been attached.
 
-CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms?[ The RAIL model](https://developers.google.com/web/fundamentals/performance/rail) suggests you process user input events in[ 50ms](https://developers.google.com/web/fundamentals/performance/rail#response) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
+CPU-heavy Long Tasks occur due to complex work that takes longer than 50ms. Why 50ms? [The RAIL model](https://developers.google.com/web/fundamentals/performance/rail) suggests you process user input events in [50ms](https://developers.google.com/web/fundamentals/performance/rail#response) to ensure a visible response within 100ms. If you don't, the connection between action and reaction is broken.
 
 ## Are there Long Tasks in my page that could delay interactivity?
 
-Until now, you've needed to manually look for "long yellow blocks" of script over 50ms long in[ Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) or use the[ Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) to figure out what tasks were delaying interactivity. This could be a little cumbersome.
+Until now, you've needed to manually look for "long yellow blocks" of script over 50ms long in [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) or use the [Long Tasks API](https://calendar.perfplanet.com/2017/tracking-cpu-with-long-tasks-api/) to figure out what tasks were delaying interactivity. This could be a little cumbersome.
 
 <img
 class="w-screenshot" sizes="(max-width: 1400px) 100vw, 1400px"

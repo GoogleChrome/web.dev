@@ -34,7 +34,7 @@ You can store that preference in a cookie, set it to expire in a month
 (2,600,000 seconds), and only send it over HTTPS. That header would look like
 this:
 
-```
+```text
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
@@ -50,7 +50,7 @@ When your reader views a page that meets those requirements, i.e. they're on a
 secure connection and the cookie is less than a month old, then their browser
 will send this header in its request:
 
-```
+```text
 Cookie: promo_shown=1
 ```
 
@@ -67,7 +67,7 @@ You can also add and read the cookies available to that site in JavaScript using
 override a cookie with that key. For example, you can try the following in your
 browser's JavaScript console:
 
-```
+```text
 > document.cookie = "promo_shown=1; Max-Age=2600000; Secure"
 < "promo_shown=1; Max-Age=2600000; Secure"
 ```
@@ -75,7 +75,7 @@ browser's JavaScript console:
 Reading `document.cookie` will output all the cookies accessible in the current
 context, with each cookie separated by a semicolon:
 
-```
+```text
 > document.cookie;
 < "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
@@ -191,7 +191,7 @@ first-party context. In user terms, the cookie will only be sent if the site for
 the cookie matches the site currently shown in the browser's URL bar. So, if the
 `promo_shown` cookie is set as follows:
 
-```
+```text
 Set-Cookie: promo_shown=1; SameSite=Strict
 ```
 
@@ -217,7 +217,7 @@ the cat directly and provide a link through to your original article.
 
 If the cookie has been set as so:
 
-```
+```text
 Set-Cookie: promo_shown=1; SameSite=Lax
 ```
 
@@ -302,14 +302,14 @@ Tech Preview now. You can track their progress in the
 
 ### Behavior with `same-site-by-default-cookies` enabled
 
-```
+```text
 Set-Cookie: promo_shown=1
 ```
 
 {% Compare 'worse', 'No attribute set' %} If you send a cookie without any
 `SameSite` attribute specified. {% endCompare %}
 
-```
+```text
 Set-Cookie: promo_shown=1; SameSite=Lax
 ```
 
@@ -318,14 +318,14 @@ as if `SameSite=Lax` was specified. {% endCompare %}
 
 ### Behavior with `cookies-without-same-site-must-be-secure` enabled
 
-```
+```text
 Set-Cookie: widget_session=abc123; SameSite=None
 ```
 
 {% Compare 'worse', 'Rejected' %} Setting a cookie without `Secure` **will be
 rejected**. {% endCompare %}
 
-```
+```text
 Set-Cookie: widget_session=abc123; SameSite=None; Secure
 ```
 

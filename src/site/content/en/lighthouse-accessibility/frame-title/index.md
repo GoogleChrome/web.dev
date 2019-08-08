@@ -36,7 +36,7 @@ For example:
 
 Learn more in [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.2/frame-title).
 
-## Tips for creating descriptive frame titles:
+## Tips for creating descriptive frame titles
 
 - As previously mentioned, give the enclosed document a title element with content identical to title attribute.
 - Replace placeholder titles such as "untitled frame" with a more appropriate phrase.

@@ -47,7 +47,7 @@ Learn more in
 and [Documents must contain a title element to aid in navigation](https://dequeuniversity.com/rules/axe/3.2/document-title).
 
 
-## Tips for creating great titles:
+## Tips for creating great titles
 
 - Make them descriptive and concise. Avoid vague descriptions like Home.
 - Avoid keyword stuffing.

@@ -41,19 +41,20 @@ Asides can contain links and formatted text, including code.
 There are several kinds of asides, each for a different purpose.
 
 ### Note asides
-```
+
+```text
 {% raw %}{% Aside %}
 Use the note aside to provide supplemental information.
 {% endAside %}{% endraw %}
-
 ```
+
 {% Aside %}
 Use the note aside to provide supplemental information.
 {% endAside %}
 
 ### Caution asides
 
-```
+```text
 {% raw %}{% Aside 'caution' %}
 Use the caution aside to indicate a potential pitfall or complication.
 {% endAside %}{% endraw %}
@@ -64,7 +65,8 @@ Use the caution aside to indicate a potential pitfall or complication.
 {% endAside %}
 
 ### Warning asides
-```
+
+```text
 {% raw %}{% Aside 'warning' %}
 The warning aside is stronger than a caution aside; use it to tell the reader
 not to do something.
@@ -77,7 +79,8 @@ not to do something.
 {% endAside %}
 
 ### Success asides
-```
+
+```text
 {% raw %}{% Aside 'success' %}
 Use the success aside to describe a successful action or an error-free status.
 {% endAside %}{% endraw %}
@@ -88,7 +91,8 @@ Use the success aside to describe a successful action or an error-free status.
 {% endAside %}
 
 ### Objective asides
-```
+
+```text
 {% raw %}{% Aside 'objective' %}
 Use the objective aside to define the goal of a process described in the body
 copy.
@@ -101,7 +105,8 @@ copy.
 {% endAside %}
 
 ### Gotcha asides
-```
+
+```text
 {% raw %}{% Aside 'gotchas' %}
 Use the gotcha aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
@@ -114,22 +119,24 @@ without specialized knowledge of the topic.
 {% endAside %}
 
 ### Key-term asides
-```
+
+```text
 {% raw %}{% Aside 'key-term' %}
 Use the key-term aside to define a term that's essential to understanding an
 idea in the body copy. Key-term asides should be a single sentence that
-includes the term in italics. For example, "A _portal_ is..."
+includes the term in italics. For example, "A _portal_ is…"
 {% endAside %}{% endraw %}
 ```
 
 {% Aside 'key-term' %}
 Use the key-term aside to define a term that's essential to understanding an
 idea in the body copy. Key-term asides should be a single sentence that
-includes the term in italics. For example, "A _portal_ is..."
+includes the term in italics. For example, "A _portal_ is…"
 {% endAside %}
 
 ### Codelab asides
-```
+
+```text
 {% raw %}{% Aside 'codelab' %}
   Use the codelab aside to link to an associated codelab.
 {% endAside %}{% endraw %}
@@ -213,7 +220,7 @@ See the [Code](/handbook/markup-code) post.
 
 ## Compare
 
-```
+```text
 Bad code example
 ```
 
@@ -223,7 +230,7 @@ sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
 
-```
+```text
 Good code example
 ```
 
@@ -235,7 +242,7 @@ at.
 
 ### Compare with custom labels
 
-```
+```text
 Bad code example
 ```
 
@@ -245,7 +252,7 @@ sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
 
-```
+```text
 Good code example
 ```
 
