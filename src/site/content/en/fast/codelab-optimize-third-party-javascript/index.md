@@ -56,7 +56,7 @@ When you run an audit on your machine, [the exact results may vary](https://deve
 
 ## Defer third-party JavaScript
 
-The **Eliminate render-blocking resources** audit identified that you can save approximately 1.6 seconds by deferring a script coming from d3js.org.
+The **Eliminate render-blocking resources** audit identified that you can save some time by deferring a script coming from d3js.org.
 
 ![Screenshot of Eliminate render-blocking resources audit with the d3.v3.min.js script highlighted.](render-blocking.png)
 
