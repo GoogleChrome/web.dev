@@ -131,7 +131,7 @@ class MyCounter extends HTMLElement {
 
   … 
 }
-customElements.register('my-counter', MyCounter);
+customElements.define('my-counter', MyCounter);
 ```
 
 Once registered, you can use this element wherever you'd use a native form control:
