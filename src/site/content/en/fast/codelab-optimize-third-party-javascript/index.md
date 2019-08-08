@@ -226,7 +226,7 @@ In this example, the element is loaded when it enters the viewport, which you ca
 
 ## Preconnect to required origins
 
-You’ve deferred non-critical Javascript and lazy-loaded the YouTube requests, so now it’s time to optimize the remaining third-party content.
+You've deferred non-critical Javascript and lazy-loaded the YouTube requests, so now it's time to optimize the remaining third-party content.
 
 Adding the `rel=preconnect` attribute to a link tells the browser to establish a connection to a domain before the request for that resource is made. This attribute is best used on origins that provide resources you are certain the page needs. 
 
