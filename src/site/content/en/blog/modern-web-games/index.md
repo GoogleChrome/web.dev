@@ -2,7 +2,7 @@
 title: Ready Player Web
 subhead: Building games for the modern web.
 authors:
-  - tcmg
+  - tomgreenaway
 date: 2019-08-08
 hero: hero.jpg
 hero_position: center
