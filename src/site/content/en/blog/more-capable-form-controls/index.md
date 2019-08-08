@@ -47,7 +47,7 @@ The `formdata` event is a low-level API that lets any JavaScript code participat
 1.  When a user clicks the submit button, the form fires a `formdata` event, which includes a <code>[FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)</code> object that holds all of the data being submitted.
 1.  Each <code>formdata</code> listener gets a chance to add to or modify the data before the form is submitted. 
 
-Here's an example of sending a single value in an <code>formdata</code> event listener:
+Here's an example of sending a single value in an `formdata` event listener:
 
 ```js
 const form = document.querySelector('form');
