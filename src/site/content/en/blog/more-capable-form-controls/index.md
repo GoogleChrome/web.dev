@@ -10,7 +10,7 @@ hero: hero.jpg
 # hero_position: bottom
 alt: DJ mixer controls.
 description: |
-  This post describes some new web platform features that make it easier to build 
+  New web platform features make it easier to build 
   custom elements that work like native form controls. 
 tags:
   - post # post is a required tag for the article to show up in the blog.
@@ -21,7 +21,8 @@ tags:
 
 Many developers build custom form controls, either to provide controls that aren't built in to the browser, or to customize the look and feel beyond what's possible with the native form controls. 
 
-However, if can be difficult to replicate the features of built-in HTML form controls. For example, when you add an `<input>` element to a form:
+However, if can be difficult to replicate the features of built-in HTML form controls. For example, when you add an `<input>` element to a form,
+several things happen automatically:
 
 *   The input is automatically added to the form's list of controls.
 *   The input's value is automatically submitted with the form.
@@ -59,7 +60,7 @@ form.addEventListener('formdata', ({formData}) => {
 });
 ```
 
-Try this out using our example on Glitch. Be sure to run it on Chrome 77+ (Canary or Beta) to see the API in action.
+Try this out using our example on Glitch. Be sure to run it on Chrome 77 or later to see the API in action.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
@@ -89,12 +90,13 @@ That's a lot of features! This article won't touch on all of them, but will desc
 
 ### Defining a form-associated custom element
 
-Defining a form-associated custom element requires two additions to your custom element:
+To turn a custom element into a form-associated custom element requires a few extra steps:
 
 *   Add a static `formAssociated` property to your custom element class. This tells the browser to treat the element like a form control.
 *   Call the `attachInternals()` method on the element to get access to extra methods and properties for form controls, like `setFormValue()` and `setValidity()`.
+*   Add the common properties and methods supported by form controls, like `name`, `value`, and `validity`. 
 
-Here's how those two items fit into a basic custom element definition:
+Here's how those items fit into a basic custom element definition:
 
 ```js
 // Form-associated custom elements must be autonomous custom elements--
@@ -224,7 +226,7 @@ The type of the first argument depends on how the `setFormValue()` method was ca
 
 ### Restoring form state {: #restoring-form-state }
 
-Under some circumstances—like when navigating back to a page, or restarting the browser, the brower may try to restore the state of a form to the state the user left it in.
+Under some circumstances—like when navigating back to a page, or restarting the browser, the browser may try to restore the form to the state the user left it in.
 
 For a form-associated custom element, the restored state comes from the value(s) you pass to the `setFormValue()` method. You can call the method with a single value parameter, as shown in the [earlier examples](#set-a-value), or with two parameters:
 
@@ -234,7 +236,7 @@ this._internals.setFormValue(value, state);
 
 The `value` represents the submittable value of the control. The optional `state` parameter is an _internal_ representation of the state of the control, which can include data that doesn't get sent to the server. The `state` parameter takes the same types as the `value` parameter—it can be a string, `File`, or `FormData` object.
 
-The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a  palette or an RGB color wheel. The submittable _value_ would  be the selected color in a canonical form, like `"#7fff00"`. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like `"palette/#7fff00"`.  
+The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a palette or an RGB color wheel. The submittable _value_ would be the selected color in a canonical form, like `"#7fff00"`. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like `"palette/#7fff00"`.  
 
 ```js
 this._internals.setFormValue(this._value, 
@@ -257,7 +259,7 @@ formStateRestoreCallback(state, mode) {
 }
 ```
 
-In the case of a simpler control (for example a number input), the value is probably sufficient to restore the control to its previous state. If you omit `state` when calling `setFormValue`, then the value is passed to `formStateRestoreCallback`. 
+In the case of a simpler control (for example a number input), the value is probably sufficient to restore the control to its previous state. If you omit `state` when calling `setFormValue()`, then the value is passed to `formStateRestoreCallback()`. 
 
 ```js
 formStateRestoreCallback(state, mode) {
@@ -269,7 +271,7 @@ formStateRestoreCallback(state, mode) {
 ### A working example
 
 The following example puts together many of the features of form-associated custom elements.
-Be sure to run it on Chrome 77+ (Canary or Beta) to see the API in action.
+Be sure to run it on Chrome 77 or later to see the API in action.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
