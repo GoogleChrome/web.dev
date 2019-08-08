@@ -1,6 +1,6 @@
 ---
 title: "More capable form controls"
-subhead: Build custom elements that work like native form controls 
+subhead: With a new event, and custom elements APIs, participating in forms just got a lot easier. 
 authors:
   - arthurevans
 date: 2019-08-08
