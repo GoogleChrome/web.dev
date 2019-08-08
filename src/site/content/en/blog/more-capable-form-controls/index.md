@@ -130,7 +130,7 @@ class MyCounter extends HTMLElement {
   checkValidity() { return this.internals_.checkValidity(); }
   reportValidity() {return this.internals_.reportValidity(); }
 
-  ... 
+  … 
 }
 customElements.register('my-counter', MyCounter);
 ```
