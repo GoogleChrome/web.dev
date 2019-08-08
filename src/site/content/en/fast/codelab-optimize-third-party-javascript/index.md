@@ -139,7 +139,7 @@ An iframe without a `src` simply won't load.
 
 ### Step 2: Use Intersection Observer to lazy-load the video
 
-To load the video when a user scrolls to it you need to know when that happens. That’s where the Intersection Observer API steps in. The Intersection Observer API lets you register a callback function that's executed whenever an element you want to track enters or exits the viewport.
+To load the video when a user scrolls to it you need to know when that happens. That's where the Intersection Observer API steps in. The Intersection Observer API lets you register a callback function that's executed whenever an element you want to track enters or exits the viewport.
 
 To get started, create a new file and name it `lazy-load.js`:
 
