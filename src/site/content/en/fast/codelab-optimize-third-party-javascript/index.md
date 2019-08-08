@@ -247,6 +247,6 @@ Here's the state of the page [after optimization](https://glitch.com/~3rd-party-
 ![Lighthouse audit showing 1 second FCP and the performance score of 99.](success.png)
 
 {% Aside 'success' %}
-You should see that FCP and the performance score have improved! 🎉 The page now loads faster, consumes less data, and all without negatively affecting the user-experience. 🤝
+You should see that FCP and the performance score have improved! 🎉 The page now loads faster and consumes less data⁠—and all without negatively affecting the user-experience. 🤝
 {% endAside %}
 
