@@ -180,7 +180,6 @@ method on the internals object.
 ```js
 // Assume this is called whenever the internal value is updated
 onUpdateValue() {
-  // 
   if (!this.matches(':disabled') && this.hasAttribute('required') &&
       this._value < 0) {
     this._internals.setValidity({customError: true}, 'Value cannot be negative.');
