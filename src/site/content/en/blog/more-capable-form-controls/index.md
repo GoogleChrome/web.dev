@@ -77,7 +77,7 @@ The event-based API is simple, but it only allows you to interact with the submi
 Native form controls participate in many parts of the form lifecycle besides submission. Form-aware custom elements aim to bridge the gap between custom widgets and native controls. Form-aware custom elements match many of the features of native form elements:
 
 *   When you place a form-associated custom element inside a `<form>`, it's automatically associated with the form, like a native control.
-*   The element can be labeled using a  `<label>` element.
+*   The element can be labeled using a `<label>` element.
 *   The element can set a value that's automatically submitted with the form.
 *   The element can set a flag indicating whether or not it has valid input. If one of the form controls has invalid input, the form can't be submitted.
 *   The element can provide callbacks for various parts of the form lifecycle—such as when the form is disabled or reset to its default state.
