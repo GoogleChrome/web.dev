@@ -60,7 +60,7 @@ The **Eliminate render-blocking resources** audit identified that you can save s
 
 ![Screenshot of Eliminate render-blocking resources audit with the d3.v3.min.js script highlighted.](render-blocking.png)
 
-[D3.js](https://d3js.org/) is a JavaScript library for creating data visualizations. The `script.js` file in the sample app uses D3 utility functions to create the SVG line chart and append it to the page. The order of operations here matters: `script.js` has to run after the document is parsed and the D3 library has loaded, which is why it’s included right before the closing `</body>` tag in `index.html`.
+[D3.js](https://d3js.org/) is a JavaScript library for creating data visualizations. The `script.js` file in the sample app uses D3 utility functions to create the SVG line chart and append it to the page. The order of operations here matters: `script.js` has to run after the document is parsed and the D3 library has loaded, which is why it's included right before the closing `</body>` tag in `index.html`.
 
 However, the D3 script is included in the page's `<head>`, which blocks the parsing of the rest document: 
 
