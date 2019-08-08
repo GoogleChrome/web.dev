@@ -19,7 +19,7 @@ tags:
 
 * Deferring script loading
 
-* Lazy-loading non-critical assets
+* Lazy-loading non-critical resources
 
 * Preconnecting to required origins
 
@@ -31,9 +31,12 @@ The included sample app features a simple web page with three features coming fr
 
 * A social media sharing widget
 
-You'll start by measuring the performance of the app and then apply each technique to improve different aspects of app performance.
+<figure class="w-figure">
+  <img class="w-screenshot" src="./app.png" alt="Screenshot of the page with third-party resources highlighted.">
+  <figcaption class="w-figcaption">Third-party resources in the sample app.</figcaption>
+</figure>
 
-![Screenshot of the page with third-party resources highlighted.](app.png)
+You'll start by measuring the performance of the app and then apply each technique to improve different aspects of app performance.
 
 ## Measure performance
 
@@ -52,7 +55,9 @@ Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) [perform
 
 When you run an audit on your machine, [the exact results may vary](https://developers.google.com/web/tools/lighthouse/variability), but you should notice that the [First Contentful Paint](/first-contentful-paint/) (FCP) time is pretty high, and Lighthouse suggests two opportunities to investigate: **Eliminate render-blocking resources** and **Preconnect to required origins**.
 
-![Screenshot of Lighthouse audit showing 2.4 second FCP and two opportunities: Eliminate render-blocking resources and Preconnect to required origins.](lighthouse-audit.png)
+<figure class="w-figure">
+  <img class="w-screenshot" src="./lighthouse-audit.png" alt="Screenshot of Lighthouse audit showing 2.4 second FCP and two opportunities: Eliminate render-blocking resources and Preconnect to required origins.">
+</figure>
 
 ## Defer third-party JavaScript
 
@@ -64,7 +69,9 @@ The **Eliminate render-blocking resources** audit identified that you can save s
 
 However, the D3 script is included in the page's `<head>`, which blocks the parsing of the rest document: 
 
-![Screenshot of index.html with highlighted script tag in the head.](index.png)
+<figure class="w-figure">
+  <img class="w-screenshot" src="./index.png" alt="Screenshot of index.html with highlighted script tag in the head.">
+</figure>
 
 Two magic attributes can unblock the parser when added to the script tag:
 
