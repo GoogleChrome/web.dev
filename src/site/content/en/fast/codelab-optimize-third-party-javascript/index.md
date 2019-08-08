@@ -163,7 +163,7 @@ observer.observe(element);
 
 `callback` receives a list of [`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) objects and the [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) object itself. Each entry contains a [`target`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/target) element and properties that describe its dimensions, position, the time it entered the viewport, and more. One of the properties of `IntersectionObserverEntry` is [`isIntersecting`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting)—a boolean value that equals `true` when the element enters the viewport.
 
-In this example, the `target` is the `iframe`. The [`isIntersecting`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting) equals `true` when `target` enters the viewport. To see this in action, replace `callback` with the following function: 
+In this example, the `target` is the `iframe`. `isIntersecting` equals `true` when `target` enters the viewport. To see this in action, replace `callback` with the following function: 
 
 ```js/1-7/0
 let observer = new IntersectionObserver(callback);
