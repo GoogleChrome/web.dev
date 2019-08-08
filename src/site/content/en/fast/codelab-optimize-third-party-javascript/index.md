@@ -66,7 +66,7 @@ However, the D3 script is included in the page's `<head>`, which blocks the pars
 
 ![Screenshot of index.html with highlighted script tag in the head.](index.png)
 
-Two magic words that can unblock the parser are: 
+Two magic attributes can unblock the parser when added to the script tag:
 
 * [`async`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async) ensures that scripts download in the background and execute **at the first opportunity** after they finish downloading.
 
