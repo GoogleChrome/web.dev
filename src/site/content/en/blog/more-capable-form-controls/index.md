@@ -21,15 +21,14 @@ tags:
 
 Many developers build custom form controls, either to provide controls that aren't built in to the browser, or to customize the look and feel beyond what's possible with the native form controls. 
 
-However, if can be difficult to replicate the features of built-in HTML form controls. For example, when you add an `<input>` element to a form,
-several things happen automatically:
+However, if can be difficult to replicate the features of built-in HTML form controls. Consider some of the features an `<input>` element gets automatically when you add it to a form:
 
 *   The input is automatically added to the form's list of controls.
 *   The input's value is automatically submitted with the form.
 *   The input participates in [form validation](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation). You can style the input using the `:valid` and `:invalid` pseudoclasses.
 *   The input is notified when the form is reset, when the form is reloaded, or when the browser tries to autofill form entries.
 
-Custom form controls typically have few of these features. Developers make up for this by adding a hidden `<input>` to a form to add data to the form.
+Custom form controls typically have few of these features. Developers can work around some of the limitations in JavaScript, like adding a hidden `<input>` to a form to participate in form submission. But other features just can't be replicated in JavaScript alone.
 
 Two new web features make it easier to build custom form controls, and remove the limitations of current custom controls:
 
