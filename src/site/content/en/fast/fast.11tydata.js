@@ -9,12 +9,12 @@ module.exports = {
     title: 'Fast load times',
     updated: 'May 24, 2018',
     description: 'Guarantee your site loads quickly to avoid user drop off.',
-    overview: `When you're building a modern web experience, it's important to 
+    overview: `When you're building a modern web experience, it's important to
     measure, optimize, and monitor if you're to get fast and stay fast.
     Performance plays a significant role in the success of any online venture,
     as high performing sites engage and retain users better than poorly
     performing ones.
-    
+
     Sites should focus on optimizing for user-centric happiness metrics. Tools
     like Lighthouse (baked into web.dev!) highlight these metrics and help you
     take the right steps toward improving your performance. To "stay fast", set
@@ -51,6 +51,7 @@ module.exports = {
           'serve-responsive-images',
           'serve-images-with-correct-dimensions',
           'serve-images-webp',
+          'image-cdns',
         ],
       },
       {
@@ -70,6 +71,14 @@ module.exports = {
           'defer-non-critical-css',
           'minify-css',
           'extract-critical-css',
+        ],
+      },
+      {
+        title: 'Optimize your third-party resources',
+        pathItems: [
+          'third-party-javascript',
+          'identify-slow-third-party-javascript',
+          'efficiently-load-third-party-javascript',
         ],
       },
       {

@@ -28,8 +28,6 @@ To understand how Angular's change detection works, let's look at a sample app!
 
 _You can find the code for the app in [this GitHub repository](https://github.com/mgechev/change-detection-web-dev)._
 
-
-
 The app lists employees from two departments in a company—sales and R&D—and has two components:
 
 * `AppComponent`, which is the root component of the app, and
@@ -126,14 +124,7 @@ With the two instances of `EmployeeListComponent`, the app forms the following c
 
 When the user begins entering the name of a new employee in the input box in an`EmployeeListComponent`, Angular triggers change detection for the entire component tree starting from `AppComponent`. This means that while the user is typing in the text input, Angular is repeatedly recalculating the numeric values associated with each employee to verify that they haven't changed since the last check.
 
-To see how slow this can be, try entering the name of a new employee in the app below:
-
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://stackblitz.com/github/mgechev/change-detection-web-dev?embed=1&file=src/app/app.component.ts&view=preview"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+To see how slow this can be, open the [non-optimized version of the project on StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev) and try entering an employee name.
 
 You can verify that the slowdown comes from the `fibonacci` function by setting up the [example project](https://github.com/mgechev/change-detection-web-dev) and opening the **Performance** tab of Chrome DevTools.
 
@@ -169,14 +160,7 @@ _You can find this optimization applied to the original application [here](https
 
 You can read more about the `OnPush` change detection strategy in the [official Angular documentation](https://angular.io/api/core/ChangeDetectionStrategy).
 
-To see the effect of this optimization, enter a new employee in the application below:
-
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://stackblitz.com/github/mgechev/change-detection-web-dev/tree/onpush?embed=1&file=src/app/app.component.ts&view=preview"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+To see the effect of this optimization, enter a new employee in the [application on StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev/tree/onpush).
 
 ## Using pure pipes
 
@@ -224,12 +208,7 @@ That's it! Now when the user types in the text input associated with any departm
 
 In the app below you can see how much smoother the typing is!
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://stackblitz.com/github/mgechev/change-detection-web-dev/tree/pure-pipe?embed=1&file=src/app/app.component.ts&view=preview"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+To see the effect of the last optimization [try this example on StackBlitz](https://stackblitz.com/github/mgechev/change-detection-web-dev/tree/pure-pipe).
 
 _The code with the pure pipe optimization of the original application is available [here](https://github.com/mgechev/change-detection-web-dev/tree/pure-pipe)._
 

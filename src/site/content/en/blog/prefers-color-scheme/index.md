@@ -187,7 +187,7 @@ For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle swi
 and on iOS&nbsp;13, you can change the *Appearance* in the *Display &amp; Brightness*
 section of the settings ([screenshot](ios.jpg)).
 
-<h2 class="w-clearfix">The <code>prefers-color-scheme</code> media query</h2>
+<h2 id="the-prefers-color-scheme-media-query" class="w-clearfix">The <code>prefers-color-scheme</code> media query</h2>
 
 One last bit of theory before I get going.
 [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)

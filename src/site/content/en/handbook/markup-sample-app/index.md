@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Sample apps
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create sample apps for web.dev using Glitch.

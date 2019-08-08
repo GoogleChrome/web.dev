@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Voice
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   A description of the primary voice for web.dev writing.

@@ -2,6 +2,8 @@
 layout: layout
 ---
 
+{% set topics = path.topics | removeDrafts %}
+
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <main class="path-landing-page">
@@ -25,7 +27,7 @@ layout: layout
     <div class="w-path-intro__learn">
       <h2 class="w-headline--three no-link">What you'll learn</h2>
       <ul class="w-icon-list">
-        {% for topic in path.topics %}
+        {% for topic in topics %}
           <li class="w-icon-list__item w-icon-list__item--check">
             {{ topic.title }}
           </li>
@@ -37,7 +39,7 @@ layout: layout
   <hr>
 
   {# <section class="w-grid">
-    {% for topic in path.topics %}
+    {% for topic in topics %}
     <h2 id="{{ topic.title | slug }}" class="no-link w-path-heading w-headline--three">
       {{ topic.title }}
       <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
@@ -53,23 +55,8 @@ layout: layout
 
   <section class="w-layout-container">
     <div class="w-numbered-headers">
-      {#
-        Check to see if the only item within a topic is a draft post.
-        If so, don't render the topic heading and skip the post.
-      #}
-      {% for topic in path.topics %}
-        {% if topic.pathItems.length === 1 %}
-          {% set item = topic.pathItems[0] | findBySlug %}
-          {% if item.data.draft %}
-            {# noop #}
-          {% else %}
-            {# render topic #}
-            {% include 'partials/topic.njk' %}
-          {% endif %}
-        {% else %}
-          {# render topic #}
-          {% include 'partials/topic.njk' %}
-        {% endif %}
+      {% for topic in topics %}
+        {% include 'partials/topic.njk' %}
       {% endfor %}
     </div>
   </section>

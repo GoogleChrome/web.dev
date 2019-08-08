@@ -1,0 +1,7 @@
+{
+  "plugins": [
+    "lint",
+    "./tools/linting/no-dash-spaces.js",
+    "./tools/linting/no-smart-quotes.js"
+  ]
+}

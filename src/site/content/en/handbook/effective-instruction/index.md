@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Write effective instruction
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Strategies for writing effective instruction on web.dev, especially for adult learners.
