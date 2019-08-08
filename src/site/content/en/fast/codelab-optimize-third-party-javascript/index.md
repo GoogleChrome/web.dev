@@ -37,7 +37,9 @@ You'll start by measuring the performance of the app and then apply each techniq
 
 ## Measure performance
 
-{% Instruction 'preview' %}
+First open the sample app in the fullscreen view:
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'preview', 'ol' %}
 
 Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) [performance audit](/lighthouse-performance) on the page to establish baseline performance:
 
