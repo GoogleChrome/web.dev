@@ -144,7 +144,7 @@ To get started, create a new file and name it `lazy-load.js`:
 
 {% Instruction 'create' %}
 
-Create a new `IntersectionObserver` and pass it a callback function to run:
+In `lazy-load.js`, create a new `IntersectionObserver` and pass it a callback function to run:
 
 ```js
 // create a new Intersection Observer
