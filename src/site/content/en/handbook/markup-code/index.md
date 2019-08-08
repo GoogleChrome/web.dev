@@ -44,7 +44,7 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 ````
 
-For terminal commands set the language to `bash` and omit leading `$` signs:
+For terminal commands, set the language to `bash` and omit leading `$` signs:
 
 ````markdown
 ```bash
