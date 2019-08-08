@@ -17,6 +17,12 @@ Here's how to spell, punctuate, and capitalize words and phrases commonly used o
 * JPEG image
 * lazy-load
 * npm
+* one-way trip (noun)
+* one-way-trip (adj; avoid if possible)
+* origin trial
+* preconnect
+* round trip (noun)
+* round-trip (adj)
 * web
 * web page
 * web.dev
