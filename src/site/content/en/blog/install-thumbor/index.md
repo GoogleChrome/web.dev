@@ -7,14 +7,14 @@ date: 2019-07-29
 hero: hero.jpg
 alt: A pile of photos.
 description: |
-  Instructions on how to install Thumbor is an open-source image CDN and can be used for free to resize, compress, and transform images.
+  Instructions on how to install Thumbor. Thumbor is an open-source image CDN and can be used for free to resize, compress, and transform images.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
   - images
 ---
 
-Image CDNs make it easy to dynamically optimize the aesthetics and performance of your images. Unlike most image CDNs, Thumbor is  open-source and can be used for free to resize, compress, and transform images. It's suitable for production use; [Wikipedia](https://wikitech.wikimedia.org/wiki/Thumbor) and [Square](https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87) both use Thumbor.
+Image CDNs make it easy to dynamically optimize the aesthetics and performance of your images. Unlike most image CDNs, [Thumbor](http://thumbor.org/) is open-source and can be used for free to resize, compress, and transform images. It's suitable for production use; [Wikipedia](https://wikitech.wikimedia.org/wiki/Thumbor) and [Square](https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87) both use Thumbor.
 
 This guide explains how to install Thumbor on your own server. Once installed, you’ll be able to use Thumbor as an API for transforming your images.
 
@@ -37,7 +37,7 @@ Update and upgrade Ubuntu's already-installed packages:
 sudo apt-get update -y && sudo apt-get upgrade -y
 ```
 
-Install pip, the package manager for Python. Later you'll install Thumbor with pip.
+Install `pip`, the package manager for Python. Later you'll install Thumbor with `pip`.
 
 ```bash
 sudo apt-get install -y python-pip
@@ -68,7 +68,7 @@ Install Thumbor using pip.
 sudo pip install thumbor
 ```
 
-Note: Many Python developers use [virtualenv](https://pypi.org/project/virtualenv/) to manage their packages. For the sake of simplicity, these instructions do not use virtualenv. If you are installing Thumbor in a standalone environment, virtualenv is not necessary. If you choose to use virtualenv, note that Thumbor requires Python 2.7 and will not work with newer versions of pip (e.g. these instructions use pip 8.1.1).
+Note: Many Python developers use [virtualenv](https://pypi.org/project/virtualenv/) to manage their packages. For the sake of simplicity, these instructions do not use `virtualenv`. If you are installing Thumbor in a standalone environment, `virtualenv` is not necessary. If you choose to use `virtualenv`, note that Thumbor requires Python 2.7 and will not work with newer versions of `pip` (e.g. these instructions use `pip` 8.1.1).
 
 If you’ve successfully installed Thumbor, this should work:
 
@@ -111,20 +111,20 @@ You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has 
 
 ## Use Thumbor
 
-You’ve successfully installed Thumbor. Next, learn about using Thumbor in the [Use Thumbor to Optimize Images](https://web.dev/use-thumbor-to-optimize-images) codelab.
+You’ve successfully installed Thumbor. Next, learn about using Thumbor in the [Use Thumbor to optimize images](https://web.dev/use-thumbor-to-optimize-images) codelab.
 
-If you are using this guide to set up Thumbor in production, you may also want to check out the optional section below on systemd. 
+If you are using this guide to set up Thumbor in production, you may also want to check out the optional section below on `systemd`. 
 
 
 ## Appendix: Configuring Systemd
 
 This step explains how to make sure that the Thumbor process keeps running, even after the VM has been restarted. This step is important for production sites, but optional if you’re just playing around with Thumbor.
 
-[Systemd](https://www.freedesktop.org/software/systemd/man/systemd.html) is the “system and service manager” for Linux operating systems. Systemd makes it easy to configure when services (processes) run.
+[Systemd](https://www.freedesktop.org/software/systemd/man/systemd.html) is the “system and service manager” for Linux operating systems. `systemd` makes it easy to configure when services (processes) run.
 
-We will be configuring systemd to automatically start Thumbor on VM boot. If the VM is restarted, the Thumbor process will automatically restart as well. This is much more reliable than relying on user intervention to start Thumbor.
+You will be configuring `systemd` to automatically start Thumbor on VM boot. If the VM is restarted, the Thumbor process will automatically restart as well. This is much more reliable than relying on user intervention to start Thumbor.
 
-Navigate to the `/lib/systemd/system` directory. This directory contains the service files for systemd.
+Navigate to the `/lib/systemd/system` directory. This directory contains the service files for `systemd`.
 
 ```bash
 cd /lib/systemd/system
@@ -158,7 +158,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-`systemctl` is the utility used to manage systemd. Use the `start` command to start Thumbor.
+`systemctl` is the utility used to manage `systemd`. Use the `start` command to start Thumbor.
 
 ```bash
 sudo systemctl start thumbor.service
@@ -171,13 +171,13 @@ Next, “enable” Thumbor. This means that Thumbor will automatically start on 
 sudo systemctl enable thumbor.service
 ```
 
-Verify that you’ve successfully configured systemd by running the `status` command.
+Verify that you’ve successfully configured `systemd` by running the `status` command.
 
 ```bash
 systemctl status thumbor.service
 ```
 
-If you’ve successfully set up thumbor.service to use systemd, the [status](https://www.freedesktop.org/software/systemd/man/systemctl.html#status%20PATTERN%E2%80%A6%7CPID%E2%80%A6%5D) should show that it is enabled and active. 
+If you’ve successfully set up thumbor.service to use `systemd`, the [status](https://www.freedesktop.org/software/systemd/man/systemctl.html#status%20PATTERN%E2%80%A6%7CPID%E2%80%A6%5D) should show that it is enabled and active.
 
 <figure class="w-figure  w-figure--center">
   <img src="./systemd.jpg" alt="Systemctl displaying the status of Thumbor">
