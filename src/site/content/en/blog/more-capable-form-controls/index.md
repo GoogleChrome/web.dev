@@ -1,6 +1,6 @@
 ---
 title: "More capable form controls"
-subhead: New APIs for form controls
+subhead: Build custom elements that work like native form controls 
 authors:
   - arthurevans
 date: 2019-08-08
@@ -11,7 +11,7 @@ hero: hero.jpg
 alt: DJ mixer controls.
 description: |
   This post describes some new web platform features that make it easier to build 
-  form controls that work like native form controls.
+  custom elements that work like native form controls. 
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - forms
@@ -44,10 +44,10 @@ These two features can be used to create new kinds of controls that work better 
 The `formdata` event is a low-level API that lets any JavaScript code participate in form submission. The mechanism works like this:
 
 1.  You add a `formdata` event listener to the form you want to interact with.
-1.  When a user clicks the submit button, the form fires a `formdata` event, which includes a <code>[FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)</code> object that holds all of the data being submitted.
-1.  Each <code>formdata</code> listener gets a chance to add to or modify the data before the form is submitted. 
+1.  When a user clicks the submit button, the form fires a `formdata` event, which includes a [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object that holds all of the data being submitted.
+1.  Each `formdata` listener gets a chance to add to or modify the data before the form is submitted. 
 
-Here's an example of sending a single value in an <code>formdata</code> event listener:
+Here's an example of sending a single value in a `formdata` event listener:
 
 ```js
 const form = document.querySelector('form');
@@ -77,7 +77,7 @@ The event-based API is simple, but it only allows you to interact with the submi
 Native form controls participate in many parts of the form lifecycle besides submission. Form-aware custom elements aim to bridge the gap between custom widgets and native controls. Form-aware custom elements match many of the features of native form elements:
 
 *   When you place a form-associated custom element inside a `<form>`, it's automatically associated with the form, like a native control.
-*   The element can be labeled using a  `<label>` element.
+*   The element can be labeled using a `<label>` element.
 *   The element can set a value that's automatically submitted with the form.
 *   The element can set a flag indicating whether or not it has valid input. If one of the form controls has invalid input, the form can't be submitted.
 *   The element can provide callbacks for various parts of the form lifecycle—such as when the form is disabled or reset to its default state.
@@ -190,7 +190,7 @@ onUpdateValue() {
     this._internals.setValidity({});
   }
   this.internals.setFormValue(this._value);
-  }
+}
 ```
 
 You can style a form-associated custom element with the `:valid` and `:invalid`
@@ -200,28 +200,28 @@ pseudoclasses, just like a built-in form control.
 
 A form-associated custom element API includes a set of extra lifecycle callbacks to tie in to the form lifecycle. The callbacks are optional: only implement a callback if your element needs to do something at that point in the lifecycle.
 
-*   <strong><code>void formAssociatedCallback(form)</code></strong>
+#### `void formAssociatedCallback(form)`
 
-    Called when the browser associates the element with a form element, or disassociates the element from a form element.
+Called when the browser associates the element with a form element, or disassociates the element from a form element.
 
-*   <strong><code>void formDisabledCallback(disabled)</code></strong>
+#### `void formDisabledCallback(disabled)`
 
-    Called after the `disabled` state of the element changes, either because the `disabled` attribute of this element was added or removed; or because the `disabled` state changed on a `<fieldset>` that's an ancestor of this element. The `disabled` parameter represents the new [disabled state](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-disabled) of the element. The element may, for example, disable elements in its shadow DOM when it is disabled.
+Called after the `disabled` state of the element changes, either because the `disabled` attribute of this element was added or removed; or because the `disabled` state changed on a `<fieldset>` that's an ancestor of this element. The `disabled` parameter represents the new [disabled state](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-disabled) of the element. The element may, for example, disable elements in its shadow DOM when it is disabled.
 
-*   <strong><code>void formResetCallback()</code></strong>
+#### `void formResetCallback()`
 
-    Called after the form is reset. The element should reset itself to some kind of default state. For native inputs, this usually involves setting the `value` property to match the `value` attribute set in markup (or in the case of a checkbox, setting the `checked` property to match the `checked` attribute.
+Called after the form is reset. The element should reset itself to some kind of default state. For native inputs, this usually involves setting the `value` property to match the `value` attribute set in markup (or in the case of a checkbox, setting the `checked` property to match the `checked` attribute.
 
-*   <strong><code>void formStateRestoreCallback(state, mode)</code></strong>
+#### `void formStateRestoreCallback(state, mode)`
 
-    Called in one of two circumstances:
+Called in one of two circumstances:
 
-    *   When the browser restores the state of the element (for example, after a navigation, or when the browser restarts).  The <code>mode</code> argument is <code>"restore"</code> in this case.
-    *   When the browser's input-assist features such as form autofilling sets a value. The <code>mode</code> argument is <code>"autocomplete"</code> in this case.
+*   When the browser restores the state of the element (for example, after a navigation, or when the browser restarts).  The <code>mode</code> argument is <code>"restore"</code> in this case.
+*   When the browser's input-assist features such as form autofilling sets a value. The <code>mode</code> argument is <code>"autocomplete"</code> in this case.
 
-    The type of the first argument depends on how the <code>setFormValue</code> method was called. For more details, see [Restoring form state](#restoring-form-state).
+The type of the first argument depends on how the <code>setFormValue</code> method was called. For more details, see [Restoring form state](#restoring-form-state).
 
-#### Restoring form state {: #restoring-form-state }
+### Restoring form state {: #restoring-form-state }
 
 Under some circumstances—like when navigating back to a page, or restarting the browser, the brower may try to restore the state of a form to the state the user left it in.
 
@@ -302,4 +302,4 @@ The `formdata` event doesn't give you any new capabilities, but it gives you an 
 
 The form-associated custom elements API provides a new set of capabilities for making custom form controls that work like built-in form controls.
 
-_Hero image by Oudom Pravat on Unsplash._
+_Hero image by Oudom Pravat on [Unsplash](https://unsplash.com/photos/yQi4mAFmRew)._
