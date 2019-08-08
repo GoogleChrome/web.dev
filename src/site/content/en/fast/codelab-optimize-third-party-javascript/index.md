@@ -187,6 +187,8 @@ let observer = new IntersectionObserver(function (entries, observer) {
   entries.forEach(entry => {
     console.log(entry.target);
     console.log(entry.isIntersecting);
+  });
+});
     if (entry.isIntersecting) {
       // do this when the element enters the viewport
       loadElement(entry.target);
