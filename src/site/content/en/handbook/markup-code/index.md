@@ -35,7 +35,7 @@ Include the [language name](https://prismjs.com/#supported-languages) after the 
 ```
 ````
 
-For code blocks that do not need syntax highlighting (e.g. HTTP headers) set
+For code blocks that don't need syntax highlighting (for example, HTTP headers), set
 the language to `text`:
 
 ````markdown
