@@ -23,7 +23,7 @@ tags:
 
 * Preconnecting to required origins
 
-The sample app features a simple web page with three features coming from third-party sources:
+The included sample app features a simple web page with three features coming from third-party sources:
 
 * A video embed
 
