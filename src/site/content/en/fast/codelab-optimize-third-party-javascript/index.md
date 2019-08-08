@@ -217,7 +217,7 @@ Now scroll down the page and keep an eye on the **Network** panel. When you get 
   </video>
 
 {% Aside %}
-In this example, the element is loaded when it enters the viewport and you can see it happening in the video above. You can avoid that delay and create smoother user-experience by starting to load elements a little before they enter the viewport. Use [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) property to define margins around the target element which effectively grow (or shrink) the area that triggers the `isIntersecting` change.
+In this example, the element is loaded when it enters the viewport, which you can see happening in the video above. You can avoid that delay and create a smoother user experience by loading elements a little before they enter the viewport. To do that, use the [`rootMargin`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Creating_an_intersection_observer) property to define margins around the target element, which effectively grows (or shrinks) the area that triggers the `isIntersecting` change.
 {% endAside %}
 
 ## Preconnect to required origins
