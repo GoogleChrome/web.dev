@@ -233,7 +233,7 @@ this._internals.setFormValue(value, state);
 
 The `value` represents the submittable value of the control. The optional `state` parameter is an _internal_ representation of the state of the control, which can include data that doesn't get sent to the server. The `state` parameter takes the same types as the `value` parameter—it can be a string, `File`, or `FormData` object.
 
-The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a  palette or an RGB color wheel. The submittable _value_ would  be the selected color in a canonical form, like '#7fff00'. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like 'palette/#7fff00'.  
+The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a  palette or an RGB color wheel. The submittable _value_ would  be the selected color in a canonical form, like `"#7fff00"`. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like `"palette/#7fff00"`.  
 
 ```js
 this._internals.setFormValue(this._value, 
