@@ -1,20 +1,10 @@
-const unified = require('unified');
-const english = require('retext-english');
-
 exports.plugins = [
-  // Natural language linting
-  // https://github.com/retextjs/retext/blob/master/doc/plugins.md#list-of-plugins
-  [
-    require('remark-retext'),
-    unified()
-      .use(english)
-  ],
-
   // Markdown linting
   // https://github.com/remarkjs/remark-lint#rules
   require('remark-lint'),
   require('remark-frontmatter'),
 
+  // Remark Lint Style Guide preset and overrides.
   require('remark-preset-lint-markdown-style-guide'),
   ['lint-blockquote-indentation', false],
   ['lint-emphasis-marker', false],
@@ -44,9 +34,11 @@ exports.plugins = [
   ['lint-table-pipes', false],
   ['lint-unordered-list-marker-style', false],
 
+  // Third-party plugins.
   require('remark-lint-are-links-valid'),
   require('remark-lint-no-duplicate-headings-in-section'),
 
+  // Custom plugins.
   require('./tools/linting/no-dash-spaces.js'),
   require('./tools/linting/no-repeat-punctuation.js'),
   require('./tools/linting/no-smart-quotes.js'),
