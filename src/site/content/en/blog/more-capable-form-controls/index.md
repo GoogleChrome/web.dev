@@ -113,7 +113,7 @@ class MyCounter extends HTMLElement {
     this._value = 0;
   }
 
-  // Form controls usually expose a "value"  property
+  // Form controls usually expose a "value" property
   get value() { return this._value; }
   set value(v) { this._value = v; }
 
@@ -130,7 +130,7 @@ class MyCounter extends HTMLElement {
   checkValidity() { return this.internals_.checkValidity(); }
   reportValidity() {return this.internals_.reportValidity(); }
 
-  ... 
+  … 
 }
 customElements.register('my-counter', MyCounter);
 ```
@@ -233,7 +233,7 @@ this._internals.setFormValue(value, state);
 
 The `value` represents the submittable value of the control. The optional `state` parameter is an _internal_ representation of the state of the control, which can include data that doesn't get sent to the server. The `state` parameter takes the same types as the `value` parameter—it can be a string, `File`, or `FormData` object.
 
-The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a  palette or an RGB color wheel. The submittable _value_ would  be the selected color in a canonical form, like '#7fff00'. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like 'palette/#7fff00'.  
+The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a  palette or an RGB color wheel. The submittable _value_ would  be the selected color in a canonical form, like `"#7fff00"`. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like `"palette/#7fff00"`.  
 
 ```js
 this._internals.setFormValue(this._value, 
@@ -273,7 +273,7 @@ Be sure to run it on Chrome 77+ (Canary or Beta) to see the API in action.
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/form-associated-ce?path=my-control.js&amp;previewSize=0"
+    src="https://glitch.com/embed/#!/embed/form-associated-ce?path=public%2Fmy-control.js&amp;previewSize=0"
     alt="formdata event demo on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
