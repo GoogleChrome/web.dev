@@ -273,7 +273,7 @@ Be sure to run it on Chrome 77+ (Canary or Beta) to see the API in action.
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
     allow="geolocation; microphone; camera; midi; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/form-associated-ce?path=my-control.js&amp;previewSize=0"
+    src="https://glitch.com/embed/#!/embed/form-associated-ce?path=public%2Fmy-control.js&amp;previewSize=0"
     alt="formdata event demo on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
