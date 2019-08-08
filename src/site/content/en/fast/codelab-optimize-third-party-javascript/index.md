@@ -72,7 +72,7 @@ Two magic words that can unblock the parser are:
 
 * [`defer`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-defer) ensures that scripts download in the background and execute **after parsing** is completely finished.
 
-Since this chart is not really critical to the overall page and will most likely be below the fold, use `defer` to make sure there’s no parser blocking. 
+Since this chart is not really critical to the overall page and will most likely be below the fold, use `defer` to make sure there's no parser blocking. 
 
 ### Step 1: Load the script asynchronously with the `defer` attribute
 
