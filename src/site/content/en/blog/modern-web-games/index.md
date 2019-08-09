@@ -20,9 +20,9 @@ tags:
 ---
 
 
-Good game developers know that to capitalise on the opportunity of a particular platform it’s important to embrace the unique characteristics of that platform. So what are the unique characteristics of the web? And what defines a web game?
+Good game developers know that to capitalise on the opportunity of a particular platform it's important to embrace the unique characteristics of that platform. So what are the unique characteristics of the web? And what defines a web game?
 
-At Google I/O 2019 I presented my thoughts on the state of the web games ecosystem, the current best practices for modern web game development, and where the industry is heading. In this blog post, I’ll summarise some of the key points from my talk which you can watch in full on YouTube:
+At Google I/O 2019 I presented my thoughts on the state of the web games ecosystem, the current best practices for modern web game development, and where the industry is heading. In this blog post, I'll summarise some of the key points from my talk which you can watch in full on YouTube:
 
 {% YouTube 'aVTYxHL45SA' %}
 
@@ -50,7 +50,7 @@ Recently, Unity previewed a new runtime called Project Tiny which is focused on 
 
 <figure class="w-figure">
   <img src="./unity-tanks.gif" alt="Two tanks engaged in a battle.">
-  <figcaption class="w-figcaption">Unity’s Tanks Demo exported via HTML5.</figcaption>
+  <figcaption class="w-figcaption">Unity's Tanks Demo exported via HTML5.</figcaption>
 </figure>
 
 From the technical side, there has never been a better time to embrace web game development.
@@ -59,17 +59,17 @@ From the technical side, there has never been a better time to embrace web game 
 
 A great game is obviously more than just good performance, graphics, and sound though – to be great a game must be fun.
 
-Fun is a difficult element to measure in a product. When a game is fun, interesting, or innovative enough, users will want to tell their friends – in other words, they’ll want to share the experience. Tapping into this opportunity and coupling it with the web is a powerful combination that unlocks a lot of potential for viral growth. And on the web in particular, without a central discovery platform, our best bet towards acquiring users is to ensure our games are as viral as possible.
+Fun is a difficult element to measure in a product. When a game is fun, interesting, or innovative enough, users will want to tell their friends – in other words, they'll want to share the experience. Tapping into this opportunity and coupling it with the web is a powerful combination that unlocks a lot of potential for viral growth. And on the web in particular, without a central discovery platform, our best bet towards acquiring users is to ensure our games are as viral as possible.
 
-Good game developers know that to capitalise on a particular platform – whether at a software or hardware level – it’s important to embrace the unique characteristics of that platform. For example, if you're building a game for a console with motion controls, you should probably think about the best way to embrace those motion controls.
+Good game developers know that to capitalise on a particular platform – whether at a software or hardware level – it's important to embrace the unique characteristics of that platform. For example, if you're building a game for a console with motion controls, you should probably think about the best way to embrace those motion controls.
 
-In other words, you must respect the expectations of the users of the platform you’re building for. What do users of the web expect? They expect web content to load fast and be interactive quickly. In my talk, I covered several examples of ways – both on and off the web – that games have been designed to load quickly, pull users into their game worlds, engage those users, and provide users with additional incentives to share their experiences.
+In other words, you must respect the expectations of the users of the platform you're building for. What do users of the web expect? They expect web content to load fast and be interactive quickly. In my talk, I covered several examples of ways – both on and off the web – that games have been designed to load quickly, pull users into their game worlds, engage those users, and provide users with additional incentives to share their experiences.
 
 ![Three games with minimalist art styles.](./minimalist-games.png)
 
-I personally believe that the key to building a successful web game is to lean into this unique characteristic of the web. Specifically, the strength of the web’s URL structure and the sharing loop that users can join in.
+I personally believe that the key to building a successful web game is to lean into this unique characteristic of the web. Specifically, the strength of the web's URL structure and the sharing loop that users can join in.
 
-Here’s an example of a web game I built using [Construct 3](http://construct.net) that leverages the URL in a fun and engaging way.
+Here's an example of a web game I built using [Construct 3](http://construct.net) that leverages the URL in a fun and engaging way.
 
 ![A level editor interface for a game.](./space-board.png)
 
@@ -81,9 +81,9 @@ Here's an example:
 
 `https://io-space-board.firebaseapp.com/?gameWorld=_wwwwwwwwww___ww__eww_k__d___ww___ww___ww_wwwww_www_wwwww_www___ww___ww_s_ww_f_ww___ww___wwwwwwwwwwww`
 
-It’s ugly but it does the job.
+It's ugly but it does the job.
 
-Upon completing a level in Space Board, the player has the opportunity to design their own level using the simple level editor shown above. By enabling players to design their own levels we are giving them the opportunity for personalisation. When a user feels a connection to a game and a sense of ownership via creation and customisation they are more likely to want to share that ‘thing’ with the world.
+Upon completing a level in Space Board, the player has the opportunity to design their own level using the simple level editor shown above. By enabling players to design their own levels we are giving them the opportunity for personalisation. When a user feels a connection to a game and a sense of ownership via creation and customisation they are more likely to want to share that ‘thing' with the world.
 
 The desire to share a game is the beginning of the viral loop that we are aiming to achieve with our web games. This game design and sharing mechanism is just one example that's possible but there are many other possibilities – I encourage you to watch my talk for further examples!
 
@@ -96,7 +96,7 @@ At present, there are ultimately two schools of thought with regards to how a ga
 
 Treating web games as an acquisition channel means leveraging the web version of your native game as a mechanism to get your players hooked and convincing them to download your larger native binary. You then generate revenue with the native platform's built-in payment and billing backends.
 
-Monetization is usually a mixture of advertising and microtransactions. There is still work to be done for the web to compete with native mobile platforms in game advertising. For example, formats like Rewarded Video Ads have been extremely popular for native mobile games for several years and yet we’re only now seeing ad networks deploy these formats on the web.
+Monetization is usually a mixture of advertising and microtransactions. There is still work to be done for the web to compete with native mobile platforms in game advertising. For example, formats like Rewarded Video Ads have been extremely popular for native mobile games for several years and yet we're only now seeing ad networks deploy these formats on the web.
 
 Nonetheless, there are game developers who continue to be successful on the open web through advertising via traditional banner ads and interstitial video ads. Take a look at [Adsense for Games for more information on these formats](https://support.google.com/adsense/answer/1705831?hl=en).
 
@@ -108,6 +108,6 @@ One solution that brings a more consistent payment UI to the web is the [Payment
 
 We've seen several surprisingly successful web games over the past few years. Slither.io has built a mixed web and native business that demonstrates the tremendous reach and viral growth opportunity that the web offers. Portals such as Poki.com are innovating in their user experience and releasing new games every month that match the fidelity of their mobile counterparts, such as Crossy Road.
 
-Furthermore, if you look outside of the open web you can see that web games are already taking off. Closed ecosystems such as WeChat and LINE offer satisfying games which aren’t playable on the open web but which are built on top of web technologies like HTML5 and WebViews. This is a clear sign that the web has reached a level of fidelity that’s capable of rivaling native mobile games – perhaps not in a textbook definition of fidelity but in a more important metric: player attention.
+Furthermore, if you look outside of the open web you can see that web games are already taking off. Closed ecosystems such as WeChat and LINE offer satisfying games which aren't playable on the open web but which are built on top of web technologies like HTML5 and WebViews. This is a clear sign that the web has reached a level of fidelity that's capable of rivaling native mobile games – perhaps not in a textbook definition of fidelity but in a more important metric: player attention.
 
 
