@@ -125,10 +125,10 @@ An alternative approach is to load third-party content only when users scroll do
 [Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) is a browser API that efficiently detects when an element enters or exits the browser's viewport and it can be used to implement this technique. [lazysizes](https://web.dev/use-lazysizes-to-lazyload-images/) is a popular JavaScript library for lazy-loading images and [`iframes`](http://afarkas.github.io/lazysizes/#examples). It supports YouTube embeds and [widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). It also has [optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) for IntersectionObserver. 
 
 {% Aside 'caution' %}
-
-Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all. Keep an eye out for [native lazy-loading support for images and iframes](https://addyosmani.com/blog/lazy-loading/) that's coming soon to Chrome.
-
+Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all.
 {% endAside %}
+
+Using the [`loading` attribute for lazy-loading images and iframes](/native-lazy-loading) is a great alternative to JavaScript techniques and it has recently become available in Chrome 76!
 
 ## Optimize how you serve third-party scripts
 
