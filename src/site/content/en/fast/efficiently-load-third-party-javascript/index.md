@@ -89,7 +89,7 @@ Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) t
 ```
 
 {% Aside 'caution' %}
-Only pre-connect to critical origins you will use soon; if the connection isn't used within 10 seconds, the browser closes it. Limit the number of pre-connected domains to 5 or 6, as unnecessary pre-connecting can delay other important resources.
+Only preconnect to critical origins you will use soon; if the connection isn't used within 10 seconds, the browser closes it. Limit the number of pre-connected domains to 5 or 6, as unnecessary pre-connecting can delay other important resources.
 {% endAside %}
 
 ### `dns-prefetch`
