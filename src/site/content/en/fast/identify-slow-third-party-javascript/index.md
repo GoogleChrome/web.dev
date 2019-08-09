@@ -15,7 +15,6 @@ alt: Inspecting a laptop with a magnifying glass.
 description: |
   Learn how to use Lighthouse and Chrome DevTools to identify slow third-party resources.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
   - fast
 draft: true
 ---
@@ -41,12 +40,12 @@ To run an audit:
 
 ### Third-party usage
 
-The Lighthouse **Third-party usage** audit shows a list of the third-party providers a page uses. This overview can help you better understand the big picture and identify redundant third-party code. The audit is available in the [Lighthouse extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) and will soon be added to DevTools in Chrome 77. 
+The Lighthouse **Third-party usage** audit shows a list of the third-party providers a page uses. This overview can help you better understand the big picture and identify redundant third-party code. The audit is available in the [Lighthouse extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) and will soon be added to DevTools in Chrome 77.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./third-party-usage.png" alt='Screenshot showing that 51 third-parties were found and a list of imaginary startups.'>
   <figcaption class="w-figcaption">
-  Third-party provider names generated with <a href="http://tiffzhang.com/startup/?s=641553836036">Startup generator</a>. Any similarity to actual startups, living or dead, is purely coincidental. 
+  Third-party provider names generated with <a href="http://tiffzhang.com/startup/?s=641553836036">Startup generator</a>. Any similarity to actual startups, living or dead, is purely coincidental.
   </figcaption>
 </figure>
 
