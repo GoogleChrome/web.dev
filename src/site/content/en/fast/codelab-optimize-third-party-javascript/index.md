@@ -1,14 +1,13 @@
 ---
 layout: codelab
 title: Optimize third-party JavaScript
-subhead: Supercharge your performance detective skills with Lighthouse and Chrome DevTools.
 authors:
   - mihajlija
 date: 2019-08-08
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
 description: |
-  Learn how to use Lighthouse and Chrome DevTools to identify slow third-party resources.
+  Learn about techniques for optimizing slow third-party resources with some help from Lighthouse.
 glitch: 3rd-party-optimization-starter
 related_post: efficiently-load-third-party-javascript
 tags:
