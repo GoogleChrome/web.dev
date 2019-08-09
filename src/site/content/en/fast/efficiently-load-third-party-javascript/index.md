@@ -128,7 +128,7 @@ An alternative approach is to load third-party content only when users scroll do
 Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all.
 {% endAside %}
 
-Using the [`loading` attribute for lazy-loading images and iframes](/native-lazy-loading) is a great alternative to JavaScript techniques and it has recently become available in Chrome 76!
+Using the [`loading` attribute for lazy-loading images and iframes](/native-lazy-loading) is a great alternative to JavaScript techniques, and it has recently become available in Chrome 76!
 
 ## Optimize how you serve third-party scripts
 
