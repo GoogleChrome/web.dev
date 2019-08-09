@@ -57,6 +57,7 @@ Paint are:
 
 * `<img>` elements
 * `<image>` elements inside an `<svg>` element
+* `<video>` elements (the poster image is used)
 * An element with a background image loaded via the
   [`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/url()) function
   (as opposed to a
@@ -70,21 +71,24 @@ keep things simple in the beginning. Additional elements (e.g. `<svg>`,
 
 ### How is an element's size determined?
 
-The size of the element reported for Largest Contentful Paint is the size
-that's visible to the user within the viewport. If the element extends outside
-of the viewport, or if any of the element is clipped or has non-visible
+The size of the element reported for Largest Contentful Paint is typically the
+size that's visible to the user within the viewport. If the element extends
+outside of the viewport, or if any of the element is clipped or has non-visible
 [overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow), those
 portions do not count toward the element's size.
 
-For image elements, only the visible size of the rendered image is considered.
-The original size of the image is not factored into the element size
-calculation, nor is any margin, padding, or border that is applied to the image
-via CSS.
+For image elements that have been resized from their [intrinsic
+size](https://developer.mozilla.org/en-US/docs/Glossary/Intrinsic_Size), the
+size that gets reported is either the visible size or the intrinsic size,
+whichever is smaller. For example, images that are shrunk down to a much
+smaller than their intrinsic size will only report the size they're displayed
+at, whereas images that are stretched or expanded to a larger size will only
+report their intrinsic sizes.
 
-For text elements, only the size of its text nodes is considered (the smallest
-rectangle that encompases all text nodes). As with images, the element's
-margin, padding, and border applied via CSS are not considered part of its
-contentful size.
+For text elements, only the size of their text nodes is considered (the smallest
+rectangle that encompases all text nodes).
+
+For all elements, any margin, padding, or border applied via CSS is not considered.
 
 {% Aside %}
   Determining which text nodes belong to which elements can sometimes
@@ -123,6 +127,11 @@ In addition to late-loading images and fonts, a page may add new elements to
 the DOM as new content becomes available. If any of these new elements is
 larger than the previous largest contentful element, a new `PerformanceEntry`
 will also be reported.
+
+If a page removes an element from the DOM, that element will no longer be
+considered. Similarly, if an element's associated image resource changes (e.g.
+changing `img.src` via JavaScript), then that element will stop be considered
+until the new image loads.
 
 The browser will stop reporting new entries as soon as the user interacts with
 the page (via a tap, scroll, or keypress), as user interaction often changes
@@ -164,8 +173,8 @@ on-screen may not be reported. It also means elements initially rendered in the
 viewport that then get pushed down, out of view will still report their
 initial, in-viewport size.
 
-An element can only be removed from LCP consideration if it's removed from the
-DOM.
+However, (as mentioned above) an element will be removed from consideration if
+it's removed from the DOM or if its associated image resource changes.
 
 ### Examples
 
