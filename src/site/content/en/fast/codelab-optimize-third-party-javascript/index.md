@@ -152,6 +152,12 @@ To get started, create a new file and name it `lazy-load.js`:
 
 {% Instruction 'create' %}
 
+Add the script tag to your document head:
+
+ ```html
+ <script src="/lazy-load.js" defer></script>
+ ```
+
 In `lazy-load.js`, create a new `IntersectionObserver` and pass it a callback function to run:
 
 ```js
@@ -210,12 +216,6 @@ function loadElement(element) {
   element.src = src;
 }
 ```
-
-Finally, add `lazy-load.js` to your document head:
-
- ```html
- <script src="/lazy-load.js" defer></script>
- ```
 
 ### Step 3: Reevaluate performance
 
