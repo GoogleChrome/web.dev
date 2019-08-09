@@ -211,7 +211,7 @@ If you are using WebP formats, try with stricter thresholds:
 
 #### More examples
 
-```
+```text
 Feature-Policy:  unoptimized-lossy-images *(0.5);
                  unoptimized-lossless-images *(1.0);
                  unoptimized-lossless-images-strict *(1.0);
@@ -222,7 +222,7 @@ formats) and 1 (for lossless formats). Any `<img>` element whose image has a
 byte-per-pixel ratio exceeding the constraint is disallowed and will be replaced
 with a placeholder image.
 
-```
+```text
 Feature-Policy: unoptimized-lossy-images *(inf) 'self'(0.3);
                 unoptimized-lossless-images *(inf) 'self'(0.8);
                 unoptimized-lossless-images-strict *(inf) 'self'(0.8);

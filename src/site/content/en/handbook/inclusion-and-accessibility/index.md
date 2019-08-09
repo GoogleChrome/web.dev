@@ -18,7 +18,7 @@ Admittedly, web.dev tends to deal with technical content, so the reading level w
 
 Prefer shorter, simpler sentences.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > We also include an HTML table of buttons for accessibility reasons that is on top of the canvases but is made invisible using opacity: 0.
 
 {% endCompare %}
@@ -30,7 +30,7 @@ Prefer shorter, simpler sentences.
 
 Prefer commonly used words that your [audience](/handbook/audience) is likely to be familiar with over specialized vocabulary. If you need help finding a more accessible alternative, the [Merriam-Webster Learner's Dictionary](http://learnersdictionary.com/) is a handy tool.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > In some scripts, graphemes can be visually joined when they're adjacent.
 
 _Script_ and _grapheme_ are very precise, but they're likely to be unfamiliar to most readers and may cause confusion since readers probably more commonly see _script_ referring to a piece of code.
@@ -85,7 +85,7 @@ To be more gender inclusive, use _they/them_ for singular personal pronouns inst
 ## Writing for an international audience
 Avoid idioms. If non-native speakers aren't familiar with the idiom, they may be confused.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > The sample app should work now. Give it a shot!
 
 {% endCompare %}

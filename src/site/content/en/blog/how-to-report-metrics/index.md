@@ -77,7 +77,7 @@ faster, so analytics may see more bounces even if there aren't more happening.
 ### Solution
 
 This can be eased by measuring
-[real page abandonment ](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#load_abandonment)instead.
+[real page abandonment](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#load_abandonment) instead.
 
 ## Decreasing relative conversions
 
@@ -185,7 +185,7 @@ Performance must be a continuous goal to improve acquisition, discovery, and
 conversion rates as well as safeguarding the reputation of your brand. This can
 be achieved with [performance
 budgets](/performance-budgets-101)
-like[ Tinder did](https://medium.com/@addyosmani/a-tinder-progressive-web-app-performance-case-study-78919d98ece0),
+like [Tinder did](https://medium.com/@addyosmani/a-tinder-progressive-web-app-performance-case-study-78919d98ece0),
 and by establishing and fostering a performance culture, where all employees and
 especially decision makers recognize speed as a core feature of the website.
 
@@ -198,7 +198,7 @@ to do this:
 -   [Facebook](https://www.theverge.com/2015/10/28/9625062/facebook-2g-tuesdays-slow-internet-developing-world)
     and Google do this by providing slow networks across the company for testing.
 -   Make average, low-spec devices with low
-    [bandwidth or high latencies ](https://developers.google.com/web/fundamentals/performance/poor-connectivity/) available
+    [bandwidth or high latencies](https://developers.google.com/web/fundamentals/performance/poor-connectivity/) available
     to management and other stakeholders.
 -   Consider adding overlays showing performance metrics on your development
     or staging servers. Connections to these servers from mobile can

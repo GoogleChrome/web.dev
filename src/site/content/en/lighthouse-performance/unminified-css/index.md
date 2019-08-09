@@ -63,7 +63,7 @@ to further reduce your file size.
 So, if you use a minifier,
 you may see more savings than what Lighthouse reports.
 
-## Use a CSS minifier to minify your CSS code.
+## Use a CSS minifier to minify your CSS code
 
 For small sites that you don't update often,
 you can probably use an online service for manually minifying your files.

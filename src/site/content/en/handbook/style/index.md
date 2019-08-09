@@ -13,7 +13,7 @@ Have a specific [audience](/handbook/audience) in mind as you write.
 
 Make sure your content is meeting a need of your audience. (For example, is it teaching them how to do something? Helping them grasp a commonly misunderstood concept?)
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > A post titled "The Media Capabilities API"
 
 If the reader isn't familiar with the API, its name isn't meaningful and doesn't convey how the post will be useful.
@@ -28,7 +28,7 @@ While slightly longer, this title tells less experienced readers what they'll le
 ## Be concise
 Use the fewest words possible while keeping language clear and [readable](/handbook/inclusion-and-accessibility#use-readable-language).
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > Absolute and fixed positioning have been reimplemented and are more spec compliant than the old implementation. They also better match the behavior in other browsers.
 
 This sentence includes unnecessary words in some places (e.g., multiple phrases saying there's a new version), while not providing enough detail in others (e.g., which spec?).
@@ -77,7 +77,7 @@ Focus on readers and the concrete task they're trying to complete. While an intr
 
 When providing instruction, favor the imperative mood.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > You can do _x_ by clicking **Run Audit**.
 
 The declarative mood ("you can…") makes it less clear that the reader needs to take an action.
@@ -91,7 +91,7 @@ The imperative "click" makes it obvious that an action is needed.
 
 When talking about technologies or tools, focus on what they let the reader do, not on their features or the work that went into creating them. (Avoiding first-person pronouns helps.)
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > We've added _[a cool thing]_ in DevTools.
 
 This sentence emphasizes the work the developers of DevTools did rather than what it lets the reader do.
@@ -105,7 +105,7 @@ This sentence better focuses on what how readers can meet their goals.
 
 Address the reader directly rather than imagining a hypothetical third party.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > A seller can choose a variety of shopfront themes.
 
 If the reader isn't a seller, this detail may not seem relevant.
@@ -124,7 +124,7 @@ Focus on essential details when explaining a tool or technique. Avoid overwhelmi
 
 Avoid jargon. If you absolutely _must_ use a term most web.dev readers are unlikely to know, define it in a short aside. See the [web.dev components](/handbook/web-dev-components#asides) post for how to include asides. Also check out the [Inclusion and accessibility](/handbook/inclusion-and-accessibility#use-readable-language) post for more info about writing readable language.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > In some scripts, graphemes can be visually joined when they're adjacent.
 
 _Script_ and _grapheme_ are very precise, but they're likely to be unfamiliar to most readers and may cause confusion since readers probably more commonly see _script_ referring to a piece of code.

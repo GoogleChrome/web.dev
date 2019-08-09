@@ -51,8 +51,7 @@ Cache-Control: max-age=31536000
 ```
 
 The `max-age` directive tells the browser how long it should cache the resource, in seconds.
-`31536000` corresponds to 1 year: 60 seconds * 60 minutes * 24 hours * 365 days =
-31536000 seconds.
+`31536000` corresponds to 1 year: 60 seconds × 60 minutes × 24 hours × 365 days = 31536000 seconds.
 
 When possible, cache immutable static assets for a long time,
 such as a year or longer.

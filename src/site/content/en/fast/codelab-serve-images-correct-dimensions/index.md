@@ -55,7 +55,7 @@ pre-installed in the codelab environment.
 - Click the **Console** button.
 - In the console, type:
 
-```
+```bash
 convert flower_logo.png -resize 50x50 flower_logo.png
 ```
 
@@ -104,7 +104,7 @@ should not be very noticeable.
 - Use [ImageMagick](https://www.imagemagick.org) to resize the image to 960
 pixels wide. In the terminal type:
 
-```
+```bash
 # macOS/Linux
 convert flower_photo.jpg -resize 960x flower_photo.jpg
 

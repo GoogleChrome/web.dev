@@ -66,5 +66,5 @@ You use it the exact same way:
 ## More information
 
 - [Preconnect to required origins audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preconnect.js)
-- [Resource Prioritization – Getting the Browser to Help You](https://developers.google.com/web/fundamentals/performance/resource-prioritization#preconnect)
+- [Resource Prioritization–Getting the Browser to Help You](https://developers.google.com/web/fundamentals/performance/resource-prioritization#preconnect)
 - [Establish network connections early to improve perceived page speed](https://web.dev/preconnect-and-dns-prefetch/)

@@ -30,7 +30,7 @@ and [Firefox 68](https://bugzilla.mozilla.org/show_bug.cgi?id=1536511).
 Browsers that don't support `stale-while-revalidate` will silently ignore that
 configuration value, and use
 [`max-age`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#max-age),
-as I'll explain shortly..
+as I'll explain shortly…
 
 ## What's it mean?
 
@@ -81,7 +81,7 @@ specifically, the current number of minutes past the hour.
 
 In this scenario, the web server uses this `Cache-Control` header in its HTTP response:
 
-```
+```text
 Cache-Control: max-age=1, stale-while-revalidate=59
 ```
 
@@ -132,7 +132,7 @@ there are a few considerations that you should take into account when deciding
 whether to implement a service worker-based approach, or just rely on the
 `Cache-Control` header configuration.
 
-### Use a service worker approach if...
+### Use a service worker approach if…
 
 * You're already using a service worker in your web app.
 * You need fine-grained control over the contents of your caches, and want to
@@ -145,7 +145,7 @@ whether to implement a service worker-based approach, or just rely on the
   module can help with this.
 * You need this `stale-while-revalidate` behavior in all modern browsers.
 
-### Use a Cache-Control approach if...
+### Use a Cache-Control approach if…
 
 * You would rather not deal with the overhead of deploying and maintaining a
   service worker for your web app.

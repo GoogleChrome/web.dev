@@ -50,7 +50,7 @@ href="https://de.donut-be-hangry.com/recipes/maple-bar-recipe" />
 
 **Option 2. Add Link headers to your HTTP response**
 
-```
+```text
 Link:
 <https://donut-be-hangry.com/recipes/maple-bar-recipe>;
 rel="alternate"; hreflang="en",

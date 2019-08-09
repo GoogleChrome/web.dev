@@ -25,7 +25,7 @@ Body images should be related to body content in some way. Typically, an image i
 ## Image captions
 Captions should be in sentence case. End all captions with a period.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 > A Screenshot of the DevTools **Network** Panel
 
 {% endCompare %}

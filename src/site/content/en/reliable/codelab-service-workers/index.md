@@ -94,7 +94,7 @@ the
 and knowledge about your web app's network traffic to create a perfectly crafted
 service worker, ready to handle all of your web app's requests.
 
-But... that's all for learning later. At this stage, the focus is on observing
+But… that's all for learning later. At this stage, the focus is on observing
 various service worker events, and getting comfortable using Chrome's DevTools
 to debug the state of your service worker.
 

@@ -24,7 +24,7 @@ After you identify your key pages, it's time to analyze them. First, we'll focus
 Under the Audits panel in Chrome DevTools, you'll find [Lighthouse](https://developers.google.com/web/tools/lighthouse/). Run audits on each page in a [Guest window](https://support.google.com/chrome/answer/6130773?co=GENIE.Platform%3DDesktop&hl=en) to record these two times: 
 
 * [First Contentful Paint (FCP)](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint)
-* [Time to Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive)[ (TTI)](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive)
+* [Time to Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive) [(TTI)](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive)
 
 {% Aside %}
 Using a Guest window gives you a clean testing environment without any Chrome

@@ -24,7 +24,8 @@ Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-
 Images intended to fill the full width of the content column should be at least 800 px wide.
 
 Use Markdown syntax for standard standalone images:
-```
+
+```markdown
 ![alt text](./image-name.png)
 ```
 

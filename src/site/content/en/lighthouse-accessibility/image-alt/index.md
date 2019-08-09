@@ -53,7 +53,7 @@ See also
 ](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
-## Tips for writing effective `alt` text:
+## Tips for writing effective `alt` text
 
 - `alt` text should give the intent, purpose, and meaning of the image.
 - Blind users should get as much information from alt text as a sighted user gets from the image.

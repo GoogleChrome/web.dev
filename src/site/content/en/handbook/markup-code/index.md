@@ -99,7 +99,7 @@ Indent using two spaces.
 
 Always use straight quotes. (Readers often copy code directly from the site, and smart quotes can break code.)
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse', "Don't" %}
 `const imagemin = require(‘imagemin’);`
 {% endCompare %}
 

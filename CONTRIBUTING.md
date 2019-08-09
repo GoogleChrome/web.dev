@@ -37,12 +37,12 @@ issue tracker, please create one.
 sure to include the issue number you've fixed and the name you used to sign
 the CLA.
 
-## Writing Code ##
+## Writing Code
 
 If your contribution contains code, please make sure that it follows 
 [the style guide](https://google.github.io/styleguide/jsguide.html).
 Otherwise, we will have to ask you to make changes, and that's no fun for anyone.
 
-## Formatting HTML ##
+## Formatting HTML
 
 To simplify PR reviews, please word-wrap HTML files at 80 characters or fewer.

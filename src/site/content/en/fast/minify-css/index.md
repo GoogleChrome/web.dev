@@ -43,7 +43,7 @@ This content is easy to read, at the cost of producing a larger than necessary f
 
 After making these changes, you would obtain a more compact version of the same styles:
 
-```
+```css
 body{font-family:"Benton Sans","Helvetica Neue",helvetica,arial,sans-serif;margin:2em}h1,h2{font-style:italic;color:#373fff;background-color:#000}
 ```
 
@@ -88,7 +88,7 @@ Next, you'll add some webpack plugins to your build process to minify these file
 **Note:** the previous Lighthouse report only lists `animate.css` as an opportunity for minification. Minifying `style.css` will also save some bytes, but not enough for Lighthouse to consider it a significant savings. However, minifying CSS is a general best practice; so it makes sense to minify all of your CSS files.
 {% endAside %}
 
-## CSS Minification with webpack:
+## CSS Minification with webpack
 
 Before jumping into the optimizations, take some time understanding how build process for the [Fav Kitties site](https://glitch.com/edit/#!/fav-kitties-animated?path=webpack.config.js:1:0]) works:
 

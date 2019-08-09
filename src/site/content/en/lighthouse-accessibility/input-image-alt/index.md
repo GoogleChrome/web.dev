@@ -52,7 +52,7 @@ See also
 ](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
-## Tips for writing effective `alt` text:
+## Tips for writing effective `alt` text
 
 - As previously mentioned, describe the action that occurs when the user clicks on the button.
 - `alt` text should give the intent, purpose, and meaning of the image.
