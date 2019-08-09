@@ -116,7 +116,7 @@ The sample app has a YouTube video embedded in an [iframe](https://developer.moz
 
 ![Screenshot of DevTools Network panel.](network.png)
 
-The **Network** panel reveals that the page made a total of 28 requests and loaded almost 1 MB of compressed resources.
+The **Network** panel reveals that the page made a total of 28 requests and transferred almost 1 MB of compressed resources.
 
 To identify the requests that the YouTube `iframe` made, look for the video ID `6lfaiXM6waw` in the **Initiator** column. To group together all the requests by domain:
 
