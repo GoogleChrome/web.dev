@@ -108,19 +108,19 @@ class MyCounter extends HTMLElement {
   constructor() {
     super();
     // Get access to the internal form control APIs
-    this._internals = this.attachInternals();
+    this.internals_ = this.attachInternals();
     // internal value for this control
-    this._value = 0;
+    this.value_ = 0;
   }
 
   // Form controls usually expose a "value" property
-  get value() { return this._value; }
-  set value(v) { this._value = v; }
+  get value() { return this.value_; }
+  set value(v) { this.value_ = v; }
 
   // The following properties and methods aren't strictly required, 
   // but native form controls provide them. Providing them helps
   // ensure consistency with native controls.
-  get form() { return this._internals.form; }
+  get form() { return this.internals_.form; }
   get name() { return this.getAttribute('name'); }
   get type() { return this.localName; }
   get validity() {return this.internals_.validity; }
@@ -157,7 +157,7 @@ The `setFormValue()` method can take one of three types of values:
 To set a simple value:
 
 ```js
-this._internals.setFormValue(this._value);
+this.internals_.setFormValue(this.value_);
 ```
 
 To set multiple values, you can do something like this:
@@ -182,13 +182,13 @@ method on the internals object.
 // Assume this is called whenever the internal value is updated
 onUpdateValue() {
   if (!this.matches(':disabled') && this.hasAttribute('required') &&
-      this._value < 0) {
-    this._internals.setValidity({customError: true}, 'Value cannot be negative.');
+      this.value_ < 0) {
+    this.internals_.setValidity({customError: true}, 'Value cannot be negative.');
   } 
   else {
-    this._internals.setValidity({});
+    this.internals_.setValidity({});
   }
-  this.internals.setFormValue(this._value);
+  this.internals.setFormValue(this.value_);
 }
 ```
 
@@ -230,7 +230,7 @@ Under some circumstances—like when navigating back to a page, or restarting th
 For a form-associated custom element, the restored state comes from the value(s) you pass to the `setFormValue()` method. You can call the method with a single value parameter, as shown in the [earlier examples](#set-a-value), or with two parameters:
 
 ```js
-this._internals.setFormValue(value, state);
+this.internals_.setFormValue(value, state);
 ```
 
 The `value` represents the submittable value of the control. The optional `state` parameter is an _internal_ representation of the state of the control, which can include data that doesn't get sent to the server. The `state` parameter takes the same types as the `value` parameter—it can be a string, `File`, or `FormData` object.
@@ -238,8 +238,8 @@ The `value` represents the submittable value of the control. The optional `state
 The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a palette or an RGB color wheel. The submittable _value_ would be the selected color in a canonical form, like `"#7fff00"`. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like `"palette/#7fff00"`.  
 
 ```js
-this._internals.setFormValue(this._value, 
-    this._mode + '/' + this._value);
+this.internals_.setFormValue(this.value_, 
+    this.mode_ + '/' + this.value_);
 ```
 
 Your code would need to restore its state based on the stored state value.
@@ -249,8 +249,8 @@ formStateRestoreCallback(state, mode) {
   if (mode == 'restore') {
     // expects a state parameter in the form 'controlMode/value'
     [controlMode, value] = state.split('/');
-    this._mode = controlMode;
-    this._value = value;
+    this.mode_ = controlMode;
+    this.value_ = value;
   }
   // Chrome currently doesn't handle autofill for form-associated 
   // custom elements. In the autofill case, you might need to handle
@@ -263,7 +263,7 @@ In the case of a simpler control (for example a number input), the value is prob
 ```js
 formStateRestoreCallback(state, mode) {
   // Simple case, restore the saved value
-  this._value = state;
+  this.value_ = state;
 }
 ```
 
