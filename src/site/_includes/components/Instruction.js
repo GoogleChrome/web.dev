@@ -69,7 +69,7 @@ module.exports = (type, listStyle = 'ul') => {
 
     case 'create':
       instruction = html`
-      ${bullet}Click **New File**.
+      ${bullet}Click **New File** and give it a name.
       ${bullet}Click **Add This File**.
       `;
       break;
