@@ -21,8 +21,8 @@ Lighthouse flags your page when it's missing a meta description:
 
 ## What causes this audit to fail
 
-This audit fails if your page doesn't have a description,
-or if the `content` attribute of the description is empty.
+This audit fails if your page doesn't have a `<meta name=description>` element,
+or if the `content` attribute is empty.
 Lighthouse doesn't evaluate the quality of your description.
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
