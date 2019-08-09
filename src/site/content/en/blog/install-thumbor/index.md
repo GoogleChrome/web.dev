@@ -1,6 +1,6 @@
 ---
 title: How to install the Thumbor image CDN
-subhead: Learn how to install the Thumbor image CDN on your own server.
+subhead: Thumbor can be used for free to resize, compress, and transform images on-demand.
 authors:
   - katiehempenius
 date: 2019-07-29
