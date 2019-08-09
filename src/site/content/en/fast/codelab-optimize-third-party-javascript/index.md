@@ -52,7 +52,7 @@ Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) [perform
 1. Select the **Clear Storage** checkbox.
 1. Click **Run audits**.
 
-When you run an audit on your machine, [the exact results may vary](https://developers.google.com/web/tools/lighthouse/variability), but you should notice that the [First Contentful Paint](/first-contentful-paint/) (FCP) time is pretty high, and that Lighthouse suggests two opportunities to investigate: **Eliminate render-blocking resources** and **Preconnect to required origins**. (Even if the metrics are all in the green, these optimizations will still yield improvements.)
+When you run an audit on your machine, [the exact results may vary](https://developers.google.com/web/tools/lighthouse/variability), but you should notice that the [First Contentful Paint](/first-contentful-paint/) (FCP) time is pretty high, and that Lighthouse suggests two opportunities to investigate: **Eliminate render-blocking resources** and **Preconnect to required origins**. (Even if the metrics are all in the green, optimizations will still yield improvements.)
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./lighthouse-audit.png" alt="Screenshot of Lighthouse audit showing 2.4 second FCP and two opportunities: Eliminate render-blocking resources and Preconnect to required origins.">
@@ -60,9 +60,11 @@ When you run an audit on your machine, [the exact results may vary](https://deve
 
 ## Defer third-party JavaScript
 
-The **Eliminate render-blocking resources** audit identified that you can save some time by deferring a script coming from d3js.org.
+The **Eliminate render-blocking resources** audit identified that you can save some time by deferring a script coming from d3js.org:
 
-![Screenshot of Eliminate render-blocking resources audit with the d3.v3.min.js script highlighted.](render-blocking.png)
+<figure class="w-figure">
+  <img class="w-screenshot" src="./render-blocking.png" alt="Screenshot of Eliminate render-blocking resources audit with the d3.v3.min.js script highlighted.">
+</figure>
 
 [D3.js](https://d3js.org/) is a JavaScript library for creating data visualizations. The `script.js` file in the sample app uses D3 utility functions to create the SVG line chart and append it to the page. The order of operations here matters: `script.js` has to run after the document is parsed and the D3 library has loaded, which is why it's included right before the closing `</body>` tag in `index.html`.
 

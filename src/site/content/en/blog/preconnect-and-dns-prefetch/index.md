@@ -90,7 +90,7 @@ One way of initiating a `preconnect` is adding a `<link>` tag to the `<head>` of
 Preconnecting is only effective for domains other than the origin domain, so you shouldn't use it for your site. 
 
 {% Aside 'caution' %}
-Only preconnect to critical domains you will use soon because if the connection isn't used within 10 seconds, the browser closes it. Unnecessary preconnecting can delay other important resources, so limit the number of preconnected domains and [test the impact it makes](https://andydavies.me/blog/2019/08/07/experimenting-with-link-rel-equals-preconnect-using-custom-script-injection-in-webpagetest/).
+Only preconnect to critical domains you will use soon because the browser closes any connection that isn't used within 10 seconds. Unnecessary preconnecting can delay other important resources, so limit the number of preconnected domains and [test the impact preconnecting makes](https://andydavies.me/blog/2019/08/07/experimenting-with-link-rel-equals-preconnect-using-custom-script-injection-in-webpagetest/).
 {% endAside %}
 
 You can also initiate a preconnect via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
@@ -113,7 +113,7 @@ If you omit the `crossorigin` attribute, the browser only performs the DNS looku
 
 You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process — [domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection. 
 
-If a page needs to make connections to many third-party domains, preconnecting all of them is counterproductive. `preconnect` hint is best used for only the most critical connections. For all the rest, use  `<link rel=dns-prefetch>` to save time on the first step—the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
+If a page needs to make connections to many third-party domains, preconnecting all of them is counterproductive. The `preconnect` hint is best used for only the most critical connections. For all the rest, use  `<link rel=dns-prefetch>` to save time on the first step, the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
 
 DNS resolution is initiated similarly to `preconnect`: by adding a `<link>` tag to the `<head>` of the document.
 
