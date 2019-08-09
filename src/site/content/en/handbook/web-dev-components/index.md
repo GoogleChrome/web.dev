@@ -43,9 +43,9 @@ There are several kinds of asides, each for a different purpose.
 ### Note asides
 
 ```text
-{% raw %}{% Aside %}
+&#123;% Aside %&#125;
 Use the note aside to provide supplemental information.
-{% endAside %}{% endraw %}
+&#123;% endAside %&#125;
 ```
 
 {% Aside %}
@@ -55,9 +55,9 @@ Use the note aside to provide supplemental information.
 ### Caution asides
 
 ```text
-{% raw %}{% Aside 'caution' %}
+&#123;% Aside 'caution' %&#125;
 Use the caution aside to indicate a potential pitfall or complication.
-{% endAside %}{% endraw %}
+&#123;% endAside %&#125;
 ```
 
 {% Aside 'caution' %}
@@ -67,10 +67,10 @@ Use the caution aside to indicate a potential pitfall or complication.
 ### Warning asides
 
 ```text
-{% raw %}{% Aside 'warning' %}
+&#123;% Aside 'warning' %&#125;
 The warning aside is stronger than a caution aside; use it to tell the reader
 not to do something.
-{% endAside %}{% endraw %}
+&#123;% endAside %&#125;
 ```
 
 {% Aside 'warning' %}
@@ -81,9 +81,9 @@ not to do something.
 ### Success asides
 
 ```text
-{% raw %}{% Aside 'success' %}
+&#123;% Aside 'success' %&#125;
 Use the success aside to describe a successful action or an error-free status.
-{% endAside %}{% endraw %}
+&#123;% endAside %&#125;
 ```
 
 {% Aside 'success' %}
@@ -93,10 +93,10 @@ Use the success aside to describe a successful action or an error-free status.
 ### Objective asides
 
 ```text
-{% raw %}{% Aside 'objective' %}
+&#123;% Aside 'objective' %&#125;
 Use the objective aside to define the goal of a process described in the body
 copy.
-{% endAside %}{% endraw %}
+&#123;% endAside %&#125;
 ```
 
 {% Aside 'objective' %}
@@ -107,10 +107,10 @@ copy.
 ### Gotcha asides
 
 ```text
-{% raw %}{% Aside 'gotchas' %}
+&#123;% Aside 'gotchas' %&#125;
 Use the gotcha aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
-{% endAside %}{% endraw %}
+&#123;% endAside %&#125;
 ```
 
 {% Aside 'gotchas' %}
@@ -121,11 +121,11 @@ without specialized knowledge of the topic.
 ### Key-term asides
 
 ```text
-{% raw %}{% Aside 'key-term' %}
+&#123;% Aside 'key-term' %&#125;
 Use the key-term aside to define a term that's essential to understanding an
 idea in the body copy. Key-term asides should be a single sentence that
 includes the term in italics. For example, "A _portal_ is…"
-{% endAside %}{% endraw %}
+&#123;% endAside %&#125;
 ```
 
 {% Aside 'key-term' %}
@@ -137,9 +137,9 @@ includes the term in italics. For example, "A _portal_ is…"
 ### Codelab asides
 
 ```text
-{% raw %}{% Aside 'codelab' %}
-  Use the codelab aside to link to an associated codelab.
-{% endAside %}{% endraw %}
+&#123;% Aside 'codelab' %&#125;
+Use the codelab aside to link to an associated codelab.
+&#123;% endAside %&#125;
 ```
 
 {% Aside 'codelab' %}
