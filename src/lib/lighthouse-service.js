@@ -1,11 +1,25 @@
 export const LH_HOST = "https://lighthouse-dot-webdotdevsite.appspot.com";
 
+/**
+ * Fetches recent median values for various Lighthouse categories. This is used as a baseline for
+ * site authors to compare to.
+ *
+ * @return {!Object<string, Array<!Object>>} mapping from category to recent median scores
+ */
 export async function fetchMedians() {
   // TODO(robdodson): As of July 2019, this call always returns empty/invalid JSON.
   const resp = await window.fetch(`${LH_HOST}/lh/medians?url=all`);
   return await resp.json();
 }
 
+/**
+ * Causes the service to run Lighthouse on the given URL. Returns the raw JSON from this run only,
+ * or throws an Error if there was a problem.
+ *
+ * @param {string} url to request a Lighthouse run
+ * @param {boolean} signedIn whether the user is signed in
+ * @return {!Object} a single lighthouse run
+ */
 export async function runLighthouse(url, signedIn = false) {
   const body = {
     url,
@@ -28,6 +42,15 @@ export async function runLighthouse(url, signedIn = false) {
   return r;
 }
 
+/**
+ * Requests recent Lighthouse reports for the given URL. Without a valid startDate, this may only
+ * return a single report—the startDate should be drawn from a signed-in user's first scan of their
+ * desired URL.
+ *
+ * @param {string} url to request reports for
+ * @param {?Date=} startDate when reports should start from
+ * @return {!Array<!Object>} recent runs
+ */
 export async function fetchReports(url, startDate = null) {
   const testUrl = window.encodeURIComponent(url);
 

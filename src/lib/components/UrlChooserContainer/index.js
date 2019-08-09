@@ -1,7 +1,7 @@
 import {html} from "lit-element";
 import {store} from "../../store";
 import {BaseElement} from "../BaseElement";
-import {requestRunLighthouse} from "../../controller";
+import {requestRunLighthouse} from "../../actions";
 import "../UrlChooser";
 
 /**

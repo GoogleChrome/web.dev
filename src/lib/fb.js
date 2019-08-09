@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import {requestFetchReports} from "./controller";
+import {requestFetchReports} from "./actions";
 import {store} from "./store";
 
 /* eslint-disable require-jsdoc */
@@ -31,44 +31,48 @@ firebase.auth().onAuthStateChanged((user) => {
 
     // Clear Firestore values here, so they don't persist between signins.
     store.setState({
+      userUrlSeen: null,
       userUrl: null,
     });
   }
 
-  if (user) {
-    store.setState({
-      isSignedIn: true,
-      user,
-    });
-    firestoreUserUnsubscribe = userRef().onSnapshot((snapshot) => {
-      const state = store.getState();
-      const isInitialSnapshot = state.userUrl === null;
-
-      const data = snapshot.data() || {}; // is empty on new user
-
-      const userUrl = data.userUrl || "";
-      const prevSeen = (data.userUrlSeen && data.userUrlSeen[userUrl]) || null;
-      const userUrlSeen = prevSeen ? prevSeen.toDate() : null;
-
-      console.info("snapshot: got userUser", userUrl, userUrlSeen);
-      store.setState({
-        userUrlSeen,
-        userUrl,
-      });
-
-      // TODO(samthor): This will request reports as soon as the user is signed in, regardless of
-      // what page they're on. It should only request if we're on /measure.
-      if (isInitialSnapshot && data.userUrl) {
-        const state = store.getState();
-        requestFetchReports(state.userUrl, state.userUrlSeen);
-      }
-    });
-  } else {
+  if (!user) {
     store.setState({
       isSignedIn: false,
       user: null,
     });
+    return;
   }
+
+  store.setState({
+    isSignedIn: true,
+    user,
+  });
+  firestoreUserUnsubscribe = userRef().onSnapshot((snapshot) => {
+    const state = store.getState();
+    const isInitialSnapshot = state.userUrl === null;
+
+    const data = snapshot.data() || {}; // is empty on new user
+
+    const userUrl = data.userUrl || "";
+    const prevSeen = (data.userUrlSeen && data.userUrlSeen[userUrl]) || null;
+    const userUrlSeen = prevSeen ? prevSeen.toDate() : null;
+
+    store.setState({
+      userUrlSeen,
+      userUrl,
+    });
+    if (state.activeLighthouseUrl || state.userUrl === userUrl) {
+      return; // ignore if Lighthouse is running or this URL isn't a change
+    }
+
+    // TODO(samthor): This will request reports as soon as the user is signed in, regardless of
+    // what page they're on. It should only request if we're on /measure.
+    if (isInitialSnapshot && data.userUrl) {
+      const state = store.getState();
+      requestFetchReports(state.userUrl, state.userUrlSeen);
+    }
+  });
 });
 
 export function userRef() {
@@ -80,13 +84,13 @@ export function userRef() {
 }
 
 /**
- * Update's the user's row in Firestore (if signed in) with an updated URL and optional audit time.
+ * Updates the user's row in Firestore (if signed in) with an updated URL and optional audit time.
  *
  * @param {string} url to update the user's row with
  * @param {!Date} auditedOn of the most recent Lighthouse run
  * @return {!Date} the earliest audit seen for this URL
  */
-export async function updateUrl(url, auditedOn = null) {
+export async function saveUserUrl(url, auditedOn = null) {
   const ref = userRef();
   if (!ref) {
     return null; // not signed in so user has never seen this site
@@ -103,10 +107,6 @@ export async function updateUrl(url, auditedOn = null) {
       userUrl: url,
     };
 
-    // TODO(robdodson): Users can pass (examples for the same site):
-    //   "https://google.com/", "http://google.com", "https://www.google.com/?foo"
-    // Is it worth simply using the bare hostname here? (would still have www. vs not)
-
     const prevSeen = (data.userUrlSeen && data.userUrlSeen[url]) || null;
     if (prevSeen) {
       // nb. There's already a valid timestamp here, so don't replace it with a future time,
@@ -115,7 +115,6 @@ export async function updateUrl(url, auditedOn = null) {
       if (cand.getTime() && cand.getTime() < auditedOn.getTime()) {
         auditedOn = cand; // take earliest date
       }
-      // TODO(robdodson): Do we care about migrating userdata from DevSite?
     } else if (auditedOn && auditedOn.getTime()) {
       // Set the timestamp of this run, so the user gets runs from it and forward in future.
       update.userUrlSeen = {

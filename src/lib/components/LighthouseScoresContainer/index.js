@@ -1,25 +1,53 @@
+import {html} from "lit-element";
 import {store} from "../../store";
+import {BaseElement} from "../BaseElement";
 
 /**
  * @fileoverview Container element for displaying Lighthouse results.
  */
 
 /* eslint-disable require-jsdoc */
-class LighthouseScoresContainer extends HTMLElement {
+class LighthouseScoresContainer extends BaseElement {
+  static get properties() {
+    return {
+      filteringOn: {type: String}, // the Lighthouse category to filter to, not from state
+
+      lighthouseError: {type: String},
+      activeLighthouseUrl: {type: String},
+      auditedOn: {type: Date},
+      lighthouseResultUrl: {type: String},
+      lighthouseResultRuns: {type: Array},
+      lighthouseResultLastLhr: {type: Object},
+    };
+  }
+
   constructor() {
     super();
+    this.onStateChanged = this.onStateChanged.bind(this);
+  }
 
-    this.metaElement = null;
-    this.statsElement = null;
-    this.metricsElement = null;
-    this.auditsElement = null;
-
-    store.subscribe(this.onStateChanged.bind(this));
-    this.onStateChanged();
-
-    this.onCategoryChanged = (e) => {
-      this.auditsElement.filteringOn = e.detail;
-    };
+  render() {
+    return html`
+      <web-lighthouse-scores-meta
+        .errorMessage=${this.lighthouseError}
+        .auditedOn=${this.auditedOn}
+        .url=${this.lighthouseResultUrl}
+      ></web-lighthouse-scores-meta>
+      <web-lighthouse-scores-stats
+        @category=${(e) => (this.filteringOn = e.detail)}
+        .lhrRuns=${this.lighthouseResultRuns}
+        .disabled=${Boolean(this.activeLighthouseUrl)}
+      ></web-lighthouse-scores-stats>
+      <web-lighthouse-scores-metrics
+        .lhr=${this.lighthouseResultLastLhr}
+        ?hidden=${!this.lighthouseResultLastLhr}
+      ></web-lighthouse-scores-metrics>
+      <web-lighthouse-scores-audits
+        .filteringOn=${this.filteringOn}
+        .lhr=${this.lighthouseResultLastLhr}
+        ?hidden=${!this.lighthouseResultLastLhr}
+      ></web-lighthouse-scores-audits>
+    `;
   }
 
   onStateChanged() {
@@ -29,64 +57,35 @@ class LighthouseScoresContainer extends HTMLElement {
       activeLighthouseUrl,
     } = store.getState();
 
-    // Enact changes that occur regardless of whether a result is being displayed.
-    if (this.metaElement) {
-      // if lighthouseError is null, no error is displayed
-      this.metaElement.errorMessage = lighthouseError;
-    }
-    if (this.statsElement) {
-      this.statsElement.disabled = Boolean(activeLighthouseUrl);
-    }
+    this.lighthouseError = lighthouseError;
+    this.activeLighthouseUrl = activeLighthouseUrl;
 
     const runs = (lighthouseResult && lighthouseResult.runs) || [];
     const lastRun = runs.slice(-1)[0] || null;
-    const lastLhr = lastRun ? lastRun.lhr : null;
 
-    if (this.metaElement) {
-      let auditedOn = null;
-      if (lastRun) {
-        const d = new Date(lastRun.auditedOn);
-        if (d.getTime()) {
-          auditedOn = d;
-        }
+    this.lighthouseResultUrl = lighthouseResult ? lighthouseResult.url : null;
+    this.lighthouseResultRuns = runs;
+    this.lighthouseResultLastLhr = lastRun ? lastRun.lhr : null;
+
+    let auditedOn = null;
+    if (lastRun) {
+      const d = new Date(lastRun.auditedOn);
+      if (d.getTime()) {
+        auditedOn = d;
       }
-      this.metaElement.errorMessage = lighthouseError;
-      this.metaElement.auditedOn = auditedOn;
-      this.metaElement.url = lighthouseResult ? lighthouseResult.url : null;
     }
-    if (this.statsElement) {
-      this.statsElement.lhrRuns = runs;
-    }
-    if (this.metricsElement) {
-      this.metricsElement.hidden = !lastLhr;
-      this.metricsElement.lhr = lastLhr;
-    }
-    if (this.auditsElement) {
-      this.auditsElement.hidden = !lastLhr;
-      this.auditsElement.lhr = lastLhr;
-    }
+    this.auditedOn = auditedOn;
   }
 
   connectedCallback() {
-    // Unlike other elements, this Container does not inherit from LitElement. We assume that
-    // measure/index.njk contains this element wrapping a number of related elements.
-
-    this.metaElement = this.querySelector("web-lighthouse-scores-meta");
-    this.statsElement = this.querySelector("web-lighthouse-scores-stats");
-    this.metricsElement = this.querySelector("web-lighthouse-scores-metrics");
-    this.auditsElement = this.querySelector("web-lighthouse-scores-audits");
-
-    if (this.statsElement && this.auditsElement) {
-      this.statsElement.addEventListener("category", this.onCategoryChanged);
-    }
-
+    super.connectedCallback();
+    store.subscribe(this.onStateChanged);
     this.onStateChanged();
   }
 
   disconnectedCallback() {
-    if (this.statsElement) {
-      this.statsElement.removeEventListener("category", this.onCategoryChanged);
-    }
+    super.disconnectedCallback();
+    store.unsubscribe(this.onStateChanged);
   }
 }
 

@@ -102,6 +102,10 @@ class LighthouseScoresAudits extends BaseElement {
   }
 
   set lhr(value) {
+    if (this._lhr === value) {
+      return; // don't reset, same results
+    }
+
     // setting lhr resets most properties of this element
     this.timesExpanded = 1;
     this.inverted = false;
