@@ -52,7 +52,10 @@ const ShareAction = (title, url) => {
 
   return html`
     <a
-      class="w-actions__fab w-actions__fab--share"
+      class="w-actions__fab w-actions__fab--share gc-analytics-event"
+      data-category="web.dev"
+      data-label="share, twitter"
+      data-action="click"
       href="${twitter}?text=${encodedText}&amp;url=${encodedUrl}"
       onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;"
     >
@@ -64,7 +67,10 @@ const ShareAction = (title, url) => {
 const SubscribeAction = () => {
   return html`
     <a
-      class="w-actions__fab w-actions__fab--subscribe"
+      class="w-actions__fab w-actions__fab--subscribe gc-analytics-event"
+      data-category="web.dev"
+      data-label="subscribe, newsletter"
+      data-action="click"
       href="${site.subscribe}"
     >
       <span>Subscribe</span>
