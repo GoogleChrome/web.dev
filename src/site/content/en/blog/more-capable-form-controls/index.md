@@ -21,7 +21,7 @@ tags:
 
 Many developers build custom form controls, either to provide controls that aren't built in to the browser, or to customize the look and feel beyond what's possible with the native form controls. 
 
-However, if can be difficult to replicate the features of built-in HTML form controls. Consider some of the features an `<input>` element gets automatically when you add it to a form:
+However, it can be difficult to replicate the features of built-in HTML form controls. Consider some of the features an `<input>` element gets automatically when you add it to a form:
 
 *   The input is automatically added to the form's list of controls.
 *   The input's value is automatically submitted with the form.
