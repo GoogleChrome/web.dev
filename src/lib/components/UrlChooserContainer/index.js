@@ -22,11 +22,21 @@ class UrlChooserContainer extends BaseElement {
 
   constructor() {
     super();
+    this.onStateChanged = this.onStateChanged.bind(this);
+
     this.url = null; // when signed out or waiting for Firestore, this is null
     this.active = false;
+  }
 
-    store.subscribe(this.onStateChanged.bind(this));
+  connectedCallback() {
+    super.connectedCallback();
+    store.subscribe(this.onStateChanged);
     this.onStateChanged();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    store.unsubscribe(this.onStateChanged);
   }
 
   render() {
