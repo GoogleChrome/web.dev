@@ -464,10 +464,10 @@ class SparklineChart extends BaseElement {
     const lastDataPoint = paths[paths.length - 1] || null;
 
     // Only render medians if there's actually a value contained here.
-    let medianPathsPaths = ``;
+    let medianPaths = ``;
     if (this.medians && this.medians.length) {
-      const {paths: medianPaths} = this.processValues(this.medians);
-      medianPathsPaths = medianPaths.map(({points}) => {
+      const {paths} = this.processValues(this.medians);
+      medianPaths = paths.map(({points}) => {
         return svg`<path d="${points}" class="path dashed" />`;
       });
     }
@@ -513,7 +513,7 @@ class SparklineChart extends BaseElement {
               <path d="${points}" class="path result--${color}" style="fill:none" />
             `;
           })}
-          ${medianPathsPaths}
+          ${medianPaths}
           <line class="sl-cursor"
                 x1="-10000" x2="-10000" y1="0" y2="${this.height_}" />
           ${lastDataPointCircle}
