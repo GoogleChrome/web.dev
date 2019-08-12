@@ -2,28 +2,26 @@
 layout: post
 title: Page is blocked from indexing
 description: |
-  Learn about is-crawable audit.
+  Learn about the "Page is blocked from indexing" Lighthouse audit.
 web_lighthouse:
   - is-crawable
 ---
 
-Search engines can only show pages in their search results,
-if those pages are not explicitly blocking indexing.
+Search engines can only show pages in their search results
+if those pages don't explicitly block indexing.
 Don't block indexing for content that you want to show up in search results.
-Lighthouse flags when search engines can't index your page:
+
+Lighthouse flags pages that search engines can't index:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="is-crawable.png" alt="Lighthouse audit showing search engines can't index your page">
-  <figcaption class="w-figcaption">
-    Search engines can't index your page.
-  </figcaption>
 </figure>
 
-## What causes this audit to fail
+## How this audit fails
 
-Lighthouse checks for the general headers or tags that affect all crawlers.
-It doesn't flag headers or tags that block specific search engine bots.
-For example, the tag below prevents all search engine crawlers from accessing your page:
+Lighthouse only checks for headers or elements that block _all_ search engine
+crawlers. For example, the `<meta>` element below prevents all search engine
+crawlers from accessing your page:
 
 ```html
 <meta name="robots" content="noindex"/>
@@ -35,39 +33,36 @@ The HTTP response header below does the same:
 X-Robots-Tag: noindex
 ```
 
-You might also have meta tags that block specific crawlers, such as:
+You might also have `<meta>` elements that block specific crawlers, such as:
 
 ```html
 <meta name="AdsBot-Google" content="noindex"/>
 ```
 
-Lighthouse doesn't check for bot-specific directives like this.
-Nonetheless,
-directives like this can still make your page harder to discover in various ways.
+Lighthouse doesn't check for crawler-specific directives like this, but they can
+still make your page harder to discover, so use them with caution.
 
 You can inspect your page's response headers via
 [the **Headers** tab of Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#headers):
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="headers.svg" alt="The Headers tab">
-  <figcaption class="w-figcaption">
-    The Headers tab.
-  </figcaption>
 </figure>
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## How to ensure search engines can crawl your page
 
-If you want search engines to crawl your page,
-remove the HTTP headers or meta tags that are preventing crawlers from doing so.
+If you want search engines to crawl your page, remove any HTTP headers or
+`<meta>` elements that are blocking the crawlers.
 
-See [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
-for details about exactly how you can configure your meta tags and HTTP headers
-to get more control over how search engines crawl your page.
+See Google's [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
+page to learn how to configure your `<meta>` elements and HTTP headers to get
+more control over how search engines crawl your page.
 
-Learn more in [Remove code that blocks search engine indexing](/remove-code-blocking-indexing).
+See the [Remove code that blocks search engine indexing](/remove-code-blocking-indexing)
+post for more information.
 
 ## More information
 
-[Search engines can't index your site audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/is-crawlable.js)
+[**Page is blocked from indexing** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/is-crawlable.js)

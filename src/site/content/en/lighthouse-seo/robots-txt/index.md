@@ -2,33 +2,34 @@
 layout: post
 title: robots.txt is not valid
 description: |
-  Learn about robots-txt audit.
+  Learn about the "robots.txt is not valid" Lighthouse audit.
 web_lighthouse:
   - robots-txt
 ---
 
-The `robots.txt` file tells search engines
-what pages of your site they can crawl.
-An invalid `robots.txt` configuration can cause
-2 general types of problems:
+The `robots.txt` file tells search engines which of your site's pages they can
+crawl. An invalid `robots.txt` configuration can cause two types of problems:
 
-- Not crawling public pages, causing your relevant content
-to show up less in search results.
-- Crawling private pages,
-exposing private information in search results.
+- It can keep search engines from crawling public pages, causing your
+content to show up less often in search results.
+- It can cause search engines to crawl private pages, exposing information you
+may not want shown in search results.
 
 Lighthouse flags invalid `robots.txt` files:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="robots-txt.png" alt="Lighthouse audit showing invalid robots.txt">
-  <figcaption class="w-figcaption">
-    <code>robots.txt</code> isn't valid.
-  </figcaption>
 </figure>
 
-## What causes this audit to fail
+{% Aside %}
+Most Lighthouse audits only apply to the page that you're currently on.
+However, since `robots.txt` is defined at the domain level,
+this audit applies to your entire domain (or subdomain).
+{% endAside %}
 
-Expand the **robots.txt is not valid** audit in your report
+## How this audit fails
+
+Expand the **`robots.txt` is not valid** audit in your report
 to learn why your `robots.txt` file is invalid.
 
 Common errors include:
@@ -39,14 +40,11 @@ Common errors include:
 - `Invalid sitemap URL`
 - `"$" should only be used at the end of the pattern`
 
-Most Lighthouse audits only apply to the page that you're currently on.
-However, since `robots.txt` is defined at the domain level,
-this audit applies to your entire domain (or subdomain).
+Lighthouse doesn't check that your `robots.txt` file is
+in the correct location. To function correctly, the file must be in the root of
+your domain or subdomain.
 
-{% Aside 'note' %}
-Lighthouse does not ensure that your `robots.txt` file is
-in the correct location.
-{% endAside %}
+{% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## How to fix the errors in `robots.txt`
 
@@ -57,12 +55,10 @@ in the correct location.
 - Make sure there's a value for `user-agent`.
 - Provide an absolute URL for `sitemap` with http/https/ftp scheme.
 
-Learn more in [Fix robots.txt errors](/fix-robot-errors).
+See the [Fix `robots.txt` errors](/fix-robot-errors) post for more information.
 
 ## More information
 
-- [Invalid `robots.txt` audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
+- [**`robots.txt` is not valid** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/robots-txt.js)
 - [Create a `robots.txt file`](https://support.google.com/webmasters/answer/6062596)
 - [Robots.txt](https://moz.com/learn/seo/robotstxt)
-
-{% include 'content/lighthouse-seo/scoring.njk' %}

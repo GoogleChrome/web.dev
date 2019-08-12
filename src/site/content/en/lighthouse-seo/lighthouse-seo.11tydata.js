@@ -15,6 +15,8 @@ module.exports = {
       {
         title: 'Content best practices',
         pathItems: [
+          'document-title',
+          'viewport',
           'meta-description',
           'link-text',
           'hreflang',

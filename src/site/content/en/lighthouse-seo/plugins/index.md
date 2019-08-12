@@ -2,32 +2,31 @@
 layout: post
 title: Document uses plugins
 description: |
-  Learn about plugins audit.
+  Learn about the "Document uses plugins" Lighthouse audit.
 web_lighthouse:
   - plugins
 ---
 
-Plugins harm SEO. Search engines can't index plugin content.
-Many mobile devices don't support plugins,
-which creates frustrating experiences for mobile users.
+Plugins harm SEO because search engines can't index plugin content.
+Also, many mobile devices don't support plugins, which creates frustrating
+experiences for mobile users.
+
 Lighthouse flags your document when it uses plugins:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="plugins.png" alt="Lighthouse audit showing document uses plugins">
-  <figcaption class="w-figcaption">
-    Document uses plugins.
-  </figcaption>
 </figure>
 
-## What causes this audit to fail
+## How this audit fails
 
-Lighthouse checks the page for tags that commonly represent plugins:
+Lighthouse checks the page for elements that commonly represent plugins:
 
 - `embed`
 - `object`
 - `applet`
 
-And then flags each tag as a plugin if its MIME type matches any of the following:
+Lighthouse then flags an element as a plugin if its MIME type matches any of the
+following:
 
 - `application/x-java-applet`
 - `application/x-java-bean`
@@ -35,14 +34,16 @@ And then flags each tag as a plugin if its MIME type matches any of the followin
 - `application/x-silverlight`
 - `application/x-silverlight-2`
 
-Or if the tag points to a URL with a file format that is known to represent plugin content:
+Lighthouse also flags elements that point to a URL with a file format that is
+known to represent plugin content:
 
 - `swf`
 - `flv`
 - `class`
 - `xap`
 
-Learn more in [Avoid making pages that rely on browser plugins](/remove-browser-plugins).
+See the [Avoid making pages that rely on browser plugins](/remove-browser-plugins)
+post for more information.
 
 ## Remove plugins
 
@@ -54,7 +55,7 @@ See also these
 
 ## More information
 
-- [Document uses plugins audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
+- [**Document uses plugins** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
 - [Unplayable content](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content)
 
 {% include 'content/lighthouse-seo/scoring.njk' %}

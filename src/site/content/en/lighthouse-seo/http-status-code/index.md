@@ -2,24 +2,23 @@
 layout: post
 title: Page has unsuccessful HTTP status code
 description: |
-  Learn about http-status-code audit.
+  Learn about the "Page has unsuccessful HTTP status code" Lighthouse audit.
 web_lighthouse:
   - http-status-code
 ---
 
-Search engines may not properly index pages
-that return unsuccessful HTTP status codes.
-Lighthouse considers any HTTP status code between 400 and 599 (inclusive)
-to be unsuccessful and flags them in the report:
+Search engines may not properly index pages that return unsuccessful HTTP status
+codes. HTTP status codes in the 400s and 500s
+[are defined as errors](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status),
+so Lighthouse flags them:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="http-status-code.png" alt="Lighthouse audit showing search engines are struggling to index your page">
-  <figcaption class="w-figcaption">
-    Search engines struggling to index your page.
-  </figcaption>
 </figure>
 
-## How to ensure search engines can index your page
+{% include 'content/lighthouse-seo/scoring.njk' %}
+
+## How to ensure that search engines can index your page
 
 When a page is requested,
 ensure that your server returns a 2XX or 3XX HTTP status code.
@@ -45,6 +44,4 @@ Learn more in [Fix unsuccessful HTTP status codes](/fix-http-status-codes).
 
 ## More information
 
-[Search engines struggling to index your page audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
-
-{% include 'content/lighthouse-seo/scoring.njk' %}
+[**Page has unsuccessful HTTP status code** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
