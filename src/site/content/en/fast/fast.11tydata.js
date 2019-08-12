@@ -98,6 +98,15 @@ module.exports = {
           'chrome-ux-report-bigquery',
         ],
       },
+      {
+        title: 'Building a performance culture',
+        pathItems: [
+          'value-of-speed',
+          'how-can-performance-improve-conversion',
+          'what-should-you-measure-to-improve-performance',
+          'how-to-report-metrics',
+        ],
+      },
     ],
   },
 };
