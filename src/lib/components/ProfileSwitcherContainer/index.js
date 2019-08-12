@@ -16,8 +16,18 @@ class ProfileSwitcherContainer extends BaseElement {
 
   constructor() {
     super();
-    store.subscribe(this.onStateChanged.bind(this));
+    this.onStateChanged = this.onStateChanged.bind(this);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    store.subscribe(this.onStateChanged);
     this.onStateChanged();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    store.unsubscribe(this.onStateChanged);
   }
 
   render() {
