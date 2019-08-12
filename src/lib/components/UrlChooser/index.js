@@ -11,6 +11,7 @@ class UrlChooser extends BaseElement {
     return {
       url: {type: String},
       switching: {type: Boolean, reflect: true},
+      hasError: {type: Boolean},
       disabled: {type: Boolean},
     };
   }
@@ -76,6 +77,12 @@ class UrlChooser extends BaseElement {
   updated(changedProperties) {
     const input = this._urlInput;
 
+    if (changedProperties.has("hasError")) {
+      if (this.hasError) {
+        // hasError false -> true implies switching, but not the other way around
+        this.switching = true;
+      }
+    }
     if (changedProperties.has("switching") && this.switching) {
       input.setSelectionRange(0, input.value.length);
       input.focus();

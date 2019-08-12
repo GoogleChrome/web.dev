@@ -1,44 +1,103 @@
+import {html} from "lit-element";
+import {store} from "../../store";
+import {requestFetchReports} from "../../actions";
+import {BaseElement} from "../BaseElement";
+
 /**
  * @fileoverview Container element for displaying Lighthouse results.
  */
 
 /* eslint-disable require-jsdoc */
-class LighthouseScoresContainer extends HTMLElement {
+class LighthouseScoresContainer extends BaseElement {
+  static get properties() {
+    return {
+      filteringOn: {type: String}, // the Lighthouse category to filter to, not from state
+
+      lighthouseError: {type: String},
+      activeLighthouseUrl: {type: String},
+      auditedOn: {type: Date},
+      lighthouseResultUrl: {type: String},
+      lighthouseResultRuns: {type: Array},
+      lighthouseResultLastLhr: {type: Object},
+    };
+  }
+
   constructor() {
     super();
-    this.firstUpdated = false;
+    this.onStateChanged = this.onStateChanged.bind(this);
+  }
+
+  render() {
+    return html`
+      <web-lighthouse-scores-meta
+        .errorMessage=${this.lighthouseError}
+        .auditedOn=${this.auditedOn}
+        .url=${this.lighthouseResultUrl}
+      ></web-lighthouse-scores-meta>
+      <web-lighthouse-scores-stats
+        @category=${(e) => (this.filteringOn = e.detail)}
+        .lhrRuns=${this.lighthouseResultRuns}
+        .disabled=${Boolean(this.activeLighthouseUrl)}
+      ></web-lighthouse-scores-stats>
+      <web-lighthouse-scores-metrics
+        .lhr=${this.lighthouseResultLastLhr}
+        ?hidden=${!this.lighthouseResultLastLhr}
+      ></web-lighthouse-scores-metrics>
+      <web-lighthouse-scores-audits
+        .filteringOn=${this.filteringOn}
+        .lhr=${this.lighthouseResultLastLhr}
+        ?hidden=${!this.lighthouseResultLastLhr}
+      ></web-lighthouse-scores-audits>
+    `;
+  }
+
+  onStateChanged() {
+    const {
+      lighthouseError,
+      lighthouseResult,
+      activeLighthouseUrl,
+      userUrlResultsPending,
+    } = store.getState();
+
+    // Only request reports if this element is visible on the page. This prevents a user's signin
+    // from fetching reports before they're needed.
+    if (userUrlResultsPending) {
+      const {userUrl, userUrlSeen} = store.getState();
+      requestFetchReports(userUrl, userUrlSeen);
+      store.setState({
+        userUrlResultsPending: false,
+      });
+    }
+
+    this.lighthouseError = lighthouseError;
+    this.activeLighthouseUrl = activeLighthouseUrl;
+
+    const runs = (lighthouseResult && lighthouseResult.runs) || [];
+    const lastRun = runs.slice(-1)[0] || null;
+
+    this.lighthouseResultUrl = lighthouseResult ? lighthouseResult.url : null;
+    this.lighthouseResultRuns = runs;
+    this.lighthouseResultLastLhr = lastRun ? lastRun.lhr : null;
+
+    let auditedOn = null;
+    if (lastRun) {
+      const d = new Date(lastRun.auditedOn);
+      if (d.getTime()) {
+        auditedOn = d;
+      }
+    }
+    this.auditedOn = auditedOn;
   }
 
   connectedCallback() {
-    // LighthouseScoresContainer expects to find children elements which it manages. It's not a
-    // LitElement, so wire things up once it's connected, and keep track of whether it's done.
-    if (this.firstUpdated) {
-      return;
-    }
-    this.firstUpdated = true;
+    super.connectedCallback();
+    store.subscribe(this.onStateChanged);
+    this.onStateChanged();
+  }
 
-    // TODO: There's no data included as of yet.
-    const lhrRuns = [];
-    const lastLhr = null;
-
-    const stats = this.querySelector("web-lighthouse-scores-stats");
-    if (stats) {
-      stats.lhrRuns = lhrRuns;
-    }
-
-    const metrics = this.querySelector("web-lighthouse-scores-metrics");
-    if (metrics) {
-      metrics.lhr = lastLhr;
-    }
-
-    const audits = this.querySelector("web-lighthouse-scores-audits");
-    if (audits) {
-      audits.lhr = lastLhr;
-    }
-
-    stats.addEventListener("category", (ev) => {
-      audits.filteringOn = ev.detail;
-    });
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    store.unsubscribe(this.onStateChanged);
   }
 }
 
