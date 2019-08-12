@@ -1,7 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import {requestFetchReports} from "./actions";
 import {store} from "./store";
 
 /* eslint-disable require-jsdoc */
@@ -52,26 +51,30 @@ firebase.auth().onAuthStateChanged((user) => {
     const state = store.getState();
     const isInitialSnapshot = state.userUrl === null;
 
+    // We expect the user snapshot to look like:
+    // {
+    //   currentUrl: String,         # current used URL
+    //   urls: {String: Timestamp},  # URL to first time used (including current URL)
+    // }
     const data = snapshot.data() || {}; // is empty on new user
 
-    const userUrl = data.userUrl || "";
-    const prevSeen = (data.userUrlSeen && data.userUrlSeen[userUrl]) || null;
+    const userUrl = data.currentUrl || "";
+    const prevSeen = (data.urls && data.urls[userUrl]) || null;
     const userUrlSeen = prevSeen ? prevSeen.toDate() : null;
+
+    // Request results if this is the first snapshot and they have a saved URL.
+    let userUrlResultsPending = isInitialSnapshot && userUrl;
+
+    // But don't request results if there's an active fetch or a URL was set pre-signin.
+    if (state.activeLighthouseUrl || state.userUrl === userUrl) {
+      userUrlResultsPending = false;
+    }
 
     store.setState({
       userUrlSeen,
       userUrl,
+      userUrlResultsPending,
     });
-    if (state.activeLighthouseUrl || state.userUrl === userUrl) {
-      return; // ignore if Lighthouse is running or this URL isn't a change
-    }
-
-    // TODO(samthor): This will request reports as soon as the user is signed in, regardless of
-    // what page they're on. It should only request if we're on /measure.
-    if (isInitialSnapshot && data.userUrl) {
-      const state = store.getState();
-      requestFetchReports(state.userUrl, state.userUrlSeen);
-    }
   });
 });
 
@@ -104,10 +107,10 @@ export async function saveUserUrl(url, auditedOn = null) {
     // every document read during a transaction is written again.
 
     const update = {
-      userUrl: url,
+      currentUrl: url,
     };
 
-    const prevSeen = (data.userUrlSeen && data.userUrlSeen[url]) || null;
+    const prevSeen = (data.urls && data.urls[url]) || null;
     if (prevSeen) {
       // nb. There's already a valid timestamp here, so don't replace it with a future time,
       // but grab it so we can inform a signed-in caller.
@@ -117,7 +120,7 @@ export async function saveUserUrl(url, auditedOn = null) {
       }
     } else if (auditedOn && auditedOn.getTime()) {
       // Set the timestamp of this run, so the user gets runs from it and forward in future.
-      update.userUrlSeen = {
+      update.urls = {
         [url]: auditedOn,
       };
     }

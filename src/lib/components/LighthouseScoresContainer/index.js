@@ -1,5 +1,6 @@
 import {html} from "lit-element";
 import {store} from "../../store";
+import {requestFetchReports} from "../../actions";
 import {BaseElement} from "../BaseElement";
 
 /**
@@ -55,7 +56,18 @@ class LighthouseScoresContainer extends BaseElement {
       lighthouseError,
       lighthouseResult,
       activeLighthouseUrl,
+      userUrlResultsPending,
     } = store.getState();
+
+    // Only request reports if this element is visible on the page. This prevents a user's signin
+    // from fetching reports before they're needed.
+    if (userUrlResultsPending) {
+      const {userUrl, userUrlSeen} = store.getState();
+      requestFetchReports(userUrl, userUrlSeen);
+      store.setState({
+        userUrlResultsPending: false,
+      });
+    }
 
     this.lighthouseError = lighthouseError;
     this.activeLighthouseUrl = activeLighthouseUrl;

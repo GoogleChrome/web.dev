@@ -18,6 +18,9 @@ const initialState = {
   userUrlSeen: null,
   userUrl: null, // null for unknown/not signed-in, "" for unset
 
+  // Whether a fetch should be made for the user's URL.
+  userUrlResultsPending: false,
+
   // The URL currently being run through Lighthouse.
   activeLighthouseUrl: null,
 
