@@ -33,7 +33,7 @@ In the above URL, the name of the Source is `example`, so the hostname takes the
 
 ## imgix client libraries
 
-After you become familiar with how to form imgix URLs, you can begin to integrate them in your website. However, doing this manually can take a lot of time, especially depending on the size of the application. To facilitate this, imgix offers a variety of [client libraries](https://docs.imgix.com/libraries?utm_source=webdev&utm_medium=referral&utm_campaign=codelab), which allows developers to programmatically build URLs and streamline integration.
+After you become familiar with how to form imgix URLs, you can begin to integrate them in your website. However, doing this manually can take a lot of time, especially depending on the size of the application. To facilitate this, imgix offers a variety of [client libraries](https://docs.imgix.com/libraries?utm_source=webdev&utm_medium=referral&utm_campaign=codelab), which allow developers to programmatically build URLs and streamline integration.
 The imgix SDK offers both backend and frontend libraries in a variety of common languages and web frameworks, each providing utilities that follow imgix's recommended best practices. This codelab will explain how to use the imgix.js library.
 
 ## Serve responsive images using imgix.js
@@ -46,12 +46,13 @@ For the purposes of this Glitch, imgix.js is already installed. For more informa
 
 ### View this demo
 
-- To view this demo press the _View App_ button, then the _Expand_ button ![Expand button](./expand-button.png)
+{% Instruction 'preview' %}
 - At first the image may look like just a blue background. If you scroll around you'll see that it's a very large image of some people in a hot air balloon
 
 ### View the code
 
-- View `views/index.html`, you'll notice that the only element on the page is a single `<img>` with a `src` attribute defined as `https://assets.imgix.net/unsplash/hotairballoon.jpg`.
+{% Instruction 'source' %}
+- Open `views/index.html`, you'll notice that the only element on the page is a single `<img>` with a `src` attribute defined as `https://assets.imgix.net/unsplash/hotairballoon.jpg`.
 - If you were to inspect this image, you would see that it is 5184 pixels wide and nearly 1.5 MB. That's way too massive of an image to serve to small devices.
 
 ### Improve the code
@@ -61,57 +62,58 @@ to download different-sized images depending on screen size.
 
 Under the `images` directory, you can see three images: `hotairballoon-large.jpg`, `hotairballoon-medium.jpg`, and `hotairballoon-small.jpg`. The three images are exactly the same, except they've been manually resized in an image-editing application and saved at 1200, 750, and 400 pixels wide, respectively.
 
-- Click **Remix to Edit** to get an editable version of the code.
+{% Instruction 'remix' %}
 - Replace the original `<img>` element in your `index.html` to use these three instead:
 
 ```html
 <img srcset="hotairballoon-large.jpg 1200w,
              hotairballoon-medium.jpg 750w,
              hotairballoon-small.jpg 400w"
-    sizes="100vw"
->
+     sizes="100vw">
 ```
 
-- Make your browser window very narrow, open the Network panel of your browser's DevTools, and then slowly make your browser window wider. 
-  The browser automatically downloads the larger sizes of the image as the browser window gets wider. You might need to clear your HTTP cache
-  in order to see the browser download each image size.
+- To test this, make your browser window very narrow.
+{% Instruction 'devtools-network' %}
+- Slowly make your browser window wider. Notice that the browser automatically downloads the larger sizes of the image as the window gets wider. You might need to clear your HTTP cache in order to see the browser download each image size.
 
 ### How imgix makes this easier
 
-But what if you want to have more than three sizes of the image because you want to cover more scenarios? Or you want to make sure your page is running as optimally as possible? Imagine if you wanted a page that had ten different versions of an image defined in the element's `srcset`. Well, if you were to do that much manual work per each image on your page, the time and effort can really add up.
+But what if you want to have more than three sizes of the image because you want to cover more scenarios? Or you want to make sure your page is running as optimally as possible? Imagine if you wanted a page that had ten different versions of an image defined in the element's `srcset`. Well, if you were to do that much manual work for each image on your page, the time and effort could really add up.
 
 Luckily, with imgix.js you can dynamically generate these images through your Source that you created earlier. 
 
 - Try using the imgix.js-defined attribute `ix-src` in your  `<img>` element:
 
 ```html
-   <img
-       ix-src="https://assets.imgix.net/unsplash/hotairballoon.jpg"
-       sizes="100vw"
-       alt="A hot air balloon on a sunny day"
-     >
+<img
+  ix-src="https://assets.imgix.net/unsplash/hotairballoon.jpg"
+  sizes="100vw"
+  alt="A hot air balloon on a sunny day">
 ```
 
-Now try opening the app and resizing browser. As the browser is resized, it will load images with different widths. (Note: You will probably need to clear your cache in between page loads in order to observe this happening. Otherwise, the browser will try to use the image version that is already in the cache.)
+Now try opening the app and resizing browser. As the browser is resized, it will load images with different widths.
 
-If you inspect this element by using your browser's DevTools (Right click the image and select _Inspect_) you'll see imgix.js has automatically generated HTML similar to the following:
+{% Aside %}
+You will probably need to clear your cache in between page loads in order to observe this happening. Otherwise, the browser will try to use the image version that is already in the cache.
+{% endAside %}
+
+If you inspect this element by using your browser's DevTools (right-click the image and select _Inspect_) you'll see imgix.js has automatically generated HTML similar to the following:
 
 ```html
-  <img
-       ix-src="https://assets.imgix.net/unsplash/hotairballoon.jpg"
-       alt="A hot air balloon on a sunny day"
-       sizes="100vw"
-       srcset="
-           https://assets.imgix.net/unsplash/hotairballoon.jpg?w=100 100w,
-           https://assets.imgix.net/unsplash/hotairballoon.jpg?w=116 116w,
-           https://assets.imgix.net/unsplash/hotairballoon.jpg?w=134 134w,
-           https://assets.imgix.net/unsplash/hotairballoon.jpg?w=156 156w,
-                                       ...
-           https://assets.imgix.net/unsplash/hotairballoon.jpg?w=5500 5500w
-           https://assets.imgix.net/unsplash/hotairballoon.jpg?w=6380 6380w,
-           https://assets.imgix.net/unsplash/hotairballoon.jpg?w=7400 7400w"
-       src="https://assets.imgix.net/unsplash/hotairballoon.jpg"
-       >
+<img
+  ix-src="https://assets.imgix.net/unsplash/hotairballoon.jpg"
+  alt="A hot air balloon on a sunny day"
+  sizes="100vw"
+  srcset="
+      https://assets.imgix.net/unsplash/hotairballoon.jpg?w=100 100w,
+      https://assets.imgix.net/unsplash/hotairballoon.jpg?w=116 116w,
+      https://assets.imgix.net/unsplash/hotairballoon.jpg?w=134 134w,
+      https://assets.imgix.net/unsplash/hotairballoon.jpg?w=156 156w,
+                                  …
+      https://assets.imgix.net/unsplash/hotairballoon.jpg?w=5500 5500w
+      https://assets.imgix.net/unsplash/hotairballoon.jpg?w=6380 6380w,
+      https://assets.imgix.net/unsplash/hotairballoon.jpg?w=7400 7400w"
+  src="https://assets.imgix.net/unsplash/hotairballoon.jpg">
 ```
 
 Here you can see the value imgix provides. Because the imgix API allows you to create as many different image variations as you want, you can construct a custom `srcset` in just a few lines of code that serves a properly-sized image to nearly every device imaginable. Compare the amount of time that would take against manually resizing and saving each of these variations individually.
