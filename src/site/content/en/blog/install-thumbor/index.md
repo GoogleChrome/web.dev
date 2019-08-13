@@ -99,7 +99,7 @@ Update the firewall to expose port 8888. Here's more information on how to do th
 
 Thumbor is now accessible and ready for use. Try it out by visiting the following URL:
 
-```
+```text
 http://YOUR_VIRTUAL_MACHINE:8888/unsafe/100x100/https://web.dev/install-thumbor/hero.jpg
 ```
 
@@ -138,7 +138,7 @@ sudo touch thumbor.service
 
 Using your favorite text editor (vim and nano come pre-installed on Ubuntu or you can install another editor), add the following configuration to `thumbor.service`. This configuration will run `/usr/local/bin/thumbor` (i.e. the Thumbor binary) once networking is available and will restart Thumbor on [failure](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Restart=). 
 
-```
+```text
 [Unit]
 
 Description=Service for Thumbor image CDN
