@@ -38,7 +38,7 @@ The imgix SDK offers both backend and frontend libraries in a variety of common 
 
 ## Serve responsive images using imgix.js
 
-imgix.js is a Javascript library that allows developers to easily generate responsive images using the `srcset` and `sizes` attributes. What usually requires a lot of manual configuration on the frontend can now be done in just a few lines code.
+[imgix.js](https://github.com/imgix/imgix.js) is a Javascript library that allows developers to easily generate responsive images using the `srcset` and `sizes` attributes. What usually requires a lot of manual configuration on the frontend can now be done in just a few lines code.
 
 ### Getting started
 
