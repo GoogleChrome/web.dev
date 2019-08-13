@@ -85,6 +85,12 @@ module.exports = (type, listStyle = 'ul') => {
       `;
       break;
 
+    case 'source':
+      instruction = html`
+        ${bullet}To view the source, press **View&nbsp;Source**.
+      `;
+      break;
+
     case 'disable-cache':
       instruction = html`${bullet}Select the **Disable cache** checkbox.`;
       break;
