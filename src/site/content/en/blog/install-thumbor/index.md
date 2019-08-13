@@ -16,7 +16,7 @@ tags:
 
 Image CDNs make it easy to dynamically optimize the aesthetics and performance of your images. Unlike most image CDNs, [Thumbor](http://thumbor.org/) is open-source and can be used for free to resize, compress, and transform images. It's suitable for production use; [Wikipedia](https://wikitech.wikimedia.org/wiki/Thumbor) and [Square](https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87) both use Thumbor.
 
-This guide explains how to install Thumbor on your own server. Once installed, you’ll be able to use Thumbor as an API for transforming your images.
+This guide explains how to install Thumbor on your own server. Once installed, you'll be able to use Thumbor as an API for transforming your images.
 
 
 ## Intro
@@ -43,7 +43,7 @@ Install `pip`, the package manager for Python. Later you'll install Thumbor with
 sudo apt-get install -y python-pip
 ```
 
-Install Thumbor’s dependencies. Thumbor’s documentation does not explicitly mention these dependencies, but Thumbor will not install successfully without them.
+Install Thumbor's dependencies. Thumbor's documentation does not explicitly mention these dependencies, but Thumbor will not install successfully without them.
 
 ```bash
 # ssl packages
@@ -70,7 +70,7 @@ sudo pip install thumbor
 
 Note: Many Python developers use [virtualenv](https://pypi.org/project/virtualenv/) to manage their packages. For the sake of simplicity, these instructions do not use `virtualenv`. If you are installing Thumbor in a standalone environment, `virtualenv` is not necessary. If you choose to use `virtualenv`, note that Thumbor requires Python 2.7 and will not work with newer versions of `pip` (e.g. these instructions use `pip` 8.1.1).
 
-If you’ve successfully installed Thumbor, this should work:
+If you've successfully installed Thumbor, this should work:
 
 ```bash
 thumbor --help
@@ -78,7 +78,7 @@ thumbor --help
 
 ## Run Thumbor
 
-Run Thumbor. Debug logging is optional but can be helpful when you’re getting started.
+Run Thumbor. Debug logging is optional but can be helpful when you're getting started.
 
 ```bash
 thumbor --log-level debug
@@ -89,11 +89,11 @@ Thumbor is now running.
 
 ## Open Firewall Port
 
-By default, Thumbor runs on port 8888. If your VM’s IP address is `12.123.12.122`, then you would access Thumbor from the web browser at `http://12.123.12.123:8888/.../$IMAGE`.
+By default, Thumbor runs on port 8888. If your VM's IP address is `12.123.12.122`, then you would access Thumbor from the web browser at `http://12.123.12.123:8888/.../$IMAGE`.
 
-However, this probably won’t work for you (yet) because cloud providers usually require that you explicitly open firewall ports before they will accept incoming traffic.
+However, this probably won't work for you (yet) because cloud providers usually require that you explicitly open firewall ports before they will accept incoming traffic.
 
-Update the firewall to expose port 8888. Here’s more information on how to do this for: [Google Cloud](https://cloud.google.com/vpc/docs/using-firewalls), [AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html), and [Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal). Note that for Google Cloud you need to first [assign a static IP address to your VM](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address) and then [allow an external HTTP connection](https://cloud.google.com/vpc/docs/special-configurations#externalhttpconnection).
+Update the firewall to expose port 8888. Here's more information on how to do this for: [Google Cloud](https://cloud.google.com/vpc/docs/using-firewalls), [AWS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html), and [Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal). Note that for Google Cloud you need to first [assign a static IP address to your VM](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address) and then [allow an external HTTP connection](https://cloud.google.com/vpc/docs/special-configurations#externalhttpconnection).
 
 ## Try It Out
 
@@ -111,16 +111,16 @@ You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has 
 
 ## Use Thumbor
 
-You’ve successfully installed Thumbor. Next, learn about using Thumbor in the [Use Thumbor to optimize images](https://web.dev/use-thumbor-to-optimize-images) codelab.
+You've successfully installed Thumbor. Next, learn about using Thumbor in the [Use Thumbor to optimize images](https://web.dev/use-thumbor-to-optimize-images) codelab.
 
 If you are using this guide to set up Thumbor in production, you may also want to check out the optional section below on `systemd`. 
 
 
 ## Appendix: Configuring Systemd
 
-This step explains how to make sure that the Thumbor process keeps running, even after the VM has been restarted. This step is important for production sites, but optional if you’re just playing around with Thumbor.
+This step explains how to make sure that the Thumbor process keeps running, even after the VM has been restarted. This step is important for production sites, but optional if you're just playing around with Thumbor.
 
-[Systemd](https://www.freedesktop.org/software/systemd/man/systemd.html) is the “system and service manager” for Linux operating systems. `systemd` makes it easy to configure when services (processes) run.
+[Systemd](https://www.freedesktop.org/software/systemd/man/systemd.html) is the "system and service manager" for Linux operating systems. `systemd` makes it easy to configure when services (processes) run.
 
 You will be configuring `systemd` to automatically start Thumbor on VM boot. If the VM is restarted, the Thumbor process will automatically restart as well. This is much more reliable than relying on user intervention to start Thumbor.
 
@@ -165,19 +165,19 @@ sudo systemctl start thumbor.service
 ```
 Note: If Thumbor is currently running, you should stop it before attempting to start Thumbor using `systemctl`.
 
-Next, “enable” Thumbor. This means that Thumbor will automatically start on boot.
+Next, "enable" Thumbor. This means that Thumbor will automatically start on boot.
 
 ```bash
 sudo systemctl enable thumbor.service
 ```
 
-Verify that you’ve successfully configured `systemd` by running the `status` command.
+Verify that you've successfully configured `systemd` by running the `status` command.
 
 ```bash
 systemctl status thumbor.service
 ```
 
-If you’ve successfully set up thumbor.service to use `systemd`, the [status](https://www.freedesktop.org/software/systemd/man/systemctl.html#status%20PATTERN%E2%80%A6%7CPID%E2%80%A6%5D) should show that it is enabled and active.
+If you've successfully set up thumbor.service to use `systemd`, the [status](https://www.freedesktop.org/software/systemd/man/systemctl.html#status%20PATTERN%E2%80%A6%7CPID%E2%80%A6%5D) should show that it is enabled and active.
 
 <figure class="w-figure  w-figure--center">
   <img src="./systemd.jpg" alt="Systemctl displaying the status of Thumbor">
