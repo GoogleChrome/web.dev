@@ -11,7 +11,7 @@ related_post: use-imagemin-to-compress-images
 draft: true
 ---
 
-[imgix](https://www.imgix.com/) is a service that transforms, optimizes, and caches your images for a faster website experience. When building your web application, it’s nearly impossible to account for all the [various devices](https://www.mydevice.io/#compare-devices) and screen sizes that it might be viewed on. For images, this presents a major problem, because they require optimization specific to the context to display quickly and with high quality — both of which are key metrics for engagement and conversion. With imgix, you can ensure that you’re always serving images to your users at the ideal size and speed for their specific device. In addition, imgix provides a wide variety of image transformation options, all easily accessible through a robust API of [URL parameters](https://docs.imgix.com/apis/url?utm_source=webdev&utm_medium=referral&utm_campaign=codelab).
+[imgix](https://www.imgix.com/) is a service that transforms, optimizes, and caches your images for a faster website experience. When building your web application, it's nearly impossible to account for all the [various devices](https://www.mydevice.io/#compare-devices) and screen sizes that it might be viewed on. For images, this presents a major problem, because they require optimization specific to the context to display quickly and with high quality—both of which are key metrics for engagement and conversion. With imgix, you can ensure that you're always serving images to your users at the ideal size and speed for their specific device. In addition, imgix provides a wide variety of image transformation options, all easily accessible through a robust API of [URL parameters](https://docs.imgix.com/apis/url?utm_source=webdev&utm_medium=referral&utm_campaign=codelab).
 
 ## Measure with Lighthouse
 
@@ -29,12 +29,12 @@ Once your source is deployed (this usually happens immediately but can sometimes
 
 ![https://example.imgix.net/products/desk.jpg?w=600&exp=1](./imgix-url.png)
 
-In the above URL, the name of the Source is `example`, so the hostname takes the form of `example.imgix.net`. The path consists of any additional directory information required to locate your image within your image storage (for example if you have different subfolders for your images). In this example, `/products/desk.jpg` completes the full path to the image. Once you are able to access your master image from the origin source, you can use imgix’s API via query parameters. In the above example, `w=600` resizes the image to 600 pixels wide while `exp=1` increases the image’s exposure by 1 unit.
+In the above URL, the name of the Source is `example`, so the hostname takes the form of `example.imgix.net`. The path consists of any additional directory information required to locate your image within your image storage (for example if you have different subfolders for your images). In this example, `/products/desk.jpg` completes the full path to the image. Once you are able to access your master image from the origin source, you can use imgix's API via query parameters. In the above example, `w=600` resizes the image to 600 pixels wide while `exp=1` increases the image's exposure by 1 unit.
 
 ## imgix client libraries
 
 After you become familiar with how to form imgix URLs, you can begin to integrate them in your website. However, doing this manually can take a lot of time, especially depending on the size of the application. To facilitate this, imgix offers a variety of [client libraries](https://docs.imgix.com/libraries?utm_source=webdev&utm_medium=referral&utm_campaign=codelab), which allows developers to programmatically build URLs and streamline integration.
-The imgix SDK offers both backend and frontend libraries in a variety of common languages and web frameworks, each providing utilities that follow imgix’s recommended best practices. This codelab will explain how to use the imgix.js library.
+The imgix SDK offers both backend and frontend libraries in a variety of common languages and web frameworks, each providing utilities that follow imgix's recommended best practices. This codelab will explain how to use the imgix.js library.
 
 ## Serve responsive images using imgix.js
 
@@ -52,14 +52,14 @@ For the purposes of this Glitch, imgix.js is already installed. For more informa
 ### View the code
 
 - View `views/index.html`, you'll notice that the only element on the page is a single `<img>` with a `src` attribute defined as `https://assets.imgix.net/unsplash/hotairballoon.jpg`.
-- If you were to inspect this image, you would see that it is 5184 pixels wide and nearly 1.5 MB. That’s way too massive of an image to serve to small devices.
+- If you were to inspect this image, you would see that it is 5184 pixels wide and nearly 1.5 MB. That's way too massive of an image to serve to small devices.
 
 ### Improve the code
 
 As mentioned in [Serve responsive images](https://web.dev/serve-responsive-images/#the-%22srcset%22-attribute), you can use the `srcset` attribute to instruct the browser 
 to download different-sized images depending on screen size.
 
-Under the `images` directory, you can see three images: `hotairballoon-large.jpg`, `hotairballoon-medium.jpg`, and `hotairballoon-small.jpg`. The three images are exactly the same, except they’ve been manually resized in an image-editing application and saved at 1200, 750, and 400 pixels wide, respectively.
+Under the `images` directory, you can see three images: `hotairballoon-large.jpg`, `hotairballoon-medium.jpg`, and `hotairballoon-small.jpg`. The three images are exactly the same, except they've been manually resized in an image-editing application and saved at 1200, 750, and 400 pixels wide, respectively.
 
 - Click **Remix to Edit** to get an editable version of the code.
 - Replace the original `<img>` element in your `index.html` to use these three instead:
@@ -78,7 +78,7 @@ Under the `images` directory, you can see three images: `hotairballoon-large.jpg
 
 ### How imgix makes this easier
 
-But what if you want to have more than three sizes of the image because you want to cover more scenarios? Or you want to make sure your page is running as optimally as possible? Imagine if you wanted a page that had ten different versions of an image defined in the element’s `srcset`. Well, if you were to do that much manual work per each image on your page, the time and effort can really add up.
+But what if you want to have more than three sizes of the image because you want to cover more scenarios? Or you want to make sure your page is running as optimally as possible? Imagine if you wanted a page that had ten different versions of an image defined in the element's `srcset`. Well, if you were to do that much manual work per each image on your page, the time and effort can really add up.
 
 Luckily, with imgix.js you can dynamically generate these images through your Source that you created earlier. 
 
@@ -94,7 +94,7 @@ Luckily, with imgix.js you can dynamically generate these images through your So
 
 Now try opening the app and resizing browser. As the browser is resized, it will load images with different widths. (Note: You will probably need to clear your cache in between page loads in order to observe this happening. Otherwise, the browser will try to use the image version that is already in the cache.)
 
-If you inspect this element by using your browser’s DevTools (Right click the image and select _Inspect_) you'll see imgix.js has automatically generated HTML similar to the following:
+If you inspect this element by using your browser's DevTools (Right click the image and select _Inspect_) you'll see imgix.js has automatically generated HTML similar to the following:
 
 ```html
   <img
