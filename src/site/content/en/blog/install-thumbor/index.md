@@ -3,7 +3,7 @@ title: How to install the Thumbor image CDN
 subhead: Thumbor can be used for free to resize, compress, and transform images on-demand.
 authors:
   - katiehempenius
-date: 2019-07-29
+date: 2019-08-14
 hero: hero.jpg
 alt: A pile of photos.
 description: |
