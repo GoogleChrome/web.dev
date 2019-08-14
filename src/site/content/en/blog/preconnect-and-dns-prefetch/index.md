@@ -87,10 +87,10 @@ One way of initiating a `preconnect` is adding a `<link>` tag to the `<head>` of
 </head>
 ```
 
-Pre-connecting is only effective for domains other than the origin domain, so you shouldn't use it for your site. 
+Preconnecting is only effective for domains other than the origin domain, so you shouldn't use it for your site. 
 
 {% Aside 'caution' %}
-Only pre-connect to critical origins you will use soon. If the connection isn't used within 10 seconds, the browser closes it. There's a limit to the number of simultaneous connections a browser can handle. (For example, Chrome can handle six.) Unnecessary pre-connecting can delay other important resources.
+Only preconnect to critical domains you will use soon because the browser closes any connection that isn't used within 10 seconds. Unnecessary preconnecting can delay other important resources, so limit the number of preconnected domains and [test the impact preconnecting makes](https://andydavies.me/blog/2019/08/07/experimenting-with-link-rel-equals-preconnect-using-custom-script-injection-in-webpagetest/).
 {% endAside %}
 
 You can also initiate a preconnect via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
@@ -98,7 +98,7 @@ You can also initiate a preconnect via the [`Link` HTTP header](https://develope
 `Link: <https://example.com/>; rel=preconnect`
 
 {% Aside %}
-A benefit of specifying a preconnect hint in the HTTP header is that it doesn't rely on markup being parsed, and it can be triggered by requests for stylesheets, scripts, and more. For example, Google Fonts sends a `Link` header in the stylesheet response to pre-connect to the domain that hosts the font files.
+A benefit of specifying a preconnect hint in the HTTP header is that it doesn't rely on markup being parsed, and it can be triggered by requests for stylesheets, scripts, and more. For example, Google Fonts sends a `Link` header in the stylesheet response to preconnect to the domain that hosts the font files.
 {% endAside %}
 
 Some types of resources, such as fonts, are loaded in [anonymous mode](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with the `preconnect` hint:
@@ -113,7 +113,7 @@ If you omit the `crossorigin` attribute, the browser only performs the DNS looku
 
 You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process — [domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection. 
 
-Because there's a limit to the number of connections a browser can open, you sometimes can't pre-connect to all your important domains. In that case use  `<link rel=dns-prefetch>` to save time on the first step—the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
+If a page needs to make connections to many third-party domains, preconnecting all of them is counterproductive. The `preconnect` hint is best used for only the most critical connections. For all the rest, use  `<link rel=dns-prefetch>` to save time on the first step, the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
 
 DNS resolution is initiated similarly to `preconnect`: by adding a `<link>` tag to the `<head>` of the document.
 

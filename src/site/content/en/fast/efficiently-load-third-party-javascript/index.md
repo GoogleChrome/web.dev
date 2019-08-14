@@ -8,7 +8,8 @@ date: 2019-08-08
 description: |
   Learn how to avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 hero: hero.jpg
-alt: Aerial view of shipping containers.  
+alt: Aerial view of shipping containers. 
+codelabs: codelab-optimize-third-party-javascript 
 tags:
   - performance
   - third-party
@@ -69,11 +70,9 @@ Using these attributes can significantly speed up page load. For example, [Teleg
 Analytics scripts are usually loaded early so you don't miss any valuable analytics data. Fortunately, there are [patterns to initialize analytics lazily](https://philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build/) while retaining early page-load data.
 {% endAside %}
 
-## Establish early connections to required origins 
+## Establish early connections to required origins  
 
-Establishing connections takes significant time on slow networks. This is especially true for secure connections, which may involve DNS lookups, redirects, and several round trips to the final server that handles the user's request. 
-
-You can save 100–500 ms by establishing early connections to important third-party origins.
+You can save 100–500 ms by [establishing early connections](/preconnect-and-dns-prefetch/) to important third-party origins.
 
 Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) types can help here:
 
@@ -83,15 +82,14 @@ Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) t
 
 ### `preconnect`
 
-`<link rel="preconnect">` informs the browser that your page intends to establish a connection to another origin, and that you'd like the process to start as soon as possible. When the request for a resource from the preconnected origin is made, the download starts immediately. 
+`<link rel="preconnect">` informs the browser that your page intends to establish a connection to another origin, and that you'd like the process to start as soon as possible. When the request for a resource from the pre-connected origin is made, the download starts immediately. 
 
 ```html
 <link rel="preconnect" href="https://cdn.example.com">
 ```
 
 {% Aside 'caution' %}
-Only preconnect to critical origins you will use soon; if the connection isn't used within 10 seconds, the browser closes it. There's a limit to the number of simultaneous connections a browser can handle. (For example, Chrome can handle six.) Unnecessary preconnecting can delay other important resources.
-
+Only preconnect to critical origins you will use soon; if the connection isn't used within 10 seconds, the browser closes it. Limit the number of pre-connected domains to 5 or 6, as unnecessary pre-connecting can delay other important resources.
 {% endAside %}
 
 ### `dns-prefetch`
@@ -127,10 +125,10 @@ An alternative approach is to load third-party content only when users scroll do
 [Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) is a browser API that efficiently detects when an element enters or exits the browser's viewport and it can be used to implement this technique. [lazysizes](https://web.dev/use-lazysizes-to-lazyload-images/) is a popular JavaScript library for lazy-loading images and [`iframes`](http://afarkas.github.io/lazysizes/#examples). It supports YouTube embeds and [widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). It also has [optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) for IntersectionObserver. 
 
 {% Aside 'caution' %}
-
-Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all. Keep an eye out for [native lazy-loading support for images and iframes](https://addyosmani.com/blog/lazy-loading/) that's coming soon to Chrome.
-
+Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all.
 {% endAside %}
+
+Using the [`loading` attribute for lazy-loading images and iframes](/native-lazy-loading) is a great alternative to JavaScript techniques, and it has recently become available in Chrome 76!
 
 ## Optimize how you serve third-party scripts
 

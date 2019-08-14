@@ -218,8 +218,8 @@ library only when `loading` isn't supported. This works as follows:
 
 - Replace `<img src>` with `<img data-src>` to avoid an eager load in unsupported browsers. If the
   `loading` attribute is supported, swap `data-src` for `src`.
-- If `loading` is not supported, load a fallback (lazysizes) and initiate it. You can use
-  `class=lazyload` as a way to indicate to lazysizes which images to lazy-load.
+- If `loading` is not supported, load a fallback (lazysizes) and initiate it. As per lazysizes docs, you use the
+  `lazyload` class as a way to indicate to lazysizes which images to lazy-load.
 
 ```html
 <!-- Let's load this in-viewport image normally -->
@@ -232,7 +232,7 @@ library only when `loading` isn't supported. This works as follows:
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img.lazyload');
+    const images = document.querySelectorAll('img[loading="lazy"]');
     images.forEach(img => {
       img.src = img.dataset.src;
     });

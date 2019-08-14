@@ -230,7 +230,7 @@ const po = new PerformanceObserver((entryList) => {
   // otherwise using `loadTime`. (Note: `renderTime` may not be available if
   // the element is an image and it's loaded cross-origin without the
   // `Timing-Allow-Origin` header.)
-  lcp = entry.renderTime || entry.loadTime;
+  lcp = lastEntry.renderTime || lastEntry.loadTime;
 });
 
 // Observe entries of type `largest-contentful-paint`, including buffered
