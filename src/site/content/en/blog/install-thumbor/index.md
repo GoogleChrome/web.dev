@@ -111,7 +111,7 @@ You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has 
 
 ## Use Thumbor
 
-You've successfully installed Thumbor. Next, learn about using Thumbor in the [Use Thumbor to optimize images](https://web.dev/use-thumbor-to-optimize-images) codelab.
+You've successfully installed Thumbor.
 
 If you are using this guide to set up Thumbor in production, you may also want to check out the optional section below on `systemd`. 
 
