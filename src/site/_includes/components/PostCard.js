@@ -17,7 +17,7 @@
 const {html} = require('common-tags');
 const stripLanguage = require('../../_filters/strip-language');
 
-/* eslint-disable require-jsdoc,indent */
+/* eslint-disable require-jsdoc, indent, max-len */
 
 /**
  * PostCard used to preview posts.
@@ -27,12 +27,29 @@ const stripLanguage = require('../../_filters/strip-language');
 module.exports = ({post}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
-  const hero = data && data.hero;
+  const {
+    hero,
+    thumbnail,
+    hero_alt: heroAlt,
+    thumbnail_alt: thumbnailAlt,
+  } = data;
 
-  function renderHero(post, url) {
+  // Check to see if the author has provided a thumbnail image.
+  // If not, reuse the hero image for the card's cover.
+  let coverImage = null;
+  let coverAlt = null;
+  if (thumbnail) {
+    coverImage = thumbnail;
+    coverAlt = thumbnailAlt;
+  } else if (hero) {
+    coverImage = hero;
+    coverAlt = heroAlt;
+  }
+
+  function renderCoverImage(url, image, alt) {
     return html`
       <figure class="w-post-card__figure">
-        <img class="w-post-card__image" src="${url + hero}" alt="${data.alt}" />
+        <img class="w-post-card__image" src="${url + image}" alt="${alt}" />
       </figure>
     `;
   }
@@ -56,11 +73,11 @@ module.exports = ({post}) => {
     <a href="${url}" class="w-card">
       <article class="w-post-card">
         <div
-          class="w-post-card__cover ${hero && `w-post-card__cover--with-image`}"
+          class="w-post-card__cover ${coverImage && `w-post-card__cover--with-image`}"
         >
-          ${hero && renderHero(post, url)}
+          ${coverImage && renderCoverImage(url, coverImage, coverAlt)}
           <h2
-            class="${hero
+            class="${coverImage
               ? `w-post-card__headline--with-image`
               : `w-post-card__headline`}"
           >

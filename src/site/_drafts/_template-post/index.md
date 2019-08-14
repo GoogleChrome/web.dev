@@ -10,7 +10,11 @@ hero: hero.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
-alt: A description of the hero image for screen reader users.
+hero_alt: A description of the hero image for screen reader users.
+# You can give your post an optional thumbnail for when it appears on the /blog
+# page. If you skip this, the hero image will be reused as the thumbnail.
+# thumbnail: thumbnail.jpg
+# thumbnail_alt: A description of the thumbnail image for screen reader users.
 description: |
   This post is a test to demonstrate all of the components that can go into
   an article. This description appears in the meta tag.
