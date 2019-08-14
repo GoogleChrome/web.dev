@@ -109,13 +109,6 @@ Note that this URL uses HTTP. Thumbor uses HTTP by default but can be [configure
 You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has taken the image `hero.jpg` and size specified in the URL string and served the result. You can replace the image in the URL string (i.e `https://web.dev/install-thumbor/hero.jpg`) with any other image (e.g. `https://your-site.com/cat.jpg`) and Thumbor will resize that image too. 
 
 
-## Use Thumbor
-
-You've successfully installed Thumbor.
-
-If you are using this guide to set up Thumbor in production, you may also want to check out the optional section below on `systemd`. 
-
-
 ## Appendix: Configuring Systemd
 
 This step explains how to make sure that the Thumbor process keeps running, even after the VM has been restarted. This step is important for production sites, but optional if you're just playing around with Thumbor.
