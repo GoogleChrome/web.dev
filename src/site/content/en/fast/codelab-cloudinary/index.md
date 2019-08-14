@@ -3,7 +3,7 @@ layout: codelab
 title: Use Cloudinary to optimize images
 authors:
   - ahmadawais
-date: 2019-06-24
+date: 2019-08-14
 description: |
   Use the Cloudinary URL API to optimize images and serve next-gen formats.
 glitch: codelab-cloudinary
