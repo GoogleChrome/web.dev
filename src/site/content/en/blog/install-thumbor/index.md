@@ -3,12 +3,11 @@ title: How to install the Thumbor image CDN
 subhead: Thumbor can be used for free to resize, compress, and transform images on-demand.
 authors:
   - katiehempenius
-date: 2019-07-29
+date: 2019-08-14
 hero: hero.jpg
 alt: A pile of photos.
 description: |
   Instructions on how to install Thumbor. Thumbor is an open-source image CDN and can be used for free to resize, compress, and transform images.
-draft: true
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
@@ -181,5 +180,5 @@ systemctl status thumbor.service
 If you've successfully set up thumbor.service to use `systemd`, the [status](https://www.freedesktop.org/software/systemd/man/systemctl.html#status%20PATTERN%E2%80%A6%7CPID%E2%80%A6%5D) should show that it is enabled and active.
 
 <figure class="w-figure  w-figure--center">
-  <img src="./systemd.jpg" alt="Systemctl displaying the status of Thumbor">
+  <img src="./systemd.jpg" alt="Systemctl displaying the status of Thumbor" class="w-screenshot">
 </figure>
