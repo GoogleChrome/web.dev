@@ -99,7 +99,7 @@ module.exports = {
         ],
       },
       {
-        title: 'Building a performance culture',
+        title: 'Build a performance culture',
         pathItems: [
           'value-of-speed',
           'how-can-performance-improve-conversion',
