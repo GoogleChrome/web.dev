@@ -3,7 +3,7 @@ layout: codelab
 title: Using imgix to optimize images
 authors:
   - sherwinski
-date: 2019-07-31
+date: 2019-08-14
 description: |
   In this codelab, learn how to use imgix to optimize and cache your images for a faster website experience.
 glitch: imgix-demo
