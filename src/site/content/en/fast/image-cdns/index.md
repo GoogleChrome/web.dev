@@ -8,8 +8,9 @@ description: |
   Switching to an image CDN can yield a 40–80% savings in image bytes.
 date: 2019-07-28
 codelabs:
-  - codelab-cloudinary-url-api
-draft: true
+  - codelab-cloudinary
+  - codelab-imgix
+  - install-thumbor
 ---
 
 ## Why use an image CDN?

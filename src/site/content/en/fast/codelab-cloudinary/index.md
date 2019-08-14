@@ -1,6 +1,6 @@
 ---
 layout: codelab
-title: Use Cloudinary to optimize images and serve next-gen formats
+title: Use Cloudinary to optimize images
 authors:
   - ahmadawais
 date: 2019-06-24
@@ -8,8 +8,7 @@ description: |
   Use the Cloudinary URL API to optimize images and serve next-gen formats.
 glitch: codelab-cloudinary
 path: index.html:25:0
-related_post: use-imagemin-to-compress-images
-draft: true
+related_post: image-cdns
 ---
 
 Learn to use Cloudinary's fetch URL API to optimize images and serve them in next-gen formats. 
