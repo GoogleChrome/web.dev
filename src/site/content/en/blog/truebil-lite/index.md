@@ -192,11 +192,11 @@ Because of these improvements, Truebil's conversion and engagement rates have gr
     <p class="w-stat__desc">Longer user sessions</p>
   </div>
   <div class="w-stat">
-    <p class="w-stat__figure">61<sub class="w-stat__sub">x</sub></p>
+    <p class="w-stat__figure">61<sub class="w-stat__sub">%</sub></p>
     <p class="w-stat__desc">Increase in conversions</p>
   </div>
   <div class="w-stat">
-    <p class="w-stat__figure">80<sub class="w-stat__sub">x</sub></p>
+    <p class="w-stat__figure">80<sub class="w-stat__sub">%</sub></p>
     <p class="w-stat__desc">Increase in revenue-to-marketing spend</p>
   </div>
 </div>
