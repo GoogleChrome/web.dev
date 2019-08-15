@@ -57,13 +57,13 @@ From the technical side, there has never been a better time to embrace web game 
 
 ## Enter the loop
 
-A great game is obviously more than just good performance, graphics, and sound though – to be great a game must be fun.
+A great game is obviously more than just good performance, graphics, and sound though–to be great a game must be fun.
 
-Fun is a difficult element to measure in a product. When a game is fun, interesting, or innovative enough, users will want to tell their friends – in other words, they'll want to share the experience. Tapping into this opportunity and coupling it with the web is a powerful combination that unlocks a lot of potential for viral growth. And on the web in particular, without a central discovery platform, our best bet towards acquiring users is to ensure our games are as viral as possible.
+Fun is a difficult element to measure in a product. When a game is fun, interesting, or innovative enough, users will want to tell their friends–in other words, they'll want to share the experience. Tapping into this opportunity and coupling it with the web is a powerful combination that unlocks a lot of potential for viral growth. And on the web in particular, without a central discovery platform, our best bet towards acquiring users is to ensure our games are as viral as possible.
 
-Good game developers know that to capitalise on a particular platform – whether at a software or hardware level – it's important to embrace the unique characteristics of that platform. For example, if you're building a game for a console with motion controls, you should probably think about the best way to embrace those motion controls.
+Good game developers know that to capitalise on a particular platform–whether at a software or hardware level–it's important to embrace the unique characteristics of that platform. For example, if you're building a game for a console with motion controls, you should probably think about the best way to embrace those motion controls.
 
-In other words, you must respect the expectations of the users of the platform you're building for. What do users of the web expect? They expect web content to load fast and be interactive quickly. In my talk, I covered several examples of ways – both on and off the web – that games have been designed to load quickly, pull users into their game worlds, engage those users, and provide users with additional incentives to share their experiences.
+In other words, you must respect the expectations of the users of the platform you're building for. What do users of the web expect? They expect web content to load fast and be interactive quickly. In my talk, I covered several examples of ways–both on and off the web–that games have been designed to load quickly, pull users into their game worlds, engage those users, and provide users with additional incentives to share their experiences.
 
 ![Three games with minimalist art styles.](./minimalist-games.png)
 
@@ -75,7 +75,7 @@ Here's an example of a web game I built using [Construct 3](http://construct.net
 
 [Space Board](https://io-space-board.firebaseapp.com) is a very simple game that can be played on either mobile with touch controls or on desktop with keyboard input. The objective is to navigate a maze of obstacles to reach a goal at the end.
 
-How does Space Board leverage the URL in a unique fashion? By encoding the level structure into the URL itself. All levels are defined as a 10 by 10 grid of objects – e.g. walls, enemy turrets, keys, locked doors etc. The URL then lists all the individual grid positions and their contents. A wall is represented by a `W` character. An empty space is an underscore character.
+How does Space Board leverage the URL in a unique fashion? By encoding the level structure into the URL itself. All levels are defined as a 10 by 10 grid of objects–e.g. walls, enemy turrets, keys, locked doors etc. The URL then lists all the individual grid positions and their contents. A wall is represented by a `W` character. An empty space is an underscore character.
 
 Here's an example:
 
@@ -85,7 +85,7 @@ It's ugly but it does the job.
 
 Upon completing a level in Space Board, the player has the opportunity to design their own level using the simple level editor shown above. By enabling players to design their own levels we are giving them the opportunity for personalisation. When a user feels a connection to a game and a sense of ownership via creation and customisation they are more likely to want to share that ‘thing' with the world.
 
-The desire to share a game is the beginning of the viral loop that we are aiming to achieve with our web games. This game design and sharing mechanism is just one example that's possible but there are many other possibilities – I encourage you to watch my talk for further examples!
+The desire to share a game is the beginning of the viral loop that we are aiming to achieve with our web games. This game design and sharing mechanism is just one example that's possible but there are many other possibilities–I encourage you to watch my talk for further examples!
 
 ## Return on investment
 
@@ -108,6 +108,6 @@ One solution that brings a more consistent payment UI to the web is the [Payment
 
 We've seen several surprisingly successful web games over the past few years. Slither.io has built a mixed web and native business that demonstrates the tremendous reach and viral growth opportunity that the web offers. Portals such as Poki.com are innovating in their user experience and releasing new games every month that match the fidelity of their mobile counterparts, such as Crossy Road.
 
-Furthermore, if you look outside of the open web you can see that web games are already taking off. Closed ecosystems such as WeChat and LINE offer satisfying games which aren't playable on the open web but which are built on top of web technologies like HTML5 and WebViews. This is a clear sign that the web has reached a level of fidelity that's capable of rivaling native mobile games – perhaps not in a textbook definition of fidelity but in a more important metric: player attention.
+Furthermore, if you look outside of the open web you can see that web games are already taking off. Closed ecosystems such as WeChat and LINE offer satisfying games which aren't playable on the open web but which are built on top of web technologies like HTML5 and WebViews. This is a clear sign that the web has reached a level of fidelity that's capable of rivaling native mobile games–perhaps not in a textbook definition of fidelity but in a more important metric: player attention.
 
 
