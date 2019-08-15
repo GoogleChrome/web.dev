@@ -142,6 +142,9 @@ module.exports = function(config) {
   config.addShortcode('SubscribeAction', SubscribeAction);
   config.addShortcode('YouTube', YouTube);
 
+  https://www.11ty.io/docs/config/#data-deep-merge
+  config.setDataDeepMerge(true);
+
   // https://www.11ty.io/docs/config/#configuration-options
   return {
     dir: {
