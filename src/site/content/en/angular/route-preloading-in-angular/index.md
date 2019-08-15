@@ -112,9 +112,9 @@ Now when you open the application again, you'll notice that the router only prel
 
 ### Using the Quicklink preloading strategy across multiple lazy-loaded modules
 
-The above example will work for most basic applications but if your application has multiple lazy-loaded modules you will need to import it into a shared module and export it.
+The above example will work for a basic application but if your application contains multiple lazy-loaded modules you will need to import the `QuicklinkModule` into a shared module, export it and then import the shared module into your lazy-loaded modules.
 
-First import the `QuicklinkModule` from `ngx-quicklink` into your shared module:
+First import the `QuicklinkModule` from `ngx-quicklink` into your shared module and export it:
 ```js
 import { QuicklinkModule } from 'ngx-quicklink';
 ...
@@ -132,9 +132,9 @@ import { QuicklinkModule } from 'ngx-quicklink';
 export class SharedModule {}
 ```
 
-Then import your `SharedModule` into all of your lazy-loaded module:
+Then import your `SharedModule` into all of your lazy-loaded modules:
 ```js
-import { SharedModule } from '@app/shared/shared.module'; // your shared module location
+import { SharedModule } from '@app/shared/shared.module';
 ...
 
 @NgModule({
@@ -146,7 +146,7 @@ import { SharedModule } from '@app/shared/shared.module'; // your shared module 
 });
 ```
 
-`ngx-quicklink` will now be available in your lazy-loaded modules.
+`Quicklinks` will now be available in your lazy-loaded modules.
 
 ## Going beyond basic preloading
 
