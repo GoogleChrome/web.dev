@@ -1,6 +1,6 @@
 ---
 title: How Truebil made the web its channel of growth
-subhead: A startup got great conversion rates by optimizing for speed and reliability.
+subhead: A startup's story of building a best-in-class web experience.
 authors:
   - hbatra
 date: 2019-08-16
@@ -108,11 +108,11 @@ To [avoid a flash of invisible text](/avoid-invisible-text) while keeping load t
 
 When the app was ready, the team wanted to further reduce the vendor bundle size and JavaScript execution time, so they switched their React app to Preact in production. (Learn more in the [React](/react) collection.) This approach helped them reduce the vendor bundle size from 82.3 KB to 51.2 KB.
 
-## Build in reliability
+### Build in reliability
 
 With a focus on the Indian market, a vast majority of Truebil's users access their product on patchy networks that sometimes fall into bandwidths as low as 2G. So building a resilient experience was critical not only to improving performance under constrained network conditions but also to delivering a product that their users could rely on—one that _always_ works.
 
-### A hybrid caching strategy for reliable loading
+#### A hybrid caching strategy for reliable loading
 
 The interactivity and rate of change for Truebil's content vary a lot. To ensure that _all_ its content is both fresh and reliable, the Truebil team implemented [API caching](/runtime-caching-with-workbox) using a combination of network-first, cache-first, and fastest-first strategies.
 
@@ -122,7 +122,7 @@ For pages with dynamic content that rarely changes, such as their product listin
 
 And for dynamic pages that change often, such as the home, filter, search, and city pages, Truebil uses a fastest-first strategy to choose between network or cache based on whichever comes first. To ensure that content is fresh, the cache is updated whenever the network response differs from what's in the cache.
 
-### Service workers for a full offline experience
+#### Service workers for a full offline experience
 
 Even though a large part of Truebil's content is highly dynamic—cars can be added or bought at any time—the team wanted to ensure that their users had _some_ content to engage with, even if they were going through patchy networks or were completely offline.
 
@@ -135,15 +135,15 @@ Using [service workers](/service-workers-cache-storage/), the team was able to c
   </figcaption>
 </figure>
 
-## Improve engagement to keep users coming back
+### Improve engagement to keep users coming back
 
-### An engaging first experience
+#### An engaging first experience
 
 Since most of their users come from paid channels, Truebil needed to supplement their fast loading web app with a product that surfaces highly relevant recommendations to increase conversions. While the team uses a recommendation system based on sophisticated filtering for existing users, their system doesn't work for users who log in for the first time.
 
 To avoid giving their first-time users a cold start, the team integrated a recommendation system using their digital marketing efforts. They add product details such as car model, price, and body type into an ad's destination URL through a UTM parameter, which is read by their recommendation system and reflected in the products surfaced. In case the sysme reads no such details in the URL, it falls back to popular cars, which is a combination of popular models, popular budgets, and cars that have been popular in the last few weeks or days.
 
-### An installable web app
+#### An installable web app
 
 Having built a fast, full-featured web app with a compelling user experience, Truebil wanted to ensure that their users would keep coming back. They realized that making the app installable would make repeat visits much more seamless.
 
