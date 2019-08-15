@@ -181,3 +181,22 @@ Because of these improvements, Truebil's conversion and engagement rates have gr
   <p>For a startup with limited resources, choosing the right platform can be critical to the success of the business. Moving to a PWA focused on speed, resilience, and engagement, enabled us to increase our revenue-to-marketing spend by <strong>80%</strong> thanks to increased conversions and the frictionless reach of the web.</p>
   <p>—Rakesh Raman, Co-Founder and Chief of Product & Data Science at Truebil</p>
 </blockquote>
+
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">44<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Improvement in loading time</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">26<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Longer user sessions</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">61<sub class="w-stat__sub">x</sub></p>
+    <p class="w-stat__desc">Increase in conversions</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">80<sub class="w-stat__sub">x</sub></p>
+    <p class="w-stat__desc">Increase in revenue-to-marketing spend</p>
+  </div>
+</div>
