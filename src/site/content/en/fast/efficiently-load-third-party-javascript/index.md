@@ -88,14 +88,14 @@ Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) t
 ```
 
 {% Aside 'caution' %}
-Only preconnect to critical origins you will use soon; if the connection isn't used within 10 seconds, the browser closes it. Limit the number of pre-connected domains to 5 or 6, as unnecessary pre-connecting can delay other important resources.
+Only preconnect to critical domains you will use soon because the browser closes any connection that isn't used within 10 seconds. Unnecessary preconnecting can delay other important resources, so limit the number of preconnected domains and [test the impact preconnecting makes](https://andydavies.me/blog/2019/08/07/experimenting-with-link-rel-equals-preconnect-using-custom-script-injection-in-webpagetest/).
 {% endAside %}
 
 ### `dns-prefetch`
 
 `<link rel="dns-prefetch>` handles a small subset of what is handled by `<link rel="preconnect">`.  Establishing a connection involves the DNS lookup and TCP handshake, and for secure origins, TLS negotiations. `dns-prefetch` instructs the browser to only resolve the DNS of a specific domain before it has been explicitly called.
 
-Because there's a limit to the number of connections a browser can open, for less critical third-party origins use `<link rel=dns-prefetch>`. 
+The `preconnect` hint is best used for only the most critical connections; for less critical third-party domains use `<link rel=dns-prefetch>`. 
 
 ```html
 <link rel="dns-prefetch" href="http://example.com">
