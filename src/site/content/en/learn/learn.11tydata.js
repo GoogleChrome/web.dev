@@ -34,23 +34,25 @@ const lighthouseSeo = require(
 // =============================================================================
 
 module.exports = {
-  paths: [
-    fast,
-    accessible,
-    reliable,
-    discoverable,
-    secure,
-    installable,
-  ],
-  frameworks: [
-    react,
-    angular,
-  ],
-  audits: [
-    lighthousePerformance,
-    lighthousePwa,
-    lighthouseBestPractices,
-    lighthouseAccessibility,
-    lighthouseSeo,
-  ],
+  learn: {
+    paths: [
+      fast,
+      accessible,
+      reliable,
+      discoverable,
+      secure,
+      installable,
+    ],
+    frameworks: [
+      react,
+      angular,
+    ],
+    audits: [
+      lighthousePerformance,
+      lighthousePwa,
+      lighthouseBestPractices,
+      lighthouseAccessibility,
+      lighthouseSeo,
+    ],
+  },
 };
