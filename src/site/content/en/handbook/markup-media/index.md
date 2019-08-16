@@ -20,6 +20,14 @@ Hero images should be 1600 px x 800 px.
 
 Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
 
+## Thumbnail images
+When a post is displayed on the home page or the blog it can contain a thumbnail.
+
+Thumbnails should be 376 px x 240 px.
+
+If a thumbnail is not included the post will attempt to reuse the hero image.
+If there is no hero image the post will omit the thumbnail entirely.
+
 ## Body images
 Images intended to fill the full width of the content column should be at least 800 px wide.
 

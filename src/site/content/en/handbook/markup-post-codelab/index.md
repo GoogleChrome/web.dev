@@ -37,6 +37,7 @@ The YAML fields at the start of each piece of web.dev content define how the pie
   * `center` (default)
   * `top`
   * `bottom`
+* `thumbnail`: The filename of the thumbnail image, which appears when the post is displayed on the blog or homepage. Optional.
 * `alt`: The [alt text](/image-alt) for the hero image. Required if `hero` is present.
 * `description`: Content for the `description` `<meta>` tag.
 * `tags`: Tags for the site search. The `post` tag is required for a post to appear on the blog.
