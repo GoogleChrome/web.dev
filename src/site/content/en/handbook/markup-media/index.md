@@ -25,7 +25,7 @@ When a post is displayed on the home page or the blog it can contain a thumbnail
 
 Thumbnails should be 376 px x 240 px.
 
-If a thumbnail is not included the post will attempt to reuse the hero image.
+If you don't provide a thumbnail, the post will attempt to reuse the hero image.
 If there is no hero image the post will omit the thumbnail entirely.
 
 ## Body images
