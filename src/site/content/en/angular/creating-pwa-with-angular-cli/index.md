@@ -37,7 +37,7 @@ ng add @angular/pwa
 This command will:
 
 1. Create a [service worker](/precaching-with-the-angular-service-worker) with a default caching configuration.
-2. Create a [manifest file](https://web.dev/add-manifest), which tells the browser how your app should behave when installed on the user's device.
+2. Create a [manifest file](/add-manifest), which tells the browser how your app should behave when installed on the user's device.
 3. Adds a link to the manifest file in `index.html`.
 4. Adds the [`theme-color`](https://web.dev/themed-omnibox) `<meta>` tag to `index.html`.
 5. Creates app icons in the `src/assets` directory.
