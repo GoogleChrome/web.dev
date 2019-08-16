@@ -29,7 +29,6 @@ This post assumes you're already familiar with PWAs and their benefits. If you n
 ## Create an installable PWA
 
 To make your Angular application a PWA, all you need to do is run a single command!
-1. Run this command in the CLI:
 
 ```bash
 ng add @angular/pwa
