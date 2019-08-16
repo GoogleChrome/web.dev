@@ -32,6 +32,10 @@ module.exports = {
         pathItems: ['precaching-with-the-angular-service-worker'],
       },
       {
+        title: 'Installable',
+        pathItems: ['creating-pwa-with-angular-cli'],
+      },
+      {
         title: 'Accessible',
         pathItems: ['accessible-angular-with-codelyzer'],
       },
