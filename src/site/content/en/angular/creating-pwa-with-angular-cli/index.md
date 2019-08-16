@@ -15,7 +15,7 @@ tags:
   - pwa
 ---
 
-In this post, you'll learn how to use the Angular command line interface (CLI) to make a [Progressive Web App](https://web.dev/discover-installable/) (PWA).
+In this post, you'll learn how to use the Angular command line interface (CLI) to make a [Progressive Web App (PWA)](/discover-installable).
 
 _You can find the code sample from this guide [on GitHub](https://github.com/mgechev/manifest-web-dev)._
 
