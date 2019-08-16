@@ -44,7 +44,7 @@ This command will:
 
 ## Customize your PWA
 
-The [Precaching with the Angular service worker](https://web.dev/precaching-with-the-angular-service-worker/) post explains how to configure the Angular service worker. There you can find how to specify which resources you want the service worker to cache and what strategy it should use to do so.
+The [Precaching with the Angular service worker](/precaching-with-the-angular-service-worker) post explains how to configure the Angular service worker. There you can find how to specify which resources you want the service worker to cache and what strategy it should use to do so.
 
 The manifest file of your app lets you specify your app's name, short name, icons, theme color, and other details. Read about the full set of properties you can set on the MDN "[Web App Manifest](https://web.dev/add-manifest/)" page.
 
