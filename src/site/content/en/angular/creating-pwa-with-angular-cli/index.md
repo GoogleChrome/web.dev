@@ -21,7 +21,7 @@ _You can find the code sample from this guide [on GitHub](https://github.com/mge
 
 {% Aside %}
 
-This post assumes you're already familiar with PWAs and their benefits. If you need a refresher, check out the [Installable](https://web.dev/installable) collection.
+This post assumes you're already familiar with PWAs and their benefits. If you need a refresher, check out the [Installable](/installable) collection.
 
 {% endAside %}
 
