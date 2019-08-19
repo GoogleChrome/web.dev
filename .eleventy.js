@@ -52,6 +52,7 @@ const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const githubLink = require(`./${filtersDir}/github-link`);
+const expandContributors = require(`./${filtersDir}/expand-contributors`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
@@ -115,6 +116,7 @@ module.exports = function(config) {
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('githubLink', githubLink);
+  config.addFilter('expandContributors', expandContributors);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('stripBlog', stripBlog);
