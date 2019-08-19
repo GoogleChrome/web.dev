@@ -13,7 +13,7 @@
   {# Make sure Actions are first in the tab order. #}
   <web-actions-controller page="post"></web-actions-controller>
   {% Actions %}
-    {% ShareAction title, page.url | stripLanguage %}
+    {% ShareAction title, page.url | stripLanguage, authors | expandContributors %}
     {% SubscribeAction %}
   {% endActions %}
 
