@@ -9,6 +9,8 @@ date: 2019-08-13
 # updated: 2019-06-27
 description: |
   This post describes the common kinds of third-party JavaScript and the performance issues they can cause. It also provides general guidance about how to optimize third-party scripts.
+thumbnail: thumbnail.png
+alt: A diagram of a webpage featuring text, a video, a map, a chat widget, and social media sharing buttons.
 tags:
   - post
   - performance
