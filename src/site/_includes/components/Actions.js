@@ -16,6 +16,8 @@
 
 const {html} = require('common-tags');
 const site = require('../../_data/site');
+require('intl-list-format');
+require('intl-list-format/locale-data/en');
 
 /* eslint-disable require-jsdoc,max-len */
 
@@ -35,9 +37,10 @@ const Actions = (children) =>
  * @param {string} title The page title to Tweet.
  * @param {string} url The URL to share. This will look like '/some-post'
  * because eleventy doesn't attach the domain or protocol.
+ * @param {array} authors Authors of the page.
  * @return {string}
  */
-const ShareAction = (title, url) => {
+const ShareAction = (title, url, authors = []) => {
   if (!title) {
     throw new Error(`Can't create ShareButton without a title.`);
   }
@@ -47,7 +50,7 @@ const ShareAction = (title, url) => {
   }
 
   const twitter = `https://twitter.com/share`;
-  const encodedText = encodeURIComponent(title);
+  const encodedText = encodeURIComponent(`${title}${by(authors)}`);
   const encodedUrl = encodeURIComponent(`${site.url}${url}`);
 
   return html`
@@ -62,6 +65,17 @@ const ShareAction = (title, url) => {
       <span>Share</span>
     </a>
   `;
+};
+
+const by = (authors) => {
+  const screenNames = authors.map((author) => author.twitter)
+    .filter(Boolean)
+    .map((author) => `@${author}`);
+  if (screenNames.length) {
+    const il = new Intl.ListFormat('en');
+    return ` by ${il.format(screenNames)}`;
+  }
+  return '';
 };
 
 const SubscribeAction = () => {
