@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2019-08-01
+updated: 2019-08-21
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage the
