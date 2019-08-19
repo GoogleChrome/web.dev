@@ -193,7 +193,7 @@ when needed.
 ## Preloading and prefetching with webpack
 
 The
-[Reduce JavaScript payloads with code-splitting](/reduce-javascript-payloads-with-code-splitting)
+[Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
 post explores the use of dynamic imports to split a bundle into multiple chunks.
 This is demonstrated with a simple application that
 dynamically imports a module from [Lodash](https://lodash.com/) when a form is submitted.
