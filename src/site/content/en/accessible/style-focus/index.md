@@ -117,7 +117,7 @@ button:focus-visible {
 
 The
 [`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
-pseudo-class is applied to an element either when the element iteslf receives
+pseudo-class is applied to an element either when the element itself receives
 focus or when another element inside that element receives focus.
 
 It can be used to highlight a region of the page to draw the
