@@ -16,6 +16,8 @@
 
 const {html} = require('common-tags');
 const site = require('../../_data/site');
+require('intl-list-format');
+require('intl-list-format/locale-data/en');
 
 /* eslint-disable require-jsdoc,max-len */
 
