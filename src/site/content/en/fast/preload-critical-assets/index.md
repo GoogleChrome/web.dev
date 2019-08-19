@@ -61,7 +61,7 @@ through the use of a special comment parameter:
 import(_/* webpackPreload: true */_ "CriticalChunk")
 ```
 
-This works best if you [code-split](/reduce-javascript-payloads-with-code-splitting) your bundle and only
+This works best if you [split your bundle](/reduce-javascript-payloads-with-code-splitting) and only
 preload critical chunks. If you are using an older version of webpack, use a
 third-party plugin such as
 [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin).
@@ -88,4 +88,3 @@ import(_/* webpackPrefetch: true */_ "ImportantForNextPageChunk")
 {% Aside 'codelab' %}
 [Improve the performance of a page by preloading and prefetching resources](/codelab-preload-critical-assets).
 {% endAside %}
-

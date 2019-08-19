@@ -36,7 +36,7 @@ Memory leaks can cause your page to freeze up completely.
 ## Ways to speed up improve JavaScript execution
 
 - Only send the code that your users need (see
-[Reduce JavaScript payloads with code-splitting](/reduce-javascript-payloads-with-code-splitting)).
+[Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)).
 - Minify and compress your code (see
 [Minify and compress network payloads](/reduce-network-payloads-using-text-compression)).
 - Remove unused code (see [Remove unused code](/remove-unused-code)).

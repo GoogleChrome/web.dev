@@ -79,7 +79,7 @@ You should now be able to access your application at [http://localhost:4200](htt
 
 In the rest of this collection you'll learn how to improve the performance, accessibility, and SEO of your Angular application. Here's what's covered:
 
-- Route-Level code-splitting in Angular
+- Route-Level code splitting in Angular
 - Performance Budgets with the Angular CLI
 - Route Prefetching Strategies in Angular
 - Change detection optimization in Angular

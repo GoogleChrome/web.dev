@@ -112,6 +112,6 @@ general rule, `async` should be used with HTML imports as much as possible.
 ## More information
 
 - [Render-blocking resources audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js)
-- [Reduce JavaScript payloads with codesplitting](/reduce-javascript-payloads-with-code-splitting)
+- [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
 - [Remove unused code codelab](/codelab-remove-unused-code)
 - [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
