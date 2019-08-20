@@ -4,6 +4,7 @@ title: Document does not have a valid rel=canonical
 description: |
   Learn about the "Document does not have a valid rel=canonical" Lighthouse
   audit.
+updated: 2019-08-20
 web_lighthouse:
   - canonical
 ---
