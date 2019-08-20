@@ -6,11 +6,6 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 
-/** @const {string} */
-const GLITCH_ORIGIN = "https://glitch.com";
-/** @const {string} */
-const GLITCH_EMBED = `${GLITCH_ORIGIN}/embed/#!/embed`;
-
 /**
  * Render codelab instructions and Glitch
  * @extends {BaseElement}
@@ -34,6 +29,14 @@ class Codelab extends BaseElement {
   }
 
   createRenderRoot() {
+    // Normally LitElement will remove any light DOM children that are not
+    // slotted when we call render().
+    // Because we don't use slots, and we _do_ want to preserve this element's
+    // light DOM children (they hold the codelab instructions) we create a new
+    // renderRoot for LitElement.
+    // https://lit-element.polymer-project.org/guide/templates#renderroot
+    // This will render the glitch element as a sibling to the existing light
+    // DOM children.
     const container = document.createElement("div");
     container.className = "web-codelab__glitch";
     this.appendChild(container);
@@ -45,10 +48,15 @@ class Codelab extends BaseElement {
       return;
     }
 
-    const url = new URL(`${GLITCH_EMBED}/${this.glitch}`);
-    url.searchParams.append("path", this.path);
-    url.searchParams.append("attributionHidden", true);
-    return url.href;
+    let url = `https://glitch.com/embed/?attributionHidden=true`;
+
+    if (this.path) {
+      url += `&path=index.html`;
+    }
+
+    url += `#!/embed/${this.glitch}`;
+
+    return url;
   }
 
   render() {
