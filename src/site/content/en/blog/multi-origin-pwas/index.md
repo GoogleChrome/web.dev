@@ -129,4 +129,4 @@ For existing sites that are already built in this way, it can be challenging to 
 
 When evaluating a long-term strategy or site redesign, consider migrating to a single origin, unless there's an important reason to keep the multi-origin architecture.
 
-_With many thanks for their technical reviews & suggestions: PJ Mclachlan, Paul Covell, Dominick Ng, Alberto Medina, Pete LePage, Joe Medley, , Cheney Tsai, Martin Schierle and Andre Bandarra._
+_With many thanks for their technical reviews and suggestions: PJ Mclachlan, Paul Covell, Dominick Ng, Alberto Medina, Pete LePage, Joe Medley, Cheney Tsai, Martin Schierle, and Andre Bandarra._
