@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-const express = require('express');
+const express = require("express");
 const app = express();
 
-app.use(express.static('dist'));
-app.use(express.static('dist/en'));
+app.use(express.static("dist"));
+// app.use(express.static("dist/en"));
+app.use(express.static("dist/ja"));
 
 const listener = app.listen(process.env.PORT || 8080, () => {
   // eslint-disable-next-line
-  console.log('The server is listening on port ' + listener.address().port);
+  console.log(`The server is listening on port ${listener.address().port}`);
 });

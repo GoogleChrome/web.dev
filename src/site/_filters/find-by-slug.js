@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const chalk = require('chalk');
+const chalk = require("chalk");
 const warn = chalk.black.bgYellow;
 
 let memo;
@@ -35,6 +35,9 @@ const memoize = (collection) => {
 
   memo = {};
   collection.forEach((item) => {
+    if (item.inputPath.indexOf("content/ja") !== -1) {
+      return;
+    }
     if (memo[item.fileSlug]) {
       throw new Error(`Found duplicate post slug: '${item.fileSlug}'`);
     }
