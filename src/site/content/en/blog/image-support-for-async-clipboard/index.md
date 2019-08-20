@@ -30,7 +30,7 @@ Clipboard API, making it easy to programmatically copy and paste
   Support for other images and file formats will be added in the future.
 </aside>
 
-Before we dive in, let’s take a brief look at how the Asynchronous Clipboard
+Before we dive in, let's take a brief look at how the Asynchronous Clipboard
 API works. If you remember the details, skip ahead to the
 [image section](#images).
 
@@ -132,7 +132,7 @@ achieve this is by `fetch`ing (or `XMLHttpRequest`ing) the image from a
 server and getting the response body as a [Blob][blob] (or for XHR,
 by setting the [`responseType`][blog-response-type] to `'blob'`).
 Another method to `Blob`ify an image is to write the image to a canvas, then
-call the `canvas`’s [`toBlob()`][to-blob] method.
+call the `canvas`'s [`toBlob()`][to-blob] method.
 
 [blob]: https://developer.mozilla.org/en-US/docs/Web/API/Body/blob
 [to-blob]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob
@@ -266,13 +266,13 @@ One new challenge are so-called [image compression bombs](https://bomb.codes/bom
 that is, image files that appear to be innocent, but—once decompressed—turn out to be huge.
 Even more serious than large images are specifically crafted malicious images
 that are designed to exploit known vulnerabilities in the native operating system.
-This is why we can’t just copy the image directly to the native clipboard,
+This is why we can't just copy the image directly to the native clipboard,
 and why in Chrome we require that the image be transcoded.
 
 The [specification](https://w3c.github.io/clipboard-apis/#image-transcode)
 therefore also explicitly mentions transcoding as a mitigation method:
-*“To prevent malicious image data from being placed on the clipboard, the image data may be
-transcoded to produce a safe version of the image.”*
+*"To prevent malicious image data from being placed on the clipboard, the image data may be
+transcoded to produce a safe version of the image."*
 There is ongoing discussion happening in the
 [W3C Technical Architecture Group review](https://github.com/w3ctag/design-reviews/issues/350)
 on whether, and how the transcoding details should be specified.
@@ -305,6 +305,6 @@ The Asynchronous Clipboard API was implemented by
 and [Gary Kačmarčík](https://www.linkedin.com/in/garykac/).
 Darwin also provided the [demo](https://jsfiddle.net/0794oysr/2/).
 My introduction of this article is inspired by
-[Jason Miller](https://twitter.com/_developit?lang=en)’s
+[Jason Miller](https://twitter.com/_developit?lang=en)'s
 original [text](/web/updates/2018/03/clipboardapi).
 Thanks to [Kyarik](https://github.com/kyarik) and again Gary Kačmarčík for reviewing this article.
