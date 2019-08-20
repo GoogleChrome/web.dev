@@ -15,10 +15,68 @@
  */
 
 const express = require('express');
+const locale = require('locale');
+const path = require('path');
+const fs = require('fs');
+const cookieParser = require('cookie-parser');
+
 const app = express();
 
+const staticFilesPath = [
+  'images', 'test', 'app.css', 'app.js'
+];
+
+// Detect all locale directories
+const supportedLocales = [];
+const dirs = fs.readdirSync(`${__dirname}/dist`);
+for (const dir of dirs) {
+  if (staticFilesPath.includes(dir)) continue;
+  supportedLocales.push(dir);
+}
+const defaultLocale = 'en';
+
+// Detect requested locale and assign it to `req.lang`
+const localeHandler = (req, res, next) => {
+  let lang = req.query.hl;
+  if (!lang || !supportedLocales.includes(lang)) {
+    // `hl` is NOT specified.
+    if (req.cookies.preferred_lang) {
+      lang = req.cookies.preferred_lang;
+    } else if (req.locale) {
+      lang = req.locale;
+    } else {
+      lang = defaultLocale;
+    }
+  }
+  // `hl` is specified.
+  if (req.query.preferred_lang !== undefined) {
+    res.cookie('preferred_lang', lang,
+      {maxAge: 900000, httpOnly: true});
+  }
+  req.lang = lang;
+  next();
+};
+
+app.use(locale(supportedLocales, defaultLocale));
+app.use(cookieParser());
+app.use(localeHandler);
 app.use(express.static('dist'));
-app.use(express.static('dist/en'));
+
+app.get("*", function(req, res) {
+  const dir = req.path.split(path.sep)[1];
+  // Serve static files as is
+  if (staticFilesPath.includes(dir)) {
+    res.sendFile(`${__dirname}/dist${req.path}`);
+    return;
+  }
+  // Serve the lang specific file from a localized directory
+  const _path = `${__dirname}/dist/${req.lang}${req.path}/index.html`;
+  if (fs.existsSync(_path)) {
+    res.sendFile(_path);
+  } else {
+    res.sendFile(`${__dirname}/dist/${defaultLocale}${req.path}/index.html`);
+  }
+});
 
 const listener = app.listen(process.env.PORT || 8080, () => {
   // eslint-disable-next-line

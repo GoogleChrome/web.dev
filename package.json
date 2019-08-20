@@ -25,9 +25,11 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
     "firebase": "^6.2.4",
     "lit-element": "^2.2.0",
+    "locale": "^0.1.0",
     "navaid": "^1.0.5",
     "unistore": "^3.4.1"
   },
