@@ -113,7 +113,7 @@ While navigating in a standalone window, the browser will behave differently whe
 
 In most cases, there's no solution for this, but a workaround can be applied for small parts of the experience that are hosted in subdomains (for example: login workflows):
 
-1. The new URL (that is: `https://login.example.com`) could open inside a full screen iframe.
+1. The new URL, `https://login.example.com`, could open inside a full screen iframe.
 1. Once the task is completed inside the iframe (for example, the login process), [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) can be used, to pass any resulting information from the iframe back to the parent page.
 1. As a final step, once the message is received by the main page, the listeners can be unregistered, and the iframe finally be removed from the DOM.
 
