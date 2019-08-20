@@ -28,7 +28,7 @@ const staticFilesPath = [
 
 // Detect all locale directories
 const supportedLocales = [];
-const dirs = fs.readdirSync(`${__dirname}/dist`);
+const dirs = fs.readdirSync(path.join(__dirname, 'dist'));
 for (const dir of dirs) {
   if (staticFilesPath.includes(dir)) continue;
   supportedLocales.push(dir);
