@@ -35,8 +35,19 @@ for (const dir of dirs) {
 }
 const defaultLocale = 'en';
 
-// Detect requested locale and assign it to `req.lang`
-const localeHandler = (req, res, next) => {
+app.use(locale(supportedLocales, defaultLocale));
+app.use(cookieParser());
+app.use(express.static('dist'));
+
+app.get("*", function(req, res) {
+  const dir = req.path.split(path.sep)[1];
+  // Serve static files as is
+  if (staticFilesPath.includes(dir)) {
+    const filePath = path.join(__dirname, 'dist', req.path);
+    res.sendFile(filePath);
+    return;
+  }
+
   let lang = req.query.hl;
   if (!lang || !supportedLocales.includes(lang)) {
     // `hl` is NOT specified.
@@ -48,33 +59,21 @@ const localeHandler = (req, res, next) => {
       lang = defaultLocale;
     }
   }
-  // `hl` is specified.
-  if (req.query.preferred_lang !== undefined) {
+  // Update preferred language (with sanity check)
+  if (req.query.preferred_lang !== undefined &&
+      supportedLocales.includes(lang)) {
     res.cookie('preferred_lang', lang,
-      {maxAge: 900000, httpOnly: true});
+      {maxAge: 10 * 365 * 24 * 60 * 60 * 1000, httpOnly: true});
   }
-  req.lang = lang;
-  next();
-};
 
-app.use(locale(supportedLocales, defaultLocale));
-app.use(cookieParser());
-app.use(localeHandler);
-app.use(express.static('dist'));
-
-app.get("*", function(req, res) {
-  const dir = req.path.split(path.sep)[1];
-  // Serve static files as is
-  if (staticFilesPath.includes(dir)) {
-    res.sendFile(`${__dirname}/dist${req.path}`);
-    return;
-  }
   // Serve the lang specific file from a localized directory
-  const _path = `${__dirname}/dist/${req.lang}${req.path}/index.html`;
-  if (fs.existsSync(_path)) {
-    res.sendFile(_path);
+  const localizedFilePath = path.join(__dirname, 'dist', lang, req.path, 'index.html');
+  const fallbackFilePath = path.join(__dirname, 'dist', defaultLocale, req.path, 'index.html');
+  // TODO: Add `Content-Language` header
+  if (fs.existsSync(localizedFilePath)) {
+    res.sendFile(localizedFilePath);
   } else {
-    res.sendFile(`${__dirname}/dist/${defaultLocale}${req.path}/index.html`);
+    res.sendFile(fallbackFilePath);
   }
 });
 
