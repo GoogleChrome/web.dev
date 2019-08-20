@@ -14,7 +14,7 @@ permalink: /en/{{page.fileSlug}}/index.html
       }
     </style>
   {% endif %}
-  <web-codelab glitch="{{ glitch }}" path="{{ glitchPath }}">
+  <web-codelab glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}{% endif %}">
     <div class="web-codelab__instructions">
       <h1 class="w-headline w-headline--two web-codelab__headline">{{ title }}</h1>
       {% if date %}

@@ -51,10 +51,10 @@ class Codelab extends BaseElement {
     let url = `https://glitch.com/embed/?attributionHidden=true`;
 
     if (this.path) {
-      url += `&path=index.html`;
+      url += `&path=${encodeURI(this.path)}`;
     }
 
-    url += `#!/embed/${this.glitch}`;
+    url += `#!/embed/${encodeURI(this.glitch)}`;
 
     return url;
   }
