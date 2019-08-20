@@ -16,6 +16,7 @@
 
 const chalk = require("chalk");
 const warn = chalk.black.bgYellow;
+const getLanguage = require("../_filters/get-language");
 
 let memo;
 
@@ -35,9 +36,12 @@ const memoize = (collection) => {
 
   memo = {};
   collection.forEach((item) => {
-    if (item.inputPath.indexOf("content/ja") !== -1) {
+    // Use the /en language directory as the source of truth.
+    const lang = getLanguage(item.inputPath);
+    if (lang !== "en") {
       return;
     }
+
     if (memo[item.fileSlug]) {
       throw new Error(`Found duplicate post slug: '${item.fileSlug}'`);
     }

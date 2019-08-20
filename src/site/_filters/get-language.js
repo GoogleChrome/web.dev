@@ -1,5 +1,4 @@
 module.exports = (inputPath) => {
-  debugger;
   const languageRegex = /content\/(?<language>[a-z]+)\//;
   const match = inputPath.match(languageRegex);
   if (!match || !match.groups) {
