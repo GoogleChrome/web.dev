@@ -65,6 +65,6 @@ the `padding` property:
 using properties like `margin`. There should be at least 8&nbsp;px between
 tap targets.
 
-## More resources
+## Resources
 
 [Source code for **Tap targets are not sized appropriately** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)

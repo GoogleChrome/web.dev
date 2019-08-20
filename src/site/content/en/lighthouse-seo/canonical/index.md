@@ -104,7 +104,7 @@ Recommendations for other search engines are welcome.
 [Edit this page](https://github.com/google/WebFundamentals/tree/master/src/content/en/tools/lighthouse/audits/canonical.md).
 {% endAside %}
 
-## More resources
+## Resources
 
 - [Source code for **Document does not have a valid `rel=canonical`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/canonical.js)
 - [5 common mistakes with rel=canonical](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html)

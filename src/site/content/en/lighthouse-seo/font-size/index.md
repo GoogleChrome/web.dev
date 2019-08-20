@@ -64,6 +64,6 @@ tag to the `<head>` of your document.
 See the [Has a `<meta name="viewport">` tag with `width` or `initial-scale`](/viewport)
 post for more information.
 
-## More resources
+## Resources
 
 [Source code for **Document does not use legible font sizes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/font-size.js)

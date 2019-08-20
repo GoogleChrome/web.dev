@@ -58,7 +58,8 @@ Here's what each key-value pair does:
 - `width=device-width` sets the width of the viewport to the width of the device.
 - `initial-scale=1` sets the initial zoom level when the user visits the page.
 
-## More resources
+## Resources
 
 - [Source code for **Has a `<meta name="viewport">` tag with `width` or `initial-scale`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/viewport.js)
 - [Responsive Web Design Basics](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#set-the-viewport)
+- [Using the viewport meta tag to control layout on mobile browsers](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
