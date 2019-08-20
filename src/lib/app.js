@@ -11,6 +11,7 @@ import "./components/LighthouseScoresMetrics";
 import "./components/LighthouseScoresStats";
 import "./components/UrlChooser";
 import "./components/UrlChooserContainer";
+import "./components/Codelab";
 import {store} from "./store";
 
 // Run as long-lived router w/ history & "<a>" bindings
