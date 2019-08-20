@@ -3,25 +3,6 @@ layout: layout
 permalink: /en/{{page.fileSlug}}/index.html
 ---
 
-{#
-The styles for web-codelab and .w-codelab-glitch live in DevSite.
-When testing locally we can simulate the custom element's styles with
-this inline style tag.
-#}
-{% if site.env === 'dev' %}
-<style>
-  web-codelab {
-    display: flex;
-    height: 100%;
-  }
-
-  .web-codelab-glitch {
-    flex: 1;
-    padding: 16px;
-  }
-</style>
-{% endif %}
-
 <div class="codelab-landing-page">
   {% if site.env === 'prod' %}
     <style>
@@ -33,9 +14,9 @@ this inline style tag.
       }
     </style>
   {% endif %}
-  <web-codelab glitch="{{ glitch }}" path="{{ glitchPath }}" attribution-hidden>
-    <div class="web-codelab-instructions">
-      <h1 class="w-headline w-headline--two w-mb--sm">{{ title | md | safe }}</h1>
+  <web-codelab glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}{% endif %}">
+    <div class="web-codelab__instructions">
+      <h1 class="w-headline w-headline--two web-codelab__headline">{{ title }}</h1>
       {% if date %}
         <div class="w-author__published">
           <time>{{date | prettyDate}}</time>
@@ -75,21 +56,5 @@ this inline style tag.
         } %}
       {% endif %}
     </div>
-
-    {# Generate our own Glitch for local testing #}
-    {% if site.env === 'dev' %}
-      <div class="web-codelab-glitch">
-        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
-          <iframe
-            allow="geolocation; microphone; camera; midi; encrypted-media"
-            src="https://glitch.com/embed/#!/embed/{{ glitch }}?path={{ glitchPath }}&amp;previewSize={{ previewSize }}"
-            alt="{{ glitch }} on Glitch"
-            style="height: 100%; width: 100%; border: 0;"
-          >
-          </iframe>
-        </div>
-      </div>
-    {% endif %}
-
   </web-codelab>
 </div>

@@ -11,7 +11,7 @@ date: 2018-11-05
 # updated: 2019-06-27
 glitch: fav-kitties-starter
 # Specify which file the glitch should start on.
-# glitchPath: index.js
+# glitch_path: index.js
 related_post: remove-unused-code
 ---
 
