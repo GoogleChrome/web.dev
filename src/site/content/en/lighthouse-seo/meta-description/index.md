@@ -49,8 +49,7 @@ If appropriate, include clearly tagged facts in the descriptions. For example:
 - Use a unique description for each page.
 - Make descriptions clear and concise. Avoid vague descriptions like "Home."
 - Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358).
-  Using too many keywords doesn't help users and may cause search engines to
-  mark the page as spam.
+  It doesn't help users, and search engines may mark the page as spam.
 - Descriptions don't have to be complete sentences; they can contain structured
   data.
 

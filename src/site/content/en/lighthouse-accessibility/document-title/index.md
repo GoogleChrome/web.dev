@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Ensure that each HTML document has a <title> element
+title: Document doesn't have a <title> element
 description: |
-  Learn about the "Ensure that each HTML document has a <title> element"
+  Learn about the "Document doesn't have a <title> element"
   Lighthouse audit.
 web_lighthouse:
   - document-title
@@ -15,7 +15,9 @@ relevant to their search.
 - The title also gives screen reader users an overview of the page. The title is
 the first text that a screen reader announces.
 
-Lighthouse flags pages without a title:
+## How the Lighthouse title audit fails
+
+Lighthouse flags pages without a `<title>` element in the page's `<head>`:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="document-title.png" alt="Lighthouse audit showing HTML document doesn't have a title elemement">
@@ -40,30 +42,43 @@ clearly states what the page is about. For example:
 </html>
 ```
 
-See the
-[Write descriptive titles, descriptions, and link text for every page](/write-descriptive-text)
-post and Deque University's [Documents must contain a title element to aid in navigation](https://dequeuniversity.com/rules/axe/3.2/document-title)
+See Deque University's [Documents must contain a title element to aid in navigation](https://dequeuniversity.com/rules/axe/3.2/document-title)
 page for more information.
 
 
 ## Tips for creating great titles
 
-- Make titles descriptive and concise. Avoid vague descriptions like "Home."
-- Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358?hl=en): it's not helpful to users, and search engines may mark the page as spam.
-- Avoid repeated or boilerplate titles.
-- It's OK to brand your titles, but do it concisely.
+- Use a unique title for each page.
+- Make titles descriptive and concise. Avoid vague titles like "Home."
+- Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358).
+  It doesn't help users, and search engines may mark the page as spam.
+- It's OK to brand your titles, but do so concisely.
 
-See Google's [Create descriptive page titles](https://support.google.com/webmasters/answer/35624)
+Here are examples of good and bad titles:
+
+```html
+<title>Donut recipe</title>
+```
+
+{% Compare 'worse', 'Don\'t' %}
+Too vague.
+{% endCompare %}
+
+```html
+<title>Mary's quick maple bacon donut recipe</title>
+```
+
+{% Compare 'better', 'Do' %}
+Descriptive yet concise.
+{% endCompare %}
+
+See Google's [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624)
 page for more details about these tips.
 
-<!--
-## How this audit impacts overall Lighthouse score
+## Resources
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
+- [Source code for **Document has a `<title>` element** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/document-title.js)
+- [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624)
+- [Documents must contain a title element to aid in navigation](https://dequeuniversity.com/rules/axe/3.2/document-title)
+- [Irrelevant keywords](https://support.google.com/webmasters/answer/66358)
 - [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)
-- [**Document has a `<title>` element** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/document-title.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
