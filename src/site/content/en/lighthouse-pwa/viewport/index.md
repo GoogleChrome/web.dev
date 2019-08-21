@@ -4,6 +4,7 @@ title: Does not have a <meta name="viewport"> tag with width or initial-scale
 description: |
   Learn about the "Does not have a <meta name="viewport"> tag with width or
   initial-scale" Lighthouse audit.
+updated: 2019-08-20
 web_lighthouse:
   - viewport
 ---

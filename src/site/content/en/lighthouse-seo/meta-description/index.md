@@ -3,6 +3,7 @@ layout: post
 title: Document does not have a meta description
 description: |
   Learn about the "Document does not have a meta description" Lighthouse audit.
+updated: 2019-08-21
 web_lighthouse:
   - meta-description
 ---

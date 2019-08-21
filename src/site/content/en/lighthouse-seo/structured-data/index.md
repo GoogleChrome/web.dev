@@ -3,6 +3,7 @@ layout: post
 title: Structured data is valid
 description: |
   Learn about the "Structured data is valid" Lighthouse audit.
+updated: 2019-08-21
 web_lighthouse:
   - structured-data
 ---

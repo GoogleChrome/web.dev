@@ -3,6 +3,7 @@ layout: post
 title: robots.txt is not valid
 description: |
   Learn about the "robots.txt is not valid" Lighthouse audit.
+updated: 2019-08-21
 web_lighthouse:
   - robots-txt
 ---
