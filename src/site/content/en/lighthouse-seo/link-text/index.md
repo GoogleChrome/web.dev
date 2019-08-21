@@ -11,13 +11,13 @@ Link text is the clickable word or phrase in a hyperlink. When link text clearly
 conveys a hyperlink's target, both users and search engines can more easily
 understand your content and how it relates to other pages.
 
-Lighthouse flags any links without descriptive text:
+## How the Lighthouse link text audit fails
+
+Lighthouse flags links without descriptive text:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="link-text.png" alt="Lighthouse audit showing links don't have descriptive text">
 </figure>
-
-## How this audit fails
 
 Lighthouse flags the following generic link text:
 
@@ -35,9 +35,9 @@ Lighthouse flags the following generic link text:
 
 ## How to add descriptive link text
 
-Replace generic phrases with specific descriptions. In general, write link text
-that clearly indicates what type of content users will get if they follow the
-hyperlink.
+Replace generic phrases like "click here" and "learn more" with specific
+descriptions. In general, write link text that clearly indicates what type of
+content users will get if they follow the hyperlink.
 
 ```html
 <p>To see all of our basketball videos, <a href="videos.html">click here</a>.</p>
@@ -61,18 +61,20 @@ You'll often need to revise the surrounding sentence to make link text
 descriptive.
 {% endAside %}
 
-See the [Add descriptive titles, descriptions, and link text](/write-descriptive-text#add-descriptive-link-text)
-post for more information.
+## Link text best practices
 
-## Link text guidelines
-
-- Stay on topic. Don't use text that has no relation to the page's content.
-- Don't use the page's URL as the link description unless you have a good reason to do so,
-such as referencing a site's new address.
+- Stay on topic. Don't use link text that has no relation to the page's content.
+- Don't use the page's URL as the link description unless you have a good reason
+  to do so, such as referencing a site's new address.
 - Keep descriptions concise. Aim for a few words or a short phrase.
 - Pay attention to your internal links too. Improving the quality of internal
-links can help both users and search engines navigate your site more easily.
+  links can help both users and search engines navigate your site more easily.
 
-## More information
+See the [Use links wisely](https://support.google.com/webmasters/answer/7451184#uselinkswisely)
+section of Google's [Search Engine Optimization (SEO) Starter Guide](https://support.google.com/webmasters/answer/7451184)
+for more tips.
 
-[**Links do not have descriptive text** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+## Resources
+
+- [Source code for **Links do not have descriptive text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
+- [Search Engine Optimization (SEO) Starter Guide](https://support.google.com/webmasters/answer/7451184)
