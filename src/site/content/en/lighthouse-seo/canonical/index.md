@@ -18,7 +18,7 @@ and **crawl** that one more. Valid canonical links let you tell search engines
 which version of a page to crawl and display to users in search results.
 
 {% Aside 'key-term' %}
-_Crawling_ is how search engines update their index of content on the web.
+_Crawling_ is how a search engine updates its index of content on the web.
 {% endAside %}
 
 Using canonical links has many advantages:
@@ -31,7 +31,7 @@ Using canonical links has many advantages:
 
 ## How the Lighthouse audit for canonical links fails
 
-Lighthouse flags pages with an invalid canonical link:
+Lighthouse flags any page with an invalid canonical link:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="canonical.png" alt="Lighthouse audit showing document with invalid canonical link">
