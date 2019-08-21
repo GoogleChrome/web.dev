@@ -7,10 +7,20 @@ web_lighthouse:
   - http-status-code
 ---
 
-Search engines may not properly index pages that return unsuccessful HTTP status
-codes. HTTP status codes in the 400s and 500s
-[are defined as errors](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status),
-so Lighthouse flags them:
+Servers provide a three-digit [HTTP status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+for each resource request they receive. Status codes in the 400s and 500s
+[indicate that there's an error](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Client_error_responses)
+with the requested resource. If a search engine encounters a status code error
+when it's **crawling** a web page, it may not index that page properly.
+
+{% Aside 'key-term' %}
+_Crawling_ is how a search engine updates its index of content on the web.
+{% endAside %}
+
+## How the Lighthouse HTTP status code audit fails
+
+Lighthouse flags any page that returns an unsuccessful HTTP status code (in the
+400s or 500s):
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="http-status-code.png" alt="Lighthouse audit showing search engines are struggling to index your page">
@@ -18,30 +28,25 @@ so Lighthouse flags them:
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
 
-## How to ensure that search engines can index your page
+## How to fix an unsuccessful HTTP status code
 
-When a page is requested,
-ensure that your server returns a 2XX or 3XX HTTP status code.
-Search engines may not properly index pages with 4XX or 5XX status codes.
-Learn more in [Fix unsuccessful HTTP status codes](/fix-http-status-codes).
+First make sure you actually want search engines to crawl the page. Some pages,
+like your 404 page or any other page that shows an error, shouldn't be included
+in search results.
 
-<div class="w-codelabs-callout">
-  <div class="w-codelabs-callout__header">
-    <h2 class="w-codelabs-callout__lockup">Codelabs</h2>
-    <div class="w-codelabs-callout__headline">See it in action</div>
-    <div class="w-codelabs-callout__blurb">
-      Learn more and put this guide into action.
-    </div>
-  </div>
-  <ul class="w-unstyled-list w-codelabs-callout__list">
-    <li class="w-codelabs-callout__listitem">
-      <a class="w-codelabs-callout__link" href="/codelab-fix-sneaky-404">
-        Fix sneaky 404s
-      </a>
-    </li>
-  </ul>
-</div>
+To fix an HTTP status code error, refer to the documentation for your server or
+hosting provider. The server should return a status code in the 200s for all
+valid URLs or a status code in the 300s for a resource that has moved to
+another URL.
 
-## More information
+{% Aside 'codelab' %}
+Single-page applications can make fixing HTTP status code errors a bit more
+complicated. Learn how to [fix sneaky 404s in an Express application](/codelab-fix-sneaky-404).
+{% endAside %}
 
-[**Page has unsuccessful HTTP status code** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
+## Resources
+
+- [Source code for **Page has unsuccessful HTTP status code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/http-status-code.js)
+- [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
+{% CodelabsCallout 'codelab-fix-sneaky-404' %}
