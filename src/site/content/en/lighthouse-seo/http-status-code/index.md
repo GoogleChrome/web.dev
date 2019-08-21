@@ -40,6 +40,12 @@ hosting provider. The server should return a status code in the 200s for all
 valid URLs or a status code in the 300s for a resource that has moved to
 another URL.
 
+{% Aside %}
+If you're
+[using Github Pages to host a single-page app](https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/),
+you'll likely need to serve valid content with a 404 status code.
+{% endAside %}
+
 {% Aside 'codelab' %}
 Single-page applications can make fixing HTTP status code errors a bit more
 complicated. Learn how to [fix sneaky 404s in an Express application](/codelab-fix-sneaky-404).
