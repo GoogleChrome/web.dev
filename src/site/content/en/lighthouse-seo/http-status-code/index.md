@@ -24,7 +24,7 @@ Lighthouse flags pages that return an unsuccessful HTTP status code (in the
 400s or 500s):
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="http-status-code.png" alt="Lighthouse audit showing search engines are struggling to index your page">
+  <img class="w-screenshot w-screenshot" src="http-status-code.png" alt="Lighthouse audit showing search engines are struggling to index your page">
 </figure>
 
 {% include 'content/lighthouse-seo/scoring.njk' %}

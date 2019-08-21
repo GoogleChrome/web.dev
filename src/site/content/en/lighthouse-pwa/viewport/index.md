@@ -22,7 +22,7 @@ width and scaling of the viewport so that it's sized correctly on all devices.
 Lighthouse flags pages without a viewport meta tag:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="viewport.png" alt="Lighthouse audit shows page is missing a viewport">
+  <img class="w-screenshot w-screenshot" src="viewport.png" alt="Lighthouse audit shows page is missing a viewport">
 </figure>
 
 A page fails the audit unless all of these conditions are met:

@@ -17,7 +17,7 @@ understand your content and how it relates to other pages.
 Lighthouse flags links without descriptive text:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="link-text.png" alt="Lighthouse audit showing links don't have descriptive text">
+  <img class="w-screenshot w-screenshot" src="link-text.png" alt="Lighthouse audit showing links don't have descriptive text">
 </figure>
 
 Lighthouse flags the following generic link text:

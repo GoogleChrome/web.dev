@@ -34,7 +34,7 @@ Using canonical links has many advantages:
 Lighthouse flags any page with an invalid canonical link:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="canonical.png" alt="Lighthouse audit showing document with invalid canonical link">
+  <img class="w-screenshot w-screenshot" src="canonical.png" alt="Lighthouse audit showing document with invalid canonical link">
 </figure>
 
 A page fails this audit if any of the following conditions are met:

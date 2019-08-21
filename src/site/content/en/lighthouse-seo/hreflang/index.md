@@ -17,7 +17,7 @@ a page so that they can display the correct version for each language or region.
 Lighthouse flags incorrect `hreflang` links:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="hreflang.png" alt="Lighthouse audit showing incorrect hreflang links">
+  <img class="w-screenshot w-screenshot" src="hreflang.png" alt="Lighthouse audit showing incorrect hreflang links">
 </figure>
 
 Lighthouse checks for `hreflang` links

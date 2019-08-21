@@ -18,7 +18,7 @@ traffic.
 Lighthouse flags pages without a meta description:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">
+  <img class="w-screenshot w-screenshot" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">
 </figure>
 
 The audit fails if:

@@ -21,7 +21,7 @@ the first text that a screen reader announces.
 Lighthouse flags pages without a `<title>` element in the page's `<head>`:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="document-title.png" alt="Lighthouse audit showing HTML document doesn't have a title elemement">
+  <img class="w-screenshot w-screenshot" src="document-title.png" alt="Lighthouse audit showing HTML document doesn't have a title elemement">
 </figure>
 
 ## How to add a title
