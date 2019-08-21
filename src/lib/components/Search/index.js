@@ -5,7 +5,7 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import {searchDelayer} from './api';
+import {searchDelayer} from "./api";
 
 class WebSearch extends BaseElement {
   static get properties() {
@@ -29,8 +29,8 @@ class WebSearch extends BaseElement {
     super.connectedCallback();
 
     // TODO: cleanup
-    this.searchInput_ = this.querySelector('input');
-    this.searchInput_.addEventListener('input', (e) => {
+    this.searchInput_ = this.querySelector("input");
+    this.searchInput_.addEventListener("input", (e) => {
       this.searchQuery = e.target.value;
       this.searcher_(this.searchQuery);
     });
@@ -38,17 +38,21 @@ class WebSearch extends BaseElement {
 
   createRenderRoot() {
     // Search only renders its results.
-    return this.querySelector('.web-search__popout');
+    return this.querySelector(".web-search__popout");
   }
 
   render() {
     const inner = (this.results || []).map((result) => {
-      return html`<div class="result"><a href="${result.objectID}">${result.title}</a></div>`;
+      return html`
+        <div class="result">
+          <a href="${result.objectID}">${result.title}</a>
+        </div>
+      `;
     });
     return html`
-    <div class="results">${inner}</div>
+      <div class="results">${inner}</div>
     `;
   }
 }
 
-customElements.define('web-search', WebSearch);
+customElements.define("web-search", WebSearch);
