@@ -56,4 +56,4 @@ Todo. I have no idea how accessibility scoring is working!
 - [Elements should not have tabindex greater than zero](https://dequeuniversity.com/rules/axe/3.3/tabindex)
 - [Ensure `tabindex` values aren't greater than 0 audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/tabindex.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.3)
+- [List of axe 3.3 rules](https://dequeuniversity.com/rules/axe/3.3)

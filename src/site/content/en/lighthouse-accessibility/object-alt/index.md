@@ -71,4 +71,4 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure `object` elements have alternative text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/object-alt.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.3)
+- [List of axe 3.3 rules](https://dequeuniversity.com/rules/axe/3.3)
