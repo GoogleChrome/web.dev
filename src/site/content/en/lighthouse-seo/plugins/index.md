@@ -7,17 +7,20 @@ web_lighthouse:
   - plugins
 ---
 
-Plugins harm SEO because search engines can't index plugin content.
-Also, many mobile devices don't support plugins, which creates frustrating
-experiences for mobile users.
+Search engines often can't index content that relies on browser plugins, such as
+Java or Flash. That means plugin-based content doesn't show up in search
+results.
 
-Lighthouse flags your document when it uses plugins:
+Also, most mobile devices don't support plugins, which
+[creates frustrating experiences for mobile users](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content).
+
+## How the Lighthouse plugins audit fails
+
+Lighthouse flags pages that use plugins:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="plugins.png" alt="Lighthouse audit showing document uses plugins">
 </figure>
-
-## How this audit fails
 
 Lighthouse checks the page for elements that commonly represent plugins:
 
@@ -42,20 +45,15 @@ known to represent plugin content:
 - `class`
 - `xap`
 
-See the [Avoid making pages that rely on browser plugins](/remove-browser-plugins)
-post for more information.
+## Don't use plugins to display your content
 
-## Remove plugins
+To convert plugin-based content to HTML, refer to guidance for that
+plugin. For example, MDN explains [how to convert Flash video to HTML5 video](https://developer.mozilla.org/en-US/docs/Plugins/Flash_to_HTML5/Video).
 
-Remove the plugins from your document and convert your content to HTML.
-Refer to specific documentation for the plugin,
-for example, [how to switch Flash video to HTML5 video](https://developer.mozilla.org/en-US/docs/Plugins/Flash_to_HTML5/Video).
-See also these
-[best practices for displaying videos on the web](https://developers.google.com//web/fundamentals/media/video).
+## Resources
 
-## More information
-
-- [**Document uses plugins** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
-- [Unplayable content](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content)
+- [Source code for **Document uses plugins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/plugins.js)
+- [Unplayable content on mobile devices](https://developers.google.com/search/mobile-sites/mobile-seo/common-mistakes#unplayable-content)
+- [Flash video to HTML5 video](https://developer.mozilla.org/en-US/docs/Plugins/Flash_to_HTML5/Video)
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
