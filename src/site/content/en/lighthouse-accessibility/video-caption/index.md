@@ -48,7 +48,7 @@ with attribute `kind="captions"`:
 ```
 
 Learn more in
-[`<video>` elements must have a `<track>` for captions](https://dequeuniversity.com/rules/axe/3.2/video-caption).
+[`<video>` elements must have a `<track>` for captions](https://dequeuniversity.com/rules/axe/3.3/video-caption).
 
 {% Aside 'note' %}
 The example above includes both captions for hearing impaired users,
@@ -66,4 +66,4 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Video elements have captions audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-caption.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.3)

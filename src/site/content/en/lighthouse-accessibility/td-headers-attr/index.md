@@ -70,7 +70,7 @@ The scope attribute tells the browser and screen reader that everything under th
 is related to the header at the top,
 and everything to the right of the row header is related to that header.
 Learn more in
-[All cells in a `<table>` element that use the headers attribute must only refer to other cells of that same `<table>`](https://dequeuniversity.com/rules/axe/3.2/td-headers-attr).
+[All cells in a `<table>` element that use the headers attribute must only refer to other cells of that same `<table>`](https://dequeuniversity.com/rules/axe/3.3/td-headers-attr).
 
 Also add the missing `<td>` to the first row in the body,
 so that the table data aligns correctly with the table headers:
@@ -116,4 +116,4 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure there's only one table header per table column audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/td-headers-attr.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.3)

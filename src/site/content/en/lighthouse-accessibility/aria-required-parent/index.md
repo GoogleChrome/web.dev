@@ -60,10 +60,10 @@ and check the "required context role".
 Make sure to include a parent role for that child role.
 
 For more information on this audit,
-see [Certain ARIA roles must be contained by particular parent elements](https://dequeuniversity.com/rules/axe/3.2/aria-required-parent).
+see [Certain ARIA roles must be contained by particular parent elements](https://dequeuniversity.com/rules/axe/3.3/aria-required-parent).
 
 ## More information
 
 - [ARIA child roles are contained within parent roles audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-parent.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.3)

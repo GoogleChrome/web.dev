@@ -42,7 +42,7 @@ to anyone using a screen reader, for example:
 ```
 
 Learn more in
-[Buttons must have discernible text](https://dequeuniversity.com/rules/axe/3.2/button-name).
+[Buttons must have discernible text](https://dequeuniversity.com/rules/axe/3.3/button-name).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -53,4 +53,4 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure buttons have accessible name audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.3)

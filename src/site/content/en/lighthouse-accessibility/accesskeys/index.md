@@ -36,7 +36,7 @@ by pressing the specified key (usually in combination with the `<kbd>alt></kbd>`
 Duplicating `accesskey` values creates unexpected effects
 for users navigating with keys.
 Learn more in
-[accesskey attribute value must be unique](https://dequeuniversity.com/rules/axe/3.2/accesskeys).
+[accesskey attribute value must be unique](https://dequeuniversity.com/rules/axe/3.3/accesskeys).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -47,4 +47,4 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Access key values are unique audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/accesskeys.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.3)

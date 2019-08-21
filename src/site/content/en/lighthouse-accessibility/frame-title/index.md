@@ -34,7 +34,7 @@ For example:
 <iframe title="My Daily Marathon Tracker" src="https://www.mydailymarathontracker.com/"></iframe>
 ```
 
-Learn more in [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.2/frame-title).
+Learn more in [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.3/frame-title).
 
 ## Tips for creating descriptive frame titles
 
@@ -55,4 +55,4 @@ Todo. I have no idea how accessibility scoring is working!
 - [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)
 - [Ensure frames have titles audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.3)
