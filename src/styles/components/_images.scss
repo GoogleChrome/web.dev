@@ -9,7 +9,6 @@
   display: block;
   margin: 0 auto;
   max-height: 480px;
-  object-fit: cover;
   width: 1600px;
 }
 
@@ -19,6 +18,14 @@
 
 .w-hero--bottom {
   object-position: bottom;
+}
+
+.w-hero--cover {
+  object-fit: cover;
+}
+
+.w-hero--contain {
+  object-fit: contain;
 }
 
 // -----------------------------------------------------------------------------
