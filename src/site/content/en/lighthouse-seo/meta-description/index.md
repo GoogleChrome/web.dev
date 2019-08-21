@@ -7,9 +7,12 @@ web_lighthouse:
   - meta-description
 ---
 
-The meta description provides a summary of a page's content that search engines
-include in search results. A high-quality, unique description makes your page
-appear more relevant and can increase your search traffic.
+The `<meta name=description>` element provides a summary of a page's content
+that search engines include in search results. A high-quality, unique meta
+description makes your page appear more relevant and can increase your search
+traffic.
+
+## How the Lighthouse meta description audit fails
 
 Lighthouse flags pages without a meta description:
 
@@ -17,10 +20,10 @@ Lighthouse flags pages without a meta description:
   <img class="w-screenshot w-screenshot--filled" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">
 </figure>
 
-## How this audit fails
+The audit fails if:
+- Your page doesn't have a `<meta name=description>` element.
+- The `content` attribute of the `<meta name=description>` element is empty.
 
-This audit fails if your page doesn't have a `<meta name=description>` element,
-or if the `content` attribute is empty.
 Lighthouse doesn't evaluate the quality of your description.
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
@@ -41,20 +44,43 @@ If appropriate, include clearly tagged facts in the descriptions. For example:
     Length: 784 pages">
 ```
 
-See the [Write descriptive titles, descriptions, and link text](/write-descriptive-text#add-tags-to-the-head-of-the-page)
-post for more information.
+## Meta description best practices
 
-## Meta description guidelines
-
-- Make descriptions clear and concise.
-- Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358).
-- Avoid repeated or boilerplate titles.
 - Use a unique description for each page.
-- Descriptions don't have to be in sentence format; they can contain structured data.
+- Make descriptions clear and concise. Avoid vague descriptions like "Home."
+- Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358).
+  Using too many keywords doesn't help users and may cause search engines to
+  mark the page as spam.
+- Descriptions don't have to be complete sentences; they can contain structured
+  data.
+
+Here are examples of good and bad descriptions:
+
+```html
+<meta name="description" content="A donut recipe.">
+```
+
+{% Compare 'worse' %}
+Too vague.
+{% endCompare %}
+
+```html
+<meta
+  name="description"           
+  content="Mary's simple recipe for maple bacon donuts
+           makes a sticky, sweet treat with just a hint
+           of salt that you'll keep coming back for.">
+```
+
+{% Compare 'better' %}
+Descriptive yet concise.
+{% endCompare %}
 
 See Google's [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624#1)
-page for more guidance.
+page for more tips.
 
-## More information
+## Resources
 
-[**Document does not have a meta description** audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [Source code for **Document does not have a meta description** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624#1)
+- [Irrelevant keywords](https://support.google.com/webmasters/answer/66358)
