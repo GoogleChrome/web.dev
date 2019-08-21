@@ -32,7 +32,7 @@ table with three columns:
     <tbody>
       <tr>
         <td><strong>Tap Target</strong></td>
-        <td>The tap target that is inappropriately-sized.</td>
+        <td>The tap target that is inappropriately sized.</td>
       </tr>
       <tr>
         <td><strong>Size</strong></td>
@@ -56,7 +56,7 @@ elements that shouldn't _appear_ any bigger (for example, icons), try increasing
 the `padding` property:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="touch-target.jpg" alt="Appropriately-sized tap targets">
+  <img class="w-screenshot w-screenshot" src="touch-target.jpg" alt="Appropriately-sized tap targets">
   <figcaption class="w-figcaption">
     Use <code>padding</code> to make tap targets bigger without changing the appearance of an element.
   </figcaption>
