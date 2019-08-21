@@ -92,17 +92,7 @@
                   ></tab></div
               ></devsite-tabs>
             </div>
-            <devsite-search
-              ds-is="search"
-              enable-search=""
-              enable-signin=""
-              enable-suggestions=""
-              enable-query-completion=""
-              enable-product-suggestions=""
-              enable-title-suggestions=""
-              enable-reference-suggestions=""
-              project-path=""
-            >
+            <web-search>
               <form
                 class="devsite-search-form"
                 action="/results/"
@@ -123,148 +113,10 @@
                       class="devsite-search-image material-icons"
                     ></div>
                   </div>
-                  <button
-                    type="button"
-                    search-open=""
-                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-                    aria-label="Open search box"
-                  ></button>
-                </div>
-                <div class="devsite-popout">
-                  <div
-                    class="devsite-popout-result devsite-suggest-results-container"
-                    devsite-hide=""
-                    role="menu"
-                    aria-haspopup="true"
-                  >
-                    <div class="devsite-suggest-wrapper">
-                      <div class="devsite-suggest-section">
-                        <div class="devsite-suggest-header">
-                          Suggested searches
-                        </div>
-                        <devsite-analytics-scope
-                          category="Site-Wide Custom Events"
-                          label="Search"
-                          action="Query Suggestion Click"
-                          ds-is="analytics-scope"
-                          ><div
-                            class="devsite-result-item devsite-nav-label"
-                            role="menuitem"
-                            index=":0"
-                          >
-                            <a
-                              class="devsite-result-item-link"
-                              href="/results/?q=api"
-                              ><span class="devsite-suggestion-fragment"
-                                ><b></b>a<b></b>p<b></b>i<b></b></span
-                            ></a>
-                          </div>
-                          <devsite-analytics-scope
-                            category="Site-Wide Custom Events"
-                            label="Search"
-                            action="Query Suggestion Click"
-                            ds-is="analytics-scope"
-                            ><div
-                              class="devsite-result-item devsite-nav-label"
-                              role="menuitem"
-                              index=":1"
-                            >
-                              <a
-                                class="devsite-result-item-link"
-                                href="/results/?q=google"
-                                ><span class="devsite-suggestion-fragment"
-                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
-                                  ></b>l<b></b>e<b></b></span
-                              ></a>
-                            </div>
-                            <devsite-analytics-scope
-                              category="Site-Wide Custom Events"
-                              label="Search"
-                              action="Query Suggestion Click"
-                              ds-is="analytics-scope"
-                              ><div
-                                class="devsite-result-item devsite-nav-label"
-                                role="menuitem"
-                                index=":2"
-                              >
-                                <a
-                                  class="devsite-result-item-link"
-                                  href="/results/?q=developers"
-                                  ><span
-                                    class="devsite-suggestion-fragment"
-                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
-                                    ></b>l<b></b>o<b></b>p<b></b>e<b
-                                    ></b>r<b></b>s<b></b></span
-                                ></a>
-                              </div>
-                              <devsite-analytics-scope
-                                category="Site-Wide Custom Events"
-                                label="Search"
-                                action="Query Suggestion Click"
-                                ds-is="analytics-scope"
-                                ><div
-                                  class="devsite-result-item devsite-nav-label"
-                                  role="menuitem"
-                                  index=":3"
-                                >
-                                  <a
-                                    class="devsite-result-item-link"
-                                    href="/results/?q=cloud"
-                                    ><span
-                                      class="devsite-suggestion-fragment"
-                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
-                                      ></b>d<b></b></span
-                                  ></a>
-                                </div>
-                                <devsite-analytics-scope
-                                  category="Site-Wide Custom Events"
-                                  label="Search"
-                                  action="Query Suggestion Click"
-                                  ds-is="analytics-scope"
-                                  ><div
-                                    class="devsite-result-item devsite-nav-label"
-                                    role="menuitem"
-                                    index=":4"
-                                  >
-                                    <a
-                                      class="devsite-result-item-link"
-                                      href="/results/?q=site"
-                                      ><span
-                                        class="devsite-suggestion-fragment"
-                                        ><b></b>s<b></b>i<b></b>t<b
-                                        ></b>e<b></b></span
-                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
-                        ></devsite-analytics-scope>
-                      </div>
-                      <div class="devsite-suggest-footer">
-                        <button
-                          type="submit"
-                          class="button button-white devsite-suggest-all-results"
-                        >
-                          See all results for ""
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="devsite-popout-result devsite-history-container"
-                    devsite-hide=""
-                    role="menu"
-                    aria-haspopup="true"
-                  ></div>
                 </div>
               </form>
-              <button
-                type="button"
-                search-close=""
-                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
-                aria-label="Close search box"
-              ></button>
-            </devsite-search>
-
-            <devsite-search-background
-              style="opacity: 1;"
-            ></devsite-search-background>
+              <div class="web-search__popout"></div>
+            </web-search>
           </div>
 
           <web-profile-switcher-container></web-profile-switcher-container>

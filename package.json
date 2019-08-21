@@ -39,6 +39,7 @@
     "@11ty/eleventy": "^0.8.3",
     "@11ty/eleventy-plugin-rss": "^1.0.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "algoliasearch": "^3.33.0",
     "ansi-colors": "^3.2.4",
     "chalk": "^2.4.2",
     "chokidar-cli": "^1.2.2",

@@ -20,6 +20,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const slugify = require('slugify');
+const indexer = require('./testindex.js');
 
 const componentsDir = 'src/site/_includes/components';
 const {
@@ -45,6 +46,7 @@ const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
+const indexedPosts = require(`./${collectionsDir}/indexed-posts`);
 
 const filtersDir = 'src/site/_filters';
 const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
@@ -98,6 +100,20 @@ module.exports = function(config) {
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
     return memoize(collection.getAll());
+  });
+  config.addCollection('_indexed', async (collections) => {
+    if (process.env.WEBDEV_INDEX_KEY) {
+      const indexer = require('./testindex.js');
+      const posts = indexedPosts(collections);
+      const config = {
+        applicationId: '2JPAZHQ6K7',
+        key: process.env.WEBDEV_INDEX_KEY,
+      }
+      await indexer.updateIndex(config, posts);
+    }
+    // This isn't intended to be a real collection; rather, it's for causing
+    // indexing side-effects. Eleventy still expects an Array, however.
+    return [];
   });
 
   //----------------------------------------------------------------------------

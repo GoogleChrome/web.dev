@@ -8,6 +8,7 @@ import "./components/LighthouseScoresContainer";
 import "./components/LighthouseScoresMeta";
 import "./components/LighthouseScoresMetrics";
 import "./components/LighthouseScoresStats";
+import "./components/Search";
 import "./components/UrlChooser";
 import "./components/UrlChooserContainer";
 import "./components/Codelab";
