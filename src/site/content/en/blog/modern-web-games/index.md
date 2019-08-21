@@ -79,7 +79,9 @@ How does Space Board leverage the URL in a unique fashion? By encoding the level
 
 Here's an example:
 
-`https://io-space-board.firebaseapp.com/?gameWorld=_wwwwwwwwww___ww__eww_k__d___ww___ww___ww_wwwww_www_wwwww_www___ww___ww_s_ww_f_ww___ww___wwwwwwwwwwww`
+```
+https://io-space-board.firebaseapp.com/?gameWorld=_wwwwwwwwww___ww__eww_k__d___ww___ww___ww_wwwww_www_wwwww_www___ww___ww_s_ww_f_ww___ww___wwwwwwwwwwww
+```
 
 It's ugly but it does the job.
 
