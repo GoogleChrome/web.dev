@@ -22,8 +22,10 @@
 
 // Markdown will put unclassed p tags inside of the compare widget as content
 // so we need to make them act like regular text content.
+.w-compare > ol,
 .w-compare > p,
-.w-compare > pre {
+.w-compare > pre,
+.w-compare > ul {
   margin: 0;
 }
 
