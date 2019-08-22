@@ -1,9 +1,9 @@
 ---
 title: Image Support for the Async Clipboard API
-description: Starting in Chrome 76, the async clipboard API now handles (some) images, in addition to text.
+subhead: Starting in Chrome 76, the async clipboard API now handles (some) images, in addition to text.
 authors:
   - thomassteiner
-subhead: Chrome 76 adds expands the functionality of the Async Clipboard API to add support for png images. Copying and pasting images to the clipboard has never been easier.
+description: Chrome 76 adds expands the functionality of the Async Clipboard API to add support for png images. Copying and pasting images to the clipboard has never been easier.
 date: 2019-07-03
 updated: 2019-07-03
 tags:
@@ -134,10 +134,6 @@ by setting the [`responseType`][blog-response-type] to `'blob'`).
 Another method to `Blob`ify an image is to write the image to a canvas, then
 call the `canvas`'s [`toBlob()`][to-blob] method.
 
-[blob]: https://developer.mozilla.org/en-US/docs/Web/API/Body/blob
-[to-blob]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob
-[blog-response-type]: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType#Value
-
 Next, pass an array of `ClipboardItem`s as a parameter to the `write()` method.
 Currently you can only pass one image at a time, but we plan to add support for
 multiple images in the future.
@@ -148,8 +144,6 @@ way to do this by leveraging the [`Object.defineProperty()`][object-define-prop]
 method. Using this approach will ensure your code will be ready for future
 image types as well as other MIME types that the Asynchronous Clipboard API
 may support.
-
-[object-define-prop]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
 ```js
 try {
@@ -177,8 +171,6 @@ To read an image from the clipboard, we need to obtain a list of
 `ClipboardItem`s, then iterate over them. Since everything is asynchronous,
 use the [`for ... of`][for-of] iterator, since it handles async/await code
 nicely.
-
-[for-of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
 
 Each `ClipboardItem` can hold its contents in different types, so you'll
 need to iterate over the list of types, again using a `for ... of` loop.
@@ -213,8 +205,6 @@ event, [prevent the default][prevent-default] behavior, then use the code above
 to read the contents from the clipboard, and handle it in whatever way your
 app needs.
 
-[prevent-default]: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
-
 ```js
 document.addEventListener('paste', async (e) => {
   e.preventDefault();
@@ -228,9 +218,6 @@ The [`copy` event][copy-event] includes a [`clipboardData`][clipboard-data]
 property with the items already in the right format, eliminating the need to
 manually create a blob. Like before, don't forget to prevent the default
 behavior.
-
-[copy-event]: https://developer.mozilla.org/en-US/docs/Web/API/Document/copy_event
-[clipboard-data]: https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/clipboardData
 
 ```js
 document.addEventListener('copy', async (e) => {
@@ -288,8 +275,6 @@ For now, image support has landed and can be used as of Chrome 76.
 
 Happy copying&nbsp;&amp;&nbsp;pasting!
 
-[cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=897289
-
 ## Related links
 
 * [Explainer](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc)
@@ -308,3 +293,13 @@ My introduction of this article is inspired by
 [Jason Miller](https://twitter.com/_developit?lang=en)'s
 original [text](/web/updates/2018/03/clipboardapi).
 Thanks to [Kyarik](https://github.com/kyarik) and again Gary Kačmarčík for reviewing this article.
+
+[blob]: https://developer.mozilla.org/en-US/docs/Web/API/Body/blob
+[to-blob]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob
+[blog-response-type]: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType#Value
+[object-define-prop]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+[for-of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+[prevent-default]: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+[copy-event]: https://developer.mozilla.org/en-US/docs/Web/API/Document/copy_event
+[clipboard-data]: https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/clipboardData
+[cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=897289
