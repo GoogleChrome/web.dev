@@ -47,7 +47,7 @@ module.exports = (content, type, caption = false, labelOverride) => {
   function renderCaption(caption) {
     return html`
     <figcaption class="w-compare__caption">
-      ${caption}
+      ${md.render(caption)}
     </figcaption>
     `;
   }

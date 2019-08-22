@@ -58,10 +58,11 @@
   background-color: $GREEN_800;
 }
 
-.w-compare__caption {
+.w-compare__caption p {
   color: $GREY_700;
   font-size: 1em;
-  margin-top: .75em;
+  line-height: 1.5em;
+  margin: .75em 0 0;
 }
 
 @media screen and (min-width: $BREAKPOINT_VALUE_MOBILE) {
