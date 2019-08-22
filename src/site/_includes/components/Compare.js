@@ -17,7 +17,9 @@
 const {html} = require('common-tags');
 const md = require('markdown-it')();
 
-module.exports = (content, type, labelOverride) => {
+/* eslint-disable require-jsdoc */
+
+module.exports = (content, type, caption = false, labelOverride) => {
   if (!type) {
     /* eslint-disable max-len */
     throw new Error(
@@ -42,12 +44,21 @@ module.exports = (content, type, labelOverride) => {
     }
   }
 
+  function renderCaption(caption) {
+    return html`
+    <figcaption class="w-compare__caption">
+      ${caption}
+    </figcaption>
+    `;
+  }
+
   return html`
     <figure class="w-compare">
       <p class="w-compare__label w-compare__label--${type}">
         ${label}
       </p>
       ${md.render(content)}
+      ${caption && renderCaption(caption)}
     </figure>
   `;
 };

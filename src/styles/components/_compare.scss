@@ -30,7 +30,7 @@
 .w-compare__label {
   font-size: 1em;
   font-weight: $FONT_WEIGHT_MEDIUM;
-  padding-bottom: 0.5em;
+  padding-bottom: .5em;
 }
 
 .w-compare__label::before {
@@ -61,12 +61,12 @@
 .w-compare__caption {
   color: $GREY_700;
   font-size: 1em;
-  margin-top: 0.75em;
+  margin-top: .75em;
 }
 
 @media screen and (min-width: $BREAKPOINT_VALUE_MOBILE) {
   .w-columns .w-compare {
-    margin: 0 0.5rem;
+    margin: 0 .5rem;
     padding: 0;
   }
 

@@ -246,92 +246,92 @@ Good code example
 ```
 {% endCompare %}
 
+### Compare with caption
+
+````html
+{% raw %}{% Compare 'worse', 'Explanation of why example is bad.' %}
+```text
+Bad code example
+```
+{% endCompare %}
+
+{% Compare 'better', 'Explanation of why example is good.' %}
+```text
+Good code example
+```
+{% endCompare %}{% endraw %}
+````
+
+{% Compare 'worse', 'Explanation of why example is bad.' %}
+```text
+Bad code example
+```
+{% endCompare %}
+
+{% Compare 'better', 'Explanation of why example is good.' %}
+```text
+Good code example
+```
+{% endCompare %}
+
 ### Compare with custom labels
 
 ```text
-&#123;% Compare 'worse', 'Not helpful' %&#125;
+&#123;% Compare 'worse', '', 'Not helpful' %&#125;
   Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
   massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
   nibh varius at.
 &#123;% endCompare %&#125;
 
-&#123;% Compare 'better', 'Helpful' %&#125;
+&#123;% Compare 'better', '', 'Helpful' %&#125;
   Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
   massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
   nibh varius at.
 &#123;% endCompare %&#125;
 ```
 
-{% Compare 'worse', 'Not helpful' %}
+{% Compare 'worse', '', 'Not helpful' %}
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
 
-{% Compare 'better', 'Helpful' %}
+{% Compare 'better', '', 'Helpful' %}
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
-
-### Compare with caption
-
-```html
-<figure class="w-compare">
-  <p class="w-compare__label w-compare__label--worse">Don't</p>
-  <pre>Bad code example</pre>
-  <figcaption class="w-compare__caption">Explanation of why example is bad.</figcaption>
-</figure>
-
-<figure class="w-compare">
-  <p class="w-compare__label w-compare__label--better">Do</p>
-  <pre>Good code example</pre>
-  <figcaption class="w-compare__caption">Explanation of why example is good.</figcaption>
-</figure>
-```
-
-<figure class="w-compare">
-  <p class="w-compare__label w-compare__label--worse">Don't</p>
-  <pre>Bad code example</pre>
-  <figcaption class="w-compare__caption">Explanation of why example is bad.</figcaption>
-</figure>
-
-<figure class="w-compare">
-  <p class="w-compare__label w-compare__label--better">Do</p>
-  <pre>Good code example</pre>
-  <figcaption class="w-compare__caption">Explanation of why example is good.</figcaption>
-</figure>
 
 ### Compare in columns
 
-```html
+````html
 <div class="w-columns">
-  <figure class="w-compare">
-    <p class="w-compare__label w-compare__label--worse">Don't</p>
-    <pre>Bad code example</pre>
-    <figcaption class="w-compare__caption">Explanation of why this example is bad.</figcaption>
-  </figure>
+  {% raw %}{% Compare 'worse', 'Explanation of why example is bad.' %}
+  ```text
+  Bad code example
+  ```
+  {% endCompare %}
 
-  <figure class="w-compare">
-    <p class="w-compare__label w-compare__label--better">Do</p>
-    <pre>Good code example</pre>
-    <figcaption class="w-compare__caption">Explanation of why this example is good.</figcaption>
-  </figure>  
+  {% Compare 'better', 'Explanation of why example is good.' %}
+  ```text
+  Good code example
+  ```
+  {% endCompare %}{% endraw %}
 </div>
-```
+````
 
 <div class="w-columns">
-  <figure class="w-compare">
-    <p class="w-compare__label w-compare__label--worse">Don't</p>
-    <pre>Bad code example</pre>
-    <figcaption class="w-compare__caption">Explanation of why this example is bad.</figcaption>
-  </figure>
+  {% Compare 'worse', 'Explanation of why example is bad.' %}
+  ```text
+  Bad code example
+  ```
+  {% endCompare %}
 
-  <figure class="w-compare">
-    <p class="w-compare__label w-compare__label--better">Do</p>
-    <pre>Good code example</pre>
-    <figcaption class="w-compare__caption">Explanation of why this example is good.</figcaption>
-  </figure>  
+  {% Compare 'better', 'Explanation of why example is good.' %}
+  ```text
+  Good code example
+  ```
+  {% endCompare %}
 </div>
 
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
