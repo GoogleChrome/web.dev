@@ -8,20 +8,30 @@ web_lighthouse:
   - structured-data
 ---
 
-Run the [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/) and the
-[Structured Data Linter](http://linter.structured-data.org/)
-to validate structured data.
+Search engines use structured data to understand what kind of content is on
+your page. For example, you can tell search engines that your page is an
+article, a job posting, or an FAQ.
+
+Marking up your content with structured data makes it more likely that it will
+be included in rich search results. For example, content marked up as an article
+might appear in a list of top stories relevant to something the user searched
+for.
 
 {% Aside 'note' %}
-This is a manual audit and does not affect the Lighthouse SEO score.
+The Lighthouse structured data audit is manual, so it does not affect your
+Lighthouse SEO score.
 {% endAside %}
 
-## Structured data guidelines
+## How to mark up your content
 
-- Identify the [content type](https://developers.google.com/search/docs/guides/mark-up-content#content_types) that represents your content.
-- Create the structured data markup using the [reference docs for that content type](https://developers.google.com/search/docs/guides/search-gallery).
-- Insert the markup into each page you wish to make eligible to search engines.
-- Test how the markup works in Google Search using the [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/).
+1. Identify the [content type](https://developers.google.com/search/docs/guides/mark-up-content#content_types)
+   that represents your content.
+1. Create the structured data markup using the [reference docs for that content type](https://developers.google.com/search/docs/guides/search-gallery).
+1. Insert the markup into each page you wish to make eligible to search engines.
+1. Run the
+[Structured Data Linter](http://linter.structured-data.org/)
+to validate your structured data.
+1. Test how the markup works in Google Search using the [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/).
 
 See Google's [Mark Up Your Content Items](https://developers.google.com/search/docs/guides/mark-up-content)
 page for more information.
