@@ -60,10 +60,9 @@ ARIA defines a role's allowable attributes, and the valid values for those attri
 Check that you are using the correct values for any attributes you use in your roles.
 
 For more information on this audit,
-see [ARIA attributes must conform to valid values](https://dequeuniversity.com/rules/axe/3.2/aria-valid-attr-value).
+see [ARIA attributes must conform to valid values](https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr-value).
 
 ## More information
 
 - [ARIA attributes have valid values audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-valid-attr-value.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

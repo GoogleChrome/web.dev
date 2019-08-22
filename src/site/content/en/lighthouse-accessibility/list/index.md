@@ -29,7 +29,7 @@ Ordered and unordered lists must only contain `<li>`, `<script>` or `<template>`
 Valid lists must have parent elements (`ul` or `ol` elements) and child elements (`li` elements).
 Any other content elements are invalid.
 Learn more in
-[`<ul>` and `<ol>` must only directly contain `<li>`, `<script>` or `<template>` elements](https://dequeuniversity.com/rules/axe/3.2/list).
+[`<ul>` and `<ol>` must only directly contain `<li>`, `<script>` or `<template>` elements](https://dequeuniversity.com/rules/axe/3.3/list).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -40,4 +40,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure lists are structured correctly audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/list.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
