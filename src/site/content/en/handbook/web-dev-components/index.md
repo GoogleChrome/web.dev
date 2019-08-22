@@ -221,29 +221,45 @@ See the [Code](/handbook/markup-code) post.
 ## Compare
 
 ```text
-Bad code example
+&#123;% Compare 'worse' %&#125;
+  &#96;&#96;&#96;text
+  Bad code example
+  &#96;&#96;&#96;
+&#123;% endCompare %&#125;
+
+&#123;% Compare 'better' %&#125;
+  &#96;&#96;&#96;text
+  Good code example
+  &#96;&#96;&#96;
+&#123;% endCompare %&#125;
 ```
 
 {% Compare 'worse' %}
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
-at.
+```text
+Bad code example
+```
 {% endCompare %}
 
+{% Compare 'better' %}
 ```text
 Good code example
 ```
-
-{% Compare 'better' %}
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
-at.
 {% endCompare %}
 
 ### Compare with custom labels
 
 ```text
-Bad code example
+&#123;% Compare 'worse', 'Not helpful' %&#125;
+  Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+  massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+  nibh varius at.
+&#123;% endCompare %&#125;
+
+&#123;% Compare 'better', 'Helpful' %&#125;
+  Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+  massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+  nibh varius at.
+&#123;% endCompare %&#125;
 ```
 
 {% Compare 'worse', 'Not helpful' %}
@@ -252,15 +268,76 @@ sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
 
-```text
-Good code example
-```
-
 {% Compare 'better', 'Helpful' %}
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
+
+### Compare with caption
+
+```html
+<figure class="w-compare">
+  <p class="w-compare__label w-compare__label--worse">Don't</p>
+  <pre>Bad code example</pre>
+  <figcaption class="w-compare__caption">Explanation of why example is bad.</figcaption>
+</figure>
+
+<figure class="w-compare">
+  <p class="w-compare__label w-compare__label--better">Do</p>
+  <pre>Good code example</pre>
+  <figcaption class="w-compare__caption">Explanation of why example is good.</figcaption>
+</figure>
+```
+
+<figure class="w-compare">
+  <p class="w-compare__label w-compare__label--worse">Don't</p>
+  <pre>Bad code example</pre>
+  <figcaption class="w-compare__caption">Explanation of why example is bad.</figcaption>
+</figure>
+
+<figure class="w-compare">
+  <p class="w-compare__label w-compare__label--better">Do</p>
+  <pre>Good code example</pre>
+  <figcaption class="w-compare__caption">Explanation of why example is good.</figcaption>
+</figure>
+
+### Compare in columns
+
+```html
+<div class="w-columns">
+  <figure class="w-compare">
+    <p class="w-compare__label w-compare__label--worse">Don't</p>
+    <pre>Bad code example</pre>
+    <figcaption class="w-compare__caption">Explanation of why this example is bad.</figcaption>
+  </figure>
+
+  <figure class="w-compare">
+    <p class="w-compare__label w-compare__label--better">Do</p>
+    <pre>Good code example</pre>
+    <figcaption class="w-compare__caption">Explanation of why this example is good.</figcaption>
+  </figure>  
+</div>
+```
+
+<div class="w-columns">
+  <figure class="w-compare">
+    <p class="w-compare__label w-compare__label--worse">Don't</p>
+    <pre>Bad code example</pre>
+    <figcaption class="w-compare__caption">Explanation of why this example is bad.</figcaption>
+  </figure>
+
+  <figure class="w-compare">
+    <p class="w-compare__label w-compare__label--better">Do</p>
+    <pre>Good code example</pre>
+    <figcaption class="w-compare__caption">Explanation of why this example is good.</figcaption>
+  </figure>  
+</div>
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
+incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
+deleniti! Atque aliquam facilis labore odio similique provident illo culpa
+assumenda perspiciatis.
 
 ## Details
 
