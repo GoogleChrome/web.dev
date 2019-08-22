@@ -13,7 +13,7 @@
     "build:rollup": "rollup -c rollup.config.js",
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:eleventy": "eleventy --watch",
-    "watch:rollup": "chokidar \"src/lib/**/*.js\" -c \"npm run build:rollup\"",
+    "watch:rollup": "chokidar \"src/lib/**/*.js\" \"src/lib/**/*.scss\" -c \"npm run build:rollup\"",
     "karma": "karma start",
     "test": "run-s clean build:rollup karma",
     "watch:test": "TEST_MODE=dev npm-run-all clean build:rollup --parallel watch:rollup karma",
