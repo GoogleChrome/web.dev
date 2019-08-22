@@ -66,4 +66,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Video elements have captions audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-caption.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.3 rules](https://dequeuniversity.com/rules/axe/3.3)
