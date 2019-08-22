@@ -28,15 +28,15 @@ Body images should be related to body content in some way. Typically, an image i
 ## Image captions
 Captions should be in sentence case. End all captions with a period.
 
-{% Compare 'worse', "Don't" %}
-> A Screenshot of the DevTools **Network** Panel
+<div class="w-columns">
+  {% Compare 'worse' %}
+  A Screenshot of the DevTools **Network** Panel
+  {% endCompare %}
 
-{% endCompare %}
-
-{% Compare 'better', 'Do' %}
-> A screenshot of the DevTools **Network** panel.
-
-{% endCompare %}
+  {% Compare 'better' %}
+  A screenshot of the DevTools **Network** panel.
+  {% endCompare %}
+</div>
 
 A caption should typically be a noun phrase describing the image or a sentence summarizing the idea the image is showing. Examples:
 * _DevTools accessibility pane showing the computed name for a button._
@@ -44,11 +44,10 @@ A caption should typically be a noun phrase describing the image or a sentence s
 
 Not all images need captions. If there's a preceding sentence describing the image, a caption is usually redundant. For example, the sentence below tells the reader what to expect in the subsequent image.
 
-{% Compare 'better', 'OK' %}
-> Let's look at a web app that uses JavaScript to render a collection of cat images entirely in the browser:
+{% Compare 'better', '', 'OK' %}
+Let's look at a web app that uses JavaScript to render a collection of cat images entirely in the browser:
 
 ![Image of a code sample next to the mobile site that it renders.](spa-kittens.png)
-
 {% endCompare %}
 
 ## Video

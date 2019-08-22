@@ -249,26 +249,26 @@ Good code example
 ### Compare with caption
 
 ````html
-{% raw %}{% Compare 'worse', 'Explanation of why example is bad.' %}
+{% raw %}{% Compare 'worse', 'Explanation of why `example` is bad.' %}
 ```text
 Bad code example
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Explanation of why example is good.' %}
+{% Compare 'better', 'Explanation of why `example` is good.' %}
 ```text
 Good code example
 ```
 {% endCompare %}{% endraw %}
 ````
 
-{% Compare 'worse', 'Explanation of why example is bad.' %}
+{% Compare 'worse', 'Explanation of why `example` is bad.' %}
 ```text
 Bad code example
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Explanation of why example is good.' %}
+{% Compare 'better', 'Explanation of why `example` is good.' %}
 ```text
 Good code example
 ```

@@ -49,7 +49,7 @@ Historically, these techniques were difficult to implement on the web, requiring
 CSS `backdrop-filter` applies one or more effects to an element that is translucent or transparent. To understand that, consider the images below.
 
 <div class="w-columns">
-{% Compare 'worse', 'No foreground transparency' %}
+{% Compare 'worse', '', 'No foreground transparency' %}
 ![A triangle superimposed on a circle. The circle can't be seen through the triangle.](./transparency-off.png)
 ```css
 .frosty-glass-pane {
@@ -58,7 +58,7 @@ CSS `backdrop-filter` applies one or more effects to an element that is transluc
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Foreground transparency' %}
+{% Compare 'better', '', 'Foreground transparency' %}
 ![A triangle superimposed on a circle. The triangle is translucent, allowing the circle to be seen through it.](./transparency-on.png)
 ```css/1
 .frosty-glass-pane {

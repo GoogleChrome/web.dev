@@ -61,17 +61,9 @@ Make sure `allow` and `disallow` values are either empty or start with `/` or
 `*`. Make sure they don't use `$` in the middle of a value (for example,
 `allow: /file$html`). Here's an example:
 
+{% Compare 'worse' %}
 ```text
 user-agent: *
-disallow: /downloads/
-```
-{% Compare 'better' %}
-Do this
-{% endCompare %}
-
-```text
-user-agent: *
-
 # missing "/"
 disallow: downloads
 
@@ -81,8 +73,13 @@ dis-allow downloads
 # invalid character in the value provided
 disallow: /OffersFor$5
 ```
-{% Compare 'worse' %}
-Don't do this
+{% endCompare %}
+
+{% Compare 'better' %}
+```text
+user-agent: *
+disallow: /downloads/
+```
 {% endCompare %}
 
 Use comments in the robots.txt file to explain what you're trying to allow or
@@ -102,15 +99,7 @@ allow: /downloads/whitepaper.pdf
 
 ## Make sure there are no `allow` or `disallow` directives before `user-agent`
 
-```text
-# start of file
-user-agent: *
-disallow: /downloads/
-```
-{% Compare 'better' %}
-Do this
-{% endCompare %}
-
+{% Compare 'worse' %}
 ```text
 # start of file
 disallow: /downloads/
@@ -118,8 +107,14 @@ disallow: /downloads/
 user-agent: magicsearchbot
 allow: /
 ```
-{% Compare 'worse' %}
-Don't do this
+{% endCompare %}
+
+{% Compare 'better' %}
+```text
+# start of file
+user-agent: *
+disallow: /downloads/
+```
 {% endCompare %}
 
 All `allow` and `disallow` directives must apply to specific user-agents (also
@@ -139,6 +134,14 @@ unmatched crawlers. Search engines will generally publish the user-agent names
 that they use; for example, here's
 [Google's list of user-agents used for crawling](https://support.google.com/webmasters/answer/1061943).
 
+{% Compare 'worse' %}
+```text
+user-agent:
+disallow: /downloads/
+```
+{% endCompare %}
+
+{% Compare 'better' %}
 ```text
 user-agent: *
 disallow: /downloads/
@@ -146,16 +149,6 @@ disallow: /downloads/
 user-agent: magicsearchbot
 disallow: /uploads/
 ```
-{% Compare 'better' %}
-Do this
-{% endCompare %}
-
-```text
-user-agent:
-disallow: /downloads/
-```
-{% Compare 'worse' %}
-Don't do this
 {% endCompare %}
 
 ## Provide an absolute URL for `sitemap` with http/https/ftp scheme
@@ -167,18 +160,16 @@ changed. If you choose to refer to submit a sitemap file through the robots.txt
 file, make sure to use a [fully-qualified/absolute
 URL](https://tools.ietf.org/html/rfc3986#page-27).
 
-```text
-sitemap: https://example.com/sitemap-file.xml
-```
-{% Compare 'better' %}
-Do this
-{% endCompare %}
-
+{% Compare 'worse' %}
 ```text
 sitemap: /sitemap-file.xml
 ```
-{% Compare 'worse' %}
-Don't do this
+{% endCompare %}
+
+{% Compare 'better' %}
+```text
+sitemap: https://example.com/sitemap-file.xml
+```
 {% endCompare %}
 
 ## Add additional control (optional step)

@@ -85,15 +85,14 @@ example of what the `<head>` of each page should include:
 
 Here are some examples of good vs bad titles and descriptions:
 
+{% Compare 'worse', 'Too vague' %}
 ```html
 <title>Donut recipe</title>
 <meta name="description" content="A donut recipe.">
 ```
-
-{% Compare 'worse' %}
-too vague
 {% endCompare %}
 
+{% Compare 'better', 'Precise!' %}
 ```html
 <title>Mary's Maple Bar Fast-Baking Recipe</title>
 <meta
@@ -102,9 +101,6 @@ too vague
            with just a touch of serendipity. Topped with
            bacon, this sticky donut is to die for.">
 ```
-
-{% Compare 'better' %}
-precise!
 {% endCompare %}
 
 Here are some best practices to keep in mind when you're writing descriptions
@@ -134,6 +130,7 @@ specific descriptions. You'll need to read the context of the page and write
 relevant text that makes sense with the rest of the content. Here's an example
 of good vs bad link descriptions:
 
+{% Compare 'worse', 'Too vague' %}
 ```html
 <p>
   Get cooking and learn how to make a maple bar
@@ -142,11 +139,9 @@ of good vs bad link descriptions:
   </a>.
 </p>
 ```
-
-{% Compare 'worse' %}
-too vague
 {% endCompare %}
 
+{% Compare 'better', 'Precise!' %}
 ```html
 <p>
   Get cooking and learn how to
@@ -155,9 +150,6 @@ too vague
   </a>!
 </p>
 ```
-
-{% Compare 'better' %}
-precise!
 {% endCompare %}
 
 Here are some best practices to keep in mind when you're writing descriptive
