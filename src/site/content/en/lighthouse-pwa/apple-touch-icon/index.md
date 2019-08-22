@@ -7,8 +7,6 @@ web_lighthouse:
   - apple-touch-icon
 ---
 
-[a2hs]: https://support.apple.com/guide/shortcuts/run-shortcuts-from-the-ios-home-screen-apd735880972/ios#apd175362e63
-
 iOS Safari users can manually add Progressive Web Apps to their homescreens.
 You can specify what icon should appear on iOS homescreens by adding a 
 `<link rel="apple-touch-icon" href="/example.png">` tag to the `<head>` of your
@@ -67,3 +65,5 @@ good user experience you'll want to make sure that:
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch icon</a>
 - [Source code](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js) for
   the **Does not provide a valid apple-touch-icon** audit
+
+[a2hs]: https://support.apple.com/guide/shortcuts/run-shortcuts-from-the-ios-home-screen-apd735880972/ios#apd175362e63
