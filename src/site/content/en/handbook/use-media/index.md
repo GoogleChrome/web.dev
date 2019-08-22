@@ -29,13 +29,13 @@ Body images should be related to body content in some way. Typically, an image i
 Captions should be in sentence case. End all captions with a period.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  A Screenshot of the DevTools **Network** Panel
-  {% endCompare %}
+{% Compare 'worse' %}
+A Screenshot of the DevTools **Network** Panel
+{% endCompare %}
 
-  {% Compare 'better' %}
-  A screenshot of the DevTools **Network** panel.
-  {% endCompare %}
+{% Compare 'better' %}
+A screenshot of the DevTools **Network** panel.
+{% endCompare %}
 </div>
 
 A caption should typically be a noun phrase describing the image or a sentence summarizing the idea the image is showing. Examples:

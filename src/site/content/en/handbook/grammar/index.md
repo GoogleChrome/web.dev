@@ -26,25 +26,25 @@ Use second person (_you_) rather than first person (_we_) except in rare cases w
 Begin instructions with the objective rather than the action.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  Drag a photo to the trash to remove it from an album.
-  {% endCompare %}
+{% Compare 'worse' %}
+Drag a photo to the trash to remove it from an album.
+{% endCompare %}
 
-  {% Compare 'better' %}
-  To remove a photo from an album, drag it to the trash.
-  {% endCompare %}
+{% Compare 'better' %}
+To remove a photo from an album, drag it to the trash.
+{% endCompare %}
 </div>
 
 Favor the imperative mood (giving commands) over declarative (making statements) in instructions.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  You will click **Run Audit**.
-  {% endCompare %}
+{% Compare 'worse' %}
+You will click **Run Audit**.
+{% endCompare %}
 
-  {% Compare 'better' %}
-  Click **Run Audit**.
-  {% endCompare %}
+{% Compare 'better' %}
+Click **Run Audit**.
+{% endCompare %}
 </div>
 
 Avoid using _can_ in instructions unless you really mean to convey that the step is optional.
@@ -53,13 +53,13 @@ Avoid using _can_ in instructions unless you really mean to convey that the step
 Don't include preceding articles (_a_, _an_, _the_) or surrounding punctuation in link text.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  See [the "Easily discoverable" collection](/discoverable) for more information.
-  {% endCompare %}
+{% Compare 'worse' %}
+See [the "Easily discoverable" collection](/discoverable) for more information.
+{% endCompare %}
 
-  {% Compare 'better' %}
-  See the [Easily discoverable](/discoverable) collection for more information.
-  {% endCompare %}
+{% Compare 'better' %}
+See the [Easily discoverable](/discoverable) collection for more information.
+{% endCompare %}
 </div>
 
 When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title only, without quotation marks. (See example above.)
@@ -103,13 +103,13 @@ Use numerals for decimals and numbers higher than nine.
 Avoid ambiguous pronouns. Follow the advice on the GDDSC [Pronouns](https://developers.google.com/style/pronouns) page. Also avoid pronouns that refer to clauses or phrases, which can complicate translation into some languages.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  Speed optimizations often regress quickly. Performance budgets are one way to address this.
-  {% endCompare %}
+{% Compare 'worse' %}
+Speed optimizations often regress quickly. Performance budgets are one way to address this.
+{% endCompare %}
 
-  {% Compare 'better' %}
-  Speed optimizations often regress quickly. Performance budgets are one way to address this problem.
-  {% endCompare %}
+{% Compare 'better' %}
+Speed optimizations often regress quickly. Performance budgets are one way to address this problem.
+{% endCompare %}
 </div>
 
 ## Punctuation
@@ -117,26 +117,26 @@ Avoid ambiguous pronouns. Follow the advice on the GDDSC [Pronouns](https://deve
 Don't use ampersands unless one is part of a company or brand name.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  Safe & secure
-  {% endCompare %}
+{% Compare 'worse' %}
+Safe & secure
+{% endCompare %}
 
-  {% Compare 'better' %}
-  Safe and secure
-  {% endCompare %}
+{% Compare 'better' %}
+Safe and secure
+{% endCompare %}
 </div>
 
 ### Commas
 Use the serial comma before the last item in a list.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  React, Vue and Angular are popular frameworks.
-  {% endCompare %}
+{% Compare 'worse' %}
+React, Vue and Angular are popular frameworks.
+{% endCompare %}
 
-  {% Compare 'better' %}
-  React, Vue, and Angular are popular frameworks.
-  {% endCompare %}
+{% Compare 'better' %}
+React, Vue, and Angular are popular frameworks.
+{% endCompare %}
 </div>
 
 ### Dashes and hyphens
@@ -164,13 +164,13 @@ The "Accessible to all" collection
 Periods and commas always go inside quotation marks. Question marks and exclamation points go inside quotation marks if they're part of the quotation; outside if not.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  Jane said, "Reader, I married him".
-  {% endCompare %}
+{% Compare 'worse' %}
+Jane said, "Reader, I married him".
+{% endCompare %}
 
-  {% Compare 'better' %}
-  Jane said, "Reader, I married him."
-  {% endCompare %}
+{% Compare 'better' %}
+Jane said, "Reader, I married him."
+{% endCompare %}
 </div>
 
 ## Text formatting
@@ -179,38 +179,38 @@ Bold words for emphasis sparingly. (The primary use for bolding is [indicating U
 Avoid mixing code font and standard font in a single word.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  `integer`s
-  {% endCompare %}
+{% Compare 'worse' %}
+`integer`s
+{% endCompare %}
 
-  {% Compare 'better' %}
-  `integer` values
-  {% endCompare %}
+{% Compare 'better' %}
+`integer` values
+{% endCompare %}
 </div>
 
 ## Titles and headings
 Use sentence case for titles and headings.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  Optimize Your Images
-  {% endCompare %}
+{% Compare 'worse' %}
+Optimize Your Images
+{% endCompare %}
 
-  {% Compare 'better' %}
-  Optimize your images
-  {% endCompare %}
+{% Compare 'better' %}
+Optimize your images
+{% endCompare %}
 </div>
 
 Use imperative mood for titles and headings whenever possible.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  Optimizing your images
-  {% endCompare %}
+{% Compare 'worse' %}
+Optimizing your images
+{% endCompare %}
 
-  {% Compare 'better' %}
-  Optimize your images
-  {% endCompare %}
+{% Compare 'better' %}
+Optimize your images
+{% endCompare %}
 </div>
 
 ## UI elements and interaction
@@ -231,13 +231,13 @@ To find slow third-party scripts, check the **Reduce JavaScript execution time**
 When referring to a button with an icon but no label, use the name of the button as shown in the tooltip, and add the button icon immediately after. Don't style the icon unless the button would be difficult to recognize without its original styling.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  Click ![Fullscreen icon](fullscreen.png#_icon).
-  {% endCompare %}
+{% Compare 'worse' %}
+Click ![Fullscreen icon](fullscreen.png#_icon).
+{% endCompare %}
 
-  {% Compare 'better' %}
-  Click **Fullscreen** ![Fullscreen icon](fullscreen.png#_icon_bordered).
-  {% endCompare %}
+{% Compare 'better' %}
+Click **Fullscreen** ![Fullscreen icon](fullscreen.png#_icon_bordered).
+{% endCompare %}
 </div>
 
 To refer to a keyboard key:
@@ -247,13 +247,13 @@ To refer to a keyboard key:
 * When the reader may be on either Windows or Mac, put the Mac shortcut in parentheses after the Windows shortcut.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  To copy, press Ctrl + C (⌘ + C).
-  {% endCompare %}
+{% Compare 'worse' %}
+To copy, press Ctrl + C (⌘ + C).
+{% endCompare %}
 
-  {% Compare 'better' %}
-  To copy, press `Control+C` (or `Command+C` on Mac).
-  {% endCompare %}
+{% Compare 'better' %}
+To copy, press `Control+C` (or `Command+C` on Mac).
+{% endCompare %}
 </div>
 
 Use _pane_ to refer to the content areas associated with tabs—unless you're referring to an area in DevTools; then use _panel_.
@@ -264,26 +264,26 @@ Use _KB_ for kilobytes, _kb_ for kilobits.
 Add a space before units.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  100KB
-  {% endCompare %}
+{% Compare 'worse' %}
+100KB
+{% endCompare %}
 
-  {% Compare 'better' %}
-  100 KB
-  {% endCompare %}
+{% Compare 'better' %}
+100 KB
+{% endCompare %}
 </div>
 
 ## Usage
 To maintain a conversational tone, use common contractions.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  This collection assumes that you are already familiar with Angular.
-  {% endCompare %}
+{% Compare 'worse' %}
+This collection assumes that you are already familiar with Angular.
+{% endCompare %}
 
-  {% Compare 'better' %}
-  This collection assumes that you're already familiar with Angular.
-  {% endCompare %}
+{% Compare 'better' %}
+This collection assumes that you're already familiar with Angular.
+{% endCompare %}
 </div>
 
 Use consistent vocabulary throughout a piece and the collection it lives in.
@@ -291,13 +291,13 @@ Use consistent vocabulary throughout a piece and the collection it lives in.
 Acronyms should be spelled out the first time they're used, with the acronym following immediately after in parentheses.
 
 <div class="w-columns">
-  {% Compare 'worse' %}
-  WICG
-  {% endCompare %}
+{% Compare 'worse' %}
+WICG
+{% endCompare %}
 
-  {% Compare 'better' %}
-  Web Incubation Community Groups (WICG)
-  {% endCompare %}
+{% Compare 'better' %}
+Web Incubation Community Groups (WICG)
+{% endCompare %}
 </div>
 
 ## References

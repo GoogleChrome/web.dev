@@ -222,15 +222,15 @@ See the [Code](/handbook/markup-code) post.
 
 ```text
 &#123;% Compare 'worse' %&#125;
-  &#96;&#96;&#96;text
-  Bad code example
-  &#96;&#96;&#96;
+&#96;&#96;&#96;text
+Bad code example
+&#96;&#96;&#96;
 &#123;% endCompare %&#125;
 
 &#123;% Compare 'better' %&#125;
-  &#96;&#96;&#96;text
-  Good code example
-  &#96;&#96;&#96;
+&#96;&#96;&#96;text
+Good code example
+&#96;&#96;&#96;
 &#123;% endCompare %&#125;
 ```
 
@@ -278,15 +278,15 @@ Good code example
 
 ```text
 &#123;% Compare 'worse', '', 'Not helpful' %&#125;
-  Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
-  massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
-  nibh varius at.
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+nibh varius at.
 &#123;% endCompare %&#125;
 
 &#123;% Compare 'better', '', 'Helpful' %&#125;
-  Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
-  massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
-  nibh varius at.
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+nibh varius at.
 &#123;% endCompare %&#125;
 ```
 
@@ -306,32 +306,32 @@ at.
 
 ````html
 <div class="w-columns">
-  {% raw %}{% Compare 'worse', 'Explanation of why example is bad.' %}
-  ```text
-  Bad code example
-  ```
-  {% endCompare %}
+{% raw %}{% Compare 'worse', 'Explanation of why example is bad.' %}
+```text
+Bad code example
+```
+{% endCompare %}
 
-  {% Compare 'better', 'Explanation of why example is good.' %}
-  ```text
-  Good code example
-  ```
-  {% endCompare %}{% endraw %}
+{% Compare 'better', 'Explanation of why example is good.' %}
+```text
+Good code example
+```
+{% endCompare %}{% endraw %}
 </div>
 ````
 
 <div class="w-columns">
-  {% Compare 'worse', 'Explanation of why example is bad.' %}
-  ```text
-  Bad code example
-  ```
-  {% endCompare %}
+{% Compare 'worse', 'Explanation of why example is bad.' %}
+```text
+Bad code example
+```
+{% endCompare %}
 
-  {% Compare 'better', 'Explanation of why example is good.' %}
-  ```text
-  Good code example
-  ```
-  {% endCompare %}
+{% Compare 'better', 'Explanation of why example is good.' %}
+```text
+Good code example
+```
+{% endCompare %}
 </div>
 
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus

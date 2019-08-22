@@ -57,7 +57,7 @@ module.exports = (content, type, caption = false, labelOverride) => {
       <p class="w-compare__label w-compare__label--${type}">
         ${label}
       </p>
-      ${md.render(content)}
+      ${content}
       ${caption && renderCaption(caption)}
     </figure>
   `;
