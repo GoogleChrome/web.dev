@@ -9,8 +9,10 @@ web_lighthouse:
 ---
 
 Search engines can only show pages in their search results if those pages don't
-explicitly block indexing. Don't block indexing for content that you want to
-appear in search results.
+explicitly block indexing by search engine crawlers. Some HTTP headers and meta
+tags tell crawlers that a page shouldn't be indexed.
+
+Only block indexing for content that you don't want to appear in search results.
 
 ## How the Lighthouse indexing audit fails
 
@@ -47,25 +49,43 @@ still make your page harder to discover, so use them with caution.
 
 ## How to ensure search engines can crawl your page
 
-If you want search engines to crawl your page, remove any HTTP headers or
-`<meta>` elements that are blocking the crawlers.
+First make sure you want search engines to index the page. Some pages, like
+[sitemaps](https://support.google.com/webmasters/answer/156184?hl=en&ref_topic=4581190)
+or legal content, generally shouldn't be indexed. (Keep in mind that blocking
+indexing doesn't prevent users from accessing a page if they know its URL.)
 
-You can inspect your page's response headers using
-[the **Headers** tab of Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network-performance/reference#headers):
+For pages that you want indexed, remove any HTTP headers or `<meta>` elements
+that are blocking search engine crawlers. Depending on how you set up your site,
+you might need to do some or all of the steps below:
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="headers.svg" alt="The Headers tab">
-</figure>
+- Remove the `X-Robots-Tag` HTTP response header if you set up a HTTP
+    response header:
 
-See Google's [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
-page to learn how to configure your `<meta>` elements and HTTP headers to get
-more control over how search engines crawl your page.
+```text
+X-Robots-Tag: noindex
+```
+
+- Remove the following meta tag if it's present in the head of the page:
+
+```html
+<meta name="robots" content="noindex">
+```
+
+- Remove meta tags that block specific crawlers if these tags are present in the
+  head of the page. For example:
+
+```html
+<meta name="Googlebot" content="noindex">
+```
 
 ## Add additional control (optional)
 
 You may want more control over how search engines index your page. (For example,
 maybe you don't want Google to index images, but you do want the rest of the page
-to be indexed.) See these guidelines for specific search engines:
+indexed.)
+
+For information about how to configure your `<meta>` elements and HTTP
+headers for specific search engines, see these guides:
 
 -  [Google Search](https://developers.google.com/search/reference/robots_meta_tag)
 -  [Bing](https://www.bing.com/webmaster/help/which-robots-metatags-does-bing-support-5198d240)
@@ -74,4 +94,6 @@ to be indexed.) See these guidelines for specific search engines:
 ## Resources
 
 - [Source code for **Page is blocked from indexing** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/is-crawlable.js)
-- [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
+- Google's [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
+- Bing's [Robots Metatags](https://www.bing.com/webmaster/help/which-robots-metatags-does-bing-support-5198d240)
+- Yandex's [Using HTML elements](https://yandex.com/support/webmaster/controlling-robot/html.html)
