@@ -9,7 +9,7 @@ web_lighthouse:
 
 iOS Safari users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to their home screens.
 The icon that appears on the iOS home screen when the user adds a PWA is called the *Apple touch icon*. You can specify what icon your app should use by including a 
-`<link rel="apple-touch-icon" href="/example.png">` tag to the `<head>` of your
+`<link rel="apple-touch-icon" href="/example.png">` tag in the `<head>` of your
 page. If your page doesn't have this link tag, iOS generates an icon from page content.
 In other words, instructing iOS to download an icon results in a more polished user experience.
 Lighthouse flags pages that don't provide this link tag:
@@ -37,9 +37,9 @@ the icon actually exists or whether the icon is the correct size.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
-## Recommendations
+## How to add an Apple touch icon
 
-- Add a `<link rel="apple-touch-icon" href="/example.png">` to the `<head>` of your page.
+- Add `<link rel="apple-touch-icon" href="/example.png">` to the `<head>` of your page.
 - Replace `/example.png` with the actual path to your icon.
 
 ```html
@@ -52,15 +52,14 @@ the icon actually exists or whether the icon is the correct size.
 ...
 ```
 
-As mentioned above, Lighthouse doesn't check the following considerations, but to provide a
-good user experience you'll want to make sure that:
+To provide a good user experience, make sure that:
 
 - The icon is 180 pixels wide and 180 pixels tall, or 192 pixels wide and 192 pixels tall
 - The specified URL to the icon is valid
 - The background of the icon is not transparent
 
 
-## More information
+## Resources
 
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch icon</a>
 - [Source code](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js) for

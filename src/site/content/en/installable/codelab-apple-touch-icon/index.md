@@ -10,9 +10,9 @@ glitch: apple-touch-icon
 related_post: apple-touch-icon
 ---
 
-Safari for iOS users can manually add Progressive Web Apps to their home screen. The icon that 
-appears on the iOS home screen is called the *Apple touch icon*. This codelab shows you how to add
-an Apple touch icon to a Progressive Web App (PWA). It assumes that you have access to an iOS
+Safari for iOS users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to their home screen. The icon that 
+appears on the iOS home screen when a PWA is added is called the *Apple touch icon*. This codelab shows you how to add
+an Apple touch icon to a PWA. It assumes that you have access to an iOS
 device.
 
 {% Aside %}
