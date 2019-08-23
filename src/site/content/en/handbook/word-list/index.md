@@ -29,3 +29,4 @@ Here's how to spell, punctuate, and capitalize words and phrases commonly used o
 * webpack
 * website
 * Wi-Fi
+* home screen
