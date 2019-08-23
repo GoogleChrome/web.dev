@@ -10,10 +10,10 @@ glitch: apple-touch-icon
 related_post: apple-touch-icon
 ---
 
-Safari for iOS users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to their home screen. The icon that 
-appears on the iOS home screen when a PWA is added is called the *Apple touch icon*. This codelab shows you how to add
-an Apple touch icon to a PWA. It assumes that you have access to an iOS
-device.
+Safari for iOS users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to 
+their home screen. The icon that appears on the iOS home screen when a PWA is added is called 
+the *Apple touch icon*. This codelab shows you how to add an Apple touch icon to a PWA. It assumes
+that you have access to an iOS device.
 
 {% Aside %}
   iOS Safari users can add any webpage to their home screen. It doesn't have to be a PWA.
@@ -33,14 +33,7 @@ Open the example app in a new tab:
 
 Run a [Lighthouse PWA audit](/lighthouse-pwa) on your example app in Chrome DevTools:
 
-{% Instruction 'devtools-audits', 'ol' %}
-
-1. Set **Device** to **Mobile**.
-1. For the **Audits** section keep the **Progressive Web App** checkbox checked and disable the
-   rest of the checkboxes.
-1. Set **Throttling** to **Simulated Slow 4G, 4x CPU Slowdown**.
-1. Keep the **Clear storage** checkbox checked.
-1. Click **Run audits**.
+{% Instruction 'audit-pwa', 'ol' %}
 
 In the **PWA Optimized** section, Lighthouse reports that the example app [doesn't provide a valid
 Apple touch icon](/apple-touch-icon).
