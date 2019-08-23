@@ -11,6 +11,7 @@ Here's how to spell, punctuate, and capitalize words and phrases commonly used o
 * e-commerce
 * FFmpeg
 * ~~guide~~ (use _post_ instead)
+* home screen
 * Hypertext Markup Language (HTML)
 * internet
 * JavaScript
