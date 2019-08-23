@@ -15,6 +15,18 @@
       "en": "Human boy working on web standards at Google"
     }
   },
+  "kenjibaheux": {
+    "name": {
+      "given": "Kenji",
+      "family": "Baheux"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Product Manager"
+    },
+    "country": "JP",
+    "twitter": "kenjibaheux"
+  },
   "pbakaus": {
     "name": {
       "given": "Paul",
