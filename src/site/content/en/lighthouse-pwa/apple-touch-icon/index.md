@@ -29,11 +29,12 @@ tag in the `<head>` of the page.
 </figure>
 
 {% Aside %}
-  A `<link rel="apple-touch-icon-precomposed" href="/example.png">` 
-  tag also passes the audit, but `rel="apple-touch-icon"` is preferred because
-  `rel="apple-touch-icon-precomposed"` has been obsolete since iOS 7. Lighthouse doesn't check
-  whether  the icon actually exists or whether the icon is the correct size.
+  A `rel="apple-touch-icon-precomposed"` link passes the audit, but it has been
+  obsolete since iOS 7. Use `rel="apple-touch-icon"` instead.
 {% endAside %}
+
+Lighthouse doesn't check whether the icon actually exists or whether the icon is
+the correct size.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
