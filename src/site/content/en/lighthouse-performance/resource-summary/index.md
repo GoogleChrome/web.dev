@@ -39,8 +39,8 @@ In other words, the browser can't render content to a user's screen until all CS
 network requests are complete.
 
 If you refactor your code to only ship the JavaScript and CSS that you need in order to load the
-page, you should see your [First Contentful Paint][FCP] metric improve. Your 
-[First Meaningful Paint][FMP] and [Speed Index][Speed Index] metrics may also improve.
+page, you should see your [First Contentful Paint][fcp] metric improve. Your 
+[First Meaningful Paint][f,p] and [Speed Index][speed index] metrics may also improve.
 
 ### Images
 
@@ -59,7 +59,7 @@ the page you only need 1 KB of code from this 1 MB file.
 
 ### Tools
 
-Use the [**Coverage** tab] in Chrome DevTools to 
+Use the [**Coverage** tab][coverage] in Chrome DevTools to 
 
 Network panel
 
@@ -111,6 +111,6 @@ https://web.dev/performance-budgets-with-the-angular-cli/
 [coverage]: https://developers.google.com/web/tools/chrome-devtools/coverage/
 [render]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css
 [parser]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript
-[FCP]: https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint
-[Speed Index]: https://developers.google.com/web/tools/lighthouse/audits/speed-index
-[FMP]: https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint
+[fcp]: https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint
+[speed index]: https://developers.google.com/web/tools/lighthouse/audits/speed-index
+[fmp]: https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint
