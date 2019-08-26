@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Page doesn't use HTTP/2 for its own resources
+title: Does not use HTTP/2 for all of its resources
 description: |
-  Learn about `uses-http2` audit.
+  Learn about "Does not use HTTP/2 for all of its resources" Lighthouse audit.
 web_lighthouse:
   - uses-http2
 ---
@@ -37,8 +37,8 @@ To pass this audit, serve each of those resources over HTTP/2.
 To learn how to enable HTTP/2 on your servers,
 see [Setting Up HTTP/2](https://dassur.ma/things/h2setup/).
 
-## More information
+## Resources
 
-- [Page doesn't use HTTP/2 for its own resources audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
+- [Source code for **Does not use HTTP/2 for all of its resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-http2.js)
 - [Introduction to HTTP/2](https://developers.google.com/web/fundamentals/performance/http2/)
 - [HTTP/2 Frequently Asked Question](https://http2.github.io/faq/)

@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Page requests geolocation on load
+title: Requests the geolocation permission on page load
 description: |
-  Learn about `geolocation-on-start` audit.
+  Learn about the "Requests the geolocation permission on page load" Lighthouse
+  audit.
 web_lighthouse:
   - geolocation-on-start
 ---
@@ -51,6 +52,6 @@ Learn more in
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## More information
+## Resources
 
-[Page requests geolocation on load audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/geolocation-on-start.js)
+[Source code for **Requests the geolocation permission on page load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/geolocation-on-start.js)

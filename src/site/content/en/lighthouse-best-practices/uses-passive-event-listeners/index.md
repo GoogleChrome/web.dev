@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Page doesn't use passive event listeners to improve scrolling performance
+title: Does not use passive listeners to improve scrolling performance
 description: |
-  Learn about `uses-passive-event-listeners` audit.
+  Learn about "Does not use passive listeners to improve scrolling performance"
+  Lighthouse audit.
 web_lighthouse:
   - uses-passive-event-listeners
 ---
@@ -65,8 +66,8 @@ See the polyfill in
 [Feature Detection](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection)
 to learn how to safely implement passive event listeners.
 
-## More information
+## Resources
 
-- [Page doesn't use passive event listeners to improve scrolling audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-passive-event-listeners.js)
+- [Source code for **Does not use passive listeners to improve scrolling performance** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/uses-passive-event-listeners.js)
 - [Improving Scrolling Performance with Passive Event Listeners](https://developers.google.com/web/updates/2016/06/passive-event-listeners)
 - [Passive event listeners explainer](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)

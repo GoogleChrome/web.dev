@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Diagnostic audit that lists all JavaScript libraries
+title: Detected JavaScript libraries
 description: |
-  Learn about `js-libraries` audit.
+  Learn about the "Detected JavaScript libraries" Lighthouse audit.
 web_lighthouse:
   - js-libraries
 ---
@@ -23,6 +23,6 @@ Lighthouse also reports
 [front-end JavaScript libraries with known security risks](/no-vulnerable-libraries).
 Watch closely for these vulnerabities.
 
-## More information
+## Resources
 
-[Page uses these front-end JS libraries audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/js-libraries.js)
+[Source code for **Detected JavaScript libraries** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/js-libraries.js)

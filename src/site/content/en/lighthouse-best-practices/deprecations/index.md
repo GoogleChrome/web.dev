@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Page uses deprecated APIs
+title: Uses deprecated APIs
 description: |
-  Learn about `deprecations` audit.
+  Learn about the "Uses deprecated APIs" Lighthouse audit.
 web_lighthouse:
   - deprecations
 ---
@@ -34,6 +34,6 @@ expand the entries for the APIs that you're using
 to learn more about why the APIs are deprecated,
 as well as how to replace them.
 
-## More information
+## Resources
 
-[Page uses deprecated APIs audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/deprecations.js)
+[Source code for **Uses deprecated APIs** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/deprecations.js)

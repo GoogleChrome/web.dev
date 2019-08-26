@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Page requests notification permissions on load
+title: Requests the notification permission on page load
 description: |
-  Learn about `notification-on-start` audit.
+  Learn about the "Requests the notification permission on page load" Lighthouse
+  audit.
 web_lighthouse:
   - notification-on-start
 ---
@@ -48,6 +49,6 @@ and to present the permissions request after they opt-in.
 
 See [Change website permissions](https://support.google.com/chrome/answer/6148059) for more help.
 
-## More information
+## Resources
 
-[Page requests notification permissions on load audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/notification-on-start.js)
+[Source code for **Requests the notification permission on page load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/notification-on-start.js)

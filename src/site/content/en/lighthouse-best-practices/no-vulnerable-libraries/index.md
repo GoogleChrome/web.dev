@@ -2,7 +2,8 @@
 layout: post
 title: Includes front-end JavaScript libraries with known security vulnerabilities
 description: |
-  Learn about `no-vulnerable-libraries` audit.
+  Learn about the "Includes front-end JavaScript libraries with known security
+  vulnerabilities" Lighthouse audit.
 web_lighthouse:
   - no-vulnerable-libraries
 ---
@@ -43,6 +44,6 @@ upgrade to that version, or consider using a different library.
 See [Snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all)
 to learn more about each library's vulnerability.
 
-## More information
+## Resources
 
-[Includes vulnerabe JS libraries audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+[Source code for **Includes front-end JavaScript libraries with known security vulnerabilities** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)

@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Images display with incorrect aspect ratio
+title: Displays images with incorrect aspect ratio
 description: |
-  Learn about `image-aspect-ration` audit.
+  Learn about the "Displays images with incorrect aspect ratio" Lighthouse
+  audit.
 web_lighthouse:
   - image-aspect-ration
 ---
@@ -53,9 +54,9 @@ See [View only the CSS that's actually applied to an element](https://developers
 
 Learn more in [Serve images with correct dimensions](/serve-images-with-correct-dimensions).
 
-## More information
+## Resources
 
-- [Images display with incorrect aspect ration audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
+- [Source code for **Displays images with incorrect aspect ratio** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
 - [Properly size images audit]()
 
 <div class="w-codelabs-callout">

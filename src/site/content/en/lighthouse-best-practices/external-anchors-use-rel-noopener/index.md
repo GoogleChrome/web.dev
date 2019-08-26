@@ -2,7 +2,8 @@
 layout: post
 title: Links to cross-origin destinations are unsafe
 description: |
-  Learn about `external-anchors-use-rel-noopener` audit.
+  Learn about the "Links to cross-origin destinations are unsafe" Lighthouse
+  audit.
 web_lighthouse:
   - external-anchors-use-rel-noopener
 ---
@@ -69,6 +70,6 @@ but also prevents the `Referer` header
 from being sent to the new page.
 See [Link type "noreferrer"](https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer).
 
-## More information
+## Resources
 
-[Unsafe links to cross-origin destinations audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)
+[Source code for **Links to cross-origin destinations are unsafe** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js)

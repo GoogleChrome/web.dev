@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Document missing doctype
+title: Page lacks the HTML doctype, thus triggering quirks-mode
 description: |
-  Learn about `doctype` audit.
+  Learn about the "Page lacks the HTML doctype, thus triggering quirks-mode"
+  Lighthouse audit.
 web_lighthouse:
   - doctype
 ---
@@ -27,6 +28,6 @@ Learn more in [Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctyp
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## More information
+## Resources
 
-[Document missing doctype audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/doctype.js)
+[Source code for **Page lacks the HTML doctype, thus triggering quirks-mode** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/doctype.js)

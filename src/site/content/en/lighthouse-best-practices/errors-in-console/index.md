@@ -2,7 +2,7 @@
 layout: post
 title: Browser errors were logged to the console
 description: |
-  Learn about `errors-in-console` audit.
+  Learn about the "Browser errors were logged to the console" Lighthouse audit.
 web_lighthouse:
   - errors-in-console
 ---
@@ -78,6 +78,6 @@ If you can't fix the errors, at least consider wrapping them in
 to explicitly indicate in the code that you're aware of the issue.
 You can also use the `catch` block to handle the error situation more gracefully.
 
-## More information
+## Resources
 
-[Browser errors logged to console audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+[Source code for **Browser errors were logged to the console** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)

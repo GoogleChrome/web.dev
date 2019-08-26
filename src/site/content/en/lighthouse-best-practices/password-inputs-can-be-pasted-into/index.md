@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Page stops users from pasting into password fields
+title: Prevents users to paste into password fields
 description: |
-  Learn about `password-inputs-can-be-pasted-into` audit.
+  Learn about "Prevents users to paste into password fields" Lighthouse audit.
 web_lighthouse:
   - password-inputs-can-be-pasted-into
 ---
@@ -73,6 +73,6 @@ into password fields whenever users need to log in.
 See [The "Cobra Effect" That Is Disabling Paste On Password Fields](https://www.troyhunt.com/the-cobra-effect-that-is-disabling/)
 for more on why enabling pasting is a better security practice.
 
-## More information
+## Resources
 
-[Page stops users from pasting into password fields audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)
+[Source code for **Prevents users to paste into password fields** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)

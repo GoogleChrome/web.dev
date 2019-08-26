@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Page uses document.write()
+title: Uses document.write()
 description: |
-  Learn about `no-document-write` audit.
+  Learn about the "Uses document.write()" Lighthouse audit.
 web_lighthouse:
   - no-document-write
 ---
@@ -42,6 +42,6 @@ These are the calls to `document.write()` that you want to change.
 
 See [How do I fix this?](https://developers.google.com/web/updates/2016/08/removing-document-write#how_do_i_fix_this) for possible solutions.
 
-## More information
+## Resources
 
-[Page uses `document.write()` audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
+[Source code for **Uses `document.write()`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
