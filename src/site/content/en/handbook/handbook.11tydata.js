@@ -9,12 +9,13 @@ module.exports = {
     title: 'Content handbook',
     updated: 'Aug 26, 2019',
     description: 'How to write great content and get it published on web.dev.',
-    overview: `The goal of this handbook is to provide web.dev content contributors with
-      everything they could possibly need to know in order to write great content and
-      get it published on web.dev. As a contributor you don't have to read the whole handbook, but
-      the more you do, the faster your content will likely get published. Note that this handbook
-      is also the web.dev editorial team's single source of truth on how to maintain content
-      quality across the site.`,
+    overview: `The goal of this handbook is to provide web.dev content 
+      contributors with everything they could possibly need to know in order
+      to write great content and get it published on web.dev. As a contributor
+      you don't have to read the whole handbook, but the more you do, the
+      faster your content will likely get published. Note that this handbook
+      is also the web.dev editorial team's single source of truth on how to
+      maintain content quality across the site.`,
     topics: [
       {
         title: 'Propose your content',
