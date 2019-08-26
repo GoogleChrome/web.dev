@@ -35,7 +35,7 @@ To learn how to fix issues flagged by Lighthouse, see the
 
 ## Next steps
 
-It's worth noting that the audit doesn't cover everything you should do to
+It's worth noting that the audit doesn't cover everything you could do to
 increase visibility in search engines. You'll have to check the guidelines for
 individual search engines because they may have different requirements.
 
