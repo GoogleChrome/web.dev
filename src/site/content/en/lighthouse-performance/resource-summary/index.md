@@ -69,9 +69,10 @@ In general, links to JavaScript and CSS files have the greatest potential
 
 Links to JavaScript and CSS files can have a particularly large impact.
 
+<!--
 https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp
-
 https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript
+-->
 
 Images do not block the critical rendering path, but will slow down the perceived performance
 of the page
@@ -91,13 +92,17 @@ of the page
 
 ### Use code splitting to ship only code that's needed
 
+<!--
 https://web.dev/code-splitting-suspense/
 https://web.dev/route-level-code-splitting-in-angular/
+-->
 
 ### Use performance budgets to prevent regressions
 
+<!--
 https://web.dev/use-lighthouse-for-performance-budgets/
 https://web.dev/performance-budgets-with-the-angular-cli/
+-->
 
 ## Resources
 
