@@ -18,7 +18,8 @@ the first text that a screen reader announces.
 
 ## How the Lighthouse title audit fails
 
-Lighthouse flags pages without a `<title>` element in the page's `<head>`:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+without a `<title>` element in the page's `<head>`:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot" src="document-title.png" alt="Lighthouse audit showing HTML document doesn't have a title elemement">

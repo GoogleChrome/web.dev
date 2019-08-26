@@ -14,7 +14,8 @@ understand your content and how it relates to other pages.
 
 ## How the Lighthouse link text audit fails
 
-Lighthouse flags links without descriptive text:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags links
+without descriptive text:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot" src="link-text.png" alt="Lighthouse audit showing links don't have descriptive text">

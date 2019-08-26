@@ -18,8 +18,9 @@ might appear in a list of top stories relevant to something the user searched
 for.
 
 {% Aside 'note' %}
-The Lighthouse structured data audit is manual, so it does not affect your
-Lighthouse SEO score.
+The [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+structured data audit is manual, so it does not affect your Lighthouse SEO
+score.
 {% endAside %}
 
 ## How to mark up your content

@@ -17,7 +17,8 @@ Also, most mobile devices don't support plugins, which
 
 ## How the Lighthouse plugins audit fails
 
-Lighthouse flags pages that use plugins:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+that use plugins:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot" src="plugins.png" alt="Lighthouse audit showing document uses plugins">

@@ -15,7 +15,8 @@ traffic.
 
 ## How the Lighthouse meta description audit fails
 
-Lighthouse flags pages without a meta description:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+without a meta description:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">

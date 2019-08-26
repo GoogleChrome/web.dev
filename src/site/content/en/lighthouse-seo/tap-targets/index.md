@@ -17,7 +17,8 @@ your page more mobile-friendly and accessible.
 
 ## How the Lighthouse audit for tap targets fails
 
-Lighthouse flags pages with tap targets that are too small or too close together:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+with tap targets that are too small or too close together:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="tap-targets.png" alt="Lighthouse audit showing inappropriately sized tap targets">

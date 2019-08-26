@@ -14,8 +14,8 @@ and may require users to zoom in to display text at a comfortable reading size.
 
 ## How the Lighthouse audit for font size fails
 
-Lighthouse flags pages with font sizes that are too small to read easily
-on mobile:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+with font sizes that are too small to read easily on mobile:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="font-size.png" alt="Lighthouse audit showing page has illegible font sizes">

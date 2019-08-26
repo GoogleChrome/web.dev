@@ -16,7 +16,8 @@ Only block indexing for content that you don't want to appear in search results.
 
 ## How the Lighthouse indexing audit fails
 
-Lighthouse flags pages that search engines can't index:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+that search engines can't index:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot" src="is-crawable.png" alt="Lighthouse audit showing search engines can't index your page">
@@ -24,7 +25,7 @@ Lighthouse flags pages that search engines can't index:
 
 Lighthouse only checks for headers or elements that block _all_ search engine
 crawlers. For example, the `<meta>` element below prevents all search engine
-crawlers from accessing your page:
+crawlers (also known as robots) from accessing your page:
 
 ```html
 <meta name="robots" content="noindex"/>

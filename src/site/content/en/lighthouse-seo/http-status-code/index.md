@@ -20,8 +20,8 @@ _Crawling_ is how a search engine updates its index of content on the web.
 
 ## How the Lighthouse HTTP status code audit fails
 
-Lighthouse flags pages that return an unsuccessful HTTP status code (in the
-400s or 500s):
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+that return an unsuccessful HTTP status code (in the 400s or 500s):
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot" src="http-status-code.png" alt="Lighthouse audit showing search engines are struggling to index your page">

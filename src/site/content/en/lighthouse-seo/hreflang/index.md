@@ -14,7 +14,8 @@ a page so that they can display the correct version for each language or region.
 
 ## How the Lighthouse `hreflang` audit fails
 
-Lighthouse flags incorrect `hreflang` links:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags
+incorrect `hreflang` links:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot" src="hreflang.png" alt="Lighthouse audit showing incorrect hreflang links">
