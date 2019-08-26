@@ -7,45 +7,69 @@ module.exports = {
     slug: 'handbook',
     cover: '/images/collections/handbook.svg',
     title: 'Content handbook',
-    updated: 'Jun 24, 2019',
-    description: 'Create great content for web.dev.',
-    overview: `This handbook helps contributors to web.dev create effective,
-      engaging content and get it published as easily as possible. This is a
-      living document that will evolve as we learn more about what works.`,
+    updated: 'Aug 26, 2019',
+    description: 'How to write great content and get it published on web.dev.',
+    overview: `The goal of this handbook is to provide web.dev content contributors with
+      everything they could possibly need to know in order to write great content and
+      get it published on web.dev. As a contributor you don't have to read the whole handbook, but
+      the more you do, the faster your content will likely get published. Note that this handbook
+      is also the web.dev editorial team's single source of truth on how to maintain content
+      quality across the site.`,
     topics: [
       {
-        title: 'Content process',
+        title: 'Propose your content',
         pathItems: [
           'quick-start',
-          'content-checklist',
+          'audience',
+          'content-types',
           'third-party-contributions',
         ],
       },
       {
-        title: 'Content guidelines',
+        title: 'Draft high-quality content',
         pathItems: [
-          'content-types',
           'style',
           'voice',
-          'audience',
-          'grammar',
           'inclusion-and-accessibility',
           'effective-instruction',
           'write-code-samples',
           'use-media',
-          'word-list',
           'tooling-and-libraries',
+          'markup-sample-app',
+        ],
+      },
+
+      {
+        title: 'Get your content reviewed',
+        pathItems: [
+          'content-checklist',
         ],
       },
       {
-        title: 'web.dev markup',
+        title: 'Copyedit your content',
         pathItems: [
-          'contributor-profile',
+          'word-list',
+          'grammar',
+        ],
+      },
+      {
+        title: 'Format your content',
+        pathItems: [
           'markup-post-codelab',
           'web-dev-components',
+          'contributor-profile',
           'markup-media',
           'markup-code',
-          'markup-sample-app',
+        ],
+      },
+      {
+        title: 'Get your content published',
+        pathItems: [
+        ],
+      },
+      {
+        title: 'Maintain your content',
+        pathItems: [
         ],
       },
     ],
