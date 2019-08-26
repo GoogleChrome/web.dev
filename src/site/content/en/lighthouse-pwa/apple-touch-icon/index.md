@@ -5,6 +5,7 @@ description: |
   How to specify what icon should appear on iOS homescreens for your Progressive Web App.
 web_lighthouse:
   - apple-touch-icon
+codelabs: codelab-apple-touch-icon
 ---
 
 iOS Safari users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to 
@@ -66,7 +67,8 @@ To provide a good user experience, make sure that:
 
 ## Resources
 
-- [Source code](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js)
+- [Source code for the **Does not provide a valid apple-touch-icon** audit][source]
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch icon</a>
 
 [a2hs]: https://support.apple.com/guide/shortcuts/run-shortcuts-from-the-ios-home-screen-apd735880972/ios#apd175362e63
+[source]: https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js

@@ -3,7 +3,7 @@ layout: codelab
 title: Add an Apple touch icon to your Progressive Web App
 authors:
   - kaycebasques
-date: 2019-08-21
+date: 2019-08-26
 description: |
   An interactive demonstration of how to specify which icon should show up on iOS home screens.
 glitch: apple-touch-icon
