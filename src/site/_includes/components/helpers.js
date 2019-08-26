@@ -14,16 +14,22 @@
  * limitations under the License.
  */
 
-module.exports = {
-  env: process.env.ELEVENTY_ENV || 'dev',
-  title: 'web.dev',
-  titleVariation: 'Home',
-  url: 'https://web.dev',
-  repo: 'https://github.com/GoogleChrome/web.dev',
-  subscribe: 'https://web.dev/subscribe',
-  isBannerEnabled: true,
-  banner: `Register for this year's \`#ChromeDevSummit\` happening on Nov. 11-12
-  in San Francisco to learn about the latest features and tools coming to the
-  Web. [Request an invite here](https://developer.chrome.com/devsummit/).`,
-  imageCdn: 'https://webdev.imgix.net',
+/**
+ * If a value is present, then this will return an attribute in the format
+ * attr="val". Otherwise, returns the empty string.
+ * @param {!string} attr An attribute name.
+ * @param {?string|?Array<string>} val An attribute value. Can be an array of
+ * values. Arrays will be converted to a space separated string.
+ * @return {string}
+ */
+const ifDefined = (attr, val) => {
+  if (val) {
+    if (typeof val === 'string') {
+      val = [val];
+    }
+    return `${attr}="${val.join(' ')}"`;
+  }
+  return '';
 };
+
+module.exports = {ifDefined};
