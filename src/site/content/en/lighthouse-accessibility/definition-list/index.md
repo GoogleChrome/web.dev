@@ -43,7 +43,7 @@ For example:
 ```
 
 Learn more in
-[`<dl>` elements must only directly contain properly-ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements](https://dequeuniversity.com/rules/axe/3.2/definition-list).
+[`<dl>` elements must only directly contain properly-ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements](https://dequeuniversity.com/rules/axe/3.3/definition-list).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -54,4 +54,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure defintion list are structured correctly audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/definition-list.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

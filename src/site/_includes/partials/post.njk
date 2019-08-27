@@ -6,14 +6,15 @@
       page: page,
       hero: hero,
       alt: alt,
-      heroPosition: hero_position
+      heroPosition: hero_position,
+      heroFit: hero_fit
     } %}
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
   <web-actions-controller page="post"></web-actions-controller>
   {% Actions %}
-    {% ShareAction title, page.url | stripLanguage %}
+    {% ShareAction title, page.url | stripLanguage, authors | expandContributors %}
     {% SubscribeAction %}
   {% endActions %}
 

@@ -4,7 +4,7 @@ title: Identify slow third-party JavaScript
 subhead: Supercharge your performance detective skills with Lighthouse and Chrome DevTools.
 authors:
   - mihajlija
-date: 2019-07-16
+date: 2019-08-14
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-08-08
 hero: hero.jpg
@@ -15,9 +15,7 @@ alt: Inspecting a laptop with a magnifying glass.
 description: |
   Learn how to use Lighthouse and Chrome DevTools to identify slow third-party resources.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
   - fast
-draft: true
 ---
 
 As a developer, you often don't have control over [which third-party scripts](/third-party-javascript/#network) your site loads. Before you can optimize third-party content you have to do some detective work to find out what's making your site slow. 🕵️
@@ -38,6 +36,17 @@ To run an audit:
 1. Click **Run audits**.
 
 ![Screenshot of the Chrome DevTools Audits panel.](./audits-panel.png)
+
+### Third-party usage
+
+The Lighthouse **Third-party usage** audit shows a list of the third-party providers a page uses. This overview can help you better understand the big picture and identify redundant third-party code. The audit is available in the [Lighthouse extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) and will soon be added to DevTools in Chrome 77.
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./third-party-usage.png" alt='Screenshot showing that 51 third-parties were found and a list of imaginary startups.'>
+  <figcaption class="w-figcaption">
+  Third-party provider names generated with <a href="http://tiffzhang.com/startup/?s=641553836036">Startup generator</a>. Any similarity to actual startups, living or dead, is purely coincidental.
+  </figcaption>
+</figure>
 
 ### Reduce JavaScript execution time
 The Lighthouse [JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.

@@ -43,7 +43,7 @@ for more on WebP.
   </ul>
 </div>
 
-## How Lighthouse calcualtes potential savings
+## How Lighthouse calculates potential savings
 
 Lighthouse collects each BMP, JPEG, and PNG image on the page,
 and then converts each to WebP,

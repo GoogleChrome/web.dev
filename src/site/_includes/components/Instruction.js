@@ -69,7 +69,7 @@ module.exports = (type, listStyle = 'ul') => {
 
     case 'create':
       instruction = html`
-      ${bullet}Click **New File**.
+      ${bullet}Click **New File** and give it a name.
       ${bullet}Click **Add This File**.
       `;
       break;
@@ -82,6 +82,12 @@ module.exports = (type, listStyle = 'ul') => {
       instruction = html`
         ${bullet}To preview the site, press **View&nbsp;App**. Then press **Fullscreen** <img src="/images/glitch/fullscreen.svg"
           alt="fullscreen" style="padding: 4px 8px; opacity: .5; border: 1px solid #c3c3c3; border-radius: 5px;">.
+      `;
+      break;
+
+    case 'source':
+      instruction = html`
+        ${bullet}To view the source, press **View&nbsp;Source**.
       `;
       break;
 

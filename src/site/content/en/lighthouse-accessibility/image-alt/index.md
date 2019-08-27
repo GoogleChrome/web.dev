@@ -42,7 +42,7 @@ give it an empty `alt=""` attribute to remove it from the accessibility tree:
 <img src="background.png" alt="">
 ```
 
-Learn more in [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.2/image-alt?application=lighthouse).
+Learn more in [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.3/image-alt?application=lighthouse).
 
 {% Aside 'note' %}
 You can also use ARIA labels to describe your images, for example,
@@ -71,4 +71,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure images have `alt` text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

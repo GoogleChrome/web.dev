@@ -52,10 +52,9 @@ Check the role definition that the attribute describes,
 and then check the values for that attribute.
 
 For more information on this audit,
-see [ARIA attributes must conform to valid values](https://dequeuniversity.com/rules/axe/3.2/aria-valid-attr-value).
+see [ARIA attributes must conform to valid values](https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr-value).
 
 ## More information
 
 - [ARIA attributes are valid audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-valid-attr.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

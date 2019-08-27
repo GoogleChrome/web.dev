@@ -37,14 +37,14 @@ The sample app has several lazy-loaded routes. To preload all of them using the 
 
 ```js
 import { RouterModule, PreloadAllModules } from '@angular/router';
-// ...
+// …
 
 RouterModule.forRoot([
-  ...
+  …
 ], {
   preloadingStrategy: PreloadAllModules
 })
-// ...
+// …
 ```
 
 Now serve the application and look at the **Network** panel in Chrome DevTools:
@@ -82,18 +82,18 @@ Once it's available in your project, you can use `QuicklinkStrategy` by specifyi
 
 ```js
 import {QuicklinkStrategy, QuicklinkModule} from 'ngx-quicklink';
-...
+…
 
 @NgModule({
-  ...
+  …
   imports: [
-    ...
+    …
     QuicklinkModule,
-    RouterModule.forRoot([...], {
+    RouterModule.forRoot([…], {
       preloadingStrategy: QuicklinkStrategy
     })
   ],
-  ...
+  …
 })
 export class AppModule {}
 ```
@@ -110,6 +110,43 @@ Now when you open the application again, you'll notice that the router only prel
   </figcaption>
 </figure>
 
+### Using the Quicklink preloading strategy across multiple lazy-loaded modules
+
+The above example will work for a basic application but if your application contains multiple lazy-loaded modules you will need to import the `QuicklinkModule` into a shared module, export it and then import the shared module into your lazy-loaded modules.
+
+First import the `QuicklinkModule` from `ngx-quicklink` into your shared module and export it:
+```js
+import { QuicklinkModule } from 'ngx-quicklink';
+…
+
+@NgModule({
+  …
+  imports: [
+    QuicklinkModule
+  ],
+  exports: [
+    QuicklinkModule
+  ],
+  …
+})
+export class SharedModule {}
+```
+
+Then import your `SharedModule` into all of your lazy-loaded modules:
+```js
+import { SharedModule } from '@app/shared/shared.module';
+…
+
+@NgModule({
+  …
+  imports: [
+      SharedModule
+  ],
+  …
+});
+```
+
+`Quicklinks` will now be available in your lazy-loaded modules.
 
 ## Going beyond basic preloading
 

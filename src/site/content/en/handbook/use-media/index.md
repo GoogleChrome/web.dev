@@ -8,14 +8,17 @@ description: |
 
 This post is about how to use images and video to support your writing goals. If you're looking for technical details about how to create images and video for web.dev, see the [Images and video](/handbook/markup-media) post.
 
-web.dev has two types of images:
-* **Hero images** appear at the start of a post and in the post previews on the [blog](/blog).
+There are three types of images associated with a web.dev post:
+* The **thumbnail image** appears in a post's card if the post is added to the [Blog](/blog) page.
+* The **hero image** appears at the start of a post.
 * **Body images** appear in the text of a post or codelab.
 
-Both types of images should be [accessible](/handbook/inclusion-and-accessibility#use-inclusive-images).
+All images should be [accessible](/handbook/inclusion-and-accessibility#use-inclusive-images).
 
-## Hero images
-A hero image should represent the main idea of the post in some way. It often works well to find a visual metaphor. For example, a [post about the Layout Instability API](/layout-instability-api) uses an image of a precariously balanced tower of rocks to suggest the fragile layouts that the API detects.
+## Thumbnail and hero images
+To maintain continuity between the blog page and the post page, the thumbnail image should generally be the same as the hero image. In some cases, it may be necessary to crop the two images differently or shift some visual elements to account for the different aspect ratios of the thumbnail and hero images.
+
+Thumbnail and hero images should represent the main idea of the post in some way. It often works well to find a visual metaphor. For example, a [post about the Layout Instability API](/layout-instability-api) uses an image of a precariously balanced tower of rocks to suggest the fragile layouts that the API detects.
 
 Take a look at the [Stock photos that don't suck](https://medium.com/@dustin/stock-photos-that-dont-suck-62ae4bcbe01b) post on Medium for a list of sites that offer public domain or Creative Commons-licensed images.
 

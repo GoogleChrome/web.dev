@@ -43,10 +43,8 @@ clearly states what the page is about. For example:
   </body>
 </html>
 ```
-
 See Deque University's [Documents must contain a title element to aid in navigation](https://dequeuniversity.com/rules/axe/3.2/document-title)
 page for more information.
-
 
 ## Tips for creating great titles
 

@@ -9,6 +9,14 @@ description: |
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="learn-landing-page">
+
+  {% Banner %}
+    Have questions about images on the web? Tweet your questions to
+    <a href="https://twitter.com/ChromiumDev">@Chromiumdev</a>
+    with <code>#AskChrome</code> and we'll answer top questions in our next
+    <strong>#AskChrome</strong> episode on Youtube.
+  {% endBanner %}
+
   <div class="w-layout-container">
     <header class="w-page-header">
       <h1 class="w-page-header__headline">{{ title }}</h1>
@@ -26,7 +34,7 @@ description: |
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for path in paths %}
+      {% for path in learn.paths %}
         {% PathCard path %}
       {% endfor %}
     </div>
@@ -39,7 +47,7 @@ description: |
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for framework in frameworks %}
+      {% for framework in learn.frameworks %}
         {% PathCard framework %}
       {% endfor %}
     </div>
@@ -52,7 +60,7 @@ description: |
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for audit in audits %}
+      {% for audit in learn.audits %}
         {% PathCard audit %}
       {% endfor %}
     </div>

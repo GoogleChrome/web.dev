@@ -586,7 +586,7 @@ img[src*=".svg"]:hover {
 }
 ```
 
-<h3>Use <code style="color: currentColor;">currentColor</code> for inline SVGs</h3>
+<h3 id="use-currentcolor-for-inline-svgs">Use <code style="color: currentColor;">currentColor</code> for inline SVGs</h3>
 
 For *inline* SVG images, instead of [using inversion filters](#invert-vector-graphics-and-icons),
 you can leverage the [`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword)
