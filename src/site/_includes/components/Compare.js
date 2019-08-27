@@ -19,7 +19,7 @@ const md = require('markdown-it')();
 
 /* eslint-disable require-jsdoc */
 
-module.exports = (content, type, caption = false, labelOverride) => {
+module.exports = (content, type, caption = '', labelOverride) => {
   if (!type) {
     /* eslint-disable max-len */
     throw new Error(
