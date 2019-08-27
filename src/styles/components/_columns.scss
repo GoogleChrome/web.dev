@@ -19,7 +19,7 @@
   margin: 0;
   /// adds the breakpoint styles
   @include bp(sm) {
-    margin: 0 0.5rem;
+    margin: 0 .5rem;
     padding: 0;
   }
 }
