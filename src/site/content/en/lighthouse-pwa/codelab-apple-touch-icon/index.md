@@ -86,8 +86,8 @@ from the page's content.
 ## Add the example app to an iOS home screen (again)
 
 - Try adding the example app to an iOS home screen again. This time, a proper icon is generated for
-  the site. If you audit the page again with Lighthouse you'll also see that the 
-  <b>Does not provide a valid apple-touch-icon</b> audit now passes.
+  the site. If you audit the page again with Lighthouse you'll also see that the
+  <b>Does not provide a valid `apple-touch-icon`</b> audit now passes.
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="after.png" 

@@ -2,7 +2,7 @@
 layout: post
 title: Does not provide a valid apple-touch-icon
 description: |
-  How to specify what icon should appear on iOS homescreens for your Progressive Web App.
+  How to specify what icon should appear on iOS home screens for your Progressive Web App.
 web_lighthouse:
   - apple-touch-icon
 codelabs: codelab-apple-touch-icon
@@ -61,14 +61,14 @@ the correct size.
 
 To provide a good user experience, make sure that:
 
-- The icon is 180 pixels wide and 180 pixels tall, or 192 pixels wide and 192 pixels tall
+- The icon is 180 pixels wide and 180 pixels tall or 192 pixels wide and 192 pixels tall
 - The specified URL to the icon is valid
 - The background of the icon is not transparent
 
 ## Resources
 
-- [Source code for the **Does not provide a valid apple-touch-icon** audit][source]
-- <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch icon</a>
+- [Source code for the **Does not provide a valid `apple-touch-icon`** audit][source]
+- <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch Icon</a>
 
 [a2hs]: https://support.apple.com/guide/shortcuts/run-shortcuts-from-the-ios-home-screen-apd735880972/ios#apd175362e63
 [source]: https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/apple-touch-icon.js
