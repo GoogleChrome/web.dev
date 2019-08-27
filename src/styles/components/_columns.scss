@@ -12,5 +12,44 @@
   gap: 1rem;
   // scss-lint:enable all
   // sass-lint:enable-all
-  grid-template-columns: repeat(auto-fit, minmax(28.1ch, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+}
+
+.w-columns .w-compare {
+  margin: 0;
+  /// adds the breakpoint styles
+  @include bp(sm) {
+    margin: 0 0.5rem;
+    padding: 0;
+  }
+}
+
+.w-columns .w-compare__label {
+  /// adds the breakpoint styles
+  @include bp(sm) {
+    border-bottom: 3px solid;
+    margin-bottom: 1em;
+    padding: 0;
+  }
+}
+
+.w-columns .w-compare__label--worse {
+  /// adds the breakpoint styles
+  @include bp(sm) {
+    border-bottom-color: $RED_700;
+  }
+}
+
+.w-columns .w-compare__label--better {
+  /// adds the breakpoint styles
+  @include bp(sm) {
+    border-bottom-color: $GREEN_800;
+  }
+}
+
+.w-columns .w-compare__label::before {
+  /// adds the breakpoint styles
+  @include bp(sm) {
+    content: none;
+  }
 }
