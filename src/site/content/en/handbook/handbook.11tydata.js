@@ -63,16 +63,6 @@ module.exports = {
           'markup-code',
         ],
       },
-      {
-        title: 'Get your content published',
-        pathItems: [
-        ],
-      },
-      {
-        title: 'Maintain your content',
-        pathItems: [
-        ],
-      },
     ],
   },
 };
