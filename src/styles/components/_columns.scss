@@ -24,6 +24,7 @@
   }
 }
 
+// TODO: Decouple columns and compare components
 .w-columns .w-compare__label {
   /// adds the breakpoint styles
   @include bp(sm) {
