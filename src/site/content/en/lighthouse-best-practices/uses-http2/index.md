@@ -6,6 +6,7 @@ description: |
   HTTP/2 on your server.
 web_lighthouse:
   - uses-http2
+updated: 2019-08-28
 ---
 
 HTTP/2 serves your page's resources faster,

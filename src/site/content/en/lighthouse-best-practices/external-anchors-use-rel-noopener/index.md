@@ -5,6 +5,7 @@ description: |
   Learn how to safely link to resources on another host.
 web_lighthouse:
   - external-anchors-use-rel-noopener
+updated: 2019-08-28
 ---
 
 Lighthouse flags any links to cross-origin destinations that are unsafe:

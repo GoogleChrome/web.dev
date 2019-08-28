@@ -6,6 +6,7 @@ description: |
   browsers.
 web_lighthouse:
   - doctype
+updated: 2019-08-28
 ---
 
 Specifying a doctype prevents the browser from switching to

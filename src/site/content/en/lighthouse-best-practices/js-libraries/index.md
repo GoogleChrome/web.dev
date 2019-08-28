@@ -5,6 +5,7 @@ description: |
   Learn about Lighthouse's diagnostic "Detected JavaScript libraries" audit.
 web_lighthouse:
   - js-libraries
+updated: 2019-08-28
 ---
 
 Lighthouse lists all front-end JavaScript libraries detected on the page:

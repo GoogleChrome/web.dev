@@ -5,6 +5,7 @@ description: |
   Learn how to display responsive images with the correct aspect ratio.
 web_lighthouse:
   - image-aspect-ration
+updated: 2019-08-28
 ---
 
 If a rendered image has a significantly different aspect ratio

@@ -5,6 +5,7 @@ description: |
   Learn how to identify and fix browser errors.
 web_lighthouse:
   - errors-in-console
+updated: 2019-08-28
 ---
 
 Lighthouse flags any browser errors logged to the console:

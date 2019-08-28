@@ -5,6 +5,7 @@ description: |
   Learn how to speed up your page's load time by avoiding  document.write().
 web_lighthouse:
   - no-document-write
+updated: 2019-08-28
 ---
 
 For users on slow connections,

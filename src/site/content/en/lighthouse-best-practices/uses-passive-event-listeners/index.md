@@ -6,6 +6,7 @@ description: |
   passive event listeners.
 web_lighthouse:
   - uses-passive-event-listeners
+updated: 2019-08-28
 ---
 
 Setting the `passive` option on your touch and

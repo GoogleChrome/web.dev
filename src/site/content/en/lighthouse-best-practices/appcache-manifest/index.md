@@ -6,6 +6,7 @@ description: |
   the Cache API.
 web_lighthouse:
   - appcache-manifest
+updated: 2019-08-28
 ---
 
 The Application Cache, also known as AppCache,

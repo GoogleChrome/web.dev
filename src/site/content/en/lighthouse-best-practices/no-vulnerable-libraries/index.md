@@ -6,6 +6,7 @@ description: |
   with known vulnerabilities.
 web_lighthouse:
   - no-vulnerable-libraries
+updated: 2019-08-28
 ---
 
 Intruders have automated web crawlers that can scan your site

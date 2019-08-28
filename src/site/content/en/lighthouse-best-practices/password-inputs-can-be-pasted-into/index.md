@@ -6,6 +6,7 @@ description: |
   allowing users to paste text into password fields.
 web_lighthouse:
   - password-inputs-can-be-pasted-into
+updated: 2019-08-28
 ---
 
 Some websites claim that preventing users

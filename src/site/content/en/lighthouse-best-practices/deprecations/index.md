@@ -5,6 +5,7 @@ description: |
   Learn how to remove and replace deprecated APIs from your web page.
 web_lighthouse:
   - deprecations
+updated: 2019-08-28
 ---
 
 Deprecated APIs are scheduled to be removed from Chrome.

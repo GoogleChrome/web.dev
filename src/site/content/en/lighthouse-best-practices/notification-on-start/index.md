@@ -6,6 +6,7 @@ description: |
   good user experience.
 web_lighthouse:
   - notification-on-start
+updated: 2019-08-28
 ---
 
 As explained in
