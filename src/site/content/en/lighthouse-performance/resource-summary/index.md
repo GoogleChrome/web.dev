@@ -2,15 +2,15 @@
 layout: post
 title: Keep request counts low and transfer sizes small
 description: |
-  How high resource counts and large transfer sizes affect load performance, and strategies for
-  reducing request counts and minimizing transfer sizes.
-updated: 2019-08-23
+  An overview of how high resource counts and large transfer sizes affect load performance, 
+  and strategies for reducing request counts and transfer sizes.
+updated: 2019-08-27
 web_lighthouse:
   - resource-summary
 ---
 
 The **Keep request counts low and transfer sizes small** audit tells you how many network requests 
-were made while your page loaded, as well as the total amount of data transferred:
+were made while your page loaded, as well as the total amount of data transferred.
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="resource-summary.jpg" 
@@ -21,96 +21,85 @@ were made while your page loaded, as well as the total amount of data transferre
 </figure>
 
 {% Aside %}
-  Like all of the **Diagnostics** audits, the **Keep request counts low and transfer sizes small**
-  audit does not directly affect your **Performance** score.
+  The **Requests** and **Transfer Size** values for the **Total** row is computed by adding the values
+  for the **Image**, **Script**, **Font**, **Stylesheet**, **Other**, **Document**, and **Media**
+  rows. The **Third-party** column does not factor into the **Total** row's values. Its purpose is
+  to make you aware of how many of the total requests and how much of the total transfer size came
+  from third-party domains. The third-party requests could be a combination of any of the other
+  resource types.
 {% endAside %}
 
-## How large transfer sizes affect load performance
+{% Aside %}
+  Like all of the **Diagnostics** audits, the **Keep request counts low and transfer sizes small**
+  audit does not directly affect your **Performance** score. However, reducing request counts or
+  transfer sizes may improve any or all of your **Performance** metrics, which does have a direct
+  effect on your **Performance** score.
+{% endAside %}
 
-### JavaScript and CSS
+## How high resource counts and large transfer sizes affect load performance
 
-In general, links to large JavaScript and CSS files have the biggest potential to negatively affect
-load performance:
+The effect of high resource counts or large transfer sizes on load performance depends on what
+type of resource is being requested.
 
-* Requests for CSS files are [render-blocking][render].
-* Requests for JavaScript files are [parser-blocking][parser].
+### CSS and JavaScript
 
-In other words, the browser can't render content to a user's screen until all CSS and JavaScript 
-network requests are complete.
+{% Aside %}
+  This section covers both CSS and JavaScript because their impact on load performance
+  and optimization strategies are largely the same.
+{% endAside %}
 
-If you refactor your code to only ship the JavaScript and CSS that you need in order to load the
-page, you should see your [First Contentful Paint][fcp] metric improve. Your 
-[First Meaningful Paint][f,p] and [Speed Index][speed index] metrics may also improve.
+Requests for CSS and JavaScript files are render-blocking by default. In other words, 
+**browsers can't render content to the screen until all CSS and JavaScript requests are finished.** 
+If any of these files is hosted on a slow server, that single slow server can delay the entire
+rendering process. See [Render-Blocking CSS][css] and [Parser-blocking versus asynchronous 
+JavaScript][js] for more details on why CSS and JavaScript are render-blocking.
+See [Optimize your JavaScript](/fast#optimize-your-javascript), [Optimize your third-party
+resources](/fast#optimize-your-third-party-resources), and [Optimize your 
+CSS](/fast#optimize-your-css) to learn about the various strategies for only shipping the code
+that you actually need for the initial page render, which can improve all of your [performance
+metrics][metrics].
 
 ### Images
 
-Large image files do not block the page load like JavaScript and CSS links, but they can still
-negatively affect the perceived performance
+Requests for images aren't render-blocking like CSS and JavaScript, but they can still negatively
+affect load performance. A common problem is when a mobile user loads a page and sees that images
+have started loading but will take a while to finish. [Optimizing your images](/fast#optimize-your-images)
+to reduce their transfer sizes helps them finish loading faster, which can improve your
+[First Contentful Paint][fcp], [First Meaningful Paint][fmp], and [Speed Index][si] metrics.
 
-### Example
+### Fonts
 
-Suppose that you have a link to a 1 MB JavaScript file called `utilities.js`
-at the bottom of your HTML:
+Inefficient loading of font files can cause invisible text during the page load.
+[Optimizing your fonts](/fast/#optimize-web-fonts) to default to a font that's available on the
+user's device and then switching over to your custom font when it has finished downloading can
+improve your [First Contentful Paint][fcp] metric.
 
+### Documents
 
+If your HTML file is large, the browser has to spend more time parsing the HTML and
+constructing the DOM tree from the parsed HTML. Shipping less HTML may therefore improve your
+[First Contentful Paint][fcp] metric.
 
-Now suppose that you're only using 1 function from `utilities.js`. In other words, in order to load
-the page you only need 1 KB of code from this 1 MB file.
+### Media
 
-### Tools
+GIF files are often very large. [Replacing GIFs with videos](/replace-gifs-with-videos/)
+can help the browser render the initial frames of the animation faster, which can improve your 
+[First Contentful Paint][fcp] metric. But perhaps more importantly, since the video file will
+likely be much smaller than the GIF, users will be able to watch the complete video faster.
 
-Use the [**Coverage** tab][coverage] in Chrome DevTools to 
+## Use performance budgets to prevent regressions
 
-Network panel
-
-## How high resource counts affect load performance
-
-In general, links to JavaScript and CSS files have the greatest potential
-
-Links to JavaScript and CSS files can have a particularly large impact.
-
-<!--
-https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp
-https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript
--->
-
-Images do not block the critical rendering path, but will slow down the perceived performance
-of the page
-
-
-
-
-## Strategies for reducing request counts
-
-### Bundle
-
-## Strategies for reducing transfer sizes
-
-### Compress text resources
-
-### Minify code
-
-### Use code splitting to ship only code that's needed
-
-<!--
-https://web.dev/code-splitting-suspense/
-https://web.dev/route-level-code-splitting-in-angular/
--->
-
-### Use performance budgets to prevent regressions
-
-<!--
-https://web.dev/use-lighthouse-for-performance-budgets/
-https://web.dev/performance-budgets-with-the-angular-cli/
--->
+Once you've optimized your code to reduce request counts and transfer sizes, set up 
+[performance budgets](https://web.dev/fast#set-performance-budgets) to prevent regressions.
 
 ## Resources
 
-- [Source code](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/resource-summary.js)
+- [Source code for the **Keep request counts low and transfer sizes small** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/resource-summary.js)
 
 [coverage]: https://developers.google.com/web/tools/chrome-devtools/coverage/
-[render]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css
-[parser]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript
+[css]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css
+[js]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript
 [fcp]: https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint
-[speed index]: https://developers.google.com/web/tools/lighthouse/audits/speed-index
+[si]: https://developers.google.com/web/tools/lighthouse/audits/speed-index
 [fmp]: https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint
+[metrics]: /lighthouse-performance#metrics
