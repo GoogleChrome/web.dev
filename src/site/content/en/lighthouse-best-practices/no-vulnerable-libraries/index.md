@@ -2,8 +2,8 @@
 layout: post
 title: Includes front-end JavaScript libraries with known security vulnerabilities
 description: |
-  Learn about the "Includes front-end JavaScript libraries with known security
-  vulnerabilities" Lighthouse audit.
+  Learn how to make your page more secure by replacing JavaScript libraries
+  with known vulnerabilities.
 web_lighthouse:
   - no-vulnerable-libraries
 ---

@@ -2,8 +2,8 @@
 layout: post
 title: Does not use passive listeners to improve scrolling performance
 description: |
-  Learn about "Does not use passive listeners to improve scrolling performance"
-  Lighthouse audit.
+  Learn how to improve your page's scrolling responsiveness by avoiding
+  passive event listeners.
 web_lighthouse:
   - uses-passive-event-listeners
 ---

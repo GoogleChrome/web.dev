@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Prevents users to paste into password fields
+title: Prevents users from pasting into password fields
 description: |
-  Learn about "Prevents users to paste into password fields" Lighthouse audit.
+  Learn how to improve the user experience of your site's login screen by
+  allowing users to paste text into password fields.
 web_lighthouse:
   - password-inputs-can-be-pasted-into
 ---

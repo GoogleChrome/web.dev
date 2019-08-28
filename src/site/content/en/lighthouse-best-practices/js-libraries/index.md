@@ -2,7 +2,7 @@
 layout: post
 title: Detected JavaScript libraries
 description: |
-  Learn about the "Detected JavaScript libraries" Lighthouse audit.
+  Learn about Lighthouse's diagnostic "Detected JavaScript libraries" audit.
 web_lighthouse:
   - js-libraries
 ---

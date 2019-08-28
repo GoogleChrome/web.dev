@@ -2,7 +2,8 @@
 layout: post
 title: Uses Application Cache
 description: |
-  Learn about the "Uses Application Cache" Lighthouse audit.
+  Learn how to migrate your web page from the deprecated Application Cache to
+  the Cache API.
 web_lighthouse:
   - appcache-manifest
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: Uses document.write()
 description: |
-  Learn about the "Uses document.write()" Lighthouse audit.
+  Learn how to speed up your page's load time by avoiding  document.write().
 web_lighthouse:
   - no-document-write
 ---

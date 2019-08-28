@@ -2,8 +2,7 @@
 layout: post
 title: Displays images with incorrect aspect ratio
 description: |
-  Learn about the "Displays images with incorrect aspect ratio" Lighthouse
-  audit.
+  Learn how to display responsive images with the correct aspect ratio.
 web_lighthouse:
   - image-aspect-ration
 ---

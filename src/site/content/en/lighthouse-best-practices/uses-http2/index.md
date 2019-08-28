@@ -2,7 +2,8 @@
 layout: post
 title: Does not use HTTP/2 for all of its resources
 description: |
-  Learn about "Does not use HTTP/2 for all of its resources" Lighthouse audit.
+  Learn why HTTP/2 is important for your page's load time and how to enable
+  HTTP/2 on your server.
 web_lighthouse:
   - uses-http2
 ---

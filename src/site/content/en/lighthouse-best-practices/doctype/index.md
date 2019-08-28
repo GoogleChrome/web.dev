@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Page lacks the HTML doctype, thus triggering quirks-mode
+title: Page lacks the HTML doctype, thus triggering quirks mode
 description: |
-  Learn about the "Page lacks the HTML doctype, thus triggering quirks-mode"
-  Lighthouse audit.
+  Learn how to make sure your page doesn't trigger quirks mode in older
+  browsers.
 web_lighthouse:
   - doctype
 ---

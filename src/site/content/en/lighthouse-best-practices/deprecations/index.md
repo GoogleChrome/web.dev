@@ -2,7 +2,7 @@
 layout: post
 title: Uses deprecated APIs
 description: |
-  Learn about the "Uses deprecated APIs" Lighthouse audit.
+  Learn how to remove and replace deprecated APIs from your web page.
 web_lighthouse:
   - deprecations
 ---

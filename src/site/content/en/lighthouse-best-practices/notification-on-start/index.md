@@ -2,8 +2,8 @@
 layout: post
 title: Requests the notification permission on page load
 description: |
-  Learn about the "Requests the notification permission on page load" Lighthouse
-  audit.
+  Learn how to responsibly request notification permission in a way that provides
+  good user experience.
 web_lighthouse:
   - notification-on-start
 ---
