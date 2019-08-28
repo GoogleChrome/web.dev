@@ -31,6 +31,7 @@ module.exports = {
       {
         title: 'Make your page secure',
         pathItems: [
+          'is-on-https',
           'external-anchors-use-rel-noopener',
           'no-vulnerable-libraries',
         ],
