@@ -1,4 +1,3 @@
-import "../styles/all.scss";
 import {router} from "./router";
 import "./components/ProfileSwitcherContainer";
 import "./components/ProgressBar";
