@@ -9,22 +9,35 @@ web_lighthouse:
 ---
 
 Specifying a doctype prevents the browser from switching to
-[quirks-mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode).
-Lighthouse flags your page when it's missing `<!DOCTYPE html>`:
+[quirks mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode),
+which can cause your page to render in unexpected ways.
+
+## How the doctype audit fails
+
+Lighthouse flags pages without the `<!DOCTYPE html>` declaration:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="doctype.png" alt="Lighthouse audit showing missing doctype">
 </figure>
 
+{% include 'content/lighthouse-best-practices/scoring.njk' %}
+
 ## How to pass this audit
 
-To pass this audit,
-add `<!DOCTYPE html>`.
+To pass this audit, add the `<!DOCTYPE html>` declaration
+to the top of your HTML document:
 
-Learn more in [Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype).
+```html
+<!DOCTYPE html>
+<html lang="en">
+…
+```
 
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
+See MDN's [Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)
+page for more information.
 
 ## Resources
 
-[Source code for **Page lacks the HTML doctype, thus triggering quirks-mode** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/doctype.js)
+- [Source code for **Page lacks the HTML doctype, thus triggering quirks mode** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/doctype.js)
+- [Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)
+- [Quirks Mode and Standards Mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)
