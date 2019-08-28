@@ -17,9 +17,6 @@ I have no idea how to recreate this. I tried a few options with event listeners.
 None show the audit failing, even with scrolling implemented without passive.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="uses-passive-event-listeners.png" alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance">
-  <figcaption class="w-figcaption">
-    Page doesn't use passive event listeners to improve scrolling performance.
-  </figcaption>
 </figure>
 -->
 

@@ -13,10 +13,7 @@ Specifying a doctype prevents the browser from switching to
 Lighthouse flags your page when it's missing `<!DOCTYPE html>`:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="doctype.png" alt="Lighthouse audit showing missing doctype">
-  <figcaption class="w-figcaption">
-    Document missing doctype.
-  </figcaption>
+  <img class="w-screenshot" src="doctype.png" alt="Lighthouse audit showing missing doctype">
 </figure>
 
 ## How to pass this audit

@@ -17,10 +17,7 @@ the intruder just needs to figure out how to exploit the vulnerability on your s
 Lighthouse flags front-end JavaScript libraries with known security vulnerabilities:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="no-vulnerable-libraries.png" alt="Lighthouse audit showing any front-end JavaScript libraries with known security vulnerabilities used by the page">
-  <figcaption class="w-figcaption">
-    Page uses front-end JavaScript libraries with security vulnerabilities.
-  </figcaption>
+  <img class="w-screenshot" src="no-vulnerable-libraries.png" alt="Lighthouse audit showing any front-end JavaScript libraries with known security vulnerabilities used by the page">
 </figure>
 
 ## How this audit fails

@@ -12,10 +12,7 @@ and with less data moving over the wire.
 Lighthouse lists every resource that was not served over HTTP/2:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-http2.png" alt="Lighthouse audit shows resources not served over HTTP/2 ">
-  <figcaption class="w-figcaption">
-    Resources not served over HTTP/2.
-  </figcaption>
+  <img class="w-screenshot" src="uses-http2.png" alt="Lighthouse audit shows resources not served over HTTP/2 ">
 </figure>
 
 ## How this audit fails

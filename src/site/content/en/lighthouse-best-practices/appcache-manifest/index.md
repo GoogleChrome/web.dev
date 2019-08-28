@@ -15,7 +15,7 @@ is [deprecated](https://html.spec.whatwg.org/multipage/browsers.html#offline).
 Lighthouse flags pages that use the Application Cache:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="appcache-manifest.png" alt="Lighthouse audit showing document uses the Application Cache">
+  <img class="w-screenshot" src="appcache-manifest.png" alt="Lighthouse audit showing document uses the Application Cache">
 </figure>
 
 This audit fails when Lighthouse finds a reference to

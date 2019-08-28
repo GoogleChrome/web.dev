@@ -10,10 +10,7 @@ web_lighthouse:
 Lighthouse flags any browser errors logged to the console:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="errors-in-console.png" alt="Lighthouse audit showing browser errors in the console">
-  <figcaption class="w-figcaption">
-    Figure 1. Browser errors logged to the console.
-  </figcaption>
+  <img class="w-screenshot" src="errors-in-console.png" alt="Lighthouse audit showing browser errors in the console">
 </figure>
 
 ## How this audit fails

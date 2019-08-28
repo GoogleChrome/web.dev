@@ -14,10 +14,7 @@ can delay the display of main page content by tens of seconds.
 Lighthouse lists out every call to `document.write()`:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">
-  <figcaption class="w-figcaption">
-    Page uses <code>document.write()</code>.
-  </figcaption>
+  <img class="w-screenshot" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">
 </figure>
 
 See [Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)

@@ -13,10 +13,7 @@ after they're removed causes errors on your site.
 Lighthouse flags the deprecated APIs:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="deprecations.png" alt="Lighthouse audit shows usage of deprecated APIs">
-  <figcaption class="w-figcaption">
-    Document uses deprecated APIs.
-  </figcaption>
+  <img class="w-screenshot" src="deprecations.png" alt="Lighthouse audit shows usage of deprecated APIs">
 </figure>
 
 ## How this audit fails

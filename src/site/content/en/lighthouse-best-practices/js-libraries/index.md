@@ -10,10 +10,7 @@ web_lighthouse:
 Lighthouse lists all front-end JavaScript libraries detected on the page:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="js-libraries.png" alt="Lighthouse audit showing all front-end JavaScript libraries detected on page">
-  <figcaption class="w-figcaption">
-    Page uses these front-end JavaScript libraries.
-  </figcaption>
+  <img class="w-screenshot" src="js-libraries.png" alt="Lighthouse audit showing all front-end JavaScript libraries detected on page">
 </figure>
 
 ## This is a diagnostic audit

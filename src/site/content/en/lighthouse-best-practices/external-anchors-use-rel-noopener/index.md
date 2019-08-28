@@ -11,10 +11,7 @@ web_lighthouse:
 Lighthouse flags any links to cross-origin destinations that are unsafe:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="external-anchors-use-rel-noopener.png" alt="Lighthouse audit showing unsafe links to cross-origin destinations">
-  <figcaption class="w-figcaption">
-    Links to cross-origin destinations are unsafe.
-  </figcaption>
+  <img class="w-screenshot" src="external-anchors-use-rel-noopener.png" alt="Lighthouse audit showing unsafe links to cross-origin destinations">
 </figure>
 
 ## How this audit fails

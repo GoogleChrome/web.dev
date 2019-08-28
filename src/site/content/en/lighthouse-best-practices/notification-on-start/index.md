@@ -16,10 +16,7 @@ those notifications may not be relevant to your users or precise to their needs.
 Lighthouse flags when pages request notification permissions on load:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="notification-on-start.png" alt="Lighthouse audit shows page requests notification permissions on load">
-  <figcaption class="w-figcaption">
-    Page requests notification permissions on load.
-  </figcaption>
+  <img class="w-screenshot" src="notification-on-start.png" alt="Lighthouse audit shows page requests notification permissions on load">
 </figure>
 
 ## How this audit fails

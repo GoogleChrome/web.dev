@@ -13,10 +13,7 @@ that automatically request their location on page load.
 Lighthouse flags when pages request geolocation permission on load:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="geolocation-on-start.png" alt="Lighthouse audit showing geolocation request on page load">
-  <figcaption class="w-figcaption">
-    Page requests geolocation on load.
-  </figcaption>
+  <img class="w-screenshot" src="geolocation-on-start.png" alt="Lighthouse audit showing geolocation request on page load">
 </figure>
 
 ## How this audit fails

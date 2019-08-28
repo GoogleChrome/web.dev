@@ -22,10 +22,7 @@ to include preventDefault and it doesn't seem to work.
 Post-IO fix.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="password-inputs-can-be-pasted-into.png" alt="Lighthouse audit shows page stops users from pasting into password fields">
-  <figcaption class="w-figcaption">
-    Page stops users from pasting into password fields.
-  </figcaption>
+  <img class="w-screenshot" src="password-inputs-can-be-pasted-into.png" alt="Lighthouse audit shows page stops users from pasting into password fields">
 </figure>
 -->
 
