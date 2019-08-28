@@ -116,3 +116,11 @@ export const requestFetchReports = store.action((state, url, startDate) => {
     return update;
   });
 });
+
+export const openSideNav = store.action(() => {
+  return {isSideNavExpanded: true};
+});
+
+export const closeSideNav = store.action(() => {
+  return {isSideNavExpanded: false};
+});
