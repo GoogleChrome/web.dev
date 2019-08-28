@@ -22,10 +22,9 @@ Lighthouse flags pages without the `<!DOCTYPE html>` declaration:
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## How to pass this audit
+## How to add a doctype declaration
 
-To pass this audit, add the `<!DOCTYPE html>` declaration
-to the top of your HTML document:
+Add the `<!DOCTYPE html>` declaration to the top of your HTML document:
 
 ```html
 <!DOCTYPE html>
