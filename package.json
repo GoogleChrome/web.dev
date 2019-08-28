@@ -10,7 +10,7 @@
     "build:gulp": "npx gulp build",
     "build:eleventy": "eleventy",
     "build:rollup": "rollup -c rollup.config.js",
-    "build:sass": "sass src/styles/all.scss dist/app.css",
+    "build:sass": "./sass.sh src/styles/all.scss dist/app.css",
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:eleventy": "eleventy --watch",
     "watch:rollup": "chokidar \"src/lib/**/*.js\" -c \"npm run build:rollup\"",
@@ -90,5 +90,8 @@
     "unist-util-to-list-of-char": "^0.1.2",
     "unist-util-visit": "^1.4.1",
     "yaml-front-matter": "^4.0.0"
+  },
+  "optionalDependencies": {
+    "node-sass": "^4.12.0"
   }
 }
