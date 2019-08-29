@@ -1,5 +1,5 @@
 ---
-title: Speed at scale&#58; what's new in web performance?
+title: Speed at scale: what's new in web performance?
 subhead: Learn about three new web performance launches from I/O 2019.
 authors:
   - katiehempenius
