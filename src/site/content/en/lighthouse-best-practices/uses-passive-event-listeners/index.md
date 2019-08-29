@@ -11,6 +11,9 @@ updated: 2019-08-28
 
 Setting the `passive` option on your touch and
 wheel event listeners can improve scrolling performance.
+
+## How this audit fails
+
 Lighthouse flags potential passive event listener candidates.
 
 <!--***Todo***
@@ -20,8 +23,6 @@ None show the audit failing, even with scrolling implemented without passive.
   <img class="w-screenshot w-screenshot--filled" src="uses-passive-event-listeners.png" alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance">
 </figure>
 -->
-
-## How this audit fails
 
 Lighthouse uses the following algorithm
 to flag potential passive event listener candidates:

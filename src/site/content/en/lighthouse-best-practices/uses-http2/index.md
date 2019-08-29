@@ -11,13 +11,14 @@ updated: 2019-08-28
 
 HTTP/2 serves your page's resources faster,
 and with less data moving over the wire.
-Lighthouse lists every resource that was not served over HTTP/2:
+
+## How this audit fails
+
+Lighthouse lists all resources not served over HTTP/2:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="uses-http2.png" alt="Lighthouse audit shows resources not served over HTTP/2 ">
 </figure>
-
-## How this audit fails
 
 Lighthouse gathers all of the resources that are
 from the same host as the page,

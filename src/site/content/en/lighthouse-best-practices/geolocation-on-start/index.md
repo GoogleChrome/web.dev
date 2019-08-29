@@ -11,13 +11,14 @@ updated: 2019-08-28
 
 Users are mistrustful of or confused by pages
 that automatically request their location on page load.
-Lighthouse flags when pages request geolocation permission on load:
+
+## How this audit fails
+
+Lighthouse flags pages that request geolocation permission on load:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="geolocation-on-start.png" alt="Lighthouse audit showing geolocation request on page load">
 </figure>
-
-## How this audit fails
 
 Lighthouse collects the JavaScript that was executed on page load.
 If this code contains calls to `geolocation.getCurrentPosition()` or

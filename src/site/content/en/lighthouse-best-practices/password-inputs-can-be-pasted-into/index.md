@@ -15,20 +15,14 @@ In
 [Let Them Paste Passwords](https://www.ncsc.gov.uk/blog-post/let-them-paste-passwords),
 the National Cyber Security Centre says that this claim is unfounded.
 Password pasting improves security because it enables users to use password managers.
-Lighthouse flags code that's preventing users from pasting into password fields.
 
-<!--***Todo***
-Can't seem to get this audit to fail.
-Created a form with password and followed advice
-to include preventDefault and it doesn't seem to work.
-Post-IO fix.
+## How this audit fails
+
+Lighthouse flags code that prevents users from pasting into password fields.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="password-inputs-can-be-pasted-into.png" alt="Lighthouse audit shows page stops users from pasting into password fields">
 </figure>
--->
-
-## How this audit fails
 
 Lighthouse gathers all `<input type="password">` elements,
 pastes some text into each element,
@@ -74,4 +68,4 @@ for more on why enabling pasting is a better security practice.
 
 ## Resources
 
-[Source code for **Prevents users to paste into password fields** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)
+[Source code for **Prevents users from pasting into password fields** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)

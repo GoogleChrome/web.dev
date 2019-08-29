@@ -14,13 +14,14 @@ As explained in
 good notifications are timely, relevant, and precise.
 If your page asks for permission to send notifications on page load,
 those notifications may not be relevant to your users or precise to their needs.
-Lighthouse flags when pages request notification permissions on load:
+
+## How this audit fails
+
+Lighthouse flags pages that request notification permissions on load:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="notification-on-start.png" alt="Lighthouse audit shows page requests notification permissions on load">
 </figure>
-
-## How this audit fails
 
 Lighthouse collects the JavaScript that was executed on page load.
 If this code contains calls to `notification.requestPermission()`,

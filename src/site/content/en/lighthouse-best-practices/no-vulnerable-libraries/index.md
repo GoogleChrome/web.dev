@@ -15,13 +15,14 @@ When the web crawler detects a vulnerability,
 it alerts the intruder.
 From there,
 the intruder just needs to figure out how to exploit the vulnerability on your site.
+
+## How this audit fails
+
 Lighthouse flags front-end JavaScript libraries with known security vulnerabilities:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="no-vulnerable-libraries.png" alt="Lighthouse audit showing any front-end JavaScript libraries with known security vulnerabilities used by the page">
 </figure>
-
-## How this audit fails
 
 To detect vulnerable libraries, Lighthouse:
 

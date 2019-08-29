@@ -14,23 +14,18 @@ then the rendered image may look distorted,
 possibly creating an unpleasant user experience.
 Lighthouse flags images with incorrect aspect ratios.
 
-<!--***TODO***
+## How this audit fails
 
-Having trouble getting this audit to fail.
-Even when I see terrible view of images in a glitch,
-I am not seeing this error.
+Lighthouse flags any image with a rendered aspect ratio
+5 percent or more different than its natural ratio.
+
 <figure class="w-figure">
   <img class="w-screenshot" src="image-aspect-ratio.png" alt="Lighthouse audit shows images displayed with incorrect aspect ratio">
 </figure>
--->
 
-## How this audit fails
+There are two common causes for an incorrect image aspect ratio:
 
-Lighthouse flags any image that has a rendered aspect ratio
-which is 5 percent or more different than its natural ratio.
-Two commom causes for this are:
-
-- Images are are set to explicit width and height values that differ from the source image's dimensions.
+- Images are set to explicit width and height values that differ from the source image's dimensions.
 - Images are set to a width and height as a percentage of a variably-sized container.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}

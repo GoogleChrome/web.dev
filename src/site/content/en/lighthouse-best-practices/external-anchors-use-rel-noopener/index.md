@@ -8,13 +8,13 @@ web_lighthouse:
 updated: 2019-08-28
 ---
 
-Lighthouse flags any links to cross-origin destinations that are unsafe:
+## How this audit fails
+
+Lighthouse flags unsafe links to cross-origin destinations:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="external-anchors-use-rel-noopener.png" alt="Lighthouse audit showing unsafe links to cross-origin destinations">
 </figure>
-
-## How this audit fails
 
 Lighthouse uses the following algorithm to flag links as `rel="noopener"`
 candidates:

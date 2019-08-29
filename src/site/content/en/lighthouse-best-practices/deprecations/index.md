@@ -11,13 +11,14 @@ updated: 2019-08-28
 Deprecated APIs are scheduled to be removed from Chrome.
 Calling these APIs
 after they're removed causes errors on your site.
-Lighthouse flags the deprecated APIs:
+
+## How this audit fails
+
+Lighthouse flags pages that call deprecated APIs:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="deprecations.png" alt="Lighthouse audit shows usage of deprecated APIs">
 </figure>
-
-## How this audit fails
 
 Lighthouse collects the deprecated API warnings that Chrome logs
 to the DevTools Console and includes them in the Lighthouse repot as warnings.

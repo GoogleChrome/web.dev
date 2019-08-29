@@ -12,7 +12,10 @@ For users on slow connections,
 such as 2G, 3G, or slow Wi-Fi,
 external scripts dynamically injected via `document.write()`
 can delay the display of main page content by tens of seconds.
-Lighthouse lists out every call to `document.write()`:
+
+## How this audit fails
+
+Lighthouse lists all calls to `document.write()`:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">
@@ -20,8 +23,6 @@ Lighthouse lists out every call to `document.write()`:
 
 See [Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
 to learn more.
-
-## How this audit fails
 
 Lighthouse reports every instance of `document.write()` that it encounters.
 Chrome's intervention against `document.write()` only applies
