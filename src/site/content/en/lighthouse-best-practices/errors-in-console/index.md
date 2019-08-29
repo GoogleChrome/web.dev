@@ -8,46 +8,40 @@ web_lighthouse:
 updated: 2019-08-28
 ---
 
-Lighthouse flags any browser errors logged to the console:
+Most browsers ship with built-in developer tools.
+These developer tools usually include a [console](https://developers.google.com/web/tools/chrome-devtools/console/).
+The console gives you information about the page that's currently running.
+
+Messages logged in the console have a severity level:
+either `Verbose`, `Info`, `Warning`, or `Error`.
+An `Error` message means there's a problem on your page that you need to resolve.
+
+## How the browser error audit fails
+
+Lighthouse flags all browser errors logged to the console:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="errors-in-console.png" alt="Lighthouse audit showing browser errors in the console">
 </figure>
 
-## How this audit fails
-
-Most browsers ship with built-in developer tools.
-These developer tools usually include a console.
-The console gives you information about a page while that page is running.
-Ultimately,
-the messages you see in the console either come from the web developers who built the page,
-or the browser itself.
-
-When someone logs a message to the console,
-they can indicate the importance, or "severity level" of the message.
-An "error" message is an important message
-representing an unresolved failure in the page.
-In other words,
-when you see an error, the page isn't running as intended.
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="errors.png" alt="An example of console errors in Chrome DevTools">
-  <figcaption class="w-figcaption">
-    Figure 2. An example of console errors in Chrome DevTools.
-  </figcaption>
-</figure>
-
-**Figure 2** shows two errors.
-The top one comes from a web developer,
-via a call to
-[`console.error()`](https://developers.google.com/web/tools/chrome-devtools/console/console-reference#error).
-The bottom one comes from the browser,
-which indicates that a variable used in one of the page's scripts does not exist.
-Lighthouse flags the browser errors.
-
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## How to fix the browser errors
+
+The messages you see in the console come from
+either the web developers who built the page or the browser itself.
+
+For example, this screenshot shows a page with two errors:
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="errors.png" alt="An example of console errors in Chrome DevTools">
+</figure>
+
+In the example above, the first error comes from a web developer,
+via a call to
+[`console.error()`](https://developers.google.com/web/tools/chrome-devtools/console/console-reference#error).
+The second error comes from the browser
+and indicates that a variable used in one of the page's scripts doesn't exist.
 
 Fix each of the errors that Lighthouse reports
 to ensure that your page runs as expected for all of your users.
