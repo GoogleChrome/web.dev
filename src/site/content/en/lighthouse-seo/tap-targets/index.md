@@ -21,7 +21,7 @@ your page more mobile-friendly and accessible.
 with tap targets that are too small or too close together:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="tap-targets.png" alt="Lighthouse audit showing inappropriately sized tap targets">
+  <img class="w-screenshot" src="tap-targets.png" alt="Lighthouse audit showing inappropriately sized tap targets">
 </figure>
 
 Targets that are smaller than 48&nbsp;px by 48&nbsp;px or closer than 8&nbsp;px
