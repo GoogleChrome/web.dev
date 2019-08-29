@@ -20,19 +20,21 @@ export const requestRunLighthouse = store.action((state, url) => {
     const auditedOn = new Date(run.auditedOn);
     state = store.getState(); // might change during runLighthouse
 
-    // Replace last run for signed out users. Don't for signed in users to avoid double rendering /
-    // outdated sparkline data. Instead, call fetchReports() to repopulate the graphs with the
-    // latest data.
+    // Replace last run for signed out users.
     if (!state.isSignedIn) {
       return {
         userUrl: url,
         activeLighthouseUrl: null,
         lighthouseResult: {
           url,
-          runs: [additionalRun],
+          runs: [run],
         },
       };
     }
+
+    // Don't just replace last run for signed in users to avoid double rendering / outdated
+    // sparkline data. Instead, call fetchReports() to repopulate the graphs with the latest data.
+    // Yes, this means that signed-in users have two network requests.
 
     const firstSeenUrl = await saveUserUrl(url, auditedOn); // write to Firestore and get first seen
 
