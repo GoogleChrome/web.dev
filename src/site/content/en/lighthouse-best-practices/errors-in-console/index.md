@@ -28,8 +28,17 @@ Lighthouse flags all browser errors logged to the console:
 
 ## How to fix the browser errors
 
-The messages you see in the console come from
-either the web developers who built the page or the browser itself.
+Fix each browser error that Lighthouse reports
+to ensure that your page runs as expected for all your users.
+
+Chrome DevTools includes a couple tools
+to help you track down the cause of errors:
+
+- Below the text of each error, the console shows the
+  [call stack](https://en.wikipedia.org/wiki/Call_stack)
+  that caused the problematic code to execute.
+- A link at the top-right of each error shows you the code
+  that caused the error.
 
 For example, this screenshot shows a page with two errors:
 
@@ -40,36 +49,28 @@ For example, this screenshot shows a page with two errors:
 In the example above, the first error comes from a web developer,
 via a call to
 [`console.error()`](https://developers.google.com/web/tools/chrome-devtools/console/console-reference#error).
-The second error comes from the browser
-and indicates that a variable used in one of the page's scripts doesn't exist.
+Below the text `this is an example of a console error...`,
+the console indicates that an `(anonymous)` function called the `init` function,
+which called the `doStuff` function.
+Clicking the `pen.js:9` link in the top-right of that error
+shows you the relevant code.
 
-Fix each of the errors that Lighthouse reports
-to ensure that your page runs as expected for all of your users.
-If the cause of the error is not clear to you, copy the error text and
-paste it into a search engine.
+Reviewing the relevant code for each error in this way can help you identify
+and resolve possible problems.
+
+If you can't figure out the cause of an error, try entering the error text
+into a search engine.
 If you can't find solutions to your problem,
 try asking a question on [Stack Overflow](https://stackoverflow.com).
 
-Chrome DevTools can help you track down the cause of the errors.
-Take the top error in **Figure 2** for example.
-Clicking the `pen.js:9` link in the top-right of that error shows you the code
-that caused that error.
-Below the text `this is an example of a console error...`,
-there is the [call stack](https://en.wikipedia.org/wiki/Call_stack)
-that caused the problematic code to execute.
-
-The bottom function `(anonymous)` called the `init` function,
-which called the `doStuff` function.
-Open the Chrome DevTools **Console** by pressing
-<kbd>Command</kbd>+<kbd>Option</kbd>+<kbd>J</kbd> (Mac) or
-<kbd>Control</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd> (Windows, Linux).
-See [Using The Console](https://developers.google.com/web/tools/chrome-devtools/console/) to learn more.
-
-If you can't fix the errors, at least consider wrapping them in
-[`try...catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statements
+If you can't fix an error, consider wrapping it in
+a [`try…catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) statement
 to explicitly indicate in the code that you're aware of the issue.
-You can also use the `catch` block to handle the error situation more gracefully.
+You can also use the `catch` block to handle the error more gracefully.
 
 ## Resources
 
-[Source code for **Browser errors were logged to the console** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+- [Source code for **Browser errors were logged to the console** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/errors-in-console.js)
+- [Console Overview](https://developers.google.com/web/tools/chrome-devtools/console/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [try…catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
