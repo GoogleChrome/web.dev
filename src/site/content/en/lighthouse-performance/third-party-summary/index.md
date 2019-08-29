@@ -1,0 +1,41 @@
+---
+layout: post
+title: Reduce the impact of third-party code
+description: |
+  How third-party code like advertising networks and analytics services affect page load performance,
+  and how to optimize third-party code.
+web_lighthouse:
+  - third-party-summary
+---
+
+To add an advertising network, social media button, A/B test, or analytics service to your page,
+you usually need to add a third-party script to your HTML. These [third-party scripts can
+significantly affect your page load performance](/third-party-javascript/). Lighthouse flags pages
+that have too much third-party code:
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="third-party-summary.png" 
+       alt="A screenshot of the 'Reduce the impact of third-party code' audit.">
+  <figcaption class="w-figcaption">
+    <b>Reduce the impact of third-party code</b>
+  </figcaption>
+</figure>
+
+## How the Lighthouse audit for third-party code fails
+
+A third-party script is any script hosted on a domain that's different than the domain of the URL
+that you audited with Lighthouse. As the page loads, Lighthouse calculates how long each of the
+third-party scripts blocks the main thread. This audit fails when the total blocking time is
+greater than 250&nbsp;ms.
+
+## How to reduce the impact of third-party code
+
+See [Identify slow third-party scripts](/identify-slow-third-party-javascript/) to learn how to use
+Chrome DevTools and other Lighthouse audits to detect problematic third-party code, and 
+see [Efficiently load third-party JavaScript](/efficiently-load-third-party-javascript/) for
+optimization strategies.
+
+## Resources
+
+- [Source code for the **Reduce the impact of third-party code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-summary.js)
+- [Loading Third-Party JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)
