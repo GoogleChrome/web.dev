@@ -16,13 +16,9 @@ wheel event listeners can improve scrolling performance.
 
 Lighthouse flags potential passive event listener candidates.
 
-<!--***Todo***
-I have no idea how to recreate this. I tried a few options with event listeners.
-None show the audit failing, even with scrolling implemented without passive.
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-passive-event-listeners.png" alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance">
+  <img class="w-screenshot" src="uses-passive-event-listeners.png" alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance">
 </figure>
--->
 
 Lighthouse uses the following algorithm
 to flag potential passive event listener candidates:
