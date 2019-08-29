@@ -9,6 +9,8 @@ hero: hero.jpg
 alt: A row of shopping carts.
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
+codelabs:
+  - codelab-build-a-custom-performance-analysis-tool
 tags:
   - post
   - performance
