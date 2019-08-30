@@ -54,7 +54,7 @@ At the time of this writing, it is possible to share prefetched resources among 
 
 ### Prefetching on-demand JavaScript chunks
 
-[Code-splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles allows you to initially load only parts of an app and lazy-load the rest. If you’re using this technique, you can apply prefetch to routes or components that are not immediately necessary but will likely be requested soon.
+[Code-splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles allows you to initially load only parts of an app and lazy-load the rest. If you're using this technique, you can apply prefetch to routes or components that are not immediately necessary but will likely be requested soon.
 
 For example, if you have a page that contains a button that opens a dialog box which contains an emoji picker, you can divide it into three JavaScript chunks—home, dialog and picker. Home and dialog could be initially loaded, while the picker could be loaded on-demand. Tools like webpack allow you to instruct the browser to prefetch these on-demand chunks.
 
@@ -99,7 +99,7 @@ form.addEventListener("submit", e => {
 });
 ```
 
-Instead of waiting for the “submit” event to take place to load this functionality, you can prefetch this resource to increase the chances of having it available in the cache by the time the user submits the form. webpack allows that using the [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) inside `import()`:
+Instead of waiting for the 'submit' event to take place to load this functionality, you can prefetch this resource to increase the chances of having it available in the cache by the time the user submits the form. webpack allows that using the [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) inside `import()`:
 
 ```js/2
 form.addEventListener("submit", e => { 
@@ -134,7 +134,7 @@ Resource hints are not mandatory instructions and it's up to the browser to deci
 
 You can use prefetch multiple times in the same page. The browser queues up all hints and requests each resource when it's [idle](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#How_is_browser_idle_time_determined.3F). In Chrome, if a prefetch has not finished loading and the user navigates to the destined prefetch resource, the in-flight load is picked up as the navigation by the browser (other browser vendors might implement this differently).
 
-Prefetching takes place at the [“Lowest” priority](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit), so prefetched resources do not compete for bandwidth with the resources required in the current page.
+Prefetching takes place at the ['Lowest' priority](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit), so prefetched resources do not compete for bandwidth with the resources required in the current page.
 
 Prefetched files are stored in the [HTTP Cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching), or the [memory cache](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) (depending on whether the resource is cacheable or not), for an amount of time that varies by browsers. For example, in Chrome resources are kept around for five minutes, after which the normal cache-control rules for the resource apply.
 
