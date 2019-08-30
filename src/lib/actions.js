@@ -1,6 +1,7 @@
 import {store} from "./store";
 import {saveUserUrl} from "./fb";
 import {runLighthouse, fetchReports} from "./lighthouse-service";
+import "wicg-inert";
 
 export const requestRunLighthouse = store.action((state, url) => {
   const p = (async () => {
@@ -118,9 +119,17 @@ export const requestFetchReports = store.action((state, url, startDate) => {
 });
 
 export const openSideNav = store.action(() => {
+  const main = document.querySelector("main");
+  const header = document.querySelector("web-header");
+  main.inert = true;
+  header.inert = true;
   return {isSideNavExpanded: true};
 });
 
 export const closeSideNav = store.action(() => {
+  const main = document.querySelector("main");
+  const header = document.querySelector("web-header");
+  main.inert = false;
+  header.inert = false;
   return {isSideNavExpanded: false};
 });

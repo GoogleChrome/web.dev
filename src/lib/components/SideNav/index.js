@@ -17,6 +17,8 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
+import "wicg-inert";
+import {closeSideNav} from "../../actions";
 
 class SideNav extends BaseElement {
   static get properties() {
@@ -29,6 +31,7 @@ class SideNav extends BaseElement {
   constructor() {
     super();
 
+    this.inert = true;
     this.animatable = false;
     this.expanded_ = false;
     this.startX_ = 0;
@@ -36,7 +39,7 @@ class SideNav extends BaseElement {
     this.touchingSideNav_ = false;
     this.prerenderedChildren_ = null;
 
-    this.onHideSideNav = this.onHideSideNav.bind(this);
+    this.onCloseSideNav = this.onCloseSideNav.bind(this);
     this.onBlockClicks = this.onBlockClicks.bind(this);
     this.onTouchStart = this.onTouchStart.bind(this);
     this.onTouchMove = this.onTouchMove.bind(this);
@@ -57,7 +60,7 @@ class SideNav extends BaseElement {
       <nav class="web-side-nav__container">
         <div class="web-side-nav__header">
           <button
-            @click=${this.onHideSideNav}
+            @click=${this.onCloseSideNav}
             class="web-side-nav__hide"
           ></button>
           <a
@@ -86,7 +89,7 @@ class SideNav extends BaseElement {
   }
 
   addEventListeners() {
-    this.addEventListener("click", this.onHideSideNav);
+    this.addEventListener("click", this.onCloseSideNav);
     this.sideNavContainerEl.addEventListener("click", this.onBlockClicks);
 
     this.addEventListener("touchstart", this.onTouchStart, {passive: true});
@@ -134,7 +137,7 @@ class SideNav extends BaseElement {
     this.sideNavContainerEl.style.transform = "";
 
     if (translateX < 0) {
-      this.onHideSideNav();
+      this.onCloseSideNav();
     }
   }
 
@@ -158,8 +161,12 @@ class SideNav extends BaseElement {
     this.removeEventListener("transitionend", this.onTransitionEnd);
   }
 
-  onHideSideNav() {
-    this.expanded = false;
+  onCloseSideNav() {
+    // It's important to call the closeSideNav() action here instead of just
+    // setting expanded = false.
+    // The closeSideNav() action will inform other page elements that they
+    // should un-inert themselves.
+    closeSideNav();
   }
 
   set expanded(val) {
@@ -168,10 +175,14 @@ class SideNav extends BaseElement {
     }
 
     const oldVal = this.expanded_;
-
     this.animatable = true;
     this.addEventListener("transitionend", this.onTransitionEnd);
     this.expanded_ = val;
+    if (this.expanded_) {
+      this.inert = false;
+    } else {
+      this.inert = true;
+    }
     this.requestUpdate("expanded", oldVal);
   }
 

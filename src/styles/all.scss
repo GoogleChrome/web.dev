@@ -1,4 +1,6 @@
+//removeIf(production)
 @import 'devsite/app.scss';
+//endRemoveIf(production)
 
 @import 'devsite/vetos';
 @import 'generic/all';
@@ -7,4 +9,6 @@
 @import '../lib/components/all';
 @import 'overrides/all';
 
+//removeIf(production)
 @import 'devsite/elements.scss';
+//endRemoveIf(production)
