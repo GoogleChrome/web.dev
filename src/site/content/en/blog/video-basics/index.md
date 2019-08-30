@@ -1,5 +1,5 @@
 ---
-title: Beyond images: basic video for the web
+title: Going beyond images with basic video for the web
 subhead: Learn basic. Increase engagement.
 authors:
   - dougsillars
