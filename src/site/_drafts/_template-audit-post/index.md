@@ -9,7 +9,7 @@ web_lighthouse:
 
 A brief explanation of why the audit matters. Try to keep it to 2-3 sentences.
 
-## How the [shorthand name] audit fails
+## How the Lighthouse [shorthand name] audit fails
 
 Lighthouse flags pages that [do the thing the audit checks for]:
 

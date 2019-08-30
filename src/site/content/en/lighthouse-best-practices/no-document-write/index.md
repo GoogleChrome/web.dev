@@ -13,7 +13,7 @@ such as 2G, 3G, or slow Wi-Fi,
 external scripts dynamically injected via `document.write()`
 can delay the display of main page content by tens of seconds.
 
-## How this audit fails
+## How the Lighthouse `document.write()` audit fails
 
 Lighthouse lists all calls to `document.write()`:
 

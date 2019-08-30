@@ -16,7 +16,7 @@ Messages logged in the console have a severity level:
 either `Verbose`, `Info`, `Warning`, or `Error`.
 An `Error` message means there's a problem on your page that you need to resolve.
 
-## How the browser error audit fails
+## How the Lighthouse browser error audit fails
 
 Lighthouse flags all browser errors logged to the console:
 

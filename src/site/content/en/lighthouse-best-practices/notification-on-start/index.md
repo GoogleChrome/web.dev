@@ -15,7 +15,7 @@ good notifications are timely, relevant, and precise.
 If your page asks for permission to send notifications on page load,
 those notifications may not be relevant to your users or precise to their needs.
 
-## How this audit fails
+## How the Lighthouse notification audit fails
 
 Lighthouse flags pages that request notification permissions on load:
 

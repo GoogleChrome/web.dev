@@ -12,7 +12,7 @@ updated: 2019-08-28
 HTTP/2 serves your page's resources faster,
 and with less data moving over the wire.
 
-## How this audit fails
+## How the Lighthouse HTTP/2 audit fails
 
 Lighthouse lists all resources not served over HTTP/2:
 

@@ -16,7 +16,7 @@ it alerts the intruder.
 From there,
 the intruder just needs to figure out how to exploit the vulnerability on your site.
 
-## How this audit fails
+## How this Lighthouse audit fails
 
 Lighthouse flags front-end JavaScript libraries with known security vulnerabilities:
 

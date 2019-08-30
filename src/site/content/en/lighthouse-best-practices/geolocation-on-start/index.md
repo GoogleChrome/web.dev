@@ -12,7 +12,7 @@ updated: 2019-08-28
 Users are mistrustful of or confused by pages
 that automatically request their location on page load.
 
-## How this audit fails
+## How the Lighthouse geolocation audit fails
 
 Lighthouse flags pages that request geolocation permission on load:
 

@@ -12,7 +12,7 @@ updated: 2019-08-28
 The Application Cache, also known as AppCache,
 is [deprecated](https://html.spec.whatwg.org/multipage/browsers.html#offline).
 
-## How the Application Cache audit fails
+## How the Lighthouse Application Cache audit fails
 
 Lighthouse flags pages that use the Application Cache:
 

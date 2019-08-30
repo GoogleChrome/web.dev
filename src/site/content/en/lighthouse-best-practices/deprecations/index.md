@@ -12,7 +12,7 @@ Deprecated APIs are scheduled to be removed from Chrome.
 Calling these APIs
 after they're removed causes errors on your site.
 
-## How this audit fails
+## How the Lighthouse deprecated API audit fails
 
 Lighthouse flags pages that call deprecated APIs:
 

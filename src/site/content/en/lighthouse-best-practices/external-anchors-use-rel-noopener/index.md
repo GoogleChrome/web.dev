@@ -8,7 +8,7 @@ web_lighthouse:
 updated: 2019-08-28
 ---
 
-## How this audit fails
+## How the Lighthouse cross-origin destination audit fails
 
 Lighthouse flags unsafe links to cross-origin destinations:
 

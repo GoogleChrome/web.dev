@@ -16,7 +16,7 @@ In
 the National Cyber Security Centre says that this claim is unfounded.
 Password pasting improves security because it enables users to use password managers.
 
-## How this audit fails
+## How this Lighthouse audit fails
 
 Lighthouse flags code that prevents users from pasting into password fields.
 
