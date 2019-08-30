@@ -12,7 +12,7 @@ Many search engines rank pages based on how mobile-friendly they are. Font
 sizes smaller than 12&nbsp;px are often difficult to read on mobile devices
 and may require users to zoom in to display text at a comfortable reading size.
 
-## How the Lighthouse audit for font size fails
+## How the Lighthouse font size audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 with font sizes that are too small to read easily on mobile:

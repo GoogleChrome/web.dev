@@ -29,7 +29,7 @@ Using canonical links has many advantages:
 - It improves the page ranking of syndicated content by consolidating the syndicated links to
   your original content back to your preferred URL.
 
-## How the Lighthouse audit for canonical links fails
+## How the Lighthouse canonical links audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags any page
 with an invalid canonical link:

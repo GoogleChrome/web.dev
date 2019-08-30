@@ -15,7 +15,7 @@ Many search engines rank pages based on how mobile-friendly they are. Making
 sure tap targets are big enough and far enough apart from each other makes
 your page more mobile-friendly and accessible.
 
-## How the Lighthouse audit for tap targets fails
+## How the Lighthouse tap targets audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
 with tap targets that are too small or too close together:
