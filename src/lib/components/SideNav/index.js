@@ -40,7 +40,6 @@ class SideNav extends BaseElement {
     this.prerenderedChildren_ = null;
 
     this.onCloseSideNav = this.onCloseSideNav.bind(this);
-    this.onBlockClicks = this.onBlockClicks.bind(this);
     this.onTouchStart = this.onTouchStart.bind(this);
     this.onTouchMove = this.onTouchMove.bind(this);
     this.onTouchEnd = this.onTouchEnd.bind(this);
@@ -57,7 +56,7 @@ class SideNav extends BaseElement {
       }
     }
     return html`
-      <nav class="web-side-nav__container">
+      <nav @click="${this.onBlockClicks}" class="web-side-nav__container">
         <div class="web-side-nav__header">
           <button
             @click=${this.onCloseSideNav}
@@ -90,8 +89,6 @@ class SideNav extends BaseElement {
 
   addEventListeners() {
     this.addEventListener("click", this.onCloseSideNav);
-    this.sideNavContainerEl.addEventListener("click", this.onBlockClicks);
-
     this.addEventListener("touchstart", this.onTouchStart, {passive: true});
     this.addEventListener("touchmove", this.onTouchMove, {passive: true});
     this.addEventListener("touchend", this.onTouchEnd);
@@ -158,7 +155,6 @@ class SideNav extends BaseElement {
 
   onTransitionEnd() {
     this.animatable = false;
-    this.removeEventListener("transitionend", this.onTransitionEnd);
   }
 
   onCloseSideNav() {
@@ -176,7 +172,7 @@ class SideNav extends BaseElement {
 
     const oldVal = this.expanded_;
     this.animatable = true;
-    this.addEventListener("transitionend", this.onTransitionEnd);
+    this.addEventListener("transitionend", this.onTransitionEnd, {once: true});
     this.expanded_ = val;
     if (this.expanded_) {
       this.inert = false;

@@ -65,7 +65,7 @@ web-side-nav[expanded]::before {
   background: $WHITE;
   height: 100%;
   box-shadow: 2px 0 12px rgba($BLACK, .4);
-  transform: translateX(-102%);
+  transform: translateX(-110%);
   display: flex;
   flex-direction: column;
   will-change: transform;
@@ -94,6 +94,7 @@ web-side-nav[expanded][animatable] .web-side-nav__container {
 }
 
 .web-side-nav__hide {
+  -webkit-tap-highlight-color: transparent;
   background: none;
   border: none;
   box-shadow: none;
