@@ -2,26 +2,26 @@
 layout: post
 title: Links do not have descriptive text
 description: |
-  Learn about the "Links do not have descriptive text" Lighthouse audit.
-updated: 2019-08-21
+  Learn about link-text audit.
 web_lighthouse:
   - link-text
 ---
 
-Link text is the clickable word or phrase in a hyperlink. When link text clearly
-conveys a hyperlink's target, both users and search engines can more easily
-understand your content and how it relates to other pages.
-
-## How the Lighthouse link text audit fails
-
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags links
-without descriptive text:
+Link descriptions,
+which are the clickable words in links,
+help users and search engines better understand your content.
+Lighthouse flags any links with non-descriptive text:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot" src="link-text.png" alt="Lighthouse audit showing links don't have descriptive text">
+  <img class="w-screenshot w-screenshot--filled" src="link-text.png" alt="Lighthouse audit showing links don't have descriptive text">
+  <figcaption class="w-figcaption">
+    Links don't have descriptive text.
+  </figcaption>
 </figure>
 
-Lighthouse flags the following generic link text:
+## What causes this audit to fail
+
+Lighthouse flags the following generic link descriptions:
 
 - `click here`
 - `click this`
@@ -37,46 +37,34 @@ Lighthouse flags the following generic link text:
 
 ## How to add descriptive link text
 
-Replace generic phrases like "click here" and "learn more" with specific
-descriptions. In general, write link text that clearly indicates what type of
-content users will get if they follow the hyperlink.
+Replace generic descriptions, such as `click here` in the example below:
 
 ```html
 <p>To see all of our basketball videos, <a href="videos.html">click here</a>.</p>
 ```
 
-{% Compare 'worse', 'Don\'t' %}
-"Click here" doesn't convey where the hyperlink will take users.
-{% endCompare %}
+…with specific descriptions, such as `basketball videos` in the example below:
 
 ```html
 <p>Check out all of our <a href="videos.html">basketball videos</a>.</p>
 ```
 
-{% Compare 'better', 'Do' %}
-"Basketball videos" clearly conveys that the hyperlink will take users to a page
-of videos.
-{% endCompare %}
+In general,
+the link text should clearly indicate to users what type of content they'll get
+if they click the link.
 
-{% Aside %}
-You'll often need to revise the surrounding sentence to make link text
-descriptive.
-{% endAside %}
+Learn more in [Add descriptive link text](/write-descriptive-text#add-descriptive-link-text).
 
-## Link text best practices
+## Link text guidelines
 
-- Stay on topic. Don't use link text that has no relation to the page's content.
-- Don't use the page's URL as the link description unless you have a good reason
-  to do so, such as referencing a site's new address.
+- Stay on topic. Don't use text that has no relation to the page's content.
+- Don't use the page's URL as the link description, unless you have a good reason to do so,
+such as referencing a site's new address.
 - Keep descriptions concise. Aim for a few words or a short phrase.
-- Pay attention to your internal links too. Improving the quality of internal
-  links can help both users and search engines navigate your site more easily.
+- Format links so that they're easy to spot.
+- Pay attention to your internal links, too. Improving the quality of internal links can
+help users and Google navigate your site easier.
 
-See the [Use links wisely](https://support.google.com/webmasters/answer/7451184#uselinkswisely)
-section of Google's [Search Engine Optimization (SEO) Starter Guide](https://support.google.com/webmasters/answer/7451184)
-for more tips.
+## More information
 
-## Resources
-
-- [Source code for **Links do not have descriptive text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)
-- [Search Engine Optimization (SEO) Starter Guide](https://support.google.com/webmasters/answer/7451184)
+[Links do not have descriptive text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/link-text.js)

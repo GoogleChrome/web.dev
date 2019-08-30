@@ -39,8 +39,8 @@ module.exports = {
       fast,
       accessible,
       reliable,
-      secure,
       discoverable,
+      secure,
       installable,
     ],
     frameworks: [

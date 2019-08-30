@@ -27,7 +27,6 @@ guidance about how to use them effectively.
 1. [Images](#images)
 1. [Instruction](#instruction)
 1. [Lists](#lists)
-1. [Callouts](#callouts)
 1. [Stats](#stats)
 1. [Tables](#tables)
 1. [Video](#video)
@@ -351,10 +350,6 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
   sit amet ullamcorper.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
-
-## Callouts
-
-{% CodelabsCallout 'codelab-fix-sneaky-404' %}
 
 ## Stats
 
