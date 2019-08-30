@@ -1,6 +1,6 @@
 ---
 title: Going beyond images with basic video for the web
-subhead: Learn basic. Increase engagement.
+subhead: Learn basic video. Increase engagement.
 authors:
   - dougsillars
 date: 2019-09-03
@@ -15,25 +15,25 @@ tags:
 ---
 
 Are you thinking about adding video to your website? As devices and network
-connections have become faster and more powerful, we can move beyond images and
-add video to our toolchest of techniques to build the web.
+connections have become faster and more powerful, you can move beyond images and
+add video to your toolchest of techniques to build the web.
 [Research
 shows]([https://www.foodbloggerpro.com/blog/how-we-improved-our-landing-page-conversion-rate-by-138/](https://www.foodbloggerpro.com/blog/how-we-improved-our-landing-page-conversion-rate-by-138/))
 that websites with video lead to higher engagement and sales. So even if you
-haven't added video to your sites yet, it is probably just a matter of time
+haven't added video to your sites yet, it's probably just a matter of time
 until you do.
 
 In all likelihood, the video files you add to your site will be the largest
-files that are downloaded. For that reason, it's extremely important to make
-sure that the files are built in a way that ensures fast and steady playback to
-all of your customers. Even though video can increase engagement and customer
-satisfaction, a video that doesn't play or stalls during playback can lead to
-customer frustration. This post focuses on using the HTML5 `<video>` tag for
-delivering video, and therefore will not cover streaming video.
+files that are downloaded. For that reason, it's extremely important to ensure
+that the files are built for fast and steady playback to all of your customers.
+Even though video can increase engagement and customer satisfaction, a video
+that doesn't play or stalls during playback can lead to customer frustration.
+This post focuses on using the HTML5 `<video>` tag for delivering video, and
+therefore will not cover streaming video.
 
 So let's get started!
 
-## The <video> tag
+## The &lt;video> tag
 
 It seems obvious, right? To add video, you have to add the `<video>` tag, point to a
 source, and then you're off to the races!
@@ -45,7 +45,7 @@ And, you're right. At the highest level, this is all you need to add a video to
 the web. But there are a lot of attributes that you can add to the video tag to
 improve the layout and delivery of the video.
 
-## The <source> tag
+## The &lt;source> tag
 
 Perhaps the best way to improve the delivery of video on the web is to optimize
 the files that are delivered to the browser. The way to do this is using the
@@ -62,33 +62,55 @@ the files that are delivered to the browser. The way to do this is using the
 This references three separate source files. The browser starts at the top, and
 picks the first format and codec that it can use. In the video world, the file
 format, usually called the container, can be saved with different codecs, each
-with different attributes ([more on this
-here]([https://developers.google.com/web/fundamentals/media/manipulating/applications](https://developers.google.com/web/fundamentals/media/manipulating/applications)).
+with different attributes. ([More on this
+here](https://developers.google.com/web/fundamentals/media/manipulating/applications).)
 In the example above, the first choice is the WebM format ([which can be encoded
-with VP8 or VP9
-codecs]([https://www.webmproject.org/about/](https://www.webmproject.org/about/))),
-and is supported (at the time of writing) by 78% of [global
-users]([https://caniuse.com/#search=webm](https://caniuse.com/#search=webm)).
-The second choice is the the h.265 codec of mp4, which is supported on [iOS and
-newer
-Macs]([https://caniuse.com/#search=h265](https://caniuse.com/#search=h265)).
-These codecs are newer and have improved data compression, while delivering the
-same quality video as older video formats.
+with VP8 or VP9 codecs](https://www.webmproject.org/about/)), and is supported
+(at the time of writing) by 78% of [global
+users](https://caniuse.com/#search=webm). The second choice is the the h.265
+codec of mp4, which is supported on [iOS and newer
+Macs](https://caniuse.com/#search=h265). These codecs are newer and have
+improved data compression, while delivering the same quality video as older
+video formats.
 
-The final choice in our list is h264 mp4, which boasts support on 92% of all
+The final choice in our list is h.264 mp4, which boasts support on 92% of all
 [global
-users]([https://caniuse.com/#search=h264](https://caniuse.com/#search=h264)),
+users](https://caniuse.com/#search=h264),
 but is an older format, and as such, is generally a lot larger than webm or h265
-videos. In one example, we can see the difference for a 2 minute movie:
+videos. In one example, you can see the difference for a two minute movie:
 
-VP8  	5.5 MB
-VP9  	4.2 MB
-h265	5.4 MB
-h264	16.1 MB
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Codec</th>
+        <th>File size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>VP8</th>
+        <th>5.5 MB</th>
+      </tr>
+      <tr>
+        <th>VP9</th>
+        <th>4.2 MB</th>
+      </tr>
+      <tr>
+        <th>h.265</th>
+        <th>5.4 MB</th>
+      </tr>
+      <tr>
+        <th>h.264</th>
+        <th>16.1</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Delivering files that are smaller is the best performance optimization you can
 make to better deliver your videos. When a smaller video is downloaded, video
-playback can occur sooner, and the video buffer fills up faster. This leads to
+playback occurs sooner, and the video buffer fills up faster. This leads to
 fewer stalls during video playback. Additionally, server load is
 decreased, which makes up for the increased storage requirements of multiple
 video files.
@@ -96,7 +118,7 @@ video files.
 ## The preload attribute
 
 Videos cannot begin playback until there is some video downloaded and stored
-locally. Using the preload attribute, we can control how much video is
+locally. Using the preload attribute, you can control how much video is
 downloaded on page load. There are three values for the preload attribute:
 `auto`, `metadata`, and `none`.
 
@@ -134,21 +156,18 @@ window before the video starts playing:
 <video src="myVideo.mp4" poster="/image/myVideoImage.jpg">
 ```
 
-![image](https://drive.google.com/a/google.com/file/d/1_PXRZj_uD4qEKgY94RYBXfOhIFaVNlEi/view?usp=drivesdk)
-
-{% Compare 'worse', 'No poster image' %}
 <figure class="w-figure">
-  <img src="./no-poster.png" alt="A video without a poster shows a black screen before it starts.">
-  <figcaption class="w-figcaption">A video without a poster shows a black screen before it starts.</figcaption>
+  <img src="no-poster.png" alt="A video without a poster shows a black screen before it starts.">
 </figure>
+{% Compare 'worse', 'No poster image' %}
+  A video without a poster shows a black screen before it starts.
 {% endCompare %}
 
-
-{% Compare 'better', 'With a poster image' %}
 <figure class="w-figure">
-  <img src="./no-poster.png" alt="A video with a poster is much more engaging.">
-  <figcaption class="w-figcaption">A video with a poster is much more engaging.</figcaption>
+  <img src="poster.png" alt="A video with a poster is much more engaging.">
 </figure>
+{% Compare 'better', 'With a poster image' %}
+  A video with a poster is much more engaging.
 {% endCompare %}
 
 By adding a photo instead of a black box on the page, you make your website more
@@ -168,8 +187,8 @@ looping videos, you may wish to omit this attribute.
 
 The `muted` attribute causes playback to begin in a muted state. If no controls
 are supplied, it will remain muted for the entirety of playback. If that is
-intended it might make sense to remove the audio track from the video. This will
-further reduce the size of the video file being delivered to the customer.
+intended it might make sense to remove the audio track from the video. This
+further reduces the size of the video file being delivered to the customer.
 
 As with containers and codecs, removing the audio file, also called demuxing, is
 also beyond the scope of this article. You can find instructions in the [Media
@@ -204,5 +223,5 @@ attribute must also be added:
 Simply adding a video to your website will add a new realm of engagement for
 your customers, but it is important that you deliver the content
 properly&mdash;ensuring that the playback of the video is seamless and without
-stalls. Using the built in attributes of the video tag can greatly help you
+stalls. Using the built in attributes of the &lt;video> tag can greatly help you
 deliver flawless video to everyone who visits your website.
