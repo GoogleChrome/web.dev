@@ -20,6 +20,10 @@
 @import '../../../styles/tools/breakpoints';
 @import '../../../styles/tools/mixins';
 
+body.web-side-nav--expanded {
+  overflow: hidden;
+}
+
 web-side-nav:not(:defined) {
   display: none;
 }
@@ -32,7 +36,7 @@ web-side-nav {
   height: 100%;
   overflow: hidden;
   pointer-events: none;
-  z-index: 1;
+  z-index: 300;
 }
 
 web-side-nav::before {

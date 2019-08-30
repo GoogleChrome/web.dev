@@ -21,41 +21,58 @@
   </head>
   <body>
     <web-header role="navigation">
-      <a
-        href="/learn"
-        class="web-header__link gc-analytics-event"
-        data-category="Site-Wide Custom Events"
-        data-label="Tab: Learn"
-      >
-        Learn
-      </a>
+      <button class="web-header__hamburger-btn" aria-label="menu"></button>
 
       <a
-        href="/measure"
-        class="web-header__link gc-analytics-event"
+        href="/"
+        class="gc-analytics-event"
         data-category="Site-Wide Custom Events"
-        data-label="Tab: Measure"
+        data-label="Site logo"
       >
-        Measure
+        <img class="web-header__logo" src="/images/lockup.svg" alt="web.dev" />
       </a>
 
-      <a
-        href="/blog"
-        class="web-header__link gc-analytics-event"
-        data-category="Site-Wide Custom Events"
-        data-label="Tab: Blog"
-      >
-        Blog
-      </a>
+      <div class="web-header__middle">
+        <div class="web-header__links">
+          <a
+            href="/learn"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Learn"
+          >
+            Learn
+          </a>
 
-      <a
-        href="/about"
-        class="web-header__link gc-analytics-event"
-        data-category="Site-Wide Custom Events"
-        data-label="Tab: About"
-      >
-        About
-      </a>
+          <a
+            href="/measure"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Measure"
+          >
+            Measure
+          </a>
+
+          <a
+            href="/blog"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Blog"
+          >
+            Blog
+          </a>
+
+          <a
+            href="/about"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: About"
+          >
+            About
+          </a>
+        </div>
+      </div>
+
+      <web-profile-switcher-container></web-profile-switcher-container>
     </web-header>
 
     <web-side-nav>

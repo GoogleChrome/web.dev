@@ -119,6 +119,7 @@ export const requestFetchReports = store.action((state, url, startDate) => {
 });
 
 export const openSideNav = store.action(() => {
+  document.body.classList.add("web-side-nav--expanded");
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");
   main.inert = true;
@@ -127,6 +128,7 @@ export const openSideNav = store.action(() => {
 });
 
 export const closeSideNav = store.action(() => {
+  document.body.classList.remove("web-side-nav--expanded");
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");
   main.inert = false;

@@ -18,46 +18,10 @@
  * @fileoverview A responsive header that can trigger a side-nav.
  */
 
-import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import "../ProfileSwitcherContainer";
 import {openSideNav} from "../../actions";
 
 class Header extends BaseElement {
-  constructor() {
-    super();
-    this.prerenderedChildren_ = null;
-  }
-
-  render() {
-    if (!this.prerenderedChildren_) {
-      this.prerenderedChildren_ = [];
-      for (const child of this.children) {
-        this.prerenderedChildren_.push(child);
-      }
-    }
-    return html`
-      <button class="web-header__hamburger-btn" aria-label="menu"></button>
-
-      <a
-        href="/"
-        class="gc-analytics-event"
-        data-category="Site-Wide Custom Events"
-        data-label="Site logo"
-      >
-        <img class="web-header__logo" src="/images/lockup.svg" alt="web.dev" />
-      </a>
-
-      <div class="web-header__middle">
-        <div class="web-header__links">
-          ${this.prerenderedChildren_}
-        </div>
-      </div>
-
-      <web-profile-switcher-container></web-profile-switcher-container>
-    `;
-  }
-
   firstUpdated() {
     this.hamburgerBtn = this.querySelector(".web-header__hamburger-btn");
     this.hamburgerBtn.addEventListener("click", openSideNav);

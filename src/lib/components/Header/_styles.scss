@@ -19,27 +19,23 @@
 @import '../../../styles/tools/breakpoints';
 @import '../../../styles/tools/mixins';
 
-web-header:not(:defined) {
-  padding: 0 24px 0 197px;
-}
-
-web-header:not(:defined),
 web-header {
   align-items: center;
   background: $WHITE;
   box-shadow: 0 1px 2px 0 rgba($GREY_800, .3), 0 2px 6px 2px rgba($GREY_800, .15);
   color: $PRIMARY_TEXT_COLOR;
+  contain: layout;
   display: flex;
   font-size: 14px;
   height: 64px;
-  position: relative;
-  width: 100%;
-}
-
-web-header {
   padding: 0 24px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
 
   .web-header__hamburger-btn {
+    -webkit-tap-highlight-color: transparent;
     background: none;
     border: none;
     box-shadow: none;
@@ -66,6 +62,9 @@ web-header {
   .web-header__hamburger-btn::before {
     @include font-material-icon();
     content: 'menu';
+    display: inline-block;
+    height: 26px;
+    width: 24px;
   }
 
   .web-header__logo {
