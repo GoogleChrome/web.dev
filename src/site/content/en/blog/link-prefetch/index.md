@@ -49,7 +49,7 @@ Prefetch static assets, like scripts or stylesheets, when subsequent sections th
 For example, Netflix takes advantage of the time users spend on logged-out pages, to prefetch libraries that will be used once users log in. Thanks to this, they [reduced Time to Interactive by 30% for future navigations](https://medium.com/dev-channel/a-netflix-web-performance-case-study-c0bcde26a9d9).
 
 {% Aside 'gotchas' %}
-At the time of this writing, it is possible to share prefetched resources among pages served from different origins. When [Double-keyed HTTP cache](https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/6KKXv1PqPZ0/oguPntMGDgAJ) ships, this will only work for top-level navigations and same-origin subresources, but it won’t be possible to reuse prefetched subresources among different origins. This means that, if `a.com` prefetches the resource `b.com/library.js`, it won’t be available in `c.com` cache. Some browsers, such as WebKit-based ones, already [partition caches and HTML5 storage](https://webkit.org/blog/7675/intelligent-tracking-prevention/) for all third-party domains.
+At the time of this writing, it is possible to share prefetched resources among pages served from different origins. When [Double-keyed HTTP cache](https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/6KKXv1PqPZ0/oguPntMGDgAJ) ships, this will only work for top-level navigations and same-origin subresources, but it won't be possible to reuse prefetched subresources among different origins. This means that, if `a.com` prefetches the resource `b.com/library.js`, it won't be available in `c.com` cache. Some browsers, such as WebKit-based ones, already [partition caches and HTML5 storage](https://webkit.org/blog/7675/intelligent-tracking-prevention/) for all third-party domains.
 {% endAside %}
 
 ### Prefetching on-demand JavaScript chunks
@@ -71,7 +71,7 @@ The simplest way to implement `prefetch` is adding a `<link>` tag to the `<head>
 
 ```
 
-The `as` attribute is not mandatory, but it’s recommended. It helps the browser set the right headers, and determine whether the resource is already in the cache. Example values for this attribute include: `document`, `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes).
+The `as` attribute is not mandatory, but it's recommended. It helps the browser set the right headers, and determine whether the resource is already in the cache. Example values for this attribute include: `document`, `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes).
 
 You can also initiate prefetching via the [`Link` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link):
 
@@ -132,7 +132,7 @@ A wine company Jabong implemented prefetching with quicklink and achieved 2.7 s 
 
 Resource hints are not mandatory instructions and it's up to the browser to decide if, and when, they get executed.
 
-You can use prefetch multiple times in the same page. The browser queues up all hints and requests each resource when it’s [idle](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#How_is_browser_idle_time_determined.3F). In Chrome, if a prefetch has not finished loading and the user navigates to the destined prefetch resource, the in-flight load is picked up as the navigation by the browser (other browser vendors might implement this differently).
+You can use prefetch multiple times in the same page. The browser queues up all hints and requests each resource when it's [idle](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ#How_is_browser_idle_time_determined.3F). In Chrome, if a prefetch has not finished loading and the user navigates to the destined prefetch resource, the in-flight load is picked up as the navigation by the browser (other browser vendors might implement this differently).
 
 Prefetching takes place at the [“Lowest” priority](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit), so prefetched resources do not compete for bandwidth with the resources required in the current page.
 
