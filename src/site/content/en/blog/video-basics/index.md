@@ -102,7 +102,7 @@ videos. In one example, you can see the difference for a two minute movie:
       </tr>
       <tr>
         <th>h.264</th>
-        <th>16.1</th>
+        <th>16.1 MB</th>
       </tr>
     </tbody>
   </table>
