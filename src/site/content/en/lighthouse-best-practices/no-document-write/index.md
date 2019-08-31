@@ -15,7 +15,7 @@ can delay the display of main page content by tens of seconds.
 
 ## How the Lighthouse `document.write()` audit fails
 
-Lighthouse lists all calls to `document.write()`:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) lists all calls to `document.write()`:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">

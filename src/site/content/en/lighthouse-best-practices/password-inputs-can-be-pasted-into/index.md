@@ -18,7 +18,7 @@ Password pasting improves security because it enables users to use password mana
 
 ## How this Lighthouse audit fails
 
-Lighthouse flags code that prevents users from pasting into password fields.
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags code that prevents users from pasting into password fields.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="password-inputs-can-be-pasted-into.png" alt="Lighthouse audit shows page stops users from pasting into password fields">

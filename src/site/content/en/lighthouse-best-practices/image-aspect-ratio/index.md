@@ -16,7 +16,7 @@ Lighthouse flags images with incorrect aspect ratios.
 
 ## How the Lighthouse image aspect ratio audit fails
 
-Lighthouse flags any image with a rendered aspect ratio
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags any image with a rendered aspect ratio
 5 percent or more different than its natural ratio.
 
 <figure class="w-figure">

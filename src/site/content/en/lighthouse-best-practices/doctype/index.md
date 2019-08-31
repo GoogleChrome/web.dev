@@ -15,7 +15,7 @@ which can cause your page to render in unexpected ways.
 
 ## How the Lighthouse doctype audit fails
 
-Lighthouse flags pages without the `<!DOCTYPE html>` declaration:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages without the `<!DOCTYPE html>` declaration:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="doctype.png" alt="Lighthouse audit showing missing doctype">

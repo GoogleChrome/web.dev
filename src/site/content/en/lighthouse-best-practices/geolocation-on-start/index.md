@@ -14,7 +14,7 @@ that automatically request their location on page load.
 
 ## How the Lighthouse geolocation audit fails
 
-Lighthouse flags pages that request geolocation permission on load:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that request geolocation permission on load:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="geolocation-on-start.png" alt="Lighthouse audit showing geolocation request on page load">

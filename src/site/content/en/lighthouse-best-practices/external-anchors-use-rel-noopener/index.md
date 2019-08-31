@@ -10,7 +10,7 @@ updated: 2019-08-28
 
 ## How the Lighthouse cross-origin destination audit fails
 
-Lighthouse flags unsafe links to cross-origin destinations:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags unsafe links to cross-origin destinations:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="external-anchors-use-rel-noopener.png" alt="Lighthouse audit showing unsafe links to cross-origin destinations">

@@ -8,7 +8,7 @@ web_lighthouse:
 updated: 2019-08-28
 ---
 
-Lighthouse lists all front-end JavaScript libraries detected on the page:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) lists all front-end JavaScript libraries detected on the page:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="js-libraries.png" alt="Lighthouse audit showing all front-end JavaScript libraries detected on page">

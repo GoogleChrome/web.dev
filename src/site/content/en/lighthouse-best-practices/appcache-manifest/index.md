@@ -14,7 +14,7 @@ is [deprecated](https://html.spec.whatwg.org/multipage/browsers.html#offline).
 
 ## How the Lighthouse Application Cache audit fails
 
-Lighthouse flags pages that use the Application Cache:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that use the Application Cache:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="appcache-manifest.png" alt="Lighthouse audit showing document uses the Application Cache">

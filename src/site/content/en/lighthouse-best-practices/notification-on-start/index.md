@@ -17,7 +17,7 @@ those notifications may not be relevant to your users or precise to their needs.
 
 ## How the Lighthouse notification audit fails
 
-Lighthouse flags pages that request notification permissions on load:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that request notification permissions on load:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="notification-on-start.png" alt="Lighthouse audit shows page requests notification permissions on load">
