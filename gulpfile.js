@@ -65,9 +65,15 @@ gulp.task('copy-content-assets', () => {
     .pipe(gulp.dest('./dist/en'));
 });
 
+gulp.task('copy-service-worker', () => {
+  return gulp.src('./src/lib/service-worker.js')
+    .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('build', gulp.parallel(
   'copy-global-assets',
   'copy-content-assets',
+  'copy-service-worker',
 ));
 
 gulp.task('watch', () => {
@@ -76,4 +82,5 @@ gulp.task('watch', () => {
     './src/site/content/**/*',
     gulp.series('copy-content-assets')
   );
+  gulp.watch('./src/lib/service-worker.js', gulp.series('copy-service-worker'));
 });
