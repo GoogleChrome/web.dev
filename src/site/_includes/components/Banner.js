@@ -15,11 +15,12 @@
  */
 
 const {html} = require('common-tags');
+const md = require('markdown-it')();
 
 module.exports = (content, type='info') => {
   return html`
     <div role="banner" class="w-banner w-banner--${type}">
-      ${content}
+      ${md.renderInline(content)}
     </div>
   `;
 };
