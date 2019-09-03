@@ -22,7 +22,7 @@ Making sure your pages load fast is key to delivering a good user experience.
 But one area we often overlook is page transitions—what our users see when
 they move between pages.
 
-A new web platform API called [Portals](https://github.com/WICG/portals) aims to
+A new web platform API proposal called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
 site. See Portals in action:
 
