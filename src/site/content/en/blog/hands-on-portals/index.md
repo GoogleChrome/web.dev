@@ -1,7 +1,7 @@
 ---
 title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
-  Learn how to build good navigation UX with the Portals API.
+  Learn how the proposed Portals API could change the way we build good navigation UX.
 date: 2019-05-06
 updated: 2019-08-29
 authors:
@@ -9,7 +9,7 @@ authors:
 hero: hero.png
 alt: A logo of Portals
 description: |
-  Portals help keep your front-end simple while allowing seamless navigations
+  A newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
   with custom transitions. In this article, get hands-on experience using
   Portals to improve user experience across your site.
 tags:
@@ -269,4 +269,4 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-Portals are still in the early stages so not everything is working yet (that's why it's behind an experimental flag). That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on [the Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836) and if you have any feature requests, or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+The Portals proposal is still in the early stages so not everything is working yet (that's why it's behind an experimental flag). That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on [the Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836) and if you have any feature requests, or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
