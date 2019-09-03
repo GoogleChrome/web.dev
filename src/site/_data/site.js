@@ -21,4 +21,8 @@ module.exports = {
   url: 'https://web.dev',
   repo: 'https://github.com/GoogleChrome/web.dev',
   subscribe: 'https://web.dev/subscribe',
+  isBannerEnabled: true,
+  banner: `Register for this year's \`#ChromeDevSummit\` happening on Nov. 11-12
+  in San Francisco to learn about the latest features and tools coming to the
+  Web. [Request an invite here](https://developer.chrome.com/devsummit/).`,
 };
