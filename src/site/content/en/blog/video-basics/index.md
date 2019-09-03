@@ -18,7 +18,7 @@ Are you thinking about adding video to your website? As devices and network
 connections have become faster and more powerful, you can move beyond images and
 add video to your toolchest of techniques to build the web.
 [Research
-shows]([https://www.foodbloggerpro.com/blog/how-we-improved-our-landing-page-conversion-rate-by-138/](https://www.foodbloggerpro.com/blog/how-we-improved-our-landing-page-conversion-rate-by-138/))
+shows](https://www.foodbloggerpro.com/blog/how-we-improved-our-landing-page-conversion-rate-by-138/)
 that websites with video lead to higher engagement and sales. So even if you
 haven't added video to your sites yet, it's probably just a matter of time
 until you do.
