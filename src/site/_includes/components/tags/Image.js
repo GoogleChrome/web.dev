@@ -79,8 +79,7 @@ function getImagePath(src, ctx) {
 
 /**
  * Render an image element as an HTML string.
- * @param {!Object} args An args object containing src and optional alt and
- * maxWidth.
+ * @param {!{src: string, alt: string, maxWidth: number}} args
  * @param {!Object} ctx An eleventy context object.
  * @return {string}
  */
@@ -134,7 +133,7 @@ const Image = (nunjucksEngine) => {
 /**
  * Render a figcaption element as an HTML string.
  * @param {?string} caption A markdown string of caption text.
- * @param {Array<string>} figCaptionClasses An Array of classes to apply to the
+ * @param {!Array<string>} figCaptionClasses An Array of classes to apply to the
  * figcaption element.
  * @return {string}
  */
@@ -153,7 +152,7 @@ function renderFigCaption(caption, figCaptionClasses) {
 /**
  * Render a figure element as an HTML string.
  * @param {!string} image An HTML string for an image element.
- * @param {?Object} args An args object containing an optional type field.
+ * @param {{type: string}} args
  * @param {?string} caption An optional caption string in markdown.
  * @return {string}
  */
