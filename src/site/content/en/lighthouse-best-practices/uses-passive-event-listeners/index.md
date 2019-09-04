@@ -9,19 +9,25 @@ web_lighthouse:
 updated: 2019-08-28
 ---
 
-Setting the `passive` option on your touch and
-wheel event listeners can improve scrolling performance.
+Touch and wheel event listeners are useful
+for tracking user interactions and creating custom scrolling experiences,
+but they can also delay page scrolling.
+Currently, browsers can't know if an event listener will prevent scrolling,
+so they always wait for the listener to finish executing before scrolling the page.
+Passive event listeners solve this problem by letting you indicate
+that an event listener will never prevent scrolling.
 
 ## How the Lighthouse passive event listener audit fails
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags potential passive event listener candidates.
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags event listeners that may delay page scrolling:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="uses-passive-event-listeners.png" alt="Lighthouse audit shows page doesn't use passive event listeners to improve scrolling performance">
 </figure>
 
-Lighthouse uses the following algorithm
-to flag potential passive event listener candidates:
+Lighthouse uses the following process
+to identify event listeners that may affect scrolling performance:
 
 1. Collect all event listeners on the page.
 2. Filter out non-touch and non-wheel listeners.
@@ -30,36 +36,27 @@ to flag potential passive event listener candidates:
 
 Lighthouse filters out listeners from different hosts
 because you probably don't have control over these scripts.
-Because of this,
-Lighthouse's audit does not represent the full scroll performance of your page.
-There may be third-party scripts that are harming your page's scroll performance,
+There may be third-party scripts that are harming your page's scrolling performance,
 but these aren't listed in your Lighthouse report.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## How to add passive event listeners to improve scrolling performance
+## How to make event listeners passive to improve scrolling performance
 
-Add the `passive` flag to all of the event listeners
-that Lighthouse has identified.
-In general, add the `passive` flag to every `wheel`,
-`mousewheel`, `touchstart`, and `touchmove` event listener
-that does not call `preventDefault()`.
+Add a `passive` flag to every event listener that Lighthouse identified.
 
-In browsers that support passive event listeners,
-marking a listener as `passive` is as easy as setting a flag:
+If you're only supporting browsers that have passive event listener support,
+just add the flag. For example:
 
 ```js
 document.addEventListener('touchstart', onTouchStart, {passive: true});
 ```
 
-However, in browsers that do not support passive event listeners,
-the third parameter is a boolean to indicate
-whether the event should bubble or capture.
-So, using the syntax above may cause unintended consequences.
-
-See the polyfill in
+If you're supporting [older browsers that don't support passive event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Browser_compatibility),
+you'll need to use feature detection or a polyfill. See the
 [Feature Detection](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection)
-to learn how to safely implement passive event listeners.
+section of the [WICG passive event listeners explainer](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)
+document for more information.
 
 ## Resources
 

@@ -51,7 +51,7 @@ there are a couple approaches to try:
 - Add the script element using DOM APIs
   like `document.appendChild()` or `parentNode.insertBefore()`.
 
-If neither approach will work for your case,
+If neither approach works for your case,
 ask your third-party service provider to support asynchronous loading.
 
 ## Resources
