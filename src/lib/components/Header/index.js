@@ -26,6 +26,11 @@ class Header extends HTMLElement {
     this.hamburgerBtn.addEventListener("click", expandSideNav);
   }
 
+  /**
+   * This is called by the SideNav to return focus to this control when the
+   * user closes the SideNav.
+   * This is important for accessibility.
+   */
   manageFocus() {
     this.hamburgerBtn.focus();
   }
