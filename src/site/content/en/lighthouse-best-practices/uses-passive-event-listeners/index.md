@@ -37,7 +37,7 @@ but these aren't listed in your Lighthouse report.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## Add passive event listeners to improve scrolling performance
+## How to add passive event listeners to improve scrolling performance
 
 Add the `passive` flag to all of the event listeners
 that Lighthouse has identified.
