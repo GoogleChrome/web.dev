@@ -53,6 +53,7 @@ module.exports = {
           'bootup-time',
           'mainthread-work-breakdown',
           'font-display',
+          'resource-summary',
         ],
       },
     ],
