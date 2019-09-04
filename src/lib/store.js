@@ -29,6 +29,8 @@ const initialState = {
 
   // The most recent error from the Lighthouse CI, if any.
   lighthouseError: null,
+
+  isSideNavExpanded: false,
 };
 
 const store = devtools(createStore(initialState));
