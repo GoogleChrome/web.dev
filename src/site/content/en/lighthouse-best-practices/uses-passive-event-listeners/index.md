@@ -55,8 +55,8 @@ document.addEventListener('touchstart', onTouchStart, {passive: true});
 If you're supporting [older browsers that don't support passive event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Browser_compatibility),
 you'll need to use feature detection or a polyfill. See the
 [Feature Detection](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md#feature-detection)
-section of the [WICG passive event listeners explainer](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)
-document for more information.
+section of the WICG [Passive event listeners](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)
+explainer document for more information.
 
 ## Resources
 

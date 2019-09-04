@@ -26,7 +26,7 @@ An `Error` message means there's a problem on your page that you need to resolve
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## How to fix the browser errors
+## How to fix browser errors
 
 Fix each browser error that Lighthouse reports
 to ensure that your page runs as expected for all your users.
