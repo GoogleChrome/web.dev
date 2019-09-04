@@ -16,10 +16,11 @@ updated: 2019-08-28
 
 ## This is a diagnostic audit
 
-This audit simply lists all front-end JavaScript libraries.
+This audit simply lists all the front-end JavaScript libraries your page uses.
+
 Lighthouse also reports
 [front-end JavaScript libraries with known security risks](/no-vulnerable-libraries).
-Watch closely for these vulnerabities.
+Make sure to update any insecure libraries.
 
 ## Resources
 
