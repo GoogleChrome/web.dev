@@ -16,17 +16,100 @@
       rel="stylesheet"
       href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
     />
-    {# Add cache busting URLs when we're doing a prod build #}
-    {% if site.env === 'prod' %}
-      <link rel="stylesheet" href="/{{site.entrypoints.appCss}}" />
-      <script type="module" src="/{{site.entrypoints.appJs}}"></script>
-    {% else %}
-      <link rel="stylesheet" href="/app.css" />
-      <script type="module" src="/app.js"></script>
-    {% endif %}
+    <link rel="stylesheet" href="/app.css" />
+    <script type="module" src="/app.js"></script>
   </head>
   <body>
-    {% include 'devsite/devsite-header.njk' %}
+    <web-header role="navigation">
+      <button class="web-header__hamburger-btn" aria-label="menu"></button>
+
+      <a
+        href="/"
+        class="gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Site logo"
+      >
+        <img class="web-header__logo" src="/images/lockup.svg" alt="web.dev" />
+      </a>
+
+      <div class="web-header__middle">
+        <div class="web-header__links">
+          <a
+            href="/learn"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Learn"
+          >
+            Learn
+          </a>
+
+          <a
+            href="/measure"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Measure"
+          >
+            Measure
+          </a>
+
+          <a
+            href="/blog"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Blog"
+          >
+            Blog
+          </a>
+
+          <a
+            href="/about"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: About"
+          >
+            About
+          </a>
+        </div>
+      </div>
+
+      <web-profile-switcher-container></web-profile-switcher-container>
+    </web-header>
+
+    <web-side-nav>
+      <a
+        href="/learn"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Learn"
+      >
+        Learn
+      </a>
+      <a
+        href="/measure"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Measure"
+      >
+        Measure
+      </a>
+      <a
+        href="/blog"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Blog"
+      >
+        Blog
+      </a>
+      <a
+        href="/about"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: About"
+      >
+        About
+      </a>
+    </web-side-nav>
+
     <main>
       <div id="content">
         {{ content | safe }}
