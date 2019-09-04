@@ -18,6 +18,7 @@ module.exports = [
       format: "iife",
       entryFileNames: outputPattern,
       chunkFileNames: outputPattern,
+      sourcemap: true,
     },
     watch: {
       clearScreen: false,
