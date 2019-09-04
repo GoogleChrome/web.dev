@@ -42,6 +42,9 @@ const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
+const tagsDir = 'src/site/_includes/components/tags';
+const {Image, Figure} = require(`./${tagsDir}/Image`);
+
 const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
@@ -143,6 +146,12 @@ module.exports = function(config) {
   config.addShortcode('ShareAction', ShareAction);
   config.addShortcode('SubscribeAction', SubscribeAction);
   config.addShortcode('YouTube', YouTube);
+
+  //----------------------------------------------------------------------------
+  // CUSTOM TAGS
+  //----------------------------------------------------------------------------
+  config.addNunjucksTag('Image', Image);
+  config.addNunjucksTag('Figure', Figure);
 
   https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
