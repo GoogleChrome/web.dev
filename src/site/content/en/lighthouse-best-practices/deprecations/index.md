@@ -20,8 +20,8 @@ after they're removed causes errors on your site.
   <img class="w-screenshot" src="deprecations.png" alt="Lighthouse audit shows usage of deprecated APIs">
 </figure>
 
-Lighthouse collects the deprecated API warnings that Chrome logs
-to the DevTools Console and includes them in the Lighthouse repot as warnings.
+Lighthouse includes all deprecated API warnings that Chrome logs
+to the DevTools Console.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
@@ -30,9 +30,9 @@ to the DevTools Console and includes them in the Lighthouse repot as warnings.
 Go to
 [Chrome Platform Status](https://www.chromestatus.com/features#deprecated) and
 expand the entries for the APIs that you're using
-to learn more about why the APIs are deprecated,
-as well as how to replace them.
+to learn why the APIs are deprecated and how to replace them.
 
 ## Resources
 
-[Source code for **Uses deprecated APIs** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/deprecations.js)
+- [Source code for **Uses deprecated APIs** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/deprecations.js)
+- [Chrome Platform Status](https://www.chromestatus.com/features#deprecated)
