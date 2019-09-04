@@ -6,12 +6,11 @@ date: 2019-08-28
 authors:
   - demianrenzulli
 description: |
-    Learn about rel=prefetch resource hint and how to use it.
+    Learn about rel="prefetch" resource hint and how to use it.
 tags:
   - post
   - performance
   - fast  
-draft: true
 ---
 
 Research shows that [faster load times result in higher conversion rates](https://wpostats.com/) and better user experiences. If you have insight into how users move through your website and which pages they will likely visit next, you can improve load times of future navigations by downloading the resources for those pages ahead of time.
@@ -40,13 +39,15 @@ Prefetch HTML documents when subsequent pages are predictable, so that when a li
 
 For example, in a product listing page, you can prefetch the page for the most popular product in the list. In some cases, the next navigation is even easier to anticipate—on a shopping cart page, the likelihood of a user visiting the checkout page is usually high which makes it a good candidate for prefetching.
 
+{% Aside %}
 eBay implemented prefetching for the first five results on a search page to speed up future pages loads and saw a positive impact on conversion rates.
+{% endAside %}
 
 ### Prefetching static assets
 
 Prefetch static assets, like scripts or stylesheets, when subsequent sections the user might visit can be predicted. This is especially useful when those assets are shared across many pages.
 
-For example, Netflix takes advantage of the time users spend on logged-out pages, to prefetch libraries that will be used once users log in. Thanks to this, they [reduced Time to Interactive by 30% for future navigations](https://medium.com/dev-channel/a-netflix-web-performance-case-study-c0bcde26a9d9).
+For example, Netflix takes advantage of the time users spend on logged-out pages, to prefetch React, which will be used once users log in. Thanks to this, they [reduced Time to Interactive by 30% for future navigations](https://medium.com/dev-channel/a-netflix-web-performance-case-study-c0bcde26a9d9).
 
 {% Aside 'gotchas' %}
 At the time of this writing, it is possible to share prefetched resources among pages served from different origins. When [Double-keyed HTTP cache](https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/6KKXv1PqPZ0/oguPntMGDgAJ) ships, this will only work for top-level navigations and same-origin subresources, but it won't be possible to reuse prefetched subresources among different origins. This means that, if `a.com` prefetches the resource `b.com/library.js`, it won't be available in `c.com` cache. Some browsers, such as WebKit-based ones, already [partition caches and HTML5 storage](https://webkit.org/blog/7675/intelligent-tracking-prevention/) for all third-party domains.
@@ -126,7 +127,9 @@ You can also implement smarter prefetching with libraries that use `prefetch` un
 
 Both quicklink and Guess.js use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to avoid prefetching if a user is on a slow network or has [`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data) turned on.
 
+{% Aside %}
 A wine company Jabong implemented prefetching with quicklink and achieved 2.7 s faster Time To Interactive on future pages.
+{% endAside %}
 
 ## Prefetching under the hood
 
