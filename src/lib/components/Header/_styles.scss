@@ -1,0 +1,131 @@
+/*
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/global';
+@import '../../../styles/tools/breakpoints';
+@import '../../../styles/tools/mixins';
+
+web-header {
+  align-items: center;
+  background: $WHITE;
+  box-shadow: 0 1px 2px 0 rgba($GREY_800, .3), 0 2px 6px 2px rgba($GREY_800, .15);
+  color: $PRIMARY_TEXT_COLOR;
+  contain: layout;
+  display: flex;
+  font-size: 14px;
+  height: 64px;
+  padding: 0 24px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+
+  .web-header__hamburger-btn {
+    -webkit-tap-highlight-color: transparent;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: rgba($BLACK, .65);
+    display: inline-block;
+    height: auto;
+    line-height: 1;
+    margin: 0 8px 0 -8px;
+    padding: 8px;
+    transition: color $TRANSITION_SPEED;
+    width: auto;
+
+    @include bp(md) {
+      display: none;
+    }
+  }
+
+  .web-header__hamburger-btn:hover,
+  .web-header__hamburger-btn:focus,
+  .web-header__hamburger-btn:active {
+    color: rgba($BLACK, .87);
+  }
+
+  .web-header__hamburger-btn::before {
+    @include font-material-icon();
+    content: 'menu';
+    display: inline-block;
+    height: 26px;
+    width: 24px;
+  }
+
+  .web-header__logo {
+    height: 30px;
+    width: 125px;
+  }
+
+  .web-header__middle {
+    display: flex;
+    flex: 1;
+    height: 100%;
+  }
+
+  .web-header__links {
+    display: none;
+    flex: 1;
+    height: 100%;
+    margin-left: 48px;
+
+    @include bp(md) {
+      display: flex;
+    }
+  }
+
+  .web-header__link {
+    align-items: center;
+    color: $PRIMARY_TEXT_COLOR;
+    display: flex;
+    font-weight: 500;
+    margin: 0;
+    padding: 0 24px;
+    position: relative;
+  }
+
+  .web-header__link:hover,
+  .web-header__link:focus,
+  .web-header__link:active {
+    text-decoration: none;
+    outline: 0;
+  }
+
+  .web-header__link:hover {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .04);
+  }
+
+  .web-header__link:focus {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+  }
+
+  .web-header__link:active {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+  }
+
+  .web-header__link[data-active]::after {
+    background: $WEB_PRIMARY_COLOR;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}

@@ -1,0 +1,159 @@
+/**
+ *
+ * Copyright 2019 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/global';
+@import '../../../styles/tools/breakpoints';
+@import '../../../styles/tools/mixins';
+
+body.web-side-nav--expanded {
+  overflow: hidden;
+}
+
+web-side-nav:not(:defined) {
+  display: none;
+}
+
+web-side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 300;
+}
+
+web-side-nav::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($BLACK, .4);
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
+
+web-side-nav[expanded] {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+web-side-nav[expanded]::before {
+  opacity: 1;
+}
+
+.web-side-nav__container {
+  position: relative;
+  width: 90%;
+  max-width: 268px;
+  background: $WHITE;
+  height: 100%;
+  box-shadow: 2px 0 12px rgba($BLACK, .4);
+  transform: translateX(-110%);
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+web-side-nav[expanded] .web-side-nav__container {
+  transform: none;
+}
+
+web-side-nav[animatable] .web-side-nav__container {
+  transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
+
+web-side-nav[expanded][animatable] .web-side-nav__container {
+  transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
+}
+
+.web-side-nav__header {
+  padding: 16px;
+  border-bottom: 1px solid $GREY_300;
+}
+
+.web-side-nav__logo {
+  height: 30px;
+  width: 125px;
+}
+
+.web-side-nav__hide {
+  -webkit-tap-highlight-color: transparent;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: rgba($BLACK, .65);
+  display: inline-block;
+  height: auto;
+  line-height: 1;
+  margin: 0 8px 0 -4px;
+  padding: 8px;
+  width: auto;
+}
+
+.web-side-nav__hide::before {
+  @include font-material-icon();
+  content: 'close';
+}
+
+.web-side-nav__content {
+  padding-top: 32px;
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.web-side-nav__link {
+  border-bottom: 1px solid $GREY_300;
+  color: $GREY_700;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px 24px;
+}
+
+.web-side-nav__link:hover,
+.web-side-nav__link:focus,
+.web-side-nav__link:active {
+  text-decoration: none;
+  outline: 0;
+}
+
+.web-side-nav__link:hover {
+  background-color: rgba($PRIMARY_TEXT_COLOR, .04);
+}
+
+.web-side-nav__link:focus {
+  background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+}
+
+.web-side-nav__link:active {
+  background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+}
+
+.web-side-nav__link[data-active] {
+  color: $WEB_PRIMARY_COLOR;
+}
