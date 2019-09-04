@@ -18,7 +18,7 @@ import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
 import "wicg-inert";
-import {closeSideNav} from "../../actions";
+import {collapseSideNav} from "../../actions";
 
 class SideNav extends BaseElement {
   static get properties() {
@@ -46,6 +46,7 @@ class SideNav extends BaseElement {
     this.onTransitionEnd = this.onTransitionEnd.bind(this);
     this.drag = this.drag.bind(this);
     this.onStateChanged = this.onStateChanged.bind(this);
+    this.onKeyUp = this.onKeyUp.bind(this);
   }
 
   render() {
@@ -80,10 +81,15 @@ class SideNav extends BaseElement {
     `;
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    this.tabIndex = -1;
+    store.subscribe(this.onStateChanged);
+  }
+
   firstUpdated() {
     this.sideNavContainerEl = this.querySelector(".web-side-nav__container");
     this.addEventListeners();
-    store.subscribe(this.onStateChanged);
     this.onStateChanged();
   }
 
@@ -155,6 +161,18 @@ class SideNav extends BaseElement {
 
   onTransitionEnd() {
     this.animatable = false;
+    // If the SideNav is expanded we need to move focus into the element so
+    // folks using a screen reader or switch can access it.
+    if (this.expanded_) {
+      this.focus();
+    } else {
+      // When the SideNav is collapsed, we need to restore focus to the
+      // hamburger button in the header. It might be more techincally pure to
+      // use a unistore action for this, but it feels like a lot of ceremony
+      // for a small behavior.
+      document.querySelector("web-header").manageFocus();
+    }
+    this.inert = !this.expanded_;
   }
 
   onCloseSideNav() {
@@ -162,7 +180,14 @@ class SideNav extends BaseElement {
     // setting expanded = false.
     // The closeSideNav() action will inform other page elements that they
     // should un-inert themselves.
-    closeSideNav();
+    collapseSideNav();
+  }
+
+  onKeyUp(e) {
+    if (e.key === "Escape") {
+      collapseSideNav();
+      document.removeEventListener("keyup", this.onKeyUp);
+    }
   }
 
   set expanded(val) {
@@ -171,14 +196,12 @@ class SideNav extends BaseElement {
     }
 
     const oldVal = this.expanded_;
-    this.animatable = true;
-    this.addEventListener("transitionend", this.onTransitionEnd, {once: true});
     this.expanded_ = val;
+    this.animatable = true;
     if (this.expanded_) {
-      this.inert = false;
-    } else {
-      this.inert = true;
+      document.addEventListener("keyup", this.onKeyUp);
     }
+    this.addEventListener("transitionend", this.onTransitionEnd, {once: true});
     this.requestUpdate("expanded", oldVal);
   }
 

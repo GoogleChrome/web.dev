@@ -14,6 +14,7 @@ import "./components/Codelab";
 import "./components/Header";
 import "./components/SideNav";
 import {store} from "./store";
+import "focus-visible";
 
 // Run as long-lived router w/ history & "<a>" bindings
 // Also immediately calls `run()` handler for current location

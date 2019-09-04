@@ -118,7 +118,7 @@ export const requestFetchReports = store.action((state, url, startDate) => {
   });
 });
 
-export const openSideNav = store.action(() => {
+export const expandSideNav = store.action(() => {
   document.body.classList.add("web-side-nav--expanded");
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");
@@ -127,7 +127,7 @@ export const openSideNav = store.action(() => {
   return {isSideNavExpanded: true};
 });
 
-export const closeSideNav = store.action(() => {
+export const collapseSideNav = store.action(() => {
   document.body.classList.remove("web-side-nav--expanded");
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");

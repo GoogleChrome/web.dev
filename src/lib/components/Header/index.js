@@ -18,13 +18,16 @@
  * @fileoverview A responsive header that can trigger a side-nav.
  */
 
-import {BaseElement} from "../BaseElement";
-import {openSideNav} from "../../actions";
+import {expandSideNav} from "../../actions";
 
-class Header extends BaseElement {
-  firstUpdated() {
+class Header extends HTMLElement {
+  connectedCallback() {
     this.hamburgerBtn = this.querySelector(".web-header__hamburger-btn");
-    this.hamburgerBtn.addEventListener("click", openSideNav);
+    this.hamburgerBtn.addEventListener("click", expandSideNav);
+  }
+
+  manageFocus() {
+    this.hamburgerBtn.focus();
   }
 }
 
