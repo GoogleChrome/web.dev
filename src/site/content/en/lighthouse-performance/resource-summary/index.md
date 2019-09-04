@@ -20,7 +20,7 @@ were made and how much data was transferred while your page loaded.
 </figure>
 
 {% Aside %}
-  The **Requests** and **Transfer Size** values for the **Total** row is computed by adding the values
+  The **Requests** and **Transfer Size** values for the **Total** row are computed by adding the values
   for the **Image**, **Script**, **Font**, **Stylesheet**, **Other**, **Document**, and **Media**
   rows. The **Third-party** column does not factor into the **Total** row's values. Its purpose is
   to make you aware of how many of the total requests and how much of the total transfer size came
@@ -31,11 +31,10 @@ were made and how much data was transferred while your page loaded.
 {% Aside %}
   Like all of the **Diagnostics** audits, the **Keep request counts low and transfer sizes small**
   audit does not directly affect your **Performance** score. However, reducing request counts or
-  transfer sizes may improve any or all of your **Performance** metrics, which does have a direct
-  effect on your **Performance** score.
+  transfer sizes may improve other **Performance** metrics.
 {% endAside %}
 
-## How high resource counts and large transfer sizes affect load performance
+## How to reduce resource counts and transfer sizes
 
 The effect of high resource counts or large transfer sizes on load performance depends on what
 type of resource is being requested.
@@ -48,7 +47,7 @@ type of resource is being requested.
 {% endAside %}
 
 Requests for CSS and JavaScript files are render-blocking by default. In other words, 
-**browsers can't render content to the screen until all CSS and JavaScript requests are finished.** 
+browsers can't render content to the screen until all CSS and JavaScript requests are finished.
 If any of these files is hosted on a slow server, that single slow server can delay the entire
 rendering process. See [Render-Blocking CSS][css] and [Parser-blocking versus asynchronous 
 JavaScript][js] for more details on why CSS and JavaScript are render-blocking.
