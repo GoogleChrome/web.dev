@@ -6,7 +6,7 @@ date: 2019-08-28
 authors:
   - demianrenzulli
 description: |
-    Learn about rel="prefetch" resource hint and how to use it.
+    Learn about rel=prefetch resource hint and how to use it.
 tags:
   - post
   - performance
