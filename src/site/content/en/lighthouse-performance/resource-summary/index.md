@@ -9,7 +9,7 @@ web_lighthouse:
 ---
 
 The **Keep request counts low and transfer sizes small** audit tells you how many network requests 
-were made while your page loaded, as well as the total amount of data transferred.
+were made and how much data was transferred while your page loaded.
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="resource-summary.jpg" 
