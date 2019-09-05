@@ -28,21 +28,22 @@ To detect vulnerable libraries, Lighthouse:
 
 - Runs [Library Detector For Chrome](https://www.npmjs.com/package/js-library-detector).
 - Checks the list of detected libraries against
-[Snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all).
+[snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all).
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## Stop using these JavaScript libraries
-
-An intruder can scan your entire site using a web crawler.
+## Stop using insecure JavaScript libraries
 
 Stop using each of the libraries that Lighthouse flags.
 If the library has released a newer version that fixes the vulnerability,
-upgrade to that version, or consider using a different library.
+upgrade to that version.
+If the library hasn't released a new version or is no longer maintained,
+consider using a different library.
 
-See [Snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all)
+See [snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all)
 to learn more about each library's vulnerability.
 
 ## Resources
 
-[Source code for **Includes front-end JavaScript libraries with known security vulnerabilities** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [Source code for **Includes front-end JavaScript libraries with known security vulnerabilities** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-vulnerable-libraries.js)
+- [snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all)
