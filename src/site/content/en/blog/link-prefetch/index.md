@@ -20,7 +20,7 @@ This guide explains how to achieve that with `<link rel=prefetch>`, a [resource 
 
 ## Improve navigations with `rel=prefetch`
 
-Adding `<link rel=prefetch>` to a web page tells the browser to download entire pages, or some of the resources (like scripts or CSS files), that the user might need in the future. This can improve metrics like [First Contentful Paint](https://web.dev/first-contentful-paint) and [Time to Interactive](https://web.dev/interactive/) and can often make subsequent navigations appear to load instantly.
+Adding `<link rel=prefetch>` to a web page tells the browser to download entire pages, or some of the resources (like scripts or CSS files), that the user might need in the future. This can improve metrics like [First Contentful Paint](/first-contentful-paint) and [Time to Interactive](/interactive/) and can often make subsequent navigations appear to load instantly.
 
 ```html
 <link rel="prefetch" href="index.html" as="document">
@@ -28,7 +28,7 @@ Adding `<link rel=prefetch>` to a web page tells the browser to download entire 
 
 ![A diagram showing how link prefetch works.](prefetch.png)
 
-The `prefetch` hint consumes extra bytes for resources that are not immediately needed, so this technique needs to be applied thoughtfully; only prefetch resources when you are confident that users will need them. Consider not prefetching when users are on slow connections. You can detect that with the [Network Information API](https://web.dev/adaptive-serving-based-on-network-quality/).
+The `prefetch` hint consumes extra bytes for resources that are not immediately needed, so this technique needs to be applied thoughtfully; only prefetch resources when you are confident that users will need them. Consider not prefetching when users are on slow connections. You can detect that with the [Network Information API](/adaptive-serving-based-on-network-quality/).
 
 There are different ways to determine which links to prefetch. The simplest one is to prefetch the first link or the first few links on the current page. There are also libraries that use more sophisticated approaches, explained later in this post.
 
@@ -56,7 +56,7 @@ At the time of this writing, it is possible to share prefetched resources among 
 
 ### Prefetching on-demand JavaScript chunks
 
-[Code-splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles allows you to initially load only parts of an app and lazy-load the rest. If you're using this technique, you can apply prefetch to routes or components that are not immediately necessary but will likely be requested soon.
+[Code-splitting](/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles allows you to initially load only parts of an app and lazy-load the rest. If you're using this technique, you can apply prefetch to routes or components that are not immediately necessary but will likely be requested soon.
 
 For example, if you have a page that contains a button that opens a dialog box which contains an emoji picker, you can divide it into three JavaScript chunks—home, dialog and picker. Home and dialog could be initially loaded, while the picker could be loaded on-demand. Tools like webpack allow you to instruct the browser to prefetch these on-demand chunks.
 
@@ -124,7 +124,7 @@ This tells webpack to inject the `<link rel=”prefetch”>` tag into the HTML d
 You can also implement smarter prefetching with libraries that use `prefetch` under the hood:
 
 - [quicklink](https://github.com/GoogleChromeLabs/quicklink) uses [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to detect when links come into the viewport and prefetches linked resources during [idle time](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback). Bonus: quicklink weighs less than 1 KB!
-- [Guess.js](https://github.com/guess-js) uses analytics reports to build a predictive model that is used to [smartly prefetch](https://web.dev/predictive-prefetching/) only what the user is likely to need.
+- [Guess.js](https://github.com/guess-js) uses analytics reports to build a predictive model that is used to [smartly prefetch](/predictive-prefetching/) only what the user is likely to need.
 
 Both quicklink and Guess.js use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to avoid prefetching if a user is on a slow network or has [`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data) turned on.
 
