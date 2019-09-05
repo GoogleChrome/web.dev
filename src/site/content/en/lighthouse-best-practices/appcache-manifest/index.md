@@ -17,7 +17,7 @@ is [deprecated](https://html.spec.whatwg.org/multipage/browsers.html#offline).
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that use the Application Cache:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="appcache-manifest.png" alt="Lighthouse audit showing document uses the Application Cache">
+  <img class="w-screenshot" src="appcache-manifest.png" alt="Lighthouse audit showing that a page uses the Application Cache">
 </figure>
 
 This audit fails when Lighthouse finds a reference to
@@ -35,20 +35,24 @@ For example, this markup causes the audit to fail:
 ## Use the Cache API instead of the Application Cache
 
 To pass this audit,
-remove the manifest from your document,
+remove the manifest from your page,
 and use the
-[service worker Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) instead.
+[Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache)
+via a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/)
+instead.
 
-To help migrate from the Application Cache to service workers,
+To migrate from the Application Cache to service workers,
 consider using the
 [sw-appcache-behavior library](https://github.com/GoogleChrome/sw-appcache-behavior).
 This library generates a service-worker-based implementation of the behavior
 defined in an Application Cache manifest.
 
-See the [URL Responds With a 200 When Offline](/works-offline) audit
-reference for more resources on using service workers to make your site work
+See the [Current page responds with a 200 when offline](/works-offline) post
+for more information about using service workers to make your site work
 offline.
 
 ## Resources
 
-[Source code for **Uses Application Cache** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/appcache-manifest.js)
+- [Source code for **Uses Application Cache** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/appcache-manifest.js)
+- MDN's [Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) page
+- [Current page responds with a 200 when offline](/works-offline)
