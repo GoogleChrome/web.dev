@@ -1,6 +1,6 @@
 ---
 layout: codelab
-title: Two ways to prefetch <link> tags and HTTP headers
+title: "Two ways to prefetch: <link> tags and HTTP headers"
 authors:
   - demianrenzulli
 description: |
