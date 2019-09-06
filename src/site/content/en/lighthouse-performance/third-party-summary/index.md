@@ -10,8 +10,12 @@ web_lighthouse:
 
 To add an advertising network, social media button, A/B test, or analytics service to your page,
 you usually need to add a third-party script to your HTML. These [third-party scripts can
-significantly affect your page load performance](/third-party-javascript/). Lighthouse flags pages
-that have too much third-party code:
+significantly affect your page load performance](/third-party-javascript/).
+
+## How the Lighthouse audit for third-party code fails
+
+Lighthouse flags pages that have third-party code which blocks the [main thread] for 250&nbsp;ms or
+longer:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="third-party-summary.png" 
@@ -21,12 +25,10 @@ that have too much third-party code:
   </figcaption>
 </figure>
 
-## How the Lighthouse audit for third-party code fails
-
 A third-party script is any script hosted on a domain that's different than the domain of the URL
 that you audited with Lighthouse. As the page loads, Lighthouse calculates how long each of the
-third-party scripts blocks the main thread. This audit fails when the total blocking time is
-greater than 250&nbsp;ms.
+third-party scripts blocks the main thread. If the total blocking time is greater than 250&nbsp;ms
+the audit fails.
 
 ## How to reduce the impact of third-party code
 
@@ -39,3 +41,5 @@ optimization strategies.
 
 - [Source code for the **Reduce the impact of third-party code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-summary.js)
 - [Loading Third-Party JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)
+
+[main thread]: https://developer.mozilla.org/en-US/docs/Glossary/Main_thread
