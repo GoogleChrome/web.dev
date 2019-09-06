@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Document doesn't have a <title> element
+title: Document doesn't have a title element
 description: |
   Learn about the "Document doesn't have a <title> element"
   Lighthouse audit.
