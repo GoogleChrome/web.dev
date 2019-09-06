@@ -54,8 +54,8 @@ the files that are delivered to the browser. The way to do this is using the
 ```html
 <video>
   <source src="myWebmVideo.webm" type="video/webm">
-  <source src="myh265Video.mp4" type='video/mp4; codecs="hvc1"'>
-  <source src="myh264Video.mp4" type='video/mp4; codecs="avc1"'>
+  <source src="myh265Video.mp4" type="video/mp4">
+  <source src="myh264Video.mp4" type="video/mp4">
 </video>
 ```
 
