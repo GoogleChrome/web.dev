@@ -4,8 +4,8 @@ title: "Two ways to prefetch: <link> tags and HTTP headers"
 authors:
   - demianrenzulli
 description: |
-  In this codelab, learn how to improve the performance of a page by prefetching resources.
-date: 2019-00-04
+  Learn how to speed up future navigations by prefetching resources.
+date: 2019-09-12
 glitch: two-ways-to-prefetch
 ---
 
@@ -34,7 +34,7 @@ To improve navigation, insert a `prefetch` tag in the landing page to prefetch t
 
 - Add the following `<link>` element to the head of the `views/index.html` file:
 
-```html/7
+```html/7-7/
 <!doctype html>
   <html>
     <head>
@@ -71,7 +71,7 @@ The page is kept in the [HTTP cache](https://developer.mozilla.org/en-US/docs/We
 
 Take a look at the **Network** panel. There are two differences compared to the initial network trace:
 
-- The **Size** column shows "prefetch cache", which means this resource was  retrieved from the browser's cache rather than the network.
+- The **Size** column shows "prefetch cache", which means this resource was retrieved from the browser's cache rather than the network.
 - The **Time** column shows that the time it takes for the document to load is now about 10 ms.
 
 This is approximately a 98% reduction compared to the previous version, which took about 600 ms.
@@ -98,7 +98,7 @@ To implement adaptive prefetching, first remove the `<link rel="prefetch">` tag 
 
 Then add the following code to `public/script.js` to declare a function that dynamically injects the `prefetch` tag when the user is on a fast connection:
 
-```js
+```js/0-14/
 function injectLinkPrefetchIn4g(url) { 
 	if (window.navigator.connection.effectiveType === '4g') { 
 		//generate link prefetch tag 
@@ -121,7 +121,7 @@ The function works as follows:
 
 Next add `script.js` to `views/index.html`, just before the closing `</body>` tag:
 
-```html/2
+```html/2-2/
 <body>
       ...
       <script src="/script.js"></script>
@@ -133,7 +133,7 @@ Requesting `script.js` at the end of the page ensures that it will be loaded and
 
 To make sure that the prefetching doesn't interfere with critical resources for the current page, add the following code snippet to call `injectLinkPrefetchIn4g()` on the `window.load` event:
 
-```html/4-7
+```html/4-7/
 <body>
       ...
       <script src="/script.js"></script>
@@ -175,7 +175,7 @@ Add an HTTP `Link` header for `style-product.css` in the server response for the
 1. Open the `server.js` file and look for the `get()` handler for the root url: `/`.
 1. Add the following line at the beginning of the handler:
 
-```js/1
+```js/1-1/
 app.get('/', function(request, response) {
 	response.set('Link', '</style-product.css>; rel=prefetch');
 	response.sendFile(__dirname + '/views/index.html');
@@ -190,11 +190,11 @@ The `style-product.css` is now prefetched at the lowest priority after the landi
 
 <img class="w-screenshot" src="./network-panel-six.png" alt="Network panel showing style-product.css prefetched.">
 
-Navigate to the product page by clicking **Buy now**. Take a look at the **Network** panel:
+To navigate to the product page, click **Buy now**. Take a look at the **Network** panel:
 
 <img class="w-screenshot" src="./network-panel-seven.png" alt="Network panel showing style-product.css retrieved from prefetch cache.">
 
-The `style-product.css` file was retrieved from the "prefetch cache" and it took only 12 ms to load.
+The `style-product.css` file is retrieved from the "prefetch cache" and it took only 12 ms to load.
 
 {% Aside %}
 When using HTTP `Link` header, you can decide whether to prefetch depending on the network conditions based on the information available in [client hints](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/client-hints/).

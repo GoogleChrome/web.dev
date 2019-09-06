@@ -2,7 +2,7 @@
 title: Prefetch resources to speed up future navigations
 subhead: |
     Learn about rel=prefetch resource hint and how to use it.
-date: 2019-08-28
+date: 2019-09-12
 authors:
   - demianrenzulli
 description: |
@@ -11,7 +11,7 @@ tags:
   - post
   - performance
   - fast  
-draft: true
+codelabs: codelab-two-ways-to-prefetch
 ---
 
 Research shows that [faster load times result in higher conversion rates](https://wpostats.com/) and better user experiences. If you have insight into how users move through your website and which pages they will likely visit next, you can improve load times of future navigations by downloading the resources for those pages ahead of time.
