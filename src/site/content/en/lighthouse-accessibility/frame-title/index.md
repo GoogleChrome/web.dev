@@ -3,6 +3,7 @@ layout: post
 title: Ensure IFrame and frame elements contain a non-empty title attribute
 description: |
   Learn about frame-title audit.
+date: 2019-05-02
 web_lighthouse:
   - frame-title
 ---

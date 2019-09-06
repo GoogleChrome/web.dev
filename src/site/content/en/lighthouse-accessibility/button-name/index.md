@@ -3,6 +3,7 @@ layout: post
 title: Ensure buttons have discernible text
 description: |
   Learn about button-name audit.
+date: 2019-05-02
 web_lighthouse:
   - button-name
 ---

@@ -3,6 +3,7 @@ layout: post
 title: Ensure all child dd and dt elements have a dl parent
 description: |
   Learn about dlitem audit.
+date: 2019-05-02
 web_lighthouse:
   - dlitem
 ---

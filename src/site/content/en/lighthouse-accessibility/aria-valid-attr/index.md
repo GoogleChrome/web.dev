@@ -3,6 +3,7 @@ layout: post
 title: Ensure ARIA attributes are valid and not misspelled or non-existent
 description: |
   Learn about aria-valid-attr audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-valid-attr
 ---

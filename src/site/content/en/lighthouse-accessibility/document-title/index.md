@@ -3,6 +3,7 @@ layout: post
 title: Ensure that each HTML document contains a title
 description: |
   Learn about document-title audit.
+date: 2019-05-02
 web_lighthouse:
   - document-title
 ---

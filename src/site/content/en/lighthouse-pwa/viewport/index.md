@@ -3,6 +3,7 @@ layout: post
 title: Has a viewport tag with width or initial-scale
 description: |
   Learn about `viewport` audit.
+date: 2019-05-02
 web_lighthouse:
   - viewport
 ---

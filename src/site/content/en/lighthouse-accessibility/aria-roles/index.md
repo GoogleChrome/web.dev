@@ -3,6 +3,7 @@ layout: post
 title: Ensure ARIA role values are valid
 description: |
   Learn about aria-roles audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-roles
 ---

@@ -3,6 +3,7 @@ layout: post
 title: Manually check the visual layout of the page matches the DOM
 description: |
   Learn about visual-order-follows-dom audit.
+date: 2019-05-02
 web_lighthouse:
   - visual-order-follows-dom
 ---

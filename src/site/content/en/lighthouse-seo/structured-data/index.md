@@ -3,6 +3,7 @@ layout: post
 title: Manually check structured data is valid
 description: |
   Learn about structured-data audit.
+date: 2019-05-02
 web_lighthouse:
   - structured-data
 ---

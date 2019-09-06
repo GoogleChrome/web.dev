@@ -3,6 +3,7 @@ layout: post
 title: Ensure there's only one table header per table column
 description: |
   Learn about td-headers-attr audit.
+date: 2019-05-02
 web_lighthouse:
   - td-headers-attr
 ---

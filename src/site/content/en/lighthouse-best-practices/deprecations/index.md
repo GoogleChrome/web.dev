@@ -3,6 +3,7 @@ layout: post
 title: Page uses deprecated APIs
 description: |
   Learn about `deprecations` audit.
+date: 2019-05-02
 web_lighthouse:
   - deprecations
 ---

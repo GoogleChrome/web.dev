@@ -3,6 +3,7 @@ layout: post
 title: Ensure layout tables do not use data table elements
 description: |
   Learn about layout-table audit.
+date: 2019-05-02
 web_lighthouse:
   - layout-table
 ---

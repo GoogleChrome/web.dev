@@ -3,6 +3,7 @@ layout: post
 title: Page load is fast enough on mobile
 description: |
   Learn about `load-fast-enough-for-pwa` audit.
+date: 2019-05-02
 web_lighthouse:
   - load-fast-enough-for-pwa
 ---

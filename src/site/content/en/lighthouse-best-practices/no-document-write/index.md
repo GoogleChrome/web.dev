@@ -3,6 +3,7 @@ layout: post
 title: Page uses document.write()
 description: |
   Learn about `no-document-write` audit.
+date: 2019-05-02
 web_lighthouse:
   - no-document-write
 ---

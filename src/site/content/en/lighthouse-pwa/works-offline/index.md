@@ -3,6 +3,7 @@ layout: post
 title: Current page responds with a 200 when offline
 description: |
   Learn about `works-offline` audit.
+date: 2019-05-02
 web_lighthouse:
   - works-offline
 ---
