@@ -54,8 +54,8 @@ the files that are delivered to the browser. The way to do this is using the
 ```html
 <video>
   <source src="myWebmVideo.webm" type="video/webm">
-  <source src="myh264Video.mp4" type='video/mp4; codecs="hvc1"'>
-  <source src="myh265Video.mp4" type='video/mp4; codecs="avc1"'>
+  <source src="myh265Video.mp4" type="video/mp4">
+  <source src="myh264Video.mp4" type="video/mp4">
 </video>
 ```
 
@@ -67,16 +67,16 @@ here](https://developers.google.com/web/fundamentals/media/manipulating/applicat
 In the example above, the first choice is the WebM format ([which can be encoded
 with VP8 or VP9 codecs](https://www.webmproject.org/about/)), and is supported
 (at the time of writing) by 78% of [global
-users](https://caniuse.com/#search=webm). The second choice is the the h.265
+users](https://caniuse.com/#search=webm). The second choice is the the H.265
 codec of mp4, which is supported on [iOS and newer
 Macs](https://caniuse.com/#search=h265). These codecs are newer and have
 improved data compression, while delivering the same quality video as older
 video formats.
 
-The final choice in our list is h.264 mp4, which boasts support on 92% of all
+The final choice in our list is H.264 mp4, which boasts support on 92% of all
 [global
 users](https://caniuse.com/#search=h264),
-but is an older format, and as such, is generally a lot larger than webm or h265
+but is an older format, and as such, is generally a lot larger than WebM or H.265
 videos. In one example, you can see the difference for a two minute movie:
 
 <div class="w-table-wrapper">
@@ -97,11 +97,11 @@ videos. In one example, you can see the difference for a two minute movie:
         <th>4.2 MB</th>
       </tr>
       <tr>
-        <th>h.265</th>
+        <th>H.265</th>
         <th>5.4 MB</th>
       </tr>
       <tr>
-        <th>h.264</th>
+        <th>H.264</th>
         <th>16.1 MB</th>
       </tr>
     </tbody>
