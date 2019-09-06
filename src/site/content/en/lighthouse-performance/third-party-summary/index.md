@@ -14,7 +14,7 @@ significantly affect your page load performance](/third-party-javascript/).
 
 ## How the Lighthouse audit for third-party code fails
 
-Lighthouse flags pages that have third-party code which blocks the [main thread] for 250&nbsp;ms or
+Lighthouse flags pages that have third-party code that blocks the [main thread] for 250&nbsp;ms or
 longer:
 
 <figure class="w-figure">
