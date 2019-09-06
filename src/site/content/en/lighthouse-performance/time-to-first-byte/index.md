@@ -3,6 +3,7 @@ layout: post
 title: Reduce server response times (TTFB)
 description: |
   Learn about the time-to-first-byte audit.
+date: 2019-05-02
 web_lighthouse:
   - time-to-first-byte
 ---

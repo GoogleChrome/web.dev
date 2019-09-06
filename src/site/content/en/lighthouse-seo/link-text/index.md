@@ -3,6 +3,7 @@ layout: post
 title: Links do not have descriptive text
 description: |
   Learn about link-text audit.
+date: 2019-05-02
 web_lighthouse:
   - link-text
 ---

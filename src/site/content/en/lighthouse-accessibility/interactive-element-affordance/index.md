@@ -3,6 +3,7 @@ layout: post
 title: Manually check interactive elements indicate their purpose and state
 description: |
   Learn about interactive-element-affordance audit.
+date: 2019-05-02
 web_lighthouse:
   - interactive-element-affordance
 ---

@@ -3,6 +3,7 @@ layout: post
 title: Document uses plugins
 description: |
   Learn about plugins audit.
+date: 2019-05-02
 web_lighthouse:
   - plugins
 ---

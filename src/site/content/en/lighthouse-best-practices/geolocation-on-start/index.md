@@ -3,6 +3,7 @@ layout: post
 title: Page requests geolocation on load
 description: |
   Learn about `geolocation-on-start` audit.
+date: 2019-05-02
 web_lighthouse:
   - geolocation-on-start
 ---

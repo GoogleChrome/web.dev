@@ -3,6 +3,7 @@ layout: post
 title: Page is blocked from indexing
 description: |
   Learn about is-crawable audit.
+date: 2019-05-02
 web_lighthouse:
   - is-crawable
 ---

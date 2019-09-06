@@ -3,6 +3,7 @@ layout: post
 title: Defer offscreen images
 description: |
   Learn about the offscreen-images audit.
+date: 2019-05-02
 web_lighthouse:
   - offscreen-images
 ---

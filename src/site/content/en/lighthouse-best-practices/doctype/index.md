@@ -3,6 +3,7 @@ layout: post
 title: Document missing doctype
 description: |
   Learn about `doctype` audit.
+date: 2019-05-02
 web_lighthouse:
   - doctype
 ---

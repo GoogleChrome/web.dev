@@ -3,6 +3,7 @@ layout: post
 title: Diagnostic audit that lists all JavaScript libraries
 description: |
   Learn about `js-libraries` audit.
+date: 2019-05-02
 web_lighthouse:
   - js-libraries
 ---

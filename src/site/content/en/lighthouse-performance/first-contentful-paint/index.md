@@ -3,6 +3,7 @@ layout: post
 title: First Contentful Paint
 description: |
   Learn about the first-contentful-paint audit.
+date: 2019-05-02
 web_lighthouse:
   - first-contentful-paint
 ---

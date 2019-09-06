@@ -3,6 +3,7 @@ layout: post
 title: Ensure child roles are contained within required parent roles
 description: |
   Learn about aria-required-parent audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-required-parent
 ---

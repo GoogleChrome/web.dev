@@ -3,6 +3,7 @@ layout: post
 title: Avoid multiple page redirects
 description: |
   Learn about `redirects-http` audit.
+date: 2019-05-02
 web_lighthouse:
   - redirects-http
 ---

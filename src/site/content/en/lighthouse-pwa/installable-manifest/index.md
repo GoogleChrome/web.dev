@@ -3,6 +3,7 @@ layout: post
 title: User can be prompted to install the web app
 description: |
   Learn about `installable-manifest` audit.
+date: 2019-05-02
 web_lighthouse:
   - installable-manifest
 ---

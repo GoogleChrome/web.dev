@@ -3,6 +3,7 @@ layout: post
 title: Properly size images
 description: |
   Learn about the uses-responsive-images audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-responsive-images
 ---

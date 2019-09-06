@@ -4,6 +4,7 @@ title: Keep request counts low and transfer sizes small
 description: |
   An overview of how high resource counts and large transfer sizes affect load performance, 
   and strategies for reducing request counts and transfer sizes.
+date: 2019-05-02
 web_lighthouse:
   - resource-summary
 ---

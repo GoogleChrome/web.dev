@@ -3,6 +3,7 @@ layout: post
 title: Ensure text remains visible during webfont loads
 description: |
   Learn about the font-display audit.
+date: 2019-05-02
 web_lighthouse:
   - font-display
 ---

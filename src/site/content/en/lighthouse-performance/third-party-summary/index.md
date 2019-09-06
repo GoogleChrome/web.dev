@@ -4,6 +4,7 @@ title: Reduce the impact of third-party code
 description: |
   Learn how third-party code, like advertising networks and analytics services, affects page load performance,
   and how you can optimize third-party code.
+date: 2019-05-02
 web_lighthouse:
   - third-party-summary
 ---

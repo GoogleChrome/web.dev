@@ -3,6 +3,7 @@ layout: post
 title: Links to cross-origin destinations are unsafe
 description: |
   Learn about `external-anchors-use-rel-noopener` audit.
+date: 2019-05-02
 web_lighthouse:
   - external-anchors-use-rel-noopener
 ---

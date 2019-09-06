@@ -3,6 +3,7 @@ layout: post
 title: Ensure the lang attribute of the html element has a valid value
 description: |
   Learn about html-lang-valid audit.
+date: 2019-05-02
 web_lighthouse:
   - html-lang-valid
 ---
