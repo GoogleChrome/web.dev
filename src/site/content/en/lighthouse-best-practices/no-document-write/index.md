@@ -17,7 +17,7 @@ Chrome therefore blocks the execution of these scripts.
 ## How the Lighthouse `document.write()` audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags
-every instance of `document.write()` it encounters:
+all calls to `document.write()`:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">
@@ -40,12 +40,12 @@ article for more information.
 
 ## Avoid `document.write()`
 
-Review the uses of `document.write()` in your code. If it's being used
+Remove all uses of `document.write()` in your code. If it's being used
 to inject third-party scripts, try using
 [asynchronous loading](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)
 instead.
 
-If the third-party code itself is using `document.write()`,
+If third-party code is using `document.write()`,
 there are a couple approaches to try:
 - Add an `async` attribute to the script element.
 - Add the script element using DOM APIs
