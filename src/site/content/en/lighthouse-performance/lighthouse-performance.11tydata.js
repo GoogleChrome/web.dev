@@ -40,6 +40,7 @@ module.exports = {
           'redirects',
           'uses-rel-preload',
           'efficient-animated-content',
+          'third-party-summary',
         ],
       },
       {
