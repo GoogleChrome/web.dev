@@ -3,6 +3,7 @@ layout: post
 title: Ensure lists are structured correctly
 description: |
   Learn about list audit.
+date: 2019-05-02
 web_lighthouse:
   - list
 ---

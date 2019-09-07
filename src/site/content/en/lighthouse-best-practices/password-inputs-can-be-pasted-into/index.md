@@ -3,6 +3,7 @@ layout: post
 title: Page stops users from pasting into password fields
 description: |
   Learn about `password-inputs-can-be-pasted-into` audit.
+date: 2019-05-02
 web_lighthouse:
   - password-inputs-can-be-pasted-into
 ---

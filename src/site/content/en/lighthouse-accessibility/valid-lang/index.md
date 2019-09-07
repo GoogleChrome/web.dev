@@ -3,6 +3,7 @@ layout: post
 title: Ensure all lang attributes have a valid value
 description: |
   Learn about valid-lang audit.
+date: 2019-05-02
 web_lighthouse:
   - valid-lange
 ---

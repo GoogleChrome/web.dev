@@ -3,6 +3,7 @@ layout: post
 title: Ensure tabindex attribute values are not greater than 0
 description: |
   Learn about tabindex audit.
+date: 2019-05-02
 web_lighthouse:
   - tabindex
 ---

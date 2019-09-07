@@ -3,6 +3,7 @@ layout: post
 title: Tap targets are not sized appropriately
 description: |
   Learn about the "Tap targets are not sized appropriately" Lighthouse audit.
+date: 2019-05-02
 updated: 2019-08-21
 web_lighthouse:
   - tap-targets

@@ -12,6 +12,11 @@
     </head>
     <body>
       {% include 'styles.njk' %}
+      {% if site.isBannerEnabled and site.banner %}
+        {% Banner %}
+          {{site.banner}}
+        {% endBanner %}
+      {% endif %}
       {{ content | safe }}
       <link rel="alternate" href="/feed.xml" title="web.dev feed" type="application/atom+xml">
       <devsite-content-footer
@@ -73,6 +78,11 @@
                 <article class="devsite-article-inner">
                   <div class="devsite-article-body clearfix">
                     {% include 'styles.njk' %}
+                    {% if site.isBannerEnabled and site.banner %}
+                      {% Banner %}
+                        {{site.banner}}
+                      {% endBanner %}
+                    {% endif %}
                     {{ content | safe }}
                   </div>
                 </article>

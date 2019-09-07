@@ -3,6 +3,7 @@ layout: post
 title: Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content
 description: |
   Learn about bypass audit.
+date: 2019-05-02
 web_lighthouse:
   - bypass
 ---

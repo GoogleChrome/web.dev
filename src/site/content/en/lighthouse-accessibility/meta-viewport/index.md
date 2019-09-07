@@ -3,6 +3,7 @@ layout: post
 title: Ensure the viewport doesn't disable text scaling and zooming
 description: |
   Learn about meta-viewport audit.
+date: 2019-05-02
 web_lighthouse:
   - meta-viewport
 ---

@@ -3,6 +3,7 @@ layout: post
 title: Does not provide a valid apple-touch-icon
 description: |
   How to specify what icon should appear on iOS home screens for your Progressive Web App.
+date: 2019-08-26
 web_lighthouse:
   - apple-touch-icon
 codelabs: codelab-apple-touch-icon

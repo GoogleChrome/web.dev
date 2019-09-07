@@ -3,6 +3,7 @@ layout: post
 title: Ensure every HTML document has a lang attribute
 description: |
   Learn about html-has-lang audit.
+date: 2019-05-02
 web_lighthouse:
   - html-has-lang
 ---

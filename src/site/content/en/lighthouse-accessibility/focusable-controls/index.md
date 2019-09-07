@@ -3,6 +3,7 @@ layout: post
 title: Manually check custom interactive controls are keyboard focusable and display a focus indicator
 description: |
   Learn about focusable-controls audit.
+date: 2019-05-02
 web_lighthouse:
   - focusable-controls
 ---

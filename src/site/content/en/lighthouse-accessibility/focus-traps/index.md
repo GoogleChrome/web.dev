@@ -3,6 +3,7 @@ layout: post
 title: Manually check users can't accidentally trap their focus
 description: |
   Learn about focus-traps audit.
+date: 2019-05-02
 web_lighthouse:
   - focus-traps
 ---

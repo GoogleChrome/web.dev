@@ -3,6 +3,7 @@ layout: post
 title: Content is not sized correctly for the viewport
 description: |
   Learn about `content-width` audit.
+date: 2019-05-02
 web_lighthouse:
   - content-width
 ---

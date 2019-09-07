@@ -3,6 +3,7 @@ layout: post
 title: Ensure ARIA attributes have valid values
 description: |
   Learn about aria-valid-attr-value audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-valid-attr-value
 ---

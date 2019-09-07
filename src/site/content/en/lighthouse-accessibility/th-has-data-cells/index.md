@@ -3,6 +3,7 @@ layout: post
 title: Ensure each table header has data cells
 description: |
   Learn about th-has-data-cells audit.
+date: 2019-05-02
 web_lighthouse:
   - th-has-data-cells
 ---

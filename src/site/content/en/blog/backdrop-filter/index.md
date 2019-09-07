@@ -3,6 +3,7 @@ title: "Create OS-style backgrounds with backdrop-filter"
 subhead: |
   Blurring and color shifting behind an element.
 date: 2019-07-26
+updated: 2019-08-29
 authors:
   - adamargyle
   - joemedley
@@ -29,7 +30,8 @@ Historically, these techniques were difficult to implement on the web, requiring
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-kitchen_sink.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-kitchen_sink2.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-kitchen_sink2.mp4" type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     A demonstration of the filter functions for <code>backdrop-filter</code>. Try the example on <a href="https://codepen.io/robinrendle/pen/LmzLEL" target="_blank">CodePen</a>.
@@ -111,7 +113,8 @@ In the following example, the frosted effect is achieved by combining color and 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-rgb.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-rgb2.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-rgb2.mp4" type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption">
     Try this example for yourself in <a href="https://codepen.io/netsi1964/pen/JqBLPK" target="_blank">CodePen</a>.
@@ -132,7 +135,8 @@ In the following example, each of the four panes has a different combination of 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-ambient_blur.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-ambient_blur2.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-ambient_blur2.mp4" type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption">
     Try this example for yourself in <a href="https://codepen.io/pepf/pen/GqZkdj" target="_blank">CodePen</a>.
@@ -152,7 +156,8 @@ This example shows how to blur a semi-transparent background to make text readab
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal2.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-modal2.mp4" type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption">
     Try this <a href="https://mfreed7.github.io/backdrop-filter-feature/examples/scrollable.html" target="_blank">example</a> for yourself.
@@ -178,7 +183,8 @@ As stated earlier, `backdrop-filter` allows performant effects that would be dif
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color2.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/backdrop-filter/backdrop_filter-invert_color2.mp4" type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption">
     Try this example from <a href="https://www.chenhuijing.com/#%F0%9F%91%9F">Chen Hui Jing</a> in <a href="https://tympanus.net/codrops-playground/huijing/Qqpwg5Iy/editor" target="_blank">Codrops</a>.

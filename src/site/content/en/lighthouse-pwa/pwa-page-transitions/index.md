@@ -3,6 +3,7 @@ layout: post
 title: Page transitions don't feel like they block on the network
 description: |
   Learn about `pwa-page-transitions` audit.
+date: 2019-05-02
 web_lighthouse:
   - pwa-page-transitions
 ---

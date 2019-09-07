@@ -3,6 +3,7 @@ layout: post
 title: Ensure dl elements are structured correctly
 description: |
   Learn about definition-list audit.
+date: 2019-05-02
 web_lighthouse:
   - definition-list
 ---
