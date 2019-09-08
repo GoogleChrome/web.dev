@@ -43,7 +43,7 @@ categories:
 
 Planning for accessibility means thinking about users who are experiencing some
 type of impairment or disability in one or more of these categories. Bear
-in mind that that experience might be non-physical or temporary—for instance,
+in mind that experience might be non-physical or temporary—for instance,
 trying to read a screen outside during a bright, sunny day or operating a
 device one-handed while carrying a cup of coffee.
 
