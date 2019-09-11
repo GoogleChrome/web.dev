@@ -153,7 +153,7 @@ module.exports = function(config) {
   config.addNunjucksTag('Image', Image);
   config.addNunjucksTag('Figure', Figure);
 
-  https://www.11ty.io/docs/config/#data-deep-merge
+  // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
 
   // https://www.11ty.io/docs/config/#configuration-options
