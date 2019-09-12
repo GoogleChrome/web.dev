@@ -17,6 +17,7 @@ tags:
   - post # post is a required tag for the article to show up in the blog.
   - houdini
   - css
+  - Chrome78
 ---
 
 CSS custom properties, also known as [CSS
@@ -27,8 +28,8 @@ hard to work with: they can take any value so they may be accidentally
 overridden with something unexpected, they always inherit their values from
 their parent, and you can't transition them. With Houdini's [CSS Properties and
 Values API Level 1](https://drafts.css-houdini.org/css-properties-values-api/),
-these shortcomings are transcended, making CSS custom properties incredibly
-powerful!
+now available in Chrome 78, ßthese shortcomings are transcended, making CSS
+custom properties incredibly powerful!
 
 ## What Is Houdini?
 
