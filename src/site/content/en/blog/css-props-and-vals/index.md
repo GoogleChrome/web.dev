@@ -67,7 +67,7 @@ ways. For example, consider what happens if you define `--my-color` with a URL.
 
 Here, because `--my-color` isn't typed, it doesn't know that a URL isn't a valid
 color value! When we use it, it falls back to default values (black for `color`,
-transparent for `background). With Houdini Props and Vals, custom properties can
+transparent for `background`). With Houdini Props and Vals, custom properties can
 be _registered_ so that the browser knows what it _should_ be!
 
 Now, the custom property `--my-color` is registered as a color! This tells the
@@ -82,7 +82,7 @@ property!
   <dt><code>name</code></dt>
   <dd>The name of the custom property. String.</dd>
   <dt><code>syntax</code></dt>
-  <dd>How to parse the custom property. You can find a complete list of possible values in the [CSS Values and Units](https://drafts.csswg.org/css-values-3/) specification. Defaults to <code>*</code>. String.</dd>
+  <dd>How to parse the custom property. You can find a complete list of possible values in the <a href="https://drafts.csswg.org/css-values-3/">CSS Values and Units</a> specification. Defaults to <code>*</code>. String.</dd>
   <dt><code>inherits</code></dt>
   <dd>Whether it inherits its parent’s value. Defaults to <code>true</code>. Boolean.</dd>
   <dt><code>initialValue</code></dt>
