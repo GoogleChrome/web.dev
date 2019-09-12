@@ -45,6 +45,7 @@ const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
+const indexedPosts = require(`./${collectionsDir}/indexed-posts`);
 
 const filtersDir = 'src/site/_filters';
 const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
@@ -99,6 +100,20 @@ module.exports = function(config) {
   config.addCollection('memoized', function(collection) {
     return memoize(collection.getAll());
   });
+  config.addCollection('indexed', function(collection) {
+    const posts = indexedPosts(collection);
+    return posts.map(({data, template}) => {
+      // eslint-disable-next-line
+      const content = template.frontMatter.content;
+      // TODO(samthor): Index full-text content by stripping Markdown and HTML.
+      return {
+        objectID: data.page.url,
+        title: data.title,
+        description: data.description,
+        _tags: data.tags,
+      };
+    });
+  });
 
   //----------------------------------------------------------------------------
   // FILTERS
@@ -140,7 +155,7 @@ module.exports = function(config) {
       data: '../_data',
       includes: '../_includes',
     },
-    templateFormats: ['njk', 'md'],
+    templateFormats: ['njk', 'md', 'ejs'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     // Because eleventy's passthroughFileCopy does not work with permalinks
