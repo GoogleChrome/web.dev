@@ -24,18 +24,18 @@ let you define your own properties in CSS and use their values throughout your
 CSS. While incredibly useful today, they have shortcomings that can make them
 hard to work with: they can take any value so they may be accidentally
 overridden with something unexpected, they always inherit their values from
-their parent, and you can’t transition them. With Houdini’s [CSS Properties and
+their parent, and you can't transition them. With Houdini's [CSS Properties and
 Values API Level 1](https://drafts.css-houdini.org/css-properties-values-api/),
 these shortcomings are transcended, making CSS custom properties incredibly
 powerful!
 
 ## What Is Houdini?
 
-Before talking about the new API, let’s talk about Houdini quickly. The CSS-TAG
+Before talking about the new API, let's talk about Houdini quickly. The CSS-TAG
 Houdini Task Force, better known as CSS Houdini or simply Houdini, exists to
-“develop features that explain the ‘magic’ of styling and layout on the web”.
+"develop features that explain the 'magic' of styling and layout on the web".
 The collection of [Houdini specifications](https://drafts.css-houdini.org/) are
-designed to open up the power of the browser’s rendering engine, allowing both
+designed to open up the power of the browser's rendering engine, allowing both
 deeper insight into our styles and the ability to extend our rendering engine.
 With this, typed CSS values in JavaScript and polyfilling or inventing new CSS
 without a performance hit are finally possible. Houdini has the potential to
@@ -53,7 +53,7 @@ using custom properties:
 }
 ```
 
-Because custom properties don’t have types, they can be overridden in unexpected
+Because custom properties don't have types, they can be overridden in unexpected
 ways. For example, consider what happens if you define `--my-color` with a URL.
 
 ```css
@@ -63,7 +63,7 @@ ways. For example, consider what happens if you define `--my-color` with a URL.
 }
 ```
 
-Here, because `--my-color` isn’t typed, it doesn’t know that a URL isn’t a valid
+Here, because `--my-color` isn't typed, it doesn't know that a URL isn't a valid
 color value! When we use it, it falls back to default values (black for `color`,
 transparent for `background). With Houdini Props and Vals, custom properties can
 be _registered_ so that the browser knows what it _should_ be!
@@ -91,10 +91,10 @@ Registering a property looks like this:
 
 ```js
 window.CSS.registerProperty({
-  name: ‘--my-color’
-  syntax: ‘<color>’,
+  name: '--my-color',
+  syntax: '<color>',
   inherits: false,
-  initialValue: ‘black’,
+  initialValue: 'black',
 });
 ```
 
@@ -117,16 +117,16 @@ types. These syntaxes can also be modified by using the following values
 ### Gotchas
 
 There are two gotchas with Houdini Props and Vals. The first is that, once
-defined, there’s no way to update an existing registered property, and trying to
-re-register a property will throw an error indicating that it’s already been
+defined, there's no way to update an existing registered property, and trying to
+re-register a property will throw an error indicating that it's already been
 defined.
 
-Second, unlike standard properties, registered properties aren’t validated when
-they’re parsed. Rather they’re validated when they’re computed. That means both
-that invalid values won’t appear as invalid when inspecting the element’s
-properties, and including an invalid property after a valid one won’t fall back
+Second, unlike standard properties, registered properties aren't validated when
+they're parsed. Rather they're validated when they're computed. That means both
+that invalid values won't appear as invalid when inspecting the element's
+properties, and including an invalid property after a valid one won't fall back
 to the valid one; an invalid property will, however, fall back to the registered
-property’s default.
+property's default.
 
 ## Animating custom properties
 
@@ -155,8 +155,8 @@ button:hover {
 </style>
 ```
 
-When you hover over the button, it’ll animate from red to green! Without
-registering the property, it’ll jump from one color to the other. This example
+When you hover over the button, it'll animate from red to green! Without
+registering the property, it'll jump from one color to the other. This example
 can be taken a step further, though, to animate CSS gradients! The following CSS
 can be written with the same registered property:
 
@@ -172,7 +172,7 @@ button:hover {
 }
 ```
 
-This will animate our custom property that’s part of the `linear-gradient`, thus
+This will animate our custom property that's part of the `linear-gradient`, thus
 animating our linear gradient. Check out the Glitch below to see the full code
 in action and play around with it yourself.
 
@@ -193,8 +193,8 @@ entirely new ways of working with and extending CSS. With the [Paint
 API](https://developers.google.com/web/updates/2018/01/paintapi) already shipped
 and now Custom Props and Vals, our creative toolbox is expanding, allowing us to
 define typed CSS properties and use them to create and animate new and exciting
-designs. There’s more on the way, too, in the [Houdini issue
+designs. There's more on the way, too, in the [Houdini issue
 queue](https://github.com/w3c/css-houdini-drafts/issues) where you can give
-feedback and see what’s next for Houdini. Houdini exists to develop features
-that explain the “magic” of styling and layout on the web, so get out there and
+feedback and see what's next for Houdini. Houdini exists to develop features
+that explain the "magic" of styling and layout on the web, so get out there and
 put those magical features to good use.
