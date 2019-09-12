@@ -1,17 +1,18 @@
 ---
-title: An example blog post
-subhead: A catchy subhead that previews the content.
+title: Smarter custom properties with Houdini’s new API
+subhead: CSS Properties and Values Level 1
 authors:
   - samrichard
 date: 2019-09-19
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
 hero: hero.jpg
-alt: A description of the hero image for screen reader users.
+alt: A black screen shows development work..
 
-description: |
-  This post is a test to demonstrate all of the components that can go into
-  an article. This description appears in the meta tag.
+description:
+  Though useful, CSS variables are hard to work with because they can take any
+  value and be overridden and you can’t use transitions with them. CSS Properties
+  and Values API Level 1 overcomes these issues.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - houdini
@@ -198,3 +199,5 @@ queue](https://github.com/w3c/css-houdini-drafts/issues) where you can give
 feedback and see what's next for Houdini. Houdini exists to develop features
 that explain the "magic" of styling and layout on the web, so get out there and
 put those magical features to good use.
+
+Photo by Maik Jonietz on Unsplash
