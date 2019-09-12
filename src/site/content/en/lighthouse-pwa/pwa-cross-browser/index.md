@@ -2,9 +2,11 @@
 layout: post
 title: Site works cross-browser
 description: |
-  Learn about `pwa-cross-browser` audit.
+  Learn how to use Workbox to make sure your web page works across browsers.
 web_lighthouse:
   - pwa-cross-browser
+date: 2019-05-04
+updated: 2019-09-19
 ---
 
 To reach the most number of users, sites should work across every major browser.
@@ -27,6 +29,6 @@ Learn more in [Workbox your high-level service worker toolkit](/workbox).
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
-## More information
+## Resources
 
-[Site doesn't work cross-browser audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/manual/pwa-cross-browser.js)
+[Source code for **Site works cross-browser** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/manual/pwa-cross-browser.js)

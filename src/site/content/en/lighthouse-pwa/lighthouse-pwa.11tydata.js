@@ -25,7 +25,6 @@ module.exports = {
           'is-on-https',
           'service-worker',
           'installable-manifest',
-          'apple-touch-icon',
         ],
       },
       {
@@ -37,6 +36,7 @@ module.exports = {
           'content-width',
           'viewport',
           'without-javascript',
+          'apple-touch-icon',
         ],
       },
       {

@@ -1,10 +1,13 @@
 ---
 layout: post
-title: Contains some content when JavaScript is not available
+title: Does not provide fallback content when JavaScript is not available
 description: |
-  Learn about `without-javascript` audit.
+  Learn how to make sure users can view at least some content on your web page
+  when JavaScript isn't available.
 web_lighthouse:
   - without-javascript
+date: 2019-05-04
+updated: 2019-09-19
 ---
 
 [Progressive Enhancement](https://en.wikipedia.org/wiki/Progressive_enhancement)
@@ -19,17 +22,15 @@ styling using CSS, or interactivity using JavaScript, can be layered on top for
 the browsers that support those technologies. But basic content and page
 functionality should not rely on CSS or JavaScript.
 
-Lighthouse flags pages that don't contain some content
+## How this Lighthouse audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages that don't contain some content
 when JavaScript is unavailable:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="without-javascript.png" alt="Lighthouse audit showing page doesn't contain some content when JS is unavailable">
-  <figcaption class="w-figcaption">
-    Page doesn't contain some content when JS is unavailable.
-  </figcaption>
+  <img class="w-screenshot" src="without-javascript.png" alt="Lighthouse audit showing page doesn't contain some content when JS is unavailable">
 </figure>
-
-## How this audit fails
 
 Lighthouse disables JavaScript on the page and then inspects the page's HTML. If
 the HTML is empty then the audit fails. If the HTML is not empty then the audit
@@ -37,7 +38,7 @@ passes.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
-## Recommendations
+## How to ensure your page has content without JavaScript
 
 Progressive enhancement is a large and contentious topic. One camp says that,
 in order to adhere to the strategy of progressive enhancement, pages should
@@ -68,6 +69,6 @@ To see how your site looks and performs when JavaScript is disabled, use
 Chrome DevTools' [Disable
 JavaScript](https://developers.google.com/web/tools/chrome-devtools/settings#disable-js) feature.
 
-## More information
+## Resources
 
-[Page doesn't contain content when JS unavailable audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/without-javascript.js)
+[Source code for **Does not provide fallback content when JavaScript is not available** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/without-javascript.js)

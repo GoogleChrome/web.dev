@@ -2,31 +2,31 @@
 layout: post
 title: Does not provide a valid apple-touch-icon
 description: |
-  How to specify what icon should appear on iOS home screens for your Progressive Web App.
+  Learn how to specify what icon your Progressive Web App displays on iOS home screens.
 web_lighthouse:
   - apple-touch-icon
 codelabs: codelab-apple-touch-icon
+date: 2019-08-27
+updated: 2019-09-19
 ---
 
-iOS Safari users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to 
+iOS Safari users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to
 their home screens. The icon that appears on the iOS home screen when the user adds a PWA is
-called the *Apple touch icon*. You can specify what icon your app should use by including a 
+called the *Apple touch icon*. You can specify what icon your app should use by including a
 `<link rel="apple-touch-icon" href="/example.png">` tag in the `<head>` of your
 page. If your page doesn't have this link tag, iOS generates an icon by taking a screenshot of
-the page content. In other words, instructing iOS to download an icon results in a more polished 
+the page content. In other words, instructing iOS to download an icon results in a more polished
 user experience.
 
-## How this audit fails
+## How the Lighthouse Apple touch icon audit fails
 
-This audit fails when Lighthouse doesn't find a `<link rel="apple-touch-icon" href="/example.png">` 
-tag in the `<head>` of the page. 
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages without a `<link rel="apple-touch-icon" href="/example.png">`
+tag in the `<head>`:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="apple-touch-icon.png" 
+  <img class="w-screenshot" src="apple-touch-icon.png"
        alt="Does not provide a valid apple-touch-icon">
-  <figcaption class="w-figcaption">
-    The <b>Does not provide a valid apple-touch-icon</b> audit
-  </figcaption>
 </figure>
 
 {% Aside %}
@@ -67,7 +67,8 @@ To provide a good user experience, make sure that:
 
 ## Resources
 
-- [Source code for the **Does not provide a valid `apple-touch-icon`** audit][source]
+- [Source code for **Does not provide a valid `apple-touch-icon`** audit][source]
+- [Discover what it takes to be installable](/discover-installable)
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch Icon</a>
 
 [a2hs]: https://support.apple.com/guide/shortcuts/run-shortcuts-from-the-ios-home-screen-apd735880972/ios#apd175362e63

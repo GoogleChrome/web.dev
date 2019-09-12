@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Configured for a custom splash screen
+title: Is not configured for a custom splash screen
 description: |
-  Learn about `splash-screen` audit.
+  Learn how to create a custom splash screen for your Progressive Web App.
 web_lighthouse:
   - splash-screen
+date: 2019-05-04
+updated: 2019-09-19
 ---
 
 A custom splash screen makes your progressive web app (PWA) feel more like a
@@ -17,16 +19,18 @@ custom background color and your PWA's icon instead.
 
 See [Adding a Splash Screen for Installed Web Apps in Chrome 47](https://developers.google.com/web/updates/2015/10/splashscreen) for more information.
 
-Lighthouse flags when the page isn't configured for a splash screen:
+## How the Lighthouse splash screen audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages that don't have a custom splash screen:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="splash-screen.png" alt="Lighthouse audit showing site isn't configured for a custom splash screen">
-  <figcaption class="w-figcaption">
-    Site isn't configured for a custom splash screen.
-  </figcaption>
+  <img class="w-screenshot" src="splash-screen.png" alt="Lighthouse audit showing site isn't configured for a custom splash screen">
 </figure>
 
-## Recommendations
+{% include 'content/lighthouse-pwa/scoring.njk' %}
+
+## How to create a custom splash screen
 
 Chrome for Android automatically shows your custom splash screen so long as
 you meet the following requirements in your web app manifest:
@@ -41,8 +45,6 @@ sizes should be included in your project. Lighthouse's opinion is that a
 single, 512px icon is sufficient, but other members of the Google Web
 Developer Relations team have different opinions.
 
-{% include 'content/lighthouse-pwa/scoring.njk' %}
+## Resources
 
-## More information
-
-[Page isn't configured for a splash screen audit source code](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)
+[Source code for **Is not configured for a custom splash screen** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/splash-screen.js)

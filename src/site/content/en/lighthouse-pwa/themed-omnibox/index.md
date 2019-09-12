@@ -1,24 +1,25 @@
 ---
 layout: post
-title: Sets an address-bar theme color
+title: Does not set a theme color for the address bar
 description: |
-  Learn about `themed-omnibox` audit.
+  Learn how to set an address bar theme color for your Progressive Web App.
 web_lighthouse:
   - themed-omnibox
+date: 2019-05-04
+updated: 2019-09-19
 ---
 
 Theming the browser's address bar to match your brand's colors provides
 a more immersive user experience.
-Lighthouse flags the page when the address bar isn't themed to the page's colors:
+
+## How the Lighthouse theme color audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages that don't apply a theme to the address bar:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="themed-omnibox.png" alt="Lighthouse audit showing address bar isn't themed to the page's colors">
-  <figcaption class="w-figcaption">
-    Address bar isn't themed to page's colors.
-  </figcaption>
+  <img class="w-screenshot" src="themed-omnibox.png" alt="Lighthouse audit showing address bar isn't themed to the page's colors">
 </figure>
-
-## How this audit fails
 
 The audit fails if Lighthouse doesn't find a `theme-color` meta tag in the page's
 HTML and a `theme_color` property in the Web App Manifest.
@@ -26,9 +27,7 @@ Lighthouse does not test whether the values are valid CSS color values.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
-## Recommendations
-
-To ensure that the address bar is always themed to your colors:
+## How to set a theme color for the address bar
 
 1. Add a `theme-color` meta tag to the HTML of every page you want to brand.
 2. Add the `theme_color` property to your Web App Manifest.
@@ -64,6 +63,6 @@ CSS color value.
 See [User can be prompted to install the web app](/installable-manifest)
 for more resources on adding a manifest to your app.
 
-## More information
+## Resources
 
-[Address bar isn't themed to page's color audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)
+[Source code for **Does not set a theme color for the address bar** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/themed-omnibox.js)

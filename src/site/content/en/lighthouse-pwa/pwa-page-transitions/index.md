@@ -2,9 +2,12 @@
 layout: post
 title: Page transitions don't feel like they block on the network
 description: |
-  Learn about `pwa-page-transitions` audit.
+  Learn how to make transitions between web pages feel responsive,
+  even on a slow network.
 web_lighthouse:
   - pwa-page-transitions
+date: 2019-05-04
+updated: 2019-09-19
 ---
 
 Transitions should feel snappy as you tap around, even on a slow network,
@@ -26,6 +29,6 @@ Use any content such as title or thumbnail already available while content loads
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
-## More information
+## Resources
 
-[Page transitions block on the network audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/manual/pwa-page-transitions.js)
+[Source code for **Page transitions don't feel like they block on the network** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/manual/pwa-page-transitions.js)

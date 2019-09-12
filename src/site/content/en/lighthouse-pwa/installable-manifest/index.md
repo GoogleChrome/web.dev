@@ -1,34 +1,33 @@
 ---
 layout: post
-title: User can be prompted to install the web app
+title: Web app manifest does not meet the installability requirements
 description: |
-  Learn about `installable-manifest` audit.
+  Learn how to make your Progressive Web App installable.
 web_lighthouse:
   - installable-manifest
+date: 2019-05-04
+updated: 2019-09-19
 ---
 
-The prompt to install a web app lets users add your app to their homescreen.
-Users that add apps to homescreens engage those apps more.
+The prompt to install a Progressive Web App (PWA) lets users add your app to their home screen.
+Users that add apps to home screens engage those apps more.
 Learn more in [Discover what it takes to be installable](/discover-installable/).
 
 For example, shortly after launching this feature,
 Twitter reported an average of 250K unique daily users
-launching their Twitter Lite progressive web app 4 times a day from the homescreen.
+launching their Twitter Lite progressive web app 4 times a day from the home screen.
 See
-[Increasing engagement with
-"Add to Homescreen" prompt and web push notifications](https://developers.google.com/web/showcase/2017/twitter#increasing_engagement_with_add_to_homescreen_prompt_and_web_push_notifications) for more on
+[Twitter Lite PWA Significantly Increases Engagement and Reduces Data Usage](https://developers.google.com/web/showcase/2017/twitter#increasing_engagement_with_add_to_homescreen_prompt_and_web_push_notifications) for more on
 Twitter's case study.
 
-Lighthouse flags when your page is missing an installable manifest:
+## How the Lighthouse web app manifest audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages missing an installable manifest:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="installable-manifest.png" alt="Lighthouse audit showing user can't install the web app from their homescreen">
-  <figcaption class="w-figcaption">
-    User can't install the web app from their homescreen.
-  </figcaption>
+  <img class="w-screenshot" src="installable-manifest.png" alt="Lighthouse audit showing user can't install the web app from their home screen">
 </figure>
-
-## How this audit fails
 
 This audit fails when the following criteria isn't met:
 
@@ -48,7 +47,7 @@ is not `true`.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
-## Recommendations
+## How to make your PWA installable
 
 In order for a user to be able to install your Progressive Web App,
 check that it meets the above criteria.
@@ -84,6 +83,6 @@ and the page specified in the `start_url` property of the web app manifest.
 
 Learn more in [Add a Web App Manifest](/add-manifest/).
 
-## More information
+## Resources
 
-[User can be prompted to install web app audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
+[Source code for **Web app manifest does not meet the installability requirements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/installable-manifest.js)
