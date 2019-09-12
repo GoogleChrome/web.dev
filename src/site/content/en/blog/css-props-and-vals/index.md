@@ -158,9 +158,11 @@ button:hover {
 ```
 
 When you hover over the button, it'll animate from red to green! Without
-registering the property, it'll jump from one color to the other. This example
-can be taken a step further, though, to animate CSS gradients! The following CSS
-can be written with the same registered property:
+registering the property, it'll jump from one color to the other Because,
+without being registered, fhe browser doesnt know what to expect between one
+value and the next and therefore can't guarentee the ability to transition themß.
+This example can be taken a step further, though, to animate CSS gradients! The
+following CSS can be written with the same registered property:
 
 ```css
 button {
