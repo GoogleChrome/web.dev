@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+require("dotenv").config();
+
 const algoliasearch = require("algoliasearch");
 const fs = require("fs");
 const log = require("fancy-log");
