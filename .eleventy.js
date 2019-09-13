@@ -107,7 +107,8 @@ module.exports = function(config) {
       const content = template.frontMatter.content;
       // TODO(samthor): Index full-text content by stripping Markdown and HTML.
       return {
-        objectID: data.page.url,
+        objectID: data.page.url + '#en', // hard-code language for now
+        language: 'en',
         title: data.title,
         description: data.description,
         _tags: data.tags,
@@ -155,7 +156,7 @@ module.exports = function(config) {
       data: '../_data',
       includes: '../_includes',
     },
-    templateFormats: ['njk', 'md', 'ejs'],
+    templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     // Because eleventy's passthroughFileCopy does not work with permalinks
