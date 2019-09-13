@@ -17,6 +17,27 @@
 const livePosts = require('../_filters/live-posts');
 const removeMarkdown = require('remove-markdown');
 
+/**
+ * Shrink the size of the given fulltext to fit within a certain limit, at the
+ * nearest found newline character.
+ *
+ * @param {string} fulltext
+ * @param {number=} limit
+ * @return {string}
+ */
+function limitText(fulltext, limit=7500) {
+  if (fulltext.length <= limit) {
+    return fulltext;
+  }
+
+  // Find the nearest prior newline to the 10k limit.
+  let newlineIndex = fulltext.lastIndexOf('\n', limit);
+  if (newlineIndex === -1) {
+    newlineIndex = limit;
+  }
+  return fulltext.slice(0, newlineIndex);
+}
+
 module.exports = (collection) => {
   const validTags = ['post', 'pathItem'];
   const eleventyPosts = collection
@@ -39,12 +60,22 @@ module.exports = (collection) => {
   // Convert 11ty-posts to a flat, indexable format.
   return eleventyPosts.map(({data, template}) => {
     const fulltext = removeMarkdown(template.frontMatter.content);
+
+    // Algolia has a limit of ~10k JSON on its records. For now, just trim fulltext to the nearest
+    // line break below ~7500 characters (allowing buffer).
+    // As of September 2019, this effects about 20 articles.
+    // https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/in-depth/index-and-records-size-and-usage-limitations/#record-size
+    const limited = limitText(fulltext);
+    if (limited.length !== fulltext.length) {
+      console.debug('trimmed article', data.page.url);
+    }
+
     return {
       objectID: data.page.url + '#' + lang,
       lang,
       title: data.title,
       description: data.description,
-      fulltext,
+      fulltext: limited,
       _tags: data.tags,
     };
   });
