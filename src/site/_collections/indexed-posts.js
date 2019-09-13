@@ -15,6 +15,7 @@
  */
 
 const livePosts = require('../_filters/live-posts');
+const removeMarkdown = require('remove-markdown');
 
 module.exports = (collection) => {
   const validTags = ['post', 'pathItem'];
@@ -32,17 +33,18 @@ module.exports = (collection) => {
     })
     .filter(livePosts);
 
+  // For now, hard-code language to English.
+  const lang = 'en';
+
   // Convert 11ty-posts to a flat, indexable format.
   return eleventyPosts.map(({data, template}) => {
-    // eslint-disable-next-line
-    const content = template.frontMatter.content;
-    console.info('got content', content);
-    // TODO(samthor): Index full-text content by stripping Markdown and HTML.
+    const fulltext = removeMarkdown(template.frontMatter.content);
     return {
-      objectID: data.page.url + '#en', // hard-code language for now
-      language: 'en',
+      objectID: data.page.url + '#' + lang,
+      lang,
       title: data.title,
       description: data.description,
+      fulltext,
       _tags: data.tags,
     };
   });
