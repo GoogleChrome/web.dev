@@ -101,19 +101,10 @@ module.exports = function(config) {
     return memoize(collection.getAll());
   });
   config.addCollection('indexed', function(collection) {
-    const posts = indexedPosts(collection);
-    return posts.map(({data, template}) => {
-      // eslint-disable-next-line
-      const content = template.frontMatter.content;
-      // TODO(samthor): Index full-text content by stripping Markdown and HTML.
-      return {
-        objectID: data.page.url + '#en', // hard-code language for now
-        language: 'en',
-        title: data.title,
-        description: data.description,
-        _tags: data.tags,
-      };
-    });
+    if (process.env.ELEVENTY_ENV === 'prod') {
+      return indexedPosts(collection);
+    }
+    return [];
   });
 
   //----------------------------------------------------------------------------

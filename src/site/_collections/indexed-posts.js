@@ -18,7 +18,7 @@ const livePosts = require('../_filters/live-posts');
 
 module.exports = (collection) => {
   const validTags = ['post', 'pathItem'];
-  return collection
+  const eleventyPosts = collection
     .getAll()
     .filter((item) => {
       // nb. There's no easy 'getFilteredByMultipleTag' method in Eleventy.
@@ -31,4 +31,19 @@ module.exports = (collection) => {
       return item.data.title && item.data.page.url;
     })
     .filter(livePosts);
+
+  // Convert 11ty-posts to a flat, indexable format.
+  return eleventyPosts.map(({data, template}) => {
+    // eslint-disable-next-line
+    const content = template.frontMatter.content;
+    console.info('got content', content);
+    // TODO(samthor): Index full-text content by stripping Markdown and HTML.
+    return {
+      objectID: data.page.url + '#en', // hard-code language for now
+      language: 'en',
+      title: data.title,
+      description: data.description,
+      _tags: data.tags,
+    };
+  });
 };
