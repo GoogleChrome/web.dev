@@ -3,6 +3,7 @@ layout: post
 title: Page doesn't use passive event listeners to improve scrolling performance
 description: |
   Learn about `uses-passive-event-listeners` audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-passive-event-listeners
 ---

@@ -3,6 +3,7 @@ layout: post
 title: Uses HTTPS
 description: |
   Learn about `is-on-https` audit.
+date: 2019-05-02
 web_lighthouse:
   - is-on-https
 ---

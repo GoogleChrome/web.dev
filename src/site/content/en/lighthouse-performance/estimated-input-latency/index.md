@@ -3,6 +3,7 @@ layout: post
 title: Estimated Input Latency
 description: |
   Learn about the estimated-input-latency audit.
+date: 2019-05-02
 web_lighthouse:
   - estimated-input-latency
 ---

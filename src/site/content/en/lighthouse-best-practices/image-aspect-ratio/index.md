@@ -3,6 +3,7 @@ layout: post
 title: Images display with incorrect aspect ratio
 description: |
   Learn about `image-aspect-ration` audit.
+date: 2019-05-02
 web_lighthouse:
   - image-aspect-ration
 ---

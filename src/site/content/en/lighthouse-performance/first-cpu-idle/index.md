@@ -3,6 +3,7 @@ layout: post
 title: First CPU Idle
 description: |
   Learn about the first-cpu-idle audit.
+date: 2019-05-02
 web_lighthouse:
   - first-cpu-idle
 ---

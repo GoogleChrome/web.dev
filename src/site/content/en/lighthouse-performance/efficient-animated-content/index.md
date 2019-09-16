@@ -3,6 +3,7 @@ layout: post
 title: Use video formats for animated content
 description: |
   Learn about the efficient-animated-content audit.
+date: 2019-05-02
 web_lighthouse:
   - efficient-animated-content
 ---

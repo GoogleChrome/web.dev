@@ -40,6 +40,7 @@ module.exports = {
           'redirects',
           'uses-rel-preload',
           'efficient-animated-content',
+          'third-party-summary',
         ],
       },
       {
@@ -53,6 +54,7 @@ module.exports = {
           'bootup-time',
           'mainthread-work-breakdown',
           'font-display',
+          'resource-summary',
         ],
       },
     ],

@@ -3,6 +3,7 @@ layout: post
 title: Avoid multiple page redirects
 description: |
   Learn about the redirects audit.
+date: 2019-05-02
 web_lighthouse:
   - redirects
 ---
@@ -37,7 +38,7 @@ of the resource by hundreds of milliseconds.
 
 ## How to eliminate redirects
 
-Eliminate the redirects by upading the links to these resources.
+Eliminate the redirects by updating the links to these resources.
 Update the links to these resources.
 The links should point to the current locations of the resources.
 It's especially important to avoid redirects in resources

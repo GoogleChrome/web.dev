@@ -3,6 +3,7 @@ layout: post
 title: Manually check user's focus is directed to new content
 description: |
   Learn about managed-focus audit.
+date: 2019-05-02
 web_lighthouse:
   - managed-focus
 ---

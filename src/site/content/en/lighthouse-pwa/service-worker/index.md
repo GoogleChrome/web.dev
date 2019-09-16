@@ -3,6 +3,7 @@ layout: post
 title: Registers a service worker that controls page and start_url
 description: |
   Learn about `service-worker` audit.
+date: 2019-05-02
 web_lighthouse:
   - service-worker
 ---

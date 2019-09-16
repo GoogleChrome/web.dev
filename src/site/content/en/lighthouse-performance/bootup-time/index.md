@@ -3,6 +3,7 @@ layout: post
 title: Reduce JavaScript execution time
 description: |
   Learn about the bootup-time audit.
+date: 2019-05-02
 web_lighthouse:
   - bootup-time
 ---

@@ -3,6 +3,7 @@ layout: post
 title: Page has unsuccessful HTTP status code
 description: |
   Learn about http-status-code audit.
+date: 2019-05-02
 web_lighthouse:
   - http-status-code
 ---

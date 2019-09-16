@@ -3,6 +3,7 @@ layout: post
 title: Start URL responds with a 200 when offline
 description: |
   Learn about `offline-start-url` audit.
+date: 2019-05-02
 web_lighthouse:
   - offline-start-url
 ---

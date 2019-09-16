@@ -3,6 +3,7 @@ layout: post
 title: First Meaningful Paint
 description: |
   Learn about the first-meaningful-paint audit.
+date: 2019-05-02
 web_lighthouse:
   - first-meaningful-paint
 ---

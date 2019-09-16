@@ -3,6 +3,7 @@ layout: post
 title: Ensure timed refreshes do not exist
 description: |
   Learn about meta-refresh audit.
+date: 2019-05-02
 web_lighthouse:
   - meta-refresh
 ---
@@ -32,7 +33,7 @@ away from the user's focus.
 To avoid automatically refreshing the page,
 remove `<meta http-equiv="refresh">` from the page.
 Learn more in
-[Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.2/meta-refresh?application=lighthouse).
+[Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.3/meta-refresh?application=lighthouse).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -43,4 +44,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Do not use `<meta http-equiv="refresh">` audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-refresh.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

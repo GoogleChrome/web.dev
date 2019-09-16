@@ -3,6 +3,7 @@ layout: post
 title: Each page has a URL
 description: |
   Learn about `pwa-each-page-has-url` audit.
+date: 2019-05-02
 web_lighthouse:
   - pwa-each-page-has-url
 ---

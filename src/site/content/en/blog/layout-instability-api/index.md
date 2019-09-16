@@ -4,6 +4,7 @@ subhead: Detect unexpected layout shifts in JavaScript.
 authors:
   - philipwalton
 date: 2019-06-11
+updated: 2019-08-29
 hero: hero.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
@@ -34,10 +35,10 @@ frustration. But in some cases, they can actually cause real damage or harm.
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
     width="658" height="510">
     <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability.webm"
+      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.webm"
       type="video/webm; codecs=vp8">
     <source
-      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability.mp4"
+      src="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability2.mp4"
       type="video/mp4; codecs=h264">
   </video>
   <figcaption class="w-figcaption w-figcaption--fullbleed">

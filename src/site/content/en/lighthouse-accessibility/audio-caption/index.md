@@ -3,6 +3,7 @@ layout: post
 title: Ensure audio elements have captions
 description: |
   Learn about audio-caption audit.
+date: 2019-05-02
 web_lighthouse:
   - audio-caption
 ---
@@ -41,7 +42,7 @@ with attribute `kind="captions"`:
 ```
 
 Learn more in
-[`<audio>` elements must have a captions `<track>`](https://dequeuniversity.com/rules/axe/3.2/audio-caption).
+[`<audio>` elements must have a captions `<track>`](https://dequeuniversity.com/rules/axe/3.3/audio-caption).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -52,4 +53,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Audio elements have captions audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/audit-caption.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

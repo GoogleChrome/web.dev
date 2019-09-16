@@ -413,7 +413,7 @@
     "github": "tcmg",
     "twitter": "tcmg",
     "description": {
-      "en": "Chrome & Web Developer Relations Games Lead"
+      "en": "Tom is the Games Lead for the Chrome & Web Developer Relations team at Google"
     }
   },
   "ilyagrigorik": {
@@ -1485,5 +1485,15 @@
     },
     "country": "US",
     "homepage": "https://sherwinski.com"
+  },
+  "dougsillars": {
+    "name": {
+      "given": "Doug",
+      "family": "Sillars"
+    },
+    "github": "Dougsillars",
+    "twitter": "dougsillars",
+    "country": "US",
+    "homepage": "https://dougsillars.com"
   }
 }
