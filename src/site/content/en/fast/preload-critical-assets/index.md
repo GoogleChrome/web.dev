@@ -104,7 +104,7 @@ Some types of resources, such as fonts, are loaded in [anonymous mode](https://w
 Fonts preloaded without the `crossorigin` attribute will be fetched twice! 
 {% endAside %}
 
-`<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-type), which contains the[ MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn't support the specified resource type, it will ignore the `<link rel="preload">`.
+`<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-type), which contains the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn't support the specified resource type, it will ignore the `<link rel="preload">`.
 
 {% Aside 'codelab' %}
 [Improve the performance of a page by preloading web fonts](/codelab-preload-web-fonts).
