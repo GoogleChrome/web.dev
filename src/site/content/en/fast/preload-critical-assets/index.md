@@ -34,7 +34,7 @@ By preloading a certain resource, you are telling the browser that you would lik
 <figcaption class="w-figcaption">In this example, Pacifico font is preloaded, so the download happens in parallel with the stylesheet.</figcaption>
 <figure>
 
-The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the **Preload key requests** audit to identify which resources to preload.
+The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the [**Preload key requests**](/uses-rel-preload) audit to identify which resources to preload.
 
 <img class="w-screenshot" src="./preload-requests.png" alt="Lighthouse's preload key requests audit.">
 
@@ -47,10 +47,10 @@ You can preload resources by adding a `<link>` tag with `rel="preload"` to the h
 The browser caches preloaded resources so they are available immediately when needed. (It doesn't execute the scripts or apply the stylesheets.)
 
 {% Aside %}
-After implementing preloading, many sites, including [Shopify, Financial Times and Treebo, saw 1-second improvements](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) in user-centric metrics such as [Time to Interactive](./interactive/) and [First Contentful Paint](./first-contentful-paint/).
+After implementing preloading, many sites, including [Shopify, Financial Times and Treebo, saw 1-second improvements](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) in user-centric metrics such as [Time to Interactive](/interactive) and [First Contentful Paint](/first-contentful-paint).
 {% endAside %}
 
-Resource hints, for example, [`preconnect`](./preconnect-and-dns-prefetch/)and [`prefetch`](./link-prefetch/), are executed as the browser sees fit. The `preload`, on the other hand, is mandatory for the browser. Modern browsers are already pretty good at prioritizing resources, that's why it's important to use `preload` sparingly and only preload the most critical resources. 
+Resource hints, for example, [`preconnect`](/preconnect-and-dns-prefetch)and [`prefetch`](/link-prefetch), are executed as the browser sees fit. The `preload`, on the other hand, is mandatory for the browser. Modern browsers are already pretty good at prioritizing resources, that's why it's important to use `preload` sparingly and only preload the most critical resources. 
 
 Unused preloads trigger a Console warning in Chrome, approximately 3 seconds after the `load` event.
 
@@ -68,11 +68,11 @@ Fonts defined with [`@font-face`](https://developers.google.com/web/fundamentals
 
 ### Preloading CSS files
 
-If you are using the [critical CSS approach](./extract-critical-css/), you split your CSS into two parts. The critical CSS required for rendering the above-the-fold content is inlined in the `<head>` of the document and non-critical CSS is usually lazy-loaded with JavaScript. Waiting for JavaScript to execute before loading non-critical CSS can cause delays in rendering when users scroll, so it's a good idea to use `<link rel="preload">` to initiate the download sooner.
+If you are using the [critical CSS approach](/extract-critical-css), you split your CSS into two parts. The critical CSS required for rendering the above-the-fold content is inlined in the `<head>` of the document and non-critical CSS is usually lazy-loaded with JavaScript. Waiting for JavaScript to execute before loading non-critical CSS can cause delays in rendering when users scroll, so it's a good idea to use `<link rel="preload">` to initiate the download sooner.
 
 ### Preloading JavaScript files 
 
-Because browsers don't execute preloaded files, preloading is useful to separate fetching from [execution](./bootup-time/) which can improve metrics such as Time to Interactive. Preloading works best if you [code-split](./reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
+Because browsers don't execute preloaded files, preloading is useful to separate fetching from [execution](/bootup-time) which can improve metrics such as Time to Interactive. Preloading works best if you [code-split](/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
 
 ## How to implement rel=preload
 
@@ -116,8 +116,6 @@ You can also preload any type of resource via the [`Link` HTTP header](https://d
 
 A benefit of specifying `preload` in the HTTP Header is that the browser doesn't need to parse the document to discover it, which can offer small improvements in some cases. 
 
-
-
 ### Preloading JavaScript modules with webpack
 
 If you are using a module bundler that creates build files of your application, you need to check if it supports the injection of preload tags. With [webpack](https://webpack.js.org/) version 4.6.0 or later, preloading is supported through the use of [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) inside `import()`:
@@ -130,4 +128,4 @@ If you are using an older version of webpack, use a third-party plugin such as [
 
 ## Conclusion 
 
-To improve page speed, preload important resources that are discovered late by the browser. Preloading everything would be counterproductive so use `preload` sparingly and [measure the impact in the real-world](./fast#measure-performance-in-the-field).
+To improve page speed, preload important resources that are discovered late by the browser. Preloading everything would be counterproductive so use `preload` sparingly and [measure the impact in the real-world](/fast#measure-performance-in-the-field).
