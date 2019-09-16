@@ -42,4 +42,3 @@ Learn more in
 
 - [Source code for **Links do not have a discernible name** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
 - [Links must have discernible text](https://dequeuniversity.com/rules/axe/3.3/link-name)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)

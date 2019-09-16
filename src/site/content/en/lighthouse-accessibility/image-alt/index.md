@@ -45,15 +45,14 @@ give it an empty `alt=""` attribute to remove it from the accessibility tree:
 <img src="background.png" alt="">
 ```
 
-Learn more in [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.3/image-alt?application=lighthouse).
+Learn more in [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.3/image-alt).
 
 {% Aside 'note' %}
 You can also use ARIA labels to describe your images, for example,
 `<img aria-label="Audits set-up in Chrome DevTools" src="...">`
 See also
 [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and
-[Using the aria-labelledby attribute
-](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
+[Using the aria-labelledby attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
 ## Tips for writing effective `alt` text
@@ -68,4 +67,4 @@ Learn more in
 ## Resources
 
 - [Source code for **Image elements do not have `[alt]` attributes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.3/image-alt)

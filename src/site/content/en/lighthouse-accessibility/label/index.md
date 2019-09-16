@@ -55,4 +55,3 @@ See also [Label form elements](/labels-and-text-alternatives#label-form-elements
 
 - [Source code for **Form elements do not have associated labels** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
 - [Form `<input>` elements must have labels](https://dequeuniversity.com/rules/axe/3.3/label)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)

@@ -54,4 +54,4 @@ see [ARIA attributes must conform to valid values](https://dequeuniversity.com/r
 ## Resources
 
 - [Source code for **`[aria-*]` attributes are not valid or misspelled** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-valid-attr.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [ARIA attributes must conform to valid names](https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr)

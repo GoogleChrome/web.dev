@@ -39,4 +39,4 @@ Learn more in
 ## Resources
 
 - [Source code for **List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/listitem.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [`<li>` elements must be contained in a `<ul>` or `<ol>`](https://dequeuniversity.com/rules/axe/3.3/listitem)

@@ -65,4 +65,4 @@ See also [Ensures `<video>` elements have audio descriptions](/video-description
 ## Resources
 
 - [Source code for **`<video>` elements do not contain a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-caption.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [`<video>` elements must have a `<track>` for captions](https://dequeuniversity.com/rules/axe/3.3/video-caption)

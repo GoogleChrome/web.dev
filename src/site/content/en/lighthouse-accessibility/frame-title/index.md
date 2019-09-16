@@ -51,4 +51,4 @@ Learn more in
 
 - [Source code for **`<frame>` or `<iframe>` elements do not have a title** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
 - [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.3/frame-title)

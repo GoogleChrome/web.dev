@@ -40,4 +40,4 @@ Try the Color Contrast Analyzer in
 ## Resources
 
 - [Source code for **Background and foreground colors do not have a sufficient contrast ratio** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/color-contrast.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Text elements must have sufficient color contrast against the background](https://dequeuniversity.com/rules/axe/3.3/color-contrast)

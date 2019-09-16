@@ -45,7 +45,7 @@ without forcing the user to refresh the page to get out of the focus trap.
 
 For users who either cannot or choose not to use a mouse,
 keyboard navigation is the primary means of reaching everything on a screen.
-Good keyboarding experiences depend on a logical tab order and easily discernable focus styles.
+Good keyboarding experiences depend on a logical tab order and easily discernible focus styles.
 If a keyboard user gets trapped in a particular page element,
 they have no way of interacting with the page.
 

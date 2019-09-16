@@ -43,4 +43,4 @@ Learn more in [`<html>` element must have a lang attribute](https://dequeunivers
 ## Resources
 
 - [Source code for **`<html>` element does not have a `[lang]` attribute** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-has-lang.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [`<html>` element must have a lang attribute](https://dequeuniversity.com/rules/axe/3.3/html-has-lang)

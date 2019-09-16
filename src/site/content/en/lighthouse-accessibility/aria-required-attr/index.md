@@ -54,9 +54,9 @@ and check the required states and properties.
 Add the missing ARIA state or property to the given element.
 
 For more information on this audit,
-see [Required ARIA attributes must be provided](https://dequeuniversity.com/rules/axe/3.1/aria-required-attr?application=lighthouse).
+see [Required ARIA attributes must be provided](https://dequeuniversity.com/rules/axe/3.1/aria-required-attr).
 
 ## Resources
 
 - [Source code for **`[role]`s do not have all required `[aria-*]` attributes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-attr.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Required ARIA attributes must be provided](https://dequeuniversity.com/rules/axe/3.3/aria-required-attr)

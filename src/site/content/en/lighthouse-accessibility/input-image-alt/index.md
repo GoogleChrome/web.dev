@@ -67,4 +67,4 @@ Learn more in
 ## Resources
 
 - [Source code for **`<input type="image">` elements do not have `[alt]` text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/input-image-alt.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Image buttons must have alternate text](https://dequeuniversity.com/rules/axe/3.3/input-image-alt)

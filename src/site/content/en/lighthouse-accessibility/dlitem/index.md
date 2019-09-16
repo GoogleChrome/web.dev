@@ -43,9 +43,9 @@ For example:
 ```
 
 Learn more in
-[`<dt>` and `<dd>` elements must be contained by a `<dl>`](https://dequeuniversity.com/rules/axe/3.1/dlitem?application=lighthouse).
+[`<dt>` and `<dd>` elements must be contained by a `<dl>`](https://dequeuniversity.com/rules/axe/3.1/dlitem).
 
 ## Resources
 
 - [Source code for **Definition list items are not wrapped in `<dl>` elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/dlitem.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [`<dt>` and `<dd>` elements must be contained by a `<dl>`](https://dequeuniversity.com/rules/axe/3.1/dlitem)

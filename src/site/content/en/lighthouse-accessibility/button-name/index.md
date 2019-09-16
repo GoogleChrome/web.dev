@@ -51,4 +51,4 @@ Learn more in
 ## Resources
 
 - [Source code for **Buttons do not have an accessible name** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Buttons must have discernible text](https://dequeuniversity.com/rules/axe/3.3/button-name)

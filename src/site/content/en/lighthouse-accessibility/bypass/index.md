@@ -106,4 +106,4 @@ Learn more in
 ## Resources
 
 - [Source code for **The page does not contain a heading, skip link, or landmark region** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/bypass.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Page must have means to bypass repeated blocks](https://dequeuniversity.com/rules/axe/3.3/bypass)

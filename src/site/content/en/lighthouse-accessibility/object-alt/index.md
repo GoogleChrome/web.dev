@@ -50,8 +50,8 @@ Learn more in [Include text alternatives for images and objects](/labels-and-tex
 {% Aside 'note' %}
 You can also use `alt` and ARIA labels to describe object elements,
 for example,
-`<object type="application/pdf" data="/report.pdf alt="2019 Web Accessibility Report">`
-(see [&lt;object> elements must have alternate text](https://dequeuniversity.com/rules/axe/3.3/object-alt))
+`<object type="application/pdf" data="/report.pdf alt="2019 Web Accessibility Report">`.
+(See [&lt;object> elements must have alternate text](https://dequeuniversity.com/rules/axe/3.3/object-alt).)
 {% endAside %}
 
 ## Tips for writing effective `alt` text
@@ -67,4 +67,4 @@ Learn more in
 ## Resources
 
 - [Source code for **`<object>` elements do not have `[alt]` text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/object-alt.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [&lt;object> elements must have alternate text](https://dequeuniversity.com/rules/axe/3.3/object-alt)

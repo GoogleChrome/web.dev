@@ -62,9 +62,9 @@ So long as an attribute is listed for that role,
 you can use it.
 
 For more information on this audit,
-see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com/rules/axe/3.1/aria-allowed-attr?application=lighthouse).
+see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com/rules/axe/3.1/aria-allowed-attr).
 
 ## Resources
 
 - [Source code for **`[aria-*]` attributes do not match their roles** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-allowed-attr.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Elements must only use allowed ARIA attributes](https://dequeuniversity.com/rules/axe/3.3/aria-allowed-attr)

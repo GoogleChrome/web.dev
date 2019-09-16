@@ -28,9 +28,9 @@ Lighthouse flags timed refreshes:
 
 Remove `<meta http-equiv="refresh">` from the page.
 Learn more in
-[Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.3/meta-refresh?application=lighthouse).
+[Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.3/meta-refresh).
 
 ## Resources
 
 - [Source code for **The document uses `<meta http-equiv="refresh">`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-refresh.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.3/meta-refresh)

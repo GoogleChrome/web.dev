@@ -37,9 +37,9 @@ For example, this sets the language of the document to English:
 <html lang="en">
 ```
 
-Learn more in [lang attribute must have a valid value](https://dequeuniversity.com/rules/axe/3.3/valid-lang).
+Learn more in [`lang` attribute must have a valid value](https://dequeuniversity.com/rules/axe/3.3/valid-lang).
 
 ## Resources
 
 - [Source code for **`<html>` element does not have a valid value for its `[lang]` attribute** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-has-lang.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [`lang` attribute must have a valid value](https://dequeuniversity.com/rules/axe/3.3/valid-lang)

@@ -48,4 +48,4 @@ Learn more in
 ## Resources
 
 - [Source code for **`<dl>`s do not contain only properly ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/definition-list.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [`<dl>` elements must only directly contain properly-ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements](https://dequeuniversity.com/rules/axe/3.3/definition-list)

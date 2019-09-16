@@ -64,4 +64,4 @@ see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com
 ## Resources
 
 - [Source code for **Elements with an ARIA `[role]` that require children to contain a specific [role] are missing some or all of those required children** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Certain ARIA roles must contain particular children](https://dequeuniversity.com/rules/axe/3.3/aria-required-children)

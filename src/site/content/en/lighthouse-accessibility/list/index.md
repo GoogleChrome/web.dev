@@ -38,4 +38,4 @@ Learn more in
 ## Resources
 
 - [Source code for **Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`)** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/list.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [`<ul>` and `<ol>` must only directly contain `<li>`, `<script>` or `<template>` elements](https://dequeuniversity.com/rules/axe/3.3/list)

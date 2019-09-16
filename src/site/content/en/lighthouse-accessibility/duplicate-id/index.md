@@ -34,4 +34,4 @@ Learn more in
 ## Resources
 
 - [Source code for **`[id]` attributes on the page are not unique** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [ID attribute values must be unique](https://dequeuniversity.com/rules/axe/3.3/duplicate-id)

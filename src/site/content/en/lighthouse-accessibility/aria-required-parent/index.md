@@ -66,4 +66,4 @@ see [Certain ARIA roles must be contained by particular parent elements](https:/
 ## Resources
 
 - [Source code for **`[role]`s are not contained by their required parent element** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-parent.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Certain ARIA roles must be contained by particular parent elements](https://dequeuniversity.com/rules/axe/3.3/aria-required-parent)

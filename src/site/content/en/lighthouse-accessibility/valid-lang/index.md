@@ -34,4 +34,4 @@ Learn more in [lang attribute must have a valid value](https://dequeuniversity.c
 ## Resources
 
 - [Source code for **`[lang]` attributes do not have a valid value** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/valid-lang.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [lang attribute must have a valid value](https://dequeuniversity.com/rules/axe/3.3/valid-lang)

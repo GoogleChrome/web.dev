@@ -51,9 +51,9 @@ If you set `role=` to any value not appearing in the definitions list,
 the audit fails.
 
 For more information on this audit,
-see [ARIA roles used must conform to valid values](https://dequeuniversity.com/rules/axe/3.1/aria-roles?application=lighthouse).
+see [ARIA roles used must conform to valid values](https://dequeuniversity.com/rules/axe/3.1/aria-roles).
 
 ## Resources
 
 - [Source code for **`[role]` values are not valid** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-roles.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [ARIA roles used must conform to valid values](https://dequeuniversity.com/rules/axe/3.3/aria-roles)

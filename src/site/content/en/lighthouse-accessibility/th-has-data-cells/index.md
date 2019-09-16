@@ -95,4 +95,4 @@ Learn more in
 ## Resources
 
 - [Source code for **`<th>` elements and elements with `[role="columnheader"/"rowheader"]` do not have data cells they describe** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/th-has-data-cells.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [All `<th>` elements and elements with `role="columnheader"` or `role="rowheader"` must have data cells they describe](https://dequeuniversity.com/rules/axe/3.3/th-has-data-cells)

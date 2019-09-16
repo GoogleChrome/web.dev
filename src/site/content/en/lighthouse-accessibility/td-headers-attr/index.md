@@ -113,4 +113,4 @@ so that the table data aligns correctly with the table headers:
 ## Resources
 
 - [Source code for **Cells in a `<table>` element that use the `[headers]` attribute refer to an element `id` not found within the same table** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/td-headers-attr.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [All cells in a `<table>` element that use the headers attribute must only refer to other cells of that same `<table>`](https://dequeuniversity.com/rules/axe/3.3/td-headers-attr)
