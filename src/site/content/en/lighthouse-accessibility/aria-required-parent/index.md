@@ -1,9 +1,12 @@
 ---
 layout: post
-title: Ensure child roles are contained within required parent roles
+title: "[role]s are not contained by their required parent element"
 description: |
-  Learn about aria-required-parent audit.
+  Learn how to improve your web page's accessibility for screen reader users by
+  making sure that all elements with ARIA roles are contained by the required
+  parent element.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - aria-required-parent
 ---
@@ -16,18 +19,16 @@ each ARIA `role` supports a specific subset of `aria-*` attributes
 (see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
 Some ARIA child roles must be contained by specific parent roles
 to properly perform their intended accessibility functions.
-Lighthouse reports missing parenrts for these child roles:
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="aria-required-parent.png" alt="Lighthouse audit showing ARIA role missing required parent role">
-  <figcaption class="w-figcaption">
-    ARIA role missing required parent role.
-  </figcaption>
-</figure>
 
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
-## How Lighthouse finds missing parent roles
+## How Lighthouse identifies missing parent roles
+
+Lighthouse flags ARIA child roles that aren't contained by the required parent:
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="aria-required-parent.png" alt="Lighthouse audit showing ARIA role missing required parent role">
+</figure>
 
 Lighthouse uses the
 [WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
@@ -44,17 +45,16 @@ the audit fails.
 This makes sense,
 as it would be confusing to have a listitem without grouping into a list.
 
-## How this audit impacts overall Lighthouse score
-
-Lighthouse flags this as a low severity issue. It is important to fix, and
+This issue is important to fix, and
 probably indicates a mistaken assumption in your code. In the example above, the
 element would be announced as plain text content and its `listitem` role would
 be discarded.
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
+
 ## How to check for required parent roles
 
-To check for required parent roles
-refer to the [WAI ARIA Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
+Refer to the [WAI ARIA Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
 ARIA explicitly defines required parent roles.
 Link to the child role from the specification,
 and check the "required context role".
@@ -63,7 +63,7 @@ Make sure to include a parent role for that child role.
 For more information on this audit,
 see [Certain ARIA roles must be contained by particular parent elements](https://dequeuniversity.com/rules/axe/3.3/aria-required-parent).
 
-## More information
+## Resources
 
-- [ARIA child roles are contained within parent roles audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-parent.js)
+- [Source code for **`[role]`s are not contained by their required parent element** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-parent.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)

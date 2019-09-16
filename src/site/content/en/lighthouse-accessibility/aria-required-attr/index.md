@@ -1,9 +1,12 @@
 ---
 layout: post
-title: Ensure ARIA roles have required states and properties
+title: "[role]s do not have all required [aria-*] attributes"
 description: |
-  Learn about aria-required-attr audit.
+  Learn how to improve your web page's accessibility for screen reader users by
+  making sure that all elements with ARIA roles have the required ARIA
+  attributes.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - aria-required-attr
 ---
@@ -15,18 +18,16 @@ For these roles and attributes to make sense,
 each ARIA `role` supports a specific subset of `aria-*` attributes
 (see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
 Some ARIA roles have required attributes that describe the state of the element to screen readers.
-Lighthouse reports a role's missing required states and properties:
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="aria-required-attr.png" alt="Lighthouse audit showing ARIA role missing required states and properties">
-  <figcaption class="w-figcaption">
-    ARIA role missing required states and properties.
-  </figcaption>
-</figure>
 
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse identifies missing required states and properties
+
+Lighthouse flags ARIA roles that don't have the required states and properties:
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="aria-required-attr.png" alt="Lighthouse audit showing ARIA role missing required states and properties">
+</figure>
 
 Lighthouse uses the
 [WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
@@ -36,20 +37,17 @@ must have the required state and property defined.
 Lighthouse fails this audit,
 when it finds a role is missing it's required state and property.
 
-## How this audit impacts overall Lighthouse score
-
-Lighthouse flags this as a low severity issue.
-It is important to fix, and
-probably indicates a mistaken assumption in your code,
-but a missing required
-attribute won't break the element's role.
+A missing required attribute won't break the element's role.
 In the example above,
 the element is still announced as a heading and assigned a default level of `2`.
+However, this issue is still important to fix and
+probably indicates a mistaken assumption in your code.
 
-## How to check for required child roles
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-To check for required states and properties,
-refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
+## How to check that roles have all required states and properties
+
+Refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
 Link to the role from the specification,
 and check the required states and properties.
 
@@ -58,7 +56,7 @@ Add the missing ARIA state or property to the given element.
 For more information on this audit,
 see [Required ARIA attributes must be provided](https://dequeuniversity.com/rules/axe/3.1/aria-required-attr?application=lighthouse).
 
-## More information
+## Resources
 
-- [ARIA roles have required states and properties audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-attr.js)
+- [Source code for **`[role]`s do not have all required `[aria-*]` attributes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-attr.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)

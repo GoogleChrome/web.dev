@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Manually check interactive elements indicate their purpose and state
+title: Interactive elements indicate their purpose and state
 description: |
-  Learn about interactive-element-affordance audit.
+  Learn how to improve the accessibility of custom controls on your web page
+  by making their purpose and states clear to all users.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - interactive-element-affordance
 ---
@@ -33,7 +35,7 @@ Learn more in [Style focus](/style-focus).
 ## How to manually test with a screen reader
 
 Using a screen reader,
-navigate yor page and check that the screen reader is able
+navigate your page and check that the screen reader is able
 to announce the name of each interactive control,
 the role of that control, and the current interactive state.
 If the role of an element is unclear, and the state of the element is unclear,
@@ -53,6 +55,6 @@ helps people operate and navigate your site.
 These hints are called affordances.
 Providing affordances makes it possible for people to use your site on a wide variety of devices.
 
-## More information
+## Resources
 
-- [Check interactive elements indicate their purpose and state audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/interactive-element-affordance.js)
+[Source code for **Interactive elements indicate their purpose and state** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/interactive-element-affordance.js)

@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Manually check that headings don't skip levels
+title: Headings don't skip levels
 description: |
-  Learn about heading-levels audit.
+  Learn how to make sure screen reader users can easily navigate your web page
+  by correctly structuring your heading elements.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - heading-levels
 ---
@@ -11,7 +13,7 @@ web_lighthouse:
 Screen readers users often navigate an unfamiliar page by exploring headings.
 By using the correct headings,
 you can dramatically improve the navigation experience on your site
-for users of assitive technology.
+for users of assistive technology.
 
 ## How to manually test
 
@@ -50,6 +52,6 @@ Fix any skipped heading levels and use your own CSS for styling.
 
 Learn more in [Headings and landmarks](/headings-and-landmarks).
 
-## More information
+## Resources
 
-- [Check headings don't skip levels audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/heading-levels.js)
+[Source code for **Headings don't skip levels** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/heading-levels.js)

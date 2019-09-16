@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Manually check all custom controls have appropriate ARIA roles
+title: Custom controls have ARIA roles
 description: |
-  Learn about custom-controls-labels audit.
+  Learn how to improve your web page's accessibility by making sure custom
+  controls have ARIA roles that screen readers can interpret.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - custom-controls-labels
 ---
@@ -34,7 +36,7 @@ Using CSS, it's possible
 to style the `<div>` and `<button>` elements so they convey the same visual affordances,
 but the two experiences are very different when using the screen reader.
 A `<div>` is just a generic grouping element,
-sp the screen reader only announces the `div`'s text content.
+so the screen reader only announces the text content of the `<div>`.
 The `<button>` is announced as a "button",
 a much stronger signal to the user that this is something with which they can interact.
 See also [Semantics and screen readers](/semantics-and-screen-readers).
@@ -43,12 +45,12 @@ See also [Semantics and screen readers](/semantics-and-screen-readers).
 
 So the simplest,
 and reasonably the best solution to this problem
-is to aviod custom interactive controls all together.
+is to avoid custom interactive controls all together.
 For example, replace the `<div>` that's acting like a button
 with an actual `<button>`.
 
 If you must keep the `<div>`,
-then add `role="button"`and `aria-pressed="false"` to the `<div>`:
+then add `role="button"` and `aria-pressed="false"` to the `<div>`:
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -66,11 +68,11 @@ The only way to truly understand how screen reader users experience your content
 is to check that content yourself using a screen reader.
 Using a screen reader first hand will give you a clear understanding
 of how your content is labeled, and if there are any obstructions to screen reader navigation.
-If you're unfamiliar with how semantic markup gets interpreted by assistive technology, 
+If you're unfamiliar with how semantic markup gets interpreted by assistive technology,
 see the [Introduction to Semantics](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/) for a refresher.
 
 See also [How to Do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).
 
-## More information
+## Resources
 
-- [Check all custom controls have appropriate ARIA roles audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-roles.js)
+[Source code for **Custom controls have ARIA roles** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-roles.js)

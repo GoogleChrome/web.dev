@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Manually check offscreen content is hidden from assistive technology
+title: Offscreen content is hidden from assistive technology
 description: |
-  Learn about offscreen-content-hidden audit.
+  Learn how to improve your web page's accessibility for screen reader users by
+  hiding off-screen content from assistive technologies.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - offscreen-content-hidden
 ---
@@ -31,7 +33,7 @@ the screen reader shouldn't announce hidden content.
 
 To hide offscreen content,
 remove the element containing that content from the
-tab order by setting it to `display: none` or `visiblity: hidden`.
+tab order by setting it to `display: none` or `visibility: hidden`.
 
 For example:
 
@@ -47,6 +49,6 @@ For example:
 
 See also [Correctly set the visibility of offscreen content](/keyboard-access/#correctly-set-the-visibility-of-offscreen-content).
 
-## More information
+## Resources
 
-- [Check offscreen content is hidden from assistive technology audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/offscreen-content-hidden.js)
+[Source code for **Offscreen content is hidden from assistive technology** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/offscreen-content-hidden.js)

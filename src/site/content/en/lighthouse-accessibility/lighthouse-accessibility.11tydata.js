@@ -15,6 +15,12 @@ module.exports = {
     so manual testing is also encouraged.`,
     topics: [
       {
+        title: 'Audit scoring',
+        pathItems: [
+          'accessibility-scoring',
+        ],
+      },
+      {
         title: 'ARIA',
         pathItems: [
           'aria-allowed-attr',
@@ -82,9 +88,9 @@ module.exports = {
         pathItems: [
           'definition-list',
           'dlitem',
-          'layout-table',
           'list',
           'listitem',
+          'layout-table',
           'td-headers-attr',
           'th-has-data-cells',
         ],
@@ -92,17 +98,17 @@ module.exports = {
       {
         title: 'Additional items to manually check',
         pathItems: [
+          'logical-tab-order',
+          'focusable-controls',
+          'interactive-element-affordance',
+          'managed-focus',
+          'focus-traps',
           'custom-controls-labels',
           'custom-control-roles',
-          'focus-traps',
-          'focusable-controls',
-          'heading-levels',
-          'interactive-element-affordance',
-          'logical-tab-order',
-          'managed-focus',
-          'offscreen-content-hidden',
-          'use-landmarks',
           'visual-order-follows-dom',
+          'offscreen-content-hidden',
+          'heading-levels',
+          'use-landmarks',
         ],
       },
     ],

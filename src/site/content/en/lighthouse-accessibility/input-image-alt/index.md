@@ -1,30 +1,32 @@
 ---
 layout: post
-title: Ensure input types with a value "image" have alternate text
+title: "<input type=\"image\"> elements do not have [alt] text"
 description: |
-  Learn about input-image audit.
+  Learn how to make sure screen reader users can access your web page's image
+  inputs by providing alternative text.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - input-image-alt
 ---
 
 When an image is being used as an `<input>` button,
 providing alternative text helps screen reader users understand the purpose of the button.
-Lighthouse reports when any `<input type="image">` elements do not have `alt` text':
+
+## How this Lighthouse audit fails
+
+Lighthouse flags `<input type="image">` elements that don't have `alt` text':
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="input-image-alt.png" alt="Lighthouse audit showing input types with a value of 'image' do not have alt attributes">
-  <figcaption class="w-figcaption">
-    <code>&lt;input type="image"></code> elements do not have <code>alt</code> attributes.
-  </figcaption>
+  <img class="w-screenshot" src="input-image-alt.png" alt="Lighthouse audit showing input types with a value of 'image' do not have alt attributes">
 </figure>
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to fix this problem
+## How to add alternative text to image inputs
 
-To fix this problem,
-provide `alt` attributes for every `<input type="image">` element.
-Decribe the action that occurs when the user clicks on the button
+Provide an `alt` attribute for every `<input type="image">` element.
+Describe the action that occurs when the user clicks on the button
 in the `alt` text
 (see also [Include text alternatives for images and objects](/labels-and-text-alternatives#include-text-alternatives-for-images-and-objects)):
 
@@ -34,8 +36,7 @@ in the `alt` text
     Username:
     <input type="text">
   </label>
-  <input type="image" alt="Sign in"
-             src="./sign-in-button.png">
+  <input type="image" alt="Sign in" src="./sign-in-button.png">
 </form>
 ```
 
@@ -63,12 +64,7 @@ See also
 Learn more in
 [WebAIM's guide to Alternative Text](https://webaim.org/techniques/alttext/).
 
-<!--
-## How this audit impacts overall Lighthouse score
+## Resources
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
-- [Ensure image buttons have `alt` text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/input-image-alt.js)
+- [Source code for **`<input type="image">` elements do not have `[alt]` text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/input-image-alt.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)

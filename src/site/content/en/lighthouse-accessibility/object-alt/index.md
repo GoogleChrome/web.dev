@@ -1,16 +1,21 @@
 ---
 layout: post
-title: Ensure object elements have alternative text
+title: "<object> elements do not have [alt] text"
 description: |
-  Learn about object-alt audit.
+  Learn how to improve the accessibility of object elements on your web page by
+  providing alternative text.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - object-alt
 ---
 
 Screen readers cannot translate non-text content.
 Adding alternative text to define `<object>` elements helps screen readers convey meaning to users.
-Lighthouse reports when any `<object>` elements do not have alternative text:
+
+## How this Lighthouse audit fails
+
+Lighthouse flags `<object>` elements that don't have alternative text:
 
 <!--
 ***Todo*** Rob's docs in accessibility recommend describing objects in the inner text.
@@ -20,17 +25,13 @@ Also need to talk with Rob the slight inconsistencies between
 Rob's doc, the audit, and recommendations in deque docs.
 -->
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="object-alt.png" alt="Lighthouse audit showing <object> elements do not have alternative text">
-  <figcaption class="w-figcaption">
-    <code>&lt;object></code> elements do not have alternative text.
-  </figcaption>
+  <img class="w-screenshot" src="object-alt.png" alt="Lighthouse audit showing <object> elements do not have alternative text">
 </figure>
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to fix this problem
+## How to add alternative text to `<object>` elements
 
-To fix this problem,
-provide alternative text for every `<object>` element.
 The alternative text describes the information contained in the embedded object
 and goes inside the object element as regular text
 like "Annual report" below:
@@ -63,12 +64,7 @@ for example,
 Learn more in
 [WebAIM's guide to Alternative Text](https://webaim.org/techniques/alttext/).
 
-<!--
-## How this audit impacts overall Lighthouse score
+## Resources
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
-- [Ensure `object` elements have alternative text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/object-alt.js)
+- [Source code for **`<object>` elements do not have `[alt]` text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/object-alt.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)

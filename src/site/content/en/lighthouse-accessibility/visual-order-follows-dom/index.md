@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Manually check the visual layout of the page matches the DOM
+title: Visual order on the page follows DOM order
 description: |
   Learn about visual-order-follows-dom audit.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - visual-order-follows-dom
 ---
@@ -48,6 +49,6 @@ consider removing it using `tabindex="-1"`.
 
 Learn more in [Control focus with tabindex](/control-focus-with-tabindex).
 
-## More information
+## Resources
 
-- [Check visual layout of page matches DOM audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/visual-order-follows-dom.js)
+[Source code for **Visual order on the page follows DOM order** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/visual-order-follows-dom.js)

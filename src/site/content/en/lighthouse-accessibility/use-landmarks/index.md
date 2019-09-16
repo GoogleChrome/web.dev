@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Manually check landmark elements improve navigation
+title: HTML5 landmark elements are used to improve navigation
 description: |
-  Learn about managed-focus audit.
+  Learn how to improve the accessibility of your web page by providing
+  landmarks that keyboard users can use to navigate.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - use-landmarks
   - managed-focus
@@ -13,7 +15,7 @@ HTML5 elements such as `main`, `nav`, and `aside` act as landmarks,
 or special regions on the page to which a screen reader can jump.
 By using landmark elements,
 you can dramatically improve the navigation experience on your site
-for users of assitive technology.
+for users of assistive technology.
 Learn more in
 [HTML 5 and ARIA Landmarks](https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html).
 
@@ -46,12 +48,12 @@ Click the "Show Landmarks" button to see a structural outline for the page.
 ## How to fix
 
 Use landmark tags to define major sections of your page,
-instead of relying on divs.
+instead of relying on `<div>` elements.
 Be careful not to go overboard because having too many landmarks can be overwhelming.
-For example, stick to just one `main` element instead of 3 or 4.
+For example, stick to just one `main` element instead of three of four.
 
 Learn more in [Headings and landmarks](/headings-and-landmarks).
 
-## More information
+## Resources
 
-- [Check landmark elements improve navigation audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/use-landmarks.js)
+[Source code for **HTML5 landmark elements are used to improve navigation** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/use-landmarks.js)
