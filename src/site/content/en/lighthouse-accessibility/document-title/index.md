@@ -1,10 +1,13 @@
 ---
 layout: post
-title: Ensure that each HTML document contains a title
+title: Ensure that each HTML document contains a `<title>`
 description: |
   Learn about document-title audit.
 web_lighthouse:
   - document-title
+date: 2019-09-16
+tags:
+  - post
 ---
 
 Every page should have a title element that briefly explains what the page is about.

@@ -27,7 +27,7 @@
 
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
-      <h1 class="w-article-header__headline">{{ title }}</h1>
+      <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
       {% if subhead %}
         <p class="w-article-header__subhead w-mb--non">
           {{ subhead }}

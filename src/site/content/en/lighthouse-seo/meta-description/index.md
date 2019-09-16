@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Document doesn't have a meta description
+title: Document doesn't have a `<meta>` description
 description: |
   Learn about the the "Document Does Not Have A Meta Description" Lighthouse audit.
 web_lighthouse:

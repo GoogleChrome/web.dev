@@ -55,6 +55,7 @@ const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
+const md = require(`./${filtersDir}/markdown`);
 
 module.exports = function(config) {
   //----------------------------------------------------------------------------
@@ -104,6 +105,7 @@ module.exports = function(config) {
   // FILTERS
   //----------------------------------------------------------------------------
   config.addFilter('findBySlug', findBySlug);
+  config.addFilter('md', md);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('githubLink', githubLink);

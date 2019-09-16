@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const stripLanguage = require('../../_filters/strip-language');
+const {html} = require("common-tags");
+const stripLanguage = require("../../_filters/strip-language");
+const md = require("../../_filters/markdown");
 
 /* eslint-disable require-jsdoc,indent */
 
@@ -64,13 +65,12 @@ module.exports = ({post}) => {
               ? `w-post-card__headline--with-image`
               : `w-post-card__headline`}"
           >
-            ${data.title}
+            ${md(data.title)}
           </h2>
-          
         </div>
         <div class="w-post-card__desc">
           <p class="w-post-card__subhead">
-            ${data.subhead}
+            ${md(data.subhead)}
           </p>
         </div>
       </article>
