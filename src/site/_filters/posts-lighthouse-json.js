@@ -15,6 +15,7 @@
  */
 
 const stripLanguage = require('../_filters/strip-language');
+const _ = require('lodash');
 
 // Generate a JSON object which links posts to their Ligthhouse audits.
 module.exports = (posts) => {
@@ -30,7 +31,8 @@ module.exports = (posts) => {
       topic: '',
       id: post.fileSlug, // e.g. "test-post"
       lighthouse: toArray(post.data.web_lighthouse),
-      title: post.data.title,
+      // allow posts with html tags in the title.
+      title: _.escape(post.data.title),
       url: stripLanguage(post.url),
     };
 

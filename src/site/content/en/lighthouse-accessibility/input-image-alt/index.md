@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure input types with a value "image" have alternate text
+title: Ensure input types with a value `image` have alternate text
 description: |
   Learn about input-image audit.
 date: 2019-05-02
