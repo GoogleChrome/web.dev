@@ -59,7 +59,7 @@ An element is labeled as unstable if it is visible in the viewport and its start
 
 Layout shifts only occur when *existing elements* change their *start position*. If a new element is added to the DOM or an existing element changes size, it doesn't count as a layout shift—as long as the change doesn't cause other visible elements to change their start position.
 
-Layout instability is determined by calculating a _layout shift_ score every time the browser renders a new frame. A frame that’s rendered without any unexpected layout shifts has a layout shift score of 0.
+Layout instability is determined by calculating a _layout shift_ score every time the browser renders a new frame. A frame that's rendered without any unexpected layout shifts has a layout shift score of 0.
 
 ### Layout shift defined
 
@@ -153,7 +153,7 @@ CSS [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) pr
 
 Layout shift scores are calculated per-frame, and they are reported regardless of whether the shift was triggered as a result of user input. But users can experience layout instability throughout their entire browser session, and as mentioned above, not all layout shifts are perceived negatively.
 
-The cumulative layout shift (CLS) score can be determined by calculating the sum of all "unexpected" layout shift scores from page load until the page's [lifecycle state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api) changes to hidden. Chrome has heuristics to determine which layout shifts are "unexpected” and only those should count towards the cumulative layout shift score. For example, shifts that occur within 500 milliseconds of a discrete user interaction (for example, clicks, taps, and key presses) shouldn’t count towards the CLS. 
+The cumulative layout shift (CLS) score can be determined by calculating the sum of all "unexpected" layout shift scores from page load until the page's [lifecycle state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api) changes to hidden. Chrome has heuristics to determine which layout shifts are "unexpected" and only those should count towards the cumulative layout shift score. For example, shifts that occur within 500 milliseconds of a discrete user interaction (for example, clicks, taps, and key presses) shouldn't count towards the CLS. 
 
 A page that has no unexpected layout shifts will have a cumulative layout shift score of 0. Most typical content sites and web applications should strive for a score of 0 to provide the best experience for their users.
 
