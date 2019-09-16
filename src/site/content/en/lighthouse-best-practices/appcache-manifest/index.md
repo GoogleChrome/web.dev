@@ -47,7 +47,7 @@ consider using the
 This library generates a service-worker-based implementation of the behavior
 defined in an Application Cache manifest.
 
-See the [Current page responds with a 200 when offline](/works-offline) post
+See the [Current page does not respond with a 200 when offline](/works-offline) post
 for more information about using service workers to make your site work
 offline.
 

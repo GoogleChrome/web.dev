@@ -12,8 +12,11 @@ Most browsers ship with built-in developer tools.
 These developer tools usually include a [console](https://developers.google.com/web/tools/chrome-devtools/console/).
 The console gives you information about the page that's currently running.
 
-Messages logged in the console have a severity level:
-either `Verbose`, `Info`, `Warning`, or `Error`.
+Messages logged in the console come from
+either the web developers who built the page
+or the browser itself.
+All console messages have a severity level:
+`Verbose`, `Info`, `Warning`, or `Error`.
 An `Error` message means there's a problem on your page that you need to resolve.
 
 ## How the Lighthouse browser error audit fails
@@ -35,7 +38,7 @@ Chrome DevTools includes a couple tools
 to help you track down the cause of errors:
 
 - Below the text of each error, the console shows the
-  [call stack](https://en.wikipedia.org/wiki/Call_stack)
+  [call stack](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack)
   that caused the problematic code to execute.
 - A link at the top-right of each error shows you the code
   that caused the error.
@@ -46,11 +49,16 @@ For example, this screenshot shows a page with two errors:
   <img class="w-screenshot w-screenshot--filled" src="errors.png" alt="An example of console errors in Chrome DevTools">
 </figure>
 
-In the example above, the first error comes from a web developer,
+In the example above, the first error comes from a web developer
 via a call to
 [`console.error()`](https://developers.google.com/web/tools/chrome-devtools/console/console-reference#error).
-Below the text `this is an example of a console error...`,
-the console indicates that an `(anonymous)` function called the `init` function,
+The second error comes from the browser and
+indicates that a variable used in one of the page's scripts does not exist.
+
+Below the text of each error,
+the console indicates the call stack in which the error appears.
+For example, for the first error the console indicates
+that an `(anonymous)` function called the `init` function,
 which called the `doStuff` function.
 Clicking the `pen.js:9` link in the top-right of that error
 shows you the relevant code.
