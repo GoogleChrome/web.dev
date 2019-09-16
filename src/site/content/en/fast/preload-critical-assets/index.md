@@ -44,13 +44,13 @@ You can preload resources by adding a `<link>` tag with `rel="preload"` to the h
 <link rel="preload" as="script" href="critical.js">
 ```
 
-The browser caches preloaded resources so they are available immediately when needed. (It doesn’t execute the scripts or apply the stylesheets.)
+The browser caches preloaded resources so they are available immediately when needed. (It doesn't execute the scripts or apply the stylesheets.)
 
 {% Aside %}
 After implementing preloading, many sites, including [Shopify, Financial Times and Treebo, saw 1-second improvements](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) in user-centric metrics such as [Time to Interactive](./interactive/) and [First Contentful Paint](./first-contentful-paint/).
 {% endAside %}
 
-Resource hints, for example, [`preconnect`](./preconnect-and-dns-prefetch/)and [`prefetch`](./link-prefetch/), are executed as the browser sees fit. The `preload`, on the other hand, is mandatory for the browser. Modern browsers are already pretty good at prioritizing resources, that’s why it’s important to use `preload` sparingly and only preload the most critical resources. 
+Resource hints, for example, [`preconnect`](./preconnect-and-dns-prefetch/)and [`prefetch`](./link-prefetch/), are executed as the browser sees fit. The `preload`, on the other hand, is mandatory for the browser. Modern browsers are already pretty good at prioritizing resources, that's why it's important to use `preload` sparingly and only preload the most critical resources. 
 
 Unused preloads trigger a Console warning in Chrome, approximately 3 seconds after the `load` event.
 
@@ -64,15 +64,15 @@ Unused preloads trigger a Console warning in Chrome, approximately 3 seconds aft
 
 ### Preloading resources defined in CSS
 
-Fonts defined with [`@font-face`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) rules or background images defined in CSS files aren’t discovered until the browser downloads and parses those CSS files. Preloading these resources ensures they are fetched before the CSS files have downloaded.
+Fonts defined with [`@font-face`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) rules or background images defined in CSS files aren't discovered until the browser downloads and parses those CSS files. Preloading these resources ensures they are fetched before the CSS files have downloaded.
 
 ### Preloading CSS files
 
-If you are using the [critical CSS approach](./extract-critical-css/), you split your CSS into two parts. The critical CSS required for rendering the above-the-fold content is inlined in the `<head>` of the document and non-critical CSS is usually lazy-loaded with JavaScript. Waiting for JavaScript to execute before loading non-critical CSS can cause delays in rendering when users scroll, so it’s a good idea to use `<link rel="preload">` to initiate the download sooner.
+If you are using the [critical CSS approach](./extract-critical-css/), you split your CSS into two parts. The critical CSS required for rendering the above-the-fold content is inlined in the `<head>` of the document and non-critical CSS is usually lazy-loaded with JavaScript. Waiting for JavaScript to execute before loading non-critical CSS can cause delays in rendering when users scroll, so it's a good idea to use `<link rel="preload">` to initiate the download sooner.
 
 ### Preloading JavaScript files 
 
-Because browsers don’t execute preloaded files, preloading is useful to separate fetching from [execution](./bootup-time/) which can improve metrics such as Time to Interactive. Preloading works best if you [code-split](./reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
+Because browsers don't execute preloaded files, preloading is useful to separate fetching from [execution](./bootup-time/) which can improve metrics such as Time to Interactive. Preloading works best if you [code-split](./reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
 
 ## How to implement rel=preload
 
@@ -91,7 +91,7 @@ Take a look at the [Chrome Resource Priorities and Scheduling](https://docs.goog
 {% endAside %}
 
 {% Aside 'caution' %}
-Omitting the `as` attribute, or having an invalid value is equivalent to an [XHR request,](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) where the browser doesn’t know what it is fetching so it can’t determine the correct priority. It can also cause some resources, such as scripts, to be fetched twice.
+Omitting the `as` attribute, or having an invalid value is equivalent to an [XHR request,](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) where the browser doesn't know what it is fetching so it can't determine the correct priority. It can also cause some resources, such as scripts, to be fetched twice.
 {% endAside %}
 
 Some types of resources, such as fonts, are loaded in [anonymous mode](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with `preload`: 
@@ -104,7 +104,7 @@ Some types of resources, such as fonts, are loaded in [anonymous mode](https://w
 Fonts preloaded without the `crossorigin` attribute will be fetched twice! 
 {% endAside %}
 
-`<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-type), which contains the[ MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn’t support the specified resource type, it will ignore the `<link rel="preload">`.
+`<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-type), which contains the[ MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn't support the specified resource type, it will ignore the `<link rel="preload">`.
 
 {% Aside 'codelab' %}
 [Improve the performance of a page by preloading web fonts](/codelab-preload-web-fonts).
