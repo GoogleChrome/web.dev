@@ -3,6 +3,7 @@ layout: post
 title: Enable text compression
 description: |
   Learn about the uses-text-compression audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-text-compression
 ---

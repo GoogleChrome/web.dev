@@ -6,6 +6,7 @@ description: |
   that have known vulnerabilities.
 web_lighthouse:
   - no-vulnerable-libraries
+date: 2019-05-02
 updated: 2019-08-28
 ---
 

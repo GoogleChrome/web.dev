@@ -3,6 +3,7 @@ layout: post
 title: Sets an address-bar theme color
 description: |
   Learn about `themed-omnibox` audit.
+date: 2019-05-02
 web_lighthouse:
   - themed-omnibox
 ---

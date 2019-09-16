@@ -3,6 +3,7 @@ layout: post
 title: Configured for a custom splash screen
 description: |
   Learn about `splash-screen` audit.
+date: 2019-05-02
 web_lighthouse:
   - splash-screen
 ---

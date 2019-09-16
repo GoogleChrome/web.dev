@@ -6,6 +6,7 @@ description: |
   passive event listeners.
 web_lighthouse:
   - uses-passive-event-listeners
+date: 2019-05-02
 updated: 2019-08-28
 ---
 

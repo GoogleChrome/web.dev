@@ -5,6 +5,7 @@ description: |
   Learn how to safely link to resources on another host.
 web_lighthouse:
   - external-anchors-use-rel-noopener
+date: 2019-05-02
 updated: 2019-08-28
 ---
 

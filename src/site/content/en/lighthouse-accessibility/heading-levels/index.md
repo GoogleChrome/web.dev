@@ -3,6 +3,7 @@ layout: post
 title: Manually check that headings don't skip levels
 description: |
   Learn about heading-levels audit.
+date: 2019-05-02
 web_lighthouse:
   - heading-levels
 ---

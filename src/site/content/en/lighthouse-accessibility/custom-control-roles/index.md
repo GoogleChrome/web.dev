@@ -3,6 +3,7 @@ layout: post
 title: Manually check all custom controls have appropriate ARIA roles
 description: |
   Learn about custom-controls-labels audit.
+date: 2019-05-02
 web_lighthouse:
   - custom-controls-labels
 ---

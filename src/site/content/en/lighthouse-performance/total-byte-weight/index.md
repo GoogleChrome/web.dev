@@ -3,6 +3,7 @@ layout: post
 title: Avoid enormous network payloads
 description: |
   Learn about the total-byte-weight audit.
+date: 2019-05-02
 web_lighthouse:
   - total-byte-weight
 ---

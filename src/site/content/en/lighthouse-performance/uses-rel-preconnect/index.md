@@ -3,6 +3,7 @@ layout: post
 title: Preconnect to required origins
 description: |
   Learn about the uses-rel-preconnect audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-rel-preconnect
 ---

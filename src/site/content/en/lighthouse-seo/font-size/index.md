@@ -3,6 +3,7 @@ layout: post
 title: Document doesn't use legible font sizes
 description: |
   Learn about font-size audit.
+date: 2019-05-02
 web_lighthouse:
   - font-size
 ---

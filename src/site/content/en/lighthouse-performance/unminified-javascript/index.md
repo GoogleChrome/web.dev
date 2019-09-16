@@ -3,6 +3,7 @@ layout: post
 title: Minify JavaScript
 description: |
   Learn about the unminified-javascript audit.
+date: 2019-05-02
 web_lighthouse:
   - unminified-javascript
 ---

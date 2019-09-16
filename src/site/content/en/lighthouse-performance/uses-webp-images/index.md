@@ -3,6 +3,7 @@ layout: post
 title: Serve images in next-gen formats
 description: |
   Learn about the uses-webp-images audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-webp-images
 ---

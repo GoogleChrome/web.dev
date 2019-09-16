@@ -3,6 +3,7 @@ layout: post
 title: Contains some content when JavaScript is not available
 description: |
   Learn about `without-javascript` audit.
+date: 2019-05-02
 web_lighthouse:
   - without-javascript
 ---

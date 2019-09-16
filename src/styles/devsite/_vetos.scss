@@ -133,7 +133,7 @@ body devsite-heading[link] {
 .devsite-site-logo-link:focus,
 .devsite-footer-sites-logo-link:focus {
   outline: auto;
-  outline-color: $WEB_SECONDARY_COLOR;
+  outline-color: $FOCUS_COLOR;
 }
 
 .devsite-site-logo-link:active {

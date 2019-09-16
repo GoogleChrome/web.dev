@@ -6,6 +6,7 @@ description: |
   HTTP/2 on your server.
 web_lighthouse:
   - uses-http2
+date: 2019-05-02
 updated: 2019-08-28
 ---
 

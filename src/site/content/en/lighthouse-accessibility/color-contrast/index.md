@@ -3,6 +3,7 @@ layout: post
 title: Ensure background and foreground colors have a sufficient contrast ratio
 description: |
   Learn about color-contrast audit.
+date: 2019-05-02
 web_lighthouse:
   - color-contrast
 ---

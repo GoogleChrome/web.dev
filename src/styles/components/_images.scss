@@ -35,17 +35,30 @@
 // a white background.
 // -----------------------------------------------------------------------------
 
-.w-screenshot {
+// FIXME:
+// The duplication of the screenshot styles on figure are a temporary fix while
+// we transition elements over to the Figure shortcode.
+// After we transition all elements over to the shortcode, we should remove the
+// w-screenshot & w-screenshot--filled classes.
+// These figure classes *do* violate BEM style by using a child selector, but
+// it makes working with the shortcode much more ergonomic.
+
+.w-screenshot,
+.w-figure--screenshot > img {
   border: 1px solid $GREY_300;
   padding: 4px;
 }
 
-.w-screenshot--filled {
+.w-screenshot--filled,
+.w-figure--screenshot > img {
   background-color: $GREY_50;
   padding: 16px;
 }
 
-.w-screenshot + .w-screenshot {
+.w-screenshot + .w-screenshot,
+.w-screenshot--filled + .w-screenshot--filled,
+.w-figure--screenshot > img + .w-figure--screenshot > img,
+.w-figure--screenshot-filled > img + .w-figure--screenshot-filled > img {
   margin-top: 32px;
 }
 

@@ -3,6 +3,7 @@ layout: post
 title: Ensure accesskey values are unique
 description: |
   Learn about accesskeys audit.
+date: 2019-05-02
 web_lighthouse:
   - accesskeys
 ---

@@ -3,6 +3,7 @@ layout: post
 title: Preload key requests
 description: |
   Learn about the uses-rel-preload audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-rel-preload
 ---

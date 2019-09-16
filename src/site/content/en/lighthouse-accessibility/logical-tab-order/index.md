@@ -3,6 +3,7 @@ layout: post
 title: Manually check the tab order follows the DOM order
 description: |
   Learn about logical-tab-order audit.
+date: 2019-05-02
 web_lighthouse:
   - logical-tab-order
 ---

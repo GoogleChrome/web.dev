@@ -6,6 +6,7 @@ description: |
   browsers.
 web_lighthouse:
   - doctype
+date: 2019-05-02
 updated: 2019-08-28
 ---
 

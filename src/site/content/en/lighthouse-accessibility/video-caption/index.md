@@ -3,6 +3,7 @@ layout: post
 title: Ensure video elements have captions
 description: |
   Learn about video-caption audit.
+date: 2019-05-02
 web_lighthouse:
   - video-caption
 ---
