@@ -124,7 +124,7 @@ The arrows represent the distances that unstable elements have moved from their 
 
 The layout shift score is 0.38 x 0.3 = 0.1172.
 
-### Expected vs unexpected layout shifts
+### Expected vs. unexpected layout shifts
 
 Not all layout shifts are bad. In fact, many dynamic web applications will frequently change the start position of elements on the page.
 
