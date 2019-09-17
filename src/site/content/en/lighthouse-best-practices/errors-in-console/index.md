@@ -38,7 +38,7 @@ to ensure that your page runs as expected for all your users.
 Chrome DevTools includes a couple tools
 to help you track down the cause of errors:
 
-- Below the text of each error, the console shows the
+- Below the text of each error, the DevTools Console shows the
   [call stack](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack)
   that caused the problematic code to execute.
 - A link at the top-right of each error shows you the code
@@ -47,7 +47,7 @@ to help you track down the cause of errors:
 For example, this screenshot shows a page with two errors:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="errors.png" alt="An example of console errors in Chrome DevTools">
+  <img class="w-screenshot w-screenshot--filled" src="errors.png" alt="An example of errors in the Chrome DevTools Console">
 </figure>
 
 In the example above, the first error comes from a web developer
@@ -57,8 +57,8 @@ The second error comes from the browser and
 indicates that a variable used in one of the page's scripts does not exist.
 
 Below the text of each error,
-the console indicates the call stack in which the error appears.
-For example, for the first error the console indicates
+the DevTools Console indicates the call stack in which the error appears.
+For example, for the first error the Console indicates
 that an `(anonymous)` function called the `init` function,
 which called the `doStuff` function.
 Clicking the `pen.js:9` link in the top-right of that error
