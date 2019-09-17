@@ -6,7 +6,7 @@ description: |
 date: 2019-05-02
 updated: 2019-08-21
 web_lighthouse:
-  - is-crawable
+  - is-crawlable
 ---
 
 Search engines can only show pages in their search results if those pages don't
