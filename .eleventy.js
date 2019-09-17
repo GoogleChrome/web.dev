@@ -52,6 +52,7 @@ const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
+// nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
 const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
@@ -115,6 +116,13 @@ module.exports = function(config) {
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
     return memoize(collection.getAll());
+  });
+  config.addCollection('algolia', function(collection) {
+    if (process.env.ELEVENTY_ENV === 'prod') {
+      const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
+      return algoliaPosts(collection);
+    }
+    return [];
   });
 
   //----------------------------------------------------------------------------
