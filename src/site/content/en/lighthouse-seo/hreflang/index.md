@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Document doesn't have a valid hreflang
+title: Document doesn't have a valid `hreflang`
 description: |
   Learn about the "Document doesn't have a valid hreflang" Lighthouse audit.
 date: 2019-05-02

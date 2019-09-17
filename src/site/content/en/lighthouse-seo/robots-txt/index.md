@@ -1,6 +1,6 @@
 ---
 layout: post
-title: robots.txt is not valid
+title: `robots.txt` is not valid
 description: |
   Learn about the "robots.txt is not valid" Lighthouse audit.
 date: 2019-05-02
