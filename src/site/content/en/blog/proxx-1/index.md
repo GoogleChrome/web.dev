@@ -3,7 +3,7 @@ title: Techniques to make a web app load fast, even on a feature phone
 subhead: How we used code splitting, code inlining, and server-side rendering in PROXX.
 authors:
   - surma
-date: 2019-09-10
+date: 2019-09-17
 hero: hero.jpg
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
