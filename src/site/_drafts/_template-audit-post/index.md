@@ -1,22 +1,24 @@
 ---
 layout: post
-title: [Audit name]
+title: [Audit name in fail state]
 description: |
   Learn how to [fix the problem identified by the audit].
 web_lighthouse:
-  - [post slug]
+  - [lighthouse-audit-id]
+date: yyyy-mm-dd
 ---
 
-A brief explanation of why the audit matters. Try to keep it to 2-3 sentences.
+A brief explanation of why the audit matters. Try to keep it to 2–3 sentences.
 
 ## How the Lighthouse [shorthand name] audit fails
 
-Lighthouse flags pages that [do the thing the audit checks for]:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags [pages that do the thing the audit checks for]:
 
 <!--
-  Screenshot should be of the lighthouse-cli UI. It should only include the audit
-  content, from the pixel below the top border to the pixel above the bottom border.
-  The width should match that of the top and bottom borders.
+  Screenshot should be of the lighthouse-cli UI. It should only include the
+  audit content, from the pixel below the top border to the pixel above the
+  bottom border. The width should match that of the top and bottom borders.
 -->
 
 <figure class="w-figure">
@@ -33,7 +35,7 @@ Brief explanation of the audit. It may include various elements as needed:
   Use the appropriate scoring include for the audit collection you're working in.
   Scoring includes can be found in /src/site/_includes/content
 -->
-{% include 'content/lighthouse-best-practices/scoring.njk' %}
+{% include 'content/relevant-lighthouse-collection/scoring.njk' %}
 
 ## How to [fix the problem]
 
