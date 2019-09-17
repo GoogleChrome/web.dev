@@ -7,17 +7,17 @@ alt: Guess.js logo
 authors:
   - mgechev
 description: |
-  Code-splitting allows you to speed up your applications, but it may slow down subsequent navigation. Predictive prefetching is an efficient way to use data analytics to smartly prefetch what the user is likely to use next, optimizing network utilization.
+  Code splitting allows you to speed up your applications, but it may slow down subsequent navigation. Predictive prefetching is an efficient way to use data analytics to smartly prefetch what the user is likely to use next, optimizing network utilization.
 tags:
   - post
   - performance
 ---
 
-In my [Faster Web Navigation with Predictive Prefetching](https://www.youtube.com/watch?v=0jB4YWgAxUo) session at Google I/O 2019, I began by talking about optimizing web apps with code-splitting and the potential performance implications for subsequent page navigation. In the second part of the talk, I discussed how to improve navigation speed by using Guess.js to set up predictive prefetching:
+In my [Faster Web Navigation with Predictive Prefetching](https://www.youtube.com/watch?v=0jB4YWgAxUo) session at Google I/O 2019, I began by talking about optimizing web apps with code splitting and the potential performance implications for subsequent page navigation. In the second part of the talk, I discussed how to improve navigation speed by using Guess.js to set up predictive prefetching:
 
 {% YouTube '0jB4YWgAxUo' %}
 
-## Code-splitting for faster web apps
+## Code splitting for faster web apps
 
 Web apps are slow, and JavaScript is among the most expensive resources that you ship. Waiting for a slow web app to load can frustrate your users and decrease conversions.
 
@@ -25,12 +25,12 @@ Web apps are slow, and JavaScript is among the most expensive resources that you
 
 Lazy-loading is an efficient technique to reduce the bytes of JavaScript that you're transferring over the wire. You can use several techniques to lazy-load JavaScript, including:
 
-- Component-level code-splitting
-- Route-level code-splitting
+- Component-level code splitting
+- Route-level code splitting
 
-With component-level code-splitting, you can move individual components into separate JavaScript chunks. On particular events, you can load the relevant scripts and render the components.
+With component-level code splitting, you can move individual components into separate JavaScript chunks. On particular events, you can load the relevant scripts and render the components.
 
-With route-level code-splitting, however, you move entire _routes_ into independent chunks. When users transition from one route to another, they have to download the associated JavaScript and bootstrap the requested page. These operations can lead to significant delays, especially on slow networks.
+With route-level code splitting, however, you move entire _routes_ into independent chunks. When users transition from one route to another, they have to download the associated JavaScript and bootstrap the requested page. These operations can lead to significant delays, especially on slow networks.
 
 ## Prefetching JavaScript
 
