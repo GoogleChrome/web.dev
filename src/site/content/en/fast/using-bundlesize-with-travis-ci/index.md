@@ -57,8 +57,8 @@ following section to the `package.json` file:
 You can also set
 [different thresholds for different files](https://github.com/siddharthkp/bundlesize#1-add-the-path-and-maxsize-in-your-packagejson).
 This is especially useful if you are
-[code-splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting)
-a bundle in your application.
+[splitting a bundle](https://web.dev/reduce-javascript-payloads-with-code-splitting)
+in your application.
 {% endAside %}
 
 To keep the compressed JavaScript bundle size [under the recommended

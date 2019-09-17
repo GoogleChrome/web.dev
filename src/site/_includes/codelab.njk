@@ -35,7 +35,7 @@ this inline style tag.
   {% endif %}
   <web-codelab glitch="{{ glitch }}" path="{{ glitchPath }}" attribution-hidden>
     <div class="web-codelab-instructions">
-      <h1 class="w-headline w-headline--two w-mb--sm">{{ title }}</h1>
+      <h1 class="w-headline w-headline--two w-mb--sm">{{ title | md | safe }}</h1>
       {% if date %}
         <div class="w-author__published">
           <time>{{date | prettyDate}}</time>
