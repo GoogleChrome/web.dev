@@ -45,7 +45,7 @@ const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
-// nb. indexedPosts is only require'd if needed, below
+// nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
 const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
@@ -100,10 +100,10 @@ module.exports = function(config) {
   config.addCollection('memoized', function(collection) {
     return memoize(collection.getAll());
   });
-  config.addCollection('indexed', function(collection) {
+  config.addCollection('algolia', function(collection) {
     if (process.env.ELEVENTY_ENV === 'prod') {
-      const indexedPosts = require(`./${collectionsDir}/indexed-posts`);
-      return indexedPosts(collection);
+      const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
+      return algoliaPosts(collection);
     }
     return [];
   });

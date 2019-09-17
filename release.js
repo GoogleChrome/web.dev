@@ -20,7 +20,8 @@ const algoliasearch = require("algoliasearch");
 const fs = require("fs");
 const log = require("fancy-log");
 
-const raw = fs.readFileSync("dist/en/indexed.json", "utf-8");
+// TODO(samthor): For now, we only index 'en' content.
+const raw = fs.readFileSync("dist/en/algolia.json", "utf-8");
 const indexed = JSON.parse(raw);
 
 // Revision will look like "YYYYMMDDHHMM".

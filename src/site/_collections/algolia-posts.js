@@ -66,9 +66,6 @@ module.exports = (collection) => {
     // As of September 2019, this effects about 20 articles.
     // https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/in-depth/index-and-records-size-and-usage-limitations/#record-size
     const limited = limitText(fulltext);
-    if (limited.length !== fulltext.length) {
-      console.debug('trimmed article', data.page.url);
-    }
 
     return {
       objectID: data.page.url + '#' + lang,
