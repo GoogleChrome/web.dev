@@ -1,6 +1,6 @@
 ---
 title: Techniques to make a web app load fast, even on a feature phone
-subhead: How we used code splitting, inlining and server-sider rendering in PROXX.
+subhead: How we used code splitting, code inlining, and server-side rendering in PROXX.
 authors:
   - surma
 date: 2019-09-10
@@ -17,14 +17,14 @@ tags:
 ---
 
 
-At Google I/O 2019 Mariko, Jake and myself shipped [PROXX], a modern Minesweeper-clone for the web. Something that sets PROXX apart is the focus on accessibility (you can play it with a screenreader!) and the ability to run as well on a feature phone as on a high-end desktop device. Feature phones are constrained in multiple ways:
+At Google I/O 2019 Mariko, Jake, and I shipped [PROXX], a modern Minesweeper-clone for the web. Something that sets PROXX apart is the focus on accessibility (you can play it with a screenreader!) and the ability to run as well on a feature phone as on a high-end desktop device. Feature phones are constrained in multiple ways:
 
 * Weak CPUs
 * Weak or non-existent GPUs
 * Small screens without touch input
 * Very limited amounts of memory 
 
-But they run a modern browser and are very affordable. For this reason, feature phones are making a resurgence in emerging markets. Their price point allows a whole new audience, who previously couldn't afford it, to come online and make use of the modern web. **[For 2019 it is projected that around 400 million feature phones will be sold in India alone,][400mil]** so users on feature phones might become a significant portion of your audience. In addition to that, connection speeds akin to 2G are the norm in emerging markets. How did we manage to make PROXX work well under feature phone conditions?
+But they run a modern browser and are very affordable. For this reason, feature phones are making a resurgence in emerging markets. Their price point allows a whole new audience, who previously couldn't afford it, to come online and make use of the modern web. **[For 2019 it is projected that around 400 million feature phones will be sold in India alone][400mil]**, so users on feature phones might become a significant portion of your audience. In addition to that, connection speeds akin to 2G are the norm in emerging markets. How did we manage to make PROXX work well under feature phone conditions?
 
 <figure class="w-figure w-figure--center">
   <video controls loop muted
@@ -68,7 +68,7 @@ That being said, we're going to focus on 2G in this article because PROXX is exp
   </figcaption>
 </figure>
 
-When loaded over 3G, the user sees 4 seconds of white nothingness. **Over 2G the user sees absolutely nothing for over 8 seconds.** If you read Jeremy's article above you know that we have now lost a good portion of our potential users due to impatience. The user needs to download all of the 62 KB of JavaScript for anything to appear on screen. The silver lining in this scenario is that the second anything appears on screen it is also interactive. Or is it?
+When loaded over 3G, the user sees 4 seconds of white nothingness. **Over 2G the user sees absolutely nothing for over 8 seconds.** If you read [why performance matters] you know that we have now lost a good portion of our potential users due to impatience. The user needs to download all of the 62 KB of JavaScript for anything to appear on screen. The silver lining in this scenario is that the second anything appears on screen it is also interactive. Or is it?
 
 <figure class="w-figure w-figure--center">
   <picture>
@@ -77,12 +77,12 @@ When loaded over 3G, the user sees 4 seconds of white nothingness. **Over 2G the
   </picture>
   <figcaption class="w-figcaption">
 
-The [First Meaningful Paint (FMP)][FMP] in the unoptimized version of PROXX is _technically_ [interactive][TTI] but useless to the user.
+The [First Meaningful Paint][FMP] in the unoptimized version of PROXX is _technically_ [interactive][TTI] but useless to the user.
 
   </figcaption>
 </figure>
 
-After about 62 KB of gzip'd JS has been downloaded and the DOM has been generated, the user gets to see our app. The app is _technically_ interactive. Looking at the visual, however, shows a different reality. The web fonts are still loading in the background and until they are ready the user can see no text. While this state qualifies as a ["First Meaningful Paint" (FMP)][FMP], it surely does not qualify as properly [interactive][TTI], as the user can't tell what any of the inputs are about. It takes another second on 3G and 3 seconds on 2G until the app is ready to go. **All in all, the app takes 6 seconds on 3G and 11 seconds on 2G to become interactive.**
+After about 62 KB of gzip'd JS has been downloaded and the DOM has been generated, the user gets to see our app. The app is _technically_ interactive. Looking at the visual, however, shows a different reality. The web fonts are still loading in the background and until they are ready the user can see no text. While this state qualifies as a [First Meaningful Paint (FMP)][FMP], it surely does not qualify as properly [interactive][TTI], as the user can't tell what any of the inputs are about. It takes another second on 3G and 3 seconds on 2G until the app is ready to go. **All in all, the app takes 6 seconds on 3G and 11 seconds on 2G to become interactive.**
 
 ## Waterfall analysis
 
@@ -102,10 +102,10 @@ Now that we know _what_ the user sees, we need to figure out the _why_. For this
 
 ### Reducing connection count
 
-Each thin line stands for the creation of a new HTTP connection. Setting up a new connection is costly as it takes around 1s on 3G and roughly 2.5s on 2G. In our waterfall we see a new connection for:
+Each thin line (`dns`, `connect`, `ssl`) stands for the creation of a new HTTP connection. Setting up a new connection is costly as it takes around 1s on 3G and roughly 2.5s on 2G. In our waterfall we see a new connection for:
 
 - Request #1: Our `index.html`
-- Reqyest #5: The font styles from `fonts.googleapis.com`
+- Request #5: The font styles from `fonts.googleapis.com`
 - Request #9 & #10: The font files from `fonts.gstatic.com`
 - Request #8: Google Analytics
 - Request #14: The Web App Manifest
@@ -142,7 +142,7 @@ Let's take a look at what our changes have achieved. It's important to not chang
 
 ## Prerendering
 
-While we just reduced our [TTI], we haven't really affected the eternally long white screen the user has to endure for 8.5 seconds. Arguably **the biggest improvements for [First Meaningful Paint (FMP)][FMP] can be achieved by sending styled markup in your `index.html`**. Common techniques to achieve this are prerendering and server-side rendering, which are closely related and are explained in [Rendering on the Web][Rendering]. Both techniques run the web app in Node and serialize the resulting DOM to HTML. Server-side rendering does this per request on the, well, server side, while prerendering does this at build time and stores the output as your new `index.html`. Since PROXX is a [JAMStack](https://jamstack.org/) app and has no server side, we decided to implement prerendering.
+While we just reduced our [TTI], we haven't really affected the eternally long white screen the user has to endure for 8.5 seconds. Arguably **the biggest improvements for [FMP] can be achieved by sending styled markup in your `index.html`**. Common techniques to achieve this are prerendering and server-side rendering, which are closely related and are explained in [Rendering on the Web][Rendering]. Both techniques run the web app in Node and serialize the resulting DOM to HTML. Server-side rendering does this per request on the, well, server side, while prerendering does this at build time and stores the output as your new `index.html`. Since PROXX is a [JAMStack](https://jamstack.org/) app and has no server side, we decided to implement prerendering.
 
 There are many ways to implement a prerenderer. In PROXX we chose to use [Puppeteer], which starts Chrome without any UI and allows you to remote control that instance with a Node API. We use this to inject our markup and our JavaScript and then read back the DOM as a string of HTML. Because we are using [CSS Modules], we get CSS inlining of the styles that we need for free.
 
@@ -188,7 +188,7 @@ Another metric that both DevTools and WebPageTest give us is Time To First Byte 
 
 Looking at our waterfall, we can see that the **all of requests spend the _majority_ of their time waiting** for the first byte of the response to arrive.
 
-This problem was what HTTP/2 Push was originally conceived for. The app developer _knows_ that certain resources are needed and can _push_ them down the wire. By the time the client realizes that it needs to fetch additional resources, they are already in the browser's caches. **HTTP/2 turned out to be too hard to get right and is considered discouraged.** This problem space will be revisited during the standardization of HTTP/3. For now, **the easiest solution is to _inline_ all the critical resources** at the expense of caching efficiency.
+This problem was what HTTP/2 Push was originally conceived for. The app developer _knows_ that certain resources are needed and can _push_ them down the wire. By the time the client realizes that it needs to fetch additional resources, they are already in the browser's caches. **HTTP/2 Push turned out to be too hard to get right and is considered discouraged.** This problem space will be revisited during the standardization of HTTP/3. For now, **the easiest solution is to _inline_ all the critical resources** at the expense of caching efficiency.
 
 Our critical CSS is already inlined thanks to CSS Modules and our Puppeteer-based prerenderer. For JavaScript we need to inline our critical modules _and their dependencies_. This task has varying difficulty, based on the bundler that you're using.
 
@@ -447,9 +447,10 @@ To understand where our bundle size is coming from we can use a [source map expl
     Analyzing the contents of PROXX's `index.html` shows a lot of unneeded resources. Critical resources are highlighted.
   </figcaption>
 </figure>
+
 What we need to do is [code split]. Code splitting breaks apart your monolithic bundle into smaller parts that can be lazy-loaded on-demand. Popular bundlers like [Webpack], [Rollup], and [Parcel] support code splitting by using dynamic `import()`. The bundler will analyze your code and _inline_ all modules that are imported _statically_. Everything that you import _dynamically_ will be put into its own file and will only be fetched from the network once the `import()` call gets executed. Of course hitting the network has a cost and should only be done if you have the time to spare. **The mantra here is to statically import the modules that are _critically_ needed at load time and dynamically load everything else.** But you shouldn't wait to the very last moment to lazy-load modules that are definitely going to be used. [Phil Walton]'s ["Idle until Urgent"][IUU] is a great pattern for a healthy middle ground between lazy loading and eager loading.
 
-In PROXX we created a `lazy.js` file that statically imports everything that we _don't_ need. In our main file, we can then _dynamically_ import `lazy.js`. However, some of our [Preact] components ended up in `lazy.js`, which turned out to be a bit of a complication as [Preact] can't handle lazily-loaded components out of the box. For this reason we wrote a little `deferred` component wrapper that allows us to render a placeholder until the actual component has loaded.
+In PROXX we created a `lazy.js` file that statically imports everything that we _don't_ need. In our main file, we can then _dynamically_ import `lazy.js`. However, some of our [Preact] components ended up in `lazy.js`, which turned out to be a bit of a complication as Preact can't handle lazily-loaded components out of the box. For this reason we wrote a little `deferred` component wrapper that allows us to render a placeholder until the actual component has loaded.
 
 ```js
 export default function deferred(componentPromise) {
@@ -508,7 +509,7 @@ With all of this in place, we reduced our `index.html` to a mere 20 KB, less tha
 Our FMP and TTI are only 100ms apart, as it is only a matter of parsing and executing the inlined JavaScript. After just 5.4s on 2G, the app is completely interactive. All the other, less essential modules are loaded in the background.
 
 ## More Sleight of Hand
-If you look at our list of critical modules above, you'll see that the rendering engine is not part of the critical modules. Of course, the game cannot start until we have our rendering engine to render the game. We could disable the "Start" button until our rendering engine is ready to start the game, but in our experience the user usually takes long enough to configure their game settings. Most of the time the rendering engine and the other remaining modules are done loading by the time the user presses "Start". In the rare case that the user is quicker than their network connection, we show a simple loading screen that waits for the remaining modules to finish.
+If you look at our list of critical modules above, you'll see that the rendering engine is not part of the critical modules. Of course, the game cannot start until we have our rendering engine to render the game. We could disable the "Start" button until our rendering engine is ready to start the game, but in our experience the user usually takes long enough to configure their game settings that this isn't necessary. Most of the time the rendering engine and the other remaining modules are done loading by the time the user presses "Start". In the rare case that the user is quicker than their network connection, we show a simple loading screen that waits for the remaining modules to finish.
 
 ## Conclusion
 
@@ -517,9 +518,9 @@ Measuring is important. To avoid spending time on problems that are not real, we
 The filmstrip can give insight into how loading your app _feels_ for the user. The waterfall can tell you what resources are responsible for potentially long loading times. Here's a checklist of things you can do to improve loading performance:
 
 - Deliver as many assets as possible over one connection.
-- Preload or even inline resources that are required for the first render and interactivity.
+- [Preload] or even inline resources that are required for the first render and interactivity.
 - Prerender your app to improve perceived loading performance.
-- Make use of aggressive code splitting to reduce the amount of code needed for interactivity.
+- Make use of aggressive [code splitting][code split] to reduce the amount of code needed for interactivity.
 
 Stay tuned for part 2 where we discuss how to optimize runtime performance on hyper-constrained devices.
 
@@ -542,7 +543,11 @@ Stay tuned for part 2 where we discuss how to optimize runtime performance on hy
 [Minimal Analytics]: https://minimalanalytics.com
 [fetch connections]: https://fetch.spec.whatwg.org/#connections
 [Google Fonts]: https://fonts.google.com
-[FMP]: https://web.dev/first-meaningful-paint
-[TTI]: https://web.dev/interactive
-[code split]: https://web.dev/codelab-code-splitting
-[preact]: https://web.dev/codelab-code-splitting
+[FMP]: /first-meaningful-paint
+[TTI]: /interactive
+[code split]: /reduce-javascript-payloads-with-code-splitting/
+[preact]: /codelab-code-splitting
+[preload]:/preload-critical-assets
+[400mil]: https://www.counterpointresearch.com/more-than-a-billion-feature-phones-to-be-sold-over-next-three-years/
+
+
