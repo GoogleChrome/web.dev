@@ -3,6 +3,7 @@ layout: post
 title: Document doesn't have a valid rel=canonical
 description: |
   Learn about the canonical audit.
+date: 2019-05-02
 web_lighthouse:
   - canonical
 ---

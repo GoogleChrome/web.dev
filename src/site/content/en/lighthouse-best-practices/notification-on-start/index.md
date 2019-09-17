@@ -3,6 +3,7 @@ layout: post
 title: Page requests notification permissions on load
 description: |
   Learn about `notification-on-start` audit.
+date: 2019-05-02
 web_lighthouse:
   - notification-on-start
 ---

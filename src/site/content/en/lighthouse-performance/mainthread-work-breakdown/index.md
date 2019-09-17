@@ -3,6 +3,7 @@ layout: post
 title: Minimize main-thread work
 description: |
   Learn about the mainthread-work-breakdown audit.
+date: 2019-05-02
 web_lighthouse:
   - mainthread-work-breakdown
 ---

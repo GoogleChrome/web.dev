@@ -3,6 +3,7 @@ layout: post
 title: Time to Interactive
 description: |
   Learn about the Time to Interactive audit.
+date: 2019-05-02
 web_lighthouse:
   - interactive
 ---

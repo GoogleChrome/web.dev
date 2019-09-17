@@ -3,6 +3,7 @@ layout: post
 title: Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content
 description: |
   Learn about bypass audit.
+date: 2019-05-02
 web_lighthouse:
   - bypass
 ---
@@ -96,7 +97,7 @@ and repetitive content is bypassed:
 ```
 
 Learn more in
-[Page must have means to bypass repeated blocks](https://dequeuniversity.com/rules/axe/3.2/bypass).
+[Page must have means to bypass repeated blocks](https://dequeuniversity.com/rules/axe/3.3/bypass).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -107,4 +108,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Use headings, landmarks, and skip-link audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/bypass.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

@@ -113,7 +113,7 @@ While navigating in a standalone window, the browser will behave differently whe
 
 In most cases, there's no solution for this, but a workaround can be applied for small parts of the experience that are hosted in subdomains (for example: login workflows):
 
-1. The new url (i.e: `https://login.example.com`) could open inside a full screen iframe.
+1. The new URL, `https://login.example.com`, could open inside a full screen iframe.
 1. Once the task is completed inside the iframe (for example, the login process), [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) can be used, to pass any resulting information from the iframe back to the parent page.
 1. As a final step, once the message is received by the main page, the listeners can be unregistered, and the iframe finally be removed from the DOM.
 
@@ -129,4 +129,4 @@ For existing sites that are already built in this way, it can be challenging to 
 
 When evaluating a long-term strategy or site redesign, consider migrating to a single origin, unless there's an important reason to keep the multi-origin architecture.
 
-_With many thanks for their technical reviews & suggestions: PJ Mclachlan, Paul Covell, Dominick Ng, Alberto Medina, Pete LePage, Joe Medley, , Cheney Tsai, Martin Schierle and Andre Bandarra._
+_With many thanks for their technical reviews and suggestions: PJ Mclachlan, Paul Covell, Dominick Ng, Alberto Medina, Pete LePage, Joe Medley, Cheney Tsai, Martin Schierle, and Andre Bandarra._

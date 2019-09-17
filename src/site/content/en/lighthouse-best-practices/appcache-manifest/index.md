@@ -3,6 +3,7 @@ layout: post
 title: Uses application cache
 description: |
   Learn about `appcache-manifest` audit.
+date: 2019-05-02
 web_lighthouse:
   - appcache-manifest
 ---

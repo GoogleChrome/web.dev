@@ -3,6 +3,7 @@ layout: post
 title: Ensure every ID attribute value is unique
 description: |
   Learn about duplicate-id audit.
+date: 2019-05-02
 web_lighthouse:
   - duplicate-id
 ---
@@ -29,7 +30,7 @@ Assistive technologies typically only reference the first one accurately.
 To remove duplicate IDs,
 change an ID value if it is used more than once to be sure each is unique.
 Learn more in
-[ID attribute values must be unique](https://dequeuniversity.com/rules/axe/3.2/duplicate-id).
+[ID attribute values must be unique](https://dequeuniversity.com/rules/axe/3.3/duplicate-id).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -40,4 +41,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [ID attributes on a page are unique audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

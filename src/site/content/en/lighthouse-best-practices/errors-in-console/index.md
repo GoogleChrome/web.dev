@@ -3,6 +3,7 @@ layout: post
 title: Browser errors were logged to the console
 description: |
   Learn about `errors-in-console` audit.
+date: 2019-05-02
 web_lighthouse:
   - errors-in-console
 ---

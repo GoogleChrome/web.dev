@@ -3,6 +3,7 @@ layout: post
 title: Eliminate render-blocking resources
 description: |
   Learn about the render-blocking-resources audit.
+date: 2019-05-02
 web_lighthouse:
   - render-blocking-resources
 ---

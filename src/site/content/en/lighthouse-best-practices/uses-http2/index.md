@@ -3,6 +3,7 @@ layout: post
 title: Page doesn't use HTTP/2 for its own resources
 description: |
   Learn about `uses-http2` audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-http2
 ---

@@ -42,6 +42,9 @@ const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
+const tagsDir = 'src/site/_includes/components/tags';
+const {Image, Figure} = require(`./${tagsDir}/Image`);
+
 const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
@@ -52,6 +55,7 @@ const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const githubLink = require(`./${filtersDir}/github-link`);
+const expandContributors = require(`./${filtersDir}/expand-contributors`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
@@ -116,6 +120,7 @@ module.exports = function(config) {
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('githubLink', githubLink);
+  config.addFilter('expandContributors', expandContributors);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
@@ -142,7 +147,13 @@ module.exports = function(config) {
   config.addShortcode('SubscribeAction', SubscribeAction);
   config.addShortcode('YouTube', YouTube);
 
-  https://www.11ty.io/docs/config/#data-deep-merge
+  //----------------------------------------------------------------------------
+  // CUSTOM TAGS
+  //----------------------------------------------------------------------------
+  config.addNunjucksTag('Image', Image);
+  config.addNunjucksTag('Figure', Figure);
+
+  // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
 
   // https://www.11ty.io/docs/config/#configuration-options
