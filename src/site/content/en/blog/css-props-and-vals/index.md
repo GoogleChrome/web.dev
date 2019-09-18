@@ -205,6 +205,7 @@ feedback and see what's next for Houdini. Houdini exists to develop features
 that explain the "magic" of styling and layout on the web, so get out there and
 put those magical features to good use.
 
+<!--lint disable no-literal-urls-->
 _Photo by
 [Maik Jonietz](https://unsplash.com/@der_maik_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 on
