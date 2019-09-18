@@ -15,6 +15,7 @@ import "./components/Header";
 import "./components/SideNav";
 import {store} from "./store";
 import "focus-visible";
+import "./analytics";
 
 // Run as long-lived router w/ history & "<a>" bindings
 // Also immediately calls `run()` handler for current location
