@@ -13,22 +13,48 @@ module.exports = {
     to improve the overall code health of your web app.`,
     topics: [
       {
-        title: 'Best practices',
+        title: 'General best practices',
         pathItems: [
-          'appcache-manifest',
-          'uses-http2',
-          'uses-passive-event-listeners',
-          'no-document-write',
-          'external-anchors-use-rel-noopener',
-          'geolocation-on-start',
           'doctype',
-          'no-vulnerable-libraries',
-          'js-libraries',
-          'notification-on-start',
-          'deprecations',
-          'password-inputs-can-be-pasted-into',
           'errors-in-console',
           'image-aspect-ratio',
+        ],
+      },
+      {
+        title: 'Make your page fast',
+        pathItems: [
+          'uses-http2',
+          'no-document-write',
+          'uses-passive-event-listeners',
+        ],
+      },
+      {
+        title: 'Make your page secure',
+        pathItems: [
+          'is-on-https',
+          'external-anchors-use-rel-noopener',
+          'no-vulnerable-libraries',
+        ],
+      },
+      {
+        title: 'Create a good user experience',
+        pathItems: [
+          'geolocation-on-start',
+          'notification-on-start',
+          'password-inputs-can-be-pasted-into',
+        ],
+      },
+      {
+        title: 'Avoid deprecated technologies',
+        pathItems: [
+          'appcache-manifest',
+          'deprecations',
+        ],
+      },
+      {
+        title: 'Diagnostic audits',
+        pathItems: [
+          'js-libraries',
         ],
       },
     ],
