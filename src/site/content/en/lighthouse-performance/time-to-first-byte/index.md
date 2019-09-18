@@ -19,7 +19,7 @@ to receive the first byte of page content:
   </figcaption>
 </figure>
 
-## Slow server response times effect performance
+## Slow server response times affect performance
 
 This audit fails when the browser waits more than 600ms
 for the server to respond to the main document request.
