@@ -1,6 +1,6 @@
 ---
 title: Smarter custom properties with Houdini’s new API
-subhead: CSS Properties and Values Level 1
+subhead: Transitions and data protection in CSS
 authors:
   - samrichard
 date: 2019-09-19
@@ -28,7 +28,7 @@ hard to work with: they can take any value so they may be accidentally
 overridden with something unexpected, they always inherit their values from
 their parent, and you can't transition them. With Houdini's [CSS Properties and
 Values API Level 1](https://drafts.css-houdini.org/css-properties-values-api/),
-now available in Chrome 78, ßthese shortcomings are transcended, making CSS
+now available in Chrome 78, these shortcomings are transcended, making CSS
 custom properties incredibly powerful!
 
 ## What Is Houdini?
@@ -45,9 +45,10 @@ superpower creativity on the web.
 
 ## CSS Properties and Values API Level 1
 
-The CSS Properties and Values API Level 1 (Houdini Props and Vals) allows us to
-give structure to our custom properties. This is the current situation when
-using custom properties:
+The [CSS Properties and Values API Level
+1](https://drafts.css-houdini.org/css-properties-values-api/) (Houdini Props and
+Vals) allows us to give structure to our custom properties. This is the current
+situation when using custom properties:
 
 ```css
 .thing {
@@ -76,19 +77,6 @@ property!
 
 ### Anatomy of a registered property
 
-`registerProperty()` takes four options:
-
-<dl>
-  <dt><code>name</code></dt>
-  <dd>The name of the custom property. String.</dd>
-  <dt><code>syntax</code></dt>
-  <dd>How to parse the custom property. You can find a complete list of possible values in the <a href="https://drafts.csswg.org/css-values-3/">CSS Values and Units</a> specification. Defaults to <code>*</code>. String.</dd>
-  <dt><code>inherits</code></dt>
-  <dd>Whether it inherits its parent’s value. Defaults to <code>true</code>. Boolean.</dd>
-  <dt><code>initialValue</code></dt>
-  <dd>Initial value of the custom property. String.</dd>
-</dl>
-
 Registering a property looks like this:
 
 ```js
@@ -99,6 +87,20 @@ window.CSS.registerProperty({
   initialValue: 'black',
 });
 ```
+
+It supports the following options:
+
+#### `name: string`
+The name of the custom property.
+
+#### `syntax: string`
+How to parse the custom property. You can find a complete list of possible values in the <a href="https://drafts.csswg.org/css-values-3/">CSS Values and Units</a> specification. Defaults to <code>*</code>.
+
+#### `inherits: boolean`
+Whether it inherits its parent's value. Defaults to <code>true</code>.
+
+#### `initialValue: string`
+Initial value of the custom property.
 
 Taking a closer look at `syntax`. There are a number of [valid
 options](https://drafts.css-houdini.org/css-properties-values-api/#supported-names)
@@ -159,8 +161,8 @@ button:hover {
 
 When you hover over the button, it'll animate from red to green! Without
 registering the property, it'll jump from one color to the other Because,
-without being registered, fhe browser doesnt know what to expect between one
-value and the next and therefore can't guarentee the ability to transition themß.
+without being registered, the browser doesn't know what to expect between one
+value and the next and therefore can't guarantee the ability to transition them.
 This example can be taken a step further, though, to animate CSS gradients! The
 following CSS can be written with the same registered property:
 
@@ -203,4 +205,7 @@ feedback and see what's next for Houdini. Houdini exists to develop features
 that explain the "magic" of styling and layout on the web, so get out there and
 put those magical features to good use.
 
-Photo by Maik Jonietz on Unsplash
+_Photo by
+[Maik Jonietz](https://unsplash.com/@der_maik_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/search/photos/code?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
