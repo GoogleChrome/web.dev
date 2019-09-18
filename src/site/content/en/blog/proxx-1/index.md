@@ -39,7 +39,7 @@ But they run a modern browser and are very affordable. For this reason, feature 
   </figcaption>
 </figure>
 
-Performance is important, and that includes both loading performance and runtime performance. It has been shown that **good performance correlates with increased user retention, improved conversions and – most importantly – increased inclusivity.** [Jeremy Wagner] has much more data and insight on [why performance matters].
+Performance is important, and that includes both loading performance and runtime performance. It has been shown that **good performance correlates with increased user retention, improved conversions and—most importantly—increased inclusivity.** [Jeremy Wagner] has much more data and insight on [why performance matters].
 
 This is part 1 of a two-part series. **Part 1 focuses on loading performance**, and part 2 will focus on runtime performance.
 
@@ -524,27 +524,27 @@ The filmstrip can give insight into how loading your app _feels_ for the user. T
 
 Stay tuned for part 2 where we discuss how to optimize runtime performance on hyper-constrained devices.
 
-[PROXX]: https://proxx.app
-[Reddit]: https://reddit.com
-[Webpack]: https://webpack.js.org
-[Rollup]: https://rollupjs.org
-[Parcel]: https://parceljs.org
-[Phil Walton]: https://twitter.com/philwalton
-[IUU]: https://philipwalton.com/articles/idle-until-urgent/
+[proxx]: https://proxx.app
+[reddit]: https://reddit.com
+[webpack]: https://webpack.js.org
+[rollup]: https://rollupjs.org
+[parcel]: https://parceljs.org
+[phil walton]: https://twitter.com/philwalton
+[iuu]: https://philipwalton.com/articles/idle-until-urgent/
 [why performance matters]: https://developers.google.com/web/fundamentals/performance/why-performance-matters/
-[Jeremy Wagner]: https://twitter.com/malchata
-[WebPageTest]: https://webpagetest.org
+[jeremy wagner]: https://twitter.com/malchata
+[webpagetest]: https://webpagetest.org
 [wpt simple]: https://webpagetest.org/easy
-[Preact]: https://preactjs.com
+[preact]: https://preactjs.com
 [source map explorer]: https://npm.im/source-map-explorer
-[Rendering]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web
-[Puppeteer]: https://pptr.dev
-[CSS Modules]: https://github.com/css-modules/css-modules
-[Minimal Analytics]: https://minimalanalytics.com
+[rendering]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web
+[puppeteer]: https://pptr.dev
+[css modules]: https://github.com/css-modules/css-modules
+[minimal analytics]: https://minimalanalytics.com
 [fetch connections]: https://fetch.spec.whatwg.org/#connections
-[Google Fonts]: https://fonts.google.com
-[FMP]: /first-meaningful-paint
-[TTI]: /interactive
+[google fonts]: https://fonts.google.com
+[fmp]: /first-meaningful-paint
+[tti]: /interactive
 [code split]: /reduce-javascript-payloads-with-code-splitting/
 [preact]: /codelab-code-splitting
 [preload]:/preload-critical-assets
