@@ -1,0 +1,8 @@
+tasks:
+  - command: gp await-port 8080 && sleep 2 && gp preview $(gp url 8080)
+  - init: npm ci
+    command: npm run dev
+ports:
+- port: 8080
+  onOpen: ignore
+
