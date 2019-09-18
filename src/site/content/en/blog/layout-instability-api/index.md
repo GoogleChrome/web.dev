@@ -47,7 +47,7 @@ existing content. The culprit might be an image or video with unknown
 dimensions, a font that renders larger or smaller than its fallback, or a
 third-party ad or widget that dynamically resizes itself.
 
-What makes this issue even more problematic is that how a site functions in development is often quite different from how users experience it in production. Personalized or third-party content often doesn't behave the same in development as it does in production, test images are often already in the developer's browser cache, and API calls that run locally are often so fast that the delay isn't noticeable.
+What makes this issue even more problematic is that how a site functions in development is often quite different from how users experience it. Personalized or third-party content often doesn't behave the same in development as it does in production, test images are often already in the developer's browser cache, and API calls that run locally are often so fast that the delay isn't noticeable.
 
 The first step toward properly solving this problem is to give developers the tools to measure it and understand how often it's occurring for real users. They can then identify the causes and improve the user experience. The [Layout Instability API](https://github.com/WICG/layout-instability), currently being incubated in the [WICG](https://www.w3.org/community/wicg/), aims to address this.
 
@@ -75,7 +75,7 @@ In the image above there's an element that takes up half of the viewport in one
 frame. Then, in the next frame, the element shifts down by 25% of the viewport
 height. The red, dotted rectangle indicates the union of the element's visible
 area in both frames, which, in this case, is 75% of the total viewport, so its
-layout shift score is 0.75.
+impact fraction is 0.75.
 
 The other part of the layout shift score equation measures the distance that unstable elements have moved on the horizontal or vertical axis (whichever is greater), relative to the viewport. The [distance fraction](https://github.com/WICG/layout-instability#Distance-Fraction) is the greatest distance any unstable element has moved in the frame. 
 
@@ -124,7 +124,7 @@ The layout shift score is 0.38 x 0.3 = 0.1172.
 
 ### Expected vs. unexpected layout shifts
 
-Not all layout shifts are bad. In fact, many dynamic web applications will frequently change the start position of elements on the page.
+Not all layout shifts are bad. In fact, many dynamic web applications frequently change the start position of elements on the page.
 
 #### User-initiated layout shifts
 
