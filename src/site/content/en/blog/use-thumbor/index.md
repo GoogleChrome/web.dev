@@ -34,9 +34,8 @@ As mentioned in [Use Image CDNs to Optimize Images](https://web.dev/image-cdns),
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor0.jpg" alt="A Thumbor URL has the following components: origin, security key, size, filters and image." class="w-screenshot">
+  <figcaption>Thumbor's URL format</figcaption>
 </figure>
-
-_Figure 1. Thumbor's URL format_
 
 
 ### Origin
@@ -46,7 +45,7 @@ Like all [origins](https://html.spec.whatwg.org/multipage/origin.html#concept-or
 
 ### Security Key
 
-The `unsafe` part of the URL indicates that you're using Thumbor without a [security key](https://github.com/thumbor/thumbor/wiki/security). A security key prevents a user from making unauthorized changes to your image URLs. By changing the image URL, a user could use your server (and your hosting bill) to resize their images, or, more maliciously, to overload your server. This guide won't cover setting up Thumbor's security key feature.
+The `unsafe` part of the URL indicates that you're using Thumbor without a security key. A security key prevents a user from making unauthorized changes to your image URLs. By changing the image URL, a user could use your server (and your hosting bill) to resize their images, or, more maliciously, to overload your server. This guide won't cover setting up [Thumbor's security key feature](https://github.com/thumbor/thumbor/wiki/security).
 
 
 ### Size
@@ -55,21 +54,18 @@ This part of the URL specifies the desired size of the output image. This can be
 
 Try it now:
 
-1. Click the URL below to view the image served at its original size. The image opens in a new tab.
-
-<a href="http://34.67.235.246:8888/unsafe/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/https://web.dev/backdrop-filter/hero.jpg</a>
+1. Click the following URL to view the image served at its original size in a new tab: <a href="http://34.67.235.246:8888/unsafe/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor1.jpg" alt="Image at original size" class="w-screenshot">
+  <figcaption>Resize the image to 100x100 pixels</figcaption>
 </figure>
 
-
-2. Resize the image to 100x100 pixels.
-
-<a href="http://34.67.235.246:8888/unsafe/100x100/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/100x100/https://web.dev/backdrop-filter/hero.jpg</a>
+2. Resize the image to 100x100 pixels: <a href="http://34.67.235.246:8888/unsafe/100x100/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/100x100/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor2.jpg" alt="Image at 100x100 pixels" class="w-screenshot">
+  <figcaption>Resized image</figcaption>
 </figure>
 
 
@@ -79,21 +75,19 @@ Filters transform an image. The filters part of the URL segment starts with `fil
 
 Try it now:
 
-1. Apply a single filter: a Gaussian [blur](https://thumbor.readthedocs.io/en/latest/blur.html) effect with a radius of 25 pixels.
-
-<a href="http://34.67.235.246:8888/unsafe/filters:blur(25)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:blur(25)/https://web.dev/backdrop-filter/hero.jpg</a>
+1. Apply a single filter: a Gaussian [blur](https://thumbor.readthedocs.io/en/latest/blur.html) effect with a radius of 25 pixels: <a href="http://34.67.235.246:8888/unsafe/filters:blur(25)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:blur(25)/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor3.jpg" alt="Blurred image" class="w-screenshot">
+  <figcaption>Blurred imaage</figcaption>
 </figure>
 
 
-2. Apply multiple filters: convert to [grayscale](https://thumbor.readthedocs.io/en/latest/grayscale.html) and [rotate](https://thumbor.readthedocs.io/en/latest/rotate.html) the image 90 degrees.
-
-<a href="http://34.67.235.246:8888/unsafe/filters:grayscale():blur(90)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:grayscale():blur(90)/https://web.dev/backdrop-filter/hero.jpg</a>
+2. Apply multiple filter. Convert to [grayscale](https://thumbor.readthedocs.io/en/latest/grayscale.html) and [rotate](https://thumbor.readthedocs.io/en/latest/rotate.html) the image 90 degrees: <a href="http://34.67.235.246:8888/unsafe/filters:grayscale():blur(90)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:grayscale():blur(90)/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor4.jpg" alt="Grayscale image that has been rotated 90 degrees" class="w-screenshot">
+  <figcaption>Grayscale, rotated image</figcaption>
 </figure>
 
 
@@ -109,20 +103,18 @@ The [quality](https://thumbor.readthedocs.io/en/latest/quality.html) filter comp
 
 Try it now:
 
-1. Compress the image to a quality of 1 (very bad).
-
-<a href="http://34.67.235.246:8888/unsafe/filters:quality(1)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:quality(1)/https://web.dev/backdrop-filter/hero.jpg</a>
+1. Compress the image to a quality of 1 (very bad): <a href="http://34.67.235.246:8888/unsafe/filters:quality(1)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:quality(1)/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor5.jpg" alt="Low-quality image" class="w-screenshot">
+  <figcaption>Low-quality image</figcaption>
 </figure>
 
-2. Compress the image using Thumbor's default compression settings.
-
-<a href="http://34.67.235.246:8888/unsafe/filters:quality()/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:quality()/https://web.dev/backdrop-filter/hero.jpg</a>
+2. Compress the image using Thumbor's default compression settings: <a href="http://34.67.235.246:8888/unsafe/filters:quality()/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:quality()/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
-  <img src="./Use-thumbor6.jpg" alt="Low-quality image that appears very pixelated" class="w-screenshot">
+  <img src="./Use-thumbor6.jpg" alt="Compressed image with no noticible quality issues" class="w-screenshot">
+  <figcaption>Compressed image</figcaption>
 </figure>
 
 ### Resizing
@@ -131,22 +123,20 @@ To resize an image while maintaining its original proportions use the format `$W
 
 Try it now:
 
-1. Resize the image to a width of 200 pixels while maintaining original proportions.
-
-<a href="http://34.67.235.246:8888/unsafe/200x0/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/200x0/https://web.dev/backdrop-filter/hero.jpg</a>
+1. Resize the image to a width of 200 pixels while maintaining original proportions: <a href="http://34.67.235.246:8888/unsafe/200x0/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/200x0/https://web.dev/backdrop-filter/hero.jpg</a>
 
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor7.jpg" alt="Image that is 200 pixels wide" class="w-screenshot">
+  <figcaption>Image resized to a width of 200 pixels</figcaption>
 </figure>
 
 
-2. Resize the image to a height of 500 pixels while maintaining original proportions.
-
-<a href="http://34.67.235.246:8888/unsafe/0x500/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/0x500/https://web.dev/backdrop-filter/hero.jpg</a>
+2. Resize the image to a height of 500 pixels while maintaining original proportion<a href="http://34.67.235.246:8888/unsafe/0x500/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/0x500/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor8.jpg" alt="Image that is 500 pixels tall" class="w-screenshot">
+  <figcaption>Image resized to a height of 500 pixels<figcaption>
 </figure>
 
 
@@ -155,21 +145,19 @@ You can also resize images to a percentage of the original by using the [proport
 
 Try it now:
 
-1. Resize the image to 50% of the original.
-
-<a href="http://34.67.235.246:8888/unsafe/filters:proportion(.5)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:proportion(.5)/https://web.dev/backdrop-filter/hero.jpg</a>
+1. Resize the image to 50% of the original: <a href="http://34.67.235.246:8888/unsafe/filters:proportion(.5)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:proportion(.5)/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor9.jpg" alt="Image that is 50% the size of the original" class="w-screenshot">
+  <figcaption>Image resized to 50% the size of the original</figcaption>
 </figure>
 
 
-2. Resize the image to a width of 1000 pixels, then resize the image to 10% of its current size.
-
-<a href="http://34.67.235.246:8888/unsafe/1000x/filters:proportion(.1)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/1000x/filters:proportion(.1)/https://web.dev/backdrop-filter/hero.jpg</a>
+2. Resize the image to a width of 1000 pixels, then resize the image to 10% of its current size: <a href="http://34.67.235.246:8888/unsafe/1000x/filters:proportion(.1)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/1000x/filters:proportion(.1)/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor10.jpg" alt="Image that is 100 pixels wide" class="w-screenshot">
+  <figcaption>Image resized to a width of 100 pixels</figcaption>
 </figure>
 
 
@@ -182,12 +170,11 @@ The [format](https://thumbor.readthedocs.io/en/latest/format.html) filter conver
 
 Try it now:
 
-1. Convert the image to WebP. If you open the **Network** panel of DevTools the document's **Content-Type response header** shows that the server returned a WebP image.
-
-<a href="http://34.67.235.246:8888/unsafe/filters:format(webp)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:format(webp)/https://web.dev/backdrop-filter/hero.jpg</a>
+1. Convert the image to WebP. If you open the **Network** panel of DevTools the document's **Content-Type response header** shows that the server returned a WebP image: <a href="http://34.67.235.246:8888/unsafe/filters:format(webp)/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/filters:format(webp)/https://web.dev/backdrop-filter/hero.jpg</a>
 
 <figure class="w-figure  w-figure--center">
   <img src="./Use-thumbor11.jpg" alt="DevTools screenshot showing the content-type (WebP) of an image" class="w-screenshot">
+  <figcaption>The `content-type` header in DevTools</figcaption>
 </figure>
 
 
@@ -195,22 +182,29 @@ Try it now:
 
 Try out other [filters](https://thumbor.readthedocs.io/en/latest/filters.html) and transformations on the `hero.jpg` image.
 
-If you're following along using your own Thumbor installation, check out the appendix below that explains how and why to use the thumbor.conf file.
+If you're following along using your own Thumbor installation, check out the appendix below that explains how and why to use the `thumbor.conf` file.
 
 
-## Appendix: Thumbor.conf
+## Appendix: `thumbor.conf`
 
-Many of the configuration options discussed in this post, plus many others, can be established as defaults by setting up and using the `thumbor.conf` file. Settings in the `thumbor.conf` file will be applied to all images unless overridden by the URL string parameters.
+Many of the configuration options discussed in this post, plus many others, can be established as defaults by setting up and using a `thumbor.conf` configuration file. Settings in the `thumbor.conf` file will be applied to all images unless overridden by the URL string parameters.
 
-The best way to start setting up your `thumbor.conf` file is to use the `thumbor-config` command to create a new config.
+1. Run the `thumbor-config` command to create a new `thumbor.conf` file.
 
 ```bash
 thumbor-config > ./thumbor.conf
 ```
 
-The comments in this config will list and explain all Thumbor configurations options and their defaults. To change a setting, uncomment the line and change the text. The following are a few of the settings that you may find useful to set: `QUALITY`, `AUTO_WEBP`, `MAX_WIDTH` and `MAX_HEIGHT`, and `ALLOW_ANIMATED_GIFS`.
+2. Open your new `thumbor.conf` file. The `thumbor-config` command generated a file that lists and explains all Thumbor configuration options.
 
-In order for the thumbor.conf settings to apply, Thumbor must be run using the `--conf` flag. This tells Thumbor the location of the thumbor.conf file. 
+3. Configure settings by uncommenting lines and changing the default values.
+You may find it useful to set the following settings:
+* `QUALITY`
+* `AUTO_WEBP`
+* `MAX_WIDTH` and `MAX_HEIGHT`
+* `ALLOW_ANIMATED_GIFS`
+
+4. Run Thumbor with the `--conf` flag to use your `thumbor.conf` settings.
 
 ```bash
 thumbor --conf /path/to/thumbor.conf
