@@ -1495,5 +1495,19 @@
     "twitter": "dougsillars",
     "country": "US",
     "homepage": "https://dougsillars.com"
-  }
+  },
+  "samrichard": {
+    "name": {
+      "given": "Sam",
+      "family": "Richard"
+    },
+    "twitter": "snugug",
+    "github": "snugug",
+    "glitch": "snugug",
+    "org": {
+      "name": "Chrome OS",
+      "unit": "Developer Relations"
+    },
+    "homepage": "https://snugug.com"
+    }
 }
