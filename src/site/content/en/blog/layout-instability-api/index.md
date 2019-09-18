@@ -47,8 +47,6 @@ existing content. The culprit might be an image or video with unknown
 dimensions, a font that renders larger or smaller than its fallback, or a
 third-party ad or widget that dynamically resizes itself.
 
-Unexpected movement of page content usually happens because of asynchronously loaded resources or DOM elements dynamically added above existing content. The culprit might be an image or video with unknown dimensions, a font that renders larger or smaller than its fallback, or a third-party ad or widget that dynamically resizes itself.
-
 What makes this issue even more problematic is that how a site functions in development is often quite different from how users experience it in production. Personalized or third-party content often doesn't behave the same in development as it does in production, test images are often already in the developer's browser cache, and API calls that run locally are often so fast that the delay isn't noticeable.
 
 The first step toward properly solving this problem is to give developers the tools to measure it and understand how often it's occurring for real users. They can then identify the causes and improve the user experience. The [Layout Instability API](https://github.com/WICG/layout-instability), currently being incubated in the [WICG](https://www.w3.org/community/wicg/), aims to address this.
