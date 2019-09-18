@@ -123,12 +123,12 @@ class MyCounter extends HTMLElement {
   get form() { return this._internals.form; }
   get name() { return this.getAttribute('name'); }
   get type() { return this.localName; }
-  get validity() {return this.internals_.validity; }
-  get validationMessage() {return this.internals_.validationMessage; }
-  get willValidate() {return this.internals_.willValidate; }
+  get validity() {return this._internals.validity; }
+  get validationMessage() {return this._internals.validationMessage; }
+  get willValidate() {return this._internals.willValidate; }
 
-  checkValidity() { return this.internals_.checkValidity(); }
-  reportValidity() {return this.internals_.reportValidity(); }
+  checkValidity() { return this._internals.checkValidity(); }
+  reportValidity() {return this._internals.reportValidity(); }
 
   … 
 }
@@ -168,7 +168,7 @@ const n = this.getAttribute('name');
 const entries = new FormData();
 entries.append(n + '-first-name', this.firstName_);
 entries.append(n + '-last-name', this.lastName_);
-this.internals_.setFormValue(entries);
+this._internals.setFormValue(entries);
 ```
 
 {% Aside %}The `setFormValue()` method takes a second, optional `state` parameter, used to store the internal state of the control. For more information, see [Restoring form state](#restoring-form-state).{% endAside %}
