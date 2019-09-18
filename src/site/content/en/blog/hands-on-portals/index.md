@@ -67,6 +67,11 @@ Before Portals, we could have rendered another page using an `<iframe>`. We coul
 
 Try out Portals in Chrome Canary by flipping an experimental flag:
 `chrome://flags/#enable-portals`.
+During this early phase of the Portals experiment,
+we also recommend using a completely separate user data directory for your tests
+by setting the
+[`--user-data-dir`](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md#command-line)
+command line flag.
 Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
 
 <img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
