@@ -89,7 +89,7 @@ After about 62 KB of gzip'd JS has been downloaded and the DOM has been generate
 Now that we know _what_ the user sees, we need to figure out the _why_. For this we can look at the waterfall and analyze why resources are loading too late. In our 2G trace for PROXX we can see two major red flags:
 
 1. There are multiple, multi-colored thin lines.
-2. JavaScript files form a chain. For example, the second resource only starts loading once the first resource is finished, the third resource only starts when the second resource is finished, and so on.
+2. JavaScript files form a chain. For example, the second resource only starts loading once the first resource is finished, and the third resource only starts when the second resource is finished.
 
 <figure class="w-figure w-figure--center">
   <picture>
