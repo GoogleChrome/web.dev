@@ -13,6 +13,7 @@ import "./components/UrlChooserContainer";
 import "./components/Codelab";
 import "./components/Header";
 import "./components/SideNav";
+import "./components/Snackbar";
 import {store} from "./store";
 import "focus-visible";
 import "./analytics";
