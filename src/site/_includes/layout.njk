@@ -21,6 +21,8 @@
     <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
     <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
     <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
+    {# Module code is loaded deferred (the "asynchronous" case in the polyfill docs) but we only load other module code anyway. #}
+    <script type="module" src="/lib/webcomponents/webcomponents-loader.js"></script>
     <script type="module" src="/app.js"></script>
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

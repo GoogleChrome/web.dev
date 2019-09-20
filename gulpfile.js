@@ -65,9 +65,19 @@ gulp.task('copy-content-assets', () => {
     .pipe(gulp.dest('./dist/en'));
 });
 
+gulp.task('copy-node_modules-assets', () => {
+  return gulp
+    .src([
+      `./node_modules/@webcomponents/webcomponentsjs/**/*.js`,
+      `!./node_modules/@webcomponents/webcomponentsjs/src/**`,
+    ])
+    .pipe(gulp.dest('./dist/lib/webcomponents/'));
+});
+
 gulp.task('build', gulp.parallel(
   'copy-global-assets',
   'copy-content-assets',
+  'copy-node_modules-assets',
 ));
 
 gulp.task('watch', () => {
