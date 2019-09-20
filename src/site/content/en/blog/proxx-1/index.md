@@ -175,7 +175,7 @@ With this in place, we can expect an improvement for our FMP. We still need to l
 
 ## Inlining
 
-Another metric that both DevTools and WebPageTest give us is Time To First Byte (TTFB). This is the time it takes from the first byte of the request being sent to the first byte of the response being received. This time is also often called a Round Trip Time (RTT), although technically there is a difference between these two numbers: RTT does not include the processing time of the request on the server side. [DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-preview) and WebPageTest visualize TTFB with a light color within the request/response block.
+Another metric that both DevTools and WebPageTest give us is [Time To First Byte (TTFB)][ttfb]. This is the time it takes from the first byte of the request being sent to the first byte of the response being received. This time is also often called a Round Trip Time (RTT), although technically there is a difference between these two numbers: RTT does not include the processing time of the request on the server side. [DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#timing-preview) and WebPageTest visualize TTFB with a light color within the request/response block.
 
 <figure class="w-figure w-figure--center">
   <picture>
