@@ -106,7 +106,7 @@ Each thin line (`dns`, `connect`, `ssl`) stands for the creation of a new HTTP c
 
 - Request #1: Our `index.html`
 - Request #5: The font styles from `fonts.googleapis.com`
-- Request #9 & #10: The font files from `fonts.gstatic.com`
+- Request #9: A font file from `fonts.gstatic.com`
 - Request #8: Google Analytics
 - Request #14: The Web App Manifest
 
