@@ -31,6 +31,10 @@ const initialState = {
   lighthouseError: null,
 
   isSideNavExpanded: false,
+
+  // When a user lands on the page, check if they have accepted our
+  // cookie policy
+  userAcceptsCookies: false,
 };
 
 const store = devtools(createStore(initialState));

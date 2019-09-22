@@ -135,3 +135,23 @@ export const collapseSideNav = store.action(() => {
   header.inert = false;
   return {isSideNavExpanded: false};
 });
+
+export const checkIfUserAcceptsCookies = store.action(() => {
+  if (localStorage.getItem("web-accepts-cookies")) {
+    return {userAcceptsCookies: true};
+  }
+
+  // Doing this on initial page load seems to break the animation.
+  // Waiting a frame fixes things ¯\_(ツ)_/¯
+  requestAnimationFrame(() => {
+    const snackbar = document.querySelector("web-snackbar");
+    snackbar.type = "cookies";
+    snackbar.acceptAction = setUserAcceptsCookies;
+    snackbar.open = true;
+  });
+});
+
+export const setUserAcceptsCookies = store.action(() => {
+  localStorage.setItem("web-accepts-cookies", 1);
+  return {userAcceptsCookies: true};
+});

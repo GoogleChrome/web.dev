@@ -28,6 +28,7 @@ class Snackbar extends BaseElement {
   static get properties() {
     return {
       animatable: {type: Boolean, reflect: true},
+      stacked: {type: Boolean, reflect: true},
       type: {type: String},
     };
   }
@@ -50,6 +51,15 @@ class Snackbar extends BaseElement {
     setTimeout(() => (this.animatable = false), ms);
   }
 
+  onAccept() {
+    this.open = false;
+    // acceptAction is a property set by an ancestor or an action.
+    if (this.acceptAction) {
+      this.acceptAction();
+      this.acceptAction = null;
+    }
+  }
+
   get cookiesTemplate() {
     return html`
       <div class="web-snackbar__label" role="status" aria-live="polite">
@@ -62,10 +72,7 @@ class Snackbar extends BaseElement {
           class="w-button web-snackbar__action"
           >More details</a
         >
-        <button
-          @click=${() => (this.open = false)}
-          class="w-button web-snackbar__action"
-        >
+        <button @click=${this.onAccept} class="w-button web-snackbar__action">
           OK
         </button>
       </div>

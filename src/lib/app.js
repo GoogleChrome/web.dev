@@ -17,6 +17,7 @@ import "./components/Snackbar";
 import {store} from "./store";
 import "focus-visible";
 import "./analytics";
+import {checkIfUserAcceptsCookies} from "./actions";
 
 // Run as long-lived router w/ history & "<a>" bindings
 // Also immediately calls `run()` handler for current location
@@ -33,3 +34,6 @@ function onGlobalStateChanged() {
 }
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged();
+
+// See if the user has accepted our cookie policy.
+checkIfUserAcceptsCookies();
