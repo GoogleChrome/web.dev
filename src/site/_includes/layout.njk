@@ -23,7 +23,17 @@
     <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
     {# Module code is loaded deferred (the "asynchronous" case in the polyfill docs) but we only load other module code anyway. #}
     <script type="module" src="/lib/webcomponents/webcomponents-loader.js"></script>
-    <script type="module" src="/app.js"></script>
+    <script type="module">
+      WebComponents.waitFor(async () => {
+        return new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.onerror = reject;
+          s.onload = () => resolve();
+          s.src = "/app.js";
+          document.head.appendChild(s);
+        });
+      });
+    </script>
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
       ga('create', 'UA-126406676-2');
