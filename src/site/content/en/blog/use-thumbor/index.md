@@ -3,11 +3,12 @@ title: Optimize images with Thumbor
 subhead: Thumbor can be used for free to resize, compress, and transform images on-demand.
 authors:
   - katiehempenius
-date: 2019-09-20
+date: 2019-09-23
 hero: hero.jpg
 alt: A pile of photos.
 description: |
   Instructions on how to install Thumbor. Thumbor is an open-source image CDN and can be used for free to resize, compress, and transform images.
+draft: true
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
