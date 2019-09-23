@@ -33,37 +33,51 @@ const sassEngine = (function() {
   }
 })();
 
-const target = process.argv[3] || 'out.css';
+/**
+ * @param {string} input filename to read for input
+ * @param {string} output filename to use for output (but does not write)
+ * @return {{css: !Buffer, map: !Buffer}}
+ */
+function compileCSS(input, output) {
+  // #1: Compile CSS with either engine.
+  const compiledOptions = {
+    file: input,
+    outFile: output,
+    sourceMap: true,
+    omitSourceMapUrl: true, // since we just read it from the result object
+  };
+  if (isProd) {
+    compiledOptions.outputStyle = 'compressed';
+  }
+  log('Compiling', input);
+  const compiledResult = sassEngine.renderSync(compiledOptions);
 
-// #1: Compile CSS with either engine.
-const compiledOptions = {
-  file: process.argv[2],
-  outFile: target,
-  sourceMap: true,
-  omitSourceMapUrl: true, // since we just read it from the result object
-};
-if (isProd) {
-  compiledOptions.outputStyle = 'compressed';
+  if (!isProd) {
+    return compiledResult;
+  }
+
+  // #2: Run postcss for autoprefixer.
+  // TODO(samthor): This could also be disabled not in prod.
+  const postcssOptions = {
+    from: output,
+    to: output,
+    map: {
+      prev: JSON.parse(compiledResult.map.toString()),
+      annotation: true,
+    },
+  };
+  log('Running postcss (autoprefixer)...');
+  const postcssResult = postcss([autoprefixer]).process(compiledResult.css.toString(), postcssOptions);
+  postcssResult.warnings().forEach((warn) => {
+    console.warn(warn.toString());
+  });
+
+  return postcssResult;
 }
-log('Compiling', process.argv[2]);
-const compiledResult = sassEngine.renderSync(compiledOptions);
 
-// #2: Run postcss for autoprefixer.
-// TODO(samthor): This could also be disabled not in prod.
-const postcssOptions = {
-  from: target,
-  to: target,
-  map: {
-    prev: JSON.parse(compiledResult.map.toString()),
-    annotation: true,
-  },
-};
-log('Running postcss (autoprefixer)...');
-const postcssResult = postcss([autoprefixer]).process(compiledResult.css.toString(), postcssOptions);
-postcssResult.warnings().forEach((warn) => {
-  console.warn(warn.toString());
-});
+const target = process.argv[3] || 'out.css';
+const out = compileCSS(process.argv[2], target);
 
-fs.writeFileSync(target, postcssResult.css);
-fs.writeFileSync(target + '.map', postcssResult.map);
+fs.writeFileSync(target, out.css);
+fs.writeFileSync(target + '.map', out.map);
 log('Finished CSS!');
