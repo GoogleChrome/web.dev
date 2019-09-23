@@ -43,6 +43,7 @@ const PostCard = require(`./${componentsDir}/PostCard`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
 const tagsDir = 'src/site/_includes/components/tags';
+const {Details} = require(`./${tagsDir}/Details`);
 const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
@@ -153,6 +154,7 @@ module.exports = function(config) {
   // CUSTOM TAGS
   //----------------------------------------------------------------------------
   config.addNunjucksTag('Image', Image);
+  config.addNunjucksTag('Details', Details);
   config.addNunjucksTag('Figure', Figure);
 
   // https://www.11ty.io/docs/config/#data-deep-merge

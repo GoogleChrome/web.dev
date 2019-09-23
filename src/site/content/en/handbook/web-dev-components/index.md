@@ -265,13 +265,32 @@ at.
 
 ## Details
 
-<details>
-  <summary>Developer tools for Lighthouse</summary>
-  <p>
-    The browser uses the first listed source that's in a format it
-    supports. If the browser does not support any of the formats.
-  </p>
-</details>
+{% Details headingLevel="h2" %}
+Details component
+{% preview %}
+This is an optional preview. Make your preview text match the first paragraph
+of your panel text.
+{% panel %}
+This is an optional preview. Make your preview text match the first paragraph
+of your panel text.
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+{% endDetails %}
+
+{% Details headingLevel="h3", state="open" %}
+Details component in open state
+{% preview %}
+This is an optional preview. Make your preview text match the first paragraph
+of your panel text.
+{% panel %}
+This details component uses an `h3` header and is set to be open by default.
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+{% endDetails %}
 
 ## Glitch
 
