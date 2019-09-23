@@ -47,7 +47,7 @@ Once the custom font is ready, the system font is swapped out
 
 It's worth mentiong that not all major browsers support `font-display: swap`,
 so you may need to do a bit more work to fix the invisible text problem.
-Follow the [Avoid flast of invisible text codelab](/codelab-avoid-invisible-text)
+Follow the [Avoid flash of invisible text codelab](/codelab-avoid-invisible-text)
 to learn how to avoid this invisible text across all browsers.
 
 ## More information
