@@ -16,9 +16,7 @@
 
 require("dotenv").config();
 
-const autoprefixer = require('autoprefixer');
 const fs = require('fs');
-const postcss = require('postcss');
 const log = require('fancy-log');
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
@@ -56,8 +54,11 @@ function compileCSS(input, output) {
     return compiledResult;
   }
 
+  // nb. Only require() dependencies for autoprefixer when used.
+  const autoprefixer = require('autoprefixer');
+  const postcss = require('postcss');
+
   // #2: Run postcss for autoprefixer.
-  // TODO(samthor): This could also be disabled not in prod.
   const postcssOptions = {
     from: output,
     to: output,
