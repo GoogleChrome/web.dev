@@ -15,11 +15,10 @@
  */
 
 const {html} = require('common-tags');
-const md = require('markdown-it')();
 
 /* eslint-disable require-jsdoc */
 
-module.exports = (content, type, caption = '', labelOverride) => {
+module.exports = (content, type, labelOverride) => {
   if (!type) {
     /* eslint-disable max-len */
     throw new Error(
@@ -44,21 +43,12 @@ module.exports = (content, type, caption = '', labelOverride) => {
     }
   }
 
-  function renderCaption(caption) {
-    return html`
-    <figcaption class="w-compare__caption">
-      ${md.render(caption)}
-    </figcaption>
-    `;
-  }
-
   return html`
     <figure class="w-compare">
       <p class="w-compare__label w-compare__label--${type}">
         ${label}
       </p>
       ${content}
-      ${caption && renderCaption(caption)}
     </figure>
   `;
 };

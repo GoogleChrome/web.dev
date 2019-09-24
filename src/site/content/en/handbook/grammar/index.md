@@ -69,7 +69,7 @@ Libraries and tools should be linked the first time they're mentioned.
 ## Lists
 Use an ordered list (numbers) when instructing the reader to perform a series of actions.
 
-{% Compare 'better', '', 'Good' %}
+{% Compare 'better', 'Good' %}
 1. Click **Remix to Edit** to make the project editable.
 1. Click **Tools**.
 1. Click **Console**.
@@ -77,7 +77,7 @@ Use an ordered list (numbers) when instructing the reader to perform a series of
 
 <!-- lint disable no-inline-padding -->
 Use an unordered list (bullets) when breaking down sub-steps of an action.
-{% Compare 'better', '', 'Good' %}
+{% Compare 'better', 'Good' %}
 1. Do the hokey pokey:
     * Put your left foot in.
     * Take your left foot out.
@@ -88,7 +88,7 @@ Use an unordered list (bullets) when breaking down sub-steps of an action.
 Use an unordered list item for a standalone action.
 
 
-{% Compare 'better', '', 'Good' %}
+{% Compare 'better', 'Good' %}
 * To preview the site, press **View App**. Then press **Fullscreen**.
 {% endCompare %}
 

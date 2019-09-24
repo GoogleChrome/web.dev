@@ -36,6 +36,7 @@ const Banner = require(`./${componentsDir}/Banner`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
 const Compare = require(`./${componentsDir}/Compare`);
+const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const PathCard = require(`./${componentsDir}/PathCard`);
@@ -136,6 +137,7 @@ module.exports = function(config) {
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addPairedShortcode('Compare', Compare);
+  config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
   config.addShortcode('PathCard', PathCard);

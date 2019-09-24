@@ -281,7 +281,7 @@ content. A nice trick when creating a link is to put the most meaningful piece
 of text into the link itself, rather than filler words like "Here" or "Read
 More."
 
-{% Compare 'worse', 'Not descriptive enough.' %}
+{% Compare 'worse', 'Not descriptive enough' %}
 ```html
 Check out our guide to web performance <a href="/guide">here</a>.
 ```

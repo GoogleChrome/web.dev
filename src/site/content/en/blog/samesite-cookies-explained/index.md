@@ -302,30 +302,50 @@ Tech Preview now. You can track their progress in the
 
 ### Behavior with `same-site-by-default-cookies` enabled
 
-{% Compare 'worse', 'If you send a cookie without any `SameSite` attribute specified.', 'No attribute set' %}
+{% Compare 'worse', 'No attribute set' %}
 ```text
 Set-Cookie: promo_shown=1
 ```
+
+{% CompareCaption %}
+If you send a cookie without any `SameSite` attribute specified.
+{% endCompareCaption %}
+
 {% endCompare %}
 
-{% Compare 'better', 'Chrome will treat that cookie as if `SameSite=Lax` was specified.', 'Default behavior applied' %}
+{% Compare 'better', 'Default behavior applied' %}
 ```text
 Set-Cookie: promo_shown=1; SameSite=Lax
 ```
+
+{% CompareCaption %}
+Chrome will treat that cookie as if `SameSite=Lax` was specified.
+{% endCompareCaption %}
+
 {% endCompare %}
 
 ### Behavior with `cookies-without-same-site-must-be-secure` enabled
 
-{% Compare 'worse', 'Setting a cookie without `Secure` **will be rejected**.', 'Rejected' %}
+{% Compare 'worse', 'Rejected' %}
 ```text
 Set-Cookie: widget_session=abc123; SameSite=None
 ```
+
+{% CompareCaption %}
+Setting a cookie without `Secure` **will be rejected**.
+{% endCompareCaption %}
+
 {% endCompare %}
 
-{% Compare 'better', 'You must ensure that you pair `SameSite=None` with the `Secure` attribute.', 'Accepted' %}
+{% Compare 'better', 'Accepted' %}
 ```text
 Set-Cookie: widget_session=abc123; SameSite=None; Secure
 ```
+
+{% CompareCaption %}
+You must ensure that you pair `SameSite=None` with the `Secure` attribute.
+{% endCompareCaption %}
+
 {% endCompare %}
 
 {% Aside 'objective' %} These flags are intended to encourage more secure

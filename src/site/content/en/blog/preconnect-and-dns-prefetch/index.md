@@ -124,17 +124,27 @@ DNS resolution is initiated similarly to `preconnect`: by adding a `<link>` tag 
 [Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect`](https://caniuse.com/#search=preconnect) [support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`.
 
 
-{% Compare 'better', 'To safely implement the fallback technique, use separate link tags.' %}
+{% Compare 'better' %}
 ```html
 <link rel="preconnect" href="http://example.com">
 <link rel="dns-prefetch" href="http://example.com">
 ```
+
+{% CompareCaption %}
+To safely implement the fallback technique, use separate link tags.
+{% endCompareCaption %}
+
 {% endCompare %}
 
-{% Compare 'worse', 'Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Safari where `preconnect` gets cancelled.' %}
+{% Compare 'worse' %}
 ```html
 <link rel="preconnect dns-prefetch" href="http://example.com">
 ```
+
+{% CompareCaption %}
+Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Safari where `preconnect` gets cancelled.
+{% endCompareCaption %}
+
 {% endCompare %}
 
 ## Conclusion

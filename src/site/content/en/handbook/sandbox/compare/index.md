@@ -30,7 +30,7 @@ at.
 Bad code example
 ```
 
-{% Compare 'worse', '', 'Not helpful' %}
+{% Compare 'worse', 'Not helpful' %}
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
@@ -40,7 +40,7 @@ at.
 Good code example
 ```
 
-{% Compare 'better', '', 'Helpful' %}
+{% Compare 'better', 'Helpful' %}
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.

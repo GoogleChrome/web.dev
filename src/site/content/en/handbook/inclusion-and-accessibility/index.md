@@ -19,21 +19,29 @@ Admittedly, web.dev tends to deal with technical content, so the reading level w
 Prefer shorter, simpler sentences.
 
 {% Compare 'worse' %}
-We also include an HTML table of buttons for accessibility reasons that is on top of the canvases but is made invisible using opacity: 0.
+We also include an HTML table of buttons for accessibility reasons that is on top of the canvases but is made invisible using `opacity: 0`.
 {% endCompare %}
 
 {% Compare 'better' %}
-We also include an HTML table of buttons to improve accessibility. The table sits on top of the canvases and is made invisible using opacity: 0.
+We also include an HTML table of buttons to improve accessibility. The table sits on top of the canvases and is made invisible using `opacity: 0`.
 {% endCompare %}
 
 Prefer commonly used words that your [audience](/handbook/audience) is likely to be familiar with over specialized vocabulary. If you need help finding a more accessible alternative, the [Merriam-Webster Learner's Dictionary](http://learnersdictionary.com/) is a handy tool.
 
-{% Compare 'worse', '_Script_ and _grapheme_ are very precise\, but they\'re likely to be unfamiliar to most readers and may cause confusion since readers probably more commonly see _script_ referring to a piece of code.' %}
+{% Compare 'worse' %}
 In some scripts, graphemes can be visually joined when they're adjacent.
+
+{% CompareCaption %}
+_Script_ and _grapheme_ are very precise\, but they\'re likely to be unfamiliar to most readers and may cause confusion since readers probably more commonly see _script_ referring to a piece of code.
+{% endCompareCaption %}
 {% endCompare %}
 
-{% Compare 'better', 'While _written language_ and _character_ are slightly less precise\, they should be more familiar and less likely to cause misunderstandings.' %}
+{% Compare 'better' %}
 In some written languages, certain characters can be visually joined when they're adjacent.
+
+{% CompareCaption %}
+While _written language_ and _character_ are slightly less precise\, they should be more familiar and less likely to cause misunderstandings.
+{% endCompareCaption %}
 {% endCompare %}
 
 If you must use a word that your audience is unlikely to know, provide a definition using the [Key-term Aside component](/handbook/web-dev-components#asides).
@@ -66,11 +74,11 @@ There are several excellent online guides for using inclusive language when writ
 
 To be more gender inclusive, use _they/them_ for singular personal pronouns instead of _he/him_ and _she/her_. However, if you can use a plural pronoun instead, that's ideal.
 
-{% Compare 'better', '', 'Good' %}
+{% Compare 'better', 'Good' %}
 If the reader is interested in diving deeper after reading web.dev, they can turn to other sources.
 {% endCompare %}
 
-{% Compare 'better', '', 'Better' %}
+{% Compare 'better', 'Better' %}
 If readers are interested in diving deeper after reading web.dev, they can turn to other sources.
 {% endCompare %}
 
