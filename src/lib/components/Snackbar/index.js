@@ -63,8 +63,8 @@ class Snackbar extends BaseElement {
   get cookiesTemplate() {
     return html`
       <div class="web-snackbar__label" role="status" aria-live="polite">
-        We serve cookies on this site to analyse traffic, remember your
-        preferences, and optimise your experience.
+        We serve cookies on this site to analyze traffic, remember your
+        preferences, and optimize your experience.
       </div>
       <div class="web-snackbar__actions">
         <a
