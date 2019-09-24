@@ -27,6 +27,7 @@ tags:
   - post # post is a required tag for the article to show up in the blog.
   - identity
   - sms
+  - fugu`
 ---
 
 
@@ -161,7 +162,7 @@ because it doesn't matter who the sender is in the SMS Receiver API.
 
 1. Prepare Google Chrome on Android 78 or later with "Experimental Web Platform
    Feature" flag turned on at
-   `chrome://flags/\#enable-experimental-web-platform-features`.
+   `chrome://flags/#enable-experimental-web-platform-features`.
 1. Go to
    [https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me).
 1. Select your browser channel from the provided list.
@@ -212,7 +213,7 @@ distill the OTP and verify the user. For example, if a text message contains a
 six digit verification code following `otp=`, the code would look like this:
 
 ```js
-const code = sms.content.replace(/[\s\S]\*otp=([0-9a-zA-Z]{6})[\s\S]\*$/m, '$1');
+const code = sms.content.replace(/[\s\S]*otp=([0-9a-zA-Z]{6})[\s\S]*$/m, '$1');
 ```
 
 You can now submit the code to the server to verify it.
@@ -302,21 +303,23 @@ Try various messages with the demo:
 [https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me)
 
 You may also fork it and create your version:
-[https://glitch.com/edit/\#!/sms-receiver-demo](https://glitch.com/edit/#!/sms-receiver-demo).
+[https://glitch.com/edit/#!/sms-receiver-demo](https://glitch.com/edit/#!/sms-receiver-demo).
 
 ### Enabling support during the origin trial
 
-Starting in Chrome 78, the SMS Receiver API will be available as an origin trial
-on Chrome for Android. Origin trials allow you to try new features and give
-feedback on their usability, practicality, and effectiveness, both to us, and to
-the web standards community. For more information, see the [Origin Trials Guide
-for Web
+Starting in Chrome 78, [the SMS Receiver API is available as an origin trial on
+Chrome for
+Android](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961).
+Origin trials allow you to try new features and give feedback on their
+usability, practicality, and effectiveness, both to us, and to the web standards
+community. For more information, see the [Origin Trials Guide for Web
 Developers](https://googlechrome.github.io/OriginTrials/developer-guide.html).
 
 To participate in an origin trial:
 
-1. Request a [token](https://developers.chrome.com/origintrials/) for your
-   origin.
+1. Request a
+   [token](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
+   for your origin.
 1. Add the token to your pages, there are two ways to provide this token on any
    pages in your origin
     * Add an origin-trial `<meta>` tag to the head of any page. For example,
@@ -354,7 +357,7 @@ Planning to use the SMS Receiver API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
 
 * Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
-  \#smsreceiver and let us know where and how you're using it.
+  `#smsreceiver` and let us know where and how you're using it.
 
 ## FAQ
 ### Why did you not align with Safari's `one-time-code`?
