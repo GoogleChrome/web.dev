@@ -21,8 +21,9 @@ hero: hero.png
 alt: A description of the hero image for screen reader users.
 
 description: |
-  Finding, memorizing and typing OTP sent via SMS to a form is cumbersome. SMS
-  Receiver API will help users typing the OTP.
+  Finding, memorizing, and typing OTP sent via SMS to a form is cumbersome. The
+  SMS Receiver API will help users typing the OTP.
+
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - identity
@@ -50,8 +51,8 @@ This idea is already deployed in many online scenarios to achieve:
   this use case.
 * **Two step verification:** When signing in, a website asks for a one-time code
   sent via SMS on top of a password for extra security.
-* **Payment confirmation:** When a user is making a payment, asking a one-time
-  code sent via SMS can help authenticate the person's intent.
+* **Payment confirmation:** When a user is making a payment, asking for a
+  one-time code sent via SMS can help authenticate the person's intent.
 
 The current process creates friction for the user. Finding an OTP within an SMS
 message, then copying and pasting it to the form is cumbersome. Easing this has
@@ -66,7 +67,7 @@ With the SMS Receiver API, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily.
 
 {% Aside 'warning' %}
-keep in mind that SMS is a weak form of authentication: attackers can
+Keep in mind that SMS is a weak form of authentication: attackers can
 spoof SMS and can hijack a person's phone number. Carriers can also recycle
 phone numbers to new users after an account was closed. While SMS OTP is useful
 to verify a phone number when a user sets up an account with your service, we
@@ -230,7 +231,7 @@ was called.
 The message must adhere to the following formatting:
 
 * The application hash of the user's Chrome instance. (These are static strings.
-  See the table after the example.)
+  See the table below.)
 * The origin part of the URL of the website that invoked the API. It must be
   preceded by `For: `.
 * The URL must contain a query parameter `otp` whose value is the OTP.
@@ -311,8 +312,9 @@ Starting in Chrome 78, [the SMS Receiver API is available as an origin trial on
 Chrome for
 Android](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961).
 Origin trials allow you to try new features and give feedback on their
-usability, practicality, and effectiveness, both to us, and to the web standards
-community. For more information, see the [Origin Trials Guide for Web
+usability, practicality, and effectiveness, both to the Chrome team, and to the
+web standards community. For more information, see the [Origin Trials Guide for
+Web
 Developers](https://googlechrome.github.io/OriginTrials/developer-guide.html).
 
 To participate in an origin trial:
@@ -321,7 +323,7 @@ To participate in an origin trial:
    [token](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
    for your origin.
 1. Add the token to your pages, there are two ways to provide this token on any
-   pages in your origin
+   page in your origin:
     * Add an origin-trial `<meta>` tag to the head of any page. For example,
       this may look something like: `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
     * If you can configure your server, you can also provide the token on pages
@@ -395,7 +397,7 @@ but it's a platform restriction that we don't have control over.
 
 ### Will an SMS message timeout?
 
-Yes. We're planning to use AbortController to tim the request out ([tracking
+Yes. We're planning to use AbortController to time the request out ([tracking
 bug](https://bugs.chromium.org/p/chromium/issues/detail?id=976401)), but it's
 not implemented as of Chrome 78.
 
