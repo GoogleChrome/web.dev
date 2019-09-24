@@ -265,31 +265,125 @@ at.
 
 ## Details
 
-{% Details headingLevel="h2" %}
-Details component
-{% preview %}
-This is an optional preview. Make your preview text match the first paragraph
-of your panel text.
-{% panel %}
-This is an optional preview. Make your preview text match the first paragraph
-of your panel text.
+### Basic details component
+```text
+&#123;% Details %&#125;
+
+&#123;% DetailsSummary %&#125;
+Details _summary_
+&#123;% endDetailsSummary %&#125;
 
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
+&#123;% endDetails %&#125;
+```
+
+{% Details %}
+
+{% DetailsSummary %}
+Details _summary_
+{% endDetailsSummary %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+
 {% endDetails %}
 
-{% Details headingLevel="h3", state="open" %}
-Details component in open state
-{% preview %}
+### Details component with preview
+```text/4-5
+&#123;% Details %&#125;
+
+&#123;% DetailsSummary %&#125;
+Details _summary_
 This is an optional preview. Make your preview text match the first paragraph
 of your panel text.
-{% panel %}
-This details component uses an `h3` header and is set to be open by default.
+&#123;% endDetailsSummary %&#125;
 
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
+&#123;% endDetails %&#125;
+```
+
+{% Details %}
+
+{% DetailsSummary %}
+Details _summary_
+This is an optional preview. Make your preview text match the first paragraph
+of your panel text.
+{% endDetailsSummary %}
+
+This is an optional preview. Make your preview text match the first paragraph
+of your panel text.
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+
+{% endDetails %}
+
+### Details component with custom heading level
+The default heading level is `h2`.
+To ensure the `Details` component is in the correct place in the page hierarchy,
+add a custom heading argument to the `DetailsSummary` shortcode.
+For example, if the component is in an `h2` section,
+use an `h3` heading.
+
+```text/2
+&#123;% Details %&#125;
+
+&#123;% DetailsSummary 'h3' %&#125;
+Details _summary_
+&#123;% endDetailsSummary %&#125;
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+&#123;% endDetails %&#125;
+```
+
+{% Details %}
+
+{% DetailsSummary 'h3' %}
+Details _summary_
+{% endDetailsSummary %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+
+{% endDetails %}
+
+### Details component in open state
+The `Details` component is closed by default.
+If for some reason you want it open,
+add the `open` argument to the `Details` shortcode.
+
+```text/0
+&#123;% Details 'open' %&#125;
+
+&#123;% DetailsSummary %&#125;
+Details _summary_
+&#123;% endDetailsSummary %&#125;
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+&#123;% endDetails %&#125;
+```
+
+{% Details 'open' %}
+
+{% DetailsSummary %}
+Details _summary_
+{% endDetailsSummary %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+
 {% endDetails %}
 
 ## Glitch
