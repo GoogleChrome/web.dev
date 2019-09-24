@@ -311,11 +311,11 @@ at.
 
 {% DetailsSummary %}
 Details _summary_
-This is an optional preview. Make your preview text match the first paragraph
+This is an optional preview. Make your preview text matches the first paragraph
 of your panel text.
 {% endDetailsSummary %}
 
-This is an optional preview. Make your preview text match the first paragraph
+This is an optional preview. Make your preview text matches the first paragraph
 of your panel text.
 
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
