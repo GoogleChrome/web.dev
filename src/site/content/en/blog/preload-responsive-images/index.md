@@ -1,11 +1,18 @@
 ---
 layout: post
 title: Preloading responsive images
+subhead: Learn about new and exciting possibilities for preloading responsive images to ensure great user experience.
 authors:
   - yoavweiss
 description: |
   Learn about new and exciting possibilities for preloading responsive images to ensure great user experience.
+hero: hero.jpg
+alt: A wall with a bunch of images frames in different sizes.
 date: 2019-09-27
+tags:
+  - post # post is a required tag for the article to show up in the blog.
+  - fast
+  - images
 ---
 
 This article gives me an opportunity to discuss two of my favorite things: responsive images *and* preload. As someone who was heavily involved in developing both of those features, I'm super excited to see them working together!
