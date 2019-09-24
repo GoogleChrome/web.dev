@@ -1510,5 +1510,13 @@
       "unit": "Developer Relations"
     },
     "homepage": "https://snugug.com"
+    },
+  "yoavweiss": {
+      "name": {
+        "given": "Yoav",
+        "family": "Weiss"
+      },
+      "twitter": "yoavweiss",
+      "github": "yoavweiss"
     }
 }
