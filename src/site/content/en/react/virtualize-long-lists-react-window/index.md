@@ -359,7 +359,7 @@ const Row = ({ index, style }) => {
 
 Since items in a virtualized list only change when the user scrolls, blank
 space can briefly flash as newer entries are about to be displayed. You can
-try quckly scrolling any of the previous examples in this guide to notice
+try quickly scrolling any of the previous examples in this guide to notice
 this. 
 
 To improve the user experience of virtualized lists, `react-window` allows
