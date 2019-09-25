@@ -20,6 +20,7 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import {setUserAcceptsCookies} from "../../actions";
 
 const OPENING_ANIMATION_TIME = 150;
 const CLOSING_ANIMATION_TIME = 75;
@@ -51,13 +52,9 @@ class Snackbar extends BaseElement {
     setTimeout(() => (this.animatable = false), ms);
   }
 
-  onAccept() {
+  onAcceptCookies() {
     this.open = false;
-    // acceptAction is a property set by an ancestor or an action.
-    if (this.acceptAction) {
-      this.acceptAction();
-      this.acceptAction = null;
-    }
+    setUserAcceptsCookies();
   }
 
   get cookiesTemplate() {
@@ -72,7 +69,10 @@ class Snackbar extends BaseElement {
           class="w-button web-snackbar__action"
           >More details</a
         >
-        <button @click=${this.onAccept} class="w-button web-snackbar__action">
+        <button
+          @click=${this.onAcceptCookies}
+          class="w-button web-snackbar__action"
+        >
           OK
         </button>
       </div>

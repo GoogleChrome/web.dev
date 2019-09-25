@@ -146,7 +146,6 @@ export const checkIfUserAcceptsCookies = store.action(() => {
   requestAnimationFrame(() => {
     const snackbar = document.querySelector("web-snackbar");
     snackbar.type = "cookies";
-    snackbar.acceptAction = setUserAcceptsCookies;
     snackbar.open = true;
   });
 });
