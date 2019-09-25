@@ -86,5 +86,8 @@
   },
   "optionalDependencies": {
     "node-sass": "^4.12.0"
-  }
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
