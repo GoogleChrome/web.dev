@@ -4,21 +4,10 @@
 
 web-snackbar {
   align-items: center;
-  bottom: 0;
-  display: block;
+  display: flex;
   justify-content: center;
-  left: 0;
-  margin: 0;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
   visibility: hidden;
-  z-index: 300;
   
-  @include bp(sm) {
-    margin: 8px;
-  }
-
   .web-snackbar__surface {
     align-items: center;
     background-color: $GREY_900;

@@ -20,9 +20,8 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import {setUserAcceptsCookies} from "../../actions";
 
-const OPENING_ANIMATION_TIME = 150;
+const OPENING_ANIMATION_TIME = 1500;
 const CLOSING_ANIMATION_TIME = 75;
 
 class Snackbar extends BaseElement {
@@ -31,6 +30,7 @@ class Snackbar extends BaseElement {
       animatable: {type: Boolean, reflect: true},
       stacked: {type: Boolean, reflect: true},
       type: {type: String},
+      action: {type: Object}, // action is a Function
     };
   }
 
@@ -52,14 +52,9 @@ class Snackbar extends BaseElement {
     setTimeout(() => (this.animatable = false), ms);
   }
 
-  onAcceptCookies() {
-    this.open = false;
-    setUserAcceptsCookies();
-  }
-
   get cookiesTemplate() {
     return html`
-      <div class="web-snackbar__label" role="status" aria-live="polite">
+      <div class="web-snackbar__label" role="status">
         We serve cookies on this site to analyze traffic, remember your
         preferences, and optimize your experience.
       </div>
@@ -69,10 +64,7 @@ class Snackbar extends BaseElement {
           class="w-button web-snackbar__action"
           >More details</a
         >
-        <button
-          @click=${this.onAcceptCookies}
-          class="w-button web-snackbar__action"
-        >
+        <button @click=${this.action} class="w-button web-snackbar__action">
           OK
         </button>
       </div>

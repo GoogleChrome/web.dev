@@ -13,7 +13,7 @@ import "./components/UrlChooserContainer";
 import "./components/Codelab";
 import "./components/Header";
 import "./components/SideNav";
-import "./components/Snackbar";
+import "./components/SnackbarContainer";
 import {store} from "./store";
 import "focus-visible";
 import "./analytics";
@@ -35,5 +35,6 @@ function onGlobalStateChanged() {
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged();
 
-// See if the user has accepted our cookie policy.
-checkIfUserAcceptsCookies();
+setTimeout(() => {
+  checkIfUserAcceptsCookies();
+}, 0);
