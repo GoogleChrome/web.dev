@@ -1,5 +1,5 @@
 ---
-title: Easy OTP on the web with the SMS Receiver API
+title: Verify phone numbers on the web with the SMS Receiver API
 subhead: Help users type OTP received through SMS
 authors:
   - agektmr
@@ -34,58 +34,61 @@ tags:
 
 ## What is the SMS Receiver API?
 
-These days, most people in the world own a mobile device with a phone number,
-and developers are commonly using a phone number as an identifier for users of
-their services.
+These days, most people in the world own a mobile device and developers are
+commonly using phone numbers as an identifier for users of their services.
 
 There are a variety of ways to verify phone numbers, but a randomly generated
-one-time password (OTP) sent by SMS to the number is the most common. Sending
-this code back to the developer's server demonstrates control of the phone
-number.
+one-time password (OTP) sent by SMS to the number is one of the most common.
+Sending this code back to the developer's server demonstrates control of the
+phone number.
 
-This idea is already deployed in many online scenarios to achieve:
+This idea is already deployed in many scenarios to achieve:
 
-* **Phone number as a user's primary identifier:** When signing up for a new
+* **Phone number as an identifier for the user:** When signing up for a new
   service, some websites ask for a phone number instead of an email address and
-  use it as their primary identifier. It's important to verify phone numbers in
-  this use case.
+  use it as an account identifier.
 * **Two step verification:** When signing in, a website asks for a one-time code
-  sent via SMS on top of a password for extra security.
+  sent via SMS on top of a password or other knowledge factor for extra
+  security.
 * **Payment confirmation:** When a user is making a payment, asking for a
-  one-time code sent via SMS can help authenticate the person's intent.
+  one-time code sent via SMS can help verify the person's intent.
+
 
 The current process creates friction for the user. Finding an OTP within an SMS
-message, then copying and pasting it to the form is cumbersome. Easing this has
-been a long standing request for the web from many of the largest global
-developers. Android has [an API that does exactly
+message, then copying and pasting it to the form is cumbersome, lowering
+conversion rates in critical user journeys. Easing this has been a long standing
+request for the web from many of the largest global developers. Android has [an
+API that does exactly
 this](https://developers.google.com/identity/sms-retriever/). So does
 [iOS](https://developer.apple.com/documentation/security/password_autofill/about_the_password_autofill_workflow)
 and
 [Safari](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element).
 
 With the SMS Receiver API, you can programmatically obtain an OTP from an SMS
-message and verify a phone number for the user more easily.
+message and verify a phone number for the user more easily. Sign up for the
+[Origin
+Trial](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
+now if you are interested!
 
 {% Aside 'warning' %}
-Keep in mind that SMS is a weak form of authentication: attackers can
-spoof SMS and can hijack a person's phone number. Carriers can also recycle
-phone numbers to new users after an account was closed. While SMS OTP is useful
-to verify a phone number when a user sets up an account with your service, we
-recommend using stronger forms of authentication, such as multiple factors and
-[WebAuthn](https://www.w3.org/TR/webauthn/) to establish new sessions for these
-users.
+Keep in mind that attackers can spoof SMS and can hijack a person's phone
+number. Carriers can also recycle phone numbers to new users after an account
+was closed. While SMS OTP is useful to verify a phone number for the use cases
+above, we recommend using additional and stronger forms of authentication (such
+as multiple factors and [WebAuthn](https://www.w3.org/TR/webauthn/)) to
+establish new sessions for these users.
 {% endAside %}
 
 ## Current status
 
 <table>
 <tr>
-<td markdown="block">
+<th markdown="block">
 Step
-</td>
-<td markdown="block">
+</th>
+<th markdown="block">
 Status
-</td>
+</th>
 </tr>
 <tr>
 <td markdown="block">
@@ -155,39 +158,37 @@ below.
   </figcaption>
 </figure
 
-Try [the
-](https://sms-receiver-demo.glitch.me)[demo](https://sms-receiver-demo.glitch.me)
-yourself. It doesn't ask for your phone number and send SMS to your device, but
-you can send one from another device by copying the text displayed on the demo
-because it doesn't matter who the sender is in the SMS Receiver API.
+Try [the demo](https://sms-receiver-demo.glitch.me) yourself. It doesn't ask for
+your phone number and send SMS to your device, but you can send one from another
+device by copying the text displayed on the demo because it doesn't matter who
+the sender is in the SMS Receiver API.
 
 1. Prepare Google Chrome on Android 78 or later with "Experimental Web Platform
    Feature" flag turned on at
    `chrome://flags/#enable-experimental-web-platform-features`.
-1. Go to
+2. Go to
    [https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me).
-1. Select your browser channel from the provided list.
-1. Press **Copy** to copy the text message and send it to another phone.
-1. Press **Verify**.
-1. From the other phone, send yourself the copied text message via SMS.
+3. Select your browser channel from the provided list.
+4. Press **Copy** to copy the text message and send it to another phone.
+5. Press **Verify**.
+6. From the other phone, send yourself the copied text message via SMS.
 
 Did you receive the SMS and see the prompt to enter the code to the input area?
 That is how the SMS Receiver API works for end users.
 
 {% Aside 'warning' %}
-If you are using Chrome in Android's Work Profile feature, it will not be
-able to see SMS messages because applications in the Work Profile cannot see
-information in Personal Profile applications, including the Messages
-application.
+If you are using a Work Profile on your Android device and the SMS Receiver does
+not seem to be working, try installing and using Chrome on your personal profile
+instead (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
 
 ## Using the SMS Receiver API
 
-Using the SMS Receiver API consists of two parts: JavaScript code in your appon
-your website and the formatted message text sent via SMS.
+Using the SMS Receiver API consists of two parts: JavaScript code in your web
+app and the formatted message text sent via SMS.
 
 {% Aside %}
-Note: The SMS Receiver API requires a secure origin (HTTPS).
+The SMS Receiver API requires a secure origin (HTTPS).
 {% endAside %}
 
 ### Feature detection
@@ -209,17 +210,21 @@ const sms = await navigator.sms.receive();
 ```
 
 Once a user taps **Verify**, displayed in the bottom sheet, the promise
-containing the text message will resolve. You can use a regular expression to
-distill the OTP and verify the user. For example, if a text message contains a
-six digit verification code following `otp=`, the code would look like this:
+containing the entire text message will resolve. You can use a regular
+expression to distill the OTP and verify the user. Notably, you should parse and
+use the SMS message assuming it could have been altered by an attacker inserting
+their own SMSes into your app (e.g. following the formatting convention and
+sending it right after you called `navigator.sms.receive()`). For example, if a
+text message contains a six digit verification code following `otp=`, the code
+would look like this:
 
 ```js
-const code = sms.content.replace(/[\s\S]*otp=([0-9a-zA-Z]{6})[\s\S]*$/m, '$1');
+const code = sms.content.match(/^[\s\S]*otp=([0-9a-zA-Z]{6})[\s\S]*$/m)[1];
 ```
 
 You can now submit the code to the server to verify it.
 
-### Designing the SMS message
+### Formatting the SMS message
 
 The API itself should have looked simple enough, but a critical part is to
 format your SMS text message according to a specific convention. The message has
@@ -230,10 +235,12 @@ was called.
 
 The message must adhere to the following formatting:
 
-* The application hash of the user's Chrome instance. (These are static strings.
-  See the table below.)
 * The origin part of the URL of the website that invoked the API. It must be
   preceded by `For: `.
+* The URL must contain (for [the time
+  being](https://github.com/samuelgoto/sms-receiver/issues/4#issuecomment-528991114))
+  a query parameter whose value is the application hash of the user's Chrome
+  instance. (These are static strings. See the table below.)
 * The URL must contain a query parameter `otp` whose value is the OTP.
 
 An example message that can be retrieved by the browser would look like this:
@@ -249,12 +256,12 @@ for development depending on which Chrome build you will be working with.
 
 <table>
 <tr>
-<td markdown="block">
+<th markdown="block">
 <strong>Chrome build</strong>
-</td>
-<td markdown="block">
+</th>
+<th markdown="block">
 <strong>APK hash string</strong>
-</td>
+</th>
 </tr>
 <tr>
 <td markdown="block">
@@ -324,15 +331,19 @@ To participate in an origin trial:
    for your origin.
 1. Add the token to your pages, there are two ways to provide this token on any
    page in your origin:
-    * Add an origin-trial `<meta>` tag to the head of any page. For example,
-      this may look something like: `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
+    * Add an `origin-trial <meta>` tag to the head of any page. For example,
+      this may look something like: `<meta http-equiv="origin-trial"
+      content="TOKEN_GOES_HERE">`
     * If you can configure your server, you can also provide the token on pages
       using an `Origin-Trial` HTTP header. The resulting response header should
       look something like: `Origin-Trial: TOKEN_GOES_HERE`
 
 ## Feedback
 
-We want to hear about your experiences with the SMS Receiver API.
+We want to hear about your experiences with the SMS Receiver API. Please sign up
+for the [Origin
+Trial](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
+now!
 
 ### Tell us about the API design
 
@@ -345,62 +356,67 @@ missing methods or properties that you need to implement your idea?
 
 ### Problem with the implementation?
 
-Did you find a bug with Chrome's implementation? Or is the implementation
-different from the spec?
+Did you find a bug with Chrome's implementation?
 
 * File a bug at
   [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EContacts).
   Include as much detail as you can, simple instructions for reproducing, and
-  set **Components** to Blink&gt;SMS.
+  set **Components** to `Blink>SMS`.
 
 ### Planning to use the API?
 
 Planning to use the SMS Receiver API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
 
+* Be sure you have signed up for the [SMS Receiver Origin
+  Trial](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
+  to show your interest and provide your domain and contact info.
 * Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
   `#smsreceiver` and let us know where and how you're using it.
 
 ## FAQ
 ### Why did you not align with Safari's `one-time-code`?
 
-We're carefully investigating Safari's
+We intend to explore Safari's declarative
 [`autocomplete="one-time-code"`](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element)
-proposal which is taking a declarative approach. Currently we have a hypothesis
-that the imperative approach will reduce the steps verifying a phone number. The
+approach as we go through our origin trial ([early
+exploration](https://chromium-review.googlesource.com/c/chromium/src/+/1639728))
+and we are eager to hear what developers and users think. Currently we have a
+hypothesis that our imperative approach could provide a more flexible UX and
+reduce friction verifying a phone number under certain circumstances. The
 declarative approach is easier to implement for developers, but requires at
 least three taps: focus on the input field, select the one-time-code, then
-submit the form. Our approach requires that people make only a single tap.
-
-Nevertheless, we intend to explore the declarative approach as we receive
-developers' feedback.
+submit the form. Our approach (inspired by what native [Android
+apps](https://developers.google.com/identity/sms-retriever/overview) have access
+to) requires that people make only a single tap.
 
 ### Is it safe to use SMS as a way to authenticate?
 
-We don't consider SMS to be the most secure way to verify a user. Web apps
-should use WebAuthn for the strongest authentication. However, SMS
-authentication is used extensively and is the only option for some people, so
-it's still beneficial to make it easier to use:
-
-* SMS is available everywhere, including on low-cost or old phones. Biometric
-  sensors, FIDO2, and WebAuthn are better alternatives, but they tend to be
-  available only on expensive phones.
-* A phone number is human pronounceable making it easy to communicate. For
-  example, in the case of account recovery, you can tell your phone number to a
-  support operator and verify your identity via SMS or a phone call.
+While SMS OTP is useful to verify a phone number when the number is first
+provided, phone number verification via SMS must be used carefully for returning
+user re-authentication since phone numbers can be hijacked and recycled by
+carriers. SMS OTP is a convenient re-auth and recovery mechanism, but services
+should combine it with additional factors, such as a knowledge challenge, or use
+[WebAuthn](https://www.w3.org/TR/webauthn/) for strong authentication.
 
 ### Can't we omit the browser's app hash?
 
 We would [like to remove
 it](https://github.com/samuelgoto/sms-receiver/issues/4#issuecomment-528991114),
-but it's a platform restriction that we don't have control over.
+but it's currently a platform restriction that we are working with the android
+team to understand what's the best way to approach it.
 
 ### Will an SMS message timeout?
 
-Yes. We're planning to use AbortController to time the request out ([tracking
+Yes. We're planning to use `AbortController` to time the request out ([tracking
 bug](https://bugs.chromium.org/p/chromium/issues/detail?id=976401)), but it's
 not implemented as of Chrome 78.
 
 ### Will the apk hash change for an installed PWA?
 
 No. A PWA's app hash is the same as the browser it runs in.
+
+### Can we localize the "For:" string required in the SMS?
+
+Not right now. But ultimately, we are planning to remove or otherwise allow for
+localization.
