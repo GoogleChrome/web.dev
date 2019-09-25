@@ -48,4 +48,23 @@ module.exports = [
       }),
     ],
   },
+  {
+    input: "src/lib/bootstrap.js",
+    output: {
+      dir: "dist",
+      format: "iife",
+      entryFileNames: outputPattern,
+      chunkFileNames: outputPattern,
+      sourcemap: true,
+    },
+    watch: {
+      clearScreen: false,
+    },
+    plugins: [
+      resolve(),
+      commonJs({
+        include: "node_modules/**",
+      }),
+    ],
+  },
 ];
