@@ -20,20 +20,8 @@
     <link rel="stylesheet" href="/app.css" />
     <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
     <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+    {# This is used by src/lib/firestore-loader.js to dynamically load Firestore #}
     <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
-    {# Module code is loaded deferred (the "asynchronous" case in the polyfill docs) but we only load other module code anyway. #}
-    <script type="module" src="/lib/webcomponents/webcomponents-loader.js"></script>
-    <script type="module">
-      WebComponents.waitFor(async () => {
-        return new Promise((resolve, reject) => {
-          const s = document.createElement('script');
-          s.onerror = reject;
-          s.onload = () => resolve();
-          s.src = "/app.js";
-          document.head.appendChild(s);
-        });
-      });
-    </script>
     <link rel="modulepreload" href="/app.js" />
     <script type="module" src="/bootstrap.js"></script>
     <script>
