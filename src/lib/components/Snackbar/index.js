@@ -21,7 +21,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 
-const OPENING_ANIMATION_TIME = 1500;
+const OPENING_ANIMATION_TIME = 150;
 const CLOSING_ANIMATION_TIME = 75;
 
 class Snackbar extends BaseElement {
