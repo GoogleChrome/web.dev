@@ -88,6 +88,7 @@
     "node-sass": "^4.12.0"
   },
   "browserslist": [
-    "last 2 versions"
+    "last 2 versions",
+    "not ie <= 11"
   ]
 }
