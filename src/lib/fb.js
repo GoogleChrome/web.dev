@@ -1,5 +1,5 @@
 import {store} from "./store";
-import * as loader from "./fb-loader";
+import firestoreLoader from "./firestore-loader";
 
 /* eslint-disable require-jsdoc */
 
@@ -13,117 +13,87 @@ const firebaseConfig = {
   appId: "1:960947587576:web:b8e4ff1671c6c131",
 };
 
-const firebaseLoadError = (err) => {
-  console.warn("failed to load firebase library", err);
-};
-
-// Load standard Firebase libraries (app and auth).
-const firebaseReady = loader.loadAll("app", "auth").then(() => {
-  firebase.initializeApp(firebaseConfig);
-});
-
-firebaseReady.catch(firebaseLoadError);
-
-/**
- * Loads the Firestore library (as well as waiting for Firebase generally). This is a method as
- * it's only needed once the a user is signed in.
- *
- * @return {!Promise<!Object>}
- */
-const firestoreLoader = (function() {
-  let p;
-  return () => {
-    p =
-      p ||
-      Promise.all([firebaseReady, loader.load("firestore")]).then(() => {
-        return firebase.firestore();
-      });
-    return p;
-  };
-})();
+firebase.initializeApp(firebaseConfig);
 
 // Listen for the user's signed in state and update the store.
-firebaseReady.then(() => {
-  let firestoreUserUnsubscribe = null;
+let firestoreUserUnsubscribe = null;
+firebase.auth().onAuthStateChanged((user) => {
+  store.setState({checkingSignedInState: false});
+  if (firestoreUserUnsubscribe) {
+    firestoreUserUnsubscribe();
+    firestoreUserUnsubscribe = null;
 
-  firebase.auth().onAuthStateChanged((user) => {
-    store.setState({checkingSignedInState: false});
-    if (firestoreUserUnsubscribe) {
-      firestoreUserUnsubscribe();
-      firestoreUserUnsubscribe = null;
+    // Clear Firestore values here, so they don't persist between signins.
+    store.setState({
+      userUrlSeen: null,
+      userUrl: null,
+    });
+  }
 
-      // Clear Firestore values here, so they don't persist between signins.
-      store.setState({
-        userUrlSeen: null,
-        userUrl: null,
-      });
-    }
+  if (!user) {
+    store.setState({
+      isSignedIn: false,
+      user: null,
+    });
+    return;
+  }
 
-    if (!user) {
-      store.setState({
-        isSignedIn: false,
-        user: null,
-      });
-      return;
+  store.setState({
+    isSignedIn: true,
+    user,
+  });
+  const onUserSnapshot = (snapshot) => {
+    const state = store.getState();
+    const isInitialSnapshot = state.userUrl === null;
+
+    // We expect the user snapshot to look like:
+    // {
+    //   currentUrl: String,         # current used URL
+    //   urls: {String: Timestamp},  # URL to first time used (including current URL)
+    // }
+    const data = snapshot.data() || {}; // is empty on new user
+
+    const userUrl = data.currentUrl || "";
+    const prevSeen = (data.urls && data.urls[userUrl]) || null;
+    const userUrlSeen = prevSeen ? prevSeen.toDate() : null;
+
+    // Request results if this is the first snapshot and they have a saved URL.
+    let userUrlResultsPending = isInitialSnapshot && userUrl;
+
+    // But don't request results if there's an active fetch or a URL was set pre-signin.
+    if (state.activeLighthouseUrl || state.userUrl === userUrl) {
+      userUrlResultsPending = false;
     }
 
     store.setState({
-      isSignedIn: true,
-      user,
+      userUrlSeen,
+      userUrl,
+      userUrlResultsPending,
     });
-    const onUserSnapshot = (snapshot) => {
-      const state = store.getState();
-      const isInitialSnapshot = state.userUrl === null;
+  };
 
-      // We expect the user snapshot to look like:
-      // {
-      //   currentUrl: String,         # current used URL
-      //   urls: {String: Timestamp},  # URL to first time used (including current URL)
-      // }
-      const data = snapshot.data() || {}; // is empty on new user
+  // This unsubscribe function is used if the user signs out. However, the user's row cannot be
+  // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
+  firestoreUserUnsubscribe = (function() {
+    let internalUnsubscribe = () => {};
+    let unsubscribed = false;
 
-      const userUrl = data.currentUrl || "";
-      const prevSeen = (data.urls && data.urls[userUrl]) || null;
-      const userUrlSeen = prevSeen ? prevSeen.toDate() : null;
-
-      // Request results if this is the first snapshot and they have a saved URL.
-      let userUrlResultsPending = isInitialSnapshot && userUrl;
-
-      // But don't request results if there's an active fetch or a URL was set pre-signin.
-      if (state.activeLighthouseUrl || state.userUrl === userUrl) {
-        userUrlResultsPending = false;
-      }
-
-      store.setState({
-        userUrlSeen,
-        userUrl,
-        userUrlResultsPending,
-      });
-    };
-
-    // This unsubscribe function is used if the user signs out. However, the user's row cannot be
-    // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
-    firestoreUserUnsubscribe = (function() {
-      let internalUnsubscribe;
-      let unsubscribed = false;
-
-      userRef()
-        .then((ref) => {
-          if (!unsubscribed) {
-            return; // signed out before Firestore library showed up
-          }
-          internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
-        })
-        .catch(firebaseLoadError);
-
-      return () => {
-        unsubscribed = true;
-        if (internalUnsubscribe) {
-          internalUnsubscribe();
+    userRef()
+      .then((ref) => {
+        if (unsubscribed) {
+          return; // signed out before Firestore library showed up
         }
-      };
-    })();
-  });
+        internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
+      })
+      .catch((err) => {
+        console.warn("failed to load Firestore library", err);
+      });
+
+    return () => {
+      unsubscribed = true;
+      internalUnsubscribe();
+    };
+  })();
 });
 
 async function userRef() {
@@ -192,7 +162,6 @@ export async function saveUserUrl(url, auditedOn = null) {
 
 // Sign in the user
 export async function signIn() {
-  await firebaseReady;
   const provider = new firebase.auth.GoogleAuthProvider();
 
   let user;
@@ -208,7 +177,6 @@ export async function signIn() {
 
 // Sign out the user
 export async function signOut() {
-  await firebaseReady;
   try {
     await firebase.auth().signOut();
   } catch (err) {
