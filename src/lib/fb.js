@@ -1,7 +1,5 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
 import {store} from "./store";
+import firestoreLoader from "./firestore-loader";
 
 /* eslint-disable require-jsdoc */
 
@@ -15,13 +13,10 @@ const firebaseConfig = {
   appId: "1:960947587576:web:b8e4ff1671c6c131",
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const firestore = firebase.firestore();
-
-let firestoreUserUnsubscribe = null;
 
 // Listen for the user's signed in state and update the store.
+let firestoreUserUnsubscribe = null;
 firebase.auth().onAuthStateChanged((user) => {
   store.setState({checkingSignedInState: false});
   if (firestoreUserUnsubscribe) {
@@ -47,7 +42,7 @@ firebase.auth().onAuthStateChanged((user) => {
     isSignedIn: true,
     user,
   });
-  firestoreUserUnsubscribe = userRef().onSnapshot((snapshot) => {
+  const onUserSnapshot = (snapshot) => {
     const state = store.getState();
     const isInitialSnapshot = state.userUrl === null;
 
@@ -75,14 +70,39 @@ firebase.auth().onAuthStateChanged((user) => {
       userUrl,
       userUrlResultsPending,
     });
-  });
+  };
+
+  // This unsubscribe function is used if the user signs out. However, the user's row cannot be
+  // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
+  firestoreUserUnsubscribe = (function() {
+    let internalUnsubscribe = () => {};
+    let unsubscribed = false;
+
+    userRef()
+      .then((ref) => {
+        if (unsubscribed) {
+          return; // signed out before Firestore library showed up
+        }
+        internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
+      })
+      .catch((err) => {
+        console.warn("failed to load Firestore library", err);
+      });
+
+    return () => {
+      unsubscribed = true;
+      internalUnsubscribe();
+    };
+  })();
 });
 
-export function userRef() {
+async function userRef() {
   const state = store.getState();
   if (!state.user) {
     return null;
   }
+
+  const firestore = await firestoreLoader();
   return firestore.collection("users").doc(state.user.uid);
 }
 
@@ -94,11 +114,12 @@ export function userRef() {
  * @return {!Date} the earliest audit seen for this URL
  */
 export async function saveUserUrl(url, auditedOn = null) {
-  const ref = userRef();
+  const ref = await userRef();
   if (!ref) {
     return null; // not signed in so user has never seen this site
   }
 
+  const firestore = await firestoreLoader();
   const p = firestore.runTransaction(async (transaction) => {
     const snapshot = await transaction.get(ref);
     const data = snapshot.data() || {};
