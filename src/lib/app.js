@@ -13,9 +13,11 @@ import "./components/UrlChooserContainer";
 import "./components/Codelab";
 import "./components/Header";
 import "./components/SideNav";
+import "./components/SnackbarContainer";
 import {store} from "./store";
 import "focus-visible";
 import "./analytics";
+import {checkIfUserAcceptsCookies} from "./actions";
 
 // Run as long-lived router w/ history & "<a>" bindings
 // Also immediately calls `run()` handler for current location
@@ -32,3 +34,11 @@ function onGlobalStateChanged() {
 }
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged();
+
+// Give elements time to set up before kicking off state changes.
+// This is useful for elements with CSS animations who need to have been
+// rendered to the page at least once before they start transitioning.
+// Currently this includes the Snackbar.
+setTimeout(() => {
+  checkIfUserAcceptsCookies();
+}, 0);
