@@ -162,7 +162,7 @@ Of course, nothing captures the visual difference quite like a filmstrip compari
 
 If you're familiar with responsive images, you may be wondering "What about [`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)?".
 
-We're talking about adding a preload equivalent for `srcset` and `sizes`, but not the `<picture>` element, which tackles the ["art direction"](/codelab-art-direction/) use-case.
+The Web Performance Working Group is talking about adding a preload equivalent for `srcset` and `sizes`, but not the `<picture>` element, which tackles the ["art direction"](/codelab-art-direction/) use-case.
 
 Why is this use-case being "neglected"?
 
