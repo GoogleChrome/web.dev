@@ -57,7 +57,7 @@ Responsive images are [supported in all modern browsers](https://developer.mozil
 
 To preload responsive images, new attributes were recently added to the `<link>` element: `imagesrcset` and `imagesizes`.  They are used with `<link rel="preload">` and match the `srcset` and `sizes` syntax used in `<img>` element.
 
-If you want to preload a responsive image specified with:
+For example, if you want to preload a responsive image specified with:
 
  ```html
  <img src="wolf.jpg" srcset="wolf_400px.jpg 400w, wolf_800px.jpg 800w, wolf_1600px.jpg 1600w" sizes="50vw" alt="A rad wolf">
