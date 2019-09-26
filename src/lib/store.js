@@ -31,6 +31,14 @@ const initialState = {
   lighthouseError: null,
 
   isSideNavExpanded: false,
+
+  // When a user lands on the page, check if they have accepted our
+  // cookie policy.
+  userAcceptsCookies: false,
+
+  // Handle hiding/showing the snackbar.
+  showingSnackbar: false,
+  snackbarType: null,
 };
 
 const store = devtools(createStore(initialState));

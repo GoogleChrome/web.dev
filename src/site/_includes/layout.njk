@@ -27,6 +27,12 @@
     <script async src="https://www.google-analytics.com/analytics.js"></script>
   </head>
   <body>
+    {#
+      Make the snackbar the first item in the DOM so we don't have to steal the
+      user's focus on initial visit to show them a cookie banner. Instead, the
+      snackbar will be the first stop for the screen reader / focus.
+    #}
+    <web-snackbar-container></web-snackbar-container>
     <web-header role="navigation">
       <button class="web-header__hamburger-btn" aria-label="menu"></button>
 
@@ -116,7 +122,6 @@
         About
       </a>
     </web-side-nav>
-
     <main>
       <div id="content">
         {{ content | safe }}
