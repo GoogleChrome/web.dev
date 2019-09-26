@@ -22,15 +22,7 @@ This article gives me an opportunity to discuss two of my favorite things: respo
 Suppose you're browsing the web on a screen that's 300 pixels wide, and the page just requested an image that's 1500 pixels wide. That page just wasted a lot of your cellular data because your screen can't do anything with all of that extra resolution. Ideally, the browser should fetch a version of the image that's just a *little* wider than your screen size, say 325 pixels. This ensures a high-resolution image without wasting data. And, even better, the image will load faster. [Responsive images](/serve-responsive-images/#serve-multiple-image-versions) enable browsers to fetch different image resources to different devices. If you don't use an [image CDN](/image-cdns/) need to save multiple dimensions for each image and specify them in the `srcset` attribute. The `w` value tells the browser the width of each version. Depending on the device, the browser can choose the appropriate one:
 
 ```html
-<img src="small.jpg"
-
-     srcset="small.jpg 500w,
-
-            medium.jpg 1000w,
-
-            large.jpg 1500w"
-
-            alt="…">
+<img src="small.jpg" srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" alt="…">
 ```
 
 ## Preload overview
@@ -177,9 +169,7 @@ Given the following scenario:
 ```html
 <picture>
     <source src="small_cat.jpg" media="(max-width: 400px)">
-
     <source src="medium_cat.jpg" media="(max-width: 800px)">
-
     <img src="huge_cat.jpg">
 </picture>
 ```
@@ -190,9 +180,7 @@ Because responsive preload has no notion of "order" or "first match", the breakp
 
 ```html
 <link rel="preload" href="small_cat.jpg" as="image" media="(max-width: 400px)">
-
 <link rel="preload" href="medium_cat.jpg" as="image" media="(min-width: 400.1px) and (max-width: 800px)">
-
 <link rel="preload" href="large_cat.jpg" as="image" media="(min-width: 800.1px)">
 ```
 
