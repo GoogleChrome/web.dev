@@ -8,6 +8,8 @@
 import config from "./bootstrap-config";
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
 
+console.info("web.dev", config.version);
+
 WebComponents.waitFor(async () => {
   return new Promise((resolve, reject) => {
     // nb. import() is fairly well supported (although not as much as raw modules), but we just
