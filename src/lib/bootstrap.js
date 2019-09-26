@@ -5,6 +5,7 @@
  * app.js (or TODO: entrypoints).
  */
 
+import config from "./bootstrap-config";
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
 
 WebComponents.waitFor(async () => {

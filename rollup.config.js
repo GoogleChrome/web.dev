@@ -2,6 +2,7 @@ import resolve from "rollup-plugin-node-resolve";
 import commonJs from "rollup-plugin-commonjs";
 
 const isProd = process.env.ELEVENTY_ENV === "prod";
+const webdevConfigName = "webdev_config";
 
 let outputPattern;
 if (isProd) {
@@ -9,6 +10,32 @@ if (isProd) {
 } else {
   outputPattern = "[name].js";
 }
+
+const config = {
+  prod: isProd,
+  webcomponentsPath: isProd
+    ? "lib/webcomponents"
+    : "node_modules/@webcomponents/webcomponentsjs/bundles",
+  version:
+    "v" +
+    new Date()
+      .toISOString()
+      .replace(/[\D]/g, "")
+      .slice(0, 12),
+};
+
+const configPlugin = {
+  load(id) {
+    if (id === webdevConfigName) {
+      return `export default ${JSON.stringify(config)};`;
+    }
+  },
+  resolveId(importee, importer) {
+    if (importee === webdevConfigName) {
+      return importee;
+    }
+  },
+};
 
 module.exports = [
   {
@@ -61,6 +88,7 @@ module.exports = [
       clearScreen: false,
     },
     plugins: [
+      configPlugin,
       resolve(),
       commonJs({
         include: "node_modules/**",

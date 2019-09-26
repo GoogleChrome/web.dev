@@ -68,8 +68,7 @@ gulp.task('copy-content-assets', () => {
 gulp.task('copy-node_modules-assets', () => {
   return gulp
     .src([
-      `./node_modules/@webcomponents/webcomponentsjs/**/*.js`,
-      `!./node_modules/@webcomponents/webcomponentsjs/src/**`,
+      `./node_modules/@webcomponents/webcomponentsjs/bundles/*.js`,
     ])
     .pipe(gulp.dest('./dist/lib/webcomponents/'));
 });
