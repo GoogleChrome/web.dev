@@ -30,6 +30,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.3.0",
     "express": "^4.16.4",
     "focus-visible": "^5.0.2",
     "lit-element": "^2.2.0",
