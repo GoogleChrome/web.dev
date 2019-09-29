@@ -4,6 +4,7 @@ title: User Timing marks and measures
 description: |
   Learn about the user-timings audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - user-timings
 ---
@@ -45,6 +46,6 @@ that it finds in your app.
 Lighthouse extracts User Timing data from
 [Chrome's Trace Event Profiling Tool](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool).
 
-## More information
+## Resources
 
-- [User Timings marks and measures audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/user-timings.js)
+- [Source code for **User Timing marks and measures** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/user-timings.js)

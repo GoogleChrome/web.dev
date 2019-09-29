@@ -4,6 +4,7 @@ title: Minimize main-thread work
 description: |
   Learn about the mainthread-work-breakdown audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - mainthread-work-breakdown
 ---
@@ -27,9 +28,9 @@ and executing JS:
 - [Remove unused code](/remove-unused-code).
 - [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
 
-## More information
+## Resources
 
-- [Minimize main-thread work audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
+- [Source code for **Minimize main-thread work** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
 - [Reduce JavaScript payloads with code splitting codelab](/codelab-code-splitting)
 - [Minify and compress network payloads with gzip codelab](/codelab-text-compression)
 - [Minify and compress network payloads with brotli codelab](/codelab-text-compression-brotli)

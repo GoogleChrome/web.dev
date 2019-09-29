@@ -4,6 +4,7 @@ title: Avoid an excessive DOM size
 description: |
   Learn about the dom-size audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - dom-size
 ---
@@ -17,7 +18,9 @@ and it's maximum child elements in the Diagnostics section:
   </figcaption>
 </figure>
 
-## How large DOMs can effect performance
+{% include 'content/lighthouse-performance/scoring.njk' %}
+
+## How large DOMs can affect performance
 
 A large DOM tree can harm your page performance in multiple ways:
 
@@ -60,6 +63,6 @@ If you can't avoid a large DOM tree,
 another approach for improving rendering performance is simplifying your CSS selectors.
 See [Reduce The Scope And Complexity Of Style Calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations).
 
-## More information
+## Resources
 
-- [Avoids an excessive DOM size audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)
+- [Source code for **Avoid an excessive DOM size** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/dom-size.js)

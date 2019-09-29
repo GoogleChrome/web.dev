@@ -4,6 +4,7 @@ title: Preload key requests
 description: |
   Learn about the uses-rel-preload audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - uses-rel-preload
 ---
@@ -87,6 +88,6 @@ to see browser support for preload links.
 
 See also [Preload critical assets to improve loading speed](/preload-critical-assets)
 
-## More information
+## Resources
 
-- [Preload key requests audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)
+- [Source code for **Preload key requests** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)

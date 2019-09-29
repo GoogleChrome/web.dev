@@ -4,6 +4,7 @@ title: Use video formats for animated content
 description: |
   Learn about the efficient-animated-content audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - efficient-animated-content
 ---
@@ -18,6 +19,8 @@ achieved by converting these GIFs to video:
     Use video formats for animated content.
   </figcaption>
 </figure>
+
+{% include 'content/lighthouse-performance/scoring.njk' %}
 
 ## Why you should replace animated GIFs with video
 
@@ -48,7 +51,7 @@ run the following command in your console:
 
 `ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm`
 
-## Replace the GIF img with a video
+## Replace the GIF image with a video
 Animated GIFs have three key traits that a video needs to replicate:
 
 - They play automatically.
@@ -64,8 +67,8 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 </video>  
 ```
 
-## More information
+## Resources
 
-- [Use video formats for animated content audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/efficient-animated-content.js)
+- [Source code for **Use video formats for animated content** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/efficient-animated-content.js)
 - [Replace animated GIFs with video for faster page loads](/replace-gifs-with-videos)
 - [Replace GIFs with video codelab](/codelab-replace-gifs-with-video)

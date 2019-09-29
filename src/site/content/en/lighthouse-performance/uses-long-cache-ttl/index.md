@@ -4,8 +4,9 @@ title: Serve static assets with an efficient cache policy
 description: |
   Learn about the uses-long-cache-ttl audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
-  - uses-long-cache-ttle
+  - uses-long-cache-ttl
 ---
 
 A long cache lifetime can speed up repeat visits to your page.
@@ -94,8 +95,8 @@ as expected.
   </figcaption>
 </figure>
 
-## More information
+## Resources
 
-- [Serve static assets with an efficient cache policy audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
+- [Source code for **Serve static assets with an efficient cache policy** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)
 - [Cache-Control specification](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [Cache-Control (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)

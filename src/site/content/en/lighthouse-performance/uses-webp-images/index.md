@@ -4,6 +4,7 @@ title: Serve images in next-gen formats
 description: |
   Learn about the uses-webp-images audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - uses-webp-images
 ---
@@ -65,7 +66,7 @@ To see the current browser support for each next-gen format, check out the entri
 - [JPEG 2000](https://caniuse.com/#feat=jpeg2000)
 - [JPEG XR](https://caniuse.com/#feat=jpegxr)
 
-## More information
+## Resources
 
-- [Serve images in next-gen formats audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-webp-images.js)
+- [Source code for **Serve images in next-gen formats** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-webp-images.js)
 - [Use WebP images](/serve-images-webp)

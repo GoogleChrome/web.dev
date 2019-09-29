@@ -4,6 +4,7 @@ title: Remove unused CSS
 description: |
   Learn about the unused-css-rules audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - unused-css-rules
 ---
@@ -80,6 +81,6 @@ using the [Critical tool](https://github.com/addyosmani/critical/blob/master/REA
 
 Learn more in [Defer non-critical CSS](/defer-non-critical-css).
 
-## More information
+## Resources
 
-- [Remove unused CSS audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)
+- [Source code for **Remove unused CSS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)

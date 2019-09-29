@@ -4,6 +4,7 @@ title: Properly size images
 description: |
   Learn about the uses-responsive-images audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - uses-responsive-images
 ---
@@ -51,7 +52,7 @@ can help automate the process of converting an image into multiple formats.
 There are also image CDNs which let you generate multiple versions,
 either when you upload an image, or request it from your page.
 
-## More information
+## Resources
 
-- [Properly size images audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
+- [Source code for **Properly size images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
 - [Serve images with correct dimensions](/serve-images-with-correct-dimensions)

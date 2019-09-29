@@ -4,6 +4,7 @@ title: Minify JavaScript
 description: |
   Learn about the unminified-javascript audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - unminified-javascript
 ---
@@ -45,6 +46,6 @@ is the most widely used compression format for server and client interactions
 is a newer compression algorithm which can provide even better compression results than Gzip
 (see [Minify and compress network payloads with brotli](/codelab-text-compression-brotli)).
 
-## More information
+## Resources
 
-- [Unminified JavaScript audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-javascript.js)
+- [Source code for **Minify JavaScript** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-javascript.js)

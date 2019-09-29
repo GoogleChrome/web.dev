@@ -4,6 +4,7 @@ title: Minify CSS
 description: |
   Learn about the unminified-css audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - unminified-css
 ---
@@ -77,8 +78,8 @@ This is usually accomplished with a build tool like Gulp or Webpack.
 
 Learn how to minify your CSS code in [Minify CSS](/minify-css).
 
-## More information
+## Resources
 
-- [Unminified CSS audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-css.js)
+- [Source code for **Minify CSS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-css.js)
 - [Minify CSS](/minify-css)
 - [Minify and compress network payloads](/reduce-network-payloads-using-text-compression)

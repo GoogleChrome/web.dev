@@ -4,6 +4,7 @@ title: Reduce server response times (TTFB)
 description: |
   Learn about the time-to-first-byte audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - time-to-first-byte
 ---
@@ -13,7 +14,7 @@ the time that it takes for a user's browser
 to receive the first byte of page content:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="time-to-first-byte.png" alt="Server resonse times are low (TTFB)">
+  <img class="w-screenshot w-screenshot--filled" src="time-to-first-byte.png" alt="Server response times are low (TTFB)">
   <figcaption class="w-figcaption">
     Server response times are low (TTFB).
   </figcaption>
@@ -47,7 +48,7 @@ There are many possible causes of slow server responses, and therefore many poss
 - Optimize how your server queries databases, or migrate to faster database systems.
 - Upgrade your server hardware to have more memory or CPU.
 
-## More information
+## Resources
 
-- [Time to First Byte audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/time-to-first-byte.js)
+- [Source code for **Reduce server response times (TTFB)** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/time-to-first-byte.js)
 - [Adaptive Serving with Network Information API](/adaptive-service-based-on-network-quality)

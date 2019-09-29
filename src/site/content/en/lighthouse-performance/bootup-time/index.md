@@ -4,6 +4,7 @@ title: Reduce JavaScript execution time
 description: |
   Learn about the bootup-time audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - bootup-time
 ---
@@ -17,6 +18,8 @@ in the Diagnostics section:
     Reduce JavaScript execution time.
   </figcaption>
 </figure>
+
+{% include 'content/lighthouse-performance/scoring.njk' %}
 
 ## How JavaScript execution slows down performance
 
@@ -34,16 +37,16 @@ it can potentially consume a lot of memory.
 Pages appear janky or slow when they consume a lot of memory.
 Memory leaks can cause your page to freeze up completely.
 
-## Ways to speed up improve JavaScript execution
+## Ways to speed up JavaScript execution
 
-- Only send the code that your users need (see
-[Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)).
-- Minify and compress your code (see
-[Minify and compress network payloads](/reduce-network-payloads-using-text-compression)).
-- Remove unused code (see [Remove unused code](/remove-unused-code)).
-- Cache your code to reduce network trips (see
-[Apply instant loading with the PRPL pattern](/apply-instant-loading-with-prpl)).
+- Only send the code that your users need. (See
+[Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting).)
+- Minify and compress your code. (See
+[Minify and compress network payloads](/reduce-network-payloads-using-text-compression).)
+- Remove unused code. (Ree [Remove unused code](/remove-unused-code).)
+- Cache your code to reduce network trips. (See
+[Apply instant loading with the PRPL pattern](/apply-instant-loading-with-prpl).)
 
-## More information
+## Resources
 
-- [Reduce JavaScript execution time audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)
+[Source code for **Reduce JavaScript execution time** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/bootup-time.js)

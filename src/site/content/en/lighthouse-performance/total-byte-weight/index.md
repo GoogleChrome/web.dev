@@ -4,12 +4,13 @@ title: Avoid enormous network payloads
 description: |
   Learn about the total-byte-weight audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - total-byte-weight
 ---
 
 Large network payloads cost users real money and are highly correlated with long load times.
-Lighthouse reports the total byte size in killobytes of all network resources
+Lighthouse reports the total byte size in kilobytes of all network resources
 in the Diagnostics section:
 
 <figure class="w-figure">
@@ -53,6 +54,6 @@ Here are some strategies for reducing payload size:
   - [Set the compression level of JPEG images to 85](/use-imagemin-to-compress-images).
 - Cache requests so that the page doesn't re-download the resources on repeat visits (see [The options in your caching toolbox](/reliable#the-options-in-your-caching-toolbox)).
 
-## More information
+## Resources
 
-- [Avoid enormous network payloads audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)
+- [Source code for **Avoid enormous network payloads** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)

@@ -4,6 +4,7 @@ title: Minimize critical requests depth
 description: |
   Learn about the critical-request-chains audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - critical-request-chains
 ---
@@ -20,8 +21,10 @@ Lighthouse reports the critical requests loaded with a high priority in the Diag
   </figcaption>
 </figure>
 
+{% include 'content/lighthouse-performance/scoring.njk' %}
 
-## How Lighthouse determines the critical request chains
+
+## How Lighthouse identifies critical request chains
 
 Lighthouse uses network priority as a proxy for identifying render-blocking critical resources.
 See [Chrome Resource Priorities and Scheduling](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit)
@@ -45,6 +48,6 @@ Learn more about optimizing your
 [CSS](/defer-non-critical-css), and
 [web fonts](/avoid-invisible-text).
 
-## More information
+## Resources
 
-- [Minimize critical requests depth audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+- [Source code for **Minimize critical requests depth** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)

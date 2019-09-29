@@ -48,7 +48,7 @@ If you're using redirects to divert mobile users to the mobile version of your p
 consider re-designing your site to use
 [Responsive Design](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
 
-## More information
+## Resources
 
 - [Avoid multiple page redirects audit source](https://developers.google.com/web/tools/lighthouse/audits/redirects)
 - [Redirections in HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
