@@ -10,7 +10,8 @@ date: 2019-05-04
 updated: 2019-09-19
 ---
 
-Quick page transitions are key to your web app's perceived performance.
+Quick page transitions are key to how users perceive the performance of your
+[Progressive Web App (PWA)](/discover-installable).
 Transitions should feel snappy, even on a slow network.
 
 ## Recommendations
