@@ -40,11 +40,8 @@ and then attempts to retrieve the page using [`XMLHttpRequest`](https://develope
    locally cached version of the file.
 
 {% Aside 'codelab' %}
-The [Working with service workers codelab](/codelab-service-workers) shows
-the basics of how to register and debug a service worker.
-For more detailed help, see Google's
-[Debugging Service Workers](https://codelabs.developers.google.com/codelabs/debugging-service-workers)
-codelab.
+Learn how to add a service worker to your app
+with the [Working with service workers](/codelab-service-workers) codelab.
 {% endAside %}
 
 ## Resources
