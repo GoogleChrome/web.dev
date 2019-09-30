@@ -80,3 +80,9 @@ document.addEventListener("entrypoint-load", (ev) => {
 WebComponents.waitFor(async () => {
   return updateEntrypoint(window.location.pathname.substr(1));
 });
+
+window.addEventListener("load", (e) => {
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register("/sw.js");
+  }
+});

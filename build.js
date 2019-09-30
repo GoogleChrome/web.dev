@@ -126,6 +126,18 @@ async function build() {
   });
   generatedSources.push("dist/bootstrap.js");
 
+  // Rollup the Service Worker. This step allows it to import modules.
+  const swBundle = await rollup.rollup({
+    input: "src/lib/sw.js",
+    plugins: defaultPlugins,
+  });
+  await swBundle.write({
+    sourcemap: true,
+    dir: "dist",
+    format: "esm",
+  });
+  generatedSources.push("dist/sw.js");
+
   const entrypointCount = Object.keys(entrypoints).length;
   log(
     `Generated ${generatedSources.length} source files (${entrypointCount} entrypoints)`,
