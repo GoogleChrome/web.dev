@@ -19,17 +19,19 @@ const app = express();
 
 const contentPageMatch = /^(\/\w+)+/;
 
-// Disallow requests to "index.html" in any subdirectory (send a 404) along with
+// Disallow requests to "index.html" in any subdirectory (send a 302) along with
 // requests to a subdirectory that end with "/". This means that e.g., the
 // measure page, technically at "https://web.dev/measure/index.html", will
 // only be served under "https://web.dev/measure".
-// This resolves ambiguity for Service Workers and the Navaid router, which
-// internally trims trailing slashes on JS-based routing.
+// This resolves ambiguity for Service Workers and the Navaid router (which
+// internally trims trailing slashes for JS-based routing).
 const contentHandler = (req, res, next) => {
   if (req.url === '/') {
     req.url = '/index.html';
   } else if (req.url.endsWith('/index.html') || req.url.endsWith('/')) {
-    res.writeHead(404);
+    const index = req.url.lastIndexOf('/');
+    const redir = req.url.substr(0, index);
+    res.writeHead(302, {Location: redir});
     return res.end();
   } else if (contentPageMatch.exec(req.url)) {
     req.url += '/index.html';
