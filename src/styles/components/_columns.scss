@@ -26,7 +26,6 @@
 
 // TODO: Decouple columns and compare components
 .w-columns .w-compare__label {
-  /// adds the breakpoint styles
   @include bp(sm) {
     border-bottom: 3px solid;
     margin-bottom: 1em;
@@ -35,21 +34,18 @@
 }
 
 .w-columns .w-compare__label--worse {
-  /// adds the breakpoint styles
   @include bp(sm) {
     border-bottom-color: $RED_700;
   }
 }
 
 .w-columns .w-compare__label--better {
-  /// adds the breakpoint styles
   @include bp(sm) {
     border-bottom-color: $GREEN_800;
   }
 }
 
 .w-columns .w-compare__label::before {
-  /// adds the breakpoint styles
   @include bp(sm) {
     content: none;
   }
