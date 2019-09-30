@@ -1,6 +1,5 @@
 import {router} from "./router";
 import "./components/ProfileSwitcherContainer";
-import "./components/Codelab";
 import "./components/Header";
 import "./components/SideNav";
 import "./components/SnackbarContainer";
