@@ -25,14 +25,14 @@ flags pages that aren't redirected to HTTPS:
 Lighthouse changes the page's URL to HTTP, loads the page,
 and then waits for the event from the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
 that indicates that the page is secure.
-If Lighthouse does not receive the event within 10 seconds, the audit fails.
+If Lighthouse doesn't receive the event within 10&nbsp;seconds, the audit fails.
 
 ## How to redirect HTTP traffic to HTTPS
 
 Once you've set up HTTPS,
-make sure that all unsecure HTTP traffic to your site is redirected to HTTPS.
+make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
 
-- Use canonical links in the head of your HTML page
+- Use [canonical links](https://web.dev/canonical) in the head of your HTML page
   to help search engines figure out the best way to get to the page.
 - Configure your server to redirect HTTP traffic to HTTPS.
   See your server's documentation to figure out the best way to do this.
@@ -40,3 +40,4 @@ make sure that all unsecure HTTP traffic to your site is redirected to HTTPS.
 ## Resources
 - [Source code for **Does not redirect HTTP traffic to HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects-http.js)
 - [Does not use HTTPS](/is-on-https)
+- [Document does not have a valid `rel=canonical`](/canonical)
