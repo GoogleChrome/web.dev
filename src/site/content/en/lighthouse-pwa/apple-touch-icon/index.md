@@ -10,9 +10,9 @@ date: 2019-08-27
 updated: 2019-09-19
 ---
 
-iOS Safari users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to
-their home screens. The icon that appears on the iOS home screen when the user adds a PWA is
-called the *Apple touch icon*. You can specify what icon your app should use by including a
+When iOS Safari users add [Progressive Web Apps (PWAs)](/discover-installable) to
+their home screens, the icon that appears is called the *Apple touch icon*.
+You can specify what icon your app should use by including a
 `<link rel="apple-touch-icon" href="/example.png">` tag in the `<head>` of your
 page. If your page doesn't have this link tag, iOS generates an icon by taking a screenshot of
 the page content. In other words, instructing iOS to download an icon results in a more polished
