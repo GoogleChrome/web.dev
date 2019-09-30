@@ -16,7 +16,7 @@ by inlining critical resources, deferring non-critical resources,
 and removing anything unused.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="blocking-resources.png" alt="Eliminate render-blocking resources">
+  <img class="w-screenshot" src="blocking-resources.png" alt="Eliminate render-blocking resources">
   <figcaption class="w-figcaption">
     Eliminate render-blocking resources.
   </figcaption>
@@ -47,14 +47,14 @@ A `<link rel="import">` tag that:
 ## How to identify critical resources
 
 The first step to reducing the impact of render-blocking resources,
-is to identify what's critical, and what's not.
+is to identify what's critical and what's not.
 Use the [Coverage tab](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
 in Chrome DevTools to identify non-critical CSS and JS.
 When you load or run a page, the tab tells you how much code was used,
 versus how much was loaded:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
+  <img class="w-screenshot w-screenshot--filled" src="/images/includes/coverage.png" alt="Chrome DevTools: Coverage tab">
   <figcaption class="w-figcaption">
     Chrome DevTools: Coverage tab.
   </figcaption>

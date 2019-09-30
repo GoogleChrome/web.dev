@@ -15,7 +15,7 @@ The Opportunities section of your Lighthouse report lists all text-based resourc
 that aren't compressed:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-text-compression.png" alt="Enable text compression">
+  <img class="w-screenshot" src="uses-text-compression.png" alt="Enable text compression">
   <figcaption class="w-figcaption">
     Enable text compression.
   </figcaption>

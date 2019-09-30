@@ -14,7 +14,7 @@ all unoptimized images, with potential savings in kilobytes.
 Optimize these images so that the page loads faster and consumes less data:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-optimized-images.png" alt="Efficiently encode images">
+  <img class="w-screenshot" src="uses-optimized-images.png" alt="Efficiently encode images">
   <figcaption class="w-figcaption">
     Efficiently encode images.
   </figcaption>

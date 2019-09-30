@@ -15,7 +15,7 @@ You need to ensure that text remains visible during webfont loads.
 Lighthouse reports in the Diagnostics section any font URLs that may flash invisible text:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="font-display.png" alt="Lighthouse: Ensure text remains visible during webfont loads">
+  <img class="w-screenshot" src="font-display.png" alt="Lighthouse: Ensure text remains visible during webfont loads">
   <figcaption class="w-figcaption">
     Ensure text remains visible during webfont loads.
   </figcaption>

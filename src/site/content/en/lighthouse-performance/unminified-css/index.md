@@ -15,7 +15,7 @@ along with the potential savings in kilobytes (KB)
 when these files are minified:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="unminified-css.png" alt="Minify CSS">
+  <img class="w-screenshot" src="unminified-css.png" alt="Minify CSS">
   <figcaption class="w-figcaption">
     Minify CSS.
   </figcaption>
