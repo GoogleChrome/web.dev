@@ -10,36 +10,36 @@ $LINEAR_ANIMATION_TIME: 2.5s;
   to   { transform: translate(100vw) translate(-50%); }
 }
 
-.loading-progress {
+.w-loading-progress {
+  background: #3fc4ff;
+  height: 2px;
+  left: 0;
   pointer-events: none;
-  transform-origin: 50% 0%;
+  position: fixed;
+  right: 0;
+  top: 0;
   transform: scaleY(1);
+  transform-origin: 50% 0%;
   transition: transform $TRANSITION_SPEED ease;
   transition-delay: 1s;  // show loading hint only after waiting this long
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
   z-index: 100000;
-  background: #3fc4ff;
 
   // Shows a white "flurry" on top of the loading indicator.
   &::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 50vw;
-    min-width: 320px;
-    bottom: 0;
-    background: linear-gradient(to left, #fff0, #fff9, #fff0);
     animation: loading-progress-before 2s infinite alternate-reverse ease-in-out;
+    background: linear-gradient(to left, #fff0, #fff9, #fff0);
+    bottom: 0;
+    content: '';
+    left: 0;
+    min-width: 320px;
+    position: absolute;
+    top: 0;
+    width: 50vw;
   }
 }
 
-body:not([loading]) .loading-progress {
-  visibility: hidden;
-  transform: scaleY(0);
+body:not([loading]) .w-loading-progress {
   animation: hold-visibility $TRANSITION_SPEED;
+  transform: scaleY(0);
+  visibility: hidden;
 }
