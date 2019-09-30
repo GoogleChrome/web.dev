@@ -65,7 +65,7 @@ served from the root (your website's top level directory).
         <td>
           Short human-readable name for the application. This is intended for when
           there is insufficient space to display the full name of the web
-          application, like device homescreens.
+          application, like device home screens.
         </td>
       </tr>
       <tr>

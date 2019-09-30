@@ -12,7 +12,7 @@ updated: 2019-09-19
 A custom splash screen makes your progressive web app (PWA) feel more like a
 native app.
 
-When a user launches your PWA from the homescreen, Android's default behavior
+When a user launches your PWA from the home screen, Android's default behavior
 is to display a white screen until the PWA is ready. The user may see a blank,
 white screen for up to 200ms. With a custom splash screen, the user sees a
 custom background color and your PWA's icon instead.

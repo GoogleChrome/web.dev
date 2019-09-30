@@ -48,7 +48,7 @@ Learn more about `theme-color` in
 
 The `theme_color` property in your Web App Manifest ensures that the address
 bar is branded when a user launches your progressive web
-app from the homescreen. Unlike the `theme-color` meta tag, you only need
+app from the home screen. Unlike the `theme-color` meta tag, you only need
 to define this once, in the manifest. The browser colors every page of your
 app according to the manifest's `theme_color`. Set the property to any valid
 CSS color value.
