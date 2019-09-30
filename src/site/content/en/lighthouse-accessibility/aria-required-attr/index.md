@@ -3,6 +3,7 @@ layout: post
 title: Ensure ARIA roles have required states and properties
 description: |
   Learn about aria-required-attr audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-required-attr
 ---

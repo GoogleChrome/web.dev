@@ -3,6 +3,7 @@ layout: post
 title: Ensure every form element has a label
 description: |
   Learn about label audit.
+date: 2019-05-02
 web_lighthouse:
   - label
 ---

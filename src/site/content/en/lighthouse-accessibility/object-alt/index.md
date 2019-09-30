@@ -3,6 +3,7 @@ layout: post
 title: Ensure object elements have alternative text
 description: |
   Learn about object-alt audit.
+date: 2019-05-02
 web_lighthouse:
   - object-alt
 ---

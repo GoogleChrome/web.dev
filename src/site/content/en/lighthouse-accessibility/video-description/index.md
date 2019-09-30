@@ -3,6 +3,7 @@ layout: post
 title: Ensure video elements have audio descriptions
 description: |
   Learn about video-description audit.
+date: 2019-05-02
 web_lighthouse:
   - video-description
 ---

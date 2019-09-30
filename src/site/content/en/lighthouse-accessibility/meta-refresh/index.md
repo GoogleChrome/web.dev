@@ -3,6 +3,7 @@ layout: post
 title: Ensure timed refreshes do not exist
 description: |
   Learn about meta-refresh audit.
+date: 2019-05-02
 web_lighthouse:
   - meta-refresh
 ---

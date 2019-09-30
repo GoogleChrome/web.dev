@@ -3,6 +3,7 @@ layout: post
 title: Ensure ARIA attributes are allowed for an element's role
 description: |
   Learn about aria-allowed-attr audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-allowed-attr
 ---

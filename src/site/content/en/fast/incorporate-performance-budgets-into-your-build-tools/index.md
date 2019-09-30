@@ -26,8 +26,8 @@ The [command line version](https://developers.google.com/web/tools/lighthouse/#c
 - resource size
 - resource count
 
-You can set budgets for any of the following resource types: 
-- `document` 
+You can set budgets for any of the following resource types:
+- `document`
 - `font`
 - `image`
 - `media`
@@ -70,7 +70,7 @@ The default limit for both assets and entry-points is **250 KB**. You can set yo
   </figcaption>
 </figure>
 
-The budgets are compared against **uncompressed asset sizes**. Uncompressed [JavaScript size is related to the execution time](https://v8.dev/blog/cost-of-javascript-2019) and big files can take a long time to execute, especially on mobile devices. 
+The budgets are compared against **uncompressed asset sizes**. Uncompressed [JavaScript size is related to the execution time](https://v8.dev/blog/cost-of-javascript-2019) and big files can take a long time to execute, especially on mobile devices.
 
 {% Aside %}
 Compressed asset sizes affect the transfer time, which is very important on slow networks.
@@ -124,7 +124,7 @@ You'll get the most value out of bundlesize if you integrate it with a CI to aut
 
 You may have a fast app today, but adding new code can often change this. Checking pull requests with bundlesize will help you avoid performance regressions. Bootstrap, Tinder, Trivago and many others use it to keep their budgets in check.
 
-With bundlesize, it's possible to set thresholds for each file separately. This is especially useful if you are code-splitting a bundle in your application.
+With bundlesize, it's possible to set thresholds for each file separately. This is especially useful if you are splitting a bundle in your application.
 
 By default, **it tests gzipped asset sizes**. You can use the compression option to switch to [brotli compression](https://css-tricks.com/brotli-static-compression/) or turn it off completely.
 

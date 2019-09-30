@@ -3,6 +3,7 @@ layout: post
 title: Serve static assets with an efficient cache policy
 description: |
   Learn about the uses-long-cache-ttl audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-long-cache-ttle
 ---

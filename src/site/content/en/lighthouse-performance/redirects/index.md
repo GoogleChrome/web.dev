@@ -37,7 +37,7 @@ A page fails this audit when it has two or more redirects.
 
 ## How to eliminate redirects
 
-Point links to flagged resources 
+Point links to flagged resources
 to the resources' current locations.
 It's especially important to avoid redirects in resources
 required for your [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).

@@ -3,6 +3,7 @@ layout: post
 title: Minify CSS
 description: |
   Learn about the unminified-css audit.
+date: 2019-05-02
 web_lighthouse:
   - unminified-css
 ---

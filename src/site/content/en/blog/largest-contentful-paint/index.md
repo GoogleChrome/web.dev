@@ -309,5 +309,5 @@ Here is some guidance you can reference to optimize all of these factors:
 * [Optimize your CSS](https://web.dev/fast#optimize-your-css)
 * [Optimize your Images](https://web.dev/fast#optimize-your-images)
 * [Optimize web Fonts](https://web.dev/fast#optimize-web-fonts)
-* [Optimize you JavaScript](https://web.dev/fast#optimize-your-javascript) (for
+* [Optimize your JavaScript](https://web.dev/fast#optimize-your-javascript) (for
   client-rendered sites)

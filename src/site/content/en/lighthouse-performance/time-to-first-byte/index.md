@@ -3,6 +3,7 @@ layout: post
 title: Reduce server response times (TTFB)
 description: |
   Learn about the time-to-first-byte audit.
+date: 2019-05-02
 web_lighthouse:
   - time-to-first-byte
 ---
@@ -18,7 +19,7 @@ to receive the first byte of page content:
   </figcaption>
 </figure>
 
-## Slow server response times effect performance
+## Slow server response times affect performance
 
 This audit fails when the browser waits more than 600ms
 for the server to respond to the main document request.

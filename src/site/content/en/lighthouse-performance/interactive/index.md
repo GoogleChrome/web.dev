@@ -3,6 +3,7 @@ layout: post
 title: Time to Interactive
 description: |
   Learn about the Time to Interactive audit.
+date: 2019-05-02
 web_lighthouse:
   - interactive
 ---
@@ -142,6 +143,6 @@ instead.
 
 - [Time to Interactive audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
-- [Reduce JavaScript payloads with code-splitting codelab](/codelab-code-splitting)
+- [Reduce JavaScript payloads with code splitting codelab](/codelab-code-splitting)
 - [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
 - [Reduce JavaScript Payloads with Tree Shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/)

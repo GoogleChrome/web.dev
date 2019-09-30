@@ -3,6 +3,7 @@ layout: post
 title: Ensure links have discernible text
 description: |
   Learn about link-name audit.
+date: 2019-05-02
 web_lighthouse:
   - link-name
 ---

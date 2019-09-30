@@ -3,6 +3,7 @@ layout: post
 title: Ensure img elements have alternate text or a role of none or presentation
 description: |
   Learn about image-alt audit.
+date: 2019-05-02
 web_lighthouse:
   - image-alt
 ---

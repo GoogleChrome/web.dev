@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adaptive serving based on network quality
+date: 2019-05-06
 authors:
   - mihajlija
 description: |

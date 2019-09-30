@@ -3,6 +3,7 @@ layout: post
 title: Efficiently encode images
 description: |
   Learn about the uses-optimized-images audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-optimized-images
 ---

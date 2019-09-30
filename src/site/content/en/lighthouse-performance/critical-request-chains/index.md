@@ -3,6 +3,7 @@ layout: post
 title: Minimize critical requests depth
 description: |
   Learn about the critical-request-chains audit.
+date: 2019-05-02
 web_lighthouse:
   - critical-request-chains
 ---

@@ -3,6 +3,7 @@ layout: post
 title: Ensure every ID attribute value is unique
 description: |
   Learn about duplicate-id audit.
+date: 2019-05-02
 web_lighthouse:
   - duplicate-id
 ---

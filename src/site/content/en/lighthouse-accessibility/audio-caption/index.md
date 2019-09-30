@@ -3,6 +3,7 @@ layout: post
 title: Ensure audio elements have captions
 description: |
   Learn about audio-caption audit.
+date: 2019-05-02
 web_lighthouse:
   - audio-caption
 ---
