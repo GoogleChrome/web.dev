@@ -54,6 +54,11 @@ const defaultPlugins = [
   }),
 ];
 
+/**
+ * Performs main site compilation in two passes.
+ *
+ * @return {!Array<string>} generated source filenames
+ */
 async function build() {
   const generatedSources = [];
 
@@ -120,10 +125,16 @@ async function build() {
     format: "esm",
   });
   generatedSources.push("dist/bootstrap.js");
+
+  const entrypointCount = Object.keys(entrypoints).length;
+  log(
+    `Generated ${generatedSources.length} source files (${entrypointCount} entrypoints)`,
+  );
   return generatedSources;
 }
 
 async function minifyRelease(sources) {
+  // lazy-load Terser only in prod
   const terser = require("terser");
 
   for (const source of sources) {
@@ -171,8 +182,6 @@ async function buildTest() {
 
 async function run() {
   const generatedSources = await build();
-  console.info("generated sources", generatedSources);
-
   if (isProd) {
     await minifyRelease(generatedSources);
   } else {
