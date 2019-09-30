@@ -23,7 +23,7 @@ flags pages that aren't redirected to HTTPS:
 </figure>
 
 Lighthouse changes the page's URL to HTTP, loads the page,
-and then waits for the event from the Chrome Debugger
+and then waits for the event from the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
 that indicates that the page is secure.
 If Lighthouse does not receive the event within 10 seconds, the audit fails.
 

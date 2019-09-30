@@ -27,7 +27,7 @@ flags pages that don't respond with a 200 when offline:
   <img class="w-screenshot" src="works-offline.png" alt="Lighthouse audit showing page doesn't respond with a 200 when offline">
 </figure>
 
-Lighthouse emulates an offline connection using the Chrome Debugging Protocol
+Lighthouse emulates an offline connection using the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
 and then attempts to retrieve the page using [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}

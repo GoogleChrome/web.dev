@@ -28,8 +28,8 @@ flags pages that don't register a service worker:
   <img class="w-screenshot" src="service-worker.png" alt="Lighthouse audit showing site doesn't register a service worker">
 </figure>
 
-Lighthouse checks if the Chrome Debugger returns a service worker version.
-If it does not, the audit fails.
+Lighthouse checks if the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
+returns a service worker version. If it doesn't, the audit fails.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 

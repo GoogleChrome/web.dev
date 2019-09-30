@@ -22,9 +22,9 @@ flags pages that aren't on HTTPS:
   <img class="w-screenshot" src="is-on-https.png" alt="Lighthouse audit showing page isn't on HTTPS">
 </figure>
 
-Lighthouse waits for an event from the Chrome Debugger Protocol indicating that
-the page is running on a secure connection. If the event is not heard within 10
-seconds, the audit fails.
+Lighthouse waits for an event from the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
+indicating that the page is running on a secure connection.
+If the event is not heard within 10&nbsp;seconds, the audit fails.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
