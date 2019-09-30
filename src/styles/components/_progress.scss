@@ -1,0 +1,45 @@
+$LINEAR_ANIMATION_TIME: 2.5s;
+
+@keyframes hold-visibility {
+  from { visibility: visible; }
+  to   { visibility: visible; }
+}
+
+@keyframes loading-progress-before {
+  from { transform: translate(-50%); }
+  to   { transform: translate(100vw) translate(-50%); }
+}
+
+.loading-progress {
+  pointer-events: none;
+  transform-origin: 50% 0%;
+  transform: scaleY(1);
+  transition: transform $TRANSITION_SPEED ease;
+  transition-delay: 1s;  // show loading hint only after waiting this long
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 100000;
+  background: #3fc4ff;
+
+  // Shows a white "flurry" on top of the loading indicator.
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 50vw;
+    min-width: 320px;
+    bottom: 0;
+    background: linear-gradient(to left, #fff0, #fff9, #fff0);
+    animation: loading-progress-before 2s infinite alternate-reverse ease-in-out;
+  }
+}
+
+body:not([loading]) .loading-progress {
+  visibility: hidden;
+  transform: scaleY(0);
+  animation: hold-visibility $TRANSITION_SPEED;
+}
