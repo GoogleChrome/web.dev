@@ -28,9 +28,14 @@ const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-// These are images that our CSS refers to and must be checked in to DevSite.
-gulp.task('copy-global-assets', () => {
+// These are images that our CSS refers to.
+gulp.task('copy-global-images', () => {
   return gulp.src(['./src/images/**/*']).pipe(gulp.dest('./dist/images'));
+});
+
+// These are misc top-level assets.
+gulp.task('copy-misc', () => {
+  return gulp.src(['./src/misc/**/*']).pipe(gulp.dest('./dist'));
 });
 
 // Images and any other assets in the content directory that should be copied
@@ -74,13 +79,15 @@ gulp.task('copy-node_modules-assets', () => {
 });
 
 gulp.task('build', gulp.parallel(
-  'copy-global-assets',
+  'copy-global-images',
+  'copy-misc',
   'copy-content-assets',
   'copy-node_modules-assets',
 ));
 
 gulp.task('watch', () => {
-  gulp.watch('./src/images/**/*', gulp.series('copy-global-assets'));
+  gulp.watch('./src/images/**/*', gulp.series('copy-global-images'));
+  gulp.watch('./src/misc/**/*', gulp.series('copy-misc'));
   gulp.watch(
     './src/site/content/**/*',
     gulp.series('copy-content-assets')
