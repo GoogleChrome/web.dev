@@ -41,8 +41,7 @@ the correct size.
 
 ## How to add an Apple touch icon
 
-- Add `<link rel="apple-touch-icon" href="/example.png">` to the `<head>` of your page.
-- Replace `/example.png` with the actual path to your icon.
+1. Add `<link rel="apple-touch-icon" href="/example.png">` to the `<head>` of your page:
 
     ```html/4
     <!DOCTYPE html>
@@ -64,8 +63,8 @@ the correct size.
 
 To provide a good user experience, make sure that:
 
-- The icon is 180 pixels wide and 180 pixels tall or 192 pixels wide and 192 pixels tall
-- The specified URL to the icon is valid
+- The icon is 180x180&nbsp;pixels or 192x192&nbsp;pixels
+- The specified path to the icon is valid
 - The background of the icon is not transparent
 
 ## Resources
