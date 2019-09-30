@@ -12,7 +12,7 @@ date: 2019-05-04
 updated: 2019-09-19
 ---
 
-The [manifest](/add-manifest) for a Progressive Web App (PWA) should include a `start_url`,
+The [manifest](/add-manifest) for a [Progressive Web App (PWA)](/discover-installable) should include a `start_url`,
 which indicates the URL to be loaded when the user launches the app.
 
 If the browser doesn't receive an

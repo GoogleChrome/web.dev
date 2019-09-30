@@ -11,7 +11,7 @@ codelabs:
   - codelab-service-workers
 ---
 
-Progressive web apps (PWAs) must work offline.
+[Progressive Web Apps (PWAs)](/discover-installable) must work offline.
 To determine whether a page is accessible while the user is offline,
 Lighthouse checks that the page sends an [HTTP&nbsp;200 response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Successful_responses),
 which indicates that the request for the page was successful.

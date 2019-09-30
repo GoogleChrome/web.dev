@@ -9,7 +9,7 @@ date: 2019-05-04
 updated: 2019-09-19
 ---
 
-A custom splash screen makes your Progressive Web App (PWA) feel more like a
+A custom splash screen makes your [Progressive Web App (PWA)](/discover-installable) feel more like a
 native app. By default, when a user launches your PWA from the home screen,
 Android displays a white screen until the PWA is ready.
 The user may see this blank, white screen for up to 200&nbsp;ms.

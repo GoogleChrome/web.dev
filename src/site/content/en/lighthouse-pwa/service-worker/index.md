@@ -11,7 +11,7 @@ updated: 2019-09-19
 ---
 
 Registering a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
-is the first step towards enabling key Progressive Web App (PWA) features:
+is the first step towards enabling key [Progressive Web App (PWA)](/discover-installable) features:
 
 - Works offline
 - Supports push notifications

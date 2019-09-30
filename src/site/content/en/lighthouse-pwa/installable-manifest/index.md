@@ -11,7 +11,7 @@ date: 2019-05-04
 updated: 2019-09-19
 ---
 
-Installability is a core requirement of Progressive Web Apps (PWAs).
+Installability is a core requirement of [Progressive Web Apps (PWAs)](/discover-installable).
 By prompting users to install your PWA, you allow them to add it to their home screens.
 Users who add apps to home screens engage with those apps more frequently.
 

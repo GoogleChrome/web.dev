@@ -10,7 +10,7 @@ updated: 2019-09-19
 ---
 
 Theming the browser's address bar to match the brand colors
-of your Progressive Web App (PWA) provides a more immersive user experience.
+of your [Progressive Web App (PWA)](/discover-installable) provides a more immersive user experience.
 
 ## How the Lighthouse theme color audit fails
 
