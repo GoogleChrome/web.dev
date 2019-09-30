@@ -9,8 +9,12 @@ date: 2019-05-04
 updated: 2019-09-19
 ---
 
-When content width is smaller or larger than viewport width,
-that's often a cue that the page is not optimized for mobile screens.
+The viewport is the part of the browser window
+in which your page's content is visible.
+When your page's content width is smaller or larger than the viewport width,
+it may not render correctly on mobile screens.
+For example, if the content width is too large,
+content may be scaled down to fit, making text difficult to read.
 
 ## How the Lighthouse content width audit fails
 
@@ -29,9 +33,9 @@ The audit fails if `window.innerWidth` does not equal `window.outerWidth`.
 
 This audit is a roundabout way of determining
 if your page is optimized for mobile devices.
-If your site is not optimized and you want it to be, then see
+See Google's
 [Responsive Web Design Basics](https://developers.google.com/web/fundamentals/design-and-ux/responsive/)
-to get started.
+for an overview of how to create a mobile-friendly page.
 
 You can ignore this audit if:
 
