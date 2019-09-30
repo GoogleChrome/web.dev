@@ -5,7 +5,7 @@
  * @return {string}
  */
 export default function entrypointForRoute(url) {
-  if (pathname.match(/^measure($|\/)/)) {
+  if (url.match(/^measure($|\/)/)) {
     return "measure.js";
   }
   return "default.js";
