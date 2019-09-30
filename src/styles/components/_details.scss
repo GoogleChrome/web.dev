@@ -77,7 +77,6 @@ $BORDER_COLOR: $GREY_300;
     visibility: visible;
   }
 
-  /// adds the breakpoint styles
   @include bp(xsm) {
     &::after {
       padding: .25em;

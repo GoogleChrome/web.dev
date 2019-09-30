@@ -35,9 +35,7 @@ function renderPreview(contentArr) {
   `;
 }
 
-module.exports = (content, headingLevel) => {
-  if (!headingLevel) headingLevel = 'h2';
-
+module.exports = (content, headingLevel='h2') => {
   const validLevels = ['h2', 'h3', 'h4', 'h5', 'h6', 'p'];
 
   if (!validLevels.includes(headingLevel)) {
@@ -47,7 +45,7 @@ module.exports = (content, headingLevel) => {
   const contentArr = content.trim().split('\n');
   const heading = contentArr.shift();
 
-  // Has to be on one line to keep whitespace out of the heading eleemnt
+  // Has to be on one line to keep whitespace out of the heading element
   return html`
     <summary class="w-details__summary">
       <${headingLevel} class="w-details__header">${md.renderInline(heading)}</${headingLevel}>
