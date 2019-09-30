@@ -3,7 +3,7 @@ title: Fixing layout instability
 subhead: A walkthrough of using WebPageTest to identify and fix layout instability issues.
 authors:
   - rviscomi
-date: 2019-09-26
+date: 2019-09-30
 description: |
   A walkthrough of using WebPageTest to identify and fix layout instability issues.
 tags:

@@ -8,7 +8,7 @@ description: |
   Learn about new and exciting possibilities for preloading responsive images to ensure great user experience.
 hero: hero.jpg
 alt: A wall with a bunch of image frames in different sizes.
-date: 2019-09-27
+date: 2019-09-30
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
