@@ -3,6 +3,7 @@ layout: post
 title: Ensure video elements have audio descriptions
 description: |
   Learn about video-description audit.
+date: 2019-05-02
 web_lighthouse:
   - video-description
 ---
@@ -42,7 +43,7 @@ with attribute `kind="descriptions"`:
 ```
 
 Learn more in
-[`<video>` elements must have an audio description `<track>`](https://dequeuniversity.com/rules/axe/3.2/video-description).
+[`<video>` elements must have an audio description `<track>`](https://dequeuniversity.com/rules/axe/3.3/video-description).
 
 {% Aside 'note' %}
 The example above includes both audio descriptions for visually impaired users
@@ -60,4 +61,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Video elements have audio descriptions audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-description.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

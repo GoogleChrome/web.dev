@@ -3,6 +3,7 @@ layout: post
 title: Serve images in next-gen formats
 description: |
   Learn about the uses-webp-images audit.
+date: 2019-05-02
 web_lighthouse:
   - uses-webp-images
 ---
@@ -43,7 +44,7 @@ for more on WebP.
   </ul>
 </div>
 
-## How Lighthouse calcualtes potential savings
+## How Lighthouse calculates potential savings
 
 Lighthouse collects each BMP, JPEG, and PNG image on the page,
 and then converts each to WebP,

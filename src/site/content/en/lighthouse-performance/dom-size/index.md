@@ -3,6 +3,7 @@ layout: post
 title: Avoid an excessive DOM size
 description: |
   Learn about the dom-size audit.
+date: 2019-05-02
 web_lighthouse:
   - dom-size
 ---

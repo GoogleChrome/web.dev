@@ -3,6 +3,7 @@ layout: post
 title: Ensure object elements have alternative text
 description: |
   Learn about object-alt audit.
+date: 2019-05-02
 web_lighthouse:
   - object-alt
 ---
@@ -49,7 +50,7 @@ Learn more in [Include text alternatives for images and objects](/labels-and-tex
 You can also use `alt` and ARIA labels to describe object elements,
 for example,
 `<object type="application/pdf" data="/report.pdf alt="2019 Web Accessibility Report">`
-(see [&lt;object> elements must have alternate text](https://dequeuniversity.com/rules/axe/3.2/object-alt))
+(see [&lt;object> elements must have alternate text](https://dequeuniversity.com/rules/axe/3.3/object-alt))
 {% endAside %}
 
 ## Tips for writing effective `alt` text
@@ -71,4 +72,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure `object` elements have alternative text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/object-alt.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

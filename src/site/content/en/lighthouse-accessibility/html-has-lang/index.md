@@ -3,6 +3,7 @@ layout: post
 title: Ensure every HTML document has a lang attribute
 description: |
   Learn about html-has-lang audit.
+date: 2019-05-02
 web_lighthouse:
   - html-has-lang
 ---
@@ -35,7 +36,7 @@ If the language is not specified,
 it is impossible to understand anything
 when screen readers are using the wrong language library.
 
-Learn more in [`<html>` element must have a lang attribute](https://dequeuniversity.com/rules/axe/3.2/html-has-lang).
+Learn more in [`<html>` element must have a lang attribute](https://dequeuniversity.com/rules/axe/3.3/html-has-lang).
 
 <!--
 ## How this audit impacts overall Lighthouse score
@@ -46,4 +47,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure every HTML document has a `lang` attribute](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-has-lang.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

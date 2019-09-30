@@ -7,10 +7,14 @@ description: |
 ---
 
 Here's how to spell, punctuate, and capitalize words and phrases commonly used on web.dev.
+* code splitting (noun)
+* code-splitting (adj)
+* ~~code-split (verb)~~ (use _split_ instead)
 * DevTools, Chrome DevTools
 * e-commerce
 * FFmpeg
 * ~~guide~~ (use _post_ instead)
+* home screen
 * Hypertext Markup Language (HTML)
 * internet
 * JavaScript

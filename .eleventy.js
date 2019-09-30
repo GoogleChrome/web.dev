@@ -37,11 +37,16 @@ const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
 const Compare = require(`./${componentsDir}/Compare`);
 const CompareCaption = require(`./${componentsDir}/CompareCaption`);
+const Details = require(`./${componentsDir}/Details`);
+const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const YouTube = require(`./${componentsDir}/YouTube`);
+
+const tagsDir = 'src/site/_includes/components/tags';
+const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
@@ -54,6 +59,7 @@ const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
+const md = require(`./${filtersDir}/md`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
@@ -119,6 +125,7 @@ module.exports = function(config) {
   config.addFilter('containsTag', containsTag);
   config.addFilter('githubLink', githubLink);
   config.addFilter('expandContributors', expandContributors);
+  config.addFilter('md', md);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
@@ -138,6 +145,8 @@ module.exports = function(config) {
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addPairedShortcode('Compare', Compare);
   config.addPairedShortcode('CompareCaption', CompareCaption);
+  config.addPairedShortcode('Details', Details);
+  config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
   config.addShortcode('PathCard', PathCard);
@@ -146,7 +155,13 @@ module.exports = function(config) {
   config.addShortcode('SubscribeAction', SubscribeAction);
   config.addShortcode('YouTube', YouTube);
 
-  https://www.11ty.io/docs/config/#data-deep-merge
+  //----------------------------------------------------------------------------
+  // CUSTOM TAGS
+  //----------------------------------------------------------------------------
+  config.addNunjucksTag('Image', Image);
+  config.addNunjucksTag('Figure', Figure);
+
+  // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
 
   // https://www.11ty.io/docs/config/#configuration-options

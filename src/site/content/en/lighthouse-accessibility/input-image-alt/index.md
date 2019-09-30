@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Ensure input types with a value "image" have alternate text
+title: Ensure input types with a value `image` have alternate text
 description: |
   Learn about input-image audit.
+date: 2019-05-02
 web_lighthouse:
   - input-image-alt
 ---
@@ -40,7 +41,7 @@ in the `alt` text
 
 Even if the image contains only text, provide alternate text.
 Screen readers can't translate images of words into output.
-Learn more in [Image buttons must have alternate text](https://dequeuniversity.com/rules/axe/3.2/input-image-alt).
+Learn more in [Image buttons must have alternate text](https://dequeuniversity.com/rules/axe/3.3/input-image-alt).
 
 {% Aside 'note' %}
 You can also use ARIA labels to describe your image buttons,
@@ -71,4 +72,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure image buttons have `alt` text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/input-image-alt.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

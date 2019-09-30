@@ -3,6 +3,7 @@ layout: post
 title: Ensure ARIA attributes are allowed for an element's role
 description: |
   Learn about aria-allowed-attr audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-allowed-attr
 ---
@@ -68,4 +69,3 @@ see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com
 
 - [ARIA attributes match their roles audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-allowed-attr.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

@@ -3,6 +3,7 @@ layout: post
 title: Ensure parent roles contain required child role(s)
 description: |
   Learn about aria-required-children audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-required-children
 ---
@@ -59,10 +60,9 @@ and check the required child roles.
 Make sure to include a child role for that parent role.
 
 For more information on this audit,
-see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com/rules/axe/3.2/aria-required-children).
+see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com/rules/axe/3.3/aria-required-children).
 
 ## More information
 
 - [Ensure parent role includes required children audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

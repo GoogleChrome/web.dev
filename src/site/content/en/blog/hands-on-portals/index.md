@@ -3,6 +3,7 @@ title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
   Learn how to build good navigation UX with the Portals API.
 date: 2019-05-06
+updated: 2019-08-29
 authors:
   - uskay
 hero: hero.png
@@ -27,8 +28,8 @@ site. See Portals in action:
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
+    <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_vp9.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_h264.mp4" type="video/mp4; codecs=h264">
   </video>
  <figcaption class="w-figcaption w-figcaption--fullbleed">
     Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
@@ -66,6 +67,11 @@ Before Portals, we could have rendered another page using an `<iframe>`. We coul
 
 Try out Portals in Chrome Canary by flipping an experimental flag:
 `chrome://flags/#enable-portals`.
+During this early phase of the Portals experiment,
+we also recommend using a completely separate user data directory for your tests
+by setting the
+[`--user-data-dir`](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md#command-line)
+command line flag.
 Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
 
 <img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">

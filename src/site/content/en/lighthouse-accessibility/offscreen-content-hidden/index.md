@@ -3,6 +3,7 @@ layout: post
 title: Manually check offscreen content is hidden from assistive technology
 description: |
   Learn about offscreen-content-hidden audit.
+date: 2019-05-02
 web_lighthouse:
   - offscreen-content-hidden
 ---
