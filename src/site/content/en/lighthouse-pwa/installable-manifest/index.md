@@ -5,20 +5,15 @@ description: |
   Learn how to make your Progressive Web App installable.
 web_lighthouse:
   - installable-manifest
+codelabs:
+  - codelab-make-installable
 date: 2019-05-04
 updated: 2019-09-19
 ---
 
 The prompt to install a Progressive Web App (PWA) lets users add your app to their home screen.
-Users that add apps to home screens engage those apps more.
-Learn more in [Discover what it takes to be installable](/discover-installable/).
-
-For example, shortly after launching this feature,
-Twitter reported an average of 250K unique daily users
-launching their Twitter Lite progressive web app 4 times a day from the home screen.
-See
-[Twitter Lite PWA Significantly Increases Engagement and Reduces Data Usage](https://developers.google.com/web/showcase/2017/twitter#increasing_engagement_with_add_to_homescreen_prompt_and_web_push_notifications) for more on
-Twitter's case study.
+Users who add apps to home screens engage with those apps more frequently.
+Learn more in the [Discover what it takes to be installable](/discover-installable/) post.
 
 ## How the Lighthouse web app manifest audit fails
 
@@ -29,7 +24,7 @@ flags pages missing an installable manifest:
   <img class="w-screenshot" src="installable-manifest.png" alt="Lighthouse audit showing user can't install the web app from their home screen">
 </figure>
 
-This audit fails when the following criteria isn't met:
+A page fails the audit when the following criteria aren't met:
 
 - The web app is not already installed and
 [`prefer_related_applications`](https://developers.google.com/web/fundamentals/app-install-banners/native)
@@ -38,7 +33,7 @@ is not `true`.
 (currently, the user has interacted with the domain for at least 30 seconds)
 - Includes a [web app manifest](/add-manifest/) that includes:
   - `short_name` or `name`
-  - `icons` must include a 192px and a 512px sized icons
+  - `icons` must include a 192&nbsp;px and a 512&nbsp;px sized icons
   - `start_url`
   - `display` must be one of: `fullscreen`, `standalone`, or `minimal-ui`
 - Served over [HTTPS](/is-on-https) (required for service workers)
@@ -64,22 +59,10 @@ Other browsers have different criteria for installation, or to trigger the `befo
 In addition, the scope of the service worker includes the page you audited
 and the page specified in the `start_url` property of the web app manifest.
 
-<div class="w-codelabs-callout">
-  <div class="w-codelabs-callout__header">
-    <h2 class="w-codelabs-callout__lockup">Codelabs</h2>
-    <div class="w-codelabs-callout__headline">See it in action</div>
-    <div class="w-codelabs-callout__blurb">
-      Learn more and put this guide into action.
-    </div>
-  </div>
-  <ul class="w-unstyled-list w-codelabs-callout__list">
-    <li class="w-codelabs-callout__listitem">
-      <a class="w-codelabs-callout__link" href="/codelab-make-installable">
-        Make it installable
-      </a>
-    </li>
-  </ul>
-</div>
+{% Aside 'codelab' %}
+Learn how to make your app installable
+with the [Make it installable](/codelab-make-installable) codelab.
+{% endAside %}
 
 Learn more in [Add a Web App Manifest](/add-manifest/).
 
