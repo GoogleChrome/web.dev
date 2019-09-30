@@ -51,21 +51,21 @@ Finally, if you don't want your post to be published as soon as it's done, add t
 ## Authoring tips
 Use relative URLs to link to other posts and codelabs on web.dev.
 
-{% Compare 'worse', "Don't" %}
+{% Compare 'worse' %}
 `https://web.dev/some-article`
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
+{% Compare 'better' %}
 `/some-article`
 {% endCompare %}
 
 Use relative URLs to link to assets for the post or codelab.
 
-{% Compare 'worse', "Don't" %}
+{% Compare 'worse' %}
 `https://web.dev/some-article/image.png`
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
+{% Compare 'better' %}
 `./image.png`
 {% endCompare %}
 

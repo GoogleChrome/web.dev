@@ -25,42 +25,42 @@ Use second person (_you_) rather than first person (_we_) except in rare cases w
 
 Begin instructions with the objective rather than the action.
 
-{% Compare 'worse', "Don't" %}
-> Drag a photo to the trash to remove it from an album.
-
+<div class="w-columns">
+{% Compare 'worse' %}
+Drag a photo to the trash to remove it from an album.
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> To remove a photo from an album, drag it to the trash.
-
+{% Compare 'better' %}
+To remove a photo from an album, drag it to the trash.
 {% endCompare %}
+</div>
 
 Favor the imperative mood (giving commands) over declarative (making statements) in instructions.
 
-{% Compare 'worse', "Don't" %}
-> You will click **Run Audit**.
-
+<div class="w-columns">
+{% Compare 'worse' %}
+You will click **Run Audit**.
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> Click **Run Audit**.
-
+{% Compare 'better' %}
+Click **Run Audit**.
 {% endCompare %}
+</div>
 
 Avoid using _can_ in instructions unless you really mean to convey that the step is optional.
 
 ## Linking
 Don't include preceding articles (_a_, _an_, _the_) or surrounding punctuation in link text.
 
-{% Compare 'worse', "Don't" %}
-> See [the "Easily discoverable" collection](/discoverable) for more information.
-
+<div class="w-columns">
+{% Compare 'worse' %}
+See [the "Easily discoverable" collection](/discoverable) for more information.
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> See the [Easily discoverable](/discoverable) collection for more information.
-
+{% Compare 'better' %}
+See the [Easily discoverable](/discoverable) collection for more information.
 {% endCompare %}
+</div>
 
 When referring to webpages, either on web.dev or elsewhere, hyperlink the webpage title only, without quotation marks. (See example above.)
 
@@ -102,42 +102,42 @@ Use numerals for decimals and numbers higher than nine.
 ## Pronouns
 Avoid ambiguous pronouns. Follow the advice on the GDDSC [Pronouns](https://developers.google.com/style/pronouns) page. Also avoid pronouns that refer to clauses or phrases, which can complicate translation into some languages.
 
-{% Compare 'worse', "Don't" %}
-> Speed optimizations often regress quickly. Performance budgets are one way to address this.
-
+<div class="w-columns">
+{% Compare 'worse' %}
+Speed optimizations often regress quickly. Performance budgets are one way to address this.
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> Speed optimizations often regress quickly. Performance budgets are one way to address this problem.
-
+{% Compare 'better' %}
+Speed optimizations often regress quickly. Performance budgets are one way to address this problem.
 {% endCompare %}
+</div>
 
 ## Punctuation
 ### Ampersands
 Don't use ampersands unless one is part of a company or brand name.
 
-{% Compare 'worse', "Don't" %}
-> Safe & secure
-
+<div class="w-columns">
+{% Compare 'worse' %}
+Safe & secure
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> Safe and secure
-
+{% Compare 'better' %}
+Safe and secure
 {% endCompare %}
+</div>
 
 ### Commas
 Use the serial comma before the last item in a list.
 
-{% Compare 'worse', "Don't" %}
-> React, Vue and Angular are popular frameworks.
-
+<div class="w-columns">
+{% Compare 'worse' %}
+React, Vue and Angular are popular frameworks.
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> React, Vue, and Angular are popular frameworks.
-
+{% Compare 'better' %}
+React, Vue, and Angular are popular frameworks.
 {% endCompare %}
+</div>
 
 ### Dashes and hyphens
 Use hyphens (-) with no surrounding space to link words together (e.g., _two-year-old_).
@@ -149,99 +149,96 @@ Use an en dash (–) for ranges (e.g., _10–100 KB_).
 ### Quotation marks and apostrophes
 Use straight quotation marks and apostrophes, not smart (curly).
 
+<div class="w-columns">
 <!-- lint disable no-smart-quotes -->
-{% Compare 'worse', "Don't" %}
-> The “Accessible to all” collection
+{% Compare 'worse' %}
+The “Accessible to all” collection
+{% endCompare %}
 <!-- lint enable no-smart-quotes -->
 
+{% Compare 'better' %}
+The "Accessible to all" collection
 {% endCompare %}
-
-{% Compare 'better', 'Do' %}
-> The "Accessible to all" collection
-
-{% endCompare %}
+</div>
 
 Periods and commas always go inside quotation marks. Question marks and exclamation points go inside quotation marks if they're part of the quotation; outside if not.
 
-{% Compare 'worse', "Don't" %}
-> Jane said, "Reader, I married him".
-
+<div class="w-columns">
+{% Compare 'worse' %}
+Jane said, "Reader, I married him".
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> Jane said, "Reader, I married him."
-
+{% Compare 'better' %}
+Jane said, "Reader, I married him."
 {% endCompare %}
+</div>
 
 ## Text formatting
 Bold words for emphasis sparingly. (The primary use for bolding is [indicating UI element names](/handbook/grammar/#ui-elements-and-interaction).)
 
 Avoid mixing code font and standard font in a single word.
 
-{% Compare 'worse', "Don't" %}
-> `integer`s
-
+<div class="w-columns">
+{% Compare 'worse' %}
+`integer`s
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> `integer` values
-
+{% Compare 'better' %}
+`integer` values
 {% endCompare %}
+</div>
 
 ## Titles and headings
 Use sentence case for titles and headings.
 
-{% Compare 'worse', "Don't" %}
-> Optimize Your Images
-
+<div class="w-columns">
+{% Compare 'worse' %}
+Optimize Your Images
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> Optimize your images
-
+{% Compare 'better' %}
+Optimize your images
 {% endCompare %}
+</div>
 
 Use imperative mood for titles and headings whenever possible.
 
-{% Compare 'worse', "Don't" %}
-> Optimizing your images
-
+<div class="w-columns">
+{% Compare 'worse' %}
+Optimizing your images
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> Optimize your images
-
+{% Compare 'better' %}
+Optimize your images
 {% endCompare %}
+</div>
 
 ## UI elements and interaction
 Bold the names of UI elements and Lighthouse audits.
 
-{% Compare 'worse', "Don't" %}
-> In the New Project window, select the "New Activity" checkbox, and then click "Next."
-
+{% Compare 'worse' %}
+In the New Project window, select the "New Activity" checkbox, and then click "Next."
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> In the **New Project** window, select the **New Activity** checkbox, and then click **Next**.
-
+{% Compare 'better' %}
+In the **New Project** window, select the **New Activity** checkbox, and then click **Next**.
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> To find slow third-party scripts, check the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits in the **Diagnostics** section.
-
+{% Compare 'better' %}
+To find slow third-party scripts, check the **Reduce JavaScript execution time** and **Avoid enormous network payloads** audits in the **Diagnostics** section.
 {% endCompare %}
 
 When referring to a button with an icon but no label, use the name of the button as shown in the tooltip, and add the button icon immediately after. Don't style the icon unless the button would be difficult to recognize without its original styling.
 
-{% Compare 'worse', "Don't" %}
-> Click ![Fullscreen icon](fullscreen.png#_icon).
-
+<div class="w-columns">
+{% Compare 'worse' %}
+Click ![Fullscreen icon](fullscreen.png#_icon).
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> Click **Fullscreen** ![Fullscreen icon](fullscreen.png#_icon_bordered).
-
+{% Compare 'better' %}
+Click **Fullscreen** ![Fullscreen icon](fullscreen.png#_icon_bordered).
 {% endCompare %}
+</div>
 
 To refer to a keyboard key:
 * Use the key's name in code font.
@@ -249,15 +246,15 @@ To refer to a keyboard key:
 * To refer to a key combination, use the form _Modifier+Key_ (no spaces).
 * When the reader may be on either Windows or Mac, put the Mac shortcut in parentheses after the Windows shortcut.
 
-{% Compare 'worse', "Don't" %}
-> To copy, press Ctrl + C (⌘ + C).
-
+<div class="w-columns">
+{% Compare 'worse' %}
+To copy, press Ctrl + C (⌘ + C).
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> To copy, press `Control+C` (or `Command+C` on Mac).
-
+{% Compare 'better' %}
+To copy, press `Control+C` (or `Command+C` on Mac).
 {% endCompare %}
+</div>
 
 Use _pane_ to refer to the content areas associated with tabs—unless you're referring to an area in DevTools; then use _panel_.
 
@@ -266,42 +263,42 @@ Use _KB_ for kilobytes, _kb_ for kilobits.
 
 Add a space before units.
 
-{% Compare 'worse', "Don't" %}
-> 100KB
-
+<div class="w-columns">
+{% Compare 'worse' %}
+100KB
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> 100 KB
-
+{% Compare 'better' %}
+100 KB
 {% endCompare %}
+</div>
 
 ## Usage
 To maintain a conversational tone, use common contractions.
 
-{% Compare 'worse', "Don't" %}
-> This collection assumes that you are already familiar with Angular.
-
+<div class="w-columns">
+{% Compare 'worse' %}
+This collection assumes that you are already familiar with Angular.
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> This collection assumes that you're already familiar with Angular.
-
+{% Compare 'better' %}
+This collection assumes that you're already familiar with Angular.
 {% endCompare %}
+</div>
 
 Use consistent vocabulary throughout a piece and the collection it lives in.
 
 Acronyms should be spelled out the first time they're used, with the acronym following immediately after in parentheses.
 
-{% Compare 'worse', "Don't" %}
-> WICG
-
+<div class="w-columns">
+{% Compare 'worse' %}
+WICG
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
-> Web Incubation Community Groups (WICG)
-
+{% Compare 'better' %}
+Web Incubation Community Groups (WICG)
 {% endCompare %}
+</div>
 
 ## References
 These are the references content reviewers use when reviewing posts and codelabs for editorial issues beyond the ones covered in this post. They worry about this stuff so you don't have to!

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "<input type=\"image\"> elements do not have [alt] text"
+title: "`<input type=\"image\">` elements do not have `[alt]` text"
 description: |
   Learn how to make sure screen reader users can access your web page's image
   inputs by providing alternative text.

@@ -62,3 +62,11 @@
 .w-path-link:hover {
   color: $WEB_PRIMARY_COLOR;
 }
+
+.w-path-link code {
+  background: none;
+  border: 0;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}

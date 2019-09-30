@@ -23,13 +23,13 @@ in the Diagnostics section:
 Consider these tactics to reduce time spent parsing, compiling,
 and executing JS:
 
-- [Reduce JavaScript payloads with code-splitting](/reduce-javascript-payloads-with-code-splitting).
+- [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting).
 - [Remove unused code](/remove-unused-code).
 - [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
 
 ## More information
 
 - [Minimize main-thread work audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/mainthread-work-breakdown.js)
-- [Reduce JavaScript payloads with code-splitting codelab](/codelab-code-splitting)
+- [Reduce JavaScript payloads with code splitting codelab](/codelab-code-splitting)
 - [Minify and compress network payloads with gzip codelab](/codelab-text-compression)
 - [Minify and compress network payloads with brotli codelab](/codelab-text-compression-brotli)

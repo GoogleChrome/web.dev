@@ -117,3 +117,32 @@ redirects:
 
 - from: /secure/...
   to: /...
+
+# Redirect duplicative /discoverable URLs to /lighthouse-seo
+
+- from: /write-descriptive-text
+  to: /lighthouse-seo
+
+- from: /tell-search-translated-pages-equal
+  to: /hreflang
+
+- from: /tell-search-engine-canonical-url
+  to: /canonical
+
+- from: /remove-code-blocking-indexing
+  to: /is-crawlable
+
+- from: /fix-http-status-codes
+  to: /http-status-code
+
+- from: /remove-browser-plugins
+  to: /plugins
+
+- from: /fix-robot-errors
+  to: /robots-txt
+
+- from: /fix-small-fonts
+  to: /font-size
+
+- from: /fix-viewport-tag
+  to: /viewport
