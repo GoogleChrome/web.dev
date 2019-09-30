@@ -21,6 +21,9 @@ process.on("unhandledRejection", (reason, p) => {
 
 require("dotenv").config();
 
+const bytes = require("bytes");
+const chalk = require("chalk");
+const fs = require("fs").promises;
 const glob = require("fast-glob");
 const path = require("path");
 const log = require("fancy-log");
@@ -52,6 +55,8 @@ const defaultPlugins = [
 ];
 
 async function build() {
+  const generatedSources = [];
+
   // Rollup all page entrypoints together to generate graph of source needs.
   // Generates unique filenames for each chunk and entrypoint that include the
   // source file's hash, useful for cache busting.
@@ -71,6 +76,7 @@ async function build() {
   // correct assets.
   const entrypoints = {};
   for (const bundle of appGenerated.output) {
+    generatedSources.push(path.join("dist", bundle.fileName));
     if (!bundle.isEntry) {
       continue;
     }
@@ -113,11 +119,46 @@ async function build() {
     dir: "dist",
     format: "esm",
   });
+  generatedSources.push("dist/bootstrap.js");
+  return generatedSources;
+}
 
-  // Additionally rollup tests.
-  if (isProd) {
-    return; // don't compile tests
+async function minifyRelease(sources) {
+  const terser = require("terser");
+
+  for (const source of sources) {
+    const code = await fs.readFile(source, "utf-8");
+    const sourceMap = await fs.readFile(source + ".map", "utf-8");
+
+    const result = terser.minify(code, {
+      module: true,
+      safari10: true,
+      sourceMap: {
+        content: sourceMap,
+        url: source + ".map", // same name as input
+      },
+    });
+
+    for (const warning of result.warnings || []) {
+      log.warn(warning);
+    }
+    if (result.error) {
+      throw result.error;
+    }
+
+    const outputSizeRatio = result.code.length / code.length;
+    log(
+      `Minified ${chalk.yellow(source)}, ${bytes(result.code.length)} (${(
+        outputSizeRatio * 100
+      ).toFixed(1)}%)`,
+    );
+
+    await fs.writeFile(source, result.code);
+    await fs.writeFile(source + ".map", result.map);
   }
+}
+
+async function buildTest() {
   const testBundle = await rollup.rollup({
     input: "src/lib/test/index.js",
     plugins: defaultPlugins,
@@ -128,4 +169,15 @@ async function build() {
   });
 }
 
-build();
+async function run() {
+  const generatedSources = await build();
+  console.info("generated sources", generatedSources);
+
+  if (isProd) {
+    await minifyRelease(generatedSources);
+  } else {
+    await buildTest();
+  }
+}
+
+run();
