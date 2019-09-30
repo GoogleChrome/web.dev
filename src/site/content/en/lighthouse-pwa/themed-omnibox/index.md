@@ -36,10 +36,11 @@ The `theme-color` meta tag ensures that the address bar is branded when
 a user visits your site as a normal webpage.
 Set the tag's `content` attribute to any valid CSS color value:
 
-```html
+```html/4
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  …
   <meta name="theme-color" content="#317EFB"/>
   …
 </head>
@@ -57,7 +58,7 @@ Unlike the `theme-color` meta tag, you only need
 to define this once, in the [manifest](/add-manifest).
 Set the property to any valid CSS color value:
 
-```html
+```html/1
 {
   "theme_color": "#317EFB"
   …

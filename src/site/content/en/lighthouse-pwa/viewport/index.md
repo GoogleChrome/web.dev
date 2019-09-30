@@ -44,17 +44,14 @@ Add a viewport `<meta>` tag with the appropriate key-value pairs to the `<head>`
 of your page:
 
 ```html/4
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     …
     <meta name="viewport" content="width=device-width, initial-scale=1">
     …
   </head>
-  <body>
-    …
-  </body>
-</html>
+  …
 ```
 
 Here's what each key-value pair does:

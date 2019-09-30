@@ -44,15 +44,18 @@ the correct size.
 - Add `<link rel="apple-touch-icon" href="/example.png">` to the `<head>` of your page.
 - Replace `/example.png` with the actual path to your icon.
 
-```html
-...
-<head>
-  ...
-  <link rel="apple-touch-icon" href="/example.png">
-  ...
-</head>
-...
-```
+    ```html/4
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        …
+        <link rel="apple-touch-icon" href="/example.png">
+        …
+      </head>
+      …
+    ```
+
+1. Replace `/example.png` with the actual path to your icon.
 
 {% Aside 'codelab' %}
   Check out the [Add an Apple touch icon to your Progressive Web App](/codelab-apple-touch-icon)
