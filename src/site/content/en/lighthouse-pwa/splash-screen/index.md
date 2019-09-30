@@ -9,15 +9,13 @@ date: 2019-05-04
 updated: 2019-09-19
 ---
 
-A custom splash screen makes your progressive web app (PWA) feel more like a
-native app.
-
-When a user launches your PWA from the home screen, Android's default behavior
-is to display a white screen until the PWA is ready. The user may see a blank,
-white screen for up to 200ms. With a custom splash screen, the user sees a
-custom background color and your PWA's icon instead.
-
-See [Adding a Splash Screen for Installed Web Apps in Chrome 47](https://developers.google.com/web/updates/2015/10/splashscreen) for more information.
+A custom splash screen makes your Progressive Web App (PWA) feel more like a
+native app. By default, when a user launches your PWA from the home screen,
+Android displays a white screen until the PWA is ready.
+The user may see this blank, white screen for up to 200&nbsp;ms.
+By setting up a custom splash screen,
+you can show your users a custom background color and your PWA's icon,
+providing a branded, engaging experience.
 
 ## How the Lighthouse splash screen audit fails
 
@@ -32,18 +30,23 @@ flags pages that don't have a custom splash screen:
 
 ## How to create a custom splash screen
 
-Chrome for Android automatically shows your custom splash screen so long as
-you meet the following requirements in your web app manifest:
+Chrome for Android automatically shows your custom splash screen as long as
+you meet the following requirements in your [web app manifest](/add-manifest):
 
 - The `name` property is set to the name of your PWA.
 - The `background_color` property is set to a valid CSS color value.
-- The `icons` array specifies an icon that is at least 512px by 512px.
-- The icon exists and is a PNG.
+- The `icons` array specifies an icon that is at least 512x512&nbsp;px.
+- The specified icon exists and is a PNG.
 
-See [Audit: icon size coverage](https://github.com/GoogleChrome/lighthouse/issues/291) for a discussion on what icon
-sizes should be included in your project. Lighthouse's opinion is that a
-single, 512px icon is sufficient, but other members of the Google Web
-Developer Relations team have different opinions.
+See [Adding a Splash Screen for Installed Web Apps in Chrome 47](https://developers.google.com/web/updates/2015/10/splashscreen)
+for more information.
+
+{% Aside %}
+While Lighthouse's audit will pass when a single 512x512&nbsp;px icon is present,
+there is some disagreement about what icons a PWA should include.
+See [Audit: icon size coverage](https://github.com/GoogleChrome/lighthouse/issues/291)
+for a discussion about the pros and cons of different approaches.
+{% endAside %}
 
 ## Resources
 
