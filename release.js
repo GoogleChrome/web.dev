@@ -14,6 +14,13 @@
  * limitations under the License.
  */
 
+/**
+ * @fileoverview Releases web.dev after build.
+ *
+ * This performs tasks to push to production, and relies on environment variables being set
+ * correctly. This is run by Googlers deploying the site.
+ */
+
 require("dotenv").config();
 
 const algoliasearch = require("algoliasearch");

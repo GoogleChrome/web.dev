@@ -7,7 +7,7 @@
     "lint:scss": "sass-lint -c .sasslintrc -v -q",
     "build:gulp": "npx gulp build",
     "build:eleventy": "eleventy",
-    "build:rollup": "rollup -c rollup.config.js",
+    "build:rollup": "node build.js",
     "build:sass": "node ./compile-css.js src/styles/all.scss dist/app.css",
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:eleventy": "eleventy --watch",

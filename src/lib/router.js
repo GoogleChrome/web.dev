@@ -33,6 +33,13 @@ async function swapContent(url) {
     return;
   }
 
+  // Ask bootstrap to load the entrypoint for this page (even before its
+  // content is ready).
+  const entrypointPromise = new Promise((resolve) => {
+    const detail = {url, resolve};
+    document.dispatchEvent(new CustomEvent("entrypoint-load", {detail}));
+  });
+
   const main = document.querySelector("main");
   // Grab the new page content
   let page;
@@ -44,6 +51,9 @@ async function swapContent(url) {
     window.location.href = window.location.href;
     throw e;
   }
+
+  // Wait for code to be ready
+  await entrypointPromise;
   // Remove the current #content element
   main.querySelector("#content").remove();
   // Swap in the new #content element
