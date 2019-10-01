@@ -1,11 +1,18 @@
 ---
 layout: handbook
 title: web.dev content checklist
-date: 2019-06-26
+date: 2019-10-01
 description: |
   A checklist for web.dev content reviews.
 ---
-This is a checklist for web.dev content reviews. It includes critical high-level issues and lower-level issues that commonly appear in drafts.
+
+Use this checklist to determine if a draft meets web.dev's [content quality guidelines](/handbook/quality/).
+Work through the checklist from top to bottom. For example, if a draft has some of the problems listed
+in [Basics](#basics), there's not much use in working through the rest of the checklist until those problems are fixed.
+
+The long-term goal of this page is to concretely test **every** quality guideline. It also tests for lower-level issues
+that commonly appear in drafts. This page is primarily intended for web.dev reviewers. web.dev authors can also
+use it to self-review their content and fix problems rather than waiting for reviewers to highlight them.
 
 ## Basics
 1. Is the piece providing value for one or more of the web.dev [personas](/handbook/audience)?
