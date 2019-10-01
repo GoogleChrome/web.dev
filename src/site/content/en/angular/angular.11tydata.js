@@ -32,6 +32,10 @@ module.exports = {
         pathItems: ['precaching-with-the-angular-service-worker'],
       },
       {
+        title: 'Discoverable',
+        pathItems: ['getting-started-with-server-side-rendering-in-angular'],
+      },
+      {
         title: 'Installable',
         pathItems: ['creating-pwa-with-angular-cli'],
       },
