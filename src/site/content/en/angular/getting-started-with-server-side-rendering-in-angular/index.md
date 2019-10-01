@@ -45,8 +45,7 @@ ng add @nguniversal/express-engine --clientProject angular-universal-tutorial
 
 Here's what this command does:
 
-1. Sets up your Angular application for SSR.
-  - Creating & modifying project files
+1. Creating & modifying project files preparing your application for SSR.
 2. Creates Node.js scripts for dynamic and static SSR.
 3. Installs all necessary dependencies.
 4. Creates new package.json `scripts` that you can use to build SSR.
