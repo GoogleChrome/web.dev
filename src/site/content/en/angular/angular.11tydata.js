@@ -33,7 +33,10 @@ module.exports = {
       },
       {
         title: 'Discoverable',
-        pathItems: ['getting-started-with-server-side-rendering-in-angular'],
+        pathItems: [
+          'getting-started-with-server-side-rendering-in-angular',
+          'setup-dynamic-server-side-rendering-with-angular'
+        ],
       },
       {
         title: 'Installable',
