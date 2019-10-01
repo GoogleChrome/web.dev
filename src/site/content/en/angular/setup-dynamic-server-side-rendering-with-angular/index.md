@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Getting started with server-side rendering in Angular"
+title: "Set up dynamic server-side rendering with Angular"
 subhead: |
-  Use SSR to get control of your SEO and social media previews and improve perceived performance in your Angular applications.
+  Dynamically server-side rendering your pages per route using Angular Universal schematics.
 hero: angular-universal-motorcycle.jpeg
 alt: close-up of black and brown motorcycle dashboard
 date: 2019-10-01
