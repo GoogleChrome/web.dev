@@ -17,7 +17,7 @@ tags:
   - angular-universal
 ---
 
-_You can find the code samples from this article on GitHub._
+_You can find the code samples from this article [on GitHub](https://github.com/trilonio/angular-universal-tutorial)_
 
 In this post, you'll learn how to use the [Angular Universal schematics](https://www.github.com/angular/universal) to set up dynamic server-side rendering (SSR). SSR can give you more control over your search engine optimization (SEO) and social media previews and get faster [First Meaningful Paints](/first-meaningful-paint).
 
