@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[role] values are not valid"
+title: "`[role]` values are not valid"
 description: |
   Learn how to improve your web page's accessibility for screen reader users by
   making sure that all ARIA roles are valid.

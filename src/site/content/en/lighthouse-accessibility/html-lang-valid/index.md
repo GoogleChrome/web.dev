@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "<html> element does not have a valid value for its [lang] attribute"
+title: "`<html>` element does not have a valid value for its `[lang]` attribute"
 description: |
   Learn how to make sure screen readers interpret your web page's content
   correctly by providing a valid value for the HTML element's lang attribute.

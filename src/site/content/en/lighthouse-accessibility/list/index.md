@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Lists do not contain only <li> elements and script supporting elements (<script> and <template>)"
+title: "Lists do not contain only `<li>` elements and script supporting elements (`<script>` and `<template>`)"
 description: |
   Learn how to make lists on your web page clear to screen reader users by
   avoiding child elements that don't belong in lists.

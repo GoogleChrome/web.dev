@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[user-scalable=\"no\"] is used in the <meta name=\"viewport\"> element or the [maximum-scale] attribute is less than 5"
+title: "`[user-scalable=\"no\"]` is used in the `<meta name=\"viewport\">` element or the `[maximum-scale]` attribute is less than `5`"
 description: |
   Learn how to make your web page more accessible by making sure that browser
   zoom isn't disabled.

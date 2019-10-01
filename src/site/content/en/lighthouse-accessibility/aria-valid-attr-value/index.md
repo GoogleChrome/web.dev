@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[aria-*] attributes do not have valid values"
+title: "`[aria-*]` attributes do not have valid values"
 description: |
   Learn how to improve your web page's accessibility for screen reader users by
   making sure that all ARIA attributes have valid values.

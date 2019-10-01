@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Image elements do not have [alt] attributes"
+title: "Image elements do not have `[alt]` attributes"
 description: |
   Learn how to make sure screen reader users can access your web page's images
   by providing alternative text.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[id] attributes on the page are not unique"
+title: "`[id]` attributes on the page are not unique"
 description: |
   Learn how to make sure that all elements on your page are announced correctly
   by assistive technologies.

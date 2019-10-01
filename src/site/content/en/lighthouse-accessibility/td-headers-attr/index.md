@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cells in a <table> element that use the [headers] attribute refer to an element id not found within the same table"
+title: "Cells in a `<table>` element that use the `[headers]` attribute refer to an element id not found within the same table"
 description: |
   Learn how to improve the accessibility of tables on your web page by making
   sure that data cells always refer to existing header elements.

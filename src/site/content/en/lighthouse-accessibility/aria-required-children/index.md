@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Elements with an ARIA [role] that require children to contain a specific [role] are missing some or all of those required children"
+title: "Elements with a `[role]` that requires specific children `[role]`s are missing"
 description: |
   Learn how to improve your web page's accessibility for screen reader users by
   making sure that all elements with ARIA roles have the required child

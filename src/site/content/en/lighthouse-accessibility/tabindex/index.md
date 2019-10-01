@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Some elements have a [tabindex] value greater than 0"
+title: "Some elements have a `[tabindex]` value greater than `0`"
 description: |
   Learn how to improve your web page's keyboard accessibility by avoiding
   an explicit keyboard navigation order.

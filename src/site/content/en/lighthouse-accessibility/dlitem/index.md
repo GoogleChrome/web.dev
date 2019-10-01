@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Definition list items are not wrapped in <dl> elements"
+title: "Definition list items are not wrapped in `<dl>` elements"
 description: |
   Learn how to make sure screen readers can announce definition list items on
   your web page.

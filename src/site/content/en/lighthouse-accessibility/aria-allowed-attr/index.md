@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[aria-*] attributes do not match their roles"
+title: "`[aria-*]` attributes do not match their roles"
 description: |
   Learn how to improve your web page's accessibility for screen reader users by
   making sure that all elements with ARIA roles have appropriate ARIA

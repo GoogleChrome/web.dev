@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Presentational <table> elements do not avoid using <th>, <caption>, or the [summary] attribute"
+title: "Presentational `<table>` elements do not avoid using `<th>`, `<caption>`, or the `[summary]` attribute"
 description: |
   Learn how to make presentational tables more accessible for screen reader
   users by avoiding child elements meant for data tables.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[role]s do not have all required [aria-*] attributes"
+title: "`[role]`s do not have all required `[aria-*]` attributes"
 description: |
   Learn how to improve your web page's accessibility for screen reader users by
   making sure that all elements with ARIA roles have the required ARIA

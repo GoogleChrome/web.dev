@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "<th> elements and elements with [role=\"columnheader\"/\"rowheader\"] do not have data cells they describe"
+title: "`<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` do not have data cells they describe"
 description: |
   Learn how to make tables on your web page more accessible to screen reader
   users by making sure that there are data cells associated with each header

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[role]s are not contained by their required parent element"
+title: "`[role]`s are not contained by their required parent element"
 description: |
   Learn how to improve your web page's accessibility for screen reader users by
   making sure that all elements with ARIA roles are contained by the required

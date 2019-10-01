@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "List items (<li>) are not contained within <ul> or <ol> parent elements"
+title: "List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements"
 description: |
   Learn how to make list items on your web page accessible to screen reader
   users by placing them in list elements.

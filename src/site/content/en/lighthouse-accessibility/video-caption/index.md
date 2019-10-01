@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "<video> elements do not contain a <track> element with [kind=\"captions\"]"
+title: "`<video>` elements do not contain a `<track>` element with `[kind=\"captions\"]`"
 description: |
   Learn how to make video on your web page more accessible by providing
   closed captions.

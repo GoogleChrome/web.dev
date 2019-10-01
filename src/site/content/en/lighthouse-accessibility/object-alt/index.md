@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "<object> elements do not have [alt] text"
+title: "`<object>` elements do not have `[alt]` text"
 description: |
   Learn how to improve the accessibility of object elements on your web page by
   providing alternative text.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: <dl>s do not contain only properly ordered <dt> and <dd> groups, <script>, or <template> elements
+title: "`<dl>`s do not contain only properly ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements"
 description: |
   Learn how to structure definition lists on your web page so that screen
   readers can interpret them.

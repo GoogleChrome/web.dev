@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[lang] attributes do not have a valid value"
+title: "`[lang]` attributes do not have a valid value"
 description: |
   Learn how to improve the accessibility of your web page for international
   audiences by providing a valid value for all lang attributes.

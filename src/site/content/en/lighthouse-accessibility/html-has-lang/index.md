@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "<html> element does not have a [lang] attribute"
+title: "`<html>` element does not have a `[lang]` attribute"
 description: |
   Learn how to make sure screen readers pronounce your web page's content
   correctly by providing a lang attribute on the HTML element.

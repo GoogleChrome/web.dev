@@ -21,6 +21,14 @@ module.exports = {
         ],
       },
       {
+        title: 'Navigation',
+        pathItems: [
+          'accesskeys',
+          'bypass',
+          'tabindex',
+        ],
+      },
+      {
         title: 'ARIA',
         pathItems: [
           'aria-allowed-attr',
@@ -30,36 +38,6 @@ module.exports = {
           'aria-roles',
           'aria-valid-attr-value',
           'aria-valid-attr',
-        ],
-      },
-      {
-        title: 'Audio and video',
-        pathItems: [
-          'audio-caption',
-          'video-caption',
-          'video-description',
-        ],
-      },
-      {
-        title: 'Best practices',
-        pathItems: [
-          'duplicate-id',
-          'meta-refresh',
-          'meta-viewport',
-        ],
-      },
-      {
-        title: 'Contrast',
-        pathItems: [
-          'color-contrast',
-        ],
-      },
-      {
-        title: 'Internationalization and localization',
-        pathItems: [
-          'html-has-lang',
-          'html-lang-valid',
-          'valid-lang',
         ],
       },
       {
@@ -76,11 +54,9 @@ module.exports = {
         ],
       },
       {
-        title: 'Navigation',
+        title: 'Contrast',
         pathItems: [
-          'accesskeys',
-          'bypass',
-          'tabindex',
+          'color-contrast',
         ],
       },
       {
@@ -93,6 +69,30 @@ module.exports = {
           'layout-table',
           'td-headers-attr',
           'th-has-data-cells',
+        ],
+      },
+      {
+        title: 'Best practices',
+        pathItems: [
+          'duplicate-id',
+          'meta-refresh',
+          'meta-viewport',
+        ],
+      },
+      {
+        title: 'Audio and video',
+        pathItems: [
+          'audio-caption',
+          'video-caption',
+          'video-description',
+        ],
+      },
+      {
+        title: 'Internationalization and localization',
+        pathItems: [
+          'html-has-lang',
+          'html-lang-valid',
+          'valid-lang',
         ],
       },
       {

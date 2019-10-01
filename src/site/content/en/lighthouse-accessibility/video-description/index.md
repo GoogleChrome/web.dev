@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "<video> elements do not contain a <track> element with [kind=\"description\"]"
+title: "`<video>` elements do not contain a `<track>` element with `[kind=\"description\"]`"
 description: |
   Learn how to make video on your web page more accessible by providing
   an audio description.

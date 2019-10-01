@@ -1,5 +1,5 @@
 ---
-title: "<frame> or <iframe> elements do not have a title"
+title: "`<frame>` or `<iframe>` elements do not have a title"
 layout: post
 description: |
   Learn how to make sure screen readers can announce frame content on your
