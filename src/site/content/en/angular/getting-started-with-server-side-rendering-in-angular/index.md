@@ -17,7 +17,7 @@ tags:
   - angular-universal
 ---
 
-In this post, you’ll learn how to use the [Angular command line interface (CLI)](https://cli.angular.io/) to set up server-side rendering (SSR) using Angular Universal. SSR can give you more control over your search engine optimization (SEO) and social media previews and get faster [First Meaningful Paints](/first-meaningful-paint).
+In this post, you'll learn how to use the [Angular command line interface (CLI)](https://cli.angular.io/) to set up server-side rendering (SSR) using Angular Universal. SSR can give you more control over your search engine optimization (SEO) and social media previews and get faster [First Meaningful Paints](/first-meaningful-paint).
 
 {% Aside %}
 
@@ -63,7 +63,7 @@ For a brand new CLI application, you should be able to run the script above, and
 
 ## Prepare your existing application for SSR
 
-It’s important to remember that with SSR your application is being rendered on the server, so any browser-specific functionality will cause errors. Two kinds of code that often cause SSR errors are [global objects](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) and [timeouts](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) / intervals.
+It's important to remember that with SSR your application is being rendered on the server, so any browser-specific functionality will cause errors. Two kinds of code that often cause SSR errors are [global objects](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) and [timeouts](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) / intervals.
 
 Attempting to access browser globals such as `window`, `document`, `localStorage` will cause your SSR to fail to render.
 
@@ -74,7 +74,7 @@ Similarly, timers such as `setTimeout` or `setInterval` will cause your SSR rend
 To keep browser-specific functionality from interfering with your SSR render, conditionally wrap code _specific_ to browsers:
 
 ```ts/7-15
-import { isPlatformBrowser } from ‘@angular/common’;
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({ /*...*/ })
 export class ExampleComponent {
@@ -97,7 +97,7 @@ export class ExampleComponent {
 Alternatively, you can use a `public` property on a component and conditionally render portions of your templates. This approach helps prevent nested components with browser-specific code from rendering during SSR.
 
 ```ts/4
-import { isPlatformBrowser } from ‘@angular/common’;
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   template: `
@@ -121,7 +121,7 @@ Using this technique gives you complete control over what to render in both the 
 With SSR set up, you can use common Angular packages such as `Title`, `Meta`, and `Document` to customize everything you need to make sure your application appears exactly like you want it to in search results. To do that in the sample app, add this code to `app.component.ts`:
 
 ```ts
-import { Meta, Title } from ‘@angular/platform-browser;
+import { Meta, Title } from '@angular/platform-browser';
 
 
 export class AppComponent {
@@ -135,7 +135,7 @@ export class AppComponent {
 }
 ```
 
-When running your SSR application you’ll be able to view source and see your server-rendered tags! Notice `<title>`, `<meta name=”description”>`, and even `<app-root>` itself is populated with HTML!
+When running your SSR application you'll be able to view source and see your server-rendered tags! Notice `<title>`, `<meta name=”description”>`, and even `<app-root>` itself is populated with HTML!
 
 <figure class="w-figure  w-figure--center">
   <img src="angular-ssr-view-source.png" alt="Angular SSR view source showcasing updated title, meta, and rendered app-root tags">
