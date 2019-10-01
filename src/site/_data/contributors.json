@@ -1428,6 +1428,21 @@
     "github": "mgechev",
     "glitch": "mgechev"
   },
+  "markpieszak": {
+    "name": {
+      "given": "Mark",
+      "family": "Pieszak"
+    },
+    "org": {
+      "name": "Trilon",
+      "unit": "Co-Founder"
+    },
+    "country": "US",
+    "homepage": "https://trilon.io",
+    "twitter": "markpieszak",
+    "github": "markpieszak",
+    "glitch": "markpieszak"
+  },
   "sfluin": {
     "name": {
       "given": "Stephen",
