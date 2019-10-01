@@ -73,7 +73,7 @@ Similarly, timers such as `setTimeout` or `setInterval` will cause your SSR rend
 
 To keep browser-specific functionality from interfering with your SSR render, conditionally wrap code _specific_ to browsers:
 
-```ts/7-15
+```javascript/7-15
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({ /*...*/ })
@@ -96,7 +96,7 @@ export class ExampleComponent {
 
 Alternatively, you can use a `public` property on a component and conditionally render portions of your templates. This approach helps prevent nested components with browser-specific code from rendering during SSR.
 
-```ts/4
+```javascript/4
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -120,7 +120,7 @@ Using this technique gives you complete control over what to render in both the 
 
 With SSR set up, you can use common Angular packages such as `Title`, `Meta`, and `Document` to customize everything you need to make sure your application appears exactly like you want it to in search results. To do that in the sample app, add this code to `app.component.ts`:
 
-```ts
+```javascript
 import { Meta, Title } from '@angular/platform-browser';
 
 
