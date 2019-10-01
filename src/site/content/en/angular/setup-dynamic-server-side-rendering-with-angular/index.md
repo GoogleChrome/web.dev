@@ -6,7 +6,8 @@ subhead: |
 hero: angular-universal-motorcycle.jpeg
 alt: close-up of black and brown motorcycle dashboard
 date: 2019-10-01
-Learn how to set up dynamic server-side rendering in your Angular applications.
+description: |
+  Learn how to set up dynamic server-side rendering in your Angular applications.
 authors:
   - markpieszak
 tags:
