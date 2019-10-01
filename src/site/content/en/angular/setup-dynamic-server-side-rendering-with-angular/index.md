@@ -18,17 +18,17 @@ tags:
 
 _You can find the code samples from this article on GitHub._
 
-In this post, you’ll learn how to use the [Angular Universal schematics](https://www.github.com/angular/universal) to set up dynamic server-side rendering (SSR). SSR can give you more control over your search engine optimization (SEO) and social media previews and get faster [First Meaningful Paints](/first-meaningful-paint).
+In this post, you'll learn how to use the [Angular Universal schematics](https://www.github.com/angular/universal) to set up dynamic server-side rendering (SSR). SSR can give you more control over your search engine optimization (SEO) and social media previews and get faster [First Meaningful Paints](/first-meaningful-paint).
 
 {% Aside %}
 
-This post assumes you’re already familiar with SSR and the Angular Universal schematics and their benefits. If you need a refresher on check out the [Getting started with server-side rendering in Angular](/link-to-that-article) post.
+This post assumes you're already familiar with SSR and the Angular Universal schematics and their benefits. If you need a refresher on check out the [Getting started with server-side rendering in Angular](/link-to-that-article) post.
 
 {% endAside %}
 
 ## Dynamic Server-side rendering with Angular
 
-Dynamic SSR is done at **_run time_**. With dynamic SSR, you'll need a Node.js server to handle incoming requests for all/specific routes by serializing your application to an HTML string that’s then returned to the browser to be rendered.
+Dynamic SSR is done at **_run time_**. With dynamic SSR, you'll need a Node.js server to handle incoming requests for routes by serializing your application to an HTML string that's then returned to the browser to be rendered.
 
 Occasionally your applications have very dynamic content or components. A common use case would be if you had routes that required SSR but had dynamic parameters as part of their url (ie: `/products/:id`).
 
@@ -36,13 +36,13 @@ Your Node.js server will be essentially serving as a middleman for when a specif
 
 To achieve this easily, you'll need to install the `@nguniversal/express-engine` your Angular CLI application. Read more about installing the schematic in the [Getting started with server-side rendering in Angular](/link-to-that-article) post.
 
-### Node.js Express Server
+### How it all works
 
-If you inspect the `server.ts` file in the sample application, you'll see that it's currently set up to handle _all_ incoming requests and dynamically render them server-side. You may only want specific routes dynamically rendered on the server, and you can adjust this behavior to meet your requirements. Let’s go over a few notable lines of `server.ts` to understand what they are doing.
+If you inspect the `server.ts` file in the sample application, you'll see that it's currently set up to handle _all_ incoming requests and dynamically render them server-side. Let's go over a few notable lines of `server.ts` to understand what they are doing.
 
-You can see that we’re passing in the Angular Universal express-engine installed by the schematics and initially dynamically rendering _all_ routes:
+You can see that the code is passing in the Angular Universal express-engine installed by the schematics:
 
-```ts/17-19
+```javascript/17-19
 // The Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
@@ -64,17 +64,18 @@ app.get('*', (req, res) => {
 });
 ```
 
-It’s also possible to have some routes return the original `index.html`, allowing for standard client-side rendering.
+You may only want specific routes dynamically rendered on the server, and you can adjust this behavior to meet your requirements.  It's also possible to have some routes return the original `index.html`, allowing for standard client-side rendering.
 
-```ts
+```javascript
 // Render specific routes dynamically
-const ssrRoutes = [‘home’, ‘/products’];
+const ssrRoutes = ['home', '/products'];
 app.get(ssrRoutes, (req, res) => {
-  res.render(‘index’, { req });
+  res.render('index', { req });
 }
 
 // Catch-all for every other route
 app.get('*', (req, res) => {
+  // client-side rendering only - standard index.html will be returned
   res.send(html);
 });
 ```
@@ -88,12 +89,15 @@ npm run build:ssr && npm run serve:ssr
 ```
 
 Here's what those scripts are doing:
-`build:ssr` builds both the client and server Angular bundles. (Remember, we’re trying to render our application in two different platforms.)
+`build:ssr` builds both the client and server Angular bundles. (Remember, you're trying to render our application in two different platforms.)
 `build:ssr` also compiles the `server.ts` Node.js Typescript code.
 `server:ssr` starts the Node.js server.
 
 In the terminal, you should now see:
-`Node Express server listening on http://localhost:4000`.
+
+```bash
+Node Express server listening on http://localhost:4000
+```
 
 Open `http://localhost:4000` in your browser and take a look at your running Universal application. Make sure to view the source to see if everything rendered correctly:
 
@@ -122,12 +126,11 @@ You should see an empty `<app-root>` element as you'd expect:
 ```html
 <body>
   <app-root></app-root>
-  …
 ```
 
 With dynamic SSR set up, you can render any route within your application, delivering any title, meta tags, structured data, and relevant content needed to meet your SEO goals.
 
-Remember that both CSR, static SSR, and dynamic SSR can be mixed together in a hybrid approach as we showed above. Determine how static or dynamic your application is before choosing which technique makes the most sense for you!
+Remember that both CSR, static SSR, and dynamic SSR can be mixed together in a hybrid approach as shown above. Determine how static or dynamic your application is before choosing which technique makes the most sense for you!
 
 ## Conclusion
 
@@ -136,4 +139,4 @@ To achieve dynamic SSR in an Angular CLI app:
 1. Add `@nguniversal/express-engine` to your project using the Angular CLI.
 2. Adjust routes and secure and set up your Node.js `server.ts` file accordingly.
 3. Build and run your Node.js server with: `npm run build:ssr && npm run serve:ssr`
-4. Open `https://localhost:4000` and use Chrome DevTools to verify thateverything rendered correctly.
+4. Open `https://localhost:4000` and use Chrome DevTools to verify that everything rendered correctly.
