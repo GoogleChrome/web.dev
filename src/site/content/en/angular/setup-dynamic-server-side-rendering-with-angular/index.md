@@ -43,7 +43,7 @@ If you inspect the `server.ts` file in the sample application, you'll see that i
 
 You can see that the code is passing in the Angular Universal express-engine installed by the schematics:
 
-```javascript/17-19
+```javascript/16-19
 // The Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModuleNgFactory,
@@ -67,7 +67,7 @@ app.get('*', (req, res) => {
 
 You may only want specific routes dynamically rendered on the server, and you can adjust this behavior to meet your requirements.  It's also possible to have some routes return the original `index.html`, allowing for standard client-side rendering.
 
-```javascript
+```javascript/9
 // Render specific routes dynamically
 const ssrRoutes = ['home', '/products'];
 app.get(ssrRoutes, (req, res) => {
@@ -100,21 +100,21 @@ In the terminal, you should now see:
 Node Express server listening on http://localhost:4000
 ```
 
+## Verify your build
+
 Open `http://localhost:4000` in your browser and take a look at your running Universal application. Make sure to view the source to see if everything rendered correctly:
 
 {% Instruction 'devtools-elements', 'ol' %}
 
 You should see that your `<app-root>` element is populated with the HTML that was rendered server-side. Content needed for SEO, like the `<h1>` tag, is fully rendered.
 
-```html
+```html/3
 <body>
   <app-root _nghost-sc0="" ng-version="8.0.2">
     <div _ngcontent-sc0="" style="text-align:center">
       <h1 _ngcontent-sc0="">Welcome to angular-universal-tutorial!</h1>
     ...
 ```
-
-## Verify your build
 
 To see the difference between SSR and client-side rendering (CSR), run an Angular application normally:
 
@@ -124,7 +124,7 @@ To see the difference between SSR and client-side rendering (CSR), run an Angula
 
 You should see an empty `<app-root>` element as you'd expect:
 
-```html
+```html/1
 <body>
   <app-root></app-root>
 ```
