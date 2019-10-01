@@ -144,6 +144,7 @@ user.
 
 <video autoplay loop muted playsinline>
   <source src="https://storage.googleapis.com/web-dev-assets/sms-receiver-announce/demo.mp4" type="video/mp4">
+  <source src="https://storage.googleapis.com/web-dev-assets/sms-receiver-announce/demo.webm" type="video/webm">
 </video>
 
 Notice that as the text message arrives, the bottom sheet appears and pressing
