@@ -23,7 +23,7 @@ In this post, you'll learn how to use the [Angular Universal schematics](https:/
 
 {% Aside %}
 
-This post assumes you're already familiar with SSR and the Angular Universal schematics and their benefits. If you need a refresher on check out the [Getting started with server-side rendering in Angular](/link-to-that-article) post.
+This post assumes you're already familiar with SSR and the Angular Universal schematics and their benefits. If you need a refresher on check out the [Getting started with server-side rendering in Angular](/getting-started-with-server-side-rendering-in-angular/) post.
 
 {% endAside %}
 
@@ -35,7 +35,7 @@ Occasionally your applications have very dynamic content or components. A common
 
 Your Node.js server will be essentially serving as a middleman for when a specific product is requested, generating the content on the fly for the given URL.
 
-To achieve this easily, you'll need to install the `@nguniversal/express-engine` your Angular CLI application. Read more about installing the schematic in the [Getting started with server-side rendering in Angular](/link-to-that-article) post.
+To achieve this easily, you'll need to install the `@nguniversal/express-engine` your Angular CLI application. Read more about installing the schematic in the [Getting started with server-side rendering in Angular](/getting-started-with-server-side-rendering-in-angular/) post.
 
 ### How it all works
 
