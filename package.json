@@ -43,6 +43,7 @@
     "algoliasearch": "^3.34.0",
     "ansi-colors": "^3.2.4",
     "autoprefixer": "^9.6.1",
+    "babel-eslint": "^10.0.3",
     "chalk": "^2.4.2",
     "chokidar-cli": "^1.2.2",
     "common-tags": "^1.8.0",

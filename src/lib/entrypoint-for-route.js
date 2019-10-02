@@ -1,4 +1,3 @@
-
 import "./polyfill/import";
 
 /**
@@ -11,12 +10,9 @@ export default function entrypointForRoute(url) {
   let p;
 
   if (url.match(/^measure($|\/)/)) {
-    /* eslint-disable-next-line */
     p = import("./pages/measure.js");
   } else {
-    /* eslint-disable-next-line */
     p = import("./pages/default.js");
   }
-  console.info('loading entrypoint for', url);
   return p;
 }
