@@ -17,7 +17,9 @@
 const express = require('express');
 const app = express();
 
-const contentPageMatch = /^(\/\w+)+/;
+// Match e.g., "/hello", "/hello/foo", but not "/blah/foo.svg". Does not match "/": this is checked
+// in the conditional below on its own.
+const contentPageMatch = /^(\/\w+)+$/;
 
 // Disallow requests to "index.html" in any subdirectory (send a 302) along with
 // requests to a subdirectory that end with "/". This means that e.g., the
@@ -31,11 +33,14 @@ const contentHandler = (req, res, next) => {
   } else if (req.url.endsWith('/index.html') || req.url.endsWith('/')) {
     const index = req.url.lastIndexOf('/');
     const redir = req.url.substr(0, index);
-    res.writeHead(302, {Location: redir});
+
+    // 301 means that Chrome and friends don't put the incorrect URL in the browser's history.
+    res.writeHead(301, {Location: redir});
     return res.end();
   } else if (contentPageMatch.exec(req.url)) {
     req.url += '/index.html';
   }
+
   return next();
 };
 
