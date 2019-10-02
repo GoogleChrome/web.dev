@@ -70,10 +70,10 @@ $BORDER_COLOR: $GREY_300;
   &:active::after {
     background: $GREEN_100;
   }
+}
 
-  &[open]::after {
-    transform: rotate(180deg) translateY(50%);
-  }
+.w-self-assessment-hint[open] .w-self-assessment-hint__summary::after {
+  transform: rotate(180deg) translateY(50%);
 }
 
 .w-self-assessment-hint__panel {
