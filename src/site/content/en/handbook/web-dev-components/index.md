@@ -584,7 +584,7 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
 
 ## Callouts
 
-{% CodelabsCallout 'codelab-fix-sneaky-404' %}
+{% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
 
 ## Stats
 
