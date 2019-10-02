@@ -1,7 +1,9 @@
 import navaid from "navaid";
+import entrypointForRoute from "./entrypoint-for-route";
 
 const router = navaid();
 let isFirstRun = true;
+export let entrypointLoaded = false;
 const domparser = new DOMParser();
 
 /**
@@ -33,6 +35,10 @@ async function swapContent(url) {
     return;
   }
 
+  // Load the entrypoint simultaneously with content.
+  const entrypointPromise = entrypointForRoute(url);
+  entrypointLoaded = true;
+
   const main = document.querySelector("main");
   // Grab the new page content
   let page;
@@ -44,6 +50,9 @@ async function swapContent(url) {
     window.location.href = window.location.href;
     throw e;
   }
+
+  // Wait for code to be ready
+  await entrypointPromise;
   // Remove the current #content element
   main.querySelector("#content").remove();
   // Swap in the new #content element
@@ -52,7 +61,7 @@ async function swapContent(url) {
 
 router
   .on("/", async () => {
-    return swapContent("index.html");
+    return swapContent("");
   })
   .on("/*", async (params) => {
     return swapContent(params.wild);

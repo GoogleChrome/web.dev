@@ -7,18 +7,18 @@
 
 import config from "./bootstrap-config";
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
+import {router, entrypointLoaded} from "./router";
+import entrypointForRoute from "./entrypoint-for-route";
 
 console.info("web.dev", config.version);
 
 WebComponents.waitFor(async () => {
-  return new Promise((resolve, reject) => {
-    // nb. import() is fairly well supported (although not as much as raw modules), but we just
-    // don't need it
-    const s = document.createElement("script");
-    s.type = "module";
-    s.onerror = reject;
-    s.onload = () => resolve();
-    s.src = "/app.js";
-    document.head.appendChild(s);
-  });
+  // ... only load the first entrypoint if the user hasn't changed URLs in the meantime
+  if (!entrypointLoaded) {
+    await entrypointForRoute(window.location.pathname.substr(1));
+  }
 });
+
+// Run as long-lived router w/ history & "<a>" bindings
+// Also immediately calls `run()` handler for current location
+router.listen();

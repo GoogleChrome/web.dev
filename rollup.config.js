@@ -4,13 +4,6 @@ import commonJs from "rollup-plugin-commonjs";
 const isProd = process.env.ELEVENTY_ENV === "prod";
 const webdevConfigName = "webdev_config";
 
-let outputPattern;
-if (isProd) {
-  outputPattern = "[name].[hash].js";
-} else {
-  outputPattern = "[name].js";
-}
-
 const config = {
   prod: isProd,
   webcomponentsPath: isProd
@@ -39,18 +32,20 @@ const configPlugin = {
 
 module.exports = [
   {
-    input: "src/lib/app.js",
+    input: "src/lib/bootstrap.js",
     output: {
       dir: "dist",
-      format: "iife",
-      entryFileNames: outputPattern,
-      chunkFileNames: outputPattern,
+      format: "esm",
+      chunkFileNames: "_[hash].js",
+      entryFileNames: "[name].js", // this will only be "bootstrap.js"
       sourcemap: true,
+      dynamicImportFunction: "polyfillImport",
     },
     watch: {
       clearScreen: false,
     },
     plugins: [
+      configPlugin,
       resolve(),
       commonJs({
         include: "node_modules/**",
@@ -62,33 +57,11 @@ module.exports = [
     output: {
       dir: "dist/test",
       format: "iife",
-      entryFileNames: outputPattern,
-      chunkFileNames: outputPattern,
     },
     watch: {
       clearScreen: false,
     },
     plugins: [
-      resolve(),
-      commonJs({
-        include: "node_modules/**",
-      }),
-    ],
-  },
-  {
-    input: "src/lib/bootstrap.js",
-    output: {
-      dir: "dist",
-      format: "iife",
-      entryFileNames: outputPattern,
-      chunkFileNames: outputPattern,
-      sourcemap: true,
-    },
-    watch: {
-      clearScreen: false,
-    },
-    plugins: [
-      configPlugin,
       resolve(),
       commonJs({
         include: "node_modules/**",
