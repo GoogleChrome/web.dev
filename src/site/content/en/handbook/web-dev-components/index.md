@@ -586,8 +586,21 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
 
 {% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
 
-{% SelfAssessment 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
-test
+{% SelfAssessment 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
+
+```html
+<label for="pwd-input">Password</label>
+
+<input type="text" role="textbox" id="pwd-input" name="password">
+```
+
+{% SelfAssessmentHint 'Does the sample need ARIA?' %}
+**No.** This sample is **incorrect**.
+Since the text input is a native HTML form element,
+it doesn't need ARIA for its semantics.
+In fact, text inputs don't allow ARIA roles to be added.
+{% endSelfAssessmentHint %}
+
 {% endSelfAssessment %}
 
 ## Stats

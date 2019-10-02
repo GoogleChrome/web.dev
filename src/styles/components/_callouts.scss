@@ -4,6 +4,8 @@
 @import '../tools/mixins';
 
 .w-callout {
+  margin: 2.25em 0;
+
   @include bp(sm) {
     // sass-lint:disable-block indentation
     border-radius: 8px;
@@ -12,7 +14,6 @@
     0 4px 5px 0 rgba(0, 0, 0, .14),
     0 1px 10px 0 rgba(0, 0, 0, .12);
     grid-template-columns: 1fr 1fr;
-    margin: 36px 0;
     padding: 24px;
   }
 }
