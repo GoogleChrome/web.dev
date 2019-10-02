@@ -47,9 +47,6 @@ for an example of this approach.
 Another camp believes that this strict approach is unfeasible or unnecessary
 for many modern, large-scale web applications and suggests using inline
 critical-path CSS in the document `<head>` for absolutely critical page styles.
-See Google's
-[Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
-for more on this approach.
 
 Given these considerations, this Lighthouse audit performs a simple check to
 ensure that your page isn't blank when JavaScript is disabled. How strictly your
