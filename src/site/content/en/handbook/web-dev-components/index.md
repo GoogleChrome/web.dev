@@ -586,6 +586,10 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
 
 {% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
 
+{% SelfAssessment 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
+test
+{% endSelfAssessment %}
+
 ## Stats
 
 <div class="w-stats">
