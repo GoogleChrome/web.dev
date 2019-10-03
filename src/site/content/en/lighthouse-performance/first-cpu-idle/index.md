@@ -2,7 +2,7 @@
 layout: post
 title: First CPU Idle
 description: |
-  Learn about the first-cpu-idle audit.
+Learn about Lighthouse's First CPU Idle metric and how to optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:
@@ -13,7 +13,7 @@ First CPU Idle is one of six metrics
 tracked in the **Performance** section of the Lighthouse report.
 Each metric captures some aspect of page load speed.
 
-The Lighthouse reports displays First CPU Idle in seconds:
+Lighthouse displays First CPU Idle in seconds:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="first-cpu-idle.png" alt="A screenshot of the Lighthouse First CPU Idle audit">

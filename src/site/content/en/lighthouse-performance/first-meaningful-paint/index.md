@@ -2,7 +2,8 @@
 layout: post
 title: First Meaningful Paint
 description: |
-  Learn about the first-meaningful-paint audit.
+Learn about Lighthouse's First Meaningful Paint metric and
+how to measure and optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:
@@ -13,7 +14,7 @@ First Meaningful Paint (FMP) is one of six metrics
 tracked in the **Performance** section of the Lighthouse report.
 Each metric captures some aspect of page load speed.
 
-The Lighthouse reports displays FMP in seconds:
+Lighthouse displays displays FMP in seconds:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="first-meaningful-paint.png" alt="A screenshot of the Lighthouse First Meaningful Paint audit">
@@ -26,7 +27,7 @@ The raw score for FMP is the time in seconds between the user initiating the pag
 and the page rendering the primary above-the-fold content.
 FMP essentially shows the timing of the paint
 after which the biggest above-the-fold layout change happens.
-Learn more about the technical specifics of FMP in Google's
+Learn more about the technical details of FMP in Google's
 [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view).
 
 [First Contentful Paint (FCP)](/first-contentful-paint)

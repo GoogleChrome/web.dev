@@ -9,8 +9,8 @@ web_lighthouse:
   - dom-size
 ---
 
-Lighthouse reports the total DOM elements for a page, it's maximum DOM depth,
-and it's maximum child elements in the Diagnostics section:
+Lighthouse reports the total DOM elements for a page, the page's maximum DOM depth,
+and its maximum child elements:
 <figure class="w-figure">
   <img class="w-screenshot" src="dom-size.png" alt="A screenshot of the Lighthouse Avoids an excessive DOM size audit">
 </figure>
@@ -39,9 +39,9 @@ which can overwhelm the memory capabilities of your users' devices.
 
 An optimal DOM tree:
 
-- Has less than 1500 nodes total.
-- Has a maximum depth of 32 nodes.
-- Has no parent node with more than 60 child nodes.
+- Has less than 1500&nbsp;nodes total.
+- Has a maximum depth of 32&nbsp;nodes.
+- Has no parent node with more than 60&nbsp;child nodes.
 
 In general,
 look for ways to create DOM nodes only when needed,

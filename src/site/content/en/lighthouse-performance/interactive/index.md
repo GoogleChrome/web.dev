@@ -2,7 +2,8 @@
 layout: post
 title: Time to Interactive
 description: |
-  Learn about the Time to Interactive audit.
+Learn about Lighthouse's Time to Interactive metric and
+how to measure and optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:
@@ -19,7 +20,7 @@ This can create a frustrating user experience:
 the site appears to be ready, but when the user tries to interact with it,
 nothing happens.
 
-The Lighthouse reports displays TTI in seconds:
+Lighthouse displays TTI in seconds:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="interactive.png" alt="A screenshot of the Lighthouse Time to Interactive audit">

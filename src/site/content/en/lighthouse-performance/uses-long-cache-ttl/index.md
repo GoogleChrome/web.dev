@@ -10,8 +10,8 @@ web_lighthouse:
 ---
 
 A long cache lifetime can speed up repeat visits to your page.
-Lighthouse reports all static resources that aren't cached
-in the Diagnostics section:
+
+Lighthouse flags all static resources that aren't cached:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="uses-long-cache-ttl.png" alt="A screenshot of the Lighthouse Serve static assets with an efficient cache policy audit">

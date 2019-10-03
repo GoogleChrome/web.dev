@@ -12,7 +12,8 @@ web_lighthouse:
 Critical request chains are series of dependent network requests important for page rendering.
 The greater the length of the chains and the larger the download sizes,
 them ore significant the impact on page load performance.
-Lighthouse reports the critical requests loaded with a high priority in the Diagnostics section:
+
+Lighthouse reports critical requests loaded with a high priority:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="critical-request-chains.png" alt="A screenshot of the Lighthouse Minimize critical requests depth audit">
@@ -31,7 +32,7 @@ Data on critical request chains, resource sizes,
 and time spent downloading resources is extracted from the
 [Chrome Debugger Protocol](https://github.com/ChromeDevTools/devtools-protocol).
 
-## Ways to reduce impact of critical request chains on performance
+## How to reduce the effect of critical request chains on performance
 
 Use the critical request chains audit results to target the most effective resources first:
 

@@ -2,7 +2,7 @@
 layout: post
 title: Speed Index
 description: |
-  Learn about the speed-index audit.
+Learn about Lighthouse's Speed Index metric and how to optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:
@@ -13,7 +13,7 @@ Speed Index is one of six metrics
 tracked in the **Performance** section of the Lighthouse report.
 Each metric captures some aspect of page load speed.
 
-The Lighthouse reports displays Speed Index in seconds:
+Lighthouse displays Speed Index in seconds:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="speed-index.png" alt="A screenshot of the Lighthouse Speed Index audit">

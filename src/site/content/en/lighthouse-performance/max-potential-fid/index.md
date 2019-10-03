@@ -2,7 +2,8 @@
 layout: post
 title: Max Potential First Input Delay
 description: |
-  Learn about Lighthouse's Max Potential First Input Delay metric.
+  Learn about Lighthouse's Max Potential First Input Delay metric and
+  how to measure and optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:
@@ -13,7 +14,7 @@ Max Potential First Input Delay (FID) is one of six metrics
 tracked in the **Performance** section of the Lighthouse report.
 Each metric captures some aspect of page load speed.
 
-The Lighthouse reports displays Max Potential FID in milliseconds:
+Lighthouse displays Max Potential FID in milliseconds:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="max-potential-fid.png" alt="A screenshot of the Lighthouse Max Potential First Input Delay audit">

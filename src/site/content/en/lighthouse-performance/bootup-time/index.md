@@ -20,8 +20,6 @@ in the Diagnostics section:
 
 ## How JavaScript execution slows down performance
 
-JavaScript execution can slow down your performance in many ways:
-
 - Network cost. More bytes equals longer download times.
 - Parse and compile cost. JavaScript gets parsed and compiled on the main thread.
 When the main thread is busy, the page can't respond to user input.
@@ -34,13 +32,13 @@ it can potentially consume a lot of memory.
 Pages appear janky or slow when they consume a lot of memory.
 Memory leaks can cause your page to freeze up completely.
 
-## Ways to speed up JavaScript execution
+## How to speed up JavaScript execution
 
 - Only send the code that your users need. (See
 [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting).)
 - Minify and compress your code. (See
 [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).)
-- Remove unused code. (Ree [Remove unused code](/remove-unused-code).)
+- Remove unused code. (See [Remove unused code](/remove-unused-code).)
 - Cache your code to reduce network trips. (See
 [Apply instant loading with the PRPL pattern](/apply-instant-loading-with-prpl).)
 

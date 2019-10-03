@@ -10,8 +10,8 @@ web_lighthouse:
   - resource-summary
 ---
 
-The **Keep request counts low and transfer sizes small** audit tells you how many network requests
-were made and how much data was transferred while your page loaded.
+Lighthouse reports how many network requests
+were made and how much data was transferred while your page loaded:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="resource-summary.png"
@@ -60,7 +60,7 @@ Affected metrics: [First Contentful Paint][fcp], [First Meaningful Paint][fmp], 
 
 Inefficient loading of font files can cause invisible text during the page load. See
 [Optimize your fonts][fonts] to learn how to default to a font that's
-available on the user's device and then switch over to your custom font when it has finished downloading.
+available on the user's device and then switch to your custom font when it has finished downloading.
 
 Affected metrics: [First Contentful Paint][fcp]
 
@@ -73,8 +73,8 @@ Affected metrics: [First Contentful Paint][fcp]
 
 ### Media
 
-GIF files are often very large. See [Replace GIFs with videos][gifs] to learn how to load
-animations faster.
+Animated GIF files are often very large.
+See [Replace GIFs with videos][gifs] to learn how to load animations faster.
 
 Affected metrics: [First Contentful Paint][fcp]
 
@@ -85,7 +85,7 @@ Once you've optimized your code to reduce request counts and transfer sizes, see
 
 ## Resources
 
-- [Source code for **Keep request counts low and transfer sizes small** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/resource-summary.js)
+[Source code for **Keep request counts low and transfer sizes small** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/resource-summary.js)
 
 [css]: /fast#optimize-your-css
 [js]: /fast#optimize-your-javascript

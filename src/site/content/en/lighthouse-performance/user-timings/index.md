@@ -12,8 +12,9 @@ web_lighthouse:
 Consider instrumenting your app with the
 [User Timing API](https://www.html5rocks.com/en/tutorials/webperformance/usertiming/)
 to measure your app's real-world performance during key user experiences.
+
 When your app includes User Timing Marks and Measures,
-Lighthouse reports the User Timing Marks and Measures in the Diagnostics section:
+Lighthouse reports them:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="user-timings.png" alt="A screenshot of the Lighthouse User Timing marks and measures audit">
