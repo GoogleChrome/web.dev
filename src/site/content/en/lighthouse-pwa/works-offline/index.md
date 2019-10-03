@@ -18,7 +18,7 @@ which indicates that the request for the page was successful.
 
 Learn more in the [What is network reliability and how do you measure it?](/network-connections-unreliable/) post.
 
-## How this Lighthouse audit fails
+## How the Lighthouse offline audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that don't respond with a 200 when offline:
