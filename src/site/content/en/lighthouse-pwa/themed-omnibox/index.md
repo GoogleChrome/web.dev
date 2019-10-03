@@ -66,7 +66,6 @@ Set the property to any valid CSS color value:
  ```
 
 <!-- TODO
-Confirm the following sentence with Pete/Joe. It makes it sound like
 theme_color overrides the page's background-color.
 -->
  The browser will color every page of your app
