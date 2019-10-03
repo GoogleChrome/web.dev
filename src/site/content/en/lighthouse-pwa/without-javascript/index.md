@@ -20,7 +20,7 @@ styling using CSS or interactivity using JavaScript, can be layered on top for
 browsers that support those technologies. But basic content and page
 functionality should not rely on CSS or JavaScript.
 
-## How this Lighthouse audit fails
+## How the Lighthouse fallback content audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that don't contain _some_ content
