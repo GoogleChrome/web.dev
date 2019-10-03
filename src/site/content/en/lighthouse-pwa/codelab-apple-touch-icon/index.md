@@ -10,8 +10,8 @@ glitch: apple-touch-icon
 related_post: apple-touch-icon
 ---
 
-Safari for iOS users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to 
-their home screen. The icon that appears on the iOS home screen when a PWA is added is called 
+Safari for iOS users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to
+their home screen. The icon that appears on the iOS home screen when a PWA is added is called
 the *Apple touch icon*. This codelab shows you how to add an Apple touch icon to a PWA. It assumes
 that you have access to an iOS device.
 
@@ -39,7 +39,7 @@ In the **PWA Optimized** section, Lighthouse reports that the example app [doesn
 Apple touch icon](/apple-touch-icon).
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="lighthouse.png" 
+  <img class="w-screenshot w-screenshot--filled" src="lighthouse.png"
        alt="Does not provide a valid apple-touch-icon">
   <figcaption class="w-figcaption">
     The <b>Does not provide a valid apple-touch-icon</b> audit
@@ -54,15 +54,15 @@ the example app to your iOS device's home screen when an Apple touch icon hasn't
 1. Open Safari for iOS.
 1. Open the URL of your example app. This is the URL like `https://example.glitch.me` that you
    noted earlier.
-1. Tap **Share** <img style="height:1.2em;vertical-align:top;" src="share.png"/>  > 
+1. Tap **Share** <img style="height:1.2em;vertical-align:top;" src="share.png"/>  >
    **Add to Home Screen**. You'll probably have to swipe left to see this option.
 1. Tap **Add**.
 
-Because the site hasn't specified an Apple touch icon, iOS just generates an icon for the site 
+Because the site hasn't specified an Apple touch icon, iOS just generates an icon for the site
 from the page's content.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="before.png" 
+  <img class="w-screenshot w-screenshot--filled" src="before.png"
        alt="An auto-generated home screen icon.">
   <figcaption class="w-figcaption">
     An auto-generated home screen icon.
@@ -74,23 +74,23 @@ from the page's content.
 - Uncomment the `<link rel="apple-touch-icon">` tag at the bottom of the `<head>` of `index.html`.
 
 ```html/4/3
-    ...
+    …
     <link rel="stylesheet" href="/index.css">
     <link rel="shortcut icon" href="https://cdn.glitch.com/49d34dc6-8fbd-46bb-8221-b99ffd36f1af%2Ftouchicon-180.png?v=1566411949736">
     <!-- <link rel="apple-touch-icon" href="https://cdn.glitch.com/49d34dc6-8fbd-46bb-8221-b99ffd36f1af%2Ftouchicon-180.png?v=1566411949736"> -->
     <link rel="apple-touch-icon" href="https://cdn.glitch.com/49d34dc6-8fbd-46bb-8221-b99ffd36f1af%2Ftouchicon-180.png?v=1566411949736">
   </head>
-  ...
+  …
 ```
 
 ## Add the example app to an iOS home screen (again)
 
 - Try adding the example app to an iOS home screen again. This time, a proper icon is generated for
   the site. If you audit the page again with Lighthouse you'll also see that the
-  <b>Does not provide a valid `apple-touch-icon`</b> audit now passes.
+  **Does not provide a valid `apple-touch-icon`** audit now passes.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="after.png" 
+  <img class="w-screenshot w-screenshot--filled" src="after.png"
        alt="The Apple touch icon.">
   <figcaption class="w-figcaption">
     The Apple touch icon.

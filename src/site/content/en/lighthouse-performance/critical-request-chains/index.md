@@ -29,7 +29,7 @@ for more information on how Chrome defines these priorities.
 
 Data on critical request chains, resource sizes,
 and time spent downloading resources is extracted from the
-[Chrome Debugger Protocol](https://github.com/ChromeDevTools/devtools-protocol).
+[Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol).
 
 ## Ways to reduce impact of critical request chains on performance
 
