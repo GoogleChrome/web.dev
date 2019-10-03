@@ -66,7 +66,6 @@ Set the property to any valid CSS color value:
  ```
 
 <!-- TODO
--->
  The browser will color every page of your app
  according to the manifest's `theme_color`.
 
