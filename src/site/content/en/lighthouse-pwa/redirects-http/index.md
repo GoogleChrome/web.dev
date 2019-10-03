@@ -13,7 +13,7 @@ All sites should be protected with HTTPS.
 See the [Does not use HTTPS](/is-on-https) post to learn why
 and how to set up HTTPS on your server.
 
-## How this Lighthouse HTTP redirection audit fails
+## How the Lighthouse HTTP redirection audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that aren't redirected to HTTPS:
