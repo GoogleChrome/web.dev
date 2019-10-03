@@ -8,16 +8,6 @@ date: 2019-09-19
 # updated: 2019-06-27
 
 hero: hero.png
-# You can adjust the fit of your hero image with this property.
-# Values: contain | cover (default)
-# hero_fit: contain
-# You can adjust the position of your hero image with this property.
-# Values: top | bottom | center (default)
-# hero_position: bottom
-# You can provide an optional cropping of your hero image to be used as a
-# thumbnail. Note the alt text will be the same for both the thumbnail and
-# the hero.
-# thumbnail: thumbnail.jpg
 alt: A description of the hero image for screen reader users.
 
 description: |
@@ -64,7 +54,8 @@ this](https://developers.google.com/identity/sms-retriever/). So does
 and
 [Safari](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element).
 
-With the SMS Receiver API, you can programmatically obtain an OTP from an SMS
+The SMS Receiver API lets your app receive specially-formatted messages bound to
+your app's origin. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily. Sign up for the
 [Origin
 Trial](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
@@ -212,7 +203,7 @@ const sms = await navigator.sms.receive();
 
 Once a user taps **Verify**, displayed in the bottom sheet, the promise
 containing the entire text message will resolve. You can use a regular
-expression to distill the OTP and verify the user. Notably, you should parse and
+expression to extract the OTP and verify the user. Notably, you should parse and
 use the SMS message assuming it could have been altered by an attacker inserting
 their own SMSes into your app (e.g. following the formatting convention and
 sending it right after you called `navigator.sms.receive()`). For example, if a
@@ -220,7 +211,7 @@ text message contains a six digit verification code following `otp=`, the code
 would look like this:
 
 ```js
-const code = sms.content.match(/^[\s\S]*otp=([0-9a-zA-Z]{6})[\s\S]*$/m)[1];
+const code = sms.content.match(/^[\s\S]*otp=([0-9]{6})[\s\S]*$/m)[1];
 ```
 
 You can now submit the code to the server to verify it.
@@ -229,7 +220,8 @@ You can now submit the code to the server to verify it.
 
 The API itself should have looked simple enough, but a critical part is to
 format your SMS text message according to a specific convention. The message has
-to be sent after `navigator.sms.receive()` is called and in **the right format**.
+to be sent after `navigator.sms.receive()` is called and must comply with a
+formatting convention.
 
 The SMS message must be received on the device where `navigator.sms.receive()`
 was called.
@@ -266,22 +258,6 @@ for development depending on which Chrome build you will be working with.
 </tr>
 <tr>
 <td markdown="block">
-Chrome Canary
-</td>
-<td markdown="block">
-<code>PqEvUq15HeK</code>
-</td>
-</tr>
-<tr>
-<td markdown="block">
-Chrome Dev
-</td>
-<td markdown="block">
-
-</td>
-</tr>
-<tr>
-<td markdown="block">
 Chrome Beta
 </td>
 <td markdown="block">
@@ -296,22 +272,14 @@ Chrome Stable
 <code>EvsSSj4C6vl</code>
 </td>
 </tr>
-<tr>
-<td markdown="block">
-Locally built Chromium
-</td>
-<td markdown="block">
-<code>s3LhKBB0M33</code>
-</td>
-</tr>
 </table>
 
 ### Demos
 
-Try various messages with the demo:
+Try various messages with the demo:  
 [https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me)
 
-You may also fork it and create your version:
+You may also fork it and create your version:  
 [https://glitch.com/edit/#!/sms-receiver-demo](https://glitch.com/edit/#!/sms-receiver-demo).
 
 ### Enabling support during the origin trial
@@ -320,7 +288,7 @@ Starting in Chrome 78, [the SMS Receiver API is available as an origin trial on
 Chrome for
 Android](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961).
 Origin trials allow you to try new features and give feedback on their
-usability, practicality, and effectiveness, both to the Chrome team, and to the
+usability, practicality, and effectiveness, both to the Chrome team and to the
 web standards community. For more information, see the [Origin Trials Guide for
 Web
 Developers](https://googlechrome.github.io/OriginTrials/developer-guide.html).
@@ -332,12 +300,11 @@ To participate in an origin trial:
    for your origin.
 1. Add the token to your pages, there are two ways to provide this token on any
    page in your origin:
-    * Add an `origin-trial <meta>` tag to the head of any page. For example,
-      this may look something like: `<meta http-equiv="origin-trial"
-      content="TOKEN_GOES_HERE">`
+    * Add an `origin-trial <meta>` tag to the head of any page:  
+      `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
     * If you can configure your server, you can also provide the token on pages
-      using an `Origin-Trial` HTTP header. The resulting response header should
-      look something like: `Origin-Trial: TOKEN_GOES_HERE`
+      using an `Origin-Trial` HTTP header:  
+      `Origin-Trial: TOKEN_GOES_HERE`
 
 ## Feedback
 
@@ -378,18 +345,19 @@ features, and shows other browser vendors how critical it is to support them.
 ## FAQ
 ### Why did you not align with Safari's `one-time-code`?
 
-We intend to explore Safari's declarative
+We're exploring options similar to Safari's declarative
 [`autocomplete="one-time-code"`](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element)
 approach as we go through our origin trial ([early
 exploration](https://chromium-review.googlesource.com/c/chromium/src/+/1639728))
-and we are eager to hear what developers and users think. Currently we have a
-hypothesis that our imperative approach could provide a more flexible UX and
-reduce friction verifying a phone number under certain circumstances. The
-declarative approach is easier to implement for developers, but requires at
-least three taps: focus on the input field, select the one-time-code, then
-submit the form. Our approach (inspired by what native [Android
+and we are interested to hear what developers and users think. Our imperative
+approach could provide a more flexible UX and reduce friction verifying a phone
+number under certain circumstances. The declarative approach is easier to
+implement for developers, but requires a form field and at least several taps:
+focus on the input field, select the one-time-code, then submit the form. The
+approach we are exploring (inspired by what native [Android
 apps](https://developers.google.com/identity/sms-retriever/overview) have access
-to) requires that people make only a single tap.
+to) means that people make only a single tap on browser UI inline on the page
+content.
 
 ### Is it safe to use SMS as a way to authenticate?
 
@@ -421,3 +389,7 @@ No. A PWA's app hash is the same as the browser it runs in.
 
 Not right now. But ultimately, we are planning to remove or otherwise allow for
 localization.
+
+{% Aside %}
+Find more questions at [the FAQ section in the explainer](https://github.com/samuelgoto/sms-receiver/blob/master/FAQ.md).
+{% endAside %}
