@@ -241,7 +241,7 @@ An example message that can be retrieved by the browser would look like this:
 ```text
 Your OTP is: 123456.
 
-For: https://sms-receiver-demo.glitch.me/?otp=123456&PqEvUq15HeK
+For: https://sms-receiver-demo.glitch.me/?otp=123456&xFJnfg75+8v
 ```
 
 The application hash of Chrome instances are static. Use one of these strings
