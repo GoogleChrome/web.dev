@@ -23,7 +23,7 @@ This causes problems for users who have installed the app to their devices.
 
 Learn more in the [What is network reliability and how do you measure it?](/network-connections-unreliable/) post.
 
-## How this Lighthouse audit fails
+## How the Lighthouse `start_url` audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags web apps whose start URL doesn't respond with a 200 when offline:
