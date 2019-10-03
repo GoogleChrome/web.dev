@@ -20,11 +20,8 @@ Lighthouse flags pages that have third-party code that blocks the [main thread] 
 longer:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="third-party-summary.png"
-       alt="A screenshot of the 'Reduce the impact of third-party code' audit.">
-  <figcaption class="w-figcaption">
-    <b>Reduce the impact of third-party code</b>
-  </figcaption>
+  <img class="w-screenshot" src="third-party-summary.png"
+       alt="A screenshot of the Lighthouse Reduce the impact of third-party code audit">
 </figure>
 
 A third-party script is any script hosted on a domain that's different than the domain of the URL

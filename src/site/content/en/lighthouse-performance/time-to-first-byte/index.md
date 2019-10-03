@@ -14,10 +14,7 @@ the time that it takes for a user's browser
 to receive the first byte of page content:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="time-to-first-byte.png" alt="Server response times are low (TTFB)">
-  <figcaption class="w-figcaption">
-    Server response times are low (TTFB).
-  </figcaption>
+  <img class="w-screenshot" src="time-to-first-byte.png" alt="A screenshot of the Lighthouse Server response times are low (TTFB) audit">
 </figure>
 
 ## Slow server response times effect performance

@@ -16,7 +16,7 @@ Each metric captures some aspect of page load speed.
 The Lighthouse reports displays Max Potential FID in milliseconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="max-potential-fid.png" alt="Lighthouse: Max Potential First Input Delay">
+  <img class="w-screenshot" src="max-potential-fid.png" alt="A screenshot of the Lighthouse Max Potential First Input Delay audit">
 </figure>
 
 ## What Max Potential FID measures

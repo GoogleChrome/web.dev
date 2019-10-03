@@ -15,10 +15,7 @@ along with the potential savings in kilobytes (KB).
 Resize these images to save data and improve page load time:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-responsive-images.png" alt="Properly size images">
-  <figcaption class="w-figcaption">
-    Properly size images.
-  </figcaption>
+  <img class="w-screenshot" src="uses-responsive-images.png" alt="A screenshot of the Lighthouse Properly size images audit">
 </figure>
 
 

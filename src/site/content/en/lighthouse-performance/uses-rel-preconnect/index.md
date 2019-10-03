@@ -13,10 +13,7 @@ The Opportunities section of your Lighthouse report lists all key requests
 that aren't yet prioritizing fetch requests with `<link rel=preconnect>`:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-rel-preconnect.png" alt="Preconnect to required origins">
-  <figcaption class="w-figcaption">
-    Preconnect to required origins.
-  </figcaption>
+  <img class="w-screenshot" src="uses-rel-preconnect.png" alt="A screenshot of the Lighthouse Preconnect to required origins audit">
 </figure>
 
 ## Improve page load speed with preconnect

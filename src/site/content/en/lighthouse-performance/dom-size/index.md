@@ -12,10 +12,7 @@ web_lighthouse:
 Lighthouse reports the total DOM elements for a page, it's maximum DOM depth,
 and it's maximum child elements in the Diagnostics section:
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="dom-size.png" alt="Avoids an excessive DOM size">
-  <figcaption class="w-figcaption">
-    Avoids an excessive DOM size.
-  </figcaption>
+  <img class="w-screenshot" src="dom-size.png" alt="A screenshot of the Lighthouse Avoids an excessive DOM size audit">
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}

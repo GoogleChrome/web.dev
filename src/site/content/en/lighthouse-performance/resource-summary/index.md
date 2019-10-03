@@ -14,11 +14,8 @@ The **Keep request counts low and transfer sizes small** audit tells you how man
 were made and how much data was transferred while your page loaded.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="resource-summary.jpg"
-       alt="Keep request counts low and transfer sizes small">
-  <figcaption class="w-figcaption">
-    <b>Keep request counts low and transfer sizes small</b>
-  </figcaption>
+  <img class="w-screenshot" src="resource-summary.png"
+       alt="A screenshot of the Lighthouse Keep request counts low and transfer sizes small audit">
 </figure>
 
 * The **Requests** and **Transfer Size** values for the **Total** row are computed by adding the values

@@ -22,7 +22,7 @@ nothing happens.
 The Lighthouse reports displays TTI in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="interactive.png" alt="Lighthouse: Time to Interactive">
+  <img class="w-screenshot" src="interactive.png" alt="A screenshot of the Lighthouse Time to Interactive audit">
 </figure>
 
 ## What TTI measures

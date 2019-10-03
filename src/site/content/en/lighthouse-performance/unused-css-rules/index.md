@@ -15,10 +15,7 @@ Remove the unused CSS
 to reduce unnecessary bytes consumed by network activity:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="unused-css-rules.png" alt="Remove unused CSS">
-  <figcaption class="w-figcaption">
-    Remove unused CSS.
-  </figcaption>
+  <img class="w-screenshot" src="unused-css-rules.png" alt="A screenshot of the Lighthouse Remove unused CSS audit">
 </figure>
 
 

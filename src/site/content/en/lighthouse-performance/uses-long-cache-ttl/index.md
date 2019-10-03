@@ -14,10 +14,7 @@ Lighthouse reports all static resources that aren't cached
 in the Diagnostics section:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-long-cache-ttl.png" alt="Lighthouse: Serve static assets with an efficient cache policy">
-  <figcaption class="w-figcaption">
-    Serve static assets with an efficient cache policy.
-  </figcaption>
+  <img class="w-screenshot" src="uses-long-cache-ttl.png" alt="A screenshot of the Lighthouse Serve static assets with an efficient cache policy audit">
 </figure>
 
 ## Cache static resources to speed up page loads

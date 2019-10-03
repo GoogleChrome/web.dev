@@ -16,7 +16,7 @@ Each metric captures some aspect of page load speed.
 The Lighthouse reports displays FMP in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="first-meaningful-paint.png" alt="Lighthouse: First Meaningful Paint">
+  <img class="w-screenshot" src="first-meaningful-paint.png" alt="A screenshot of the Lighthouse First Meaningful Paint audit">
 </figure>
 
 ## What FMP measures

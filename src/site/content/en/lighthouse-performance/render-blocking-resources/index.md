@@ -16,10 +16,7 @@ by inlining critical resources, deferring non-critical resources,
 and removing anything unused.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="blocking-resources.png" alt="Eliminate render-blocking resources">
-  <figcaption class="w-figcaption">
-    Eliminate render-blocking resources.
-  </figcaption>
+  <img class="w-screenshot" src="blocking-resources.png" alt="A screenshot of the Lighthouse Eliminate render-blocking resources audit">
 </figure>
 
 

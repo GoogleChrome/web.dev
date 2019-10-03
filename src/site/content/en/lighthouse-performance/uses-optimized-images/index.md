@@ -14,10 +14,7 @@ all unoptimized images, with potential savings in kilobytes.
 Optimize these images so that the page loads faster and consumes less data:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="uses-optimized-images.png" alt="Efficiently encode images">
-  <figcaption class="w-figcaption">
-    Efficiently encode images.
-  </figcaption>
+  <img class="w-screenshot" src="uses-optimized-images.png" alt="A screenshot of the Lighthouse Efficiently encode images audit">
 </figure>
 
 

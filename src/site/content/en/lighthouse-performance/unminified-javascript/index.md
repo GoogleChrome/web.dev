@@ -16,10 +16,7 @@ along with the potential savings in kilobytes (KB)
 when these files are minified:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="unminified-javascript.png" alt="Minify JavaScript">
-  <figcaption class="w-figcaption">
-    Minify JavaScript.
-  </figcaption>
+  <img class="w-screenshot" src="unminified-javascript.png" alt="A screenshot of the Lighthouse Minify JavaScript audit">
 </figure>
 
 ## How to minify & compress your JavaScript files

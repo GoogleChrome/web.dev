@@ -13,10 +13,7 @@ Lighthouse reports the time spent executing JavaScript files during page load
 in the Diagnostics section:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="bootup-time.png" alt="Lighthouse: Reduce JavaScript execution time">
-  <figcaption class="w-figcaption">
-    Reduce JavaScript execution time.
-  </figcaption>
+  <img class="w-screenshot" src="bootup-time.png" alt="A screenshot of the Lighthouse Reduce JavaScript execution time audit">
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}

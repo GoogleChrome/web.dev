@@ -16,10 +16,7 @@ When your app includes User Timing Marks and Measures,
 Lighthouse reports the User Timing Marks and Measures in the Diagnostics section:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="user-timings.png" alt="Lighthouse: User Timing marks and measures">
-  <figcaption class="w-figcaption">
-    User Timing marks and measures.
-  </figcaption>
+  <img class="w-screenshot" src="user-timings.png" alt="A screenshot of the Lighthouse User Timing marks and measures audit">
 </figure>
 
 

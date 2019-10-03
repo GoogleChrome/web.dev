@@ -13,10 +13,7 @@ The Opportunities section of your Lighthouse report
 flags the third level of requests in your critical request chain as preload candidates:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-rel-preload.png" alt="Preload key requests">
-  <figcaption class="w-figcaption">
-    Preload key requests.
-  </figcaption>
+  <img class="w-screenshot" src="uses-rel-preload.png" alt="A screenshot of the Lighthouse Preload key requests audit">
 </figure>
 
 ## How Lighthouse flags determines preload candidates

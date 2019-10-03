@@ -13,10 +13,7 @@ Lighthouse shows a breakdown of execution timings on the main thread
 in the Diagnostics section:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="mainthread-work-breakdown.png" alt="Lighthouse: Minimize main-thread work">
-  <figcaption class="w-figcaption">
-    Minimize main-thread work.
-  </figcaption>
+  <img class="w-screenshot" src="mainthread-work-breakdown.png" alt="A screenshot of the Lighthouse Minimize main-thread work audit">
 </figure>
 
 ## How to improve execution timings on the main thread

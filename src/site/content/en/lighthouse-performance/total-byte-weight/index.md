@@ -14,10 +14,7 @@ Lighthouse reports the total byte size in kilobytes of all network resources
 in the Diagnostics section:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="total-byte-weight.png" alt="Lighthouse: Avoid enormous network payloads">
-  <figcaption class="w-figcaption">
-    Avoid enormous network payloads.
-  </figcaption>
+  <img class="w-screenshot" src="total-byte-weight.png" alt="A screenshot of the Lighthouse Avoid enormous network payloads audit">
 </figure>
 
 

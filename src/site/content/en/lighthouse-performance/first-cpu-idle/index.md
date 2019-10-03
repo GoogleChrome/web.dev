@@ -16,7 +16,7 @@ Each metric captures some aspect of page load speed.
 The Lighthouse reports displays First CPU Idle in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="first-cpu-idle.png" alt="Lighthouse: First CPU Idle">
+  <img class="w-screenshot" src="first-cpu-idle.png" alt="A screenshot of the Lighthouse First CPU Idle audit">
 </figure>
 
 ## What First CPU Idle measures

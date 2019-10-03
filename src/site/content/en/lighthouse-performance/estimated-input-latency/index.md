@@ -16,7 +16,7 @@ Each metric captures some aspect of page load speed.
 The Lighthouse reports displays Estimated Input Latency in milliseconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="estimated-input-latency.png" alt="Lighthouse: Estimated Input Latency">
+  <img class="w-screenshot w-screenshot--filled" src="estimated-input-latency.png" alt="A screenshot of the Lighthouse Estimated Input Latency audit">
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}

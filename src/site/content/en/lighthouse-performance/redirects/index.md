@@ -13,10 +13,7 @@ The Opportunities section of the Lighthouse report
 lists resources that are being redirected:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="redirects.png" alt="">
-  <figcaption class="w-figcaption">
-    Avoid multiple page redirects.
-  </figcaption>
+  <img class="w-screenshot w-screenshot--filled" src="redirects.png" alt="A screenshot of the Lighthouse Avoid multiple page redirects audit">
 </figure>
 
 ## How redirects slow down performance

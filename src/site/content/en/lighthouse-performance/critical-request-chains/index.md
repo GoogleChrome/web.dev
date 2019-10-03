@@ -15,10 +15,7 @@ them ore significant the impact on page load performance.
 Lighthouse reports the critical requests loaded with a high priority in the Diagnostics section:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="critical-request-chains.png" alt="Lighthouse: Minimize critical requests depth">
-  <figcaption class="w-figcaption">
-    Minimize critical requests depth.
-  </figcaption>
+  <img class="w-screenshot" src="critical-request-chains.png" alt="A screenshot of the Lighthouse Minimize critical requests depth audit">
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
