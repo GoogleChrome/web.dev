@@ -2,8 +2,8 @@
 layout: post
 title: First Meaningful Paint
 description: |
-Learn about Lighthouse's First Meaningful Paint metric and
-how to measure and optimize it.
+  Learn about Lighthouse's First Meaningful Paint metric and
+  how to measure and optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

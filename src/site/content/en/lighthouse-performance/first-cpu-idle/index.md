@@ -2,7 +2,7 @@
 layout: post
 title: First CPU Idle
 description: |
-Learn about Lighthouse's First CPU Idle metric and how to optimize it.
+  Learn about Lighthouse's First CPU Idle metric and how to optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

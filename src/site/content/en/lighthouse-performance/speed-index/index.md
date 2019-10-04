@@ -2,7 +2,7 @@
 layout: post
 title: Speed Index
 description: |
-Learn about Lighthouse's Speed Index metric and how to optimize it.
+  Learn about Lighthouse's Speed Index metric and how to optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:
