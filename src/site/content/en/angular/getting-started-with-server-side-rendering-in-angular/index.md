@@ -93,7 +93,7 @@ export class ExampleComponent {
 }
 ```
 
-Alternatively, you can use a `public` property on a component and conditionally render portions of your templates. This approach helps prevent nested components with browser-specific code from rendering during SSR.
+Alternatively, you can use a `public` property on a component and conditionally render portions of your templates. This approach helps prevent nested components with browser-specific code from rendering during SSR:
 
 ```javascript/4
 import { isPlatformBrowser } from '@angular/common';
