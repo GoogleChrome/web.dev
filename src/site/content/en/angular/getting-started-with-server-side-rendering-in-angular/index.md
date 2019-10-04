@@ -48,7 +48,7 @@ Here's what this command does:
 1. Creates and modifies project files to prepare your application for SSR.
 2. Creates Node.js scripts for dynamic and static SSR.
 3. Installs all necessary dependencies.
-4. Creates new package.json `scripts` that you can use to build SSR.
+4. Creates new `package.json` scripts that you can use to build SSR.
 
 You now have additional scripts in the sample app that can do dynamic SSR. You'll need to customize these Node.js scripts for production applications, but they're great starting points.
 
