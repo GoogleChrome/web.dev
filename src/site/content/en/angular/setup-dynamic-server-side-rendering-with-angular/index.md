@@ -35,7 +35,7 @@ Occasionally your applications have very dynamic content or components. A common
 
 Your Node.js server will essentially serve as a middleman when a specific product is requested, generating the content on the fly for the given URL.
 
-To achieve this easily, you'll need to install the `@nguniversal/express-engine` your Angular CLI application. Read more about installing the schematic in the [Getting started with server-side rendering in Angular](/getting-started-with-server-side-rendering-in-angular/) post.
+To achieve this, you'll need to install the `@nguniversal/express-engine` schematic in your Angular CLI application. Read more about installing the schematic in the [Get started with server-side rendering in Angular](/getting-started-with-server-side-rendering-in-angular/) post.
 
 ### How it all works
 
