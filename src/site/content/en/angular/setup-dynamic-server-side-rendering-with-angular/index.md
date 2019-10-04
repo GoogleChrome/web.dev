@@ -31,7 +31,7 @@ This post assumes you're already familiar with SSR and the Angular Universal sch
 
 Dynamic SSR is done at **_run time_**. With dynamic SSR, you'll need a Node.js server to handle incoming requests for routes by serializing your application to an HTML string that's then returned to the browser to be rendered.
 
-Occasionally your applications have very dynamic content or components. A common use case would be if you had routes that required SSR but had dynamic parameters as part of their url (ie: `/products/:id`).
+Occasionally your applications have very dynamic content or components. A common use case would be if you had routes that required SSR but had dynamic parameters as part of their URL (for example, `/products/:id`).
 
 Your Node.js server will be essentially serving as a middleman for when a specific product is requested, generating the content on the fly for the given URL.
 
