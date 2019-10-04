@@ -1,7 +1,7 @@
 ---
 title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
-  Learn how the proposed Portals API could change the way we build good navigation UX.
+  Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
 updated: 2019-08-29
 authors:
