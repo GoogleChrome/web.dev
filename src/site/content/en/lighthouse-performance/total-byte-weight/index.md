@@ -10,7 +10,17 @@ web_lighthouse:
   - total-byte-weight
 ---
 
-Large network payloads cost users real money and are highly correlated with long load times.
+Large network payloads are highly correlated with long load times.
+They also cost users money;
+for example, users may have to pay for more cellular data.
+So, reducing the total size of your page's network requests is good
+for your users' experience on your site _and_ their wallets.
+
+{% Aside %}
+To see what accessing your site costs around the world,
+check out WebPageTest's [What Does My Site Cost?](https://whatdoesmysitecost.com/)
+You can adjust the results to factor in purchasing power.
+{% endAside %}
 
 ## How the Lighthouse network payload audit fails
 
@@ -21,36 +31,28 @@ requested by your page. The largest requests are presented first:
   <img class="w-screenshot" src="total-byte-weight.png" alt="A screenshot of the Lighthouse Avoid enormous network payloads audit">
 </figure>
 
-The audit fails when your network payload exceeds 5,000&nbsp;KB.
-
-## How network payload affects performance and costs
-
-An average network payload is between 4,000 and 5,000&nbsp;KB.
-See [Highest Correlation To Load Time](https://httparchive.org/reports/state-of-the-web?start=latest#onLoad)
-to view the correlation between requests and load time.
-
-Reducing the total size of network requests speeds up page load time and
-saves your users money that they would have spent on cellular data.
-See [What Does My Site Cost](https://whatdoesmysitecost.com/)
-to calculate the cost of viewing your site around the world.
-You can adjust the results to factor in purchasing power.
+Based on [HTTP Archive data](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal),
+the median network payload is between 1,700 and 1,900&nbsp;KB.
+To help surface the highest payloads,
+Lighthouse flags pages whose total network requests exceed 5,000&nbsp;KB.
 
 ## How to reduce payload size
 
-Aim for total byte size to stay 1,600&nbsp;KB;
-The 1,600&nbsp;KB target is based on
-what a page can theoretically download on a 3G connection
+Aim to keep your total byte size below 1,600&nbsp;KB.
+This target is based on the amount of data that can be
+theoretically downloaded on a 3G connection
 while still achieving a [Time to Interactive](/interactive) of 10&nbsp;seconds or less.
-See [googlechrome/lighthouse/pull/1759](https://github.com/GoogleChrome/lighthouse/pull/1759).
 
+Here are some ways to keep payload size down:
 - Defer requests until they're needed.
-  See [The PRPL Pattern](/apply-instant-loading-with-prpl) for one possible approach.
+  See the [PRPL Pattern](/apply-instant-loading-with-prpl) for one possible approach.
 - Optimize requests to be as small as possible. Possible techniques include:
   - [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
-  - [Use WebP instead of JPEG or PNG](/serve-images-webp).
+  - [Use WebP instead of JPEG or PNG for your images](/serve-images-webp).
   - [Set the compression level of JPEG images to 85](/use-imagemin-to-compress-images).
 - Cache requests so that the page doesn't re-download the resources
-  on repeat visits. (See [The options in your caching toolbox](/reliable#the-options-in-your-caching-toolbox).)
+  on repeat visits. (See the [Network reliability landing page](/reliable)
+  to learn how caching works and how to implement it.)
 
 ## Resources
 
