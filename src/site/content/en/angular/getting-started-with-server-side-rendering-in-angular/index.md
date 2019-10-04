@@ -137,7 +137,7 @@ export class AppComponent {
 When running your SSR application you'll be able to view source and see your server-rendered tags! Notice `<title>`, `<meta name=”description”>`, and even `<app-root>` itself is populated with HTML!
 
 <figure class="w-figure  w-figure--center">
-  <img src="angular-ssr-view-source.png" alt="Angular SSR view source showcasing updated title, meta, and rendered app-root tags">
+  <img src="angular-ssr-view-source.png"  class="w-screenshot" alt="Angular SSR view source showcasing updated title, meta, and rendered app-root tags">
 </figure>
 
 ## Conclusion
