@@ -33,7 +33,7 @@ Dynamic SSR is done at **_run time_**. With dynamic SSR, you'll need a Node.js s
 
 Occasionally your applications have very dynamic content or components. A common use case would be if you had routes that required SSR but had dynamic parameters as part of their URL (for example, `/products/:id`).
 
-Your Node.js server will be essentially serving as a middleman for when a specific product is requested, generating the content on the fly for the given URL.
+Your Node.js server will essentially serve as a middleman when a specific product is requested, generating the content on the fly for the given URL.
 
 To achieve this easily, you'll need to install the `@nguniversal/express-engine` your Angular CLI application. Read more about installing the schematic in the [Getting started with server-side rendering in Angular](/getting-started-with-server-side-rendering-in-angular/) post.
 
