@@ -9,7 +9,7 @@ authors:
 hero: hero.png
 alt: A logo of Portals
 description: |
-  A newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
+  The newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
   with custom transitions. In this article, get hands-on experience using
   Portals to improve user experience across your site.
 tags:
