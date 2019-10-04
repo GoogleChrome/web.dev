@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Getting started with server-side rendering in Angular"
+title: "Get started with server-side rendering in Angular"
 subhead: |
   Use SSR to get control of your SEO and social media previews and improve perceived performance in your Angular applications.
 hero: angular-ssr.jpeg
