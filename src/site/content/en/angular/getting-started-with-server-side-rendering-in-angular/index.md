@@ -66,7 +66,7 @@ It's important to remember that with SSR your application is being rendered on t
 
 Attempting to access browser globals such as `window`, `document`, or `localStorage` will cause your SSR to fail to render.
 
-Similarly, timers such as `setTimeout` or `setInterval` will cause your SSR render to be _delayed_ or in the case of `setInterval`, never render at all.
+Similarly, timers such as `setTimeout` or `setInterval` will cause your SSR render to be _delayed_ or, in the case of `setInterval`, never render at all.
 
 ### Conditionally wrap code that may cause SSR errors
 
