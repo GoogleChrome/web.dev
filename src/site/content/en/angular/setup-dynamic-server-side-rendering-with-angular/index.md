@@ -65,7 +65,7 @@ app.get('*', (req, res) => {
 });
 ```
 
-You may only want specific routes dynamically rendered on the server, and you can adjust this behavior to meet your requirements.  It's also possible to have some routes return the original `index.html`, allowing for standard client-side rendering.
+You may only want specific routes dynamically rendered on the server, and you can adjust this behavior to meet your requirements.  It's also possible to have some routes return the original `index.html`, allowing for standard client-side rendering:
 
 ```javascript/9
 // Render specific routes dynamically
