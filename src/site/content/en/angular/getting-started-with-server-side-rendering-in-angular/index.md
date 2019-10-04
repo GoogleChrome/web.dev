@@ -64,7 +64,7 @@ For a brand new CLI application, you should be able to run the script above, and
 
 It's important to remember that with SSR your application is being rendered on the server, so any browser-specific functionality will cause errors. Two kinds of code that often cause SSR errors are [global objects](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) and [timeouts](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) / intervals.
 
-Attempting to access browser globals such as `window`, `document`, `localStorage` will cause your SSR to fail to render.
+Attempting to access browser globals such as `window`, `document`, or `localStorage` will cause your SSR to fail to render.
 
 Similarly, timers such as `setTimeout` or `setInterval` will cause your SSR render to be _delayed_ or in the case of `setInterval`, never render at all.
 
