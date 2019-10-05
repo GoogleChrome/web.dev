@@ -14,7 +14,7 @@ Consider instrumenting your app with the
 to measure your app's real-world performance during key user experiences.
 
 When your app includes User Timing Marks and Measures,
-Lighthouse reports them:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) reports them:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="user-timings.png" alt="A screenshot of the Lighthouse User Timing marks and measures audit">

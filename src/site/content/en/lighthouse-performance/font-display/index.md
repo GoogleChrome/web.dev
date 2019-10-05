@@ -13,7 +13,8 @@ Fonts are often large files that take awhile to load.
 Some browsers hide text until the font loads,
 causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 
-Lighthouse flags any font URLs that may flash invisible text:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags any font URLs that may flash invisible text:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="font-display.png" alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit">

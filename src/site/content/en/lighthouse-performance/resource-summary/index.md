@@ -10,8 +10,9 @@ web_lighthouse:
   - resource-summary
 ---
 
-Lighthouse reports how many network requests
-were made and how much data was transferred while your page loaded:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+reports how many network requests were made and
+how much data was transferred while your page loaded:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="resource-summary.png"

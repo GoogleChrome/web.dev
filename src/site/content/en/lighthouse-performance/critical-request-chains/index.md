@@ -13,7 +13,8 @@ Critical request chains are series of dependent network requests important for p
 The greater the length of the chains and the larger the download sizes,
 them ore significant the impact on page load performance.
 
-Lighthouse reports critical requests loaded with a high priority:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+reports critical requests loaded with a high priority:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="critical-request-chains.png" alt="A screenshot of the Lighthouse Minimize critical requests depth audit">

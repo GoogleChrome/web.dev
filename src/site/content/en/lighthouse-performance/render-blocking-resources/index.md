@@ -22,7 +22,8 @@ and removing anything unused.
 
 ## Which URLs get flagged as render-blocking resources?
 
-Lighthouse flags three types of render-blocking URLs: scripts, stylesheets, and HTML
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags three types of render-blocking URLs: scripts, stylesheets, and HTML
 imports:
 
 A `<script>` tag that:

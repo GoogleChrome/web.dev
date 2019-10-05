@@ -9,8 +9,8 @@ web_lighthouse:
   - mainthread-work-breakdown
 ---
 
-Lighthouse shows a breakdown of where CPU time was spent while the browser
-loads your page:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+shows a breakdown of where CPU time was spent while the browser loads your page:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="mainthread-work-breakdown.png" alt="A screenshot of the Lighthouse Minimize main-thread work audit">

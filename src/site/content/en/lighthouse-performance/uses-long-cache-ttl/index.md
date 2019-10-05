@@ -19,7 +19,8 @@ the browser uses its local copy rather than getting it from the network.
 
 ## How the Lighthouse cache policy audit fails
 
-Lighthouse flags all static resources that aren't cached:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags all static resources that aren't cached:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="uses-long-cache-ttl.png" alt="A screenshot of the Lighthouse Serve static assets with an efficient cache policy audit">

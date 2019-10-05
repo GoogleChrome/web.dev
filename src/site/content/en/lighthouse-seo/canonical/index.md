@@ -23,7 +23,8 @@ Lighthouse flags pages with an invalid `rel=canonical`:
 
 ## What causes the audit to fail
 
-Lighthouse marks the audit as a fail if any of the following are true:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+marks the audit as a fail if any of the following are true:
 
 - There is more than 1 canonical link.
 - The canonical link is not a valid URL.

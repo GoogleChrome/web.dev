@@ -9,7 +9,8 @@ web_lighthouse:
   - bootup-time
 ---
 
-Lighthouse reports the time spent executing JavaScript files during page load
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+reports the time spent executing JavaScript files during page load
 in the Diagnostics section:
 
 <figure class="w-figure">

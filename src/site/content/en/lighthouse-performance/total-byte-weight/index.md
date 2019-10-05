@@ -24,8 +24,9 @@ You can adjust the results to factor in purchasing power.
 
 ## How the Lighthouse network payload audit fails
 
-Lighthouse shows the total size in kilobytes of all resources
-requested by your page. The largest requests are presented first:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+shows the total size in kilobytes of all resources requested by your page.
+The largest requests are presented first:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="total-byte-weight.png" alt="A screenshot of the Lighthouse Avoid enormous network payloads audit">
