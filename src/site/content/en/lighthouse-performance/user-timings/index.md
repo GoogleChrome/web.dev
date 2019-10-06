@@ -2,7 +2,8 @@
 layout: post
 title: User Timing marks and measures
 description: |
-  Learn about the user-timings audit.
+  Learn how the User Timing API can help you get real-world performance data
+  for your web page.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

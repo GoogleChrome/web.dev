@@ -2,7 +2,8 @@
 layout: post
 title: Minimize main thread work
 description: |
-  Learn about the mainthread-work-breakdown audit.
+  Learn about the browser's main thread and how you can optimize your web page
+  to reduce main thread load and improve performance.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

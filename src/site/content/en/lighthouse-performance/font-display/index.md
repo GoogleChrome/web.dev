@@ -2,7 +2,8 @@
 layout: post
 title: Ensure text remains visible during webfont load
 description: |
-  Learn about the font-display audit.
+  Learn how to use the font-display API to make sure your web page text
+  will always be visible to your users.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

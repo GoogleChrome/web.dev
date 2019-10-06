@@ -2,7 +2,8 @@
 layout: post
 title: Serve static assets with an efficient cache policy
 description: |
-  Learn about the uses-long-cache-ttl audit.
+  Learn how caching your web page's static resources can improve performance
+  and reliability for repeat visitors.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

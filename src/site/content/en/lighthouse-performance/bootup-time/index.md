@@ -2,7 +2,8 @@
 layout: post
 title: Reduce JavaScript execution time
 description: |
-  Learn about the bootup-time audit.
+  Learn how JavaScript execution can slow down your page performance
+  and how you can speed it up.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

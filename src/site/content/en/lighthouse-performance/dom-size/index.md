@@ -2,7 +2,8 @@
 layout: post
 title: Avoid an excessive DOM size
 description: |
-  Learn about the dom-size audit.
+  Learn how a large DOM can reduce your web page's performance and how you
+  can reduce the size of your DOM at load time.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

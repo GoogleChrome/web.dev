@@ -2,7 +2,8 @@
 layout: post
 title: Minimize critical request depth
 description: |
-  Learn about the critical-request-chains audit.
+  Learn what critical request chains are, how they affect web page performance,
+  and how you can reduce the effect.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

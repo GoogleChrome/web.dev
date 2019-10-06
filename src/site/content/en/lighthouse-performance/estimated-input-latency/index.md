@@ -2,7 +2,8 @@
 layout: post
 title: Estimated Input Latency
 description: |
-  Learn about the estimated-input-latency audit.
+  Learn about Lighthouse's Estimated Input Latency metric and
+  how to measure and optimize it.
 date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:

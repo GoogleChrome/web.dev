@@ -17,9 +17,9 @@ to receive the first byte of page content:
   <img class="w-screenshot" src="time-to-first-byte.png" alt="A screenshot of the Lighthouse Server response times are low (TTFB) audit">
 </figure>
 
-## Slow server response times effect performance
+## Slow server response times affect performance
 
-This audit fails when the browser waits more than 600ms
+This audit fails when the browser waits more than 600&nbsp;ms
 for the server to respond to the main document request.
 Users dislike when pages take a long time to load.
 Slow server response times are one possible cause for long page loads.
