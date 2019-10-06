@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Minimize critical requests depth
+title: Minimize critical request depth
 description: |
   Learn about the critical-request-chains audit.
 date: 2019-05-02
@@ -17,7 +17,7 @@ the more significant the impact on page load performance.
 reports critical requests loaded with a high priority:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="critical-request-chains.png" alt="A screenshot of the Lighthouse Minimize critical requests depth audit">
+  <img class="w-screenshot" src="critical-request-chains.png" alt="A screenshot of the Lighthouse Minimize critical request depth audit">
 </figure>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
@@ -49,4 +49,4 @@ Learn more about optimizing your
 
 ## Resources
 
-[Source code for **Minimize critical requests depth** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
+[Source code for **Minimize critical request depth** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/critical-request-chains.js)
