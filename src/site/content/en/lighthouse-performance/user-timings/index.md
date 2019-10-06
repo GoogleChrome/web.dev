@@ -41,6 +41,8 @@ Lighthouse extracts User Timing data from
 This audit is not structured as a pass or fail test.
 It's just an opportunity to discover a useful API that can help you measure your app's performance.
 
+{% include 'content/lighthouse-performance/scoring.njk' %}
+
 ## Resources
 
 - [Source code for **User Timing marks and measures** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/user-timings.js)

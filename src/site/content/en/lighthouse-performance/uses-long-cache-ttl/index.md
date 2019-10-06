@@ -55,6 +55,8 @@ Lighthouse lists the results in a table with three columns:
   </table>
 </div>
 
+{% include 'content/lighthouse-performance/scoring.njk' %}
+
 ## How to cache static resources using HTTP caching
 
 Configure your server to return the `Cache-Control` HTTP response header:
