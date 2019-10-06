@@ -53,10 +53,7 @@ each JavaScript file that your page loads.
 
 ## How to speed up JavaScript execution
 
-- [Only send the code that your users need by implementing code splitting](/reduce-javascript-payloads-with-code-splitting).
-- [Minify and compress your code](/reduce-network-payloads-using-text-compression).
-- [Remove unused code](/remove-unused-code).
-- [Reduce network trips by caching your code with the PRPL pattern](/apply-instant-loading-with-prpl).
+{% include 'content/lighthouse-performance/js-perf.njk' %}
 
 ## Resources
 
