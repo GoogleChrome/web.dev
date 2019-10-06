@@ -1,53 +1,56 @@
 ---
 layout: post
-title: Registers a service worker that controls page and start_url
+title: "Does not register a service worker that controls page and `start_url`"
 description: |
-  Learn about `service-worker` audit.
-date: 2019-05-02
+  Learn how to register a service worker that supports Progressive Web App
+  features like offline functionality, push notifications, and installability.
 web_lighthouse:
   - service-worker
+date: 2019-05-04
+updated: 2019-09-19
 ---
 
-Registering a service worker is the first step towards enabling the following
-progressive web app features:
+Registering a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
+is the first step towards enabling key [Progressive Web App (PWA)](/discover-installable) features:
 
-- Offline
-- Push notifications
-- Add to homescreen
+- Works offline
+- Supports push notifications
+- Can be installed to the device
 
-Learn more in [Service workers and the Cache Storage API](/service-workers-cache-storage/).
-Lighthouse flags pages that don't register a service worker:
+Learn more in the [Service workers and the Cache Storage API](/service-workers-cache-storage/) post.
+
+## How the Lighthouse service worker audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages that don't register a service worker:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="service-worker.png" alt="Lighthouse audit showing site doesn't register a service worker">
-  <figcaption class="w-figcaption">
-    Site doesn't register a service worker.
-  </figcaption>
+  <img class="w-screenshot" src="service-worker.png" alt="Lighthouse audit showing site doesn't register a service worker">
 </figure>
 
-## How this audit fails
-
-Lighthouse checks if the Chrome Debugger returns a service worker version.
-If it does not, the audit fails.
+Lighthouse checks if the [Chrome Remote Debugging Protocol](https://github.com/ChromeDevTools/devtools-protocol)
+returns a service worker version. If it doesn't, the audit fails.
 
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
-## Recommendations
+## How to register a service worker
 
-Registering a service worker involves only a few lines of code, but the only
-reason you'd use a service worker is to implement one of the progressive
-web app features outlined above.
-Implementing those features requires more work.
-For more help on caching files for offline use, see
-[What is network reliability and how do you measure it?](/network-connections-unreliable).
+Registering a service worker involves only a few lines of code,
+but the only reason you'd use a service worker
+is to make it possible to implement one of the PWA features outlined above.
+Actually implementing those features requires more work:
 
-For enabling push notifications or "add to homescreen", complete the
-following step-by-step tutorials and then use what you learn to implement
-the features in your own app:
+- To learn how to cache files for offline use, see the
+[What is network reliability and how do you measure it?](/network-connections-unreliable) post.
+- To learn how to make your app installable, see the [Make it installable](/codelab-make-installable/) codelab.
+- To learn how to enable push notifications, see Google's
+  [Adding Push Notifications to a Web App](https://codelabs.developers.google.com/codelabs/push-notifications).
 
-- [Make it installable](/codelab-make-installable/).
-- [Enable push notifications for your web app](https://codelabs.developers.google.com/codelabs/push-notifications).
+## Resources
 
-## More information
-
-[Page doesn't register a service worker audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
+- [Source code for **Does not register a service worker that controls page and `start_url`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/service-worker.js)
+- [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers)
+- [Service workers and the Cache Storage API](/service-workers-cache-storage/)
+- [What is network reliability and how do you measure it?](/network-connections-unreliable)
+- [Make it installable](/codelab-make-installable/)
+- [Adding Push Notifications to a Web App](https://codelabs.developers.google.com/codelabs/push-notifications)

@@ -17,7 +17,8 @@ Use single backticks to switch to code font in a line of text:
 ```markdown
  The value of the `type` attribute must be valid.
 ```
-> The value of the `type` attribute must be valid.
+
+The value of the `type` attribute must be valid.
 
 ## Code blocks
 Use triple backticks to create a code block.
@@ -99,10 +100,10 @@ Indent using two spaces.
 
 Always use straight quotes. (Readers often copy code directly from the site, and smart quotes can break code.)
 
-{% Compare 'worse', "Don't" %}
+{% Compare 'worse' %}
 `const imagemin = require(‘imagemin’);`
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
+{% Compare 'better' %}
 `const imagemin = require('imagemin');`
 {% endCompare %}

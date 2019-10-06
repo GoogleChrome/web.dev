@@ -48,7 +48,7 @@ Reference](https://developers.google.com/web/tools/chrome-devtools/accessibility
 {% endAside %}
 
 Whether you're looking at an `img` with `alt` text or an `input` with a
-`label`, all of these scenarios result in the same outcome: giving an 
+`label`, all of these scenarios result in the same outcome: giving an
 element its accessible name.
 
 ## Check for missing names
@@ -231,7 +231,7 @@ the user clicks on the button:
 
 `<object>` elements, which are typically used for embeds like Flash, PDFs, or
 ActiveX, should also contain alternative text. Similar to images, this text is
-displayed if the element fails to render. The alternative text goes inside the 
+displayed if the element fails to render. The alternative text goes inside the
 `object` element as regular text, like "Annual report" below:
 
 ```html
@@ -260,7 +260,7 @@ name.
 
 One common exception to this rule is icon buttons. An icon button may use an
 image or an icon font to provide the text content for the button. For example,
-the buttons used in a What You See Is What You Get (WYSIWYG) editor to format 
+the buttons used in a What You See Is What You Get (WYSIWYG) editor to format
 text are typically just graphic symbols:
 
 ![A left align icon button.](./icon-button.png)
@@ -281,18 +281,16 @@ content. A nice trick when creating a link is to put the most meaningful piece
 of text into the link itself, rather than filler words like "Here" or "Read
 More."
 
+{% Compare 'worse', 'Not descriptive enough' %}
 ```html
 Check out our guide to web performance <a href="/guide">here</a>.
 ```
-{% Compare 'worse' %}
-Not descriptive enough.
 {% endCompare %}
 
+{% Compare 'better', 'Useful content!' %}
 ```html
 Check out <a href="/guide">our guide to web performance</a>.
 ```
-{% Compare 'better' %}
-Useful content!
 {% endCompare %}
 
 This is especially helpful for screen readers that offer shortcuts to list all

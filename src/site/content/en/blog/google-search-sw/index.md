@@ -450,7 +450,7 @@ building a "Google Search PWA" was not an initial goal of the team. The Google
 Search web app doesn't currently provide metadata via a
 [web app manifest](https://developers.google.com/web/fundamentals/web-app-manifest/),
 nor does it encourage users to go through the
-[Add to Homescreen flow](https://developers.google.com/web/fundamentals/app-install-banners/).
+[Add to Home Screen flow](https://developers.google.com/web/fundamentals/app-install-banners/).
 The Search team is currently satisfied with users coming to their web app via
 the traditional entry points for Google Search.
 

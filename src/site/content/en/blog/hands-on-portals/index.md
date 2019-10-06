@@ -1,7 +1,7 @@
 ---
 title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
-  Learn how to build good navigation UX with the Portals API.
+  Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
 updated: 2019-08-29
 authors:
@@ -9,7 +9,7 @@ authors:
 hero: hero.png
 alt: A logo of Portals
 description: |
-  Portals help keep your front-end simple while allowing seamless navigations
+  The newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
   with custom transitions. In this article, get hands-on experience using
   Portals to improve user experience across your site.
 tags:
@@ -22,7 +22,7 @@ Making sure your pages load fast is key to delivering a good user experience.
 But one area we often overlook is page transitions—what our users see when
 they move between pages.
 
-A new web platform API called [Portals](https://github.com/WICG/portals) aims to
+A new web platform API proposal called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
 site. See Portals in action:
 
@@ -67,6 +67,11 @@ Before Portals, we could have rendered another page using an `<iframe>`. We coul
 
 Try out Portals in Chrome Canary by flipping an experimental flag:
 `chrome://flags/#enable-portals`.
+During this early phase of the Portals experiment,
+we also recommend using a completely separate user data directory for your tests
+by setting the
+[`--user-data-dir`](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md#command-line)
+command line flag.
 Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
 
 <img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
@@ -269,4 +274,4 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-Portals are still in the early stages so not everything is working yet (that's why it's behind an experimental flag). That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on [the Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836) and if you have any feature requests, or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+The Portals proposal is still in the early stages, so not everything is working yet. (That's why it's behind an experimental flag.) That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on the [Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836). If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).

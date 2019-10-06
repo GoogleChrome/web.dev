@@ -4,7 +4,7 @@ subhead: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 date: 2019-07-30
 hero: adams-creation.jpg
-alt: Adam's Creation by Michelangelo on Sistine Chapel ceiling 
+alt: Adam's Creation by Michelangelo on Sistine Chapel ceiling
 authors:
   - mihajlija
 description: |
@@ -23,9 +23,9 @@ Before the browser can request a resource from a server, it must establish a con
 
 * Encrypt the connection for security.
 
-In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a [round trip](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT)). 
+In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a [round trip](https://developer.mozilla.org/en-US/docs/Glossary/Round_Trip_Time_(RTT)).
 
-Depending on network conditions, a single round trip might take a significant amount of time. The connection setup process might involve up to three round trips—and more in unoptimized cases. 
+Depending on network conditions, a single round trip might take a significant amount of time. The connection setup process might involve up to three round trips—and more in unoptimized cases.
 
 Taking care of all that ahead of time makes applications feel much faster. This post explains how to achieve that with two resource hints: `<link rel=preconnect>` and `<link rel=dns-prefetch>`.
 
@@ -33,7 +33,7 @@ Taking care of all that ahead of time makes applications feel much faster. This 
 
 Modern browsers [try their best to anticipate](https://www.igvita.com/posa/high-performance-networking-in-google-chrome/#tcp-pre-connect) what connections a page will need, but they cannot reliably predict them all. The good news is that you can give them a (resource 😉) hint.
 
-Adding `rel=preconnect` to a `<link>` informs the browser that your page intends to establish a connection to another domain, and that you'd like the process to start as soon as possible. Resources will load more quickly because the setup process has already been completed by the time the browser requests them. 
+Adding `rel=preconnect` to a `<link>` informs the browser that your page intends to establish a connection to another domain, and that you'd like the process to start as soon as possible. Resources will load more quickly because the setup process has already been completed by the time the browser requests them.
 
 Resource hints get their name because they are not mandatory instructions. They provide the information about what you'd like to happen, but it's ultimately up to the browser to decide whether to execute them. Setting up and keeping a connection open is a lot of work, so the browser might choose to ignore resource hints or execute them partially depending on the situation.
 
@@ -55,7 +55,7 @@ chrome.com [improved Time To Interactive](https://twitter.com/addyosmani/status/
 
 ### Knowing *where from*, but not *what* you're fetching
 
-Due to versioned dependencies, you sometimes end up in a situation where you know you'll be requesting a resource from a particular CDN, but not the exact path for it. 
+Due to versioned dependencies, you sometimes end up in a situation where you know you'll be requesting a resource from a particular CDN, but not the exact path for it.
 
 <figure class="w-figure w-figure--center">
 <img src="versioned-url.png" style="max-width:450px" alt="A url of a script with the version name.">
@@ -87,7 +87,7 @@ One way of initiating a `preconnect` is adding a `<link>` tag to the `<head>` of
 </head>
 ```
 
-Preconnecting is only effective for domains other than the origin domain, so you shouldn't use it for your site. 
+Preconnecting is only effective for domains other than the origin domain, so you shouldn't use it for your site.
 
 {% Aside 'caution' %}
 Only preconnect to critical domains you will use soon because the browser closes any connection that isn't used within 10 seconds. Unnecessary preconnecting can delay other important resources, so limit the number of preconnected domains and [test the impact preconnecting makes](https://andydavies.me/blog/2019/08/07/experimenting-with-link-rel-equals-preconnect-using-custom-script-injection-in-webpagetest/).
@@ -111,9 +111,9 @@ If you omit the `crossorigin` attribute, the browser only performs the DNS looku
 
 ## Resolve domain name early with `rel=dns-prefetch`
 
-You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process — [domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection. 
+You remember sites by their names, but servers remember them by IP addresses. This is why the domain name system (DNS) exists. The browser uses DNS to convert the site name to an IP address. This process — [domain name resolution](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/)— is the first step in establishing a connection.
 
-If a page needs to make connections to many third-party domains, preconnecting all of them is counterproductive. The `preconnect` hint is best used for only the most critical connections. For all the rest, use  `<link rel=dns-prefetch>` to save time on the first step, the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups). 
+If a page needs to make connections to many third-party domains, preconnecting all of them is counterproductive. The `preconnect` hint is best used for only the most critical connections. For all the rest, use  `<link rel=dns-prefetch>` to save time on the first step, the DNS lookup, which usually takes around [20–120 ms](https://www.keycdn.com/support/reduce-dns-lookups).
 
 DNS resolution is initiated similarly to `preconnect`: by adding a `<link>` tag to the `<head>` of the document.
 
@@ -121,21 +121,30 @@ DNS resolution is initiated similarly to `preconnect`: by adding a `<link>` tag 
 <link rel="dns-prefetch" href="http://example.com">
 ```
 
-[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect`](https://caniuse.com/#search=preconnect) [support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`. 
+[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect`](https://caniuse.com/#search=preconnect) [support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`.
 
+
+{% Compare 'better' %}
 ```html
 <link rel="preconnect" href="http://example.com">
 <link rel="dns-prefetch" href="http://example.com">
 ```
-{% Compare 'better' %}
-To safely implement the fallback technique use separate link tags.
+
+{% CompareCaption %}
+To safely implement the fallback technique, use separate link tags.
+{% endCompareCaption %}
+
 {% endCompare %}
 
+{% Compare 'worse' %}
 ```html
 <link rel="preconnect dns-prefetch" href="http://example.com">
 ```
-{% Compare 'worse' %}
+
+{% CompareCaption %}
 Implementing `dns-prefetch` fallback in the same `<link>` tag causes a bug in Safari where `preconnect` gets cancelled.
+{% endCompareCaption %}
+
 {% endCompare %}
 
 ## Conclusion
