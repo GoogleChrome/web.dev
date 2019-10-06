@@ -13,12 +13,16 @@ Fonts are often large files that take awhile to load.
 Some browsers hide text until the font loads,
 causing a [flash of invisible text (FOIT)](/avoid-invisible-text).
 
+## How the Lighthouse font-display audit fails
+
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags any font URLs that may flash invisible text:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="font-display.png" alt="A screenshot of the Lighthouse Ensure text remains visible during webfont loads audit">
 </figure>
+
+{% include 'content/lighthouse-performance/scoring.njk' %}
 
 ## How to avoid showing invisible text
 
@@ -48,7 +52,7 @@ for more information.)
 
 It's worth mentioning that not all major browsers support `font-display: swap`,
 so you may need to do a bit more work to fix the invisible text problem.
-Follow the [Avoid flash of invisible text codelab](/codelab-avoid-invisible-text)
+See the [Avoid flash of invisible text codelab](/codelab-avoid-invisible-text)
 to learn how to avoid FOIT across all browsers.
 
 ## Resources
