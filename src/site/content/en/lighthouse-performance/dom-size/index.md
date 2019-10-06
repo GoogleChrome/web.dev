@@ -9,7 +9,7 @@ web_lighthouse:
   - dom-size
 ---
 
-A large DOM tree can harm your page performance in multiple ways:
+A large DOM tree can slow down your page performance in multiple ways:
 
 - **Network efficiency and load performance**
 
