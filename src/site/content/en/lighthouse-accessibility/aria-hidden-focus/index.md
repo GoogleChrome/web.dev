@@ -2,7 +2,7 @@
 layout: post
 title: "`[aria-hidden=\"true\"]` elements contain focusable descendants"
 description: |
-  Learn how to make sure assistive technology users can't access
+  Learn how to make sure assistive technology users can't navigate to
   focusable elements that are supposed to be hidden.
 date: 2019-10-17
 web_lighthouse:
@@ -18,7 +18,7 @@ screen readers won't read the focusable element,
 but keyboard users will still be able to navigate to it,
 which can cause confusion.
 
-## How Lighthouse identifies hidden body elements
+## How Lighthouse identifies partially hidden focusable elements
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 flags focusable elements that have parents with the `aria-hidden="true"` attribute:
@@ -48,6 +48,8 @@ the following elements are focusable:
 For a complete breakdown of cross-browser focus behavior, see ally.js's
 <a href="https://allyjs.io/data-tables/focusable.html" rel="noopener">Focusable Elements - Browser Compatibility Table</a>.
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
+
 ## How to fix partially hidden focusable elements
 
 If you're hiding a container element on your page using `aria-hidden`,
@@ -70,3 +72,7 @@ if it's behind a modal dialog with a translucent background—consider
 using [the WICG's `inert` polyfill](https://github.com/WICG/inert).
 The polyfill emulates the behavior of a proposed `inert` attribute,
 which prevents elements from being read or selected.
+
+## Resources
+
+<a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-focus.js" rel="noopener">Source code for <strong><code>[aria-hidden="true"]</code> elements contain focusable descendants</strong> audit</a>

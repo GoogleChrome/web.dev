@@ -25,6 +25,8 @@ flags pages whose `<body>` element has an `aria-hidden="true"` attribute:
   alt="Lighthouse audit showing that a page's body element has the aria-hidden attribute">
 </figure>
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
+
 ## How to make your page accessible to assistive technology users
 
 Remove the `aria-hidden="true"` attribute
@@ -59,3 +61,7 @@ which precedes the dialog in the HTML:
   </body>
 </html>
 ```
+
+## Resources
+
+<a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-body.js" rel="noopener">Source code for <strong><code>[aria-hidden="true"]</code> is present on the document <code>&#60;body&#62;</code></strong> audit</a>
