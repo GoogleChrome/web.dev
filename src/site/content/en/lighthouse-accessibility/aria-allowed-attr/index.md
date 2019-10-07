@@ -22,26 +22,23 @@ break the role, but it should still be fixed.
 Lighthouse flags mismatches between ARIA roles and `aria-*` attributes:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="aria-allowed-attr.png" alt="Lighthouse audit showing ARIA attributes do not match their roles">
+  <img class="w-screenshot" src="aria-allowed-attr.png" alt="Lighthouse audit showing an ARIA list role with an unsupported checked attribute">
 </figure>
 
 Lighthouse uses the
-[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">role definitions from the WAI-ARIA specification</a>
 to check for mismatches between ARIA roles and attributes.
-Each role has a subset of "supported states and properties" and
-"inherited states and properties".
-Any element with that role
-can only use the attributes in the role's definition.
-
+Each role has a set of states and properties (that is, _attributes_)
+that it can support or inherit.
 Lighthouse fails this audit
-when it finds an attribute that isn't allowed for a role on an element.
-In the example Lighthouse audit above,
-the `aria-checked` attribute is not allowed on an element with the `list` role,
-so the audit fails.
-This makes sense—as list elements wouldn't have a state of checked,
-so applying a checked state would be confusing to screen reader users.
+when it finds an element with an ARIA role and an ARIA attribute
+that isn't supported for that role.
 
-A disallowed attribute won't break an element's role.
+In the example shown in the screenshot,
+the `aria-checked` attribute is not allowed on an element with the `list` role.
+This makes sense: list elements can't be checked or unchecked.
+
+An unsupported attribute generally won't break an element's role.
 In the example above, the element is still announced as a list, and
 the browser ignores the `aria-checked` attribute.
 However, this issue is still important to fix
@@ -51,17 +48,13 @@ and probably indicates a mistaken assumption in your code.
 
 ## How to avoid ARIA mismatches
 
-Refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
-ARIA explicitly defines which attributes are allowed for any given role and for every attribute.
-Link to the role from the specification,
-and check the attributes allowed.
-So long as an attribute is listed for that role,
-you can use it.
-
-For more information on this audit,
-see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com/rules/axe/3.1/aria-allowed-attr).
+Refer to the
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">WAI-ARIA role definitions</a>.
+ARIA explicitly defines which attributes are allowed for each role.
+As long as an attribute is listed for the role you're using,
+you can apply it.
 
 ## Resources
 
-- [Source code for **`[aria-*]` attributes do not match their roles** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-allowed-attr.js)
-- [Elements must only use allowed ARIA attributes](https://dequeuniversity.com/rules/axe/3.3/aria-allowed-attr)
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-allowed-attr.js" rel="noopener">Source code for <strong><code>[aria-*]</code> attributes do not match their roles</strong> audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-allowed-attr" rel="noopener">Elements must only use allowed ARIA attributes</a>
