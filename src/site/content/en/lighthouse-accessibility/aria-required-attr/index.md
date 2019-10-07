@@ -11,15 +11,10 @@ web_lighthouse:
   - aria-required-attr
 ---
 
-[ARIA](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
-roles and attributes help screen readers
-provide missing information about an element.
-For these roles and attributes to make sense,
-each ARIA `role` supports a specific subset of `aria-*` attributes
-(see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
-Some ARIA roles have required attributes that describe the state of the element to screen readers.
-
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
+
+Each ARIA `role` supports a specific subset of `aria-*` attributes.
+Some ARIA roles have required attributes that describe the state of the element to screen readers.
 
 ## How Lighthouse identifies missing required states and properties
 

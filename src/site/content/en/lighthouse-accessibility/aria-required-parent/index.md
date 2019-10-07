@@ -11,16 +11,11 @@ web_lighthouse:
   - aria-required-parent
 ---
 
-[ARIA](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
-roles and attributes help screen readers
-provide missing information about an element.
-For these roles and attributes to make sense,
-each ARIA `role` supports a specific subset of `aria-*` attributes
-(see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
+{% include 'content/lighthouse-accessibility/about-aria.njk' %}
+
+Each ARIA `role` supports a specific subset of `aria-*` attributes.
 Some ARIA child roles must be contained by specific parent roles
 to properly perform their intended accessibility functions.
-
-{% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse identifies missing parent roles
 

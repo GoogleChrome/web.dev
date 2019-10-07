@@ -10,16 +10,11 @@ web_lighthouse:
   - aria-valid-attr-value
 ---
 
-[ARIA](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
-roles and attributes help screen readers
-provide missing information about an element.
-For these roles and attributes to make sense,
-each ARIA `role` supports a specific subset of `aria-*` attributes
-(see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
+{% include 'content/lighthouse-accessibility/about-aria.njk' %}
+
+Each ARIA `role` supports a specific subset of `aria-*` attributes.
 Assistive technologies, like screen readers,
 can't interpret ARIA attributes with invalid values.
-
-{% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse determines an attribute's value is invalid
 

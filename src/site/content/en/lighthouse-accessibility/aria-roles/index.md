@@ -9,16 +9,11 @@ web_lighthouse:
   - aria-roles
 ---
 
-[ARIA](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
-roles and attributes help screen readers
-provide missing information about an element.
-For these roles and attributes to make sense,
-each ARIA `role` supports a specific subset of `aria-*` attributes
-(see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
+{% include 'content/lighthouse-accessibility/about-aria.njk' %}
+
+Each ARIA `role` supports a specific subset of `aria-*` attributes.
 ARIA roles must have valid values in order
 to perform their intended accessibility functions.
-
-{% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
 ## How Lighthouse determines a role has invalid values
 
