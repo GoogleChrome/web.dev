@@ -1,24 +1,23 @@
 ---
 title: Verify phone numbers on the web with the SMS Receiver API
-subhead: Help users type OTP received through SMS
+subhead: Help users type OTPs received through SMS
 authors:
   - agektmr
 
-date: 2019-09-19
-# updated: 2019-06-27
+date: 2019-10-07
 
 hero: hero.png
-alt: A description of the hero image for screen reader users.
+alt: A drawing of a woman using OTP to log in to a web app.
 
 description: |
-  Finding, memorizing, and typing OTP sent via SMS to a form is cumbersome. The
-  SMS Receiver API will help users typing the OTP.
+  Finding, memorizing, and typing OTPs sent via SMS is cumbersome. The
+  SMS Receiver API simplifies the OTP workflow for users.
 
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - identity
   - sms
-  - fugu`
+  - fugu
 ---
 
 
@@ -34,13 +33,13 @@ phone number.
 
 This idea is already deployed in many scenarios to achieve:
 
-* **Phone number as an identifier for the user:** When signing up for a new
+* **Phone number as an identifier for the user.** When signing up for a new
   service, some websites ask for a phone number instead of an email address and
   use it as an account identifier.
-* **Two step verification:** When signing in, a website asks for a one-time code
+* **Two step verification.** When signing in, a website asks for a one-time code
   sent via SMS on top of a password or other knowledge factor for extra
   security.
-* **Payment confirmation:** When a user is making a payment, asking for a
+* **Payment confirmation.** When a user is making a payment, asking for a
   one-time code sent via SMS can help verify the person's intent.
 
 
@@ -59,10 +58,10 @@ your app's origin. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily. Sign up for the
 [Origin
 Trial](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
-now if you are interested!
+now if you're interested!
 
 {% Aside 'warning' %}
-Keep in mind that attackers can spoof SMS and can hijack a person's phone
+Attackers can spoof SMS and can hijack a person's phone
 number. Carriers can also recycle phone numbers to new users after an account
 was closed. While SMS OTP is useful to verify a phone number for the use cases
 above, we recommend using additional and stronger forms of authentication (such
@@ -71,6 +70,8 @@ establish new sessions for these users.
 {% endAside %}
 
 ## Current status
+
+The table below explains the current status of the SMS Receiver API.
 
 <table>
 <tr>
@@ -99,7 +100,7 @@ In Progress
 </tr>
 <tr>
 <td markdown="block">
-3. Gather feedback & iterate on design
+3. Gather feedback and iterate on design
 </td>
 <td markdown="block">
 In Progress
@@ -131,17 +132,18 @@ sends a text message to the user over SMS and the user enters the OTP from the
 message to verify the ownership of the phone number.
 
 With the SMS Receiver API, these steps will become as easy as one tap for the
-user.
+user, as demonstrated in the video. As the text message arrives, a bottom
+sheet pops up and prompts the user to verify their
+phone number. After clicking the **Verify** button within the bottom sheet,
+the browser pastes the OTP into the form and the form is submitted without
+the user needing to press **Continue**.
 
 <video autoplay loop muted playsinline>
   <source src="https://storage.googleapis.com/web-dev-assets/sms-receiver-announce/demo.mp4" type="video/mp4">
   <source src="https://storage.googleapis.com/web-dev-assets/sms-receiver-announce/demo.webm" type="video/webm">
 </video>
 
-Notice that as the text message arrives, the bottom sheet appears and pressing
-**Verify** allows the OTP to be autofilled in the form or even submitted
-automatically, signing in the user. The whole process is diagrammed in the image
-below.
+The whole process is diagrammed in the image below.
 
 <figure class="w-figure w-figure--center">
   <img src="./diagram.png" width="486" height="499" />
@@ -151,12 +153,12 @@ below.
 </figure
 
 Try [the demo](https://sms-receiver-demo.glitch.me) yourself. It doesn't ask for
-your phone number and send SMS to your device, but you can send one from another
-device by copying the text displayed on the demo because it doesn't matter who
-the sender is in the SMS Receiver API.
+your phone number or send an SMS to your device, but you can send one from another
+device by copying the text displayed on the demo. This works because it doesn't matter who
+the sender when using the SMS Receiver API.
 
-1. Prepare Google Chrome on Android 78 or later with "Experimental Web Platform
-   Feature" flag turned on at
+1. Prepare Google Chrome on Android 78 or later with the **Experimental Web Platform
+   features** flag turned on at
    `chrome://flags/#enable-experimental-web-platform-features`.
 2. Go to
    [https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me).
@@ -350,7 +352,7 @@ We're exploring options similar to Safari's declarative
 approach as we go through our origin trial ([early
 exploration](https://chromium-review.googlesource.com/c/chromium/src/+/1639728))
 and we are interested to hear what developers and users think. Our imperative
-approach could provide a more flexible UX and reduce friction verifying a phone
+approach could provide a more flexible UX and reduce friction when verifying a phone
 number under certain circumstances. The declarative approach is easier to
 implement for developers, but requires a form field and at least several taps:
 focus on the input field, select the one-time-code, then submit the form. The
@@ -372,7 +374,7 @@ should combine it with additional factors, such as a knowledge challenge, or use
 
 We would [like to remove
 it](https://github.com/samuelgoto/sms-receiver/issues/4#issuecomment-528991114),
-but it's currently a platform restriction that we are working with the android
+but it's currently a platform restriction. We are working with the Android
 team to understand what's the best way to approach it.
 
 ### Will an SMS message timeout?
@@ -387,7 +389,7 @@ No. A PWA's app hash is the same as the browser it runs in.
 
 ### Can we localize the "For:" string required in the SMS?
 
-Not right now. But ultimately, we are planning to remove or otherwise allow for
+Not right now. But ultimately, we are planning to remove it or otherwise allow for
 localization.
 
 {% Aside %}
