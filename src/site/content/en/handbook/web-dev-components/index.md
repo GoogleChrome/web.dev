@@ -27,6 +27,7 @@ guidance about how to use them effectively.
 1. [Glitches](#glitches)
 1. [Images](#images)
 1. [Instructions](#instructions)
+1. [Links (external)](#links-(external))
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
@@ -828,6 +829,18 @@ by using the `audit-auditName` argument in the Instruction shortcode.
 For example, here are the instructions for the **Performance** audit:
 
 {% Instruction 'audit-performance', 'ol' %}
+
+## Links (external)
+
+```html
+Lorem ipsum dolor sit amet,
+<a href="example.com" rel="noopener">consectetur adipiscing elit</a>.
+Proin dictum a massa sit amet ullamcorper.
+```
+
+Lorem ipsum dolor sit amet,
+<a href="example.com" rel="noopener">consectetur adipiscing elit</a>.
+Proin dictum a massa sit amet ullamcorper.
 
 ## Lists
 See the [Lists section of the Grammar, mechanics, and usage post](/handbook/grammar/#lists)

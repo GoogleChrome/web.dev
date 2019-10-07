@@ -53,6 +53,17 @@ p :visited:active {
   background-color: rgba($FOCUS_COLOR, .16);
 }
 
+// Add a launch icon to external links
+// Authors shouldn't use the target attribute, but styling it just in case.
+[rel='noopener']::after,
+[target='_blank']::after {
+  @include font-material-icon();
+  content: 'launch';
+  display: inline-block;
+  margin: 0 0 2px 2px;
+  vertical-align: middle;
+}
+
 // DevSite override
 a code,
 td a code {
