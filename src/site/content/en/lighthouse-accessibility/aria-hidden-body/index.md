@@ -64,4 +64,4 @@ which precedes the dialog in the HTML:
 
 ## Resources
 
-<a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-body.js" rel="noopener">Source code for <strong><code>[aria-hidden="true"]</code> is present on the document <code>&#60;body&#62;</code></strong> audit</a>
+<a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-body.js" rel="noopener">Source code for **`[aria-hidden="true"]` is present on the document `<body>`** audit</a>

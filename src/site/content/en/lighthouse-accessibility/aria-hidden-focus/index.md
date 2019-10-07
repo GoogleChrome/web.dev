@@ -69,7 +69,7 @@ consider using one of the following strategies instead:
 
 If you can't visually hide the container element—for example,
 if it's behind a modal dialog with a translucent background—consider
-using <a href="https://github.com/WICG/inert" rel="noopener">the WICG's <code>inert</code> polyfill</a>.
+using <a href="https://github.com/WICG/inert" rel="noopener">the WICG's `inert` polyfill</a>.
 The polyfill emulates the behavior of a proposed `inert` attribute,
 which prevents elements from being read or selected.
 
@@ -80,5 +80,5 @@ Test carefully before using in production.
 
 ## Resources
 
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-focus.js" rel="noopener">Source code for <strong><code>[aria-hidden="true"]</code> elements contain focusable descendants</strong> audit</a>
-- <a href="https://github.com/WICG/inert" rel="noopener">WICG <code>inert</code> polyfill</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-focus.js" rel="noopener">Source code for **`[aria-hidden="true"]` elements contain focusable descendants** audit</a>
+- <a href="https://github.com/WICG/inert" rel="noopener">WICG `inert` polyfill</a>
