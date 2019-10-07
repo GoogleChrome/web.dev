@@ -58,7 +58,7 @@ your app's origin. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily. Sign up for the
 [Origin
 Trial](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
-now if you're interested!
+now if you are interested!
 
 {% Aside 'warning' %}
 Attackers can spoof SMS and can hijack a person's phone
@@ -155,7 +155,7 @@ The whole process is diagrammed in the image below.
 Try [the demo](https://sms-receiver-demo.glitch.me) yourself. It doesn't ask for
 your phone number or send an SMS to your device, but you can send one from another
 device by copying the text displayed on the demo. This works because it doesn't matter who
-the sender when using the SMS Receiver API.
+the sender is when using the SMS Receiver API.
 
 1. Prepare Google Chrome on Android 78 or later with the **Experimental Web Platform
    features** flag turned on at
