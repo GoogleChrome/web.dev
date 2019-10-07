@@ -32,6 +32,7 @@ module.exports = {
         title: 'ARIA',
         pathItems: [
           'aria-allowed-attr',
+          'aria-hidden-body',
           'aria-required-attr',
           'aria-required-children',
           'aria-required-parent',
