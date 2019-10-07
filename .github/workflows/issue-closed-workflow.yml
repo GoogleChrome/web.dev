@@ -1,0 +1,19 @@
+name: Feedback survey reminder
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  survey_reminder_job:
+    name: Feedback survey reminder
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Feedback survey reminder
+        uses: robdodson/labeled-issues-reminder@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          label: 'content proposal'
+          message: '@kaycebasques, remember to send the feedback survey!'
