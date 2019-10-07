@@ -18,7 +18,8 @@ can't interpret ARIA attributes with invalid names.
 
 ## How Lighthouse checks for invalid attributes
 
-Lighthouse flags invalid ARIA attributes:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+flags invalid ARIA attributes:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="aria-valid-attr.png" alt="Lighthouse audit showing ARIA attribute has invalid value">

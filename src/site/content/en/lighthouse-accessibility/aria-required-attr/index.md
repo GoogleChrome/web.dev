@@ -18,7 +18,8 @@ Some ARIA roles have required attributes that describe the state of the element 
 
 ## How Lighthouse identifies missing required states and properties
 
-Lighthouse flags ARIA roles that don't have the required states and properties:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+flags ARIA roles that don't have the required states and properties:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="aria-required-attr.png" alt="Lighthouse audit showing ARIA role missing required states and properties">

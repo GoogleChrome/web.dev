@@ -19,7 +19,8 @@ break the role, but it should still be fixed.
 
 ## How Lighthouse identifies ARIA mismatches
 
-Lighthouse flags mismatches between ARIA roles and `aria-*` attributes:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+flags mismatches between ARIA roles and `aria-*` attributes:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="aria-allowed-attr.png" alt="Lighthouse audit showing an ARIA list role with an unsupported checked attribute">

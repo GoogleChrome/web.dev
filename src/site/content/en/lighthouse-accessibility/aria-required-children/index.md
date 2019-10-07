@@ -18,7 +18,8 @@ Some ARIA `roles` require child roles.
 
 ## How Lighthouse identifies missing child roles
 
-Lighthouse flags ARIA roles that don't have the required child roles:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+flags ARIA roles that don't have the required child roles:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="aria-required-children.png" alt="Lighthouse audit showing ARIA role missing required child role(s)">

@@ -19,7 +19,8 @@ to properly perform their intended accessibility functions.
 
 ## How Lighthouse identifies missing parent roles
 
-Lighthouse flags ARIA child roles that aren't contained by the required parent:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+flags ARIA child roles that aren't contained by the required parent:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="aria-required-parent.png" alt="Lighthouse audit showing ARIA role missing required parent role">
