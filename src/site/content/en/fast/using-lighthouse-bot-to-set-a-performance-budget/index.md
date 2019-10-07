@@ -128,7 +128,7 @@ install:
 before_script:
   - npm install -g firebase-tools
 script:
-  - webpack</td>
+  - webpack
 ```
 
 The YAML file tells Travis to install all the dependencies and build your app.
@@ -183,7 +183,7 @@ Now whenever you make changes to your app, they will be automatically deployed t
 
 ## 5. Setting up Lighthouse Bot
 
-Friendly Lighthouse Bot updates you on your app's Lighthouse scores. 
+Friendly Lighthouse Bot updates you on your app's Lighthouse scores.
 It just needs an invitation to your repo.
 
 On GitHub, go to your project's settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
