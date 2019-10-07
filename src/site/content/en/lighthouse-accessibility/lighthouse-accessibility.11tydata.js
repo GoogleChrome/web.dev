@@ -34,6 +34,7 @@ module.exports = {
           'aria-allowed-attr',
           'aria-hidden-body',
           'aria-hidden-focus',
+          'aria-input-field-name',
           'aria-required-attr',
           'aria-required-children',
           'aria-required-parent',
