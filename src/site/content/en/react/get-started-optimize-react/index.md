@@ -58,9 +58,9 @@ npx create-react-app app-name
 
 {% Aside %}
 `npx` is a package runner that is installed automatically with `npm` 5.2.0 or
-later. It simplifies quite a few processes involved with managing packages,
-including running CLI commands (like `create-react-app` without
-having to install it globally on your machine).
+later. It simplifies quite a few processes involved with managing
+packages—including running CLI commands like `create-react-app`—without
+having to install them globally on your machine.
 
 Take a look at
 [Introducing npx: an npm package runner](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) if you would like to learn more.
