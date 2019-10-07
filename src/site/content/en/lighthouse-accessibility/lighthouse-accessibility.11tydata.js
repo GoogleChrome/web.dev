@@ -33,6 +33,7 @@ module.exports = {
         pathItems: [
           'aria-allowed-attr',
           'aria-hidden-body',
+          'aria-hidden-focus',
           'aria-required-attr',
           'aria-required-children',
           'aria-required-parent',
