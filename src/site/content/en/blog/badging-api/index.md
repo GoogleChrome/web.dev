@@ -97,7 +97,7 @@ Starting in Chrome 73, the Badging API is available as an origin trial
 for Windows (7+) and macOS.
 
 [Origin trials][ot-what-is] allow you to try out new features and give
-feedback on usability, practicality, and effectiveness to us, and the web
+feedback on usability, practicality, and effectiveness to the Chrome team and the web
 standards community. For more information, see the
 [Origin Trials Guide for Web Developers][ot-dev-guide].
 
