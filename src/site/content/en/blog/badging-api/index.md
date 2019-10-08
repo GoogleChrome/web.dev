@@ -174,7 +174,7 @@ We want to hear about your experiences with the Badging API.
 
 ### Tell us about the API design
 
-Is there something about the API that doesn’t work like you expected? Or are
+Is there something about the API that doesn't work like you expected? Or are
 there missing methods or properties that you need to implement your idea?
 Have a question or comment on the security model?
 
@@ -198,7 +198,7 @@ prioritize features, and shows other browser vendors how critical it is to
 support them.
 
 * Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) tagged with
-  `#badgingapi` and let us know where and how you’re using it.
+  `#badgingapi` and let us know where and how you're using it.
 
 ## Helpful Links {: #helpful }
 
