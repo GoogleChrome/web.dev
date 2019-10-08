@@ -15,6 +15,7 @@ module.exports = {
         title: 'Get started with the Notifications API',
         pathItems: [
           'codelab-notifications-api-get-started',
+          'codelab-notifications-service-worker',
         ],
       },
     ],
