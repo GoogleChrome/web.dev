@@ -19,7 +19,7 @@ alt: Phone showing several notification badges
 ---
 
 {% Aside 'caution' %}
-  We're currently working on this API as part of the new
+  This API as part of the new
   [capabilities project](https://developers.google.com/web/updates/capabilities),
   and starting in Chrome 73 it is available as an [**origin trial**](#ot).
   This post will be updated as the Badging API evolves.
