@@ -189,7 +189,7 @@ different from the spec?
 
 * File a bug at <https://new.crbug.com>. Be sure to include as much detail
   as you can, simple instructions for reproducing, and set
-  Components to `UI>Browser>WebAppInstalls`. Glitch works great for
+  Components to `UI>Browser>WebAppInstalls`. [Glitch](https://glitch.com) works great for
   sharing quick and easy repros.
 
 ### Planning to use the API?
@@ -201,7 +201,7 @@ support them.
 * Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) tagged with
   `#badgingapi` and let us know where and how you're using it.
 
-## Helpful Links {: #helpful }
+## Helpful links {: #helpful }
 
 * [Public explainer][explainer]
 * [Badging API Demo][demo] | [Badging API Demo source][demo-source]
