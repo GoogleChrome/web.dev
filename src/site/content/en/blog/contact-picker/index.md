@@ -1,11 +1,11 @@
 ---
-title: A Contact Picker for the Web
+title: A contact picker for the web
 subhead: The Contact Picker API is an on-demand API that allows users to select entries from their contact list and share limited details of the selected entries with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2019-09-06
+updated: 2019-10-08
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - capabilities
@@ -248,7 +248,7 @@ with the site.
 
 We want to hear about your experiences with the Contact Picker API.
 
-### Tell us about the API design {: .hide-from-toc }
+### Tell us about the API design
 
 Is there something about the API that doesn't work as expected? Or
 are there missing methods or properties that you need to implement your idea?
@@ -256,7 +256,7 @@ are there missing methods or properties that you need to implement your idea?
 * File a spec issue on the [WICG Contact Picker API GitHub repo][issues],
   or add your thoughts to an existing issue.
 
-### Problem with the implementation? {: .hide-from-toc }
+### Problem with the implementation?
 
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
@@ -266,7 +266,7 @@ different from the spec?
   set *Components* to `Blink>Contacts`. [Glitch](https://glitch.com) works great
   for sharing quick and easy repros.
 
-### Planning to use the API? {: .hide-from-toc }
+### Planning to use the API?
 
 Are you planning to use the Contact Picker API? Your public support helps us
 prioritize features, and shows other browser vendors how critical it is to
@@ -276,7 +276,7 @@ support them.
 * Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#contactpicker` and
   let us know where and how you're using it.
 
-## Helpful Links {: #helpful }
+## Helpful links {: #helpful }
 
 * [Public explainer][explainer]
 * [Contact Picker Specification][spec]
