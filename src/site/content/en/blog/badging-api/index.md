@@ -1,5 +1,5 @@
 ---
-title: Badging for App Icons
+title: Badging for app icons
 subhead: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen.
 authors:
   - petelepage
