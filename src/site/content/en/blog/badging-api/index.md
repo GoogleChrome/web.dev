@@ -163,7 +163,7 @@ that device. For example, while the Badging API isn't supported on Android,
 Android only ever shows a dot instead of a numeric value.
 
 Don't assume anything about how the user agent wants to display the badge.
-We expect some user agents will take a number like "4000" and rewrite it as
+Some user agents may take a number like "4000" and rewrite it as
 "99+". If you saturate the badge yourself (for example by setting it to "99")
 then the "+" won't appear. No matter the actual number, just set
 `Badge.set(unreadCount)` and let the user agent deal with displaying it
