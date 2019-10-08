@@ -83,7 +83,7 @@ See it in action
 
 {% Aside %}
   While the Badging API *in Chrome* requires an installed app
-  with an icon that can actually be badged, we advise against
+  with an icon that can actually be badged, you shouldn't
   making calls to the Badging API dependent on the install state.
   The Badging API can apply to *anywhere* a browser might want to show a badge,
   so developers shouldn't make any assumptions about situations where
