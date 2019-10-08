@@ -13,6 +13,12 @@ module.exports = {
     to be able to see and interact with page content.`,
     topics: [
       {
+        title: 'Performance audit scoring',
+        pathItems: [
+          'performance-scoring',
+        ],
+      },
+      {
         title: 'Metrics',
         pathItems: [
           'first-contentful-paint',
@@ -20,7 +26,7 @@ module.exports = {
           'speed-index',
           'first-cpu-idle',
           'interactive',
-          'estimated-input-latency',
+          'max-potential-fid',
         ],
       },
       {

@@ -5,7 +5,7 @@
     "clean": "rm -rf dist",
     "lint:md": "remark -q -f .",
     "lint:scss": "sass-lint -v",
-    "lint:js": "eslint .",
+    "lint:js": "eslint . --fix",
     "lint": "run-s lint:md lint:scss lint:js",
     "build:gulp": "npx gulp build",
     "build:eleventy": "eleventy --quiet",

@@ -4,6 +4,7 @@ title: Minify JavaScript
 description: |
   Learn about the unminified-javascript audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - unminified-javascript
 ---
@@ -15,10 +16,7 @@ along with the potential savings in kilobytes (KB)
 when these files are minified:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="unminified-javascript.png" alt="Minify JavaScript">
-  <figcaption class="w-figcaption">
-    Minify JavaScript.
-  </figcaption>
+  <img class="w-screenshot" src="unminified-javascript.png" alt="A screenshot of the Lighthouse Minify JavaScript audit">
 </figure>
 
 ## How to minify & compress your JavaScript files
@@ -45,6 +43,6 @@ is the most widely used compression format for server and client interactions
 is a newer compression algorithm which can provide even better compression results than Gzip
 (see [Minify and compress network payloads with brotli](/codelab-text-compression-brotli)).
 
-## More information
+## Resources
 
-- [Unminified JavaScript audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-javascript.js)
+- [Source code for **Minify JavaScript** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unminified-javascript.js)

@@ -5,6 +5,7 @@ description: |
   Learn how third-party code, like advertising networks and analytics services, affects page load performance,
   and how you can optimize third-party code.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - third-party-summary
 ---
@@ -19,11 +20,8 @@ Lighthouse flags pages that have third-party code that blocks the [main thread] 
 longer:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="third-party-summary.png" 
-       alt="A screenshot of the 'Reduce the impact of third-party code' audit.">
-  <figcaption class="w-figcaption">
-    <b>Reduce the impact of third-party code</b>
-  </figcaption>
+  <img class="w-screenshot" src="third-party-summary.png"
+       alt="A screenshot of the Lighthouse Reduce the impact of third-party code audit">
 </figure>
 
 A third-party script is any script hosted on a domain that's different than the domain of the URL
@@ -34,13 +32,13 @@ the audit fails.
 ## How to reduce the impact of third-party code
 
 See [Identify slow third-party scripts](/identify-slow-third-party-javascript/) to learn how to use
-Chrome DevTools and other Lighthouse audits to detect problematic third-party code, and 
+Chrome DevTools and other Lighthouse audits to detect problematic third-party code, and
 see [Efficiently load third-party JavaScript](/efficiently-load-third-party-javascript/) for
 optimization strategies.
 
 ## Resources
 
-- [Source code for the **Reduce the impact of third-party code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-summary.js)
-- [Loading Third-Party JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)
+- [Source code for **Reduce the impact of third-party code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-summary.js)
+- [Loading Third-party JavaScript](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)
 
 [main thread]: https://developer.mozilla.org/en-US/docs/Glossary/Main_thread

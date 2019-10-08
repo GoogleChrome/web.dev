@@ -2,22 +2,21 @@
 layout: post
 title: Keep request counts low and transfer sizes small
 description: |
-  An overview of how high resource counts and large transfer sizes affect load performance, 
-  and strategies for reducing request counts and transfer sizes.
+  Learn how high resource counts and large transfer sizes affect load performance.
+  Get strategies for reducing request counts and transfer sizes.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - resource-summary
 ---
 
-The **Keep request counts low and transfer sizes small** audit tells you how many network requests 
-were made and how much data was transferred while your page loaded.
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+reports how many network requests were made and
+how much data was transferred while your page loaded:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="resource-summary.jpg" 
-       alt="Keep request counts low and transfer sizes small">
-  <figcaption class="w-figcaption">
-    <b>Keep request counts low and transfer sizes small</b>
-  </figcaption>
+  <img class="w-screenshot" src="resource-summary.png"
+       alt="A screenshot of the Lighthouse Keep request counts low and transfer sizes small audit">
 </figure>
 
 * The **Requests** and **Transfer Size** values for the **Total** row are computed by adding the values
@@ -41,7 +40,7 @@ type of resource is being requested.
 
 ### CSS and JavaScript
 
-Requests for CSS and JavaScript files are render-blocking by default. In other words, 
+Requests for CSS and JavaScript files are render-blocking by default. In other words,
 browsers can't render content to the screen until all CSS and JavaScript requests are finished.
 If any of these files is hosted on a slow server, that single slow server can delay the entire
 rendering process. See [Optimize your JavaScript][js], [Optimize your third-party resources][3p],
@@ -62,7 +61,7 @@ Affected metrics: [First Contentful Paint][fcp], [First Meaningful Paint][fmp], 
 
 Inefficient loading of font files can cause invisible text during the page load. See
 [Optimize your fonts][fonts] to learn how to default to a font that's
-available on the user's device and then switch over to your custom font when it has finished downloading.
+available on the user's device and then switch to your custom font when it has finished downloading.
 
 Affected metrics: [First Contentful Paint][fcp]
 
@@ -75,8 +74,8 @@ Affected metrics: [First Contentful Paint][fcp]
 
 ### Media
 
-GIF files are often very large. See [Replace GIFs with videos][gifs] to learn how to load
-animations faster.
+Animated GIF files are often very large.
+See [Replace GIFs with videos][gifs] to learn how to load animations faster.
 
 Affected metrics: [First Contentful Paint][fcp]
 
@@ -87,7 +86,7 @@ Once you've optimized your code to reduce request counts and transfer sizes, see
 
 ## Resources
 
-- [Source code for the **Keep request counts low and transfer sizes small** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/resource-summary.js)
+[Source code for **Keep request counts low and transfer sizes small** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/resource-summary.js)
 
 [css]: /fast#optimize-your-css
 [js]: /fast#optimize-your-javascript

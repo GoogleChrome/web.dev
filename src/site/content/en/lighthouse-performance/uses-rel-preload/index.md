@@ -4,6 +4,7 @@ title: Preload key requests
 description: |
   Learn about the uses-rel-preload audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - uses-rel-preload
 ---
@@ -12,10 +13,7 @@ The Opportunities section of your Lighthouse report
 flags the third level of requests in your critical request chain as preload candidates:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-rel-preload.png" alt="Preload key requests">
-  <figcaption class="w-figcaption">
-    Preload key requests.
-  </figcaption>
+  <img class="w-screenshot" src="uses-rel-preload.png" alt="A screenshot of the Lighthouse Preload key requests audit">
 </figure>
 
 ## How Lighthouse flags determines preload candidates
@@ -87,6 +85,6 @@ to see browser support for preload links.
 
 See also [Preload critical assets to improve loading speed](/preload-critical-assets)
 
-## More information
+## Resources
 
-- [Preload key requests audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)
+- [Source code for **Preload key requests** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)
