@@ -35,55 +35,55 @@ aren't included in the table because they don't affect your score.
     </thead>
     <tbody>
       <tr>
-        <td><a href="/aria-allowed-attr/">[aria-*] attributes do not match their roles</a></td>
+        <td><a href="/aria-allowed-attr/"><code>[aria-*]</code> attributes do not match their roles</a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/aria-required-attr/">[role]s do not have all required [aria-*] attributes</a></td>
+        <td><a href="/aria-required-attr/"><code>[role]</code>s do not have all required <code>[aria-*]</code> attributes</a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/aria-required-children/">Elements with an ARIA [role] that require children to contain a specific [role] are missing some or all of those required children</a></td>
+        <td><a href="/aria-required-children/">Elements with an ARIA <code>[role]</code> that require children to contain a specific <code>[role]</code> are missing some or all of those required children</a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/aria-required-parent/">[role]s are not contained by their required parent element</a></td>
+        <td><a href="/aria-required-parent/"><code>[role]</code>s are not contained by their required parent element</a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/aria-roles/">[role] values are not valid</a></td>
+        <td><a href="/aria-roles/"><code>[role]</code> values are not valid</a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/aria-valid-attr-value/">[aria-*] attributes do not have valid values</a></td>
+        <td><a href="/aria-valid-attr-value/"><code>[aria-*]</code> attributes do not have valid values</a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/aria-valid-attr/">[aria-*] attributes are not valid or misspelled</a></td>
+        <td><a href="/aria-valid-attr/"><code>[aria-*]</code> attributes are not valid or misspelled</a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/audio-caption/">&#60;audio&#62; elements are missing a &#60;track&#62; element with [kind="captions"]</a></td>
+        <td><a href="/audio-caption/"><code>&#60;audio&#62;</code> elements are missing a <code>&#60;track&#62;</code> element with <code>[kind="captions"]</code></a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/video-caption/">&#60;video&#62; elements do not contain a &#60;track&#62; element with [kind="captions"]</a></td>
+        <td><a href="/video-caption/"><code>&#60;video&#62;</code> elements do not contain a <code>&#60;track&#62;</code> element with <code>[kind="captions"]</code></a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/video-description/">&#60;video&#62; elements do not contain a &#60;track&#62; element with [kind="description"]</a></td>
+        <td><a href="/video-description/"><code>&#60;video&#62;</code> elements do not contain a <code>&#60;track&#62;</code> element with <code>[kind="description"]</code></a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/duplicate-id/">[id] attributes on the page are not unique</a></td>
+        <td><a href="/duplicate-id/"><code>[id]</code> attributes on the page are not unique</a></td>
         <td>1</td>
       </tr>
       <tr>
-        <td><a href="/meta-refresh/">The document uses &#60;meta http-equiv="refresh"&#62;</a></td>
+        <td><a href="/meta-refresh/">The document uses <code>&#60;meta http-equiv="refresh"&#62;</code></a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/meta-viewport/">[user-scalable="no"] is used in the &#60;meta name="viewport"&#62; element or the [maximum-scale] attribute is less than 5</a></td>
+        <td><a href="/meta-viewport/"><code>[user-scalable="no"]</code> is used in the <code>&#60;meta name="viewport"&#62;</code> element or the <code>[maximum-scale]</code> attribute is less than 5</a></td>
         <td>10</td>
       </tr>
       <tr>
@@ -91,15 +91,15 @@ aren't included in the table because they don't affect your score.
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/html-has-lang/">&#60;html&#62; element does not have a [lang] attribute</a></td>
+        <td><a href="/html-has-lang/"><code>&#60;html&#62;</code> element does not have a <code>[lang]</code> attribute</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/html-lang-valid/">&#60;html&#62; element does not have a valid value for its [lang] attribute</a></td>
+        <td><a href="/html-lang-valid/"><code>&#60;html&#62;</code> element does not have a valid value for its <code>[lang]</code> attribute</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/valid-lang/">[lang] attributes do not have a valid value</a></td>
+        <td><a href="/valid-lang/"><code>[lang]</code> attributes do not have a valid value</a></td>
         <td>3</td>
       </tr>
       <tr>
@@ -111,15 +111,15 @@ aren't included in the table because they don't affect your score.
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/frame-title/">&#60;frame&#62; or &#60;iframe&#62; elements do not have a title</a></td>
+        <td><a href="/frame-title/"><code>&#60;frame&#62;</code> or <code>&#60;iframe&#62;</code> elements do not have a title</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/image-alt/">Image elements do not have [alt] attributes</a></td>
+        <td><a href="/image-alt/">Image elements do not have <code>[alt]</code> attributes</a></td>
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/input-image-alt/">&#60;input type="image"&#62; elements do not have [alt] text</a></td>
+        <td><a href="/input-image-alt/"><code>&#60;input type="image"&#62;</code> elements do not have <code>[alt]</code> text</a></td>
         <td>10</td>
       </tr>
       <tr>
@@ -131,11 +131,11 @@ aren't included in the table because they don't affect your score.
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/object-alt/">&#60;object&#62; elements do not have [alt] text</a></td>
+        <td><a href="/object-alt/"><code>&#60;object&#62;</code> elements do not have <code>[alt]</code> text</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/accesskeys/">[accesskey] values are not unique</a></td>
+        <td><a href="/accesskeys/"><code>[accesskey]</code> values are not unique</a></td>
         <td>3</td>
       </tr>
       <tr>
@@ -143,35 +143,35 @@ aren't included in the table because they don't affect your score.
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/tabindex/">Some elements have a [tabindex] value greater than 0</a></td>
+        <td><a href="/tabindex/">Some elements have a <code>[tabindex]</code> value greater than 0</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/definition-list/">&#60;dl&#62;s do not contain only properly ordered &#60;dt&#62; and &#60;dd&#62; groups, &#60;script&#62;, or &#60;template&#62; elements</a></td>
+        <td><a href="/definition-list/"><code>&#60;dl&#62;</code>s do not contain only properly ordered <code>&#60;dt&#62;</code> and <code>&#60;dd&#62;</code> groups, <code>&#60;script&#62;</code>, or <code>&#60;template&#62;</code> elements</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/dlitem/">Definition list items are not wrapped in &#60;dl&#62; elements</a></td>
+        <td><a href="/dlitem/">Definition list items are not wrapped in <code>&#60;dl&#62;</code> elements</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/layout-table/">Presentational &#60;table&#62; elements do not avoid using &#60;th&#62;, &#60;caption&#62;, or the [summary] attribute</a></td>
+        <td><a href="/layout-table/">Presentational <code>&#60;table&#62;</code> elements do not avoid using <code>&#60;th&#62;</code>, <code>&#60;caption&#62;</code>, or the <code>[summary]</code> attribute</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/list/">Lists do not contain only &#60;li&#62; elements and script supporting elements (&#60;script&#62; and &#60;template&#62;)</a></td>
+        <td><a href="/list/">Lists do not contain only <code>&#60;li&#62;</code> elements and script supporting elements (<code>&#60;script&#62;</code> and <code>&#60;template&#62;</code>)</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/listitem/">List items (&#60;li&#62;) are not contained within &#60;ul&#62; or &#60;ol&#62; parent elements</a></td>
+        <td><a href="/listitem/">List items (<code>&#60;li&#62;</code>) are not contained within <code>&#60;ul&#62;</code> or <code>&#60;ol&#62;</code> parent elements</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/td-headers-attr/">Cells in a &#60;table&#62; element that use the [headers] attribute refer to an element id not found within the same table</a></td>
+        <td><a href="/td-headers-attr/">Cells in a <code>&#60;table&#62;</code> element that use the <code>[headers]</code> attribute refer to an element id not found within the same table</a></td>
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/th-has-data-cells/">&#60;th&#62; elements and elements with [role="columnheader"/"rowheader"] do not have data cells they describe</a></td>
+        <td><a href="/th-has-data-cells/"><code>&#60;th&#62;</code> elements and elements with <code>[role="columnheader"/"rowheader"]</code> do not have data cells they describe</a></td>
         <td>3</td>
       </tr>
     </tbody>
