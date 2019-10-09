@@ -11,52 +11,47 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
-If they don't have inner text,
-custom controls must have either the `aria-label` or `aria-labelledby` attribute
-to be announced properly by assistive technologies.
-These attributes provide [accessible names](/labels-and-text-alternatives)
-that you can use to convey the purpose of custom controls.
+{% include 'content/lighthouse-accessibility/accessible-names.njk' %}
 
-## How Lighthouse identifies inputs with inaccessible names
+## How Lighthouse identifies inputs missing accessible names
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse)
-flags input fields whose names aren't accessible to assistive technologies:
+flags custom input fields whose names
+aren't accessible to assistive technologies:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="aria-input-field-name.png"
-    alt="Lighthouse audit showing input elements with inaccessible names">
+    alt="Lighthouse audit showing custom input elements without accessible names">
 </figure>
 
 Elements that have any of the following ARIA roles
 but don't have accessible names will cause this audit to fail:
-- [combobox](https://www.w3.org/TR/wai-aria-practices-1.1/#combobox)
-- [listbox](https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox)
-- [searchbox](https://www.w3.org/TR/wai-aria-1.1/#searchbox)
-- [slider](https://www.w3.org/TR/wai-aria-practices-1.1/#slider)
-- [spinbutton](https://www.w3.org/TR/wai-aria-practices-1.1/#spinbutton)
-- [textbox](https://www.w3.org/TR/wai-aria-1.1/#textbox)
+- <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#combobox" rel="noopener">combobox</a>
+- <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#Listbox" rel="noopener">listbox</a>
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#searchbox" rel="noopener">searchbox</a>
+- <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#slider" rel="noopener">slider</a>
+- <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#spinbutton" rel="noopener">spinbutton</a>
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#textbox" rel="noopener">textbox</a>
 
-{% Aside 'caution' %}
-Many of these input types can be created with native HTML5 elements,
-which come with built-in behaviors and accessible semantics
-that can be time consuming to replicate.
-Consider [using native elements](/semantics-and-screen-readers/#use-semantic-html)
-instead of ARIA roles if possible.
-{% endAside %}
+This audit is similar to the
+[**Not all ARIA toggle fields have accessible names** audit](/aria-toggle-field-name)
+but checks a different set of ARIA roles.
 
+{% include 'content/lighthouse-accessibility/use-native.njk' %}
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to add accessible names to your input fields
+## How to add accessible names to your custom input fields
 
 The easiest way to provide an accessible name for most elements
 is to include text content in the element.
-However, custom input fields don't have inner text,
-so you can use one of two strategies.
+However, custom input fields typically don't have inner text,
+so you can use one of two strategies instead.
 
 ### Option 1: Add an `aria-label` attribute to the element
 
 Use the `aria-label` attribute to define the name for the current element.
+
 For example, this custom combobox will be announced as "country"
 to assistive technology users:
 
@@ -68,20 +63,21 @@ to assistive technology users:
 
 Use the `aria-labelledby` attribute to identify another element, using its ID,
 to serve as the name for the current element.
-For example, the this custom searchbox refers to the `searchLabel` paragraph
+
+For example, this custom searchbox refers to the `searchLabel` paragraph
 as its label and will be announced as "Search currency pairs":
 
 ```html
 <p id="searchLabel">Search currency pairs:</p>
-<div id="pass3"
+<div id="search"
     role="searchbox"
     contenteditable="true"
-    aria-labelledby="pass3Label"></div>
+    aria-labelledby="searchLabel"></div>
 ```
-
-
 
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-input-field-name.js" rel="noopener">Source code for **Not all ARIA input fields have accessible names** audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-input-field-name" rel="noopener">ARIA input fields have an accessible name</a>
 - [Labels and text alternatives](/labels-and-text-alternatives)
+- [Use semantic HTML for easy keyboard wins](/use-semantic-html)

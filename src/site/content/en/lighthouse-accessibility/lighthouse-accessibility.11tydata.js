@@ -39,6 +39,7 @@ module.exports = {
           'aria-required-children',
           'aria-required-parent',
           'aria-roles',
+          'aria-toggle-field-name',
           'aria-valid-attr-value',
           'aria-valid-attr',
         ],
