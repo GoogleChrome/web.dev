@@ -52,7 +52,7 @@ For example:
 ```
 
 You may also need to add the appropriate ARIA roles to the custom control elements.
-See [Manually check all custom controls have appropriate ARIA roles](/custom-control-roles).
+See [Custom controls have ARIA roles](/custom-control-roles).
 
 If you're not seeing a focus indicator,
 consider using `:focus` to always show a focus indicator.
@@ -80,5 +80,5 @@ Learn more in [How to do an Accessibility Review](https://developers.google.com/
 ## Resources
 
 - [Source code for **Interactive controls are keyboard focusable** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/focusable-controls.js)
-- [Ensure `tabindex` attribute values are not greater than 0](/tabindex)
+- [Some elements have a `[tabindex]` value greater than `0`](/tabindex)
 - [Use semantic HTML for easy keyboard wins](/use-semantic-html)

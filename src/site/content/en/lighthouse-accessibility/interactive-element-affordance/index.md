@@ -40,7 +40,7 @@ to announce the name of each interactive control,
 the role of that control, and the current interactive state.
 If the role of an element is unclear, and the state of the element is unclear,
 you may need to add the appropriate ARIA roles.
-Learn more in [Manually check all custom controls have appropriate ARIA roles](/custom-control-roles).
+Learn more in [Custom controls have ARIA roles](/custom-control-roles).
 
 It is also important to pay close attention to how interactive elements are labeled.
 Screen reader users rely on labels to understand the context of that element.

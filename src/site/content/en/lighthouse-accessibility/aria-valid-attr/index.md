@@ -45,7 +45,7 @@ Check the role definition that the attribute describes,
 and then check the values for that attribute.
 
 For more information on this audit,
-see [ARIA attributes must conform to valid values](https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr-value).
+see [ARIA attributes must conform to valid values](https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr).
 
 ## Resources
 

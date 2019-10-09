@@ -53,7 +53,7 @@ Learn more in
 The example above includes both audio descriptions for visually impaired users
 and captions for hearing impaired users.
 Captions make video elements usable for deaf or hearing-impaired users.
-See also [Ensures `<video>` elements have captions](/video-caption).
+See also [`<video>` elements do not contain a `<track>` element with `[kind="captions"]`](/video-caption).
 {% endAside %}
 
 ## Resources

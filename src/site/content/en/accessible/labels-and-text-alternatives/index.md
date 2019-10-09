@@ -68,7 +68,7 @@ is also explained further below.
     <tbody>
       <tr>
         <td>
-          Document has a &lt;title&gt; element
+          Document doesn't have a <code>&lt;title&gt;</code> element
         </td>
         <td>
           <a href="#label-documents-and-frames">Label documents and frames</a>

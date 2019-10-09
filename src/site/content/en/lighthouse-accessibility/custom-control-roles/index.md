@@ -7,7 +7,7 @@ description: |
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
-  - custom-controls-labels
+  - custom-control-roles
 ---
 
 Check all custom controls have appropriate `role` and

@@ -59,7 +59,7 @@ Learn more in
 The example above includes both captions for hearing impaired users,
 and audio descriptions for visually impaired users.
 Audio descriptions provide context beyond dialog, such as scenery, facial expressions.
-See also [Ensures `<video>` elements have audio descriptions](/video-description).
+See also [`<video>` elements do not contain a `<track>` element with `[kind="description"]`](/video-description).
 {% endAside %}
 
 ## Resources
