@@ -77,6 +77,9 @@ h4 code,
 h5 code,
 h6 code {
   border: 0;
+  color: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 // Github-like theme for Prism.js
