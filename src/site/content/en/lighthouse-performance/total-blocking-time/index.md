@@ -11,7 +11,12 @@ date: 2019-10-09
 
 Total Blocking Time (TBT) is one of the metrics tracked in the **Performance** section
 of the Lighthouse report. Each metric captures some aspect of page load speed.
-The Lighthouse report displays TBT in milliseconds.
+
+The Lighthouse report displays TBT in milliseconds:
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="total-blocking-time.jpg" alt="A screenshot of the Lighthouse Total Blocking Time audit">
+</figure>
 
 ## What TBT measures
 
