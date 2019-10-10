@@ -13,10 +13,10 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/accessible-names.njk' %}
 
-## How Lighthouse identifies inputs missing accessible names
+## How Lighthouse identifies ARIA inputs without accessible names
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse)
-flags custom input fields whose names
+flags custom ARIA input fields whose names
 aren't accessible to assistive technologies:
 
 <figure class="w-figure">
@@ -41,7 +41,7 @@ but checks a different set of ARIA roles.
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to add accessible names to your custom input fields
+## How to add accessible names to your custom ARIA input fields
 
 The easiest way to provide an accessible name for most elements
 is to include text content in the element.

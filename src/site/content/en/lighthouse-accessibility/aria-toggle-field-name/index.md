@@ -14,10 +14,10 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/accessible-names.njk' %}
 
-## How Lighthouse identifies toggle fields missing accessible names
+## How Lighthouse identifies ARIA toggle fields without accessible names
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-flags custom toggle fields whose names
+flags custom ARIA toggle fields whose names
 aren't accessible to assistive technologies:
 
 <figure class="w-figure">
@@ -41,7 +41,7 @@ but checks a different set of ARIA roles.
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to add accessible names to your custom toggle fields
+## How to add accessible names to your custom ARIA toggle fields
 
 ### Option 1: Add inner text to the element
 
