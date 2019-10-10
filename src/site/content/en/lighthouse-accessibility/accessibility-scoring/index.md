@@ -47,6 +47,10 @@ aren't included in the table because they don't affect your score.
         <td>10</td>
       </tr>
       <tr>
+        <td><a href="/heading-order">Heading elements are not in a sequentially descending order</a></td>
+        <td>3</td>
+      </tr>
+      <tr>
         <td><a href="/tabindex/">Some elements have a <code>[tabindex]</code> value greater than <code>0</code></a></td>
         <td>3</td>
       </tr>

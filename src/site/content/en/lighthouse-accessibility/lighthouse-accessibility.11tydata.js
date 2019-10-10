@@ -26,6 +26,7 @@ module.exports = {
           'accesskeys',
           'bypass',
           'duplicate-id-active',
+          'heading-order',
           'tabindex',
         ],
       },
