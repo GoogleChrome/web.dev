@@ -1,6 +1,6 @@
 ---
 title: Stay awake with the WakeLock API
-subhead: The Wake Lock API provides a way to prevent the device from dimming or locking the screen or prevent the device from going to sleep when an application needs to keep running.
+subhead: The Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 authors:
   - petelepage
   - thomassteiner
@@ -13,6 +13,7 @@ tags:
   - wake-lock
 hero: hero.jpg
 alt: Sleeping kowla
+draft: true
 ---
 
 {% Aside %}
@@ -134,14 +135,14 @@ if ('WakeLock' in window) {
     const controller = new AbortController();
     const signal = controller.signal;
     window.WakeLock.request('screen', {signal})
-    .catch((e) => {
-      if (e.name === 'AbortError') {
-        wakeLockCheckbox.checked = false;
-        console.log('Wake Lock was aborted');
-      } else {
-        console.error(`${e.name}, ${e.message}`);
-      }
-    });
+        .catch((e) => {
+          if (e.name === 'AbortError') {
+            wakeLockCheckbox.checked = false;
+            console.log('Wake Lock was aborted');
+          } else {
+            console.error(`${e.name}, ${e.message}`);
+          }
+        });
     wakeLockCheckbox.checked = true;
     console.log('Wake Lock is active');
     return controller;
