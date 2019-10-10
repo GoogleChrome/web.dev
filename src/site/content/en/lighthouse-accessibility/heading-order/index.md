@@ -9,10 +9,7 @@ web_lighthouse:
   - heading-order
 ---
 
-Screen readers users often navigate an unfamiliar page by exploring headings.
-By using the correct headings,
-you can dramatically improve the navigation experience on your site
-for users of assistive technology.
+{% include 'content/lighthouse-accessibility/why-headings.njk' %}
 
 ## How the Lighthouse heading levels audit fails
 
@@ -24,33 +21,57 @@ flags pages whose headings skip one or more levels:
     alt="Lighthouse audit showing headings that skip levels">
 </figure>
 
+For example, using an `<h1>` element for your page title
+and then using `<h3>` elements for the page's main sections
+will cause the audit to fail
+because the `<h2>` level is skipped:
+
+```html
+<h1>Page title</h1>
+  <h3>Section heading 1</h3>
+  …
+  <h3>Section heading 2</h3>
+  …
+```
+
+
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
 ## How to fix poorly structured headings
 
-Use headings to create a structural outline for your page.
-Create a skeleton or scaffold of the page
-that anyone navigating by headings can use to form a mental picture.
+- Make all heading elements follow a logical, numerical order
+  that reflects the structure of your content.
+- Make sure your heading text clearly conveys the content
+  in the associated section.
 
-Use [this list of landmark elements](https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/HTML5.html) to check your page.
-Click the "Show Headings" button to see a structural outline for the page.
-
-Make sure all headings follow a logical, numerical order.
 For example:
 
 ```html
-<h1>Company name</h1>
+<h1>Page title</h1>
 <section>
   <h2>Section Heading</h2>
   …
-  <h3>Sub-section Heading</h3>
+    <h3>Sub-section Heading</h3>
 </section>
 ```
 
-Don't skip heading levels.
-For example, look out for an `<h1>` heading followed by an `<h3>` heading.
-It's an anti-pattern to skip heading levels to use the browser's default heading styles.
-Fix any skipped heading levels and use your own CSS for styling.
+One way to check your heading structure is to ask,
+"If someone created an outline of my page using only the headings,
+would it make sense?"
+
+You can also use tools like Microsoft's
+<a href="https://accessibilityinsights.io/" rel="noopener">Accessibility Insights extension</a>
+to visualize your page structure and catch out-of-order heading elements.
+
+{% Aside 'caution' %}
+Less experienced developers sometimes skip heading levels
+to achieve a desired visual style.
+For example, they may use an `<h3>` element
+because they feel the `<h2>` text is too large.
+This is considered an **anti-pattern**.
+Instead, use a correctly sequenced heading structure
+and use CSS to visually style the headings as desired.
+{% endAside %}
 
 See the [Headings and landmarks](/headings-and-landmarks)
 post for more information.
