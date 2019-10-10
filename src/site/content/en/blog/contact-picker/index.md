@@ -26,13 +26,11 @@ draft: true
 
 <style>
   #video-demo { max-height: 600px; }
-  figcaption { font-size: small; }
 </style>
 
 <a href="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
   <video id="video-demo" loop autoplay muted
          class="w-figure w-figure--inline-right w-screenshot"
-         style="max-width:50%"
          poster="contact-picker-demo.jpg">
     <source type="video/webm"
             src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">
@@ -186,7 +184,7 @@ a user gesture, on a [secure][secure-contexts], top-level browsing context.
 This ensures that a site can't show the picker on page load, or randomly show
 the picker without any context.
 
-<figure class="w-figure w-figure--inline-right" style="max-width:50%">
+<figure class="w-figure w-figure--inline-right">
   <img src="contact-picker-user-choice.jpg" class="w-screenshot"
        alt="Screen shot, users can choose which properties to share.">
   <figcaption>
@@ -230,7 +228,7 @@ telephone numbers.
 
 <div class="clearfix"></div>
 
-<figure class="w-figure w-figure--inline-right" style="max-width:50%">
+<figure class="w-figure w-figure--inline-right">
   <img src="contact-picker-long-press.jpg" class="w-screenshot"
        alt="Screen shot of picker when a contact is long-pressed.">
   <figcaption>
