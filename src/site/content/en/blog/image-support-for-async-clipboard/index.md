@@ -16,16 +16,17 @@ tags:
   - clipboard
 hero: hero.jpg
 alt: Clipboard with shopping list
+draft: true
 ---
 
-Chrome 66, added support for the
+Chrome 66 added support for the
 [text portion](https://developers.google.com/web/updates/2018/03/clipboardapi)
 of the [Asynchronous Clipboard API](https://w3c.github.io/clipboard-apis/#async-clipboard-api).
 Chrome 76 has added support for images makes it easy to programmatically
-copy and paste **png** images.
+copy and paste **PNG** images.
 
 {% Aside 'caution' %}
-  At the time of writing, only png files are supported. Support for other
+  At the time of writing, only PNG files are supported. Support for other
   images and file formats will be added in the future.
 {% endAside %}
 
@@ -133,7 +134,7 @@ generic `write()` method.
 
 To write an image to the clipboard, you need the image as a [`Blob`][blob].
 One way to do this is by requesting the image from an server by calling
-`fetch()` (or `XMLHTTPReuest()`). The `response` object returned by `fetch()`
+`fetch()` (or `XMLHTTPRequest()`). The `response` object returned by `fetch()`
 has a [`blob()` method][blob-method] and `XMLHTTPRequest()` let's you set
 `"blob"` as the [`responseType`][blob-response-type].
 
@@ -148,7 +149,7 @@ support for multiple images in the future.
 The `ClipboardItem` takes an object with the MIME type of the image as the key,
 and the actual blob as the value. The sample code below shows a future-proof way
 to do this by using the [`Object.defineProperty()`][object-define-prop] method.
-The MIME used as the key is retrieved from `blob.type`. This approach ensures
+The MIME type used as the key is retrieved from `blob.type`. This approach ensures
 that your code will be ready for future image types as well as other MIME types
 that may be supported in the future.
 
@@ -176,10 +177,10 @@ also asynchronous, and Promise-based.
 
 To read an image from the clipboard, obtain a list of `ClipboardItem` objects,
 then iterate over them. Since everything is asynchronous, use the
-[`for ... of`][for-of] iterator, since it handles async/await code nicely.
+[`for...of`][for-of] iterator, since it handles async/await code nicely.
 
 Each `ClipboardItem` can hold its contents in different types, so you'll
-need to iterate over the list of types, again using a `for ... of` loop.
+need to iterate over the list of types, again using a `for...of` loop.
 For each type, call the `getType()` method with the current type as an argument
 to obtain the corresponding image `Blob`. As before, this code is not tied
 to images, and will work with other future file types.
@@ -259,7 +260,7 @@ carefully evaluated. One new challenge are so-called
 files that appear to be innocent, but—once decompressed—turn out to be huge.
 Even more serious than large images are specifically crafted malicious images
 that are designed to exploit known vulnerabilities in the native operating
-system. This is why we can't just copy the image directly to the native
+system. This is why Chrome can't just copy the image directly to the native
 clipboard, and why in Chrome we require that the image be transcoded.
 
 The [specification](https://w3c.github.io/clipboard-apis/#image-transcode)
@@ -274,8 +275,8 @@ on whether, and how the transcoding details should be specified.
 
 ## Next Steps
 
-We are actively working on expanding the Asynchronous Clipboard API to add
-support a larger number of data types. Due to the potential risks we are
+Chrome is actively working on expanding the Asynchronous Clipboard API to add
+support a larger number of data types. Due to the potential risks Chrome is
 treading carefully. To stay up to date on Chrome's progress, you can star the
 [bug][cr-bug] to be notified about changes.
 
@@ -299,7 +300,7 @@ and [Gary Kačmarčík](https://www.linkedin.com/in/garykac/).
 Darwin also provided the [demo](https://jsfiddle.net/0794oysr/2/).
 My introduction of this article is inspired by
 [Jason Miller](https://twitter.com/_developit?lang=en)'s
-original [text](/web/updates/2018/03/clipboardapi).
+original [text](https://developers.google.com/web/updates/2018/03/clipboardapi).
 Thanks to [Kyarik](https://github.com/kyarik) and again Gary Kačmarčík for
 reviewing this article.
 
