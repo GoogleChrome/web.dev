@@ -10,28 +10,32 @@ web_lighthouse:
   - valid-lange
 ---
 
-Specifying a valid
-[BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question)
-helps screen readers pronounce text correctly for screen reader users.
+{% include 'content/lighthouse-accessibility/lang-attr.njk' %}
 
-## How this Lighthouse audit fails
+If the language changes within your page,
+you must specify a valid
+<a href="https://www.w3.org/International/questions/qa-choosing-language-tags#question" rel="noopener">BCP 47 language</a>
+to ensure that the section in the new language is pronounced correctly.
 
-Lighthouse flags `lang` attributes that don't have a valid value:
+## How the Lighthouse invalid `lang` attribute audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags elements that have a `lang` attribute with an invalid value:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="valid-lang.png" alt="Lighthouse audit showing `lang` attribute does not have a valid value">
+  <img class="w-screenshot" src="valid-lang.png"
+    alt="Lighthouse audit showing elements with an invalid value for the lang attribute">
 </figure>
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
 ## How to fix invalid `lang` attribute values
 
-Use only valid [BCP 47 language codes](https://www.w3.org/International/questions/qa-choosing-language-tags#question)
+Use only valid
+<a href="https://www.w3.org/International/questions/qa-choosing-language-tags#question" rel="noopener">BCP 47 language codes</a>
 in all `lang` attribute values.
-
-Learn more in [lang attribute must have a valid value](https://dequeuniversity.com/rules/axe/3.3/valid-lang).
 
 ## Resources
 
-- [Source code for **`[lang]` attributes do not have a valid value** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/valid-lang.js)
-- [lang attribute must have a valid value](https://dequeuniversity.com/rules/axe/3.3/valid-lang)
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/valid-lang.js" rel="noopener">Source code for **`[lang]` attributes do not have a valid value** audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/valid-lang" rel="noopener">lang attribute must have a valid value</a>
