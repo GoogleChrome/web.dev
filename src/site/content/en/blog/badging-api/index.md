@@ -1,6 +1,6 @@
 ---
 title: Badging for app icons
-subhead: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen.
+subhead: The Badging API allows installed web apps to set an application-wide badge on the app icon.
 authors:
   - petelepage
 description: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
@@ -30,7 +30,7 @@ draft: true
 
 <figure class="w-figure w-figure--inline-right" style="max-width:50%">
   <img  src="badges-on-windows.jpg" class="w-screenshot"
-             alt="Example of Twitter with eight notifications and another app showing a flag type badge.">
+        alt="Example of Twitter with eight notifications and another app showing a flag type badge.">
   <figcaption>
     Example of Twitter with eight notifications and another app showing a flag
     type badge.
@@ -70,9 +70,7 @@ Examples of sites that may use this API include:
 | **4. Origin trial**                        | [**In progress**](#ot)       |
 | 5. Launch                                  | Not started                  |
 
-{% Aside 'codelab' %}
-See it in action
-{% endAside %}
+## Try it
 
 1. Using Chrome 73 or later on Windows or Mac, open the [Badging API demo][demo].
 2. When prompted, click **Install** to install the app, or use the Chrome
@@ -91,7 +89,6 @@ See it in action
   the browser will display them. Just call the API when it exists.
   If it works, it works. If not, it simply doesn't.
 {% endAside %}
-
 
 ## How to use the Badging API {: #use }
 
