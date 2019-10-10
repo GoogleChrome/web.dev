@@ -1,11 +1,11 @@
 ---
 title: A contact picker for the web
-subhead: The Contact Picker API is an on-demand API that allows users to select entries from their contact list and share limited details of the selected entries with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
+subhead: The Contact Picker API provides an easy way for users to share contacts from their contact list.
 authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2019-10-08
+updated: 2019-10-10
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - capabilities
@@ -15,7 +15,6 @@ hero: hero.jpg
 alt: Telephone on yellow background.
 draft: true
 ---
-
 
 {% Aside %}
   The Contact Picker API begins an origin trial in Chrome 77
@@ -31,12 +30,14 @@ draft: true
 </style>
 
 <a href="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
-  <video id="video-demo" loop autoplay muted class="w-figure w-figure--inline-right" style="max-width:50%"
-      poster="contact-picker-demo.jpg">
+  <video id="video-demo" loop autoplay muted
+         class="w-figure w-figure--inline-right w-screenshot"
+         style="max-width:50%"
+         poster="contact-picker-demo.jpg">
     <source type="video/webm"
-      src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">
+            src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">
     <source type="video/mp4"
-      src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
+            src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
   </video>
 </a>
 
@@ -95,8 +96,8 @@ in `chrome://flags`.
 Starting in Chrome 77, the Contact Picker API is available as an origin
 trial on Chrome for Android. Origin trials allow you to try new features
 and give feedback on their usability, practicality, and effectiveness, both
-to the Chrome team, and to the web standards community. For more information, see the
-[Origin Trials Guide for Web Developers][ot-guide].
+to the Chrome team, and to the web standards community. For more information,
+see the [Origin Trials Guide for Web Developers][ot-guide].
 
 To enable the origin trial:
 
@@ -186,7 +187,8 @@ This ensures that a site can't show the picker on page load, or randomly show
 the picker without any context.
 
 <figure class="w-figure w-figure--inline-right" style="max-width:50%">
-  <img  src="contact-picker-user-choice.jpg">
+  <img src="contact-picker-user-choice.jpg" class="w-screenshot"
+       alt="Screen shot, users can choose which properties to share.">
   <figcaption>
     Users can choose not to share some properties. In this screenshot, the
     user has unchecked the 'Phone numbers' button. Even though the site
@@ -211,14 +213,16 @@ if a site only requests `tel`, the picker will show only the name, and
 telephone numbers.
 
 <figure class="w-figure w-figure--inline-left" style="max-width:42%">
-  <img  src="contact-picker-left.jpg">
+  <img src="contact-picker-left.jpg" class="w-screenshot"
+       alt="Screen shot of picker for site requesting all properties.">
   <figcaption>
     Picker, site requesting <code>name</code>, <code>email</code>, and
     <code>tel</code>, one contact selected.
   </figcaption>
 </figure>
 <figure class="w-figure w-figure--inline-right" style="max-width:42%">
-  <img  src="contact-picker-right.jpg">
+  <img src="contact-picker-right.jpg" class="w-screenshot"
+       alt="Screen shot of picker for site requesting only phone numbers.">
   <figcaption>
     Picker, site requesting only <code>tel</code>, one contact selected.
   </figcaption>
@@ -227,7 +231,8 @@ telephone numbers.
 <div class="clearfix"></div>
 
 <figure class="w-figure w-figure--inline-right" style="max-width:50%">
-  <img  src="contact-picker-long-press.jpg">
+  <img src="contact-picker-long-press.jpg" class="w-screenshot"
+       alt="Screen shot of picker when a contact is long-pressed.">
   <figcaption>
     The result of a long press on a contact.
   </figcaption>
@@ -247,7 +252,8 @@ with the site.
 
 ## Feedback {: #feedback }
 
-The Web Platform Incubator Group and the Chrome team want to hear about your experiences with the Contact Picker API.
+The Web Platform Incubator Group and the Chrome team want to hear about your
+experiences with the Contact Picker API.
 
 ### Tell us about the API design
 
@@ -269,9 +275,9 @@ different from the spec?
 
 ### Planning to use the API?
 
-Are you planning to use the Contact Picker API? Your public support helps the Chrome team
-prioritize features, and shows other browser vendors how critical it is to
-support them.
+Are you planning to use the Contact Picker API? Your public support helps the
+Chrome team to prioritize features, and shows other browser vendors how
+critical it is to support them.
 
 * Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
 * Send a Tweet to [@ChromiumDev][cr-dev-twitter] with `#contactpicker` and
