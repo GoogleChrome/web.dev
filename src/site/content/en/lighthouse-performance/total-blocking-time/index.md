@@ -22,8 +22,10 @@ The Lighthouse report displays TBT in milliseconds:
 
 TBT measures the total amount of time that a page is blocked from responding to user input,
 such as mouse clicks, screen taps, or keyboard presses. The sum is calculated by adding
-the duration of all [long tasks] between [First Contentful Paint][fcp] and [Time to Interactive][tti].
-Any task that executes for more than 50 milliseconds is a long task.
+the *blocking portion* of all [long tasks] between [First Contentful Paint][fcp] and [Time to Interactive][tti].
+Any task that executes for more than 50&nbsp;ms is a long task. The amount of time after
+50&nbsp;ms is the blocking portion. For example, if Lighthouse detects a 70&nbsp;ms long task,
+the blocking portion would be 20&nbsp;ms.
 
 ## How Lighthouse determines your TBT score
 
@@ -42,11 +44,11 @@ This table shows how to interpret your TBT score:
     </thead>
     <tbody>
       <tr>
-        <td>0–200</td>
+        <td>0–300</td>
         <td>Green (fast)</td>
       </tr>
       <tr>
-        <td>200-600</td>
+        <td>300-600</td>
         <td>Orange (average)</td>
       </tr>
       <tr>
@@ -66,13 +68,18 @@ how to diagnose the root cause of long tasks with the Performance panel of Chrom
 
 In general, the most common causes of long tasks are:
 
-* Inefficient JavaScript statements. For example, after analyzing your code in the Performance panel, suppose
-  you see a call to `document.querySelectorAll('a')` that returns 2000 nodes. Refactoring your code to
-  use a more specific selector that only returns 10 nodes should improve your TBT score.
 * Unnecessary JavaScript loading, parsing, or execution. While analyzing your code in the Performance panel
   you might discover that the main thread is doing work that isn't really necessary to load the page.
   [Reducing JavaScript payloads with code splitting][split], [removing unused code][unused], or 
   [efficiently loading third-party JavaScript][3p] should improve your TBT score.
+* Inefficient JavaScript statements. For example, after analyzing your code in the Performance panel, suppose
+  you see a call to `document.querySelectorAll('a')` that returns 2000 nodes. Refactoring your code to
+  use a more specific selector that only returns 10 nodes should improve your TBT score.
+
+{% Aside %}
+  Unnecessary JavaScript loading, parsing, or execution is usually a much bigger opportunity for improvement
+  on most sites.
+{% endAside %}
 
 ## Resources
 
