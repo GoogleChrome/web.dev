@@ -14,6 +14,7 @@ tags:
   - webapp
 hero: hero.jpg
 alt: Photo of bokeh lights
+draft: true
 ---
 
 {% Aside %}
