@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's Time to Interactive metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2019-10-10
 web_lighthouse:
   - interactive
 ---
@@ -89,14 +89,12 @@ This table shows how to interpret your TTI score:
 
 ## How to improve your TTI score
 
-{% include 'content/lighthouse-performance/improve.njk' %}
-
 One improvement that can have a particularly big effect on TTI is
 deferring or removing unnecessary JavaScript work.
 Look for opportunities to [optimize your JavaScript](/fast#optimize-your-javascript).
-In particular,
-consider [reducing JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
-and [applying the PRPL pattern](/apply-instant-loading-with-prpl).
+In particular, consider [reducing JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
+and [applying the PRPL pattern](/apply-instant-loading-with-prpl). [Optimizing third-party JavaScript][3p]
+also yields significant improvements for some sites.
 
 These two Diagnostic audits provide additional opportunities
 to reduce JavaScript work:
@@ -117,6 +115,8 @@ Tracking [First Input Delay](https://developers.google.com/web/updates/2018/05/f
 can be a good proxy for TTI.
 {% endAside %}
 
+{% include 'content/lighthouse-performance/improve.njk' %}
+
 ## Resources
 
 - [Source code for **Time to Interactive** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/interactive.js)
@@ -124,6 +124,8 @@ can be a good proxy for TTI.
 - [First Interactive And Consistently Interactive](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
 - [JavaScript Start-up Optimization](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/javascript-startup-optimization/)
 - [Reduce JavaScript Payloads with Tree Shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/)
+- [Optimize third-party resources][3p]
 
 [metrics]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics
 [tracking]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_tti
+[3p]: /fast/#optimize-your-third-party-resources

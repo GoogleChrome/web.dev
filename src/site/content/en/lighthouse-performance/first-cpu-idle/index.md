@@ -4,7 +4,7 @@ title: First CPU Idle
 description: |
   Learn about Lighthouse's First CPU Idle metric and how to optimize it.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2019-10-10
 web_lighthouse:
   - first-cpu-idle
 ---
@@ -81,7 +81,10 @@ This table shows how to interpret your First CPU Idle score:
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 
-## How to improve your TTI score
+## How to improve your First CPU Idle score
+
+See [How to improve your TTI score][tti]. The strategies for improving First CPU Idle are
+largely the same as the strategies for improving TTI.
 
 {% include 'content/lighthouse-performance/improve.njk' %}
 
@@ -90,3 +93,6 @@ This table shows how to interpret your First CPU Idle score:
 - [Source code for **First CPU Idle** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-cpu-idle.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [First Interactive And Consistently Interactive](https://docs.google.com/document/d/1GGiI9-7KeY3TPqS3YT271upUVimo-XiL5mwWorDUD4c/edit)
+- [Time to Interactive](/interactive/)
+
+[tti]: /interactive/#how-to-improve-your-tti-score
