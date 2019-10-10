@@ -1,6 +1,6 @@
 ---
 title: Image support for the async clipboard API
-subhead:The Asynchronous Clipboard API now handles some images, in addition to text.
+subhead: The Asynchronous Clipboard API now handles some images, in addition to text.
 authors:
   - thomassteiner
 description: Chrome 76 adds expands the functionality of the Async Clipboard API to add support for png images. Copying and pasting images to the clipboard has never been easier.
