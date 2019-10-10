@@ -115,7 +115,6 @@ module.exports = {
           'custom-control-roles',
           'visual-order-follows-dom',
           'offscreen-content-hidden',
-          'heading-levels',
           'use-landmarks',
         ],
       },
