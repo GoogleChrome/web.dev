@@ -167,27 +167,27 @@ Use the codelab aside to link to an associated codelab.
 
 ```text
 {% raw %}{% verbatim %}
-{% Banner %}This is an info banner with a [link](#).{% endBanner %}
+{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}
 {% endverbatim %}{% endraw %}
 ```
 
-{% Banner %}This is an info banner with a [link](#).{% endBanner %}
+{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}
 
 ```text
 {% raw %}{% verbatim %}
-{% Banner 'caution' %}This is a caution banner with a [link](#).{% endBanner %}
+{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}
 {% endverbatim %}{% endraw %}
 ```
 
-{% Banner 'caution' %}This is a caution banner with a [link](#).{% endBanner %}
+{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}
 
 ```text
 {% raw %}{% verbatim %}
-{% Banner 'warning' %}This is a warning banner with a [link](#).{% endBanner %}
+{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 {% endverbatim %}{% endraw %}
 ```
 
-{% Banner 'warning' %}This is a warning banner with a [link](#).{% endBanner %}
+{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 
 ```text
 {% raw %}{% verbatim %}
