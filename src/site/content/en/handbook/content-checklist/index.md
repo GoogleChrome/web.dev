@@ -30,6 +30,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Headings should not [skip levels](/heading-levels).
 1. Is the structure of the piece clear? Do headings convey the structure?
 1. Does each paragraph focus on one main idea?
+1. Does the subheading draw the reader in or provide extra context? Is it concise? Is it unique text?
 
 ## Instruction
 1. If the piece expects readers to have prior knowledge, is that made clear up front?
