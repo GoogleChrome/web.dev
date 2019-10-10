@@ -1,6 +1,6 @@
 ---
 title: "The Native File System API: Simplifying access to local files"
-subhead: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
+subhead: The new Native File System API allows web apps to read or save changes directly to files and folders on the user's device.
 authors:
   - petelepage
 description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
@@ -14,6 +14,7 @@ tags:
   - native-file-system
 hero: hero.jpg
 alt: Image of hard disk platters
+draft: true
 ---
 
 {% Aside %}
@@ -61,11 +62,10 @@ file, edit it, save the changes back to disk, or start a new file and save
 the changes to disk. It's nothing fancy, but provides enough to help you
 understand the concepts.
 
-{% Aside 'codelab' %}
-  See the Native File System API in action in the
-  [text editor](https://googlechromelabs.github.io/text-editor/) demo.
-{% endAside %}
+### Try it
 
+See the Native File System API in action in the
+[text editor](https://googlechromelabs.github.io/text-editor/) demo.
 
 ### Enabling via chrome://flags
 
@@ -276,10 +276,6 @@ doesn't match the spec:
 
 ## Security and permissions {: #security-considerations }
 
-<style>
-  figcaption {font-size: smaller;}
-</style>
-
 The Chrome team has designed and implemented the Native File System API using
 the core principles defined in
 [Controlling Access to Powerful Web Platform Features][powerful-apis],
@@ -287,9 +283,10 @@ including user control and transparency, and user ergonomics.
 
 ### Opening a file or saving a new file
 
-<figure class="w-figure w-figure--inline-right" style="max-width:50%">
+<figure class="w-figure w-figure--inline-right">
   <a href="fs-open.jpg">
-    <img  src="fs-open.jpg">
+    <img src="fs-open.jpg"
+         alt="File picker to open a file for reading">
   </a>
   <figcaption>
     A file picker used to open an existing file for reading.
@@ -305,9 +302,10 @@ behavior as that of the `<input type="file">` element.
 
 <div class="clearfix"></div>
 
-<figure class="w-figure w-figure--inline-left" style="max-width:50%">
+<figure class="w-figure w-figure--inline-left">
   <a href="fs-save.jpg">
-    <img  src="fs-save.jpg">
+    <img src="fs-save.jpg"
+         alt="File picker to save a file to disk.">
   </a>
   <figcaption>
     A file picker used to save a file to disk.
@@ -337,9 +335,10 @@ from the user.
 
 #### Permission prompt
 
-<figure class="w-figure w-figure--inline-right" style="max-width:50%">
+<figure class="w-figure w-figure--inline-right">
   <a href="fs-save-permission.jpg">
-    <img  src="fs-save-permission-crop.jpg">
+    <img src="fs-save-permission-crop.jpg" class="w-screenshot"
+         alt="Permission prompt shown prior to saving a file.">
   </a>
   <figcaption>
     Prompt shown to users before the browser is granted write
@@ -365,9 +364,10 @@ method to allow the user to save their data, for example by providing a way to
 
 ### Transparency
 
-<figure class="w-figure w-figure--inline-right" style="max-width:50%">
+<figure class="w-figure w-figure--inline-right">
   <a href="fs-save-icon.jpg">
-    <img  src="fs-save-icon.jpg">
+    <img src="fs-save-icon.jpg" class="w-screenshot"
+         alt="Omnibox icon">
   </a>
   <figcaption>
     Omnibox icon indicating the user has granted the website permission to
