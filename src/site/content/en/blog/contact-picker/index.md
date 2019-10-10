@@ -13,6 +13,7 @@ tags:
   - chrome77
 hero: hero.jpg
 alt: Telephone on yellow background.
+draft: true
 ---
 
 
@@ -77,7 +78,7 @@ which friends have already joined.
 The Contact Picker API requires a single API call with an options parameter
 that specifies the types of contact information you want.
 
-{% Aside 'codelab' %}
+{% Aside %}
   Check out the [Contact Picker API demo](https://contact-picker.glitch.me)
   and view the
   [source](https://glitch.com/edit/#!/contact-picker?path=demo.js:20:0).
@@ -94,7 +95,7 @@ in `chrome://flags`.
 Starting in Chrome 77, the Contact Picker API is available as an origin
 trial on Chrome for Android. Origin trials allow you to try new features
 and give feedback on their usability, practicality, and effectiveness, both
-to us, and to the web standards community. For more information, see the
+to the Chrome team, and to the web standards community. For more information, see the
 [Origin Trials Guide for Web Developers][ot-guide].
 
 To enable the origin trial:
@@ -172,7 +173,7 @@ phone numbers, but does not have an email address, the response returned will be
 
 ## Security and permissions {: #security-considerations }
 
-We've designed and implemented the Contact Picker API using the core
+The Chrome team designed and implemented the Contact Picker API using the core
 principles defined in
 [Controlling Access to Powerful Web Platform Features][powerful-apis],
 including user control, transparency, and ergonomics. I'll explain each.
@@ -246,7 +247,7 @@ with the site.
 
 ## Feedback {: #feedback }
 
-We want to hear about your experiences with the Contact Picker API.
+The Web Platform Incubator Group and the Chrome team want to hear about your experiences with the Contact Picker API.
 
 ### Tell us about the API design
 
@@ -268,7 +269,7 @@ different from the spec?
 
 ### Planning to use the API?
 
-Are you planning to use the Contact Picker API? Your public support helps us
+Are you planning to use the Contact Picker API? Your public support helps the Chrome team
 prioritize features, and shows other browser vendors how critical it is to
 support them.
 
