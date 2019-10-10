@@ -51,6 +51,7 @@ module.exports = {
         pathItems: [
           'button-name',
           'document-title',
+          'form-field-multiple-labels',
           'frame-title',
           'image-alt',
           'input-image-alt',
@@ -98,6 +99,7 @@ module.exports = {
         pathItems: [
           'html-has-lang',
           'html-lang-valid',
+          'html-xml-lang-mismatch',
           'valid-lang',
         ],
       },
