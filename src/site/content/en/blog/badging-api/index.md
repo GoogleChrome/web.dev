@@ -16,6 +16,7 @@ tags:
   - fugu
 hero: hero.jpg
 alt: Phone showing several notification badges
+draft: true
 ---
 
 {% Aside 'caution' %}
@@ -171,7 +172,7 @@ accordingly.
 
 ## Feedback {: #feedback }
 
-We want to hear about your experiences with the Badging API.
+The Chrome team wants to hear about your experiences with the Badging API.
 
 ### Tell us about the API design
 
@@ -194,9 +195,9 @@ different from the spec?
 
 ### Planning to use the API?
 
-Planning to use Badging API on your site? Your public support helps us to
-prioritize features, and shows other browser vendors how critical it is to
-support them.
+Planning to use Badging API on your site? Your public support helps the Chrome
+team to prioritize features, and shows other browser vendors how critical it
+is to support them.
 
 * Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) tagged with
   `#badgingapi` and let us know where and how you're using it.
