@@ -16,7 +16,7 @@ Use lossless images whenever possible. They'll be optimized automatically at bui
 Make sure images are [accessible](/handbook/inclusion-and-accessibility#use-inclusive-images).
 
 ## Hero images
-Hero images should be 1600 px x 800 px.
+Hero images should be 3200 px x 960 px.
 
 Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
 
