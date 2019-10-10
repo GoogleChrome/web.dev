@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's Max Potential First Input Delay metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2019-10-10
 web_lighthouse:
   - max-potential-fid
 ---
@@ -64,21 +64,8 @@ Need info from LH team.
 
 ## How to improve your Max Potential FID score
 
-{% include 'content/lighthouse-performance/improve.njk' %}
-
-FID most commonly occurs when
-the browser is busy parsing and executing a large JavaScript file
-loaded by your page.
-So, look for opportunities to [optimize your JavaScript](/fast#optimize-your-javascript).
-In particular,
-consider [reducing JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
-and [applying the PRPL pattern](/apply-instant-loading-with-prpl).
-
-These two Diagnostic audits provide additional opportunities
-to reduce JavaScript work:
-
-- [Minimize main-thread work](/mainthread-work-breakdown)
-- [Reduce JavaScript execution time](/bootup-time)
+See [How to improve your TTI score][tti]. The strategies for improving Max Potential FID are
+largely the same as the strategies for improving TTI.
 
 ## How to measure FID manually
 
@@ -94,11 +81,15 @@ See the [Analyzing and reporting on FID data][analysis] section
 of Google's [First Input Delay][fid] page for guidance
 about how to evaluate the FID data you collect.
 
+{% include 'content/lighthouse-performance/improve.njk' %}
+
 ## Resources
 
 - [Source code for **Max Potential First Input Delay** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/max-potential-fid.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [First Input Delay][fid]
+- [Time to Interactive](/interactive/)
 
 [analysis]: https://developers.google.com/web/updates/2018/05/first-input-delay#analyzing_and_reporting_on_fid_data
 [fid]: https://developers.google.com/web/updates/2018/05/first-input-delay
+[tti]: /interactive/#how-to-improve-your-tti-score

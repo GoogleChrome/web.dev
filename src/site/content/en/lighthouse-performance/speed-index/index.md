@@ -4,7 +4,7 @@ title: Speed Index
 description: |
   Learn about Lighthouse's Speed Index metric and how to optimize it.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2019-10-10
 web_lighthouse:
   - speed-index
 ---
@@ -76,8 +76,6 @@ This table shows how to interpret your Speed Index score:
 
 ## How to improve your Speed Index score
 
-{% include 'content/lighthouse-performance/improve.njk' %}
-
 While anything you do to improve page load speed
 will improve your Speed Index score,
 addressing any issues discovered by these Diagnostic audits
@@ -86,6 +84,8 @@ should have a particularly big impact:
 - [Minimize main-thread work](/mainthread-work-breakdown)
 - [Reduce JavaScript execution time](/bootup-time)
 - [Ensure text remains visible during webfont load](/font-display)
+
+{% include 'content/lighthouse-performance/improve.njk' %}
 
 ## Resources
 

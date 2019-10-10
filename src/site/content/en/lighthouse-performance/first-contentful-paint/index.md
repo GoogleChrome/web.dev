@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's First Contentful Paint metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2019-10-10
 web_lighthouse:
   - first-contentful-paint
 ---
@@ -73,8 +73,6 @@ This table shows how to interpret your FCP score:
 
 ## How to improve your FCP score
 
-{% include 'content/lighthouse-performance/improve.njk' %}
-
 One issue that's particularly important for FCP is
 font load time. Check out the
 [Ensure text remains visible during webfont load](/font-display) post
@@ -89,6 +87,8 @@ how to programmatically access FCP data and submit it to Google Analytics.
 
 See Google's [Assessing Loading Performance in Real Life with Navigation and Resource Timing](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/)
 for more on collecting real-user metrics.
+
+{% include 'content/lighthouse-performance/improve.njk' %}
 
 ## Resources
 

@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's First Meaningful Paint metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2019-10-10
 web_lighthouse:
   - first-meaningful-paint
 ---
@@ -87,7 +87,8 @@ This table shows how to interpret your FMP score:
 
 ## How to improve your FMP score
 
-{% include 'content/lighthouse-performance/improve.njk' %}
+See [How to improve Largest Contentful Paint on your site][lcp]. The strategies for improving
+FMP are largely the same as the strategies for improving Largest Contentful Paint.
 
 ## Tracking FMP on real users' devices
 
@@ -101,11 +102,15 @@ for more on collecting real-user metrics.
 The [User Timing Marks and Measures Lighthouse audit](/user-timings)
 enables you to see User Timing data in your report.
 
+{% include 'content/lighthouse-performance/improve.njk' %}
+
 ## Resources
 
 - [Source code for **First Meaningful Paint** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
+- [Largest Contentful Paint](/largest-contentful-paint)
 
 [metrics]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics
 [tracking]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements
+[lcp]: /largest-contentful-paint#how-to-improve-largest-contentful-paint-on-your-site
