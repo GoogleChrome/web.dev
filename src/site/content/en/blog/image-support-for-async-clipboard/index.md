@@ -66,7 +66,7 @@ resolve with the text:
 ```js
 async function getClipboardText() {
   try {
-    const text = await navigator.clipboard.readText();
+    let text = await navigator.clipboard.readText();
     console.log('Clipboard contents: ', text);
   } catch (err) {
     console.error('Failed to read clipboard contents: ', err);
@@ -304,7 +304,7 @@ original [text](https://developers.google.com/web/updates/2018/03/clipboardapi).
 Thanks to [Kyarik](https://github.com/kyarik) and again Gary Kačmarčík for
 reviewing this article.
 
-## Feedback {: #feedback .hide-from-toc }
+## Feedback {: #feedback }
 
 [blob]: https://developer.mozilla.org/en-US/docs/Web/API/blob
 [blob-method]: https://developer.mozilla.org/en-US/docs/Web/API/Body/blob
