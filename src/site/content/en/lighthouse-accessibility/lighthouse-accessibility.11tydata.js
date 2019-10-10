@@ -25,6 +25,7 @@ module.exports = {
         pathItems: [
           'accesskeys',
           'bypass',
+          'duplicate-id-active',
           'tabindex',
         ],
       },
@@ -42,6 +43,7 @@ module.exports = {
           'aria-toggle-field-name',
           'aria-valid-attr-value',
           'aria-valid-attr',
+          'duplicate-id-aria',
         ],
       },
       {

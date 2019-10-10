@@ -10,10 +10,7 @@ web_lighthouse:
   - duplicate-id
 ---
 
-Duplicate IDs are common validation errors that may break the accessibility of labels.
-Assistive technologies typically only reference the first instance of an ID accurately.
-The value of each ID attribute must be unique to prevent duplicate instances
-from being overlooked by assistive technologies.
+{% include 'content/lighthouse-accessibility/no-duplicate-ids.njk' %}
 
 ## How the Lighthouse duplicate ID audit fails
 
@@ -23,13 +20,14 @@ Lighthouse flags duplicate IDs found in a page:
   <img class="w-screenshot" src="duplicate-id.png" alt="Lighthouse audit showing ID attributes on the page are not unique">
 </figure>
 
+This audit is similar to the
+[**`[id]` attributes on active, focusable elements are not unique**](/duplicate-id-active) and
+[**ARIA IDs are not all unique**](/duplicate-id-aria) audits,
+but checks for duplicate IDs in a different set of elements.
+
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to avoid duplicate IDs
-
-Change an ID value if it is used more than once.
-Learn more in
-[ID attribute values must be unique](https://dequeuniversity.com/rules/axe/3.3/duplicate-id).
+{% include 'content/lighthouse-accessibility/fix-duplicate-ids.njk' %}
 
 ## Resources
 

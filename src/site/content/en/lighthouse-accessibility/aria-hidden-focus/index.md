@@ -28,25 +28,7 @@ flags focusable elements that have parents with the `aria-hidden="true"` attribu
   alt="Lighthouse audit showing focusable elements that have parents with the aria-hidden attribute">
 </figure>
 
-An element is _focusable_ when keyboard users can navigate to it
-using the `Tab` key.
-Focusability differs somewhat across browsers, but in general,
-the following elements are focusable:
-- `<a>`
-- `<area>`
-- `<audio controls>`
-- `<button>`
-- `<iframe>`
-- `<input>`
-- `<select>`
-- `<summary>`
-- `<textarea>`
-- `<video controls>`
-- Any element with the `contentEditable` attribute
-- Any element with a `tabindex` set to a numeric value other than `-1`
-
-For a complete breakdown of cross-browser focus behavior, see ally.js's
-<a href="https://allyjs.io/data-tables/focusable.html" rel="noopener">Focusable Elements - Browser Compatibility Table</a>.
+{% include 'content/lighthouse-accessibility/focusable-els.njk' %}
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
