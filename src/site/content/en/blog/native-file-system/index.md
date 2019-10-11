@@ -27,7 +27,7 @@ draft: true
 
 ## What is the Native File System API? {: #what-is-it }
 
-The Native File System API enables developers to build powerful web apps
+The [Native File System API][spec] enables developers to build powerful web apps
 that interact with files on the user's local device, like IDEs, photo and video
 editors, text editors, and more. After a user grants a web app access, this
 API allows web apps to read or save changes directly to files and folders
@@ -46,6 +46,8 @@ all systems are alike.
 
 ## Current status {: #status }
 
+<div class="w-table-wrapper">
+
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
@@ -53,6 +55,8 @@ all systems are alike.
 | 3. Gather feedback & iterate on design     | [In progress][spec]          |
 | 4. Origin trial                            | [In progress](#origin-trial) |
 | 5. Launch                                  | Not started                  |
+
+</div>
 
 ## Using the Native File System API {: #how-to-use }
 
@@ -75,10 +79,9 @@ the `#native-file-system-api` flag in `chrome://flags`.
 ### Enabling support during the origin trial phase {: #origin-trial }
 
 Starting in Chrome 78, the Native File System API is available as an
-origin trial on all desktop platforms. Origin trials allow you to try
-new features and give feedback on their usability, practicality, and
-effectiveness, both to the Chrome team, and to the web standards community. For
-more information, see the [Origin Trials Guide for Web Developers][ot-guide].
+origin trial on all desktop platforms.
+
+{% include 'content/origin-trials.njk' %}
 
 To enable the origin trial:
 
@@ -300,7 +303,7 @@ users change their minds, they can cancel the selection in the file
 picker and the site does not get access to anything. This is the same
 behavior as that of the `<input type="file">` element.
 
-<div class="clearfix"></div>
+<div class="w-clearfix"></div>
 
 <figure class="w-figure w-figure--inline-left">
   <a href="fs-save.jpg">
@@ -318,7 +321,7 @@ of the new file. Since they are saving a new file to the device (versus
 overwriting an existing file), the file picker grants the app permission
 to write to the file.
 
-<div class="clearfix"></div>
+<div class="w-clearfix"></div>
 
 #### Restricted folders
 
@@ -360,7 +363,7 @@ app cannot save changes to the local file. It should provide an alternative
 method to allow the user to save their data, for example by providing a way to
 ["download" the file][download-file], saving data to the cloud, etc.
 
-<div class="clearfix"></div>
+<div class="w-clearfix"></div>
 
 ### Transparency
 
@@ -380,7 +383,7 @@ Chrome will show an icon in the omnibox. Clicking on the omnibox icon
 opens a popover showing the list of files the user has given access to.
 The user can easily revoke that access if they choose.
 
-<div class="clearfix"></div>
+<div class="w-clearfix"></div>
 
 ### Permission persistence
 
