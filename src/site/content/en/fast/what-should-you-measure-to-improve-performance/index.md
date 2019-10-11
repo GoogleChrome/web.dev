@@ -61,16 +61,16 @@ provides a good overview.
 
 From a user perspective the most important metrics are:
 
-+   **[First Contentful Paint](https://web.dev/first-contentful-paint/)
-    (FCP)**: The time the user stares at a blank screen. This is
++   **[First Contentful Paint (FCP)](/first-contentful-paint):**
+    The time the user stares at a blank screen. This is
     when most users bounce, as they don't see progress.
-+   **[First Meaningful Paint](https://web.dev/first-meaningful-paint/)
-    (FMP):** When the user begins to see the main content they came for. This
++   **[First Meaningful Paint (FMP)](/first-meaningful-paint):**
+    When the user begins to see the main content they came for. This
     is often the hero image, but for a landing page it may even be a call to
     action such as a **Buy** button, since the user may have arrived with a clear
     intent (for example, through a targeted ad campaign).
-+   **[First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay)
-    (FID):** The time the website needs to react to the user's first input.
++   **[First Input Delay (FID)](https://developers.google.com/web/updates/2018/05/first-input-delay):**
+    The time the website needs to react to the user's first input.
     Excessive JavaScript and other asset loading problems can block this,
     leading to failed taps or clicks, erroneous inputs and page abandonment.
 

@@ -81,7 +81,7 @@ will improve your Speed Index score,
 addressing any issues discovered by these Diagnostic audits
 should have a particularly big impact:
 
-- [Minimize main-thread work](/mainthread-work-breakdown)
+- [Minimize main thread work](/mainthread-work-breakdown)
 - [Reduce JavaScript execution time](/bootup-time)
 - [Ensure text remains visible during webfont load](/font-display)
 

@@ -113,7 +113,7 @@ You will now make some changes in the project:
 1. Click the project name in the upper-left corner. Choose **Remix and Edit** 🎤, from the drop-down menu, to make your own, editable copy of the project.
 1. Once in the cloned project, click **Tools** (in the lower-left corner of the edit view), then select **Console**. The Glitch console opens in a new browser tab.
 
-To minify the resulting CSS, you'll use the [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin): 
+To minify the resulting CSS, you'll use the [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin):
 
 1. In Glitch console, run `npm install --save-dev optimize-css-assets-webpack-plugin`.
 1. Run `refresh`, so the changes are synchronized with the Glitch editor.
@@ -173,7 +173,7 @@ The report doesn't show "Minify CSS" as "Opportunity" anymore, and has now moved
 
 <img class="w-screenshot" width="700px" height="150px" src="./lighthouse-optimized.png" alt="Lighthouse Passed Audits for optimized page.">
 
-Since CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), if you apply minification on sites that use large CSS files, you can see improvements on metrics like [First Contentful Paint](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
+Since CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources), if you apply minification on sites that use large CSS files, you can see improvements on metrics like [First Contentful Paint](/first-contentful-paint).
 
 ## Next steps and resources
 
