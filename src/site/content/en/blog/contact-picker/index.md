@@ -30,10 +30,11 @@ origin_trial:
   #video-demo { max-height: 600px; }
 </style>
 
-<figure class="w-figure w-figure--inline-right w-screenshot">
+<figure class="w-figure w-figure--inline-right">
   <a href="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
     <video id="video-demo" loop autoplay muted
-          poster="contact-picker-demo.jpg">
+          poster="contact-picker-demo.jpg"
+          class="w-screenshot">
       <source type="video/webm"
               src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">
       <source type="video/mp4"
@@ -182,7 +183,8 @@ the picker without any context.
 
 <figure class="w-figure w-figure--inline-right">
   <img src="contact-picker-user-choice.jpg" class="w-screenshot"
-       alt="Screen shot, users can choose which properties to share.">
+       alt="Screen shot, users can choose which properties to share."
+       width="550">
   <figcaption class="w-figcaption">
     Users can choose not to share some properties. In this screenshot, the
     user has unchecked the 'Phone numbers' button. Even though the site
@@ -228,7 +230,8 @@ telephone numbers.
 
 <figure class="w-figure w-figure--inline-right">
   <img src="contact-picker-long-press.jpg" class="w-screenshot"
-       alt="Screen shot of picker when a contact is long-pressed.">
+       alt="Screen shot of picker when a contact is long-pressed."
+       width="550">
   <figcaption class="w-figcaption">
     The result of a long press on a contact.
   </figcaption>
