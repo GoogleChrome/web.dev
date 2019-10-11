@@ -291,7 +291,7 @@ including user control and transparency, and user ergonomics.
     <img src="fs-open.jpg"
          alt="File picker to open a file for reading">
   </a>
-  <figcaption>
+  <figcaption class="w-figcaption">
     A file picker used to open an existing file for reading.
   </figcaption>
 </figure>
@@ -310,7 +310,7 @@ behavior as that of the `<input type="file">` element.
     <img src="fs-save.jpg"
          alt="File picker to save a file to disk.">
   </a>
-  <figcaption>
+  <figcaption class="w-figcaption">
     A file picker used to save a file to disk.
   </figcaption>
 </figure>
@@ -343,7 +343,7 @@ from the user.
     <img src="fs-save-permission-crop.jpg" class="w-screenshot"
          alt="Permission prompt shown prior to saving a file.">
   </a>
-  <figcaption>
+  <figcaption class="w-figcaption">
     Prompt shown to users before the browser is granted write
     permission on an existing file.
   </figcaption>
@@ -372,7 +372,7 @@ method to allow the user to save their data, for example by providing a way to
     <img src="fs-save-icon.jpg" class="w-screenshot"
          alt="Omnibox icon">
   </a>
-  <figcaption>
+  <figcaption class="w-figcaption">
     Omnibox icon indicating the user has granted the website permission to
     save to a local file.
   </figcaption>
