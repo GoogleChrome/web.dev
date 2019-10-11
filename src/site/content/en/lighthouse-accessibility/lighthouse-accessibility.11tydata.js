@@ -82,7 +82,6 @@ module.exports = {
       {
         title: 'Best practices',
         pathItems: [
-          'duplicate-id',
           'meta-refresh',
           'meta-viewport',
         ],

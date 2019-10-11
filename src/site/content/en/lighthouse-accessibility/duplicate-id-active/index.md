@@ -27,8 +27,7 @@ flags focusable elements that have duplicate IDs:
 {% include 'content/lighthouse-accessibility/focusable-els.njk' %}
 
 This audit is similar to the
-[**`[id]` attributes on the page are not unique**](/duplicate-id) and
-[**ARIA IDs are not all unique**](/duplicate-id-aria) audits,
+[**ARIA IDs are not all unique**](/duplicate-id-aria) audit
 but checks for duplicate IDs in a different set of elements.
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}

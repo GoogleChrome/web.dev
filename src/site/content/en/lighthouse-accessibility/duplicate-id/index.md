@@ -5,10 +5,13 @@ description: |
   Learn how to make sure that all elements on your page are announced correctly
   by assistive technologies.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2019-10-17
 web_lighthouse:
   - duplicate-id
+noindex: true
 ---
+
+{% Banner 'caution', 'body' %}This audit has been deprecated. Check out [`[id]` attributes on active, focusable elements are not unique](/duplicate-id-active) and [ARIA IDs are not all unique](/duplicate-id-aria) instead.{% endBanner %}
 
 {% include 'content/lighthouse-accessibility/no-duplicate-ids.njk' %}
 
@@ -19,11 +22,6 @@ Lighthouse flags duplicate IDs found in a page:
 <figure class="w-figure">
   <img class="w-screenshot" src="duplicate-id.png" alt="Lighthouse audit showing ID attributes on the page are not unique">
 </figure>
-
-This audit is similar to the
-[**`[id]` attributes on active, focusable elements are not unique**](/duplicate-id-active) and
-[**ARIA IDs are not all unique**](/duplicate-id-aria) audits,
-but checks for duplicate IDs in a different set of elements.
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 

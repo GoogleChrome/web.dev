@@ -171,10 +171,6 @@ aren't included in the table because they don't affect your score.
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/duplicate-id/"><code>[id]</code> attributes on the page are not unique</a></td>
-        <td>1</td>
-      </tr>
-      <tr>
         <td><a href="/meta-refresh/">The document uses <code>&#60;meta http-equiv="refresh"&#62;</code></a></td>
         <td>10</td>
       </tr>

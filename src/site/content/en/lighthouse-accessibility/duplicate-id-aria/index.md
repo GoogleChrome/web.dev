@@ -30,8 +30,7 @@ by another element's `aria-labelledby` attribute:
 </figure>
 
 This audit is similar to the
-[**`[id]` attributes on the page are not unique**](/duplicate-id) and
-[**`[id]` attributes on active, focusable elements are not unique**](/duplicate-id-active) audits,
+[**`[id]` attributes on active, focusable elements are not unique**](/duplicate-id-active) audit
 but checks for duplicate IDs in a different set of elements.
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
