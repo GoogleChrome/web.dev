@@ -15,7 +15,7 @@ draft: true
 ---
 
 {% Aside %}
-  We’re currently working on this API as part of the new
+  We're currently working on this API as part of the new
   [capabilities project](https://developers.google.com/web/updates/capabilities).
   Starting in Chrome 73, it is available as an [origin trial](#ot) on Android.
   This post will be updated as the API evolves.
@@ -50,10 +50,10 @@ and spent some time iterating on this design.
 
 ### Suggested use cases {: #use-cases }
 
-There may be cases where there isn’t feature parity between your web and native
+There may be cases where there isn't feature parity between your web and native
 apps. With `getInstalledRelatedApps()`, you can check if the other version is
 installed, and switch to it, using the functionality there. For example, one of
-the most common scenarios we’ve heard, and the key reason behind this method is
+the most common scenarios we've heard, and the key reason behind this method is
 to reduce duplicate notifications. Using `getInstalledRelatedApps()` allows you
 check to see if the user has the native app installed, then disable the
 notification functionality in the web app.
@@ -176,7 +176,7 @@ your domain. Be sure to include the escaping characters.
 
 ### Test for the presence of your native app {: #test-native }
 
-Once you’ve updated your native app and added the appropriate fields to the
+Once you've updated your native app and added the appropriate fields to the
 web app manifest, add code to check for the presence of your native
 app to your web app. Calling `navigator.getInstalledRelatedApps()` returns a
 `promise` that resolves with an array of your apps that are installed on the
