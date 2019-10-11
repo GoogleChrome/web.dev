@@ -66,7 +66,14 @@ module.exports = (path) => {
           </ul>
         </div>
         <div class="w-path-card__cover">
-          <img class="w-path-card__cover-image" src="${path.cover}" alt="" />
+          <img
+            class="w-path-card__cover-image"
+            src="${path.cover}"
+            alt=""
+            loading="lazy"
+            width="100%"
+            height="240"
+          />
         </div>
         <div class="w-path-card__desc">
           <h2 class="w-path-card__headline">${path.title}</h2>
