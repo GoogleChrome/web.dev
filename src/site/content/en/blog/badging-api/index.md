@@ -16,7 +16,7 @@ tags:
   - fugu
 hero: hero.jpg
 alt: Phone showing several notification badges
-# draft: true
+draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-5354779956943519743
 ---
