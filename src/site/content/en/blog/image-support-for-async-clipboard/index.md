@@ -21,7 +21,7 @@ draft: true
 
 Chrome 66 added support for the
 [text portion](https://developers.google.com/web/updates/2018/03/clipboardapi)
-of the [Asynchronous Clipboard API](https://w3c.github.io/clipboard-apis/#async-clipboard-api).
+of the [Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
 Chrome 76 has added support for images makes it easy to programmatically
 copy and paste **PNG** images.
 
@@ -37,7 +37,6 @@ API works. If you remember the details, skip ahead to the [image section](#image
 
 Before describing image support, I want to review how the Asynchronous Clipboard
 API works. Feel free to [skip ahead](#images) if you're already comfortable
-using the API.
 
 ### Copy: writing text to the clipboard {: #copy-text }
 
