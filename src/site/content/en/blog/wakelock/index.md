@@ -32,9 +32,9 @@ run-tracking app (turns the screen off, but keeps the system awake), or a game,
 like [Ball Puzzle](https://ball-puzzle.appspot.com/), that uses the device
 motion APIs for input.
 
-The Wake Lock API provides a way to prevent the device from dimming and
-locking the screen or prevent the device from going to sleep. This capability
-enables new experiences that, until now, required a native app.
+The [Wake Lock API][spec-ed] provides a way to prevent the device from dimming
+and locking the screen or prevent the device from going to sleep. This
+capability enables new experiences that, until now, required a native app.
 
 The Wake Lock API aims to reduce the need for hacky and potentially
 power-hungry workarounds. It addresses the shortcomings of an older API
@@ -61,6 +61,8 @@ Of course, there are plenty of others:
 
 ## Current status {: #status }
 
+<div class="w-table-wrapper">
+
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | Complete                     |
@@ -68,6 +70,8 @@ Of course, there are plenty of others:
 | **3. Gather feedback & iterate on design** | [**In Progress**](#feedback) |
 | 4. Origin trial                            | Not Started                  |
 | 5. Launch                                  | Not Started                  |
+
+</div>
 
 {% Aside %}
   Big thanks to the folks at Intel, specifically Mrunal Kapade for doing
