@@ -199,10 +199,6 @@ aren't included in the table because they don't affect your score.
         <td>3</td>
       </tr>
       <tr>
-        <td><a href="/html-xml-lang-mismatch/">The <code>&#60;html&#62;</code> <code>[lang]</code> attribute does not match the <code>[xml:lang]</code> attribute</a></td>
-        <td>3</td>
-      </tr>
-      <tr>
         <td><a href="/valid-lang/"><code>[lang]</code> attributes do not have a valid value</a></td>
         <td>3</td>
       </tr>

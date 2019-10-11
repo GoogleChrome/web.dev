@@ -99,7 +99,6 @@ module.exports = {
         pathItems: [
           'html-has-lang',
           'html-lang-valid',
-          'html-xml-lang-mismatch',
           'valid-lang',
         ],
       },
