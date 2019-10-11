@@ -14,6 +14,8 @@ tags:
 hero: hero.jpg
 alt: Telephone on yellow background.
 draft: true
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/85568392920039425
 ---
 
 {% Aside %}
@@ -101,17 +103,7 @@ trial on Chrome for Android.
 
 {% include 'content/origin-trials.njk' %}
 
-To enable the origin trial:
-
-1. Request a [token][ot-link] for your origin.
-2. Add the token to your pages, there are two ways to provide this token on
-   any pages in your origin:
-     * Add an `origin-trial` `<meta>` tag to the head of any page. For example,
-       this may look something like: <br>
-       `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
-     * If you can configure your server, you can also provide the token on
-       pages using an `Origin-Trial` HTTP header. The resulting response header
-       should look something like: `Origin-Trial: TOKEN_GOES_HERE`
+{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection
 
@@ -294,6 +286,7 @@ critical it is to support them.
 * [Contact Picker API Demo][demo] & [Contact Picker API demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
+* Request an [origin trial token]({{origin_trial.url}})
 * Blink Component: `Blink>Contacts`
 
 ### Thanks
@@ -319,9 +312,7 @@ PS: The 'names' in my contact picker, are characters from Alice in Wonderland.
 [ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
 [ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
-[ot-request]: https://developers.chrome.com/origintrials/
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [secure-contexts]: https://w3c.github.io/webappsec-secure-contexts/
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [ot-guide]: https://googlechrome.github.io/OriginTrials/developer-guide.html
-[ot-link]: https://developers.chrome.com/origintrials/#/view_trial/85568392920039425
