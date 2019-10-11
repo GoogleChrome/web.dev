@@ -13,7 +13,7 @@ tags:
   - progressive-web-apps
   - webapp
 hero: hero.jpg
-alt: Photo of bokeh lights
+alt: QR code being scanned by a mobile phone
 draft: true
 ---
 
