@@ -14,7 +14,7 @@ tags:
   - images
 ---
 
-[Thumbor](http://thumbor.org/) is a free, open source image CDN that makes it easy to compress, resize, and transform images. This post lets you try out Thumbor firsthand without needing to install anything. We've set up a sandbox Thumbor server for you to try out at `http://34.67.235.246:8888`. The image that you're going to experiment with is available at <a href="http://34.67.235.246:8888/unsafe/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer">http://34.67.235.246:8888/unsafe/https://web.dev/backdrop-filter/hero.jpg</a>.
+[Thumbor](http://thumbor.org/) is a free, open source image CDN that makes it easy to compress, resize, and transform images. This post lets you try out Thumbor firsthand without needing to install anything. We've set up a sandbox Thumbor server for you to try out at `http://34.67.235.246:8888`. The image that you're going to experiment with is available at <a href="http://34.67.235.246:8888/unsafe/https://web.dev/backdrop-filter/hero.jpg" target="_blank" rel="noreferrer noopener">http://34.67.235.246:8888/unsafe/https://web.dev/backdrop-filter/hero.jpg</a>.
 
 
 ## Prequisites
@@ -99,7 +99,7 @@ This section focuses on the Thumbor functionalities most relevant to performance
 
 ### Compression
 
-The [quality](https://thumbor.readthedocs.io/en/latest/quality.html) filter compresses JPEG images to the desired image quality level (1-100). If no quality level is provided, Thumbor compresses the image to a quality level of 80. This is a good default: quality levels 80-85 typically have little noticeable effect on image quality, but usually decrease image size by 30-40%.  
+The [quality](https://thumbor.readthedocs.io/en/latest/quality.html) filter compresses JPEG images to the desired image quality level (1-100). If no quality level is provided, Thumbor compresses the image to a quality level of 80. This is a good default: quality levels 80-85 typically have little noticeable effect on image quality, but usually decrease image size by 30-40%.
 
 Try it now:
 

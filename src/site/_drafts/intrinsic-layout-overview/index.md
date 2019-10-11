@@ -126,7 +126,7 @@ intrinsic layout.**
     <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/home.jpg" alt="TenHundred store home page" class="screenshot">
   </picture>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank">Preview the final layout demo page</a>
+    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank" rel="noopener noreferrer">Preview the final layout demo page</a>
   </figcaption>
 </figure>
 
