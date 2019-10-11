@@ -37,7 +37,14 @@ module.exports = ({post}) => {
   function renderThumbnail(url, img, alt) {
     return html`
       <figure class="w-post-card__figure">
-        <img class="w-post-card__image" src="${url + img}" alt="${alt}" />
+        <img
+          class="w-post-card__image"
+          src="${url + img}"
+          alt="${alt}"
+          width="100%"
+          height="240"
+          loading="lazy"
+        />
       </figure>
     `;
   }
