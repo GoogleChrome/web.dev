@@ -16,7 +16,7 @@ tags:
   - clipboard
 hero: hero.jpg
 alt: Clipboard with shopping list
-draft: true
+# draft: true
 ---
 
 Chrome 66 added support for the
@@ -245,10 +245,11 @@ document.addEventListener('copy', async (e) => {
 
 ### Demo
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-api?path=index.html&attributionHidden=true"
-    alt="Async Clipboard on Glitch">
+    src="https://glitch.com/embed/#!/embed/async-clipboard-api?path=index.html&attributionHidden=true&&previewSize=100"
+    alt="Async Clipboard on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
