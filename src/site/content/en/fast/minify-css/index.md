@@ -55,7 +55,7 @@ You'll apply CSS minification to a site that has been used in other guides: [Fav
 
 As a first step, you need to understand what would be the opportunity after minifying this file:
 
-1. Open [the measure page](https://web.dev/measure).
+1. Open [the measure page](/measure).
 1. Enter the URL: `https://fav-kitties-animated.glitch.me` and click **Run Audit**.
 1. Click **View report**.
 1. Click on **Performance** and go the **Opportunities** section.
@@ -164,7 +164,7 @@ You can inspect these files, and see that the new versions don't contain any whi
 
 As a final step:
 
-1. Open [the measure page](https://web.dev/measure).
+1. Open [the measure page](/measure).
 1. Enter the URL of the optimized site.
 1. Click **View report**.
 1. Click on **Performance** and find the **Opportunities** section.
@@ -180,4 +180,4 @@ Since CSS files are [render-blocking resources](https://developers.google.com/we
 In this guide, we've covered CSS Minification with webpack, but the same approach can be followed with other build tools, like [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css) for [Gulp](https://gulpjs.com/), or
 [grunt-contrib-cssmin](https://www.npmjs.com/package/grunt-contrib-cssmin) for [Grunt](https://gruntjs.com/).
 
-Minification can also be applied to other types of files. Check out the [Minify and compress network payloads guide](https://web.dev/fast/reduce-network-payloads-using-text-compression) to learn more about tools to minify JS, and some complementary techniques, like compression.
+Minification can also be applied to other types of files. Check out the [Minify and compress network payloads guide](/fast/reduce-network-payloads-using-text-compression) to learn more about tools to minify JS, and some complementary techniques, like compression.

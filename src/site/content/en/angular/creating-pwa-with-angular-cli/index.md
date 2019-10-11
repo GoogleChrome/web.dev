@@ -83,7 +83,7 @@ A PWA references its manifest file with a `link` element in `index.html`. Once t
   <img src="home.png" alt="A progressive web app install prompt">
 </figure>
 
-Since the `ng-add` schematics add everything needed to make your app [installable](https://web.dev/discover-installable/), they generate some shortcut icons that are shown once the user adds the app to their desktop:
+Since the `ng-add` schematics add everything needed to make your app [installable](/discover-installable/), they generate some shortcut icons that are shown once the user adds the app to their desktop:
 
 <figure class="w-figure  w-figure--center">
   <img src="icon.png" alt="A progressive web app shortcut icon">

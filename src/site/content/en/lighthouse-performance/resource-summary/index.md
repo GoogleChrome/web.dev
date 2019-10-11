@@ -82,7 +82,7 @@ Affected metrics: [First Contentful Paint][fcp]
 ## Use performance budgets to prevent regressions
 
 Once you've optimized your code to reduce request counts and transfer sizes, see
-[Set performance budgets](https://web.dev/fast#set-performance-budgets) to learn how to prevent regressions.
+[Set performance budgets](/fast#set-performance-budgets) to learn how to prevent regressions.
 
 ## Resources
 

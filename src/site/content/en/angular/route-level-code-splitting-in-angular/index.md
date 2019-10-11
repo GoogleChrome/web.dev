@@ -28,7 +28,7 @@ The ever growing complexity of web applications has led to a significant increas
 
 The most efficient way to shrink JavaScript bundles without sacrificing features in your applications is to introduce aggressive code splitting.
 
-**[Code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/)** lets you divide the JavaScript of your application into multiple chunks associated with different routes or features. This approach only sends users the JavaScript they need during the initial application load, keeping load times low.
+**[Code splitting](/reduce-javascript-payloads-with-code-splitting/)** lets you divide the JavaScript of your application into multiple chunks associated with different routes or features. This approach only sends users the JavaScript they need during the initial application load, keeping load times low.
 
 {% Aside 'note' %}
 

@@ -68,7 +68,7 @@ Install Thumbor using pip.
 sudo pip install thumbor
 ```
 
-Note: Many Python developers use [virtualenv](https://pypi.org/project/virtualenv/) to manage their packages. For the sake of simplicity, these instructions do not use `virtualenv`. If you are installing Thumbor in a standalone environment, `virtualenv` is not necessary. If you choose to use `virtualenv`, note that Thumbor requires Python 2.7 and will not work with newer versions of `pip` (e.g. these instructions use `pip` 8.1.1).
+Note: Many Python developers use [virtualenv](https://pypi.org/project/virtualenv/) to manage their packages. For the sake of simplicity, these instructions do not use `virtualenv`. If you are installing Thumbor in a standalone environment, `virtualenv` is not necessary. If you choose to use `virtualenv`, note that Thumbor requires Python 2.7 and will not work with newer versions of `pip` (e.g., these instructions use `pip` 8.1.1).
 
 If you've successfully installed Thumbor, this should work:
 
@@ -106,7 +106,7 @@ http://YOUR_VIRTUAL_MACHINE:8888/unsafe/100x100/https://web.dev/install-thumbor/
 Note that this URL uses HTTP. Thumbor uses HTTP by default but can be [configured](https://thumbor.readthedocs.io/en/latest/image_loader.html) to use HTTPS.
 
 
-You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has taken the image `hero.jpg` and size specified in the URL string and served the result. You can replace the image in the URL string (i.e `https://web.dev/install-thumbor/hero.jpg`) with any other image (e.g. `https://your-site.com/cat.jpg`) and Thumbor will resize that image too. 
+You should see an image that is 100 pixels wide by 100 pixels tall. Thumbor has taken the image `hero.jpg` and size specified in the URL string and served the result. You can replace the image in the URL string (i.e., `https://web.dev/install-thumbor/hero.jpg`) with any other image (e.g., `https://your-site.com/cat.jpg`) and Thumbor will resize that image too.
 
 
 ## Appendix: Configuring Systemd
@@ -129,7 +129,7 @@ As superuser, create a `thumbor.service` file.
 sudo touch thumbor.service
 ```
 
-Using your favorite text editor (vim and nano come pre-installed on Ubuntu or you can install another editor), add the following configuration to `thumbor.service`. This configuration will run `/usr/local/bin/thumbor` (i.e. the Thumbor binary) once networking is available and will restart Thumbor on [failure](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Restart=). 
+Using your favorite text editor (vim and nano come pre-installed on Ubuntu or you can install another editor), add the following configuration to `thumbor.service`. This configuration will run `/usr/local/bin/thumbor` (i.e. the Thumbor binary) once networking is available and will restart Thumbor on [failure](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Restart=).
 
 ```text
 [Unit]

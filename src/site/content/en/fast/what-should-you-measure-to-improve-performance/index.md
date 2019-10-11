@@ -29,7 +29,7 @@ In this guide we'll address how the different steps can be measured. For this we
 recommend you to look at lab as well as field data.
 
 **Lab data** is gathered by running tests locally, for example by using
-[Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse)
+[Lighthouse](/fast/discover-performance-opportunities-with-lighthouse)
 and other tools.  This can make it possible  to compare website performance over
 time and with competitors through a controlled, stable environment, but it might
 not be representative of the performance users experience in real life.
@@ -50,12 +50,12 @@ Optimizing for discovery means optimizing for the first load, which is what new
 users  will get, but also search and social
 [crawlers](https://developers.google.com/search/docs/guides/rendering).
 Lab data for a first load can be easily acquired through
-[Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse),
+[Lighthouse](/fast/discover-performance-opportunities-with-lighthouse),
 while field data (at least for Chrome) is readily available through [Chrome UX
-reports](https://web.dev/fast/chrome-ux-report). A convenient combination of
-both can be found in [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/). You should
-also track relevant metrics from the field yourself:
+reports](/fast/chrome-ux-report). A convenient combination of
+both can be found in
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+You should also track relevant metrics from the field yourself:
 [Measuring these metrics on real users' devices](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices)
 provides a good overview.
 
