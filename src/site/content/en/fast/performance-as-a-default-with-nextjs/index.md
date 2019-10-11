@@ -71,7 +71,7 @@ but find difficult to set up, such as:
 
 To create a new Next.js application, run the following command:
 
-```
+```bash
 npx create-next-app new-app
 ```
 
@@ -84,7 +84,7 @@ npx create-next-app new-app
 
 Then navigate to the directory and start the development server:
 
-```
+```bash
 cd new-app
 npm run dev
 ```
