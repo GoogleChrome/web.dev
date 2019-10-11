@@ -12,6 +12,8 @@ tags:
 hero: hero.jpg
 alt: mobile device with app panel open
 # draft: true
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/855683929200394241
 ---
 
 {% Aside %}
@@ -88,15 +90,7 @@ Check out the [`getInstalledRelatedApps()` API Demo][demo] and
 
 ### Register for the origin trial {: #ot }
 
-1. [Request a token][ot-request] for your origin.
-2. Add the token to your pages. There are two ways to provide this token on
-   any pages in your origin:
-     * Add an `origin-trial` `<meta>` tag to the head of any page. For example,
-       this may look something like: <br>
-       `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
-     * If you can configure your server, you can also provide the token on pages
-       using an `Origin-Trial` HTTP header. The resulting response header should
-       look something like: `Origin-Trial: TOKEN_GOES_HERE`
+{% include 'content/origin-trial-register.njk' %}
 
 ### Alternatives to the origin trial
 
@@ -236,6 +230,7 @@ browser vendors how critical it is to support them.
   [`getInstalledRelatedApps()` API Demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
+* Request an [origin trial token]({{origin_trial.url}})
 * Blink Component: `Mobile>WebAPKs`
 
 [spec]: https://github.com/WICG/get-installed-related-apps
@@ -249,6 +244,5 @@ browser vendors how critical it is to support them.
 [ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
 [ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
-[ot-request]: https://developers.chrome.com/origintrials/#/view_trial/855683929200394241
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Mobile%3EWebAPKs
 [cr-dev-twitter]: https://twitter.com/chromiumdev
