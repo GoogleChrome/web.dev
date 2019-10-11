@@ -71,7 +71,9 @@ but find difficult to set up, such as:
 
 To create a new Next.js application, run the following command:
 
-    npx create-next-app new-app
+```
+npx create-next-app new-app
+```
 
 {% Aside %}
   [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
@@ -82,8 +84,10 @@ To create a new Next.js application, run the following command:
 
 Then navigate to the directory and start the development server:
 
-    cd new-app
-    npm run dev
+```
+cd new-app
+npm run dev
+```
 
 {% Aside %}
   You can also add Next.js to an existing React application.
@@ -130,7 +134,7 @@ a fully server-rendered page.
 These are only a few of the many features provided by Next.js automatically. Many
 are customizable and can be modified for different use cases.
 
-## What’s next?
+## What's next?
 
 Pun intended 😛
 
