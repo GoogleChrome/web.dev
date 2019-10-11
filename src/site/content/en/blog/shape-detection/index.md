@@ -15,6 +15,8 @@ tags:
 hero: hero.jpg
 alt: QR code being scanned by a mobile phone
 draft: true
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919
 ---
 
 {% Aside %}
@@ -132,15 +134,7 @@ The Shape Detection API is currently available as an origin trial.
 
 {% include 'content/origin-trials.njk' %}
 
-1. [Request a token][ot] for your origin.
-2. Add the token to your pages, there are two ways to provide this token on
-   any pages in your origin:
-     * Add an `origin-trial` `<meta>` tag to the head of any page. For example,
-       this may look something like: <br>
-       `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
-     * If you can configure your server, you can also provide the token on pages
-       using an `Origin-Trial` HTTP header. The resulting response header should
-       look something like: `Origin-Trial: TOKEN_GOES_HERE`
+{% include 'content/origin-trial-register.njk' %}
 
 ### Alternatives to the origin trial
 
@@ -336,6 +330,7 @@ critical it is to support them.
 * [API Demo][demo] | [API Demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
+* Request an [origin trial token]({{origin_trial.url}})
 * Blink Component: `Blink>ImageCapture`
 
 [cr-dev-twitter]: https://twitter.com/chromiumdev
@@ -347,7 +342,6 @@ critical it is to support them.
 [cr-status]: https://www.chromestatus.com/feature/4757990523535360
 [explainer]: https://docs.google.com/document/d/1QeCDBOoxkElAB0x7ZpM3VN3TQjS1ub1mejevd2Ik1gQ/edit
 [wicg-discourse]: https://discourse.wicg.io/t/rfc-proposal-for-face-detection-api/1642/3
-[ot]: https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919
 [ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
 [ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
