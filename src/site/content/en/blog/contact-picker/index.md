@@ -28,23 +28,24 @@ draft: true
   #video-demo { max-height: 600px; }
 </style>
 
-<a href="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
-  <video id="video-demo" loop autoplay muted
-         class="w-figure w-figure--inline-right w-screenshot"
-         poster="contact-picker-demo.jpg">
-    <source type="video/webm"
-            src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">
-    <source type="video/mp4"
-            src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
-  </video>
-</a>
+<figure class="w-figure w-figure--inline-right w-screenshot">
+  <a href="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
+    <video id="video-demo" loop autoplay muted
+          poster="contact-picker-demo.jpg">
+      <source type="video/webm"
+              src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.webm">
+      <source type="video/mp4"
+              src="https://storage.googleapis.com/webfundamentals-assets/contact-picker/contact-picker.mp4">
+    </video>
+  </a>
+</figure>
 
 Access to the user's contacts has been a feature of native apps since
 (almost) the dawn of time. It's one of the most common feature requests
 I hear from web developers, and is often the key reason they build a native
 app.
 
-The Contact Picker API is an on-demand API that allows users to
+The [Contact Picker API][spec] is an on-demand API that allows users to
 select entries from their contact list and share limited details of the
 selected entries with a website. It allows users to share only what they
 want, when they want, and makes it easier for users to reach and connect
@@ -56,13 +57,15 @@ which phone number to call. Or a social network could help a user discover
 which friends have already joined.
 
 {% Aside 'caution' %}
-  We've put a lot of thought into the design and implementation of the
-  Contact Picker API to ensure that the browser will only share exactly
+  The Chrome team has put a lot of thought into the design and implementation
+  of the Contact Picker API to ensure that the browser will only share exactly
   what people choose. See the [Security and Privacy](#security-considerations)
   section below.
 {% endAside %}
 
 ## Current status {: #status }
+
+<div class="w-table-wrapper">
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
@@ -71,6 +74,8 @@ which friends have already joined.
 | 3. Gather feedback & iterate on design     | [In progress][spec]          |
 | **4. Origin trial**                        | **Started in Chrome 77** <br> Expected to run through Chrome 80. |
 | 5. Launch                                  | Not started                  |
+
+</div>
 
 ## Using the Contact Picker API {: #how-to-use }
 
@@ -92,10 +97,9 @@ in `chrome://flags`.
 ### Enabling support during the origin trial phase {: #origin-trial }
 
 Starting in Chrome 77, the Contact Picker API is available as an origin
-trial on Chrome for Android. Origin trials allow you to try new features
-and give feedback on their usability, practicality, and effectiveness, both
-to the Chrome team, and to the web standards community. For more information,
-see the [Origin Trials Guide for Web Developers][ot-guide].
+trial on Chrome for Android.
+
+{% include 'content/origin-trials.njk' %}
 
 To enable the origin trial:
 
@@ -199,7 +203,7 @@ to select only the contacts that they need to share for that particular
 website. Users can also control which properties are shared with the site
 by toggling the property button at the top of the picker.
 
-<div class="clearfix"></div>
+<div class="w-clearfix"></div>
 
 ### Transparency {: #security-transparency }
 
@@ -210,28 +214,30 @@ all three properties will be shown in the picker. Alternatively,
 if a site only requests `tel`, the picker will show only the name, and
 telephone numbers.
 
-<figure class="w-figure w-figure--inline-left" style="max-width:42%">
-  <img src="contact-picker-left.jpg" class="w-screenshot"
-       alt="Screen shot of picker for site requesting all properties.">
-  <figcaption>
-    Picker, site requesting <code>name</code>, <code>email</code>, and
-    <code>tel</code>, one contact selected.
-  </figcaption>
-</figure>
-<figure class="w-figure w-figure--inline-right" style="max-width:42%">
-  <img src="contact-picker-right.jpg" class="w-screenshot"
-       alt="Screen shot of picker for site requesting only phone numbers.">
-  <figcaption>
-    Picker, site requesting only <code>tel</code>, one contact selected.
-  </figcaption>
-</figure>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="contact-picker-left.jpg" class="w-screenshot"
+        alt="Screen shot of picker for site requesting all properties.">
+    <figcaption class="w-figcaption">
+      Picker, site requesting <code>name</code>, <code>email</code>, and
+      <code>tel</code>, one contact selected.
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img src="contact-picker-right.jpg" class="w-screenshot"
+        alt="Screen shot of picker for site requesting only phone numbers.">
+    <figcaption class="w-figcaption">
+      Picker, site requesting only <code>tel</code>, one contact selected.
+    </figcaption>
+  </figure>
+</div>
 
-<div class="clearfix"></div>
+<div class="w-clearfix"></div>
 
 <figure class="w-figure w-figure--inline-right">
   <img src="contact-picker-long-press.jpg" class="w-screenshot"
        alt="Screen shot of picker when a contact is long-pressed.">
-  <figcaption>
+  <figcaption class="w-figcaption">
     The result of a long press on a contact.
   </figcaption>
 </figure>
@@ -239,7 +245,7 @@ telephone numbers.
 A long press on a contact will show all of the information that will be
 shared if the contact is selected. (See the Cheshire Cat contact image.)
 
-<div class="clearfix"></div>
+<div class="w-clearfix"></div>
 
 ### No permission persistence {: #security-persistence }
 
