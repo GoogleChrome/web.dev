@@ -81,6 +81,8 @@ In general, the most common causes of long tasks are:
   on most sites.
 {% endAside %}
 
+{% include 'content/lighthouse-performance/improve.njk' %}
+
 ## Resources
 
 - [Source code for **Total Blocking Time** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/total-blocking-time.js)
