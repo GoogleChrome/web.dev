@@ -62,6 +62,8 @@ Examples of sites that may use this API include:
 
 ## Current status {: #status }
 
+<div class="w-table-wrapper">
+
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
@@ -69,6 +71,8 @@ Examples of sites that may use this API include:
 | 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
 | **4. Origin trial**                        | [**In progress**](#ot)       |
 | 5. Launch                                  | Not started                  |
+
+</div>
 
 ## Try it
 
@@ -95,11 +99,6 @@ Examples of sites that may use this API include:
 Starting in Chrome 73, the Badging API is available as an origin trial
 for Windows (7+) and macOS.
 
-[Origin trials][ot-what-is] allow you to try out new features and give
-feedback on usability, practicality, and effectiveness to the Chrome team and the web
-standards community. For more information, see the
-[Origin Trials Guide for Web Developers][ot-dev-guide].
-
 {% Aside 'caution' %}
   Android is not supported because it requires you to show a notification,
   though this may change in the future. Chrome OS support is pending
@@ -107,6 +106,8 @@ standards community. For more information, see the
 {% endAside %}
 
 ### Register for the origin trial {: #ot }
+
+{% include 'content/origin-trials.njk' %}
 
 1. [Request a token][ot-request] for your origin.
 2. Add the token to your pages, there are two ways to provide this token on
