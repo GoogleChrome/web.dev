@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: Chrome 76 adds expands the functionality of the Async Clipboard API to add support for png images. Copying and pasting images to the clipboard has never been easier.
 date: 2019-07-03
-updated: 2019-10-08
+updated: 2019-10-11
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - capabilities
@@ -247,7 +247,7 @@ document.addEventListener('copy', async (e) => {
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-api?path=index.html&attributionHidden=true&&previewSize=100"
+    src="https://glitch.com/embed/#!/embed/async-clipboard-api?path=index.html&attributionHidden=true&previewSize=100"
     alt="Async Clipboard on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
