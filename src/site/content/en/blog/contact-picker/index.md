@@ -191,7 +191,7 @@ the picker without any context.
 <figure class="w-figure w-figure--inline-right">
   <img src="contact-picker-user-choice.jpg" class="w-screenshot"
        alt="Screen shot, users can choose which properties to share.">
-  <figcaption>
+  <figcaption class="w-figcaption">
     Users can choose not to share some properties. In this screenshot, the
     user has unchecked the 'Phone numbers' button. Even though the site
     asked for phone numbers, they will not be shared with the site.
