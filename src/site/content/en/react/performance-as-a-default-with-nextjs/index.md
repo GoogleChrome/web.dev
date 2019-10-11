@@ -6,7 +6,8 @@ authors:
 subhead: |
   Next.js takes care of many optimizations in your React app so you don’t have to
 date: 2019-10-11
-draft: true
+# TODO(kayce): Re-enable `draft: true` before merging!
+# draft: true
 ---
 
 [Next.js](https://nextjs.org/) is an opinionated [React](https://reactjs.org/)
