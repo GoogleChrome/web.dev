@@ -31,7 +31,7 @@ draft: true
 <figure class="w-figure w-figure--inline-right">
   <img  src="badges-on-windows.jpg" class="w-screenshot"
         alt="Example of Twitter with eight notifications and another app showing a flag type badge.">
-  <figcaption>
+  <figcaption class="w-figcaption">
     Example of Twitter with eight notifications and another app showing a flag
     type badge.
   </figcaption>
