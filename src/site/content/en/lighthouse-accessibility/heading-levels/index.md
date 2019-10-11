@@ -11,7 +11,7 @@ web_lighthouse:
 noindex: true
 ---
 
-{% Banner 'caution', 'body' %}This audit has been deprecated. Check out [Heading elements are not in a sequentially descending order](/heading-order) instead.{% endBanner %}
+{% Banner 'caution', 'body' %}This manual audit has been deprecated. Check out [the newer automated audit](/heading-order) instead.{% endBanner %}
 
 Screen readers users often navigate an unfamiliar page by exploring headings.
 By using the correct headings,

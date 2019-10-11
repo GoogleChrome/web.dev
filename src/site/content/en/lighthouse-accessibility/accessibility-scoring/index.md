@@ -47,7 +47,7 @@ aren't included in the table because they don't affect your score.
         <td>10</td>
       </tr>
       <tr>
-        <td><a href="/heading-order">Heading elements are not in a sequentially descending order</a></td>
+        <td><a href="/heading-order">Headings skip levels</a></td>
         <td>3</td>
       </tr>
       <tr>
@@ -89,7 +89,7 @@ aren't included in the table because they don't affect your score.
       <tr>
         <td><a href="/aria-toggle-field-name/">Not all ARIA toggle fields have accessible names</a></td>
         <td>10</td>
-      </tr>      
+      </tr>
       <tr>
         <td><a href="/aria-valid-attr-value/"><code>[aria-*]</code> attributes do not have valid values</a></td>
         <td>10</td>
@@ -113,7 +113,7 @@ aren't included in the table because they don't affect your score.
       <tr>
         <td><a href="/form-field-multiple-labels">Form fields have multiple labels</a></td>
         <td>3</td>
-      </tr>      
+      </tr>
       <tr>
         <td><a href="/frame-title/"><code>&#60;frame&#62;</code> or <code>&#60;iframe&#62;</code> elements do not have a title</a></td>
         <td>3</td>
