@@ -16,7 +16,7 @@ tags:
   - clipboard
 hero: hero.jpg
 alt: Clipboard with shopping list
-# draft: true
+draft: true
 ---
 
 Chrome 66 added support for the
