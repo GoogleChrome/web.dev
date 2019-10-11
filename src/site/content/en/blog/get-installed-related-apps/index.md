@@ -11,7 +11,7 @@ tags:
   - capabilities
 hero: hero.jpg
 alt: mobile device with app panel open
-draft: true
+# draft: true
 ---
 
 {% Aside %}
@@ -23,8 +23,8 @@ draft: true
 
 ## What is the `getInstalledRelatedApps()` API? {: #what }
 
-<figure class="w-figure w-figure--inline-right w-screenshot">
-  <img src="getinstalled-cropped.jpg">
+<figure class="w-figure w-figure--inline-right">
+  <img src="getinstalled-cropped.jpg" class="w-screenshot" width="550">
   <figcaption class="w-figcaption">
     A web app using `getInstalledRelatedApps()` to determine if it's
     related native app is already installed.
