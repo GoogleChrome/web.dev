@@ -16,7 +16,9 @@ tags:
   - fugu
 hero: hero.jpg
 alt: Phone showing several notification badges
-draft: true
+# draft: true
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/-5354779956943519743
 ---
 
 {% Aside 'caution' %}
@@ -109,15 +111,7 @@ for Windows (7+) and macOS.
 
 {% include 'content/origin-trials.njk' %}
 
-1. [Request a token][ot-request] for your origin.
-2. Add the token to your pages, there are two ways to provide this token on
-   any pages in your origin:
-     * Add an `origin-trial` `<meta>` tag to the head of any page. For example,
-       this may look something like: <br>
-       `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
-     * If you can configure your server, you can also provide the token on pages
-       using an `Origin-Trial` HTTP header. The resulting response header should
-       look something like: `Origin-Trial: TOKEN_GOES_HERE`
+{% include 'content/origin-trial-register.njk' %}
 
 ### Alternatives to the origin trial
 
@@ -206,7 +200,7 @@ is to support them.
 * [Badging API Demo][demo] | [Badging API Demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
-* Request an [origin trial token][ot-request]
+* Request an [origin trial token]({{origin_trial.url}})
 * [How to use an origin trial token][ot-use]
 * Blink Component: `UI>Browser>WebAppInstalls`
 
@@ -219,6 +213,5 @@ is to support them.
 [ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
 [ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
-[ot-request]: https://developers.chrome.com/origintrials/#/view_trial/-5354779956943519743
 [wicg-discourse]: https://discourse.wicg.io/t/badging-api-for-showing-an-indicator-on-a-web-apps-shelf-icon/2900
 [explainer]: https://github.com/WICG/badging/blob/master/explainer.md
