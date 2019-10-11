@@ -25,7 +25,7 @@ draft: true
 
 <figure class="w-figure w-figure--inline-right w-screenshot">
   <img src="getinstalled-cropped.jpg">
-  <figcaption>
+  <figcaption class="w-figcaption">
     A web app using `getInstalledRelatedApps()` to determine if it's
     related native app is already installed.
   </figcaption>
