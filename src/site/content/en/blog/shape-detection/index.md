@@ -47,9 +47,9 @@ optimized feature detectors such as the Android
 or the iOS generic feature detector,
 [`CIDetector`](https://developer.apple.com/documentation/coreimage/cidetector?language=objc).
 
-The Shape Detection API exposes these native implementations through a set of
-JavaScript interfaces. Currently, the supported features are face detection
-through the `FaceDetector` interface, barcode detection through the
+The [Shape Detection API][spec] exposes these native implementations through
+a set of JavaScript interfaces. Currently, the supported features are face
+detection through the `FaceDetector` interface, barcode detection through the
 `BarcodeDetector` interface, and text detection (Optical Character
 Recognition, (OCR)) through the `TextDetector` interface.
 
@@ -105,6 +105,8 @@ of use cases for all three features.
 
 ## Current status {: #status }
 
+<div class="w-table-wrapper">
+
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
@@ -113,23 +115,22 @@ of use cases for all three features.
 | **4. Origin trial**                        | [**In progress**](#ot)       |
 | 5. Launch                                  | Not started                  |
 
+</div>
+
 ## How to use the Shape Detection API {: #use }
 
 {% Aside 'warning' %}
   The origin trial is expected to end in Chrome 78 and the API will be
-  turned off while we integrate developer feedback. You can always use the
-  Shape Detection API for local experiments by enabling the
+  turned off while the Chrome team integrates developer feedback. You can
+  always use the Shape Detection API for local experiments by enabling the
   `#enable-experimental-web-platform-features` flag.
 {% endAside %}
 
 The Shape Detection API is currently available as an origin trial.
-[Origin trials][ot-what-is] allow you to try out new features and give
-feedback on usability, practicality, and effectiveness to the Chrome team and the web
-standards community. For more information, see the
-[Origin Trials Guide for Web Developers][ot-dev-guide].
 
 ### Register for the origin trial {: #ot }
-This conversation was marked as resolved by petele
+
+{% include 'content/origin-trials.njk' %}
 
 1. [Request a token][ot] for your origin.
 2. Add the token to your pages, there are two ways to provide this token on
@@ -181,7 +182,7 @@ overview of the different platforms.
 ### Working with the `FaceDetector` {: #facedetector}
 
 The `FaceDetector` always returns the bounding boxes of faces it detects in
-the `ImageBitmapSource`. Dependent on the platform, more information
+the `ImageBitmapSource`. Depending on the platform, more information
 regarding face landmarks like eyes, nose, or mouth may be available.
 
 ```js
@@ -278,8 +279,8 @@ time for the detector to do its work.
 
 If you are a fan of
 [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API),
-you'll be happy tro know thatß detectors are exposed there as well.
-Detection results are serializable and can thus be passedß from the worker
+you'll be happy to know that detectors are exposed there as well.
+Detection results are serializable and can thus be passed from the worker
 to the main app via `postMessage()`. The [demo][demo] shows this in action.
 
 Not all platform implementations support all features, so be sure to check
@@ -297,7 +298,8 @@ existence and the location of text may be recognized, but not text contents.
 
 ## Feedback {: #feedback }
 
-We want to hear about your experiences with the Shape Detection API.
+The Chrome team and the web standards community want to hear about your
+experiences with the Shape Detection API.
 
 ### Tell us about the API design {: .hide-from-toc }
 
