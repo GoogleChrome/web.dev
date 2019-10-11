@@ -15,6 +15,8 @@ tags:
 hero: hero.jpg
 alt: Image of hard disk platters
 draft: true
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065
 ---
 
 {% Aside %}
@@ -83,17 +85,7 @@ origin trial on all desktop platforms.
 
 {% include 'content/origin-trials.njk' %}
 
-To enable the origin trial:
-
-1. Request a [token][ot-request] for your origin.
-2. Add the token to your pages, there are two ways to provide this token on
-   any pages in your origin:
-     * Add an `origin-trial` `<meta>` tag to the head of any page. For example,
-       this may look something like: <br>
-       `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
-     * If you can configure your server, you can also provide the token on
-       pages using an `Origin-Trial` HTTP header. The resulting response header
-       should look something like: `Origin-Trial: TOKEN_GOES_HERE`
+{% include 'content/origin-trial-register.njk' %}
 
 ### Read a file from the local file system {: #read-file }
 
@@ -434,6 +426,7 @@ critical it is to support them.
 * [Native File System specification][spec] & [File specification][file-api-spec]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
+* Request an [origin trial token]({{origin_trial.url}})
 * [Native File System API - Chromium Security Model][nfs-cr-sec-model]
 * Blink Component: `Blink>Storage>FileSystem`
 
@@ -465,4 +458,3 @@ critical it is to support them.
 [text-editor-app-js]: https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/app.js
 [download-file]: /web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
-[ot-request]: https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065
