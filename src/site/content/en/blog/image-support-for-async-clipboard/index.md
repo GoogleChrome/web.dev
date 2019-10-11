@@ -22,7 +22,7 @@ draft: true
 Chrome 66 added support for the
 [text portion](https://developers.google.com/web/updates/2018/03/clipboardapi)
 of the [Asynchronous Clipboard API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
-Chrome 76 has added support for images makes it easy to programmatically
+Chrome 76 has added support for images, making it easier to programmatically
 copy and paste **PNG** images.
 
 {% Aside 'caution' %}
@@ -84,7 +84,7 @@ It works nicely with the new asynchronous methods for reading clipboard text:
 document.addEventListener('paste', async (e) => {
   e.preventDefault();
   try {
-    const text = await navigator.clipboard.readText();
+    let text = await navigator.clipboard.readText();
     text = text.toUpperCase();
     console.log('Pasted UPPERCASE text: ', text);
   } catch (err) {
@@ -103,7 +103,7 @@ permission.
 
 When the Asynchronous Clipboard API was introduced,
 two new permissions for copy and paste were added to the
- [Permissions API](https://developers.google.com/web/updates/2015/04/permissions-api-for-the-web):
+[Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API):
 
 * The `clipboard-write` permission is granted automatically to pages when they
   are in the active tab.
@@ -245,10 +245,12 @@ document.addEventListener('copy', async (e) => {
 
 ### Demo
 
-<iframe style="border: solid 1px;" width="100%" height="500"
-  src="https://jsfiddle.net/0794oysr/2/embedded/result,js,html,css"
-  allowfullscreen="allowfullscreen" frameborder="0">
-</iframe>
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/async-clipboard-api?path=index.html&attributionHidden=true"
+    alt="Async Clipboard on Glitch">
+  </iframe>
+</div>
 
 ### Security
 
