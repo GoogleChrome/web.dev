@@ -107,37 +107,44 @@ class Search extends BaseElement {
 
   /* eslint-disable indent */
   get hitsTemplate() {
+    if (!(this.hits && this.hits.length && this.showHits)) {
+      return "";
+    }
+
     return html`
-      ${this.hits && this.hits.length && this.showHits
-        ? html`
-            <div class="web-search-popout">
-              <div class="web-search-popout__heading">Pages</div>
-              <ul
-                id="web-search-popout__list"
-                class="web-search-popout__list"
-                role="listbox"
-              >
-                ${this.hits.map(
-                  (hit, idx) => html`
-                    <li class="web-search-popout__item">
-                      <a
-                        id="web-search-popout__link--${idx}"
-                        class="web-search-popout__link ${idx === this.cursor
-                          ? "web-search-popout__link--active"
-                          : ""}"
-                        aria-selected="${idx === this.cursor}"
-                        href="${hit.url}"
-                        >${hit.title}</a
-                      >
-                    </li>
-                  `,
-                )}
-              </ul>
-            </div>
-          `
-        : ""}
+      <div class="web-search-popout">
+        <div class="web-search-popout__heading">Pages</div>
+        <ul
+          id="web-search-popout__list"
+          class="web-search-popout__list"
+          role="listbox"
+        >
+          ${this.itemsTemplate}
+        </ul>
+      </div>
     `;
   }
+
+  get itemsTemplate() {
+    return html`
+      ${this.hits.map(
+        (hit, idx) => html`
+          <li class="web-search-popout__item">
+            <a
+              id="web-search-popout__link--${idx}"
+              class="web-search-popout__link ${idx === this.cursor
+                ? "web-search-popout__link--active"
+                : ""}"
+              aria-selected="${idx === this.cursor}"
+              href="${hit.url}"
+              >${hit.title}</a
+            >
+          </li>
+        `,
+      )}
+    `;
+  }
+  /* eslint-enable indent */
 
   firstUpdated() {
     this.inputEl = this.renderRoot.querySelector(".web-search__input");
