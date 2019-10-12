@@ -42,11 +42,13 @@ class Search extends BaseElement {
     this.hits = [];
     this.showHits = false;
     this.cursor = -1;
+    this.query = "";
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
     // actions immediately. On larger screens we need to wait for the searchbox
     // to fully expand/animate before we fire off actions.
     // So we need to figure out our screen size and keep track of it if changes.
+    // We debounce this because the handler triggers style recalc.
     this.onResize = debounce(this.onResize.bind(this), 200);
 
     // Debounce the method we use to search Algolia so we don't waste calls
@@ -221,14 +223,19 @@ class Search extends BaseElement {
    * @param {string} query The text to query algolia for.
    */
   async search(query) {
-    console.log("running debounced query");
+    // Cache a copy of the query.
+    // We'll check against this copy when results come back to ensure
+    // we don't show search results for a stale query.
+    this.query = query;
     if (query === "") {
       this.hits = [];
       return;
     }
     try {
       const {hits} = await index.search({query, hitsPerPage: 10});
-      this.hits = hits;
+      if (this.query === query) {
+        this.hits = hits;
+      }
     } catch (err) {
       console.error(err);
       console.error(err.debugData);
