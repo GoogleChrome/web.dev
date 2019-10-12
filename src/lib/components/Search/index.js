@@ -6,6 +6,7 @@ import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
 import {router} from "../../router";
+import {debounce} from "../../utils/debounce";
 import algoliasearch from "algoliasearch/dist/algoliasearchLite";
 
 // Create an algolia client so we can get search results.
@@ -46,9 +47,22 @@ class Search extends BaseElement {
     // actions immediately. On larger screens we need to wait for the searchbox
     // to fully expand/animate before we fire off actions.
     // So we need to figure out our screen size and keep track of it if changes.
-    this.onResize = this.onResize.bind(this);
+    this.onResize = debounce(this.onResize.bind(this), 200);
+
+    // Debounce the method we use to search Algolia so we don't waste calls
+    // while the user is typing.
+    this.search = debounce(this.search.bind(this), 200);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
     window.addEventListener("resize", this.onResize);
     this.onResize();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener("resize", this.onResize);
   }
 
   render() {
@@ -75,6 +89,7 @@ class Search extends BaseElement {
           aria-label="Search"
           placeholder="Search"
           @keyup="${this.onKeyUp}"
+          @input="${this.onInput}"
           @focusin="${this.onFocusIn}"
           @focusout="${this.onFocusOut}"
         />
@@ -122,6 +137,10 @@ class Search extends BaseElement {
     `;
   }
 
+  firstUpdated() {
+    this.inputEl = this.renderRoot.querySelector(".web-search__input");
+  }
+
   /**
    * Keep track of cursor changes and reflect them to aria-activedescendant.
    * This ensures screen readers properly announce the current search result.
@@ -135,14 +154,12 @@ class Search extends BaseElement {
       return;
     }
 
-    const input = this.querySelector(".web-search__input");
-
     if (this.cursor === -1) {
-      input.removeAttribute("aria-activedescendant");
+      this.inputEl.removeAttribute("aria-activedescendant");
       return;
     }
 
-    input.setAttribute(
+    this.inputEl.setAttribute(
       "aria-activedescendant",
       `web-search-popout__link--${this.cursor}`,
     );
@@ -172,10 +189,12 @@ class Search extends BaseElement {
         this.lastHit();
         return;
 
+      case "Up": // IE/Edge specific value
       case "ArrowUp":
         this.prevHit();
         return;
 
+      case "Down": // IE/Edge specific value
       case "ArrowDown":
         this.nextHit();
         return;
@@ -184,27 +203,36 @@ class Search extends BaseElement {
         this.navigateToHit(this.hits[this.cursor]);
         return;
 
+      case "Esc": // IE/Edge specific value
       case "Escape":
         document.activeElement.blur();
         return;
     }
+  }
 
-    // If the user is not navigating within the search popout, then assume
-    // anything they type is part of their query and ping algolia.
-    const query = e.target.value;
+  onInput(e) {
+    this.search(e.target.value);
+  }
+
+  /**
+   * Search algolia using the provided query.
+   * Note, we bind and debounce this function in the constructor to avoid
+   * spamming algolia as the user types.
+   * @param {string} query The text to query algolia for.
+   */
+  async search(query) {
+    console.log("running debounced query");
     if (query === "") {
       this.hits = [];
       return;
     }
-    (async () => {
-      try {
-        const {hits} = await index.search({query, hitsPerPage: 10});
-        this.hits = hits;
-      } catch (err) {
-        console.error(err);
-        console.error(err.debugData);
-      }
-    })();
+    try {
+      const {hits} = await index.search({query, hitsPerPage: 10});
+      this.hits = hits;
+    } catch (err) {
+      console.error(err);
+      console.error(err.debugData);
+    }
   }
 
   firstHit() {
@@ -218,10 +246,6 @@ class Search extends BaseElement {
   }
 
   nextHit() {
-    if (this.cursor === -1) {
-      this.cursor = 0;
-      return;
-    }
     this.cursor = (this.cursor + 1) % this.hits.length;
     this.scrollHitIntoView();
   }
@@ -229,9 +253,9 @@ class Search extends BaseElement {
   prevHit() {
     if (this.cursor === -1) {
       this.cursor = this.hits.length - 1;
-      return;
+    } else {
+      this.cursor = (this.cursor - 1 + this.hits.length) % this.hits.length;
     }
-    this.cursor = (this.cursor - 1 + this.hits.length) % this.hits.length;
     this.scrollHitIntoView();
   }
 
@@ -244,7 +268,9 @@ class Search extends BaseElement {
    */
   scrollHitIntoView() {
     this.requestUpdate().then(() => {
-      this.querySelector(".web-search-popout__link--active").scrollIntoView();
+      this.renderRoot
+        .querySelector(".web-search-popout__link--active")
+        .scrollIntoView();
     });
   }
 
@@ -263,7 +289,7 @@ class Search extends BaseElement {
    * Empty out the search field.
    */
   clear() {
-    this.querySelector(".web-search__input").value = "";
+    this.inputEl.value = "";
   }
 
   /**
@@ -276,7 +302,7 @@ class Search extends BaseElement {
     // If we wait until onFocusIn the animation has a bit of jank to it.
     store.setState({isSearchExpanded: true});
     this.requestUpdate().then(() => {
-      this.querySelector(".web-search__input").focus();
+      this.inputEl.focus();
     });
   }
 
@@ -293,21 +319,25 @@ class Search extends BaseElement {
    */
   onFocusIn() {
     this.expanded = true;
-    document.addEventListener(this.onScroll, {passive: true, once: true});
+
+    // Collapse the search box if the user scrolls while the seach box is
+    // focused.
+    window.addEventListener(
+      "scroll",
+      () => {
+        document.activeElement.blur();
+      },
+      {passive: true, once: true},
+    );
 
     // Wait for the expanding animation to finish before hiding the header
     // links and allowing overflow content.
+    // Keep a reference to the timeout in case the user tabs out quickly.
+    // In that scenario, we'll use onFocusOut to kill the timeout.
     this.timeout = setTimeout(() => {
       store.setState({isSearchExpanded: true});
       this.showHits = true;
     }, this.animationTime);
-  }
-
-  /**
-   * Collapse the search box if the user scrolls while the seach box is focused.
-   */
-  onScroll() {
-    document.activeElement.blur();
   }
 
   /**
@@ -332,7 +362,6 @@ class Search extends BaseElement {
     // In that scenario, kill the animation timeout to avoid invalid state.
     if (this.timeout) {
       clearTimeout(this.timeout);
-      this.timeout = undefined;
     }
 
     store.setState({isSearchExpanded: false});
