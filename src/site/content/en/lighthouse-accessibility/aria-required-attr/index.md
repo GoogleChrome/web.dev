@@ -13,12 +13,15 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
-Each ARIA `role` supports a specific subset of `aria-*` attributes.
-Some ARIA roles have required attributes that describe the state of the element to screen readers.
+Some ARIA roles have required `aria-*` attributes
+that provide essential information about state and functionality.
+For example, the `option` role requires the `aria-selected` attribute.
+If ARIA roles don't have the required attributes,
+screen reader users won't be able to successfully interact with them.
 
 ## How Lighthouse identifies missing required states and properties
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags ARIA roles that don't have the required states and properties:
 
 <figure class="w-figure">
@@ -26,12 +29,10 @@ flags ARIA roles that don't have the required states and properties:
 </figure>
 
 Lighthouse uses the
-[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">role definitions from the WAI-ARIA specification</a>
 to check for a role's required attributes.
-Any role that contains "required states and properties",
-must have the required state and property defined.
-Lighthouse fails this audit,
-when it finds a role is missing it's required state and property.
+A page fails this audit
+when it contains a role that's missing its required states or properties.
 
 A missing required attribute won't break the element's role.
 In the example above,
@@ -41,18 +42,23 @@ probably indicates a mistaken assumption in your code.
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to check that roles have all required states and properties
+## How to add missing states and properties to ARIA roles
 
-Refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
-Link to the role from the specification,
-and check the required states and properties.
+Refer to the
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">WAI-ARIA role definitions</a>
+to see what states and properties are required for the roles on your page.
 
-Add the missing ARIA state or property to the given element.
+Since properties don't change, you can simply add them to the elements
+that Lighthouse flagged.
 
-For more information on this audit,
-see [Required ARIA attributes must be provided](https://dequeuniversity.com/rules/axe/3.1/aria-required-attr).
+States, however, do change as the user interacts with your page,
+so you'll need to add JavaScript to change the state value
+when the relevant event occurs.
+For example, an `option` role's `aria-selected` state should toggle
+between `true` and `false` when the user clicks the element or
+presses `Enter` or `Space` when the element is focused.
 
 ## Resources
 
-- [Source code for **`[role]`s do not have all required `[aria-*]` attributes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-attr.js)
-- [Required ARIA attributes must be provided](https://dequeuniversity.com/rules/axe/3.3/aria-required-attr)
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-attr.js" rel="noopener">Source code for **`[role]`s do not have all required `[aria-*]` attributes** audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-required-attr" rel="noopener">Required ARIA attributes must be provided</a>
