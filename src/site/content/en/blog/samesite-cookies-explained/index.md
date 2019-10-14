@@ -264,8 +264,8 @@ across multiple sites then you should use `None` to ensure your intent is clear.
 
 While the `SameSite` attribute is widely supported, it has unfortunately not
 been widely adopted by developers. The open default of sending cookies
-everywhere means all use case work, but leave the user vulnerable to CSRF and
-unintentional information leakage. In order to encourage developers to state
+everywhere means all use cases work but leaves the user vulnerable to CSRF and
+unintentional information leakage. To encourage developers to state
 their intent and provide users with a safer experience, Mike West has proposed
 two key changes in
 ["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00).
