@@ -122,7 +122,7 @@ your needs. You can also choose to do nothing and just allow the browser to
 enforce its default, but this comes with the risk of inconsistent behavior
 across browsers and potential console warnings for each cookie.
 
-```
+```text
 Set-Cookie: first_party_var=value; SameSite=Lax
 ```
 
@@ -133,7 +133,7 @@ are some mutually incompatible differences in browser implementations here
 though, so you may need to use some of the mitigating strategies described in
 ["Handling incompatible clients"](#handling-incompatible-clients) below.
 
-```
+```text
 Set-Cookie: third_party_var=value; SameSite=None; Secure
 ```
 
@@ -193,7 +193,7 @@ implementing the newer rules.
 
 The first option is to set both the new and old style cookies:
 
-```
+```text
 Set-cookie: 3pcookie=value; SameSite=None; Secure
 Set-cookie: 3pcookie-legacy=value; Secure
 ```
