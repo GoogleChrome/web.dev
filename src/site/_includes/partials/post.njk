@@ -27,7 +27,7 @@
       <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
       {% if subhead %}
         <p class="w-article-header__subhead w-mb--non">
-          {{ subhead }}
+          {{ subhead | md | safe }}
         </p>
       {% endif %}
 
