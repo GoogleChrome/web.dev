@@ -11,11 +11,13 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
-Each ARIA `role` supports a specific subset of `aria-*` attributes.
-ARIA roles must have valid values in order
-to perform their intended accessibility functions.
+The ARIA specification includes a
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">defined set of roles</a>.
+When the value for an element's `role` attribute doesn't match a role from the set,
+screen readers can't announce the element correctly
+or interact with it as the developer intended.
 
-## How Lighthouse determines a role has invalid values
+## How Lighthouse determines an ARIA role has an invalid value
 
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags ARIA roles with invalid values:
@@ -26,31 +28,23 @@ flags ARIA roles with invalid values:
 
 Lighthouse uses the
 <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">role definitions from the WAI-ARIA specification</a>
-to check a role's values.
-Lighthouse fails this audit,
-when it finds a role with invalid values.
+to check that all `role` attributes have valid values.
+A page fails this audit when it contains an element with an invalid `role` value.
 In the example Lighthouse audit above,
 `button` has been misspelled as
 `buton`, which isn't a valid role value.
 
-This issue is important to fix because it breaks the role. In
-the example above, the element's role should be changed from `buton` to
-`button`.
-
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to check for invalid roles
+## How to fix invalid ARIA role values
 
-Refer to the [WAI ARIA Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
-ARIA explicitly defines role values.
-If you set `role=` to any value not appearing in the definitions list,
-the audit fails.
-
-For more information on this audit,
-see [ARIA roles used must conform to valid values](https://dequeuniversity.com/rules/axe/3.1/aria-roles).
+Refer to the
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">WAI-ARIA role definitions</a>
+to see the full list of valid roles.
+Make sure all `role` attributes are set to a value in the definitions list.
 
 ## Resources
 
-- [Source code for **`[role]` values are not valid** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-roles.js)
-- [ARIA roles used must conform to valid values](https://dequeuniversity.com/rules/axe/3.3/aria-roles)
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-roles.js" rel="noopener">Source code for **`[role]` values are not valid** audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-roles" rel="noopener">ARIA roles used must conform to valid values</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

@@ -12,11 +12,16 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
-Each ARIA `role` supports a specific subset of `aria-*` attributes.
-Assistive technologies, like screen readers,
-can't interpret ARIA attributes with invalid names.
+Each ARIA `role` supports a specific subset of `aria-*` attributes
+that define the state and properties of that role.
+For example, the `aria-selected` attribute is used to indicate whether
+elements with `option`, `tab`, or similar roles are currently selected.
 
-## How Lighthouse checks for invalid attributes
+If an element's ARIA attribute is invalid,
+assistive technologies won't be able
+to interact with it as the developer intended.
+
+## How Lighthouse checks for invalid ARIA attributes
 
 <a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags invalid ARIA attributes:
@@ -26,29 +31,26 @@ flags invalid ARIA attributes:
 </figure>
 
 Lighthouse uses the
-<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">role definitions from the WAI-ARIA specification</a>
-to check accepted values for roles and attributes.
+<a href="https://www.w3.org/TR/wai-aria-1.1/#states_and_properties" rel="noopener">states and properties from the WAI-ARIA specification</a>
+to check that all ARIA attributes are valid.
+A page fails this audit
+when it contains an invalid attribute.
 
-Lighthouse fails this audit,
-when it finds an attribute with an invalid value.
 In the example Lighthouse audit above,
-the `aria-checked` attribute is undefined,
-when it should be either `true` or `false`.
-The audit fails since the attribute has an invalid value.
+the `aria-checked` attribute has been misspelled as
+`aria-cheked`, making it invalid.
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to check that attributes are valid
+## How to fix invalid ARIA attributes
 
-Refer to the [WAI ARIA Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
-Check the role definition that the attribute describes,
-and then check the values for that attribute.
-
-For more information on this audit,
-see [ARIA attributes must conform to valid values](https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr).
+Refer to the
+<a href="https://www.w3.org/TR/wai-aria-1.1/#states_and_properties" rel="noopener">WAI-ARIA supported states and properties</a>
+to see the full list of valid ARIA attributes.
+Make sure all ARIA attributes on your page match one of the defined states or properties.
 
 ## Resources
 
-- [Source code for **`[aria-*]` attributes are not valid or misspelled** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-valid-attr.js)
-- [ARIA attributes must conform to valid names](https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr)
-- <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-valid-attr.js" rel="noopener">Source code for **`[aria-*]` attributes are not valid or misspelled** audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr" rel="noopener">ARIA attributes must conform to valid names</a>
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#states_and_properties" rel="noopener">States and properties from the WAI-ARIA specification</a>
