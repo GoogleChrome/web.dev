@@ -53,10 +53,10 @@ Of course, there are plenty of others:
 
 * A receipe app that keeps the screen on while you bake a cake or cook
   dinner.
-* Boarding passes and other tickets where it's critical to keep the screen
+* A boarding pass and other ticket app where it's critical to keep the screen
   on until the barcode has been scanned.
-* Kiosk-style apps where it's important to prevent the screen from turning off.
-* Web based presentation apps where it's essential to prevent the screen
+* A kiosk-style app where it's important to prevent the screen from turning off.
+* A web based presentation app where it's essential to prevent the screen
   from going to sleep while in the middle of a presentation.
 
 ## Current status {: #status }
