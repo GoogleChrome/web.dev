@@ -4,7 +4,7 @@ subhead: The Wake Lock API provides a way to prevent the device from dimming or 
 authors:
   - petelepage
   - thomassteiner
-description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine for most of the time, there are some applications that need to keep the screen or the device awake in order to complete some work. The Wake Lock API provides a way to prevent the device from dimming or locking the screen or prevent the device from going to sleep when an application needs to keep running.
+description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen or the device awake in order to complete some work. The Wake Lock API provides a way to prevent the device from dimming or locking the screen or prevent the device from going to sleep when an application needs to keep running.
 date: 2018-12-18
 updated: 2019-10-10
 tags:
@@ -27,16 +27,16 @@ draft: true
 
 To avoid draining the battery, most devices quickly go to sleep when left
 idle. While this is fine most of the time, some applications need to keep the
-screen or the device awake in order to complete their work. For example, a
+screen or the device awake in order to complete their work. Examples include a
 run-tracking app (turns the screen off, but keeps the system awake), or a game,
 like [Ball Puzzle](https://ball-puzzle.appspot.com/), that uses the device
 motion APIs for input.
 
 The [Wake Lock API][spec-ed] provides a way to prevent the device from dimming
-and locking the screen or prevent the device from going to sleep. This
+and locking the screen or to prevent the device from going to sleep. This
 capability enables new experiences that, until now, required a native app.
 
-The Wake Lock API aims to reduce the need for hacky and potentially
+The Wake Lock API reduces the need for hacky and potentially
 power-hungry workarounds. It addresses the shortcomings of an older API
 which was limited to simply keeping the screen on, and had a number of
 security and privacy issues.
@@ -52,7 +52,7 @@ will turn off frequently, making it hard to use.
 Of course, there are plenty of others:
 
 * A receipe app that keeps the screen on while you bake a cake or cook
-  a delicious dinner.
+  dinner.
 * Boarding passes and other tickets where it's critical to keep the screen
   on until the barcode has been scanned.
 * Kiosk-style apps where it's important to prevent the screen from turning off.
@@ -169,8 +169,8 @@ When you play with the [wake lock demo][demo], you'll notice that wake locks
 are sensitive to [page visibility][page-visibility-api], as well as
 [full screen changes][full-screen-api]. This means that when you minimize a
 tab or window where a wake lock is active, or enter full screen mode, the
-wake lock will automatically abort. If you want your wake lock to be
-re-acquired, you need to listen for the events that either of the APIs emit,
+wake lock will automatically abort. To re-acquire the wake lock,
+listen for the events that either of the APIs emit,
 namely the [`visibilitychange`][visibility-change] event of the
 Page Visibility API, and the [`fullscreenchange`][fullscreen-change] event
 of the Fullscreen API, and then request a new wake lock.
@@ -188,8 +188,8 @@ document.addEventListener('fullscreenchange', handleVisibilityChange);
 
 ## Best Practices {: #best-practices }
 
-The approach you take depends on the needs of your app. However, you should use
-the most lightweight approach possible for your app, to minimize your app's
+The approach you take depends on the needs of your app. Regardless, you should
+use the most lightweight approach possible for your app to minimize your app's
 impact on system resources.
 
 Before adding wake lock to your app, consider whether your use cases could
