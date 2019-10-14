@@ -13,7 +13,7 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
-Some ARIA roles require child roles.
+Some ARIA roles require specific child roles.
 For example, the `tablist` role must own at least one element
 with the `tab` role.
 If the required child roles aren't present,
@@ -37,7 +37,6 @@ required child roles.
 A page fails this audit
 when it contains a parent role that's missing its required child roles.
 
-
 In the example Lighthouse audit above,
 the `radiogroup` role requires child elements with the `radio` role.
 Since there are no children with a `radio` role defined,
@@ -59,50 +58,7 @@ to see which child roles are required for the elements that Lighthouse flagged.
 (The spec refers to required children as
 <a href="https://www.w3.org/TR/wai-aria/#mustContain" rel="noopener">required owned elements</a>.)
 
-There are two ways to add required child roles.
-
-### Option 1: Place the required child elements within the parent in the DOM
-Placing elements with required child roles within the parent role element
-in your HTML is usually the easiest and most maintainable solution.
-For example:
-
-```html
-<div role="tablist">
-	<button role="tab" aria-selected="true" aria-controls="tab-1-pane" active>
-		Tab 1
-	</button>
-	<button role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-2-pane">
-		Tab 2
-	</button>
-	<button role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-3-pane">
-		Tab 3
-	</button>
-</div>
-```
-
-### Option 2: Associate the required child roles with the parent role using `aria-owns`
-If you can't place the required child role elements inside the parent role element,
-you can use the `aria-owns` attribute to associate them:
-
-```html
-<div role="tablist" aria-owns="tab-1 tab-2 tab-3"></div>
-…
-<button id="tab-1" role="tab" aria-selected="true" aria-controls="tab-1-pane" active>
-  Tab 1
-</button>
-<button id="tab-2" role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-2-pane">
-  Tab 2
-</button>
-<button id="tab-3" role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-3-pane">
-  Tab 3
-</button>
-```
-
-{% Aside %}
-If an element with the `aria-owns` attribute contains DOM children,
-screen readers will announce the DOM children before the elements
-listed in `aria-owns`.
-{% endAside %}
+{% include 'content/lighthouse-accessibility/aria-child-parent.njk' %}
 
 ## Resources
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js" rel="noopener">Source code for **Elements with an ARIA `[role]` that require children to contain a specific [role] are missing some or all of those required children** audit</a>
