@@ -275,9 +275,9 @@ These updates are:
 - cookies with `SameSite=None` must also specify `Secure`
 
 Both
-[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ)
-and
-[Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
+[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ),
+[Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ),
+and [Edge](https://textslashplain.com/2019/09/30/same-site-cookies-by-default/)
 have this functionality available to test now and will be making this their
 default behavior in future releases.
 
