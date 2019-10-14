@@ -1,4 +1,5 @@
 @import '../../../styles/settings/colors';
+@import '../../../styles/settings/global';
 @import '../../../styles/tools/mixins';
 
 // =============================================================================
@@ -33,16 +34,17 @@ web-url-chooser {
 
   /** The "X" button that appears to the right of a URL. */
   .lh-enterurl__close {
+    align-items: center;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 0;
     position: absolute;
     right: 0;
     top: 0;
-    height: 100%;
-    padding: 0;
-    background: none;
-    box-shadow: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     &[disabled] {
       display: none;
@@ -79,12 +81,22 @@ web-url-chooser {
   }
 
   .lh-input {
-    height: $INPUT_HEIGHT;
-    width: 100%;
-    transition: border 200ms ease-in-out;
-    outline: none;
     background-color: $WHITE;
+    border-radius: 2px;
+    border: 1px solid $GREY_200;
+    color: $PRIMARY_TEXT_COLOR;
+    font: 16px / 20px Roboto, sans-serif;
+    height: $INPUT_HEIGHT;
+    margin: 0;
+    max-width: 100%;
+    outline: none;
     padding: 8px 16px;
+    transition: box-shadow $TRANSITION_SPEED ease-in-out;
+    width: 100%;
+
+    &:focus {
+      box-shadow: inset 0 -2px 0 0 $FOCUS_COLOR;
+    }
 
     &::-ms-clear {
       display: none;
