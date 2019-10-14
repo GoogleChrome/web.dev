@@ -265,9 +265,9 @@ across multiple sites then you should use `None` to ensure your intent is clear.
 While the `SameSite` attribute is widely supported, it has unfortunately not
 been widely adopted by developers. The open default of sending cookies
 everywhere means all use cases work but leaves the user vulnerable to CSRF and
-unintentional information leakage. To encourage developers to state
-their intent and provide users with a safer experience, Mike West has proposed
-two key changes in
+unintentional information leakage. To encourage developers to state their intent
+and provide users with a safer experience, Mike West has proposed two key
+changes in
 ["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00).
 These updates are:
 
@@ -287,17 +287,18 @@ default behavior in future releases.
 ### `SameSite=Lax` by default
 
 {% Compare 'worse', 'No attribute set' %}
+
 ```text
 Set-Cookie: promo_shown=1
 ```
 
-{% CompareCaption %}
-If you send a cookie without any `SameSite` attribute specified.
-{% endCompareCaption %}
+{% CompareCaption %} If you send a cookie without any `SameSite` attribute
+specified. {% endCompareCaption %}
 
 {% endCompare %}
 
 {% Compare 'better', 'Default behavior applied' %}
+
 ```text
 Set-Cookie: promo_shown=1; SameSite=Lax
 ```
@@ -325,24 +326,24 @@ cross-site cookies to use `SameSite=None; Secure`. {% endAside %}
 ### `SameSite=None` must be secure
 
 {% Compare 'worse', 'Rejected' %}
+
 ```text
 Set-Cookie: widget_session=abc123; SameSite=None
 ```
 
-{% CompareCaption %}
-Setting a cookie without `Secure` **will be rejected**.
+{% CompareCaption %} Setting a cookie without `Secure` **will be rejected**.
 {% endCompareCaption %}
 
 {% endCompare %}
 
 {% Compare 'better', 'Accepted' %}
+
 ```text
 Set-Cookie: widget_session=abc123; SameSite=None; Secure
 ```
 
-{% CompareCaption %}
-You must ensure that you pair `SameSite=None` with the `Secure` attribute.
-{% endCompareCaption %}
+{% CompareCaption %} You must ensure that you pair `SameSite=None` with the
+`Secure` attribute. {% endCompareCaption %}
 
 {% endCompare %}
 
