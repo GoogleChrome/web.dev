@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2019-08-21
+updated: 2019-10-14
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage the
@@ -19,16 +19,10 @@ tags:
   - cookies
 ---
 
-If you're just here for the `SameSite` cookie guidance, you can skip to the
-relevant sections:
-
-- [What are first-party and third-party cookies?](#what-are-first-party-and-third-party-cookies)
-- [Explicitly state cookie usage with the `SameSite` attribute](#explicitly-state-cookie-usage-with-the-samesite-attribute)
-- [Changes to the default behavior without `SameSite`](#changes-to-the-default-behavior-without-samesite)
-- [`SameSite=Lax` by default](#samesitelax-by-default)
-- [`SameSite=None` must be secure](#samesitenone-must-be-secure)
-- [Handling incompatible clients](#handling-incompatible-clients)
-- [How to implement `SameSite` today](#how-to-implement-samesite-today)
+{% Aside %} If you are looking for the guidance on implementing for
+`SameSite=None` and handling different behavior across browsers, then head
+straight to ["SameSite cookie recipes"](/samesite-cookie-recipes).
+{% endAside %}
 
 Cookies are one of the methods available for adding persistent state to web
 sites. Each cookie is a `key=value` pair along with a number of attributes that
@@ -368,104 +362,11 @@ Tech Preview now. You can track their progress on
 [WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
 {% endAside %}
 
-### Handling incompatible clients
+## `SameSite` cookie recipes
 
-If you have a significant number of users still using browsers or clients that
-are incompatible with these changes there are some choices for working around
-this. The general rule is to treat the incompatible clients as the special case,
-don't create an exception for browsers implementing the newer rules.
-
-At the point of sending the `Set-Cookie` header, you can choose to detect the
-client via the user agent string. For example, this snippet shows detecting iOS
-12 or Safari on Mac OS X 10.14 and serving a cookie without the `SameSite`
-attribute to those browsers. This makes use of the
-[ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library for Node.js,
-it's advisable to find a library to handle user agent detection as you most
-probably don't want to write those regular expressions yourself.
-
-```javascript
-const http = require('http');
-const parser = require('ua-parser-js');
-
-http
-  .createServer((req, res) => {
-    const ua = parser(req.headers['user-agent']);
-
-    if (
-      // iOS 12 browsers
-      (ua.os.name == 'iOS' && ua.os.version.startsWith('12')) ||
-      // or MacOS 10.14
-      (ua.os.name == 'Mac OS' && ua.os.version.startsWith('10.14'))
-    ) {
-      // Don't send SameSite=None for affected browsers
-      res.setHeader('Set-Cookie', '3pcookie=value; Secure');
-    } else {
-      // Default is the new SameSite=None attribute
-      res.setHeader('Set-Cookie', '3pcookie=value; SameSite=None; Secure');
-    }
-
-    res.end();
-  })
-  .listen(process.env.PORT);
-```
-
-The benefit of this approach is making one change at the point of setting the
-cookie. However, the necessary warning here is that user agent sniffing is
-inherently fragile and may not catch all of the affected users.
-
-Alternatively, as the incompatible browsers will disregard the cookies with the
-new attribute you may also choose to set an additional "legacy" cookie. On the
-receiving side, you will then need to check for the presence of the new cookie
-falling back to the legacy value if it is not present. This example below shows
-how to do this in Node.js making use of the
-[Express framework](https://expressjs.com) and its
-[cookie-parser](https://www.npmjs.com/package/cookie-parser) middleware.
-
-```javascript
-const express = require('express');
-const cp = require('cookie-parser');
-const app = express();
-app.use(cp());
-
-app.get('/', (req, res) => {
-  let cookieVal = null;
-
-  if (req.cookies['3pcookie']) {
-    // check the new style cookie first
-    cookieVal = req.cookies['3pcookie'];
-  } else if (req.cookies['3pcookie-legacy']) {
-    // otherwise fall back to the legacy cookie
-    cookieVal = req.cookies['3pcookie-legacy'];
-  }
-
-  // Set the new style cookie
-  res.cookie('3pcookie', 'value', { sameSite: 'none', secure: true });
-  // And set the same value
-  res.cookie('3pcookie-legacy', 'value', { secure: true });
-  res.end();
-});
-
-app.listen(process.env.PORT);
-```
-
-The downside here is that this change will be doubling up the amount of cookies
-sent in third-party contexts. This also requires making changes both where the
-cookie is sent and where it's read. However, this is more robust than relying on
-the user agent to detect incompatible clients.
-
-In either case, you should monitor the levels of traffic that need to receive
-the legacy-style cookie so that you can remove the workaround when those levels
-drop below an acceptable threshold.
-
-## How to implement `SameSite` today
-
-The majority of languages and libraries support the `SameSite` attribute for
-cookies, however the addition of `SameSite=None` is still relatively new which
-means that you may need to work around some of the standard behavior for now.
-These are documented in the
-[`SameSite` examples repo on GitHub](https://github.com/GoogleChromeLabs/samesite-examples).
-If your particular use case is missing, please raise issue or submit a pull
-request with your solution.
+For further detail on exactly how to update your cookies to successfully handle
+these changes to `SameSite=None` and the difference in browser behavior, head to
+the follow up article, ["SameSite cookie recipes"](/samesite-cookie-recipes).
 
 _Kind thanks for contributions and feedback from Lily Chen, Malte Ubl, Mike
 West, Rob Dodson, Tom Steiner, and Vivek Sekhar_
