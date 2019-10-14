@@ -17,7 +17,7 @@ element hides your entire web page from screen reader users.
 
 ## How Lighthouse identifies hidden body elements
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags pages whose `<body>` element has an `aria-hidden="true"` attribute:
 
 <figure class="w-figure">

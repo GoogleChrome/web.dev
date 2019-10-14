@@ -15,7 +15,7 @@ web_lighthouse:
 
 ## How Lighthouse identifies ARIA inputs without accessible names
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags custom ARIA input fields whose names
 aren't accessible to assistive technologies:
 

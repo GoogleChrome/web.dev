@@ -19,7 +19,7 @@ to properly perform their intended accessibility functions.
 
 ## How Lighthouse identifies missing parent roles
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags ARIA child roles that aren't contained by the required parent:
 
 <figure class="w-figure">

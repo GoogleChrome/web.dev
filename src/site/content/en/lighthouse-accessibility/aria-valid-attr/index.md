@@ -18,7 +18,7 @@ can't interpret ARIA attributes with invalid names.
 
 ## How Lighthouse checks for invalid attributes
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags invalid ARIA attributes:
 
 <figure class="w-figure">

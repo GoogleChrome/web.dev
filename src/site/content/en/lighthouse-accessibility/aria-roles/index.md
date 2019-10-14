@@ -17,7 +17,7 @@ to perform their intended accessibility functions.
 
 ## How Lighthouse determines a role has invalid values
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse)
+<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
 flags ARIA roles with invalid values:
 
 <figure class="w-figure">
