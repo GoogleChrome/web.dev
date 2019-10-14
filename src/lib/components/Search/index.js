@@ -126,23 +126,21 @@ class Search extends BaseElement {
   }
 
   get itemsTemplate() {
-    return html`
-      ${this.hits.map(
-        (hit, idx) => html`
-          <li class="web-search-popout__item">
-            <a
-              id="web-search-popout__link--${idx}"
-              class="web-search-popout__link ${idx === this.cursor
-                ? "web-search-popout__link--active"
-                : ""}"
-              aria-selected="${idx === this.cursor}"
-              href="${hit.url}"
-              >${hit.title}</a
-            >
-          </li>
-        `,
-      )}
-    `;
+    return this.hits.map(
+      (hit, idx) => html`
+        <li class="web-search-popout__item">
+          <a
+            id="web-search-popout__link--${idx}"
+            class="web-search-popout__link ${idx === this.cursor
+              ? "web-search-popout__link--active"
+              : ""}"
+            aria-selected="${idx === this.cursor}"
+            href="${hit.url}"
+            >${hit.title}</a
+          >
+        </li>
+      `,
+    );
   }
   /* eslint-enable indent */
 
@@ -180,11 +178,9 @@ class Search extends BaseElement {
    */
   onResize() {
     const styles = getComputedStyle(this);
-    const value = String(
-      styles.getPropertyValue("--web-search-animation-time"),
-    ).trim();
+    const value = styles.getPropertyValue("--web-search-animation-time");
     // value will either be "200ms" or "0".
-    this.animationTime = Number(value.split("ms").shift());
+    this.animationTime = parseInt(value, 10);
   }
 
   onKeyUp(e) {
@@ -357,7 +353,7 @@ class Search extends BaseElement {
   /**
    * Animate the search box closed.
    * See internal comments for side-effects.
-   * @param {{relatedTarget:(Object|undefined)}} e focusout event object.
+   * @param {FocusEvent} e focusout event object.
    */
   onFocusOut(e) {
     // Check if the user's focus is moving to a link they just clicked on.
@@ -374,9 +370,7 @@ class Search extends BaseElement {
     // If the user is tabbing quickly through the header then they may have
     // started the animation but tabbed out before it completed.
     // In that scenario, kill the animation timeout to avoid invalid state.
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
+    clearTimeout(this.timeout);
 
     store.setState({isSearchExpanded: false});
     this.expanded = false;
