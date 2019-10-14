@@ -27,7 +27,7 @@ flags ARIA child roles that aren't contained by the required parent:
 </figure>
 
 Lighthouse uses the
-[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">role definitions from the WAI-ARIA specification</a>
 to check for required parent roles.
 Any role that contains "required context role",
 is considered a child role to the parent(s).
@@ -63,3 +63,4 @@ see [Certain ARIA roles must be contained by particular parent elements](https:/
 
 - [Source code for **`[role]`s are not contained by their required parent element** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-parent.js)
 - [Certain ARIA roles must be contained by particular parent elements](https://dequeuniversity.com/rules/axe/3.3/aria-required-parent)
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

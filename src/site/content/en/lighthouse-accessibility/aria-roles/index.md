@@ -25,7 +25,7 @@ flags ARIA roles with invalid values:
 </figure>
 
 Lighthouse uses the
-[WAI ARIA specification: Definition of Roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">role definitions from the WAI-ARIA specification</a>
 to check a role's values.
 Lighthouse fails this audit,
 when it finds a role with invalid values.
@@ -53,3 +53,4 @@ see [ARIA roles used must conform to valid values](https://dequeuniversity.com/r
 
 - [Source code for **`[role]` values are not valid** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-roles.js)
 - [ARIA roles used must conform to valid values](https://dequeuniversity.com/rules/axe/3.3/aria-roles)
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

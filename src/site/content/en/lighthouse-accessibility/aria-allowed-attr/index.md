@@ -31,8 +31,8 @@ Lighthouse uses the
 to check for mismatches between ARIA roles and attributes.
 Each role has a set of states and properties (that is, _attributes_)
 that it can support or inherit.
-Lighthouse fails this audit
-when it finds an element with an ARIA role and an ARIA attribute
+A page fails this audit
+when it contains an element with an ARIA role and an ARIA attribute
 that isn't supported for that role.
 
 In the example shown in the screenshot,
@@ -59,3 +59,4 @@ you can apply it.
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-allowed-attr.js" rel="noopener">Source code for <strong><code>[aria-*]</code> attributes do not match their roles</strong> audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-allowed-attr" rel="noopener">Elements must only use allowed ARIA attributes</a>
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

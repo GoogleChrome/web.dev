@@ -62,3 +62,4 @@ presses `Enter` or `Space` when the element is focused.
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-attr.js" rel="noopener">Source code for **`[role]`s do not have all required `[aria-*]` attributes** audit</a>
 - <a href="https://dequeuniversity.com/rules/axe/3.3/aria-required-attr" rel="noopener">Required ARIA attributes must be provided</a>
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>
