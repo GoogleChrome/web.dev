@@ -36,6 +36,7 @@ module.exports = {
           'content-width',
           'viewport',
           'without-javascript',
+          'apple-touch-icon',
         ],
       },
       {

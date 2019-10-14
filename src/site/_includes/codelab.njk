@@ -35,10 +35,10 @@ this inline style tag.
   {% endif %}
   <web-codelab glitch="{{ glitch }}" path="{{ glitchPath }}" attribution-hidden>
     <div class="web-codelab-instructions">
-      <h1 class="w-headline w-headline--two w-mb--sm">{{ title }}</h1>
+      <h1 class="w-headline w-headline--two w-mb--sm">{{ title | md | safe }}</h1>
       {% if date %}
         <div class="w-author__published">
-          <time>{{page.date | prettyDate}}</time>
+          <time>{{date | prettyDate}}</time>
           {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}

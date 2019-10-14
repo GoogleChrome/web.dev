@@ -413,7 +413,7 @@
     "github": "tcmg",
     "twitter": "tcmg",
     "description": {
-      "en": "Chrome & Web Developer Relations Games Lead"
+      "en": "Tom is the Games Lead for the Chrome & Web Developer Relations team at Google"
     }
   },
   "ilyagrigorik": {
@@ -1007,7 +1007,8 @@
   },
   "surma": {
     "name": {
-      "given": "Surma"
+      "given": "Surma",
+      "family": ""
     },
     "org": {
       "name": "Google",
@@ -1453,5 +1454,69 @@
     "homepage": "https://blog.mgechev.com/",
     "twitter": "mohamedzamakhan",
     "github": "mohammedzamakhan"
-  }
+  },
+  "ahmadawais": {
+    "name": {
+      "given": "Ahmad",
+      "family": "Awais"
+    },
+    "org": {
+      "name": "Cloudinary",
+      "unit": "Developer Relations"
+    },
+    "country": "",
+    "homepage": "https://AhmadAwais.com/",
+    "twitter": "MrAhmadAwais",
+    "github": "ahmadawais",
+    "glitch": "ahmadawais",
+    "description": {
+      "en": "Principal Developer Advocate ❯ Google Developers Expert ❯ Full-time Open Sourcerer."
+    }
+  },
+  "sherwinski": {
+    "name": {
+      "given": "Sherwin",
+      "family": "Heydarbeygi"
+    },
+    "github": "sherwinski",
+    "glitch": "sherwinski",
+    "org": {
+      "name": "imgix",
+      "unit": "SDK Engineer"
+    },
+    "country": "US",
+    "homepage": "https://sherwinski.com"
+  },
+  "dougsillars": {
+    "name": {
+      "given": "Doug",
+      "family": "Sillars"
+    },
+    "github": "Dougsillars",
+    "twitter": "dougsillars",
+    "country": "US",
+    "homepage": "https://dougsillars.com"
+  },
+  "samrichard": {
+    "name": {
+      "given": "Sam",
+      "family": "Richard"
+    },
+    "twitter": "snugug",
+    "github": "snugug",
+    "glitch": "snugug",
+    "org": {
+      "name": "Chrome OS",
+      "unit": "Developer Relations"
+    },
+    "homepage": "https://snugug.com"
+    },
+  "yoavweiss": {
+      "name": {
+        "given": "Yoav",
+        "family": "Weiss"
+      },
+      "twitter": "yoavweiss",
+      "github": "yoavweiss"
+    }
 }

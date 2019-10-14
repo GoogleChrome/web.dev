@@ -63,19 +63,19 @@ You'll need [Firebase CLI](https://firebase.google.com/docs/cli/) to deploy the
 app. Even if you already have it installed, it's good practice to frequently
 update the CLI to the latest version with this command:
 
-```
+```bash
 npm install -g firebase-tools
 ```
 
 To authorize the Firebase CLI, run:
 
-```
+```bash
 firebase login
 ```
 
 Now initialize the project:
 
-```
+```bash
 firebase init
 ```
 
@@ -92,7 +92,7 @@ project directory.
 
 Congrats, you're ready to deploy! Run:
 
-```
+```bash
 firebase deploy
 ```
 
@@ -128,14 +128,14 @@ install:
 before_script:
   - npm install -g firebase-tools
 script:
-  - webpack</td>
+  - webpack
 ```
 
 The YAML file tells Travis to install all the dependencies and build your app.
 Now it's your turn to **push the example app to your own GitHub repository**.
 If you haven't already, run the following command:
 
-```
+```bash
 git push origin master
 ```
 
@@ -183,7 +183,7 @@ Now whenever you make changes to your app, they will be automatically deployed t
 
 ## 5. Setting up Lighthouse Bot
 
-Friendly Lighthouse Bot updates you on your app's Lighthouse scores. 
+Friendly Lighthouse Bot updates you on your app's Lighthouse scores.
 It just needs an invitation to your repo.
 
 On GitHub, go to your project's settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
@@ -209,7 +209,7 @@ You can reuse this same key for other projects.
 
 Next, add Lighthouse Bot to your project by running:
 
-```
+```bash
 npm i --save-dev https://github.com/ebidel/lighthousebot
 ```
 
@@ -235,7 +235,7 @@ after_success:
 ```
 
 It will run a Lighthouse audit on the given URL, so replace
-https://staging.example.com with the URL of your app
+`https://staging.example.com` with the URL of your app
 (that's your-app-123.firebaseapp.com).
 
 Set your standards high and tweak the setup so you don't accept any changes to
@@ -280,7 +280,7 @@ any of those with Lighthouse Bot flags:
 
 Example:
 
-```
+```bash
 npm run lh --perf=93 --seo=100 https://staging.example.com
 ```
 

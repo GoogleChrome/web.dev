@@ -34,8 +34,8 @@ The Angular team offers a service worker module with precaching functionality th
 
 To add the service worker, run this command in the CLI:
 
-```
-$ ng add @angular/pwa
+```bash
+ng add @angular/pwa
 ```
 
 {% Aside %}
@@ -48,8 +48,8 @@ If you have multiple projects in the Angular CLI workspace, you can optionally s
 
 Now build the project for production:
 
-```
-$ ng build --prod
+```bash
+ng build --prod
 ```
 
 Inside the `dist/service-worker-web-dev` directory you'll find a file called `ngsw.json`. This file tells the Angular service worker how to cache the assets in the app. The file is generated during the build process based on the configuration (`ngsw-config.json`) and the assets produced at build time.

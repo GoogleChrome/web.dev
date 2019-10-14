@@ -6,14 +6,15 @@
       page: page,
       hero: hero,
       alt: alt,
-      heroPosition: hero_position
+      heroPosition: hero_position,
+      heroFit: hero_fit
     } %}
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
   <web-actions-controller page="post"></web-actions-controller>
   {% Actions %}
-    {% ShareAction title, page.url | stripLanguage %}
+    {% ShareAction title, page.url | stripLanguage, authors | expandContributors %}
     {% SubscribeAction %}
   {% endActions %}
 
@@ -23,16 +24,16 @@
 
   <main class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
-      <h1 class="w-article-header__headline">{{ title }}</h1>
+      <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
       {% if subhead %}
         <p class="w-article-header__subhead w-mb--non">
-          {{ subhead }}
+          {{ subhead | md | safe }}
         </p>
       {% endif %}
 
       {% if date %}
         <div class="w-author__published">
-          <time>{{page.date | prettyDate}}</time>
+          <time>{{date | prettyDate}}</time>
           {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
@@ -65,7 +66,7 @@
         {% if updated %}
         Last updated: <time>{{ updated | prettyDate }}</time>
         {% else %}
-        Last updated: <time>{{ page.date | prettyDate }}</time>
+        Last updated: <time>{{ date | prettyDate }}</time>
         {% endif %}
       </span>
       <a

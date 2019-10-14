@@ -16,11 +16,9 @@
 
 const path = require('path');
 const gulp = require('gulp');
-const eslint = require('gulp-eslint');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const sasslint = require('gulp-sass-lint');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const imagemin = require('gulp-imagemin');
@@ -33,30 +31,6 @@ const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`
 /* eslint-enable max-len */
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
-
-gulp.task('lint-js', () => {
-  return (
-    gulp
-      .src(['.eleventy.js', './src/**/*.js'])
-      // eslint() attaches the lint output to the 'eslint' property
-      // of the file object so it can be used by other modules.
-      .pipe(eslint())
-      // eslint.format() outputs the lint results to the console.
-      // Alternatively use eslint.formatEach().
-      .pipe(eslint.format())
-      // To have the process exit with an error code (1) on
-      // lint error, return the stream and pipe to failAfterError last.
-      .pipe(eslint.failAfterError())
-  );
-});
-
-gulp.task('lint-scss', () => {
-  return gulp
-    .src('src/styles/**/*.scss')
-    .pipe(sasslint())
-    .pipe(sasslint.format())
-    .pipe(sasslint.failOnError());
-});
 
 gulp.task('scss', () => {
   return (

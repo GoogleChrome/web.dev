@@ -44,7 +44,7 @@ The rest of this post walks through how to set up basic virtual scrolling. You c
 ## Setting up virtual scrolling
 First make sure you've installed `@angular/cdk` using your favorite package manager. To install it using npm run this command in the terminal:
 
-```
+```bash
 npm install --save @angular/cdk
 ```
 
@@ -67,7 +67,7 @@ To see how the package works, try creating a component with a simple list of num
 
 ```js
 @Component({
-  template: `<div *ngFor="let item of list">{{item}}</div>`
+  template: `<div *ngFor="let item of list">{% raw %}{% verbatim %}{{item}}{% endverbatim %}{% endraw %}</div>`
 })
 export class ScrollComponent {
   list = Array.from({length: 100000}).map((_, i) => i);
@@ -81,7 +81,7 @@ To add virtual scrolling and avoid those problems, you need to create a viewport
 ```js/1-3
 @Component({
   template: `<cdk-virtual-scroll-viewport>
-    <div *ngFor="let item of list">{{item}}</div>
+    <div *ngFor="let item of list">{% raw %}{% verbatim %}{{item}}{% endverbatim %}{% endraw %}</div>
     </cdk-virtual-scroll-viewport>`
 })
 export class ScrollComponent {
@@ -94,7 +94,7 @@ Because `ScrollingModule` dynamically renders subsets of the list, you have to s
 ```js/1
 @Component({
   template: `<cdk-virtual-scroll-viewport itemSize="18" style="height:80vh">
-    <div *ngFor="let item of list">{{item}}</div>
+    <div *ngFor="let item of list">{% raw %}{% verbatim %}{{item}}{% endverbatim %}{% endraw %}</div>
     </cdk-virtual-scroll-viewport>`
 })
 export class ScrollComponent {
@@ -107,7 +107,7 @@ Finally, convert `*ngFor` to `*cdkVirtualFor`:
 ```js
 @Component({
   template: `<cdk-virtual-scroll-viewport itemSize="18" style="height:80vh">
-    <div *cdkVirtualFor="let item of list">{{item}}</div>
+    <div *cdkVirtualFor="let item of list">{% raw %}{% verbatim %}{{item}}{% endverbatim %}{% endraw %}</div>
     </cdk-virtual-scroll-viewport>`
 })
 export class ScrollComponent {

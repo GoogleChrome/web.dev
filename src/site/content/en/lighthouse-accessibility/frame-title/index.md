@@ -3,6 +3,7 @@ layout: post
 title: Ensure IFrame and frame elements contain a non-empty title attribute
 description: |
   Learn about frame-title audit.
+date: 2019-05-02
 web_lighthouse:
   - frame-title
 ---
@@ -34,9 +35,9 @@ For example:
 <iframe title="My Daily Marathon Tracker" src="https://www.mydailymarathontracker.com/"></iframe>
 ```
 
-Learn more in [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.2/frame-title).
+Learn more in [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.3/frame-title).
 
-## Tips for creating descriptive frame titles:
+## Tips for creating descriptive frame titles
 
 - As previously mentioned, give the enclosed document a title element with content identical to title attribute.
 - Replace placeholder titles such as "untitled frame" with a more appropriate phrase.
@@ -55,4 +56,3 @@ Todo. I have no idea how accessibility scoring is working!
 - [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)
 - [Ensure frames have titles audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

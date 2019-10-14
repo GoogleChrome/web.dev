@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Code
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create well-formatted code samples for web.dev.
@@ -19,7 +17,8 @@ Use single backticks to switch to code font in a line of text:
 ```markdown
  The value of the `type` attribute must be valid.
 ```
-> The value of the `type` attribute must be valid.
+
+The value of the `type` attribute must be valid.
 
 ## Code blocks
 Use triple backticks to create a code block.
@@ -34,6 +33,23 @@ Include the [language name](https://prismjs.com/#supported-languages) after the 
     <option value="donatello">Does machines</option>
   </select>
 </label>
+```
+````
+
+For code blocks that don't need syntax highlighting (for example, HTTP headers), set
+the language to `text`:
+
+````markdown
+```text
+Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
+```
+````
+
+For terminal commands, set the language to `bash` and omit leading `$` signs:
+
+````markdown
+```bash
+npm install left-pad
 ```
 ````
 
@@ -84,10 +100,10 @@ Indent using two spaces.
 
 Always use straight quotes. (Readers often copy code directly from the site, and smart quotes can break code.)
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse' %}
 `const imagemin = require(‘imagemin’);`
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
+{% Compare 'better' %}
 `const imagemin = require('imagemin');`
 {% endCompare %}

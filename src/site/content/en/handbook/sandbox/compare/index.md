@@ -6,7 +6,7 @@ tags:
   - sandbox
 ---
 
-```
+```text
 Bad code example
 ```
 
@@ -16,7 +16,7 @@ sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
 
-```
+```text
 Good code example
 ```
 
@@ -26,7 +26,7 @@ sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
 
-```
+```text
 Bad code example
 ```
 
@@ -36,7 +36,7 @@ sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
 
-```
+```text
 Good code example
 ```
 

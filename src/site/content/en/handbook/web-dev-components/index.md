@@ -1,23 +1,23 @@
 ---
 layout: handbook
 title: web.dev components
-authors:
-  - robdodson
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to use web.dev's UI and content components.
 ---
 
-## Source
+The web.dev platform includes various components to make it easy for content
+contributors to include common content features, like videos, side-by-side
+comparisons, and asides.
 
-To see how to use each component, [view this page's source on GitHub](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/handbook/web-dev-components/index.md).
+This post shows sample markup for each of web.dev's content components and provides
+guidance about how to use them effectively.
 
-## Sections
+## Component types
 
 1. [Asides](#asides)
 1. [Banner](#banner)
-1. [Blockquotes](#blockquotes)
+1. [Block quotes](#blockquotes)
 1. [Buttons](#buttons)
 1. [Columns](#columns)
 1. [Code](#code)
@@ -27,47 +27,121 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 1. [Images](#images)
 1. [Instruction](#instruction)
 1. [Lists](#lists)
+1. [Callouts](#callouts)
 1. [Stats](#stats)
 1. [Tables](#tables)
 1. [Video](#video)
 
 ## Asides
+Use asides to provide information that's related to but distinct from the
+content in the body of the post or codelab. Asides should generally be short—no
+more than 2–3 lines.
 
-{% Aside 'note' %}
-  Lorem ipsum dolor sit amet, [consectetur adipiscing elit](#). Proin dictum a
-  massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh
-  varius at. `Cras ligula lacus`, porta vitae maximus a, ultrices a mauris.
-  [`Vestibulum porta`](#) dolor erat, vel molestie dolor posuere in. Nam vel
-  elementum augue.
+Asides can contain links and formatted text, including code.
+
+There are several kinds of asides, each for a different purpose.
+
+### Note asides
+
+```text
+&#123;% Aside %&#125;
+Use the note aside to provide supplemental information.
+&#123;% endAside %&#125;
+```
+
+{% Aside %}
+Use the note aside to provide supplemental information.
 {% endAside %}
+
+### Caution asides
+
+```text
+&#123;% Aside 'caution' %&#125;
+Use the caution aside to indicate a potential pitfall or complication.
+&#123;% endAside %&#125;
+```
 
 {% Aside 'caution' %}
-  [This type of callout](#) suggests proceeding with caution.
+Use the caution aside to indicate a potential pitfall or complication.
 {% endAside %}
+
+### Warning asides
+
+```text
+&#123;% Aside 'warning' %&#125;
+The warning aside is stronger than a caution aside; use it to tell the reader
+not to do something.
+&#123;% endAside %&#125;
+```
 
 {% Aside 'warning' %}
-  This type of callout is stronger than a Caution; it means "Don't do
-  this."
+The warning aside is stronger than a caution aside; use it to tell the reader
+not to do something.
 {% endAside %}
+
+### Success asides
+
+```text
+&#123;% Aside 'success' %&#125;
+Use the success aside to describe a successful action or an error-free status.
+&#123;% endAside %&#125;
+```
 
 {% Aside 'success' %}
-  This type of callout describes a successful action or an error-free
-  status.
+Use the success aside to describe a successful action or an error-free status.
 {% endAside %}
+
+### Objective asides
+
+```text
+&#123;% Aside 'objective' %&#125;
+Use the objective aside to define the goal of a process described in the body
+copy.
+&#123;% endAside %&#125;
+```
 
 {% Aside 'objective' %}
-  This type of callout defines the goal of a procedure.
+Use the objective aside to define the goal of a process described in the body
+copy.
 {% endAside %}
+
+### Gotcha asides
+
+```text
+&#123;% Aside 'gotchas' %&#125;
+Use the gotcha aside to indicate a common problem that the reader wouldn't know
+without specialized knowledge of the topic.
+&#123;% endAside %&#125;
+```
 
 {% Aside 'gotchas' %}
-  The value of the `type` attribute should be the MIME type corresponding to the
-  image format. An image's MIME type and its file extension are often similar,
-  but they aren't necessarily the same thing (e.g. `.jpg` vs. `image/jpeg`).
+Use the gotcha aside to indicate a common problem that the reader wouldn't know
+without specialized knowledge of the topic.
 {% endAside %}
 
+### Key-term asides
+
+```text
+&#123;% Aside 'key-term' %&#125;
+Use the key-term aside to define a term that's essential to understanding an
+idea in the body copy. Key-term asides should be a single sentence that
+includes the term in italics. For example, "A _portal_ is…"
+&#123;% endAside %&#125;
+```
+
 {% Aside 'key-term' %}
-  This type of callout defines important terminology.
+Use the key-term aside to define a term that's essential to understanding an
+idea in the body copy. Key-term asides should be a single sentence that
+includes the term in italics. For example, "A _portal_ is…"
 {% endAside %}
+
+### Codelab asides
+
+```text
+&#123;% Aside 'codelab' %&#125;
+Use the codelab aside to link to an associated codelab.
+&#123;% endAside %&#125;
+```
 
 {% Aside 'codelab' %}
   [Using Imagemin with Grunt](#)
@@ -81,7 +155,7 @@ To see how to use each component, [view this page's source on GitHub](https://gi
 
 {% Banner 'warning' %}This is a warning banner with a <a href="#">link</a>.{% endBanner %}
 
-## Blockquotes
+## Block quotes
 
 <blockquote class="w-blockquote">
   <p class="w-blockquote__text">
@@ -147,41 +221,101 @@ See the [Code](/handbook/markup-code) post.
 
 ## Compare
 
-```
+```text
+&#123;% Compare 'worse' %&#125;
+&#96;&#96;&#96;text
 Bad code example
+&#96;&#96;&#96;
+&#123;% endCompare %&#125;
+
+&#123;% Compare 'better' %&#125;
+&#96;&#96;&#96;text
+Good code example
+&#96;&#96;&#96;
+&#123;% endCompare %&#125;
 ```
 
 {% Compare 'worse' %}
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
-at.
+```text
+Bad code example
+```
 {% endCompare %}
 
+{% Compare 'better' %}
+```text
+Good code example
 ```
+{% endCompare %}
+
+### Compare with caption
+
+````html
+{% raw %}{% Compare 'worse' %}
+```text
+Bad code example
+```
+
+{% CompareCaption %}
+Explanation of why `example` is bad.
+{% endCompareCaption %}
+
+{% endCompare %}
+
+{% Compare 'better' %}
+```text
 Good code example
 ```
 
+{% CompareCaption %}
+Explanation of why `example` is good.
+{% endCompareCaption %}
+
+{% endCompare %}{% endraw %}
+````
+
+{% Compare 'worse' %}
+```text
+Bad code example
+```
+
+{% CompareCaption %}
+Explanation of why `example` is bad.
+{% endCompareCaption %}
+
+{% endCompare %}
+
 {% Compare 'better' %}
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
-sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
-at.
+```text
+Good code example
+```
+
+{% CompareCaption %}
+Explanation of why `example` is good.
+{% endCompareCaption %}
+
 {% endCompare %}
 
 ### Compare with custom labels
 
-```
-Bad code example
+```text
+&#123;% Compare 'worse', 'Unhelpful' %&#125;
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+nibh varius at.
+&#123;% endCompare %&#125;
+
+&#123;% Compare 'better', 'Helpful' %&#125;
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+nibh varius at.
+&#123;% endCompare %&#125;
 ```
 
-{% Compare 'worse', 'Not helpful' %}
+{% Compare 'worse', 'Unhelpful' %}
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
-
-```
-Good code example
-```
 
 {% Compare 'better', 'Helpful' %}
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
@@ -189,15 +323,185 @@ sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
 {% endCompare %}
 
+### Compare in columns
+
+````html
+<div class="w-columns">
+{% raw %}{% Compare 'worse' %}
+```text
+Bad code example
+```
+
+{% CompareCaption %}
+Explanation of why `example` is bad.
+{% endCompareCaption %}
+
+{% endCompare %}
+
+{% Compare 'better' %}
+```text
+Good code example
+```
+
+{% CompareCaption %}
+Explanation of why `example` is good.
+{% endCompareCaption %}
+
+{% endCompare %}{% endraw %}
+</div>
+````
+
+<div class="w-columns">
+{% Compare 'worse' %}
+```text
+Bad code example
+```
+
+{% CompareCaption %}
+Explanation of why `example` is bad.
+{% endCompareCaption %}
+
+{% endCompare %}
+
+{% Compare 'better' %}
+```text
+Good code example
+```
+
+{% CompareCaption %}
+Explanation of why `example` is good.
+{% endCompareCaption %}
+
+{% endCompare %}
+</div>
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim necessitatibus
+incidunt harum reprehenderit laboriosam labore consequuntur quod. Doloribus,
+deleniti! Atque aliquam facilis labore odio similique provident illo culpa
+assumenda perspiciatis.
+
 ## Details
 
-<details>
-  <summary>Developer tools for Lighthouse</summary>
-  <p>
-    The browser uses the first listed source that's in a format it
-    supports. If the browser does not support any of the formats.
-  </p>
-</details>
+### Basic details component
+```text
+&#123;% Details %&#125;
+
+&#123;% DetailsSummary %&#125;
+Details _summary_
+&#123;% endDetailsSummary %&#125;
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+&#123;% endDetails %&#125;
+```
+
+{% Details %}
+
+{% DetailsSummary %}
+Details _summary_
+{% endDetailsSummary %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+
+{% endDetails %}
+
+### Details component with preview
+```text/4-5
+&#123;% Details %&#125;
+
+&#123;% DetailsSummary %&#125;
+Details _summary_
+This is an optional preview. Make your preview text match the first paragraph
+of your panel text.
+&#123;% endDetailsSummary %&#125;
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+&#123;% endDetails %&#125;
+```
+
+{% Details %}
+
+{% DetailsSummary %}
+Details _summary_
+This is an optional preview. Make your preview text matches the first paragraph
+of your panel text.
+{% endDetailsSummary %}
+
+This is an optional preview. Make your preview text matches the first paragraph
+of your panel text.
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+
+{% endDetails %}
+
+### Details component with custom heading level
+The default heading level is `h2`.
+To ensure the `Details` component is in the correct place in the page hierarchy,
+add a custom heading argument to the `DetailsSummary` shortcode.
+For example, if the component is in an `h2` section,
+use an `h3` heading.
+
+```text/2
+&#123;% Details %&#125;
+
+&#123;% DetailsSummary 'h3' %&#125;
+Details _summary_
+&#123;% endDetailsSummary %&#125;
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+&#123;% endDetails %&#125;
+```
+
+{% Details %}
+
+{% DetailsSummary 'h3' %}
+Details _summary_
+{% endDetailsSummary %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+
+{% endDetails %}
+
+### Details component in open state
+The `Details` component is closed by default.
+If for some reason you want it open,
+add the `open` argument to the `Details` shortcode.
+
+```text/0
+&#123;% Details 'open' %&#125;
+
+&#123;% DetailsSummary %&#125;
+Details _summary_
+&#123;% endDetailsSummary %&#125;
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+&#123;% endDetails %&#125;
+```
+
+{% Details 'open' %}
+
+{% DetailsSummary %}
+Details _summary_
+{% endDetailsSummary %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
+sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
+at.
+
+{% endDetails %}
 
 ## Glitch
 
@@ -277,6 +581,10 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
   sit amet ullamcorper.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
+
+## Callouts
+
+{% CodelabsCallout 'codelab-fix-sneaky-404' %}
 
 ## Stats
 
@@ -511,7 +819,7 @@ assumenda perspiciatis.
         <td>
           Short human-readable name for the application. This is intended for when
           there is insufficient space to display the full name of the web
-          application, like device homescreens.
+          application, like device home screens.
         </td>
       </tr>
       <tr>

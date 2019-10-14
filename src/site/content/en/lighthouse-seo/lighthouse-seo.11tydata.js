@@ -13,32 +13,34 @@ module.exports = {
     for search engine results ranking.`,
     topics: [
       {
-        title: 'Content best practices',
+        title: 'Make sure search engines understand your content',
         pathItems: [
+          'document-title',
           'meta-description',
           'link-text',
           'hreflang',
           'canonical',
+        ],
+      },
+      {
+        title: 'Make sure search engines can crawl and index your page',
+        pathItems: [
+          'http-status-code',
+          'is-crawable',
+          'robots-txt',
           'plugins',
         ],
       },
       {
-        title: 'Mobile friendly',
+        title: 'Make your page mobile-friendly',
         pathItems: [
+          'viewport',
           'font-size',
           'tap-targets',
         ],
       },
       {
-        title: 'Crawling and indexing',
-        pathItems: [
-          'http-status-code',
-          'is-crawable',
-          'robots-txt',
-        ],
-      },
-      {
-        title: 'Additional items to manually check',
+        title: 'Things to check manually',
         pathItems: [
           'structured-data',
         ],

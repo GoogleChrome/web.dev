@@ -46,7 +46,7 @@ If you omit the protocol, HTTPS is assumed. Subdomains matter, so
 `developers.google.com` is very different from `google.com`.
 
 Some common issues with origins are providing the wrong protocol, for example
-"https://" instead of "http://", and omitting the subdomain when needed.
+`https://` instead of `http://`, and omitting the subdomain when needed.
 Some websites include redirects, so if `example.com` redirects to
 `https://www.example.com`, then you should use the latter, resolved version of
 the origin. As a rule of thumb, use whichever origin users see in the URL bar.

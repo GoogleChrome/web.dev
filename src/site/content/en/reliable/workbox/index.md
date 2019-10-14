@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Workbox your high-level service worker toolkit
+title: "Workbox: your high-level service worker toolkit"
 authors:
   - jeffposnick
 date: 2018-11-05
@@ -133,7 +133,7 @@ running, featuring a `wizard` mode that will check your local development
 environment and suggest a reasonable default configuration that you could use
 moving forward:
 
-```
+```bash
 workbox wizard
 ? What is the root of your web app (i.e. which directory do you deploy)? src/
 ? Which file types would you like to precache? css, js, html

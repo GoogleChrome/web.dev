@@ -3,14 +3,24 @@ title: An example blog post
 subhead: A catchy subhead that previews the content.
 authors:
   - robdodson
+
 date: 2019-04-20
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
+
 hero: hero.jpg
+# You can adjust the fit of your hero image with this property.
+# Values: contain | cover (default)
+# hero_fit: contain
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
+# You can provide an optional cropping of your hero image to be used as a
+# thumbnail. Note the alt text will be the same for both the thumbnail and
+# the hero.
+# thumbnail: thumbnail.jpg
 alt: A description of the hero image for screen reader users.
+
 description: |
   This post is a test to demonstrate all of the components that can go into
   an article. This description appears in the meta tag.

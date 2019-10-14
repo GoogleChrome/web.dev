@@ -16,8 +16,9 @@
 
 const {html} = require('common-tags');
 const stripLanguage = require('../../_filters/strip-language');
+const md = require('../../_filters/md');
 
-/* eslint-disable require-jsdoc,indent */
+/* eslint-disable require-jsdoc,indent,max-len */
 
 /**
  * PostCard used to preview posts.
@@ -27,12 +28,23 @@ const stripLanguage = require('../../_filters/strip-language');
 module.exports = ({post}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
-  const hero = data && data.hero;
 
-  function renderHero(post, url) {
+  // If the post does not provide a thumbnail, attempt to reuse the hero image.
+  // Otherwise, omit the image entirely.
+  const thumbnail = data.thumbnail || data.hero || null;
+  const alt = data.alt || '';
+
+  function renderThumbnail(url, img, alt) {
     return html`
       <figure class="w-post-card__figure">
-        <img class="w-post-card__image" src="${url + hero}" alt="${data.alt}" />
+        <img
+          class="w-post-card__image"
+          src="${url + img}"
+          alt="${alt}"
+          width="100%"
+          height="240"
+          loading="lazy"
+        />
       </figure>
     `;
   }
@@ -56,21 +68,21 @@ module.exports = ({post}) => {
     <a href="${url}" class="w-card">
       <article class="w-post-card">
         <div
-          class="w-post-card__cover ${hero && `w-post-card__cover--with-image`}"
+          class="w-post-card__cover ${thumbnail && `w-post-card__cover--with-image`}"
         >
-          ${hero && renderHero(post, url)}
+          ${thumbnail && renderThumbnail(url, thumbnail, alt)}
           <h2
-            class="${hero
+            class="${thumbnail
               ? `w-post-card__headline--with-image`
               : `w-post-card__headline`}"
           >
-            ${data.title}
+            ${md(data.title)}
           </h2>
           
         </div>
         <div class="w-post-card__desc">
           <p class="w-post-card__subhead">
-            ${data.subhead}
+            ${md(data.subhead)}
           </p>
         </div>
       </article>

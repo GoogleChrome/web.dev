@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Posts and codelabs
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create the Markdown for posts and codelabs on web.dev.
@@ -19,7 +17,7 @@ This post is about how to set up a new post or codelab so it works correctly on 
     * The folder name will become the URL for your piece, so it should be all lowercase, and words should be separated by hyphens.
     * Keep the name as short as possible while still being meaningful.
     * Codelabs always start with the `codelab-*` prefix. Example:
-      ```
+      ```text
       secure/
       ├── codelab-same-origin-fetch/
       │   └── index.md
@@ -39,6 +37,7 @@ The YAML fields at the start of each piece of web.dev content define how the pie
   * `center` (default)
   * `top`
   * `bottom`
+* `thumbnail`: The filename of the thumbnail image, which appears when the post is displayed on the blog or homepage. Optional.
 * `alt`: The [alt text](/image-alt) for the hero image. Required if `hero` is present.
 * `description`: Content for the `description` `<meta>` tag.
 * `tags`: Tags for the site search. The `post` tag is required for a post to appear on the blog.
@@ -47,26 +46,26 @@ Codelabs have two additional fields:
 * `glitch`: The name of the glitch to be presented in the right pane.
 * `related_post`: The slug for the post associated with your codelab. (This is what makes breadcrumbs work.)
 
-## Authoring tips
-To make diffing on GitHub easier, wrap lines at 80 characters.
+Finally, if you don't want your post to be published as soon as it's done, add the `draft: true` flag to the YAML. (When it's time for the post to go live, the web.dev team will remove the `draft` flag.)
 
+## Authoring tips
 Use relative URLs to link to other posts and codelabs on web.dev.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse' %}
 `https://web.dev/some-article`
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
+{% Compare 'better' %}
 `/some-article`
 {% endCompare %}
 
 Use relative URLs to link to assets for the post or codelab.
 
-{% Compare 'worse', 'Don’t' %}
+{% Compare 'worse' %}
 `https://web.dev/some-article/image.png`
 {% endCompare %}
 
-{% Compare 'better', 'Do' %}
+{% Compare 'better' %}
 `./image.png`
 {% endCompare %}
 

@@ -9,9 +9,7 @@ description: |
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="learn-landing-page">
-  {% Banner %}
-    We want to learn more about how web developers use images. 📸 Please take a moment to fill out the <a class="w-banner__link" href="https://forms.gle/vF9SW95simXKoZrKA">Web Developer Images Survey</a>.
-  {% endBanner %}
+
   <div class="w-layout-container">
     <header class="w-page-header">
       <h1 class="w-page-header__headline">{{ title }}</h1>
@@ -29,7 +27,7 @@ description: |
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for path in paths %}
+      {% for path in learn.paths %}
         {% PathCard path %}
       {% endfor %}
     </div>
@@ -42,7 +40,7 @@ description: |
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for framework in frameworks %}
+      {% for framework in learn.frameworks %}
         {% PathCard framework %}
       {% endfor %}
     </div>
@@ -55,7 +53,7 @@ description: |
       </h3>
     </div>
     <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-      {% for audit in audits %}
+      {% for audit in learn.audits %}
         {% PathCard audit %}
       {% endfor %}
     </div>

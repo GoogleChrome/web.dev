@@ -126,7 +126,7 @@ intrinsic layout.**
     <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/home.jpg" alt="TenHundred store home page" class="screenshot">
   </picture>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank">Preview the final layout demo page</a>
+    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank" rel="noopener noreferrer">Preview the final layout demo page</a>
   </figcaption>
 </figure>
 
@@ -146,7 +146,7 @@ By the end of this series you should have:
 
 ## Better Together 🍻
 We'll acquire some bruises along the way as we bump our heads, shoulders, knees,
-and toes... but I believe it's crucial for when you run into similar issues,
+and toes… but I believe it's crucial for when you run into similar issues,
 that we've gone through a gauntlet together. That means this series includes
 refactor reasoning and results. There's a lot of "play" that needs to happen
 with intrinsic layouts, **I want you to see how I play and reach resilient

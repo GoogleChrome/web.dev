@@ -3,6 +3,7 @@ layout: post
 title: Ensure img elements have alternate text or a role of none or presentation
 description: |
   Learn about image-alt audit.
+date: 2019-05-02
 web_lighthouse:
   - image-alt
 ---
@@ -42,7 +43,7 @@ give it an empty `alt=""` attribute to remove it from the accessibility tree:
 <img src="background.png" alt="">
 ```
 
-Learn more in [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.2/image-alt?application=lighthouse).
+Learn more in [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.3/image-alt?application=lighthouse).
 
 {% Aside 'note' %}
 You can also use ARIA labels to describe your images, for example,
@@ -53,7 +54,7 @@ See also
 ](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
-## Tips for writing effective `alt` text:
+## Tips for writing effective `alt` text
 
 - `alt` text should give the intent, purpose, and meaning of the image.
 - Blind users should get as much information from alt text as a sighted user gets from the image.
@@ -71,4 +72,3 @@ Todo. I have no idea how accessibility scoring is working!
 
 - [Ensure images have `alt` text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

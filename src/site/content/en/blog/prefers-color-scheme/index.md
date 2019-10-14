@@ -187,7 +187,9 @@ For Android&nbsp;Q, you can find it under *Display* as a *Dark Theme* toggle swi
 and on iOS&nbsp;13, you can change the *Appearance* in the *Display &amp; Brightness*
 section of the settings ([screenshot](ios.jpg)).
 
-<h2 class="w-clearfix">The <code>prefers-color-scheme</code> media query</h2>
+<div class="w-clearfix"></div>
+
+## The `prefers-color-scheme` media query
 
 One last bit of theory before I get going.
 [Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
@@ -586,7 +588,7 @@ img[src*=".svg"]:hover {
 }
 ```
 
-<h3>Use <code style="color: currentColor;">currentColor</code> for inline SVGs</h3>
+### Use `currentColor` for inline SVGs
 
 For *inline* SVG images, instead of [using inversion filters](#invert-vector-graphics-and-icons),
 you can leverage the [`currentColor`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentColor_keyword)
@@ -687,7 +689,7 @@ in dark, but still prefer to see their webpages the way they are used to seeing 
 A great pattern is to initially adhere to the signal the browser sends through
 `prefers-color-scheme`, but to then optionally allow users to override their system-level setting.
 
-<h4>The <code style="color: currentColor;">&lt;dark-mode-toggle&gt;</code> custom element</h4>
+#### The `<dark-mode-toggle>` custom element
 
 You can of course create the code for this yourself, but you can also just use
 a ready-made custom element (web component) that I have created right for this purpose.

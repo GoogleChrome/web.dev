@@ -42,7 +42,7 @@ The [Angular command line interface (CLI)](https://cli.angular.io/) lets you qui
 
 To begin, install the CLI globally and verify that you have the latest version by running these commands:
 
-```
+```bash
 npm i -g @angular/cli
 ng --version
 ```
@@ -51,7 +51,7 @@ Make sure the last command outputs version 8.0.3 or newer.
 
 Alternatively, if you don't want to install the CLI globally, you can install it locally and run it with the `npx` command:
 
-```
+```bash
 npm i @angular/cli
 npx ng --version
 ```
@@ -60,7 +60,7 @@ npx ng --version
 
 To create a new project run:
 
-```
+```bash
 ng new my-app
 ```
 
@@ -68,7 +68,7 @@ This command will create the initial files and folder structure for your applica
 
 Once the setup process completes successfully, start your application by running:
 
-```
+```bash
 cd my-app
 ng start
 ```
@@ -79,7 +79,7 @@ You should now be able to access your application at [http://localhost:4200](htt
 
 In the rest of this collection you'll learn how to improve the performance, accessibility, and SEO of your Angular application. Here's what's covered:
 
-- Route-Level code-splitting in Angular
+- Route-Level code splitting in Angular
 - Performance Budgets with the Angular CLI
 - Route Prefetching Strategies in Angular
 - Change detection optimization in Angular

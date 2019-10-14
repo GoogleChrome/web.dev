@@ -3,6 +3,7 @@ layout: post
 title: Manually check landmark elements improve navigation
 description: |
   Learn about managed-focus audit.
+date: 2019-05-02
 web_lighthouse:
   - use-landmarks
   - managed-focus

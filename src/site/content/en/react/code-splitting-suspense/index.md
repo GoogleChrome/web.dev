@@ -16,7 +16,7 @@ authors:
 
 {% Aside %}
   If you don't yet understand the basic idea behind code splitting, refer to
-  [Reduce JavaScript payloads with code-splitting](/reduce-javascript-payloads-with-code-splitting)
+  [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
   guide first.
 {% endAside %}
 
@@ -52,7 +52,7 @@ component.
 
 The problem with shipping a large JavaScript payload to users is the length of
 time it would take for the page to finish loading, especially on weaker devices
-and network connections. This is why code-splitting and lazy loading is
+and network connections. This is why code splitting and lazy loading is
 extremely useful.
 
 However, there will always be a slight delay that users have to experience when
@@ -232,7 +232,7 @@ const DetailsComponent = () => (
 
 ## Conclusion
 
-If you are unsure where to begin applying code-splitting to your React
+If you are unsure where to begin applying code splitting to your React
 application, follow these steps:
 
 1. Begin at the route level. Routes are the simplest way to identify points of

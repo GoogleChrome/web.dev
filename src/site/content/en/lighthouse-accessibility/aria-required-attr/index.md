@@ -3,6 +3,7 @@ layout: post
 title: Ensure ARIA roles have required states and properties
 description: |
   Learn about aria-required-attr audit.
+date: 2019-05-02
 web_lighthouse:
   - aria-required-attr
 ---
@@ -61,4 +62,3 @@ see [Required ARIA attributes must be provided](https://dequeuniversity.com/rule
 
 - [ARIA roles have required states and properties audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-attr.js)
 - [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)

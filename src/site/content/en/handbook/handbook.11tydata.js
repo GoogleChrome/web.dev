@@ -25,7 +25,7 @@ module.exports = {
         title: 'Content guidelines',
         pathItems: [
           'content-types',
-          'style',
+          'quality',
           'voice',
           'audience',
           'grammar',

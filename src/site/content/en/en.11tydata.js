@@ -14,12 +14,14 @@ const installable = require('./installable/installable.11tydata.js').path;
 // =============================================================================
 
 module.exports = {
-  paths: [
-    fast,
-    accessible,
-    reliable,
-    discoverable,
-    secure,
-    installable,
-  ],
+  home: {
+    paths: [
+      fast,
+      accessible,
+      reliable,
+      secure,
+      discoverable,
+      installable,
+    ],
+  },
 };

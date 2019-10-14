@@ -17,6 +17,7 @@
 const {html} = require('common-tags');
 const {findBySlug} = require('../../_filters/find-by-slug');
 const stripLanguage = require('../../_filters/strip-language');
+const md = require('markdown-it')();
 
 /* eslint-disable require-jsdoc,max-len */
 
@@ -118,7 +119,7 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
         data-action="click"
         href="${link}"
       >
-        ${label}
+        ${md.renderInline(label)}
       </a>
     `;
   }
@@ -134,7 +135,7 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
       >
         <div class="w-article-navigation__column">
           <h3 class="w-article-navigation__heading">Next article</h3>
-          ${label}
+          ${md.renderInline(label)}
         </div>
       </a>
     `;

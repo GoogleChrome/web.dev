@@ -1,8 +1,6 @@
 ---
 layout: handbook
 title: Images and video
-authors:
-  - mfriesenhahn
 date: 2019-06-26
 description: |
   Learn how to create the Markdown for images and video for web.dev.
@@ -18,15 +16,24 @@ Use lossless images whenever possible. They'll be optimized automatically at bui
 Make sure images are [accessible](/handbook/inclusion-and-accessibility#use-inclusive-images).
 
 ## Hero images
-Hero images should be 1600 px x 800 px.
+Hero images should be 3200 px x 960 px.
 
 Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
+
+## Thumbnail images
+When a post is displayed on the home page or the blog it can contain a thumbnail.
+
+Thumbnails should be 376 px x 240 px.
+
+If you don't provide a thumbnail, the post will attempt to reuse the hero image.
+If there is no hero image, the post will omit the thumbnail entirely.
 
 ## Body images
 Images intended to fill the full width of the content column should be at least 800 px wide.
 
 Use Markdown syntax for standard standalone images:
-```
+
+```markdown
 ![alt text](./image-name.png)
 ```
 

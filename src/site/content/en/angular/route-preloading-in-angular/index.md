@@ -16,11 +16,11 @@ tags:
   - performance
 ---
 
-[Route-level code-splitting](/route-level-code-splitting-in-angular) can help you reduce the initial load time of an application by delaying the JavaScript associated with routes that aren't initially needed. This way, the Angular router waits until a user navigates to a given route before triggering a network request to download the associated JavaScript.
+[Route-level code splitting](/route-level-code-splitting-in-angular) can help you reduce the initial load time of an application by delaying the JavaScript associated with routes that aren't initially needed. This way, the Angular router waits until a user navigates to a given route before triggering a network request to download the associated JavaScript.
 
 While this technique is great for initial page load, it can slow down navigation, depending on the users' network latency and bandwidth. One way to tackle this problem is **route preloading**. Using preloading, when the user is at a given route, you can download and cache JavaScript associated with routes that are likely to be needed next. The Angular router provides this functionality out of the box.
 
-In this post, you'll learn how to speed up navigation when using route-level code-splitting by taking advantage of JavaScript preloading in Angular.
+In this post, you'll learn how to speed up navigation when using route-level code splitting by taking advantage of JavaScript preloading in Angular.
 
 ## Route preloading strategies in Angular
 
@@ -37,14 +37,14 @@ The sample app has several lazy-loaded routes. To preload all of them using the 
 
 ```js
 import { RouterModule, PreloadAllModules } from '@angular/router';
-// ...
+// …
 
 RouterModule.forRoot([
-  ...
+  …
 ], {
   preloadingStrategy: PreloadAllModules
 })
-// ...
+// …
 ```
 
 Now serve the application and look at the **Network** panel in Chrome DevTools:
@@ -74,7 +74,7 @@ The [quicklink](https://github.com/GoogleChromeLabs/quicklink) library provides 
 
 You can add quicklink to an Angular app by using the [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink) package. Start by installing the package from npm:
 
-```
+```bash
 npm install --save ngx-quicklink
 ```
 
@@ -82,18 +82,18 @@ Once it's available in your project, you can use `QuicklinkStrategy` by specifyi
 
 ```js
 import {QuicklinkStrategy, QuicklinkModule} from 'ngx-quicklink';
-...
+…
 
 @NgModule({
-  ...
+  …
   imports: [
-    ...
+    …
     QuicklinkModule,
-    RouterModule.forRoot([...], {
+    RouterModule.forRoot([…], {
       preloadingStrategy: QuicklinkStrategy
     })
   ],
-  ...
+  …
 })
 export class AppModule {}
 ```
@@ -110,6 +110,43 @@ Now when you open the application again, you'll notice that the router only prel
   </figcaption>
 </figure>
 
+### Using the Quicklink preloading strategy across multiple lazy-loaded modules
+
+The above example will work for a basic application but if your application contains multiple lazy-loaded modules you will need to import the `QuicklinkModule` into a shared module, export it and then import the shared module into your lazy-loaded modules.
+
+First import the `QuicklinkModule` from `ngx-quicklink` into your shared module and export it:
+```js
+import { QuicklinkModule } from 'ngx-quicklink';
+…
+
+@NgModule({
+  …
+  imports: [
+    QuicklinkModule
+  ],
+  exports: [
+    QuicklinkModule
+  ],
+  …
+})
+export class SharedModule {}
+```
+
+Then import your `SharedModule` into all of your lazy-loaded modules:
+```js
+import { SharedModule } from '@app/shared/shared.module';
+…
+
+@NgModule({
+  …
+  imports: [
+      SharedModule
+  ],
+  …
+});
+```
+
+`Quicklinks` will now be available in your lazy-loaded modules.
 
 ## Going beyond basic preloading
 
@@ -119,7 +156,7 @@ You can learn how to use Guess.js with Angular on [this page from the Guess.js s
 
 ## Conclusion
 
-To speed up navigation when using route-level code-splitting:
+To speed up navigation when using route-level code splitting:
 
 1. Pick the right preloading strategy depending on the size of your application:
     - Applications with few modules can use Angular's built-in `PreloadAllModules` strategy.

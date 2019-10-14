@@ -21,4 +21,13 @@ module.exports = {
   url: 'https://web.dev',
   repo: 'https://github.com/GoogleChrome/web.dev',
   subscribe: 'https://web.dev/subscribe',
+  isBannerEnabled: true,
+  banner: `Can’t make \`#ChromeDevSummit\` this year? Catch all the content
+  (and more!) on the livestream or join your peers for a CDS Extended event at
+  a hosted location nearby. To learn more, check out the [Chrome Dev Summit
+  2019 website](https://developer.chrome.com/devsummit/remote)`,
+  // Note that the imageCdn value is only used when we do a production build
+  // of the site. Otherwise all image paths are local. This means you can
+  // develop locally without having to mess with the CDN at all.
+  imageCdn: 'https://webdev.imgix.net',
 };
