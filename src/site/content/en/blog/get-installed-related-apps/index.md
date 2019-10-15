@@ -7,7 +7,7 @@ description: As the capability gap between web and native gets smaller, it gets 
 date: 2018-12-20
 updated: 2019-10-15
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - post
   - capabilities
 hero: hero.jpg
 alt: mobile device with app panel open
@@ -50,19 +50,11 @@ and spent some time iterating the design.
 
 <div class="w-clearfix"></div>
 
-### Suggested use cases {: #use-cases }
+## Suggested use cases {: #use-cases }
 
-There may be cases where there isn't feature parity between your web and native
-apps. With `getInstalledRelatedApps()`, you can check if the other version is
-installed, and switch to it, using the functionality there. For example, one of
-the most common scenarios we've heard—and the key reason behind this method—is
-to reduce duplicate notifications. Using `getInstalledRelatedApps()` allows you
-check whether the user has the native app installed and then disable the
-notification functionality in the web app.
-
-Installable web apps can help prevent confusion between the web and native
-versions by checking to see if the native version is already installed and
-either not prompting to install the PWA, or providing different prompts.
+* Checking for the other version of an app and switching to it
+* Disabling notifications in the web app when the native app is installed
+* Not prompting users to install the web app if the native app is installed
 
 ## Current status {: #status }
 
@@ -71,7 +63,7 @@ either not prompting to install the PWA, or providing different prompts.
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
 | 1. Create explainer                          | [Complete][explainer]        |
-| **2. Create initial draft of specification** | [Complete][spec]             |
+| 2. Create initial draft of specification     | [Complete][spec]             |
 | **3. Gather feedback and iterate on design** | [**In progress**](#feedback) |
 | **4. Origin trial**                          | [**In progress**](#origin-trial) |
 | 5. Launch                                    | Not started                  |
@@ -106,9 +98,10 @@ enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`
 ## How to use `getInstalledRelatedApps()` {: #use }
 
 To use `getInstalledRelatedApps()`, you must first create a relationship
-between your two apps. This relationship prevents other apps from using the
-API to detect if your app is installed and prevents sites from collecting
-information about the apps you have installed on your device.
+between between the web and native versions of your app. This relationship
+prevents other apps from using the API to detect if your app is installed and
+prevents sites from collecting information about the apps you have installed
+on your device.
 
 ### Define the relationship to your native app {: #relationship-web }
 
@@ -116,9 +109,10 @@ In your [web app manifest](/add-manifest), add a
 `related_applications` property.
 The `related_applications` property is an array containing an object
 for each app that you want to detect. Each app object includes:
-- The platform on which the app is hosted
-- The unique identifier for your app on that platform
-- The URL where your app is hosted (optional)
+
+* The platform on which the app is hosted
+* The unique identifier for your app on that platform
+* The URL where your app is hosted (optional)
 
 For example:
 
@@ -209,17 +203,17 @@ are there missing methods or properties that you need to implement your idea?
 * File a spec issue on the [WICG getInstalledRelatedApps GitHub repo][issues],
   or add your thoughts to an existing issue.
 
-### Problem with the implementation?
+### Report a problem with the implementation
 
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
 
 * File a bug at [https://new.crbug.com][new-bug]. Include as much
   detail as you can, provide simple instructions for reproducing the bug, and
-  enter `Mobile>WebAPKs` in the **Components** box. [Glitch](https://glitch.com) works great
-  for sharing quick and easy repros.
+  enter `Mobile>WebAPKs` in the **Components** box. [Glitch](https://glitch.com)
+  works great for sharing quick and easy repros.
 
-### Planning to use the API?
+### Show support for the API
 
 Are you planning to use the `getInstalledRelatedApps()` API? Your public
 support helps the Chrome team to prioritize features and shows other
@@ -237,7 +231,7 @@ browser vendors how critical it is to support them.
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * [Request an origin trial token]({{origin_trial.url}})
-* Blink Component: `Mobile>WebAPKs`
+* Blink Component: [`Mobile>WebAPKs`](https://chromestatus.com/features#component%3A%20Mobile%3EWebAPKs)
 
 [spec]: https://github.com/WICG/get-installed-related-apps
 [issues]: https://github.com/WICG/get-installed-related-apps/issues
