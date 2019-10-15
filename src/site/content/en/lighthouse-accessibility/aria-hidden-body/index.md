@@ -2,8 +2,8 @@
 layout: post
 title: "`[aria-hidden=\"true\"]` is present on the document `<body>`"
 description: |
-  Learn how to make sure your web page is accessible to screen reader users by
-  avoiding the aria-hidden attribute on the body element.
+  Learn how to make sure your web page is accessible to assistive technology
+  users by avoiding the aria-hidden attribute on the body element.
 date: 2019-10-17
 web_lighthouse:
   - aria-hidden-body
@@ -13,7 +13,7 @@ web_lighthouse:
 
 Screen readers and other assistive technologies don't announce content that's
 marked as hidden. Applying the `aria-hidden="true"` attribute to your `<body>`
-element hides your entire web page from screen reader users.
+element hides your entire web page from assistive technology users.
 
 ## How Lighthouse identifies hidden body elements
 
@@ -32,10 +32,10 @@ flags pages whose `<body>` element has an `aria-hidden="true"` attribute:
 Remove the `aria-hidden="true"` attribute
 from the `<body>` element of your page.
 
-One reason developers mistakenly hide the body element is to prevent screen
-readers from announcing the main content of a page while a
+One reason developers mistakenly hide the body element is to prevent assistive
+technologies from announcing the main content of a page while a
 [modal dialog](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal) is open.
-However, hiding the body hides _all_ page content from screen reader users,
+However, hiding the body hides _all_ page content from assistive technology users,
 including the dialog.
 
 A better solution is to apply the `aria-hidden` attribute
@@ -65,4 +65,4 @@ which precedes the dialog in the HTML:
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-hidden-body.js" rel="noopener">Source code for **`[aria-hidden="true"]` is present on the document `<body>`** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-hidden-body" rel="noopener">aria-hidden="true" must not be present on the document &#60;body&#62;</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-hidden-body" rel="noopener">aria-hidden="true" must not be present on the document &#60;body&#62; (Deque University)</a>

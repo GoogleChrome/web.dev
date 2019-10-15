@@ -2,7 +2,7 @@
 layout: post
 title: "`<html>` element does not have a valid value for its `[lang]` attribute"
 description: |
-  Learn how to make sure screen readers pronounce your web page's content
+  Learn how to make sure assistive technologies pronounce your web page's content
   correctly by providing a valid value for the HTML element's lang attribute.
 date: 2019-05-02
 updated: 2019-09-19
@@ -41,4 +41,4 @@ This audit checks whether the _value_ for that attribute is valid.
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-lang-valid.js" rel="noopener">Source code for **`<html>` element does not have a valid value for its `[lang]` attribute** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/html-lang-valid" rel="noopener">&#60;html&#62; element must have a valid value for the lang attribute</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/html-lang-valid" rel="noopener">&#60;html&#62; element must have a valid value for the lang attribute (Deque University)</a>

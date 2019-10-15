@@ -2,8 +2,8 @@
 layout: post
 title: "`<input type=\"image\">` elements do not have `[alt]` text"
 description: |
-  Learn how to make sure screen reader users can access your web page's image
-  inputs by providing alternative text.
+  Learn how to make sure assistive technology users can access your web page's
+  image inputs by providing alternative text.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -11,11 +11,12 @@ web_lighthouse:
 ---
 
 When an image is being used as an `<input>` button,
-providing alternative text helps screen reader users understand the purpose of the button.
+providing alternative text helps users of screen readers and other
+assistive technologies understand the purpose of the button.
 
 ## How this Lighthouse audit fails
 
-Lighthouse flags `<input type="image">` elements that don't have `alt` text':
+Lighthouse flags `<input type="image">` elements that don't have `alt` text:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="input-image-alt.png" alt="Lighthouse audit showing input types with a value of 'image' do not have alt attributes">
@@ -27,8 +28,7 @@ Lighthouse flags `<input type="image">` elements that don't have `alt` text':
 
 Provide an `alt` attribute for every `<input type="image">` element.
 Describe the action that occurs when the user clicks on the button
-in the `alt` text
-(see also [Include text alternatives for images and objects](/labels-and-text-alternatives#include-text-alternatives-for-images-and-objects)):
+in the `alt` text:
 
 ```html
 <form>
@@ -40,18 +40,17 @@ in the `alt` text
 </form>
 ```
 
-Even if the image contains only text, provide alternate text.
-Screen readers can't translate images of words into output.
-Learn more in [Image buttons must have alternate text](https://dequeuniversity.com/rules/axe/3.3/input-image-alt).
+See the [Include text alternatives for images and objects](/labels-and-text-alternatives#include-text-alternatives-for-images-and-objects) post for more information.
 
 {% Aside 'note' %}
-You can also use ARIA labels to describe your image buttons,
-for example,
+You can also use ARIA labels to describe your image buttons.
+
+For example:
 `<input type="image" aria-label="Sign in">`
+
 See also
 [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and
-[Using the aria-labelledby attribute
-](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
+[Using the aria-labelledby attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
 ## Tips for writing effective `alt` text
@@ -67,4 +66,4 @@ Learn more in
 ## Resources
 
 - [Source code for **`<input type="image">` elements do not have `[alt]` text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/input-image-alt.js)
-- [Image buttons must have alternate text](https://dequeuniversity.com/rules/axe/3.3/input-image-alt)
+- [Image buttons must have alternate text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/input-image-alt)

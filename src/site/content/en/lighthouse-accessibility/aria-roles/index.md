@@ -2,8 +2,8 @@
 layout: post
 title: "`[role]` values are not valid"
 description: |
-  Learn how to improve your web page's accessibility for screen reader users by
-  making sure that all ARIA roles are valid.
+  Learn how to improve your web page's accessibility for assistive technology
+  users by making sure that all ARIA roles are valid.
 date: 2019-05-02
 web_lighthouse:
   - aria-roles
@@ -14,7 +14,7 @@ web_lighthouse:
 The ARIA specification includes a
 <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">defined set of roles</a>.
 When the value for an element's `role` attribute doesn't match a role from the set,
-screen readers can't announce the element correctly
+assistive technologies can't announce the element correctly
 or interact with it as the developer intended.
 
 ## How Lighthouse determines an ARIA role has an invalid value
@@ -46,5 +46,5 @@ Make sure all `role` attributes are set to a value in the definitions list.
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-roles.js" rel="noopener">Source code for **`[role]` values are not valid** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-roles" rel="noopener">ARIA roles used must conform to valid values</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-roles" rel="noopener">ARIA roles used must conform to valid values (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

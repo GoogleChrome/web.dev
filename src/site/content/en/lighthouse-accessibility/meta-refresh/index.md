@@ -27,10 +27,8 @@ Lighthouse flags timed refreshes:
 ## How to avoid automatic page refreshes
 
 Remove `<meta http-equiv="refresh">` from the page.
-Learn more in
-[Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.3/meta-refresh).
 
 ## Resources
 
 - [Source code for **The document uses `<meta http-equiv="refresh">`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-refresh.js)
-- [Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.3/meta-refresh)
+- [Timed refresh must not exist (Deque University)](https://dequeuniversity.com/rules/axe/3.3/meta-refresh)

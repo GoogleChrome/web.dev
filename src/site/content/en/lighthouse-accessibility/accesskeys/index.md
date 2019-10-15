@@ -37,11 +37,7 @@ For each defined `accesskey`,
 make sure the value doesn't conflict with any default browser
 or screen reader shortcut keys.
 
-See Deque University's
-[accesskey attribute value must be unique](https://dequeuniversity.com/rules/axe/3.3/accesskeys)
-page for more information.
-
 ## Resources
 
 - [Source code for **`[accesskey]` values are not unique** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/accesskeys.js)
-- [accesskey attribute value must be unique](https://dequeuniversity.com/rules/axe/3.3/accesskeys)
+- [accesskey attribute value must be unique (Deque University)](https://dequeuniversity.com/rules/axe/3.3/accesskeys)

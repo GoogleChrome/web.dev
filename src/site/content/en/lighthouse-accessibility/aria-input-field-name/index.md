@@ -3,7 +3,7 @@ layout: post
 title: "Not all ARIA input fields have accessible names"
 description: |
   Learn how to improve your web page's accessibility by making sure that
-  screen reader users can access the names of your input fields.
+  assistive technology users can access the names of your input fields.
 date: 2019-10-17
 web_lighthouse:
   - aria-input-field-name
@@ -78,6 +78,6 @@ as its label and will be announced as "Search currency pairs":
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-input-field-name.js" rel="noopener">Source code for **Not all ARIA input fields have accessible names** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-input-field-name" rel="noopener">ARIA input fields have an accessible name</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-input-field-name" rel="noopener">ARIA input fields have an accessible name (Deque University)</a>
 - [Labels and text alternatives](/labels-and-text-alternatives)
 - [Use semantic HTML for easy keyboard wins](/use-semantic-html)

@@ -2,17 +2,19 @@
 title: "`<frame>` or `<iframe>` elements do not have a title"
 layout: post
 description: |
-  Learn how to make sure screen readers can announce frame content on your
-  web page correctly by giving all frame elements titles.
+  Learn how to make sure assistive technologies can announce frame content on
+  your web page correctly by giving all frame elements titles.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
   - frame-title
 ---
 
-Screen reader users rely on frame titles to describe the contents of frames.
+Users of screen readers and other assistive technologies rely on
+frame titles to describe the contents of frames.
 Navigating through frames and inline frames can quickly become difficult and confusing
-for screen reader users if the frames are not marked with a title attribute.
+for assistive technology users if the frames are not marked
+with a title attribute.
 
 ## How the Lighthouse frame title audit fails
 
@@ -36,8 +38,6 @@ For example:
 <iframe title="My Daily Marathon Tracker" src="https://www.mydailymarathontracker.com/"></iframe>
 ```
 
-Learn more in [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.3/frame-title).
-
 ## Tips for creating descriptive frame titles
 
 - As previously mentioned, give the enclosed document a title element with content identical to title attribute.
@@ -51,4 +51,4 @@ Learn more in
 
 - [Source code for **`<frame>` or `<iframe>` elements do not have a title** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
 - [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)
-- [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.3/frame-title)
+- [Frames must have title attribute (Deque University)](https://dequeuniversity.com/rules/axe/3.3/frame-title)

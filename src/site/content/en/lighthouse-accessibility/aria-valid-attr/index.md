@@ -2,8 +2,8 @@
 layout: post
 title: "`[aria-*]` attributes are not valid or misspelled"
 description: |
-  Learn how to improve your web page's accessibility for screen reader users by
-  making sure that all ARIA attributes are valid.
+  Learn how to improve your web page's accessibility for assistive technology
+  users by making sure that all ARIA attributes are valid.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -52,5 +52,5 @@ Make sure all ARIA attributes on your page match one of the defined states or pr
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-valid-attr.js" rel="noopener">Source code for **`[aria-*]` attributes are not valid or misspelled** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr" rel="noopener">ARIA attributes must conform to valid names</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr" rel="noopener">ARIA attributes must conform to valid names (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#states_and_properties" rel="noopener">States and properties from the WAI-ARIA specification</a>

@@ -2,8 +2,8 @@
 layout: post
 title: "Form fields have multiple labels"
 description: |
-  Learn how to make sure screen readers announce your web page's form fields
-  correctly by ensuring that each field has only one label.
+  Learn how to make sure assistive technologies announce your web page's form
+  fields correctly by ensuring that each field has only one label.
 web_lighthouse:
   - form-field-multiple-labels
 date: 2019-10-17
@@ -102,4 +102,4 @@ Verify that you're using only one of these techniques for each form element.
 
 ## Resources
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/form-field-multiple-labels.js" rel="noopener">Source code for **Form fields have multiple labels** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/form-field-multiple-labels" rel="noopener">Form fields do not have duplicate labels</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/form-field-multiple-labels" rel="noopener">Form fields do not have duplicate labels (Deque University)</a>

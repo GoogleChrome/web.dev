@@ -2,8 +2,8 @@
 layout: post
 title: "Presentational `<table>` elements do not avoid using `<th>`, `<caption>`, or the `[summary]` attribute"
 description: |
-  Learn how to make presentational tables more accessible for screen reader
-  users by avoiding child elements meant for data tables.
+  Learn how to make presentational tables more accessible for assistive
+  technology users by avoiding child elements meant for data tables.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -37,10 +37,7 @@ If using a table just for visual layout, and not for tabular data,
 the better fix is to remove the table all together,
 and use cascading style sheets (CSS) to control layout instead.
 
-Learn more in
-[Layout tables must not use data table elements](https://dequeuniversity.com/rules/axe/3.3/layout-table).
-
 ## Resources
 
 - [Source code for **Presentational `<table>` elements do not avoid using `<th>`, `<caption>`, or the `[summary]` attribute** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/layout-table.js)
-- [Layout tables must not use data table elements](https://dequeuniversity.com/rules/axe/3.3/layout-table)
+- [Layout tables must not use data table elements (Deque University)](https://dequeuniversity.com/rules/axe/3.3/layout-table)

@@ -3,15 +3,15 @@ layout: post
 title: Custom controls have ARIA roles
 description: |
   Learn how to improve your web page's accessibility by making sure custom
-  controls have ARIA roles that screen readers can interpret.
+  controls have ARIA roles that assistive technologies can interpret.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
   - custom-control-roles
 ---
 
-Check all custom controls have appropriate `role` and
-any required ARIA attributes that confer their interactive state.
+Check that all custom controls have an appropriate `role` and
+any required ARIA attributes that confer their properties and state.
 For example, a custom checkbox needs a `role="checkbox"` and
 `aria-checked="true|false"` to properly convey its state.
 See the [Introduction to ARIA](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/)
@@ -19,8 +19,8 @@ for a general overview of how ARIA can provide missing semantics for custom cont
 
 ## How to manually test
 
-To check all custom interactive controls have appropriate ARIA roles,
-test the page using a Screen Reader.
+To check that all custom interactive controls have appropriate ARIA roles,
+test the page using a screen reader.
 This example compares a `<div>` to a `<button>`
 (you'll need to click "Enable ChromeVox Lite" to test it):
 
@@ -64,10 +64,12 @@ Now the screen reader announces the role and interactive state for the `<div>`.
 
 ## Why this matters
 
-The only way to truly understand how screen reader users experience your content
+The only way to truly understand how assistive technology users
+experience your content
 is to check that content yourself using a screen reader.
 Using a screen reader first hand will give you a clear understanding
-of how your content is labeled, and if there are any obstructions to screen reader navigation.
+of how your content is labeled, and if there are any obstructions to
+assistive technology navigation.
 If you're unfamiliar with how semantic markup gets interpreted by assistive technology,
 see the [Introduction to Semantics](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/) for a refresher.
 

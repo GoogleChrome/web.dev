@@ -10,8 +10,9 @@ web_lighthouse:
   - object-alt
 ---
 
-Screen readers cannot translate non-text content.
-Adding alternative text to define `<object>` elements helps screen readers convey meaning to users.
+Screen readers and other assistive technologies cannot translate non-text content.
+Adding alternative text to define `<object>` elements helps
+assistive technologies convey meaning to users.
 
 ## How this Lighthouse audit fails
 
@@ -67,4 +68,4 @@ Learn more in
 ## Resources
 
 - [Source code for **`<object>` elements do not have `[alt]` text** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/object-alt.js)
-- [&lt;object> elements must have alternate text](https://dequeuniversity.com/rules/axe/3.3/object-alt)
+- [&lt;object> elements must have alternate text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/object-alt)

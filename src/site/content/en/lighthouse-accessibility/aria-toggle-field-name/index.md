@@ -3,7 +3,7 @@ layout: post
 title: "Not all ARIA toggle fields have accessible names"
 description: |
   Learn how to improve your web page's accessibility by making sure that
-  screen reader users can access the names of custom radio buttons,
+  assistive technology users can access the names of custom radio buttons,
   checkboxes, and switches.
 date: 2019-10-17
 web_lighthouse:
@@ -93,6 +93,6 @@ as its label and will be announced as "Sans-serif":
 
 ## Resources
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js" rel="noopener">Source code for **Not all ARIA toggle fields have accessible names** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-toggle-field-label" rel="noopener">ARIA toggle fields have an accessible name</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-toggle-field-label" rel="noopener">ARIA toggle fields have an accessible name (Deque University)</a>
 - [Labels and text alternatives](/labels-and-text-alternatives)
 - [Use semantic HTML for easy keyboard wins](/use-semantic-html)

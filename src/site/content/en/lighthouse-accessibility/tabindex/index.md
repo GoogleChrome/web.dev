@@ -50,4 +50,4 @@ Learn more in
 ## Resources
 
 - [Source code for **Some elements have a `[tabindex]` value greater than 0** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/tabindex.js)
-- [Elements should not have tabindex greater than zero](https://dequeuniversity.com/rules/axe/3.3/tabindex)
+- [Elements should not have tabindex greater than zero (Deque University)](https://dequeuniversity.com/rules/axe/3.3/tabindex)

@@ -12,7 +12,7 @@ web_lighthouse:
 
 Interactive elements, such as links and buttons,
 should indicate their state and be distinguishable from non-interactive elements.
-To check interactive elements indicate their purpose and state,
+To check that interactive elements indicate their purpose and state,
 use both a visual and a screen reader test.
 
 ## How to manually test visual focus
@@ -43,7 +43,8 @@ you may need to add the appropriate ARIA roles.
 Learn more in [Custom controls have ARIA roles](/custom-control-roles).
 
 It is also important to pay close attention to how interactive elements are labeled.
-Screen reader users rely on labels to understand the context of that element.
+Users of screen readers and other assistive technologies
+rely on labels to understand the context of that element.
 Vague labels are common,
 and they are non-helpful for navigating content.
 Learn how to improve [Labels and text alternatives](/labels-and-text-alternatives).

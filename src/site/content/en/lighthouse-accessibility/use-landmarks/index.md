@@ -12,7 +12,8 @@ web_lighthouse:
 ---
 
 HTML5 elements such as `main`, `nav`, and `aside` act as landmarks,
-or special regions on the page to which a screen reader can jump.
+or special regions on the page to which
+screen readers and other assistive technologies can jump.
 By using landmark elements,
 you can dramatically improve the navigation experience on your site
 for users of assistive technology.

@@ -2,21 +2,22 @@
 layout: post
 title: "List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements"
 description: |
-  Learn how to make list items on your web page accessible to screen reader
-  users by placing them in list elements.
+  Learn how to make list items on your web page accessible to assistive
+  technology users by placing them in list elements.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
   - listitem
 ---
 
-Screen readers require list items (`<li>`) to be contained
+Screen readers and other assistive technologies
+require list items (`<li>`) to be contained
 within parent `<ul>` or `<ol>` to be announced properly.
 
-When screen readers come to a list,
+When assistive technologies come to a list,
 they notify users how many items are within the list.
 If you don't wrap list items in a parent list element,
-the screen reader can't set user expectations correctly.
+assistive technologies can't set user expectations correctly.
 
 ## How this Lighthouse audit fails
 
@@ -33,10 +34,7 @@ in `<ul>` ' or `<ol>` parent elements:
 
 Wrap any orphaned `<li>` elements inside a `<ul>` or `<ol>` element.
 
-Learn more in
-[`<li>` elements must be contained in a `<ul>` or `<ol>`](https://dequeuniversity.com/rules/axe/3.3/listitem).
-
 ## Resources
 
 - [Source code for **List items (`<li>`) are not contained within `<ul>` or `<ol>` parent elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/listitem.js)
-- [`<li>` elements must be contained in a `<ul>` or `<ol>`](https://dequeuniversity.com/rules/axe/3.3/listitem)
+- [`<li>` elements must be contained in a `<ul>` or `<ol>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/listitem)

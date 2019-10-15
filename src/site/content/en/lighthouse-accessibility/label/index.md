@@ -2,8 +2,8 @@
 layout: post
 title: Form elements do not have associated labels
 description: |
-  Learn how to make form elements accessible to screen reader users by providing
-  labels.
+  Learn how to make form elements accessible to assistive technology users by
+  providing labels.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -12,10 +12,10 @@ web_lighthouse:
 
 Labels ensure that form controls are announced properly
 by assistive technologies like screen readers.
-Screen reader users rely on these labels
+assistive technology users rely on these labels
 to navigate forms.
 Mouse and touchscreen users also benefit from labels
-because the label text makes a larger a click target.
+because the label text makes a larger click target.
 
 ## How this Lighthouse audit fails
 
@@ -47,11 +47,11 @@ Or use the label's `for` attribute and refer to the element's ID:
 ```
 
 When the checkbox has been labeled correctly,
-the screen reader reports that the element has a role of checkbox,
+assistive technologies report that the element has a role of checkbox,
 is in a checked state, and is named "Receive promotional offers?"
 See also [Label form elements](/labels-and-text-alternatives#label-form-elements).
 
 ## Resources
 
 - [Source code for **Form elements do not have associated labels** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
-- [Form `<input>` elements must have labels](https://dequeuniversity.com/rules/axe/3.3/label)
+- [Form `<input>` elements must have labels (Deque University)](https://dequeuniversity.com/rules/axe/3.3/label)

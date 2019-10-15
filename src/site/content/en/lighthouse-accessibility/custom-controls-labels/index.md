@@ -3,7 +3,7 @@ layout: post
 title: Custom controls have associated labels
 description: |
   Learn how to improve your web page's accessibility by making sure that
-  all custom controls have labels that screen readers can access.
+  all custom controls have labels that assistive technology users can access.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:

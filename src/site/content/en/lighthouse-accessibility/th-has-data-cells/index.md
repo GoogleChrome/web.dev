@@ -2,18 +2,19 @@
 layout: post
 title: "`<th>` elements and elements with `[role=\"columnheader\"/\"rowheader\"]` do not have data cells they describe"
 description: |
-  Learn how to make tables on your web page more accessible to screen reader
-  users by making sure that there are data cells associated with each header
-  cell.
+  Learn how to make tables on your web page more accessible to assistive
+  technology users by making sure that there are data cells associated with
+  each header cell.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
   - th-has-data-cells
 ---
 
-Screen readers have features to make navigating tables easier.
-In order for screen readers to be able to help users navigate tables easier,
-table headers must refer to some set of cells.
+Screen readers and other assistive technologies
+have features to make navigating tables easier.
+Table headers must refer to some set of cells
+so that assistive technologies can help users navigate tables easily.
 
 ## How this Lighthouse audit fails
 
@@ -86,13 +87,12 @@ add the missing table data cells for the table header column, "Marathon pace":
 </table>
 ```
 
-Screen readers announce the table headers when it comes to each table data cell.
+Assistive technologies announce the table headers
+when they come to each table data cell.
 If the headers and data cells don't match up,
-it's very confusing to screen reader users.
-Learn more in
-[All `<th>` elements and elements with `role="columnheader"` or `role="rowheader"` must have data cells they describe](https://dequeuniversity.com/rules/axe/3.3/th-has-data-cells).
+it's very confusing.
 
 ## Resources
 
 - [Source code for **`<th>` elements and elements with `[role="columnheader"/"rowheader"]` do not have data cells they describe** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/th-has-data-cells.js)
-- [All `<th>` elements and elements with `role="columnheader"` or `role="rowheader"` must have data cells they describe](https://dequeuniversity.com/rules/axe/3.3/th-has-data-cells)
+- [All `<th>` elements and elements with `role="columnheader"` or `role="rowheader"` must have data cells they describe (Deque University)](https://dequeuniversity.com/rules/axe/3.3/th-has-data-cells)

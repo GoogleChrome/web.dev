@@ -2,8 +2,8 @@
 layout: post
 title: The user's focus is directed to new content added to the page
 description: |
-  Learn how to make changes in your web app's state understandable to screen
-  reader users by moving focus to newly added content.
+  Learn how to make changes in your web app's state understandable to assistive
+  technology users by moving focus to newly added content.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -27,8 +27,8 @@ a route change fetches new data for the `<main>` content area.
 
 For sighted users,
 this works fine.
-But for users navigating with a screen reader,
-they may not know that the new content
+But users navigating with a screen reader or other assistive technology
+may not know that the new content
 has been added to the page.
 There's no indication that they should navigate
 back to the `<main>` area.
@@ -59,8 +59,8 @@ and call its `focus()` method:
 </script>
 ```
 
-A screen reader announces the new heading,
-as well as the main landmark area that it's contained within.
+Assistive technologies announce the new heading
+and the main landmark area that it's contained in.
 
 See also [Managing focus for accessibility](https://dev.to/robdodson/managing-focus-64l).
 

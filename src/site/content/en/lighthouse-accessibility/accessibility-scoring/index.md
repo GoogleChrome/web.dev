@@ -14,11 +14,9 @@ Weighting is based on
 Each accessibility audit is pass or fail.
 Unlike the [Performance audits](/lighthouse-performance),
 a page doesn't get points for partially passing an accessibility audit.
-For example, if some buttons on a page have screen-reader-friendly names,
+For example, if some buttons on a page have accessible names,
 but others don't, the page gets a 0 for the
-[Buttons do not have an accessible name](//button-name/).
-See the [Lighthouse Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring#a11y)
-for more information.
+[**Buttons do not have an accessible name** audit](/button-name).
 
 The following table shows the weighting for each accessibility audit.
 More heavily weighted audits have a bigger effect on your score.

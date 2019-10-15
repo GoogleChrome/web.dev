@@ -39,4 +39,4 @@ but checks for duplicate IDs in a different set of elements.
 
 ## Resources
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id-aria.js" rel="noopener">Source code for **ARIA IDs are not all unique** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/duplicate-id-aria" rel="noopener">IDs used in ARIA and labels must be unique</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/duplicate-id-aria" rel="noopener">IDs used in ARIA and labels must be unique (Deque University)</a>

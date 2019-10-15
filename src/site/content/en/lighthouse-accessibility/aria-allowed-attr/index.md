@@ -2,8 +2,8 @@
 layout: post
 title: "`[aria-*]` attributes do not match their roles"
 description: |
-  Learn how to improve your web page's accessibility for screen reader users by
-  making sure that all elements with ARIA roles have appropriate ARIA
+  Learn how to improve your web page's accessibility for assistive technology
+  users by making sure that all elements with ARIA roles have appropriate ARIA
   attributes.
 date: 2019-05-02
 updated: 2019-09-19
@@ -58,5 +58,5 @@ you can apply it.
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-allowed-attr.js" rel="noopener">Source code for <strong><code>[aria-*]</code> attributes do not match their roles</strong> audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-allowed-attr" rel="noopener">Elements must only use allowed ARIA attributes</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-allowed-attr" rel="noopener">Elements must only use allowed ARIA attributes (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

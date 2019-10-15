@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cells in a `<table>` element that use the `[headers]` attribute refer to an element id not found within the same table"
+title: "Cells in a `<table>` element that use the `[headers]` attribute refer to an element ID not found within the same table"
 description: |
   Learn how to improve the accessibility of tables on your web page by making
   sure that data cells always refer to existing header elements.
@@ -10,9 +10,10 @@ web_lighthouse:
   - td-headers-attr
 ---
 
-Screen readers announce the table headers when it comes to each table data cell.
+Screen readers and other assistive technologies
+announce table headers when they come to each table data cell.
 If the headers and data cells don't match up,
-it's very confusing to screen reader users.
+it's very confusing.
 Every table data cell must relate to the correct table header;
 therefore, there should only be one table header per column
 
@@ -69,11 +70,10 @@ To fix this table,
 remove `headers="Week"` and
 apply the `scope` attribute to our header column and table rows.
 
-The scope attribute tells the browser and screen reader that everything under the column
+The `scope` attribute tells the browser and assistive technologies
+that everything under the column
 is related to the header at the top,
 and everything to the right of the row header is related to that header.
-Learn more in
-[All cells in a `<table>` element that use the headers attribute must only refer to other cells of that same `<table>`](https://dequeuniversity.com/rules/axe/3.3/td-headers-attr).
 
 Also add the missing `<td>` to the first row in the body,
 so that the table data aligns correctly with the table headers:
@@ -113,4 +113,4 @@ so that the table data aligns correctly with the table headers:
 ## Resources
 
 - [Source code for **Cells in a `<table>` element that use the `[headers]` attribute refer to an element `id` not found within the same table** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/td-headers-attr.js)
-- [All cells in a `<table>` element that use the headers attribute must only refer to other cells of that same `<table>`](https://dequeuniversity.com/rules/axe/3.3/td-headers-attr)
+- [All cells in a `<table>` element that use the headers attribute must only refer to other cells of that same `<table>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/td-headers-attr)

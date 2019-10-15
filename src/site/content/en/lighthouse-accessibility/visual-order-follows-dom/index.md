@@ -11,7 +11,7 @@ web_lighthouse:
 
 Implementing a logical tab order is an important part of
 providing your users with a smooth keyboard navigation experience.
-Screen readers navigate the page in DOM order.
+Screen readers and other assistive technologies navigate the page in DOM order.
 The flow of information should make sense.
 
 ## How to manually test
@@ -40,7 +40,7 @@ If the focus order seems wrong,
 you should rearrange the elements in the DOM to make the tab order more natural.
 
 If you've used CSS to visually reposition elements,
-screen reader users will experience a non-sensical navigation.
+assistive technology users will experience a nonsensical navigation.
 Instead of using CSS,
 move the element to an earlier position in the DOM.
 

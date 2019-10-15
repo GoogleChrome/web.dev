@@ -2,8 +2,8 @@
 layout: post
 title: "Elements with an ARIA `[role]` that require children to contain a specific `[role]` are missing some or all of those required children"
 description: |
-  Learn how to improve your web page's accessibility for screen reader users by
-  making sure that all elements with ARIA roles have the required child
+  Learn how to improve your web page's accessibility for assistive technology
+  users by making sure that all elements with ARIA roles have the required child
   elements.
 date: 2019-05-02
 updated: 2019-09-19
@@ -17,7 +17,7 @@ Some ARIA roles require specific child roles.
 For example, the `tablist` role must own at least one element
 with the `tab` role.
 If the required child roles aren't present,
-screen readers may convey confusing information about your page,
+assistive technologies may convey confusing information about your page,
 like announcing a tab set with no tabs.
 
 ## How Lighthouse identifies missing child roles
@@ -62,5 +62,5 @@ to see which child roles are required for the elements that Lighthouse flagged.
 
 ## Resources
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js" rel="noopener">Source code for **Elements with an ARIA `[role]` that require children to contain a specific [role] are missing some or all of those required children** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-required-children" rel="noopener">Certain ARIA roles must contain particular children</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-required-children" rel="noopener">Certain ARIA roles must contain particular children (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

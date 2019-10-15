@@ -2,8 +2,8 @@
 layout: post
 title: "`[aria-*]` attributes do not have valid values"
 description: |
-  Learn how to improve your web page's accessibility for screen reader users by
-  making sure that all ARIA attributes have valid values.
+  Learn how to improve your web page's accessibility for assistive technology
+  users by making sure that all ARIA attributes have valid values.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -73,5 +73,5 @@ presses `Enter` or `Space` when the element is focused.
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-valid-attr-value.js" rel="noopener">Source code for **`[aria-*]` attributes do not have valid values** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr-value" rel="noopener">ARIA attributes must conform to valid values</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-valid-attr-value" rel="noopener">ARIA attributes must conform to valid values (Deque University)</a>
 - <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

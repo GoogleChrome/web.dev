@@ -3,7 +3,7 @@ layout: post
 title: Links do not have a discernible name
 description: |
   Learn how to make links on your web page more accessible by
-  making sure they have names that can be interpreted by screen readers.
+  making sure they have names that can be interpreted by assistive technologies.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -11,7 +11,8 @@ web_lighthouse:
 ---
 
 Link text that is discernible, unique, and focusable
-improves the navigation experience for screen reader users.
+improves the navigation experience for users of screen readers
+and other assistive technologies.
 
 ## How this Lighthouse audit fails
 
@@ -41,4 +42,4 @@ Learn more in
 ## Resources
 
 - [Source code for **Links do not have a discernible name** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/link-name.js)
-- [Links must have discernible text](https://dequeuniversity.com/rules/axe/3.3/link-name)
+- [Links must have discernible text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/link-name)

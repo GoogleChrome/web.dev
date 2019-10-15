@@ -2,16 +2,18 @@
 layout: post
 title: "Definition list items are not wrapped in `<dl>` elements"
 description: |
-  Learn how to make sure screen readers can announce definition list items on
-  your web page.
+  Learn how to make sure assistive technologies can announce definition list
+  items on your web page.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
   - dlitem
 ---
 
-Definition list items (`<dt>` and `<dd>`) must be wrapped in a parent `<dl>` element
-to ensure that screen readers can properly announce them.
+Definition list items (`<dt>` and `<dd>`) must be wrapped
+in a parent `<dl>` element
+to ensure that screen readers and other assistive technologies
+can properly announce them.
 
 ## How this Lighthouse audit fails
 
@@ -42,10 +44,7 @@ For example:
 </dl>
 ```
 
-Learn more in
-[`<dt>` and `<dd>` elements must be contained by a `<dl>`](https://dequeuniversity.com/rules/axe/3.1/dlitem).
-
 ## Resources
 
 - [Source code for **Definition list items are not wrapped in `<dl>` elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/dlitem.js)
-- [`<dt>` and `<dd>` elements must be contained by a `<dl>`](https://dequeuniversity.com/rules/axe/3.1/dlitem)
+- [`<dt>` and `<dd>` elements must be contained by a `<dl>` (Deque University)](https://dequeuniversity.com/rules/axe/3.1/dlitem)

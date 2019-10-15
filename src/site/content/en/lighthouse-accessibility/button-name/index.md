@@ -3,7 +3,7 @@ layout: post
 title: Buttons do not have an accessible name
 description: |
   Learn how to improve the accessibility of your web page by making sure that
-  all buttons have names that screen readers can access.
+  all buttons have names that assistive technology users can access.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -11,8 +11,8 @@ web_lighthouse:
 ---
 
 When a button doesn't have an accessible name,
-screen readers announce it as "button",
-making it unusable for users who rely on screen readers.
+screen readers and other assistive technologies announce it as _button_,
+which provides no information to users about what the button does.
 
 ## How the Lighthouse button name audit fails
 
@@ -37,18 +37,15 @@ For example:
 
 For buttons without visible labels, like icon buttons,
 use the `aria-label` attribute to clearly describe the action
-to anyone using a screen reader, for example:
+to anyone using an assistive technology, for example:
 
 ```html
-<button aria-label="Bold text icon"></button>
+<button aria-label="Search"></button>
 ```
 
 See also [Label buttons and links](/labels-and-text-alternatives#label-buttons-and-links).
 
-Learn more in
-[Buttons must have discernible text](https://dequeuniversity.com/rules/axe/3.3/button-name).
-
 ## Resources
 
 - [Source code for **Buttons do not have an accessible name** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/button-name.js)
-- [Buttons must have discernible text](https://dequeuniversity.com/rules/axe/3.3/button-name)
+- [Buttons must have discernible text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/button-name)

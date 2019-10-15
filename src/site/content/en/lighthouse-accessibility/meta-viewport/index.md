@@ -31,10 +31,7 @@ Lighthouse flags pages that disable text scaling and zooming:
 Remove the `user-scalable="no"` parameter from the viewport meta tag and
 make sure the `maximum-scale parameter` parameter is 5 or greater.
 
-Learn more in
-[Zooming and scaling must not be disabled](https://dequeuniversity.com/rules/axe/3.3/meta-viewport).
-
 ## Resources
 
 - [Source code for **`[user-scalable="no"]` is used in the `<meta name="viewport">` element or the `[maximum-scale]` attribute is less than 5** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
-- [Zooming and scaling must not be disabled](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)
+- [Zooming and scaling must not be disabled (Deque University)](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)

@@ -2,17 +2,18 @@
 layout: post
 title: "`<dl>`s do not contain only properly ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements"
 description: |
-  Learn how to structure definition lists on your web page so that screen
-  readers can interpret them.
+  Learn how to structure definition lists on your web page so that
+  assistive technologies can interpret them.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
   - definition-list
 ---
 
-Screen readers have a specific way of announcing definition lists.
+Screen readers and other assistive technologies have a specific way of
+announcing definition lists.
 When definition lists are not properly marked up,
-screen readers may produce confusing or inaccurate output.
+assistive technologies may produce confusing or inaccurate output.
 
 ## How this Lighthouse audit fails
 
@@ -42,10 +43,7 @@ For example:
 </dl>
 ```
 
-Learn more in
-[`<dl>` elements must only directly contain properly-ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements](https://dequeuniversity.com/rules/axe/3.3/definition-list).
-
 ## Resources
 
 - [Source code for **`<dl>`s do not contain only properly ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/definition-list.js)
-- [`<dl>` elements must only directly contain properly-ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements](https://dequeuniversity.com/rules/axe/3.3/definition-list)
+- [`<dl>` elements must only directly contain properly-ordered `<dt>` and `<dd>` groups, `<script>`, or `<template>` elements (Deque University)](https://dequeuniversity.com/rules/axe/3.3/definition-list)

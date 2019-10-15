@@ -2,8 +2,8 @@
 layout: post
 title: Headings skip levels
 description: |
-  Learn how to make sure screen reader users can easily navigate your web page
-  by correctly structuring your heading elements.
+  Learn how to make sure assistive technology users can easily navigate your
+  web page by correctly structuring your heading elements.
 date: 2019-10-17
 web_lighthouse:
   - heading-order
@@ -79,4 +79,4 @@ post for more information.
 ## Resources
 
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/heading-order.js" rel="noopener">Source code for **Headings skip levels** audit</a>
-- <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Heading levels should only increase by one</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/heading-order" rel="noopener">Heading levels should only increase by one (Deque University)</a>

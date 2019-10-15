@@ -2,8 +2,8 @@
 layout: post
 title: Headings don't skip levels
 description: |
-  Learn how to make sure screen reader users can easily navigate your web page
-  by correctly structuring your heading elements.
+  Learn how to make sure assistive technology users can easily navigate your
+  web page by correctly structuring your heading elements.
 date: 2019-05-02
 updated: 2019-10-17
 web_lighthouse:
@@ -13,7 +13,8 @@ noindex: true
 
 {% Banner 'caution', 'body' %}This manual audit has been deprecated. Check out [the newer automated audit](/heading-order) instead.{% endBanner %}
 
-Screen readers users often navigate an unfamiliar page by exploring headings.
+Users of screen readers and other assistive technologies
+often navigate an unfamiliar page by exploring headings.
 By using the correct headings,
 you can dramatically improve the navigation experience on your site
 for users of assistive technology.

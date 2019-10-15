@@ -43,10 +43,7 @@ with attribute `kind="captions"`:
 </audio>
 ```
 
-Learn more in
-[`<audio>` elements must have a captions `<track>`](https://dequeuniversity.com/rules/axe/3.3/audio-caption).
-
 ## Resources
 
 - [Source code for **`<audio>` elements are missing a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/audit-caption.js)
-- [`<audio> `elements must have a captions `<track>`](https://dequeuniversity.com/rules/axe/3.3/audio-caption)
+- [`<audio> `elements must have a captions `<track>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/audio-caption)

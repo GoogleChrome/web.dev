@@ -52,9 +52,6 @@ with the `kind="captions"` attribute:
 </video>
 ```
 
-Learn more in
-[`<video>` elements must have a `<track>` for captions](https://dequeuniversity.com/rules/axe/3.3/video-caption).
-
 {% Aside 'note' %}
 The example above includes both captions for hearing impaired users,
 and audio descriptions for visually impaired users.
@@ -65,4 +62,4 @@ See also [`<video>` elements do not contain a `<track>` element with `[kind="des
 ## Resources
 
 - [Source code for **`<video>` elements do not contain a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-caption.js)
-- [`<video>` elements must have a `<track>` for captions](https://dequeuniversity.com/rules/axe/3.3/video-caption)
+- [`<video>` elements must have a `<track>` for captions (Deque University)](https://dequeuniversity.com/rules/axe/3.3/video-caption)

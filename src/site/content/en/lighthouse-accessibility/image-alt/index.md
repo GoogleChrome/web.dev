@@ -2,8 +2,8 @@
 layout: post
 title: "Image elements do not have `[alt]` attributes"
 description: |
-  Learn how to make sure screen reader users can access your web page's images
-  by providing alternative text.
+  Learn how to make sure assistive technology users can access your web page's
+  images by providing alternative text.
 date: 2019-05-02
 updated: 2019-09-19
 web_lighthouse:
@@ -45,8 +45,6 @@ give it an empty `alt=""` attribute to remove it from the accessibility tree:
 <img src="background.png" alt="">
 ```
 
-Learn more in [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.3/image-alt).
-
 {% Aside 'note' %}
 You can also use ARIA labels to describe your images, for example,
 `<img aria-label="Audits set-up in Chrome DevTools" src="...">`
@@ -67,4 +65,4 @@ Learn more in
 ## Resources
 
 - [Source code for **Image elements do not have `[alt]` attributes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
-- [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.3/image-alt)
+- [Images must have alternate text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/image-alt)

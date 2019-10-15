@@ -46,9 +46,6 @@ with attribute `kind="descriptions"`:
 </video>
 ```
 
-Learn more in
-[`<video>` elements must have an audio description `<track>`](https://dequeuniversity.com/rules/axe/3.3/video-description).
-
 {% Aside 'note' %}
 The example above includes both audio descriptions for visually impaired users
 and captions for hearing impaired users.
@@ -59,4 +56,4 @@ See also [`<video>` elements do not contain a `<track>` element with `[kind="cap
 ## Resources
 
 - [Source code for **`<video>` elements do not contain a `<track>` element with `[kind="description"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-description.js)
-- [`<video>` elements must have an audio description `<track>`](https://dequeuniversity.com/rules/axe/3.3/video-description)
+- [`<video>` elements must have an audio description `<track>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/video-description)

@@ -30,4 +30,4 @@ Lighthouse flags duplicate IDs found in a page:
 ## Resources
 
 - [Source code for **`[id]` attributes on the page are not unique** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id.js)
-- [ID attribute values must be unique](https://dequeuniversity.com/rules/axe/3.3/duplicate-id)
+- [ID attribute values must be unique (Deque University)](https://dequeuniversity.com/rules/axe/3.3/duplicate-id)
