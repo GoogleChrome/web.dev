@@ -18,14 +18,14 @@ tags:
   - fast
 ---
 
-Website performance is not just about load time. It is critical to provide a fast and responsive experience to users, especially for productivity desktop apps which people use everyday. The engineering team at [Recruit Technologies](https://recruit-tech.co.jp/) went through a refactoring project to improve one of their Web apps, [AirSHIFT](https://airregi.jp/shift/), for better user input performance. Here’s how they did it.
+Website performance is not just about load time. It is critical to provide a fast and responsive experience to users, especially for productivity desktop apps which people use everyday. The engineering team at [Recruit Technologies](https://recruit-tech.co.jp/) went through a refactoring project to improve one of their Web apps, [AirSHIFT](https://airregi.jp/shift/), for better user input performance. Here's how they did it.
 
 ## Slow response, less productivity
 AirSHIFT is a desktop Web application that helps store owners, like restaurants and cafes, to manage the shift work of their staff members. Built with React, the Single Page Application provides rich client features including various grid tables of shift schedules cut by day, week, month and more.
 
 <img class="w-screenshot" src="airshift_visual.png" alt="A visual image of AirSHIFT">
 
-To meet user expectations they have been adding new functionalities to the app but as they continue to add features, they started seeing more feedback around slow performance. The engineering manager of the product, Yosuke Furukawa says “We did a user research and one of the store owners even said she would leave her seat to brew coffee after clicking a button… just to kill time waiting for the shift table to load, which was a shocking fact we faced”. 
+To meet user expectations they have been adding new functionalities to the app but as they continue to add features, they started seeing more feedback around slow performance. The engineering manager of the product, Yosuke Furukawa says "We did a user research and one of the store owners even said she would leave her seat to brew coffee after clicking a button… just to kill time waiting for the shift table to load, which was a shocking fact we faced". 
 
 After going through the research, the engineering team realized that many of their users were still using low spec computers such as 1 GHz Celeron M laptop from 10 years ago with a tiny amount of memory and having a massive shift table on screen. 
 
@@ -92,9 +92,9 @@ Virtualizing the table alone reduced scripting time by 6 seconds on a 4x CPU slo
 
 
 ## **2. Audit with User Timing API**
-Refactoring scripts that run on user input was the next step AirSHIFT took. In order to check this, [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) provides a powerful feature which captures the JavaScript call stacks in the performance tab a.k.a. main thread Flame Chart. While this [Flame Chart](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference) is useful to see what is actually happening in the main thread, if the application was using some sort of framework it would be better to check the chart based on the framework’s lifecycle. 
+Refactoring scripts that run on user input was the next step AirSHIFT took. In order to check this, [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) provides a powerful feature which captures the JavaScript call stacks in the performance tab a.k.a. main thread Flame Chart. While this [Flame Chart](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference) is useful to see what is actually happening in the main thread, if the application was using some sort of framework it would be better to check the chart based on the framework's lifecycle. 
 
-React 16 provides its performance trace via [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) which developers could access from the DevTool’s user timing section. AirSHIFT used this to see if there was any unnecessary logic running in each of the React lifecycle events. By doing this, it was more obvious for them to identify inefficient operations in the DevTool. 
+React 16 provides its performance trace via [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) which developers could access from the DevTool's user timing section. AirSHIFT used this to see if there was any unnecessary logic running in each of the React lifecycle events. By doing this, it was more obvious for them to identify inefficient operations in the DevTool. 
 
 <figure class="w-figure w-figure--fullbleed">
   <img class="w-screenshot" src="user_timing.png" alt="The React user timing section in DevTools">
@@ -191,7 +191,7 @@ They are currently seeking if they could adopt this combination of Suspense x We
 
 
 ## **4. Setting a performance budget**
-Having implemented all of these optimizations, it was critical to “keep” the application responsive. AirSHIFT now uses [bundlesize](https://github.com/siddharthkp/bundlesize) to not exceed the current JavaScript and CSS file size. Aside from setting these basic budgets, they built a dashboard to show various percentiles of the shift table loading time to check whether the application is performant even in non-ideal conditions.
+Having implemented all of these optimizations, it was critical to "keep" the application responsive. AirSHIFT now uses [bundlesize](https://github.com/siddharthkp/bundlesize) to not exceed the current JavaScript and CSS file size. Aside from setting these basic budgets, they built a dashboard to show various percentiles of the shift table loading time to check whether the application is performant even in non-ideal conditions.
 
 - AirSHIFT now measures the script completion time for every Redux event
 - Uses [Elasticsearch](https://www.elastic.co/jp/) to collect those performance data
@@ -211,12 +211,12 @@ Related article: [Performance budgets 101](https://web.dev/performance-budgets-1
 {% endAside %}
 
 ### Results
-From the graph above, you can tell that AirSHIFT is now mostly hitting the 3 seconds budget for 75th percentile users and also loading the shift table within a second for 25th percentile users. By capturing RUM performance data from various conditions and devices, AirSHIFT can now check whether a new feature release is actually affecting the application’s performance or not.
+From the graph above, you can tell that AirSHIFT is now mostly hitting the 3 seconds budget for 75th percentile users and also loading the shift table within a second for 25th percentile users. By capturing RUM performance data from various conditions and devices, AirSHIFT can now check whether a new feature release is actually affecting the application's performance or not.
 
 ## **5. Performance hackathons**
 While all of these efforts regarding the performance optimization is important, it is not always easy to prioritize teams, both engineering and business, to focus on these non-functional development. Rather than dealing with this with a well-planned waterfall approach, some of the optimizations require more agility having try-and-error mindset.
 
-AirSHIFT is now conducting internal 1 day performance hackathons letting the engineers focus only on performance related works. In this hackathon they remove all the existing constraints and respect the participants’ creativity, meaning any implementation that contributes to speed, is worth considering. To accelerate the hack, they split the group into small teams and compete by how much they were able to improve the [Lighthouse](https://developers.google.com/web/tools/lighthouse) performance score (which every team would be very competitive 🔥).
+AirSHIFT is now conducting internal 1 day performance hackathons letting the engineers focus only on performance related works. In this hackathon they remove all the existing constraints and respect the participants' creativity, meaning any implementation that contributes to speed, is worth considering. To accelerate the hack, they split the group into small teams and compete by how much they were able to improve the [Lighthouse](https://developers.google.com/web/tools/lighthouse) performance score (which every team would be very competitive 🔥).
 
 <img class="w-screenshot" src="hackathon.png" alt="Photos of the hackathon">
 
@@ -227,8 +227,8 @@ Related article: [Learn how to optimize speed with web.dev/fast](https://web.dev
 ### Results
 The hackathon approach is working well for them.
 - Performance bottleneck can be easily detected by actually trying out multiple approaches during the hackathon and measuring each one of them with Lighthouse.
-- After the hackathon, it’s rather easy to convince the team which optimization they should be prioritizing for production release.
-- It’s also an effective way of advocating the importance of speed. Every participant can understand the correlation between how you code and how it results in performance.
+- After the hackathon, it's rather easy to convince the team which optimization they should be prioritizing for production release.
+- It's also an effective way of advocating the importance of speed. Every participant can understand the correlation between how you code and how it results in performance.
 A good side effect was that many other engineering teams within Recruit got interested in this hands-on approach and the AirSHIFT team is now facilitating multiple speed hackathons within the company.
 
 
@@ -237,4 +237,4 @@ It was definitely not the easiest journey for AirSHIFT to work on these optimiza
 
 <img class="w-screenshot" src="compare_speed.gif" alt="A video comparing before and after the optimization">
 
-“Thank you so much for making the shift table load fast. It is now way more efficient to arrange the shift work than ever.” is a quote from one of the store owners after the optimization. The engineering team is satisfied with the result and promises to make AirSHIFT even more performant. 
+"Thank you so much for making the shift table load fast. It is now way more efficient to arrange the shift work than ever." is a quote from one of the store owners after the optimization. The engineering team is satisfied with the result and promises to make AirSHIFT even more performant. 
