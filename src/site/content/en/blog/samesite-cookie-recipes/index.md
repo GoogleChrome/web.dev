@@ -5,7 +5,7 @@ subhead:
   attribute's behavior.
 authors:
   - rowan_m
-date: 2019-10-14
+date: 2019-10-15
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
@@ -20,9 +20,11 @@ tags:
   - cookies
 ---
 
-{% Aside %} If you need a refresher on cookies and the `SameSite` attribute,
+{% Aside %}
+If you need a refresher on cookies and the `SameSite` attribute,
 head over to the earlier companion article,
-["SameSite cookies explained"](/samesite-cookies-explained). {% endAside %}
+["SameSite cookies explained"](/samesite-cookies-explained).
+{% endAside %}
 
 To recap from before: [Chrome](https://www.chromium.org/updates/same-site),
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ),
@@ -283,10 +285,12 @@ point of setting the cookie. However, the necessary warning here is that user
 agent sniffing is inherently fragile and may not catch all of the affected
 users.
 
-{% Aside %} Regardless of the choosen option here, it's advisable to ensure you
+{% Aside %}
+Regardless of the choosen option here, it's advisable to ensure you
 have a way of logging the levels of traffic that are going through the legacy
 route. Make sure you have a reminder or alert to remove this workaround once
-those levels drop below an acceptable threshold for your site. {% endAside %}
+those levels drop below an acceptable threshold for your site.
+{% endAside %}
 
 ## Support for `SameSite=None` in languages, libraries, and frameworks
 
