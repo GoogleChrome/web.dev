@@ -103,7 +103,7 @@ will reload automatically after every edit you make.
         alt="A basic Next.js app on Glitch" 
         style="height: 100%; width: 100%; border: 0;"></iframe>
 
-Notice that a `pages/` directory is created with a single file: `index.jsx`. Next.js follows
+Notice that a `pages/` directory is created with a single file: `index.js`. Next.js follows
 a file-system routing approach, where every page within this directory is served as a separate
 route. Creating a new file in this directory, such as `about.js`, will automatically create a
 new route (`/about`).
