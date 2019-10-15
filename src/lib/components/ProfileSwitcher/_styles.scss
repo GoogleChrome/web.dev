@@ -29,17 +29,12 @@ web-profile-switcher-container {
   font-size: 14px;
   font-weight: 500;
   height: 100%;
-<<<<<<< HEAD
-  outline: 0;
-  padding: 0 24px;
-=======
   outline: none;
   padding: 0 8px;
 
   @include bp(md) {
     padding: 0 24px;
   }
->>>>>>> Add Search component.
 }
 
 .w-profile-signin:hover {
