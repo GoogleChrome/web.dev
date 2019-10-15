@@ -1,0 +1,181 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/tools/mixins';
+
+// This represent the margin from the surrounding elements which needs to
+// be factored in when we're calculating the final width and translate
+// position for this element's expanded state.
+$WEB_SEARCH_MARGIN: 16px;
+
+// This accounts for the width of the close button which we display on mobile.
+// We need to offset the results popout by this amount so it doesn't appear
+// to extend past the search input field.
+$WEB_CLOSE_BUTTON_WIDTH: 45px;
+
+web-search {
+  --web-search-animation-time: 0;
+
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  min-width: 50%;
+
+  @include bp(md) {
+    --web-search-animation-time: 200ms;
+    justify-content: flex-start;
+  }
+
+  .web-search__close-btn {
+    display: none;
+    margin-left: 8px;
+    text-overflow: initial;
+  }
+
+  .web-search__open-btn,
+  .web-search__close-btn {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    color: $GREY_700;
+    padding: 0 8px;
+    transition: none;
+
+    @include bp(md) {
+      display: none;
+    }
+  }
+
+  .web-search__open-btn:focus,
+  .web-search__open-btn:hover,
+  .web-search__close-btn:focus,
+  .web-search__close-btn:hover {
+    background: transparent;
+  }
+
+  .web-search__open-btn.focus-visible,
+  .web-search__close-btn.focus-visible {
+    // Use an inset box-shadow to draw the focus ring so we don't get weird
+    // clipping because we're adjacent to another element.
+    box-shadow: inset 0 0 0 1px $WEB_SECONDARY_COLOR;
+    outline: none;
+  }
+
+  .web-search__open-btn::before {
+    @include font-material-icon();
+    content: 'search';
+  }
+
+  .web-search__close-btn::before {
+    @include font-material-icon();
+    content: 'cancel';
+  }
+
+  .web-search__input-wrapper {
+    align-items: center;
+    color: $GREY_700;
+    display: none;
+    height: 100%;
+    width: 100%;
+
+    @include bp(md) {
+      display: flex;
+      max-width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
+      min-width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
+      // Display a minimum of 200px of search bar.
+      transform: translateX(calc(50% - 200px + #{$WEB_SEARCH_MARGIN}));
+      transition: var(--web-search-animation-time) transform;
+      width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
+    }
+  }
+
+  .web-search__input-wrapper::before {
+    @include font-material-icon();
+    content: 'search';
+    position: absolute;
+    pointer-events: none;
+    padding: 8px;
+  }
+
+  .web-search__input {
+    background: #F1F3F4;
+    border: none;
+    padding: 8px 8px 8px 40px;
+    width: 100%;
+  }
+
+  .web-search__input:focus {
+    border: none;
+    padding: 8px 8px 8px 40px; // devsite override
+  }
+
+  .web_search__icon {
+    position: absolute;
+  }
+
+  .web-search__icon::before {
+    @include font-material-icon();
+    content: 'search';
+  }
+
+  .web-search-popout {
+    background: white;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 1px 2px 0 rgba($GREY_800,.3), 0 2px 6px 2px rgba($GREY_800,.15);
+    left: 0;
+    padding: 16px 0;
+    position: absolute;
+    top: 55px;
+    width: calc(100% - #{$WEB_CLOSE_BUTTON_WIDTH});
+    
+    @include bp(md) {
+      left: calc(#{$WEB_SEARCH_MARGIN} * 2);
+      width: calc(100% - #{$WEB_SEARCH_MARGIN} * 2);
+    }
+  }
+
+  .web-search-popout__heading {
+    color: $GREY_700;
+    font-size: 12px;
+    padding: 0 24px;
+  }
+
+  .web-search-popout__list {
+    list-style: none;
+    max-height: 50vh;
+    overflow: scroll;
+  }
+
+  .web-search-popout__link {
+    color: $PRIMARY_TEXT_COLOR;
+    display: block;
+    padding: 8px 24px;
+  }
+
+  .web-search-popout__link:hover,
+  .web-search-popout__link--active {
+    background: $GREY_200;
+  }
+}
+
+web-search[expanded] {
+  .web-search__open-btn {
+    display: none;
+  }
+
+  .web-search__input-wrapper {
+    display: flex;
+
+    @include bp(md) {
+      transform: translate(calc(-50% + #{$WEB_SEARCH_MARGIN}));
+    }
+  }
+
+  .web-search__close-btn {
+    display: inline-flex;
+    align-items: center;
+
+    @include bp(md) {
+      display: none;
+    }
+  }
+}

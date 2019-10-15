@@ -14,7 +14,10 @@ web-profile-switcher-container {
   align-items: center;
   display: flex;
   height: 100%;
-  margin-left: 16px;
+  
+  @include bp(md) {
+    margin-left: 16px;
+  }
 }
 
 .w-profile-signin {
@@ -26,8 +29,17 @@ web-profile-switcher-container {
   font-size: 14px;
   font-weight: 500;
   height: 100%;
+<<<<<<< HEAD
   outline: 0;
   padding: 0 24px;
+=======
+  outline: none;
+  padding: 0 8px;
+
+  @include bp(md) {
+    padding: 0 24px;
+  }
+>>>>>>> Add Search component.
 }
 
 .w-profile-signin:hover {

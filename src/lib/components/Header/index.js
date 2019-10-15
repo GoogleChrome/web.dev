@@ -18,12 +18,24 @@
  * @fileoverview A responsive header that can trigger a side-nav.
  */
 
+import {store} from "../../store";
 import {expandSideNav} from "../../actions";
 
 class Header extends HTMLElement {
   connectedCallback() {
     this.hamburgerBtn = this.querySelector(".web-header__hamburger-btn");
     this.hamburgerBtn.addEventListener("click", expandSideNav);
+
+    this.onStateChanged = this.onStateChanged.bind(this);
+    store.subscribe(this.onStateChanged);
+  }
+
+  disconnectedCallback() {
+    store.unsubscribe(this.onStateChanged);
+  }
+
+  onStateChanged({isSearchExpanded}) {
+    this.classList.toggle("web-header--has-expanded-search", isSearchExpanded);
   }
 
   /**

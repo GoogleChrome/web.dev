@@ -73,16 +73,23 @@ web-header {
   }
 
   .web-header__middle {
+    align-items: center;
     display: flex;
     flex: 1;
     height: 100%;
+    /// This is used by web-search during its animation.
+    /// web-search is >200% the width of its parent. When focused it will
+    /// transition to completely fill the width of .web-header__middle.
+    overflow: hidden;
+    position: relative;
   }
 
   .web-header__links {
     display: none;
     flex: 1;
     height: 100%;
-    margin-left: 48px;
+    padding-left: 48px;
+    min-width: 50%;
 
     @include bp(md) {
       display: flex;
@@ -127,5 +134,31 @@ web-header {
     left: 0;
     position: absolute;
     right: 0;
+  }
+
+  web-search {
+    flex: 1;
+  }
+}
+
+web-header.web-header--has-expanded-search {
+  .web-header__logo-link {
+    display: none;
+
+    @include bp(md) {
+      display: inline;
+    }
+  }
+
+  .web-header__middle {
+    overflow: visible;
+  }
+
+  web-profile-switcher-container {
+    display: none;
+
+    @include bp(md) {
+      display: flex;
+    }
   }
 }
