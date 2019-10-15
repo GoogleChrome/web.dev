@@ -250,8 +250,8 @@ Alternatively at the point of sending the `Set-Cookie` header, you can choose to
 detect the client via the user agent string. For example, this snippet shows
 detecting iOS 12 or Safari on Mac OS X 10.14 and serving a cookie without the
 `SameSite` attribute to those browsers. This makes use of the
-[ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library for Node.js,
-it's advisable to find a library to handle user agent detection as you most
+[ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library for Node.js.
+It's advisable to find a library to handle user agent detection as you most
 probably don't want to write those regular expressions yourself.
 
 ```javascript
