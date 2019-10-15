@@ -37,6 +37,7 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
+  white-space: nowrap;
   @include font_smoothing(
     $FONT_SMOOTHING_MOZ,
     $FONT_SMOOTHING_WEBKIT,
@@ -59,6 +60,14 @@
   0 1px 10px 0 rgba($BLACK, .12);
   outline: none;
   text-decoration: none;
+}
+
+.w-button[disabled] {
+  background: $GREY_300;
+  box-shadow: none;
+  color: rgba($BLACK, .26);
+  cursor: default;
+  pointer-events: none;
 }
 
 // This element is used to tint the button during user actions such as
