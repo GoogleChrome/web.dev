@@ -20,9 +20,11 @@ tags:
 ---
 
 {% Aside %}
-If you are looking for the guidance on implementing for
-`SameSite=None` and handling different behavior across browsers, then head
-straight to ["SameSite cookie recipes"](/samesite-cookie-recipes).
+
+If you are looking for the guidance on implementing for `SameSite=None` and
+handling different behavior across browsers, then head straight to
+["SameSite cookie recipes"](/samesite-cookie-recipes).
+
 {% endAside %}
 
 Cookies are one of the methods available for adding persistent state to web
@@ -177,8 +179,10 @@ The site is the combination of the domain suffix and the part of the domain just
 before it. For example, the `www.web.dev` domain is part of the `web.dev` site.
 
 {% Aside 'key-term' %}
-If the user is on `www.web.dev` and requests an image
-from `static.web.dev` then that is a **same-site** request.
+
+If the user is on `www.web.dev` and requests an image from `static.web.dev` then
+that is a **same-site** request.
+
 {% endAside %}
 
 The [public suffix list](https://publicsuffix.org/) defines this, so it's not
@@ -187,8 +191,10 @@ That enables `your-project.github.io` and `my-project.github.io` to count as
 separate sites.
 
 {% Aside 'key-term' %}
-If the user is on `your-project.github.io` and requests
-an image from `my-project.github.io` that's a **cross-site** request.
+
+If the user is on `your-project.github.io` and requests an image from
+`my-project.github.io` that's a **cross-site** request.
+
 {% endAside %}
 
 Introducing the `SameSite` attribute on a cookie provides three different ways
@@ -238,11 +244,12 @@ site with `Strict` being useful for cookies related to actions your user is
 taking.
 
 {% Aside 'caution' %}
-Neither `Strict` nor `Lax` are a silver bullet for your
-site security. Cookies are sent as part of the user's request and you should
-treat them the same as any other user input. That means sanitizing and
-validating the input. Never use a cookie to store data you consider a
-server-side secret.
+
+Neither `Strict` nor `Lax` are a silver bullet for your site security. Cookies
+are sent as part of the user's request and you should treat them the same as any
+other user input. That means sanitizing and validating the input. Never use a
+cookie to store data you consider a server-side secret.
+
 {% endAside %}
 
 Finally there is the option of not specifying the value which has previously
@@ -262,9 +269,11 @@ in a third-party context.
 </figure>
 
 {% Aside 'objective' %}
-If you provide a service that other sites consume such
-as widgets, embedded content, affiliate programmes, advertising, or sign-in
-across multiple sites then you should use `None` to ensure your intent is clear.
+
+If you provide a service that other sites consume such as widgets, embedded
+content, affiliate programmes, advertising, or sign-in across multiple sites
+then you should use `None` to ensure your intent is clear.
+
 {% endAside %}
 
 ## Changes to the default behavior without SameSite
@@ -289,8 +298,9 @@ have this functionality available to test now and will be making this their
 default behavior in future releases.
 
 {% Aside %}
-This article will be updated as additional browsers announce
-support.
+
+This article will be updated as additional browsers announce support.
+
 {% endAside %}
 
 ### `SameSite=Lax` by default
@@ -302,8 +312,9 @@ Set-Cookie: promo_shown=1
 ```
 
 {% CompareCaption %}
-If you send a cookie without any `SameSite` attribute
-specified.
+
+If you send a cookie without any `SameSite` attribute specified.
+
 {% endCompareCaption %}
 
 {% endCompare %}
@@ -315,15 +326,17 @@ Set-Cookie: promo_shown=1; SameSite=Lax
 ```
 
 {% CompareCaption %}
-The browser will treat that cookie as if `SameSite=Lax` was
-specified.
+
+The browser will treat that cookie as if `SameSite=Lax` was specified.
+
 {% endCompareCaption %}
+
 {% endCompare %}
 
-You can test this behavior
-as of Chrome 76 by enabling `chrome://flags/#same-site-by-default-cookies` and
-from Firefox 69 in [`about:config`](http://kb.mozillazine.org/About:config) by
-setting `network.cookie.sameSite.laxByDefault`.
+You can test this behavior as of Chrome 76 by enabling
+`chrome://flags/#same-site-by-default-cookies` and from Firefox 69 in
+[`about:config`](http://kb.mozillazine.org/About:config) by setting
+`network.cookie.sameSite.laxByDefault`.
 
 While this is intended to apply a more secure default, you should ideally set an
 explicit `SameSite` attribute rather than relying on the browser to apply that
@@ -331,12 +344,14 @@ for you. This makes your intent for the cookie explicit and improves the chances
 of a consistent experience across browsers.
 
 {% Aside 'caution' %}
-The default behaviour applied by Chrome is slightly more
-permissive than an explicit `SameSite=Lax` as it will allow certain cookies to
-be sent on top-level POST requests. You can see the exact details on
+
+The default behaviour applied by Chrome is slightly more permissive than an
+explicit `SameSite=Lax` as it will allow certain cookies to be sent on top-level
+POST requests. You can see the exact details on
 [the blink-dev announcement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/YKBxPCScCwAJ).
 This is intended as a temporary mitigation, you should still be fixing your
 cross-site cookies to use `SameSite=None; Secure`.
+
 {% endAside %}
 
 ### `SameSite=None` must be secure
@@ -348,7 +363,9 @@ Set-Cookie: widget_session=abc123; SameSite=None
 ```
 
 {% CompareCaption %}
+
 Setting a cookie without `Secure` **will be rejected**.
+
 {% endCompareCaption %}
 
 {% endCompare %}
@@ -360,8 +377,9 @@ Set-Cookie: widget_session=abc123; SameSite=None; Secure
 ```
 
 {% CompareCaption %}
-You must ensure that you pair `SameSite=None` with the
-`Secure` attribute.
+
+You must ensure that you pair `SameSite=None` with the `Secure` attribute.
+
 {% endCompareCaption %}
 
 {% endCompare %}
@@ -375,10 +393,12 @@ You will want to apply this when setting new cookies and actively refresh
 existing cookies even if they are not approaching their expiry date.
 
 {% Aside 'note' %}
-If you rely on any services that provide third-party content
-on your site, you should also check with the provider that they are updating
-their services. You may need to update your dependencies or snippets to ensure
-that your site picks up the new behavior.
+
+If you rely on any services that provide third-party content on your site, you
+should also check with the provider that they are updating their services. You
+may need to update your dependencies or snippets to ensure that your site picks
+up the new behavior.
+
 {% endAside %}
 
 Both of these changes are backwards-compatible with browsers that have correctly
@@ -389,13 +409,15 @@ browser. Likewise, any clients that do not recognize `SameSite=None` as of yet
 should ignore it and carry on as if the attribute was not set.
 
 {% Aside 'warning' %}
-At the time of writing, the network library on iOS and Mac
-incorrectly handles unknown `SameSite` values and will treat **any unknown
-value** (including `None`) as if it was `SameSite=Strict`, which affects Safari
-on Mac and browsers wrapping WebKit on iOS (Safari, Chrome, Firefox, and
-others). This will be fixed as of macOS 10.15 and iOS 13 and is available in the
-Tech Preview now. You can track their progress on
+
+At the time of writing, the network library on iOS and Mac incorrectly handles
+unknown `SameSite` values and will treat **any unknown value** (including
+`None`) as if it was `SameSite=Strict`, which affects Safari on Mac and browsers
+wrapping WebKit on iOS (Safari, Chrome, Firefox, and others). This will be fixed
+as of macOS 10.15 and iOS 13 and is available in the Tech Preview now. You can
+track their progress on
 [WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
+
 {% endAside %}
 
 ## `SameSite` cookie recipes
