@@ -14,6 +14,7 @@ import "./components/Codelab";
 import "./components/Header";
 import "./components/SideNav";
 import "./components/SnackbarContainer";
+import "./components/Search";
 import {store} from "./store";
 import "focus-visible";
 import "./analytics";
