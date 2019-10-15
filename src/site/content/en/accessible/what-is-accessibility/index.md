@@ -26,12 +26,7 @@ diverse range of users in the world and the kinds of accessibility topics that
 affect them. To explain further, here's an informative video from Victor Tsaran,
 a Technical Program Manager at Google.
 
-<div class="video-wrapper-full-width">
-  <iframe class="devsite-embedded-youtube-video" data-video-id="RHIVx4m8V4M"
-          data-autohide="1" data-showinfo="0" data-rel="0"
-          frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+{% YouTube 'RHIVx4m8V4M' %}
 
 Generally speaking, accessibility concerns can be split into four broad
 categories:
