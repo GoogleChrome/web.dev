@@ -101,6 +101,16 @@ web-search {
     border: none;
     padding: 8px 8px 8px 40px;
     width: 100%;
+    font: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 2px 0 0 $WEB_SECONDARY_COLOR;
+    }
   }
 
   .web-search__input:focus {
