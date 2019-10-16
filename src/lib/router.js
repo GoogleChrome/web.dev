@@ -6,6 +6,31 @@ let isFirstRun = true;
 const domparser = new DOMParser();
 
 /**
+ * Provides a simple dynamic `import()` polyfill. Does not return the exports
+ * from the module: this is not how web.dev uses dynamic import.
+ */
+window._import = (src) => {
+  return new Promise((resolve, reject) => {
+    const n = Object.assign(document.createElement('script'), {
+      src,
+      type: 'module',
+      onload: () => resolve(),
+      onerror: reject,
+    });
+    // nb. This is a noop for modules which are already loaded.
+    document.head.append(n);
+    n.remove();
+  });
+};
+
+async function loadEntrypoint(url) {
+  if (url.match(/^measure($|\/)/)) {
+    return import("./pages/measure.js");
+  }
+  return import("./pages/default.js");
+}
+
+/**
  * Fetch a page as an html string.
  * @param {string} url url of the page to fetch.
  * @return {Promise<string>}
@@ -26,21 +51,26 @@ async function getPage(url) {
  */
 async function swapContent(url) {
   document.dispatchEvent(new CustomEvent("pageview", {detail: url}));
+  const entrypointPromise = loadEntrypoint(url);
 
   // When the router boots it will always try to run a handler for the current
-  // route. But we don't need this for initial page load so we cancel it.
+  // route. We don't need this for initial page load so we cancel it, but wait
+  // for the page's JS to load.
   if (isFirstRun) {
     isFirstRun = false;
+    await entrypointPromise;
     return;
   }
 
   store.setState({isPageLoading: true});
 
   const main = document.querySelector("main");
+
   // Grab the new page content
   let page;
   try {
     page = await getPage(url);
+    await entrypointPromise;
   } catch (e) {
     // If something fails, just make a browser URL change
     // TODO(robdodson): In future, failure pages might be HTML themselves

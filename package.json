@@ -7,7 +7,7 @@
     "lint:scss": "sass-lint -c .sasslintrc -v -q",
     "build:gulp": "npx gulp build",
     "build:eleventy": "eleventy --quiet",
-    "build:rollup": "rollup -c rollup.config.js",
+    "build:rollup": "node build.js",
     "build:sass": "node ./compile-css.js src/styles/all.scss dist/app.css",
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:eleventy": "eleventy --watch --quiet",
@@ -33,6 +33,7 @@
     "focus-visible": "^5.0.2",
     "lit-element": "^2.2.0",
     "navaid": "^1.0.5",
+    "rollup-plugin-virtual": "^1.0.1",
     "unistore": "^3.4.1",
     "wicg-inert": "^2.1.3"
   },
