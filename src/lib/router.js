@@ -8,12 +8,15 @@ const domparser = new DOMParser();
 /**
  * Provides a simple dynamic `import()` polyfill. Does not return the exports
  * from the module: this is not how web.dev uses dynamic import.
+ *
+ * @param {string} src
+ * @return {!Promise<?>}
  */
 window._import = (src) => {
   return new Promise((resolve, reject) => {
-    const n = Object.assign(document.createElement('script'), {
+    const n = Object.assign(document.createElement("script"), {
       src,
-      type: 'module',
+      type: "module",
       onload: () => resolve(),
       onerror: reject,
     });
@@ -23,8 +26,14 @@ window._import = (src) => {
   });
 };
 
+/**
+ * Dynamically loads code required for the passed URL entrypoint.
+ *
+ * @param {string} url of the page to load modules for.
+ * @return {!Promise<?>}
+ */
 async function loadEntrypoint(url) {
-  if (url.match(/^measure($|\/)/)) {
+  if (url === "measure") {
     return import("./pages/measure.js");
   }
   return import("./pages/default.js");
