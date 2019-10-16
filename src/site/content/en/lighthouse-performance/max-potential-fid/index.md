@@ -5,12 +5,12 @@ description: |
   Learn about Lighthouse's Max Potential First Input Delay metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-10
+updated: 2019-10-16
 web_lighthouse:
   - max-potential-fid
 ---
 
-Max Potential First Input Delay (FID) is one of six metrics
+Max Potential First Input Delay (FID) is one of the metrics
 tracked in the **Performance** section of the Lighthouse report.
 Each metric captures some aspect of page load speed.
 
@@ -22,43 +22,52 @@ Lighthouse displays Max Potential FID in milliseconds:
 
 ## What Max Potential FID measures
 
-<!--TODO
-mfriesenhahn@
-I took a guess about what the "max potential" part of Max Potential FID means
-based on how TTI is measured. Need confirmation from LH team.
--->
-
-Max Potential FID is an estimate of how long your app takes to respond to user input
-during the busiest 5&nbsp;seconds of page load.
-
-FID measures the time from when a user first interacts with your site
-to the time when the browser responds to that interaction.
-In general, input delay happens
-because the browser's main thread is busy doing something else—like
-parsing a large JavaScript file—that keeps it from responding to the user.
-
-{% Aside %}
-FID focuses on _discrete_ user actions like clicks, taps, and key presses.
-The performance of _continuous_ actions, like scrolling and zooming,
-are affected by different factors and so should be evaluated separately.
-{% endAside %}
-
-FID can vary depending on when a user interacts with your page;
-if the user happens to start an interaction
-when the browser's main thread isn't busy, there won't be a delay.
-That's why Lighthouse measures the _maximum potential_ FID
-by checking for input delay during the main thread's busiest window.
-This approach helps provide a more reliable metric that you can use to
-evaluate the responsiveness of your page over time.
+Max Potential FID measures the duration of the
+[longest task](/long-tasks-devtools#what-are-long-tasks) after
+[First Contentful Paint][fcp]. It is meant to capture the worst case
+[First Input Delay][fid] that your users might experience. Tasks before
+First Contentful Paint are excluded because it's unlikely that a user will
+attempt to interact with your page before any content has been rendered to the screen,
+which is what First Contentful Paint measures.
 
 ## How Lighthouse determines your Max Potential FID score
 
-<!--TODO
-mfriesenhahn@
-I have no idea how the max potential fid score is determined.
-There's not yet a report for it on HTTP Archive.
-Need info from LH team.
--->
+<!-- TODO(kaycebasques): In the FCP doc we link to the HTTP Archive report of FCP data.
+     If we get a similar report for MPFID we should link to that.
+     https://web.dev/first-contentful-paint/#how-lighthouse-determines-your-fcp-score -->
+
+Your Max Potential FID score is a comparison of your page's Max Potential FID time
+and Max Potential FID times for real websites, based on
+data from the [HTTP Archive](https://httparchive.org).
+For example, if your Max Potential FID score in Lighthouse is green, it means
+that your page performs better than 90% of real websites.
+
+This table shows how to interpret your TBT score:
+
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Max Potential FID time<br>(in milliseconds)</th>
+        <th>Color-coding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0–130</td>
+        <td>Green (fast)</td>
+      </tr>
+      <tr>
+        <td>130-250</td>
+        <td>Orange (average)</td>
+      </tr>
+      <tr>
+        <td>Over 250</td>
+        <td>Red (slow)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 
@@ -67,18 +76,17 @@ Need info from LH team.
 See [How to improve your TTI score][tti]. The strategies for improving Max Potential FID are
 largely the same as the strategies for improving TTI.
 
-## How to measure FID manually
+## How to capture FID field data
 
-You can use JavaScript to measure FID in all modern browsers.
-Consider using Google's [First Input Delay library](https://github.com/GoogleChromeLabs/first-input-delay),
-which adds the event listeners needed to detect FID.
+Lighthouse's measurement of Max Potential FID is [lab data][lab]. To capture real
+Max Potential FID data as your users load your pages, use Google's 
+[First Input Delay library](https://github.com/GoogleChromeLabs/first-input-delay).
 Once you're capturing FID data, you can report it as an event
 to your preferred analytics tool.
 
 Since FID measures when actual users first interact with your page,
 it's more inherently variable than typical performance metrics.
-See the [Analyzing and reporting on FID data][analysis] section
-of Google's [First Input Delay][fid] page for guidance
+See [Analyzing and reporting on FID data][analysis] for guidance
 about how to evaluate the FID data you collect.
 
 {% include 'content/lighthouse-performance/improve.njk' %}
@@ -86,10 +94,18 @@ about how to evaluate the FID data you collect.
 ## Resources
 
 - [Source code for **Max Potential First Input Delay** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/max-potential-fid.js)
-- [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [First Input Delay][fid]
 - [Time to Interactive](/interactive/)
+- [Are long JavaScript tasks delaying your Time to Interactive?](/long-tasks-devtools)
+- [First paint and first contentful paint][fcp]
+- [First Input Delay][fid]
+- [Lab data][lab]
+- [Field data][rum]
 
 [analysis]: https://developers.google.com/web/updates/2018/05/first-input-delay#analyzing_and_reporting_on_fid_data
 [fid]: https://developers.google.com/web/updates/2018/05/first-input-delay
 [tti]: /interactive/#how-to-improve-your-tti-score
+[fcp]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint
+[fid]: https://developers.google.com/web/updates/2018/05/first-input-delay
+[rum]: https://developers.google.com/web/fundamentals/performance/speed-tools#field_data
+[lab]: https://developers.google.com/web/fundamentals/performance/speed-tools#lab_data
