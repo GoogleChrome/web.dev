@@ -1,4 +1,5 @@
 import navaid from "navaid";
+import {store} from "./store";
 
 const router = navaid();
 let isFirstRun = true;
@@ -33,7 +34,7 @@ async function swapContent(url) {
     return;
   }
 
-  document.body.classList.add("loading");
+  store.setState({duringPageLoad: true});
 
   const main = document.querySelector("main");
   // Grab the new page content
@@ -46,7 +47,7 @@ async function swapContent(url) {
     window.location.href = window.location.href;
     throw e;
   } finally {
-    document.body.classList.remove("loading");
+    store.setState({duringPageLoad: false});
   }
   // Remove the current #content element
   main.querySelector("#content").remove();

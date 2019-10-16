@@ -12,6 +12,7 @@ $LINEAR_ANIMATION_TIME: 2.5s;
 
 .w-loading-progress {
   background: #3fc4ff;
+  display: block !important;
   height: 2px;
   left: 0;
   pointer-events: none;
@@ -27,7 +28,7 @@ $LINEAR_ANIMATION_TIME: 2.5s;
   // Shows a white "flurry" on top of the loading indicator.
   &::before {
     animation: loading-progress-before 2s infinite alternate-reverse ease-in-out;
-    background: linear-gradient(to left, #fff0, #fff9, #fff0);
+    background: linear-gradient(to left, #fff0, #ffff, #fff0);
     bottom: 0;
     content: '';
     left: 0;
@@ -36,10 +37,11 @@ $LINEAR_ANIMATION_TIME: 2.5s;
     top: 0;
     width: 50vw;
   }
-}
 
-body:not([loading]) .w-loading-progress {
-  animation: hold-visibility $TRANSITION_SPEED;
-  transform: scaleY(0);
-  visibility: hidden;
+  &[hidden] {
+    animation: hold-visibility $TRANSITION_SPEED;
+    display: block !important;  // keep visible despite other overrides
+    transform: scaleY(0);
+    visibility: hidden;
+  }
 }

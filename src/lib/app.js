@@ -26,11 +26,17 @@ router.listen();
 
 // Configures global page state
 function onGlobalStateChanged() {
-  const state = store.getState();
-  if (state.isSignedIn) {
-    document.body.classList.add("lh-signedin");
+  const {isSignedIn, duringPageLoad} = store.getState();
+  document.body.classList.toggle("lh-signedin", isSignedIn);
+
+  const progress = document.querySelector(".w-loading-progress");
+  progress.hidden = !duringPageLoad;
+
+  const main = document.querySelector("main");
+  if (duringPageLoad) {
+    main.setAttribute("aria-busy", "true");
   } else {
-    document.body.classList.remove("lh-signedin");
+    main.removeAttribute("aria-busy");
   }
 }
 store.subscribe(onGlobalStateChanged);
