@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Ensure audio elements have captions
+title: "`<audio>` elements are missing a `<track>` element with `[kind=\"captions\"]`"
 description: |
-  Learn about audio-caption audit.
+  Learn how to improve the accessibility of audio on your web page by providing
+  closed captions.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - audio-caption
 ---
@@ -11,26 +13,26 @@ web_lighthouse:
 Captions make audio elements usable for deaf or hearing-impaired users,
 providing critical information such as who is talking, what they're saying,
 and other non-speech information.
-Lighthouse reports any `<audio>` elements that are missing a `<track>` element
-with the attribute `kind="captions"`.
+
+## How the Lighthouse audio track audit fails
+
+Lighthouse flags `<audio>` elements that are missing `<track>` elements.
 
 <!--
 ***Todo*** I tried very hard to get this audit to fail.
 But no matter what, it seems to pass,
 even with all sorts of crazy errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets)
-
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse audit showing Audio element missing captions">
-  <figcaption class="w-figcaption">
-    Audio element missing captions.
-  </figcaption>
+  <img class="w-screenshot" src="" alt="Lighthouse audit showing Audio element missing captions">
 </figure>
 -->
-## How to fix this problem
 
-To fix this problem,
-add at least one track element to the `audio` element
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
+
+## How to add an audio track
+
+Add at least one track element to the `audio` element
 with attribute `kind="captions"`:
 
 ```html
@@ -41,15 +43,7 @@ with attribute `kind="captions"`:
 </audio>
 ```
 
-Learn more in
-[`<audio>` elements must have a captions `<track>`](https://dequeuniversity.com/rules/axe/3.3/audio-caption).
+## Resources
 
-<!--
-## How this audit impacts overall Lighthouse score
-
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
-- [Audio elements have captions audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/audit-caption.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Source code for **`<audio>` elements are missing a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/audit-caption.js)
+- [`<audio> `elements must have a captions `<track>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/audio-caption)

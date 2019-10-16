@@ -1,16 +1,21 @@
 ---
 layout: post
-title: Ensure video elements have audio descriptions
+title: "`<video>` elements do not contain a `<track>` element with `[kind=\"description\"]`"
 description: |
-  Learn about video-description audit.
+  Learn how to make video on your web page more accessible by providing
+  an audio description.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - video-description
 ---
 
 Audio descriptions provide relevant information for videos that dialogue
 cannot, such as facial expressions and scenes.
-Lighthouse reports any `<video>` elements that are missing a `<track>` element
+
+## How the Lighthouse video description audit fails
+
+Lighthouse flags `<video>` elements that are missing a `<track>` element
 with the attribute `kind="descriptions"`.
 
 <!--
@@ -20,16 +25,15 @@ even with all sorts of crazy errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1)
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="" alt="Lighthouse audit showing video element missing audio descriptions">
-  <figcaption class="w-figcaption">
-    Video element missing audio descriptions.
-  </figcaption>
+  <img class="w-screenshot" src="" alt="Lighthouse audit showing video element missing audio descriptions">
 </figure>
 -->
-## How to fix the problem
 
-To fix the problem,
-add at least one track element to the `video` element
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
+
+## How to add audio descriptions to video elements
+
+Add at least one track element to the `video` element
 with attribute `kind="descriptions"`:
 
 ```html
@@ -42,22 +46,14 @@ with attribute `kind="descriptions"`:
 </video>
 ```
 
-Learn more in
-[`<video>` elements must have an audio description `<track>`](https://dequeuniversity.com/rules/axe/3.3/video-description).
-
 {% Aside 'note' %}
 The example above includes both audio descriptions for visually impaired users
 and captions for hearing impaired users.
 Captions make video elements usable for deaf or hearing-impaired users.
-See also [Ensures `<video>` elements have captions](/video-caption).
+See also [`<video>` elements do not contain a `<track>` element with `[kind="captions"]`](/video-caption).
 {% endAside %}
 
-<!--
-## How this audit impacts overall Lighthouse score
+## Resources
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
-- [Video elements have audio descriptions audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-description.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Source code for **`<video>` elements do not contain a `<track>` element with `[kind="description"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/video-description.js)
+- [`<video>` elements must have an audio description `<track>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/video-description)

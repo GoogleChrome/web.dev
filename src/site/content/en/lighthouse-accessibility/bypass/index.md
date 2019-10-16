@@ -1,28 +1,34 @@
 ---
 layout: post
-title: Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content
+title: The page does not contain a heading, skip link, or landmark region
 description: |
-  Learn about bypass audit.
+  Learn how to improve your web page's accessibility by making it easy for
+  assistive technologies to skip repeated navigation elements.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - bypass
 ---
 
-Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently.
-Lighthouse reports when the page doesn't contain a heading, skip link, or landmark region:
+Adding ways to bypass repetitive content
+lets keyboard users navigate the page more efficiently.
+
+## How this Lighthouse audit fails
+
+Lighthouse flags pages that don't contain a heading, [skip link](/headings-and-landmarks#bypass-repetitive-content-with-skip-links),
+or landmark region:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="bypass.png" alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region">
-  <figcaption class="w-figcaption">
-    The page doesn't contain a heading, skip link, or landmark region.
-  </figcaption>
+  <img class="w-screenshot" src="bypass.png" alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region">
 </figure>
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to fix this problem
+## How to improve keyboard navigation
 
 It's simple to pass the Lighthouse audit:
-include either an internal skip link, a heading, or a landmark region.
+include either an internal [skip link](/headings-and-landmarks#bypass-repetitive-content-with-skip-links),
+a heading, or a landmark region.
 
 But to truly fix the problem,
 use correct heading and landmark elements on the entire page.
@@ -46,7 +52,7 @@ and repetitive content is bypassed:
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/style.css">
-  </head>  
+  </head>
   <body>
     <a class="skip-link" href="#maincontent">Skip to main</a>
     <h1>Page title</h1>
@@ -96,15 +102,7 @@ and repetitive content is bypassed:
 }
 ```
 
-Learn more in
-[Page must have means to bypass repeated blocks](https://dequeuniversity.com/rules/axe/3.3/bypass).
+## Resources
 
-<!--
-## How this audit impacts overall Lighthouse score
-
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
-- [Use headings, landmarks, and skip-link audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/bypass.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Source code for **The page does not contain a heading, skip link, or landmark region** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/bypass.js)
+- [Page must have means to bypass repeated blocks (Deque University)](https://dequeuniversity.com/rules/axe/3.3/bypass)

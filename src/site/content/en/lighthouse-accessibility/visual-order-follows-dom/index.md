@@ -1,16 +1,17 @@
 ---
 layout: post
-title: Manually check the visual layout of the page matches the DOM
+title: Visual order on the page follows DOM order
 description: |
   Learn about visual-order-follows-dom audit.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - visual-order-follows-dom
 ---
 
 Implementing a logical tab order is an important part of
 providing your users with a smooth keyboard navigation experience.
-Screen readers navigate the page in DOM order.
+Screen readers and other assistive technologies navigate the page in DOM order.
 The flow of information should make sense.
 
 ## How to manually test
@@ -39,7 +40,7 @@ If the focus order seems wrong,
 you should rearrange the elements in the DOM to make the tab order more natural.
 
 If you've used CSS to visually reposition elements,
-screen reader users will experience a non-sensical navigation.
+assistive technology users will experience a nonsensical navigation.
 Instead of using CSS,
 move the element to an earlier position in the DOM.
 
@@ -48,6 +49,6 @@ consider removing it using `tabindex="-1"`.
 
 Learn more in [Control focus with tabindex](/control-focus-with-tabindex).
 
-## More information
+## Resources
 
-- [Check visual layout of page matches DOM audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/visual-order-follows-dom.js)
+[Source code for **Visual order on the page follows DOM order** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/visual-order-follows-dom.js)
