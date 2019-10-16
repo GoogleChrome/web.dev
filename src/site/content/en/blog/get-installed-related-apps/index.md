@@ -11,7 +11,7 @@ tags:
   - capabilities
 hero: hero.jpg
 alt: mobile device with app panel open
-# draft: true
+draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/855683929200394241
 ---
