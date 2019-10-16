@@ -56,6 +56,12 @@ this inline style tag.
         </div>
       {% endif %}
 
+      {% if draft and site.env === 'dev' %}
+        <div class="w-banner w-banner--warning w-banner--body">
+          🚨 This post is a draft! 🚨
+        </div>
+      {% endif %}
+
       {{ content | safe }}
       {% if related_post %}
         {% ArticleNavigation {
