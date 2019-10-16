@@ -35,7 +35,24 @@ but checks for duplicate IDs in a different set of elements.
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-{% include 'content/lighthouse-accessibility/fix-duplicate-ids.njk' %}
+## How to fix duplicate IDs
+
+Change an ID value if it is used more than once.
+
+For example, the following code sample includes two elements with the same ID.
+One ID should be changed:
+
+```html/1,4
+<div role="tabpanel" aria-labelledby="tabpanel-label">
+  <h2 id="tabpanel-label">
+    Tab panel title
+  </h2>
+  <p id="tabpanel-label">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  </p>
+</div>
+```
 
 ## Resources
 - <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id-aria.js" rel="noopener">Source code for **ARIA IDs are not all unique** audit</a>

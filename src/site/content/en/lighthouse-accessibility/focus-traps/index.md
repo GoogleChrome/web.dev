@@ -10,8 +10,7 @@ web_lighthouse:
   - focus-traps
 ---
 
-The Web AIM checklist states that
-[keyboard focus should never be locked or trapped at one particular page element](https://webaim.org/standards/wcag/checklist#sc2.1.2).
+Keyboard focus should never be locked or trapped at one particular page element.
 Users should be able to navigate to and from all page elements
 using only the keyboard.
 

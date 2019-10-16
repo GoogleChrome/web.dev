@@ -13,7 +13,7 @@ date: 2019-10-17
 
 `<label>` elements are a common way to assign names to native controls.
 If you unintentionally associate multiple labels with a single control,
-you'll create inconsistent behavior across browsers and screen readers:
+you'll create inconsistent behavior across browsers and assistive technologies:
 some will read the first label, some will read the last label,
 and others will read both labels.
 
