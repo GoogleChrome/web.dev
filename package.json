@@ -29,6 +29,7 @@
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.3.0",
     "algoliasearch": "^3.35.0",
+    "babel-eslint": "^10.0.3",
     "express": "^4.16.4",
     "focus-visible": "^5.0.2",
     "lit-element": "^2.2.0",
