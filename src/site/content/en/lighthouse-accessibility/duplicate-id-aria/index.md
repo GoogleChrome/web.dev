@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ARIA IDs are not all unique"
+title: "ARIA IDs are not unique"
 description: |
   Learn how to [fix the problem identified by the audit].
 web_lighthouse:

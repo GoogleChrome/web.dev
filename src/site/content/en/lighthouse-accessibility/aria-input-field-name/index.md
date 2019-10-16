@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Not all ARIA input fields have accessible names"
+title: "ARIA input fields do not have accessible names"
 description: |
   Learn how to improve your web page's accessibility by making sure that
   assistive technology users can access the names of your input fields.
