@@ -58,8 +58,13 @@ async function swapContent(url) {
 
   // Grab the new page content
   let page;
+  let content;
   try {
     page = await getPage(url);
+    content = page.querySelector("#content");
+    if (content === null) {
+      throw new Error(`no #content found: ${url}`);
+    }
     await entrypointPromise;
   } catch (e) {
     // If something fails, just make a browser URL change
@@ -76,9 +81,13 @@ async function swapContent(url) {
   // Remove the current #content element
   main.querySelector("#content").remove();
   // Swap in the new #content element
-  main.appendChild(page.querySelector("#content"));
+  main.appendChild(content);
   // Update the page title
   document.title = page.title;
+  // Focus on the first title (or fallback to content itself)
+  (content.querySelector("h1, h2, h3, h4, h6, h6") || content).focus();
+  // Scroll to top
+  document.scrollingElement.scrollTop = 0;
 }
 
 router
