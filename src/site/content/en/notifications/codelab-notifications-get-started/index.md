@@ -279,6 +279,6 @@ let options = {
 
 See [Peter Beverloo's Notification Generator](https://tests.peter.sh/notification-generator/) for some more ideas!
 
-If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed-code](https://glitch.com/edit/#!/codelab-notifications-get-started-completed-code) 
+If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed) 
 
 Take the next codelab in this series, [Handle notifications with a service worker](codelab-notifications-service-worker) to explore further!
