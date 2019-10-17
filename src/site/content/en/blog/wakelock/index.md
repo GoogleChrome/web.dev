@@ -11,8 +11,6 @@ tags:
   - post
   - capabilities
   - wake-lock
-hero: hero.jpg
-alt: Sleeping koala
 draft: true
 ---
 
@@ -41,7 +39,7 @@ power-hungry workarounds. It addresses the shortcomings of an older API
 that was limited to simply keeping the screen on and had a number of
 security and privacy issues.
 
-### Suggested use cases for the Wake Lock API {: #use-cases }
+## Suggested use cases for the Wake Lock API {: #use-cases }
 
 [RioRun](https://www.theguardian.com/sport/2016/aug/06/rio-running-app-marathon-course-riorun),
 a web app developed by [The Guardian](https://www.theguardian.com/),
@@ -67,7 +65,7 @@ Of course, there are plenty of other use cases:
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
-| 1. Create explainer                        | Complete                     |
+| 1. Create explainer                        | N/A                          |
 | 2. Create initial draft of specification   | [Complete][spec-ed]          |
 | **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
 | 4. Origin trial                            | Not Started                  |
@@ -170,8 +168,8 @@ if ('WakeLock' in window) {
 When you play with the [wake lock demo][demo], you'll notice that wake locks
 are sensitive to [page visibility][page-visibility-api] and
 [full-screen mode][full-screen-api]. This means that the wake lock
-will automatically abort when you enter full-screen mode or minimize a
-tab or window where a wake lock is active.
+will automatically abort when you enter full-screen mode, minimize a
+tab or window, or switch away from a tab or window where a wake lock is active.
 
 To reacquire the wake lock,
 listen for the [`visibilitychange`][visibility-change] event and
@@ -189,7 +187,7 @@ document.addEventListener('visibilitychange', handleVisibilityChange);
 document.addEventListener('fullscreenchange', handleVisibilityChange);
 ```
 
-## Best Practices {: #best-practices }
+## Minimize your impact on system resources {: #best-practices }
 
 The approach you take depends on the needs of your app. Regardless, you should
 use the most lightweight approach possible for your app to minimize its
