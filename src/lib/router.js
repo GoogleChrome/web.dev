@@ -1,8 +1,6 @@
-import navaid from "navaid";
 import {store} from "./store";
 import "./utils/underscore-import-polyfill";
 
-const router = navaid();
 let isFirstRun = true;
 const domparser = new DOMParser();
 
@@ -84,8 +82,6 @@ async function swapContent(url) {
 
   store.setState({isPageLoading: true});
 
-  const main = document.querySelector("main");
-
   // Grab the new page content
   let page;
   let content;
@@ -110,32 +106,81 @@ async function swapContent(url) {
   }
   // Remove the current #content element
   main.querySelector("#content").remove();
-  // Swap in the new #content element
-  main.appendChild(content);
+  main.appendChild(page.querySelector("#content"));
+
   // Update the page title
   document.title = page.title;
+
   // Focus on the first title (or fallback to content itself)
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
-  // Scroll to top
-  document.scrollingElement.scrollTop = 0;
+
+  store.setState({isPageLoading: false});
 }
 
-router
-  .on("/", async () => {
-    return swapContent("/");
-  })
-  .on("/*", async (params) => {
-    if (params.wild.endsWith("/index.html")) {
-      // If an internal link refers to "/foo/index.html", strip "index.html" and load.
-      const stripped = params.wild.slice(0, -"index.html".length);
-      return swapContent(`/${stripped}`);
-    } else if (window.location.pathname.endsWith("/")) {
-      // Navaid strips a trailing "/" on its own, so ensure it is added again before loading.
-      return swapContent(`/${params.wild}/`);
-    }
+function rewritePath(url) {
+  if (url.endsWith("/index.html")) {
+    return url.slice(0, -"index.html".length);
+  } else if (!url.endsWith("/")) {
+    return `${url}/`;
+  } else {
+    return url;
+  }
+}
 
-    // This triggers Navaid again, so calling swapContent() here would cause a double load.
-    window.history.replaceState(null, null, window.location.pathname + "/");
+async function run() {
+  await swapContent(window.location.pathname, scrollTop);
+
+  if (window.location.hash) {
+    console.warn('should go to', window.location.hash);
+  }
+
+  const state = window.history.state;
+  const scrollTop = state && state.scrollTop || 0;
+  document.documentElement.scrollTop = scrollTop;
+  console.warn('restoring scrollTop', scrollTop);
+}
+
+function safeRun() {
+  run().catch((err) => {
+    // If something fails, just make a browser URL change
+    // TODO(robdodson): In future, failure pages might be HTML themselves
+    window.location.href = window.location.href;
+    throw err;
   });
+}
+
+const router = {
+  listen() {
+    window.addEventListener('popstate', safeRun);
+
+    window.addEventListener('click', (e) => {
+      if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || e.button || e.defaultPrevented) {
+        return;
+      }
+      const link = e.target.closest('a[href]');
+      if (!link || link.target || link.host !== location.host) {
+        return;
+      }
+    
+      window.history.replaceState({
+        scrollTop: document.documentElement.scrollTop,
+      }, null, null);
+    
+      const url = new URL(link.href);
+      url.pathname = rewritePath(url.pathname) || url.pathname;
+
+      console.warn('storing scrollTop', document.documentElement.scrollTop, 'for', window.location.pathname);
+
+      window.history.pushState(null, null, url.toString());
+      e.preventDefault();
+      safeRun();
+    });
+
+    run().catch(null);  // ignore error
+  },
+  route(href) {
+    console.info('got href request', href);
+  },
+};
 
 export {router};
