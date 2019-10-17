@@ -7,46 +7,27 @@ module.exports = {
     slug: 'react',
     cover: '/images/collections/react.svg',
     title: 'React',
-    updated: 'April 28, 2019',
+    updated: 'October 11, 2019',
     description: `Build performant and progressive React applications.`,
     overview: `In this section you'll learn how to use built-in APIs and
     third-party libraries to improve the performance of your
     React applications.`,
     topics: [
       {
-        title: 'Introduction',
+        title: 'Next.js',
+        pathItems: [
+          'performance-as-a-default-with-nextjs',
+        ],
+      },
+      {
+        title: 'Create React App',
         pathItems: [
           'get-started-optimize-react',
-        ],
-      },
-      {
-        title: 'Fast',
-        pathItems: [
           'code-splitting-suspense',
           'virtualize-long-lists-react-window',
-        ],
-      },
-      {
-        title: 'Reliable',
-        pathItems: [
           'precache-with-workbox-react',
-        ],
-      },
-      {
-        title: 'Discoverable',
-        pathItems: [
           'prerender-with-react-snap',
-        ],
-      },
-      {
-        title: 'Installable',
-        pathItems: [
           'add-manifest-react',
-        ],
-      },
-      {
-        title: 'Accessible',
-        pathItems: [
           'accessibility-auditing-react',
         ],
       },
