@@ -541,7 +541,7 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
 {% Instruction 'devtools-performance' %}
 
 {% Aside %}
-All DevTools panels are supported. View [the element source](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js) for details.
+All DevTools panels are supported. View [the element source](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instruction.js) for details.
 {% endAside %}
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
