@@ -7,18 +7,17 @@
 
 import config from "./bootstrap-config";
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
+import {router} from "./router";
 
 console.info("web.dev", config.version);
 
 WebComponents.waitFor(async () => {
-  return new Promise((resolve, reject) => {
-    // nb. import() is fairly well supported (although not as much as raw modules), but we just
-    // don't need it
-    const s = document.createElement("script");
-    s.type = "module";
-    s.onerror = reject;
-    s.onload = () => resolve();
-    s.src = "/app.js";
-    document.head.appendChild(s);
-  });
+  // Run as long-lived router w/ history & "<a>" bindings
+  // Also immediately calls `run()` handler for current location, loading its
+  // required JS entrypoint
+  router.listen();
 });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}

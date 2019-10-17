@@ -1,9 +1,23 @@
 import navaid from "navaid";
 import {store} from "./store";
+import "./utils/underscore-import-polyfill";
 
 const router = navaid();
 let isFirstRun = true;
 const domparser = new DOMParser();
+
+/**
+ * Dynamically loads code required for the passed URL entrypoint.
+ *
+ * @param {string} url of the page to load modules for.
+ * @return {!Promise<?>}
+ */
+async function loadEntrypoint(url) {
+  if (url === "measure") {
+    return import("./pages/measure.js");
+  }
+  return import("./pages/default.js");
+}
 
 /**
  * Fetch a page as an html string.
@@ -26,21 +40,26 @@ async function getPage(url) {
  */
 async function swapContent(url) {
   document.dispatchEvent(new CustomEvent("pageview", {detail: url}));
+  const entrypointPromise = loadEntrypoint(url);
 
   // When the router boots it will always try to run a handler for the current
-  // route. But we don't need this for initial page load so we cancel it.
+  // route. We don't need this for the HTML of the initial page load so we
+  // cancel it, but wait for the page's JS to load.
   if (isFirstRun) {
     isFirstRun = false;
+    await entrypointPromise;
     return;
   }
 
   store.setState({isPageLoading: true});
 
   const main = document.querySelector("main");
+
   // Grab the new page content
   let page;
   try {
     page = await getPage(url);
+    await entrypointPromise;
   } catch (e) {
     // If something fails, just make a browser URL change
     // TODO(robdodson): In future, failure pages might be HTML themselves
