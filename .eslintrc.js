@@ -13,6 +13,7 @@ module.exports = {
     mocha: true,
     browser: true,
   },
+  parser: "babel-eslint",
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: "module",
