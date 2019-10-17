@@ -10,13 +10,11 @@ web_lighthouse:
   - audio-caption
 ---
 
-Captions make audio elements usable for deaf or hearing-impaired users,
-providing critical information such as who is talking, what they're saying,
-and other non-speech information.
+{% include 'content/lighthouse-accessibility/why-captions.njk' %}
 
-## How the Lighthouse audio track audit fails
+## How the Lighthouse audio caption audit fails
 
-Lighthouse flags `<audio>` elements that are missing `<track>` elements.
+Lighthouse flags `<audio>` elements that don't have a child `<track>` element.
 
 <!--
 ***Todo*** I tried very hard to get this audit to fail.
@@ -30,10 +28,26 @@ See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-acce
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to add an audio track
+## How to add captions to an audio clip
 
-Add at least one track element to the `audio` element
-with attribute `kind="captions"`:
+For every `<audio>` element on your page, add at least one `<track>` element
+with the attribute `kind="captions"`:
+
+```html
+<audio>
+   <source src="audioSample.mp3" type="audio/mp3">
+   <track src="captions_en.vtt" kind="captions" srclang="en" label="captions">
+</audio>
+```
+
+The source for the track must be a text file in the
+[WebVTT format](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API).
+Captions should include all essential information about the audio clip,
+including who is speaking, a transcript of the dialogue,
+and any musical cues or sound effects.
+
+Provide a captions track for each language you want to support.
+Specify each track's language using the `srclang` attribute:
 
 ```html
 <audio>
@@ -43,7 +57,15 @@ with attribute `kind="captions"`:
 </audio>
 ```
 
+{% Aside %}
+Captions aren't the same as subtitles. Captions describe audio information for
+users with hearing impairments. Subtitles provide translations for users who
+don't speak the language(s) in an audio clip. _Always_ provide captions.
+Provide subtitles when possible, based on the needs of your users.
+{% endAside %}
+
 ## Resources
 
-- [Source code for **`<audio>` elements are missing a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/audit-caption.js)
+- [Source code for **`<audio>` elements are missing a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/audio-caption.js)
 - [`<audio> `elements must have a captions `<track>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/audio-caption)
+- [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
