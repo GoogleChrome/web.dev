@@ -14,7 +14,7 @@ tags:
   - performance
 ---
 
-This post explains how to set up route-level [code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive](https://web.dev/interactive).
+This post explains how to set up route-level [code splitting](/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive](/interactive).
 
 _You can find the code samples from this article on [GitHub](https://github.com/mgechev/code-splitting-web-dev). The eager routing example is available in the [eager branch](https://github.com/mgechev/code-splitting-web-dev/tree/eager). The route-level code splitting example is in the [lazy branch](https://github.com/mgechev/code-splitting-web-dev/tree/lazy)._
 
@@ -28,11 +28,11 @@ The ever growing complexity of web applications has led to a significant increas
 
 The most efficient way to shrink JavaScript bundles without sacrificing features in your applications is to introduce aggressive code splitting.
 
-**[Code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/)** lets you divide the JavaScript of your application into multiple chunks associated with different routes or features. This approach only sends users the JavaScript they need during the initial application load, keeping load times low.
+**[Code splitting](/reduce-javascript-payloads-with-code-splitting/)** lets you divide the JavaScript of your application into multiple chunks associated with different routes or features. This approach only sends users the JavaScript they need during the initial application load, keeping load times low.
 
 {% Aside 'note' %}
 
-By using code splitting, [Twitter and Tinder](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) observed improvements of up to 50% for their [Time to Interactive](https://web.dev/interactive).
+By using code splitting, [Twitter and Tinder](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4) observed improvements of up to 50% for their [Time to Interactive](/interactive).
 
 {% endAside %}
 

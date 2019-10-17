@@ -14,7 +14,7 @@ Whether you use a UI library or handcraft your styles, shipping a significant am
 
 This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap.com/). UI libraries like Bootstrap speed up the development, but that often comes at the expense of bloated and unnecessary CSS which can slow down your load times. Bootstrap 4 is 187 KB, while [Semantic UI](https://semantic-ui.com/), another UI library, is a whopping 730 KB uncompressed. Even when minified and gzipped, Bootstrap still weighs around 20 KB, well over the [14 KB threshold](/extract-critical-css/#14KB) for the first roundtrip.
 
-[Critical](https://github.com/addyosmani/critical) is a tool that extracts, minifies and inlines [above-the-fold](/extract-critical-css) CSS. This allows above-the-fold content to be rendered as soon as possible, even if CSS for other parts of the page has not yet loaded. In this codelab, you'll learn how to use Critical's npm module. 
+[Critical](https://github.com/addyosmani/critical) is a tool that extracts, minifies and inlines [above-the-fold](/extract-critical-css) CSS. This allows above-the-fold content to be rendered as soon as possible, even if CSS for other parts of the page has not yet loaded. In this codelab, you'll learn how to use Critical's npm module.
 
 ## Measure
 
@@ -38,7 +38,7 @@ To run a Lighthouse audit on this site:
 
 ![Audits panel of Chrome DevTools, powered by Lighthouse](lighthouse-audits.png)
 
-When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you'll notice the app has a blank screen for quite a while before finally rendering the content. This is why [First Contentful Paint](https://web.dev/first-contentful-paint/) (FCP) is high and why overall performance score is not great.
+When you run an audit on your machine, the exact results may vary, but in the filmstrip view, you'll notice the app has a blank screen for quite a while before finally rendering the content. This is why [First Contentful Paint (FCP)](/first-contentful-paint/) is high and why overall performance score is not great.
 
 <img src="lighthouse-audit-before.png" alt='Lighthouse audit showing performance score of 84, FCP 3 seconds and a filmstrip view of loading the app' class="w-screenshot">
 

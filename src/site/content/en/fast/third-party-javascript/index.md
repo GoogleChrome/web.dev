@@ -39,7 +39,7 @@ Sites use these scripts for various purposes, including:
 Third-party scripts can provide powerful functionality, but that's not the whole story. They also affect privacy, security, and page behavior⁠—and they can be particularly problematic for performance.
 
 ## Performance
-Any significant amount of [JavaScript can slow down performance](https://web.dev/bootup-time/#how-javascript-execution-slows-down-performance). But because third-party JavaScript is usually outside your control, it can bring additional issues.
+Any significant amount of [JavaScript can slow down performance](/bootup-time). But because third-party JavaScript is usually outside your control, it can bring additional issues.
 
 ### Network
 Setting up connections takes time, and sending too many requests to multiple servers causes slowdowns. That time is even longer for secure connections, which may involve DNS lookups, redirects, and several round trips to the final server that handles the user's request.
@@ -67,7 +67,7 @@ If a third party has server issues and fails to deliver a resource, rendering is
 ## What to do about it
 Using third-party JavaScript is often unavoidable, but there are things you can do to minimize adverse effects:
 - When choosing third-party resources, favor those that send the least amount of code while still giving you the functionality you need.
-- Use [performance budgets](https://web.dev/use-lighthouse-for-performance-budgets/) for third-party content to keep their cost in check.
+- Use [performance budgets](/use-lighthouse-for-performance-budgets/) for third-party content to keep their cost in check.
 - Don't use the same functionality from two different vendors. You probably don't need two tag managers or two analytics platforms.
 - Routinely audit and clean out redundant third-party scripts.
 

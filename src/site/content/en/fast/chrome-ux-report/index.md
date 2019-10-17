@@ -11,20 +11,18 @@ date: 2018-11-05
 ---
 
 The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
-(informally known as CrUX) is a public dataset of real user experience data on 
-millions of websites. Unlike lab data, CrUX data actually comes from 
-[opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) 
-in the field. It measures metrics such as first contentful paint 
-([FCP](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint)), 
-DOM content loaded ([DCL](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)), 
-and first input delay 
-([FID](https://developers.google.com/web/updates/2018/05/first-input-delay)). 
+(informally known as CrUX) is a public dataset of real user experience data on
+millions of websites. Unlike lab data, CrUX data actually comes from
+[opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology)
+in the field. It measures metrics such as [First Contentful Paint (FCP)](/first-contentful-paint),
+[DOM Content Loaded (DCL)](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded),
+and [First Input Delay (FID)](https://developers.google.com/web/updates/2018/05/first-input-delay).
 
-The dataset also contains qualitative dimensions 
-about the user experience, for example, the device and connection types, which 
+The dataset also contains qualitative dimensions
+about the user experience, for example, the device and connection types, which
 enables drilling down into user experiences grouped by similar technologies.
-See the 
-[CrUX documentation](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics) 
+See the
+[CrUX documentation](https://developers.google.com/web/tools/chrome-user-experience-report/#metrics)
 for the full list of metrics.
 
 Using this data, developers are able to understand the wide distribution of real
@@ -35,11 +33,11 @@ competition and industry.
 
 ## How to use it
 
-There are three primary ways to extract insights from the Chrome UX Report, 
-ranging in complexity. For quick and easy analysis of website performance, the [CrUX Dashboard](http://g.co/chromeuxdash) and 
-[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) 
-are the recommended tools. [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) 
-trades some of the simplicity of the analysis for the power of customization 
+There are three primary ways to extract insights from the Chrome UX Report,
+ranging in complexity. For quick and easy analysis of website performance, the [CrUX Dashboard](http://g.co/chromeuxdash) and
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+are the recommended tools. [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report)
+trades some of the simplicity of the analysis for the power of customization
 and more granular insights.
 
 ### CrUX Dashboard
@@ -69,27 +67,27 @@ performance data. Try the
 
 ### CrUX on BigQuery
 
-The CrUX database on [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report), 
-part of the Google Cloud Platform (GCP) with a web and command line interface, 
-hosts the raw data that aggregates key UX performance metrics for top origins 
-on the web. New tables are periodically added to the database covering the 
-previous calendar month. Developers can handcraft queries to mine the dataset 
-for specific insights. BigQuery requires knowledge of SQL and a GCP project with 
-billing enabled to run the queries. This is an especially useful tool for power 
-users who require low-level access to the data to create custom reports, 
-benchmarks, and reports about the state of the web. Try the 
+The CrUX database on [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report),
+part of the Google Cloud Platform (GCP) with a web and command line interface,
+hosts the raw data that aggregates key UX performance metrics for top origins
+on the web. New tables are periodically added to the database covering the
+previous calendar month. Developers can handcraft queries to mine the dataset
+for specific insights. BigQuery requires knowledge of SQL and a GCP project with
+billing enabled to run the queries. This is an especially useful tool for power
+users who require low-level access to the data to create custom reports,
+benchmarks, and reports about the state of the web. Try the
 [BigQuery guide](/chrome-ux-report-bigquery).
 
 ## How to get help
 
-If you need any kind of support, there are a few channels to reach someone who 
-can help. The 
-[CrUX Google Group](https://groups.google.com/a/chromium.org/forum/#!forum/chrome-ux-report) 
-is a public forum for users of the dataset to ask questions and share analyses. 
-There is also a 
-[CrUX tag for Stack Overflow](https://stackoverflow.com/questions/tagged/chrome-ux-report) 
-if you need programming help with SQL or API access. And finally, 
-[@ChromeUXReport](https://twitter.com/ChromeUXReport) is the Twitter account you 
+If you need any kind of support, there are a few channels to reach someone who
+can help. The
+[CrUX Google Group](https://groups.google.com/a/chromium.org/forum/#!forum/chrome-ux-report)
+is a public forum for users of the dataset to ask questions and share analyses.
+There is also a
+[CrUX tag for Stack Overflow](https://stackoverflow.com/questions/tagged/chrome-ux-report)
+if you need programming help with SQL or API access. And finally,
+[@ChromeUXReport](https://twitter.com/ChromeUXReport) is the Twitter account you
 can follow to ask questions and listen for product announcements.
 
 ## See it in action

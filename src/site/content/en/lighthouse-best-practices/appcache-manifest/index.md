@@ -56,4 +56,4 @@ offline.
 
 - [Source code for **Uses Application Cache** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/appcache-manifest.js)
 - MDN's [Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) page
-- [Current page responds with a 200 when offline](/works-offline)
+- [Current page does not respond with a 200 when offline](/works-offline)

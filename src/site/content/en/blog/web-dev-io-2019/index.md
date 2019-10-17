@@ -31,7 +31,7 @@ plan to ship in the coming months, but we hope you like this new visual style ðŸ
 </figure>
 
 In the Learn section, we've rolled out
-[new Lighthouse audit docs](https://web.dev/learn#lighthouse) with updated
+[new Lighthouse audit docs](/learn#lighthouse) with updated
 images, scoring explainers, and links to guides which dive deeper into specific
 topics.
 
