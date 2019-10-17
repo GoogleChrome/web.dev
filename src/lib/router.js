@@ -48,6 +48,8 @@ async function swapContent(url) {
   main.querySelector("#content").remove();
   // Swap in the new #content element
   main.appendChild(page.querySelector("#content"));
+  // Update the page title
+  document.title = page.title;
 }
 
 router
