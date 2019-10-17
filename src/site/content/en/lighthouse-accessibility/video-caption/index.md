@@ -22,11 +22,6 @@ with the attribute `kind="captions"`.
 But no matter what, it seems to pass,
 even with all sorts of crazy errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1).
-Also worth mentioning that I ran accessibility audit
-against the convert gifs to video codelab,
-and the audit doesn't fail either.
-We don't have the track info in the codelab,
-which seems problematic as well.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="" alt="Lighthouse audit showing video element missing captions">
