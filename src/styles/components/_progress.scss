@@ -1,0 +1,49 @@
+@import '../settings/colors';
+
+$LINEAR_ANIMATION_TIME: 2.5s;
+
+@keyframes hold-visibility {
+  from { visibility: visible; }
+  to   { visibility: visible; }
+}
+
+@keyframes loading-progress-before {
+  from { transform: translate(-50%); }
+  to   { transform: translate(100vw) translate(-50%); }
+}
+
+.w-loading-progress {
+  background: $WEB_SECONDARY_COLOR;
+  display: block !important;
+  height: 2px;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: scaleY(1);
+  transform-origin: 50% 0%;
+  transition: transform $TRANSITION_SPEED ease;
+  transition-delay: 1s;  // show loading hint only after waiting this long
+  z-index: 250;  // below SideNav and Snackbar
+
+  // Shows a white "flurry" on top of the loading indicator.
+  &::before {
+    animation: loading-progress-before 2s infinite alternate-reverse ease-in-out;
+    background: linear-gradient(to left, #fff0, #ffff, #fff0);
+    bottom: 0;
+    content: '';
+    left: 0;
+    min-width: 320px;
+    position: absolute;
+    top: 0;
+    width: 50vw;
+  }
+
+  &[hidden] {
+    animation: hold-visibility $TRANSITION_SPEED;
+    display: block !important;  // keep visible despite other overrides
+    transform: scaleY(0);
+    visibility: hidden;
+  }
+}
