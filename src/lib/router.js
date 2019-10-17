@@ -1,30 +1,10 @@
 import navaid from "navaid";
 import {store} from "./store";
+import "./utils/underscore-import-polyfill";
 
 const router = navaid();
 let isFirstRun = true;
 const domparser = new DOMParser();
-
-/**
- * Provides a simple dynamic `import()` polyfill. Does not return the exports
- * from the module: this is not how web.dev uses dynamic import.
- *
- * @param {string} src
- * @return {!Promise<?>}
- */
-window._import = (src) => {
-  return new Promise((resolve, reject) => {
-    const n = Object.assign(document.createElement("script"), {
-      src,
-      type: "module",
-      onload: () => resolve(),
-      onerror: reject,
-    });
-    // nb. This is a noop for modules which are already loaded.
-    document.head.append(n);
-    n.remove();
-  });
-};
 
 /**
  * Dynamically loads code required for the passed URL entrypoint.
@@ -63,8 +43,8 @@ async function swapContent(url) {
   const entrypointPromise = loadEntrypoint(url);
 
   // When the router boots it will always try to run a handler for the current
-  // route. We don't need this for initial page load so we cancel it, but wait
-  // for the page's JS to load.
+  // route. We don't need this for the HTML of the initial page load so we
+  // cancel it, but wait for the page's JS to load.
   if (isFirstRun) {
     isFirstRun = false;
     await entrypointPromise;
