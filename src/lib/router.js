@@ -34,7 +34,7 @@ async function swapContent(url) {
     return;
   }
 
-  store.setState({duringPageLoad: true});
+  store.setState({isPageLoading: true});
 
   const main = document.querySelector("main");
   // Grab the new page content
@@ -47,7 +47,7 @@ async function swapContent(url) {
     window.location.href = window.location.href;
     throw e;
   } finally {
-    store.setState({duringPageLoad: false});
+    store.setState({isPageLoading: false});
   }
   // Remove the current #content element
   main.querySelector("#content").remove();

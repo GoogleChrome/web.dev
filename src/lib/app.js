@@ -26,14 +26,14 @@ router.listen();
 
 // Configures global page state
 function onGlobalStateChanged() {
-  const {isSignedIn, duringPageLoad} = store.getState();
+  const {isSignedIn, isPageLoading} = store.getState();
   document.body.classList.toggle("lh-signedin", isSignedIn);
 
   const progress = document.querySelector(".w-loading-progress");
-  progress.hidden = !duringPageLoad;
+  progress.hidden = !isPageLoading;
 
   const main = document.querySelector("main");
-  if (duringPageLoad) {
+  if (isPageLoading) {
     main.setAttribute("aria-busy", "true");
   } else {
     main.removeAttribute("aria-busy");
