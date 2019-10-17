@@ -141,7 +141,7 @@ behaviors expected of animated GIFs! 🎉
 
 ## Specify your sources
 
-All that's left to do is specify your video sources. The `<video>` element requires
+Now you need to specify your video sources. The `<video>` element requires
 one or more `<source>` child elements pointing to different video files the
 browser can choose from, depending on format support.  
 Update the `<video>` with `<source>` elements that link to your cat-herd videos:  
@@ -155,10 +155,31 @@ Update the `<video>` with `<source>` elements that link to your cat-herd videos:
 
 {% Aside %}
 Browsers don't speculate about which `<source>` is optimal, so the order
-of `<source>`s matters. For example, if you specify an MP4 video first and the
+of `<source>` elements matters. For example, if you specify an MP4 video first and the
 browser supports WebM, browsers will skip the WebM `<source>` and use the MPEG-4
 instead. If you prefer a WebM `<source>` be used first, specify it first!
 {% endAside %}
+
+## Add captions and descriptions
+One last detail to take care of: accessibility.
+With GIFs, you can provide alternative text
+to describe the image to users with visual impairments.
+For videos, you need two elements:
+- A `<track kind="descriptions">` element that links to a [WebVTT](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
+  file describing the visual information in the video
+- A`<track kind="captions">` element that links to a WebVTT file
+  indicating that there isn't any audio
+
+For example:
+
+```html/3-4
+<video autoplay loop muted playsinline>
+  <source src="/images/cat-herd.webm" type="video/webm">
+  <source src="/images/cat-herd.mp4" type="video/mp4">
+  <track src="/images/captions_en.vtt" kind="captions" srclang="en">
+  <track src="/images/descriptions_en.vtt" kind="descriptions" srclang="en">
+</video>
+```
 
 ## Preview
 
