@@ -46,10 +46,11 @@ security and privacy issues.
 [RioRun](https://www.theguardian.com/sport/2016/aug/06/rio-running-app-marathon-course-riorun),
 a web app developed by [The Guardian](https://www.theguardian.com/)
 that takes you on a virtual audio tour of Rio, following the route of the 2016
-Olympic marathon would be a perfect use case. Without wake locks, your screen
-will turn off frequently, making it hard to use.
+Olympic marathon was a perfect use case, though it is no longer available.
+Without wake locks, your screen will turn off frequently, making it hard to
+use.
 
-Of course, there are plenty of others:
+Of course, there are plenty of other use cases:
 
 * A receipe app that keeps the screen on while you bake a cake or cook
   dinner.
@@ -218,7 +219,7 @@ are there missing methods or properties that you need to implement your idea?
 * File a spec issue on the [Wake Lock API GitHub repo][issues],
   or add your thoughts to an existing issue.
 
-### Problem with the implementation?
+### Report a problem with the implementation
 
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
@@ -228,7 +229,7 @@ different from the spec?
   set *Components* to `Blink>WakeLock`. [Glitch](https://glitch.com) works great
   for sharing quick and easy repros.
 
-### Planning to use the API?
+### Show support for the API
 
 Are you planning to use the Wake Lock API? Your public support helps the
 Chrome team prioritize features, and shows other browser vendors how
@@ -245,7 +246,7 @@ critical it is to support them.
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * [Experimenting with the Wake Lock API](https://medium.com/dev-channel/experimenting-with-the-wake-lock-api-b6f42e0a089f)
-* Blink Component: `Blink>WakeLock`
+* Blink Component: [`Blink>WakeLock`](https://chromestatus.com/features#component%3ABlink%3EWakeLock)
 
 [spec-ed]: https://w3c.github.io/wake-lock/
 [spec-cr]: https://www.w3.org/TR/wake-lock/
