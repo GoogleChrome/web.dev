@@ -10,7 +10,7 @@ const domparser = new DOMParser();
  * @return {Promise<string>}
  */
 async function getPage(url) {
-  const res = await fetch(`/${url}`);
+  const res = await fetch(url);
   if (!res.ok) {
     throw res.status;
   }
@@ -48,14 +48,26 @@ async function swapContent(url) {
   main.querySelector("#content").remove();
   // Swap in the new #content element
   main.appendChild(page.querySelector("#content"));
+  // Update the page title
+  document.title = page.title;
 }
 
 router
   .on("/", async () => {
-    return swapContent("index.html");
+    return swapContent("/");
   })
   .on("/*", async (params) => {
-    return swapContent(params.wild);
+    if (params.wild.endsWith("/index.html")) {
+      // If an internal link refers to "/foo/index.html", strip "index.html" and load.
+      const stripped = params.wild.slice(0, -"index.html".length);
+      return swapContent(`/${stripped}`);
+    } else if (window.location.pathname.endsWith("/")) {
+      // Navaid strips a trailing "/" on its own, so ensure it is added again before loading.
+      return swapContent(`/${params.wild}/`);
+    }
+
+    // This triggers Navaid again, so calling swapContent() here would cause a double load.
+    window.history.replaceState(null, null, window.location.pathname + "/");
   });
 
 export {router};
