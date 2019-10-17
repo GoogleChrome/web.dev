@@ -64,10 +64,7 @@ router
       return swapContent(`/${params.wild}/`);
     }
 
-    // Otherwise, this is a request for e.g. "/measure". By calling history.replaceState() to
-    // re-add the trailing slash, Navaid will re-run this code and trigger the latter conditional
-    // above. (If we also call swapContent(), two requests will fire.)
-    // This doesn't modify the back stack, so further navigation works fine.
+    // This triggers Navaid again, so calling swapContent() here would cause a double load.
     window.history.replaceState(null, null, window.location.pathname + "/");
   });
 

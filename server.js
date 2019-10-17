@@ -18,7 +18,7 @@ const express = require('express');
 const app = express();
 
 app.use(
-  express.static('dist', {index: false, redirect: false}),
+  express.static('dist'),
   express.static('dist/en'),
 );
 
