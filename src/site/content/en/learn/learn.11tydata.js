@@ -1,3 +1,5 @@
+const livePaths = require('../../../_filters/live-paths');
+
 const fast = require('../fast/fast.11tydata.js').path;
 const accessible = require('../accessible/accessible.11tydata.js').path;
 const reliable = require('../reliable/reliable.11tydata.js').path;
@@ -33,26 +35,34 @@ const lighthouseSeo = require(
 //
 // =============================================================================
 
-module.exports = {
-  learn: {
-    paths: [
-      fast,
-      accessible,
-      reliable,
-      secure,
-      discoverable,
-      installable,
-    ],
-    frameworks: [
-      react,
-      angular,
-    ],
-    audits: [
-      lighthousePerformance,
-      lighthousePwa,
-      lighthouseBestPractices,
-      lighthouseAccessibility,
-      lighthouseSeo,
-    ],
-  },
+module.exports = function() {
+  const paths = [
+    fast,
+    accessible,
+    reliable,
+    secure,
+    discoverable,
+    installable,
+  ].filter(livePaths);
+
+  const frameworks = [
+    react,
+    angular,
+  ].filter(livePaths);
+
+  const audits = [
+    lighthousePerformance,
+    lighthousePwa,
+    lighthouseBestPractices,
+    lighthouseAccessibility,
+    lighthouseSeo,
+  ].filter(livePaths);
+
+  return {
+    learn: {
+      paths,
+      frameworks,
+      audits,
+    },
+  };
 };

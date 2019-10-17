@@ -1,3 +1,4 @@
+const livePaths = require('../../_filters/live-paths');
 const fast = require('./fast/fast.11tydata.js').path;
 const accessible = require('./accessible/accessible.11tydata.js').path;
 const reliable = require('./reliable/reliable.11tydata.js').path;
@@ -13,15 +14,19 @@ const installable = require('./installable/installable.11tydata.js').path;
 //
 // =============================================================================
 
-module.exports = {
-  home: {
-    paths: [
-      fast,
-      accessible,
-      reliable,
-      secure,
-      discoverable,
-      installable,
-    ],
-  },
+module.exports = function() {
+  const paths = [
+    fast,
+    accessible,
+    reliable,
+    secure,
+    discoverable,
+    installable,
+  ].filter(livePaths);
+
+  return {
+    home: {
+      paths,
+    },
+  };
 };
