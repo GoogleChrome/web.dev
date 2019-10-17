@@ -33,6 +33,9 @@ const initialState = {
   isSideNavExpanded: false,
   isSearchExpanded: false,
 
+  // Whether to show the progressbar and mark the main content as busy, during a load.
+  isPageLoading: false,
+
   // When a user lands on the page, check if they have accepted our
   // cookie policy.
   userAcceptsCookies: false,

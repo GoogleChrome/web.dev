@@ -1,4 +1,5 @@
 import navaid from "navaid";
+import {store} from "./store";
 
 const router = navaid();
 let isFirstRun = true;
@@ -33,6 +34,8 @@ async function swapContent(url) {
     return;
   }
 
+  store.setState({isPageLoading: true});
+
   const main = document.querySelector("main");
   // Grab the new page content
   let page;
@@ -43,6 +46,8 @@ async function swapContent(url) {
     // TODO(robdodson): In future, failure pages might be HTML themselves
     window.location.href = window.location.href;
     throw e;
+  } finally {
+    store.setState({isPageLoading: false});
   }
   // Remove the current #content element
   main.querySelector("#content").remove();
