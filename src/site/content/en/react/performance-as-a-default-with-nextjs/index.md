@@ -6,8 +6,7 @@ authors:
 subhead: |
   Next.js takes care of many optimizations in your React app so you don’t have to
 date: 2019-10-11
-# TODO(kayce): Re-enable `draft: true` before merging!
-# draft: true
+draft: true
 ---
 
 [Next.js](https://nextjs.org/) is an opinionated [React](https://reactjs.org/)
@@ -66,7 +65,7 @@ but find difficult to set up, such as:
 * Automatic code-splitting
 * Route prefetching
 * File-system routing
-* CSS-in-JS styling (`styled-jsx`)
+* CSS-in-JS styling ([`styled-jsx`](https://github.com/zeit/styled-jsx))
 
 ## Setting up
 
@@ -95,15 +94,18 @@ npm run dev
   Check out [Manual Setup](https://nextjs.org/docs#manual-setup) to learn how.
 {% endAside %}
 
-The following embed shows the directory structure of a new Next.js app. Click **Remix to
-Edit** to play around with the code, and click **View App** to see the live page. The page
-will reload automatically after every edit you make.
+The following embed shows the directory structure of a new Next.js app.
 
-<iframe src="https://glitch.com/embed/#!/embed/new-next-app?path=index.html&attributionHidden=true" 
-        alt="A basic Next.js app on Glitch" 
-        style="height: 100%; width: 100%; border: 0;"></iframe>
+{% Instruction 'remix' %}
+{% Instruction 'preview' %}
 
-Notice that a `pages/` directory is created with a single file: `index.js`. Next.js follows
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe src="https://glitch.com/embed/#!/embed/new-next-app?path=index.html&attributionHidden=true"
+          alt="A basic Next.js app on Glitch"
+          style="height: 100%; width: 100%; border: 0;"></iframe>
+</div>
+
+Notice that a `pages/` directory is created with a single file: `index.jsx`. Next.js follows
 a file-system routing approach, where every page within this directory is served as a separate
 route. Creating a new file in this directory, such as `about.js`, will automatically create a
 new route (`/about`).
