@@ -19,6 +19,12 @@ layout: layout
     </div>
   </header>
 
+  {% if path.draft and site.env === 'dev' %}
+    <div class="w-banner w-banner--warning w-banner--body">
+      🚨 This path is a draft! 🚨
+    </div>
+  {% endif %}
+
   <section class="w-layout-container w-path-intro">
     <div class="w-path-intro__overview">
       <h2 class="w-headline--three no-link">Overview</h2>
