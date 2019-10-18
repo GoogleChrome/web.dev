@@ -44,11 +44,9 @@ There are several kinds of asides, each for a different purpose.
 ### Note asides
 
 ```text
-{% raw %}{% verbatim %}
-&#123;% Aside %&#125;
+{% raw %}{% verbatim %}&#123;% Aside %&#125;
 Use the note aside to provide supplemental information.
-&#123;% endAside %&#125;
-{% endverbatim %}{% endraw %}
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside %}
