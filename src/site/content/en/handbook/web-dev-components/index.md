@@ -44,9 +44,9 @@ There are several kinds of asides, each for a different purpose.
 ### Note asides
 
 ```text
-&#123;% Aside %&#125;
+{% raw %}{% verbatim %}&#123;% Aside %&#125;
 Use the note aside to provide supplemental information.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside %}
@@ -56,9 +56,9 @@ Use the note aside to provide supplemental information.
 ### Caution asides
 
 ```text
-&#123;% Aside 'caution' %&#125;
+{% raw %}{% verbatim %}&#123;% Aside 'caution' %&#125;
 Use the caution aside to indicate a potential pitfall or complication.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside 'caution' %}
@@ -68,10 +68,10 @@ Use the caution aside to indicate a potential pitfall or complication.
 ### Warning asides
 
 ```text
-&#123;% Aside 'warning' %&#125;
+{% raw %}{% verbatim %}&#123;% Aside 'warning' %&#125;
 The warning aside is stronger than a caution aside; use it to tell the reader
 not to do something.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside 'warning' %}
@@ -82,9 +82,9 @@ not to do something.
 ### Success asides
 
 ```text
-&#123;% Aside 'success' %&#125;
+{% raw %}{% verbatim %}&#123;% Aside 'success' %&#125;
 Use the success aside to describe a successful action or an error-free status.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside 'success' %}
@@ -94,10 +94,10 @@ Use the success aside to describe a successful action or an error-free status.
 ### Objective asides
 
 ```text
-&#123;% Aside 'objective' %&#125;
+{% raw %}{% verbatim %}&#123;% Aside 'objective' %&#125;
 Use the objective aside to define the goal of a process described in the body
 copy.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside 'objective' %}
@@ -108,10 +108,10 @@ copy.
 ### Gotcha asides
 
 ```text
-&#123;% Aside 'gotchas' %&#125;
+{% raw %}{% verbatim %}&#123;% Aside 'gotchas' %&#125;
 Use the gotcha aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside 'gotchas' %}
@@ -122,11 +122,11 @@ without specialized knowledge of the topic.
 ### Key-term asides
 
 ```text
-&#123;% Aside 'key-term' %&#125;
+{% raw %}{% verbatim %}&#123;% Aside 'key-term' %&#125;
 Use the key-term aside to define a term that's essential to understanding an
 idea in the body copy. Key-term asides should be a single sentence that
 includes the term in italics. For example, "A _portal_ is…"
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside 'key-term' %}
@@ -138,9 +138,9 @@ includes the term in italics. For example, "A _portal_ is…"
 ### Codelab asides
 
 ```text
-&#123;% Aside 'codelab' %&#125;
+{% raw %}{% verbatim %}&#123;% Aside 'codelab' %&#125;
 Use the codelab aside to link to an associated codelab.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Aside 'codelab' %}
@@ -149,11 +149,29 @@ Use the codelab aside to link to an associated codelab.
 
 ## Banner
 
-{% Banner %}This is an info banner with a <a href="#">link</a>.{% endBanner %}
+```text
+{% raw %}{% verbatim %}{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}{% endverbatim %}{% endraw %}
+```
 
-{% Banner 'caution' %}This is a caution banner with a <a href="#">link</a>.{% endBanner %}
+{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}
 
-{% Banner 'warning' %}This is a warning banner with a <a href="#">link</a>.{% endBanner %}
+```text
+{% raw %}{% verbatim %}{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}{% endverbatim %}{% endraw %}
+```
+
+{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}
+
+```text
+{% raw %}{% verbatim %}{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}{% endverbatim %}{% endraw %}
+```
+
+{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
+
+```text
+{% raw %}{% verbatim %}{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}{% endverbatim %}{% endraw %}
+```
+
+{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}
 
 ## Block quotes
 
@@ -222,7 +240,7 @@ See the [Code](/handbook/markup-code) post.
 ## Compare
 
 ```text
-&#123;% Compare 'worse' %&#125;
+{% raw %}{% verbatim %}&#123;% Compare 'worse' %&#125;
 &#96;&#96;&#96;text
 Bad code example
 &#96;&#96;&#96;
@@ -232,7 +250,7 @@ Bad code example
 &#96;&#96;&#96;text
 Good code example
 &#96;&#96;&#96;
-&#123;% endCompare %&#125;
+&#123;% endCompare %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Compare 'worse' %}
@@ -249,8 +267,8 @@ Good code example
 
 ### Compare with caption
 
-````html
-{% raw %}{% Compare 'worse' %}
+````text
+{% raw %}{% verbatim %}{% Compare 'worse' %}
 ```text
 Bad code example
 ```
@@ -270,7 +288,7 @@ Good code example
 Explanation of why `example` is good.
 {% endCompareCaption %}
 
-{% endCompare %}{% endraw %}
+{% endCompare %}{% endverbatim %}{% endraw %}
 ````
 
 {% Compare 'worse' %}
@@ -298,7 +316,7 @@ Explanation of why `example` is good.
 ### Compare with custom labels
 
 ```text
-&#123;% Compare 'worse', 'Unhelpful' %&#125;
+{% raw %}{% verbatim %}&#123;% Compare 'worse', 'Unhelpful' %&#125;
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
 massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
 nibh varius at.
@@ -308,7 +326,7 @@ nibh varius at.
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
 massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
 nibh varius at.
-&#123;% endCompare %&#125;
+&#123;% endCompare %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Compare 'worse', 'Unhelpful' %}
@@ -327,7 +345,7 @@ at.
 
 ````html
 <div class="w-columns">
-{% raw %}{% Compare 'worse' %}
+{% raw %}{% verbatim %}{% Compare 'worse' %}
 ```text
 Bad code example
 ```
@@ -347,7 +365,7 @@ Good code example
 Explanation of why `example` is good.
 {% endCompareCaption %}
 
-{% endCompare %}{% endraw %}
+{% endCompare %}{% endverbatim %}{% endraw %}
 </div>
 ````
 
@@ -384,7 +402,7 @@ assumenda perspiciatis.
 
 ### Basic details component
 ```text
-&#123;% Details %&#125;
+{% raw %}{% verbatim %}&#123;% Details %&#125;
 
 &#123;% DetailsSummary %&#125;
 Details _summary_
@@ -393,7 +411,7 @@ Details _summary_
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
-&#123;% endDetails %&#125;
+&#123;% endDetails %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Details %}
@@ -410,7 +428,7 @@ at.
 
 ### Details component with preview
 ```text/4-5
-&#123;% Details %&#125;
+{% raw %}{% verbatim %}&#123;% Details %&#125;
 
 &#123;% DetailsSummary %&#125;
 Details _summary_
@@ -421,7 +439,7 @@ of your panel text.
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
-&#123;% endDetails %&#125;
+&#123;% endDetails %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Details %}
@@ -449,7 +467,7 @@ For example, if the component is in an `h2` section,
 use an `h3` heading.
 
 ```text/2
-&#123;% Details %&#125;
+{% raw %}{% verbatim %}&#123;% Details %&#125;
 
 &#123;% DetailsSummary 'h3' %&#125;
 Details _summary_
@@ -458,7 +476,7 @@ Details _summary_
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
-&#123;% endDetails %&#125;
+&#123;% endDetails %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Details %}
@@ -479,7 +497,7 @@ If for some reason you want it open,
 add the `open` argument to the `Details` shortcode.
 
 ```text/0
-&#123;% Details 'open' %&#125;
+{% raw %}{% verbatim %}&#123;% Details 'open' %&#125;
 
 &#123;% DetailsSummary %&#125;
 Details _summary_
@@ -488,7 +506,7 @@ Details _summary_
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
-&#123;% endDetails %&#125;
+&#123;% endDetails %&#125;{% endverbatim %}{% endraw %}
 ```
 
 {% Details 'open' %}
