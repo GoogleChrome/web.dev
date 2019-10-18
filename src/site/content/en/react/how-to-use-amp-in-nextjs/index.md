@@ -29,7 +29,7 @@ AMP is a structured HTML framework that provides two important optimizations for
 * **AMP Cache**: A content cache used by some search engines, such as Google and Bing, that speeds
   up AMP page loads from search engine results pages
 
-Both of these techniques ensure that every AMP site remains performant. However, it’s
+Both of these techniques ensure that every AMP site remains performant. However, it's
 important to note that there are some restrictions imposed. For example, AMP does not allow
 custom synchronous JavaScript. Take a look at [How AMP works](https://amp.dev/about/how-amp-works/)
 to learn more about the restrictions and optimizations.
@@ -73,7 +73,7 @@ const Home = () => (
 export default Home;
 ```
 
-Let’s take a look at the following embed as an example:
+Let's take a look at the following embed as an example:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe src="https://glitch.com/embed/#!/embed/next-amp-start?attributionHidden=true&path=pages/index.js"
@@ -103,7 +103,7 @@ AMP-specific components only when the AMP page is loaded.
 
 #### How to conditionally serve AMP components
 
-AMP pages need to have their own set of valid components in place of many HTML elements. It’s
+AMP pages need to have their own set of valid components in place of many HTML elements. It's
 important to make sure that they are conditionally served only for the AMP page. Next.js provides a
 [hook] called `useAmp` to allow you to conditionally serve different elements depending on whether
 the AMP version of the page has loaded.
@@ -148,7 +148,7 @@ the AMP version of the page has loaded.
       </figcaption>
     </figure>
 
-1. Try using `useAmp` to render AMP’s replacement of the image tag, `amp-img`:
+1. Try using `useAmp` to render AMP's replacement of the image tag, `amp-img`:
 
     ```jsx/5-27
     import React from 'react';
@@ -186,7 +186,7 @@ the AMP version of the page has loaded.
 
 TODO start here
 
-    Notice that almost all of the same attributes and values are used for `amp-img` and `img`, but we’ve
+    Notice that almost all of the same attributes and values are used for `amp-img` and `img`, but we've
     included an additional `layout` attribute. AMP allows developers to control the layout of elements
     using this single attribute instead of relying on CSS. Using layout="responsive" automatically
     renders a fully responsive image with an aspect ratio specified by width and height.
@@ -212,7 +212,7 @@ With this example, loading the page will render a regular image or an AMP image 
 
 Instead of building hybrid AMP pages, Next.js also provides support for building AMP-first pages.
 With this approach, a single AMP page is served and rendered to users and search engines at all
-times. However, it’s important to note that only valid AMP components can be used for this.
+times. However, it's important to note that only valid AMP components can be used for this.
 
 To render an AMP-only page, change the value of the `amp` property in the config object to `true`.
 
