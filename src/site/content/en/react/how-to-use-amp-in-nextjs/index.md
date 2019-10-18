@@ -184,7 +184,7 @@ the AMP version of the page has loaded.
     export default Home;
     ```
 
-TODO start here
+    TODO start here
 
     Notice that almost all of the same attributes and values are used for `amp-img` and `img`, but we've
     included an additional `layout` attribute. AMP allows developers to control the layout of elements
