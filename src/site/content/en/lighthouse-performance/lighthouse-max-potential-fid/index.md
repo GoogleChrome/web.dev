@@ -75,8 +75,13 @@ This table shows how to interpret your TBT score:
 
 ## How to improve your Max Potential FID score
 
-See [How to improve your TTI score][tti]. The strategies for improving Max Potential FID are
+If you're trying to make major improvements to your Max Potential FID score, see
+[How to improve your TTI score][tti]. The strategies for majorly improving Max Potential FID are
 largely the same as the strategies for improving TTI.
+
+If you want to optimize your Max Potential FID score, you need to reduce the duration of your
+longest tasks, since that is what Max Potential FID specifically measures.
+[Idle Until Urgent](https://philipwalton.com/articles/idle-until-urgent/) is one way to do that.
 
 ## How to capture FID field data
 
