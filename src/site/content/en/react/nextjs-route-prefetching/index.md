@@ -16,7 +16,7 @@ Next.js uses file system based routing where you just create files and folders
 inside the `./pages/` directory:
 
 <figure class="w-figure--center">
-<img class="w-screenshot" src="./pages-directory.png" alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.">
+<img class="w-screenshot" src="./pages-directory.png/" alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.">
 </figure>
 
 To link to different pages, use the
@@ -58,8 +58,7 @@ In the example app, the `index.js` page links to `margherita.js` with a
 When you load `index.js`, the **Network** tab shows that `margherita.js` is
 downloaded too: 
 
-![Screenshot of DevTools Network tab with margherita.js
-highlighted.](network1.png)
+![Screenshot of DevTools Network tab with margherita.js highlighted.](network1.png)
 
 ## How it works
 
@@ -112,8 +111,7 @@ To inspect the network activity, follow the steps from the first example. When
 you load `index.js`, the DevTools **Network** tab shows that `margherita.js` is
 downloaded, but `pineapple-pizza.js` is not:
 
-![Screenshot of DevTools Network tab with margherita.js
-highlighted.](network2.png)
+![Screenshot of DevTools Network tab with margherita.js highlighted.](network2.png)
 
 ## Prefetching with custom routing
 
@@ -171,8 +169,7 @@ and to `false` on `/pineapple-pizza`.
 When you load `index.js`, the **Network** tab shows that `margherita.js` is
 downloaded and `pineapple-pizza.js` is not:
 
-![Screenshot of DevTools Network tab with margherita.js
-highlighted.](network3.png)
+![Screenshot of DevTools Network tab with margherita.js highlighted.](network3.png)
 
 When you click on either link, the **Console** logs "Having fun with Next.js."
 and navigates to the new route:
