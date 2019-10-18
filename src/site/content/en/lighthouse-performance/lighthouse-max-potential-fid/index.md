@@ -17,18 +17,20 @@ Each metric captures some aspect of page load speed.
 Lighthouse displays Max Potential FID in milliseconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="max-potential-fid.png" alt="A screenshot of the Lighthouse Max Potential First Input Delay audit">
+  <img class="w-screenshot" src="max-potential-fid.png" 
+       alt="A screenshot of the Lighthouse Max Potential First Input Delay audit.">
 </figure>
 
 ## What Max Potential FID measures
 
-Max Potential FID measures the duration of the
-[longest task](/long-tasks-devtools#what-are-long-tasks) after
-[First Contentful Paint][fcp]. It is meant to capture the worst case
-[First Input Delay][fid] that your users might experience. Tasks before
-First Contentful Paint are excluded because it's unlikely that a user will
-attempt to interact with your page before any content has been rendered to the screen,
-which is what First Contentful Paint measures.
+Max Potential FID measures the worst-case [First Input Delay][fid] that your users might experience.
+First Input Delay measures the time from when a user first interacts with your site, such as
+clicking a button, to the time when the browser is actually able to respond to that interaction.
+
+Lighthouse calculates Max Potential FID by finding the duration of the [longest task][longtask]
+after [First Contentful Paint][fcp]. Tasks before First Contentful Paint are excluded because it's
+unlikely that a user will attempt to interact with your page before any content has been rendered to
+the screen, which is what First Contentful Paint measures.
 
 ## How Lighthouse determines your Max Potential FID score
 
@@ -109,3 +111,4 @@ about how to evaluate the FID data you collect.
 [fid]: https://developers.google.com/web/updates/2018/05/first-input-delay
 [rum]: https://developers.google.com/web/fundamentals/performance/speed-tools#field_data
 [lab]: https://developers.google.com/web/fundamentals/performance/speed-tools#lab_data
+[longtask]: /long-tasks-devtools#what-are-long-tasks
