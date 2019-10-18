@@ -226,9 +226,11 @@ Related article: [Learn how to optimize speed with web.dev/fast](https://web.dev
 
 ### Results
 The hackathon approach is working well for them.
+
 - Performance bottleneck can be easily detected by actually trying out multiple approaches during the hackathon and measuring each one of them with Lighthouse.
 - After the hackathon, it's rather easy to convince the team which optimization they should be prioritizing for production release.
 - It's also an effective way of advocating the importance of speed. Every participant can understand the correlation between how you code and how it results in performance.
+
 A good side effect was that many other engineering teams within Recruit got interested in this hands-on approach and the AirSHIFT team is now facilitating multiple speed hackathons within the company.
 
 
