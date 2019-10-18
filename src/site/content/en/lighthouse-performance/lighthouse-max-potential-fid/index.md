@@ -79,7 +79,7 @@ largely the same as the strategies for improving TTI.
 ## How to capture FID field data
 
 Lighthouse's measurement of Max Potential FID is [lab data][lab]. To capture real
-Max Potential FID data as your users load your pages, use Google's 
+FID data as your users load your pages, use Google's 
 [First Input Delay library](https://github.com/GoogleChromeLabs/first-input-delay).
 Once you're capturing FID data, you can report it as an event
 to your preferred analytics tool.
