@@ -156,7 +156,20 @@ class SideNav extends BaseElement {
   }
 
   onBlockClicks(e) {
-    e.stopPropagation();
+    // When the SideNav is expanded we use a ::before element to render the
+    // overlay. Because the ::before element is a child of SideNav, and covers
+    // the entire page, we add a listener to SideNav to see if it was clicked
+    // on.
+    // If a link within the SideNav was clicked, we allow the click to happen so
+    // the router can know about it.
+    // If the SideNav's .web-side-nav__container was clicked, we block the click
+    // so the SideNav won't collapse.
+    // If the click was outside of the container/on the overlay, we close the
+    // SideNav.
+    const link = e.target.closest("a");
+    if (!link) {
+      e.stopPropagation();
+    }
   }
 
   onTransitionEnd() {
