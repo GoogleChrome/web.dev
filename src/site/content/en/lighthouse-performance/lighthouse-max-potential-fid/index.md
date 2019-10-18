@@ -79,9 +79,9 @@ If you're trying to make major improvements to your Max Potential FID score, see
 [How to improve your TTI score][tti]. The strategies for majorly improving Max Potential FID are
 largely the same as the strategies for improving TTI.
 
-If you want to optimize your Max Potential FID score, you need to reduce the duration of your
-longest tasks, since that is what Max Potential FID specifically measures.
-[Idle Until Urgent](https://philipwalton.com/articles/idle-until-urgent/) is one way to do that.
+If you want to optimize your Max Potential FID score specifically, you need to reduce the duration
+of your longest tasks, since that is what Max Potential FID technically measures. The [Idle Until
+Urgent](https://philipwalton.com/articles/idle-until-urgent/) strategy is one way to do that.
 
 ## How to capture FID field data
 
@@ -105,9 +105,7 @@ about how to evaluate the FID data you collect.
 - [Time to Interactive](/interactive/)
 - [Are long JavaScript tasks delaying your Time to Interactive?](/long-tasks-devtools)
 - [First paint and first contentful paint][fcp]
-- [First Input Delay][fid]
-- [Lab data][lab]
-- [Field data][rum]
+- [How To Think About Speed Tools][tools]
 
 [analysis]: https://developers.google.com/web/updates/2018/05/first-input-delay#analyzing_and_reporting_on_fid_data
 [fid]: https://developers.google.com/web/updates/2018/05/first-input-delay
@@ -117,3 +115,4 @@ about how to evaluate the FID data you collect.
 [rum]: https://developers.google.com/web/fundamentals/performance/speed-tools#field_data
 [lab]: https://developers.google.com/web/fundamentals/performance/speed-tools#lab_data
 [longtask]: /long-tasks-devtools#what-are-long-tasks
+[tools]: https://developers.google.com/web/fundamentals/performance/speed-tools
