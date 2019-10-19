@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to use AMP in Next.js
+title: How to use AMP in Next.js (and why)
 authors:
   - houssein
 subhead: |
