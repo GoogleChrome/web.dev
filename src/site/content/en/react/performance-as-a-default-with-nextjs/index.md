@@ -152,4 +152,4 @@ Every other guide in this collection will explore a specific Next.js feature in 
 [collection]: /react
 [cra]: https://create-react-app.dev/
 [ssr]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web#server-rendering
-[amp]: /how-to-use-amp-in-nextjs
+[amp]: /how-to-use-amp-in-nextjs-and-why
