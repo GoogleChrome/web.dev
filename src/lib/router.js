@@ -35,6 +35,23 @@ async function getPage(url) {
 }
 
 /**
+ * Force the user's cursor to the target element.
+ *
+ * @param {?Element} el
+ */
+function forceFocus(el) {
+  if (!el) {
+    // do nothing
+  } else if (el.hasAttribute("tabindex")) {
+    el.focus();
+  } else {
+    el.tabIndex = -1;
+    el.focus();
+    el.deleteAttribute("tabindex");
+  }
+}
+
+/**
  * Swap the current page for a new one.
  * @param {string} url url of the page to swap.
  * @return {Promise}
@@ -85,7 +102,7 @@ async function swapContent(url) {
   // Update the page title
   document.title = page.title;
   // Focus on the first title (or fallback to content itself)
-  (content.querySelector("h1, h2, h3, h4, h6, h6") || content).focus();
+  forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
   // Scroll to top
   document.scrollingElement.scrollTop = 0;
 }
