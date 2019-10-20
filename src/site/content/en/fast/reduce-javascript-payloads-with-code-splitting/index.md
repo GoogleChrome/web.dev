@@ -32,7 +32,7 @@ Split the JavaScript bundle to only send the code needed for the initial route w
 user loads an application. This minimizes the amount of script that needs to be
 parsed and compiled, which results in faster page load times.
 
-Popular module bundlers like [webpack](https://webpack.js.org/),
+Popular module bundlers like [webpack](https://webpack.js.org/guides/code-splitting/),
 [Parcel](https://parceljs.org/code_splitting.html), and
 [Rollup](https://rollupjs.org/guide/en#dynamic-import) allow you to split your
 bundles using [dynamic imports](https://developers.google.com/web/updates/2017/11/dynamic-import).

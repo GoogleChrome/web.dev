@@ -121,7 +121,7 @@ can make the build process take longer, especially if high compression levels
 are used, but ensures that no delays happen when the browser fetches the
 compressed resource.
 
-If you web server supports Brotli, use a plugin like
+If your web server supports Brotli, use a plugin like
 [BrotliWebpackPlugin](https://github.com/mynameiswhm/brotli-webpack-plugin) with
 webpack to compress your assets as part of your build step. Otherwise, use
 [CompressionPlugin](https://github.com/webpack-contrib/compression-webpack-plugin)
