@@ -6,6 +6,8 @@ importScripts(
 
 console.log("Got cache manifest", manifest);
 
+workbox.precaching.precache(["/offline/"]);
+
 /**
  * Match /foo-bar/ and "/foo-bar/as/many/of-these-as-you-like/".
  *
@@ -19,3 +21,11 @@ workbox.routing.registerRoute(
   new RegExp("/([\\w-]+/)*$"),
   new workbox.strategies.StaleWhileRevalidate(),
 );
+
+workbox.routing.setCatchHandler(({event}) => {
+  if (event.request.destination === "document") {
+    // TODO(samthor): Annotate this page so the client knows it's being displayed because the user
+    // is offline, and force it to rerequest when navigator.onLine is true.
+    return caches.match("/offline/");
+  }
+});
