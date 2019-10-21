@@ -26,10 +26,13 @@ const handlers = [
   express.static('dist/en'),
 ];
 
+// In development, Eleventy isn't guaranteed to have run, so read the actual
+// source file.
 const redirectsPath = isProd
     ? 'dist/en/_redirects.yaml'
     : 'src/site/content/en/_redirects.yaml';
 
+// Don't block loading the server if the redirect handler couldn't build.
 try {
   const redirectHandler = buildRedirectHandler(redirectsPath);
   handlers.push(redirectHandler);
