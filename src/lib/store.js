@@ -31,6 +31,7 @@ const initialState = {
   lighthouseError: null,
 
   currentUrl: window.location.pathname,
+  isOffline: false,
   isSideNavExpanded: false,
   isSearchExpanded: false,
 
