@@ -5,18 +5,18 @@ authors:
   - mihajlija
 subhead: |
   How Next.js speeds up navigations with route prefetching and how to customize it.
-date: 2019-10-17
+date: 2019-10-22
 draft: true
 ---
 
 ## The `<Link>` component
 
 In [Next.js](https://nextjs.org/), you don't need to set up routing manually.
-Next.js uses file system based routing where you just create files and folders
+Next.js uses file-system-based routing, which lets you just create files and folders
 inside the `./pages/` directory:
 
 <figure class="w-figure--center">
-<img class="w-screenshot" src="./pages-directory.png/" alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.">
+<img class="w-screenshot" src="./pages-directory.png" alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.">
 </figure>
 
 To link to different pages, use the
@@ -34,19 +34,20 @@ more for you. Normally, a page is downloaded when you follow a link to it, but
 [Next.js automatically prefetches](https://nextjs.org/docs#prefetching-pages)
 the JavaScript needed to render the page.
 
-When you load a page with a few links, the odds are that by the time you follow
+When you load a page with a few links, odds are that by the time you follow
 a link, the component behind it has already been fetched. This improves
 application responsiveness by making navigations to new pages quicker.
 
-In the example app, the `index.js` page links to `margherita.js` with a
-`<Link>`.
+In the example app below, the `index.js` page links to `margherita.js` with a
+`<Link>`:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/nextjs-prefetching?path=pages/index.js&attributionHidden=true" 
-        alt="A basic Next.js app on Glitch" 
+<iframe src="https://glitch.com/embed/#!/embed/nextjs-prefetching?path=pages/index.js&attributionHidden=true"
+        alt="A basic Next.js app on Glitch"
         style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
+Use Chrome DevTools to verify that `margherita.js` is prefetched:
 {% Instruction 'preview', 'ol' %}
 
 {% Instruction 'devtools-network', 'ol' %}
@@ -56,14 +57,14 @@ In the example app, the `index.js` page links to `margherita.js` with a
 {% Instruction 'reload-page', 'ol' %}
 
 When you load `index.js`, the **Network** tab shows that `margherita.js` is
-downloaded too: 
+downloaded too:
 
 ![Screenshot of DevTools Network tab with margherita.js highlighted.](network1.png)
 
-## How it works
+## How automatic prefetching works
 
-Next.js prefetches only links that appear in the viewport and uses [Intersection
-Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+Next.js prefetches only links that appear in the viewport and uses the [Intersection
+Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 to detect them. It also disables prefetching when the network connection is slow
 or when users have
 [`Save-Data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data)
@@ -72,7 +73,7 @@ rel="preload">`](/preload-critical-assets/) tags to download components for
 subsequent navigations.
 
 Next.js only *fetches* the JavaScript; it doesn't execute it. That way, it's not
-downloading any additional content that the page might request until you visit
+downloading any additional content that the prefetched page might request until you visit
 the link.
 
 {% Aside 'caution' %} Because prefetching depends on the browsing conditions,
@@ -81,7 +82,7 @@ check the `README.md` in Glitch examples. {% endAside %}
 
 {% Aside %} Because `<link rel="preload">` requests resources with high
 priority, the browser expects them to be used right away, which triggers
-**Console** warnings. [Priority
+Console warnings. [Priority
 hints](https://developers.google.com/web/updates/2019/02/priority-hints) will
 soon become available in Chrome, which will allow Next.js to indicate lower
 priority for resources that are not needed immediately with `<link rel="preload"
@@ -98,12 +99,12 @@ visited pages by setting the `prefetch` property on `<Link>` to `false`:
 </Link>
 ```
 
-In the second example app, the `index.js` page has a `<Link>` to
-`pineapple-pizza.js` with `prefetch` set to `false`. 
+In this second example app, the `index.js` page has a `<Link>` to
+`pineapple-pizza.js` with `prefetch` set to `false`:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/nextjs-noprefetch?path=pages/index.js:12:50&attributionHidden=true" 
-        alt="A basic Next.js app on Glitch" 
+<iframe src="https://glitch.com/embed/#!/embed/nextjs-noprefetch?path=pages/index.js:12:50&attributionHidden=true"
+        alt="A basic Next.js app on Glitch"
         style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
@@ -119,7 +120,7 @@ The `<Link>` component is suitable for most use cases, but you can also build
 your own component to do routing. Next.js makes this easy for you with the
 router API available in [`next/router`](https://nextjs.org/docs#userouter). If
 you want to do something (for example, submit a form) before navigating to a new
-route, you can define that in your custom routing code. 
+route, you can define that in your custom routing code.
 
 When you use custom components for routing, you can add prefetching to them too.
 To implement prefetching in your routing code, use the `prefetch` method from
@@ -128,8 +129,8 @@ To implement prefetching in your routing code, use the `prefetch` method from
 Take a look at `components/MyLink.js` in this example app:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/nextjs-routing?path=pages/index.js&attributionHidden=true" 
-        alt="A basic Next.js app on Glitch" 
+<iframe src="https://glitch.com/embed/#!/embed/nextjs-routing?path=components/MyLink.js&attributionHidden=true"
+        alt="A basic Next.js app on Glitch"
         style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
 
@@ -159,7 +160,7 @@ specified in `href`:
 
 In this example app, the `index.js` page has a `<MyLink>` to `margherita.js` and
 `pineapple-pizza.js`. The `prefetch` property is set to `true` on `/margherita`
-and to `false` on `/pineapple-pizza`. 
+and to `false` on `/pineapple-pizza`.
 
 ```js
 <MyLink href="/margherita" title="Margherita" prefetch={true} />
@@ -179,8 +180,8 @@ Next.js.'](console.png)
 
 ## Conclusion
 
-When you use `<Link>` Next.js automatically prefetches the JavaScript needed to
+When you use `<Link>`, Next.js automatically prefetches the JavaScript needed to
 render the linked page, which makes navigating to new pages faster. If you are
 using custom routing, you can use the Next.js router API to implement
-prefetching yourself. Be cautious of unecessary content download and disable
+prefetching yourself. Avoid downloading content unnecessarily by disabling
 prefetching for rarely visited pages.
