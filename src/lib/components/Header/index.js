@@ -34,8 +34,27 @@ class Header extends HTMLElement {
     store.unsubscribe(this.onStateChanged);
   }
 
-  onStateChanged({isSearchExpanded}) {
+  onStateChanged({isSearchExpanded, currentUrl}) {
     this.classList.toggle("web-header--has-expanded-search", isSearchExpanded);
+
+    // Ensure that the "active" attribute is applied to any matchind header
+    // link, or to none (for random subpages or articles).
+    const active = this.querySelector("[active]");
+    const updated = this.querySelector(
+      `[href="${currentUrl.replace(/"/g, '\\"')}"]`,
+    );
+
+    if (active === updated) {
+      return;
+    }
+
+    if (active) {
+      active.removeAttribute("active");
+    }
+
+    if (updated) {
+      updated.setAttribute("active", "");
+    }
   }
 
   /**

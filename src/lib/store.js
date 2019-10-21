@@ -30,6 +30,7 @@ const initialState = {
   // The most recent error from the Lighthouse CI, if any.
   lighthouseError: null,
 
+  currentUrl: window.location.pathname,
   isSideNavExpanded: false,
   isSearchExpanded: false,
 
