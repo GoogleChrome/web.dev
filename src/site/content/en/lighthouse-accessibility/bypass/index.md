@@ -10,38 +10,55 @@ web_lighthouse:
   - bypass
 ---
 
-Adding ways to bypass repetitive content
-lets keyboard users navigate the page more efficiently.
+For users who cannot use a mouse,
+content that's repeated on pages across your site
+can make navigation difficult.
+For example, screen reader users may have to move through many links in a navigation menu
+to get to the main content of the page.
+
+Providing a way to bypass repetitive content makes non-mouse navigation easier.
 
 ## How this Lighthouse audit fails
 
-Lighthouse flags pages that don't contain a heading, [skip link](/headings-and-landmarks#bypass-repetitive-content-with-skip-links),
-or landmark region:
+Lighthouse flags pages that don't provide a way to skip repetitive content:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="bypass.png" alt="Lighthouse audit showing page doesn't contain a heading, skip link, or landmark region">
 </figure>
 
+Lighthouse checks that the page contains at least one of the following:
+- A `<heading>` element
+- A [skip link](/headings-and-landmarks#bypass-repetitive-content-with-skip-links)
+- A [landmark](/headings-and-landmarks/#use-landmarks-to-aid-navigation)
+
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
 ## How to improve keyboard navigation
 
-It's simple to pass the Lighthouse audit:
-include either an internal [skip link](/headings-and-landmarks#bypass-repetitive-content-with-skip-links),
-a heading, or a landmark region.
+Passing the Lighthouse audit is straightforward:
+add a heading,
+a [skip link](/headings-and-landmarks#bypass-repetitive-content-with-skip-links),
+or a [landmark](/headings-and-landmarks/#use-landmarks-to-aid-navigation)
+to your page.
 
-But to truly fix the problem,
-use correct heading and landmark elements on the entire page.
-By doing this,
-you are greatly improving the navigation experience
-for users of assistive technology.
-See [Headings and landmarks](/headings-and-landmarks).
+However, to meaningfully improve the navigational experience
+for assistive technology users,
+- Place all page content inside a landmark element.
+- Make sure each landmark accurately reflects the kind of content it contains.
+- Provide a skip link.
+
+{% Aside %}
+While most screen readers allow users to navigate by landmarks,
+other assistive technologies, like [switch devices](https://en.wikipedia.org/wiki/Switch_access),
+only allow users to move through each element in the tab order one at a time.
+So, it's important to provide both landmarks and skip links whenever possible.
+{% endAside %}
 
 In this example,
-all content is inside of a landmark,
-headings outline the page,
+all content is inside a landmark,
+the headings create an outline of the page's content,
 no headings are skipped,
-and repetitive content is bypassed:
+and a skip link is provided to skip the navigation menu:
 
 ```html
 <!DOCTYPE html>
@@ -85,6 +102,10 @@ and repetitive content is bypassed:
 </html>
 ```
 
+You usually don't want to show the skip link to mouse users,
+so it's conventional to use CSS to hide it offscreen until it receives
+[focus](/keyboard-access/#focus-and-the-tab-order):
+
 ```css
 /* style.css */
 .skip-link {
@@ -101,6 +122,9 @@ and repetitive content is bypassed:
   top: 0;
 }
 ```
+
+See the [Headings and landmarks](/headings-and-landmarks) post for more
+information.
 
 ## Resources
 
