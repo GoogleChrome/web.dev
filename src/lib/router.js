@@ -67,7 +67,12 @@ async function swapContent(url) {
     window.location.href = window.location.href;
     throw e;
   } finally {
-    store.setState({isPageLoading: false});
+    // We set the currentUrl in global state _after_ the page has loaded. This
+    // is different than the History API itself which transitions immediately.
+    store.setState({
+      isPageLoading: false,
+      currentUrl: url,
+    });
   }
   // Remove the current #content element
   main.querySelector("#content").remove();
