@@ -13,7 +13,8 @@ const domparser = new DOMParser();
  * @return {!Promise<?>}
  */
 async function loadEntrypoint(url) {
-  if (url === "measure") {
+  // Catch "/measure/" but also the trailing-slash-less "/measure" for safety.
+  if (url.match(/^\/measure($|\/)/)) {
     return import("./pages/measure.js");
   }
   return import("./pages/default.js");
