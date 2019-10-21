@@ -18,18 +18,22 @@ to see the contents of a web page.
 
 ## How the Lighthouse browser zoom audit fails
 
-Lighthouse flags pages that disable text scaling and zooming:
+Lighthouse flags pages that disable browser zooming:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="meta-viewport.png" alt="Lighthouse audit showing the viewport disables text scaling and zooming">
 </figure>
+
+A page fails the audit if it contains a `<meta name="viewport">` tag with either of the following:
+- A `content` attribute with a `user-scalable="no"` parameter
+- A `content` attribute with a `maximum-scale` paramater set to less than `5`
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
 ## How to avoid disabling browser zoom
 
 Remove the `user-scalable="no"` parameter from the viewport meta tag and
-make sure the `maximum-scale parameter` parameter is 5 or greater.
+make sure the `maximum-scale` parameter is set to `5` or greater.
 
 ## Resources
 
