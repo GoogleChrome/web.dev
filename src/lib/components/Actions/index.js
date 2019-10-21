@@ -64,7 +64,7 @@ class Actions extends BaseElement {
   get shareText() {
     let authorText = "";
 
-    const authors = this.authors.split(/\s+/).filter(Boolean);
+    const authors = this.authors.split(/\|/).filter(Boolean);
     if (authors.length) {
       // ListFormat isn't widely supported; feature-detect it first
       if ("ListFormat" in Intl) {
@@ -127,7 +127,7 @@ class Actions extends BaseElement {
   }
 
   render() {
-    const actions = this.actions.split(/\s+/).filter(Boolean);
+    const actions = this.actions.split(/\|/).filter(Boolean);
     const parts = [];
 
     if (actions.indexOf("share") !== -1) {

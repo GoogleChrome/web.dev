@@ -11,7 +11,7 @@
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions actions="share subscribe" authors="{% authors | expandContributors %}"></web-actions>
+  <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
 
   <div class="w-layout-container--narrow w-post-breadcrumbs">
     {% Breadcrumbs path %}
