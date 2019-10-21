@@ -21,6 +21,20 @@ async function loadEntrypoint(url) {
 }
 
 /**
+ * Fetch a page as an html string.
+ * @param {string} url url of the page to fetch.
+ * @return {Promise<string>}
+ */
+async function getPage(url) {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw res.status;
+  }
+  const text = await res.text();
+  return domparser.parseFromString(text, "text/html");
+}
+
+/**
  * Swap the current page for a new one.
  * @param {string} url url of the page to swap.
  * @return {Promise}
@@ -42,37 +56,14 @@ async function swapContent(url) {
 
   const main = document.querySelector("main");
 
-  // Grab the new page content.
+  // Grab the new page content
   let page;
   try {
-    let offlineResponse = false;
-    let response;
-    try {
-      response = await fetch(url);
-      store.setState({isOffline: false});
-    } catch (e) {
-      // Assume raw fetch exceptions are network failures.
-      store.setState({isOffline: true});
-
-      // This should be handled by the Service Worker. If it also fails, the SW
-      // isn't installed or isn't working, so cause a real error.
-      response = await fetch("/offline/");
-      offlineResponse = true;
-    }
-
-    if (!response.ok) {
-      throw response.status;
-    }
-    const text = await response.text();
-    page = domparser.parseFromString(text, "text/html");
-
-    // If this wasn't the offline page, wait for the entrypoint, which has been
-    // happily loading in the background.
-    if (!offlineResponse) {
-      await entrypointPromise;
-    }
+    page = await getPage(url);
+    await entrypointPromise;
   } catch (e) {
-    // If something fails, just make a browser URL change.
+    // If something fails, just make a browser URL change
+    // TODO(robdodson): In future, failure pages might be HTML themselves
     window.location.href = window.location.href;
     throw e;
   } finally {
@@ -83,7 +74,6 @@ async function swapContent(url) {
       currentUrl: url,
     });
   }
-
   // Remove the current #content element
   main.querySelector("#content").remove();
   // Swap in the new #content element
