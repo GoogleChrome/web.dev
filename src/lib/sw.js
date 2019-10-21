@@ -26,6 +26,8 @@ workbox.routing.registerRoute(
 
 workbox.routing.setCatchHandler(({event}) => {
   if (event.request.destination === 'document') {
+    // TODO(samthor): Annotate this page so the client knows it's being displayed because the user
+    // is offline, and force it to rerequest when navigator.onLine is true.
     return caches.match('/offline/');
   }
 });
