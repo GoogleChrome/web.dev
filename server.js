@@ -14,13 +14,30 @@
  * limitations under the License.
  */
 
+const isProd = Boolean(process.env.GAE_APPLICATION);
+
 const express = require('express');
+const buildRedirectHandler = require('./redirect-handler.js');
+
 const app = express();
 
-app.use(
+const handlers = [
   express.static('dist'),
   express.static('dist/en'),
-);
+];
+
+const redirectsPath = isProd
+    ? 'dist/en/_redirects.yaml'
+    : 'src/site/content/en/_redirects.yaml';
+
+try {
+  const redirectHandler = buildRedirectHandler(redirectsPath);
+  handlers.push(redirectHandler);
+} catch (e) {
+  console.warn(e);
+}
+
+app.use(...handlers);
 
 const listener = app.listen(process.env.PORT || 8080, () => {
   // eslint-disable-next-line
