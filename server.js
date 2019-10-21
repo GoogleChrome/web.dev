@@ -14,13 +14,32 @@
  * limitations under the License.
  */
 
-const express = require('express');
-const app = express();
+const isProd = Boolean(process.env.GAE_APPLICATION);
 
-app.use(
+const express = require('express');
+const buildRedirectHandler = require('./redirect-handler.js');
+
+const handlers = [
   express.static('dist'),
   express.static('dist/en'),
-);
+];
+
+// In development, Eleventy isn't guaranteed to have run, so read the actual
+// source file.
+const redirectsPath = isProd
+    ? 'dist/en/_redirects.yaml'
+    : 'src/site/content/en/_redirects.yaml';
+
+// Don't block loading the server if the redirect handler couldn't build.
+try {
+  const redirectHandler = buildRedirectHandler(redirectsPath);
+  handlers.push(redirectHandler);
+} catch (e) {
+  console.warn(e);
+}
+
+const app = express();
+app.use(...handlers);
 
 const listener = app.listen(process.env.PORT || 8080, () => {
   // eslint-disable-next-line
