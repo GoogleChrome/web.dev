@@ -117,6 +117,8 @@ class Search extends BaseElement {
         return "";
       }
 
+      // This is intentionally NOT "site:web.dev", as users can have a broader
+      // result set that way. We tend to come up first regardless.
       const query = "web.dev " + this.query.trim();
       const searchUrl =
         "https://google.com/search?q=" + window.encodeURIComponent(query);
@@ -124,7 +126,15 @@ class Search extends BaseElement {
         <div class="web-search-popout">
           <div class="web-search-popout__heading">
             There are no suggestions for your query&mdash;try
-            <a target="_blank" href=${searchUrl}>Google search</a>
+            <a
+              data-category="web.dev"
+              data-label="search, open Google"
+              data-action="click"
+              target="_blank"
+              href=${searchUrl}
+            >
+              Google search
+            </a>
           </div>
         </div>
       `;
