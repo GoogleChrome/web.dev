@@ -22,7 +22,8 @@ function isWebShareSupported() {
 }
 
 /**
- * Renders configurable per-page actions.
+ * Renders configurable per-page actions. This is expected to be created by
+ * page content.
  *
  * @extends {BaseElement}
  * @final
@@ -32,6 +33,8 @@ class Actions extends BaseElement {
     return {
       // Space-separated list of actions to support
       actions: {type: String},
+      // Handles of authors of this page, including "@" if e.g. a Twitter user
+      authors: {type: String},
       // Whether the Web Share API is supported
       webShareSupported: {type: Boolean},
     };
@@ -44,8 +47,8 @@ class Actions extends BaseElement {
 
   onWebShare() {
     navigator.share({
-      url: window.location.href,
-      text: document.title,
+      url: this.shareUrl,
+      text: this.shareText,
     });
   }
 
@@ -54,11 +57,35 @@ class Actions extends BaseElement {
     window.open(e.target.href, "share-twitter", "width=550,height=235");
   }
 
+  get shareUrl() {
+    return window.location.href;
+  }
+
+  get shareText() {
+    let authorText = "";
+
+    const authors = this.authors.split(/\s+/).filter(Boolean);
+    if (authors.length) {
+      // ListFormat isn't widely supported; feature-detect it first
+      if ("ListFormat" in Intl) {
+        const il = new Intl.ListFormat("en");
+        authorText = ` by ${il.format(authors)}`;
+      } else {
+        authorText = ` by ${il.join(", ")}`;
+      }
+    }
+
+    return document.title + authorText;
+  }
+
   get shareTemplate() {
     if (this.webShareSupported) {
       return html`
         <button
-          class="w-actions__fab w-actions__fab--share"
+          class="w-actions__fab w-actions__fab--share gc-analytics-event"
+          data-category="web.dev"
+          data-label="share, web"
+          data-action="click"
           @click=${this.onWebShare}
         >
           <span>Share</span>
@@ -68,11 +95,14 @@ class Actions extends BaseElement {
 
     // Otherwise, fall back to a Twitter popup.
     const url = new URL("https://twitter.com/share");
-    url.searchParams.set("url", window.location.href);
-    url.searchParams.set("text", document.title);
+    url.searchParams.set("url", this.shareUrl);
+    url.searchParams.set("text", this.shareText);
     return html`
       <a
-        class="w-actions__fab w-actions__fab--share"
+        class="w-actions__fab w-actions__fab--share gc-analytics-event"
+        data-category="web.dev"
+        data-label="share, twitter"
+        data-action="click"
         href="${url}"
         target="_blank"
         @click=${this.onTwitterShare}
@@ -85,7 +115,10 @@ class Actions extends BaseElement {
   get subscribeTemplate() {
     return html`
       <a
-        class="w-actions__fab w-actions__fab--subscribe"
+        class="w-actions__fab w-actions__fab--subscribe gc-analytics-event"
+        data-category="web.dev"
+        data-label="subscribe, newsletter"
+        data-action="click"
         href="https://web.dev/subscribe"
       >
         <span>Subscribe</span>
