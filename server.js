@@ -19,8 +19,6 @@ const isProd = Boolean(process.env.GAE_APPLICATION);
 const express = require('express');
 const buildRedirectHandler = require('./redirect-handler.js');
 
-const app = express();
-
 const handlers = [
   express.static('dist'),
   express.static('dist/en'),
@@ -40,6 +38,7 @@ try {
   console.warn(e);
 }
 
+const app = express();
 app.use(...handlers);
 
 const listener = app.listen(process.env.PORT || 8080, () => {
