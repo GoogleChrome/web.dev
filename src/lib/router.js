@@ -63,7 +63,6 @@ async function swapContent(url) {
     await entrypointPromise;
   } catch (e) {
     // If something fails, just make a browser URL change
-    // TODO(robdodson): In future, failure pages might be HTML themselves
     window.location.href = window.location.href;
     throw e;
   } finally {
