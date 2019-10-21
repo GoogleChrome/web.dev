@@ -72,6 +72,7 @@ web-search {
 
   .web-search__input-wrapper {
     align-items: center;
+    background: $WHITE;  // This visually hides the top nav links when open
     color: $GREY_700;
     display: none;
     height: 100%;
