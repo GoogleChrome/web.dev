@@ -15,10 +15,6 @@ built-in for free. If you're building _custom_ interactive components, use the
 `tabindex` attribute to ensure that they're keyboard accessible.
 
 {% Aside %}
-{% include 'content/origin-trials.njk' %}
-{% endAside %}
-
-{% Aside %}
 Whenever possible, use a native HTML element rather than building your
 own custom version. `<button>`, for example, is very easy to style and
 already has full keyboard support. This will save you from needing to manage
