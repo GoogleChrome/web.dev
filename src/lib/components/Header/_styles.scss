@@ -104,6 +104,10 @@ web-header {
     margin: 0;
     padding: 0 24px;
     position: relative;
+
+    &[active] {
+      box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+    }
   }
 
   .web-header__link:hover,

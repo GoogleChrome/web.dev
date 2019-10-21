@@ -37,8 +37,10 @@ web-search {
     border: none;
     box-shadow: none;
     color: $GREY_700;
+    cursor: pointer;
     padding: 0 8px;
     transition: none;
+    background: transparent;
 
     @include bp(md) {
       display: none;
@@ -72,6 +74,7 @@ web-search {
 
   .web-search__input-wrapper {
     align-items: center;
+    background: $WHITE;  // This visually hides the top nav links when open
     color: $GREY_700;
     display: none;
     height: 100%;
