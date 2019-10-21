@@ -13,5 +13,6 @@ import "../components/LighthouseScoresMetrics";
 import "../components/LighthouseScoresStats";
 import "../components/UrlChooser";
 import "../components/UrlChooserContainer";
+import "../components/SigninButton";
 
 import "../app";
