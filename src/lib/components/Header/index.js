@@ -21,6 +21,8 @@
 import {store} from "../../store";
 import {expandSideNav} from "../../actions";
 
+const locationEvents = ["pushstate", "popstate", "replacestate"];
+
 class Header extends HTMLElement {
   connectedCallback() {
     this.hamburgerBtn = this.querySelector(".web-header__hamburger-btn");
@@ -28,14 +30,46 @@ class Header extends HTMLElement {
 
     this.onStateChanged = this.onStateChanged.bind(this);
     store.subscribe(this.onStateChanged);
+
+    this.onUrlChanged = this.onUrlChanged.bind(this);
+    locationEvents.forEach((type) =>
+      window.addEventListener(type, this.onUrlChanged),
+    );
+
+    this.onUrlChanged();
   }
 
   disconnectedCallback() {
     store.unsubscribe(this.onStateChanged);
+
+    locationEvents.forEach((type) =>
+      window.removeEventListener(type, this.onUrlChanged),
+    );
   }
 
   onStateChanged({isSearchExpanded}) {
     this.classList.toggle("web-header--has-expanded-search", isSearchExpanded);
+  }
+
+  /**
+   * Ensures that the only active link has the "active" attribute applied.
+   */
+  onUrlChanged() {
+    const active = this.querySelector("[active]");
+    const pathname = window.location.pathname;
+    const updated = this.querySelector(`[href="${pathname}"]`);
+
+    if (active === updated) {
+      return;
+    }
+
+    if (active) {
+      active.removeAttribute("active");
+    }
+
+    if (updated) {
+      updated.setAttribute("active", "");
+    }
   }
 
   /**
