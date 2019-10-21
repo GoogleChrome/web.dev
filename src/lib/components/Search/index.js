@@ -43,6 +43,7 @@ class Search extends BaseElement {
     this.showHits = false;
     this.cursor = -1;
     this.query = "";
+    this.timeout = 0;
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
     // actions immediately. On larger screens we need to wait for the searchbox
@@ -107,8 +108,36 @@ class Search extends BaseElement {
 
   /* eslint-disable indent */
   get hitsTemplate() {
-    if (!(this.hits && this.hits.length && this.showHits)) {
+    if (!this.showHits) {
       return "";
+    }
+
+    if (!this.hits.length) {
+      if (!this.query) {
+        return "";
+      }
+
+      // This is intentionally NOT "site:web.dev", as users can have a broader
+      // result set that way. We tend to come up first regardless.
+      const query = "web.dev " + this.query.trim();
+      const searchUrl =
+        "https://google.com/search?q=" + window.encodeURIComponent(query);
+      return html`
+        <div class="web-search-popout">
+          <div class="web-search-popout__heading">
+            There are no suggestions for your query&mdash;try
+            <a
+              data-category="web.dev"
+              data-label="search, open Google"
+              data-action="click"
+              target="_blank"
+              href=${searchUrl}
+            >
+              Google search
+            </a>
+          </div>
+        </div>
+      `;
     }
 
     return html`
@@ -205,7 +234,10 @@ class Search extends BaseElement {
         return;
 
       case "Enter":
-        this.navigateToHit(this.hits[this.cursor]);
+        const hit = this.hits[this.cursor];
+        if (hit) {
+          this.navigateToHit(hit);
+        }
         return;
 
       case "Esc": // IE/Edge specific value
@@ -300,6 +332,7 @@ class Search extends BaseElement {
    */
   clear() {
     this.inputEl.value = "";
+    this.query = "";
   }
 
   /**
@@ -356,15 +389,13 @@ class Search extends BaseElement {
    * @param {FocusEvent} e focusout event object.
    */
   onFocusOut(e) {
-    // Check if the user's focus is moving to a link they just clicked on.
-    // If so, navigate to it before closing the popout.
+    // Check if the user's focus is moving to something that they just clicked
+    // on. If so, programatically click it before closing the popout.
     // Because focusout fires before click, if we try to wait for the click
-    // event then lit will have already deleted the link.
+    // event (~10's of ms later) then lit will have already deleted the link.
     const {relatedTarget} = e;
     if (relatedTarget) {
-      if (relatedTarget.classList.contains("web-search-popout__link")) {
-        this.navigateToHit({url: relatedTarget.href});
-      }
+      relatedTarget.click();
     }
 
     // If the user is tabbing quickly through the header then they may have
