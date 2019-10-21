@@ -22,11 +22,6 @@ const markdownItAnchor = require('markdown-it-anchor');
 const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
-const {
-  Actions,
-  ShareAction,
-  SubscribeAction,
-} = require(`./${componentsDir}/Actions`);
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Author = require(`./${componentsDir}/Author`);
@@ -125,7 +120,6 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // SHORTCODES
   //----------------------------------------------------------------------------
-  config.addPairedShortcode('Actions', Actions);
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Author', Author);
@@ -138,8 +132,6 @@ module.exports = function(config) {
   config.addShortcode('Instruction', Instruction);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
-  config.addShortcode('ShareAction', ShareAction);
-  config.addShortcode('SubscribeAction', SubscribeAction);
   config.addShortcode('YouTube', YouTube);
 
   // https://www.11ty.io/docs/config/#configuration-options
