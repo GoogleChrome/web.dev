@@ -1,7 +1,6 @@
 import {store} from "./store";
 import "./utils/underscore-import-polyfill";
 
-let isFirstRun = true;
 const domparser = new DOMParser();
 
 /**
@@ -65,9 +64,10 @@ function forceFocus(el) {
 /**
  * Swap the current page for a new one.
  * @param {string} url url of the page to swap.
- * @return {Promise}
+ * @param {boolean} isFirstRun whether this is the first run
+ * @return {!Promise<void>}
  */
-async function swapContent(url) {
+export async function swapContent(url, isFirstRun) {
   document.dispatchEvent(new CustomEvent("pageview", {detail: url}));
   const entrypointPromise = loadEntrypoint(url);
 
@@ -75,12 +75,13 @@ async function swapContent(url) {
   // route. We don't need this for the HTML of the initial page load so we
   // cancel it, but wait for the page's JS to load.
   if (isFirstRun) {
-    isFirstRun = false;
     await entrypointPromise;
     return;
   }
 
   store.setState({isPageLoading: true});
+
+  const main = document.querySelector("main");
 
   // Grab the new page content
   let page;
@@ -92,10 +93,6 @@ async function swapContent(url) {
       throw new Error(`no #content found: ${url}`);
     }
     await entrypointPromise;
-  } catch (e) {
-    // If something fails, just make a browser URL change
-    window.location.href = window.location.href;
-    throw e;
   } finally {
     // We set the currentUrl in global state _after_ the page has loaded. This
     // is different than the History API itself which transitions immediately.
@@ -117,70 +114,12 @@ async function swapContent(url) {
   store.setState({isPageLoading: false});
 }
 
-function rewritePath(url) {
+export function normalizeUrl(url) {
   if (url.endsWith("/index.html")) {
+    // If an internal link refers to "/foo/index.html", strip "index.html" and load.
     return url.slice(0, -"index.html".length);
   } else if (!url.endsWith("/")) {
+    // All web.dev pages end with "/".
     return `${url}/`;
-  } else {
-    return url;
   }
 }
-
-async function run() {
-  await swapContent(window.location.pathname, scrollTop);
-
-  if (window.location.hash) {
-    console.warn('should go to', window.location.hash);
-  }
-
-  const state = window.history.state;
-  const scrollTop = state && state.scrollTop || 0;
-  document.documentElement.scrollTop = scrollTop;
-  console.warn('restoring scrollTop', scrollTop);
-}
-
-function safeRun() {
-  run().catch((err) => {
-    // If something fails, just make a browser URL change
-    // TODO(robdodson): In future, failure pages might be HTML themselves
-    window.location.href = window.location.href;
-    throw err;
-  });
-}
-
-const router = {
-  listen() {
-    window.addEventListener('popstate', safeRun);
-
-    window.addEventListener('click', (e) => {
-      if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || e.button || e.defaultPrevented) {
-        return;
-      }
-      const link = e.target.closest('a[href]');
-      if (!link || link.target || link.host !== location.host) {
-        return;
-      }
-    
-      window.history.replaceState({
-        scrollTop: document.documentElement.scrollTop,
-      }, null, null);
-    
-      const url = new URL(link.href);
-      url.pathname = rewritePath(url.pathname) || url.pathname;
-
-      console.warn('storing scrollTop', document.documentElement.scrollTop, 'for', window.location.pathname);
-
-      window.history.pushState(null, null, url.toString());
-      e.preventDefault();
-      safeRun();
-    });
-
-    run().catch(null);  // ignore error
-  },
-  route(href) {
-    console.info('got href request', href);
-  },
-};
-
-export {router};
