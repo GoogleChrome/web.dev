@@ -249,7 +249,7 @@ whether all of your frontend code can be represented in AMP HTML:
   browse the [AMP component catalogue](https://amp.dev/documentation/components/) to see the
   custom components that the AMP community has built to solve common use cases.
 
-Even if an AMP-only approach won't work for your page1000, it might still be a good idea to
+Even if an AMP-only approach won't work for your page, it might still be a good idea to
 use AMP whenever possible, because of its guaranteed fastness. The Hybrid AMP approach
 provides a way to conditionally serve AMP without introducing a lot of complexity
 into your codebase.
