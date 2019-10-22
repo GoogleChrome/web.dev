@@ -47,7 +47,7 @@ function forceFocus(el) {
   } else {
     el.tabIndex = -1;
     el.focus();
-    el.deleteAttribute("tabindex");
+    el.removeAttribute("tabindex");
   }
 }
 
