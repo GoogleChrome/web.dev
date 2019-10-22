@@ -16,10 +16,13 @@ class SigninButton extends BaseStateElement {
       return "";
     }
 
+    // We don't set "disabled" attribute on the <button> based on this, because
+    // it causes a visual transition. Just disable the action while checking.
+    const action = this.checkingSignedInState ? null : signIn;
+
     return html`
       <button
-        .disabled=${this.checkingSignedInState}
-        @click=${signIn}
+        @click=${action}
         class="w-button w-button--secondary lh-signin-button gc-analytics-event"
         data-category="web.dev"
         data-label="measure, big sign-in"
