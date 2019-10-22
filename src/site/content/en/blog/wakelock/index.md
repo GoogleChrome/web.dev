@@ -10,8 +10,9 @@ updated: 2019-10-17
 tags:
   - post
   - capabilities
+  - fugu
+  - behind-a-flag
   - wake-lock
-draft: true
 ---
 
 {% Aside %}
