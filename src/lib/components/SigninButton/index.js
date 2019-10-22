@@ -6,17 +6,19 @@ import {BaseStateElement} from "../BaseStateElement";
 class SigninButton extends BaseStateElement {
   static get properties() {
     return {
-      show: {type: Boolean},
+      checkingSignedInState: {type: Boolean},
+      isSignedIn: {type: Boolean},
     };
   }
 
   render() {
-    if (!this.show) {
+    if (this.isSignedIn) {
       return "";
     }
 
     return html`
       <button
+        .disabled=${this.checkingSignedInState}
         @click=${signIn}
         class="w-button w-button--secondary lh-signin-button gc-analytics-event"
         data-category="web.dev"
@@ -61,7 +63,8 @@ class SigninButton extends BaseStateElement {
   }
 
   onStateChanged({checkingSignedInState, isSignedIn}) {
-    this.show = !checkingSignedInState && !isSignedIn;
+    this.checkingSignedInState = checkingSignedInState;
+    this.isSignedIn = isSignedIn;
   }
 }
 

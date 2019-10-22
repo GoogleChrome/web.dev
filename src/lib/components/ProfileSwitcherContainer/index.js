@@ -1,11 +1,10 @@
 import {html} from "lit-element";
 import {signIn} from "../../fb";
-import {store} from "../../store";
-import {BaseElement} from "../BaseElement";
+import {BaseStateElement} from "../BaseStateElement";
 import "../ProfileSwitcher";
 
 /* eslint-disable require-jsdoc */
-class ProfileSwitcherContainer extends BaseElement {
+class ProfileSwitcherContainer extends BaseStateElement {
   static get properties() {
     return {
       checkingSignedInState: {type: Boolean},
@@ -14,43 +13,29 @@ class ProfileSwitcherContainer extends BaseElement {
     };
   }
 
-  constructor() {
-    super();
-    this.onStateChanged = this.onStateChanged.bind(this);
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    store.subscribe(this.onStateChanged);
-    this.onStateChanged();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    store.unsubscribe(this.onStateChanged);
-  }
-
   render() {
-    if (this.checkingSignedInState) {
-      return "";
-    }
-
     if (this.isSignedIn) {
+      // nb. web-profile-switcher allows a null user
       return html`
         <web-profile-switcher .user="${this.user}"></web-profile-switcher>
       `;
-    } else {
-      return html`
-        <button class="w-profile-signin" @click="${signIn}">Sign in</button>
-      `;
     }
+
+    return html`
+      <button
+        class="w-profile-signin"
+        .disabled=${this.checkingSignedInState}
+        @click="${signIn}"
+      >
+        Sign in
+      </button>
+    `;
   }
 
-  onStateChanged() {
-    const state = store.getState();
-    this.checkingSignedInState = state.checkingSignedInState;
-    this.isSignedIn = state.isSignedIn;
-    this.user = state.user;
+  onStateChanged({checkingSignedInState, isSignedIn, user}) {
+    this.checkingSignedInState = checkingSignedInState;
+    this.isSignedIn = isSignedIn;
+    this.user = user;
   }
 }
 
