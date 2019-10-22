@@ -10,7 +10,7 @@ draft: true
 ---
 
 [AMP](https://amp.dev) (Accelerated Mobile Pages) is a web component framework that guarantees
-that your pages will load fast. [Next.js][intro] has built-in support for AMP.
+that guarantees fast page loads. [Next.js][intro] has built-in support for AMP.
 
 ## What will you learn?
 
