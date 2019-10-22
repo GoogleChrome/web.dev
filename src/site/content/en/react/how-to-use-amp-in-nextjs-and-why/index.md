@@ -245,9 +245,11 @@ whether all of your frontend code can be represented in AMP HTML:
 
 * Read [How AMP works](https://amp.dev/about/how-amp-works/) to understand AMP's high-level
   architectural restrictions and mandatory optimizations.
-* Read [HTML Tags][tags] to see what HTML tags AMP allows and prohibits, and
+* Read [HTML Tags][tags] to see what HTML tags AMP allows and prohibits,
   browse the [AMP component catalogue](https://amp.dev/documentation/components/) to see the
-  custom components that the AMP community has built to solve common use cases.
+  custom components that the AMP community has built to solve common use cases, and check
+  out [amp-script] to learn how to use custom JavaScript to implement features that AMP
+  doesn't currently support.
 
 Even if an AMP-only approach won't work for your page, it might still be a good idea to
 use AMP whenever possible, because of its guaranteed fastness. The Hybrid AMP approach
@@ -270,3 +272,4 @@ other ways that you can optimize your Next.js app.
 [how]: https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached/#how-does-my-amp-page-get-cached?
 [layout]: https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout/
 [amp-img]: https://amp.dev/documentation/examples/components/amp-img/
+[amp-script]: https://amp.dev/documentation/components/amp-script/
