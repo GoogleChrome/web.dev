@@ -1,6 +1,12 @@
 let globalHandler;
-let globalCurrentUrl;
 let recentActiveUrl; // current URL not including hash
+
+/**
+ * @return {string} URL pathname plus optional search part
+ */
+function getUrl() {
+  return window.location.pathname + window.location.search;
+}
 
 /**
  * Brings the target element, or top scroll position, into view.
@@ -16,8 +22,24 @@ function scrollOnFrame(target) {
   }
 }
 
-function onState(e) {
-  const updatedUrl = globalCurrentUrl();
+/**
+ * The caller wants to change the active URL. Let them, without triggering any
+ * few loads.
+ *
+ * @param {!Event} e
+ */
+function onReplaceState(e) {
+  recentActiveUrl = getUrl();
+}
+
+/**
+ * The user has gone forward or back in the stack. Reload new content, or do
+ * nothing if it was just a hash change.
+ *
+ * @param {!Event} e
+ */
+function onPopState(e) {
+  const updatedUrl = getUrl();
   if (recentActiveUrl === updatedUrl) {
     // This was just a change in hash. Do nothing and let the browser run its
     // own behavior.
@@ -28,6 +50,11 @@ function onState(e) {
   globalHandler().then(() => scrollOnFrame(state ? state.scrollTop : 0));
 }
 
+/**
+ * Retain the current scroll position for forward/back stack changes.
+ *
+ * @param {!Event} e
+ */
 function onScroll() {
   const state = {
     scrollTop: document.documentElement.scrollTop,
@@ -35,6 +62,11 @@ function onScroll() {
   window.history.replaceState(state, null, null);
 }
 
+/**
+ * Click handler that intercepts potential URL changes via <a href="...">.
+ *
+ * @param {!MouseEvent} e
+ */
 function onClick(e) {
   if (
     e.ctrlKey ||
@@ -54,25 +86,23 @@ function onClick(e) {
     return;
   }
 
-  // Check if this is the same URL, but has a hash. If so, allow the *browser*
-  // to move to the correct target on the page.
-  const linkUrl = link.pathname + link.search;
-  const currentUrl = globalCurrentUrl();
-  if (linkUrl === currentUrl && link.hash) {
-    return;
+  if (route(link.href)) {
+    e.preventDefault();
   }
-
-  e.preventDefault();
-  route(linkUrl, link.hash);
 }
 
-export function listen(handler, normalize = () => {}) {
-  listen = () => {
-    throw new Error("listen can only be called once");
-  };
+/**
+ * Adds global page listeners for SPA routing.
+ *
+ * @param {function(string, boolean=): void} handler
+ */
+export function listen(handler) {
   if (!handler) {
     throw new Error("need handler");
   }
+  listen = () => {
+    throw new Error("listen can only be called once");
+  };
 
   globalHandler = () => {
     const url = window.location.pathname + window.location.search;
@@ -82,51 +112,43 @@ export function listen(handler, normalize = () => {}) {
       throw err;
     });
   };
-  globalCurrentUrl = (use = window.location) => {
-    let base = use.pathname + use.search;
-    base = normalize(base) || base;
-    return base;
-  };
 
-  window.addEventListener("popstate", onState);
+  window.addEventListener("replacestate", onReplaceState);
+  window.addEventListener("popstate", onPopState);
   window.addEventListener("click", onClick);
   window.addEventListener("scroll", onScroll, {passive: true});
 
-  // Store and normalize current URL.
-  recentActiveUrl = globalCurrentUrl();
-  window.history.replaceState(
-    null,
-    null,
-    recentActiveUrl + window.location.hash,
-  );
-
   // Don't catch errors for the first load.
+  recentActiveUrl = getUrl();
   handler(recentActiveUrl, true);
 }
 
 /**
- * Routes to the target URL and optional hash. This always loads the new page,
- * even if the URL is the same.
+ * Optionally routes to the target URL.
  *
- * @param {string} url in the form "/foo/?bar=123"
- * @param {string=} hash in the form "#foo"
+ * @param {string} url to load
+ * @return {boolean} whether a route happened and to prevent default behavior
  */
-export function route(url, hash = "") {
-  //  const u = new URL(url, window.location);
-  // TODO: rewrite paths?
-  //  url.pathname = rewritePath(url.pathname) || url.pathname;
-
-  const u = new URL(url, window.location);
-  recentActiveUrl = globalCurrentUrl(u);
-
-  if (hash && !hash.startsWith("#")) {
-    hash = `#${hash}`;
+export function route(url) {
+  if (!globalHandler) {
+    throw new Error("listen() not called");
   }
-  window.history.pushState(null, null, recentActiveUrl + hash);
+  const u = new URL(url, window.location);
+
+  // Check if this is the same URL, but has a hash. If so, allow the *browser*
+  // to move to the correct target on the page.
+  const candidateUrl = u.pathname + u.search;
+  if (candidateUrl === getUrl() && u.hash) {
+    return false;
+  }
+  recentActiveUrl = candidateUrl;
+
+  window.history.pushState(null, null, u);
   globalHandler().then(() => {
     // Since we're loading this page dynamically, look for the target hash-ed
     // element (if any) and scroll to it.
-    const target = document.getElementById(hash.substr(1)) || 0;
+    const target = document.getElementById(u.hash.substr(1)) || 0;
     return scrollOnFrame(target);
   });
+  return true;
 }

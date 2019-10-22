@@ -31,6 +31,16 @@ async function getPage(url) {
   return domparser.parseFromString(text, "text/html");
 }
 
+function normalizeUrl(url) {
+  if (url.endsWith("/index.html")) {
+    // If an internal link refers to "/foo/index.html", strip "index.html" and load.
+    return url.slice(0, -"index.html".length);
+  } else if (!url.endsWith("/")) {
+    // All web.dev pages end with "/".
+    return `${url}/`;
+  }
+}
+
 /**
  * Force the user's cursor to the target element, making it focusable if needed.
  * After the user blurs from the target, it will restore to its initial state.
@@ -70,6 +80,12 @@ function forceFocus(el) {
 export async function swapContent(url, isFirstRun) {
   document.dispatchEvent(new CustomEvent("pageview", {detail: url}));
   const entrypointPromise = loadEntrypoint(url);
+
+  // If we disagree with the URL we're loaded at, then replace it inline
+  const normalized = normalizeUrl(url);
+  if (normalized) {
+    window.history.replaceState(null, null, normalized);
+  }
 
   // When the router boots it will always try to run a handler for the current
   // route. We don't need this for the HTML of the initial page load so we
@@ -112,14 +128,4 @@ export async function swapContent(url, isFirstRun) {
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
 
   store.setState({isPageLoading: false});
-}
-
-export function normalizeUrl(url) {
-  if (url.endsWith("/index.html")) {
-    // If an internal link refers to "/foo/index.html", strip "index.html" and load.
-    return url.slice(0, -"index.html".length);
-  } else if (!url.endsWith("/")) {
-    // All web.dev pages end with "/".
-    return `${url}/`;
-  }
 }
