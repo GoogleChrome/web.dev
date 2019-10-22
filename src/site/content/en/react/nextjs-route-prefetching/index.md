@@ -59,7 +59,7 @@ Use Chrome DevTools to verify that `margherita.js` is prefetched:
 When you load `index.js`, the **Network** tab shows that `margherita.js` is
 downloaded too:
 
-![Screenshot of DevTools Network tab with margherita.js highlighted.](network1.png)
+![DevTools Network tab with margherita.js highlighted.](network1.png)
 
 ## How automatic prefetching works
 
@@ -112,7 +112,7 @@ To inspect the network activity, follow the steps from the first example. When
 you load `index.js`, the DevTools **Network** tab shows that `margherita.js` is
 downloaded, but `pineapple-pizza.js` is not:
 
-![Screenshot of DevTools Network tab with margherita.js highlighted.](network2.png)
+![DevTools Network tab with margherita.js highlighted.](network2.png)
 
 ## Prefetching with custom routing
 
@@ -140,9 +140,9 @@ Prefetching is done inside the
 `href` property gets prefetched when that `<MyLink>` is rendered:
 
 ```js
-  useEffect(() => {
+useEffect(() => {
     if (prefetch) router.prefetch(href)
-  });
+});
 ```
 
 When you click the link, the routing is done in `handleClick`. A message gets
@@ -150,11 +150,11 @@ logged to the console, and the `push` method navigates to the new route
 specified in `href`:
 
 ```js
-  const handleClick = e => {
+const handleClick = e => {
     e.preventDefault();
     console.log("Having fun with Next.js.");
     router.push(href);
-  };
+};
 
 ```
 
@@ -170,12 +170,12 @@ and to `false` on `/pineapple-pizza`.
 When you load `index.js`, the **Network** tab shows that `margherita.js` is
 downloaded and `pineapple-pizza.js` is not:
 
-![Screenshot of DevTools Network tab with margherita.js highlighted.](network3.png)
+![DevTools Network tab with margherita.js highlighted.](network3.png)
 
 When you click on either link, the **Console** logs "Having fun with Next.js."
 and navigates to the new route:
 
-![Screenshot of DevTools Console displaying the message 'Having fun with
+![DevTools Console displaying the message 'Having fun with
 Next.js.'](console.png)
 
 ## Conclusion
