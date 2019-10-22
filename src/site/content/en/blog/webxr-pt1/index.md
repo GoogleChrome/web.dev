@@ -182,7 +182,7 @@ The basic process for the frame loop is:
 1. Inside your callback function:
    1. Call `XRSession.requestAnimationFrame()` again.
    1. Query for the position (called a pose in WebXR) of the viewer.
-   1. Draw content from the viewer’s point of view..
+   1. Draw content from the viewer's point of view.
    1. Process user input.
 
 In this section I'll mainly cover steps 2a and 2b. I'll cover the remaining
