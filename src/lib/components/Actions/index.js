@@ -4,22 +4,7 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-
-function isWebShareSupported() {
-  if (!("share" in navigator)) {
-    return false;
-  }
-
-  // Ensure that the user would be able to share a reference URL.
-  // This is part of Web Share Level 2, so feature-detect it:
-  // https://bugs.chromium.org/p/chromium/issues/detail?id=903010
-  if ("canShare" in navigator) {
-    const url = `https://${window.location.hostname}`;
-    return navigator.canShare({url});
-  }
-
-  return true;
-}
+import {isWebShareSupported} from "../../utils/web-share";
 
 /**
  * Renders configurable per-page actions. This is expected to be created by
@@ -31,9 +16,9 @@ function isWebShareSupported() {
 class Actions extends BaseElement {
   static get properties() {
     return {
-      // Space-separated list of actions to support
+      // Pipe-separated list of actions to support
       actions: {type: String},
-      // Handles of authors of this page, including "@" if e.g. a Twitter user
+      // Pipe-seperated handles of authors of this page, including "@" if e.g. a Twitter user
       authors: {type: String},
       // Whether the Web Share API is supported
       webShareSupported: {type: Boolean},
@@ -64,7 +49,7 @@ class Actions extends BaseElement {
   get shareText() {
     let authorText = "";
 
-    const authors = this.authors.split(/\|/).filter(Boolean);
+    const authors = this._spiltPipes(this.authors);
     if (authors.length) {
       // ListFormat isn't widely supported; feature-detect it first
       if ("ListFormat" in Intl) {
@@ -127,7 +112,7 @@ class Actions extends BaseElement {
   }
 
   render() {
-    const actions = this.actions.split(/\|/).filter(Boolean);
+    const actions = this._spiltPipes(this.actions);
     const parts = [];
 
     if (actions.indexOf("share") !== -1) {
@@ -143,6 +128,17 @@ class Actions extends BaseElement {
         ${parts}
       </div>
     `;
+  }
+
+  /**
+   * @param {string} raw string separated by "|" symbols
+   * @return {!Array<string>}
+   */
+  _spiltPipes(raw) {
+    return raw
+      .split(/\|/)
+      .map((x) => x.trim())
+      .filter(Boolean);
   }
 }
 
