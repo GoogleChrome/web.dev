@@ -20,9 +20,9 @@
   outline: 1px solid $FOCUS_COLOR;
 }
 
+// Used when forcing focus cursor at a particular location on the page.
 .w-force-focus {
   outline: none !important;
-  background: red;
 }
 
 
