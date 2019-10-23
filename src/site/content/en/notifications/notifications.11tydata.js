@@ -9,7 +9,10 @@ module.exports = {
     title: 'Notifications',
     updated: 'October 23, 2019',
     description: `Use push notifications to engage users`,
-    overview: `In this section you'll learn how to create and send notifications. You'll add push capabilities to an app server, and use built-in APIs to subscribe to notifications, receive them from a server, and display them on screen.`,
+    overview: `In this section you'll learn how to create and send
+    notifications. You'll add push capabilities to an app server, and use
+    built-in APIs to subscribe to notifications, receive them from a server,
+    and display them on screen.`,
     topics: [
       {
         title: 'Notifications',

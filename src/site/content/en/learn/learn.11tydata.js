@@ -26,6 +26,9 @@ const lighthouseSeo = require(
   '../lighthouse-seo/lighthouse-seo.11tydata.js'
 ).path;
 
+const notifications = require(
+  '../notifications/notifications.11tydata.js'
+).path;
 
 // =============================================================================
 // LEARN OVERVIEW
@@ -43,6 +46,7 @@ module.exports = function() {
     secure,
     discoverable,
     installable,
+    notifications,
   ].filter(livePaths);
 
   const frameworks = [
