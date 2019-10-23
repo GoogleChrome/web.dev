@@ -13,10 +13,7 @@ override:tags: []
   {% endBanner %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions-controller page="blog"></web-actions-controller>
-  {% Actions %}
-    {% SubscribeAction %}
-  {% endActions %}
+  <web-actions actions="subscribe"></web-actions>
 
   <div class="w-layout-container w-pb--non">
     <header class="w-page-header">

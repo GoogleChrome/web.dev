@@ -14,19 +14,10 @@
  * limitations under the License.
  */
 
-const entrypointManifest = require('../../../entrypoint.hashmanifest.json');
-// https://github.com/surma/rollup-plugin-entrypoint-hashmanifest/issues/3
-const hash = entrypointManifest['src/lib/app.js'].split('.')[1];
-
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
   title: 'web.dev',
   titleVariation: 'Home',
   url: 'https://web.dev',
   repo: 'https://github.com/GoogleChrome/web.dev',
-  subscribe: 'https://web.dev/subscribe',
-  entrypoints: {
-    appJs: `app.${hash}.js`,
-    appCss: `app.${hash}.css`,
-  },
 };

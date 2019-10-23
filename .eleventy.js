@@ -22,11 +22,6 @@ const markdownItAnchor = require('markdown-it-anchor');
 const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
-const {
-  Actions,
-  ShareAction,
-  SubscribeAction,
-} = require(`./${componentsDir}/Actions`);
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Author = require(`./${componentsDir}/Author`);
@@ -52,6 +47,7 @@ const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const githubLink = require(`./${filtersDir}/github-link`);
+const expandContributors = require(`./${filtersDir}/expand-contributors`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
@@ -115,6 +111,7 @@ module.exports = function(config) {
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('githubLink', githubLink);
+  config.addFilter('expandContributors', expandContributors);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('stripBlog', stripBlog);
@@ -123,7 +120,6 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // SHORTCODES
   //----------------------------------------------------------------------------
-  config.addPairedShortcode('Actions', Actions);
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Author', Author);
@@ -136,8 +132,6 @@ module.exports = function(config) {
   config.addShortcode('Instruction', Instruction);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
-  config.addShortcode('ShareAction', ShareAction);
-  config.addShortcode('SubscribeAction', SubscribeAction);
   config.addShortcode('YouTube', YouTube);
 
   // https://www.11ty.io/docs/config/#configuration-options
