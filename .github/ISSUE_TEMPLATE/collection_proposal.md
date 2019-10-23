@@ -3,12 +3,12 @@ name: Propose a new collection
 about: Use this ticket when you are submitting a new collection for review.
 title: 'collection: <Add your title>'
 labels: content proposal
-assignees: ''
-
+assignees: 'kaycebasques'
 ---
 
-**Author**: @[Author's GitHub username.]
-**Reviewer**: [Leave blank. web.dev team will assign a reviewer.]
+**Author**: @[Author's GitHub username]
+**SME Reviewer**: @[SME's GitHub username]
+**web.dev Reviewer**: @[web.dev team will fill this out]
 
 **Process**
 

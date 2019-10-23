@@ -3,16 +3,16 @@ name: Propose a new post/codelab
 about: Use this ticket when you are submitting a new post or codelab for review.
 title: 'content: <Add your title>'
 labels: content proposal
-assignees: ''
-
+assignees: 'kaycebasques'
 ---
 
-**Author**: @[Author's GitHub username.]
-**Reviewer**: [Leave blank. web.dev team will assign a reviewer.]
+**Author**: @[Author's GitHub username]
+**SME Reviewer**: @[SME's GitHub username]
+**web.dev Reviewer**: @[web.dev team will fill this out]
 
 **Target publish date:** <yyyy-mm-dd>
-- [ ] Check this box if this is a hard deadline.
 
+- [ ] Check this box if this is a hard deadline.
 - [ ] Check this box if you'd like your reviewer to fix grammar and punctuation issues for you.
 
 **Process**
