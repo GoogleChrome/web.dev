@@ -10,7 +10,7 @@ draft: true
 ---
 
 [AMP](https://amp.dev) (Accelerated Mobile Pages) is a web component framework that guarantees
-that guarantees fast page loads. [Next.js][intro] has built-in support for AMP.
+fast page loads. [Next.js][intro] has built-in support for AMP.
 
 ## What will you learn?
 
@@ -48,12 +48,19 @@ There are two ways to use AMP in Next.js:
   Next.js page.
 * The [**AMP-only** approach](#amponly) lets you make AMP the only option for a page.
 
-{% Aside 'caution' %}
-  Whenever you serve AMP pages, you won't be able to run React components client-side because
-  React components are not valid AMP components.
-{% endAside %}
+Although Next.js is usually thought of as a React framework, it's important to understand that
+when you use Next.js to serve AMP pages, you can no longer run React components client-side because
+React components are not valid AMP components. In other words, Next.js is no longer a React
+framework but rather a server-side templating engine for generating AMP pages.
 
 ### How to create Hybrid AMP pages {: #hybrid }
+
+{% Aside 'caution' %}
+  The [AMP-only approach](#amponly) is the recommended path for using AMP with Next.js. The
+  Hybrid AMP approach described in this section has a higher maintenance cost than the AMP-only
+  approach because it requires you to maintain two versions of each page. You should only use this
+  approach if you're certain that the AMP-only approach won't work.
+{% endAside %}
 
 The **Hybrid AMP** approach creates an accompanying AMP version of any Next.js page. The regular
 page can always be accessed by your users but search engines will surface and cache the AMP version
@@ -252,9 +259,10 @@ whether all of your frontend code can be represented in AMP HTML:
   doesn't currently support.
 
 Even if an AMP-only approach won't work for your page, it might still be a good idea to
-use AMP whenever possible, because of its guaranteed fastness. The Hybrid AMP approach
-provides a way to conditionally serve AMP without introducing a lot of complexity
-into your codebase.
+use AMP whenever possible, because of the guaranteed fastness of AMP HTML and the AMP Caches.
+The Hybrid AMP approach in Next.js provides a way to conditionally serve AMP pages. However,
+it also creates a higher maintenance cost because it requires you to maintain
+two versions of each page.
 
 ## Next steps
 
