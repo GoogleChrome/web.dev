@@ -32,7 +32,7 @@ If Lighthouse doesn't receive the event within 10&nbsp;seconds, the audit fails.
 Once you've set up HTTPS,
 make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
 
-- Use [canonical links](https://web.dev/canonical) in the head of your HTML page
+- Use [canonical links](/canonical) in the head of your HTML page
   to help search engines figure out the best way to get to the page.
 - Configure your server to redirect HTTP traffic to HTTPS.
   See your server's documentation to figure out the best way to do this.

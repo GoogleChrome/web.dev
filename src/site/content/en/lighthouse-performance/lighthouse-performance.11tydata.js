@@ -26,7 +26,7 @@ module.exports = {
           'speed-index',
           'first-cpu-idle',
           'interactive',
-          'max-potential-fid',
+          'lighthouse-max-potential-fid',
           'lighthouse-total-blocking-time',
         ],
       },

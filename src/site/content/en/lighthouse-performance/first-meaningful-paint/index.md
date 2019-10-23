@@ -99,7 +99,7 @@ how to programmatically access FCP data and submit it to Google Analytics.
 
 See Google's [Assessing Loading Performance in Real Life with Navigation and Resource Timing](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/)
 for more on collecting real-user metrics.
-The [User Timing Marks and Measures Lighthouse audit](/user-timings)
+The [User Timing marks and measures Lighthouse audit](/user-timings)
 enables you to see User Timing data in your report.
 
 {% include 'content/lighthouse-performance/improve.njk' %}

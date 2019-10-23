@@ -1,50 +1,44 @@
 ---
 layout: post
-title: Ensure the lang attribute of the html element has a valid value
+title: "`<html>` element does not have a valid value for its `[lang]` attribute"
 description: |
-  Learn about html-lang-valid audit.
+  Learn how to make sure assistive technologies pronounce your web page's content
+  correctly by providing a valid value for the HTML element's lang attribute.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - html-lang-valid
 ---
 
-Specifying a valid
-[BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question)
-helps screen readers announce text properly.
-Lighthouse reports when the `<html>` element does not have a valid value
-for its `lang` attribute.
+{% include 'content/lighthouse-accessibility/lang-attr.njk' %}
 
-<!--
-***Todo*** I can't seem to get this audit to fail. Need to talk to Rob about this one.
-Basically it seems to default to html-has-lang failure,
-without any different in terms of validity.
+To ensure correct pronunciation of the page as a whole,
+you must specify a valid
+<a href="https://www.w3.org/International/questions/qa-choosing-language-tags#question" rel="noopener">BCP 47 language</a>
+for the `<html>` element.
+
+## How the Lighthouse invalid `<html>` `lang` value audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages whose `<html>` element doesn't have a valid value
+for its `lang` attribute:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="html-lang-valid.png" alt="Lighthouse audit showing <html> element does not have a valid value for its lang attribute">
-  <figcaption class="w-figcaption">
-    The <code>&lt;html></code> element does not have a valid value for its <code>lang</code> attribute.
+  <img class="w-screenshot" src="html-lang-valid.png"
+    alt="Lighthouse audit showing the html element has an invalid value for its lang attribute">
 </figure>
--->
-## How to fix this problem
 
-To fix this problem,
-use valid language codes in `lang` attributes.
-The language specified in the HTML document must be one of the valid languages
-to ensure text is pronounced correctly for screen reader users.
-For example, this sets the language of the document to English:
+Note that the [**`<html>` element does not have a `[lang]` attribute** audit](/html-has-lang)
+checks whether a `lang` attribute is present.
+This audit checks whether the _value_ for that attribute is valid.
 
-```html
-<html lang="en">
-```
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-Learn more in [lang attribute must have a valid value](https://dequeuniversity.com/rules/axe/3.3/valid-lang).
+## How to fix an invalid HTML `lang` attribute
 
-<!--
-## How this audit impacts overall Lighthouse score
+{% include 'content/lighthouse-accessibility/fix-lang-attr.njk' %}
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
+## Resources
 
-- [Ensure `lang` attribute of `<html>` element has valid value audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-lang-valid.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/html-lang-valid.js" rel="noopener">Source code for **`<html>` element does not have a valid value for its `[lang]` attribute** audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/html-lang-valid" rel="noopener">&#60;html&#62; element must have a valid value for the lang attribute (Deque University)</a>

@@ -1,46 +1,43 @@
 ---
 layout: post
-title: Ensure timed refreshes do not exist
+title: "The document uses `<meta http-equiv=\"refresh\">`"
 description: |
-  Learn about meta-refresh audit.
+  Learn why automatically refreshing your web page is bad for accessibility
+  and how to avoid it.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - meta-refresh
 ---
 
-Users do not expect a page to refresh automatically,
-and doing so will move focus back to the top of the page.
-This may create a frustrating or confusing experience.
-Lighthouse reports timed refreshes:
+The `<meta http-equiv="refresh">` tag causes a web page to refresh automatically
+after a specified amount of time.
+Users generally don't expect automatic refreshes,
+so they can be disorienting.
+Refreshing also moves [focus](/keyboard-access/#focus-and-the-tab-order)
+to the top of the page,
+which may frustrate or confuse users,
+particularly those who rely on screen readers or other assistive technologies.
 
+## How the Lighthouse automatic refresh audit fails
+
+Lighthouse flags pages that contain a `<meta>` tag with the `http-equiv="refresh"` attribute:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="meta-refresh.png" alt="Lighthouse audit showing the document uses timed refresh">
-  <figcaption class="w-figcaption">
-    The document uses timed refresh.
-  </figcaption>
+  <img class="w-screenshot" src="meta-refresh.png" alt="Lighthouse audit showing the document uses timed refresh">
 </figure>
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to fix this problem
+## How to avoid automatic page refreshes
 
-To fix this problem,
-don't automatically refresh the page.
-Automatically refreshing the page disorientates users.
-Refreshing also moves the programmatic focus back to the top of the page,
-away from the user's focus.
+Remove `<meta http-equiv="refresh">` from the page.
 
-To avoid automatically refreshing the page,
-remove `<meta http-equiv="refresh">` from the page.
-Learn more in
-[Timed refresh must not exist](https://dequeuniversity.com/rules/axe/3.3/meta-refresh?application=lighthouse).
+If you need to refresh your page, do so using JavaScript,
+where you can add logic to allow users to pause the refresh,
+extend the time between refreshes, or even disable refreshes.
 
-<!--
-## How this audit impacts overall Lighthouse score
+## Resources
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
-- [Do not use `<meta http-equiv="refresh">` audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-refresh.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Source code for **The document uses `<meta http-equiv="refresh">`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-refresh.js)
+- [Timed refresh must not exist (Deque University)](https://dequeuniversity.com/rules/axe/3.3/meta-refresh)

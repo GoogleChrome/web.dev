@@ -194,7 +194,7 @@ self.addEventListener("activate", event => {
 Preventing your service workers from clobbering each other takes a bit of work and disciple but is worth the trouble.
 
 {% Aside 'note' %}
-Think of the combination of your service worker and your site as an [installable](https://web.dev/installable) app. Each version should work. Each version should be separate from the others. Imagine how buggy a game would be if the developer accidentally released a patch that used new game logic but outdated assets. You'd rage on the forums so fast! Keep your app versions tidy & clean.
+Think of the combination of your service worker and your site as an [installable](/installable) app. Each version should work. Each version should be separate from the others. Imagine how buggy a game would be if the developer accidentally released a patch that used new game logic but outdated assets. You'd rage on the forums so fast! Keep your app versions tidy & clean.
 {% endAside %}
 
 ## Service worker mindset

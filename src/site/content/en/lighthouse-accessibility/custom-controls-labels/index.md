@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Manually check all custom interactive controls are keyboard focusable
+title: Custom controls have associated labels
 description: |
-  Learn about custom-controls-labels audit.
+  Learn how to improve your web page's accessibility by making sure that
+  all custom controls have labels that assistive technology users can access.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - custom-controls-labels
 ---
@@ -50,7 +52,7 @@ If a keyboard user can't see what's focused, they have no way of interacting wit
 
 Learn more in [How to do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).
 
-## More information
+## Resources
 
-- [Check all custom controls are keyboard focusable audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-labels.js)
-- [Ensure `tabindex` attribute values are not greater than 0](/tabindex)
+- [Source code for **Custom controls have associated labels** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/custom-controls-labels.js)
+- [Some elements have a `[tabindex]` value greater than `0`](/tabindex)

@@ -51,7 +51,7 @@ Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) [perform
 1. Select the **Clear Storage** checkbox.
 1. Click **Run audits**.
 
-When you run an audit on your machine, [the exact results may vary](https://developers.google.com/web/tools/lighthouse/variability), but you should notice that the [First Contentful Paint](/first-contentful-paint/) (FCP) time is pretty high, and that Lighthouse suggests two opportunities to investigate: **Eliminate render-blocking resources** and **Preconnect to required origins**. (Even if the metrics are all in the green, optimizations will still yield improvements.)
+When you run an audit on your machine, [the exact results may vary](https://developers.google.com/web/tools/lighthouse/variability), but you should notice that the [First Contentful Paint (FCP)](/first-contentful-paint) time is pretty high, and that Lighthouse suggests two opportunities to investigate: **Eliminate render-blocking resources** and **Preconnect to required origins**. (Even if the metrics are all in the green, optimizations will still yield improvements.)
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./lighthouse-audit.png" alt="Screenshot of Lighthouse audit showing 2.4 second FCP and two opportunities: Eliminate render-blocking resources and Preconnect to required origins.">
@@ -243,7 +243,7 @@ The Lighthouse audit you ran in the first step suggested in **Preconnect to requ
 
 Since the YouTube video is now lazy-loaded, that leaves only staticxx.facebook.com, the source of the social media sharing widget. Establishing an early connection to this domain is as simple as adding a `<link>` tag to the document's `<head>`:
 
-```html  
+```html
   <link rel="preconnect" href="https://staticxx.facebook.com">
 ```
 

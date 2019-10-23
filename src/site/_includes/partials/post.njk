@@ -51,6 +51,13 @@
         </div>
       {% endif %}
     </header>
+
+    {% if draft and site.env === 'dev' %}
+      <div class="w-banner w-banner--warning w-banner--body">
+        🚨 This post is a draft! 🚨
+      </div>
+    {% endif %}
+
     {{ content | safe }}
 
     {# Hide tags for now. #} {#

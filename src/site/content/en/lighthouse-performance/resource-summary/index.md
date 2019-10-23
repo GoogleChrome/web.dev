@@ -82,7 +82,7 @@ Affected metrics: [First Contentful Paint][fcp]
 ## Use performance budgets to prevent regressions
 
 Once you've optimized your code to reduce request counts and transfer sizes, see
-[Set performance budgets](https://web.dev/fast#set-performance-budgets) to learn how to prevent regressions.
+[Set performance budgets](/fast#set-performance-budgets) to learn how to prevent regressions.
 
 ## Resources
 
@@ -93,8 +93,8 @@ Once you've optimized your code to reduce request counts and transfer sizes, see
 [3p]: /fast#optimize-your-third-party-resources
 [metrics]: /lighthouse-performance#metrics
 [images]: /fast#optimize-your-images
-[fcp]: https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint
-[fmp]: https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint
-[si]: https://developers.google.com/web/tools/lighthouse/audits/speed-index
+[fcp]: /first-contentful-paint
+[fmp]: /first-meaningful-paint
+[si]: /speed-index
 [fonts]: /fast/#optimize-web-fonts
 [gifs]: /replace-gifs-with-videos/

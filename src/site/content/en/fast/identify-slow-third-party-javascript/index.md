@@ -49,12 +49,12 @@ The Lighthouse **Third-party usage** audit shows a list of the third-party provi
 </figure>
 
 ### Reduce JavaScript execution time
-The Lighthouse [JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
+The Lighthouse [Reduce JavaScript execution time](/bootup-time) audit highlights scripts that take a long time to parse, compile, or evaluate. Select the **Show 3rd-party resources** checkbox to discover CPU-intensive third-party scripts.
 
 <img class="w-screenshot" src="./show-third-party.png" alt='Screenshot showing that the "Show third-party resources" checkbox is checked.'>
 
 ### Avoid enormous network payloads
-The Lighthouse [Network Payloads](/total-byte-weight) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
+The Lighthouse [Avoid enormous network payloads](/total-byte-weight) audit identifies network requests—including those from third-parties—that may slow down page load time. The audit fails when your network payload exceeds 4,000 KB.
 
 <img class="w-screenshot" src="./network-payloads.png" alt='Screenshot of the Chrome DevTools "Avoid enormous network payloads" audit.'>
 

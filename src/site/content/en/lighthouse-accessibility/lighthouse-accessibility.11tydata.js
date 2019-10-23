@@ -15,15 +15,75 @@ module.exports = {
     so manual testing is also encouraged.`,
     topics: [
       {
+        title: 'Audit scoring',
+        pathItems: [
+          'accessibility-scoring',
+        ],
+      },
+      {
+        title: 'Navigation',
+        pathItems: [
+          'accesskeys',
+          'bypass',
+          'duplicate-id-active',
+          'heading-order',
+          'tabindex',
+        ],
+      },
+      {
         title: 'ARIA',
         pathItems: [
           'aria-allowed-attr',
+          'aria-hidden-body',
+          'aria-hidden-focus',
+          'aria-input-field-name',
           'aria-required-attr',
           'aria-required-children',
           'aria-required-parent',
           'aria-roles',
+          'aria-toggle-field-name',
           'aria-valid-attr-value',
           'aria-valid-attr',
+          'duplicate-id-aria',
+        ],
+      },
+      {
+        title: 'Names and labels',
+        pathItems: [
+          'button-name',
+          'document-title',
+          'form-field-multiple-labels',
+          'frame-title',
+          'image-alt',
+          'input-image-alt',
+          'label',
+          'link-name',
+          'object-alt',
+        ],
+      },
+      {
+        title: 'Contrast',
+        pathItems: [
+          'color-contrast',
+        ],
+      },
+      {
+        title: 'Tables and lists',
+        pathItems: [
+          'definition-list',
+          'dlitem',
+          'list',
+          'listitem',
+          'layout-table',
+          'td-headers-attr',
+          'th-has-data-cells',
+        ],
+      },
+      {
+        title: 'Best practices',
+        pathItems: [
+          'meta-refresh',
+          'meta-viewport',
         ],
       },
       {
@@ -35,20 +95,6 @@ module.exports = {
         ],
       },
       {
-        title: 'Best practices',
-        pathItems: [
-          'duplicate-id',
-          'meta-refresh',
-          'meta-viewport',
-        ],
-      },
-      {
-        title: 'Contrast',
-        pathItems: [
-          'color-contrast',
-        ],
-      },
-      {
         title: 'Internationalization and localization',
         pathItems: [
           'html-has-lang',
@@ -57,52 +103,18 @@ module.exports = {
         ],
       },
       {
-        title: 'Names and labels',
-        pathItems: [
-          'button-name',
-          'document-title',
-          'frame-title',
-          'image-alt',
-          'input-image-alt',
-          'label',
-          'link-name',
-          'object-alt',
-        ],
-      },
-      {
-        title: 'Navigation',
-        pathItems: [
-          'accesskeys',
-          'bypass',
-          'tabindex',
-        ],
-      },
-      {
-        title: 'Tables and lists',
-        pathItems: [
-          'definition-list',
-          'dlitem',
-          'layout-table',
-          'list',
-          'listitem',
-          'td-headers-attr',
-          'th-has-data-cells',
-        ],
-      },
-      {
         title: 'Additional items to manually check',
         pathItems: [
+          'logical-tab-order',
+          'focusable-controls',
+          'interactive-element-affordance',
+          'managed-focus',
+          'focus-traps',
           'custom-controls-labels',
           'custom-control-roles',
-          'focus-traps',
-          'focusable-controls',
-          'heading-levels',
-          'interactive-element-affordance',
-          'logical-tab-order',
-          'managed-focus',
+          'visual-order-follows-dom',
           'offscreen-content-hidden',
           'use-landmarks',
-          'visual-order-follows-dom',
         ],
       },
     ],

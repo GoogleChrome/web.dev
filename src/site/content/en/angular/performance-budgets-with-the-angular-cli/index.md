@@ -17,11 +17,11 @@ tags:
 
 Optimizing an Angular application is important, but how do you make sure its performance doesn't regress over time? By introducing performance metrics and monitoring them on each code change!
 
-One important metric is the size of the JavaScript shipped with your application. By introducing a [performance budget](https://web.dev/performance-budgets-101) that you monitor on each build or pull request, you can make sure your optimizations persist over time.
+One important metric is the size of the JavaScript shipped with your application. By introducing a [performance budget](/performance-budgets-101) that you monitor on each build or pull request, you can make sure your optimizations persist over time.
 
 ## Calculate your performance budget
 
-You can use [this online budget calculator](https://bit.ly/perf-budget-calculator) to estimate how much JavaScript your app can afford to load, depending on the [Time to Interactive](https://web.dev/interactive) you're aiming for.
+You can use [this online budget calculator](https://bit.ly/perf-budget-calculator) to estimate how much JavaScript your app can afford to load, depending on the [Time to Interactive](/interactive) you're aiming for.
 
 ![Budget calculator](budget-calculator.png "Budget calculator")
 
@@ -65,7 +65,7 @@ The `index.html` file of the sample app refers to both builds so that modern bro
 
 [Continuous integration (CI)](https://en.wikipedia.org/wiki/Continuous_integration) offers a convenient way to monitor the budget of your app over time. And, luckily, the quickest way to set that up is to build your app with the Angular CLI—no extra steps required! Whenever the JavaScript bundle exceeds the budget, the process will exit with code 1, and the build will fail.
 
-If you prefer, you can also enforce a performance budget using [bundlesize](https://github.com/siddharthkp/bundlesize) and [Lighthouse](https://web.dev/using-lighthouse-bot-to-set-a-performance-budget/). The main difference between performance budgets in the Angular CLI and Lighthouse is when the checks get performed. The Angular CLI performs the checks at build time, looking at the production assets and verifying their sizes. Lighthouse, however, opens the deployed version of the application and measures the asset size. Both approaches have their pros and cons. The check that Angular CLI performs is less robust but much faster since it's a single disk lookup. On the other hand, the LightWallet of Lighthouse can perform a very accurate check by considering dynamically loaded resources, but it needs to deploy and open the app each time it runs.
+If you prefer, you can also enforce a performance budget using [bundlesize](https://github.com/siddharthkp/bundlesize) and [Lighthouse](/using-lighthouse-bot-to-set-a-performance-budget/). The main difference between performance budgets in the Angular CLI and Lighthouse is when the checks get performed. The Angular CLI performs the checks at build time, looking at the production assets and verifying their sizes. Lighthouse, however, opens the deployed version of the application and measures the asset size. Both approaches have their pros and cons. The check that Angular CLI performs is less robust but much faster since it's a single disk lookup. On the other hand, the LightWallet of Lighthouse can perform a very accurate check by considering dynamically loaded resources, but it needs to deploy and open the app each time it runs.
 
 bundlesize is quite similar to the Angular CLI's budget check; the main difference is that bundlesize can show the check results directly in GitHub's user interface.
 

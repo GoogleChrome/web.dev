@@ -35,6 +35,11 @@
   background: $RED_100;
 }
 
+.w-banner--body {
+  font: inherit;
+  padding: 24px;
+}
+
 .w-banner__link {
   text-decoration: underline;
 }

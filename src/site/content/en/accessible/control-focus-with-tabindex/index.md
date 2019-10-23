@@ -15,10 +15,6 @@ built-in for free. If you're building _custom_ interactive components, use the
 `tabindex` attribute to ensure that they're keyboard accessible.
 
 {% Aside %}
-{% include 'content/origin-trials.njk' %}
-{% endAside %}
-
-{% Aside %}
 Whenever possible, use a native HTML element rather than building your
 own custom version. `<button>`, for example, is very easy to style and
 already has full keyboard support. This will save you from needing to manage
@@ -39,7 +35,7 @@ to improve the focusability of those controls.
 If you don't see a focus indicator at all, it may be hidden by your
 CSS. Check for any styles that mention `:focus { outline: none; }`.
 You can learn how to fix this in our guide on
-[styling focus](https://web.dev/style-focus).
+[styling focus](/style-focus).
 {% endAside %}
 
 ## Insert an element into the tab order
@@ -143,7 +139,7 @@ method on it.
 Curious what those `role=""` attributes are for? They let you change the
 semantics of an element so it will be announced properly by a screen reader.
 You can learn more about them in our guide on
-[screen reader basics](https://web.dev/semantics-and-screen-readers).
+[screen reader basics](/semantics-and-screen-readers).
 {% endAside %}
 
 ## Keyboard access recipes

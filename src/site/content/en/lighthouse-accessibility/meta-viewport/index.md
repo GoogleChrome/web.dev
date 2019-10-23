@@ -1,44 +1,41 @@
 ---
 layout: post
-title: Ensure the viewport doesn't disable text scaling and zooming
+title: "`[user-scalable=\"no\"]` is used in the `<meta name=\"viewport\">` element or the `[maximum-scale]` attribute is less than `5`"
 description: |
-  Learn about meta-viewport audit.
+  Learn how to make your web page more accessible by making sure that browser
+  zoom isn't disabled.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - meta-viewport
 ---
 
-Disabling zooming is problematic for users with low vision
-who rely on screen magnification to properly see the contents of a web page.
-Lighthouse reports when the viewport disables text scaling and zooming:
+The `user-scalable="no"` parameter for the `<meta name="viewport">` element
+disables browser zoom on a web page.
+The `maximum-scale parameter` limits the amount the user can zoom.
+Both are problematic for users with low vision who rely on browser zoom
+to see the contents of a web page.
+
+## How the Lighthouse browser zoom audit fails
+
+Lighthouse flags pages that disable browser zooming:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="meta-viewport.png" alt="Lighthouse audit showing the viewport disables text scaling and zooming">
-  <figcaption class="w-figcaption">
-    The viewport disables text scaling and zooming.
+  <img class="w-screenshot" src="meta-viewport.png" alt="Lighthouse audit showing the viewport disables text scaling and zooming">
 </figure>
 
+A page fails the audit if it contains a `<meta name="viewport">` tag with either of the following:
+- A `content` attribute with a `user-scalable="no"` parameter
+- A `content` attribute with a `maximum-scale` paramater set to less than `5`
 
-## How to fix this problem
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-To fix this problem,
-remove `user-scalable="no"` parameter from the viewport and
-ensure `maximum-scale parameter` isn't less than 5.
+## How to avoid disabling browser zoom
 
-The `user-scalable="no"` parameter inside `<meta name="viewport">` element disables zooming on a page.
-The `maximum-scale parameter` limits the amount the user can zoom.
-Both are problematic for people with low vision who rely on screen magnifiers
-to properly see the contents of a web page.
+Remove the `user-scalable="no"` parameter from the viewport meta tag and
+make sure the `maximum-scale` parameter is set to `5` or greater.
 
-Learn more in
-[Zooming and scaling must not be disabled](https://dequeuniversity.com/rules/axe/3.3/meta-viewport).
+## Resources
 
-<!--
-## How this audit impacts overall Lighthouse score
-
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
-- [Do not disable text scaling and zooming audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Source code for **`[user-scalable="no"]` is used in the `<meta name="viewport">` element or the `[maximum-scale]` attribute is less than 5** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/meta-viewport.js)
+- [Zooming and scaling must not be disabled (Deque University)](https://dequeuniversity.com/rules/axe/3.3/meta-viewport)
