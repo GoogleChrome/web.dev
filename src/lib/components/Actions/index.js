@@ -112,7 +112,7 @@ class Actions extends BaseElement {
   }
 
   render() {
-    const actions = this._spiltPipes(this.actions);
+    const actions = this._splitPipes(this.actions);
     const parts = [];
 
     if (actions.indexOf("share") !== -1) {
