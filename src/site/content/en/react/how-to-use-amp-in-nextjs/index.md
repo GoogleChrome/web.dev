@@ -1,65 +1,29 @@
 ---
-layout: post
-title: How to use AMP in Next.js (and why)
+layout: codelab
+title: How to use AMP in Next.js
 authors:
   - houssein
 subhead: |
-  Add AMP to any of your Next.js pages to guarantee fast page loads
+  Try out the two ways that you can add AMP to a Next.js app
 date: 2019-10-17
 draft: true
+glitch: next-amp-start
+related_post: how-amp-can-guarantee-fastness-in-your-nextjs-app
 ---
-
-[AMP](https://amp.dev) (Accelerated Mobile Pages) is a web component framework that guarantees
-fast page loads. [Next.js][intro] has built-in support for AMP.
 
 ## What will you learn?
 
-This guide first briefly describes [how AMP guarantees fast page loads](#overview), then lets you
-try out [the two ways that you can use AMP in a Next.js app](#strategies), then helps you [decide
-which approach is best for you](#guidance).
-
-The intended audience for this guide is a web developer who has decided to use Next.js but is
-unsure of whether to support AMP. 
-
-{% Aside %}
-  This guide was not written for web developers who have decided to use AMP but are unsure of what
-  framework to use. We will note briefly however that Next.js could be a good choice because it
-  supports [AMP server-side rendering](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/)
-  and makes it easy to serve AMP content without introducing a lot of complexity into your codebase.
-{% endAside %}
-
-## How AMP guarantees fast page loads {: #overview }
-
-AMP has two main strategies for guaranteeing fastness:
-
-* **AMP HTML**: A restricted form of HTML that makes certain optimizations mandatory and prohibits
-  architectural patterns that lead to slowness. See [How AMP works][how] for a high-level
-  overview of the optimizations and restrictions.
-* **AMP Cache**: A content cache used by some search engines, such as Google and Bing, that uses
-  [prerendering] to speed up page loads. See [Why AMP Caches exist][why] to learn more about the
-  benefits and tradeoffs of the caches and [How does my AMP page get cached?][how] to understand
-  how your AMP pages get into the caches.
-
-## How you can use AMP in Next.js {: #strategies }
-
-There are two ways to use AMP in Next.js:
-
-* The [**Hybrid AMP** approach](#hybrid) lets you create an accompanying AMP version of any
-  Next.js page.
-* The [**AMP-only** approach](#amponly) lets you make AMP the only option for a page.
-
-Although Next.js is usually thought of as a React framework, it's important to understand that
-when you use Next.js to serve AMP pages, you can no longer run React components client-side because
-React components are not valid AMP components. In other words, Next.js is no longer a React
-framework but rather a server-side templating engine for generating AMP pages.
+This codelab lets you try out the two ways that you can use AMP in a Next.js app.
+Check out [How AMP can guarantee fastness in your Next.js app][guidance] to learn why you
+might want to add AMP support to your Next.js app.
 
 ### How to create Hybrid AMP pages {: #hybrid }
 
 {% Aside 'caution' %}
   The [AMP-only approach](#amponly) is the recommended path for using AMP with Next.js. The
   Hybrid AMP approach described in this section has a higher maintenance cost than the AMP-only
-  approach because it requires you to maintain two versions of each page. You should only use this
-  approach if you're certain that the AMP-only approach won't work.
+  approach because it requires you to maintain two versions of each page. You should only use the
+  Hybrid approach if you're certain that the AMP-only approach won't work.
 {% endAside %}
 
 The **Hybrid AMP** approach creates an accompanying AMP version of any Next.js page. The regular
@@ -70,7 +34,7 @@ There are multiple ways to configure how Next.js renders and serves pages. Using
 object allows you to modify these on a per-page basis. In order to serve a specific page as
 an AMP page, you need to export the `amp` property in the object:
 
-```jsx
+```jsx/2
 import React from 'react'
 
 export const config = { amp: 'hybrid' };
@@ -81,14 +45,6 @@ const Home = () => (
   
 export default Home;
 ```
-
-Try out Hybrid AMP pages with the following Glitch:
-
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/next-amp-start?attributionHidden=true&path=pages/index.js"
-          alt="A basic Next.js app on Glitch that supports AMP."
-          style="height: 100%; width: 100%; border: 0;"></iframe>
-</div>
 
 {% Instruction 'remix', 'ol' %}
 
@@ -227,7 +183,7 @@ to users and search engines at all times.
 
 1. To render an AMP-only page, change the value of the `amp` property in the config object to `true`.
 
-   ```jsx
+   ```jsx/2
    import React from 'react'
 
    export const config = { amp: true };
@@ -239,45 +195,14 @@ to users and search engines at all times.
    export default Home;
    ```
 
-## How to decide whether to use the Hybrid AMP or AMP-only approach {: #guidance }
-
-If you're serious about load performance, an AMP-only page could be a good way to make sure
-that your page gets fast and stays fast. But here's the catch: in order to guarantee fastness,
-AMP must prohibit certain architectural patterns and HTML elements that often lead to slow pages.
-For example, AMP doesn't allow custom synchronous JavaScript because 
-[render-blocking resources][blockers] are a common cause of slow page loads.
-
-In order to understand whether an AMP-only approach is right for you, you need to figure out
-whether all of your frontend code can be represented in AMP HTML:
-
-* Read [How AMP works](https://amp.dev/about/how-amp-works/) to understand AMP's high-level
-  architectural restrictions and mandatory optimizations.
-* Read [HTML Tags][tags] to see what HTML tags AMP allows and prohibits,
-  browse the [AMP component catalogue](https://amp.dev/documentation/components/) to see the
-  custom components that the AMP community has built to solve common use cases, and check
-  out [amp-script] to learn how to use custom JavaScript to implement features that AMP
-  doesn't currently support.
-
-Even if an AMP-only approach won't work for your page, it might still be a good idea to
-use AMP whenever possible, because of the guaranteed fastness of AMP HTML and the AMP Caches.
-The Hybrid AMP approach in Next.js provides a way to conditionally serve AMP pages. However,
-it also creates a higher maintenance cost because it requires you to maintain
-two versions of each page.
-
 ## Next steps
 
 Check out the rest of the guides in [web.dev's Next.js collection][collection] to discover
 other ways that you can optimize your Next.js app.
 
-[intro]: /performance-as-a-default-with-nextjs
+[guidance]: /how-amp-can-guarantee-fastness-in-your-nextjs-app
 [layout]: https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout/
 [collection]: /react#nextjs
 [hook]: https://reactjs.org/docs/hooks-overview.html
-[prerendering]: https://developers.googleblog.com/2019/08/the-speed-benefit-of-amp-prerendering.html
-[tags]: https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml/#html-tags
-[blockers]: /render-blocking-resources
-[why]: https://blog.amp.dev/2017/01/13/why-amp-caches-exist/
-[how]: https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached/#how-does-my-amp-page-get-cached?
 [layout]: https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout/
 [amp-img]: https://amp.dev/documentation/examples/components/amp-img/
-[amp-script]: https://amp.dev/documentation/components/amp-script/
