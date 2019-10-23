@@ -70,8 +70,10 @@ firebase.auth().onAuthStateChanged((user) => {
       // This is the first snapshot from Firebase, but the user has a local URL.
       // The user has run Lighthouse, but then signed in. Save the new run
       // to Firebase.
-      console.warn('updating firebase with local chosen URL');
       saveUserUrl(userUrl, userUrlSeen);
+      lastSavedUrl = userUrl;
+      // Return early as we preempt the Firestore snapshot via lastSavedUrl
+      return;
     } else {
       // Do nothing, as the last remote URL is already up-to-date. This occurs
       // if a snapshot was triggered for a field we don't care about.
