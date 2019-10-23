@@ -40,6 +40,11 @@ so that:
 2. cookies for cross-site usage **must** specify `SameSite=None; Secure` to
    enable inclusion in third party context.
 
+This will become the default behavior in Chrome 80, planned for a stable release
+in February, 2020. If you currently provide cookies that are intended for
+cross-site usage you will need to make changes before that date to support the
+new default.
+
 ## Use cases for cross-site or third-party cookies
 
 There are a number of common use cases and patterns where cookies need to be
@@ -59,9 +64,9 @@ context. Standard use cases here are:
 - widgets such as social buttons or anti-fraud services that create less obvious
   `<iframes>`
 
-Cookies may be used here to personalize content if the current user has an
-existing account on the remote site, maintain a session state, store general
-preferences, enable usage statistics, and more.
+Cookies may be used here to, among other things, maintain session state, store
+general preferences, enable statistics, or personalize content for users with
+existing accounts.
 
 <figure class="w-figure  w-figure--center">
   <img src="iframe.png"
@@ -78,18 +83,17 @@ Additionally, as the web is inherently composable, `<iframes>` are used to embed
 content that is also viewed in a top-level or first-party context. Any cookies
 used by that site will be considered as third-party cookies when the site is
 displayed within the frame. If you're creating sites that you intend to be
-easily composed that also rely on cookies to function, you will also need to
-ensure those are marked for cross-site usage or that you can gracefully fallback
-without them.
+easily embedded by others while also relying on cookies to function, you will
+also need to ensure those are marked for cross-site usage or that you can
+gracefully fallback without them.
 
 ### "Unsafe" requests across sites
 
 While "unsafe" may sound slighly concerning here, this refers to any request
-that may be intended to change state and on the web that's primarily POST
-requests. Cookies marked as `SameSite=Lax` will be sent on safe top-level
-navigations, e.g. clicking a link to go to a different site. However something
-like a `<form>` submission via POST to a different site would not include
-cookies.
+that may be intended to change state. On the web that's primarily POST requests.
+Cookies marked as `SameSite=Lax` will be sent on safe top-level navigations,
+e.g. clicking a link to go to a different site. However something like a
+`<form>` submission via POST to a different site would not include cookies.
 
 <figure class="w-figure  w-figure--center">
   <img src="safe-navigation.png"
@@ -105,21 +109,21 @@ service to perform some operation before returning, for example redirecting to a
 third-party identity provider. Before the user leaves the site, a cookie is set
 containing a single use token with the expectation that this token can be
 checked on the returning request to mitigate
-[Cross Site Request Forgery (CSRF)](<https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)>)
+[Cross Site Request Forgery (CSRF)](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
 attacks. If that returning request comes via POST then it will be necessary to
 mark the cookies as `SameSite=None; Secure`.
 
 ### Remote resources
 
-Any remote resource on a page may be relying on cookies to be sent with that
-request, from `<img>` tags, `<script>` tags, and so on. Common use cases here
-include tracking pixels and personalizing content.
+Any remote resource on a page may be relying on cookies to be sent with a
+request, from `<img>` tags, `<script>` tags, and so on. Common use cases include
+tracking pixels and personalizing content.
 
 This also applies to
 [`fetch` requests](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Sending_a_request_with_credentials_included)
-from the page. If you see the `credentials: 'include'` option in the
-configuration this is a good indication that cookies may well be expected on
-those requests. Those cookies will need to be appropriate marked to be included.
+from the page. If fetch() is called with the `credentials: 'include'` option
+this is a good indication that cookies may well be expected on those requests.
+Those cookies will need to be appropriately marked to be included.
 
 ### Content within a WebView
 
@@ -133,7 +137,7 @@ As with cookies set via headers or JavaScript, these must include
 
 ## How to implement `SameSite` today
 
-For cookies where you know they are only needed in a first-party context you
+For cookies where they are only needed in a first-party context you
 should ideally mark them as `SameSite=Lax` or `SameSite=Strict` depending on
 your needs. You can also choose to do nothing and just allow the browser to
 enforce its default, but this comes with the risk of inconsistent behavior
