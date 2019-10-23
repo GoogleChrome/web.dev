@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-const entrypointManifest = require('../../../entrypoint.hashmanifest.json');
-// https://github.com/surma/rollup-plugin-entrypoint-hashmanifest/issues/3
-const hash = entrypointManifest['src/lib/app.js'].split('.')[1];
-
 module.exports = {
-  env: process.env.ELEVENTY_ENV || 'dev',
-  title: 'web.dev',
-  titleVariation: 'Home',
-  url: 'https://web.dev',
-  repo: 'https://github.com/GoogleChrome/web.dev',
-  subscribe: 'https://web.dev/subscribe',
+  env: process.env.ELEVENTY_ENV || "dev",
+  title: "web.dev",
+  titleVariation: "Home",
+  url: "https://web.dev",
+  repo: "https://github.com/GoogleChrome/web.dev",
+  subscribe: "https://web.dev/subscribe",
   isBannerEnabled: true,
   banner: `Can’t make \`#ChromeDevSummit\` this year? Catch all the content
   (and more!) on the livestream or join your peers for a CDS Extended event at
@@ -33,5 +29,5 @@ module.exports = {
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.
-  imageCdn: 'https://webdev.imgix.net',
+  imageCdn: "https://webdev.imgix.net",
 };
