@@ -35,7 +35,8 @@ async function getPage(url) {
 }
 
 /**
- * Force the user's cursor to the target element.
+ * Force the user's cursor to the target element, making it focusable if needed.
+ * After the user blurs from the target, it will restore to its initial state.
  *
  * @param {?Element} el
  */
@@ -45,9 +46,21 @@ function forceFocus(el) {
   } else if (el.hasAttribute("tabindex")) {
     el.focus();
   } else {
+    // nb. This will also operate on elements that implicitly allow focus, but
+    // it should be harmless there (aside hiding the focus ring with
+    // w-force-focus).
     el.tabIndex = -1;
     el.focus();
-    el.removeAttribute("tabindex");
+    el.classList.add("w-force-focus");
+
+    el.addEventListener(
+      "blur",
+      (e) => {
+        el.removeAttribute("tabindex");
+        el.classList.remove("w-force-focus");
+      },
+      {once: true},
+    );
   }
 }
 
