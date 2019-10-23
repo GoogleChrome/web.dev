@@ -134,7 +134,7 @@ class Actions extends BaseElement {
    * @param {string} raw string separated by "|" symbols
    * @return {!Array<string>}
    */
-  _spiltPipes(raw) {
+  _splitPipes(raw) {
     return raw
       .split(/\|/)
       .map((x) => x.trim())
