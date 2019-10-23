@@ -5,7 +5,7 @@ subhead:
   attribute's behavior.
 authors:
   - rowan_m
-date: 2019-10-15
+date: 2019-10-24
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
