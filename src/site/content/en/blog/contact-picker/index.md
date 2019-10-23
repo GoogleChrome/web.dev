@@ -7,13 +7,14 @@ description: Access to the user's contacts has been a feature of native apps sin
 date: 2019-08-07
 updated: 2019-10-10
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - post
   - capabilities
+  - fugu
   - contacts
   - chrome77
+  - origin-trial
 hero: hero.jpg
 alt: Telephone on yellow background.
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/85568392920039425
 ---

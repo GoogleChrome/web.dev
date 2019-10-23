@@ -7,8 +7,9 @@ description: Chrome 76 adds expands the functionality of the Async Clipboard API
 date: 2019-07-03
 updated: 2019-10-11
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - post
   - capabilities
+  - fugu
   - chrome76
   - cutandcopy
   - execcommand
@@ -16,7 +17,6 @@ tags:
   - clipboard
 hero: hero.jpg
 alt: Clipboard with shopping list
-draft: true
 ---
 
 Chrome 66 added support for the
