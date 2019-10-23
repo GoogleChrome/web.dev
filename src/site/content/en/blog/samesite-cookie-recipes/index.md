@@ -22,38 +22,40 @@ tags:
 
 {% Aside %}
 
-If you need a refresher on cookies and the `SameSite` attribute, head over to
-the earlier companion article,
+For how cookies and `SameSite` work, see part 1:
 ["SameSite cookies explained"](/samesite-cookies-explained).
 
 {% endAside %}
 
-To recap from before: [Chrome](https://www.chromium.org/updates/same-site),
+[Chrome](https://www.chromium.org/updates/same-site),
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ),
 [Edge](https://textslashplain.com/2019/09/30/same-site-cookies-by-default/), and
-others will be changing their default behavior so that:
+others will be changing their default behavior in line with the IETF proposal,
+["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
+so that:
 
-1. cookies without a `SameSite` attribute will be treated as `SameSite=Lax`, or
-   restricted to first-party contexts
-2. cookies for cross-site or third-party usage must specify
-   `SameSite=None; Secure`
+1. cookies without a `SameSite` attribute will be treated as `SameSite=Lax`,
+   meaning the default behavior will be to restrict cookies to first party
+   contexts **only**.
+2. cookies for cross-site usage **must** specify `SameSite=None; Secure` to
+   enable inclusion in third party context.
 
 ## Use cases for cross-site or third-party cookies
 
 There are a number of common use cases and patterns where cookies need to be
 sent in a third-party context. If you provide or depend on one of these use
-cases then you will need to ensure that either you or the provider are updating
-their cookies to ensure the service continues to function correctly.
+cases, ensure that either you or the provider are updating their cookies to
+ensure the service continues to function correctly.
 
 ### Content within an `<iframe>`
 
-When content is displayed within an `<iframe>` this qualifies as a third-party
+Content from a different site displayed in an `<iframe>` is in a third-party
 context. Standard use cases here are:
 
 - embedded content shared from other sites, such as videos, maps, code samples,
-  social posts
-- widgets from external services such as payments, calendars, booking /
-  reservation services
+  and social posts
+- widgets from external services such as payments, calendars, booking, and
+  reservation functionality
 - widgets such as social buttons or anti-fraud services that create less obvious
   `<iframes>`
 
@@ -102,9 +104,10 @@ This pattern is used for sites that may redirect the user out to a remote
 service to perform some operation before returning, for example redirecting to a
 third-party identity provider. Before the user leaves the site, a cookie is set
 containing a single use token with the expectation that this token can be
-checked on the returning request to mitigate CSRF attacks. If that returning
-request comes via POST then it will be necessary to mark the cookies as
-`SameSite=None; Secure`.
+checked on the returning request to mitigate
+[Cross Site Request Forgery (CSRF)](<https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)>)
+attacks. If that returning request comes via POST then it will be necessary to
+mark the cookies as `SameSite=None; Secure`.
 
 ### Remote resources
 
@@ -117,6 +120,16 @@ This also applies to
 from the page. If you see the `credentials: 'include'` option in the
 configuration this is a good indication that cookies may well be expected on
 those requests. Those cookies will need to be appropriate marked to be included.
+
+### Content within a WebView
+
+A WebView in a native app is powered by a browser and the same restrictions and
+issues will apply. In Android, if the WebView is powered by Chrome, the default
+behavior will change with the release of Chrome 80. Additionally, Android allows
+native apps to set cookies directly via the
+[CookieManager API](https://developer.android.com/reference/android/webkit/CookieManager).
+As with cookies set via headers or JavaScript, these must include
+`SameSite=None; Secure` if they are intended for cross-site use.
 
 ## How to implement `SameSite` today
 
@@ -133,8 +146,8 @@ Set-Cookie: first_party_var=value; SameSite=Lax
 For cookies needed in a third-party context, you will need to ensure thet are
 marked as `SameSite=None; Secure`. Note that you need both attributes together.
 If you just specify `None` without `Secure` the cookie will be rejected. There
-are some mutually incompatible differences in browser implementations here
-though, so you may need to use some of the mitigating strategies described in
+are some mutually incompatible differences in browser implementations though, so
+you may need to use some of the mitigating strategies described in
 ["Handling incompatible clients"](#handling-incompatible-clients) below.
 
 ```text
@@ -143,14 +156,14 @@ Set-Cookie: third_party_var=value; SameSite=None; Secure
 
 ### Identifying cookie usage
 
-As of Chrome 77, you will be able to see warnings in the console cross-site
-cookies that do not currently have a `SameSite` attribute and cookies that have
-been marked with `SameSite=None` but are missing `Secure`.
+As of Chrome 77, you will see warnings in the console for cross-site cookies
+that do not currently have a `SameSite` attribute and cookies that have been
+marked with `SameSite=None` but are missing `Secure`.
 
 <figure class="w-figure  w-figure--center">
   <img src="chrome-console-warning.png"
       alt="Chrome console warnings for SameSite cookie misconfiguration"
-      style="max-width: 35vw;">
+      style="max-width: 40vw;">
   <figcaption class="w-figcaption">
     Chrome console warnings for <tt>SameSite</tt> cookie misconfiguration.
   </figcaption>
@@ -183,6 +196,17 @@ ensure they making the necessary changes. The warnings themselves do not affect
 the functionality of the site, this is purely to inform developers of the
 upcoming changes.
 
+<figure class="w-figure  w-figure--center">
+  <img src="samesite-devtools.png"
+      alt="Chrome Developer Tools showing the overview of cookies for a site"
+      style="max-width: 40vw;">
+  <figcaption class="w-figcaption">
+    Chrome Developer Tools shows the values for the <tt>SameSite</tt> and
+    <tt>Secure</tt> attributes for cookies under the Application → Cookies
+    section.
+  </figcaption>
+</figure>
+
 ### Handling incompatible clients
 
 As these changes to include `None` and update default behavior are still
@@ -192,7 +216,7 @@ changes are handled. You can refer to the
 for the issues currently known, however it's not possible to say if this is
 exhaustive. While this is not ideal, there are workarounds you can employ during
 this transitionary phase. The general rule though is to treat incompatible
-clients as the special case - do not create an exception for browsers
+clients as the special case. Do not create an exception for browsers
 implementing the newer rules.
 
 The first option is to set both the new and old style cookies:
@@ -249,38 +273,12 @@ the cookie. However, this approach should cover all browsers regardless of their
 behavior and ensure third-party cookies continue to function as before.
 
 Alternatively at the point of sending the `Set-Cookie` header, you can choose to
-detect the client via the user agent string. For example, this snippet shows
-detecting iOS 12 or Safari on Mac OS X 10.14 and serving a cookie without the
-`SameSite` attribute to those browsers. This makes use of the
-[ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library for Node.js.
+detect the client via the user agent string. Refer to the
+[list of incompatible clients](https://www.chromium.org/updates/same-site/incompatible-clients)
+and then make use of an appropriate library for your plaform, for example
+[ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library on Node.js.
 It's advisable to find a library to handle user agent detection as you most
 probably don't want to write those regular expressions yourself.
-
-```javascript
-const http = require('http');
-const parser = require('ua-parser-js');
-
-http
-  .createServer((req, res) => {
-    const ua = parser(req.headers['user-agent']);
-
-    if (
-      // iOS 12 browsers
-      (ua.os.name == 'iOS' && ua.os.version.startsWith('12')) ||
-      // or MacOS 10.14
-      (ua.os.name == 'Mac OS' && ua.os.version.startsWith('10.14'))
-    ) {
-      // Don't send SameSite=None for affected browsers
-      res.setHeader('Set-Cookie', '3pcookie=value; Secure');
-    } else {
-      // Default is the new SameSite=None attribute
-      res.setHeader('Set-Cookie', '3pcookie=value; SameSite=None; Secure');
-    }
-
-    res.end();
-  })
-  .listen(process.env.PORT);
-```
 
 The benefit of this approach is that it only requires making one change at the
 point of setting the cookie. However, the necessary warning here is that user

@@ -21,18 +21,22 @@ tags:
 
 {% Aside %}
 
-If you are looking for the guidance on implementing for `SameSite=None` and
-handling different behavior across browsers, then head straight to
-["SameSite cookie recipes"](/samesite-cookie-recipes).
+For implementation advice on `SameSite=None`, see part 2:
+["SameSite cookie recipes"](/samesite-cookie-recipes)
 
 {% endAside %}
 
 Cookies are one of the methods available for adding persistent state to web
-sites. Each cookie is a `key=value` pair along with a number of attributes that
-control when and where that cookie is used. You've probably already used these
-attributes to set things like expiry dates or indicating the cookie should only
-be sent over HTTPS. Servers set cookies by sending the aptly-named `Set-Cookie`
-header in their response. For all the detail you can dive into
+sites. Over the years their capabilities have grown and evolved, but left the
+platform with some problematic legacy issues. To address this, browsers
+(including Chrome, Firefox, and Edge) are changing their behavior to enforce
+more privacy preserving defaults.
+
+Each cookie is a `key=value` pair along with a number of attributes that control
+when and where that cookie is used. You've probably already used these
+attributes to set things like expiration dates or indicating the cookie should
+only be sent over HTTPS. Servers set cookies by sending the aptly-named
+`Set-Cookie` header in their response. For all the detail you can dive into
 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03#section-4.1),
 but for now here's a quick refresher.
 
@@ -245,10 +249,10 @@ taking.
 
 {% Aside 'caution' %}
 
-Neither `Strict` nor `Lax` are a silver bullet for your site security. Cookies
-are sent as part of the user's request and you should treat them the same as any
-other user input. That means sanitizing and validating the input. Never use a
-cookie to store data you consider a server-side secret.
+Neither `Strict` nor `Lax` are a complete solution for your site's security.
+Cookies are sent as part of the user's request and you should treat them the
+same as any other user input. That means sanitizing and validating the input.
+Never use a cookie to store data you consider a server-side secret.
 
 {% endAside %}
 
@@ -282,20 +286,20 @@ While the `SameSite` attribute is widely supported, it has unfortunately not
 been widely adopted by developers. The open default of sending cookies
 everywhere means all use cases work but leaves the user vulnerable to CSRF and
 unintentional information leakage. To encourage developers to state their intent
-and provide users with a safer experience, Mike West has proposed two key
-changes in
-["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00).
-These updates are:
+and provide users with a safer experience, the IETF proposal,
+["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
+lays out two key changes:
 
 - cookies without a `SameSite` attribute will be treated as `SameSite=None`
 - cookies with `SameSite=None` must also specify `Secure`
 
 Both
 [Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ),
-[Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ),
-and [Edge](https://textslashplain.com/2019/09/30/same-site-cookies-by-default/)
+[Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
 have this functionality available to test now and will be making this their
 default behavior in future releases.
+[Edge](https://textslashplain.com/2019/09/30/same-site-cookies-by-default/) also
+plans to
 
 {% Aside %}
 
@@ -412,10 +416,10 @@ should ignore it and carry on as if the attribute was not set.
 
 At the time of writing, the network library on iOS and Mac incorrectly handles
 unknown `SameSite` values and will treat **any unknown value** (including
-`None`) as if it was `SameSite=Strict`, which affects Safari on Mac and browsers
-wrapping WebKit on iOS (Safari, Chrome, Firefox, and others). This will be fixed
-as of macOS 10.15 and iOS 13 and is available in the Tech Preview now. You can
-track their progress on
+`None`) as if it were `SameSite=Strict`, which affects Safari on Mac and
+browsers wrapping WebKit on iOS (Safari, Chrome, Firefox, and others). This will
+be fixed as of macOS 10.15 and iOS 13 and is available in the Tech Preview now.
+You can track their progress on
 [WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
 
 {% endAside %}
