@@ -41,45 +41,53 @@ firebase.auth().onAuthStateChanged((user) => {
     isSignedIn: true,
     user,
   });
-  let lastRemoteUserUrl = null;
+  let lastSavedUrl = null;
 
   const onUserSnapshot = (snapshot) => {
-    let updateToRemote = false;
+    let saveNewUrlToState = false;
 
     // We expect the user snapshot to look like:
     // {
-    //   currentUrl: String,         # current used URL
+    //   currentUrl: String,         # current URL saved to Firestore
     //   urls: {String: Timestamp},  # URL to first time used (including current URL)
     // }
     const data = snapshot.data() || {}; // is empty on new user
-    const remoteUserUrl = data.currentUrl || "";
-    const seen = (data.urls && data.urls[remoteUserUrl]) || null;
-    const remoteUserUrlSeen = seen ? seen.toDate() : null;
+    const savedUrl = data.currentUrl || "";
 
-    const {userUrl, activeLighthouseUrl} = store.getState();
+    const {userUrl, userUrlSeen, activeLighthouseUrl} = store.getState();
     if (activeLighthouseUrl !== null) {
       // Do nothing, as the active URL action will eventually write its results.
-    } else if (lastRemoteUserUrl && lastRemoteUserUrl !== remoteUserUrl) {
+      // This will also trigger a write to Firestore.
+    } else if (lastSavedUrl && lastSavedUrl !== savedUrl) {
       // The user changed their target URL in another browser. Update it.
       // This doesn't fire on the first snapshot as |lastRemoteUserUrl| begins
       // as null.
-      updateToRemote = true;
+      saveNewUrlToState = true;
     } else if (!userUrl) {
       // Update to remote if there was no URL run before signin.
-      updateToRemote = true;
+      saveNewUrlToState = true;
+    } else if (!lastSavedUrl && userUrl) {
+      // This is the first snapshot from Firebase, but the user has a local URL.
+      // The user has run Lighthouse, but then signed in. Save the new run
+      // to Firebase.
+      console.warn('updating firebase with local chosen URL');
+      saveUserUrl(userUrl, userUrlSeen);
     } else {
       // Do nothing, as the last remote URL is already up-to-date. This occurs
       // if a snapshot was triggered for a field we don't care about.
     }
-    lastRemoteUserUrl = remoteUserUrl;
+    lastSavedUrl = savedUrl;
 
     // The URL changed, so record it from remote, and indicate that
     // <web-lighthouse-scores-container> should request new content when it
     // appears on the page.
-    if (updateToRemote) {
+    if (saveNewUrlToState) {
+      const seen = (data.urls && data.urls[savedUrl]) || null;
+      const savedUrlSeen = seen ? seen.toDate() : null;
+
       store.setState({
-        userUrl: remoteUserUrl,
-        userUrlSeen: remoteUserUrlSeen,
+        userUrl: savedUrl,
+        userUrlSeen: savedUrlSeen,
         userUrlResultsPending: true,
       });
     }
