@@ -49,7 +49,7 @@ class Actions extends BaseElement {
   get shareText() {
     let authorText = "";
 
-    const authors = this._spiltPipes(this.authors);
+    const authors = this._splitPipes(this.authors);
     if (authors.length) {
       // ListFormat isn't widely supported; feature-detect it first
       if ("ListFormat" in Intl) {
