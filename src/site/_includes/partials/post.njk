@@ -12,18 +12,10 @@
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions-controller page="post"></web-actions-controller>
-  {% Actions %}
-    {% ShareAction title, page.url | stripLanguage, authors | expandContributors %}
-    {% SubscribeAction %}
-  {% endActions %}
+  <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
 
   <div class="w-layout-container--narrow w-post-breadcrumbs">
     {% Breadcrumbs path %}
-  </div>
-
-  <div>
-    <my-element></my-element>
   </div>
 
   <div class="w-layout-container--narrow w-post-content">
