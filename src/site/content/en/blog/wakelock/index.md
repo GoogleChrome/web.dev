@@ -1,5 +1,5 @@
 ---
-title: Stay awake with the WakeLock API
+title: Stay awake with the Wake Lock API
 subhead: The Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
 authors:
   - petelepage
