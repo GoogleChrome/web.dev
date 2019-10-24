@@ -47,12 +47,11 @@
  *
  */
 
-const path = require("path");
 const {oneLine} = require("common-tags");
 const {ifDefined} = require("../helpers");
 const md = require("markdown-it")();
 const stripLanguage = require("../../../_filters/strip-language");
-const imageCdn = require("../../../_data/site").imageCdn;
+const getImagePath = require("../../../_utils/get-image-path");
 
 /* eslint-disable no-invalid-this, max-len */
 
@@ -61,30 +60,13 @@ const imageCdn = require("../../../_data/site").imageCdn;
 // -----------------------------------------------------------------------------
 
 /**
- * Takes a path to an image and converts it to an image CDN path if we're in
- * a production environment.
- * @param {!string} src A path to an image asset.
- * @param {!Object} ctx An eleventy context object for the current page.
- * @return {string} An image path. May be converted to an image CDN path if
- * it's a production environment.
- */
-function getImagePath(src, ctx) {
-  let imagePath = src;
-  if (process.env.ELEVENTY_ENV === "prod") {
-    imagePath = path.join(stripLanguage(ctx.page.url), src);
-    imagePath = new URL(imagePath, imageCdn).href;
-  }
-  return imagePath;
-}
-
-/**
  * Render an image element as an HTML string.
  * @param {!{src: string, alt: string, maxWidth: number}} args
  * @param {!Object} ctx An eleventy context object.
  * @return {string}
  */
 function renderImage({src, alt, maxWidth}, ctx) {
-  const imagePath = getImagePath(src, ctx);
+  const imagePath = getImagePath(src, stripLanguage(ctx.page.url));
   let style;
   if (maxWidth) {
     style = `max-width: ${maxWidth};`;

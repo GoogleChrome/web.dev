@@ -17,6 +17,8 @@
 const {html} = require("common-tags");
 const stripLanguage = require("../../_filters/strip-language");
 const md = require("../../_filters/md");
+const getImagePath = require("../../_utils/get-image-path");
+const getSrcsetRange = require("../../_utils/get-srcset-range");
 
 /* eslint-disable require-jsdoc,indent,max-len */
 
@@ -35,11 +37,21 @@ module.exports = ({post}) => {
   const alt = data.alt || "";
 
   function renderThumbnail(url, img, alt) {
+    debugger;
+    const imagePath = getImagePath(img, url);
+    const srcsetRange = getSrcsetRange(240, 768);
+
     return html`
       <figure class="w-post-card__figure">
         <img
           class="w-post-card__image"
-          src="${url + img}"
+          sizes="365px"
+          srcset="${srcsetRange.map(
+            (width) => html`
+              ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
+            `,
+          )}"
+          src="${imagePath}"
           alt="${alt}"
           width="100%"
           height="240"
