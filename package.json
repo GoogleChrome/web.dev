@@ -38,6 +38,7 @@
     "js-yaml": "^3.13.1",
     "lit-element": "^2.2.0",
     "rollup-plugin-virtual": "^1.0.1",
+    "terser": "^4.3.9",
     "unistore": "^3.4.1",
     "wicg-inert": "^2.1.3"
   },
