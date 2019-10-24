@@ -1,4 +1,5 @@
 import {store} from "./store";
+import {clearSignedInState} from "./actions";
 import firestoreLoader from "./firestore-loader";
 
 /* eslint-disable require-jsdoc */
@@ -19,15 +20,10 @@ firebase.initializeApp(firebaseConfig);
 let firestoreUserUnsubscribe = null;
 firebase.auth().onAuthStateChanged((user) => {
   store.setState({checkingSignedInState: false});
+
   if (firestoreUserUnsubscribe) {
     firestoreUserUnsubscribe();
     firestoreUserUnsubscribe = null;
-
-    // Clear Firestore values here, so they don't persist between signins.
-    store.setState({
-      userUrlSeen: null,
-      userUrl: null,
-    });
   }
 
   // Cache whether the user was signed in, to help prevent FOUC in future, as
@@ -35,45 +31,68 @@ firebase.auth().onAuthStateChanged((user) => {
   window.localStorage["webdev_isSignedIn"] = user ? "probably" : "";
 
   if (!user) {
-    store.setState({
-      isSignedIn: false,
-      user: null,
-    });
+    clearSignedInState();
     return;
   }
 
+  // Don't clear userUrl, as the user might have requested something prior to
+  // signing in.
   store.setState({
     isSignedIn: true,
     user,
   });
+  let lastSavedUrl = null;
+
   const onUserSnapshot = (snapshot) => {
-    const state = store.getState();
-    const isInitialSnapshot = state.userUrl === null;
+    let saveNewUrlToState = false;
 
     // We expect the user snapshot to look like:
     // {
-    //   currentUrl: String,         # current used URL
+    //   currentUrl: String,         # current URL saved to Firestore
     //   urls: {String: Timestamp},  # URL to first time used (including current URL)
     // }
     const data = snapshot.data() || {}; // is empty on new user
+    const savedUrl = data.currentUrl || "";
 
-    const userUrl = data.currentUrl || "";
-    const prevSeen = (data.urls && data.urls[userUrl]) || null;
-    const userUrlSeen = prevSeen ? prevSeen.toDate() : null;
-
-    // Request results if this is the first snapshot and they have a saved URL.
-    let userUrlResultsPending = isInitialSnapshot && userUrl;
-
-    // But don't request results if there's an active fetch or a URL was set pre-signin.
-    if (state.activeLighthouseUrl || state.userUrl === userUrl) {
-      userUrlResultsPending = false;
+    const {userUrl, userUrlSeen, activeLighthouseUrl} = store.getState();
+    if (activeLighthouseUrl !== null) {
+      // Do nothing, as the active URL action will eventually write its results.
+      // This will also trigger a write to Firestore.
+    } else if (lastSavedUrl && lastSavedUrl !== savedUrl) {
+      // The user changed their target URL in another browser. Update it.
+      // This doesn't fire on the first snapshot as |lastRemoteUserUrl| begins
+      // as null.
+      saveNewUrlToState = true;
+    } else if (!userUrl) {
+      // Update to remote if there was no URL run before signin.
+      saveNewUrlToState = true;
+    } else if (!lastSavedUrl && userUrl) {
+      // This is the first snapshot from Firebase, but the user has a local URL.
+      // The user has run Lighthouse, but then signed in. Save the new run
+      // to Firebase.
+      saveUserUrl(userUrl, userUrlSeen);
+      lastSavedUrl = userUrl;
+      // Return early as we preempt the Firestore snapshot via lastSavedUrl
+      return;
+    } else {
+      // Do nothing, as the last remote URL is already up-to-date. This occurs
+      // if a snapshot was triggered for a field we don't care about.
     }
+    lastSavedUrl = savedUrl;
 
-    store.setState({
-      userUrlSeen,
-      userUrl,
-      userUrlResultsPending,
-    });
+    // The URL changed, so record it from remote, and indicate that
+    // <web-lighthouse-scores-container> should request new content when it
+    // appears on the page.
+    if (saveNewUrlToState) {
+      const seen = (data.urls && data.urls[savedUrl]) || null;
+      const savedUrlSeen = seen ? seen.toDate() : null;
+
+      store.setState({
+        userUrl: savedUrl,
+        userUrlSeen: savedUrlSeen,
+        userUrlResultsPending: true,
+      });
+    }
   };
 
   // This unsubscribe function is used if the user signs out. However, the user's row cannot be
