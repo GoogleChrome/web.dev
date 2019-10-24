@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const chalk = require('chalk');
+const chalk = require("chalk");
 const warn = chalk.black.bgYellow;
 
 let memo;

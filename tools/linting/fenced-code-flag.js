@@ -82,21 +82,23 @@
  * limitations under the License.
  */
 
-'use strict';
+"use strict";
 
-const rule = require('unified-lint-rule');
-const visit = require('unist-util-visit');
-const position = require('unist-util-position');
-const generated = require('unist-util-generated');
+const rule = require("unified-lint-rule");
+const visit = require("unist-util-visit");
+const position = require("unist-util-position");
+const generated = require("unist-util-generated");
 
-module.exports = rule('remark-lint:fenced-code-flag', fencedCodeFlag);
+module.exports = rule("remark-lint:fenced-code-flag", fencedCodeFlag);
 
 const start = position.start;
 const end = position.end;
 
 const fence = /^ {0,3}([~`])\1{2,}/;
-const reasonInvalid = 'Invalid code-language flag. See https://web.dev/handbook/markup-code/#code-blocks';
-const reasonMissing = 'Missing code-language flag. See https://web.dev/handbook/markup-code/#code-blocks';
+const reasonInvalid =
+  "Invalid code-language flag. See https://web.dev/handbook/markup-code/#code-blocks";
+const reasonMissing =
+  "Missing code-language flag. See https://web.dev/handbook/markup-code/#code-blocks";
 
 /* eslint-disable require-jsdoc */
 
@@ -105,16 +107,16 @@ function fencedCodeFlag(tree, file, pref) {
   let allowEmpty = false;
   let flags = [];
 
-  if (typeof pref === 'object' && !('length' in pref)) {
+  if (typeof pref === "object" && !("length" in pref)) {
     allowEmpty = Boolean(pref.allowEmpty);
     pref = pref.flags;
   }
 
-  if (typeof pref === 'object' && 'length' in pref) {
-    flags = String(pref).split(',');
+  if (typeof pref === "object" && "length" in pref) {
+    flags = String(pref).split(",");
   }
 
-  visit(tree, 'code', visitor);
+  visit(tree, "code", visitor);
 
   function visitor(node) {
     let value;

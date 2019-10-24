@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
+const {html} = require("common-tags");
 
 /* eslint-disable require-jsdoc */
 
@@ -22,20 +22,20 @@ module.exports = (content, type, labelOverride) => {
   if (!type) {
     /* eslint-disable max-len */
     throw new Error(
-      `Can't create Compare component without a type. Did you forget to pass the type as a string?`
+      `Can't create Compare component without a type. Did you forget to pass the type as a string?`,
     );
     /* eslint-enable max-len */
   }
 
-  let label = labelOverride || '';
+  let label = labelOverride || "";
   if (!label) {
     switch (type) {
-      case 'worse':
-        label = 'Don\'t';
+      case "worse":
+        label = "Don't";
         break;
 
-      case 'better':
-        label = 'Do';
+      case "better":
+        label = "Do";
         break;
 
       default:
