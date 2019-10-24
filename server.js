@@ -16,15 +16,15 @@
 
 const isProd = Boolean(process.env.GAE_APPLICATION);
 
-const express = require('express');
-const buildRedirectHandler = require('./redirect-handler.js');
+const express = require("express");
+const buildRedirectHandler = require("./redirect-handler.js");
 
 const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
   const redirectsPath = isProd
-      ? 'dist/en/_redirects.yaml'
-      : 'src/site/content/en/_redirects.yaml';
+    ? "dist/en/_redirects.yaml"
+    : "src/site/content/en/_redirects.yaml";
 
   // Don't block loading the server if the redirect handler couldn't build.
   try {
@@ -37,13 +37,13 @@ const redirectHandler = (() => {
 
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
-  const options = {root: 'dist/en'};
-  res.sendFile('404/index.html', options, (err) => err && next(err));
+  const options = {root: "dist/en"};
+  res.sendFile("404/index.html", options, (err) => err && next(err));
 };
 
 const handlers = [
-  express.static('dist'),
-  express.static('dist/en'),
+  express.static("dist"),
+  express.static("dist/en"),
   redirectHandler,
   notFoundHandler,
 ];

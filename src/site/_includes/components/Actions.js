@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const site = require('../../_data/site');
-require('intl-list-format');
-require('intl-list-format/locale-data/en');
+const {html} = require("common-tags");
+const site = require("../../_data/site");
+require("intl-list-format");
+require("intl-list-format/locale-data/en");
 
 /* eslint-disable require-jsdoc,max-len */
 
@@ -68,14 +68,15 @@ const ShareAction = (title, url, authors = []) => {
 };
 
 const by = (authors) => {
-  const screenNames = authors.map((author) => author.twitter)
+  const screenNames = authors
+    .map((author) => author.twitter)
     .filter(Boolean)
     .map((author) => `@${author}`);
   if (screenNames.length) {
-    const il = new Intl.ListFormat('en');
+    const il = new Intl.ListFormat("en");
     return ` by ${il.format(screenNames)}`;
   }
-  return '';
+  return "";
 };
 
 const SubscribeAction = () => {
