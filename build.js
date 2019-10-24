@@ -15,19 +15,21 @@
  */
 
 require("dotenv").config();
+const isProd = process.env.ELEVENTY_ENV === "prod";
 
+const fs = require("fs").promises;
+const path = require("path");
 const log = require("fancy-log");
 const rollupPluginNodeResolve = require("rollup-plugin-node-resolve");
 const rollupPluginCJS = require("rollup-plugin-commonjs");
 const rollupPluginVirtual = require("rollup-plugin-virtual");
 const rollup = require("rollup");
+const terser = isProd ? require("terser") : null;
 
 process.on("unhandledRejection", (reason, p) => {
   log.error("Build had unhandled rejection", reason, p);
   process.exit(1);
 });
-
-const isProd = process.env.ELEVENTY_ENV === "prod";
 
 const bootstrapConfig = {
   prod: isProd,
@@ -115,10 +117,42 @@ async function buildTest() {
   });
 }
 
+async function compressOutput(generated) {
+  let inputSize = 0;
+  let outputSize = 0;
+
+  for (const fileName of generated) {
+    const target = path.join("dist", fileName);
+
+    const raw = await fs.readFile(target, "utf8");
+    inputSize += raw.length;
+
+    const result = terser.minify(raw, {
+      sourceMap: {
+        content: await fs.readFile(target + ".map", "utf8"),
+        url: fileName + ".map",
+      },
+    });
+
+    if (result.error) {
+      throw new Error(`could not minify ${fileName}: ${result.error}`);
+    }
+
+    outputSize += result.code.length;
+    await fs.writeFile(target, result.code, "utf8");
+    await fs.writeFile(target + ".map", result.map, "utf8");
+  }
+
+  const ratio = outputSize / inputSize;
+  log(`Terser JS output is ${(ratio * 100).toFixed(2)}% of source`);
+}
+
 (async function() {
   const generated = await build();
   log(`Generated ${generated.length} files`);
   if (!isProd) {
     await buildTest();
+  } else {
+    await compressOutput(generated);
   }
 })();
