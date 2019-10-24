@@ -24,7 +24,7 @@ function scrollOnFrame(target) {
 
 /**
  * The caller wants to change the active URL. Let them, without triggering any
- * few loads.
+ * new loads.
  *
  * @param {!Event} e
  */
