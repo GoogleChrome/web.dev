@@ -1,7 +1,21 @@
 import {store} from "./store";
 import {saveUserUrl} from "./fb";
 import {runLighthouse, fetchReports} from "./lighthouse-service";
-import "wicg-inert";
+
+export const clearSignedInState = store.action(() => {
+  const {isSignedIn} = store.getState();
+  if (isSignedIn) {
+    return {
+      userUrlSeen: null,
+      userUrl: null,
+      checkingSignedInState: false,
+      isSignedIn: false,
+      user: null,
+      lighthouseResult: null,
+      lighthouseError: null,
+    };
+  }
+});
 
 export const requestRunLighthouse = store.action((state, url) => {
   const p = (async () => {
