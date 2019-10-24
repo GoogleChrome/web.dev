@@ -35,6 +35,36 @@ async function getPage(url) {
 }
 
 /**
+ * Force the user's cursor to the target element, making it focusable if needed.
+ * After the user blurs from the target, it will restore to its initial state.
+ *
+ * @param {?Element} el
+ */
+function forceFocus(el) {
+  if (!el) {
+    // do nothing
+  } else if (el.hasAttribute("tabindex")) {
+    el.focus();
+  } else {
+    // nb. This will also operate on elements that implicitly allow focus, but
+    // it should be harmless there (aside hiding the focus ring with
+    // w-force-focus).
+    el.tabIndex = -1;
+    el.focus();
+    el.classList.add("w-force-focus");
+
+    el.addEventListener(
+      "blur",
+      (e) => {
+        el.removeAttribute("tabindex");
+        el.classList.remove("w-force-focus");
+      },
+      {once: true},
+    );
+  }
+}
+
+/**
  * Swap the current page for a new one.
  * @param {string} url url of the page to swap.
  * @return {Promise}
@@ -58,8 +88,13 @@ async function swapContent(url) {
 
   // Grab the new page content
   let page;
+  let content;
   try {
     page = await getPage(url);
+    content = page.querySelector("#content");
+    if (content === null) {
+      throw new Error(`no #content found: ${url}`);
+    }
     await entrypointPromise;
   } catch (e) {
     // If something fails, just make a browser URL change
@@ -76,9 +111,13 @@ async function swapContent(url) {
   // Remove the current #content element
   main.querySelector("#content").remove();
   // Swap in the new #content element
-  main.appendChild(page.querySelector("#content"));
+  main.appendChild(content);
   // Update the page title
   document.title = page.title;
+  // Focus on the first title (or fallback to content itself)
+  forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
+  // Scroll to top
+  document.scrollingElement.scrollTop = 0;
 }
 
 router
