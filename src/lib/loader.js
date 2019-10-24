@@ -1,9 +1,6 @@
-import navaid from "navaid";
 import {store} from "./store";
 import "./utils/underscore-import-polyfill";
 
-const router = navaid();
-let isFirstRun = true;
 const domparser = new DOMParser();
 
 /**
@@ -32,6 +29,16 @@ async function getPage(url) {
   }
   const text = await res.text();
   return domparser.parseFromString(text, "text/html");
+}
+
+function normalizeUrl(url) {
+  if (url.endsWith("/index.html")) {
+    // If an internal link refers to "/foo/index.html", strip "index.html" and load.
+    return url.slice(0, -"index.html".length);
+  } else if (!url.endsWith("/")) {
+    // All web.dev pages end with "/".
+    return `${url}/`;
+  }
 }
 
 /**
@@ -67,17 +74,23 @@ function forceFocus(el) {
 /**
  * Swap the current page for a new one.
  * @param {string} url url of the page to swap.
- * @return {Promise}
+ * @param {boolean} isFirstRun whether this is the first run
+ * @return {!Promise<void>}
  */
-async function swapContent(url) {
+export async function swapContent(url, isFirstRun) {
   document.dispatchEvent(new CustomEvent("pageview", {detail: url}));
   const entrypointPromise = loadEntrypoint(url);
+
+  // If we disagree with the URL we're loaded at, then replace it inline
+  const normalized = normalizeUrl(url);
+  if (normalized) {
+    window.history.replaceState(null, null, normalized);
+  }
 
   // When the router boots it will always try to run a handler for the current
   // route. We don't need this for the HTML of the initial page load so we
   // cancel it, but wait for the page's JS to load.
   if (isFirstRun) {
-    isFirstRun = false;
     await entrypointPromise;
     return;
   }
@@ -96,10 +109,6 @@ async function swapContent(url) {
       throw new Error(`no #content found: ${url}`);
     }
     await entrypointPromise;
-  } catch (e) {
-    // If something fails, just make a browser URL change
-    window.location.href = window.location.href;
-    throw e;
   } finally {
     // We set the currentUrl in global state _after_ the page has loaded. This
     // is different than the History API itself which transitions immediately.
@@ -110,32 +119,13 @@ async function swapContent(url) {
   }
   // Remove the current #content element
   main.querySelector("#content").remove();
-  // Swap in the new #content element
-  main.appendChild(content);
+  main.appendChild(page.querySelector("#content"));
+
   // Update the page title
   document.title = page.title;
+
   // Focus on the first title (or fallback to content itself)
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
-  // Scroll to top
-  document.scrollingElement.scrollTop = 0;
+
+  store.setState({isPageLoading: false});
 }
-
-router
-  .on("/", async () => {
-    return swapContent("/");
-  })
-  .on("/*", async (params) => {
-    if (params.wild.endsWith("/index.html")) {
-      // If an internal link refers to "/foo/index.html", strip "index.html" and load.
-      const stripped = params.wild.slice(0, -"index.html".length);
-      return swapContent(`/${stripped}`);
-    } else if (window.location.pathname.endsWith("/")) {
-      // Navaid strips a trailing "/" on its own, so ensure it is added again before loading.
-      return swapContent(`/${params.wild}/`);
-    }
-
-    // This triggers Navaid again, so calling swapContent() here would cause a double load.
-    window.history.replaceState(null, null, window.location.pathname + "/");
-  });
-
-export {router};
