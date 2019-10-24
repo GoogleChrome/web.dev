@@ -394,7 +394,7 @@ class Search extends BaseElement {
     // Because focusout fires before click, if we try to wait for the click
     // event (~10's of ms later) then lit will have already deleted the link.
     const {relatedTarget} = e;
-    if (relatedTarget) {
+    if (relatedTarget && this.contains(relatedTarget)) {
       relatedTarget.click();
     }
 
