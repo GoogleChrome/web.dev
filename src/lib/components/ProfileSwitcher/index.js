@@ -1,6 +1,9 @@
 import {html} from "lit-element";
+import {until} from "lit-html/directives/until";
 import {BaseElement} from "../BaseElement";
 import {signIn, signOut} from "../../fb";
+
+const emptyFrag = document.createDocumentFragment();
 
 /* eslint-disable require-jsdoc */
 class ProfileSwitcher extends BaseElement {
@@ -8,6 +11,7 @@ class ProfileSwitcher extends BaseElement {
     return {
       expanded: {type: Boolean},
       user: {type: Object},
+      photoPromise: {type: Promise},
     };
   }
 
@@ -15,11 +19,12 @@ class ProfileSwitcher extends BaseElement {
     return html`
       <button
         class="w-profile-toggle"
+        .disabled=${!this.user}
         @click="${() => (this.expanded = !this.expanded)}"
       >
-        <img class="w-profile-toggle__photo" src="${this.user.photoURL}" />
+        ${until(this.photoPromise)}
       </button>
-      ${this.expanded ? this.expandedTemplate : ""}
+      ${this.expanded && this.user ? this.expandedTemplate : ""}
     `;
   }
 
@@ -39,6 +44,30 @@ class ProfileSwitcher extends BaseElement {
         this.expanded = false;
       }
     });
+  }
+
+  shouldUpdate(changedProperties) {
+    if (!changedProperties.has("user")) {
+      return true;
+    }
+
+    this.expanded = false;
+
+    if (!this.user) {
+      this.photoPromise = null;
+      return true;
+    }
+
+    this.photoPromise = new Promise((resolve) => {
+      const image = new Image();
+      image.src = this.user.photoURL;
+      image.className = "w-profile-toggle__photo";
+      image.onload = () => resolve(image);
+
+      // Ignore errors and don't display a photo at all.
+      image.onerror = () => reject(emptyFrag);
+    });
+    return true;
   }
 
   get expandedTemplate() {

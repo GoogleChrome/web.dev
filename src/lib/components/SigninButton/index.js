@@ -6,18 +6,23 @@ import {BaseStateElement} from "../BaseStateElement";
 class SigninButton extends BaseStateElement {
   static get properties() {
     return {
-      show: {type: Boolean},
+      checkingSignedInState: {type: Boolean},
+      isSignedIn: {type: Boolean},
     };
   }
 
   render() {
-    if (!this.show) {
+    if (this.isSignedIn) {
       return "";
     }
 
+    // We don't set "disabled" attribute on the <button> based on this, because
+    // it causes a visual transition. Just disable the action while checking.
+    const action = this.checkingSignedInState ? null : signIn;
+
     return html`
       <button
-        @click=${signIn}
+        @click=${action}
         class="w-button w-button--secondary lh-signin-button gc-analytics-event"
         data-category="web.dev"
         data-label="measure, big sign-in"
@@ -61,7 +66,8 @@ class SigninButton extends BaseStateElement {
   }
 
   onStateChanged({checkingSignedInState, isSignedIn}) {
-    this.show = !checkingSignedInState && !isSignedIn;
+    this.checkingSignedInState = checkingSignedInState;
+    this.isSignedIn = isSignedIn;
   }
 }
 
