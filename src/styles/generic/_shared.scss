@@ -20,6 +20,11 @@
   outline: 1px solid $FOCUS_COLOR;
 }
 
+// Used when forcing focus cursor at a particular location on the page.
+.w-force-focus {
+  outline: none !important;
+}
+
 
 // This will hide the focus indicator if the element receives focus via the
 // mouse, but it will still show up on keyboard focus.
