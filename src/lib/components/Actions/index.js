@@ -56,7 +56,7 @@ class Actions extends BaseElement {
         const il = new Intl.ListFormat("en");
         authorText = ` by ${il.format(authors)}`;
       } else {
-        authorText = ` by ${il.join(", ")}`;
+        authorText = ` by ${authors.join(", ")}`;
       }
     }
 
