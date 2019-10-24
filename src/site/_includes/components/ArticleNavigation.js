@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const {findBySlug} = require('../../_filters/find-by-slug');
-const stripLanguage = require('../../_filters/strip-language');
-const md = require('markdown-it')();
+const {html} = require("common-tags");
+const {findBySlug} = require("../../_filters/find-by-slug");
+const stripLanguage = require("../../_filters/strip-language");
+const md = require("markdown-it")();
 
 /* eslint-disable require-jsdoc,max-len */
 
@@ -30,7 +30,7 @@ const md = require('markdown-it')();
 function getPathItemsFromTopics(topics) {
   return topics.reduce(
     (pathItems, topic) => pathItems.concat(topic.pathItems),
-    []
+    [],
   );
 }
 
@@ -43,7 +43,7 @@ function getPathItemsFromTopics(topics) {
  * @return {string} The next pathItem slug or a terminating empty string.
  */
 function findNextPathItemBySlug(path, slug) {
-  let next = '';
+  let next = "";
   const items = getPathItemsFromTopics(path.topics);
   const idx = items.indexOf(slug);
   for (let i = idx + 1; i < items.length; i++) {
@@ -96,7 +96,7 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
     // oof.
     next = findCollectionItemBySlug(
       collection,
-      findNextPathItemBySlug(path, slug)
+      findNextPathItemBySlug(path, slug),
     );
   }
 

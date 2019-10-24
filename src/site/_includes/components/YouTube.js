@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
+const {html} = require("common-tags");
 
 /* eslint-disable max-len */
 
@@ -26,7 +26,7 @@ const {html} = require('common-tags');
  */
 module.exports = (id, startTime) => {
   if (!id) {
-    throw new Error('Cannot create YouTube component if id is undefined');
+    throw new Error("Cannot create YouTube component if id is undefined");
   }
 
   let src = `https://www.youtube.com/embed/${id}`;

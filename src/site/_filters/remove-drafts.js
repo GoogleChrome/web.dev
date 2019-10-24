@@ -1,4 +1,4 @@
-const {findBySlug} = require('./find-by-slug');
+const {findBySlug} = require("./find-by-slug");
 
 /**
  * Remove any draft posts from a learning path.

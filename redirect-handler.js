@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-const yaml = require('js-yaml');
-const fs = require('fs');
-const escapeStringRegexp = require('escape-string-regexp');
+const yaml = require("js-yaml");
+const fs = require("fs");
+const escapeStringRegexp = require("escape-string-regexp");
 
 /**
  * Builds HTTP middleware that serves redirects for web.dev's _redirects.yaml
@@ -26,14 +26,14 @@ const escapeStringRegexp = require('escape-string-regexp');
  * @param {number=} code to use (DevSite uses 301)
  * @return {!Function}
  */
-module.exports = function buildRedirectHandler(filename, code=301) {
-  const doc = yaml.safeLoad(fs.readFileSync(filename, 'utf8'));
+module.exports = function buildRedirectHandler(filename, code = 301) {
+  const doc = yaml.safeLoad(fs.readFileSync(filename, "utf8"));
 
   const groupRedirect = {};
   const singleRedirect = {};
 
   for (const {from, to} of doc.redirects) {
-    const hasExtra = from.indexOf('...') !== -1;
+    const hasExtra = from.indexOf("...") !== -1;
     if (!hasExtra) {
       singleRedirect[from] = to;
       continue;
@@ -41,7 +41,7 @@ module.exports = function buildRedirectHandler(filename, code=301) {
 
     // "Group" redirects' from and to must end with "/...", i.e., match the last
     // whole path component.
-    if (!from.endsWith('/...') || !to.endsWith('/...')) {
+    if (!from.endsWith("/...") || !to.endsWith("/...")) {
       throw new TypeError(`got redirect with invalid ...: ${from} => ${to}`);
     }
     groupRedirect[from.slice(0, -3)] = to.slice(0, -3); // but only slice "..."
@@ -49,7 +49,7 @@ module.exports = function buildRedirectHandler(filename, code=301) {
 
   // Build a single RegExp for group matches, for speed of matching.
   const escaped = Object.keys(groupRedirect).map(escapeStringRegexp);
-  groupMatcher = new RegExp(`^(${escaped.join('|')})`);
+  groupMatcher = new RegExp(`^(${escaped.join("|")})`);
 
   return (req, res, next) => {
     if (req.url in singleRedirect) {
