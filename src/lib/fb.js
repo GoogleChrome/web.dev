@@ -30,6 +30,10 @@ firebase.auth().onAuthStateChanged((user) => {
     });
   }
 
+  // Cache whether the user was signed in, to help prevent FOUC in future, as
+  // this can be read synchronosly and Firebase's auth takes ~ms to come back.
+  window.localStorage["webdev_isSignedIn"] = user ? "probably" : "";
+
   if (!user) {
     store.setState({
       isSignedIn: false,

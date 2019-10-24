@@ -1,8 +1,8 @@
 /**
  * @fileoverview Site bootstrap code.
  *
- * This should not import unrelated code, and exists purely to load relevant polyfills and then
- * app.js (or TODO: entrypoints).
+ * This should import minimal site code, as it exists to load relevant polyfills and then the
+ * correct entrypoint via our router.
  */
 
 import config from "./bootstrap-config";

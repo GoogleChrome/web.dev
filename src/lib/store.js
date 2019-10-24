@@ -10,8 +10,8 @@ const initialState = {
   // don't render incorrect UI.
   checkingSignedInState: true,
 
-  // The user has successfully signed in.
-  isSignedIn: false,
+  // The user has successfully signed in; default to cached value to help prevent FOUC
+  isSignedIn: Boolean(window.localStorage["webdev_isSignedIn"]),
   user: null,
 
   // The most recent URL measured and the Date when it was first analyzed by the user.

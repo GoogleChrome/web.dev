@@ -39,5 +39,5 @@
 .w-page-header__copy {
   font: inherit;
   margin: 0 auto 12px;
-  max-width: 512px;
+  max-width: 600px; // fits a top line of text on a large screen to prevent FOUC
 }

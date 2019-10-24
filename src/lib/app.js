@@ -9,8 +9,7 @@ import "./analytics";
 import {checkIfUserAcceptsCookies} from "./actions";
 
 // Configures global page state
-function onGlobalStateChanged() {
-  const {isSignedIn, isPageLoading} = store.getState();
+function onGlobalStateChanged({isSignedIn, isPageLoading}) {
   document.body.classList.toggle("lh-signedin", isSignedIn);
 
   const progress = document.querySelector(".w-loading-progress");
@@ -24,7 +23,7 @@ function onGlobalStateChanged() {
   }
 }
 store.subscribe(onGlobalStateChanged);
-onGlobalStateChanged();
+onGlobalStateChanged(store.getState());
 
 // Give elements time to set up before kicking off state changes.
 // This is useful for elements with CSS animations who need to have been
