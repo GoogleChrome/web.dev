@@ -1,0 +1,261 @@
+---
+title: Notification Triggers
+subhead:
+  Notification Triggers allows you to schedule local notifications that don't require a network
+  connection, which makes them an ideal solution for use cases like calendar apps.
+authors:
+  - thomassteiner
+description:
+  The Notification Triggers API allows developers to schedule local notifications that don't require
+  a network connection, which makes them an ideal solution for use cases like calendar apps.
+date: 2019-10-24
+updated: 2019-10-24
+tags:
+  - post
+  - capabilities
+  - fugu
+  - behind-a-flag
+  - notification-triggers
+---
+
+{% Aside %}
+  The Notification Triggers API, part of Google's
+  [capabilities project](https://developers.google.com/web/updates/capabilities),
+  is currently in development. This post will be updated as the
+  implementation progresses.
+{% endAside %}
+
+## What are Notification Triggers? {: #what }
+
+Web developers have the ability to display notifications using the
+[Web Notifications API](https://www.w3.org/TR/notifications/). This feature is often used in
+collaboration with the [Push API](https://w3c.github.io/push-api/) to inform the user of
+time-sensitive information, such as breaking news events or received messages. Notifications are
+then shown by running JavaScript on the user's device.
+
+The problem with the Push API is that it's not reliable for triggering notifications which _must_ be
+shown when a particular condition, like time or location, is met. An example of a _time-based
+condition_ is a calendar notification that reminds you of an important meeting with your boss at
+2PM. An example of a _location-based condition_ is when you enter the vicinity of your grocery
+store, you get a reminder notification to buy milk. Network connectivity or battery-preserving
+features like doze mode can delay the delivery of push based notifications.
+
+Notification Triggers solve this problem by letting you schedule notifications with their triggering
+condition in advance, so that at the moment of delivery no network connection is required because
+the device can prepare the delivery beforehand.
+
+{% Aside %}
+  For now, only _time-based triggers_ are supported in Chrome. Additional triggers, such as
+  location-based triggers, for example, will potentially be added in the future based on developer
+  demand.
+{% endAside %}
+
+### Use cases {: #use-cases }
+
+Calendar applications can use time-based Notification Triggers to remind a user of upcoming
+meetings. The default notification scheme for a calendar app could be to show a first "heads up"
+notification one hour before a meeting and then another more urgent notification five minutes
+before.
+
+A TV network might remind users that their favorite TV show is about to start, or a conference live
+stream is about to commence.
+
+Time zone conversion sites can use time-based Notification Triggers to let their users schedule
+alarms for telephone conferences or video calls.
+
+## Current status {: #status }
+
+| Step                                     | Status                   |
+| ---------------------------------------- | ------------------------ |
+| 1. Create explainer                      | [Complete][explainer]    |
+| 2. Create initial draft of specification | Not started              |
+| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
+| **4. Origin trial**                      | **[In Progress][ot]**    |
+| 5. Launch                                | Not started              |
+
+## How to use Notification Triggers {: #use }
+
+### Enabling via chrome://flags
+
+To experiment with the Notification Triggers API locally, without an origin trial token, enable the
+`#enable-experimental-web-platform-features` flag in `chrome://flags`.
+
+### Enabling support during the origin trial phase
+
+Starting in Chrome ⚠️ToDo, the Notification Triggers API will be available as an origin trial.
+Origin trials allow you to try new features and give feedback on their usability, practicality, and
+effectiveness, both to us, and to the web standards community. For more information, see the
+[Origin Trials Guide for Web Developers](https://googlechrome.github.io/OriginTrials/developer-guide.html).
+
+Request a [token](https://developers.chrome.com/origintrials/) for your origin. Add the token to
+your pages, there are two ways to provide this token on any pages in your origin: Add an
+`origin-trial` `<meta>` tag to the `head` of any page. For example, this may look something like:
+`<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">` If you can configure your server, you
+can also provide the token on pages using an `Origin-Trial` HTTP header. The resulting response
+header should look something like: `Origin-Trial: TOKEN_GOES_HERE`
+
+### Feature detection
+
+You can find out if the browser supports Notification Triggers by checking for the existence of the
+`showTrigger` property.
+
+```js
+if ("showTrigger" in Notification.prototype) {
+  /* Notification Triggers supported */
+}
+```
+
+### Scheduling a notification
+
+Scheduling a notification is similar to showing a regular push notification, with the difference
+being that you need to pass a `showTrigger` condition property with a `TimestampTrigger` object as
+the value to the notification's options object.
+
+```js
+const createScheduledNotification = async (tag, title, timestamp) => {
+  const registration = await navigator.serviceWorker.getRegistration();
+  registration.showNotification(title, {
+    tag: tag,
+    body: "This notification was scheduled 30 seconds ago",
+    showTrigger: new TimestampTrigger(timestamp + 30 * 1000)
+  });
+};
+```
+
+{% Aside %}
+  On desktop, Notifications Triggers will fire only if Chrome is running. On Android,
+  Notifications Triggers will fire completely independent from Chrome.
+{% endAside %}
+
+### Canceling a previously scheduled notification
+
+To cancel previously scheduled notifications first request a list of all notifications that match a
+certain tag through `ServiceWorkerRegistration.getNotifications()`. Note that you need to pass the
+`includeTriggered` flag for scheduled notifications to be included in the list.
+
+```js
+const tag = 'meeting';
+const cancelScheduledNotification = async (tag) => {
+  const registration = await navigator.serviceWorker.getRegistration();
+  const notifications = await registration.getNotifications({
+    tag: tag,
+    includeTriggered: true,
+  });
+
+  if (Array.isArray(notifications)) {
+    notifications.forEach((notification) => notification.close());
+  }
+};
+```
+
+### Debugging
+
+You can use Chrome DevTools' Notifications debug service on the Application tab. To start debugging,
+press the small "Start recording events" button in the top-left corner (the circle), or hit
+'Command/Control' + 'E'. This allows you to both examine scheduled notifications, as well as see
+displayed and closed notifications. The screenshots below show this in action.
+
+<figure class="w-figure w-figure--fullbleed">
+  <img src="devtools-scheduled.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 1 — Chrome DevTools showing the "scheduled" state of a notification.
+  </figcaption>
+</figure>
+
+<figure class="w-figure w-figure--fullbleed">
+  <img src="devtools-displayed.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 2 — Chrome DevTools showing the "displayed" state of a previously scheduled notification.
+  </figcaption>
+</figure>
+
+### Demo
+
+You can see Notification Triggers in action in the [demo][demo], which allows you to schedule
+notifications, list scheduled notifications, and cancel them. The source code is available on
+[Glitch][demo-source].
+
+<figure class="w-figure w-figure--fullbleed">
+  <img src="demo.png" alt="">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    Fig. 3 — Notification Triggers <a href="https://notification-triggers.glitch.me/">demo</a>.
+  </figcaption>
+</figure>
+
+## Security and permissions
+
+We've designed and implemented Notification Triggers using the core principles defined in
+[Controlling Access to Powerful Web Platform Features][powerful-apis], including user control,
+transparency, and ergonomics. As this API depends on service workers, it is only available in secure
+contexts. Using the API requires the same permission as regular push notifications.
+
+### User control
+
+This API is only available in the context of a `ServiceWorkerRegistration`. This implies that all
+required data is stored in the same context and is automatically deleted when the service worker is
+deleted or the user deletes all site data for the origin. Blocking cookies also prevents service
+workers from being installed, and therefore this API from being used. Notifications can always be
+disabled for the site in site settings.
+
+### Transparency
+
+Unlike the Push API, this API does not depend on the network, which implies scheduled notifications
+need all required data beforehand, including fetching image resources referenced by the `badge`,
+`icon` and `image` attributes. This means showing a scheduled notification is not observable by the
+developer and doesn't involve waking up the service worker until the user interacts with the
+notification. Consequently there is currently no known way the developer could obtain information
+about the user through potentially privacy-invading approaches like IP address geolocation lookup.
+This design also allows the feature to tap into scheduling mechanism provided by the operating
+system like Android's
+[`AlarmManager`](https://developer.android.com/reference/android/app/AlarmManager), which helps
+preserve battery.
+
+## Feedback {: #feedback }
+
+We want to hear about your experiences with Notification Triggers.
+
+### Tell us about the API design
+
+Is there something about the API that doesn't work like you expected? Or are there missing methods
+or properties that you need to implement your idea? Have a question or comment on the security
+model? File a spec issue on the [Notification Triggers GitHub repo][issues], or add your thoughts to
+an existing issue.
+
+### Problem with the implementation?
+
+Did you find a bug with Chrome's implementation? Or is the implementation different from the spec?
+File a bug at [new.crbug.com](https://new.crbug.com/). Be sure to include as much detail as you can,
+simple instructions for reproducing, and set Components to `UI>Notifications`. Glitch works great
+for sharing quick and easy repros.
+
+### Planning to use the API?
+
+Planning to use Notification Triggers on your site? Your public support helps us to prioritize
+features, and shows other browser vendors how critical it is to support them. Send a Tweet to
+[@ChromiumDev](https://twitter.com/chromiumdev) with `#notificationtriggers` and let us know where
+and how you're using it.
+
+## Helpful Links {: #helpful }
+
+- [Public explainer][explainer]
+- [Notification Triggers demo][demo] | [Notification Triggers demo source][demo-source]
+- [Tracking bug][cr-bug]
+- [ChromeStatus.com entry][cr-status]
+- Blink Component: `UI>Notifications`
+
+## Acknowledgements
+
+Notification Triggers was implemented by [Richard Knoll](https://uk.linkedin.com/in/richardknoll)
+and the explainer written by [Peter Beverloo](https://twitter.com/beverloo?lang=en), with
+contributions from Richard. The following people have reviewed the article:
+[Joe Medley](https://twitter.com/medleyjp), [Pete LePage](https://twitter.com/petele), as well as
+Richard and Peter.
+
+[issues]: https://github.com/beverloo/notification-triggers/issues
+[demo]: https://notification-triggers.glitch.me/
+[demo-source]: https://glitch.com/edit/#!/notification-triggers
+[cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=891339
+[cr-status]: https://www.chromestatus.com/feature/5133150283890688
+[explainer]: https://github.com/beverloo/notification-triggers/blob/master/README.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[ot]: ⚠️ToDo
