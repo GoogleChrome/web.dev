@@ -24,12 +24,12 @@
  */
 const ifDefined = (attr, val) => {
   if (val) {
-    if (typeof val === 'string') {
+    if (typeof val === "string") {
       val = [val];
     }
-    return `${attr}="${val.join(' ')}"`;
+    return `${attr}="${val.join(" ")}"`;
   }
-  return '';
+  return "";
 };
 
 module.exports = {ifDefined};

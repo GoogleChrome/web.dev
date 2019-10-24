@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-const livePosts = require('../_filters/live-posts');
+const livePosts = require("../_filters/live-posts");
 
 // Return the three most recent blog posts.
 module.exports = (collection) => {
   return collection
-    .getFilteredByTag('post')
+    .getFilteredByTag("post")
     .filter(livePosts)
     .reverse()
     .slice(0, 3);

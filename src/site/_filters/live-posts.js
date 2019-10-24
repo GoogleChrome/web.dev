@@ -1,4 +1,4 @@
-const {env} = require('../_data/site');
+const {env} = require("../_data/site");
 
 /**
  * Filter draft posts out from a collection.
@@ -15,7 +15,7 @@ module.exports = function livePosts(post) {
   // }
 
   // If we're in dev mode, force draft posts to show up.
-  if (env === 'dev') {
+  if (env === "dev") {
     return true;
   }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const AuthorInfo = require('./AuthorInfo');
+const {html} = require("common-tags");
+const AuthorInfo = require("./AuthorInfo");
 
 module.exports = ({
   post,
@@ -34,7 +34,7 @@ module.exports = ({
 
   if (!author.name) {
     throw new Error(
-      `Can't create Author with missing author.name. author object: ${author}`
+      `Can't create Author with missing author.name. author object: ${author}`,
     );
   }
 
