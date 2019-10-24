@@ -7,15 +7,16 @@
 
 import config from "./bootstrap-config";
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
-import {router} from "./router";
+import {swapContent} from "./loader";
+import * as router from "./utils/router";
 
 console.info("web.dev", config.version);
 
 WebComponents.waitFor(async () => {
   // Run as long-lived router w/ history & "<a>" bindings
-  // Also immediately calls `run()` handler for current location, loading its
-  // required JS entrypoint
-  router.listen();
+  // Also immediately calls `swapContent()` handler for current location,
+  // loading its required JS entrypoint
+  router.listen(swapContent);
 });
 
 if ("serviceWorker" in navigator) {

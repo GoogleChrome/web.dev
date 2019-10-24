@@ -37,7 +37,6 @@
     "focus-visible": "^5.0.2",
     "js-yaml": "^3.13.1",
     "lit-element": "^2.2.0",
-    "navaid": "^1.0.5",
     "rollup-plugin-virtual": "^1.0.1",
     "unistore": "^3.4.1",
     "wicg-inert": "^2.1.3"

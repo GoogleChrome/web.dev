@@ -5,7 +5,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
-import {router} from "../../router";
+import * as router from "../../utils/router";
 import {debounce} from "../../utils/debounce";
 import algoliasearch from "algoliasearch/dist/algoliasearchLite";
 
