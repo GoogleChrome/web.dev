@@ -16,29 +16,7 @@
 
 // The range of widths that we use when we srcset images.
 // srcset sizes generated using https://www.responsivebreakpoints.com/
-const srcsetRange = [
-  240,
-  480,
-  768,
-  1020,
-  1229,
-  1405,
-  1554,
-  1687,
-  1808,
-  1918,
-  2036,
-  2140,
-  2234,
-  2332,
-  2430,
-  2521,
-  2612,
-  2703,
-  2798,
-  2886,
-  3200,
-];
+const srcsetRange = [240, 480, 768, 1045, 1434, 1730, 1959, 2195, 2880, 3200];
 
 /**
  * Take min and max values for an image and return all srcset sizes that fall
