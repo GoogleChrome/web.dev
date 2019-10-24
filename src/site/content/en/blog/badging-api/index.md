@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2019-10-23
+updated: 2019-10-24
 tags:
   - post
   - capabilities
@@ -70,7 +70,7 @@ Examples of sites that may use this API include:
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
-| **4. Origin trial**                        | v2 (Chrome 79-80) [In progress](#ot)<br>v1 (Chrome 73-78) [In progress](#backwards-compat) |
+| **4. Origin trial**                        | v2 (Chrome 79-81) [In progress](#ot)<br>v1 (Chrome 73-78) [In progress](#backwards-compat) |
 | 5. Launch                                  | Not started                  |
 
 </div>
@@ -89,7 +89,7 @@ Examples of sites that may use this API include:
 
 The Badging API is available as an origin trial in Chrome 79 and later.
 
-The Badging API works on Windows, and macOS. Support for ChromeOS is in
+The Badging API works on Windows, and macOS. Support for Chrome OS is in
 development and will be available in a future release of Chrome.
 Unfortunately, Android is not supported because it requires you to show a
 notification, though this may change in the future.
@@ -153,19 +153,14 @@ Android only ever shows a dot instead of a numeric value.
 Don't assume anything about how the user agent wants to display the badge.
 Some user agents may take a number like "4000" and rewrite it as
 "99+". If you saturate the badge yourself (for example by setting it to "99")
-then the "+" won't appear. No matter the actual number, just set
-`setAppBadge(unreadCount)` and let the user agent deal with displaying it
-accordingly.
+then the "+" won't appear. No matter the actual number, just call
+`setExperimentalAppBadge(unreadCount)` and let the user agent deal with
+displaying it accordingly.
 
 While the Badging API *in Chrome* requires an installed app with an icon
 that can be badged, you shouldn't make calls to the Badging API dependent
 on the install state. Just call the API when it exists. If it works,
 it works. If not, it simply doesn't.
-
-{% Aside %}
-  Once the origin trial is completed, the API should switch to
-  `navigator.setAppBadge()`.
-{% endAside %}
 
 ## Supporting both the first and second origin trial {: #backwards-compat }
 
@@ -177,7 +172,7 @@ compatible, and calls to the previous API will fail.
 If you have an existing implementation, and want to provide backwards
 compatibility for your users, you can wrap the calls in the following
 wrapper function. Once all of your users have migrated to Chrome 79+, you
-can remove this wrapper function from you code.
+can remove this wrapper function from your code.
 
 ```js
 function setBadge(...args) {
