@@ -1,6 +1,5 @@
 import {html} from "lit-element";
-import {store} from "../../store";
-import {BaseElement} from "../BaseElement";
+import {BaseStateElement} from "../BaseStateElement";
 import {requestRunLighthouse} from "../../actions";
 import "../UrlChooser";
 
@@ -9,9 +8,7 @@ import "../UrlChooser";
  *
  * Invokes Lighthouse when the UrlChooser requests it, possibly with an updated URL.
  */
-
-/* eslint-disable require-jsdoc */
-class UrlChooserContainer extends BaseElement {
+class UrlChooserContainer extends BaseStateElement {
   static get properties() {
     return {
       url: {type: String},
@@ -22,21 +19,9 @@ class UrlChooserContainer extends BaseElement {
 
   constructor() {
     super();
-    this.onStateChanged = this.onStateChanged.bind(this);
 
     this.url = null; // when signed out or waiting for Firestore, this is null
     this.active = false;
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    store.subscribe(this.onStateChanged);
-    this.onStateChanged();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    store.unsubscribe(this.onStateChanged);
   }
 
   render() {
@@ -50,9 +35,7 @@ class UrlChooserContainer extends BaseElement {
     `;
   }
 
-  onStateChanged() {
-    const state = store.getState();
-
+  onStateChanged(state) {
     // As userUrl can change (a signed-in user can modify it in another browser
     // window), _prefer_ any URL that's currently being run through Lighthouse.
     // This will prevent e.g. "foo.com" (after a user has hit "Run Audit") being
