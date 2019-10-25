@@ -20,17 +20,18 @@ tags:
   - webxr
 ---
 
-Virtual reality has come to the web in Chrome 79. Based on the WebXR Device API,
-this launch is the foundation for immersive features to come later such as
-augmented reality. Other browsers will be supporting the spec soon, including
-[update before launch].
+Immersive experiences have come to the web in Chrome 79. The WebXR Device API
+brings virtual reality (with augmented reality to come later). While an update
+to the GamePad API extends the advanced use of controlls to VRß. Other browsers
+will be supporting these specs soon, including [update before launch].
 
 This article begins a series on the immersive web. This installment covers
 setting up a basic WebXR application and constructing a frame loop, the
 workhorse of an immersive experience. Later articles will cover drawing to a
-screen and interacting with input devices. Though Chrome only supports virtual
-reality for now, everything I cover in this and succeeding articles applies
-equally to both AR and VR.
+screen and interacting with input devices using [Gamepad API
+updates](https://www.chromestatus.com/features/5659025263820800) mentioned
+above. Though Chrome only supports virtual reality for now, everything I cover
+in this and succeeding articles applies equally to both AR and VR.
 
 If you've followed the progress of immersive experiences on the web, you know
 there has been much experimentation in recent years. An early WebVR
