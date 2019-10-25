@@ -232,7 +232,7 @@ function onXRFrame(hrTime, xrFrame) {
   let xrSession = xrFrame.session;
   session.requestAnimationFrame(onXRFrame);
   let xrViewerPose = xrFrame.getViewerPose(xrRefSpace);
-  if (pose) {
+  if (xrViewerPose) {
     // Render based on the pose.
   }
 }
