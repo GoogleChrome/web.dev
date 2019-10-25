@@ -46,7 +46,7 @@ now we're enabling by default.
 Though we use two terms to describe immersive experiences&mdash;augmented reality and virtual reality&mdash;many think of them on a spectrum from complete reality to completely virtual, with degrees of immersion in between.
 
 <figure class="w-figure w-figure--center">
-  <img src="./immersive-spectrum.png" width="486" height="499" style="max-width: 100%;"/>
+  <img src="./immersive-spectrum.png" style="max-width: 100%;"/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The spectrum of immersive experiences
   </figcaption>
@@ -183,10 +183,10 @@ The basic process for the frame loop is:
 
 1. Call `XRSession.requestAnimationFrame()`. In response, the user agent invokes the `XRFrameRequestCallback`, which is defined by you.
 1. Inside your callback function:
-    a. Call `XRSession.requestAnimationFrame()` again.
-    a. Query for the position (called a pose in WebXR) of the viewer.
-    a. Draw content from the viewer's point of view.
-    a. Process user input.
+	a. Call `XRSession.requestAnimationFrame()` again.
+	a. Query for the position (called a pose in WebXR) of the viewer.
+	a. Draw content from the viewer's point of view.
+	a. Process user input.
 
 In this section I'll mainly cover steps 2a and 2b. I'll cover the remaining
 steps in later articles.
@@ -253,7 +253,7 @@ below. That's done layer objects such as the `XRWebGLLayer` interface and a
 means of drawing graphics such as the WebGL APIs or the Three.js framework. It's
 such a lengthy subject it will be covered in a later article.
 
-```js/8,13
+```js/8
 function onXRFrame(hrTime, xrFrame) {
   let xrSession = xrFrame.session;
   session.requestAnimationFrame(onXRFrame);
