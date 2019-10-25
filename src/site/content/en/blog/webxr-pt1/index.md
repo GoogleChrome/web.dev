@@ -235,34 +235,37 @@ function onXRFrame(hrTime, xrFrame) {
 
 #### Drawing the views
 
-After checking the pose, it's time to draw something. The `XRViewerPose` object
-contains an array of `XRView` objects. Each `XRView` object represents a display
-or a portion of a display and returns the information needed to render content
-that's correctly position for the device and the viewer. The returned
-information includes the field of view, eye offset, and other optical
-properties. Since I'm drawing for two eyes, I have two views which I loop
-through, drawing a separate image for each.
+After checking the pose, it's time to draw something. The `XRViewerPose`
+contains an array of `XRView` interfaces which represents a display or a portion
+of a display and return the information needed to render content that's
+correctly position for the device and the viewer such as the field of view, eye
+offset, and other optical properties. Since I'm drawing for two eyes, I have two
+views, which I loop through and draw a separate image for each.
 
 If I were implementing for phone-based augmented reality, I would have only one
-view, but I'd still loop through them. This is an important difference between
+view but I'd still loop through them. This is an important difference between
 WebXR and other immersive systems. Though it may seem pointless to iterate
-through one view, doing so allows you to use a single rendering path for the
+through one view, doing so allows you to have a single rendering path for a
 spectrum of immersive experiences.
 
-I haven't covered how to draw to the screen. That's done with layer objects such
-as the `XRWebGLLayer` interface and WebGL or a WebGL-based framework. It's such
-a lengthy subject it will be covered in a later article.
+One thing I didn't cover is how to draw to the screen, though I've shown it
+below. That's done layer objects such as the `XRWebGLLayer` interface and a
+means of drawing graphics such as the WebGL APIs or the Three.js framework. It's
+such a lengthy subject it will be covered in a later article.
 
-```js/5-7
+```js/5-13
 function onXRFrame(hrTime, xrFrame) {
   let xrSession = xrFrame.session;
   session.requestAnimationFrame(onXRFrame);
   let xrViewerPose = xrFrame.getViewerPose(xrRefSpace);
   if (xrViewerPose) {
     let glLayer = xrSession.renderState.baseLayer;
-    // Use the baseLayer and WebGL to draw something.
+    // Bind the baseLayer’s framebuffer and use WebGL to draw something.
+    gl.bindFramebuffer(gl.FRAMEBUFFER, glLayer.framebuffer);
     for (let xrView of xrViewerPose.views) {
-      // Draw something to the screen.
+      let vp = glLayer.getViewport(view);
+      gl.viewport(vp.x, vp.y, vp.width, vp.height);
+      // Draw to the portion of the framebuffer associated with this view.
     }
   }
 }
