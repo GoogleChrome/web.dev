@@ -184,7 +184,7 @@ The basic process for the frame loop is:
 <ol>
   <li>Call <code>XRSession.requestAnimationFrame()</code>. In response, the user agent invokes the <code>XRFrameRequestCallback</code>, which is defined by you.</li>
   <li>Inside your callback function:
-    <ol>
+    <ol type="a">
       <li>Call <code>XRSession.requestAnimationFrame()</code> again.</li>
       <li>Query for the position (called a pose in WebXR) of the viewer.</li>
       <li>Draw content from the viewer's point of view.</li>
