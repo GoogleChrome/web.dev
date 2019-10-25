@@ -9,10 +9,11 @@ date: 2019-10-15
 glitch: codelab-notifications-get-started
 # Specify which file the glitch should start on.
 glitchPath: public/index.js
-related_post: notifications-api-get-started
+related_post: use-push-notifications-to-engage-users
 ---
 
-In this codelab, use basic features of the Notifications API to:
+In this codelab, you'll use basic features of the
+[Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) to:
 
 * Request permission to send notifications
 * Send notifications
@@ -22,80 +23,82 @@ In this codelab, use basic features of the Notifications API to:
 
 Notifications are automatically blocked from the embedded Glitch app, so you won't be able to preview the app on this page. Instead, here's what to do:
 
-*   In the top-right corner of the embedded Glitch, click **Remix to Edit**. 
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'preview', 'ol' %}
 
-    <img class="w-screenshot" src="./remix-to-edit.png" alt="Screenshot showing the Remix to edit button">
+The Glitch should open in a new Chrome tab:
 
-*   In the bottom-right corner of the embedded Glitch, click **Share** and select **Live App**. Then click **Copy**. 
-
-    <img class="w-screenshot" src="./copy-live-app-url.png" alt="Screenshot showing how to copy the URL for the remixed live app">
-
-*   Open a new Chrome tab. Paste the live app URL into the URL bar and press **Enter**.
-
-    <img class="w-screenshot" src="./live-app-new-tab.png" alt="Screenshot showing the remixed live app in a new tab">
+<img class="w-screenshot" src="./live-app-new-tab.png" alt="Screenshot showing the remixed live app in a new tab">
 
 As you work through this codelab, make changes to the code in the embedded Glitch on this page. Refresh the new tab with your live app to see the changes.
 
 ## Get familiar with the starting app and its code
 
-*   In the Chrome tab where you're viewing the live app, open **Developer Tools** and make sure the console is displayed. You should see a console message: 
+Start by checking out the live app in the new Chrome tab:
 
-    <img class="w-screenshot" src="./console-output.png" alt="Screenshot showing console output from DevTools in the live app tab">
+1.  {% Instruction 'devtools-console', 'none' %}
+
+    You should see the following message in the Console:
+
+    ```text
+    Notification permission is default
+    ```
 
     If you don't know what that means, don't worry; all will soon be revealed!
 
-*   Click the buttons on the live app: **Request permission to send notifications** and **Send a notification**. 
+1.  Click the buttons in the live app: **Request permission to send notifications** and **Send a notification**.
 
     The console prints "TODO" messages from a couple of function stubs: `requestPermission` and `sendNotification`. These are the functions you'll implement in this codelab.
 
-*   In the embedded Glitch on this page, open public/index.js. Take a look at some important parts of the existing code:
+Now let's check out the sample app's code in the embedded Glitch on this page.
+Open `public/index.js` and take a look at some important parts of the existing code:
 
-    *   **The `showPermission` function**
-    
-        The `showPermission` function uses the `Notification` API to get the site's current permission state and log it to the console.
+*   The `showPermission` function uses the Notifications API to get
+    the site's current permission state and log it to the console:
 
-        ```js/3
-        // Print current permission state to console;
-        // update onscreen message.
-        function showPermission() {
-          let permission = Notification.permission;
-          console.log('Notification permission is ' + permission);
-          let p = document.getElementById('permission');
-          p.textContent = 'Notification permission is ' + permission;
-        }
-        ```
+    ```js/3
+    // Print current permission state to console;
+    // update onscreen message.
+    function showPermission() {
+      let permission = Notification.permission;
+      console.log('Notification permission is ' + permission);
+      let p = document.getElementById('permission');
+      p.textContent = 'Notification permission is ' + permission;
+    }
+    ```
 
-        Before requesting permission, the permission state is `default`. In the `default` permission state, a site must request and be granted permission before it can send notifications. 
+    Before requesting permission, the permission state is `default`.
+    In the `default` permission state,
+    a site must request and be granted permission before it can send notifications.
 
-    *   **The `requestPermission` function**
+*   The `requestPermission` function is a stub:
 
-        ```js
-        // Use the Notification API to request permission to send notifications.
-        function requestPermission() {
-          console.log('TODO: Implement requestPermission()');
-        }
-        ```
-        
-        This is a stub. You will implement this function in the next step.
+    ```js
+    // Use the Notification API to request permission to send notifications.
+    function requestPermission() {
+      console.log('TODO: Implement requestPermission()');
+    }
+    ```
 
-    *   **The `sendNotification` function**
+    You will implement this function in the next step.
 
-        ```js
-        // Use the Notification constructor to create and send a new Notification. 
-        function sendNotification() {
-          console.log('TODO: Implement sendNotification()');
-        }
-        ```
+*   The `sendNotification` function is a stub:
 
-        This is a stub. You will implement this function after you have implemented `requestPermission`.
+    ```js
+    // Use the Notification constructor to create and send a new Notification.
+    function sendNotification() {
+      console.log('TODO: Implement sendNotification()');
+    }
+    ```
 
-    *   **The `window.onload` event listener**
-    
-        ```js
-        window.onload = () => { showPermission(); };
-        ```
+    You will implement this function after you have implemented `requestPermission`.
 
-        When the page has loaded, the `showPermission` function displays the current permission state in the console and on the page.
+*   The `window.onload` event listener calls the `showPermission` function
+    on page load, displaying the current permission state in the console and on the page:
+
+    ```js
+    window.onload = () => { showPermission(); };
+    ```
 
 ## Request permission to send notifications
 
@@ -117,7 +120,7 @@ See the [`Promise` documentation on MDN](https://developer.mozilla.org/en-US/doc
 
 {% endAside %}
 
-*   Replace the `requestPermission` function stub in public/index.js with the following code:
+1.  Replace the `requestPermission` function stub in public/index.js with the following code:
 
     ```js
     // Use the Notification API to request permission to send notifications.
@@ -134,9 +137,9 @@ See the [`Promise` documentation on MDN](https://developer.mozilla.org/en-US/doc
     }
     ```
 
-*   Reload the Chrome tab in which you are viewing your live app.
+1.  Reload the Chrome tab in which you are viewing your live app.
 
-*   On the live app interface, click **Request permission to send notifications**. A popup appears. 
+1.  On the live app interface, click **Request permission to send notifications**. A popup appears.
 
 The user can make one of three responses to the permission popup. 
 
@@ -158,7 +161,7 @@ The user can make one of three responses to the permission popup.
 
 *   `Notification.permission` is set to `denied`.
 
-*   The site will not be able to display notifications to the user.
+*   The site will _not_ be able to display notifications to the user.
 
 *   Subsequent calls to `Notification.requestPermission` will resolve to `denied` without a popup.
   
@@ -172,7 +175,7 @@ The user can make one of three responses to the permission popup.
 
     However, if the user continues to dismiss the popups, the browser might block the site, setting `Notification.permission` to `denied`. Neither permission request popups nor notifications can then be displayed to the user.
 
-    At the time of writing, browser behavior in response to dismissed notifications permission popups is still subject to change. The best way to handle this is to always request notification permission in response to some interaction the user has initiated, so that they are expecting it and know what's going on. 
+    At the time of writing, browser behavior in response to dismissed notifications permission popups is still subject to change. The best way to handle this is to always request notification permission in response to some interaction the user has initiated so that they are expecting it and know what's going on.
 
 {% Aside %}
 
@@ -184,9 +187,10 @@ During development, to make the notification popup appear again, click the lock 
 
 In this step, you'll send a notification to the user.
 
-You will use the `Notification` constructor to create a new notification, and attempt to display it. If the permission state is `granted`, your notification will be displayed. 
+You will use the `Notification` constructor to create a new notification and attempt to display it.
+If the permission state is `granted`, your notification will be displayed.
 
-*   Replace the `sendNotification` function stub in index.js with the following code:
+1.  Replace the `sendNotification` function stub in index.js with the following code:
 
     ```js
     // Use the Notification constructor to create and send a new Notification. 
@@ -201,15 +205,19 @@ You will use the `Notification` constructor to create a new notification, and at
     }
     ```
 
-The `Notification` constructor takes two parameters: `title` and `options`. `options` is an object with properties representing visual settings and data you can include in a notification. See the [MDN documentation on notification parameters](https://developer.mozilla.org/en-US/docs/Web/API/notification/Notification#Parameters) for more information. 
+    The `Notification` constructor takes two parameters: `title` and `options`. `options` is an object with properties representing visual settings and data you can include in a notification. See the [MDN documentation on notification parameters](https://developer.mozilla.org/en-US/docs/Web/API/notification/Notification#Parameters) for more information.
 
-*   Refresh the Chrome tab in which you are viewing your live app, and try out the **Send notification** button.
+1.  Refresh the Chrome tab in which you are viewing your live app
+    and click the **Send notification** button.
+    A notification with the text `Test body` should appear.
 
 ## What happens when you send notifications without permission?
 
-In this step, you'll add a couple of lines of code that will let you see what happens when you attempt to display a notification without having the user's permission.
+In this step, you'll add a couple of lines of code that will let you see what happens
+when you attempt to display a notification without the user's permission.
 
-*   In public/index.js, at the end of the `sendNotification` function, define the new notification's `onerror` event handler:
+*   In `public/index.js`, at the end of the `sendNotification` function,
+    define the new notification's `onerror` event handler:
 
 ```js/9-12/
 // Use the Notification constructor to create and send a new Notification. 
@@ -230,21 +238,28 @@ function sendNotification() {
 
 **To observe a notification permission error:**
 
-*   Click the lock icon next to the Chrome URL bar and reset the site's notification permission setting to its default. 
+1.  Click the lock icon next to the Chrome URL bar and reset the site's notification permission setting to its default.
 
-*   Click **Request permission to send notifications**, and this time, select **Block** from the popup. 
+1.  Click **Request permission to send notifications**, and this time select **Block** from the popup.
 
-*   Click **Send notification** and see what happens (not much).
+1.  Click **Send notification** and see what happens.
+    The error text (`Could not send notification`)
+    and the event object are logged to the console.
 
-Optionally, reset the site's notification permissions again. You can try requesting permission and dismissing the popup multiple times to see what happens.
+Optionally, reset the site's notification permissions again.
+You can try requesting permission and dismissing the popup multiple times to see what happens.
 
 ## Experiment with notification options
 
-You have learnt how to request permission and send notifications. You also know what impact user responses will have on your app's ability to display notifications.
+You've now covered the basics of how to request permission and send notifications.
+You've also seen what impact user responses have on your app's ability to display notifications.
 
-Now you can experiment with the many visual and data options available when creating a notification. Here is the full set of available options (see the [Notification documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Notification) for more information on these options). 
+Now you can experiment with the many visual and data options available when creating a notification.
+The full set of available options is below.
+(See the [Notification documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Notification) for more information on these options.)
 
-Note that browsers and devices implement these options differently, so it's worth testing your notifications on different platforms to see how they look.
+Note that browsers and devices implement these options differently,
+so it's worth testing your notifications on different platforms to see how they look.
 
 ```js
 let options = {
@@ -281,4 +296,4 @@ See [Peter Beverloo's Notification Generator](https://tests.peter.sh/notificatio
 
 If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed) 
 
-Take the next codelab in this series, [Handle notifications with a service worker](codelab-notifications-service-worker) to explore further!
+Check out the next codelab in this series, [Handle notifications with a service worker](codelab-notifications-service-worker), to explore further!
