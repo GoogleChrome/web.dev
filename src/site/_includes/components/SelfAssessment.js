@@ -16,20 +16,23 @@
 
 const {html} = require('common-tags');
 
-/* eslint-disable require-jsdoc */
+/* eslint-disable require-jsdoc, max-len */
 
 module.exports = (content, blurb) => {
   return html`
-    <div class="w-callout">
-      <div class="w-callout__header">
-        <h2 class="w-callout__lockup w-callout__lockup--assess">
+    <details class="w-callout w-callout--collapsible" open>
+      <summary class="w-callout__header">
+        <h2 class="w-callout__lockup w-callout__lockup--collapsible w-callout__lockup--assess">
           Check for understanding
         </h2>
-        <div class="w-callout__blurb">
+        <div class="w-callout__blurb w-callout__blurb--open">
           ${blurb}
         </div>
-      </div>
+        <div class="w-callout__blurb w-callout__blurb--collapsed">
+          Expand this callout to practice concepts from the post.
+        </div>
+      </summary>
       ${content}
-    </div>
+    </details>
   `;
 };

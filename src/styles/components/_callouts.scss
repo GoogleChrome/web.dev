@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../settings/global';
 @import '../settings/type';
 @import '../tools/breakpoints';
 @import '../tools/mixins';
@@ -33,6 +34,32 @@
 
 .w-callout__header {
   margin-bottom: 16px;
+  pointer-events: none;
+
+  // scss-lint thinks this is a pseudo class instead of a psuedo element
+  // and complains about the two colons.
+  // scss-lint:disable all
+  &::-webkit-details-marker {
+    display: none;
+  }
+  // scss-lint:enable all
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover .w-callout__lockup--collapsible::after,
+  &:focus .w-callout__lockup--collapsible::after {
+    background: $GOOGLE_GREEN_50;
+  }
+
+  &:focus .w-callout__lockup--collapsible::after {
+    box-shadow: 0 0 0 1px $FOCUS_COLOR;
+  }
+
+  &:active .w-callout__lockup--collapsible::after {
+    background: $GOOGLE_GREEN_100;
+  }
 }
 
 .w-callout__lockup {
@@ -41,6 +68,31 @@
   // Ugh. Bad idea including margins in the heading styles.
   // They get reset at every breakpoint.
   margin: 0 0 12px !important;
+}
+
+.w-callout__lockup--collapsible {
+  position: relative;
+  width: 100%;
+
+  &::after {
+    @include font-material-icon();
+    border-radius: $GLOBAL_RADIUS;
+    content: 'collapse_more';
+    cursor: $CURSOR_POINTER_VALUE;
+    font-size: 24px;
+    padding: 2px;
+    pointer-events: auto;
+    position: absolute;
+    right: 1px;
+    speak: none;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background .2s, transform .3s;
+  }
+}
+
+.w-callout--collapsible[open] .w-callout__lockup--collapsible::after {
+  content: 'collapse_less';
 }
 
 .w-callout__lockup--codelab {
@@ -73,6 +125,18 @@
 
 .w-callout__blurb {
   margin: 0;
+}
+
+.w-callout__blurb--open {
+  display: none;
+}
+
+.w-callout[open] .w-callout__blurb--open {
+  display: block;
+}
+
+.w-callout[open] .w-callout__blurb--collapsed {
+  display: none;
 }
 
 .w-callout__list {
