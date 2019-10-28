@@ -28,7 +28,7 @@ workbox.routing.registerRoute(
         maxEntries: 30,
       }),
     ],
-  })
+  }),
 );
 
 console.log("Got cache manifest", manifest);
