@@ -23,7 +23,6 @@ WebComponents.waitFor(async () => {
   // then trigger a reload
   window.addEventListener("online", () => {
     const {specialPage} = store.getState();
-    console.info('got online event', specialPage);
     if (specialPage === "offline") {
       router.reload();
     }

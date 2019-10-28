@@ -137,7 +137,6 @@ export async function swapContent(url, isFirstRun) {
 
   // Determine if this was a special page
   const specialPage = meta("special", page);
-  debugger;
 
   store.setState({
     isPageLoading: false,
