@@ -9,9 +9,10 @@ updated: 2019-10-15
 tags:
   - post
   - capabilities
+  - fugu
+  - origin-trial
 hero: hero.jpg
 alt: mobile device with app panel open
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/855683929200394241
 ---
