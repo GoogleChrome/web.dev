@@ -11,5 +11,12 @@ cache:
     - node_modules
 install:
   - npm ci
+before_script:
+  - export CHROME_PATH="$(which google-chrome-stable)"
+  - google-chrome-stable --version
 script:
   - npm run build
+after_success:
+  - npm run lhci
+addons:
+  chrome: stable
