@@ -48,16 +48,16 @@
     outline: none;
   }
 
-  &:hover .w-callout__lockup--collapsible::after,
-  &:focus .w-callout__lockup--collapsible::after {
+  &:hover .w-callout--collapsible__toggle,
+  &:focus .w-callout--collapsible__toggle {
     background: $GOOGLE_GREEN_50;
   }
 
-  &:focus .w-callout__lockup--collapsible::after {
+  &:focus .w-callout--collapsible__toggle {
     box-shadow: 0 0 0 1px $FOCUS_COLOR;
   }
 
-  &:active .w-callout__lockup--collapsible::after {
+  &:active .w-callout--collapsible__toggle {
     background: $GOOGLE_GREEN_100;
   }
 }
@@ -73,26 +73,29 @@
 .w-callout__lockup--collapsible {
   position: relative;
   width: 100%;
-
-  &::after {
-    @include font-material-icon();
-    border-radius: $GLOBAL_RADIUS;
-    content: 'collapse_more';
-    cursor: $CURSOR_POINTER_VALUE;
-    font-size: 24px;
-    padding: 2px;
-    pointer-events: auto;
-    position: absolute;
-    right: 1px;
-    speak: none;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: background .2s, transform .3s;
-  }
 }
 
-.w-callout--collapsible[open] .w-callout__lockup--collapsible::after {
-  content: 'collapse_less';
+.w-callout--collapsible__toggle {
+  @include font-material-icon();
+  border-radius: $GLOBAL_RADIUS;
+  cursor: $CURSOR_POINTER_VALUE;
+  font-size: 24px;
+  padding: .25em;
+  pointer-events: auto;
+  position: absolute;
+  right: 1px;
+  speak: none;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background .2s;
+}
+
+.w-callout--collapsible__toggle::after {
+  content: 'unfold_more';
+}
+
+.w-callout--collapsible[open] .w-callout--collapsible__toggle::after {
+  content: 'unfold_less';
 }
 
 .w-callout__lockup--codelab {

@@ -19,6 +19,7 @@ guidance about how to use them effectively.
 1. [Banner](#banner)
 1. [Block quotes](#blockquotes)
 1. [Buttons](#buttons)
+1. [Callouts](#callouts)
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
@@ -27,9 +28,9 @@ guidance about how to use them effectively.
 1. [Images](#images)
 1. [Instruction](#instruction)
 1. [Lists](#lists)
-1. [Callouts](#callouts)
 1. [Stats](#stats)
 1. [Tables](#tables)
+1. [Tooltips](#tooltips)
 1. [Video](#video)
 
 ## Asides
@@ -197,6 +198,27 @@ Use the codelab aside to link to an associated codelab.
     Secondary button with icon
   </button>
 </div>
+
+## Callouts
+
+{% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
+
+{% SelfAssessment 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
+
+```html
+<label for="pwd-input">Password</label>
+
+<input type="text" role="textbox" id="pwd-input" name="password">
+```
+
+{% SelfAssessmentHint 'Does the sample need ARIA?' %}
+**No.** This sample is **incorrect**.
+Since the text input is a native HTML form element,
+it doesn't need ARIA for its semantics.
+In fact, text inputs don't allow ARIA roles to be added.
+{% endSelfAssessmentHint %}
+
+{% endSelfAssessment %}
 
 ## Columns
 
@@ -582,27 +604,6 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
 
-## Callouts
-
-{% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
-
-{% SelfAssessment 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
-
-```html
-<label for="pwd-input">Password</label>
-
-<input type="text" role="textbox" id="pwd-input" name="password">
-```
-
-{% SelfAssessmentHint 'Does the sample need ARIA?' %}
-**No.** This sample is **incorrect**.
-Since the text input is a native HTML form element,
-it doesn't need ARIA for its semantics.
-In fact, text inputs don't allow ARIA roles to be added.
-{% endSelfAssessmentHint %}
-
-{% endSelfAssessment %}
-
 ## Stats
 
 <div class="w-stats">
@@ -906,6 +907,24 @@ assumenda perspiciatis.
       </tr>
     </tbody>
   </table>
+</div>
+
+## Tooltips
+Hold the pointer over or focus the buttons below to view their tooltips.
+
+<div>
+  <button class="w-button w-button--icon" data-icon="format_align_left">
+    {% Tooltip 'Left align' %}
+  </button>
+  <button class="w-button w-button--icon" data-icon="format_align_center">
+    {% Tooltip 'Center align' %}
+  </button>
+  <button class="w-button w-button--icon" data-icon="format_align_right">
+    {% Tooltip 'Right align' %}
+  </button>
+  <button class="w-button w-button--icon" data-icon="format_align_justify">
+    {% Tooltip 'Justify' %}
+  </button>
 </div>
 
 ## Video

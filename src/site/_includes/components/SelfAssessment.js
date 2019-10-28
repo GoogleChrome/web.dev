@@ -24,6 +24,9 @@ module.exports = (content, blurb) => {
       <summary class="w-callout__header">
         <h2 class="w-callout__lockup w-callout__lockup--collapsible w-callout__lockup--assess">
           Check for understanding
+          <span class="w-callout--collapsible__toggle">
+            <span class="w-tooltip w-tooltip--right">Toggle callout</span>
+          </span>
         </h2>
         <div class="w-callout__blurb w-callout__blurb--open">
           ${blurb}
