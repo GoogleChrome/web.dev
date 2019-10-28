@@ -1,0 +1,15 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 3,
+      "url": [
+        "http://localhost:8080/",
+        "http://localhost:8080/interactive",
+        "http://localhost:8080/javascript-and-google-search-io-2019"
+      ]
+    },
+    "upload": {
+      "serverBaseUrl": "https://lhci-canary.herokuapp.com/"
+    }
+  }
+}
