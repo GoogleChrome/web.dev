@@ -63,15 +63,21 @@ async function buildCacheManifest() {
     globDirectory: "dist",
     globPatterns: ["images/**", "*.css"],
   });
-  if (toplevelManifest.warnings) {
+  if (toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
 
+  // Note that Workbox assumes "blah/index.html" is the same as requests to "blah/" for free, so
+  // rewriting the URLs below isn't neccessary.
   const contentManifest = await getManifest({
     globDirectory: "dist/en",
-    globPatterns: ["index.html", "offline/index.html"],
+    globPatterns: [
+      "index.html",
+      "offline/index.html",
+      "images/**/*.{png,svg}", // .jpg files are used for authors, skip
+    ],
   });
-  if (contentManifest.warnings) {
+  if (contentManifest.warnings.length) {
     throw new Error(`content manifest: ${contentManifest.warnings}`);
   }
 
@@ -113,12 +119,15 @@ async function build() {
     generated.push(fileName);
   }
 
-  const manifest = await buildCacheManifest();
+  const manifest = isProd ? await buildCacheManifest() : [];
+  const noticeDev = isProd ? "" : "// Manifest not generated in dev";
   const swBundle = await rollup.rollup({
     input: "src/lib/sw.js",
     plugins: [
       rollupPluginVirtual({
-        "cache-manifest": `export default ${JSON.stringify(manifest)}`,
+        "cache-manifest": `export default ${JSON.stringify(
+          manifest,
+        )};${noticeDev}`,
       }),
       ...defaultPlugins,
     ],
