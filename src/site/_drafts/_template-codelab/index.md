@@ -1,18 +1,46 @@
 ---
 layout: codelab
 title: Remove unused code
+description: |
+  A description of the codelab that will appear in search results.
+
+# A list of authors. Supports more than one.
 authors:
   - houssein
-description: |
-  In this codelab, learn how to improve the performance of an application by
-  removing any unused and unneeded dependencies.
-date: 2018-11-05
+
+date: 2019-10-31
 # Add an updated date to your post if you edit in the future.
-# updated: 2019-06-27
+# updated: 2019-11-01
+
+# Provide the id for a glitch that will display next to the instruction text.
 glitch: fav-kitties-starter
 # Specify which file the glitch should start on.
 # glitch_path: index.js
+
+# Provide the slug for the post that this codelab is related to. This will be
+# used at the bottom of the codelab for the "Return to article" button.
 related_post: remove-unused-code
+
+# You can provide a custom thumbnail and description for social media cards.
+# Images should be 1200 x 630.
+# If no social thumbnail is provided then the post will attempt to fallback to
+# the post's thumbnail or hero from above. It will also reuse the alt.
+# social:
+#   google:
+#     title: A title for Google search card.
+#     description: A description for Google search card.
+#     thumbnail: google_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
+#   facebook:
+#     title: A title for Facebook card.
+#     description: A description for Facebook card.
+#     thumbnail: facebook_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
+#   twitter:
+#     title: A title for Twitter card.
+#     description: A description for Twitter card.
+#     thumbnail: twitter_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
 ---
 
 In this codelab, improve the performance of the following application by

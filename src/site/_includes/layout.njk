@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+{% set lang = "en" %}
+{% set locale="en_US" %}
+<html lang="{{lang}}">
   <head>
-    <title>{{title if title else path.title}}</title>
-    <meta name="description" content="{{description if description else path.description}}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {# Don't index our staging site. #}
-    <meta name="robots" content="noindex">
     <meta charset="utf-8" />
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="full_width" value="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if noindex or draft -%}
+      <meta name="robots" content="noindex">
+    {%- endif %}
+
+    {% Meta locale, page, collections %}
+    
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
+
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
