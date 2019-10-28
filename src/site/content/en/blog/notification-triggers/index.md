@@ -41,8 +41,8 @@ store, you get a reminder notification to buy milk. Network connectivity or batt
 features like doze mode can delay the delivery of push based notifications.
 
 Notification Triggers solve this problem by letting you schedule notifications with their triggering
-condition in advance, so that at the moment of delivery no network connection is required because
-the device can prepare the delivery beforehand.
+condition in advance, so that the operation system will deliver the notification at the right time
+even if there is no network connectivity or the device is in a battery saver mode.
 
 {% Aside %}
   For now, only _time-based triggers_ are supported in Chrome. Additional triggers, such as
