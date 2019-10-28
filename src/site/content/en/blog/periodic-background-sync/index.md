@@ -399,7 +399,7 @@ event to use, and trigger it as many times as you'd like.
 </figure>
 
 Manually triggering a `periodicsync` event did not make it into Chrome 77, so
-the best way to test it out is to use Chrome 78 (currently in[ Canary](https://www.google.com/chrome/canary/))
+the best way to test it out is to use Chrome 78 (currently in [Canary](https://www.google.com/chrome/canary/))
 or later. You'll need to follow the same "[Enabling the DevTools interface](#enabling_the_devtools_interface)"
 steps to turn it on.
 
