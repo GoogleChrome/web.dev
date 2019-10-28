@@ -21,6 +21,7 @@ module.exports = {
   url: "https://web.dev",
   repo: "https://github.com/GoogleChrome/web.dev",
   subscribe: "https://web.dev/subscribe",
+  thumbnail: "/images/social.png",
   isBannerEnabled: true,
   banner: `Can’t make \`#ChromeDevSummit\` this year? Catch all the content
   (and more!) on the livestream or join your peers for a CDS Extended event at

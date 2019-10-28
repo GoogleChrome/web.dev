@@ -1,29 +1,54 @@
 ---
 title: An example blog post
 subhead: A catchy subhead that previews the content.
+description: |
+  A description of the article that will appear in search results.
+
+# A list of authors. Supports more than one.
 authors:
   - robdodson
 
-date: 2019-04-20
+date: 2019-10-31
 # Add an updated date to your post if you edit in the future.
-# updated: 2019-06-27
+# updated: 2019-11-01
 
 hero: hero.jpg
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
 # hero_fit: contain
+
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
+
 # You can provide an optional cropping of your hero image to be used as a
 # thumbnail. Note the alt text will be the same for both the thumbnail and
 # the hero.
 # thumbnail: thumbnail.jpg
+
 alt: A description of the hero image for screen reader users.
 
-description: |
-  This post is a test to demonstrate all of the components that can go into
-  an article. This description appears in the meta tag.
+# You can provide a custom thumbnail and description for social media cards.
+# Images should be 1200 x 630.
+# If no social thumbnail is provided then the post will attempt to fallback to
+# the post's thumbnail or hero from above. It will also reuse the alt.
+# social:
+#   google:
+#     title: A title for Google search card.
+#     description: A description for Google search card.
+#     thumbnail: google_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
+#   facebook:
+#     title: A title for Facebook card.
+#     description: A description for Facebook card.
+#     thumbnail: facebook_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
+#   twitter:
+#     title: A title for Twitter card.
+#     description: A description for Twitter card.
+#     thumbnail: twitter_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
+
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - accessibility
