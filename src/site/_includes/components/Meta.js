@@ -77,7 +77,7 @@ module.exports = (locale, page, collections) => {
     // Filter out tags that we don't want to show up in Search.
     // These tags are only used internally to determine which layout a page
     // should use.
-    let tags = pageData.tags || [];
+    let tags = (type === "article" ? pageData.tags : null) || [];
     tags = tags.filter((tag) => tag !== "pathItem" && tag !== "post");
 
     // prettier-ignore
@@ -90,7 +90,7 @@ module.exports = (locale, page, collections) => {
       <meta property="og:description" content="${meta.description}" />
       <meta property="og:image" content="${meta.thumbnail}" />
       <meta property="og:image:alt" content="${meta.alt}" />
-      ${type === "article" && tags && tags.length ? tags.map((tag) => html`<meta property="tag" content="${tag}" />`) : ""}
+      ${tags.map((tag) => html`<meta property="tag" content="${tag}" />`)}
     `;
   }
 
