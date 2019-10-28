@@ -17,6 +17,8 @@
 require("dotenv").config();
 
 const fs = require("fs");
+const path = require("path");
+const mkdirp = require("mkdirp");
 const log = require("fancy-log");
 
 const isProd = process.env.ELEVENTY_ENV === "prod";
@@ -37,6 +39,8 @@ const sassEngine = (function() {
  * @return {{css: !Buffer, map: !Buffer}}
  */
 function compileCSS(input, output) {
+  mkdirp.sync(path.dirname(output)); // make sure output dir exists
+
   // #1: Compile CSS with either engine.
   const compiledOptions = {
     file: input,

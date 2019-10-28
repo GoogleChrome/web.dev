@@ -31,9 +31,7 @@ workbox.routing.registerRoute(
   }),
 );
 
-console.log("Got cache manifest", manifest);
-
-workbox.precaching.precache(["/offline/"]);
+workbox.precaching.precacheAndRoute(manifest);
 
 /**
  * Match /foo-bar/ and "/foo-bar/as/many/of-these-as-you-like/".
