@@ -129,7 +129,7 @@ const createScheduledNotification = async (tag, title, timestamp) => {
 
 ### Canceling a previously scheduled notification
 
-To cancel previously scheduled notifications first request a list of all notifications that match a
+To cancel previously scheduled notifications, first request a list of all notifications that match a
 certain tag through `ServiceWorkerRegistration.getNotifications()`. Note that you need to pass the
 `includeTriggered` flag for scheduled notifications to be included in the list.
 
@@ -203,9 +203,9 @@ Unlike the Push API, this API does not depend on the network, which implies sche
 need all required data beforehand, including fetching image resources referenced by the `badge`,
 `icon` and `image` attributes. This means showing a scheduled notification is not observable by the
 developer and doesn't involve waking up the service worker until the user interacts with the
-notification. Consequently there is currently no known way the developer could obtain information
+notification. Consequently, there is currently no known way the developer could obtain information
 about the user through potentially privacy-invading approaches like IP address geolocation lookup.
-This design also allows the feature to tap into scheduling mechanism provided by the operating
+This design also allows the feature to tap into scheduling mechanisms provided by the operating
 system like Android's
 [`AlarmManager`](https://developer.android.com/reference/android/app/AlarmManager), which helps
 preserve battery.
