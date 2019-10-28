@@ -22,8 +22,8 @@ WebComponents.waitFor(async () => {
   // If the site becomes online again, and the special offline page was shown,
   // then trigger a reload
   window.addEventListener("online", () => {
-    const {specialPage} = store.getState();
-    if (specialPage === "offline") {
+    const {isOffline} = store.getState();
+    if (isOffline) {
       router.reload();
     }
   });

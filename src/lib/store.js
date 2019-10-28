@@ -1,6 +1,6 @@
 import createStore from "unistore";
 import devtools from "unistore/devtools";
-import meta from "./utils/meta";
+import getMeta from "./utils/meta";
 
 /* eslint-disable require-jsdoc */
 
@@ -32,8 +32,7 @@ const initialState = {
   lighthouseError: null,
 
   currentUrl: window.location.pathname,
-  specialPage: meta("special"),
-  isOffline: false,
+  isOffline: Boolean(getMeta("offline")),
   isSideNavExpanded: false,
   isSearchExpanded: false,
 

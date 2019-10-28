@@ -1,6 +1,6 @@
 import {store} from "./store";
 import "./utils/underscore-import-polyfill";
-import meta from "./utils/meta";
+import getMeta from "./utils/meta";
 
 const domparser = new DOMParser();
 
@@ -135,11 +135,11 @@ export async function swapContent(url, isFirstRun) {
   // Focus on the first title (or fallback to content itself)
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
 
-  // Determine if this was a special page
-  const specialPage = meta("special", page);
+  // Determine if this was the offline page
+  const isOffline = Boolean(getMeta("offline", page));
 
   store.setState({
     isPageLoading: false,
-    specialPage,
+    isOffline,
   });
 }
