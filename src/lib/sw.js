@@ -112,7 +112,9 @@ workbox.routing.setCatchHandler(async ({event}) => {
   if (isDocumentRequest) {
     // TODO(samthor): Annotate this page so the client knows it's being displayed because the user
     // is offline, and force it to rerequest when navigator.onLine is true.
-    // We have to ignoreSearch because Workbox adds __WB_REVISION__ to all its cached contents.
-    return caches.match("/offline/index.html", {ignoreSearch: true});
+    const cacheKey = workbox.precaching.getCacheKeyForURL(
+      "/offline/index.html",
+    );
+    return caches.match(cacheKey);
   }
 });
