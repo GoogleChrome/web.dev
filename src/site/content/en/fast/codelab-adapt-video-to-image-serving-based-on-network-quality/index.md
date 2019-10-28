@@ -1,6 +1,7 @@
 ---
 layout: codelab
 title: Adapt video to image serving based on network quality
+date: 2019-07-08
 authors:
   - mihajlija
 description: |
