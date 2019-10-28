@@ -120,7 +120,7 @@ because the battery charge level is too low),
 so it's a good practice to wrap the call in a `try…catch` statement.
 The exception's message will contain more details in case of failure.
 
-You also need a way to release the wake lock, which works through the
+You also need a way to release the wake lock, which is achieved by calling the
 `release()` method of the `WakeLockSentinel` object.
 If you don't store a reference to the `WakeLockSentinel`, there's no way
 to release the lock manually, but it will be released once the current tab is invisible.
