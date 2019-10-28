@@ -16,15 +16,6 @@ hero: # ⚠️ [TODO] Fix hero, old hero was "/web/updates/images/generic/baseli
 alt: # ⚠️ [TODO] Add alt text!
 ---
 
-<style>
-  .browser-screenshot {
-    margin: 1em;
-    filter: drop-shadow(0 6px 4px rgba(0,0,0,0.2));
-  }
-</style>
-
-<div class="clearfix"></div>
-
 ## What's periodic background sync?
 
 Have you ever been in any of the following situations? Riding a fast train or
@@ -360,21 +351,21 @@ in the PBS lifecycle: registering for sync, performing a background sync, and
 unregistering. In order to obtain information about these events, you need to
 "start recording" from within DevTools first.
 
-<figure>
-  <img
-     src="1-record.png"
-    class="browser-screenshot"
-    alt="The record button in DevTools">
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="1-record.png" alt="">
+  <figcaption class="w-figcaption">
+    Fig. 1 — The record button in DevTools.
+  </figcaption>
 </figure>
 
 While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
-<figure>
-  <img
-     src="2-record-result.png"
-    class="browser-screenshot"s
-    alt="Recorded PBS activity in DevTools">
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="2-record-result.png" alt="">
+  <figcaption class="w-figcaption">
+    Fig. 2 — Recorded PBS activity in DevTools.
+  </figcaption>
 </figure>
 
 After enabling recording once, it will stay enabled for up to three days,
@@ -391,11 +382,11 @@ You can do this via the "Service Workers" panel within the Applications tab in
 Chrome DevTools. The "Periodic Sync" field allows you to provide a `tag` for the
 event to use, and trigger it as many times as you'd like.
 
-<figure>
-  <img
-     src="3-sw-panel.png"
-    class="browser-screenshot"
-    alt="The service workers panel in DevTools">
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="3-sw-panel.png" alt="">
+  <figcaption class="w-figcaption">
+    Fig. 3 — The service workers panel in DevTools.
+  </figcaption>
 </figure>
 
 Manually triggering a `periodicsync` event did not make it into Chrome 77, so
@@ -431,41 +422,41 @@ DevTools interface will be enabled by default.
 - Visit `chrome://flags/#enable-devtools-experiments` and change the "Developer
   Tools experiments" setting to "Enabled".
 
-<figure>
-  <img
-     src="4-experiments.png"
-    class="browser-screenshot"
-    alt="The Developer Tools Experiments flag setting">
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="4-experiments.png" alt="">
+  <figcaption class="w-figcaption">
+    Fig. 4 — The Developer Tools Experiments flag setting.
+  </figcaption>
 </figure>
 
 - Restart Chrome.
 - [Open Chrome's DevTools](/web/tools/chrome-devtools/open), and choose
   "Settings" from the three-dot menu in the upper-right.
 
-<figure>
-  <img
-     src="5-settings.png"
-    class="browser-screenshot"
-    alt="The settings panel in DevTools">
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="5-settings.png" alt="">
+  <figcaption class="w-figcaption">
+    Fig. 5 — The settings panel in DevTools.
+  </figcaption>
 </figure>
 
 - In the Experiments section of the Settings panel, enable "Background services
   section for Periodic Background Sync".
 
-<figure>
-  <img
-     src="6-checkbox.png"
-    class="browser-screenshot"
-    alt="The background service section checkbox in DevTools">
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="6-checkbox.png" alt="">
+  <figcaption class="w-figcaption">
+    Fig. 6 — The background service section checkbox in DevTools.
+  </figcaption>
 </figure>
 
 - Close, and then reopen DevTools.
 - You should now see a "Periodic Background Sync" section within the
   "Application" panel in DevTools.
 
-<figure>
-  <img
-     src="7-panel.png"
-    class="browser-screenshot"
-    alt="The periodic background sync panel in DevTools">
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="7-panel.png" alt="">
+  <figcaption class="w-figcaption">
+    Fig. 7 — The periodic background sync panel in DevTools.
+  </figcaption>
 </figure>
