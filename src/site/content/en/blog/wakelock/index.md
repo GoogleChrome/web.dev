@@ -137,8 +137,8 @@ const requestWakeLock = async () => {
       console.log('Wake Lock was released');
     });
     console.log('Wake Lock is active');
-  } catch (e) {
-    console.error(`${e.name}, ${e.message}`);
+  } catch (err) {
+    console.error(`${err.name}, ${err.message}`);
   }
 };
 
