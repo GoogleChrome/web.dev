@@ -21,6 +21,7 @@
     "debug:test": "TEST_MODE=debug npm-run-all clean build:rollup --parallel watch:rollup karma",
     "start": "node ./server.js",
     "lint": "run-s lint:md lint:scss lint:js",
+    "lhci": "./tools/lhci/run-lighthouse-ci.sh",
     "build": "ELEVENTY_ENV=prod npm-run-all --serial lint clean build:sass build:eleventy build:gulp build:rollup",
     "dev": "npm-run-all clean build:rollup build:sass --parallel --race watch:rollup watch:sass watch:eleventy watch:gulp start",
     "stage": "npm run build && gcloud app deploy --project web-dev-staging --quiet",
