@@ -87,7 +87,7 @@
   speak: none;
   top: 50%;
   transform: translateY(-50%);
-  transition: background .2s;
+  transition: background $TRANSITION_SPEED;
 }
 
 .w-callout--collapsible__toggle::after {

@@ -16,7 +16,7 @@ $BORDER_COLOR: $GREY_300;
 
 .w-self-assessment-hint__summary {
   color: $SUCCESS_COLOR;
-  cursor: pointer;
+  cursor: $CURSOR_POINTER_VALUE;
   flex-grow: 1;
   font: inherit;
   font-weight: 500;
@@ -48,7 +48,7 @@ $BORDER_COLOR: $GREY_300;
     speak: none;
     top: 50%;
     transform: translateY(-50%);
-    transition: background .2s, transform .3s;
+    transition: background $TRANSITION_SPEED, transform .3s;
     visibility: visible;
   }
 
