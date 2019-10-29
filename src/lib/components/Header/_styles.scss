@@ -19,6 +19,11 @@
 @import '../../../styles/tools/breakpoints';
 @import '../../../styles/tools/mixins';
 
+// Disable when Web Components aren't loaded; the button does nothing.
+body.unresolved web-header .web-header__hamburger-btn {
+  visibility: hidden;
+}
+
 web-header {
   align-items: center;
   background: $WHITE;

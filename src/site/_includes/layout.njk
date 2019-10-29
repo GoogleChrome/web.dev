@@ -8,11 +8,16 @@
     {% if noindex or draft -%}
       <meta name="robots" content="noindex">
     {%- endif %}
+    {% if offline %}
+      <meta name="offline" content="true" />
+    {%- endif %}
 
     {% Meta locale, page, collections %}
     
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
 
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
@@ -27,17 +32,19 @@
     <link rel="icon" type="image/png" href="/images/icon-128x128.png" sizes="128x128" />
     <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
     <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-performance.js"></script>
     {# This is used by src/lib/firestore-loader.js to dynamically load Firestore #}
     <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
     <script type="module" src="/bootstrap.js"></script>
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-126406676-2');
+      ga('create', '{{ site.analytics.ids.prod }}');
       ga('set', 'transport', 'beacon');
+      ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version }}');
     </script>
     <script async src="//www.google-analytics.com/analytics.js"></script>
   </head>
-  <body>
+  <body class="unresolved">
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
@@ -101,7 +108,7 @@
       <web-profile-switcher-container></web-profile-switcher-container>
     </web-header>
 
-    <web-side-nav>
+    <web-side-nav class="unresolved">
       <a
         href="/learn"
         class="web-side-nav__link gc-analytics-event"
