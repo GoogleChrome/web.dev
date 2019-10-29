@@ -19,7 +19,7 @@ to manage [notifications](/use-push-notifications-to-engage-users).
 The instructions here assume that you're already familiar with
 [service workers](https://developers.google.com/web/fundamentals/primers/service-workers)
 and the basics of requesting notification permission and sending notifications.
-If you need a refresher, see the
+If you need a refresher on notifications, see the
 [Get started with the Notifications API](/codelab-notifications-get-started)
 codelab.
 
@@ -36,7 +36,7 @@ As you work through this codelab, make changes to the code in the embedded Glitc
 
 ## Get familiar with the sample app and starting code
 
-Start by checking out the live app in the new Chrome tab:
+Start by looking at the live app in the new Chrome tab:
 
 {% Instruction 'devtools-console', 'ol' %}
 
@@ -49,7 +49,7 @@ Start by checking out the live app in the new Chrome tab:
 
     This is a message from a function stub that you will implement in this codelab.
 
-Now let's check out the sample app's code in the embedded Glitch on this page.
+Now let's take a look at the sample app's code in the embedded Glitch on this page.
 
 1.  In the embedded Glitch, take a look at `public/index.js`:
 
@@ -77,6 +77,14 @@ Now let's check out the sample app's code in the embedded Glitch on this page.
 In this step, you'll write code that runs
 when the user clicks **Register service worker** in the app UI.
 This code will register `public/service-worker.js` as a service worker.
+
+{% Aside %}
+
+In a real app, you'd just register the service worker automatically from your app's landing page instead of requiring the user to click a button.
+
+For the purposes of this codelab, you'll build an app that you can play with and observe how the service worker interacts with notifications.
+
+{% endAside %}
 
 1.  In the embedded Glitch editor, open `public/index.js`.
     Replace the `registerServiceWorker` function with the following code:
