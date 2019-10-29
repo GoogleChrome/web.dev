@@ -107,7 +107,7 @@ const Puppy = dynamic(import("../components/Puppy"));
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/edit/#!/dynamic-import-nextjs?path=pages/index.js:29:10&attributionHidden=true"
+<iframe src="https://glitch.com/embed/#!/embed/dynamic-import-nextjs?path=pages/index.js:29:10&attributionHidden=true"
         alt="A basic Next.js app on Glitch"
         style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
@@ -149,7 +149,7 @@ const Puppy = dynamic(() => import("../components/Puppy"), {
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/edit/#!/dynamic-import-loading?path=pages/index.js:7:27&attributionHidden=true"
+<iframe src="https://glitch.com/embed/#!/embed/dynamic-import-loading?path=pages/index.js:7:27&attributionHidden=true"
         alt="A basic Next.js app on Glitch"
         style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
@@ -186,7 +186,7 @@ const Puppy = dynamic(() => import("../components/Puppy"), {
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/edit/#!/dynamic-import-no-ssr?path=pages/index.js:5:0&attributionHidden=true"
+<iframe src="https://glitch.com/embed/#!/embed/dynamic-import-no-ssr?path=pages/index.js:5:0&attributionHidden=true"
         alt="A basic Next.js app on Glitch"
         style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
