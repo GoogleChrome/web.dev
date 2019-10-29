@@ -123,8 +123,6 @@ workbox.routing.setCatchHandler(async ({event}) => {
     event.request.destination === "document" ||
     event.request.headers.get("X-Document");
   if (isDocumentRequest) {
-    // TODO(samthor): Annotate this page so the client knows it's being displayed because the user
-    // is offline, and force it to rerequest when navigator.onLine is true.
     const cacheKey = workbox.precaching.getCacheKeyForURL(
       "/offline/index.html",
     );
