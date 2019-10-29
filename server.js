@@ -38,7 +38,9 @@ const redirectHandler = (() => {
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
   const options = {root: "dist/en"};
-  res.sendFile("404/index.html", options, (err) => err && next(err));
+  res
+    .status(404)
+    .sendFile("404/index.html", options, (err) => err && next(err));
 };
 
 const handlers = [
