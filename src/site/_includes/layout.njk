@@ -33,8 +33,9 @@
     <script type="module" src="/bootstrap.js"></script>
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-126406676-2');
+      ga('create', '{{ site.analytics.ids.prod }}');
       ga('set', 'transport', 'beacon');
+      ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version }}');
     </script>
     <script async src="//www.google-analytics.com/analytics.js"></script>
   </head>
