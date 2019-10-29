@@ -31,4 +31,16 @@ module.exports = {
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.
   imageCdn: "https://webdev.imgix.net",
+  analytics: {
+    ids: {
+      prod: "UA-126406676-2",
+      staging: "UA-126406676-3",
+      notFound: "UA-126406676-4",
+    },
+    dimensions: {
+      SIGNED_IN: "dimension1",
+      TRACKING_VERSION: "dimension5",
+    },
+    version: 3,
+  },
 };
