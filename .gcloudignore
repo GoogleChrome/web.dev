@@ -19,7 +19,7 @@
 # Node.js dependencies:
 node_modules/
 
-# Source
-glitches/
-lib/
-src/
+# Source (only from root)
+/glitches/
+/lib/
+/src/

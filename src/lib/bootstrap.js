@@ -5,7 +5,8 @@
  * correct entrypoint via our router.
  */
 
-import config from "./bootstrap-config";
+import config from "webdev_config";
+import "./webcomponents-config"; // must go before -loader below
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
 import {swapContent} from "./loader";
 import * as router from "./utils/router";
@@ -14,6 +15,8 @@ import {store} from "./store";
 console.info("web.dev", config.version);
 
 WebComponents.waitFor(async () => {
+  // TODO(samthor): This isn't quite the right class name because not all Web Components are ready
+  // at this point due to code-splitting.
   document.body.classList.remove("unresolved");
 
   // Run as long-lived router w/ history & "<a>" bindings
