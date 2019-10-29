@@ -16,6 +16,7 @@
 
 const isProd = Boolean(process.env.GAE_APPLICATION);
 
+const compression = require("compression");
 const express = require("express");
 const buildRedirectHandler = require("./redirect-handler.js");
 
@@ -49,6 +50,13 @@ const handlers = [
   redirectHandler,
   notFoundHandler,
 ];
+
+// For dev we'll do our own compression. This ensures things like Lighthouse CI
+// get a fairly accurate picture of our site.
+// For prod we'll rely on App Engine to compress for us.
+if (!isProd) {
+  handlers.unshift(compression());
+}
 
 const app = express();
 app.use(...handlers);
