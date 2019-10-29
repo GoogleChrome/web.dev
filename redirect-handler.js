@@ -19,6 +19,22 @@ const fs = require("fs");
 const escapeStringRegexp = require("escape-string-regexp");
 
 /**
+ * Normalizes the passed URL to ensure that it ends with a simple trailing
+ * slash. Removes "index.html" if found.
+ *
+ * @param {string} url to normalize
+ * @return {string}
+ */
+function ensureTrailingSlashOnly(url) {
+  if (url.endsWith("/index.html")) {
+    return url.slice(0, -"index.html".length);
+  } else if (!url.endsWith("/")) {
+    return `${url}/`;
+  }
+  return url;
+}
+
+/**
  * Builds HTTP middleware that serves redirects for web.dev's _redirects.yaml
  * configuration file, originally from DevSite.
  *
@@ -35,7 +51,7 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
   for (const {from, to} of doc.redirects) {
     const hasExtra = from.indexOf("...") !== -1;
     if (!hasExtra) {
-      singleRedirect[from] = to;
+      singleRedirect[ensureTrailingSlashOnly(from)] = to;
       continue;
     }
 
@@ -52,14 +68,15 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
   groupMatcher = new RegExp(`^(${escaped.join("|")})`);
 
   return (req, res, next) => {
-    if (req.url in singleRedirect) {
-      return res.redirect(code, singleRedirect[req.url]);
+    const url = ensureTrailingSlashOnly(req.url);
+    if (url in singleRedirect) {
+      return res.redirect(code, singleRedirect[url]);
     }
 
-    const m = groupMatcher.exec(req.url);
+    const m = groupMatcher.exec(url);
     if (m && m[1] in groupRedirect) {
       const base = groupRedirect[m[1]];
-      const rest = req.url.slice(m[1].length);
+      const rest = url.slice(m[1].length);
       return res.redirect(code, base + rest);
     }
 
