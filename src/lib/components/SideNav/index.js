@@ -91,6 +91,7 @@ class SideNav extends BaseElement {
     this.sideNavContainerEl = this.querySelector(".web-side-nav__container");
     this.addEventListeners();
     this.onStateChanged();
+    this.classList.remove("unresolved");
   }
 
   addEventListeners() {

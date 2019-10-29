@@ -14,6 +14,8 @@ import {store} from "./store";
 console.info("web.dev", config.version);
 
 WebComponents.waitFor(async () => {
+  document.body.classList.remove("unresolved");
+
   // Run as long-lived router w/ history & "<a>" bindings
   // Also immediately calls `swapContent()` handler for current location,
   // loading its required JS entrypoint
