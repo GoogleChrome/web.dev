@@ -41,3 +41,17 @@
   margin: 0 auto 12px;
   max-width: 600px; // fits a top line of text on a large screen to prevent FOUC
 }
+
+body:not(.unresolved) .w-unsupported-notice {
+  display: none !important;
+}
+
+@keyframes unsupported-appear {
+  from { visibility: hidden; }
+  to   { visibility: hidden; }
+}
+
+.w-unsupported-notice {
+  // Hide this element for 5s once it is on the DOM.
+  animation: unsupported-appear 5s;
+}
