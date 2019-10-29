@@ -165,7 +165,7 @@ export function route(url) {
   }
   recentActiveUrl = candidateUrl;
 
-  window.history.pushState(null, null, u);
+  window.history.pushState(null, null, u.toString()); // Edge needs toString
   globalHandler().then((success) => {
     if (success) {
       // Since we're loading this page dynamically, look for the target hash-ed
