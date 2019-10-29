@@ -81,7 +81,6 @@ workbox.routing.registerRoute(
  */
 self.addEventListener("fetch", (event) => {
   const u = new URL(event.request.url);
-  console.warn("fetch for", event.request.url, "url?", u);
   if (
     !untrailedContentPageRe.exec(u.pathname) ||
     self.location.host !== u.host
