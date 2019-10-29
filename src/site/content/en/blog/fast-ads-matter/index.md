@@ -32,7 +32,8 @@ and improving ad speed on your sites.
 Users come to your site to be entertained, get informed, or learn something new,
 and they expect your site to load quickly, with minimal interruption. If your
 site helps users do that well, they tend to return more often. While ads may be
-necessary for your business, if they're slowing down your site they can create a tension with the user's purpose.
+necessary for your business, if they're slowing down your site they can create a
+tension with the user's purpose.
 
 The browser has limited resources to work with—memory, CPU, and network
 bandwidth. The more of these resources your ads consume, the longer it takes for
@@ -69,13 +70,14 @@ Conversely,
 [viewable impressions](https://en.wikipedia.org/wiki/Viewable_Impression)
 decrease the longer an ad takes to appear on the page. To provide a sense of the
 magnitude of this problem, the charts below show aggregated data from an
-experiment where a delay between 100&nbsp;ms and 1&nbsp;s was injected before each ad
-response, across 4 billion impressions on websites with the Google Publisher Tag
-in multi-request mode. The dotted lines are extrapolations to visualize how
-improving ad speed could increase impressions and viewability rate.
+experiment where a delay between 100&nbsp;ms and 1&nbsp;s was injected before
+each ad response, across 4 billion impressions on websites with the Google
+Publisher Tag in multi-request mode. The dotted lines are extrapolations to
+visualize how improving ad speed could increase impressions and viewability
+rate.
 
-With 1&nbsp;s of added delay, impressions decreased by 1.1% for mobile traffic and
-1.9% for desktop traffic:
+With 1&nbsp;s of added delay, impressions decreased by 1.1% for mobile traffic
+and 1.9% for desktop traffic:
 
 <figure class="w-figure w-figure--center">
   <img src="./ad-latency-injected-vs-impressions-change.svg" alt="Chart showing latency injected vs. impressions change">
@@ -84,8 +86,8 @@ With 1&nbsp;s of added delay, impressions decreased by 1.1% for mobile traffic a
   </figcaption>
 </figure>
 
-With 1&nbsp;s of added delay, viewability rate decreased by 3.6% for mobile traffic
-and 2.9% for desktop traffic:
+With 1&nbsp;s of added delay, viewability rate decreased by 3.6% for mobile
+traffic and 2.9% for desktop traffic:
 
 <figure class="w-figure w-figure--center">
   <img src="./ad-latency-injected-vs-viewability-rate-change.svg" alt="Chart showing latency injected vs. viewability rate change">
@@ -176,10 +178,19 @@ down into three main intervals:
     <dd>The time elapsed from the first ad request being made to the first ad being rendered. May be improved by reducing ad complexity and creative file size.</dd>
 </dl>
 
-Before you start making any changes, you need to decide which of these metrics to focus on. While the ultimate goal is to minimize them all, the relative importance of improving each (and the methods you use to do so) will greatly depend on your specific setup. 
+Before you start making any changes, you need to decide which of these metrics
+to focus on. While the ultimate goal is to minimize them all, the relative
+importance of improving each (and the methods you use to do so) will greatly
+depend on your specific setup. 
 
-You can use a tool like [Publisher Ads Audits for Lighthouse](https://developers.google.com/publisher-ads-audits) to help you analyze your site, identify bottlenecks, and make an informed decision about what to focus your efforts on.
+You can use a tool like [Publisher Ads Audits for
+Lighthouse](https://developers.google.com/publisher-ads-audits) to help you
+analyze your site, identify bottlenecks, and make an informed decision about
+what to focus your efforts on.
 
 ## Conclusion
 
-Now that you understand the importance of ad speed and have a framework for thinking about it, it's time to identify areas for improvement in your sites and make your ads fast. Finally, consider authoring your ads in [AMP](https://amp.dev/about/ads/), a format that reliably produces fast ads.
+Now that you understand the importance of ad speed and have a framework for
+thinking about it, it's time to identify areas for improvement in your sites and
+make your ads fast. Finally, consider authoring your ads in
+[AMP](https://amp.dev/about/ads/), a format that reliably produces fast ads.
