@@ -16,6 +16,9 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+// Initialize performance monitoring
+firebase.performance();
+
 // Listen for the user's signed in state and update the store.
 let firestoreUserUnsubscribe = null;
 firebase.auth().onAuthStateChanged((user) => {
