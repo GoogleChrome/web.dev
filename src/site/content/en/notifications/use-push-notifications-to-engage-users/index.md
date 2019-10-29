@@ -125,7 +125,7 @@ Part 2: Send Notification
     let subscription = { /* subscription created in Part 1*/ };
     let payload = { /* notification */ };
 
-    webpush.sendNotification(sub, payload, options);
+    webpush.sendNotification(subscription, payload, options);
     ```
 
 1.  Notifications sent to the subscription endpoint fire push events with the service worker as the target. The service worker receives the message and displays it to the user as a notification.
