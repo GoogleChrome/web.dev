@@ -129,7 +129,7 @@ when you press the button:
 <img src="./network4.png" alt="DevTools Network tab after the button click, showing the additional 1.js file and the image added to the bottom of the file list.">
 </figure>
 
-{% Aside %} By default, Next.js names these dynamic chunks "number.js", where
+{% Aside %} By default, Next.js names these dynamic chunks _number_.js, where
 "number" starts from 1. {% endAside %}
 
 In real-world applications, components are often [much
