@@ -16,7 +16,7 @@ codelabs:
 
 Notifications present small chunks of information to a user, letting web apps provide targeted updates.
 
-Web push technology lets a server provide notifications to a client at any time–even when the client is inactive.
+[Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) lets a server provide notifications to a client at any time–even when the client is inactive.
 
 Push notifications can help users to get the most out of your app by prompting them to re-open it and use it based on the latest information. 
 
