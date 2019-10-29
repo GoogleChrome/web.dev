@@ -53,8 +53,9 @@ const contentPageRe = new RegExp("/([\\w-]+/)*(|index.html)$");
 
 /**
  * Match "/foo-bar" and "/foo-bar/as-many/but/no/trailing/slash" (but not "/foo/bar/index.html").
+ * This roots at the left "/" as it's not given to Workbox, which does this for us.
  */
-const untrailedContentPageRe = new RegExp("(/[\\w-]+)+$");
+const untrailedContentPageRe = new RegExp("^(/[\\w-]+)+$");
 
 /**
  * Send normal nodes to cache first.
@@ -80,17 +81,30 @@ workbox.routing.registerRoute(
  */
 self.addEventListener("fetch", (event) => {
   const u = new URL(event.request.url);
+  console.warn("fetch for", event.request.url, "url?", u);
   if (
-    !untrailedContentPageRe.exec(event.request.url) ||
+    !untrailedContentPageRe.exec(u.pathname) ||
     self.location.host !== u.host
   ) {
     return;
   }
 
-  // Go to the network first, looking for interesting responses from the server (e.g., "/subscribe"
-  // redirects to a form).
-  const p = fetch(event.request).catch(() => {
-    // Otherwise, just assume that the content is actually at the trailed location.
+  const p = Promise.resolve().then(async () => {
+    // First, check if there's actually something in the cache already.
+    const cacheKey = workbox.precaching.getCacheKeyForURL(
+      u.pathname + "/index.html",
+    );
+    const cached = await caches.match(cacheKey);
+    if (!cached) {
+      // If there's not, then try the network.
+      try {
+        return await fetch(event.request);
+      } catch (e) {
+        // If fetch fails, just redirect below.
+      }
+    }
+
+    // Either way, redirect to the updated Location.
     const headers = new Headers();
     headers.append("Location", event.request.url + "/");
     const redirectResponse = new Response("", {
@@ -115,6 +129,10 @@ workbox.routing.setCatchHandler(async ({event}) => {
     const cacheKey = workbox.precaching.getCacheKeyForURL(
       "/offline/index.html",
     );
+    if (!cacheKey) {
+      // This occurs in development when the offline page is in the runtime cache.
+      return caches.match("/offline/index.html", {ignoreSearch: true});
+    }
     return caches.match(cacheKey);
   }
 });
