@@ -35,7 +35,6 @@
     <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-performance.js"></script>
     {# This is used by src/lib/firestore-loader.js to dynamically load Firestore #}
     <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
-    <script type="module" src="/bootstrap.js"></script>
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
       ga('create', '{{ site.analytics.ids.prod }}');
@@ -44,7 +43,7 @@
     </script>
     <script async src="//www.google-analytics.com/analytics.js"></script>
   </head>
-  <body>
+  <body class="unresolved">
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
