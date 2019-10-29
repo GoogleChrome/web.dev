@@ -20,7 +20,7 @@ dynamic imports to speed up your Next.js apps.
 By default, Next.js splits your JavaScript into separate chunks for each route.
 When users load your application, Next.js only sends the code needed for the
 initial route. When users navigate around the application, they fetch the chunks
-associated with the the other routes. Route-based code splitting minimizes the
+associated with the other routes. Route-based code splitting minimizes the
 amount of script that needs to be parsed and compiled at once, which results in
 faster page load times. 
 
