@@ -27,7 +27,7 @@ const site = require("../_data/site");
  */
 module.exports = function getImagePath(src, pageUrl) {
   let imagePath = path.join(pageUrl, src);
-  if (site.env === "dev") {
+  if (site.env === "prod") {
     imagePath = new URL(imagePath, site.imageCdn).href;
   }
   return imagePath;
