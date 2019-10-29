@@ -7,6 +7,6 @@
 
 import config from "webdev_config";
 
-window.WebComponents = {path: config.webcomponentsPath};
+window.WebComponents = {root: config.webcomponentsPath};
 
 export default config;
