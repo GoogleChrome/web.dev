@@ -55,7 +55,7 @@ Bring up the permission prompt **in response to a user gesture** and **when the 
 
 The real power of notifications comes from the combination of service workers and push technology.
 
-*   Service workers can run in the background and display notifications even when your app itself is not visible on screen. 
+*   [Service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can run in the background and display notifications even when your app isn't visible on screen. 
 
 *   Push technology lets a server decide when to send notifications. A push service creates unique URLs for each subscribed service worker. Sending messages to the URL raises events on the service worker.
 
