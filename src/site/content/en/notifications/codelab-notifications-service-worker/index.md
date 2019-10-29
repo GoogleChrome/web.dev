@@ -17,11 +17,10 @@ related_post: use-push-notifications-to-engage-users
 In this codelab, you'll use a service worker
 to manage [notifications](/use-push-notifications-to-engage-users).
 The instructions here assume that you're already familiar with
-[service workers](https://developers.google.com/web/fundamentals/primers/service-workers)
-and the basics of requesting notification permission and sending notifications.
+service workers and the basics of requesting notification permission and sending notifications.
 If you need a refresher on notifications, see the
 [Get started with the Notifications API](/codelab-notifications-get-started)
-codelab.
+codelab. To learn more about service workers, see Matt Gaunt's [Introduction to service workers](https://developers.google.com/web/fundamentals/primers/service-workers).
 
 ## Remix the sample app and view it in a new tab
 
