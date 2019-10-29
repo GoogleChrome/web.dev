@@ -57,7 +57,7 @@ import Puppy from "../components/Puppy";
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/edit/#!/static-import?path=pages/index.js:4:40&attributionHidden=true"
+<iframe src="https://glitch.com/embed/#!/embed/static-import?path=pages/index.js&previewSize=0" allow="geolocation; microphone; camera; midi; vr; encrypted-media"
         alt="A basic Next.js app on Glitch"
         style="height: 100%; width: 100%; border: 0;"></iframe>
 </div>
