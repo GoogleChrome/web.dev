@@ -1,5 +1,6 @@
 import {store} from "./store";
 import "./utils/underscore-import-polyfill";
+import getMeta from "./utils/meta";
 
 const domparser = new DOMParser();
 
@@ -20,13 +21,19 @@ async function loadEntrypoint(url) {
 /**
  * Fetch a page as an html string.
  * @param {string} url url of the page to fetch.
- * @return {Promise<string>}
+ * @return {!HTMLDocument}
  */
 async function getPage(url) {
-  const res = await fetch(url);
-  if (!res.ok) {
+  // Pass a custom header so that the Service Worker knows this request is
+  // actually for a document, this is used to reply with an offline page
+  const headers = new Headers();
+  headers.set("X-Document", "1");
+
+  const res = await fetch(url, {headers});
+  if (!res.ok && res.status !== 404) {
     throw res.status;
   }
+
   const text = await res.text();
   return domparser.parseFromString(text, "text/html");
 }
@@ -117,6 +124,7 @@ export async function swapContent(url, isFirstRun) {
       currentUrl: url,
     });
   }
+
   // Remove the current #content element
   main.querySelector("#content").remove();
   main.appendChild(page.querySelector("#content"));
@@ -127,5 +135,11 @@ export async function swapContent(url, isFirstRun) {
   // Focus on the first title (or fallback to content itself)
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
 
-  store.setState({isPageLoading: false});
+  // Determine if this was the offline page
+  const isOffline = Boolean(getMeta("offline", page));
+
+  store.setState({
+    isPageLoading: false,
+    isOffline,
+  });
 }

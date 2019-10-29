@@ -47,7 +47,11 @@ function onPopState(e) {
   }
   recentActiveUrl = updatedUrl;
   const state = window.history.state;
-  globalHandler().then(() => scrollOnFrame(state ? state.scrollTop : 0));
+  globalHandler().then((success) => {
+    if (success) {
+      scrollOnFrame(state ? state.scrollTop : 0);
+    }
+  });
 }
 
 /**
@@ -104,13 +108,31 @@ export function listen(handler) {
     throw new Error("listen can only be called once");
   };
 
+  let pendingHandlerPromise = Promise.resolve();
+  let requestCount = 0;
+
+  // globalHandler is called for the current page URL (i.e., it reads
+  // window.location rather than accepting an argument) to trigger a load via
+  // the passed handler. Only one handler can run at once.
   globalHandler = () => {
     const url = window.location.pathname + window.location.search;
-    const p = Promise.resolve(handler(url));
-    return p.catch((err) => {
-      window.location.href = window.location.href;
-      throw err;
-    });
+    const localRequest = ++requestCount;
+
+    // Delay until any previous load is complete, then run handler for the
+    // now-active URL.
+    pendingHandlerPromise = pendingHandlerPromise
+      .then(async () => {
+        if (localRequest !== requestCount) {
+          return false;
+        }
+        await handler(url);
+        return true;
+      })
+      .catch((err) => {
+        window.location.href = window.location.href;
+        throw err;
+      });
+    return pendingHandlerPromise;
   };
 
   window.addEventListener("replacestate", onReplaceState);
@@ -144,11 +166,20 @@ export function route(url) {
   recentActiveUrl = candidateUrl;
 
   window.history.pushState(null, null, u);
-  globalHandler().then(() => {
-    // Since we're loading this page dynamically, look for the target hash-ed
-    // element (if any) and scroll to it.
-    const target = document.getElementById(u.hash.substr(1)) || 0;
-    return scrollOnFrame(target);
+  globalHandler().then((success) => {
+    if (success) {
+      // Since we're loading this page dynamically, look for the target hash-ed
+      // element (if any) and scroll to it.
+      const target = document.getElementById(u.hash.substr(1)) || 0;
+      return scrollOnFrame(target);
+    }
   });
   return true;
+}
+
+/**
+ * Requests a reload of the current page using the registered handler.
+ */
+export function reload() {
+  globalHandler();
 }

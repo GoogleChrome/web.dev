@@ -8,11 +8,16 @@
     {% if noindex or draft -%}
       <meta name="robots" content="noindex">
     {%- endif %}
+    {% if offline %}
+      <meta name="offline" content="true" />
+    {%- endif %}
 
     {% Meta locale, page, collections %}
     
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
 
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="full_width" value="true" />
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
