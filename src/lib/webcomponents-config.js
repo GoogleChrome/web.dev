@@ -5,6 +5,6 @@
  * modules are all hoisted in the order in which they are found.
  */
 
-// Set the production path for the Web Components polyfills.
+// Set the production path for the Web Components polyfills. Must have leading and trailing slash.
 // This isn't configurable as we don't need the polyfill in dev.
-window.WebComponents = {root: "/lib/webcomponents"};
+window.WebComponents = {root: "/lib/webcomponents/"};
