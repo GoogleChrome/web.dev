@@ -130,7 +130,7 @@ when you press the button:
 </figure>
 
 {% Aside %} By default, Next.js names these dynamic chunks _number_.js, where
-"number" starts from 1. {% endAside %}
+_number_ starts from 1. {% endAside %}
 
 In real-world applications, components are often [much
 larger](https://bundlephobia.com/result?p=moment@2.24.0), and lazy-loading them
