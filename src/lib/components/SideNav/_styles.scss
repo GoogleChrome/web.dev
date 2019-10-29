@@ -24,7 +24,8 @@ body.web-side-nav--expanded {
   overflow: hidden;
 }
 
-web-side-nav:not(:defined) {
+web-side-nav:not(:defined),
+body.unresolved web-side-nav {
   display: none;
 }
 
@@ -37,6 +38,13 @@ web-side-nav {
   overflow: hidden;
   pointer-events: none;
   z-index: 300;
+}
+
+// Prevent FOUC by hiding children until after firstUpdated(), as children are
+// reparented within .web-side-nav__container before use
+// This isn't ":not(:defined)" because firstUpdated occurs after a frame.
+web-side-nav.unresolved * {
+  display: none !important;
 }
 
 web-side-nav::before {
