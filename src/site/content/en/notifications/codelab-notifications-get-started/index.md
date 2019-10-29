@@ -1,6 +1,7 @@
 ---
 layout: codelab
 title: Get started with the Notifications API
+author: katejeffreys
 description: |
   In this codelab, learn how to request user permission and send notifications.
 date: 2019-10-15
@@ -50,7 +51,7 @@ Start by checking out the live app in the new Chrome tab:
 
     The console prints "TODO" messages from a couple of function stubs: `requestPermission` and `sendNotification`. These are the functions you'll implement in this codelab.
 
-Now let's check out the sample app's code in the embedded Glitch on this page.
+Now let's look at the sample app's code in the embedded Glitch on this page.
 Open `public/index.js` and take a look at some important parts of the existing code:
 
 *   The `showPermission` function uses the Notifications API to get
@@ -296,4 +297,4 @@ See [Peter Beverloo's Notification Generator](https://tests.peter.sh/notificatio
 
 If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed) 
 
-Check out the next codelab in this series, [Handle notifications with a service worker](codelab-notifications-service-worker), to explore further!
+Take a look at the next codelab in this series, [Handle notifications with a service worker](codelab-notifications-service-worker), to explore further!
