@@ -11,7 +11,7 @@ draft: true
 
 ## What will you learn?
 
-In this post you’ll learn how routing in Next.js works, how it’s optimized for speed, and how to customize it to best fit your needs.
+In this post you'll learn how routing in Next.js works, how it's optimized for speed, and how to customize it to best fit your needs.
 
 ## The `<Link>` component
 
