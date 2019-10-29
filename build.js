@@ -25,6 +25,7 @@ const rollupPluginCJS = require("rollup-plugin-commonjs");
 const rollupPluginVirtual = require("rollup-plugin-virtual");
 const rollup = require("rollup");
 const terser = isProd ? require("terser") : null;
+const {getManifest} = require("workbox-build");
 
 process.on("unhandledRejection", (reason, p) => {
   log.error("Build had unhandled rejection", reason, p);
@@ -50,6 +51,41 @@ const defaultPlugins = [
     include: "node_modules/**",
   }),
 ];
+
+/**
+ * Builds the cache manifest for inclusion into the Service Worker.
+ *
+ * TODO(samthor): This relies on both the gulp and CSS tasks occuring
+ * before the Rollup build script.
+ */
+async function buildCacheManifest() {
+  const toplevelManifest = await getManifest({
+    globDirectory: "dist",
+    globPatterns: ["images/**", "*.css"],
+  });
+  if (toplevelManifest.warnings.length) {
+    throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
+  }
+
+  // Note that Workbox assumes "blah/index.html" is the same as requests to "blah/" for free, so
+  // rewriting the URLs below isn't neccessary.
+  const contentManifest = await getManifest({
+    globDirectory: "dist/en",
+    globPatterns: [
+      "index.html",
+      "offline/index.html",
+      "images/**/*.{png,svg}", // .jpg files are used for authors, skip
+    ],
+  });
+  if (contentManifest.warnings.length) {
+    throw new Error(`content manifest: ${contentManifest.warnings}`);
+  }
+
+  const all = [];
+  all.push(...toplevelManifest.manifestEntries);
+  all.push(...contentManifest.manifestEntries);
+  return all;
+}
 
 /**
  * Performs main site compilation via Rollup: first on site code, and second
@@ -83,12 +119,15 @@ async function build() {
     generated.push(fileName);
   }
 
+  const manifest = isProd ? await buildCacheManifest() : [];
+  const noticeDev = isProd ? "" : "// Manifest not generated in dev";
   const swBundle = await rollup.rollup({
     input: "src/lib/sw.js",
     plugins: [
       rollupPluginVirtual({
-        // TODO(samthor): Inject any needed cache manifest here.
-        "cache-manifest": "export default {};",
+        "cache-manifest": `export default ${JSON.stringify(
+          manifest,
+        )};${noticeDev}`,
       }),
       ...defaultPlugins,
     ],
