@@ -34,9 +34,6 @@ process.on("unhandledRejection", (reason, p) => {
 
 const bootstrapConfig = {
   prod: isProd,
-  webcomponentsPath: isProd
-    ? "lib/webcomponents"
-    : "node_modules/@webcomponents/webcomponentsjs/bundles",
   version:
     "v" +
     new Date()

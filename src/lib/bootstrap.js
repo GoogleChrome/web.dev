@@ -5,7 +5,8 @@
  * correct entrypoint via our router.
  */
 
-import config from "./bootstrap-config";
+import config from "webdev_config";
+import "./webcomponents-config"; // must go before -loader below
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
 import {swapContent} from "./loader";
 import * as router from "./utils/router";
