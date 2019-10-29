@@ -21,7 +21,7 @@
 
 // Disable when Web Components aren't loaded; the button does nothing.
 body.unresolved web-header .web-header__hamburger-btn {
-  display: none !important;
+  visibility: hidden;
 }
 
 web-header {

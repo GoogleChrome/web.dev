@@ -24,7 +24,6 @@ body.web-side-nav--expanded {
   overflow: hidden;
 }
 
-// Ideally this would be ":undefined", but that's not supported in old browsers.
 body.unresolved web-side-nav {
   display: none;
 }
@@ -38,6 +37,12 @@ web-side-nav {
   overflow: hidden;
   pointer-events: none;
   z-index: 300;
+}
+
+// Prevent FOUC by hiding children until after firstUpdated(), as children are
+// reparented within .web-side-nav__container before use
+web-side-nav.unresolved * {
+  display: none !important;
 }
 
 web-side-nav::before {
