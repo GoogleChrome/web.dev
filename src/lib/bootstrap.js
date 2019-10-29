@@ -15,6 +15,8 @@ import {store} from "./store";
 console.info("web.dev", config.version);
 
 WebComponents.waitFor(async () => {
+  // TODO(samthor): This isn't quite the right class name because not all Web Components are ready
+  // at this point due to code-splitting.
   document.body.classList.remove("unresolved");
 
   // Run as long-lived router w/ history & "<a>" bindings
