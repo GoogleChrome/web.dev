@@ -44,7 +44,7 @@
     </script>
     <script async src="//www.google-analytics.com/analytics.js"></script>
   </head>
-  <body>
+  <body class="unresolved">
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
@@ -108,7 +108,7 @@
       <web-profile-switcher-container></web-profile-switcher-container>
     </web-header>
 
-    <web-side-nav>
+    <web-side-nav class="unresolved">
       <a
         href="/learn"
         class="web-side-nav__link gc-analytics-event"
