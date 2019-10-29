@@ -51,13 +51,14 @@ const handlers = [
   notFoundHandler,
 ];
 
-const app = express();
 // For dev we'll do our own compression. This ensures things like Lighthouse CI
 // get a fairly accurate picture of our site.
 // For prod we'll rely on App Engine to compress for us.
 if (!isProd) {
-  app.use(compression());
+  handlers.unshift(compression());
 }
+
+const app = express();
 app.use(...handlers);
 
 const listener = app.listen(process.env.PORT || 8080, () => {
