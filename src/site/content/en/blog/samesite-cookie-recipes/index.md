@@ -31,7 +31,7 @@ For how cookies and `SameSite` work, see part 1:
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ),
 [Edge](https://textslashplain.com/2019/09/30/same-site-cookies-by-default/), and
 others will be changing their default behavior in line with the IETF proposal,
-["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
+[Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
 so that:
 
 1. cookies without a `SameSite` attribute will be treated as `SameSite=Lax`,
