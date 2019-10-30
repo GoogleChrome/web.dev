@@ -287,7 +287,7 @@ been widely adopted by developers. The open default of sending cookies
 everywhere means all use cases work but leaves the user vulnerable to CSRF and
 unintentional information leakage. To encourage developers to state their intent
 and provide users with a safer experience, the IETF proposal,
-["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
+[Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
 lays out two key changes:
 
 - cookies without a `SameSite` attribute will be treated as `SameSite=None`
