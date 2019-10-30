@@ -428,7 +428,7 @@ You can track their progress on
 
 For further detail on exactly how to update your cookies to successfully handle
 these changes to `SameSite=None` and the difference in browser behavior, head to
-the follow up article, ["SameSite cookie recipes"](/samesite-cookie-recipes).
+the follow up article, [SameSite cookie recipes](/samesite-cookie-recipes).
 
 _Kind thanks for contributions and feedback from Lily Chen, Malte Ubl, Mike
 West, Rob Dodson, Tom Steiner, and Vivek Sekhar_
