@@ -37,6 +37,7 @@
     "escape-string-regexp": "^2.0.0",
     "express": "^4.16.4",
     "focus-visible": "^5.0.2",
+    "idb-keyval": "^3.2.0",
     "js-yaml": "^3.13.1",
     "lit-element": "^2.2.0",
     "rollup-plugin-virtual": "^1.0.1",

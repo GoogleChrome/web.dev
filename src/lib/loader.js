@@ -39,13 +39,18 @@ async function getPage(url) {
 }
 
 function normalizeUrl(url) {
-  if (url.endsWith("/index.html")) {
+  const u = new URL(url, window.location);
+  let pathname = u.pathname;
+
+  if (pathname.endsWith("/index.html")) {
     // If an internal link refers to "/foo/index.html", strip "index.html" and load.
-    return url.slice(0, -"index.html".length);
-  } else if (!url.endsWith("/")) {
+    pathname = pathname.slice(0, -"index.html".length);
+  } else if (!pathname.endsWith("/")) {
     // All web.dev pages end with "/".
-    return `${url}/`;
+    pathname = `${url}/`;
   }
+
+  return pathname + u.search;
 }
 
 /**
