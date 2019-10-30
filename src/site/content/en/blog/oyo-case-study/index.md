@@ -20,7 +20,8 @@ The primary reason for uninstalls is the size of the app. With the help of TWA,
 users will enjoy the native app experience, without having to compromise on the storage factor.
 [OYO Lite](https://play.google.com/store/apps/details?id=com.oyo.consumerlite) gave us three times more conversion than our m-web(PWA) similar to that of the native OYO app and three times higher logged in user percentage.
 
-In this blog post, we'll talk about how someone can use their existing web app to build an Android App with the help of TWA. Let's first see what you are signing up for:
+In this blog post, we'll talk about how someone can use their existing web app
+to build an Android App with the help of TWA. Let's first see what you are signing up for:
 
 <figure class="w-figure w-figure--center">
   <video controls autoplay loop muted class="w-screenshot">
@@ -32,67 +33,109 @@ In this blog post, we'll talk about how someone can use their existing web app t
   </figcaption>
 </figure>
 
-## What the heck is TWA?
+## What's TWA?
 
-**Trusted Web Activities** are a new way to integrate your web-app content with your Android app using a protocol based on [Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs). Although Android apps routinely include web content using a Chrome Custom Tab (with URL bar) or WebView, a TWA runs your app full screen in the default browser(After the recent changes, TWA will open chrome browser even if it is not the default) and hence can leverage the features and performance optimizations of the browser.
+**Trusted Web Activities** are a new way to integrate your web app content
+with your Android app using a protocol based on
+[Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs).
+Although Android apps routinely include web content using a Chrome Custom Tab (with URL bar) or WebView,
+a TWA runs your app fullscreen in Chrome
+and hence can leverage the features and performance optimizations of the browser.
+(Because of recent changes TWA will open in the Chrome browser even if it is not the default.)
 
 {% Aside %}
-TWA shares the browser data like cookies and localStorage inside app, so if you are logged in inside a browser then you'll automatically be logged in TWA app as well.
+TWA shares browser data like cookies and `localStorage` inside the app,
+so if you are logged into the browser then you'll automatically be logged into TWA app as well.
 {% endAside %}
 
 ## Why should I care about TWA?
 
-Generally speaking, the native app has a better conversion rate and more loyal users than the web app, but it has some drawbacks also as mentioned below. TWA app tries to reduce the gap between web and native experience and it can solve problems such as, update content on the fly, whilst solving the storage problem for your end-users.
+Generally speaking, native apps have better conversion rates and more engagement
+than web apps, but they also have some drawbacks, as mentioned below.
+TWA reduces the gap between the web and native experiences and
+it has features like updating content on the fly
+while solving the storage problem for your users.
 
-OYO Lite (our TWA app) is ~850 KB (7% compared to our main app), so it doesn't have storage issues and can be used to target low-end devices.
+OYO Lite, OYO's TWA app, is ~850 KB (7% the size of our main app),
+so it doesn't have storage issues and can target low-end devices.
 
-## Capabilities available in TWA similar to a native app
+### Capabilities available in TWA similar to a native app
 
-- **Available at the tap of a button:** Since TWA app will be treated similar to any other app in the Android system, it'll also have a launcher icon.
-- **Works Offline:** With the help of service-worker caching, the app will work in offline mode also.
-- **Fast Loading:** Native apps come with all the assets bundled in them, the web app can cache its assets(JS, CSS, etc) in the browser or service-worker cache. In general web app's TTI(Time To Interactive) should be around 5 secs for a great loading experience.
-- **Keep users engaged:** Apps use Push Notifications for reengagement, the same can be achieved by web apps with service-workers. Native Push Notifications support is also planned for TWA.
-- **Deep linking:** Any of your domain links can be opened in your TWA app by [digital asset links](https://developers.google.com/digital-asset-links/v1/getting-started) pairing and an intent filter in your manifest file.
-- **Run FullScreen:** TWA apps can also run full screen with the help of digital assets link verification. The app and the site it opens are expected to come from the same developer.
+- **Available in the launcher:** Since TWA apps are treated similarly
+  to any other app in the Android system, they have launcher icons.
+- **Works Offline:** With the help of service worker caching, TWA apps work offline.
+- **Fast Loading:** All a native app's assets are downloaded when the app is installed,
+  but web apps can cache assets like JavaScript and CSS in the browser or service worker cache.
+  In general, web app's [Time to Interactive (TTI)](/interactive)
+  should be around 5 seconds for a great loading experience.
+- **Keep users engaged:** Native apps use push notifications for reengagement;
+  web apps can send push notifications using service workers and web APIs.
+  (Native push notification support is planned for TWA.)
+- **Deep linking:** Any of your domain links can be opened in your TWA app using
+  [Digital Asset Links](https://developers.google.com/digital-asset-links/v1/getting-started)
+  pairing and an intent filter in your
+  [Android manifest file](https://developer.android.com/guide/topics/manifest/manifest-intro).
+- **Run fullscreen:** TWA apps can also run fullscreen with the help of
+  digital asset link verification.
+  (The app and the site it opens are expected to come from the same developer.)
 
-## Capabilities in TWA better than native apps
+### Capabilities in TWA better than native apps
 
-- **Can update on the fly:** If a buggy code is shipped in a native app, then you can't do anything but wait for your users to update the app. This is not the case with TWA apps since they are just the web app wrapped inside an app, so the code can be updated anytime just like the web.
-- **Backward compatibility is not a problem:** There are no version checks in APIs built for TWA apps as they all will be running the same code.
-- **Size:** Since native apps ship with all the machinery needed to run, their size usually reaches a few MBs. TWA apps internally run a browser and request for a webpage, no code is shipped with the apk and hence whole app size gets reduced to a few hundred KBs.
+- **Rapid updates:** If buggy code is shipped in a native app,
+  your only option is to update the whole app.
+  Since TWA apps are just a web app in a native wrapper,
+  the code can be updated at any time, just like the web.
+- **Backward compatibility:** There are no version checks in APIs built for TWA apps as they all will be running the same code.
+- **Small file size:** Since native apps ship with all the code they need to run,
+  their size usually reaches a few megabytes.
+  TWA apps internally run a browser and request a webpage,
+  so no code is shipped with the app itself, reducing initial download size to a few hundred kilobytes.
 
-In conclusion, TWA is giving the best of both worlds, isn't it? Now let's try to see what it takes to build one.
+In conclusion, TWA is giving the best of both worlds.
+Let's see what it takes to build one.
 
 ## Criteria for a web app to be turned into a TWA app
 
-There are currently no qualifications for content opened in the preview of Trusted Web activities. It means any web app can be used to build TWA app, but users won't like your app if it is showing URL bar inside an app, displaying "not connected to internet" message when offline, taking too much time to load or transition between pages are not smooth like a native app. So to make a decent TWA app, bare minimum qualifications should be:
+There are currently no requirements for content opened in a TWA app,
+so any web app can be used to build a TWA app.
+However, users won't expect a browser-like experience in something that appears
+to be a native app, so you need to take extra steps to ensure your web app
+appears and behaves as though it's native.
+Your app should:
 
-- To be accessible and operable even when offline.
-- Should have digital asset links set up.
-- To work as a reliable, fast and engaging standalone component within the launching app's flow.
+- Be accessible when offline
+- Have digital asset links set up
+- Work as a reliable, fast, and engaging standalone component
+  within the launching app's flow
 
-If the web app is already a PWA (Progressive Web App) with a good score on [Lighthouse](https://developers.google.com/web/tools/lighthouse), then you just have to set up digital asset links.
+If your web app is already a [Progressive Web App (PWA)](https://developers.google.com/web/progressive-web-apps)
+with a good score on [Lighthouse](https://developers.google.com/web/tools/lighthouse),
+you just have to set up digital asset links.
 
-## A very basic TWA
+## Building a basic TWA
 
-I'll share the challenges faced and how we integrated functionalities like android shortcuts, splash screen, deep links, etc in coming posts, but before that to build a basic TWA app, we followed the steps mentioned in [official Google docs](https://developers.google.com/web/updates/2019/02/using-twa). Our project underwent the following changes:
+A full TWA has integrated capabilities like Android shortcuts, a splash screen, and deep links.
+But to build a basic TWA app, we followed the steps mentioned in [official Google docs](https://developers.google.com/web/updates/2019/02/using-twa).
 
-1. Created an Android Manifest file containing the `DEFAULT_URL`, i.e., [https://www.oyorooms.com](https://www.oyorooms.com) and intent filters to define that this activity is the launcher and an intent filter that says that this app can handle oyorooms URLs.
-1. The URL bar is removed with the help of digital asset links verification.
-1. Launch Icon is created.
+Here's what we did:
 
-{% Aside %}
-There is a long white screen between launching the app and getting anything on the screen. This is the time when the browser is getting initialized and your web app is getting the html document. We can't avoid it completely but can serve something which user is familiar with i.e A Splash Screen.
-{% endAside %}
+1. Created an [Android manifest file](https://developer.android.com/guide/topics/manifest/manifest-intro)
+   containing the `DEFAULT_URL`, i.e., [https://www.oyorooms.com](https://www.oyorooms.com) and intent filters to define that this activity is the launcher and an intent filter that says that this app can handle oyorooms URLs.
+1. Removed the browser's URL bar using digital asset link verification.
+1. Created a launch icon.
 
-## Adding the Splash Screen: the right way
+## Adding a splash screen
 
-Splash screen is the screen that generally every native app shows till it loads so that users can know that the app is starting up.
+There is a long delay between launching the app and seeing it on screen
+because the browser must be initialized and load yourHTML document.
+We can't totally eliminate a delay, but we can show a splash screen
+to reduce the perceived load time.
 
-Starting on Chrome 75, Trusted Web Activities have support for Splash Screens and we just have to provide background color and an image. This is sufficient but it won't suffice for all users as:
+Starting in Chrome 75, there's support for TWA support splash screens;
+all you need to do is specify a background color and an image
+in the Android manifest file.
 
-- Some users would be using browsers other than Chrome.
-- All users won't be having the Chrome 75 or newer version.
+But what about users who use other browsers or earlier versions of Chrome?
 
 So we went with the splash screen provided by TWA and also wrote our own custom splash activity which handled the use cases discussed above.
 
@@ -101,43 +144,43 @@ AndroidManifest.xml:
 
 ```xml
 <activity
-    android:name=".SplashActivity"
-    android:theme="@style/AppTheme.NoActionBar">
+  android:name=".SplashActivity"
+  android:theme="@style/AppTheme.NoActionBar">
 
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
+  <intent-filter>
+    <action android:name="android.intent.action.MAIN" />
+    <category android:name="android.intent.category.LAUNCHER" />
+  </intent-filter>
 
-    <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-        <data
-            android:host="@string/website_host"
-            android:scheme="@string/website_scheme"
-            />
-    </intent-filter>
+  <intent-filter>
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data
+      android:host="@string/website_host"
+      android:scheme="@string/website_scheme" />`
+  </intent-filter>
 
 </activity>
-<activity        android:name="android.support.customtabs.trusted.LauncherActivity"
-android:theme="@style/AppTheme.NoActionBar">
-.
-.
-<meta-data
+<activity
+  android:name="android.support.customtabs.trusted.LauncherActivity"
+  android:theme="@style/AppTheme.NoActionBar">
+…
+  <meta-data
     android:name="android.support.customtabs.trusted.STATUS_BAR_COLOR"
-android:resource="@color/colorPrimary" />
-<meta-data
+    android:resource="@color/colorPrimary" />
+  <meta-data
     android:name="android.support.customtabs.trusted.SPLASH_IMAGE_DRAWABLE"
-android:resource="@drawable/ic_oyo_lite_white" />
-<meta-data android:name="android.support.customtabs.trusted.SPLASH_SCREEN_BACKGROUND_COLOR"
-android:resource="@color/colorPrimary"/>
-<meta-data
+    android:resource="@drawable/ic_oyo_lite_white" />
+  <meta-data
+    android:name="android.support.customtabs.trusted.SPLASH_SCREEN_BACKGROUND_COLOR"
+    android:resource="@color/colorPrimary"/>
+  <meta-data
     android:name="android.support.customtabs.trusted.SPLASH_SCREEN_FADE_OUT_DURATION"
-android:value="500" />
-<meta-data
+    android:value="500" />
+  <meta-data
     android:name="android.support.customtabs.trusted.FILE_PROVIDER_AUTHORITY"
-android:value="oyo.consumerlite.authority" />
+    android:value="oyo.consumerlite.authority" />
 </activity>
 ```
 
@@ -151,12 +194,12 @@ In this way, users having old or newer chrome versions will get the splash scree
 
 ## Let's talk numbers
 
-- Conversion: 3X of PWA
-- PlayStore Rating: 4.6
-- Logged-In %: 3X of PWA
-- Realization: 1.5X of PWA
+- Conversion: 3 times higher than our PWA
+- PlayStore rating: 4.6
+- Percentage of users who logged in: 3 times higher than the PWA
+- Realization: 1.5 times higher than the PWA
 
-Apart from the above stats, TWA helps in product building/marketing in ways :
+Apart from the above stats, TWA helps with  product building and marketing:
 
 - Multiple presence on play store- leading to a higher opportunity for user acquisition
 - Higher retention rates and stickiness
