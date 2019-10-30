@@ -12,6 +12,7 @@ glitch: codelab-notifications-service-worker
 # Specify which file the glitch should start on.
 glitchPath: public/index.js  
 related_post: use-push-notifications-to-engage-users
+draft: true
 ---
 
 In this codelab, you'll use a service worker
