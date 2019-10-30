@@ -136,15 +136,12 @@ certain tag through `ServiceWorkerRegistration.getNotifications()`. Note that yo
 ```js
 const tag = 'meeting';
 const cancelScheduledNotification = async (tag) => {
-  const registration = await navigator.serviceWorker.getRegistration();
+  const registration = await navigator.serviceWorker.getRegistration();  
   const notifications = await registration.getNotifications({
     tag: tag,
     includeTriggered: true,
-  });
-
-  if (Array.isArray(notifications)) {
-    notifications.forEach((notification) => notification.close());
-  }
+  }); 
+  notifications.forEach((notification) => notification.close());
 };
 ```
 
