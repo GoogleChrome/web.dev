@@ -147,7 +147,7 @@ across browsers and potential console warnings for each cookie.
 Set-Cookie: first_party_var=value; SameSite=Lax
 ```
 
-For cookies needed in a third-party context, you will need to ensure thet are
+For cookies needed in a third-party context, you will need to ensure they are
 marked as `SameSite=None; Secure`. Note that you need both attributes together.
 If you just specify `None` without `Secure` the cookie will be rejected. There
 are some mutually incompatible differences in browser implementations though, so
