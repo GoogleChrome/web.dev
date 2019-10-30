@@ -272,7 +272,7 @@ in a third-party context.
   </figcaption>
 </figure>
 
-{% Aside 'objective' %}
+{% Aside %}
 
 If you provide a service that other sites consume such as widgets, embedded
 content, affiliate programmes, advertising, or sign-in across multiple sites
