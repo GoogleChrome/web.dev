@@ -171,7 +171,7 @@ down into three main intervals:
 
 <dl>
     <dt>Time to load ad libraries</dt>
-    <dd>The time it takes to load all ad libraries necessary to issue the first ad request. May be improved by removing or delaying the loading of scripts that are not related to making ad requests.</dd>
+    <dd>The time it takes to load all ad libraries necessary to issue the first ad request. May be improved by removing or <a href="/efficiently-load-third-party-javascript/">delaying the loading of scripts</a> that are not related to making ad requests.</dd>
     <dt>Time to first ad request</dt>
     <dd>The time elapsed from ad library load to the first ad request being made. May be improved by parallelizing header bidding requests and avoiding tasks that <a href="/mainthread-work-breakdown/">block the main thread</a>.</dd>
     <dt>Time to render first ad</dt>
