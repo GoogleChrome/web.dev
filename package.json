@@ -26,7 +26,7 @@
     "dev": "npm-run-all clean build:rollup build:sass --parallel --race watch:rollup watch:sass watch:eleventy watch:gulp start",
     "stage": "npm run build && gcloud app deploy --project web-dev-staging --quiet",
     "stage:personal": "npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",
-    "deploy": "ELEVENTY_ENV=prod npm run build && node index-algolia.js"
+    "deploy": "ELEVENTY_ENV=prod npm run build && node index-algolia.js && gcloud app deploy --project web-dev-production-1 --quiet"
   },
   "license": "Apache-2.0",
   "dependencies": {
