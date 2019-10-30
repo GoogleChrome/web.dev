@@ -152,7 +152,7 @@ marked as `SameSite=None; Secure`. Note that you need both attributes together.
 If you just specify `None` without `Secure` the cookie will be rejected. There
 are some mutually incompatible differences in browser implementations though, so
 you may need to use some of the mitigating strategies described in
-["Handling incompatible clients"](#handling-incompatible-clients) below.
+[Handling incompatible clients](#handling-incompatible-clients) below.
 
 ```text
 Set-Cookie: third_party_var=value; SameSite=None; Secure
