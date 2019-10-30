@@ -205,7 +205,7 @@ upcoming changes.
       alt="Chrome Developer Tools showing the overview of cookies for a site"
       style="max-width: 40vw;">
   <figcaption class="w-figcaption">
-    Chrome Developer Tools shows the values for the <tt>SameSite</tt> and
+    Chrome DevTools shows the values for the <tt>SameSite</tt> and
     <tt>Secure</tt> attributes for cookies under the Application → Cookies
     section.
   </figcaption>
