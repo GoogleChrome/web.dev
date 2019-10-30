@@ -144,11 +144,12 @@ Pun intended 😛
 Every other guide in this collection will explore a specific Next.js feature in detail:
 
 * Route prefetching to speed up page navigations
-* Serving hybrid and AMP-first pages to leverage AMP caches for faster loading from search engines
+* [Serving hybrid and AMP-first pages][amp] for faster loading from search engines
 * Code-splitting components with dynamic imports to reduce JavaScript footprints
 * Precaching assets with `next-offline` to make your site work offline
 * Rendering options in Next.js to optimize for different use cases
 
-[collection]: https://web.dev/react
+[collection]: /react
 [cra]: https://create-react-app.dev/
 [ssr]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web#server-rendering
+[amp]: /how-to-use-amp-in-nextjs-and-why
