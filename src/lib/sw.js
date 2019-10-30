@@ -44,7 +44,7 @@ self.addEventListener("activate", (event) => {
       return;
     }
     console.debug(
-      "SW upgrade from",
+      "web.dev SW upgrade from",
       previousArchitecture,
       "to arch",
       serviceWorkerArchitecture,
