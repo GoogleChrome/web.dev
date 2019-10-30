@@ -41,7 +41,7 @@ so that:
    enable inclusion in third party context.
 
 This will become the default behavior in Chrome 80, planned for a stable release
-in February, 2020. If you currently provide cookies that are intended for
+in February 2020. If you currently provide cookies that are intended for
 cross-site usage you will need to make changes before that date to support the
 new default.
 
