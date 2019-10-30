@@ -112,7 +112,7 @@ In the following example flow, the client and service worker use vanilla JavaScr
     });
     ```
 
-Part 2: Send Notification
+### Part 2: Send Notification
 
 1.  The web server sends a notification to the subscription endpoint.
 
