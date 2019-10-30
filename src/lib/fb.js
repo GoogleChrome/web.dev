@@ -1,18 +1,11 @@
+import config from "webdev_config";
 import {store} from "./store";
 import {clearSignedInState} from "./actions";
 import firestoreLoader from "./firestore-loader";
 
 /* eslint-disable require-jsdoc */
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBjcWKserQhn4mygIluGr9eTMfR_S0PDEU",
-  authDomain: "v2-prototype.firebaseapp.com",
-  databaseURL: "https://v2-prototype.firebaseio.com",
-  projectId: "v2-prototype",
-  storageBucket: "",
-  messagingSenderId: "960947587576",
-  appId: "1:960947587576:web:b8e4ff1671c6c131",
-};
+const {firebaseConfig} = config;
 
 firebase.initializeApp(firebaseConfig);
 

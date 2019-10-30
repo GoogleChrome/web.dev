@@ -46,4 +46,25 @@ module.exports = {
     },
     version: 3,
   },
+  firebase: {
+    prod: {
+      apiKey: "AIzaSyCyThSjI_ZUT1NwV9aQLtqklVcNj72gvo8",
+      authDomain: "web-dev-production-1.firebaseapp.com",
+      databaseURL: "https://web-dev-production-1.firebaseio.com",
+      projectId: "web-dev-production-1",
+      storageBucket: "web-dev-production-1.appspot.com",
+      messagingSenderId: "1051961234704",
+      appId: "1:1051961234704:web:d706ff04eb3dc39d128195",
+      measurementId: "G-RY6ENK9E06",
+    },
+    staging: {
+      apiKey: "AIzaSyCc27LkiT_ZvmEszthj__edZEzB7B7976s",
+      authDomain: "web-dev-staging.firebaseapp.com",
+      databaseURL: "https://web-dev-staging.firebaseio.com",
+      projectId: "web-dev-staging",
+      storageBucket: "web-dev-staging.appspot.com",
+      messagingSenderId: "950800540990",
+      appId: "1:950800540990:web:5bfeb5de58f8ce7ceef86f",
+    },
+  },
 };
