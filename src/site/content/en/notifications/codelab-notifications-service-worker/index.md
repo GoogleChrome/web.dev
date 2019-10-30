@@ -1,7 +1,8 @@
 ---
 layout: codelab
 title: Use a Service Worker to manage notifications
-author: katejeffreys
+authors:
+  - katejeffreys
 description: |
   In this codelab, learn how to manage notifications with a
   service worker.
