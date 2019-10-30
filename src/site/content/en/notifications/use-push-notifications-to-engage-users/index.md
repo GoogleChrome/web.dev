@@ -89,7 +89,7 @@ In the following example flow, the client and service worker use vanilla JavaScr
     });
     ```
 
-    Push services like Firebase Cloud Messaging operate on a subscription model. When a service worker subscribes to a push service by calling `PushManager.subscribe()`, the push service creates a URL unique to that service worker. The URL is known as a subscription endpoint. 
+    Push services like Firebase Cloud Messaging operate on a subscription model. When a service worker subscribes to a push service by calling `PushManager.subscribe()`, the push service creates a URL unique to that service worker. The URL is known as a **subscription endpoint**. 
 
 1.  The client sends the subscription endpoint to the app server. 
 
