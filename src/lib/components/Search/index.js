@@ -155,6 +155,11 @@ class Search extends BaseElement {
   }
 
   get itemsTemplate() {
+    // Note that our anchors have tabindex=-1 to prevent them from
+    // being focused.
+    // This is intentional because focus needs to stay in the input field.
+    // When the user is pressing arrow keys, we use a virtual cursor and
+    // aria-activedescendant to indicate the active anchor.
     return this.hits.map(
       (hit, idx) => html`
         <li class="web-search-popout__item">
@@ -164,6 +169,7 @@ class Search extends BaseElement {
               ? "web-search-popout__link--active"
               : ""}"
             aria-selected="${idx === this.cursor}"
+            tabindex="-1"
             href="${hit.url}"
             >${hit.title}</a
           >
