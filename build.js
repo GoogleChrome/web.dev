@@ -26,6 +26,7 @@ const rollupPluginVirtual = require("rollup-plugin-virtual");
 const rollup = require("rollup");
 const terser = isProd ? require("terser") : null;
 const {getManifest} = require("workbox-build");
+const site = require("./src/site/_data/site");
 
 process.on("unhandledRejection", (reason, p) => {
   log.error("Build had unhandled rejection", reason, p);
@@ -40,6 +41,7 @@ const bootstrapConfig = {
       .toISOString()
       .replace(/[\D]/g, "")
       .slice(0, 12),
+  firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
 };
 
 const defaultPlugins = [
