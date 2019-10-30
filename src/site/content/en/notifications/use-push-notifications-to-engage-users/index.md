@@ -53,7 +53,7 @@ Bring up the permission prompt **in response to a user gesture** and **when the 
 
 ## How do push notifications work?
 
-The real power of notifications comes from the combination of service workers and push technology.
+The real power of notifications comes from the combination of service workers and push technology:
 
 *   [Service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can run in the background and display notifications even when your app isn't visible on screen. 
 
