@@ -22,7 +22,7 @@ tags:
 {% Aside %}
 
 For implementation advice on `SameSite=None`, see part 2:
-["SameSite cookie recipes"](/samesite-cookie-recipes)
+[SameSite cookie recipes](/samesite-cookie-recipes)
 
 {% endAside %}
 
