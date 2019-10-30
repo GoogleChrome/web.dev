@@ -61,7 +61,7 @@ The sections below show responses and comments for each survey question.
 </figure>
 
 {% Aside %}
-Requesting image files just in time — rather than getting all the images for a page as soon as it loads — can improve performance and reduce data cost.
+Requesting image files just in time—rather than getting all the images for a page as soon as it loads—can improve performance and reduce data cost.
 
 **Find out more:**
 
@@ -285,6 +285,7 @@ Serving images with dimensions appropriate for viewport and display size can red
 {% Aside 'caution' %}
 Caution: these numbers don't quite make sense. 41.5% of 2,946 respondents said they don't use a platform or CMS, and yet 1,603 (54%) responded to the follow-up question. We're not sure what happened here.
 {% endAside %}
+
 ---
 
 ## Do you use a web framework or library?
@@ -330,7 +331,7 @@ Caution: these numbers don't quite make sense. 41.5% of 2,946 respondents said t
 
 **Content Delivery Networks (CDNs)** optimise distribution and delivery of images and other website assets.
 
-Image services and CDNs also offer additional features, such as [automated delivery of WebP](https://support.cloudflare.com/hc/en-us/articles/360000607372-Using-Cloudflare-Polish-to-compress-images) to supporting browsers instead of PNG or JPEG — without changing the file extension.
+Image services and CDNs also offer additional features, such as [automated delivery of WebP](https://support.cloudflare.com/hc/en-us/articles/360000607372-Using-Cloudflare-Polish-to-compress-images) to supporting browsers instead of PNG or JPEG—without changing the file extension.
 {% endAside %}
 
 <figure class="w-figure">
@@ -429,7 +430,7 @@ Below is a selection of 110 responses, some of which have been slightly reworded
 
 ### Transparency
 
-+ It's 2019. How are JPGs still without alpha transparency??
++ It's 2019. How are JPGs still without alpha transparency?
 + I only really use PNGs for photographs when I need a transparent background.
 
 ### Problem: transparency for photographic images
@@ -482,7 +483,7 @@ As observed in website reviews elsewhere, and confirmed by this survey, many sit
 + Google should provide a free CDN like Cloudflare.
 + Maybe more tooling to set up dynamic scaling and CDNs with different providers would be nice.
 + A single oversized overcompressed image is a very decent solution with no extra production cost. You need around 1000 pixels wide images for mobile (500px render width) and that is also the size you need for large/desktop non-retina displays. I think images resize CDN' are a very bad solution, although I have used it in the past. The CMS should handle the resizing and of that is too complex to set up, a single solution is a good compromise (for now).
-+ How cool would it be if I could use a Google Photos picture in <picture> element, and I would get all those sizes automagically... :D
++ How cool would it be if I could use a Google Photos picture in <picture> element, and I would get all those sizes automagically… :D
 + CloudFlare auto-scales our images to best match the user's display. So we can save on loading time because images are loaded in relative to the user's display. For example, if a user is on a phone, it won't load in a desktop-sized background.
 + Cloudflare does this in the background without us having to do anything except check a box in our settings panel. "
 + Just to reiterate, the only reason I can successfully use srcset, etc. is due to the ease of Cloudinary. But Cloudinary gets expensive, *really* fast. this feels like a major hole in the development experience.
@@ -531,7 +532,7 @@ As observed in website reviews elsewhere, and confirmed by this survey, many sit
 + [One participant wrote a [blog post](https://stokito.wordpress.com/2019/07/19/how-to-make-web-images-better/) in response to this survey.]
 + Google's speed test is irrelevant. My customers are all in Los Angeles with super fast download speeds. I need to upload beautiful high res pics but I get lower SEO points. My download speed for people in LA is only 2 seconds or less. Why does it matter if some dude in Montana will download it slower on his Nokia? The speed should be relevant to the service area average speeds for the site.
 + The requirements seems to constantly change. As a web developer it is extremely frustrating because it is time consuming to save out the images in the first place. We optimize the best we can, we check the site and then months later Google has decided that the images could be even more compressed or need to be in a different format. This prevents us from providing the best possible solution to our client that lasts and instead creates a costly endeavor for them and us. Some of our small business clients simply don't have the budget for us to keep fixing images and re-saving them out to adhere to the requirements. We don't have the budget to do this work within their management packages. Writing the code to call different image sizes for different devices is also time consuming. It would be great to come up with a system of saving out images that would be consistent for a longer period of time.
-+ Yes, I think you got "Keep Request Counts Low And File Sizes Small" at https://developers.google.com/web/tools/lighthouse/audits/budgets all wrong in Lighthouse. If a site serves over HTTP1.x then sure, but if a site serves over HTTP2 then the number of requests is less important or not even an issue if originating from the same hostname. I have a lite website, but I load 30 small WebP files of approx 35 requests total, over HTTP2 on the same hostname. Lighthouse is flagging this as an "Keep Request Counts Low And File Sizes Small" issue whereas it is superfast and because of the HTTP2 on the same hostname the number of requests are not a problem. And yes, the files are already small (most between 1 KB and 2 KB or less). I could load a sprite but then more CSS computing needs to be done. So please update the "Keep Request Counts Low And File Sizes Small" report in Lighthouse to take HTTP2 over same hostname into account.
++ Yes, I think you got [Keep Request Counts Low And File Sizes Small](https://developers.google.com/web/tools/lighthouse/audits/budgets) all wrong in Lighthouse. If a site serves over HTTP1.x then sure, but if a site serves over HTTP2 then the number of requests is less important or not even an issue if originating from the same hostname. I have a lite website, but I load 30 small WebP files of approx 35 requests total, over HTTP2 on the same hostname. Lighthouse is flagging this as an "Keep Request Counts Low And File Sizes Small" issue whereas it is superfast and because of the HTTP2 on the same hostname the number of requests are not a problem. And yes, the files are already small (most between 1 KB and 2 KB or less). I could load a sprite but then more CSS computing needs to be done. So please update the "Keep Request Counts Low And File Sizes Small" report in Lighthouse to take HTTP2 over same hostname into account.
 + There should be much more standards and fixed rules for best practices.
 + I'm interested in optimizing image in my websites. But difficult to manage and build it. Sometimes my customer change images. I want to know best practice for using images on my PHP website.
 + It has been a struggle for people to remember to compress their images.
