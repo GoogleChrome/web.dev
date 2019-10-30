@@ -134,7 +134,6 @@ certain tag through `ServiceWorkerRegistration.getNotifications()`. Note that yo
 `includeTriggered` flag for scheduled notifications to be included in the list.
 
 ```js
-const tag = 'meeting';
 const cancelScheduledNotification = async (tag) => {
   const registration = await navigator.serviceWorker.getRegistration();  
   const notifications = await registration.getNotifications({
