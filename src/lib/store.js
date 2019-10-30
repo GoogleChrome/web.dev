@@ -1,6 +1,7 @@
 import createStore from "unistore";
 import devtools from "unistore/devtools";
 import getMeta from "./utils/meta";
+import config from "webdev_config";
 
 /* eslint-disable require-jsdoc */
 
@@ -48,6 +49,11 @@ const initialState = {
   snackbarType: null,
 };
 
-const store = devtools(createStore(initialState));
+let store;
+if (config.prod) {
+  store = createStore(initialState);
+} else {
+  store = devtools(createStore(initialState));
+}
 
 export {store};
