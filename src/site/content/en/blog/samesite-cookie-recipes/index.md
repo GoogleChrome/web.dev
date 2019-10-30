@@ -173,23 +173,25 @@ marked with `SameSite=None` but are missing `Secure`.
 
 For missing `SameSite` attributes you will see:
 
-> "A cookie associated with a cross-site resource at (cookie domain) was set
-> without the `SameSite` attribute. A future release of Chrome will only deliver
-> cookies with cross-site requests if they are set with `SameSite=None` and
-> `Secure`. You can review cookies in developer tools under
-> Application>Storage>Cookies and see more details at
-> [https://www.chromestatus.com/feature/5088147346030592](https://www.chromestatus.com/feature/5088147346030592)
-> and
-> [https://www.chromestatus.com/feature/5633521622188032](https://www.chromestatus.com/feature/5633521622188032)."
+```text
+A cookie associated with a cross-site resource at (cookie domain)
+was set without the `SameSite` attribute. A future release of Chrome
+will only deliver cookies with cross-site requests if they are set
+with `SameSite=None` and `Secure`. You can review cookies in developer
+tools under Application>Storage>Cookies and see more details at
+https://www.chromestatus.com/feature/5088147346030592 and
+https://www.chromestatus.com/feature/5633521622188032.
+```
 
 And for `None` without `Secure`, you will see:
 
-> "A cookie associated with a resource at (cookie domain) was set with
-> `SameSite=None` but without `Secure`. A future release of Chrome will only
-> deliver cookies marked `SameSite=None` if they are also marked `Secure`. You
-> can review cookies in developer tools under Application>Storage>Cookies and
-> see more details at
-> [https://www.chromestatus.com/feature/5633521622188032](https://www.chromestatus.com/feature/5633521622188032)."
+```text
+A cookie associated with a resource at (cookie domain) was set with
+`SameSite=None` but without `Secure`. A future release of Chrome will only
+deliver cookies marked `SameSite=None` if they are also marked `Secure`. You
+can review cookies in developer tools under Application>Storage>Cookies and
+see more details at https://www.chromestatus.com/feature/5633521622188032.
+```
 
 Each of these warnings will contain the cookie domain. If you're responsible for
 that domain, then you will need to update the cookies. Otherwise, you may need
