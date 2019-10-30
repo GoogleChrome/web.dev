@@ -14,9 +14,21 @@ codelabs:
 
 ## Why use push notifications?
 
-Notifications present small chunks of information to a user, letting web apps provide targeted updates.
+Notifications present small chunks of information to a user. Web apps can use notifications to tell users about important, time-sensitive events, or actions the user needs to take. 
 
-[Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) lets a server provide notifications to a client at any time–even when the client is inactive.
+The look-and-feel of notifications varies between platforms. For example: 
+
+<figure class="w-figure">
+  <img src="./predicaments-android.png" alt="A notification on an android device.">
+  <figcaption class="w-figcaption">A notification on an android device.</figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img src="./predicaments-macbook.png" alt="A notification on a MacBook.">
+  <figcaption class="w-figcaption">A notification on a MacBook.</figcaption>
+</figure>
+
+Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.      
 
 Push notifications can help users to get the most out of your app by prompting them to re-open it and use it based on the latest information. 
 
@@ -59,9 +71,11 @@ The real power of notifications comes from the combination of service workers an
 
 *   Push technology lets a server decide when to send notifications. A push service creates unique URLs for each subscribed service worker. Sending messages to the URL raises events on the service worker.
 
-In the following example flow, the client and service worker use vanilla JavaScript with no extra libraries. The server is built with the [`express` npm package](https://www.npmjs.com/package/express) on [Node.js](https://nodejs.org/en/), and uses the [`web-push` npm package](https://www.npmjs.com/package/web-push) to send notifications. To send information to the server, the client makes a call to a POST URL that the server has exposed.
+In the following example flow, a client registers a service worker and subscribes to push notifications. Then, the server sends a notification to the subscription endpoint. 
 
-### Part 1: Registration and subscription
+The client and service worker use vanilla JavaScript with no extra libraries. The server is built with the [`express` npm package](https://www.npmjs.com/package/express) on [Node.js](https://nodejs.org/en/), and uses the [`web-push` npm package](https://www.npmjs.com/package/web-push) to send notifications. To send information to the server, the client makes a call to a POST URL that the server has exposed.
+
+### Part 1: Register a service worker and subscribe to Push
 
 1.  A client app registers a service worker with `ServiceWorkerContainer.register()`. The registered service worker will continue to run in the background when the client is inactive. 
 
@@ -112,7 +126,7 @@ In the following example flow, the client and service worker use vanilla JavaScr
     });
     ```
 
-Part 2: Send Notification
+### Part 2: Send a notification
 
 1.  The web server sends a notification to the subscription endpoint.
 
@@ -146,16 +160,4 @@ Part 2: Send Notification
 
 As a next step, implement push notifications! 
 
-We've created a series of codelabs to guide you through each step of the process:
-
-{% Aside 'codelab' %}
-  [Get started with notifications](codelab-notifications-get-started)
-{% endAside %}
-
-{% Aside 'codelab' %}
-  [Manage notifications with a service worker](codelab-notifications-service-worker)
-{% endAside %}
-
-{% Aside 'codelab' %}
-  [Send push notifications from a web server](codelab-notifications-push-server)
-{% endAside %}
+We've created a series of codelabs to guide you through each step of the process.
