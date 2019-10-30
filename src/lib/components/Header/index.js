@@ -37,7 +37,7 @@ class Header extends HTMLElement {
   onStateChanged({isSearchExpanded, currentUrl}) {
     this.classList.toggle("web-header--has-expanded-search", isSearchExpanded);
 
-    // Ensure that the "active" attribute is applied to any matchind header
+    // Ensure that the "active" attribute is applied to any matching header
     // link, or to none (for random subpages or articles).
     const active = this.querySelector("[active]");
     const updated = this.querySelector(
@@ -50,10 +50,12 @@ class Header extends HTMLElement {
 
     if (active) {
       active.removeAttribute("active");
+      active.removeAttribute("aria-current");
     }
 
     if (updated) {
       updated.setAttribute("active", "");
+      updated.setAttribute("aria-current", "page");
     }
   }
 
