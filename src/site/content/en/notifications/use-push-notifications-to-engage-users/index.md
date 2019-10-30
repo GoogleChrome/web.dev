@@ -57,7 +57,7 @@ The real power of notifications comes from the combination of service workers an
 
 *   [Service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can run in the background and display notifications even when your app isn't visible on screen. 
 
-*   Push technology lets a server decide when to send notifications. A push service creates unique URLs for each subscribed service worker. Sending messages to the URL raises events on the service worker.
+*   Push technology lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.
 
 In the following example flow, the client and service worker use vanilla JavaScript with no extra libraries. The server is built with the [`express` npm package](https://www.npmjs.com/package/express) on [Node.js](https://nodejs.org/en/), and uses the [`web-push` npm package](https://www.npmjs.com/package/web-push) to send notifications. To send information to the server, the client makes a call to a POST URL that the server has exposed.
 
