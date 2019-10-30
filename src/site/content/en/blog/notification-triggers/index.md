@@ -255,4 +255,4 @@ Richard and Peter.
 [cr-status]: https://www.chromestatus.com/feature/5133150283890688
 [explainer]: https://github.com/beverloo/notification-triggers/blob/master/README.md
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developers.chrome.com/origintrials/#/trials/active
+[ot]: https://developers.chrome.com/origintrials/
