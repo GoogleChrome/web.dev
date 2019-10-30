@@ -39,9 +39,22 @@ For buttons without visible labels, like icon buttons,
 use the `aria-label` attribute to clearly describe the action
 to anyone using an assistive technology, for example:
 
-```html
-<button aria-label="Search"></button>
-```
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/lh-button-name?path=index.html&previewSize=0"
+    alt="lh-button-name on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+{% Aside %}
+This sample app relies on Google's
+[Material icon font](https://google.github.io/material-design-icons/),
+which uses [ligatures](https://alistapart.com/article/the-era-of-symbol-fonts/)
+to convert the buttons' inner text to icon glyphs.
+Assistive technologies will refer to the `aria-label`
+rather than the icon glyphs when announcing the buttons.
+{% endAside %}
 
 See also [Label buttons and links](/labels-and-text-alternatives#label-buttons-and-links).
 
