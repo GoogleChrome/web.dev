@@ -27,22 +27,22 @@ tags:
 
 ## What are Notification Triggers? {: #what }
 
-Web developers have the ability to display notifications using the
-[Web Notifications API](https://www.w3.org/TR/notifications/). This feature is often used in
-collaboration with the [Push API](https://w3c.github.io/push-api/) to inform the user of
+Web developers can display notifications using the
+[Web Notifications API](https://www.w3.org/TR/notifications/). This feature is often used
+with the [Push API](https://w3c.github.io/push-api/) to inform the user of
 time-sensitive information, such as breaking news events or received messages. Notifications are
-then shown by running JavaScript on the user's device.
+shown by running JavaScript on the user's device.
 
 The problem with the Push API is that it's not reliable for triggering notifications which _must_ be
 shown when a particular condition, like time or location, is met. An example of a _time-based
 condition_ is a calendar notification that reminds you of an important meeting with your boss at
-2PM. An example of a _location-based condition_ is when you enter the vicinity of your grocery
+2:00 PM. An example of a _location-based condition_ is when you enter the vicinity of your grocery
 store, you get a reminder notification to buy milk. Network connectivity or battery-preserving
 features like doze mode can delay the delivery of push based notifications.
 
 Notification Triggers solve this problem by letting you schedule notifications with their triggering
 condition in advance, so that the operation system will deliver the notification at the right time
-even if there is no network connectivity or the device is in a battery saver mode.
+even if there is no network connectivity or the device is in battery saver mode.
 
 {% Aside %}
   For now, only _time-based triggers_ are supported in Chrome. Additional triggers, such as
@@ -52,15 +52,15 @@ even if there is no network connectivity or the device is in a battery saver mod
 
 ### Use cases {: #use-cases }
 
-Calendar applications can use time-based Notification Triggers to remind a user of upcoming
+Calendar applications can use time-based notification triggers to remind a user of upcoming
 meetings. The default notification scheme for a calendar app could be to show a first "heads up"
 notification one hour before a meeting and then another more urgent notification five minutes
 before.
 
 A TV network might remind users that their favorite TV show is about to start, or a conference live
-stream is about to commence.
+stream is about to begin.
 
-Time zone conversion sites can use time-based Notification Triggers to let their users schedule
+Time zone conversion sites can use time-based notification triggers to let their users schedule
 alarms for telephone conferences or video calls.
 
 ## Current status {: #status }
@@ -73,7 +73,7 @@ alarms for telephone conferences or video calls.
 | **4. Origin trial**                      | **[In Progress][ot]**    |
 | 5. Launch                                | Not started              |
 
-## How to use Notification Triggers {: #use }
+## How to use notification triggers {: #use }
 
 ### Enabling via chrome://flags
 
@@ -82,7 +82,7 @@ To experiment with the Notification Triggers API locally, without an origin tria
 
 ### Enabling support during the origin trial phase
 
-Starting in Chrome ⚠️ToDo, the Notification Triggers API will be available as an origin trial.
+Starting in Chrome 78, the Notification Triggers API will be available as an origin trial.
 Origin trials allow you to try new features and give feedback on their usability, practicality, and
 effectiveness, both to us, and to the web standards community. For more information, see the
 [Origin Trials Guide for Web Developers](https://googlechrome.github.io/OriginTrials/developer-guide.html).
@@ -127,9 +127,9 @@ const createScheduledNotification = async (tag, title, timestamp) => {
   Notifications Triggers will fire completely independent from Chrome.
 {% endAside %}
 
-### Canceling a previously scheduled notification
+### Canceling a scheduled notification
 
-To cancel previously scheduled notifications, first request a list of all notifications that match a
+To cancel scheduled notifications, first request a list of all notifications that match a
 certain tag through `ServiceWorkerRegistration.getNotifications()`. Note that you need to pass the
 `includeTriggered` flag for scheduled notifications to be included in the list.
 
@@ -180,29 +180,30 @@ notifications, list scheduled notifications, and cancel them. The source code is
 
 ## Security and permissions
 
-We've designed and implemented Notification Triggers using the core principles defined in
+We've designed and implemented the Notification Triggers API using the core principles defined in
 [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control,
-transparency, and ergonomics. As this API depends on service workers, it is only available in secure
-contexts. Using the API requires the same permission as regular push notifications.
+transparency, and ergonomics. Because this API requires service workers,
+it also requires a secure context.
+Using the API requires the same permission as regular push notifications.
 
 ### User control
 
 This API is only available in the context of a `ServiceWorkerRegistration`. This implies that all
 required data is stored in the same context and is automatically deleted when the service worker is
 deleted or the user deletes all site data for the origin. Blocking cookies also prevents service
-workers from being installed, and therefore this API from being used. Notifications can always be
-disabled for the site in site settings.
+workers from being installed in Chrome, and therefore this API from being used.
+Notifications can always be disabled by the user for the site in site settings.
 
 ### Transparency
 
 Unlike the Push API, this API does not depend on the network, which implies scheduled notifications
-need all required data beforehand, including fetching image resources referenced by the `badge`,
+need all required data beforehand, including image resources referenced by the `badge`,
 `icon` and `image` attributes. This means showing a scheduled notification is not observable by the
 developer and doesn't involve waking up the service worker until the user interacts with the
 notification. Consequently, there is currently no known way the developer could obtain information
 about the user through potentially privacy-invading approaches like IP address geolocation lookup.
-This design also allows the feature to tap into scheduling mechanisms provided by the operating
-system like Android's
+This design also allows the feature to optionally tap into scheduling mechanisms provided by
+the operating system like Android's
 [`AlarmManager`](https://developer.android.com/reference/android/app/AlarmManager), which helps
 preserve battery.
 
@@ -254,4 +255,4 @@ Richard and Peter.
 [cr-status]: https://www.chromestatus.com/feature/5133150283890688
 [explainer]: https://github.com/beverloo/notification-triggers/blob/master/README.md
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: ⚠️ToDo
+[ot]: https://developers.chrome.com/origintrials/#/trials/active
