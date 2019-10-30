@@ -39,8 +39,12 @@ self.addEventListener("activate", (event) => {
     const previousArchitecture = await idb.get("arch");
     if (previousArchitecture === undefined && replacingPreviousServiceWorker) {
       // We're replacing a Service Worker that didn't have architecture info. Force reload.
-    } else if (previousArchitecture === serviceWorkerArchitecture) {
-      // The architecture didn't change, don't force a reload, upgrades will happen in due course.
+    } else if (
+      !replacingPreviousServiceWorker ||
+      previousArchitecture === serviceWorkerArchitecture
+    ) {
+      // The architecture didn't change (or this is a brand new install), don't force a reload,
+      // upgrades will happen in due course.
       return;
     }
     console.debug(
