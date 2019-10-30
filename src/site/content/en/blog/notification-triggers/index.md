@@ -123,8 +123,8 @@ const createScheduledNotification = async (tag, title, timestamp) => {
 ```
 
 {% Aside %}
-  On desktop, Notifications Triggers will fire only if Chrome is running. On Android,
-  Notifications Triggers will fire completely independent from Chrome.
+  On desktop, notification triggers fire only if Chrome is running.
+  On Android, they fire regardless.
 {% endAside %}
 
 ### Canceling a scheduled notification
