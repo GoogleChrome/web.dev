@@ -49,23 +49,19 @@ its **semantics**.
 The easiest way of conveying proper semantics is to use semantically rich HTML
 elements.
 
-Here's a classic example: a `<div>` versus a `<button>`. Using CSS, it's possible
-to style both elements so they convey the same visual affordances, but compare
-the two experiences when using this embedded screen reader (you'll need to click
-**Enable ChromeVox Lite** to test it):
+Using CSS, it's possible
+to style the `<div>` and `<button>` elements so they convey the same visual affordances,
+but the two experiences are very different when using a screen reader.
+A `<div>` is just a generic grouping element,
+so a screen reader only announces the text content of the `<div>`.
+The `<button>` is announced as a "button,"
+a much stronger signal to the user that it's something they can interact with.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/div-vs-button?path=example.html&previewSize=100&attributionHidden=true"
-    alt="div-vs-button on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
-Because a `<div>`, semantically, is just a generic grouping element, the screen
-reader only announces the `div`'s text content. But the `<button>` is announced
-as a "button"—a much stronger signal to the user that this is something with
-which they can interact!
+The simplest
+and often best solution to this problem
+is to avoid custom interactive controls altogether.
+For example, replace a `<div>` that's acting like a button
+with an actual `<button>`.
 
 ## Semantic properties and the accessibility tree
 
