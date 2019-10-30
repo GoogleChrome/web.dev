@@ -1,3 +1,8 @@
+// Architecture revision of the Service Worker. If the previously saved revision doesn't match,
+// then this will cause clients to be aggressively claimed and reloaded on install/activate.
+// Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
+const serviceWorkerArchitecture = "v2";
+
 const normalizeIndexCacheKeyPlugin = {
   cacheKeyWillBeUsed({request, mode}) {
     // Take advantage of Workbox's built-in handling of .../index.html routes and ensure that its
@@ -10,11 +15,62 @@ const normalizeIndexCacheKeyPlugin = {
   },
 };
 
+import * as idb from "idb-keyval";
 import manifest from "cache-manifest";
 
 importScripts(
   "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js",
 );
+
+let replacingPreviousServiceWorker = false;
+
+self.addEventListener("install", (event) => {
+  // This is non-null if there was a previous Service Worker registered. Record for "activate", so
+  // that a lack of current architecture can be seen as a reason to reload our clients.
+  if (self.registration.active) {
+    replacingPreviousServiceWorker = true;
+  }
+
+  event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener("activate", (event) => {
+  const p = Promise.resolve().then(async () => {
+    const previousArchitecture = await idb.get("arch");
+    if (previousArchitecture === undefined && replacingPreviousServiceWorker) {
+      // We're replacing a Service Worker that didn't have architecture info. Force reload.
+    } else if (
+      !replacingPreviousServiceWorker ||
+      previousArchitecture === serviceWorkerArchitecture
+    ) {
+      // The architecture didn't change (or this is a brand new install), don't force a reload,
+      // upgrades will happen in due course.
+      return;
+    }
+    console.debug(
+      "web.dev SW upgrade from",
+      previousArchitecture,
+      "to arch",
+      serviceWorkerArchitecture,
+    );
+
+    await self.clients.claim();
+
+    // Reload all open pages (includeUncontrolled shouldn't be needed as we've _just_ claimed
+    // clients, but include it anyway for sanity).
+    const windowClients = await self.clients.matchAll({
+      includeUncontrolled: true,
+      type: "window",
+    });
+
+    // It's impossible to 'await' this navigation because this event would literally be blocking
+    // our fetch handlers from running. These navigates must be 'fire-and-forget'.
+    windowClients.map((client) => client.navigate(client.url));
+
+    await idb.set("arch", serviceWorkerArchitecture);
+  });
+  event.waitUntil(p);
+});
 
 workbox.googleAnalytics.initialize();
 
