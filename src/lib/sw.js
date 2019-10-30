@@ -43,6 +43,12 @@ self.addEventListener("activate", (event) => {
       // The architecture didn't change, don't force a reload, upgrades will happen in due course.
       return;
     }
+    console.debug(
+      "SW upgrade from",
+      previousArchitecture,
+      "to arch",
+      serviceWorkerArchitecture,
+    );
 
     await self.clients.claim();
 
@@ -55,11 +61,7 @@ self.addEventListener("activate", (event) => {
 
     // It's impossible to 'await' this navigation because this event would literally be blocking
     // our fetch handlers from running. These navigates must be 'fire-and-forget'.
-    windowClients.map((client) => {
-      const u = new URL(client.url);
-      u.searchParams.set("reloaded_by_evil_sw", serviceWorkerArchitecture);
-      client.navigate(u.toString());
-    });
+    windowClients.map((client) => client.navigate(client.url));
 
     await idb.set("arch", serviceWorkerArchitecture);
   });
