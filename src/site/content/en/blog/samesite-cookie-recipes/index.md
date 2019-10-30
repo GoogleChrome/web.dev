@@ -23,7 +23,7 @@ tags:
 {% Aside %}
 
 For how cookies and `SameSite` work, see part 1:
-["SameSite cookies explained"](/samesite-cookies-explained).
+[SameSite cookies explained](/samesite-cookies-explained).
 
 {% endAside %}
 
