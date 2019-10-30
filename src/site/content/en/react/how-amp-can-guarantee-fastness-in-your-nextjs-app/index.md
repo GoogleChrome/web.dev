@@ -5,12 +5,12 @@ authors:
   - houssein
 subhead: |
   Learn about the benefits and tradeoffs of supporting AMP in your Next.js app
-date: 2019-10-17
+date: 2019-10-29
 draft: true
 codelabs: how-to-use-amp-in-nextjs
 ---
 
-[AMP](https://amp.dev) (Accelerated Mobile Pages) is a web component framework that guarantees
+[AMP](https://amp.dev) is a web component framework that guarantees
 fast page loads. [Next.js][intro] has built-in support for AMP.
 
 ## What will you learn?
@@ -34,7 +34,7 @@ unsure of whether to support AMP.
 AMP has two main strategies for guaranteeing fastness:
 
 * **AMP HTML**: A restricted form of HTML that makes certain optimizations mandatory and prohibits
-  architectural patterns that lead to slowness. See [How AMP works][how] for a high-level
+  architectural patterns that lead to slowness. See [How AMP works][overview] for a high-level
   overview of the optimizations and restrictions.
 * **AMP Cache**: A content cache used by some search engines, such as Google and Bing, that uses
   [prerendering] to speed up page loads. See [Why AMP Caches exist][why] to learn more about the
@@ -63,14 +63,14 @@ framework but rather a server-side templating engine for generating AMP pages.
 
 If you're serious about load performance, an AMP-only page could be a good way to make sure
 that your page gets fast and stays fast. But here's the catch: in order to guarantee fastness,
-AMP must prohibit certain architectural patterns and HTML elements that often lead to slow pages.
+AMP prohibits certain architectural patterns and HTML elements that often lead to slow pages.
 For example, AMP doesn't allow custom synchronous JavaScript because 
 [render-blocking resources][blockers] are a common cause of slow page loads.
 
 In order to understand whether an AMP-only approach is right for you, you need to figure out
 whether all of your frontend code can be represented in AMP HTML:
 
-* Read [How AMP works](https://amp.dev/about/how-amp-works/) to understand AMP's high-level
+* Read [How AMP works][overview] to understand AMP's high-level
   architectural restrictions and mandatory optimizations.
 * Read [HTML Tags][tags] to see what HTML tags AMP allows and prohibits,
   browse the [AMP component catalogue](https://amp.dev/documentation/components/) to see the
@@ -97,3 +97,4 @@ other ways that you can optimize your Next.js app.
 [why]: https://blog.amp.dev/2017/01/13/why-amp-caches-exist/
 [how]: https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached/#how-does-my-amp-page-get-cached?
 [amp-script]: https://amp.dev/documentation/components/amp-script/
+[overview]: https://amp.dev/about/how-amp-works/

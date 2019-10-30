@@ -5,7 +5,7 @@ authors:
   - houssein
 subhead: |
   Try out the two ways that you can add AMP to a Next.js app
-date: 2019-10-17
+date: 2019-10-29
 draft: true
 glitch: next-amp-start
 related_post: how-amp-can-guarantee-fastness-in-your-nextjs-app
@@ -26,9 +26,11 @@ might want to add AMP support to your Next.js app.
   Hybrid approach if you're certain that the AMP-only approach won't work.
 {% endAside %}
 
-The **Hybrid AMP** approach creates an accompanying AMP version of any Next.js page. The regular
-page can always be accessed by your users but search engines will surface and cache the AMP version
-of the page instead.
+The **Hybrid AMP** approach creates an accompanying AMP version of any Next.js page. In the past
+the Hybrid approach was frequently used when there was an experience on the main version of your
+page that AMP couldn't support. The main version had the full experience while the AMP page had
+a slightly degraded experience. With the introduction of [amp-script] there's less of a need
+for the Hybrid approach, but we'll cover it here just in case you still need it.
 
 There are multiple ways to configure how Next.js renders and serves pages. Using a `config`
 object allows you to modify these on a per-page basis. In order to serve a specific page as
@@ -53,18 +55,14 @@ export default Home;
 1. Add `?amp=1` to the end of the URL. The page looks the same, but if you look in the
    Console you'll see that the AMP version of the page is being rendered.
 
-<figure>
-  <img src="hybrid.png"
+<figure class="w-figure">
+  <img src="hybrid.png" class="w-screenshot-filled"
        alt="The live page and a message in the Chrome DevTools Console stating that the page is 
             powered by AMP.">
-  <figcaption>
-    The AMP version of the page.
-  </figcaption>
 </figure>
 
 Since the page only has a single `<p>` tag, there's no visible difference between the
-main page and its AMP version. The Hybrid AMP approach is useful when you need to render
-AMP-specific components only when the AMP page is requested.
+main page and its AMP version. 
 
 #### How to conditionally serve AMP components
 
@@ -72,6 +70,8 @@ AMP pages need to have their own set of valid components in place of many HTML e
 important to make sure that the AMP components are conditionally served only for the AMP page.
 Next.js provides a [hook] called `useAmp` to allow you to conditionally serve different elements
 depending on which version of the page was requested.
+
+{% Instruction 'source', 'ol' %}
 
 1. Edit `pages/index.js` so that it renders a different paragraph element to the page depending on whether
    the main version or the AMP version was requested:
@@ -95,22 +95,17 @@ depending on which version of the page was requested.
 
 1. Load the main version of the page:
 
-   <figure>
-     <img src="main.png"
-          alt="The main version of the page.">
-     <figcaption>
-       The main version of the page.
-     </figcaption>
+   <figure class="w-figure">
+     <img src="main.png" class="w-screenshot-filled"
+          alt="A screenshot of the main version of the page.">
    </figure>
 
 1. Add `?amp=1` to the end of the URL again to load the AMP version of the page:
 
-   <figure>
-     <img src="amp.png"
-          alt="The AMP version of the page.">
-     <figcaption>
-       The AMP version of the page.
-     </figcaption>
+   <figure class="w-figure">
+     <img src="amp.png" class="w-screenshot-filled"
+          alt="A screenshot of the AMP version of the page that is displaying different text
+               than the main version.">
    </figure>
 
 1. Try rendering AMP's replacement of the image tag, `amp-img`:
@@ -158,22 +153,18 @@ depending on which version of the page was requested.
     
 1. View the main version of the page again.
 
-   <figure>
-     <img src="mainimg.png"
-          alt="The main version of the image.">
-     <figcaption>
-       The main version of the image.
-     </figcaption>
+   <figure class="w-figure">
+     <img src="mainimg.png" class="w-screenshot-filled"
+          alt="A screenshot showing that the image in the main version of the
+               page overflows the viewport.">
    </figure>
 
 1. View the AMP version of the page again.
 
-   <figure>
-     <img src="ampimg.png"
-          alt="The AMP version of the image.">
-     <figcaption>
-       The AMP version of the image.
-     </figcaption>
+   <figure class="w-figure">
+     <img src="ampimg.png" class="w-screenshot-filled"
+          alt="A screenshot showing that the image in the AMP version of the page has been
+               automatically resized to fit the viewport.">
    </figure>
 
 ### How to create AMP-only pages {: #amponly }
@@ -206,3 +197,4 @@ other ways that you can optimize your Next.js app.
 [hook]: https://reactjs.org/docs/hooks-overview.html
 [layout]: https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout/
 [amp-img]: https://amp.dev/documentation/examples/components/amp-img/
+[amp-script]: https://amp.dev/documentation/components/amp-script/
