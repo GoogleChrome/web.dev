@@ -20,10 +20,8 @@ tags:
 ---
 
 {% Aside %}
-
-For implementation advice on `SameSite=None`, see part 2:
-[SameSite cookie recipes](/samesite-cookie-recipes)
-
+  For implementation advice on `SameSite=None`, see part 2:
+  [SameSite cookie recipes](/samesite-cookie-recipes)
 {% endAside %}
 
 Cookies are one of the methods available for adding persistent state to web

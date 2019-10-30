@@ -21,10 +21,8 @@ tags:
 ---
 
 {% Aside %}
-
-For how cookies and `SameSite` work, see part 1:
-[SameSite cookies explained](/samesite-cookies-explained).
-
+  For how cookies and `SameSite` work, see part 1:
+  [SameSite cookies explained](/samesite-cookies-explained).
 {% endAside %}
 
 [Chrome](https://www.chromium.org/updates/same-site),
