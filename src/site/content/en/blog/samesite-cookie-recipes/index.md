@@ -32,10 +32,10 @@ others will be changing their default behavior in line with the IETF proposal,
 [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
 so that:
 
-1. cookies without a `SameSite` attribute will be treated as `SameSite=Lax`,
+1. Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`,
    meaning the default behavior will be to restrict cookies to first party
    contexts **only**.
-2. cookies for cross-site usage **must** specify `SameSite=None; Secure` to
+2. Cookies for cross-site usage **must** specify `SameSite=None; Secure` to
    enable inclusion in third party context.
 
 This will become the default behavior in Chrome 80, planned for a stable release
