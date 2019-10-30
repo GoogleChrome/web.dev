@@ -76,17 +76,18 @@ firebase.auth().onAuthStateChanged((user) => {
     }
     lastSavedUrl = savedUrl;
 
-    // The URL changed, so record it from remote, and indicate that
+    // The URL changed, so record it from remote, and optionally indicate that
     // <web-lighthouse-scores-container> should request new content when it
     // appears on the page.
     if (saveNewUrlToState) {
       const seen = (data.urls && data.urls[savedUrl]) || null;
-      const savedUrlSeen = seen ? seen.toDate() : null;
+      const userUrlSeen = seen ? seen.toDate() : null;
+      const userUrlResultsPending = Boolean(savedUrl); // only fetch results if the URL was set
 
       store.setState({
         userUrl: savedUrl,
-        userUrlSeen: savedUrlSeen,
-        userUrlResultsPending: true,
+        userUrlSeen,
+        userUrlResultsPending,
       });
     }
   };
