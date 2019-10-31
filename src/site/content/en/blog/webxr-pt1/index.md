@@ -243,7 +243,7 @@ function onXRFrame(hrTime, xrFrame) {
 
 After checking the pose, it's time to draw something. The `XRViewerPose`
 contains an array of `XRView` interfaces which represents a display or a portion
-of a display and return the information needed to render content that's
+of a display and returns the information needed to render content that's
 correctly position for the device and the viewer such as the field of view, eye
 offset, and other optical properties. Since I'm drawing for two eyes, I have two
 views, which I loop through and draw a separate image for each.
