@@ -87,7 +87,7 @@ gracefully fallback without them.
 
 ### "Unsafe" requests across sites
 
-While "unsafe" may sound slighly concerning here, this refers to any request
+While "unsafe" may sound slightly concerning here, this refers to any request
 that may be intended to change state. On the web that's primarily POST requests.
 Cookies marked as `SameSite=Lax` will be sent on safe top-level navigations,
 e.g. clicking a link to go to a different site. However something like a
