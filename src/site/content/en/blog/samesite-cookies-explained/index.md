@@ -8,9 +8,9 @@ date: 2019-05-07
 updated: 2019-10-30
 hero: cookie-hero.jpg
 description: |
-  Learn how to mark your cookies for first-party and third-party usage the
+  Learn how to mark your cookies for first-party and third-party usage with the
   SameSite attribute. You can enhance your site's security by making use of
-  SameSite's Lax and Strict values gaining some protection against CSRF attacks.
+  SameSite's Lax and Strict values to gain some protection against CSRF attacks.
   Specifying the new None attribute allows you to explicitly mark your cookies
   for cross-site usage.
 tags:
