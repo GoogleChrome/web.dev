@@ -167,7 +167,7 @@ marked with `SameSite=None` but are missing `Secure`.
       alt="Chrome console warnings for SameSite cookie misconfiguration"
       style="max-width: 40vw;">
   <figcaption class="w-figcaption">
-    Chrome console warnings for <tt>SameSite</tt> cookie misconfiguration.
+    Chrome DevTools Console warnings for <tt>SameSite</tt> cookie misconfiguration.
   </figcaption>
 </figure>
 
@@ -196,7 +196,7 @@ see more details at https://www.chromestatus.com/feature/5633521622188032.
 Each of these warnings will contain the cookie domain. If you're responsible for
 that domain, then you will need to update the cookies. Otherwise, you may need
 to contact the owner of the site or service responsible for that cookie to
-ensure they making the necessary changes. The warnings themselves do not affect
+ensure they're making the necessary changes. The warnings themselves do not affect
 the functionality of the site, this is purely to inform developers of the
 upcoming changes.
 
