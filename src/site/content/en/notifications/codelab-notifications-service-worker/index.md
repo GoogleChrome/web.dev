@@ -16,6 +16,8 @@ related_post: use-push-notifications-to-engage-users
 draft: true
 ---
 
+{% Instruction 'devtools-headsup' %}
+
 In this codelab, you'll use a service worker
 to manage [notifications](/use-push-notifications-to-engage-users).
 The instructions here assume that you're already familiar with
