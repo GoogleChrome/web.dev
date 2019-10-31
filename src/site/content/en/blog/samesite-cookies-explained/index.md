@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2019-10-30
+updated: 2019-10-31
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage with the
@@ -20,8 +20,10 @@ tags:
 ---
 
 {% Aside %}
-  For implementation advice on `SameSite=None`, see part 2:
-  [SameSite cookie recipes](/samesite-cookie-recipes)
+
+For implementation advice on `SameSite=None`, see part 2:
+[SameSite cookie recipes](/samesite-cookie-recipes)
+
 {% endAside %}
 
 Cookies are one of the methods available for adding persistent state to web
@@ -292,12 +294,13 @@ lays out two key changes:
 - Cookies with `SameSite=None` must also specify `Secure`.
 
 Both
-[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ) and
+[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ)
+and
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
 have this functionality available to test now and will be making this their
 default behavior in future releases.
-[Edge](https://textslashplain.com/2019/09/30/same-site-cookies-by-default/) also
-plans to make this their default behavior.
+[Edge](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/8lMmI5DwEAAJ)
+also plans to make this their default behavior.
 
 {% Aside %}
 
@@ -404,21 +407,19 @@ up the new behavior.
 {% endAside %}
 
 Both of these changes are backwards-compatible with browsers that have correctly
-implemented earlier versions of the `SameSite` attribute, or just do not support
-it at all. By applying these changes to your cookies, you are making their
-intended use explicit rather than relying on the default behavior of the
+implemented the previous version of the `SameSite` attribute, or just do not
+support it at all. By applying these changes to your cookies, you are making
+their intended use explicit rather than relying on the default behavior of the
 browser. Likewise, any clients that do not recognize `SameSite=None` as of yet
 should ignore it and carry on as if the attribute was not set.
 
 {% Aside 'warning' %}
 
-At the time of writing, the network library on iOS and Mac incorrectly handles
-unknown `SameSite` values and will treat **any unknown value** (including
-`None`) as if it were `SameSite=Strict`, which affects Safari on Mac and
-browsers wrapping WebKit on iOS (Safari, Chrome, Firefox, and others). This will
-be fixed as of macOS 10.15 and iOS 13 and is available in the Tech Preview now.
-You can track their progress on
-[WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
+A number of older versions of browsers including Chrome, Safari, and UC browser
+are incompatible with the new `None` attribute and may ignore or restrict the
+cookie. This behavior is fixed in current versions, but you should check your
+traffic to determine what proportion of your users are affected. You can see the
+[list of known incompatible clients on the Chromium site](https://www.chromium.org/updates/same-site/incompatible-clients).
 
 {% endAside %}
 
