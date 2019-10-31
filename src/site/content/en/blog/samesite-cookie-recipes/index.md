@@ -119,7 +119,7 @@ tracking pixels and personalizing content.
 
 This also applies to
 [`fetch` requests](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Sending_a_request_with_credentials_included)
-from the page. If fetch() is called with the `credentials: 'include'` option
+from the page. If `fetch()` is called with the `credentials: 'include'` option
 this is a good indication that cookies may well be expected on those requests.
 Those cookies will need to be appropriately marked to be included.
 
