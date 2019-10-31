@@ -40,7 +40,7 @@ proved inadequate for [various
 reasons](https://developers.google.com/web/updates/2018/05/welcome-to-immersive#what_happened_to_webvr_11).
 The work to correct its shortcomings blossomed last year into the [WebXR Device
 API](https://www.w3.org/TR/webxr/). It was in an origin trial for a while, and
-now we're enabling by default.
+now Chrome is enabling it by default.
 
 ## What is the immersive web?
 
