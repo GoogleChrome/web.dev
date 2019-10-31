@@ -8,6 +8,8 @@ body.lh-signedin [data-lh-signin='hide'] {
 
 web-progress-bar {
   visibility: hidden;
+  z-index: 1;
+  background-color: #fff;
 }
 // sass-lint:enable class-name-format
 
