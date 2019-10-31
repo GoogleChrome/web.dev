@@ -158,17 +158,14 @@ Set-Cookie: third_party_var=value; SameSite=None; Secure
 
 ### Identifying cookie usage
 
-As of Chrome 77, you will see warnings in the console for cross-site cookies
+As of Chrome 77, you will see warnings in the DevTools Console for cross-site cookies
 that do not currently have a `SameSite` attribute and cookies that have been
 marked with `SameSite=None` but are missing `Secure`.
 
 <figure class="w-figure  w-figure--center">
   <img src="chrome-console-warning.png"
-      alt="Chrome console warnings for SameSite cookie misconfiguration"
+      alt="Chrome DevTools Console warnings for SameSite cookie misconfiguration."
       style="max-width: 40vw;">
-  <figcaption class="w-figcaption">
-    Chrome DevTools Console warnings for <tt>SameSite</tt> cookie misconfiguration.
-  </figcaption>
 </figure>
 
 For missing `SameSite` attributes you will see:
@@ -202,12 +199,10 @@ upcoming changes.
 
 <figure class="w-figure  w-figure--center">
   <img src="samesite-devtools.png"
-      alt="Chrome Developer Tools showing the overview of cookies for a site"
+      alt="The Cookies pane of Chrome DevTools."
       style="max-width: 40vw;">
   <figcaption class="w-figcaption">
-    The <a href="https://devtools.chrome.com/storage/cookies">Cookies pane</a>
-    shows the values for the <code>SameSite</code> and
-    <code>Secure</code> attributes.
+    The <a href="https://devtools.chrome.com/storage/cookies">Cookies pane</a>.
   </figcaption>
 </figure>
 
