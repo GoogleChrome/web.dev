@@ -52,7 +52,7 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
   <img src="set-cookie-response-header.png" alt="Three cookies being sent to a
     browser from a server in a response" style="max-width: 60vw">
   <figcaption class="w-figcaption">
-    Servers set cookies using the <tt>Set-Cookie</tt> header.
+    Servers set cookies using the <code>Set-Cookie</code> header.
   </figcaption>
 </figure>
 
@@ -68,7 +68,7 @@ Cookie: promo_shown=1
   <img src="cookie-request-header.png" alt="Three cookies being sent from a
     browser to a server in a request" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
-    Your browser sends cookies back in the <tt>Cookie</tt> header.
+    Your browser sends cookies back in the <code>Cookie</code> header.
   </figcaption>
 </figure>
 
@@ -91,10 +91,10 @@ context, with each cookie separated by a semicolon:
 ```
 
 <figure class="w-figure  w-figure--center">
-  <img src="document-cookie.png" alt="Javascript accessing cookies within the
+  <img src="document-cookie.png" alt="JavaScript accessing cookies within the
     browser" style="max-width: 35vw;">
   <figcaption class="w-figcaption">
-    JavaScript can access cookies using <tt>document.cookie</tt>.
+    JavaScript can access cookies using <code>document.cookie</code>.
   </figcaption>
 </figure>
 
@@ -266,7 +266,7 @@ in a third-party context.
   <img src="samesite-none-lax-strict.png" alt="Three cookies labelled None,
     Lax, or Strict depending on their context" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
-    Explicitly mark the context of a cookie as <tt>None</tt>, <tt>Lax</tt>, or <tt>Strict</tt>.
+    Explicitly mark the context of a cookie as <code>None</code>, <code>Lax</code>, or <code>Strict</code>.
   </figcaption>
 </figure>
 
