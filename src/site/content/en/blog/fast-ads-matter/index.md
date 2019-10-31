@@ -8,6 +8,11 @@ authors:
   - jimper
   - robhazan
   - thebengeu
+hero: hero.jpg
+thumbnail: thumbnail.jpg
+alt: |
+    A long-exposure shot of a moving subway train and advertisement posters at
+    the station photo.
 description: |
     Understand the value of fast ads and how to think about ad speed.
 tags:
