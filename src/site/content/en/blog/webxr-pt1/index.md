@@ -292,7 +292,7 @@ an `onend` event handler.
 
 ```js
 function onSessionStarted(xrSession) {
-  xrSession.addEVentListener('end', onSessionEnded);
+  xrSession.addEventListener('end', onSessionEnded);
   // More setup…
 }
 ```
