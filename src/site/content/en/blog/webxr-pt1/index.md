@@ -122,7 +122,7 @@ function onButtonClicked() {
     navigator.xr.requestSession('immersive-vr')
     .then((session) => {
       xrSession = session;
-      xrButton.innerHTML = 'Exit XR';
+      xrButton.textContent = 'Exit XR';
       onSessionStarted(xrSession);
     });
   } else {
