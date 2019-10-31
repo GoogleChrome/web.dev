@@ -55,12 +55,12 @@ ensure the service continues to function correctly.
 Content from a different site displayed in an `<iframe>` is in a third-party
 context. Standard use cases here are:
 
-- embedded content shared from other sites, such as videos, maps, code samples,
-  and social posts
-- widgets from external services such as payments, calendars, booking, and
-  reservation functionality
-- widgets such as social buttons or anti-fraud services that create less obvious
-  `<iframes>`
+- Embedded content shared from other sites, such as videos, maps, code samples,
+  and social posts.
+- Widgets from external services such as payments, calendars, booking, and
+  reservation functionality.
+- Widgets such as social buttons or anti-fraud services that create less obvious
+  `<iframes>`.
 
 Cookies may be used here to, among other things, maintain session state, store
 general preferences, enable statistics, or personalize content for users with
