@@ -22,7 +22,7 @@ tags:
 
 Immersive experiences have come to the web in Chrome 79. The WebXR Device API
 brings virtual reality (with augmented reality to come later). While an update
-to the GamePad API extends the advanced use of controlls to VRß. Other browsers
+to the GamePad API extends the advanced use of controlls to VR. Other browsers
 will be supporting these specs soon, including [update before launch].
 
 This article begins a series on the immersive web. This installment covers
