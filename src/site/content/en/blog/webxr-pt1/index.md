@@ -110,6 +110,7 @@ if (navigator.xr) {
 After enabling the button, I wait for a click event then request a session.
 
 ```js
+let xrSession = null;
 function onButtonClicked() {
   if (!xrSession) {
     navigator.xr.requestSession('immersive-vr')
