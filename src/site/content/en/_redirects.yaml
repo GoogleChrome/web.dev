@@ -1,5 +1,10 @@
 redirects:
 
+# Policies
+
+- from: /policies
+  to: https://policies.google.com/
+
 # Newsletter
 
 - from: /subscribe
