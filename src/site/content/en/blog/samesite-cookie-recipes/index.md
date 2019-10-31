@@ -290,12 +290,10 @@ agent sniffing is inherently fragile and may not catch all of the affected
 users.
 
 {% Aside %}
-
-Regardless of what option you choose, it's advisable to ensure you have a way
-of logging the levels of traffic that are going through the legacy route. Make
-sure you have a reminder or alert to remove this workaround once those levels
-drop below an acceptable threshold for your site.
-
+  Regardless of what option you choose, it's advisable to ensure you have a way
+  of logging the levels of traffic that are going through the legacy route. Make
+  sure you have a reminder or alert to remove this workaround once those levels
+  drop below an acceptable threshold for your site.
 {% endAside %}
 
 ## Support for `SameSite=None` in languages, libraries, and frameworks
@@ -314,7 +312,7 @@ cases in the mix. When you encounter an issue, it may well be the first time
 anyone has encountered it - so don't hesitate to reach out:
 
 - Raise an issue on the
-  [`SameSite` examples repo on GitHub](https://github.com/GoogleChromeLabs/samesite-examples)
+  [`SameSite` examples repo on GitHub](https://github.com/GoogleChromeLabs/samesite-examples).
 - Post a question on the
   ["samesite" tag on StackOverflow](https://stackoverflow.com/questions/tagged/samesite).
 - For issues with Chromium's behavior, raise a bug via the
