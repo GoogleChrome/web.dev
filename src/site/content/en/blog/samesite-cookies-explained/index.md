@@ -288,11 +288,11 @@ and provide users with a safer experience, the IETF proposal,
 [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
 lays out two key changes:
 
-- Cookies without a `SameSite` attribute will be treated as `SameSite=None`
-- Cookies with `SameSite=None` must also specify `Secure`
+- Cookies without a `SameSite` attribute will be treated as `SameSite=None`.
+- Cookies with `SameSite=None` must also specify `Secure`.
 
 Both
-[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ),
+[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ) and
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
 have this functionality available to test now and will be making this their
 default behavior in future releases.
