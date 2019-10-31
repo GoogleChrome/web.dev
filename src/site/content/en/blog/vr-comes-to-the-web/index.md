@@ -14,10 +14,8 @@ description:
   among others.
 tags:
   - post
-  - ar
   - augmented-reality
   - virtual-reality
-  - vr
   - webxr
 ---
 
@@ -73,7 +71,7 @@ Examples of immersive experiences include:
 
 I'll explain a few basics of using the WebXR Device API. If you need more depth
 than I've provided, check out the Immersive Web Working Group's [WebXR
-samples](https://immersive-web.github.io/webxr-samples/) or [MDN's burgeoning
+samples](https://immersive-web.github.io/webxr-samples/) or [MDN's growing
 reference
 materials](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API).
 If you're familiar with early versions of the WebXR Device API, you should
