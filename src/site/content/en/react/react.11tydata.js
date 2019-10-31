@@ -19,6 +19,7 @@ module.exports = {
           'performance-as-a-default-with-nextjs',
           'nextjs-route-prefetching',
           'nextjs-dynamic-imports',
+          'how-amp-can-guarantee-fastness-in-your-nextjs-app',
         ],
       },
       {
