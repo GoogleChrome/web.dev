@@ -1,6 +1,6 @@
 ---
 title: Virtual reality comes to the web
-subhead: A few basicis to prepare you for a spectrum of immersives experiences&#58; virtual reality, augmented reality, and everything in between.
+subhead: A few basics to prepare you for a spectrum of immersive experiences&#58; virtual reality, augmented reality, and everything in between.
 authors:
   - joemedley
 date: 2019-10-30
