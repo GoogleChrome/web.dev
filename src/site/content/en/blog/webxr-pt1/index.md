@@ -51,7 +51,7 @@ XR is intended to reflect that thinking by being a sort of algebraic variable
 that stands for anything in the spectrum of immersive experiences.
 
 <figure class="w-figure w-figure--center">
-  <img src="./immersive-spectrum.png" style="max-width: 100%;"/>
+  <img src="./immersive-spectrum.png" style="max-width: 100%;" alt="A graph illustrating the spectrum of visual experiences from complete reality to completely immersive."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The spectrum of immersive experiences
   </figcaption>
