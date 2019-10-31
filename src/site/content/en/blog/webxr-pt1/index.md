@@ -151,7 +151,7 @@ reference space to a variable because I'll need it when I draw to the screen.
 
 ```js
 function onSessionStarted(xrSession) {
-  xrSession.addEVentListener('end', onSessionEnded);
+  xrSession.addEventListener('end', onSessionEnded);
 
   let canvas = document.createElement('canvas');
   gl = canvas.getContext('webgl', { xrCompatible: true });
