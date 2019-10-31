@@ -236,7 +236,7 @@ same browsers will set the `3pcookie-legacy` cookie. When processing included
 cookies, the site should first check for the presence of the new style cookie
 and if it's not found, then fallback to the legacy cookie.
 
-The example below shows how to do this in Node.js making use of the
+The example below shows how to do this in Node.js, making use of the
 [Express framework](https://expressjs.com) and its
 [cookie-parser](https://www.npmjs.com/package/cookie-parser) middleware.
 
