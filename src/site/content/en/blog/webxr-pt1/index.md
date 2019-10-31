@@ -46,7 +46,7 @@ now Chrome is enabling it by default.
 
 Though we use two terms to describe immersive experiences&mdash;augmented
 reality and virtual reality&mdash;many think of them on a spectrum from complete
-reality to completely virtual, with degrees of immersion in between. The 'X in
+reality to completely virtual, with degrees of immersion in between. The 'X' in
 XR is intended to reflect that thinking by being a sort of algebraic variable
 that stands for anything in the spectrum of immersive experiences.
 
