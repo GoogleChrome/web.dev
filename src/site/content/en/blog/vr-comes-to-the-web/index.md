@@ -105,7 +105,7 @@ if (navigator.xr) {
   const supported = await navigator.xr.isSessionSupported('immersive-vr');
   if (supported) {
     xrButton.addEventListener('click', onButtonClicked);
-    xrButton.innerHTML = 'Enter VR';
+    xrButton.textContent = 'Enter VR';
     xrButton.disabled = false;
   }
 }
@@ -120,7 +120,7 @@ function onButtonClicked() {
     navigator.xr.requestSession('immersive-vr')
     .then((session) => {
       xrSession = session;
-      xrButton.innerHTML = 'Exit XR';
+      xrButton.textContent = 'Exit XR';
       onSessionStarted(xrSession);
     });
   } else {
@@ -309,7 +309,7 @@ session.
 ```js
 function onSessionEnded(event) {
   xrSession = null;
-  xrButton.innerHTML = 'Enter VR';
+  xrButton.textContent = 'Enter VR';
 }
 ```
 
