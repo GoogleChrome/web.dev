@@ -315,7 +315,7 @@ Set-Cookie: promo_shown=1
 
 {% CompareCaption %}
 
-If you send a cookie without any `SameSite` attribute specified.
+If you send a cookie without any `SameSite` attribute specified…
 
 {% endCompareCaption %}
 
