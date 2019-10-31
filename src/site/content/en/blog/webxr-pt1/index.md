@@ -3,14 +3,15 @@ title: Virtual reality comes to the web
 subhead: A few basics to prepare you for a spectrum of immersive experiences&#58; virtual reality, augmented reality, and everything in between.
 authors:
   - joemedley
-date: 2019-10-30
+date: 2019-10-31
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
   Virtual reality has come to the web in Chrome 79. Based on the WebXR Device
   API, this launch is the foundation for immersive features to come later such
-  as augmented reality. Other browsers will be supporting the spec soon,
-  including [update before launch].
+  as augmented reality. Other browsers will be supporting these specs soon,
+  including Firefox Reality, Oculus Browser, Edge and Magic Leap's Helio browser,
+  among others.
 tags:
   - post
   - ar
@@ -23,7 +24,8 @@ tags:
 Immersive experiences have come to the web in Chrome 79. The WebXR Device API
 brings virtual reality (with augmented reality to come later). While an update
 to the GamePad API extends the advanced use of controlls to VR. Other browsers
-will be supporting these specs soon, including [update before launch].
+will be supporting these specs soon, including Firefox Reality, Oculus Browser,
+Edge and Magic Leap's Helio browser, among others.
 
 This article begins a series on the immersive web. This installment covers
 setting up a basic WebXR application and constructing a frame loop, the
