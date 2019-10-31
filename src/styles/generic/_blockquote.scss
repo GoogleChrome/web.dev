@@ -1,0 +1,22 @@
+@import '../tools/mixins';
+
+// =============================================================================
+// BLOCKQUOTE OVERVIEW
+//
+// A large callout quote. For an optional author field use .w-blockquote__text 
+// and .w-blockquote__cite.
+//
+// =============================================================================
+
+blockquote {
+  @include w-article-text();
+  margin: 32px 0;
+  padding-left: 48px;
+}
+
+blockquote::before {
+  @include font-material-icon();
+  content: 'format_quote';
+  float: left;
+  margin: 4px 0 0 -48px;
+}
