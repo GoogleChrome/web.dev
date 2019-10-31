@@ -255,7 +255,7 @@ through one view, doing so allows you to have a single rendering path for a
 spectrum of immersive experiences.
 
 One thing I didn't cover is how to draw to the screen, though I've shown it
-below. That's done layer objects such as the `XRWebGLLayer` interface and a
+below. That's done through layer objects such as the `XRWebGLLayer` interface and a
 means of drawing graphics such as the WebGL APIs or the Three.js framework. It's
 such a lengthy subject it will be covered in a later article.
 
