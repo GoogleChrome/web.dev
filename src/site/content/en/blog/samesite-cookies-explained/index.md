@@ -297,7 +297,7 @@ Both
 have this functionality available to test now and will be making this their
 default behavior in future releases.
 [Edge](https://textslashplain.com/2019/09/30/same-site-cookies-by-default/) also
-plans to make this default behavior.
+plans to make this their default behavior.
 
 {% Aside %}
 
