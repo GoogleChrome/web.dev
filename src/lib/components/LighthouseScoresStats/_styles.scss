@@ -117,10 +117,8 @@ web-lighthouse-scores-stats {
 
   .lh-score__label {
     font-size: 14px;
-  }
-
-  .lh-score__label {
     color: $GREY_700;
+    width: 100%;;
   }
 
   .lh-score-card__legend {
@@ -238,32 +236,9 @@ web-lighthouse-scores-stats {
     }
   }
 
-  /// @deprecated
   @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
-    &:not([mini]) .lh-score-card {
-      height: $CARDS_HEIGHT + 40;
-    }
-
     .lh-score-card {
       min-width: 50%;
-
-      &:nth-of-type(even) {
-        border-right: 0;
-      }
-
-      // TODO(b/119501689): remove pwa audits for now.
-      &:nth-of-type(5) {
-        width: 100%;
-      }
-
-      &:nth-of-type(5),
-      &:nth-of-type(6) {
-        border-bottom: 0;
-      }
-
-      &.lh-score__label {
-        justify-content: center;
-      }
     }
 
     .lh-score-cards + .lh-score__label {
