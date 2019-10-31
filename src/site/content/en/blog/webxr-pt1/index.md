@@ -125,6 +125,7 @@ function onButtonClicked() {
     });
   } else {
     xrSession.end();
+  }
 }
 ```
 
@@ -319,4 +320,4 @@ least make sense of sample code. Hopefully that's enough to start experimenting.
 In the next article, I'll cover a bit about WebGL and how it interacts with
 certain WebXR interfaces.
 
-Photo by [JESHOOTS.COM](https://unsplash.com/@jeshoots?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
+Photo by [JESHOOTS.COM](https://unsplash.com/@jeshoots) on [Unsplash](https://unsplash.com/)
