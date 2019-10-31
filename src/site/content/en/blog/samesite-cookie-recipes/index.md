@@ -291,7 +291,7 @@ users.
 
 {% Aside %}
 
-Regardless of the choosen option here, it's advisable to ensure you have a way
+Regardless of what option you choose, it's advisable to ensure you have a way
 of logging the levels of traffic that are going through the legacy route. Make
 sure you have a reminder or alert to remove this workaround once those levels
 drop below an acceptable threshold for your site.
