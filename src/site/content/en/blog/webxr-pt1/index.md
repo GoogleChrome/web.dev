@@ -311,7 +311,7 @@ session.
 ```js
 function onSessionEnded(event) {
   xrSession = null;
-  xrButton.innerHTML = 'Enter VR';
+  xrButton.textContent = 'Enter VR';
 }
 ```
 
