@@ -13,3 +13,7 @@ install:
   - npm ci
 script:
   - npm run build
+after_success:
+  - npm run lhci
+addons:
+  chrome: stable

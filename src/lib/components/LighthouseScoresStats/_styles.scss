@@ -1,0 +1,263 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/dimensions';
+@import '../../../styles/settings/type';
+@import '../../../styles/tools/mixins';
+
+// =============================================================================
+// LIGHTHOUSE SCORES STATS
+//
+// Shows the sparklines and gauges for recent Lighthouse runs.
+//
+// =============================================================================
+
+web-lighthouse-scores-stats {
+  $PADDING: 16px;
+  $CARDS_HEIGHT: 219px;
+
+  web-progress-bar {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+
+  .lh-score-cards {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    @include elevation(2);
+    border-radius: inherit;
+    background-color: $WHITE;
+    min-height: ($PADDING * 4);
+  }
+
+  .lh-score-cards {
+    margin-top: 16px;
+
+    /// @deprecated
+    @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) {
+      margin-top: 32px;
+    }
+  }
+
+  .lh-score-card {
+    color: unset;
+    font-size: unset;
+    display: block;
+
+    > input[type="radio"] {
+      display: none;
+    }
+  }
+
+  .lh-audit-running {
+    web-progress-bar {
+      visibility: visible;
+    }
+  }
+
+  .lh-score-cards--fade {
+    .lh-score-card {
+      opacity: .5;
+    }
+  }
+
+  .lh-score-card {
+    position: relative;
+    padding: $PADDING;
+    width: 25%;
+    height: 100%;
+    border-left: 1px solid $GREY_300;
+    border-bottom: 1px solid $GREY_300;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lh-score-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .lh-score-card__data {
+    position: relative;
+  }
+
+  .lh-score-card__title {
+    @include ellipsis();
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  web-sparkline {
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+  }
+
+  web-lighthouse-gauge {
+    width: 50px;  // Give layout before hydration
+    height: 50px;
+    contain: content;
+    display: block;
+    user-select: none;
+  }
+
+  .lh-score-card__scorescale {
+    text-align: right;
+
+    &.lh-score__label {
+      margin: $PADDING 0;
+    }
+  }
+
+  .lh-score__label {
+    font-size: 14px;
+    color: $GREY_700;
+    width: 100%;;
+  }
+
+  .lh-score-card__legend {
+    display: inline-block;
+
+    .lh-score-card__legend--ellipsis {
+      @include ellipsis();
+      max-width: 100%;
+    }
+  }
+
+  .lh-score-card__range {
+    white-space: nowrap;
+
+    &::before {
+      content: '';
+      width: 14px;
+      height: 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    &.lh-score--fail::before {
+      background-color: $FAIL_COLOR;
+    }
+
+    &.lh-score--average::before {
+      background-color: $AVERAGE_COLOR;
+    }
+
+    &.lh-score--pass::before {
+      background-color: $PASS_COLOR;
+    }
+  }
+
+  /// @deprecated
+  @media screen and (min-width: $BREAKPOINT_VALUE_DESKTOP) {
+    web-lighthouse-gauge {
+      width: 50px;
+      height: 50px;
+    }
+
+    .lh-score-cards {
+      flex-wrap: nowrap;
+    }
+  }
+
+  /// @deprecated
+  @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) and
+      (max-width: $BREAKPOINT_VALUE_TABLET_LANDSCAPE) {
+    web-lighthouse-gauge {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+    }
+
+    .lh-score-card__title {
+      font-size: 14px;
+      max-width: calc(100% - 30px) !important;
+    }
+  }
+
+  /// @deprecated
+  @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) {
+    .results-row {
+      grid-column: 1 / span 12;
+    }
+
+    .report_header_enterurl {
+      display: flex;
+    }
+
+    .lh-controls {
+      margin-top: 0;
+      flex-wrap: nowrap;
+    }
+
+    .lh-enterurl {
+      margin-right: 32px;
+      width: 100%;
+    }
+
+    .lh-input {
+      width: 100%;
+    }
+
+    .lh-score-card {
+      border-bottom: 0;
+
+      &.lh-score__label {
+        display: none;
+      }
+    }
+
+    .lh-score-card__header {
+      flex-direction: row;
+    }
+
+    .lh-score-card__title {
+      max-width: calc(100% - 60px);
+    }
+
+    .lh-score-card__range:not([data-first]) {
+      margin-left: 4px;
+    }
+
+    .lh-score__label {
+      text-align: right;
+      margin-top: $PADDING;
+    }
+
+    .lh-score-card__legend {
+      margin-left: 24px;
+    }
+  }
+
+  @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
+    .lh-score-card {
+      min-width: 50%;
+    }
+
+    .lh-score-cards + .lh-score__label {
+      display: none;
+    }
+
+    .lh-score-card__title {
+      margin-bottom: 8px;
+    }
+
+    .lh-score-card__legend {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 8px 0;
+
+      &:last-child {
+        order: -1;
+      }
+    }
+  }
+}

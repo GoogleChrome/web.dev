@@ -14,11 +14,52 @@
  * limitations under the License.
  */
 
-const express = require('express');
-const app = express();
+const isProd = Boolean(process.env.GAE_APPLICATION);
 
-app.use(express.static('dist'));
-app.use(express.static('dist/en'));
+const compression = require("compression");
+const express = require("express");
+const buildRedirectHandler = require("./redirect-handler.js");
+
+const redirectHandler = (() => {
+  // In development, Eleventy isn't guaranteed to have run, so read the actual
+  // source file.
+  const redirectsPath = isProd
+    ? "dist/en/_redirects.yaml"
+    : "src/site/content/en/_redirects.yaml";
+
+  // Don't block loading the server if the redirect handler couldn't build.
+  try {
+    return buildRedirectHandler(redirectsPath);
+  } catch (e) {
+    console.warn(e);
+    return (req, res, next) => next();
+  }
+})();
+
+// 404 handlers aren't special, they just run last.
+const notFoundHandler = (req, res, next) => {
+  const options = {root: "dist/en"};
+  res
+    .status(404)
+    .sendFile("404/index.html", options, (err) => err && next(err));
+};
+
+const handlers = [
+  express.static("dist"),
+  express.static("dist/en"),
+  redirectHandler,
+  notFoundHandler,
+];
+
+// For dev we'll do our own compression. This ensures things like Lighthouse CI
+// get a fairly accurate picture of our site.
+// For prod we'll rely on App Engine to compress for us.
+if (!isProd) {
+  handlers.unshift(compression());
+}
+
+const app = express();
+app.use(...handlers);
 
 const listener = app.listen(process.env.PORT || 8080, () => {
   // eslint-disable-next-line
