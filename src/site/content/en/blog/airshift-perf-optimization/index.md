@@ -18,7 +18,7 @@ tags:
   - fast
 ---
 
-Website performance is not just about load time. It is critical to provide a fast and responsive experience to users, especially for productivity desktop apps which people use everyday. The engineering team at [Recruit Technologies](https://recruit-tech.co.jp/) went through a refactoring project to improve one of their Web apps, [AirSHIFT](https://airregi.jp/shift/), for better user input performance. Here's how they did it.
+Website performance is not just about load time. It is critical to provide a fast and responsive experience to users, especially for productivity desktop apps which people use everyday. The engineering team at [Recruit Technologies](https://recruit-tech.co.jp/) went through a refactoring project to improve one of their web apps, [AirSHIFT](https://airregi.jp/shift/), for better user input performance. Here's how they did it.
 
 ## Slow response, less productivity
 AirSHIFT is a desktop Web application that helps store owners, like restaurants and cafes, to manage the shift work of their staff members. Built with React, the Single Page Application provides rich client features including various grid tables of shift schedules cut by day, week, month and more.
