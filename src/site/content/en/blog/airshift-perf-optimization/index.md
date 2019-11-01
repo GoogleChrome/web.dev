@@ -54,7 +54,7 @@ It was now obvious that performance optimization was needed. AirSHIFT formed a t
 ## **1. Virtualize large tables**
 Displaying the shift table required multiple expensive steps: constructing the virtual DOM and rendering it on screen in proportion to the number of staff members and time slots. For example, if a restaurant had 50 working members and wanted to check their monthly shift schedule, it would be a table of 50 (members) multiplied by 30 (days) which would lead to 1,500 cell components to render. This is a very expensive operation especially for low spec devices. In reality, things get worse. From the research they understood there were shops that need to manage around 200 staff members requiring around 6,000 cell components in the single monthly table.
 
-To reduce the cost of this operation, AirSHIFT virtualized the shift table. This means that it will only mount the components within the viewport and unmount any of the off screen components. 
+To reduce the cost of this operation, AirSHIFT virtualized the shift table. The app now only mounts the components within the viewport and unmounts the off-screen components. 
 
 <figure class="w-figure w-figure--fullbleed">
   <img class="w-screenshot" src="virtualize_before.png" alt="Before: rendering all the shift table cells">
