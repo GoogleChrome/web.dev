@@ -84,10 +84,6 @@ To reduce the cost of this operation, AirSHIFT virtualized the shift table. The 
 
 In this case, AirSHIFT used [react-virtualized](https://github.com/bvaughn/react-virtualized) as there were requirements around enabling complex two dimensional grid tables. They are also exploring ways to convert the implementation to use the lightweight [react-window](/virtualize-long-lists-react-window/) in the future.
 
-{% Aside %}
-Related article: [Virtualize large lists with react-window](https://web.dev/virtualize-long-lists-react-window/)
-{% endAside %}
-
 ### Results
 Virtualizing the table alone reduced scripting time by 6 seconds on a 4x CPU slowdown + Fast 3G throttled Macbook Pro environment which contributed the most in this performance optimization project. 
 
