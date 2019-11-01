@@ -1,5 +1,5 @@
 ---
-title: "5 ways AirSHIFT made their React app responsive"
+title: Five ways AirSHIFT improved their React app's runtime performance
 subhead: |
   A real world case study of React SPA performance optimization.
 date: 2019-10-25
