@@ -27,7 +27,7 @@ AirSHIFT is a desktop web application that helps store owners, like restaurants 
 
 To meet user expectations they have been adding new functionalities to the app but as they continue to add features, they started seeing more feedback around slow performance. The engineering manager of the product, Yosuke Furukawa says "We did a user research and one of the store owners even said she would leave her seat to brew coffee after clicking a button… just to kill time waiting for the shift table to load, which was a shocking fact we faced". 
 
-After going through the research, the engineering team realized that many of their users were still using low spec computers such as 1 GHz Celeron M laptop from 10 years ago with a tiny amount of memory and having a massive shift table on screen. 
+After going through the research, the engineering team realized that many of their users were trying to load massive shift tables on low spec computers, such as a 1 GHz Celeron M laptop from 10 years ago.
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
