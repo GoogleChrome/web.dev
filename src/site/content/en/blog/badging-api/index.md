@@ -91,8 +91,9 @@ The Badging API is available as an origin trial in Chrome 79 and later.
 
 The Badging API works on Windows, and macOS. Support for Chrome OS is in
 development and will be available in a future release of Chrome.
-Unfortunately, Android is not supported because it requires you to show a
-notification, though this may change in the future.
+On Android, the Badging API is not supported. Instead, Android automatically
+shows a badge on a web app when there is an unread notification, just like
+for native apps.
 
 ### Register for the origin trial {: #ot }
 
@@ -145,9 +146,9 @@ navigator.clearExperimentalAppBadge();
 a foreground page, or potentially in the future, a service worker. In either
 case, it affects the whole app, not just the current page.
 
-In some cases, the OS may not allow the exact representation of the badge,
-in this case, the browser will attempt to provide the best representation for
-that device. For example, while the Badging API isn't supported on Android,
+In some cases, the OS may not allow the exact representation of the badge.
+In such cases, the browser will attempt to provide the best representation for
+that device. For example, because the Badging API isn't supported on Android,
 Android only ever shows a dot instead of a numeric value.
 
 Don't assume anything about how the user agent wants to display the badge.
@@ -157,17 +158,16 @@ then the "+" won't appear. No matter the actual number, just call
 `setExperimentalAppBadge(unreadCount)` and let the user agent deal with
 displaying it accordingly.
 
-While the Badging API *in Chrome* requires an installed app with an icon
-that can be badged, you shouldn't make calls to the Badging API dependent
-on the install state. Just call the API when it exists. If it works,
-it works. If not, it simply doesn't.
+While the Badging API *in Chrome* requires an installed app, you shouldn't
+make calls to the Badging API dependent on the install state. Just call the
+API when it exists, as other browsers may show the badge in other places.
+If it works, it works. If not, it simply doesn't.
 
 ## Supporting both the first and second origin trial {: #backwards-compat }
 
-In Chrome 79, the first origin trial ended, and based on developer feedback
-received during the first origin trial, was replaced by a new origin trial
-that uses a slightly different API design. Unfortunately, it is not backwards
-compatible, and calls to the previous API will fail.
+In Chrome 79, a [second origin trial]({{origin_trial.url}}) was started. Based
+on developer feedback recevied during the first origin trial, the API has
+changed, and is not backwards compatible with the first origin trial.
 
 If you have an existing implementation, and want to provide backwards
 compatibility for your users, you can wrap the calls in the following
@@ -177,9 +177,9 @@ can remove this wrapper function from your code.
 ```js
 function setBadge(...args) {
   if (navigator.setExperimentalAppBadge) {
-    navigator.setExperimentalAppBadge.apply(navigator, args);
+    navigator.setExperimentalAppBadge(...args);
   } else if (window.ExperimentalBadge) {
-    window.ExperimentalBadge.set.apply(null, args);
+    window.ExperimentalBadge.set(...args);
   }
 }
 
@@ -194,9 +194,9 @@ function clearBadge() {
 
 {% Aside %}
 Be sure to include both the
-[first](https://developers.chrome.com/origintrials/#/view_trial/1711367858400788481),
+[first (Chrome 78 and earlier)](https://developers.chrome.com/origintrials/#/view_trial/1711367858400788481),
 and
-[second](https://developers.chrome.com/origintrials/#/view_trial/-5354779956943519743)
+[second (Chrome 79 and later)]({{origin_trial.url}})
 origin trial tokens in your page.
 {% endAside %}
 
