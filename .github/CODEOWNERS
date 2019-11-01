@@ -13,7 +13,13 @@ content/en/angular/ @mgechev @kaycebasques
 # File types
 # These should appear last so they override docs directory owners.
 *.js @robdodson @samthor
+*.json @robdodson @samthor
 *.css @robdodson @samthor
+*.scss @robdodson @samthor
 *.html @robdodson @samthor
 *.htm @robdodson @samthor
 *.njk @robdodson @samthor
+*.yml @robdodson @samthor
+*.yaml @robdodson @samthor
+*.toml @robdodson @samthor
+*.sh @robdodson @samthor
