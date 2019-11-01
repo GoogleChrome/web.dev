@@ -58,7 +58,9 @@ were developing and testing on rich spec computers with fast Wi-Fi connections.
   </figcaption>
 </figure>
 
-It was now obvious that performance optimization was needed. AirSHIFT formed a task force to tackle this issue and here are 5 things they focused on to make their app more responsive.
+It was now obvious that performance optimization was needed. 
+AirSHIFT formed a task force to tackle this issue. Here are 5 things
+they focused on to make their app more responsive to user input.
 
 
 ## **1. Virtualize large tables**
