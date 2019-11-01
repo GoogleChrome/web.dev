@@ -178,9 +178,9 @@ Finally, the team built in a non-intrusive banner with a notification-like desig
 
 Because of these improvements, Truebil's conversion and engagement rates have grown significantly with **26% longer user sessions** and **61% more conversions**, which is significant for their business given the high transaction value of each conversion.
 
-<blockquote class="w-blockquote">
+<blockquote>
   <p>For a startup with limited resources, choosing the right platform can be critical to the success of the business. Moving to a PWA focused on speed, resilience, and engagement, enabled us to increase our revenue-to-marketing spend by <strong>80%</strong> thanks to increased conversions and the frictionless reach of the web.</p>
-  <p>—Rakesh Raman, Co-Founder and Chief of Product & Data Science at Truebil</p>
+  <cite>Rakesh Raman, Co-Founder and Chief of Product & Data Science at Truebil</cite>
 </blockquote>
 
 <div class="w-stats">
