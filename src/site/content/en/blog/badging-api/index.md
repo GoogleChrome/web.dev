@@ -171,8 +171,8 @@ changed, and is not backwards compatible with the first origin trial.
 
 If you have an existing implementation, and want to provide backwards
 compatibility for your users, you can wrap the calls in the following
-wrapper function. Once all of your users have migrated to Chrome 79+, you
-can remove this wrapper function from your code.
+wrapper function. Once all of your users have migrated to Chrome 79 or later,
+you can remove this wrapper function from your code.
 
 ```js
 function setBadge(...args) {
