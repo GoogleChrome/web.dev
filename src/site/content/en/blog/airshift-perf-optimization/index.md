@@ -47,7 +47,9 @@ After going through the research, the engineering team realized that many of the
   </figcaption>
 </figure>
 
-On the other hand, AifSHIFT had many expensive scripts that ran on the device, which was consuming the majority of the main thread activity, but the engineering team did not realize how harmful it was because they were developing and testing on a rich spec computer with fast WiFi.
+The AirSHIFT app was blocking the main thread with expensive scripts,
+but the engineering team didn't realize how expensive the scripts were because they
+were developing and testing on rich spec computers with fast Wi-Fi connections.
 
 <figure class="w-figure w-figure--fullbleed">
   <img class="w-screenshot" src="main-thread-break-down.png" alt="A chart that shows when loading the shift table, around 80% of the load time was consumed by running scripts">
