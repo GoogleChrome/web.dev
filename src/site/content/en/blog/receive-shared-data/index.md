@@ -52,7 +52,7 @@ the web share target web app.
 
 ## Register your app as a share target
 
-To register your app as a share target, it needs to meet [Chrome’s
+To register your app as a share target, it needs to meet [Chrome's
 installability criteria][installability]. In addition, before a user can share
 to your app, they must add it to their home screen. This prevents sites from
 randomly adding themselves to the users share intent chooser, and ensures that
@@ -228,7 +228,7 @@ apps will share the appropriate content in the right parameter.
 
 For example, on Android, the [`url` field will be
 empty](https://bugs.chromium.org/p/chromium/issues/detail?id=789379) because
-it’s not supported in Android’s share system. Instead, URLs will often appear in
+it's not supported in Android's share system. Instead, URLs will often appear in
 the `text` field, or occasionally in the `title` field.
 
 <figure class="w-figure w-figure--center">
