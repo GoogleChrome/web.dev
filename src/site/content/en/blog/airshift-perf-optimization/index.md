@@ -70,7 +70,7 @@ To reduce the cost of this operation, AirSHIFT virtualized the shift table. This
   </figcaption>
 </figure>
 
-In this case, AirSHIFT used [react-virtualized](https://github.com/bvaughn/react-virtualized) as there were requirements around enabling complex two dimensional grid table. They are also exploring ways to convert the implementation to use the lightweight [react-window](https://github.com/bvaughn/react-window) in the future.
+In this case, AirSHIFT used [react-virtualized](https://github.com/bvaughn/react-virtualized) as there were requirements around enabling complex two dimensional grid tables. They are also exploring ways to convert the implementation to use the lightweight [react-window](/virtualize-long-lists-react-window/) in the future.
 
 {% Aside %}
 Related article: [Virtualize large lists with react-window](https://web.dev/virtualize-long-lists-react-window/)
