@@ -56,10 +56,8 @@ function onPopState(e) {
 
 /**
  * Retain the current scroll position for forward/back stack changes.
- *
- * @param {!Event} e
  */
-function onScroll() {
+function onDedupScroll() {
   const state = {
     scrollTop: document.documentElement.scrollTop,
   };
@@ -138,7 +136,17 @@ export function listen(handler) {
   window.addEventListener("replacestate", onReplaceState);
   window.addEventListener("popstate", onPopState);
   window.addEventListener("click", onClick);
-  window.addEventListener("scroll", onScroll, {passive: true});
+
+  // Write scroll value after settling.
+  let scrollTimeout = 0;
+  window.addEventListener(
+    "scroll",
+    () => {
+      window.clearTimeout(scrollTimeout);
+      scrollTimeout = window.setTimeout(onDedupScroll, 250);
+    },
+    {passive: true},
+  );
 
   // Don't catch errors for the first load.
   recentActiveUrl = getUrl();
