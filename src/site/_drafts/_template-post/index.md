@@ -427,12 +427,12 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
+<blockquote>
+  <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
     a massa sit amet ullamcorper.
   </p>
-  <cite class="w-blockquote__cite">
+  <cite>
     by Jon Doe
   </cite>
 </blockquote>

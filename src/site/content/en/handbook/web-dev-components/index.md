@@ -175,12 +175,12 @@ Use the codelab aside to link to an associated codelab.
 
 ## Block quotes
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
+<blockquote>
+  <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
     a massa sit amet ullamcorper.
   </p>
-  <cite class="w-blockquote__cite">
+  <cite>
     by Jon Doe
   </cite>
 </blockquote>

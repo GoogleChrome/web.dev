@@ -25,11 +25,11 @@ When it comes to user experience, speed matters. A [consumer study](https://www.
 
 
 <figure class="w-figure w-figure--inline-right">
-  <blockquote class="w-blockquote">
-    <p class="w-blockquote__text">
+  <blockquote>
+    <p>
   	Performance has directly impacted the company's bottom line.
     </p>
-    <cite class="w-blockquote__cite">
+    <cite>
       <a href="https://www.youtube.com/watch?v=Xryhxi45Q5M&feature=youtu.be&t=1366">Pinterest</a>
     </cite>
   </blockquote>
