@@ -18,10 +18,7 @@ module.exports = {
         pathItems: [
           "performance-as-a-default-with-nextjs",
           "nextjs-route-prefetching",
-<<<<<<< HEAD
-=======
           "how-amp-can-guarantee-fastness-in-your-nextjs-app",
->>>>>>> 16f9f4703a8d06de5bc63ec76290457bdd775cc0
         ],
       },
       {

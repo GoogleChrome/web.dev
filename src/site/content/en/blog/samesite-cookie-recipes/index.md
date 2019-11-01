@@ -6,6 +6,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
+updated: 2019-10-31
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
@@ -21,14 +22,17 @@ tags:
 ---
 
 {% Aside %}
-  For how cookies and `SameSite` work, see part 1:
-  [SameSite cookies explained](/samesite-cookies-explained).
+
+For how cookies and `SameSite` work, see part 1:
+[SameSite cookies explained](/samesite-cookies-explained).
+
 {% endAside %}
 
 [Chrome](https://www.chromium.org/updates/same-site),
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ),
-[Edge](https://textslashplain.com/2019/09/30/same-site-cookies-by-default/), and
-others will be changing their default behavior in line with the IETF proposal,
+[Edge](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/8lMmI5DwEAAJ),
+and others will be changing their default behavior in line with the IETF
+proposal,
 [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
 so that:
 
@@ -38,10 +42,11 @@ so that:
 2. Cookies for cross-site usage **must** specify `SameSite=None; Secure` to
    enable inclusion in third party context.
 
-This will become the default behavior in Chrome 80, planned for a stable release
-in February 2020. If you currently provide cookies that are intended for
-cross-site usage you will need to make changes before that date to support the
-new default.
+This will become the
+[default behavior in Chrome 80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html),
+planned for a stable release in February 2020. If you currently provide cookies
+that are intended for cross-site usage you will need to make changes before that
+date to support the new default.
 
 ## Use cases for cross-site or third-party cookies
 
@@ -87,7 +92,7 @@ gracefully fallback without them.
 
 ### "Unsafe" requests across sites
 
-While "unsafe" may sound slighly concerning here, this refers to any request
+While "unsafe" may sound slightly concerning here, this refers to any request
 that may be intended to change state. On the web that's primarily POST requests.
 Cookies marked as `SameSite=Lax` will be sent on safe top-level navigations,
 e.g. clicking a link to go to a different site. However something like a
@@ -117,29 +122,35 @@ Any remote resource on a page may be relying on cookies to be sent with a
 request, from `<img>` tags, `<script>` tags, and so on. Common use cases include
 tracking pixels and personalizing content.
 
-This also applies to
-[`fetch` requests](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Sending_a_request_with_credentials_included)
-from the page. If `fetch()` is called with the `credentials: 'include'` option
+This also applies to requests initiated from your JavaScript by `fetch` or
+`XMLHttpRequest`. If `fetch()` is called with the
+[`credentials: 'include'` option](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Sending_a_request_with_credentials_included)
 this is a good indication that cookies may well be expected on those requests.
-Those cookies will need to be appropriately marked to be included.
+For `XMLHttpRequest` you should look for instances of the
+[`withCredentials` property](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials)
+being set to `true`. This is a good indication that cookies may well be expected
+on those requests. Those cookies will need to be appropriately marked to be
+included in cross-site requests.
 
 ### Content within a WebView
 
-A WebView in a native app is powered by a browser and the same restrictions and
-issues will apply. In Android, if the WebView is powered by Chrome, the default
-behavior will change with the release of Chrome 80. Additionally, Android allows
-native apps to set cookies directly via the
+A WebView in a native app is powered by a browser and you will need to test if
+the same restrictions or issues apply. In Android, if the WebView is powered by
+Chrome the new defaults **will not** immediately be applied with Chrome 80.
+However the intent is to apply them in the future, so you should still test and
+prepare for this. Additionally, Android allows native apps to set cookies
+directly via the
 [CookieManager API](https://developer.android.com/reference/android/webkit/CookieManager).
-As with cookies set via headers or JavaScript, these must include
+As with cookies set via headers or JavaScript, consider including
 `SameSite=None; Secure` if they are intended for cross-site use.
 
 ## How to implement `SameSite` today
 
-For cookies where they are only needed in a first-party context you
-should ideally mark them as `SameSite=Lax` or `SameSite=Strict` depending on
-your needs. You can also choose to do nothing and just allow the browser to
-enforce its default, but this comes with the risk of inconsistent behavior
-across browsers and potential console warnings for each cookie.
+For cookies where they are only needed in a first-party context you should
+ideally mark them as `SameSite=Lax` or `SameSite=Strict` depending on your
+needs. You can also choose to do nothing and just allow the browser to enforce
+its default, but this comes with the risk of inconsistent behavior across
+browsers and potential console warnings for each cookie.
 
 ```text
 Set-Cookie: first_party_var=value; SameSite=Lax
@@ -158,9 +169,9 @@ Set-Cookie: third_party_var=value; SameSite=None; Secure
 
 ### Identifying cookie usage
 
-As of Chrome 77, you will see warnings in the DevTools Console for cross-site cookies
-that do not currently have a `SameSite` attribute and cookies that have been
-marked with `SameSite=None` but are missing `Secure`.
+As of Chrome 77, you will see warnings in the DevTools Console for cross-site
+cookies that do not currently have a `SameSite` attribute and cookies that have
+been marked with `SameSite=None` but are missing `Secure`.
 
 <figure class="w-figure  w-figure--center">
   <img src="chrome-console-warning.png"
@@ -193,8 +204,8 @@ see more details at https://www.chromestatus.com/feature/5633521622188032.
 Each of these warnings will contain the cookie domain. If you're responsible for
 that domain, then you will need to update the cookies. Otherwise, you may need
 to contact the owner of the site or service responsible for that cookie to
-ensure they're making the necessary changes. The warnings themselves do not affect
-the functionality of the site, this is purely to inform developers of the
+ensure they're making the necessary changes. The warnings themselves do not
+affect the functionality of the site, this is purely to inform developers of the
 upcoming changes.
 
 <figure class="w-figure  w-figure--center">
@@ -285,10 +296,12 @@ agent sniffing is inherently fragile and may not catch all of the affected
 users.
 
 {% Aside %}
-  Regardless of what option you choose, it's advisable to ensure you have a way
-  of logging the levels of traffic that are going through the legacy route. Make
-  sure you have a reminder or alert to remove this workaround once those levels
-  drop below an acceptable threshold for your site.
+
+Regardless of what option you choose, it's advisable to ensure you have a way of
+logging the levels of traffic that are going through the legacy route. Make sure
+you have a reminder or alert to remove this workaround once those levels drop
+below an acceptable threshold for your site.
+
 {% endAside %}
 
 ## Support for `SameSite=None` in languages, libraries, and frameworks
@@ -312,6 +325,8 @@ anyone has encountered it - so don't hesitate to reach out:
   ["samesite" tag on StackOverflow](https://stackoverflow.com/questions/tagged/samesite).
 - For issues with Chromium's behavior, raise a bug via the
   [\[SameSite cookies\] issue template](https://bit.ly/2lJMd5c).
+- Follow Chrome's progress on the
+  [`SameSite` updates page](https://www.chromium.org/updates/same-site).
 
 _Cookie hero image by
 [Cayla1](https://unsplash.com/@calya1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
