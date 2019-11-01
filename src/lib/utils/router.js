@@ -139,10 +139,14 @@ export function listen(handler) {
 
   // Write scroll value after settling.
   let scrollTimeout = 0;
-  window.addEventListener("scroll", () => {
-    window.clearTimeout(scrollTimeout);
-    scrollTimeout = window.setTimeout(onDedupScroll, 250);
-  }, {passive: true});
+  window.addEventListener(
+    "scroll",
+    () => {
+      window.clearTimeout(scrollTimeout);
+      scrollTimeout = window.setTimeout(onDedupScroll, 250);
+    },
+    {passive: true},
+  );
 
   // Don't catch errors for the first load.
   recentActiveUrl = getUrl();
