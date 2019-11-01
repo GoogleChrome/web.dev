@@ -23,7 +23,7 @@ Website performance is not just about load time. It is critical to provide a fas
 ## Slow response, less productivity
 AirSHIFT is a desktop web application that helps store owners, like restaurants and cafes, to manage the shift work of their staff members. Built with React, the single page application provides rich client features including various grid tables of shift schedules organized by day, week, month and more.
 
-<img class="w-screenshot" src="airshift_visual.png" alt="A visual image of AirSHIFT">
+<img class="w-screenshot" src="airshift_visual.png" alt="A screenshot of AirSHIFT">
 
 To meet user expectations they have been adding new functionalities to the app but as they continue to add features, they started seeing more feedback around slow performance. The engineering manager of the product, Yosuke Furukawa says "We did a user research and one of the store owners even said she would leave her seat to brew coffee after clicking a button… just to kill time waiting for the shift table to load, which was a shocking fact we faced". 
 
