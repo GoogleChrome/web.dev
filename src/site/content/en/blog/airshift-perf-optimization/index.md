@@ -129,7 +129,14 @@ Related article: [Profiling Components with the Chrome Performance Tab](https://
 {% endAside %}
 
 ### Results
-As an example, they found that an unnecessary [React Tree Reconciliation](https://reactjs.org/docs/reconciliation.html) was happening right before every route navigation. This means that React would update the shift table unnecessarily immediately before navigation. An unnecessary Redux state update was causing this issue and fixing it saved around 750 ms of scripting time. AirSHIFT made other micro optimizations as well totaling 1 second improvement of scripting time by reducing inefficient scripts.
+The AirSHIFT team discovered that an unnecessary 
+[React Tree Reconciliation](https://reactjs.org/docs/reconciliation.html)
+was happening right before every route navigation. This meant that
+React was updating the shift table unnecessarily before navigations.
+An unnecessary Redux state update was causing this issue.
+Fixing it saved around 750 ms of scripting time. AirSHIFT
+made other micro optimizations as well which eventually led to
+a 1 second total reduction in scripting time.
 
 ## **3. Suspense x Web Worker**
 AirSHIFT has a built in chat application and many of the store owners communicate with their staff members via the chat while looking at the shift table. Which also means that a user might be typing a message while the table is loading. If the main thread is occupied with scripts that are rendering the table, user input could be janky. 
