@@ -153,7 +153,7 @@ within the lazily loaded components to
 This solved the user input jank problem by freeing up the main thread
 so that it could focus on responding to user input.
 
-Typically developers face complexity in using Workers but this time [Comlink](https://github.com/GoogleChromeLabs/comlink) did the heavy lifting for them. Below is the pseudo code of how AirSHIFT workerized  one of the most expensive operations they had: calculating total labor costs.
+Typically developers face complexity in using workers but this time [Comlink](https://github.com/GoogleChromeLabs/comlink) did the heavy lifting for them. Below is the pseudo code of how AirSHIFT workerized one of the most expensive operations they had: calculating total labor costs.
 
 *In App.js, use React.lazy and Suspense to show fallback content while loading*
 ```javascript
