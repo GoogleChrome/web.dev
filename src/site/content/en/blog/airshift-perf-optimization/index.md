@@ -232,7 +232,8 @@ From the graph above, you can tell that AirSHIFT is now mostly hitting the 3 sec
 ## **5. Performance hackathons**
 While all of these efforts regarding the performance optimization is important, it is not always easy to prioritize teams, both engineering and business, to focus on these non-functional development. Rather than dealing with this with a well-planned waterfall approach, some of the optimizations require more agility having try-and-error mindset.
 
-AirSHIFT is now conducting internal 1 day performance hackathons letting the engineers focus only on performance related works. In this hackathon they remove all the existing constraints and respect the participants' creativity, meaning any implementation that contributes to speed, is worth considering. To accelerate the hack, they split the group into small teams and compete by how much they were able to improve the [Lighthouse](https://developers.google.com/web/tools/lighthouse) performance score (which every team would be very competitive 🔥).
+AirSHIFT is now conducting internal 1 day performance hackathons to let engineers focus only on performance related work. In these hackathons they remove all constraints and respect the engineers' creativity, meaning any implementation that contributes to speed is worth considering. To accelerate the hackathon, AirSHIFT splits the group into small teams and each team competes to see who can get the biggest [Lighthouse](https://developers.google.com/web/tools/lighthouse) performance score improvement.
+(The teams get very competitive 🔥)
 
 <img class="w-screenshot" src="hackathon.png" alt="Photos of the hackathon">
 
