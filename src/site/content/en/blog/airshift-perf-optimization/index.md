@@ -241,7 +241,7 @@ Related article: [Performance budgets 101](https://web.dev/performance-budgets-1
 ### Results
 From the graph above, you can tell that AirSHIFT is now mostly hitting the 3 seconds budget for 75th percentile users and also loading the shift table within a second for 25th percentile users. By capturing RUM performance data from various conditions and devices, AirSHIFT can now check whether a new feature release is actually affecting the application's performance or not.
 
-## **5. Performance hackathons**
+## 5. Performance hackathons
 Even though all of these performance optimization efforts were important and impactful,
 it's not always easy to get engineering and business teams to prioritize non-functional
 development. Part of the challenge is that some of these performance optimizations
