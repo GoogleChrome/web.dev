@@ -103,7 +103,12 @@ Virtualizing the table alone reduced scripting time by 6 seconds (on a 4x CPU sl
 
 
 ## 2. Audit with User Timing API
-Refactoring scripts that run on user input was the next step AirSHIFT took. In order to check this, [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/) provides a powerful feature which captures the JavaScript call stacks in the performance tab a.k.a. main thread Flame Chart. While this [Flame Chart](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference) is useful to see what is actually happening in the main thread, if the application was using some sort of framework it would be better to check the chart based on the framework's lifecycle. 
+Next, the AirSHIFT team refactored the scripts that run on user input.
+The [flame chart](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#main)
+of [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+makes it possible to analyze what's actually happening in the main thread.
+But the AirSHIFT team found it easier to analyze application activity based
+on React's lifecycle.
 
 React 16 provides its performance trace via [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) which developers could access from the DevTool's user timing section. AirSHIFT used this to see if there was any unnecessary logic running in each of the React lifecycle events. By doing this, it was more obvious for them to identify inefficient operations in the DevTool. 
 
