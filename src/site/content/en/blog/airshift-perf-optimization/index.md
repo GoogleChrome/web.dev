@@ -63,7 +63,7 @@ AirSHIFT formed a task force to tackle this issue. Here are 5 things
 they focused on to make their app more responsive to user input.
 
 
-## **1. Virtualize large tables**
+## 1. Virtualize large tables
 Displaying the shift table required multiple expensive steps: constructing the virtual DOM and rendering it on screen in proportion to the number of staff members and time slots. For example, if a restaurant had 50 working members and wanted to check their monthly shift schedule, it would be a table of 50 (members) multiplied by 30 (days) which would lead to 1,500 cell components to render. This is a very expensive operation, especially for low spec devices. In reality, things were worse. From the research they learned there were shops managing 200 staff members, requiring around 6,000 cell components in a single monthly table.
 
 To reduce the cost of this operation, AirSHIFT virtualized the shift table. The app now only mounts the components within the viewport and unmounts the off-screen components. 
