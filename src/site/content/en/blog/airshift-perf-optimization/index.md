@@ -125,7 +125,7 @@ unnecessary logic running in the React lifecycle events.
 </figure>
 
 {% Aside %}
-Related article: [Profiling Components with the DevTools Profiler](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-chrome-performance-tab)
+Related article: [Profiling Components with the Chrome Performance Tab](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-chrome-performance-tab)
 {% endAside %}
 
 ### Results
