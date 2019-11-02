@@ -97,7 +97,7 @@ Virtualizing the table alone reduced scripting time by 6 seconds (on a 4x CPU sl
 <figure class="w-figure w-figure--fullbleed">
   <img class="w-screenshot" src="virtualize_results_after.png" alt="After: 4 seconds to load the screen">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    After: 4 seconds to load the screen
+    After: 4 seconds of scripting from user interaction to updating the screen
   </figcaption>
 </figure>
 
