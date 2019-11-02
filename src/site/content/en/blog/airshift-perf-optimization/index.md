@@ -110,7 +110,12 @@ makes it possible to analyze what's actually happening in the main thread.
 But the AirSHIFT team found it easier to analyze application activity based
 on React's lifecycle.
 
-React 16 provides its performance trace via [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API) which developers could access from the DevTool's user timing section. AirSHIFT used this to see if there was any unnecessary logic running in each of the React lifecycle events. By doing this, it was more obvious for them to identify inefficient operations in the DevTool. 
+React 16 provides its performance trace via the 
+[User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)
+which developers can visualize from the
+[Timings section](https://developers.google.com/web/updates/2018/04/devtools#tabs)
+of Chrome DevTools. AirSHIFT used the Timings section to find
+unnecessary logic running in the React lifecycle events.
 
 <figure class="w-figure w-figure--fullbleed">
   <img class="w-screenshot" src="user_timing.png" alt="The React user timing section in DevTools">
