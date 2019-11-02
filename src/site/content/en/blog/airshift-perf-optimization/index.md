@@ -226,7 +226,7 @@ They are currently seeking if they could adopt this combination of Suspense x We
 Having implemented all of these optimizations, it was critical to "keep" the application responsive. AirSHIFT now uses [bundlesize](https://github.com/siddharthkp/bundlesize) to not exceed the current JavaScript and CSS file size. Aside from setting these basic budgets, they built a dashboard to show various percentiles of the shift table loading time to check whether the application is performant even in non-ideal conditions.
 
 - AirSHIFT now measures the script completion time for every Redux event
-- Uses [Elasticsearch](https://www.elastic.co/jp/) to collect those performance data
+- Performance data is collected in [Elasticsearch](https://www.elastic.co/jp/)
 - 10th, 25th, 50th, and 75th percentile performance of each event is visualized with [Kibana](https://www.elastic.co/jp/products/kibana)
 
 AirSHIFT is now monitoring the shift table loading event to make sure it completes in 3 seconds for the 75th percentile users. This is an unforced budget for now but they are considering auto-notifications via Elasticsearch when they exceed their budget.
