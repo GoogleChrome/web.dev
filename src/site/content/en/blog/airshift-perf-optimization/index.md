@@ -222,7 +222,7 @@ Despite the limited amount of logic they workerized as a trial, AirSHIFT saw aro
 They are currently seeking if they could adopt this combination of Suspense x Web Worker even more to other existing components to remove all the janks in the application.
 
 
-## **4. Setting a performance budget**
+## 4. Setting a performance budget
 Having implemented all of these optimizations, it was critical to "keep" the application responsive. AirSHIFT now uses [bundlesize](https://github.com/siddharthkp/bundlesize) to not exceed the current JavaScript and CSS file size. Aside from setting these basic budgets, they built a dashboard to show various percentiles of the shift table loading time to check whether the application is performant even in non-ideal conditions.
 
 - The script completion time for every Redux event is now measured
