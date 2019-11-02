@@ -219,7 +219,8 @@ Despite the limited amount of logic they workerized as a trial, AirSHIFT saw aro
 
 <img class="w-screenshot" src="worker.png" alt="An image of the DevTools performance tab showing that the scripts are now running on the Web Worker">
 
-They are currently seeking if they could adopt this combination of Suspense x Web Worker even more to other existing components to remove all the janks in the application.
+AirSHIFT is currently exploring whether they can lazy load other components
+and offload more logic to web workers to further reduce jank.
 
 
 ## 4. Setting a performance budget
