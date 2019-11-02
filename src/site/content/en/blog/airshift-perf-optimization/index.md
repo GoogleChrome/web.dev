@@ -227,7 +227,7 @@ Having implemented all of these optimizations, it was critical to "keep" the app
 
 - AirSHIFT now measures the script completion time for every Redux event
 - Uses [Elasticsearch](https://www.elastic.co/jp/) to collect those performance data
-- Visualize the data with [Kibana](https://www.elastic.co/jp/products/kibana). The dashboard will show the 10th, 25th, 50th and 75th percentile performance of each event
+- 10th, 25th, 50th, and 75th percentile performance of each event is visualized with [Kibana](https://www.elastic.co/jp/products/kibana)
 
 AirSHIFT is now monitoring the shift table loading event to make sure it completes in 3 seconds for the 75th percentile users. This is an unforced budget for now but they are considering auto-notifications via Elasticsearch when they exceed their budget.
 
