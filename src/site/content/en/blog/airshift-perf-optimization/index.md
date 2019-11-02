@@ -255,4 +255,9 @@ It was definitely not the easiest journey for AirSHIFT to work on these optimiza
   </video>
 </figure>
 
-"Thank you so much for making the shift table load fast. It is now way more efficient to arrange the shift work than ever." is a quote from one of the store owners after the optimization. The engineering team is satisfied with the result and promises to make AirSHIFT even more performant. 
+After the performance optimizations launched, one user said:
+
+<blockquote>
+  Thank you so much for making the shift table load fast.
+  Arranging the shift work is so much more efficient now.
+</blockquote>
