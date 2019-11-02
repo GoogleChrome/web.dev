@@ -119,6 +119,12 @@
   font-size: .875em;
   line-height: 1.5em;
   margin: 16px 0 0;
+
+  > p {
+    font-size: inherit;
+    line-height: inherit;
+    margin: inherit;
+  }
 }
 
 .w-figcaption--fullbleed {
