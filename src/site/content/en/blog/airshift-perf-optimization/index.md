@@ -147,7 +147,11 @@ To improve this experience, AirSHIFT now uses [React.lazy and Suspense](https://
 Related article: [Code splitting with React.lazy and Suspense](https://web.dev/code-splitting-suspense/)
 {% endAside %}
 
-They even went further ahead and migrated some of the expensive logic within the lazily loaded components to [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers). This was a perfect solution to solve the jank since the component is now asynchronously loaded by having business logic running in the worker thread which frees up the main thread to keep it responsive for user input. 
+The AirSHIFT team also migrated some of the expensive business logic
+within the lazily loaded components to
+[web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
+This solved the user input jank problem by freeing up the main thread
+so that it could focus on responding to user input.
 
 Typically developers face complexity in using Workers but this time [Comlink](https://github.com/GoogleChromeLabs/comlink) did the heavy lifting for them. Below is the pseudo code of how AirSHIFT workerized  one of the most expensive operations they had: calculating total labor costs.
 
