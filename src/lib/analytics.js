@@ -47,10 +47,3 @@ document.addEventListener("click", (e) => {
 
   trackEvent(data);
 });
-
-/**
- * Configure tracking events for page changes. Emitted in `router.js`.
- */
-document.addEventListener("pageview", () => {
-  ga("send", "pageview");
-});

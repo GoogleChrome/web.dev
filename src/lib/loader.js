@@ -90,7 +90,6 @@ function forceFocus(el) {
  * @return {!Promise<void>}
  */
 export async function swapContent(url, isFirstRun) {
-  document.dispatchEvent(new CustomEvent("pageview", {detail: url}));
   const entrypointPromise = loadEntrypoint(url);
 
   // If we disagree with the URL we're loaded at, then replace it inline
@@ -129,6 +128,9 @@ export async function swapContent(url, isFirstRun) {
       currentUrl: url,
     });
   }
+
+  ga("set", "page", window.location.pathname);
+  ga("send", "pageview");
 
   // Remove the current #content element
   main.querySelector("#content").remove();
