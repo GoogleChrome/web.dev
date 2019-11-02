@@ -141,7 +141,7 @@ a 1 second total reduction in scripting time.
 ## 3. Lazy load components and move expensive logic to web workers
 AirSHIFT has a built in chat application and many of the store owners communicate with their staff members via the chat while looking at the shift table. Which also means that a user might be typing a message while the table is loading. If the main thread is occupied with scripts that are rendering the table, user input could be janky. 
 
-To improve this experience, AirSHIFT now uses React.lazy and Suspense to show placeholders for table contents while lazily loading the actual components. 
+To improve this experience, AirSHIFT now uses [React.lazy and Suspense](https://web.dev/code-splitting-suspense/) to show placeholders for table contents while lazily loading the actual components. 
 
 {% Aside %}
 Related article: [Code splitting with React.lazy and Suspense](https://web.dev/code-splitting-suspense/)
