@@ -268,10 +268,8 @@ clipboard, and why in Chrome we require that the image be transcoded.
 The [specification](https://w3c.github.io/clipboard-apis/#image-transcode)
 therefore also explicitly mentions transcoding as a mitigation method:
 
-<blockquote class="w-blockquote">
-  "To prevent malicious image data from being placed on the clipboard, the
-  image data may be transcoded to produce a safe version of the image."
-</blockquote>
+> "To prevent malicious image data from being placed on the clipboard, the
+> image data may be transcoded to produce a safe version of the image."
 
 There is ongoing discussion happening in the
 [W3C Technical Architecture Group review](https://github.com/w3ctag/design-reviews/issues/350)
