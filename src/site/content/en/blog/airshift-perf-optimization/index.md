@@ -215,7 +215,7 @@ Related article: [React + Redux + Comlink = Off-main-thread](https://dassur.ma/t
 {% endAside %}
 
 ### Results
-Despite the limited amount of logic they workerlized as a trial, AirSHIFT saw around 100 ms of their JavaScript running on the worker thread instead of occupying the main thread (simulated with 4x CPU throttling). 
+Despite the limited amount of logic they workerized as a trial, AirSHIFT saw around 100 ms of their JavaScript running on the worker thread instead of occupying the main thread (simulated with 4x CPU throttling). 
 
 <img class="w-screenshot" src="worker.png" alt="An image of the DevTools performance tab showing that the scripts are now running on the Web Worker">
 
