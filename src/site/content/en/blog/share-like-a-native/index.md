@@ -21,8 +21,8 @@ capabilities as native apps. The Web Share API makes it possible for web apps to
 share links, text, and files to other apps installed on the device in the same
 way as native apps.
 
-<figure class="w-figure w-figure--center">
-  <img src="./wst-send.png" style="max-width: 100%;" alt="System-level share target picker with an installed PWA as an option."/>
+<figure class="w-figure w-figure--inline-right">
+  <img src="./wst-send.png" style="max-width: 25vw;" alt="System-level share target picker with an installed PWA as an option."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA as an option
   </figcaption>
@@ -31,8 +31,9 @@ way as native apps.
 {% Aside %}
   Sharing is only half of the magic. Web apps can also be share
   targets meaning they can receive data, links, text, and files from other
-  native or web apps. See the Web Share Target article for details on how to
-  register as a share target.
+  native or web apps. See the [Recieve shared
+  data](https://web.dev/receive-shared-data/) for details on how to register
+  as a share target.
 {% endAside %}
 
 ## Concepts and usage
@@ -114,8 +115,8 @@ mobile. In previous years, we had disabled share buttons on mobile, as space is
 at a premium and we couldn't justify having several share targets.
 
 
-<figure class="w-figure w-figure--center">
-  <img src="./santa-phone.png" style="max-width: 100%;" alt="The Santa Tracker app showing a share button."/>
+<figure class="w-figure w-figure--inline-right">
+  <img src="./santa-phone.png" style="max-width: 25vw;" alt="The Santa Tracker app showing a share button."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Santa Tracker share button
   </figcaption>
