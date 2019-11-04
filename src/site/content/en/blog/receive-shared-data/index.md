@@ -98,8 +98,8 @@ The `method` value defaults to `"GET"` if not provided. The `enctype` field, not
 
 ### Accepting application changes
 
-If the shared data changes the target app in some way ('causes an immediate side
-effect', in the language of the spec) the `method` value should be `"POST"` and
+If the shared data changes the target app in some way, for example, saving a
+bookmark in the target application the `method` value should be `"POST"` and
 `enctype` is required. The example below creates a bookmark in the target app.
 Hence it uses `"POST"` for the `method` and `"multipart/form-data"` for the
 `enctype`.
