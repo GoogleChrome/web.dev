@@ -1,6 +1,6 @@
 ---
 title: Receiving shared data
-subhead:
+subhead: Sharing on mobile made simple
 authors:
   - petelepage
   - joemedley
@@ -8,7 +8,10 @@ date: 2019-11-08
 # hero: hero.png
 # alt: hero
 description: |
-
+  On a mobile device, sharing should be as simple as clicking the Share button,
+  choosing an app, then choosing who to share with. The Web Share Target API
+  allows installed web apps to register with the underlying operating system as
+  a share target to receive shared content.
 tags:
   - post
   - capabilities
