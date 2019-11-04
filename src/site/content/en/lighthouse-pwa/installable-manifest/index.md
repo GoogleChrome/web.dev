@@ -84,4 +84,3 @@ Check their respective sites for full details:
 - [Discover what it takes to be installable](/discover-installable)
 - [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 - [Does not use HTTPS](http://localhost:8080/is-on-https/)
-- [Service workers and the Cache Storage API](/service-workers-cache-storage)
