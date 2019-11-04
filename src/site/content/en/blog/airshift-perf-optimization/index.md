@@ -143,10 +143,6 @@ AirSHIFT has a built in chat application and many of the store owners communicat
 
 To improve this experience, AirSHIFT now uses [React.lazy and Suspense](https://web.dev/code-splitting-suspense/) to show placeholders for table contents while lazily loading the actual components. 
 
-{% Aside %}
-Related article: [Code splitting with React.lazy and Suspense](https://web.dev/code-splitting-suspense/)
-{% endAside %}
-
 The AirSHIFT team also migrated some of the expensive business logic
 within the lazily loaded components to
 [web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers).
