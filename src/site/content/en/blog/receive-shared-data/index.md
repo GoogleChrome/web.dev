@@ -10,8 +10,7 @@ date: 2019-11-08
 description: |
   On a mobile device, sharing should be as simple as clicking the Share button,
   choosing an app, then choosing who to share with. The Web Share Target API
-  allows installed web apps to register with the underlying operating system as
-  a share target to receive shared content.
+  allows installed web apps to register with the underlying operating system to receive shared content.
 tags:
   - post
   - capabilities
@@ -29,7 +28,7 @@ receive shared content. Support for text, and data was added in Chrome 71, and
 support for files was added in Chrome 76.
 
 <figure class="w-figure w-figure--center">
-  <img src="./wst-send.png" style="max-width: 100%;" alt="System-level share target picker with an installed PWA as an option."/>
+  <img src="./wst-send.png" style="max-width: 35vw;" alt="System-level share target picker with an installed PWA as an option."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     System-level share target picker with an installed PWA as an option
   </figcaption>
@@ -37,8 +36,8 @@ support for files was added in Chrome 76.
 
 {% Aside %}
 The Web Share Target API is only half of the magic. Web apps can share data,
-files, links, or text using the Web Share API. See the Web Share article for
-details.
+files, links, or text using the Web Share API. See
+[Share like a native][web-share] for details.
 {% endAside %}
 
 ### See it in action
@@ -235,7 +234,7 @@ it's not supported in Android's share system. Instead, URLs will often appear in
 the `text` field, or occasionally in the `title` field.
 
 <figure class="w-figure w-figure--center">
-  <img src="./wst-receive.png" style="max-width: 100%;" alt="The sample target sharing app showing shared data."/>
+  <img src="./wst-receive.png" style="max-width: 35vw;" alt="The sample target sharing app showing shared data."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The sample sharing target app
   </figcaption>
@@ -252,3 +251,4 @@ the `text` field, or occasionally in the `title` field.
 [manifest]:/web/fundamentals/web-app-manifest/
 [installability]:/web/fundamentals/app-install-banners/#criteria
 [encoding]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype
+[web-share]: https://web.dev/share-like-a-native
