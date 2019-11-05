@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-const md = require('markdown-it')();
-const {html} = require('common-tags');
+const md = require("markdown-it")();
+const {html} = require("common-tags");
 
 module.exports = (content, summary, state) => {
   if (!summary) {
     /* eslint-disable max-len */
     throw new Error(
-      `Can't create SelfAssessmentHint component without a summary. Did you forget to pass the summary as a string?`
+      `Can't create SelfAssessmentHint component without a summary. Did you forget to pass the summary as a string?`,
     );
     /* eslint-enable max-len */
   }
 
-  const stateOverride = state == 'open' ? 'open' : '';
+  const stateOverride = state == "open" ? "open" : "";
 
   return html`
     <details class="w-self-assessment-hint" ${stateOverride}>
