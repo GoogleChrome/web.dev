@@ -77,11 +77,17 @@ of the native and web app worlds:
   especially those with lower-end devices.
 
 Running in Chrome also has a number of handy perks.
-For example, TWAs use the data in Chrome's cache,
-including cookies and anything stored using the
+For example, TWAs share Chrome's storage,
+including cookies, passwords, and anything stored using the
 [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API).
 One benefit of this setup is that users stay logged in
 across the browser and the TWA app.
+
+{% Aside %}
+Android browsers other than Chrome will also support TWAs soon.
+You can specify what browser you want your app to use,
+though it's best to select the user's default browser.
+{% endAside %}
 
 ## Building OYO Lite
 
