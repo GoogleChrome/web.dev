@@ -5,8 +5,8 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-# hero: hero.png
-# alt: hero
+hero: hero.jpg
+alt: A hand sharing a web.dev article.
 description: |
   On a mobile device, sharing should be as simple as clicking the Share button,
   choosing an app, then choosing who to share with. The Web Share Target API
@@ -96,7 +96,10 @@ values with your existing query parameters. For example, if your share URL
 scheme uses `body` instead of `text`, you could replace the above with `"text":
 "body",`.
 
-The `method` value defaults to `"GET"` if not provided. The `enctype` field, not shown in this example, indicates the [type of encoding][encoding] for the data. For the `"GET"` method it defaults to `"application/x-www-form-urlencoded"` and is ignored if it's set to anything else.
+The `method` value defaults to `"GET"` if not provided. The `enctype` field, not
+shown in this example, indicates the [type of encoding][encoding] for the data.
+For the `"GET"` method it defaults to `"application/x-www-form-urlencoded"` and
+is ignored if it's set to anything else.
 
 ### Accepting application changes
 
