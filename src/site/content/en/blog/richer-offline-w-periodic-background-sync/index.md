@@ -3,6 +3,7 @@ title: Richer offline experiences with periodic background sync
 subhead:
   Sync your apps data in the background for a more native-like experience.
 authors:
+  - jeffposnick
   - joemedley
 date: 2019-11-08
 updated: 2019-11-08
@@ -261,7 +262,6 @@ self.addEventListener('periodicsync', (event) => {
 });
 ```
 
-## Current Status
 ## Current status
 
 The table below explains the current status of the Periodic Background Sync API.
@@ -318,10 +318,132 @@ Not started
 </tr>
 </table>
 
-
-## Privacy and Security Concerns
-
 ## Feedback
 [Copy from original]
-## Helpful Links
-[Copy from original]
+
+## Debugging
+
+It can be a challenge to get and end-to-end view of periodic background sync
+while testing locally. Information about active registrations, approximate sync
+intervals, and logs of past sync events provide valuable context while debugging
+your web app's behavior. Fortunately, you can find all of that information
+through an experimental feature in Chrome's DevTools.
+
+{% Aside %}
+  Periodic background sync debugging is currently disabled by default. Please
+  read [Enabling the DevTools
+  interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interface)
+  for the steps needed to enable it during the origin trial.
+{% endAside %}
+
+### Recording local activity
+
+The "Periodic Background Sync" panel's interface is organized around key events
+in the periodic background sync lifecycle: registering for sync, performing a
+background sync, and unregistering. To obtain information about these events,
+click **start recording** from within DevTools.
+
+<figure class="w-figure  w-figure--center">
+  <img src="1-record.png" alt="The record button in DevTools" style="max-width: 60vw">
+  <figcaption class="w-figcaption">
+    The record button in DevTools
+  </figcaption>
+</figure>
+
+While recording, entries will appear in DevTools corresponding to events, with
+context and metadata logged for each.
+
+<figure class="w-figure  w-figure--center">
+  <img src="2-record-result.png" alt="An example of recorded periodic background sync data" style="max-width: 60vw">
+  <figcaption class="w-figcaption">
+    An example of recorded periodic background sync data
+  </figcaption>
+</figure>
+
+After enabling recording once, it will stay enabled for up to three days,
+allowing DevTools to capture local debugging information about background syncs
+that might take place, e.g., hours in the future.
+
+### Simulating events
+
+While recording background activity can be helpful, there are times when you'll
+want to test your `periodicsync` handler immediately, without waiting for an
+event to fire on its normal cadence.
+
+You can do this via the **Service Workers** panel within the Applications tab in
+Chrome DevTools. The **Periodic Sync** field allows you to provide a tag for the
+event to use, and to trigger it as many times as you'd like.
+
+{% Aside %}
+  Manually triggering a `periodicsync` event requires Chrome 78 or later.
+  You'll need to follow the same [Enabling the DevTools
+  interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interfaceß)
+  steps to turn it on.
+{% endAside %}
+
+<figure class="w-figure  w-figure--center">
+  <img src="3-sw-panel.png" alt="The **Service Workers** panel showing a button for triggering a periodic background sync event" style="max-width: 60vw">
+  <figcaption class="w-figcaption">
+    The **Service Workers** panel showing a button for triggering a periodic background sync event
+  </figcaption>
+</figure>
+
+## Live demo
+
+You can try periodic background sync with our [live demo
+app](https://webplatformapis.com/periodic_sync/periodicSync_improved.html).
+Before using it, make sure that:
+
+* You're using Chrome 77 or later.
+* You
+  [install](https://developers.google.com/web/fundamentals/app-install-banners/)
+  the web app before enabling periodic background sync. (The demo app's
+  author already took the step of signing up for the origin trial.)
+
+## Enabling the DevTools interface
+
+To enable periodic background sync during the origin trial, use the steps below. If and when it progresses out of the origin trial, the DevTools interface will be enabled by default.
+
+1. Visit chrome://flags/#enable-devtools-experiments and change the **Developer
+   Tools experiments** setting to **Enabled**.
+
+<figure class="w-figure  w-figure--center">
+  <img src="4-experiments.png" alt="The Developer Tools experiments flag" style="max-width: 60vw">
+  <figcaption class="w-figcaption">
+    The Developer Tools experiments flag
+  </figcaption>
+</figure>
+
+2. Restart Chrome.
+
+3. Open Chrome DevTools, and choose **Settings** from the three-dot menu in the
+   upper-right.
+
+<figure class="w-figure  w-figure--center">
+  <img src="5-settings.png" alt="The three-dot menu with Settings selected" style="max-width: 60vw">
+  <figcaption class="w-figcaption">
+    The three-dot menu with Settings selected
+  </figcaption>
+</figure>
+
+4. In the **Experiments** section of the **Settings** panel, enable **Background
+   services section for Periodic Background Sync**.
+
+<figure class="w-figure  w-figure--center">
+  <img src="6-checkbox.png" alt="The Background services section for Periodic Background Sync setting enabled" style="max-width: 60vw">
+  <figcaption class="w-figcaption">
+    The Background services section for Periodic Background Sync setting enabled
+  </figcaption>
+</figure>
+
+5. Close, and then reopen DevTools.
+
+6. You should now see a **Periodic Background Sync** section within the
+   *Application* panel.
+
+<figure class="w-figure  w-figure--center">
+  <img src="7-panel.png" alt="The Application panel showing the Periodic Background Sync section" style="max-width: 60vw">
+  <figcaption class="w-figcaption">
+    The Application panel showing the Periodic Background Sync section
+  </figcaption>
+</figure>
