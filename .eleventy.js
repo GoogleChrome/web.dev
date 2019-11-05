@@ -45,6 +45,7 @@ const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const SelfAssessment = require(`./${componentsDir}/SelfAssessment`);
 const SelfAssessmentHint = require(`./${componentsDir}/SelfAssessmentHint`);
+const Tabset = require(`./${componentsDir}/Tabset`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
@@ -158,6 +159,7 @@ module.exports = function(config) {
   config.addPairedShortcode('SelfAssessmentHint', SelfAssessmentHint);
   config.addShortcode('ShareAction', ShareAction);
   config.addShortcode('SubscribeAction', SubscribeAction);
+  config.addPairedShortcode('Tabset', Tabset);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
 

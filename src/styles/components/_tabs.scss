@@ -1,0 +1,55 @@
+@import '../settings/colors';
+
+.w-tabset {
+  border-bottom: 1px solid $GREY_300;
+  display: flex;
+  margin: 0 -24px;
+  width: calc(100% + 48px);
+}
+
+.w-tabset__tab {
+  border-radius: 0;
+  box-shadow: none;
+  color: $BLACK;
+  flex: 1 0 auto;
+  height: 48px;
+  justify-content: center;
+  margin: 0;
+  opacity: .6;
+  position: relative;
+}
+
+.w-tabset__tab:hover,
+.w-tabset__tab:focus {
+  background: rgba($SUCCESS_COLOR, .1);
+}
+
+.w-tabset__tab:focus {
+  box-shadow: inset 0 0 0 1px $FOCUS_COLOR;
+  outline: 0;
+}
+
+.w-tabset__tab:active {
+  background: rgba($SUCCESS_COLOR, .3);
+  box-shadow: none;
+}
+
+.w-tabset__tab[active] {
+  color: $SUCCESS_COLOR;
+  opacity: 1;
+}
+
+.w-tabset__tab[active]::after {
+  background: $SUCCESS_COLOR;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.w-tabset__pane[hidden] {
+  display: none;
+}

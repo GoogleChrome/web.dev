@@ -30,6 +30,7 @@ guidance about how to use them effectively.
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
+1. [Tabs](#tabs)
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
@@ -908,6 +909,10 @@ assumenda perspiciatis.
     </tbody>
   </table>
 </div>
+
+## Tabs
+{% Tabset %}
+{% endTabset %}
 
 ## Tooltips
 Hold the pointer over or focus the buttons below to view their tooltips.
