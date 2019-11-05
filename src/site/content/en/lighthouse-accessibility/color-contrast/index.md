@@ -70,7 +70,7 @@ The color picker tells you whether the element
 meets color contrast requirements,
 taking font size and weight into account:
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="color-picker.png"
     alt="Screenshot of Chrome DevTools color picker with color contrast information highlighted">
 </figure>
@@ -80,7 +80,7 @@ until its contrast is high enough.
 It's easiest to make adjustments in the HSL color format.
 Switch to that format by clicking the toggle button on the right of the picker:
 
-<figure class="w-figure">
+<figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="color-format-toggle.png"
     alt="Screenshot of Chrome DevTools color picker with the color format toggle highlighted">
 </figure>
@@ -90,7 +90,15 @@ Once you have a passing color value, update your project's CSS.
 More complex cases, like text on a gradient or text on an image,
 need to be checked manually,
 as do UI elements and images.
-Consider using a tool like the Paciello Group's
+For text on an image, you can use DevTools' background color picker to check
+the background that the text appears on:
+
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="bg-color-picker.png"
+    alt="Screenshot of Chrome DevTools background color picker">
+</figure>
+
+For other cases, consider using a tool like the Paciello Group's
 <a href="https://developer.paciellogroup.com/resources/contrastanalyser" rel="noopener">Colour Contrast Analyser</a>.
 
 ## Resources

@@ -20,33 +20,30 @@ for a general overview of how ARIA can provide missing semantics for custom cont
 ## How to manually test
 
 To check that all custom interactive controls have appropriate ARIA roles,
-test the page using a screen reader.
-This example compares a `<div>` to a `<button>`
-(you'll need to click "Enable ChromeVox Lite" to test it):
-
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/div-vs-button?path=example.html&previewSize=100&attributionHidden=true"
-    alt="div-vs-button on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+test the page using either the
+[Chrome DevTools accessibility pane](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane)
+or a screen reader.
+[JAWS](https://www.freedomscientific.com/products/software/jaws/) and
+[NVDA](https://www.nvaccess.org/)
+are two of the more popular screen readers for Windows.
+[VoiceOver](https://www.apple.com/accessibility/mac/vision/)
+is the screen reader built into MacOS.
 
 Using CSS, it's possible
 to style the `<div>` and `<button>` elements so they convey the same visual affordances,
-but the two experiences are very different when using the screen reader.
+but the two experiences are very different when using a screen reader.
 A `<div>` is just a generic grouping element,
-so the screen reader only announces the text content of the `<div>`.
-The `<button>` is announced as a "button",
-a much stronger signal to the user that this is something with which they can interact.
+so a screen reader only announces the text content of the `<div>`.
+The `<button>` is announced as a "button,"
+a much stronger signal to the user that it's something they can interact with.
 See also [Semantics and screen readers](/semantics-and-screen-readers).
 
 ## How to fix
 
-So the simplest,
-and reasonably the best solution to this problem
-is to avoid custom interactive controls all together.
-For example, replace the `<div>` that's acting like a button
+The simplest
+and often best solution to this problem
+is to avoid custom interactive controls altogether.
+For example, replace a `<div>` that's acting like a button
 with an actual `<button>`.
 
 If you must keep the `<div>`,
@@ -60,7 +57,7 @@ then add `role="button"` and `aria-pressed="false"` to the `<div>`:
   </iframe>
 </div>
 
-Now the screen reader announces the role and interactive state for the `<div>`.
+Now screen readers will announces the role and interactive state for the `<div>`.
 
 ## Why this matters
 

@@ -23,11 +23,6 @@ const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
-const {
-  Actions,
-  ShareAction,
-  SubscribeAction,
-} = require(`./${componentsDir}/Actions`);
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Author = require(`./${componentsDir}/Author`);
@@ -41,6 +36,7 @@ const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
+const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const YouTube = require(`./${componentsDir}/YouTube`);
@@ -52,13 +48,15 @@ const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
+// nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
 const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
-const githubLink = require(`./${filtersDir}/github-link`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
+const githubLink = require(`./${filtersDir}/github-link`);
+const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
@@ -78,10 +76,10 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // MARKDOWN
   //----------------------------------------------------------------------------
-  let markdownItOptions = {
+  const markdownItOptions = {
     html: true,
   };
-  let markdownItAnchorOptions = {
+  const markdownItAnchorOptions = {
     level: 2,
     permalink: true,
     permalinkClass: 'w-headline-link',
@@ -116,6 +114,13 @@ module.exports = function(config) {
   config.addCollection('memoized', function(collection) {
     return memoize(collection.getAll());
   });
+  config.addCollection('algolia', function(collection) {
+    if (process.env.ELEVENTY_ENV === 'prod') {
+      const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
+      return algoliaPosts(collection);
+    }
+    return [];
+  });
 
   //----------------------------------------------------------------------------
   // FILTERS
@@ -123,8 +128,9 @@ module.exports = function(config) {
   config.addFilter('findBySlug', findBySlug);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
-  config.addFilter('githubLink', githubLink);
   config.addFilter('expandContributors', expandContributors);
+  config.addFilter('githubLink', githubLink);
+  config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
@@ -135,7 +141,6 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // SHORTCODES
   //----------------------------------------------------------------------------
-  config.addPairedShortcode('Actions', Actions);
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Author', Author);
@@ -149,10 +154,9 @@ module.exports = function(config) {
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
+  config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
-  config.addShortcode('ShareAction', ShareAction);
-  config.addShortcode('SubscribeAction', SubscribeAction);
   config.addShortcode('YouTube', YouTube);
 
   //----------------------------------------------------------------------------
