@@ -5,10 +5,19 @@ description: |
   Learn about Lighthouse's First Meaningful Paint metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-10
+updated: 2019-11-05
 web_lighthouse:
   - first-meaningful-paint
 ---
+
+{% Aside 'caution' %}
+  First Meaningful Paint (FMP) is deprecated in Lighthouse 6.0. In practice FMP
+  has been overly sensitive to small differences in the page load, leading to inconsistent
+  (bimodal) results. Additionally, the metric's definition relies on browser-specific
+  implementation details, which means it cannot be standardized nor implemented in all web
+  browsers. Moving forward, consider using [Largest Contentful Paint](/largest-contentful-paint/)
+  instead.
+{% endAside %}
 
 First Meaningful Paint (FMP) is one of six metrics
 tracked in the **Performance** section of the Lighthouse report.
