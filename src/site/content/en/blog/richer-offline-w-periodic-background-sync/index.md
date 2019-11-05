@@ -8,6 +8,9 @@ authors:
 date: 2019-11-08
 updated: 2019-11-08
 hero: hero.jpg
+alt: Colorful airplanes flying in sync
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905
 description: |
   Periodic Background Sync enables web applications to periodically
   synchronize data in the background, bringing web apps closer to the behavior
@@ -20,7 +23,10 @@ tags:
 ---
 
 {% Aside %}
-  The Periodic Background Sync API, part of Google's [capabilities project](https://developers.google.com/web/updates/capabilities), is currently in development. This post will be updated as the implementation progresses.
+  The Periodic Background Sync API, part of Google's [capabilities
+  project](https://developers.google.com/web/updates/capabilities), and since
+  Chrome 77 is in an [**origin trial**](#ot).is currently in development. This
+  post will be updated as the implementation progresses.
 {% endAside %}
 
 
@@ -38,6 +44,80 @@ news.
 Periodic Background Sync enables web applications to periodically synchronize
 data in the background, bringing web apps closer to the behavior of a native
 app.
+
+## Current status
+
+The table below explains the current status of the Periodic Background Sync API.
+
+<table>
+<tr>
+<th markdown="block">
+Step
+</th>
+<th markdown="block">
+Status
+</th>
+</tr>
+<tr>
+<td markdown="block">
+1. Create explainer
+</td>
+<td markdown="block">
+<a href="https://github.com/beverloo/periodic-background-sync" >Complete</a>
+</td>
+</tr>
+<tr>
+<td markdown="block">
+2. Create initial draft of specification
+</td>
+<td markdown="block">
+In Progress
+</td>
+</tr>
+<tr>
+<td markdown="block">
+3. Gather feedback and iterate on design
+</td>
+<td markdown="block">
+In Progress
+</td>
+</tr>
+<tr>
+<td markdown="block">
+<strong>4. Origin trial</strong>
+</td>
+<td markdown="block">
+<strong><a href="https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905">Started in Chrome 77<a></strong><br/>
+Expected to run through Chrome 80
+</td>
+</tr>
+<tr>
+<td markdown="block">
+5. Launch
+</td>
+<td markdown="block">
+Not started
+</td>
+</tr>
+</table>
+
+## Try it
+
+You can try periodic background sync with our [live demo
+app](https://webplatformapis.com/periodic_sync/periodicSync_improved.html).
+Before using it, make sure that:
+
+* You're using Chrome 77 or later.
+* You
+  [install](https://developers.google.com/web/fundamentals/app-install-banners/)
+  the web app before enabling periodic background sync. (The demo app's
+  author already took the step of signing up for the origin trial.)
+
+### Register for the origin trial {: #ot }
+
+{% include 'content/origin-trials.njk' %}
+
+{% include 'content/origin-trial-register.njk' %}
 
 ## Concepts and usage
 
@@ -262,65 +342,6 @@ self.addEventListener('periodicsync', (event) => {
 });
 ```
 
-## Current status
-
-The table below explains the current status of the Periodic Background Sync API.
-
-<table>
-<tr>
-<th markdown="block">
-Step
-</th>
-<th markdown="block">
-Status
-</th>
-</tr>
-<tr>
-<td markdown="block">
-1. Create explainer
-</td>
-<td markdown="block">
-<a href="https://github.com/beverloo/periodic-background-sync" >Complete</a>
-</td>
-</tr>
-<tr>
-<td markdown="block">
-2. Create initial draft of specification
-</td>
-<td markdown="block">
-In Progress
-</td>
-</tr>
-<tr>
-<td markdown="block">
-3. Gather feedback and iterate on design
-</td>
-<td markdown="block">
-In Progress
-</td>
-</tr>
-<tr>
-<td markdown="block">
-<strong>4. Origin trial</strong>
-</td>
-<td markdown="block">
-<strong><a href="https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905">Started in Chrome 77<a></strong><br/>
-Expected to run through Chrome 80
-</td>
-</tr>
-<tr>
-<td markdown="block">
-5. Launch
-</td>
-<td markdown="block">
-Not started
-</td>
-</tr>
-</table>
-
-## Feedback
-[Copy from original]
-
 ## Debugging
 
 It can be a challenge to get and end-to-end view of periodic background sync
@@ -377,7 +398,7 @@ event to use, and to trigger it as many times as you'd like.
 {% Aside %}
   Manually triggering a `periodicsync` event requires Chrome 78 or later.
   You'll need to follow the same [Enabling the DevTools
-  interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interfaceß)
+  interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interface)
   steps to turn it on.
 {% endAside %}
 
@@ -387,18 +408,6 @@ event to use, and to trigger it as many times as you'd like.
     The **Service Workers** panel showing a button for triggering a periodic background sync event
   </figcaption>
 </figure>
-
-## Live demo
-
-You can try periodic background sync with our [live demo
-app](https://webplatformapis.com/periodic_sync/periodicSync_improved.html).
-Before using it, make sure that:
-
-* You're using Chrome 77 or later.
-* You
-  [install](https://developers.google.com/web/fundamentals/app-install-banners/)
-  the web app before enabling periodic background sync. (The demo app's
-  author already took the step of signing up for the origin trial.)
 
 ## Enabling the DevTools interface
 
