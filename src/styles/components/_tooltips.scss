@@ -29,21 +29,26 @@
 }
 
 // Need descendent combinator for focus to accommodate details widget
-// TODO: Add focus-visible so tooltip doesn't linger after touch
-*:hover > .w-tooltip,
-*:focus .w-tooltip {
+:hover > .w-tooltip,
+:focus .w-tooltip {
   opacity: .77;
   transform: scale(1) translateX(-50%);
   transition: opacity .15s .3s, transform .15s .3s;
   visibility: visible;
 }
 
-*:hover > .w-tooltip--left,
-*:focus .w-tooltip--left {
+:hover > .w-tooltip--left,
+:focus .w-tooltip--left {
   transform: scale(1);
 }
 
-*:hover > .w-tooltip--right,
-*:focus .w-tooltip--right {
+:hover > .w-tooltip--right,
+:focus .w-tooltip--right {
   transform: translateX(-100%) scale(1);
+}
+
+// sass-lint:disable-block class-name-format
+.js-focus-visible :focus:not(.focus-visible) .w-tooltip {
+  opacity: 0;
+  visibility: hidden;
 }
