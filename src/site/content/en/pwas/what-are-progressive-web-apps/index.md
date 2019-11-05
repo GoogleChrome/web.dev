@@ -3,7 +3,7 @@ title: What are Progressive Web Apps?
 authors:
   - samrichard
   - petelepage
-date: 2019-11-5
+date: 2019-11-05
 description: An introduction to Progressive Web Apps (PWAs) and the three pillars that separate them from other web apps.
 tags:
   - post
