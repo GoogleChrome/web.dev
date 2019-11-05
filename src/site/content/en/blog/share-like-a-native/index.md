@@ -88,7 +88,14 @@ navigator.share({url: url});
 
 ### Sharing files
 
-To share files, first test for and call `navigator.canShare()`. Then include an array of files in the call to `navigator.share()`.  Notice that for feature detection I tested `naviagator.canShare()` rather than for `navigator.share()`. The data object passed to `canShare()` only supports the `files` property. Image, video, audio, and text files can be shared (see [Permitted File Extensions in Chromium](https://docs.google.com/document/d/1tKPkHA5nnJtmh2TgqWmGSREUzXgMUFDL6yMdVZHqUsg/edit?usp=sharing)). More file types may be added in the future.
+To share files, first test for and call `navigator.canShare()`. Then include an
+array of files in the call to `navigator.share()`.  Notice that for feature
+detection I tested `naviagator.canShare()` rather than for `navigator.share()`.
+The data object passed to `canShare()` only supports the `files` property.
+Image, video, audio, and text files can be shared (see [Permitted File
+Extensions in
+Chromium](https://docs.google.com/document/d/1tKPkHA5nnJtmh2TgqWmGSREUzXgMUFDL6yMdVZHqUsg/edit?usp=sharing)).
+More file types may be added in the future.
 
 ```js/0-4
 if (navigator.canShare && navigator.canShare({ files: filesArray })) {
