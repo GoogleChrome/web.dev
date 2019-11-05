@@ -150,21 +150,9 @@ That's just 7% the size of their native Android app!
 That small footprint combined with the amenities of a native app
 downloadable from the Google Play Store led to significant gains
 in user engagement:
-
-<div class="w-stats">
-  <div class="w-stat">
-    <p class="w-stat__figure">3<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">PWA's conversion rate</p>
-  </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">4.6</p>
-    <p class="w-stat__desc">Google Play Store rating</p>
-  </div>
-  <div class="w-stat">
-    <p class="w-stat__figure">3<sub class="w-stat__sub">x</sub></p>
-    <p class="w-stat__desc">PWA's logged-in users</p>
-  </div>
-</div>
+- A conversion rate three times higher than the PWA's rate
+- Three times more logged-in users than the PWA, on average
+- A 4.6&nbsp;rating on the Google Play Store
 
 And aside from the user-facing benefits,
 going with a TWA meant the team had only one codebase,
