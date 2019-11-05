@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const stripLanguage = require('../../_filters/strip-language');
-const md = require('../../_filters/md');
+const {html} = require("common-tags");
+const stripLanguage = require("../../_filters/strip-language");
+const md = require("../../_filters/md");
+const getImagePath = require("../../_utils/get-image-path");
+const getSrcsetRange = require("../../_utils/get-srcset-range");
 
 /* eslint-disable require-jsdoc,indent,max-len */
 
@@ -32,12 +34,29 @@ module.exports = ({post}) => {
   // If the post does not provide a thumbnail, attempt to reuse the hero image.
   // Otherwise, omit the image entirely.
   const thumbnail = data.thumbnail || data.hero || null;
-  const alt = data.alt || '';
+  const alt = data.alt || "";
 
   function renderThumbnail(url, img, alt) {
+    debugger;
+    const imagePath = getImagePath(img, url);
+    const srcsetRange = getSrcsetRange(240, 768);
+
     return html`
       <figure class="w-post-card__figure">
-        <img class="w-post-card__image" src="${url + img}" alt="${alt}" />
+        <img
+          class="w-post-card__image"
+          sizes="365px"
+          srcset="${srcsetRange.map(
+            (width) => html`
+              ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
+            `,
+          )}"
+          src="${imagePath}"
+          alt="${alt}"
+          width="100%"
+          height="240"
+          loading="lazy"
+        />
       </figure>
     `;
   }
@@ -61,7 +80,8 @@ module.exports = ({post}) => {
     <a href="${url}" class="w-card">
       <article class="w-post-card">
         <div
-          class="w-post-card__cover ${thumbnail && `w-post-card__cover--with-image`}"
+          class="w-post-card__cover ${thumbnail &&
+            `w-post-card__cover--with-image`}"
         >
           ${thumbnail && renderThumbnail(url, thumbnail, alt)}
           <h2
@@ -71,7 +91,6 @@ module.exports = ({post}) => {
           >
             ${md(data.title)}
           </h2>
-          
         </div>
         <div class="w-post-card__desc">
           <p class="w-post-card__subhead">

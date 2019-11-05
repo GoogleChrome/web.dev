@@ -2,32 +2,31 @@
 layout: post
 title: Does not provide a valid apple-touch-icon
 description: |
-  How to specify what icon should appear on iOS home screens for your Progressive Web App.
-date: 2019-08-26
+  Learn how to specify what icon your Progressive Web App displays on iOS home screens.
 web_lighthouse:
   - apple-touch-icon
 codelabs: codelab-apple-touch-icon
+date: 2019-08-27
+updated: 2019-09-19
 ---
 
-iOS Safari users can manually add [Progressive Web Apps (PWAs)](/discover-installable) to 
-their home screens. The icon that appears on the iOS home screen when the user adds a PWA is
-called the *Apple touch icon*. You can specify what icon your app should use by including a 
+When iOS Safari users add [Progressive Web Apps (PWAs)](/discover-installable) to
+their home screens, the icon that appears is called the *Apple touch icon*.
+You can specify what icon your app should use by including a
 `<link rel="apple-touch-icon" href="/example.png">` tag in the `<head>` of your
 page. If your page doesn't have this link tag, iOS generates an icon by taking a screenshot of
-the page content. In other words, instructing iOS to download an icon results in a more polished 
+the page content. In other words, instructing iOS to download an icon results in a more polished
 user experience.
 
-## How this audit fails
+## How the Lighthouse Apple touch icon audit fails
 
-This audit fails when Lighthouse doesn't find a `<link rel="apple-touch-icon" href="/example.png">` 
-tag in the `<head>` of the page. 
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages without a `<link rel="apple-touch-icon" href="/example.png">`
+tag in the `<head>`:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="apple-touch-icon.png" 
+  <img class="w-screenshot" src="apple-touch-icon.png"
        alt="Does not provide a valid apple-touch-icon">
-  <figcaption class="w-figcaption">
-    The <b>Does not provide a valid apple-touch-icon</b> audit
-  </figcaption>
 </figure>
 
 {% Aside %}
@@ -42,18 +41,20 @@ the correct size.
 
 ## How to add an Apple touch icon
 
-- Add `<link rel="apple-touch-icon" href="/example.png">` to the `<head>` of your page.
-- Replace `/example.png` with the actual path to your icon.
+1. Add `<link rel="apple-touch-icon" href="/example.png">` to the `<head>` of your page:
 
-```html
-...
-<head>
-  ...
-  <link rel="apple-touch-icon" href="/example.png">
-  ...
-</head>
-...
-```
+    ```html/4
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        …
+        <link rel="apple-touch-icon" href="/example.png">
+        …
+      </head>
+      …
+    ```
+
+1. Replace `/example.png` with the actual path to your icon.
 
 {% Aside 'codelab' %}
   Check out the [Add an Apple touch icon to your Progressive Web App](/codelab-apple-touch-icon)
@@ -62,13 +63,14 @@ the correct size.
 
 To provide a good user experience, make sure that:
 
-- The icon is 180 pixels wide and 180 pixels tall or 192 pixels wide and 192 pixels tall
-- The specified URL to the icon is valid
+- The icon is 180x180&nbsp;pixels or 192x192&nbsp;pixels
+- The specified path to the icon is valid
 - The background of the icon is not transparent
 
 ## Resources
 
-- [Source code for the **Does not provide a valid `apple-touch-icon`** audit][source]
+- [Source code for **Does not provide a valid `apple-touch-icon`** audit][source]
+- [Discover what it takes to be installable](/discover-installable)
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch Icon</a>
 
 [a2hs]: https://support.apple.com/guide/shortcuts/run-shortcuts-from-the-ios-home-screen-apd735880972/ios#apd175362e63

@@ -8,8 +8,8 @@ date: 2019-08-14
 description: |
   Learn how to avoid the common pitfalls of using third-party scripts to improve load times and user experience.
 hero: hero.jpg
-alt: Aerial view of shipping containers. 
-codelabs: codelab-optimize-third-party-javascript 
+alt: Aerial view of shipping containers.
+codelabs: codelab-optimize-third-party-javascript
 tags:
   - performance
   - third-party
@@ -22,7 +22,7 @@ If a third-party script is [slowing down](/third-party-javascript/) your page lo
 
 * Optimize the loading process.
 
-This post explains how to optimize the loading process of third-party scripts with the following techniques: 
+This post explains how to optimize the loading process of third-party scripts with the following techniques:
 
 1. Using the `async` or `defer` attribute on `<script>` tags
 
@@ -30,7 +30,7 @@ This post explains how to optimize the loading process of third-party scripts wi
 
 3. Lazy-loading
 
-4. Optimizing how you serve third-party scripts 
+4. Optimizing how you serve third-party scripts
 
 ## Use `async` or `defer`
 
@@ -58,7 +58,7 @@ Scripts with the `defer` attribute execute after HTML parsing is completely fini
 
 ![Diagram of parser flow with a script with defer attribute](defer@2x.png)
 
-* Use `async` if it's important to have the script run earlier in the loading process. 
+* Use `async` if it's important to have the script run earlier in the loading process.
 
 * Use `defer` for less critical resources. A video player that's below-the-fold, for example.
 
@@ -69,7 +69,7 @@ Using these attributes can significantly speed up page load. For example, [Teleg
 Analytics scripts are usually loaded early so you don't miss any valuable analytics data. Fortunately, there are [patterns to initialize analytics lazily](https://philipwalton.com/articles/the-google-analytics-setup-i-use-on-every-site-i-build/) while retaining early page-load data.
 {% endAside %}
 
-## Establish early connections to required origins  
+## Establish early connections to required origins
 
 You can save 100–500 ms by [establishing early connections](/preconnect-and-dns-prefetch/) to important third-party origins.
 
@@ -81,7 +81,7 @@ Two [`<link>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link) t
 
 ### `preconnect`
 
-`<link rel="preconnect">` informs the browser that your page intends to establish a connection to another origin, and that you'd like the process to start as soon as possible. When the request for a resource from the pre-connected origin is made, the download starts immediately. 
+`<link rel="preconnect">` informs the browser that your page intends to establish a connection to another origin, and that you'd like the process to start as soon as possible. When the request for a resource from the pre-connected origin is made, the download starts immediately.
 
 ```html
 <link rel="preconnect" href="https://cdn.example.com">
@@ -95,13 +95,13 @@ Only preconnect to critical domains you will use soon because the browser closes
 
 `<link rel="dns-prefetch>` handles a small subset of what is handled by `<link rel="preconnect">`.  Establishing a connection involves the DNS lookup and TCP handshake, and for secure origins, TLS negotiations. `dns-prefetch` instructs the browser to only resolve the DNS of a specific domain before it has been explicitly called.
 
-The `preconnect` hint is best used for only the most critical connections; for less critical third-party domains use `<link rel=dns-prefetch>`. 
+The `preconnect` hint is best used for only the most critical connections; for less critical third-party domains use `<link rel=dns-prefetch>`.
 
 ```html
 <link rel="dns-prefetch" href="http://example.com">
 ```
 
-[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect` support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`. Use separate link tags to implement this safely: 
+[Browser support for `dns-prefetch`](https://caniuse.com/#search=dns-prefetch) is slightly different from [`preconnect` support](https://caniuse.com/#search=preconnect), so `dns-prefetch` can serve as a fallback for browsers that don't support `preconnect`. Use separate link tags to implement this safely:
 
 ```html
 <link rel="preconnect" href="http://example.com">
@@ -117,11 +117,11 @@ Embedded third-party resources can be a big contributor to slow page speed when 
 
 One effective approach is to lazy-load third-party content after the main page content loads. Ads are a good candidate for this approach.
 
-Ads are an important source of income for many sites, but users come for the content. By lazy-loading ads and delivering the main content faster, you can increase the overall viewability percentage of an ad. For example, MediaVine switched to [lazy-loading ads](https://www.mediavine.com/lazy-loading-ads-mediavine-ads-load-200-faster/) and saw a 200% improvement in page load speed. DoubleClick have guidance on how to lazy-load ads in their [official documentation](https://support.google.com/dfp_premium/answer/4578089#lazyloading). 
+Ads are an important source of income for many sites, but users come for the content. By lazy-loading ads and delivering the main content faster, you can increase the overall viewability percentage of an ad. For example, MediaVine switched to [lazy-loading ads](https://www.mediavine.com/lazy-loading-ads-mediavine-ads-load-200-faster/) and saw a 200% improvement in page load speed. DoubleClick have guidance on how to lazy-load ads in their [official documentation](https://support.google.com/dfp_premium/answer/4578089#lazyloading).
 
 An alternative approach is to load third-party content only when users scroll down to that section of the page.
 
-[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) is a browser API that efficiently detects when an element enters or exits the browser's viewport and it can be used to implement this technique. [lazysizes](https://web.dev/use-lazysizes-to-lazyload-images/) is a popular JavaScript library for lazy-loading images and [`iframes`](http://afarkas.github.io/lazysizes/#examples). It supports YouTube embeds and [widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). It also has [optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) for IntersectionObserver. 
+[Intersection Observer](https://developers.google.com/web/updates/2016/04/intersectionobserver) is a browser API that efficiently detects when an element enters or exits the browser's viewport and it can be used to implement this technique. [lazysizes](/use-lazysizes-to-lazyload-images/) is a popular JavaScript library for lazy-loading images and [`iframes`](http://afarkas.github.io/lazysizes/#examples). It supports YouTube embeds and [widgets](https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/unveilhooks). It also has [optional support](https://github.com/aFarkas/lazysizes/blob/097a9878817dd17be3366633e555f3929a7eaaf1/src/lazysizes-intersection.js) for IntersectionObserver.
 
 {% Aside 'caution' %}
 Be careful when lazy-loading resources with JavaScript. If JavaScript fails to load, perhaps due to flaky network conditions, your resources won't load at all.
@@ -136,21 +136,21 @@ Using the [`loading` attribute for lazy-loading images and iframes](/native-lazy
 
 It's common for third-party vendors to provide URLs of JavaScript files that they host, usually on a [content delivery network (CDN)](https://en.wikipedia.org/wiki/Content_delivery_network). The benefits of this approach are that you can get started quickly—just copy and paste the URL—and there's no maintenance overhead. The third-party vendor handles server configuration and script updates.
 
-But because they are not on the same origin as the rest of your resources, loading files from a public CDN comes with a network cost. The browser needs to perform a DNS lookup, establish a new HTTP connection, and, on secure origins, perform an SSL handshake with the vendor's server. 
+But because they are not on the same origin as the rest of your resources, loading files from a public CDN comes with a network cost. The browser needs to perform a DNS lookup, establish a new HTTP connection, and, on secure origins, perform an SSL handshake with the vendor's server.
 
 When you use files from third-party servers, you rarely have control over caching. Relying on someone else's caching strategy might cause scripts to be unnecessarily re-fetched from the network too often.
 
 ### Self-host third-party scripts
 
-Self-hosting third-party scripts is an option that gives you more control over a script's loading process. By self-hosting you can: 
+Self-hosting third-party scripts is an option that gives you more control over a script's loading process. By self-hosting you can:
 
-* Reduce DNS lookup and round-trip times. 
+* Reduce DNS lookup and round-trip times.
 * Improve [HTTP caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) headers.
-* Take advantage of [HTTP/2 server push](https://developers.google.com/web/fundamentals/performance/http2/). 
+* Take advantage of [HTTP/2 server push](https://developers.google.com/web/fundamentals/performance/http2/).
 
 For example, Casper managed to [shave 1.7 seconds](https://medium.com/caspertechteam/we-shaved-1-7-seconds-off-casper-com-by-self-hosting-optimizely-2704bcbff8ec) off load time by self-hosting an A/B testing script.
 
-Self-hosting comes with one big downside though: scripts can go out of date and won't get automatic updates when there's an API change or a security fix. 
+Self-hosting comes with one big downside though: scripts can go out of date and won't get automatic updates when there's an API change or a security fix.
 
 {% Aside 'caution' %}
 

@@ -1,7 +1,7 @@
 ---
 title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
-  Learn how to build good navigation UX with the Portals API.
+  Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
 updated: 2019-08-29
 authors:
@@ -9,7 +9,7 @@ authors:
 hero: hero.png
 alt: A logo of Portals
 description: |
-  Portals help keep your front-end simple while allowing seamless navigations
+  The newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
   with custom transitions. In this article, get hands-on experience using
   Portals to improve user experience across your site.
 tags:
@@ -22,7 +22,7 @@ Making sure your pages load fast is key to delivering a good user experience.
 But one area we often overlook is page transitions—what our users see when
 they move between pages.
 
-A new web platform API called [Portals](https://github.com/WICG/portals) aims to
+A new web platform API proposal called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
 site. See Portals in action:
 
@@ -102,7 +102,6 @@ the following snippet will be of interest.
 ```javascript
 // Adding some styles with transitions
 const style = document.createElement('style');
-const initialScale = 0.4;
 style.innerHTML = `
   portal {
     position:fixed;
@@ -110,37 +109,36 @@ style.innerHTML = `
     height: 100%;
     opacity: 0;
     box-shadow: 0 0 20px 10px #999;
-    transform: scale(${initialScale});
-    bottom: calc(20px + 50% * ${initialScale} - 50%);
-    left: calc(20px + 50% * ${initialScale} - 50%);
-    z-index: 10000;
+    transform: scale(0.4);
+    transform-origin: bottom left;
+    bottom: 20px;
+    left: 20px;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
   }
   .portal-transition {
-    transition:
-      transform 0.4s,
-      bottom 0.7s,
-      left 0.7s,
-      opacity 1.0s;
+    transition: transform 0.4s;
   }
   @media (prefers-reduced-motion: reduce) {
     .portal-transition {
-      transition: all 0.001s;
+      transition: transform 0.001s;
     }
   }
   .portal-reveal {
-    transform: scale(1.0);
-    bottom: 0px;
-    left: 0px;
+    transform: scale(1.0) translateX(-20px) translateY(20px);
   }
-  .fade-in {
-    opacity: 1.0;
+  @keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
   }
 `;
 const portal = document.createElement('portal');
 // Let's navigate into the WICG Portals spec page
 portal.src = 'https://wicg.github.io/portals/';
-// Add a class that defines the transition. Consider using 
-// `prefers-reduced-motion` media query to control the animation. 
+// Add a class that defines the transition. Consider using
+// `prefers-reduced-motion` media query to control the animation.
 // https://developers.google.com/web/updates/2019/03/prefers-reduced-motion
 portal.classList.add('portal-transition');
 portal.addEventListener('click', evt => {
@@ -148,17 +146,12 @@ portal.addEventListener('click', evt => {
   portal.classList.add('portal-reveal');
 });
 portal.addEventListener('transitionend', evt => {
-  if (evt.propertyName == 'bottom') {
+  if (evt.propertyName == 'transform') {
     // Activate the portal once the transition has completed
     portal.activate();
   }
 });
 document.body.append(style, portal);
-
-// Waiting for the page to load.
-// using setTimeout is a suboptimal way and it's best to fade-in
-// when receiving a load complete message from the portal via postMessage
-setTimeout(_ => portal.classList.add('fade-in'), 2000);
 ```
 
 It is also easy to do feature detection to progressively enhance a website using Portals.
@@ -274,4 +267,4 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-Portals are still in the early stages so not everything is working yet (that's why it's behind an experimental flag). That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on [the Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836) and if you have any feature requests, or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+The Portals proposal is still in the early stages, so not everything is working yet. (That's why it's behind an experimental flag.) That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on the [Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836). If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).

@@ -19,12 +19,12 @@ Here's how to define your first performance budget in a few simple steps.
 
 If you are trying to improve the performance of an existing site, start by identifying the most important pages. For example, these could be pages that have the highest amount of user traffic or a product landing page.
 
-After you identify your key pages, it's time to analyze them. First, we'll focus on the timing milestones that best measure the user experience. 
+After you identify your key pages, it's time to analyze them. First, we'll focus on the timing milestones that best measure the user experience.
 
-Under the Audits panel in Chrome DevTools, you'll find [Lighthouse](https://developers.google.com/web/tools/lighthouse/). Run audits on each page in a [Guest window](https://support.google.com/chrome/answer/6130773?co=GENIE.Platform%3DDesktop&hl=en) to record these two times: 
+Under the Audits panel in Chrome DevTools, you'll find [Lighthouse](https://developers.google.com/web/tools/lighthouse/). Run audits on each page in a [Guest window](https://support.google.com/chrome/answer/6130773?co=GENIE.Platform%3DDesktop&hl=en) to record these two times:
 
-* [First Contentful Paint (FCP)](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint)
-* [Time to Interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive) [(TTI)](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive)
+* [First Contentful Paint (FCP)](/first-contentful-paint)
+* [Time to Interactive (TTI)](/interactive)
 
 {% Aside %}
 Using a Guest window gives you a clean testing environment without any Chrome
@@ -87,7 +87,7 @@ Once you've analyzed your own site, it's time to analyze your competitors' sites
 
 If you are not sure which sites to look at, here are a few tools to try:
 
-1. Google search's "related:" keyword 
+1. Google search's "related:" keyword
 2. [Alexa's similar sites](https://www.alexa.com/find-similar-sites) feature
 3. [SimilarWeb](https://www.similarweb.com)
 
@@ -98,7 +98,7 @@ For a realistic picture, try to **find 10 or so competitors**.
 
 ### Budget for timing milestones
 
-Our niche search engine in this example has a handful of competitors and we'll focus on optimizing the homepage for mobile devices. Over [half of the internet traffic](https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/) today happens on mobile networks and using mobile numbers as default will benefit not only your mobile users, but your desktop users as well. 
+Our niche search engine in this example has a handful of competitors and we'll focus on optimizing the homepage for mobile devices. Over [half of the internet traffic](https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/) today happens on mobile networks and using mobile numbers as default will benefit not only your mobile users, but your desktop users as well.
 
 Create a chart with FCP and TTI times for all the similar websites and highlight the fastest in the bunch. A chart like this one gives you a clearer picture of how your website is doing compared to the competition.
 
@@ -141,7 +141,7 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
 </figure>
 
 
-There's room for improvement and a good guideline for that is the [20% rule](https://www.smashingmagazine.com/2015/09/why-performance-matters-the-perception-of-time/#the-need-for-performance-optimization-the-20-rule). Research states that users recognize a difference in response times when it's greater than 20%. This means that if you want to be noticeably better than the best comparable site, you have to **be at least 20% faster**. 
+There's room for improvement and a good guideline for that is the [20% rule](https://www.smashingmagazine.com/2015/09/why-performance-matters-the-perception-of-time/#the-need-for-performance-optimization-the-20-rule). Research states that users recognize a difference in response times when it's greater than 20%. This means that if you want to be noticeably better than the best comparable site, you have to **be at least 20% faster**.
 
 <div class="w-table-wrapper">
   <table>
@@ -264,7 +264,7 @@ Here are a few examples based on TTI budgets:
   The recommended sizes are for the critical-path resources.
 {% endAside %}
 
-Defining a budget based on quantity metrics is a tricky business. An e-commerce website with loads of product photos is very different from a news portal which is mostly text. If you have ads or analytics on your site, that increases the amount of Javascript you're shipping. 
+Defining a budget based on quantity metrics is a tricky business. An e-commerce website with loads of product photos is very different from a news portal which is mostly text. If you have ads or analytics on your site, that increases the amount of Javascript you're shipping.
 
 Use the table above as a starting point and adjust based on the type of content you are working with. Define what your pages will include, review your research and take an educated guess for individual asset sizes. For example, if you are building a website with a lot of images, put stricter limits to JS size.
 
@@ -280,7 +280,7 @@ When you try to build a great site, **set Lighthouse performance score budget to
 
 Ask yourself what level of interaction you expect on your site. If it's a news website, users' primary goal is to read content so you should focus on rendering quickly and keeping FCP low. Doggos.com visitors want to click on relevant links as soon as possible, so the top priority is low TTI.
 
-Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard. 
+Find out exactly what part of your audience browses on desktop vs. on mobile devices and prioritize accordingly. One way to figure this out is to check what your audience is doing on competitors' websites, through the [Chrome User Experience report](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) dashboard.
 
 <figure class="w-figure">
   <img src="./chrome-user-experience-report.png" alt="Device distribution data from Chrome User Experience report">

@@ -4,6 +4,7 @@ title: Enable text compression
 description: |
   Learn about the uses-text-compression audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - uses-text-compression
 ---
@@ -14,10 +15,7 @@ The Opportunities section of your Lighthouse report lists all text-based resourc
 that aren't compressed:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-text-compression.png" alt="Enable text compression">
-  <figcaption class="w-figcaption">
-    Enable text compression.
-  </figcaption>
+  <img class="w-screenshot" src="uses-text-compression.png" alt="A screenshot of the Lighthouse Enable text compression audit">
 </figure>
 
 ## How Lighthouse handles text compression
@@ -90,6 +88,6 @@ See [Use large request rows](https://developers.google.com/web/tools/chrome-devt
 See also [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
 
 
-## More information
+## Resources
 
-- [Enable text compression audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [Source code for **Enable text compression** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)

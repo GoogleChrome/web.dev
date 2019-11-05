@@ -45,8 +45,8 @@ It also means accommodating those needs if they change. To do this we need to
 leverage every part of the CSS toolbox and choose the right tool for the job. As
 Jen explains:
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
+<blockquote>
+  <p>
     It includes CSS Grid, but it’s not just about CSS Grid. It’s also about using
     Flexbox, and kind of rediscovering what Flexbox is actually intended to be for.
     Plus, it’s about using some floats sometimes, using things like CSS shapes or
@@ -55,7 +55,7 @@ Jen explains:
     whole system of layout, and how all these pieces fit together in a brand new
     way.
   </p>
-  <cite class="w-blockquote__cite">
+  <cite>
     <a href="http://www.zeldman.com/2018/05/02/transcript-intrinsic-web-design-with-jen-simmons-the-big-web-show/">Intrinsic web design with Jen Simmons</a>
   </cite>
 </blockquote>
@@ -126,7 +126,7 @@ intrinsic layout.**
     <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/home.jpg" alt="TenHundred store home page" class="screenshot">
   </picture>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank">Preview the final layout demo page</a>
+    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank" rel="noopener noreferrer">Preview the final layout demo page</a>
   </figcaption>
 </figure>
 

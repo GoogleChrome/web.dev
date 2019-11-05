@@ -27,7 +27,7 @@ The Lighthouse report that is generated will show you the fetching sequence of r
 
 <img class="w-screenshot" src="./lighthouse-audit-before-preload.png" alt="Webfonts are present in the critical request chain.">
 
-In the above audit the web fonts are part of the critical request chain and fetched last. The [**critical request chain**](https://developers.google.com/web/tools/lighthouse/audits/critical-request-chains) represents the order of resources that are prioritized and fetched by the browser. In this application, the web fonts (Pacfico and Pacifico-Bold) are defined using the [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) rule and are the last resource fetched by the browser in the critical request chain. Typically, webfonts are lazy loaded which means that they are not loaded until the critical resources are downloaded (CSS, JS).
+In the above audit the web fonts are part of the critical request chain and fetched last. The [**critical request chain**](/critical-request-chains) represents the order of resources that are prioritized and fetched by the browser. In this application, the web fonts (Pacfico and Pacifico-Bold) are defined using the [@font-face](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) rule and are the last resource fetched by the browser in the critical request chain. Typically, webfonts are lazy loaded which means that they are not loaded until the critical resources are downloaded (CSS, JS).
 
 Here is the sequence of the resources fetched in the application:
 
@@ -47,7 +47,7 @@ The `as="font" type="font/woff2"` attributes tell the browser to download this r
 
 The `crossorigin` attribute indicates whether the resource should be fetched with a CORS request as the font may come from a different domain. Without this attribute, the preloaded font is ignored by the browser.
 
-Since Pacifico-Bold is used in the page header, we added a preload tag to fetch it even sooner. It isn't important to preload the Pacifico.woff2 font because it styles the text that is below the fold. 
+Since Pacifico-Bold is used in the page header, we added a preload tag to fetch it even sooner. It isn't important to preload the Pacifico.woff2 font because it styles the text that is below the fold.
 
 Reload the application and run lighthouse again. Check the **Maximum critical path latency** section.
 

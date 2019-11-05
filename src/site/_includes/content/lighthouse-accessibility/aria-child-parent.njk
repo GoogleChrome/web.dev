@@ -1,0 +1,45 @@
+There are two ways to set up the required relationships
+between ARIA parent and child roles.
+
+### Option 1: Place the child elements within the parent in the DOM
+Placing elements with child roles within the parent role element
+in your HTML is usually the easiest and most maintainable solution.
+For example:
+
+```html
+<div role="tablist">
+	<button role="tab" aria-selected="true" aria-controls="tab-1-pane" active>
+		Tab 1
+	</button>
+	<button role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-2-pane">
+		Tab 2
+	</button>
+	<button role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-3-pane">
+		Tab 3
+	</button>
+</div>
+```
+
+### Option 2: Associate the child roles with the parent role using `aria-owns`
+If you can't place child role elements inside the parent role element,
+you can use the `aria-owns` attribute to associate them:
+
+```html/0
+<div role="tablist" aria-owns="tab-1 tab-2 tab-3"></div>
+…
+<button id="tab-1" role="tab" aria-selected="true" aria-controls="tab-1-pane" active>
+  Tab 1
+</button>
+<button id="tab-2" role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-2-pane">
+  Tab 2
+</button>
+<button id="tab-3" role="tab" aria-selected="false" tabindex="-1" aria-controls="tab-3-pane">
+  Tab 3
+</button>
+```
+
+{% Aside %}
+If an element with the `aria-owns` attribute contains DOM children,
+assistive technologies will announce the DOM children before the elements
+listed in `aria-owns`.
+{% endAside %}

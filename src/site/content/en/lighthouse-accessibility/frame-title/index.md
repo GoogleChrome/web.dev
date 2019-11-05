@@ -1,31 +1,34 @@
 ---
+title: "`<frame>` or `<iframe>` elements do not have a title"
 layout: post
-title: Ensure IFrame and frame elements contain a non-empty title attribute
 description: |
-  Learn about frame-title audit.
+  Learn how to make sure assistive technologies can announce frame content on
+  your web page correctly by giving all frame elements titles.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - frame-title
 ---
 
-Screen reader users rely on frame titles to describe the contents of frames.
-Lighthouse reports when any`<frame>` or `<iframe>` elements do not have a title:
+Users of screen readers and other assistive technologies rely on
+frame titles to describe the contents of frames.
+Navigating through frames and inline frames can quickly become difficult and confusing
+for assistive technology users if the frames are not marked
+with a title attribute.
+
+## How the Lighthouse frame title audit fails
+
+Lighthouse flags `<frame>` and `<iframe>` elements that don't have titles:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="frame-title.png" alt="Lighthouse audit showing frame or IFrame doesn't have a title element">
-  <figcaption class="w-figcaption">
-    Frame or IFrame doesn't have a title element.
-  </figcaption>
+  <img class="w-screenshot" src="frame-title.png" alt="Lighthouse audit showing frame or iframe doesn't have a title element">
 </figure>
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to fix this problem
+## How to add titles to frames and iframes
 
-To fix this problem,
-provide unique and descriptive `title` attributes for all `frame` and `iframe` elements.
-Screen reader users rely on a frame title to describe the contents of the frame.
-Navigating through frames and IFrames can quickly become difficult and confusing
-for users of this technology if the frames are not marked with a title attribute.
+Provide unique and descriptive `title` attributes for all `frame` and `iframe` elements.
 
 Additionally, best practice is to give the enclosed document a title element
 with content identical to the title attribute.
@@ -34,8 +37,6 @@ For example:
 ```html
 <iframe title="My Daily Marathon Tracker" src="https://www.mydailymarathontracker.com/"></iframe>
 ```
-
-Learn more in [Frames must have title attribute](https://dequeuniversity.com/rules/axe/3.3/frame-title).
 
 ## Tips for creating descriptive frame titles
 
@@ -46,13 +47,8 @@ Learn more in [Frames must have title attribute](https://dequeuniversity.com/rul
 Learn more in
 [Write descriptive titles, descriptions, and link text for every page](/write-descriptive-text).
 
-<!--
-## How this audit impacts overall Lighthouse score
+## Resources
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
+- [Source code for **`<frame>` or `<iframe>` elements do not have a title** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
 - [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)
-- [Ensure frames have titles audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/frame-title.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Frames must have title attribute (Deque University)](https://dequeuniversity.com/rules/axe/3.3/frame-title)

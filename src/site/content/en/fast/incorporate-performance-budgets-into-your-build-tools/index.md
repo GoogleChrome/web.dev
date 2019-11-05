@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Incorporate performance budgets into your build process
-author:
+authors:
   - mihajlija
 description: |
   The best way to keep an eye on your performance budget is to automate it. Find
@@ -158,7 +158,7 @@ If the scores for a pull request on GitHub fall below the threshold you've set, 
 <figure class="w-figure">
   <img class="screenshot" src="./lighthouse-check.png" alt="Lighthouse Bot check status on Github">
   <figcaption class="w-figcaption">
-    Lighthouse Bot check status on Github  
+    Lighthouse Bot check status on Github
   </figcaption>
 </figure>
 

@@ -4,6 +4,7 @@ title: Properly size images
 description: |
   Learn about the uses-responsive-images audit.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - uses-responsive-images
 ---
@@ -14,10 +15,7 @@ along with the potential savings in kilobytes (KB).
 Resize these images to save data and improve page load time:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-responsive-images.png" alt="Properly size images">
-  <figcaption class="w-figcaption">
-    Properly size images.
-  </figcaption>
+  <img class="w-screenshot" src="uses-responsive-images.png" alt="A screenshot of the Lighthouse Properly size images audit">
 </figure>
 
 
@@ -51,7 +49,7 @@ can help automate the process of converting an image into multiple formats.
 There are also image CDNs which let you generate multiple versions,
 either when you upload an image, or request it from your page.
 
-## More information
+## Resources
 
-- [Properly size images audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
+- [Source code for **Properly size images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)
 - [Serve images with correct dimensions](/serve-images-with-correct-dimensions)

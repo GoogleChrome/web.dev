@@ -170,7 +170,7 @@ following CSS can be written with the same registered property:
 button {
   --stop-color: red;
   background: linear-gradient(var(--stop-color), black);
-  transition: --stop-color: 1s;
+  transition: --stop-color 1s;
 }
 
 button:hover {

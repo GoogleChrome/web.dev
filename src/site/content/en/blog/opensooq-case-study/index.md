@@ -45,11 +45,11 @@ By adopting these best practices, the team was able to cut the average page load
   </figcaption>
 </figure>
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
+<blockquote>
+  <p>
     Over a quarter of our users access the OpenSooq PWA from low-mid networks, so reliability was essential for keeping those users engaged. Service workers and caching strategies helped us build the reliable user experience we needed, seamlessly.
   </p>
-  <cite class="w-blockquote__cite">
+  <cite>
     Amin Shoman, PWA Technical Manager, OpenSooq
   </cite>
 </blockquote>
@@ -73,11 +73,11 @@ After just a few weeks of effort, OpenSooq created a 23 KB, full-featured PWA th
 
 OpenSooq is now working on adding a [native install prompt](https://developers.google.com/web/fundamentals/app-install-banners/native) and integrating the PWA with [accelerated mobile pages (AMP)](https://amp.dev/). These enhancements will further speed up page loads and make the transition to the native app as seamless as possible. By building on the foundation of their initial development effort, the OpenSooq team will continue giving their users the best possible experience.
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
+<blockquote>
+  <p>
     The importance of developing our PWA was clear to both the leadership and technical teams. After building a modern web app and making it performant, we're excited to see the business impact on our 2.5 month investment.
   </p>
-  <cite class="w-blockquote__cite">
+  <cite>
     Ramzi Alqrainy, Chief Technology Officer, OpenSooq
   </cite>
 </blockquote>

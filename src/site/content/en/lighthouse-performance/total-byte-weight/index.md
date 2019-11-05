@@ -2,57 +2,61 @@
 layout: post
 title: Avoid enormous network payloads
 description: |
-  Learn about the total-byte-weight audit.
+  Learn how to improve your web page's load time by reducing the total file
+  size of resources you serve to your users.
 date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - total-byte-weight
 ---
 
-Large network payloads cost users real money and are highly correlated with long load times.
-Lighthouse reports the total byte size in killobytes of all network resources
-in the Diagnostics section:
+Large network payloads are highly correlated with long load times.
+They also cost users money;
+for example, users may have to pay for more cellular data.
+So, reducing the total size of your page's network requests is good
+for your users' experience on your site _and_ their wallets.
+
+{% Aside %}
+To see what accessing your site costs around the world,
+check out WebPageTest's [What Does My Site Cost?](https://whatdoesmysitecost.com/)
+You can adjust the results to factor in purchasing power.
+{% endAside %}
+
+## How the Lighthouse network payload audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+shows the total size in kilobytes of all resources requested by your page.
+The largest requests are presented first:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="total-byte-weight.png" alt="Lighthouse: Avoid enormous network payloads">
-  <figcaption class="w-figcaption">
-    Avoid enormous network payloads.
-  </figcaption>
+  <img class="w-screenshot" src="total-byte-weight.png" alt="A screenshot of the Lighthouse Avoid enormous network payloads audit">
 </figure>
 
+Based on [HTTP Archive data](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal),
+the median network payload is between 1,700 and 1,900&nbsp;KB.
+To help surface the highest payloads,
+Lighthouse flags pages whose total network requests exceed 5,000&nbsp;KB.
 
-## Understand how network payload affects performance and costs
+{% include 'content/lighthouse-performance/scoring.njk' %}
 
-Lighthouse sums up the total byte size of all resources that the page requested.
-Click View Details to see your page's requests.
-The largest requests are presented first.
+## How to reduce payload size
 
+Aim to keep your total byte size below 1,600&nbsp;KB.
+This target is based on the amount of data that can be
+theoretically downloaded on a 3G connection
+while still achieving a [Time to Interactive](/interactive) of 10&nbsp;seconds or less.
 
-Aim for total byte size to stay 1600 KB;
-The target score of 1600KB is based on what a page can theoretically download on a 3G connection,
-while still achieving a time-to-interactive of 10 seconds or less.
-See [googlechrome/lighthouse/pull/1759](https://github.com/GoogleChrome/lighthouse/pull/1759).
-
-An average network payload is between 4000 and 5000 KB.
-The audit fails, once your network payload exceeds 5000 KB.
-See [Highest Correlation To Load Time](https://httparchive.org/reports/state-of-the-web?start=latest#onLoad)
-to view the correlation between requests and load time.
-
-Reducing the total size of network requests speeds up page load time and
-saves your users money that they would have spent on cellular data.
-See [What Does My Site Cost](https://whatdoesmysitecost.com/) to calculate the cost of viewing your site around the world.
-You can adjust the results to factor in purchasing power.
-
-## Strategies for reducing payload size
-
-Here are some strategies for reducing payload size:
-
-- Defer requests until they're needed. See [The PRPL Pattern](/apply-instant-loading-with-prpl) for one possible approach.
+Here are some ways to keep payload size down:
+- Defer requests until they're needed.
+  See the [PRPL Pattern](/apply-instant-loading-with-prpl) for one possible approach.
 - Optimize requests to be as small as possible. Possible techniques include:
   - [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
-  - [Use WebP instead of JPEG or PNG](/serve-images-webp).
+  - [Use WebP instead of JPEG or PNG for your images](/serve-images-webp).
   - [Set the compression level of JPEG images to 85](/use-imagemin-to-compress-images).
-- Cache requests so that the page doesn't re-download the resources on repeat visits (see [The options in your caching toolbox](/reliable#the-options-in-your-caching-toolbox)).
+- Cache requests so that the page doesn't re-download the resources
+  on repeat visits. (See the [Network reliability landing page](/reliable)
+  to learn how caching works and how to implement it.)
 
-## More information
+## Resources
 
-- [Avoid enormous network payloads audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)
+[Source code for **Avoid enormous network payloads** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/total-byte-weight.js)

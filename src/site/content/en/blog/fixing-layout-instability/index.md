@@ -147,7 +147,7 @@ Here's what the placeholders look like while the JSON data is loading:
   <figcaption class="w-figcaption">The data table is rendered with placeholder data.</figcaption>
 </figure>
 
-Addressing the web font issue is much simpler. Because the site is using Google Fonts, we just need to pass in the `display=swap` property in the CSS request. That's all. The Fonts API will add the `display: swap` style in the font declaration, enabling the browser to render text in a fallback font immediately. Here's the corresponding markup with the fix included:
+Addressing the web font issue is much simpler. Because the site is using Google Fonts, we just need to pass in the `display=swap` property in the CSS request. That's all. The Fonts API will add the `font-display: swap` style in the font declaration, enabling the browser to render text in a fallback font immediately. Here's the corresponding markup with the fix included:
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Chivo:900&display=swap" rel="stylesheet">

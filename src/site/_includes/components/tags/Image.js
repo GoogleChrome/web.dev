@@ -47,12 +47,11 @@
  *
  */
 
-const path = require('path');
-const {oneLine} = require('common-tags');
-const {ifDefined} = require('../helpers');
-const md = require('markdown-it')();
-const stripLanguage = require('../../../_filters/strip-language');
-const imageCdn = require('../../../_data/site').imageCdn;
+const {oneLine} = require("common-tags");
+const {ifDefined} = require("../helpers");
+const md = require("markdown-it")();
+const stripLanguage = require("../../../_filters/strip-language");
+const getImagePath = require("../../../_utils/get-image-path");
 
 /* eslint-disable no-invalid-this, max-len */
 
@@ -61,30 +60,13 @@ const imageCdn = require('../../../_data/site').imageCdn;
 // -----------------------------------------------------------------------------
 
 /**
- * Takes a path to an image and converts it to an image CDN path if we're in
- * a production environment.
- * @param {!string} src A path to an image asset.
- * @param {!Object} ctx An eleventy context object for the current page.
- * @return {string} An image path. May be converted to an image CDN path if
- * it's a production environment.
- */
-function getImagePath(src, ctx) {
-  let imagePath = src;
-  if (process.env.ELEVENTY_ENV === 'prod') {
-    imagePath = path.join(stripLanguage(ctx.page.url), src);
-    imagePath = new URL(imagePath, imageCdn).href;
-  }
-  return imagePath;
-}
-
-/**
  * Render an image element as an HTML string.
  * @param {!{src: string, alt: string, maxWidth: number}} args
  * @param {!Object} ctx An eleventy context object.
  * @return {string}
  */
 function renderImage({src, alt, maxWidth}, ctx) {
-  const imagePath = getImagePath(src, ctx);
+  const imagePath = getImagePath(src, stripLanguage(ctx.page.url));
   let style;
   if (maxWidth) {
     style = `max-width: ${maxWidth};`;
@@ -94,7 +76,7 @@ function renderImage({src, alt, maxWidth}, ctx) {
     <img
       src="${imagePath}"
       alt="${alt}"
-      ${ifDefined('style', style)}
+      ${ifDefined("style", style)}
     />
   `;
 }
@@ -105,8 +87,8 @@ function renderImage({src, alt, maxWidth}, ctx) {
  * @return {function}
  */
 const Image = (nunjucksEngine) => {
-  return new function() {
-    this.tags = ['Image'];
+  return new (function() {
+    this.tags = ["Image"];
 
     this.parse = function(parser, nodes, lexer) {
       const tok = parser.nextToken();
@@ -114,16 +96,14 @@ const Image = (nunjucksEngine) => {
       const args = parser.parseSignature(null, true);
       parser.advanceAfterBlockEnd(tok.value);
 
-      return new nodes.CallExtensionAsync(this, 'run', args);
+      return new nodes.CallExtensionAsync(this, "run", args);
     };
 
     this.run = function({ctx}, args, callback) {
-      const ret = new nunjucksEngine.runtime.SafeString(
-        renderImage(args, ctx)
-      );
+      const ret = new nunjucksEngine.runtime.SafeString(renderImage(args, ctx));
       callback(null, ret);
     };
-  }();
+  })();
 };
 
 // -----------------------------------------------------------------------------
@@ -139,13 +119,15 @@ const Image = (nunjucksEngine) => {
  */
 function renderFigCaption(caption, figCaptionClasses) {
   if (!caption) {
-    return '';
+    return "";
   }
 
   // Needs to be one long line, else we get white space inside of the
   // figcaption element.
   return oneLine`
-    <figcaption class="${figCaptionClasses.join(' ')}">${md.renderInline(caption.trim())}</figcaption>
+    <figcaption class="${figCaptionClasses.join(" ")}">
+      ${md.renderInline(caption.trim())}
+    </figcaption>
   `;
 }
 
@@ -157,21 +139,21 @@ function renderFigCaption(caption, figCaptionClasses) {
  * @return {string}
  */
 function renderFigure(image, {type}, caption) {
-  const figClasses = ['w-figure'];
-  const figCaptionClasses = ['w-figcaption'];
+  const figClasses = ["w-figure"];
+  const figCaptionClasses = ["w-figcaption"];
 
   if (type) {
-    type.split(' ').forEach((entry) => {
+    type.split(" ").forEach((entry) => {
       figClasses.push(`w-figure--${entry}`);
       // w-figure--fulbleed is the only modifier class we use on figcaption.
-      if (entry === 'fullbleed') {
+      if (entry === "fullbleed") {
         figCaptionClasses.push(`w-figure--${entry}`);
       }
     });
   }
 
   return oneLine`
-    <figure class="${figClasses.join(' ')}">
+    <figure class="${figClasses.join(" ")}">
       ${image}
       ${renderFigCaption(caption, figCaptionClasses)}
     </figure>
@@ -184,27 +166,27 @@ function renderFigure(image, {type}, caption) {
  * @return {function}
  */
 const Figure = (nunjucksEngine) => {
-  return new function() {
-    this.tags = ['Figure'];
+  return new (function() {
+    this.tags = ["Figure"];
 
     this.parse = function(parser, nodes, lexer) {
       const tok = parser.nextToken();
 
       const args = parser.parseSignature(null, true);
       parser.advanceAfterBlockEnd(tok.value);
-      const caption = parser.parseUntilBlocks('endFigure');
+      const caption = parser.parseUntilBlocks("endFigure");
       parser.advanceAfterBlockEnd();
 
-      return new nodes.CallExtensionAsync(this, 'run', args, [caption]);
+      return new nodes.CallExtensionAsync(this, "run", args, [caption]);
     };
 
     this.run = function({ctx}, args, caption, callback) {
       const ret = new nunjucksEngine.runtime.SafeString(
-        renderFigure(renderImage(args, ctx), args, caption())
+        renderFigure(renderImage(args, ctx), args, caption()),
       );
       callback(null, ret);
     };
-  }();
+  })();
 };
 
 module.exports = {Image, Figure};

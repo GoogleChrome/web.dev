@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Workbox your high-level service worker toolkit
+title: "Workbox: your high-level service worker toolkit"
 authors:
   - jeffposnick
 date: 2018-11-05

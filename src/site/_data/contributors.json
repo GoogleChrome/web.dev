@@ -1518,5 +1518,56 @@
       },
       "twitter": "yoavweiss",
       "github": "yoavweiss"
+    },
+    "jimper": {
+      "name": {
+        "given": "Jonathon",
+        "family": "Imperiosi"
+      },
+      "github": "jimper",
+      "org": {
+        "name": "Google",
+        "unit": "Ads Developer Relations"
+      },
+      "country": "JP"
+    },
+    "robhazan": {
+      "name": {
+        "given": "Rob",
+        "family": "Hazan"
+      },
+      "org": {
+        "name": "Google",
+        "unit": "Product Manager"
+      }
+    },
+    "gernberg": {
+      "name": {
+        "given": "Gustav",
+        "family": "Ernberg von Heijne"
+      },
+      "github": "gernberg",
+      "country": "SE",
+      "org": {
+        "name": "Google",
+        "unit": "Technical Solutions Consultant"
+      }
+    },
+    "thebengeu": {
+      "name": {
+        "given": "Beng",
+        "family": "Eu"
+      },
+      "twitter": "thebengeu",
+      "github": "thebengeu",
+      "glitch": "thebengeu",
+      "org": {
+        "name": "Google",
+        "unit": "AdSpeed"
+      },
+      "country": "US",
+      "description": {
+        "en": "AdSpeed tech lead at Google"
+      }
     }
 }

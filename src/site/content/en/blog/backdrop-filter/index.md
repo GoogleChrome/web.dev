@@ -22,7 +22,7 @@ Translucence, blurring, and other effects are useful ways of creating depth whil
 <figure class="w-figure w-figure--center">
   <img src="weather_app.jpg" alt="An example of a frosted glass effect.">
   <figcaption class="w-figcaption">
-    An example of a frosted glass effect. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank">Source</a>.
+    An example of a frosted glass effect. <a href="https://dribbble.com/shots/733714-Weather-App?list=tags&tag=android" target="_blank" rel="noopener noreferrer">Source</a>.
   </figcaption>
 </figure>
 

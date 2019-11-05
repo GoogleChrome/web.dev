@@ -16,7 +16,7 @@ Use lossless images whenever possible. They'll be optimized automatically at bui
 Make sure images are [accessible](/handbook/inclusion-and-accessibility#use-inclusive-images).
 
 ## Hero images
-Hero images should be 1600 px x 800 px.
+Hero images should be 3200 px x 960 px.
 
 Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
 
@@ -72,17 +72,15 @@ To keep an image from growing beyond a specified size, add the `w-figure--center
 
 To place an image inline with text, add the `w-figure--inline-left` or `w-figure--inline-right` class to the `figure` element, depending on what alignment you want:
 
-<blockquote>
-  <figure class="w-figure w-figure--inline-left">
-    <img class="w-screenshot" src="./image-inline.png" alt="A diagram of the interactions between a client, a service worker, and the server." style="max-width: 200px;">
-    <figcaption class="w-figcaption">
-      A left-aligned inline image.
-    </figcaption>
-  </figure>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at quam sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at quam sem.
-  </p>
-</blockquote>
+<figure class="w-figure w-figure--inline-left">
+  <img class="w-screenshot" src="./image-inline.png" alt="A diagram of the interactions between a client, a service worker, and the server." style="max-width: 200px;">
+  <figcaption class="w-figcaption">
+    A left-aligned inline image.
+  </figcaption>
+</figure>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at quam sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at quam sem.
+</p>
 
 To include a part of a screenshot, add the `w-screenshot` class to the `img` element:
 

@@ -1,0 +1,54 @@
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+.w-cds-promo {
+  margin: 0 auto;
+  max-width: 512px;
+  padding: 72px 24px 0;
+
+  @include bp(md) {
+    max-width: 960px;
+    padding: 96px 32px 0;
+  }
+}
+
+.w-cds-promo__grid {
+  align-items: center;
+  display: grid;
+  // sass-lint:disable-all
+  // scss-lint:disable all
+  gap: 2rem;
+  // scss-lint:enable all
+  // sass-lint:enable-all
+  grid-template-columns: 1fr;
+
+  @include bp(md) {
+    // sass-lint:disable-all
+    // scss-lint:disable all
+    gap: 3rem;
+    // scss-lint:enable all
+    // sass-lint:enable-all
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.w-cds-promo__video {
+  box-shadow: 0 2px 3px 0 rgba($GREY_800, .3), 0 6px 10px 4px rgba($GREY_800, .15);
+}
+
+.w-cds-promo p {
+  text-align: center;
+
+  @include bp(md) {
+    text-align: left;
+    @include w-headline--two-small();
+  }
+}
+
+.w-cds-promo p:first-of-type {
+  margin-top: 0;
+}
+
+.w-cds-promo p:last-of-type {
+  margin-bottom: 0;
+}

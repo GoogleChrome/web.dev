@@ -25,7 +25,7 @@ $CODE_COLORS: (
 );
 
 code {
-  font-size: .9em;
+  font-size: 1rem;
   font-weight: 400; // DevSite override
   margin: 0 .25em;
   padding: .125em .25em;
@@ -49,7 +49,7 @@ pre {
 // Code block
 pre,
 pre[class*='language-'] {
-  font: 1em / 1.5em $CODE_FONT;
+  font: 1rem / 1.5em $CODE_FONT;
   margin: 32px 0;
   overflow: auto;
   padding: 16px;
@@ -76,7 +76,13 @@ h3 code,
 h4 code,
 h5 code,
 h6 code {
+  background: transparent;
   border: 0;
+  color: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
 // Github-like theme for Prism.js

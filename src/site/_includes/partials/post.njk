@@ -12,22 +12,18 @@
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions-controller page="post"></web-actions-controller>
-  {% Actions %}
-    {% ShareAction title, page.url | stripLanguage, authors | expandContributors %}
-    {% SubscribeAction %}
-  {% endActions %}
+  <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
 
   <div class="w-layout-container--narrow w-post-breadcrumbs">
     {% Breadcrumbs path %}
   </div>
 
-  <main class="w-layout-container--narrow w-post-content">
+  <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
       <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
       {% if subhead %}
         <p class="w-article-header__subhead w-mb--non">
-          {{ subhead }}
+          {{ subhead | md | safe }}
         </p>
       {% endif %}
 
@@ -51,6 +47,13 @@
         </div>
       {% endif %}
     </header>
+
+    {% if draft and site.env === 'dev' %}
+      <div class="w-banner w-banner--warning w-banner--body">
+        🚨 This post is a draft! 🚨
+      </div>
+    {% endif %}
+
     {{ content | safe }}
 
     {# Hide tags for now. #} {#
@@ -81,7 +84,7 @@
     {% if codelabs %}
       {% CodelabsCallout codelabs %}
     {% endif %}
-  </main>
+  </div>
 
   {% if path.slug === 'blog' %}
     {# Find next blog post #}

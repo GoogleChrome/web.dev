@@ -1,34 +1,36 @@
 ---
 layout: post
-title: Ensure img elements have alternate text or a role of none or presentation
+title: "Image elements do not have `[alt]` attributes"
 description: |
-  Learn about image-alt audit.
+  Learn how to make sure assistive technology users can access your web page's
+  images by providing alternative text.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - image-alt
 ---
 
 Informative elements should aim for short, descriptive alternate text.
 Decorative elements can be ignored with an empty alt attribute.
-Lighthouse reports when any `<img>` elements do not have `alt` attributes:
+
+## How the Lighthouse image alternative text audit fails
+
+Lighthouse flags `<img>` elements that don't have `alt` attributes:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="image-alt.png" alt="Lighthouse audit showing <img> elements do not have alt attributes">
-  <figcaption class="w-figcaption">
-    <code>&lt;img></code> elements do not have <code>alt</code> attributes.
-  </figcaption>
+  <img class="w-screenshot" src="image-alt.png" alt="Lighthouse audit showing <img> elements do not have alt attributes">
 </figure>
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to fix this problem
+## How to add alternative text to images
 
-To fix this problem,
-provide `alt` attributes for every `<img>` element.
+Provide an `alt` attribute for every `<img>` element.
 If the image fails to load,
 the `alt` text is used as a placeholder
-so users have a sense of what the image was trying to convey
-(see also
-[Include text alternatives for images and objects](/labels-and-text-alternatives#include-text-alternatives-for-images-and-objects)).
+so users have a sense of what the image was trying to convey.
+(See also
+[Include text alternatives for images and objects](/labels-and-text-alternatives#include-text-alternatives-for-images-and-objects).)
 
 Most images should have short, descriptive text:
 
@@ -43,15 +45,12 @@ give it an empty `alt=""` attribute to remove it from the accessibility tree:
 <img src="background.png" alt="">
 ```
 
-Learn more in [Images must have alternate text](https://dequeuniversity.com/rules/axe/3.3/image-alt?application=lighthouse).
-
 {% Aside 'note' %}
 You can also use ARIA labels to describe your images, for example,
 `<img aria-label="Audits set-up in Chrome DevTools" src="...">`
 See also
 [Using the aria-label attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) and
-[Using the aria-labelledby attribute
-](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
+[Using the aria-labelledby attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute).
 {% endAside %}
 
 ## Tips for writing effective `alt` text
@@ -63,12 +62,7 @@ See also
 Learn more in
 [WebAIM's guide to Alternative Text](https://webaim.org/techniques/alttext/).
 
-<!--
-## How this audit impacts overall Lighthouse score
+## Resources
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
-
-- [Ensure images have `alt` text audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+- [Source code for **Image elements do not have `[alt]` attributes** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/image-alt.js)
+- [Images must have alternate text (Deque University)](https://dequeuniversity.com/rules/axe/3.3/image-alt)

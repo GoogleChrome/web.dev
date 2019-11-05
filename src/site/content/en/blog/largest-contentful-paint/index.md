@@ -31,9 +31,9 @@ only capture the very beginning of the loading experience. If a page shows a
 splash screen or displays a loading indicator, this moment is not very relevant
 to the user.
 
-In the past we've recommended performance metrics like [First Meaningful Paint
-(FMP)](https://web.dev/first-meaningful-paint/) and [Speed Index
-(SI)](https://web.dev/speed-index/) (both available in Lighthouse) to help
+In the past we've recommended performance metrics like
+[First Meaningful Paint (FMP)](/first-meaningful-paint/) and
+[Speed Index (SI)](/speed-index/) (both available in Lighthouse) to help
 capture more of the loading experience after the initial paint, but these
 metrics are complex, hard to explain, and often wrong&mdash;meaning they still do
 not identify when the main content of the page has loaded.
@@ -303,11 +303,11 @@ execution time can also be a factor in LCP.
 Here is some guidance you can reference to optimize all of these factors:
 
 * [Apply instant loading with the PRPL
-  pattern](https://web.dev/apply-instant-loading-with-prpl)
+  pattern](/apply-instant-loading-with-prpl)
 * [Optimizing the Critical Rendering
   Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
-* [Optimize your CSS](https://web.dev/fast#optimize-your-css)
-* [Optimize your Images](https://web.dev/fast#optimize-your-images)
-* [Optimize web Fonts](https://web.dev/fast#optimize-web-fonts)
-* [Optimize your JavaScript](https://web.dev/fast#optimize-your-javascript) (for
+* [Optimize your CSS](/fast#optimize-your-css)
+* [Optimize your Images](/fast#optimize-your-images)
+* [Optimize web Fonts](/fast#optimize-web-fonts)
+* [Optimize your JavaScript](/fast#optimize-your-javascript) (for
   client-rendered sites)
