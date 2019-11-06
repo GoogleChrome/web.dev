@@ -235,7 +235,7 @@ As already stated, periodic background sync requires a service worker. Retrieve
 a `PeriodicSyncManager` using `ServiceWorkerRegistration.periodicSync` and call
 `register()` on it. Registering requires both a tag and a minimum
 synchronization interval (`minInterval`). The tag identifies the registered sync
-so that multiple sync can be registered. In the example below, the tag name is
+so that multiple syncs can be registered. In the example below, the tag name is
 `'content-sync'` and the `minInterval` is one day.
 
 ```js/3-5
