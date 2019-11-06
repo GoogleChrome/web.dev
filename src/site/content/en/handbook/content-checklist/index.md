@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content checklist
 date: 2019-06-26
-updated: 2019-10-10
+updated: 2019-11-06
 description: |
   A checklist for web.dev content reviews.
 ---
