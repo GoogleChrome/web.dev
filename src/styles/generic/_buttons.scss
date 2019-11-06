@@ -8,8 +8,5 @@
 
 button {
   min-width: 36px;
-}
-
-button + button {
-  margin-left: 16px;
+  margin: 16px 16px 0 0;
 }

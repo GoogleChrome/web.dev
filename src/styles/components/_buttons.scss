@@ -26,7 +26,7 @@
   font-family: $PRIMARY_FONT;
   font-size: 1em;
   font-weight: 500;
-  height: 56px;
+  min-height: 56px;
   justify-content: center;
   letter-spacing: 1px;
   line-height: 36px;
@@ -37,12 +37,16 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
-  white-space: nowrap;
+  vertical-align: middle;
   @include font_smoothing(
     $FONT_SMOOTHING_MOZ,
     $FONT_SMOOTHING_WEBKIT,
     $FONT_SMOOTHING_RENDERING
   );
+
+  @include bp(md) {
+    white-space: nowrap;
+  }
 }
 
 // Firefox...why are you like this...
