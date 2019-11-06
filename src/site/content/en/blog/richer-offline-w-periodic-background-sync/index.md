@@ -280,7 +280,7 @@ updates.
 
 To respond to a periodic background sync event add a `periodicsync` event
 handler to your service worker. The `event` object passed to it will contain a
-`tag` parameter matching the value used during registration. For example a
+`tag` parameter matching the value used during registration. For example if a
 periodic background sync was registered with the name `'content-sync'`, then
 `event.tag` will be `'content-sync'`.
 
