@@ -9,7 +9,7 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them an ideal solution for use cases like calendar apps.
 date: 2019-10-24
-updated: 2019-11-04
+updated: 2019-11-05
 draft: true
 tags:
   - post
@@ -147,22 +147,27 @@ const cancelScheduledNotification = async (tag) => {
 
 ### Debugging
 
-You can use Chrome DevTools' Notifications debug service on the Application tab. To start debugging,
-press the small "Start recording events" button in the top-left corner (the circle), or hit
-'Command/Control' + 'E'. This allows you to both examine scheduled notifications, as well as see
-displayed and closed notifications. The screenshots below show this in action.
+You can use the [Chrome DevTools Notifications pane][devtools] to debug notifications.
+To start debugging, press **Start recording events** ![Start recording events](record.png) or
+<kbd>Control</kbd>+<kbd>E</kbd> (<kbd>Command</kbd>+<kbd>E</kbd> on Mac). Chrome DevTools
+records all notification events, including scheduled, displayed, and closed notifications,
+for 3 days, even when DevTools is closed.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="devtools-scheduled.png" alt="">
+  <img src="devtools-scheduled.png" 
+       alt="A scheduled notification event was logged to the Notifications pane of Chrome
+            DevTools, which is located in the Application panel.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Chrome DevTools showing the "scheduled" state of a notification.
+    A scheduled notification.
   </figcaption>
 </figure>
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="devtools-displayed.png" alt="">
+  <img src="devtools-displayed.png" 
+       alt="A displayed notification event was logged to the Notifications pane of Chrome
+            DevTools.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 2 — Chrome DevTools showing the "displayed" state of a previously scheduled notification.
+    A displayed notification.
   </figcaption>
 </figure>
 
@@ -173,15 +178,15 @@ notifications, list scheduled notifications, and cancel them. The source code is
 [Glitch][demo-source].
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="demo.png" alt="">
+  <img src="demo.png" alt="A screenshot of the Notification Triggers demo web app.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 3 — Notification Triggers <a href="https://notification-triggers.glitch.me/">demo</a>.
+    The Notification Triggers <a href="https://notification-triggers.glitch.me/">demo</a>.
   </figcaption>
 </figure>
 
 ## Security and permissions
 
-We've designed and implemented the Notification Triggers API using the core principles defined in
+The Chrome team has designed and implemented the Notification Triggers API using the core principles defined in
 [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control,
 transparency, and ergonomics. Because this API requires service workers,
 it also requires a secure context.
@@ -210,7 +215,7 @@ preserve battery.
 
 ## Feedback {: #feedback }
 
-We want to hear about your experiences with Notification Triggers.
+The Chrome team wants to hear about your experiences with Notification Triggers.
 
 ### Tell us about the API design
 
@@ -257,3 +262,4 @@ Richard and Peter.
 [explainer]: https://github.com/beverloo/notification-triggers/blob/master/README.md
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [ot]: https://developers.chrome.com/origintrials/
+[devtools]: https://developers.google.com/web/updates/2019/07/devtools#backgroundservices
