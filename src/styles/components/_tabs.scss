@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../tools/mixins';
 
 .w-tabset {
   border-bottom: 1px solid $GREY_300;
@@ -8,15 +9,12 @@
 }
 
 .w-tabset__tab {
-  border-radius: 0;
-  box-shadow: none;
+  @include base-button();
   color: $BLACK;
   flex: 1 0 auto;
   height: 48px;
-  justify-content: center;
   margin: 0;
   opacity: .6;
-  position: relative;
 }
 
 .w-tabset__tab:hover,

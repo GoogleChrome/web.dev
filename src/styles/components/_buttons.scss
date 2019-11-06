@@ -15,34 +15,10 @@
 // but since we're using all: initial, we need to make things
 // initially consistent.
 .w-button {
-  align-items: center;
-  background: transparent;
-  border: 0;
-  border-radius: 3px;
-  box-shadow: none; // DevSite override
-  color: $WEB_PRIMARY_COLOR;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: $PRIMARY_FONT;
-  font-size: 1em;
-  font-weight: 500;
-  height: 56px;
-  justify-content: center;
-  letter-spacing: 1px;
-  line-height: 36px;
-  outline: 0;
+  @include base-button();
+  border-radius: $GLOBAL_RADIUS;
   overflow: hidden;
-  padding: 0 16px;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
   white-space: nowrap;
-  @include font_smoothing(
-    $FONT_SMOOTHING_MOZ,
-    $FONT_SMOOTHING_WEBKIT,
-    $FONT_SMOOTHING_RENDERING
-  );
 }
 
 // Firefox...why are you like this...
