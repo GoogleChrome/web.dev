@@ -219,7 +219,7 @@ continues.
 ```js
 function onXRFrame(hrTime, xrFrame) {
   let xrSession = xrFrame.session;
-  session.requestAnimationFrame(onXRFrame);
+  xrSession.requestAnimationFrame(onXRFrame);
   // Render a frame.
 }
 ```
@@ -233,6 +233,11 @@ device poses are defined as an `XRRigidTransform`, which consists of a position
 vector and an orientation quaternion. I get the viewer's pose by calling
 `XRFrame.getViewerPose()` on the current animation frame. I pass it the
 reference space I acquired when I set up the session.
+
+Next, I test whether an `XRViewerPose` was returned. If something went wrong,
+I can't render the frame. But as stated earlier, I already called
+`XRSession.requestAnimationFrame()` in case something goes wrong. If the system
+can't recover, it will end the session and call the `end` event handler.
 
 ```js/3-6
 function onXRFrame(hrTime, xrFrame) {
