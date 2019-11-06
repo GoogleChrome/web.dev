@@ -45,6 +45,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Are any images or videos included that don't directly relate to ideas in the text?
 1. Are [image captions](/handbook/use-media/#image-captions) correctly formatted?
 1. Do all images have [alt text](/image-alt)?
+1. (Blog only) If the post has a hero image, does the hero image look good on web.dev/blog?
 
 ## Code
 1. Are code blocks and sample apps as simple as possible while still conveying the core concept?
