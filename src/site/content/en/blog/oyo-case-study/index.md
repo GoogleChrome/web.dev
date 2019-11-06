@@ -129,8 +129,8 @@ Here's what the OYO team did:
 And here's the result:
 <figure class="w-figure w-figure--center">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite-orig.webm" type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite-orig.mp4" type="video/mp4; codecs=h264">
+    <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">
   </video>
  <figcaption class="w-figcaption">
     OYO Lite in action.
