@@ -9,6 +9,10 @@ date: 2019-10-22
 draft: true
 ---
 
+## What will you learn?
+
+In this post you'll learn how routing in Next.js works, how it's optimized for speed, and how to customize it to best fit your needs.
+
 ## The `<Link>` component
 
 In [Next.js](https://nextjs.org/), you don't need to set up routing manually.
@@ -76,8 +80,7 @@ Next.js only *fetches* the JavaScript; it doesn't execute it. That way, it's not
 downloading any additional content that the prefetched page might request until you visit
 the link.
 
-{% Aside 'caution' %} Because prefetching depends on the browsing conditions,
-it's enabled only in optimized production builds. To switch to development mode,
+{% Aside 'caution' %} Glitch examples are running in production mode because prefetching depends on the browsing conditions and it's enabled only in optimized production builds. To switch to development mode,
 check the `README.md` in Glitch examples. {% endAside %}
 
 {% Aside %} Because `<link rel="preload">` requests resources with high
