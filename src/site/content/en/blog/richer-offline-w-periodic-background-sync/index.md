@@ -201,7 +201,7 @@ connectivity state.
 
 ### When should it be used?
 
-When your service worker wakes up to handle a `periodicSync` event, you have the
+When your service worker wakes up to handle a `periodicsync` event, you have the
 _opportunity_ to request data, but not the _obligation_ to do so. When handling
 the event you should take network conditions and available storage into
 consideration and download different amounts of data in response. You can use
