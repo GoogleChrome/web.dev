@@ -171,7 +171,7 @@ extends the lifetime of a web app's logic to run at regular periods for what
 might be a few minutes at a time.
 
 If the browser allowed this to occur frequently and without restrictions, it
-could result in so me privacy concerns. Here's how Chrome has addressed this
+could result in some privacy concerns. Here's how Chrome has addressed this
 risk for periodic background sync:
 
 * The background sync activity only occurs on a network that the device has
