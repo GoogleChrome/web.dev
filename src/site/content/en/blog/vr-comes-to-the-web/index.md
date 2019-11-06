@@ -242,7 +242,7 @@ can't recover, it will end the session and call the `end` event handler.
 ```js/3-6
 function onXRFrame(hrTime, xrFrame) {
   let xrSession = xrFrame.session;
-  session.requestAnimationFrame(onXRFrame);
+  xrSession.requestAnimationFrame(onXRFrame);
   let xrViewerPose = xrFrame.getViewerPose(xrRefSpace);
   if (xrViewerPose) {
     // Render based on the pose.
@@ -273,7 +273,7 @@ such a lengthy subject it will be covered in a later article.
 ```js/8
 function onXRFrame(hrTime, xrFrame) {
   let xrSession = xrFrame.session;
-  session.requestAnimationFrame(onXRFrame);
+  xrSession.requestAnimationFrame(onXRFrame);
   let xrViewerPose = xrFrame.getViewerPose(xrRefSpace);
   if (xrViewerPose) {
     let glLayer = xrSession.renderState.baseLayer;
