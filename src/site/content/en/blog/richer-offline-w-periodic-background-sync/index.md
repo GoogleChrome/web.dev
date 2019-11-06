@@ -1,7 +1,7 @@
 ---
 title: Richer offline experiences with periodic background sync
 subhead:
-  Sync your apps data in the background for a more native-like experience.
+  Sync your app's data in the background for a more native-like experience.
 authors:
   - jeffposnick
   - joemedley
