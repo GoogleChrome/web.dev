@@ -37,6 +37,7 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
+  vertical-align: middle;
   white-space: nowrap;
   @include font_smoothing(
     $FONT_SMOOTHING_MOZ,
