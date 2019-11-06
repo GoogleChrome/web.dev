@@ -123,9 +123,9 @@ Before using it, make sure that:
 
 Periodic background sync lets you show fresh content when a progessive web app
 or service worker-backed page is launched. It does this by downloading data in
-the background when the app or page is not being used. Without it, the app's
-content will refresh after launch, leading to content changing while the user is
-viewing it. Worse yet, the app may only show a content spinner.
+the background when the app or page is not being used. This prevents the app's
+content from refreshing after launch while it's being viewed. Better yet, it
+prevents the app from showing a content spinner before refreshing.
 
 Without periodic background sync, web apps must use alternative methods to
 download data. A common example is using a push notification to wake a service
@@ -153,10 +153,10 @@ in the context of a regular tab in Chrome.
 Furthermore, since we don't want unused or seldom used web apps to gratuitously
 consume battery or data, we designed periodic background sync such that
 developers will have to earn it by providing value to their users. Concretely,
-we are using a site engagement score to determine if and how often periodic
-background syncs can happen for a given web app. In other words, a
-`periodicsync` event won't be fired at all unless the engagement score is
-greater than zero, and its value affects the frequency at which the
+we are using a [site engagement score](chrome://site-engagement/) to determine
+if and how often periodic background syncs can happen for a given web app. In
+other words, a `periodicsync` event won't be fired at all unless the engagement
+score is greater than zero, and its value affects the frequency at which the
 `periodicsync` event fires. This ensures that the only apps syncing in the
 background are the ones you are actively using.
 
