@@ -316,7 +316,7 @@ Sync API.
   <dt>PeriodicSyncEvent</dt>
   <dd>Passed to the `ServiceWorkerGlobalScope.onperiodicsync` event handler at a time of the browser's choosing.</dd>
   <dt>PeriodicSyncManager</dt>
-  <dd>Registers and unregisters periodic syncs and provides tags for registered sync. Retrieve an instance of this class from the ServiceWorkerRegistration.periodicSync` property.</dd>
+  <dd>Registers and unregisters periodic syncs and provides tags for registered syncs. Retrieve an instance of this class from the ServiceWorkerRegistration.periodicSync` property.</dd>
   <dt>ServiceWorkerGlobalScope.onperiodicsync</dt>
   <dd>Registers a handler to receive the `PeriodicSyncEvent`.</dd>
   <dt>ServiceWorkerRegistration.periodicSync</dt>
