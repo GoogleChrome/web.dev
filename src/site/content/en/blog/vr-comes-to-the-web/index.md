@@ -234,10 +234,11 @@ vector and an orientation quaternion. I get the viewer's pose by calling
 `XRFrame.getViewerPose()` on the current animation frame. I pass it the
 reference space I acquired when I set up the session.
 
-Next, I test whether an `XRViewerPose` was returned. If something went wrong,
-I can't render the frame. But as stated earlier, I already called
-`XRSession.requestAnimationFrame()` in case something goes wrong. If the system
-can't recover, it will end the session and call the `end` event handler.
+Next, I test whether an `XRViewerPose` was returned because if something went
+wrong, I can't render the frame. But as stated earlier, I already called
+`XRSession.requestAnimationFrame()` so that if the system can recover, the
+frame loop will continue. If not, it will end the session and call the `end`
+event handler.
 
 ```js/3-6
 function onXRFrame(hrTime, xrFrame) {
