@@ -46,7 +46,7 @@ const notFoundHandler = (req, res, next) => {
 
 // Disallow www.web.dev, and remove any active Service Worker too.
 const noWwwHandler = (req, res, next) => {
-  if (req.hostname === "www.web.dev" || req.hostname === "127.0.0.1") {
+  if (req.hostname === "www.web.dev") {
     if (!req.url.endsWith(".js")) {
       return res.redirect(301, "https://web.dev" + req.url);
     }
