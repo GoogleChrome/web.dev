@@ -42,14 +42,14 @@ files, links, or text using the Web Share API. See
 
 ### See it in action
 
-1. Using Chrome 76 or later, open the [Web Share Target demo][demo].
+1. Using Chrome 76 or later (Android only), open the [Web Share Target demo][demo].
 2. When prompted, click **Install** to add the app to your home screen, or
    use the Chrome menu to add it to your home screen.
-3. Open any app that includes a native share intent, or use the Share button
+3. Open any app that supports native sharing, or use the Share button
    in the demo app.
 4. From the target picker, choose **Web Share Test**
 
-After sharing to the demo app, you should see all of the information sent via
+After sharing, you should see all of the shared information in
 the web share target web app.
 
 ## Register your app as a share target
@@ -200,10 +200,10 @@ load quickly, and will work reliably, even if the user is offline.
 
 ### Processing POST shares
 
-If your `method` is `"POST"`, as it would be if it accepted a saved bookmark or
-shared files, then the body of the incoming `POST` request contains the data
-passed by the sharing application, encoded using the `enctype` value provided in
-the manifest.
+If your `method` is `"POST"`, as it would be if your target app accepts a saved
+bookmark or shared files, then the body of the incoming `POST` request contains
+the data passed by the sharing application, encoded using the `enctype` value
+provided in the manifest.
 
 The foreground page cannot process this data directly. Since page sees it as a
 request, it's passed to the service worker where you can intercept it with a
