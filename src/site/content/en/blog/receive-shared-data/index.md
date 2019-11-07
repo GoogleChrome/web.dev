@@ -27,10 +27,10 @@ apps to register with the underlying operating system as a share target to
 receive shared content. Support for text, and data was added in Chrome 71, and
 support for files was added in Chrome 76.
 
-<figure class="w-figure w-figure--inline-right">
+<figure class="w-figure w-figure--center">
   <img src="./wst-send.png" style="max-width: 25vw;" alt="System-level share target picker with an installed PWA as an option."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    System-level share target picker with an installed PWA as an option
+    System-level share target picker with an installed PWA as an option.
   </figcaption>
 </figure>
 
@@ -236,10 +236,10 @@ empty](https://bugs.chromium.org/p/chromium/issues/detail?id=789379) because
 it's not supported in Android's share system. Instead, URLs will often appear in
 the `text` field, or occasionally in the `title` field.
 
-<figure class="w-figure w-figure--inline-right">
+<figure class="w-figure w-figure--center">
   <img src="./wst-receive.png" style="max-width: 25vw;" alt="The sample target sharing app showing shared data."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    The sample sharing target app
+    The sample sharing target app.
   </figcaption>
 </figure>
 
