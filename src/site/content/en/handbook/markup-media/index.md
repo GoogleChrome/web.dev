@@ -2,6 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
+updated: 2019-11-06
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -16,11 +17,31 @@ Use lossless images whenever possible. They'll be optimized automatically at bui
 Make sure images are [accessible](/handbook/inclusion-and-accessibility#use-inclusive-images).
 
 ## Hero images
+
+```
+---
+…
+hero: thumbnail.png
+alt: A description of the thumbnail. # The thumbnail image (when applicable) also uses this description.
+…
+---
+```
+
 Hero images should be 3200 px x 960 px.
 
 Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
 
 ## Thumbnail images
+
+```
+---
+…
+thumbnail: thumbnail.png
+alt: A description of the thumbnail. # The hero image also uses this description.
+…
+---
+```
+
 When a post is displayed on the home page or the blog it can contain a thumbnail.
 
 Thumbnails should be 376 px x 240 px.
