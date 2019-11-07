@@ -159,7 +159,7 @@ downloadable from the Google Play Store led to significant gains
 in user engagement:
 - A conversion rate three times higher than the PWA's rate
 - Three times more logged-in users than the PWA, on average
-- A 4.6&nbsp;rating on the Google Play Store
+- A 4.1&nbsp;rating on the Google Play Store
 
 And aside from the user-facing benefits,
 going with a TWA meant the team had only one codebase,
