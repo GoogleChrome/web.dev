@@ -15,6 +15,8 @@ description: |
   an article. This description appears in the meta tag.
 tags:
   - post # post is a required tag for the article to show up in the blog.
+  - twa
+  - case-study
 ---
 
 Founded in 2013, [OYO Rooms](https://www.oyorooms.com/)
