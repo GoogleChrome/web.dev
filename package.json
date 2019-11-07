@@ -22,10 +22,10 @@
     "start": "node ./server.js",
     "lint": "run-s lint:md lint:scss lint:js",
     "lhci": "./tools/lhci/run-lighthouse-ci.sh",
-    "build": "ELEVENTY_ENV=prod npm-run-all --serial lint clean build:sass build:eleventy build:gulp build:rollup",
+    "build": "npm-run-all --serial lint clean build:sass build:eleventy build:gulp build:rollup",
     "dev": "npm-run-all clean build:rollup build:sass --parallel --race watch:rollup watch:sass watch:eleventy watch:gulp start",
-    "stage": "npm run build && gcloud app deploy --project web-dev-staging --quiet",
-    "stage:personal": "ELEVENTY_ENV=prod npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",
+    "stage": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet",
+    "stage:personal": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",
     "deploy": "ELEVENTY_ENV=prod npm run build && node index-algolia.js && gcloud app deploy --project web-dev-production-1 --quiet"
   },
   "license": "Apache-2.0",
