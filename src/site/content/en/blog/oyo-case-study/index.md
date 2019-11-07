@@ -19,7 +19,7 @@ tags:
 
 Founded in 2013, [OYO Rooms](https://www.oyorooms.com/)
 has become one of India's largest hospitality companies,
-with hotels across hundreds of cities in numerous countries.
+with hotels across hundreds of cities in more than 80 countries.
 That success came in part from making their online reservation experience
 as fast and easy as possible.
 
