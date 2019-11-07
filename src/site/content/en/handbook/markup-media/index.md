@@ -18,7 +18,7 @@ Make sure images are [accessible](/handbook/inclusion-and-accessibility#use-incl
 
 ## Hero images
 
-```
+```yaml
 ---
 …
 hero: hero.png
@@ -33,7 +33,7 @@ Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-
 
 ## Thumbnail images
 
-```
+```yaml
 ---
 …
 thumbnail: thumbnail.png
