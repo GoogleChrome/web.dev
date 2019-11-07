@@ -18,7 +18,7 @@ blockquote {
 
   p {
     font: inherit;
-    margin-bottom: 18px;
+    margin: 0 0 18px;
   }
 
   cite {
@@ -35,4 +35,5 @@ blockquote::before {
   content: 'format_quote';
   float: left;
   margin: 4px 0 0 -48px;
+  transform: scaleX(-1);
 }
