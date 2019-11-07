@@ -21,8 +21,8 @@ Make sure images are [accessible](/handbook/inclusion-and-accessibility#use-incl
 ```
 ---
 …
-hero: thumbnail.png
-alt: A description of the thumbnail. # The thumbnail image (when applicable) also uses this description.
+hero: hero.png
+alt: A description of the hero. # Also used by the thumbnail (when applicable).
 …
 ---
 ```
@@ -37,7 +37,7 @@ Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-
 ---
 …
 thumbnail: thumbnail.png
-alt: A description of the thumbnail. # The hero image also uses this description.
+alt: A description of the thumbnail. # Also used by the hero.
 …
 ---
 ```
