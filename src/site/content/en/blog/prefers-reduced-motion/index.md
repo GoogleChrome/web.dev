@@ -9,8 +9,8 @@ updated: 2019-11-07
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - media-queries
-hero: # ⚠️ [TODO] Fix hero, old hero was "/web/updates/images/generic/timeline.png"!
-alt: # ⚠️ [TODO] Add alt text!
+hero: hero.jpg
+alt: Time lapse of woman in a train
 ---
 
 Not everyone likes decorative animations or transitions, and some users outright
@@ -265,3 +265,4 @@ contrast between adjacent colors), and
 Massive shout-out to [Stephen McGruer](https://github.com/stephenmcgruer) who has implemented
 `prefers-reduced-motion` in Chrome and—together with
 [Rob Dodson](https://twitter.com/rob_dodson)—has also reviewed this article.
+[Hero image](https://unsplash.com/photos/im7Tiw1OY7c) by Hannah Cauhepe on Unsplash.
