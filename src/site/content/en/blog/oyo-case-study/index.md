@@ -84,7 +84,8 @@ One benefit of this setup is that users stay logged in
 across the browser and the TWA app.
 
 {% Aside %}
-Android browsers other than Chrome will also support TWAs soon.
+TWA support will soon be available in several Android browsers;
+both Chrome and FireFox have committed to TWA.
 You can specify what browser you want your app to use,
 though it's best to select the user's default browser.
 {% endAside %}
