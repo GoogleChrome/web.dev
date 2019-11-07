@@ -44,7 +44,19 @@ const notFoundHandler = (req, res, next) => {
     .sendFile("404/index.html", options, (err) => err && next(err));
 };
 
+// Disallow www.web.dev, and remove any active Service Worker too.
+const noWwwHandler = (req, res, next) => {
+  if (req.hostname === "www.web.dev" || req.hostname === "127.0.0.1") {
+    if (!req.url.endsWith(".js")) {
+      return res.redirect(301, "https://web.dev" + req.url);
+    }
+    req.url = "/nuke-sw.js";
+  }
+  return next();
+};
+
 const handlers = [
+  noWwwHandler,
   express.static("dist"),
   express.static("dist/en"),
   redirectHandler,
