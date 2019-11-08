@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Code splitting with dynamic imports
+title: Code splitting with dynamic imports in Next.js
 authors:
   - mihajlija
 subhead: |
