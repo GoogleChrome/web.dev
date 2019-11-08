@@ -1,5 +1,5 @@
 ---
-title: Share like a native app
+title: Share like a native app with the Web Share API
 subhead: Web apps can use the same system-provided share capabilities as native apps.
 authors:
   - joemedley
