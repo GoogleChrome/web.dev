@@ -151,3 +151,8 @@ redirects:
 
 - from: /fix-viewport-tag
   to: /viewport
+
+# Redirect older metrics docs
+
+- from: /layout-instability-api
+  to: /cls
