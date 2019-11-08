@@ -185,11 +185,6 @@ to users and search engines at all times.
    export default Home;
    ```
 
-## Next steps
-
-Check out the rest of the guides in [web.dev's Next.js collection][collection] to discover
-other ways that you can optimize your Next.js app.
-
 [guidance]: /how-amp-can-guarantee-fastness-in-your-nextjs-app
 [layout]: https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout/
 [collection]: /react#nextjs

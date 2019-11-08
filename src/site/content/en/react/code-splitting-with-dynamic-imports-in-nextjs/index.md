@@ -11,7 +11,7 @@ date: 2019-11-08
 ## What will you learn?
 
 This post explains different types of [code
-splitting](reduce-javascript-payloads-with-code-splitting/) and how to use
+splitting](/reduce-javascript-payloads-with-code-splitting/) and how to use
 dynamic imports to speed up your Next.js apps. 
 
 ## Route-based and component-based code splitting
