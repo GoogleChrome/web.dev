@@ -11,8 +11,8 @@ date: 2019-11-07
 # updated: 2019-06-27
 
 description: |
-  This post is a test to demonstrate all of the components that can go into
-  an article. This description appears in the meta tag.
+  How a hospitality startup built an Android app that relies on web content to
+  dramatically increase user engagement and keep file size low.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - twa
