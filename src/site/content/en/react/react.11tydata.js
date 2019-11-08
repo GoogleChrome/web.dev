@@ -18,7 +18,7 @@ module.exports = {
         pathItems: [
           "performance-as-a-default-with-nextjs",
           "route-prefetching-in-nextjs",
-          "nextjs-dynamic-imports",
+          "code-splitting-with-dynamic-imports-in-nextjs",
           "how-amp-can-guarantee-fastness-in-your-nextjs-app",
         ],
       },
