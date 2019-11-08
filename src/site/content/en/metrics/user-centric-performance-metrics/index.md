@@ -8,6 +8,9 @@ description: |
   User-centric performance metrics are a critical tool in understanding and
   improving the experience of your site in a way that benefits real
   users.
+tags:
+  - performance
+  - metrics
 ---
 
 We've all heard how important performance is. But when we talk about

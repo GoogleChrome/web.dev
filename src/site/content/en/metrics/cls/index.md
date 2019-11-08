@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Cumulative Layout Shift (CLS)
 authors:
   - philipwalton
@@ -17,7 +18,7 @@ tags:
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
   measuring [visual stability](/user-centric-metrics/#types-of-metrics) because it helps quantify how often users
   experience unexpected layout shifts&mdash;a low CLS helps ensure that the
-  page is [delightful](/user-centric-metric/#user-centric-metric-questions-questions/).
+  page is [delightful](/user-centric-metric/#user-centric-metric-questions).
 {% endAside %}
 
 Have you ever been reading an article online when something suddenly changes on
@@ -66,9 +67,8 @@ measuring how often it's occurring for real users.
 ## What is CLS?
 
 CLS measures the sum of the individual _layout shift scores_ for each _expected_
-_layout shift_ that occurs between [First Contentful
-Paint](https://docs.google.com/document/d/1dPqXmTI9mR9Zn2eM4a1ySJmxxP7YLmRiR6i6rSySEoM/edit#)
-(FCP) and when the page's [lifecycle
+_layout shift_ that occurs between [First Contentful Paint (FCP)](/fcp/) and
+when the page's [lifecycle
 state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 changes to hidden.
 
@@ -105,7 +105,8 @@ The union of the visible areas of all unstable elements for the previous frame
 _and_ the current frame&mdash;as a fraction of the total area of the
 viewport&mdash;is the impact fraction for the current frame.
 
-![Impact fraction example with one unstable element](layout-shift-1.png)
+[![Impact fraction example with one unstable
+element](layout-shift-1.png)](layout-shift-1.png)
 
 In the image above there's an element that takes up half of the viewport in one
 frame. Then, in the next frame, the element shifts down by 25% of the viewport
@@ -121,7 +122,8 @@ is the greatest distance any unstable element has moved in the frame (either
 horizontally or vertically) divided by the viewport's largest dimension (width
 or height, whichever is greater).
 
-![Distance fraction example with one unstable element](layout-shift-2.png)
+[![Distance fraction example with one unstable
+element](layout-shift-2.png)](layout-shift-2.png)
 
 In the example above, the largest viewport dimension is the height, and the
 unstable element has moved by 25% of the viewport height, which makes the
@@ -139,8 +141,8 @@ is `0.25`, so the _layout shift score_ is `0.75 * 0.25 = 0.1875`.
 The next example illustrates how adding content to an existing element affects
 the layout shift score:
 
-![Layout shift example with stable and unstable elements and viewport
-clipping](layout-shift-3.png)
+[![Layout shift example with stable and unstable elements and viewport
+clipping](layout-shift-3.png)](layout-shift-3.png)
 
 The "Click Me!" button is appended to the bottom of the gray box with black
 text, which pushes the green box with white text down (and partially out of the
@@ -166,8 +168,8 @@ The layout shift score is `0.5 x 0.14 = 0.07`.
 
 This last example illustrates multiple unstable elements:
 
-![Layout shift example with multiple stable and unstable
-elements](layout-shift-4.png)
+[![Layout shift example with multiple stable and unstable
+elements](layout-shift-4.png)](layout-shift-4.png)
 
 In the first frame above there are four results of an API request for animals,
 sorted in alphabetical order. In the second frame, more results are added to the

@@ -84,7 +84,12 @@ function onClick(e) {
   // nb. If this ever supports Shadow DOM, we can use .composedPath to find
   // the nearest link inside an open Shadow Root.
   const link = e.target.closest("a[href]");
-  if (!link || link.target || link.host !== location.host) {
+  if (
+    !link ||
+    link.target ||
+    link.host !== location.host ||
+    link.pathname.match(/\.(jpg|png|gif|svg)$/)
+  ) {
     return;
   }
 
