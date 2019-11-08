@@ -156,3 +156,6 @@ redirects:
 
 - from: /layout-instability-api
   to: /cls
+
+- from: /largest-contentful-paint
+  to: /lcp
