@@ -28,6 +28,17 @@ module.exports = {
       //   ],
       // },
       {
+        title: "Important metrics to measure",
+        pathItems: [
+          // "fcp",
+          // "lcp",
+          // "fid",
+          // "tti",
+          // "tbt",
+          "cls",
+        ],
+      },
+      {
         title: "Create your own metrics",
         pathItems: ["custom-metrics"],
       },
