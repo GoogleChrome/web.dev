@@ -133,7 +133,7 @@ score](/lighthouse-total-blocking-time/#how-lighthouse-determines-your-tbt-score
 
 To learn how to improve TBT for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance#opportunities) the audit suggests.
+[opportunities](/lighthouse-performance/#opportunities) the audit suggests.
 
 To learn how to improve TBT in general (for any site), refer to the following
 performance guides:

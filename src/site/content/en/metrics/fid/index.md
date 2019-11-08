@@ -34,7 +34,7 @@ On the web, first impressions can take a lot of different forms&mdash;we have fi
 impressions of a site's design and visual appeal as well as first impressions of
 its speed and responsiveness.
 
-While measuring how much users like a site's design is hard to do with web APIs,
+While it is hard to measure how much users like a site's design with web APIs,
 measuring its speed and responsiveness is not!
 
 The first impression users have of how fast your site loads can be measured with

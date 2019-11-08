@@ -17,7 +17,7 @@ tags:
   First Contentful Paint (FCP) is an important, user-centric metric for
   measuring [perceived load
   speed](/user-centric-performance-metrics/#types-of-metrics) because it marks
-  the first point in the page load timeline that the user can see anything on
+  the first point in the page load timeline where the user can see anything on
   the screen&mdash;a fast FCP helps reassure the user that something is
   [happening](/user-centric-performance-metrics/#questions).
 {% endAside %}
@@ -31,7 +31,7 @@ For this metric, "content" refers to text, images (including background images),
 
 [![FCP timeline from google.com](fcp-filmstrip.png)](fcp-filmstrip.png)
 
-In the above load timeline, the first contentful paint happens in the second
+In the above load timeline, FCP happens in the second
 frame, as that's when the first text and image elements are rendered to the
 screen.
 
@@ -77,6 +77,7 @@ const observer = new PerformanceObserver((list) => {
   for (const entry of list.getEntriesByName('first-contentful-paint')) {
     // Log the value of FCP to the console.
     console.log('FCP:', entry.startTime);
+    observer.disconnect();
   }
 });
 
@@ -113,8 +114,8 @@ more details.
 
 To learn how to improve FCP for a specific site, you can run a Lighthouse
 performance audit and pay attention to any specific
-[opportunities](/lighthouse-performance#opportunities) or
-[diagnostics](/lighthouse-performance#diagnostics) the audit suggests.
+[opportunities](/lighthouse-performance/#opportunities) or
+[diagnostics](/lighthouse-performance/#diagnostics) the audit suggests.
 
 To learn how to improve FCP in general (for any site), refer to the following
 performance guides:

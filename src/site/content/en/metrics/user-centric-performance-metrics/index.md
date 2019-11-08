@@ -54,7 +54,7 @@ the [W3C Web Performance Working Group](https://www.w3.org/webperf/)&mdash;have
 been working to standardize a set of new APIs and metrics that more accurately
 measure how users experience the performance of a web page.
 
-To help ensure the metrics are relevant to users, we frame them around a couple
+To help ensure the metrics are relevant to users, we frame them around a few
 of key questions:
 
 <table id="questions">
@@ -81,7 +81,7 @@ of key questions:
 Performance metrics are generally measured in one of two ways:
 
 - **In the lab:** using tools to simulate a page load in a consistent,
-  controlled environment.
+  controlled environment
 - **In the field**: on real users actually loading and interacting with the page
 
 Neither of these options is necessarily better or worse than the other&mdash;in
@@ -175,10 +175,9 @@ performance against their competitors.
 
 However, there may be times when a specific site is unique in some way that
 requires additional metrics to capture the full performance picture. For
-example, the Largest Contentful Paint metric is intended to measure when a
-page's main content has finished loading, but there could be cases where the
-largest element is not part of the page's main content and thus LCP may not be
-relevant.
+example, the LCP metric is intended to measure when a page's main content has
+finished loading, but there could be cases where the largest element is not part
+of the page's main content and thus LCP may not be relevant.
 
 To address such cases, the Web Performance Working Group has also standardized
 lower-level APIs that can be useful for implementing your own custom metrics:

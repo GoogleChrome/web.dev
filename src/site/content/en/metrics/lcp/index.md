@@ -257,7 +257,7 @@ addEventListener('visibilitychange', function fn() {
 
 Note, this example waits to log LCP until the page's [lifecycle
 state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
-changes to hidden. This is way of ensuring it only log the latest entry.
+changes to hidden. This is a way of ensuring that it only logs the latest entry.
 
 ### What if the largest element isn't the most important?
 
