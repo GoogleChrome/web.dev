@@ -31,7 +31,7 @@ module.exports = {
         title: "Important metrics to measure",
         pathItems: [
           // "fcp",
-          // "lcp",
+          "lcp",
           // "fid",
           // "tti",
           // "tbt",

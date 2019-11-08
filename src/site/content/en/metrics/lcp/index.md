@@ -1,21 +1,25 @@
 ---
-title: Largest Contentful Paint
-subhead: Making it easier to know when a page's important content has loaded.
+layout: post
+title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-hero: hero.jpg
-# You can adjust the position of your hero image with this property.
-# Values: top | bottom | center (default)
-hero_position: top
-alt: Artist painting tools
+updated: 2019-11-07
 description: |
-  Use the Largest Contentful Paint API to optimize for faster page loads.
+  This post introduces the Largest Contentful Paint (LCP) metric and explains
+  how to measure it
 tags:
-  - post # post is a required tag for the article to show up in the blog.
   - performance
   - metrics
 ---
+
+{% Aside %}
+  Largest Contentful Paint (LCP) is an important, user-centric metric for
+  measuring [perceived load speed](/user-centric-metrics/#types-of-metrics)
+  because it marks the point in the page load timeline when the page's main
+  content has likely loaded&mdash;a fast LCP helps reassure the user that the
+  page is [useful](/user-centric-metric/#user-centric-metric-questions).
+{% endAside %}
 
 Historically, it's been a challenge for web developers to measure how quickly
 the main content of a web page loads and is visible to users.
@@ -43,16 +47,13 @@ Performance Working Group](https://www.w3.org/webperf/) and research done at
 Google, we've found that a more accurate way to measure when the main content
 of a page is loaded is to look at when the largest element was rendered.
 
-## Largest Contentful Paint defined
+## What is LCP?
 
-The [Largest Contentful Paint
-(LCP)](https://wicg.github.io/largest-contentful-paint/) API, available in
-Chrome 77, reports the render time of the largest content element visible
-in the viewport.
+The Largest Contentful Paint (LCP) metric reports the render time of the largest content element visible in the viewport.
 
 ### What elements are considered?
 
-As currently specified, the types of elements considered for Largest Contentful
+As currently specified in the [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/), the types of elements considered for Largest Contentful
 Paint are:
 
 * `<img>` elements
@@ -86,7 +87,7 @@ at, whereas images that are stretched or expanded to a larger size will only
 report their intrinsic sizes.
 
 For text elements, only the size of their text nodes is considered (the smallest
-rectangle that encompases all text nodes).
+rectangle that encompasses all text nodes).
 
 For all elements, any margin, padding, or border applied via CSS is not considered.
 
@@ -145,7 +146,6 @@ For analysis purposes, you should only report the most recently dispatched
   contentful paint will not happen until the user focuses the tab, which can be
   much later than when they first loaded it.
 {% endAside %}
-
 
 #### Load time vs. render time
 
@@ -212,10 +212,19 @@ largest element throughout the load process.
   LCP candidate is the text in the second frame.
 {% endAside %}
 
-## How to measure Largest Contentful Paint in JavaScript
+## How to measure LCP
 
-The following code block shows how to measure LCP in JavaScript and report it
-to an analytics service when the user leaves the tab:
+LCP can be measured [in the lab](/metrics/#in-the-lab) or [in the
+field](/metrics/#in-the-field) though at the moment it's not yet available in
+any lab tools. [In the field](/metrics/#in-the-field), LCP is available in the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report).
+
+### Measure LCP in JavaScript
+
+You can measure FCP in JavaScript using the [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/). The following example shows how to
+create a
+[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+that listens for `largest-contentful-paint` entries and logs the LCP value
+to the console:
 
 ```js
 // Create a variable to hold the latest LCP value (since it can change).
@@ -241,54 +250,24 @@ po.observe({type: 'largest-contentful-paint', buffered: true});
 // leaves the tab.
 addEventListener('visibilitychange', function fn() {
   if (lcp && document.visibilityState === 'hidden') {
-    sendToAnalytics({'largest-contentful-paint': lcp});
+    console.log('LCP:', lcp);
     removeEventListener('visibilitychange', fn, true);
   }
 }, true);
 ```
 
-Note, this example waits until the user leaves the tab to report LCP as a way
-of ensuring it only reports the latest entry. If you would prefer to report
-every entry (to avoid potentially missing sessions), make sure to configure
-your analytics to only include the last entry received per page load.
+Note, this example waits to log LCP until the page's [lifecycle
+state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
+changes to hidden. This is way of ensuring it only log the latest entry.
 
-## What if the largest element isn't the most important?
+### What if the largest element isn't the most important?
 
 In some cases the most important element (or elements) on the page is not the
 same as the largest element, and developers may be more interested in measuring
 the render times of these other elements instead. This is possible using the
-[Element Timing API](https://wicg.github.io/element-timing/).
+[Element Timing API](https://wicg.github.io/element-timing/), as described in the article on [custom metrics](/custom-metrics/#element-timing-api).
 
-The Largest Contentful Paint API is actually built on top of the Element Timing
-API and adds automatic reporting of the largest contentful element, but you can
-report on additional elements by explicitly adding the `elementtiming`
-attribute to them, and registering a `PerformanceObserver` to observe the
-`element` entry type.
-
-Here's the [example](https://wicg.github.io/element-timing/#sec-example)
-used in the specification:
-
-```html
-<img... elementtiming='foobar'/>
-<p elementtiming='important-paragraph'>This is text I care about.</p>
-...
-<script>
-const observer = new PerformanceObserver((list) => {
-  let perfEntries = list.getEntries();
-  // Process the entries by iterating over them.
-});
-observer.observe({type: 'element', buffered: true});
-</script>
-```
-
-{% Aside %}
-  **Important:** the [types of elements](#what-elements-are-considered)
-  considered for Largest Contentful Paint are the same as those observable via
-  the Element Timing API. If you add the `elementtiming` attribute to an
-  element that isn't one of those types, it will be ignored.
-{% endAside %}
-
-## How to improve Largest Contentful Paint on your site
+## How to improve LCP
 
 LCP is primarily affected by three factors:
 
