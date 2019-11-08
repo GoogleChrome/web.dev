@@ -34,7 +34,7 @@ A page is considered fully interactive when:
 - The page displays useful content, which is measured by the
 [First Contentful Paint](/first-contentful-paint),
 - Event handlers are registered for most visible page elements, and
-- The page responds to user interactions within 50&nbsp; milliseconds.
+- The page responds to user interactions within 50&nbsp;milliseconds.
 
 {% Aside %}
 Both [First CPU Idle](/first-cpu-idle) and TTI
