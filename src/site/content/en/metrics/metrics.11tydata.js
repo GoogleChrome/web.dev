@@ -5,8 +5,7 @@ module.exports = {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
     slug: "metrics",
-    // cover: "/images/collections/metrics.svg",
-    cover: "/images/collections/lighthouse-performance.svg",
+    cover: "/images/collections/metrics.svg",
     title: "Metrics",
     description: "Measure and optimize performance and user experience",
     overview: `User-centric metrics are a critical tool in understanding and
