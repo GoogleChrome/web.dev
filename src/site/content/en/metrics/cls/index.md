@@ -91,7 +91,7 @@ and the movement of unstable elements in the viewport between two rendered
 frames. The layout shift score is a product of two measures of that movement:
 the _impact fraction_ and the _distance fraction_ (both defined below).
 
-```
+```text
 layout shift score = impact fraction * distance fraction
 ```
 

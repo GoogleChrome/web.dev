@@ -134,33 +134,25 @@ page.
 
 ## Important metrics to measure
 
-- **[First contentful paint
-  (FCP)](/first-contentful-paint/):**
-  measures the time from when the page starts loading to when any part of the
-  page's content is rendered on the screen. _([lab](#in-the-lab), [field](#in-the-field))_
-- **[Largest contentful paint
-  (LCP)](/largest-contentful-paint/):** measures the time from
-  when the page starts loading to when the largest text block or image element
-  is rendered on the screen. _([lab](#in-the-lab), [field](#in-the-field))_
-- **[First input delay
-  (FID)](https://developers.google.com/web/updates/2018/05/first-input-delay):**
-  measures the time from when a user first interacts with your site (i.e. when
-  they click a link, tap a button, or use a custom, JavaScript-powered control)
-  to the time when the browser is actually able to respond to that interaction.
-  _([field](#in-the-field))_
-- **[Time to Interactive
-  (TTI)](/interactive/):**
-  measures the time from when the page starts loading to when it's visually
-  rendered, its initial scripts (if any) have loaded, and it's capable of
-  reliably responding to user input quickly. _([lab](#in-the-lab))_
-- **[Total blocking time
-  (TBT)](/lighthouse-total-blocking-time/):**
-  measures the total amount of time between FCP and TTI where the main thread
-  was blocked for long enough to prevent input responsiveness. _([lab](#in-the-lab))_
-- **[Cumulative layout shift
-  (CLS)](/layout-instability-api/):**
-  measures the cumulative score of all layout shifts that occur between FCP and
-  when the page's [lifecycle
+- **[First contentful paint (FCP)](/fcp/):** measures the time from when the
+  page starts loading to when any part of the page's content is rendered on the
+  screen. _([lab](#in-the-lab), [field](#in-the-field))_
+- **[Largest contentful paint (LCP)](/lcp/):** measures the time from when the
+  page starts loading to when the largest text block or image element is
+  rendered on the screen. _([lab](#in-the-lab), [field](#in-the-field))_
+- **[First input delay (FID)](/fid/):** measures the time from when a user first
+  interacts with your site (i.e. when they click a link, tap a button, or use a
+  custom, JavaScript-powered control) to the time when the browser is actually
+  able to respond to that interaction. _([field](#in-the-field))_
+- **[Time to Interactive (TTI)](/tti/):** measures the time from when the page
+  starts loading to when it's visually rendered, its initial scripts (if any)
+  have loaded, and it's capable of reliably responding to user input quickly.
+  _([lab](#in-the-lab))_
+- **[Total blocking time (TBT)](/tbt/):** measures the total amount of time
+  between FCP and TTI where the main thread was blocked for long enough to
+  prevent input responsiveness. _([lab](#in-the-lab))_
+- **[Cumulative layout shift (CLS)](/cls/):** measures the cumulative score of
+  all layout shifts that occur between FCP and when the page's [lifecycle
   state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
   changes to hidden. _([lab](#in-the-lab), [field](#in-the-field))_
 
