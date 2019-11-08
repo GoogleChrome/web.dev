@@ -140,10 +140,8 @@ export async function swapContent(url, isFirstRun) {
   document.title = page.title;
   // Update the page description
   const description = page.querySelector("meta[name=description]");
-  if (description && description.content) {
-    document.querySelector("meta[name=description]").content =
-      description.content;
-  }
+  const updatedContent = description ? description.content : "";
+  document.querySelector("meta[name=description]").content = updatedContent;
 
   // Focus on the first title (or fallback to content itself)
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
