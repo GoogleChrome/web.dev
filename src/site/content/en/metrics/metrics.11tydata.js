@@ -10,7 +10,7 @@ module.exports = {
     description: "Measure and optimize performance and user experience",
     overview: `User-centric performance metrics are a critical tool in
       understanding and improving the experience of your site in a way that
-      matters and benefits real users.`,
+      benefits real users.`,
     topics: [
       {
         title: "Introduction",

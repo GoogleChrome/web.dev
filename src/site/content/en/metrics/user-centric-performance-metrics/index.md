@@ -1,12 +1,12 @@
 ---
 layout: post
-title: User-centric Performance Metrics
+title: User-centric performance metrics
 authors:
   - philipwalton
-date: 2019-11-07
+date: 2019-11-08
 description: |
   User-centric performance metrics are a critical tool in understanding and
-  improving the experience of your site in a way that matters and benefits real
+  improving the experience of your site in a way that benefits real
   users.
 ---
 

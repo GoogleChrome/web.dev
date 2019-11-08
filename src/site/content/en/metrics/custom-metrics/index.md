@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Custom Metrics
+title: Custom metrics
 authors:
   - philipwalton
-date: 2019-11-07
+date: 2019-11-08
 description: |
   Custom metrics allow you to measure and optimize aspects of your site's
   experience that are unique to your site.
 ---
 
-There's a lot of value in having [user-centric metrics](/user-centric-metrics/)
+There's a lot of value in having [user-centric metrics](/user-centric-performance-metrics/)
 that you can measure, universally, on any given website. These metrics allow you
 to:
 
@@ -45,7 +45,7 @@ to long-running JavaScript tasks by running a `requestAnimationFrame` loop and
 calculating the delta between each frame. If the delta is significantly longer
 than the display's framerate, you can report that as a long task. Such hacks are
 not recommended, though, because they actually affect performance themselves
-(e.g. drain battery).
+(by draining battery, for example).
 
 The first rule of effective performance measurement is to make sure your
 performance measurement techniques aren't causing performance issues themselves.
@@ -90,7 +90,7 @@ property.
   array (in order to observe more than one entry type via the same observer).
   While specifying `entryTypes` is an older option with wider browser support,
   using `type` is now preferred, as it allows for specifying additional
-  entry-specific observation configuration (e.g. the `buffered` flag, discussed
+  entry-specific observation configuration (such as the `buffered` flag, discussed
   next).
 {% endAside %}
 
@@ -131,7 +131,7 @@ entries using the following three methods defined on the
 
 While these APIs are still supported, their usage is not recommended because
 they don't allow you to listen for when new entries are emitted. In addition,
-many new APIs (e.g. Long Tasks) are not exposed via the `performance` object,
+many new APIs (such as Long Tasks) are not exposed via the `performance` object,
 they're only exposed via `PerformanceObserver`.
 
 Unless you specifically need Internet Explorer compatibility, it's best to avoid
@@ -156,8 +156,8 @@ performance.measure('myTask', 'myTask:start', 'myTask:end');
 
 While APIs like `Date.now()` or `performance.now()` give you similar abilities,
 the benefit of using the User Timing API is it integrates well with performance
-tooling. For example, Chrome DevTools visualizes User Timing measurements in the
-Performance panel, and many analytics providers will also automatically track
+tooling. For example, Chrome DevTools visualizes [User Timing measurements in the
+Performance panel][devtools], and many analytics providers will also automatically track
 any measurements you make and send the duration data to their analytics back
 end.
 
@@ -186,7 +186,7 @@ longer than 50 milliseconds (ms).
 
 Anytime you need to run expensive code (or load and execute large scripts) it's
 useful to track whether or not that code blocked the main thread. In fact, many
-higher-level metrics are built on top of the Long Tasks API themselves (e.g.
+higher-level metrics are built on top of the Long Tasks API themselves (such as
 [Time to Interactive (TTI)](/interactive/) and [Total Blocking Time
 (TBT)](/lighthouse-total-blocking-time/)).
 
@@ -375,3 +375,5 @@ const po = new PerformanceObserver((list) => {
 // Start listening for `navigation` entries to be dispatched.
 po.observe({type: 'navigation', buffered: true});
 ```
+
+[devtools]: https://developers.google.com/web/updates/2018/04/devtools#tabs
