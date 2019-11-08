@@ -584,12 +584,14 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
    sit amet ullamcorper.
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
    sit amet ullamcorper.
-  <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
-    <figcaption class="w-figcaption">
-      Filled screenshot.
-    </figcaption>
-  </figure>
+
+   <figure class="w-figure">
+     <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
+     <figcaption class="w-figcaption">
+       Filled screenshot.
+     </figcaption>
+   </figure>
+
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
    sit amet ullamcorper.
 
