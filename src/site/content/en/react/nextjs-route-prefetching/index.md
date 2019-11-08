@@ -5,8 +5,7 @@ authors:
   - mihajlija
 subhead: |
   How Next.js speeds up navigations with route prefetching and how to customize it.
-date: 2019-10-22
-draft: true
+date: 2019-11-08
 ---
 
 ## What will you learn?

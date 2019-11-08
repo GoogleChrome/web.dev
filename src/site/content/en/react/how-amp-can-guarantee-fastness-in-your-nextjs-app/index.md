@@ -5,8 +5,7 @@ authors:
   - houssein
 subhead: |
   Learn about the benefits and tradeoffs of supporting AMP in your Next.js app
-date: 2019-10-29
-draft: true
+date: 2019-11-08
 codelabs: how-to-use-amp-in-nextjs
 ---
 
