@@ -106,8 +106,8 @@ module.exports = (locale, page, collections) => {
 
   // prettier-ignore
   return html`
-    <title>${pageData.title}</title>
-    <meta name="description" content="${pageData.description}" />
+    <title>${pageData.title || pageData.path.title}</title>
+    <meta name="description" content="${pageData.description || pageData.path.description}" />
 
     ${renderGoogleMeta()}
     ${renderFacebookMeta()}
