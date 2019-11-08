@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Custom metrics
+title: Custom Metrics
 authors:
   - philipwalton
 date: 2019-11-07

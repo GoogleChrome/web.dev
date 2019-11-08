@@ -1,16 +1,18 @@
 ---
 layout: post
-title: User-centric metrics
+title: User-centric Performance Metrics
 authors:
   - philipwalton
 date: 2019-11-07
 description: |
-  User-centric metrics are a critical tool in understanding and improving the
-  experience of your site in a way that matters and benefits real users.
+  User-centric performance metrics are a critical tool in understanding and
+  improving the experience of your site in a way that matters and benefits real
+  users.
 ---
 
 We've all heard how important performance is. But when we talk about
-performance—and about making websites "fast"—what specifically do we mean?
+performance&mdash;and about making websites "fast"&mdash;what specifically do we
+mean?
 
 The truth is performance is relative:
 
@@ -44,9 +46,9 @@ several seconds after the `load` event fires. While such a page might
 technically have a fast load time, that time would not correspond to how a user
 actually experiences the page loading.
 
-Over the past few years, members of the Chrome team—in collaboration with the
-[W3C Web Performance Working Group](https://www.w3.org/webperf/)—have been
-working to standardize a set of new APIs and metrics that more accurately
+Over the past few years, members of the Chrome team&mdash;in collaboration with
+the [W3C Web Performance Working Group](https://www.w3.org/webperf/)&mdash;have
+been working to standardize a set of new APIs and metrics that more accurately
 measure how users experience the performance of a web page.
 
 To help ensure the metrics are relevant to users, we frame them around a couple
@@ -79,8 +81,8 @@ Performance metrics are generally measured in one of two ways:
   controlled environment.
 - **In the field**: on real users actually loading and interacting with the page
 
-Neither of these options is necessarily better or worse than the other—in fact
-you generally want to use both to ensure good performance.
+Neither of these options is necessarily better or worse than the other&mdash;in
+fact you generally want to use both to ensure good performance.
 
 ### In the lab
 
@@ -107,7 +109,7 @@ differences.
 The only way to truly know how your site performs for your users is to actually
 measure its performance as those users are loading and interacting with it. This
 type of measurement is commonly referred to as [Real User
-Monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring)—or RUM for
+Monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring)&mdash;or RUM for
 short.
 
 ## Types of metrics
@@ -193,7 +195,5 @@ lower-level APIs that can be useful for implementing your own custom metrics:
 - [Resource Timing API](https://w3c.github.io/resource-timing/)
 - [Server timing](https://w3c.github.io/server-timing/)
 
-Refer to the guide on [Custom
-Metrics](https://docs.google.com/document/d/1BkIw1y0WdalLH5T_QQ7mvWM3N7hdXJ6iz4ptSsbmGHs/edit#)
-to learn how to use these APIs to measure performance characteristics specific
-to your site.
+Refer to the guide on [Custom Metrics](/custom-metrics/) to learn how to use
+these APIs to measure performance characteristics specific to your site.

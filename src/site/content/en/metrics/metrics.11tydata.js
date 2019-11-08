@@ -8,24 +8,17 @@ module.exports = {
     cover: "/images/collections/metrics.svg",
     title: "Metrics",
     description: "Measure and optimize performance and user experience",
-    overview: `User-centric metrics are a critical tool in understanding and
-      improving the experience of your site in a way that matters and benefits
-      real users.`,
+    overview: `User-centric performance metrics are a critical tool in
+      understanding and improving the experience of your site in a way that
+      matters and benefits real users.`,
     topics: [
       {
-        title: "Get started",
-        pathItems: ["user-centric-metrics"],
+        title: "Introduction",
+        pathItems: ["user-centric-performance-metrics"],
       },
       // {
       //   title: "Important metrics to measure",
-      //   pathItems: [
-      //     "fcp",
-      //     "lcp",
-      //     "fid",
-      //     "tti",
-      //     "tbt",
-      //     "cls",
-      //   ],
+      //   pathItems: ["fcp", "lcp", "fid", "tti", "tbt", "cls"],
       // },
       {
         title: "Create your own metrics",
