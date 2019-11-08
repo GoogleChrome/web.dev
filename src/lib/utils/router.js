@@ -88,7 +88,7 @@ function onClick(e) {
     !link ||
     link.target ||
     link.host !== location.host ||
-    link.pathname.match(/\.(jpg|png|gif|svg)$/)
+    link.pathname.match(/\.(jpg|png|gif|svg|webp)$/)
   ) {
     return;
   }

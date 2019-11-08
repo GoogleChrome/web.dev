@@ -15,8 +15,10 @@ tags:
 
 {% Aside %}
   Total Blocking Time (TBT) is an important, user-centric metric for measuring
-  [load responsiveness](/user-centric-metrics/#types-of-metrics) because it helps quantify the severity of how non-interactive a page is prior to it becoming reliably interactive&mdash;a low TBT helps ensure that the page is
-  [usable](/user-centric-metric/#user-centric-metric-questions).
+  [load responsiveness](/user-centric-performance-metrics/#types-of-metrics)
+  because it helps quantify the severity of how non-interactive a page is prior
+  to it becoming reliably interactive&mdash;a low TBT helps ensure that the page
+  is [usable](/user-centric-performance-metrics/#questions).
 {% endAside %}
 
 ## What is TBT?
@@ -27,7 +29,7 @@ where the main thread was blocked for long enough to prevent input
 responsiveness.
 
 The main thread is considered "blocked" any time there's a [Long
-Tasks](/custom-metrics/#long-tasks-api)&mdash;a task that runs on the main
+Task](/custom-metrics/#long-tasks-api)&mdash;a task that runs on the main
 thread for more than 50 milliseconds (ms). We say the main thread is "blocked"
 because the browser cannot interrupt a task that's in progress. So in the event
 that a user _does_ interact with the page in the middle of a long task, the
@@ -100,7 +102,7 @@ of how non-interactive a page is prior it to becoming reliably interactive.
 TTI considers a page "reliably interactive" if the main thread has been free of
 long tasks for at least five seconds. This means that three, 51 ms tasks spread
 out over 10 seconds can push back TTI just as far as a single 10-second long
-task&mdash;but those two scenarios would feet very different to a user trying to
+task&mdash;but those two scenarios would feel very different to a user trying to
 interact with the page.
 
 In the first case, three, 51 ms tasks would have a TBT of **3 ms**. Whereas a
@@ -110,7 +112,7 @@ value in the second case quantifies the worse experience.
 ## How to measure TBT
 
 TBT is a metric that should be measured [in the
-lab](/user-centric-metrics/#in-the-lab). The best way to measure TBT is to run a
+lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TBT is to run a
 Lighthouse performance audit on your site. See the [Lighthouse documentation on
 TBT](/lighthouse-total-blocking-time) for usage details.
 
@@ -118,7 +120,7 @@ TBT](/lighthouse-total-blocking-time) for usage details.
   While it is possible to measure TBT in the field, it's not recommended as user
   interaction can affect your page's TBT in ways that lead to lots of variance
   in your reports. To understand a page's interactivity in the field, you should
-  measure First Input Delay (FID).
+  measure [First Input Delay (FID)](/fid/).
 {% endAside %}
 
 ## What is a good TTI?

@@ -15,10 +15,10 @@ tags:
 
 {% Aside %}
   Time to Interactive (TTI) is an important, user-centric metric for measuring
-  [load responsiveness](/user-centric-metrics/#types-of-metrics) because it can
-  help identify cases where a page looks interactive, but it's not actually
-  interactive&mdash;a fast TTI helps ensure that the page is
-  [usable](/user-centric-metric/#user-centric-metric-questions).
+  [load responsiveness](/user-centric-performance-metrics/#types-of-metrics)
+  because it can help identify cases where a page looks interactive, but it's
+  not actually interactive&mdash;a fast TTI helps ensure that the page is
+  [usable](/user-centric-performance-metrics/#questions).
 {% endAside %}
 
 ## What is TTI?
@@ -69,7 +69,7 @@ interactive.
 ## How to measure TTI
 
 TTI is a metric that's best measured [in the
-lab](/user-centric-metrics/#in-the-lab). The best way to measure TTI is to run a
+lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TTI is to run a
 Lighthouse performance audit on your site. See the [Lighthouse documentation on
 TTI](/interactive/) for usage details.
 
@@ -89,7 +89,7 @@ TTI](/interactive/) for usage details.
 
 For details on how your page's TTI affects your Lighthouse performance score,
 see [How Lighthouse determines your TTI
-score](/interactive/#how-lighthouse-determines-your-tti-score)
+score](/interactive/#how-lighthouse-determines-your-tti-score).
 
 ## How to improve TTI
 

@@ -15,10 +15,10 @@ tags:
 
 {% Aside %}
   First Input Delay (FID) is an important, user-centric metric for measuring
-  [load responsiveness](/user-centric-metrics/#types-of-metrics) because it
-  quantifies the experience users feel when trying to interact with unresponsive
-  pages&mdash;a low FID helps ensure that the page is
-  [usable](/user-centric-metric/#user-centric-metric-questions).
+  [load responsiveness](/user-centric-performance-metrics/#types-of-metrics)
+  because it quantifies the experience users feel when trying to interact with
+  unresponsive pages&mdash;a low FID helps ensure that the page is
+  [usable](/user-centric-performance-metrics/#questions).
 {% endAside %}
 
 We all know how important it is to make a good first impression. It's important
@@ -98,13 +98,15 @@ Because the input occurs while the browser is in the middle of running a task,
 it has to wait until the task completes before it can respond to the input. The
 time it must wait is the FID value for this user on this page.
 
-{% Aside %} Note: in this example the user just happened to interact with the
+{% Aside %}
+  In this example the user just happened to interact with the
   page at the beginning of the main thread's most busy period. If the user had
   interacted with the page just a moment earlier (during the idle period) the
   browser could have responded right away. This variance in input delay
   underscores the importance of looking at the distribution of FID values when
   reporting on the metric. You can read more about this in the section below on
-  analyzing and reporting on FID data. {% endAside %}
+  analyzing and reporting on FID data.
+{% endAside %}
 
 ### Why only consider the first input?
 
@@ -158,7 +160,7 @@ this.
 ## How to measure FID
 
 FID is a metric that can only be measured [in the
-field](/user-centric-metrics/#in-the-field), as it requires a real user to
+field](/user-centric-performance-metrics/#in-the-field), as it requires a real user to
 interact with your page. You can measure FID with the following tools.
 
 ### Field tools
@@ -208,6 +210,14 @@ example, if you run separate reports for desktop and mobile, the FID value you
 care most about on desktop should be the 95th–99th percentile of desktop users,
 and the FID value you care about most on mobile should be the 95th–99th
 percentile of mobile users.
+
+## What is a good FID?
+
+[RAIL](https://developers.google.com/web/fundamentals/performance/rail)
+guidelines suggest that users perceive interaction delays less than 100 milliseconds (ms) to be immediate, so it's best to keep all input delays (including the first input) less than that.
+
+Page Speed Insights will [report](https://developers.google.com/speed/docs/insights/v5/about#distribution)
+FID values less than 100 ms as "fast", values between 100 ms and 300 ms as "moderate", and values greater than 300 ms as slow.
 
 ## How to improve FID
 

@@ -15,10 +15,11 @@ tags:
 
 {% Aside %}
   Largest Contentful Paint (LCP) is an important, user-centric metric for
-  measuring [perceived load speed](/user-centric-metrics/#types-of-metrics)
-  because it marks the point in the page load timeline when the page's main
-  content has likely loaded&mdash;a fast LCP helps reassure the user that the
-  page is [useful](/user-centric-metric/#user-centric-metric-questions).
+  measuring [perceived load
+  speed](/user-centric-performance-metrics/#types-of-metrics) because it marks
+  the point in the page load timeline when the page's main content has likely
+  loaded&mdash;a fast LCP helps reassure the user that the page is
+  [useful](/user-centric-performance-metrics/#questions).
 {% endAside %}
 
 Historically, it's been a challenge for web developers to measure how quickly
@@ -28,12 +29,10 @@ Older metrics like
 [load](https://developer.mozilla.org/en-US/docs/Web/Events/load) or
 [DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)
 are not good because they don't necessarily correspond to what the user sees on
-their screen. And newer, user-centric performance metrics like [First Paint
-(FP) and First Contentful Paint
-(FCP)](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#first_paint_and_first_contentful_paint)
-only capture the very beginning of the loading experience. If a page shows a
-splash screen or displays a loading indicator, this moment is not very relevant
-to the user.
+their screen. And newer, user-centric performance metrics like [First Contentful
+Paint (FCP)](/fcp/) only capture the very beginning of the loading experience.
+If a page shows a splash screen or displays a loading indicator, this moment is
+not very relevant to the user.
 
 In the past we've recommended performance metrics like
 [First Meaningful Paint (FMP)](/first-meaningful-paint/) and

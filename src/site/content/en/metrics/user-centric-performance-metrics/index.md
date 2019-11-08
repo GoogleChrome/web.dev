@@ -57,7 +57,7 @@ measure how users experience the performance of a web page.
 To help ensure the metrics are relevant to users, we frame them around a couple
 of key questions:
 
-<table id="user-centric-metric-questions">
+<table id="questions">
   <tr>
     <td><strong>Is it happening?</strong></td>
     <td>Did the navigation start successfully? Has the server responded?</td>

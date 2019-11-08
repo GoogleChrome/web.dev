@@ -16,9 +16,11 @@ tags:
 
 {% Aside %}
   Cumulative Layout Shift (CLS) is an important, user-centric metric for
-  measuring [visual stability](/user-centric-metrics/#types-of-metrics) because it helps quantify how often users
-  experience unexpected layout shifts&mdash;a low CLS helps ensure that the
-  page is [delightful](/user-centric-metric/#user-centric-metric-questions).
+  measuring [visual
+  stability](/user-centric-performance-metrics/#types-of-metrics) because it
+  helps quantify how often users experience unexpected layout shifts&mdash;a low
+  CLS helps ensure that the page is
+  [delightful](/user-centric-performance-metrics/#questions).
 {% endAside %}
 
 Have you ever been reading an article online when something suddenly changes on
@@ -67,8 +69,8 @@ measuring how often it's occurring for real users.
 ## What is CLS?
 
 CLS measures the sum of the individual _layout shift scores_ for each _expected_
-_layout shift_ that occurs between [First Contentful Paint (FCP)](/fcp/) and
-when the page's [lifecycle
+_layout shift_ that occurs between when the page starts loading and when the its
+[lifecycle
 state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 changes to hidden.
 
@@ -103,7 +105,7 @@ how unstable elements impact the viewport area between two frames.
 
 The union of the visible areas of all unstable elements for the previous frame
 _and_ the current frame&mdash;as a fraction of the total area of the
-viewport&mdash;is the impact fraction for the current frame.
+viewport&mdash;is the _impact fraction_ for the current frame.
 
 [![Impact fraction example with one unstable
 element](layout-shift-1.png)](layout-shift-1.png)
@@ -112,7 +114,7 @@ In the image above there's an element that takes up half of the viewport in one
 frame. Then, in the next frame, the element shifts down by 25% of the viewport
 height. The red, dotted rectangle indicates the union of the element's visible
 area in both frames, which, in this case, is 75% of the total viewport, so its
-impact fraction is `0.75`.
+_impact fraction_ is `0.75`.
 
 ### Distance fraction
 
@@ -127,15 +129,15 @@ element](layout-shift-2.png)](layout-shift-2.png)
 
 In the example above, the largest viewport dimension is the height, and the
 unstable element has moved by 25% of the viewport height, which makes the
-distance fraction 0.25.
+_distance fraction_ 0.25.
 
 So, in this example the _impact fraction_ is `0.75` and the _distance fraction_
 is `0.25`, so the _layout shift score_ is `0.75 * 0.25 = 0.1875`.
 
 {% Aside %}
-  Initially, the layout shift score was calculated based only on impact
-  fraction. The distance fraction is introduced to avoid overly penalizing cases
-  where large elements shift by small distances.
+  Initially, the layout shift score was calculated based only on _impact
+  fraction_. The _distance fraction_ is introduced to avoid overly penalizing
+  cases where large elements shift by small distances.
 {% endAside %}
 
 The next example illustrates how adding content to an existing element affects
@@ -156,13 +158,13 @@ doesn't change either.
 
 The start position of the green box, however, does change, but since it's been
 moved partially out of the viewport, the invisible area is not considered when
-calculating the impact fraction. The union of the visible areas for the green
+calculating the _impact fraction_. The union of the visible areas for the green
 box in both frames (illustrated by the red, dotted rectangle) is the same as the
 area of the green box in the first frame&mdash;50% of the viewport. The _impact
 fraction_ is `0.5`.
 
 The _distance fraction_ is illustrated with the purple arrow. The green box has
-moved down by about 14% of the viewport so the distance fraction is `0.14`.
+moved down by about 14% of the viewport so the _distance fraction_ is `0.14`.
 
 The layout shift score is `0.5 x 0.14 = 0.07`.
 
@@ -183,12 +185,12 @@ making them unstable elements.
 
 Again, the red, dotted rectangles represent the union of these three unstable
 elements' before and after areas, which in this case is around 38% of the
-viewport's area (impact fraction of `0.38`).
+viewport's area (_impact fraction_ of `0.38`).
 
 The arrows represent the distances that unstable elements have moved from their
 starting positions. The "Zebra" element, represented by the blue arrow, has
-moved the most, by about 30% of the viewport height. That makes the distance
-fraction in this example `0.3`.
+moved the most, by about 30% of the viewport height. That makes the _distance
+fraction_ in this example `0.3`.
 
 The layout shift score is `0.38 x 0.3 = 0.1172`.
 
@@ -237,8 +239,7 @@ property allows you to animate elements without triggering layout shifts:
 
 CLS can be measured [in the lab](/metrics/#in-the-lab) or [in the
 field](/metrics/#in-the-field) though at the moment it's not yet available in
-any lab tools. CLS is available as an experimental metric in the [Chrome User
-Experience
+any lab tools. CLS is available in the [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report).
 
 ### Measure CLS in JavaScript

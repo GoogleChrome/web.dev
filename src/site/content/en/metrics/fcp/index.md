@@ -15,10 +15,11 @@ tags:
 
 {% Aside %}
   First Contentful Paint (FCP) is an important, user-centric metric for
-  measuring [perceived load speed](/user-centric-metrics/#types-of-metrics)
-  because it marks the first point in the page load timeline that the user can
-  see anything on the screen—a fast FCP helps reassure the user that something
-  is [happening](/user-centric-metric/#user-centric-metric-questions).
+  measuring [perceived load
+  speed](/user-centric-performance-metrics/#types-of-metrics) because it marks
+  the first point in the page load timeline that the user can see anything on
+  the screen&mdash;a fast FCP helps reassure the user that something is
+  [happening](/user-centric-performance-metrics/#questions).
 {% endAside %}
 
 ## What is FCP?
@@ -36,13 +37,14 @@ screen.
 
 You'll notice that though some of the content has rendered, not all of it has
 rendered. This is an important distinction to make between _First_ Contentful
-Paint (FCP) and _[Largest Contentful Paint](/largest-contentful-paint/)_
-(LCP)—which aims to measure when the page's main contents have finished loading.
+Paint (FCP) and _[Largest Contentful Paint (LCP)](/largest-contentful-paint/)_
+&mdash;which aims to measure when the page's main contents have finished
+loading.
 
 ## How to measure FCP
 
-FCP can be measured [in the lab](/user-centric-metrics/#in-the-lab) or [in the
-field](/user-centric-metrics/#in-the-field), and it's available in the following
+FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab) or [in the
+field](/user-centric-performance-metrics/#in-the-field), and it's available in the following
 tools:
 
 ### Lab tools
@@ -66,8 +68,8 @@ You can measure FCP in JavaScript using the [Paint Timing
 API](https://w3c.github.io/paint-timing/). The following example shows how to
 create a
 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
-that listens for paint timing entries and logs the `first-contentful-paint` time
-to the console:
+that listens for paint timing entries and logs the start time of the
+`first-contentful-paint` entry to the console:
 
 ```js
 // Create the Performance Observer instance.
@@ -85,16 +87,16 @@ observer.observe({
 });
 ```
 
-In your own code, you'd likely replace the `console.log()` with code that sends
-the FCP value to your analytics service.
+Note, in your own code, you'd likely replace the `console.log()` with code that
+sends the FCP value to your analytics service.
 
 ## What is a good FCP?
 
 [RAIL](https://developers.google.com/web/fundamentals/performance/rail)
 guidelines suggest that after 1000 milliseconds (ms), users may lose focus if
-nothing happens after performing a task. Since First Contentful Paint is the
-first indication users will get that something is happening, it's best if the
-majority of page loads report FCP is less than a second (1000 ms).
+nothing happens after performing a task. Since FCP is the first indication users
+have that something is happening, it's best if the majority of page loads report
+FCP is less than a second (1000 ms).
 
 **For field measurement:** Page Speed Insights will
 [report](https://developers.google.com/speed/docs/insights/v5/about#distribution)

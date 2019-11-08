@@ -28,7 +28,7 @@ module.exports = {
         ],
       },
       {
-        title: "Create your own metrics",
+        title: "Define your own metrics",
         pathItems: ["custom-metrics"],
       },
     ],
