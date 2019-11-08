@@ -130,7 +130,7 @@ holiday tradition at Google. Every December, you can celebrate the season
 with games and educational experiences.
 
 In 2016, the Santa Tracker team used the Web Share API on Android.
-This API was a perfect fit for mobile
+This API was a perfect fit for mobile.
 In previous years, the team disabled share buttons on mobile because space is
 at a premium, and they couldn't justify having several share targets.
 
