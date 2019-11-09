@@ -84,7 +84,7 @@ tempus enim.
 <figure class="w-figure w-figure--fullbleed">
   <img src="a.jpg" alt="">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Large image.
+    Large image.
   </figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ quam sem.
 <figure class="w-figure">
   <img src="image-small.png" alt="" style="max-width: 400px;">
   <figcaption class="w-figcaption">
-    Fig. 2 — Small image.
+    Small image.
   </figcaption>
 </figure>
 
@@ -124,7 +124,7 @@ quam sem.
 <figure class="w-figure w-figure--inline-right">
   <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
   <figcaption class="w-figcaption">
-    Fig. 3 — Inline right, outlined image.
+    Inline right, outlined image.
   </figcaption>
 </figure>
 
@@ -145,7 +145,7 @@ velit. Morbi at quam sem.
 <figure class="w-figure w-figure--inline-left">
   <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
   <figcaption class="w-figcaption">
-    Fig. 4 — Inline left, outlined image.
+    Inline left, outlined image.
   </figcaption>
 </figure>
 
@@ -166,7 +166,7 @@ velit. Morbi at quam sem.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
   <figcaption class="w-figcaption">
-    Fig. 5 — Filled screenshot.
+    Filled screenshot.
   </figcaption>
 </figure>
 
@@ -259,7 +259,7 @@ quam sem.
   <figure class="w-figure">
     <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
     <figcaption class="w-figcaption">
-      Fig. 5 — Filled screenshot.
+      Filled screenshot.
     </figcaption>
   </figure>
   </li>
@@ -306,7 +306,7 @@ quam sem.
   <figure class="w-figure">
     <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
     <figcaption class="w-figcaption">
-      Fig. 5 — Filled screenshot.
+      Filled screenshot.
     </figcaption>
   </figure>
   </li>
