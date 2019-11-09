@@ -13,13 +13,15 @@ tags:
   - metrics
 ---
 
-Time to Interactive (TTI) is an important, user-centric metric for measuring
-[load responsiveness](/user-centric-performance-metrics/#types-of-metrics).
-It helps identify cases where a page _looks_ interactive but actually isn't.
-A fast TTI helps ensure that the page is
-[usable](/user-centric-performance-metrics/#questions).
+{% Aside %}
+  Time to Interactive (TTI) is an important, user-centric metric for measuring
+  [load responsiveness](/user-centric-performance-metrics/#types-of-metrics). It
+  helps identify cases where a page _looks_ interactive but actually isn't. A
+  fast TTI helps ensure that the page is
+  [usable](/user-centric-performance-metrics/#questions).
+{% endAside %}
 
-## How is TTI measured?
+## What is TTI?
 
 The TTI metric measures the time from when the page starts
 loading to when its main sub-resources have loaded and it is capable of reliably
