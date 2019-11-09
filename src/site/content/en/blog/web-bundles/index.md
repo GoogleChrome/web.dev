@@ -1,14 +1,15 @@
 ---
 title: Get started with Web Bundles
 subhead: |
-    Learn to bundle your website.
+  Learn how to share your website as a single file.
 date: 2019-11-11
 hero: hero.png
 alt: A logo of a web bundle
 authors:
+  - uskay
   - kenjibaheux
 description: |
-    Learn to bundle your website.
+  Learn how to share your website as a single file.
 tags:
   - post
   - web-bundles
@@ -34,9 +35,11 @@ images, and style sheets.
  proposal.
 
 <figure class="w-figure  w-figure--center">
-  <img src="webbundle.png" alt="A figure showing how web bundle bundle web resources" style="max-width: 60vw">
+  <img src="webbundle.png" 
+       alt="A figure demonstrating that a Web Bundle is a collection of web resources." 
+       style="max-width: 60vw">
   <figcaption class="w-figcaption">
-    A figure showing how web bundle bundle web resources.
+    How Web Bundles work
   </figcaption>
 </figure>
 
@@ -70,7 +73,7 @@ Some of its unique features are:
 * Uses [HTTP
   Variants](https://tools.ietf.org/id/draft-ietf-httpbis-variants-00.html) to do
   content negotiation. In other words, internationalization can be done by using
-  the Accept-Language header even the bundle is used offline.
+  the Accept-Language header even if the bundle is used offline.
 * Can be cryptographically signed by the publisher's origin which allows the
   browser to load the bundle's contents in the context of its origin.
 * Loads nearly instantly when it's served locally by the device.
@@ -89,21 +92,14 @@ playing the game on your friend's device, or find something else to pass the
 time. But with web bundles, here is what you could do.
 
 1. Ask your friend to share the `.wbn` file of the game. For example the file
-   could easily be shared peer to peer using a file sharing app. If
+   could easily be shared peer to peer using a file sharing app.
 2. Open the `.wbn` file in a browser that supports web bundles.
 3. Start playing the game on your own device and try to beat your friend's high
    score.
 
 Here is a video that explains this scenario.
 
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://youtu.be/xAujz66la3Y">
-  </video>
- <figcaption class="w-figcaption w-figcaption--fullbleed">
-    A short movie of how web bundles work. Web Bundles - user-to-user sharing demo. Created by Kinuko Yasuda.
-  </figcaption>
-</figure>
+{% YouTube 'xAujz66la3Y' %}
 
 As you can see, a web bundle can contain every resource, making it work offline
 and load instantly.
@@ -131,7 +127,7 @@ $ go get -u github.com/WICG/webpackage/go/bundle/cmd/...
 ```
 
 
-For this example, I'll bundleTodoMVC. I'll use [preact-todomvc](https://github.com/developit/preact-todomvc) to walk through the steps.
+For this example, I'll bundle TodoMVC. I'll use [preact-todomvc](https://github.com/developit/preact-todomvc) to walk through the steps.
 
 
 
@@ -176,7 +172,7 @@ on the `chrome://flags/#web-bundles` flag.
 
 
 Flip the flag to "Enabled", relaunch Chrome, and then drag-and-drop the
-`.wbn**`** file into Chrome on Desktop, or tap it in a file management app on
+`.wbn**` file into Chrome on Desktop, or tap it in a file management app on
 Android. Everything magically works.
 
 alt="A movie of preact todomvc working offline using web bundles"
