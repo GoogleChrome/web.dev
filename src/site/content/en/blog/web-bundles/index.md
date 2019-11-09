@@ -1,5 +1,5 @@
 ---
-title: Learn to bundle
+title: Get started with Web Bundles
 subhead: |
     Learn to bundle your website.
 date: 2019-11-11
