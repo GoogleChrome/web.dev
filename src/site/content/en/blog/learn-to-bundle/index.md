@@ -50,7 +50,7 @@ is a feature to sign a single HTTP resource.)
 
 
 In this article I will walk through what a web bundle is and how you can use it
-today. Let’s begin the bundle tour.
+today. Let's begin the bundle tour.
 
 
 ## Explaining web bundles
@@ -71,27 +71,27 @@ Some of its unique features are:
   Variants](https://tools.ietf.org/id/draft-ietf-httpbis-variants-00.html) to do
   content negotiation. In other words, internationalization can be done by using
   the Accept-Language header even the bundle is used offline.
-* Can be cryptographically signed by the publisher’s origin which allows the
-  browser to load the bundle’s contents in the context of its origin.
-* Loads nearly instantly when it’s served locally by the device.
+* Can be cryptographically signed by the publisher's origin which allows the
+  browser to load the bundle's contents in the context of its origin.
+* Loads nearly instantly when it's served locally by the device.
 
 These features open multiple scenarios. One common scenario is the ability to
 build a self-contained web app that's easy to share and usable without an
 internet connection.
 
-Let’s say you are on an airplane from Tokyo to San Francisco with your friend.
+Let's say you are on an airplane from Tokyo to San Francisco with your friend.
 You need to kill time for the nine hour flight but you don't like the in-flight
 entertainment. Your friend is playing an interesting web game called
 [Proxx](https://proxx.app/), and tells you that she downloaded the game as a web
 bundle before boarding the plane. It works flawlessly offline. Before web
 bundles, the story would end there and you would either have to take turns
-playing the game on your friend’s device, or find something else to pass the
+playing the game on your friend's device, or find something else to pass the
 time. But with web bundles, here is what you could do.
 
 1. Ask your friend to share the `.wbn` file of the game. For example the file
    could easily be shared peer to peer using a file sharing app. If
 2. Open the `.wbn` file in a browser that supports web bundles.
-3. Start playing the game on your own device and try to beat your friend’s high
+3. Start playing the game on your own device and try to beat your friend's high
    score.
 
 Here is a video that explains this scenario.
@@ -153,7 +153,7 @@ For this example, I'll bundleTodoMVC. I'll use [preact-todomvc](https://github.c
 Congratulations! TodoMVC is now a web bundle.
 
 There are other options for bundling and more are coming. The go/bundle CLI
-let’s you build a web bundle using a HAR file or from a custom list of resource
+let's you build a web bundle using a HAR file or from a custom list of resource
 URLs. Visit the [GitHub
 repo](https://github.com/WICG/webpackage/tree/master/go/bundle) to learn more
 about go/bundle. We are also building a Node.js module for  your existing build
@@ -175,11 +175,11 @@ on the `chrome://flags/#web-bundles` flag.
 </figure>
 
 
-Flip the flag to “Enabled”, relaunch Chrome, and then drag-and-drop the
+Flip the flag to "Enabled", relaunch Chrome, and then drag-and-drop the
 `.wbn**`** file into Chrome on Desktop, or tap it in a file management app on
 Android. Everything magically works.
 
-alt="A movie of preact todomvc working offline using web bundles”
+alt="A movie of preact todomvc working offline using web bundles"
 
 
 {% Aside %}
