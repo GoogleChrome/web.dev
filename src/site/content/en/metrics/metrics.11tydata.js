@@ -16,12 +16,12 @@ module.exports = {
         title: "Introduction",
         pathItems: ["user-centric-performance-metrics"],
       },
-      // {
-      //   title: "Important metrics to measure",
-      //   pathItems: ["fcp", "lcp", "fid", "tti", "tbt", "cls"],
-      // },
       {
-        title: "Create your own metrics",
+        title: "Important metrics to measure",
+        pathItems: ["fcp", "lcp", "fid", "tti", "tbt", "cls"],
+      },
+      {
+        title: "Define your own metrics",
         pathItems: ["custom-metrics"],
       },
     ],
