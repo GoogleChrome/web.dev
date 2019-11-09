@@ -4,7 +4,7 @@ subhead: |
     Learn to bundle your website.
 date: 2019-11-11
 hero: hero.png
-  alt: A logo of a web bundle
+alt: A logo of a web bundle
 authors:
   - kenjibaheux
 description: |
