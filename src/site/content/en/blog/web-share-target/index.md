@@ -1,5 +1,5 @@
 ---
-title: Receiving shared data
+title: Receiving shared data with the Web Share Target API
 subhead: Sharing on mobile made simple with the Web Share Target API
 authors:
   - petelepage
