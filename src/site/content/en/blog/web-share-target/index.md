@@ -31,7 +31,7 @@ support for files was added in Chrome 76.
 {% Aside %}
 The Web Share Target API is only half of the magic. Web apps can share data,
 files, links, or text using the Web Share API. See
-[Share like a native](/share-like-a-native) for details.
+[Share like a native](/web-share/) for details.
 {% endAside %}
 
 <figure class="w-figure w-figure--inline-right">
