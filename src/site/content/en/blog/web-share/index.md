@@ -24,7 +24,7 @@ way as native apps.
 {% Aside %}
   Sharing is only half of the magic. Web apps can also be share
   targets, meaning they can receive data, links, text, and files from
-  native or web apps. See the [Receive shared data](/receive-shared-data/)
+  native or web apps. See the [Receive shared data](/web-share-target/)
   post for details on how to register your app as a share target.
 {% endAside %}
 
