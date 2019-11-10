@@ -59,7 +59,7 @@ This year we announced the much-awaited [new evergreen Googlebot](https://webmas
     src="https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png"
     alt="Googlebot holding the Chrome logo"
   />
-  <figcaption>
+  <figcaption class="w-figcaption">
     Googlebot is now running a modern Chromium rendering engine.
   </figcaption>
 </figure>
