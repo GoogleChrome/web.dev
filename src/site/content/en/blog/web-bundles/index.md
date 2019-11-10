@@ -1,7 +1,7 @@
 ---
 title: Get started with Web Bundles
 subhead: |
-  TODO
+  Share websites as a single file over Bluetooth and run them offline in your origin's context
 date: 2019-11-11
 hero: hero.png
 alt: The Web Bundle logo
@@ -9,7 +9,8 @@ authors:
   - uskay
   - kenjibaheux
 description: |
-  TODO
+  Web Bundles enable you to share websites as a single file over Bluetooth and run them
+  offline in your origin's context.
 tags:
   - post
   - web-bundles
