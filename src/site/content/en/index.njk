@@ -54,6 +54,45 @@ date: 2018-11-05
 
 .w-cds-promo p:last-of-type {
   margin-bottom: 0; }
+
+.w-youtube-placeholder {
+  background-color: #000;
+  cursor: pointer;
+  position: relative;
+}
+
+.w-youtube-placeholder:hover .w-youtube-placeholder__play {
+  background-color: #f00;
+  opacity: 1;
+}
+
+.w-youtube-placeholder__play {
+  background-color: #212121;
+  border: 0;
+  border-radius: 14%;
+  cursor: pointer;
+  height: 46px;
+  opacity: 0.8;
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  width: 70px;
+  z-index: 1;
+}
+
+/* play button triangle */
+.w-youtube-placeholder__play::before {
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  content: '';
+}
+
+.w-youtube-placeholder__play,
+.w-youtube-placeholder__play::before {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
 </style>
 
 {# *-landing-page classes are a holdover from devsite. #}
@@ -112,15 +151,20 @@ date: 2018-11-05
 
   <section class="w-cds-promo">
     <div class="w-cds-promo__grid">
-      {# <div class="w-cds-promo__video">
-        {% YouTube '3bKMnYJzrqI' %}
-      </div> #}
-      <div>
+      <div class="w-cds-promo__video">
+        <div class="w-youtube-placeholder">
+          <button class="w-youtube-placeholder__play" aria-label="play"></button>
+          <img src="https://i.ytimg.com/vi/gUteNZ0IvrE/hqdefault.jpg" />
+        </div>
+        <div class="w-youtube" hidden>
+        </div>
+      </div>
+      {# <div>
         <img
           src="/images/modules/cds19-lockup-stack.svg"
           alt="chrome dev summit 2019"
         >
-      </div>
+      </div> #}
       <div>
         <p>
           Hear the latest updates to the web platform at
@@ -140,6 +184,23 @@ date: 2018-11-05
       </div>
     </div>
   </section>
+
+  <script>
+    const ytPlaceholder = document.querySelector(".w-youtube-placeholder");
+    ytPlaceholder.addEventListener("click", () => {
+      ytPlaceholder.hidden = true;
+      const embed = document.createElement("iframe");
+      embed.classList.add("w-youtube__embed");
+      embed.setAttribute("src", "https://www.youtube.com/embed/gUteNZ0IvrE?autoplay=1");
+      embed.setAttribute("frameborder", 0);
+      embed.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+      embed.setAttribute("allowfullscreen", "");
+      const yt = document.querySelector(".w-youtube");
+      yt.appendChild(embed);
+      yt.hidden = false;
+      
+    });
+  </script>
 
   <section>
     <div class="w-layout-container w-pb--non">
