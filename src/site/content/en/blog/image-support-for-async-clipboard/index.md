@@ -146,8 +146,8 @@ method. Currently you can only pass one image at a time, but we plan to add
 support for multiple images in the future.
 
 The `ClipboardItem` takes an object with the MIME type of the image as the key,
-and the actual blob as the value. The sample code below shows a future-proof way
-to do this by using the [`Object.defineProperty()`][object-define-prop] method.
+and the actual blob as the value. The sample code below shows a flexible way
+to do this by using the new dynamic property keys syntax.
 The MIME type used as the key is retrieved from `blob.type`. This approach ensures
 that your code will be ready for future image types as well as other MIME types
 that may be supported in the future.
@@ -158,10 +158,9 @@ try {
   const data = await fetch(imgURL);
   const blob = await data.blob();
   await navigator.clipboard.write([
-    new ClipboardItem(Object.defineProperty({}, blob.type, {
-      value: blob,
-      enumerable: true
-    }))
+    new ClipboardItem({
+      [blob.type]: blob
+    })
   ]);
   console.log('Image copied.');
 } catch(e) {
@@ -230,10 +229,9 @@ document.addEventListener('copy', async (e) => {
   try {
     for (const item of e.clipboardData.items) {
       await navigator.clipboard.write([
-        new ClipboardItem(Object.defineProperty({}, item.type, {
-          value: item,
-          enumerable: true
-        }))
+        new ClipboardItem({
+          [blob.type]: blob
+        })
       ]);
     }
     console.log('Image copied.');
