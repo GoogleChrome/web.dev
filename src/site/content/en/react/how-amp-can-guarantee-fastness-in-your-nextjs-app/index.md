@@ -5,8 +5,7 @@ authors:
   - houssein
 subhead: |
   Learn about the benefits and tradeoffs of supporting AMP in your Next.js app
-date: 2019-10-29
-draft: true
+date: 2019-11-08
 codelabs: how-to-use-amp-in-nextjs
 ---
 
@@ -84,10 +83,12 @@ The Hybrid AMP approach in Next.js provides a way to conditionally serve AMP pag
 it also creates a higher maintenance cost because it requires you to maintain
 two versions of each page.
 
-## Next steps
+## Conclusion
 
-Check out the rest of the guides in [web.dev's Next.js collection][collection] to discover
-other ways that you can optimize your Next.js app.
+AMP guarantees that your site gets fast and stays fast by enforcing patterns that lead to
+fastness and prohibiting patterns that lead to slowness. AMP HTML and AMP Caches are the two
+main ways that AMP guarantess fastness. But before adopting AMP you should make sure that it
+can support all of your site's requirements.
 
 [intro]: /performance-as-a-default-with-nextjs
 [collection]: /react#nextjs

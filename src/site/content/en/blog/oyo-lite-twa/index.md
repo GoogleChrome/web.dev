@@ -7,8 +7,7 @@ authors:
   - ajain
   - mfriesenhahn
 date: 2019-11-07
-# Add an updated date to your post if you edit in the future.
-# updated: 2019-06-27
+updated: 2019-11-08
 
 description: |
   How a hospitality startup built an Android app that relies on web content to
@@ -87,7 +86,7 @@ across the browser and the TWA app.
 
 {% Aside %}
 TWA support will soon be available in several Android browsers;
-both Chrome and FireFox have committed to TWA.
+both Samsung and FireFox have committed to TWA.
 You can specify what browser you want your app to use,
 though it's best to select the user's default browser.
 {% endAside %}
