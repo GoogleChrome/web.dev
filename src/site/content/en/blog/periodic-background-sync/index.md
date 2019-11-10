@@ -1,12 +1,11 @@
 ---
-title: Richer offline experiences with periodic background sync
+title: Richer offline experiences with the Periodic Background Sync API
 subhead:
-  Sync your app's data in the background for a more native-like experience.
+  Sync your web app's data in the background for a more native-like experience
 authors:
   - jeffposnick
   - joemedley
-date: 2019-11-08
-updated: 2019-11-08
+date: 2019-11-10
 hero: hero.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
@@ -23,22 +22,21 @@ tags:
 ---
 
 {% Aside %}
-  The Periodic Background Sync API, part of Google's [capabilities
-  project](https://developers.google.com/web/updates/capabilities), and since
-  Chrome 77 is in an [**origin trial**](#ot).is currently in development. This
-  post will be updated as the implementation progresses.
+  The Periodic Background Sync API is available as an [**origin trial**](#ot) in Chrome 77 and
+  later. It is part of the [Capabilities project](https://developers.google.com/web/updates/capabilities).
+  This post will be updated as the implementation progresses.
 {% endAside %}
 
+Have you ever been in any of the following situations?
 
-Have you ever been in any of the following situations: riding a train or subway
-with flaky or no connectivity; being throttled by your carrier after watching
-too many videos; or living in a country where bandwidth struggles to keep up
-with the demand? If you have, then you've surely felt the frustration of getting
+* Riding a train or subway with flaky or no connectivity
+* Being throttled by your carrier after watching too many videos
+* Living in a country where bandwidth struggles to keep up with the demand
+
+If you have, then you've surely felt the frustration of getting
 certain things done on the web, and wondered why native apps so often do better
-in these scenarios.
-
-Native apps can fetch fresh content such as news articles or weather information
-ahead of time. Even if there's no network in the subway, you can still read the
+in these scenarios. Native apps can fetch fresh content such as news articles or weather
+information ahead of time. Even if there's no network in the subway, you can still read the
 news.
 
 Periodic Background Sync enables web applications to periodically synchronize
@@ -63,7 +61,7 @@ Status
 1. Create explainer
 </td>
 <td markdown="block">
-<a href="https://github.com/beverloo/periodic-background-sync" >Complete</a>
+<a href="https://github.com/WICG/BackgroundSync/tree/master/explainers" >Complete</a>
 </td>
 </tr>
 <tr>
@@ -87,7 +85,7 @@ In Progress
 <strong>4. Origin trial</strong>
 </td>
 <td markdown="block">
-<strong><a href="https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905">Started in Chrome 77<a></strong><br/>
+<strong><a href="https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905">Started in Chrome 77</a></strong><br/>
 Expected to run through Chrome 80
 </td>
 </tr>
@@ -103,7 +101,7 @@ Not started
 
 ## Try it
 
-You can try periodic background sync with our [live demo
+You can try periodic background sync with the [live demo
 app](https://webplatformapis.com/periodic_sync/periodicSync_improved.html).
 Before using it, make sure that:
 
@@ -141,21 +139,21 @@ previous request has failed.
 
 ### Getting this right
 
-We are putting periodic background sync through a trial period so that you can
-help us make sure that we get it right. This section explains some of the design
-decisions we took to make this feature as helpful as possible.
+Chrome is putting periodic background sync through a trial period so that you can
+help the Chrome team make sure that they get it right. This section explains some of the design
+decisions Chrome took to make this feature as helpful as possible.
 
-The first design decision we made is that a web app can only use periodic
+The first design decision Chrome made is that a web app can only use periodic
 background sync after a person has installed it on their device, and has
 launched it as a distinct application. Periodic background sync is not available
 in the context of a regular tab in Chrome.
 
-Furthermore, since we don't want unused or seldom used web apps to gratuitously
-consume battery or data, we designed periodic background sync such that
+Furthermore, since Chrome doesn't want unused or seldom used web apps to gratuitously
+consume battery or data, Chrome designed periodic background sync such that
 developers will have to earn it by providing value to their users. Concretely,
-we are using a [site engagement score](chrome://site-engagement/) to determine
-if and how often periodic background syncs can happen for a given web app. In
-other words, a `periodicsync` event won't be fired at all unless the engagement
+Chrome is using a [site engagement score](https://www.chromium.org/developers/design-documents/site-engagement)
+(`chrome://site-engagement/`) to determine if and how often periodic background syncs can happen
+for a given web app. In other words, a `periodicsync` event won't be fired at all unless the engagement
 score is greater than zero, and its value affects the frequency at which the
 `periodicsync` event fires. This ensures that the only apps syncing in the
 background are the ones you are actively using.
@@ -166,7 +164,7 @@ push notifications allow a web app's logic to live a little longer (via its
 service worker) after a person has closed the page. On most platforms, it's
 common for people to have installed apps that periodically access the network in
 the background to provide a better user experience for critical updates,
-prefetching content, syncing data, etc. Similarly, periodic background sync also
+prefetching content, syncing data, and so on. Similarly, periodic background sync also
 extends the lifetime of a web app's logic to run at regular periods for what
 might be a few minutes at a time.
 
@@ -175,7 +173,7 @@ could result in some privacy concerns. Here's how Chrome has addressed this
 risk for periodic background sync:
 
 * The background sync activity only occurs on a network that the device has
-  previously connected to. We recommend to only connect to networks operated by
+  previously connected to. Chrome recommends to only connect to networks operated by
   trustworthy parties.
 * As with all internet communications, periodic background sync reveals the IP
   addresses of the client, the server it's talking to, and the name of the
@@ -312,16 +310,13 @@ if ('periodicSync' in registration) {
 Here's a quick run down of the interfaces provided by the Periodic Background
 Sync API.
 
-<dl>
-  <dt>PeriodicSyncEvent</dt>
-  <dd>Passed to the `ServiceWorkerGlobalScope.onperiodicsync` event handler at a time of the browser's choosing.</dd>
-  <dt>PeriodicSyncManager</dt>
-  <dd>Registers and unregisters periodic syncs and provides tags for registered syncs. Retrieve an instance of this class from the ServiceWorkerRegistration.periodicSync` property.</dd>
-  <dt>ServiceWorkerGlobalScope.onperiodicsync</dt>
-  <dd>Registers a handler to receive the `PeriodicSyncEvent`.</dd>
-  <dt>ServiceWorkerRegistration.periodicSync</dt>
-  <dd>Returns a reference to the `PeriodicSyncManager`.</dd>
-</dl>
+* `PeriodicSyncEvent`. Passed to the `ServiceWorkerGlobalScope.onperiodicsync` event handler at a
+  time of the browser's choosing.
+* `PeriodicSyncManager`. Registers and unregisters periodic syncs and provides tags for registered
+  syncs. Retrieve an instance of this class from the ServiceWorkerRegistration.periodicSync`
+  property.
+* `ServiceWorkerGlobalScope.onperiodicsync`. Registers a handler to receive the `PeriodicSyncEvent`.
+* `ServiceWorkerRegistration.periodicSync`. Returns a reference to the `PeriodicSyncManager`.
 
 ## Example
 
@@ -348,24 +343,23 @@ It can be a challenge to get and end-to-end view of periodic background sync
 while testing locally. Information about active registrations, approximate sync
 intervals, and logs of past sync events provide valuable context while debugging
 your web app's behavior. Fortunately, you can find all of that information
-through an experimental feature in Chrome's DevTools.
+through an experimental feature in Chrome DevTools.
 
 {% Aside %}
-  Periodic background sync debugging is currently disabled by default. Please
-  read [Enabling the DevTools
+  Periodic background sync debugging is currently disabled by default. See [Enabling the DevTools
   interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interface)
   for the steps needed to enable it during the origin trial.
 {% endAside %}
 
 ### Recording local activity
 
-The "Periodic Background Sync" panel's interface is organized around key events
+The **Periodic Background Sync** section of DevTools is organized around key events
 in the periodic background sync lifecycle: registering for sync, performing a
 background sync, and unregistering. To obtain information about these events,
-click **start recording** from within DevTools.
+click **Start recording**.
 
 <figure class="w-figure  w-figure--center">
-  <img src="1-record.png" alt="The record button in DevTools" style="max-width: 60vw">
+  <img class="w-screenshot" src="1-record.png" alt="The record button in DevTools" style="max-width: 75%">
   <figcaption class="w-figcaption">
     The record button in DevTools
   </figcaption>
@@ -375,7 +369,8 @@ While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
 <figure class="w-figure  w-figure--center">
-  <img src="2-record-result.png" alt="An example of recorded periodic background sync data" style="max-width: 60vw">
+  <img class="w-screenshot" src="2-record-result.png" alt="An example of recorded periodic background sync data" 
+       style="max-width: 75%">
   <figcaption class="w-figcaption">
     An example of recorded periodic background sync data
   </figcaption>
@@ -383,7 +378,7 @@ context and metadata logged for each.
 
 After enabling recording once, it will stay enabled for up to three days,
 allowing DevTools to capture local debugging information about background syncs
-that might take place, e.g., hours in the future.
+that might take place, even hours in the future.
 
 ### Simulating events
 
@@ -391,7 +386,7 @@ While recording background activity can be helpful, there are times when you'll
 want to test your `periodicsync` handler immediately, without waiting for an
 event to fire on its normal cadence.
 
-You can do this via the **Service Workers** panel within the Applications tab in
+You can do this via the **Service Workers** section within the Application panel in
 Chrome DevTools. The **Periodic Sync** field allows you to provide a tag for the
 event to use, and to trigger it as many times as you'd like.
 
@@ -403,56 +398,43 @@ event to use, and to trigger it as many times as you'd like.
 {% endAside %}
 
 <figure class="w-figure  w-figure--center">
-  <img src="3-sw-panel.png" alt="The **Service Workers** panel showing a button for triggering a periodic background sync event" style="max-width: 60vw">
-  <figcaption class="w-figcaption">
-    The **Service Workers** panel showing a button for triggering a periodic background sync event
-  </figcaption>
+  <img class="w-screenshot" src="3-sw-panel.png" 
+       alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync'
+            text field and button." style="max-width: 90%">
 </figure>
 
 ## Enabling the DevTools interface
 
 To enable periodic background sync during the origin trial, use the steps below. If and when it progresses out of the origin trial, the DevTools interface will be enabled by default.
 
-1. Visit chrome://flags/#enable-devtools-experiments and change the **Developer
+1. Visit `chrome://flags/#enable-devtools-experiments` and change the **Developer
    Tools experiments** setting to **Enabled**.
 
-<figure class="w-figure  w-figure--center">
-  <img src="4-experiments.png" alt="The Developer Tools experiments flag" style="max-width: 60vw">
-  <figcaption class="w-figcaption">
-    The Developer Tools experiments flag
-  </figcaption>
-</figure>
+   <figure class="w-figure  w-figure--center">
+     <img class="w-screenshot" src="4-experiments.png" alt="The Developer Tools experiments flag" 
+          style="max-width: 75%">
+   </figure>
 
 2. Restart Chrome.
 
-3. Open Chrome DevTools, and choose **Settings** from the three-dot menu in the
-   upper-right.
+3. Open Chrome DevTools [Settings](https://developers.google.com/web/tools/chrome-devtools/customize#settings).
 
-<figure class="w-figure  w-figure--center">
-  <img src="5-settings.png" alt="The three-dot menu with Settings selected" style="max-width: 60vw">
-  <figcaption class="w-figcaption">
-    The three-dot menu with Settings selected
-  </figcaption>
-</figure>
-
-4. In the **Experiments** section of the **Settings** panel, enable **Background
+4. In **Settings** > **Experiments**, enable **Background
    services section for Periodic Background Sync**.
 
-<figure class="w-figure  w-figure--center">
-  <img src="6-checkbox.png" alt="The Background services section for Periodic Background Sync setting enabled" style="max-width: 60vw">
-  <figcaption class="w-figcaption">
-    The Background services section for Periodic Background Sync setting enabled
-  </figcaption>
-</figure>
+   <figure class="w-figure w-figure--center">
+     <img class="w-screenshot" src="6-checkbox.png" 
+          alt="The 'Background services section for Periodic Background Sync' experiment in DevTools" 
+          style="max-width: 75%">
+   </figure>
 
 5. Close, and then reopen DevTools.
 
 6. You should now see a **Periodic Background Sync** section within the
    *Application* panel.
 
-<figure class="w-figure  w-figure--center">
-  <img src="7-panel.png" alt="The Application panel showing the Periodic Background Sync section" style="max-width: 60vw">
-  <figcaption class="w-figcaption">
-    The Application panel showing the Periodic Background Sync section
-  </figcaption>
-</figure>
+   <figure class="w-figure w-figure--center">
+     <img class="w-screenshot" src="7-panel.png" 
+          alt="The Application panel showing the Periodic Background Sync section" 
+          style="max-width: 75%">
+   </figure>
