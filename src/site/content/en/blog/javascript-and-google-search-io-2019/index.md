@@ -42,7 +42,6 @@ This year we announced the much-awaited [new evergreen Googlebot](https://webmas
 
 <figure class="w-figure w-figure--center">
   <img
-    class="w-hero w-hero--cover "
     sizes="100vw"
     srcset="
       https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=240   240w,
@@ -72,7 +71,6 @@ Googlebot is a pipeline with several components. Let's take a look to understand
 
 <figure class="w-figure w-figure--center w-figure--fullbleed">
   <img
-    class="w-hero w-hero--cover "
     sizes="100vw"
     srcset="
       https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=240   240w,
@@ -157,7 +155,6 @@ Let's look at a web app that shows a collection of cat images and uses JavaScrip
 
 <figure class="w-figure">
   <img
-    class="w-hero w-hero--cover "
     sizes="100vw"
     srcset="
       https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
@@ -191,7 +188,6 @@ The easiest way to do a quick check of a page is the [Mobile-Friendly Test](http
 
 <figure class="w-figure">
   <img
-    class="w-hero w-hero--cover "
     sizes="100vw"
     srcset="
       https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=240   240w,
@@ -217,7 +213,6 @@ You can also find out if there are resource loading issues or JavaScript errors.
 
 <figure class="w-figure">
   <img
-    class="w-hero w-hero--cover "
     sizes="100vw"
     srcset="
       https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=240   240w,
@@ -240,7 +235,6 @@ It's recommended to verify your domain in [Google Search Console](https://g.co/s
 
 <figure class="w-figure">
   <img
-    class="w-hero w-hero--cover "
     sizes="100vw"
     srcset="
       https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=240   240w,
@@ -266,7 +260,6 @@ For general SEO tips and guidance, you can use the SEO audits in Lighthouse. To 
 
 <figure class="w-figure">
   <img
-    class="w-hero w-hero--cover "
     sizes="100vw"
     srcset="
       https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=240   240w,
