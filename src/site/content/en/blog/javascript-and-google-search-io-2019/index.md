@@ -20,24 +20,6 @@ Great things are happening with Google Search, and we were excited to share them
 
 <div style="width:100%; padding-top: 56.25%; position: relative;">
 <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
-    <img
-      class="w-hero w-hero--cover "
-      sizes="100vw"
-      srcset="
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=3200 3200w
-      "
-      src="https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png"
-      alt="A pile of gears."
-    />
 50%; transform: translate(-50%,-50%);"
 src="https://www.youtube.com/embed/ufcijo46LCU" frameborder="0"
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -59,24 +41,25 @@ In this post we'll focus on best practices for making JavaScript web apps discov
 This year we announced the much-awaited [new evergreen Googlebot](https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html).
 
 <figure class="w-figure w-figure--center">
-    <img
-      class="w-hero w-hero--cover "
-      sizes="100vw"
-      srcset="
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
-        https://webdev.imgix.net/javascript-and-google-evergreen-googlebot.pngspa-kittens.png?auto=format&amp;fit=max&amp;w=3200 3200w
-      "
-      src="https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png"
-      alt="A pile of gears."
-    />
+  <img
+    class="w-hero w-hero--cover "
+    sizes="100vw"
+    srcset="
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=240   240w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=480   480w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=768   768w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=1045 1045w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=1434 1434w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=1730 1730w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=1959 1959w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=2195 2195w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=2880 2880w,
+      https://webdev.imgix.net/javascript-and-google-evergreen-googlebot.png?auto=format&amp;fit=max&amp;w=3200 3200w
+    "
+    src="https://webdev.imgix.net/javascript-and-google-search-io-2019/evergreen-googlebot.png"
+    alt="Googlebot holding the Chrome logo"
+  />
+  <figcaption>
     Googlebot is now running a modern Chromium rendering engine.
   </figcaption>
 </figure>
@@ -88,26 +71,24 @@ Googlebot now uses a modern Chromium engine to render websites for Google Search
 Googlebot is a pipeline with several components. Let's take a look to understand how Googlebot indexes pages for Google Search.
 
 <figure class="w-figure w-figure--center w-figure--fullbleed">
-    <img
-      class="w-hero w-hero--cover "
-      sizes="100vw"
-      srcset="
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?autgooglebot-process.png"ndering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLt=max&amp;w=3200 3200w
-      "
-      src="https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png"ndering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URL"
-  alt="A pile of gears."
-/>
-
-  again and index the content.">
+  <img
+    class="w-hero w-hero--cover "
+    sizes="100vw"
+    srcset="
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=240   240w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=480   480w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=768   768w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=1045 1045w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=1434 1434w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=1730 1730w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=1959 1959w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=2195 2195w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png?auto=format&amp;fit=max&amp;w=2880 2880w,
+      https://webdev.imgix.net/javascript-and-google-googlebot-process.png?auto=format&amp;fit=max&amp;w=3200 3200w
+    "
+    src="https://webdev.imgix.net/javascript-and-google-search-io-2019/googlebot-process.png"
+    alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content."
+  />
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Googlebot's pipeline for crawling, rendering, and indexing a page.
   </figcaption>
@@ -175,26 +156,24 @@ The default rendering strategy for single-page apps today is client-side renderi
 Let's look at a web app that shows a collection of cat images and uses JavaScript to render entirely in the browser.
 
 <figure class="w-figure">
-    <img
-      class="w-hero w-hero--cover "
-      sizes="100vw"
-      srcset="
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
-        https://webdev.imgix.net/javascript-and-google-spa-kittens.png"ontent.spa-kittens.png?auto=format&amp;fit=max&amp;w=3200 3200w
-      "
-      src="https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png"ontent."
-      alt="A pile of gears."
-    />
-
-
+  <img
+    class="w-hero w-hero--cover "
+    sizes="100vw"
+    srcset="
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
+      https://webdev.imgix.net/javascript-and-google-spa-kittens.png?auto=format&amp;fit=max&amp;w=3200 3200w
+    "
+    src="https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png"
+    alt="A code box showing HTML that loads some scripts. A screenshot of a web page on mobile that shows placeholder images while loading the actual content."
+  />
   <figcaption class="w-figcaption">
     The rendering strategy influences the performance and robustness of your web apps.
   </figcaption>
@@ -211,26 +190,24 @@ While most pages generally work fine with Googlebot, we recommend testing your p
 The easiest way to do a quick check of a page is the [Mobile-Friendly Test](https://g.co/mobilefriendly). Besides showing you issues with mobile-friendliness, it also gives you a screenshot of the above-the-fold content and the rendered HTML as Googlebot sees it.
 
 <figure class="w-figure">
-    <img
-      class="w-hero w-hero--cover "
-      sizes="100vw"
-      srcset="
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=3200 3200w
-      "
-      src="https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png"
-      alt="A pile of gears."
-    />
-
-
+  <img
+    class="w-hero w-hero--cover "
+    sizes="100vw"
+    srcset="
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=240   240w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=480   480w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=768   768w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=1045 1045w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=1434 1434w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=1730 1730w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=1959 1959w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=2195 2195w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=2880 2880w,
+      https://webdev.imgix.net/javascript-and-google-mobile-friendly-test-rendered-html.png?auto=format&amp;fit=max&amp;w=3200 3200w
+    "
+    src="https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-rendered-html.png"
+    alt="The mobile-friendly test shows the rendered HTML Googlebot sees after rendering the page"
+  />
   <figcaption class="w-figcaption">
     The mobile-friendly test shows you the rendered HTML Googlebot uses.
   </figcaption>
@@ -239,50 +216,47 @@ The easiest way to do a quick check of a page is the [Mobile-Friendly Test](http
 You can also find out if there are resource loading issues or JavaScript errors.
 
 <figure class="w-figure">
-    <img
-      class="w-hero w-hero--cover "
-      sizes="100vw"
-      srcset="
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
-        https://webdev.imgix.net/javascript-and-google-search-io-mobile-friendly-test-js-error.pngs.png?auto=format&amp;fit=max&amp;w=3200 3200w
-      "
-      src="https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png"
-      alt="A pile of gears."
-    />
-
-
+  <img
+    class="w-hero w-hero--cover "
+    sizes="100vw"
+    srcset="
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=240   240w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=480   480w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=768   768w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=1045 1045w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=1434 1434w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=1730 1730w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=1959 1959w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=2195 2195w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=2880 2880w,
+      https://webdev.imgix.net/javascript-and-google-mobile-friendly-test-js-error.png?auto=format&amp;fit=max&amp;w=3200 3200w
+    "
+    src="https://webdev.imgix.net/javascript-and-google-search-io-2019/mobile-friendly-test-js-error.png"
+    alt="The Mobile-Friendly Test shows JavaScript errors and a stack trace."
+  />
+</figure>
 
 It's recommended to verify your domain in [Google Search Console](https://g.co/searchconsole) so you can use the URL inspection tool to find out more about the crawling and indexing state of a URL, receive messages when Search Console detects issues and find out more details of how your site performs in Google Search.
 
 <figure class="w-figure">
-    <img
-      class="w-hero w-hero--cover "
-      sizes="100vw"
-      srcset="
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=3200 3200w
-      "
-      src="https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png"
-      alt="A pile of gears."
-    />
-
-
+  <img
+    class="w-hero w-hero--cover "
+    sizes="100vw"
+    srcset="
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=240   240w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=480   480w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=768   768w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=1045 1045w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=1434 1434w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=1730 1730w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=1959 1959w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=2195 2195w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=2880 2880w,
+      https://webdev.imgix.net/javascript-and-google-search-console-url-inspection-tool.png?auto=format&amp;fit=max&amp;w=3200 3200w
+    "
+    src="https://webdev.imgix.net/javascript-and-google-search-io-2019/search-console-url-inspection-tool.png"
+    alt="The URL inspection tool showing a page that is indexed with information on discovery, crawling and indexing for one URL"
+  />
   <figcaption class="w-figcaption">
     The URL Inspection Tool in Search Console shows the status of a page in crawling, rendering, and indexing.
   </figcaption>
@@ -291,26 +265,24 @@ It's recommended to verify your domain in [Google Search Console](https://g.co/s
 For general SEO tips and guidance, you can use the SEO audits in Lighthouse. To integrate SEO audits into your testing suite, use the [Lighthouse CLI](https://github.com/GoogleChrome/lighthouse/tree/master/lighthouse-cli) or the [Lighthouse CI bot](https://github.com/GoogleChromeLabs/lighthousebot).
 
 <figure class="w-figure">
-    <img
-      class="w-hero w-hero--cover "
-      sizes="100vw"
-      srcset="
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=240   240w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=480   480w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=768   768w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1045 1045w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1434 1434w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1730 1730w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=1959 1959w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2195 2195w,
-        https://webdev.imgix.net/javascript-and-google-search-io-2019/spa-kittens.png?auto=format&amp;fit=max&amp;w=2880 2880w,
-        https://webdev.imgix.net/javascript-and-google-search-ilighthouse-seo-audit-report.pngens.png?auto=format&amp;fit=max&amp;w=3200 3200w
-      "
-      src="https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png"
-      alt="A pile of gears."
-    />
-
-
+  <img
+    class="w-hero w-hero--cover "
+    sizes="100vw"
+    srcset="
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=240   240w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=480   480w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=768   768w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=1045 1045w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=1434 1434w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=1730 1730w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=1959 1959w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=2195 2195w,
+      https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=2880 2880w,
+      https://webdev.imgix.net/javascript-and-google-lighthouse-seo-audit-report.png?auto=format&amp;fit=max&amp;w=3200 3200w
+    "
+    src="https://webdev.imgix.net/javascript-and-google-search-io-2019/lighthouse-seo-audit-report.png"
+    alt="A lighthouse SEO report with a score of 44 and warnings about mobile-friendliness as well as warnings about content best practices"
+  />
   <figcaption class="w-figcaption">
     Lighthouse shows general SEO recommendations for a page.
   </figcaption>
