@@ -18,13 +18,15 @@ tags:
 
 Great things are happening with Google Search, and we were excited to share them at Google I/O 2019!
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
-50%; transform: translate(-50%,-50%);"
-src="https://www.youtube.com/embed/ufcijo46LCU" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
+<style>
+  lite-youtube{width: 100%;padding-top: 56.25%;background-color:#000;position:relative;contain:strict;display:block;background-position:center center;background-size:cover;cursor:pointer}lite-youtube::before{content:'';display:block;position:absolute;top:0;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);background-position:top;background-repeat:repeat-x;height:110px;padding-bottom:50px;width:100%;transition:all .2s cubic-bezier(0,0,.2,1)}lite-youtube .lty-playbtn{width:70px;height:46px;background-color:#212121;z-index:1;opacity:.8;border-radius:14%;transition:all .2s cubic-bezier(0,0,.2,1)}lite-youtube:hover .lty-playbtn{background-color:red;opacity:1}lite-youtube .lty-playbtn:before{content:'';border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff}lite-youtube .lty-playbtn,lite-youtube .lty-playbtn:before{position:absolute;top:50%;left:50%;transform:translate3d(-50%,-50%,0)}lite-youtube.lyt-activated{cursor:unset}lite-youtube.lyt-activated .lty-playbtn,lite-youtube.lyt-activated::before{opacity:0;pointer-events:none}
+  lite-youtube iframe{position:absolute;top:0;left:0;right:0;bottom:0;}
+</style>
+
+
+<lite-youtube data-videoid="ufcijo46LCU" style="background-image: url('https://i.ytimg.com/vi/ufcijo46LCU/hqdefault.jpg');">
+  <div class="lty-playbtn"></div>
+</lite-youtube>
 
 In this post we'll focus on best practices for making JavaScript web apps discoverable in Google Search, including:
 
@@ -287,3 +289,7 @@ These tools help you identify, debug, and fix issues with pages in Google Search
 
 To stay up to date with announcements and changes to Google Search, keep an eye on our [Webmasters Blog](https://webmasters.googleblog.com), the [Google Webmasters Youtube channel](https://youtube.com/GoogleWebmasterHelp), and our [Twitter account](https://twitter.com/googlewmc).
 Also check out our [developer guide to Google Search](http://developers.google.com/search/docs/guides/) and our [JavaScript SEO video series](https://www.youtube.com/watch?v=LXF8bM4g-J4&list=PLKoqnv2vTMUPOalM1zuWDP9OQl851WMM9) to learn more about SEO and JavaScript.
+
+<script>
+  class LiteYTEmbed extends HTMLElement{constructor(){super();this.videoId=encodeURIComponent(this.dataset.videoid);this.posterUrl=`https://i.ytimg.com/vi/${this.videoId}/hqdefault.jpg`;LiteYTEmbed.addPrefetch("preload",this.posterUrl,"image")}connectedCallback(){this.style.backgroundImage=`url("${this.posterUrl}")`;const playBtn=document.createElement("div");playBtn.classList.add("lty-playbtn");this.append(playBtn);this.addEventListener("pointerover",LiteYTEmbed.warmConnections,{once:true});this.addEventListener("click",e=>this.addIframe())}static addPrefetch(kind,url,as){const linkElem=document.createElement("link");linkElem.rel=kind;linkElem.href=url;if(as){linkElem.as=as}linkElem.crossorigin=true;document.head.append(linkElem)}static warmConnections(){if(LiteYTEmbed.preconnected)return;LiteYTEmbed.addPrefetch("preconnect","https://www.youtube.com");LiteYTEmbed.addPrefetch("preconnect","https://www.google.com");LiteYTEmbed.addPrefetch("preconnect","https://googleads.g.doubleclick.net");LiteYTEmbed.addPrefetch("preconnect","https://static.doubleclick.net");LiteYTEmbed.preconnected=true}addIframe(){const escapedVideoId=encodeURIComponent(this.videoId);const iframeHTML=`\n<iframe width="560" height="315" frameborder="0"\n  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen\n  src="https://www.youtube.com/embed/${escapedVideoId}?autoplay=1"\n></iframe>`;this.insertAdjacentHTML("beforeend",iframeHTML);this.classList.add("lyt-activated")}}customElements.define("lite-youtube",LiteYTEmbed);
+</script>
