@@ -8,6 +8,8 @@ export LHCI_RC_FILE=./tools/lhci/.lighthouserc
 # Install latest LHCI
 npm install -g @lhci/cli@next
 
+lhci healthcheck --fatal
+
 # Start up a local webserver and wait for it to get going
 npm start &
 sleep 2
