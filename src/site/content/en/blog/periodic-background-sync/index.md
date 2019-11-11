@@ -240,7 +240,7 @@ so that multiple syncs can be registered. In the example below, the tag name is
 const registration = await navigator.serviceWorker.ready;
 if ('periodicSync' in registration) {
   try {
-    registration.periodicSync.register('content-sync', {
+    await registration.periodicSync.register('content-sync', {
       // An interval of one day.
       minInterval: 24 * 60 * 60 * 1000,
     });
@@ -301,7 +301,7 @@ sync you want to unregister.
 ```js
 const registration = await navigator.serviceWorker.ready;
 if ('periodicSync' in registration) {
-  registration.periodicSync.unregister('content-sync');
+  await registration.periodicSync.unregister('content-sync');
 }
 ```
 
