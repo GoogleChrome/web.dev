@@ -224,6 +224,8 @@ Use the codelab aside to link to an associated codelab.
 
 {% SelfAssessment 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
 
+<w-tabset></w-tabset>
+
 ```html
 <label for="pwd-input">Password</label>
 
@@ -929,8 +931,7 @@ assumenda perspiciatis.
 </div>
 
 ## Tabs
-{% Tabset %}
-{% endTabset %}
+<w-tabset></w-tabset>
 
 ## Tooltips
 Hold the pointer over or focus the buttons below to view their tooltips.

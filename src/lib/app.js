@@ -3,6 +3,7 @@ import "./components/Header";
 import "./components/SideNav";
 import "./components/SnackbarContainer";
 import "./components/Search";
+import "./components/Tabs";
 import {store} from "./store";
 import "focus-visible";
 import "./analytics";
