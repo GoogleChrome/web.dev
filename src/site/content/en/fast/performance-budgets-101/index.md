@@ -80,7 +80,7 @@ Choosing a tool for this will depend a lot on the scale of your project and reso
 
 * [Webpack performance features](https://webpack.js.org/configuration/performance/)
 * [bundlesize](https://github.com/siddharthkp/bundlesize)
-* [Lighthouse CI](https://github.com/ebidel/lighthouse-ci)
+* [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
 
 If something goes over a defined threshold, you can either:
 
