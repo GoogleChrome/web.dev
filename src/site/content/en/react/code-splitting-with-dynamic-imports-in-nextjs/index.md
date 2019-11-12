@@ -180,7 +180,7 @@ widget) you can do that by setting the `ssr` option to `false`:
 
 ```js
 const Puppy = dynamic(() => import("../components/Puppy"), {
-  ssr: 'false'
+  ssr: false,
 });
 ```
 
