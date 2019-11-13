@@ -129,7 +129,7 @@ specification built in [Go](https://golang.org/).
 2. Use the `gen-bundle` command to build a `.wbn` file.
 
     ```bash
-    gen-bundle -dir build -baseURL https://preact-todom.vc -primaryURL https://preact-todom.vc -o todomvc.wbn
+    gen-bundle -dir build -baseURL https://preact-todom.vc/ -primaryURL https://preact-todom.vc/ -o todomvc.wbn
     ```
 
 Congratulations! TodoMVC is now a Web Bundle.
