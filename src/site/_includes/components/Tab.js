@@ -15,23 +15,13 @@
  */
 
 const {html} = require("common-tags");
-const md = require("markdown-it")();
 
-module.exports = (content, summary, state) => {
-  if (!summary) {
-    /* eslint-disable max-len */
-    throw new Error(
-      `Can't create SelfAssessmentHint component without a summary. Did you forget to pass the summary as a string?`,
-    );
-    /* eslint-enable max-len */
-  }
-
-  const stateOverride = state == "open" ? "open" : "";
+module.exports = (content, label) => {
+  const dataLabel = label != null ? 'data-label="' + label + '"' : "";
   // prettier-ignore
   return html`
-    <details class="w-self-assessment-hint" ${stateOverride}>
-      <summary class="w-self-assessment-hint__summary">${summary}</summary>
-      <div class="w-self-assessment-hint__panel">${md.render(content)}</div>
-    </details>
+    <div class="w-tabset__pane" role="tabpanel" ${dataLabel} hidden>
+    ${content}
+    </div>
   `;
 };

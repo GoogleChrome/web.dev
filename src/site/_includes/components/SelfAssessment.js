@@ -17,14 +17,12 @@
 const {html} = require("common-tags");
 
 /* eslint-disable require-jsdoc, max-len */
-
 module.exports = (content, blurb) => {
+  // prettier-ignore
   return html`
     <details class="w-callout w-callout--collapsible" open>
       <summary class="w-callout__header">
-        <h2
-          class="w-callout__lockup w-callout__lockup--collapsible w-callout__lockup--assess"
-        >
+        <h2 class="w-callout__lockup w-callout__lockup--collapsible w-callout__lockup--assess">
           Check for understanding
           <span class="w-callout--collapsible__toggle">
             <span class="w-tooltip w-tooltip--right">Toggle callout</span>
@@ -36,8 +34,6 @@ module.exports = (content, blurb) => {
         <div class="w-callout__blurb w-callout__blurb--collapsed">
           Expand this callout to practice concepts from the post.
         </div>
-      </summary>
-      ${content}
-    </details>
+      </summary>${content}</details>
   `;
 };

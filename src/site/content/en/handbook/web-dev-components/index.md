@@ -223,10 +223,9 @@ Use the codelab aside to link to an associated codelab.
 {% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
 
 {% SelfAssessment 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
+{% Tabset 'Samples for knowledge self check' %}
 
-<w-tabset label="Samples to check for understanding">
-
-<div class="w-tabset__pane" role="tabpanel" hidden>
+{% Tab %}
 
 ```html
 <label for="pwd-input">Password</label>
@@ -241,8 +240,8 @@ it doesn't need ARIA for its semantics.
 In fact, text inputs don't allow ARIA roles to be added.
 {% endSelfAssessmentHint %}
 
-</div>
-<div class="w-tabset__pane" role="tabpanel" hidden>
+{% endTab %}
+{% Tab %}
 
 ```html
 <label for="inky">
@@ -255,8 +254,8 @@ In fact, text inputs don't allow ARIA roles to be added.
 **No.** This sample is **correct**. Since radio inputs and labels are native HTML form elements, they come with built-in semantics. There's no need to add ARIA.
 {% endSelfAssessmentHint %}
 
-</div>
-<div class="w-tabset__pane" role="tabpanel" data-label="Custom" hidden>
+{% endTab %}
+{% Tab 'Custom' %}
 
 ```html
 <ul role="menu">
@@ -269,10 +268,8 @@ In fact, text inputs don't allow ARIA roles to be added.
 **Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
 {% endSelfAssessmentHint %}
 
-</div>
-
-</w-tabset>
-
+{% endTab %}
+{% endTabset %}
 {% endSelfAssessment %}
 
 ## Columns
@@ -965,7 +962,41 @@ assumenda perspiciatis.
 </div>
 
 ## Tabs
-<w-tabset></w-tabset>
+Tabs are currently only designed for use in callouts.
+Don't use tabs in the main post body because there's no visual indicator
+of where tab content stops and main post content resumes.
+
+{% Tabset 'Samples for knowledge self check' %}
+{% Tab %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+nibh varius at.
+
+{% endTab %}
+{% Tab %}
+
+```html
+<label for="inky">
+  Inky
+  <input type="radio" id="inky" name="ghosts" value="inky">
+</label>
+```
+
+{% endTab %}
+{% Tab 'Custom' %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% endTab %}
+{% endTabset %}
 
 ## Tooltips
 Hold the pointer over or focus the buttons below to view their tooltips.
