@@ -224,7 +224,9 @@ Use the codelab aside to link to an associated codelab.
 
 {% SelfAssessment 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
 
-<w-tabset></w-tabset>
+<w-tabset label="Samples to check for understanding">
+
+<div class="w-tabset__pane" role="tabpanel" hidden>
 
 ```html
 <label for="pwd-input">Password</label>
@@ -238,6 +240,38 @@ Since the text input is a native HTML form element,
 it doesn't need ARIA for its semantics.
 In fact, text inputs don't allow ARIA roles to be added.
 {% endSelfAssessmentHint %}
+
+</div>
+<div class="w-tabset__pane" role="tabpanel" hidden>
+
+```html
+<label for="inky">
+  Inky
+  <input type="radio" id="inky" name="ghosts" value="inky">
+</label>
+```
+
+{% SelfAssessmentHint 'Does the sample need ARIA?' %}
+**No.** This sample is **correct**. Since radio inputs and labels are native HTML form elements, they come with built-in semantics. There's no need to add ARIA.
+{% endSelfAssessmentHint %}
+
+</div>
+<div class="w-tabset__pane" role="tabpanel" data-label="Custom" hidden>
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% SelfAssessmentHint 'Does the sample need ARIA?' %}
+**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
+{% endSelfAssessmentHint %}
+
+</div>
+
+</w-tabset>
 
 {% endSelfAssessment %}
 

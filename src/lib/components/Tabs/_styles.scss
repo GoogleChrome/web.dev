@@ -49,12 +49,12 @@
   box-shadow: none;
 }
 
-.w-tabset__tab[active] {
+.w-tabset__tab[aria-selected="true"] {
   color: $SUCCESS_COLOR;
   opacity: 1;
 }
 
-.w-tabset__tab[active]::after {
+.w-tabset__tab[aria-selected="true"]::after {
   background: $SUCCESS_COLOR;
   bottom: 0;
   content: '';
