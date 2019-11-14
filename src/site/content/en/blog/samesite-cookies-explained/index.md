@@ -290,7 +290,7 @@ and provide users with a safer experience, the IETF proposal,
 [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
 lays out two key changes:
 
-- Cookies without a `SameSite` attribute will be treated as `SameSite=None`.
+- Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`.
 - Cookies with `SameSite=None` must also specify `Secure`.
 
 Both

@@ -1569,5 +1569,54 @@
       "description": {
         "en": "AdSpeed tech lead at Google"
       }
-    }
+    },
+    "yosuke_furukawa": {
+      "name": {
+        "given": "Yosuke",
+        "family": "Furukawa"
+      },
+      "org": {
+        "name": "Recruit Technologies",
+        "unit": "Software Engineering"
+      },
+      "country": "JP",
+      "twitter": "yosuke_furukawa"
+    },
+    "satoshi_arai": {
+      "name": {
+        "given": "Satoshi",
+        "family": "Arai"
+      },
+      "org": {
+        "name": "Recruit Technologies",
+        "unit": "Software Engineering"
+      },
+      "country": "JP"
+    },
+    "kento_tsuji": {
+      "name": {
+        "given": "Kento",
+        "family": "Tsuji"
+      },
+      "org": {
+        "name": "Recruit Technologies",
+        "unit": "Software Engineering"
+      },
+      "country": "JP",
+      "twitter": "maxmellon_9039"
+    },
+    "ajain": {
+      "name": {
+        "given": "Ankit",
+        "family": "Jain"
+      },
+      "twitter": "AnkitJainOAJ"
+    },
+  "kenjibaheux": {
+    "name": {
+      "given": "Kenji",
+      "family": "Baheux"
+    },
+    "twitter": "KenjiBaheux"
+  }
 }

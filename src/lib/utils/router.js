@@ -84,7 +84,12 @@ function onClick(e) {
   // nb. If this ever supports Shadow DOM, we can use .composedPath to find
   // the nearest link inside an open Shadow Root.
   const link = e.target.closest("a[href]");
-  if (!link || link.target || link.host !== location.host) {
+  if (
+    !link ||
+    link.target ||
+    link.host !== location.host ||
+    link.pathname.match(/\.(jpg|png|gif|svg|webp)$/)
+  ) {
     return;
   }
 
@@ -113,7 +118,6 @@ export function listen(handler) {
   // window.location rather than accepting an argument) to trigger a load via
   // the passed handler. Only one handler can run at once.
   globalHandler = () => {
-    const url = window.location.pathname + window.location.search;
     const localRequest = ++requestCount;
 
     // Delay until any previous load is complete, then run handler for the
@@ -123,7 +127,7 @@ export function listen(handler) {
         if (localRequest !== requestCount) {
           return false;
         }
-        await handler(url);
+        await handler();
         return true;
       })
       .catch((err) => {
@@ -150,7 +154,7 @@ export function listen(handler) {
 
   // Don't catch errors for the first load.
   recentActiveUrl = getUrl();
-  handler(recentActiveUrl, true);
+  handler(true);
 }
 
 /**

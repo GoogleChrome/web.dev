@@ -48,4 +48,4 @@ There are many possible causes of slow server responses, and therefore many poss
 ## Resources
 
 - [Source code for **Reduce server response times (TTFB)** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/time-to-first-byte.js)
-- [Adaptive Serving with Network Information API](/adaptive-service-based-on-network-quality)
+- [Adaptive Serving with Network Information API](/adaptive-serving-based-on-network-quality)

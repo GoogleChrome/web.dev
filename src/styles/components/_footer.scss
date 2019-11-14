@@ -6,6 +6,17 @@
   border-top: 1px solid $GREY_300;
 }
 
+.w-footer__license {
+  padding-top: 32px;
+  width: 100%;
+}
+
+.w-footer__license p {
+  font-size: .75rem;
+  margin: 0;
+  max-width: 960px;
+}
+
 .w-footer__linkboxes {
   background: $WHITE;
   display: block;
@@ -78,6 +89,7 @@
   @include bp(md) {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     margin: 0 24px;
   }
 }

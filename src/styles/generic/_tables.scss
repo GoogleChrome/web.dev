@@ -42,6 +42,7 @@ th {
   font-family: $HEADLINE_FONT;
   font-size: .875em;
   font-weight: 500;
+  line-height: 24px;
   padding-right: 24px;
 }
 
@@ -68,6 +69,7 @@ table code {
   font-weight: 400; // DevSite override
   line-height: 1.7em; // DevSite override
   margin: 0;
+  padding: 0;
 }
 
 table ul:not([class]),
@@ -93,4 +95,8 @@ table ul:not([class]) li::before {
 
 table ol:not([class]) li::before {
   margin: 2px 0 0;
+}
+
+td > :last-child > li:last-child {
+  margin-bottom: 0;
 }

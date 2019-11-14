@@ -285,7 +285,7 @@ behavior and ensure third-party cookies continue to function as before.
 Alternatively at the point of sending the `Set-Cookie` header, you can choose to
 detect the client via the user agent string. Refer to the
 [list of incompatible clients](https://www.chromium.org/updates/same-site/incompatible-clients)
-and then make use of an appropriate library for your plaform, for example
+and then make use of an appropriate library for your platform, for example
 [ua-parser-js](https://www.npmjs.com/package/ua-parser-js) library on Node.js.
 It's advisable to find a library to handle user agent detection as you most
 probably don't want to write those regular expressions yourself.
