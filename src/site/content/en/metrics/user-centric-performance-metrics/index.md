@@ -54,8 +54,8 @@ the [W3C Web Performance Working Group](https://www.w3.org/webperf/)&mdash;have
 been working to standardize a set of new APIs and metrics that more accurately
 measure how users experience the performance of a web page.
 
-To help ensure the metrics are relevant to users, we frame them around a few
-of key questions:
+To help ensure the metrics are relevant to users, we frame them around a few key
+questions:
 
 <table id="questions">
   <tr>
@@ -155,7 +155,8 @@ page.
   between FCP and TTI where the main thread was blocked for long enough to
   prevent input responsiveness. _([lab](#in-the-lab))_
 - **[Cumulative layout shift (CLS)](/cls/):** measures the cumulative score of
-  all layout shifts that occur between FCP and when the page's [lifecycle
+  all unexpected layout shifts that occur between when the page starts loading
+  and when its [lifecycle
   state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
   changes to hidden. _([lab](#in-the-lab), [field](#in-the-field))_
 
