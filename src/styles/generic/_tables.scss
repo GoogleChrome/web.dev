@@ -1,5 +1,5 @@
 @import '../settings/type';
-
+@import '../tools/breakpoints';
 // =============================================================================
 // TABLES OVERVIEW
 //
@@ -21,6 +21,9 @@ table {
   margin: 0;
   min-width: 512px;
   width: 100%;
+  @include bp(sm) {
+    min-width:auto;
+  }
 }
 
 tr {
