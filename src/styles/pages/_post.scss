@@ -20,6 +20,9 @@
 
   @include bp(sm) {
     margin-bottom: 160px;
+    table{
+      min-width:auto;
+    }
   }
 }
 
