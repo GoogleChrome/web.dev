@@ -469,7 +469,6 @@ in order to see the theme color and favicon changes, open the
 ### Emulating `prefers-color-scheme` in DevTools
 
 Switching the entire operating system's color scheme can get annoying real quick,
-so in Chrome DevTools, we now allow you to emulate the user's preferred color scheme
 so Chrome DevTools now allows you to emulate the user's preferred color scheme
 in a way that only affects the currently visible tab.
 You can find the emulation setting in the Rendering drawer of the Chrome DevTools.
