@@ -17,7 +17,7 @@ guidance about how to use them effectively.
 
 1. [Asides](#asides)
 1. [Banner](#banner)
-1. [Block quotes](#blockquotes)
+1. [Block quotes](#block-quotes)
 1. [Buttons](#buttons)
 1. [Columns](#columns)
 1. [Code](#code)
@@ -175,15 +175,17 @@ Use the codelab aside to link to an associated codelab.
 
 ## Block quotes
 
-<blockquote>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-    a massa sit amet ullamcorper.
-  </p>
-  <cite>
-    by Jon Doe
-  </cite>
-</blockquote>
+```html
+{% raw %}{% Blockquote 'Jon Doe' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}{% endraw %}
+```
+
+{% Blockquote 'Jon Doe' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}
 
 ## Buttons
 
