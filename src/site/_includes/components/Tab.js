@@ -17,7 +17,15 @@
 const {html} = require("common-tags");
 
 module.exports = (content, label) => {
-  const dataLabel = label != null ? 'data-label="' + label + '"' : "";
+  if (!label) {
+    /* eslint-disable max-len */
+    throw new Error(
+      `Can't create Tab component without a label. Did you forget to pass the label as a string?`,
+    );
+    /* eslint-enable max-len */
+  }
+
+  const dataLabel = 'data-label="' + label + '"';
   // prettier-ignore
   return html`
     <div class="w-tabset__pane" role="tabpanel" ${dataLabel} hidden>

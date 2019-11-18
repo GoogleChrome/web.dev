@@ -222,10 +222,10 @@ Use the codelab aside to link to an associated codelab.
 
 {% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
 
-{% SelfAssessment 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
+{% SelfAssessment 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
 {% Tabset 'Samples for knowledge self check' %}
 
-{% Tab %}
+{% Tab 'sample' %}
 
 ```html
 <label for="pwd-input">Password</label>
@@ -241,7 +241,7 @@ In fact, text inputs don't allow ARIA roles to be added.
 {% endSelfAssessmentHint %}
 
 {% endTab %}
-{% Tab %}
+{% Tab 'sample' %}
 
 ```html
 <label for="inky">
@@ -255,7 +255,7 @@ In fact, text inputs don't allow ARIA roles to be added.
 {% endSelfAssessmentHint %}
 
 {% endTab %}
-{% Tab 'Custom' %}
+{% Tab 'sample' %}
 
 ```html
 <ul role="menu">
@@ -966,15 +966,57 @@ Tabs are currently only designed for use in callouts.
 Don't use tabs in the main post body because there's no visual indicator
 of where tab content stops and main post content resumes.
 
-{% Tabset 'Samples for knowledge self check' %}
-{% Tab %}
+You can use three keywords in the Tab shortcode argument
+to generate sequentially numbered tab labels:
+- `question`: creates the label `Question n`, where _n_ is the number of the tab in the set.
+- `sample`: creates the label `Sample n`.
+- `bare`: creates the label `n`.
+
+Any other text in the Tab shortcode argument will be presented as-is.
+
+````html
+{% raw %}{% Tabset 'Questions for knowledge self check' %}
+{% Tab 'question' %}
 
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
 massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
 nibh varius at.
 
 {% endTab %}
-{% Tab %}
+{% Tab 'question' %}
+
+```html
+<label for="inky">
+  Inky
+  <input type="radio" id="inky" name="ghosts" value="inky">
+</label>
+```
+
+{% endTab %}
+{% Tab 'Custom' %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% endTab %}
+{% endTabset %}{% endraw %}
+````
+
+{% Tabset 'Questions for knowledge self check' %}
+{% Tab 'question' %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+nibh varius at.
+
+{% endTab %}
+{% Tab 'question' %}
 
 ```html
 <label for="inky">

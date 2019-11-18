@@ -26,7 +26,7 @@ class Tabs extends BaseElement {
       this.prerenderedChildren = [];
       this.tabs = [];
       let i = 1;
-      let label = "";
+      let tabLabel;
 
       for (const child of this.children) {
         // Set id and aria-labelledby attributes for each pane for a11y
@@ -37,10 +37,10 @@ class Tabs extends BaseElement {
           child.removeAttribute("hidden");
         }
         this.prerenderedChildren.push(child);
-        // Get tab label from pane data-label attribute (if present)
+        // Get tab label from pane data-label attribute
         // and render a tab for each pane.
-        label = child.getAttribute("data-label");
-        this.tabs.push(this.tabTemplate(i, label));
+        tabLabel = child.getAttribute("data-label");
+        this.tabs.push(this.tabTemplate(i, tabLabel));
         i++;
       }
     }
@@ -53,7 +53,7 @@ class Tabs extends BaseElement {
     `;
   }
 
-  tabTemplate(i, label) {
+  tabTemplate(i, tabLabel) {
     let isActive = false;
     let tabIndex = "-1";
 
@@ -62,8 +62,16 @@ class Tabs extends BaseElement {
       tabIndex = "0";
     }
 
-    if (!label) {
-      label = "Tab " + i;
+    switch (tabLabel) {
+      case "question":
+        tabLabel = "Question " + i;
+        break;
+      case "sample":
+        tabLabel = "Sample " + i;
+        break;
+      case "bare":
+        tabLabel = i;
+        break;
     }
 
     return html`
@@ -77,7 +85,7 @@ class Tabs extends BaseElement {
         aria-controls="w-tab-${i}-pane"
         tabindex=${tabIndex}
       >
-        <span class="w-tabset__text-label">${label}</span>
+        <span class="w-tabset__text-label">${tabLabel}</span>
       </button>
     `;
   }
