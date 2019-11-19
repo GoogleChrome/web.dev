@@ -34,8 +34,12 @@ a,
   a,
   :link,
   :visited {
-    &:not(.w-author__link) {
-      text-decoration: underline;
+    text-decoration: underline;
+
+    &:focus,
+    &:active,
+    &:hover {
+      text-decoration: none;
     }
   }
 }
