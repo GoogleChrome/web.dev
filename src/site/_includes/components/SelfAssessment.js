@@ -34,6 +34,10 @@ module.exports = (content, blurb) => {
         <div class="w-callout__blurb w-callout__blurb--collapsed">
           Expand this callout to practice concepts from the post.
         </div>
-      </summary>${content}</details>
+      </summary>
+      
+      ${content}
+    
+    </details>
   `;
 };

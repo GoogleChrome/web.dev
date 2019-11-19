@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-
 module.exports = (content, label) => {
   if (!label) {
     /* eslint-disable max-len */
@@ -27,9 +25,5 @@ module.exports = (content, label) => {
 
   const dataLabel = 'data-label="' + label + '"';
   // prettier-ignore
-  return html`
-    <div class="w-tabset__pane" role="tabpanel" ${dataLabel} hidden>
-    ${content}
-    </div>
-  `;
+  return `<div class="w-tabset__pane" role="tabpanel" ${dataLabel} hidden>${content}</div>`;
 };
