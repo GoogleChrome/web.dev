@@ -20,6 +20,23 @@
 
   @include bp(sm) {
     margin-bottom: 160px;
+
+    table > tbody {
+      display:table;
+    }
+  }
+
+  table {
+    display:block;
+    max-width:100%;
+    min-width:initial;
+    overflow-x:auto;
+  }
+
+  tbody {
+    display: inline-block;
+    min-width: 512px;
+    width:100%;
   }
 }
 
