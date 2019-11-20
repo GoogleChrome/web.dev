@@ -28,10 +28,15 @@ const md = require("markdown-it")();
  * @return {Array} An array of pathItem slugs.
  */
 function getPathItemsFromTopics(topics) {
-  return topics.reduce(
-    (pathItems, topic) => pathItems.concat(topic.pathItems),
-    [],
-  );
+  const temp = topics.reduce((reduced, topic) => {
+    const subPathItems = (topic.subTopics || []).reduce((accumulator, subTopic) => {
+      return ([...accumulator, ...(subTopic.pathItems)]);
+    }, []);
+    topic.pathItems = [...subPathItems, ...(topic.pathItems || [])];
+    return reduced.concat(topic.pathItems);
+  }, []);
+
+  return temp;
 }
 
 /**

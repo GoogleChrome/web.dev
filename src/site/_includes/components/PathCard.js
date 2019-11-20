@@ -29,6 +29,16 @@ function getPostCount(learningPath) {
   // in path.njk. Ideally we should do this in the learningPath .11ty.js files
   // but eleventy hasn't parsed all of the collections when those files get
   // initialized so we can't look up posts by slug.
+
+  // Merge subTopic pathItems
+  learningPath.topics = (learningPath.topics).map((topic) => {
+    const subPathItems = (topic.subTopics || []).reduce((accumulator, subTopic) => {
+      return ([...accumulator, ...(subTopic.pathItems)]);
+    }, []);
+    topic.pathItems = [...subPathItems, ...(topic.pathItems || [])];
+    return topic;
+  });
+
   const topics = removeDrafts(learningPath.topics);
   const count = topics.reduce((pathItemsCount, topic) => {
     return pathItemsCount + topic.pathItems.length;
