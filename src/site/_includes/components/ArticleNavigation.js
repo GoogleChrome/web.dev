@@ -29,10 +29,13 @@ const md = require("markdown-it")();
  */
 function getPathItemsFromTopics(topics) {
   return topics.reduce((reduced, topic) => {
-    const subPathItems = (topic.subtopics || []).reduce((accumulator, subtopic) => {
-      return ([...accumulator, ...(subtopic.pathItems)]);
-    }, []);
-    topic.pathItems = [...subPathItems, ...(topic.pathItems || [])];
+    const subPathItems = (topic.subtopics || []).reduce(
+      (accumulator, subtopic) => {
+        return [...accumulator, ...subtopic.pathItems];
+      },
+      [],
+    );
+    topic.pathItems = [...(topic.pathItems || []), ...subPathItems];
     return reduced.concat(topic.pathItems);
   }, []);
 }

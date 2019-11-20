@@ -31,15 +31,20 @@ function getPostCount(learningPath) {
   // initialized so we can't look up posts by slug.
 
   // Merge subtopic pathItems
-  learningPath.topics = (learningPath.topics).map((topic) => {
-    const subPathItems = (topic.subtopics || []).reduce((accumulator, subtopic) => {
-      return ([...accumulator, ...(subtopic.pathItems)]);
-    }, []);
-    topic.pathItems = [...subPathItems, ...(topic.pathItems || [])];
-    return topic;
+  const flattenedTopics = learningPath.topics.map((topic) => {
+    const subPathItems = (topic.subtopics || []).reduce(
+      (accumulator, subtopic) => {
+        return [...accumulator, ...subtopic.pathItems];
+      },
+      [],
+    );
+    return {
+      ...topic,
+      pathItems: [...(topic.pathItems || []), ...subPathItems],
+    };
   });
 
-  const topics = removeDrafts(learningPath.topics);
+  const topics = removeDrafts(flattenedTopics);
   const count = topics.reduce((pathItemsCount, topic) => {
     return pathItemsCount + topic.pathItems.length;
   }, 0);
