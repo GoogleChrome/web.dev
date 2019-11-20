@@ -1,0 +1,43 @@
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+@import '../settings/colors';
+
+// =============================================================================
+// TOPIC OVERVIEW
+//
+// Topics are the sections of a collection and can be broken into subtopics.
+//
+// =============================================================================
+
+$TOPIC_SPACING_SIZE_EXTRA_LARGE: 48px;
+$TOPIC_SPACING_SIZE_LARGE: 40px;
+$TOPIC_SPACING_SIZE_MEDIUM: 32px;
+$TOPIC_SPACING_SIZE_SMALL: 24px;
+
+.w-topics {
+  .w-topic {
+    border-bottom: 2px solid $WEB_PRIMARY_COLOR;
+    .w-topic-header {
+      align-items: center;
+      display: flex;
+      overflow: visible;
+      margin-left: $TOPIC_SPACING_SIZE_MEDIUM;
+      color: $WEB_PRIMARY_COLOR;
+
+      @include bp(sm) {
+        margin-left: $TOPIC_SPACING_SIZE_EXTRA_LARGE;
+      }
+    }
+
+    .w-subtopic-header {
+      align-items: center;
+      display: flex;
+      overflow: visible;
+      margin-left: -$TOPIC_SPACING_SIZE_SMALL;
+
+      @include bp(sm) {
+        margin-left: -$TOPIC_SPACING_SIZE_LARGE;
+      }
+    }
+  }
+}
