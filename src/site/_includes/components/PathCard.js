@@ -30,10 +30,10 @@ function getPostCount(learningPath) {
   // but eleventy hasn't parsed all of the collections when those files get
   // initialized so we can't look up posts by slug.
 
-  // Merge subTopic pathItems
+  // Merge subtopic pathItems
   learningPath.topics = (learningPath.topics).map((topic) => {
-    const subPathItems = (topic.subTopics || []).reduce((accumulator, subTopic) => {
-      return ([...accumulator, ...(subTopic.pathItems)]);
+    const subPathItems = (topic.subtopics || []).reduce((accumulator, subtopic) => {
+      return ([...accumulator, ...(subtopic.pathItems)]);
     }, []);
     topic.pathItems = [...subPathItems, ...(topic.pathItems || [])];
     return topic;

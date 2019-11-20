@@ -29,8 +29,8 @@ const md = require("markdown-it")();
  */
 function getPathItemsFromTopics(topics) {
   return topics.reduce((reduced, topic) => {
-    const subPathItems = (topic.subTopics || []).reduce((accumulator, subTopic) => {
-      return ([...accumulator, ...(subTopic.pathItems)]);
+    const subPathItems = (topic.subtopics || []).reduce((accumulator, subtopic) => {
+      return ([...accumulator, ...(subtopic.pathItems)]);
     }, []);
     topic.pathItems = [...subPathItems, ...(topic.pathItems || [])];
     return reduced.concat(topic.pathItems);
