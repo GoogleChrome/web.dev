@@ -136,7 +136,7 @@ uses it directly on their site. If a visitor has been to your blog and has the
 `promo_shown` cookie, then when they view `amazing-cat.png` on the other
 person's site that cookie **will be sent** in that request for the image. This
 isn't particularly useful for anyone since `promo_shown` isn't used for anything
-on this other person's site, it's just adding that overhead to the request.
+on this other person's site, it's just adding overhead to the request.
 
 If that's an unintended effect, why would you want to do this? It's this
 mechanism that allows sites to maintain state when they are being used in a
