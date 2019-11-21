@@ -37,7 +37,6 @@ module.exports = ({post}) => {
   const alt = data.alt || "";
 
   function renderThumbnail(url, img, alt) {
-    debugger;
     const imagePath = getImagePath(img, url);
     const srcsetRange = getSrcsetRange(240, 768);
 

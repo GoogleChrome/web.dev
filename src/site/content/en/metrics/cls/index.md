@@ -68,9 +68,9 @@ measuring how often it's occurring for real users.
 
 ## What is CLS?
 
-CLS measures the sum of the individual _layout shift scores_ for each _expected_
-_layout shift_ that occurs between when the page starts loading and when the its
-[lifecycle
+CLS measures the sum of the individual _layout shift scores_ for each
+_unexpected layout shift_ that occurs between when the page starts loading and
+when its [lifecycle
 state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 changes to hidden.
 

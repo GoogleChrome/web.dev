@@ -2,6 +2,7 @@
   "ci": {
     "collect": {
       "numberOfRuns": 3,
+      "startServerCommand": "npm start",
       "url": [
         "http://localhost:8080/",
         "http://localhost:8080/interactive",
@@ -9,6 +10,7 @@
       ]
     },
     "upload": {
+      "token": "d96145f6-c3d2-4b22-9e53-6913cdd2df03",
       "serverBaseUrl": "https://lhci-canary.herokuapp.com/"
     }
   }

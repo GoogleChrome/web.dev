@@ -203,15 +203,17 @@ at the end of a block quote:
 </blockquote>
 ```
 
-<blockquote>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-    a massa sit amet ullamcorper.
-  </p>
-  <cite>
-    by Jon Doe
-  </cite>
-</blockquote>
+```html
+{% raw %}{% Blockquote 'Jon Doe' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}{% endraw %}
+```
+
+{% Blockquote 'Jon Doe' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}
 
 ## Buttons
 

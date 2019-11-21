@@ -135,7 +135,7 @@ specification built in [Go](https://golang.org/).
 Congratulations! TodoMVC is now a Web Bundle.
 
 There are other options for bundling and more are coming. The `go/bundle` CLI
-let's you build a Web Bundle using a HAR file or a custom list of resource
+lets you build a Web Bundle using a HAR file or a custom list of resource
 URLs. Visit the [GitHub
 repo](https://github.com/WICG/webpackage/tree/master/go/bundle) to learn more
 about `go/bundle`. You can also try out the experimental Node.js module for bundling, 
