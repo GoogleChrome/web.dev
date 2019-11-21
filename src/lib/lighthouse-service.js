@@ -1,6 +1,5 @@
 // export const LH_HOST = "https://lighthouse-dot-webdotdevsite.appspot.com";
-export const LH_HOST =
-  "https://20191018t150919-dot-lighthouse-dot-webdotdevsite.appspot.com/";
+export const LH_HOST = "https://lighthouse-dot-webdotdevsite.appspot.com/";
 
 /**
  * Fetches recent median values for various Lighthouse categories. This is used as a baseline for
