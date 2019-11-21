@@ -166,6 +166,24 @@ To try out a Web Bundle:
 
 Everything magically works.
 
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-bundles/preact-todomvc_vp9.webm" 
+            type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-bundles/preact-todomvc_h264.mp4" 
+            type="video/mp4; codecs=h264">
+  </video>
+  <figcaption class="w-figcaption">
+    Preact todomvc working offline using web bundle
+  </figcaption>
+</figure>
+
+You could also try out other sample web bundles here:
+
+- [web.dev.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/web.dev.wbn) is a snapshot of the entire web.dev site, as of 2019-10-15.
+- [proxx.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/proxx.wbn): PROXX is a nifty web game that you can just enjoy anywhere as long as you have a browser.
+- [squoosh.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/squoosh.wbn): Squoosh is a convenient and blazingly fast image optimization tool that lets you do side-by-side comparisons of various image compression formats, with support for resizing and format conversions.
+
 {% Aside %}
   Currently you can only navigate into a Web Bundle stored in a local file, but
   that's only a temporary restriction.
