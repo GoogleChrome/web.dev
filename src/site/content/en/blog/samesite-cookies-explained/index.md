@@ -5,12 +5,12 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2019-06-13
+updated: 2019-10-31
 hero: cookie-hero.jpg
 description: |
-  Learn how to mark your cookies for first-party and third-party usage the
+  Learn how to mark your cookies for first-party and third-party usage with the
   SameSite attribute. You can enhance your site's security by making use of
-  SameSite's Lax and Strict values gaining some protection against CSRF attacks.
+  SameSite's Lax and Strict values to gain some protection against CSRF attacks.
   Specifying the new None attribute allows you to explicitly mark your cookies
   for cross-site usage.
 tags:
@@ -19,12 +19,24 @@ tags:
   - cookies
 ---
 
+{% Aside %}
+
+For implementation advice on `SameSite=None`, see part 2:
+[SameSite cookie recipes](/samesite-cookie-recipes)
+
+{% endAside %}
+
 Cookies are one of the methods available for adding persistent state to web
-sites. Each cookie is a `key=value` pair along with a number of attributes that
-control when and where that cookie is used. You've probably already used these
-attributes to set things like expiry dates or indicating the cookie should only
-be sent over HTTPS. Servers set cookies by sending the aptly-named `Set-Cookie`
-header in their response. For all the detail you can dive into
+sites. Over the years their capabilities have grown and evolved, but left the
+platform with some problematic legacy issues. To address this, browsers
+(including Chrome, Firefox, and Edge) are changing their behavior to enforce
+more privacy preserving defaults.
+
+Each cookie is a `key=value` pair along with a number of attributes that control
+when and where that cookie is used. You've probably already used these
+attributes to set things like expiration dates or indicating the cookie should
+only be sent over HTTPS. Servers set cookies by sending the aptly-named
+`Set-Cookie` header in their response. For all the detail you can dive into
 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03#section-4.1),
 but for now here's a quick refresher.
 
@@ -42,7 +54,7 @@ Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
   <img src="set-cookie-response-header.png" alt="Three cookies being sent to a
     browser from a server in a response" style="max-width: 60vw">
   <figcaption class="w-figcaption">
-    Servers set cookies using the <tt>Set-Cookie</tt> header.
+    Servers set cookies using the <code>Set-Cookie</code> header.
   </figcaption>
 </figure>
 
@@ -58,7 +70,7 @@ Cookie: promo_shown=1
   <img src="cookie-request-header.png" alt="Three cookies being sent from a
     browser to a server in a request" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
-    Your browser sends cookies back in the <tt>Cookie</tt> header.
+    Your browser sends cookies back in the <code>Cookie</code> header.
   </figcaption>
 </figure>
 
@@ -81,21 +93,21 @@ context, with each cookie separated by a semicolon:
 ```
 
 <figure class="w-figure  w-figure--center">
-  <img src="document-cookie.png" alt="Javascript accessing cookies within the
+  <img src="document-cookie.png" alt="JavaScript accessing cookies within the
     browser" style="max-width: 35vw;">
   <figcaption class="w-figcaption">
-    JavaScript can access cookies using <tt>document.cookie</tt>.
+    JavaScript can access cookies using <code>document.cookie</code>.
   </figcaption>
 </figure>
 
 If you try this on a selection of popular sites you will notice that most of
 them set significantly more than just three cookies. In most cases, those
-cookies are sent on every single request to that domain, which has a number
-of implications. Upload bandwidth is often more restricted than download for
-your users, so that overhead on all outbound requests is adding a delay on your
-time to first byte. Be conservative in the number and size of cookies you set.
-Make use of the `Max-Age` attribute to help ensure that cookies don't hang
-around longer than needed.
+cookies are sent on every single request to that domain, which has a number of
+implications. Upload bandwidth is often more restricted than download for your
+users, so that overhead on all outbound requests is adding a delay on your time
+to first byte. Be conservative in the number and size of cookies you set. Make
+use of the `Max-Age` attribute to help ensure that cookies don't hang around
+longer than needed.
 
 ## What are first-party and third-party cookies?
 
@@ -124,7 +136,7 @@ uses it directly on their site. If a visitor has been to your blog and has the
 `promo_shown` cookie, then when they view `amazing-cat.png` on the other
 person's site that cookie **will be sent** in that request for the image. This
 isn't particularly useful for anyone since `promo_shown` isn't used for anything
-on this other person's site, it's just adding that overhead to the request.
+on this other person's site, it's just adding overhead to the request.
 
 If that's an unintended effect, why would you want to do this? It's this
 mechanism that allows sites to maintain state when they are being used in a
@@ -170,16 +182,23 @@ same-site context. It's helpful to understand exactly what 'site' means here.
 The site is the combination of the domain suffix and the part of the domain just
 before it. For example, the `www.web.dev` domain is part of the `web.dev` site.
 
-{% Aside 'key-term' %} If the user is on `www.web.dev` and requests an image
-from `static.web.dev` then that is a **same-site** request. {% endAside %}
+{% Aside 'key-term' %}
+
+If the user is on `www.web.dev` and requests an image from `static.web.dev` then
+that is a **same-site** request.
+
+{% endAside %}
 
 The [public suffix list](https://publicsuffix.org/) defines this, so it's not
 just top-level domains like `.com` but also includes services like `github.io`.
 That enables `your-project.github.io` and `my-project.github.io` to count as
 separate sites.
 
-{% Aside 'key-term' %} If the user is on `your-project.github.io` and requests
-an image from `my-project.github.io` that's a **cross-site** request.
+{% Aside 'key-term' %}
+
+If the user is on `your-project.github.io` and requests an image from
+`my-project.github.io` that's a **cross-site** request.
+
 {% endAside %}
 
 Introducing the `SameSite` attribute on a cookie provides three different ways
@@ -228,11 +247,14 @@ cookie. This makes `Lax` a good choice for cookies affecting the display of the
 site with `Strict` being useful for cookies related to actions your user is
 taking.
 
-{% Aside 'caution' %} Neither `Strict` nor `Lax` are a silver bullet for your
-site security. Cookies are sent as part of the user's request and you should
-treat them the same as any other user input. That means sanitizing and
-validating the input. Never use a cookie to store data you consider a
-server-side secret. {% endAside %}
+{% Aside 'caution' %}
+
+Neither `Strict` nor `Lax` are a complete solution for your site's security.
+Cookies are sent as part of the user's request and you should treat them the
+same as any other user input. That means sanitizing and validating the input.
+Never use a cookie to store data you consider a server-side secret.
+
+{% endAside %}
 
 Finally there is the option of not specifying the value which has previously
 been the way of implicitly stating that you want the cookie to be sent in all
@@ -246,142 +268,166 @@ in a third-party context.
   <img src="samesite-none-lax-strict.png" alt="Three cookies labelled None,
     Lax, or Strict depending on their context" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
-    Explicitly mark the context of a cookie as <tt>None</tt>, <tt>Lax</tt>, or <tt>Strict</tt>.
+    Explicitly mark the context of a cookie as <code>None</code>, <code>Lax</code>, or <code>Strict</code>.
   </figcaption>
 </figure>
 
-{% Aside 'objective' %} If you provide a service that other sites consume such
-as widgets, embedded content, affiliate programmes, advertising, or sign-in
-across multiple sites then you should use `None` to ensure your intent is clear.
+{% Aside %}
+
+If you provide a service that other sites consume such as widgets, embedded
+content, affiliate programmes, advertising, or sign-in across multiple sites
+then you should use `None` to ensure your intent is clear.
+
 {% endAside %}
 
 ## Changes to the default behavior without SameSite
 
-[Chrome 76](https://chromestatus.com/features/schedule) introduces a new
-`same-site-by-default-cookies` flag. Setting this flag will shift the default
-treatment of cookies to apply `SameSite=Lax` if no other `SameSite` value is
-provided. This is a move towards providing a more secure default and one that
-makes the intended purpose of cookies clearer to users. If you want to delve
-into the details, check out Mike West's
-["Incrementally Better Cookies"](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00).
+While the `SameSite` attribute is widely supported, it has unfortunately not
+been widely adopted by developers. The open default of sending cookies
+everywhere means all use cases work but leaves the user vulnerable to CSRF and
+unintentional information leakage. To encourage developers to state their intent
+and provide users with a safer experience, the IETF proposal,
+[Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
+lays out two key changes:
 
-With this flag enabled in Chrome, both **new and existing cookies** without the
-`SameSite` attribute will be restricted to the same site the user is browsing.
-If you have cookies that need to be available in a third-party context, then you
-must declare that to the browser and the user by marking them as
-`SameSite=None`. You will want to apply this when setting new cookies and
-actively refresh existing cookies even if they are not approaching their expiry
-date.
+- Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`.
+- Cookies with `SameSite=None` must also specify `Secure`.
 
-{% Aside 'note' %} If you rely on any services that provide third-party content
-on your site, you should also check with the provider that they are updating
-their services. You may need to update your dependencies or snippets to ensure
-that your site picks up the new behavior. {% endAside %}
+Both
+[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ)
+and
+[Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
+have this functionality available to test now and will be making this their
+default behavior in future releases.
+[Edge](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/8lMmI5DwEAAJ)
+also plans to make this their default behavior.
 
-These changes are backwards-compatible with browsers that have correctly
-implemented earlier versions of the `SameSite` attribute, or just do not support
-it at all. By applying these changes to your cookies, you are making their
-intended use explicit rather than relying on the default behavior of the
-browser. Likewise, any clients that do not recognize `SameSite=None` as of yet
-should ignore it and carry on as if the attribute was not set.
+{% Aside %}
 
-Additionally in Chrome, if you also enable the
-`cookies-without-same-site-must-be-secure` flag then you must also specify
-`SameSite=None` cookies as `Secure` or they will be rejected. Note, this flag
-won't have any effect unless you also have `same-site-by-default-cookies`
-enabled.
+This article will be updated as additional browsers announce support.
 
-{% Aside 'warning' %} At the time of writing, the network library on iOS and Mac
-incorrectly handles unknown `SameSite` values and will **treat any unknown
-value** (including `None`) as if it was `SameSite=Strict`, which affects Safari
-on Mac and browsers wrapping WebKit on iOS (Safari, Chrome, Firefox, and
-others). This should be fixed in an upcoming release and may be available in the
-Tech Preview now. You can track their progress in the
-[WebKit Bugzilla #198181](https://bugs.webkit.org/show_bug.cgi?id=198181).
 {% endAside %}
 
-### Behavior with `same-site-by-default-cookies` enabled
+### `SameSite=Lax` by default
 
 {% Compare 'worse', 'No attribute set' %}
+
 ```text
 Set-Cookie: promo_shown=1
 ```
 
 {% CompareCaption %}
-If you send a cookie without any `SameSite` attribute specified.
+
+If you send a cookie without any `SameSite` attribute specified…
+
 {% endCompareCaption %}
 
 {% endCompare %}
 
 {% Compare 'better', 'Default behavior applied' %}
+
 ```text
 Set-Cookie: promo_shown=1; SameSite=Lax
 ```
 
 {% CompareCaption %}
-Chrome will treat that cookie as if `SameSite=Lax` was specified.
+
+The browser will treat that cookie as if `SameSite=Lax` was specified.
+
 {% endCompareCaption %}
 
 {% endCompare %}
 
-### Behavior with `cookies-without-same-site-must-be-secure` enabled
+You can test this behavior as of Chrome 76 by enabling
+`chrome://flags/#same-site-by-default-cookies` and from Firefox 69 in
+[`about:config`](http://kb.mozillazine.org/About:config) by setting
+`network.cookie.sameSite.laxByDefault`.
+
+While this is intended to apply a more secure default, you should ideally set an
+explicit `SameSite` attribute rather than relying on the browser to apply that
+for you. This makes your intent for the cookie explicit and improves the chances
+of a consistent experience across browsers.
+
+{% Aside 'caution' %}
+
+The default behaviour applied by Chrome is slightly more permissive than an
+explicit `SameSite=Lax` as it will allow certain cookies to be sent on top-level
+POST requests. You can see the exact details on
+[the blink-dev announcement](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/YKBxPCScCwAJ).
+This is intended as a temporary mitigation, you should still be fixing your
+cross-site cookies to use `SameSite=None; Secure`.
+
+{% endAside %}
+
+### `SameSite=None` must be secure
 
 {% Compare 'worse', 'Rejected' %}
+
 ```text
 Set-Cookie: widget_session=abc123; SameSite=None
 ```
 
 {% CompareCaption %}
+
 Setting a cookie without `Secure` **will be rejected**.
+
 {% endCompareCaption %}
 
 {% endCompare %}
 
 {% Compare 'better', 'Accepted' %}
+
 ```text
 Set-Cookie: widget_session=abc123; SameSite=None; Secure
 ```
 
 {% CompareCaption %}
+
 You must ensure that you pair `SameSite=None` with the `Secure` attribute.
+
 {% endCompareCaption %}
 
 {% endCompare %}
 
-{% Aside 'objective' %} These flags are intended to encourage more secure
-defaults, but you shouldn't rely on a browser's default behavior. Best practice
-is to always be explicit in stating the attributes so your intent is clear.
+You can test this behavior as of Chrome 76 by enabling
+`chrome://flags/#cookies-without-same-site-must-be-secure` and from Firefox 69
+in [`about:config`](http://kb.mozillazine.org/About:config) by setting
+`network.cookie.sameSite.noneRequiresSecure`.
+
+You will want to apply this when setting new cookies and actively refresh
+existing cookies even if they are not approaching their expiry date.
+
+{% Aside 'note' %}
+
+If you rely on any services that provide third-party content on your site, you
+should also check with the provider that they are updating their services. You
+may need to update your dependencies or snippets to ensure that your site picks
+up the new behavior.
+
 {% endAside %}
 
-## Designing for `SameSite` cookies
+Both of these changes are backwards-compatible with browsers that have correctly
+implemented the previous version of the `SameSite` attribute, or just do not
+support it at all. By applying these changes to your cookies, you are making
+their intended use explicit rather than relying on the default behavior of the
+browser. Likewise, any clients that do not recognize `SameSite=None` as of yet
+should ignore it and carry on as if the attribute was not set.
 
-A core practice in software design is the
-[Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
-which essentially states that each part of your system should have one clear
-purpose. This is more simply put in the
-[Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy) which says,
-"Make each program do one thing well". By adding the `SameSite` attribute to
-your cookies you are creating the distinction between first-party and
-third-party usage, but a third-party cookie can still be used in a first-party
-context. It might seem simpler to just have the single cookie, but now you have
-one component doing two jobs.
+{% Aside 'warning' %}
 
-If you have one cookie that's providing functionality in both contexts, for
-example perhaps providing a user identifier for your main site and for an
-embeddable widget, then consider separating these into separate cookies. As
-browsers and users start to change how they accept and manage cookies providing
-this distinction makes your site more robust in scenarios where third-party
-cookies are blocked or cleared.
+A number of older versions of browsers including Chrome, Safari, and UC browser
+are incompatible with the new `None` attribute and may ignore or restrict the
+cookie. This behavior is fixed in current versions, but you should check your
+traffic to determine what proportion of your users are affected. You can see the
+[list of known incompatible clients on the Chromium site](https://www.chromium.org/updates/same-site/incompatible-clients).
 
-## What should I do to enable `SameSite` today?
+{% endAside %}
 
-The majority of languages and libraries support the `SameSite` attribute for
-cookies, however the addition of `SameSite=None` is still relatively new which
-means that you may need to work around some of the standard behavior for now.
-These are documented in the
-[`SameSite` examples repo on GitHub](https://github.com/GoogleChromeLabs/samesite-examples).
-If your particular use case is missing, please raise issue or submit a pull
-request with your solution.
+## `SameSite` cookie recipes
+
+For further detail on exactly how to update your cookies to successfully handle
+these changes to `SameSite=None` and the difference in browser behavior, head to
+the follow up article, [SameSite cookie recipes](/samesite-cookie-recipes).
 
 _Kind thanks for contributions and feedback from Lily Chen, Malte Ubl, Mike
 West, Rob Dodson, Tom Steiner, and Vivek Sekhar_

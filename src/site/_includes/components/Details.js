@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
+const {html} = require("common-tags");
 
 module.exports = (content, state) => {
-  const stateOverride = state == 'open' ? 'open' : '';
+  const stateOverride = state == "open" ? "open" : "";
 
   return html`
     <details class="w-details" ${stateOverride}>

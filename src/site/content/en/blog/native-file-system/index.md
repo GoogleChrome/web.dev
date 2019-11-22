@@ -9,12 +9,13 @@ updated: 2019-10-08
 tags:
   - post
   - capabilities
+  - fugu
+  - origin-trial
   - file
   - filesystem
   - native-file-system
 hero: hero.jpg
 alt: Image of hard disk platters
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065
 ---

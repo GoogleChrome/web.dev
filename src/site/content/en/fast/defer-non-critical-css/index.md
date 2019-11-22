@@ -5,11 +5,14 @@ authors:
   - demianrenzulli
 description: |
   Learn how to defer non-critical CSS with the goal of optimizing the Critical
-  Rendering Path, and improve FCP (First Contentful Paint).
+  Rendering Path, and improving FCP (First Contentful Paint).
 date: 2019-02-17
+updated: 2019-10-30
 ---
 
-CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources): they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles take longer to render, increasing the likelihood that users bounce: 53% of mobile visits bounce if the page does not load [in 3 seconds or less](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/).
+CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources):
+they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles
+take longer to render.
 
 In this guide, you'll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [First Contentful Paint (FCP)](/first-contentful-paint).
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
+const {html} = require("common-tags");
 
 /* eslint-disable require-jsdoc */
 
@@ -32,7 +32,9 @@ module.exports = ({post, author, showSocialMedia = false}) => {
   function renderTwitter({twitter}) {
     return html`
       <li class="w-author__link-listitem">
-        <a class="w-author__link" href="https://twitter.com/${twitter}">Twitter</a>
+        <a class="w-author__link" href="https://twitter.com/${twitter}"
+          >Twitter</a
+        >
       </li>
     `;
   }
@@ -48,7 +50,9 @@ module.exports = ({post, author, showSocialMedia = false}) => {
   function renderGlitch({glitch}) {
     return html`
       <li class="w-author__link-listitem">
-        <a class="w-author__link" href="https://glitch.com/@${glitch}">Glitch</a>
+        <a class="w-author__link" href="https://glitch.com/@${glitch}"
+          >Glitch</a
+        >
       </li>
     `;
   }
@@ -65,7 +69,10 @@ module.exports = ({post, author, showSocialMedia = false}) => {
 
   /* eslint-disable max-len */
   return html`
-    <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+    <div
+      class="w-author__info"
+      style="display: flex; flex-direction: column; justify-content: center;"
+    >
       <cite class="w-author__name">${fullName}</cite>
       ${showSocialMedia && renderSocialMedia(author)}
     </div>

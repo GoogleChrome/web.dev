@@ -1,6 +1,6 @@
 # Contributing 💪
 
-## Authoring a written content on the site
+## Authoring written content on the site
 
 If you plan to write a blog post or a guide for a collection take a moment to
 look over the [web.dev handbook](https://web.dev/handbook) and familiarize

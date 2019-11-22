@@ -1,0 +1,279 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/type';
+@import '../../../styles/tools/mixins';
+
+// =============================================================================
+// PROFILE SWITCHER OVERVIEW
+//
+// The profile switcher let's the user change which Google profile they're
+// signed in with. It also lets them sign out.
+//
+// =============================================================================
+
+web-profile-switcher-container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  
+  @include bp(md) {
+    margin-left: 16px;
+  }
+}
+
+.w-profile-signin {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: $PRIMARY_TEXT_COLOR;
+  cursor: pointer;
+  font-family: $PRIMARY_FONT;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  height: 100%;
+  outline: none;
+  padding: 0 8px;
+
+  @include bp(md) {
+    padding: 0 24px;
+  }
+
+  &:hover {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .04);
+  }
+
+  &:focus {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+  }
+
+  &:active {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+  }
+}
+
+web-profile-switcher {
+  display: block;
+  margin: 0 0 0 16px;
+}
+
+.w-profile-toggle {
+  background: $GREY_100;
+  border: 4px solid $WHITE;
+  border-radius: 50%;
+  box-shadow: none;
+  box-sizing: content-box;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 32px;
+  overflow: hidden;
+  padding: 0;
+  width: auto;
+}
+
+.w-profile-toggle:hover,
+.w-profile-toggle:focus,
+.w-profile-toggle:active {
+  box-shadow: none;
+}
+
+.w-profile-toggle:focus {
+  border-color: rgba($BLACK, .2) !important;
+}
+
+@keyframes w-profile-toggle__appear {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.w-profile-toggle__photo {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  animation: w-profile-toggle__appear 0.45s;
+}
+
+.w-profile-dialog {
+  background: $WHITE;
+  border: 1px solid rgba($BLACK, .2);
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba($BLACK, .2);
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  right: 15px;
+  top: 62px;
+
+  @include bp(sm) {
+    right: 24px;
+  }
+}
+
+.w-profile-dialog__user {
+  padding: 20px;
+
+  @include bp(xsm) {
+    display: flex;
+  }
+}
+
+.w-profile-dialog__photo-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+
+  @include bp(xsm) {
+    margin: 0 20px 0 0;
+  }
+}
+
+.w-profile-dialog__photo {
+  border-radius: 50%;
+  display: block;
+  height: 64px;
+  width: 64px;
+
+  @include bp(xsm) {
+    height: 96px;
+    width: 96px;
+  }
+}
+
+.w-profile-dialog__details {
+  font-size: 13px;
+  line-height: normal;
+}
+
+.w-profile-dialog__name {
+  font-weight: 500;
+  margin-bottom: 1px;
+}
+
+.w-profile-dialog__email {
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.w-profile-dialog__privacy {
+  color: #1a73e8;
+  display: block;
+  margin: 6px 0;
+}
+
+.w-profile-dialog__privacy:hover {
+  text-decoration: none;
+}
+
+.w-profile-dialog__account {
+  background: #4d90fe;
+  border: 1px solid #3079ed;
+  border-radius: 2px;
+  color: $WHITE;
+  display: inline-block;
+  font: 13px/28px Roboto, Noto Sans, sans-serif;
+  margin: 10px 0 0;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+
+  @include bp(xsm) {
+    width: auto;
+  }
+}
+
+.w-profile-dialog__account:hover,
+.w-profile-dialog__account:focus,
+.w-profile-dialog__account:active {
+  outline: none;
+  text-decoration: none;
+}
+
+// This element is used to tint the button during user actions such as
+// hover, focus, and active.
+.w-profile-dialog__account::after {
+  @include w-overlay();
+}
+
+.w-profile-dialog__account:hover::after {
+  background-color: rgba($WHITE, .08);
+}
+
+.w-profile-dialog__account:focus::after {
+  background-color: rgba($WHITE, .12);
+}
+
+.w-profile-dialog__account:active::after {
+  background-color: rgba($WHITE, .24);
+}
+
+.w-profile-dialog__controls {
+  background: #f5f5f5;
+  border-top: 1px solid rgba($BLACK, .2);
+  display: block;
+  padding: 10px 20px;
+
+  @include bp(xsm) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.w-profile-dialog__button {
+  background: #f8f8f8;
+  border: 1px solid #c6c6c6;
+  border-radius: 2px;
+  box-shadow: none;
+  color: #666;
+  display: block;
+  font: 13px/28px Roboto, Noto Sans, sans-serif;
+  height: auto;
+  margin: 0;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+
+  @include bp(xsm) {
+    width: auto;
+  }
+}
+
+.w-profile-dialog__button:not(:last-of-type) {
+  margin-bottom: 8px;
+
+  @include bp(xsm) {
+    margin: 0;
+  }
+}
+
+.w-profile-dialog__button:focus {
+  background: #f8f8f8;
+  outline: none;
+  text-decoration: none;
+}
+
+// This element is used to tint the button during user actions such as
+// hover, focus, and active.
+.w-profile-dialog__button::after {
+  @include w-overlay();
+}
+
+.w-profile-dialog__button:hover::after {
+  background-color: rgba($BLACK, .04);
+}
+
+.w-profile-dialog__button:focus::after {
+  background-color: rgba($BLACK, .08);
+}
+
+.w-profile-dialog__button:active::after {
+  background-color: rgba($BLACK, .1);
+}

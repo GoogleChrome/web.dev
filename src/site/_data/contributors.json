@@ -1518,5 +1518,105 @@
       },
       "twitter": "yoavweiss",
       "github": "yoavweiss"
-    }
+    },
+    "jimper": {
+      "name": {
+        "given": "Jonathon",
+        "family": "Imperiosi"
+      },
+      "github": "jimper",
+      "org": {
+        "name": "Google",
+        "unit": "Ads Developer Relations"
+      },
+      "country": "JP"
+    },
+    "robhazan": {
+      "name": {
+        "given": "Rob",
+        "family": "Hazan"
+      },
+      "org": {
+        "name": "Google",
+        "unit": "Product Manager"
+      }
+    },
+    "gernberg": {
+      "name": {
+        "given": "Gustav",
+        "family": "Ernberg von Heijne"
+      },
+      "github": "gernberg",
+      "country": "SE",
+      "org": {
+        "name": "Google",
+        "unit": "Technical Solutions Consultant"
+      }
+    },
+    "thebengeu": {
+      "name": {
+        "given": "Beng",
+        "family": "Eu"
+      },
+      "twitter": "thebengeu",
+      "github": "thebengeu",
+      "glitch": "thebengeu",
+      "org": {
+        "name": "Google",
+        "unit": "AdSpeed"
+      },
+      "country": "US",
+      "description": {
+        "en": "AdSpeed tech lead at Google"
+      }
+    },
+    "yosuke_furukawa": {
+      "name": {
+        "given": "Yosuke",
+        "family": "Furukawa"
+      },
+      "org": {
+        "name": "Recruit Technologies",
+        "unit": "Software Engineering"
+      },
+      "country": "JP",
+      "twitter": "yosuke_furukawa"
+    },
+    "satoshi_arai": {
+      "name": {
+        "given": "Satoshi",
+        "family": "Arai"
+      },
+      "org": {
+        "name": "Recruit Technologies",
+        "unit": "Software Engineering"
+      },
+      "country": "JP"
+    },
+    "kento_tsuji": {
+      "name": {
+        "given": "Kento",
+        "family": "Tsuji"
+      },
+      "org": {
+        "name": "Recruit Technologies",
+        "unit": "Software Engineering"
+      },
+      "country": "JP",
+      "twitter": "maxmellon_9039"
+    },
+    "ajain": {
+      "name": {
+        "given": "Ankit",
+        "family": "Jain"
+      },
+      "twitter": "AnkitJainOAJ"
+    },
+  "kenjibaheux": {
+    "name": {
+      "given": "Kenji",
+      "family": "Baheux"
+    },
+    "twitter": "KenjiBaheux"
+  }
 }

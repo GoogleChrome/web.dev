@@ -9,14 +9,13 @@ updated: 2019-10-08
 tags:
   - post
   - capabilities
+  - fugu
   - badging
   - progressive-web-apps
   - notifications
-  - origintrials
-  - fugu
+  - origin-trial
 hero: hero.jpg
 alt: Phone showing several notification badges
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-5354779956943519743
 ---

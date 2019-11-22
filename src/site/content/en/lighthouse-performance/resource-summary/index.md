@@ -42,7 +42,7 @@ type of resource is being requested.
 
 Requests for CSS and JavaScript files are render-blocking by default. In other words,
 browsers can't render content to the screen until all CSS and JavaScript requests are finished.
-If any of these files is hosted on a slow server, that single slow server can delay the entire
+If any of these files are hosted on a slow server, that single slow server can delay the entire
 rendering process. See [Optimize your JavaScript][js], [Optimize your third-party resources][3p],
 and [Optimize your CSS][css] to learn how to only ship the code that you actually need.
 

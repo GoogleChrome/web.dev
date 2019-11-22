@@ -1,5 +1,11 @@
-const contributors = require('../_data/contributors.json');
+const contributors = require("../_data/contributors.json");
 
 module.exports = (contributorSlugs = []) => {
-  return contributorSlugs.map((slug) => contributors[slug]);
+  const profiles = contributorSlugs.map((slug) => contributors[slug]);
+  return profiles.map((profile) => {
+    if (profile.twitter) {
+      return `@${profile.twitter}`;
+    }
+    return `${profile.name.given} ${profile.name.family}`;
+  });
 };

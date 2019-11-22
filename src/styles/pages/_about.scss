@@ -48,6 +48,16 @@
   width: 8px;
 }
 
+.w-about-video-wrapper {
+  width: 100%;
+
+  @include bp(md) {
+    float: right;
+    margin: 0 0 40px 40px;
+    width: calc((100% - 40px) / 2);
+  }
+}
+
 // sass-lint:disable property-sort-order
 .w-about-boxes {
   display: grid;
