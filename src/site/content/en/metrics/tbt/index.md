@@ -123,7 +123,7 @@ TBT](/lighthouse-total-blocking-time) for usage details.
   measure [First Input Delay (FID)](/fid/).
 {% endAside %}
 
-## What is a good TTI?
+## What is a good TBT?
 
 For details on how your page's TBT affects your Lighthouse performance score,
 see [How Lighthouse determines your TBT
