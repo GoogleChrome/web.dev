@@ -322,10 +322,7 @@ few guiding principles:
   while the image is loading. Note that you can also use the [unsized-media
   feature
   policy](https://github.com/w3c/webappsec-feature-policy/blob/master/policies/unsized-media.md)
-  to force this behavior in browsers that support feature policies. And in the
-  future you'll be able to use the [intrinsicSize
-  attribute](https://github.com/WICG/intrinsicsize-attribute) to more easily
-  address this issue.
+  to force this behavior in browsers that support feature policies.
 - **Never insert content above existing content, except in response to a user
   interaction.** This ensures any layout shifts that occur are expected.
 - **Prefer transform animations to animations of properties that trigger layout
