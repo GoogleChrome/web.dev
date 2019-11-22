@@ -1,0 +1,52 @@
+// =============================================================================
+// COLUMNS OVERVIEW
+//
+// Columns are used in posts to position content side-by-side.
+//
+// =============================================================================
+
+.w-columns {
+  display: grid;
+  // sass-lint:disable-all
+  // scss-lint:disable all
+  gap: 1rem;
+  // scss-lint:enable all
+  // sass-lint:enable-all
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+}
+
+.w-columns .w-compare {
+  margin: 0;
+  /// adds the breakpoint styles
+  @include bp(sm) {
+    margin: 0 .5rem;
+    padding: 0;
+  }
+}
+
+// TODO: Decouple columns and compare components
+.w-columns .w-compare__label {
+  @include bp(sm) {
+    border-bottom: 3px solid;
+    margin-bottom: 1em;
+    padding: 0;
+  }
+}
+
+.w-columns .w-compare__label--worse {
+  @include bp(sm) {
+    border-bottom-color: $RED_700;
+  }
+}
+
+.w-columns .w-compare__label--better {
+  @include bp(sm) {
+    border-bottom-color: $GREEN_800;
+  }
+}
+
+.w-columns .w-compare__label::before {
+  @include bp(sm) {
+    content: none;
+  }
+}

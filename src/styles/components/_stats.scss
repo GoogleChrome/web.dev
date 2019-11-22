@@ -1,0 +1,76 @@
+@import '../settings/type';
+@import '../tools/breakpoints';
+
+// =============================================================================
+// STATS OVERVIEW
+//
+// Stats are big text blocks meant to catch the eye in a case study.
+// e.g. '4x Faster load times.'
+//
+// Stats are laid out in a fullbleed grid.
+//
+// =============================================================================
+
+.w-stats {
+  background-color: rgba(230, 250, 240, .2);
+  border: 1px solid #0cce6b;
+  color: #018642;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 32px -32px;
+  padding: 64px 32px;
+  text-align: center;
+
+  @include bp(sm) {
+    flex-direction: row;
+  }
+}
+
+.w-stat {
+  margin-bottom: 32px;
+
+  @include bp(sm) {
+    flex: 1;
+    margin: 0 8px;
+  }
+}
+
+.w-stat:last-of-type {
+  margin-bottom: 0;
+}
+
+.w-stat__figure,
+.w-stat__desc {
+  color: inherit;
+  font-family: $HEADLINE_FONT;
+  margin: 0;
+  text-align: inherit;
+}
+
+.w-stat__figure {
+  font-size: 1.5em;
+  line-height: 1em;
+
+  @include bp(xxsm) {
+    font-size: 4em;
+  }
+
+  @include bp(md) {
+    font-size: 6em;
+  }
+}
+
+.w-stat__sup,
+.w-stat__sub {
+  font-size: .5em;
+  line-height: 1em;
+}
+
+.w-stat__sub {
+  vertical-align: baseline;
+}
+
+.w-stat__desc {
+  line-height: 1.5em;
+}

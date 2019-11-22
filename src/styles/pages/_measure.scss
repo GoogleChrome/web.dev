@@ -1,0 +1,65 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+
+// sass-lint:disable class-name-format
+body.lh-signedin [data-lh-signin='hide'] {
+  display: none !important;
+}
+
+web-progress-bar {
+  background-color: #fff;
+  visibility: hidden;
+  z-index: 1;
+}
+// sass-lint:enable class-name-format
+
+.w-measure-results {
+  background: $GREY_50;
+  min-height: 279px;
+}
+
+.w-measure-steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include bp(md) {
+    flex-direction: row;
+  }
+}
+
+.w-measure-step {
+  @include bp(md) {
+    margin: 0;
+    max-width: 256px;
+  }
+}
+
+.w-measure-categories {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  @include bp(sm) {
+    align-items: center;
+    display: grid;
+    // sass-lint:disable-all
+    // scss-lint:disable all
+    gap: 54px;
+    grid-gap: 54px;
+    // scss-lint:enable all
+    // sass-lint:enable-all
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+
+.w-measure-category {
+  margin: 36px 0;
+  max-width: 300px;
+  text-align: center;
+
+  @include bp(sm) {
+    margin: 0;
+  }
+}

@@ -1,0 +1,15 @@
+// =============================================================================
+// IMAGES OVERVIEW
+//
+// Basic image styles.
+//
+// =============================================================================
+
+// Get rid of gap under images by making them display: inline-block; by default
+img {
+  -ms-interpolation-mode: bicubic;
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}

@@ -1,0 +1,57 @@
+@import '../settings/type';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+// =============================================================================
+// PAGE HEADER OVERVIEW
+//
+// A piece of introductory copy usually containing a large headline element
+// and a short summary describing the section.
+//
+// =============================================================================
+
+.w-page-header {
+  height: auto;
+  // margin-top: 44px;
+  padding: 0 16px;
+  text-align: center;
+
+  @include bp(xxsm) {
+    // margin-top: 56px;
+    padding: 36px 24px 28px;
+  }
+
+  @include bp(md) {
+    min-height: 288px;
+    // margin-top: 64px;
+    padding: 48px 32px 0;
+  }
+}
+
+.w-page-header__headline {
+  margin: 0 auto 11px;
+
+  &.w-code {
+    font: 400 64px/64px 'Roboto Mono', monospace;
+  }
+}
+
+.w-page-header__copy {
+  font: inherit;
+  margin: 0 auto 12px;
+  max-width: 600px; // fits a top line of text on a large screen to prevent FOUC
+}
+
+body:not(.unresolved) .w-unsupported-notice {
+  display: none !important;
+}
+
+@keyframes unsupported-appear {
+  from { visibility: hidden; }
+  to   { visibility: hidden; }
+}
+
+.w-unsupported-notice {
+  // Hide this element for 5s once it is on the DOM.
+  animation: unsupported-appear 5s;
+}

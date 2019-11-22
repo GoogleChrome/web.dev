@@ -1,0 +1,32 @@
+@import '../settings/colors';
+@import '../tools/mixins';
+
+// =============================================================================
+// ICON LIST OVERVIEW
+//
+// An icon list is a regular unordered list where each bullet is replaced by an
+// icon.
+//
+// =============================================================================
+
+.w-icon-list {
+  list-style: none;
+}
+
+.w-icon-list__item {
+  font-size: .875rem;
+  margin: .5rem 0;
+  padding-left: 1.875rem;
+}
+
+.w-icon-list__item::before {
+  @include font-material-icon();
+  float: left;
+  font-size: 1.25rem;
+  margin: 0 0 0 -30px;
+}
+
+.w-icon-list__item--check::before {
+  color: $WEB_PRIMARY_COLOR;
+  content: 'done';
+}

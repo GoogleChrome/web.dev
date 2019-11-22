@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% set lang = "en" %}
+{% set locale="en_US" %}
+<html lang="{{lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if noindex or draft -%}
+      <meta name="robots" content="noindex">
+    {%- endif %}
+    {% if offline %}
+      <meta name="offline" content="true" />
+    {%- endif %}
+
+    {% Meta locale, page, collections %}
+    
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
+    <link rel="shortcut icon" href="/images/favicon@2x.png">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link rel="stylesheet" href="/app.css" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    {# Include default icon even though we have a manifest #}
+    <link rel="icon" type="image/png" href="/images/icon-128x128.png" sizes="128x128" />
+    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-performance.js"></script>
+    {# This is used by src/lib/firestore-loader.js to dynamically load Firestore #}
+    <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', '{{ site.analytics.ids.prod }}');
+      ga('set', 'transport', 'beacon');
+      ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version }}');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    <script type="module" src="/bootstrap.js"></script>
+  </head>
+  <body class="unresolved">
+    {#
+      Make the snackbar the first item in the DOM so we don't have to steal the
+      user's focus on initial visit to show them a cookie banner. Instead, the
+      snackbar will be the first stop for the screen reader / focus.
+    #}
+    <web-snackbar-container></web-snackbar-container>
+    <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" hidden></div>
+    <web-header role="navigation">
+      <button class="web-header__hamburger-btn" aria-label="menu"></button>
+
+      <a
+        href="/"
+        class="web-header__logo-link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Site logo"
+      >
+        <img class="web-header__logo" src="/images/lockup.svg" alt="web.dev" />
+      </a>
+
+      <div class="web-header__middle">
+        <div class="web-header__links">
+          <a
+            href="/learn/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Learn"
+          >
+            Learn
+          </a>
+
+          <a
+            href="/measure/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Measure"
+          >
+            Measure
+          </a>
+
+          <a
+            href="/blog/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Blog"
+          >
+            Blog
+          </a>
+
+          <a
+            href="/about/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: About"
+          >
+            About
+          </a>
+        </div>
+        <web-search></web-search>
+      </div>
+
+      <web-profile-switcher-container></web-profile-switcher-container>
+    </web-header>
+
+    <web-side-nav class="unresolved">
+      <a
+        href="/learn"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Learn"
+      >
+        Learn
+      </a>
+      <a
+        href="/measure"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Measure"
+      >
+        Measure
+      </a>
+      <a
+        href="/blog"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Blog"
+      >
+        Blog
+      </a>
+      <a
+        href="/about"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: About"
+      >
+        About
+      </a>
+    </web-side-nav>
+    <main>
+      <div id="content">
+        {{ content | safe }}
+      </div>
+    </main>
+    {% include 'partials/footer.njk' %}
+  </body>
+</html>

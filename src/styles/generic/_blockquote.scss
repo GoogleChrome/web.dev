@@ -1,0 +1,39 @@
+@import '../tools/mixins';
+
+// =============================================================================
+// BLOCKQUOTE OVERVIEW
+//
+// A large callout quote. For an optional citation field use pattern:
+// <blockquote>
+//  <p>Some quote</p>
+//  <cite>Source</cite>
+// </blockquote>
+//
+// =============================================================================
+
+blockquote {
+  @include w-article-text();
+  margin: 32px 0;
+  padding-left: 48px;
+
+  p {
+    font: inherit;
+    margin: 0 0 18px;
+  }
+
+  cite {
+    font-size: 14px;
+    font-style: normal;
+    line-height: 21px;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+blockquote::before {
+  @include font-material-icon();
+  content: 'format_quote';
+  float: left;
+  margin: 4px 0 0 -48px;
+  transform: scaleX(-1);
+}

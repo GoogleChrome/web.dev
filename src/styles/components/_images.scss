@@ -1,0 +1,126 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+
+// -----------------------------------------------------------------------------
+// A hero is a banner image that appears at the top of a post.
+// -----------------------------------------------------------------------------
+
+.w-hero {
+  display: block;
+  margin: 0 auto;
+  max-height: 480px;
+  width: 1600px;
+}
+
+.w-hero--top {
+  object-position: top;
+}
+
+.w-hero--bottom {
+  object-position: bottom;
+}
+
+.w-hero--cover {
+  object-fit: cover;
+}
+
+.w-hero--contain {
+  object-fit: contain;
+}
+
+// -----------------------------------------------------------------------------
+// A screenshot is a helper class to wrap an image and ensure it has some
+// bordering around it. Otherwise screenshots taken against a white background
+// will appear to 'float' in the middle of the article if the page also has
+// a white background.
+// -----------------------------------------------------------------------------
+
+// FIXME:
+// The duplication of the screenshot styles on figure are a temporary fix while
+// we transition elements over to the Figure shortcode.
+// After we transition all elements over to the shortcode, we should remove the
+// w-screenshot & w-screenshot--filled classes.
+// These figure classes *do* violate BEM style by using a child selector, but
+// it makes working with the shortcode much more ergonomic.
+
+.w-screenshot,
+.w-figure--screenshot > img {
+  border: 1px solid $GREY_300;
+  padding: 4px;
+}
+
+.w-screenshot--filled,
+.w-figure--screenshot > img {
+  background-color: $GREY_50;
+  padding: 16px;
+}
+
+.w-screenshot + .w-screenshot,
+.w-screenshot--filled + .w-screenshot--filled,
+.w-figure--screenshot > img + .w-figure--screenshot > img,
+.w-figure--screenshot-filled > img + .w-figure--screenshot-filled > img {
+  margin-top: 32px;
+}
+
+// -----------------------------------------------------------------------------
+// Figures are images with an optional caption at the bottom. They can be used
+// statitcally, or to break out of their container, or inlined to the left or
+// right.
+//
+// -----------------------------------------------------------------------------
+
+.w-figure {
+  margin: 32px 0;
+}
+
+// Allow images contained within a figure to be break outside of the main
+// container in articles and be full bleed on mobile.
+.w-figure--fullbleed {
+  margin: 64px -32px;
+}
+
+.w-figure--center {
+  text-align: center;
+}
+
+// Inline images are typically quite small so we'll center them on smaller
+// displays but we won't force them to 100% width in case that causes their
+// height to get super tall.
+// This will also center the figcaption but that doesn't look too bad.
+.w-figure--inline-right,
+.w-figure--inline-left {
+  display: block;
+  float: none;
+  margin: 16px 0;
+  max-width: 100%;
+  text-align: center;
+
+  @include bp(md) {
+    max-width: calc((100% - 40px) / 2);
+    text-align: left;
+  }
+}
+
+.w-figure--inline-right {
+  @include bp(md) {
+    float: right;
+    margin: 0 0 40px 40px;
+  }
+}
+
+.w-figure--inline-left {
+  @include bp(md) {
+    float: left;
+    margin: 0 40px 40px 0;
+  }
+}
+
+.w-figcaption {
+  font-size: .875em;
+  line-height: 1.5em;
+  margin: 16px 0 0;
+}
+
+.w-figcaption--fullbleed {
+  margin: 24px 32px 0;
+}

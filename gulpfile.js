@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,65 +14,82 @@
  * limitations under the License.
  */
 
-'use strict';
+const path = require("path");
+const gulp = require("gulp");
+const mozjpeg = require("imagemin-mozjpeg");
+const pngquant = require("imagemin-pngquant");
+const imagemin = require("gulp-imagemin");
+const rename = require("gulp-rename");
+const gulpif = require("gulp-if");
 
-const del = require('del');
-const gulp = require('gulp');
-const spawn = require('child_process').spawn;
-const eslint = require('gulp-eslint');
+/* eslint-disable max-len */
+const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
+/* eslint-enable max-len */
 
-const DEST = './build/';
+const isProd = process.env.ELEVENTY_ENV === "prod";
 
-gulp.task('clean', () => del([DEST]));
-
-gulp.task('build', () => {
-  const childProcess = spawn('node', ['./lib/index.js']);
-
-  childProcess.stdout.on('data', (data) => {
-    process.stdout.write(data.toString('utf-8'));
-  });
-
-  childProcess.stderr.on('data', (data) => {
-    process.stderr.write(data.toString('utf-8'));
-  });
-
-  return childProcess;
+// These are images that our CSS refers to.
+gulp.task("copy-global-images", () => {
+  return gulp.src(["./src/images/**/*"]).pipe(gulp.dest("./dist/images"));
 });
 
-gulp.task(
-  'watch',
-  gulp.series('build', () => {
-    // TODO(ericbidelman): Don't rebuild all files if only 1 changes.
-    gulp.watch(
-      'content/**/*.{md,html}',
-      {
-        read: false, // Optimization. Not accessing file.contents.
-        ignoreInitial: true,
-      },
-      gulp.series('build'),
-    );
-  }),
-);
+// These are misc top-level assets.
+gulp.task("copy-misc", () => {
+  return gulp.src(["./src/misc/**/*"]).pipe(gulp.dest("./dist"));
+});
 
-gulp.task('lint', () => {
+// Images and any other assets in the content directory that should be copied
+// over along with the posts themselves.
+// Because we use permalinks to strip the parent directories form our posts
+// we need to also strip them from the content paths.
+gulp.task("copy-content-assets", () => {
   return (
     gulp
-      .src([
-        'gulpfile.js',
-        '{lib,server}/{*.js,*.mjs,!(deps)/**/*.js}',
-        '!glitches/**/*.{js,mjs}',
-        '!lib/devsite.js',
-        '!lib/local-devsite.js'])
-      // eslint() attaches the lint output to the "eslint" property
-      // of the file object so it can be used by other modules.
-      .pipe(eslint())
-      // eslint.format() outputs the lint results to the console.
-      // Alternatively use eslint.formatEach().
-      .pipe(eslint.format())
-      // To have the process exit with an error code (1) on
-      // lint error, return the stream and pipe to failAfterError last.
-      .pipe(eslint.failAfterError())
+      .src([`./src/site/content/en/**/*.{${assetTypes}}`])
+      .pipe(
+        gulpif(
+          isProd,
+          imagemin([pngquant({quality: [0.8, 0.8]}), mozjpeg({quality: 80})]),
+        ),
+      )
+      // This makes the images show up in the same spot as the permalinked posts
+      // they belong to.
+      .pipe(
+        rename(function(assetPath) {
+          const parts = assetPath.dirname.split("/");
+          // Let the en/images directory pass through.
+          if (parts[0] === "images") {
+            return;
+          }
+          // Let en/handbook images pass through.
+          if (parts[0] === "handbook") {
+            return;
+          }
+          return (assetPath.dirname = path.basename(assetPath.dirname));
+        }),
+      )
+      .pipe(gulp.dest("./dist/en"))
   );
 });
 
-gulp.task('default', gulp.series('clean', 'build'));
+gulp.task("copy-node_modules-assets", () => {
+  return gulp
+    .src([`./node_modules/@webcomponents/webcomponentsjs/bundles/*.js`])
+    .pipe(gulp.dest("./dist/lib/webcomponents/bundles/"));
+});
+
+gulp.task(
+  "build",
+  gulp.parallel(
+    "copy-global-images",
+    "copy-misc",
+    "copy-content-assets",
+    "copy-node_modules-assets",
+  ),
+);
+
+gulp.task("watch", () => {
+  gulp.watch("./src/images/**/*", gulp.series("copy-global-images"));
+  gulp.watch("./src/misc/**/*", gulp.series("copy-misc"));
+  gulp.watch("./src/site/content/**/*", gulp.series("copy-content-assets"));
+});

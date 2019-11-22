@@ -1,0 +1,221 @@
+---
+layout: layout
+title: web.dev
+description: |
+  Get the web's modern capabilities on your own sites and apps with useful
+  guidance and analysis from web.dev.
+date: 2018-11-05
+---
+
+<style>
+.w-cds-promo {
+  margin: 0 auto;
+  max-width: 512px;
+  padding: 72px 24px 0; }
+  @media (min-width: 865px) {
+    .w-cds-promo {
+      max-width: 960px;
+      padding: 96px 32px 0; } }
+
+.w-cds-promo__grid {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr; }
+  @media (min-width: 865px) {
+    .w-cds-promo__grid {
+      gap: 3rem;
+      grid-template-columns: 1fr 1fr; } }
+
+.w-cds-promo__video {
+  box-shadow: 0 2px 3px 0 rgba(60, 64, 67, 0.3), 0 6px 10px 4px rgba(60, 64, 67, 0.15); }
+
+.w-cds-promo p {
+  text-align: center; }
+  @media (min-width: 865px) {
+    .w-cds-promo p {
+      text-align: left;
+      font: 400 18px / 1.33333 "Google Sans", sans-serif;
+      margin-top: 48px;
+      margin-bottom: 24px; } }
+  @media (min-width: 865px) and (min-width: 241px) {
+    .w-cds-promo p {
+      font: 400 21px / 1.33333 "Google Sans", sans-serif;
+      margin-top: 56px;
+      margin-bottom: 28px; } }
+  @media (min-width: 865px) and (min-width: 321px) {
+    .w-cds-promo p {
+      font: 400 24px / 1.33333 "Google Sans", sans-serif;
+      margin-top: 64px;
+      margin-bottom: 32px; } }
+
+.w-cds-promo p:first-of-type {
+  margin-top: 0; }
+
+.w-cds-promo p:last-of-type {
+  margin-bottom: 0; }
+</style>
+
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+
+<div class="home-landing-page">
+  <header class="w-masthead-home">
+    <div class="w-masthead-home__container">
+      <div class="w-masthead-home__left">
+        <h1 class="w-headline--two w-font-weight--medium">
+          Let's build the future of the web
+        </h1>
+        <p>
+          Get the web's modern capabilities on your own sites and apps with useful
+          guidance and analysis from web.dev.
+        </p>
+        <div class="w-masthead-home__buttons">
+          <a
+            class="w-button w-button--primary w-masthead-home__button--primary gc-analytics-event"
+            data-category="web.dev"
+            data-label="home, test site"
+            data-action="click"
+            href="/measure"
+          >
+            Test my site
+          </a>
+          <a
+            class="w-button w-button--secondary gc-analytics-event"
+            data-category="web.dev"
+            data-label="home, start learning"
+            data-action="click"
+            href="/learn"
+          >
+            Explore topics
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {# <section class="w-layout-container w-text--center">
+    <p class="w-headline--two-small">
+      As the web advances, users' expectations grow. With web.dev's guidance, you
+      can give your users the best experience, wherever they are.
+    </p>
+    <a
+      class="w-button gc-analytics-event"
+      data-category="web.dev"
+      data-label="home, learn about"
+      data-action="click"
+      href="/about"
+    >
+      About web.dev
+    </a>
+  </section> #}
+
+  <section class="w-cds-promo">
+    <div class="w-cds-promo__grid">
+      <div>
+        <img
+          src="/images/modules/cds19-lockup-stack.svg"
+          alt="chrome dev summit 2019"
+        >
+      </div>
+      <div>
+        <p>
+          That's a wrap! Thank you for joining us at
+          <a href="https://developer.chrome.com/devsummit/">
+          Chrome Developer Summit
+          </a> 2019.
+        </p>
+        <p>
+          If you couldn't make the event, don't worry! You can catch all of the
+          talks on the <a
+          href="https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw">
+          Chrome Developers YouTube channel</a>. See you next year!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w-layout-container w-pb--non">
+      <header class="w-text--center">
+        <h2 class="w-headline--two-faded">
+          Latest stories
+        </h2>
+        <p>
+          See our latest news, updates, and stories for developers.
+        </p>
+      </header>
+    </div>
+    <div class="w-grid w-pb--std">
+      <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+        {% for post in collections.recentPosts %}
+          {% PostCard {post: post} %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="w-layout-container w-pt--non w-pb--xl">
+      <div class="w-text--center">
+        <a class="w-button" href="/blog">
+          See all articles
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w-layout-container w-pb--non">
+      <header class="w-text--center">
+        <h2 class="w-headline--two-faded">
+          Explore topics
+        </h2>
+        <p>
+          Learn more about a topic, and practice your skills with a hands-on
+          codelab.
+        </p>
+      </header>
+    </div>
+    <div class="w-grid w-pb--std">
+      <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+        {% for path in home.paths %}
+          {% PathCard path %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="w-layout-container w-pt--non w-pb--xl">
+      <div class="w-text--center">
+        <a
+          class="w-button gc-analytics-event"
+          data-category="web.dev"
+          data-label="home, all paths"
+          data-action="click"
+          href="/learn"
+        >
+          See all topics
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="w-layout-container w-text--center">
+    <h2 class="w-headline--two-faded">
+      Save your progress
+    </h2>
+    <p>
+      See how your website performs over time, and keep track as you learn on
+      your own schedule.
+    </p>
+    <div>
+      <a
+        class="w-button w-button--primary gc-analytics-event"
+        data-category="web.dev"
+        data-label="home, create profile"
+        data-action="click"
+        href="/measure"
+      >
+        Test my site
+      </a>
+    </div>
+  </section>
+</div>
