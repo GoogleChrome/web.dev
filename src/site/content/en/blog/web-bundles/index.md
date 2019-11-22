@@ -169,12 +169,12 @@ Everything magically works.
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/web-bundles/preact-todomvc.mp4" 
-            type="video/mp4; codecs=h264">
+            type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
     The Preact implementation of TodoMVC working offline as a web bundle
   </figcaption>
-</figure>
+</figure>z
 
 You could also try out other sample web bundles:
 
