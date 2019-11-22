@@ -174,7 +174,7 @@ Everything magically works.
   <figcaption class="w-figcaption">
     The Preact implementation of TodoMVC working offline as a web bundle
   </figcaption>
-</figure>z
+</figure>
 
 You could also try out other sample web bundles:
 
