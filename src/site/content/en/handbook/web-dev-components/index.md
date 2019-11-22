@@ -222,8 +222,8 @@ Use the codelab aside to link to an associated codelab.
 
 {% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
 
-{% SelfAssessment 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
-{% Tabset 'Samples for knowledge self check' %}
+{% AssessmentCallout 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
+{% Tabs 'Samples for knowledge self check' %}
 
 {% Tab 'sample' %}
 
@@ -233,12 +233,12 @@ Use the codelab aside to link to an associated codelab.
 <input type="text" role="textbox" id="pwd-input" name="password">
 ```
 
-{% SelfAssessmentHint 'Does the sample need ARIA?' %}
+{% AssessmentHint 'Does the sample need ARIA?' %}
 **No.** This sample is **incorrect**.
 Since the text input is a native HTML form element,
 it doesn't need ARIA for its semantics.
 In fact, text inputs don't allow ARIA roles to be added.
-{% endSelfAssessmentHint %}
+{% endAssessmentHint %}
 
 {% endTab %}
 {% Tab 'sample' %}
@@ -250,9 +250,9 @@ In fact, text inputs don't allow ARIA roles to be added.
 </label>
 ```
 
-{% SelfAssessmentHint 'Does the sample need ARIA?' %}
+{% AssessmentHint 'Does the sample need ARIA?' %}
 **No.** This sample is **correct**. Since radio inputs and labels are native HTML form elements, they come with built-in semantics. There's no need to add ARIA.
-{% endSelfAssessmentHint %}
+{% endAssessmentHint %}
 
 {% endTab %}
 {% Tab 'sample' %}
@@ -264,13 +264,13 @@ In fact, text inputs don't allow ARIA roles to be added.
 </ul>
 ```
 
-{% SelfAssessmentHint 'Does the sample need ARIA?' %}
+{% AssessmentHint 'Does the sample need ARIA?' %}
 **Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
-{% endSelfAssessmentHint %}
+{% endAssessmentHint %}
 
 {% endTab %}
-{% endTabset %}
-{% endSelfAssessment %}
+{% endTabs %}
+{% endAssessmentCallout %}
 
 ## Columns
 
@@ -975,7 +975,7 @@ to generate sequentially numbered tab labels:
 Any other text in the Tab shortcode argument will be presented as-is.
 
 ````html
-{% raw %}{% Tabset 'Questions for knowledge self check' %}
+{% raw %}{% Tabs 'Questions for knowledge self check' %}
 {% Tab 'question' %}
 
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
@@ -1005,10 +1005,10 @@ Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
 ```
 
 {% endTab %}
-{% endTabset %}{% endraw %}
+{% endTabs %}{% endraw %}
 ````
 
-{% Tabset 'Questions for knowledge self check' %}
+{% Tabs 'Questions for knowledge self check' %}
 {% Tab 'question' %}
 
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
@@ -1038,7 +1038,7 @@ Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
 ```
 
 {% endTab %}
-{% endTabset %}
+{% endTabs %}
 
 ## Tooltips
 Hold the pointer over or focus the buttons below to view their tooltips.

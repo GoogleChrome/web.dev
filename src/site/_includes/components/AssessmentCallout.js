@@ -24,7 +24,7 @@ module.exports = (content, blurb) => {
       <summary class="w-callout__header">
         <h2 class="w-callout__lockup w-callout__lockup--collapsible w-callout__lockup--assess">
           Check for understanding
-          <span class="w-callout--collapsible__toggle">
+          <span class="w-callout__toggle">
             <span class="w-tooltip w-tooltip--right">Toggle callout</span>
           </span>
         </h2>
@@ -35,9 +35,9 @@ module.exports = (content, blurb) => {
           Expand this callout to practice concepts from the post.
         </div>
       </summary>
-      
+
       ${content}
-    
+
     </details>
   `;
 };

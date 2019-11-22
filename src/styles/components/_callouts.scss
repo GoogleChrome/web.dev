@@ -48,16 +48,16 @@
     outline: none;
   }
 
-  &:hover .w-callout--collapsible__toggle,
-  &:focus .w-callout--collapsible__toggle {
+  &:hover .w-callout__toggle,
+  &:focus .w-callout__toggle {
     background: $GOOGLE_GREEN_50;
   }
 
-  &:focus .w-callout--collapsible__toggle {
+  &:focus .w-callout__toggle {
     box-shadow: 0 0 0 1px $FOCUS_COLOR;
   }
 
-  &:active .w-callout--collapsible__toggle {
+  &:active .w-callout__toggle {
     background: $GOOGLE_GREEN_100;
   }
 }
@@ -75,7 +75,7 @@
   width: 100%;
 }
 
-.w-callout--collapsible__toggle {
+.w-callout__toggle {
   @include font-material-icon();
   border-radius: $GLOBAL_RADIUS;
   cursor: $CURSOR_POINTER_VALUE;
@@ -90,11 +90,11 @@
   transition: background $TRANSITION_SPEED;
 }
 
-.w-callout--collapsible__toggle::after {
+.w-callout__toggle::after {
   content: 'unfold_more';
 }
 
-.w-callout--collapsible[open] .w-callout--collapsible__toggle::after {
+.w-callout--collapsible[open] .w-callout__toggle::after {
   content: 'unfold_less';
 }
 

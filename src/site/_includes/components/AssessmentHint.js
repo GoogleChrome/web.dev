@@ -15,19 +15,23 @@
  */
 
 const {html} = require("common-tags");
+const md = require("markdown-it")();
 
-module.exports = (content, label) => {
-  if (!label) {
+module.exports = (content, summary, state) => {
+  if (!summary) {
     /* eslint-disable max-len */
     throw new Error(
-      `Can't create Tabset component without a label. Did you forget to pass the label as a string?`,
+      `Can't create AssessmentHint component without a summary. Did you forget to pass the summary as a string?`,
     );
     /* eslint-enable max-len */
   }
+
+  const stateOverride = state == "open" ? "open" : "";
   // prettier-ignore
   return html`
-    <w-tabset label="${label}">
-    ${content}
-    </w-tabset>
+    <details class="w-self-assessment-hint" ${stateOverride}>
+      <summary class="w-self-assessment-hint__summary">${summary}</summary>
+      <div class="w-self-assessment-hint__panel">${md.render(content)}</div>
+    </details>
   `;
 };

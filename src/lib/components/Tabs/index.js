@@ -29,16 +29,16 @@ class Tabs extends BaseElement {
       let tabLabel;
 
       for (const child of this.children) {
-        // Set id and aria-labelledby attributes for each pane for a11y
+        // Set id and aria-labelledby attributes for each panel for a11y
         // and remove hidden attribute on first tab.
-        child.id = "w-tab-" + i + "-pane";
-        child.setAttribute("aria-labelledby", "w-tab-" + i);
+        child.id = "web-tab-" + i + "-panel";
+        child.setAttribute("aria-labelledby", "web-tab-" + i);
         if (i === 1) {
           child.removeAttribute("hidden");
         }
         this.prerenderedChildren.push(child);
-        // Get tab label from pane data-label attribute
-        // and render a tab for each pane.
+        // Get tab label from panel data-label attribute
+        // and render a tab for each panel.
         tabLabel = child.getAttribute("data-label");
         this.tabs.push(this.tabTemplate(i, tabLabel));
         i++;
@@ -46,7 +46,7 @@ class Tabs extends BaseElement {
     }
 
     return html`
-      <div class="w-tabset" role="tablist" aria-label="${this.label}">
+      <div class="web-tabs__tablist" role="tablist" aria-label="${this.label}">
         ${this.tabs}
       </div>
       ${this.prerenderedChildren}
@@ -78,14 +78,14 @@ class Tabs extends BaseElement {
       <button
         @click="${this.onClick}"
         @keydown="${this.onKeydown}"
-        class="w-tabset__tab"
+        class="web-tabs__tab"
         role="tab"
         aria-selected="${isActive}"
-        id="w-tab-${i}"
-        aria-controls="w-tab-${i}-pane"
+        id="web-tab-${i}"
+        aria-controls="web-tab-${i}-panel"
         tabindex=${tabIndex}
       >
-        <span class="w-tabset__text-label">${tabLabel}</span>
+        <span class="web-tabs__text-label">${tabLabel}</span>
       </button>
     `;
   }
@@ -156,11 +156,11 @@ class Tabs extends BaseElement {
     this.changeTab(item.parentElement.lastElementChild);
   }
 
-  // Change state of tabs and associated panes.
+  // Change state of tabs and associated panels.
   changeTab(item) {
-    const tabset = item.closest("w-tabset");
-    const tabs = Array.from(tabset.querySelectorAll(".w-tabset__tab"));
-    const panes = Array.from(tabset.querySelectorAll(".w-tabset__pane"));
+    const tabset = item.closest("web-tabs");
+    const tabs = Array.from(tabset.querySelectorAll(".web-tabs__tab"));
+    const panels = Array.from(tabset.querySelectorAll(".web-tabs__panel"));
     const index = tabs.indexOf(item);
 
     tabs.forEach(function(tab) {
@@ -172,12 +172,12 @@ class Tabs extends BaseElement {
     item.removeAttribute("tabindex");
     item.focus();
 
-    panes.forEach(function(element) {
+    panels.forEach(function(element) {
       element.setAttribute("hidden", "");
     });
 
-    panes[index].removeAttribute("hidden");
+    panels[index].removeAttribute("hidden");
   }
 }
 
-customElements.define("w-tabset", Tabs);
+customElements.define("web-tabs", Tabs);
