@@ -220,7 +220,49 @@ Use the codelab aside to link to an associated codelab.
 
 ## Callouts
 
+### Codelab Callouts
+
 {% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
+
+### Assessment Callouts
+
+Use an assessment callout to provide opportunities for users
+to check their understanding of concepts covered in your post.
+
+```html
+{% raw %}{% AssessmentCallout 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
+{% Tabs 'Samples for knowledge self check' %}
+
+{% Tab 'sample' %}
+
+// Assessment item content
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+// Assessment hint content
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+// Assessment item content
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+// Assessment hint content
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+// Assessment item content
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+// Assessment hint content
+{% endAssessmentHint %}
+
+{% endTab %}
+{% endTabs %}
+{% endAssessmentCallout %}{% endraw %}
+```
 
 {% AssessmentCallout 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
 {% Tabs 'Samples for knowledge self check' %}
@@ -270,6 +312,41 @@ In fact, text inputs don't allow ARIA roles to be added.
 
 {% endTab %}
 {% endTabs %}
+{% endAssessmentCallout %}
+
+If you want to include a single self-assessment question,
+omit the `{% raw %}{% Tabs %}{% endraw %}` and `{% raw %}{% Tab %}{% endraw %}`shortcodes:
+
+````html
+{% raw %}{% AssessmentCallout 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
+{% endAssessmentHint %}
+
+{% endAssessmentCallout %}{% endraw %}
+````
+
+{% AssessmentCallout 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
+{% endAssessmentHint %}
+
 {% endAssessmentCallout %}
 
 ## Columns
