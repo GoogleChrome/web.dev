@@ -179,7 +179,7 @@ Everything magically works.
 You could also try out other sample web bundles:
 
 - [web.dev.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/web.dev.wbn) is a 
-   snapshot of the entire web.dev site, as of 2019-10-15.
+   snapshot of the entire web.dev site, as of 2019 October 15.
 - [proxx.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/proxx.wbn):
   [PROXX](/proxx-announce/) is a Minesweeper clone that works offline.
 - [squoosh.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/squoosh.wbn): 
