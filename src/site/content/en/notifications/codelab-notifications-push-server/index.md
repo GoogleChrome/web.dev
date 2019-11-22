@@ -53,7 +53,7 @@ Let's look at what's going on server-side. To see messages from the server code,
 
   If you tried clicking **Notify current subscription** or **Notify all subscriptions** in the live app UI, you'll also see the following message:
 
-  ```
+  ```bash
   TODO: Implement sendNotifications()
   Endpoints to send to:  []
   ``` 
