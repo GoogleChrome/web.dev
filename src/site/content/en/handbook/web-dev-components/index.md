@@ -1118,7 +1118,15 @@ Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
 {% endTabs %}
 
 ## Tooltips
-Hold the pointer over or focus the buttons below to view their tooltips.
+
+Use tooltips to provide information about UI controls
+that are too small to have a label:
+
+```html
+<button class="w-button w-button--icon" data-icon="format_align_left">
+  {% raw %}{% Tooltip 'Left align' %}{% endraw %}
+</button>
+```
 
 <div>
   <button class="w-button w-button--icon" data-icon="format_align_left">
@@ -1134,6 +1142,31 @@ Hold the pointer over or focus the buttons below to view their tooltips.
     {% Tooltip 'Justify' %}
   </button>
 </div>
+
+You can left- or right-align a tooltip to its parent
+by adding a `left` or `right` argument to the shortcode:
+
+```html
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% raw %}{% Tooltip 'Collapse', 'left' %}{% endraw %}
+</button>
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% raw %}{% Tooltip 'Collapse' %}{% endraw %}
+</button>
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% raw %}{% Tooltip 'Collapse', 'right' %}{% endraw %}
+</button>
+```
+
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% Tooltip 'Collapse', 'left' %}
+</button>
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% Tooltip 'Collapse' %}
+</button>
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% Tooltip 'Collapse', 'right' %}
+</button>
 
 ## Video
 See the [Images and video](/handbook/markup-media#video) post.
