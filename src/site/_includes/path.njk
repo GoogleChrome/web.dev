@@ -60,10 +60,8 @@ layout: layout
   </section> #}
 
   <section class="w-layout-container">
-    <div class="w-topics">
-      {% for topic in topics %}
-        {% include 'partials/topic.njk' %}
-      {% endfor %}
-    </div>
+    {% for topic in topics %}
+      {% include 'partials/topic.njk' %}
+    {% endfor %}
   </section>
 </div>

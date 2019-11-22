@@ -13,46 +13,44 @@ $TOPIC_SPACING_SIZE_LARGE: 48px;
 $TOPIC_SPACING_SIZE_MEDIUM: 40px;
 $TOPIC_SPACING_SIZE_SMALL: 32px;
 
-.w-topics {
-  .w-topic {
-    border-bottom: 1px solid $WEB_PRIMARY_COLOR;
+.w-topic {
+  border-bottom: 1px solid $WEB_PRIMARY_COLOR;
+}
 
-    .w-topic-header {
-      align-items: center;
+.w-topic__header {
+  align-items: center;
+  color: $WEB_PRIMARY_COLOR;
+  display: flex;
+  margin-left: $TOPIC_SPACING_SIZE_SMALL;
+  overflow: visible;
+
+  @include bp(sm) {
+    margin-left: $TOPIC_SPACING_SIZE_LARGE;
+  }
+
+  &:focus,
+  &:hover {
+    a {
       color: $WEB_PRIMARY_COLOR;
-      display: flex;
-      margin-left: $TOPIC_SPACING_SIZE_SMALL;
-      overflow: visible;
-
-      @include bp(sm) {
-        margin-left: $TOPIC_SPACING_SIZE_LARGE;
-      }
-
-      &:focus,
-      &:hover {
-        a {
-          color: $WEB_PRIMARY_COLOR;
-        }
-      }
     }
+  }
+}
 
-    .w-subtopic-header {
-      align-items: center;
+.w-topic > .w-topic__subtopic-header {
+  align-items: center;
+  color: $PRIMARY_TEXT_COLOR;
+  display: flex;
+  margin-left: $TOPIC_SPACING_SIZE_SMALL;
+  overflow: visible;
+
+  @include bp(sm) {
+    margin-left: $TOPIC_SPACING_SIZE_LARGE;
+  }
+
+  &:focus,
+  &:hover {
+    a {
       color: $PRIMARY_TEXT_COLOR;
-      display: flex;
-      margin-left: calc(#{$TOPIC_SPACING_SIZE_SMALL} - 82px);
-      overflow: visible;
-
-      @include bp(sm) {
-        margin-left: calc(#{$TOPIC_SPACING_SIZE_LARGE} - 99px);
-      }
-
-      &:focus,
-      &:hover {
-        a {
-          color: $PRIMARY_TEXT_COLOR;
-        }
-      }
     }
   }
 }
