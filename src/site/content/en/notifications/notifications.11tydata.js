@@ -14,9 +14,7 @@ module.exports = {
     topics: [
       {
         title: "Notifications",
-        pathItems: [
-          "codelab-notifications-push-server",
-        ],
+        pathItems: ["codelab-notifications-push-server"],
       },
     ],
   },
