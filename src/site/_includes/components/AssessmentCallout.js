@@ -18,6 +18,7 @@ const {html} = require("common-tags");
 
 /* eslint-disable require-jsdoc, max-len */
 module.exports = (content, blurb) => {
+  // Need newlines around ${content} so MD parser renders it as MD, not HTML
   // prettier-ignore
   return html`
     <details class="w-callout w-callout--collapsible" open>
