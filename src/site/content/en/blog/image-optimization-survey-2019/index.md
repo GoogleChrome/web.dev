@@ -16,6 +16,25 @@ codelabs:
   - codelab-specifying-multiple-slot-widths
 ---
 
+{# 
+   Editorial note from @kaycebasques: I told Sam that this was a good fit for web.dev, and then
+   over the next couple months my ideas about content strategy for web.dev evolved. We're going
+   to publish this, because I don't have a compelling reason not to, but here's my current thinking
+   (2019 Nov 23) around publishing surveys on web.dev/blog. Ultimately we want to **guide** web
+   developers towards creating **better** sites. Web developers are faced with an overabundance
+   of options. Posting a long list of image optimization techniques (like this post does) might
+   further exacerbate their feeling of being overwhelmed. We also have to be careful about posting
+   direct comments from web developers, because we don't want to spread FUD or misinformation. On
+   the other hand, intermediate to advanced web developers might find the very-specific comments
+   from fellow web developers helpful. We need to investigate that further somehow. Also note how
+   I added an "Audience" section to this page. In general, all web.dev pages should clearly guide
+   web developers towards building a better site. When a page doesn't clearly do that, an "Audience"
+   section might help us make it clear why or how this page is useful to a web developer 
+   (or the web developer ecosystem). If we can't describe a clear usefulness then that's a clue that
+   the content might not be a good fit for web developers. In the future I think we need to help 
+   web developers evaluate which image optimization techniques are best for them.
+#}
+
 {% Aside 'warning' %}
   The statistics contained in this survey should not be cited because our survey methodology was
   flawed, as explained in [Caveats](#caveats). However, we're still posting the responses because we
