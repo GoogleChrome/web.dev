@@ -1,5 +1,5 @@
 ---
-title: Image optimization survey results (summer 2019)
+title: Image optimization survey 2019
 subhead: What web developers think about various image optimization techniques
 authors:
   - samdutton
