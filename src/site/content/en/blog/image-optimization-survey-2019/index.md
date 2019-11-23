@@ -1,10 +1,10 @@
 ---
 title: Image optimization survey 2019
-subhead: What web developers think about various image optimization techniques
+subhead: Web developer usage and attitudes of image optimization techniques
 authors:
   - samdutton
 date: 2019-11-22
-description: The results of a survey to find out whether and why web developers do or don't use various image optimization techniques.
+description: The results of a survey to find out which image optimization techniques web developers do (or don't) use and why.
 tags:
   - post
   - images
@@ -27,13 +27,19 @@ In July and August 2019 my team, Google Web DevRel, ran a survey asking web deve
 We solicited responses through [Web Fundamentals](https://developers.google.com/web) and 
 [@ChromiumDev](https://twitter.com/chromiumdev). Our motivation for the survey was to find out why 
 most sites don't follow image optimization best practices even though they seem like a relatively 
-easy way to improve performance. We got 2971 responses.
+easy way to improve performance. We got 2946 responses.
 
-The sections below show responses and comments for each survey question.
+## Audience
+
++ If you're a web developer, you might find this post useful for discovering new image optimization
+  techniques, or details on how other web developers have solved a problem that you're facing, as
+  well as the costs, benefits, and limitations of each technique.
++ If you're an image service or image CDN provider, this post might help you find new market
+  opportunities.
 
 ## Caveats
 
-We're not confident in the usefulness of our sample for the following reasons:
+We're not confident that we can rely on our response data for the following reasons:
 
 + The participants were self-selecting.
 + The form got spammed or completed by some people who didn't seem to know why they were
@@ -46,13 +52,23 @@ We made some mistakes in the way we asked questions:
 
 + Some explanations accompanying the questions were cuing (in other words, they expressed an opinion), potentially leading to bias in the responses.
 + The explanations were intended to set the context and provide useful resources, but some of these included distracting material (providing links to resources about the `srcset` attribute, for example).
-+ We felt that asking extra questions unrelated to images might feel intrusive and/or increase bounce rates. In retrospect, it would have been useful to ask participants for their location and other metadata.
++ We felt that asking extra questions unrelated to images might feel intrusive or increase bounce rates. In retrospect, it would have been useful to ask participants for their location and other metadata.
+
+With that said, there aren't many obvious anomalies in the response data. For example,
+the response data about [framework usage](#framework-usage) resembles
+[Stack Overflow's 2019 data](https://insights.stackoverflow.com/survey/2019#technology-_-web-frameworks).
 
 ---
 
 ## Do you lazy load images?
 
+{% Aside %}
+Why's this important?
+[Requesting image files just in time](/use-lazysizes-to-lazyload-images), rather than getting all 
+the images for a page as soon as it loads, can improve performance and reduce data cost.
+{% endAside %}
 
+2,946 responses
 
 <figure class="w-figure">
   <img alt="Yes: 59.1%, No: 38.3%" src="lazyload.jpg" style="max-width: 50%">
@@ -62,16 +78,15 @@ We made some mistakes in the way we asked questions:
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-{% Aside %}
-[Requesting image files just in time](/use-lazysizes-to-lazyload-images), rather than getting all 
-the images for a page as soon as it loads, can improve performance and reduce data cost.
-{% endAside %}
+Summary of comments from respondents who said "Other":
+
+* Lazy loading can be annoying or confusing for end users.
+* They're waiting for native support.
+* They don't perceive it to be important, sometimes because their site doesn't have many images.
 
 ### If you don't use lazy loading, why not?
 
 1,631 responses
-
-
 
 <figure class="w-figure">
   <img alt="Not sure how best to do it: ~60%,
@@ -87,23 +102,16 @@ the images for a page as soon as it loads, can improve performance and reduce da
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-### Related comments
-
-+ Lazy loading can be annoying and/or confusing for end users.
-+ Waiting for [native support](https://web.dev/native-lazy-loading).
-+ Not that important, or not all that many images.
-
-### Interpretation
-
-+ Many respondents are unsure how best to implement lazy loading.
-+ Many respondents reported SEO concerns.
-+ Some respondents expressed concerns that images don't load reliably or in time.
-
 ---
 
 ## Do you use srcset?
 
+{% Aside %}
+Why's this important?
+The [`srcset`](/use-srcset-to-automatically-choose-the-right-image) attribute provides alternative image sources. You specify width or pixel density so the browser can choose the smallest image without needing to download images to calculate dimensions.
+{% endAside %}
 
+2,946 responses
 
 <figure class="w-figure">
   <img alt="Yes: 46.1%, No: 51.5%" src="srcset.jpg" style="max-width: 50%">
@@ -113,15 +121,16 @@ the images for a page as soon as it loads, can improve performance and reduce da
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-{% Aside %}
-The [`srcset`](/use-srcset-to-automatically-choose-the-right-image) attribute provides alternative image sources. You specify width or pixel density so the browser can choose the smallest image without needing to download images to calculate dimensions.
-{% endAside %}
+Summary of comments from respondents who said "Other":
+
++ They had a lack of awareness of the benefit of `srcset`.
++ They thought it didn't have good cross-browser support. [Note: `srcset` is [supported in 92% of browsers](https://caniuse.com/#feat=srcset)]
++ They found it difficult to debug.
++ "It depends on the site - There can be quite a lot of build time overhead if generating all the sizes upfront at build time. We use AppEngine a lot, and it has get_serving_url which allows you to load scaled images which works well, but this functionality is being removed with the Python 3 environment!"
 
 ### If not, why not?
 
 1,802 responses
-
-
 
 <figure class="w-figure">
   <img alt="We don't understand srcset well enough: ~45%,
@@ -137,17 +146,16 @@ The [`srcset`](/use-srcset-to-automatically-choose-the-right-image) attribute pr
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-### Other comments
-
-+ Never heard of it / didn't know about it.
-+ Perceived lack of support (though srcset is supported by  [>92% of browsers globally](https://caniuse.com/#feat=srcset)).
-+ Difficult to debug.
-+ 'I'd love Google to offer something like imgix or Cloudinary.'
-+ 'It depends on the site - There can be quite a lot of build time overhead if generating all the sizes upfront at build time. We use AppEngine a lot, and it has get_serving_url which allows you to load scaled images which works well, but this functionality is being removed with the Python 3 environment!'
-
 ---
 
 ## Do you use &lt;picture&gt;?
+
+{% Aside %}
+Why's this important?
+The `picture` and `source` elements can be used to provide alternative, more data-efficient formats (such as [WebP](/serve-images-webp/) and JPEG) as well as [art direction to deliver different images or image crops for different display sizes](https://developers.google.com/web/fundamentals/design-and-ux/responsive/images#art_direction_in_responsive_images_with_picture).
+{% endAside %}
+
+2,914 responses
 
 <figure class="w-figure">
   <img alt="Yes: 52.7%, No: 45.5%" src="picture.jpg" style="max-width: 50%">
@@ -157,11 +165,13 @@ The [`srcset`](/use-srcset-to-automatically-choose-the-right-image) attribute pr
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-{% Aside %}
-The `picture` and `source` elements can be used to provide alternative formats (such as [WebP](/serve-images-webp/) and JPEG) as well as [art direction to deliver different images or image crops for different display sizes](https://developers.google.com/web/fundamentals/design-and-ux/responsive/images#art_direction_in_responsive_images_with_picture).
+{% Aside 'caution' %}
+  This question somehow got less responses (2,914) than the other required questions.
 {% endAside %}
 
 ### If not, why not?
+
+1,698 responses
 
 <figure class="w-figure">
   <img alt="We don't understand <picture> or <source> well enough: ~45%,
@@ -177,14 +187,15 @@ The `picture` and `source` elements can be used to provide alternative formats (
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-### Other comments
-+ Haven't heard of it before.
-+ Perceived lack of browser support (though `picture` and `source` are supported by [>92% of browsers globally](https://caniuse.com/#feat=picture)).
-+ Benefits unclear.
-
 ---
 
 ## Do you use WebP (or other formats) with fallbacks?
+
+{% Aside %}
+Why's this important?
+Image formats such as [WebP](/serve-images-webp) can result in smaller files and better quality than older formats such as JPEG and PNG.
+There are several techniques for using modern formats with fallback for older browsers.
+{% endAside %}
 
 2,946 responses
 
@@ -196,10 +207,11 @@ The `picture` and `source` elements can be used to provide alternative formats (
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-{% Aside %}
-Image formats such as [WebP](/serve-images-webp) can result in smaller files and better quality than older formats such as JPEG and PNG.
-There are several techniques for using modern formats with fallback for older browsers.
-{% endAside %}
+Summary of comments from respondents who said "Other":
+
++ They intend to implement WebP in the future.
++ Safari and other platforms do not support WebP.
++ They're already using other formats.
 
 ### If not, why not?
 
@@ -219,31 +231,14 @@ There are several techniques for using modern formats with fallback for older br
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-### Other comments
-
-+ Intend to in the future.
-+ Safari and other platforms do not support WebP.
-+ Using other formats.
-+ 'Not supported by Safari, easier to just use a PNG.'
-
-### Interpretation
-
-+ Many developers don't know how to create WebP images, despite GUI tools such as [Squoosh](https://squoosh.app/).
-+ Photoshop and some other image editors (apart from Sketch) do not natively support WebP.
-+ Many developers aren't aware of command line tools such as [cwebp](https://developers.google.com/speed/webp/docs/cwebp) for bulk encoding (or transcoding) of WebP images.
-+ Developers don't know how to use WebP with fallbacks, for example by using the picture element, or via an image service that provides fallback formats depending on user agent capability.
-+ Many respondents to this survey believe they can't use WebP because it's not supported by all the browsers they're targeting. This implies that they're not aware of how to use fallbacks.
-+ Lack of WebP uptake. Many respondents are skeptical though they're aware of WebP and its potential benefits.
-+ Lack of WebP awareness among some developers.
-+ Lack of knowledge about how to create WebP images.
-+ Doubts about WebP quality.
-+ Photoshop and other image editors (apart from Sketch) do not natively support WebP.
-+ Concern that creating multiple image formats is costly and complex. The perception from many developers is that WebP offers marginal gains.
-+ Lack of understanding that WebP can be used with fallbacks, either using the picture element, or via an image service that checks user agent capability.
-
 ---
 
 ## Do you use PNGs for photographic images?
+
+{% Aside %}
+Why's this important?
+Formats such as [WebP or JPEG are generally much more efficient for photographic images](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization) than PNG.
+{% endAside %}
 
 2,946 responses
 
@@ -255,9 +250,9 @@ There are several techniques for using modern formats with fallback for older br
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-{% Aside %}
-Formats such as [WebP or JPEG are generally much more efficient for photographic images](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization) than PNG.
-{% endAside %}
+Summary of comments from respondents who said "Other":
+
++ They're forced to use PNG because of the lack of browser support for WebP.
 
 ### If so, why?
 
@@ -275,14 +270,14 @@ Formats such as [WebP or JPEG are generally much more efficient for photographic
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-### Other comments
-
-+ 'I honestly don't know.'
-+ Lack of browser support for WebP.
-
 ---
 
 ## Do you serve images with dimensions appropriate for display size?
+
+{% Aside %}
+Why's this important?
+[Serving images with appropriate dimensions](/serve-images-with-correct-dimensions) can reduce file size and improve performance.
+{% endAside %}
 
 2,946 responses
 
@@ -294,9 +289,11 @@ Formats such as [WebP or JPEG are generally much more efficient for photographic
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-{% Aside %}
-[Serving images with appropriate dimensions](/serve-images-with-correct-dimensions) can reduce file size and improve performance.
-{% endAside %}
+Summary of comments from respondents who said "Other":
+
++ They can only use what their "API" provides.
++ They haven't thought about it or didn't know about it.
++ It's not clearly worth the effort.
 
 ### If not, why not?
 
@@ -310,17 +307,6 @@ Formats such as [WebP or JPEG are generally much more efficient for photographic
             We have higher priorities: ~23%,
             We're concerned about poor image quality if we don't serve larger images: ~23%" src="dimensions-if-not.jpg" style="max-width: 75%">
 </figure>
-
-### Other comments
-
-+ Can only use what the API provides.
-+ Haven't thought about it / didn't know about this.
-+ Not clearly worth the effort.
-
-### Interpretation
-
-+ The survey results show that many developers do not understand the value of creating images with sizes appropriate to their display size.
-+ Many developers or other decision makers are concerned that they're 'better safe than sorry' and stick with oversize image dimensions.
 
 ---
 
@@ -366,7 +352,7 @@ These numbers don't make sense. 41.5% of 2,946 respondents said they don't use a
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-### If so, which one(s)?
+### If so, which one(s)? {: #framework-usage }
 
 1,729 responses
 
@@ -378,8 +364,6 @@ These numbers don't make sense. 41.5% of 2,946 respondents said they don't use a
 {% Aside 'warning' %}
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
-
-(Full report shows many other responses below 0.4%.)
 
 ---
 
@@ -395,13 +379,22 @@ These numbers don't make sense. 41.5% of 2,946 respondents said they don't use a
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
 
-### Interpretation
-
-+ We could have done a better job of this question. For example: it's not clear if a web developer working for an ecommerce agency is in 'tech' or 'retail'.
+{% Aside %}
+  This question could have been phrased better. For example, it's not clear whether a web 
+  developer working for an e-commerce agency is in "Tech" or "Retail".
+{% endAside %}
 
 ---
 
 ## Do you use an image service or CDN?
+
+{% Aside %}
+Why's this important?
+**Image services** make it easier to optimize your images. You usually just upload one high-resolution
+version of each image and then use a web service API to optimize or transform the image as needed.
+**Content Delivery Networks (CDNs)** optimize the distribution and delivery of images and other website assets
+and sometimes provide optimization services, such as automatically delivering WebP images to supporting browsers instead of PNG or JPEG, without changing the file extension.
+{% endAside %}
 
 2,946 responses
 
@@ -411,10 +404,6 @@ These numbers don't make sense. 41.5% of 2,946 respondents said they don't use a
 
 {% Aside 'warning' %}
   Do not cite these statistics. See [Caveats](#caveats).
-{% endAside %}
-
-{% Aside %}
-**Image services** host and process images. You upload high resolution images and the service provides multiple resolutions and formats, and other features such as smart cropping and optimised caching. Image services can be delivered by a third party (such as [Cloudinary](https://cloudinary.com/)) or self hosted (such as [Thumbor](https://github.com/thumbor/thumbor)). **Content Delivery Networks (CDNs)** optimize the distribution and delivery of images and other website assets. Image services and CDNs also offer additional features, such as [automated delivery of WebP](https://support.cloudflare.com/hc/en-us/articles/360000607372-Using-Cloudflare-Polish-to-compress-images) to supporting browsers instead of PNG or JPEG—without changing the file extension.
 {% endAside %}
 
 ### If so, which one(s)?
@@ -430,22 +419,6 @@ These numbers don't make sense. 41.5% of 2,946 respondents said they don't use a
 {% Aside 'warning' %}
   Do not cite these statistics. See [Caveats](#caveats).
 {% endAside %}
-
-(The full report shows several other options from less than 1% of respondents.)
-
-### Interpretation
-
-+ Many developers are not aware of how image services and CDNs work.
-+ Migrating
-+ Many developers (and other decision makers) are unaware of the potential benefits of using an image service and/or CDN:
-
-    + To create images with different formats and sizes, potentially on-demand, image services can be simpler and more cost effective than build tools.
-    + Many image services also provide CDN functionality to optimise storage, caching and distribution.
-    + Image services provide digital asset management (DAM) features. If your site uses a significant number of images from multiple sources, and you don't use an image service, you'll need to implement a DAM system yourself.
-
-+ Conversely, there is very little objective guidance available that outlines the costs and requirements of migrating to an image service.
-+ Commercial services such as Cloudinary and Fastly have quite generous free tiers, but real or perceived costs put off many sites.
-+ DIY alternatives such as Thumbor are quite complex to set up and maintain.
 
 ---
 
