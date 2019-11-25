@@ -475,7 +475,6 @@ Open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/
 
 <figure class="w-figure">
   <img src="devtools-emulate.png" alt="A screenshot of the 'Emulate CSS media feature prefers-color-scheme' option that is located in the Rendering tab of Chrome DevTools" width="945" height="652">
-  <figcaption class="w-figcaption">Emulate the CSS media feature <code>prefers-color-scheme</code> in Chrome DevTools.</figcaption>
 </figure>
 
 ### Screenshotting `prefers-color-scheme` with Puppeteer
