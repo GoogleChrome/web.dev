@@ -4,7 +4,7 @@ subhead: Overhyped or necessity? Learn everything about dark mode and how to sup
 authors:
   - thomassteiner
 date: 2019-06-27
-updated: 2019-06-28
+updated: 2019-11-25
 hero: hero.jpg
 hero_position: bottom
 alt: |
@@ -462,6 +462,33 @@ in order to see the theme color and favicon changes, open the
     const darkModeOn = e.matches;
     console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
   });
+```
+
+## Debugging and testing dark mode
+
+### Emulating `prefers-color-scheme` in DevTools
+
+Switching the entire operating system's color scheme can get annoying real quick,
+so Chrome DevTools now allows you to emulate the user's preferred color scheme
+in a way that only affects the currently visible tab.
+Open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu), start typing `Rendering`, run the `Show Rendering` command, and then change the **Emulate CSS media feature prefers-color-scheme** option.
+
+<figure class="w-figure">
+  <img src="devtools-emulate.png" alt="A screenshot of the 'Emulate CSS media feature prefers-color-scheme' option that is located in the Rendering tab of Chrome DevTools" width="945" height="652">
+</figure>
+
+### Screenshotting `prefers-color-scheme` with Puppeteer
+
+[Puppeteer](https://github.com/GoogleChrome/puppeteer/) is a Node.js library
+that provides a high-level API to control Chrome or Chromium over the
+[DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/).
+With [`dark-mode-screenshot`](https://www.npmjs.com/package/dark-mode-screenshot), we provide
+a Puppeteer script that lets you create screenshots of your pages in both dark and light mode.
+You can run this script as a one-off, or alternatively make it part of your
+Continuous Integration (CI) test suite.
+
+```bash
+npx dark-mode-screenshot --url https://googlechromelabs.github.io/dark-mode-toggle/demo/ --output screenshot --fullPage --pause 750
 ```
 
 ## Dark mode best practices
