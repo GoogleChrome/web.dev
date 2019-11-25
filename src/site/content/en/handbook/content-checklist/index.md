@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content checklist
 date: 2019-06-26
-updated: 2019-11-06
+updated: 2019-11-25
 description: |
   A checklist for web.dev content reviews.
 ---
@@ -20,6 +20,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Do the title, subtitle, and description convey the value proposition?
 1. Is the piece 1,000 words or less—or is there a good reason for it to be longer?
 1. Are all statements and advice accurate and aligned with best practices?
+1. Can you complete the task with the provided instructions? Are there any missing steps? Does the code work?
 
 ## Style and voice
 1. Is the [voice](/handbook/voice) appropriate for the web.dev audience?
