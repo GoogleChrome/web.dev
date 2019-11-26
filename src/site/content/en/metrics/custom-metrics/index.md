@@ -228,7 +228,7 @@ elements by explicitly adding the `elementtiming` attribute to them, and
 registering a PerformanceObserver to observe the element entry type.
 
 ```html
-<img elementtiming="hero-image"' />
+<img elementtiming="hero-image" />
 <p elementtiming="important-paragraph">This is text I care about.</p>
 ...
 <script>
