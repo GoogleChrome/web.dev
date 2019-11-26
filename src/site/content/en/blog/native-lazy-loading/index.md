@@ -114,7 +114,7 @@ to add `height` and `width` attributes to the `<img>` element or specify their v
 inline style:
 
 ```html
-<img src="..." loading="lazy" alt="..." width="200" height="200">
+<img src="…" loading="lazy" alt="…" width="200" height="200">
 <img src="..." loading="lazy" alt="..." style="height:200px; width:200px;">
 <!-- lazy-loaded -->
 ```
