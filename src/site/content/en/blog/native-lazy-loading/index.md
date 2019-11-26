@@ -115,7 +115,7 @@ inline style:
 
 ```html
 <img src="…" loading="lazy" alt="…" width="200" height="200">
-<img src="..." loading="lazy" alt="..." style="height:200px; width:200px;">
+<img src="…" loading="lazy" alt="…" style="height:200px; width:200px;">
 <!-- lazy-loaded -->
 ```
 
