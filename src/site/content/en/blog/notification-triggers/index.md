@@ -9,7 +9,7 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them an ideal solution for use cases like calendar apps.
 date: 2019-10-24
-updated: 2019-11-05
+updated: 2019-12-02
 draft: true
 tags:
   - post
@@ -83,7 +83,7 @@ To experiment with the Notification Triggers API locally, without an origin tria
 
 ### Enabling support during the origin trial phase
 
-Starting in Chrome 78, the Notification Triggers API will be available as an origin trial.
+Starting in Chrome 80, the Notification Triggers API will be available as an origin trial.
 Origin trials allow you to try new features and give feedback on their usability, practicality, and
 effectiveness, both to us, and to the web standards community. For more information, see the
 [Origin Trials Guide for Web Developers](https://googlechrome.github.io/OriginTrials/developer-guide.html).
