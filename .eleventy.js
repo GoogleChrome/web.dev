@@ -107,7 +107,7 @@ module.exports = function(config) {
   mdLib.renderer.rules.fence = function (tokens, idx, options, env, slf) {
     const fenced = fence(tokens, idx, options, env, slf)
     const token = tokens[idx];
-    return  `<copy-code code="${encodeURIComponent(token.content)}">${fenced}</copy-code>`
+    return  `<web-copy-code>${fenced}</web-copy-code>`
   }
 
   config.setLibrary(

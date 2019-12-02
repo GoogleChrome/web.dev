@@ -1,37 +1,46 @@
 @import "../../../styles/settings/colors";
 @import '../../../styles/settings/global';
 
-.w-copy-code-button {
+.web-copy-code__button {
   background: none;
   background-image: url("../../../images/icons/file_copy.svg");
   background-position: center;
   background-repeat: no-repeat;
   border: none;
   border-radius: $GLOBAL_ROUNDED;
-  float: right;
+  cursor: pointer;
   height: 48px;
-  padding: 0;
-  width: 48px;
-  z-index: 100;
+  margin: 8px;
   opacity: 0;
+  padding: 0;
+  transition: background-color .5s ease;
+  width: 48px;
 
-  &:hover,
-  &:focus {
-    background-color: rgba($WHITE, 0.5);
+  &:active {
+    background-color: rgba($WEB_SECONDARY_COLOR, 0.4);
     opacity: 1;
   }
 
-  &:active {
-    background-color: rgba($WHITE, 0.9);
+  &:focus,
+  &:hover {
+    background-color: rgba($WEB_SECONDARY_COLOR, 0.2);
     opacity: 1;
+    transition: background-color .2s ease;
   }
 }
 
-copy-code {
-  &:hover,
+.web-copy-code__container {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 0;
+  margin-bottom: -32px;
+  position: relative;
+}
+web-copy-code {
+  &:active,
   &:focus,
-  &:active {
-    .w-copy-code-button {
+  &:hover {
+    .web-copy-code__button {
       opacity: 1;
     }
   }

@@ -11,47 +11,39 @@ import {BaseElement} from "../BaseElement";
  * @final
  */
 class CopyCode extends BaseElement {
-  static get properties() {
-    return {
-      code: {type: String},
-    };
-  }
-
   constructor() {
     super();
+    this.copyCode = this.copyCode.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this.setAttribute("tabindex", "0");
 
-    if (this.firstChild) {
-      const copyButton = document.createElement("input");
-      copyButton.setAttribute("type", "button");
-      copyButton.setAttribute("tabindex", "0");
-      copyButton.className = "w-copy-code-button";
+    this.copyButton = document.createElement("button");
+    this.copyButton.className = "web-copy-code__button";
+    this.copyButton.addEventListener("click", this.copyCode);
 
-      this.firstChild.prepend(copyButton);
+    const copyContainer = document.createElement("div");
+    copyContainer.className = "web-copy-code__container";
+    copyContainer.append(this.copyButton);
 
-      this.addEventListener("click", (e) => {
-        if (e.target === copyButton) {
-          e.preventDefault();
-          this.copyCode();
-        }
-      });
-    }
+    this.prepend(copyContainer);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    this.copyButton.removeEventListener("click", this.copyCode);
   }
 
   copyCode() {
-    const textarea = document.createElement("textarea");
-    textarea.value = decodeURIComponent(this.code);
-    textarea.setAttribute("readonly", "");
-    textarea.style.cssText = "position: fixed; bottom: -80px; height: 80px;";
-    document.body.appendChild(textarea);
-    textarea.select();
+    window.getSelection().removeAllRanges();
+    const range = document.createRange();
+    range.selectNode(this.querySelector("code"));
+    window.getSelection().addRange(range);
     document.execCommand("copy");
-    document.body.removeChild(textarea);
+    window.getSelection().removeAllRanges();
   }
 }
 
-customElements.define("copy-code", CopyCode);
+customElements.define("web-copy-code", CopyCode);
