@@ -13,7 +13,7 @@ import {BaseElement} from "../BaseElement";
 class CopyCode extends BaseElement {
   constructor() {
     super();
-    this.copyCode = this.copyCode.bind(this);
+    this.onCopy = this.onCopy.bind(this);
   }
 
   connectedCallback() {
@@ -21,7 +21,7 @@ class CopyCode extends BaseElement {
 
     this.copyButton = document.createElement("button");
     this.copyButton.className = "web-copy-code__button";
-    this.copyButton.addEventListener("click", this.copyCode);
+    this.copyButton.addEventListener("click", this.onCopy);
 
     const copyContainer = document.createElement("div");
     copyContainer.className = "web-copy-code__container";
@@ -33,10 +33,10 @@ class CopyCode extends BaseElement {
   disconnectedCallback() {
     super.disconnectedCallback();
 
-    this.copyButton.removeEventListener("click", this.copyCode);
+    this.copyButton.removeEventListener("click", this.onCopy);
   }
 
-  copyCode() {
+  onCopy() {
     window.getSelection().removeAllRanges();
     const range = document.createRange();
     range.selectNode(this.querySelector("code"));
