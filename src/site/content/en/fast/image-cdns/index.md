@@ -94,10 +94,7 @@ Self-managed CDNs can be a good choice for sites with engineering staff who are 
 
 ### Third-party image CDNs
 
-Third-party image CDNs provide image CDNs as a service. Just as cloud providers provide servers and other infrastructure for a fee; image CDNs provide image optimization and delivery for a fee. Because third-party image CDNs maintain the underlying technology, getting started is fairly simple and can usually be accomplished in 10-15 minutes, although a complete migration for a large site might take far longer.
-
-Third-party image CDNs are typically priced based on usage tiers, with most image CDNs providing either a free tier or a free trial to give you an opportunity to try out their product. Examples of well-known third-party image CDNs include [Akamai Image Manager](https://www.akamai.com/us/en/products/performance/image-manager.jsp), [Cloudinary](https://cloudinary.com/), and [imgix](https://www.imgix.com/).
-
+Third-party image CDNs provide image CDNs as a service. Just as cloud providers provide servers and other infrastructure for a fee; image CDNs provide image optimization and delivery for a fee. Because third-party image CDNs maintain the underlying technology, getting started is fairly simple and can usually be accomplished in 10-15 minutes, although a complete migration for a large site might take far longer. Third-party image CDNs are typically priced based on usage tiers, with most image CDNs providing either a free tier or a free trial to give you an opportunity to try out their product.
 
 ## Choosing an image CDN
 
