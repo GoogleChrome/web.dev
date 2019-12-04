@@ -13,9 +13,14 @@
 .w-card {
   border-radius: 8px;
   display: block;
+  height: 462px;
   overflow: hidden;
   position: relative;
   transition: box-shadow $TRANSITION_SPEED;
+
+  @include bp(md) {
+    height: auto;
+  }
 }
 
 .w-card:hover,
