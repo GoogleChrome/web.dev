@@ -272,6 +272,31 @@ Here's a quick example:
   </video>
 </figure>
 
+```css
+button.focus,
+button:focus {
+  …
+}
+
+article > h1,
+article > h2,
+article > h3,
+article > h4,
+article > h5,
+article > h6 {
+  …
+}
+
+/* selects the same elements as the code above */
+button:is(.focus, :focus) {
+  …
+}
+
+article > :is(h1,h2,h3,h4,h5,h6) {
+  …
+}
+```
+
 ## `gap`
 
 [CSS grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) has had [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap) (previously `grid-gap`) for some time. By specifying the internal spacing of a containing element rather than the spacing around child elements, `gap` solves many common layout issues. For example, with gap, you don't have to worry about margins on child elements causing unwanted whitespace around the edges of a containing element:
