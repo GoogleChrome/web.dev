@@ -55,7 +55,6 @@ Add the `&display=swap` [parameter](https://developer.mozilla.org/en-US/docs/Lea
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 ```
-Notice the **`&display=swap`** at the end of the url.
 
 ## Browser support
 
