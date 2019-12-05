@@ -51,7 +51,7 @@ for more information.)
 
 ### Google Fonts
 
-If you use Google fonts you can fix this by setting the attribute display to swap in your Google Fonts URL, like this:
+Add the `&display=swap` [parameter](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
 ```html
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 ```
