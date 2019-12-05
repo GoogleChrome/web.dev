@@ -258,6 +258,16 @@ the UI is frozen for six seconds after the user interacts with it.
 There's no feedback, and the user has to wait for the full six seconds
 before being able to do something else.
 
+<figure class="w-figure w-figure--center">
+  <video controls muted class="w-screenshot" style="max-width: 400px;">
+    <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.mp4" type="video/mp4; codecs=h264">
+  </video>
+ <figcaption class="w-figcaption">
+    UI response time in the <strong>non-OMT</strong> version of PROXX.
+  </figcaption>
+</figure>
+
 In the OMT version, however, the game takes _twelve_ seconds to complete a UI update.
 While that seems like a performance loss,
 it actually leads to increased feedback to the user.
@@ -266,6 +276,16 @@ which isn't shipping any frames at all.
 The user therefore knows that something is happening
 and can continue playing as the UI updates,
 making the game feel considerably better.
+
+<figure class="w-figure w-figure--center">
+  <video controls muted class="w-screenshot" style="max-width: 400px;">
+    <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.mp4" type="video/mp4; codecs=h264">
+  </video>
+ <figcaption class="w-figcaption">
+    UI response time in the <strong>OMT</strong> version of PROXX.
+  </figcaption>
+</figure>
 
 This is a conscious tradeoff:
 we give users of constrained devices an experience that _feels_ better
