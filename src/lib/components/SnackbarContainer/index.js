@@ -41,6 +41,11 @@ class SnackbarContainer extends BaseElement {
     super.connectedCallback();
     store.subscribe(this.onStateChanged);
     this.onStateChanged();
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      this.installPrompt = e;
+    });
   }
 
   disconnectedCallback() {
@@ -52,6 +57,11 @@ class SnackbarContainer extends BaseElement {
     const state = store.getState();
     this.open = state.showingSnackbar;
     this.type = state.snackbarType;
+
+    if (state.userAcceptsCookies && this.installPrompt) {
+      this.installPrompt.prompt();
+      this.installPrompt.userChoice.then(() => (this.installPrompt = false));
+    }
   }
 
   render() {
