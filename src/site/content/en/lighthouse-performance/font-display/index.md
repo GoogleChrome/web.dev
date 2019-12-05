@@ -49,7 +49,7 @@ Once the custom font is ready, it replaces the system font.
 (See the [Avoid invisible text during loading](/avoid-invisible-text) post
 for more information.)
 
-### Google fonts
+### Google Fonts
 
 If you use Google fonts you can fix this by setting the attribute display to swap in your Google Fonts URL, like this:
 ```html
