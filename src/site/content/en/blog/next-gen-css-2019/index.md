@@ -339,5 +339,5 @@ There are a few more things on the horizon that we wanted to discuss but didn't 
 *   `min()`, `max()`, and `clamp()`: functions that will let you set numeric constraints on any CSS property, not just width and height
 *   `list-style-type` an existing property, but it will soon support a wider range of values, including emoji and SVGs
 *   `display: outer inner`: The `display` property will soon accept two parameters, which will let you explicitly specify its outer and inner layouts rather than using compound keywords like `inline-flex`.
-*   CSS regions: will let you fill a specified, non-rectangular area that content can flow within
+*   CSS regions: will let you fill a specified, non-rectangular area that content can flow into and out of
 *   CSS modules: JavaScript will be able to request a CSS module and get a rich object back that's easy to perform operations on
