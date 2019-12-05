@@ -34,6 +34,7 @@ class SnackbarContainer extends BaseElement {
 
   constructor() {
     super();
+    this.onBeforeInstallPrompt = this.onBeforeInstallPrompt.bind(this);
     this.onStateChanged = this.onStateChanged.bind(this);
   }
 
@@ -42,23 +43,39 @@ class SnackbarContainer extends BaseElement {
     store.subscribe(this.onStateChanged);
     this.onStateChanged();
 
-    window.addEventListener("beforeinstallprompt", (e) => {
-      e.preventDefault();
-      this.installPrompt = e;
-    });
+    if (!this.acceptedCookies) {
+      window.addEventListener(
+        "beforeinstallprompt",
+        this.onBeforeInstallPrompt,
+      );
+    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     store.unsubscribe(this.onStateChanged);
+    window.removeEventListener(
+      "beforeinstallprompt",
+      this.onBeforeInstallPrompt,
+    );
+  }
+
+  onBeforeInstallPrompt(e) {
+    e.preventDefault();
+    this.installPrompt = e;
+    window.removeEventListener(
+      "beforeinstallprompt",
+      this.onBeforeInstallPrompt,
+    );
   }
 
   onStateChanged() {
     const state = store.getState();
     this.open = state.showingSnackbar;
     this.type = state.snackbarType;
+    this.acceptedCookies = state.userAcceptsCookies;
 
-    if (state.userAcceptsCookies && this.installPrompt) {
+    if (this.acceptedCookies && this.installPrompt) {
       this.installPrompt.prompt();
       this.installPrompt.userChoice.then(() => (this.installPrompt = false));
     }
