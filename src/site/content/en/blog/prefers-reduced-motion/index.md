@@ -1,5 +1,5 @@
 ---
-title: Move Ya! Or maybe, don't, if the user prefers-reduced-motion!
+title: "prefers-reduced-motion: Sometimes less movement is more"
 subhead: The prefers-reduced-motion media query detects whether the user has requested that the system minimize the amount of animation or motion it uses.
 authors:
   - thomassteiner
@@ -214,12 +214,13 @@ out there (use at your own risk!) that allow for this.
 ```css
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
-    animation-delay: -1s !important;
-    animation-duration: 1s !important;
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;    
     animation-iteration-count: 1 !important;
     background-attachment: initial !important;
     scroll-behavior: auto !important;
     transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }
 ```
