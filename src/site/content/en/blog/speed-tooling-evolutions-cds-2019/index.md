@@ -58,7 +58,7 @@ enough to prevent input responsiveness.
 
 A [task is considered long](/custom-metrics/#long-tasks-api) if it runs on the
 main thread for more than 50 milliseconds. Any millisecond over that is counted
-towards that task’s blocking time. The Total Blocking Time for a page is the sum
+towards that task's blocking time. The Total Blocking Time for a page is the sum
 of the blocking times of all long tasks that occured between FCP and TTI. 
 
 While Time to Interactive does a good job of identifying when the main thread
@@ -91,7 +91,7 @@ address that problem by measuring how often it's occurring for your users.
   </figcaption>
 </figure>
 
-To learn how it’s calculated and how to measure it, check out the [detailed
+To learn how it's calculated and how to measure it, check out the [detailed
 guide to Cumulative Layout Shift](/cls).
 
 The new Lighthouse performance score formula will soon de-emphasize FMP and FCI
@@ -112,10 +112,10 @@ Over the past year we have been analyzing [web performance from the
 field](/user-centric-performance-metrics/#in-the-field) via [Chrome User
 Experience](https://developers.google.com/web/tools/chrome-user-experience-report)
 (CrUX) data. With insights from that data we reassessed the thresholds that we
-use to label a website "slow", ‘moderate”, or “fast” in field performance.
+use to label a website "slow", 'moderate", or "fast" in field performance.
 
 {% Aside %} The term "average" that used to describe sites that are in between
-“slow” and “fast” is now changed to “moderate” which is more fitting since this
+"slow" and "fast" is now changed to "moderate" which is more fitting since this
 middle group was not related to a statistical average. {% endAside %}
 
 <figure class="w-figure w-figure--center">
