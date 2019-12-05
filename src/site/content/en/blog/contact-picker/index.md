@@ -13,18 +13,9 @@ tags:
   - contacts
   - chrome77
   - chrome80
-  - origin-trial
 hero: hero.jpg
 alt: Telephone on yellow background.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/85568392920039425
 ---
-
-{% Aside %}
-  The Contact Picker API begins an origin trial in Chrome 77
-  (stable in September) as part of our capabilities project. We'll keep this
-  post updated as the implementation progresses.
-{% endAside %}
 
 ## What is the Contact Picker API? {: #what }
 
@@ -50,11 +41,11 @@ Access to the user's contacts has been a feature of native apps since
 I hear from web developers, and is often the key reason they build a native
 app.
 
-The [Contact Picker API][spec] is an on-demand API that allows users to
-select entries from their contact list and share limited details of the
-selected entries with a website. It allows users to share only what they
-want, when they want, and makes it easier for users to reach and connect
-with their friends and family.
+Available by default in Chrome 80, the [Contact Picker API][spec] is an
+on-demand API that allows users to select entries from their contact list and
+share limited details of the selected entries with a website. It allows users to
+share only what they want, when they want, and makes it easier for users to
+reach and connect with their friends and family.
 
 For example, a web-based email client could use the Contact Picker API to
 select the recipient(s) of an email. A voice-over-IP app could look up
@@ -77,7 +68,7 @@ which friends have already joined.
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [In Progress][spec]          |
 | 3. Gather feedback & iterate on design     | [In progress][spec]          |
-| **4. Origin trial**                        | [In progress][ot]<br> Expected to run through Chrome 80. |
+| 4. Origin trial                            | Complete                     |
 | **5. Launch**                              | Chrome 80                    |
 
 </div>
@@ -92,16 +83,6 @@ that specifies the types of contact information you want.
   and view the
   [source](https://glitch.com/edit/#!/contact-picker?path=demo.js:20:0).
 {% endAside %}
-
-### Enabling support during the origin trial phase {: #origin-trial }
-
-Since Chrome 77, the Contact Picker API is available as an origin trial on
-Chrome for Android. The origin trial is ending soon, but is still open because
-we're still taking feedback, even as the feature is enabled by default.
-
-{% include 'content/origin-trials.njk' %}
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection
 
@@ -287,7 +268,6 @@ critical it is to support them.
 * [Contact Picker API Demo][demo] and [Contact Picker API demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
-* Request an [origin trial token]({{origin_trial.url}})
 * Blink Component: `Blink>Contacts`
 
 ### Thanks
@@ -310,11 +290,6 @@ PS: The 'names' in my contact picker, are characters from Alice in Wonderland.
 [explainer]: https://github.com/WICG/contact-api/
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-contact-picker-api/3507
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EContacts
-[ot]: https://developers.chrome.com/origintrials/#/view_trial/85568392920039425
-[ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
-[ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
-[ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [secure-contexts]: https://w3c.github.io/webappsec-secure-contexts/
 [cr-dev-twitter]: https://twitter.com/chromiumdev
-[ot-guide]: https://googlechrome.github.io/OriginTrials/developer-guide.html
