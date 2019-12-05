@@ -5,13 +5,14 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2019-10-10
+updated: 2019-12-18
 tags:
   - post
   - capabilities
   - fugu
   - contacts
   - chrome77
+  - chrome80
   - origin-trial
 hero: hero.jpg
 alt: Telephone on yellow background.
@@ -76,8 +77,8 @@ which friends have already joined.
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [In Progress][spec]          |
 | 3. Gather feedback & iterate on design     | [In progress][spec]          |
-| **4. Origin trial**                        | **Started in Chrome 77** <br> Expected to run through Chrome 80. |
-| 5. Launch                                  | Not started                  |
+| **4. Origin trial**                        | [In progress][ot]<br> Expected to run through Chrome 80. |
+| **5. Launch**                              | Chrome 80                    |
 
 </div>
 
@@ -92,16 +93,11 @@ that specifies the types of contact information you want.
   [source](https://glitch.com/edit/#!/contact-picker?path=demo.js:20:0).
 {% endAside %}
 
-### Enabling via chrome://flags
-
-To experiment with the Contact Picker API locally, without an origin
-trial token, enable the `#enable-experimental-web-platform-features` flag
-in `chrome://flags`.
-
 ### Enabling support during the origin trial phase {: #origin-trial }
 
-Starting in Chrome 77, the Contact Picker API is available as an origin
-trial on Chrome for Android.
+Since Chrome 77, the Contact Picker API is available as an origin trial on
+Chrome for Android. The origin trial is ending soon, but is still open because
+we're still taking feedback, even as the feature is enabled by default.
 
 {% include 'content/origin-trials.njk' %}
 
@@ -147,10 +143,11 @@ user gesture.
 
 ### Handling the results
 
-The Contact Picker API returns an array of contacts, and each contact
-includes an array of the requested properties. If a contact doesn't have
-data for the requested property, or the user chooses to opt-out of sharing
-a particular property, it returns an empty array.
+The Contact Picker API returns an array of contacts, and each contact includes
+an array of the requested properties. If a contact doesn't have data for the
+requested property, or the user chooses to opt-out of sharing a particular
+property, it returns an empty array. (I describe how the user chooses properties
+later.)
 
 For example, if a site requests `name`, `email`, and `tel`, and a user
 selects a single contact that has data in the name field, provides two
@@ -271,7 +268,7 @@ different from the spec?
 * File a bug at [https://new.crbug.com][new-bug]. Be sure to include as much
   detail as you can, provide simple instructions for reproducing the bug, and
   set *Components* to `Blink>Contacts`. [Glitch](https://glitch.com) works great
-  for sharing quick and easy repros.
+  for sharing quick and easy problem reproductions.
 
 ### Planning to use the API?
 
@@ -287,7 +284,7 @@ critical it is to support them.
 
 * [Public explainer][explainer]
 * [Contact Picker Specification][spec]
-* [Contact Picker API Demo][demo] & [Contact Picker API demo source][demo-source]
+* [Contact Picker API Demo][demo] and [Contact Picker API demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Request an [origin trial token]({{origin_trial.url}})
@@ -313,6 +310,7 @@ PS: The 'names' in my contact picker, are characters from Alice in Wonderland.
 [explainer]: https://github.com/WICG/contact-api/
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-contact-picker-api/3507
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EContacts
+[ot]: https://developers.chrome.com/origintrials/#/view_trial/85568392920039425
 [ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
 [ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
