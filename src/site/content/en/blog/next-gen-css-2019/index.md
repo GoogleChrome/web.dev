@@ -164,6 +164,15 @@ These queries are a huge win for accessibility. Previously we had no way to know
 
 One exciting implication of these media queries is that we can design for multiple combinations of system-level user preferences to accommodate the wide range of user preferences and accessibility needs. If a user wants high-contrast dark mode when in dimly lit environments, you can do that!
 
+It's important to Adam that "prefers reduced motion" doesn't get implemented as "no motion." The user is saying they prefer less motion, not that they don't want any animation. He asserts reduced motion is not no motion. Here's an example that uses a crossfade animation when the user prefers reduced motion:
+
+<figure class="w-figure w-figure--center">
+  <video controls autoplay loop muted>
+    <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/reduced-motion.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/reduced-motion.mp4" type="video/mp4; codecs=h264">
+  </video>
+</figure>
+
 {% Aside %}
 In Chrome Canary, you can test CSS that uses `prefers-reduced-motion` or `prefers-color-scheme` by choosing the appropriate settings in the DevTools **Rendering** drawer. To access **Rendering**, [open the Command Menu](https://developers.google.com/web/tools/chrome-devtools/command-menu) and run the `Show Rendering` command.
 {% endAside %}
