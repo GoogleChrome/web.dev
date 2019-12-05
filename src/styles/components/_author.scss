@@ -127,3 +127,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   position: relative;
   width: $AUTHOR_IMAGE_SIZE_SMALL;
 }
+
+.w-author__image--row-item > .w-author__image {
+  border: solid white 2px;
+}

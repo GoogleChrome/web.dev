@@ -62,13 +62,11 @@ module.exports = ({post}) => {
   }
 
   function renderAuthorImages(authors) {
-    if (!Array.isArray(authors)) return;
+    if (!Array.isArray(authors) || authors.length > 2) return;
 
     return html`
       <div class="w-author__image--row">
         ${authors
-          .slice(0, 2)
-          .reverse()
           .map((authorId) => {
             const author = data.contributors[authorId];
             const fullName = `${author.name.given} ${author.name.family}`;
@@ -81,7 +79,8 @@ module.exports = ({post}) => {
                 />
               </div>
             `;
-          })}
+          })
+          .reverse()}
       </div>
     `;
   }
