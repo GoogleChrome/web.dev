@@ -2,7 +2,8 @@
 title: Next-generation web styling
 subhead: Get up to date on some of the exciting features in modern CSS.
 description: |
-  Temp.
+  Get up to date on some of the exciting new CSS features that are already
+  supported in modern browsers—or soon will be!
 
 # A list of authors. Supports more than one.
 authors:
