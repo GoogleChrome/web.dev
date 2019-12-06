@@ -14,10 +14,10 @@ date: 2019-12-05
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-11-01
 
-hero: hero.jpg
+hero: hero.png
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
-# hero_fit: contain
+hero_fit: contain
 
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
@@ -28,7 +28,7 @@ hero: hero.jpg
 # the hero.
 # thumbnail: thumbnail.jpg
 
-alt: A description of the hero image for screen reader users.
+alt: Adam Argyle and Una Kravetz showing that they'll talk about 12 CSS features.
 
 # You can provide a custom thumbnail and description for social media cards.
 # Images should be 1200 x 630.
