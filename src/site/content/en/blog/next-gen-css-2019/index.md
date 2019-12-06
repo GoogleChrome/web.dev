@@ -53,6 +53,11 @@ alt: A description of the hero image for screen reader users.
 
 tags:
   - post # post is a required tag for the article to show up in the blog.
+  - css
+  - accessibility
+  - houdini
+  - layout
+  - ux
 ---
 
 There are a _ton_ of exciting things happening in CSS right now—and
