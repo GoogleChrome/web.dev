@@ -102,13 +102,19 @@ module.exports = function(config) {
     .use(markdownItAnchor, markdownItAnchorOptions)
     .use(markdownItAttrs, markdownItAttrsOpts);
 
-  // custom renderer for fences
+  // custom renderer rules
   const fence = mdLib.renderer.rules.fence;
-  mdLib.renderer.rules.fence = function (tokens, idx, options, env, slf) {
-    const fenced = fence(tokens, idx, options, env, slf)
-    const token = tokens[idx];
-    return  `<web-copy-code>${fenced}</web-copy-code>`
+
+  const rules = {
+    fence: (tokens, idx, options, env, slf) => {
+      const fenced = fence(tokens, idx, options, env, slf);
+      return `<web-copy-code>${fenced}</web-copy-code>`;
+    },
+    table_close: () => '</table>\n</div>',
+    table_open: () => '<div class="w-table-wrapper">\n<table>\n',
   }
+
+  mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
 
   config.setLibrary(
     'md',
