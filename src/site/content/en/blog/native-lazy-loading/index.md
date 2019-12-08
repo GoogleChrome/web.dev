@@ -70,10 +70,8 @@ and iframes that can be reached by scrolling:
 
 Here are the supported values for the `loading` attribute:
 
-- `auto`: Default lazy-loading behavior of the browser, which is the same as not
-  including the attribute.
 - `lazy`: Defer loading of the resource until it reaches a [calculated distance](#load-in-distance-threshold) from the viewport.
-- `eager`: Load the resource immediately, regardless of where it's located on the page.
+- `eager`: Load the resource immediately, regardless of where it's located on the page. This is the default value.
 
 The feature will continue to be updated until it's launched in a stable release (Chrome 76 at the
 earliest). But you can try it out by enabling the following flags in Chrome:
