@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const md = require('markdown-it')();
+const {html} = require("common-tags");
+const md = require("markdown-it")();
 
-module.exports = (content, type='info') => {
+module.exports = (content, type = "info", location) => {
+  const locationOverride = location == "body" ? "w-banner--body" : "";
+
   return html`
-    <div role="banner" class="w-banner w-banner--${type}">
+    <div role="banner" class="w-banner w-banner--${type} ${locationOverride}">
       ${md.renderInline(content)}
     </div>
   `;

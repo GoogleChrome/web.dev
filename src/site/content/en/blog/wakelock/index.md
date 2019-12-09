@@ -1,5 +1,5 @@
 ---
-title: Stay awake with the WakeLock API
+title: Stay awake with the Wake Lock API
 subhead: The Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
 authors:
   - petelepage
@@ -10,8 +10,9 @@ updated: 2019-10-17
 tags:
   - post
   - capabilities
+  - fugu
+  - behind-a-flag
   - wake-lock
-draft: true
 ---
 
 {% Aside %}
@@ -110,57 +111,44 @@ that your app can continue running.
 
 ### Get a wake lock {: #get-wake-lock }
 
-To request a wake lock, you need to call the `WakeLock.request()` method
-that lives on the `window` object. You pass it the desired wake lock type as
-the first parameter, which *currently* is limited to just `'screen'`.
-You also need a way to abort the wake lock, which works through the
-generic `AbortController` interface. Therefore, you first create a new
-[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController),
-and then pass the controller's
-[`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
-as the second parameter to `WakeLock.request()`. Two things can happen next
-that you need to `catch`:
+To request a wake lock, you need to call the `navigator.wakeLock.request()` method
+that returns a `WakeLockSentinel` object.
+You pass this method the desired wake lock type as a parameter,
+which *currently* is limited to just `'screen'`.
+The browser can refuse the request for various reasons (for example,
+because the battery charge level is too low),
+so it's a good practice to wrap the call in a `try…catch` statement.
+The exception's message will contain more details in case of failure.
 
-* The wake lock can, after a while, just be regularly aborted, which you
-  detect by checking if the exception's name is `'AbortError'`. In this
-  context, `AbortError` is actually not an error in the common sense, but
-  just the way `AbortController` works.
-* The browser can also refuse the request for various reasons (for example,
-  because the battery charge level is too low). In this case, the exception's
-  message will contain more details.
+You also need a way to release the wake lock, which is achieved by calling the
+`release()` method of the `WakeLockSentinel` object.
+If you don't store a reference to the `WakeLockSentinel`, there's no way
+to release the lock manually, but it will be released once the current tab is invisible.
 
 ```js
-const wakeLockCheckbox = document.querySelector('#wakeLockCheckbox');
+// The wake lock sentinel.
+let wakeLock = null;
 
-if ('WakeLock' in window) {
-  let wakeLock = null;
-
-  const requestWakeLock = () => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-    window.WakeLock.request('screen', {signal})
-        .catch((e) => {
-          if (e.name === 'AbortError') {
-            wakeLockCheckbox.checked = false;
-            console.log('Wake Lock was aborted');
-          } else {
-            console.error(`${e.name}, ${e.message}`);
-          }
-        });
-    wakeLockCheckbox.checked = true;
+// Function that attempts to request a wake lock.
+const requestWakeLock = async () => {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => {
+      console.log('Wake Lock was released');
+    });
     console.log('Wake Lock is active');
-    return controller;
-  };
+  } catch (err) {
+    console.error(`${err.name}, ${err.message}`);
+  }
+};
 
-  wakeLockCheckbox.addEventListener('change', () => {
-    if (wakeLockCheckbox.checked) {
-      wakeLock = requestWakeLock();
-    } else {
-      wakeLock.abort();
-      wakeLock = null;
-    }
-  });
-}
+// Request a wake lock…
+await requestWakeLock();
+// …and release it again after 5s.
+window.setTimeout(() => {
+  wakeLock.release();
+  wakeLock = null;
+}, 5000);
 ```
 
 ### The wake lock lifecycle {: #wake-lock-lifecycle }
@@ -168,7 +156,7 @@ if ('WakeLock' in window) {
 When you play with the [wake lock demo][demo], you'll notice that wake locks
 are sensitive to [page visibility][page-visibility-api] and
 [full-screen mode][full-screen-api]. This means that the wake lock
-will automatically abort when you enter full-screen mode, minimize a
+will automatically be released when you enter full-screen mode, minimize a
 tab or window, or switch away from a tab or window where a wake lock is active.
 
 To reacquire the wake lock,
@@ -179,7 +167,7 @@ and request a new wake lock when they occur:
 ```js
 const handleVisibilityChange = () => {
   if (wakeLock !== null && document.visibilityState === 'visible') {
-    wakeLock = requestWakeLock();
+    requestWakeLock();
   }
 };
 
@@ -189,6 +177,7 @@ document.addEventListener('fullscreenchange', handleVisibilityChange);
 
 ## Minimize your impact on system resources {: #best-practices }
 
+Should you use a wake lock in your app?
 The approach you take depends on the needs of your app. Regardless, you should
 use the most lightweight approach possible for your app to minimize its
 impact on system resources.

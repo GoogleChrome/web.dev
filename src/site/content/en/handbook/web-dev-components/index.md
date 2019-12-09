@@ -16,16 +16,16 @@ guidance about how to use them effectively.
 ## Component types
 
 1. [Asides](#asides)
-1. [Banner](#banner)
+1. [Banners](#banners)
 1. [Block quotes](#blockquotes)
 1. [Buttons](#buttons)
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
 1. [Details](#details)
-1. [Glitch](#glitch)
+1. [Glitches](#glitches)
 1. [Images](#images)
-1. [Instruction](#instruction)
+1. [Instructions](#instructions)
 1. [Lists](#lists)
 1. [Callouts](#callouts)
 1. [Stats](#stats)
@@ -44,9 +44,9 @@ There are several kinds of asides, each for a different purpose.
 ### Note asides
 
 ```text
-&#123;% Aside %&#125;
+{% raw %}&#123;% Aside %&#125;
 Use the note aside to provide supplemental information.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 {% Aside %}
@@ -56,9 +56,9 @@ Use the note aside to provide supplemental information.
 ### Caution asides
 
 ```text
-&#123;% Aside 'caution' %&#125;
+{% raw %}&#123;% Aside 'caution' %&#125;
 Use the caution aside to indicate a potential pitfall or complication.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 {% Aside 'caution' %}
@@ -68,10 +68,10 @@ Use the caution aside to indicate a potential pitfall or complication.
 ### Warning asides
 
 ```text
-&#123;% Aside 'warning' %&#125;
+{% raw %}&#123;% Aside 'warning' %&#125;
 The warning aside is stronger than a caution aside; use it to tell the reader
 not to do something.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 {% Aside 'warning' %}
@@ -82,9 +82,9 @@ not to do something.
 ### Success asides
 
 ```text
-&#123;% Aside 'success' %&#125;
+{% raw %}&#123;% Aside 'success' %&#125;
 Use the success aside to describe a successful action or an error-free status.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 {% Aside 'success' %}
@@ -94,10 +94,10 @@ Use the success aside to describe a successful action or an error-free status.
 ### Objective asides
 
 ```text
-&#123;% Aside 'objective' %&#125;
+{% raw %}&#123;% Aside 'objective' %&#125;
 Use the objective aside to define the goal of a process described in the body
 copy.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 {% Aside 'objective' %}
@@ -108,10 +108,10 @@ copy.
 ### Gotcha asides
 
 ```text
-&#123;% Aside 'gotchas' %&#125;
+{% raw %}&#123;% Aside 'gotchas' %&#125;
 Use the gotcha aside to indicate a common problem that the reader wouldn't know
 without specialized knowledge of the topic.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 {% Aside 'gotchas' %}
@@ -122,11 +122,11 @@ without specialized knowledge of the topic.
 ### Key-term asides
 
 ```text
-&#123;% Aside 'key-term' %&#125;
+{% raw %}&#123;% Aside 'key-term' %&#125;
 Use the key-term aside to define a term that's essential to understanding an
 idea in the body copy. Key-term asides should be a single sentence that
 includes the term in italics. For example, "A _portal_ is…"
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 {% Aside 'key-term' %}
@@ -138,36 +138,87 @@ includes the term in italics. For example, "A _portal_ is…"
 ### Codelab asides
 
 ```text
-&#123;% Aside 'codelab' %&#125;
+{% raw %}&#123;% Aside 'codelab' %&#125;
 Use the codelab aside to link to an associated codelab.
-&#123;% endAside %&#125;
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 {% Aside 'codelab' %}
   [Using Imagemin with Grunt](#)
 {% endAside %}
 
-## Banner
+## Banners
 
-{% Banner %}This is an info banner with a <a href="#">link</a>.{% endBanner %}
+### Default banners
 
-{% Banner 'caution' %}This is a caution banner with a <a href="#">link</a>.{% endBanner %}
+Default banners can be added to site templates (for example, landing pages)
+to provide timely information to users (for example, an alert about an
+upcoming conference).
+Don't use default banners in the body of a post;
+instead, use the body variant, below.
 
-{% Banner 'warning' %}This is a warning banner with a <a href="#">link</a>.{% endBanner %}
+```text
+{% raw %}{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}{% endraw %}
+```
+
+{% Banner %}This is an info banner. It supports Markdown.{% endBanner %}
+
+```text
+{% raw %}{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}{% endraw %}
+```
+
+{% Banner 'caution' %}This is a caution banner. It supports Markdown.{% endBanner %}
+
+```text
+{% raw %}{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}{% endraw %}
+```
+
+{% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
+
+### Body banners
+
+```text
+{% raw %}{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}{% endraw %}
+```
+
+{% Banner 'info', 'body' %}This is an info banner that's used in the body of a post. It has less padding and larger text.{% endBanner %}
 
 ## Block quotes
+Use block quotes to emphasize a quotation that's important to
+the main idea of a post. (For example, in a case study you might include
+a quotation from someone on the partner organization's management team.)
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
-    a massa sit amet ullamcorper.
+Always include a `<cite>` element indicating the quote's source
+at the end of a block quote:
+
+```html
+<blockquote>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Proin dictum a massa sit amet ullamcorper.
   </p>
-  <cite class="w-blockquote__cite">
-    by Jon Doe
+  <cite>
+    Jon Doe
   </cite>
 </blockquote>
+```
+
+```html
+{% raw %}{% Blockquote 'Jon Doe' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}{% endraw %}
+```
+
+{% Blockquote 'Jon Doe' %}
+[Lorem ipsum](#) dolor sit amet, consectetur adipiscing elit. Proin dictum
+a massa sit amet ullamcorper.
+{% endBlockquote %}
 
 ## Buttons
+
+In general, you shouldn't need to add buttons to your posts.
+These buttons are shown for reference.
 
 <div>
   <button class="w-button">
@@ -200,6 +251,26 @@ Use the codelab aside to link to an associated codelab.
 
 ## Columns
 
+Any elements can be placed in a two-column layout
+by wrapping them in a `<div class="w-columns">` element:
+
+```html
+<div class="w-columns">
+  <figure class="w-figure w-figure--center">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+  <figure class="w-figure w-figure--center">
+    <img src="./image-small.png" alt="">
+    <figcaption class="w-figcaption">
+      Small image.
+    </figcaption>
+  </figure>
+</div>
+```
+
 <div class="w-columns">
   <figure class="w-figure w-figure--center">
     <img src="./image-small.png" alt="">
@@ -215,6 +286,9 @@ Use the codelab aside to link to an associated codelab.
   </figure>
 </div>
 
+At smaller viewport sizes,
+elements in a two-column layout will shift to a stacked arrangement.
+
 ## Code
 
 See the [Code](/handbook/markup-code) post.
@@ -222,7 +296,7 @@ See the [Code](/handbook/markup-code) post.
 ## Compare
 
 ```text
-&#123;% Compare 'worse' %&#125;
+{% raw %}&#123;% Compare 'worse' %&#125;
 &#96;&#96;&#96;text
 Bad code example
 &#96;&#96;&#96;
@@ -232,7 +306,7 @@ Bad code example
 &#96;&#96;&#96;text
 Good code example
 &#96;&#96;&#96;
-&#123;% endCompare %&#125;
+&#123;% endCompare %&#125;{% endraw %}
 ```
 
 {% Compare 'worse' %}
@@ -249,7 +323,7 @@ Good code example
 
 ### Compare with caption
 
-````html
+````text
 {% raw %}{% Compare 'worse' %}
 ```text
 Bad code example
@@ -298,7 +372,7 @@ Explanation of why `example` is good.
 ### Compare with custom labels
 
 ```text
-&#123;% Compare 'worse', 'Unhelpful' %&#125;
+{% raw %}&#123;% Compare 'worse', 'Unhelpful' %&#125;
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
 massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
 nibh varius at.
@@ -308,7 +382,7 @@ nibh varius at.
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
 massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
 nibh varius at.
-&#123;% endCompare %&#125;
+&#123;% endCompare %&#125;{% endraw %}
 ```
 
 {% Compare 'worse', 'Unhelpful' %}
@@ -384,7 +458,7 @@ assumenda perspiciatis.
 
 ### Basic details component
 ```text
-&#123;% Details %&#125;
+{% raw %}&#123;% Details %&#125;
 
 &#123;% DetailsSummary %&#125;
 Details _summary_
@@ -393,7 +467,7 @@ Details _summary_
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
-&#123;% endDetails %&#125;
+&#123;% endDetails %&#125;{% endraw %}
 ```
 
 {% Details %}
@@ -410,7 +484,7 @@ at.
 
 ### Details component with preview
 ```text/4-5
-&#123;% Details %&#125;
+{% raw %}&#123;% Details %&#125;
 
 &#123;% DetailsSummary %&#125;
 Details _summary_
@@ -421,18 +495,18 @@ of your panel text.
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
-&#123;% endDetails %&#125;
+&#123;% endDetails %&#125;{% endraw %}
 ```
 
 {% Details %}
 
 {% DetailsSummary %}
 Details _summary_
-This is an optional preview. Make your preview text matches the first paragraph
+This is an optional preview. Make your preview text match the first paragraph
 of your panel text.
 {% endDetailsSummary %}
 
-This is an optional preview. Make your preview text matches the first paragraph
+This is an optional preview. Make your preview text match the first paragraph
 of your panel text.
 
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
@@ -449,7 +523,7 @@ For example, if the component is in an `h2` section,
 use an `h3` heading.
 
 ```text/2
-&#123;% Details %&#125;
+{% raw %}&#123;% Details %&#125;
 
 &#123;% DetailsSummary 'h3' %&#125;
 Details _summary_
@@ -458,7 +532,7 @@ Details _summary_
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
-&#123;% endDetails %&#125;
+&#123;% endDetails %&#125;{% endraw %}
 ```
 
 {% Details %}
@@ -479,7 +553,7 @@ If for some reason you want it open,
 add the `open` argument to the `Details` shortcode.
 
 ```text/0
-&#123;% Details 'open' %&#125;
+{% raw %}&#123;% Details 'open' %&#125;
 
 &#123;% DetailsSummary %&#125;
 Details _summary_
@@ -488,7 +562,7 @@ Details _summary_
 Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a massa
 sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus nibh varius
 at.
-&#123;% endDetails %&#125;
+&#123;% endDetails %&#125;{% endraw %}
 ```
 
 {% Details 'open' %}
@@ -503,7 +577,17 @@ at.
 
 {% endDetails %}
 
-## Glitch
+## Glitches
+
+```html
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true"
+    alt="tabindex-zero on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
@@ -517,48 +601,102 @@ at.
 
 See the [Images and video](/handbook/markup-media) post.
 
-## Instruction
+## Instructions
 
-{% Instruction 'remix' %}
-{% Instruction 'preview' %}
+The Instruction component provides commonly used instructions for
+Glitch and Chrome DevTools.
+Use the Instruction component whenever possible to help ensure
+content consistency and make cross-site maintenance easier.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
-accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
-iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+By default, each instruction is placed in an unordered list item.
+To use an ordered list, add an `ol` argument to the shortcode.
+To use a paragraph, add a `none` argument.
+See the [Lists section of the Grammar, mechanics, and usage post](/handbook/grammar/#lists)
+for information about when to use each list type.
+
+Instructions can be strung together to create multi-step processes.
+
+### Glitch instructions
+
+The most common Glitch instructions explain how to preview a Glitch sample app
+by using the `remix` and `preview` arguments in two consecutive `Instruction` shortcodes:
+
+```html
+{% raw %}{% Instruction 'remix' %}
+{% Instruction 'preview' %}{% endraw %}
+```
+
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'preview', 'ol' %}
+
+To explain how to open the Glitch console, use the `console` argument:
 
 {% Instruction 'console', 'ol' %}
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
-accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
-iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+To explain how to create a new file in a Glitch, use the `create` argument:
 
-{% Instruction 'devtools', 'none' %}
+{% Instruction 'create', 'ol' %}
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
-accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
-iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+To explain how to view a Glitch's source code, use the `source` argument:
 
-{% Instruction 'devtools-performance' %}
+{% Instruction 'source' %}
 
-{% Aside %}
-All DevTools panels are supported. View [the element source](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js) for details.
-{% endAside %}
+### Reloading the page
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
-accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
-iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
+There are three ways to instruct users to reload the page.
+
+If users are reloading an app, use the `reload-app` argument:
+
+{% Instruction 'reload-app' %}
+
+If users are reloading a traditional web page, use the `reload-page` argument:
+
+{% Instruction 'reload-page' %}
+
+If users are reloading a page for the purpose of profiling,
+use the `start-profiling` argument:
+
+{% Instruction 'start-profiling' %}
+
+### DevTools instructions
+
+Instruct users how to access any tab in DevTools
+by using the `devtools-tabName` argument in the Instruction shortcode.
+For example, here are the instructions for the **Performance** tab:
+
+{% Instruction 'devtools-performance', 'ol' %}
+
+If you just need users to open DevTools, use the `devtools` argument:
+
+{% Instruction 'devtools' %}
+
+To tell users how to open the DevTools **Command** menu,
+use the `devtools-command` argument:
+
+{% Instruction 'devtools-command', 'ol' %}
+
+To tell users how to disable the cache, use this sequence:
+
+```html
+{% raw %}{% Instruction 'devtools-network', 'ol' %}
+{% Instruction 'disable-cache', 'ol' %}{% endraw %}
+```
+
+{% Instruction 'devtools-network', 'ol' %}
+{% Instruction 'disable-cache', 'ol' %}
+
+Instruct users how to run an audit in Lighthouse
+by using the `audit-auditName` argument in the Instruction shortcode.
+For example, here are the instructions for the **Performance** audit:
 
 {% Instruction 'audit-performance', 'ol' %}
 
-{% Aside %}
-All Lighthouse audits are supported. View [the element source](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_includes/components/Instructions.js) for details.
-{% endAside %}
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum alias esse
-accusantium quibusdam perspiciatis, sunt vero at accusamus temporibus molestias
-iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
-
 ## Lists
+See the [Lists section of the Grammar, mechanics, and usage post](/handbook/grammar/#lists)
+for information about when to use each list type.
+
+Use standard Markdown syntax for lists: `1.` for ordered lists and `- `
+for unordered lists.
 
 ### Ordered list
 
@@ -566,12 +704,14 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
    sit amet ullamcorper.
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
    sit amet ullamcorper.
-  <figure class="w-figure">
-    <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
-    <figcaption class="w-figcaption">
-      Filled screenshot.
-    </figcaption>
-  </figure>
+
+   <figure class="w-figure">
+     <img class="w-screenshot w-screenshot--filled" src="./image-screenshot.png" alt="">
+     <figcaption class="w-figcaption">
+       Filled screenshot.
+     </figcaption>
+   </figure>
+
 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
    sit amet ullamcorper.
 
@@ -583,10 +723,37 @@ iste culpa. Recusandae sit atque magni aspernatur dolorem vel omnis.
   sit amet ullamcorper.
 
 ## Callouts
+In general, you shouldn't need to manually add a codelab callout to your page;
+instead, use the `codelabs` field in
+[the post's YAML](/handbook/markup-post-codelab/#set-up-the-yaml),
+which will automatically append a codelab callout to the end of the post.
 
 {% CodelabsCallout 'codelab-fix-sneaky-404' %}
 
 ## Stats
+Use the Stats component to call out important statistics
+about a product or service discussed in a post.
+(Stats are primarily used in case studies.)
+
+Include no more than four statistics in a single Stats component
+to avoid layout issues.
+
+```html
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">30<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower cost per conversion</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">13<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Higher CTR</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">4<sub class="w-stat__sub">x</sub></p>
+    <p class="w-stat__desc">Faster load times</p>
+  </div>
+</div>
+```
 
 <div class="w-stats">
   <div class="w-stat">

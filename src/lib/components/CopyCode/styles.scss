@@ -1,0 +1,47 @@
+@import "../../../styles/settings/colors";
+@import '../../../styles/settings/global';
+
+.web-copy-code__button {
+  background: none;
+  background-image: url("../../../images/icons/file_copy.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: $GLOBAL_ROUNDED;
+  cursor: pointer;
+  height: 48px;
+  margin: 8px;
+  opacity: 0;
+  padding: 0;
+  transition: background-color .5s ease;
+  width: 48px;
+
+  &:active {
+    background-color: rgba($WEB_SECONDARY_COLOR, 0.4);
+    opacity: 1;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: rgba($WEB_SECONDARY_COLOR, 0.2);
+    opacity: 1;
+    transition: background-color .2s ease;
+  }
+}
+
+.web-copy-code__container {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 0;
+  margin-bottom: -32px;
+  position: relative;
+}
+web-copy-code {
+  &:active,
+  &:focus,
+  &:hover {
+    .web-copy-code__button {
+      opacity: 1;
+    }
+  }
+}

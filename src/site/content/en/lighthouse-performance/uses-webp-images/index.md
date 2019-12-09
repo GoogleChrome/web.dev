@@ -5,6 +5,8 @@ description: |
   Learn about the uses-webp-images audit.
 date: 2019-05-02
 updated: 2019-10-04
+codelabs:
+  - codelab-serve-images-webp
 web_lighthouse:
   - uses-webp-images
 ---
@@ -25,22 +27,9 @@ WebP is supported in Chrome and Opera and provides better lossy and lossless com
 See [A New Image Format For The Web](https://developers.google.com/speed/webp/)
 for more on WebP.
 
-<div class="w-codelabs-callout">
-  <div class="w-codelabs-callout__header">
-    <h2 class="w-codelabs-callout__lockup">Codelabs</h2>
-    <div class="w-codelabs-callout__headline">See it in action</div>
-    <div class="w-codelabs-callout__blurb">
-      Learn more and put this guide into action.
-    </div>
-  </div>
-  <ul class="w-unstyled-list w-codelabs-callout__list">
-    <li class="w-codelabs-callout__listitem">
-      <a class="w-codelabs-callout__link" href="/codelab-serve-images-webp">
-        Creating WebP images with the Command Line codelab
-      </a>
-    </li>
-  </ul>
-</div>
+{% Aside 'codelab' %}
+[Create WebP Images with the Command Line](/codelab-serve-images-webp)
+{% endAside %}
 
 ## How Lighthouse calculates potential savings
 

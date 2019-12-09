@@ -11,6 +11,7 @@ metadata:
     path: feed/feed.xml
     url: https://web.dev/feed.xml
     id: https://web.dev/
+noindex: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -31,10 +32,12 @@ metadata:
     <updated>{{ post.date | rssDate }}</updated>
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-    {% set postAuthor =  authors[post.data.author] -%}
+    {% for entry in post.data.authors %}
+    {%- set author =  contributors[entry] -%}
     <author>
-      <name>{{ postAuthor.name.given }} {{ postAuthor.name.family }}</name>
+      <name>{{ author.name.given }} {{ author.name.family }}</name>
     </author>
+    {%- endfor %}
   </entry>
   {%- endfor %}
 </feed>

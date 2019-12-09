@@ -40,6 +40,8 @@ The YAML fields at the start of each piece of web.dev content define how the pie
 * `thumbnail`: The filename of the thumbnail image, which appears when the post is displayed on the blog or homepage. Optional.
 * `alt`: The [alt text](/image-alt) for the hero image. Required if `hero` is present.
 * `description`: Content for the `description` `<meta>` tag.
+* `codelabs`: The slug(s) for the codelabs, if any, associated with the post.
+  All indicated codelabs appear in a callout at the end of the post.
 * `tags`: Tags for the site search. The `post` tag is required for a post to appear on the blog.
 
 Codelabs have two additional fields:

@@ -12,13 +12,14 @@ web_lighthouse:
 
 Although technically valid,
 using a `tabindex` greater than `0` is considered an anti-pattern because
-it jumps the affected element to the end of the tab order.
+it shifts the affected element to the end of the
+[tab order](/keyboard-access/#focus-and-the-tab-order).
 This unexpected behavior can make it seem like some elements can't be accessed
 via keyboard, which is frustrating for users who rely on assistive technologies.
 
 ## How the Lighthouse `tabindex` audit fails
 
-Lighthouse flags elements that have a `tabindex` value greater than 0:
+Lighthouse flags elements that have a `tabindex` value greater than `0`:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="tabindex.png" alt="Lighthouse audit showing some elements have a tabindex value greater than 0">
@@ -29,8 +30,8 @@ Lighthouse flags elements that have a `tabindex` value greater than 0:
 ## How to fix problematic `tabindex` values
 
 If you have a `tabindex` greater than `0`,
-and you're using a native element,
-remove the `tabindex` all together.
+and you're using a native link or form element,
+remove the `tabindex`.
 Native HTML elements such as `<button>` or `<input>`
 have keyboard accessibility built-in for free.
 
@@ -42,8 +43,8 @@ For example:
 <div tabindex="0">Focus me with the TAB key</div>
 ```
 
-If you need an element to come sooner in the tab order,
-it should be moved to an earlier spot in the DOM.
+If you need an element to come sooner or later in the tab order,
+it should be moved to a different spot in the DOM.
 Learn more in
 [Control focus with tabindex](/control-focus-with-tabindex).
 

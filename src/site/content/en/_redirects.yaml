@@ -1,5 +1,10 @@
 redirects:
 
+# Policies
+
+- from: /policies
+  to: https://policies.google.com/
+
 # Newsletter
 
 - from: /subscribe
@@ -146,3 +151,11 @@ redirects:
 
 - from: /fix-viewport-tag
   to: /viewport
+
+# Redirect older metrics docs
+
+- from: /layout-instability-api
+  to: /cls
+
+- from: /largest-contentful-paint
+  to: /lcp
