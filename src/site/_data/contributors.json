@@ -1618,5 +1618,22 @@
       "family": "Baheux"
     },
     "twitter": "KenjiBaheux"
+  },
+  "tigeroakes": {
+    "name": {
+      "given": "Tiger",
+      "family": "Oakes"
+    },
+    "org": {
+      "name": "Mozilla",
+      "unit": "Student Worker"
+    },
+    "country": "CA",
+    "homepage": "https://tigeroakes.com/",
+    "twitter": "Not_Woods",
+    "github": "NotWoods",
+    "description": {
+      "en": "Developer working on Firefox Preview"
+    }
   }
 }
