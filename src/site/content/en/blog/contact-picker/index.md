@@ -11,7 +11,6 @@ tags:
   - capabilities
   - fugu
   - contacts
-  - chrome77
   - chrome80
 hero: hero.jpg
 alt: Telephone on yellow background.
@@ -66,8 +65,8 @@ which friends have already joined.
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
-| 2. Create initial draft of specification   | [In Progress][spec]          |
-| 3. Gather feedback & iterate on design     | [In progress][spec]          |
+| 2. Create initial draft of specification   | [Complete][spec]             |
+| 3. Gather feedback & iterate on design     | [Complete][spec]             |
 | 4. Origin trial                            | Complete                     |
 | **5. Launch**                              | Chrome 80                    |
 
@@ -128,7 +127,7 @@ The Contact Picker API returns an array of contacts, and each contact includes
 an array of the requested properties. If a contact doesn't have data for the
 requested property, or the user chooses to opt-out of sharing a particular
 property, it returns an empty array. (I describe how the user chooses properties
-later.)
+in the [User control](#security-control) section.)
 
 For example, if a site requests `name`, `email`, and `tel`, and a user
 selects a single contact that has data in the name field, provides two
@@ -230,16 +229,8 @@ with the site.
 
 ## Feedback {: #feedback }
 
-The Web Platform Incubator Group and the Chrome team want to hear about your
-experiences with the Contact Picker API.
-
-### Tell us about the API design
-
-Is there something about the API that doesn't work as expected? Or
-are there missing methods or properties that you need to implement your idea?
-
-* File a spec issue on the [WICG Contact Picker API GitHub repo][issues],
-  or add your thoughts to an existing issue.
+The Chrome team wants to hear about your experiences with the Contact Picker
+API.
 
 ### Problem with the implementation?
 
@@ -282,7 +273,6 @@ PS: The 'names' in my contact picker, are characters from Alice in Wonderland.
 [spec]: https://wicg.github.io/contact-api/spec/
 [spec-select]: https://wicg.github.io/contact-api/spec/#contacts-manager-select
 [spec-security]: https://wicg.github.io/contact-api/spec/#privacy
-[issues]: https://github.com/WICG/contact-api/issues
 [demo]: https://contact-picker.glitch.me
 [demo-source]: https://glitch.com/edit/#!/contact-picker?path=demo.js:20:0
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=860467
