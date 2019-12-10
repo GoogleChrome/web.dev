@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2019-12-04
+updated: 2019-12-18
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage with the
@@ -30,7 +30,7 @@ Cookies are one of the methods available for adding persistent state to web
 sites. Over the years their capabilities have grown and evolved, but left the
 platform with some problematic legacy issues. To address this, browsers
 (including Chrome, Firefox, and Edge) are changing their behavior to enforce
-more privacy preserving defaults.
+more privacy-preserving defaults.
 
 Each cookie is a `key=value` pair along with a number of attributes that control
 when and where that cookie is used. You've probably already used these
@@ -205,7 +205,7 @@ Introducing the `SameSite` attribute on a cookie provides three different ways
 to control this behaviour. You can choose to not specify the attribute, or you
 can use `Strict` or `Lax` to limit the cookie to same-site requests.
 
-If you set `SameSite=Strict` this means your cookie will only be sent in a
+If you set `SameSite` to `Strict` this means your cookie will only be sent in a
 first-party context. In user terms, the cookie will only be sent if the site for
 the cookie matches the site currently shown in the browser's URL bar. So, if the
 `promo_shown` cookie is set as follows:
@@ -217,7 +217,7 @@ Set-Cookie: promo_shown=1; SameSite=Strict
 When the user is on your site, then the cookie will be sent with the request as
 expected. However when following a link into your site, say from another site or
 via an email from a friend, on that initial request the cookie will not be sent.
-This is good where you have cookies relating to functionality that will always
+This is good when you have cookies relating to functionality that will always
 be behind an initial navigation, such as changing a password or making a
 purchase, but is too restrictive for `promo_shown`. If your reader follows the
 link into the site, they want the cookie sent so their preference can be
@@ -234,7 +234,7 @@ the cat directly and provide a link through to your original article.
 <p>Read the <a href="https://blog.example/blog/cat.html">article</a>.</p>
 ```
 
-If the cookie has been set as so:
+And the cookie has been set as so:
 
 ```text
 Set-Cookie: promo_shown=1; SameSite=Lax
@@ -261,8 +261,8 @@ been the way of implicitly stating that you want the cookie to be sent in all
 contexts. In the latest draft of
 [RFC6265bis](https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03) this
 is being made explicit by introducing a new value of `SameSite=None`. This means
-you can use `None` to clearly communicate you intentionally want the cookie sent
-in a third-party context.
+you can use `None` to clearly communicate that you intentionally want the cookie
+sent in a third-party context.
 
 <figure class="w-figure  w-figure--center">
   <img src="samesite-none-lax-strict.png" alt="Three cookies labelled None,
@@ -275,7 +275,7 @@ in a third-party context.
 {% Aside %}
 
 If you provide a service that other sites consume such as widgets, embedded
-content, affiliate programmes, advertising, or sign-in across multiple sites
+content, affiliate programs, advertising, or sign-in across multiple sites
 then you should use `None` to ensure your intent is clear.
 
 {% endAside %}
@@ -291,12 +291,15 @@ and provide users with a safer experience, the IETF proposal,
 lays out two key changes:
 
 - Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`.
-- Cookies with `SameSite=None` must also specify `Secure`.
+- Cookies with `SameSite=None` must also specify `Secure`, meaning they require
+  a secure context.
 
 Chrome implements these behaviors as of version 80.
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
-has them available to test and will be making them default behaviors in the
-future.
+has them available to test as of Firefox 69 and will make them default behaviors
+in the future. To test these behaviors on Firefox open
+[`about:config`](http://kb.mozillazine.org/About:config) and set
+`network.cookie.sameSite.laxByDefault`.
 [Edge](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/8lMmI5DwEAAJ)
 also plans to change its default behaviors.
 
@@ -335,11 +338,6 @@ The browser will treat that cookie as if `SameSite=Lax` was specified.
 {% endCompareCaption %}
 
 {% endCompare %}
-
-You can test this behavior as of Chrome 76 by enabling
-`chrome://flags/#same-site-by-default-cookies` and from Firefox 69 in
-[`about:config`](http://kb.mozillazine.org/About:config) by setting
-`network.cookie.sameSite.laxByDefault`.
 
 While this is intended to apply a more secure default, you should ideally set an
 explicit `SameSite` attribute rather than relying on the browser to apply that
