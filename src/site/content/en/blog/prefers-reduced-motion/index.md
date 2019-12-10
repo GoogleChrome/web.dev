@@ -13,7 +13,7 @@ tags:
   - media-queries
   - css
 hero: hero.jpg
-alt: Time lapse of woman in a train
+alt: Time-lapse of woman in a train
 ---
 
 Not everyone likes decorative animations or transitions, and some users outright
