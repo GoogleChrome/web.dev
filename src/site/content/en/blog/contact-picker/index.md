@@ -68,7 +68,7 @@ which friends have already joined.
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | [Complete][spec]             |
 | 4. Origin trial                            | Complete                     |
-| **5. Launch**                              | Chrome 80                    |
+| **5. Launch**                              | **Chrome 80**                |
 
 </div>
 
