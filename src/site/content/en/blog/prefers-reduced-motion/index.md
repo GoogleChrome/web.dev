@@ -7,10 +7,11 @@ authors:
   - thomassteiner
 description: The prefers-reduced-motion media query detects whether the user has requested that the system minimize the amount of animation or motion it uses. This is for users who either require or prefer minimized animations; for example people with vestibular disorders often desire animations to be kept to a minimum.
 date: 2019-03-11
-updated: 2019-11-07
+updated: 2019-12-10
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - media-queries
+  - css
 hero: hero.jpg
 alt: Time lapse of woman in a train
 ---
