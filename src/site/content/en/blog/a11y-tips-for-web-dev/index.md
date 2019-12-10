@@ -1,6 +1,6 @@
 ---
 title: Accessibility tips for web developers
-subhead: A catchy subhead that previews the content.
+subhead: Making a few improvements can make your site more useable for everyone.
 description: |
   It's awesome to build sites that are inclusive and accessible to everyone.
   There are at least six key areas of disability we can optimize for:
@@ -59,18 +59,18 @@ tags:
   - ux
 ---
 
-**It's awesome to build sites that are inclusive and accessible to everyone.
-There are at least six key areas of disability we can optimize for:
-visual, hearing, mobility, cognition, speech and neural.
+It's awesome to build sites that are inclusive and accessible to everyone.
+There are at least six key areas of disability you can optimize for:
+visual, hearing, mobility, cognition, speech, and neural.
 Many tools and resources can help here,
-even if you're totally new to web accessibility.**
+even if you're totally new to web accessibility.
 
-Over 1 billion people live with some form of disability.
+Over one&nbsp;billion people live with some form of disability.
 You might have been in a loud room at some point
 trying to hear the conversation around you
 or in a low-lighting condition trying to find something in the dark.
 Do you remember the frustration you felt with that circumstance?
-Now imagine if that temporary condition was permanent.
+Now imagine if that temporary condition were permanent.
 How different would your experience on the web be?
 
 To be accessible, sites need to work across multiple devices
@@ -79,7 +79,77 @@ Moreover, sites should be usable by the broadest group of users,
 including those with disabilities.
 Here are a sample of just a few disabilities your users may have:
 
-[table]
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Vision</th>
+        <th>Hearing</th>
+        <th>Mobility</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul>
+            <li>Low vision</li>
+            <li>Blind</li>
+            <li>Color blind</li>
+            <li>Cataracts</li>
+            <li>Sun glare</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Hard of hearing</li>
+            <li>Deaf</li>
+            <li>Noise</li>
+            <li>Ear infection</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Spinal cord injury</li>
+            <li>Limited dexterity</li>
+            <li>Hands full</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>Cognitive</th>
+        <th>Speech</th>
+        <th>Neural</th>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>Learning disabilities</li>
+            <li>Sleepy or distracted</li>
+            <li>Migraine</li>
+            <li>Autism</li>
+            <li>Seizure</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Ambient noise</li>
+            <li>Sore throat</li>
+            <li>Speech impediment</li>
+            <li>Unable to speak</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Depression</li>
+            <li>PTSD</li>
+            <li>Bipolar</li>
+            <li>Anxiety</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 **Visual issues** range from an inability to distinguish colors to no vision at all.
 
