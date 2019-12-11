@@ -69,7 +69,7 @@ Of course, there are plenty of other use cases:
 | 1. Create explainer                        | N/A                          |
 | 2. Create initial draft of specification   | [Complete][spec-ed]          |
 | **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
-| 4. Origin trial                            | Not Started                  |
+| **4. Origin trial**                        | [**In Progress**][ot]        |
 | 5. Launch                                  | Not Started                  |
 
 </div>
@@ -83,11 +83,25 @@ Of course, there are plenty of other use cases:
 
 ## Using the Wake Lock API {: #use }
 
-The Wake Lock API is currently in development and is only available in Chrome
-behind a flag. To experiment with the Wake Lock API, enable the
-`#enable-experimental-web-platform-features` flag in `chrome://flags`.
+### Enabling support during the origin trial phase
+Starting in Chrome 79, the Wake Lock API will be available as an origin trial in Chrome.
+The origin trial is expected to end in Chrome 81.
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
+
+### Enabling via chrome://flags
+To experiment with the Wake Lock API locally, without an origin trial token,
+enable the `#experimental-web-platform-features` flag in `chrome://flags`.
+
+### Demo
 
 Check out the [Wake Lock demo][demo] and [demo source][demo-source].
+Notice how the wake lock gets automatically released when you switch tabs
+or multitask away from the browser.
 
 ### Wake lock types {: #wake-lock-types }
 
@@ -233,6 +247,7 @@ critical it is to support them.
 
 * Specification [Candidate Recommendation][spec-cr] | [Editor's Draft][spec-ed]
 * [Wake Lock Demo][demo] | [Wake Lock Demo source][demo-source]
+* [Origin Trial][ot]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * [Experimenting with the Wake Lock API](https://medium.com/dev-channel/experimenting-with-the-wake-lock-api-b6f42e0a089f)
@@ -252,3 +267,4 @@ critical it is to support them.
 [fullscreen-change]: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#Event_handlers
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWakeLock
 [cr-dev-twitter]: https://twitter.com/chromiumdev
+[ot]: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
