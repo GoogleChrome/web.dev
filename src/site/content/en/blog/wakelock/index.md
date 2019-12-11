@@ -8,7 +8,7 @@ description: To avoid draining the battery, most devices will quickly fall aslee
 date: 2018-12-18
 updated: 2019-12-11
 origin_trial:
-	url: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
+  url: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
 tags:
   - post
   - capabilities
