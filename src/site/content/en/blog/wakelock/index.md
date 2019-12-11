@@ -86,7 +86,7 @@ Of course, there are plenty of other use cases:
 ## Using the Wake Lock API {: #use }
 
 ### Enabling support during the origin trial phase
-Starting in Chrome 79, the Wake Lock API will be available as an origin trial in Chrome.
+The Wake Lock API will be available as an origin trial in Chrome 79.
 The origin trial is expected to end in Chrome 81.
 
 {% include 'content/origin-trials.njk' %}
