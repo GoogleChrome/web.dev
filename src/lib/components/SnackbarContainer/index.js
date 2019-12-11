@@ -77,7 +77,7 @@ class SnackbarContainer extends BaseElement {
 
     if (this.acceptedCookies && this.installPrompt) {
       this.installPrompt.prompt();
-      this.installPrompt.userChoice.then(() => (this.installPrompt = false));
+      this.installPrompt.userChoice.then(() => (this.installPrompt = null));
     }
   }
 
