@@ -103,7 +103,7 @@ enable the `#experimental-web-platform-features` flag in `chrome://flags`.
 
 Check out the [Wake Lock demo][demo] and [demo source][demo-source].
 Notice how the wake lock gets automatically released when you switch tabs
-or multitask away from the browser.
+or switch to a different app.
 
 ### Wake lock types {: #wake-lock-types }
 
