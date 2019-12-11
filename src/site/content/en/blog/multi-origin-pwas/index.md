@@ -33,8 +33,6 @@ Let's look at the useful reasons first:
 
 - **Localization / Language:** Using a [country-code top-level domain](https://developer.mozilla.org/en-US/docs/Glossary/TLD), to separate sites to be served in different countries (e.g. `https://www.google.com.ar`), or using subdomains to divide sites targeted to different locations (e.g.: `https://newyork.craigslist.org`) or to offer content for a specific language (e.g. `https://en.wikipedia.org`).
 
-- **Device/Platform:** Using different subdomains, to deliver different versions of a website to different devices. The `m.` or `mobile.` pattern is a common way to separate mobile from desktop in adaptive sites. For example: a site can maintain its desktop version at `https://www.example.com` and mobile version at `https://m.example.com`.
-
 - **Independent webapps:** Using different subdomains to provide experiences whose purpose differs considerably from the site on the main origin. For example, in a news site, the crosswords webapp could be intentionally served from `https://crosswords.example.com`, and installed and used as an independent PWA, without having to share any resources or functionality with the main website.
 
 ### The bad
@@ -87,7 +85,7 @@ Once the service worker is active and running, the same-origin policy also restr
 
 ### Permissions
 
-Permissions are also scoped to origins. This means that if a user granted a given permission to the origin `https://maps.google.com`, it won't carry over to other origins, like `https://www.google.com`.
+Permissions are also scoped to origins. This means that if a user granted a given permission to the origin `https://section.example.com`, it won't carry over to other origins, like `https://www.example.com`.
 
 Since there's no way to share permissions across origins, the only solution here is to ask for permission on each of subdomain where a given feature is required (e.g. location). For things like web push, you can maintain a cookie to track if the permission has been accepted by the user in another subdomain, to avoid requesting it again.
 
@@ -96,20 +94,13 @@ Since there's no way to share permissions across origins, the only solution here
 To install a PWA, each origin must have its own manifest with a `start_url` that's [relative to itself](https://w3c.github.io/manifest/#start_url-member). This means that a user receiving the installation prompt on a given origin (i.e: `https://section.example.com`) won't be able to install the PWA with a `start_url` on a different one (i.e: `https://www.example.com`).
 In other words, users receiving the installation prompt in a subdomain will only be able to install PWAs for the subpages, not for the main URL of the app.
 
-A simple workaround is to use a`start_url` with a redirect to the main origin. For example: subdomain `https://section.example.com`, can define a `start_url` of `https://section.example.com/pwa`, containing a redirect to: `https://www.example.com`, making the user always land at the home page.
-
 There's also the issue that the same user could receive multiple installation prompts when navigating the site, if each subdomain meets the [installation criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria), and prompts the user to install the PWA.
 
-Mitigate this problem by applying any of the following techniques:
-
-- **Showing the prompt on a single domain:** If the site has many subdomains that pass the installation criteria, the `beforeinstallprompt` event could be used and `preventDefault()` called (as explained [here](https://developers.google.com/web/fundamentals/app-install-banners/#listen_for_beforeinstallprompt)), to prevent the prompt from appearing in unintended parts of the site (like subdomains), while continue to show it in other parts (e.g. the home page).
-
-- **Showing the prompt once, across different subdomains:** It's also possible to let each subdomain show the installation prompt. (This can make sense if some subdomains are more frequently visited). In this case, it's important to avoid showing the prompt to a user multiple times. To that purpose, a cookie could be used, to track if the prompt has already been shown, and check for its existence when the `beforeinstallprompt` event is triggered. If the cookie is present, it means that the user already received the prompt somewhere else, so `preventDefault()` can be called, to avoid showing it again.
-
+To mitigate this problem you can make sure that the prompt is shown only on a single domain. If the site has many subdomains that pass the installation criteria, the `beforeinstallprompt` event could be used and `preventDefault()` called (as explained [here](https://developers.google.com/web/fundamentals/app-install-banners/#listen_for_beforeinstallprompt)), to prevent the prompt from appearing in unintended parts of the site (like subdomains), while continue to show it in other parts (e.g. the home page).
 
 ### Standalone Mode
 
-While navigating in a standalone window, the browser will behave differently when the user moves outside of the scope set by the PWA's manifest. The behavior depends on each browser version and vendor. For example, the latest Chrome versions open a [Chrome custom tab](https://developer.chrome.com/multidevice/android/customtabs), when a user moves out of the scope in fullscreen mode.
+While navigating in a standalone window, the browser will behave differently when the user moves outside of the scope set by the PWA's manifest. The behavior depends on each browser version and vendor. For example, the latest Chrome versions open a [Chrome custom tab](https://developer.chrome.com/multidevice/android/customtabs), when a user moves out of the scope in standalone mode.
 
 In most cases, there's no solution for this, but a workaround can be applied for small parts of the experience that are hosted in subdomains (for example: login workflows):
 
@@ -119,6 +110,10 @@ In most cases, there's no solution for this, but a workaround can be applied for
 
 {% Aside 'caution' %}
 The previous technique can help mitigating the potential UI change in a small part of the site, where the user can perform an action in a subdomain and return to the main origin (like in a login flow), but won't be an efficient technique to implement for entire paths, including many pages hosted in subdomains (like entire site sections).
+{% endAside %}
+
+{% Aside %}
+In the context of [Trusted Web Actitivies](https://developers.google.com/web/updates/2019/02/using-twa), there's a recommended way of avoiding this issue, by validating all origins using Digital Asset Links. You can find more information [here](https://github.com/GoogleChrome/android-browser-helper/tree/master/demos/twa-multi-domain/).
 {% endAside %}
 
 ### Conclusion
