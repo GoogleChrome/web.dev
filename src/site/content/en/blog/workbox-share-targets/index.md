@@ -6,7 +6,9 @@ description: |
 
 # A list of authors. Supports more than one.
 authors:
+  - samrichard
   - joemedley
+  - jeffposnick
 date: 2019-12-18
 hero: hero.jpg
 alt: Shared fruit.
@@ -17,9 +19,9 @@ tags:
 ---
 
 The [Web Share Target API](https://web.dev/web-share-target/) lets you display
-your Progressive Web App in a user’s native share sheet after it’s been
+your Progressive Web App in a user's native share sheet after it's been
 installed. While it works great if you have a server available to receive the
-request, it’s much harder to get working if you don’t.
+request, it's much harder to get working if you don't.
 
 In this article I'll use
 [Workbox](https://developers.google.com/web/tools/workbox), a set of JavaScript
@@ -70,7 +72,7 @@ While normally handled by a server endpoint, a neat trick you can do for a share
 target is to register a route directly in your service worker to handle the
 request. This will let your app be a share target without a back end.
 
-You do this in [Workbox](https://developers.google.com/web/tools/workbox by
+You do this in [Workbox](https://developers.google.com/web/tools/workbox) by
 registering a route that's handled by your service worker. Start by importing
 `registerRoute` from `'workbox-routing'`. Notice that it's registered for the
 `/share` route, the same one listed in the my example web app manifest. In
@@ -123,7 +125,7 @@ sync](https://web.dev/periodic-background-sync/).
 ## Conclusion
 
 The Share Target API is a simple way to deeply integrate your Progressive Web
-App into user’s devices, putting them on-par with native applications for the
+App into user's devices, putting them on-par with native applications for the
 critical task of sharing content between apps. But doing so usually requires a
 server available to receive the request. By leveraging Workbox to create a share
 target route directly in your service worker, your app is free of this
