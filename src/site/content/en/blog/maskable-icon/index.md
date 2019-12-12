@@ -42,7 +42,6 @@ You can check which parts of your icons land within the safe zone with Chrome De
 
 If you want to preview your maskable icon in other shapes it may appear in on Android, I've created a tool called [Maskable.app](https://maskable.app/). Open an icon and Maskable.app will let you try out various shapes and sizes, and you can share the preview with others on your team.
 
-
 ## How do I adopt maskable icons?
 
 If you want to create a maskable icon based off your existing icon, you can use the [Maskable.app Editor](https://maskable.app/editor). Upload your icon, adjust the color and size, then export the image.
