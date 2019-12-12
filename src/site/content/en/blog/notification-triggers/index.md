@@ -2,14 +2,14 @@
 title: Notification Triggers
 subhead:
   Notification Triggers allows you to schedule local notifications that don't require a network
-  connection, which makes them an ideal solution for use cases like calendar apps.
+  connection, which makes them ideal for use cases like calendar apps.
 authors:
   - thomassteiner
 description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
-  a network connection, which makes them an ideal solution for use cases like calendar apps.
+  a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2019-12-02
+updated: 2019-12-12
 draft: true
 tags:
   - post
@@ -42,7 +42,7 @@ store, you get a reminder notification to buy milk. Network connectivity or batt
 features like doze mode can delay the delivery of push based notifications.
 
 Notification Triggers solve this problem by letting you schedule notifications with their triggering
-condition in advance, so that the operation system will deliver the notification at the right time
+condition in advance, so that the operating system will deliver the notification at the right time
 even if there is no network connectivity or the device is in battery saver mode.
 
 {% Aside %}
@@ -112,7 +112,7 @@ Scheduling a notification is similar to showing a regular push notification, wit
 being that you need to pass a `showTrigger` condition property with a `TimestampTrigger` object as
 the value to the notification's options object.
 
-```js
+```js/5
 const createScheduledNotification = async (tag, title, timestamp) => {
   const registration = await navigator.serviceWorker.getRegistration();
   registration.showNotification(title, {
@@ -134,13 +134,13 @@ To cancel scheduled notifications, first request a list of all notifications tha
 certain tag through `ServiceWorkerRegistration.getNotifications()`. Note that you need to pass the
 `includeTriggered` flag for scheduled notifications to be included in the list.
 
-```js
+```js/4
 const cancelScheduledNotification = async (tag) => {
-  const registration = await navigator.serviceWorker.getRegistration();  
+  const registration = await navigator.serviceWorker.getRegistration();
   const notifications = await registration.getNotifications({
     tag: tag,
     includeTriggered: true,
-  }); 
+  });
   notifications.forEach((notification) => notification.close());
 };
 ```
@@ -151,10 +151,10 @@ You can use the [Chrome DevTools Notifications pane][devtools] to debug notifica
 To start debugging, press **Start recording events** ![Start recording events](record.png) or
 <kbd>Control</kbd>+<kbd>E</kbd> (<kbd>Command</kbd>+<kbd>E</kbd> on Mac). Chrome DevTools
 records all notification events, including scheduled, displayed, and closed notifications,
-for 3 days, even when DevTools is closed.
+for three days, even when DevTools is closed.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="devtools-scheduled.png" 
+  <img src="devtools-scheduled.png"
        alt="A scheduled notification event was logged to the Notifications pane of Chrome
             DevTools, which is located in the Application panel.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
@@ -163,7 +163,7 @@ for 3 days, even when DevTools is closed.
 </figure>
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="devtools-displayed.png" 
+  <img src="devtools-displayed.png"
        alt="A displayed notification event was logged to the Notifications pane of Chrome
             DevTools.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
@@ -186,11 +186,11 @@ notifications, list scheduled notifications, and cancel them. The source code is
 
 ## Security and permissions
 
-The Chrome team has designed and implemented the Notification Triggers API using the core principles defined in
-[Controlling Access to Powerful Web Platform Features][powerful-apis], including user control,
-transparency, and ergonomics. Because this API requires service workers,
-it also requires a secure context.
-Using the API requires the same permission as regular push notifications.
+The Chrome team has designed and implemented the Notification Triggers API using the core
+principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
+including user control, transparency, and ergonomics. Because this API requires service workers,
+it also requires a secure context. Using the API requires the same permission as regular push
+notifications.
 
 ### User control
 
