@@ -403,7 +403,7 @@ event to use, and to trigger it as many times as you'd like.
 ## Using the DevTools interface
 
 Starting in Chrome 80, you'll see a **Periodic Background Sync** section in the
-DevTools *Application* panel.
+DevTools **Application** panel.
 
    <figure class="w-figure w-figure--center">
      <img class="w-screenshot" src="7-panel.png"
