@@ -18,32 +18,16 @@ Audio descriptions make visual information in videos
 accessible to users with visual impairments by
 explaining details that aren't conveyed in the original audio.
 
-## How the Lighthouse video description audit fails
+## How to manually test that videos have audio descriptions
 
-Lighthouse flags `<video>` elements that are missing a `<track>` element
+To verify that a `<video>` element has an audio description,
+check that it contains a `<track>` element
 with the attribute `kind="descriptions"`.
-
-<!--
-***Todo*** I tried very hard to get audio/video audits to fail.
-But no matter what, they seem to pass
-even with all sorts of crazy errors.
-See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1)
-
-<figure class="w-figure">
-  <img class="w-screenshot" src="" alt="Lighthouse audit showing video element missing audio descriptions">
-</figure>
--->
-
-{% include 'content/lighthouse-accessibility/scoring.njk' %}
-
-## How to add audio descriptions to a video
-
-For every `<video>` element on your page, add at least one `<track>` element
-with the attribute `kind="descriptions"`. The source for each track must be a text file in the
+The source for each track must be a text file in the
 [WebVTT format](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API).
 Provide an audio description track for each language you want to support:
 
-```html
+```html/3,5
 <video width="300" height="200">
     <source src="videoSample.mp4" type="video/mp4">
     <track src="captions_en.vtt" kind="captions" srclang="en" label="english_captions">
@@ -53,7 +37,17 @@ Provide an audio description track for each language you want to support:
 </video>
 ```
 
-For brief overviews of how to create effective audio descriptions,
+{% Aside 'caution' %}
+Browsers' default media players don't currently support `description` tracks.
+The [HTML 5 Audio Description extension](https://chrome.google.com/webstore/detail/html5-audio-description-v/jafenodgdcelmajjnbcchlfjomlkaifp)
+for Chrome plays audio tracks via text-to-speech.
+If video is critical to your site, you may want to tell your users about this extension.
+Or consider using an [accessible video player](https://a11yproject.com/patterns/#video-players).
+{% endAside %}
+
+## How to write effective audio descriptions
+
+For brief overviews of how to write effective audio descriptions,
 see the [guidelines](http://www.acb.org/adp/guidelines.html)
 from the Audio Description Project
 and the [How to Describe page](http://www.descriptionkey.org/how_to_describe.html)
