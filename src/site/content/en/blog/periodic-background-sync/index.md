@@ -35,7 +35,7 @@ Have you ever been in any of the following situations?
 
 * Riding a train or subway with flaky or no connectivity
 * Been throttled by your carrier after watching too many videos
-* Living in a country where bandwidth struggles to keep up with the demand
+* Living in a area where bandwidth struggles to keep up with the demand
 
 If you have, then you've surely felt the frustration of getting
 certain things done on the web, and wondered why native apps so often do better
