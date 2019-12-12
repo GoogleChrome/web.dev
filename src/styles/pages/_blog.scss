@@ -1,0 +1,17 @@
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+.w-blog__pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.w-blog__pagination-link {
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  min-width: 20px;
+  padding: 0px 8px;
+}

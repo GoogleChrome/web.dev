@@ -1,15 +1,19 @@
 ---
 layout: layout
 title: Blog
-permalink: /en/blog/index.html
+permalink: /en/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
 override:tags: []
 description: Our latest news, updates, and stories for developers
 date: 2018-11-05
+pagination:
+  data: collections.posts
+  size: 24
+  alias: posts
 ---
 
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
-<div class="blog-landing-page">
+<div class="w-blog__landing-page">
   {# Make sure Actions are first in the tab order. #}
   <web-actions actions="subscribe"></web-actions>
 
@@ -24,9 +28,33 @@ date: 2018-11-05
 
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
-      {% for post in collections.posts %}
+      {% for post in posts %}
         {% PostCard {post: post} %}
       {% endfor %}
     </div>
   </section>
+
+  <div class="w-blog__pagination">
+    {% if pagination.previousPageHref %}
+      <div class="w-blog__pagination-link">
+        <a href="{{ pagination.previousPageHref }}">Previous</a>
+      </div>
+    {% endif %}
+
+    {%- for pageEntry in pagination.hrefs | paginate(page.url)  %}
+      <div class="w-blog__pagination-link">
+        {% if page.url == pageEntry.href %}
+          <span aria-current="page">{{ pageEntry.index }}</span>
+        {% else %}
+          <a href="{{ pageEntry.href }}">{{ pageEntry.index }}</a>
+        {% endif %}
+      </div>
+    {%- endfor %}
+
+    {% if pagination.nextPageHref %}
+      <div class="w-blog__pagination-link">
+        <a href="{{ pagination.nextPageHref }}">Next</a>
+      </div>
+    {% endif %}
+  </div>
 </div>

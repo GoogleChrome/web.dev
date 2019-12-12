@@ -20,7 +20,9 @@ const stripLanguage = require("../../_filters/strip-language");
 const {html} = require("common-tags");
 
 module.exports = (locale, page, collections) => {
-  const pageData = collections.all.find((item) => item.url === page.url).data;
+  const pageData = collections.all.find(
+    (item) => item.fileSlug === page.fileSlug,
+  ).data;
   const pageUrl = stripLanguage(page.url);
 
   /**

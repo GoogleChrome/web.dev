@@ -59,6 +59,7 @@ const expandContributors = require(`./${filtersDir}/expand-contributors`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
+const paginate = require(`./${filtersDir}/paginate`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
@@ -150,6 +151,7 @@ module.exports = function(config) {
   config.addFilter('githubLink', githubLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
+  config.addFilter('paginate', paginate);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
