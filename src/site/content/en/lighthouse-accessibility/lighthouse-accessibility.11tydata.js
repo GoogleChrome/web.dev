@@ -80,10 +80,6 @@ module.exports = {
         pathItems: ["meta-refresh", "meta-viewport"],
       },
       {
-        title: "Audio and video",
-        pathItems: ["audio-caption", "video-caption", "video-description"],
-      },
-      {
         title: "Internationalization and localization",
         pathItems: ["html-has-lang", "html-lang-valid", "valid-lang"],
       },
@@ -100,6 +96,9 @@ module.exports = {
           "visual-order-follows-dom",
           "offscreen-content-hidden",
           "use-landmarks",
+          "audio-caption",
+          "video-caption",
+          "video-description",
         ],
       },
     ],
