@@ -12,43 +12,14 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/why-captions.njk' %}
 
-## How the Lighthouse video caption audit fails
+## How manually test that videos have captions
 
-Lighthouse flags `<video>` elements that don't have a child `<track>` element
+To verify that a `<video>` element has captions,
+check that it contains at least one `<track>` element
 with the attribute `kind="captions"`.
+You need a captions track for each language you want to support:
 
-<!--
-***Todo*** I tried very hard to get this audit to fail.
-But no matter what, it seems to pass,
-even with all sorts of crazy errors.
-See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1).
-
-<figure class="w-figure">
-  <img class="w-screenshot" src="" alt="Lighthouse audit showing video element missing captions">
-</figure>
--->
-
-{% include 'content/lighthouse-accessibility/scoring.njk' %}
-
-## How to add captions to a video
-
-For every `<video>` element on your page, add at least one `<track>` element
-with the attribute `kind="captions"`:
-
-```html
-<video width="300" height="200">
-    <source src="marathonFinishLine.mp4" type="video/mp4">
-    <track src="captions_en.vtt" kind="captions" srclang="en" label="captions">
-    <track src="audio_desc_en.vtt" kind="descriptions" srclang="en" label="description">
-</video>
-```
-
-{% include 'content/lighthouse-accessibility/caption-specs.njk' %}
-
-Provide a captions track for each language you want to support.
-Specify each track's language using the `srclang` attribute:
-
-```html
+```html/2,4
 <video width="300" height="200">
     <source src="videoSample.mp4" type="video/mp4">
     <track src="captions_en.vtt" kind="captions" srclang="en" label="english_captions">
@@ -57,6 +28,10 @@ Specify each track's language using the `srclang` attribute:
     <track src="audio_desc_es.vtt" kind="descriptions" srclang="es" label="spanish_description">
 </video>
 ```
+
+## How to create captions tracks
+
+{% include 'content/lighthouse-accessibility/caption-specs.njk' %}
 
 {% include 'content/lighthouse-accessibility/track-kinds.njk' %}
 

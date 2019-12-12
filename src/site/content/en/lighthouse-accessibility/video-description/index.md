@@ -21,11 +21,11 @@ explaining details that aren't conveyed in the original audio.
 ## How to manually test that videos have audio descriptions
 
 To verify that a `<video>` element has an audio description,
-check that it contains a `<track>` element
+check that it contains at least one `<track>` element
 with the attribute `kind="descriptions"`.
 The source for each track must be a text file in the
 [WebVTT format](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API).
-Provide an audio description track for each language you want to support:
+You need an audio description track for each language you want to support:
 
 ```html/3,5
 <video width="300" height="200">

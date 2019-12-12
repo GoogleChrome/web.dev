@@ -12,50 +12,24 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/why-captions.njk' %}
 
-## How the Lighthouse audio caption audit fails
+## How to manually test that audio files have captions
 
-Lighthouse flags `<audio>` elements that don't have a child `<track>` element.
+To verify that an `<audio>` element has captions,
+check that it contains at least one `<track>` element
+with the attribute `kind="captions"`.
+You need a captions track for each language you want to support:
 
-<!--
-***Todo*** I tried very hard to get this audit to fail.
-But no matter what, it seems to pass,
-even with all sorts of crazy errors.
-See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets)
-<figure class="w-figure">
-  <img class="w-screenshot" src="" alt="Lighthouse audit showing Audio element missing captions">
-</figure>
--->
-
-{% include 'content/lighthouse-accessibility/scoring.njk' %}
+```html/2-3
+<audio>
+    <source src="audioSample.mp3" type="audio/mp3">
+    <track src="captions_en.vtt" kind="captions" srclang="en" label="english_captions">
+    <track src="captions_es.vtt" kind="captions" srclang="es" label="spanish_captions">
+</video>
+```
 
 ## How to add captions to an audio clip
 
-For every `<audio>` element on your page, add at least one `<track>` element
-with the attribute `kind="captions"`:
-
-```html
-<audio>
-   <source src="audioSample.mp3" type="audio/mp3">
-   <track src="captions_en.vtt" kind="captions" srclang="en" label="captions">
-</audio>
-```
-
-The source for the track must be a text file in the
-[WebVTT format](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API).
-Captions should include all essential information about the audio clip,
-including who is speaking, a transcript of the dialogue,
-and any musical cues or sound effects.
-
-Provide a captions track for each language you want to support.
-Specify each track's language using the `srclang` attribute:
-
-```html
-<audio>
-   <source src="favoriteSong.mp3" type="audio/mp3">
-   <track src="captions_en.vtt" kind="captions" srclang="en" label="english_captions">
-   <track src="captions_es.vtt" kind="captions" srclang="es" label="spanish_captions">
-</audio>
-```
+{% include 'content/lighthouse-accessibility/caption-specs.njk' %}
 
 {% Aside %}
 Captions aren't the same as subtitles. Captions describe audio information for
