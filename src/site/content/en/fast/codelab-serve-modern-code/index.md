@@ -11,6 +11,8 @@ glitch: serve-modern-code
 related_post: serve-modern-code-to-modern-browsers
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 In this codelab, improve the performance of this simple application that allows
 users to rate random cats. Learn how to optimize the JavaScript bundle by
 minizming how much code is transpiled.

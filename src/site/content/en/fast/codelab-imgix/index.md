@@ -10,6 +10,8 @@ glitch: imgix-demo
 related_post: image-cdns
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 [imgix](https://www.imgix.com/) is a service that transforms, optimizes, and caches your images for a faster website experience. When building your web application, it's nearly impossible to account for all the [various devices](https://www.mydevice.io/#compare-devices) and screen sizes that it might be viewed on. For images, this presents a major problem: in order to display images quickly and with high quality (both of which are key metrics for engagement and conversion) they must be optimized based on their context. With imgix, you can ensure that you're always serving images to your users at the ideal size and speed for their specific device. In addition, imgix provides a wide variety of image transformation options, all easily accessible through a robust API of [URL parameters](https://docs.imgix.com/apis/url?utm_source=webdev&utm_medium=referral&utm_campaign=codelab).
 
 ## Measure with Lighthouse

@@ -11,6 +11,8 @@ glitch: code-splitting-starter
 related_post: reduce-javascript-payloads-with-code-splitting
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 Most web pages and applications are made up of many different parts. Instead of
 sending all the JavaScript that makes up the application as soon as the first
 page is loaded, splitting the JavaScript into multiple chunks

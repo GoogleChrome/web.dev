@@ -11,6 +11,8 @@ glitch: explore-devtools
 related_post: identify-resources-via-network-panel
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 This codelab walks you through the process of interpreting all of the network
 traffic for a more complex sample application. At the end of the exercise,
 you'll have the skills you need to figure out _what_ your own web application's

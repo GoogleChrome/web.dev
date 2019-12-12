@@ -10,6 +10,8 @@ date: 2018-04-23
 glitch: web-dev-preload-webfont
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 This codelab shows you how to preload web fonts using `rel="preload"` to remove
 any flash of unstyled text (FOUT).
 

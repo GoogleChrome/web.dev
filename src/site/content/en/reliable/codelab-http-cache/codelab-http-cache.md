@@ -11,6 +11,8 @@ glitch: make-it-installable
 related_post: http-cache
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 This codelab shows you how to change the HTTP caching headers returned by a
 Node.js-based web server, running the [Express](https://expressjs.com/) serving
 framework. It will also show how to confirm that the caching behavior you expect

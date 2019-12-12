@@ -10,6 +10,8 @@ date: 2018-04-24
 glitch: preload-critical-assets
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 In this codelab, the performance of the following web page is improved
 by preloading and prefetching a few resources:
 

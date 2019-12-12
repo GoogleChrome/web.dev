@@ -11,7 +11,9 @@ path: index.html:25:0
 related_post: image-cdns
 ---
 
-Learn to use Cloudinary's fetch URL API to optimize images and serve them in next-gen formats. 
+{% include 'content/devtools-headsup.njk' %}
+
+Learn to use Cloudinary's fetch URL API to optimize images and serve them in next-gen formats.
 
 In this codelab:
 
