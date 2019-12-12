@@ -44,7 +44,7 @@ Use the critical request chains audit results to target the resources that have 
 
 Learn more about optimizing your
 [images](/use-imagemin-to-compress-images),
-[JavaScript](/apply-instant-loading-with-prp),
+[JavaScript](/apply-instant-loading-with-prpl),
 [CSS](/defer-non-critical-css), and
 [web fonts](/avoid-invisible-text).
 
