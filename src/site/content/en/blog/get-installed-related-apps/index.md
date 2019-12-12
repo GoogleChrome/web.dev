@@ -1,30 +1,24 @@
 ---
-title: "Is your native app installed? `getInstalledRelatedApps()` will tell you!"
+title: "Is your native app installed? getInstalledRelatedApps() will tell you!"
 subhead: "The `getInstalledRelatedApps()` method allows your web app to check whether your native app is installed on a user's device, and vice versa."
 authors:
   - petelepage
 description: As the capability gap between web and native gets smaller, it gets easier to offer the same experience for both web and native users. This may lead to cases where users have both web and native versions of the same app installed on the same device. Apps should be able to detect this situation. The getInstalledRelatedApps() API is a new web platform API that allows your web app to check to see if your native app is installed on the users device, and vice versa.
 date: 2018-12-20
-updated: 2019-10-15
+updated: 2019-12-18
 tags:
   - post
   - capabilities
   - fugu
-  - origin-trial
 hero: hero.jpg
 alt: mobile device with app panel open
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/855683929200394241
 ---
 
 {% Aside %}
-  We're currently working on this API as part of the new
-  [capabilities project](https://developers.google.com/web/updates/capabilities).
-  Starting in Chrome 73, the API is available as an [origin trial](#ot) on Android.
-  This post will be updated as the API evolves.
+  This API as part of the [capabilities project](https://developers.google.com/web/updates/capabilities).
 {% endAside %}
 
-## What is the `getInstalledRelatedApps()` API? {: #what }
+## What is the getInstalledRelatedApps() API? {: #what }
 
 <figure class="w-figure w-figure--inline-right">
   <img src="getinstalled-cropped.jpg" class="w-screenshot" width="550">
@@ -44,10 +38,10 @@ your native app is installed on a user's device, and vice versa. With
 `getInstalledRelatedApps()`, you can disable some functionality of one app if it
 should be provided by the other app instead.
 
-If `getInstalledRelatedApps()` looks familiar, it is. The Chrome team
-originally announced this feature in April 2017, when it first went to an
-origin trial. After the origin trial ended, they took stock of the feedback
-and spent some time iterating the design.
+If `getInstalledRelatedApps()` looks familiar, it is. The Chrome team originally
+announced this feature in April 2017, when it first went through its first
+origin trial. After the origin trial ended, they took stock of the feedback and
+iterated on the design.
 
 <div class="w-clearfix"></div>
 
@@ -65,30 +59,11 @@ and spent some time iterating the design.
 | -------------------------------------------- | ---------------------------- |
 | 1. Create explainer                          | [Complete][explainer]        |
 | 2. Create initial draft of specification     | [Complete][spec]             |
-| **3. Gather feedback and iterate on design** | [**In progress**](#feedback) |
-| **4. Origin trial**                          | [**In progress**](#origin-trial) |
-| 5. Launch                                    | Not started                  |
+| 3. Gather feedback and iterate on design     | Complete                     |
+| 4. Origin trial                              | Complete                     |
+| 5. **Launch**                                | Chrome 80                    |
 
 </div>
-
-## Join the origin trial {: #origin-trial }
-
-Starting in Chrome 73, the `getInstalledRelatedApps()` API is available as an
-origin trial for Android.
-
-{% include 'content/origin-trials.njk' %}
-
-Check out the [`getInstalledRelatedApps()` API demo][demo] and
-[`getInstalledRelatedApps()` API demo source][demo-source].
-
-### Register for the origin trial {: #ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
-### Alternatives to the origin trial
-
-If you want to experiment with the API locally, without an origin trial,
-enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
 
 ## See it in action
 
@@ -106,9 +81,8 @@ on your device.
 
 ### Define the relationship to your native app {: #relationship-web }
 
-In your [web app manifest](/add-manifest), add a
-`related_applications` property.
-The `related_applications` property is an array containing an object
+In your [web app manifest](/add-manifest), add a `related_applications`
+property. The `related_applications` property is an array containing an object
 for each app that you want to detect. Each app object includes:
 
 * The platform on which the app is hosted
@@ -191,21 +165,6 @@ only available when served over **HTTPS**.
 
 ## Feedback {: #feedback }
 
-The
-<a href="https://www.w3.org/community/wicg/" rel="noopener">Web Platform Incubator Community Group (WICG)</a>
-and the Chrome team want to hear about your
-experiences with the `getInstalledRelatedApps()` API.
-
-### Tell us about the API design
-
-Is there something about the API that doesn't work as expected? Or
-are there missing methods or properties that you need to implement your idea?
-
-* File a spec issue on the [WICG getInstalledRelatedApps GitHub repo][issues],
-  or add your thoughts to an existing issue.
-
-### Report a problem with the implementation
-
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
 
@@ -214,7 +173,7 @@ different from the spec?
   enter `Mobile>WebAPKs` in the **Components** box. [Glitch](https://glitch.com)
   works great for sharing quick and easy repros.
 
-### Show support for the API
+## Show support for the API
 
 Are you planning to use the `getInstalledRelatedApps()` API? Your public
 support helps the Chrome team to prioritize features and shows other
@@ -235,15 +194,11 @@ browser vendors how critical it is to support them.
 * Blink Component: [`Mobile>WebAPKs`](https://chromestatus.com/features#component%3A%20Mobile%3EWebAPKs)
 
 [spec]: https://github.com/WICG/get-installed-related-apps
-[issues]: https://github.com/WICG/get-installed-related-apps/issues
 [demo]: https://get-installed-apps.glitch.me
 [demo-source]: https://glitch.com/edit/#!/get-installed-apps
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=895854
 [cr-status]: https://www.chromestatus.com/features/5695378309513216
 [explainer]: https://github.com/WICG/get-installed-related-apps/blob/master/EXPLAINER.md
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-get-installed-related-apps-api/1602
-[ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
-[ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
-[ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Mobile%3EWebAPKs
 [cr-dev-twitter]: https://twitter.com/chromiumdev
