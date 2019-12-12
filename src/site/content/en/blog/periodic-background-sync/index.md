@@ -73,7 +73,7 @@ Status
 2. Create initial draft of specification
 </td>
 <td markdown="block">
-[In Progress](https://github.com/WICG/BackgroundSync/blob/master/explainers/periodicsync-explainer.md)
+<a href="https://github.com/WICG/BackgroundSync/blob/master/explainers/periodicsync-explainer.md" rel="noopener">In Progress</a>
 </td>
 </tr>
 <tr>
