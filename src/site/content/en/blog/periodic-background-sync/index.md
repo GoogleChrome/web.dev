@@ -25,7 +25,8 @@ tags:
 
 {% Aside %}
   Web apps should be able to do anything native apps can. The
-  Capabilities project, of which Periodic Background Sync is only a part, aims
+  [Capabilities project](https://developers.google.com/web/updates/capabilities),
+  of which Periodic Background Sync is only a part, aims
   to do just that. To learn about other capabilities and to keep up with their
   progress, follow [Unlocking new capabilities for the
   web](https://developers.google.com/web/updates/capabilities).
@@ -35,7 +36,7 @@ Have you ever been in any of the following situations?
 
 * Riding a train or subway with flaky or no connectivity
 * Been throttled by your carrier after watching too many videos
-* Living in a area where bandwidth struggles to keep up with the demand
+* Living in a country where bandwidth struggles to keep up with the demand
 
 If you have, then you've surely felt the frustration of getting
 certain things done on the web, and wondered why native apps so often do better
@@ -403,7 +404,7 @@ event to use, and to trigger it as many times as you'd like.
 ## Using the DevTools interface
 
 Starting in Chrome 80, you'll see a **Periodic Background Sync** section in the
-DevTools **Application** panel.
+DevTools *Application* panel.
 
    <figure class="w-figure w-figure--center">
      <img class="w-screenshot" src="7-panel.png"
