@@ -83,16 +83,11 @@ To experiment with the Notification Triggers API locally, without an origin tria
 ### Enabling support during the origin trial phase
 
 Starting in Chrome 80, the Notification Triggers API will be available as an origin trial.
-Origin trials allow you to try new features and give feedback on their usability, practicality, and
-effectiveness, both to us, and to the web standards community. For more information, see the
-[Origin Trials Guide for Web Developers](https://googlechrome.github.io/OriginTrials/developer-guide.html).
 
-Request a [token](https://developers.chrome.com/origintrials/) for your origin. Add the token to
-your pages, there are two ways to provide this token on any pages in your origin: Add an
-`origin-trial` `<meta>` tag to the `head` of any page. For example, this may look something like:
-`<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">` If you can configure your server, you
-can also provide the token on pages using an `Origin-Trial` HTTP header. The resulting response
-header should look something like: `Origin-Trial: TOKEN_GOES_HERE`
+{% include 'content/origin-trials.njk' %}
+
+Once you're registered,
+{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection
 
