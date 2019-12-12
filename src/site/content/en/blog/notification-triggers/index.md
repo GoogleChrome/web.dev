@@ -37,28 +37,27 @@ shown by running JavaScript on the user's device.
 The problem with the Push API is that it's not reliable for triggering notifications which _must_ be
 shown when a particular condition, like time or location, is met. An example of a _time-based
 condition_ is a calendar notification that reminds you of an important meeting with your boss at
-2:00 PM. An example of a _location-based condition_ is when you enter the vicinity of your grocery
-store, you get a reminder notification to buy milk. Network connectivity or battery-preserving
+2&nbsp;PM. An example of a _location-based condition_ is a notification that reminds you to buy milk
+when you enter the vicinity of your grocery store. Network connectivity or battery-preserving
 features like doze mode can delay the delivery of push based notifications.
 
-Notification Triggers solve this problem by letting you schedule notifications with their triggering
+Notification triggers solve this problem by letting you schedule notifications with their triggering
 condition in advance, so that the operating system will deliver the notification at the right time
 even if there is no network connectivity or the device is in battery saver mode.
 
 {% Aside %}
-  For now, only _time-based triggers_ are supported in Chrome. Additional triggers, such as
-  location-based triggers, for example, will potentially be added in the future based on developer
-  demand.
+  For now, Chrome only supports _time-based triggers_. Additional triggers, such as
+  location-based triggers, may be added in the future based on developer demand.
 {% endAside %}
 
 ### Use cases {: #use-cases }
 
 Calendar applications can use time-based notification triggers to remind a user of upcoming
-meetings. The default notification scheme for a calendar app could be to show a first "heads up"
+meetings. The default notification scheme for a calendar app could be to show a first heads-up
 notification one hour before a meeting and then another more urgent notification five minutes
 before.
 
-A TV network might remind users that their favorite TV show is about to start, or a conference live
+A TV network might remind users that their favorite TV show is about to start or a conference live
 stream is about to begin.
 
 Time zone conversion sites can use time-based notification triggers to let their users schedule
@@ -70,7 +69,7 @@ alarms for telephone conferences or video calls.
 | ---------------------------------------- | ------------------------ |
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback & iterate on design   | [In progress](#feedback) |
+| 3. Gather feedback and iterate on design | [In progress](#feedback) |
 | **4. Origin trial**                      | **[In Progress][ot]**    |
 | 5. Launch                                | Not started              |
 
@@ -98,7 +97,7 @@ header should look something like: `Origin-Trial: TOKEN_GOES_HERE`
 ### Feature detection
 
 You can find out if the browser supports Notification Triggers by checking for the existence of the
-`showTrigger` property.
+`showTrigger` property:
 
 ```js
 if ("showTrigger" in Notification.prototype) {
@@ -108,9 +107,9 @@ if ("showTrigger" in Notification.prototype) {
 
 ### Scheduling a notification
 
-Scheduling a notification is similar to showing a regular push notification, with the difference
-being that you need to pass a `showTrigger` condition property with a `TimestampTrigger` object as
-the value to the notification's options object.
+Scheduling a notification is similar to showing a regular push notification,
+except that you need to pass a `showTrigger` condition property with a `TimestampTrigger` object as
+the value to the notification's `options` object.
 
 ```js/5
 const createScheduledNotification = async (tag, title, timestamp) => {
@@ -132,7 +131,7 @@ const createScheduledNotification = async (tag, title, timestamp) => {
 
 To cancel scheduled notifications, first request a list of all notifications that match a
 certain tag through `ServiceWorkerRegistration.getNotifications()`. Note that you need to pass the
-`includeTriggered` flag for scheduled notifications to be included in the list.
+`includeTriggered` flag for scheduled notifications to be included in the list:
 
 ```js/4
 const cancelScheduledNotification = async (tag) => {
@@ -147,9 +146,9 @@ const cancelScheduledNotification = async (tag) => {
 
 ### Debugging
 
-You can use the [Chrome DevTools Notifications pane][devtools] to debug notifications.
+You can use the [Chrome DevTools Notifications panel][devtools] to debug notifications.
 To start debugging, press **Start recording events** ![Start recording events](record.png) or
-<kbd>Control</kbd>+<kbd>E</kbd> (<kbd>Command</kbd>+<kbd>E</kbd> on Mac). Chrome DevTools
+`Control+E` (`Command+E` on Mac). Chrome DevTools
 records all notification events, including scheduled, displayed, and closed notifications,
 for three days, even when DevTools is closed.
 
@@ -229,12 +228,12 @@ an existing issue.
 Did you find a bug with Chrome's implementation? Or is the implementation different from the spec?
 File a bug at [new.crbug.com](https://new.crbug.com/). Be sure to include as much detail as you can,
 simple instructions for reproducing, and set Components to `UI>Notifications`. Glitch works great
-for sharing quick and easy repros.
+for sharing quick and easy bug reproductions.
 
 ### Planning to use the API?
 
 Planning to use Notification Triggers on your site? Your public support helps us to prioritize
-features, and shows other browser vendors how critical it is to support them. Send a Tweet to
+features and shows other browser vendors how critical it is to support them. Send a Tweet to
 [@ChromiumDev](https://twitter.com/chromiumdev) with `#notificationtriggers` and let us know where
 and how you're using it.
 
