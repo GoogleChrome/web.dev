@@ -126,7 +126,7 @@ user gesture.
 The Contact Picker API returns an array of contacts, and each contact includes
 an array of the requested properties. If a contact doesn't have data for the
 requested property, or the user chooses to opt-out of sharing a particular
-property, it returns an empty array. (I describe how the user chooses properties
+property, the API returns an empty array. (I describe how the user chooses properties
 in the [User control](#security-control) section.)
 
 For example, if a site requests `name`, `email`, and `tel`, and a user
