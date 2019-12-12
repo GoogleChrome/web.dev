@@ -23,7 +23,7 @@ file will allow you to change how your application is displayed when installed
 on the user's device.
 
 <figure class="w-figure  w-figure--center">
-  <img src="./icon-home-screen.png" alt="A progressive web app icon on a mobile phone's homescreen">
+  <img src="./icon-home-screen.png" alt="A progressive web app icon on a mobile phone's home screen">
 </figure>
 
 ## Why is this useful?

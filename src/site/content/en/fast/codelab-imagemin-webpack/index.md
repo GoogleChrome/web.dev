@@ -13,7 +13,7 @@ related_post: use-imagemin-to-compress-images
 
 ## Set up the Imagemin webpack plugin
 
-This Glitch already contains `webpack`, `webpack-cli`, and 
+This Glitch already contains `webpack`, `webpack-cli`, and
 `imagemin-webpack-plugin`. To add the configuration for Imagemin, you'll need
 to edit your `webpack.config.js` file.
 
@@ -79,10 +79,10 @@ You now have a webpack config that compresses images using Imagemin.
 ## Run webpack
 
 {% Instruction 'console' %}
-1. To compress your images, run webpack by typing the following command into the 
+1. To compress your images, run webpack by typing the following command into the
 console:
 
-```
+```bash
 webpack --config webpack.config.js --mode development
 ```
 
@@ -90,7 +90,7 @@ But what happens if you run webpack in production mode?
 
 - Re-run webpack, but this time in production mode:
 
-```
+```bash
 webpack --config webpack.config.js --mode production
 ```
 
@@ -148,8 +148,8 @@ how they are compressed as well.
 
 Instead of using `imagemin-webpack-plugin`'s default plugin for JPG compression
 (`imagemin-jpegtran`), use the `imagemin-mozjpeg` plugin. Unlike Jpegtran,
-Mozjpeg let's you specify a compression quality for your JPG compression. We've 
-already installed the Mozjpeg plugin for you in this Glitch, but you'll need to 
+Mozjpeg let's you specify a compression quality for your JPG compression. We've
+already installed the Mozjpeg plugin for you in this Glitch, but you'll need to
 edit your `webpack.config.js` file:
 
 - Initialize the `imagemin-mozjpeg` plugin by adding the following line at the
@@ -219,7 +219,7 @@ module.exports = {
 
 - In the console, re-run webpack:
 
-```
+```bash
 webpack --config webpack.config.js --mode production
 ```
 

@@ -1,69 +1,57 @@
 ---
 layout: post
-title: Ensure every form element has a label
+title: Form elements do not have associated labels
 description: |
-  Learn about label audit.
+  Learn how to make form elements accessible to assistive technology users by
+  providing labels.
+date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - label
 ---
 
 Labels ensure that form controls are announced properly
-by assistive technologies, like screen readers.
-Lighthouse reports when form elements do not have associated labels:
+by assistive technologies like screen readers.
+assistive technology users rely on these labels
+to navigate forms.
+Mouse and touchscreen users also benefit from labels
+because the label text makes a larger click target.
+
+## How this Lighthouse audit fails
+
+Lighthouse flags form elements that don't have associated labels:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="label.png" alt="Lighthouse audit showing form elements do not have associated labels">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Form elements do not have associated labels
-  </figcaption>
+  <img class="w-screenshot" src="label.png" alt="Lighthouse audit showing form elements do not have associated labels">
 </figure>
 
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to fix this problem
-
-To fix this problem,
-provide a label for every form element.
-Screen reader users rely on these labels
-to navigate forms.
-Mouse or touchscreen users also benefit from labels,
-as the label text becomes a click target.
+## How to add labels to form elements
 
 There are two ways to associate a label with a form element.
 Either place the input element inside a label element:
 
-<!--
-***Todo*** I got these example from the accessibility docs;
-however, both `<input>` lines of code are throwing errors,
-which seem to be due to input end tag.
-I'm fairly sure you can't have an input end tag,
-but need to confirm with Rob.
--->
 ```html
 <label>
-  <input type="checkbox">Receive promotional offers?</input>
+  Receive promotional offers?
+  <input type="checkbox">
 </label>
 ```
 
-Or use the label's `for` attribute and refer to the element's id:
+Or use the label's `for` attribute and refer to the element's ID:
 
 ```html
-<input id="promo" type="checkbox"></input>
+<input id="promo" type="checkbox">
 <label for="promo">Receive promotional offers?</label>
 ```
 
 When the checkbox has been labeled correctly,
-the screen reader reports that the element has a role of checkbox,
+assistive technologies report that the element has a role of checkbox,
 is in a checked state, and is named "Receive promotional offers?"
 See also [Label form elements](/labels-and-text-alternatives#label-form-elements).
 
-<!--
-## How this audit impacts overall Lighthouse score
+## Resources
 
-Todo. I have no idea how accessibility scoring is working!
-
-## More information
--->
-- [Form `<input>` elements must have labels](https://dequeuniversity.com/rules/axe/3.2/label)
-- [Ensure every form element has a label audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+- [Source code for **Form elements do not have associated labels** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/label.js)
+- [Form `<input>` elements must have labels (Deque University)](https://dequeuniversity.com/rules/axe/3.3/label)

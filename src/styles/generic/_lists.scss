@@ -17,14 +17,14 @@ ol:not([class]) {
   position: relative;
 }
 
-ol:not([class]) li {
+ol:not([class]) > li {
   counter-increment: ol-step-counter;
   font-size: 1.125rem;
   line-height: 1.778rem;
   margin-bottom: 8px;
 }
 
-ol:not([class]) li::before {
+ol:not([class]) > li::before {
   -ms-flex-align: center;
   -ms-flex-negative: 0;
   -ms-flex-pack: center;
@@ -55,13 +55,13 @@ ul:not([class]) {
   position: relative;
 }
 
-ul:not([class]) li {
+ul:not([class]) > li {
   font-size: 1.125rem;
   line-height: 1.778rem;
   margin-bottom: 8px;
 }
 
-ul:not([class]) li::before {
+ul:not([class]) > li::before {
   background: $GREY_700;
   border-radius: $GLOBAL_ROUNDED;
   color: $WHITE;
@@ -71,6 +71,21 @@ ul:not([class]) li::before {
   margin: 12px 0 0;
   position: absolute;
   width: 8px;
+}
+
+ul:not([class]) > li > p,
+ol:not([class]) > li > p {
+  margin: 8px 0;
+}
+
+ul:not([class]) > li > p:first-child,
+ol:not([class]) > li > p:first-child {
+  margin-top: 0;
+}
+
+ul:not([class]) > li > p:last-child,
+ol:not([class]) > li > p:last-child {
+  margin-bottom: 0;
 }
 
 .w-unstyled-list {

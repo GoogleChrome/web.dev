@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Adaptive serving based on network quality
+date: 2019-05-06
 authors:
   - mihajlija
 description: |
@@ -30,14 +31,14 @@ There are many ways you can use this network information to improve the user
 experience:
 
 * Switch between serving high-definition and low-definition content based on the
-  user's network. 
-* Decide whether to preload resources. 
-* Defer uploads and downloads when users are on a slow connection. 
+  user's network.
+* Decide whether to preload resources.
+* Defer uploads and downloads when users are on a slow connection.
 * Enable offline mode if the network quality is not good enough to load the app
   and use the features.
 * Warn users that doing something (for example, watching video) over cellular could cost
   them money.
-* Use it in your analytics to gather data on your users’ network quality.
+* Use it in your analytics to gather data on your users' network quality.
 
 Many applications are already doing something similar. For example, YouTube,
 Netflix and most other video (or video calling) services automatically adjust
@@ -50,7 +51,7 @@ link to "load basic HTML (for slow connections)".
 
 ## How it works
 
-The `navigator.connection` object contains information about a client’s
+The `navigator.connection` object contains information about a client's
 connection. Its properties are explained in the table bellow.
 
 <div class="w-table-wrapper">
@@ -79,12 +80,12 @@ connection. Its properties are explained in the table bellow.
       <td><code>saveData</code></td>
       <td>A boolean that defines whether the user has requested a reduced data usage mode.</td>
     </tr>
-  </table> 
+  </table>
 </div>
 
-Here’s what this looks like when you run it in the browser’s console:
+Here's what this looks like when you run it in the browser's console:
 
-<img class="w-screenshot" src="./network_information_in_console.jpg" alt="Chrome DevTools console displaying the values of navigator.connection object's properties"> 
+<img class="w-screenshot" src="./network_information_in_console.jpg" alt="Chrome DevTools console displaying the values of navigator.connection object's properties">
 
 The `effectiveType` values are also available via
 [Client Hints](https://www.chromestatus.com/features/5407907378102272)
@@ -116,10 +117,8 @@ Network information API is
 since version 62.
 {% endAside %}
 
-## Conclusion 
+## Conclusion
 
 The potential benefits of the Network Information API are big, especially for
 users on slow networks and applications that require a lot of bandwidth. Best of
 all, it can be used as a progressive enhancement technique.
-
-

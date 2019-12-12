@@ -1,6 +1,6 @@
 ---
-title: Speed at Scale - What's new in Web Performance? 
-subhead: Learn about three new Web Performance launches from I/O 2019.
+title: "Speed at scale: what's new in web performance?"
+subhead: Learn about three new web performance launches from I/O 2019.
 authors:
   - katiehempenius
   - addyosmani
@@ -32,7 +32,7 @@ allowfullscreen></iframe>
 
 [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets)
 is a new feature in Lighthouse that adds support for [performance
-budgets](/fast#enforce-performance-budgets). Performance budgets establish
+budgets](/fast#set-performance-budgets). Performance budgets establish
 standards for the performance of your site. More importantly, they make it is
 easy to identify and fix performance regressions before they ship.
 
@@ -54,7 +54,7 @@ LightWallet compatible budget configuration.
 Web pages often contain a large number of images, which contribute to
 data-usage, [page-bloat](https://httparchive.org/reports/state-of-images) and
 slower page loads. Many of these images are offscreen, requiring a user to
-scroll in order to view them. 
+scroll in order to view them.
 
 Until now, you've needed to solve lazy-loading images using a JavaScript
 library but that may soon change. This summer, Chrome will be launching support
@@ -80,12 +80,12 @@ iframes until users scroll near them. `loading` supports three values:
 
 The exact heuristics for "when the user scrolls near" is left up to the
 browser. In general, our hope is that browsers will start fetching deferred
-images and iframe content a little before it comes into the viewport. 
+images and iframe content a little before it comes into the viewport.
 
 The `loading` attribute is implemented behind flags in Chrome Canary. You can
 try out [this demo](https://mathiasbynens.be/demo/img-loading-lazy) in Chrome
 75+ with the `chrome://flags/#enable-lazy-image-loading` and
-`chrome://flags/#enable-lazy-frame-loading` flags turned on. 
+`chrome://flags/#enable-lazy-frame-loading` flags turned on.
 
 A [write-up](https://addyosmani.com/blog/lazy-loading/) on the native
 lazy-loading feature is available with more details.
@@ -96,13 +96,13 @@ We announced support for [font-display](https://font-display.glitch.me) is now a
 
 ```html
 https://fonts.googleapis.com/css?family=Lobster&display=swap
-``` 
+```
 
 The `font-display` descriptor lets you decide how your web fonts will render or
 fallback, depending on how long it takes for them to load. It supports a number
 of values including `auto`, `block`, `swap`, `fallback` and `optional`.
 
-Previously, the only way to specify `font-display` for web fonts from Google Fonts was to self-host them but this change removes the need to do so. 
+Previously, the only way to specify `font-display` for web fonts from Google Fonts was to self-host them but this change removes the need to do so.
 
 The [Google Fonts
 documentation](https://developers.google.com/fonts/docs/getting_started#use_font-display)

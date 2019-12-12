@@ -1,29 +1,29 @@
 ---
 layout: post
-title: Uses application cache
+title: Uses Application Cache
 description: |
-  Learn about `appcache-manifest` audit.
+  Learn how to migrate your web page from the deprecated Application Cache to
+  the Cache API.
+date: 2019-05-02
 web_lighthouse:
   - appcache-manifest
+updated: 2019-08-28
 ---
 
-Application Cache, also known as AppCache,
+The Application Cache, also known as AppCache,
 is [deprecated](https://html.spec.whatwg.org/multipage/browsers.html#offline).
-Lighthouse flags documents that use AppCache:
+
+## How the Lighthouse Application Cache audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages that use the Application Cache:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="appcache-manifest.png" alt="Lighthouse audit showing document uses AppCache">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Document uses AppCache
-  </figcaption>
+  <img class="w-screenshot" src="appcache-manifest.png" alt="Lighthouse audit showing that a page uses the Application Cache">
 </figure>
 
-## How this audit fails
-
-Lighthouse fails this audit when it finds a reference
-to the AppCache manifest on the document's html tag.
-For example,
-this markup in your document causes the audit to fail:
+This audit fails when Lighthouse finds a reference to
+the Application Cache manifest in a page's `<html>` tag.
+For example, this markup causes the audit to fail:
 
 ```html
 <html manifest="example.appcache">
@@ -33,23 +33,27 @@ this markup in your document causes the audit to fail:
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## Use the Cache API instead of AppCache
+## Use the Cache API instead of the Application Cache
 
 To pass this audit,
-remove the manifest from your document,
-and use the 
-[service worker Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) instead.
+remove the manifest from your page,
+and use the
+[Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache)
+via a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers/)
+instead.
 
-To help migrate from AppCache to service workers,
+To migrate from the Application Cache to service workers,
 consider using the
 [sw-appcache-behavior library](https://github.com/GoogleChrome/sw-appcache-behavior).
 This library generates a service-worker-based implementation of the behavior
-defined in an AppCache manifest.
+defined in an Application Cache manifest.
 
-See the [URL Responds With a 200 When Offline](/works-offline) audit
-reference for more resources on using service workers to make your site work
+See the [Current page does not respond with a 200 when offline](/works-offline) post
+for more information about using service workers to make your site work
 offline.
 
-## More information
+## Resources
 
-[Page uses appcache audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/appcache-manifest.js)
+- [Source code for **Uses Application Cache** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/appcache-manifest.js)
+- MDN's [Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache) page
+- [Current page does not respond with a 200 when offline](/works-offline)

@@ -124,7 +124,7 @@ them.
 
 
 Instead of querying for specific browser versions or market share, consider 
-specifying `“esmodules” : true` inside your `.babelrc` file's `targets` field.
+specifying `"esmodules" : true` inside your `.babelrc` file's `targets` field.
 
 ```json
 {
@@ -165,3 +165,10 @@ separate versions of your application:
 
 * A version only for browsers that support modules.
 * A version that includes a compiled script which works in any legacy browser. This has a larger file size, since transpilation needs to support a wider range of browsers.
+
+{% Aside %}
+  Although this HTML approach can provide performance benefits, certain browsers have been found to
+  double-fetch when specifying both module and nomodule scripts. Jason Miller's [Modern Script
+  Loading](https://jasonformat.com/modern-script-loading/) explains this in more detail and covers a
+  few options that can be used to circumvent this.
+{% endAside %}

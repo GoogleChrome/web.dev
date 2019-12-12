@@ -62,7 +62,8 @@ It's important to note that headers cannot contain comments.
 {% endAside %}
 
 **Sample Request header**
-```
+
+```text
 Accept: text/html
 Cookie: Version=1
 ```
@@ -71,9 +72,10 @@ The above is equivalent to saying "I want to receive HTML in response. Here is
 cookie I have."
 
 **Sample Response header**
-```
+
+```text
 Content-Encoding: gzip
-Cache-Control: no-cache
+Cache-Control: no-store
 ```
 
 The above is equivalent to saying "Data is encoded with gzip. Do not cache this
@@ -86,10 +88,10 @@ The message itself. This could be plain text, an image binary, JSON, HTML,etc.
 ## How does CORS work?
 
 Remember, the same-origin policy tells the browser to block cross-origin
-requests. When you want to get a public resource or other server on different
-origin, the resource providing server needs to tell the browser "This origin
-where request is coming from can access my resource". The browser remembers that
-and allow cross-origin resource sharing.
+requests. When you want to get a public resource from a different
+origin, the resource-providing server needs to tell the browser "This origin
+where the request is coming from can access my resource". The browser remembers that
+and allows cross-origin resource sharing.
 
 ### Step 1: client (browser) request
 
@@ -149,7 +151,7 @@ fetch('https://cors-demo.glitch.me/', {mode:'cors'})
 
 You should see an error saying:
 
-```
+```bash
 request has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header
 is present on the requested resource.
 ```
@@ -165,7 +167,7 @@ This time, your request should not be blocked.
 
 ## Share credentials with CORS
 
-For privacy reasons, CORS is normally used for "anonymous requests" — ones where
+For privacy reasons, CORS is normally used for "anonymous requests"—ones where
 the request doesn't identify the requestor. If you want to send cookies when
 using CORS (which could identify the sender), you need to add additional headers
 to the request and response.
@@ -187,7 +189,7 @@ fetch('https://example.com', {
 `Access-Control-Allow-Origin` must be set to a specific origin (no wildcard
 using `*`) and must set `Access-Control-Allow-Credentials` to `true`.
 
-```
+```text
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: https://example.com
 Access-Control-Allow-Credentials: true
@@ -209,7 +211,7 @@ The CORS specification defines a **complex request** as
 Browsers create a preflight request if it is needed. It's an `OPTIONS` request
 like below and is sent before the actual request message.
 
-```
+```text
 OPTIONS /data HTTP/1.1
 Origin: https://example.com
 Access-Control-Request-Method: DELETE
@@ -218,7 +220,7 @@ Access-Control-Request-Method: DELETE
 On the server side, an application needs to respond to the preflight request
 with information about the methods the application accepts from this origin.
 
-```
+```text
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: https://example.com
 Access-Control-Allow-Methods: GET,DELETE,HEAD,OPTIONS

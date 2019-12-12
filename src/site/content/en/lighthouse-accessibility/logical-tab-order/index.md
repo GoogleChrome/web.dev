@@ -1,15 +1,18 @@
 ---
 layout: post
-title: Manually check the tab order follows the DOM order
+title: The page has a logical tab order
 description: |
-  Learn about logical-tab-order audit.
+  Learn how to make it easier for keyboard users to navigate your web page
+  by placing tab stops in a logical order.
+date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - logical-tab-order
 ---
 
 Many different users rely on the keyboard to navigate applications,
 from users with temporary and permanent motor impairments
-to users who use keyboard shortcuts to be more efficient and productive. 
+to users who use keyboard shortcuts to be more efficient and productive.
 A logical tab order is an important part
 of providing a smooth keyboard navigation experience.
 
@@ -24,11 +27,11 @@ from the top to the bottom of your page.
 
 Learn more in [Keyboard access fundamentals](/keyboard-access).
 
-Are you able to reach all of the interactive controls on the page? 
+Are you able to reach all of the interactive controls on the page?
 If not, you may need to use `tabindex` to improve the focusability of those controls.
 The general rule of thumb is that any control a user can interact with or provide input to
 should aim to be focusable and display a focus indicator.
-If a keyboard user can’t see what’s focused, they have no way of interacting with the page.
+If a keyboard user can't see what's focused, they have no way of interacting with the page.
 
 ## How to fix
 
@@ -38,7 +41,7 @@ you should rearrange the elements in the DOM to make the tab order more natural.
 If you aren't able to reach all of the interactive controls on the page,
 the first go-to fix is to replace custom controls with native HTML alternatives.
 For example,
-replace a `<div>` acting like a buton with `<button>`.
+replace a `<div>` acting like a button with `<button>`.
 Using built-in HTML elements can greatly improve the accessibility of your site,
 and significantly cut down on your workload.
 
@@ -52,6 +55,6 @@ For example:
 
 Learn more in [Control focus with tabindex](/control-focus-with-tabindex).
 
-## More information
+## Resources
 
-- [Check tab order follows the DOM order audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/logical-tab-order.js)
+[Source code for **The page has a logical tab order** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/accessibility/manual/logical-tab-order.js)

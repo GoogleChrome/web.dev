@@ -1,14 +1,16 @@
 ---
 layout: post
-title: Manually check users can't accidentally trap their focus
+title: User focus is not accidentally trapped in a region
 description: |
-  Learn about focus-traps audit.
+  Learn how to improve you web page's accessibility for keyboard users by
+  preventing focus from being trapped in a region of the page.
+date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - focus-traps
 ---
 
-The Web AIM checklist states that
-[keyboard focus should never be locked or trapped at one particular page element](https://webaim.org/standards/wcag/checklist#sc2.1.2).
+Keyboard focus should never be locked or trapped at one particular page element.
 Users should be able to navigate to and from all page elements
 using only the keyboard.
 
@@ -42,12 +44,12 @@ without forcing the user to refresh the page to get out of the focus trap.
 
 For users who either cannot or choose not to use a mouse,
 keyboard navigation is the primary means of reaching everything on a screen.
-Good keyboarding experiences depend on a logical tab order and easily discernable focus styles.
-If a keyboard user gets trapped in a particular page elememnt,
+Good keyboarding experiences depend on a logical tab order and easily discernible focus styles.
+If a keyboard user gets trapped in a particular page element,
 they have no way of interacting with the page.
 
 Learn more in [How to do an Accessibility Review](https://developers.google.com/web/fundamentals/accessibility/how-to-review#try_it_with_a_screen_reader).
 
-## More information
+## Resources
 
-- [Check users can't accidentally trap their focus audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/focus-traps.js)
+[Source code for **User focus is not accidentally trapped in a region** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/manual/focus-traps.js)

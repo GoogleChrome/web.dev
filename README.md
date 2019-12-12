@@ -10,89 +10,60 @@ business.
 Note: this repo contains the written content for web.dev. The client-side JS and
 server are not yet open source but we hope to share them soon! 🙇‍♂️
 
-## Authoring content
+## Found a bug? 👷‍♀️
 
-[Our wiki](https://github.com/GoogleChrome/web.dev/wiki) provides docs on
-authoring guides and codelabs.
+Thanks for letting us know! Please [file an issue](https://github.com/GoogleChrome/web.dev/issues/new?assignees=&labels=bug&template=bug_report.md&title=) and a team member should reply shortly.
 
-## Get started
+## Authoring content ✍️
 
-### Clone the repo.
+Before you start writing take a moment to look over the [web.dev
+handbook](https://web.dev/handbook) and familiarize yourself with the process.
+When you're ready, follow the steps in the
+[Quickstart](https://web.dev/handbook/quick-start/) to create your content
+proposal.
 
-```
+## Building the site 🏗
+
+### Clone the repo
+
+```bash
 git clone https://github.com/GoogleChrome/web.dev.git
 ```
 
-### Install dependencies.
+### Install dependencies
 
-```
+```bash
 npm ci
 ```
 
-### Start a local server to preview the site.
+### Start a local server to preview the site
 
-Changes to assets will rebuild the site. Refresh to see changes.
-
-```
+```bash
 npm run dev
 ```
 
-Next,  open `http://localhost:8080/` to see the site locally. The preview server
-allows you to see how the content will look on the production site, but it's
-not a true staging server. For example, features like search and JS components
-may not work or be entirely broken on the local preview.
+Open `http://localhost:8080/` to see the site locally. Changes to assets will
+rebuild the site. Refresh to see your changes.
 
-### Fetch latest styles (optional)
+👉 The preview server allows you to see how the content will look on the
+production site, but it's not a true staging server. For example, features like
+search and JS components may not work or be entirely broken on the local
+preview.
 
-You won't need to do this if this is your first time installing the repo
-because styles will be fetched in the `postinstall` phase. But if you'd ever
-like to grab the latest styles you can run this command:
+## Staging 🕺
 
-```
-npm run styles
-```
+When you send in a pull request it will be automatically staged for you. Keep an
+eye out for the netlify bot to comment on the pull request with your unique URL.
 
-## Staging
+## Debugging 🐛
 
-Stage the site to App Engine. This requires you have the
-[`gcloud`](https://cloud.google.com/sdk/docs/#install_the_latest_cloud_tools_version_cloudsdk_current_version)
-command installed on your system.
+If you need to debug the site's build process:
 
-```
-npm run stage
-```
+1. Add a `debugger` statement to `.eleventy.js`
+1. Run `npm run debug`
+1. Go to `chrome://inspect` to attach to the running process.
 
-☝️ You'll need to be a member of the App Engine project to run this command.
-
-Preview the site at
-[https://web-dev-staging.appspot.com](https://web-dev-staging.appspot.com)
-
-**Tip:** 👩‍🚀
-
-If you'd like to stage the site but don't want to replace what's already on
-the current staging site, you can manually run:
-
-```
-npm run build
-gcloud app deploy --no-promote
-```
-
-This will generate a unique URL for your staged content.
-
-## Debugging
-
-The easiest way to debug the site is to add a `debugger` statement to
-`.eleventy.js`, then run `npm run debug`, and go to `chrome://inspect` to
-attach to the running process.
-
-## Found a bug?
-
-You can file an issue [in our issue
-tracker](https://github.com/GoogleChrome/web.dev/issues) and a team member
-should reply shortly.
-
-## Want to help?
-
-Take a look [in the issue
-tracker](https://github.com/GoogleChrome/web.dev/issues) for any bugs with a
-**content** label.
+<img
+  width="295"
+  alt="The Chrome inspect page showing the inspect button"
+  src="https://user-images.githubusercontent.com/1066253/61085691-bf125a00-a3e5-11e9-9151-58bd8a50d404.png">

@@ -31,6 +31,7 @@
   margin-bottom: 32px;
 
   @include bp(sm) {
+    flex: 1;
     margin: 0 8px;
   }
 }

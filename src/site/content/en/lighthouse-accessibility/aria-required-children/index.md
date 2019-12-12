@@ -1,68 +1,66 @@
 ---
 layout: post
-title: Ensure parent roles contain required child role(s)
+title: "Elements with an ARIA `[role]` that require children to contain a specific `[role]` are missing some or all of those required children"
 description: |
-  Learn about aria-required-children audit.
+  Learn how to improve your web page's accessibility for assistive technology
+  users by making sure that all elements with ARIA roles have the required child
+  elements.
+date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - aria-required-children
 ---
 
-[ARIA](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
-roles and attributes help screen readers
-provide missing information about an element.
-For these roles and attributes to make sense,
-each ARIA `role` supports a specific subset of `aria-*` attributes
-(see [ARIA roles definitions](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)).
-Some ARIA `roles` require child roles.
-Lighthouse reports when a role is missing their required child role(s):
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="aria-required-children.png" alt="Lighthouse audit showing ARIA role missing required child role(s)">
-  <figcaption class="w-figcaption">
-    Fig. 1 — ARIA role missing required child role(s)
-  </figcaption>
-</figure>
-
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
 
-## How Lighthouse finds missing child roles
+Some ARIA roles require specific child roles.
+For example, the `tablist` role must own at least one element
+with the `tab` role.
+If the required child roles aren't present,
+assistive technologies may convey confusing information about your page,
+like announcing a tab set with no tabs.
+
+## How Lighthouse identifies missing child roles
+
+<a href="https://developers.google.com/web/tools/lighthouse" rel="noopener">Lighthouse</a>
+flags ARIA roles that don't have the required child roles:
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="aria-required-children.png" alt="Lighthouse audit showing ARIA role missing required child role(s)">
+</figure>
 
 Lighthouse uses the
-[WAI ARIA specification - Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions)
-to check for required child roles.
-Any role that contains "required owned elements",
-is considered a parent role to the child role/s.
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">role definitions from the WAI-ARIA specification</a>
+to check for
+<a href="https://www.w3.org/TR/wai-aria/#mustContain" rel="noopener">required owned elements</a>—that is,
+required child roles.
+A page fails this audit
+when it contains a parent role that's missing its required child roles.
 
-Lighthouse fails this audit,
-when it finds a parent role that's missing its child role/s.
 In the example Lighthouse audit above,
-the `list` role requires a group of child elements with `listitem` roles.
-Since there are no children with a `listitem` role defined,
+the `radiogroup` role requires child elements with the `radio` role.
+Since there are no children with a `radio` role defined,
 the audit fails.
 This makes sense,
-as it would be confusing to have a list without any list items.
+as it would be confusing to have a radio group without any radio buttons.
 
-## How this audit impacts overall Lighthouse score
+This issue is important to fix and may break the experience for users.
+In the example above, the element may still be announced as a radio group,
+but users won't know how many radio buttons it contains.
 
-Lighthouse flags this as a medium severity issue. It is important to fix,
-and may break the experience for users. In the example above, the element may
-still be announced as a list, but the number of items within the list may be
-unclear.
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-## How to check for required child roles
+## How to add missing child roles
 
-To check for required child roles
-refer to the [WAI ARIA Definition of roles](https://www.w3.org/TR/wai-aria-1.1/#role_definitions).
-ARIA explicitly defines required child roles for parent roles.
-Link to the parent role from the specification,
-and check the required child roles.
-Make sure to include a child role for that parent role.
+Refer to the
+<a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">WAI-ARIA role definitions</a>
+to see which child roles are required for the elements that Lighthouse flagged.
+(The spec refers to required children as
+<a href="https://www.w3.org/TR/wai-aria/#mustContain" rel="noopener">required owned elements</a>.)
 
-For more information on this audit,
-see [Elements must only use allowed ARIA attributes](https://dequeuniversity.com/rules/axe/3.2/aria-required-children).
+{% include 'content/lighthouse-accessibility/aria-child-parent.njk' %}
 
-## More information
-
-- [Ensure parent role includes required children audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+## Resources
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-required-children.js" rel="noopener">Source code for **Elements with an ARIA `[role]` that require children to contain a specific [role] are missing some or all of those required children** audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/aria-required-children" rel="noopener">Certain ARIA roles must contain particular children (Deque University)</a>
+- <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions" rel="noopener">Role definitions from the WAI-ARIA specification</a>

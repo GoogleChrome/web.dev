@@ -23,16 +23,17 @@ CSS to restyle it. Just remember to keep your keyboard users in mind!
 The [`:focus`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus)
 pseudo-class is applied any time an element is focused, regardless of the input
 device (mouse, keyboard, stylus, etc.) or method used to focus it. For example, 
-the button below has a dashed orange focus indicator:
+the `<div>` below has a `tabindex` which makes it focusable. It also has a
+custom style for its `:focus` state:
 
 ```css
-button:focus {  
+div[tabindex="0"]:focus {  
   outline: 4px dashed orange;  
 }  
 ```
 
 Regardless of whether you use a mouse to click on it or a keyboard to tab to it,
-the button's focus indicator will _always_ look the same.
+the `<div>` will _always_ look the same.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -42,11 +43,47 @@ the button's focus indicator will _always_ look the same.
   </iframe>
 </div>
 
+Unfortunately browsers can be inconsistent with how they apply focus. Whether or
+not an element receives focus may depend on the browser and the operating
+system.
+
+For example, the `<button>` below also has a custom style for its `:focus`
+state.
+
+```css
+button:focus {  
+  outline: 4px dashed orange;  
+}  
+```
+
+If you click on the `<button>` with a mouse in Chrome on macOS you should see
+its custom focus style. However, you will not see the custom focus style if you
+click on the `<button>` in Firefox or Safari on macOS. This is because in
+Firefox and Safari the element does not receive focus when you click on it.
+
+<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/focus-style2?path=index.html&previewSize=100&attributionHidden=true"
+    alt="focus-visible on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+{% Aside %}
+See the
+[MDN reference for `<button>` focus behavior](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Clicking_and_focus)
+for a summary of which browsers and operating systems will apply focus to
+`<button>` elements.
+{% endAside %}
+
+Because the behavior of focus is inconsistent, it may require a bit of testing
+on different devices to ensure your focus styles are acceptable to your users.
+
 ## Use `:focus-visible` to selectively show a focus indicator
 
 The new
 [`:focus-visible`]([https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible))
-pseudo-class is applied any time that an element receives focus and that the 
+pseudo-class is applied any time that an element receives focus and the 
 browser determines via heuristics that displaying a focus indicator would be 
 beneficial to the user. In particular, if the most recent user interaction 
 was via the keyboard and the key press did not include a meta, `ALT` / `OPTION`,
@@ -80,7 +117,7 @@ button:focus-visible {
 
 The
 [`:focus-within`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
-pseudo-class is applied to an element either when the element iteslf receives
+pseudo-class is applied to an element either when the element itself receives
 focus or when another element inside that element receives focus.
 
 It can be used to highlight a region of the page to draw the

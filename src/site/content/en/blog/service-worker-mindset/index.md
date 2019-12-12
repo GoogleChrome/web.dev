@@ -70,7 +70,7 @@ Think of your service worker as something that lives outside of your page. You c
 
 ## Long-lived, but short-lived
 
-An active service worker goes on living even after a user leaves your site or closes the tab. The browser keeps this service worker around so that it will be ready the next time the user comes back to your site. Before the very first request is made, the service worker gets a chance to intercept it and take control of the page. This is what allows a site to work offline — the service worker can serve a cached version of the page itself, even if the user has no connection to the internet.
+An active service worker goes on living even after a user leaves your site or closes the tab. The browser keeps this service worker around so that it will be ready the next time the user comes back to your site. Before the very first request is made, the service worker gets a chance to intercept it and take control of the page. This is what allows a site to work offline—the service worker can serve a cached version of the page itself, even if the user has no connection to the internet.
 
 In [Service Workies](https://serviceworkies.com) we visualize this concept with Kolohe (a friendly service worker) intercepting and handling requests.
 
@@ -194,7 +194,7 @@ self.addEventListener("activate", event => {
 Preventing your service workers from clobbering each other takes a bit of work and disciple but is worth the trouble.
 
 {% Aside 'note' %}
-Think of the combination of your service worker and your site as an [installable](https://web.dev/installable) app. Each version should work. Each version should be separate from the others. Imagine how buggy a game would be if the developer accidentally released a patch that used new game logic but outdated assets. You'd rage on the forums so fast! Keep your app versions tidy & clean.
+Think of the combination of your service worker and your site as an [installable](/installable) app. Each version should work. Each version should be separate from the others. Imagine how buggy a game would be if the developer accidentally released a patch that used new game logic but outdated assets. You'd rage on the forums so fast! Keep your app versions tidy & clean.
 {% endAside %}
 
 ## Service worker mindset

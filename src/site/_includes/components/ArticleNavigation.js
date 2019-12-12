@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const stripLanguage = require('../../_filters/strip-language');
+const {html} = require("common-tags");
+const {findBySlug} = require("../../_filters/find-by-slug");
+const stripLanguage = require("../../_filters/strip-language");
+const md = require("markdown-it")();
 
 /* eslint-disable require-jsdoc,max-len */
 
@@ -26,22 +28,38 @@ const stripLanguage = require('../../_filters/strip-language');
  * @return {Array} An array of pathItem slugs.
  */
 function getPathItemsFromTopics(topics) {
-  return topics.reduce(
-    (pathItems, topic) => pathItems.concat(topic.pathItems),
-    []
-  );
+  return topics.reduce((reduced, topic) => {
+    const subPathItems = (topic.subtopics || []).reduce(
+      (accumulator, subtopic) => {
+        return [...accumulator, ...subtopic.pathItems];
+      },
+      [],
+    );
+    topic.pathItems = [...(topic.pathItems || []), ...subPathItems];
+    return reduced.concat(topic.pathItems);
+  }, []);
 }
 
 /**
  * Find the slug for the next pathItem in a learning path.
+ * This requires grabbing the eleventy object for the post and checking if
+ * it is a draft or not.
  * @param {Object} path A learning path.
  * @param {string} slug The current page slug.
  * @return {string} The next pathItem slug or a terminating empty string.
  */
 function findNextPathItemBySlug(path, slug) {
+  let next = "";
   const items = getPathItemsFromTopics(path.topics);
   const idx = items.indexOf(slug);
-  return items[idx + 1] || '';
+  for (let i = idx + 1; i < items.length; i++) {
+    const item = findBySlug(items[i]);
+    if (!item.data.draft) {
+      next = items[i];
+      break;
+    }
+  }
+  return next;
 }
 
 /**
@@ -84,7 +102,7 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
     // oof.
     next = findCollectionItemBySlug(
       collection,
-      findNextPathItemBySlug(path, slug)
+      findNextPathItemBySlug(path, slug),
     );
   }
 
@@ -107,7 +125,7 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
         data-action="click"
         href="${link}"
       >
-        ${label}
+        ${md.renderInline(label)}
       </a>
     `;
   }
@@ -123,7 +141,7 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
       >
         <div class="w-article-navigation__column">
           <h3 class="w-article-navigation__heading">Next article</h3>
-          ${label}
+          ${md.renderInline(label)}
         </div>
       </a>
     `;

@@ -125,7 +125,7 @@ In order for images to look their very best on high resolution screens, it's
 necessary to provide different image versions for different `devicePixelRatios`.
 
 <div class="w-table-wrapper">
-  <table>
+  <table class="w-table--middle-align">
     <thead>
       <tr>
         <th>Device Pixel Ratio</th>

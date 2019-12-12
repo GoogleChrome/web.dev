@@ -73,7 +73,7 @@ cannot be cached separately by the browser.
 Another approach to improve First Paint is to **server-side render** the initial
 HTML of your page. This displays content immediately to the user while scripts
 are still being fetched, parsed, and executed. However, this can increase the
-payload of the HTML file significantly, which can harm [**Time to Interactive**](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#time_to_interactive),
+payload of the HTML file significantly, which can harm [**Time to Interactive**](/interactive),
 or the time it takes for your application to become interactive and can respond
 to user input.
 

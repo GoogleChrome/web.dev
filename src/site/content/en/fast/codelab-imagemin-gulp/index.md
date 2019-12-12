@@ -17,7 +17,7 @@ This Glitch already contains `gulp`, `gulp-cli`, and the `gulp-imagemin` plugin.
 To add the configuration for Imagemin, you'll need to edit your `gulpfile.js` file.
 
 {% Instruction 'remix' %}
-- First, initialize the `gulp-imagemin` plugin by adding this code at the top of 
+- First, initialize the `gulp-imagemin` plugin by adding this code at the top of
 `gulpfile.js`:
 
 ```javascript
@@ -44,7 +44,7 @@ Your `gulpfile.js` file should now look like this:
 ```javascript
 const imagemin = require('gulp-imagemin');
 const gulp = require('gulp');
-  
+
 gulp.task('default', () => {
   gulp.src('images/*')
     .pipe(imagemin())
@@ -58,7 +58,7 @@ You now have a `gulpfile.js` that can be used to compress images.
 
 1. Click the **Tools** button.
 1. Then click the **Console** button.
-1. Run Gulp to compress your images by typing the following command into the 
+1. Run Gulp to compress your images by typing the following command into the
 console:
 
 <pre class="devsite-terminal devsite-click-to-copy">
@@ -68,10 +68,10 @@ gulp
 When Gulp completes, you should see a message like this in the terminal:
 
 ```bash
-gulp-imagemin: Minified 6 images (saved 50 kB - 14.8%)
+gulp-imagemin: Minified 6 images (saved 50 kB—14.8%)
 ```
 
-A 15% improvement in file size is a good start - however, more improvements can
+A 15% improvement in file size is a good start; however, more improvements can
 be made by using different compression settings.
 
 ## Customize your Imagemin Configuration
@@ -123,7 +123,7 @@ compressed too.
 
 ## Customize your Imagemin Configuration (continued)
 
-Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to compress 
+Use the `imagemin-mozjpeg` plugin, which has already been installed for you, to compress
 JPG images.
 
 - Declare the `imagemin-mozjpeg` plugin by putting this line at the top your `gulpfile.js`.
@@ -173,7 +173,7 @@ gulp
 When Gulp completes, you should see a message like this in terminal:
 
 ```shell
-gulp-imagemin: Minified 6 images (saved 667 kB - 66.5%)
+gulp-imagemin: Minified 6 images (saved 667 kB—66.5%)
 ```
 
 Hooray! These results are much better.

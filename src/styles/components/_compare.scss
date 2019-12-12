@@ -10,32 +10,34 @@
 // =============================================================================
 
 .w-compare {
-  font-size: .875em;
   line-height: 1.5em;
-  margin: -16px 0 32px;
+  margin: 0 0 32px;
   padding: 0 0 0 16px;
   position: relative;
 }
 
 // Markdown will put unclassed p tags inside of the compare widget as content
 // so we need to make them act like regular text content.
-.w-compare > p {
-  display: inline;
-  font-size: inherit;
+.w-compare > ol,
+.w-compare > p,
+.w-compare > pre,
+.w-compare > ul {
   margin: 0;
 }
 
 .w-compare__label {
+  font-size: 1.125em;
   font-weight: $FONT_WEIGHT_MEDIUM;
+  padding-bottom: .5em;
 }
 
 .w-compare__label::before {
-  bottom: 0px;
+  bottom: 0;
   content: '';
-  left: 0px;
+  left: 0;
   position: absolute;
-  top: 0px;
-  width: 2px;
+  top: 0;
+  width: 3px;
 }
 
 .w-compare__label--worse {
@@ -52,4 +54,11 @@
 
 .w-compare__label--better::before {
   background-color: $GREEN_800;
+}
+
+.w-compare__caption p {
+  color: $GREY_700;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: .75em 0 0;
 }

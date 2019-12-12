@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Reduce JavaScript payloads with code-splitting
+title: Reduce JavaScript payloads with code splitting
 authors:
   - houssein
 description: |
   Sending large JavaScript payloads impacts the speed of your site
   significantly. Instead of shipping all the JavaScript to your user as soon as
-  the first page of your application is loaded, code-split your bundle into
-  multiple "pieces" and only send what's necessary at the very beginning.
+  the first page of your application is loaded, split your bundle into
+  multiple pieces and only send what's necessary at the very beginning.
 date: 2018-11-05
 codelabs:
   - codelab-code-splitting
@@ -18,8 +18,8 @@ Nobody likes waiting.
 
 Sending large JavaScript payloads impacts the speed of your site
 significantly. Instead of shipping all the JavaScript to your user as soon as
-the first page of your application is loaded, **code-split** your bundle into
-multiple "pieces" and only send what's necessary at the very beginning.
+the first page of your application is loaded, split your bundle into
+multiple pieces and only send what's necessary at the very beginning.
 
 ## Measure
 
@@ -28,11 +28,11 @@ execute all the JavaScript on a page.
 
 <img class="w-screenshot" src="./reduce-javascript-payloads-with-code-splitting-2.png" alt="A failing Lighthouse audit showing scripts taking too long to execute.">
 
-Split the JS bundle to only send the code needed for the initial route when the
+Split the JavaScript bundle to only send the code needed for the initial route when the
 user loads an application. This minimizes the amount of script that needs to be
 parsed and compiled, which results in faster page load times.
 
-Popular module bundlers like [webpack](https://webpack.js.org/),
+Popular module bundlers like [webpack](https://webpack.js.org/guides/code-splitting/),
 [Parcel](https://parceljs.org/code_splitting.html), and
 [Rollup](https://rollupjs.org/guide/en#dynamic-import) allow you to split your
 bundles using [dynamic imports](https://developers.google.com/web/updates/2017/11/dynamic-import).

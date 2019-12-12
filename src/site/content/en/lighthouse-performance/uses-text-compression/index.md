@@ -3,6 +3,8 @@ layout: post
 title: Enable text compression
 description: |
   Learn about the uses-text-compression audit.
+date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - uses-text-compression
 ---
@@ -13,10 +15,7 @@ The Opportunities section of your Lighthouse report lists all text-based resourc
 that aren't compressed:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-text-compression.png" alt="Enable text compression">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Enable text compression
-  </figcaption>
+  <img class="w-screenshot" src="uses-text-compression.png" alt="A screenshot of the Lighthouse Enable text compression audit">
 </figure>
 
 ## How Lighthouse handles text compression
@@ -31,7 +30,7 @@ Lighthouse then compresses each of these with
 [GZIP](https://www.gnu.org/software/gzip/) to compute the potential
 savings.
 
-If the original size of a response is less than 1.4KB, or if the 
+If the original size of a response is less than 1.4KB, or if the
 potential compression savings is less than 10% of the original size, then
 Lighthouse does not flag that response in the results.
 
@@ -68,12 +67,12 @@ To check if a server compressed a response:
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the request that caused the response you're interested in.
 1. Click the **Headers** tab.
-1. Check the `content-heading` header in the **Response Headers** section.
+1. Check the `content-encoding` header in the **Response Headers** section.
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="content-encoding.svg" alt="The content-encoding response header">
   <figcaption class="w-figcaption">
-    Fig. 1 — The <code>content-encoding</code> response header
+    The <code>content-encoding</code> response header.
   </figcaption>
 </figure>
 
@@ -89,6 +88,6 @@ See [Use large request rows](https://developers.google.com/web/tools/chrome-devt
 See also [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
 
 
-## More information
+## Resources
 
-- [Enable text compression audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [Source code for **Enable text compression** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)

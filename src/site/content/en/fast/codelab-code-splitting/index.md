@@ -1,11 +1,11 @@
 ---
 layout: codelab
-title: Reduce JavaScript payloads with code-splitting
+title: Reduce JavaScript payloads with code splitting
 authors:
   - houssein
 description: |
   In this codelab, learn how to improve the performance of a simple application
-  through code-splitting.
+  through code splitting.
 date: 2018-11-05
 glitch: code-splitting-starter
 related_post: reduce-javascript-payloads-with-code-splitting
@@ -13,11 +13,11 @@ related_post: reduce-javascript-payloads-with-code-splitting
 
 Most web pages and applications are made up of many different parts. Instead of
 sending all the JavaScript that makes up the application as soon as the first
-page is loaded, **code-splitting** a bundle into multiple "pieces" (or chunks)
+page is loaded, splitting the JavaScript into multiple chunks
 improves page performance.
 
-In this codelab, the performance of a simple application that sorts three
-numbers is optimized through code-splitting.
+This codelab shows how to use **code splitting** to improve the performance of a
+simple application that sorts three numbers.
 
 ![A browser window shows an application titled Magic Sorter with three fields for inputting numbers and a sort button.](./codelab-code-splitting-1.png)
 

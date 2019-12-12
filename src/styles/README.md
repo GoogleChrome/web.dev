@@ -3,7 +3,7 @@
 ## Structure
 
 The styles for this project attempt to (loosely) follow an ITCSS model.
-Learn more @ https://speakerdeck.com/dafed/managing-css-projects-with-itcss
+Learn more @ [https://speakerdeck.com/dafed/managing-css-projects-with-itcss](https://speakerdeck.com/dafed/managing-css-projects-with-itcss)
 
 - settings: Global variables
 - tools: Mixins and functions
@@ -23,7 +23,7 @@ Learn more @ https://speakerdeck.com/dafed/managing-css-projects-with-itcss
 - Add a comment, `// DevSite override`, to any CSS that's used to override a
   DevSite style. Add the comment on the same line as the style.
 
-  ```
+  ```scss
   color: pink; // DevSite override
   ```
 

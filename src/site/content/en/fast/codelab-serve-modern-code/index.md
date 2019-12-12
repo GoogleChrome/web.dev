@@ -67,12 +67,15 @@ the specification are released every year and include new features that have
 passed the proposal process. Each major browser is always at a different stage
 of supporting these features.
 
+<!-- lint disable no-repeat-punctuation -->
+<!-- note "..." is used in the url for "For…of loop" -->
 The following ES2015 features are used in the application:
 
 +  [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 +  [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-+  [For...of loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
++  [For…of loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 +  [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring)
+<!-- lint enable no-repeat-punctuation -->
 
 The following ES2017 feature is used as well:
 

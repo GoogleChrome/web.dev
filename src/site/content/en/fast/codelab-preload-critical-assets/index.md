@@ -53,7 +53,7 @@ like this:
 ```
 
 Since the CSS file is on the third level of the request chain, Lighthouse has
-identified it as a late-discovered resource. 
+identified it as a late-discovered resource.
 
 ## Preload critical resources
 
@@ -72,7 +72,7 @@ Add a preload tag for this application:
 ```
 
 The `as` attribute is used to identify which type of resource is being
-fetched, and `as="style"` is used to preload stylesheet files. 
+fetched, and `as="style"` is used to preload stylesheet files.
 
 Reload the application and take a look at the **Network** panel in DevTools.
 
@@ -107,7 +107,7 @@ preload hint for this resource as well.
 </head>
 ```
 
-Reload the application and take a look at the **Network** panel. 
+Reload the application and take a look at the **Network** panel.
 A request is made to retrieve `details.css` even though it is not being used by the web page.
 
 <img class="w-screenshot" src="./network-panel-three.png" alt="Network panel with unecessary preload">
@@ -143,8 +143,8 @@ guide explains the topic of same-origin and cross-origin requests in more detail
 
 ## Prefetch future resources
 
-**Prefetch** is another browser hint that can be used to make 
-a request for an asset used for a different navigation route but at 
+**Prefetch** is another browser hint that can be used to make
+a request for an asset used for a different navigation route but at
 a lower priority than other important assets needed for the current page.
 
 In this website, clicking the image takes you to a separate `details/`
@@ -172,7 +172,7 @@ Reload the application and notice how a very low priority request is made for
 
 <img class="w-screenshot" src="./network-panel-five.png" alt="Network panel with prefetched resource">
 
-With DevTools open, click the image on the website to navigate to the `details` page. 
+With DevTools open, click the image on the website to navigate to the `details` page.
 Since a link element is used in `details.html` to fetch `details.css`, a request is made for the
 resource as expected.
 
@@ -191,8 +191,8 @@ when needed.
 ## Preloading and prefetching with webpack
 
 The
-[code splitting guide](/reduce-javascript-payloads-with-code-splitting)
-explores the use of dynamic imports to split a bundle into multiple chunks.
+[Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
+post explores the use of dynamic imports to split a bundle into multiple chunks.
 This is demonstrated with a simple application that
 dynamically imports a module from [Lodash](https://lodash.com/) when a form is submitted.
 
@@ -262,8 +262,8 @@ To summarize:
 Not all browsers currently support both preload and prefetch. This means that
 not all users of your application may notice performance improvements.
 
-+ [Browser support - Preload](https://caniuse.com/#feat=link-rel-preload)
-+ [Browser support - Prefetch](https://caniuse.com/#feat=link-rel-prefetch)
++ [Browser support: Preload](https://caniuse.com/#feat=link-rel-preload)
++ [Browser support: Prefetch](https://caniuse.com/#feat=link-rel-prefetch)
 
 If you would like more information about specific aspects of how preloading and
 prefetching can affect your web page, refer to these articles:

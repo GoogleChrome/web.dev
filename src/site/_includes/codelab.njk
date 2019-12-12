@@ -3,30 +3,26 @@ layout: layout
 permalink: /en/{{page.fileSlug}}/index.html
 ---
 
-{#
-The styles for web-codelab and .w-codelab-glitch live in DevSite.
-When testing locally we can simulate the custom element's styles with
-this inline style tag.
-#}
-{% if site.env === 'dev' %}
-<style>
-  web-codelab {
-    display: flex;
-    height: 100%;
-  }
-
-  .web-codelab-glitch {
-    flex: 1;
-    padding: 16px;
-  }
-</style>
-{% endif %}
-
-<main class="codelab-landing-page">
-  <web-codelab glitch="{{ glitch }}" preview-size="{{ previewSize }}" attribution-hidden>
-    <div class="web-codelab-instructions">
-      <h1 class="w-headline w-headline--two w-mb--sm">{{ title }}</h1>
-      <time class="w-author__published">{{date | prettyDate}}</time>
+<div class="codelab-landing-page">
+  {% if site.env === 'prod' %}
+    <style>
+      devsite-content-footer,
+      devsite-footer-promos,
+      devsite-footer-linkboxes,
+      devsite-footer-utility {
+        display: none;
+      }
+    </style>
+  {% endif %}
+  <web-codelab glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}{% endif %}">
+    <div class="web-codelab__instructions">
+      <h1 class="w-headline w-headline--two web-codelab__headline">{{ title }}</h1>
+      {% if date %}
+        <div class="w-author__published">
+          <time>{{date | prettyDate}}</time>
+          {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
+        </div>
+      {% endif %}
 
       {% if authors %}
         <div class="w-authors w-mt--xl w-pt--sm">
@@ -38,6 +34,12 @@ this inline style tag.
               showSocialMedia: true}
             %}
           {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if draft and site.env === 'dev' %}
+        <div class="w-banner w-banner--warning w-banner--body">
+          🚨 This post is a draft! 🚨
         </div>
       {% endif %}
 
@@ -54,21 +56,5 @@ this inline style tag.
         } %}
       {% endif %}
     </div>
-
-    {# Generate our own Glitch for local testing #}
-    {% if site.env === 'dev' %}
-      <div class="web-codelab-glitch">
-        <div class="glitch-embed-wrap" style="height: 100%; width: 100%;">
-          <iframe
-            allow="geolocation; microphone; camera; midi; encrypted-media"
-            src="https://glitch.com/embed/#!/embed/{{ glitch }}?path={{ path }}&amp;previewSize={{ previewSize }}"
-            alt="{{ glitch }} on Glitch"
-            style="height: 100%; width: 100%; border: 0;"
-          >
-          </iframe>
-        </div>
-      </div>
-    {% endif %}
-
   </web-codelab>
-</main>
+</div>

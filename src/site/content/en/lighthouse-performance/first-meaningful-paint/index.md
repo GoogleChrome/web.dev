@@ -2,136 +2,124 @@
 layout: post
 title: First Meaningful Paint
 description: |
-  Learn about the first-meaningful-paint audit.
+  Learn about Lighthouse's First Meaningful Paint metric and
+  how to measure and optimize it.
+date: 2019-05-02
+updated: 2019-11-05
 web_lighthouse:
   - first-meaningful-paint
 ---
 
-First Meaningful Paint (FMP) is one of six metrics tracked in the performance section of the Lighthouse report.
-Each of these metrics captures some aspect of page load speed.
-The Lighthouse reports displays the FMP time period in seconds:
+{% Aside 'caution' %}
+  First Meaningful Paint (FMP) is deprecated in Lighthouse 6.0. In practice FMP
+  has been overly sensitive to small differences in the page load, leading to inconsistent
+  (bimodal) results. Additionally, the metric's definition relies on browser-specific
+  implementation details, which means it cannot be standardized nor implemented in all web
+  browsers. Moving forward, consider using [Largest Contentful Paint](/largest-contentful-paint/)
+  instead.
+{% endAside %}
+
+First Meaningful Paint (FMP) is one of six metrics
+tracked in the **Performance** section of the Lighthouse report.
+Each metric captures some aspect of page load speed.
+
+Lighthouse displays displays FMP in seconds:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="first-meaningful-paint.png" alt="Lighthouse: First Meaningful Paint">
-  <figcaption class="w-figcaption">
-    Fig. 1 — First Meaningful Paint
-  </figcaption>
+  <img class="w-screenshot" src="first-meaningful-paint.png" alt="A screenshot of the Lighthouse First Meaningful Paint audit">
 </figure>
 
-## What does FMP measure
+## What FMP measures
 
-FMP measures when a user perceives that the primary content of a page is visible.
-The raw score for FMP represents the time duration between the user initiating the page load
-and the page rendering its primary content above the fold.
-It's essentially the paint after which the biggest above-the-fold layout change has happened.
-Learn more about the technical specifics of FMP in
+FMP measures when the primary content of a page is visible to the user.
+The raw score for FMP is the time in seconds between the user initiating the page load
+and the page rendering the primary above-the-fold content.
+FMP essentially shows the timing of the paint
+after which the biggest above-the-fold layout change happens.
+Learn more about the technical details of FMP in Google's
 [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view).
 
 [First Contentful Paint (FCP)](/first-contentful-paint)
-and FMP often share the same values
+and FMP are often the same
 when the first bit of content rendered on the page includes the content above the fold.
-These metrics can differ, say for example, when there's content above the fold within an iframe.
-FMP registers when the content within the iframe is visible to the user.
+However, these metrics can differ when, for example,
+there's content above the fold within an iframe.
+FMP registers when the content within the iframe is visible to the user,
+while FCP _doesn't_ include iframe content.
 
 ## How Lighthouse determines your FMP score
 
-In order to be able to calculate your overall performance score,
-Lighthouse assigns each performance metric an individual score between 0 - 100.
-FMP uses the [same real website performance data as First Contentful Paint (FCP)](https://httparchive.org/reports/loading-speed#fcp).
+Just like FCP, FMP is based on
+[real website performance data from the HTTP Archive](https://httparchive.org/reports/loading-speed#fcp).
 
-When FMP and FCP are the same time in seconds,
-they share the same identical score.
-If FMP is slower than FCP,
-say when there's iframe content loading,
-then the FMP score will be lower than the FCP score.
+When FMP and FCP are the same,
+their scores are identical.
+If FMP occurs after FCP—for example, when a page contains iframe content—the
+FMP score will be lower than the FCP score.
 
-For example, let's say your FCP is 1.5 seconds, your FMP is 3.0 seconds.
+For example, let's say your FCP is 1.5&nbsp;seconds,
+and your FMP is 3&nbsp;seconds.
 The FCP score would be 99, but the FMP score would be 75.
-This table helps explain how to interpret your FMP score:
+
+This table shows how to interpret your FMP score:
 
 <div class="w-table-wrapper">
   <table>
     <thead>
       <tr>
-        <th>FMP metric (in seconds)</th>
+        <th>FMP metric<br>(in seconds)</th>
         <th>Color-coding</th>
-        <th>FMP score (FCP HTTParchive %-tile)</th>
+        <th>FMP score<br>(FCP HTTP Archive percentile)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>0 - 2 seconds</td>
-        <td>Green (fast)</td> 
-        <td>75 - 100</td>
+        <td>0–2</td>
+        <td>Green (fast)</td>
+        <td>75–100</td>
       </tr>
       <tr>
-        <td>2 - 4 seconds</td>
-        <td>Orange (average)</td> 
-        <td>50 - 74</td>
+        <td>2–4</td>
+        <td>Orange (average)</td>
+        <td>50–74</td>
       </tr>
       <tr>
-        <td>Over 4 seconds</td>
-        <td>Red (slow)</td> 
-        <td>0 - 49</td>
+        <td>Over 4</td>
+        <td>Red (slow)</td>
+        <td>0–49</td>
       </tr>
     </tbody>
-    <caption>Table 1 — FMP metric compared to FMP score</caption>
   </table>
 </div>
 
-## How your FMP score impacts overall performance score
+{% include 'content/lighthouse-performance/scoring.njk' %}
 
-The overall Lighthouse performance score is a weighted-average of the performance metrics, including FMP, as well as,
-[First Contentful Paint](/first-contentful-paint), [First CPU Idle](/first-cpu-idle), [Time to Interactive](/interactive), and [Speed Index](/speed-index).
+## How to improve your FMP score
 
-Heavier-weighted metrics have a larger impact on the overall performance score.
-FMP is weighted 1 out of 5, which means it has the lowest impact on the overall performance score
-(see [Scoring Details](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=0) for specifics).
+See [How to improve Largest Contentful Paint on your site][lcp]. The strategies for improving
+FMP are largely the same as the strategies for improving Largest Contentful Paint.
 
-Try also the [Scoring Calculator](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=283330180) to get a better sense of how Lighthouse scoring works.
+## Tracking FMP on real users' devices
 
-## How to improve your performance score
+To learn how to measure when FMP actually occurs on your users' devices,
+see Google's [User-centric Performance Metrics][metrics] page.
+The [Tracking FMP using hero elements][tracking] section describes
+how to programmatically access FCP data and submit it to Google Analytics.
 
-Improving your Lighthouse performance score
-isn't so much about tackling one performance metric at a time,
-but seeing page load speed more holistic.
-Anything you do to improve page load speed, will improve not just one performance metric,
-but quite likely all of these metrics.
-
-The most effective way to improve your performance score
-is to fix the load opportunities highlighted in your Lighthouse report.
-The more significant the opportunity,
-the greater impact it will have on improving your performance score.
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="opportunities.png" alt="Lighthouse: Opportunities section">
-  <figcaption class="w-figcaption">
-    Fig. 2 — Opportunities section
-  </figcaption>
-</figure>
-
-For example,
-[Eliminate render-blocking resources](/render-blocking-resources)
-shows opportunities to improve page load speed (in seconds).
-Eliminate any one or all of the blocking resources, and not only will your FMP score improve,
-but so will additional performance metrics, and your overall Lighthouse performance score.
-
-Learn more about these potential savings from the [Performance audits landing page](/lighthouse-performance).
-
-## Tracking FMP in the real world
-
-To measure when FMP actually occurs on your users' devices,
-see [Tracking FMP using hero elements](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements).
-
-See [Assessing Loading Performance in Real Life with Navigation and Resource Timing](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/)
-for more on collecting real-user metrics with the User Timing API.
-The [User Timing Marks and Measures Lighthouse audit](/user-timings)
+See Google's [Assessing Loading Performance in Real Life with Navigation and Resource Timing](https://developers.google.com/web/fundamentals/performance/navigation-and-resource-timing/)
+for more on collecting real-user metrics.
+The [User Timing marks and measures Lighthouse audit](/user-timings)
 enables you to see User Timing data in your report.
 
-## More information
+{% include 'content/lighthouse-performance/improve.njk' %}
 
-- [FMP audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
+## Resources
+
+- [Source code for **First Meaningful Paint** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/first-meaningful-paint.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Time to First Meaningful Paint: a layout-based approach](https://docs.google.com/document/d/1BR94tJdZLsin5poeet0XoTW60M0SjvOJQttKT-JK8HI/view)
+- [Largest Contentful Paint](/largest-contentful-paint)
 
-
+[metrics]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics
+[tracking]: https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements
+[lcp]: /largest-contentful-paint#how-to-improve-largest-contentful-paint-on-your-site

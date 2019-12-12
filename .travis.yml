@@ -4,7 +4,6 @@ node_js:
 sudo: false
 dist: trusty
 git:
-  depth: 1
   submodules: false
 cache:
   directories:
@@ -13,3 +12,7 @@ install:
   - npm ci
 script:
   - npm run build
+after_success:
+  - npm run lhci
+addons:
+  chrome: stable

@@ -16,7 +16,7 @@ authors:
 
 {% Aside %}
   If you don't yet understand the basic idea behind code splitting, refer to
-  [Reduce JavaScript payloads with code-splitting](/reduce-javascript-payloads-with-code-splitting)
+  [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting)
   guide first.
 {% endAside %}
 
@@ -38,8 +38,8 @@ const DetailsComponent = () => (
 ## Why is this useful?
 
 A large React application will usually consist of many components, utility
-methods and third-party libraries. If an effort isn't made to try and load
-different parts of an application only when they're needed - a single, large
+methods, and third-party libraries. If an effort isn't made to try to load
+different parts of an application only when they're needed, a single, large
 bundle of JavaScript will be shipped to your users as soon as they load the
 first page. This can affect page performance significantly.
 
@@ -52,7 +52,7 @@ component.
 
 The problem with shipping a large JavaScript payload to users is the length of
 time it would take for the page to finish loading, especially on weaker devices
-and network connections. This is why code-splitting and lazy loading is
+and network connections. This is why code splitting and lazy loading is
 extremely useful.
 
 However, there will always be a slight delay that users have to experience when
@@ -214,7 +214,7 @@ class ErrorBoundary extends React.Component {
       return <p>Loading failed! Please reload.</p>;
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 
@@ -231,7 +231,7 @@ const DetailsComponent = () => (
 
 ## Conclusion
 
-If you are unsure where to begin applying code-splitting to your React
+If you are unsure where to begin applying code splitting to your React
 application, follow these steps:
 
 1. Begin at the route level. Routes are the simplest way to identify points of

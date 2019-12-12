@@ -2,48 +2,50 @@
 layout: post
 title: User Timing marks and measures
 description: |
-  Learn about the user-timings audit.
+  Learn how the User Timing API can help you get real-world performance data
+  for your web page.
+date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - user-timings
 ---
 
-Consider instrumenting your app with the
-[User Timing API](https://www.html5rocks.com/en/tutorials/webperformance/usertiming/)
-to measure your app's real-world performance during key user experiences.
-When your app includes User Timing Marks and Measures, 
-Lighthouse reports the User Timing Marks and Measures in the Diagnostics section: 
+## What's the User Timing API?
+
+Making your web app fast and responsive is crucial for a good user experience.
+The first step in improving performance is identifying where time is being spent.
+
+The [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)
+gives you a way to measure your app's JavaScript performance.
+You do that by inserting API calls in your JavaScript and then
+extracting detailed timing data that you can use to optimize your code.
+You can access those data from JavaScript using the API
+or by viewing them on your [Chrome DevTools Timeline Recordings](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference).
+
+Check out the [HTML5 Rocks page about the User Timing API](https://www.html5rocks.com/en/tutorials/webperformance/usertiming/)
+for a quick introduction to using it.
+
+## How Lighthouse reports User Timing data
+
+When your app uses the User Timing API to add marks (that is, time stamps)
+and measures (that is, measurements of the elapsed time between marks),
+you'll see them in your
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) report:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="user-timings.png" alt="Lighthouse: User Timing marks and measures">
-  <figcaption class="w-figcaption">
-    Fig. 1 — User Timing markes and measures
-  </figcaption>
+  <img class="w-screenshot" src="user-timings.png" alt="A screenshot of the Lighthouse User Timing marks and measures audit">
 </figure>
 
-
-## What is the User Timing API
-
-The User Timing API enables you to measure your app's JavaScript performance.
-The basic idea is that you decide which parts of your scripts you want to optimize,
-and then you instrument those parts of your scripts with the User Timing API.
-From there, you can access the results from JavaScript using the API,
-or view them on your Chrome DevTools Timeline Recordings.
-
-Check out [User Timing API](https://www.html5rocks.com/en/tutorials/webperformance/usertiming/)
-for an introduction on using the User Timing API to measure your app's JavaScript performance.
-
-## Scoring
-
-When your app includes User Timing Marks and Measures,
-you'll see these Marks and Measures in your Lighthouse report.
-This audit is not structured as a "pass" or "fail" test.
-It's just an opportunity to discover a useful API that can aid you in measuring your app's performance.
-
-The score that Lighthouse reports for this audit corresponds to the number of User Timing Marks and Measures
-that it finds in your app.
 Lighthouse extracts User Timing data from
 [Chrome's Trace Event Profiling Tool](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool).
 
-## More information
+This audit is not structured as a pass or fail test.
+It's just an opportunity to discover a useful API that can help you measure your app's performance.
 
-- [User Timings marks and measures audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/user-timings.js)
+{% include 'content/lighthouse-performance/scoring.njk' %}
+
+## Resources
+
+- [Source code for **User Timing marks and measures** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/user-timings.js)
+- [User Timing API (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)
+- [User Timing API (HTML5 Rocks)](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)

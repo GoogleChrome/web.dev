@@ -1,5 +1,6 @@
 @import '../settings/colors';
 @import '../settings/global';
+@import '../settings/type';
 @import 'functions';
 @import 'breakpoints';
 
@@ -249,7 +250,7 @@
 
 @mixin w-headline--four {
   @include font($HEADLINE_4);
-  color: $WEB_PRIMARY_COLOR;
+  color: $GREY_700;
 
   @include bp(xxsm) {
     @include font($HEADLINE_4_XXSMALL);

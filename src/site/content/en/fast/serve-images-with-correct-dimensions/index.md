@@ -27,9 +27,9 @@ need to be resized.
 ## Determine the correct image size
 
 Image sizing can be deceptively complicated. For this reason, we've provided two
-approaches: the "good" and the "better." Both will improve performance - but the
-"better" approach may take a bit longer to understand and implement (however, it
-will also reward you with bigger performance improvements). The best choice for
+approaches: the "good" and the "better." Both will improve performance, but the
+"better" approach may take a bit longer to understand and implement. However, it
+will also reward you with bigger performance improvements. The best choice for
 you is the one that you feel comfortable implementing.
 
 ### A quick note on CSS units
@@ -47,7 +47,7 @@ including images:
 
 ### The "Good" Approach
 
-For images with sizing based on...
+For images with sizing based on…
 
 - **Relative units**: Resize the image to a size that will work across all devices.
 
@@ -64,7 +64,7 @@ displayed at.
 
 ### The "Better" approach
 
-For images with sizing based on...
+For images with sizing based on…
 - **Absolute units:** Use [srcset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-srcset) and [sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source#attr-sizes) attributes to serve different images to different display densities. (Read the guide on Responsive Images [here](/serve-responsive-images).)
 
 "Display density" refers to the fact that different displays have different
@@ -102,13 +102,13 @@ far more quickly when using the CLI than a GUI-based image editor.
 
 Resize image to 25% the size of the original:
 
-```
+```bash
 convert flower.jpg -resize 25% flower_small.jpg
 ```
 
 Scale image to fit within "200px wide by 100px tall":
 
-```
+```bash
 # macOS/Linux
 convert flower.jpg -resize 200x100 flower_small.jpg
 

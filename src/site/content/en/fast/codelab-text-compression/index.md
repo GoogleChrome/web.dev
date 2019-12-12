@@ -92,7 +92,7 @@ module bundler. The specific version can be seen in `package.json`.
 ```json/2
 "devDependencies": {
   //...
-  <strong>"webpack": "^4.16.4",</strong>
+  "webpack": "^4.16.4",
   //...
 }
 ```
@@ -207,14 +207,14 @@ few sections, both static and dynamic compression is explored.
 **Dynamic** compression involves compressing assets on-the-fly as they get
 requested by the browser.
 
-### Pros:
+### Pros
 
 + Creating and updating saved compressed versions of assets does not need to be
 done.
 + Compressing on-the-fly works especially well for web pages that are
 dynamically generated.
 
-### Cons:
+### Cons
 
 + Compressing files at higher levels to achieve better compression ratios
 takes longer. This can cause a performance hit as the user waits for assets to
@@ -287,12 +287,12 @@ header shows that the server is sending down this file encoded with `gzip`.
 The idea behind **static** compression is to have assets compressed and saved
 ahead of time.
 
-### Pros:
+### Pros
 
 + Latency due to high compression levels is not a concern anymore.
 Nothing needs to happen on-the-fly to compress files as they can now be fetched directly.
 
-### Cons:
+### Cons
 
 + Assets need to compressed with every build. Build times can increase
 significantly if high compression levels are used.
@@ -331,7 +331,7 @@ module.exports = {
   //...
   plugins: [
     //...
-    <strong>new CompressionPlugin()</strong>
+    new CompressionPlugin()
   ]
 }
 ```

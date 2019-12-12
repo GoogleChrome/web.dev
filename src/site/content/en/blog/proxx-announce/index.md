@@ -1,6 +1,6 @@
 ---
 title: Introducing PROXX
-subhead: A game of proximity, inspired by minesweeper
+subhead: A game of proximity, inspired by minesweeper.
 authors:
   - kosamari
 date: 2019-05-09
@@ -20,7 +20,7 @@ The team that brought you [squoosh.app](https://squoosh.app) is back! This time,
 we built a web-based game called PROXX ([proxx.app](https://proxx.app)). PROXX
 is a game of proximity inspired by the legendary game Minesweeper. The game is
 situated in the space and your job is to find out where the black holes are. It
-works on all kinds of devices — from desktop all the way to feature phones.
+works on all kinds of devices—from desktop all the way to feature phones.
 Users can play the game using a mouse, keyboard, d-pad even with a screen
 reader.
 
@@ -30,7 +30,7 @@ reader.
   <source src="https://storage.googleapis.com/webfundamentals-assets/proxx-announce-blogpost/kaios_x264.mp4" type="video/mp4; codecs=h264">
 </video>
  <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — PROXX on a feature phone
+    PROXX on a feature phone.
   </figcaption>
 </figure>
 
@@ -43,7 +43,7 @@ application:
 - **Accessible**: mouse, keyboard, touch, d-pad, screen readers
 - **Performant**:
   - Less than 25kb of initial payload
-  - Less than 5 seconds TTI ([time to interactive](https://web.dev/interactive))
+  - Less than 5 seconds TTI ([time to interactive](/interactive))
     on slow 3G
   - Consistent 60fps animation
 
@@ -51,7 +51,7 @@ application:
   <img class="w-screenshot" src="pixelbook.jpg"
        alt="A pixelbook running PROXX" class="screenshot">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 2 — PROXX on a pixelbook
+    PROXX on a pixelbook.
   </figcaption>
 </figure>
 
@@ -81,10 +81,10 @@ grid on top. We also have an HTML table with buttons for accessibility reasons,
 that is on top of both of these canvases, but is made invisible (opacity: 0).
 Even though what you see is a canvas rendering of the game state, the player is
 interacting with the invisible DOM table, giving us the ability to attach event
-listeners and rely on the browser’s focus management.
+listeners and rely on the browser's focus management.
 
 By keeping the DOM element in the canvas, we are able to tap into browsers
-native accessibility features. For example: by setting `role=“grid”` on our game
+native accessibility features. For example: by setting `role="grid"` on our game
 table, screen readers can announce the row and column of the focused cell
 without us having to implement that.
 
@@ -110,11 +110,11 @@ implemented key-based interface.
   <img src="featurephone.jpg"
        alt="A man playing PROXX on a yellow feature phone" class="screenshot">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 3 — PROXX on a feature phone
+    PROXX on a feature phone.
   </figcaption>
 </figure>
 
-## What’s next
+## What's next
 
 We had great but busy time building this game in time for Google I/O 2019, so we
 will take some well-deserved time off to rest, but plan to come back with more

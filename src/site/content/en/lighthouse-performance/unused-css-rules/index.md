@@ -3,6 +3,8 @@ layout: post
 title: Remove unused CSS
 description: |
   Learn about the unused-css-rules audit.
+date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - unused-css-rules
 ---
@@ -13,18 +15,15 @@ Remove the unused CSS
 to reduce unnecessary bytes consumed by network activity:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="unused-css-rules.png" alt="Remove unused CSS">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Remove unused CSS
-  </figcaption>
+  <img class="w-screenshot" src="unused-css-rules.png" alt="A screenshot of the Lighthouse Remove unused CSS audit">
 </figure>
 
 
-## How unused CSS slows down performance 
+## How unused CSS slows down performance
 
 Using a `<link>` tag is a common way to add styles to a page:
 
-```css
+```html
 <!doctype html>
 <html>
   <head>
@@ -54,20 +53,20 @@ the more time that a browser might potentially need to spend calculating the sty
 
 ## How to detect unused CSS
 
-The Coverage tab of Chrome DevTools can help you discover critical and uncritical CSS. 
+The Coverage tab of Chrome DevTools can help you discover critical and uncritical CSS.
 See [View used and unused CSS with the Coverage tab](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
+  <img class="w-screenshot w-screenshot--filled" src="/images/includes/coverage.png" alt="Chrome DevTools: Coverage tab">
   <figcaption class="w-figcaption">
-    Fig. 1 — Chrome DevTools: Coverage tab
+    Chrome DevTools: Coverage tab.
   </figcaption>
 </figure>
 
 You can also extract this information from Puppeteer.
 See [page.coverage](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagecoverage).
 
-## Inline critical CSS & defer non-critical CSS
+## Inline critical CSS and defer non-critical CSS
 
 Similar to inlining code in a `<script>` tag,
 inline critical styles required for the first paint
@@ -79,6 +78,6 @@ using the [Critical tool](https://github.com/addyosmani/critical/blob/master/REA
 
 Learn more in [Defer non-critical CSS](/defer-non-critical-css).
 
-## More information
+## Resources
 
-- [Remove unused CSS audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)
+- [Source code for **Remove unused CSS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-css-rules.js)

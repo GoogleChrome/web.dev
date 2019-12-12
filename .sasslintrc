@@ -3,7 +3,11 @@
     "merge-default-rules": false
   },
   "files": {
+    "include": [
+      "src/styles/**/*.scss",
+    ],
     "ignore": [
+      "node_modules/**/*.s+(a|c)ss",
       "src/styles/devsite/_app.scss",
       "src/styles/devsite/_devsite_debug_info.scss",
       "src/styles/devsite/_devsite_heading.scss",
@@ -19,8 +23,8 @@
     "class-name-format": [
       2,
       {
-        "convention": "^w-.+",
-        "convention-explanation": "Classes must be namedspaced with w-* prefix."
+        "convention": "^(w|web)-.+",
+        "convention-explanation": "Classes must be namedspaced with w-* or web-* prefix."
       }
     ],
     "declarations-before-nesting": 2,

@@ -3,6 +3,8 @@ layout: post
 title: Use video formats for animated content
 description: |
   Learn about the efficient-animated-content audit.
+date: 2019-05-02
+updated: 2019-10-04
 web_lighthouse:
   - efficient-animated-content
 ---
@@ -12,17 +14,16 @@ all animated GIFs, along with estimated savings in seconds
 achieved by converting these GIFs to video:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="efficient-animated-content.png" alt="Use video formats for animated content">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Use video formats for animated content
-  </figcaption>
+  <img class="w-screenshot" src="efficient-animated-content.png" alt="A screenshot of the Lighthouse Use video formats for animated content audit">
 </figure>
+
+{% include 'content/lighthouse-performance/scoring.njk' %}
 
 ## Why you should replace animated GIFs with video
 
 Large GIFs are inefficient for delivering animated content.
 By converting large GIFs to videos, you can save big on users' bandwidth.
-Consider using MPEG4/WebM videos for animations and PNG/WebP 
+Consider using MPEG4/WebM videos for animations and PNG/WebP
 for static images instead of GIF to save network bytes.
 
 ## Create MPEG videos
@@ -47,7 +48,7 @@ run the following command in your console:
 
 `ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm`
 
-## Replace the GIF img with a video
+## Replace the GIF image with a video
 Animated GIFs have three key traits that a video needs to replicate:
 
 - They play automatically.
@@ -63,8 +64,8 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 </video>  
 ```
 
-## More information
+## Resources
 
-- [Use video formats for animated content audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/efficient-animated-content.js)
+- [Source code for **Use video formats for animated content** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/efficient-animated-content.js)
 - [Replace animated GIFs with video for faster page loads](/replace-gifs-with-videos)
 - [Replace GIFs with video codelab](/codelab-replace-gifs-with-video)

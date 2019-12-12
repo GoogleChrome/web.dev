@@ -2,61 +2,72 @@
 layout: post
 title: Tap targets are not sized appropriately
 description: |
-  Learn about tap-targets audit.
+  Learn about the "Tap targets are not sized appropriately" Lighthouse audit.
+date: 2019-05-02
+updated: 2019-08-21
 web_lighthouse:
   - tap-targets
 ---
 
-Tap targets are interactive elements, like buttons or links,
-that users frequently tap.
-Appropriately-sized tap targets make pages more mobile-friendly and accessible. 
-In-appropriately sized tap-targets have the opposite effect.
+Tap targets are the areas of a web page that users on touch devices can
+interact with. Buttons, links, and form elements all have tap targets.
 
-A tap target is inappropriately-sized when it's too small, or too close to other tap targets.
-Lighthouse flags pages with inappropriately-sized tap targets:
+Many search engines rank pages based on how mobile-friendly they are. Making
+sure tap targets are big enough and far enough apart from each other makes
+your page more mobile-friendly and accessible.
+
+## How the Lighthouse tap targets audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+with tap targets that are too small or too close together:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="tap-targets.png" alt="Lighthouse audit showing inappropriately sized tap targets">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Tap targets are inappropriately sized
-  </figcaption>
+  <img class="w-screenshot" src="tap-targets.png" alt="Lighthouse audit showing inappropriately sized tap targets">
 </figure>
 
-{% Aside 'note' %}
-Google Search started boosting the ranking of mobile-friendly pages
-on mobile search results back in 2015.
-See [Rolling out the mobile-friendly update](https://webmasters.googleblog.com/2015/04/rolling-out-mobile-friendly-update.html).
-{% endAside %}
+Targets that are smaller than 48&nbsp;px by 48&nbsp;px or closer than 8&nbsp;px
+apart fail the audit. When the audit fails, Lighthouse lists the results in a
+table with three columns:
 
-## What causes this audit to fail
-
-Click the audit to see which tap targets are causing the audit to fail.
-The **Tap Target** column tells you which tap target is inappropriately-sized.
-The **Size** column tells you the size of the target's bounding rectangle, in pixels.
-The **Overlapping Target** column tells you which other tap target is too close.
-
-In practice, Lighthouse provides some leniency on the size,
-So tap targets as small as 40 pixels by 40 pixels usually pass.
+<div class="w-table-wrapper">
+  <table>
+    <tbody>
+      <tr>
+        <td><strong>Tap Target</strong></td>
+        <td>The tap target that is inappropriately sized.</td>
+      </tr>
+      <tr>
+        <td><strong>Size</strong></td>
+        <td>The size of the target's bounding rectangle in pixels.</td>
+      </tr>
+      <tr>
+        <td><strong>Overlapping Target</strong></td>
+        <td>Which other tap targets, if any, are too close.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
 
-## How to fix inappropriately-sized tap targets
+## How to fix your tap targets
 
-To fix the inappropriately-sized tap targets,
-increase the size of the failing tap targets.
-Tap targets that are 48 pixels wide and 48 pixels tall never fail:
+**Step 1:** Increase the size of tap targets that are too small.
+Tap targets that are 48&nbsp;px by 48&nbsp;px never fail the audit. If you have
+elements that shouldn't _appear_ any bigger (for example, icons), try increasing
+the `padding` property:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="touch-target.jpg" alt="Appropriately-sized tap targets">
+  <img class="w-screenshot w-screenshot" src="touch-target.jpg" alt="Appropriately-sized tap targets">
   <figcaption class="w-figcaption">
-    Fig. 1 — Appropriately-sized tap targets
+    Use <code>padding</code> to make tap targets bigger without changing the appearance of an element.
   </figcaption>
 </figure>
 
-Increase the spacing between tap targets,
-using properties such as `padding` or `margin`.
-There should be at least 8 pixels of space between tap targets.
+**Step 2:** Increase the spacing between tap targets that are too close together
+using properties like `margin`. There should be at least 8&nbsp;px between
+tap targets.
 
-## More information
+## Resources
 
-[Inappropriately-sized tap targets audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+[Source code for **Tap targets are not sized appropriately** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)

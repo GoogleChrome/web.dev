@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 
+const livePosts = require("../_filters/live-posts");
+
 module.exports = (collection) => {
   return collection
-    .getFilteredByTag('post')
+    .getFilteredByTag("post")
+    .filter(livePosts)
     .reverse();
 };

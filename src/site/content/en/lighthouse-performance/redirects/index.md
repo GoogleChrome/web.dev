@@ -2,26 +2,15 @@
 layout: post
 title: Avoid multiple page redirects
 description: |
-  Learn about the redirects audit.
+  Learn why page redirects slow down your web page's load speed and
+  how to avoid them.
 web_lighthouse:
   - redirects
+date: 2019-05-04
+updated: 2019-09-19
 ---
 
-
-The Opportunities section of the Lighthouse report
-lists resources that are being redirected: 
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="redirects.png" alt="">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Avoid multiple page redirects
-  </figcaption>
-</figure>
-
-## How redirects slow down performance
-
-Redirects introduce additional delays before the page can load.
-
+Redirects slow down your page load speed.
 When a browser requests a resource that has been redirected,
 the server usually returns an HTTP response like this:
 
@@ -31,24 +20,34 @@ Location: /path/to/new/location
 ```
 
 The browser must then make another HTTP request at the new location
-in order to retrieve the resource.
+to retrieve the resource.
 This additional trip across the network can delay the loading
 of the resource by hundreds of milliseconds.
 
+## How the Lighthouse multiple redirects audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags pages that have multiple redirects:
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="redirects.png" alt="">
+</figure>
+
+A page fails this audit when it has two or more redirects.
+
 ## How to eliminate redirects
 
-Eliminate the redirects by upading the links to these resources.
-Update the links to these resources.
-The links should point to the current locations of the resources.
-It's especially important to avoid redirects in resources 
+Point links to flagged resources
+to the resources' current locations.
+It's especially important to avoid redirects in resources
 required for your [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/).
 
 If you're using redirects to divert mobile users to the mobile version of your page,
-consider re-designing your site to use
+consider redesigning your site to use
 [Responsive Design](https://developers.google.com/web/fundamentals/design-and-ux/responsive/).
 
-## More information
+## Resources
 
-- [Avoid multiple page redirects audit source](https://developers.google.com/web/tools/lighthouse/audits/redirects)
+- [Source code for **Avoid multiple page redirects** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
 - [Redirections in HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections)
-- [Avoid multiple page redirects audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects.js)
+- [Avoid Landing Page Redirects](https://developers.google.com/speed/docs/insights/AvoidRedirects)

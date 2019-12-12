@@ -1,35 +1,32 @@
 ---
 layout: post
-title: Page stops users from pasting into password fields
+title: Prevents users from pasting into password fields
 description: |
-  Learn about `password-inputs-can-be-pasted-into` audit.
+  Learn how to improve the user experience of your site's login screen by
+  allowing users to paste text into password fields.
 web_lighthouse:
   - password-inputs-can-be-pasted-into
+date: 2019-05-02
+updated: 2019-08-28
 ---
 
-Some websites claim that preventing users
-from pasting passwords somehow improves security.
-In
-[Let Them Paste Passwords](https://www.ncsc.gov.uk/blog-post/let-them-paste-passwords),
-the National Cyber Security Centre says that this claim is unfounded.
-Password pasting improves security because it enables users to use password managers.
-Lighthouse flags code that's preventing users from pasting into password fields.
+Some websites claim that allowing users to paste passwords reduces security.
+However, password pasting actually _improves_ security
+because it enables the use of password managers.
 
-<!--***Todo***
-Can't seem to get this audit to fail.
-Created a form with password and followed advice
-to include preventDefault and it doesn't seem to work.
-Post-IO fix.
+Password managers typically generate strong passwords for users,
+store them securely, and then automatically paste them
+into password fields whenever users need to log in. This approach is generally
+more secure than forcing users to type in passwords that are short enough
+to remember.
+
+## How this Lighthouse audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags code that prevents users from pasting into password fields:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="password-inputs-can-be-pasted-into.png" alt="Lighthouse audit shows page stops users from pasting into password fields">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Page stops users from pasting into password fields
-  </figcaption>
+  <img class="w-screenshot" src="password-inputs-can-be-pasted-into.png" alt="Lighthouse audit shows page stops users from pasting into password fields">
 </figure>
--->
-
-## How this audit fails
 
 Lighthouse gathers all `<input type="password">` elements,
 pastes some text into each element,
@@ -42,37 +39,36 @@ Lighthouse doesn't detect that scenario, either.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## Find and inspect the code that's preventing pasting
+## How to enable pasting into password fields
 
-To quickly find and inspect the code that's preventing pasting,
-try enabling the **Clipboard** > `paste` checkbox in the
-[Event Listener Breakpoints](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#event-listeners)
-section of Chrome DevTools,
-then pasting into a password field.
-DevTools should pause on the first line of code in the `paste` event listener.
+### Find the code that's preventing pasting
 
-## How to enable users to paste into password fields
+To quickly find and inspect the code that's preventing pasting:
+{% Instruction 'devtools-sources', 'ol' %}
+1. Expand the **Event Listener Breakpoints** pane.
+1. Expand the **Clipboard** list.
+1. Select the **`paste`** checkbox.
+1. Paste some text into a password field on your page.
+1. DevTools should pause on the first line of code
+   in the relevant `paste` event listener.
 
-Remove the code that's preventing users from pasting into password fields.
-It's probably a call to `preventDefault()` within the `paste` event listener
-that's associated to the password input element.
+### Remove the code that's preventing pasting
+
+The source of the problem is often a call to `preventDefault()`
+within the `paste` event listener
+that's associated with the password input element:
 
 ```js
 let input = document.querySelector('input');
+
 input.addEventListener('paste', (e) => {
   e.preventDefault(); // This is what prevents pasting.
 });
 ```
 
-## Why users should be able to paste into password fields
+If you're only listening to paste events to preempt them,
+remove the entire event listener.
 
-Password managers typically generate strong passwords for users,
-store them securely, and then automatically paste them
-into password fields whenever users need to log in.
+## Resources
 
-See [The "Cobra Effect" That Is Disabling Paste On Password Fields](https://www.troyhunt.com/the-cobra-effect-that-is-disabling/)
-for more on why enabling pasting is a better security practice.
-
-## More information
-
-[Page stops users from pasting into password fields audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)
+[Source code for **Prevents users from pasting into password fields** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/password-inputs-can-be-pasted-into.js)

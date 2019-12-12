@@ -14,23 +14,50 @@
  * limitations under the License.
  */
 
-const stripLanguage = require('../_filters/strip-language');
+const stripLanguage = require("../_filters/strip-language");
+
+const reUnescapedHtml = /[<>]/g;
+const reHasUnescapedHtml = RegExp(reUnescapedHtml.source);
+const htmlEscapes = {
+  "<": "&lt;",
+  ">": "&gt;",
+};
+
+/**
+ * Match a character with its escape counterpart.
+ * @param {string} chr A character
+ * @return {string}
+ */
+function escapeHtmlChar(chr) {
+  return htmlEscapes[chr];
+}
+
+/**
+ * Escape any HTML angle brackets in a string.
+ * @param {string} str A string to escape.
+ * @return {string}
+ */
+function escapeHtml(str) {
+  return str && reHasUnescapedHtml.test(str)
+    ? str.replace(reUnescapedHtml, escapeHtmlChar)
+    : str;
+}
 
 // Generate a JSON object which links posts to their Ligthhouse audits.
 module.exports = (posts) => {
   const toArray = (raw) => (raw instanceof Array ? raw : [raw]);
 
   if (!posts) {
-    throw new Error('No posts were passed to the filter!');
+    throw new Error("No posts were passed to the filter!");
   }
 
   const guides = posts.map((post) => {
     const out = {
-      path: '',
-      topic: '',
+      path: "",
+      topic: "",
       id: post.fileSlug, // e.g. "test-post"
       lighthouse: toArray(post.data.web_lighthouse),
-      title: post.data.title,
+      title: escapeHtml(post.data.title),
       url: stripLanguage(post.url),
     };
 

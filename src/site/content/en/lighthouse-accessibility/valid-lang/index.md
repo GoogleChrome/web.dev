@@ -1,41 +1,41 @@
 ---
 layout: post
-title: Ensure all lang attributes have a valid value
+title: "`[lang]` attributes do not have a valid value"
 description: |
-  Learn about valid-lang audit.
+  Learn how to improve the accessibility of your web page for international
+  audiences by providing a valid value for all lang attributes.
+date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - valid-lange
 ---
 
-Specifying a valid
-[BCP 47 language](https://www.w3.org/International/questions/qa-choosing-language-tags#question)
-helps screen readers announce text properly.
-Lighthouse reports when any `lang` attribute does not have a valid value.
+{% include 'content/lighthouse-accessibility/lang-attr.njk' %}
 
-<!--
-***Todo*** I can't seem to get this audit to fail. I tried having a valid html lang, and then adding an invalid lang to body, and to other parts of the page, but none throw this error.
+If the language changes within your page,
+you must specify a valid
+<a href="https://www.w3.org/International/questions/qa-choosing-language-tags#question" rel="noopener">BCP 47 language</a>
+to ensure that the section in the new language is pronounced correctly.
+
+## How the Lighthouse invalid `lang` attribute audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+flags elements that have a `lang` attribute with an invalid value:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="valid-lang.png" alt="Lighthouse audit showing `lang` attribute does not have a valid value">
-  <figcaption class="w-figcaption">
-    Fig. 1 — The <code>lang</code> attribute does not have a valid value
+  <img class="w-screenshot" src="valid-lang.png"
+    alt="Lighthouse audit showing elements with an invalid value for the lang attribute">
 </figure>
--->
-## How to fix this problem
 
-To fix this problem,
-Use only valid language codes in the `lang` attribute.
-The language specified in the HTML document must be one of the valid languages
-to ensure text is pronounced correctly for screen reader users.
-Learn more in [lang attribute must have a valid value](https://dequeuniversity.com/rules/axe/3.2/valid-lang).
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
 
-<!--
-## How this audit impacts overall Lighthouse score
+## How to fix invalid `lang` attribute values
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
+Use only valid
+<a href="https://www.w3.org/International/questions/qa-choosing-language-tags#question" rel="noopener">BCP 47 language codes</a>
+in all `lang` attribute values.
 
-- [Ensure `lang` attribute has valid value audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/valid-lang.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
-- [List of axe 3.2 rules](https://dequeuniversity.com/rules/axe/3.2)
+## Resources
+
+- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/valid-lang.js" rel="noopener">Source code for **`[lang]` attributes do not have a valid value** audit</a>
+- <a href="https://dequeuniversity.com/rules/axe/3.3/valid-lang" rel="noopener">lang attribute must have a valid value (Deque University)</a>

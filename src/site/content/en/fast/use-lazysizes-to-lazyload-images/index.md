@@ -12,6 +12,12 @@ codelabs:
   - codelab-use-lazysizes-to-lazyload-images
 ---
 
+{% Aside 'note' %}
+  Browser-level native lazy loading is now available! Refer to the [Native lazy loading for the
+  web](/native-lazy-loading) article to learn how to use the `loading` attribute and leverage
+  lazysizes as a fallback for browsers that do not yet support it.
+{% endAside %}
+
 **Lazy loading** is the strategy of loading resources as they are needed, rather
 than in advance. This approach frees up resources during the initial page load
 and avoids loading assets that are never used.

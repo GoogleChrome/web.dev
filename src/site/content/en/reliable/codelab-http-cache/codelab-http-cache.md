@@ -42,8 +42,8 @@ These are the key files you will be working with in the sample project:
 {% Aside %}
 In the "real world", the process of assigning hashes and updating HTML
 files to include references to the latest versioned URL would be handled by a
-build tool, like 
-[webpack](https://webpack.js.org/guides/caching/#output-filenames). 
+build tool, like
+[webpack](https://webpack.js.org/guides/caching/#output-filenames).
 For the purposes of this codelab, assume that the hashes were generated as part
 of a build process that already took place.
 {% endAside %}

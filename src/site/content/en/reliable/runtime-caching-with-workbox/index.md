@@ -124,7 +124,7 @@ instance.
 By using a network-first strategy inside of a service worker, instead of just
 going against the network directly, you have the benefit of being able to fall
 back to _something_, even if it's a potentially stale response. You won't be
-reliably fast, but at least you'll be resilient while offline.
+reliably fast, but at least you'll be reliable while offline.
 
 ### Use cache-first for versioned URLs
 

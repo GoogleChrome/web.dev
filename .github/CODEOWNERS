@@ -3,9 +3,23 @@
 # Read more @ https://help.github.com/articles/about-code-owners/
 
 # Default owners for everything
-* @robdodson
+* @robdodson @samthor
 
-# Guide collections
-content/ @robdodson @Meggin @mfriesenhahn
+# Docs
+content/ @kaycebasques
+content/en/react/ @housseindjirdeh @kaycebasques
+content/en/angular/ @mgechev @kaycebasques
 
-content/en/react/ @housseindjirdeh @robdodson
+# File types
+# These should appear last so they override docs directory owners.
+*.js @robdodson @samthor
+*.json @robdodson @samthor
+*.css @robdodson @samthor
+*.scss @robdodson @samthor
+*.html @robdodson @samthor
+*.htm @robdodson @samthor
+*.njk @robdodson @samthor
+*.yml @robdodson @samthor
+*.yaml @robdodson @samthor
+*.toml @robdodson @samthor
+*.sh @robdodson @samthor

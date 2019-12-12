@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Add a Web App Manifest
+title: Add a web app manifest
 authors:
   - petelepage
 date: 2018-11-05
@@ -27,7 +27,7 @@ served from the root (your website's top level directory).
 ```json
 {
   "short_name": "Weather",
-  "name": "Weather - Do I need an umbrella?",
+  "name": "Weather: Do I need an umbrella?",
   "description": "Weather forecast information",
   "icons": [
     {
@@ -65,7 +65,7 @@ served from the root (your website's top level directory).
         <td>
           Short human-readable name for the application. This is intended for when
           there is insufficient space to display the full name of the web
-          application, like device homescreens.
+          application, like device home screens.
         </td>
       </tr>
       <tr>
@@ -143,7 +143,7 @@ For example:
 
 ## Test your manifest
 
-To verify your manifest is setup correctly, use the **Manifest** tab on the 
+To verify your manifest is setup correctly, use the **Manifest** tab on the
 **Application** panel of Chrome DevTools.
 
 <figure class="w-figure">

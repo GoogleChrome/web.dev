@@ -1,14 +1,15 @@
 ---
-title: "Hands-on with Portals: seamless navigations on the Web"
+title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
-  Learn how to build good navigation UX with the Portals API.
+  Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
+updated: 2019-08-29
 authors:
   - uskay
 hero: hero.png
 alt: A logo of Portals
 description: |
-  Portals help keep your front-end simple while allowing seamless navigations
+  The newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
   with custom transitions. In this article, get hands-on experience using
   Portals to improve user experience across your site.
 tags:
@@ -18,17 +19,17 @@ tags:
 ---
 
 Making sure your pages load fast is key to delivering a good user experience.
-But one area we often overlook is page transitions — what our users see when
+But one area we often overlook is page transitions—what our users see when
 they move between pages.
 
-A new web platform API called [Portals](https://github.com/WICG/portals) aims to
+A new web platform API proposal called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
 site. See Portals in action:
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
+    <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_vp9.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_h264.mp4" type="video/mp4; codecs=h264">
   </video>
  <figcaption class="w-figcaption w-figcaption--fullbleed">
     Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
@@ -38,12 +39,12 @@ site. See Portals in action:
 ## What Portals enable
 
 Single Page Applications (SPAs) offer nice transitions
-but come at the cost of higher complexity to build. 
+but come at the cost of higher complexity to build.
 Multi-page Applications (MPAs) are much easier to build,
 but you end up with blank screens between pages.
 
 Portals offer the best of both worlds:
-the low complexity of an MPA with the seamless transitions of an SPA. 
+the low complexity of an MPA with the seamless transitions of an SPA.
 Think of them like an `<iframe>` in that they allow for embedding,
 but unlike an `<iframe>`,
 they also come with features to navigate to their content.
@@ -60,17 +61,22 @@ until the browser finishes rendering the destination.
 With Portals, users get to experience an animation,
 while the `<portal>` pre-renders content and creates a seamless navigation experience.
 
-Before Portals, we could have rendered another page using an `<iframe>`. We could also have added animations to move the frame around the page. But an `<iframe>` won’t let you navigate into its content. Portals close this gap, enabling interesting use cases.
+Before Portals, we could have rendered another page using an `<iframe>`. We could also have added animations to move the frame around the page. But an `<iframe>` won't let you navigate into its content. Portals close this gap, enabling interesting use cases.
 
 ## Try out Portals in Chrome Canary
 
 Try out Portals in Chrome Canary by flipping an experimental flag:
 `chrome://flags/#enable-portals`.
+During this early phase of the Portals experiment,
+we also recommend using a completely separate user data directory for your tests
+by setting the
+[`--user-data-dir`](https://chromium.googlesource.com/chromium/src/+/master/docs/user_data_dir.md#command-line)
+command line flag.
 Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLPortalElement`.
 
 <img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
 
-Let’s walk through a basic example.
+Let's walk through a basic example.
 
 ```javascript
 // Create a portal with the wikipedia page, and embed it
@@ -86,62 +92,66 @@ document.body.appendChild(portal);
 portal.activate();
 ```
 
-It’s that simple. Try this code in the DevTools console, the wikipedia page should open up.
+It's that simple. Try this code in the DevTools console, the wikipedia page should open up.
 
 <img class="w-screenshot" src="portal-preview-demo.gif" alt="A gif of preview portal style demo">
 
-If you wanted to build something like we showed at Chrome Dev Summit which works just like the demo above, 
+If you wanted to build something like we showed at Chrome Dev Summit which works just like the demo above,
 the following snippet will be of interest.
 
 ```javascript
 // Adding some styles with transitions
 const style = document.createElement('style');
-const initialScale = 0.4;
 style.innerHTML = `
   portal {
     position:fixed;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition:
-      transform 0.4s,
-      bottom 0.7s,
-      left 0.7s,
-      opacity 1.0s;
     box-shadow: 0 0 20px 10px #999;
-    transform: scale(${initialScale});
-    bottom: calc(20px + 50% * ${initialScale} - 50%);
-    left: calc(20px + 50% * ${initialScale} - 50%);
-    z-index: 10000;
+    transform: scale(0.4);
+    transform-origin: bottom left;
+    bottom: 20px;
+    left: 20px;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+  .portal-transition {
+    transition: transform 0.4s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .portal-transition {
+      transition: transform 0.001s;
+    }
   }
   .portal-reveal {
-    transform: scale(1.0);
-    bottom: 0px;
-    left: 0px;
+    transform: scale(1.0) translateX(-20px) translateY(20px);
   }
-  .fade-in {
-    opacity: 1.0;
+  @keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
   }
 `;
 const portal = document.createElement('portal');
-// Let’s navigate into the WICG Portals spec page
+// Let's navigate into the WICG Portals spec page
 portal.src = 'https://wicg.github.io/portals/';
+// Add a class that defines the transition. Consider using
+// `prefers-reduced-motion` media query to control the animation.
+// https://developers.google.com/web/updates/2019/03/prefers-reduced-motion
+portal.classList.add('portal-transition');
 portal.addEventListener('click', evt => {
   // Animate the portal once user interacts
   portal.classList.add('portal-reveal');
 });
 portal.addEventListener('transitionend', evt => {
-  if (evt.propertyName == 'bottom') {
+  if (evt.propertyName == 'transform') {
     // Activate the portal once the transition has completed
     portal.activate();
   }
 });
 document.body.append(style, portal);
-
-// Waiting for the page to load.
-// using setTimeout is a suboptimal way and it’s best to fade-in
-// when receiving a load complete message from the portal via postMessage
-setTimeout(_ => portal.classList.add('fade-in'), 2000);
 ```
 
 It is also easy to do feature detection to progressively enhance a website using Portals.
@@ -177,7 +187,7 @@ These are the three important features to familiarize yourself with:
  - [The `portalHost` interface:](https://wicg.github.io/portals/#the-portalhost-interface) Adds a `portalHost` object to the `window` object. This lets you check if the page is embedded as a `<portal>` element. It also provides an interface for messaging (`postMessage`) back to the host.
  - [The PortalActivateEvent interface:](https://wicg.github.io/portals/#the-portalactivateevent-interface) An event that fires when the `<portal>` is activated. There is a neat function called `adoptPredecessor` which you can use to retrieve the previous page as a `<portal>` element. This allows you to create seamless navigations and composed experiences between two pages.
 
-Let’s look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.
+Let's look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.
 ### Customize the style when embedded as a `<portal>` element
 ```javascript
 // Detect whether this page is hosted in a portal
@@ -237,7 +247,7 @@ portal.activate().then(_ => {
 By combining all of the features supported by Portals,
 you can build really fancy user experiences.
 For instance, the demo below demonstrates how Portals can enable a seamless user experience
-between a website and third party embed content. 
+between a website and third party embed content.
 
 <div style="width:100%; padding-top: 56.25%; position: relative;">
   <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/4JkipxFVE9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -251,10 +261,10 @@ and build your own version!
 
 ## Use cases and plans
 
-We hope you liked this brief tour of Portals! We can’t wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page. 
+We hope you liked this brief tour of Portals! We can't wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page. 
 
 Another important thing to know is that Portals can be used in cross-origin navigations, just like an `<iframe>`. So, if you have multiple websites that cross reference one another, you can also use Portals to create seamless navigations between two different websites. This cross-origin use case is very unique to Portals, and can even improve the user experience of SPAs.
 
 ## Feedback welcome
 
-Portals are still in the early stages so not everything is working yet (that’s why it’s behind an experimental flag). That said, it’s ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on [the Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836) and if you have any feature requests, or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+The Portals proposal is still in the early stages, so not everything is working yet. (That's why it's behind an experimental flag.) That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on the [Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836). If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).

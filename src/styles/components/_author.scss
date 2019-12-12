@@ -10,6 +10,8 @@
 //
 // =============================================================================
 
+$AUTHOR_IMAGE_SIZE_SMALL: 40px;
+
 .w-authors {
   display: grid;
   grid-column-gap: 16px;
@@ -42,8 +44,8 @@
 }
 
 .w-author__image--small {
-  height: 40px;
-  width: 40px;
+  height: $AUTHOR_IMAGE_SIZE_SMALL;
+  width: $AUTHOR_IMAGE_SIZE_SMALL;
 }
 
 .w-author__name,
@@ -60,6 +62,10 @@
 
 .w-author__published {
   color: $GREY_700;
+}
+
+.w-author__separator {
+  padding: 0 4px;
 }
 
 .w-author__link-list {
@@ -88,6 +94,40 @@
 }
 
 .w-author__link:focus {
-  box-shadow: inset 0px 0px 0px 1px $WEB_SECONDARY_COLOR;
+  box-shadow: inset 0px 0px 0px 1px $FOCUS_COLOR;
   outline: none;
+}
+
+
+.w-authors__card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+
+  @include bp(sm) {
+    grid-template-columns: 256px 256px;
+  }
+
+  @include bp(md) {
+    grid-template-columns: 256px 256px 256px;
+  }
+}
+
+.w-author__image--row {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  margin: 0px calc(#{$AUTHOR_IMAGE_SIZE_SMALL} / 4) 0px calc(#{$AUTHOR_IMAGE_SIZE_SMALL} / 2);
+}
+
+.w-author__image--row-item {
+  border-radius: 50%;
+  height: $AUTHOR_IMAGE_SIZE_SMALL;
+  margin-left: calc(-#{$AUTHOR_IMAGE_SIZE_SMALL} / 2);
+  overflow: hidden;
+  position: relative;
+  width: $AUTHOR_IMAGE_SIZE_SMALL;
+}
+
+.w-author__image--row-item > .w-author__image {
+  border: solid white 2px;
 }

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Incorporate performance budgets into your build process
-author:
+authors:
   - mihajlija
 description: |
   The best way to keep an eye on your performance budget is to automate it. Find
@@ -11,18 +11,48 @@ codelabs:
   - codelab-setting-performance-budgets-with-webpack
 ---
 
-Once you’ve defined a performance budget, it’s time to set up the build process
+Once you've defined a performance budget, it's time to set up the build process
 to keep track of it. There are a number of tools that let you define thresholds
-for chosen performance metrics and will warn you if you go over budget. Find out
+for chosen performance metrics and warn you if you go over budget. Find out
 how to choose one that best fits your needs and current setup. 🕵️‍♀️
 
-## Webpack Performance Hints
+
+## Lighthouse performance budgets
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an auditing tool that tests sites in a few key areas—performance, accessibility, best practices and how well your site performs as a progressive web application.
+
+The [command line version](https://developers.google.com/web/tools/lighthouse/#cli) of Lighthouse (v5+) supports setting [performance budgets](https://developers.google.com/web/tools/lighthouse/audits/budgets) based on:
+
+- resource size
+- resource count
+
+You can set budgets for any of the following resource types:
+- `document`
+- `font`
+- `image`
+- `media`
+- `other`
+- `script`
+- `stylesheet`
+- `third-party`
+- `total`
+
+Budgets are set in a JSON file and after defining them the new "Over Budget" column tells you whether you're exceeding any limits.
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./lightwallet.png" alt="Budgets section in Lighthouse report">
+  <figcaption class="w-figcaption">
+    "Budgets" section in Lighthouse report
+  </figcaption>
+</figure>
+
+## Webpack performance hints
 
 [Webpack](https://developers.google.com/web/fundamentals/performance/webpack/) is a powerful build tool for optimizing how your code is delivered to the users. It also supports setting performance budgets based on **asset size**.
 
-Turn on [performance hints](https://webpack.js.org/configuration/performance/) in the configuration file and Webpack will show you command line warnings or errors when your bundle size grows over the limit. It’s a great way to stay mindful about asset sizes throughout the development.
+Turn on [performance hints](https://webpack.js.org/configuration/performance/) in `webpack.config.js` to get command line warnings or errors when your bundle size grows over the limit. It's a great way to stay mindful about asset sizes throughout the development.
 
-After the build step, Webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.
+After the build step, webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot w-screenshot--filled" src="./webpack-output.png" alt="Webpack output highlighting bundle.js">
@@ -40,33 +70,32 @@ The default limit for both assets and entry-points is **250 KB**. You can set yo
   </figcaption>
 </figure>
 
-The numbers are compared against **uncompressed asset sizes**. This is not an ideal situation, since most hosting platforms, CDNs and reverse proxy servers compress assets by default. You can give yourself some wiggle room during development, but keep in mind that compression speeds up only the transfer. Browsers still have to parse uncompressed files and this [parsing cost is not small](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4), especially on mobile devices.
+The budgets are compared against **uncompressed asset sizes**. Uncompressed [JavaScript size is related to the execution time](https://v8.dev/blog/cost-of-javascript-2019) and big files can take a long time to execute, especially on mobile devices.
 
 {% Aside %}
-Bonus feature: Webpack won’t only warn you, it will give you a recommendation
-on how to downsize your bundles.
+Compressed asset sizes affect the transfer time, which is very important on slow networks.
 {% endAside %}
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot w-screenshot--filled" src="./webpack-recommendation.jpg" alt="Webpack performance optimization recommendation">
   <figcaption class="w-figcaption">
-    Webpack performance optimization recommendation 💁
+    Bonus feature: webpack won’t only warn you, it will give you a recommendation on how to downsize your bundles. 💁
   </figcaption>
 </figure>
 
 ## Bundlesize
 
-[Bundlesize](https://github.com/siddharthkp/bundlesize) is a simple npm package that tests asset size against a threshold you’ve set. It can run locally and integrate with your CI.
+[Bundlesize](https://github.com/siddharthkp/bundlesize) is a simple npm package that tests asset size against a threshold you've set. It can run locally and integrate with your CI.
 
 ### Bundlesize CLI
 
 Run [bundlesize CLI](https://github.com/siddharthkp/bundlesize#cli) by specifying a threshold and the file that you want to test.
 
-```
+```bash
 bundlesize -f "dist/bundle.js" -s 170kB
 ```
 
-Bundlesize will output color-coded test results in one line.
+Bundlesize outputs color-coded test results in one line.
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot w-screenshot--filled" src="./bundlesize-fail.png" alt="Failing bundlesize CLI test">
@@ -84,18 +113,18 @@ Bundlesize will output color-coded test results in one line.
 
 ### Bundlesize for CI
 
-You’ll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request will not be merged.** It currently works with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
+You'll get the most value out of bundlesize if you integrate it with a CI to automatically enforce size limits on pull requests. **If bundlesize test fails, that pull request is not merged.** It works for pull requests on GitHub with [Travis CI](https://travis-ci.org/), [CircleCI](https://circleci.com/), [Wercker](http://www.wercker.com/), and [Drone](http://readme.drone.io/).
 
 <figure class="w-figure">
   <img class="screenshot" src="./bundlesize-status.jpg" alt="Bundlesize check status on Github">
   <figcaption class="w-figcaption">
-    Bundlesize check status on Github 
+    Bundlesize check status on Github
   </figcaption>
 </figure>
 
 You may have a fast app today, but adding new code can often change this. Checking pull requests with bundlesize will help you avoid performance regressions. Bootstrap, Tinder, Trivago and many others use it to keep their budgets in check.
 
-With bundlesize, it’s possible to set thresholds for each file separately. This is especially useful if you are code-splitting a bundle in your application.
+With bundlesize, it's possible to set thresholds for each file separately. This is especially useful if you are splitting a bundle in your application.
 
 By default, **it tests gzipped asset sizes**. You can use the compression option to switch to [brotli compression](https://css-tricks.com/brotli-static-compression/) or turn it off completely.
 
@@ -107,18 +136,16 @@ By default, **it tests gzipped asset sizes**. You can use the compression option
   </figcaption>
 </figure>
 
-[Lighthouse](https://developers.google.com/web/tools/lighthouse/) is an auditing tool that tests sites in a few key areas — performance, accessibility, best practices and how well your site performs as a progressive web application. You can run it in Chrome DevTools, from the command line, or as a Node module.
+[Lighthouse Bot](https://github.com/ebidel/lighthouse-ci) integrates with Travis CI and enforces budgets based on any of the five Lighthouse audit categories. For example, a budget of 100 for your Lighthouse performance score. It's sometimes simpler to keep an eye on a single number than individual asset budgets and Lighthouse scores take many things into account.
 
 <figure class="w-figure">
-  <img class="screenshot" src="./lighthouse-scores.jpg" alt="Lighthouse scores 💯">
+  <img class="screenshot" src="./lighthouse-scores.png" alt="Lighthouse scores 💯">
   <figcaption class="w-figcaption">
-    Lighthouse scores 💯 
+    Lighthouse scores 💯
   </figcaption>
 </figure>
 
-It’s sometimes simpler to keep an eye on a single number than individual asset budgets and Lighthouse performance score takes a lot of things into account.
-
-[Lighthouse Bot](https://github.com/ebidel/lighthouse-ci) currently integrates only with Travis and runs an audit after you deploy a site to staging server. It enforces budgets based on any of the five scores. In .travis.yml file set targets with `--perf`, `--pwa`, `--a11y`, `--bp` or `--seo` options. Aim to stay in the green zone with a performance score of at least 80.
+Lighthouse Bot runs an audit after you deploy a site to staging server. In `.travis.yml` set budgets for particular Lighthouse categories with `--perf`, `--a11y`, `--bp`, `--seo` or `--pwa` options. Aim to stay in the green zone with scores of at least 90.
 
 <pre class="prettyprint">
 after_success:
@@ -126,65 +153,76 @@ after_success:
   - npm run lh -- --perf=96 https://staging.example.com # Run Lighthouse test
 </pre>
 
-If the scores for a pull request fall below the threshold you’ve set, **Lighthouse Bot can prevent pull request from being merged**. ⛔
+If the scores for a pull request on GitHub fall below the threshold you've set, **Lighthouse Bot can prevent pull request from being merged**. ⛔
 
 <figure class="w-figure">
   <img class="screenshot" src="./lighthouse-check.png" alt="Lighthouse Bot check status on Github">
   <figcaption class="w-figcaption">
-    Lighthouse Bot check status on Github  
+    Lighthouse Bot check status on Github
   </figcaption>
 </figure>
 
-**Lighthouse Bot** will then comment on your pull request with updated scores. This is a neat feature which encourages conversation about performance as code changes are happening.
+**Lighthouse Bot** then comments on your pull request with updated scores. This is a neat feature which encourages conversation about performance as code changes are happening.
 
 <figure class="w-figure">
   <img src="./lighthouse-bot.png" alt="Lighthouse reporting scores on pull request">
   <figcaption class="w-figcaption">
-    Lighthouse reporting scores on pull request 💬 
+    Lighthouse reporting scores on pull request 💬
   </figcaption>
 </figure>
 
-If you find your pull request blocked by a poor Lighthouse score, run an audit with [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) or in [Dev Tools](https://developers.google.com/web/tools/lighthouse/#devtools). You’ll get a report with details about bottlenecks and hints for simple optimizations.
+If you find your pull request blocked by a poor Lighthouse score, run an audit with [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) or in [Dev Tools](https://developers.google.com/web/tools/lighthouse/#devtools). It generates a report with details about bottlenecks and hints for simple optimizations.
 
 ## Summary
 
 <div class="w-table-wrapper">
-  <table>
+  <table class="w-table--middle-align">
     <tr>
       <th>Tool</th>
       <th>CLI</th>
       <th>CI</th>
-      <th>Pros</th>
-      <th>Cons</th>
+      <th>Summary</th>
     </tr>
     <tr>
-      <td>Webpack</td>
-      <td>✅</td>
-      <td>✘</td>
-      <td>Easy to set up</td>
-      <td>Checks uncompressed sizes </td>
-    </tr>
-    <tr>
-      <td>Bundlesize</td>
-      <td>✅</td>
-      <td>✅</td>
+      <td>Lighthouse</td>
+      <td>✔️</td>
+      <td>❌</td>
       <td>
-          - Checks compressed sizes<br>
-          - Enforces budgets on PRs
+        <ul>
+          <li>Budgets for different types of resources based on their size or count.</li>
+        </ul>
       </td>
-      <td>Works only for PRs on GitHub</td>
+    </tr>
+    <tr>
+      <td>webpack</td>
+      <td>✔️</td>
+      <td>❌</td>
+      <td>
+        <ul>
+          <li>Budgets based on sizes of assets generated by webpack.</li>
+          <li>Checks uncompressed sizes.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>bundlesize</td>
+      <td>✔️</td>
+      <td>✔️</td>
+      <td>
+        <ul>
+          <li>Budgets based on sizes of specific resources.</li>
+          <li>Checks compressed or uncompressed sizes.</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>Lighthouse Bot</td>
-      <td>✘</td>
-      <td>✅</td>
+      <td>❌</td>
+      <td>✔️</td>
       <td>
-          - Enforces budgets on PRs<br>
-          - Score history in PR comments
-      </td>
-      <td>
-          - Only checks scores, no other metrics (yet)<br>
-          - Works only for PRs on GitHub
+        <ul>
+          <li>Budgets based on Lighthouse scores.</li>
+        </ul>
       </td>
     </tr>
   </table>

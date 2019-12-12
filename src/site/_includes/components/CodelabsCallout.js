@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const {findBySlug} = require('../../_filters/find-by-slug');
-const stripLanguage = require('../../_filters/strip-language');
+const {html} = require("common-tags");
+const {findBySlug} = require("../../_filters/find-by-slug");
+const stripLanguage = require("../../_filters/strip-language");
+const md = require("../../_filters/md");
 
 /* eslint-disable require-jsdoc */
 
@@ -38,7 +39,7 @@ module.exports = (slugs) => {
           class="w-codelabs-callout__link"
           href="${stripLanguage(codelab.url)}"
         >
-          ${codelab.data.title}
+          ${md(codelab.data.title)}
         </a>
       </li>
     `;

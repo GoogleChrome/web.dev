@@ -1,6 +1,6 @@
 ---
 title: Visual searching with the Web Perception Toolkit
-subhead: Easy to use real-world interactivity
+subhead: Easy to use real-world interactivity.
 authors:
   - joemedley
 date: 2019-05-07
@@ -61,7 +61,7 @@ demo](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo/ar
        alt="The default interface is available by using just the linked data." class="screenshot"
        width="300">
   <figcaption class="w-figcaption w-figcaption--center">
-    <b>Figure 1</b>: The default interface.
+    The default interface.
   </figcaption>
 </figure>
 
@@ -102,12 +102,12 @@ around those events, and an easy way to style the cards. I'm going to show a
 little of this with code based losely on our [Getting
 Started](https://perceptiontoolkit.dev/getting-started/) guide.
 
-The most important lifecycle event is `PerceivedResults`, which is firedß every
+The most important lifecycle event is `PerceivedResults`, which is fired every
 time a target is found. A target can be a real-world object or a marker such as
 a bar code or QR code.
 
 The process for responding to this event is the same as for any other event with
-an exception alrady alluded to. If you don't implement the event, a user
+an exception already alluded to. If you don't implement the event, a user
 interface is automatically created using structured data. To override this
 behavior start your event handler by calling`event.preventDefault()`.
 

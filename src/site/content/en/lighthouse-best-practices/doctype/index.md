@@ -1,32 +1,44 @@
 ---
 layout: post
-title: Document missing doctype
+title: Page lacks the HTML doctype, thus triggering quirks mode
 description: |
-  Learn about `doctype` audit.
+  Learn how to make sure your page doesn't trigger quirks mode in older
+  browsers.
 web_lighthouse:
   - doctype
+date: 2019-05-02
+updated: 2019-08-28
 ---
 
 Specifying a doctype prevents the browser from switching to
-[quirks-mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode).
-Lighthouse flags your page when it's missing `<!DOCTYPE html>`:
+[quirks mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode),
+which can cause your page to render in unexpected ways.
+
+## How the Lighthouse doctype audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages without the `<!DOCTYPE html>` declaration:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="doctype.png" alt="Lighthouse audit showing missing doctype">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Document missing doctype
-  </figcaption>
+  <img class="w-screenshot" src="doctype.png" alt="Lighthouse audit showing missing doctype">
 </figure>
-
-## How to pass this audit
-
-To pass this audit,
-add `<!DOCTYPE html>`.
-
-Learn more in [Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype).
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
-## More information
+## How to add a doctype declaration
 
-[Document missing doctype audit source](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/doctype.js)
+Add the `<!DOCTYPE html>` declaration to the top of your HTML document:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+…
+```
+
+See MDN's [Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)
+page for more information.
+
+## Resources
+
+- [Source code for **Page lacks the HTML doctype, thus triggering quirks mode** audit](https://github.com/GoogleChrome/lighthouse/blob/ecd10efc8230f6f772e672cd4b05e8fbc8a3112d/lighthouse-core/audits/dobetterweb/doctype.js)
+- [Doctype](https://developer.mozilla.org/en-US/docs/Glossary/Doctype)
+- [Quirks Mode and Standards Mode](https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)

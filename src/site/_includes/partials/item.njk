@@ -1,0 +1,15 @@
+{% for slug in section.pathItems %}
+  {% set item = slug | findBySlug %}
+  {% if item.data.draft %}
+    {# noop #}
+  {% else %}
+    <li class="w-path-listitem">
+      <a
+        class="w-path-link"
+        href="{{ item.url | stripLanguage }}"
+      >
+        {{ item.data.title | md | safe }}
+      </a>
+    </li>
+  {% endif %}
+{% endfor %}

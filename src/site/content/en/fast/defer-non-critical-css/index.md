@@ -5,13 +5,16 @@ authors:
   - demianrenzulli
 description: |
   Learn how to defer non-critical CSS with the goal of optimizing the Critical
-  Rendering Path, and improve FCP (First Contentful Paint).
+  Rendering Path, and improving FCP (First Contentful Paint).
 date: 2019-02-17
+updated: 2019-10-30
 ---
 
-CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources): they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles take longer to render, increasing the likelihood that users bounce: 53% of mobile visits bounce if the page does not load [in 3 seconds or less](https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/research-data/need-mobile-speed-how-mobile-latency-impacts-publisher-revenue/).
+CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources):
+they must be loaded and processed before the browser renders the page. Web pages that contain unnecessarily large styles
+take longer to render.
 
-In this guide, you’ll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [FCP (First Contentful Paint)](https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint).
+In this guide, you'll learn how to defer non-critical CSS with the goal of optimizing the [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), and improving [First Contentful Paint (FCP)](/first-contentful-paint).
 
 ## Loading CSS in a suboptimal way
 
@@ -35,7 +38,7 @@ are loaded in a non-blocking way.
 
 ## Measure
 
-Run [Lighthouse](https://web.dev/discover-performance-opportunities-with-lighthouse/#run-lighthouse-from-chrome-devtools) on [the page](https://defer-css-unoptimized.glitch.me/) and go to the **Performance** section.
+Run [Lighthouse](/discover-performance-opportunities-with-lighthouse/#run-lighthouse-from-chrome-devtools) on [the page](https://defer-css-unoptimized.glitch.me/) and go to the **Performance** section.
 
 The report shows the **First Contentful Paint** metric with a value of "1s", and
 the opportunity **Eliminate render-blocking resources**, pointing to the
@@ -60,7 +63,7 @@ To visualize how this CSS blocks rendering:
 {% Instruction 'devtools-performance' %}
 1. In the Performance panel, click **Reload**.
 
-In the resulting trace, you’ll see that the **FCP** marker is placed immediately
+In the resulting trace, you'll see that the **FCP** marker is placed immediately
 after the CSS finishes loading:
 
 <figure>
@@ -73,7 +76,7 @@ before painting a single pixel on the screen.
 
 ## Optimize
 
-To optimize this page, you need to know which classes are considered “critical”.
+To optimize this page, you need to know which classes are considered "critical".
 You'll use the the [Coverage Tool](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) for that:
 
 1. In DevTools, open the [Command Menu](https://developers.google.com/web/tools/chrome-devtools/ui#command-menu), by pressing `Control+Shift+P` or `Command+Shift+P` (Mac).
@@ -118,10 +121,10 @@ for later:
 
 This is not the standard way of loading CSS. Here's how it works:
 
-* `link rel="preload" as="style"` requests the stylesheet asynchronously. You can learn more about `preload` in the [Preload critical assets guide](https://web.dev/preload-critical-assets).
+* `link rel="preload" as="style"` requests the stylesheet asynchronously. You can learn more about `preload` in the [Preload critical assets guide](/preload-critical-assets).
 * The `onload` attribute in the `link` allows the CSS to be processed when it finishes loading.
 * "nulling" the `onload` handler once it is used helps some browsers avoid re-calling the handler upon switching the rel attribute.
-* The reference to the stylesheet inside of a `noscript` element works as a fallback for browsers that don’t execute JavaScript.
+* The reference to the stylesheet inside of a `noscript` element works as a fallback for browsers that don't execute JavaScript.
 
 The [resulting page](https://defer-css-optimized.glitch.me/) looks exactly like the previous version, even when most styles load asynchronously. Here's how the inlined styles and asynchronous request to the CSS file look like in the HTML file:
 
@@ -141,7 +144,7 @@ Use DevTools to run another **Performance** trace on the [optimized
 page](https://defer-css-optimized.glitch.me/).
 
 The **FCP** marker appears before the page requests the CSS, which means the
-browser doesn’t need to wait for the CSS to load before rendering the page:
+browser doesn't need to wait for the CSS to load before rendering the page:
 
 <figure class="w-figure">
   <img src="./cdt-perf-optimized.png"
@@ -150,7 +153,7 @@ browser doesn’t need to wait for the CSS to load before rendering the page:
 
 As a final step, run Lighthouse on the optimized page.
 
-In the report you’ll see that the FCP page has been reduced by **0.2s** (a 20%
+In the report you'll see that the FCP page has been reduced by **0.2s** (a 20%
 improvement!):
 
 <figure class="w-figure">
@@ -170,10 +173,10 @@ The **Eliminate render-blocking resources** suggestion is no longer under
 ## Next steps & references
 
 In this guide, you used vanilla code to implement this optimization. In a real
-production scenario, it’s a good practice to use functions like
+production scenario, it's a good practice to use functions like
 [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md), that
 can encapsulate this behavior and work well across browsers. As a complement to
-this, you can use tools like
-[Critical](https://github.com/addyosmani/critical/blob/master/README.md), which
-helps extracting and inlining the “Above the Fold” CSS you did manually in the
-**Optimize** step.
+this, the [extract critical CSS guide](/extract-critical-css/)
+covers some of the most popular tools to extract critical CSS and includes
+[a codelab](/codelab-extract-and-inline-critical-css/) to see how
+they work in practice.

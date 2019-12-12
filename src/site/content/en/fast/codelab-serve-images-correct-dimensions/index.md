@@ -52,7 +52,7 @@ pre-installed in the codelab environment.
 {% Instruction 'console', 'ol' %}
 1. In the console, type:
 
-```
+```bash
 convert flower_logo.png -resize 50x50 flower_logo.png
 ```
 
@@ -101,7 +101,7 @@ should not be very noticeable.
 - Use [ImageMagick](https://www.imagemagick.org) to resize the image to 960
 pixels wide. In the terminal type:
 
-```
+```bash
 # macOS/Linux
 convert flower_photo.jpg -resize 960x flower_photo.jpg
 
@@ -110,7 +110,7 @@ magick convert flower_photo.jpg -resize 960x flower_photo.jpg
 ```
 
 {% Aside %}
-`960x` is not a typo - it specifies a width, but not a height. The
+`960x` is not a typo; it specifies a width, but not a height. The
 image height will be scaled in proportion to the width. This is a handy trick
 for when you only care about an image's dimensions in one direction.
 {% endAside %}
@@ -134,7 +134,7 @@ this isn't always clear-cut.
 
 The trade-off here is between image quality on high-resolution devices and
 performance. It's easy to overestimate how closely users will be inspecting
-images (and therefore you should probably make them smaller) - but there are
+images—so you should probably make them smaller—but there are
 certainly use cases where image quality is more important.
 
 The good news is that you can bypass this tradeoff altogether by using

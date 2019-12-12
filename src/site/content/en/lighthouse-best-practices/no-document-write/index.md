@@ -1,49 +1,55 @@
 ---
 layout: post
-title: Page uses document.write()
+title: Uses document.write()
 description: |
-  Learn about `no-document-write` audit.
+  Learn how to speed up your page's load time by avoiding  document.write().
 web_lighthouse:
   - no-document-write
+date: 2019-05-02
+updated: 2019-08-28
 ---
 
-For users on slow connections,
-such as 2G, 3G, or slow Wi-Fi,
-external scripts dynamically injected via `document.write()`
-can delay the display of main page content by tens of seconds.
-Lighthouse lists out every call to `document.write()`:
+Using [`document.write()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/write)
+can delay the display of page content by tens of seconds
+and is particularly problematic for users on slow connections.
+Chrome therefore blocks the execution of `document.write()` in many cases,
+meaning you can't rely on it.
+
+## How the Lighthouse `document.write()` audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags
+calls to `document.write()` that weren't blocked by Chrome:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Page uses <code>document.write()</code>
-  </figcaption>
+  <img class="w-screenshot" src="no-document-write.png" alt="Lighthouse audit showing usage of document.write">
 </figure>
 
-See [Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
-to learn more.
+For the most problematic uses,
+Chrome will either block calls to `document.write()`
+or emit a console warning about them, depending on the user's connection speed.
+Either way, the affected calls appear in the DevTools Console.
+See Google's [Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
+article for more information.
 
-## How this audit fails
+Lighthouse reports any remaining calls to `document.write()`
+because it adversely affects performance no matter how it's used,
+and there are better alternatives.
 
-Lighthouse reports every instance of `document.write()` that it encounters.
-Chrome's intervention against `document.write()` only applies
-to render-blocking, dynamically-injected scripts.
-Other uses of `document.write()` may be acceptable.
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
 
 ## Avoid `document.write()`
 
-Review the usage of `document.write()`.
-If the script meets the criteria outlined in the introduction to
-[Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write), 
-Chrome won't execute the injected script.
-These are the calls to `document.write()` that you want to change.
+Remove all uses of `document.write()` in your code. If it's being used
+to inject third-party scripts, try using
+[asynchronous loading](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)
+instead.
 
-See [How do I fix this?](https://developers.google.com/web/updates/2016/08/removing-document-write#how_do_i_fix_this) for possible solutions. 
+If third-party code is using `document.write()`,
+ask the provider to support asynchronous loading.
 
-## More information
+## Resources
 
-[Page uses `document.write()` audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
-
-
+- [Source code for **Uses `document.write()`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
+- [Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
+- [Parser blocking versus asynchronous JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)

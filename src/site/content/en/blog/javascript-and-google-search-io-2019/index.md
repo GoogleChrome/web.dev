@@ -28,7 +28,7 @@ allowfullscreen></iframe>
 
 In this post we'll focus on best practices for making JavaScript web apps discoverable in Google Search, including:
 
-*   The new evergreen Googlebot 
+*   The new evergreen Googlebot
 *   Googlebot's pipeline for crawling, rendering and indexing
 *   Feature detection and error handling
 *   Rendering strategies
@@ -47,7 +47,7 @@ This year we announced the much-awaited [new evergreen Googlebot](https://webmas
   </figcaption>
 </figure>
 
-Googlebot now uses a modern Chromium engine to render websites for Google Search. On top of that, we will test newer versions of Chromium to _keep_ Googlebot updated, usually within a few weeks of each stable Chrome release. This announcement is big news for web developers and SEOs because it marks the arrival of [1000+ new features](https://caniuse.com/#compare=chrome+41,chrome+74) — such as ES6+, `IntersectionObserver`, and Web Components v1 — in Googlebot. 
+Googlebot now uses a modern Chromium engine to render websites for Google Search. On top of that, we will test newer versions of Chromium to _keep_ Googlebot updated, usually within a few weeks of each stable Chrome release. This announcement is big news for web developers and SEOs because it marks the arrival of [1000+ new features](https://caniuse.com/#compare=chrome+41,chrome+74)—such as ES6+, `IntersectionObserver`, and Web Components v1—in Googlebot.
 
 ## Learn how Googlebot works
 
@@ -56,7 +56,7 @@ Googlebot is a pipeline with several components. Let's take a look to understand
 <figure class="w-figure w-figure--center w-figure--fullbleed">
   <img src="googlebot-process.png" alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Googlebot's pipeline for crawling, rendering, and indexing a page.
+    Googlebot's pipeline for crawling, rendering, and indexing a page.
   </figcaption>
 </figure>
 
@@ -73,7 +73,7 @@ Your technical setup can influence the process of crawling, rendering, and index
 
 ## Use feature detection and handle errors
 
-The evergreen Googlebot has lots of new features, but some features are still not supported. Relying on unsupported features or not handling errors properly can mean Googlebot can't render or index your content. 
+The evergreen Googlebot has lots of new features, but some features are still not supported. Relying on unsupported features or not handling errors properly can mean Googlebot can't render or index your content.
 
 Let's look at an example:
 
@@ -87,7 +87,7 @@ Let's look at an example:
  </body>
 ```
 
-This page might not show any content in some cases because the code doesn't handle when the user declines the permission or when getCurrentPosition call returns an error. Googlebot declines permission requests like this by default. 
+This page might not show any content in some cases because the code doesn't handle when the user declines the permission or when getCurrentPosition call returns an error. Googlebot declines permission requests like this by default.
 
 This is a better solution:
 
@@ -117,7 +117,7 @@ If you have problems with getting your JavaScript site indexed, [walk through ou
 
 ## Choose the right rendering strategy for your web app
 
-The default rendering strategy for single-page apps today is client-side rendering. The HTML loads the JavaScript, which then generates the content in the browser as it executes. 
+The default rendering strategy for single-page apps today is client-side rendering. The HTML loads the JavaScript, which then generates the content in the browser as it executes.
 
 Let's look at a web app that shows a collection of cat images and uses JavaScript to render entirely in the browser.
 
@@ -126,7 +126,7 @@ Let's look at a web app that shows a collection of cat images and uses JavaScrip
   <figcaption class="w-figcaption">
     The rendering strategy influences the performance and robustness of your web apps.
   </figcaption>
-</figure> 
+</figure>
 
 If you're free to choose your rendering strategy, consider server-side rendering or pre-rendering. They execute JavaScript on the server to generate the initial HTML content, which can improve performance for both users and crawlers. These strategies allow the browser to start rendering HTML as it arrives over the network, making the page load faster.  The [rendering session at I/O](https://www.youtube.com/watch?v=k-A2VfuUROg)  or [the blog post about rendering on the web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web) shows how server-side rendering and hydration can improve the performance and user experience of web apps and provides more code examples for these strategies.
 

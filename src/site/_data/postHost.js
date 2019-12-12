@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const learn = require('../content/en/learn/learn.11tydata.js');
+const data = require("../content/en/learn/learn.11tydata.js")();
 
 // =============================================================================
 // POST HOST
@@ -28,7 +28,7 @@ const learn = require('../content/en/learn/learn.11tydata.js');
 module.exports = function() {
   const out = {};
 
-  const paths = learn.paths;
+  const paths = data.learn.paths;
   paths.forEach((path) => {
     path.topics.forEach((topic) => {
       (topic.pathItems || []).forEach((id) => {

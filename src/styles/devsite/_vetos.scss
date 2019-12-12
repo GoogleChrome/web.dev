@@ -23,6 +23,12 @@ body[layout] .devsite-main-content {
   padding: 0;
 }
 
+@media screen and (max-width: 600px) {
+  body[layout='full'] .devsite-main-content {
+    padding: 0;
+  }
+}
+
 // 1023px - 600px
 @media screen and (min-width: $BREAKPOINT_VALUE_MOBILE) {
   body[layout] .devsite-main-content {
@@ -47,7 +53,8 @@ body[layout] .devsite-main-content {
 }
 
 devsite-header .devsite-top-logo-row,
-devsite-tabs {
+devsite-tabs,
+devsite-book-nav .devsite-mobile-header {
   height: $TAB_HEIGHT;
 }
 
@@ -55,7 +62,8 @@ devsite-header .devsite-site-logo-link:focus {
   opacity: 1;
 }
 
-devsite-header .devsite-site-logo {
+devsite-header .devsite-site-logo,
+devsite-book-nav .devsite-site-logo {
   height: 30px; // natural height of lockup
 }
 
@@ -125,7 +133,7 @@ body devsite-heading[link] {
 .devsite-site-logo-link:focus,
 .devsite-footer-sites-logo-link:focus {
   outline: auto;
-  outline-color: $WEB_SECONDARY_COLOR;
+  outline-color: $FOCUS_COLOR;
 }
 
 .devsite-site-logo-link:active {

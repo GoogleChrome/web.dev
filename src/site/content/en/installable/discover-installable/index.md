@@ -98,5 +98,5 @@ the audits. The key audits to check are:
 
 To learn what other browsers require for a PWA to be considered installable,
 check out the [Add to
-Homescreen](https://developers.google.com/web/fundamentals/app-install-banners/)
+Home Screen](https://developers.google.com/web/fundamentals/app-install-banners/)
 section on WebFundamentals.

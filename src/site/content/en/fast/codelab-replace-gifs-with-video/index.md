@@ -4,6 +4,7 @@ title: Replace GIFs with video
 authors:
   - robdodson
 date: 2018-11-05
+updated: 2019-08-29
 description: |
   In this codelab, learn how to improve performance by replacing an animated GIF
   with a video.
@@ -66,7 +67,7 @@ cat-herd.gif
 - In the console, run:
 
 ```bash
-ffmpeg -i cat-herd.gif cat-herd.mp4
+ffmpeg -i cat-herd.gif -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p cat-herd.mp4
 ```
 
 This tells FFmpeg to take the **input**, signified by the `-i` flag, of

@@ -31,7 +31,7 @@ static assets in your application with every build.
 Service workers enable you to store important resources in its cache
 (_precaching_) so that when a user loads the web page for a second time, the
 browser can retrieve them from the service worker instead of making requests to
-the network. This results in faster page loads on repeat visits as well as the
+the network. This results in faster page loads on repeat visits as well as in the
 ability to surface content when the user is offline.
 
 ## Workbox in CRA
@@ -80,7 +80,7 @@ from the service worker.
 Since the service worker caches all static assets, try to use the application
 while offline:
 
-+  In the **Network** tab in DevTools, enable the **Offline** checkbox to
+1.  In the **Network** tab in DevTools, enable the **Offline** checkbox to
    simulate an offline experience.
 {% Instruction 'reload' %}
 

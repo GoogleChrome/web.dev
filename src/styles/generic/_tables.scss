@@ -35,19 +35,25 @@ td {
   color: inherit;
   min-width: 120px; // Prevent narrow columns when you have th's like 'JS'
   text-align: left;
-  vertical-align: middle; // DevSite override
 }
 
 th {
   font-family: $HEADLINE_FONT;
   font-size: .875em;
   font-weight: 500;
+  line-height: 24px;
   padding-right: 24px;
+  vertical-align: middle;
 }
 
 td {
   line-height: 1.5;
   padding: 16px 24px 16px 0;
+  vertical-align: top;
+}
+
+.w-table--middle-align td {
+  vertical-align: middle;
 }
 
 caption {
@@ -68,12 +74,18 @@ table code {
   font-weight: 400; // DevSite override
   line-height: 1.7em; // DevSite override
   margin: 0;
+  padding: 0;
 }
 
 table ul:not([class]),
 table ol:not([class]) {
   margin: 24px 0;
   padding-left: 40px;
+}
+
+table ul:not([class]):first-child,
+table ol:not([class]):first-child {
+  margin-top: 0;
 }
 
 table ul:not([class]):last-child,
@@ -93,4 +105,8 @@ table ul:not([class]) li::before {
 
 table ol:not([class]) li::before {
   margin: 2px 0 0;
+}
+
+td > :last-child > li:last-child {
+  margin-bottom: 0;
 }

@@ -4,32 +4,32 @@ title: Using Lighthouse Bot to set a performance budget
 authors:
   - mihajlija
 description: |
-  You’ve done hard work to get fast, now make sure you stay fast by automating
+  You've done hard work to get fast, now make sure you stay fast by automating
   performance testing in Travis CI with Lighthouse Bot.
 date: 2019-01-28
 ---
 
-You’ve done hard work to get fast, now make sure you stay fast by automating
+You've done hard work to get fast, now make sure you stay fast by automating
 performance testing with [Lighthouse Bot](https://github.com/ebidel/lighthousebot).
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) grades your app
 in 5 categories, and one of those is performance. While you could try to remember to
 monitor performance changes with [DevTools](https://developers.google.com/web/tools/lighthouse/#devtools)
 or [Lighthouse CLI](https://developers.google.com/web/tools/lighthouse/#cli) every
-time you edit your code, you don’t have to do that. Tools can do the tedious
+time you edit your code, you don't have to do that. Tools can do the tedious
 stuff for you. [Travis CI](https://travis-ci.com/) is a great service that
 automatically runs tests for your app in the cloud every time you push new code.
 
 Lighthouse Bot integrates with Travis CI, and its performance budget feature ensures
-that you won’t accidentally downgrade performance without noticing. You can
+that you won't accidentally downgrade performance without noticing. You can
 [configure your repository](https://help.github.com/articles/about-required-status-checks/)
-so that it won’t allow merging pull-requests if the Lighthouse scores fall below
-the threshold you’ve set (e.g. < 96/100).
+so that it won't allow merging pull-requests if the Lighthouse scores fall below
+the threshold you've set (e.g. < 96/100).
 
 <figure class="w-figure">
   <img src="./lighthouse-bot.png"
        alt="Failing Lighthouse Bot checks on GitHub" class="w-screenshot">
-  <figcaption class="w-figcaption"><b>Figure 1</b>: Lighthouse Bot checks on GitHub</figcaption>
+  <figcaption class="w-figcaption">Lighthouse Bot checks on GitHub.</figcaption>
 </figure>
 
 {% Aside %}
@@ -37,7 +37,7 @@ Lighthouse Bot used to be called Lighthouse CI.
 {% endAside %}
 
 Although you can test performance on localhost, your site will often perform
-differently on live servers. To get a more realistic picture, it’s best to
+differently on live servers. To get a more realistic picture, it's best to
 deploy your site to a staging server. You can use any hosting service; this
 guide will take [Firebase hosting](https://firebase.google.com/docs/hosting/)
 for a spin.
@@ -51,7 +51,7 @@ and make sure to add it as a repository on your GitHub account.
 
 ## 2. Deploy to Firebase
 
-To get started, you’ll need a Firebase account. Once you’ve taken care of that,
+To get started, you'll need a Firebase account. Once you've taken care of that,
 [create a new project in the Firebase console](https://console.firebase.google.com/)
 by clicking "Add project":
 
@@ -63,26 +63,26 @@ You'll need [Firebase CLI](https://firebase.google.com/docs/cli/) to deploy the
 app. Even if you already have it installed, it's good practice to frequently
 update the CLI to the latest version with this command:
 
-```
+```bash
 npm install -g firebase-tools
 ```
 
 To authorize the Firebase CLI, run:
 
-```
+```bash
 firebase login
 ```
 
 Now initialize the project:
 
-```
+```bash
 firebase init
 ```
 
 The console will ask you a series of questions during setup:
 
 - When prompted to select features, choose "Hosting."
-- For the default Firebase project, select the project that you’ve created in
+- For the default Firebase project, select the project that you've created in
   the Firebase console.
 - Type in "public" as your public directory.
 - Type "N" (no) to configuring as a single-page app.
@@ -90,17 +90,17 @@ The console will ask you a series of questions during setup:
 This process creates a `firebase.json` configuration file in the root of your
 project directory.
 
-Congrats, you’re ready to deploy! Run:
+Congrats, you're ready to deploy! Run:
 
-```
+```bash
 firebase deploy
 ```
 
-In a split second, you’ll have a live app.
+In a split second, you'll have a live app.
 
 ## 3. Setting up Travis
 
-You’ll need to [register an account](https://travis-ci.com) on Travis and then
+You'll need to [register an account](https://travis-ci.com) on Travis and then
 activate GitHub Apps integration under the Settings section of your profile.
 
 <img src="./travis-ci.png" class="w-screenshot" alt="GitHub Apps integration on Travis CI">
@@ -128,19 +128,19 @@ install:
 before_script:
   - npm install -g firebase-tools
 script:
-  - webpack</td>
+  - webpack
 ```
 
 The YAML file tells Travis to install all the dependencies and build your app.
-Now it’s your turn to **push the example app to your own GitHub repository**.
+Now it's your turn to **push the example app to your own GitHub repository**.
 If you haven't already, run the following command:
 
-```
+```bash
 git push origin master
 ```
 
 Click on your repo under Settings in Travis to see your project's Travis
-dashboard. If everything is cool, you’ll see your build go from yellow to green
+dashboard. If everything is cool, you'll see your build go from yellow to green
 in a couple of minutes. 🎉
 
 ## 4. Automate Firebase deployment with Travis
@@ -157,7 +157,7 @@ To generate the token run this command:
 <pre class="devsite-terminal devsite-click-to-copy">firebase login:ci</pre>
 
 It will open a new tab in a browser window so that Firebase can verify you.
-After that, look back at the console, and you’ll see your freshly minted token.
+After that, look back at the console, and you'll see your freshly minted token.
 Copy it and go back to Travis.
 
 In your project's Travis dashboard, go to **More options** > **Settings** > **Environment variables**.
@@ -183,10 +183,10 @@ Now whenever you make changes to your app, they will be automatically deployed t
 
 ## 5. Setting up Lighthouse Bot
 
-Friendly Lighthouse Bot updates you on your app’s Lighthouse scores. 
+Friendly Lighthouse Bot updates you on your app's Lighthouse scores.
 It just needs an invitation to your repo.
 
-On GitHub, go to your project’s settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
+On GitHub, go to your project's settings and **add "lighthousebot" as a collaborator** (Settings>Collaborators):
 
 <img class="w-screenshot" src="./lighthouse-bot-collaborator.png" alt="Lighthouse bot collaborator status">
 
@@ -209,7 +209,7 @@ You can reuse this same key for other projects.
 
 Next, add Lighthouse Bot to your project by running:
 
-```
+```bash
 npm i --save-dev https://github.com/ebidel/lighthousebot
 ```
 
@@ -235,20 +235,20 @@ after_success:
 ```
 
 It will run a Lighthouse audit on the given URL, so replace
-https://staging.example.com with the URL of your app
-(that’s your-app-123.firebaseapp.com).
+`https://staging.example.com` with the URL of your app
+(that's your-app-123.firebaseapp.com).
 
-Set your standards high and tweak the setup so you don’t accept any changes to
+Set your standards high and tweak the setup so you don't accept any changes to
 the app that bring the performance score below 95:
 
 ```yaml
-- npm run lh -- --perf=95 https://staging.example.com 
+- npm run lh -- --perf=95 https://staging.example.com
 ```
 
 ### Make a pull request to trigger Lighthouse Bot test on Travis
 
 Lighthouse Bot will only test pull requests, so if you push to the master branch
-now, you’ll just get "This script can only be run on Travis PR requests" in your
+now, you'll just get "This script can only be run on Travis PR requests" in your
 Travis log.
 
 To trigger the Lighthouse Bot test:
@@ -280,12 +280,12 @@ any of those with Lighthouse Bot flags:
 
 Example:
 
-```
+```bash
 npm run lh --perf=93 --seo=100 https://staging.example.com
 ```
 
 This will fail the PR if the performance score drops below 93 **or** the SEO
 score drops below 100.
 
-You can also choose not to get Lighthouse Bot’s comments with the `--no-comment`
+You can also choose not to get Lighthouse Bot's comments with the `--no-comment`
 option.

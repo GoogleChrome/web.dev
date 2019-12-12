@@ -30,7 +30,7 @@ display.
 Use art direction to improve visual presentation. For example, the different
 image croppings in this demo ensure that the point of interest (the flower) is
 always shown in detail, regardless of the display. Art direction's benefits are
-purely aesthetic - it provides no performance benefit over responsive images.
+purely aesthetic; it provides no performance benefit over responsive images.
 
 ## View the code
 
@@ -58,7 +58,7 @@ tag.
 
 {% Aside 'gotchas' %}
 - Be careful when ordering source tags. The browser uses the first
-`<source>` tag with a matching media query - even if subsequent
+`<source>` tag with a matching media query, even if subsequent
 `<source>` tags also have matching media queries.
 - The value of the `srcset` attribute is an image filepath.
 - Use images that are appropriately sized. Just because art

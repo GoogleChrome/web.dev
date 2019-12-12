@@ -1,17 +1,54 @@
 ---
 title: An example blog post
 subhead: A catchy subhead that previews the content.
+description: |
+  A description of the article that will appear in search results.
+
+# A list of authors. Supports more than one.
 authors:
   - robdodson
-date: 2019-04-20
+
+date: 2019-10-31
+# Add an updated date to your post if you edit in the future.
+# updated: 2019-11-01
+
 hero: hero.jpg
+# You can adjust the fit of your hero image with this property.
+# Values: contain | cover (default)
+# hero_fit: contain
+
 # You can adjust the position of your hero image with this property.
 # Values: top | bottom | center (default)
 # hero_position: bottom
+
+# You can provide an optional cropping of your hero image to be used as a
+# thumbnail. Note the alt text will be the same for both the thumbnail and
+# the hero.
+# thumbnail: thumbnail.jpg
+
 alt: A description of the hero image for screen reader users.
-description: |
-  This post is a test to demonstrate all of the components that can go into
-  an article. This description appears in the meta tag.
+
+# You can provide a custom thumbnail and description for social media cards.
+# Images should be 1200 x 630.
+# If no social thumbnail is provided then the post will attempt to fallback to
+# the post's thumbnail or hero from above. It will also reuse the alt.
+# social:
+#   google:
+#     title: A title for Google search card.
+#     description: A description for Google search card.
+#     thumbnail: google_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
+#   facebook:
+#     title: A title for Facebook card.
+#     description: A description for Facebook card.
+#     thumbnail: facebook_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
+#   twitter:
+#     title: A title for Twitter card.
+#     description: A description for Twitter card.
+#     thumbnail: twitter_thumbnail.jpg
+#     alt: Provide an alt for your thumbnail.
+
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - accessibility
@@ -47,7 +84,7 @@ tempus enim.
 <figure class="w-figure w-figure--fullbleed">
   <img src="a.jpg" alt="">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Fig. 1 — Large image.
+    Large image.
   </figcaption>
 </figure>
 
@@ -62,7 +99,7 @@ quam sem.
 <figure class="w-figure">
   <img src="image-small.png" alt="" style="max-width: 400px;">
   <figcaption class="w-figcaption">
-    Fig. 2 — Small image.
+    Small image.
   </figcaption>
 </figure>
 
@@ -87,7 +124,7 @@ quam sem.
 <figure class="w-figure w-figure--inline-right">
   <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
   <figcaption class="w-figcaption">
-    Fig. 3 — Inline right, outlined image.
+    Inline right, outlined image.
   </figcaption>
 </figure>
 
@@ -108,7 +145,7 @@ velit. Morbi at quam sem.
 <figure class="w-figure w-figure--inline-left">
   <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
   <figcaption class="w-figcaption">
-    Fig. 4 — Inline left, outlined image.
+    Inline left, outlined image.
   </figcaption>
 </figure>
 
@@ -129,7 +166,7 @@ velit. Morbi at quam sem.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
   <figcaption class="w-figcaption">
-    Fig. 5 — Filled screenshot.
+    Filled screenshot.
   </figcaption>
 </figure>
 
@@ -222,7 +259,7 @@ quam sem.
   <figure class="w-figure">
     <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
     <figcaption class="w-figcaption">
-      Fig. 5 — Filled screenshot.
+      Filled screenshot.
     </figcaption>
   </figure>
   </li>
@@ -269,7 +306,7 @@ quam sem.
   <figure class="w-figure">
     <img class="w-screenshot w-screenshot--filled" src="image-screenshot.png" alt="">
     <figcaption class="w-figcaption">
-      Fig. 5 — Filled screenshot.
+      Filled screenshot.
     </figcaption>
   </figure>
   </li>
@@ -390,12 +427,12 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
+<blockquote>
+  <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum
     a massa sit amet ullamcorper.
   </p>
-  <cite class="w-blockquote__cite">
+  <cite>
     by Jon Doe
   </cite>
 </blockquote>

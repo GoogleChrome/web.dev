@@ -2,9 +2,11 @@
 layout: layout
 ---
 
+{% set topics = path.topics | removeDrafts %}
+
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
-<main class="path-landing-page">
+<div class="path-landing-page">
   <header class="w-masthead-path">
     <div class="w-masthead-path__container">
       <div class="w-masthead-path__left">
@@ -17,6 +19,12 @@ layout: layout
     </div>
   </header>
 
+  {% if path.draft and site.env === 'dev' %}
+    <div class="w-banner w-banner--warning w-banner--body">
+      🚨 This path is a draft! 🚨
+    </div>
+  {% endif %}
+
   <section class="w-layout-container w-path-intro">
     <div class="w-path-intro__overview">
       <h2 class="w-headline--three no-link">Overview</h2>
@@ -25,7 +33,7 @@ layout: layout
     <div class="w-path-intro__learn">
       <h2 class="w-headline--three no-link">What you'll learn</h2>
       <ul class="w-icon-list">
-        {% for topic in path.topics %}
+        {% for topic in topics %}
           <li class="w-icon-list__item w-icon-list__item--check">
             {{ topic.title }}
           </li>
@@ -37,7 +45,7 @@ layout: layout
   <hr>
 
   {# <section class="w-grid">
-    {% for topic in path.topics %}
+    {% for topic in topics %}
     <h2 id="{{ topic.title | slug }}" class="no-link w-path-heading w-headline--three">
       {{ topic.title }}
       <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
@@ -52,26 +60,8 @@ layout: layout
   </section> #}
 
   <section class="w-layout-container">
-    <div class="w-numbered-headers">
-    {% for topic in path.topics %}
-      <h2 id="{{ topic.title | slug }}" class="no-link w-headline--three w-numbered-header w-numbered-header--horizontal">
-        {{ topic.title }}
-        <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
-      </h2>
-      <ul class="w-path-list">
-      {% for slug in topic.pathItems %}
-        {% set item = slug | findBySlug %}
-        <li class="w-path-listitem">
-          <a
-            class="w-path-link"
-            href="{{ item.url | stripLanguage }}"
-          >
-            {{ item.data.title }}
-          </a>
-        </li>
-      {% endfor %}
-      </ul>
+    {% for topic in topics %}
+      {% include 'partials/topic.njk' %}
     {% endfor %}
-    </div>
   </section>
-</main>
+</div>

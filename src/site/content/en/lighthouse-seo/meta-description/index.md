@@ -1,61 +1,88 @@
 ---
 layout: post
-title: Document doesn't have a meta description
+title: Document does not have a meta description
 description: |
-  Learn about the the "Document Does Not Have A Meta Description" Lighthouse audit.
+  Learn about the "Document does not have a meta description" Lighthouse audit.
+date: 2019-05-02
+updated: 2019-08-21
 web_lighthouse:
   - meta-description
 ---
 
-Meta descriptions introduce users to your site's content in search results.
-High-quality, unique descriptions make your results more relevant
-and can increase your search traffic.
-Lighthouse flags your page when it's missing a meta description:
+The `<meta name=description>` element provides a summary of a page's content
+that search engines include in search results. A high-quality, unique meta
+description makes your page appear more relevant and can increase your search
+traffic.
+
+## How the Lighthouse meta description audit fails
+
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags pages
+without a meta description:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Document doesn't have a meta description
-  </figcaption>
+  <img class="w-screenshot w-screenshot" src="meta-description.png" alt="Lighthouse audit showing the document doesn't have a meta description">
 </figure>
 
-## What causes this audit to fail
+The audit fails if:
+- Your page doesn't have a `<meta name=description>` element.
+- The `content` attribute of the `<meta name=description>` element is empty.
 
-This audit fails if your page doesn't have a description,
-or if the `content` attribute of the description is empty.
 Lighthouse doesn't evaluate the quality of your description.
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
 
 ## How to add a meta description
 
-Add a description tag to the `<head>` of each of your pages:
+Add a `<meta name=description>` element to the `<head>` of each of your pages:
 
 ```html
 <meta name="Description" content="Put your description here.">
 ```
 
-Include clearly-tagged facts in the descriptions, for example:
+If appropriate, include clearly tagged facts in the descriptions. For example:
 
 ```html
-<meta name="Description" content="Author: A.N. Author, 
-    Illustrator: P. Picture, Category: Books, Price: $17.99, 
-    Length: 784 pages>
+<meta name="Description" content="Author: A.N. Author,
+    Illustrator: P. Picture, Category: Books, Price: $17.99,
+    Length: 784 pages">
 ```
 
-Learn more in [Add tags to the head of the page](/write-descriptive-text#add-tags-to-the-head-of-the-page).
+## Meta description best practices
 
-## Meta description guidelines
+- Use a unique description for each page.
+- Make descriptions clear and concise. Avoid vague descriptions like "Home."
+- Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358).
+  It doesn't help users, and search engines may mark the page as spam.
+- Descriptions don't have to be complete sentences; they can contain structured
+  data.
 
-- Make them descriptive and concise. 
-- Avoid [keyword stuffing](https://support.google.com/webmasters/answer/66358). 
-- Create a description for every page.
-- Avoid repeated or boilerplate titles.
-- Use different descriptions for different pages.
-- Descriptions don't have to be in sentence format; they can contain structured data.
+Here are examples of good and bad descriptions:
 
-See [Create good meta descriptions](https://support.google.com/webmasters/answer/35624#1) for more guidance.
+```html
+<meta name="description" content="A donut recipe.">
+```
 
-## More information
+{% Compare 'worse' %}
+Too vague.
+{% endCompare %}
 
-[Document doesn't have a meta description audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+```html
+<meta
+  name="description"           
+  content="Mary's simple recipe for maple bacon donuts
+           makes a sticky, sweet treat with just a hint
+           of salt that you'll keep coming back for.">
+```
+
+{% Compare 'better' %}
+Descriptive yet concise.
+{% endCompare %}
+
+See Google's [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624#1)
+page for more tips.
+
+## Resources
+
+- [Source code for **Document does not have a meta description** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/meta-description.js)
+- [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624#1)
+- [Irrelevant keywords](https://support.google.com/webmasters/answer/66358)

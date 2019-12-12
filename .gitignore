@@ -60,6 +60,9 @@ typings/
 # next.js build output
 .next
 
+# Lighthouse CI test output
+.lighthouseci
+
 # build artifacts
 dist
 
@@ -69,3 +72,7 @@ local-devsite.js
 
 # DS_Store
 .DS_Store
+
+# IDEs
+.idea
+entrypoint.hashmanifest.json
