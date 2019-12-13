@@ -65,9 +65,9 @@ The Content Indexing API is not a searchable index. While you can get a list of 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete](https://github.com/rayankans/content-index)        |
-| 2. Create initial draft of specification   | In progress          |
+| 2. Create initial draft of specification   | [In progress](https://rayankans.github.io/content-index/spec/)          |
 | 3. Gather feedback & iterate on design     | In progress          |
-| **4. Origin trial**                        | **Started in Chrome 80** <br> Expected to run through Chrome 83 |
+| **4. Origin trial**                        | **Started in Chrome 80** <br> Expected to run through Chrome 82 |
 | 5. Launch                                  | Not started                  |
 
 </div>
