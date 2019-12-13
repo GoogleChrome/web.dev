@@ -52,6 +52,8 @@ Once the index is populated with content from your PWA, as well as any other ins
   </figure>
 </div>
 
+Additionally, Chrome is running experiments to proactively recommend this content when it detects that a user is offline.
+
 The Content Indexing API **is not an alternative way of caching content**. It's a way of providing metadata about pages that are already cached by your service worker, so that the browser could surface those pages when folks are likely to want to view them. The Content Indexing API helps with **discoverability** of cached pages.
 
 {% Aside 'note' %}
