@@ -28,11 +28,32 @@ origin_trial:
 
 ## What is the Content Indexing API? {: #what }
 
-Using a [progressive web app](https://developers.google.com/web/progressive-web-apps) means having access to information people care about—images, videos, articles, and more—regardless of the current state of your network connection. Technologies like [service workers](https://developers.google.com/web/fundamentals/primers/service-workers), the [Cache Storage API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api), and [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) provide you with the building blocks for storing and serving data when folks interact directly with a PWA. But building a high-quality, offline-first PWA is only part of the story: if folks don't realize that a web app's content is available while they're offline, they won't take full advantage of the work you put into implementing that functionality.
+Using a [progressive web
+app](https://developers.google.com/web/progressive-web-apps) means having access
+to information people care about—images, videos, articles, and more—regardless
+of the current state of your network connection. Technologies like [service
+workers](https://developers.google.com/web/fundamentals/primers/service-workers),
+the [Cache Storage
+API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api),
+and [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+provide you with the building blocks for storing and serving data when folks
+interact directly with a PWA. But building a high-quality, offline-first PWA is
+only part of the story: if folks don't realize that a web app's content is
+available while they're offline, they won't take full advantage of the work you
+put into implementing that functionality.
 
-This is a **discovery** problem; how can your PWA make users aware of its offline-capable content so that they can discover and view what's available? The Content Indexing API is the currently proposed solution to this problem that the Chrome team is experimenting with. The developer-facing portion of this solution is an extension to service workers, which allows developers to add URLs and metadata of offline-capable pages to a local index maintained by the browser.
+This is a **discovery** problem; how can your PWA make users aware of its
+offline-capable content so that they can discover and view what's available? The
+Content Indexing API is the currently proposed solution to this problem that the
+Chrome team is experimenting with. The developer-facing portion of this solution
+is an extension to service workers, which allows developers to add URLs and
+metadata of offline-capable pages to a local index maintained by the browser.
 
-Once the index is populated with content from your PWA, as well as any other installed PWAs, it will be surfaced by the browser. Experiments are also being run to determine how and where this offline content listing will be presented, and the initial plans include a dedicated area of Chrome for Android's Downloads page:
+Once the index is populated with content from your PWA, as well as any other
+installed PWAs, it will be surfaced by the browser. Experiments are also being
+run to determine how and where this offline content listing will be presented,
+and the initial plans include a dedicated area of Chrome for Android's Downloads
+page:
 
 <div class="w-columns">
   <figure class="w-figure">
@@ -52,13 +73,18 @@ Once the index is populated with content from your PWA, as well as any other ins
   </figure>
 </div>
 
-Additionally, Chrome is running experiments to proactively recommend this content when it detects that a user is offline.
+Additionally, Chrome is running experiments to proactively recommend this
+content when it detects that a user is offline.
 
-The Content Indexing API **is not an alternative way of caching content**. It's a way of providing metadata about pages that are already cached by your service worker, so that the browser could surface those pages when folks are likely to want to view them. The Content Indexing API helps with **discoverability** of cached pages.
+The Content Indexing API **is not an alternative way of caching content**. It's
+a way of providing metadata about pages that are already cached by your service
+worker, so that the browser could surface those pages when folks are likely to
+want to view them. The Content Indexing API helps with **discoverability** of
+cached pages.
 
-{% Aside 'note' %}
-The Content Indexing API is not a searchable index. While you can get a list of all indexed entries, there's no way to query against indexed metadata directly.
-{% endAside %}
+{% Aside 'note' %} The Content Indexing API is not a searchable index. While you
+can get a list of all indexed entries, there's no way to query against indexed
+metadata directly. {% endAside %}
 
 ## Current status {: #status }
 
@@ -76,36 +102,63 @@ The Content Indexing API is not a searchable index. While you can get a list of 
 
 ## See it in action {: #see-it-in-action }
 
-The best way to get a feel for the Content Indexing API is to try a sample application.
+The best way to get a feel for the Content Indexing API is to try a sample
+application.
 
-1. Make sure that you're using a supported browser and platform—currently, that's limited to **Chrome 80 or later on Android**.
+1. Make sure that you're using a supported browser and platform—currently,
+   that's limited to **Chrome 80 or later on Android**.
 1. Visit [https://contentindex.dev](https://contentindex.dev)
 1. Click on the `+` button next to one or more of the items on the list.
-1. [Optional] Disable your device's WiFi and cellular data connection, or enable airplane mode to simulate taking your browser offline.
+1. [Optional] Disable your device's WiFi and cellular data connection, or enable
+   airplane mode to simulate taking your browser offline.
 1. Choose "Downloads" from Chrome's menu, and switch to the "Articles for You" tab.
 1. Browse through the content that you previously saved.
 
-You can view the source of the sample application [on GitHub](https://github.com/rayankans/contentindex.dev).
+You can view the source of the sample application [on
+GitHub](https://github.com/rayankans/contentindex.dev).
 
-Another sample application, a [Scrapbook PWA](https://scrapbook-pwa.web.app/), illustrates the use of the Content Indexing API in conjunction with the [Web Share Target API](/web-share-target/). The [code demonstrates a technique](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/src/js/contentIndexing.js) for keeping the Content Indexing API in sync with items stored by a web app using the Cache Storage API.
+Another sample application, a [Scrapbook PWA](https://scrapbook-pwa.web.app/),
+illustrates the use of the Content Indexing API in conjunction with the [Web
+Share Target API](/web-share-target/). The [code demonstrates a
+technique](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/src/js/contentIndexing.js)
+for keeping the Content Indexing API in sync with items stored by a web app
+using the Cache Storage API.
 
 ## Using the API {: #using-the-api }
 
-To use the API your app must have a service worker and URLs that are navigable offline. If your web app does not currently have a service worker, the [Workbox libraries](https://developers.google.com/web/tools/workbox/) can simplify creating one.
+To use the API your app must have a service worker and URLs that are navigable
+offline. If your web app does not currently have a service worker, the [Workbox
+libraries](https://developers.google.com/web/tools/workbox/) can simplify
+creating one.
 
 ### What type of URLs can be indexed as offline-capable? {: #offline-capable-urls }
 
-The API supports indexing URLs corresponding to HTML documents. A URL for cached media file, for example, can't be indexed directly. Instead, you need to provide a URL for a page that displays media, and which works offline.
+The API supports indexing URLs corresponding to HTML documents. A URL for cached
+media file, for example, can't be indexed directly. Instead, you need to provide
+a URL for a page that displays media, and which works offline.
 
-A recommended pattern is to create a "viewer" HTML page that could accept the underlying media URL as a query parameter and then display the contents of the file, potentially with additional controls or content on the page.
+A recommended pattern is to create a "viewer" HTML page that could accept the
+underlying media URL as a query parameter and then display the contents of the
+file, potentially with additional controls or content on the page.
 
-Web apps can only add URLs to the content index that are under the [scope](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker) of the current service worker. In other words, a web app could not add a URL belonging to a completely different domain into the content index.
+Web apps can only add URLs to the content index that are under the
+[scope](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker)
+of the current service worker. In other words, a web app could not add a URL
+belonging to a completely different domain into the content index.
 
 ### Overview {: #api-overview }
 
-The Content Indexing API supports three operations: adding, listing, and removing metadata. These methods are exposed from a new property, `index`, that has been added to the <code>[ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration)</code> interface.
+The Content Indexing API supports three operations: adding, listing, and
+removing metadata. These methods are exposed from a new property, `index`, that
+has been added to the
+<code>[ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration)</code>
+interface.
 
-The first step in using any of the Content Indexing API methods is therefore to get a reference to the current `ServiceWorkerRegistration`. Within a web page, the most straightforward way to do that is to use the <code>[navigator.serviceWorker.ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready)</code> promise:
+The first step in using any of the Content Indexing API methods is therefore to
+get a reference to the current `ServiceWorkerRegistration`. Within a web page,
+the most straightforward way to do that is to use the
+<code>[navigator.serviceWorker.ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready)</code>
+promise:
 
 ```js
 const registration = await navigator.serviceWorker.ready;
@@ -116,11 +169,20 @@ if ('index' in registration) {
 }
 ```
 
-If you're making calls to the Content Indexing API from within a service worker, rather than inside a web page, you can refer to the `ServiceWorkerRegistration` directly via `registration`. It will [already be defined](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration) as part of the `ServiceWorkerGlobalScope.`
+If you're making calls to the Content Indexing API from within a service worker,
+rather than inside a web page, you can refer to the `ServiceWorkerRegistration`
+directly via `registration`. It will [already be
+defined](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/registration)
+as part of the `ServiceWorkerGlobalScope.`
 
 ### Adding to the index {: #adding-items }
 
-Use the `add()` method to index URLs and their associated metadata. It's up to you to choose when items are added to the index. You might want to add to the index in response to an input, like clicking a "save offline" button. Or you might add items automatically each time cached data is updated via a mechanism like [periodic background sync](https://developers.google.com/web/updates/2019/08/periodic-background-sync).
+Use the `add()` method to index URLs and their associated metadata. It's up to
+you to choose when items are added to the index. You might want to add to the
+index in response to an input, like clicking a "save offline" button. Or you
+might add items automatically each time cached data is updated via a mechanism
+like [periodic background
+sync](https://developers.google.com/web/updates/2019/08/periodic-background-sync).
 
 ```js
 await registration.index.add({
@@ -149,19 +211,31 @@ await registration.index.add({
 });
 ```
 
-Adding an entry only affects the content index; it does not add anything to the [Cache Storage API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
+Adding an entry only affects the content index; it does not add anything to the
+[Cache Storage
+API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 {% Aside 'note' %}
-During the call to `add()`, Chrome will make a request for each `icon`'s `src` URL to ensure that it has a copy of the icon to use when displaying a list of indexed content.
+During the call to `add()`, Chrome will make a request for
+each `icon`'s `src` URL to ensure that it has a copy of the icon to use when
+displaying a list of indexed content.
 
-If the call to `add()` happens in the `window` context (i.e. from your web page), this request will trigger a `fetch` event on your service worker.
+If the call to `add()` happens in the `window` context (i.e. from your web
+page), this request will trigger a `fetch` event on your service worker.
 
-If `add()` is called within your service worker (perhaps inside another event handler), the request will **not** trigger the service worker's `fetch` handler. The icons will be fetched directly, without any service worker involvement. Keep this in mind if your icons rely on your `fetch` handler, perhaps because they only exist in the local cache and not on the network—if they do, make sure that you only call `add()` from the `window` context.
+If `add()` is called within your service worker (perhaps inside another event
+handler), the request will **not** trigger the service worker's `fetch` handler.
+The icons will be fetched directly, without any service worker involvement. Keep
+this in mind if your icons rely on your `fetch` handler, perhaps because they
+only exist in the local cache and not on the network—if they do, make sure that
+you only call `add()` from the `window` context.
 {% endAside %}
 
 ### Listing the index's contents {: #listing-items }
 
-The `getAll()` method returns a promise for an iterable list of indexed entries and their metadata. Returned entries will contain all of the data saved with `add()`.
+The `getAll()` method returns a promise for an iterable list of indexed entries
+and their metadata. Returned entries will contain all of the data saved with
+`add()`.
 
 ```js
 const entries = await registration.index.getAll();
@@ -172,21 +246,30 @@ for (const entry of entries) {
 
 ### Removing items from the index {: #removing-items }
 
-To remove an item from the index, call `delete()` with the `id` of the item to remove:
+To remove an item from the index, call `delete()` with the `id` of the item to
+remove:
 
 ```js
 await registration.index.delete('article-123');
 ```
 
-Removing an entry in this manner only affects the content index; it does not delete anything from the [Cache Storage API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
+Removing an entry in this manner only affects the content index; it does not
+delete anything from the [Cache Storage
+API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 {% Aside 'warning' %}
-Once indexed, entries are not automatically expired. It's up to you to either present an interface in your web app for clearing out entries, or periodically remove older entries that you know should no longer be available offline.
+Once indexed, entries are not automatically expired. It's
+up to you to either present an interface in your web app for clearing out
+entries, or periodically remove older entries that you know should no longer be
+available offline.
 {% endAside %}
 
 ### Handling a user delete event {: #handling-contentdelete }
 
-When the browser displays the indexed content, it may include its own user interface with a "delete" menu item, giving people a chance to indicate that they're done viewing previously indexed content. This is how the deletion interface looks in Chrome 80:
+When the browser displays the indexed content, it may include its own user
+interface with a "delete" menu item, giving people a chance to indicate that
+they're done viewing previously indexed content. This is how the deletion
+interface looks in Chrome 80:
 
 <figure class="w-figure">
   <img src="delete-menu.png" alt="The delete menu item." width="550">
@@ -195,9 +278,14 @@ When the browser displays the indexed content, it may include its own user inter
   </figcaption>
 </figure>
 
-When someone selects that menu item, your web app's service worker will receive a `contentdelete` event. While handling this event is optional, it provides a chance for your service worker to "clean up" content, like locally cached media files, that someone has indicated they are done with.
+When someone selects that menu item, your web app's service worker will receive
+a `contentdelete` event. While handling this event is optional, it provides a
+chance for your service worker to "clean up" content, like locally cached media
+files, that someone has indicated they are done with.
 
-You do not need to call `registration.index.delete()` inside your `contentdelete` handler; if the event has been fired, the relevant index deletion has already been performed by the browser.
+You do not need to call `registration.index.delete()` inside your
+`contentdelete` handler; if the event has been fired, the relevant index
+deletion has already been performed by the browser.
 
 ```js
 self.addEventListener('contentdelete', (event) => {
@@ -210,7 +298,12 @@ self.addEventListener('contentdelete', (event) => {
 ```
 
 {% Aside 'note' %}
-The `contentdelete` event is only fired when the deletion happens due to interaction with the browser's built-in user interface. It is _not_ fired when `registration.index.delete()` is called. If your web app triggers the index deletion using that API method, it should also take care of [cleaning up cached content](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete) at the same time.
+The `contentdelete` event is only fired when the deletion happens due to
+interaction with the browser's built-in user interface. It is _not_ fired when
+`registration.index.delete()` is called. If your web app triggers the index
+deletion using that API method, it should also take care of [cleaning up cached
+content](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete) at the
+same time.
 {% endAside %}
 
 ## Enabling support during the Origin Trial {: #origin-trial }
@@ -225,30 +318,46 @@ To participate in an origin trial:
 
 ## Feedback {: #feedback }
 
-We want to hear your thoughts and experiences using this API throughout the Origin Trial process.
+We want to hear your thoughts and experiences using this API throughout the
+Origin Trial process.
 
 ### Tell us about the API design {: #feedback-design }
 
-Is there something about the API that's awkward or doesn't work as expected? Or are there missing pieces that you need to implement your idea?
+Is there something about the API that's awkward or doesn't work as expected? Or
+are there missing pieces that you need to implement your idea?
 
-File an issue on the [Content Indexing API explainer GitHub repo](https://github.com/rayankans/content-index/issues), or add your thoughts to an existing issue.
+File an issue on the [Content Indexing API explainer GitHub
+repo](https://github.com/rayankans/content-index/issues), or add your thoughts
+to an existing issue.
 
 ### Problem with the implementation? {: #feedback-implementation }
 
 Did you find a bug with Chrome's implementation?
 
-File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much detail as you can, simple instructions for reproducing, and set **Components** to `Blink>ContentIndexing`.
+File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much
+detail as you can, simple instructions for reproducing, and set **Components**
+to `Blink>ContentIndexing`.
 
 ### Planning to use the API? {: #planning-to-use }
 
-Planning to use the content indexing API in your web app? Your public support helps us prioritize features, and shows other browser vendors how critical it is to support them.
+Planning to use the content indexing API in your web app? Your public support
+helps us prioritize features, and shows other browser vendors how critical it is
+to support them.
 
-- Be sure you have signed up for the [Origin Trial](https://developers.chrome.com/origintrials/#/view_trial/2272066012008415233) to show your interest and provide your domain and contact info.
+- Be sure you have signed up for the [Origin
+  Trial](https://developers.chrome.com/origintrials/#/view_trial/2272066012008415233)
+  to show your interest and provide your domain and contact info.
 
-- Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with `#ContentIndexingAPI` and let us know where and how you're using it.
+- Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
+  `#ContentIndexingAPI` and let us know where and how you're using it.
 
 ## What are some security and privacy implications of content indexing? {: #security-privacy }
 
-We encourage you to [read through the answers](https://github.com/rayankans/content-index/blob/master/SECURITY_AND_PRIVACY.md) provided in response to the W3C's [Security and Privacy questionnaire](https://www.w3.org/TR/security-privacy-questionnaire/). If you have further questions, please start a discussion via the project's [GitHub repo](https://github.com/rayankans/content-index/issues).
+We encourage you to [read through the
+answers](https://github.com/rayankans/content-index/blob/master/SECURITY_AND_PRIVACY.md)
+provided in response to the W3C's [Security and Privacy
+questionnaire](https://www.w3.org/TR/security-privacy-questionnaire/). If you
+have further questions, please start a discussion via the project's [GitHub
+repo](https://github.com/rayankans/content-index/issues).
 
 _Hero image by Maksym Kaharlytskyi on [Unsplash](https://unsplash.com/photos/Q9y3LRuuxmg)._
