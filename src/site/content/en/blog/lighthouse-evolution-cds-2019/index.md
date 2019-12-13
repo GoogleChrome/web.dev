@@ -1,24 +1,23 @@
 ---
 title: "Lighthouse evolution: continuous integration, new performance score formula, and more"
-subhead: Get the latest Lighthouse updates and insights from Chrome Developer Summit 2019.
+subhead: |
+  Get the latest Lighthouse updates and insights from Chrome Developer Summit 2019.
 authors:
-  - egsweeny
-date: 2019-12-06
+  - egsweeny  
+date: 2019-12-16
 description: |
   Read about the latest Lighthouse updates announced at Chrome Developer Summit 2019.
+hero: hero.jpg
+alt: Lighthouse logo.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
-  - cds
 ---
 
 In the [Speed Tooling Evolutions](https://youtu.be/iaWLXf1FgI0) talk at Chrome
 Developer Summit (CDS), Paul Irish and I presented the newest products and
-features coming from Google that can help you build and maintain an
-exceptionally fast experience for all your users. At the center of that story
-are additions to the
-[Lighthouse](https://developers.google.com/web/tools/lighthouse) family of
-performance monitoring tools.
+features coming from Google that can help you build and maintain an exceptionally fast experience for all your users. At the center of that story
+are additions to the [Lighthouse](https://developers.google.com/web/tools/lighthouse) family of performance monitoring tools.
 
 ## Lighthouse CI alpha release
 
@@ -72,7 +71,8 @@ The Lighthouse team is still working to ensure that all scoring curves are
 fine-tuned, and the metrics are mature and thoroughly tested. They aim to ship
 the Lighthouse v6 performance score in January 2020.
 
-{% Aside %} Performance engineers sometimes find speed tools results difficult
+{% Aside %} 
+Performance engineers sometimes find speed tools results difficult
 to reproduce due to two discrete challenges--variability and cross-environment
 inconsistency. Variability is the issue of seeing numbers change even when the
 testing environment remains the same. Cross-environment inconsistency is the
@@ -85,8 +85,8 @@ and [how you can deal with
 it](https://developers.google.com/web/tools/lighthouse/variability#strategies_for_dealing_with_variance).
 The Lighthouse team is also investigating calibration methods to reduce
 differences between environments, but it's fair to expect that different
-conditions and hardware lead to different measurements—at least for now. {%
-endAside %}
+conditions and hardware lead to different measurements—at least for now. 
+{% endAside %}
 
 ## Lighthouse Stack Packs
 
@@ -105,7 +105,7 @@ report core audits.
 At the moment, there are Stack Packs for Angular, WordPress, Magento, React, and
 AMP. To create your own Stack Pack, visit the [GitHub
 repo](https://github.com/GoogleChrome/lighthouse-stack-packs/blob/master/CONTRIBUTING.md)
-or contact the Lighthouse team.
+or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stack-packs/issues).
 
 ## Coming soon: Lighthouse plugins as Chrome Extensions
 
@@ -141,11 +141,12 @@ a node module and make it accessible to all Lighthouse users via the CLI!
 ## Learn more
 
 For more details about Lighthouse and other performance tooling updates from
-Chrome Developer Summit, watch the Speed tooling evolution talk:
+Chrome Developer Summit, watch the Speed tooling evolutions talk:
 
 {% YouTube 'iaWLXf1FgI0' %}
 
 Your feedback is invaluable in making Lighthouse better, so go on and try out
 [Lighthouse CI](http://bit.ly/lhci), write a [Stack
 Pack](http://bit.ly/lh-stackpacks), or create a [Lighthouse
-Plugin](http://bit.ly/lh-plugins) and let us know what you think.
+Plugin](http://bit.ly/lh-plugins) and [let us
+know](https://github.com/GoogleChrome/lighthouse/issues) what you think.

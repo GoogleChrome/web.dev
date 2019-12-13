@@ -1,24 +1,25 @@
 ---
 title: "Speed tooling evolutions: highlights from Chrome Developer Summit 2019"
-subhead: Get the latest speed tooling updates and insights from Chrome Developer Summit 2019.
+subhead: New performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and more.
 authors:
   - egsweeny
-date: 2019-12-06
+date: 2019-12-16
 description: |
   Read about the latest developments in speed tooling including new performance metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX), and insights from Web Almanac analysis of the web ecosystem.
+hero: hero.jpg
+thumbnail: thumbnail.jpg
+alt: Chrome User Experience logo, PageSpeed Insights logo, and a metrics chart.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
-  - cds
 ---
 
-In the [Speed Tooling Evolutions](https://youtu.be/iaWLXf1FgI0) talk at Chrome
-Developer Summit, Paul Irish and I announced updates to Lighthouse—[Lighthouse
-CI, new performance score formula, and more](lighthouse-evolution-cds-2019).
-Along with big Lighthouse news, we presented exciting performance tooling
-developments including new performance metrics, updates to PageSpeed Insights
-and Chrome User Experience Report (CrUX), and insights from Web Almanac analysis
-of the web ecosystem.
+At Chrome Developer Summit, Paul Irish and I announced updates to
+Lighthouse—[Lighthouse CI, new performance score formula, and
+more](/lighthouse-evolution-cds-2019). Along with big Lighthouse news, we
+presented exciting performance tooling developments including new performance
+metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX),
+and insights from Web Almanac analysis of the web ecosystem.
 
 ## New performance metrics
 
@@ -27,10 +28,10 @@ impact it has on your bottom line and tracking improvements and regressions.
 Over time, new metrics have evolved to capture those nuances and fill in the
 gaps in measuring user experience. The newest addition to the metrics story are
 two [field metrics](/user-centric-performance-metrics/#in-the-field)—[Largest
-Contentful Paint (LCP)](/lcp/) and [Cumulative Layout Shift (CLS)](/cls/)—which
-are being incubated in W3C Web Performance Working Group and a new [lab
-metric](/user-centric-performance-metrics/#in-the-lab) [Total Blocking Time
-(TBT)](/tbt/).
+Contentful Paint (LCP)](/lcp) and [Cumulative Layout Shift (CLS)](/cls)—which
+are being incubated in W3C Web Performance Working Group, and a new [lab
+metric](/user-centric-performance-metrics/#in-the-lab)—[Total Blocking Time
+(TBT)](/tbt).
 
 ### Largest Contentful Paint (LCP)
 
@@ -58,8 +59,18 @@ enough to prevent input responsiveness.
 
 A [task is considered long](/custom-metrics/#long-tasks-api) if it runs on the
 main thread for more than 50 milliseconds. Any millisecond over that is counted
-towards that task's blocking time. The Total Blocking Time for a page is the sum
-of the blocking times of all long tasks that occured between FCP and TTI. 
+towards that task's blocking time. 
+
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./tbt.png" alt="A diagram representing a 150 millisecond task which has 100 miliseconds of blocking time.">
+</figure>
+
+The Total Blocking Time for a page is the sum of the blocking times of all long
+tasks that occured between FCP and TTI. 
+
+<figure class="w-figure w-figure--center">
+  <img class="w-screenshot" src="./tbt2.png" alt="A diagram representing a five tasks with 60 miliseconds of total blocking time out of 270 milliseconds of main thread time.">
+</figure>
 
 While Time to Interactive does a good job of identifying when the main thread
 calms down later in load, Total Blocking Time aims to quantify how strained the
@@ -91,8 +102,8 @@ address that problem by measuring how often it's occurring for your users.
   </figcaption>
 </figure>
 
-To learn how it's calculated and how to measure it, check out the [detailed
-guide to Cumulative Layout Shift](/cls).
+Check out the [detailed guide to Cumulative Layout Shift](/cls) to learn how
+it's calculated and how to measure it.
 
 The new Lighthouse performance score formula will soon de-emphasize FMP and FCI
 and include the three new metrics—LCP, TBT, and CLS—as they better capture when
@@ -104,7 +115,7 @@ a page feels usable.
   highlighted in green.">
 </figure>
 
-You can read about all of the latest metrics on [web.dev/metrics](/metrics/).
+Read about all of the latest metrics on [web.dev/metrics](/metrics/).
 
 ## Field data (CrUX) thresholds adjusted in PageSpeed Insights
 
@@ -133,7 +144,8 @@ For example, if a site has an FCP distribution of 50% fast, 30% moderate, 20%
 slow, the 90th percentile FCP is in the slow section, making the overall field
 score for the site slow.
 
-This has been adjusted to have a better overall distribution across websites and the new breakdown is:
+This has been adjusted to have a better overall distribution across websites and
+the new breakdown is:
 
 <table>
   <tr>
@@ -192,6 +204,11 @@ matches the stats and trends about the state of the web with the expertise of
 the web community. 85 contributors, made up of Chrome developers and the web
 community, have volunteered to work on the project, which analyzes 20 core
 aspects about the web addressing how sites are built, delivered, and
-experienced.
+experienced. Start exploring the Web Almanac to learn more about the state of [performance](https://almanac.httparchive.org/en/2019/performance), [JavaScript](https://almanac.httparchive.org/en/2019/javascript), and [third-party](https://almanac.httparchive.org/en/2019/third-parties) code on the web.
 
 ## Learn more
+
+For more details about performance tooling updates from
+Chrome Developer Summit, watch the Speed tooling evolutions talk:
+
+{% YouTube 'iaWLXf1FgI0' %}
