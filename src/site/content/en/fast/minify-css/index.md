@@ -110,7 +110,7 @@ By default, the resulting JS bundle that webpack produces would contain the cont
 You will now make some changes in the project:
 
 1. Open [the Fav Kitties project in Glitch](https://glitch.com/~fav-kitties-animated).
-1. Click **View Source**.
+{% Instruction 'source', 'ol' %}
 {% Instruction 'remix', 'ol' %}
 {% Instruction 'console', 'ol' %}
 

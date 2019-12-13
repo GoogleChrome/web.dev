@@ -12,7 +12,7 @@ related_post: extract-critical-css
 
 Whether you use a UI library or handcraft your styles, shipping a significant amount of CSS delays rendering because the browser must download and parse CSS files before it can show the page.
 
-This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap.com/). UI libraries like Bootstrap speed up the development, but that often comes at the expense of bloated and unnecessary CSS which can slow down your load times. Bootstrap 4 is 187 KB, while [Semantic UI](https://semantic-ui.com/), another UI library, is a whopping 730 KB uncompressed. Even when minified and gzipped, Bootstrap still weighs around 20 KB, well over the [14 KB threshold](/extract-critical-css/#14KB) for the first roundtrip.
+This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap.com/). UI libraries like Bootstrap speed up development, but that often comes at the expense of bloated and unnecessary CSS, which can slow down your load times. Bootstrap 4 is 187 KB, while [Semantic UI](https://semantic-ui.com/), another UI library, is a whopping 730 KB uncompressed. Even when minified and gzipped, Bootstrap still weighs around 20 KB, well over the [14 KB threshold](/extract-critical-css/#14KB) for the first roundtrip.
 
 [Critical](https://github.com/addyosmani/critical) is a tool that extracts, minifies and inlines [above-the-fold](/extract-critical-css) CSS. This allows above-the-fold content to be rendered as soon as possible, even if CSS for other parts of the page has not yet loaded. In this codelab, you'll learn how to use Critical's npm module.
 
@@ -155,7 +155,7 @@ scripts: {
 }
 ```
 
-Click **Tools** > **Logs** > **Console**.
+{% Instruction 'console', 'ol' %}
 
 To generate critical CSS, in the console, run:
 

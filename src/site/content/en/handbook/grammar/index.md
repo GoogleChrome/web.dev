@@ -88,7 +88,7 @@ Use an unordered list item for a standalone action.
 
 
 {% Compare 'better', 'Good' %}
-* To preview the site, press **View App**. Then press **Fullscreen**.
+{% Instruction 'preview' %}
 {% endCompare %}
 
 ## Numbers
