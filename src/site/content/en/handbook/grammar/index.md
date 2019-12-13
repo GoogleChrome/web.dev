@@ -70,9 +70,8 @@ Libraries and tools should be linked the first time they're mentioned.
 Use an ordered list (numbers) when instructing the reader to perform a series of actions.
 
 {% Compare 'better', 'Good' %}
-1. Click **Remix to Edit** to make the project editable.
-1. Click **Tools**.
-1. Click **Console**.
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'console', 'ol' %}
 {% endCompare %}
 
 <!-- lint disable no-inline-padding -->

@@ -111,8 +111,8 @@ You will now make some changes in the project:
 
 1. Open [the Fav Kitties project in Glitch](https://glitch.com/~fav-kitties-animated).
 1. Click **View Source**.
-1. Click the project name in the upper-left corner. Choose **Remix and Edit** 🎤, from the drop-down menu, to make your own, editable copy of the project.
-1. Once in the cloned project, click **Tools** (in the lower-left corner of the edit view), then select **Console**. The Glitch console opens in a new browser tab.
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'console', 'ol' %}
 
 To minify the resulting CSS, you'll use the [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin):
 
