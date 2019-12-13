@@ -135,4 +135,4 @@ text:
 
 {% Instruction 'audit-performance', 'ol' %}
 
-Confirm the **Ensure text remains visible during webfont load** audit is passing.
+Confirm that the **Ensure text remains visible during webfont load** audit is passing.

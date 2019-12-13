@@ -97,8 +97,8 @@ To better demonstrate how this works:
 
 {% Instruction 'preview' %}
 {% Instruction 'devtools-network' %}
--  Click the [**Throttling**](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) dropdown and select `Slow 3G`.
--  Click the **Click Me** button in the application.
+-  Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
+-  Click the **Click Me** button in the app.
 
 The loading indicator will show for longer now. Notice how all the code that
 makes up the `AvatarComponent` is fetched as a separate chunk.
