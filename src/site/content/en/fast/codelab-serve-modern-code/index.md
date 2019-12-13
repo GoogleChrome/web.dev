@@ -33,7 +33,7 @@ optimizations.
 {% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'disable-cache', 'ol' %}
-{% Instruction 'reload', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 <img class="w-screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
 

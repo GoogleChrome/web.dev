@@ -189,7 +189,7 @@ To test it again:
 {% Instruction 'preview', 'ol' %}
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
-{% Instruction 'reload', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 The app will update the network information to **3g**:
 

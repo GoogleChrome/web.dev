@@ -28,7 +28,7 @@ Unfortunately there is a subtle bug in the app. Let's take a look!
 
 {% Instruction 'preview' %}
 - Click the **Doggos** link. Notice how the URL changed.
-{% Instruction 'reload' %}
+{% Instruction 'reload-app' %}
 
 You get a page with "`Cannot GET /doggos`" on it—a sneaky 404. It is "sneaky",
 because the web app seems to work fine as long as you only click on links within

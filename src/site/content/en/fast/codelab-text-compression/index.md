@@ -39,7 +39,7 @@ Now take a look at how large this application is:
 
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'disable-cache', 'ol' %}
-{% Instruction 'reload', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 <img class="w-screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 

@@ -36,7 +36,7 @@ synchronized with every other person using the application. 🐈
 
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'disable-cache', 'ol' %}
-{% Instruction 'reload', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 <img class="w-screenshot" src="./main-bundle.png" alt="Original bundle size of 992 KB">
 

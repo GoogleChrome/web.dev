@@ -27,7 +27,7 @@ to detect unused code. Then remove **unused** and **unneeded** libraries.
 DevTools makes it easy to see the size of all network requests:
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'disable-cache', 'ol' %}
-{% Instruction 'reload', 'ol' %}
+{% Instruction 'reload-page', 'ol' %}
 
 <img class="w-screenshot" src="./bundle.png" alt="Network panel with bundle request">
 

@@ -60,7 +60,7 @@ As a first step, you need to understand what would be the opportunity after mini
 1. Click **View report**.
 1. Click on **Performance** and go the **Opportunities** section.
 
-The resulting report shows that up to **16KB** can be saved from the **animate.css** file:
+The resulting report shows that up to **16&nbsp;KB** can be saved from the **animate.css** file:
 
 <img class="screenshot" width="700px" height="150px" src="./lighthouse-unoptimized.png" alt="Lighthouse: Minify CSS opportunity.">
 
@@ -70,7 +70,7 @@ Now inspect the content of the CSS:
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the **CSS** filter.
 1. Select the **Disable cache** checkbox.
-{% Instruction 'reload', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 <img class="w-screenshot" width="700px" height="120px" src="./cdt-css-unoptimized.png" alt="DevTools CSS unoptimized trace">
 
@@ -162,7 +162,7 @@ To inspect the size and content of the files:
 {% Instruction 'devtools-network', 'ol' %}
 1. Click the **CSS** filter.
 1. Select the **Disable cache** checkbox if it isn't already.
-{% Instruction 'reload', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 <img class="w-screenshot" width="700px" height="120px" src="./cdt-css-optimized.png" alt="DevTools CSS unoptimized response">
 
