@@ -3,7 +3,7 @@ title: Indexing your offline-capable pages
 subhead: The Content Indexing API lets developers tell browsers about pages that work offline.
 authors:
   - jeffposnick
-description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question currently being trialed. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
+description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question currently in an origin trial. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
 date: 2019-12-12
 updated: 2019-12-12
 tags:
@@ -38,7 +38,7 @@ API](https://developers.google.com/web/fundamentals/instant-and-offline/web-stor
 and [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
 provide you with the building blocks for storing and serving data when folks
 interact directly with a PWA. But building a high-quality, offline-first PWA is
-only part of the story: if folks don't realize that a web app's content is
+only part of the story. If folks don't realize that a web app's content is
 available while they're offline, they won't take full advantage of the work you
 put into implementing that functionality.
 
@@ -78,7 +78,7 @@ content when it detects that a user is offline.
 
 The Content Indexing API **is not an alternative way of caching content**. It's
 a way of providing metadata about pages that are already cached by your service
-worker, so that the browser could surface those pages when folks are likely to
+worker, so that the browser can surface those pages when folks are likely to
 want to view them. The Content Indexing API helps with **discoverability** of
 cached pages.
 
@@ -105,20 +105,20 @@ metadata directly. {% endAside %}
 The best way to get a feel for the Content Indexing API is to try a sample
 application.
 
-1. Make sure that you're using a supported browser and platform—currently,
+1. Make sure that you're using a supported browser and platform. Currently,
    that's limited to **Chrome 80 or later on Android**.
 1. Visit [https://contentindex.dev](https://contentindex.dev)
-1. Click on the `+` button next to one or more of the items on the list.
+1. Click the `+` button next to one or more of the items on the list.
 1. [Optional] Disable your device's WiFi and cellular data connection, or enable
    airplane mode to simulate taking your browser offline.
-1. Choose "Downloads" from Chrome's menu, and switch to the "Articles for You" tab.
+1. Choose **Downloads** from Chrome's menu, and switch to the "Articles for You" tab.
 1. Browse through the content that you previously saved.
 
 You can view the source of the sample application [on
 GitHub](https://github.com/rayankans/contentindex.dev).
 
 Another sample application, a [Scrapbook PWA](https://scrapbook-pwa.web.app/),
-illustrates the use of the Content Indexing API in conjunction with the [Web
+illustrates the use of the Content Indexing API with the [Web
 Share Target API](/web-share-target/). The [code demonstrates a
 technique](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/src/js/contentIndexing.js)
 for keeping the Content Indexing API in sync with items stored by a web app
@@ -154,11 +154,8 @@ has been added to the
 <code>[ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration)</code>
 interface.
 
-The first step in using any of the Content Indexing API methods is therefore to
-get a reference to the current `ServiceWorkerRegistration`. Within a web page,
-the most straightforward way to do that is to use the
-<code>[navigator.serviceWorker.ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready)</code>
-promise:
+The first step in indexing content is getting a reference to the current
+[`ServiceWorkerRegistration`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration). Using <code>[navigator.serviceWorker.ready](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/ready)</code> is the most straightforward way:
 
 ```js
 const registration = await navigator.serviceWorker.ready;
@@ -216,18 +213,18 @@ Adding an entry only affects the content index; it does not add anything to the
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 {% Aside 'note' %}
-During the call to `add()`, Chrome will make a request for
-each `icon`'s `src` URL to ensure that it has a copy of the icon to use when
+When you call `add()`, Chrome will make a request for
+each icon's URL to ensure that it has a copy of the icon to use when
 displaying a list of indexed content.
 
-If the call to `add()` happens in the `window` context (i.e. from your web
+If you call `add()` from the `window` context (i.e. from your web
 page), this request will trigger a `fetch` event on your service worker.
 
-If `add()` is called within your service worker (perhaps inside another event
+If you call `add()` within your service worker (perhaps inside another event
 handler), the request will **not** trigger the service worker's `fetch` handler.
 The icons will be fetched directly, without any service worker involvement. Keep
 this in mind if your icons rely on your `fetch` handler, perhaps because they
-only exist in the local cache and not on the network—if they do, make sure that
+only exist in the local cache and not on the network. If they do, make sure that
 you only call `add()` from the `window` context.
 {% endAside %}
 
@@ -253,13 +250,13 @@ remove:
 await registration.index.delete('article-123');
 ```
 
-Removing an entry in this manner only affects the content index; it does not
+Calling `delete()` only affects the index. It does not
 delete anything from the [Cache Storage
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 {% Aside 'warning' %}
-Once indexed, entries are not automatically expired. It's
-up to you to either present an interface in your web app for clearing out
+Once indexed, entries do not automatically expire. It's
+up to you to either present an interface in your web app for clearing
 entries, or periodically remove older entries that you know should no longer be
 available offline.
 {% endAside %}
@@ -267,7 +264,7 @@ available offline.
 ### Handling a user delete event {: #handling-contentdelete }
 
 When the browser displays the indexed content, it may include its own user
-interface with a "delete" menu item, giving people a chance to indicate that
+interface with a **Delete** menu item, giving people a chance to indicate that
 they're done viewing previously indexed content. This is how the deletion
 interface looks in Chrome 80:
 
