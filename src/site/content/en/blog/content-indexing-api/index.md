@@ -82,9 +82,11 @@ worker, so that the browser could surface those pages when folks are likely to
 want to view them. The Content Indexing API helps with **discoverability** of
 cached pages.
 
-{% Aside 'note' %} The Content Indexing API is not a searchable index. While you
-can get a list of all indexed entries, there's no way to query against indexed
-metadata directly. {% endAside %}
+{% Aside 'note' %}
+  The Content Indexing API is not a searchable index. While you can get a list
+  of all indexed entries, there's no way to query against indexed metadata
+  directly.
+{% endAside %}
 
 ## Current status {: #status }
 
@@ -216,19 +218,19 @@ Adding an entry only affects the content index; it does not add anything to the
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 {% Aside 'note' %}
-During the call to `add()`, Chrome will make a request for
-each `icon`'s `src` URL to ensure that it has a copy of the icon to use when
-displaying a list of indexed content.
+  During the call to `add()`, Chrome will make a request for
+  each `icon`'s `src` URL to ensure that it has a copy of the icon to use when
+  displaying a list of indexed content.
 
-If the call to `add()` happens in the `window` context (i.e. from your web
-page), this request will trigger a `fetch` event on your service worker.
+  If the call to `add()` happens in the `window` context (i.e. from your web
+  page), this request will trigger a `fetch` event on your service worker.
 
-If `add()` is called within your service worker (perhaps inside another event
-handler), the request will **not** trigger the service worker's `fetch` handler.
-The icons will be fetched directly, without any service worker involvement. Keep
-this in mind if your icons rely on your `fetch` handler, perhaps because they
-only exist in the local cache and not on the network—if they do, make sure that
-you only call `add()` from the `window` context.
+  If `add()` is called within your service worker (perhaps inside another event
+  handler), the request will **not** trigger the service worker's `fetch` handler.
+  The icons will be fetched directly, without any service worker involvement. Keep
+  this in mind if your icons rely on your `fetch` handler, perhaps because they
+  only exist in the local cache and not on the network—if they do, make sure that
+  you only call `add()` from the `window` context.
 {% endAside %}
 
 ### Listing the index's contents {: #listing-items }
@@ -258,10 +260,10 @@ delete anything from the [Cache Storage
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 {% Aside 'warning' %}
-Once indexed, entries are not automatically expired. It's
-up to you to either present an interface in your web app for clearing out
-entries, or periodically remove older entries that you know should no longer be
-available offline.
+  Once indexed, entries are not automatically expired. It's
+  up to you to either present an interface in your web app for clearing out
+  entries, or periodically remove older entries that you know should no longer be
+  available offline.
 {% endAside %}
 
 ### Handling a user delete event {: #handling-contentdelete }
@@ -298,12 +300,12 @@ self.addEventListener('contentdelete', (event) => {
 ```
 
 {% Aside 'note' %}
-The `contentdelete` event is only fired when the deletion happens due to
-interaction with the browser's built-in user interface. It is _not_ fired when
-`registration.index.delete()` is called. If your web app triggers the index
-deletion using that API method, it should also take care of [cleaning up cached
-content](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete) at the
-same time.
+  The `contentdelete` event is only fired when the deletion happens due to
+  interaction with the browser's built-in user interface. It is _not_ fired when
+  `registration.index.delete()` is called. If your web app triggers the index
+  deletion using that API method, it should also take care of [cleaning up cached
+  content](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete) at the
+  same time.
 {% endAside %}
 
 ## Enabling support during the Origin Trial {: #origin-trial }
