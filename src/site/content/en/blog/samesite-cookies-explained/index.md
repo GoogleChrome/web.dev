@@ -206,7 +206,7 @@ Introducing the `SameSite` attribute on a cookie provides three different ways
 to control this behaviour. You can choose to not specify the attribute, or you
 can use `Strict` or `Lax` to limit the cookie to same-site requests.
 
-If you set `SameSite` to `Strict` this means your cookie will only be sent in a
+If you set `SameSite` to `Strict`, your cookie will only be sent in a
 first-party context. In user terms, the cookie will only be sent if the site for
 the cookie matches the site currently shown in the browser's URL bar. So, if the
 `promo_shown` cookie is set as follows:
