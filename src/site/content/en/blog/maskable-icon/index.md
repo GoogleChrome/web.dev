@@ -5,7 +5,9 @@ description: |
   A description of the article that will appear in search results.
 authors:
   - tigeroakes
-date: 2019-12-09
+date: 2019-12-13
+hero: hero.png
+alt: Icons contained inside white circles compared to icons covering its entire circle
 tags:
   - post
   - capabilities
