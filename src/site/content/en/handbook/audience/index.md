@@ -6,16 +6,18 @@ description: |
   Definitions of the the key personas for web.dev and advice about how to write for them.
 ---
 
+When you're writing for web.dev, it's important to consider the persona or personas you're writing for. Keeping your audience in mind helps you make good writing decisions, like how much background information to include or whether you need to define a key term. Those considerations help ensure that your readers can learn or accomplish something.
+
 ## Who is the web.dev audience?
 web.dev readers come with a variety of needs and preferences based on several characteristics:
-* Prior knowledge about the domains of web development (accessibility, performance, etc.)
-* Role (hobbyist, student, data scientist, frontend engineer, etc.)
-* Organization (independent contractor, startup, large company in a non-tech industry, etc.)
-* Focus on a business vertical (e-commerce, etc.)
-* Preferences for frameworks and tools (e.g., React, Gulp, webpack, etc.)
-* Purpose for reading (fix a Lighthouse audit, solve a specific problem, improve general skills, etc.)
+* Prior knowledge about the domains of web development (for example, accessibility or performance)
+* Role (for example, hobbyist, student, data scientist, frontend engineer)
+* Organization (for example, independent contractor, startup, large company in a non-tech industry)
+* Focus on a business vertical (for example, e-commerce)
+* Preferences for frameworks and tools (for example, React, Gulp, webpack)
+* Purpose for reading (for example, fix a Lighthouse audit, solve a specific problem, improve general skills)
 
-Trying to address all permutations of those characteristics would be unmanageable, so we've captured the most common clusters in several personas.
+Trying to address all permutations of those characteristics is unmanageable, so we've captured the most common clusters in several personas.
 
 ### Metrics-initiated problem solver (Alice)
 Alice is a developer working in a team for a large e-commerce website. The site's homepage received a low Lighthouse score for performance. Alice has been assigned to resolve the top three opportunities for improving the performance in the next two weeks, with the first solution due later today.
@@ -25,10 +27,10 @@ Alice is a developer working in a team for a large e-commerce website. The site'
 * **Goal:** Find a solution to a low Lighthouse score that is directly applicable to her existing project as quickly as possible.
 
 ### Goal-driven problem solver (Damir)
-Damir is a developer at a small fintech startup. His boss has asked him to help turn their company's site into a PWA. After trying to enable some offline functionality, Damir realizes through a StackOverflow post ([example](https://stackoverflow.com/questions/50777677/pwa-offline-capability-on-data-that-frecuently-changes)) that the best bet to solving his problem is to create a service worker. He needs to learn how to create a service worker that will work with his company's existing site and the dynamic data that it handles.
+Damir is a developer at a small fintech startup. His boss has asked him to help turn their company's site into a PWA. After trying to enable some offline functionality, Damir realizes through a [Stack Overflow post](https://stackoverflow.com/questions/50777677/pwa-offline-capability-on-data-that-frecuently-changes) that the best way to solve his problem is to create a service worker. He needs to learn how to create a service worker that works with his company's existing site and the dynamic data that it handles.
 
 * **Prior knowledge:** Damir is a more advanced developer. He can quickly skim documentation to find the code snippets and examples relevant to his use case.
-* **Entry point:** Damir searches for "service worker for PWA," and one of the first search results is a post in the web.dev [Installable](/installable) collection.
+* **Entry point:** Damir searches for "service worker for PWA", and one of the first search results is a post in the web.dev [Installable](/installable) collection.
 * **Goal:** Find a specific, implementable solution to an issue as quickly as possible. (Unlike Alice, Damir is trying to fix a problem identified by his team or manager rather than by Lighthouse.)
 
 ### Topic deep-diver (Andrew)
@@ -53,17 +55,17 @@ Jaimie first took a web development class at their local community college and i
 * **Goal:** Learn about the most recent web development tools and best practices to create a personal site from scratch to apply for industry jobs.
 
 ## Writing to the audience
-All posts and codelabs should be targeted to one of our personas (or more, if their needs overlap).
 
 That said, we want our content to address as much of our audience as we can. How do you do that in a given piece, especially when the needs of different readers compete? One way to address multiple audience segments is to provide multiple paths for a given topic. For example, you might write:
+
 * A post using vanilla JavaScript, with associated codelabs using common frameworks to solve the same problem
 * A post about optimizing images in general, with associated codelabs showing how to integrate image optimization into different build processes
-* A post about how to address an issue most web developers will encounter, with sections at the end focused on solving the problem as it appears in particular business verticals
+* A post about how to address an issue most web developers encounter, with sections at the end focused on solving the problem as it appears in particular business verticals
 
 Be mindful of your [voice](/handbook/voice). You want readers to feel they can trust the guidance you're giving. They should feel neither talked down to nor overwhelmed. Check out [Instruction for adult learners](/handbook/effective-instruction#instruction-for-adult-learners) in the [Writing effective instruction](/handbook/effective-instruction) post.
 
 ### Value propositions
-A value proposition is a promise to readers that a piece of content will be useful—that is, provide value—to them. Create a value proposition for everything you write by crafting titles, subtitles, and descriptions that tell your target audience why your post or codelab is worth reading. Some common strategies:
-* Say what readers will learn or understand by reading the piece
-* Say what a piece will let readers do
-* Say how a technique or tool will improve the experience of readers' users
+A value proposition is a promise to readers that a piece of content will be useful and provide value to them. Create a value proposition for everything you write by crafting titles, subtitles, and descriptions that tell your target audience why your post or codelab is worth reading. Here are some common strategies:
+* State what readers will learn or understand by reading the piece
+* Explain what a piece helps readers do
+* Describe how a technique or tool improves the user experience
