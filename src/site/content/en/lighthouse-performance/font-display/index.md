@@ -49,6 +49,13 @@ Once the custom font is ready, it replaces the system font.
 (See the [Avoid invisible text during loading](/avoid-invisible-text) post
 for more information.)
 
+### Google Fonts
+
+Add the `&display=swap` [parameter](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
+```html
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+```
+
 ## Browser support
 
 It's worth mentioning that not all major browsers support `font-display: swap`,
