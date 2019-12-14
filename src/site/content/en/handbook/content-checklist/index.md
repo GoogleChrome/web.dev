@@ -65,3 +65,4 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Are [dashes and hyphens](/handbook/grammar/#dashes-and-hyphens) used correctly?
 1. Are titles and headings in sentence case with no terminal period?
 1. Are [keyboard key commands](/handbook/grammar/#ui-elements-and-interaction) correctly formatted?
+1. The title should not have inline code formatting because backtick characters show up verbatim in web.dev's search results.
