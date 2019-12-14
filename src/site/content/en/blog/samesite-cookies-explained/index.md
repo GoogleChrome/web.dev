@@ -298,7 +298,7 @@ lays out two key changes:
 Chrome implements these behaviors as of version 80.
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
 has them available to test as of Firefox 69 and will make them default behaviors
-in the future. To test these behaviors on Firefox open
+in the future. To test these behaviors in Firefox, open
 [`about:config`](http://kb.mozillazine.org/About:config) and set
 `network.cookie.sameSite.laxByDefault`.
 [Edge](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/8lMmI5DwEAAJ)
