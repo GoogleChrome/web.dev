@@ -6,7 +6,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
-updated: 2019-12-18
+updated: 2019-10-31
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
@@ -19,7 +19,6 @@ tags:
   - post
   - security
   - cookies
-  - chrome80
 ---
 
 {% Aside %}
@@ -37,14 +36,14 @@ proposal,
 [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
 so that:
 
-- Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`,
-  meaning the default behavior will be to restrict cookies to first party
-  contexts **only**.
-- Cookies for cross-site usage **must** specify `SameSite=None; Secure` to
-  enable inclusion in third party context.
+1. Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`,
+   meaning the default behavior will be to restrict cookies to first party
+   contexts **only**.
+2. Cookies for cross-site usage **must** specify `SameSite=None; Secure` to
+   enable inclusion in third party context.
 
 This will become the
-[default behavior in Chrome 80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html), which is in beta as of December 19 and is
+[default behavior in Chrome 80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html),
 planned for a stable release in February 2020. If you currently provide cookies
 that are intended for cross-site usage you will need to make changes before that
 date to support the new default.
@@ -167,6 +166,56 @@ you may need to use some of the mitigating strategies described in
 ```text
 Set-Cookie: third_party_var=value; SameSite=None; Secure
 ```
+
+### Identifying cookie usage
+
+As of Chrome 77, you will see warnings in the DevTools Console for cross-site
+cookies that do not currently have a `SameSite` attribute and cookies that have
+been marked with `SameSite=None` but are missing `Secure`.
+
+<figure class="w-figure  w-figure--center">
+  <img src="chrome-console-warning.png"
+      alt="Chrome DevTools Console warnings for SameSite cookie misconfiguration."
+      style="max-width: 40vw;">
+</figure>
+
+For missing `SameSite` attributes you will see:
+
+```text
+A cookie associated with a cross-site resource at (cookie domain)
+was set without the `SameSite` attribute. A future release of Chrome
+will only deliver cookies with cross-site requests if they are set
+with `SameSite=None` and `Secure`. You can review cookies in developer
+tools under Application>Storage>Cookies and see more details at
+https://www.chromestatus.com/feature/5088147346030592 and
+https://www.chromestatus.com/feature/5633521622188032.
+```
+
+And for `None` without `Secure`, you will see:
+
+```text
+A cookie associated with a resource at (cookie domain) was set with
+`SameSite=None` but without `Secure`. A future release of Chrome will only
+deliver cookies marked `SameSite=None` if they are also marked `Secure`. You
+can review cookies in developer tools under Application>Storage>Cookies and
+see more details at https://www.chromestatus.com/feature/5633521622188032.
+```
+
+Each of these warnings will contain the cookie domain. If you're responsible for
+that domain, then you will need to update the cookies. Otherwise, you may need
+to contact the owner of the site or service responsible for that cookie to
+ensure they're making the necessary changes. The warnings themselves do not
+affect the functionality of the site, this is purely to inform developers of the
+upcoming changes.
+
+<figure class="w-figure  w-figure--center">
+  <img src="samesite-devtools.png"
+      alt="The Cookies pane of Chrome DevTools."
+      style="max-width: 40vw;">
+  <figcaption class="w-figcaption">
+    The <a href="https://devtools.chrome.com/storage/cookies">Cookies pane</a>.
+  </figcaption>
+</figure>
 
 ### Handling incompatible clients
 
