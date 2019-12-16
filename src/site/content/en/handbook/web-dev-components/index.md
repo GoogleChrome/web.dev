@@ -279,7 +279,7 @@ to check their understanding of concepts covered in your post.
 **No.** This sample is **incorrect**.
 Since the text input is a native HTML form element,
 it doesn't need ARIA for its semantics.
-In fact, text inputs don't allow ARIA roles to be added.
+To fix the sample, remove the `role` attribute from the `<input>` element.
 {% endAssessmentHint %}
 
 {% endTab %}
