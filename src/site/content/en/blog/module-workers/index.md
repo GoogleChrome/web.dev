@@ -133,6 +133,14 @@ Preloaded modules can also be used by both the main thread and Module Workers. T
 
 Previously, the options available for preloading Web Worker scripts were limited and not necessarily reliable. Classic Workers had their own “worker” resource type for preloading, but no browsers implemented `<link rel="preload" as="worker">`. As a result, the primary technique available for preloading Worker scripts was to use `<link rel="prefetch">`, which relied entirely on the HTTP cache. When used in combination with caching headers were set up correctly, this made it possible to avoid `new Worker()` having to wait to download the Worker script, but did not support preloading dependencies or pre-parsing.
 
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/worker-preloading?previewSize=100&attributionHidden=true"
+    alt="worker-preloading on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
 ## What about Service Worker?
 
 The Service Worker specification [has already been updated](https://w3c.github.io/ServiceWorker/#service-worker-concept) to support accepting a JS Module as the entry point, using the same `{type:"module"}` option as Module Workers, however this change has yet to be implemented in any browsers. Once that happens, it will be possible to instantiate a Service Worker using a JS Module using the following code:
