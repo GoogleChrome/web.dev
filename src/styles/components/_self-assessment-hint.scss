@@ -38,7 +38,7 @@ $BORDER_COLOR: $GREY_300;
 
   &::after {
     @include font-material-icon();
-    border-radius: 50%;
+    border-radius: $GLOBAL_ROUNDED;
     content: 'expand_more';
     cursor: $CURSOR_POINTER_VALUE;
     font-size: $CHEVRON_SIZE;

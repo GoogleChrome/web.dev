@@ -222,6 +222,10 @@ Use the codelab aside to link to an associated codelab.
 
 ### Codelab Callouts
 
+Codelab callouts are automatically included at the end of a post
+when you include codelab slug(s) in the `codelabs`
+[YAML field](/handbook/markup-post-codelab/#set-up-the-yaml).
+
 {% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
 
 ### Assessment Callouts

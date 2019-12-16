@@ -21,24 +21,18 @@ module.exports = (content, blurb) => {
   // Need newlines around ${content} so MD parser renders it as MD, not HTML
   // prettier-ignore
   return html`
-    <details class="w-callout w-callout--collapsible" open>
-      <summary class="w-callout__header">
-        <h2 class="w-callout__lockup w-callout__lockup--collapsible w-callout__lockup--assess">
+    <div class="w-callout">
+      <div class="w-callout__header">
+        <h2 class="w-callout__lockup w-callout__lockup--assess">
           Check for understanding
-          <span class="w-callout__toggle">
-            <span class="w-tooltip w-tooltip--right">Toggle callout</span>
-          </span>
         </h2>
-        <div class="w-callout__blurb w-callout__blurb--open">
+        <div class="w-callout__blurb">
           ${blurb}
         </div>
-        <div class="w-callout__blurb w-callout__blurb--collapsed">
-          Expand this callout to practice concepts from the post.
-        </div>
-      </summary>
+      </div>
 
       ${content}
 
-    </details>
+    </div>
   `;
 };

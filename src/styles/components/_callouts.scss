@@ -1,6 +1,4 @@
 @import '../settings/colors';
-@import '../settings/global';
-@import '../settings/type';
 @import '../tools/breakpoints';
 @import '../tools/mixins';
 
@@ -42,24 +40,6 @@
   &::-webkit-details-marker {
     display: none;
   }
-  // scss-lint:enable all
-
-  &:focus {
-    outline: none;
-  }
-
-  &:hover .w-callout__toggle,
-  &:focus .w-callout__toggle {
-    background: $GOOGLE_GREEN_50;
-  }
-
-  &:focus .w-callout__toggle {
-    box-shadow: 0 0 0 1px $FOCUS_COLOR;
-  }
-
-  &:active .w-callout__toggle {
-    background: $GOOGLE_GREEN_100;
-  }
 }
 
 .w-callout__lockup {
@@ -68,34 +48,6 @@
   // Ugh. Bad idea including margins in the heading styles.
   // They get reset at every breakpoint.
   margin: 0 0 12px !important;
-}
-
-.w-callout__lockup--collapsible {
-  position: relative;
-  width: 100%;
-}
-
-.w-callout__toggle {
-  @include font-material-icon();
-  border-radius: $GLOBAL_RADIUS;
-  cursor: $CURSOR_POINTER_VALUE;
-  font-size: 24px;
-  padding: .25em;
-  pointer-events: auto;
-  position: absolute;
-  right: 1px;
-  speak: none;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: background $TRANSITION_SPEED;
-}
-
-.w-callout__toggle::after {
-  content: 'unfold_more';
-}
-
-.w-callout--collapsible[open] .w-callout__toggle::after {
-  content: 'unfold_less';
 }
 
 .w-callout__lockup--codelab {
@@ -128,18 +80,6 @@
 
 .w-callout__blurb {
   margin: 0;
-}
-
-.w-callout__blurb--open {
-  display: none;
-}
-
-.w-callout[open] .w-callout__blurb--open {
-  display: block;
-}
-
-.w-callout[open] .w-callout__blurb--collapsed {
-  display: none;
 }
 
 .w-callout__list {
