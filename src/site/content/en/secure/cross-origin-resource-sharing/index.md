@@ -141,7 +141,9 @@ const listener = app.listen(process.env.PORT, function() {
 The first endpoint (line 5) does not have any response header set, it just sends
 a file in response.
 
-Open the devtools javascript console and try:
+{% Instruction 'devtools' %}
+{% Instruction 'devtools-console', 'ul' %}
+- Try the following command:
 
 ```js
 fetch('https://cors-demo.glitch.me/', {mode:'cors'})

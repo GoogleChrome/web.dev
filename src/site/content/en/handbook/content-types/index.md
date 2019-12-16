@@ -7,20 +7,20 @@ description: |
 ---
 
 ## Posts
-**Format:** primarily informational with instructions included as appropriate
+**Format:** Primarily informational with instructions included as appropriate
 
 **Typical use cases:**
 * A description of a problem detected by a Lighthouse audit and an explanation of how to fix it
 * An explanation of how to accomplish a widely applicable web development task—or an explanation of why that task is important
-* An explanation of a web development issue relevant to a specific industry (e.g., e-commerce)
-* An explanation of how or when to use a common framework (e.g., React, Vue)
-* A news announcement relevant to the web.dev audience (e.g., a new API, a recent conference talk)
+* An explanation of a web development issue relevant to a specific industry (for example, e-commerce)
+* An explanation of how or when to use a common framework (for example, React, Vue)
+* A news announcement relevant to the web.dev audience (for example, a new API, a recent conference talk)
 
 **Placement on the site:**
 * Always appears on the [blog](/blog), organized chronologically
 * May transition into a collection in the [Learn](/learn) section, organized thematically with other posts
 
-**Length:** typically less than 1,000–1,500 words
+**Length:** Typically less than 1,000–1,500 words
 
 **[Template](https://github.com/GoogleChrome/web.dev/tree/master/src/site/_drafts/_template-post)**
 
@@ -31,14 +31,14 @@ description: |
 ## Codelabs
 **Format:** Multi-step instructions paired with an embedded [sample app](/handbook/markup-sample-app)
 
-**Typical use case:** showing how to do small, fairly discrete development tasks
+**Typical use case:** Showing how to do small, fairly distinct development tasks
 
-**Placement on the site:** always associated with a post, which serves as the landing page for the codelab
+**Placement on the site:** Always associated with a post, which serves as the landing page for the codelab
 
-**Length:** typically less than 1,000–1,500 words
+**Length:** Typically less than 1,000–1,500 words
 
 **[Template](https://github.com/GoogleChrome/web.dev/tree/master/src/site/_drafts/_template-codelab)**
 
 **Examples:**
-* Creating WebP images with the command line
-* Minify and compress network payloads with gzip
+* [Creating WebP images with the command line](/codelab-serve-images-webp)
+* [Minify and compress network payloads with gzip](/reduce-network-payloads-using-text-compression)

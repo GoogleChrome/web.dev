@@ -8,7 +8,7 @@ description: |
   The Lighthouse SEO audit scans your page, tests for things that matter to
   search engines, and gives you a score so you can see specific areas for
   improvement. SEO matters because it's how you get more relevant users viewing
-  your content.  
+  your content.
 web_lighthouse: N/A
 ---
 
