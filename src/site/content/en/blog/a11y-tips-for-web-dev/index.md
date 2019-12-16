@@ -1,6 +1,6 @@
 ---
 title: Accessibility tips for web developers
-subhead: Making a few improvements can make your site more useable for everyone.
+subhead: Improving accessibility makes your site more useable for everyone.
 description: |
   It's awesome to build sites that are inclusive and accessible to everyone.
   There are at least six key areas of disability we can optimize for:
@@ -77,7 +77,7 @@ To be accessible, sites need to work across multiple devices
 with varying screen sizes and different kinds of input, such as screen readers.
 Moreover, sites should be usable by the broadest group of users,
 including those with disabilities.
-Here are a sample of just a few disabilities your users may have:
+Here's a sample of just a few disabilities your users may have:
 
 <div class="w-table-wrapper">
   <table>
@@ -93,8 +93,8 @@ Here are a sample of just a few disabilities your users may have:
         <td>
           <ul>
             <li>Low vision</li>
-            <li>Blind</li>
-            <li>Color blind</li>
+            <li>Blindness</li>
+            <li>Color blindness</li>
             <li>Cataracts</li>
             <li>Sun glare</li>
           </ul>
@@ -102,7 +102,7 @@ Here are a sample of just a few disabilities your users may have:
         <td>
           <ul>
             <li>Hard of hearing</li>
-            <li>Deaf</li>
+            <li>Deafness</li>
             <li>Noise</li>
             <li>Ear infection</li>
           </ul>
@@ -123,8 +123,8 @@ Here are a sample of just a few disabilities your users may have:
       <tr>
         <td>
           <ul>
-            <li>Learning disabilities</li>
-            <li>Sleepy or distracted</li>
+            <li>Learning disability</li>
+            <li>Sleepiness or distraction</li>
             <li>Migraine</li>
             <li>Autism</li>
             <li>Seizure</li>
@@ -142,7 +142,7 @@ Here are a sample of just a few disabilities your users may have:
           <ul>
             <li>Depression</li>
             <li>PTSD</li>
-            <li>Bipolar</li>
+            <li>Bipolar disorder</li>
             <li>Anxiety</li>
           </ul>
         </td>
@@ -153,9 +153,8 @@ Here are a sample of just a few disabilities your users may have:
 
 **Visual issues** range from an inability to distinguish colors to no vision at all.
 
-- Ensure a minimum
-  [contrast ratio threshold](http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast)
-  is met for text content.
+- Ensure text content meets a minimum
+  [contrast ratio threshold](http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast).
 - Avoid communicating information
   [using solely color](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-without-color)
   and ensure that all text is
@@ -166,8 +165,8 @@ Here are a sample of just a few disabilities your users may have:
   such that accessibility APIs can programmatically determine
   the _role_, _state_, _value_, and _title_ of any element.
 
-**Tip:** Inspect element in Chrome, Edge, and Firefox DevTools
-displays a tooltip of CSS properties
+**Tip:** The element inspection feature in the Chrome, Edge, and Firefox developer
+tools displays a tooltip of CSS properties
 that includes a quick check for color contrast ratio.
 
 ![Screenshot of the Chrome DevTools Inspect Element tooltip.](./inspect-element.jpg)
@@ -179,10 +178,10 @@ optimizing for low-vision users is always appreciated… 🤓
 
 **Hearing issues** mean a user may have issues hearing sound emitted from a page.
 
-- Make the content understandable using
+- Provide
   [text alternatives](http://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt)
   for all content that is not strictly text.
-- Ensure you test that your UI components are still functional
+- Test that your UI components are still functional
   [without sound](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#content-structure-separation-understanding).
 
 ![Screenshot of the ChromeVox screen reader reading a web page.](screen-reader.jpg)
@@ -192,25 +191,25 @@ optimizing for low-vision users is always appreciated… 🤓
 - Make the content of your UI components
   [functionally accessible from a keyboard](http://www.w3.org/TR/wai-aria-practices/#keyboard)
   for any actions one would otherwise use a mouse for.
-- Ensure pages are correctly marked up for assistive technologies;
-  these users may use technologies such as voice control software and physical switch controls,
-  which tend to use the same APIs as other assistive technologies like screen readers.
+- Ensure pages are correctly marked up for assistive technologies—including
+  screen readers, voice control software, and physical switch controls—which
+  tend to use the same APIs.
 
 **Cognitive issues** mean a user may require assistive technologies
 to help them with reading text, so it's important to ensure text alternatives exist.
 
-- Be mindful when using animations. Avoid a visual presentation that is
-  [repetitive](http://www.w3.org/TR/WCAG20/#time-limits)
-  or flashing as this can cause some users
-  [issues](http://www.w3.org/TR/WCAG20/#seizure).
+- Be mindful when using animations. Avoid video and animation that
+  [repeat](http://www.w3.org/TR/WCAG20/#time-limits)
+  or flash, which can cause [issues](http://www.w3.org/TR/WCAG20/#seizure)
+  for some users.
 
   The [`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion#too_much_motion_in_real_life_and_on_the_web)
   CSS media query allows you to limit animations
-  and autoplaying videos for users who prefer reduced motion.
+  and autoplaying videos for users who prefer reduced motion:
 
   ```css
   /*
-  If the user expressed a preference for reduced motion, don't use animations on buttons.
+  If the user expresses a preference for reduced motion, don't use animations on buttons.
   */
   @media (prefers-reduced-motion: reduce) {
     button {
@@ -219,7 +218,8 @@ to help them with reading text, so it's important to ensure text alternatives ex
   }
   ```
 
-- Avoid interactions that are timing-based.
+- Avoid interactions that are
+  [timing-based](https://www.w3.org/WAI/WCAG21/Understanding/no-timing.html).
 
 This may seem like a lot of bases to cover,
 but we'll walk through the process for assessing
@@ -284,7 +284,7 @@ is to compare your component to an analogous native element
 depending on how complex your component is).
 
 **Tip:** Most browser developer tools support inspecting the accessibility tree of a page.
-In Chrome, this is available via the **Accessibility** tab in the **Elements** panel:
+In Chrome DevTools, this is available via the **Accessibility** tab in the **Elements** panel:
 
 ![Screenshot of the accessibility tree view in Chrome DevTools.](./a11y-tree-chrome.png)
 
@@ -299,8 +299,8 @@ The following is a list of questions you can ask yourself when attempting to mak
 ## Can your UI component be used with the keyboard alone?
 
 Ideally, ensure that all functionality
-in your UI component can be reached by a keyboard.
-During your UX design,
+in your UI component can be accessed via keyboard.
+When designing your user experience,
 think about how you would use your element with the keyboard alone
 and figure out a consistent set of keyboard interactions.
 
@@ -316,7 +316,7 @@ but should then manage focus within itself so that the active menu item always t
 </figure>
 
 ### Using tabindex
-The `tabindex` attribute allows elements and UI components to be focused using the keyboard. Keyboard-only and assistive technology users both need to be able to place keyboard focus on elements in order to interact with them. Native interactive elements are implicitly focusable, so they don't need a `tabindex` attribute unless you wish to change their position in the tab order.
+The `tabindex` attribute allows elements and UI components to be focused using the keyboard. Keyboard-only and assistive technology users both need to be able to place keyboard focus on elements to interact with them. Native interactive elements are implicitly focusable, so they don't need a `tabindex` attribute unless you wish to change their position in the tab order.
 
 **There are three types of `tabindex` values:**
 
@@ -328,7 +328,7 @@ The `tabindex` attribute allows elements and UI components to be focused using t
 
 For custom UI components, always use `tabindex` values of 0 or -1, as you won't be able to determine the order of elements on a given page ahead of time—and even if you did, the order may change. A `tabindex` value of -1 is particularly useful for managing focus within complex components as described above.
 
-Also ensure that focus is always visible, whether by allowing the default focus ring style or by applying a discernible focus style. Remember not to trap keyboard users—they should be able to move focus away from an element using only the keyboard.
+Also ensure that focus is always visible, whether by allowing the default focus ring style or by applying a discernible custom focus style. Remember not to trap keyboard users—they should be able to move focus away from an element using only the keyboard.
 
 {% Aside %}
 You may also be interested in the roving `tabindex` or `aria-activedescendant` approaches,
@@ -345,13 +345,13 @@ including buttons.
 To autofocus elements in your own custom UI components,
 call the [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.focus) method,
 supported on all HTML elements that can be focused
-(e.g., `document.querySelector('myButton').focus()`).
+(for example, `document.querySelector('myButton').focus()`).
 
 ### Adding keyboard interaction
 Once your UI component is focusable,
-try to provide a good keyboard interaction story
-when a component is focused by handling appropriate keyboard events—for example,
-allow the user to use arrow keys to select menu options
+provide a good keyboard interaction story
+when a component is focused by handling appropriate keyboard events.
+For example, allow the user to use arrow keys to select menu options
 and `Space` or `Enter` to activate buttons.
 The ARIA [design patterns guide](http://www.w3.org/TR/wai-aria-practices/#aria_ex)
 provides some guidance here.
@@ -381,7 +381,7 @@ has a great guide on this I recommend reading.
 </figure>
 
 ```js
-// Example for expanding and collapsing a category with the spacebar key
+// Example for expanding and collapsing a category with the Space key
 const category = await page.$(`.category`);
 
 // verify tabIndex, role and focus
@@ -392,7 +392,7 @@ expect(await page.evaluate(elem => window.document.activeElement === elem, categ
 // verify aria-expanded = false
 expect(await page.evaluate(elem => elem.getAttribute(`aria-expanded`), category)).toEqual(`false`);
 
-// toggle category by press space
+// toggle category by pressing Space
 await page.keyboard.press('Space');
 
 // verify aria-expanded = true
@@ -401,7 +401,7 @@ expect(await page.evaluate(elem => elem.getAttribute(`aria-expanded`), category)
 
 ## Can you use your UI component with a screen reader?
 
-Around 1–2% of use a screen reader.
+Around 1–2% of people use a screen reader.
 Can you understand all important information
 and interact with the component using the screen reader and keyboard alone?
 
@@ -414,7 +414,7 @@ of an interactive component is conveyed visually,
 provide an accessible text alternative.
 
 For example, if your `<fancy-menu>` UI component only displays a gear icon
-to indicate that it is a settings menu,
+to indicate that it's a settings menu,
 it needs an accessible text alternative, such as "settings,"
 that conveys the same information.
 Depending on context,
@@ -428,11 +428,22 @@ for providing alternative text for that image, analogous to the `alt` attribute.
 
 ### Do your components provide semantic information?
 
-Assistive technology conveys semantic information that is otherwise expressed to sighted users via visual cues such as formatting, cursor style, or position. Native elements have this semantic information built-in by the browser, but for custom components you need to use [ARIA](http://www.w3.org/WAI/PF/aria/) to add this information in.
+Assistive technology conveys semantic information
+that is otherwise expressed to sighted users via visual cues
+such as formatting, cursor style, or position.
+Native elements have this semantic information built-in by the browser,
+but for custom components you need to use
+[ARIA](http://www.w3.org/WAI/PF/aria/) to add the information.
 
-As a rule of thumb, any component which listens to a mouse click or hover event should not only have some kind of keyboard event listener, but also an ARIA role and potentially ARIA states and attributes.
+As a rule of thumb, any component that listens to a mouse click or hover event
+should not only have some kind of keyboard event listener,
+but also an ARIA role and potentially ARIA states and attributes.
 
-For example, a custom `<fancy-slider>` UI component might take an ARIA role of slider, which has some related ARIA attributes: aria-valuenow, aria-valuemin and aria-valuemax. By binding these attributes to the relevant properties on your custom component, you can allow users of assistive technology to interact with the element and change its value, and even cause the visual presentation of the element to change accordingly.
+For example, a custom `<fancy-slider>` UI component might take an ARIA role of slider,
+which has some related ARIA attributes: `aria-valuenow`, `aria-valuemin` and `aria-valuemax`.
+By binding these attributes to the relevant properties on your custom component,
+you can allow users of assistive technology to interact with the element,
+change its value, and even cause the element's visual presentation to change accordingly.
 
 <figure class="w-figure w-figure--center">
   <img src="./slider.png" class="w-screenshot" alt="A screenshot of a slider.">
@@ -447,52 +458,100 @@ For example, a custom `<fancy-slider>` UI component might take an ARIA role of s
 
 ### Can users understand everything without relying on color?
 
-Color shouldn't be used as the only means of conveying information, such as indicating a status, prompting for a response or distinguishing a visual custom component. For example, if you created an `<fancy-map>` component using color to distinguish between heavy, moderate and light traffic, an alternative means of distinguishing traffic levels should also be made available: one solution might be to hover over an element to display information in a tooltip.
+Color shouldn't be used as the only means of conveying information,
+such as indicating a status, prompting the user for a response,
+or distinguishing a visual custom component.
+For example, if you create a `<fancy-map>` component that uses color
+to distinguish between heavy, moderate, and light traffic,
+an alternative means of distinguishing traffic levels should also be made available.
+One solution might be to hover over an element to display information in a tooltip.
 
-### Is there sufficient contrast between the text/images and the background?
+### Is there sufficient contrast between text and images and their background?
 
-Any text content displayed in your component should meet the [minimum (AA) contrast bar](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast). Consider providing a high-contrast theme which meets the [higher (AAA) bar](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast7), and also ensure that user agent style sheets can be applied if users require extreme contrast or different colors. You can use this [Color Contrast Checker](http://webaim.org/resources/contrastchecker/) as an aid when doing design.
+Any text content displayed in your component should meet the
+[minimum WCAG AA-level contrast threshold](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast).
+Consider providing a high-contrast theme that meets the
+[higher AAA threshold](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast7),
+and ensure that user agent style sheets can be applied
+if users require custom contrast or different colors.
+You can use this [Color Contrast Checker](http://webaim.org/resources/contrastchecker/)
+as an aid when designing your component.
 
 ### Is the moving or flashing content in your components stoppable and safe?
 
-Content that moves, scrolls or blinks that lasts for anything more than five seconds should be able to be paused, stopped or hidden. In general, try to flash no more than three times per second.
+Content that moves, scrolls, or blinks for more than five seconds
+should be able to be paused, stopped or hidden.
+In general, try to flash no more than three times per second.
 
 ## Accessibility Tooling
-A number of tools are available that can assist with debugging the accessibility of your visual components.
+A number of tools are available that can assist with
+debugging the accessibility of your visual components.
 
-- [Axe](http://www.deque.com/products/axe/) provides automated accessibility testing for your framework or browser of choice. [Axe Puppeteer](https://www.deque.com/blog/axe-and-attest-integration-puppeteer/) can be used for writing automated accessibility tests.
-- The [Lighthouse](https://developers.google.com/web/tools/lighthouse) Accessibility audits provide helpful insights for discovering common accessibility issues. The accessibility score is a weighted average of all accessibility audits, based on [Axe user impact assessments](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md). For monitoring accessibility via continuous integration, see [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci).
+- [Axe](http://www.deque.com/products/axe/) provides automated accessibility testing
+  for your framework or browser of choice.
+  [Axe Puppeteer](https://www.deque.com/blog/axe-and-attest-integration-puppeteer/)
+  can be used for writing automated accessibility tests.
+- The [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+  Accessibility audits provide helpful insights for discovering common accessibility issues.
+  The accessibility score is a weighted average of all accessibility audits
+  based on [Axe user impact assessments](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md).
+  For monitoring accessibility via continuous integration, see [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci).
 
 ![Screenshot of the Lighthouse accessibility audit.](./lh-a11y-audit.png)
 
-- [Tenon.io](https://tenon.io/) is useful for testing common accessibility problems. Tenon has strong integration support across build tools, browsers (via extensions) and even text editors.
-- There are many library and framework specific tools for highlighting accessibility issues with components. For example, [web.dev](https://web.dev/accessibility-auditing-react/) covers using [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) to highlight accessibility issues for React components in your editor:
+- [Tenon.io](https://tenon.io/) is useful for testing common accessibility problems.
+  Tenon has strong integration support across build tools, browsers (via extensions), and even text editors.
+- There are many library- and framework-specific tools
+  for highlighting accessibility issues with components.
+  For example, [web.dev](https://web.dev/accessibility-auditing-react/)
+  explains how to use [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+  to highlight accessibility issues for React components in your editor:
 
   ![Screenshot of a code editor with an accessibility issue flagged by eslint-plugin-jsx-a11y.](./react-a11y-testing.png)
 
-  If you use Angular, [codelyzer](/accessible-angular-with-codelyzer) provides in-editor accessibility audits too:
+  If you use Angular, [codelyzer](/accessible-angular-with-codelyzer)
+  provides in-editor accessibility audits too:
 
   ![Screenshot of a code editor with an accessibility issue flagged by codelyzer.](./angular-a11y-testing.png)
 
-- You can examine the way that assistive technologies see web content by using [Accessibility Inspector](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTesting/OSXAXTestingApps.html#//apple_ref/doc/uid/TP40001078-CH210-TPXREF101) (Mac), or [Windows Automation API Testing Tools](http://msdn.microsoft.com/en-us/library/windows/desktop/dd373661(v=vs.85).aspx) and [AccProbe](http://accessibility.linuxfoundation.org/a11yweb/util/accprobe/) (Windows). Additionally you can see the full accessibility tree that Chrome creates by navigating to `chrome://accessibility`.
-- The best way to test for screen reader support on a Mac is using the VoiceOver utility. You can use `⌘F5` to enable/disable, `Ctrl+Option ←→` to move through the page and `Ctrl+Shift+Option + ↑↓` to move up/down tree. For more detailed instructions, see the [full list of VoiceOver commands](http://www.apple.com/voiceover/info/guide/_1131.html) and the [list of VoiceOver Web commands](http://www.apple.com/voiceover/info/guide/_1131.html#vo27972).
-- [tota11y](http://khan.github.io/tota11y/) is a useful visualizer for assistive technology issues built by Khan Academy. It's a script that adds a button to your document that triggers several plugins for annotating things like insufficient contrast ratio and other a11y violations.
-- On Windows, [NVDA](http://www.nvaccess.org/) is a free, open source screen reader which is fully featured and rapidly gaining in popularity. However, note that it has a much steeper learning curve for sighted users than VoiceOver.
-- [ChromeLens](http://chromelens.xyz/) helps develop for the visually impaired. It's also got great support for visualizing keyboard navigation paths
+- You can examine the way that assistive technologies see web content by using
+  [Accessibility Inspector](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTesting/OSXAXTestingApps.html#//apple_ref/doc/uid/TP40001078-CH210-TPXREF101) (Mac)
+  or [Windows Automation API Testing Tools](http://msdn.microsoft.com/en-us/library/windows/desktop/dd373661(v=vs.85).aspx)
+  and [AccProbe](http://accessibility.linuxfoundation.org/a11yweb/util/accprobe/) (Windows).
+  You can also see the full accessibility tree that Chrome creates
+  by navigating to `chrome://accessibility`.
+- The best way to test for screen reader support on a Mac is using the VoiceOver utility.
+  Use `⌘F5` to enable or disable it, `Ctrl+Option ←→` to move through the page,
+  and `Ctrl+Shift+Option + ↑↓` to move up and down the accessibility tree.
+  For more detailed instructions,
+  see the [full list of VoiceOver commands](http://www.apple.com/voiceover/info/guide/_1131.html)
+  and the [list of VoiceOver Web commands](http://www.apple.com/voiceover/info/guide/_1131.html#vo27972).
+- [tota11y](http://khan.github.io/tota11y/) is a useful visualizer
+  for assistive technology issues built by Khan Academy.
+  It's a script that adds a button to your document that triggers several plugins
+  for annotating things like insufficient contrast ratio and other a11y violations.
+- On Windows, [NVDA](http://www.nvaccess.org/) is a free, open source screen reader
+  that's fully featured and rapidly gaining in popularity.
+  However, note that it has a much steeper learning curve for sighted users than VoiceOver.
+- [ChromeLens](http://chromelens.xyz/) helps develop for the visually impaired.
+  It also has great support for visualizing keyboard navigation paths.
 
   ![Screenshot of ChromeLens.](./chromelens.jpg)
 
-- [ChromeVox](http://www.chromevox.com/) is a screen reader which is available as a Chrome extension, and built in on ChromeOS devices.
+- [ChromeVox](http://www.chromevox.com/) is a screen reader available as a Chrome extension and built into ChromeOS devices.
 
 ## Conclusions
 
-We still have a long way to go improving accessibility on the web. Per the [Web Almanac](https://almanac.httparchive.org/en/2019/accessibility):
+We still have a long way to go to improve accessibility on the web.
+Per the [Web Almanac](https://almanac.httparchive.org/en/2019/accessibility):
 
-- 4 out of every 5 sites have text which easily blends into the background, making it unreadable.
-- 49.91% of pages still fail to provide alt attributes for some of their images
-- Only 24% of pages that use buttons or links include textual labels with these controls.
+- 4 out of every 5 sites have text that easily blends into the background, making it unreadable.
+- 49.91% of pages still fail to provide `alt` attributes for some of their images.
+- Only 24% of pages that use buttons or links include textual labels for them.
 - Only 22.33% of pages provide labels for all their form inputs.
 
-To learn more about accessibility fundamentals to help us improve the above, I recommend the [Accessible to all](/accessible/) docs on web.dev. There's much we can do to build experiences that are more inclusive of everyone.
+To learn more about accessibility fundamentals and help improve those statistics,
+I recommend the [Accessible to all](/accessible/) docs on web.dev.
+There's much we can do to build experiences that are more accessible for everyone.
 
 ![Screenshot of the web.dev "Accessible to all" collection page.](./web-dev-a11y.jpg)
