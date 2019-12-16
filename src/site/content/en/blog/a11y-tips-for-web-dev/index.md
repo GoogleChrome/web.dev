@@ -61,7 +61,7 @@ tags:
 
 It's awesome to build sites that are inclusive and accessible to everyone.
 There are at least six key areas of disability you can optimize for:
-visual, hearing, mobility, cognition, speech, and neural.
+**visual**, **hearing**, **mobility**, **cognition**, **speech**, and **neural**.
 Many tools and resources can help here,
 even if you're totally new to web accessibility.
 
@@ -74,7 +74,7 @@ Now imagine if that temporary condition were permanent.
 How different would your experience on the web be?
 
 To be accessible, sites need to work across multiple devices
-with varying screen-sizes and different kinds of input, such as screen readers.
+with varying screen sizes and different kinds of input, such as screen readers.
 Moreover, sites should be usable by the broadest group of users,
 including those with disabilities.
 Here are a sample of just a few disabilities your users may have:
@@ -161,7 +161,7 @@ Here are a sample of just a few disabilities your users may have:
   and ensure that all text is
   [resizable](http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale).
 - Ensure all user interface components can be used with assistive technologies
-  such as screen readers, magnifiers and braille displays.
+  such as screen readers, magnifiers, and braille displays.
   This entails ensuring that UI components are marked up
   such that accessibility APIs can programmatically determine
   the _role_, _state_, _value_, and _title_ of any element.
@@ -172,7 +172,7 @@ that includes a quick check for color contrast ratio.
 
 ![Screenshot of the Chrome DevTools Inspect Element tooltip.](./inspect-element.jpg)
 
-I personally live with low-vision and am embarrassed to say
+I personally live with low vision and am embarrassed to say
 I'm that person who always zooms in on sites, their DevTools, and terminal.
 While supporting zoom is almost never at the top of anyone's list,
 optimizing for low-vision users is always appreciated… 🤓
@@ -187,34 +187,47 @@ optimizing for low-vision users is always appreciated… 🤓
 
 ![Screenshot of the ChromeVox screen reader reading a web page.](screen-reader.jpg)
 
-**Mobility issues** can include the inability to operate a mouse, a keyboard or touch-screen.
+**Mobility issues** can include the inability to operate a mouse, a keyboard, or a touch screen.
 
-- Make the content of your UI components [functionally accessible from a keyboard](http://www.w3.org/TR/wai-aria-practices/#keyboard) for any actions one would otherwise use a mouse for.
-- Ensure pages are correctly marked up for assistive technologies; these users may use technologies such as voice control software and physical switch controls, which tend to use the same APIs as other assistive technologies like screen readers.
+- Make the content of your UI components
+  [functionally accessible from a keyboard](http://www.w3.org/TR/wai-aria-practices/#keyboard)
+  for any actions one would otherwise use a mouse for.
+- Ensure pages are correctly marked up for assistive technologies;
+  these users may use technologies such as voice control software and physical switch controls,
+  which tend to use the same APIs as other assistive technologies like screen readers.
 
-**Cognitive issues** mean a user may require assistive technologies to help them with reading text, so it's important to ensure text alternatives exist.
+**Cognitive issues** mean a user may require assistive technologies
+to help them with reading text, so it's important to ensure text alternatives exist.
 
-- Be mindful when using animations. Avoid a visual presentation that is [repetitive](http://www.w3.org/TR/WCAG20/#time-limits) or flashing as this can cause some users [issues](http://www.w3.org/TR/WCAG20/#seizure).
+- Be mindful when using animations. Avoid a visual presentation that is
+  [repetitive](http://www.w3.org/TR/WCAG20/#time-limits)
+  or flashing as this can cause some users
+  [issues](http://www.w3.org/TR/WCAG20/#seizure).
 
-The [`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion#too_much_motion_in_real_life_and_on_the_web)
-CSS media query allows you to limit animations and autoplaying videos for users who prefer reduced motion.
+  The [`prefers-reduced-motion`](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion#too_much_motion_in_real_life_and_on_the_web)
+  CSS media query allows you to limit animations
+  and autoplaying videos for users who prefer reduced motion.
 
-```css
-/*
-If the user expressed a preference for reduced motion, don't use animations on buttons.
-*/
-@media (prefers-reduced-motion: reduce) {
-  button {
-    animation: none;
+  ```css
+  /*
+  If the user expressed a preference for reduced motion, don't use animations on buttons.
+  */
+  @media (prefers-reduced-motion: reduce) {
+    button {
+      animation: none;
+    }
   }
-}
-```
+  ```
 
 - Avoid interactions that are timing-based.
 
-This may seem like a lot of bases to cover, but we'll walk through the process for assessing and then improving the accessibility of your UI components.
+This may seem like a lot of bases to cover,
+but we'll walk through the process for assessing
+and then improving the accessibility of your UI components.
 
-**Tip:** Some great [accessibility do's and don'ts digital posters](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/) are available by the Gov.uk accessibility team for spreading awareness of best practices in your team:
+**Tip:** The GOV.UK accessibility team has made some great
+[accessibility dos and don'ts digital posters](https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/)
+to spread awareness of best practices in your team:
 
 ![Digital posters showing accessibility dos and don'ts.](dos-donts.jpg)
 
@@ -224,31 +237,76 @@ This may seem like a lot of bases to cover, but we'll walk through the process f
 
 When auditing your page's UI components for accessibility, ask yourself:
 
-- **Can you use your UI component with the keyboard only?** Does it manage to focus and avoid focus traps? Can it respond to the appropriate keyboard events?
-- Can you use your UI component with a screen reader? Have you provided text alternatives for any information which is presented visually? Have you added semantic information using ARIA?
-- **Can your UI component work without sound?** Turn off your speakers and go through your use cases.
-- **Can it work without color?** Ensure your UI component can be used by someone who cannot see colors. A helpful tool for simulating color blindness is a Chrome extension called [SEE](https://chrome.google.com/webstore/detail/see/dkihcccbkkakkbpikjmpnbamkgbjfdcn), (try all four forms of color blindness simulation available). You may also be interested in the [Daltonize](https://chrome.google.com/webstore/detail/chrome-daltonize/efeladnkafmoofnbagdbfaieabmejfcf) extension which is similarly useful.
-- **Can your UI component work with high-contrast mode enabled?** All modern operating systems support a high contrast mode. [High Contrast](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=en) is a Chrome extension available that can help here.
+- **Can you use your UI component with the keyboard only?**
 
-Native controls (such as `<button>` and `<select>`) have accessibility built-in by the browser. They are focusable using the tab key, respond to keyboard events (like Enter, space and arrow keys), and have semantic roles, states and properties used by accessibility tools. The default styling should also meet the accessibility requirements listed above.
+  Does the component manage focus and avoid focus traps?
+  Can it respond to the appropriate keyboard events?
 
-Custom UI components (with the exception of components that extend native elements like `<button>`) do not have any built-in functionality, including accessibility, so this needs to be provided by you. A good place to start when implementing accessibility is to compare your components to an analogous native element (or a combination of several native elements, depending on how complex your component is).
+- **Can you use your UI component with a screen reader?**
 
-**Tip:** Most browser DevTools support inspecting the accessibility tree of a page. In Chrome, this is available via the Accessibility tab in the Elements panel.
+  Have you provided text alternatives for any information presented visually?
+  Have you added semantic information using ARIA?
+
+- **Can your UI component work without sound?**
+
+  Turn off your speakers and go through your use cases.
+
+- **Can your UI component work without color?**
+
+  Ensure your UI component can be used by someone who cannot see colors.
+  A helpful tool for simulating color blindness is a Chrome extension called
+  [SEE](https://chrome.google.com/webstore/detail/see/dkihcccbkkakkbpikjmpnbamkgbjfdcn).
+  (Try all four forms of color blindness simulation available.)
+  You may also be interested in the
+  [Daltonize](https://chrome.google.com/webstore/detail/daltonize/obcnmdgpjakcffkcjnonpdlainhphpgh)
+  extension, which is similarly useful.
+
+- **Can your UI component work with high-contrast mode enabled?**
+
+  All modern operating systems support a high contrast mode.
+  [High Contrast](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=en)
+  is a Chrome extension that can help here.
+
+Native controls (such as `<button>` and `<select>`)
+have accessibility built in by the browser.
+They are focusable using the `Tab` key;
+they respond to keyboard events (like the `Enter`, `Space`, and arrow keys);
+and they have semantic roles, states, and properties used by accessibility tools.
+Their default styling should also meet the accessibility requirements listed above.
+
+Custom UI components
+(with the exception of components that extend native elements like `<button>`)
+do not have any built-in functionality, including accessibility,
+so you need to provide it.
+A good place to start when implementing accessibility
+is to compare your component to an analogous native element
+(or a combination of several native elements,
+depending on how complex your component is).
+
+**Tip:** Most browser developer tools support inspecting the accessibility tree of a page.
+In Chrome, this is available via the **Accessibility** tab in the **Elements** panel:
 
 ![Screenshot of the accessibility tree view in Chrome DevTools.](./a11y-tree-chrome.png)
 
+Firefox also has an **Accessibility** panel:
+
 ![Screenshot of the accessibility tree view in FireFox DevTools.](./a11y-tree-ff.jpg)
 
-Firefox also has an Accessibility panel, and Safari exposes this information in the Element's panel Node tab.
+Safari exposes accessibility information in the **Elements** panel's **Node** tab.
 
 The following is a list of questions you can ask yourself when attempting to make your UI components more accessible.
 
 ## Can your UI component be used with the keyboard alone?
 
-Ideally, ensure that all functionality in your UI component can be reached by a keyboard. During your UX design, think about how you would use your element with the keyboard alone, and figure out a consistent set of keyboard interactions.
+Ideally, ensure that all functionality
+in your UI component can be reached by a keyboard.
+During your UX design,
+think about how you would use your element with the keyboard alone
+and figure out a consistent set of keyboard interactions.
 
-Firstly, ensure that you have a sensible focus target for each component. For example, a complex component like a menu may be one focus target within a page, but should then manage focus within itself so that the active menu item always takes focus.
+First, ensure that you have a sensible focus target for each component.
+For example, a complex component like a menu may be one focus target within a page
+but should then manage focus within itself so that the active menu item always takes focus.
 
 <figure class="w-figure w-figure--center">
   <img src="./manage-focus.png" alt="A screenshot of a menu and submenu that requires focus management.">
@@ -258,42 +316,68 @@ Firstly, ensure that you have a sensible focus target for each component. For ex
 </figure>
 
 ### Using tabindex
-The `tabindex` attribute allows elements / UI components to be focused using the keyboard. Keyboard-only and assistive technology users both need to be able to place keyboard focus on elements in order to interact with them. Native interactive elements are implicitly focusable, so they don't need a `tabindex` attribute unless we wish to change their position in the tab order.
+The `tabindex` attribute allows elements and UI components to be focused using the keyboard. Keyboard-only and assistive technology users both need to be able to place keyboard focus on elements in order to interact with them. Native interactive elements are implicitly focusable, so they don't need a `tabindex` attribute unless you wish to change their position in the tab order.
 
 **There are three types of `tabindex` values:**
 
-- **`tabindex="0"`** is the most common, and will place the element in the "natural" tab order (defined by the DOM order).
+- **`tabindex="0"`** is the most common and places the element in the natural tab order (defined by the DOM order).
 
-- **a `tabindex` value greater than 0** will place the element in a manual tab order—all elements in the page with a positive tabindex value will be visited in numerical order before elements in the natural tab order.
+- **a `tabindex` value greater than 0** places the element in a manual tab order—all elements in the page with a positive `tabindex` value are visited in numerical order before elements in the natural tab order.
 
-- **a `tabindex` value equal to -1** will cause the element to be programmatically focusable, but not in the tab order.
+- **a `tabindex` value equal to -1** causes the element to be programmatically focusable, but not in the tab order.
 
-For custom UI components, always use `tabindex` values of 0 or -1, as you won't be able to determine the order of elements on a given page ahead of time—and even if we did, they may be subject to change. A `tabindex` value of -1 is particularly useful for managing focus within complex components as described above.
+For custom UI components, always use `tabindex` values of 0 or -1, as you won't be able to determine the order of elements on a given page ahead of time—and even if you did, the order may change. A `tabindex` value of -1 is particularly useful for managing focus within complex components as described above.
 
-Also ensure that focus is always visible, whether by allowing the default focus ring style, or applying a discernible focus style. Remember not to trap the keyboard user—focus should be able to be moved away from an element using only the keyboard.
+Also ensure that focus is always visible, whether by allowing the default focus ring style or by applying a discernible focus style. Remember not to trap keyboard users—they should be able to move focus away from an element using only the keyboard.
 
 {% Aside %}
 You may also be interested in the roving `tabindex` or `aria-activedescendant` approaches,
-covered over on [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets#Technique_1_Roving_tabindex).
+[covered over on MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets#Technique_1_Roving_tabindex).
 {% endAside %}
 
 ### Using autofocus
-The HTML autofocus attribute allows an author to specify that a particular element should automatically take focus when the page is loaded. It is already supported on [all web form controls](https://html.spec.whatwg.org/multipage/forms.html#association-of-controls-and-forms), including . To `autofocus` elements in your own custom UI components, call the [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.focus) method supported on all HTML elements that can be focused (e.g., `document.querySelector('myButton').focus()`).
+The HTML autofocus attribute allows an author to specify
+that a particular element should automatically take focus
+when the page is loaded.
+`autofocus` is already supported on
+[all web form controls](https://html.spec.whatwg.org/multipage/forms.html#association-of-controls-and-forms),
+including buttons.
+To autofocus elements in your own custom UI components,
+call the [`focus()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.focus) method,
+supported on all HTML elements that can be focused
+(e.g., `document.querySelector('myButton').focus()`).
 
 ### Adding keyboard interaction
-Once your UI component is focusable, try to provide a good keyboard interaction story when a component is focused, by handling appropriate keyboard events—for example, allow the user to use arrow keys to select menu options, and space or enter to activate buttons. The ARIA [design patterns guide](http://www.w3.org/TR/wai-aria-practices/#aria_ex) provides some guidance here.
+Once your UI component is focusable,
+try to provide a good keyboard interaction story
+when a component is focused by handling appropriate keyboard events—for example,
+allow the user to use arrow keys to select menu options
+and `Space` or `Enter` to activate buttons.
+The ARIA [design patterns guide](http://www.w3.org/TR/wai-aria-practices/#aria_ex)
+provides some guidance here.
 
-Finally, ensure that your keyboard shortcuts are discoverable. For example, a common practice is to have a keyboard shortcut legend (on-screen text) to inform the user that shortcuts exist. For example, "Press ? for keyboard shortcuts". Alternatively a hint such a tooltip could be used to inform the user about the shortcut existing.
+Finally, ensure that your keyboard shortcuts are discoverable.
+A common practice is to have a keyboard shortcut legend (on-screen text)
+to inform the user that shortcuts exist.
+For example, "Press ? for keyboard shortcuts."
+Alternatively, a hint such a tooltip can be used
+to inform the user about a shortcut.
 
-The importance of managing focus cannot be understated. One example is a navigation drawer. If adding a UI component to the page you need to direct focus to an element inside of it otherwise users may have to tab through the entire page to get there. This can be a frustrating experience, so be sure to test focus for all keyboard navigable components in your page.
+The importance of managing focus cannot be overstated.
+One example is a navigation drawer.
+If you add a UI component to the page,
+you need to direct focus to an element inside of it;
+otherwise, users may have to tab through the entire page to get there.
+This can be a frustrating experience,
+so be sure to test focus for all keyboard navigable components in your page.
 
-**Tip:** You can use [Puppeteer](https://github.com/puppeteer/puppeteer) to automate running keyboard accessibility tests for toggling UI states. [WalkMe Engineering](https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032) have a great guide on this I recommend reading.
+**Tip:** You can use [Puppeteer](https://github.com/puppeteer/puppeteer)
+to automate running keyboard accessibility tests for toggling UI states.
+[WalkMe Engineering](https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032)
+has a great guide on this I recommend reading.
 
 <figure class="w-figure w-figure--center">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/a11y-tips-for-web-dev/aria-expanded.webm" type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/a11y-tips-for-web-dev/aria-expanded.mp4" type="video/mp4; codecs=h264">
-  </video>
+  <img class="w-screenshot" src="./aria-expanded.gif" alt="WalkMe state toggle test.">
 </figure>
 
 ```js
@@ -317,21 +401,34 @@ expect(await page.evaluate(elem => elem.getAttribute(`aria-expanded`), category)
 
 ## Can you use your UI component with a screen reader?
 
-Around 1–2% of users will be using a screen reader. Can you determine all important information and interact with the component using the screen reader and keyboard alone?
+Around 1–2% of use a screen reader.
+Can you understand all important information
+and interact with the component using the screen reader and keyboard alone?
 
-The following questions should help guide you in addressing screen reader accessibility:
+The following questions should help you address screen reader accessibility.
 
 ### Do all components and images have meaningful text alternatives?
 
-Wherever information about the _name_ or _purpose_ of an interactive component is conveyed visually, an accessible text alternative needs to be provided.
+Wherever information about the _name_ or _purpose_
+of an interactive component is conveyed visually,
+provide an accessible text alternative.
 
-For example, if your `<fancy-menu>` UI component only displays an icon such as a Settings menu icon to indicate that it is a settings menu, it needs an accessible text alternative such as "settings," which conveys the same information. Depending on context, this may use an alt attribute, an aria-label attribute, an aria-labelledby attribute, or plain text in the Shadow DOM. You can find general technical tips in [WebAIM Quick Reference](http://webaim.org/resources/quickref/).
+For example, if your `<fancy-menu>` UI component only displays a gear icon
+to indicate that it is a settings menu,
+it needs an accessible text alternative, such as "settings,"
+that conveys the same information.
+Depending on context,
+you can provide a text alternative using an `alt` attribute,
+an `aria-label` attribute, an `aria-labelledby` attribute,
+or plain text in the Shadow DOM.
+You can find general technical tips in [WebAIM Quick Reference](http://webaim.org/resources/quickref/).
 
-Any UI component which displays an image should provide a mechanism for providing alternative text for that image, analogous to the alt attribute.
+Any UI component that displays an image should provide a mechanism
+for providing alternative text for that image, analogous to the `alt` attribute.
 
 ### Do your components provide semantic information?
 
-Assistive technology conveys semantic information which is otherwise expressed to sighted users via visual cues such as formatting, cursor style, or position. Native elements have this semantic information built-in by the browser, but for custom components you need to use [ARIA](http://www.w3.org/WAI/PF/aria/) to add this information in.
+Assistive technology conveys semantic information that is otherwise expressed to sighted users via visual cues such as formatting, cursor style, or position. Native elements have this semantic information built-in by the browser, but for custom components you need to use [ARIA](http://www.w3.org/WAI/PF/aria/) to add this information in.
 
 As a rule of thumb, any component which listens to a mouse click or hover event should not only have some kind of keyboard event listener, but also an ARIA role and potentially ARIA states and attributes.
 
