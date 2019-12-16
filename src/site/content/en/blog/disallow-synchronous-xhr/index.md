@@ -1,6 +1,6 @@
 ---
 title: Disallowing synchronous XMLHttpRequest() during page dismissal
-subhead: Reducing delayed naviations
+subhead: Reducing delayed navigations
 description: |
   It's common for a page or app to have unsubmitted analytics or other data at
   the time a user closes it. Sites use a synchronous call to XMLHttpRequest()
