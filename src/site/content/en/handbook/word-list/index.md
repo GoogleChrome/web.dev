@@ -25,6 +25,7 @@ Here's how to spell, punctuate, and capitalize words and phrases commonly used o
 * one-way-trip (adj; avoid if possible)
 * origin trial
 * preconnect
+* referer (so spelled when referring to [the HTTP header](https://tools.ietf.org/html/rfc7231#section-5.5.2))
 * round trip (noun)
 * round-trip (adj)
 * web

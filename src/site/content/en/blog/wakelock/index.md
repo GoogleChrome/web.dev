@@ -1,12 +1,14 @@
 ---
-title: Stay awake with the WakeLock API
+title: Stay awake with the Wake Lock API
 subhead: The Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
 authors:
   - petelepage
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen or the device awake in order to complete some work. The Wake Lock API provides a way to prevent the device from dimming or locking the screen or prevent the device from going to sleep when an application needs to keep running.
 date: 2018-12-18
-updated: 2019-10-17
+updated: 2019-12-11
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
 tags:
   - post
   - capabilities
@@ -69,7 +71,7 @@ Of course, there are plenty of other use cases:
 | 1. Create explainer                        | N/A                          |
 | 2. Create initial draft of specification   | [Complete][spec-ed]          |
 | **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
-| 4. Origin trial                            | Not Started                  |
+| **4. Origin trial**                        | [**In Progress**][ot]        |
 | 5. Launch                                  | Not Started                  |
 
 </div>
@@ -83,11 +85,25 @@ Of course, there are plenty of other use cases:
 
 ## Using the Wake Lock API {: #use }
 
-The Wake Lock API is currently in development and is only available in Chrome
-behind a flag. To experiment with the Wake Lock API, enable the
-`#enable-experimental-web-platform-features` flag in `chrome://flags`.
+### Enabling support during the origin trial phase
+The Wake Lock API will be available as an origin trial in Chrome 79.
+The origin trial is expected to end in Chrome 81.
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
+
+### Enabling via chrome://flags
+To experiment with the Wake Lock API locally, without an origin trial token,
+enable the `#experimental-web-platform-features` flag in `chrome://flags`.
+
+### Demo
 
 Check out the [Wake Lock demo][demo] and [demo source][demo-source].
+Notice how the wake lock gets automatically released when you switch tabs
+or switch to a different app.
 
 ### Wake lock types {: #wake-lock-types }
 
@@ -111,57 +127,44 @@ that your app can continue running.
 
 ### Get a wake lock {: #get-wake-lock }
 
-To request a wake lock, you need to call the `WakeLock.request()` method
-that lives on the `window` object. You pass it the desired wake lock type as
-the first parameter, which *currently* is limited to just `'screen'`.
-You also need a way to abort the wake lock, which works through the
-generic `AbortController` interface. Therefore, you first create a new
-[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController),
-and then pass the controller's
-[`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
-as the second parameter to `WakeLock.request()`. Two things can happen next
-that you need to `catch`:
+To request a wake lock, you need to call the `navigator.wakeLock.request()` method
+that returns a `WakeLockSentinel` object.
+You pass this method the desired wake lock type as a parameter,
+which *currently* is limited to just `'screen'`.
+The browser can refuse the request for various reasons (for example,
+because the battery charge level is too low),
+so it's a good practice to wrap the call in a `try…catch` statement.
+The exception's message will contain more details in case of failure.
 
-* The wake lock can, after a while, just be regularly aborted, which you
-  detect by checking if the exception's name is `'AbortError'`. In this
-  context, `AbortError` is actually not an error in the common sense, but
-  just the way `AbortController` works.
-* The browser can also refuse the request for various reasons (for example,
-  because the battery charge level is too low). In this case, the exception's
-  message will contain more details.
+You also need a way to release the wake lock, which is achieved by calling the
+`release()` method of the `WakeLockSentinel` object.
+If you don't store a reference to the `WakeLockSentinel`, there's no way
+to release the lock manually, but it will be released once the current tab is invisible.
 
 ```js
-const wakeLockCheckbox = document.querySelector('#wakeLockCheckbox');
+// The wake lock sentinel.
+let wakeLock = null;
 
-if ('WakeLock' in window) {
-  let wakeLock = null;
-
-  const requestWakeLock = () => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-    window.WakeLock.request('screen', {signal})
-        .catch((e) => {
-          if (e.name === 'AbortError') {
-            wakeLockCheckbox.checked = false;
-            console.log('Wake Lock was aborted');
-          } else {
-            console.error(`${e.name}, ${e.message}`);
-          }
-        });
-    wakeLockCheckbox.checked = true;
+// Function that attempts to request a wake lock.
+const requestWakeLock = async () => {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => {
+      console.log('Wake Lock was released');
+    });
     console.log('Wake Lock is active');
-    return controller;
-  };
+  } catch (err) {
+    console.error(`${err.name}, ${err.message}`);
+  }
+};
 
-  wakeLockCheckbox.addEventListener('change', () => {
-    if (wakeLockCheckbox.checked) {
-      wakeLock = requestWakeLock();
-    } else {
-      wakeLock.abort();
-      wakeLock = null;
-    }
-  });
-}
+// Request a wake lock…
+await requestWakeLock();
+// …and release it again after 5s.
+window.setTimeout(() => {
+  wakeLock.release();
+  wakeLock = null;
+}, 5000);
 ```
 
 ### The wake lock lifecycle {: #wake-lock-lifecycle }
@@ -169,7 +172,7 @@ if ('WakeLock' in window) {
 When you play with the [wake lock demo][demo], you'll notice that wake locks
 are sensitive to [page visibility][page-visibility-api] and
 [full-screen mode][full-screen-api]. This means that the wake lock
-will automatically abort when you enter full-screen mode, minimize a
+will automatically be released when you enter full-screen mode, minimize a
 tab or window, or switch away from a tab or window where a wake lock is active.
 
 To reacquire the wake lock,
@@ -180,7 +183,7 @@ and request a new wake lock when they occur:
 ```js
 const handleVisibilityChange = () => {
   if (wakeLock !== null && document.visibilityState === 'visible') {
-    wakeLock = requestWakeLock();
+    requestWakeLock();
   }
 };
 
@@ -190,6 +193,7 @@ document.addEventListener('fullscreenchange', handleVisibilityChange);
 
 ## Minimize your impact on system resources {: #best-practices }
 
+Should you use a wake lock in your app?
 The approach you take depends on the needs of your app. Regardless, you should
 use the most lightweight approach possible for your app to minimize its
 impact on system resources.
@@ -245,6 +249,7 @@ critical it is to support them.
 
 * Specification [Candidate Recommendation][spec-cr] | [Editor's Draft][spec-ed]
 * [Wake Lock Demo][demo] | [Wake Lock Demo source][demo-source]
+* [Origin Trial][ot]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * [Experimenting with the Wake Lock API](https://medium.com/dev-channel/experimenting-with-the-wake-lock-api-b6f42e0a089f)
@@ -264,3 +269,4 @@ critical it is to support them.
 [fullscreen-change]: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#Event_handlers
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWakeLock
 [cr-dev-twitter]: https://twitter.com/chromiumdev
+[ot]: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449

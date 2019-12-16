@@ -18,6 +18,12 @@
   @include base-button();
   border-radius: $GLOBAL_RADIUS;
   overflow: hidden;
+  padding: 0 16px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
+  vertical-align: middle;
   white-space: nowrap;
 }
 

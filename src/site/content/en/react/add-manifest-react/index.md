@@ -84,11 +84,9 @@ file:
 
 To find out if all the properties are working correctly in this example:
 
-+  Mouse over the editor, press the **App** button, then press the **Show**
-   button to preview the app.
-+  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-+  Click on the **Application** panel.
-+  Switch to the **Manifest** tab.
+{% Instruction 'preview' %}
+{% Instruction 'devtools-application' %}
+-  In the **Application** panel, click the **Manifest** tab.
 
 <img class="w-screenshot w-screenshot--filled" src="./devtools.png" alt="DevTool's Manifest tab shows the properties from the app manifest file.">
 

@@ -29,11 +29,9 @@ It's built with [React](https://reactjs.org/) and [moment.js](https://momentjs.c
 
 This codelab already contains the app bundled with webpack.
 
-1. To start, click the **Remix to Edit** button to make the project editable.
-2. Click the **Tools** button.
-3. Then click the **Console** button. It will open the Console in another tab.
-4. To get a color-coded list of assets and their sizes, in the console
-   type:
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'console', 'ol' %}
+1. To get a color-coded list of assets and their sizes, type `webpack` in the console.
 
 ```bash
 webpack

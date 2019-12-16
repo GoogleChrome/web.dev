@@ -5,8 +5,7 @@ authors:
   - houssein
 subhead: |
   Try out the two ways that you can add AMP to a Next.js app
-date: 2019-10-29
-draft: true
+date: 2019-11-08
 glitch: next-amp-start
 related_post: how-amp-can-guarantee-fastness-in-your-nextjs-app
 ---
@@ -185,11 +184,6 @@ to users and search engines at all times.
      
    export default Home;
    ```
-
-## Next steps
-
-Check out the rest of the guides in [web.dev's Next.js collection][collection] to discover
-other ways that you can optimize your Next.js app.
 
 [guidance]: /how-amp-can-guarantee-fastness-in-your-nextjs-app
 [layout]: https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout/

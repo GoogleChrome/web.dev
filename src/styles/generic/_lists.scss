@@ -73,6 +73,21 @@ ul:not([class]) > li::before {
   width: 8px;
 }
 
+ul:not([class]) > li > p,
+ol:not([class]) > li > p {
+  margin: 8px 0;
+}
+
+ul:not([class]) > li > p:first-child,
+ol:not([class]) > li > p:first-child {
+  margin-top: 0;
+}
+
+ul:not([class]) > li > p:last-child,
+ol:not([class]) > li > p:last-child {
+  margin-bottom: 0;
+}
+
 .w-unstyled-list {
   list-style: none;
 }

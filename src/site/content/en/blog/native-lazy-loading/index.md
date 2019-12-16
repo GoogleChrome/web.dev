@@ -114,21 +114,13 @@ to add `height` and `width` attributes to the `<img>` element or specify their v
 inline style:
 
 ```html
-<img src="..." loading="lazy" width="200" height="200">
-<img src="..." loading="lazy" style="height:200px; width:200px;">
-```
-
-Images will still lazy-load if dimensions are not included, but specifying them decreases the chance of
-browser reflow.
-
-Support for the `intrinsicsize` attribute is also being [worked
-on](https://bugs.chromium.org/p/chromium/issues/detail?id=967992), so images will lazy-load
-correctly if `intrinsicsize` is specified along with one other dimension (`width` or `height`).
-
-```html
-<img src="…" alt="…" loading="lazy" intrinsicsize="250x200" width="450">
+<img src="…" loading="lazy" alt="…" width="200" height="200">
+<img src="…" loading="lazy" alt="…" style="height:200px; width:200px;">
 <!-- lazy-loaded -->
 ```
+
+Images will still lazy-load if dimensions are not included, but [specifying them decreases the chance of
+browser reflow](https://www.youtube.com/watch?v=4-d_SoCHeWE).
 
 {% Aside %}
   Take a look at this [demo](https://mathiasbynens.be/demo/img-loading-lazy) to see how the `loading` attribute works with 100 pictures.

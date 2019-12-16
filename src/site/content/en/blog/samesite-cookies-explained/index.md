@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2019-10-31
+updated: 2019-12-04
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage with the
@@ -136,7 +136,7 @@ uses it directly on their site. If a visitor has been to your blog and has the
 `promo_shown` cookie, then when they view `amazing-cat.png` on the other
 person's site that cookie **will be sent** in that request for the image. This
 isn't particularly useful for anyone since `promo_shown` isn't used for anything
-on this other person's site, it's just adding that overhead to the request.
+on this other person's site, it's just adding overhead to the request.
 
 If that's an unintended effect, why would you want to do this? It's this
 mechanism that allows sites to maintain state when they are being used in a
@@ -290,17 +290,15 @@ and provide users with a safer experience, the IETF proposal,
 [Incrementally Better Cookies](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)
 lays out two key changes:
 
-- Cookies without a `SameSite` attribute will be treated as `SameSite=None`.
+- Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`.
 - Cookies with `SameSite=None` must also specify `Secure`.
 
-Both
-[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ)
-and
+Chrome implements these behaviors as of version 80.
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
-have this functionality available to test now and will be making this their
-default behavior in future releases.
+has them available to test and will be making them default behaviors in the
+future.
 [Edge](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/8lMmI5DwEAAJ)
-also plans to make this their default behavior.
+also plans to change its default behaviors.
 
 {% Aside %}
 

@@ -42,6 +42,7 @@ module.exports = (id, startTime) => {
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        loading="lazy"
       ></iframe>
     </div>
   `;

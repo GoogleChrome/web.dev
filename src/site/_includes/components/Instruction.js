@@ -61,17 +61,20 @@ module.exports = (type, listStyle = "ul") => {
       instruction = `${bullet}Click **Remix to Edit** to make the project editable.`;
       break;
 
+    // prettier-ignore
     case "console":
       instruction = html`
-        ${bullet}Click **Tools**. ${bullet}Click **Logs**. ${bullet}Click
-        **Console**.
+        ${bullet}Click **Tools**.
+        ${bullet}Click **Logs**.
+        ${bullet}Click **Console**.
       `;
       break;
 
+    // prettier-ignore
     case "create":
       instruction = html`
-        ${bullet}Click **New File** and give it a name. ${bullet}Click **Add
-        This File**.
+        ${bullet}Click **New File** and give it a name.
+        ${bullet}Click **Add This File**.
       `;
       break;
 
@@ -148,8 +151,10 @@ module.exports = (type, listStyle = "ul") => {
       `;
       substitution = type.substring("devtools-".length);
       if (substitution) {
+        // prettier-ignore
         instruction = html`
-          ${instruction} ${bullet}Click the **${capitalize(substitution)}** tab.
+          ${instruction}
+          ${bullet}Click the **${capitalize(substitution)}** tab.
         `;
       }
       break;
@@ -172,9 +177,12 @@ module.exports = (type, listStyle = "ul") => {
         // only capitalizes "Best practices"
         substitution = capitalize(substitution);
       }
+      // prettier-ignore
       instruction = html`
-        ${shared.devtools} ${bullet}Click the **Audits** tab. ${bullet}Select
-        the **${substitution}** checkbox. ${bullet}Click **Run audits**.
+        ${shared.devtools}
+        ${bullet}Click the **Audits** tab.
+        ${bullet}Select the **${substitution}** checkbox.
+        ${bullet}Click **Run audits**.
       `;
       break;
 

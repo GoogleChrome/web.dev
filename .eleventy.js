@@ -30,6 +30,7 @@ const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
+const Blockquote = require(`./${componentsDir}/Blockquote`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
 const Compare = require(`./${componentsDir}/Compare`);
@@ -101,11 +102,28 @@ module.exports = function(config) {
     rightDelimiter: '}',
     allowedAttributes: ['id', 'class', /^data\-.*$/],
   };
+
+  const mdLib = markdownIt(markdownItOptions)
+    .use(markdownItAnchor, markdownItAnchorOptions)
+    .use(markdownItAttrs, markdownItAttrsOpts);
+
+  // custom renderer rules
+  const fence = mdLib.renderer.rules.fence;
+
+  const rules = {
+    fence: (tokens, idx, options, env, slf) => {
+      const fenced = fence(tokens, idx, options, env, slf);
+      return `<web-copy-code>${fenced}</web-copy-code>`;
+    },
+    table_close: () => '</table>\n</div>',
+    table_open: () => '<div class="w-table-wrapper">\n<table>\n',
+  }
+
+  mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
+
   config.setLibrary(
     'md',
-    markdownIt(markdownItOptions)
-      .use(markdownItAnchor, markdownItAnchorOptions)
-      .use(markdownItAttrs, markdownItAttrsOpts)
+    mdLib
   );
 
   //----------------------------------------------------------------------------
@@ -153,6 +171,7 @@ module.exports = function(config) {
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
+  config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addPairedShortcode('Compare', Compare);
