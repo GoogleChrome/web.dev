@@ -47,7 +47,7 @@ iterated on the design.
 
 ## Suggested use cases {: #use-cases }
 
-* Checking for the other version of an app and switching to it
+* Checking for the native version of an app and switching to it
 * Disabling notifications in the web app when the native app is installed
 * Not prompting users to install the web app if the native app is installed
 
