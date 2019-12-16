@@ -2,7 +2,7 @@
 name: Propose a new post/codelab
 about: Use this ticket when you are submitting a new post or codelab for review.
 title: 'content: <Add your title>'
-labels: content proposal
+labels: content
 assignees: ''
 
 ---
