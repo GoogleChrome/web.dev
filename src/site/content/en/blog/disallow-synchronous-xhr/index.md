@@ -6,7 +6,7 @@ description: |
   the time a user closes it. Sites use a synchronous call to XMLHttpRequest()
   to keep the page or app open until its data is passed to the server. It hurts
   the user experience and ignores better ways to save data. Chrome 80 implements
-  a recent spec change to address this
+  a recent spec change to address this.
 authors:
   - joemedley
 date: 2019-12-18
