@@ -19,7 +19,7 @@ module.exports = function paginate(pages, current) {
 
   if (currentIndex < pages.length - shiftBy + 1) {
     pagesToShow[pagesToShow.length - 1] = {
-      lastPage: currentIndex < pages.length - shiftBy,
+      showEllipses: currentIndex < pages.length - shiftBy,
       href: pages.slice(-1)[0],
       index: pages.length,
     };

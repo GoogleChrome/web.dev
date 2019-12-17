@@ -57,10 +57,9 @@ pagination:
           class="w-pagination__link"
         {% endif %}
       >
-      {% if pageEntry.lastPage %}
-        <span class="w-pagination__spacer">...</span>
-        <a aria-label="Page {{pageEntry.index}}" href="{{ pageEntry.href | stripLanguage }}">{{ pageEntry.index }}</a>
-      {% else %}
+        {% if pageEntry.showEllipses %}
+          <span class="w-pagination__spacer">...</span>
+        {% endif %}
         <a
           {% if page.url == pageEntry.href %}aria-current="page"{% endif %}
           aria-label="Page {{pageEntry.index}}"
@@ -68,11 +67,10 @@ pagination:
         >
           {{ pageEntry.index }}
         </a>
-      {% endif %}
       </div>
     {%- endfor %}
 
-    {# Show next page anchor only if not on the last of penultimate pages #}
+    {# Show next page anchor only if not on the last or penultimate pages #}
     {% if (pagination.pageNumber + 2) < (pagination.hrefs | length) %}
       <div class="w-pagination__link">
         <a aria-label="Next Page" href="{{ pagination.nextPageHref | stripLanguage }}">></a>
