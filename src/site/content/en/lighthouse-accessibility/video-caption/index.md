@@ -12,7 +12,7 @@ web_lighthouse:
 
 {% include 'content/lighthouse-accessibility/why-captions.njk' %}
 
-## How manually test that videos have captions
+## How to manually test that videos have captions
 
 To verify that a `<video>` element has captions,
 check that it contains at least one `<track>` element
