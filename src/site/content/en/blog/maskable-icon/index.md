@@ -16,20 +16,37 @@ tags:
 
 ## What are maskable icons? {: #what }
 
+If you've installed a Progressive Web App on a recent Android phone, you might notice the icon shows up with a white background. Android Oreo introduced adaptive icons, which display app icons in a variety of shapes across different device models. Icons that don't follow this new format are given white backgrounds.
+
+<figure class="w-figure">
+  <img src="homescreen-any.png" alt="" style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    PWA icons in white circles on Android
+  </figcaption>
+</figure>
+
+Maskable icons are a new icon format that give you more control and let your Progressive Web App use adaptive icons. If you supply a maskable icon, your icon can fill up the entire shape and look great on all Android devices. Firefox and Chrome have recently added support for this new format, and you can adopt it in your apps.
+
+<figure class="w-figure">
+  <img src="homescreen-maskable.png" alt="" style="max-width: 400px;">
+  <figcaption class="w-figcaption">
+    PWA icons covering the entire circle on Android
+  </figcaption>
+</figure>
+
+## Are my current icons ready?
+
+Since maskable icons need to support a variety of shapes, you supply an opaque image with some padding that the browser can later crop into the desired shape and size. It's best not to rely on any particular shape, since it can vary by browser and per platform.
+
 <figure class="w-figure w-figure--inline-right">
   <video class="w-screenshot" autoplay loop muted playsinline aria-label="Different masks applied to a maskable icon">
     <source src="fugu-mask.webm" type="video/webm; codecs=vp8">
     <source src="fugu-mask.mp4" type="video/mp4; codecs=h264">
   </video>
+  <figcaption class="w-figcaption">
+    Different platform specific shapes
+  </figcaption>
 </figure>
-
-If you've installed a Progressive Web App on a recent Android phone, you might notice the icon shows up with a white background. Android Oreo introduced adaptive icons, which display app icons in a variety of shapes across different device models. Icons that don't follow this new format are given white backgrounds.
-
-Maskable icons are a new icon format that let your Progressive Web App use adaptive icons. If you supply a maskable icon, your icon can fill up the entire shape and look great on all Android devices. Firefox and Chrome have recently added support for this new format, and you can adopt it in your apps.
-
-## Are my current icons ready?
-
-Since maskable icons need to support a variety of shapes, you supply an opaque image with some padding that the browser can later crop into the desired shape and size. It's best not to rely on any particular shape, since it can vary by browser and per platform.
 
 Luckily, there's a well-defined and [standardized](https://w3c.github.io/manifest/#icon-masks) "minimum safe zone" that all platforms respect. The important parts of your icon, such as your logo, should be within a circular area in the center of the icon with a radius equal to 40% of the icon width. The outer 10% edge may be cropped.
 
