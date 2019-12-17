@@ -1,5 +1,5 @@
 ---
-title: Indexing your offline-capable pages
+title: Indexing your offline-capable pages with the Content Indexing API
 subhead: The Content Indexing API lets developers tell browsers about pages that work offline.
 authors:
   - jeffposnick
