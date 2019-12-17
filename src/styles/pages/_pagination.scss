@@ -1,0 +1,46 @@
+@import '../settings/colors';
+
+$W_PAGINATION_LINK_SPACING: 6px;
+
+@mixin w-pagination__links($COLOR, $ACTIVE: false) {
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  min-width: 20px;
+  padding: 0px $W_PAGINATION_LINK_SPACING;
+
+  a {
+    color: $COLOR;
+    text-decoration: none;
+
+    @if $ACTIVE {
+      border-bottom: 2px solid $COLOR;
+    } @else {
+      &:active,
+      &:focus,
+      &:hover {
+        border-bottom: 2px solid $COLOR;
+      }
+    }
+  }
+}
+
+.w-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.w-pagination > .w-pagination__active {
+  @include w-pagination__links($BLACK, true);
+}
+
+.w-pagination > .w-pagination__link {
+  @include w-pagination__links($GREY_700);
+}
+
+.w-pagination__spacer {
+  color: $GREY_700;
+  margin-right: calc(#{$W_PAGINATION_LINK_SPACING} * 2) ;
+}

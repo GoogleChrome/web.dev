@@ -5,15 +5,25 @@
  * @return {object[]} An array of up to 10 items to display, including href and index.
  */
 module.exports = function paginate(pages, current) {
-  const currentIndex = pages.findIndex((page) => page === current);
+  const currentIndex = pages.indexOf(current);
 
   if (currentIndex < 0) return [];
 
-  let curated = pages.slice(0, 10);
-  const start = currentIndex > 5 ? currentIndex - 5 : 0;
-  const end = currentIndex + 5;
+  const shiftBy = 4;
+  const shouldShift = currentIndex > shiftBy;
+  const start = shouldShift ? currentIndex - shiftBy : 0;
+  const end = shouldShift ? currentIndex + shiftBy : shiftBy * 2;
+  const pagesToShow = pages
+    .slice(start, end)
+    .map((href, index) => ({href, index: start + index + 1}));
 
-  if (currentIndex > 5) curated = pages.slice(start, end);
+  if (currentIndex < pages.length - shiftBy + 1) {
+    pagesToShow[pagesToShow.length - 1] = {
+      lastPage: currentIndex < pages.length - shiftBy,
+      href: pages.slice(-1)[0],
+      index: pages.length,
+    };
+  }
 
-  return curated.map((href, index) => ({href, index: start + index + 1}));
+  return pagesToShow;
 };

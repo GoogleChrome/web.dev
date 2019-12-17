@@ -13,7 +13,7 @@ pagination:
 
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
-<div class="w-blog__landing-page">
+<div class="blog-landing-page">
   {# Make sure Actions are first in the tab order. #}
   <web-actions actions="subscribe"></web-actions>
 
@@ -34,27 +34,57 @@ pagination:
     </div>
   </section>
 
-  <div class="w-blog__pagination">
-    {% if pagination.previousPageHref %}
-      <div class="w-blog__pagination-link">
-        <a href="{{ pagination.previousPageHref }}">Previous</a>
+  <nav class="w-pagination">
+    {# Show first page anchor only if not on the first page #}
+    {% if page.url != pagination.firstPageHref %}
+      <div class="w-pagination__link">
+        <a aria-label="First Page" href="{{ pagination.firstPageHref | stripLanguage }}"><<</a>
+      </div>
+    {% endif %}
+
+    {# Show previous page anchor only if not on the first two pages #}
+    {% if pagination.pageNumber > 1 %}
+      <div class="w-pagination__link">
+        <a aria-label="Previous Page" href="{{ pagination.previousPageHref | stripLanguage }}"><</a>
       </div>
     {% endif %}
 
     {%- for pageEntry in pagination.hrefs | paginate(page.url)  %}
-      <div class="w-blog__pagination-link">
+      <div
         {% if page.url == pageEntry.href %}
-          <span aria-current="page">{{ pageEntry.index }}</span>
+          class="w-pagination__active"
         {% else %}
-          <a href="{{ pageEntry.href }}">{{ pageEntry.index }}</a>
+          class="w-pagination__link"
         {% endif %}
+      >
+      {% if pageEntry.lastPage %}
+        <span class="w-pagination__spacer">...</span>
+        <a aria-label="Page {{pageEntry.index}}" href="{{ pageEntry.href | stripLanguage }}">{{ pageEntry.index }}</a>
+      {% else %}
+        <a
+          {% if page.url == pageEntry.href %}aria-current="page"{% endif %}
+          aria-label="Page {{pageEntry.index}}"
+          href="{{ pageEntry.href | stripLanguage }}"
+        >
+          {{ pageEntry.index }}
+        </a>
+      {% endif %}
       </div>
     {%- endfor %}
 
-    {% if pagination.nextPageHref %}
-      <div class="w-blog__pagination-link">
-        <a href="{{ pagination.nextPageHref }}">Next</a>
+    {# Show next page anchor only if not on the last of penultimate pages #}
+    {% if (pagination.pageNumber + 2) < (pagination.hrefs | length) %}
+      <div class="w-pagination__link">
+        <a aria-label="Next Page" href="{{ pagination.nextPageHref | stripLanguage }}">></a>
       </div>
     {% endif %}
-  </div>
+
+    {# Show last page anchor only if not on the last page #}
+    {% if page.url != pagination.lastPageHref %}
+      <div class="w-pagination__link">
+        <a aria-label="Last Page" href="{{ pagination.lastPageHref | stripLanguage }}">>></a>
+      </div>
+    {% endif %}
+
+  </nav>
 </div>
