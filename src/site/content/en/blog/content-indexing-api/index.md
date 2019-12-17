@@ -1,6 +1,6 @@
 ---
 title: Indexing your offline-capable pages with the Content Indexing API
-subhead: The Content Indexing API lets developers tell browsers about pages that work offline.
+subhead: Enabling service workers to tell browsers which pages work offline
 authors:
   - jeffposnick
 description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question currently in an origin trial. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
@@ -22,8 +22,9 @@ origin_trial:
 ---
 
 {% Aside %}
-  The Content Indexing API begins an origin trial in Chrome 80 as part of our capabilities project.
-  We'll keep this post updated as the implementation progresses.
+  The Content Indexing API begins an origin trial in Chrome 80 as part of Chrome's 
+  [Capabilities project](https://developers.google.com/web/updates/capabilities).
+  This post will be updated as the implementation progresses.
 {% endAside %}
 
 ## What is the Content Indexing API? {: #what }
@@ -52,15 +53,15 @@ metadata of offline-capable pages to a local index maintained by the browser.
 Once the index is populated with content from your PWA, as well as any other
 installed PWAs, it will be surfaced by the browser. Experiments are also being
 run to determine how and where this offline content listing will be presented,
-and the initial plans include a dedicated area of Chrome for Android's Downloads
+and the initial plans include a dedicated area of Chrome for Android's **Downloads**
 page:
 
 <div class="w-columns">
   <figure class="w-figure">
     <img src="downloads-menu.png"
-         alt="Screen shot of the Downloads menu item on Chrome's new tab page.">
+         alt="A screenshot of the Downloads menu item on Chrome's new tab page.">
     <figcaption class="w-figcaption">
-      First, select the "Downloads" menu item on Chrome's new tab page.
+      First, select the <b>Downloads</b> menu item on Chrome's new tab page.
     </figcaption>
   </figure>
   <figure class="w-figure">
@@ -68,7 +69,7 @@ page:
          alt="Media and articles that have been added to the index.">
     <figcaption class="w-figcaption">
       Media and articles that have been added to the index will be shown in the
-      "Articles for You" section.
+      <b>Articles for You</b> section.
     </figcaption>
   </figure>
 </div>
@@ -108,15 +109,16 @@ The best way to get a feel for the Content Indexing API is to try a sample
 application.
 
 1. Make sure that you're using a supported browser and platform. Currently,
-   that's limited to **Chrome 80 or later on Android**.
+   that's limited to **Chrome 80 or later on Android**. Go to `chrome://version` to see
+   what version of Chrome you're running.
 1. Visit [https://contentindex.dev](https://contentindex.dev)
 1. Click the `+` button next to one or more of the items on the list.
-1. [Optional] Disable your device's WiFi and cellular data connection, or enable
+1. (Optional) Disable your device's Wi-Fi and cellular data connection, or enable
    airplane mode to simulate taking your browser offline.
-1. Choose **Downloads** from Chrome's menu, and switch to the "Articles for You" tab.
+1. Choose **Downloads** from Chrome's menu, and switch to the **Articles for You** tab.
 1. Browse through the content that you previously saved.
 
-You can view the source of the sample application [on
+You can view [the source of the sample application on
 GitHub](https://github.com/rayankans/contentindex.dev).
 
 Another sample application, a [Scrapbook PWA](https://scrapbook-pwa.web.app/),
@@ -124,7 +126,7 @@ illustrates the use of the Content Indexing API with the [Web
 Share Target API](/web-share-target/). The [code demonstrates a
 technique](https://github.com/GoogleChrome/samples/blob/gh-pages/web-share/src/js/contentIndexing.js)
 for keeping the Content Indexing API in sync with items stored by a web app
-using the Cache Storage API.
+using the [Cache Storage API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 ## Using the API {: #using-the-api }
 
@@ -135,7 +137,7 @@ creating one.
 
 ### What type of URLs can be indexed as offline-capable? {: #offline-capable-urls }
 
-The API supports indexing URLs corresponding to HTML documents. A URL for cached
+The API supports indexing URLs corresponding to HTML documents. A URL for a cached
 media file, for example, can't be indexed directly. Instead, you need to provide
 a URL for a page that displays media, and which works offline.
 
@@ -214,21 +216,21 @@ Adding an entry only affects the content index; it does not add anything to the
 [Cache Storage
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
-{% Aside 'note' %}
-  When you call `add()`, Chrome will make a request for
-  each icon's URL to ensure that it has a copy of the icon to use when
-  displaying a list of indexed content.
+#### Edge case: Call `add()` from `window` context if your icons rely on a `fetch` handler
 
-  If you call `add()` from the `window` context (i.e. from your web
+When you call `add()`, Chrome will make a request for
+each icon's URL to ensure that it has a copy of the icon to use when
+displaying a list of indexed content.
+
+* If you call `add()` from the `window` context (in other words, from your web
   page), this request will trigger a `fetch` event on your service worker.
 
-  If you call `add()` within your service worker (perhaps inside another event
+* If you call `add()` within your service worker (perhaps inside another event
   handler), the request will **not** trigger the service worker's `fetch` handler.
   The icons will be fetched directly, without any service worker involvement. Keep
   this in mind if your icons rely on your `fetch` handler, perhaps because they
   only exist in the local cache and not on the network. If they do, make sure that
   you only call `add()` from the `window` context.
-{% endAside %}
 
 ### Listing the index's contents {: #listing-items }
 
@@ -272,9 +274,6 @@ interface looks in Chrome 80:
 
 <figure class="w-figure">
   <img src="delete-menu.png" alt="The delete menu item." width="550">
-  <figcaption class="w-figcaption">
-    Manually deleting an item from the index using Chrome's interface.
-  </figcaption>
 </figure>
 
 When someone selects that menu item, your web app's service worker will receive
@@ -317,10 +316,10 @@ To participate in an origin trial:
 
 ## Feedback {: #feedback }
 
-We want to hear your thoughts and experiences using this API throughout the
+Chrome wants to hear your thoughts and experiences using this API throughout the
 Origin Trial process.
 
-### Tell us about the API design {: #feedback-design }
+### Feedback about the API design {: #feedback-design }
 
 Is there something about the API that's awkward or doesn't work as expected? Or
 are there missing pieces that you need to implement your idea?
@@ -339,8 +338,8 @@ to `Blink>ContentIndexing`.
 
 ### Planning to use the API? {: #planning-to-use }
 
-Planning to use the content indexing API in your web app? Your public support
-helps us prioritize features, and shows other browser vendors how critical it is
+Planning to use the Content Indexing API in your web app? Your public support
+helps Chrome prioritize features, and shows other browser vendors how critical it is
 to support them.
 
 - Be sure you have signed up for the [Origin
@@ -348,11 +347,11 @@ to support them.
   to show your interest and provide your domain and contact info.
 
 - Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
-  `#ContentIndexingAPI` and let us know where and how you're using it.
+  `#ContentIndexingAPI` and details on where and how you're using it.
 
 ## What are some security and privacy implications of content indexing? {: #security-privacy }
 
-We encourage you to [read through the
+Check out [the
 answers](https://github.com/rayankans/content-index/blob/master/SECURITY_AND_PRIVACY.md)
 provided in response to the W3C's [Security and Privacy
 questionnaire](https://www.w3.org/TR/security-privacy-questionnaire/). If you
