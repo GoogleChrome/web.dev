@@ -79,7 +79,7 @@ window.addEventListener('unload', {
 
 The `fetch()` method has the advantage of greater control over what's sent to
 the server. What I don't show in the example is that `fetch()` also returns a
-promise that resolves with a Response object. Since I'm trying to get out of the
+promise that resolves with a `Response` object. Since I'm trying to get out of the
 way of the page's unloading, I chose not to do anything with it.
 
 ### SendBeacon()
