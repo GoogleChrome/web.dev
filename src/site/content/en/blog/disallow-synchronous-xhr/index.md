@@ -1,5 +1,5 @@
 ---
-title: Disallowing synchronous XMLHttpRequest() during page dismissal
+title: Improving page dismisal in synchronous XMLHttpRequest()
 subhead: Reducing delayed navigations
 description: |
   It's common for a page or app to have unsubmitted analytics or other data at
@@ -64,9 +64,8 @@ by the specification.
 The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 provides a robust means of dealing with server interactions and [a consistent
 interface](https://fetch.spec.whatwg.org/#preface) for use across different
-platform APIs. Among its options is one that ensures a request continues whether
-or not the page that made it stays open. This is what `keepalive` does, as I've
-shown below:
+platform APIs. Among its options is `keepalive`, which ensures that a request
+continues whether or not the page that made it stays open:
 
 ```js/5
 window.addEventListener('unload', {
