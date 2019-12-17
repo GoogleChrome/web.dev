@@ -50,7 +50,7 @@ Since maskable icons need to support a variety of shapes, you supply an opaque i
 
 Luckily, there's a well-defined and [standardized](https://w3c.github.io/manifest/#icon-masks) "minimum safe zone" that all platforms respect. The important parts of your icon, such as your logo, should be within a circular area in the center of the icon with a radius equal to 40% of the icon width. The outer 10% edge may be cropped.
 
-You can check which parts of your icons land within the safe zone with Chrome DevTools. With your Progressive Web App open, launch DevTools and navigate to the "Application" panel. In the "Icons" section, you can choose to "Show only the minimum safe area for maskable icons". Your icons will be trimmed so that only the safe area is visible. If your logo is visible within this area, you're good to go.
+You can check which parts of your icons land within the safe zone with Chrome DevTools. With your Progressive Web App open, launch DevTools and navigate to the "Application" panel. In the "Icons" section, you can choose to "Show only the minimum safe area for maskable icons". Your icons will be trimmed so that only the safe area is visible. If your logo is visible within this safe area, you're good to go.
 
 <figure class="w-figure">
   <img src="devtools.png" alt="" style="max-width: 500px;">
@@ -59,7 +59,7 @@ You can check which parts of your icons land within the safe zone with Chrome De
   </figcaption>
 </figure>
 
-If you want to preview your maskable icon in other shapes it may appear in on Android, I've created a tool called [Maskable.app](https://maskable.app/). Open an icon and Maskable.app will let you try out various shapes and sizes, and you can share the preview with others on your team.
+If you want to preview your maskable icon in other shapes it may appear in on Android, I've created a tool called [Maskable.app](https://maskable.app/). Open an icon, then Maskable.app will let you try out various shapes and sizes, and you can share the preview with others on your team.
 
 ## How do I adopt maskable icons?
 
