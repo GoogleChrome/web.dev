@@ -115,7 +115,7 @@ a page feels usable.
   highlighted in green.">
 </figure>
 
-Read about all of the latest metrics on [web.dev/metrics](/metrics/).
+Learn more about all of the latest [metrics on web.dev](/metrics/).
 
 ## Field data (CrUX) thresholds adjusted in PageSpeed Insights
 
