@@ -102,7 +102,7 @@ function sayHello() {
 For this reason, web workers have historically imposed an outsized effect on the architecture of an
 application. Developers have had to create clever tooling and workarounds to make it possible to
 use web workers without giving up modern development practises. As an example, bundlers like
-Webpack embed a small module loader implementation into generated code that uses `importScripts()`
+webpack embed a small module loader implementation into generated code that uses `importScripts()`
 for code loading, but wraps modules in functions to avoid variable collisions and simulate
 dependency imports and exports.
 
