@@ -13,9 +13,16 @@ description: |
 tags:
   - post
   - web-workers
-  - js-modules
+  - javascript-modules
+  - modules
 ---
 
+<style>
+  .wm-filename {
+    margin-bottom: 0;
+    opacity: 0.7;
+  }
+</style>
 
 JavaScript is single-threaded, which means it can only perform one operation at a time. This is
 intuitive and works well for lots of cases on the web, but can become problematic when we need to
@@ -34,8 +41,7 @@ expensive operations on one or more background threads.
 Here's a typical example of worker usage, where a worker script listens for messages from the main
 thread and responds by sending back messages of its own:
 
-
-`page.js`:
+<p class="wm-filename">page.js:</p>
 
 ```js
 const worker = new Worker('worker.js');
@@ -45,7 +51,7 @@ worker.addEventListener(e => {
 worker.postMessage('hello');
 ```
 
-##### worker.js:
+<p class="wm-filename">worker.js:</p>
 
 ```js
 addEventListener('message', e => {
@@ -79,7 +85,7 @@ pauses execution of the worker in order to fetch and evaluate each script. It al
 in the global scope like a classic `<script>` tag, meaning the variables in one script can be
 overwritten by the variables in another.
 
-##### worker.js:
+<p class="wm-filename">worker.js:</p>
 
 ```js
 importScripts('greet.js');
@@ -89,7 +95,7 @@ addEventListener('message', e => {
 });
 ```
 
-##### greet.js:
+<p class="wm-filename">greet.js:</p>
 
 ```js
 // global to the whole worker
@@ -132,7 +138,7 @@ import](https://v8.dev/features/dynamic-import) for lazy-loading code without bl
 the worker. Dynamic import is much more explicit than using `importScripts()` to load dependencies,
 since the imported module's exports are returned rather than relying on global variables.
 
-##### worker.js:
+<p class="wm-filename">worker.js:</p>
 
 ```js
 import { sayHello } from './greet.js';
@@ -141,7 +147,7 @@ addEventListener('message', e => {
 });
 ```
 
-##### greet.js:
+<p class="wm-filename">greet.js:</p>
 
 ```js
 import greetings from './data.js';
@@ -159,7 +165,8 @@ has always been a `self` global that provides a reference to the global scope. I
 all types of workers including service workers, as well as in the DOM.
 
 {% Aside %}
-Module workers also remove support for HTML-style comments.
+Module workers also remove support for HTML-style comments. Did you know you could use
+HTML comments in web worker scripts?
 {% endAside %}
 
 ## Preload workers with `modulepreload`
