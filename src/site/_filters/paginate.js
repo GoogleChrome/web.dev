@@ -1,8 +1,8 @@
 /**
  * Take array of paginated hrefs and select the pages to display.
- * @param {string[]} pages An array of hrefs of all the pages.
+ * @param {Array<string>} pages An array of hrefs of all the pages.
  * @param {string} current Href of current page.
- * @return {object[]} An array of up to 10 items to display, including href and index.
+ * @return {Array<object>} An array of up to 10 items to display, including href and index.
  */
 module.exports = function paginate(pages, current) {
   const currentIndex = pages.indexOf(current);
