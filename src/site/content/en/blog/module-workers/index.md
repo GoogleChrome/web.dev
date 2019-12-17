@@ -16,7 +16,6 @@ tags:
   - js-modules
 ---
 
-<!--lint disable no-heading-punctuation heading-increment -->
 
 JavaScript is single-threaded, which means it can only perform one operation at a time. This is
 intuitive and works well for lots of cases on the web, but can become problematic when we need to
@@ -36,7 +35,7 @@ Here's a typical example of worker usage, where a worker script listens for mess
 thread and responds by sending back messages of its own:
 
 
-##### page.js:
+`page.js`:
 
 ```js
 const worker = new Worker('worker.js');
@@ -111,7 +110,7 @@ dependency imports and exports.
 
 A new mode for web workers with the ergonomics and performance benefits of [JavaScript
 modules](https://v8.dev/features/modules) is shipping in Chrome 80, called module workers. The
-Worker constructor now accepts a new `{type:"module"}` option, which changes script loading and
+`Worker` constructor now accepts a new `{type:"module"}` option, which changes script loading and
 execution to match `<script type="module">`.
 
 ```js
@@ -163,7 +162,7 @@ all types of workers including service workers, as well as in the DOM.
 Module workers also remove support for HTML-style comments.
 {% endAside %}
 
-## Preload workers with modulepreload
+## Preload workers with `modulepreload`
 
 One substantial performance improvement that comes with module workers is the ability to preload
 workers and their dependencies. With module workers, scripts are loaded and executed as standard
@@ -201,9 +200,9 @@ to avoid worker instantiation having to wait to download the worker script. Howe
   </iframe>
 </div>
 
-## What about Service Worker?
+## What about service worker?
 
-The Service Worker specification [has already been
+The service worker specification [has already been
 updated](https://w3c.github.io/ServiceWorker/#service-worker-concept) to support accepting a
 JavaScript module as the entry point, using the same `{type:"module"}` option as module workers,
 however this change has yet to be implemented in browsers. Once that happens, it will be possible
