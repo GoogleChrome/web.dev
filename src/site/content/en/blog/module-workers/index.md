@@ -123,10 +123,10 @@ const worker = new Worker('worker.js', {
 Since module workers are standard JavaScript modules, they can use import and export statements. As
 with all JavaScript modules, dependencies are only executed once in a given context (main thread,
 worker, etc.), and all future imports reference the already-executed module instance. The loading
-and execution of JavaScript modules is also optimized by browsers because a module's dependencies
-can be loaded prior to the module being executed. Entire module trees can be loaded in parallel.
-Module loading also caches parsed code, which means modules that are used on the main thread and in
-a worker only need to be parsed once.
+and execution of JavaScript modules is also optimized by browsers. A module's dependencies can be
+loaded prior to the module being executed, which allows entire module trees to be loaded in
+parallel. Module loading also caches parsed code, which means modules that are used on the main
+thread and in a worker only need to be parsed once.
 
 Moving to JavaScript modules also enables the use of [dynamic
 import](https://v8.dev/features/dynamic-import) for lazy-loading code without blocking execution of
