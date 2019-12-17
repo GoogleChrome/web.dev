@@ -85,7 +85,7 @@ way of the page's unloading, I chose not to do anything with it.
 
 ### SendBeacon()
 
-[`SendBecaon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
+[`SendBeacon()`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
 actually uses the Fetch API under the hood, which is why it has the same
 64&nbsp;KB payload limitation and why it also ensures that a request continues
 after a page unload. Its primary advantage is its simplicity. It lets you
