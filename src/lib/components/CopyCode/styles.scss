@@ -36,6 +36,7 @@
   margin-bottom: -32px;
   position: relative;
 }
+
 web-copy-code {
   &:active,
   &:focus,
@@ -43,5 +44,9 @@ web-copy-code {
     .web-copy-code__button {
       opacity: 1;
     }
+  }
+
+  pre {
+    min-height: 64px;
   }
 }
