@@ -5,8 +5,8 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
-hero: hero.jpg
-alt: A hand sharing a web.dev article.
+hero: hero.png
+alt: An illustration demonstrating that native apps can now share content with web apps.
 description: |
   On a mobile device, sharing should be as simple as clicking the Share button,
   choosing an app, then choosing who to share with. The Web Share Target API
