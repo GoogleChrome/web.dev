@@ -30,10 +30,12 @@
 }
 
 .web-copy-code__container {
+  $COPY_CODE_CONTAINER_OFFSET: 32px;
   display: flex;
   flex-direction: row-reverse;
   height: 0;
-  margin-bottom: -32px;
+  margin-bottom: -$COPY_CODE_CONTAINER_OFFSET;
+  margin-top: $COPY_CODE_CONTAINER_OFFSET;
   position: relative;
 }
 
