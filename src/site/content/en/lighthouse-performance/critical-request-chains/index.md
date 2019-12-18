@@ -5,12 +5,13 @@ description: |
   Learn what critical request chains are, how they affect web page performance,
   and how you can reduce the effect.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2019-12-17
 web_lighthouse:
   - critical-request-chains
 ---
 
-Critical request chains are series of dependent network requests important for page rendering.
+[Critical request chains](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)
+are series of dependent network requests important for page rendering.
 The greater the length of the chains and the larger the download sizes,
 the more significant the impact on page load performance.
 
