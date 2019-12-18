@@ -19,7 +19,7 @@ Lighthouse—[Lighthouse CI, new performance score formula, and
 more](/lighthouse-evolution-cds-2019). Along with big Lighthouse news, we
 presented exciting performance tooling developments including new performance
 metrics, updates to PageSpeed Insights and Chrome User Experience Report (CrUX),
-and insights from Web Almanac analysis of the web ecosystem.
+and insights from the Web Almanac's analysis of the web ecosystem.
 
 ## New performance metrics
 
@@ -110,12 +110,16 @@ and include the three new metrics—LCP, TBT, and CLS—as they better capture w
 a page feels usable. 
 
 <figure class="w-figure w-figure--center">
-  <img class="w-screenshot" src="./performance-metrics.png" alt="A list of
-  performance metrics with FMP and FCI crossed-out and LCP, TBT, and CLS
-  highlighted in green.">
+  <img class="w-screenshot" src="./performance-metrics.png"
+       alt="In Lighthouse v6 First Contentful Paint, Speed Index, and Largest
+            Contentful Paint are the main load performance metrics; Time To Interactive,
+            First Input Delay, Max Potential First Input Delay, and Total Blocking Time are
+            the main interactivity metrics; And Cumulative Layout Shift is the main
+            predictability metric.">
 </figure>
 
-Learn more about all of the latest [metrics on web.dev](/metrics/).
+Check out [Lighthouse performance scoring](/performance-scoring/) and the new
+[web.dev metrics collection](/metrics/) to learn more.
 
 ## Field data (CrUX) thresholds adjusted in PageSpeed Insights
 
@@ -183,7 +187,7 @@ report](https://webmasters.googleblog.com/2019/11/search-console-speed-report.ht
 a week before Chrome Dev Summit. It uses data from the Chrome User Experience
 Report to help site owners discover potential user experience problems. The
 Speed report automatically assigns groups of similar URLs into "Fast",
-"Moderate," and "Slow" buckets, and helps prioritizing performance improvements
+"Moderate," and "Slow" buckets, and helps prioritize performance improvements
 for specific issues.
 
 <figure class="w-figure w-figure--center">

@@ -32,7 +32,8 @@ seamlessly alongside the new expressive syntax for asserting *any* Lighthouse
 audit or category result.
 
 <figure class="w-figure w-figure--center">
-  <img class="w-screenshot" src="./lighthouse-ci.png" alt="Lighthouse CI report.">
+  <img class="w-screenshot" src="./lighthouse-ci.png" alt="Lighthouse CI report."
+       style="max-width: 50%">
 </figure>
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle
@@ -44,11 +45,11 @@ setup](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/recipes/do
 Free, public, temporary Lighthouse report storage is available as an alternative
 to get started right away.
 
-## Coming soon: Lighthouse performance score update
+## Coming soon: Performance score updates
 
-Changes are coming to the Lighthouse performance score version 6! In version 5
+Changes are coming to the Lighthouse Performance score version 6! In version 5
 (as of November 2019), Lighthouse has five metrics that are [weighted and
-blended](/performance-scoring/#weightings) to form the 0-100 performance score:
+blended](/performance-scoring/#weightings) to form the 0-100 Performance score:
 [First Contentful Paint](/fcp/), [Speed Index](/speed-index/), [First Meaningful
 Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
 [First CPU Idle](/first-cpu-idle/).
@@ -57,6 +58,8 @@ Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
   <img class="w-screenshot" src="./lighthouse-performance-score.png" alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.">
 </figure>
 
+See [Lighthouse performance scoring](https://web.dev/performance-scoring/) for detailed
+information.
 
 In Lighthouse version 6, new metrics, [Largest Contentful Paint (LCP)](/lcp/)
 and [Total Blocking Time (TBT)](/tbt/), are replacing First CPU Idle (FCI) and
@@ -64,12 +67,12 @@ First Meaningful Paint (FMP). The weights of each of the five metrics will be
 adjusted to better balance different phases of load and interactivity measures.
 
 {% Aside %} [Cumulative Layout Shift (CLS)](/cls/) is another new metric that's
-still being finessed and should become a part of the Lighthouse performance
+still being finessed and should become a part of the Lighthouse Performance
 score eventually. {% endAside %}
 
 The Lighthouse team is still working to ensure that all scoring curves are
 fine-tuned, and the metrics are mature and thoroughly tested. They aim to ship
-the Lighthouse v6 performance score in January 2020.
+the Lighthouse v6 Performance score in January 2020.
 
 {% Aside %} 
 Performance engineers sometimes find speed tools results difficult
@@ -77,7 +80,7 @@ to reproduce due to two discrete challenges--variability and cross-environment
 inconsistency. Variability is the issue of seeing numbers change even when the
 testing environment remains the same. Cross-environment inconsistency is the
 issue of getting different results when running tests on the same page, but in
-differing environments (for example, DevTools and PageSpeed Insights). While
+differing environments (for example, DevTools and PageSpeed Insights). While the
 Lighthouse team is working on ways to mitigate variability, it's helpful to
 understand [sources of
 variability](https://developers.google.com/web/tools/lighthouse/variability#sources_of_variability)
@@ -93,13 +96,14 @@ conditions and hardware lead to different measurements—at least for now.
 Lighthouse can automatically detect if sites use a framework or a [content
 management system
 (CMS)](https://en.wikipedia.org/wiki/Content_management_system) and include
-stack specific advice in the report. [Stack
+stack-specific advice in the report. [Stack
 Packs](https://github.com/GoogleChrome/lighthouse-stack-packs) add customized
 recommendations, curated by community experts (like you!), on top of Lighthouse
 report core audits.
 
 <figure class="w-figure w-figure--center">
-  <img class="w-screenshot" src="./lighthouse-stack-packs.png" alt="Lighthouse report recommendation for deffer offscreen images in React applications.">
+  <img class="w-screenshot" src="./lighthouse-stack-packs.png" 
+       alt="Lighthouse report recommendation for deferring offscreen images in React applications.">
 </figure>
 
 At the moment, there are Stack Packs for Angular, WordPress, Magento, React, and
@@ -115,7 +119,7 @@ or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stac
 
 [Lighthouse
 Plugins](https://github.com/GoogleChrome/lighthouse/blob/master/docs/plugins.md)
-are another way you can take advantage of the Lighthouse extensibility. There
+are another way you can take advantage of Lighthouse's extensibility. There
 are a lot of quality checks that Lighthouse core audits currently don't cover,
 either because they are only applicable to a subset of developers or because the
 team hasn't had the bandwidth to create the audits yet.
@@ -131,8 +135,8 @@ enable running them in the DevTools **Audits** panel too.
   <figcaption>Community Plugins in DevTools Audits panel (beta)</figcaption>
 </figure>
 
-When users install Lighthouse plugin extensions from the [Chrome web
-store](https://chrome.google.com/webstore/category/extensions), DevTools will
+When users install Lighthouse plugin extensions from the [Chrome Web
+Store](https://chrome.google.com/webstore/category/extensions), DevTools will
 identify installed plugins and offer them as an option in the **Audits** panel.
 The Lighthouse team will be building the support for the plugin approach in the
 coming months, so stay tuned. In the meantime, you can create a plugin today as
@@ -141,7 +145,7 @@ a node module and make it accessible to all Lighthouse users via the CLI!
 ## Learn more
 
 For more details about Lighthouse and other performance tooling updates from
-Chrome Developer Summit, watch the Speed tooling evolutions talk:
+CDS 2019, watch the Speed tooling evolutions talk:
 
 {% YouTube 'iaWLXf1FgI0' %}
 
