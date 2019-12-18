@@ -196,7 +196,7 @@ That's exactly the approach taken with PROXX.
 
 ## PROXX: an OMT case study
 
-The Google Chrome team developed [PROXX](https://github.com/GoogleChromeLabs/proxx)
+The Google Chrome team developed [PROXX](/load-faster-like-proxx/)
 as a Minesweeper clone that meets
 [Progressive Web App](https://developers.google.com/web/progressive-web-apps) requirements,
 including working offline and having an engaging user experience.
