@@ -13,6 +13,8 @@
   margin: 8px;
   opacity: 0;
   padding: 0;
+  position: absolute;
+  right: 0;
   transition: background-color .5s ease;
   width: 48px;
 
@@ -29,17 +31,10 @@
   }
 }
 
-.web-copy-code__container {
-  $COPY_CODE_CONTAINER_OFFSET: 32px;
-  display: flex;
-  flex-direction: row-reverse;
-  height: 0;
-  margin-bottom: -$COPY_CODE_CONTAINER_OFFSET;
-  margin-top: $COPY_CODE_CONTAINER_OFFSET;
-  position: relative;
-}
-
 web-copy-code {
+  display: block;
+  position: relative;
+
   &:active,
   &:focus,
   &:hover {
