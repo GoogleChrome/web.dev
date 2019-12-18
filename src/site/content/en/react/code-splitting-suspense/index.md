@@ -95,11 +95,10 @@ weak network connections.
 
 To better demonstrate how this works:
 
-1.  Mouse over the editor and press the **Show** button to preview the app.
-1.  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-1.  Click on the **Network** tab.
-1.  Click the [**Throttling**](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) dropdown and select `Slow 3G`.
-1.  Click the button on the application.
+{% Instruction 'preview' %}
+{% Instruction 'devtools-network' %}
+-  Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
+-  Click the **Click Me** button in the app.
 
 The loading indicator will show for longer now. Notice how all the code that
 makes up the `AvatarComponent` is fetched as a separate chunk.

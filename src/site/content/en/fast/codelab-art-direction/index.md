@@ -13,10 +13,9 @@ related_post: serve-responsive-images
 
 ## Try out this demo
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 - Reload the app using different browser sizes. Notice how different the images
-  are: they are not just different sizes but also different croppings and
+  are: they're not only different sizes but also different croppings and
   aspect ratios.
 
 ## What's going on here?

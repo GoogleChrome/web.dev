@@ -21,7 +21,7 @@ makes this a very simple strategy to implement.
 
 ## Add the lazysizes script to the page
 
-- Click the **Remix to Edit** button to make the project editable.
+{% Instruction 'remix' %}
 
 `lazysizes.min.js` has already been downloaded and added to this Glitch. To
 include it in the page:
@@ -72,8 +72,7 @@ than the browser.
 
 That's it! To see these changes in action, follow these steps:
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 - Open the console and find the images that were just added. Their classes
   should change from `lazyload` to `lazyloaded` as you scroll down the page.
@@ -91,11 +90,9 @@ Lastly, it's a good idea to use Lighthouse to verify these changes. Lighthouse's
 "Defer offscreen images" performance audit will indicate if you've forgotten to
 add lazy loading to any offscreen images.
 
-- Preview the site with the **Show** button.
-
-- Run the Lighthouse performance audit (Lighthouse > Options > Performance) on
-  the live version of your Glitch and verify that the "Defer offscreen images"
-  audit was passed.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
+1. Verify the **Defer offscreen images** audit was passed.
 
 ![Passing 'Efficiently encode images' audit in Lighthouse](./lighthouse_passing.png)
 
