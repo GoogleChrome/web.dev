@@ -9,7 +9,8 @@ date: 2019-12-16
 description: |
   Learn about adaptive loading pattern, how to implement it, and how Facebook, Tinder, eBay, and 
   other companies use adaptive loading in production.
-hero: hero.png  
+hero: hero.png 
+thumbnail: thumbnail.png 
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
@@ -23,9 +24,9 @@ can experience a slow website, that's why developing "one-size fits all"
 solutions may not always work.
 
 In their [Chrome Dev Summit talk](https://www.youtube.com/watch?v=puUPpVrIRkc),
-Addy Osmani and Facebook's Nate Schloss explore a solution to that problem—a
-pattern for delivering pages that better cater to a variety of user's
-constraints. They call it adaptive loading.
+Addy Osmani from Google and Nate Schloss from Facebook explore a solution to that problem—a
+pattern for delivering pages that better cater to a variety of user
+constraints. They call it _**adaptive loading**_.
 
 ## What is adaptive loading?
 
@@ -85,7 +86,7 @@ devices. It includes:
 * The `useNetworkStatus()` hook for adapting based on network status (`slow-2g`,
   `2g`, `3g`, or `4g`).
 
-* The `useSaveData()` hook for adapting based on the user's browser Data Saver
+* The `useSaveData()` hook for adapting based on the user's Data Saver
   preferences.
 
 * The `useHardwareConcurrency()` hook for adapting based on the number of
@@ -134,17 +135,17 @@ low-resolution and large images load only when you tap on the preview. With this
 option enabled, users on iOS and Android saved 50% in data-usage from images,
 and users on the web saved 80%. Here's a React
 [demo](https://github.com/GoogleChromeLabs/adaptive-loading/tree/master/react-twitter-save-data-loading(hook))
-that replicates the Twitter timeline implemented using the Save Data hook. Try
-opening the DevTools **Network** tab and looking at the difference in the amount
+that uses the Save Data hook to replicate the Twitter timeline. Try
+opening your DevTools **Network** panel and looking at the difference in the amount
 of data transferred as you scroll while Save Data is disabled versus when it's
 enabled. 
 
   <figure class="w-figure">
     <video controls autoplay loop muted class="w-screenshot">
-      <source src="twitter-save-data.mp4" type="video/mp4">
+      <source src="https://storage.googleapis.com/web-dev-assets/adaptive-loading-cds-2019/twitter-save-data.mp4" type="video/mp4">
     </video>
      <figcaption class="w-figcaption">
-      A screencast comparing scrolling the Twitter timeline with Data Saver on and off. With Data Saver on, only image previews are loaded and videos don't autoplay. Created by Addy Osmani.</a>.
+      A screencast comparing scrolling the Twitter timeline with Data Saver on and off. With Data Saver on, only image previews are loaded and videos don't autoplay.
     </figcaption>
   </figure>
 
@@ -172,10 +173,13 @@ and limit loading the next image in the carousel to loading images one at a time
 as users swipe. After implementing these optimizations, they've seen significant
 improvements in average swipe count in countries such as Indonesia. 
 
-![A screenshot of two versions of Tinder chat: with autoplaying video and with a
-video with play button overlay. A screenshot of a Tinder profile with caption
-"Limit carousel images on Data Saver or 3G".  A code snippet for prefetching
-in-viewport videos only on 4G.](tinder.png)
+<figure class="w-figure w-figure--center">
+  <img src="tinder.png" style="max-width: 75%"
+       alt="A screenshot of two versions of Tinder chat: with autoplaying video and 
+            with a video with play button overlay. A screenshot of a Tinder profile with 
+            caption 'Limit carousel images on Data Saver or 3G'.  
+            A code snippet for prefetching in-viewport videos only on 4G.">
+</figure>
 
 ### Adaptive loading at Facebook
 
