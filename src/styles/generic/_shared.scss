@@ -7,6 +7,8 @@
 //
 // =============================================================================
 
+$WEB_HEADER_HEIGHT: 65px;
+
 // Set box-sizing globally to handle padding and border widths
 *,
 *::before,
@@ -68,7 +70,8 @@ var {
 *:not([href])[id]::before {
   content: ' ';
   display: block;
-  height: 65px;
-  margin-top: -65px;
+  height: $WEB_HEADER_HEIGHT;
+  margin-top: -#{$WEB_HEADER_HEIGHT};
+  pointer-events: none;
   visibility: hidden;
 }
