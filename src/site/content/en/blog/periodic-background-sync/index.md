@@ -6,6 +6,7 @@ authors:
   - jeffposnick
   - joemedley
 date: 2019-11-10
+updated: 2019-12-18
 hero: hero.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
@@ -19,18 +20,22 @@ tags:
   - post
   - progressive-web-apps
   - service-worker
+  - chrome80
 ---
 
 {% Aside %}
-  The Periodic Background Sync API is available as an [**origin trial**](#ot) in Chrome 77 and
-  later. It is part of the [Capabilities project](https://developers.google.com/web/updates/capabilities).
-  This post will be updated as the implementation progresses.
+  Web apps should be able to do anything native apps can. The
+  [Capabilities project](https://developers.google.com/web/updates/capabilities),
+  of which Periodic Background Sync is only a part, aims
+  to do just that. To learn about other capabilities and to keep up with their
+  progress, follow [Unlocking new capabilities for the
+  web](https://developers.google.com/web/updates/capabilities).
 {% endAside %}
 
 Have you ever been in any of the following situations?
 
 * Riding a train or subway with flaky or no connectivity
-* Being throttled by your carrier after watching too many videos
+* Been throttled by your carrier after watching too many videos
 * Living in a country where bandwidth struggles to keep up with the demand
 
 If you have, then you've surely felt the frustration of getting
@@ -69,7 +74,7 @@ Status
 2. Create initial draft of specification
 </td>
 <td markdown="block">
-In Progress
+<a href="https://github.com/WICG/BackgroundSync/blob/master/explainers/periodicsync-explainer.md" rel="noopener">In Progress</a>
 </td>
 </tr>
 <tr>
@@ -82,19 +87,18 @@ In Progress
 </tr>
 <tr>
 <td markdown="block">
-<strong>4. Origin trial</strong>
+4. Origin trial
 </td>
 <td markdown="block">
-<strong><a href="https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905">Started in Chrome 77</a></strong><br/>
-Expected to run through Chrome 80
+<a href="https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905">Running from Chrome 77 to Chrome 80</a>
 </td>
 </tr>
 <tr>
 <td markdown="block">
-5. Launch
+<strong>5. Launch</strong>
 </td>
 <td markdown="block">
-Not started
+<strong>Chrome 80</strong>
 </td>
 </tr>
 </table>
@@ -105,17 +109,11 @@ You can try periodic background sync with the [live demo
 app](https://webplatformapis.com/periodic_sync/periodicSync_improved.html).
 Before using it, make sure that:
 
-* You're using Chrome 77 or later.
+* You're using Chrome 80 or later.
 * You
   [install](https://developers.google.com/web/fundamentals/app-install-banners/)
   the web app before enabling periodic background sync. (The demo app's
   author already took the step of signing up for the origin trial.)
-
-### Register for the origin trial {: #ot }
-
-{% include 'content/origin-trials.njk' %}
-
-{% include 'content/origin-trial-register.njk' %}
 
 ## Concepts and usage
 
@@ -369,7 +367,7 @@ While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
 <figure class="w-figure  w-figure--center">
-  <img class="w-screenshot" src="2-record-result.png" alt="An example of recorded periodic background sync data" 
+  <img class="w-screenshot" src="2-record-result.png" alt="An example of recorded periodic background sync data"
        style="max-width: 75%">
   <figcaption class="w-figcaption">
     An example of recorded periodic background sync data
@@ -398,43 +396,18 @@ event to use, and to trigger it as many times as you'd like.
 {% endAside %}
 
 <figure class="w-figure  w-figure--center">
-  <img class="w-screenshot" src="3-sw-panel.png" 
+  <img class="w-screenshot" src="3-sw-panel.png"
        alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync'
             text field and button." style="max-width: 90%">
 </figure>
 
-## Enabling the DevTools interface
+## Using the DevTools interface
 
-To enable periodic background sync during the origin trial, use the steps below. If and when it progresses out of the origin trial, the DevTools interface will be enabled by default.
-
-1. Visit `chrome://flags/#enable-devtools-experiments` and change the **Developer
-   Tools experiments** setting to **Enabled**.
-
-   <figure class="w-figure  w-figure--center">
-     <img class="w-screenshot" src="4-experiments.png" alt="The Developer Tools experiments flag" 
-          style="max-width: 75%">
-   </figure>
-
-2. Restart Chrome.
-
-3. Open Chrome DevTools [Settings](https://developers.google.com/web/tools/chrome-devtools/customize#settings).
-
-4. In **Settings** > **Experiments**, enable **Background
-   services section for Periodic Background Sync**.
+Starting in Chrome 80, you'll see a **Periodic Background Sync** section in the
+DevTools *Application* panel.
 
    <figure class="w-figure w-figure--center">
-     <img class="w-screenshot" src="6-checkbox.png" 
-          alt="The 'Background services section for Periodic Background Sync' experiment in DevTools" 
-          style="max-width: 75%">
-   </figure>
-
-5. Close, and then reopen DevTools.
-
-6. You should now see a **Periodic Background Sync** section within the
-   *Application* panel.
-
-   <figure class="w-figure w-figure--center">
-     <img class="w-screenshot" src="7-panel.png" 
-          alt="The Application panel showing the Periodic Background Sync section" 
+     <img class="w-screenshot" src="7-panel.png"
+          alt="The Application panel showing the Periodic Background Sync section"
           style="max-width: 75%">
    </figure>

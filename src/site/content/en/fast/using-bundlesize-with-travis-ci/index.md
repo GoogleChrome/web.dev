@@ -38,8 +38,9 @@ kitty](https://glitch.com/edit/#!/scarce-pixie).
 ## Set the performance budget
 
 [This Glitch](https://glitch.com/edit/#!/scarce-pixie) already contains
-bundlesize. To start, click the **Remix to Edit** button to make the project
-editable.
+bundlesize.
+
+{% Instruction 'remix' %}
 
 The main bundle of this app is in the public folder. To test its size, add the
 following section to the `package.json` file:

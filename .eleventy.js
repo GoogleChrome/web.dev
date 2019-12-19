@@ -97,11 +97,28 @@ module.exports = function(config) {
     rightDelimiter: '}',
     allowedAttributes: ['id', 'class', /^data\-.*$/],
   };
+
+  const mdLib = markdownIt(markdownItOptions)
+    .use(markdownItAnchor, markdownItAnchorOptions)
+    .use(markdownItAttrs, markdownItAttrsOpts);
+
+  // custom renderer rules
+  const fence = mdLib.renderer.rules.fence;
+
+  const rules = {
+    fence: (tokens, idx, options, env, slf) => {
+      const fenced = fence(tokens, idx, options, env, slf);
+      return `<web-copy-code>${fenced}</web-copy-code>`;
+    },
+    table_close: () => '</table>\n</div>',
+    table_open: () => '<div class="w-table-wrapper">\n<table>\n',
+  }
+
+  mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
+
   config.setLibrary(
     'md',
-    markdownIt(markdownItOptions)
-      .use(markdownItAnchor, markdownItAnchorOptions)
-      .use(markdownItAttrs, markdownItAttrsOpts)
+    mdLib
   );
 
   //----------------------------------------------------------------------------

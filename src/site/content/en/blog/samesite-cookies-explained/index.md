@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2019-10-31
+updated: 2019-12-04
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage with the
@@ -293,14 +293,12 @@ lays out two key changes:
 - Cookies without a `SameSite` attribute will be treated as `SameSite=Lax`.
 - Cookies with `SameSite=None` must also specify `Secure`.
 
-Both
-[Chrome](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/SSB1rTEkBgAJ)
-and
+Chrome implements these behaviors as of version 80.
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
-have this functionality available to test now and will be making this their
-default behavior in future releases.
+has them available to test and will be making them default behaviors in the
+future.
 [Edge](https://groups.google.com/a/chromium.org/d/msg/blink-dev/AknSSyQTGYs/8lMmI5DwEAAJ)
-also plans to make this their default behavior.
+also plans to change its default behaviors.
 
 {% Aside %}
 

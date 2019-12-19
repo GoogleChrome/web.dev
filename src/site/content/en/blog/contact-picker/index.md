@@ -5,25 +5,16 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2019-10-10
+updated: 2019-12-18
 tags:
   - post
   - capabilities
   - fugu
   - contacts
-  - chrome77
-  - origin-trial
+  - chrome80
 hero: hero.jpg
 alt: Telephone on yellow background.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/85568392920039425
 ---
-
-{% Aside %}
-  The Contact Picker API begins an origin trial in Chrome 77
-  (stable in September) as part of our capabilities project. We'll keep this
-  post updated as the implementation progresses.
-{% endAside %}
 
 ## What is the Contact Picker API? {: #what }
 
@@ -49,11 +40,11 @@ Access to the user's contacts has been a feature of native apps since
 I hear from web developers, and is often the key reason they build a native
 app.
 
-The [Contact Picker API][spec] is an on-demand API that allows users to
-select entries from their contact list and share limited details of the
-selected entries with a website. It allows users to share only what they
-want, when they want, and makes it easier for users to reach and connect
-with their friends and family.
+Available by default in Chrome 80, the [Contact Picker API][spec] is an
+on-demand API that allows users to select entries from their contact list and
+share limited details of the selected entries with a website. It allows users to
+share only what they want, when they want, and makes it easier for users to
+reach and connect with their friends and family.
 
 For example, a web-based email client could use the Contact Picker API to
 select the recipient(s) of an email. A voice-over-IP app could look up
@@ -74,10 +65,10 @@ which friends have already joined.
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
-| 2. Create initial draft of specification   | [In Progress][spec]          |
-| 3. Gather feedback & iterate on design     | [In progress][spec]          |
-| **4. Origin trial**                        | **Started in Chrome 77** <br> Expected to run through Chrome 80. |
-| 5. Launch                                  | Not started                  |
+| 2. Create initial draft of specification   | [Complete][spec]             |
+| 3. Gather feedback & iterate on design     | [Complete][spec]             |
+| 4. Origin trial                            | Complete                     |
+| **5. Launch**                              | **Chrome 80**                |
 
 </div>
 
@@ -91,21 +82,6 @@ that specifies the types of contact information you want.
   and view the
   [source](https://glitch.com/edit/#!/contact-picker?path=demo.js:20:0).
 {% endAside %}
-
-### Enabling via chrome://flags
-
-To experiment with the Contact Picker API locally, without an origin
-trial token, enable the `#enable-experimental-web-platform-features` flag
-in `chrome://flags`.
-
-### Enabling support during the origin trial phase {: #origin-trial }
-
-Starting in Chrome 77, the Contact Picker API is available as an origin
-trial on Chrome for Android.
-
-{% include 'content/origin-trials.njk' %}
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection
 
@@ -147,10 +123,11 @@ user gesture.
 
 ### Handling the results
 
-The Contact Picker API returns an array of contacts, and each contact
-includes an array of the requested properties. If a contact doesn't have
-data for the requested property, or the user chooses to opt-out of sharing
-a particular property, it returns an empty array.
+The Contact Picker API returns an array of contacts, and each contact includes
+an array of the requested properties. If a contact doesn't have data for the
+requested property, or the user chooses to opt-out of sharing a particular
+property, the API returns an empty array. (I describe how the user chooses properties
+in the [User control](#security-control) section.)
 
 For example, if a site requests `name`, `email`, and `tel`, and a user
 selects a single contact that has data in the name field, provides two
@@ -252,16 +229,8 @@ with the site.
 
 ## Feedback {: #feedback }
 
-The Web Platform Incubator Group and the Chrome team want to hear about your
-experiences with the Contact Picker API.
-
-### Tell us about the API design
-
-Is there something about the API that doesn't work as expected? Or
-are there missing methods or properties that you need to implement your idea?
-
-* File a spec issue on the [WICG Contact Picker API GitHub repo][issues],
-  or add your thoughts to an existing issue.
+The Chrome team wants to hear about your experiences with the Contact Picker
+API.
 
 ### Problem with the implementation?
 
@@ -271,7 +240,7 @@ different from the spec?
 * File a bug at [https://new.crbug.com][new-bug]. Be sure to include as much
   detail as you can, provide simple instructions for reproducing the bug, and
   set *Components* to `Blink>Contacts`. [Glitch](https://glitch.com) works great
-  for sharing quick and easy repros.
+  for sharing quick and easy problem reproductions.
 
 ### Planning to use the API?
 
@@ -287,10 +256,9 @@ critical it is to support them.
 
 * [Public explainer][explainer]
 * [Contact Picker Specification][spec]
-* [Contact Picker API Demo][demo] & [Contact Picker API demo source][demo-source]
+* [Contact Picker API Demo][demo] and [Contact Picker API demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
-* Request an [origin trial token]({{origin_trial.url}})
 * Blink Component: `Blink>Contacts`
 
 ### Thanks
@@ -305,7 +273,6 @@ PS: The 'names' in my contact picker, are characters from Alice in Wonderland.
 [spec]: https://wicg.github.io/contact-api/spec/
 [spec-select]: https://wicg.github.io/contact-api/spec/#contacts-manager-select
 [spec-security]: https://wicg.github.io/contact-api/spec/#privacy
-[issues]: https://github.com/WICG/contact-api/issues
 [demo]: https://contact-picker.glitch.me
 [demo-source]: https://glitch.com/edit/#!/contact-picker?path=demo.js:20:0
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=860467
@@ -313,10 +280,6 @@ PS: The 'names' in my contact picker, are characters from Alice in Wonderland.
 [explainer]: https://github.com/WICG/contact-api/
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-contact-picker-api/3507
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EContacts
-[ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
-[ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
-[ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [secure-contexts]: https://w3c.github.io/webappsec-secure-contexts/
 [cr-dev-twitter]: https://twitter.com/chromiumdev
-[ot-guide]: https://googlechrome.github.io/OriginTrials/developer-guide.html

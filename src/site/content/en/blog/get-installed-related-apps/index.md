@@ -1,5 +1,5 @@
 ---
-title: "Is your native app installed? `getInstalledRelatedApps()` will tell you!"
+title: "Is your native app installed? getInstalledRelatedApps() will tell you!"
 subhead: "The `getInstalledRelatedApps()` method allows your web app to check whether your native app is installed on a user's device, and vice versa."
 authors:
   - petelepage
@@ -24,7 +24,7 @@ origin_trial:
   This post will be updated as the API evolves.
 {% endAside %}
 
-## What is the `getInstalledRelatedApps()` API? {: #what }
+## What is the getInstalledRelatedApps() API? {: #what }
 
 <figure class="w-figure w-figure--inline-right">
   <img src="getinstalled-cropped.jpg" class="w-screenshot" width="550">
@@ -96,7 +96,7 @@ enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`
 2. Install the demo app from the Play store and refresh the [demo][demo] page.
    You should now see the app listed.
 
-## How to use `getInstalledRelatedApps()` {: #use }
+## How to use getInstalledRelatedApps() {: #use }
 
 To use `getInstalledRelatedApps()`, you must first create a relationship
 between between the web and native versions of your app. This relationship

@@ -22,11 +22,11 @@
 
 .w-post-card__cover {
   display: block;
-  margin: 32px 0 24px;
+  margin: 32px 0 12px;
 }
 
 .w-post-card__cover--with-image {
-  margin: 32px 0 24px;
+  margin: 32px 0 12px;
 
   @include bp(md) {
     margin-top: -1px;

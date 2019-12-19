@@ -6,22 +6,25 @@ web-snackbar {
   align-items: center;
   display: flex;
   visibility: hidden;
-  
+
   .web-snackbar__surface {
     align-items: center;
     background-color: $GREY_900;
     display: flex;
     justify-content: flex-start;
-    max-width: 400px;
     min-width: 344px;
     opacity: 0;
     transform: scale(.8);
-    
+
     @include bp(sm) {
       border-radius: $GLOBAL_RADIUS;
       box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2),
                   0 6px 10px 0 rgba(0, 0, 0, .14),
                   0 1px 18px 0 rgba(0, 0, 0, .12);
+    }
+
+    @include bp(md) {
+      max-width: 400px;
     }
   }
 

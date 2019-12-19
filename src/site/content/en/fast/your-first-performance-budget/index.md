@@ -37,47 +37,51 @@ Let's take a highly specialized search engine, doggos.io, as an example. Doggos.
 
 <div class="w-table-wrapper">
   <table>
-    <caption>
-      Desktop analysis of doggos.io
-    </caption>
-    <tr>
-      <td>Desktop</td>
-      <td>FCP</td>
-      <td>TTI</td>
-    </tr>
-    <tr>
-      <td>Homepage</td>
-      <td>1,680 ms</td>
-      <td>5,550 ms</td>
-    </tr>
-    <tr>
-      <td>Results page</td>
-      <td>2,060 ms</td>
-      <td>6,690 ms</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Desktop</th>
+        <th>FCP</th>
+        <th>TTI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Homepage</td>
+        <td>1,680 ms</td>
+        <td>5,550 ms</td>
+      </tr>
+      <tr>
+        <td>Results page</td>
+        <td>2,060 ms</td>
+        <td>6,690 ms</td>
+      </tr>
+    </tbody>
+    <caption>Desktop analysis of doggos.io</caption>
   </table>
 </div>
 
 <div class="w-table-wrapper">
   <table>
-    <caption>
-      Mobile analysis of doggos.io
-    </caption>
-    <tr>
-      <td>Mobile</td>
-      <td>FCP</td>
-      <td>TTI</td>
-    </tr>
-    <tr>
-      <td>Homepage</td>
-      <td>1,800 ms</td>
-      <td>6,150 ms</td>
-    </tr>
-    <tr>
-      <td>Results page</td>
-      <td>1,100 ms</td>
-      <td>7,870 ms</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Mobile</th>
+        <th>FCP</th>
+        <th>TTI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Homepage</td>
+        <td>1,800 ms</td>
+        <td>6,150 ms</td>
+      </tr>
+      <tr>
+        <td>Results page</td>
+        <td>1,100 ms</td>
+        <td>7,870 ms</td>
+      </tr>
+    </tbody>
+    <caption>Mobile analysis of doggos.io</caption>
   </table>
 </div>
 
@@ -104,32 +108,36 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
 
 <div class="w-table-wrapper">
   <table>
-  <caption>Competitive analysis of doggos.io on 3G network</caption>
-    <tr>
-      <td>Site/Homepage</td>
-      <td>FCP</td>
-      <td>TTI</td>
-    </tr>
-    <tr>
-      <td>goggles.com</td>
-      <td bgcolor="yellow"><strong>880 ms</strong></td>
-      <td bgcolor="yellow"><strong>3,150 ms<strong></td>
-    </tr>
-    <tr>
-      <td>doggos.io</td>
-      <td>1,800 ms</td>
-      <td>6,500 ms</td>
-    </tr>
-    <tr>
-      <td>quackquackgo.com</td>
-      <td>2,680 ms</td>
-      <td>4,740 ms</td>
-    </tr>
-    <tr>
-      <td>ding.xyz</td>
-      <td>2,420 ms</td>
-      <td>7,040 ms</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Site/Homepage</th>
+        <th>FCP</th>
+        <th>TTI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>goggles.com</td>
+        <td bgcolor="yellow"><strong>880 ms</strong></td>
+        <td bgcolor="yellow"><strong>3,150 ms<strong></td>
+      </tr>
+      <tr>
+        <td>doggos.io</td>
+        <td>1,800 ms</td>
+        <td>6,500 ms</td>
+      </tr>
+      <tr>
+        <td>quackquackgo.com</td>
+        <td>2,680 ms</td>
+        <td>4,740 ms</td>
+      </tr>
+      <tr>
+        <td>ding.xyz</td>
+        <td>2,420 ms</td>
+        <td>7,040 ms</td>
+      </tr>
+    </tbody>
+    <caption>Competitive analysis of doggos.io on 3G network</caption>
   </table>
 </div>
 
@@ -145,23 +153,26 @@ There's room for improvement and a good guideline for that is the [20% rule](htt
 
 <div class="w-table-wrapper">
   <table>
-  <caption>Performance budget that would get doggos.com ahead of the competition</caption>
-    <tr>
-      <td>Measure
-  </td>
-      <td>Current time</td>
-      <td>Budget (20% faster than competition)</td>
-    </tr>
-    <tr>
-      <td>FCP</td>
-      <td>1,800 ms</td>
-      <td>704 ms</td>
-    </tr>
-    <tr>
-      <td>TTI</td>
-      <td>6,500 ms</td>
-      <td>2,520 ms</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Measure</th>
+        <th>Current time</th>
+        <th>Budget (20% faster than competition)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>FCP</td>
+        <td>1,800 ms</td>
+        <td>704 ms</td>
+      </tr>
+      <tr>
+        <td>TTI</td>
+        <td>6,500 ms</td>
+        <td>2,520 ms</td>
+      </tr>
+    </tbody>
+    <caption>Performance budget that would get doggos.com ahead of the competition</caption>
   </table>
 </div>
 
@@ -171,28 +182,31 @@ For doggos.io, a revised budget could look like this.
 
 <div class="w-table-wrapper">
   <table>
-  <caption>Revised doggos.io performance budget</caption>
-    <tr>
-      <td>Measure
-  </td>
-      <td>Current time</td>
-      <td>Initial budget
-  (20% faster than the current time)</td>
-      <td>Long-term goal
-  (20% faster than competition)</td>
-    </tr>
-    <tr>
-      <td>FCP</td>
-      <td>1,800 ms</td>
-      <td>1,440 ms</td>
-      <td>704 ms</td>
-    </tr>
-    <tr>
-      <td>TTI</td>
-      <td>6,500 ms</td>
-      <td>5,200 ms</td>
-      <td>2,520 ms</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Measure</th>
+        <th>Current time</th>
+        <th>Initial budget
+    (20% faster than the current time)</th>
+        <th>Long-term goal
+    (20% faster than competition)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>FCP</td>
+        <td>1,800 ms</td>
+        <td>1,440 ms</td>
+        <td>704 ms</td>
+      </tr>
+      <tr>
+        <td>TTI</td>
+        <td>6,500 ms</td>
+        <td>5,200 ms</td>
+        <td>2,520 ms</td>
+      </tr>
+    </tbody>
+    <caption>Revised doggos.io performance budget</caption>
   </table>
 </div>
 
@@ -213,50 +227,54 @@ Here are a few examples based on TTI budgets:
 
 <div class="w-table-wrapper">
   <table>
-    <tr>
-      <td>Network</td>
-      <td>Device</td>
-      <td>JS</td>
-      <td>Images</td>
-      <td>CSS</td>
-      <td>HTML</td>
-      <td>Fonts</td>
-      <td>Total</td>
-      <td>Time to Interactive budget</td>
-    </tr>
-    <tr>
-      <td>Slow 3G</td>
-      <td>Moto G4</td>
-      <td>100</td>
-      <td>30</td>
-      <td>10</td>
-      <td>10</td>
-      <td>20</td>
-      <td>~170 KB</td>
-      <td>5s</td>
-    </tr>
-    <tr>
-      <td>Slow 4G</td>
-      <td>Moto G4</td>
-      <td>200</td>
-      <td>50</td>
-      <td>35</td>
-      <td>30</td>
-      <td>30</td>
-      <td>~345 KB</td>
-      <td>3s</td>
-    </tr>
-    <tr>
-      <td>WiFi</td>
-      <td>Desktop</td>
-      <td>300</td>
-      <td>250</td>
-      <td>50</td>
-      <td>50</td>
-      <td>100</td>
-      <td>~750 KB</td>
-      <td>2s</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Network</th>
+        <th>Device</th>
+        <th>JS</th>
+        <th>Images</th>
+        <th>CSS</th>
+        <th>HTML</th>
+        <th>Fonts</th>
+        <th>Total</th>
+        <th>Time to Interactive budget</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Slow 3G</td>
+        <td>Moto G4</td>
+        <td>100</td>
+        <td>30</td>
+        <td>10</td>
+        <td>10</td>
+        <td>20</td>
+        <td>~170 KB</td>
+        <td>5s</td>
+      </tr>
+      <tr>
+        <td>Slow 4G</td>
+        <td>Moto G4</td>
+        <td>200</td>
+        <td>50</td>
+        <td>35</td>
+        <td>30</td>
+        <td>30</td>
+        <td>~345 KB</td>
+        <td>3s</td>
+      </tr>
+      <tr>
+        <td>WiFi</td>
+        <td>Desktop</td>
+        <td>300</td>
+        <td>250</td>
+        <td>50</td>
+        <td>50</td>
+        <td>100</td>
+        <td>~750 KB</td>
+        <td>2s</td>
+      </tr>
+    </tbody>
   </table>
 </div>
 

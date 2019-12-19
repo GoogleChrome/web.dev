@@ -38,7 +38,7 @@ const DetailsComponent = () => (
 ## Why is this useful?
 
 A large React application will usually consist of many components, utility
-methods and third-party libraries. If an effort isn't made to try to load
+methods, and third-party libraries. If an effort isn't made to try to load
 different parts of an application only when they're needed, a single, large
 bundle of JavaScript will be shipped to your users as soon as they load the
 first page. This can affect page performance significantly.
@@ -95,11 +95,10 @@ weak network connections.
 
 To better demonstrate how this works:
 
-+  Mouse over the editor and press the **Show** button to preview the app.
-+  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-+  Click on the **Network** tab.
-+  Click the [**Throttling**](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) dropdown and select `Slow 3G`.
-+  Click the button on the application.
+{% Instruction 'preview' %}
+{% Instruction 'devtools-network' %}
+-  Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
+-  Click the **Click Me** button in the app.
 
 The loading indicator will show for longer now. Notice how all the code that
 makes up the `AvatarComponent` is fetched as a separate chunk.
