@@ -96,11 +96,16 @@ In other words, users receiving the installation prompt in a subdomain will only
 
 There's also the issue that the same user could receive multiple installation prompts when navigating the site, if each subdomain meets the [installation criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria), and prompts the user to install the PWA.
 
-To mitigate this problem you can make sure that the prompt is shown only on a single domain. If the site has many subdomains that pass the installation criteria, the `beforeinstallprompt` event could be used and `preventDefault()` called (as explained [here](https://developers.google.com/web/fundamentals/app-install-banners/#listen_for_beforeinstallprompt)), to prevent the prompt from appearing in unintended parts of the site (like subdomains), while continue to show it in other parts (e.g. the home page).
+To mitigate this problem you can make sure that the prompt is shown only on the main origin. When a user visits a subdomain that passes the installation criteria:
+
+1. [Listen for `beforeinstallprompt` event](https://developers.google.com/web/fundamentals/app-install-banners/#listen_for_beforeinstallprompt).
+1. [Prevent the prompt from appearing](https://developers.google.com/web/fundamentals/app-install-banners/#preventing_the_mini-infobar_from_appearing), calling `event.preventDefault()`.
+
+That way, you make sure the prompt is not shown in unintended parts of the site, while you can continue showing it, for example, in the main origin (e.g. Home page).
 
 ### Standalone Mode
 
-While navigating in a standalone window, the browser will behave differently when the user moves outside of the scope set by the PWA's manifest. The behavior depends on each browser version and vendor. For example, the latest Chrome versions open a [Chrome custom tab](https://developer.chrome.com/multidevice/android/customtabs), when a user moves out of the scope in standalone mode.
+While navigating in a standalone window, the browser will behave differently when the user moves outside of the scope set by the PWA's manifest. The behavior depends on each browser version and vendor. For example, the latest Chrome versions open a [Chrome Custom Tab](https://developer.chrome.com/multidevice/android/customtabs), when a user moves out of the scope in standalone mode.
 
 In most cases, there's no solution for this, but a workaround can be applied for small parts of the experience that are hosted in subdomains (for example: login workflows):
 
@@ -113,7 +118,7 @@ The previous technique can help mitigating the potential UI change in a small pa
 {% endAside %}
 
 {% Aside %}
-In the context of [Trusted Web Actitivies](https://developers.google.com/web/updates/2019/02/using-twa), there's a recommended way of avoiding this issue, by validating all origins using Digital Asset Links. You can find more information [here](https://github.com/GoogleChrome/android-browser-helper/tree/master/demos/twa-multi-domain/).
+In the context of [Trusted Web Actitivies](https://developers.google.com/web/updates/2019/02/using-twa), there's a recommended way of avoiding this issue, by [validating all origins using Digital Asset Links](https://github.com/GoogleChrome/android-browser-helper/tree/master/demos/twa-multi-domain/).
 {% endAside %}
 
 ### Conclusion
