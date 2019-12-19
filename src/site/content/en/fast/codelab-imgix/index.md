@@ -56,7 +56,7 @@ For the purposes of this Glitch, imgix.js is already installed. For more informa
 
 ### Improve the code
 
-As mentioned in [Serve responsive images](https://web.dev/serve-responsive-images/#the-%22srcset%22-attribute), you can use the `srcset` attribute to instruct the browser 
+As mentioned in [Serve responsive images](/serve-responsive-images/#the-%22srcset%22-attribute), you can use the `srcset` attribute to instruct the browser
 to download different-sized images depending on screen size.
 
 Under the `images` directory, you can see three images: `hotairballoon-large.jpg`, `hotairballoon-medium.jpg`, and `hotairballoon-small.jpg`. The three images are exactly the same, except they've been manually resized in an image-editing application and saved at 1200, 750, and 400 pixels wide, respectively.
@@ -79,7 +79,7 @@ Under the `images` directory, you can see three images: `hotairballoon-large.jpg
 
 But what if you want to have more than three sizes of the image because you want to cover more scenarios? Or you want to make sure your page is running as optimally as possible? Imagine if you wanted a page that had ten different versions of an image defined in the element's `srcset`. Well, if you were to do that much manual work for each image on your page, the time and effort could really add up.
 
-Luckily, with imgix.js you can dynamically generate these images through your Source that you created earlier. 
+Luckily, with imgix.js you can dynamically generate these images through your Source that you created earlier.
 
 - Try using the imgix.js-defined attribute `ix-src` in your  `<img>` element:
 

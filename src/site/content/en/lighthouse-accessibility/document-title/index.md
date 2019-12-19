@@ -14,8 +14,9 @@ Having a `<title>` element on every page helps all your users:
 
 - Search engine users rely on the title to determine whether a page is
 relevant to their search.
-- The title also gives screen reader users an overview of the page. The title is
-the first text that a screen reader announces.
+- The title also gives users of screen readers and other assistive technologies
+  an overview of the page. The title is the first text
+  that an assistive technology announces.
 
 ## How the Lighthouse title audit fails
 
@@ -44,8 +45,6 @@ clearly states what the page is about. For example:
   </body>
 </html>
 ```
-See Deque University's [Documents must contain a title element to aid in navigation](https://dequeuniversity.com/rules/axe/3.2/document-title)
-page for more information.
 
 ## Tips for creating great titles
 
@@ -80,6 +79,6 @@ page for more details about these tips.
 
 - [Source code for **Document has a `<title>` element** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/document-title.js)
 - [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624)
-- [Documents must contain a title element to aid in navigation](https://dequeuniversity.com/rules/axe/3.2/document-title)
+- [Documents must contain a title element to aid in navigation (Deque University)](https://dequeuniversity.com/rules/axe/3.2/document-title)
 - [Irrelevant keywords](https://support.google.com/webmasters/answer/66358)
 - [Label documents and frames](/labels-and-text-alternatives#label-documents-and-frames)

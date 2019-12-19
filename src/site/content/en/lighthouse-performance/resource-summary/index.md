@@ -42,7 +42,7 @@ type of resource is being requested.
 
 Requests for CSS and JavaScript files are render-blocking by default. In other words,
 browsers can't render content to the screen until all CSS and JavaScript requests are finished.
-If any of these files is hosted on a slow server, that single slow server can delay the entire
+If any of these files are hosted on a slow server, that single slow server can delay the entire
 rendering process. See [Optimize your JavaScript][js], [Optimize your third-party resources][3p],
 and [Optimize your CSS][css] to learn how to only ship the code that you actually need.
 
@@ -82,7 +82,7 @@ Affected metrics: [First Contentful Paint][fcp]
 ## Use performance budgets to prevent regressions
 
 Once you've optimized your code to reduce request counts and transfer sizes, see
-[Set performance budgets](https://web.dev/fast#set-performance-budgets) to learn how to prevent regressions.
+[Set performance budgets](/fast#set-performance-budgets) to learn how to prevent regressions.
 
 ## Resources
 
@@ -93,8 +93,8 @@ Once you've optimized your code to reduce request counts and transfer sizes, see
 [3p]: /fast#optimize-your-third-party-resources
 [metrics]: /lighthouse-performance#metrics
 [images]: /fast#optimize-your-images
-[fcp]: https://developers.google.com/web/tools/lighthouse/audits/first-contentful-paint
-[fmp]: https://developers.google.com/web/tools/lighthouse/audits/first-meaningful-paint
-[si]: https://developers.google.com/web/tools/lighthouse/audits/speed-index
+[fcp]: /first-contentful-paint
+[fmp]: /first-meaningful-paint
+[si]: /speed-index
 [fonts]: /fast/#optimize-web-fonts
 [gifs]: /replace-gifs-with-videos/

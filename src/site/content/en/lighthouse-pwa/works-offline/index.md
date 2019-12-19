@@ -46,6 +46,6 @@ with the [Working with service workers](/codelab-service-workers) codelab.
 
 ## Resources
 
-- [Source code for **Current page does not respond with a 200 when offline** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/works-offline)
+- [Source code for **Current page does not respond with a 200 when offline** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/works-offline.js)
 - [What is network reliability and how do you measure it?](/network-connections-unreliable/)
 - [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers)

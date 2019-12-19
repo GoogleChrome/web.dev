@@ -38,8 +38,9 @@ kitty](https://glitch.com/edit/#!/scarce-pixie).
 ## Set the performance budget
 
 [This Glitch](https://glitch.com/edit/#!/scarce-pixie) already contains
-bundlesize. To start, click the **Remix to Edit** button to make the project
-editable.
+bundlesize.
+
+{% Instruction 'remix' %}
 
 The main bundle of this app is in the public folder. To test its size, add the
 following section to the `package.json` file:
@@ -57,12 +58,12 @@ following section to the `package.json` file:
 You can also set
 [different thresholds for different files](https://github.com/siddharthkp/bundlesize#1-add-the-path-and-maxsize-in-your-packagejson).
 This is especially useful if you are
-[splitting a bundle](https://web.dev/reduce-javascript-payloads-with-code-splitting)
+[splitting a bundle](/reduce-javascript-payloads-with-code-splitting)
 in your application.
 {% endAside %}
 
 To keep the compressed JavaScript bundle size [under the recommended
-limit](https://web.dev/your-first-performance-budget#budget-for-quantity-based-metrics),
+limit](/your-first-performance-budget#budget-for-quantity-based-metrics),
 set the performance budget to 170KB in the `maxSize` field.
 
 Bundlesize supports [glob patterns](https://github.com/isaacs/node-glob) and the \*
@@ -157,8 +158,8 @@ is 266 KB and the budget is 170 KB.
 
 ### Optimize
 
-Luckily, there are some easy performance wins you can make by [removing unused
-code](https://web.dev/remove-unused-code). There are two main imports in
+Luckily, there are some easy performance wins you can make by
+[removing unused code](/remove-unused-code). There are two main imports in
 `src/index.js`:
 
 ```js
@@ -207,8 +208,7 @@ Success! The new size of the bundle is 125.5 KB and all the checks have passed.
 
 Unlike Firebase, importing parts of the moment library cannot be done as easily,
 but it's worth a shot. Check out how you can further optimize the app in the
-[Remove unused code
-codelab](https://web.dev/codelab-remove-unused-code).
+[Remove unused code codelab](/codelab-remove-unused-code).
 
 ### Monitor
 

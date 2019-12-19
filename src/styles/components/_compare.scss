@@ -20,13 +20,13 @@
 // so we need to make them act like regular text content.
 .w-compare > ol,
 .w-compare > p,
-.w-compare > pre,
+.w-compare > web-copy-code > pre,
 .w-compare > ul {
   margin: 0;
 }
 
 .w-compare__label {
-  font-size: 1em;
+  font-size: 1.125em;
   font-weight: $FONT_WEIGHT_MEDIUM;
   padding-bottom: .5em;
 }

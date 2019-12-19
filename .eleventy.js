@@ -23,16 +23,14 @@ const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
-const {
-  Actions,
-  ShareAction,
-  SubscribeAction,
-} = require(`./${componentsDir}/Actions`);
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
+const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
+const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
+const Blockquote = require(`./${componentsDir}/Blockquote`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
 const Compare = require(`./${componentsDir}/Compare`);
@@ -41,8 +39,12 @@ const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
+const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
+const Tab = require(`./${componentsDir}/Tab`);
+const Tabs = require(`./${componentsDir}/Tabs`);
+const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
 const tagsDir = 'src/site/_includes/components/tags';
@@ -52,13 +54,15 @@ const collectionsDir = 'src/site/_collections';
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
+// nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
 const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
-const githubLink = require(`./${filtersDir}/github-link`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
+const githubLink = require(`./${filtersDir}/github-link`);
+const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
@@ -78,10 +82,10 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // MARKDOWN
   //----------------------------------------------------------------------------
-  let markdownItOptions = {
+  const markdownItOptions = {
     html: true,
   };
-  let markdownItAnchorOptions = {
+  const markdownItAnchorOptions = {
     level: 2,
     permalink: true,
     permalinkClass: 'w-headline-link',
@@ -98,11 +102,28 @@ module.exports = function(config) {
     rightDelimiter: '}',
     allowedAttributes: ['id', 'class', /^data\-.*$/],
   };
+
+  const mdLib = markdownIt(markdownItOptions)
+    .use(markdownItAnchor, markdownItAnchorOptions)
+    .use(markdownItAttrs, markdownItAttrsOpts);
+
+  // custom renderer rules
+  const fence = mdLib.renderer.rules.fence;
+
+  const rules = {
+    fence: (tokens, idx, options, env, slf) => {
+      const fenced = fence(tokens, idx, options, env, slf);
+      return `<web-copy-code>${fenced}</web-copy-code>`;
+    },
+    table_close: () => '</table>\n</div>',
+    table_open: () => '<div class="w-table-wrapper">\n<table>\n',
+  }
+
+  mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
+
   config.setLibrary(
     'md',
-    markdownIt(markdownItOptions)
-      .use(markdownItAnchor, markdownItAnchorOptions)
-      .use(markdownItAttrs, markdownItAttrsOpts)
+    mdLib
   );
 
   //----------------------------------------------------------------------------
@@ -116,6 +137,13 @@ module.exports = function(config) {
   config.addCollection('memoized', function(collection) {
     return memoize(collection.getAll());
   });
+  config.addCollection('algolia', function(collection) {
+    if (process.env.ELEVENTY_ENV === 'prod') {
+      const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
+      return algoliaPosts(collection);
+    }
+    return [];
+  });
 
   //----------------------------------------------------------------------------
   // FILTERS
@@ -123,8 +151,9 @@ module.exports = function(config) {
   config.addFilter('findBySlug', findBySlug);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
-  config.addFilter('githubLink', githubLink);
   config.addFilter('expandContributors', expandContributors);
+  config.addFilter('githubLink', githubLink);
+  config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
@@ -135,12 +164,14 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // SHORTCODES
   //----------------------------------------------------------------------------
-  config.addPairedShortcode('Actions', Actions);
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
+  config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
+  config.addPairedShortcode('AssessmentHint', AssessmentHint);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
+  config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addPairedShortcode('Compare', Compare);
@@ -149,10 +180,12 @@ module.exports = function(config) {
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
+  config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
-  config.addShortcode('ShareAction', ShareAction);
-  config.addShortcode('SubscribeAction', SubscribeAction);
+  config.addPairedShortcode('Tab', Tab);
+  config.addPairedShortcode('Tabs', Tabs);
+  config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
 
   //----------------------------------------------------------------------------

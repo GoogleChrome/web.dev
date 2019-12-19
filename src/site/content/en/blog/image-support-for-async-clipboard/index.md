@@ -7,8 +7,9 @@ description: Chrome 76 adds expands the functionality of the Async Clipboard API
 date: 2019-07-03
 updated: 2019-10-11
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - post
   - capabilities
+  - fugu
   - chrome76
   - cutandcopy
   - execcommand
@@ -16,7 +17,6 @@ tags:
   - clipboard
 hero: hero.jpg
 alt: Clipboard with shopping list
-draft: true
 ---
 
 Chrome 66 added support for the
@@ -146,8 +146,8 @@ method. Currently you can only pass one image at a time, but we plan to add
 support for multiple images in the future.
 
 The `ClipboardItem` takes an object with the MIME type of the image as the key,
-and the actual blob as the value. The sample code below shows a future-proof way
-to do this by using the [`Object.defineProperty()`][object-define-prop] method.
+and the actual blob as the value. The sample code below shows a flexible way
+to do this by using the new dynamic property keys syntax.
 The MIME type used as the key is retrieved from `blob.type`. This approach ensures
 that your code will be ready for future image types as well as other MIME types
 that may be supported in the future.
@@ -158,10 +158,9 @@ try {
   const data = await fetch(imgURL);
   const blob = await data.blob();
   await navigator.clipboard.write([
-    new ClipboardItem(Object.defineProperty({}, blob.type, {
-      value: blob,
-      enumerable: true
-    }))
+    new ClipboardItem({
+      [blob.type]: blob
+    })
   ]);
   console.log('Image copied.');
 } catch(e) {
@@ -230,10 +229,9 @@ document.addEventListener('copy', async (e) => {
   try {
     for (const item of e.clipboardData.items) {
       await navigator.clipboard.write([
-        new ClipboardItem(Object.defineProperty({}, item.type, {
-          value: item,
-          enumerable: true
-        }))
+        new ClipboardItem({
+          [blob.type]: blob
+        })
       ]);
     }
     console.log('Image copied.');
@@ -268,10 +266,8 @@ clipboard, and why in Chrome we require that the image be transcoded.
 The [specification](https://w3c.github.io/clipboard-apis/#image-transcode)
 therefore also explicitly mentions transcoding as a mitigation method:
 
-<blockquote class="w-blockquote">
-  "To prevent malicious image data from being placed on the clipboard, the
-  image data may be transcoded to produce a safe version of the image."
-</blockquote>
+> "To prevent malicious image data from being placed on the clipboard, the
+> image data may be transcoded to produce a safe version of the image."
 
 There is ongoing discussion happening in the
 [W3C Technical Architecture Group review](https://github.com/w3ctag/design-reviews/issues/350)

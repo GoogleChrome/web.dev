@@ -14,8 +14,7 @@ description: |
 In order for a screen reader to present a spoken UI to the user, meaningful
 elements must have proper labels or text alternatives. A label or text
 alternative gives an element its accessible **name**, one of the key properties
-for [expressing element semantics in the accessibility
-tree](https://web.dev/semantics-and-screen-readers/#semantic-properties-and-the-accessibility-tree).
+for [expressing element semantics in the accessibility tree](/semantics-and-screen-readers/#semantic-properties-and-the-accessibility-tree).
 
 When an element's name is combined with the element's **role**, it gives the
 user context so they can understand what type of element they're interacting
@@ -53,22 +52,22 @@ element its accessible name.
 
 ## Check for missing names
 
-There are a number of accessibility and SEO audits in Lighthouse that test
-for missing accessible names. Each of the fixes listed in the following table
-is also explained further below.
+There are different ways to add an accessible name to an element,
+depending on its type. The following table lists the most common element types
+that need accessible names and links to explanations for how to add them.
 
 <div class="w-table-wrapper">
   <table>
     <thead>
       <tr>
-        <th>Failed audit</th>
-        <th>How to fix</th>
+        <th>Element type</th>
+        <th>How to add a name</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
-          Document has a &lt;title&gt; element
+          HTML document
         </td>
         <td>
           <a href="#label-documents-and-frames">Label documents and frames</a>
@@ -76,7 +75,7 @@ is also explained further below.
       </tr>
       <tr>
         <td>
-          &lt;frame&gt; or &lt;iframe&gt; elements have a title
+          <code>&lt;frame&gt;</code> or <code>&lt;iframe&gt;</code> elements
         </td>
         <td>
           <a href="#label-documents-and-frames">Label documents and frames</a>
@@ -84,7 +83,7 @@ is also explained further below.
       </tr>
       <tr>
         <td>
-          Image elements have [alt] attributes
+          Image elements
         </td>
         <td>
           <a href="#include-text-alternatives-for-images-and-objects">
@@ -94,7 +93,7 @@ is also explained further below.
       </tr>
       <tr>
         <td>
-          &lt;input type="image"&gt; elements have [alt] text
+          <code>&lt;input type="image"&gt;</code> elements
         </td>
         <td>
           <a href="#include-text-alternatives-for-images-and-objects">
@@ -104,7 +103,7 @@ is also explained further below.
       </tr>
       <tr>
         <td>
-          &lt;object&gt; elements have [alt] text
+          <code>&lt;object&gt;</code> elements
         </td>
         <td>
           <a href="#include-text-alternatives-for-images-and-objects">
@@ -114,7 +113,7 @@ is also explained further below.
       </tr>
       <tr>
         <td>
-          Buttons have an accessible name
+          Buttons
         </td>
         <td>
           <a href="#label-buttons-and-links">Label buttons and links</a>
@@ -122,7 +121,7 @@ is also explained further below.
       </tr>
       <tr>
         <td>
-          Links have a discernible name
+          Links
         </td>
         <td>
           <a href="#label-buttons-and-links">Label buttons and links</a>
@@ -130,7 +129,7 @@ is also explained further below.
       </tr>
       <tr>
         <td>
-          Form elements have associated labels
+          Form elements
         </td>
         <td>
           <a href="#label-form-elements">Label form elements</a>
@@ -164,7 +163,7 @@ For example, the page below has the title "Mary's Maple Bar Fast-Baking Recipe":
 
 {% Aside %}
 For tips on writing effective titles, see the [Write descriptive titles
-guide](https://web.dev/write-descriptive-text).
+guide](/write-descriptive-text).
 {% endAside %}
 
 Similarly, any `frame` or `iframe` elements should have `title` attributes:

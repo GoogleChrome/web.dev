@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const rule = require('unified-lint-rule');
-const visit = require('unist-util-visit');
+const rule = require("unified-lint-rule");
+const visit = require("unist-util-visit");
 
-module.exports = rule('remark-lint:no-dash-spaces', noDashSpaces);
+module.exports = rule("remark-lint:no-dash-spaces", noDashSpaces);
 
 /* eslint-disable-next-line */
 const reason = 'No spaces around en or em dashes.';
@@ -28,11 +28,11 @@ const reason = 'No spaces around en or em dashes.';
  * @param {*} file The markdown file.
  */
 function noDashSpaces(tree, file) {
-  visit(tree, 'text', visitor);
+  visit(tree, "text", visitor);
 
   /* eslint-disable require-jsdoc */
   function visitor(node) {
-    const lines = node.value.split('\n');
+    const lines = node.value.split("\n");
     let line;
 
     for (let index = 0; index < lines.length; index++) {

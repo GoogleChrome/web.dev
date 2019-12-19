@@ -11,7 +11,7 @@ path: index.html:25:0
 related_post: image-cdns
 ---
 
-Learn to use Cloudinary's fetch URL API to optimize images and serve them in next-gen formats. 
+Learn to use Cloudinary's fetch URL API to optimize images and serve them in next-gen formats.
 
 In this codelab:
 
@@ -22,7 +22,7 @@ In this codelab:
 
 ## Get a free Cloudinary account
 
-First, <a href="https://cloudinary.com/users/register/free" target="_blank" rel="noopener noreferrer">sign up for a free Cloudinary account.</a>
+First, [sign up for a free Cloudinary account](https://cloudinary.com/users/register/free).
 
 Remember to set a custom cloud name at the end of the registration form. Cloudinary uses your cloud name to build the URLs it will serve your images from.
 
@@ -38,15 +38,14 @@ Remember to set a custom cloud name at the end of the registration form. Cloudin
 
 ## Measure page load time before optimization
 
-Use Lighthouse to measure page load time before optimization.
+Use [Lighthouse](https://developers.google.com/web/tools/lighthouse)
+to measure page load time before optimization:
 
-{% Aside 'note' %}
-  To preview a Glitch project in its own tab, press **Share** in the bottom-right corner and copy the **Live App** link into a new Chrome tab.
-{% endAside %}
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
 
-1.  In Chrome DevTools, on the **Audits** tab, select **Performance**.
-1.  Click **Run Audits**.
-1.  When the audit completes, see the **Opportunities** section.
+When the audit completes, look at the **Opportunities** section:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./images-not-optimized.png" alt="Example audit results before optimization">
@@ -70,31 +69,31 @@ https://res.cloudinary.com/<cloud_name>/image/fetch/<transformations>/<remote_im
 
 *   `<cloud_name>` is your Cloudinary [cloud name](https://cloudinary.com/documentation/solution_overview?query=cloud%20name&c_query=Account%20and%20API%20setup%20%E2%80%BA%20Identifiers%20%E2%80%BA%20Cloud%20name#cloud_name).
 
-    Example: 
-    
+    Example:
+
     ```text
     demo
     ```
 
 *   `<transformations>` is a list of [Cloudinary image transformations](https://cloudinary.com/documentation/image_transformations) separated by commas.
 
-    Example: 
-    
+    Example:
+
     ```text
     q_auto,f_auto
     ```
 
 {% Aside 'note' %}
-  
-`q` specifies image **quality** that Cloudinary will deliver. `q_1` is the lowest quality; `q_100` is the highest. `q_auto` tells Cloudinary to calculate the optimal image quality automatically. 
 
-`f` specifies image **format**. Cloudinary can deliver images in WebP and JPEG-XR formats on supported browsers. `f_auto` tells Cloudinary to choose an image format automatically. 
+`q` specifies image **quality** that Cloudinary will deliver. `q_1` is the lowest quality; `q_100` is the highest. `q_auto` tells Cloudinary to calculate the optimal image quality automatically.
+
+`f` specifies image **format**. Cloudinary can deliver images in WebP and JPEG-XR formats on supported browsers. `f_auto` tells Cloudinary to choose an image format automatically.
 
 {% endAside %}
 
-*   `<remote_image_url>` is the original image URL. 
+*   `<remote_image_url>` is the original image URL.
 
-    Example: 
+    Example:
 
     ```text
     https://codelab-cloudinary.glitch.me/images/flower1.png
@@ -106,11 +105,9 @@ Here's an example of a complete Cloudinary fetch URL:
 https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png
 ```
 
-### Replace image URLs with Cloudinary fetch URLs 
+### Replace image URLs with Cloudinary fetch URLs
 
-In this step, you'll edit the image URL on line 25 of index.html.
-
-Click **Remix to Edit** in the top-right corner to make the project editable.
+Edit the image URL on line 25 of `index.html`:
 
 1.  Create a Cloudinary fetch URL:
 
@@ -122,7 +119,7 @@ Click **Remix to Edit** in the top-right corner to make the project editable.
 
     *  Replace `<transformations>` with `q_auto,f_auto`.
 
-    *  Replace `<remote_image_url>` with the original image URL. 
+    *  Replace `<remote_image_url>` with the original image URL.
 
     Example:
 
@@ -130,7 +127,7 @@ Click **Remix to Edit** in the top-right corner to make the project editable.
     https://res.cloudinary.com/demo/image/fetch/q_auto,f_auto/https://codelab-cloudinary.glitch.me/images/flower1.png
     ```
 
-2.  Replace the image URL on line 25 of index.html with the Cloudinary fetch URL.
+2.  Replace the image URL on line 25 of `index.html` with the Cloudinary fetch URL.
 
     Example:
 
@@ -244,7 +241,7 @@ These are the results of using Cloudinary to optimize images:
   </table>
 </div>
 
-Run the Lighthouse performance audit again to see for yourself! 
+Run the Lighthouse performance audit again to see for yourself!
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./images-not-optimized.png" alt="Lighthouse performance audit: Before">

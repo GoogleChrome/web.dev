@@ -9,12 +9,13 @@ updated: 2019-10-08
 tags:
   - post
   - capabilities
+  - fugu
+  - origin-trial
   - shape-detection
   - progressive-web-apps
   - webapp
 hero: hero.jpg
 alt: QR code being scanned by a mobile phone
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919
 ---

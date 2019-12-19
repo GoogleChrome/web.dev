@@ -15,8 +15,8 @@
  */
 
 // Need markdown-it for nested shortcodes to render as expected
-const md = require('markdown-it')();
-const {html} = require('common-tags');
+const md = require("markdown-it")();
+const {html} = require("common-tags");
 
 /* eslint-disable max-len */
 
@@ -26,29 +26,33 @@ const {html} = require('common-tags');
  * @return {string}
  */
 function renderPreview(contentArr) {
-  if (!contentArr.length) return '';
+  if (!contentArr.length) return "";
 
-  const preview = contentArr.join('\n');
+  const preview = contentArr.join("\n");
 
   return html`
     <p class="w-details__preview">${md.renderInline(preview)}</p>
   `;
 }
 
-module.exports = (content, headingLevel='h2') => {
-  const validLevels = ['h2', 'h3', 'h4', 'h5', 'h6', 'p'];
+module.exports = (content, headingLevel = "h2") => {
+  const validLevels = ["h2", "h3", "h4", "h5", "h6", "p"];
 
   if (!validLevels.includes(headingLevel)) {
-    throw new Error(`Invalid heading level for Details component. Use h2, h3, h4, h5, h6, or p.`);
+    throw new Error(
+      `Invalid heading level for Details component. Use h2, h3, h4, h5, h6, or p.`,
+    );
   }
 
-  const contentArr = content.trim().split('\n');
+  const contentArr = content.trim().split("\n");
   const heading = contentArr.shift();
 
   // Has to be on one line to keep whitespace out of the heading element
   return html`
     <summary class="w-details__summary">
-      <${headingLevel} class="w-details__header">${md.renderInline(heading)}</${headingLevel}>
+      <${headingLevel} class="w-details__header">
+        ${md.renderInline(heading)}
+      </${headingLevel}>
       ${renderPreview(contentArr)}
     </summary>
   `;

@@ -34,7 +34,7 @@ A page is considered fully interactive when:
 - The page displays useful content, which is measured by the
 [First Contentful Paint](/first-contentful-paint),
 - Event handlers are registered for most visible page elements, and
-- The page responds to user interactions within 5&nbsp;seconds.
+- The page responds to user interactions within 50&nbsp;milliseconds.
 
 {% Aside %}
 Both [First CPU Idle](/first-cpu-idle) and TTI
@@ -99,7 +99,7 @@ also yields significant improvements for some sites.
 These two Diagnostic audits provide additional opportunities
 to reduce JavaScript work:
 
-- [Minimize main-thread work](/mainthread-work-breakdown)
+- [Minimize main thread work](/mainthread-work-breakdown)
 - [Reduce JavaScript execution time](/bootup-time)
 
 ## Tracking TTI on real users' devices

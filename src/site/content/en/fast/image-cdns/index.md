@@ -89,15 +89,12 @@ Image CDNs can be broken down into two categories: self-managed and third-party-
 
 Self-managed CDNs can be a good choice for sites with engineering staff who are comfortable maintaining their own infrastructure.
 
-[Thumbor](https://github.com/thumbor/thumbor) is the only self-managed image CDN available today. While it is open-source and free to use, it generally has fewer features than most commercial CDNs, and its documentation is somewhat limited. [Wikipedia](https://wikitech.wikimedia.org/wiki/Thumbor), [Square](https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87), and [99designs](https://99designs.com/tech-blog/blog/2013/07/01/thumbnailing-with-thumbor/) are three sites that use Thumbor. See the [How to install the Thumbor image CDN](https://web.dev/install-thumbor) post for instructions on setting it up.
+[Thumbor](https://github.com/thumbor/thumbor) is the only self-managed image CDN available today. While it is open-source and free to use, it generally has fewer features than most commercial CDNs, and its documentation is somewhat limited. [Wikipedia](https://wikitech.wikimedia.org/wiki/Thumbor), [Square](https://medium.com/square-corner-blog/dynamic-images-with-thumbor-a430a1cfcd87), and [99designs](https://99designs.com/tech-blog/blog/2013/07/01/thumbnailing-with-thumbor/) are three sites that use Thumbor. See the [How to install the Thumbor image CDN](/install-thumbor) post for instructions on setting it up.
 
 
 ### Third-party image CDNs
 
-Third-party image CDNs provide image CDNs as a service. Just as cloud providers provide servers and other infrastructure for a fee; image CDNs provide image optimization and delivery for a fee. Because third-party image CDNs maintain the underlying technology, getting started is fairly simple and can usually be accomplished in 10-15 minutes, although a complete migration for a large site might take far longer.
-
-Third-party image CDNs are typically priced based on usage tiers, with most image CDNs providing either a free tier or a free trial to give you an opportunity to try out their product. Examples of well-known third-party image CDNs include [Akamai Image Manager](https://www.akamai.com/us/en/products/performance/image-manager.jsp), [Cloudinary](https://cloudinary.com/), and [imgix](https://www.imgix.com/).
-
+Third-party image CDNs provide image CDNs as a service. Just as cloud providers provide servers and other infrastructure for a fee; image CDNs provide image optimization and delivery for a fee. Because third-party image CDNs maintain the underlying technology, getting started is fairly simple and can usually be accomplished in 10-15 minutes, although a complete migration for a large site might take far longer. Third-party image CDNs are typically priced based on usage tiers, with most image CDNs providing either a free tier or a free trial to give you an opportunity to try out their product.
 
 ## Choosing an image CDN
 

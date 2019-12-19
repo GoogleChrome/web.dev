@@ -5,18 +5,17 @@ authors:
   - petelepage
 description: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2019-10-08
+updated: 2019-11-01
 tags:
   - post
   - capabilities
+  - fugu
   - badging
   - progressive-web-apps
   - notifications
-  - origintrials
-  - fugu
+  - origin-trial
 hero: hero.jpg
 alt: Phone showing several notification badges
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-5354779956943519743
 ---
@@ -24,7 +23,7 @@ origin_trial:
 {% Aside 'caution' %}
   This API is part of the new
   [capabilities project](https://developers.google.com/web/updates/capabilities),
-  and starting in Chrome 73 it is available as an [**origin trial**](#ot).
+  and it is available as an [**origin trial**](#ot).
   This post will be updated as the Badging API evolves.
 {% endAside %}
 
@@ -71,7 +70,7 @@ Examples of sites that may use this API include:
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
-| **4. Origin trial**                        | [**In progress**](#ot)       |
+| **4. Origin trial**                        | v2 (Chrome 79-81) [In progress](#ot)<br>v1 (Chrome 73-78) [In progress](#backwards-compat) |
 | 5. Launch                                  | Not started                  |
 
 </div>
@@ -86,81 +85,120 @@ Examples of sites that may use this API include:
 4. Click the **Set** or **Clear** button to set or clear the badge from the app
    icon. You can also provide a number for the *Badge value*.
 
-{% Aside %}
-  While the Badging API *in Chrome* requires an installed app
-  with an icon that can actually be badged, you shouldn't
-  make calls to the Badging API dependent on the install state.
-  The Badging API can apply to *anywhere* a browser might want to show a badge,
-  so developers shouldn't make any assumptions about situations where
-  the browser will display them. Just call the API when it exists.
-  If it works, it works. If not, it simply doesn't.
-{% endAside %}
-
 ## How to use the Badging API {: #use }
 
-Starting in Chrome 73, the Badging API is available as an origin trial
-for Windows (7+) and macOS.
+The Badging API is available as an origin trial in Chrome 79 and later.
 
-{% Aside 'caution' %}
-  Android is not supported because it requires you to show a notification,
-  though this may change in the future. Chrome OS support is pending
-  implementation of badging on the platform.
-{% endAside %}
+The Badging API works on Windows, and macOS. Support for Chrome OS is in
+development and will be available in a future release of Chrome.
+On Android, the Badging API is not supported. Instead, Android automatically
+shows a badge on a web app when there is an unread notification, just like
+for native apps.
 
 ### Register for the origin trial {: #ot }
+
+{% Aside 'caution' %}
+In Chrome 79 (stable Dec 2019), the first origin trial ended, and was replaced
+by a new origin trial that uses a slightly different API design. Unfortunately,
+it is not backwards compatible, and calls to the previous API will fail. See
+[Supporting both the first and second origin trial](#backwards-compat) for
+details on how to provide backwards compatibility.
+{% endAside %}
 
 {% include 'content/origin-trials.njk' %}
 
 {% include 'content/origin-trial-register.njk' %}
+
+If necessary, you can
+[request a token](https://developers.chrome.com/origintrials/#/view_trial/1711367858400788481)
+for Chrome 78 and earlier.
 
 ### Alternatives to the origin trial
 
 If you want to experiment with the Badging API locally, without an origin trial,
 enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
 
-### Using the Badging API during the origin trial
-
-{% Aside 'gotchas' %}
-  During the origin trial, the API will be available via
-  `window.ExperimentalBadge`. The code below is based on the current design,
-  and will change before it lands in the browser as a standardized API.
-{% endAside %}
+### Setting and clearing a badge
 
 To use the Badging API, your web app needs to meet
 [Chrome's installability criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria),
 and users must add it to their home screens.
 
-The `ExperimentalBadge` interface is a member object on `window`. It contains
-two methods:
+The Badge API consists of the following methods on `navigator`:
 
-* `set([number])`: Sets the app's badge. If a value is provided, set the badge
-  to the provided value otherwise, display a plain white dot (or other flag as
-  appropriate to the platform).
-* `clear()`: Removes app's badge.
+* `setExperimentalAppBadge([number])`: Sets the app's badge. If a value is
+  provided, set the badge to the provided value otherwise, display a plain
+  white dot (or other flag as appropriate to the platform).
+* `clearExperimentalAppBadge()`: Removes app's badge.
 
 For example:
 
 ```js
-// In a web page
+// Set the badge
 const unreadCount = 24;
-window.ExperimentalBadge.set(unreadCount);
+navigator.setExperimentalAppBadge(unreadCount);
+
+// Clear the badge
+navigator.clearExperimentalAppBadge();
 ```
 
-`ExperimentalBadge.set()` and `ExperimentalBadge.clear()` can be called from
+`setExperimentalAppBadge()` and `clearExperimentalAppBadge()` can be called from
 a foreground page, or potentially in the future, a service worker. In either
 case, it affects the whole app, not just the current page.
 
-In some cases, the OS may not allow the exact representation of the badge,
-in this case, the browser will attempt to provide the best representation for
-that device. For example, while the Badging API isn't supported on Android,
+In some cases, the OS may not allow the exact representation of the badge.
+In such cases, the browser will attempt to provide the best representation for
+that device. For example, because the Badging API isn't supported on Android,
 Android only ever shows a dot instead of a numeric value.
 
 Don't assume anything about how the user agent wants to display the badge.
 Some user agents may take a number like "4000" and rewrite it as
 "99+". If you saturate the badge yourself (for example by setting it to "99")
-then the "+" won't appear. No matter the actual number, just set
-`Badge.set(unreadCount)` and let the user agent deal with displaying it
-accordingly.
+then the "+" won't appear. No matter the actual number, just call
+`setExperimentalAppBadge(unreadCount)` and let the user agent deal with
+displaying it accordingly.
+
+While the Badging API *in Chrome* requires an installed app, you shouldn't
+make calls to the Badging API dependent on the install state. Just call the
+API when it exists, as other browsers may show the badge in other places.
+If it works, it works. If not, it simply doesn't.
+
+## Supporting both the first and second origin trial {: #backwards-compat }
+
+In Chrome 79, a [second origin trial]({{origin_trial.url}}) was started. Based
+on developer feedback received during the first origin trial, the API has
+changed, and is not backwards compatible with the first origin trial.
+
+If you have an existing implementation, and want to provide backwards
+compatibility for your users, you can wrap the calls in the following
+wrapper function. Once all of your users have migrated to Chrome 79 or later,
+you can remove this wrapper function from your code.
+
+```js
+function setBadge(...args) {
+  if (navigator.setExperimentalAppBadge) {
+    navigator.setExperimentalAppBadge(...args);
+  } else if (window.ExperimentalBadge) {
+    window.ExperimentalBadge.set(...args);
+  }
+}
+
+function clearBadge() {
+  if (navigator.clearExperimentalAppBadge) {
+    navigator.clearExperimentalAppBadge();
+  } else if (window.ExperimentalBadge) {
+    window.ExperimentalBadge.clear();
+  }
+}
+```
+
+{% Aside %}
+Be sure to include both the
+[first (Chrome 78 and earlier)](https://developers.chrome.com/origintrials/#/view_trial/1711367858400788481),
+and
+[second (Chrome 79 and later)]({{origin_trial.url}})
+origin trial tokens in your page.
+{% endAside %}
 
 ## Feedback {: #feedback }
 
@@ -175,7 +213,7 @@ Have a question or comment on the security model?
 * File a spec issue on the [Badging API GitHub repo][issues], or add your
   thoughts to an existing issue.
 
-### Problem with the implementation?
+### Report a problem with the implementation
 
 Did you find a bug with Chrome's implementation? Or is the implementation
 different from the spec?
@@ -185,7 +223,7 @@ different from the spec?
   Components to `UI>Browser>WebAppInstalls`. [Glitch](https://glitch.com) works great for
   sharing quick and easy repros.
 
-### Planning to use the API?
+### Show support for the API
 
 Planning to use Badging API on your site? Your public support helps the Chrome
 team to prioritize features, and shows other browser vendors how critical it

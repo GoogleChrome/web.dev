@@ -16,7 +16,7 @@ tags:
   - accessibility
 ---
 
-Making your app accessible means that all users, including those with special needs, can use it and understand the content. According to the [World Health Report](https://www.who.int/disabilities/world_report/2011/report.pdf), more than a billion people—about 15% of the world's population—have some form of disability. So [accessibility](https://web.dev/accessible) is a priority for any development project.
+Making your app accessible means that all users, including those with special needs, can use it and understand the content. According to the [World Health Report](https://www.who.int/disabilities/world_report/2011/report.pdf), more than a billion people—about 15% of the world's population—have some form of disability. So [accessibility](/accessible) is a priority for any development project.
 
 In this post you'll learn how to add [codelyzer's](https://github.com/mgechev/codelyzer) accessibility checks to the build process for an Angular app. This approach lets you catch accessibility bugs directly in your text editor as you code.
 

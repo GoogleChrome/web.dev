@@ -62,7 +62,7 @@ If Lighthouse reports `Text is illegible because of a missing viewport config`,
 add a `<meta name="viewport" content="width=device-width, initial-scale=1">`
 tag to the `<head>` of your document.
 
-See the [Has a `<meta name="viewport">` tag with `width` or `initial-scale`](/viewport)
+See the [Does not have a `<meta name="viewport">` tag with `width` or `initial-scale`](/viewport)
 post for more information.
 
 ## Resources

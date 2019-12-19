@@ -29,7 +29,7 @@ development just like "user experience" or "accessibility".
   </figcaption>
 </figure>
 
-In the next few guides, you'll learn what you need to know in order to keep your
+In the next few guides, you'll learn how to keep your
 business and your users' content secure.
 
 ## What is a security vulnerability?
@@ -57,8 +57,8 @@ amount of data).
 Your first lines of defense are security features such as HTTPS and CORS.
 (You'll learn about these acronyms later so don't worry about them for now.)
 For example, encrypting data using HTTPS might not be fixing a bug, but it
-protects the data you're exchanging with users to other parties (intercepting
-data is a common attack).
+protects the data you're exchanging with users to other parties. (Intercepting
+data is a common attack.)
 
 ## What's the impact?
 
@@ -72,7 +72,7 @@ When an application is not secure, different people could be affected.
         <td>
           <ul class="w-unstyled-list">
             <li>
-              Sensitive information (such as personal data) could be leaked or
+              Sensitive information, such as personal data, could be leaked or
               stolen.
             </li>
             <li>
@@ -111,13 +111,13 @@ When an application is not secure, different people could be affected.
   </table>
 </div>
 
-Taking active steps to secure your application is not only crucial for you and
+Actively securing your application is not only crucial for you and
 your business but also for your users, protecting them and other systems from
 attacks launched from your site.
 
 ## Wrap up
 
-Congratulations, you are halfway through this introduction! Now you know the difference
+Congratulations! You are halfway through this introduction. Now you know the difference
 between security vulnerabilities and features, and you are aware that not only
 you but everyone else gets affected when your application is not secure. The
 next guide covers the types of attacks in depth to make security even less

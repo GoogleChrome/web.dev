@@ -29,7 +29,7 @@ In this guide we'll address how the different steps can be measured. For this we
 recommend you to look at lab as well as field data.
 
 **Lab data** is gathered by running tests locally, for example by using
-[Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse)
+[Lighthouse](/fast/discover-performance-opportunities-with-lighthouse)
 and other tools.  This can make it possible  to compare website performance over
 time and with competitors through a controlled, stable environment, but it might
 not be representative of the performance users experience in real life.
@@ -50,27 +50,27 @@ Optimizing for discovery means optimizing for the first load, which is what new
 users  will get, but also search and social
 [crawlers](https://developers.google.com/search/docs/guides/rendering).
 Lab data for a first load can be easily acquired through
-[Lighthouse](https://web.dev/fast/discover-performance-opportunities-with-lighthouse),
+[Lighthouse](/fast/discover-performance-opportunities-with-lighthouse),
 while field data (at least for Chrome) is readily available through [Chrome UX
-reports](https://web.dev/fast/chrome-ux-report). A convenient combination of
-both can be found in [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/). You should
-also track relevant metrics from the field yourself:
+reports](/fast/chrome-ux-report). A convenient combination of
+both can be found in
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
+You should also track relevant metrics from the field yourself:
 [Measuring these metrics on real users' devices](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#measuring_these_metrics_on_real_users_devices)
 provides a good overview.
 
 From a user perspective the most important metrics are:
 
-+   **[First Contentful Paint](https://web.dev/first-contentful-paint/)
-    (FCP)**: The time the user stares at a blank screen. This is
++   **[First Contentful Paint (FCP)](/first-contentful-paint):**
+    The time the user stares at a blank screen. This is
     when most users bounce, as they don't see progress.
-+   **[First Meaningful Paint](https://web.dev/first-meaningful-paint/)
-    (FMP):** When the user begins to see the main content they came for. This
++   **[First Meaningful Paint (FMP)](/first-meaningful-paint):**
+    When the user begins to see the main content they came for. This
     is often the hero image, but for a landing page it may even be a call to
     action such as a **Buy** button, since the user may have arrived with a clear
     intent (for example, through a targeted ad campaign).
-+   **[First Input Delay](https://developers.google.com/web/updates/2018/05/first-input-delay)
-    (FID):** The time the website needs to react to the user's first input.
++   **[First Input Delay (FID)](https://developers.google.com/web/updates/2018/05/first-input-delay):**
+    The time the website needs to react to the user's first input.
     Excessive JavaScript and other asset loading problems can block this,
     leading to failed taps or clicks, erroneous inputs and page abandonment.
 

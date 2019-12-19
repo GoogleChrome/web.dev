@@ -2,6 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
+updated: 2019-12-17
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -16,11 +17,31 @@ Use lossless images whenever possible. They'll be optimized automatically at bui
 Make sure images are [accessible](/handbook/inclusion-and-accessibility#use-inclusive-images).
 
 ## Hero images
+
+```yaml
+---
+…
+hero: hero.png
+alt: A description of the hero. # Also used by the thumbnail (when applicable).
+…
+---
+```
+
 Hero images should be 3200 px x 960 px.
 
 Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
 
 ## Thumbnail images
+
+```yaml
+---
+…
+thumbnail: thumbnail.png
+alt: A description of the thumbnail. # Also used by the hero.
+…
+---
+```
+
 When a post is displayed on the home page or the blog it can contain a thumbnail.
 
 Thumbnails should be 376 px x 240 px.
@@ -51,6 +72,16 @@ Use a `<figure>` tag when you need a caption or you need special presentation (e
   <figcaption class="w-figcaption">A standard image.</figcaption>
 </figure>
 
+### Differences between `alt` and `figcaption` {: #alt-vs-figcaption }
+
+`alt` and `figcaption` should have different text because they're both announced by assistive
+technology. If the text is duplicated, the assistive technology will announce the same text twice.
+To use the analogy of a painting, the `alt` text would describe the painting, and the `figcaption`
+text would be the little piece of paper next to the painting that mentions things like the painting's
+title, the painter's name, and perhaps a description of what the painter was trying to achieve.
+
+See [Alternative Text](https://webaim.org/techniques/alttext/) for more information.
+
 ### Styling body images
 To make an image extend slightly beyond the width of the content column (for emphasis), add the `w-figure--fullbleed` class to the `figure` element and the `w-figcaption--fullbleed` class to the `figcaption` element:
 
@@ -72,17 +103,15 @@ To keep an image from growing beyond a specified size, add the `w-figure--center
 
 To place an image inline with text, add the `w-figure--inline-left` or `w-figure--inline-right` class to the `figure` element, depending on what alignment you want:
 
-<blockquote>
-  <figure class="w-figure w-figure--inline-left">
-    <img class="w-screenshot" src="./image-inline.png" alt="A diagram of the interactions between a client, a service worker, and the server." style="max-width: 200px;">
-    <figcaption class="w-figcaption">
-      A left-aligned inline image.
-    </figcaption>
-  </figure>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at quam sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at quam sem.
-  </p>
-</blockquote>
+<figure class="w-figure w-figure--inline-left">
+  <img class="w-screenshot" src="./image-inline.png" alt="A diagram of the interactions between a client, a service worker, and the server." style="max-width: 200px;">
+  <figcaption class="w-figcaption">
+    A left-aligned inline image.
+  </figcaption>
+</figure>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at quam sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa sit amet ullamcorper. Suspendisse auctor ultrices ante, nec tempus nibh varius at. Cras ligula lacus, porta vitae maximus a, ultrices a mauris. Vestibulum porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at quam sem.
+</p>
 
 To include a part of a screenshot, add the `w-screenshot` class to the `img` element:
 

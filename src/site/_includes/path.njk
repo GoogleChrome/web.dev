@@ -6,7 +6,7 @@ layout: layout
 
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
-<main class="path-landing-page">
+<div class="path-landing-page">
   <header class="w-masthead-path">
     <div class="w-masthead-path__container">
       <div class="w-masthead-path__left">
@@ -18,6 +18,12 @@ layout: layout
       </div>
     </div>
   </header>
+
+  {% if path.draft and site.env === 'dev' %}
+    <div class="w-banner w-banner--warning w-banner--body">
+      🚨 This path is a draft! 🚨
+    </div>
+  {% endif %}
 
   <section class="w-layout-container w-path-intro">
     <div class="w-path-intro__overview">
@@ -54,10 +60,8 @@ layout: layout
   </section> #}
 
   <section class="w-layout-container">
-    <div class="w-numbered-headers">
-      {% for topic in topics %}
-        {% include 'partials/topic.njk' %}
-      {% endfor %}
-    </div>
+    {% for topic in topics %}
+      {% include 'partials/topic.njk' %}
+    {% endfor %}
   </section>
-</main>
+</div>

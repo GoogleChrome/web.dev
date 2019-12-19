@@ -1,50 +1,68 @@
 ---
 layout: post
-title: Ensure accesskey values are unique
+title: "`[accesskey]` values are not unique"
 description: |
-  Learn about accesskeys audit.
+  Learn how to improve your web page's accessibility for keyboard users by
+  removing duplicate accesskey values.
 date: 2019-05-02
+updated: 2019-09-19
 web_lighthouse:
   - accesskeys
 ---
 
-Access keys let users quickly focus a part of the page.
-For proper navigation, each access key must be unique.
-Lighthouse reports any duplicate access keys found in a page:
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="accesskeys.png" alt="Lighthouse: Access keys are not unique">
-  <figcaption class="w-figcaption">
-    Access keys are not unique.
-  </figcaption>
-</figure>
-
-
-## How to fix this problem
-
-To fix this problem,
-first identify duplicate `accesskey` values
-using the Lighthouse report,
-as shown in image above.
-Then change the value of the duplicate
-access keys so that each access key is unique.
-
-For each defined `accesskey`,
-ensure the value is unique and does not conflict with any default browser and screen reader shortcut keys.
-Access keys allow users to quickly active or move the focus to a specific element
-by pressing the specified key (usually in combination with the `<kbd>alt></kbd>` key).
+Access keys let users quickly [focus](/keyboard-access/#focus-and-the-tab-order)
+or activate an element on your page
+by pressing the specified key, usually in combination with the `Alt` key
+(or `Control+Alt` on Mac).
 
 Duplicating `accesskey` values creates unexpected effects
-for users navigating with keys.
-Learn more in
-[accesskey attribute value must be unique](https://dequeuniversity.com/rules/axe/3.3/accesskeys).
+for users navigating via the keyboard.
 
-<!--
-## How this audit impacts overall Lighthouse score
+## How the Lighthouse access key audit fails
 
-Todo. I have no idea how accessibility scoring is working!
--->
-## More information
+Lighthouse flags pages with duplicate access keys:
 
-- [Access key values are unique audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/accesskeys.js)
-- [axe-core rule descriptions](https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md)
+<figure class="w-figure">
+  <img class="w-screenshot" src="accesskeys.png" alt="Lighthouse: Access keys are not unique">
+</figure>
+
+For example, these links both have `g` as their access key:
+```html
+<a href="google.com" accesskey="g">Link to Google</a>
+<a href="github.com" accesskey="g">Link to GitHub</a>
+```
+
+
+{% include 'content/lighthouse-accessibility/scoring.njk' %}
+
+## How to fix duplicate access keys
+
+Evaluate the duplicate `accesskey` values flagged by Lighthouse
+and make each `accesskey` value unique.
+For example, to fix the example above,
+you can change the value for the GitHub link:
+```html/1
+<a href="google.com" accesskey="g">Link to Google</a>
+<a href="github.com" accesskey="h">Link to GitHub</a>
+```
+
+For each defined `accesskey`,
+make sure the value doesn't conflict with any default browser
+or screen reader shortcut keys.
+
+{% Aside 'caution' %}
+Unless you're building a complex app (for example, a desktop publishing app),
+it's generally best to avoid access keys because of their limitations:
+- Not all browsers support access keys.
+- It's challenging to avoid conflicts with shortcut keys
+  across all operating systems and browsers.
+- Some access key values may not be present on all keyboards, particularly
+  if your app is intended for an international audience.
+- If users aren't aware of access keys, they may accidentally activate app
+  functionality, causing confusion.
+{% endAside %}
+
+## Resources
+
+- [Source code for **`[accesskey]` values are not unique** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/accesskeys.js)
+- [accesskey attribute value must be unique (Deque University)](https://dequeuniversity.com/rules/axe/3.3/accesskeys)

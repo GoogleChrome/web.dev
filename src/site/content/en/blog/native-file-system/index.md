@@ -5,16 +5,17 @@ authors:
   - petelepage
 description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
 date: 2019-08-20
-updated: 2019-10-08
+updated: 2019-11-26
 tags:
   - post
   - capabilities
+  - fugu
+  - origin-trial
   - file
   - filesystem
   - native-file-system
 hero: hero.jpg
 alt: Image of hard disk platters
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065
 ---
@@ -194,8 +195,6 @@ the process looks like the code below. I'll walk through each step and explain i
 async function writeFile(fileHandle, contents) {
   // Create a writer (request permission if necessary).
   const writer = await fileHandle.createWriter();
-  // Make sure we start with an empty file
-  await writer.truncate(0);
   // Write the full length of the contents
   await writer.write(0, contents);
   // Close the file and write the contents to disk
@@ -211,12 +210,6 @@ permission. If permission isn't granted, `createWriter()` will throw a
 `DOMException`, and the app will not be able to write to the file. In the text
 editor, these `DOMException`s are handled in the [`saveFile()`][text-editor-app-js]
 method.
-
-Next, call `truncate(0)`. This wipes the file of any existing data. If I didn't,
-and I wrote less data than was already in the file, I see some of the old data
-at the file's end. This is a stop-gap measure. The spec calls for
-`createWriter()` to take an option called `keepExistingData`, which will default
-to false. That hasn't been implemented yet, so for now I'll use `truncate(0)`.
 
 Call `FileSystemWriter.write()` to write your contents.  The `write()` method
 takes a string, which is what we want for a text editor. But it can also take a
