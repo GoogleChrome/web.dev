@@ -1,5 +1,5 @@
 ---
-title: Improving page dismisal in synchronous XMLHttpRequest()
+title: Improving page dismissal in synchronous XMLHttpRequest()
 subhead: Reducing delayed navigations
 description: |
   It's common for a page or app to have unsubmitted analytics or other data at
