@@ -67,7 +67,7 @@ interface](https://fetch.spec.whatwg.org/#preface) for use across different
 platform APIs. Among its options is `keepalive`, which ensures that a request
 continues whether or not the page that made it stays open:
 
-```js/5
+```js/4
 window.addEventListener('unload', {
   fetch('/siteAnalytics', {
     method: 'POST',
