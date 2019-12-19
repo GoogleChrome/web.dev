@@ -1,17 +1,16 @@
 ---
-title: Share Targets in Workbox
-subhead: Register routes in Workbox that make your apps client-side share targets
+title: Integrate PWAs into native sharing UIs with Workbox
+subhead: How to get your PWA to show up next to native apps in system-level sharing UIs
 description: |
-  A description of the article that will appear in search results.
-
-# A list of authors. Supports more than one.
+  How to register routes in Workbox so that your Progressive Web App shows up in system-level
+  sharing UIs, alongside native apps.
 authors:
   - samrichard
   - joemedley
   - jeffposnick
-date: 2019-12-18
+date: 2019-12-19
 hero: hero.jpg
-alt: Shared fruit.
+alt: Two pairs of hands holding a cup of tomatoes.
 tags:
   - post
   - capabilities
@@ -19,36 +18,38 @@ tags:
 ---
 
 The [Web Share Target API](https://web.dev/web-share-target/) lets you display
-your Progressive Web App in a user's native share sheet after it's been
-installed. While it works great if you have a server available to receive the
-request, it's much harder to get working if you don't.
+your [Progressive Web App](https://developers.google.com/web/progressive-web-apps/checklist) in a 
+user's native share [sheet] after it's been installed. While it works great if you have a server 
+available to receive the request, it's much harder to get working if you don't.
 
-In this article I'll use
+In this article we'll use
 [Workbox](https://developers.google.com/web/tools/workbox), a set of JavaScript
-Libraries for adding offline support to web apps, to create a share target URL
-that lives entirely inside your service worker. This lets static sites and
+libraries for adding offline support to web apps, to create a share target URL
+that lives entirely inside your [service worker](/service-workers-cache-storage/). This lets static sites and
 single-page apps serve as share targets without a dedicated server endpoint.
 
 <figure class="w-figure w-figure--inline-right">
   <img src="./wst-send.png" style="max-width: 400px;" alt="Android phone with the 'Share via' drawer open."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    System-level share target picker with an installed PWA as an option.
+    System-level share target picker with an installed PWA called
+    <code>Share Target Test</code> as an option.
   </figcaption>
 </figure>
 
 ## On the same page
 
-If you're unfamiliar with how Web Share Target Works, [this
-article](https://web.dev/web-share-target/) gives you an in-depth introduction.
+If you're unfamiliar with how Web Share Target Works, [Receiving shared data with the Web Share
+Target API](https://web.dev/web-share-target/) gives you an in-depth introduction.
 Here's a quick review.
 
 There are two parts to implementing web share target functionality. First,
-update your web app manifest to indicate that you want your app to be a share
+update your [web app manifest](/add-manifest/) to indicate that you want your app to be a share
 target when installed. The following example directs shares to the `/share` url
 via a `POST` request. It is encoded as a multipart form, with title being called
 `name`, text being called `description`, and JPEG images being called `photos`.
 
-```js
+```json
+…
 "share_target": {
   "action": "/share",
   "method": "POST",
@@ -59,23 +60,24 @@ via a `POST` request. It is encoded as a multipart form, with title being called
     "files": [
       {
         "name": "photos",
-        "accept": ["	image/jpeg", ".jpg"]
+        "accept": ["image/jpeg", ".jpg"]
       }
     ]
   }
 }
+…
 ```
 
 ## Service worker share targets with Workbox
 
 While normally handled by a server endpoint, a neat trick you can do for a share
 target is to register a route directly in your service worker to handle the
-request. This will let your app be a share target without a back end.
+request. This will let your app be a share target without a backend.
 
 You do this in [Workbox](https://developers.google.com/web/tools/workbox) by
 registering a route that's handled by your service worker. Start by importing
 `registerRoute` from `'workbox-routing'`. Notice that it's registered for the
-`/share` route, the same one listed in the my example web app manifest. In
+`/share` route, the same one listed in the example web app manifest. In
 response it calls `shareTargetHandler()`.
 
 ```js
@@ -132,5 +134,6 @@ target route directly in your service worker, your app is free of this
 constraint, allowing Share Target to work for apps while offline and without
 backends.
 
-
 Photo by [Elaine Casap](https://unsplash.com/@ecasap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/share?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+[sheet]: https://material.io/develop/android/components/bottom-sheet-behavior/
