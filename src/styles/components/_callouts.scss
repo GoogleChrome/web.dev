@@ -1,9 +1,9 @@
 @import '../settings/colors';
-@import '../settings/type';
 @import '../tools/breakpoints';
 @import '../tools/mixins';
 
-.w-codelabs-callout {
+.w-callout {
+  margin: 2.25em 0;
 
   @include bp(sm) {
     // sass-lint:disable-block indentation
@@ -12,6 +12,13 @@
     0 2px 4px -1px rgba(0, 0, 0, .2),
     0 4px 5px 0 rgba(0, 0, 0, .14),
     0 1px 10px 0 rgba(0, 0, 0, .12);
+    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+  }
+}
+
+.w-callout--2col {
+  @include bp(sm) {
     display: grid;
     font-size: .889em;
     // sass-lint:disable-all
@@ -20,66 +27,93 @@
     grid-gap: 16px;
     // sass-lint:enable-all
     // scss-lint:enable all
-    grid-template-columns: 1fr 1fr;
-    padding: 24px;
   }
 }
 
-.w-codelabs-callout__header {
+.w-callout__header {
   margin-bottom: 16px;
+  pointer-events: none;
+
+  // scss-lint thinks this is a pseudo class instead of a psuedo element
+  // and complains about the two colons.
+  // scss-lint:disable all
+  &::-webkit-details-marker {
+    display: none;
+  }
 }
 
-.w-codelabs-callout__lockup {
+.w-callout__lockup {
   @include w-headline--three();
-  color: $WEB_EXTENDED_SECONDARY_COLOR;
   display: inline-flex;
   // Ugh. Bad idea including margins in the heading styles.
   // They get reset at every breakpoint.
   margin: 0 0 12px !important;
 }
 
-.w-codelabs-callout__lockup::before {
+.w-callout__lockup--codelab {
+  color: $WEB_EXTENDED_SECONDARY_COLOR;
+}
+
+.w-callout__lockup--assess {
+  color: $SUCCESS_COLOR;
+}
+
+.w-callout__lockup::before {
   @include font-material-icon();
-  content: 'code';
   display: inline-block;
   font-size: 20px;
   margin: 0 8px 0 0;
 }
 
-.w-codelabs-callout__headline {
+.w-callout__lockup--codelab::before {
+  content: 'code';
+}
+
+.w-callout__lockup--assess::before {
+  content: 'school';
+}
+
+.w-callout__headline {
   @include w-headline--two-small;
   margin: 0 0 4px !important;
 }
 
-.w-codelabs-callout__blurb {
+.w-callout__blurb {
   margin: 0;
 }
 
-.w-codelabs-callout__list {
+.w-callout__list {
   align-items: flex-end;
   display: flex;
   flex-wrap: wrap;
 }
 
-.w-codelabs-callout__listitem {
+.w-callout__listitem {
   width: 100%;
 }
 
-.w-codelabs-callout__listitem:not(:last-of-type) {
+.w-callout__listitem:not(:last-of-type) {
   border-bottom: 1px solid $BORDER_COLOR;
 }
 
-.w-codelabs-callout__link {
+.w-callout__link {
   align-items: center;
   box-sizing: content-box;
-  color: $WEB_EXTENDED_SECONDARY_COLOR;
   display: flex;
   min-height: 40px;
   padding: 8px 26px 8px 0;
   position: relative;
 }
 
-.w-codelabs-callout__link::after {
+.w-callout__link--codelab {
+  color: $WEB_EXTENDED_SECONDARY_COLOR;
+}
+
+.w-callout__link--assess {
+  color: $SUCCESS_COLOR;
+}
+
+.w-callout__link::after {
   @include font-material-icon();
   content: 'chevron_right';
   font-size: 20px;

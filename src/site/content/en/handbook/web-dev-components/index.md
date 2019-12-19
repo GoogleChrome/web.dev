@@ -19,6 +19,7 @@ guidance about how to use them effectively.
 1. [Banners](#banners)
 1. [Block quotes](#blockquotes)
 1. [Buttons](#buttons)
+1. [Callouts](#callouts)
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
@@ -27,9 +28,10 @@ guidance about how to use them effectively.
 1. [Images](#images)
 1. [Instructions](#instructions)
 1. [Lists](#lists)
-1. [Callouts](#callouts)
 1. [Stats](#stats)
 1. [Tables](#tables)
+1. [Tabs](#tabs)
+1. [Tooltips](#tooltips)
 1. [Video](#video)
 
 ## Asides
@@ -248,6 +250,142 @@ These buttons are shown for reference.
     Secondary button with icon
   </button>
 </div>
+
+## Callouts
+
+### Codelab Callouts
+
+In general, you shouldn't need to manually add a codelab callout to your page;
+instead, use the `codelabs` field in
+[the post's YAML](/handbook/markup-post-codelab/#set-up-the-yaml),
+which will automatically append a codelab callout to the end of the post.
+
+{% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
+
+### Assessment Callouts
+
+Use an assessment callout to provide opportunities for users
+to check their understanding of concepts covered in your post.
+
+```html
+{% raw %}{% AssessmentCallout 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
+{% Tabs 'Samples for knowledge self check' %}
+
+{% Tab 'sample' %}
+
+// Assessment item content
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+// Assessment hint content
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+// Assessment item content
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+// Assessment hint content
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+// Assessment item content
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+// Assessment hint content
+{% endAssessmentHint %}
+
+{% endTab %}
+{% endTabs %}
+{% endAssessmentCallout %}{% endraw %}
+```
+
+{% AssessmentCallout 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
+{% Tabs 'Samples for knowledge self check' %}
+
+{% Tab 'sample' %}
+
+```html
+<label for="pwd-input">Password</label>
+
+<input type="text" role="textbox" id="pwd-input" name="password">
+```
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+**No.** This sample is **incorrect**.
+Since the text input is a native HTML form element,
+it doesn't need ARIA for its semantics.
+To fix the sample, remove the `role` attribute from the `<input>` element.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+```html
+<label for="inky">
+  Inky
+  <input type="radio" id="inky" name="ghosts" value="inky">
+</label>
+```
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+**No.** This sample is **correct**. Since radio inputs and labels are native HTML form elements, they come with built-in semantics. There's no need to add ARIA.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% endTabs %}
+{% endAssessmentCallout %}
+
+If you want to include a single self-assessment question,
+omit the `{% raw %}{% Tabs %}{% endraw %}` and `{% raw %}{% Tab %}{% endraw %}`shortcodes:
+
+````html
+{% raw %}{% AssessmentCallout 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
+{% endAssessmentHint %}
+
+{% endAssessmentCallout %}{% endraw %}
+````
+
+{% AssessmentCallout 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% AssessmentHint 'Does the sample need ARIA?' %}
+**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
+{% endAssessmentHint %}
+
+{% endAssessmentCallout %}
 
 ## Columns
 
@@ -722,14 +860,6 @@ for unordered lists.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
 
-## Callouts
-In general, you shouldn't need to manually add a codelab callout to your page;
-instead, use the `codelabs` field in
-[the post's YAML](/handbook/markup-post-codelab/#set-up-the-yaml),
-which will automatically append a codelab callout to the end of the post.
-
-{% CodelabsCallout 'codelab-fix-sneaky-404' %}
-
 ## Stats
 Use the Stats component to call out important statistics
 about a product or service discussed in a post.
@@ -1094,6 +1224,136 @@ assumenda perspiciatis.
     </tbody>
   </table>
 </div>
+
+## Tabs
+Tabs are currently only designed for use in callouts.
+Don't use tabs in the main post body because there's no visual indicator
+of where tab content stops and main post content resumes.
+
+You can use three keywords in the Tab shortcode argument
+to generate sequentially numbered tab labels:
+- `question`: creates the label `Question n`, where _n_ is the number of the tab in the set.
+- `sample`: creates the label `Sample n`.
+- `bare`: creates the label `n`.
+
+Any other text in the Tab shortcode argument will be presented as-is.
+
+````html
+{% raw %}{% Tabs 'Questions for knowledge self check' %}
+{% Tab 'question' %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+nibh varius at.
+
+{% endTab %}
+{% Tab 'question' %}
+
+```html
+<label for="inky">
+  Inky
+  <input type="radio" id="inky" name="ghosts" value="inky">
+</label>
+```
+
+{% endTab %}
+{% Tab 'Custom' %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% endTab %}
+{% endTabs %}{% endraw %}
+````
+
+{% Tabs 'Questions for knowledge self check' %}
+{% Tab 'question' %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
+massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
+nibh varius at.
+
+{% endTab %}
+{% Tab 'question' %}
+
+```html
+<label for="inky">
+  Inky
+  <input type="radio" id="inky" name="ghosts" value="inky">
+</label>
+```
+
+{% endTab %}
+{% Tab 'Custom' %}
+
+Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
+
+```html
+<ul role="menu">
+  <li>Menu item 1</li>
+  <li>Menu item 2</li>
+</ul>
+```
+
+{% endTab %}
+{% endTabs %}
+
+## Tooltips
+
+Use tooltips to provide information about UI controls
+that are too small to have a label:
+
+```html
+<button class="w-button w-button--icon" data-icon="format_align_left">
+  {% raw %}{% Tooltip 'Left align' %}{% endraw %}
+</button>
+```
+
+<div>
+  <button class="w-button w-button--icon" data-icon="format_align_left">
+    {% Tooltip 'Left align' %}
+  </button>
+  <button class="w-button w-button--icon" data-icon="format_align_center">
+    {% Tooltip 'Center align' %}
+  </button>
+  <button class="w-button w-button--icon" data-icon="format_align_right">
+    {% Tooltip 'Right align' %}
+  </button>
+  <button class="w-button w-button--icon" data-icon="format_align_justify">
+    {% Tooltip 'Justify' %}
+  </button>
+</div>
+
+You can left- or right-align a tooltip to its parent
+by adding a `left` or `right` argument to the shortcode:
+
+```html
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% raw %}{% Tooltip 'Collapse', 'left' %}{% endraw %}
+</button>
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% raw %}{% Tooltip 'Collapse' %}{% endraw %}
+</button>
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% raw %}{% Tooltip 'Collapse', 'right' %}{% endraw %}
+</button>
+```
+
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% Tooltip 'Collapse', 'left' %}
+</button>
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% Tooltip 'Collapse' %}
+</button>
+<button class="w-button w-button--icon" data-icon="unfold_less">
+  {% Tooltip 'Collapse', 'right' %}
+</button>
 
 ## Video
 See the [Images and video](/handbook/markup-media#video) post.
