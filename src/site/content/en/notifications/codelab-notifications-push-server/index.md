@@ -8,6 +8,7 @@ date: 2019-11-20
 glitch: codelab-notifications-push-server
 glitchPath: server.js
 related_post: use-push-notifications-to-engage-users
+draft: true
 ---
 
 In this codelab, you'll build a push notifications server. The server will manage a list of push subscriptions and send notifications to them. 
