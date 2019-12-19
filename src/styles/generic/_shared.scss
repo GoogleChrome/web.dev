@@ -62,3 +62,13 @@ var {
   -webkit-hyphens: none;
   hyphens: none;
 }
+
+// Ensures deep linking to headers has enough space to account for the
+// top navigation so they don't overlap.
+*:not([href])[id]::before {
+  content: ' ';
+  display: block;
+  height: 65px;
+  margin-top: -65px;
+  visibility: hidden;
+}
