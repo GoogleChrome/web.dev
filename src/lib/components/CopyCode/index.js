@@ -19,21 +19,12 @@ class CopyCode extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this.copyButton = document.createElement("button");
-    this.copyButton.className = "web-copy-code__button";
-    this.copyButton.addEventListener("click", this.onCopy);
-
-    const copyContainer = document.createElement("div");
-    copyContainer.className = "web-copy-code__container";
-    copyContainer.append(this.copyButton);
-
-    this.prepend(copyContainer);
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-
-    this.copyButton.removeEventListener("click", this.onCopy);
+    if (!this.copyButton) {
+      this.copyButton = document.createElement("button");
+      this.copyButton.className = "web-copy-code__button";
+      this.copyButton.addEventListener("click", this.onCopy);
+      this.prepend(this.copyButton);
+    }
   }
 
   onCopy() {

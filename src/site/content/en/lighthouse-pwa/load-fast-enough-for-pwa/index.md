@@ -52,6 +52,6 @@ If the time to interactive is more than 10&nbsp;seconds, the audit fails.
 - [Baseline Progressive Web App Checklist](https://developers.google.com/web/progressive-web-apps/checklist#baseline)
 - [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/)
 - [Get Started With Analyzing Runtime Performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/)
-- [Record load performance](/web/tools/chrome-devtools/evaluate-performance/reference#record-load)
+- [Record load performance](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#record-load)
 - [Optimizing Content Efficiency](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/)
 - [Rendering Performance](https://developers.google.com/web/fundamentals/performance/rendering/)

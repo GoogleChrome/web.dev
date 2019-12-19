@@ -71,6 +71,31 @@
   white-space: nowrap;
 }
 
+// Mixin for base button styles
+@mixin base-button() {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: $WEB_PRIMARY_COLOR;
+  cursor: pointer;
+  display: inline-flex;
+  font: 500 .875rem/2.25rem $PRIMARY_FONT;
+  height: 56px;
+  justify-content: center;
+  letter-spacing: 1px;
+  outline: 0;
+  padding: 0 16px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
+  @include font_smoothing(
+    $FONT_SMOOTHING_MOZ,
+    $FONT_SMOOTHING_WEBKIT,
+    $FONT_SMOOTHING_RENDERING
+  );
+}
+
 // Mixin for styling typography via maps containing required integer values for
 // font-family, font-size, font-weight, and line-height; with an optional value
 // for letter-spacing.
@@ -293,4 +318,3 @@
 @mixin w-overlay-active {
   background-color: rgba($GREY_900, .16);
 }
-

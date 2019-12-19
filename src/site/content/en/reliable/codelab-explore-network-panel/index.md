@@ -29,11 +29,9 @@ you see in this codelab.
 Navigate to the Network panel to see the network traffic for the demo
 application.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview', 'ol' %}
 
-1. Open DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-1. Select the **Network** tab.
+{% Instruction 'devtools-network', 'ol' %}
 1. Reload the page to see the network traffic.
 
 You should see the DevTools interface open up, in either a new window or as a

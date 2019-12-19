@@ -1431,7 +1431,8 @@ strong code {
 pre.devsite-code-highlight > span {
   opacity: 0.54;
 }
-td > pre:only-child {
+td > pre:only-child,
+td > web-copy-code > pre:only-child {
   padding: 0;
 }
 td > devsite-code:not([dark-code]):only-child pre {

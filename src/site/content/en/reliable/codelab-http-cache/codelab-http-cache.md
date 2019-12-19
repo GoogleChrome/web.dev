@@ -73,7 +73,7 @@ conditionally set this header is to write a custom
 [`setHeaders function`](https://expressjs.com/en/resources/middleware/serve-static.html#setheaders),
 and within that, check to see if the incoming request is for an HTML document.
 
-- Click the **Remix to Edit** button to make the project editable.
+{% Instruction 'remix' %}
 
 The static serving configuration in `server.js` starts out as this:
 
@@ -161,8 +161,7 @@ working through [this codelab](/codelab-explore-network-panel).
 With the modifications to the static file server in place, you can check to make
 sure that the right headers are being set by previewing the live app with the DevTools Network panel open.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 - Customize the columns that are
 displayed in the Network panel to include the information that is most relevant, by right-clicking in

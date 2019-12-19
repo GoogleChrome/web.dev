@@ -31,8 +31,7 @@ the app's request size.
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
-+ To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 This app, which was also covered in the ["Remove unused
 code"](/remove-unused-code) codelab, lets you vote for your favorite
@@ -40,16 +39,13 @@ kitten. 🐈
 
 Now take a look at how large this application is:
 
-+  Open the DevTools by pressing `Command+Option+i / Ctrl+Shift+i`.
-+  Click on the **Network** panel.
-
-<img class="w-screenshot" src="./network-tab.png" alt="Network panel">
-
-+  Make sure `Disable Cache` is checked and reload the app.
+{% Instruction 'devtools-network', 'ol' %}
+{% Instruction 'disable-cache', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 <img class="w-screenshot" src="./network-original.png" alt="Original bundle size in Network panel">
 
-Although a lot of progress was made in the ["Remove unused code"](/remove-unused-code) 
+Although a lot of progress was made in the ["Remove unused code"](/remove-unused-code)
 codelab to trim this bundle size down, 225 KB is still quite large.
 
 ## Minification
@@ -86,13 +82,13 @@ function soNice(){for(let i=0;i<100;)console.log("nice"),i++}
 
 The file size now reaches **62 B**.
 
-With each step, the code is becoming harder to read. However, the browser's 
-JavaScript engine interprets each of these in the exact same way. The 
-benefit of obfuscating code in this manner can help achieve smaller file 
-sizes. 112 B really was not much to begin with, but there was still a 50% 
+With each step, the code is becoming harder to read. However, the browser's
+JavaScript engine interprets each of these in the exact same way. The
+benefit of obfuscating code in this manner can help achieve smaller file
+sizes. 112 B really was not much to begin with, but there was still a 50%
 reduction in size!
 
-In this application, [webpack](https://webpack.js.org/) version 4 is used as a 
+In this application, [webpack](https://webpack.js.org/) version 4 is used as a
 module bundler. The specific version can be seen in `package.json`.
 
 ```json/2
@@ -103,8 +99,8 @@ module bundler. The specific version can be seen in `package.json`.
 }
 ```
 
-Version 4 already minifies the bundle by default during production mode. It uses 
-`TerserWebpackPlugin` a plugin for [Terser](https://github.com/terser-js/terser). 
+Version 4 already minifies the bundle by default during production mode. It uses
+`TerserWebpackPlugin` a plugin for [Terser](https://github.com/terser-js/terser).
 Terser is a popular tool used to compress JavaScript code.
 
 To get an idea of what the minified code looks like, go ahead and click
@@ -113,8 +109,8 @@ To get an idea of what the minified code looks like, go ahead and click
 
 <img class="w-screenshot" src="./minified-response.png" alt="Minified response">
 
-The code in its final form, minified and mangled, is shown in the response body. 
-To find out how large the bundle may have been if it was not minified, open 
+The code in its final form, minified and mangled, is shown in the response body.
+To find out how large the bundle may have been if it was not minified, open
 `webpack.config.js` and update the `mode` configuration.
 
 ```js/2/1
@@ -124,7 +120,7 @@ module.exports = {
   //...
 ```
 
-Reload the application and take a look at the bundle size again through the 
+Reload the application and take a look at the bundle size again through the
 DevTools **Network** panel
 
 <img class="w-screenshot" src="./network-no-minify.png" alt="Bundle size of 767 KB">
@@ -140,42 +136,42 @@ module.exports = {
   //...
 ```
 
-Including a process to minify code in your application depends on the tools 
+Including a process to minify code in your application depends on the tools
 that you use:
 
-+ If webpack v4 or greater is used, no additional work needs to be done 
++ If webpack v4 or greater is used, no additional work needs to be done
 since code is minified by default in production mode. 👍
-+ If an older version of webpack is used, install and include `TerserWebpackPlugin` 
-into the webpack build process. The [documentation](https://webpack.js.org/plugins/terser-webpack-plugin/) 
++ If an older version of webpack is used, install and include `TerserWebpackPlugin`
+into the webpack build process. The [documentation](https://webpack.js.org/plugins/terser-webpack-plugin/)
 explains this in detail.
-+ Other minification plugins also exist and can be used instead, 
-such as [BabelMinifyWebpackPlugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin) 
++ Other minification plugins also exist and can be used instead,
+such as [BabelMinifyWebpackPlugin](https://github.com/webpack-contrib/babel-minify-webpack-plugin)
 and [ClosureCompilerPlugin](https://github.com/roman01la/webpack-closure-compiler).
-+ If a module bundler is not being used at all, use [Terser](https://github.com/terser-js/terser) 
++ If a module bundler is not being used at all, use [Terser](https://github.com/terser-js/terser)
 as a CLI tool or include it directly as a dependency.
 
 ## Compression
 
 {% Aside 'warning' %}
-Many hosting platforms, CDNs and reverse proxy servers either encode 
-assets with compression by default or allow you to easily configure them. This 
-means that you may rarely ever need to set up your server similar to how it is 
-done in the compression section of this tutorial, but you can continue to read 
+Many hosting platforms, CDNs and reverse proxy servers either encode
+assets with compression by default or allow you to easily configure them. This
+means that you may rarely ever need to set up your server similar to how it is
+done in the compression section of this tutorial, but you can continue to read
 if you are interested in learning how compression works.
 {% endAside %}
 
-Although the term "compression" is sometimes loosely used to explain how code is 
-reduced during the minification process, it isn't actually compressed in the 
+Although the term "compression" is sometimes loosely used to explain how code is
+reduced during the minification process, it isn't actually compressed in the
 literal sense.
 
-**Compression** usually refers to code that has been modified using a data 
-compression algorithm. Unlike minification which ends up providing perfectly 
+**Compression** usually refers to code that has been modified using a data
+compression algorithm. Unlike minification which ends up providing perfectly
 valid code, compressed code needs to be _decompressed_ before being used.
 
-With every HTTP request and response, browsers and web servers can add 
-[headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) to include 
-additional information about the asset being fetched or received. This can be 
-seen in the `Headers` tab within the DevTools Network panel where three types 
+With every HTTP request and response, browsers and web servers can add
+[headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) to include
+additional information about the asset being fetched or received. This can be
+seen in the `Headers` tab within the DevTools Network panel where three types
 are shown:
 
 + **General** represents general headers relevant to the entire request-response
@@ -189,46 +185,46 @@ Take a look at the `accept-encoding` header in the `Request Headers`.
 
 <img class="w-screenshot" src="./accept-encoding.png" alt="Accept encoding header">
 
-`accept-encoding` is used by the browser to specify which content 
-encoding formats, or compression algorithms, it supports. There are many 
-text-compression algorithms out there, but there are only three that are 
+`accept-encoding` is used by the browser to specify which content
+encoding formats, or compression algorithms, it supports. There are many
+text-compression algorithms out there, but there are only three that are
 supported here for the compression (and decompression) of HTTP network requests:
 
-* [Gzip](https://www.gzip.org/) (`gzip`): The most widely used compression 
-format for server and client interactions. It builds on top of the Deflate 
+* [Gzip](https://www.gzip.org/) (`gzip`): The most widely used compression
+format for server and client interactions. It builds on top of the Deflate
 algorithm and is supported in all current browsers.
 * Deflate (`deflate`): Not commonly used.
-* [Brotli](https://github.com/google/brotli) (`br`): A newer compression 
-algorithm that aims to further improve compression ratios, which can result in 
+* [Brotli](https://github.com/google/brotli) (`br`): A newer compression
+algorithm that aims to further improve compression ratios, which can result in
 even faster page loads. It is supported in the
 [latest versions of most browsers](https://caniuse.com/#feat=brotli).
 
-The sample application in this tutorial is identical to the app completed in the 
-["Remove unused code"](/remove-unused-code) codelab except for the fact that 
-[Express](https://expressjs.com/) is now used as a server framework. In the next 
+The sample application in this tutorial is identical to the app completed in the
+["Remove unused code"](/remove-unused-code) codelab except for the fact that
+[Express](https://expressjs.com/) is now used as a server framework. In the next
 few sections, both static and dynamic compression is explored.
 
 ## Dynamic compression
 
-**Dynamic** compression involves compressing assets on-the-fly as they get 
+**Dynamic** compression involves compressing assets on-the-fly as they get
 requested by the browser.
 
 ### Pros
 
-+ Creating and updating saved compressed versions of assets does not need to be 
++ Creating and updating saved compressed versions of assets does not need to be
 done.
-+ Compressing on-the-fly works especially well for web pages that are 
++ Compressing on-the-fly works especially well for web pages that are
 dynamically generated.
 
 ### Cons
 
 + Compressing files at higher levels to achieve better compression ratios
-takes longer. This can cause a performance hit as the user waits for assets to 
+takes longer. This can cause a performance hit as the user waits for assets to
 compress before they are sent by the server.
 
 ### Dynamic compression with Node/Express
 
-The `server.js` file is responsible for setting up the Node server that hosts 
+The `server.js` file is responsible for setting up the Node server that hosts
 the application.
 
 ```js
@@ -243,12 +239,12 @@ const listener = app.listen(process.env.PORT, function() {
 });
 ```
 
-All this currently does is import `express` and use the `express.static` 
-middleware to load all the static HTML, JS and CSS files in the 
+All this currently does is import `express` and use the `express.static`
+middleware to load all the static HTML, JS and CSS files in the
 `public/` directory (and those files are created by webpack with every build).
 
-To make sure all of the assets are compressed every time they're requested, the 
-[compression](https://github.com/expressjs/compression) middleware library can 
+To make sure all of the assets are compressed every time they're requested, the
+[compression](https://github.com/expressjs/compression) middleware library can
 be used. Begin by adding it as a `devDependency` in `package.json`:
 
 ```json/2
@@ -279,35 +275,35 @@ app.use(express.static('public'));
 //...
 ```
 
-Now reload the app, and take a look at the bundle size in the **Network** panel.
+Now reload the app and take a look at the bundle size in the **Network** panel.
 
 <img class="w-screenshot" src="./network-dynamic-compress.png" alt="Bundle size with dynamic compression">
 
-From 225 KB to 61.6 KB! In the `Response Headers` now, a `content-encoding` 
+From 225 KB to 61.6 KB! In the `Response Headers` now, a `content-encoding`
 header shows that the server is sending down this file encoded with `gzip`.
 
 <img class="w-screenshot" src="./content-encoding.png" alt="Content encoding header">
 
 ## Static compression
 
-The idea behind **static** compression is to have assets compressed and saved 
+The idea behind **static** compression is to have assets compressed and saved
 ahead of time.
 
 ### Pros
 
-+ Latency due to high compression levels is not a concern anymore. 
++ Latency due to high compression levels is not a concern anymore.
 Nothing needs to happen on-the-fly to compress files as they can now be fetched directly.
 
 ### Cons
 
-+ Assets need to compressed with every build. Build times can increase 
++ Assets need to compressed with every build. Build times can increase
 significantly if high compression levels are used.
 
 ### Static compression with Node/Express and webpack
 
-Since static compression involves compressing files ahead of time, webpack 
-settings can be modified to compress assets as part of the build step. 
-[`CompressionPlugin`](https://github.com/webpack-contrib/compression-webpack-plugin) 
+Since static compression involves compressing files ahead of time, webpack
+settings can be modified to compress assets as part of the build step.
+[`CompressionPlugin`](https://github.com/webpack-contrib/compression-webpack-plugin)
 can be used for this.
 
 Begin by adding it as a `devDependency` in `package.json`:
@@ -342,13 +338,13 @@ module.exports = {
 }
 ```
 
-By default, the plugin compresses the build files using `gzip`. Take a look 
-at the [documentation](https://github.com/webpack-contrib/compression-webpack-plugin) 
-to learn how to add options to use a different algorithm or include/exclude 
+By default, the plugin compresses the build files using `gzip`. Take a look
+at the [documentation](https://github.com/webpack-contrib/compression-webpack-plugin)
+to learn how to add options to use a different algorithm or include/exclude
 certain files.
 
 When the app reloads and rebuilds, a compressed version of the main bundle is
-now created. Open the Glitch Console to take a look at what's inside the 
+now created. Open the Glitch Console to take a look at what's inside the
 final `public/` directory that's served by the Node server.
 
 {% Aside %}
@@ -369,12 +365,12 @@ ls
 
 <img class="w-screenshot" src="./console-commands.png" alt="Final outputted files in public directory">
 
-The gzipped version of the bundle, `main.bundle.js.gz`, is now saved here as 
+The gzipped version of the bundle, `main.bundle.js.gz`, is now saved here as
 well. `CompressionPlugin` also compresses `index.html` by default.
 
-The next thing that needs to be done is tell the server to send these gzipped 
-files whenever their original JS versions are being requested. This can be done 
-by defining a new route in `server.js` before the files are served with 
+The next thing that needs to be done is tell the server to send these gzipped
+files whenever their original JS versions are being requested. This can be done
+by defining a new route in `server.js` before the files are served with
 `express.static`.
 
 <pre>
@@ -392,15 +388,15 @@ app.use(express.static('public'));
 //...
 </pre>
 
-`app.get` is used to tell the server how to respond to a GET request for a 
-specific endpoint. A callback function is then used to define how to handle this 
+`app.get` is used to tell the server how to respond to a GET request for a
+specific endpoint. A callback function is then used to define how to handle this
 request. The route works like this:
 
-+ Specifying `'*.js'` as the first argument means that this works for every 
++ Specifying `'*.js'` as the first argument means that this works for every
 endpoint that is fired to fetch a JS file.
-+ Within the callback, `.gz` is attached to the URL of the request and the 
++ Within the callback, `.gz` is attached to the URL of the request and the
 `Content-Encoding` response header is set to `gzip`.
-+ Finally, `next()` ensures that the sequence continues to any callback 
++ Finally, `next()` ensures that the sequence continues to any callback
 that may be next.
 
 Once the app reloads, take a look at the `Network` panel once more.
@@ -411,7 +407,7 @@ Just like before, a significant reduction in bundle size!
 
 ## Conclusion
 
-This codelab covered the process of minifying and compressing source code. 
-Both these techniques are becoming a default in many of the tools 
-available today, so it's important to find out whether your toolchain already 
+This codelab covered the process of minifying and compressing source code.
+Both these techniques are becoming a default in many of the tools
+available today, so it's important to find out whether your toolchain already
 supports them or if you should begin applying both processes yourself.

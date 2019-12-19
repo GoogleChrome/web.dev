@@ -6,7 +6,7 @@ authors:
 description: |
   In this codelab, learn how to improve the performance of an application by
   minizming how much code is transpiled.
-date: 2018-11-05
+date: 2018-12-12
 glitch: serve-modern-code
 related_post: serve-modern-code-to-modern-browsers
 ---
@@ -19,48 +19,45 @@ minizming how much code is transpiled.
 
 ![App screenshot](./app-screenshot.png)
 
-You only have the option to select a word or emoji to convey how much you like
-each cat. With any button that you click, the value is displayed underneath the
-image.
+In the sample app,
+you can select a word or emoji to convey how much you like each cat.
+When you click a button,
+the app displays the button's value underneath the current cat image.
 
 ## Measure
 
 {% Aside %}
- Since webpack is used in this application, any changes made to the code will trigger a new build which can take a few seconds. Once it completes, you should see your changes reflected in the application.
+ Since webpack is used in this application, any changes made to the code will trigger a new build, which can take a few seconds. Once it completes, you should see your changes reflected in the application.
 {% endAside %}
 
 It's always a good idea to begin by inspecting a website before adding any
-optimizations.
+optimizations:
 
-+ To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
-+ Open DevTools by pressing `CTRL + SHIFT + i` / `CMD + OPTION + i`.
-+ Click on the **Network** panel.
-
-<img class="w-screenshot" src="./network-panel.png" alt="Network panel">
-
-+ Make sure **Disable Cache** is checked and reload the app.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'devtools-network', 'ol' %}
+{% Instruction 'disable-cache', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 <img class="w-screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
 
 Over 80 KB is used for this application! Time to find out if parts of the bundle
-aren't being used.
+aren't being used:
 
-+ With DevTools open, press `CMD + SHIFT + p` / `CTRL + SHIFT + p` to open
-the Command Menu. Search for "coverage".
+{% Instruction 'devtools-command', 'ol' %}
+<!--lint disable code-block-style-->
+    <img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
 
-<img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
-
-+ Click **Show Coverage** and click the **Reload** button to reload the
+1. Enter `Show Coverage` and hit `Enter` to display the **Coverage** tab.
+1. In the **Coverage** tab, click **Reload** to reload the
 application while capturing coverage.
 
-<img class="w-screenshot" src="./record-with-code-coverage.png" alt="Reload app with code coverage">
+    <img class="w-screenshot" src="./record-with-code-coverage.png" alt="Reload app with code coverage">
 
-+ Take a look at how much code was used versus how much was loaded for
-the main bundle.
+1. Take a look at how much code was used versus how much was loaded for
+the main bundle:
 
-<img class="w-screenshot" src="./code-coverage.png" alt="Code coverage of bundle">
-
+    <img class="w-screenshot" src="./code-coverage.png" alt="Code coverage of bundle">
+<!--lint enable code-block-style-->
 Over half the bundle (44 KB) is not even utilized. This is because a lot of the
 code within consists of polyfills to ensure that the application works in older
 browsers.
@@ -179,7 +176,7 @@ The `"last 2 versions"` value transpiles the code in the application for the
 
 ### Debugging
 
-To get a complete look at all the browsers Babel targets as well as all the
+To get a complete look at all the browser's Babel targets as well as all the
 transforms and polyfills that are included, add a `debug` field to `.babelrc:`
 
 ```js/6
@@ -196,8 +193,8 @@ transforms and polyfills that are included, add a `debug` field to `.babelrc:`
 }
 ```
 
-- Click the **Tools** button.
-- Click on the **Logs** button.
+- Click **Tools**.
+- Click **Logs**.
 
 Reload the application and take a look at the Glitch status logs at the bottom
 of the editor.
