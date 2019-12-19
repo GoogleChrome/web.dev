@@ -71,7 +71,7 @@ var {
   content: ' ';
   display: block;
   height: $WEB_HEADER_HEIGHT;
-  margin-top: -#{$WEB_HEADER_HEIGHT};
+  margin-top: -$WEB_HEADER_HEIGHT;
   pointer-events: none;
   visibility: hidden;
 }
