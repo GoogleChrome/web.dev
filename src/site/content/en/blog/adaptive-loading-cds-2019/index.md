@@ -1,12 +1,14 @@
 ---
-title: Adaptive loading—improving web performance on slow devices
+title: "Adaptive loading: improving web performance on slow devices"
 subhead: |
-  Learn how to enable every user to get the best possible experience for their device by optimizing you sites for specific hardware and network constraints.
+  Learn how to ensure every user gets the best possible experience by 
+  optimizing your sites for specific hardware and network constraints.
 authors:
   - mihajlija
 date: 2019-12-16
 description: |
-  Learn about adaptive loading pattern, how to implement it, and how Facebook, Tinder, eBay, and other companies use adaptive loading in production.
+  Learn about adaptive loading pattern, how to implement it, and how Facebook, Tinder, eBay, and 
+  other companies use adaptive loading in production.
 hero: hero.png  
 tags:
   - post # post is a required tag for the article to show up in the blog.
