@@ -1,5 +1,5 @@
 ---
-title: Better PWA icons with maskable icons
+title: Adaptive icon support in PWAs with maskable icons
 subhead: A new icon format to use adaptive icons on supporting platforms.
 description: |
   Maskable icons are a new icon format that give you more control and let your Progressive Web App
@@ -52,7 +52,7 @@ Since maskable icons need to support a variety of shapes, you supply an opaque i
 
 Luckily, there's a well-defined and [standardized](https://w3c.github.io/manifest/#icon-masks) "minimum safe zone" that all platforms respect. The important parts of your icon, such as your logo, should be within a circular area in the center of the icon with a radius equal to 40% of the icon width. The outer 10% edge may be cropped.
 
-You can check which parts of your icons land within the safe zone with Chrome DevTools. With your Progressive Web App open, launch DevTools and navigate to the "Application" panel. In the "Icons" section, you can choose to "Show only the minimum safe area for maskable icons". Your icons will be trimmed so that only the safe area is visible. If your logo is visible within this safe area, you're good to go.
+You can check which parts of your icons land within the safe zone with Chrome DevTools. With your Progressive Web App open, launch DevTools and navigate to the **Application** panel. In the **Icons** section, you can choose to **Show only the minimum safe area for maskable icons**. Your icons will be trimmed so that only the safe area is visible. If your logo is visible within this safe area, you're good to go.
 
 <figure class="w-figure w-figure--center">
   <img src="devtools.png" class="w-screenshot" alt="Applications panel in DevTools displaying PWA icons with edges cropped">
@@ -82,9 +82,9 @@ Maskable icons should use a different purpose: `"maskable"`. This indicates that
 
 ```json
 {
-  ...
+  …
   "icons": [
-    ...
+    …
     {
       "src": "path/to/maskable_icon.png",
       "sizes": "196x196",
@@ -92,7 +92,7 @@ Maskable icons should use a different purpose: `"maskable"`. This indicates that
       "purpose": "any maskable" // <-- New property value `"maskable"`
     }
   ]
-  ...
+  …
 }
 ```
 
