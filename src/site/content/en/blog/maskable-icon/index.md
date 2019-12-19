@@ -2,10 +2,12 @@
 title: Better PWA icons with maskable icons
 subhead: A new icon format to use adaptive icons on supporting platforms.
 description: |
-  A description of the article that will appear in search results.
+  Maskable icons are a new icon format that give you more control and let your Progressive Web App
+  use adaptive icons. By supplying a maskable icon, your icon can look great on all Android
+  devices.
 authors:
   - tigeroakes
-date: 2019-12-13
+date: 2019-12-19
 hero: hero.png
 alt: Icons contained inside white circles compared to icons covering its entire circle
 tags:
@@ -18,19 +20,19 @@ tags:
 
 If you've installed a Progressive Web App on a recent Android phone, you might notice the icon shows up with a white background. Android Oreo introduced adaptive icons, which display app icons in a variety of shapes across different device models. Icons that don't follow this new format are given white backgrounds.
 
-<figure class="w-figure">
-  <img src="homescreen-any.png" alt="" style="max-width: 400px;">
+<figure class="w-figure w-figure--center">
+  <img src="homescreen-any.png" alt="PWA icons in white circles on Android" style="max-width: 400px;">
   <figcaption class="w-figcaption">
-    PWA icons in white circles on Android
+    Transparent PWA icons appear inside white circles on Android
   </figcaption>
 </figure>
 
 Maskable icons are a new icon format that give you more control and let your Progressive Web App use adaptive icons. If you supply a maskable icon, your icon can fill up the entire shape and look great on all Android devices. Firefox and Chrome have recently added support for this new format, and you can adopt it in your apps.
 
-<figure class="w-figure">
-  <img src="homescreen-maskable.png" alt="" style="max-width: 400px;">
+<figure class="w-figure w-figure--center">
+  <img src="homescreen-maskable.png" alt="PWA icons covering the entire circle on Android" style="max-width: 400px;">
   <figcaption class="w-figcaption">
-    PWA icons covering the entire circle on Android
+    Maskable icons cover the entire circle instead
   </figcaption>
 </figure>
 
@@ -52,8 +54,8 @@ Luckily, there's a well-defined and [standardized](https://w3c.github.io/manifes
 
 You can check which parts of your icons land within the safe zone with Chrome DevTools. With your Progressive Web App open, launch DevTools and navigate to the "Application" panel. In the "Icons" section, you can choose to "Show only the minimum safe area for maskable icons". Your icons will be trimmed so that only the safe area is visible. If your logo is visible within this safe area, you're good to go.
 
-<figure class="w-figure">
-  <img src="devtools.png" alt="" style="max-width: 500px;">
+<figure class="w-figure w-figure--center">
+  <img src="devtools.png" class="w-screenshot" alt="Applications panel in DevTools displaying PWA icons with edges cropped">
   <figcaption class="w-figcaption">
     The Applications panel
   </figcaption>
@@ -65,8 +67,8 @@ If you want to preview your maskable icon in other shapes it may appear in on An
 
 If you want to create a maskable icon based off your existing icon, you can use the [Maskable.app Editor](https://maskable.app/editor). Upload your icon, adjust the color and size, then export the image.
 
-<figure class="w-figure">
-  <img src="maskable-app-editor.png" alt="" style="max-width: 500px;">
+<figure class="w-figure w-figure--center">
+  <img src="maskable-app-editor.png" class="w-screenshot" alt="Maskable.app Editor screenshot">
   <figcaption class="w-figcaption">
     Creating icons in Maskable.app Editor
   </figcaption>
