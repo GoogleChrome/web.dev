@@ -57,7 +57,9 @@ use it to self-review their content and fix problems rather than waiting for rev
 ## Links
 1. Do all links work?
 1. Are all links to web.dev pages and assets [relative](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Examples_of_relative_URLs)?
-   This is important because if we need to move content around, relative paths are less likely to break.
+   (Relative links are less likely to break if content is reorganized.)
+1. Do all links to external sites use the markup shown in the
+  [web.dev components post](/handbook/web-dev-components/#links-(external))?
 1. When referencing a web platform API, does the page link out to the canonical MDN API reference?
 
 ## Mechanics
