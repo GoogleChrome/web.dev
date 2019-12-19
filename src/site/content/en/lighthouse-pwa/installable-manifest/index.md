@@ -83,4 +83,4 @@ Check their respective sites for full details:
 - [Add a web app manifest](/add-manifest/)
 - [Discover what it takes to be installable](/discover-installable)
 - [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
-- [Does not use HTTPS](http://localhost:8080/is-on-https/)
+- [Does not use HTTPS](https://web.dev/is-on-https/)

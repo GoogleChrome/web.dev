@@ -60,8 +60,8 @@ also receive a suggestion called **Remove Unused CSS**.
 To visualize how this CSS blocks rendering:
 
 1. Open [the page](https://defer-css-unoptimized.glitch.me/) in Chrome.
-1. Press Control+Shift+J or Cmd+Option+J (Mac), to open DevTools.
-1. Go to the **Performance** tab and click on the **Reload** button.
+{% Instruction 'devtools-performance' %}
+1. In the Performance panel, click **Reload**.
 
 In the resulting trace, you'll see that the **FCP** marker is placed immediately
 after the CSS finishes loading:

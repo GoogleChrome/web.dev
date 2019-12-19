@@ -172,4 +172,4 @@ into effect.
 * [The HTTP cache: your first line of defense](/http-cache/), from the "Network
   reliability" guide on this site.
 
-_Hero image by Samuel Zeller on [Unsplash](https://unsplash.com/photos/oBb-Y26PJgg)._
+_Hero image by Samuel Zeller._

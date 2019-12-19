@@ -48,7 +48,7 @@ the Google Chrome browser. You don't have to download anything to get DevTools.
 If you have Chrome, then you have DevTools.
 
 1. In Chrome, go to the page that you want to audit.
-1. Press `Control+Shift+J` or `Command+Option+J` (Mac) to open DevTools.
+{% Instruction 'devtools', 'ol' %}
 
 <img class="w-screenshot w-screenshot--filled" src="./discover-performance-opportunities-with-lighthouse-1.png" alt="DevTools opened and docked to the right hand side of the screen.">
 

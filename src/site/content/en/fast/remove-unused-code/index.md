@@ -20,12 +20,14 @@ Registries like [npm](https://docs.npmjs.com/getting-started/what-is-npm) have
 transformed the JavaScript world for the better by allowing anyone to easily
 download and use over _half a million_ public packages. But we often include
 libraries we're not fully utilizing. To fix this issue, **analyze your bundle**
-to detect unused code. Then remove **unused** and **unneeded** libraries. 
+to detect unused code. Then remove **unused** and **unneeded** libraries.
 
 ## Analyze your bundle
 
-The simplest way to see the size of all network requests is to open the
-**Network** panel in DevTools, check `Disable Cache`, and reload the page.
+DevTools makes it easy to see the size of all network requests:
+{% Instruction 'devtools-network', 'ol' %}
+{% Instruction 'disable-cache', 'ol' %}
+{% Instruction 'reload-page', 'ol' %}
 
 <img class="w-screenshot" src="./bundle.png" alt="Network panel with bundle request">
 
@@ -44,7 +46,7 @@ shipped with your application.
 If you happen to be using [webpack](https://webpack.js.org/) as your bundler,
 [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
 will help you investigate what makes up the bundle. Include the plugin in your
-webpack configurations file like any other plugin: 
+webpack configurations file like any other plugin:
 
 ```js/4
 module.exports = {
@@ -59,7 +61,7 @@ module.exports = {
 Although webpack is commonly used to build single-page applications, other
 bundlers, such as [Parcel](https://parceljs.org/) and
 [Rollup](https://rollupjs.org/guide/en), also have visualization tools that you
-can use to analyze your bundle. 
+can use to analyze your bundle.
 
 Reloading the application with this plugin included shows a zoomable treemap of
 your entire bundle.
@@ -75,7 +77,7 @@ unnecessary libraries.
 
 In the previous treemap image, there are quite a few packages within a single
 `@firebase` domain. If your website only needs the firebase database component,
-update the imports to fetch that library: 
+update the imports to fetch that library:
 
 ```js/1-2/0
 import firebase from 'firebase';
@@ -84,7 +86,7 @@ import 'firebase/database';
 ```
 
 It is important to emphasize that this process is significantly more complex for
-larger applications. 
+larger applications.
 
 For the mysterious looking package that you're quite sure is not being used
 anywhere, take a step back and see which of your top-level dependencies are

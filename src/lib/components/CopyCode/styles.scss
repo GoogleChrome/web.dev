@@ -13,6 +13,8 @@
   margin: 8px;
   opacity: 0;
   padding: 0;
+  position: absolute;
+  right: 0;
   transition: background-color .5s ease;
   width: 48px;
 
@@ -29,19 +31,19 @@
   }
 }
 
-.web-copy-code__container {
-  display: flex;
-  flex-direction: row-reverse;
-  height: 0;
-  margin-bottom: -32px;
-  position: relative;
-}
 web-copy-code {
+  display: block;
+  position: relative;
+
   &:active,
   &:focus,
   &:hover {
     .web-copy-code__button {
       opacity: 1;
     }
+  }
+
+  pre {
+    min-height: 64px;
   }
 }
