@@ -11,6 +11,7 @@ glitch: codelab-notifications-get-started
 # Specify which file the glitch should start on.
 glitchPath: public/index.js
 related_post: use-push-notifications-to-engage-users
+draft: true
 ---
 
 In this codelab, you'll use basic features of the
