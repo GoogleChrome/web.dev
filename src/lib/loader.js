@@ -156,14 +156,15 @@ export async function swapContent(isFirstRun) {
     isOffline,
   });
 
-  // TODO: Detect article pages vs. index pages, and only add to the content
-  // index when reading an article.
-  const image = page.querySelector("meta[itemprop=image]");
-  // This is a no-op on browsers that don't support the Content Indexing API.
-  addToContentIndex({
-    description: updatedContent,
-    imgSrc: image ? image.content : null,
-    title: page.title,
-    url: window.location.pathname,
-  });
+  const isPost = main.querySelector(".w-post-content");
+  if (isPost) {
+    const image = page.querySelector("meta[itemprop=image]");
+    // This is a no-op on browsers that don't support the Content Indexing API.
+    addToContentIndex({
+      description: updatedContent,
+      imgSrc: image ? image.content : null,
+      title: page.title,
+      url: window.location.pathname,
+    });
+  }
 }
