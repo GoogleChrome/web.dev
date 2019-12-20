@@ -8,7 +8,7 @@ description: |
   TODO
 ---
 
-One of the great things about the technology that makes web apps installable and work offline is that they’re designed with progressive enhancement in mind. That means they can be included in your website today, without any changes aside from registering them! Create a basic Web App Manifest, a self-contained offline page, and a Service Worker to cache and serve the offline page, and you’re set! This will provide a very basic offline experience for your users, but the following three strategies can help you provide an even better experience, each with a different level of investment needed.
+One of the great things about the technology that makes web apps installable and work offline is that they're designed with progressive enhancement in mind. That means they can be included in your website today, without any changes aside from registering them! Create a basic Web App Manifest, a self-contained offline page, and a Service Worker to cache and serve the offline page, and you're set! This will provide a very basic offline experience for your users, but the following three strategies can help you provide an even better experience, each with a different level of investment needed.
 
 ## Focus on a Feature
 
@@ -28,9 +28,9 @@ For Air Berlin, they chose to focus on the post-booking experience. They needed 
 
 ## Start from the Ground Up
 
-The final strategy requires the most investment; it’s starting from the ground up. If you’re going through a redesign or are able to start from scratch, include Progressive Web Apps as part of that from the start. Doing so enables you to much more easily use Progressive Web App design patterns than the other strategies, in particular allowing you to take advantage of all of the power of Service Workers and the Cache Storage API from the get-to.
+The final strategy requires the most investment; it's starting from the ground up. If you're going through a redesign or are able to start from scratch, include Progressive Web Apps as part of that from the start. Doing so enables you to much more easily use Progressive Web App design patterns than the other strategies, in particular allowing you to take advantage of all of the power of Service Workers and the Cache Storage API from the get-to.
 
-Konga is a major e-commerce player in Nigeria. They decided to start from scratch, calling it “Konga EZ”, pronounced “easy”. They had to deliver a full end-to-end web experience that was as fast and reliable as their native iOS and Android apps, and checkout and their catalogue had to work offline.
+Konga is a major e-commerce player in Nigeria. They decided to start from scratch, calling it "Konga EZ", pronounced "easy". They had to deliver a full end-to-end web experience that was as fast and reliable as their native iOS and Android apps, and checkout and their catalogue had to work offline.
 
 They focused a lot on minimizing data consumption, which is critical for their users. Comparing data to usage to their native app, initial load took up to 92% less data and data usage to first transaction was 82% less.
 
@@ -38,4 +38,4 @@ They focused a lot on minimizing data consumption, which is critical for their u
 
 ## At The Crossroads of Web and Native
 
-Progressive Web Apps provide you with a unique opportunity; they allow you build apps with the reach and control of web apps _and_ most of the capabilities and ease of use and access of native apps. Using Service Workers, the Cache Storage API, and a Web App Manifest, you can make your web app work offline and make it installable and discoverable across mobile and desktop devices. From just a custom offline page to a full redesign, every team’s journey to Progressive Web Apps is different. Yours starts here.
+Progressive Web Apps provide you with a unique opportunity; they allow you build apps with the reach and control of web apps _and_ most of the capabilities and ease of use and access of native apps. Using Service Workers, the Cache Storage API, and a Web App Manifest, you can make your web app work offline and make it installable and discoverable across mobile and desktop devices. From just a custom offline page to a full redesign, every team's journey to Progressive Web Apps is different. Yours starts here.

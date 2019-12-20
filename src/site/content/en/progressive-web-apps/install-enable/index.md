@@ -10,7 +10,7 @@ description: |
 
 Many browsers make it possible for you to promote and enable the installation of your Progressive Web App (PWA) directly within the user interface of your PWA. Installation (sometimes formerly referred to as Add to Home Screen), makes it easy for users to install your PWA on their mobile or desktop device. Once installed, your PWA will be added to their launcher, and it will run like any other installed app.
 
-Why would you want a user to install your app? The same reason you’d want a user to install your app from any app store. Users who install are your most engaged audience. Users who install a PWA have better engagement metrics than typical visitors, including more repeat visits, longer time on site and higher conversion rates, often at parity with native app users on mobile devices.
+Why would you want a user to install your app? The same reason youad want a user to install your app from any app store. Users who install are your most engaged audience. Users who install a PWA have better engagement metrics than typical visitors, including more repeat visits, longer time on site and higher conversion rates, often at parity with native app users on mobile devices.
 
 ## Promoting installation
 
@@ -46,7 +46,7 @@ You may want to wait before showing the prompt to the user, so you don't distrac
 
 ### In-app installation flow
 
-To provide an in-app installation flow, you’ll need to provide a button, or other user interface element within your app that the user can click, indicating they want to install your Progressive Web app. When clicked, call `.prompt()` on the saved `beforeinstallprompt` event, it will show the user a modal install dialog, asking them to confirm they want to install your PWA.
+To provide an in-app installation flow, you'll need to provide a button, or other user interface element within your app that the user can click, indicating they want to install your Progressive Web app. When clicked, call `.prompt()` on the saved `beforeinstallprompt` event, it will show the user a modal install dialog, asking them to confirm they want to install your PWA.
 
 ```js
 buttonInstall.addEventListener('click', (e) => {
@@ -69,7 +69,7 @@ By listening to the promise returned by the `userChoice` property, you can deter
 
 ## Detect when the PWA was successfully installed
 
-You can use the `userChoice` property to determine if the user installed your app from within your user interface. But, if the user installs your PWA from the address bar, or other browser component, `userChoice` won’t help. Instead, you should listen for the `appinstalled` event. It is fired whenever your PWA is installed, no matter what mechanism is used to install your PWA.
+You can use the `userChoice` property to determine if the user installed your app from within your user interface. But, if the user installs your PWA from the address bar, or other browser component, `userChoice` won't help. Instead, you should listen for the `appinstalled` event. It is fired whenever your PWA is installed, no matter what mechanism is used to install your PWA.
 
 ```js
 window.addEventListener('appinstalled', (evt) => {
@@ -96,7 +96,7 @@ To apply a different background color for the PWA above when launched as an inst
 
 ### Track how the PWA was launched
 
-To track how users launch your PWA, use `matchMedia` to test the `display-mode` media query. Unfortunately, Safari on iOS doesn’t support this yet, and you must check `navigator.standalone`.
+To track how users launch your PWA, use `matchMedia` to test the `display-mode` media query. Unfortunately, Safari on iOS doesn't support this yet, and you must check `navigator.standalone`.
 
 ```js
 window.addEventListener('load', () => {
@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
 });
 ```
 
-## Updating your app’s icon and name
+## Updating your app's icon and name
 
 ### Chrome on Android
 

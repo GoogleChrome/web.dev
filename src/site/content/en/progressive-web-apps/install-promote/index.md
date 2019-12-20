@@ -15,13 +15,13 @@ Although PWAs are available for all devices, including
 PWA install promotion patterns.
 
 Why would you want a user to install your app to their home screen? The
-same reason you’d want a user to install your app from any app store. Users
+same reason you'd want a user to install your app from any app store. Users
 who install are your most engaged audience. Users who install a PWA have
 better engagement metrics than typical visitors, including more repeat visits,
 longer time on site and higher conversion rates, often at parity with native
 app users on mobile devices.
 
-**If your PWA has use cases where it’s helpful for a user to install
+**If your PWA has use cases where it's helpful for a user to install
 your app, for example if you have users who use your app more than once a
 week, you should be promoting the installation of your PWA within the web UI of
 your app.**
@@ -29,11 +29,11 @@ your app.**
 Note: See [Add to Home Screen (Web)][a2hs-code] for the code required to
 implement a PWA install promotion.
 
-[a2hs-code]: /web/fundamentals/app-install-banners/
+
 
 ## PWA install promotion best practices
 
-Some best practices apply no matter what promotional patterns you’re using on
+Some best practices apply no matter what promotional patterns you're using on
 your site.
 
 1. Keep promotions outside of the flow of your user journeys. For example, in
@@ -41,8 +41,8 @@ your site.
    button.  Disruptive use of promotional patterns reduce the usability of
    your PWA and will negatively impact your engagement metrics.
 2. Include the ability to dismiss or decline the promotion. Remember the
-   user’s preferences if they do this and only re-prompt if there’s a change in
-   the user’s relationship with your content such as if they signed in or
+   user's preferences if they do this and only re-prompt if there's a change in
+   the user's relationship with your content such as if they signed in or
    completed a purchase.
 3. Combine more than one of these techniques in different parts of your PWA,
    but be careful not to overwhelm or annoy your user with install promotion.
@@ -77,18 +77,18 @@ then again after approximately 90 days.
 
 Application UI promotional patterns can be used for almost any kind of PWA and
 appear in the application UI, such as site navigation, banners, etc. As with
-any other type of promotional pattern, it’s important to be aware of the
-user’s context to minimize disruption of the user’s journey.
+any other type of promotional pattern, it's important to be aware of the
+user's context to minimize disruption of the user's journey.
 
 Sites which are thoughtful about when they trigger promotion UI achieve a
 larger number of installs and avoid interfering with the journeys of users
-who aren’t interested in installation.
+who aren't interested in installation.
 
 ### Fixed header {: #header }
 
 This is an install button that is part of the header of your site.  Other
 header content often includes site branding such as a logo and the hamburger
-menu.  Headers may be `position:fixed` or not depending on your site’s
+menu.  Headers may be `position:fixed` or not depending on your site's
 functionality and user needs.
 
 <img class="w-figure--inline-right"
@@ -110,7 +110,6 @@ Make sure you:
   promotion relative to other options.
 
 
-[beforeinstallprompt-event]: /web/fundamentals/app-install-banners/#listen_for_beforeinstallprompt
 
 <div class="clearfix"></div>
 
@@ -143,14 +142,14 @@ the benefits of installing your PWA.
 <img class="w-figure--inline-right"
      src="https://developers.google.com/web/fundamentals/app-install-banners/images/install-promo/landing.png">
 
-First, explain your site’s value proposition, then let visitors know what
-they’ll get from installation.
+First, explain your site's value proposition, then let visitors know what
+they'll get from installation.
 
 Make sure you:
 
 * Appeal to features that will matter most to your visitors and emphasize
   keywords that might have brought them to your landing page.
-* This is a landing page.  After you’ve made your value proposition clear,
+* This is a landing page.  After you've made your value proposition clear,
   make your install promotion and call to action eye catching!
 * Consider adding an install promotion within your app where users spend most
   of their time.
@@ -171,13 +170,13 @@ carefully because they can be very disruptive to the user experience.
 Make sure you:
 
 * Wait until the user has demonstrated interest in your site before showing
-  a banner.  If the user dismisses your banner, don’t show it again unless the
+  a banner.  If the user dismisses your banner, don't show it again unless the
   user triggers a conversion event that indicates a higher level of engagement
   with your content such as a purchase on an eCommerce site or signing up for
   an account.
 * Provide a brief explanation of the value of installing your PWA in the
   banner. For example, you can differentiate the install of a PWA from a
-  native app by mentioning that it uses almost no storage on the user’s
+  native app by mentioning that it uses almost no storage on the user's
   device or that it will install instantly without a store redirect.
 
 <div class="clearfix"></div>
@@ -197,14 +196,14 @@ of information cards in your PWA.
 <img class="w-figure--inline-right"
      src="https://developers.google.com/web/fundamentals/app-install-banners/images/install-promo/in-feed.png">
 
-Your goal is to show users how to access the content they’re enjoying more
+Your goal is to show users how to access the content they're enjoying more
 conveniently. Focus on promoting features and functionality that will be
 helpful to your users.
 
 Make sure you:
 
 * Limit the frequency of the promotions to avoid annoying users.
-* Give your users the ability to dismiss the promotions. Remember your user’s
+* Give your users the ability to dismiss the promotions. Remember your user's
   choice to dismiss.
 
 <div class="clearfix"></div>
@@ -212,7 +211,7 @@ Make sure you:
 ### Booking or checkout journey {: #journey }
 
 Show an install promotion during or after a sequential journey, typical of
-booking or checkout flows.  If you’re displaying the promotion after the user
+booking or checkout flows.  If you're displaying the promotion after the user
 has completed the journey, you can often make it more prominent since the
 journey is completed.
 
@@ -242,14 +241,14 @@ pattern where the promotion card can be a more prominent.
      src="https://developers.google.com/web/fundamentals/app-install-banners/images/install-promo/sign-up.png">
 
 These pages are usually only viewed by engaged users, where the value
-proposition of your PWA has already been established.  There’s also often
+proposition of your PWA has already been established.  There's also often
 not a lot of other useful content to place on these pages.  As a result,
-it’s less disruptive to make a larger call-to-action as long as it’s not
+it's less disruptive to make a larger call-to-action as long as it's not
 in the way.
 
 Make sure you:
 
-* Avoid disrupting the user’s journey inside the sign up form. If it’s a
+* Avoid disrupting the user's journey inside the sign up form. If it's a
   multi-step process, you might want to wait until the user has completed
   the journey.
 * Promote features most relevant to a signed up user.
@@ -288,7 +287,7 @@ feed is products or category listings.
 Make sure you:
 
 * Match the look and feel of the rest of your product listing page.
-* Don’t disrupt the user’s product selection process.
+* Don't disrupt the user's product selection process.
 
 <div class="clearfix"></div>
 
@@ -353,3 +352,5 @@ game, this is a great chance to invite them to install.
 
 [a2hs-criteria]: /web/fundamentals/app-install-banners/
 [mini-infobar-control]: /web/updates/2019/05/mini-infobar-update
+[a2hs-code]: /web/fundamentals/app-install-banners/
+[beforeinstallprompt-event]: /web/fundamentals/app-install-banners/#listen_for_beforeinstallprompt
