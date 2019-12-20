@@ -38,14 +38,19 @@ optimizations:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
+```html
 <img class="w-screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
+```
 
 Over 80 KB is used for this application! Time to find out if parts of the bundle
 aren't being used:
 
 {% Instruction 'devtools-command', 'ol' %}
 <!--lint disable code-block-style-->
-    <img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
+
+```html
+<img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
+```
 
 1. Enter `Show Coverage` and hit `Enter` to display the **Coverage** tab.
 1. In the **Coverage** tab, click **Reload** to reload the
@@ -186,7 +191,7 @@ transforms and polyfills that are included, add a `debug` field to `.babelrc:`
       "@babel/preset-env",
       {
         "targets": "last 2 versions",
-        <strong>"debug": true</strong>
+        "debug": true
       }
     ]
   ]
@@ -239,7 +244,7 @@ the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
       {
         "targets": "last 2 versions",
         "debug": true
-        <strong>"useBuiltIns": "entry"</strong>
+        "useBuiltIns": "entry"
       }
     ]
   ]
@@ -292,7 +297,7 @@ The number of browser targets included is still quite large, and not many users
 use discontinued browsers such as Internet Explorer. Update the configurations
 to the following:
 
-```js/6/5
+```js/6
 {
   "presets": [
     [
