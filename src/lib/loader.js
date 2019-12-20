@@ -1,6 +1,7 @@
 import {store} from "./store";
 import "./utils/underscore-import-polyfill";
 import getMeta from "./utils/meta";
+import {addToContentIndex} from "./content-indexing";
 
 const domparser = new DOMParser();
 
@@ -153,5 +154,16 @@ export async function swapContent(isFirstRun) {
   store.setState({
     isPageLoading: false,
     isOffline,
+  });
+
+  // TODO: Detect article pages vs. index pages, and only add to the content
+  // index when reading an article.
+  const image = page.querySelector("meta[itemprop=image]");
+  // This is a no-op on browsers that don't support the Content Indexing API.
+  addToContentIndex({
+    description: updatedContent,
+    imgSrc: image ? image.content : null,
+    title: page.title,
+    url: window.location.pathname,
   });
 }

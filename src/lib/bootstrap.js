@@ -9,6 +9,7 @@ import config from "webdev_config";
 import "./webcomponents-config"; // must go before -loader below
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
 import {swapContent} from "./loader";
+import {cleanupContentIndex} from "./content-indexing";
 import * as router from "./utils/router";
 import {store} from "./store";
 
@@ -36,4 +37,6 @@ WebComponents.waitFor(async () => {
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js");
+  // This is a no-op on browsers that don't support the Content Indexing API.
+  cleanupContentIndex();
 }
