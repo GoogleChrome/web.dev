@@ -21,7 +21,7 @@ tags:
 If you've installed a Progressive Web App on a recent Android phone, you might notice the icon shows up with a white background. Android Oreo introduced adaptive icons, which display app icons in a variety of shapes across different device models. Icons that don't follow this new format are given white backgrounds.
 
 <figure class="w-figure w-figure--center">
-  <img src="homescreen-any.png" alt="PWA icons in white circles on Android" style="max-width: 400px;">
+  <img src="homescreen-any.png" alt="PWA icons in white circles on Android" style="width: 400px; max-width: 100%">
   <figcaption class="w-figcaption">
     Transparent PWA icons appear inside white circles on Android
   </figcaption>
@@ -30,7 +30,7 @@ If you've installed a Progressive Web App on a recent Android phone, you might n
 Maskable icons are a new icon format that give you more control and let your Progressive Web App use adaptive icons. If you supply a maskable icon, your icon can fill up the entire shape and look great on all Android devices. Firefox and Chrome have recently added support for this new format, and you can adopt it in your apps.
 
 <figure class="w-figure w-figure--center">
-  <img src="homescreen-maskable.png" alt="PWA icons covering the entire circle on Android" style="max-width: 400px;">
+  <img src="homescreen-maskable.png" alt="PWA icons covering the entire circle on Android" style="width: 400px; max-width: 100%">
   <figcaption class="w-figcaption">
     Maskable icons cover the entire circle instead
   </figcaption>
