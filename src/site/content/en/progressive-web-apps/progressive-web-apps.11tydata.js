@@ -15,19 +15,37 @@ module.exports = {
     topics: [
       {
         title: "Introduction",
-        pathItems: [],
+        pathItems: [
+          "what-are-pwas",
+          "strategies-for-adopting-pwas",
+          "pwa-checklist",
+        ],
       },
       {
         title: "Capable",
-        pathItems: [],
+        pathItems: ["pwa-capable"],
       },
       {
         title: "Reliable",
-        pathItems: [],
+        pathItems: ["pwa-fast-reliable"],
       },
       {
         title: "Installable",
-        pathItems: [],
+        pathItems: ["installable"],
+        subtopics: [
+          {
+            title: "What does it take?",
+            pathItems: ["install-criteria", "add-manifest", "pwa-offline"],
+          },
+          {
+            title: "Provide an install experience",
+            pathItems: ["install-enable", "install-promote"],
+          },
+        ],
+      },
+      {
+        title: "Further reading",
+        pathItems: ["multi-origin-pwas"],
       },
     ],
   },

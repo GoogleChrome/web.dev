@@ -101,6 +101,9 @@ redirects:
 - from: /fast/incorporate-performance-budgets-into-your-build-tools/codelab-setting-performance-budgets-with-webpack
   to: /codelab-setting-performance-budgets-with-webpack
 
+- from: /discover-installable/
+  to: /installable/
+
 # Redirect all pre-v1 paths to the project root.
 # Before: web.dev/fast/remove-unused-code
 # After: web.dev/remove-unused-code
