@@ -834,7 +834,7 @@ For example, here are the instructions for the **Performance** audit:
 
 ```html
 Lorem ipsum dolor sit amet,
-<a href="example.com" rel="noopener">consectetur adipiscing elit</a>.
+<a href="example.com" class="w-link--external" rel="noopener">consectetur adipiscing elit</a>.
 Proin dictum a massa sit amet ullamcorper.
 ```
 

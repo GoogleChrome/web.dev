@@ -54,15 +54,13 @@ p :visited:active {
 }
 
 // Add a launch icon to external links
-// Authors shouldn't use the target attribute, but styling it just in case.
-[href*='//']:not([href*='web.dev']),
-[rel='noopener']::after,
-[target='_blank']::after {
-  @include font-material-icon();
-  content: 'launch';
-  display: inline-block;
-  margin: 0 0 2px 2px;
-  vertical-align: middle;
+// TODO: remove rel=noopener rule once Markdown parsing is done
+.w-link--external::after,
+[rel='noopener']::after {
+  background: url('images/icons/launch.svg') no-repeat center / contain;
+  content: '';
+  margin-left: 2px;
+  padding-right: 22px; // sizing
 }
 
 // DevSite override

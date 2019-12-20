@@ -85,7 +85,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 .w-author__link-listitem::after {
   content: '·';
   display: inline-block;
-  margin: 0 4px;
+  margin: 0 7px 0 4px;
 }
 
 .w-author__link-listitem:last-of-type::after {
@@ -97,7 +97,6 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   box-shadow: inset 0px 0px 0px 1px $FOCUS_COLOR;
   outline: none;
 }
-
 
 .w-authors__card {
   display: flex;
