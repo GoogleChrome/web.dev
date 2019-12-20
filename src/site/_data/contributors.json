@@ -1519,6 +1519,20 @@
       "twitter": "yoavweiss",
       "github": "yoavweiss"
     },
+  "katejeffreys": {
+    "name": {
+      "given": "Kate",
+      "family": "Jeffreys"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Web Developer Relations"
+    },
+    "country": "US",
+    "description": {
+      "en": "Technical Writer at Google"
+    }
+  },
     "jimper": {
       "name": {
         "given": "Jonathon",
