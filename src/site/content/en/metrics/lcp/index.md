@@ -48,7 +48,8 @@ of a page is loaded is to look at when the largest element was rendered.
 
 ## What is LCP?
 
-The Largest Contentful Paint (LCP) metric reports the render time of the largest content element visible in the viewport.
+The Largest Contentful Paint (LCP) metric reports the render time of the largest
+content element visible in the viewport.
 
 ### What elements are considered?
 
@@ -215,15 +216,18 @@ largest element throughout the load process.
 
 LCP can be measured [in the lab](/metrics/#in-the-lab) or [in the
 field](/metrics/#in-the-field) though at the moment it's not yet available in
-any lab tools. [In the field](/metrics/#in-the-field), LCP is available in the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report).
+any lab tools. [In the field](/metrics/#in-the-field), LCP is available in the
+[Chrome User Experience
+Report](https://developers.google.com/web/tools/chrome-user-experience-report).
 
 ### Measure LCP in JavaScript
 
-You can measure FCP in JavaScript using the [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/). The following example shows how to
-create a
+You can measure LCP in JavaScript using the [Largest Contentful Paint
+API](https://wicg.github.io/largest-contentful-paint/). The following example
+shows how to create a
 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
-that listens for `largest-contentful-paint` entries and logs the LCP value
-to the console:
+that listens for `largest-contentful-paint` entries and logs the LCP value to
+the console:
 
 ```js
 // Create a variable to hold the latest LCP value (since it can change).
@@ -264,7 +268,8 @@ changes to hidden. This is a way of ensuring that it only logs the latest entry.
 In some cases the most important element (or elements) on the page is not the
 same as the largest element, and developers may be more interested in measuring
 the render times of these other elements instead. This is possible using the
-[Element Timing API](https://wicg.github.io/element-timing/), as described in the article on [custom metrics](/custom-metrics/#element-timing-api).
+[Element Timing API](https://wicg.github.io/element-timing/), as described in
+the article on [custom metrics](/custom-metrics/#element-timing-api).
 
 ## How to improve LCP
 
