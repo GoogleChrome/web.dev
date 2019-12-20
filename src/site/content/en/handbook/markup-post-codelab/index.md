@@ -71,8 +71,5 @@ Use relative URLs to link to assets for the post or codelab.
 `./image.png`
 {% endCompare %}
 
-For external links, use the markup specified on the
-[web.dev components post](/handbook/web-dev-components/#links-(external)).
-
 ## Preview your content
 Use the `npm run dev` command to start a local web server and watch for changes.
