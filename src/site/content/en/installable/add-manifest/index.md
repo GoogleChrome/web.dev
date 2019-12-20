@@ -19,9 +19,9 @@ launched.
 Manifest files are supported in Chrome, Edge, Firefox, UC Browser, Opera and the
 Samsung browser, and Safari is currently working on adding support.
 
-## Create the manifest.json file
+## Create the manifest.webmanifest file
 
-The manifest file can have any name, but is commonly named `manifest.json` and
+The manifest file can have any name, but is commonly named `manifest.webmanifest` and
 served from the root (your website's top level directory).  
 
 ```json
