@@ -16,8 +16,8 @@ draft: true
 
 {#
 backup glitches:
-https://glitch.com/edit/#!/real-eye?path=README.md:1:0
-https://glitch.com/edit/#!/vintage-passionfruit?path=README.md:1:0
+[start](https://glitch.com/edit/#!/real-eye?path=README.md:1:0)
+[end](https://glitch.com/edit/#!/vintage-passionfruit?path=README.md:1:0)
 #}
 
 In this codelab, you'll use basic features of the
