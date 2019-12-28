@@ -9,6 +9,7 @@ date: 2019-10-21
 codelabs:
   - codelab-notifications-get-started
   - codelab-notifications-service-worker
+draft: true
 ---
 
 ## Why use push notifications?
