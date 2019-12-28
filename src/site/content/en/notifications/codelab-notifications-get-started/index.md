@@ -14,6 +14,12 @@ related_post: use-push-notifications-to-engage-users
 draft: true
 ---
 
+{#
+backup glitches:
+[start](https://glitch.com/edit/#!/real-eye?path=README.md:1:0)
+[end](https://glitch.com/edit/#!/vintage-passionfruit?path=README.md:1:0)
+#}
+
 In this codelab, you'll use basic features of the
 [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) to:
 
