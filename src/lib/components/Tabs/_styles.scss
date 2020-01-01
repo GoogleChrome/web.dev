@@ -23,6 +23,7 @@ web-tabs {
     border-bottom: 1px solid $GREY_300;
     display: flex;
     margin: 0 -24px;
+    overflow-x: auto;
     width: calc(100% + 48px);
   }
 
