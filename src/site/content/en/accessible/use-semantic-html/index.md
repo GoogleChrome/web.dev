@@ -113,24 +113,6 @@ outcome to expect.
 {% Tabs 'Samples for knowledge self check' %}
 {% Tab 'sample' %}
 
-When selected, this element opens a modal dialog:
-
-```html
-<a href="#" onclick="openDialog()">
-```
-
-{% AssessmentHint 'Should this sample use a button or a link?' %}
-This sample should use a **button**. The sample is **incorrect**.
-
-When selected,
-the element runs a function that opens a modal dialog on the same page;
-since the element isn't navigating the user to a separate page,
-a button is semantic.
-{% endAssessmentHint %}
-
-{% endTab %}
-{% Tab 'sample' %}
-
 ```html
 See <a href="https://webaim.org/intro/" rel="noopener">WebAIM's Introduction to Web Accessibility</a> for more information.
 ```
@@ -157,25 +139,19 @@ When selected, the element navigates the user to a different page on the same do
 {% endTab %}
 {% Tab 'sample' %}
 
-This code renders a horizontal navigation menu at the top of a website:
+When selected, this element opens a modal dialog:
 
 ```html
-<nav>
-  <button>About</button>
-  <button>Services</button>
-  <button>Work</button>
-  <button>Contact</button>
-</nav>
+<a href="#" onclick="openDialog()">
 ```
 
 {% AssessmentHint 'Should this sample use a button or a link?' %}
-This sample should use **links**. The sample is **incorrect**.
+This sample should use a **button**. The sample is **incorrect**.
 
-The elements in the `<nav>` menu navigate the user to other pages.
-Those pages may be separate resources in a static site,
-or they may be views in a
-[single-page application](https://developers.google.com/web/fundamentals/architecture/app-shell).
-Either way, since the user is navigating somewhere else, links are semantic.
+When selected,
+the element runs a function that opens a modal dialog on the same page;
+since the element isn't navigating the user to a separate page,
+a button is semantic.
 {% endAssessmentHint %}
 
 {% endTab %}
@@ -192,17 +168,36 @@ This sample should use a **button**. The sample is **incorrect**.
 
 When selected,
 the element runs a function that opens a navigation menu on the same page.
-_Opening_ the menu is an action, so a button is semantic.
-(Selecting an item _in_ the menu, however, would be a navigation.)
+Opening the menu is an action, so a button is semantic.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+This code renders a horizontal navigation menu at the top of a website:
+
+```html
+<nav>
+  <button>About</button>
+  <button>Services</button>
+  <button>Work</button>
+  <button>Contact</button>
+</nav>
+```
+
+{% AssessmentHint 'Should this sample use buttons or links?' %}
+This sample should use **links**. The sample is **incorrect**.
+
+The elements in the `<nav>` menu navigate the user to other pages.
+Those pages may be separate resources in a static site,
+or they may be views in a
+[single-page application](https://developers.google.com/web/fundamentals/architecture/app-shell).
+Either way, since the user is navigating somewhere else, links are semantic.
 {% endAssessmentHint %}
 
 {% endTab %}
 {% endTabs %}
 {% endAssessmentCallout %}
-
-<object type="application/pdf" data="/report.pdf">
-Annual report.
-</object>
 
 ## Styling
 
