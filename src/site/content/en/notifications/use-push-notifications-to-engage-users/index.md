@@ -36,7 +36,7 @@ Each browser platform has a push service backend which can forward messages to u
 
 Using that ID, you send messages from your application server to the browser's push service, which then forwards messages to the correct user. This process uses the Push API.
 
-On the client side, the operating system notifies the browser when a push message is received. Service workers can listen out for push events — even when the browser is closed — and display a notification using the Notification API.
+On the client side, the operating system notifies the browser when a push message is received. Service workers can listen out for push events—even when the browser is closed—and display a notification using the Notification API.
 
 {% endAside %}
 
