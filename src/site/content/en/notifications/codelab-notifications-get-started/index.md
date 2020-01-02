@@ -29,6 +29,28 @@ In this codelab, you'll use basic features of the
 * Send notifications
 * Experiment with notification options 
 
+If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed) 
+
+## Prereqs
+
+Template literals
+
+Promises
+
+{% Aside %}
+
+`Notification.requestPermission()` returns a `Promise`. To perform actions after this promise resolves, you must place them inside a function and pass that function as a parameter to the promise's `then()` method:
+
+```js
+Notification.requestPermission().then((result) => {
+  /* do stuff */ 
+});
+```
+
+See the [`Promise` documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) for more information on how promises work.
+
+{% endAside %}
+
 ## Remix the sample app and view it in a new tab
 
 Notifications are automatically blocked from the embedded Glitch app, so you won't be able to preview the app on this page. Instead, here's what to do:
@@ -79,7 +101,7 @@ Open `public/index.js` and take a look at some important parts of the existing c
 
     Before requesting permission, the permission state is `default`.
     In the `default` permission state,
-    a site must request and be granted permission before it can send notifications.
+    a site must request and be granted permission from the user before it can send notifications.
 
 *   The `requestPermission` function is a stub:
 
@@ -116,19 +138,7 @@ In this step, you'll add functionality to request the user's permission to send 
 
 You will use the `Notification.requestPermission()` method to trigger a popup that asks the user to allow or block notifications from your site.
 
-{% Aside %}
 
-`Notification.requestPermission()` returns a `Promise`. To perform actions after this promise resolves, you must place them inside a function and pass that function as a parameter to the promise's `then()` method:
-
-```js
-Notification.requestPermission().then((result) => {
-  /* do stuff */ 
-});
-```
-
-See the [`Promise` documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) for more information on how promises work.
-
-{% endAside %}
 
 1.  Replace the `requestPermission` function stub in public/index.js with the following code:
 
@@ -187,11 +197,15 @@ The user can make one of three responses to the permission popup.
 
     At the time of writing, browser behavior in response to dismissed notifications permission popups is still subject to change. The best way to handle this is to always request notification permission in response to some interaction the user has initiated so that they are expecting it and know what's going on.
 
+{# TODO remove "at time of writing" above #}
+
 {% Aside %}
 
 During development, to make the notification popup appear again, click the lock icon next to the Chrome URL bar. Chrome displays options to let you reset the site's notification permission setting to its default.
 
 {% endAside %}
+
+{# TODO convert the aside above into an optional section #}
 
 ## Send a notification
 
@@ -248,9 +262,13 @@ function sendNotification() {
 
 **To observe a notification permission error:**
 
-1.  Click the lock icon next to the Chrome URL bar and reset the site's notification permission setting to its default.
+1.  Click **View site information** (the lock icon next to Chrome's and reset the site's notification permission setting to its default.
 
 1.  Click **Request permission to send notifications**, and this time select **Block** from the popup.
+
+{# TODO take a screenshot of this #}
+
+1. Click **Reload** if Chrome prompts you to reload the page.
 
 1.  Click **Send notification** and see what happens.
     The error text (`Could not send notification`)
@@ -304,6 +322,6 @@ let options = {
 
 See [Peter Beverloo's Notification Generator](https://tests.peter.sh/notification-generator/) for some more ideas!
 
-If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed) 
 
-Take a look at the next codelab in this series, [Handle notifications with a service worker](codelab-notifications-service-worker), to explore further!
+
+Take a look at the next codelab in this series, [Handle notifications with a service worker](/codelab-notifications-service-worker), to explore further!
