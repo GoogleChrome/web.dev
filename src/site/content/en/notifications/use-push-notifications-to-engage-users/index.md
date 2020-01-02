@@ -28,21 +28,33 @@ The look-and-feel of notifications varies between platforms. For example:
   <figcaption class="w-figcaption">A notification on a MacBook.</figcaption>
 </figure>
 
-Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.      
+Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. A push service creates unique push subscriptions for each subscribed service worker. Sending messages to a user's push subscriptions raises events on that service worker, prompting it to display a notification.
 
-Push notifications can help users to get the most out of your app by prompting them to re-open it and use it based on the latest information. 
+{% Aside 'key-term' %}
+
+Each browser platform has a push service backend which can forward messages to users. When a user gives permission to receive notifications from your site, you can use JavaScript to get a unique subscription ID for the user from their browser's push service. The subscription data identifies the device, browser and service worker that requested it.
+
+Using that ID, you send messages from your application server to the browser's push service, which then forwards messages to the correct user. This process uses the Push API.
+
+On the client side, the operating system notifies the browser when a push message is received. Service workers can listen out for push events — even when the browser is closed — and display a notification using the Notification API.
+
+{% endAside %}
+
+{# TODO continue an example here? #}
+
+Push notifications can help users to get the most out of your app by prompting them to re-open the app and use it based on the latest information. 
 
 ## Creating and sending notifications
 
 Create notifications using the [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API). A `Notification` object has a `title` string and an `options` object. For example:
 
 ```js
-let title = 'Hi!';
-let options = { 
+const title = 'Hi!';
+const options = { 
   body: 'Very Important Message',
   /* other options can go here */
 };
-let notification = new Notification(title, options);
+const notification = new Notification(title, options);
 ```
 
 The `title` is displayed in bold when the notification is active, while the `body` contains additional text.
@@ -59,17 +71,19 @@ Notification.requestPermission();
 
 The web platform encourages developers to request notifications permission when users understand what is being asked and why. 
 
-Bring up the permission prompt **in response to a user gesture** and **when the value of notifications is obvious**. Avoid bringing up the permission prompt immediately when the user lands on the page.
+Bring up the permission prompt **in response to a user gesture** and **when the value of notifications is obvious**. Avoid bringing up the permission prompt immediately when the user lands on your site.
+
+For example, describe briefly what your notifications have to offer, and provide the user with Sign Up button, rather than simply displaying the Notifications permission dialog.
 
 {% endAside %}
 
 ## How do push notifications work?
 
-The real power of notifications comes from the combination of service workers and push technology:
+The real power of notifications comes from the combination of service workers and push APIs:
 
 *   [Service workers](https://developers.google.com/web/fundamentals/primers/service-workers) can run in the background and display notifications even when your app isn't visible on screen. 
 
-*   Push technology lets you configure your server to send notifications when it makes sense for your app. A push service creates unique URLs for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.
+*   Push technology lets you configure your server to send notifications when it makes sense for your app. A push service creates subscriptions for each subscribed service worker. Sending messages to a service worker's URL raises events on that service worker, prompting it to display a notification.
 
 In the following example flow, a client registers a service worker and subscribes to push notifications. Then, the server sends a notification to the subscription endpoint. 
 
@@ -77,7 +91,7 @@ The client and service worker use vanilla JavaScript with no extra libraries. Th
 
 ### Part 1: Register a service worker and subscribe to Push
 
-1.  A client app registers a service worker with `ServiceWorkerContainer.register()`. The registered service worker will continue to run in the background when the client is inactive. 
+1.  A client app registers a service worker with `ServiceWorkerContainer.register()`. The registered service worker will continue to run in the background even if the browser is closed.
 
     Client code: 
 
@@ -103,11 +117,11 @@ The client and service worker use vanilla JavaScript with no extra libraries. Th
     });
     ```
 
-    Push services like Firebase Cloud Messaging operate on a subscription model. When a service worker subscribes to a push service by calling `PushManager.subscribe()`, the push service creates a URL unique to that service worker. The URL is known as a **subscription endpoint**. 
+    Push services operate on a subscription model. When a service worker subscribes to a push service by calling `PushManager.subscribe()`, the push service creates a **subscription endpoint**. 
 
-1.  The client sends the subscription endpoint to the app server. 
+1.  From the client, send subscription data to your server:
 
-    Client code:
+    {# TODO replace sendToServer with fetch #}
 
     ```js/1-3/1/
     navigator.serviceWorker.register('sw.js').then(sw => {
@@ -117,7 +131,7 @@ The client and service worker use vanilla JavaScript with no extra libraries. Th
     });
     ```
 
-    Server code: 
+    In your server, listen for subscription requests:
 
     ```js
     app.post('/new-subscription', (request, response) => {
@@ -128,16 +142,16 @@ The client and service worker use vanilla JavaScript with no extra libraries. Th
 
 ### Part 2: Send a notification
 
-1.  The web server sends a notification to the subscription endpoint.
+1.  From your server, send a request to the push service using the subscription endpoint data:
 
     Server code:
 
     ```js
     const webpush = require('web-push');
 
-    let options = { /* config info for cloud messaging and API key */ };  
-    let subscription = { /* subscription created in Part 1*/ };
-    let payload = { /* notification */ };
+    const options = { /* config info for cloud messaging and API key */ };  
+    const subscription = { /* subscription created in Part 1*/ };
+    const payload = { /* notification */ };
 
     webpush.sendNotification(subscription, payload, options);
     ```
@@ -148,8 +162,8 @@ The client and service worker use vanilla JavaScript with no extra libraries. Th
 
     ```js
     self.addEventListener('push', (event) => {
-      let title = { /* get notification title from event data */ }
-      let options = { /* get notification options from event data */ }
+      const title = { /* get notification title from event data */ }
+      const options = { /* get notification options from event data */ }
       showNotification(title, options);
     })
     ```
