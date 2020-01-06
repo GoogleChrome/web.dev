@@ -11,6 +11,7 @@ description: |
 tags:
   - post
   - progressive-web-apps
+draft: true
 ---
 
 Progressive Web Apps (PWA) are built and enhanced with modern APIs to deliver
