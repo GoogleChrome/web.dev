@@ -142,6 +142,114 @@ You can learn more about them in our guide on
 [screen reader basics](/semantics-and-screen-readers).
 {% endAside %}
 
+{% AssessmentCallout 'Use the drop-down below each code sample to check your understanding of tab order.' %}
+{% Tabs 'Samples for knowledge self check' %}
+{% Tab 'sample' %}
+
+This HTML renders a modal dialog:
+```html
+<div role="dialog" aria-labelledby="dialog-header">
+  <button aria-label="Close"></button>
+  <h2 id="dialog-header">
+    Do you want to allow notifications from this website?
+  </h2>
+  <button>No</button>
+  <button>Yes</button>
+</div>
+```
+
+{% AssessmentHint 'Which elements from the sample are included in the tab order?' %}
+Only the `<button>` elements are included in the tab order
+because they're the only native HTML form elements.
+
+To insert other elements into the tab order, you would add a `tabindex` attribute.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+```html
+<section tabindex="-1">
+  <h2>Cat facts</h2>
+  <ul>
+    <li>A group of cats is called a <a href="https://m-w.com/dictionary/clowder">clowder</a>.</li>
+    <li>Most cats are <a href="https://www.catfacts.org/catnip.html"> unaffected by catnip</a>.</li>
+  </ul>
+</section>
+```
+
+{% AssessmentHint 'Which elements from the sample are included in the tab order?' %}
+Only the `<a>` elements are included in the tab order.
+
+The `<section>` element is not in the tab order
+because it has a negative `tabindex` value.
+(It can, however, be focused using the `focus()` method.)
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+```html
+<form action="./cat-info.json">
+  <p>Where did you get your cat?</p>
+  <label>
+    <input type="radio" name="source" value="shelter">
+    An animal shelter
+  </label>
+  <label>
+    <input type="radio" name="source" value="petshop">
+    A pet shop
+  </label>
+  <label>
+    <input type="radio" name="source" value="breeder">
+    A breeder
+  </label>
+  <p>Describe your cat:</p>
+  <input type="text">
+  <button type="submit">Submit</button>
+</form>
+```
+
+{% AssessmentHint 'How many tab stops does the sample include?' %}
+The sample includes **three** tab stops:
+- One for the radio group
+- One for the text input
+- One for the **Submit** button
+
+Radio groups have a
+[roving tabindex](#create-accessible-components-with-"roving-tabindex")
+by default, so the entire group has only one tab stop.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+This HTML renders a popup menu followed by a search input:
+
+```html
+<div role="menu" tabindex="0">
+  <a role="menuitem" href="/learn/" tabindex="-1">Learn</a>
+  <a role="menuitem" href="/measure/" tabindex="-1">Measure</a>
+  <a role="menuitem" href="/blog/" tabindex="-1">Blog</a>
+  <a role="menuitem" href="/about/" tabindex="-1">About</a>
+</div>
+<input tabindex="1" type="text" role="search" aria-label="Search" placeholder="Search">
+```
+
+{% AssessmentHint 'Which element in the sample comes first in the tab order?' %}
+The **Search** text input comes first in the tab order.
+Because it has a `tabindex` greater than 1, it jumps to the front of the tab order.
+
+(This behavior is likely to cause confusion
+  if the menu is positioned on the page before the search input.
+  This is an example of why `tabindex>0` is considered an anti-pattern.)
+
+{% endAssessmentHint %}
+
+{% endTab %}
+{% endTabs %}
+{% endAssessmentCallout %}
+
 ## Keyboard access recipes
 
 If you're unsure what level of keyboard support your custom components might
