@@ -10,12 +10,12 @@ module.exports = {
     title: "Progressive Web Apps",
     updated: "November 1, 2019",
     description: `Websites that took all the right vitamins`,
-    overview: `In this collection, you"ll learn what makes a Progressive Web
+    overview: `In this collection, you'll learn what makes a Progressive Web
     App special, how they can affect your business, and how to build them.`,
     topics: [
       {
         title: "Introduction",
-        pathItems: [],
+        pathItems: ["what-are-pwas"],
       },
       {
         title: "Capable",
