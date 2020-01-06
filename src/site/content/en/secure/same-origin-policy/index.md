@@ -106,7 +106,7 @@ cross-origin resource is blocked.
 A webpage on the web.dev domain includes this iframe:
 
 ```html
-<iframe src="https://example.com/some-page.html" alt="Sample iframe"></iframe>
+<iframe id="iframe" src="https://example.com/some-page.html" alt="Sample iframe"></iframe>
 ```
 
 The webpage's JavaScript includes this code to get the text content from an element in the embedded page:

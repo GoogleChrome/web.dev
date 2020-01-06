@@ -169,27 +169,6 @@ To insert other elements into the tab order, you would add a `tabindex` attribut
 {% Tab 'sample' %}
 
 ```html
-<section tabindex="-1">
-  <h2>Cat facts</h2>
-  <ul>
-    <li>A group of cats is called a <a href="https://m-w.com/dictionary/clowder">clowder</a>.</li>
-    <li>Most cats are <a href="https://www.catfacts.org/catnip.html"> unaffected by catnip</a>.</li>
-  </ul>
-</section>
-```
-
-{% AssessmentHint 'Which elements from the sample are included in the tab order?' %}
-Only the `<a>` elements are included in the tab order.
-
-The `<section>` element is not in the tab order
-because it has a negative `tabindex` value.
-(It can, however, be focused using the `focus()` method.)
-{% endAssessmentHint %}
-
-{% endTab %}
-{% Tab 'sample' %}
-
-```html
 <form action="./cat-info.json">
   <p>Where did you get your cat?</p>
   <label>
@@ -224,6 +203,27 @@ by default, so the entire group has only one tab stop.
 {% endTab %}
 {% Tab 'sample' %}
 
+```html
+<section tabindex="-1">
+  <h2>Cat facts</h2>
+  <ul>
+    <li>A group of cats is called a <a href="https://m-w.com/dictionary/clowder">clowder</a>.</li>
+    <li>Most cats are <a href="https://www.catfacts.org/catnip.html"> unaffected by catnip</a>.</li>
+  </ul>
+</section>
+```
+
+{% AssessmentHint 'Which elements from the sample are included in the tab order?' %}
+Only the `<a>` elements are included in the tab order.
+
+The `<section>` element is not in the tab order
+because it has a negative `tabindex` value.
+(It can, however, be focused using the `focus()` method.)
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
 This HTML renders a popup menu followed by a search input:
 
 ```html
@@ -241,8 +241,9 @@ The **Search** text input comes first in the tab order.
 Because it has a `tabindex` greater than 1, it jumps to the front of the tab order.
 
 (This behavior is likely to cause confusion
-  if the menu is positioned on the page before the search input.
-  This is an example of why `tabindex>0` is considered an anti-pattern.)
+if the menu is positioned on the page before the search input.
+This is an example of why having a `tabindex` value greater than zero
+is considered an anti-pattern.)
 
 {% endAssessmentHint %}
 
