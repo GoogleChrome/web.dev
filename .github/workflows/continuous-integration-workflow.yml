@@ -21,6 +21,8 @@ jobs:
           node-version: '12.x'
         env:
           ELEVENTY_ENV: prod
+          ALGOLIA_APP: ${{ secrets.ALGOLIA_APP }}
+          ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
       - run: npm ci && npm run build && node index-algolia.js
 
       - name: Deploy
