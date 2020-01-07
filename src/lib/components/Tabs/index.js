@@ -10,6 +10,7 @@ class Tabs extends BaseElement {
 
   constructor() {
     super();
+    this.idSalt = BaseElement.generateIdSalt("web-tab-");
 
     this.prerenderedChildren = null;
     this.tabs = null;
@@ -31,8 +32,8 @@ class Tabs extends BaseElement {
       for (const child of this.children) {
         // Set id and aria-labelledby attributes for each panel for a11y
         // and remove hidden attribute on first tab.
-        child.id = "web-tab-" + i + "-panel";
-        child.setAttribute("aria-labelledby", "web-tab-" + i);
+        child.id = `web-tab-${this.idSalt}-${i}-panel`;
+        child.setAttribute("aria-labelledby", `web-tab-${this.idSalt}-${i}`);
         if (i === 1) {
           child.removeAttribute("hidden");
         }
@@ -81,8 +82,8 @@ class Tabs extends BaseElement {
         class="web-tabs__tab"
         role="tab"
         aria-selected="${isActive}"
-        id="web-tab-${i}"
-        aria-controls="web-tab-${i}-panel"
+        id="web-tab-${this.idSalt}-${i}"
+        aria-controls="web-tab-${this.idSalt}-${i}-panel"
         tabindex=${tabIndex}
       >
         <span class="web-tabs__text-label">${tabLabel}</span>
