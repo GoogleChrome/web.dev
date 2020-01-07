@@ -78,12 +78,14 @@ class Tabs extends BaseElement {
       <button
         @click="${this.onClick}"
         @keydown="${this.onKeydown}"
-        class="web-tabs__tab"
+        class="web-tabs__tab gc-analytics-event"
         role="tab"
         aria-selected="${isActive}"
         id="web-tab-${i}"
         aria-controls="web-tab-${i}-panel"
         tabindex=${tabIndex}
+        data-category="Site-Wide Custom Events"
+        data-label="tab, ${tabLabel}"
       >
         <span class="web-tabs__text-label">${tabLabel}</span>
       </button>
