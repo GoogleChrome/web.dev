@@ -15,15 +15,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Setup node and build
+      - name: Setup node
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+
+      - name: Build
         env:
           ELEVENTY_ENV: prod
           ALGOLIA_APP: ${{ secrets.ALGOLIA_APP }}
           ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
-      - run: npm ci && npm run build && node index-algolia.js
+        run: npm ci && npm run build && node index-algolia.js
 
       - name: Deploy
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
