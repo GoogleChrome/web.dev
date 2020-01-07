@@ -14,12 +14,6 @@
 //
 // =============================================================================
 
-$NOTE_COLOR: $WEB_PRIMARY_COLOR;
-$CAUTION_COLOR: #ff8d00;
-$WARNING_COLOR: #eb0f00;
-$SUCCESS_COLOR: #018642;
-$KEY_POINT_COLOR: #6001ff;
-
 .w-aside {
   font-family: $ASIDE_FONT;
   font-size: #{map-get($ARTICLE, FONT_SIZE)}px;

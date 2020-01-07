@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content checklist
 date: 2019-06-26
-updated: 2019-11-06
+updated: 2019-11-25
 description: |
   A checklist for web.dev content reviews.
 ---
@@ -20,6 +20,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Do the title, subtitle, and description convey the value proposition?
 1. Is the piece 1,000 words or less—or is there a good reason for it to be longer?
 1. Are all statements and advice accurate and aligned with best practices?
+1. Can you complete the task with the provided instructions? Are there any missing steps? Does the code work?
 
 ## Style and voice
 1. Is the [voice](/handbook/voice) appropriate for the web.dev audience?
@@ -55,7 +56,8 @@ use it to self-review their content and fix problems rather than waiting for rev
 
 ## Links
 1. Do all links work?
-1. Are all links to web.dev pages and assets relative?
+1. Are all links to web.dev pages and assets [relative](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Examples_of_relative_URLs)?
+   This is important because if we need to move content around, relative paths are less likely to break.
 1. When referencing a web platform API, does the page link out to the canonical MDN API reference?
 
 ## Mechanics
@@ -63,3 +65,4 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Are [dashes and hyphens](/handbook/grammar/#dashes-and-hyphens) used correctly?
 1. Are titles and headings in sentence case with no terminal period?
 1. Are [keyboard key commands](/handbook/grammar/#ui-elements-and-interaction) correctly formatted?
+1. The title should not have inline code formatting because backtick characters show up verbatim in web.dev's search results.

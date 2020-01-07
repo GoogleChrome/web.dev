@@ -5,8 +5,7 @@ authors:
   - houssein
 subhead: |
   Next.js takes care of many optimizations in your React app so you don’t have to
-date: 2019-10-11
-draft: true
+date: 2019-11-08
 ---
 
 [Next.js](https://nextjs.org/) is an opinionated [React](https://reactjs.org/)
@@ -143,13 +142,12 @@ Pun intended 😛
 
 Every other guide in this collection will explore a specific Next.js feature in detail:
 
-* Route prefetching to speed up page navigations
-* [Serving hybrid and AMP-first pages][amp] for faster loading from search engines
-* Code-splitting components with dynamic imports to reduce JavaScript footprints
-* Precaching assets with `next-offline` to make your site work offline
-* Rendering options in Next.js to optimize for different use cases
+* [Route prefetching](/route-prefetching-in-nextjs/) to speed up page navigations
+* [Serving hybrid and AMP-only pages][amp] for faster loading from search engines
+* [Code-splitting components with dynamic imports](/code-splitting-with-dynamic-imports-in-nextjs/)
+  to reduce JavaScript footprints
 
 [collection]: /react
 [cra]: https://create-react-app.dev/
 [ssr]: https://developers.google.com/web/updates/2019/02/rendering-on-the-web#server-rendering
-[amp]: /how-to-use-amp-in-nextjs-and-why
+[amp]: /how-amp-can-guarantee-fastness-in-your-nextjs-app

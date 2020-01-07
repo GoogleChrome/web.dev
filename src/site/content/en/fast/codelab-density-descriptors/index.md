@@ -13,8 +13,7 @@ related_post: serve-responsive-images
 
 ## Explore This Demo
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 - Reload the page using different devices to see the browser load different
   images.
 
@@ -126,7 +125,7 @@ In order for images to look their very best on high resolution screens, it's
 necessary to provide different image versions for different `devicePixelRatios`.
 
 <div class="w-table-wrapper">
-  <table>
+  <table class="w-table--middle-align">
     <thead>
       <tr>
         <th>Device Pixel Ratio</th>

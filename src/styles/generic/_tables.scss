@@ -35,7 +35,6 @@ td {
   color: inherit;
   min-width: 120px; // Prevent narrow columns when you have th's like 'JS'
   text-align: left;
-  vertical-align: middle; // DevSite override
 }
 
 th {
@@ -44,11 +43,17 @@ th {
   font-weight: 500;
   line-height: 24px;
   padding-right: 24px;
+  vertical-align: middle;
 }
 
 td {
   line-height: 1.5;
   padding: 16px 24px 16px 0;
+  vertical-align: top;
+}
+
+.w-table--middle-align td {
+  vertical-align: middle;
 }
 
 caption {
@@ -76,6 +81,11 @@ table ul:not([class]),
 table ol:not([class]) {
   margin: 24px 0;
   padding-left: 40px;
+}
+
+table ul:not([class]):first-child,
+table ol:not([class]):first-child {
+  margin-top: 0;
 }
 
 table ul:not([class]):last-child,

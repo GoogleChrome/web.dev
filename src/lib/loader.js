@@ -84,18 +84,19 @@ function forceFocus(el) {
 }
 
 /**
- * Swap the current page for a new one.
- * @param {string} url url of the page to swap.
+ * Swap the current page for a new one. Assumes the current URL is the target.
  * @param {boolean} isFirstRun whether this is the first run
  * @return {!Promise<void>}
  */
-export async function swapContent(url, isFirstRun) {
+export async function swapContent(isFirstRun) {
+  let url = window.location.pathname + window.location.search;
   const entrypointPromise = loadEntrypoint(url);
 
   // If we disagree with the URL we're loaded at, then replace it inline
   const normalized = normalizeUrl(url);
   if (normalized) {
-    window.history.replaceState(null, null, normalized);
+    window.history.replaceState(null, null, normalized + window.location.hash);
+    url = window.location.pathname + window.location.search;
   }
 
   // When the router boots it will always try to run a handler for the current
@@ -138,6 +139,10 @@ export async function swapContent(url, isFirstRun) {
 
   // Update the page title
   document.title = page.title;
+  // Update the page description
+  const description = page.querySelector("meta[name=description]");
+  const updatedContent = description ? description.content : "";
+  document.querySelector("meta[name=description]").content = updatedContent;
 
   // Focus on the first title (or fallback to content itself)
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);

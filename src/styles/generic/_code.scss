@@ -85,9 +85,10 @@ h6 code {
   white-space: nowrap;
 }
 
-// Figcaptions are smaller than body text,
+// Figcaptions and citations are smaller than body text,
 // so code should be based on their font size.
-figcaption code {
+figcaption code,
+cite code {
   font-size: .9em;
 }
 

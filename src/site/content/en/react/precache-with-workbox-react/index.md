@@ -31,7 +31,7 @@ static assets in your application with every build.
 Service workers enable you to store important resources in its cache
 (_precaching_) so that when a user loads the web page for a second time, the
 browser can retrieve them from the service worker instead of making requests to
-the network. This results in faster page loads on repeat visits as well as the
+the network. This results in faster page loads on repeat visits as well as in the
 ability to surface content when the user is offline.
 
 ## Workbox in CRA
@@ -65,12 +65,11 @@ Here is an example of a React app built with CRA that has a service worker enabl
   </iframe>
 </div>
 
-In order to see which assets are being cached:
+To see which assets are being cached:
 
-+  Mouse over the editor and press the **Show** button to preview the app.
-+  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-+  Click on the **Network** tab.
-+  Reload the application.
+{% Instruction 'preview' %}
+{% Instruction 'devtools-network' %}
+{% Instruction 'reload-app' %}
 
 You'll notice that instead of showing the payload size, the `Size` column shows
 a `(from ServiceWorker)` message to indicate that these resources were retrieved
@@ -81,9 +80,9 @@ from the service worker.
 Since the service worker caches all static assets, try to use the application
 while offline:
 
-+  In the **Network** tab in DevTools, enable the **Offline** checkbox to
+1.  In the **Network** tab in DevTools, enable the **Offline** checkbox to
    simulate an offline experience.
-+  Reload the application.
+{% Instruction 'reload-app' %}
 
 The application works in exactly the same way, even without a network
 connection!

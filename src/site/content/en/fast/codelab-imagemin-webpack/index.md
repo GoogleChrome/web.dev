@@ -1,6 +1,6 @@
 ---
 layout: codelab
-title: Using Imagemin with Webpack
+title: Using Imagemin with webpack
 authors:
   - katiehempenius
 date: 2018-11-05
@@ -11,9 +11,9 @@ glitch: imagemin-webpack
 related_post: use-imagemin-to-compress-images
 ---
 
-## Setup the Imagemin Webpack plugin
+## Set up the Imagemin webpack plugin
 
-This Glitch already contains `webpack`, `webpack-cli`, and 
+This Glitch already contains `webpack`, `webpack-cli`, and
 `imagemin-webpack-plugin`. To add the configuration for Imagemin, you'll need
 to edit your `webpack.config.js` file.
 
@@ -21,7 +21,7 @@ The existing `webpack.config.js` for this project has been copying images from
 the `images/` directory to the `dist/` directory but it hasn't been
 compressing them.
 
-- Click the **Remix to Edit** button to make the project editable.
+{% Instruction 'remix' %}
 
 {% Aside %}
 Why would you copy images to a new `dist/` folder? `dist/` is short for
@@ -38,7 +38,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 ```
 
 - Next, add the following code as the last item in the `plugins[]` array. This
-adds Imagemin to the list of plugins that Webpack uses:
+adds Imagemin to the list of plugins that webpack uses:
 
 ```javascript
 new ImageminPlugin()
@@ -74,31 +74,30 @@ module.exports = {
 }
 ```
 
-You now have a Webpack config that compresses images using Imagemin.
+You now have a webpack config that compresses images using Imagemin.
 
-## Run Webpack
+## Run webpack
 
-1. Click the **Tools** button.
-1. Then click the **Console** button.
-1. To compress your images, run Webpack by typing the following command into the 
+{% Instruction 'console' %}
+1. To compress your images, run webpack by typing the following command into the
 console:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 webpack --config webpack.config.js --mode development
-</pre>
+```
 
-But what happens if you run Webpack in production mode?
+But what happens if you run webpack in production mode?
 
-- Re-run Webpack, but this time in production mode:
+- Re-run webpack, but this time in production mode:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 webpack --config webpack.config.js --mode production
-</pre>
+```
 
-This time around, Webpack displays a warning letting you know that your PNG
+This time around, webpack displays a warning letting you know that your PNG
 files, in spite of some compression, still exceed the recommended size limit.
-(Webpack's `development` & `production` modes prioritize different things, which
-is why you only see this warning while running Webpack in production mode.)
+(webpack's `development` & `production` modes prioritize different things, which
+is why you only see this warning while running webpack in production mode.)
 
 Customize our Imagemin configuration to fix this warning.
 
@@ -149,8 +148,8 @@ how they are compressed as well.
 
 Instead of using `imagemin-webpack-plugin`'s default plugin for JPG compression
 (`imagemin-jpegtran`), use the `imagemin-mozjpeg` plugin. Unlike Jpegtran,
-Mozjpeg let's you specify a compression quality for your JPG compression. We've 
-already installed the Mozjpeg plugin for you in this Glitch, but you'll need to 
+Mozjpeg let's you specify a compression quality for your JPG compression. We've
+already installed the Mozjpeg plugin for you in this Glitch, but you'll need to
 edit your `webpack.config.js` file:
 
 - Initialize the `imagemin-mozjpeg` plugin by adding the following line at the
@@ -170,7 +169,7 @@ new ImageminPlugin({
 })
 ```
 
-This code tells Webpack to compress JPGs to a quality of 50 (0 is the worst;
+This code tells webpack to compress JPGs to a quality of 50 (0 is the worst;
 100 is the best) using the Mozjpeg plugin.
 
 {% Aside %}
@@ -216,25 +215,24 @@ module.exports = {
 }
 ```
 
-## Re-run Webpack & verify results with Lighthouse
+## Re-run webpack and verify results with Lighthouse
 
-- In the console, re-run Webpack:
+- In the console, re-run webpack:
 
-<pre class="devsite-terminal devsite-click-to-copy">
+```bash
 webpack --config webpack.config.js --mode production
-</pre>
+```
 
-Hooray! Your changes should have fixed the Webpack warnings.
+Hooray! Your changes should have fixed the webpack warnings.
 
-Webpack warns you about large images, but it can't tell you if images are
+webpack warns you about large images, but it can't tell you if images are
 uncompressed or undercompressed. This is why it's always a good idea to use
 Lighthouse to verify your changes.
 
 Lighthouse's "Efficiently encode images" performance audit can let you know if
 the JPEG images on your page are optimally compressed.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 - Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
   on the live version of your Glitch and verify that the **Efficiently encode
   images** audit was passed.

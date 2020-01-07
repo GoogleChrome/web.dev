@@ -34,6 +34,7 @@
 - layout
 - lighthouse
 - media
+- media-queries
 - mobile
 - modules
 - monetization
@@ -57,4 +58,5 @@
 - ux
 - virtual-reality
 - web-assembly
+- web-bundles
 - webxr

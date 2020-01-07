@@ -25,9 +25,12 @@ const slugify = require('slugify');
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
+const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
+const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
+const Blockquote = require(`./${componentsDir}/Blockquote`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
 const Compare = require(`./${componentsDir}/Compare`);
@@ -39,6 +42,9 @@ const Instruction = require(`./${componentsDir}/Instruction`);
 const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
+const Tab = require(`./${componentsDir}/Tab`);
+const Tabs = require(`./${componentsDir}/Tabs`);
+const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
 const tagsDir = 'src/site/_includes/components/tags';
@@ -96,11 +102,28 @@ module.exports = function(config) {
     rightDelimiter: '}',
     allowedAttributes: ['id', 'class', /^data\-.*$/],
   };
+
+  const mdLib = markdownIt(markdownItOptions)
+    .use(markdownItAnchor, markdownItAnchorOptions)
+    .use(markdownItAttrs, markdownItAttrsOpts);
+
+  // custom renderer rules
+  const fence = mdLib.renderer.rules.fence;
+
+  const rules = {
+    fence: (tokens, idx, options, env, slf) => {
+      const fenced = fence(tokens, idx, options, env, slf);
+      return `<web-copy-code>${fenced}</web-copy-code>`;
+    },
+    table_close: () => '</table>\n</div>',
+    table_open: () => '<div class="w-table-wrapper">\n<table>\n',
+  }
+
+  mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
+
   config.setLibrary(
     'md',
-    markdownIt(markdownItOptions)
-      .use(markdownItAnchor, markdownItAnchorOptions)
-      .use(markdownItAttrs, markdownItAttrsOpts)
+    mdLib
   );
 
   //----------------------------------------------------------------------------
@@ -143,9 +166,12 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
+  config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
+  config.addPairedShortcode('AssessmentHint', AssessmentHint);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
+  config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
   config.addPairedShortcode('Compare', Compare);
@@ -157,6 +183,9 @@ module.exports = function(config) {
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
+  config.addPairedShortcode('Tab', Tab);
+  config.addPairedShortcode('Tabs', Tabs);
+  config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
 
   //----------------------------------------------------------------------------

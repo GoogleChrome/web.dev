@@ -18,7 +18,7 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 {% endAside %}
 
 ## Writing
-1. Write a draft in the Google doc you used to propose your piece. (Before you start, read our [style guidelines](/handbook/style).)
+1. Write a draft in the Google doc you used to propose your piece. (Before you start, read our [content guidelines](/handbook/#content-guidelines).)
 1. When you're ready, request a content review in the GitHub issue.
 1. The tech writer will review using the [web.dev content checklist](/handbook/content-checklist) and work with you to polish the piece.
 

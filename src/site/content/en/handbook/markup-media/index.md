@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2019-11-06
+updated: 2019-12-17
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -71,6 +71,16 @@ Use a `<figure>` tag when you need a caption or you need special presentation (e
   <img src="./a.jpg" alt="An office with two people working at a table.">
   <figcaption class="w-figcaption">A standard image.</figcaption>
 </figure>
+
+### Differences between `alt` and `figcaption` {: #alt-vs-figcaption }
+
+`alt` and `figcaption` should have different text because they're both announced by assistive
+technology. If the text is duplicated, the assistive technology will announce the same text twice.
+To use the analogy of a painting, the `alt` text would describe the painting, and the `figcaption`
+text would be the little piece of paper next to the painting that mentions things like the painting's
+title, the painter's name, and perhaps a description of what the painter was trying to achieve.
+
+See [Alternative Text](https://webaim.org/techniques/alttext/) for more information.
 
 ### Styling body images
 To make an image extend slightly beyond the width of the content column (for emphasis), add the `w-figure--fullbleed` class to the `figure` element and the `w-figcaption--fullbleed` class to the `figcaption` element:

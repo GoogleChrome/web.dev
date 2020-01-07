@@ -7,8 +7,7 @@ authors:
   - ajain
   - mfriesenhahn
 date: 2019-11-07
-# Add an updated date to your post if you edit in the future.
-# updated: 2019-06-27
+updated: 2019-11-08
 
 description: |
   How a hospitality startup built an Android app that relies on web content to

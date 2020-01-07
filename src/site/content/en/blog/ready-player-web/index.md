@@ -109,7 +109,7 @@ One solution that brings a more consistent payment UI to the web is the [Payment
 
 ## The future
 
-We've seen several surprisingly successful web games over the past few years. Slither.io has built a mixed web and native business that demonstrates the tremendous reach and viral growth opportunity that the web offers. Portals such as Poki.com are innovating in their user experience and releasing new games every month that match the fidelity of their mobile counterparts, such as Crossy Road.
+We've seen several surprisingly successful web games over the past few years. Slither.io has built a mixed web and native business that demonstrates the tremendous reach and viral growth opportunity that the web offers. Portals such as [Poki.com](https://poki.com/) are innovating in their user experience and releasing new games every day including titles that match the fidelity of their mobile counterparts, such as Subway Surfers or Crossy Road.
 
 Furthermore, if you look outside of the open web you can see that web games are already taking off. Closed ecosystems such as WeChat and LINE offer satisfying games which aren't playable on the open web but which are built on top of web technologies like HTML5 and WebViews. This is a clear sign that the web has reached a level of fidelity that's capable of rivaling native mobile games–perhaps not in a textbook definition of fidelity but in a more important metric: player attention.
 

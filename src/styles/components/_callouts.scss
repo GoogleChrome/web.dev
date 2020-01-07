@@ -1,0 +1,124 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+.w-callout {
+  margin: 2.25em 0;
+
+  @include bp(sm) {
+    // sass-lint:disable-block indentation
+    border-radius: 8px;
+    box-shadow:
+    0 2px 4px -1px rgba(0, 0, 0, .2),
+    0 4px 5px 0 rgba(0, 0, 0, .14),
+    0 1px 10px 0 rgba(0, 0, 0, .12);
+    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+  }
+}
+
+.w-callout--2col {
+  @include bp(sm) {
+    display: grid;
+    font-size: .889em;
+    // sass-lint:disable-all
+    // scss-lint:disable all
+    gap: 16px;
+    grid-gap: 16px;
+    // sass-lint:enable-all
+    // scss-lint:enable all
+  }
+}
+
+.w-callout__header {
+  margin-bottom: 16px;
+  pointer-events: none;
+
+  // scss-lint thinks this is a pseudo class instead of a psuedo element
+  // and complains about the two colons.
+  // scss-lint:disable all
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.w-callout__lockup {
+  @include w-headline--three();
+  display: inline-flex;
+  // Ugh. Bad idea including margins in the heading styles.
+  // They get reset at every breakpoint.
+  margin: 0 0 12px !important;
+}
+
+.w-callout__lockup--codelab {
+  color: $WEB_EXTENDED_SECONDARY_COLOR;
+}
+
+.w-callout__lockup--assess {
+  color: $SUCCESS_COLOR;
+}
+
+.w-callout__lockup::before {
+  @include font-material-icon();
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 8px 0 0;
+}
+
+.w-callout__lockup--codelab::before {
+  content: 'code';
+}
+
+.w-callout__lockup--assess::before {
+  content: 'school';
+}
+
+.w-callout__headline {
+  @include w-headline--two-small;
+  margin: 0 0 4px !important;
+}
+
+.w-callout__blurb {
+  margin: 0;
+}
+
+.w-callout__list {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.w-callout__listitem {
+  width: 100%;
+}
+
+.w-callout__listitem:not(:last-of-type) {
+  border-bottom: 1px solid $BORDER_COLOR;
+}
+
+.w-callout__link {
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  min-height: 40px;
+  padding: 8px 26px 8px 0;
+  position: relative;
+}
+
+.w-callout__link--codelab {
+  color: $WEB_EXTENDED_SECONDARY_COLOR;
+}
+
+.w-callout__link--assess {
+  color: $SUCCESS_COLOR;
+}
+
+.w-callout__link::after {
+  @include font-material-icon();
+  content: 'chevron_right';
+  font-size: 20px;
+  margin-top: -10px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
