@@ -14,6 +14,9 @@ tags:
 draft: true
 ---
 
+<!-- Disable heading-increment because it mucks with the Details widget -->
+<!--lint disable heading-increment-->
+
 Progressive Web Apps (PWA) are built and enhanced with modern APIs to deliver
 native-like capabilities, reliability, and installability while reaching
 _anyone, anywhere, on any device_ with a single codebase. To help you create
