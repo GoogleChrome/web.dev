@@ -116,6 +116,10 @@ web-url-chooser {
     height: $INPUT_HEIGHT;
     justify-content: center;
   }
+
+  .lh-controls button + button {
+    margin-left: 16px;
+  }
 }
 
 web-url-chooser {
