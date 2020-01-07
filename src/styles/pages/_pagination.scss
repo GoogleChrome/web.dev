@@ -3,24 +3,16 @@
 $W_PAGINATION_LINK_SPACING: 6px;
 
 @mixin w-pagination__links($COLOR, $ACTIVE: false) {
-  display: flex;
-  font-size: 20px;
-  justify-content: center;
-  min-width: 20px;
-  padding: 0px $W_PAGINATION_LINK_SPACING;
+  color: $COLOR;
+  text-decoration: none;
 
-  a {
-    color: $COLOR;
-    text-decoration: none;
-
-    @if $ACTIVE {
+  @if $ACTIVE {
+    border-bottom: 2px solid $COLOR;
+  } @else {
+    &:active,
+    &:focus,
+    &:hover {
       border-bottom: 2px solid $COLOR;
-    } @else {
-      &:active,
-      &:focus,
-      &:hover {
-        border-bottom: 2px solid $COLOR;
-      }
     }
   }
 }
@@ -32,12 +24,21 @@ $W_PAGINATION_LINK_SPACING: 6px;
   width: 100%;
 }
 
-.w-pagination > .w-pagination__active {
-  @include w-pagination__links($BLACK, true);
+.w-pagination .w-pagination__container {
+  display: flex;
+  font-size: 1rem;
+  height: 40px;
+  justify-content: center;
+  min-width: 40px;
+  padding: 0px $W_PAGINATION_LINK_SPACING;
 }
 
-.w-pagination > .w-pagination__link {
+.w-pagination .w-pagination__link {
   @include w-pagination__links($GREY_700);
+}
+
+.w-pagination .w-pagination__link.w-pagination--active {
+  @include w-pagination__links($BLACK, true);
 }
 
 .w-pagination__spacer {
