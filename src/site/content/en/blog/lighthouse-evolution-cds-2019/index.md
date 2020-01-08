@@ -33,7 +33,7 @@ audit or category result.
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./lighthouse-ci.png" alt="Lighthouse CI report."
-       width="50%">
+       width="400">
 </figure>
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle
@@ -132,7 +132,7 @@ enable running them in the DevTools **Audits** panel too.
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./lighthouse-plugin-devtools.png" alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience." width="400">
-  <figcaption>Community Plugins in DevTools Audits panel (beta)</figcaption>
+  <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)</figcaption>
 </figure>
 
 When users install Lighthouse plugin extensions from the [Chrome Web
