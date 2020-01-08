@@ -158,46 +158,14 @@ This HTML renders a modal dialog:
 </div>
 ```
 
-{% AssessmentHint 'Which elements from the sample are included in the tab order?' %}
+{% AssessmentHint 'What is the tab order for the elements in the sample?' %}
+1. The **Close** button
+1. The **No** button
+1. The **Yes** button
+
 Only the `<button>` elements are included in the tab order
 because they're the only native HTML form elements.
-
 To insert other elements into the tab order, you would add a `tabindex` attribute.
-{% endAssessmentHint %}
-
-{% endTab %}
-{% Tab 'sample' %}
-
-```html
-<form action="./cat-info.json">
-  <p>Where did you get your cat?</p>
-  <label>
-    <input type="radio" name="source" value="shelter">
-    An animal shelter
-  </label>
-  <label>
-    <input type="radio" name="source" value="petshop">
-    A pet shop
-  </label>
-  <label>
-    <input type="radio" name="source" value="breeder">
-    A breeder
-  </label>
-  <p>Describe your cat:</p>
-  <input type="text">
-  <button type="submit">Submit</button>
-</form>
-```
-
-{% AssessmentHint 'How many tab stops does the sample include?' %}
-The sample includes **three** tab stops:
-- One for the radio group
-- One for the text input
-- One for the **Submit** button
-
-Radio groups have a
-[roving tabindex](#create-accessible-components-with-"roving-tabindex")
-by default, so the entire group has only one tab stop.
 {% endAssessmentHint %}
 
 {% endTab %}
@@ -245,6 +213,36 @@ if the menu is positioned on the page before the search input.
 This is an example of why having a `tabindex` value greater than zero
 is considered an anti-pattern.)
 
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+This HTML renders a custom radio group:
+
+```html
+<div role="radiogroup" aria-labelledby="breed-header">
+  <h3 id="breed-header">Your cat's breed</h3>
+  <div role="radio" aria-checked="false" tabindex="0">Persian</div>
+  <div role="radio" aria-checked="false" tabindex="-1">Bengal</div>
+  <div role="radio" aria-checked="false" tabindex="-1">Maine Coon</div>
+</div>
+```
+
+To keep things simpler, ignore the
+[`aria-*` and `role` attributes](/semantics-and-screen-readers) for now.
+
+{% AssessmentHint 'For a roving `tabindex`, what logic should run when a user presses the `Right` arrow key while a radio element is focused?' %}
+- Change the `tabindex` values for all radio elements in the group to -1.
+- If there's a radio element after the one that's focused,
+  set its `tabindex` value to 0.
+- If there's no radio element after the one that's focused,
+  set the `tabindex` value of the first radio element in the group to 0.
+- Focus the radio element that now has a `tabindex` of 0.
+
+That's a lot—and it doesn't even include ARIA attributes!
+This is an example of why it's easier to use native elements
+with built-in keyboard behavior whenever you can.
 {% endAssessmentHint %}
 
 {% endTab %}
