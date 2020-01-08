@@ -96,6 +96,11 @@
   );
 }
 
+// Mixin for exposing hover styles only on devices that support hover
+@mixin hover() {
+  @media (hover: hover) { @content; }
+}
+
 // Mixin for styling typography via maps containing required integer values for
 // font-family, font-size, font-weight, and line-height; with an optional value
 // for letter-spacing.

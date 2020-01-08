@@ -15,6 +15,7 @@
 // but since we're using all: initial, we need to make things
 // initially consistent.
 .w-button {
+  -webkit-tap-highlight-color: transparent; // Prevents tap highlight on hidden tooltips
   @include base-button();
   border-radius: $GLOBAL_RADIUS;
   overflow: hidden;
