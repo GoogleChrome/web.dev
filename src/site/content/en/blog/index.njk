@@ -37,54 +37,44 @@ pagination:
   <nav class="w-pagination">
     {# Show first page anchor only if not on the first page #}
     {% if page.url != pagination.firstPageHref %}
-      <div class="w-pagination__container">
-        <a class="w-pagination__link" aria-label="First Page" href="{{ pagination.firstPageHref | stripLanguage }}">&NestedLessLess;</a>
-      </div>
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--first" aria-label="First Page" href="{{ pagination.firstPageHref | stripLanguage }}"></a>
     {% endif %}
 
     {# Show previous page anchor only if not on the first two pages #}
     {% if pagination.pageNumber > 1 %}
-      <div class="w-pagination__container">
-        <a class="w-pagination__link" aria-label="Previous Page" href="{{ pagination.previousPageHref | stripLanguage }}">&lt;</a>
-      </div>
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--previous" aria-label="Previous Page" href="{{ pagination.previousPageHref | stripLanguage }}"></a>
     {% endif %}
 
     {%- for pageEntry in pagination.hrefs | paginate(page.url)  %}
-      <div class="w-pagination__container">
-        {% if pageEntry.showEllipses %}
-          <span class="w-pagination__spacer">…</span>
+      {% if pageEntry.showEllipses %}
+        <span class="w-pagination__spacer">…</span>
+      {% endif %}
+      <a
+        {% if page.url == pageEntry.href %}
+          class="w-pagination__link w-pagination__link--active"
+        {% else %}
+          class="w-pagination__link"
         {% endif %}
-        <a
-          {% if page.url == pageEntry.href %}
-            class="w-pagination__link w-pagination--active"
-          {% else %}
-            class="w-pagination__link"
-          {% endif %}
 
-          {% if page.url == pageEntry.href %}
-            aria-current="page"
-          {% endif %}
+        {% if page.url == pageEntry.href %}
+          aria-current="page"
+        {% endif %}
 
-          aria-label="Page {{pageEntry.index}}"
-          href="{{ pageEntry.href | stripLanguage }}"
-        >
-          {{ pageEntry.index }}
-        </a>
-      </div>
+        aria-label="Page {{pageEntry.index}}"
+        href="{{ pageEntry.href | stripLanguage }}"
+      >
+        {{ pageEntry.index }}
+      </a>
     {%- endfor %}
 
     {# Show next page anchor only if not on the last or penultimate pages #}
     {% if (pagination.pageNumber + 2) < (pagination.hrefs | length) %}
-      <div class="w-pagination__container">
-        <a class="w-pagination__link" aria-label="Next Page" href="{{ pagination.nextPageHref | stripLanguage }}">&gt;</a>
-      </div>
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ pagination.nextPageHref | stripLanguage }}"></a>
     {% endif %}
 
     {# Show last page anchor only if not on the last page #}
     {% if page.url != pagination.lastPageHref %}
-      <div class="w-pagination__container">
-        <a class="w-pagination__link" aria-label="Last Page" href="{{ pagination.lastPageHref | stripLanguage }}">&NestedGreaterGreater;</a>
-      </div>
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--last" aria-label="Last Page" href="{{ pagination.lastPageHref | stripLanguage }}"></a>
     {% endif %}
 
   </nav>
