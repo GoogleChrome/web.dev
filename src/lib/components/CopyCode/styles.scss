@@ -35,10 +35,10 @@
   &:focus {
     box-shadow: 0 0 0 1px $FOCUS_COLOR;
   }
+}
 
-  &:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
-    box-shadow: none;
-  }
+.js-focus-visible .web-copy-code__button:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
+  box-shadow: none;
 }
 
 web-copy-code {

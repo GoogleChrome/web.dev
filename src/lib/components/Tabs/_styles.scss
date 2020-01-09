@@ -48,10 +48,6 @@ web-tabs {
     outline: 0;
   }
 
-  .web-tabs__tab:focus:not(.focus-visible) {
-    box-shadow: none;
-  }
-
   .web-tabs__tab:active {
     background: rgba($SUCCESS_COLOR, .3);
     box-shadow: none;
@@ -76,4 +72,8 @@ web-tabs {
   .web-tabs__panel[hidden] {
     display: none;
   }
+}
+
+.js-focus-visible .web-tabs__tab:focus:not(.focus-visible) {
+  box-shadow: none;
 }
