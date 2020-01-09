@@ -49,7 +49,7 @@ $BORDER_COLOR: $GREY_300;
     speak: none;
     top: 50%;
     transform: translateY(-50%);
-    transition: background $TRANSITION_SPEED, transform .3s;
+    transition: background $TRANSITION_SPEED;
     visibility: visible;
   }
 
@@ -72,6 +72,10 @@ $BORDER_COLOR: $GREY_300;
 
   .js-focus-visible &:focus:not(.focus-visible)::after { // sass-lint:disable-line class-name-format
     box-shadow: none;
+  }
+
+  &:active::after {
+    background: $GREEN_100;
   }
 }
 
