@@ -29,6 +29,12 @@ web-lighthouse-scores-meta {
     @include bp(sm) {
       margin-left: 8px;
     }
+
+    @include bp(md) {
+      min-width: 180px;
+      margin-right: 16px;
+      display: inline-block;
+    }
   }
 
   .lh-report-invisible {
@@ -63,25 +69,3 @@ web-lighthouse-scores-meta {
       alt: '';
     }
   }
-
-  /// @deprecated
-  @media screen and (min-width: $BREAKPOINT_VALUE_DESKTOP) {
-    .lh-report-meta {
-      margin-bottom: 32px;
-    }
-  }
-
-  /// @deprecated
-  @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) {
-    .lh-report-meta {
-      display: flex;
-      align-items: center;
-    }
-
-    .lh-report-meta__lastaudit {
-      min-width: 180px;
-      margin-right: 16px;
-      display: inline-block;
-    }
-  }
-}
