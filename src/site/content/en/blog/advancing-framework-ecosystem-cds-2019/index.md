@@ -41,7 +41,7 @@ that:
     [MDN's First Annual Web Developer & Designer Survey](https://hacks.mozilla.org/2019/12/presenting-the-mdn-web-developer-needs-assessment-web-dna-report/)
     use at least one of these frameworks and libraries.
 +   Over
-    [320,000 sites](https://bigquery.cloud.google.com/savedquery/1086077897885:24ffb259f2a04a7f9955e44f6e0298e9)in
+    [320,000 sites](https://bigquery.cloud.google.com/savedquery/1086077897885:24ffb259f2a04a7f9955e44f6e0298e9) in
     the top 5 million URLs analyzed by HTTP Archive use at least one of these frameworks and libraries.
 +   When grouped by time spent, 30 of the top 100 URLs use at least one of these frameworks and
     libraries. (Research was done on internal data.)
@@ -78,18 +78,16 @@ The Angular team has shipped a number of improvements to version 8 of the framew
 <figure class="w-figure w-figure--center">
   <img src="differential-loading-angular.png" class="w-screenshot" alt="Graph showing bundle size reduction of angular.io with and without differential builds">
   <figcaption class="w-figcaption">
-    Bundle size reduction for angular.io with differential builds (from <a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27">"Version 8 of Angular"</a>)
+    Bundle size reduction for angular.io with differential builds (from <a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27">Version 8 of Angular</a>)
   </figcaption>
 </figure>
 
-Bundle size reduction for angular.io with differential builds
-(from[" Version 8 of Angular"](https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27))
-
 +   Support for standard dynamic import syntax for lazy-loading routes.
-+   [Web worker support](https://angular.io/guide/web-worker).
++   [Web worker support](https://angular.io/guide/web-worker) to run operations in a background thread separate from the main thread.
 +   [Ivy](https://www.youtube.com/watch?v=jnp_ny4SOQE&feature=youtu.be&t=1320), Angular's new
-    rendering engine, is available in [preview
-    mode](https://angular.io/guide/ivy#opting-into-angular-ivy) for existing projects.
+    rendering engine which provides better re-compilation performance and a reduction in bundle
+    sizes, is available in [preview mode](https://angular.io/guide/ivy#opting-into-angular-ivy) for
+    existing projects.
 
 You can learn more about these improvements in
 ["Version 8 of Angular"](https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27)
@@ -128,7 +126,7 @@ for comments (RFCs) and pull requests (PRs):
 <figure class="w-figure w-figure--center">
   <img src="barnebys.png" class="w-screenshot" alt="Homepage of Barnebys.com">
   <figcaption class="w-figcaption">
-    <a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript with granular chunking enabled
+    <a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking
   </figcaption>
 </figure>
 
@@ -140,7 +138,7 @@ Next.js, such as:
     surface better errors and warnings ([RFC](https://github.com/zeit/next.js/issues/9310)).
 
 <figure class="w-figure w-figure--center">
-  <img src="conformance.png" class="w-screenshot" alt="Example of a conformance build error in Next.js">
+  <img src="conformance.png" class="w-screenshot-filled" alt="Example of a conformance build error in Next.js">
   <figcaption class="w-figcaption">
     An example of a conformance build error in Next.js (prototype)
   </figcaption>
@@ -159,15 +157,16 @@ provide an opinionated setup. Similar to Next.js, it includes many features out-
 +   Default data store ([Vuex](https://vuex.vuejs.org/guide/))
 
 Along with working directly on improving the performance of different tools, we've expanded the
-framework fund to provide monetary support to more open-source frameworks and libraries. With our
-[recent support](https://github.com/nuxt/nuxt.js/issues/6467#issuecomment-538192059) to Nuxt.js, a
-few features are slated to land in the near future including smarter server-rendering and image
+[framework fund](https://opencollective.com/chrome) to provide monetary support to more open-source
+frameworks and libraries. With our [recent
+support](https://github.com/nuxt/nuxt.js/issues/6467#issuecomment-538192059) to Nuxt.js, a few
+features are slated to land in the near future including smarter server-rendering and image
 optimizations.
 
 {% Aside %}
-The [framework fund](https://opencollective.com/chrome) accelerates the efforts of different
-frameworks and libraries with the goal to improve their performance. If you are working on an
-open-source tool and need support, [please apply](http://bit.ly/chrome-framework-fund)!
+The framework fund accelerates the efforts of different frameworks and libraries with the goal to
+improve their performance. If you are working on an open-source tool and need support, [please
+apply](https://bit.ly/chrome-framework-fund)!
 {% endAside %}
 
 ## Babel
@@ -184,20 +183,20 @@ Modules](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules).
 
 {% Aside %}
 To learn more about how to leverage ES modules to minimize polyfill code shipped to browsers
-that do not need them check out
-["Serve modern code to modern browsers for faster page loads"](../serve-modern-code-to-modern-browsers).
+that do not need them, check out
+[Serve modern code to modern browsers for faster page loads](/serve-modern-code-to-modern-browsers).
 {% endAside %}
 
 To optimize for this case, we launched a brand new preset;
 [@babel/preset-modules](http://github.com/babel/preset-modules). Instead of converting modern syntax
-to older syntax to avoid browser bugs, preset-modules fixes each specific bug by transforming to the
-closest possible non-broken modern syntax. This results in modern code that can be delivered_ nearly
-unmodified _to most browsers.
+to older syntax to avoid browser bugs, `preset-modules` fixes each specific bug by transforming to the
+closest possible non-broken modern syntax. This results in modern code that can be delivered *nearly
+unmodified* to most browsers.
 
 ![A new babel preset to provide better polyfilling for browsers](./babel-preset-env.png)
 
-Developers who already use preset-env will also benefit from these optimizations without having to
-do anything, as they'll soon be incorporated into preset-env too.
+Developers who already use `preset-env` will also benefit from these optimizations without having to
+do anything, as they'll soon be incorporated into `preset-env` too.
 
 ## What's next?
 
@@ -205,4 +204,4 @@ Working closely with open-source frameworks and libraries to provide better expe
 Chrome team realize what is fundamentally important to users and developers alike.
 
 If you work on a web framework, UI library, or any form of web tooling (bundler, compiler, linter),
-[reach out to us](https://twitter.com/ChromiumDev)!
+[apply for the framework fund](http://bit.ly/chrome-framework-fund)!
