@@ -97,7 +97,7 @@ ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
 <figure class="w-figure">
-  <img src="image-small.png" alt="" style="max-width: 400px;">
+  <img src="image-small.png" alt="" width="400">
   <figcaption class="w-figcaption">
     Small image.
   </figcaption>
@@ -122,7 +122,7 @@ quam sem.
 ## Image, Inline
 
 <figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
+  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
   <figcaption class="w-figcaption">
     Inline right, outlined image.
   </figcaption>
@@ -143,7 +143,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
+  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
   <figcaption class="w-figcaption">
     Inline left, outlined image.
   </figcaption>
