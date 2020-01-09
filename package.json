@@ -47,9 +47,9 @@
     "workbox-build": "^4.3.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3",
-    "@11ty/eleventy-plugin-rss": "^1.0.6",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "ansi-colors": "^3.2.4",
     "autoprefixer": "^9.6.1",
     "chalk": "^2.4.2",
