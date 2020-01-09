@@ -1,0 +1,68 @@
+@import '../settings/colors';
+@import '../settings/global';
+
+$W_PAGINATION_LINK_SPACING: 6px;
+
+@mixin w-pagination__links($COLOR, $ACTIVE: false) {
+  color: $COLOR;
+
+  @if $ACTIVE {
+    box-shadow: 0 2px 0 0 $COLOR;
+  } @else {
+    &:active,
+    &:focus,
+    &:hover {
+      box-shadow: 0 2px 0 0 $COLOR;
+      text-decoration: none;
+    }
+  }
+}
+
+.w-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.w-pagination__link {
+  @include w-pagination__links($GREY_700);
+  -webkit-font-smoothing: auto;
+  font-size: 1rem;
+  height: 40px;
+  margin: 0px $W_PAGINATION_LINK_SPACING;
+  min-width: 40px;
+  text-align: center;
+  transition: box-shadow $TRANSITION_SPEED;
+}
+
+.w-pagination__link--active {
+  @include w-pagination__links($BLACK, true);
+}
+
+.w-pagination__arrow::before {
+  @include font-material-icon();
+}
+
+.w-pagination__arrow--first::after,
+.w-pagination__arrow--last::after {
+  @include font-material-icon();
+  margin-left: -18px;
+}
+
+.w-pagination__arrow--first::before,
+.w-pagination__arrow--first::after,
+.w-pagination__arrow--previous::before {
+  content: 'chevron_left';
+}
+
+.w-pagination__arrow--last::before,
+.w-pagination__arrow--last::after,
+.w-pagination__arrow--next::before {
+  content: 'chevron_right';
+}
+
+.w-pagination__spacer {
+  color: $GREY_700;
+  margin-right: calc(#{$W_PAGINATION_LINK_SPACING} * 2) ;
+}

@@ -1,10 +1,14 @@
 ---
 layout: layout
 title: Blog
-permalink: /en/blog/index.html
+permalink: /en/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
 override:tags: []
 description: Our latest news, updates, and stories for developers
 date: 2018-11-05
+pagination:
+  data: collections.posts
+  size: 24
+  alias: posts
 ---
 
 {# *-landing-page classes are a holdover from devsite. #}
@@ -24,9 +28,54 @@ date: 2018-11-05
 
   <section class="w-grid">
     <div class="w-grid__columns w-grid__columns--three" role="list">
-      {% for post in collections.posts %}
+      {% for post in posts %}
         {% PostCard {post: post} %}
       {% endfor %}
     </div>
   </section>
+
+  <nav class="w-pagination">
+    {# Show first page anchor only if not on the first page #}
+    {% if page.url != pagination.firstPageHref %}
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--first" aria-label="First Page" href="{{ pagination.firstPageHref | stripLanguage }}"></a>
+    {% endif %}
+
+    {# Show previous page anchor only if not on the first two pages #}
+    {% if pagination.pageNumber > 1 %}
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--previous" aria-label="Previous Page" href="{{ pagination.previousPageHref | stripLanguage }}"></a>
+    {% endif %}
+
+    {%- for pageEntry in pagination.hrefs | paginate(page.url)  %}
+      {% if pageEntry.showEllipses %}
+        <span class="w-pagination__spacer">…</span>
+      {% endif %}
+      <a
+        {% if page.url == pageEntry.href %}
+          class="w-pagination__link w-pagination__link--active"
+        {% else %}
+          class="w-pagination__link"
+        {% endif %}
+
+        {% if page.url == pageEntry.href %}
+          aria-current="page"
+        {% endif %}
+
+        aria-label="Page {{pageEntry.index}}"
+        href="{{ pageEntry.href | stripLanguage }}"
+      >
+        {{ pageEntry.index }}
+      </a>
+    {%- endfor %}
+
+    {# Show next page anchor only if not on the last or penultimate pages #}
+    {% if (pagination.pageNumber + 2) < (pagination.hrefs | length) %}
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ pagination.nextPageHref | stripLanguage }}"></a>
+    {% endif %}
+
+    {# Show last page anchor only if not on the last page #}
+    {% if page.url != pagination.lastPageHref %}
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--last" aria-label="Last Page" href="{{ pagination.lastPageHref | stripLanguage }}"></a>
+    {% endif %}
+
+  </nav>
 </div>
