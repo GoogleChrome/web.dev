@@ -1,10 +1,34 @@
 @import '../../../styles/settings/dimensions';
+@import '../../../styles/tools/breakpoints';
+
 
 web-lighthouse-scores-meta {
   .lh-report-meta {
     margin-top: 8px;
     margin-bottom: 16px;
     font-size: 14px;
+  }
+
+  .lh-report-meta__links {
+    display: flex;
+    flex-direction: column;
+
+    @include bp(sm) {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    @include bp(md) {
+      display: block;
+    }
+  }
+
+  .lh-report-meta__lastaudit {
+    margin-left: 8px;
+
+    @include bp(sm) {
+      margin-left: 8px;
+    }
   }
 
   .lh-report-invisible {
@@ -58,14 +82,6 @@ web-lighthouse-scores-meta {
       min-width: 180px;
       margin-right: 16px;
       display: inline-block;
-    }
-  }
-
-  /// @deprecated
-  @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
-    .lh-report-meta__links {
-      display: flex;
-      justify-content: space-between;
     }
   }
 }
