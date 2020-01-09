@@ -4,6 +4,7 @@
 @import '../tools/mixins';
 
 $CHEVRON_SIZE: 24px;
+$CHEVRON_MARGIN: 12px;
 $BORDER_COLOR: $GREY_300;
 
 .w-self-assessment-hint {
@@ -21,7 +22,7 @@ $BORDER_COLOR: $GREY_300;
   font: inherit;
   font-weight: 500;
   list-style: none;
-  padding: 1.125em #{$CHEVRON_SIZE + 2px + 12px} 1.125em 0;
+  padding: 1.125em #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} 1.125em 0;
   position: relative;
 
   // scss-lint thinks this is a pseudo class instead of a psuedo element
@@ -54,7 +55,7 @@ $BORDER_COLOR: $GREY_300;
 
   @include bp(xsm) {
     & {
-      padding: 1.125em #{$CHEVRON_SIZE + 12px + 12px} 1.125em 0;
+      padding: 1.125em #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 12px} 1.125em 0;
     }
 
     &::after {
