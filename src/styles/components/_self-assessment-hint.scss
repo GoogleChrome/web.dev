@@ -73,10 +73,6 @@ $BORDER_COLOR: $GREY_300;
   .js-focus-visible &:focus:not(.focus-visible)::after { // sass-lint:disable-line class-name-format
     box-shadow: none;
   }
-
-  &:active::after {
-    background: $GREEN_100;
-  }
 }
 
 .w-self-assessment-hint[open] .w-self-assessment-hint__summary::after {
