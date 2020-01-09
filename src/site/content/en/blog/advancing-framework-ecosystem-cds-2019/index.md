@@ -124,7 +124,7 @@ for comments (RFCs) and pull requests (PRs):
     ([PR](https://github.com/zeit/next.js/pull/8069)).
 
 <figure class="w-figure w-figure--center">
-  <img src="barnebys.png" class="w-screenshot" alt="Homepage of Barnebys.com">
+  <img src="barnebys.png" class="w-screenshot-filled" alt="Homepage of Barnebys.com">
   <figcaption class="w-figcaption">
     <a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking
   </figcaption>
