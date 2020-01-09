@@ -21,7 +21,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
-import {setUserAcceptsCookies} from "../../actions";
+import {setUserAcceptsCookies, checkIfUserAcceptsCookies} from "../../actions";
 import "../Snackbar";
 
 class SnackbarContainer extends BaseElement {
@@ -40,6 +40,7 @@ class SnackbarContainer extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
+    checkIfUserAcceptsCookies();
     store.subscribe(this.onStateChanged);
     this.onStateChanged();
 
