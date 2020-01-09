@@ -126,6 +126,18 @@ browser reflow](https://www.youtube.com/watch?v=4-d_SoCHeWE).
   Take a look at this [demo](https://mathiasbynens.be/demo/img-loading-lazy) to see how the `loading` attribute works with 100 pictures.
 {% endAside %}
 
+Images that are defined using the `<picture>` element can also be lazy-loaded:
+
+```html
+<picture>
+  <source media="(min-width: 800px)" srcset="large.jpg 1x, larger.jpg 2x">
+  <img src="photo.jpg" loading="lazy">
+</picture>
+```
+
+Although a browser will decide which image to load from any of the `<source>` elements, the `loading`
+attribute only needs to be included to the fallback `<img>` element.
+
 ### iframe loading
 
 The `loading` attribute affects iframes differently than images, depending on whether the iframe is
