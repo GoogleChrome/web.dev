@@ -38,19 +38,14 @@ optimizations:
 {% Instruction 'disable-cache', 'ol' %}
 {% Instruction 'reload-app', 'ol' %}
 
-```html
 <img class="w-screenshot" src="./original-bundle-size.png" alt="Original bundle size request">
-```
 
 Over 80 KB is used for this application! Time to find out if parts of the bundle
 aren't being used:
 
 {% Instruction 'devtools-command', 'ol' %}
 <!--lint disable code-block-style-->
-
-```html
-<img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
-```
+    <img class="w-screenshot" src="./show-coverage-command-menu.png" alt="Command Menu">
 
 1. Enter `Show Coverage` and hit `Enter` to display the **Coverage** tab.
 1. In the **Coverage** tab, click **Reload** to reload the
