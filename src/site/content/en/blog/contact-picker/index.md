@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2019-12-18
+updated: 2020-01-10
 tags:
   - post
   - capabilities
@@ -102,11 +102,19 @@ selecting what to share and clicking **Done**, the promise resolves with an
 array of contacts selected by the user.
 
 When calling `select()` you must provide an array of properties you'd like
-returned as the first parameter, and optionally whether multiple contacts can be
+returned as the first parameter (with the allowed values being any of
+`'name'`, `'email'`, `'tel'`, `'address'`, `'icon'`),
+and optionally whether multiple contacts can be
 selected as a second parameter.
 
+{% Aside 'caution' %}
+  While the Contacts Picker API was launched in Chrome 80,
+  the newly added properties `'address'` and `'icon'` require registering for an
+  [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6951306024846360575).
+{% endAside %}
+
 ```js
-const props = ['name', 'email', 'tel'];
+const props = ['name', 'email', 'tel', 'address', 'icon'];
 const opts = {multiple: true};
 
 try {
@@ -268,7 +276,7 @@ implementing the feature and Peter Beverloo whose
 [code](https://tests.peter.sh/contact-api/) I shamelessly
 <strike>stole and</strike> refactored for the demo.
 
-PS: The 'names' in my contact picker, are characters from Alice in Wonderland.
+PS: The names in my contact picker are characters from Alice in Wonderland.
 
 [spec]: https://wicg.github.io/contact-api/spec/
 [spec-select]: https://wicg.github.io/contact-api/spec/#contacts-manager-select
