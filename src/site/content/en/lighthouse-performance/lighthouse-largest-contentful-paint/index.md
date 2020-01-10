@@ -15,10 +15,8 @@ Each metric captures some aspect of page load speed.
 
 Lighthouse displays LCP in seconds:
 
-<!-- TODO update this once LCP lands in the report UI. -->
-
 <figure class="w-figure">
-  <img class="w-screenshot" src="cat.jpg"
+  <img class="w-screenshot" src="largest-contentful-paint.png"
        alt="A screenshot of the Lighthouse Largest Contentful Paint audit">
 </figure>
 
@@ -33,8 +31,6 @@ details on how LCP is determined.
 
 Native support for LCP launched in [Chrome 77][launch]. Lighthouse extracts LCP data from
 [Chrome's tracing tool](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool).
-
-<!-- TODO explain how the LCP data is mapped to a score between 0 and 100. -->
 
 The table below shows how to interpret your LCP score:
 
