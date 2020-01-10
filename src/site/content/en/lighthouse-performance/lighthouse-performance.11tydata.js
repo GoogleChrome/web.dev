@@ -26,6 +26,7 @@ module.exports = {
           "interactive",
           "lighthouse-max-potential-fid",
           "lighthouse-total-blocking-time",
+          "lighthouse-largest-contentful-paint",
         ],
       },
       {

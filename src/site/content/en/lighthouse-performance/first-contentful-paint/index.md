@@ -57,7 +57,7 @@ This table shows how to interpret your FCP score:
       </tr>
       <tr>
         <td>2–4</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
         <td>50–74</td>
       </tr>
       <tr>
