@@ -121,12 +121,12 @@ web-lighthouse-scores-audits {
       border-bottom: 1px solid $GREY_700;
       margin-bottom: 0;
     }
-  
+
     &::after {
       @include font-material-icon();
       content: 'arrow_drop_down';
     }
-  
+
     &[data-inverted]::after {
       content: 'arrow_drop_up';
     }
@@ -139,6 +139,7 @@ web-lighthouse-scores-audits {
   .lh-audit-list-row__recommendation,
   .lh-audit-list-row__guide {
     width: 50%;
+    overflow: hidden;
   }
 
   .lh-audit-list-row__guide {
