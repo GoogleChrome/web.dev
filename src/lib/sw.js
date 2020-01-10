@@ -118,7 +118,7 @@ const untrailedContentPageRe = new RegExp("^(/[\\w-]+)+$");
  */
 workbox.routing.registerRoute(
   contentPageRe,
-  new workbox.strategies.StaleWhileRevalidate({
+  new workbox.strategies.NetworkFirst({
     plugins: [normalizeIndexCacheKeyPlugin],
   }),
 );
@@ -128,7 +128,7 @@ workbox.routing.registerRoute(
  */
 workbox.routing.registerRoute(
   new RegExp("/images/.*"),
-  new workbox.strategies.StaleWhileRevalidate(),
+  new workbox.strategies.NetworkFirst(),
 );
 
 /**
