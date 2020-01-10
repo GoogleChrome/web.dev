@@ -23,6 +23,7 @@ $BORDER_COLOR: $GREY_300;
 }
 
 .w-details__summary {
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   flex-grow: 1;
   font: inherit;
@@ -40,13 +41,19 @@ $BORDER_COLOR: $GREY_300;
     outline: none;
   }
 
-  &:hover .w-details__header::after,
-  &:focus .w-details__header::after {
-    background: $LIGHT_BLUE_50;
+  @include hover() {
+    &:hover .w-details__header::after,
+    &:focus .w-details__header::after {
+      background: $LIGHT_BLUE_50;
+    }
   }
 
   &:focus .w-details__header::after {
     box-shadow: 0 0 0 1px $FOCUS_COLOR;
+  }
+
+  .js-focus-visible &:focus:not(.focus-visible) .w-details__header::after { // sass-lint:disable-line class-name-format
+    box-shadow: none;
   }
 
   &:active .w-details__header::after {
@@ -139,6 +146,9 @@ h2.w-details__header:only-child {
   display: none;
 }
 
-.w-details__summary:hover .w-details__preview::after {
-  color: $LINK_COLOR;
+@include hover() {
+  .w-details__summary:hover .w-details__preview::after,
+  .w-details__summary:focus .w-details__preview::after {
+    color: $LINK_COLOR;
+  }
 }

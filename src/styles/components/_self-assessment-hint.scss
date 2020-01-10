@@ -16,6 +16,7 @@ $BORDER_COLOR: $GREY_300;
 }
 
 .w-self-assessment-hint__summary {
+  -webkit-tap-highlight-color: transparent;
   color: $SUCCESS_COLOR;
   cursor: $CURSOR_POINTER_VALUE;
   flex-grow: 1;
@@ -49,7 +50,7 @@ $BORDER_COLOR: $GREY_300;
     speak: none;
     top: 50%;
     transform: translateY(-50%);
-    transition: background $TRANSITION_SPEED, transform .3s;
+    transition: background $TRANSITION_SPEED;
     visibility: visible;
   }
 
@@ -63,13 +64,19 @@ $BORDER_COLOR: $GREY_300;
     }
   }
 
-  &:hover::after,
-  &:focus::after {
-    background: $GREEN_50;
+  @include hover() {
+    &:hover::after,
+    &:focus::after {
+      background: $GREEN_50;
+    }
   }
 
   &:focus::after {
     box-shadow: 0 0 0 1px $FOCUS_COLOR;
+  }
+
+  .js-focus-visible &:focus:not(.focus-visible)::after { // sass-lint:disable-line class-name-format
+    box-shadow: none;
   }
 
   &:active::after {
