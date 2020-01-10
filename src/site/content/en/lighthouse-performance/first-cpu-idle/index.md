@@ -75,7 +75,7 @@ This table shows how to interpret your First CPU Idle score:
       </tr>
       <tr>
         <td>4.8–6.5</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
         <td>50–74</td>
       </tr>
       <tr>

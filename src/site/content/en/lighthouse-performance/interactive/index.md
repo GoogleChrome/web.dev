@@ -73,7 +73,7 @@ This table shows how to interpret your TTI score:
       </tr>
       <tr>
         <td>5.3–7.3</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
         <td>50–74</td>
       </tr>
       <tr>

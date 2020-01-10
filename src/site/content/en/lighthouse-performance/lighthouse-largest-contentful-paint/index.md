@@ -4,13 +4,10 @@ title: Largest Contentful Paint
 description: |
   Learn about Lighthouse's Largest Contentful Paint metric and
   how to measure and optimize it.
-date: 2019-10-14
+date: 2020-01-10
 web_lighthouse:
   - largest-contentful-paint
 ---
-
-<!-- TODO https://web.dev/largest-contentful-paint already exists.
-     What should the URL for this page be? -->
 
 Largest Contentful Paint (LCP) is one of the metrics
 tracked in the **Performance** section of the Lighthouse report.
@@ -51,15 +48,15 @@ The table below shows how to interpret your LCP score:
     </thead>
     <tbody>
       <tr>
-        <td>TODO</td>
+        <td>0-2</td>
         <td>Green (fast)</td>
       </tr>
       <tr>
-        <td>TODO</td>
-        <td>Orange (average)</td>
+        <td>2-4</td>
+        <td>Orange (moderate)</td>
       </tr>
       <tr>
-        <td>TODO</td>
+        <td>Over 4</td>
         <td>Red (slow)</td>
       </tr>
     </tbody>
