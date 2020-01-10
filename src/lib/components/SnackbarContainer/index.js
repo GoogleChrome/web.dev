@@ -44,25 +44,22 @@ class SnackbarContainer extends BaseElement {
     store.subscribe(this.onStateChanged);
     this.onStateChanged();
 
-    if (!this.acceptedCookies) {
-      window.addEventListener(
-        "beforeinstallprompt",
-        this.onBeforeInstallPrompt,
-      );
-    }
+    window.addEventListener("beforeinstallprompt", this.onBeforeInstallPrompt);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     store.unsubscribe(this.onStateChanged);
-  }
-
-  onBeforeInstallPrompt(e) {
-    e.preventDefault();
     window.removeEventListener(
       "beforeinstallprompt",
       this.onBeforeInstallPrompt,
     );
+  }
+
+  onBeforeInstallPrompt(e) {
+    if (!this.acceptedCookies) {
+      e.preventDefault();
+    }
   }
 
   onStateChanged() {
