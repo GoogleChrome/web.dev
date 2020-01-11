@@ -292,7 +292,7 @@ The number of browser targets included is still quite large, and not many users
 use discontinued browsers such as Internet Explorer. Update the configurations
 to the following:
 
-```js/6
+```js/6/5
 {
   "presets": [
     [
