@@ -186,7 +186,7 @@ transforms and polyfills that are included, add a `debug` field to `.babelrc:`
       "@babel/preset-env",
       {
         "targets": "last 2 versions",
-        <strong>"debug": true</strong>
+        "debug": true
       }
     ]
   ]
@@ -239,7 +239,7 @@ the target browsers, add a `useBuiltIns: 'entry'` to the configuration.
       {
         "targets": "last 2 versions",
         "debug": true
-        <strong>"useBuiltIns": "entry"</strong>
+        "useBuiltIns": "entry"
       }
     ]
   ]
