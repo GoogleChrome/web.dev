@@ -125,6 +125,42 @@ $W_FAB_LARGE_RADIUS: 28px;
 .w-actions__fab--subscribe {
   background-color: $WHITE;
   color: $WEB_PRIMARY_COLOR;
+  display: none;
+
+  @include bp(sm) {
+    display: inline-flex;
+  }
+}
+
+.w-actions__fab--subscribe__mobile {
+  background-image: none;
+  border-radius: $W_FAB_LARGE_RADIUS;
+  display: inline-flex;
+  justify-content: center;
+  margin: 24px 0 16px 0;
+  padding: 0 24px 0 52px;
+  text-indent: 0;
+  width: 100%;
+
+  &::before {
+    background-image: none;
+    width: 0;
+  }
+
+  @include bp(sm) {
+    display: none;
+  }
+
+  span::before {
+    background-image: url('../images/icons/subscribe.svg');
+    background-size: 24px 24px;
+    content: '';
+    height: 24px;
+    margin-left: -32px;
+    position: absolute;
+    top: 16px;
+    width: 24px;
+  }
 }
 
 .w-actions__fab--subscribe:hover {
