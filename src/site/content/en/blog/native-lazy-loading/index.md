@@ -180,7 +180,7 @@ behavior so that intersection observers are fired _before_ the window load event
 In the meantime, it is safer to only use the `loading` attribute for elements that are outside of
 the device viewport to prevent late fetches of on-screen elements.
 
-### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example, behind a carousel)?
+### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
 Only images that are below the device viewport by the [calculated
 distance](#load-in-distance-threshold) load lazily. All images above the viewport, regardless of
