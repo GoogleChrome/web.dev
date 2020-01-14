@@ -128,7 +128,7 @@ workbox.routing.registerRoute(
  */
 workbox.routing.registerRoute(
   new RegExp("/images/.*"),
-  new workbox.strategies.NetworkFirst(),
+  new workbox.strategies.StaleWhileRevalidate(),
 );
 
 /**
