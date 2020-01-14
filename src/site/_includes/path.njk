@@ -34,7 +34,7 @@ layout: layout
       <h2 class="w-headline--three no-link">What you'll learn</h2>
       <ul class="w-icon-list">
         {% for topic in topics %}
-          <li class="w-icon-list_item w-icon-list_item--check">
+          <li class="w-icon-list__item w-icon-list__item--check">
             <a class="w-path-link" href="#{{ topic.title | slug }}">{{ topic.title }}</a>
           </li>
 	      {% endfor %}
