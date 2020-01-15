@@ -183,7 +183,7 @@ http {
 }
 ```
 
-Start nginx and you’re ready to serve SXG!
+Start nginx and you are ready to serve SXG!
 
 ```ShellSession
 sudo systemctl start nginx.service
@@ -258,7 +258,7 @@ server {
 `cert-url` is essential for browsers to load SXG properly because it locates
 certificate chain.
 The certificate chain contains certificate and OCSP stapling information with
-cbor format. Note that you don’t have to serve cert.cbor file from the same
+cbor format. Note that you do not have to serve cert.cbor file from the same
 origin, so you can serve it via any CDNs or other static file serving services
 as long as it supports HTTPS (e.g. Amazon S3, Google Cloud Storage).
 
