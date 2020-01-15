@@ -14,12 +14,13 @@ alt: Two pairs of hands holding a cup of tomatoes.
 tags:
   - post
   - capabilities
+  - fugu
   - workbox
 ---
 
 The [Web Share Target API](https://web.dev/web-share-target/) lets you display
-your [Progressive Web App](https://developers.google.com/web/progressive-web-apps/checklist) in a 
-user's native share [sheet] after it's been installed. While it works great if you have a server 
+your [Progressive Web App](https://developers.google.com/web/progressive-web-apps/checklist) in a
+user's native share [sheet] after it's been installed. While it works great if you have a server
 available to receive the request, it's much harder to get working if you don't.
 
 In this article we'll use
