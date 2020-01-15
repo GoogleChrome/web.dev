@@ -13,6 +13,7 @@ alt: Icons contained inside white circles compared to icons covering its entire 
 tags:
   - post
   - capabilities
+  - fugu
   - progressive-web-apps
 ---
 

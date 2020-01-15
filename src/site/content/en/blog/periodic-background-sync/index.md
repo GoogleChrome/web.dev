@@ -17,6 +17,7 @@ description: |
   of a native app.
 tags:
   - capabilities
+  - fugu
   - post
   - progressive-web-apps
   - service-worker
