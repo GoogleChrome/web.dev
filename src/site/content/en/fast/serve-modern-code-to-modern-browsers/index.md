@@ -154,11 +154,16 @@ Ideally, the two version scripts of an application are included like this:
 
 ```html
   <script type="module" src="main.mjs"></script>
-  <script nomodule src="compiled.js"></script>
+  <script nomodule src="compiled.js" defer></script>
 ```
 
 Browsers that support modules fetch and execute `main.mjs` and ignore `compiled.js`.
 The browsers that do not support modules do the opposite.
+
+{% Aside %}
+  Module scripts are deferred by default. The `defer` attribute is added to the
+  `nomodule` script for the same behavior.
+{% endAside %}
 
 If you use webpack, you can set different targets in your configurations for two
 separate versions of your application:

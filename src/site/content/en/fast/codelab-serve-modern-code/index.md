@@ -482,6 +482,15 @@ like this:
 Browsers that support modules fetch and execute `main.mjs` and ignore
 `main.bundle.js.` The browsers that do not support modules do the opposite.
 
+It is important to note that unlike regular scripts, module scripts are always deferred by default.
+If you would like the equivalent `nomodule` script to also be deferred and only executed after
+parsing, then you'll need to add the `defer` attribute:
+
+```html
+<script type="module" src="main.mjs"></script>
+<script nomodule src="main.bundle.js" defer></script>
+```
+
 The last thing that needs to be done here is to add the `module` and `nomodule`
 attributes to the module and legacy script respectively, Import the
 [ScriptExtHtmlWebpackPlugin](https://github.com/numical/script-ext-html-webpack-plugin)
