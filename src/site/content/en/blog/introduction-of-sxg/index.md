@@ -33,14 +33,14 @@ extension, as well as a particular key type. DigiCert provides certificates
 with this extension. You need a csr file for issuance of a certificate, so
 generate it with the following commands:
 
-```ShellSession
+```bash
 openssl ecparam -genkey -name prime256v1 -out mySxg.key
 openssl req -new -key mySxg.key -nodes -out mySxg.csr -subj "/O=Test/C=US/CN=website.test"
 ```
 
 You will get a csr file that looks like the following:
 
-```ShellSession
+```bash
 -----BEGIN CERTIFICATE REQUEST-----
 MIHuMIGVAgEAMDMxDTALBgNVBAoMBFRlc3QxCzAJBgNVBAYTAlVTMRUwEwYDVQQD
 DAx3ZWJzaXRlLnRlc3QwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAS7IVaeMvid
@@ -78,7 +78,7 @@ In this article, we demonstrate libsxg.
 You can install the package in the usual Debian way, as long as OpenSSL
 (libssl-dev) version is matched.
 
-```ShellSession
+```bash
 sudo apt install -y libssl-dev
 wget https://github.com/google/libsxg/releases/download/v0.2/libsxg-dev_0.2_amd64.deb
 sudo dpkg -i libsxg-dev_0.2_amd64.deb
@@ -90,7 +90,7 @@ If you are not using an environment compatible with .deb file, you can build it
 yourself.
 As a precondition, you need to install git, cmake, openssl and gcc.
 
-```ShellSession
+```bash
 git clone https://github.com/google/libsxg
 mkdir libsxg/build
 cd libsxg/build
@@ -109,7 +109,7 @@ generating  them prior to serving.
 The SXG module for nginx is distributed on [GitHub](https://github.com/kumagi/nginx-sxg-module).
 On Debian-based systems, you can install it as a binary package.
 
-```ShellSession
+```bash
 sudo apt install nginx
 wget https://github.com/google/nginx-sxg-module/releases/download/v0.1/libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
 sudo dpkg -i libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
@@ -121,7 +121,7 @@ Building the nginx module requires the nginx source code.
 You can get the tarball and build it along with the SXG dynamic module using the
 commands below:
 
-```ShellSession
+```bash
 git clone https://github.com/google/nginx-sxg-module
 wget https://nginx.org/download/nginx-1.17.5.tar.gz
 tar xvf nginx-1.17.5.tar.gz
@@ -185,7 +185,7 @@ http {
 
 Start nginx and you are ready to serve SXG!
 
-```ShellSession
+```bash
 sudo systemctl start nginx.service
 curl -H"Accept: application/signed-exchange;v=b3" https://website.test/ > index.html.sxg
 $ cat index.html.sxg
@@ -230,16 +230,21 @@ http {
 After verifying the configuration looks correct, start nginx.
 Now you can get your SXG!
 
-```ShellSession
-cd /opt/nginx/sbin
-sudo ./nginx
-cd
-curl -H "Accept: application/signed-exchange;v=b3" https://website.test/ > index.html.sxg
+```bash
+$ cd /opt/nginx/sbin
+$ sudo ./nginx
+$ curl -H "Accept: application/signed-exchange;v=b3" https://website.test/ > index.html.sxg
 $ less index.html.sxg
 sxg1-b3...https://website.test/...(omit)
+```
 
 Serve your application backend
-In the above examples, nginx serves static files in the root directory, but you can use upstream directive for your applications to make SXG for arbitrary web application backends (e.g. Ruby on Rails, Django, express.js) as long as your nginx works as a front HTTP(S) server.
+In the above examples, nginx serves static files in the root directory, but you
+can use upstream directive for your applications to make SXG for arbitrary web
+application backends (e.g. Ruby on Rails, Django, express.js) as long as your
+nginx works as a front HTTP(S) server.
+
+```nginx
 upstream app {
     server 127.0.0.1:8080;
 }
@@ -274,3 +279,4 @@ reduce network traffic. But the details are not implemented yet.
 I explained how to publish SXG files from your nginx.
 I am now working in this field to make SXG ecosystems better.
 Please let me know your opinions or impressions! Thank you!
+
