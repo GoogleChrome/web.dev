@@ -11,6 +11,8 @@ glitch: adaptive-serving-netinfo-starter
 related_post: adaptive-serving-based-on-network-quality
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 In this codelab, you'll learn how to adapt your content based on the network
 quality. This page's background video will load only when users are on a fast
 network. On slower networks, an image will load instead.

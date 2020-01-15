@@ -12,6 +12,8 @@ glitch: gif-to-video
 related_post: replace-gifs-with-videos
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 In this codelab, improve performance by replacing an animated GIF with a
 video.
 

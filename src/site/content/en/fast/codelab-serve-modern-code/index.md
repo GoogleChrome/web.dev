@@ -11,11 +11,11 @@ glitch: serve-modern-code
 related_post: serve-modern-code-to-modern-browsers
 ---
 
-In this codelab, you'll:
-- Improve the performance of a simple application that allows
-users to rate random cats.
-- Learn how to optimize the JavaScript bundle by
-minimizing how much code is transpiled.
+{% include 'content/devtools-headsup.njk' %}
+
+In this codelab, improve the performance of this simple application that allows
+users to rate random cats. Learn how to optimize the JavaScript bundle by
+minizming how much code is transpiled.
 
 ![App screenshot](./app-screenshot.png)
 

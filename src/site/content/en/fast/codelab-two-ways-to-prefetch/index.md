@@ -9,7 +9,9 @@ date: 2019-09-12
 glitch: two-ways-to-prefetch
 ---
 
-In this codelab, you'll implement prefetching in two ways: with `<link rel="prefetch">` and with HTTP `Link` header. 
+{% include 'content/devtools-headsup.njk' %}
+
+In this codelab, you'll implement prefetching in two ways: with `<link rel="prefetch">` and with HTTP `Link` header.
 
 The sample app is a website that has a promotional landing page with a special discount for the shop's best selling t-shirt. Since the landing page links to a single product, it's safe to assume that a high percentage of users will navigate to the product details page. This makes the product page a great candidate to prefetch on the landing page.
 
