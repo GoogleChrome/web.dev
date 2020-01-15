@@ -1,7 +1,7 @@
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
 // Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
-const serviceWorkerArchitecture = "v2";
+const serviceWorkerArchitecture = "v3";
 
 const normalizeIndexCacheKeyPlugin = {
   cacheKeyWillBeUsed({request, mode}) {
