@@ -4,13 +4,14 @@ subhead: A few basics to prepare you for a spectrum of immersive experiences&#58
 authors:
   - joemedley
 date: 2019-10-31
+updated: 2020-01-16
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
   Virtual reality has come to the web in Chrome 79. Based on the WebXR Device
   API, this launch is the foundation for immersive features to come later such
   as augmented reality. Other browsers will be supporting these specs soon,
-  including Firefox Reality, Oculus Browser, Edge and Magic Leap's Helio browser,
+  including Firefox Reality, Oculus Browser, Edge, and Magic Leap's Helio browser,
   among others.
 tags:
   - post
@@ -23,7 +24,7 @@ Immersive experiences have come to the web in Chrome 79. The WebXR Device API
 brings virtual reality (with augmented reality to come later). While an update
 to the GamePad API extends the advanced use of controlls to VR. Other browsers
 will be supporting these specs soon, including Firefox Reality, Oculus Browser,
-Edge and Magic Leap's Helio browser, among others.
+Edge, and Magic Leap's Helio browser, among others.
 
 This article begins a series on the immersive web. This installment covers
 setting up a basic WebXR application and constructing a frame loop, the
@@ -40,7 +41,10 @@ proved inadequate for [various
 reasons](https://developers.google.com/web/updates/2018/05/welcome-to-immersive#what_happened_to_webvr_11).
 The work to correct its shortcomings blossomed last year into the [WebXR Device
 API](https://www.w3.org/TR/webxr/). It was in an origin trial for a while, and
-now Chrome is enabling it by default.
+now Chrome is enabling it by default. Since I originally published this article,
+the [MDN's
+reference](https://wiki.developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
+for the WebXR Device API has expanded quite a bit.
 
 ## What is the immersive web?
 
@@ -140,8 +144,12 @@ set up a few things. A session needs an `onend` event handler so that the app or
 web page can be reset when the user exits.
 
 I'll also need a `<canvas>` element to draw my scene on. It needs to be an
-XR-compatible WebGL context. All drawing is done using the WebGL API or a
-WebGL-based framework such as [Three.js](https://threejs.org/).
+XR-compatible
+[WebGLRenderingContext](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext)
+or
+[WebGL2RenderingContext](https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext).
+All drawing is done using them or a WebGL-based framework such as
+[Three.js](https://threejs.org/).
 
 Now that I have a place to draw, I need a source of content to draw on
 it. For that, I create an instance of `XRWebGLLayer`. I associate it with the
@@ -160,10 +168,10 @@ function onSessionStarted(xrSession) {
   xrSession.addEventListener('end', onSessionEnded);
 
   let canvas = document.createElement('canvas');
-  gl = canvas.getContext('webgl', { xrCompatible: true });
+  webGLRenContext = canvas.getContext('webgl', { xrCompatible: true });
 
   xrSession.updateRenderState({
-    baseLayer: new XRWebGLLayer(session, gl)
+    baseLayer: new XRWebGLLayer(xrSession, webGLRenContext)
   });
 
   xrSession.requestReferenceSpace('local-floor')
@@ -213,8 +221,7 @@ the information needed to render a single frame to the display. The
 Before doing anything else, I'm going to request the next animation frame. As
 previously stated, the timing of frames is determined by the user agent based on
 the underlying hardware. Requesting the next frame first ensures that if
-something during the callback throws an error I can ensure that the frame loop
-continues.
+something during the callback throws an error, the frame loop continues.
 
 ```js
 function onXRFrame(hrTime, xrFrame) {
@@ -258,7 +265,7 @@ contains an array of `XRView` interfaces which represents a display or a portion
 of a display and returns the information needed to render content that's
 correctly positioned for the device and the viewer such as the field of view, eye
 offset, and other optical properties. Since I'm drawing for two eyes, I have two
-views, which I loop through and draw a separate image for each.
+views, which I loop through, drawing a separate image for each.
 
 If I were implementing for phone-based augmented reality, I would have only one
 view but I'd still loop through them. This is an important difference between
@@ -269,7 +276,7 @@ spectrum of immersive experiences.
 One thing I didn't cover is how to draw to the screen, though I've shown it
 below. That's done through layer objects such as the `XRWebGLLayer` interface and a
 means of drawing graphics such as the WebGL APIs or the Three.js framework. It's
-such a lengthy subject it will be covered in a later article.
+such a lengthy subject that it will be covered in a later article.
 
 ```js/8
 function onXRFrame(hrTime, xrFrame) {
@@ -279,10 +286,10 @@ function onXRFrame(hrTime, xrFrame) {
   if (xrViewerPose) {
     let glLayer = xrSession.renderState.baseLayer;
     // Bind the baseLayer’s framebuffer and use WebGL to draw something.
-    gl.bindFramebuffer(gl.FRAMEBUFFER, glLayer.framebuffer);
+    webGLRenContext.bindFramebuffer(gl.FRAMEBUFFER, webGLRenContextLayer.framebuffer);
     for (let xrView of xrViewerPose.views) {
       let vp = glLayer.getViewport(view);
-      gl.viewport(vp.x, vp.y, vp.width, vp.height);
+      webGLRenContext.viewport(vp.x, vp.y, vp.width, vp.height);
       // Draw to the portion of the framebuffer associated with this view.
     }
   }
