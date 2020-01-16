@@ -288,7 +288,7 @@ function onXRFrame(hrTime, xrFrame) {
     // Bind the baseLayer’s framebuffer and use WebGL to draw something.
     webGLRenContext.bindFramebuffer(gl.FRAMEBUFFER, webGLRenContextLayer.framebuffer);
     for (let xrView of xrViewerPose.views) {
-      let vp = glLayer.getViewport(view);
+      let vp = glLayer.getViewport(xrView);
       webGLRenContext.viewport(vp.x, vp.y, vp.width, vp.height);
       // Draw to the portion of the framebuffer associated with this view.
     }
