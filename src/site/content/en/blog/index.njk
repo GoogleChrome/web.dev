@@ -37,12 +37,12 @@ pagination:
   <nav class="w-pagination">
     {# Show first page anchor only if not on the first page #}
     {% if page.url != pagination.firstPageHref %}
-      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--first" aria-label="First Page" href="{{ pagination.firstPageHref | stripLanguage }}"></a>
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--first" aria-label="First Page" href="{{ pagination.href.first | stripLanguage }}"></a>
     {% endif %}
 
     {# Show previous page anchor only if not on the first two pages #}
     {% if pagination.pageNumber > 1 %}
-      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--previous" aria-label="Previous Page" href="{{ pagination.previousPageHref | stripLanguage }}"></a>
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--previous" aria-label="Previous Page" href="{{ pagination.href.previous | stripLanguage }}"></a>
     {% endif %}
 
     {%- for pageEntry in pagination.hrefs | paginate(page.url)  %}
@@ -69,12 +69,12 @@ pagination:
 
     {# Show next page anchor only if not on the last or penultimate pages #}
     {% if (pagination.pageNumber + 2) < (pagination.hrefs | length) %}
-      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ pagination.nextPageHref | stripLanguage }}"></a>
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ pagination.href.next | stripLanguage }}"></a>
     {% endif %}
 
     {# Show last page anchor only if not on the last page #}
     {% if page.url != pagination.lastPageHref %}
-      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--last" aria-label="Last Page" href="{{ pagination.lastPageHref | stripLanguage }}"></a>
+      <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--last" aria-label="Last Page" href="{{ pagination.href.last | stripLanguage }}"></a>
     {% endif %}
 
   </nav>
