@@ -4,7 +4,7 @@ subhead: A few basics to prepare you for a spectrum of immersive experiences&#58
 authors:
   - joemedley
 date: 2019-10-31
-updated: 2020-01-16
+updated: 2020-01-20
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
@@ -93,7 +93,7 @@ request anything sensitive from the viewer. Web pages or apps must be served
 over HTTPS. The API itself is designed to protect information obtained from
 sensors and cameras, which it needs in order to function.
 
-### Requesting a session
+### Request a session
 
 Entering an XR session requires a user gesture. To get that, use feature
 detection and make a call to `isSessionSupported()`. In the example below, I've
@@ -137,7 +137,7 @@ Notice the object hierarchy in this code. It moves from `navigator` to `xr` to
 an `XRSession` instance. In early versions of the API, a script had to request a
 device before requesting a session. Now, the device is acquired implicitly.
 
-### Entering a session
+### Enter a session
 
 After getting a session, I need to start it and enter it. But first, I need to
 set up a few things. A session needs an `onend` event handler so that the app or
@@ -186,7 +186,7 @@ After getting a reference space, I call `XRSession.requestAnimationFrame()`.
 This is the start of presenting virtual content, which is done in the frame
 loop.
 
-### Running a frame loop
+### Run a frame loop
 
 The frame loop is a user-agent controlled infinite loop in which content is
 repeatedly drawn to the screen. Content is drawn in discrete blocks called
@@ -231,7 +231,7 @@ function onXRFrame(hrTime, xrFrame) {
 }
 ```
 
-#### Getting poses
+#### Get poses
 
 Before drawing anything on the screen, I need to know where the viewer is in
 immersive space. The position and orientation of a thing in immersive space is
@@ -258,7 +258,7 @@ function onXRFrame(hrTime, xrFrame) {
 }
 ```
 
-#### Drawing the views
+#### Draw the views
 
 After checking the pose, it's time to draw something. The `XRViewerPose`
 contains an array of `XRView` interfaces which represents a display or a portion
