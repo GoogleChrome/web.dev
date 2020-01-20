@@ -5,7 +5,7 @@ The web browser will display such SXG files as if they were delivered from the o
 It means that you can implement preload even though cross-site navigation without violating privacy.
 Preloading contents will hide latency of load. Especially combination with portals would improve UX drastically.
 
-Let’s look at how to serve SXG properly.
+Let's look at how to serve SXG properly.
 
 ## Get SXG files
 
@@ -25,7 +25,7 @@ The way to publish SXG from your website is written in another article go/non-am
 
 If you wish to distribute a single SXG file, you need to attach the following headers.
 
-```
+```console
 Content-Type: application/signed-exchange;v=v3
 X-Content-Type-Options: nosniff
 ```
@@ -64,10 +64,10 @@ Most web pages consist of multiple subresources, such as style sheets, JavaScrip
 The content of SXG cannot be changed without a publisher private key.
 This causes problems for users resolving subresources.
  
-For example, index.html.sxg from https://website.test/index.html has a link to https://website.test/app.js.
-When a user receives the SXG file from https://distributor.test/example.com/index.html.sxg, they will find the link to https://example.com/app.js.
-Users can fetch https://example.com/app.js directly when accessed, but it cannot be preloaded.
-If the distributor wants to serve app.js.sxg from their own service, then modifying link tag in HTML https://example.com/app.js to be distributor’s one (such as https://distributor.test/example.com/app.js.sxg) must cause signature mismatch and make a invalid SXG.
+For example, index.html.sxg from `https://website.test/index.html` has a link to `https://website.test/app.js`.
+When a user receives the SXG file from `https://distributor.test/example.com/index.html.sxg`, they will find the link to `https://example.com/app.js`.
+Users can fetch `https://example.com/app.js` directly when accessed, but it cannot be preloaded.
+If the distributor wants to serve app.js.sxg from their own service, then modifying link tag in HTML `https://example.com/app.js` to be distributor's one (such as `https://distributor.test/example.com/app.js.sxg`) must cause signature mismatch and make a invalid SXG.
 To solve this problem, SXG subresource prefetching feature has been developed.
 This feature is in an experimental state now (Oct. 30 2019), and you can find and enable it in your latest Chrome at chrome://flags/#enable-sxg-subresource-prefetching.
 
@@ -76,10 +76,10 @@ To use subresource prefetching the following conditions must be met:
 - The publisher must embed response header entry in SXG, such as: `link: <https://example.com/app.js>;rel="preload";as="script",<https://example.com/app.js>;rel="allowed-alt-sxg";header-integrity="sha256-h6GuCtTXe2nITIHHpJM+xCxcKrYDpOFcIXjihE4asxk="`.
   This specifies the subresource that can be substituted with SXG’s specific integrity
   hash.
-- The distributor must attach a response header when serving the SXG, such as: `link: <https://distributor.test/example.com/app.js.sgx>;rel="alternate";type="application/signed-exchange;v=b3";anchor="https://example.com/app.js".
+- The distributor must attach a response header when serving the SXG, such as: `link: <https://distributor.test/example.com/app.js.sgx>;rel="alternate";type="application/signed-exchange;v=b3";anchor="https://example.com/app.js".`
   This specifies the path of app.js and corresponds to the subresource.
 
-If there are no subresources other than https://example.com/app.js, all you must append is
+If there are no subresources other than `https://example.com/app.js`, all you must append is
 
 ```nginx
 add_header link <https://distributor.test/example.com/app.js.sxg>;rel="alter...
