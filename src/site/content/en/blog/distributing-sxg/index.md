@@ -74,7 +74,7 @@ This feature is in an experimental state now (Oct. 30 2019), and you can find an
 To use subresource prefetching the following conditions must be met:
 
 - The publisher must embed response header entry in SXG, such as: `link: <https://example.com/app.js>;rel="preload";as="script",<https://example.com/app.js>;rel="allowed-alt-sxg";header-integrity="sha256-h6GuCtTXe2nITIHHpJM+xCxcKrYDpOFcIXjihE4asxk="`.
-  This specifies the subresource that can be substituted with SXG’s specific integrity
+  This specifies the subresource that can be substituted with SXG's specific integrity
   hash.
 - The distributor must attach a response header when serving the SXG, such as: `link: <https://distributor.test/example.com/app.js.sgx>;rel="alternate";type="application/signed-exchange;v=b3";anchor="https://example.com/app.js".`
   This specifies the path of app.js and corresponds to the subresource.
