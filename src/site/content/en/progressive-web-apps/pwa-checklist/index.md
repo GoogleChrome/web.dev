@@ -5,7 +5,7 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-01-06
+updated: 2020-01-20
 description: |
   What makes a good, or great Progressive Web App?
 tags:
@@ -25,10 +25,8 @@ checklists and recommendations to guide you.
 
 ## Core Progressive Web App checklist {: #core }
 
-Because PWAs span all devices, from mobile through desktop, the core
-Progressive Web App Checklist is all about what you need to do to make your
-app installable and usable by all users, regardless of screen size or input type.
-
+The Progressive Web App Checklist describes what makes an app installable and
+usable by all users, regardless of size or input type.
 
 {% Details %}
 {% DetailsSummary 'h3' %}
@@ -36,20 +34,20 @@ app installable and usable by all users, regardless of screen size or input type
 Starts fast, stays fast
 
 Performance plays a significant role in the success of any online experience,
-as high performing sites engage and retain users better than poorly performing
-ones. Sites should focus on optimizing for user-centric performance metrics.
+because high performing sites engage and retain users better than poorly
+performing ones. Sites should focus on optimizing for user-centric performance metrics.
 
 {% endDetailsSummary %}
 
 Performance plays a significant role in the success of any online experience,
-as high performing sites engage and retain users better than poorly performing
-ones. Sites should focus on optimizing for user-centric performance metrics.
+because high performing sites engage and retain users better than poorly
+performing ones. Sites should focus on optimizing for user-centric performance metrics.
 
 #### Why
 
-Speed is critical for actually getting users to _use_ your experience.
+Speed is critical for getting users to _use_ your app.
 In fact, as page load times go from 1 second to 10 seconds, the probability of
-a user bouncing increases by 123%. Performance doesn21ecac977bcat stop `onload`.
+a user bouncing increases by 123%. Performance doesn't stop with the `load` event.
 Users should never wonder whether their interaction—for example, clicking a
 button—was registered or not. Scrolling and animation should feel smooth.
 Performance affects your entire experience, from how users perceive your
@@ -99,8 +97,8 @@ enhancing the user experience with CSS and JavaScript to create a more
 engaging experience.
 
 Take form submission for example. The simplest way to implement that is an
-HTML form that `POST`s on submit. After building that, you can enhance the
-experience with JavaScript to do form validation and submit the form via
+HTML form that submits a `POST` request. After building that, you can enhance
+the experience with JavaScript to do form validation and submit the form via
 AJAX, improving the experience for users who can support it.
 
 Consider that your users will experience your site across a spectrum of
@@ -146,7 +144,7 @@ at any viewport size.
 
 Devices come in a range of sizes, and users may use your application at a
 range of sizes, even on the same device. Therefore, it's critical to ensure
-your content not just fits within the viewport, but that all features and
+your content not only fits within the viewport, but that all features and
 content for your site are usable at all viewport sizes.
 
 The tasks users want to complete and the content they want to access do
@@ -159,11 +157,6 @@ large instead of the other way around can actually improve a site's design:
 > most important data and actions in an application. There simply isn't room
 > in a 320 by 480 pixel screen for extraneous, unnecessary elements.
 > You have to prioritize.
->
-> So when a team designs Mobile First, the end result is an experience focused
-> on the key tasks users want to accomplish without the extraneous detours
-> and general interface debris that litter today's desktop-accessed Web sites.
-> That's good user experience and good for business.
 
 #### How
 
@@ -210,11 +203,10 @@ native.
 #### How
 
 During a service worker's `install` event, you can precache a custom offline
-page for later use. If a user then goes offline and your service worker is
-unable to fetch an HTML page, you can respond with precached custom offline
-page. You can follow our custom
+page for later use. If a user goes offline, you can respond with the precached
+custom offline page. You can follow our custom
 [offline page sample](https://googlechrome.github.io/samples/service-worker/custom-offline-page/)
-to see a full example  of this in action and learn how to implement it yourself.
+to see an example of this in action and learn how to implement it yourself.
 
 {% endDetails %}
 
@@ -224,12 +216,12 @@ to see a full example  of this in action and learn how to implement it yourself.
 
 Is installable
 
-Users who install or add apps to their home screens tend to engage with those
+Users who install or add apps to their device tend to engage with those
 apps more.
 
 {% endDetailsSummary %}
 
-Users who install or add apps to their home screens tend to engage with those
+Users who install or add apps to their device tend to engage with those
 apps more.
 
 #### Why
@@ -240,7 +232,7 @@ other apps. It runs in its own app window, separate from the browser, and it
 appears in the task list, just like other apps.
 
 Why would you want a user to install your PWA? The same reason you'd want a
-user to install your app from any app store. Users who install your apps
+user to install your app from an app store. Users who install your apps
 are your most engaged audience, and have better engagement metrics than
 typical visitors, often at parity with native app users on mobile devices.
 These metrics include more repeat visits, longer times on your site and
@@ -283,8 +275,8 @@ trip details and boarding passes easily available when offline. Music,
 video, and podcasting apps should allow for offline playback. Social and
 news apps should cache recent content so users can read it when offline.
 Users also expect to stay authenticated when offline, so design for
-offline authentication. By allowing users to use your PWA while offline,
-you'll create a true app-like experience for them.
+offline authentication. An offline PWA provides a true app-like experience
+for users.
 
 #### How
 
@@ -331,14 +323,14 @@ making your PWA accessible, you ensure it's usable for everyone.
 #### How
 
 W3C's [Introduction to Web Accessibility](https://www.w3.org/WAI/fundamentals/accessibility-intro/)
-is a good place to start. For testing, a majority of accessibility testing
+is a good place to start. A majority of accessibility testing
 must be done manually. Tools like the [Accessibility](/lighthouse-accessibility/)
 audits in Lighthouse, [axe](https://github.com/dequelabs/axe-core), and
 [Accessibility Insights](https://accessibilityinsights.io/) can help you
 automate some accessibility testing. It's also important to use semantically
-correct elements instead of recreating those elements on your own
-(for instance, `a` and `button` elements). This ensures that when you do need
-to build more advanced functionality, accessible expectations are met (like
+correct elements instead of recreating those elements on your own,
+for instance, `a` and `button` elements. This ensures that when you do need
+to build more advanced functionality, accessible expectations are met (such as
 when to use arrows vs. tabs).
 [A11Y Nutrition Cards](https://accessibilityinsights.io/) has excellent
 advice on this for some common components.
@@ -360,13 +352,18 @@ Your PWA can be easily [discovered through search](/discoverable/).
 #### Why
 
 One of the biggest advantages of the web is the ability to discover sites and
-apps through search. Making sure that canonical URLs exist for content and
-that search engines can index your site is critical for users to be able to
-find your PWA. This is especially true when adopting client-side rendering.
+apps through search. In fact,
+[more than half](https://www.brightedge.com/resources/research-reports/channel_share)
+of all website traffic comes from organic search. Making sure that canonical
+URLs exist for content and that search engines can index your site is critical
+for users to be able to find your PWA. This is especially true when adopting
+client-side rendering.
 
 #### How
 
-You can use [Google Search Console](https://search.google.com/search-console/about)
+Start by ensuring that each URL has a unique, descriptive title and meta
+description. Then you can use the
+[Google Search Console](https://search.google.com/search-console/about)
 and the [Search Engine Optimization audits](/lighthouse-seo/) in Lighthouse to
 help you debug and fix discoverability issues with your PWA. You can also use
 [Bing](https://www.bing.com/toolbox/webmaster)'s or
@@ -382,13 +379,11 @@ schemas from [Schema.org](https://schema.org/) in your PWA.
 
 Works with any input type
 
-Your PWA is equally usable with a mouse as it is with a keyboard, by touch,
-or with a stylus.
+Your PWA is equally usable with a mouse, a keyboard, a stylus, or touch.
 
 {% endDetailsSummary %}
 
-Your PWA is equally usable with a mouse as it is with a keyboard, by touch,
-or with a stylus.
+Your PWA is equally usable with a mouse, a keyboard, a stylus, or touch.
 
 #### Why
 
@@ -430,7 +425,7 @@ when the API is needed.
 #### Why
 
 APIs that trigger a permission prompt, like notifications, geolocation, and
-credentials, are intentionally designed to be disruptive to a user as they
+credentials, are intentionally designed to be disruptive to a user because they
 tend to be related to powerful functionality that requires opt-in. Triggering
 these prompts without additional context, like on page load, makes users
 less likely to accept those permissions and more likely to distrust them
@@ -469,14 +464,14 @@ deliver new features that meet the other goals laid out in this checklist.
 
 #### How
 
-There are a number of high-priority items to check for to ensure a healthy
+There are a number of high-priority checks to ensure a healthy
 codebase: avoiding using libraries with known vulnerabilities, ensuring
 you're not using deprecated APIs, removing web anti-patterns from your
 codebase (like using `document.write()` or having non-passive scroll event
 listeners), and even coding defensively to ensure your PWA doesn't break
 if analytics or other third party libraries fail to load. Consider requiring
-static code analysis, like linting, as well as automated testing, in both
-stable and beta Chrome channels. These techniques can help catch errors
+static code analysis, like linting, as well as automated testing, in multiple
+browsers and release channels. These techniques can help catch errors
 before they make it into production.
 
 {% endDetails %}
