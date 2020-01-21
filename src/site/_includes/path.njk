@@ -35,9 +35,9 @@ layout: layout
       <ul class="w-icon-list">
         {% for topic in topics %}
           <li class="w-icon-list__item w-icon-list__item--check">
-            {{ topic.title }}
+            <a class="w-path-link" href="#{{ topic.title | slug }}">{{ topic.title }}</a>
           </li>
-        {% endfor %}
+	      {% endfor %}
       </ul>
     </div>
   </section>
