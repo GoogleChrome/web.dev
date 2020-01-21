@@ -46,7 +46,7 @@ performing ones. Sites should focus on optimizing for user-centric performance m
 #### Why
 
 Speed is critical for getting users to _use_ your app.
-In fact, as page load times go from 1 second to 10 seconds, the probability of
+In fact, as page load times go from one second to ten seconds, the probability of
 a user bouncing increases by 123%. Performance doesn't stop with the `load` event.
 Users should never wonder whether their interaction—for example, clicking a
 button—was registered or not. Scrolling and animation should feel smooth.
