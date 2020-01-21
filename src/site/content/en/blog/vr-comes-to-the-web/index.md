@@ -208,7 +208,7 @@ The basic process for the frame loop is:
   </li>
 </ol>
 
-In this section I'll cover everything except steps 2-3 and 2-4. Those will beh
+In this section I'll cover everything except steps 2–3 and 2–4. Those will be
 the subject of the next article.
 
 #### The XRFrameRequestCallback
