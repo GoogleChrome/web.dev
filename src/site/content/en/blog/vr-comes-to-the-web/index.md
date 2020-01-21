@@ -42,7 +42,7 @@ reasons](https://developers.google.com/web/updates/2018/05/welcome-to-immersive#
 The work to correct its shortcomings blossomed last year into the [WebXR Device
 API](https://www.w3.org/TR/webxr/). It was in an origin trial for a while, and
 now Chrome is enabling it by default. Since I originally published this article,
-the [MDN's
+[MDN's
 reference](https://wiki.developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
 for the WebXR Device API has expanded quite a bit.
 
