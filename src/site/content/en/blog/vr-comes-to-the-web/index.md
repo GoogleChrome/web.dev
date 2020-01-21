@@ -220,7 +220,6 @@ the information needed to render a single frame to the display. The
 
 Before doing anything else, I'm going to request the next animation frame. As
 previously stated, the timing of frames is determined by the user agent based on
-the underlying hardware. Requesting the next frame first ensures that if
 the underlying hardware. Requesting the next frame first ensures that
 the frame loop continues if something during the callback throws an error.
 
