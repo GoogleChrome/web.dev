@@ -110,7 +110,7 @@ if (navigator.xr) {
   if (supported) {
     xrButton.addEventListener('click', onButtonClicked);
     xrButton.textContent = 'Enter VR';
-    xrButton.disabled = false;
+    xrButton.enabled = supported; // supported is boolean
   }
 }
 ```
