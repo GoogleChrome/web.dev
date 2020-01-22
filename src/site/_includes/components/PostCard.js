@@ -30,7 +30,7 @@ const postTags = require("../../_data/postTags");
  * @param {Object} post An eleventy collection item with post data.
  * @return {string}
  */
-module.exports = ({post}) => {
+module.exports = ({post, featured = false}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
   const displayedTags = [];

@@ -12,6 +12,7 @@
 
 .w-post-card {
   @include w-body-text();
+  height: 100%;
   padding: 24px;
   position: relative;
 
@@ -154,4 +155,37 @@
   color: $GREY_700;
   font: inherit;
   margin: 0;
+}
+
+// This is a special variation of the PostCard component that's only used on
+// the homepage.
+// The card needs to have a different layout only when it's between breakpoints
+// otherwise it acts just like any other card.
+// Because it would be onerous to extend the block and all of its elements, we
+// just use a descendant selector.
+@media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (max-width: #{$BREAKPOINT_VALUE_LARGE}) {
+  .w-post-card--featured {
+    display: flex;
+
+    .w-post-card__cover,
+    .w-post-card__blurb {
+      flex: 1;
+    }
+
+    .w-post-card__cover,
+    .w-post-card__figure {
+      margin: 0;
+    }
+
+    .w-post-card__blurb {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 64px;
+    }
+
+    .w-post-card__desc::before {
+      display: none;
+    }
+  }
 }
