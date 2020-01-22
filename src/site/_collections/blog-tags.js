@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
-// Strip the language prefix from urls.
-// e.g. /en/foo becomes /foo.
-module.exports = (url) => {
-  url = url.charAt(0) === "/" ? url : "/" + url;
-  const urlParts = url.split("/");
-  urlParts.splice(1, 1);
-  return urlParts.join("/");
+const blogTags = require("../_data/blogTags");
+const blogPaginated = require("./blog-paginated");
+
+// Return blog pages for various tags
+module.exports = (collection) => {
+  const paginated = blogPaginated(collection);
+
+  return blogTags.filter((blogTag) => {
+    return paginated.find((page) => page.tag === blogTag.tag);
+  });
 };

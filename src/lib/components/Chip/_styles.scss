@@ -1,0 +1,14 @@
+@import "../../../styles/settings/colors";
+
+.web-chip {
+  display: inline-block;
+  background: lighten($WEB_PRIMARY_COLOR, 35%);
+  padding: 0 12px;
+  margin: 4px;
+  border-radius: 32px;
+  color: darken($WEB_PRIMARY_COLOR, 20%);
+  &:hover, &:focus, &[active] {
+    background: lighten($WEB_PRIMARY_COLOR, 25%);
+    text-decoration: none;
+  }
+}

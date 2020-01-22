@@ -1,28 +1,37 @@
 /**
  * Take array of paginated hrefs and select the pages to display.
- * @param {Array<string>} pages An array of hrefs of all the pages.
- * @param {string} current Href of current page.
- * @return {Array<object>} An array of up to 10 items to display, including href and index.
+ * @param {any} tag Tag details
+ * @return {Array<object>} An array of up to 8 items to display, including href and index.
  */
-module.exports = function paginate(pages, current) {
-  const currentIndex = pages.indexOf(current);
-
-  if (currentIndex < 0) return [];
-
+module.exports = function paginate(tag) {
   const shiftBy = 4;
-  const shouldShift = currentIndex > shiftBy;
-  const start = shouldShift ? currentIndex - shiftBy : 0;
-  const end = shouldShift ? currentIndex + shiftBy : shiftBy * 2;
-  const pagesToShow = pages
-    .slice(start, end)
-    .map((href, index) => ({href, index: start + index + 1}));
+  const start = tag.index - shiftBy > 0 ? tag.index - shiftBy : 0;
+  const end = tag.index + shiftBy < tag.pages ? tag.index + shiftBy : tag.pages;
 
-  if (currentIndex < pages.length - shiftBy + 1) {
-    pagesToShow[pagesToShow.length - 1] = {
-      showEllipses: currentIndex < pages.length - shiftBy,
-      href: pages.slice(-1)[0],
-      index: pages.length,
+  const pagesToShow = Array.from({
+    length: end - start,
+  }).map((_, i) => {
+    const index = i + start + 1;
+    return {
+      href: index === 1 ? tag.href : tag.href + "/" + index,
+      index,
     };
+  });
+
+  const lastPageToShow = pagesToShow[pagesToShow.length - 1];
+
+  if (lastPageToShow.index !== tag.pages) {
+    const lastPage = {
+      showEllipses: true,
+      href: tag.href + "/" + tag.pages,
+      index: tag.pages,
+    };
+
+    if (pagesToShow.length < shiftBy * 2) {
+      pagesToShow.push(lastPage);
+    } else {
+      pagesToShow[shiftBy * 2 - 1] = lastPage;
+    }
   }
 
   return pagesToShow;

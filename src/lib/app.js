@@ -5,6 +5,7 @@ import "./components/SnackbarContainer";
 import "./components/Search";
 import "./components/Tabs";
 import "./components/CopyCode";
+import "./components/Chip";
 import {store} from "./store";
 import "focus-visible";
 import "./analytics";
