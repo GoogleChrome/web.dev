@@ -31,7 +31,7 @@ Through the adoption of [Performance Budgets](https://web.dev/performance-budget
   </figcaption>
 </figure>
 
-...and their Chrome User Experience Report data highlights this too.
+…and their Chrome User Experience Report data highlights this too.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="dev-content1.png" alt="Screenshots of PageSpeed Insights view of Chrome User Experience Report data highlighting fast FCP of 70% and fast FID of 88% for eBay.com">
@@ -52,7 +52,7 @@ One way to make sites fast is to simply load less code. eBay reduced their textu
 
 ## Critical path optimization for above the fold content
 
-Not every pixel on the screen is equally important. The content above the fold (ATF) is obviously [more critical](https://web.dev/extract-critical-css/) than something below the fold. Native and web apps are aware of this, but what about services? eBay’s service architecture has a layer called [Experience Services](https://tech.ebayinc.com/engineering/experience-services-ebays-solution-to-multi-screen-application-development/), which the frontends (native apps and web servers) talk to. 
+Not every pixel on the screen is equally important. The content above the fold (ATF) is obviously [more critical](https://web.dev/extract-critical-css/) than something below the fold. Native and web apps are aware of this, but what about services? eBay's service architecture has a layer called [Experience Services](https://tech.ebayinc.com/engineering/experience-services-ebays-solution-to-multi-screen-application-development/), which the frontends (native apps and web servers) talk to. 
 
 This layer is specifically designed to be view- or device-based, rather than entity-based like item, user, or order. eBay then introduced the concept of the critical path for Experience Services. The idea is that when a request comes to these services, they work on getting the data for above the fold content immediately, by calling other upstream services in parallel. Once data is ready, it is instantly flushed. 
 
@@ -69,11 +69,11 @@ Images are one the [largest](https://almanac.httparchive.org/en/2019/media) cont
   </figcaption>
 </figure>
 
-Through this initiative, eBay made WebP the image format across iOS, Android, and supported browsers. Second, though eBay’s listing images are heavily optimized (size and format), the same rigor did not apply for curated images (for example, the top module on the [homepage](https://www.ebay.com/)). eBay has a lot of hand-curated images, which are uploaded through various tools. Previously the optimizations were up to the uploader, but now eBay enforces the rules within the tools, so all images uploaded will be optimized appropriately. The cut here is the wasted image bytes sent to users.
+Through this initiative, eBay made WebP the image format across iOS, Android, and supported browsers. Second, though eBay's listing images are heavily optimized (size and format), the same rigor did not apply for curated images (for example, the top module on the [homepage](https://www.ebay.com/)). eBay has a lot of hand-curated images, which are uploaded through various tools. Previously the optimizations were up to the uploader, but now eBay enforces the rules within the tools, so all images uploaded will be optimized appropriately. The cut here is the wasted image bytes sent to users.
 
 ## Predictive prefetch of static assets
 
-A user session on eBay is just not one page. It is a flow. For example, the flow can be a homepage navigation to search to item. So why don’t pages in the flow help each other? That is the idea of [predictive prefetch](https://web.dev/predictive-prefetching/), where one page prefetches the static assets required for the next likely page. 
+A user session on eBay is just not one page. It is a flow. For example, the flow can be a homepage navigation to search to item. So why don't pages in the flow help each other? That is the idea of [predictive prefetch](https://web.dev/predictive-prefetching/), where one page prefetches the static assets required for the next likely page. 
 
 So when a user navigates to the predicted page, the assets are already in the browser cache. This is done for CSS and JavaScript assets, where the URLs can be retrieved ahead of time. One thing to note here is that it helps only on first-time navigations, as for subsequent ones, the static assets will already be in the cache. The cut here is the network time for CSS and JavaScript static assets on the first navigation.
 
@@ -86,9 +86,9 @@ So when a user navigates to the predicted page, the assets are already in the br
 
 ## Prefetching top search results
 
-When a user searches eBay, it is highly likely that they will navigate to an item in the top 10 of the search results. eBay’s analytics data support this statement. So they went ahead and prefetched the items from search and kept it ready when the user navigates. The prefetching happens at two levels. One on the server-side, where item service caches the top 10 items in search results. When the user goes to one of those items, eBay save server processing time. 
+When a user searches eBay, it is highly likely that they will navigate to an item in the top 10 of the search results. eBay's analytics data support this statement. So they went ahead and prefetched the items from search and kept it ready when the user navigates. The prefetching happens at two levels. One on the server-side, where item service caches the top 10 items in search results. When the user goes to one of those items, eBay save server processing time. 
 
-Server-side caching is leveraged by native apps and is rolled out globally. The other happens at browser level cache, which is available in Australia. Item prefetch was an advanced optimization due to the dynamic nature of items. There are also many nuances to it — page impressions, capacity, auction items, etc. You can learn more about it in this [talk](https://www.youtube.com/watch?v=ogEhUnQdQiU&t=984s), or watch for a detailed blog post. The cut here can either be server processing time or network time, depending on where the item is cached.
+Server-side caching is leveraged by native apps and is rolled out globally. The other happens at browser level cache, which is available in Australia. Item prefetch was an advanced optimization due to the dynamic nature of items. There are also many nuances to it: page impressions, capacity, auction items, etc. You can learn more about it in this [talk](https://www.youtube.com/watch?v=ogEhUnQdQiU&t=984s), or watch for a detailed blog post. The cut here can either be server processing time or network time, depending on where the item is cached.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="dev-content4.png" alt="Screenshots of the pages in eBays search experience where they had incorporated prefetching to improve performance">
