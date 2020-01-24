@@ -264,8 +264,8 @@ To calculate the cumulative layout shift score for your pages, declare a
 variable that stores the current cumulative layout shift score, and then
 increment it any time a new, unexpected layout shift is detected.
 
-For consistency with how the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+For consistency with how the [Chrome User Experience Report
+(CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report)
 measures CLS, stop observing scores when the page's [lifecycle
 state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 changes to hidden:
@@ -307,8 +307,14 @@ Ideally, pages would not have any layout shifts, so a CLS of `0` is the goal.
 Realistically, in some cases it's impossible to avoid 100% of layout shifts, so
 minimizing what you can is best.
 
-The Chrome Use Experience Report categorizes any page with a CLS less than 5 to
-be considered "small" (i.e. good).
+CrUX categorizes any page with a CLS less than `0.05` to be considered "small"
+(i.e. good).
+
+{% Aside %}
+  Note: CrUX buckets CLS values as percentages with 5% granularity. This means a
+  score of `0.01` when using the code example above would appear in the 0–5
+  bucket in CrUX, and a score of `0.07` would appear in the 5–10 bucket in CrUX.
+{% endAside %}
 
 ## How to improve CLS
 
