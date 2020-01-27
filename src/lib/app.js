@@ -1,5 +1,6 @@
 import "./components/ProfileSwitcherContainer";
 import "./components/Header";
+import "./components/SelectGroup";
 import "./components/SideNav";
 import "./components/SnackbarContainer";
 import "./components/Search";
