@@ -20,6 +20,7 @@ const stripLanguage = require("../../_filters/strip-language");
 const md = require("../../_filters/md");
 const getImagePath = require("../../_utils/get-image-path");
 const getSrcsetRange = require("../../_utils/get-srcset-range");
+const blogTags = require("../../_data/blogTags");
 
 /* eslint-disable require-jsdoc,indent,max-len */
 
@@ -31,6 +32,11 @@ const getSrcsetRange = require("../../_utils/get-srcset-range");
 module.exports = ({post}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
+  const displayedTags = data.tags.reduce((toDisplay, tag) => {
+    const found = blogTags.find((blogTag) => blogTag.tag === tag.toLowerCase());
+    if (found) toDisplay.push(found);
+    return toDisplay;
+  }, []);
 
   // If the post does not provide a thumbnail, attempt to reuse the hero image.
   // Otherwise, omit the image entirely.
@@ -119,29 +125,48 @@ module.exports = ({post}) => {
     `;
   }
 
+  function renderChips() {
+    if (displayedTags.length === 0) return html``;
+    return html`
+      <div class="w-chips">
+        ${displayedTags.map((displayedTag) => {
+          return html`
+            <a class="w-chip" href="${displayedTag.href}"
+              >${displayedTag.chip}</a
+            >
+          `;
+        })}
+      </div>
+    `;
+  }
+
   return html`
-    <a href="${url}" class="w-card">
+    <div class="w-card">
       <article class="w-post-card">
-        <div
-          class="w-post-card__cover ${thumbnail &&
-            `w-post-card__cover--with-image`}"
-        >
-          ${thumbnail && renderThumbnail(url, thumbnail, alt)}
-          <h2
-            class="${thumbnail
-              ? `w-post-card__headline--with-image`
-              : `w-post-card__headline`}"
+        <a class="w-card--link" href="${url}">
+          <div
+            class="w-post-card__cover ${thumbnail &&
+              `w-post-card__cover--with-image`}"
           >
-            ${md(data.title)}
-          </h2>
-        </div>
+            ${thumbnail && renderThumbnail(url, thumbnail, alt)}
+            <h2
+              class="${thumbnail
+                ? `w-post-card__headline--with-image`
+                : `w-post-card__headline`}"
+            >
+              ${md(data.title)}
+            </h2>
+          </div>
+        </a>
         ${renderAuthorsAndDate(post)}
+
         <div class="w-post-card__desc">
+          ${renderChips()}
           <p class="w-post-card__subhead">
             ${md(data.subhead)}
           </p>
         </div>
       </article>
-    </a>
+    </div>
   `;
 };

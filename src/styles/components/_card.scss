@@ -13,7 +13,7 @@
 .w-card {
   border-radius: 8px;
   display: block;
-  min-height: 462px;
+  min-height: 506px;
   overflow: hidden;
   position: relative;
   transition: box-shadow $TRANSITION_SPEED;
@@ -25,7 +25,10 @@
 
 .w-card:hover,
 .w-card:focus,
-.w-card:active {
+.w-card:active,
+.w-card--link:hover,
+.w-card--link:focus,
+.w-card--link:active {
   background-color: transparent;
   outline: none;
   text-decoration: none;

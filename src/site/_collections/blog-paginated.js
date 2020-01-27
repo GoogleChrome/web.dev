@@ -43,12 +43,13 @@ module.exports = (collection) => {
   });
 
   blogTags.forEach((blogTag) => {
-    const tag = blogTag.default ? "" : blogTag.tag.toLowerCase();
-    if (!blogTag.default && !tagsMap.has(tag)) {
+    const isBlogPage = blogTag.href === "/blog";
+    const tag = (blogTag.tag || "").toLowerCase();
+    if (!isBlogPage && !tagsMap.has(tag)) {
       return;
     }
 
-    const blogTagPosts = blogTag.default ? posts : mapValue(tagsMap, tag);
+    const blogTagPosts = isBlogPage ? posts : mapValue(tagsMap, tag);
     const pages = Math.ceil(blogTagPosts.length / pageCount);
 
     for (let i = 0; i < pages; i++) {
