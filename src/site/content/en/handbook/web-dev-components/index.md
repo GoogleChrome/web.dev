@@ -905,6 +905,25 @@ don't add links or any other interactive elements to options.
 {% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
 {% endSelectGroup %}
 
+## Two columns
+To arrange the options in two columns, set the `columns` parameter to `true`:
+
+```html/0
+{% raw %}{% SelectGroup 'radio', true %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% endSelectGroup %}{% endraw %}
+```
+
+{% SelectGroup 'radio', true %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% endSelectGroup %}
+
 ## Stats
 Use the Stats component to call out important statistics
 about a product or service discussed in a post.

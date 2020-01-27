@@ -24,6 +24,8 @@ class SelectGroup extends BaseElement {
       columnsClass = "web-select-group__options-wrapper--columns--2";
     }
 
+    if (!this.prefix) this.prefix = "";
+
     if (!this.selectors) {
       this.selectors = [];
 
