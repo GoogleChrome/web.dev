@@ -301,15 +301,6 @@ document.addEventListener('visibilitychange', () => {
 });
 ```
 
-## What is a good CLS?
-
-Ideally, pages would not have any layout shifts, so a CLS of `0` is the goal.
-Realistically, in some cases it's impossible to avoid 100% of layout shifts, so
-minimizing what you can is best.
-
-CrUX categorizes any page with a CLS less than `0.05` to be considered "small"
-(i.e. good).
-
 {% Aside %}
   Note: CrUX buckets CLS values as percentages with 5% granularity. This means a
   score of `0.01` when using the code example above would appear in the 0–5
