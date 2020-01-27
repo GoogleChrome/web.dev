@@ -42,6 +42,8 @@ const Instruction = require(`./${componentsDir}/Instruction`);
 const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
+const SelectGroup = require(`./${componentsDir}/SelectGroup`);
+const Selector = require(`./${componentsDir}/Selector`);
 const Tab = require(`./${componentsDir}/Tab`);
 const Tabs = require(`./${componentsDir}/Tabs`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
@@ -199,6 +201,8 @@ module.exports = function(config) {
   config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
+  config.addPairedShortcode('SelectGroup', SelectGroup);
+  config.addPairedShortcode('Selector', Selector);
   config.addPairedShortcode('Tab', Tab);
   config.addPairedShortcode('Tabs', Tabs);
   config.addShortcode('Tooltip', Tooltip);

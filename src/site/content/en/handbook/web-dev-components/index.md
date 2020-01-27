@@ -28,6 +28,7 @@ guidance about how to use them effectively.
 1. [Images](#images)
 1. [Instructions](#instructions)
 1. [Lists](#lists)
+1. [Selection controls](#selection-controls)
 1. [Stats](#stats)
 1. [Tables](#tables)
 1. [Tabs](#tabs)
@@ -859,6 +860,50 @@ for unordered lists.
   sit amet ullamcorper.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum a massa
   sit amet ullamcorper.
+
+## Selection controls
+Selection controls let users select options.
+Radio buttons allow a single selection.
+Checkboxes allow multiple selections.
+
+To ensure that users understand what action will occur when an option is selected,
+don't add links or any other interactive elements to options.
+
+### Radio buttons
+
+```html
+{% raw %}{% SelectGroup 'radio' %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% endSelectGroup %}{% endraw %}
+```
+
+{% SelectGroup 'radio' %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% endSelectGroup %}
+
+### Checkboxes
+
+```html
+{% raw %}{% SelectGroup 'checkbox' %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% endSelectGroup %}{% endraw %}
+```
+
+{% SelectGroup 'checkbox' %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% Selector %}Lorem ipsum dolor sit amet, `consectetur` adipiscing elit.{% endSelector %}
+{% Selector %}Proin dictum a massa sit amet ullamcorper.{% endSelector %}
+{% endSelectGroup %}
 
 ## Stats
 Use the Stats component to call out important statistics
