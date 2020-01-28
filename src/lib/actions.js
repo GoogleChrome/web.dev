@@ -124,8 +124,10 @@ export const expandSideNav = store.action(() => {
   document.body.classList.add("web-side-nav--expanded");
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");
+  const footer = document.querySelector(".w-footer");
   main.inert = true;
   header.inert = true;
+  footer.inert = true;
   return {isSideNavExpanded: true};
 });
 
@@ -133,8 +135,10 @@ export const collapseSideNav = store.action(() => {
   document.body.classList.remove("web-side-nav--expanded");
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");
+  const footer = document.querySelector(".w-footer");
   main.inert = false;
   header.inert = false;
+  footer.inert = false;
   return {isSideNavExpanded: false};
 });
 
