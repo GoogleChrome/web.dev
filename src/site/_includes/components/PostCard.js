@@ -32,11 +32,16 @@ const blogTags = require("../../_data/blogTags");
 module.exports = ({post}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
-  const displayedTags = data.tags.reduce((toDisplay, tag) => {
-    const found = blogTags.find((blogTag) => blogTag.tag === tag.toLowerCase());
-    if (found) toDisplay.push(found);
-    return toDisplay;
-  }, []);
+  const displayedTags = [];
+
+  for (const tag of data.tags) {
+    const foundTag = blogTags.find(
+      (blogTag) => blogTag.tag === tag.toLowerCase(),
+    );
+    if (foundTag) {
+      displayedTags.push(foundTag);
+    }
+  }
 
   // If the post does not provide a thumbnail, attempt to reuse the hero image.
   // Otherwise, omit the image entirely.
@@ -163,10 +168,10 @@ module.exports = ({post}) => {
         ${renderAuthorsAndDate(post)}
 
         <div class="w-post-card__desc">
-          ${renderChips()}
           <p class="w-post-card__subhead">
             ${md(data.subhead)}
           </p>
+          ${renderChips()}
         </div>
       </article>
     </div>
