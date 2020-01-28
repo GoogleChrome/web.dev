@@ -31,6 +31,7 @@
 
 .web-select-group__options-wrapper--columns--2 {
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  justify-items: stretch;
 }
 
 .web-select-group__option-label {
