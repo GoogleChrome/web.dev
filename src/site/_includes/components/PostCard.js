@@ -126,7 +126,9 @@ module.exports = ({post}) => {
   }
 
   function renderChips() {
-    if (displayedTags.length === 0) return html``;
+    if (!displayedTags.length) {
+      return;
+    }
     return html`
       <div class="w-chips">
         ${displayedTags.map((displayedTag) => {
