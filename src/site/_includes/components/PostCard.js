@@ -35,9 +35,7 @@ module.exports = ({post}) => {
   const displayedTags = [];
 
   for (const tag of data.tags) {
-    const foundTag = blogTags.find(
-      (blogTag) => blogTag.tag === tag.toLowerCase(),
-    );
+    const foundTag = blogTags[tag.toLowerCase()];
     if (foundTag) {
       displayedTags.push(foundTag);
     }

@@ -1,373 +1,373 @@
-module.exports = [
-  {
+module.exports = {
+  "3d": {
     tag: "3d",
     title: "3D",
     chip: "3D",
     href: "/tags/3d",
   },
-  {
+  accessibility: {
     tag: "accessibility",
     title: "Accessibility",
     chip: "Accessibility",
     href: "/tags/accessibility",
   },
-  {
+  amp: {
     tag: "amp",
     title: "AMP",
     chip: "AMP",
     href: "/tags/amp",
   },
-  {
+  analytics: {
     tag: "analytics",
     title: "Analytics",
     chip: "Analytics",
     href: "/tags/analytics",
   },
-  {
+  audio: {
     tag: "audio",
     title: "Audio",
     chip: "Audio",
     href: "/tags/audio",
   },
-  {
+  "augmented-reality": {
     tag: "augmented-reality",
     title: "Augmented Reality",
     chip: "Augmented Reality",
     href: "/tags/augmented-reality",
   },
-  {
+  canvas: {
     tag: "canvas",
     title: "Canvas",
     chip: "Canvas",
     href: "/tags/canvas",
   },
-  {
+  capabilities: {
     tag: "capabilities",
     title: "Capabilities",
     chip: "Capabilities",
     href: "/tags/capabilities",
   },
-  {
+  "case-study": {
     tag: "case-study",
     title: "Case Study",
     chip: "Case Study",
     href: "/tags/case-study",
   },
-  {
+  cast: {
     tag: "cast",
     title: "Cast",
     chip: "Cast",
     href: "/tags/cast",
   },
-  {
+  "chrome-ux-report": {
     tag: "chrome-ux-report",
     title: "Chrome UX Report",
     chip: "Chrome UX Report",
     href: "/tags/chrome-ux-report",
   },
-  {
+  "chrome-dev-summit": {
     tag: "chrome-dev-summit",
     title: "Chrome Dev Summit",
     chip: "Chrome Dev Summit",
     href: "/tags/chrome-dev-summit",
   },
-  {
+  "content-security-policy": {
     tag: "content-security-policy",
     title: "Content Security Policy",
     chip: "Content Security Policy",
     href: "/tags/content-security-policy",
   },
-  {
+  cookies: {
     tag: "cookies",
     title: "Cookies",
     chip: "Cookies",
     href: "/tags/cookies",
   },
-  {
+  cors: {
     tag: "cors",
     title: "CORS",
     chip: "CORS",
     href: "/tags/cors",
   },
-  {
+  css: {
     tag: "css",
     title: "CSS",
     chip: "CSS",
     href: "/tags/css",
   },
-  {
+  devtools: {
     tag: "devtools",
     title: "DevTools",
     chip: "DevTools",
     href: "/tags/devtools",
   },
-  {
+  dom: {
     tag: "dom",
     title: "DOM",
     chip: "DOM",
     href: "/tags/dom",
   },
-  {
+  encryption: {
     tag: "encryption",
     title: "Encryption",
     chip: "Encryption",
     href: "/tags/encryption",
   },
-  {
+  "feature-policy": {
     tag: "feature-policy",
     title: "Feature Policy",
     chip: "Feature Policy",
     href: "/tags/feature-policy",
   },
-  {
+  "file-system": {
     tag: "file-system",
     title: "File System",
     chip: "File System",
     href: "/tags/file-system",
   },
-  {
+  fonts: {
     tag: "fonts",
     title: "Fonts",
     chip: "Fonts",
     href: "/tags/fonts",
   },
-  {
+  forms: {
     tag: "forms",
     title: "Forms",
     chip: "Forms",
     href: "/tags/forms",
   },
-  {
+  games: {
     tag: "games",
     title: "Games",
     chip: "Games",
     href: "/tags/games",
   },
-  {
+  graphics: {
     tag: "graphics",
     title: "Graphics",
     chip: "Graphics",
     href: "/tags/graphics",
   },
-  {
+  houdini: {
     tag: "houdini",
     title: "Houdini",
     chip: "Houdini",
     href: "/tags/houdini",
   },
-  {
+  identity: {
     tag: "identity",
     title: "Identity",
     chip: "Identity",
     href: "/tags/identity",
   },
-  {
+  images: {
     tag: "images",
     title: "Images",
     chip: "Images",
     href: "/tags/images",
   },
-  {
+  install: {
     tag: "install",
     title: "Install",
     chip: "Install",
     href: "/tags/install",
   },
-  {
+  intl: {
     tag: "intl",
     title: "Intl",
     chip: "Intl",
     href: "/tags/intl",
   },
-  {
+  iot: {
     tag: "iot",
     title: "IoT",
     chip: "IoT",
     href: "/tags/iot",
   },
-  {
+  javascript: {
     tag: "javascript",
     title: "JavaScript",
     chip: "JavaScript",
     href: "/tags/javascript",
   },
-  {
+  layout: {
     tag: "layout",
     title: "Layout",
     chip: "Layout",
     href: "/tags/layout",
   },
-  {
+  lighthouse: {
     tag: "lighthouse",
     title: "Lighthouse",
     chip: "Lighthouse",
     href: "/tags/lighthouse",
   },
-  {
+  media: {
     tag: "media",
     title: "Media",
     chip: "Media",
     href: "/tags/media",
   },
-  {
+  "media-queries": {
     tag: "media-queries",
     title: "Media Queries",
     chip: "Media Queries",
     href: "/tags/media-queries",
   },
-  {
+  mobile: {
     tag: "mobile",
     title: "Mobile",
     chip: "Mobile",
     href: "/tags/mobile",
   },
-  {
+  modules: {
     tag: "modules",
     title: "Modules",
     chip: "Modules",
     href: "/tags/modules",
   },
-  {
+  monetization: {
     tag: "monetization",
     title: "Monetization",
     href: "/tags/monetization",
   },
-  {
+  network: {
     tag: "network",
     title: "Network",
     chip: "Network",
     href: "/tags/network",
   },
-  {
+  node: {
     tag: "node",
     title: "Node",
     chip: "Node",
     href: "/tags/node",
   },
-  {
+  notifications: {
     tag: "notifications",
     title: "Notifications",
     chip: "Notifications",
     href: "/tags/notifications",
   },
-  {
+  offline: {
     tag: "offline",
     title: "Offline",
     chip: "Offline",
     href: "/tags/offline",
   },
-  {
+  "origin-trials": {
     tag: "origin-trials",
     title: "Origin Trials",
     chip: "Origin Trials",
     href: "/tags/origin-trials",
   },
-  {
+  payments: {
     tag: "payments",
     title: "Payments",
     chip: "Payments",
     href: "/tags/payments",
   },
-  {
+  performance: {
     tag: "performance",
     title: "Performance",
     chip: "Performance",
     href: "/tags/performance",
   },
-  {
+  permissions: {
     tag: "permissions",
     title: "Permissions",
     chip: "Permissions",
     href: "/tags/permissions",
   },
-  {
+  "progressive-web-apps": {
     tag: "progressive-web-apps",
     title: "Progressive Web Apps",
     chip: "Progressive Web Apps",
     href: "/tags/progressive-web-apps",
   },
-  {
+  puppeteer: {
     tag: "puppeteer",
     title: "Puppeteer",
     chip: "Puppeteer",
     href: "/tags/puppeteer",
   },
-  {
+  rendering: {
     tag: "rendering",
     title: "Rendering",
     chip: "Rendering",
     href: "/tags/rendering",
   },
-  {
+  security: {
     tag: "security",
     title: "Security",
     chip: "Security",
     href: "/tags/security",
   },
-  {
+  seo: {
     tag: "seo",
     title: "SEO",
     chip: "SEO",
     href: "/tags/seo",
   },
-  {
+  "service-worker": {
     tag: "service-worker",
     title: "Service Worker",
     chip: "Service Worker",
     href: "/tags/service-worker",
   },
-  {
+  storage: {
     tag: "storage",
     title: "Storage",
     chip: "Storage",
     href: "/tags/storage",
   },
-  {
+  svg: {
     tag: "svg",
     title: "SVG",
     chip: "SVG",
     href: "/tags/svg",
   },
-  {
+  testing: {
     tag: "testing",
     title: "Testing",
     chip: "Testing",
     href: "/tags/testing",
   },
-  {
+  ux: {
     tag: "ux",
     title: "UX",
     chip: "UX",
     href: "/tags/ux",
   },
-  {
+  "virtual-reality": {
     tag: "virtual-reality",
     title: "Virtual Reality",
     chip: "Virtual Reality",
     href: "/tags/virtual-reality",
   },
-  {
+  "web-assembly": {
     tag: "web-assembly",
     title: "Web Assembly",
     chip: "Web Assembly",
     href: "/tags/web-assembly",
   },
-  {
+  "web-bundles": {
     tag: "web-bundles",
     title: "Web Bundles",
     chip: "Web Bundles",
     href: "/tags/web-bundles",
   },
-  {
+  webxr: {
     tag: "webxr",
     title: "WebXR",
     chip: "WebXR",
     href: "/tags/webxr",
   },
-  {
+  blog: {
     tag: null,
     title: "Blog",
     chip: "All",
     href: "/blog",
   },
-];
+};

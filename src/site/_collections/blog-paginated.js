@@ -42,8 +42,9 @@ module.exports = (collection) => {
     });
   });
 
-  blogTags.forEach((blogTag) => {
-    const isBlogPage = blogTag.href === "/blog";
+  Object.getOwnPropertyNames(blogTags).forEach((blogTagName) => {
+    const blogTag = blogTags[blogTagName];
+    const isBlogPage = blogTagName === "blog";
     const tag = (blogTag.tag || "").toLowerCase();
     if (!isBlogPage && !tagsMap.has(tag)) {
       return;
