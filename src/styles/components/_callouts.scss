@@ -32,14 +32,6 @@
 
 .w-callout__header {
   margin-bottom: 16px;
-  pointer-events: none;
-
-  // scss-lint thinks this is a pseudo class instead of a psuedo element
-  // and complains about the two colons.
-  // scss-lint:disable all
-  &::-webkit-details-marker {
-    display: none;
-  }
 }
 
 .w-callout__lockup {
