@@ -16,33 +16,37 @@
 
 const {html} = require("common-tags");
 
-module.exports = (content, type, twoColumns = false, prefix) => {
-  if (!type) {
-    /* eslint-disable max-len */
+module.exports = (content, cardinality, twoColumns = false) => {
+  /* eslint-disable max-len */
+  if (!cardinality) {
     throw new Error(
-      `Can't create SelectGroup component without a type. Did you forget to pass either "radio" or "checkbox" as the type?`,
+      `Can't create ResponseMultipleChoice component without a cardinality. Did you forget to pass the cardinality as a string?`,
     );
-    /* eslint-enable max-len */
+  } else if (
+    !/^\d+$/.test(cardinality) &&
+    !/^\d+\+$/.test(cardinality) &&
+    !/^\d-\d+$/.test(cardinality)
+  ) {
+    throw new Error(
+      `The cardinality value for the ResponseMultipleChoice component must be n, n+, or n-m.`,
+    );
   }
+  /* eslint-enable max-len */
 
   if (twoColumns != true && twoColumns != false) {
     /* eslint-disable max-len */
     throw new Error(
-      `The columns parameter for the SelectGroup component can only be set to true or false.`,
+      `The columns value for the ResponseMultipleChoice component must be true or false.`,
     );
     /* eslint-enable max-len */
   } else if (twoColumns === true) {
     twoColumns = "columns";
   }
 
-  if (prefix) {
-    prefix = "prefix='" + prefix + "'";
-  }
-
   // prettier-ignore
   return html`
-    <web-select-group type="${type}" ${twoColumns} ${prefix}>
+    <web-response-mc cardinality="${cardinality}" ${twoColumns}>
     ${content}
-    </web-select-group>
+    </web-response-mc>
   `;
 };

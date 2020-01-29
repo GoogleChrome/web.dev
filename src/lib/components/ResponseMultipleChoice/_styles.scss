@@ -1,0 +1,97 @@
+// Applies self-assessment color scheme to radio buttons and checkboxes.
+// Needs specificity of web-response-mc to override default styles.
+web-response-mc {
+  .web-response-mc__selector {
+    border-color: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  }
+
+  input[type='radio'] ~ .web-response-mc__selector::after {
+    border-color: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  }
+
+  @include hover() {
+    .web-response-mc__option-label:hover .web-response-mc__selector::before,
+    .web-response-mc__input:focus ~ .web-response-mc__selector::before {
+      background: $SELF_ASSESSMENT_HOVER_COLOR;
+    }
+  }
+
+  .web-response-mc__option-label:active .web-response-mc__selector::before {
+    background: $SELF_ASSESSMENT_ACTIVE_COLOR;
+  }
+
+  input[type='checkbox']:checked ~ .web-response-mc__selector {
+    background: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  }
+}
+
+// Multiple-choice options the user has submitted
+.web-response-mc__option-label--checked,
+.web-response-mc__option-label--correct {
+  align-items: flex-start;
+  background: $GREY_100;
+  border-radius: $GLOBAL_RADIUS;
+  cursor: initial;
+  padding: 1rem 1rem 1.5rem;
+}
+
+.web-response-mc__option-label--correct {
+  background: $GREEN_50;
+  box-shadow: inset 0 0 0 1px $SUCCESS_COLOR;
+}
+
+.web-response-mc__input--checked[disabled] ~ .web-response-mc__selector {
+  background: $GREY_600;
+  border-color: $GREY_600;
+  transition: none;
+}
+
+.web-response-mc__input--correct[disabled] ~ .web-response-mc__selector {
+  background: $SUCCESS_COLOR !important;
+  border-color: $SUCCESS_COLOR;
+  transition: none;
+}
+
+.web-response-mc__input--incorrect[disabled] ~ .web-response-mc__selector {
+  background: $SELF_ASSESSMENT_INCORRECT_COLOR;
+  border-color: $SELF_ASSESSMENT_INCORRECT_COLOR;
+  transition: none;
+}
+
+.web-response-mc__input--incorrect[disabled] ~ .web-response-mc__selector::after,
+.web-response-mc__input--correct[disabled] ~ .web-response-mc__selector::after,
+.web-response-mc__input--checked[disabled] ~ .web-response-mc__selector::after {
+  border: 0;
+  content: 'clear';
+  height: initial;
+  transform: initial;
+  transition: none;
+  width: initial;
+}
+
+.web-response-mc__input--correct[disabled] ~ .web-response-mc__selector::after {
+  content: 'check';
+}
+
+.web-response-mc__input--checked[disabled] ~ .web-response-mc__selector::after {
+  content: 'remove';
+}
+
+.web-response-mc__correctness-flag {
+  color: $GREY_700;
+  padding: 3px 0 .5rem;
+}
+
+.web-response-mc__correctness-flag--correct {
+  color: $SUCCESS_COLOR;
+}
+
+.web-response-mc__correctness-flag--incorrect {
+  color: $SELF_ASSESSMENT_INCORRECT_COLOR;
+}
+
+.web-response-mc__option-rationale {
+  color: $GREY_700;
+  font-size: .833em;
+  padding: .5rem 0 0;
+}

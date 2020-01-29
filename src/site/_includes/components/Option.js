@@ -15,22 +15,13 @@
  */
 
 const {html} = require("common-tags");
+const md = require("markdown-it")();
 
-/* eslint-disable require-jsdoc, max-len */
-module.exports = (content, blurb) => {
-  // Need newlines around ${content} so MD parser renders it as MD, not HTML
+module.exports = (content) => {
   // prettier-ignore
   return html`
-    <div class="w-callout">
-      <div class="w-callout__header">
-        <h2 class="w-callout__lockup w-callout__lockup--assess">
-          Check for understanding
-        </h2>
-        ${blurb ? `<div class="w-callout__blurb">${blurb}</div>` : ""}
-      </div>
-
-      ${content}
-
-    </div>
+    <span data-role="option">
+      ${md.renderInline(content)}
+    </span>
   `;
 };
