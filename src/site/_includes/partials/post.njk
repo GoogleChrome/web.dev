@@ -56,13 +56,11 @@
 
     {{ content | safe }}
 
-    {# Hide tags for now. #} {#
     <div class="w-chips">
-      <a class="w-chip" href="#">Artificial Intellegence</a>
-      <a class="w-chip" href="#">User Experience</a>
-      <a class="w-chip" href="#">Learning</a>
+      {% for tag in tags | findTags %}
+        <a class="w-chip" href="{{ tag.url }}">{{ tag.title }}</a>
+      {% endfor %}
     </div>
-    #}
 
     <div class="w-post-github-link w-mt--l w-mb--l">
       <span class="w-mr--sm">

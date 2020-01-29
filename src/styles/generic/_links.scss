@@ -34,12 +34,14 @@ a,
   a,
   :link,
   :visited {
-    text-decoration: underline;
+    &:not(.w-chip) {
+      text-decoration: underline;
 
-    &:focus,
-    &:active,
-    &:hover {
-      text-decoration: none;
+      &:focus,
+      &:active,
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
