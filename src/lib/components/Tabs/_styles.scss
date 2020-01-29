@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-@import '../../../styles/settings/colors';
 @import '../../../styles/tools/mixins';
 
 web-tabs {
@@ -34,13 +33,16 @@ web-tabs {
     flex: 1 0 auto;
     height: 48px;
     margin: 0;
-    opacity: .6;
+    transition:
+      background $TRANSITION_SPEED,
+      box-shadow $TRANSITION_SPEED,
+      color $TRANSITION_SPEED;
   }
 
   @include hover() {
     .web-tabs__tab:hover,
     .web-tabs__tab:focus {
-      background: rgba($SELF_ASSESSMENT_PRIMARY_COLOR, .1);
+      background: $SELF_ASSESSMENT_HOVER_COLOR;
     }
   }
 
@@ -50,17 +52,16 @@ web-tabs {
   }
 
   .web-tabs__tab:active {
-    background: rgba($SELF_ASSESSMENT_PRIMARY_COLOR, .3);
+    background: $SELF_ASSESSMENT_ACTIVE_COLOR;
     box-shadow: none;
   }
 
   .web-tabs__tab[aria-selected="true"] {
     color: $SELF_ASSESSMENT_PRIMARY_COLOR;
-    opacity: 1;
   }
 
-  .web-tabs__tab[aria-selected="true"]::after {
-    background: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  .web-tabs__tab::after {
+    background: transparent;
     bottom: 0;
     content: '';
     display: block;
@@ -68,6 +69,20 @@ web-tabs {
     left: 0;
     position: absolute;
     right: 0;
+    transition: background $TRANSITION_SPEED;
+  }
+
+  .web-tabs__tab[aria-selected="true"]::after {
+    background: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  }
+
+  .web-tabs__text-label {
+    opacity: .6;
+    transition: opacity $TRANSITION_SPEED;
+  }
+
+  .web-tabs__tab[aria-selected="true"] .web-tabs__text-label {
+    opacity: 1;
   }
 
   .web-tabs__panel[hidden] {
