@@ -308,12 +308,37 @@ When is it appropriate to lazy load an image?
 {% endTab %}
 {% Tab 'question' %}
 
-Here's the content for the second tab. It includes a [link](#).
+{% AssessmentQuestion %}
+
+Which statements about optimizing third-party resources are accurate?
+Choose **two or more** statements.
+
+{% ResponseMultipleChoice '2+' %}
+{% Option %}The `async` and `defer` attributes can be used interchangeably.{% endOption %}
+{% Option %}Pre-connecting to resources is sometimes appropriate.{% endOption %}
+{% Option %}Lazy-loading ads should typically be avoided.{% endOption %}
+{% Option %}Resources that don't provide value should be removed.{% endOption %}
+{% Option %}Self-hosting resources requires minimal maintenance.{% endOption %}
+{% endResponseMultipleChoice %}
+
+{% endAssessmentQuestion %}
 
 {% endTab %}
 {% Tab 'question' %}
 
-Here's the content for the third tab. This tab has a custom label.
+{% AssessmentQuestion %}
+
+Which **two** Sesame Street muppets are clearly the best?
+
+{% ResponseMultipleChoice '2', true %}
+{% Option %}![Elmo](elmo.jpg){% endOption %}
+{% Option %}![Ernie](ernie.jpg){% endOption %}
+{% Option %}![Cookie Monster](cookiemonster.jpg){% endOption %}
+{% Option %}![Big Bird](bigbird.jpg){% endOption %}
+{% Option %}![Grover](grover.jpg){% endOption %}
+{% endResponseMultipleChoice %}
+
+{% endAssessmentQuestion %}
 
 {% endTab %}
 {% endTabs %}
