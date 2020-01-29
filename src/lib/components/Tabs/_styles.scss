@@ -40,7 +40,7 @@ web-tabs {
   @include hover() {
     .web-tabs__tab:hover,
     .web-tabs__tab:focus {
-      background: rgba($SUCCESS_COLOR, .1);
+      background: rgba($SELF_ASSESSMENT_PRIMARY_COLOR, .1);
     }
   }
 
@@ -50,17 +50,17 @@ web-tabs {
   }
 
   .web-tabs__tab:active {
-    background: rgba($SUCCESS_COLOR, .3);
+    background: rgba($SELF_ASSESSMENT_PRIMARY_COLOR, .3);
     box-shadow: none;
   }
 
   .web-tabs__tab[aria-selected="true"] {
-    color: $SUCCESS_COLOR;
+    color: $SELF_ASSESSMENT_PRIMARY_COLOR;
     opacity: 1;
   }
 
   .web-tabs__tab[aria-selected="true"]::after {
-    background: $SUCCESS_COLOR;
+    background: $SELF_ASSESSMENT_PRIMARY_COLOR;
     bottom: 0;
     content: '';
     display: block;
