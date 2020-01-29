@@ -17,17 +17,18 @@
 /**
  * Take array of posts and returns an array of paginated pages for the posts.
  * @param {Array<object>} posts Posts to paginate
- * @param {object} data A definition of what we are paginating
+ * @param {object} additionalData Aditional data that may be relevant to a page.
+ * Items like `title` or `description` would be here.
  * @return {Array<object>} An array of items to display, including href and index.
  */
-module.exports = function pageContent(posts, data = {}) {
+module.exports = function pageContent(posts, additionalData = {}) {
   const pageCount = 24;
   const paginated = [];
   const pages = Math.ceil(posts.length / pageCount);
 
   for (let i = 0; i < pages; i++) {
     paginated.push({
-      ...data,
+      ...additionalData,
       posts: posts.splice(0, pageCount),
       index: i,
       pages,

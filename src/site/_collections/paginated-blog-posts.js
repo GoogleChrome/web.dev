@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const pageContent = require("../_filters/page-content");
+const addPagination = require("../_utils/add-pagination");
 const postDescending = require("./post-descending");
 
 /**
@@ -22,10 +22,10 @@ const postDescending = require("./post-descending");
  * Each element includes n number of posts as well as some basic information to pump into `_includes/partials/paged.njk`
  * This is designed so that it follows a similar structure to `_collections/paged-tags.js`.
  *
- * @param {any} collection
- * @return {Array<any>}
+ * @param {any} collection Eleventy collection object
+ * @return {Array<any>} An array where each element it a blog page with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
   const posts = postDescending(collection);
-  return pageContent(posts);
+  return addPagination(posts);
 };

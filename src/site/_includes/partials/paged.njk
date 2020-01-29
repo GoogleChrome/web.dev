@@ -24,12 +24,9 @@
     <a
       {% if paged.index == (pageEntry.index - 1) %}
         class="w-pagination__link w-pagination__link--active"
+        aria-current="page"
       {% else %}
         class="w-pagination__link"
-      {% endif %}
-
-      {% if paged.index == (pageEntry.index - 1) %}
-        aria-current="page"
       {% endif %}
 
       aria-label="Page {{pageEntry.index}}"

@@ -51,8 +51,8 @@ const tagsDir = 'src/site/_includes/components/tags';
 const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
-const pagedBlog = require(`./${collectionsDir}/paged-blog`);
-const pagedTags = require(`./${collectionsDir}/paged-tags`);
+const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
+const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
@@ -67,7 +67,6 @@ const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
-const pageContent = require(`./${filtersDir}/page-content`);
 const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
@@ -137,8 +136,8 @@ module.exports = function(config) {
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
-  config.addCollection('pagedBlog', pagedBlog);
-  config.addCollection('pagedTags', pagedTags);
+  config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
+  config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
@@ -163,7 +162,6 @@ module.exports = function(config) {
   config.addFilter('githubLink', githubLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
-  config.addFilter('pageContent', pageContent);
   config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);

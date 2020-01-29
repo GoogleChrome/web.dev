@@ -15,7 +15,7 @@
  */
 
 const blogTags = require("../_data/blogTags");
-const pageContent = require("../_filters/page-content");
+const addPagination = require("../_utils/add-pagination");
 const postDescending = require("./post-descending");
 
 /**
@@ -24,8 +24,8 @@ const postDescending = require("./post-descending");
  * Each element includes n number of posts as well as some basic information of that tag to pump into `_includes/partials/paged.njk`
  * This is because we can not paginate something already paginated... Pagination is effectively a loop, and we can't have an embedded loop O^2.
  *
- * @param {any} collection
- * @return {Array<any>}
+ * @param {any} collection Eleventy collection object
+ * @return {Array<any>} An array where each element it a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
   const mapValue = (map, key) => {
@@ -55,7 +55,7 @@ module.exports = (collection) => {
 
     const blogTag = blogTags[blogTagName];
     blogTag.tag = tag;
-    tags = tags.concat(pageContent(tagsMap.get(tag), blogTag));
+    tags = tags.concat(addPagination(tagsMap.get(tag), blogTag));
   });
   return tags;
 };

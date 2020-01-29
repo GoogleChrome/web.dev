@@ -15,8 +15,8 @@
  */
 
 /**
- * Take array of paginated hrefs and select the pages to display.
- * @param {any} paged Page details
+ * Takes an object and determines how many links to other pages in the same paginated collection to display.
+ * @param {object} paged Page details including the `index` in the pagination, how many `pages` there are, and the `href` of the page.
  * @return {Array<object>} An array of up to 8 items to display, including href and index.
  */
 module.exports = function pagedNavigation(paged) {

@@ -166,9 +166,11 @@ module.exports = ({post}) => {
         ${renderAuthorsAndDate(post)}
 
         <div class="w-post-card__desc">
-          <p class="w-post-card__subhead">
-            ${md(data.subhead)}
-          </p>
+          <a class="w-card--link" href="${url}">
+            <p class="w-post-card__subhead">
+              ${md(data.subhead)}
+            </p>
+          </a>
           ${renderChips()}
         </div>
       </article>
