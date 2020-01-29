@@ -1,12 +1,15 @@
 ---
 layout: layout
-title: Blog
-permalink: /en/blog/{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
+title: Tags
+permalink: /en/tags/{{ paged.tag }}/{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 override:tags: []
 description: Our latest news, updates, and stories for developers
 date: 2018-11-05
+renderData:
+  title: "{{ paged.title or title }}"
+  description: "{{ paged.description or description }}"
 pagination:
-  data: collections.pagedBlog
+  data: collections.pagedTags
   size: 1
   alias: paged
 ---
@@ -19,8 +22,8 @@ pagination:
 
   <div class="w-layout-container w-pb--non">
     <header class="w-page-header">
-      <h1 class="w-page-header__headline">{{ title }}</h1>
-      <p class="w-page-header__copy">{{ description }}</p>
+      <h1 class="w-page-header__headline">{{ renderData.title }}</h1>
+      <p class="w-page-header__copy">{{ renderData.description }}</p>
       <div class="w-chips">
       </div>
     </header>

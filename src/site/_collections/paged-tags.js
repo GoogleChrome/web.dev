@@ -15,9 +15,15 @@
  */
 
 const blogTags = require("../_data/blogTags");
+const pageContent = require("../_filters/page-content");
 const postDescending = require("./post-descending");
 
 /**
+ * Returns all posts as an array of paginated tags.
+ * It's not as if every element in the array is a single page for a tag, rather, its an array that includes every tags page.
+ * Each element includes n number of posts as well as some basic information of that tag to pump into `_includes/partials/paged.njk`
+ * This is because we can not paginate something already paginated... Pagination is effectively a loop, and we can't have an embedded loop O^2.
+ *
  * @param {any} collection
  * @return {Array<any>}
  */
@@ -26,10 +32,9 @@ module.exports = (collection) => {
     return map.has(key) ? map.get(key) : [];
   };
 
-  const pageCount = 24;
   const posts = postDescending(collection);
   const tagsMap = new Map();
-  const tags = [];
+  let tags = [];
 
   // Map the posts to various tags in the post
   posts.forEach((post) => {
@@ -43,25 +48,14 @@ module.exports = (collection) => {
   });
 
   Object.getOwnPropertyNames(blogTags).forEach((blogTagName) => {
-    const blogTag = blogTags[blogTagName];
-    const isBlogPage = blogTagName === "blog";
-    const tag = (blogTag.tag || "").toLowerCase();
-    if (!isBlogPage && !tagsMap.has(tag)) {
+    const tag = blogTagName.toLowerCase();
+    if (!tagsMap.has(tag)) {
       return;
     }
 
-    const blogTagPosts = isBlogPage ? posts : mapValue(tagsMap, tag);
-    const pages = Math.ceil(blogTagPosts.length / pageCount);
-
-    for (let i = 0; i < pages; i++) {
-      tags.push({
-        ...blogTag,
-        posts: blogTagPosts.splice(0, pageCount),
-        index: i,
-        pages,
-      });
-    }
+    const blogTag = blogTags[blogTagName];
+    blogTag.tag = tag;
+    tags = tags.concat(pageContent(tagsMap.get(tag), blogTag));
   });
-
   return tags;
 };
