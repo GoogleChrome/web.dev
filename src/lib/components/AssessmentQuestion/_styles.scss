@@ -1,0 +1,9 @@
+.web-question__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.web-question__footer > * {
+  margin-top: 16px;
+}

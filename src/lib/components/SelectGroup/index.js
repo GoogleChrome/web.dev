@@ -69,7 +69,9 @@ class SelectGroup extends BaseElement {
           value="${i}"
         />
         <span class="web-select-group__selector ${selectorClass}"></span>
-        ${content}
+        <span class="w-selectgroup__option-content">
+          ${content}
+        </span>
       </label>
     `;
   }

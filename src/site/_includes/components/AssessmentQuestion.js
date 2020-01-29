@@ -15,13 +15,12 @@
  */
 
 const {html} = require("common-tags");
-const md = require("markdown-it")();
 
 module.exports = (content) => {
   // prettier-ignore
   return html`
-    <span class="w-selectgroup__option-content">
-      ${md.renderInline(content)}
-    </span>
+    <web-question>
+    ${content}
+    </web-question>
   `;
 };

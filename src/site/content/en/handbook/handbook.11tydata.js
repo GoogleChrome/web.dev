@@ -46,6 +46,7 @@ module.exports = {
           "markup-media",
           "markup-code",
           "markup-sample-app",
+          "self-assessment-components",
         ],
       },
     ],

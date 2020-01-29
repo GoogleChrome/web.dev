@@ -1,5 +1,7 @@
+import "./components/AssessmentQuestion";
 import "./components/ProfileSwitcherContainer";
 import "./components/Header";
+import "./components/ResponseMultipleChoice";
 import "./components/SelectGroup";
 import "./components/SideNav";
 import "./components/SnackbarContainer";
