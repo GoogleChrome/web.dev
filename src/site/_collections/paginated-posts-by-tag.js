@@ -47,15 +47,16 @@ module.exports = (collection) => {
     });
   });
 
-  Object.getOwnPropertyNames(blogTags).forEach((blogTagName) => {
-    const tag = blogTagName.toLowerCase();
+  Object.keys(blogTags).forEach((tagName) => {
+    const tag = tagName.toLowerCase();
     if (!tagsMap.has(tag)) {
       return;
     }
 
-    const blogTag = blogTags[blogTagName];
-    blogTag.tag = tag;
-    tags = tags.concat(addPagination(tagsMap.get(tag), blogTag));
+    const tagData = blogTags[tagName];
+    tagData.tag = tag;
+    tagData.href = `/tags/${tag}`;
+    tags = tags.concat(addPagination(tagsMap.get(tag), tagData));
   });
   return tags;
 };

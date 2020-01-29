@@ -38,7 +38,7 @@
 
   {# Show next page anchor only if not on the last or penultimate pages #}
   {% if (paged.index + 2) < (paged.pages) %}
-    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ paged.href }}/{{ paged.index + 1 }}"></a>
+    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ paged.href }}/{{ paged.index + 2 }}"></a>
   {% endif %}
 
   {# Show last page anchor only if not on the last page #}
