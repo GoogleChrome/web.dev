@@ -23,7 +23,7 @@ const postDescending = require("./post-descending");
  * This is designed so that it follows a similar structure to `_collections/paged-tags.js`.
  *
  * @param {any} collection Eleventy collection object
- * @return {Array<any>} An array where each element it a blog page with some meta data and n posts for the page.
+ * @return {Array<{ title: string, href: string, description: string, tag: string, posts: Array<object>, index: number, pages: number }>} An array where each element it a blog page with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
   const posts = postDescending(collection);

@@ -17,9 +17,8 @@
 /**
  * Take array of posts and returns an array of paginated pages for the posts.
  * @param {Array<object>} posts Posts to paginate
- * @param {object} additionalData Aditional data that may be relevant to a page.
- * Items like `title`, `href`, and `description` would be here.
- * @return {Array<object>} An array of items to display, including href and index.
+ * @param {{ title: string, href: string, description: string, tag: string }} additionalData Aditional data that may be relevant to a page.
+ * @return {Array<{ title: string, href: string, description: string, tag: string, posts: Array<object>, index: number, pages: number }>} An array of items to display, including href and index.
  */
 module.exports = function addPagination(posts, additionalData = {}) {
   const pageCount = 2;
