@@ -1,0 +1,11 @@
+pretranslate:
+  segments:
+    ignore_patterns:
+    - "{# wf_(?!featured_snippet).*#}"
+    - "^(Note|Caution|Warning|Success|Key Point|Key Term|Objective|Dogfood): "
+    - "{:.*}"
+
+  paths:
+  - source: "src/site/content/en"
+    include:
+    - "accessible/**/index.md"
