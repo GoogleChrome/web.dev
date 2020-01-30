@@ -254,7 +254,7 @@ library only when `loading` isn't supported. This works as follows:
     // Dynamically import the LazySizes library
     const script = document.createElement('script');
     script.src =
-      'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js';
+      'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
     document.body.appendChild(script);
   }
 </script>
