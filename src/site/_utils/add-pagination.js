@@ -21,7 +21,7 @@
  * @return {Array<{ title: string, href: string, description: string, tag: string, posts: Array<object>, index: number, pages: number }>} An array of items to display, including href and index.
  */
 module.exports = function addPagination(posts, additionalData = {}) {
-  const pageCount = 2;
+  const pageCount = 24;
   const paginated = [];
   const pages = Math.ceil(posts.length / pageCount);
 
