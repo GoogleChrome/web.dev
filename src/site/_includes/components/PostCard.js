@@ -136,7 +136,7 @@ module.exports = ({post}) => {
       <div class="w-chips">
         ${displayedTags.map((displayedTag) => {
           return html`
-            <a class="w-chip" href="/tags/${displayedTag.tag}"
+            <a class="w-chip" href="${displayedTag.href}"
               >${displayedTag.title}</a
             >
           `;

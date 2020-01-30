@@ -58,7 +58,7 @@
 
     <div class="w-chips">
       {% for tag in tags | findTags %}
-        <a class="w-chip" href="{{ tag.url }}">{{ tag.title }}</a>
+        <a class="w-chip" href="{{ tag.href }}">{{ tag.title }}</a>
       {% endfor %}
     </div>
 

@@ -25,7 +25,7 @@ const postDescending = require("./post-descending");
  * This is because we can not paginate something already paginated... Pagination is effectively a loop, and we can't have an embedded loop O^2.
  *
  * @param {any} collection Eleventy collection object
- * @return {Array<any>} An array where each element it a paged tag with some meta data and n posts for the page.
+ * @return {Array<any>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
   const mapValue = (map, key) => {
@@ -34,29 +34,26 @@ module.exports = (collection) => {
 
   const posts = postDescending(collection);
   const tagsMap = new Map();
-  let tags = [];
 
   // Map the posts to various tags in the post
   posts.forEach((post) => {
     const postTags = post.data.tags || [];
     postTags.forEach((postTag) => {
-      postTag = postTag.toLowerCase();
       const tagsPosts = mapValue(tagsMap, postTag);
       tagsPosts.push(post);
       tagsMap.set(postTag, tagsPosts);
     });
   });
 
+  let tags = [];
   Object.keys(blogTags).forEach((tagName) => {
-    const tag = tagName.toLowerCase();
-    if (!tagsMap.has(tag)) {
+    if (!tagsMap.has(tagName)) {
       return;
     }
 
     const tagData = blogTags[tagName];
-    tagData.tag = tag;
-    tagData.href = `/tags/${tag}`;
-    tags = tags.concat(addPagination(tagsMap.get(tag), tagData));
+    tags = tags.concat(addPagination(tagsMap.get(tagName), tagData));
   });
+
   return tags;
 };

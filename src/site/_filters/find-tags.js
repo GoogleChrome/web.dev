@@ -24,10 +24,8 @@ module.exports = (tags) => {
   const validTags = [];
 
   for (const tag of tags) {
-    const lowerCaseTag = tag.toLowerCase();
-    const tagData = blogTags[lowerCaseTag];
+    const tagData = blogTags[tag];
     if (tagData) {
-      tagData.url = `/tags/${lowerCaseTag}/`;
       validTags.push(tagData);
     }
   }

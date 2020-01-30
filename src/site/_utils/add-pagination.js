@@ -21,15 +21,16 @@
  * Items like `title`, `href`, and `description` would be here.
  * @return {Array<object>} An array of items to display, including href and index.
  */
-module.exports = function pageContent(posts, additionalData = {}) {
-  const pageCount = 24;
+module.exports = function addPagination(posts, additionalData = {}) {
+  const pageCount = 2;
   const paginated = [];
   const pages = Math.ceil(posts.length / pageCount);
 
   for (let i = 0; i < pages; i++) {
+    const startFrom = i * pageCount;
     paginated.push({
       ...additionalData,
-      posts: posts.splice(0, pageCount),
+      posts: posts.slice(startFrom, startFrom + pageCount),
       index: i,
       pages,
     });

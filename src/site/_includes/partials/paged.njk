@@ -14,7 +14,7 @@
 
   {# Show previous page anchor only if not on the first two pages #}
   {% if paged.index > 1 %}
-    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--previous" aria-label="Previous Page" href="{{ paged.href }}/{{ paged.index }}"></a>
+    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--previous" aria-label="Previous Page" href="{{ paged.href }}{{ paged.index }}"></a>
   {% endif %}
 
   {%- for pageEntry in paged | pagedNavigation  %}
@@ -38,12 +38,12 @@
 
   {# Show next page anchor only if not on the last or penultimate pages #}
   {% if (paged.index + 2) < (paged.pages) %}
-    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ paged.href }}/{{ paged.index + 2 }}"></a>
+    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ paged.href }}{{ paged.index + 2 }}"></a>
   {% endif %}
 
   {# Show last page anchor only if not on the last page #}
   {% if paged.index != (paged.pages - 1) %}
-    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--last" aria-label="Last Page" href="{{ paged.href }}/{{ paged.pages }}"></a>
+    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--last" aria-label="Last Page" href="{{ paged.href }}{{ paged.pages }}"></a>
   {% endif %}
 
 </nav>

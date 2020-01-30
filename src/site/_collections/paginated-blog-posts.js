@@ -27,5 +27,5 @@ const postDescending = require("./post-descending");
  */
 module.exports = (collection) => {
   const posts = postDescending(collection);
-  return addPagination(posts, {href: "/blog"});
+  return addPagination(posts, {href: "/blog/"});
 };

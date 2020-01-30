@@ -20,34 +20,35 @@
  * @return {Array<object>} An array of up to 8 items to display, including href and index.
  */
 module.exports = function pagedNavigation(paged) {
-  const shiftBy = 4;
-  const start = paged.index - shiftBy > 0 ? paged.index - shiftBy : 0;
-  const end =
-    paged.index + shiftBy < paged.pages ? paged.index + shiftBy : paged.pages;
+  const halfTargetSize = 4;
+  const start = Math.max(paged.index - halfTargetSize, 0);
+  const end = Math.min(paged.index + halfTargetSize, paged.pages);
 
   const pagesToShow = Array.from({
     length: end - start,
   }).map((_, i) => {
     const index = i + start + 1;
     return {
-      href: index === 1 ? paged.href : paged.href + "/" + index,
+      href: paged.href + (index === 1 ? "" : index),
       index,
     };
   });
 
-  const lastPageToShow = pagesToShow[pagesToShow.length - 1];
+  if (pagesToShow.length > 0) {
+    const lastPageToShow = pagesToShow[pagesToShow.length - 1];
 
-  if (lastPageToShow.index !== paged.pages) {
-    const lastPage = {
-      showEllipses: true,
-      href: paged.href + "/" + paged.pages,
-      index: paged.pages,
-    };
+    if (lastPageToShow.index !== paged.pages) {
+      const lastPage = {
+        showEllipses: true,
+        href: paged.href + paged.pages,
+        index: paged.pages,
+      };
 
-    if (pagesToShow.length < shiftBy * 2) {
-      pagesToShow.push(lastPage);
-    } else {
-      pagesToShow[shiftBy * 2 - 1] = lastPage;
+      if (pagesToShow.length < halfTargetSize * 2) {
+        pagesToShow.push(lastPage);
+      } else {
+        pagesToShow[halfTargetSize * 2 - 1] = lastPage;
+      }
     }
   }
 
