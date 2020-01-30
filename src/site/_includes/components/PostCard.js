@@ -148,7 +148,7 @@ module.exports = ({post}) => {
   return html`
     <div class="w-card">
       <article class="w-post-card">
-        <a class="w-card--link" href="${url}">
+        <a class="w-post-card__link" href="${url}">
           <div
             class="w-post-card__cover ${thumbnail &&
               `w-post-card__cover--with-image`}"
@@ -166,7 +166,7 @@ module.exports = ({post}) => {
         ${renderAuthorsAndDate(post)}
 
         <div class="w-post-card__desc">
-          <a class="w-card--link" href="${url}">
+          <a class="w-post-card__link" tabindex="-1" href="${url}">
             <p class="w-post-card__subhead">
               ${md(data.subhead)}
             </p>

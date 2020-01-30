@@ -25,10 +25,7 @@
 
 .w-card:hover,
 .w-card:focus,
-.w-card:active,
-.w-card--link:hover,
-.w-card--link:focus,
-.w-card--link:active {
+.w-card:focus-within {
   background-color: transparent;
   outline: none;
   text-decoration: none;
@@ -50,7 +47,8 @@
   background-color: rgba(32, 33, 36, .0);
 }
 
-.w-card:focus {
+.w-card:focus,
+.w-card:focus-within {
   // sass-lint:disable-block indentation
   box-shadow:
     0 2px 4px -1px rgba(0, 0, 0, .2),
@@ -59,7 +57,8 @@
   outline: none;
 }
 
-.w-card:focus::after {
+.w-card:focus::after,
+.w-card:focus-within::after {
   background-color: rgba(32, 33, 36, .04);
 }
 
