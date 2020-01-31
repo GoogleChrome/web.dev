@@ -2,7 +2,7 @@ pretranslate:
   segments:
     ignore_patterns:
     - "{% .* %}"
-    - "^layout: post"
+    - "^(layout: .*)"
     - "^(title|authors|date|description): "
 
   paths:
