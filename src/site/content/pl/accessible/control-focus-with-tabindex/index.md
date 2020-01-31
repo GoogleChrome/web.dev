@@ -7,7 +7,7 @@ date: 2018-11-18
 description: Natywne elementy HTML, takie jak <button> lub <input>, mają wbudowaną dostępność klawiatury za darmo. Jeśli budujesz niestandardowe interaktywne komponenty, użyj tabindex, aby upewnić się, że są one dostępne z klawiatury.
 ---
 
-Native HTML elements such as `<button>` or `<input>` have keyboard accessibility built in for free. If you're building *custom* interactive components, however, use the `tabindex` attribute to ensure that they're keyboard accessible.
+Test Natywne elementy HTML, takie jak `<button>` lub `<input>` mają wbudowany bezpłatny dostęp do klawiatury. Jeśli jednak {code2}tabindex{/code2} {em3}niestandardowe{/em3} interaktywne komponenty, użyj atrybutu {code4}tabindex{/code4} aby upewnić się, że są one dostępne z klawiatury.
 
 {% Aside%} Jeśli to możliwe, używaj natywnego elementu HTML zamiast budować własną wersję niestandardową. `<button>` jest bardzo łatwy do stylizacji i ma już pełną obsługę klawiatury. Dzięki temu nie będziesz musiał zarządzać `tabindex` ani dodawać semantyki za pomocą ARIA. {% endAside%}
 
