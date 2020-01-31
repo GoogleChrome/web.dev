@@ -1,9 +1,9 @@
 pretranslate:
   segments:
     ignore_patterns:
-    - "{# wf_(?!featured_snippet).*#}"
-    - "^(Note|Caution|Warning|Success|Key Point|Key Term|Objective|Dogfood): "
-    - "{:.*}"
+    - "{% .* %}"
+    - "^layout: (.*)"
+    - "^(title|authors|date|description): "
 
   paths:
   - source: "src/site/content/en"
