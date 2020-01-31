@@ -1,8 +1,8 @@
 pretranslate:
   segments:
     ignore_patterns:
-    - "{% .* %}"
-    - "^(layout: .*)"
+    - "{% [a-zA-Z'\"\s]* %}"
+    - "^(layout:.*)"
     - "^(title|authors|date|description): "
 
   paths:
