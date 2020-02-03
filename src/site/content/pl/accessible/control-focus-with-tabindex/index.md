@@ -7,7 +7,7 @@ date: 2018-11-18
 description: Natywne elementy HTML, takie jak <button> lub <input>, mają wbudowaną dostępność klawiatury za darmo. Jeśli budujesz niestandardowe interaktywne komponenty, użyj tabindex, aby upewnić się, że są one dostępne z klawiatury.
 ---
 
-Natywne elementy HTML, takie jak `<button>` lub `<input>` mają wbudowany bezpłatny dostęp do klawiatury. Jeśli jednak `tabindex` *niestandardowe* interaktywne komponenty, użyj atrybutu `tabindex` aby upewnić się, że są one dostępne z klawiatury.
+Native Elementy HTML, takie jak `<button>` lub `<input>` mają wbudowany bezpłatny dostęp do klawiatury. Jeśli jednak `tabindex` *niestandardowe* interaktywne komponenty, użyj atrybutu `tabindex` aby upewnić się, że są one dostępne z klawiatury.
 
 {% Aside%} Jeśli to możliwe, używaj natywnego elementu HTML zamiast budować własną wersję niestandardową. `<button>` jest bardzo łatwy do stylizacji i ma już pełną obsługę klawiatury. Dzięki temu nie będziesz musiał zarządzać `tabindex` ani dodawać semantyki za pomocą ARIA. {% endAside%}
 
@@ -45,7 +45,7 @@ Spowoduje to usunięcie elementu z naturalnej kolejności tabulatorów, ale elem
 
 Zauważ, że zastosowanie `tabindex="-1"` do elementu nie wpływa na jego elementy potomne; jeśli są naturalnie w kolejności tabulatorów lub z powodu wartości `tabindex` , pozostaną w kolejności tabulatorów. Aby usunąć element i wszystkie jego elementy potomne z kolejności zakładek, rozważ użycie [`inert` wypełnienia WICG](https://github.com/WICG/inert) . Wielokrotne wypełnienie naśladuje zachowanie proponowanego atrybutu `inert` , co zapobiega wybieraniu lub odczytywaniu elementów przez technologie wspomagające.
 
-{% Aside 'caution' %} odpowiednią `inert` PolyFill eksperymentalna i może nie działać prawidłowo we wszystkich przypadkach. Przetestuj dokładnie przed użyciem w produkcji. {% endAside%}
+{% Aside 'caution' %} `inert` wypełniacz jest eksperymentalny i może nie działać zgodnie z oczekiwaniami we wszystkich przypadkach. Przetestuj dokładnie przed użyciem w produkcji. {% endAside %}
 
 ## Unikaj `tabindex > 0`
 
@@ -102,7 +102,7 @@ Ten HTML renderuje modalne okno dialogowe:
 </div>
 ```
 
-{% AssessmentHint 'What is the tab order for the elements in the sample?' %}
+{% AssessmentHint „Jaka jest kolejność tabulatorów dla elementów w próbce?” %}
 
 1. Przycisk **Zamknij**
 2. Przycisk **Nie**
@@ -122,7 +122,7 @@ Tylko elementy `<button>` są uwzględnione w kolejności tabulatorów, poniewa�
 </section>
 ```
 
-{% AssessmentHint 'Które elementy z próbki są uwzględnione w kolejności zakładek?' %} Tylko elementy `<a>` są uwzględnione w kolejności tabulatorów.
+{% AssessmentHint 'Which elements from the sample are included in the tab order?' %} Tylko elementy `<a>` są uwzględnione w kolejności tabulatorów.
 
 Element `<section>` nie znajduje się w kolejności tabulatorów, ponieważ ma ujemną wartość `tabindex` . (Można go jednak ustawić za pomocą metody `focus()` .) Wartość `tabindex` dla elementu `<section>` nie wpływa na jego elementy potomne. {% endAssessmentHint%}
 
