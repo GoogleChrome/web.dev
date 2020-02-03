@@ -53,13 +53,13 @@ Każdy `tabindex` większy niż 0 przeskakuje element na przód naturalnej kolej
 
 Użycie `tabindex` większego niż 0 jest uważane za **anty-wzorzec,** ponieważ czytniki ekranu poruszają się po stronie w kolejności DOM, a nie w kolejności tabulatorów. Jeśli potrzebujesz elementu, aby pojawił się wcześniej w kolejności tabulatorów, należy go przenieść na wcześniejsze miejsce w DOM.
 
-Latarnia ułatwia identyfikację elementów za pomocą `tabindex` > 0. Uruchom Audyt dostępności (Latarnia morska> Opcje> Dostępność) i poszukaj wyników audytu "Żaden element nie ma wartości [tabindex] większej niż 0".
+Latarnia ułatwia identyfikację elementów za pomocą `tabindex` > 0. Uruchom Audyt dostępności (Latarnia morska> Opcje> Dostępność) i poszukaj wyników audytu „Żaden element nie ma wartości [tabindex] większej niż 0”.
 
-## Twórz dostępne komponenty za pomocą " `tabindex` wędrującego"
+## Twórz dostępne komponenty za pomocą „ `tabindex` wędrującego”
 
 W przypadku budowania złożonego komponentu może być konieczne dodanie dodatkowej obsługi klawiatury, która nie jest aktywna. Rozważ natywny element `select` . Można go ustawiać i za pomocą klawiszy strzałek można wyświetlić dodatkowe funkcje (opcje do wyboru).
 
-Aby zaimplementować podobną funkcjonalność we własnych komponentach, użyj techniki znanej jako "wędrujący `tabindex` ". Ruchomy tabindex działa, ustawiając `tabindex` na -1 dla wszystkich dzieci z wyjątkiem aktualnie aktywnego. Następnie komponent używa detektora zdarzeń klawiatury, aby ustalić, który klawisz został naciśnięty przez użytkownika.
+Aby zaimplementować podobną funkcjonalność we własnych komponentach, użyj techniki znanej jako „wędrujący `tabindex` ”. Ruchomy tabindex działa, ustawiając `tabindex` na -1 dla wszystkich dzieci z wyjątkiem aktualnie aktywnego. Następnie komponent używa detektora zdarzeń klawiatury, aby ustalić, który klawisz został naciśnięty przez użytkownika.
 
 Kiedy tak się dzieje, komponent ustawia `tabindex` poprzednio skupionego dziecka na -1, ustawia `tabindex` podrzędnego dziecka na 0 i wywołuje na nim metodę `focus()` .
 
@@ -102,7 +102,7 @@ Ten HTML renderuje modalne okno dialogowe:
 </div>
 ```
 
-{% AssessmentHint 'Jaka jest kolejność tabulatorów dla elementów w próbce?' %}
+{% AssessmentHint „Jaka jest kolejność tabulatorów dla elementów w próbce?” %}
 
 1. Przycisk **Zamknij**
 2. Przycisk **Nie**
@@ -140,7 +140,7 @@ Ten kod HTML wyświetla menu podręczne, po którym następuje wyszukiwanie:
 <input tabindex="1" type="text" role="search" aria-label="Search" placeholder="Search">
 ```
 
-{% AssessmentHint 'Który element w próbie jest pierwszy w kolejności zakładek?' %} **Wyszukiwanie** tekstowe jest pierwsze w kolejności tabulatorów. Ponieważ ma `tabindex` większy niż 1, przeskakuje na początek kolejności tabulatorów.
+{% AssessmentHint 'Which element in the sample comes first in the tab order?' %} Wprowadzanie tekstu **wyszukiwania** jest pierwsze w kolejności tabulatorów. Ponieważ ma `tabindex` większy niż 1, przeskakuje na początek kolejności tabulatorów.
 
 (To zachowanie może powodować zamieszanie, jeśli menu zostanie umieszczone na stronie przed danymi wejściowymi do wyszukiwania. Jest to przykład tego, dlaczego wartość `tabindex` większa od zera jest uważana za anty-wzór).
 
