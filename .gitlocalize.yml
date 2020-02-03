@@ -1,8 +1,9 @@
 pretranslate:
   segments:
     ignore_patterns:
-    - "{% ([a-zA-Z'\"\s]*) %}"
-    - "^(layout:.*)"
+    - "{%\s?Aside\s?('[a-z]+')?\s?%}"
+    - "{%\s?endAside\s?%}"
+    - "Natywne"
     - "^(title|authors|date|description): "
 
   paths:
