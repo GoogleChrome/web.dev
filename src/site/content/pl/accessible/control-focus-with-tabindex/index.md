@@ -17,7 +17,7 @@ Narzędzie takie jak Latarnia morska świetnie wykrywa niektóre problemy z dost
 
 Spróbuj nacisnąć klawisz `Tab` , aby poruszać się po witrynie. Czy jesteś w stanie uzyskać dostęp do wszystkich interaktywnych elementów sterujących na stronie? Jeśli nie, może być konieczne użycie [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) aby poprawić ostrość tych elementów sterujących.
 
-{% Aside 'warning' %} If you don't see a focus indicator at all, it may be hidden by your CSS. Check for any styles that mention `:focus { outline: none; }`. You can learn how to fix this in our guide on [styling focus](/style-focus). {% endAside %}
+{% Aside 'warning' %} Jeśli w ogóle nie widzisz wskaźnika aktywności, może on być ukryty przez twój CSS. Sprawdź wszystkie style, które wspominają `:focus { outline: none; }` . Możesz dowiedzieć się, jak to naprawić w naszym przewodniku na temat [stylizacji](/style-focus) . {% endAside %}
 
 ## Wstaw element w kolejności tabulatorów
 
@@ -45,7 +45,7 @@ Spowoduje to usunięcie elementu z naturalnej kolejności tabulatorów, ale elem
 
 Zauważ, że zastosowanie `tabindex="-1"` do elementu nie wpływa na jego elementy potomne; jeśli są naturalnie w kolejności tabulatorów lub z powodu wartości `tabindex` , pozostaną w kolejności tabulatorów. Aby usunąć element i wszystkie jego elementy potomne z kolejności zakładek, rozważ użycie [`inert` wypełnienia WICG](https://github.com/WICG/inert) . Wielokrotne wypełnienie naśladuje zachowanie proponowanego atrybutu `inert` , co zapobiega wybieraniu lub odczytywaniu elementów przez technologie wspomagające.
 
-{% Aside 'caution' %} The `inert` polyfill is experimental and may not work as expected in all cases. Test carefully before using in production. {% endAside %}
+{% Aside 'caution' %} odpowiednią `inert` PolyFill eksperymentalna i może nie działać prawidłowo we wszystkich przypadkach. Przetestuj dokładnie przed użyciem w produkcji. {% endAside%}
 
 ## Unikaj `tabindex > 0`
 
@@ -87,7 +87,7 @@ Kiedy tak się dzieje, komponent ustawia `tabindex` poprzednio skupionego dzieck
 
 {% Aside%} Ciekawe, do czego służą te atrybuty `role=""` ? Pozwalają na zmianę semantyki elementu, dzięki czemu zostanie poprawnie ogłoszony przez czytnik ekranu. Możesz dowiedzieć się więcej o nich w naszym przewodniku na temat [podstaw czytnika ekranu](/semantics-and-screen-readers) . {% endAside%}
 
-{% AssessmentCallout 'Use the drop-down below each code sample to check your understanding of tab order.' %} {% Tabs 'Samples for knowledge self check' %} {% Tab 'sample' %}
+{% AssessmentCallout 'Użyj listy rozwijanej poniżej każdej próbki kodu, aby sprawdzić swoje zrozumienie kolejności kart.' %} {% Tabs 'Próbki do samokontroli wiedzy' %} {% Tab 'sample'%}
 
 Ten HTML renderuje modalne okno dialogowe:
 
@@ -110,7 +110,7 @@ Ten HTML renderuje modalne okno dialogowe:
 
 Tylko elementy `<button>` są uwzględnione w kolejności tabulatorów, ponieważ są to jedyne rodzime elementy formularza HTML. Aby wstawić inne elementy w kolejności tabulatorów, należy dodać atrybut `tabindex` . {% endAssessmentHint%}
 
-{% endTab %} {% Tab 'sample' %}
+{% endTab%} {% Tab 'sample' %}
 
 ```html
 <section tabindex="-1">
@@ -122,11 +122,11 @@ Tylko elementy `<button>` są uwzględnione w kolejności tabulatorów, poniewa�
 </section>
 ```
 
-{% AssessmentHint 'Which elements from the sample are included in the tab order?' %} Only the `<a>` elements are included in the tab order.
+{% AssessmentHint 'Które elementy z próbki są uwzględnione w kolejności zakładek?' %} Tylko elementy `<a>` są uwzględnione w kolejności tabulatorów.
 
 Element `<section>` nie znajduje się w kolejności tabulatorów, ponieważ ma ujemną wartość `tabindex` . (Można go jednak ustawić za pomocą metody `focus()` .) Wartość `tabindex` dla elementu `<section>` nie wpływa na jego elementy potomne. {% endAssessmentHint%}
 
-{% endTab %} {% Tab 'sample' %}
+{% endTab%} {% Tab 'sample' %}
 
 Ten kod HTML wyświetla menu podręczne, po którym następuje wyszukiwanie:
 
@@ -140,13 +140,13 @@ Ten kod HTML wyświetla menu podręczne, po którym następuje wyszukiwanie:
 <input tabindex="1" type="text" role="search" aria-label="Search" placeholder="Search">
 ```
 
-{% AssessmentHint 'Which element in the sample comes first in the tab order?' %} The **Search** text input comes first in the tab order. Because it has a `tabindex` greater than 1, it jumps to the front of the tab order.
+{% AssessmentHint 'Który element w próbie jest pierwszy w kolejności zakładek?' %} **Wyszukiwanie** tekstowe jest pierwsze w kolejności tabulatorów. Ponieważ ma `tabindex` większy niż 1, przeskakuje na początek kolejności tabulatorów.
 
 (To zachowanie może powodować zamieszanie, jeśli menu zostanie umieszczone na stronie przed danymi wejściowymi do wyszukiwania. Jest to przykład tego, dlaczego wartość `tabindex` większa od zera jest uważana za anty-wzór).
 
 {% endAssessmentHint %}
 
-{% endTab %} {% Tab 'sample' %}
+{% endTab%} {% Tab 'sample'%}
 
 Ten HTML renderuje niestandardową grupę radiową, która powinna mieć [`tabindex` wędrujący](#create-accessible-components-with-%22roving-tabindex%22) . (Aby uprościć [`aria-*`](/semantics-and-screen-readers) , na razie zignoruj [atrybuty `aria-*`](/semantics-and-screen-readers) ).
 
