@@ -17,7 +17,7 @@ Narzędzie takie jak Latarnia morska świetnie wykrywa niektóre problemy z dost
 
 Spróbuj nacisnąć klawisz `Tab` , aby poruszać się po witrynie. Czy jesteś w stanie uzyskać dostęp do wszystkich interaktywnych elementów sterujących na stronie? Jeśli nie, może być konieczne użycie [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) aby poprawić ostrość tych elementów sterujących.
 
-{% Aside 'warning' %} Jeśli w ogóle nie widzisz wskaźnika aktywności, może on być ukryty przez twój CSS. Sprawdź wszystkie style, które wspominają `:focus { outline: none; }` . Możesz dowiedzieć się, jak to naprawić w naszym przewodniku na temat [stylizacji](/style-focus) . {% endAside %}
+{% Aside 'warning' %} Jeśli w ogóle nie widzisz wskaźnika aktywności, może być ukryty przez twój CSS. Sprawdź wszystkie style, które wspominają `:focus { outline: none; }` . Możesz dowiedzieć się, jak to naprawić w naszym przewodniku na temat [stylizacji](/style-focus) . {% endAside %}
 
 ## Wstaw element w kolejności tabulatorów
 
@@ -85,9 +85,9 @@ Kiedy tak się dzieje, komponent ustawia `tabindex` poprzednio skupionego dzieck
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">   <iframe src="https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true" alt="tabindex-negative-one on Glitch" style="height: 100%; width: 100%; border: 0;">   </iframe> </div>
 
-{% Aside%} Ciekawe, do czego służą te atrybuty `role=""` ? Pozwalają na zmianę semantyki elementu, dzięki czemu zostanie poprawnie ogłoszony przez czytnik ekranu. Możesz dowiedzieć się więcej o nich w naszym przewodniku na temat [podstaw czytnika ekranu](/semantics-and-screen-readers) . {% endAside%}
+{% Aside %} Ciekawe, do czego służą te atrybuty `role=""` ? Pozwalają na zmianę semantyki elementu, dzięki czemu zostanie poprawnie ogłoszony przez czytnik ekranu. Możesz dowiedzieć się więcej o nich w naszym przewodniku na temat [podstaw czytnika ekranu](/semantics-and-screen-readers) . {% endAside %}
 
-{% AssessmentCallout 'Użyj listy rozwijanej poniżej każdej próbki kodu, aby sprawdzić swoje zrozumienie kolejności kart.' %} {% Tabs 'Próbki do samokontroli wiedzy' %} {% Tab 'sample'%}
+{% AssessmentCallout 'Use the drop-down below each code sample to check your understanding of tab order.' %} {% Tabs 'Samples for knowledge self check' %} {% Tab 'sample' %}
 
 Ten HTML renderuje modalne okno dialogowe:
 
