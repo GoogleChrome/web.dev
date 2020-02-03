@@ -2,7 +2,7 @@ pretranslate:
   segments:
     ignore_patterns:
     - "Native"
-    - "{%\\s?([a-zA-Z\'\"\\s]*)\\s?%}"
+    - "{%\\s?([a-zA-Z\\.\'\"\\s]*)\\s?%}"
 
   paths:
   - source: "src/site/content/en"
