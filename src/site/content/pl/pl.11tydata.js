@@ -1,5 +1,5 @@
 module.exports = function() {
-  const lang = 'en';
+  const lang = 'pl';
 
   return {
     lang,
