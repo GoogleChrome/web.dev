@@ -1,7 +1,7 @@
 pretranslate:
   segments:
     ignore_patterns:
-    - "{% ([a-zA-Z'\"\s])* %}"
+    - "{% ([a-zA-Z'\"\s]*) %}"
     - "^(layout:.*)"
     - "^(title|authors|date|description): "
 
