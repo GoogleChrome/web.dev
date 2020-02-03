@@ -3,7 +3,7 @@ pretranslate:
     ignore_patterns:
     - "{%\s?([a-zA-Z'\"\s]*)\s?%}"
     - "{%\s?Aside\s?('[a-z]+')?\s?%}"
-    - "Natywne"
+    - "Native"
     - "^(title|authors|date|description): "
 
   paths:
