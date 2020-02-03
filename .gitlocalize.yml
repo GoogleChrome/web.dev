@@ -2,6 +2,7 @@ pretranslate:
   segments:
     ignore_patterns:
     - "{%\s?([a-zA-Z'\"\s]*)\s?%}"
+    - "{%\s?Aside\s?('[a-z]+')?\s?%}"
     - "Natywne"
     - "^(title|authors|date|description): "
 
