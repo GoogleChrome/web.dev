@@ -15,7 +15,7 @@
  */
 
 const {html} = require("common-tags");
-const {findBySlug} = require("../../_filters/find-by-slug");
+const {findByUrl} = require("../../_filters/find-by-url");
 const stripLanguage = require("../../_filters/strip-language");
 const md = require("../../_filters/md");
 
@@ -25,7 +25,7 @@ module.exports = (slugs) => {
   // Coerce slugs to Array just in case someone pasted in a single slug string.
   slugs = slugs instanceof Array ? slugs : [slugs];
 
-  const codelabs = slugs.map((slug) => findBySlug(slug));
+  const codelabs = slugs.map((slug) => findByUrl(`/en/${slug}/`));
   if (!codelabs.length) {
     /* eslint-disable-next-line */
     console.warn(`Did not find any matching codelabs.`);

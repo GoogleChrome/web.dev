@@ -1,6 +1,6 @@
 ---
 layout: layout
-permalink: /en/{{page.fileSlug}}/index.html
+permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
 ---
 
 <div class="codelab-landing-page">
@@ -46,13 +46,15 @@ permalink: /en/{{page.fileSlug}}/index.html
       {{ content | safe }}
       {% if related_post %}
         {% ArticleNavigation {
-          back: '/' + related_post,
-          backLabel: 'Return to article'
+          back: '/' + lang + '/' + related_post,
+          backLabel: 'Return to article',
+          lang: lang
         } %}
       {% else %}
         {% ArticleNavigation {
-          back: '/' + path.slug,
-          backLabel: 'Return to all articles'
+          back: '/' + lang + '/' + path.slug,
+          backLabel: 'Return to all articles',
+          lang: lang
         } %}
       {% endif %}
     </div>

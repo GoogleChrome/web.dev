@@ -15,8 +15,7 @@
  */
 
 const {html} = require("common-tags");
-const {findBySlug} = require("../../_filters/find-by-slug");
-const stripLanguage = require("../../_filters/strip-language");
+const {findByUrl} = require("../../_filters/find-by-url");
 const md = require("markdown-it")();
 
 /* eslint-disable require-jsdoc,max-len */
@@ -46,14 +45,15 @@ function getPathItemsFromTopics(topics) {
  * it is a draft or not.
  * @param {Object} path A learning path.
  * @param {string} slug The current page slug.
+ * @param {string} lang Language of the page.
  * @return {string} The next pathItem slug or a terminating empty string.
  */
-function findNextPathItemBySlug(path, slug) {
+function findNextPathItemBySlug(path, slug, lang) {
   let next = "";
   const items = getPathItemsFromTopics(path.topics);
   const idx = items.indexOf(slug);
   for (let i = idx + 1; i < items.length; i++) {
-    const item = findBySlug(items[i]);
+    const item = findByUrl(`/${lang}/${items[i]}/`);
     if (!item.data.draft) {
       next = items[i];
       break;
@@ -83,7 +83,7 @@ function findNextCollectionItemBySlug(collection, slug) {
   return collection[idx + 1];
 }
 
-module.exports = ({back, backLabel, collection, path, slug}) => {
+module.exports = ({back, backLabel, collection, path, slug, lang}) => {
   let forward;
   let forwardLabel;
   let next;
@@ -102,12 +102,12 @@ module.exports = ({back, backLabel, collection, path, slug}) => {
     // oof.
     next = findCollectionItemBySlug(
       collection,
-      findNextPathItemBySlug(path, slug),
+      findNextPathItemBySlug(path, slug, lang),
     );
   }
 
   if (next) {
-    forward = stripLanguage(next.url);
+    forward = next.url;
     forwardLabel = next.data.title;
   } else {
     isSingle = true;

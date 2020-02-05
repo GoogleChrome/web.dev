@@ -1,7 +1,6 @@
 ---
 layout: layout
 title: Blog
-permalink: /en/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html
 override:tags: []
 description: Our latest news, updates, and stories for developers
 date: 2018-11-05
@@ -9,6 +8,7 @@ pagination:
   data: collections.posts
   size: 24
   alias: posts
+permalink: "/{{lang}}/blog/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
 ---
 
 {# *-landing-page classes are a holdover from devsite. #}

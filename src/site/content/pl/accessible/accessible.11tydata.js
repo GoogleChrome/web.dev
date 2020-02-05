@@ -14,25 +14,8 @@ module.exports = {
       disabilities.`,
     topics: [
       {
-        title: "Understand the diverse needs of users",
-        pathItems: ["what-is-accessibility"],
-      },
-      {
         title: "Make your site keyboard accessible",
-        pathItems: [
-          "keyboard-access",
-          "use-semantic-html",
-          "control-focus-with-tabindex",
-          "style-focus",
-        ],
-      },
-      {
-        title: "Understand semantics and basic screen reader support",
-        pathItems: [
-          "semantics-and-screen-readers",
-          "headings-and-landmarks",
-          "labels-and-text-alternatives",
-        ],
+        pathItems: ["control-focus-with-tabindex"],
       },
     ],
   },
