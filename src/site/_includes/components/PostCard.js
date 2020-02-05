@@ -20,7 +20,7 @@ const stripLanguage = require("../../_filters/strip-language");
 const md = require("../../_filters/md");
 const getImagePath = require("../../_utils/get-image-path");
 const getSrcsetRange = require("../../_utils/get-srcset-range");
-const blogTags = require("../../_data/blogTags");
+const postTags = require("../../_data/postTags");
 
 /* eslint-disable require-jsdoc,indent,max-len */
 
@@ -35,7 +35,7 @@ module.exports = ({post}) => {
   const displayedTags = [];
 
   for (const tag of data.tags) {
-    const foundTag = blogTags[tag.toLowerCase()];
+    const foundTag = postTags.tagDetails(tag.toLowerCase());
     if (foundTag) {
       displayedTags.push(foundTag);
     }

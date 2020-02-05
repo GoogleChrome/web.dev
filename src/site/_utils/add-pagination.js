@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+const constants = require("./constants");
+
 /**
  * Take array of posts and returns an array of paginated pages for the posts.
  * @param {Array<object>} posts Posts to paginate
@@ -21,7 +23,7 @@
  * @return {Array<{ title: string, href: string, description: string, tag: string, posts: Array<object>, index: number, pages: number }>} An array of items to display, including href and index.
  */
 module.exports = function addPagination(posts, additionalData = {}) {
-  const pageCount = 24;
+  const pageCount = constants.paginationCount;
   const paginated = [];
   const pages = Math.ceil(posts.length / pageCount);
 

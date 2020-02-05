@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const blogTags = require("../_data/blogTags");
+const postTags = require("../_data/postTags");
 const addPagination = require("../_utils/add-pagination");
 const postDescending = require("./post-descending");
 
@@ -46,12 +46,12 @@ module.exports = (collection) => {
   });
 
   let tags = [];
-  Object.keys(blogTags).forEach((tagName) => {
+  Object.keys(postTags.tags).forEach((tagName) => {
     if (!tagsMap.has(tagName)) {
       return;
     }
 
-    const tagData = blogTags[tagName];
+    const tagData = postTags.tagDetails(tagName);
     tags = tags.concat(addPagination(tagsMap.get(tagName), tagData));
   });
 

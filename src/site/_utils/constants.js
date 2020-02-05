@@ -14,21 +14,6 @@
  * limitations under the License.
  */
 
-const postTags = require("../_data/postTags");
-
-/**
- * @param {Array<string>} tags Array of tags.
- * @return {Array<object>} An array of tags urls, titles, and any other information.
- */
-module.exports = (tags) => {
-  const validTags = [];
-
-  for (const tag of tags) {
-    const tagData = postTags.tagDetails(tag);
-    if (tagData) {
-      validTags.push(tagData);
-    }
-  }
-
-  return validTags;
+module.exports = {
+  paginationCount: 24,
 };
