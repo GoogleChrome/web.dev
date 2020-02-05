@@ -194,7 +194,7 @@ The basic process for the frame loop is:
       <li>Call <code>XRSession.requestAnimationFrame()</code> again.</li>
       <li>Get the viewer's pose.</li>
       <li>Pass ('bind') the <code>WebGLFramebuffer</code> from the <code>XRWebGLLayer</code> to the <code>WebGLRenderingContext</code>.</li>
-      <li>For each <code>XRView</code>, get its <code>XRViewport</code> from the <code>XRWebGLLayer</code> and pass it to the <code>WebGLRenderingContext</code>.</li>
+      <li>Iterate over each <code>XRView</code> object, retrieving its <code>XRViewport</code> from the <code>XRWebGLLayer</code> and passing it to the <code>WebGLRenderingContext</code>.</li>
       <li>Draw something to the framebuffer.</li>
     </ol>
   </li>
