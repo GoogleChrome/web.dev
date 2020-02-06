@@ -89,7 +89,7 @@
   {% if path.slug === 'blog' %}
     {# Find next blog post #}
     {% ArticleNavigation {
-      back: '/' + lang + '/blog',
+      back: '/blog',
       backLabel: 'Return to all articles',
       collection: collections.posts,
       slug: page.fileSlug,
@@ -98,7 +98,7 @@
   {% else %}
     {# Find next item in this learning path #}
     {% ArticleNavigation {
-      back: '/' + lang + '/' + path.slug,
+      back: '/' + path.slug,
       backLabel: 'Return to all articles',
       path: path,
       collection: collections[path.slug],

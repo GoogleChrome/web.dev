@@ -16,6 +16,7 @@
 
 const {html} = require("common-tags");
 const {findByUrl} = require("../../_filters/find-by-url");
+const stripLanguage = require("../../_filters/strip-language");
 const md = require("markdown-it")();
 
 /* eslint-disable require-jsdoc,max-len */
@@ -107,7 +108,7 @@ module.exports = ({back, backLabel, collection, path, slug, lang}) => {
   }
 
   if (next) {
-    forward = next.url;
+    forward = stripLanguage(next.url);
     forwardLabel = next.data.title;
   } else {
     isSingle = true;
