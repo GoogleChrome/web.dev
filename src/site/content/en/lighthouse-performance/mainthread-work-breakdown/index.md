@@ -44,8 +44,7 @@ while the browser loaded your page.
 
 Many activities, like parsing CSS and laying out the page,
 can keep the main thread busy.
-However, parsing, compiling, and executing JavaScript is often the
-the biggest source of work on the main thread.
+However, parsing, compiling, and executing JavaScript is often the biggest source of work on the main thread.
 
 Consider these tactics to improve JavaScript performance during page load:
 
