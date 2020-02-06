@@ -28,6 +28,8 @@ module.exports = ({page, hero, alt, heroPosition, heroFit = "cover"}) => {
   return html`
     <img
       class="w-hero w-hero--${heroFit} ${heroPosition ? `w-hero--${heroPosition}` : ""}"
+      width="1600"
+      height="480"
       sizes="100vw"
       srcset="${srcsetRange.map((width) => html`
         ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
