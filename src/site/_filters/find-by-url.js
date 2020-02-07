@@ -21,11 +21,12 @@ let memo;
 
 /**
  * Memoize an eleventy collection into a hash for faster lookups.
- * Important: Memoization assumes that all post slugs are unique.
+ * Important: Memoization assumes that all post urls are unique.
  * @param {Array<Object>} collection An eleventy collection.
  * Typically collections.all
  * @return {Array<Object>} The original collection. We return this to make
  * eleventy.addCollection happy since it expects a collection of some kind.
+ * @see {@link https://github.com/11ty/eleventy/issues/399}
  */
 const memoize = (collection) => {
   if (memo && Object.keys(memo).length) {
