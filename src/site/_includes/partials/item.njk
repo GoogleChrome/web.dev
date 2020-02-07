@@ -11,7 +11,7 @@
       <li class="w-path-listitem">
         <a
           class="w-path-link"
-          href="{{ item.url }}"
+          href="{{ item.url | stripLanguage}}"
         >
           {{ item.data.title | md | safe }}
         </a>
