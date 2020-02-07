@@ -18,7 +18,7 @@ const isProd = Boolean(process.env.GAE_APPLICATION);
 
 const compression = require("compression");
 const express = require("express");
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 const localeHandler = require("./locale-handler.js");
 const buildRedirectHandler = require("./redirect-handler.js");
 
