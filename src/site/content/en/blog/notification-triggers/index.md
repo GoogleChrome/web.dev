@@ -143,7 +143,7 @@ const cancelScheduledNotification = async (tag) => {
 
 You can use the [Chrome DevTools Notifications panel][devtools] to debug notifications.
 To start debugging, press **Start recording events** ![Start recording events](record.png) or
-kbd>Control</kbd>+<kbd>E</kbd> (<kbd>Command</kbd>+<kbd>E</kbd> on Mac). Chrome DevTools
+<kbd>Control</kbd>+<kbd>E</kbd> (<kbd>Command</kbd>+<kbd>E</kbd> on Mac). Chrome DevTools
 records all notification events, including scheduled, displayed, and closed notifications,
 for three days, even when DevTools is closed.
 
