@@ -11,7 +11,6 @@ pretranslate:
     - "authors"
   
     ignore_patterns:
-    - "Native"
     - !ruby/regexp /{%\s?([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
 
   paths:
