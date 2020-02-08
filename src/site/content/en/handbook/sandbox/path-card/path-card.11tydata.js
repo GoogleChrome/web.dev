@@ -1,5 +1,6 @@
-const fast = require("../../../fast/fast.11tydata.js").path;
-const accessible = require("../../../accessible/accessible.11tydata.js").path;
+const fast = require("../../../pages/fast/fast.11tydata.js").path;
+const accessible = require("../../../pages/accessible/accessible.11tydata.js")
+  .path;
 const reliable = require("../../../reliable/reliable.11tydata.js").path;
 
 // =============================================================================

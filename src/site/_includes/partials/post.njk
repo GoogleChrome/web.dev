@@ -14,9 +14,9 @@
   {# Make sure Actions are first in the tab order. #}
   <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
 
-  <div class="w-layout-container--narrow w-post-breadcrumbs">
+  {# <div class="w-layout-container--narrow w-post-breadcrumbs">
     {% Breadcrumbs path %}
-  </div>
+  </div> #}
 
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
@@ -86,8 +86,7 @@
     {% endif %}
   </div>
 
-  {% if path.slug === 'blog' %}
-    {# Find next blog post #}
+  {# {% if path.slug === 'blog' %}
     {% ArticleNavigation {
       back: '/blog',
       backLabel: 'Return to all articles',
@@ -95,7 +94,6 @@
       slug: page.fileSlug
     } %}
   {% else %}
-    {# Find next item in this learning path #}
     {% ArticleNavigation {
       back: '/' + path.slug,
       backLabel: 'Return to all articles',
@@ -103,7 +101,7 @@
       collection: collections[path.slug],
       slug: page.fileSlug
     } %}
-  {% endif %}
+  {% endif %} #}
 
   {# Hide related content for now. #}
   {# <div>
