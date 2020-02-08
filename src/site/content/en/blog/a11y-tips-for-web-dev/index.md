@@ -171,10 +171,10 @@ that includes a quick check for color contrast ratio.
 
 ![Screenshot of the Chrome DevTools Inspect Element tooltip.](./inspect-element.jpg)
 
-I personally live with low vision and am embarrassed to say
-I'm that person who always zooms in on sites, their DevTools, and terminal.
-While supporting zoom is almost never at the top of anyone's list,
-optimizing for low-vision users is always appreciated… 🤓
+I personally live with low vision, and I often find myself zooming in on sites,
+their DevTools, and the terminal.
+While supporting zoom is almost never at the top of developers' to-do lists,
+it can make a world of difference to users like me.🤓
 
 **Hearing issues** mean a user may have issues hearing sound emitted from a page.
 
@@ -460,11 +460,16 @@ change its value, and even cause the element's visual presentation to change acc
 
 Color shouldn't be used as the only means of conveying information,
 such as indicating a status, prompting the user for a response,
-or distinguishing a visual custom component.
-For example, if you create a `<fancy-map>` component that uses color
-to distinguish between heavy, moderate, and light traffic,
-an alternative means of distinguishing traffic levels should also be made available.
-One solution might be to hover over an element to display information in a tooltip.
+or visualizing data.
+For example, if you have a pie chart,
+provide labels and values for each slice
+so users who have visual impairments can understand the information
+even if they can't tell where the slices begin and end:
+
+<figure class="w-figure w-figure--center">
+  <img src="./pie-chart.png" alt="A pie chart with labels and values to ensure accessibility.">
+  <figcaption class="w-figcaption">An accessible pie chart. (From the <a href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)" rel="noopener">W3C Web Accessibility Initiative</a>.)</figcaption>
+</figure>
 
 ### Is there sufficient contrast between text and images and their background?
 
@@ -481,7 +486,8 @@ as an aid when designing your component.
 
 Content that moves, scrolls, or blinks for more than five seconds
 should be able to be paused, stopped or hidden.
-In general, try to flash no more than three times per second.
+In general, avoid flashing content.
+If something must flash, make sure it flashes no more than three times per second.
 
 ## Accessibility Tooling
 A number of tools are available that can assist with
