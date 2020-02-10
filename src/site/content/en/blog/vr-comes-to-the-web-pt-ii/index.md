@@ -58,54 +58,61 @@ which I'm calling 'the game'.
 
 ## The players
 
-<dl>
-  <dt><code>XRViewerPose</code<></dt>
-  <dd>A pose is the position and orientation of something in 3D space. Both viewers
-  and input devices have a pose, but it's the viewer's pose we're concerned with
-  here. Both viewer and input device poses have a <code>transform</code> attribute
-  describing its position as a vector and its orientation as a quaternion
-  relative to the origin. The origin is specified based on the requested
-  reference space type when calling <code>XRSession.requestReferenceSpace()</code>.</br></br>
+### XRViewerPose
 
-  Reference spaces take a bit to explain. I cover them in depth in [yet to be
-  named AR article](link here). The sample I'm using as the basis for this article
-  uses a <code>'local'</code> reference space which means the origin is at the viewer's
-  position at the time of session creation without a well-defined floor, and its
-  precise position may vary by platform.</dd>
-  <dt><code>XRView</code></dt>
-  <dd>A view corresponds to a camera viewing the virtual scene. A view also has a
-  <code>transform</code> attribute describing it's position as a vector and its
-  orientation. These are provided both as a vector/quaternion pair and as an
-  equivalent matrix, you can use either representation depending on which best
-  fits your code. Each view corresponds to a display or a portion of a display
-  used by a device to present imagery to the viewer. <code>XRView</code> objects are
-  returned in an array from the <code>XRViewerPose</code> object. The number of views in
-  the array varies. On mobile devices an AR scene has one view, which may or may
-  not cover the device screen. Headsets typically have two views, one for each
-  eye.</dd>
-  <dt>XRWebGLLayer</dt>
-  <dd>Layers provide a source of bitmap images and descriptions of how those images
-  are to be rendered in the device. This description doesn't quite capture what
-  this player does. I've come to think of it as a middleman between a device and
-  a <code>WebGLRenderingContext</code>. MDN takes much the same view, stating that it
-  'provides a linkage' between the two. As such, it provides access to the other
-  players.</br></br>
-  In general, WebGL objects store state information for rendering 2D and 3D
-  graphics. The <code><a href="https://wiki.developer.mozilla.org/en-US/docs/Web/API/XRWebGLLayer">XRWebGLLayer class</a></code></dd>
-  <dt><code>WebGLFramebuffer</code></dt>
-  <dd>A framebuffer provides image data to the <code>WebGLRenderingContext</code>. After
-  retrieving it from the <code>XRWebGLLayer</code>, you simply pass it to the current
-  <code>WebGLRenderingContext</code>. Other than calling <code>bindFramebuffer()</code> (more about
-  that later) you will never access this object directly. You will merely pass
-  it from the <code>XRWebGLLayer</code> to the <code>WebGLRenderingContext</code>.</dd>
-  <dt>XRViewport</dt>
-  <dd>A viewport provides the coordinates and dimensions of a rectangular region in
-  the <code>WebGLFramebuffer</code>.</dd>
-  <dt>WebGLRenderingContext</dt>
-  <dd>A rendering context is a programmatic access point for a canvas (the space
-  we're drawing on). To do this, it needs both a <code>WebGLFramebuffer</code> and an
-  <code>XRViewport</code>.</dd>
-</dl>
+A pose is the position and orientation of something in 3D space. Both viewers
+and input devices have a pose, but it's the viewer's pose we're concerned with
+here. Both viewer and input device poses have a `transform` attribute describing
+its position as a vector and its orientation as a quaternion relative to the
+origin. The origin is specified based on the requested reference space type when
+calling `XRSession.requestReferenceSpace()`.
+
+Reference spaces take a bit to explain. I cover them in depth in [yet to be
+named AR article](link here). The sample I'm using as the basis for this article
+uses a `'local'` reference space which means the origin is at the viewer's
+position at the time of session creation without a well-defined floor, and its
+precise position may vary by platform.
+
+### XRView
+
+A view corresponds to a camera viewing the virtual scene. A view also has a
+`transform` attribute describing it's position as a vector and its orientation.
+These are provided both as a vector/quaternion pair and as an equivalent matrix,
+you can use either representation depending on which best fits your code. Each
+view corresponds to a display or a portion of a display used by a device to
+present imagery to the viewer. `XRView` objects are returned in an array from
+the `XRViewerPose` object. The number of views in the array varies. On mobile
+devices an AR scene has one view, which may or may not cover the device screen.
+Headsets typically have two views, one for each eye.
+
+### XRWebGLLayer
+
+Layers provide a source of bitmap images and descriptions of how those images
+are to be rendered in the device. This description doesn't quite capture what
+this player does. I've come to think of it as a middleman between a device and a
+`WebGLRenderingContext`. MDN takes much the same view, stating that it 'provides
+a linkage' between the two. As such, it provides access to the other players.
+
+In general, WebGL objects store state information for rendering 2D and 3D
+graphics.
+
+### WebGLFramebuffer
+
+A framebuffer provides image data to the `WebGLRenderingContext`. After
+retrieving it from the `XRWebGLLayer`, you simply pass it to the current
+`WebGLRenderingContext`. Other than calling `bindFramebuffer()` (more about that
+later) you will never access this object directly. You will merely pass it from
+the `XRWebGLLayer` to the WebGLRenderingContext.
+
+### XRViewport
+
+A viewport provides the coordinates and dimensions of a rectangular region in
+the `WebGLFramebuffer`.
+
+### WebGLRenderingContext
+
+A rendering context is a programmatic access point for a canvas (the space we're
+drawing on). To do this, it needs both a `WebGLFramebuffer` and an XRViewport.
 
 Notice the relationship between `XRWebGLLayer` and `WebGLRenderingContext`. One
 corresponds to the viewer's device and the other corresponds to the web page.
