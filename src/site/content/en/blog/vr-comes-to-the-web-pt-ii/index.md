@@ -33,7 +33,7 @@ illusion of movement.
 
 ## What this article is not
 
-WebGL and WebGL2 are the only means of rendering content during a frame loopß in
+WebGL and WebGL2 are the only means of rendering content during a frame loop in
 a WebXR App. Fortunately many frameworks provide a layer of abstraction on top
 of WebGL and WebGL2. Such frameworks include [three.js](https://threejs.org/),
 [babylonjs](https://www.babylonjs.com/), and
