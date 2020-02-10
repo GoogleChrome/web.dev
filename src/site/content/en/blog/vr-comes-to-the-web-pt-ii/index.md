@@ -7,7 +7,7 @@ date: 2020-02-12
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
-  Virtual reality came to the web in Chrome 79. Based on the WebXR Devicer API,
+  Virtual reality came to the web in Chrome 79. Based on the WebXR Device API,
   this launch is the foundation for both augmented and virtual reality. This
   article is the second in a series, focusing on the frame loop, the part of
   an XR session where images are shown to a viewer. Other browsers will soon be
