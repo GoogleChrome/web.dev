@@ -44,7 +44,7 @@ with WebXR.
 This article is neither a WebGL nor a framework tutorial. It explains basics of
 a frame loop using the Immersive Web Working Group's Immersive VR Session sample
 ([demo](https://immersive-web.github.io/webxr-samples/immersive-vr-session.html)
-[source](https://github.com/immersive-web/webxr-samples/blob/master/immersive-vr-session.html).
+[source](https://github.com/immersive-web/webxr-samples/blob/master/immersive-vr-session.html)).
 If you want to dive into WebGL or one of the frameworks, the internet provides a
 growing list of articles.
 
