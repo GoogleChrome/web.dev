@@ -19,9 +19,8 @@ The WebXR Device API shipped last fall in Chrome 79. As stated then, Chrome's
 implementation of the API is a work in progress. Chrome is happy to announce
 that some of the work is finished. In Chrome 81, two new features have arrived:
 
-[Augmented reality session
-types](https://www.chromestatus.com/features/5450241148977152). [Hit
-testing](https://www.chromestatus.com/features/4755348300759040).
+* [Augmented reality session types](https://www.chromestatus.com/features/5450241148977152).
+* [Hit testing](https://www.chromestatus.com/features/4755348300759040).
 
 This article covers augmented reality. If you've already used the WebXR Device
 API, you'll be happy to know there's very little new to learn. Entering a WebXR
