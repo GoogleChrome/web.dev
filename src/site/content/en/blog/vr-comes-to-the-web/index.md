@@ -83,7 +83,7 @@ request anything sensitive from the viewer. Web pages or apps must be served
 over HTTPS. The API itself is designed to protect information obtained from
 sensors and cameras, which it needs in order to function.
 
-### Requesting a session
+### Request a session
 
 Entering an XR session requires a user gesture. To get that, use feature
 detection and make a call to `isSessionSupported()`. In the example below, I've
@@ -104,7 +104,7 @@ if (navigator.xr) {
   if (supported) {
     xrButton.addEventListener('click', onButtonClicked);
     xrButton.textContent = 'Enter VR';
-    xrButton.disabled = false;
+    xrButton.enabled = supported; // supported is Boolean
   }
 }
 ```
@@ -131,15 +131,19 @@ Notice the object hierarchy in this code. It moves from `navigator` to `xr` to
 an `XRSession` instance. In early versions of the API, a script had to request a
 device before requesting a session. Now, the device is acquired implicitly.
 
-### Entering a session
+### Enter a session
 
 After getting a session, I need to start it and enter it. But first, I need to
 set up a few things. A session needs an `onend` event handler so that the app or
 web page can be reset when the user exits.
 
 I'll also need a `<canvas>` element to draw my scene on. It needs to be an
-XR-compatible WebGL context. All drawing is done using the WebGL API or a
-WebGL-based framework such as [Three.js](https://threejs.org/).
+XR-compatible
+[WebGLRenderingContext](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext)
+or
+[WebGL2RenderingContext](https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext).
+All drawing is done using them or a WebGL-based framework such as
+[Three.js](https://threejs.org/).
 
 Now that I have a place to draw, I need a source of content to draw on
 it. For that, I create an instance of `XRWebGLLayer`. I associate it with the
@@ -158,10 +162,10 @@ function onSessionStarted(xrSession) {
   xrSession.addEventListener('end', onSessionEnded);
 
   let canvas = document.createElement('canvas');
-  gl = canvas.getContext('webgl', { xrCompatible: true });
+  webGLRenContext = canvas.getContext('webgl', { xrCompatible: true });
 
   xrSession.updateRenderState({
-    baseLayer: new XRWebGLLayer(session, gl)
+    baseLayer: new XRWebGLLayer(xrSession, webGLRenContext)
   });
 
   xrSession.requestReferenceSpace('local-floor')
@@ -176,7 +180,7 @@ After getting a reference space, I call `XRSession.requestAnimationFrame()`.
 This is the start of presenting virtual content, which is done in the frame
 loop.
 
-### Running a frame loop
+### Run a frame loop
 
 The frame loop is a user-agent controlled infinite loop in which content is
 repeatedly drawn to the screen. Content is drawn in discrete blocks called
@@ -213,9 +217,8 @@ the information needed to render a single frame to the display. The
 
 Before doing anything else, I'm going to request the next animation frame. As
 previously stated, the timing of frames is determined by the user agent based on
-the underlying hardware. Requesting the next frame first ensures that if
-something during the callback throws an error I can ensure that the frame loop
-continues.
+the underlying hardware. Requesting the next frame first ensures that
+the frame loop continues if something during the callback throws an error.
 
 ```js
 function onXRFrame(hrTime, xrFrame) {
