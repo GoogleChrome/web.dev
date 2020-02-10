@@ -67,11 +67,11 @@ its position as a vector and its orientation as a quaternion relative to the
 origin. The origin is specified based on the requested reference space type when
 calling `XRSession.requestReferenceSpace()`.
 
-Reference spaces take a bit to explain. I cover them in depth in [yet to be
-named AR article](link here). The sample I'm using as the basis for this article
-uses a `'local'` reference space which means the origin is at the viewer's
-position at the time of session creation without a well-defined floor, and its
-precise position may vary by platform.
+Reference spaces take a bit to explain. I cover them in depth in [Augmented
+reality](https://web.dev/web-ar/). The sample I'm using as the basis for this
+article uses a `'local'` reference space which means the origin is at the
+viewer's position at the time of session creation without a well-defined floor,
+and its precise position may vary by platform.
 
 ### XRView
 
