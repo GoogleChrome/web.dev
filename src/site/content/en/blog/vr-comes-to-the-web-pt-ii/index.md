@@ -304,7 +304,7 @@ top](#what-this-article-is-not).
 
 Thißs is not the end of WebXR updates or articles. You can find a [reference for
 all of WebXR's interfaces and
-members](https://wiki.developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
+members](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
 at MDN. For upcoming enhancements to the interfaces themselves, follow
 individual features on [Chrome
 Status](https://www.chromestatus.com/features#WebXR).
