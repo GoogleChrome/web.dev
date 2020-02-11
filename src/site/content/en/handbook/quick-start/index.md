@@ -13,7 +13,7 @@ Content creation for web.dev has three phases: planning, writing, and publishing
 1. If you're a Googler or have access to a Googler, use the [content proposal form][form] to submit
    your new content request. If you don't have access to a Googler, use the
    [content issue template](https://github.com/googlechrome/web.dev/issues/new?template=collection_proposal.md).
-1. The web.dev team will take a look to see if the idea fits with the [goals of the site](/about). If the idea is approved, it gets slated for a publication date!
+1. The web.dev team will take a look to see if the idea fits with the goals of the site. If the idea is approved, it gets slated for a publication date!
 
 {% Aside 'caution' %}
 If the piece you'd like to publish is time sensitive, make sure to submit the issue at least **one month** before the target publication date so there's enough time to move it through the writing process.
@@ -21,12 +21,12 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 
 ## Writing
 
-1. Read the[Content guidelines](/handbook/#content-guidelines) to understand how to create high-quality
+1. Read the [Content guidelines](/handbook/#content-guidelines) to understand how to create high-quality
    content. The higher the quality of your content, the less time and energy you'll have to spend
    incorporating feedback.
 1. **After your content proposal is approved**, create a copy of the 
    [web.dev content template][template] to draft your content.
-1. Self-review your content[web.dev content checklist](/handbook/content-checklist) to find and fix
+1. Self-review your content with the [web.dev content checklist](/handbook/content-checklist) to find and fix
    common problems. The more of these problems you fix yourself, the faster your review will go.
 1. When your first draft is ready, leave a comment in your GitHub issue and ask for a review.
 
@@ -40,9 +40,9 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
 1. Once your PR is merged, the content will be deployed to the site immediately.
 
 {% Aside %}
-  Googlers: Check out [web.dev process][process] for more detailed information about web.dev's content process.
+  Googlers: Check out [web.dev process](https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY)
+  for more detailed information about web.dev's content process.
 {% endAside %}
 
 [form]: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform?fbzx=7994504531518856644
 [template]: https://docs.google.com/document/d/1lgaNIEnXZf-RB8_p9RK22QEgpXJqnu77pLWVWVy4nuw/edit?usp=sharing
-[process]: https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY
