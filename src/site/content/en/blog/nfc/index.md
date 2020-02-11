@@ -12,7 +12,7 @@ description: |
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - capabilities
-  - progressive-web-apps
+  - fugu
 ---
 
 {% Aside %}
@@ -26,9 +26,9 @@ web](https://developers.google.com/web/updates/capabilities).
 ## What is Web NFC? {: #what }
 
 Web NFC provides sites the ability to read and write to NFC tags when they are
-brought in close proximity to the user's device (usually 5-10 cm, 2-4 inches).
-The current scope is limited to NDEF, a lightweight binary message format that
-works across different tag formats.
+in close proximity to the user's device (usually 5-10 cm, 2-4 inches).
+The current scope is limited to NFC Data Exchange Format (NDEF), a lightweight
+binary message format that works across different tag formats.
 
 {% Aside 'gotchas' %}
 Web NFC is limited to NDEF because the security properties of reading and
@@ -45,7 +45,7 @@ ISO-DEP, NFC-A/B, NFC-F) and Host-based Card Emulation (HCE) are not supported.
 
 Examples of sites that may use Web NFC include:
 - Museums and art galleries can display additional information about a display
-  when the user touches their device to a NFC card near the exhibit.
+  when the user touches their device to an NFC card near the exhibit.
 - Inventory management sites can read or write data to the NFC tag on a
   container to update information on its contents.
 - Conference sites can use it to scan NFC badges during the event.
@@ -97,9 +97,9 @@ enable the `#enable-webnfc` flag in `chrome://flags`.
 
 ### Feature detection {: #feature-detection }
 
-Detecting if Web NFC is supported can be done by checking the existance of
-`NDEFReader` and `NDEFWriter` objects. Note that this does not guarantee that
-NFC hardware is available.
+To check for Web NFC support, test the existance of `NDEFReader` and
+`NDEFWriter` objects. Note that this does not guarantee that NFC hardware is
+available.
 
 ```js
 if ('NDEFReader' in window) { /* Scan NFC tags */ }
@@ -109,7 +109,7 @@ if ('NDEFWriter' in window) { /* Write NFC tags */ }
 ### Terminology {: #terminology }
 
 NFC stands for Near Field Communications, a short-range wireless technology
-operating at 13.56 MHz which enables communication between devices at a distance
+operating at 13.56 MHz that enables communication between devices at a distance
 less than 10 cm and a transmission rate of up to 424 kbit/s.
 
 An NFC tag is a passive NFC device, powered by magnetic induction when an active
@@ -150,10 +150,10 @@ To scan NFC tags, first instantiate a new `NDEFReader` object. Calling `scan()`
 returns a promise. The [user may be prompted] if access was not previously
 granted. The promise will resolve if the following conditions are all met:
 
-- User has allowed website to interact with NFC devices when they tap their
+- User has allowed the website to interact with NFC devices when they tap their
   phone.
-- User's phone supports NFC.
-- User has enabled NFC on their phone.
+- The user's phone supports NFC.
+- The user has enabled NFC on their phone.
 
 Once the promise is resolved, incoming NDEF messages are available by
 subscribing to "reading" events via an event listener. You should also subscribe
@@ -182,10 +182,9 @@ contains two properties unique to it:
   00-11-22-33-44-55-66), or an empty string if none is available.
 - `message` represents the NDEF message stored in the NFC tag.
 
-To read the content of the NDEF message, loop through the `records` property of
-`message` and based on their `recordType`, handle each record's `data`
-[appropriately]. It is exposed as a DataView as it allows handling cases where
-data is encoded in UTF-16.
+To read the content of the NDEF message, loop through `message.records` and
+process their `data` members [appropriately] based on their `recordType`.
+The `data` member is exposed as a [DataView] as it allows handling cases where data is encoded in UTF-16.
 
 ```js
 reader.onreading = event => {
@@ -215,13 +214,11 @@ The [cookbook](#cookbook) contains many examples of how to read NDEF records bas
 their types.
 {% endAside %}
 
-It is also possible to filter incoming NDEF messages from NFC tags by passing
-some options to the `scan()` method:
+You can also filter NDEF messages by passing options to `scan()`.
 
-- `id` is used for matching the record identifier of each NDEFRecord.
-- `recordType` is used for matching the type of each NDEFRecord.
-- `mediaType` pattern is used for matching the `mediaType` property of each
-  NDEFRecord.
+- `id` matches the record identifier of each NDEFRecord.
+- `recordType` matches the type of each NDEFRecord.
+- `mediaType` pattern matches the `mediaType` property of each NDEFRecord.
 
 ```js
 // Accept only NDEF messages with JSON content
@@ -257,12 +254,11 @@ will resolve if the following conditions are all met:
 
 - User has allowed the website to interact with NFC devices when they tap their
   phone.
-- User's phone supports NFC.
-- User has enabled NFC on their phone.
+- The user's phone supports NFC.
+- The user has enabled NFC on their phone.
 - User has tapped an NFC tag and an NDEF message has been successfully written.
 
-Writing a text record to an NFC tag is straightforward. Simply pass a string to
-the `write()` method.
+To write text to an NFC tag, pass a string to the `write()` method.
 
 ```js
 const writer = new NDEFWriter();
@@ -276,10 +272,10 @@ writer.write(
 ```
 
 To write a URL record to an NFC tag, pass a dictionary that represents an NDEF
-message to the `write()` method. In the example below, the NDEF message is a
-dictionary with a `records` key. Its value is an array of records - in this
-case, a URL record defined as an object with a `recordType` key set to `"url"`
-and a `data` key set to the URL string.
+message to `write()`. In the example below, the NDEF message is a dictionary
+with a `records` key. Its value is an array of records - in this case, a URL
+record defined as an object with a `recordType` key set to `"url"` and a `data`
+key set to the URL string.
 
 ```js
 const writer = new NDEFWriter();
@@ -298,7 +294,7 @@ It is also possible to write multiple records to an NFC tag.
 const writer = new NDEFWriter();
 writer.write({ records: [
     { recordType: "url", data: "https://w3c.github.io/web-nfc/" },
-    { recordType: "url", data: "https://web.dev/web-nfc/" }
+    { recordType: "url", data: "https://web.dev/nfc/" }
 ]}).then(() => {
   console.log("Message written.");
 }).catch(error => {
@@ -311,7 +307,7 @@ The [cookbook](#cookbook) contains many examples of how to write other types of
 NDEF records.
 {% endAside %}
 
-If an NFC tag should be read while performing a NFC write operation, set the
+If an NFC tag should be read while performing an NFC write operation, set the
 `ignoreRead` property to `false` in the options passed to the `write()` method.
 
 ```js
@@ -330,10 +326,10 @@ reader.scan().then(() => {
 });
 ```
 
-If the NFC tag contains an NDEF message that is not meant to be overwritten, it
-is possible to set the `overwrite` property to `false` in the options passed to
-the `write()` method. In that case, the returned promise will reject if an NDEF
-message is already stored in the NFC tag.
+If the NFC tag contains an NDEF message that is not meant to be overwritten, set
+the `overwrite` property to `false` in the options passed to the `write()`
+method. In that case, the returned promise will reject if an NDEF message is
+already stored in the NFC tag.
 
 ```js
 const writer = new NDEFWriter();
@@ -360,8 +356,8 @@ awareness and control over NFC use.
   <figcaption class="w-figcaption">Web NFC user prompt</figcaption>
 </figure>
 
-Web NFC is only available to top-level frames, secure browsing contexts (HTTPS
-only), and origins must first request the `"nfc"` [permission] while handling a
+Web NFC is only available to top-level frames and secure browsing contexts (HTTPS
+only). Origins must first request the `"nfc"` [permission] while handling a
 user gesture (e.g a button click). The NDEFReader `scan()` and NDEFWriter
 `write()` methods trigger a user prompt, if access was not previously granted.
 
@@ -401,13 +397,12 @@ document.onvisibilitychange = event => {
 
 ## Cookbook {: #cookbook }
 
-Because it is always better to start coding with examples, here are some that
-may help.
+Here's some code samples to get you started.
 
 ### Check for permission
 
-The [Permissions API] allows checking whether the `"nfc"` permission was granted
-previously. This example shows how to scan NFC tags without user interaction if
+The [Permissions API] allows checking whether the `"nfc"` permission was
+granted. This example shows how to scan NFC tags without user interaction if
 access was previously granted, or show a button otherwise. Note that the same
 mechanism works for writing NFC tags as it uses the same permission under the
 hood.
@@ -474,8 +469,7 @@ function readTextRecord(record) {
 }
 ```
 
-Writing a simple text record can be done by passing a string to the NDEFWriter
-`write()` method.
+To write a simple text record, pass a string to the NDEFWriter `write()` method.
 
 ```js
 const writer = new NDEFWriter();
@@ -508,7 +502,7 @@ await writer.write({ records: [textRecord] });
 
 ### Read and write a URL record
 
-The URL record's `data` can be decoded with a `TextDecoder`.
+Use `TextDecoder` to decode the record's `data`.
 
 ```js
 function readUrlRecord(record) {
@@ -537,7 +531,7 @@ await writer.write({ records: [urlRecord] });
 
 The `mediaType` property of a MIME type record represents the MIME type of the
 NDEF record payload so that `data` can be properly decoded. For instance, use
-JSON.parse to decode JSON text and an Image element to decode image data.
+`JSON.parse` to decode JSON text and an Image element to decode image data.
 
 ```js
 function readMimeRecord(record) {
@@ -562,8 +556,8 @@ To write a MIME type record, pass an NDEF message dictionary to the NDEFWriter
 `write()` method. The MIME type record contained in the NDEF message is defined
 as an object with a `recordType` key set to `"mime"`, a `mediaType` key set to
 the actual MIME type of the content, and a `data` key set to an object that can
-be either an ArrayBuffer or provides a view on to an ArrayBuffer (e.g.
-Uint8Array, DataView).
+be either an `ArrayBuffer` or provides a view on to an `ArrayBuffer` (e.g.
+`Uint8Array`, `DataView`).
 
 ```js
 const encoder = new TextEncoder();
@@ -618,7 +612,7 @@ await writer.write({ records: [absoluteUrlRecord] });
 
 A smart poster record (used in magazine advertisements, fliers, billboards,
 etc.), describes some web content as an NDEF record that contains an NDEF
-message as payload. Call `toRecords()` to transform `data` to a list of
+message as its payload. Call `toRecords()` to transform `data` to a list of
 records contained in the smart poster record. It should have a URL record, a
 text record for the title, a MIME type record for the image, and some [custom
 local type records] such as `":t"`, `:act`, and "`:s`" respectively for the
@@ -629,7 +623,7 @@ Smart poster records will be supported in a later version of Chrome.
 {% endAside %}
 
 Local type records are unique only within the local context of the containing
-NDEF record. They are used when the meaning of the types doesn't matter outside
+NDEF record. Use them when the meaning of the types doesn't matter outside
 of the local context of the containing record and when storage usage is a hard
 constraint. Local type record names always start with `:` in Web NFC (e.g.
 `:t`, `:s`, `:act`). This is to differentiate a text record from a local type
@@ -724,7 +718,7 @@ await writer.write({ records: [smartPosterRecord] });
 To create application defined records, use external type records. These may
 contain an NDEF message as payload that is accessible with `toRecords()`. Their
 name contains the domain name of the issuing organization, a colon and a type
-name that is at least one character long, for instance "example.com:foo".
+name that is at least one character long, for instance `"example.com:foo"`.
 
 ```js
 function readExternalTypeRecord(externalTypeRecord) {
@@ -745,10 +739,10 @@ function readExternalTypeRecord(externalTypeRecord) {
 To write an external type record, pass an NDEF message dictionary to the
 NDEFWriter `write()` method. The external type record contained in the NDEF
 message is defined as an object with a `recordType` key set to the name of the
-external type and a `data` key set to an object that represents (once again) an
-NDEF message contained in the external type record.  Note that the `data` key
-can also be either an ArrayBuffer or provides a view on to an ArrayBuffer (e.g.
-Uint8Array, DataView).
+external type and a `data` key set to an object that represents an NDEF message
+contained in the external type record. Note that the `data` key can also be
+either an `ArrayBuffer` or provides a view on to an `ArrayBuffer` (e.g.
+`Uint8Array`, `DataView`).
 
 ```js
 const externalTypeRecord = {
@@ -908,4 +902,5 @@ contributors deserve special recognition!
 [material.io]: https://material.io/resources/icons/?icon=nfc&style=baseline
 [appropriately]: https://w3c.github.io/web-nfc/#data-mapping
 [custom local type records]: https://w3c.github.io/web-nfc/#smart-poster-record
+[DataView]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
 <!-- lint enable definition-case -->
