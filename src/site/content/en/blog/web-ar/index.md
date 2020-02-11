@@ -267,3 +267,5 @@ published a [hit test article](https://web.dev/hit-test) which explains an API
 for detecting surfaces and placing virtual items in a real-world camera view.
 Check them out and watch The web.dev blog for more
 articles in the year to come.
+
+Photo by [Daniel Frank](https://unsplash.com/@fr3nks) on [Unsplash](https://unsplash.com/)
