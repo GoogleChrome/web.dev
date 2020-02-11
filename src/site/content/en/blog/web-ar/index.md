@@ -1,13 +1,17 @@
 ---
-title: Augmented reality
-subhead: You may already know how to use it.
+title: Augmented reality: You may already know it
+subhead: If you've used the WebXR Device API already, you're already there.
 authors:
   - joemedley
 date: 2020-02-12
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
-  TBD
+  If you've already used the WebXR Device API, you'll be happy to know there's
+  very little new to learn. Entering a WebXR session is largely the same.
+  Running a frame loop is largely the same. The differences lie in
+  configurations that allow content to be shown appropriately for augmented
+  reality.
 tags:
   - post
   - augmented-reality
@@ -46,10 +50,10 @@ at least once. You'll need a modern Android phone with Chrome 81 or later.
 
 ## What's it useful for?
 
-Augmented reality will be a valuable addition to a lot of existing web pages by
-allowing them to implement AR use cases without leaving the browser. For
-example, it can help people learn on education sites, and allow potential buyers
-to visualize objects in their home while shopping.
+Augmented reality will be a valuable addition to a lot of existing or new web
+pages by allowing them to implement AR use cases without leaving the browser.
+For example, it can help people learn on education sites, and allow potential
+buyers to visualize objects in their home while shopping.
 
 Consider the second use case. Imagine simulating placing a life-size
 representation of a virtual object in a real scene. Once placed, the image stays
