@@ -42,7 +42,7 @@ const initialState = {
 
   // When a user lands on the page, check if they have accepted our
   // cookie policy.
-  userAcceptsCookies: false,
+  userAcceptsCookies: config.prod ? false : true,
 
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,
