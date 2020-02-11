@@ -33,8 +33,8 @@ session and that you know how to run a frame loop. If you're not familiar with
 these concepts, you should read the earlier articles in this series.
 
 * [Virtual reality comes to the web](https://web.dev/vr-comes-to-the-web/).
-* [Virtual reality comes to the web, part II]()
-* [Web AR: you may already know how to use it]()
+* [Virtual reality comes to the web, part II](https://web.dev/vr-comes-to-the-web-pt-ii/)
+* [Web AR: you may already know how to use it](https://web.dev/web-ar)
 
 ## The immersive AR session sample
 
@@ -65,7 +65,7 @@ point, regardless of where you tapped the screen. The reticle continues to move
 with your device.
 
 <figure class="w-figure  w-figure--right">
-  <img src="reticles.png" alt="A reticle rendered on a wall,
+  <img src="./reticles.png" alt="A reticle rendered on a wall,
     Lax, or Strict depending on their context" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
     The reticle is a temporary image that aids in placing an object in augmented reality.
@@ -91,7 +91,9 @@ When requesting a session, you must request `'hit-test'` in the
 `requiredFeatures` array as shown below.
 
 ```js
-navigator.xr.requestSession('immersive-ar', {requiredFeatures: ['local', 'hit-test']})
+navigator.xr.requestSession('immersive-ar', {
+  requiredFeatures: ['local', 'hit-test']
+})
 .then((session) => {
   // Do something with the session
 });
@@ -282,7 +284,7 @@ function onXRFrame(hrTime, xrFrame) {
 ## Placing an object
 
 An object is placed in AR when the user taps the screen. I already added a
-`select` event handler to the session. (See above.)
+`select` event handler to the session. ([See above](#entering-a-session).)
 
 The important thing in this step is knowing where to place it. Since the moving
 reticle gives you a constant source of hit tests, the simplest way to place an
