@@ -42,9 +42,9 @@ const initialState = {
 
   // When a user lands on the page, check if they have accepted our
   // cookie policy.
-  // We disable this check in dev and test environments so the cookie banner
-  // doesn't interfere with testing.
-  userAcceptsCookies: config.prod ? false : true,
+  // We automatically accept cookies in dev and test environments so the cookie
+  // banner doesn't interfere with tests.
+  userAcceptsCookies: !config.prod,
 
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,

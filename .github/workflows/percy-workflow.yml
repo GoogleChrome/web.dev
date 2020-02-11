@@ -1,5 +1,16 @@
 name: Percy
-on: [push, pull_request]
+
+# If you need to specify activity types or configuration for an event, you must
+# configure each event separately. You must append a colon (:) to all events,
+# including events without configuration.
+on:
+  push:
+    branches:
+      - master
+# By default, runs when a pull_request's activity type is opened, synchronize,
+# or reopened
+  pull_request:
+
 jobs:
   build:
     runs-on: ubuntu-latest
