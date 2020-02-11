@@ -44,8 +44,8 @@ ISO-DEP, NFC-A/B, NFC-F) and Host-based Card Emulation (HCE) are not supported.
 ## Suggested use cases {: #use-cases }
 
 Examples of sites that may use Web NFC include:
-- Museums and art galleries can display more information about a display when
-  the user touches their device to a NFC card near the exhibit.
+- Museums and art galleries can display additional information about a display
+  when the user touches their device to a NFC card near the exhibit.
 - Inventory management sites can read or write data to the NFC tag on a
   container to update information on its contents.
 - Conference sites can use it to scan NFC badges during the event.
@@ -97,9 +97,9 @@ enable the `#enable-webnfc` flag in `chrome://flags`.
 
 ### Feature detection {: #feature-detection }
 
-Detecting if Web NFC is supported can be done by checking `NDEFReader` and
-`NDEFWriter` objects. Note that this does not guarantee that NFC hardware is
-available.
+Detecting if Web NFC is supported can be done by checking the existance of
+`NDEFReader` and `NDEFWriter` objects. Note that this does not guarantee that
+NFC hardware is available.
 
 ```js
 if ('NDEFReader' in window) { /* Scan NFC tags */ }
@@ -113,7 +113,8 @@ operating at 13.56 MHz which enables communication between devices at a distance
 less than 10 cm and a transmission rate of up to 424 kbit/s.
 
 An NFC tag is a passive NFC device, powered by magnetic induction when an active
-NFC device (.e.g a phone) is in proximity range.
+NFC device (.e.g a phone) is in proximity range. NFC tags come in many forms and
+fashions, as stickers, credit cards, arm wrists, etc.
 
 <figure class="w-figure">
   <img src="./nfc-tag.jpg" alt="Photo of a transparent NFC tag">
@@ -164,7 +165,7 @@ const reader = new NDEFReader();
 reader.scan().then(() => {
   console.log("Scan started successfully.");
   reader.onerror = () => {
-    console.log("Argh! Cannot read data from the NFC tag. Try another one?");
+    console.log("Cannot read data from the NFC tag. Try another one?");
   };
   reader.onreading = event => {
     console.log("NDEF message read.");
@@ -174,7 +175,7 @@ reader.scan().then(() => {
 });
 ```
 
-When an NFC tag is in proximity range, a NDEFReadingEvent event is fired. It
+When an NFC tag is in proximity range, a `NDEFReadingEvent` event is fired. It
 contains two properties unique to it:
 
 - `serialNumber` represents the serial number of the device (.e.g
@@ -207,8 +208,12 @@ reader.onreading = event => {
 };
 ```
 
-Tip: The [cookbook] contains many examples of how to read NDEF records based on
+
+
+{% Aside %}
+The [cookbook](#cookbook) contains many examples of how to read NDEF records based on
 their types.
+{% endAside %}
 
 It is also possible to filter incoming NDEF messages from NFC tags by passing
 some options to the `scan()` method:
@@ -301,8 +306,10 @@ writer.write({ records: [
 });
 ```
 
-Tip: The [cookbook] contains many examples of how to write other types of NDEF
-records.
+{% Aside %}
+The [cookbook](#cookbook) contains many examples of how to write other types of
+NDEF records.
+{% endAside %}
 
 If an NFC tag should be read while performing a NFC write operation, set the
 `ignoreRead` property to `false` in the options passed to the `write()` method.
@@ -376,7 +383,7 @@ pattern found in the other file and device-access APIs.
 To perform a scan or write, the web page must be visible when the user touches
 an NFC tag with their device. The browser uses haptic feedback to indicate a
 tap. Access to the NFC radio is blocked if the display is off or the device is
-locked. For backgrounded web pages, receiving and pushing NFC content are
+locked. For non visible web pages, receiving and pushing NFC content are
 suspended, and resumed when a web page becomes visible again.
 
 Thanks to the [Page Visibility API], it is possible to track when document
@@ -551,11 +558,11 @@ function readMimeRecord(record) {
 }
 ```
 
-To write a MIME type record, pass an NDEF message dictionary  to the NDEFWriter
+To write a MIME type record, pass an NDEF message dictionary to the NDEFWriter
 `write()` method. The MIME type record contained in the NDEF message is defined
 as an object with a `recordType` key set to `"mime"`, a `mediaType` key set to
 the actual MIME type of the content, and a `data` key set to an object that can
-be either an ArrayBuffer or provides a view on to an ArrayBuffer (.e.g.
+be either an ArrayBuffer or provides a view on to an ArrayBuffer (e.g.
 Uint8Array, DataView).
 
 ```js
@@ -609,9 +616,9 @@ await writer.write({ records: [absoluteUrlRecord] });
 
 ### Read and write a smart poster record
 
-A smart poster record (often used in magazine advertisements, fliers,
-billboards, etc.), describes some web content as an NDEF record that contains an
-NDEF message as payload. Call `toRecords()` to transform `data` to a list of
+A smart poster record (used in magazine advertisements, fliers, billboards,
+etc.), describes some web content as an NDEF record that contains an NDEF
+message as payload. Call `toRecords()` to transform `data` to a list of
 records contained in the smart poster record. It should have a URL record, a
 text record for the title, a MIME type record for the image, and some [custom
 local type records] such as `":t"`, `:act`, and "`:s`" respectively for the
@@ -624,7 +631,7 @@ Smart poster records will be supported in a later version of Chrome.
 Local type records are unique only within the local context of the containing
 NDEF record. They are used when the meaning of the types doesn't matter outside
 of the local context of the containing record and when storage usage is a hard
-constraint. Local type record names always start with `:` in Web NFC (.e.g.
+constraint. Local type record names always start with `:` in Web NFC (e.g.
 `:t`, `:s`, `:act`). This is to differentiate a text record from a local type
 text record for instance.
 
@@ -714,7 +721,7 @@ await writer.write({ records: [smartPosterRecord] });
 
 ### Read and write an external type record
 
-To create application defined records, use external type records that may
+To create application defined records, use external type records. These may
 contain an NDEF message as payload that is accessible with `toRecords()`. Their
 name contains the domain name of the issuing organization, a colon and a type
 name that is at least one character long, for instance "example.com:foo".
@@ -740,7 +747,7 @@ NDEFWriter `write()` method. The external type record contained in the NDEF
 message is defined as an object with a `recordType` key set to the name of the
 external type and a `data` key set to an object that represents (once again) an
 NDEF message contained in the external type record.  Note that the `data` key
-can also be either an ArrayBuffer or provides a view on to an ArrayBuffer (.e.g.
+can also be either an ArrayBuffer or provides a view on to an ArrayBuffer (e.g.
 Uint8Array, DataView).
 
 ```js
@@ -792,9 +799,8 @@ Here's a list of things I wish I had known when I started playing with Web NFC:
 
 - Android natively handles NFC tags before Web NFC is operational.
 - An NFC icon can be found on [material.io].
-- Use NDEF record `id` to simply identifying a record when needed.
-- An unformatted NFC tag that supports NDEF contains an NDEF message with an
-  empty record only.
+- Use NDEF record `id` to easily identifying a record when needed.
+- An unformatted NFC tag that supports NDEF contains a single record of the empty type.
 - Writing an [android application record] is easy, as shown below.
 
 ```js
@@ -810,7 +816,7 @@ await writer.write({ records: [aarRecord] });
 
 ## Demos {: #demos }
 
-Give a try to the [official sample] and check out some cool Web NFC demos:
+Try out the [official sample] and check out some cool Web NFC demos:
 - [Cards demo]
 - [Grocery Demo]
 - [Intel RSP Sensor NFC]
@@ -902,5 +908,4 @@ contributors deserve special recognition!
 [material.io]: https://material.io/resources/icons/?icon=nfc&style=baseline
 [appropriately]: https://w3c.github.io/web-nfc/#data-mapping
 [custom local type records]: https://w3c.github.io/web-nfc/#smart-poster-record
-[cookbook]: #cookbook
 <!-- lint enable definition-case -->
