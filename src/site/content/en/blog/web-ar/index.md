@@ -5,7 +5,7 @@ authors:
   - joemedley
 date: 2020-02-12
 hero: hero.jpg
-alt: A person using a virtual reality headset.
+alt: A person using augmented reality with a smartphone.
 description:
   If you've already used the WebXR Device API, you'll be happy to know there's
   very little new to learn. Entering a WebXR session is largely the same.
