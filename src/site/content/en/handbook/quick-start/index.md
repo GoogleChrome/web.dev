@@ -10,9 +10,6 @@ Content creation for web.dev has three phases: planning, writing, and publishing
 
 ## Planning
 
-[form]: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform?fbzx=7994504531518856644
-[template]: https://docs.google.com/document/d/1lgaNIEnXZf-RB8_p9RK22QEgpXJqnu77pLWVWVy4nuw/edit?usp=sharing
-
 1. If you're a Googler or have access to a Googler, use the [content proposal form][form] to submit
    your new content request. If you don't have access to a Googler, use the
    [content issue template](https://github.com/googlechrome/web.dev/issues/new?template=collection_proposal.md).
@@ -42,8 +39,10 @@ If the piece you'd like to publish is time sensitive, make sure to submit the is
    to discover UI elements that can make your content more engaging or aesthetically pleasing.
 1. Once your PR is merged, the content will be deployed to the site immediately.
 
-[process]: https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY
-
 {% Aside %}
   Googlers: Check out [web.dev process][process] for more detailed information about web.dev's content process.
 {% endAside %}
+
+[form]: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform?fbzx=7994504531518856644
+[template]: https://docs.google.com/document/d/1lgaNIEnXZf-RB8_p9RK22QEgpXJqnu77pLWVWVy4nuw/edit?usp=sharing
+[process]: https://docs.google.com/document/d/1Vxgrgxtz4OeJcrYJF5lpK9bVhTcGpXOXeeL4GZCV8KY
