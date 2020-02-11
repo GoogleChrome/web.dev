@@ -28,19 +28,6 @@ This article covers the [WebXR Hit Test
 API](https://github.com/immersive-web/hit-test/blob/master/explainer.md), a
 means of placing virtual objects in a real-world camera view.
 
-<div class="video-wrapper">
-  <iframe class="devsite-embedded-youtube-video" data-video-id="GDhujHhUEKc"
-          data-autohide="1" data-showinfo="0" frameborder="0" allowfullscreen>
-  </iframe>
-</div>
-
-<figure class="w-figure w-figure--fullbleed">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="./lazyload.webm" type="video/webm">
-    <source src="./lazyload.mp4" type="video/mp4">
-  </video>
-</figure>
-
 In this article I assume you already know how to create an augmented reality
 session and that you know how to run a frame loop. If you're not familiar with
 these concepts, you should read the earlier articles in this series.
@@ -76,6 +63,14 @@ placing an object in augmented reality. If you tap the screen, a sunflower is
 placed on the surface at the reticle location and orientation of the reticle
 point, regardless of where you tapped the screen. The reticle continues to move
 with your device.
+
+<figure class="w-figure  w-figure--right">
+  <img src="reticles.png" alt="A reticle rendered on a wall,
+    Lax, or Strict depending on their context" style="max-width: 60vw;">
+  <figcaption class="w-figcaption">
+    The reticle is a temporary image that aids in placing an object in augmented reality.
+  </figcaption>
+</figure>
 
 ## Create the reticle
 
