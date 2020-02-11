@@ -13,7 +13,6 @@ jobs:
       - name: Install
         run: npm ci
       - name: Percy Test
-        with:
-          command: "npm run test:snapshots"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: npm run test:snapshots
