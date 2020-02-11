@@ -24,7 +24,7 @@ module.exports = (tags) => {
   const validTags = [];
 
   for (const tag of tags) {
-    const tagData = postTags.tagDetails(tag);
+    const tagData = postTags[tag];
     if (tagData) {
       validTags.push(tagData);
     }

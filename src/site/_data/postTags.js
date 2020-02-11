@@ -1,79 +1,196 @@
 const tags = {
-  "3d": "3D",
-  accessibility: "Accessibility",
-  amp: "AMP",
-  analytics: "Analytics",
-  audio: "Audio",
-  "augmented-reality": "Augmented Reality",
-  canvas: "Canvas",
-  capabilities: "Capabilities",
-  "case-study": "Case Study",
-  cast: "Cast",
-  "chrome-ux-report": "Chrome UX Report",
-  "chrome-dev-summit": "Chrome Dev Summit",
-  "content-security-policy": "Content Security Policy",
-  cookies: "Cookies",
-  cors: "CORS",
-  css: "CSS",
-  devtools: "DevTools",
-  dom: "DOM",
-  encryption: "Encryption",
-  "feature-policy": "Feature Policy",
-  "file-system": "File System",
-  fonts: "Fonts",
-  forms: "Forms",
-  games: "Games",
-  graphics: "Graphics",
-  houdini: "Houdini",
-  identity: "Identity",
-  images: "Images",
-  install: "Install",
-  intl: "Intl",
-  iot: "IoT",
-  javascript: "JavaScript",
-  layout: "Layout",
-  lighthouse: "Lighthouse",
-  media: "Media",
-  "media-queries": "Media Queries",
-  mobile: "Mobile",
-  modules: "Modules",
-  monetization: "Monetization",
-  network: "Network",
-  node: "Node",
-  notifications: "Notifications",
-  offline: "Offline",
-  "origin-trials": "Origin Trials",
-  payments: "Payments",
-  performance: "Performance",
-  permissions: "Permissions",
-  "progressive-web-apps": "Progressive Web Apps",
-  puppeteer: "Puppeteer",
-  rendering: "Rendering",
-  security: "Security",
-  seo: "SEO",
-  "service-worker": "Service Worker",
-  storage: "Storage",
-  svg: "SVG",
-  testing: "Testing",
-  ux: "UX",
-  "virtual-reality": "Virtual Reality",
-  "web-assembly": "Web Assembly",
-  "web-bundles": "Web Bundles",
-  webxr: "WebXR",
-};
-
-module.exports = {
-  tags,
-  tagDetails: (tag) => {
-    const title = tags[tag];
-    if (title) {
-      return {
-        title,
-        tag,
-        href: `/tags/${tag}/`,
-      };
-    } else {
-      return;
-    }
+  "3d": {
+    title: "3D",
+  },
+  accessibility: {
+    title: "Accessibility",
+  },
+  amp: {
+    title: "AMP",
+  },
+  analytics: {
+    title: "Analytics",
+  },
+  audio: {
+    title: "Audio",
+  },
+  "augmented-reality": {
+    title: "Augmented Reality",
+  },
+  canvas: {
+    title: "Canvas",
+  },
+  capabilities: {
+    title: "Capabilities",
+  },
+  "case-study": {
+    title: "Case Study",
+  },
+  cast: {
+    title: "Cast",
+  },
+  "chrome-ux-report": {
+    title: "Chrome UX Report",
+  },
+  "chrome-dev-summit": {
+    title: "Chrome Dev Summit",
+  },
+  "content-security-policy": {
+    title: "Content Security Policy",
+  },
+  cookies: {
+    title: "Cookies",
+  },
+  cors: {
+    title: "CORS",
+  },
+  css: {
+    title: "CSS",
+  },
+  devtools: {
+    title: "DevTools",
+  },
+  dom: {
+    title: "DOM",
+  },
+  encryption: {
+    title: "Encryption",
+  },
+  "feature-policy": {
+    title: "Feature Policy",
+  },
+  "file-system": {
+    title: "File System",
+  },
+  fonts: {
+    title: "Fonts",
+  },
+  forms: {
+    title: "Forms",
+  },
+  games: {
+    title: "Games",
+  },
+  graphics: {
+    title: "Graphics",
+  },
+  houdini: {
+    title: "Houdini",
+  },
+  identity: {
+    title: "Identity",
+  },
+  images: {
+    title: "Images",
+  },
+  install: {
+    title: "Install",
+  },
+  intl: {
+    title: "Intl",
+  },
+  iot: {
+    title: "IoT",
+  },
+  javascript: {
+    title: "JavaScript",
+  },
+  layout: {
+    title: "Layout",
+  },
+  lighthouse: {
+    title: "Lighthouse",
+  },
+  media: {
+    title: "Media",
+  },
+  "media-queries": {
+    title: "Media Queries",
+  },
+  mobile: {
+    title: "Mobile",
+  },
+  modules: {
+    title: "Modules",
+  },
+  monetization: {
+    title: "Monetization",
+  },
+  network: {
+    title: "Network",
+  },
+  node: {
+    title: "Node",
+  },
+  notifications: {
+    title: "Notifications",
+  },
+  offline: {
+    title: "Offline",
+  },
+  "origin-trials": {
+    title: "Origin Trials",
+  },
+  payments: {
+    title: "Payments",
+  },
+  performance: {
+    title: "Performance",
+  },
+  permissions: {
+    title: "Permissions",
+  },
+  "progressive-web-apps": {
+    title: "Progressive Web Apps",
+  },
+  puppeteer: {
+    title: "Puppeteer",
+  },
+  rendering: {
+    title: "Rendering",
+  },
+  security: {
+    title: "Security",
+  },
+  seo: {
+    title: "SEO",
+  },
+  "service-worker": {
+    title: "Service Worker",
+  },
+  storage: {
+    title: "Storage",
+  },
+  svg: {
+    title: "SVG",
+  },
+  testing: {
+    title: "Testing",
+  },
+  ux: {
+    title: "UX",
+  },
+  "virtual-reality": {
+    title: "Virtual Reality",
+  },
+  "web-assembly": {
+    title: "Web Assembly",
+  },
+  "web-bundles": {
+    title: "Web Bundles",
+  },
+  webxr: {
+    title: "WebXR",
   },
 };
+
+const postTags = {};
+
+Object.keys(tags).forEach((key) => {
+  postTags[key] = {
+    ...tags[key],
+    href: `/tags/${key}/`,
+  };
+});
+
+module.exports = postTags;

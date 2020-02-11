@@ -37,8 +37,8 @@ module.exports = (collection) => {
 
   // Map the posts to various tags in the post
   posts.forEach((post) => {
-    const postTags = post.data.tags || [];
-    postTags.forEach((postTag) => {
+    const postDataTags = post.data.tags || [];
+    postDataTags.forEach((postTag) => {
       const tagsPosts = mapValue(tagsMap, postTag);
       tagsPosts.push(post);
       tagsMap.set(postTag, tagsPosts);
@@ -46,12 +46,14 @@ module.exports = (collection) => {
   });
 
   let tags = [];
-  Object.keys(postTags.tags).forEach((tagName) => {
+  Object.keys(postTags).forEach((tagName) => {
+    // Invalid tags will be skipped, assuming our linter will catch them later.
+    // Skips misspelled tags, internal tags, and tags that are not in `postTags.js`.
     if (!tagsMap.has(tagName)) {
       return;
     }
 
-    const tagData = postTags.tagDetails(tagName);
+    const tagData = postTags[tagName];
     tags = tags.concat(addPagination(tagsMap.get(tagName), tagData));
   });
 

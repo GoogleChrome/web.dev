@@ -13,6 +13,7 @@
   flex-flow: row wrap;
 }
 
+// Specificty required here because `a` tags in `.w-post-content` have higher priority.
 .w-post-content .w-chip,
 .w-chip {
   background-color: rgba($GREY_900, 0);

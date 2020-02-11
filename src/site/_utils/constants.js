@@ -15,5 +15,6 @@
  */
 
 module.exports = {
-  paginationCount: 24,
+  PAGINATION_COUNT: 24,
+  POST_CARD_CHIP_COUNT: 3,
 };

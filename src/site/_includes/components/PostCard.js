@@ -18,6 +18,7 @@ const {html} = require("common-tags");
 const prettyDate = require("../../_filters/pretty-date");
 const stripLanguage = require("../../_filters/strip-language");
 const md = require("../../_filters/md");
+const constants = require("../../_utils/constants");
 const getImagePath = require("../../_utils/get-image-path");
 const getSrcsetRange = require("../../_utils/get-srcset-range");
 const postTags = require("../../_data/postTags");
@@ -35,9 +36,12 @@ module.exports = ({post}) => {
   const displayedTags = [];
 
   for (const tag of data.tags) {
-    const foundTag = postTags.tagDetails(tag.toLowerCase());
+    const foundTag = postTags[tag.toLowerCase()];
     if (foundTag) {
       displayedTags.push(foundTag);
+    }
+    if (displayedTags.length === constants.POST_CARD_CHIP_COUNT) {
+      break;
     }
   }
 
