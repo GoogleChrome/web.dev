@@ -1,5 +1,5 @@
 ---
-title: Augmented reality: You may already know it
+title: Augmented reality\: You may already know it
 subhead: If you've used the WebXR Device API already, you're already there.
 authors:
   - joemedley
