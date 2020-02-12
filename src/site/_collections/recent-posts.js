@@ -18,8 +18,9 @@ const livePosts = require("../_filters/live-posts");
 
 // Return the three most recent blog posts.
 module.exports = (collection) => {
+  const tag = process.env.ELEVENTY_ENV === "test" ? "test-post" : "post";
   return collection
-    .getFilteredByTag("post")
+    .getFilteredByTag(tag)
     .filter(livePosts)
     .reverse()
     .slice(0, 3);
