@@ -6,11 +6,11 @@ labels: content
 assignees: 'kaycebasques'
 ---
 
-* Use this template to <a href="update">update existing content</a> or <a href="propose">propose new content</a>. 
+* Use this template to update existing content or propose new content.
 * Delete any fields that aren't relevant to your issue. 
-* Replace the `TODO` in the title of this issue with a brief summary of the work to be done.
+* Update the title of this issue with a brief summary of the work to be done.
 
-<h2 id="update">Update existing content</h2>
+## Update existing content
 
 ### What page(s) need to be updated?
 
@@ -24,20 +24,19 @@ Provide a list of URLs.
 
 If yes, please explain why.
 
-<h2 id="propose">Propose new content</h2>
+## Propose new content
 
 ### Workflow for Googlers
 
-[form]: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform?fbzx=7994504531518856644
+Fill out the web.dev content proposal form: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform?fbzx=7994504531518856644
 
-Fill out the [web.dev content proposal form][form]. Don't create an issue here on GitHub!
-Your GitHub issue will be closed immediately and you'll be asked to fill out the form instead.
+Don't create an issue here on GitHub! Your GitHub issue will be closed 
+immediately and you'll be asked to fill out the form instead.
 
 ### Content proposal form for contributors who don't have access to Googlers
 
-Fill out this section if you want to contribute new content to web.dev but don't have access to
-Googlers. If you have access to a Googler, tell them to submit the [web.dev content proposal form][form]
-on your behalf instead.
+Fill out this section ONLY if you want to contribute new content to web.dev but don't have access to
+Googlers.
 
 #### Provide a brief title for your content proposal
 
