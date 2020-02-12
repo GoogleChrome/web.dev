@@ -16,10 +16,9 @@
 
 const livePosts = require("../_filters/live-posts");
 
-module.exports = (collection) => {
+module.exports = (collection, getAll = false) => {
   const tag = process.env.ELEVENTY_ENV === "test" ? "test-post" : "post";
-  return collection
-    .getFilteredByTag(tag)
+  return (getAll ? collection.getAll() : collection.getFilteredByTag(tag))
     .filter(livePosts)
     .reverse();
 };

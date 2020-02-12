@@ -32,7 +32,7 @@ module.exports = (collection) => {
     return map.has(key) ? map.get(key) : [];
   };
 
-  const posts = postDescending(collection);
+  const posts = postDescending(collection, true);
   const authorsMap = new Map();
 
   // Map the posts to various tags in the post
