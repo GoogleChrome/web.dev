@@ -25,16 +25,14 @@ web](https://developers.google.com/web/updates/capabilities).
 
 ## What is Web NFC? {: #what }
 
+NFC stands for Near Field Communications, a short-range wireless technology
+operating at 13.56 MHz that enables communication between devices at a distance
+less than 10 cm and a transmission rate of up to 424 kbit/s.
+
 Web NFC provides sites the ability to read and write to NFC tags when they are
 in close proximity to the user's device (usually 5-10 cm, 2-4 inches).
 The current scope is limited to NFC Data Exchange Format (NDEF), a lightweight
 binary message format that works across different tag formats.
-
-{% Aside 'gotchas' %}
-Web NFC is limited to NDEF because the security properties of reading and
-writing NDEF data are more easily quantifiable. Low-level I/O operations (e.g.
-ISO-DEP, NFC-A/B, NFC-F) and Host-based Card Emulation (HCE) are not supported.
-{% endAside %}
 
 <figure class="w-figure">
   <img src="./nfc-operation-diagram.png" alt="Phone powering up an NFC tag to exchange data">
@@ -42,6 +40,10 @@ ISO-DEP, NFC-A/B, NFC-F) and Host-based Card Emulation (HCE) are not supported.
 </figure>
 
 ## Suggested use cases {: #use-cases }
+
+Web NFC is limited to NDEF because the security properties of reading and
+writing NDEF data are more easily quantifiable. Low-level I/O operations (e.g.
+ISO-DEP, NFC-A/B, NFC-F) and Host-based Card Emulation (HCE) are not supported.
 
 Examples of sites that may use Web NFC include:
 - Museums and art galleries can display additional information about a display
@@ -97,9 +99,11 @@ enable the `#enable-webnfc` flag in `chrome://flags`.
 
 ### Feature detection {: #feature-detection }
 
-To check for Web NFC support, test the existance of `NDEFReader` and
-`NDEFWriter` objects. Note that this does not guarantee that NFC hardware is
-available.
+Feature detection for hardware is different from what you're probably used to.
+The presence of `NDEFReader` and `NDEFWriter` tells you that the browser
+supports Web NFC, but not whether the required hardware is present. In
+particular, if the hardware is missing, the promised returned by certain calls
+will reject. I'll provide details when I describe `NDEFReader` and `NDEFWriter`.
 
 ```js
 if ('NDEFReader' in window) { /* Scan NFC tags */ }
@@ -108,13 +112,9 @@ if ('NDEFWriter' in window) { /* Write NFC tags */ }
 
 ### Terminology {: #terminology }
 
-NFC stands for Near Field Communications, a short-range wireless technology
-operating at 13.56 MHz that enables communication between devices at a distance
-less than 10 cm and a transmission rate of up to 424 kbit/s.
-
-An NFC tag is a passive NFC device, powered by magnetic induction when an active
-NFC device (.e.g a phone) is in proximity range. NFC tags come in many forms and
-fashions, as stickers, credit cards, arm wrists, etc.
+An NFC tag is a passive NFC device, meaning that is powered by magnetic
+induction when an active NFC device (.e.g a phone) is in proximity. NFC tags
+come in many forms and fashions, as stickers, credit cards, arm wrists, etc.
 
 <figure class="w-figure">
   <img src="./nfc-tag.jpg" alt="Photo of a transparent NFC tag">
@@ -123,9 +123,9 @@ fashions, as stickers, credit cards, arm wrists, etc.
 
 The `NDEFReader` and `NDEFWriter` objects are the two entry points in Web NFC
 that expose functionality for preparing reading and/or writing actions that are
-fulfilled when an NDEF tag comes in proximity range. The `NDEF` in `NDEFReader`
-and `NDEFWriter` stands for NFC Data Exchange Format, a lightweight binary
-message format standardized by the [NFC Forum].
+fulfilled when an NDEF tag comes in proximity. The `NDEF` in `NDEFReader` and
+`NDEFWriter` stands for NFC Data Exchange Format, a lightweight binary message
+format standardized by the [NFC Forum].
 
 The `NDEFReader` object is for acting on incoming NDEF messages from NFC tags
 while the `NDEFWriter` object is for writing NDEF messages to NFC tags within
@@ -175,7 +175,7 @@ reader.scan().then(() => {
 });
 ```
 
-When an NFC tag is in proximity range, a `NDEFReadingEvent` event is fired. It
+When an NFC tag is in proximity, a `NDEFReadingEvent` event is fired. It
 contains two properties unique to it:
 
 - `serialNumber` represents the serial number of the device (.e.g
@@ -184,7 +184,8 @@ contains two properties unique to it:
 
 To read the content of the NDEF message, loop through `message.records` and
 process their `data` members [appropriately] based on their `recordType`.
-The `data` member is exposed as a [DataView] as it allows handling cases where data is encoded in UTF-16.
+The `data` member is exposed as a <code>[DataView]</code> as it allows handling
+cases where data is encoded in UTF-16.
 
 ```js
 reader.onreading = event => {
@@ -347,9 +348,9 @@ The Chrome team has designed and implemented Web NFC using the core principles
 defined in [Controlling Access to Powerful Web Platform
 Features][powerful-apis], including user control, transparency, and ergonomics.
 
-As NFC expands the domain of information potentially available to malicious
-websites, the availability of NFC has been restricted to maximize users'
-awareness and control over NFC use.
+Because NFC expands the domain of information potentially available to malicious
+websites, the availability of NFC is restricted to maximize users' awareness and
+control over NFC use.
 
 <figure class="w-figure">
   <img src="./nfc-prompt.png" alt="Screenshot of a Web NFC prompt on a website">
@@ -433,10 +434,10 @@ if (permissionStatus.state === "granted") {
 
 ### Abort NFC operations
 
-Using the [AbortController] primitive makes it easy to abort NFC operations and
-other operations that use it. The example below shows you how to pass the
-`signal` of an AbortController through the options of NDEFReader `scan()` and
-NDEFWriter `write()` methods and abort both NFC operations at the same time.
+Using the <code>[AbortController]</code> primitive makes it easy to abort NFC operations. The
+example below shows you how to pass the `signal` of an AbortController through
+the options of NDEFReader `scan()` and NDEFWriter `write()` methods and abort
+both NFC operations at the same time.
 
 ```js
 const abortController = new AbortController();
@@ -612,11 +613,11 @@ await writer.write({ records: [absoluteUrlRecord] });
 
 A smart poster record (used in magazine advertisements, fliers, billboards,
 etc.), describes some web content as an NDEF record that contains an NDEF
-message as its payload. Call `toRecords()` to transform `data` to a list of
-records contained in the smart poster record. It should have a URL record, a
+message as its payload. Call `record.toRecords()` to transform `data` to a list
+of records contained in the smart poster record. It should have a URL record, a
 text record for the title, a MIME type record for the image, and some [custom
-local type records] such as `":t"`, `:act`, and "`:s`" respectively for the
-type, action, and size of the smart-poster record.
+local type records] such as `":t"`, `":act"`, and `":s"` respectively for the
+type, action, and size of the smart poster record.
 
 {% Aside 'caution' %}
 Smart poster records will be supported in a later version of Chrome.
@@ -626,8 +627,8 @@ Local type records are unique only within the local context of the containing
 NDEF record. Use them when the meaning of the types doesn't matter outside
 of the local context of the containing record and when storage usage is a hard
 constraint. Local type record names always start with `:` in Web NFC (e.g.
-`:t`, `:s`, `:act`). This is to differentiate a text record from a local type
-text record for instance.
+`":t"`, `":s"`, `":act"`). This is to differentiate a text record from a local
+type text record for instance.
 
 ```js
 function readSmartPosterRecord(smartPosterRecord) {
@@ -666,7 +667,7 @@ To write a smart poster record, pass an NDEF message to the NDEFWriter `write()`
 method. The smart poster record contained in the NDEF message is defined as an
 object with a `recordType` key set to `"smart-poster"` and a `data` key set to
 an object that represents (once again) an NDEF message contained in the
-smart-poster record.
+smart poster record.
 
 ```js
 const encoder = new TextEncoder();
@@ -792,7 +793,7 @@ await writer.write({ records: [emptyRecord] });
 Here's a list of things I wish I had known when I started playing with Web NFC:
 
 - Android natively handles NFC tags before Web NFC is operational.
-- An NFC icon can be found on [material.io].
+- You can find an NFC icon on [material.io].
 - Use NDEF record `id` to easily identifying a record when needed.
 - An unformatted NFC tag that supports NDEF contains a single record of the empty type.
 - Writing an [android application record] is easy, as shown below.
