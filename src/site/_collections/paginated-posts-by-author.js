@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-const postTags = require("../_data/postTags");
+const contributors = require("../_data/contributors.json");
 const addPagination = require("../_utils/add-pagination");
 const postDescending = require("./post-descending");
 
 /**
- * Returns all posts as an array of paginated tags.
- * It's not as if every element in the array is a single page for a tag, rather, its an array that includes every tags page.
+ * Returns all posts as an array of paginated authors.
+ * It's not as if every element in the array is a single page for an author, rather, its an array that includes every authors page.
  * Each element includes n number of posts as well as some basic information of that tag to pump into `_includes/partials/paged.njk`
  * This is because we can not paginate something already paginated... Pagination is effectively a loop, and we can't have an embedded loop O^2.
  *
@@ -33,29 +33,41 @@ module.exports = (collection) => {
   };
 
   const posts = postDescending(collection);
-  const tagsMap = new Map();
+  const authorsMap = new Map();
 
   // Map the posts to various tags in the post
   posts.forEach((post) => {
-    const postDataTags = post.data.tags || [];
-    postDataTags.forEach((postTag) => {
-      const tagsPosts = mapValue(tagsMap, postTag);
-      tagsPosts.push(post);
-      tagsMap.set(postTag, tagsPosts);
+    const postDataAuthors = post.data.authors || [];
+    postDataAuthors.forEach((author) => {
+      const authorsPosts = mapValue(authorsMap, author);
+      authorsPosts.push(post);
+      authorsMap.set(author, authorsPosts);
     });
   });
 
-  let tags = [];
-  Object.keys(postTags).forEach((tagName) => {
-    // Invalid tags will be skipped, assuming our linter will catch them later.
-    // Skips misspelled tags, internal tags, and tags that are not in `postTags.js`.
-    if (!tagsMap.has(tagName)) {
+  let authors = [];
+  Object.keys(contributors).forEach((contributor) => {
+    if (!authorsMap.has(contributor)) {
       return;
     }
 
-    const tagData = postTags[tagName];
-    tags = tags.concat(addPagination(tagsMap.get(tagName), tagData));
+    const contributorData = contributors[contributor];
+    const title =
+      contributorData.name.given + " " + contributorData.name.family;
+    const description =
+      contributorData.description && contributorData.description.en
+        ? contributorData.description.en
+        : `Our latest news, updates, and stories by ${title}.`;
+
+    authors = authors.concat(
+      addPagination(authorsMap.get(contributor), {
+        ...contributorData,
+        title,
+        description,
+        href: `/authors/${contributor}/`,
+      }),
+    );
   });
 
-  return tags;
+  return authors;
 };

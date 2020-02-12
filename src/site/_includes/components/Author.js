@@ -20,7 +20,7 @@ const AuthorInfo = require("./AuthorInfo");
 module.exports = ({
   post,
   author,
-  avatar,
+  id,
   showSocialMedia = false,
   small = false,
 }) => {
@@ -43,10 +43,10 @@ module.exports = ({
     <div class="w-author">
       <img
         class="w-author__image ${small && `w-author__image--small`}"
-        src="/images/authors/${avatar}.jpg"
+        src="/images/authors/${id}.jpg"
         alt="${fullName}"
       />
-      ${AuthorInfo({post, author, showSocialMedia})}
+      ${AuthorInfo({post, author, id, showSocialMedia})}
     </div>
   `;
 };

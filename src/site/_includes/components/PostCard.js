@@ -108,7 +108,7 @@ module.exports = ({post}) => {
             const author = data.contributors[authorId];
             const fullName = `${author.name.given} ${author.name.family}`;
             return html`
-              ${fullName}
+              <a href="/authors/${authorId}">${fullName}</a>
             `;
           })
           .join(", ")}
