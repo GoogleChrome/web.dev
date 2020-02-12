@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-const livePosts = require("../_filters/live-posts");
-
-module.exports = (collection) => {
-  const tag = process.env.ELEVENTY_ENV === "test" ? "test-post" : "post";
-  return collection
-    .getFilteredByTag(tag)
-    .filter(livePosts)
-    .reverse();
+/**
+ * Returns value from map, or default if no value found.
+ *
+ * @param {Map<string, any>} map Map to get value from.
+ * @param {string} key Key to get value from map.
+ * @param {any} def Default value to return.
+ * @return {any} Value found, or default if no value returned.
+ */
+module.exports = (map, key, def = []) => {
+  return map.has(key) ? map.get(key) : def;
 };

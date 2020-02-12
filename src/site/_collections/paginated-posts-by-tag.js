@@ -16,6 +16,7 @@
 
 const postTags = require("../_data/postTags");
 const addPagination = require("../_utils/add-pagination");
+const mapValue = require("../_utils/map-value");
 const postDescending = require("./post-descending");
 
 /**
@@ -28,10 +29,6 @@ const postDescending = require("./post-descending");
  * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
-  const mapValue = (map, key) => {
-    return map.has(key) ? map.get(key) : [];
-  };
-
   const posts = postDescending(collection);
   const tagsMap = new Map();
 

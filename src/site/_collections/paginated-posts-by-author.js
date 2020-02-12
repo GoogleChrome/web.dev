@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-const contributors = require("../_data/contributors.json");
+const contributors = require("../_data/contributors");
+const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
-const postDescending = require("./post-descending");
+const mapValue = require("../_utils/map-value");
 
 /**
  * Returns all posts as an array of paginated authors.
@@ -28,45 +29,25 @@ const postDescending = require("./post-descending");
  * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
-  const mapValue = (map, key) => {
-    return map.has(key) ? map.get(key) : [];
-  };
-
-  const posts = postDescending(collection, true);
+  const posts = collection
+    .getAll()
+    .filter(livePosts)
+    .sort((a, b) => b.date - a.date);
   const authorsMap = new Map();
 
-  // Map the posts to various tags in the post
+  // Map the posts by author's username
   posts.forEach((post) => {
-    const postDataAuthors = post.data.authors || [];
-    postDataAuthors.forEach((author) => {
-      const authorsPosts = mapValue(authorsMap, author);
-      authorsPosts.push(post);
-      authorsMap.set(author, authorsPosts);
+    const authors = post.data.authors || [];
+    authors.forEach((author) => {
+      const postsByAuthor = mapValue(authorsMap, author);
+      postsByAuthor.push(post);
+      authorsMap.set(author, postsByAuthor);
     });
   });
 
   let authors = [];
-  Object.keys(contributors).forEach((contributor) => {
-    if (!authorsMap.has(contributor)) {
-      return;
-    }
-
-    const contributorData = contributors[contributor];
-    const title =
-      contributorData.name.given + " " + contributorData.name.family;
-    const description =
-      contributorData.description && contributorData.description.en
-        ? contributorData.description.en
-        : `Our latest news, updates, and stories by ${title}.`;
-
-    authors = authors.concat(
-      addPagination(authorsMap.get(contributor), {
-        ...contributorData,
-        title,
-        description,
-        href: `/authors/${contributor}/`,
-      }),
-    );
+  authorsMap.forEach((value, key) => {
+    authors = authors.concat(addPagination(value, contributors[key]));
   });
 
   return authors;

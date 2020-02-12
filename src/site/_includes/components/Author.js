@@ -41,11 +41,13 @@ module.exports = ({
   const fullName = `${author.name.given} ${author.name.family}`;
   return html`
     <div class="w-author">
-      <img
-        class="w-author__image ${small && `w-author__image--small`}"
-        src="/images/authors/${id}.jpg"
-        alt="${fullName}"
-      />
+      <a href="/authors/${id}" tabindex="-1">
+        <img
+          class="w-author__image ${small && `w-author__image--small`}"
+          src="/images/authors/${id}.jpg"
+          alt="${fullName}"
+        />
+      </a>
       ${AuthorInfo({post, author, id, showSocialMedia})}
     </div>
   `;

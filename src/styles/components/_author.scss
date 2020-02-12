@@ -60,6 +60,10 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   color: $GREY_900;
 }
 
+.w-author__name-link {
+  color: inherit;
+}
+
 .w-author__published {
   color: $GREY_700;
 }

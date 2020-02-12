@@ -74,7 +74,7 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
       style="display: flex; flex-direction: column; justify-content: center;"
     >
       <cite class="w-author__name">
-        <a href="/authors/${id}">${fullName}</a>
+        <a class="w-author__name-link" href="/authors/${id}">${fullName}</a>
       </cite>
       ${showSocialMedia && renderSocialMedia(author)}
     </div>

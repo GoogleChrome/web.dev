@@ -108,7 +108,9 @@ module.exports = ({post}) => {
             const author = data.contributors[authorId];
             const fullName = `${author.name.given} ${author.name.family}`;
             return html`
-              <a href="/authors/${authorId}">${fullName}</a>
+              <a class="w-author__name-link" href="/authors/${authorId}"
+                >${fullName}</a
+              >
             `;
           })
           .join(", ")}
