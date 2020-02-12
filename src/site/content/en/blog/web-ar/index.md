@@ -1,6 +1,6 @@
 ---
 title: "Augmented reality: You may already know it"
-subhead: If you've used the WebXR Device API already, you're already there.
+subhead: If you've used the WebXR Device API already, you're most of the way there.
 authors:
   - joemedley
 date: 2020-02-12
@@ -34,7 +34,7 @@ for augmented reality. If you're not familiar with the basic concepts of WebXR,
 you should read my earlier posts on the WebXR Device API, or at least be
 familiar with the topics covered therein. You should know how to [request and
 enter a session](https://web.dev/vr-comes-to-the-web/) and you should know how
-to run [a frame loop](url here).
+to run [a frame loop](https://web.dev/vr-comes-to-the-web-pt-ii).
 
 For information on hit testing, see the companion article [article
 title](article url). The code in this article is based on the Immersive AR
