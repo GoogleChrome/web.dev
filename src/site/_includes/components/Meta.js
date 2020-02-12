@@ -19,10 +19,11 @@ const site = require("../../_data/site");
 const stripLanguage = require("../../_filters/strip-language");
 const {html} = require("common-tags");
 
-module.exports = (locale, page, collections) => {
-  const pageData = collections.all.find(
-    (item) => item.fileSlug === page.fileSlug,
-  ).data;
+module.exports = (locale, page, collections, renderData = {}) => {
+  const pageData = {
+    ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
+    ...renderData,
+  };
   const pageUrl = stripLanguage(page.url);
 
   /**

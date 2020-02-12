@@ -18,8 +18,10 @@ const {html} = require("common-tags");
 const prettyDate = require("../../_filters/pretty-date");
 const stripLanguage = require("../../_filters/strip-language");
 const md = require("../../_filters/md");
+const constants = require("../../_utils/constants");
 const getImagePath = require("../../_utils/get-image-path");
 const getSrcsetRange = require("../../_utils/get-srcset-range");
+const postTags = require("../../_data/postTags");
 
 /* eslint-disable require-jsdoc,indent,max-len */
 
@@ -31,6 +33,17 @@ const getSrcsetRange = require("../../_utils/get-srcset-range");
 module.exports = ({post}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
+  const displayedTags = [];
+
+  for (const tag of data.tags) {
+    const foundTag = postTags[tag.toLowerCase()];
+    if (foundTag) {
+      displayedTags.push(foundTag);
+    }
+    if (displayedTags.length === constants.POST_CARD_CHIP_COUNT) {
+      break;
+    }
+  }
 
   // If the post does not provide a thumbnail, attempt to reuse the hero image.
   // Otherwise, omit the image entirely.
@@ -119,29 +132,52 @@ module.exports = ({post}) => {
     `;
   }
 
+  function renderChips() {
+    if (!displayedTags.length) {
+      return;
+    }
+    return html`
+      <div class="w-card__chips w-chips">
+        ${displayedTags.map((displayedTag) => {
+          return html`
+            <a class="w-chip" href="${displayedTag.href}"
+              >${displayedTag.title}</a
+            >
+          `;
+        })}
+      </div>
+    `;
+  }
+
   return html`
-    <a href="${url}" class="w-card">
+    <div class="w-card">
       <article class="w-post-card">
-        <div
-          class="w-post-card__cover ${thumbnail &&
-            `w-post-card__cover--with-image`}"
-        >
-          ${thumbnail && renderThumbnail(url, thumbnail, alt)}
-          <h2
-            class="${thumbnail
-              ? `w-post-card__headline--with-image`
-              : `w-post-card__headline`}"
+        <a class="w-post-card__link" href="${url}">
+          <div
+            class="w-post-card__cover ${thumbnail &&
+              `w-post-card__cover--with-image`}"
           >
-            ${md(data.title)}
-          </h2>
-        </div>
+            ${thumbnail && renderThumbnail(url, thumbnail, alt)}
+            <h2
+              class="${thumbnail
+                ? `w-post-card__headline--with-image`
+                : `w-post-card__headline`}"
+            >
+              ${md(data.title)}
+            </h2>
+          </div>
+        </a>
         ${renderAuthorsAndDate(post)}
+
         <div class="w-post-card__desc">
-          <p class="w-post-card__subhead">
-            ${md(data.subhead)}
-          </p>
+          <a class="w-post-card__link" tabindex="-1" href="${url}">
+            <p class="w-post-card__subhead">
+              ${md(data.subhead)}
+            </p>
+          </a>
+          ${renderChips()}
         </div>
       </article>
-    </a>
+    </div>
   `;
 };
