@@ -14,9 +14,16 @@
   {# Make sure Actions are first in the tab order. #}
   <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
 
-  <div class="w-layout-container--narrow w-post-breadcrumbs">
-    {% Breadcrumbs path %}
-  </div>
+  {% if path.slug === 'blog' %}
+    <div class="w-layout-container--narrow w-post-breadcrumbs">
+      {% Breadcrumbs path %}
+    </div>
+  {% endif %}
+
+  {% SignPosts {
+    postToCollections: collections.postToCollections,
+    url: page.url
+  } %}
 
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">

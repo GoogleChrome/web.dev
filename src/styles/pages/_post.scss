@@ -33,3 +33,23 @@
     margin-top: 64px;
   }
 }
+
+.w-post-signpost {
+  padding: 88px 0 8px;
+
+  @include bp(md) {
+    padding-top: 64px;
+  }
+}
+
+.w-post-signpost__divider {
+  margin: 0 8px 8px;
+}
+
+.w-post-signpost__link {
+  margin: 0 0 8px;
+}
+
+.w-post-signpost__title {
+  margin: 0 8px 8px;
+}
