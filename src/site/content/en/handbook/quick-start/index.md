@@ -12,7 +12,7 @@ Content creation for web.dev has three phases: planning, writing, and publishing
 
 1. If you're a Googler or have access to a Googler, use the [content proposal form][form] to submit
    your new content request. If you don't have access to a Googler, use the
-   [content issue template](https://github.com/googlechrome/web.dev/issues/new?template=collection_proposal.md).
+   [content issue template](https://github.com/googlechrome/web.dev/issues/new?template=content.md).
 1. The web.dev team will take a look to see if the idea fits with the goals of the site. If the idea is approved, it gets slated for a publication date!
 
 {% Aside 'caution' %}
