@@ -32,8 +32,11 @@ module.exports = (id, startTime) => {
   // Don't load YT iframe in our test environment. This specifically affects
   // screenshot testing where the iframe can be slow or flaky to load and fail
   // because YouTube is always fiddling with their UI.
+  // Load a placeholder to fill the space instead.
   if (process.env.ELEVENTY_ENV === "test") {
-    return "";
+    return html`
+      <div class="w-youtube" style="background: grey;"></div>
+    `;
   }
 
   let src = `https://www.youtube.com/embed/${id}`;
