@@ -15,9 +15,9 @@
  */
 
 const postTags = require("../_data/postTags");
+const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
 const mapValue = require("../_utils/map-value");
-const postDescending = require("./post-descending");
 
 /**
  * Returns all posts as an array of paginated tags.
@@ -29,7 +29,10 @@ const postDescending = require("./post-descending");
  * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
-  const posts = postDescending(collection);
+  const posts = collection
+    .getAll()
+    .filter(livePosts)
+    .sort((a, b) => b.date - a.date);
   const tagsMap = new Map();
 
   // Map the posts to various tags in the post

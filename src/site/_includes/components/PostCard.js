@@ -85,11 +85,13 @@ module.exports = ({post}) => {
             const fullName = `${author.name.given} ${author.name.family}`;
             return html`
               <div class="w-author__image--row-item">
-                <img
-                  class="w-author__image w-author__image--small"
-                  src="/images/authors/${authorId}.jpg"
-                  alt="${fullName}"
-                />
+                <a href="${author.href}">
+                  <img
+                    class="w-author__image w-author__image--small"
+                    src="/images/authors/${authorId}.jpg"
+                    alt="${fullName}"
+                  />
+                </a>
               </div>
             `;
           })
