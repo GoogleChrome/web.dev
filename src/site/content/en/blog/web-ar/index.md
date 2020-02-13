@@ -40,7 +40,7 @@ For information on hit testing, see the companion article [article
 title](article url). The code in this article is based on the Immersive AR
 Session sample
 ([demo](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html),
-[source](https://github.com/immersive-web/webxr-samples/blob/master/immersive-vr-session.html))from
+[source](https://github.com/immersive-web/webxr-samples/blob/master/immersive-vr-session.html)) from
 the Immersive Web Working Group's [WebXR Device API
 samples](https://immersive-web.github.io/webxr-samples/).
 
