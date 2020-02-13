@@ -1,6 +1,6 @@
 ---
-title: Interact with NFC devices on the web
-subhead: Reading and writing to NFC tags is now possible on the mobile web.
+title: Interact with NFC devices on Chrome for Android
+subhead: Reading and writing to NFC tags is now possible
 authors:
   - beaufortfrancois
 date: 2020-02-12
@@ -8,12 +8,11 @@ hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
 description: |
-  Reading and writing to NFC tags is now possible on the mobile web.
+  Reading and writing to NFC tags is now possible on Chrome for Android.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - capabilities
   - fugu
-draft: true
 ---
 
 {% Aside %}
