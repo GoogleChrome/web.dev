@@ -36,9 +36,9 @@ familiar with the topics covered therein. You should know how to [request and
 enter a session](https://web.dev/vr-comes-to-the-web/) and you should know how
 to run [a frame loop](https://web.dev/vr-comes-to-the-web-pt-ii).
 
-For information on hit testing, see the companion article [article
-title](article url). The code in this article is based on the Immersive AR
-Session sample
+For information on hit testing, see the companion article [Positioning virtual
+objects in real-world views](https://web.dev/ar-hit-test). The code in this
+article is based on the Immersive AR Session sample
 ([demo](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html)
 [source](https://github.com/immersive-web/webxr-samples/blob/master/immersive-vr-session.html))from
 the Immersive Web Working Group's [WebXR Device API
@@ -64,8 +64,8 @@ possible with a two dimensional image.
 
 I'm getting a little ahead of myself. To actually do what I've described, you
 need AR functionality and some means of detecting surfaces. This article covers
-the former. The accompanying article on the WebXR Hit Test API covers the
-latter.
+the former. The accompanying article on the WebXR Hit Test API (linked to above)
+covers the latter.
 
 ## Requesting a session
 
