@@ -86,7 +86,7 @@ if (navigator.xr) {
 ```
 
 As before, this enables an 'Enter AR' button. When the user clicks it, call
-`xr.requestSEssion()`, also passing `'immersive-ar'`.
+`xr.requestSession()`, also passing `'immersive-ar'`.
 
 ```js/3,6
 let xrSession = null;
