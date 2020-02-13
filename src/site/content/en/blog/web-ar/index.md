@@ -3,7 +3,7 @@ title: "Augmented reality: You may already know it"
 subhead: If you've used the WebXR Device API already, you're most of the way there.
 authors:
   - joemedley
-date: 2020-02-12
+date: 2020-02-13
 hero: hero.jpg
 alt: A person using augmented reality with a smartphone.
 description:
