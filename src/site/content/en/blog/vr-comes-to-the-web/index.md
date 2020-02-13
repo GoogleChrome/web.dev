@@ -4,7 +4,7 @@ subhead: A few basics to prepare you for a spectrum of immersive experiences&#58
 authors:
   - joemedley
 date: 2019-10-31
-update: 2020-02-12
+update: 2020-02-13
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
