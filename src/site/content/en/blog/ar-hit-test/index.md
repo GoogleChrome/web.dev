@@ -3,7 +3,7 @@ title: Positioning virtual objects in real-world views
 subhead: The Hit Test API lets you position virtual items in a real-world view.
 authors:
   - joemedley
-date: 2020-02-12
+date: 2020-02-13
 hero: hero.jpg
 alt: A virtual object in a real-world view.
 description:
