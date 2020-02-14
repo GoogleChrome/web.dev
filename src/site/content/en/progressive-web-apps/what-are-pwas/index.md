@@ -118,7 +118,7 @@ it transforms how users think about it and interact with it.
 At their heart, Progressive Web Apps are just web applications. Using
 progressive enhancement, new capabilities are enabled in modern browsers. Using
 service workers and a web app manifest, your web application becomes reliable
-and installable. If they're not available, users still get the core experience.
+and installable. If the new capabilities aren't available, users still get the core experience.
 
 The numbers don't lie! Companies that have launched Progressive Web Apps have
 seen impressive results. For example, Twitter saw a 65% increase in pages per
