@@ -105,7 +105,7 @@ tab. They're launchable from on the user's home screen, dock, taskbar, or shelf.
 It's possible to search for them on a device and jump between them with the app
 switcher, making them feel like part of the device they're installed on.
 
-New capabilities get opened up once installed. Keyboard shortcuts usually
+New capabilities open up after a web app is installed. Keyboard shortcuts usually
 reserved when running in the browser, become available for use. Progressive Web
 Apps can register to accept content from other applications, or to be the
 default application to handle different types of files.
