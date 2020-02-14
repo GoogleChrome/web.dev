@@ -23,10 +23,12 @@ web-tabs {
     border-bottom: 1px solid $GREY_300;
     display: flex;
     margin: 0 -24px;
+    overflow-x: auto;
     width: calc(100% + 48px);
   }
 
   .web-tabs__tab {
+    -webkit-tap-highlight-color: transparent;
     @include base-button();
     color: $BLACK;
     flex: 1 0 auto;
@@ -35,9 +37,11 @@ web-tabs {
     opacity: .6;
   }
 
-  .web-tabs__tab:hover,
-  .web-tabs__tab:focus {
-    background: rgba($SUCCESS_COLOR, .1);
+  @include hover() {
+    .web-tabs__tab:hover,
+    .web-tabs__tab:focus {
+      background: rgba($SUCCESS_COLOR, .1);
+    }
   }
 
   .web-tabs__tab:focus {
@@ -69,4 +73,8 @@ web-tabs {
   .web-tabs__panel[hidden] {
     display: none;
   }
+}
+
+.js-focus-visible .web-tabs__tab:focus:not(.focus-visible) {
+  box-shadow: none;
 }

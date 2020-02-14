@@ -46,28 +46,30 @@ class LighthouseScoresMeta extends BaseElement {
           <span class="lh-report-meta__lastaudit">
             <span>Last audit:</span> <span>${auditedOnText}</span>
           </span>
-          <a
-            href="${LH_HOST}/lh/html?url=${this.url}"
-            title="View latest Lighthouse report"
-            class="viewreport lh-report-link gc-analytics-event"
-            data-category="web.dev"
-            data-label="view lighthouse report"
-            data-action="click"
-            target="_blank"
-            rel="noopener"
-            >View Report</a
-          >
-          |
-          <a
-            href="${LH_HOST}/lh/html?url=${this.url}&download"
-            download
-            class="downloadreport lh-report-link gc-analytics-event"
-            data-category="web.dev"
-            data-label="download lighthouse report"
-            data-action="click"
-            title="Download latest Lighthouse report"
-            >Download Report</a
-          >
+          <span>
+            <a
+              href="${LH_HOST}/lh/html?url=${this.url}"
+              title="View latest Lighthouse report"
+              class="viewreport lh-report-link gc-analytics-event"
+              data-category="web.dev"
+              data-label="view lighthouse report"
+              data-action="click"
+              target="_blank"
+              rel="noopener"
+              >View Report</a
+            >
+            |
+            <a
+              href="${LH_HOST}/lh/html?url=${this.url}&download"
+              download
+              class="downloadreport lh-report-link gc-analytics-event"
+              data-category="web.dev"
+              data-label="download lighthouse report"
+              data-action="click"
+              title="Download latest Lighthouse report"
+              >Download Report</a
+            >
+          </span>
         </span>
         <span class="lh-error-msg">${this.errorMessage}</span>
       </div>

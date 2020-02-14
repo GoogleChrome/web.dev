@@ -11,6 +11,8 @@ glitch: fav-kitties-compress-starter
 related_post: reduce-network-payloads-using-text-compression
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 This codelab is an extension of the [Minify and compress network payloads
 codelab](/codelab-text-compression)
 and assumes you are familiar with the basics concepts of compression. As

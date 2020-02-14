@@ -7,7 +7,7 @@ authors:
 date: 2019-12-16
 description: |
   Read about the latest Lighthouse updates announced at Chrome Developer Summit 2019.
-hero: hero.jpg
+hero: lighthouse-logo.svg
 alt: Lighthouse logo.
 tags:
   - post # post is a required tag for the article to show up in the blog.
@@ -33,7 +33,7 @@ audit or category result.
 
 <figure class="w-figure w-figure--center">
   <img class="w-screenshot" src="./lighthouse-ci.png" alt="Lighthouse CI report."
-       style="max-width: 50%">
+       width="400">
 </figure>
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle
@@ -114,7 +114,7 @@ or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stac
 ## Coming soon: Lighthouse plugins as Chrome Extensions
 
 <figure class="w-figure w-figure--center">
-  <img src="./lighthouse-plugin-icon.png" alt="Lighthouse plugin icon." style="max-width: 250px;">
+  <img src="./lighthouse-plugin-icon.png" alt="Lighthouse plugin icon." width="250">
 </figure>
 
 [Lighthouse
@@ -131,8 +131,8 @@ CLI](https://developers.google.com/web/tools/lighthouse#cli), but the goal is to
 enable running them in the DevTools **Audits** panel too.
 
 <figure class="w-figure w-figure--center">
-  <img class="w-screenshot" src="./lighthouse-plugin-devtools.png" alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience." style="max-width: 400px;">
-  <figcaption>Community Plugins in DevTools Audits panel (beta)</figcaption>
+  <img class="w-screenshot" src="./lighthouse-plugin-devtools.png" alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience." width="400">
+  <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)</figcaption>
 </figure>
 
 When users install Lighthouse plugin extensions from the [Chrome Web

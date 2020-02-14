@@ -1,0 +1,23 @@
+name: Snapshot firestore
+on:
+  schedule:
+    # At 19:00 UTC / 7:00 PST on every Monday.
+    - cron: '0 19 * * 1'
+
+jobs:
+  ci:
+    name: Run gcloud to snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Snapshot
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
+        with:
+          version: '270.0.0'
+          service_account_email: ${{ secrets.GCLOUD_EMAIL }}
+          service_account_key: ${{ secrets.GCLOUD_KEY }}
+
+      # nb. gcloud uses a new timestamp'ed dir only when pointing at a top-level bucket. Thus, we
+      # can't naïvely target a subfolder (it will fail with "Path already exists").
+      # This is a secondary bucket, not the default Firebase project. Its lifecycle config is set
+      # to delete objects that are >=90 days old.
+      - run: gcloud firestore export gs://web-dev-production-firestore-archive

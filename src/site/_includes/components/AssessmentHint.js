@@ -30,7 +30,7 @@ module.exports = (content, summary, state) => {
   // prettier-ignore
   return html`
     <details class="w-self-assessment-hint" ${stateOverride}>
-      <summary class="w-self-assessment-hint__summary">${summary}</summary>
+      <summary class="w-self-assessment-hint__summary">${md.renderInline(summary)}</summary>
       <div class="w-self-assessment-hint__panel">${md.render(content)}</div>
     </details>
   `;

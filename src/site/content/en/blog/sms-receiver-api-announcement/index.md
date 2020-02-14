@@ -17,6 +17,7 @@ tags:
   - post # post is a required tag for the article to show up in the blog.
   - identity
   - sms
+  - capabilities
   - fugu
 ---
 
@@ -278,10 +279,10 @@ Chrome Stable
 
 ### Demos
 
-Try various messages with the demo:  
+Try various messages with the demo:
 [https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me)
 
-You may also fork it and create your version:  
+You may also fork it and create your version:
 [https://glitch.com/edit/#!/sms-receiver-demo](https://glitch.com/edit/#!/sms-receiver-demo).
 
 ### Enabling support during the origin trial
@@ -302,10 +303,10 @@ To participate in an origin trial:
    for your origin.
 1. Add the token to your pages, there are two ways to provide this token on any
    page in your origin:
-    * Add an `origin-trial <meta>` tag to the head of any page:  
+    * Add an `origin-trial <meta>` tag to the head of any page:
       `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
     * If you can configure your server, you can also provide the token on pages
-      using an `Origin-Trial` HTTP header:  
+      using an `Origin-Trial` HTTP header:
       `Origin-Trial: TOKEN_GOES_HERE`
 
 ## Feedback

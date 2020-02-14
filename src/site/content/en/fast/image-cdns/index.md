@@ -8,8 +8,6 @@ description: |
   Switching to an image CDN can yield a 40–80% savings in image bytes.
 date: 2019-08-14
 codelabs:
-  - codelab-cloudinary
-  - codelab-imgix
   - install-thumbor
 ---
 

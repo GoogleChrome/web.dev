@@ -141,6 +141,11 @@ web-side-nav[expanded][animatable] .web-side-nav__container {
   font-size: 14px;
   font-weight: 500;
   padding: 16px 24px;
+
+  &[active] {
+    -webkit-box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+    box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+  }
 }
 
 .web-side-nav__link:hover,

@@ -13,6 +13,9 @@ related_post: efficiently-load-third-party-javascript
 tags:
   - fast
 ---
+
+{% include 'content/devtools-headsup.njk' %}
+
 [Third-party scripts impact performance](/third-party-javascript), which is why it's important to [audit them regularly](/identify-slow-third-party-javascript) and use [efficient techniques for loading](/efficiently-load-third-party-javascript) them. This codelab shows you how to optimize the loading of third-party resources. It covers the following techniques:
 
 * Deferring script loading

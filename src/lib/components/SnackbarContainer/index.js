@@ -21,7 +21,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
-import {setUserAcceptsCookies} from "../../actions";
+import {setUserAcceptsCookies, checkIfUserAcceptsCookies} from "../../actions";
 import "../Snackbar";
 
 class SnackbarContainer extends BaseElement {
@@ -40,15 +40,11 @@ class SnackbarContainer extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
+    checkIfUserAcceptsCookies();
     store.subscribe(this.onStateChanged);
     this.onStateChanged();
 
-    if (!this.acceptedCookies) {
-      window.addEventListener(
-        "beforeinstallprompt",
-        this.onBeforeInstallPrompt,
-      );
-    }
+    window.addEventListener("beforeinstallprompt", this.onBeforeInstallPrompt);
   }
 
   disconnectedCallback() {
@@ -61,12 +57,9 @@ class SnackbarContainer extends BaseElement {
   }
 
   onBeforeInstallPrompt(e) {
-    e.preventDefault();
-    this.installPrompt = e;
-    window.removeEventListener(
-      "beforeinstallprompt",
-      this.onBeforeInstallPrompt,
-    );
+    if (!this.acceptedCookies) {
+      e.preventDefault();
+    }
   }
 
   onStateChanged() {
@@ -74,11 +67,6 @@ class SnackbarContainer extends BaseElement {
     this.open = state.showingSnackbar;
     this.type = state.snackbarType;
     this.acceptedCookies = state.userAcceptsCookies;
-
-    if (this.acceptedCookies && this.installPrompt) {
-      this.installPrompt.prompt();
-      this.installPrompt.userChoice.then(() => (this.installPrompt = null));
-    }
   }
 
   render() {

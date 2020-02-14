@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: As the capability gap between web and native gets smaller, it gets easier to offer the same experience for both web and native users. This may lead to cases where users have both web and native versions of the same app installed on the same device. Apps should be able to detect this situation. The getInstalledRelatedApps() API is a new web platform API that allows your web app to check to see if your native app is installed on the users device, and vice versa.
 date: 2018-12-20
-updated: 2019-10-15
+updated: 2019-12-16
 tags:
   - post
   - capabilities
@@ -53,7 +53,7 @@ and spent some time iterating the design.
 
 ## Suggested use cases {: #use-cases }
 
-* Checking for the other version of an app and switching to it
+* Checking for the native version of an app and switching to it
 * Disabling notifications in the web app when the native app is installed
 * Not prompting users to install the web app if the native app is installed
 
