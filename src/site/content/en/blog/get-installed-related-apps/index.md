@@ -5,24 +5,17 @@ authors:
   - petelepage
 description: As the capability gap between web and native gets smaller, it gets easier to offer the same experience for both web and native users. This may lead to cases where users have both web and native versions of the same app installed on the same device. Apps should be able to detect this situation. The getInstalledRelatedApps() API is a new web platform API that allows your web app to check to see if your native app is installed on the users device, and vice versa.
 date: 2018-12-20
-updated: 2019-12-16
+updated: 2020-02-14
 tags:
   - post
   - capabilities
   - fugu
-  - origin-trial
+  - chrome80
 hero: hero.jpg
 alt: mobile device with app panel open
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/855683929200394241
 ---
-
-{% Aside %}
-  We're currently working on this API as part of the new
-  [capabilities project](https://developers.google.com/web/updates/capabilities).
-  Starting in Chrome 73, the API is available as an [origin trial](#ot) on Android.
-  This post will be updated as the API evolves.
-{% endAside %}
 
 ## What is the getInstalledRelatedApps() API? {: #what }
 
@@ -65,34 +58,15 @@ and spent some time iterating the design.
 | -------------------------------------------- | ---------------------------- |
 | 1. Create explainer                          | [Complete][explainer]        |
 | 2. Create initial draft of specification     | [Complete][spec]             |
-| **3. Gather feedback and iterate on design** | [**In progress**](#feedback) |
-| **4. Origin trial**                          | [**In progress**](#origin-trial) |
-| 5. Launch                                    | Not started                  |
+| 3. Gather feedback and iterate on design     | Complete                     |
+| 4. Origin trial                              | Complete                     |
+| 5. Launch                                    | **Chrome 80**                |
 
 </div>
 
-## Join the origin trial {: #origin-trial }
-
-Starting in Chrome 73, the `getInstalledRelatedApps()` API is available as an
-origin trial for Android.
-
-{% include 'content/origin-trials.njk' %}
-
-Check out the [`getInstalledRelatedApps()` API demo][demo] and
-[`getInstalledRelatedApps()` API demo source][demo-source].
-
-### Register for the origin trial {: #ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
-### Alternatives to the origin trial
-
-If you want to experiment with the API locally, without an origin trial,
-enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
-
 ## See it in action
 
-1. Using Chrome 79 or later on Android, open the [`getInstalledRelatedApps()` demo][demo].
+1. Using Chrome 80 or later on Android, open the [`getInstalledRelatedApps()` demo][demo].
 2. Install the demo app from the Play store and refresh the [demo][demo] page.
    You should now see the app listed.
 
@@ -130,7 +104,12 @@ For example:
 ```
 
 The `url` property is optional, and the API works fine without it. On Android,
-the `platform` value must be `play`. On other devices, the `platform` value will be different.
+the `platform` value must be `play`. On other devices, the `platform` value
+will be different.
+
+Note, if you provide more than three related applications in the web app
+manifest, only the first three declared will be taken into account when
+checking for installed apps.
 
 ### Define the relationship to your web app {: #relationship-native }
 
@@ -190,19 +169,6 @@ only available when served over **HTTPS**.
 {% endAside %}
 
 ## Feedback {: #feedback }
-
-The
-<a href="https://www.w3.org/community/wicg/" rel="noopener">Web Platform Incubator Community Group (WICG)</a>
-and the Chrome team want to hear about your
-experiences with the `getInstalledRelatedApps()` API.
-
-### Tell us about the API design
-
-Is there something about the API that doesn't work as expected? Or
-are there missing methods or properties that you need to implement your idea?
-
-* File a spec issue on the [WICG getInstalledRelatedApps GitHub repo][issues],
-  or add your thoughts to an existing issue.
 
 ### Report a problem with the implementation
 
