@@ -9,11 +9,6 @@ tags:
   - fugu
 ---
 
-There are some apps that are not possible to build and deliver on the open
-web today. We call this, the *app gap*. The gap between what's possible on the
-web and what's possible on native. We want to close that gap. We believe web
-apps should be able to do anything native apps can.
-
 Through our [capabilities project][capabilities-project], we want to make
 it possible for web apps to do anything native apps can, by exposing the
 capabilities of native platforms to the web platform, while maintaining user
@@ -22,12 +17,11 @@ security, privacy, trust, and other core tenets of the web.
 You can see the full list of capabilities we're working on at
 <https://goo.gle/fugu-api-tracker>.
 
-<!--
 ## Capabilities available behind a flag {: #flag }
 
-These *experimental* APIs are only available behind a flag and are still
-under-development. There's a good chance they'll break, or the API surface
-will change.
+These APIs are only available behind a flag because they're still under
+development and should be considered *experimental*. There's a good chance
+they'll break, or the API surface will change.
 
 <div class="w-table-wrapper">
   <table>
@@ -38,10 +32,20 @@ will change.
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td>
+          <a href="/shape-detection/">Shape&nbsp;Detection API</a>
+        </td>
+        <td>
+          The Shape Detection API opens up native implementations of shape
+          detection services and exposes them through a set of JavaScript
+          interfaces.
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
--->
+
 
 ## Capabilities available as an origin trial {: #origin-trial }
 
@@ -69,13 +73,12 @@ in the [Origin Trials Guide for Web Developers][ot-guide].
           <a href="/badging-api/">Badging API</a>
         </td>
         <td>
-          The Badging API is a new web platform API that allows installed web
-          apps to set an application-wide badge, shown in an
-          operating-system-specific place associated with the application, such
-          as the shelf or home screen. Badging makes it easy to subtly notify
-          the user that there is some new activity that might require their
-          attention, or it can be used to indicate a small amount of
-          information, such as an unread count.
+          The Badging API allows web apps to set an application-wide badge,
+          shown in an operating-system-specific place associated with the
+          application, such as the shelf or home screen. Badging makes it easy
+          to subtly notify the user that there is some new activity that might
+          require their attention, or it can be used to indicate a small
+          amount of information, such as an unread count.
         </td>
       </tr>
       <tr>
@@ -107,24 +110,21 @@ in the [Origin Trials Guide for Web Developers][ot-guide].
         </td>
       </tr>
       <tr>
+        <td>Notification Triggers</td>
         <td>
-          <a href="/periodic-background-sync/">Periodic Background Sync API</a>
-        </td>
-        <td>
-          Periodic Background Sync enables web applications to periodically
-          synchronize data in the background, bringing web apps closer to
-          the behavior of a native app.
+          Notification Triggers let you schedule notifications in advance, so
+          that the operating system will deliver the notification at the right
+          time - even if there is no network connectivity, or the device is in
+          battery saver mode.
         </td>
       </tr>
       <tr>
+        <td>Serial API</td>
         <td>
-          <a href="/shape-detection/">Shape&nbsp;Detection API</a>
-        </td>
-        <td>
-          The Shape Detection API opens up native implementations of shape
-          detection services and exposes them through a set of JavaScript
-          interfaces. Currently, the supported features are face detection,
-          barcode detection, and text detection (Optical Character Recognition).
+          The Web Serial API provides a way for websites to read from and
+          write to a serial device with scripts. The API bridges the web and
+          the physical world by allowing websites to communicate with serial
+          devices, such as microcontrollers and 3D printers.
         </td>
       </tr>
       <tr>
@@ -176,10 +176,9 @@ latest version of Chrome.
           </a>
         </td>
         <td>
-          TODO
-          In Chrome 66, we shipped the Asynchronous Clipboard API with
-          support for reading and writing text. In Chrome 76, we added support
-          for reading and writing images to the clipboard.
+          The Asynchronous Clipboard API makes it possible to read and write
+          text or image data to the clipboard, without blocking the main
+          thread.
         </td>
       </tr>
       <tr>
@@ -187,7 +186,7 @@ latest version of Chrome.
           <a href="/contact-picker/">Contact Picker API</a>
         </td>
         <td>
-          The Contact Picker API is a new, on-demand picker that allows users to
+          The Contact Picker API is an on-demand picker that allows users to
           select entries from their contact list and share limited details of
           the selected entries with a website. It allows users to share only
           what they want, when they want, and makes it easier for users to
@@ -201,9 +200,19 @@ latest version of Chrome.
           </a>
         </td>
         <td>
-          The Get Installed Related Apps API is a new web platform API
+          The Get Installed Related Apps API is a web platform API
           that allows your web app to check to see if your native app is
           installed on the users device, and vice versa.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/periodic-background-sync/">Periodic Background Sync API</a>
+        </td>
+        <td>
+          Periodic Background Sync enables web applications to periodically
+          synchronize data in the background, bringing web apps closer to
+          the behavior of a native app.
         </td>
       </tr>
       <tr>
@@ -245,6 +254,6 @@ that might be helpful.
   [Web Capabilities Codelab](https://codelabs.developers.google.com/codelabs/web-capabilities/).
 {% endAside %}
 
-[ot-dashboard]: https://developers.chrome.com/origintrials/
+[ot-dashboard]: https://developers.chrome.com/origintrials/#/trials/active
 [ot-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [capabilities-project]: https://developers.google.com/web/updates/capabilities
