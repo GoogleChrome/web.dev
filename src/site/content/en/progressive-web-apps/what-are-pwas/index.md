@@ -83,7 +83,7 @@ network.
 Speed is critical for getting users to _use_ your experience. In fact, as page
 load times go from 1 second to ten seconds, the probability of a user bouncing
 [increases by 123%](https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/).
-Performance doesn't stop `onload`. Users should never wonder whether their
+Performance doesn't stop after the `onload` event. Users should never wonder whether their
 interaction—for example, clicking a button—was registered or not. Scrolling and
 animation should feel smooth. Performance affects your entire experience, from
 how users perceive your application to how it actually performs.
