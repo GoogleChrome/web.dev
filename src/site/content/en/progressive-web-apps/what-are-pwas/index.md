@@ -62,7 +62,7 @@ video chat app using WebRTC, geolocation, and push notifications. You can make
 that app installable and take those conversations virtual with WebGL and WebVR.
 With the introduction of Web Assembly, developers can tap into other ecosystems,
 like C, C++, and Rust, and bring decades of work and capabilities to the web
-too! [Squoosh.app](https://squoosh.app/), for instance, leveraged this for its
+too. [Squoosh.app](https://squoosh.app/), for instance, leverages this for its
 advanced image compression.
 
 Until recently, only native apps could really lay claim to these capabilities.
