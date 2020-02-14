@@ -43,7 +43,7 @@ with WebXR.
 
 This article is neither a WebGL nor a framework tutorial. It explains basics of
 a frame loop using the Immersive Web Working Group's Immersive VR Session sample
-([demo](https://immersive-web.github.io/webxr-samples/immersive-vr-session.html)
+([demo](https://immersive-web.github.io/webxr-samples/immersive-vr-session.html),
 [source](https://github.com/immersive-web/webxr-samples/blob/master/immersive-vr-session.html)).
 If you want to dive into WebGL or one of the frameworks, the internet provides a
 growing list of articles.
@@ -156,8 +156,8 @@ Because steps 1 and 2a were covered in the previous article, I'll start at step
 
 It probably goes without saying. To draw anything in AR or VR, I need to know
 where the viewer is and where they're looking. The viewer's position and
-orientation are provided by an `[XRViewerPose
-object](https://wiki.developer.mozilla.org/en-US/docs/Web/API/XRViewerPose)`. I
+orientation are provided by an [XRViewerPose
+object](https://wiki.developer.mozilla.org/en-US/docs/Web/API/XRViewerPose). I
 get the viewer's pose by calling `XRFrame.getViewerPose()` on the current
 animation frame. I pass it the reference space I acquired when I set up the
 session. The values returned by this object are always relative to the reference
@@ -309,7 +309,7 @@ top](#what-this-article-is-not).
 
 ## Conclusion
 
-Thißs is not the end of WebXR updates or articles. You can find a [reference for
+This is not the end of WebXR updates or articles. You can find a [reference for
 all of WebXR's interfaces and
 members](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)
 at MDN. For upcoming enhancements to the interfaces themselves, follow
