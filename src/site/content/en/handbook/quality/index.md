@@ -42,7 +42,7 @@ These audience categories map to well-known user types across technical document
 who needs to just get a particular task done usually doesn't want to scan through a lot of conceptual
 information.
 
-### Explain why a user should care about your content
+### Explain why a user should care about your content {: #explanations }
 
 *Canonical example: [Use Imagemin to compress images](/use-imagemin-to-compress-images/) leads off with a very
 straightforward explanation of how the guidance will make the reader's site better without sacrificing quality*

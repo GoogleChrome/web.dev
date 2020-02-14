@@ -166,7 +166,7 @@ If it works, it works. If not, it simply doesn't.
 ## Supporting both the first and second origin trial {: #backwards-compat }
 
 In Chrome 79, a [second origin trial]({{origin_trial.url}}) was started. Based
-on developer feedback recevied during the first origin trial, the API has
+on developer feedback received during the first origin trial, the API has
 changed, and is not backwards compatible with the first origin trial.
 
 If you have an existing implementation, and want to provide backwards

@@ -65,12 +65,11 @@ Here is an example of a React app built with CRA that has a service worker enabl
   </iframe>
 </div>
 
-In order to see which assets are being cached:
+To see which assets are being cached:
 
-1.  Mouse over the editor and press the **Show** button to preview the app.
-1.  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-1.  Click on the **Network** tab.
-1.  Reload the application.
+{% Instruction 'preview' %}
+{% Instruction 'devtools-network' %}
+{% Instruction 'reload-app' %}
 
 You'll notice that instead of showing the payload size, the `Size` column shows
 a `(from ServiceWorker)` message to indicate that these resources were retrieved
@@ -83,7 +82,7 @@ while offline:
 
 1.  In the **Network** tab in DevTools, enable the **Offline** checkbox to
    simulate an offline experience.
-1.  Reload the application.
+{% Instruction 'reload-app' %}
 
 The application works in exactly the same way, even without a network
 connection!

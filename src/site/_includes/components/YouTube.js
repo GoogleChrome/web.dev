@@ -29,6 +29,18 @@ module.exports = (id, startTime) => {
     throw new Error("Cannot create YouTube component if id is undefined");
   }
 
+  // Don't load YT iframe in our test environment. This specifically affects
+  // screenshot testing where the iframe can be slow or flaky to load and fail
+  // because YouTube is always fiddling with their UI.
+  // Load a placeholder to fill the space instead.
+  // if (process.env.ELEVENTY_ENV === "test") {
+  return html`
+    <div class="w-youtube" style="background: aquamarine;">
+      YouTube iframe placeholder
+    </div>
+  `;
+  // }
+
   let src = `https://www.youtube.com/embed/${id}`;
   if (startTime) {
     src += `?start=${startTime}`;

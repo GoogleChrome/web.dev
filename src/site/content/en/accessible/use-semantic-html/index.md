@@ -33,7 +33,7 @@ attribute are sometimes used for freeform text entry.
 It's easy to overlook the built-in keyboard support that these elements offer.
 Below are some example elements to explore. Instead of using your
 mouse, try using your keyboard to operate them. You can use `TAB` (or `SHIFT +
-TAB`) to move between controls, and you can use the arrow keys and keys like 
+TAB`) to move between controls, and you can use the arrow keys and keys like
 `ENTER` and `SPACE` to manipulate their values.
 
 <div class="glitch-embed-wrap" style="height: 450px; width: 100%;">
@@ -72,7 +72,7 @@ that the keycode is `ENTER` or `SPACE`, and then run your click handler. Ouch!
 That's a lot of extra work!
 
 Compare the difference in this example. `TAB` to either control, and use `ENTER`
-and `SPACE` to attempt to click on them. 
+and `SPACE` to attempt to click on them.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -108,6 +108,96 @@ should you choose?
 The reason for this is that buttons and links are announced differently by
 screen readers. Using the correct element helps screen reader users know which
 outcome to expect.
+
+{% AssessmentCallout 'Use the drop-down below each code sample to check whether the sample should use buttons or links.' %}
+{% Tabs 'Samples for knowledge self check' %}
+{% Tab 'sample' %}
+
+```html
+See <a href="https://webaim.org/intro/" rel="noopener">WebAIM's Introduction to Web Accessibility</a> for more information.
+```
+
+{% AssessmentHint 'Should this sample use a button or a link?' %}
+This sample should use a **link**. The sample is **correct**.
+
+When selected, the element navigates the user to another page on a different domain, so a link is semantic.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+```html
+See the <a href="/semantics-and-screen-readers">Semantics and screen readers page</a> for more information.
+```
+
+{% AssessmentHint 'Should this sample use a button or a link?' %}
+This sample should use a **link**. The sample is **correct**.
+
+When selected, the element navigates the user to a different page on the same domain. No matter where a resource is located, use a link to semantically indicate navigation.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+When selected, this element opens a modal dialog:
+
+```html
+<a href="#" onclick="openDialog()">
+```
+
+{% AssessmentHint 'Should this sample use a button or a link?' %}
+This sample should use a **button**. The sample is **incorrect**.
+
+When selected,
+the element runs a function that opens a modal dialog on the same page;
+since the element isn't navigating the user to a separate page,
+a button is semantic.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+When selected, this element opens a navigation menu:
+
+```html
+<a href="#" onclick="openNavMenu()">
+```
+
+{% AssessmentHint 'Should this sample use a button or a link?' %}
+This sample should use a **button**. The sample is **incorrect**.
+
+When selected,
+the element runs a function that opens a navigation menu on the same page.
+Opening the menu is an action, so a button is semantic.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+This code renders a horizontal navigation menu at the top of a website:
+
+```html
+<nav>
+  <button>About</button>
+  <button>Services</button>
+  <button>Work</button>
+  <button>Contact</button>
+</nav>
+```
+
+{% AssessmentHint 'Should this sample use buttons or links?' %}
+This sample should use **links**. The sample is **incorrect**.
+
+The elements in the `<nav>` menu navigate the user to other pages.
+Those pages may be separate resources in a static site,
+or they may be views in a
+[single-page application](https://developers.google.com/web/fundamentals/architecture/app-shell).
+Either way, since the user is navigating somewhere else, links are semantic.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% endTabs %}
+{% endAssessmentCallout %}
 
 ## Styling
 

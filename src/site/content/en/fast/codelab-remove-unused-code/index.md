@@ -11,6 +11,8 @@ glitch: fav-kitties-starter
 related_post: remove-unused-code
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 In this codelab, improve the performance of the following application by
 removing any unused and unneeded dependencies.
 
@@ -27,20 +29,16 @@ should see your changes reflected in the application.
 It's always a good idea to first measure how well a website performs before
 adding optimizations.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 Go ahead and click on your favorite kitten! Firebase's
 [Realtime Database](https://firebase.google.com/products/realtime-database/) is
 used in this application which is why the score updates in real-time and is
 synchronized with every other person using the application. 🐈
 
-- Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-- Click on the **Network** tab.
-
-<img class="w-screenshot" src="./network.png" alt="Network tab">
-
-Make sure `Disable Cache` is checked and reload the app.
+{% Instruction 'devtools-network', 'ol' %}
+{% Instruction 'disable-cache', 'ol' %}
+{% Instruction 'reload-app', 'ol' %}
 
 <img class="w-screenshot" src="./main-bundle.png" alt="Original bundle size of 992 KB">
 

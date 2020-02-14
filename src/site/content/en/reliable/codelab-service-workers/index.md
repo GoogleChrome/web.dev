@@ -11,6 +11,8 @@ glitch: working-with-sw
 related_post: service-workers-cache-storage
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 This codelab shows you how to register a service worker from within your web
 application, and use the Chrome DevTools to observe its behavior. It also
 covers some debugging techniques that you might find useful when dealing with
@@ -122,10 +124,9 @@ Now that you've got the code added to `register-sw.js` and `service-worker.js`
 files, it's time to visit the Live version of your sample project, and observe
 the service worker in action.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
--  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
--  Click on the **Console** tab.
+{% Instruction 'preview' %}
+{% Instruction 'devtools' %}
+{% Instruction 'devtools-console', 'ul' %}
 
 You should see something like the following log messages,
 showing that the service worker has been installed and activated:

@@ -812,7 +812,7 @@
     "twitter": "_developit",
     "github": "developit",
     "description": {
-      "en": "Jason is a Web DevRel"
+      "en": "Jason is a Web DevRel focused on speed and the JS ecosystem."
     }
   },
   "addyosmani": {
@@ -1519,6 +1519,20 @@
       "twitter": "yoavweiss",
       "github": "yoavweiss"
     },
+  "katejeffreys": {
+    "name": {
+      "given": "Kate",
+      "family": "Jeffreys"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Web Developer Relations"
+    },
+    "country": "US",
+    "description": {
+      "en": "Technical Writer at Google"
+    }
+  },
     "jimper": {
       "name": {
         "given": "Jonathon",
@@ -1618,5 +1632,34 @@
       "family": "Baheux"
     },
     "twitter": "KenjiBaheux"
+  },
+  "una": {
+    "name": {
+      "given": "Una",
+      "family": "Kravets"
+    },
+    "description": {
+      "en": "Developer Advocate for Material Design"
+    },
+    "homepage": "https://una.im/",
+    "github": "una",
+    "twitter": "una"
+  },
+  "tigeroakes": {
+    "name": {
+      "given": "Tiger",
+      "family": "Oakes"
+    },
+    "org": {
+      "name": "Mozilla",
+      "unit": "Student Worker"
+    },
+    "country": "CA",
+    "homepage": "https://tigeroakes.com/",
+    "twitter": "Not_Woods",
+    "github": "NotWoods",
+    "description": {
+      "en": "Developer working on Firefox Preview"
+    }
   }
 }

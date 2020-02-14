@@ -39,10 +39,11 @@ class Header extends HTMLElement {
 
     // Ensure that the "active" attribute is applied to any matching header
     // link, or to none (for random subpages or articles).
+    currentUrl = currentUrl.replace(/"/g, '\\"');
+    currentUrl = (currentUrl.match(/^\/\w+\//) || [""])[0];
+
     const active = this.querySelector("[active]");
-    const updated = this.querySelector(
-      `[href="${currentUrl.replace(/"/g, '\\"')}"]`,
-    );
+    const updated = this.querySelector(`[href="${currentUrl}"]`);
 
     if (active === updated) {
       return;

@@ -71,7 +71,7 @@ iterated on the design.
 2. Install the demo app from the Play store and refresh the [demo][demo] page.
    You should now see the app listed.
 
-## How to use `getInstalledRelatedApps()` {: #use }
+## How to use getInstalledRelatedApps() {: #use }
 
 To use `getInstalledRelatedApps()`, you must first create a relationship
 between between the web and native versions of your app. This relationship

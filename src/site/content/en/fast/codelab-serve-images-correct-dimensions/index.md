@@ -16,11 +16,9 @@ related_post: serve-images-with-correct-dimensions
 This Glitch is small enough that its images could be inspected by hand. However
 for most websites, using a tool like Lighthouse to automate this is essential.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
-
-- Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
-  and look for the results of the **Properly Size Images** audit.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
+1. Look for the results of the **Properly Size Images** audit.
 
 <img class="w-screenshot" src="./notfixed-properly-size-images.png" alt="The
 properly size images audit failing in Lighthouse.">
@@ -50,10 +48,9 @@ to match. You can use [ImageMagick](https://www.imagemagick.org) to resize the
 image to fit. ImageMagick is a CLI tool for image editing that comes
 pre-installed in the codelab environment.
 
-- Click the **Remix to Edit** button to make the project editable.
-- Click the **Tools** button.
-- Click the **Console** button.
-- In the console, type:
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'console', 'ol' %}
+1. In the console, type:
 
 ```bash
 convert flower_logo.png -resize 50x50 flower_logo.png
@@ -129,7 +126,7 @@ properly size images audit.">
 … And it fails! Why is that?
 
 Lighthouse runs its tests on a Nexus 5x. The Nexus 5x has a 1080 x 1920 screen.
-For the Nexus 5x, the optimal size of `flower_photo.jpg` would be 460 pixels
+For the Nexus 5x, the optimal size of `flower_photo.jpg` would be 540 pixels
 wide (1080 pixels * . 5). This is much smaller than our resized image.
 
 Should you resize the image to be even smaller? Probably. However, the answer to

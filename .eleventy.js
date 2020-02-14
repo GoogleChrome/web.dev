@@ -25,6 +25,8 @@ const slugify = require('slugify');
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
+const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
+const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
@@ -40,12 +42,17 @@ const Instruction = require(`./${componentsDir}/Instruction`);
 const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
+const Tab = require(`./${componentsDir}/Tab`);
+const Tabs = require(`./${componentsDir}/Tabs`);
+const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
 const tagsDir = 'src/site/_includes/components/tags';
 const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
+const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
+const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
@@ -56,9 +63,11 @@ const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
+const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
+const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
@@ -127,6 +136,8 @@ module.exports = function(config) {
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
+  config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
+  config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
@@ -144,12 +155,14 @@ module.exports = function(config) {
   // FILTERS
   //----------------------------------------------------------------------------
   config.addFilter('findBySlug', findBySlug);
+  config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandContributors', expandContributors);
   config.addFilter('githubLink', githubLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
+  config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
@@ -161,6 +174,8 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
+  config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
+  config.addPairedShortcode('AssessmentHint', AssessmentHint);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
@@ -176,6 +191,9 @@ module.exports = function(config) {
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
+  config.addPairedShortcode('Tab', Tab);
+  config.addPairedShortcode('Tabs', Tabs);
+  config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
 
   //----------------------------------------------------------------------------

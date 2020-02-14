@@ -19,8 +19,11 @@ const site = require("../../_data/site");
 const stripLanguage = require("../../_filters/strip-language");
 const {html} = require("common-tags");
 
-module.exports = (locale, page, collections) => {
-  const pageData = collections.all.find((item) => item.url === page.url).data;
+module.exports = (locale, page, collections, renderData = {}) => {
+  const pageData = {
+    ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
+    ...renderData,
+  };
   const pageUrl = stripLanguage(page.url);
 
   /**
@@ -37,12 +40,12 @@ module.exports = (locale, page, collections) => {
     const social =
       pageData.social && pageData.social[platform]
         ? pageData.social[platform]
-        : {};
+        : pageData;
 
-    const title = social.title || pageData.title;
-    const description = social.description || pageData.description;
-    let thumbnail = social.thumbnail || pageData.thumbnail || pageData.hero;
-    const alt = social.alt || pageData.alt || site.name;
+    const title = social.title || social.path.title;
+    const description = social.description || social.path.description;
+    let thumbnail = social.thumbnail || social.hero;
+    const alt = social.alt || site.name;
 
     // If the page doesn't have social media images, a hero, or a thumbnail,
     // fallback to using the site's default thumbnail.

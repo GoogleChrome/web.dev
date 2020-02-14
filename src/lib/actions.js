@@ -124,8 +124,10 @@ export const expandSideNav = store.action(() => {
   document.body.classList.add("web-side-nav--expanded");
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");
+  const footer = document.querySelector(".w-footer");
   main.inert = true;
   header.inert = true;
+  footer.inert = true;
   return {isSideNavExpanded: true};
 });
 
@@ -133,20 +135,28 @@ export const collapseSideNav = store.action(() => {
   document.body.classList.remove("web-side-nav--expanded");
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");
+  const footer = document.querySelector(".w-footer");
   main.inert = false;
   header.inert = false;
+  footer.inert = false;
   return {isSideNavExpanded: false};
 });
 
-export const checkIfUserAcceptsCookies = store.action(() => {
-  if (localStorage.getItem("web-accepts-cookies")) {
-    return {
-      userAcceptsCookies: true,
-    };
-  }
+export const checkIfUserAcceptsCookies = store.action(
+  ({userAcceptsCookies}) => {
+    if (userAcceptsCookies) {
+      return;
+    }
 
-  return {showingSnackbar: true, snackbarType: "cookies"};
-});
+    if (localStorage.getItem("web-accepts-cookies")) {
+      return {
+        userAcceptsCookies: true,
+      };
+    }
+
+    return {showingSnackbar: true, snackbarType: "cookies"};
+  },
+);
 
 export const setUserAcceptsCookies = store.action(() => {
   localStorage.setItem("web-accepts-cookies", 1);

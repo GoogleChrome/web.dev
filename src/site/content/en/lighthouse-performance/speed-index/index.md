@@ -60,7 +60,7 @@ This table shows how to interpret your Speed Index score:
       </tr>
       <tr>
         <td>4.4–5.8</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
         <td>50–74</td>
       </tr>
       <tr>

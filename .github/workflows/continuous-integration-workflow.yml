@@ -1,0 +1,36 @@
+name: Continuous integration
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    # At 15:00 UTC / 7:00 PST on every day-of-week from Monday through Thursday.
+    - cron: '0 15 * * 1-4'
+
+jobs:
+  ci:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Build
+        env:
+          ELEVENTY_ENV: prod
+          ALGOLIA_APP: ${{ secrets.ALGOLIA_APP }}
+          ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
+        run: npm ci && npm run build && node index-algolia.js
+
+      - name: Deploy
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
+        with:
+          version: '270.0.0'
+          service_account_email: ${{ secrets.GCLOUD_EMAIL }}
+          service_account_key: ${{ secrets.GCLOUD_KEY }}
+      - run: gcloud app deploy --project web-dev-production-1

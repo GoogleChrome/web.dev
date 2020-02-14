@@ -31,16 +31,18 @@ function trackEvent({category, action, label, value}) {
 }
 
 /**
- * Configure tracking events for any clicks on `<a href="...">`, searching for (requiring at least)
- * `data-category`, but also allowing `data-action`, `data-label` and `data-value`.
+ * Configure tracking events for any clicks on a link (`<a href="...">`)
+ * or another trackable element (class="gc-analytics-event"), searching
+ * for (requiring at least `data-category`, but also allowing
+ * `data-action`, `data-label` and `data-value`.
  */
 document.addEventListener("click", (e) => {
-  const link = e.target.closest("a[href]");
-  if (!link) {
+  const clickableEl = e.target.closest("a[href], .gc-analytics-event");
+  if (!clickableEl) {
     return;
   }
 
-  const data = getAnalyticsDataFromElement(link);
+  const data = getAnalyticsDataFromElement(clickableEl);
   if (!data.category) {
     return; // category is required
   }

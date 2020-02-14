@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2019-11-06
+updated: 2019-12-17
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -72,6 +72,16 @@ Use a `<figure>` tag when you need a caption or you need special presentation (e
   <figcaption class="w-figcaption">A standard image.</figcaption>
 </figure>
 
+### Differences between `alt` and `figcaption` {: #alt-vs-figcaption }
+
+`alt` and `figcaption` should have different text because they're both announced by assistive
+technology. If the text is duplicated, the assistive technology will announce the same text twice.
+To use the analogy of a painting, the `alt` text would describe the painting, and the `figcaption`
+text would be the little piece of paper next to the painting that mentions things like the painting's
+title, the painter's name, and perhaps a description of what the painter was trying to achieve.
+
+See [Alternative Text](https://webaim.org/techniques/alttext/) for more information.
+
 ### Styling body images
 To make an image extend slightly beyond the width of the content column (for emphasis), add the `w-figure--fullbleed` class to the `figure` element and the `w-figcaption--fullbleed` class to the `figcaption` element:
 
@@ -82,10 +92,10 @@ To make an image extend slightly beyond the width of the content column (for emp
   </figcaption>
 </figure>
 
-To keep an image from growing beyond a specified size, add the `w-figure--center` class to the `figure` element and add an inline `max-width` style to the `img` element:
+To keep an image from growing beyond a specified size, add the `w-figure--center` class to the `figure` element and add a `width` attribute to the `img` element. For example, `width="400"`. All images will have a `max-width` of `100%` on mobile:
 
 <figure class="w-figure w-figure--center">
-  <img src="./image-small.png" alt="A screenshot of a section of the Chrome DevTools user interface." style="max-width: 400px;">
+  <img src="./image-small.png" alt="A screenshot of a section of the Chrome DevTools user interface." width="400">
   <figcaption class="w-figcaption">
     A small, centered image.
     </figcaption>
@@ -94,7 +104,7 @@ To keep an image from growing beyond a specified size, add the `w-figure--center
 To place an image inline with text, add the `w-figure--inline-left` or `w-figure--inline-right` class to the `figure` element, depending on what alignment you want:
 
 <figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="./image-inline.png" alt="A diagram of the interactions between a client, a service worker, and the server." style="max-width: 200px;">
+  <img class="w-screenshot" src="./image-inline.png" alt="A diagram of the interactions between a client, a service worker, and the server." width="200">
   <figcaption class="w-figcaption">
     A left-aligned inline image.
   </figcaption>

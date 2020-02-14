@@ -2,6 +2,7 @@
 @import '../../../styles/settings/global';
 
 .web-copy-code__button {
+  -webkit-tap-highlight-color: transparent;
   background: none;
   background-image: url("../../../images/icons/file_copy.svg");
   background-position: center;
@@ -12,14 +13,12 @@
   height: 48px;
   margin: 8px;
   opacity: 0;
+  outline: none;
   padding: 0;
+  position: absolute;
+  right: 0;
   transition: background-color .5s ease;
   width: 48px;
-
-  &:active {
-    background-color: rgba($WEB_SECONDARY_COLOR, 0.4);
-    opacity: 1;
-  }
 
   &:focus,
   &:hover {
@@ -27,21 +26,34 @@
     opacity: 1;
     transition: background-color .2s ease;
   }
+
+  &:active {
+    background-color: rgba($WEB_SECONDARY_COLOR, 0.4);
+    opacity: 1;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px $FOCUS_COLOR;
+  }
 }
 
-.web-copy-code__container {
-  display: flex;
-  flex-direction: row-reverse;
-  height: 0;
-  margin-bottom: -32px;
-  position: relative;
+.js-focus-visible .web-copy-code__button:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
+  box-shadow: none;
 }
+
 web-copy-code {
+  display: block;
+  position: relative;
+
   &:active,
   &:focus,
   &:hover {
     .web-copy-code__button {
       opacity: 1;
     }
+  }
+
+  pre {
+    min-height: 64px;
   }
 }

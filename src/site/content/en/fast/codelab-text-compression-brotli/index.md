@@ -11,6 +11,8 @@ glitch: fav-kitties-compress-starter
 related_post: reduce-network-payloads-using-text-compression
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 This codelab is an extension of the [Minify and compress network payloads
 codelab](/codelab-text-compression)
 and assumes you are familiar with the basics concepts of compression. As
@@ -32,9 +34,8 @@ application.
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
-1. Click the **Remix to Edit** button to make the project editable.
-1. To preview the site, mouse over the editor, press the **App** button, then
-   the **Show** button.
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'preview', 'ol' %}
 
 In the previous [Minify and compress network payloads
 codelab](/codelab-text-compression),

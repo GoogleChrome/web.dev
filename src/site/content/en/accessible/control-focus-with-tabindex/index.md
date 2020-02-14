@@ -11,14 +11,14 @@ description: |
 ---
 
 Native HTML elements such as `<button>` or `<input>` have keyboard accessibility
-built-in for free. If you're building _custom_ interactive components, use the
-`tabindex` attribute to ensure that they're keyboard accessible.
+built in for free. If you're building _custom_ interactive components, however,
+use the `tabindex` attribute to ensure that they're keyboard accessible.
 
 {% Aside %}
 Whenever possible, use a native HTML element rather than building your
 own custom version. `<button>`, for example, is very easy to style and
 already has full keyboard support. This will save you from needing to manage
-`tabindex` or to add semantics with ARIA.
+`tabindex` or add semantics with ARIA.
 {% endAside %}
 
 ## Check if your controls are keyboard accessible
@@ -26,8 +26,8 @@ already has full keyboard support. This will save you from needing to manage
 A tool like Lighthouse is great at detecting certain accessibility issues, but
 some things can only be tested by a human.
 
-Try pressing the `TAB` key to navigate through your site. Are you able to reach
-all of the interactive controls on the page? If not, you may need to use
+Try pressing the `Tab` key to navigate through your site. Are you able to reach
+all the interactive controls on the page? If not, you may need to use
 [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
 to improve the focusability of those controls.
 
@@ -46,7 +46,7 @@ Insert an element into the natural tab order using `tabindex="0"`. For example:
 <div tabindex="0">Focus me with the TAB key</div>
 ```
 
-To focus an element, press the `TAB` key or call the element's `focus()` method.
+To focus an element, press the `Tab` key or call the element's `focus()` method.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -74,6 +74,19 @@ focused by calling its `focus()` method.
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
+
+Note that applying `tabindex="-1"` to an element doesn't affect its children;
+if they're in the tab order naturally or because of a `tabindex` value,
+they'll remain in the tab order.
+To remove an element and all its children from the tab order, consider using
+[the WICG's `inert` polyfill](https://github.com/WICG/inert).
+The polyfill emulates the behavior of a proposed `inert` attribute,
+which prevents elements from being selected or read by assistive technologies.
+
+{% Aside 'caution' %}
+The `inert` polyfill is experimental and may not work as expected in all cases.
+Test carefully before using in production.
+{% endAside %}
 
 ## Avoid `tabindex > 0`
 
@@ -141,6 +154,114 @@ semantics of an element so it will be announced properly by a screen reader.
 You can learn more about them in our guide on
 [screen reader basics](/semantics-and-screen-readers).
 {% endAside %}
+
+{% AssessmentCallout 'Use the drop-down below each code sample to check your understanding of tab order.' %}
+{% Tabs 'Samples for knowledge self check' %}
+{% Tab 'sample' %}
+
+This HTML renders a modal dialog:
+```html
+<div role="dialog" aria-labelledby="dialog-header">
+  <button aria-label="Close"></button>
+  <h2 id="dialog-header">
+    Do you want to allow notifications from this website?
+  </h2>
+  <button>No</button>
+  <button>Yes</button>
+</div>
+```
+
+{% AssessmentHint 'What is the tab order for the elements in the sample?' %}
+1. The **Close** button
+1. The **No** button
+1. The **Yes** button
+
+Only the `<button>` elements are included in the tab order
+because they're the only native HTML form elements.
+To insert other elements into the tab order, you would add a `tabindex` attribute.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+```html
+<section tabindex="-1">
+  <h2>Cat facts</h2>
+  <ul>
+    <li>A group of cats is called a <a href="https://m-w.com/dictionary/clowder">clowder</a>.</li>
+    <li>Most cats are <a href="https://www.catfacts.org/catnip.html"> unaffected by catnip</a>.</li>
+  </ul>
+</section>
+```
+
+{% AssessmentHint 'Which elements from the sample are included in the tab order?' %}
+Only the `<a>` elements are included in the tab order.
+
+The `<section>` element is not in the tab order
+because it has a negative `tabindex` value.
+(It can, however, be focused using the `focus()` method.)
+The `tabindex` value for the `<section>` element doesn't affect its children.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+This HTML renders a popup menu followed by a search input:
+
+```html
+<div role="menu" tabindex="0">
+  <a role="menuitem" href="/learn/" tabindex="-1">Learn</a>
+  <a role="menuitem" href="/measure/" tabindex="-1">Measure</a>
+  <a role="menuitem" href="/blog/" tabindex="-1">Blog</a>
+  <a role="menuitem" href="/about/" tabindex="-1">About</a>
+</div>
+<input tabindex="1" type="text" role="search" aria-label="Search" placeholder="Search">
+```
+
+{% AssessmentHint 'Which element in the sample comes first in the tab order?' %}
+The **Search** text input comes first in the tab order.
+Because it has a `tabindex` greater than 1, it jumps to the front of the tab order.
+
+(This behavior is likely to cause confusion
+if the menu is positioned on the page before the search input.
+This is an example of why having a `tabindex` value greater than zero
+is considered an anti-pattern.)
+
+{% endAssessmentHint %}
+
+{% endTab %}
+{% Tab 'sample' %}
+
+This HTML renders a custom radio group, which should have a
+[roving `tabindex`](#create-accessible-components-with-"roving-tabindex").
+(To keep things simpler, ignore the
+[`aria-*` attributes](/semantics-and-screen-readers) for now.)
+
+```html
+<div role="radiogroup" aria-labelledby="breed-header">
+  <h3 id="breed-header">Your cat's breed</h3>
+  <div role="radio" aria-checked="false" tabindex="0">Persian</div>
+  <div role="radio" aria-checked="false" tabindex="-1">Bengal</div>
+  <div role="radio" aria-checked="false" tabindex="-1">Maine Coon</div>
+</div>
+```
+
+{% AssessmentHint 'When a `role="radio"` element is focused, what should happen when a user presses the `Right` arrow key ?' %}
+- Change the `tabindex` values for all radio elements in the group to -1.
+- If there's a radio element after the one that's focused,
+  set its `tabindex` value to 0.
+- If there's no radio element after the one that's focused,
+  set the `tabindex` value of the first radio element in the group to 0.
+- Focus the radio element that now has a `tabindex` of 0.
+
+That's a lot—and it doesn't even include ARIA attributes!
+This is an example of why it's easier to use native elements
+with built-in keyboard behavior whenever you can.
+{% endAssessmentHint %}
+
+{% endTab %}
+{% endTabs %}
+{% endAssessmentCallout %}
 
 ## Keyboard access recipes
 

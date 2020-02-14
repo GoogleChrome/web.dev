@@ -12,6 +12,8 @@ glitch: gif-to-video
 related_post: replace-gifs-with-videos
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 In this codelab, improve performance by replacing an animated GIF with a
 video.
 
@@ -19,12 +21,8 @@ video.
 
 First measure how the website performs:
 
-1. To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
-1. Open Chrome DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`
-1. Click on the **Audits** panel.
-1. Select the **Performance** checkbox.
-1. Click **Run Audits** to generate a report.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
 
 When you're finished, you should see that Lighthouse has flagged the GIF as an
 issue in its "Use video formats for animated content" audit.
@@ -40,11 +38,10 @@ as well.
 
 ## Open the console
 
-Double-check that FFmpeg is installed and working.
+Double-check that FFmpeg is installed and working:
 
-1. Click the **Remix to Edit** button to make the project editable.
-1. Click the **Tools** button.
-1. Click the **Console** button.
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'console', 'ol' %}
 1. In the console, run:
 
 ```bash
@@ -162,17 +159,14 @@ instead. If you prefer a WebM `<source>` be used first, specify it first!
 
 ## Preview
 
--  Preview the site using the **Show** button.
+{% Instruction 'preview' %}
 
 The experience should look the same. So far so good.  
 
 ## Verify with Lighthouse
 
 With the live site open:
-1. Open Chrome DevTools.
-1. Click on the **Audits** tab.
-1. Check the **Performance** checkbox.
-1. Click **Run audits**.
+{% Instruction 'audit-performance', 'ol' %}
 
 You should see that the "Use video formats for animated content" audit is now
 passing! Woohoo! 💪
