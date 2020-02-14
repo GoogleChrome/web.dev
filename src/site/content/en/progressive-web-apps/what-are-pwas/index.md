@@ -57,7 +57,7 @@ experience that feels like a native application.
 
 ### Capable
 
-The web is quite capable in its own right today. You can build a hyper-local
+The web is quite capable in its own right today. For example, you can build a hyper-local
 video chat app using WebRTC, geolocation, and push notifications. You can make
 that app installable and take those conversations virtual with WebGL and WebVR.
 With the introduction of Web Assembly, developers can tap into other ecosystems,
