@@ -26,4 +26,4 @@ jobs:
       - name: Percy Test
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: npm run test:snapshots
+        run: "./tools/percy/run-percy.sh"
