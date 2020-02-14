@@ -22,8 +22,8 @@ The WebXR Device API shipped last fall in Chrome 79. As stated then, Chrome's
 implementation of the API is a work in progress. Chrome is happy to announce
 that some of the work is finished. In Chrome 81, two new features have arrived:
 
-* [Augmented reality session types](https://www.chromestatus.com/features/5450241148977152).
-* [Hit testing](https://www.chromestatus.com/features/4755348300759040).
+* [Augmented reality session types](https://www.chromestatus.com/features/5450241148977152)
+* [Hit testing](https://www.chromestatus.com/features/4755348300759040)
 
 This article covers the [WebXR Hit Test
 API](https://github.com/immersive-web/hit-test/blob/master/explainer.md), a
@@ -33,7 +33,7 @@ In this article I assume you already know how to create an augmented reality
 session and that you know how to run a frame loop. If you're not familiar with
 these concepts, you should read the earlier articles in this series.
 
-* [Virtual reality comes to the web](https://web.dev/vr-comes-to-the-web/).
+* [Virtual reality comes to the web](https://web.dev/vr-comes-to-the-web/)
 * [Virtual reality comes to the web, part II](https://web.dev/vr-comes-to-the-web-pt-ii/)
 * [Web AR: you may already know how to use it](https://web.dev/web-ar)
 
@@ -41,7 +41,7 @@ these concepts, you should read the earlier articles in this series.
 
 The code in this article is based on, but not identical to, that found in the
 Immersive Web Working Group's Hit Test sample
-([demo](https://immersive-web.github.io/webxr-samples/hit-test.html)
+([demo](https://immersive-web.github.io/webxr-samples/hit-test.html),
 [source](https://github.com/immersive-web/webxr-samples/blob/master/hit-test.html)).
 This example lets you place virtual sunflowers on surfaces in the real world.
 
