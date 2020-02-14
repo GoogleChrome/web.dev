@@ -28,7 +28,7 @@ other installed app.
   </figcaption>
 </figure>
 
-Why would you want a user to install your app? The same reason you’d want a
+Why would you want a user to install your app? The same reason you'd want a
 user to install your app from any app store. Users who install are your most
 engaged audience. Users who install a PWA have better engagement metrics than
 typical visitors, including more repeat visits, longer time on site and
@@ -82,7 +82,7 @@ interrupting them with the prompt.
 
 ### In-app installation flow
 
-To provide an in-app installation flow, you’ll need to provide a button,
+To provide an in-app installation flow, you'll need to provide a button,
 or other user interface element within your app that the user can click,
 indicating users can install your Progressive Web app. When the element is
 clicked, call `prompt()` on the saved `beforeinstallprompt` event (stored
@@ -116,7 +116,7 @@ has resolved.
 
 You can use the `userChoice` property to determine if the user installed
 your app from within your user interface. But, if the user installs your
-PWA from the address bar, or other browser component, `userChoice` won’t
+PWA from the address bar, or other browser component, `userChoice` won't
 help. Instead, you should listen for the `appinstalled` event. It is fired
 whenever your PWA is installed, no matter what mechanism is used to install
 your PWA.
@@ -165,7 +165,7 @@ window.addEventListener('load', () => {
 });
 ```
 
-## Updating your app’s icon and name
+## Updating your app's icon and name
 
 ### Chrome on Android
 

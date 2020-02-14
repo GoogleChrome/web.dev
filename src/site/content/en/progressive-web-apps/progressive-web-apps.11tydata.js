@@ -15,10 +15,7 @@ module.exports = {
     topics: [
       {
         title: "Introduction",
-        pathItems: [
-          "what-are-pwas",
-          "pwa-checklist",
-        ],
+        pathItems: ["what-are-pwas", "pwa-checklist"],
       },
       {
         title: "Capable",
