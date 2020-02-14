@@ -7,10 +7,17 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '**.js'
+      - '**.njk'
+      - '**.scss'
 # By default, runs when a pull_request's activity type is opened, synchronize,
 # or reopened
   pull_request:
-
+    paths:
+      - '**.js'
+      - '**.njk'
+      - '**.scss'
 jobs:
   build:
     runs-on: ubuntu-latest
