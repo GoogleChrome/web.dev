@@ -64,6 +64,44 @@
   }
 }
 
+// Mixin to add custom scrollbars to an element
+
+// @param {?string=} $size - Width of the scrollbar in pixels
+// @param {?string=} $thumbColor - Color of the scrollbar thumb
+// @param {?string=} $trackColor - Color of the scrollbar track
+@mixin scrollbars($size: 10px, $thumbColor: $GREY_600, $trackColor: transparent) {
+  & {
+    //Sass Lint doesn't recognize these shiny new properties
+    // sass-lint:disable-block no-misspelled-properties
+    scrollbar-color: $thumbColor $trackColor;
+    scrollbar-width: thin;
+  }
+
+  &::-webkit-scrollbar {
+    height: $size;
+    width:  $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumbColor;
+    background-clip: padding-box;
+    border: $size / 4 solid $trackColor;
+    border-radius: $size / 2;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: darken($thumbColor, 12%);
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: darken($thumbColor, 22%);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $trackColor;
+  }
+}
+
 // Mixin for overflowing text to ellipsis (…).
 @mixin ellipsis() {
   overflow: hidden;
