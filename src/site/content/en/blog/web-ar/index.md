@@ -4,7 +4,7 @@ subhead: If you've used the WebXR Device API already, you're most of the way the
 authors:
   - joemedley
 date: 2020-02-13
-hero: hero.jpg
+hero: hero2.jpg
 alt: A person using augmented reality with a smartphone.
 description:
   If you've already used the WebXR Device API, you'll be happy to know there's
