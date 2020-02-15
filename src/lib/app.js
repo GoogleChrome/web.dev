@@ -1,3 +1,4 @@
+import "./components/Assessment";
 import "./components/AssessmentQuestion";
 import "./components/ProfileSwitcherContainer";
 import "./components/Header";
