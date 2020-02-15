@@ -18,6 +18,10 @@
 @import '../../../styles/tools/mixins';
 
 web-tabs {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
   .web-tabs__tablist {
     @include scrollbars();
     border-bottom: 1px solid $GREY_300;
@@ -28,17 +32,26 @@ web-tabs {
     width: calc(100% + 3rem);
   }
 
+  .web-tabs__tablist.has-overflow {
+    padding-left: 3rem;
+  }
+
   .web-tabs__tab {
     @include base-button();
     border-radius: 0;
     color: $BLACK;
-    flex: 1 0 auto;
+    flex: 1;
     height: 3rem;
     margin: 0;
+    min-width: fit-content;
     transition:
       background $TRANSITION_SPEED,
       box-shadow $TRANSITION_SPEED,
       color $TRANSITION_SPEED;
+  }
+
+  .web-tabs__tablist.has-overflow .web-tabs__tab {
+    flex: 1 0 auto;
   }
 
   @include hover() {
@@ -85,6 +98,12 @@ web-tabs {
 
   .web-tabs__tab[aria-selected="true"] .web-tabs__text-label {
     opacity: 1;
+  }
+
+  .web-tabs__panel {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
   }
 
   .web-tabs__panel[hidden] {

@@ -1,5 +1,6 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import {checkOverflow} from "../../utils/check-overflow";
 import "./_styles.scss";
 
 class Tabs extends BaseElement {
@@ -16,6 +17,7 @@ class Tabs extends BaseElement {
     this.prerenderedChildren = null;
     this.tabs = null;
 
+    this.onResize = this.onResize.bind(this);
     this.changeTab = this.changeTab.bind(this);
     this.focusNextItem = this.focusNextItem.bind(this);
     this.focusPreviousItem = this.focusPreviousItem.bind(this);
@@ -53,6 +55,30 @@ class Tabs extends BaseElement {
       </div>
       ${this.prerenderedChildren}
     `;
+  }
+
+  firstUpdated() {
+    this.onResize();
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener("resize", this.onResize);
+  }
+  disconnectedCallback() {
+    window.removeEventListener("resize", this.onResize);
+    super.disconnectedCallback();
+  }
+
+  onResize() {
+    const tabs = this.querySelector(".web-tabs__tablist");
+    const hasOverflow = checkOverflow(tabs, "width");
+
+    if (hasOverflow) {
+      tabs.classList.add("has-overflow");
+    } else {
+      tabs.classList.remove("has-overflow");
+    }
   }
 
   tabTemplate(i, tabLabel) {
@@ -95,6 +121,11 @@ class Tabs extends BaseElement {
   }
 
   onClick(e) {
+    e.currentTarget.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
     this.changeTab(e.currentTarget);
   }
 
