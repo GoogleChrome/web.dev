@@ -1,9 +1,29 @@
+web-question {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.web-question__content {
+  display: block;
+  flex: 1 1 auto;
+  height: 0;
+  margin: 0 -1.5rem;
+  padding: 0 1.5rem .75rem;
+  overflow-y: auto;
+}
+
 .web-question__footer {
+  border-top: 1px solid $BORDER_COLOR;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 -1.5rem;
+  padding: .625rem .625rem 0;
 }
 
-.web-question__footer > * {
-  margin-top: 16px;
+@include bp(sm) {
+  .web-question__footer {
+    padding: 1rem 1rem 0;
+  }
 }

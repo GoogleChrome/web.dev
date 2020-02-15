@@ -1,0 +1,15 @@
+<web-question>
+  {{ question.stimulus | md | safe }}
+
+  {% AssessmentResponse question.type, question.cardinality, question.correctAnswers, question.columns %}
+  {{ question.stem | md | safe }}
+  {% for option in question.options %}
+  <span data-role="option">
+    {{ option.content | md | safe }}
+  </span>
+  <span data-role="rationale">
+    {{ option.rationale | md | safe }}
+  </span>
+  {% endfor %}
+  {% endAssessmentResponse %}
+</web-question>

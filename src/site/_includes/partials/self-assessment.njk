@@ -1,0 +1,23 @@
+<web-assessment>
+
+{% if assessment.blurb %}
+  <div class="w-callout__blurb web-assessment__blurb">
+    {{ assessment.blurb | md | safe }}
+  </div>
+{% endif %}
+
+{% if assessment.questions.length > 1 %}
+  <web-tabs class="web-assessment__content" label="{{ assessment.tabLabel }}s for knowledge self check">
+  {% for question in assessment.questions %}
+  <div class="web-tabs__panel" role="tabpanel" data-label="{{ assessment.tabLabel }}" hidden>
+    {% include 'partials/self-assessment-question.njk' %}
+  </div>
+  {% endfor %}
+  </web-tabs>
+{% else %}
+  <div class="web-assessment__content">
+    {% include 'partials/self-assessment-question.njk' %}
+  </div>
+{% endif %}
+
+</web-assessment>

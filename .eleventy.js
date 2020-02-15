@@ -25,8 +25,7 @@ const slugify = require('slugify');
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
-const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
-const AssessmentQuestion = require(`./${componentsDir}/AssessmentQuestion`);
+const AssessmentResponse = require(`./${componentsDir}/AssessmentResponse`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
@@ -40,12 +39,8 @@ const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Meta = require(`./${componentsDir}/Meta`);
-const Option = require(`./${componentsDir}/Option`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
-const ResponseMultipleChoice = require(`./${componentsDir}/ResponseMultipleChoice`);
-const Tab = require(`./${componentsDir}/Tab`);
-const Tabs = require(`./${componentsDir}/Tabs`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
@@ -170,8 +165,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
-  config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
-  config.addPairedShortcode('AssessmentQuestion', AssessmentQuestion);
+  config.addPairedShortcode('AssessmentResponse', AssessmentResponse);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
@@ -185,12 +179,8 @@ module.exports = function(config) {
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
   config.addShortcode('Meta', Meta);
-  config.addPairedShortcode('Option', Option);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
-  config.addPairedShortcode('ResponseMultipleChoice', ResponseMultipleChoice);
-  config.addPairedShortcode('Tab', Tab);
-  config.addPairedShortcode('Tabs', Tabs);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
 

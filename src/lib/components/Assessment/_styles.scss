@@ -1,0 +1,108 @@
+.web-assessment {
+  display: flex;
+  flex-direction: column;
+}
+
+.web-assessment--modal {
+  background: $WHITE;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 1.5rem 1.5rem .625rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 250; // Between Header and SideNav
+}
+
+@include bp(sm) {
+  .web-assessment {
+    height: 40rem;
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .web-assessment--modal {
+    margin: 2.25em 0;
+    position: unset;
+    z-index: unset;
+  }
+}
+
+// Allows buttons to resize with root font-size, maximizing space for questions
+.web-assessment .w-button {
+  height: 3rem;
+}
+
+.web-assessment__open,
+.web-assessment__open:hover,
+.web-assessment__open:active,
+.web-assessment__open:focus {
+  background: $SELF_ASSESSMENT_PRIMARY_COLOR;
+}
+
+.web-assessment__close {
+  display: none;
+  position: absolute;
+  right: .5rem;
+  top: .75rem;
+}
+
+.web-assessment__content {
+  display: none;
+}
+
+// Adjust visisbility of open button, close button, and callout content
+// when in modal view on mobile.
+.web-assessment--modal {
+  .web-assessment__open {
+    display: none;
+  }
+
+  .web-assessment__close {
+    display: inline-flex;
+  }
+
+  .web-assessment__header {
+    margin: 0;
+    padding-right: 2rem;
+  }
+
+  .web-assessment__blurb {
+    display: none;
+  }
+
+  .web-assessment__content {
+    display: flex;
+  }
+}
+
+@include bp(sm) {
+  .web-assessment__open {
+    display: none;
+  }
+
+  .web-assessment__close {
+    display: none;
+  }
+
+  .web-assessment__content {
+    display: flex;
+  }
+
+  // Override visisbility of close button and callout blurb
+  // when in modal view on desktop (in case JS fails).
+  .web-assessment--modal {
+    .web-assessment__close {
+      display: none;
+    }
+
+    .web-assessment__header {
+      margin-bottom: 1rem;
+      padding-right: 0;
+    }
+
+    .web-assessment__blurb {
+      display: block;
+    }
+  }
+}
