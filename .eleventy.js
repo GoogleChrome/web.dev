@@ -26,7 +26,6 @@ const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
 const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
-const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
 const AssessmentQuestion = require(`./${componentsDir}/AssessmentQuestion`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
@@ -185,7 +184,6 @@ module.exports = function(config) {
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
   config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
-  config.addPairedShortcode('AssessmentHint', AssessmentHint);
   config.addPairedShortcode('AssessmentQuestion', AssessmentQuestion);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
