@@ -1,6 +1,25 @@
-.web-assessment {
+web-assessment {
   display: flex;
   flex-direction: column;
+
+  // Allows buttons to resize with root font-size, maximizing space for questions
+  .w-button {
+    height: 3rem;
+  }
+}
+
+// Override inline style
+@media (max-width: 480px) {
+  web-assessment {
+    height: unset !important;
+  }
+}
+
+@include bp(sm) {
+  web-assessment {
+    height: 40rem;
+    padding: 1.5rem 1.5rem 1rem;
+  }
 }
 
 .web-assessment--modal {
@@ -16,21 +35,11 @@
 }
 
 @include bp(sm) {
-  .web-assessment {
-    height: 40rem;
-    padding: 1.5rem 1.5rem 1rem;
-  }
-
   .web-assessment--modal {
     margin: 2.25em 0;
     position: unset;
     z-index: unset;
   }
-}
-
-// Allows buttons to resize with root font-size, maximizing space for questions
-.web-assessment .w-button {
-  height: 3rem;
 }
 
 .web-assessment__open,
