@@ -1,44 +1,24 @@
 @import "../../../styles/settings/colors";
-@import '../../../styles/settings/global';
 
 .web-copy-code__button {
-  -webkit-tap-highlight-color: transparent;
-  background: none;
-  background-image: url("../../../images/icons/file_copy.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  border: none;
-  border-radius: $GLOBAL_ROUNDED;
-  cursor: pointer;
+  color: $GREY_900;
   height: 48px;
   margin: 8px;
   opacity: 0;
-  outline: none;
-  padding: 0;
   position: absolute;
   right: 0;
-  transition: background-color .5s ease;
   width: 48px;
 
   &:focus,
   &:hover {
     background-color: rgba($WEB_SECONDARY_COLOR, 0.2);
     opacity: 1;
-    transition: background-color .2s ease;
   }
 
   &:active {
     background-color: rgba($WEB_SECONDARY_COLOR, 0.4);
     opacity: 1;
   }
-
-  &:focus {
-    box-shadow: 0 0 0 1px $FOCUS_COLOR;
-  }
-}
-
-.js-focus-visible .web-copy-code__button:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
-  box-shadow: none;
 }
 
 web-copy-code {
