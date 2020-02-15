@@ -1,6 +1,3 @@
-@import '../settings/colors';
-@import '../settings/global';
-@import '../settings/type';
 @import '../tools/mixins';
 
 // =============================================================================
@@ -15,9 +12,7 @@
 // but since we're using all: initial, we need to make things
 // initially consistent.
 .w-button {
-  -webkit-tap-highlight-color: transparent; // Prevents tap highlight on hidden tooltips
   @include base-button();
-  border-radius: $GLOBAL_RADIUS;
   overflow: hidden;
   padding: 0 16px;
   position: relative;
@@ -71,31 +66,6 @@
   background-color: rgba($WEB_PRIMARY_COLOR, .16);
 }
 
-// A button with text and an icon.
-.w-button--with-icon {
-  padding: 0 24px 0 16px;
-}
-
-// A button with only an icon.
-.w-button--icon {
-  overflow: initial;
-  padding: 0 16px;
-}
-
-.w-button--with-icon::before,
-.w-button--icon::before {
-  @include font-material-icon();
-  content: attr(data-icon);
-  display: inline-block;
-  height: 24px;
-  margin-right: 16px;
-  width: 24px;
-}
-
-.w-button--icon::before {
-  margin: 0;
-}
-
 // Primary action button.
 .w-button--primary,
 .w-button--primary:hover,
@@ -137,4 +107,60 @@
 
 .w-button--secondary:active::after {
   background-color: rgba($BLACK, .1);
+}
+
+// A button with text and an icon.
+.w-button--with-icon {
+  padding: 0 24px 0 16px;
+}
+
+// A button with only an icon.
+.w-button--icon {
+  @include base-button();
+  color: $GREY_700;
+  height: 3rem;
+  overflow: unset;
+  padding: 0;
+  transition: background $TRANSITION_SPEED ease, color $TRANSITION_SPEED ease;
+  width: 3rem;
+}
+
+@include hover() {
+  .w-button--icon:hover,
+  .w-button--icon:focus {
+    background: $GREY_100;
+    color: $GREY_900;
+  }
+}
+
+.w-button--icon:active {
+  background: $GREY_200;
+}
+
+.w-button--icon:focus {
+  box-shadow: 0 0 0 1px $FOCUS_COLOR;
+}
+
+.js-focus-visible .w-button--icon:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
+  box-shadow: none;
+}
+
+// A round button.
+.w-button--round {
+  border-radius: $GLOBAL_ROUNDED;
+}
+
+// Add Material icons to icon buttons
+.w-button--with-icon::before,
+.w-button--icon::before {
+  @include font-material-icon();
+  content: attr(data-icon);
+  display: inline-block;
+  height: 24px;
+  margin-right: 16px;
+  width: 24px;
+}
+
+.w-button--icon::before {
+  margin: 0;
 }
