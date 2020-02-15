@@ -16,7 +16,7 @@
 .w-chip {
   background-color: rgba($GREY_900, 0);
   border: 1px solid rgba($GREY_900, .16);
-  border-radius: 20px;
+  border-radius: $GLOBAL_RADIUS_LARGE;
   box-sizing: border-box;
   color: $GREY_900;
   display: block;

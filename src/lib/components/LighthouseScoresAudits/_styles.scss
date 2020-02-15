@@ -60,7 +60,7 @@ web-lighthouse-scores-audits {
       background-color: transparentize($WEB_EXTENDED_TERTIARY_COLOR, .8);
       color: $WEB_EXTENDED_TERTIARY_COLOR;
       font-weight: $FONT_WEIGHT_MEDIUM;
-      border-radius: 20px;
+      border-radius: $GLOBAL_RADIUS_LARGE;
       height: 32px;
       flex-grow: 0;
       flex-shrink: 0;

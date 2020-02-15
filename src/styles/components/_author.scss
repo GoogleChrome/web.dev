@@ -34,7 +34,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 
 .w-author__image {
   background-color: $GREY_300;
-  border-radius: 50%;
+  border-radius: $GLOBAL_ROUNDED;
   flex-shrink: 0;
   height: 64px;
   margin: 0 12px 0 0;
@@ -120,7 +120,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 }
 
 .w-author__image--row-item {
-  border-radius: 50%;
+  border-radius: $GLOBAL_ROUNDED;
   height: $AUTHOR_IMAGE_SIZE_SMALL;
   margin-left: calc(-#{$AUTHOR_IMAGE_SIZE_SMALL} / 2);
   overflow: hidden;
