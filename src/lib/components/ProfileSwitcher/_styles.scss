@@ -14,7 +14,7 @@ web-profile-switcher-container {
   align-items: center;
   display: flex;
   height: 100%;
-  
+
   @include bp(md) {
     margin-left: 16px;
   }
@@ -59,7 +59,7 @@ web-profile-switcher {
 .w-profile-toggle {
   background: $GREY_100;
   border: 4px solid $WHITE;
-  border-radius: 50%;
+  border-radius: $GLOBAL_ROUNDED;
   box-shadow: none;
   box-sizing: content-box;
   display: flex;
@@ -88,7 +88,7 @@ web-profile-switcher {
 }
 
 .w-profile-toggle__photo {
-  border-radius: 50%;
+  border-radius: $GLOBAL_ROUNDED;
   height: 32px;
   width: 32px;
   animation: w-profile-toggle__appear 0.45s;
@@ -130,7 +130,7 @@ web-profile-switcher {
 }
 
 .w-profile-dialog__photo {
-  border-radius: 50%;
+  border-radius: $GLOBAL_ROUNDED;
   display: block;
   height: 64px;
   width: 64px;
