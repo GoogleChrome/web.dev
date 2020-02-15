@@ -38,27 +38,26 @@ class Assessment extends BaseElement {
       }
     }
 
+    // prettier-ignore
     return html`
-      <div class="w-callout web-assessment">
-        <div class="w-callout__header web-assessment__header">
-          <h2 class="w-callout__lockup w-callout__lockup--assess">
-            Check for understanding
-          </h2>
-          ${this.blurb}
-          <button
-            class="w-button--icon w-button--round web-assessment__close"
-            data-icon="close"
-          >
-            <span role="tooltip" class="w-tooltip">
-              Close
-            </span>
-          </button>
-        </div>
-        <button class="w-button w-button--primary web-assessment__open">
-          Open quiz
+      <div class="w-callout__header web-assessment__header">
+        <h2 class="w-callout__lockup w-callout__lockup--assess">
+          Check for understanding
+        </h2>
+        ${this.blurb}
+        <button
+          class="w-button--icon w-button--round web-assessment__close"
+          data-icon="close"
+        >
+          <span role="tooltip" class="w-tooltip">
+            Close
+          </span>
         </button>
-        ${this.prerenderedChildren}
       </div>
+      <button class="w-button w-button--primary web-assessment__open">
+        Open quiz
+      </button>
+      ${this.prerenderedChildren}
     `;
   }
 }
