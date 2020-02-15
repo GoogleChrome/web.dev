@@ -22,18 +22,18 @@ web-tabs {
     @include scrollbars();
     border-bottom: 1px solid $GREY_300;
     display: flex;
-    margin: 0 -24px;
+    margin: 0 -1.5rem;
     overflow-x: auto;
-    width: calc(100% + 48px);
     scroll-behavior: smooth;
+    width: calc(100% + 3rem);
   }
 
   .web-tabs__tab {
-    -webkit-tap-highlight-color: transparent;
     @include base-button();
+    border-radius: 0;
     color: $BLACK;
     flex: 1 0 auto;
-    height: 48px;
+    height: 3rem;
     margin: 0;
     transition:
       background $TRANSITION_SPEED,
