@@ -41,8 +41,8 @@ class Assessment extends BaseElement {
     // prettier-ignore
     return html`
       <div class="w-callout__header web-assessment__header">
-        <h2 class="w-callout__lockup w-callout__lockup--assess">
-          Check for understanding
+        <h2 class="w-callout__lockup web-assessment__lockup">
+          Check your understanding
         </h2>
         ${this.blurb}
         <button

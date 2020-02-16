@@ -1,4 +1,4 @@
-<web-assessment class="w-callout" {% if assessment.height %}style="height: {{ assessment.height }};"{% endif %}>
+<web-assessment class="w-callout {% if assessment.questions.length === 1 %}web-assessment--singleton{% endif %}" {% if assessment.height %}style="height: {{ assessment.height }};"{% endif %}>
 
 {% if assessment.blurb %}
   <div class="w-callout__blurb web-assessment__blurb">
@@ -15,9 +15,11 @@
   {% endfor %}
   </web-tabs>
 {% else %}
+  {% for question in assessment.questions %}
   <div class="web-assessment__content">
     {% include 'partials/self-assessment-question.njk' %}
   </div>
+  {% endfor %}
 {% endif %}
 
 </web-assessment>

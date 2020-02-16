@@ -1,44 +1,25 @@
 web-assessment {
   display: flex;
   flex-direction: column;
+  padding: 0;
+
+  // Override inline style
+  @media (max-width: 480px) {
+    & {
+      height: unset !important;
+    }
+  }
+
+  @include bp(sm) {
+    & {
+      height: 40rem;
+      padding: 0 !important; // Override w-callout
+    }
+  }
 
   // Allows buttons to resize with root font-size, maximizing space for questions
   .w-button {
     height: 3rem;
-  }
-}
-
-// Override inline style
-@media (max-width: 480px) {
-  web-assessment {
-    height: unset !important;
-  }
-}
-
-@include bp(sm) {
-  web-assessment {
-    height: 40rem;
-    padding: 1.5rem 1.5rem 1rem;
-  }
-}
-
-.web-assessment--modal {
-  background: $WHITE;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  padding: 1.5rem 1.5rem .625rem;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 250; // Between Header and SideNav
-}
-
-@include bp(sm) {
-  .web-assessment--modal {
-    margin: 2.25em 0;
-    position: unset;
-    z-index: unset;
   }
 }
 
@@ -56,13 +37,31 @@ web-assessment {
   top: .75rem;
 }
 
+.web-assessment__lockup {
+  color: $SELF_ASSESSMENT_PRIMARY_COLOR;
+}
+
+.web-assessment__lockup::before {
+  content: 'school';
+}
+
 .web-assessment__content {
   display: none;
+  flex: 1;
 }
 
 // Adjust visisbility of open button, close button, and callout content
 // when in modal view on mobile.
 .web-assessment--modal {
+  background: $WHITE;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 250; // Between Header and SideNav
+
   .web-assessment__open {
     display: none;
   }
@@ -72,8 +71,11 @@ web-assessment {
   }
 
   .web-assessment__header {
-    margin: 0;
-    padding-right: 2rem;
+    padding: 1.5rem 3.5rem 1rem 1.5rem;
+  }
+
+  &.web-assessment--singleton .web-assessment__header {
+    border-bottom: 1px solid $BORDER_COLOR;
   }
 
   .web-assessment__blurb {
@@ -94,6 +96,14 @@ web-assessment {
     display: none;
   }
 
+  .web-assessment__header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .web-assessment--singleton .web-assessment__header {
+    border-bottom: 1px solid $BORDER_COLOR;
+  }
+
   .web-assessment__content {
     display: flex;
   }
@@ -101,13 +111,16 @@ web-assessment {
   // Override visisbility of close button and callout blurb
   // when in modal view on desktop (in case JS fails).
   .web-assessment--modal {
+    margin: 2.25em 0;
+    position: unset;
+    z-index: unset;
+
     .web-assessment__close {
       display: none;
     }
 
     .web-assessment__header {
-      margin-bottom: 1rem;
-      padding-right: 0;
+      padding: 1.5rem 1.5rem 1rem;
     }
 
     .web-assessment__blurb {
