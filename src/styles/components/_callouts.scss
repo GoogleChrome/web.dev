@@ -28,7 +28,7 @@
 }
 
 .w-callout__header {
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .w-callout__lockup {
@@ -43,10 +43,6 @@
   color: $WEB_EXTENDED_SECONDARY_COLOR;
 }
 
-.w-callout__lockup--assess {
-  color: $SELF_ASSESSMENT_PRIMARY_COLOR;
-}
-
 .w-callout__lockup::before {
   @include font-material-icon();
   display: inline-block;
@@ -56,10 +52,6 @@
 
 .w-callout__lockup--codelab::before {
   content: 'code';
-}
-
-.w-callout__lockup--assess::before {
-  content: 'school';
 }
 
 .w-callout__headline {
@@ -96,10 +88,6 @@
 
 .w-callout__link--codelab {
   color: $WEB_EXTENDED_SECONDARY_COLOR;
-}
-
-.w-callout__link--assess {
-  color: $SELF_ASSESSMENT_PRIMARY_COLOR;
 }
 
 .w-callout__link::after {

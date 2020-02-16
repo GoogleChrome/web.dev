@@ -2,14 +2,14 @@ web-question {
   display: flex;
   flex-direction: column;
   flex: 1;
+  width: 100%; // Constrains white-space:pre elements
 }
 
 .web-question__content {
   display: block;
   flex: 1 1 auto;
   height: 0;
-  margin: 0 -1.5rem;
-  padding: 0 1.5rem .75rem;
+  padding: 0 1.5rem 1.5rem;
   overflow-y: auto;
 }
 
@@ -18,12 +18,11 @@ web-question {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 -1.5rem;
-  padding: .625rem .625rem 0;
-}
+  padding: .625rem;
 
-@include bp(sm) {
-  .web-question__footer {
-    padding: 1rem 1rem 0;
+  @include bp(sm) {
+    & {
+      padding: 1rem;
+    }
   }
 }
