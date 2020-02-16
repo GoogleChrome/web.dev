@@ -1,8 +1,8 @@
 import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {BaseResponseElement} from "../BaseResponseElement";
 
 /* eslint-disable require-jsdoc */
-class ResponseThinkAndCheck extends BaseElement {
+class ResponseThinkAndCheck extends BaseResponseElement {
   static get properties() {
     return {
       cardinality: {type: String},
@@ -23,6 +23,8 @@ class ResponseThinkAndCheck extends BaseElement {
 
       for (const child of this.children) {
         if (child.getAttribute("data-role") === "rationale") {
+          child.className =
+            "web-response__option-rationale web-response__option-rationale--standalone";
           this.rationale.push(child);
         } else {
           this.prerenderedChildren.push(child);
@@ -31,10 +33,7 @@ class ResponseThinkAndCheck extends BaseElement {
     }
 
     return html`
-      ${this.prerenderedChildren}
-      <div class="web-mc__option-rationale">
-        ${this.rationale}
-      </div>
+      ${this.prerenderedChildren} ${this.rationale}
     `;
   }
 }

@@ -51,14 +51,14 @@ class SelectGroup extends BaseElement {
     let selectorClass = "";
 
     if (prefix) {
-      labelClass = prefix + "__option-label";
+      labelClass = prefix + "__option";
       inputClass = prefix + "__input";
       selectorClass = prefix + "__selector";
     }
 
     return html`
       <label
-        class="web-select-group__option-label ${labelClass}"
+        class="web-select-group__option ${labelClass}"
         data-category="Site-Wide Custom Events"
         data-label="${type}, web-select-group-${this.idSalt}-${i}"
       >
@@ -69,7 +69,7 @@ class SelectGroup extends BaseElement {
           value="${i}"
         />
         <span class="web-select-group__selector ${selectorClass}"></span>
-        <span class="w-selectgroup__option-content">
+        <span class="web-select-group__option-content">
           ${content}
         </span>
       </label>

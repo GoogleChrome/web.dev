@@ -4,12 +4,16 @@
   {% AssessmentResponse question.type, question.cardinality, question.correctAnswers, question.columns %}
   {{ question.stem | md | safe }}
   {% for option in question.options %}
+  {% if option.content %}
   <span data-role="option">
     {{ option.content | md | safe }}
   </span>
-  <span data-role="rationale">
+  {% endif %}
+  {% if option.rationale %}
+  <div data-role="rationale">
     {{ option.rationale | md | safe }}
-  </span>
+  </div>
+  {% endif %}
   {% endfor %}
   {% endAssessmentResponse %}
 </web-question>

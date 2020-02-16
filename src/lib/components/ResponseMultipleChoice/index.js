@@ -1,60 +1,93 @@
 import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {BaseResponseElement} from "../BaseResponseElement";
 import "../SelectGroup";
 
 /* eslint-disable require-jsdoc */
-class ResponseMultipleChoice extends BaseElement {
+class ResponseMultipleChoice extends BaseResponseElement {
   static get properties() {
     return {
       cardinality: {type: String},
       columns: {type: Boolean},
+      correct: {type: String},
     };
   }
 
   constructor() {
     super();
-    this.options = null;
+    this.prerenderedChildren = null;
+    this.optionContents = null;
+    this.rationales = null;
+  }
+
+  optionTemplate(content, rationale, isCorrect) {
+    const flag = document.createElement("div");
+
+    flag.className = "web-response__correctness-flag";
+    if (isCorrect) {
+      flag.innerHTML = "Correct";
+    } else {
+      flag.innerHTML = "Incorrect";
+    }
+    content.prepend(flag);
+    rationale.className = "web-response__option-rationale";
+    content.append(rationale);
+
+    return content;
   }
 
   render() {
-    const cardinality = this.cardinality.trim();
-    let selectType = "radio";
-    let min = 1;
-    let max = null;
+    const options = [];
+    const correctArr = this.correct.split(",").map(Number);
+    const selectionRange = BaseResponseElement.getSelectionRange(
+      this.cardinality,
+    );
+    const selectType = this.cardinality === "1" ? "radio" : "checkbox";
+    console.log(selectionRange.min, selectionRange.max);
 
-    // TODO: move to separate function
     // TODO: add max and min select
-    if (cardinality === "1") {
-    } else if (/^\d+$/.test(cardinality)) {
-      selectType = "checkbox";
-      min = parseInt(cardinality);
-      max = min;
-    } else if (/^\d+\+$/.test(cardinality)) {
-      selectType = "checkbox";
-      min = parseInt(cardinality);
-    } else if (/^\d-\d+$/.test(cardinality)) {
-      selectType = "checkbox";
-      [min, max] = cardinality.split("-"); // TODO: Check this works
-      [min, max] = [parseInt(min), parseInt(max)]; // TODO: Check this works
-    }
 
     if (!this.prerenderedChildren) {
-      this.options = [];
+      this.prerenderedChildren = [];
+      this.optionContents = [];
+      this.rationales = [];
 
       for (const child of this.children) {
-        if (child.getAttribute("data-role") === "option") {
-          this.options.push(child);
+        const role = child.getAttribute("data-role");
+
+        switch (role) {
+          case "option":
+            this.optionContents.push(child);
+            break;
+          case "rationale":
+            this.rationales.push(child);
+            break;
+          default:
+            this.prerenderedChildren.push(child);
         }
+      }
+
+      for (let i = 0; i < this.optionContents.length; i++) {
+        const isCorrect = correctArr.includes(i);
+
+        options.push(
+          this.optionTemplate(
+            this.optionContents[i],
+            this.rationales[i],
+            isCorrect,
+          ),
+        );
       }
     }
 
     return html`
+      ${this.prerenderedChildren}
       <web-select-group
         type="${selectType}"
         prefix="web-response-mc"
         ?columns="${this.columns}"
-        >${this.options}</web-select-group
       >
+        ${options}
+      </web-select-group>
     `;
   }
 }
