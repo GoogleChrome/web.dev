@@ -23,7 +23,6 @@ module.exports = (
   correctAnswers,
   twoColumns = false,
 ) => {
-  /* eslint-disable max-len */
   if (!type) {
     throw new Error(
       `Can't create AssessmentResponse component without a type. Did you forget to pass the type as a string?`,
@@ -41,18 +40,21 @@ module.exports = (
     );
   }
 
+  if (correctAnswers && !/^\d(,\d)*$/.test(correctAnswers)) {
+    throw new Error(
+      `The correctAnswers value for the AssessmentResponse component must be a comma-separated list of positive integers.`,
+    );
+  }
+
   if (twoColumns != true && twoColumns != false) {
     throw new Error(
       `The columns value for the AssessmentResponse component must be true or false.`,
     );
-    /* eslint-enable max-len */
   }
 
   const columnsAttr = twoColumns ? "columns" : "";
   const cardinalityAttr = cardinality ? "cardinality=" + cardinality : "";
-  const correctAnswersAttr = correctAnswers
-    ? "correct-answers=" + correctAnswers
-    : "";
+  const correctAnswersAttr = correctAnswers ? "correct=" + correctAnswers : "";
 
   // prettier-ignore
   switch (type) {
