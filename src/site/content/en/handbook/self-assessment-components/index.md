@@ -1,164 +1,79 @@
 ---
 layout: handbook
-title: Self-assessment components
+title: Self-assessments
 date: 2020-01-28
 description: |
   Learn how to use web.dev's self-assessment components.
 ---
 
-## Self-assessment components
+Use self-assessments to provide opportunities for users
+to check their understanding of concepts covered in your post.
+Here's a self-assessment with some dummy questions:
 
-1. [Self-assessment callout](#self-assessment-callout)
-1. [Tabs](#tabs)
-1. [Questions](#questions)
+{% include 'partials/self-assessment.njk' %}
+
+## Create a self-assessment
+
+1. [Get started](#get-started)
+1. [Question set parameters](#question-set-parameters)
+1. [Question anatomy and parameters](#question-anatomy-and-parameters)
 1. [Response types](#response-types)
     - [Multiple-choice](#multiple-choice)
-1. [Think-and-checks (Hints)](#think-and-checks)
-1. [Putting it all together](#putting-it-all-together)
+    - [Think-and-checks](#think-and-checks)
+    - [Composite questions](#composite-questions)
 
-## Self-assessment callout
+## Get started
 
-Use a self-assessment callout to provide opportunities for users
-to check their understanding of concepts covered in your post.
+To include a self-assessment in your post:
+1. Add `{% raw %}{% include 'partials/self-assessment.njk' %}{% endraw %}`
+   to your post where you want the self-assessment to appear.
+1. Copy `self-assessment.11tydata.js` in `src/site/_drafts`
+   to your post's directory.
+1. Change the copied file's name to `your-post-directory-name.11tydata.js`.
+1. Follow the pattern in the file to create your question set.
 
-When self-assessments include more than one question,
+## Question set parameters
+
+When a self-assessment includes more than one question,
 include a statement about what the self-assessment covers
-in the callout shortcode.
+using the `setLeader` key. For example:
 
-```html
-{% raw %}{% AssessmentCallout 'Test your knowledge of resource optimization.' %}
-
-Content goes here.
-
-{% endAssessmentCallout %}{% endraw %}
+```js
+setLeader: "Test your knowledge of resource optimization",
 ```
 
+Self-assessments have a default height of 640&nbsp;px.
+(A stable height keeps the location of the **Check** / **Next** button predictable.)
+If most of your questions or taller or shorter than the default height,
+change it using the `height` key.
 
-{% AssessmentCallout 'Test your knowledge of resource optimization.' %}
-
-Content goes here.
-
-{% endAssessmentCallout %}
-
-## Tabs
-
-Use tabs when your self-assessment includes more than one question.
-
-Include a description of the tabs purpose in the shortcode for accessibility.
-
-You can use three keywords in the Tab shortcode argument
-to generate sequentially numbered tab labels:
-- `question`: creates the label `Question n`, where _n_ is the number of the tab in the set.
+You can adjust the labels for the question tabs using the `tabLabel` key.
+There are two options:
+- `question` (default): creates the label `Question n`,
+  where _n_ is the number of the tab in the set.
 - `sample`: creates the label `Sample n`.
-- `bare`: creates the label `n`.
 
-Any other text in the Tab shortcode argument will be presented as-is.
-
-```html
-{% raw %}{% Tabs 'Questions for knowledge self check' %}
-{% Tab 'question' %}
-
-Here's the content for the first tab.
-
-{% endTab %}
-{% Tab 'question' %}
-
-Here's the content for the second tab. It includes a [link](#).
-
-{% endTab %}
-{% Tab 'Custom' %}
-
-Here's the content for the third tab. This tab has a custom label.
-
-{% endTab %}
-{% endTabs %}{% endraw %}
-```
-
-{% Tabs 'Questions for knowledge self check' %}
-{% Tab 'question' %}
-
-Here's the content for the first tab.
-
-{% endTab %}
-{% Tab 'question' %}
-
-Here's the content for the second tab. It includes a [link](#).
-
-{% endTab %}
-{% Tab 'Custom' %}
-
-Here's the content for the third tab. This tab has a custom label.
-
-{% endTab %}
-{% endTabs %}
-
-## Questions
-A self-assessment question includes three components:
-- The question or task the user is being asked to respond to,
-  which can be MarkDown or HTML.
-- One or more [response types](#response-types)
+## Question anatomy and parameters
+An unanswered self-assessment question includes four components:
+- An optional **stimulus** that appears at the top of the question
+  and provides any information needed to respond to the question.
+  Stimuli may be text, media, or a combination.
+  Only one stimulus per question is allowed.
+- One or more **stems**, which are the questions or tasks
+  the user is being asked to respond to.
+  Stems are text only, but they do support inline MarkDown.
+- A [response type](#response-types) for each stem.
 - An automatically generated question footer,
-  which includes the **Check** and **Report issue** buttons
+  which includes the **Check** and **Report issue** buttons.
 
-Create a question using the `AssessmentQuestion` shortcode:
+Once the user submits an answer to a question,
+it shows:
+- Whether the option is correct or incorrect
+- The rationale for the option
 
-```html
-{% raw %}{% AssessmentQuestion %}
-Question content, including the response type(s), goes here
-{% endAssessmentQuestion %}{% endraw %}
-```
+### Cardinality
 
-{% Aside 'gotchas' %}
-[Response-type components](#response-types) won't work
-if they're not included in a question component.
-{% endAside %}
-
-## Response types
-
-### Multiple-choice
-The multiple-choice response type lets users respond to a question
-by selecting from an array of options,
-which can include MarkDown or images.
-
-{% Aside 'warning' %}
-To help ensure that users understand what selecting an option will do,
-don't include links or any other interactive elements in a multiple-choice option.
-{% endAside %}
-
-#### Options
-Wrap each option in a `Option` shortcode:
-
-```html
-{% raw %}{% AssessmentQuestion %}
-
-When is it appropriate to lazy load an image?
-
-{% ResponseMultipleChoice '1' %}
-{% Option %}When the image is offscreen during initial page load.{% endOption %}
-{% Option %}When the image is a PNG or JPG.{% endOption %}
-{% Option %}When the image has a `lazyload` class.{% endOption %}
-{% Option %}When the image is larger than 10&nbsp;KB.{% endOption %}
-{% endResponseMultipleChoice %}
-
-{% endAssessmentQuestion %}{% endraw %}
-```
-
-{% AssessmentQuestion %}
-
-When is it appropriate to lazy load an image?
-
-{% ResponseMultipleChoice '1' %}
-{% Option %}When the image is offscreen during initial page load.{% endOption %}
-{% Option %}When the image is a PNG or JPG.{% endOption %}
-{% Option %}When the image has a `lazyload` class.{% endOption %}
-{% Option %}When the image is larger than 10&nbsp;KB.{% endOption %}
-{% endResponseMultipleChoice %}
-
-{% endAssessmentQuestion %}
-
-#### Cardinality
-
-Use the `cardinality` parameter to control how many options a user may select:
+Use the `cardinality` key to control how many options a user may select:
 - `n`: The user must select **exactly _n_** options
   before the response is considered complete.
   If _n_&nbsp;>&nbsp;1, all unselected options will be disabled
@@ -169,178 +84,65 @@ Use the `cardinality` parameter to control how many options a user may select:
   before the response is considered complete.
   All unselected options will be disabled when _m_ options are selected.
 
-For example, setting `cardinality` to `1` allows users
-to select one option:
+For example,
+- `cardinality: 1` allows users to select only one option.
+- `cardinality: 2+` allows users to select two or more options.
+- `cardinality: 2-3` requires users to select two options
+  before allowing them to check their answer
+  and doesn't allow them to select more than three options.
 
-```html
-{% raw %}{% ResponseMultipleChoice '1' %}{% endraw %}
-```
+### Correct answer(s)
 
-{% AssessmentQuestion %}
+Use the `correctAnswers` key to indicate all correct answers to a question
+using a comma-separated, zero-indexed list.
+For example, `correctAnswers: "0,3"` indicates
+that the first and fourth answers are correct.
 
-When is it appropriate to lazy load an image?
+### Layout
 
-{% ResponseMultipleChoice '1' %}
-{% Option %}When the image is offscreen during initial page load.{% endOption %}
-{% Option %}When the image is a PNG or JPG.{% endOption %}
-{% Option %}When the image has a `lazyload` class.{% endOption %}
-{% Option %}When the image is larger than 10&nbsp;KB.{% endOption %}
-{% endResponseMultipleChoice %}
-
-{% endAssessmentQuestion %}
-
-Another example: setting `cardinality` to `2+` allows users
-to select two or more options:
-
-```html
-{% raw %}{% ResponseMultipleChoice '2+' %}{% endraw %}
-```
-
-{% AssessmentQuestion %}
-
-Which statements about optimizing third-party resources are accurate?
-Choose **two or more** statements.
-
-{% ResponseMultipleChoice '2+' %}
-{% Option %}The `async` and `defer` attributes can be used interchangeably.{% endOption %}
-{% Option %}Pre-connecting to resources is sometimes appropriate.{% endOption %}
-{% Option %}Lazy-loading ads should typically be avoided.{% endOption %}
-{% Option %}Resources that don't provide value should be removed.{% endOption %}
-{% Option %}Self-hosting resources requires minimal maintenance.{% endOption %}
-{% endResponseMultipleChoice %}
-
-{% endAssessmentQuestion %}
-
-#### Layout
-
-Multiple-choice options can be presented in two columns
-by setting the `columns` parameter to `true`:
-
-```html
-{% raw %}{% ResponseMultipleChoice '1', true %}{% endraw %}
-```
-
-{% AssessmentQuestion %}
-
-When is it appropriate to lazy load an image?
-
-{% ResponseMultipleChoice '1', true %}
-{% Option %}When the image is offscreen during initial page load.{% endOption %}
-{% Option %}When the image is a PNG or JPG.{% endOption %}
-{% Option %}When the image has a `lazyload` class.{% endOption %}
-{% Option %}When the image is larger than 10&nbsp;KB.{% endOption %}
-{% endResponseMultipleChoice %}
-
-{% endAssessmentQuestion %}
+The options of most response types can be presented in two columns
+by setting the `columns` key to `true`.
+(Response types that don't support a two-column layout
+will ignore the `columns` key.)
 
 {% Aside %}
-Always use a single column for textual options.
+It's almost always best to use a single column for textual options.
 For image options,
 see which layout best balances legibility and screen real estate.
 {% endAside %}
 
-## Think-and-checks
-Think-and-checks (also known as Hints) let you present a stimulus of some kind
+## Response types
+
+### Multiple-choice
+The multiple-choice response type lets users respond to a question
+by selecting from an array of options,
+which can include MarkDown or images.
+(But not both! Overstuffing your options can make them artificially hard.)
+
+{% Aside 'warning' %}
+To help ensure that users understand what selecting an option will do,
+don't include links or any other interactive elements in a multiple-choice option.
+{% endAside %}
+
+### Think-and-checks
+Think-and-checks let you present a stimulus of some kind
 (for example, a code sample) and ask a question about it.
-The user can formulate a mental response
+Users can formulate a mental response
 and then use the drop-down to check it.
 
 {% Aside 'caution' %}
 Since think-and-checks don't provide a way for users to select
 and validate an actual response,
-it's generally better to use a [response type](#response-types) instead.
+it's generally better to use any other [response type](#response-types) instead.
 {% endAside %}
 
-````html
-```html
-<label for="pwd-input">Password</label>
+### Composite questions
+You can use two or more response components in a single question.
+<!-- TODO: Explain how to do that -->
 
-<input type="text" role="textbox" id="pwd-input" name="password">
-```
-
-{% raw %}{% AssessmentHint 'Does the sample need ARIA?' %}
-**No.** This sample is **incorrect**.
-Since the text input is a native HTML form element,
-it doesn't need ARIA for its semantics.
-To fix the sample, remove the `role` attribute from the `<input>` element.
-{% endAssessmentHint %}{% endraw %}
-
-````
-
-```html
-<label for="pwd-input">Password</label>
-
-<input type="text" role="textbox" id="pwd-input" name="password">
-```
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-**No.** This sample is **incorrect**.
-Since the text input is a native HTML form element,
-it doesn't need ARIA for its semantics.
-To fix the sample, remove the `role` attribute from the `<input>` element.
-{% endAssessmentHint %}
-
-## Putting it all together
-
-Here's an example of a multi-question self-assessment. It includes:
-- The self-assessment callout
-- Tabs
-- Multiple-choice questions with different cardinalities and layouts
-
-{% AssessmentCallout 'Test your knowledge of resource optimization.' %}
-
-{% Tabs 'Questions for knowledge self check' %}
-{% Tab 'question' %}
-
-{% AssessmentQuestion %}
-
-When is it appropriate to lazy load an image?
-
-{% ResponseMultipleChoice '1' %}
-{% Option %}When the image is offscreen during initial page load.{% endOption %}
-{% Option %}When the image is a PNG or JPG.{% endOption %}
-{% Option %}When the image has a `lazyload` class.{% endOption %}
-{% Option %}When the image is larger than 10&nbsp;KB.{% endOption %}
-{% endResponseMultipleChoice %}
-
-{% endAssessmentQuestion %}
-
-{% endTab %}
-{% Tab 'question' %}
-
-{% AssessmentQuestion %}
-
-Which statements about optimizing third-party resources are accurate?
-Choose **two or more** statements.
-
-{% ResponseMultipleChoice '2+' %}
-{% Option %}The `async` and `defer` attributes can be used interchangeably.{% endOption %}
-{% Option %}Pre-connecting to resources is sometimes appropriate.{% endOption %}
-{% Option %}Lazy-loading ads should typically be avoided.{% endOption %}
-{% Option %}Resources that don't provide value should be removed.{% endOption %}
-{% Option %}Self-hosting resources requires minimal maintenance.{% endOption %}
-{% endResponseMultipleChoice %}
-
-{% endAssessmentQuestion %}
-
-{% endTab %}
-{% Tab 'question' %}
-
-{% AssessmentQuestion %}
-
-Which **two** Sesame Street muppets are clearly the best?
-
-{% ResponseMultipleChoice '2', true %}
-{% Option %}![Elmo](elmo.jpg){% endOption %}
-{% Option %}![Ernie](ernie.jpg){% endOption %}
-{% Option %}![Cookie Monster](cookiemonster.jpg){% endOption %}
-{% Option %}![Big Bird](bigbird.jpg){% endOption %}
-{% Option %}![Grover](grover.jpg){% endOption %}
-{% endResponseMultipleChoice %}
-
-{% endAssessmentQuestion %}
-
-{% endTab %}
-{% endTabs %}
-
-{% endAssessmentCallout %}
+{% Aside 'caution' %}
+Use composite questions judiciously.
+The more response components there are, the harder the question is.
+It's better to break up a multi-part question into separate questions
+unless the parts are truly interdependent.
+{% endAside %}
