@@ -1,6 +1,6 @@
 module.exports = {
   assessment: {
-    blurb: `Use the drop-down below each code sample
+    setLeader: `Use the drop-down below each code sample
       to check your understanding of tab order.`,
     tabLabel: "sample",
     questions: [

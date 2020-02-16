@@ -1,6 +1,6 @@
 module.exports = {
   assessment: {
-    blurb: `Use the drop-down below each code sample to check whether the HTML
+    setLeader: `Use the drop-down below each code sample to check whether the HTML
       element in the sample has an accessible name.`,
     tabLabel: "sample",
     questions: [
