@@ -16,7 +16,7 @@ class AssessmentQuestion extends BaseElement {
       for (const child of this.children) {
         // If any question components require a response,
         // disable the Check button.
-        if (child.getAttribute("correct-answers")) responses++;
+        if (child.getAttribute("correct")) responses++;
         this.prerenderedChildren.push(child);
       }
     }
