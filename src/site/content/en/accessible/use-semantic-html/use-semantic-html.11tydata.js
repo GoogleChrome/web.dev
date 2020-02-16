@@ -1,6 +1,6 @@
 module.exports = {
   assessment: {
-    blurb: `Use the drop-down below each code sample to check
+    setLeader: `Use the drop-down below each code sample to check
       whether the sample should use buttons or links.`,
     tabLabel: "sample",
     questions: [

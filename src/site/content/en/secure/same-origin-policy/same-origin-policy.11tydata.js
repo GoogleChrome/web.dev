@@ -1,6 +1,6 @@
 module.exports = {
   assessment: {
-    blurb: `Use the drop-down below each cross-origin resource
+    setLeader: `Use the drop-down below each cross-origin resource
       to check whether the specified action is allowed.`,
     tabLabel: "sample",
     questions: [

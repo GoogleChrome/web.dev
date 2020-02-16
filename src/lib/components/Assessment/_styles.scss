@@ -78,7 +78,7 @@ web-assessment {
     border-bottom: 1px solid $BORDER_COLOR;
   }
 
-  .web-assessment__blurb {
+  .web-assessment__set-leader {
     display: none;
   }
 
@@ -108,7 +108,7 @@ web-assessment {
     display: flex;
   }
 
-  // Override visisbility of close button and callout blurb
+  // Override visisbility of close button and set leader
   // when in modal view on desktop (in case JS fails).
   .web-assessment--modal {
     margin: 2.25em 0;
@@ -123,7 +123,7 @@ web-assessment {
       padding: 1.5rem 1.5rem 1rem;
     }
 
-    .web-assessment__blurb {
+    .web-assessment__set-leader {
       display: block;
     }
   }

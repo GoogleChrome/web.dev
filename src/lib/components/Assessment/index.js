@@ -21,17 +21,17 @@ class Assessment extends BaseElement {
   constructor() {
     super();
     this.prerenderedChildren = null;
-    this.blurb = null;
+    this.setLeader = null;
   }
 
   render() {
     if (!this.prerenderedChildren) {
       this.prerenderedChildren = [];
-      this.blurb = [];
+      this.setLeader = [];
 
       for (const child of this.children) {
-        if (child.classList.contains("w-callout__blurb")) {
-          this.blurb.push(child);
+        if (child.classList.contains("web-assessment__set-leader")) {
+          this.setLeader.push(child);
         } else {
           this.prerenderedChildren.push(child);
         }
@@ -44,7 +44,7 @@ class Assessment extends BaseElement {
         <h2 class="w-callout__lockup web-assessment__lockup">
           Check your understanding
         </h2>
-        ${this.blurb}
+        ${this.setLeader}
         <button
           class="w-button--icon w-button--round web-assessment__close"
           data-icon="close"
