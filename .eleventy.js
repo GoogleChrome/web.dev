@@ -29,6 +29,7 @@ const AssessmentResponse = require(`./${componentsDir}/AssessmentResponse`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
+const Block = require(`./${componentsDir}/Block`);
 const Blockquote = require(`./${componentsDir}/Blockquote`);
 const Breadcrumbs = require(`./${componentsDir}/Breadcrumbs`);
 const CodelabsCallout = require(`./${componentsDir}/CodelabsCallout`);
@@ -169,6 +170,7 @@ module.exports = function(config) {
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
+  config.addPairedShortcode('Block', Block);
   config.addPairedShortcode('Blockquote', Blockquote);
   config.addShortcode('Breadcrumbs', Breadcrumbs);
   config.addShortcode('CodelabsCallout', CodelabsCallout);
