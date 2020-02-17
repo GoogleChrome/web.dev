@@ -142,15 +142,21 @@ export const collapseSideNav = store.action(() => {
   return {isSideNavExpanded: false};
 });
 
-export const checkIfUserAcceptsCookies = store.action(() => {
-  if (localStorage.getItem("web-accepts-cookies")) {
-    return {
-      userAcceptsCookies: true,
-    };
-  }
+export const checkIfUserAcceptsCookies = store.action(
+  ({userAcceptsCookies}) => {
+    if (userAcceptsCookies) {
+      return;
+    }
 
-  return {showingSnackbar: true, snackbarType: "cookies"};
-});
+    if (localStorage.getItem("web-accepts-cookies")) {
+      return {
+        userAcceptsCookies: true,
+      };
+    }
+
+    return {showingSnackbar: true, snackbarType: "cookies"};
+  },
+);
 
 export const setUserAcceptsCookies = store.action(() => {
   localStorage.setItem("web-accepts-cookies", 1);

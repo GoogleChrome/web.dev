@@ -1,0 +1,36 @@
+name: Percy
+
+# If you need to specify activity types or configuration for an event, you must
+# configure each event separately. You must append a colon (:) to all events,
+# including events without configuration.
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.js'
+      - '**.njk'
+      - '**.scss'
+# By default, runs when a pull_request's activity type is opened, synchronize,
+# or reopened
+  pull_request:
+    paths:
+      - '**.js'
+      - '**.njk'
+      - '**.scss'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1.0.0
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Install
+        run: npm ci
+      - name: Percy Test
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: npm run test:snapshots

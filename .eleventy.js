@@ -51,6 +51,8 @@ const tagsDir = 'src/site/_includes/components/tags';
 const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
+const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
+const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
@@ -61,10 +63,11 @@ const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
+const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
-const paginate = require(`./${filtersDir}/paginate`);
+const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
@@ -133,6 +136,8 @@ module.exports = function(config) {
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
+  config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
+  config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
@@ -150,13 +155,14 @@ module.exports = function(config) {
   // FILTERS
   //----------------------------------------------------------------------------
   config.addFilter('findBySlug', findBySlug);
+  config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandContributors', expandContributors);
   config.addFilter('githubLink', githubLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
-  config.addFilter('paginate', paginate);
+  config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);

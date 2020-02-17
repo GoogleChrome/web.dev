@@ -5,7 +5,7 @@ description: |
   Learn how Lighthouse generates the overall Performance score for your page.
 subhead: How Lighthouse calculates your overall Performance score
 date: 2019-09-19
-updated: 2019-10-14
+updated: 2020-02-13
 ---
 
 In general, only [metrics audits](/lighthouse-performance/#metrics)
@@ -49,7 +49,7 @@ The tables below show the weighting for each metric in each version of Lighthous
   impact on user-perceived performance.
 {% endAside %}
 
-### Lighthouse 6
+### Lighthouse 6 (draft)
 
 <div class="w-table-wrapper">
   <table>
@@ -62,15 +62,15 @@ The tables below show the weighting for each metric in each version of Lighthous
     <tbody>
       <tr>
         <td><a href="/first-contentful-paint/">First Contentful Paint</a></td>
-        <td>20%</td>
+        <td>15%</td>
       </tr>
       <tr>
         <td><a href="/speed-index/">Speed Index</a></td>
-        <td>10%</td>
+        <td>15%</td>
       </tr>
       <tr>
-        <td><a href="/first-meaningful-paint/">First Meaningful Paint</a></td>
-        <td>20%</td>
+        <td><a href="/lcp/">Largest Contentful Paint</a></td>
+        <td>25%</td>
       </tr>
       <tr>
         <td><a href="/interactive/">Time to Interactive</a></td>
@@ -78,7 +78,7 @@ The tables below show the weighting for each metric in each version of Lighthous
       </tr>
       <tr>
         <td><a href="/lighthouse-total-blocking-time/">Total Blocking Time</a></td>
-        <td>20%</td>
+        <td>25%</td>
       </tr>
     </tbody>
   </table>
@@ -98,7 +98,7 @@ The tables below show the weighting for each metric in each version of Lighthous
     <tbody>
       <tr>
         <td><a href="/first-contentful-paint/">First Contentful Paint</a></td>
-        <td>23%</td>
+        <td>20%</td>
       </tr>
       <tr>
         <td><a href="/speed-index/">Speed Index</a></td>
@@ -119,6 +119,8 @@ The tables below show the weighting for each metric in each version of Lighthous
     </tbody>
   </table>
 </div>
+
+## Historical versions
 
 ### Lighthouse 3 and 4
 
