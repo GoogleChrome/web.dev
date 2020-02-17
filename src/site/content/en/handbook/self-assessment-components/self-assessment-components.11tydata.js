@@ -22,11 +22,12 @@ module.exports = {
         // The stimulus is optional. It appears at the top of the question.
         // There is only one stimulus per question,
         // no matter how many components the question has.
+        //
+        // Note: you must remove leading whitespace to get block formatting to work.
         stimulus: `\`\`\`html
-          <label for="pwd-input">Password</label>
-
-          <input type="text" role="textbox" id="pwd-input" name="password">
-          \`\`\``,
+<label for="pwd-input">Password</label>
+<input type="text" role="textbox" id="pwd-input" name="password">
+\`\`\``,
         // This is a think-and-check question.
         // Think-and-checks will ignore cardinality, correctAnswers,
         // and any option content
@@ -118,28 +119,24 @@ module.exports = {
         options: [
           {
             content: "![Elmo](./elmo.jpg)",
-            rationale: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+            rationale: `Don't give a second thought to this tickle-me-come-lately.`,
           },
           {
             content: "![Ernie](./ernie.jpg)",
-            rationale: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+            rationale: `I mean, c'mon. He's Ernie. I don't know🤷`,
           },
           {
             content: "![Cookie Monster](./cookiemonster.jpg)",
-            rationale: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+            rationale: `"[A cookie is a sometimes food](https://youtu.be/PaHkwE7TaNg)"?
+              I remember when you had integrity.`,
           },
           {
             content: "![Big Bird](./bigbird.jpg)",
-            rationale: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+            rationale: `Laying it on kinda thick with the wide-eyed childlike wonder, no?`,
           },
           {
             content: "![Grover](./grover.jpg)",
-            rationale: `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
+            rationale: `The OG monster. Never forget it.`,
           },
         ],
       },
