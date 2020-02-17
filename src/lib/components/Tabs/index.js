@@ -35,7 +35,7 @@ class Tabs extends BaseElement {
         child.id = `web-tab-${this.idSalt}-${i}-panel`;
         child.setAttribute("aria-labelledby", `web-tab-${this.idSalt}-${i}`);
         if (i === 1) {
-          child.removeAttribute("hidden");
+          child.hidden = false;
         }
         this.prerenderedChildren.push(child);
         // Get tab label from panel data-label attribute
@@ -192,24 +192,24 @@ class Tabs extends BaseElement {
   // Change state of tabs and associated panels.
   changeTab(item) {
     const tabset = item.closest("web-tabs");
-    const tabs = Array.from(tabset.querySelectorAll(".web-tabs__tab"));
-    const panels = Array.from(tabset.querySelectorAll(".web-tabs__panel"));
-    const index = tabs.indexOf(item);
+    const tabs = tabset.querySelectorAll(".web-tabs__tab");
+    const panels = tabset.querySelectorAll(".web-tabs__panel");
+    const index = Array.from(tabs).indexOf(item);
 
-    tabs.forEach(function(tab) {
+    for (const tab of tabs) {
       tab.setAttribute("aria-selected", "false");
       tab.setAttribute("tabindex", "-1");
-    });
+    }
 
     item.setAttribute("aria-selected", "true");
     item.removeAttribute("tabindex");
     item.focus();
 
-    panels.forEach(function(element) {
-      element.setAttribute("hidden", "");
-    });
+    for (const panel of panels) {
+      panel.hidden = true;
+    }
 
-    panels[index].removeAttribute("hidden");
+    panels[index].hidden = false;
   }
 }
 
