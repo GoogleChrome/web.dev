@@ -12,8 +12,8 @@
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% Meta locale, page, collections %}
-    
+    {% Meta locale, page, collections, renderData %}
+
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
     <link rel="shortcut icon" href="/images/favicon@2x.png">
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
@@ -109,7 +109,7 @@
 
     <web-side-nav class="unresolved">
       <a
-        href="/learn"
+        href="/learn/"
         class="web-side-nav__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="SideNav: Learn"
@@ -117,7 +117,7 @@
         Learn
       </a>
       <a
-        href="/measure"
+        href="/measure/"
         class="web-side-nav__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="SideNav: Measure"
@@ -125,7 +125,7 @@
         Measure
       </a>
       <a
-        href="/blog"
+        href="/blog/"
         class="web-side-nav__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="SideNav: Blog"
@@ -133,7 +133,7 @@
         Blog
       </a>
       <a
-        href="/about"
+        href="/about/"
         class="web-side-nav__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
         data-label="SideNav: About"

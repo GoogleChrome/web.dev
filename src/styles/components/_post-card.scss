@@ -146,6 +146,10 @@
   }
 }
 
+.w-post-card__link:hover {
+  text-decoration: none;
+}
+
 .w-post-card__subhead {
   color: $GREY_700;
   font: inherit;

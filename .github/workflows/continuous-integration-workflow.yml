@@ -28,7 +28,7 @@ jobs:
         run: npm ci && npm run build && node index-algolia.js
 
       - name: Deploy
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
         with:
           version: '270.0.0'
           service_account_email: ${{ secrets.GCLOUD_EMAIL }}

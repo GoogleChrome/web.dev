@@ -49,7 +49,7 @@ module.exports = {
   firebase: {
     prod: {
       apiKey: "AIzaSyCyThSjI_ZUT1NwV9aQLtqklVcNj72gvo8",
-      authDomain: "web-dev-production-1.firebaseapp.com",
+      authDomain: "auth.web.dev",
       databaseURL: "https://web-dev-production-1.firebaseio.com",
       projectId: "web-dev-production-1",
       storageBucket: "web-dev-production-1.appspot.com",

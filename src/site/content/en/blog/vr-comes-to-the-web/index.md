@@ -4,14 +4,16 @@ subhead: A few basics to prepare you for a spectrum of immersive experiences&#58
 authors:
   - joemedley
 date: 2019-10-31
+update: 2020-02-13
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
-  Virtual reality has come to the web in Chrome 79. Based on the WebXR Device
-  API, this launch is the foundation for immersive features to come later such
-  as augmented reality. Other browsers will be supporting these specs soon,
-  including Firefox Reality, Oculus Browser, Edge and Magic Leap's Helio browser,
-  among others.
+  Virtual reality came to the web in Chrome 79. Based on the WebXR Devicer API,
+  this launch is the foundation for both augmented and virtual reality. This
+  article is the first in a series, exploring basic concepts and describing how
+  to enter an XR session. Other browsers will soon be supporting the WebXR
+  Device API, including Firefox Reality, Oculus Browser, Edge and Magic Leap's
+  Helio browser, among others.
 tags:
   - post
   - augmented-reality
@@ -19,28 +21,20 @@ tags:
   - webxr
 ---
 
-Immersive experiences have come to the web in Chrome 79. The WebXR Device API
-brings virtual reality (with augmented reality to come later). While an update
-to the GamePad API extends the advanced use of controlls to VR. Other browsers
-will be supporting these specs soon, including Firefox Reality, Oculus Browser,
-Edge and Magic Leap's Helio browser, among others.
+Immersive experiences came to the web in Chrome 79. The WebXR Device API brings
+virtual reality brought virtual reality, while support for augmented reality
+arrives in Chrome 81. While an update to the GamePad API extends the advanced
+use of controlls to VR. Other browsers will be supporting these specs soon,
+including Firefox Reality, Oculus Browser, Edge and Magic Leap's Helio browser,
+among others.
 
 This article begins a series on the immersive web. This installment covers
-setting up a basic WebXR application and constructing a frame loop, the
-workhorse of an immersive experience. Later articles will cover drawing to a
-screen and interacting with input devices using [Gamepad API
-updates](https://www.chromestatus.com/features/5659025263820800) mentioned
-above. Though Chrome only supports virtual reality for now, everything I cover
-in this and succeeding articles applies equally to both AR and VR.
-
-If you've followed the progress of immersive experiences on the web, you know
-there has been much experimentation in recent years. An early WebVR
-implementation, released in 2017 in Firefox and in 2018 in Chrome behind a flag,
-proved inadequate for [various
-reasons](https://developers.google.com/web/updates/2018/05/welcome-to-immersive#what_happened_to_webvr_11).
-The work to correct its shortcomings blossomed last year into the [WebXR Device
-API](https://www.w3.org/TR/webxr/). It was in an origin trial for a while, and
-now Chrome is enabling it by default.
+setting up a basic WebXR application as well as entering and exiting an XR
+session. Later articles will cover the frame loop (the workhourse of WebXR
+experience), the specifics of augmented reality, and the WebXR Hit Test API, a
+means of detecting surfaces in an AR session. Unless stated otherwise,
+everything I cover in this and succeeding articles applies equally to both AR
+and VR.
 
 ## What is the immersive web?
 
@@ -89,16 +83,20 @@ request anything sensitive from the viewer. Web pages or apps must be served
 over HTTPS. The API itself is designed to protect information obtained from
 sensors and cameras, which it needs in order to function.
 
-### Requesting a session
+### Request a session
 
 Entering an XR session requires a user gesture. To get that, use feature
 detection and make a call to `isSessionSupported()`. In the example below, I've
 indicated that I want a virtual reality session with the `'immersive-vr'`
-session type. [Other session
+session type. The [other session
 types](https://developer.mozilla.org/en-US/docs/Web/API/XR/isSessionSupported#Syntax)
-are defined in the spec and will be available in future versions of Chrome. Once
-I know that virtual reality sessions are supported, I enable a button that lets
-me acquire a user gesture.
+are `'immersive-ar'` and `'inline'`. An inline session is for presenting content
+within HTML and is maily used for teaser content. The [Immersive AR
+Session](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html)
+sample demonstrates this. I'll explain that in a later article.
+
+Once I know that virtual reality sessions are supported, I enable a button that
+lets me acquire a user gesture.
 
 ```js
 if (navigator.xr) {
@@ -106,7 +104,7 @@ if (navigator.xr) {
   if (supported) {
     xrButton.addEventListener('click', onButtonClicked);
     xrButton.textContent = 'Enter VR';
-    xrButton.disabled = false;
+    xrButton.enabled = supported; // supported is Boolean
   }
 }
 ```
@@ -133,15 +131,19 @@ Notice the object hierarchy in this code. It moves from `navigator` to `xr` to
 an `XRSession` instance. In early versions of the API, a script had to request a
 device before requesting a session. Now, the device is acquired implicitly.
 
-### Entering a session
+### Enter a session
 
 After getting a session, I need to start it and enter it. But first, I need to
 set up a few things. A session needs an `onend` event handler so that the app or
 web page can be reset when the user exits.
 
 I'll also need a `<canvas>` element to draw my scene on. It needs to be an
-XR-compatible WebGL context. All drawing is done using the WebGL API or a
-WebGL-based framework such as [Three.js](https://threejs.org/).
+XR-compatible
+[WebGLRenderingContext](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext)
+or
+[WebGL2RenderingContext](https://developer.mozilla.org/en-US/docs/Web/API/WebGL2RenderingContext).
+All drawing is done using them or a WebGL-based framework such as
+[Three.js](https://threejs.org/).
 
 Now that I have a place to draw, I need a source of content to draw on
 it. For that, I create an instance of `XRWebGLLayer`. I associate it with the
@@ -160,10 +162,10 @@ function onSessionStarted(xrSession) {
   xrSession.addEventListener('end', onSessionEnded);
 
   let canvas = document.createElement('canvas');
-  gl = canvas.getContext('webgl', { xrCompatible: true });
+  webGLRenContext = canvas.getContext('webgl', { xrCompatible: true });
 
   xrSession.updateRenderState({
-    baseLayer: new XRWebGLLayer(session, gl)
+    baseLayer: new XRWebGLLayer(xrSession, webGLRenContext)
   });
 
   xrSession.requestReferenceSpace('local-floor')
@@ -178,13 +180,14 @@ After getting a reference space, I call `XRSession.requestAnimationFrame()`.
 This is the start of presenting virtual content, which is done in the frame
 loop.
 
-### Running a frame loop
+### Run a frame loop
 
 The frame loop is a user-agent controlled infinite loop in which content is
 repeatedly drawn to the screen. Content is drawn in discrete blocks called
-frames. The succession of frames creates the illusion of movement. The number of
-frames per second currently varies between devices, and may be anything from 60
-to 144, but that has no bearing on your code.
+frames. The succession of frames creates the illusion of movement. For VR
+applications the frames per second can be anywhere from 60 to 144. AR for
+Android runs at 30 frames per second. Your code should not assume any particular
+frame rate.
 
 The basic process for the frame loop is:
 
@@ -193,15 +196,17 @@ The basic process for the frame loop is:
   <li>Inside your callback function:
     <ol>
       <li>Call <code>XRSession.requestAnimationFrame()</code> again.</li>
-      <li>Query for the position (called a pose in WebXR) of the viewer.</li>
-      <li>Draw content from the viewer's point of view.</li>
-      <li>Process user input.</li>
+      <li>Get the viewer's pose.</li>
+      <li>Pass ('bind') the <code>WebGLFramebuffer</code> from the <code>XRWebGLLayer</code> to the <code>WebGLRenderingContext</code>.</li>
+      <li>Iterate over each <code>XRView</code> object, retrieving its <code>XRViewport</code> from the <code>XRWebGLLayer</code> and passing it to the <code>WebGLRenderingContext</code>.</li>
+      <li>Draw something to the framebuffer.</li>
     </ol>
   </li>
 </ol>
 
-In this section I'll mainly cover steps 2-1 and 2-2. I'll cover the remaining
-steps in later articles.
+The remainder of this article describes step 1 and part of step 2,  setting up
+and calling the `XRFrameRequestCallback`. The remaining items of step 2 are
+covered in part II.
 
 #### The XRFrameRequestCallback
 
@@ -212,9 +217,8 @@ the information needed to render a single frame to the display. The
 
 Before doing anything else, I'm going to request the next animation frame. As
 previously stated, the timing of frames is determined by the user agent based on
-the underlying hardware. Requesting the next frame first ensures that if
-something during the callback throws an error I can ensure that the frame loop
-continues.
+the underlying hardware. Requesting the next frame first ensures that
+the frame loop continues if something during the callback throws an error.
 
 ```js
 function onXRFrame(hrTime, xrFrame) {
@@ -224,70 +228,8 @@ function onXRFrame(hrTime, xrFrame) {
 }
 ```
 
-#### Getting poses
-
-Before drawing anything on the screen, I need to know where the viewer is in
-immersive space. The position and orientation of a thing in immersive space is
-called a pose. Both viewers and input devices have a pose. Both viewer and input
-device poses are defined as an `XRRigidTransform`, which consists of a position
-vector and an orientation quaternion. I get the viewer's pose by calling
-`XRFrame.getViewerPose()` on the current animation frame. I pass it the
-reference space I acquired when I set up the session.
-
-Next, I test whether an `XRViewerPose` was returned because if something went
-wrong, I can't render the frame. But as stated earlier, I already called
-`XRSession.requestAnimationFrame()` so that if the system can recover, the
-frame loop will continue. If not, it will end the session and call the `end`
-event handler.
-
-```js/3-6
-function onXRFrame(hrTime, xrFrame) {
-  let xrSession = xrFrame.session;
-  xrSession.requestAnimationFrame(onXRFrame);
-  let xrViewerPose = xrFrame.getViewerPose(xrRefSpace);
-  if (xrViewerPose) {
-    // Render based on the pose.
-  }
-}
-```
-
-#### Drawing the views
-
-After checking the pose, it's time to draw something. The `XRViewerPose`
-contains an array of `XRView` interfaces which represents a display or a portion
-of a display and returns the information needed to render content that's
-correctly positioned for the device and the viewer such as the field of view, eye
-offset, and other optical properties. Since I'm drawing for two eyes, I have two
-views, which I loop through and draw a separate image for each.
-
-If I were implementing for phone-based augmented reality, I would have only one
-view but I'd still loop through them. This is an important difference between
-WebXR and other immersive systems. Though it may seem pointless to iterate
-through one view, doing so allows you to have a single rendering path for a
-spectrum of immersive experiences.
-
-One thing I didn't cover is how to draw to the screen, though I've shown it
-below. That's done through layer objects such as the `XRWebGLLayer` interface and a
-means of drawing graphics such as the WebGL APIs or the Three.js framework. It's
-such a lengthy subject it will be covered in a later article.
-
-```js/8
-function onXRFrame(hrTime, xrFrame) {
-  let xrSession = xrFrame.session;
-  xrSession.requestAnimationFrame(onXRFrame);
-  let xrViewerPose = xrFrame.getViewerPose(xrRefSpace);
-  if (xrViewerPose) {
-    let glLayer = xrSession.renderState.baseLayer;
-    // Bind the baseLayer’s framebuffer and use WebGL to draw something.
-    gl.bindFramebuffer(gl.FRAMEBUFFER, glLayer.framebuffer);
-    for (let xrView of xrViewerPose.views) {
-      let vp = glLayer.getViewport(view);
-      gl.viewport(vp.x, vp.y, vp.width, vp.height);
-      // Draw to the portion of the framebuffer associated with this view.
-    }
-  }
-}
-```
+At this point, it's time to draw something for the viewer. That's a discussion
+for part II. Before going there, let me show you how to end a session.
 
 ### End the session
 
@@ -321,9 +263,9 @@ function onSessionEnded(event) {
 
 ## Conclusion
 
-Now that I've shown you how the frame loop works, you should have enough to at
-least make sense of sample code. Hopefully that's enough to start experimenting.
-In the next article, I'll cover a bit about WebGL and how it interacts with
-certain WebXR interfaces.
+I haven't explained everthing you need to write a Web XR or AR application.
+Hopefull, I've give  you enought to start making sense of the code for yourself,
+and enough to start experimenting. In the next article, I'll explain the frame
+loop, which is where content is drawn to the screen.
 
 Photo by [JESHOOTS.COM](https://unsplash.com/@jeshoots) on [Unsplash](https://unsplash.com/)

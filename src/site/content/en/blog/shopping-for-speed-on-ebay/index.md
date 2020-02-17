@@ -19,6 +19,7 @@ tags:
   - fast
   - reliable
   - e-commerce
+  - test-post
 ---
 
 Speed was a [company-wide initiative][cuts] for eBay in 2019, with many teams determined to make the

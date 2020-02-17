@@ -20,6 +20,10 @@ const warn = chalk.black.bgYellow;
 let memo;
 
 /**
+ * @TODO when this is removed we should enable `addAllPagesToCollections: true` in
+ * the `pagination` section of `content/en/blog/index.njk` and `content/en/tags/index.njk`.
+ * This will also require changes on how the meta tags are set.
+ *
  * Memoize an eleventy collection into a hash for faster lookups.
  * Important: Memoization assumes that all post urls are unique.
  * @param {Array<Object>} collection An eleventy collection.

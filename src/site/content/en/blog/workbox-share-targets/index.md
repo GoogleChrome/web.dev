@@ -16,6 +16,7 @@ tags:
   - capabilities
   - fugu
   - workbox
+  - test-post
 ---
 
 The [Web Share Target API](https://web.dev/web-share-target/) lets you display
