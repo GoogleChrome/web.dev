@@ -27,7 +27,7 @@ Here's a self-assessment with some dummy questions:
 To include a self-assessment in your post:
 1. Add `{% raw %}{% include 'content/self-assessment.njk' %}{% endraw %}`
    to your post where you want the self-assessment to appear.
-1. Copy `self-assessment.11tydata.js` in `src/site/_drafts`
+1. Copy `_template-self-assessment.11tydata.js` in `src/site/_drafts/_template-self-assessment`
    to your post's directory.
 1. Change the copied file's name to `your-post-directory-name.11tydata.js`.
 1. Follow the pattern in the file to create your question set.
@@ -48,10 +48,14 @@ If most of your questions or taller or shorter than the default height,
 change it using the `height` key.
 
 You can adjust the labels for the question tabs using the `tabLabel` key.
-There are two options:
+There are three options:
 - `question` (default): creates the label `Question n`,
   where _n_ is the number of the tab in the set.
+  Use for sets that mostly ask users to submit a response.
 - `sample`: creates the label `Sample n`.
+  Use for sets composed mostly of think-and-checks.
+- `bare`: creates the label `n`
+  Use for larger sets where horizontal space is limited.
 
 ## Question anatomy and parameters
 An unanswered self-assessment question includes four components:
