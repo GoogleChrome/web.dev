@@ -2,11 +2,6 @@ import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 
 class AssessmentQuestion extends BaseElement {
-  constructor() {
-    super();
-    this.prerenderedChildren = null;
-  }
-
   render() {
     let responses = 0;
 

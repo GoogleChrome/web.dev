@@ -3,19 +3,6 @@ import {BaseResponseElement} from "../BaseResponseElement";
 
 /* eslint-disable require-jsdoc */
 class ResponseThinkAndCheck extends BaseResponseElement {
-  static get properties() {
-    return {
-      cardinality: {type: String},
-      columns: {type: Boolean},
-    };
-  }
-
-  constructor() {
-    super();
-    this.prerenderedChildren = null;
-    this.rationale = null;
-  }
-
   render() {
     if (!this.prerenderedChildren) {
       this.prerenderedChildren = [];
