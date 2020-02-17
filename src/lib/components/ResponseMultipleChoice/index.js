@@ -82,6 +82,7 @@ class ResponseMultipleChoice extends BaseResponseElement {
     return html`
       ${this.prerenderedChildren}
       <web-select-group
+        @click="${this.onClick}"
         type="${selectType}"
         prefix="web-response-mc"
         ?columns="${this.columns}"
@@ -89,6 +90,30 @@ class ResponseMultipleChoice extends BaseResponseElement {
         ${options}
       </web-select-group>
     `;
+  }
+
+  onClick(e) {
+    this.toggleSelection(e);
+  }
+
+  // Allow user to deselect radio buttons.
+  // (Helpful for test taking strategies.)
+  toggleSelection(e) {
+    const radio = e.target;
+    const group = radio.closest(".web-response-mc");
+    const siblings = group.querySelectorAll(
+      ".web-response-mc__input[type=radio]",
+    );
+    const isChecked = radio.hasAttribute("checked");
+
+    if (isChecked) {
+      radio.removeAttribute("checked");
+      radio.checked = false;
+      // checkAnswered(e);
+    } else {
+      for (const sibling of siblings) sibling.removeAttribute("checked");
+      radio.setAttribute("checked", "");
+    }
   }
 }
 
