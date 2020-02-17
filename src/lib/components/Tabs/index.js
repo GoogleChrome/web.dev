@@ -91,6 +91,7 @@ class Tabs extends BaseElement {
     }
 
     switch (tabLabel) {
+      default:
       case "question":
         tabLabel = "Question " + i;
         break;
