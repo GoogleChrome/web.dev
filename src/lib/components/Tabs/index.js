@@ -13,9 +13,6 @@ class Tabs extends BaseElement {
     super();
     this.idSalt = BaseElement.generateIdSalt("web-tab-");
 
-    this.prerenderedChildren = null;
-    this.tabs = null;
-
     this.onResize = this.onResize.bind(this);
     this.changeTab = this.changeTab.bind(this);
     this.focusNextItem = this.focusNextItem.bind(this);

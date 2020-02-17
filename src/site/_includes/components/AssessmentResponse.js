@@ -52,25 +52,27 @@ module.exports = (
     );
   }
 
-  const columnsAttr = twoColumns ? "columns" : "";
-  const cardinalityAttr = cardinality ? "cardinality=" + cardinality : "";
-  const correctAnswersAttr = correctAnswers ? "correct=" + correctAnswers : "";
+  let typeSuffix = "";
 
-  // prettier-ignore
   switch (type) {
     case "think-and-check":
-      return html`
-        <web-response-tac>
-        ${content}
-        </web-response-tac>
-      `;
+      typeSuffix = "-tac";
       break;
     case "multiple-choice":
-      return html`
-        <web-response-mc ${cardinalityAttr} ${correctAnswersAttr} ${columnsAttr}>
-        ${content}
-        </web-response-mc>
-      `;
+      typeSuffix = "-mc";
       break;
+    default:
+      throw new Error(`Unrecognized self-assessment response type.`);
   }
+
+  const cardinalityAttr = cardinality ? "cardinality=" + cardinality : "";
+  const correctAnswersAttr = correctAnswers ? "correct=" + correctAnswers : "";
+  const columnsAttr = twoColumns ? "columns" : "";
+
+  // prettier-ignore
+  return html`
+    <web-response${typeSuffix} ${cardinalityAttr} ${correctAnswersAttr} ${columnsAttr}>
+    ${content}
+    </web-response${typeSuffix}>
+  `;
 };

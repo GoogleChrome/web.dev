@@ -18,12 +18,6 @@ import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 
 class Assessment extends BaseElement {
-  constructor() {
-    super();
-    this.prerenderedChildren = null;
-    this.setLeader = null;
-  }
-
   render() {
     if (!this.prerenderedChildren) {
       this.prerenderedChildren = [];
